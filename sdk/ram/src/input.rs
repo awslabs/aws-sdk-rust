@@ -102,7 +102,7 @@ impl AcceptResourceShareInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_resource_share_invitation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_resource_share_invitation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -351,10 +351,7 @@ impl AssociateResourceShareInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_resource_share(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -560,7 +557,7 @@ impl AssociateResourceSharePermissionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_resource_share_permission(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_resource_share_permission(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -866,10 +863,7 @@ impl CreateResourceShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_resource_share(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1233,10 +1227,7 @@ impl DisassociateResourceShareInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1414,7 +1405,7 @@ impl DisassociateResourceSharePermissionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share_permission(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share_permission(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1692,10 +1683,7 @@ impl GetPermissionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_permission(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_permission(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1887,10 +1875,7 @@ impl GetResourcePoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2141,7 +2126,7 @@ impl GetResourceShareAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_associations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2348,7 +2333,7 @@ impl GetResourceShareInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_invitations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_invitations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2609,10 +2594,7 @@ impl GetResourceSharesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_shares(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_shares(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2790,7 +2772,7 @@ impl ListPendingInvitationResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_pending_invitation_resources(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_pending_invitation_resources(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2967,10 +2949,7 @@ impl ListPermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3216,10 +3195,8 @@ impl ListPrincipalsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_principals(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_principals(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3465,10 +3442,7 @@ impl ListResourcesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3643,7 +3617,7 @@ impl ListResourceSharePermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resource_share_permissions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_share_permissions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3803,10 +3777,7 @@ impl ListResourceTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resource_types(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4120,7 +4091,7 @@ impl RejectResourceShareInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_resource_share_invitation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reject_resource_share_invitation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4289,10 +4260,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4460,10 +4428,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4649,10 +4614,7 @@ impl UpdateResourceShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_resource_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_resource_share(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4728,6 +4690,25 @@ pub struct UpdateResourceShareInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateResourceShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated
+    /// with a resource share.</p>
+    pub fn allow_external_principals(&self) -> std::option::Option<bool> {
+        self.allow_external_principals
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceShareInput");
@@ -4748,6 +4729,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys of the tags to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The tag keys of the tags to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4766,6 +4757,16 @@ pub struct TagResourceInput {
     /// <p>One or more tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4783,6 +4784,16 @@ pub struct RejectResourceShareInvitationInput {
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl RejectResourceShareInvitationInput {
+    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_invitation_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectResourceShareInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4803,6 +4814,12 @@ pub struct PromoteResourceShareCreatedFromPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
 }
+impl PromoteResourceShareCreatedFromPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PromoteResourceShareCreatedFromPolicyInput");
@@ -4820,6 +4837,17 @@ pub struct ListResourceTypesInput {
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListResourceTypesInput {
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListResourceTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4841,6 +4869,21 @@ pub struct ListResourceSharePermissionsInput {
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListResourceSharePermissionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListResourceSharePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4873,6 +4916,39 @@ pub struct ListResourcesInput {
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListResourcesInput {
+    /// <p>The type of owner.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
+        self.resource_owner.as_ref()
+    }
+    /// <p>The principal.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+    /// </p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_share_arns.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4910,6 +4986,39 @@ pub struct ListPrincipalsInput {
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPrincipalsInput {
+    /// <p>The type of owner.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
+        self.resource_owner.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The principals.</p>
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+        self.principals.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+    /// </p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_share_arns.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPrincipalsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPrincipalsInput");
@@ -4937,6 +5046,22 @@ pub struct ListPermissionsInput {
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPermissionsInput {
+    /// <p>Specifies the resource type for which to list permissions. For example, to list only
+    /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPermissionsInput");
@@ -4958,6 +5083,21 @@ pub struct ListPendingInvitationResourcesInput {
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPendingInvitationResourcesInput {
+    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_invitation_arn.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPendingInvitationResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4995,6 +5135,42 @@ pub struct GetResourceSharesInput {
     /// resource share.</p>
     pub permission_arn: std::option::Option<std::string::String>,
 }
+impl GetResourceSharesInput {
+    /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
+    pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_share_arns.as_deref()
+    }
+    /// <p>The status of the resource share.</p>
+    pub fn resource_share_status(&self) -> std::option::Option<&crate::model::ResourceShareStatus> {
+        self.resource_share_status.as_ref()
+    }
+    /// <p>The type of owner.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
+        self.resource_owner.as_ref()
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>One or more tag filters.</p>
+    pub fn tag_filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
+        self.tag_filters.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
+    /// resource share.</p>
+    pub fn permission_arn(&self) -> std::option::Option<&str> {
+        self.permission_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceSharesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceSharesInput");
@@ -5023,6 +5199,25 @@ pub struct GetResourceShareInvitationsInput {
     /// <p>The maximum number of results to return with a single call.
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetResourceShareInvitationsInput {
+    /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
+    pub fn resource_share_invitation_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_share_invitation_arns.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_share_arns.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetResourceShareInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5062,6 +5257,45 @@ pub struct GetResourceShareAssociationsInput {
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetResourceShareAssociationsInput {
+    /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
+    /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
+    /// that are associated with the specified resource share.</p>
+    pub fn association_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceShareAssociationType> {
+        self.association_type.as_ref()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_share_arns.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
+    /// the association type is <code>PRINCIPAL</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The principal. You cannot specify this parameter if the association type is
+    /// <code>RESOURCE</code>.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The association status.</p>
+    pub fn association_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceShareAssociationStatus> {
+        self.association_status.as_ref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetResourceShareAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceShareAssociationsInput");
@@ -5090,6 +5324,25 @@ pub struct GetResourcePoliciesInput {
     /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetResourcePoliciesInput {
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The principal.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetResourcePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePoliciesInput");
@@ -5109,6 +5362,16 @@ pub struct GetPermissionInput {
     pub permission_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the version of the permission.</p>
     pub permission_version: std::option::Option<i32>,
+}
+impl GetPermissionInput {
+    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+    pub fn permission_arn(&self) -> std::option::Option<&str> {
+        self.permission_arn.as_deref()
+    }
+    /// <p>The identifier for the version of the permission.</p>
+    pub fn permission_version(&self) -> std::option::Option<i32> {
+        self.permission_version
+    }
 }
 impl std::fmt::Debug for GetPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5141,6 +5404,20 @@ pub struct DisassociateResourceSharePermissionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DisassociateResourceSharePermissionInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
+    pub fn permission_arn(&self) -> std::option::Option<&str> {
+        self.permission_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateResourceSharePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateResourceSharePermissionInput");
@@ -5164,6 +5441,24 @@ pub struct DisassociateResourceShareInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DisassociateResourceShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The principals.</p>
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+        self.principals.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateResourceShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateResourceShareInput");
@@ -5183,6 +5478,16 @@ pub struct DeleteResourceShareInput {
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteResourceShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourceShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5238,6 +5543,62 @@ pub struct CreateResourceShareInput {
     /// with each resource type in a resource share.</p>
     pub permission_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateResourceShareInput {
+    /// <p>The name of the resource share.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARNs of the resources to associate with the resource share.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID</p>
+    /// </li>
+    /// <li>
+    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM role</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM user</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+    /// Guide</i>.</p>
+    /// </note>
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+        self.principals.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated
+    /// with a resource share.</p>
+    pub fn allow_external_principals(&self) -> std::option::Option<bool> {
+        self.allow_external_principals
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
+    /// do not specify an ARN for the permission, RAM automatically attaches the default
+    /// version of the permission for each resource type. Only one permission can be associated
+    /// with each resource type in a resource share.</p>
+    pub fn permission_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.permission_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourceShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceShareInput");
@@ -5269,6 +5630,31 @@ pub struct AssociateResourceSharePermissionInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The version of the RAM permissions to associate with the resource share.</p>
     pub permission_version: std::option::Option<i32>,
+}
+impl AssociateResourceSharePermissionInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
+    /// resource share.</p>
+    pub fn permission_arn(&self) -> std::option::Option<&str> {
+        self.permission_arn.as_deref()
+    }
+    /// <p>Indicates whether the permission should replace the permissions that are currently
+    /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
+    /// <code>false</code> to add the permission to the current permission.</p>
+    pub fn replace(&self) -> std::option::Option<bool> {
+        self.replace
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The version of the RAM permissions to associate with the resource share.</p>
+    pub fn permission_version(&self) -> std::option::Option<i32> {
+        self.permission_version
+    }
 }
 impl std::fmt::Debug for AssociateResourceSharePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5317,6 +5703,46 @@ pub struct AssociateResourceShareInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl AssociateResourceShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID</p>
+    /// </li>
+    /// <li>
+    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM role</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM user</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+    /// Guide</i>.</p>
+    /// </note>
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+        self.principals.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateResourceShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateResourceShareInput");
@@ -5336,6 +5762,16 @@ pub struct AcceptResourceShareInvitationInput {
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl AcceptResourceShareInvitationInput {
+    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_invitation_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptResourceShareInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

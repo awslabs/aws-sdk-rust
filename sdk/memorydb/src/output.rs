@@ -6,6 +6,12 @@ pub struct UpdateUserOutput {
     /// <p>The updated user</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl UpdateUserOutput {
+    /// <p>The updated user</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserOutput");
@@ -51,6 +57,12 @@ impl UpdateUserOutput {
 pub struct UpdateSubnetGroupOutput {
     /// <p>The updated subnet group</p>
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
+}
+impl UpdateSubnetGroupOutput {
+    /// <p>The updated subnet group</p>
+    pub fn subnet_group(&self) -> std::option::Option<&crate::model::SubnetGroup> {
+        self.subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -103,6 +115,12 @@ pub struct UpdateParameterGroupOutput {
     /// <p>The updated parameter group</p>
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
+impl UpdateParameterGroupOutput {
+    /// <p>The updated parameter group</p>
+    pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroup> {
+        self.parameter_group.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateParameterGroupOutput");
@@ -154,6 +172,12 @@ pub struct UpdateClusterOutput {
     /// <p>The updated cluster</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl UpdateClusterOutput {
+    /// <p>The updated cluster</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterOutput");
@@ -202,6 +226,12 @@ pub struct UpdateAclOutput {
     /// <p>The updated Access Control List</p>
     pub acl: std::option::Option<crate::model::Acl>,
 }
+impl UpdateAclOutput {
+    /// <p>The updated Access Control List</p>
+    pub fn acl(&self) -> std::option::Option<&crate::model::Acl> {
+        self.acl.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAclOutput");
@@ -247,6 +277,12 @@ impl UpdateAclOutput {
 pub struct UntagResourceOutput {
     /// <p>The list of tags removed</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UntagResourceOutput {
+    /// <p>The list of tags removed</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -305,6 +341,12 @@ pub struct TagResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceOutput {
+    /// <p>A list of tags as key-value pairs.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceOutput");
@@ -362,6 +404,12 @@ pub struct ResetParameterGroupOutput {
     /// <p>The parameter group being reset.</p>
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
+impl ResetParameterGroupOutput {
+    /// <p>The parameter group being reset.</p>
+    pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroup> {
+        self.parameter_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ResetParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetParameterGroupOutput");
@@ -412,6 +460,12 @@ impl ResetParameterGroupOutput {
 pub struct ListTagsOutput {
     /// <p>A list of tags as key-value pairs.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsOutput {
+    /// <p>A list of tags as key-value pairs.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -471,6 +525,16 @@ pub struct ListAllowedNodeTypeUpdatesOutput {
     pub scale_up_node_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list node types which you can use to scale down your cluster.</p>
     pub scale_down_node_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListAllowedNodeTypeUpdatesOutput {
+    /// <p>A list node types which you can use to scale up your cluster.</p>
+    pub fn scale_up_node_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.scale_up_node_types.as_deref()
+    }
+    /// <p>A list node types which you can use to scale down your cluster.</p>
+    pub fn scale_down_node_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.scale_down_node_types.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAllowedNodeTypeUpdatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -551,6 +615,12 @@ pub struct FailoverShardOutput {
     /// <p>The cluster being failed over</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl FailoverShardOutput {
+    /// <p>The cluster being failed over</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for FailoverShardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailoverShardOutput");
@@ -600,6 +670,16 @@ pub struct DescribeUsersOutput {
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeUsersOutput {
+    /// <p>A list of users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -673,6 +753,16 @@ pub struct DescribeSubnetGroupsOutput {
     /// <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
     pub subnet_groups: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
 }
+impl DescribeSubnetGroupsOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
+    pub fn subnet_groups(&self) -> std::option::Option<&[crate::model::SubnetGroup]> {
+        self.subnet_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSubnetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubnetGroupsOutput");
@@ -744,6 +834,16 @@ pub struct DescribeSnapshotsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
+}
+impl DescribeSnapshotsOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.snapshots.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -817,6 +917,16 @@ pub struct DescribeServiceUpdatesOutput {
     /// <p>A list of service updates</p>
     pub service_updates: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>,
 }
+impl DescribeServiceUpdatesOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of service updates</p>
+    pub fn service_updates(&self) -> std::option::Option<&[crate::model::ServiceUpdate]> {
+        self.service_updates.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceUpdatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceUpdatesOutput");
@@ -889,6 +999,16 @@ pub struct DescribeParametersOutput {
     /// <p>A list of parameters specific to a particular parameter group. Each element in the list contains detailed information about one parameter.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
+impl DescribeParametersOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of parameters specific to a particular parameter group. Each element in the list contains detailed information about one parameter.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeParametersOutput");
@@ -960,6 +1080,16 @@ pub struct DescribeParameterGroupsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
+}
+impl DescribeParameterGroupsOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>
+    pub fn parameter_groups(&self) -> std::option::Option<&[crate::model::ParameterGroup]> {
+        self.parameter_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeParameterGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1034,6 +1164,16 @@ pub struct DescribeEventsOutput {
     /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl DescribeEventsOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -1105,6 +1245,16 @@ pub struct DescribeEngineVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
     pub engine_versions: std::option::Option<std::vec::Vec<crate::model::EngineVersionInfo>>,
+}
+impl DescribeEngineVersionsOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
+    pub fn engine_versions(&self) -> std::option::Option<&[crate::model::EngineVersionInfo]> {
+        self.engine_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEngineVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1182,6 +1332,16 @@ pub struct DescribeClustersOutput {
     /// <p>A list of clusters</p>
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
+impl DescribeClustersOutput {
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of clusters</p>
+    pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.clusters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClustersOutput");
@@ -1254,6 +1414,16 @@ pub struct DescribeAcLsOutput {
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAcLsOutput {
+    /// <p>The list of ACLs</p>
+    pub fn ac_ls(&self) -> std::option::Option<&[crate::model::Acl]> {
+        self.ac_ls.as_deref()
+    }
+    /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAcLsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAcLsOutput");
@@ -1324,6 +1494,12 @@ pub struct DeleteUserOutput {
     /// <p>The user object that has been deleted.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl DeleteUserOutput {
+    /// <p>The user object that has been deleted.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserOutput");
@@ -1369,6 +1545,12 @@ impl DeleteUserOutput {
 pub struct DeleteSubnetGroupOutput {
     /// <p>The subnet group object that has been deleted.</p>
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
+}
+impl DeleteSubnetGroupOutput {
+    /// <p>The subnet group object that has been deleted.</p>
+    pub fn subnet_group(&self) -> std::option::Option<&crate::model::SubnetGroup> {
+        self.subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1421,6 +1603,12 @@ pub struct DeleteSnapshotOutput {
     /// <p>The snapshot object that has been deleted.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl DeleteSnapshotOutput {
+    /// <p>The snapshot object that has been deleted.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSnapshotOutput");
@@ -1468,6 +1656,12 @@ impl DeleteSnapshotOutput {
 pub struct DeleteParameterGroupOutput {
     /// <p>The parameter group that has been deleted.</p>
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
+}
+impl DeleteParameterGroupOutput {
+    /// <p>The parameter group that has been deleted.</p>
+    pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroup> {
+        self.parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1520,6 +1714,12 @@ pub struct DeleteClusterOutput {
     /// <p>The cluster object that has been deleted</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl DeleteClusterOutput {
+    /// <p>The cluster object that has been deleted</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterOutput");
@@ -1568,6 +1768,12 @@ pub struct DeleteAclOutput {
     /// <p>The Access Control List object that has been deleted.</p>
     pub acl: std::option::Option<crate::model::Acl>,
 }
+impl DeleteAclOutput {
+    /// <p>The Access Control List object that has been deleted.</p>
+    pub fn acl(&self) -> std::option::Option<&crate::model::Acl> {
+        self.acl.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAclOutput");
@@ -1614,6 +1820,12 @@ pub struct CreateUserOutput {
     /// <p>The newly-created user.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl CreateUserOutput {
+    /// <p>The newly-created user.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -1659,6 +1871,12 @@ impl CreateUserOutput {
 pub struct CreateSubnetGroupOutput {
     /// <p>The newly-created subnet group</p>
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
+}
+impl CreateSubnetGroupOutput {
+    /// <p>The newly-created subnet group</p>
+    pub fn subnet_group(&self) -> std::option::Option<&crate::model::SubnetGroup> {
+        self.subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1711,6 +1929,12 @@ pub struct CreateSnapshotOutput {
     /// <p>The newly-created snapshot.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl CreateSnapshotOutput {
+    /// <p>The newly-created snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSnapshotOutput");
@@ -1758,6 +1982,12 @@ impl CreateSnapshotOutput {
 pub struct CreateParameterGroupOutput {
     /// <p>The newly-created parameter group.</p>
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
+}
+impl CreateParameterGroupOutput {
+    /// <p>The newly-created parameter group.</p>
+    pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroup> {
+        self.parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1810,6 +2040,12 @@ pub struct CreateClusterOutput {
     /// <p>The newly-created cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl CreateClusterOutput {
+    /// <p>The newly-created cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterOutput");
@@ -1858,6 +2094,12 @@ pub struct CreateAclOutput {
     /// <p>The newly-created Access Control List.</p>
     pub acl: std::option::Option<crate::model::Acl>,
 }
+impl CreateAclOutput {
+    /// <p>The newly-created Access Control List.</p>
+    pub fn acl(&self) -> std::option::Option<&crate::model::Acl> {
+        self.acl.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAclOutput");
@@ -1903,6 +2145,12 @@ impl CreateAclOutput {
 pub struct CopySnapshotOutput {
     /// <p>Represents a copy of an entire cluster as of the time when the snapshot was taken.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
+}
+impl CopySnapshotOutput {
+    /// <p>Represents a copy of an entire cluster as of the time when the snapshot was taken.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for CopySnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1953,6 +2201,16 @@ pub struct BatchUpdateClusterOutput {
     pub processed_clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>The list of clusters where updates have not been applied.</p>
     pub unprocessed_clusters: std::option::Option<std::vec::Vec<crate::model::UnprocessedCluster>>,
+}
+impl BatchUpdateClusterOutput {
+    /// <p>The list of clusters that have been updated.</p>
+    pub fn processed_clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.processed_clusters.as_deref()
+    }
+    /// <p>The list of clusters where updates have not been applied.</p>
+    pub fn unprocessed_clusters(&self) -> std::option::Option<&[crate::model::UnprocessedCluster]> {
+        self.unprocessed_clusters.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

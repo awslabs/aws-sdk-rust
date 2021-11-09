@@ -11,6 +11,21 @@ pub struct UpdateInfrastructureConfigurationOutput {
     /// this request.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
+impl UpdateInfrastructureConfigurationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by
+    /// this request.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateInfrastructureConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInfrastructureConfigurationOutput");
@@ -100,6 +115,20 @@ pub struct UpdateImagePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was updated by this request.</p>
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
+impl UpdateImagePipelineOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that was updated by this request.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateImagePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateImagePipelineOutput");
@@ -181,6 +210,21 @@ pub struct UpdateDistributionConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this
     /// request.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+}
+impl UpdateDistributionConfigurationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this
+    /// request.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDistributionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -331,6 +375,20 @@ pub struct StartImagePipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
+impl StartImagePipelineExecutionOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartImagePipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartImagePipelineExecutionOutput");
@@ -410,6 +468,16 @@ pub struct PutImageRecipePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
+impl PutImageRecipePolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutImageRecipePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutImageRecipePolicyOutput");
@@ -476,6 +544,16 @@ pub struct PutImagePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
     pub image_arn: std::option::Option<std::string::String>,
 }
+impl PutImagePolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutImagePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutImagePolicyOutput");
@@ -538,6 +616,16 @@ pub struct PutContainerRecipePolicyOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
+}
+impl PutContainerRecipePolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutContainerRecipePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -605,6 +693,16 @@ pub struct PutComponentPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
     pub component_arn: std::option::Option<std::string::String>,
 }
+impl PutComponentPolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
+    pub fn component_arn(&self) -> std::option::Option<&str> {
+        self.component_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutComponentPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutComponentPolicyOutput");
@@ -669,6 +767,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags for the specified resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the specified resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -739,6 +846,24 @@ pub struct ListInfrastructureConfigurationsOutput {
     /// elements that the service has not included in this request. Use this token with the next
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInfrastructureConfigurationsOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of infrastructure configurations.</p>
+    pub fn infrastructure_configuration_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::InfrastructureConfigurationSummary]> {
+        self.infrastructure_configuration_summary_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInfrastructureConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -854,6 +979,31 @@ pub struct ListImagesOutput {
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImagesOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of image semantic versions.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+    /// to specify the most recent versions or nodes when selecting the base image or components for your
+    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+    /// wildcards.</p>
+    /// </note>
+    pub fn image_version_list(&self) -> std::option::Option<&[crate::model::ImageVersion]> {
+        self.image_version_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImagesOutput");
@@ -967,6 +1117,24 @@ pub struct ListImageRecipesOutput {
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImageRecipesOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of image pipelines.</p>
+    pub fn image_recipe_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ImageRecipeSummary]> {
+        self.image_recipe_summary_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImageRecipesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImageRecipesOutput");
@@ -1063,6 +1231,22 @@ pub struct ListImagePipelinesOutput {
     /// elements that the service has not included in this request. Use this token with the next
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImagePipelinesOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of image pipelines.</p>
+    pub fn image_pipeline_list(&self) -> std::option::Option<&[crate::model::ImagePipeline]> {
+        self.image_pipeline_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListImagePipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1161,6 +1345,22 @@ pub struct ListImagePipelineImagesOutput {
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImagePipelineImagesOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of images built by this pipeline.</p>
+    pub fn image_summary_list(&self) -> std::option::Option<&[crate::model::ImageSummary]> {
+        self.image_summary_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImagePipelineImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImagePipelineImagesOutput");
@@ -1253,6 +1453,20 @@ pub struct ListImagePackagesOutput {
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImagePackagesOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of Image Packages returned in the response.</p>
+    pub fn image_package_list(&self) -> std::option::Option<&[crate::model::ImagePackage]> {
+        self.image_package_list.as_deref()
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImagePackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImagePackagesOutput");
@@ -1342,6 +1556,22 @@ pub struct ListImageBuildVersionsOutput {
     /// elements that the service has not included in this request. Use this token with the next
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImageBuildVersionsOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of image build versions.</p>
+    pub fn image_summary_list(&self) -> std::option::Option<&[crate::model::ImageSummary]> {
+        self.image_summary_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListImageBuildVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1437,6 +1667,24 @@ pub struct ListDistributionConfigurationsOutput {
     /// elements that the service has not included in this request. Use this token with the next
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDistributionConfigurationsOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of distributions.</p>
+    pub fn distribution_configuration_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DistributionConfigurationSummary]> {
+        self.distribution_configuration_summary_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDistributionConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1542,6 +1790,22 @@ pub struct ListContainerRecipesOutput {
     /// <p>The next token field is used for paginated responses. When this is not empty, there are additional container recipes that the service has not included in this response. Use this token with the next request to retrieve additional list items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListContainerRecipesOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of container recipes returned for the request.</p>
+    pub fn container_recipe_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContainerRecipeSummary]> {
+        self.container_recipe_summary_list.as_deref()
+    }
+    /// <p>The next token field is used for paginated responses. When this is not empty, there are additional container recipes that the service has not included in this response. Use this token with the next request to retrieve additional list items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListContainerRecipesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContainerRecipesOutput");
@@ -1641,6 +1905,26 @@ pub struct ListComponentsOutput {
     /// elements that the service has not included in this request. Use this token with the next
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListComponentsOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of component semantic versions.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// </note>
+    pub fn component_version_list(&self) -> std::option::Option<&[crate::model::ComponentVersion]> {
+        self.component_version_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListComponentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1747,6 +2031,22 @@ pub struct ListComponentBuildVersionsOutput {
     /// request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListComponentBuildVersionsOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The list of component summaries for the specified semantic version.</p>
+    pub fn component_summary_list(&self) -> std::option::Option<&[crate::model::ComponentSummary]> {
+        self.component_summary_list.as_deref()
+    }
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional
+    /// elements that the service has not included in this request. Use this token with the next
+    /// request to retrieve additional objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListComponentBuildVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListComponentBuildVersionsOutput");
@@ -1842,6 +2142,20 @@ pub struct ImportComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
+impl ImportComponentOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
+    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+        self.component_build_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportComponentOutput");
@@ -1928,6 +2242,18 @@ pub struct GetInfrastructureConfigurationOutput {
     pub infrastructure_configuration:
         std::option::Option<crate::model::InfrastructureConfiguration>,
 }
+impl GetInfrastructureConfigurationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The infrastructure configuration object.</p>
+    pub fn infrastructure_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InfrastructureConfiguration> {
+        self.infrastructure_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInfrastructureConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInfrastructureConfigurationOutput");
@@ -2001,6 +2327,16 @@ pub struct GetImageRecipePolicyOutput {
     /// <p>The image recipe policy object.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetImageRecipePolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The image recipe policy object.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetImageRecipePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImageRecipePolicyOutput");
@@ -2063,6 +2399,16 @@ pub struct GetImageRecipeOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The image recipe object.</p>
     pub image_recipe: std::option::Option<crate::model::ImageRecipe>,
+}
+impl GetImageRecipeOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The image recipe object.</p>
+    pub fn image_recipe(&self) -> std::option::Option<&crate::model::ImageRecipe> {
+        self.image_recipe.as_ref()
+    }
 }
 impl std::fmt::Debug for GetImageRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2130,6 +2476,16 @@ pub struct GetImagePolicyOutput {
     /// <p>The image policy object.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetImagePolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The image policy object.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetImagePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImagePolicyOutput");
@@ -2192,6 +2548,16 @@ pub struct GetImagePipelineOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The image pipeline object.</p>
     pub image_pipeline: std::option::Option<crate::model::ImagePipeline>,
+}
+impl GetImagePipelineOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The image pipeline object.</p>
+    pub fn image_pipeline(&self) -> std::option::Option<&crate::model::ImagePipeline> {
+        self.image_pipeline.as_ref()
+    }
 }
 impl std::fmt::Debug for GetImagePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2259,6 +2625,16 @@ pub struct GetImageOutput {
     /// <p>The image object.</p>
     pub image: std::option::Option<crate::model::Image>,
 }
+impl GetImageOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The image object.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+}
 impl std::fmt::Debug for GetImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImageOutput");
@@ -2321,6 +2697,18 @@ pub struct GetDistributionConfigurationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The distribution configuration object.</p>
     pub distribution_configuration: std::option::Option<crate::model::DistributionConfiguration>,
+}
+impl GetDistributionConfigurationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The distribution configuration object.</p>
+    pub fn distribution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DistributionConfiguration> {
+        self.distribution_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDistributionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2395,6 +2783,16 @@ pub struct GetContainerRecipePolicyOutput {
     /// <p>The container recipe policy object that is returned.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetContainerRecipePolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The container recipe policy object that is returned.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerRecipePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerRecipePolicyOutput");
@@ -2457,6 +2855,16 @@ pub struct GetContainerRecipeOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The container recipe object that is returned.</p>
     pub container_recipe: std::option::Option<crate::model::ContainerRecipe>,
+}
+impl GetContainerRecipeOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The container recipe object that is returned.</p>
+    pub fn container_recipe(&self) -> std::option::Option<&crate::model::ContainerRecipe> {
+        self.container_recipe.as_ref()
+    }
 }
 impl std::fmt::Debug for GetContainerRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2524,6 +2932,16 @@ pub struct GetComponentPolicyOutput {
     /// <p>The component policy.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetComponentPolicyOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The component policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComponentPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComponentPolicyOutput");
@@ -2586,6 +3004,16 @@ pub struct GetComponentOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The component object associated with the specified ARN.</p>
     pub component: std::option::Option<crate::model::Component>,
+}
+impl GetComponentOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The component object associated with the specified ARN.</p>
+    pub fn component(&self) -> std::option::Option<&crate::model::Component> {
+        self.component.as_ref()
+    }
 }
 impl std::fmt::Debug for GetComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2652,6 +3080,16 @@ pub struct DeleteInfrastructureConfigurationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
+}
+impl DeleteInfrastructureConfigurationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInfrastructureConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2725,6 +3163,16 @@ pub struct DeleteImageRecipeOutput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was deleted.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
+impl DeleteImageRecipeOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that was deleted.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteImageRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageRecipeOutput");
@@ -2790,6 +3238,16 @@ pub struct DeleteImagePipelineOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
     pub image_pipeline_arn: std::option::Option<std::string::String>,
+}
+impl DeleteImagePipelineOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteImagePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2857,6 +3315,16 @@ pub struct DeleteImageOutput {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
+impl DeleteImageOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageOutput");
@@ -2922,6 +3390,16 @@ pub struct DeleteDistributionConfigurationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+}
+impl DeleteDistributionConfigurationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDistributionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2995,6 +3473,16 @@ pub struct DeleteContainerRecipeOutput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
+impl DeleteContainerRecipeOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContainerRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContainerRecipeOutput");
@@ -3060,6 +3548,16 @@ pub struct DeleteComponentOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component build version that was deleted.</p>
     pub component_build_version_arn: std::option::Option<std::string::String>,
+}
+impl DeleteComponentOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component build version that was deleted.</p>
+    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+        self.component_build_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3135,6 +3633,21 @@ pub struct CreateInfrastructureConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by
     /// this request.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
+}
+impl CreateInfrastructureConfigurationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by
+    /// this request.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInfrastructureConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3225,6 +3738,20 @@ pub struct CreateImageRecipeOutput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
+impl CreateImageRecipeOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageRecipeOutput");
@@ -3305,6 +3832,20 @@ pub struct CreateImagePipelineOutput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
     pub image_pipeline_arn: std::option::Option<std::string::String>,
+}
+impl CreateImagePipelineOutput {
+    /// <p> The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p> The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateImagePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3387,6 +3928,20 @@ pub struct CreateImageOutput {
     /// <p> The Amazon Resource Name (ARN) of the image that was created by this request.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
+impl CreateImageOutput {
+    /// <p> The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p> The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageOutput");
@@ -3468,6 +4023,21 @@ pub struct CreateDistributionConfigurationOutput {
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this
     /// request.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+}
+impl CreateDistributionConfigurationOutput {
+    /// <p> The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p> The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this
+    /// request.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDistributionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3558,6 +4128,20 @@ pub struct CreateContainerRecipeOutput {
     /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
+impl CreateContainerRecipeOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The client token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContainerRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContainerRecipeOutput");
@@ -3638,6 +4222,20 @@ pub struct CreateComponentOutput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
     pub component_build_version_arn: std::option::Option<std::string::String>,
+}
+impl CreateComponentOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
+    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+        self.component_build_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3725,6 +4323,20 @@ pub struct CancelImageCreationOutput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image whose creation has been cancelled.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
+}
+impl CancelImageCreationOutput {
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image whose creation has been cancelled.</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelImageCreationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

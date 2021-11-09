@@ -6,6 +6,12 @@ pub struct CancelTaskOutput {
     /// <p>The ID of the task that you are attempting to cancel.</p>
     pub task_id: std::option::Option<std::string::String>,
 }
+impl CancelTaskOutput {
+    /// <p>The ID of the task that you are attempting to cancel.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelTaskOutput");
@@ -55,6 +61,16 @@ pub struct ListTasksOutput {
     pub tasks: std::option::Option<std::vec::Vec<crate::model::TaskSummary>>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTasksOutput {
+    /// <p>A list of task structures containing details about each task.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::TaskSummary]> {
+        self.tasks.as_deref()
+    }
+    /// <p>A pagination token to continue to the next page of tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -127,6 +143,16 @@ pub struct CreateTaskOutput {
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task that you created.</p>
     pub task_arn: std::option::Option<std::string::String>,
+}
+impl CreateTaskOutput {
+    /// <p>The ID of the task that you created.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task that you created.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -206,6 +232,48 @@ pub struct DescribeTaskOutput {
     /// in different ways, such as by purpose, owner, or environment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeTaskOutput {
+    /// <p>The ID of the task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The managed devices that the task was sent to.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>The current state of the task.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::TaskState> {
+        self.state.as_ref()
+    }
+    /// <p>When the <code>CreateTask</code> operation was called.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>When the state of the task was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>When the task was completed.</p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
+    /// <p>The description provided of the task and managed devices.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+    /// in different ways, such as by purpose, owner, or environment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -399,6 +467,17 @@ pub struct ListExecutionsOutput {
     /// <p>A pagination token to continue to the next page of executions.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExecutionsOutput {
+    /// <p>A list of executions. Each execution contains the task ID, the device that the task is
+    /// executing on, the execution ID, and the status of the execution.</p>
+    pub fn executions(&self) -> std::option::Option<&[crate::model::ExecutionSummary]> {
+        self.executions.as_deref()
+    }
+    /// <p>A pagination token to continue to the next page of executions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExecutionsOutput");
@@ -480,6 +559,32 @@ pub struct DescribeExecutionOutput {
     pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the status of the execution was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeExecutionOutput {
+    /// <p>The ID of the task being executed on the device.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The ID of the execution.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p>The ID of the managed device that the task is being executed on.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
+    /// <p>The current state of the execution.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ExecutionState> {
+        self.state.as_ref()
+    }
+    /// <p>When the execution began.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>When the status of the execution was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -608,6 +713,16 @@ pub struct ListDeviceResourcesOutput {
     /// <p>A pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeviceResourcesOutput {
+    /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::ResourceSummary]> {
+        self.resources.as_deref()
+    }
+    /// <p>A pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeviceResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceResourcesOutput");
@@ -678,6 +793,12 @@ pub struct DescribeDeviceEc2InstancesOutput {
     /// <p>A list of structures containing information about each instance. </p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
 }
+impl DescribeDeviceEc2InstancesOutput {
+    /// <p>A list of structures containing information about each instance. </p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
+        self.instances.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeviceEc2InstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceEc2InstancesOutput");
@@ -736,6 +857,16 @@ pub struct ListDevicesOutput {
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
     /// <p>A pagination token to continue to the next page of devices.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDevicesOutput {
+    /// <p>A list of device structures that contain information about the device.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceSummary]> {
+        self.devices.as_deref()
+    }
+    /// <p>A pagination token to continue to the next page of devices.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -831,6 +962,60 @@ pub struct DescribeDeviceOutput {
     pub device_capacities: std::option::Option<std::vec::Vec<crate::model::Capacity>>,
     /// <p>The software installed on the device.</p>
     pub software: std::option::Option<crate::model::SoftwareInformation>,
+}
+impl DescribeDeviceOutput {
+    /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
+    /// online.</p>
+    pub fn last_reached_out_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_reached_out_at.as_ref()
+    }
+    /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
+    /// was refreshed.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+    /// in different ways, such as by purpose, owner, or environment. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The ID of the device that you checked the information for.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn managed_device_arn(&self) -> std::option::Option<&str> {
+        self.managed_device_arn.as_deref()
+    }
+    /// <p>The type of Amazon Web Services Snow Family device.</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+    /// <p>The ID of the job used when ordering the device.</p>
+    pub fn associated_with_job(&self) -> std::option::Option<&str> {
+        self.associated_with_job.as_deref()
+    }
+    /// <p>The current state of the device.</p>
+    pub fn device_state(&self) -> std::option::Option<&crate::model::UnlockState> {
+        self.device_state.as_ref()
+    }
+    /// <p>The network interfaces available on the device.</p>
+    pub fn physical_network_interfaces(
+        &self,
+    ) -> std::option::Option<&[crate::model::PhysicalNetworkInterface]> {
+        self.physical_network_interfaces.as_deref()
+    }
+    /// <p>The hardware specifications of the device. </p>
+    pub fn device_capacities(&self) -> std::option::Option<&[crate::model::Capacity]> {
+        self.device_capacities.as_deref()
+    }
+    /// <p>The software installed on the device.</p>
+    pub fn software(&self) -> std::option::Option<&crate::model::SoftwareInformation> {
+        self.software.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1139,6 +1324,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>The list of tags for the device or task.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The list of tags for the device or task.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

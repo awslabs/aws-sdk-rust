@@ -15,6 +15,25 @@ pub struct ReportSetting {
     /// <p>The number of frameworks a report covers.</p>
     pub number_of_frameworks: i32,
 }
+impl ReportSetting {
+    /// <p>Identifies the report template for the report. Reports are built using a report
+    /// template. The report templates are:</p>
+    /// <p>
+    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+    /// </p>
+    pub fn report_template(&self) -> std::option::Option<&str> {
+        self.report_template.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
+    pub fn framework_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.framework_arns.as_deref()
+    }
+    /// <p>The number of frameworks a report covers.</p>
+    pub fn number_of_frameworks(&self) -> i32 {
+        self.number_of_frameworks
+    }
+}
 impl std::fmt::Debug for ReportSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportSetting");
@@ -119,6 +138,23 @@ pub struct ReportDeliveryChannel {
     /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If
     /// not specified, the default format is <code>CSV</code>.</p>
     pub formats: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ReportDeliveryChannel {
+    /// <p>The unique name of the S3 bucket that receives your reports.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path:
+    /// s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name.
+    /// If not specified, there is no prefix.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If
+    /// not specified, the default format is <code>CSV</code>.</p>
+    pub fn formats(&self) -> std::option::Option<&[std::string::String]> {
+        self.formats.as_deref()
+    }
 }
 impl std::fmt::Debug for ReportDeliveryChannel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -226,6 +262,16 @@ pub struct CalculatedLifecycle {
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
     pub delete_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CalculatedLifecycle {
+    /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
+    pub fn move_to_cold_storage_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.move_to_cold_storage_at.as_ref()
+    }
+    /// <p>A timestamp that specifies when to delete a recovery point.</p>
+    pub fn delete_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.delete_at.as_ref()
+    }
+}
 impl std::fmt::Debug for CalculatedLifecycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedLifecycle");
@@ -302,6 +348,18 @@ pub struct Lifecycle {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be
     /// greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub delete_after_days: std::option::Option<i64>,
+}
+impl Lifecycle {
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold
+    /// storage.</p>
+    pub fn move_to_cold_storage_after_days(&self) -> std::option::Option<i64> {
+        self.move_to_cold_storage_after_days
+    }
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be
+    /// greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
+    pub fn delete_after_days(&self) -> std::option::Option<i64> {
+        self.delete_after_days
+    }
 }
 impl std::fmt::Debug for Lifecycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -381,6 +439,24 @@ pub struct FrameworkControl {
     /// examples of control scopes are: a specific backup plan, all backup plans with a specific
     /// tag, or all backup plans. For more information, see <code>ControlScope</code>.</p>
     pub control_scope: std::option::Option<crate::model::ControlScope>,
+}
+impl FrameworkControl {
+    /// <p>The name of a control. This name is between 1 and 256 characters.</p>
+    pub fn control_name(&self) -> std::option::Option<&str> {
+        self.control_name.as_deref()
+    }
+    /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
+    pub fn control_input_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ControlInputParameter]> {
+        self.control_input_parameters.as_deref()
+    }
+    /// <p>The scope of a control. The control scope defines what the control will evaluate. Three
+    /// examples of control scopes are: a specific backup plan, all backup plans with a specific
+    /// tag, or all backup plans. For more information, see <code>ControlScope</code>.</p>
+    pub fn control_scope(&self) -> std::option::Option<&crate::model::ControlScope> {
+        self.control_scope.as_ref()
+    }
 }
 impl std::fmt::Debug for FrameworkControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -491,6 +567,26 @@ pub struct ControlScope {
     /// is a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ControlScope {
+    /// <p>The ID of the only Amazon Web Services resource that you want your control scope to
+    /// contain.</p>
+    pub fn compliance_resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.compliance_resource_ids.as_deref()
+    }
+    /// <p>Describes whether the control scope includes one or more types of resources, such as
+    /// <code>EFS</code> or <code>RDS</code>.</p>
+    pub fn compliance_resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.compliance_resource_types.as_deref()
+    }
+    /// <p>Describes whether the control scope includes resources with one or more tags. Each tag
+    /// is a key-value pair.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ControlScope {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -613,6 +709,16 @@ pub struct ControlInputParameter {
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
     pub parameter_value: std::option::Option<std::string::String>,
 }
+impl ControlInputParameter {
+    /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>The value of parameter, for example, <code>hourly</code>.</p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
+}
 impl std::fmt::Debug for ControlInputParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ControlInputParameter");
@@ -696,6 +802,33 @@ pub struct AdvancedBackupSetting {
     /// Backup</a>.</p>
     pub backup_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AdvancedBackupSetting {
+    /// <p>Specifies an object containing resource type and backup options. The only supported
+    /// resource type is Amazon EC2 instances with Windows Volume Shadow Copy Service
+    /// (VSS). For a CloudFormation example, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+    /// CloudFormation template to enable Windows VSS</a> in the <i>Backup User Guide</i>.</p>
+    /// <p>Valid values: <code>EC2</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Specifies the backup option for a selected resource. This option is only available for
+    /// Windows VSS backup jobs.</p>
+    /// <p>Valid values: </p>
+    /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+    /// option and create a Windows VSS backup. </p>
+    /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+    /// <code>WindowsVSS</code> option is not enabled by default.</p>
+    /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+    /// exception.</p>
+    /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows
+    /// Backup</a>.</p>
+    pub fn backup_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.backup_options.as_ref()
+    }
 }
 impl std::fmt::Debug for AdvancedBackupSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -814,6 +947,24 @@ pub struct BackupPlanInput {
     /// are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
+}
+impl BackupPlanInput {
+    /// <p>The optional display name of a backup plan.</p>
+    pub fn backup_plan_name(&self) -> std::option::Option<&str> {
+        self.backup_plan_name.as_deref()
+    }
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
+    /// that is used to back up a selection of resources.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::BackupRuleInput]> {
+        self.rules.as_deref()
+    }
+    /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings
+    /// are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    pub fn advanced_backup_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedBackupSetting]> {
+        self.advanced_backup_settings.as_deref()
+    }
 }
 impl std::fmt::Debug for BackupPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -950,6 +1101,63 @@ pub struct BackupRuleInput {
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False
     /// (or not specified) causes Backup to create snapshot backups.</p>
     pub enable_continuous_backup: std::option::Option<bool>,
+}
+impl BackupRuleInput {
+    /// <p>An optional display name for a backup rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+    /// by names that are unique to the account used to create them and the Amazon Web Services
+    /// Region where they are created. They consist of lowercase letters, numbers, and
+    /// hyphens.</p>
+    pub fn target_backup_vault_name(&self) -> std::option::Option<&str> {
+        self.target_backup_vault_name.as_deref()
+    }
+    /// <p>A CRON expression in UTC specifying when Backup initiates a backup
+    /// job.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
+    /// doesn't start successfully. This value is optional.</p>
+    pub fn start_window_minutes(&self) -> std::option::Option<i64> {
+        self.start_window_minutes
+    }
+    /// <p>A value in minutes after a backup job is successfully started before it must be
+    /// completed or it will be canceled by Backup. This value is optional.</p>
+    pub fn completion_window_minutes(&self) -> std::option::Option<i64> {
+        self.completion_window_minutes
+    }
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+    /// it expires. Backup will transition and expire backups automatically according
+    /// to the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+    /// be changed after a backup has been transitioned to cold. </p>
+    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>To help organize your resources, you can assign your own metadata to the resources that
+    /// you create. Each tag is a key-value pair.</p>
+    pub fn recovery_point_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.recovery_point_tags.as_ref()
+    }
+    /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
+    /// operation.</p>
+    pub fn copy_actions(&self) -> std::option::Option<&[crate::model::CopyAction]> {
+        self.copy_actions.as_deref()
+    }
+    /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False
+    /// (or not specified) causes Backup to create snapshot backups.</p>
+    pub fn enable_continuous_backup(&self) -> std::option::Option<bool> {
+        self.enable_continuous_backup
+    }
 }
 impl std::fmt::Debug for BackupRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1179,6 +1387,24 @@ pub struct CopyAction {
     /// the copied backup. For example,
     /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub destination_backup_vault_arn: std::option::Option<std::string::String>,
+}
+impl CopyAction {
+    /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
+    /// a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+    /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
+    /// than the “transition to cold after days” setting. The “transition to cold after days”
+    /// setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for
+    /// the copied backup. For example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn destination_backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.destination_backup_vault_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1430,6 +1656,75 @@ pub struct RestoreJobsListMember {
     /// For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is
     /// Amazon EC2.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl RestoreJobsListMember {
+    /// <p>The account ID that owns the restore job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Uniquely identifies the job that restores a recovery point.</p>
+    pub fn restore_job_id(&self) -> std::option::Option<&str> {
+        self.restore_job_id.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a recovery point; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.recovery_point_arn.as_deref()
+    }
+    /// <p>The date and time a restore job is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
+    /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+    /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+    /// 12:11:30.087 AM.</p>
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_date.as_ref()
+    }
+    /// <p>A status code specifying the state of the job initiated by Backup to restore
+    /// a recovery point.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RestoreJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A detailed message explaining the status of the job to restore a recovery point.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Contains an estimated percentage complete of a job at the time the job status was
+    /// queried.</p>
+    pub fn percent_done(&self) -> std::option::Option<&str> {
+        self.percent_done.as_deref()
+    }
+    /// <p>The size, in bytes, of the restored resource.</p>
+    pub fn backup_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.backup_size_in_bytes
+    }
+    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
+    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The amount of time in minutes that a job restoring a recovery point is expected to
+    /// take.</p>
+    pub fn expected_completion_time_minutes(&self) -> std::option::Option<i64> {
+        self.expected_completion_time_minutes
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+    /// depends on the resource type.</p>
+    pub fn created_resource_arn(&self) -> std::option::Option<&str> {
+        self.created_resource_arn.as_deref()
+    }
+    /// <p>The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store
+    /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+    /// For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is
+    /// Amazon EC2.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreJobsListMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1803,6 +2098,73 @@ pub struct ReportPlan {
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub last_successful_execution_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ReportPlan {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+    /// depends on the resource type.</p>
+    pub fn report_plan_arn(&self) -> std::option::Option<&str> {
+        self.report_plan_arn.as_deref()
+    }
+    /// <p>The unique name of the report plan. This name is between 1 and 256 characters starting
+    /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
+    /// (_).</p>
+    pub fn report_plan_name(&self) -> std::option::Option<&str> {
+        self.report_plan_name.as_deref()
+    }
+    /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
+    pub fn report_plan_description(&self) -> std::option::Option<&str> {
+        self.report_plan_description.as_deref()
+    }
+    /// <p>Identifies the report template for the report. Reports are built using a report
+    /// template. The report templates are:</p>
+    /// <p>
+    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+    /// </p>
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+    /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+    /// coverage by Amazon Web Services Regions and frameworks.</p>
+    pub fn report_setting(&self) -> std::option::Option<&crate::model::ReportSetting> {
+        self.report_setting.as_ref()
+    }
+    /// <p>Contains information about where and how to deliver your reports, specifically your
+    /// Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    pub fn report_delivery_channel(
+        &self,
+    ) -> std::option::Option<&crate::model::ReportDeliveryChannel> {
+        self.report_delivery_channel.as_ref()
+    }
+    /// <p>The deployment status of a report plan. The statuses are:</p>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS |
+    /// COMPLETED</code>
+    /// </p>
+    pub fn deployment_status(&self) -> std::option::Option<&str> {
+        self.deployment_status.as_deref()
+    }
+    /// <p>The date and time that a report plan is created, in Unix format and Coordinated
+    /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
+    /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that a report job associated with this report plan last attempted to
+    /// run, in Unix format and Coordinated Universal Time (UTC). The value of
+    /// <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the
+    /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn last_attempted_execution_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_attempted_execution_time.as_ref()
+    }
+    /// <p>The date and time that a report job associated with this report plan last successfully
+    /// ran, in Unix format and Coordinated Universal Time (UTC). The value of
+    /// <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the
+    /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn last_successful_execution_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_successful_execution_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ReportPlan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportPlan");
@@ -2078,6 +2440,61 @@ pub struct ReportJob {
     /// report.</p>
     pub report_destination: std::option::Option<crate::model::ReportDestination>,
 }
+impl ReportJob {
+    /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded
+    /// string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
+    pub fn report_job_id(&self) -> std::option::Option<&str> {
+        self.report_job_id.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+    /// depends on the resource type.</p>
+    pub fn report_plan_arn(&self) -> std::option::Option<&str> {
+        self.report_plan_arn.as_deref()
+    }
+    /// <p>Identifies the report template for the report. Reports are built using a report
+    /// template. The report templates are: </p>
+    /// <p>
+    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+    /// </p>
+    pub fn report_template(&self) -> std::option::Option<&str> {
+        self.report_template.as_deref()
+    }
+    /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that a report job is completed, in Unix format and Coordinated
+    /// Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds.
+    /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>The status of a report job. The statuses are:</p>
+    /// <p>
+    /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
+    /// </p>
+    /// <p>
+    /// <code>COMPLETED</code> means that the report is available for your review at your
+    /// designated destination. If the status is <code>FAILED</code>, review the
+    /// <code>StatusMessage</code> for the reason.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A message explaining the status of the report job.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the
+    /// report.</p>
+    pub fn report_destination(&self) -> std::option::Option<&crate::model::ReportDestination> {
+        self.report_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for ReportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportJob");
@@ -2282,6 +2699,16 @@ pub struct ReportDestination {
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
     pub s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ReportDestination {
+    /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
+    pub fn s3_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.s3_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for ReportDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportDestination");
@@ -2374,6 +2801,44 @@ pub struct RecoveryPointByResource {
     /// Region where they are created. They consist of lowercase letters, numbers, and
     /// hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
+}
+impl RecoveryPointByResource {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.recovery_point_arn.as_deref()
+    }
+    /// <p>The date and time a recovery point is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>A status code specifying the state of the recovery point.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecoveryPointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The server-side encryption key that is used to protect your backups; for example,
+    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The size, in bytes, of a backup.</p>
+    pub fn backup_size_bytes(&self) -> std::option::Option<i64> {
+        self.backup_size_bytes
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+    /// by names that are unique to the account used to create them and the Amazon Web Services
+    /// Region where they are created. They consist of lowercase letters, numbers, and
+    /// hyphens.</p>
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+        self.backup_vault_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RecoveryPointByResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2662,6 +3127,111 @@ pub struct RecoveryPointByBackupVault {
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
     pub last_restore_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RecoveryPointByBackupVault {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.recovery_point_arn.as_deref()
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+    /// by names that are unique to the account used to create them and the Amazon Web Services
+    /// Region where they are created. They consist of lowercase letters, numbers, and
+    /// hyphens.</p>
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+        self.backup_vault_name.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a backup vault; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.backup_vault_arn.as_deref()
+    }
+    /// <p>The backup vault where the recovery point was originally copied from. If the recovery
+    /// point is restored to the same account this value will be <code>null</code>.</p>
+    pub fn source_backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.source_backup_vault_arn.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
+    /// resource type.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an
+    /// Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+    /// supported resource type is Amazon EC2.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Contains identifying information about the creation of a recovery point, including the
+    /// <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
+    /// and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::RecoveryPointCreator> {
+        self.created_by.as_ref()
+    }
+    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
+    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>A status code specifying the state of the recovery point.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecoveryPointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The date and time a recovery point is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
+    /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+    /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+    /// 12:11:30.087 AM.</p>
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_date.as_ref()
+    }
+    /// <p>The size, in bytes, of a backup.</p>
+    pub fn backup_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.backup_size_in_bytes
+    }
+    /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and
+    /// <code>MoveToColdStorageAt</code> timestamps.</p>
+    pub fn calculated_lifecycle(&self) -> std::option::Option<&crate::model::CalculatedLifecycle> {
+        self.calculated_lifecycle.as_ref()
+    }
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+    /// it expires. Backup transitions and expires backups automatically according to
+    /// the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+    /// be changed after a backup has been transitioned to cold. </p>
+    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>The server-side encryption key that is used to protect your backups; for example,
+    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is
+    /// encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
+    pub fn is_encrypted(&self) -> bool {
+        self.is_encrypted
+    }
+    /// <p>The date and time a recovery point was last restored, in Unix format and Coordinated
+    /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
+    /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+    /// 12:11:30.087 AM.</p>
+    pub fn last_restore_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_restore_time.as_ref()
+    }
 }
 impl std::fmt::Debug for RecoveryPointByBackupVault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3046,6 +3616,27 @@ pub struct RecoveryPointCreator {
     /// resources.</p>
     pub backup_rule_id: std::option::Option<std::string::String>,
 }
+impl RecoveryPointCreator {
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+        self.backup_plan_id.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    pub fn backup_plan_arn(&self) -> std::option::Option<&str> {
+        self.backup_plan_arn.as_deref()
+    }
+    /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at
+    /// most 1,024 bytes long. They cannot be edited.</p>
+    pub fn backup_plan_version(&self) -> std::option::Option<&str> {
+        self.backup_plan_version.as_deref()
+    }
+    /// <p>Uniquely identifies a rule used to schedule the backup of a selection of
+    /// resources.</p>
+    pub fn backup_rule_id(&self) -> std::option::Option<&str> {
+        self.backup_rule_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RecoveryPointCreator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecoveryPointCreator");
@@ -3161,6 +3752,26 @@ pub struct ProtectedResource {
     /// AM.</p>
     pub last_backup_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ProtectedResource {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+    /// depends on the resource type.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The type of Amazon Web Services resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For
+    /// Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is
+    /// Amazon EC2.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The date and time a resource was last backed up, in Unix format and Coordinated
+    /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
+    /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_backup_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ProtectedResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectedResource");
@@ -3273,6 +3884,41 @@ pub struct Framework {
     /// FAILED</code>
     /// </p>
     pub deployment_status: std::option::Option<std::string::String>,
+}
+impl Framework {
+    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
+    /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn framework_name(&self) -> std::option::Option<&str> {
+        self.framework_name.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+    /// depends on the resource type.</p>
+    pub fn framework_arn(&self) -> std::option::Option<&str> {
+        self.framework_arn.as_deref()
+    }
+    /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
+    pub fn framework_description(&self) -> std::option::Option<&str> {
+        self.framework_description.as_deref()
+    }
+    /// <p>The number of controls contained by the framework.</p>
+    pub fn number_of_controls(&self) -> i32 {
+        self.number_of_controls
+    }
+    /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The deployment status of a framework. The statuses are:</p>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED |
+    /// FAILED</code>
+    /// </p>
+    pub fn deployment_status(&self) -> std::option::Option<&str> {
+        self.deployment_status.as_deref()
+    }
 }
 impl std::fmt::Debug for Framework {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3459,6 +4105,80 @@ pub struct CopyJob {
     pub created_by: std::option::Option<crate::model::RecoveryPointCreator>,
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl CopyJob {
+    /// <p>The account ID that owns the copy job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Uniquely identifies a copy job.</p>
+    pub fn copy_job_id(&self) -> std::option::Option<&str> {
+        self.copy_job_id.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    pub fn source_backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.source_backup_vault_arn.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a source recovery point; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn source_recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.source_recovery_point_arn.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for
+    /// example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn destination_backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.destination_backup_vault_arn.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a destination recovery point; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn destination_recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.destination_recovery_point_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store
+    /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
+    /// database.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time
+    /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
+    /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time
+    /// (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
+    /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_date.as_ref()
+    }
+    /// <p>The current state of a copy job.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CopyJobState> {
+        self.state.as_ref()
+    }
+    /// <p>A detailed message explaining the status of the job to copy a resource.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The size, in bytes, of a copy job.</p>
+    pub fn backup_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.backup_size_in_bytes
+    }
+    /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
+    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>Contains information about the backup plan and rule that Backup used to
+    /// initiate the recovery point backup.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::RecoveryPointCreator> {
+        self.created_by.as_ref()
+    }
+    /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3868,6 +4588,82 @@ pub struct BackupVaultListMember {
     /// 12:11:30.087 AM.</p>
     pub lock_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BackupVaultListMember {
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+    /// by names that are unique to the account used to create them and the Amazon Web Services
+    /// Region where they are created. They consist of lowercase letters, numbers, and
+    /// hyphens.</p>
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+        self.backup_vault_name.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.backup_vault_arn.as_deref()
+    }
+    /// <p>The date and time a resource backup is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The server-side encryption key that is used to protect your backups; for example,
+    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>A unique string that identifies the request and allows failed requests to be retried
+    /// without the risk of running the operation twice.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The number of recovery points that are stored in a backup vault.</p>
+    pub fn number_of_recovery_points(&self) -> i64 {
+        self.number_of_recovery_points
+    }
+    /// <p>A Boolean value that indicates whether Backup Vault Lock applies to the
+    /// selected backup vault. If <code>true</code>, Vault Lock prevents delete and update
+    /// operations on the recovery points in the selected vault.</p>
+    pub fn locked(&self) -> std::option::Option<bool> {
+        self.locked
+    }
+    /// <p>The Backup Vault Lock setting that specifies the minimum retention period
+    /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+    /// does not enforce a minimum retention period.</p>
+    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+    /// retention period equal to or longer than the minimum retention period. If the job's
+    /// retention period is shorter than that minimum retention period, then the vault fails the
+    /// backup or copy job, and you should either modify your lifecycle settings or use a different
+    /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+    /// affected.</p>
+    pub fn min_retention_days(&self) -> std::option::Option<i64> {
+        self.min_retention_days
+    }
+    /// <p>The Backup Vault Lock setting that specifies the maximum retention period
+    /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+    /// does not enforce a maximum retention period on the recovery points in the vault (allowing
+    /// indefinite storage).</p>
+    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+    /// retention period equal to or shorter than the maximum retention period. If the job's
+    /// retention period is longer than that maximum retention period, then the vault fails the
+    /// backup or copy job, and you should either modify your lifecycle settings or use a different
+    /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+    /// affected.</p>
+    pub fn max_retention_days(&self) -> std::option::Option<i64> {
+        self.max_retention_days
+    }
+    /// <p>The date and time when Backup Vault Lock configuration becomes immutable,
+    /// meaning it cannot be changed or deleted.</p>
+    /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change
+    /// your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
+    /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+    /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+    /// 12:11:30.087 AM.</p>
+    pub fn lock_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.lock_date.as_ref()
+    }
+}
 impl std::fmt::Debug for BackupVaultListMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupVaultListMember");
@@ -4134,6 +4930,37 @@ pub struct BackupSelectionsListMember {
     /// for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
+impl BackupSelectionsListMember {
+    /// <p>Uniquely identifies a request to assign a set of resources to a backup plan.</p>
+    pub fn selection_id(&self) -> std::option::Option<&str> {
+        self.selection_id.as_deref()
+    }
+    /// <p>The display name of a resource selection document.</p>
+    pub fn selection_name(&self) -> std::option::Option<&str> {
+        self.selection_name.as_deref()
+    }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+        self.backup_plan_id.as_deref()
+    }
+    /// <p>The date and time a backup plan is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>A unique string that identifies the request and allows failed requests to be retried
+    /// without the risk of running the operation twice.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point;
+    /// for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for BackupSelectionsListMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupSelectionsListMember");
@@ -4297,6 +5124,58 @@ pub struct BackupPlansListMember {
     /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
+}
+impl BackupPlansListMember {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    pub fn backup_plan_arn(&self) -> std::option::Option<&str> {
+        self.backup_plan_arn.as_deref()
+    }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+        self.backup_plan_id.as_deref()
+    }
+    /// <p>The date and time a resource backup plan is created, in Unix format and Coordinated
+    /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
+    /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deletion_date.as_ref()
+    }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
+    /// long. Version IDs cannot be edited.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The display name of a saved backup plan.</p>
+    pub fn backup_plan_name(&self) -> std::option::Option<&str> {
+        self.backup_plan_name.as_deref()
+    }
+    /// <p>A unique string that identifies the request and allows failed requests to be retried
+    /// without the risk of running the operation twice.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The last time a job to back up resources was run with this rule. A date and time, in
+    /// Unix format and Coordinated Universal Time (UTC). The value of
+    /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
+    /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn last_execution_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_execution_date.as_ref()
+    }
+    /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
+    pub fn advanced_backup_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedBackupSetting]> {
+        self.advanced_backup_settings.as_deref()
+    }
 }
 impl std::fmt::Debug for BackupPlansListMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4510,6 +5389,16 @@ pub struct BackupPlanTemplatesListMember {
     /// <p>The optional display name of a backup plan template.</p>
     pub backup_plan_template_name: std::option::Option<std::string::String>,
 }
+impl BackupPlanTemplatesListMember {
+    /// <p>Uniquely identifies a stored backup plan template.</p>
+    pub fn backup_plan_template_id(&self) -> std::option::Option<&str> {
+        self.backup_plan_template_id.as_deref()
+    }
+    /// <p>The optional display name of a backup plan template.</p>
+    pub fn backup_plan_template_name(&self) -> std::option::Option<&str> {
+        self.backup_plan_template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for BackupPlanTemplatesListMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupPlanTemplatesListMember");
@@ -4648,6 +5537,124 @@ pub struct BackupJob {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents the type of backup for a backup job.</p>
     pub backup_type: std::option::Option<std::string::String>,
+}
+impl BackupJob {
+    /// <p>The account ID that owns the backup job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    pub fn backup_job_id(&self) -> std::option::Option<&str> {
+        self.backup_job_id.as_deref()
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+    /// by names that are unique to the account used to create them and the Amazon Web Services
+    /// Region where they are created. They consist of lowercase letters, numbers, and
+    /// hyphens.</p>
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+        self.backup_vault_name.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.backup_vault_arn.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a recovery point; for example,
+    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.recovery_point_arn.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
+    /// resource type.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time
+    /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
+    /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time a job to create a backup job is completed, in Unix format and
+    /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+    /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+    /// 12:11:30.087 AM.</p>
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_date.as_ref()
+    }
+    /// <p>The current state of a resource recovery point.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::BackupJobState> {
+        self.state.as_ref()
+    }
+    /// <p>A detailed message explaining the status of the job to back up a resource.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Contains an estimated percentage complete of a job at the time the job status was
+    /// queried.</p>
+    pub fn percent_done(&self) -> std::option::Option<&str> {
+        self.percent_done.as_deref()
+    }
+    /// <p>The size, in bytes, of a backup.</p>
+    pub fn backup_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.backup_size_in_bytes
+    }
+    /// <p>Specifies the IAM role ARN used to create the target recovery point. IAM roles other
+    /// than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code>
+    /// in the role name. For example,
+    /// <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those
+    /// strings lack permissions to perform backup jobs.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>Contains identifying information about the creation of a backup job, including the
+    /// <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
+    /// and <code>BackupRuleId</code> of the backup plan used to create it.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::RecoveryPointCreator> {
+        self.created_by.as_ref()
+    }
+    /// <p>The date and time a job to back up resources is expected to be completed, in Unix format
+    /// and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is
+    /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
+    /// 26, 2018 12:11:30.087 AM.</p>
+    pub fn expected_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expected_completion_date.as_ref()
+    }
+    /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job
+    /// must be started before it is canceled. The value is calculated by adding the start window
+    /// to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2
+    /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
+    /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
+    /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn start_by(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_by.as_ref()
+    }
+    /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+    /// supported resource type is Amazon EC2.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The size in bytes transferred to a backup vault at the time that the job status was
+    /// queried.</p>
+    pub fn bytes_transferred(&self) -> std::option::Option<i64> {
+        self.bytes_transferred
+    }
+    /// <p>Specifies the backup option for a selected resource. This option is only available for
+    /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+    /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+    /// <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an
+    /// invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
+    pub fn backup_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.backup_options.as_ref()
+    }
+    /// <p>Represents the type of backup for a backup job.</p>
+    pub fn backup_type(&self) -> std::option::Option<&str> {
+        self.backup_type.as_deref()
+    }
 }
 impl std::fmt::Debug for BackupJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5162,6 +6169,29 @@ pub struct BackupSelection {
     /// Assigns the backup plan to every resource with at least one matching tag.</p>
     pub list_of_tags: std::option::Option<std::vec::Vec<crate::model::Condition>>,
 }
+impl BackupSelection {
+    /// <p>The display name of a resource selection document.</p>
+    pub fn selection_name(&self) -> std::option::Option<&str> {
+        self.selection_name.as_deref()
+    }
+    /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+    /// target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>An array of strings that contain Amazon Resource Names (ARNs)
+    ///
+    /// of resources to assign to a backup plan.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+    /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
+    /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+    /// Assigns the backup plan to every resource with at least one matching tag.</p>
+    pub fn list_of_tags(&self) -> std::option::Option<&[crate::model::Condition]> {
+        self.list_of_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for BackupSelection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupSelection");
@@ -5288,6 +6318,23 @@ pub struct Condition {
     /// <p>The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
     /// "accounting"</code>, <code>"accounting"</code> is the value.</p>
     pub condition_value: std::option::Option<std::string::String>,
+}
+impl Condition {
+    /// <p>An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
+    /// used to filter resources in a selection.</p>
+    pub fn condition_type(&self) -> std::option::Option<&crate::model::ConditionType> {
+        self.condition_type.as_ref()
+    }
+    /// <p>The key in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
+    /// "accounting"</code>, <code>"ec2:ResourceTag/Department"</code> is the key.</p>
+    pub fn condition_key(&self) -> std::option::Option<&str> {
+        self.condition_key.as_deref()
+    }
+    /// <p>The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
+    /// "accounting"</code>, <code>"accounting"</code> is the value.</p>
+    pub fn condition_value(&self) -> std::option::Option<&str> {
+        self.condition_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Condition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5438,6 +6485,23 @@ pub struct BackupPlan {
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
 }
+impl BackupPlan {
+    /// <p>The display name of a backup plan.</p>
+    pub fn backup_plan_name(&self) -> std::option::Option<&str> {
+        self.backup_plan_name.as_deref()
+    }
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
+    /// that is used to back up a selection of resources. </p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::BackupRule]> {
+        self.rules.as_deref()
+    }
+    /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+    pub fn advanced_backup_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedBackupSetting]> {
+        self.advanced_backup_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for BackupPlan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupPlan");
@@ -5577,6 +6641,71 @@ pub struct BackupRule {
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False
     /// (or not specified) causes Backup to create snapshot backups.</p>
     pub enable_continuous_backup: std::option::Option<bool>,
+}
+impl BackupRule {
+    /// <p>An optional display name for a backup rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+    /// by names that are unique to the account used to create them and the Amazon Web Services
+    /// Region where they are created. They consist of lowercase letters, numbers, and
+    /// hyphens.</p>
+    pub fn target_backup_vault_name(&self) -> std::option::Option<&str> {
+        self.target_backup_vault_name.as_deref()
+    }
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For
+    /// more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+    /// Guide.</i>. Prior to specifying a value for this parameter, we recommend testing
+    /// your cron expression using one of the many available cron generator and testing
+    /// tools.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
+    /// doesn't start successfully. This value is optional.</p>
+    pub fn start_window_minutes(&self) -> std::option::Option<i64> {
+        self.start_window_minutes
+    }
+    /// <p>A value in minutes after a backup job is successfully started before it must be
+    /// completed or it will be canceled by Backup. This value is optional.</p>
+    pub fn completion_window_minutes(&self) -> std::option::Option<i64> {
+        self.completion_window_minutes
+    }
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+    /// it expires. Backup transitions and expires backups automatically according to
+    /// the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+    /// be changed after a backup has been transitioned to cold. </p>
+    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>An array of key-value pair strings that are assigned to resources that are associated
+    /// with this rule when restored from backup.</p>
+    pub fn recovery_point_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.recovery_point_tags.as_ref()
+    }
+    /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of
+    /// resources.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
+    /// operation.</p>
+    pub fn copy_actions(&self) -> std::option::Option<&[crate::model::CopyAction]> {
+        self.copy_actions.as_deref()
+    }
+    /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False
+    /// (or not specified) causes Backup to create snapshot backups.</p>
+    pub fn enable_continuous_backup(&self) -> std::option::Option<bool> {
+        self.enable_continuous_backup
+    }
 }
 impl std::fmt::Debug for BackupRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

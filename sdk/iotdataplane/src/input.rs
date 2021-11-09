@@ -1252,6 +1252,20 @@ pub struct UpdateThingShadowInput {
     /// <p>The state information, in JSON format.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
+impl UpdateThingShadowInput {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the shadow.</p>
+    pub fn shadow_name(&self) -> std::option::Option<&str> {
+        self.shadow_name.as_deref()
+    }
+    /// <p>The state information, in JSON format.</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateThingShadowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThingShadowInput");
@@ -1282,6 +1296,31 @@ pub struct PublishInput {
     /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
+impl PublishInput {
+    /// <p>The name of the MQTT topic.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The Quality of Service (QoS) level.</p>
+    pub fn qos(&self) -> i32 {
+        self.qos
+    }
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
+    /// <p>Valid values: <code>true</code> | <code>false</code>
+    /// </p>
+    /// <p>Default value: <code>false</code>
+    /// </p>
+    pub fn retain(&self) -> bool {
+        self.retain
+    }
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+    /// <p>Publishing an empty (null) payload with <b>retain</b> =
+    /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for PublishInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishInput");
@@ -1304,6 +1343,18 @@ pub struct ListRetainedMessagesInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: i32,
 }
+impl ListRetainedMessagesInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListRetainedMessagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRetainedMessagesInput");
@@ -1324,6 +1375,20 @@ pub struct ListNamedShadowsForThingInput {
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
 }
+impl ListNamedShadowsForThingInput {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for ListNamedShadowsForThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNamedShadowsForThingInput");
@@ -1343,6 +1408,16 @@ pub struct GetThingShadowInput {
     /// <p>The name of the shadow.</p>
     pub shadow_name: std::option::Option<std::string::String>,
 }
+impl GetThingShadowInput {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the shadow.</p>
+    pub fn shadow_name(&self) -> std::option::Option<&str> {
+        self.shadow_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetThingShadowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetThingShadowInput");
@@ -1358,6 +1433,12 @@ impl std::fmt::Debug for GetThingShadowInput {
 pub struct GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
     pub topic: std::option::Option<std::string::String>,
+}
+impl GetRetainedMessageInput {
+    /// <p>The topic name of the retained message to retrieve.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRetainedMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1375,6 +1456,16 @@ pub struct DeleteThingShadowInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the shadow.</p>
     pub shadow_name: std::option::Option<std::string::String>,
+}
+impl DeleteThingShadowInput {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the shadow.</p>
+    pub fn shadow_name(&self) -> std::option::Option<&str> {
+        self.shadow_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteThingShadowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

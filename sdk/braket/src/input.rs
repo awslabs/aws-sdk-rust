@@ -121,10 +121,7 @@ impl CancelQuantumTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_quantum_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_quantum_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -382,10 +379,7 @@ impl CreateQuantumTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_quantum_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_quantum_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1006,10 +1000,7 @@ impl SearchDevicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_devices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1188,10 +1179,7 @@ impl SearchQuantumTasksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_quantum_tasks(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_quantum_tasks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1380,10 +1368,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1633,6 +1618,20 @@ pub struct SearchQuantumTasksInput {
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SearchQuantumTasksFilter>>,
 }
+impl SearchQuantumTasksInput {
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SearchQuantumTasksFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchQuantumTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchQuantumTasksInput");
@@ -1665,6 +1664,43 @@ pub struct CreateQuantumTaskInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateQuantumTaskInput {
+    /// <p>The client token associated with the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The ARN of the device to run the task on.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The parameters for the device to run the task on.</p>
+    pub fn device_parameters(&self) -> std::option::Option<&str> {
+        self.device_parameters.as_deref()
+    }
+    /// <p>The number of shots to use for the task.</p>
+    pub fn shots(&self) -> std::option::Option<i64> {
+        self.shots
+    }
+    /// <p>The S3 bucket to store task result files in.</p>
+    pub fn output_s3_bucket(&self) -> std::option::Option<&str> {
+        self.output_s3_bucket.as_deref()
+    }
+    /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.output_s3_key_prefix.as_deref()
+    }
+    /// <p>The action associated with the task.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>Tags to be added to the quantum task you're creating.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateQuantumTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQuantumTaskInput");
@@ -1689,6 +1725,16 @@ pub struct CancelQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CancelQuantumTaskInput {
+    /// <p>The ARN of the task to cancel.</p>
+    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
+        self.quantum_task_arn.as_deref()
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelQuantumTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelQuantumTaskInput");
@@ -1704,6 +1750,12 @@ impl std::fmt::Debug for CancelQuantumTaskInput {
 pub struct GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
     pub quantum_task_arn: std::option::Option<std::string::String>,
+}
+impl GetQuantumTaskInput {
+    /// <p>the ARN of the task to retrieve.</p>
+    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
+        self.quantum_task_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetQuantumTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1724,6 +1776,20 @@ pub struct SearchDevicesInput {
     /// <p>The filter values to use to search for a device.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SearchDevicesFilter>>,
 }
+impl SearchDevicesInput {
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filter values to use to search for a device.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SearchDevicesFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchDevicesInput");
@@ -1741,6 +1807,12 @@ pub struct GetDeviceInput {
     /// <p>The ARN of the device to retrieve.</p>
     pub device_arn: std::option::Option<std::string::String>,
 }
+impl GetDeviceInput {
+    /// <p>The ARN of the device to retrieve.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceInput");
@@ -1757,6 +1829,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specify the keys for the tags to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Specify the keys for the tags to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1777,6 +1859,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Specify the tags to add to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -1792,6 +1887,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

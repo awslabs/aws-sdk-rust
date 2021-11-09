@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_query_forecast_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::QueryForecastInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.forecast_arn {
         object.key("ForecastArn").string(var_1);
     }
@@ -24,4 +24,5 @@ pub fn serialize_structure_crate_input_query_forecast_input(
     if let Some(var_8) = &input.next_token {
         object.key("NextToken").string(var_8);
     }
+    Ok(())
 }

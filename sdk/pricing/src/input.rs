@@ -137,10 +137,7 @@ impl DescribeServicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_services(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_services(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -331,10 +328,7 @@ impl GetAttributeValuesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_attribute_values(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_attribute_values(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -549,10 +543,7 @@ impl GetProductsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_products(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_products(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -632,6 +623,31 @@ pub struct GetProductsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetProductsInput {
+    /// <p>The code for the service whose products you want to retrieve. </p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The list of filters that limit the returned products. only products that match all filters
+    /// are returned.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The format version that you want the response to be in.</p>
+    /// <p>Valid values are: <code>aws_v1</code>
+    /// </p>
+    pub fn format_version(&self) -> std::option::Option<&str> {
+        self.format_version.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetProductsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProductsInput");
@@ -657,6 +673,25 @@ pub struct GetAttributeValuesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetAttributeValuesInput {
+    /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
+    /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetAttributeValuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -686,6 +721,29 @@ pub struct DescribeServicesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want returned in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeServicesInput {
+    /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
+    /// You can use
+    /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
+    /// To retrieve a list of all services, leave this blank.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The format version that you want the response to be in.</p>
+    /// <p>Valid values are: <code>aws_v1</code>
+    /// </p>
+    pub fn format_version(&self) -> std::option::Option<&str> {
+        self.format_version.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results that you want returned in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeServicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

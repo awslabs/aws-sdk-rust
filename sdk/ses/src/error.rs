@@ -7563,6 +7563,12 @@ pub struct TemplateDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl TemplateDoesNotExistException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TemplateDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateDoesNotExistException");
@@ -7646,6 +7652,12 @@ pub struct InvalidTemplateException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidTemplateException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidTemplateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidTemplateException");
@@ -7728,6 +7740,12 @@ pub struct RuleSetDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl RuleSetDoesNotExistException {
+    /// <p>Indicates that the named receipt rule set does not exist.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for RuleSetDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleSetDoesNotExistException");
@@ -7806,6 +7824,12 @@ pub struct RuleDoesNotExistException {
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl RuleDoesNotExistException {
+    /// <p>Indicates that the named receipt rule does not exist.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for RuleDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7955,6 +7979,12 @@ pub struct InvalidSnsTopicException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidSnsTopicException {
+    /// <p>Indicates that the topic does not exist.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidSnsTopicException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidSnsTopicException");
@@ -8036,6 +8066,12 @@ pub struct InvalidS3ConfigurationException {
     pub bucket: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidS3ConfigurationException {
+    /// <p>Indicated that the S3 Bucket was not found.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidS3ConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8119,6 +8155,12 @@ pub struct InvalidLambdaFunctionException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidLambdaFunctionException {
+    /// <p>Indicates that the ARN of the function was not found.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidLambdaFunctionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidLambdaFunctionException");
@@ -8199,6 +8241,13 @@ pub struct FromEmailAddressNotVerifiedException {
     pub from_email_address: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl FromEmailAddressNotVerifiedException {
+    /// <p>Indicates that the from email address associated with the custom verification email
+    /// template is not verified.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
 }
 impl std::fmt::Debug for FromEmailAddressNotVerifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8284,6 +8333,12 @@ pub struct CustomVerificationEmailTemplateDoesNotExistException {
     pub custom_verification_email_template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl CustomVerificationEmailTemplateDoesNotExistException {
+    /// <p>Indicates that the provided custom verification email template does not exist.</p>
+    pub fn custom_verification_email_template_name(&self) -> std::option::Option<&str> {
+        self.custom_verification_email_template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomVerificationEmailTemplateDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8441,6 +8496,13 @@ pub struct TrackingOptionsDoesNotExistException {
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl TrackingOptionsDoesNotExistException {
+    /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration
+    /// set.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TrackingOptionsDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8600,6 +8662,12 @@ pub struct ConfigurationSetDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ConfigurationSetDoesNotExistException {
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfigurationSetDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationSetDoesNotExistException");
@@ -8684,6 +8752,16 @@ pub struct InvalidSnsDestinationException {
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidSnsDestinationException {
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Indicates that the event destination does not exist.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidSnsDestinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8789,6 +8867,16 @@ pub struct InvalidFirehoseDestinationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidFirehoseDestinationException {
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Indicates that the event destination does not exist.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidFirehoseDestinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidFirehoseDestinationException");
@@ -8890,6 +8978,16 @@ pub struct InvalidCloudWatchDestinationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidCloudWatchDestinationException {
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Indicates that the event destination does not exist.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidCloudWatchDestinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidCloudWatchDestinationException");
@@ -8989,6 +9087,16 @@ pub struct EventDestinationDoesNotExistException {
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl EventDestinationDoesNotExistException {
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Indicates that the event destination does not exist.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
 }
 impl std::fmt::Debug for EventDestinationDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9090,6 +9198,12 @@ pub struct MissingRenderingAttributeException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl MissingRenderingAttributeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for MissingRenderingAttributeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MissingRenderingAttributeException");
@@ -9172,6 +9286,12 @@ pub struct InvalidRenderingParameterException {
     pub template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidRenderingParameterException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidRenderingParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9387,6 +9507,12 @@ pub struct ConfigurationSetSendingPausedException {
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ConfigurationSetSendingPausedException {
+    /// <p>The name of the configuration set for which email sending is disabled.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigurationSetSendingPausedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9729,6 +9855,13 @@ pub struct CannotDeleteException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl CannotDeleteException {
+    /// <p>Indicates that a resource could not be deleted because no resource with the specified
+    /// name exists.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CannotDeleteException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CannotDeleteException");
@@ -9810,6 +9943,13 @@ pub struct AlreadyExistsException {
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl AlreadyExistsException {
+    /// <p>Indicates that a resource could not be created because the resource name already
+    /// exists.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9893,6 +10033,13 @@ pub struct CustomVerificationEmailTemplateAlreadyExistsException {
     pub custom_verification_email_template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl CustomVerificationEmailTemplateAlreadyExistsException {
+    /// <p>Indicates that the provided custom verification email template with the specified
+    /// template name already exists.</p>
+    pub fn custom_verification_email_template_name(&self) -> std::option::Option<&str> {
+        self.custom_verification_email_template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomVerificationEmailTemplateAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9990,6 +10137,13 @@ pub struct TrackingOptionsAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl TrackingOptionsAlreadyExistsException {
+    /// <p>Indicates that a TrackingOptions object already exists in the specified configuration
+    /// set.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TrackingOptionsAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrackingOptionsAlreadyExistsException");
@@ -10076,6 +10230,16 @@ pub struct EventDestinationAlreadyExistsException {
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl EventDestinationAlreadyExistsException {
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Indicates that the event destination does not exist.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
 }
 impl std::fmt::Debug for EventDestinationAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10240,6 +10404,12 @@ pub struct ConfigurationSetAlreadyExistsException {
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ConfigurationSetAlreadyExistsException {
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigurationSetAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

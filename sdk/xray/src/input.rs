@@ -104,10 +104,7 @@ impl BatchGetTracesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_traces(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_traces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -379,10 +376,7 @@ impl CreateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -601,10 +595,7 @@ impl CreateSamplingRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_sampling_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_sampling_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -760,10 +751,7 @@ impl DeleteGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -920,10 +908,7 @@ impl DeleteSamplingRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_sampling_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_sampling_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1194,10 +1179,7 @@ impl GetGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1336,10 +1318,7 @@ impl GetGroupsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_groups(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1481,10 +1460,7 @@ impl GetInsightInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_insight(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_insight(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1653,10 +1629,7 @@ impl GetInsightEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_insight_events(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_insight_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1849,10 +1822,7 @@ impl GetInsightImpactGraphInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_insight_impact_graph(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2086,10 +2056,7 @@ impl GetInsightSummariesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_insight_summaries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_insight_summaries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2234,10 +2201,7 @@ impl GetSamplingRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sampling_rules(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_sampling_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2383,7 +2347,7 @@ impl GetSamplingStatisticSummariesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sampling_statistic_summaries(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_sampling_statistic_summaries(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2542,10 +2506,7 @@ impl GetSamplingTargetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sampling_targets(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_sampling_targets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2744,10 +2705,7 @@ impl GetServiceGraphInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_graph(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_service_graph(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2992,7 +2950,7 @@ impl GetTimeSeriesServiceStatisticsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_time_series_service_statistics(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_time_series_service_statistics(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3158,10 +3116,8 @@ impl GetTraceGraphInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_trace_graph(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_trace_graph(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3401,10 +3357,7 @@ impl GetTraceSummariesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_trace_summaries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_trace_summaries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3563,10 +3516,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3768,10 +3720,7 @@ impl PutEncryptionConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_encryption_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_encryption_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3968,10 +3917,7 @@ impl PutTelemetryRecordsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_telemetry_records(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_telemetry_records(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4127,10 +4073,7 @@ impl PutTraceSegmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_trace_segments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_trace_segments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4345,10 +4288,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4513,10 +4453,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4725,10 +4662,7 @@ impl UpdateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4876,10 +4810,7 @@ impl UpdateSamplingRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_sampling_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_sampling_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4948,6 +4879,12 @@ pub struct UpdateSamplingRuleInput {
     /// <p>The rule and fields to change.</p>
     pub sampling_rule_update: std::option::Option<crate::model::SamplingRuleUpdate>,
 }
+impl UpdateSamplingRuleInput {
+    /// <p>The rule and fields to change.</p>
+    pub fn sampling_rule_update(&self) -> std::option::Option<&crate::model::SamplingRuleUpdate> {
+        self.sampling_rule_update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSamplingRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSamplingRuleInput");
@@ -4979,6 +4916,36 @@ pub struct UpdateGroupInput {
     /// </ul>
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
+impl UpdateGroupInput {
+    /// <p>The case-sensitive name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ARN that was generated upon creation.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>The updated filter expression defining criteria by which to group traces.</p>
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
+        self.filter_expression.as_deref()
+    }
+    /// <p>The structure containing configurations related to insights.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
+    /// group or false to disable insights for the group.</p>
+    /// </li>
+    /// <li>
+    /// <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
+    /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
+    /// </li>
+    /// </ul>
+    pub fn insights_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InsightsConfiguration> {
+        self.insights_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupInput");
@@ -4998,6 +4965,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5042,6 +5019,41 @@ pub struct TagResourceInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
+    /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+    /// in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of user-applied tags per resource: 50</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum tag key length: 128 Unicode characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum tag value length: 256 Unicode characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
+    /// / = + - and @</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
+    /// cannot edit or delete system tags.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5058,6 +5070,13 @@ pub struct PutTraceSegmentsInput {
     /// <p>A string containing a JSON document defining one or more segments or
     /// subsegments.</p>
     pub trace_segment_documents: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PutTraceSegmentsInput {
+    /// <p>A string containing a JSON document defining one or more segments or
+    /// subsegments.</p>
+    pub fn trace_segment_documents(&self) -> std::option::Option<&[std::string::String]> {
+        self.trace_segment_documents.as_deref()
+    }
 }
 impl std::fmt::Debug for PutTraceSegmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5079,6 +5098,24 @@ pub struct PutTelemetryRecordsInput {
     pub hostname: std::option::Option<std::string::String>,
     /// <p></p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl PutTelemetryRecordsInput {
+    /// <p></p>
+    pub fn telemetry_records(&self) -> std::option::Option<&[crate::model::TelemetryRecord]> {
+        self.telemetry_records.as_deref()
+    }
+    /// <p></p>
+    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+        self.ec2_instance_id.as_deref()
+    }
+    /// <p></p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p></p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutTelemetryRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5121,6 +5158,37 @@ pub struct PutEncryptionConfigInput {
     /// to <code>NONE</code> for default encryption.</p>
     pub r#type: std::option::Option<crate::model::EncryptionType>,
 }
+impl PutEncryptionConfigInput {
+    /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Alias</b> - The name of the key. For example,
+    /// <code>alias/MyKey</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Key ID</b> - The KMS key ID of the key. For example,
+    /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ARN</b> - The full Amazon Resource Name of the key ID or alias.
+    /// For example,
+    /// <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+    /// Use this format to specify a key in a different account.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
+    /// to <code>NONE</code> for default encryption.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEncryptionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEncryptionConfigInput");
@@ -5139,6 +5207,17 @@ pub struct ListTagsForResourceInput {
     /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
     /// the current page of results as the value of this parameter to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+    /// the current page of results as the value of this parameter to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5172,6 +5251,40 @@ pub struct GetTraceSummariesInput {
     /// of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetTraceSummariesInput {
+    /// <p>The start of the time frame for which to retrieve traces.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time frame for which to retrieve traces.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    pub fn time_range_type(&self) -> std::option::Option<&crate::model::TimeRangeType> {
+        self.time_range_type.as_ref()
+    }
+    /// <p>Set to <code>true</code> to get summaries for only a subset of available
+    /// traces.</p>
+    pub fn sampling(&self) -> std::option::Option<bool> {
+        self.sampling
+    }
+    /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
+    /// Value.</p>
+    pub fn sampling_strategy(&self) -> std::option::Option<&crate::model::SamplingStrategy> {
+        self.sampling_strategy.as_ref()
+    }
+    /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
+    /// meet certain requirements.</p>
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
+        self.filter_expression.as_deref()
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page
+    /// of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTraceSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTraceSummariesInput");
@@ -5194,6 +5307,16 @@ pub struct GetTraceGraphInput {
     pub trace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTraceGraphInput {
+    /// <p>Trace IDs of requests for which to generate a service graph.</p>
+    pub fn trace_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.trace_ids.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTraceGraphInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5228,6 +5351,43 @@ pub struct GetTimeSeriesServiceStatisticsInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetTimeSeriesServiceStatisticsInput {
+    /// <p>The start of the time frame for which to aggregate statistics.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time frame for which to aggregate statistics.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>A filter expression defining entities that will be aggregated for statistics.
+    /// Supports ID, service, and edge functions. If no selector expression is specified, edge
+    /// statistics are returned. </p>
+    pub fn entity_selector_expression(&self) -> std::option::Option<&str> {
+        self.entity_selector_expression.as_deref()
+    }
+    /// <p>Aggregation period in seconds.</p>
+    pub fn period(&self) -> std::option::Option<i32> {
+        self.period
+    }
+    /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
+    /// EntitySelectorExpression ID be provided.</p>
+    pub fn forecast_statistics(&self) -> std::option::Option<bool> {
+        self.forecast_statistics
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTimeSeriesServiceStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTimeSeriesServiceStatisticsInput");
@@ -5261,6 +5421,28 @@ pub struct GetServiceGraphInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetServiceGraphInput {
+    /// <p>The start of the time frame for which to generate a graph.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the timeframe for which to generate a graph.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The name of a group based on which you want to generate a graph.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceGraphInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceGraphInput");
@@ -5281,6 +5463,14 @@ pub struct GetSamplingTargetsInput {
     pub sampling_statistics_documents:
         std::option::Option<std::vec::Vec<crate::model::SamplingStatisticsDocument>>,
 }
+impl GetSamplingTargetsInput {
+    /// <p>Information about rules that the service is using to sample requests.</p>
+    pub fn sampling_statistics_documents(
+        &self,
+    ) -> std::option::Option<&[crate::model::SamplingStatisticsDocument]> {
+        self.sampling_statistics_documents.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSamplingTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSamplingTargetsInput");
@@ -5299,6 +5489,12 @@ pub struct GetSamplingStatisticSummariesInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSamplingStatisticSummariesInput {
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSamplingStatisticSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSamplingStatisticSummariesInput");
@@ -5313,6 +5509,12 @@ impl std::fmt::Debug for GetSamplingStatisticSummariesInput {
 pub struct GetSamplingRulesInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetSamplingRulesInput {
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSamplingRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5341,6 +5543,37 @@ pub struct GetInsightSummariesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetInsightSummariesInput {
+    /// <p>The list of insight states. </p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::InsightState]> {
+        self.states.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
+    /// old.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The maximum number of results to display.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInsightSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5371,6 +5604,26 @@ pub struct GetInsightImpactGraphInput {
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetInsightImpactGraphInput {
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
+    /// provided and can't be more than 30 days old.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
+    /// The time range between the start time and end time can't be more than six hours. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInsightImpactGraphInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightImpactGraphInput");
@@ -5393,6 +5646,20 @@ pub struct GetInsightEventsInput {
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetInsightEventsInput {
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>Used to retrieve at most the specified value of events.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInsightEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightEventsInput");
@@ -5410,6 +5677,12 @@ pub struct GetInsightInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     pub insight_id: std::option::Option<std::string::String>,
 }
+impl GetInsightInput {
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightInput");
@@ -5424,6 +5697,12 @@ impl std::fmt::Debug for GetInsightInput {
 pub struct GetGroupsInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetGroupsInput {
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5441,6 +5720,16 @@ pub struct GetGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the group that was generated on creation.</p>
     pub group_arn: std::option::Option<std::string::String>,
+}
+impl GetGroupInput {
+    /// <p>The case-sensitive name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ARN of the group that was generated on creation.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5471,6 +5760,16 @@ pub struct DeleteSamplingRuleInput {
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub rule_arn: std::option::Option<std::string::String>,
 }
+impl DeleteSamplingRuleInput {
+    /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSamplingRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSamplingRuleInput");
@@ -5488,6 +5787,16 @@ pub struct DeleteGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the group that was generated on creation.</p>
     pub group_arn: std::option::Option<std::string::String>,
+}
+impl DeleteGroupInput {
+    /// <p>The case-sensitive name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ARN of the group that was generated on creation.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5531,6 +5840,41 @@ pub struct CreateSamplingRuleInput {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateSamplingRuleInput {
+    /// <p>The rule definition.</p>
+    pub fn sampling_rule(&self) -> std::option::Option<&crate::model::SamplingRule> {
+        self.sampling_rule.as_ref()
+    }
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
+    /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of user-applied tags per resource: 50</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum tag key length: 128 Unicode characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum tag value length: 256 Unicode characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
+    /// / = + - and @</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+    /// use.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSamplingRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5591,6 +5935,63 @@ pub struct CreateGroupInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateGroupInput {
+    /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
+    /// be unique.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The filter expression defining criteria by which to group traces.</p>
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
+        self.filter_expression.as_deref()
+    }
+    /// <p>The structure containing configurations related to insights.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
+    /// new group or false to disable insights for the new group.</p>
+    /// </li>
+    /// <li>
+    /// <p>The NotifcationsEnabled boolean can be set to true to enable insights
+    /// notifications for the new group. Notifications may only be enabled on a group
+    /// with InsightsEnabled set to true.</p>
+    /// </li>
+    /// </ul>
+    pub fn insights_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InsightsConfiguration> {
+        self.insights_configuration.as_ref()
+    }
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
+    /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of user-applied tags per resource: 50</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum tag key length: 128 Unicode characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum tag value length: 256 Unicode characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
+    /// / = + - and @</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+    /// use.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupInput");
@@ -5610,6 +6011,16 @@ pub struct BatchGetTracesInput {
     pub trace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchGetTracesInput {
+    /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
+    pub fn trace_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.trace_ids.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetTracesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

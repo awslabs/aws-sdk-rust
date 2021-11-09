@@ -90,6 +90,50 @@ pub struct WorkGroupConfigurationUpdates {
     /// workgroup run on the preview engine regardless of this setting.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
 }
+impl WorkGroupConfigurationUpdates {
+    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set
+    /// to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn enforce_work_group_configuration(&self) -> std::option::Option<bool> {
+        self.enforce_work_group_configuration
+    }
+    /// <p>The result configuration information about the queries in this workgroup that will be
+    /// updated. Includes the updated results location and an updated option for encrypting
+    /// query results.</p>
+    pub fn result_configuration_updates(
+        &self,
+    ) -> std::option::Option<&crate::model::ResultConfigurationUpdates> {
+        self.result_configuration_updates.as_ref()
+    }
+    /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
+    pub fn publish_cloud_watch_metrics_enabled(&self) -> std::option::Option<bool> {
+        self.publish_cloud_watch_metrics_enabled
+    }
+    /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is
+    /// allowed to scan.</p>
+    pub fn bytes_scanned_cutoff_per_query(&self) -> std::option::Option<i64> {
+        self.bytes_scanned_cutoff_per_query
+    }
+    /// <p>Indicates that the data usage control limit per query is removed. <a>WorkGroupConfiguration$BytesScannedCutoffPerQuery</a>
+    /// </p>
+    pub fn remove_bytes_scanned_cutoff_per_query(&self) -> std::option::Option<bool> {
+        self.remove_bytes_scanned_cutoff_per_query
+    }
+    /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup
+    /// members cannot query data from Requester Pays buckets, and queries that retrieve data
+    /// from Requester Pays buckets cause an error. The default is <code>false</code>. For more
+    /// information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a>
+    /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+    pub fn requester_pays_enabled(&self) -> std::option::Option<bool> {
+        self.requester_pays_enabled
+    }
+    /// <p>The engine version requested when a workgroup is updated. After the update, all
+    /// queries on the workgroup run on the requested engine version. If no value was previously
+    /// set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code>
+    /// workgroup run on the preview engine regardless of this setting.</p>
+    pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
+        self.engine_version.as_ref()
+    }
+}
 impl std::fmt::Debug for WorkGroupConfigurationUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkGroupConfigurationUpdates");
@@ -285,6 +329,22 @@ pub struct EngineVersion {
     /// <code>EffectiveEngineVersion</code> field is ignored.</p>
     pub effective_engine_version: std::option::Option<std::string::String>,
 }
+impl EngineVersion {
+    /// <p>The engine version requested by the user. Possible values are determined by the output
+    /// of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>
+    pub fn selected_engine_version(&self) -> std::option::Option<&str> {
+        self.selected_engine_version.as_deref()
+    }
+    /// <p>Read only. The engine version on which the query runs. If the user requests a valid
+    /// engine version other than Auto, the effective engine version is the same as the engine
+    /// version that the user requested. If the user requests Auto, the effective engine version
+    /// is chosen by Athena. When a request to update the engine version is made by
+    /// a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the
+    /// <code>EffectiveEngineVersion</code> field is ignored.</p>
+    pub fn effective_engine_version(&self) -> std::option::Option<&str> {
+        self.effective_engine_version.as_deref()
+    }
+}
 impl std::fmt::Debug for EngineVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EngineVersion");
@@ -390,6 +450,46 @@ pub struct ResultConfigurationUpdates {
     /// information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
     /// Client-Side Settings</a>.</p>
     pub remove_encryption_configuration: std::option::Option<bool>,
+}
+impl ResultConfigurationUpdates {
+    /// <p>The location in Amazon S3 where your query results are stored, such as
+    /// <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If
+    /// workgroup settings override client-side settings, then the query uses the location for
+    /// the query results and the encryption configuration that are specified for the workgroup.
+    /// The "workgroup settings override" is specified in
+    /// <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+    /// <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    pub fn output_location(&self) -> std::option::Option<&str> {
+        self.output_location.as_deref()
+    }
+    /// <p>If set to "true", indicates that the previously-specified query results location (also
+    /// known as a client-side setting) for queries in this workgroup should be ignored and set
+    /// to null. If set to "false" or not set, and a value is present in the
+    /// <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the
+    /// client-side setting), the <code>OutputLocation</code> in the workgroup's
+    /// <code>ResultConfiguration</code> will be updated with the new value. For more
+    /// information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
+    /// Client-Side Settings</a>.</p>
+    pub fn remove_output_location(&self) -> std::option::Option<bool> {
+        self.remove_output_location
+    }
+    /// <p>The encryption configuration for the query results.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>If set to "true", indicates that the previously-specified encryption configuration
+    /// (also known as the client-side setting) for queries in this workgroup should be ignored
+    /// and set to null. If set to "false" or not set, and a value is present in the
+    /// <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
+    /// client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
+    /// <code>ResultConfiguration</code> will be updated with the new value. For more
+    /// information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
+    /// Client-Side Settings</a>.</p>
+    pub fn remove_encryption_configuration(&self) -> std::option::Option<bool> {
+        self.remove_encryption_configuration
+    }
 }
 impl std::fmt::Debug for ResultConfigurationUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -543,6 +643,22 @@ pub struct EncryptionConfiguration {
     /// <p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or
     /// ID.</p>
     pub kms_key: std::option::Option<std::string::String>,
+}
+impl EncryptionConfiguration {
+    /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys
+    /// (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is
+    /// used.</p>
+    /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then
+    /// the workgroup's setting for encryption is used. It specifies whether query results must
+    /// be encrypted, for all queries that run in this workgroup. </p>
+    pub fn encryption_option(&self) -> std::option::Option<&crate::model::EncryptionOption> {
+        self.encryption_option.as_ref()
+    }
+    /// <p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or
+    /// ID.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
 }
 impl std::fmt::Debug for EncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -753,6 +869,20 @@ pub struct Tag {
     /// . _ : / @. Tag values are case-sensitive. </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A tag key. The tag key length is from 1 to 128 Unicode characters in UTF-8. You can
+    /// use letters and numbers representable in UTF-8, and the following characters: + - = . _
+    /// : / @. Tag keys are case-sensitive and must be unique per resource. </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A tag value. The tag value length is from 0 to 256 Unicode characters in UTF-8. You
+    /// can use letters and numbers representable in UTF-8, and the following characters: + - =
+    /// . _ : / @. Tag values are case-sensitive. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -889,6 +1019,28 @@ pub struct ResultConfiguration {
     /// also uses the location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
+impl ResultConfiguration {
+    /// <p>The location in Amazon S3 where your query results are stored, such as
+    /// <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the
+    /// query results location using one of the ways: either for individual queries using either
+    /// this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>. If none of them is set, Athena
+    /// issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If
+    /// workgroup settings override client-side settings, then the query uses the settings
+    /// specified for the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    pub fn output_location(&self) -> std::option::Option<&str> {
+        self.output_location.as_deref()
+    }
+    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option
+    /// used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
+    /// This is a client-side setting. If workgroup settings override client-side settings, then
+    /// the query uses the encryption configuration that is specified for the workgroup, and
+    /// also uses the location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ResultConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultConfiguration");
@@ -982,6 +1134,16 @@ pub struct QueryExecutionContext {
     /// <p>The name of the data catalog used in the query execution.</p>
     pub catalog: std::option::Option<std::string::String>,
 }
+impl QueryExecutionContext {
+    /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the data catalog used in the query execution.</p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryExecutionContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryExecutionContext");
@@ -1053,6 +1215,30 @@ pub struct WorkGroupSummary {
     /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
     /// regardless of this setting.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
+}
+impl WorkGroupSummary {
+    /// <p>The name of the workgroup.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the workgroup.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkGroupState> {
+        self.state.as_ref()
+    }
+    /// <p>The workgroup description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The workgroup creation date and time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The engine version setting for all queries on the workgroup. Queries on the
+    /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
+    /// regardless of this setting.</p>
+    pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
+        self.engine_version.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkGroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1180,6 +1366,40 @@ pub struct TableMetadata {
     /// <p>A set of custom key/value pairs for table properties.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TableMetadata {
+    /// <p>The name of the table.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time that the table was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The last time the table was accessed.</p>
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_access_time.as_ref()
+    }
+    /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is
+    /// supported.</p>
+    pub fn table_type(&self) -> std::option::Option<&str> {
+        self.table_type.as_deref()
+    }
+    /// <p>A list of the columns in the table.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::Column]> {
+        self.columns.as_deref()
+    }
+    /// <p>A list of the partition keys in the table.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[crate::model::Column]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>A set of custom key/value pairs for table properties.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for TableMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1354,6 +1574,20 @@ pub struct Column {
     /// <p>Optional information about the column.</p>
     pub comment: std::option::Option<std::string::String>,
 }
+impl Column {
+    /// <p>The name of the column.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the column.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Optional information about the column.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+}
 impl std::fmt::Debug for Column {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Column");
@@ -1430,6 +1664,16 @@ pub struct PreparedStatementSummary {
     /// <p>The last modified time of the prepared statement.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PreparedStatementSummary {
+    /// <p>The name of the prepared statement.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The last modified time of the prepared statement.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+}
 impl std::fmt::Debug for PreparedStatementSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreparedStatementSummary");
@@ -1499,6 +1743,16 @@ pub struct DataCatalogSummary {
     /// <p>The data catalog type.</p>
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
 }
+impl DataCatalogSummary {
+    /// <p>The name of the data catalog.</p>
+    pub fn catalog_name(&self) -> std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
+    /// <p>The data catalog type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for DataCatalogSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataCatalogSummary");
@@ -1567,6 +1821,23 @@ pub struct Database {
     /// <p>A set of custom key/value pairs.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Database {
+    /// <p>The name of the database.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description of the database.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A set of custom key/value pairs.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for Database {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1679,6 +1950,34 @@ pub struct WorkGroup {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the workgroup was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl WorkGroup {
+    /// <p>The workgroup name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkGroupState> {
+        self.state.as_ref()
+    }
+    /// <p>The configuration of the workgroup, which includes the location in Amazon S3
+    /// where query results are stored, the encryption configuration, if any, used for query
+    /// results; whether the Amazon CloudWatch Metrics are enabled for the workgroup;
+    /// whether workgroup settings override client-side settings; and the data usage limits for
+    /// the amount of data scanned per query or per workgroup. The workgroup settings override
+    /// is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+    /// <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::WorkGroupConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The workgroup description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time the workgroup was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1832,6 +2131,48 @@ pub struct WorkGroupConfiguration {
     /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
     /// regardless of this setting.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
+}
+impl WorkGroupConfiguration {
+    /// <p>The configuration for the workgroup, which includes the location in Amazon S3
+    /// where query results are stored and the encryption option, if any, used for query
+    /// results. To run the query, you must specify the query results location using one of the
+    /// ways: either in the workgroup using this setting, or for individual queries
+    /// (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of
+    /// them is set, Athena issues an error that no output location is provided. For
+    /// more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.</p>
+    pub fn result_configuration(&self) -> std::option::Option<&crate::model::ResultConfiguration> {
+        self.result_configuration.as_ref()
+    }
+    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set
+    /// to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn enforce_work_group_configuration(&self) -> std::option::Option<bool> {
+        self.enforce_work_group_configuration
+    }
+    /// <p>Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.</p>
+    pub fn publish_cloud_watch_metrics_enabled(&self) -> std::option::Option<bool> {
+        self.publish_cloud_watch_metrics_enabled
+    }
+    /// <p>The upper data usage limit (cutoff) for the amount of bytes a single query in a
+    /// workgroup is allowed to scan.</p>
+    pub fn bytes_scanned_cutoff_per_query(&self) -> std::option::Option<i64> {
+        self.bytes_scanned_cutoff_per_query
+    }
+    /// <p>If set to <code>true</code>, allows members assigned to a workgroup to reference
+    /// Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>,
+    /// workgroup members cannot query data from Requester Pays buckets, and queries that
+    /// retrieve data from Requester Pays buckets cause an error. The default is
+    /// <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+    /// Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
+    /// Guide</i>.</p>
+    pub fn requester_pays_enabled(&self) -> std::option::Option<bool> {
+        self.requester_pays_enabled
+    }
+    /// <p>The engine version that all queries running on the workgroup use. Queries on the
+    /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
+    /// regardless of this setting.</p>
+    pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
+        self.engine_version.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkGroupConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2006,6 +2347,17 @@ pub struct ResultSet {
     /// results.</p>
     pub result_set_metadata: std::option::Option<crate::model::ResultSetMetadata>,
 }
+impl ResultSet {
+    /// <p>The rows in the table.</p>
+    pub fn rows(&self) -> std::option::Option<&[crate::model::Row]> {
+        self.rows.as_deref()
+    }
+    /// <p>The metadata that describes the column structure and data types of a table of query
+    /// results.</p>
+    pub fn result_set_metadata(&self) -> std::option::Option<&crate::model::ResultSetMetadata> {
+        self.result_set_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for ResultSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultSet");
@@ -2081,6 +2433,12 @@ impl ResultSet {
 pub struct ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
     pub column_info: std::option::Option<std::vec::Vec<crate::model::ColumnInfo>>,
+}
+impl ResultSetMetadata {
+    /// <p>Information about the columns returned in a query result metadata.</p>
+    pub fn column_info(&self) -> std::option::Option<&[crate::model::ColumnInfo]> {
+        self.column_info.as_deref()
+    }
 }
 impl std::fmt::Debug for ResultSetMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2158,6 +2516,50 @@ pub struct ColumnInfo {
     pub nullable: std::option::Option<crate::model::ColumnNullable>,
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub case_sensitive: bool,
+}
+impl ColumnInfo {
+    /// <p>The catalog to which the query results belong.</p>
+    pub fn catalog_name(&self) -> std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
+    /// <p>The schema name (database name) to which the query results belong.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The table name for the query results.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name of the column.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A column label.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The data type of the column.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38.
+    /// For performance reasons, we recommend up to 18 digits.</p>
+    pub fn precision(&self) -> i32 {
+        self.precision
+    }
+    /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the
+    /// fractional part of the value. Defaults to 0.</p>
+    pub fn scale(&self) -> i32 {
+        self.scale
+    }
+    /// <p>Indicates the column's nullable status.</p>
+    pub fn nullable(&self) -> std::option::Option<&crate::model::ColumnNullable> {
+        self.nullable.as_ref()
+    }
+    /// <p>Indicates whether values in the column are case-sensitive.</p>
+    pub fn case_sensitive(&self) -> bool {
+        self.case_sensitive
+    }
 }
 impl std::fmt::Debug for ColumnInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2390,6 +2792,12 @@ pub struct Row {
     /// <p>The data that populates a row in a query result table.</p>
     pub data: std::option::Option<std::vec::Vec<crate::model::Datum>>,
 }
+impl Row {
+    /// <p>The data that populates a row in a query result table.</p>
+    pub fn data(&self) -> std::option::Option<&[crate::model::Datum]> {
+        self.data.as_deref()
+    }
+}
 impl std::fmt::Debug for Row {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Row");
@@ -2444,6 +2852,12 @@ impl Row {
 pub struct Datum {
     /// <p>The value of the datum.</p>
     pub var_char_value: std::option::Option<std::string::String>,
+}
+impl Datum {
+    /// <p>The value of the datum.</p>
+    pub fn var_char_value(&self) -> std::option::Option<&str> {
+        self.var_char_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Datum {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2521,6 +2935,56 @@ pub struct QueryExecution {
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The engine version that executed the query.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
+}
+impl QueryExecution {
+    /// <p>The unique identifier for each query execution.</p>
+    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+        self.query_execution_id.as_deref()
+    }
+    /// <p>The SQL query statements which the query execution ran.</p>
+    pub fn query(&self) -> std::option::Option<&str> {
+        self.query.as_deref()
+    }
+    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query
+    /// statements. <code>DML</code> indicates DML (Data Manipulation Language) query
+    /// statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates
+    /// query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or
+    /// <code>DESCRIBE TABLE</code>.</p>
+    pub fn statement_type(&self) -> std::option::Option<&crate::model::StatementType> {
+        self.statement_type.as_ref()
+    }
+    /// <p>The location in Amazon S3 where query results were stored and the encryption
+    /// option, if any, used for query results. These are known as "client-side settings". If
+    /// workgroup settings override client-side settings, then the query uses the location for
+    /// the query results and the encryption configuration that are specified for the
+    /// workgroup.</p>
+    pub fn result_configuration(&self) -> std::option::Option<&crate::model::ResultConfiguration> {
+        self.result_configuration.as_ref()
+    }
+    /// <p>The database in which the query execution occurred.</p>
+    pub fn query_execution_context(
+        &self,
+    ) -> std::option::Option<&crate::model::QueryExecutionContext> {
+        self.query_execution_context.as_ref()
+    }
+    /// <p>The completion date, current state, submission time, and state change reason (if
+    /// applicable) for the query execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QueryExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Query execution statistics, such as the amount of data scanned, the amount of time
+    /// that the query took to process, and the type of statement that was run.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::QueryExecutionStatistics> {
+        self.statistics.as_ref()
+    }
+    /// <p>The name of the workgroup in which the query ran.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The engine version that executed the query.</p>
+    pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
+        self.engine_version.as_ref()
+    }
 }
 impl std::fmt::Debug for QueryExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2744,6 +3208,48 @@ pub struct QueryExecutionStatistics {
     /// query results after the query engine finished running the query.</p>
     pub service_processing_time_in_millis: std::option::Option<i64>,
 }
+impl QueryExecutionStatistics {
+    /// <p>The number of milliseconds that the query took to execute.</p>
+    pub fn engine_execution_time_in_millis(&self) -> std::option::Option<i64> {
+        self.engine_execution_time_in_millis
+    }
+    /// <p>The number of bytes in the data that was queried.</p>
+    pub fn data_scanned_in_bytes(&self) -> std::option::Option<i64> {
+        self.data_scanned_in_bytes
+    }
+    /// <p>The location and file name of a data manifest file. The manifest file is saved to the
+    /// Athena query results location in Amazon S3. The manifest file
+    /// tracks files that the query wrote to Amazon S3. If the query fails, the manifest
+    /// file also tracks files that the query intended to write. The manifest is useful for
+    /// identifying orphaned files resulting from a failed query. For more information, see
+    /// <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query
+    /// Results, Output Files, and Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
+    pub fn data_manifest_location(&self) -> std::option::Option<&str> {
+        self.data_manifest_location.as_deref()
+    }
+    /// <p>The number of milliseconds that Athena took to run the query.</p>
+    pub fn total_execution_time_in_millis(&self) -> std::option::Option<i64> {
+        self.total_execution_time_in_millis
+    }
+    /// <p>The number of milliseconds that the query was in your query queue waiting for
+    /// resources. Note that if transient errors occur, Athena might automatically
+    /// add the query back to the queue.</p>
+    pub fn query_queue_time_in_millis(&self) -> std::option::Option<i64> {
+        self.query_queue_time_in_millis
+    }
+    /// <p>The number of milliseconds that Athena took to plan the query processing
+    /// flow. This includes the time spent retrieving table partitions from the data source.
+    /// Note that because the query engine performs the query planning, query planning time is a
+    /// subset of engine processing time.</p>
+    pub fn query_planning_time_in_millis(&self) -> std::option::Option<i64> {
+        self.query_planning_time_in_millis
+    }
+    /// <p>The number of milliseconds that Athena took to finalize and publish the
+    /// query results after the query engine finished running the query.</p>
+    pub fn service_processing_time_in_millis(&self) -> std::option::Option<i64> {
+        self.service_processing_time_in_millis
+    }
+}
 impl std::fmt::Debug for QueryExecutionStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryExecutionStatistics");
@@ -2941,6 +3447,35 @@ pub struct QueryExecutionStatus {
     pub submission_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the query completed.</p>
     pub completion_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl QueryExecutionStatus {
+    /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been
+    /// submitted to the service, and Athena will execute the query as soon as
+    /// resources are available. <code>RUNNING</code> indicates that the query is in execution
+    /// phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
+    /// <code>FAILED</code> indicates that the query experienced an error and did not
+    /// complete processing. <code>CANCELLED</code> indicates that a user input interrupted
+    /// query execution.</p>
+    /// <note>
+    /// <p>Athena automatically retries your queries in cases of certain
+    /// transient errors. As a result, you may see the query state transition from
+    /// <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p>
+    /// </note>
+    pub fn state(&self) -> std::option::Option<&crate::model::QueryExecutionState> {
+        self.state.as_ref()
+    }
+    /// <p>Further detail about the status of the query.</p>
+    pub fn state_change_reason(&self) -> std::option::Option<&str> {
+        self.state_change_reason.as_deref()
+    }
+    /// <p>The date and time that the query was submitted.</p>
+    pub fn submission_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submission_date_time.as_ref()
+    }
+    /// <p>The date and time that the query completed.</p>
+    pub fn completion_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for QueryExecutionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3197,6 +3732,28 @@ pub struct PreparedStatement {
     /// <p>The last modified time of the prepared statement.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PreparedStatement {
+    /// <p>The name of the prepared statement.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The query string for the prepared statement.</p>
+    pub fn query_statement(&self) -> std::option::Option<&str> {
+        self.query_statement.as_deref()
+    }
+    /// <p>The name of the workgroup to which the prepared statement belongs.</p>
+    pub fn work_group_name(&self) -> std::option::Option<&str> {
+        self.work_group_name.as_deref()
+    }
+    /// <p>The description of the prepared statement.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The last modified time of the prepared statement.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+}
 impl std::fmt::Debug for PreparedStatement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreparedStatement");
@@ -3319,6 +3876,32 @@ pub struct NamedQuery {
     pub named_query_id: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup that contains the named query.</p>
     pub work_group: std::option::Option<std::string::String>,
+}
+impl NamedQuery {
+    /// <p>The query name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The query description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The database to which the query belongs.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The SQL query statements that comprise the query.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The unique identifier of the query.</p>
+    pub fn named_query_id(&self) -> std::option::Option<&str> {
+        self.named_query_id.as_deref()
+    }
+    /// <p>The name of the workgroup that contains the named query.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
 }
 impl std::fmt::Debug for NamedQuery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3507,6 +4090,92 @@ pub struct DataCatalog {
     /// </ul>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DataCatalog {
+    /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign,
+    /// or hyphen characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description of the data catalog.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
+    /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
+    /// Glue Data Catalog.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the Lambda function or functions to use for the data catalog.
+    /// This is a mapping whose values depend on the catalog type. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
+    /// <code>metadata-function</code> parameter is required. <code>The
+    /// sdk-version</code> parameter is optional and defaults to the currently
+    /// supported version.</p>
+    /// <p>
+    /// <code>metadata-function=<i>lambda_arn</i>,
+    /// sdk-version=<i>version_number</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
+    /// of required parameters, but not both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata
+    /// and another for reading the actual data, use the following syntax. Both
+    /// parameters are required.</p>
+    /// <p>
+    /// <code>metadata-function=<i>lambda_arn</i>,
+    /// record-function=<i>lambda_arn</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p> If you have a composite Lambda function that processes
+    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p>
+    /// <code>function=<i>lambda_arn</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
+    /// <code>
+    /// <i>catalog_id</i>
+    /// </code> is the account ID of the
+    /// Amazon Web Services account to which the Glue catalog
+    /// belongs.</p>
+    /// <p>
+    /// <code>catalog-id=<i>catalog_id</i>
+    /// </code>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>GLUE</code> data catalog type also applies to the default
+    /// <code>AwsDataCatalog</code> that already exists in your account, of
+    /// which you can have only one and cannot modify.</p>
+    /// </li>
+    /// <li>
+    /// <p>Queries that specify a Glue Data Catalog other than the default
+    /// <code>AwsDataCatalog</code> must be run on Athena engine
+    /// version 2.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for DataCatalog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3751,6 +4420,22 @@ pub struct UnprocessedQueryExecutionId {
     /// applicable.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl UnprocessedQueryExecutionId {
+    /// <p>The unique identifier of the query execution.</p>
+    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+        self.query_execution_id.as_deref()
+    }
+    /// <p>The error code returned when the query execution failed to process, if
+    /// applicable.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message returned when the query execution failed to process, if
+    /// applicable.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for UnprocessedQueryExecutionId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnprocessedQueryExecutionId");
@@ -3840,6 +4525,22 @@ pub struct UnprocessedNamedQueryId {
     /// <p>The error message returned when the processing request for the named query failed, if
     /// applicable.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl UnprocessedNamedQueryId {
+    /// <p>The unique identifier of the named query.</p>
+    pub fn named_query_id(&self) -> std::option::Option<&str> {
+        self.named_query_id.as_deref()
+    }
+    /// <p>The error code returned when the processing request for the named query failed, if
+    /// applicable.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message returned when the processing request for the named query failed, if
+    /// applicable.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for UnprocessedNamedQueryId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -36,6 +36,12 @@ pub struct SendVoiceMessageOutput {
     /// A unique identifier for the voice message.
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendVoiceMessageOutput {
+    /// A unique identifier for the voice message.
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendVoiceMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendVoiceMessageOutput");
@@ -85,6 +91,16 @@ pub struct ListConfigurationSetsOutput {
     pub configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationSetsOutput {
+    /// An object that contains a list of configuration sets for your account in the current region.
+    pub fn configuration_sets(&self) -> std::option::Option<&[std::string::String]> {
+        self.configuration_sets.as_deref()
+    }
+    /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -155,6 +171,12 @@ impl ListConfigurationSetsOutput {
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
+}
+impl GetConfigurationSetEventDestinationsOutput {
+    /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
+        self.event_destinations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConfigurationSetEventDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

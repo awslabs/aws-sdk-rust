@@ -2,19 +2,20 @@
 pub fn serialize_structure_crate_input_associate_approval_rule_template_with_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateApprovalRuleTemplateWithRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_1);
     }
     if let Some(var_2) = &input.repository_name {
         object.key("repositoryName").string(var_2);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_batch_associate_approval_rule_template_with_repositories_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_3);
     }
@@ -27,12 +28,13 @@ pub fn serialize_structure_crate_input_batch_associate_approval_rule_template_wi
         }
         array_5.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_batch_describe_merge_conflicts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDescribeMergeConflictsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.repository_name {
         object.key("repositoryName").string(var_7);
     }
@@ -77,12 +79,13 @@ pub fn serialize_structure_crate_input_batch_describe_merge_conflicts_input(
     if let Some(var_18) = &input.next_token {
         object.key("nextToken").string(var_18);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_batch_disassociate_approval_rule_template_from_repositories_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_19);
     }
@@ -95,12 +98,13 @@ pub fn serialize_structure_crate_input_batch_disassociate_approval_rule_template
         }
         array_21.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_batch_get_commits_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchGetCommitsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.commit_ids {
         let mut array_24 = object.key("commitIds").start_array();
         for item_25 in var_23 {
@@ -113,12 +117,13 @@ pub fn serialize_structure_crate_input_batch_get_commits_input(
     if let Some(var_26) = &input.repository_name {
         object.key("repositoryName").string(var_26);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_batch_get_repositories_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchGetRepositoriesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.repository_names {
         let mut array_28 = object.key("repositoryNames").start_array();
         for item_29 in var_27 {
@@ -128,12 +133,13 @@ pub fn serialize_structure_crate_input_batch_get_repositories_input(
         }
         array_28.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_approval_rule_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateApprovalRuleTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_30);
     }
@@ -143,12 +149,13 @@ pub fn serialize_structure_crate_input_create_approval_rule_template_input(
     if let Some(var_32) = &input.approval_rule_template_description {
         object.key("approvalRuleTemplateDescription").string(var_32);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_branch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBranchInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.repository_name {
         object.key("repositoryName").string(var_33);
     }
@@ -158,12 +165,13 @@ pub fn serialize_structure_crate_input_create_branch_input(
     if let Some(var_35) = &input.commit_id {
         object.key("commitId").string(var_35);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_commit_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateCommitInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.repository_name {
         object.key("repositoryName").string(var_36);
     }
@@ -195,7 +203,7 @@ pub fn serialize_structure_crate_input_create_commit_input(
                 crate::json_ser::serialize_structure_crate_model_put_file_entry(
                     &mut object_45,
                     item_44,
-                );
+                )?;
                 object_45.finish();
             }
         }
@@ -209,7 +217,7 @@ pub fn serialize_structure_crate_input_create_commit_input(
                 crate::json_ser::serialize_structure_crate_model_delete_file_entry(
                     &mut object_49,
                     item_48,
-                );
+                )?;
                 object_49.finish();
             }
         }
@@ -223,18 +231,19 @@ pub fn serialize_structure_crate_input_create_commit_input(
                 crate::json_ser::serialize_structure_crate_model_set_file_mode_entry(
                     &mut object_53,
                     item_52,
-                );
+                )?;
                 object_53.finish();
             }
         }
         array_51.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_pull_request_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePullRequestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.title {
         object.key("title").string(var_54);
     }
@@ -246,7 +255,7 @@ pub fn serialize_structure_crate_input_create_pull_request_input(
         for item_58 in var_56 {
             {
                 let mut object_59 = array_57.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_target(&mut object_59, item_58);
+                crate::json_ser::serialize_structure_crate_model_target(&mut object_59, item_58)?;
                 object_59.finish();
             }
         }
@@ -255,12 +264,13 @@ pub fn serialize_structure_crate_input_create_pull_request_input(
     if let Some(var_60) = &input.client_request_token {
         object.key("clientRequestToken").string(var_60);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_pull_request_approval_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePullRequestApprovalRuleInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.pull_request_id {
         object.key("pullRequestId").string(var_61);
     }
@@ -270,12 +280,13 @@ pub fn serialize_structure_crate_input_create_pull_request_approval_rule_input(
     if let Some(var_63) = &input.approval_rule_content {
         object.key("approvalRuleContent").string(var_63);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.repository_name {
         object.key("repositoryName").string(var_64);
     }
@@ -291,12 +302,13 @@ pub fn serialize_structure_crate_input_create_repository_input(
         }
         object_67.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_unreferenced_merge_commit_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateUnreferencedMergeCommitInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.repository_name {
         object.key("repositoryName").string(var_70);
     }
@@ -336,45 +348,49 @@ pub fn serialize_structure_crate_input_create_unreferenced_merge_commit_input(
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_80,
             var_79,
-        );
+        )?;
         object_80.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_approval_rule_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteApprovalRuleTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_81);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_branch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBranchInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.repository_name {
         object.key("repositoryName").string(var_82);
     }
     if let Some(var_83) = &input.branch_name {
         object.key("branchName").string(var_83);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_comment_content_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteCommentContentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_84) = &input.comment_id {
         object.key("commentId").string(var_84);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_file_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFileInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.repository_name {
         object.key("repositoryName").string(var_85);
     }
@@ -401,33 +417,36 @@ pub fn serialize_structure_crate_input_delete_file_input(
     if let Some(var_91) = &input.email {
         object.key("email").string(var_91);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_pull_request_approval_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeletePullRequestApprovalRuleInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.pull_request_id {
         object.key("pullRequestId").string(var_92);
     }
     if let Some(var_93) = &input.approval_rule_name {
         object.key("approvalRuleName").string(var_93);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_94) = &input.repository_name {
         object.key("repositoryName").string(var_94);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_merge_conflicts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeMergeConflictsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_95) = &input.repository_name {
         object.key("repositoryName").string(var_95);
     }
@@ -460,12 +479,13 @@ pub fn serialize_structure_crate_input_describe_merge_conflicts_input(
     if let Some(var_103) = &input.next_token {
         object.key("nextToken").string(var_103);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_pull_request_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribePullRequestEventsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_104) = &input.pull_request_id {
         object.key("pullRequestId").string(var_104);
     }
@@ -484,78 +504,85 @@ pub fn serialize_structure_crate_input_describe_pull_request_events_input(
             aws_smithy_types::Number::NegInt((*var_108).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_approval_rule_template_from_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_109);
     }
     if let Some(var_110) = &input.repository_name {
         object.key("repositoryName").string(var_110);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_evaluate_pull_request_approval_rules_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::EvaluatePullRequestApprovalRulesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_111) = &input.pull_request_id {
         object.key("pullRequestId").string(var_111);
     }
     if let Some(var_112) = &input.revision_id {
         object.key("revisionId").string(var_112);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_approval_rule_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetApprovalRuleTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_113) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_113);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_blob_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetBlobInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_114) = &input.repository_name {
         object.key("repositoryName").string(var_114);
     }
     if let Some(var_115) = &input.blob_id {
         object.key("blobId").string(var_115);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_branch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetBranchInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_116) = &input.repository_name {
         object.key("repositoryName").string(var_116);
     }
     if let Some(var_117) = &input.branch_name {
         object.key("branchName").string(var_117);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_comment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCommentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.comment_id {
         object.key("commentId").string(var_118);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_comment_reactions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCommentReactionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_119) = &input.comment_id {
         object.key("commentId").string(var_119);
     }
@@ -571,12 +598,13 @@ pub fn serialize_structure_crate_input_get_comment_reactions_input(
             aws_smithy_types::Number::NegInt((*var_122).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_comments_for_compared_commit_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCommentsForComparedCommitInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_123) = &input.repository_name {
         object.key("repositoryName").string(var_123);
     }
@@ -595,12 +623,13 @@ pub fn serialize_structure_crate_input_get_comments_for_compared_commit_input(
             aws_smithy_types::Number::NegInt((*var_127).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_comments_for_pull_request_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCommentsForPullRequestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_128) = &input.pull_request_id {
         object.key("pullRequestId").string(var_128);
     }
@@ -622,24 +651,26 @@ pub fn serialize_structure_crate_input_get_comments_for_pull_request_input(
             aws_smithy_types::Number::NegInt((*var_133).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_commit_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCommitInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_134) = &input.repository_name {
         object.key("repositoryName").string(var_134);
     }
     if let Some(var_135) = &input.commit_id {
         object.key("commitId").string(var_135);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_differences_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDifferencesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_136) = &input.repository_name {
         object.key("repositoryName").string(var_136);
     }
@@ -664,12 +695,13 @@ pub fn serialize_structure_crate_input_get_differences_input(
     if let Some(var_142) = &input.next_token {
         object.key("NextToken").string(var_142);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_file_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetFileInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_143) = &input.repository_name {
         object.key("repositoryName").string(var_143);
     }
@@ -679,12 +711,13 @@ pub fn serialize_structure_crate_input_get_file_input(
     if let Some(var_145) = &input.file_path {
         object.key("filePath").string(var_145);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_folder_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetFolderInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_146) = &input.repository_name {
         object.key("repositoryName").string(var_146);
     }
@@ -694,12 +727,13 @@ pub fn serialize_structure_crate_input_get_folder_input(
     if let Some(var_148) = &input.folder_path {
         object.key("folderPath").string(var_148);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_merge_commit_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetMergeCommitInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_149) = &input.repository_name {
         object.key("repositoryName").string(var_149);
     }
@@ -717,12 +751,13 @@ pub fn serialize_structure_crate_input_get_merge_commit_input(
             .key("conflictResolutionStrategy")
             .string(var_153.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_merge_conflicts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetMergeConflictsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_154) = &input.repository_name {
         object.key("repositoryName").string(var_154);
     }
@@ -752,12 +787,13 @@ pub fn serialize_structure_crate_input_get_merge_conflicts_input(
     if let Some(var_161) = &input.next_token {
         object.key("nextToken").string(var_161);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_merge_options_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetMergeOptionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_162) = &input.repository_name {
         object.key("repositoryName").string(var_162);
     }
@@ -775,63 +811,69 @@ pub fn serialize_structure_crate_input_get_merge_options_input(
             .key("conflictResolutionStrategy")
             .string(var_166.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_pull_request_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPullRequestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_167) = &input.pull_request_id {
         object.key("pullRequestId").string(var_167);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_pull_request_approval_states_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPullRequestApprovalStatesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_168) = &input.pull_request_id {
         object.key("pullRequestId").string(var_168);
     }
     if let Some(var_169) = &input.revision_id {
         object.key("revisionId").string(var_169);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_pull_request_override_state_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPullRequestOverrideStateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_170) = &input.pull_request_id {
         object.key("pullRequestId").string(var_170);
     }
     if let Some(var_171) = &input.revision_id {
         object.key("revisionId").string(var_171);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_172) = &input.repository_name {
         object.key("repositoryName").string(var_172);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_repository_triggers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRepositoryTriggersInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_173) = &input.repository_name {
         object.key("repositoryName").string(var_173);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_approval_rule_templates_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListApprovalRuleTemplatesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_174) = &input.next_token {
         object.key("nextToken").string(var_174);
     }
@@ -841,12 +883,13 @@ pub fn serialize_structure_crate_input_list_approval_rule_templates_input(
             aws_smithy_types::Number::NegInt((*var_175).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_associated_approval_rule_templates_for_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_176) = &input.repository_name {
         object.key("repositoryName").string(var_176);
     }
@@ -859,24 +902,26 @@ pub fn serialize_structure_crate_input_list_associated_approval_rule_templates_f
             aws_smithy_types::Number::NegInt((*var_178).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_branches_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListBranchesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_179) = &input.repository_name {
         object.key("repositoryName").string(var_179);
     }
     if let Some(var_180) = &input.next_token {
         object.key("nextToken").string(var_180);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_pull_requests_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPullRequestsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_181) = &input.repository_name {
         object.key("repositoryName").string(var_181);
     }
@@ -895,12 +940,13 @@ pub fn serialize_structure_crate_input_list_pull_requests_input(
             aws_smithy_types::Number::NegInt((*var_185).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_repositories_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRepositoriesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_186) = &input.next_token {
         object.key("nextToken").string(var_186);
     }
@@ -910,12 +956,13 @@ pub fn serialize_structure_crate_input_list_repositories_input(
     if let Some(var_188) = &input.order {
         object.key("order").string(var_188.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_repositories_for_approval_rule_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRepositoriesForApprovalRuleTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_189) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_189);
     }
@@ -928,24 +975,26 @@ pub fn serialize_structure_crate_input_list_repositories_for_approval_rule_templ
             aws_smithy_types::Number::NegInt((*var_191).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_192) = &input.resource_arn {
         object.key("resourceArn").string(var_192);
     }
     if let Some(var_193) = &input.next_token {
         object.key("nextToken").string(var_193);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_merge_branches_by_fast_forward_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergeBranchesByFastForwardInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_194) = &input.repository_name {
         object.key("repositoryName").string(var_194);
     }
@@ -958,12 +1007,13 @@ pub fn serialize_structure_crate_input_merge_branches_by_fast_forward_input(
     if let Some(var_197) = &input.target_branch {
         object.key("targetBranch").string(var_197);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_merge_branches_by_squash_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergeBranchesBySquashInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_198) = &input.repository_name {
         object.key("repositoryName").string(var_198);
     }
@@ -1003,15 +1053,16 @@ pub fn serialize_structure_crate_input_merge_branches_by_squash_input(
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_208,
             var_207,
-        );
+        )?;
         object_208.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_merge_branches_by_three_way_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergeBranchesByThreeWayInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_209) = &input.repository_name {
         object.key("repositoryName").string(var_209);
     }
@@ -1051,15 +1102,16 @@ pub fn serialize_structure_crate_input_merge_branches_by_three_way_input(
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_219,
             var_218,
-        );
+        )?;
         object_219.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_merge_pull_request_by_fast_forward_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergePullRequestByFastForwardInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_220) = &input.pull_request_id {
         object.key("pullRequestId").string(var_220);
     }
@@ -1069,12 +1121,13 @@ pub fn serialize_structure_crate_input_merge_pull_request_by_fast_forward_input(
     if let Some(var_222) = &input.source_commit_id {
         object.key("sourceCommitId").string(var_222);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_merge_pull_request_by_squash_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergePullRequestBySquashInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_223) = &input.pull_request_id {
         object.key("pullRequestId").string(var_223);
     }
@@ -1111,15 +1164,16 @@ pub fn serialize_structure_crate_input_merge_pull_request_by_squash_input(
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_232,
             var_231,
-        );
+        )?;
         object_232.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_merge_pull_request_by_three_way_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergePullRequestByThreeWayInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_233) = &input.pull_request_id {
         object.key("pullRequestId").string(var_233);
     }
@@ -1156,15 +1210,16 @@ pub fn serialize_structure_crate_input_merge_pull_request_by_three_way_input(
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_242,
             var_241,
-        );
+        )?;
         object_242.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_override_pull_request_approval_rules_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::OverridePullRequestApprovalRulesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_243) = &input.pull_request_id {
         object.key("pullRequestId").string(var_243);
     }
@@ -1174,12 +1229,13 @@ pub fn serialize_structure_crate_input_override_pull_request_approval_rules_inpu
     if let Some(var_245) = &input.override_status {
         object.key("overrideStatus").string(var_245.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_post_comment_for_compared_commit_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PostCommentForComparedCommitInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_246) = &input.repository_name {
         object.key("repositoryName").string(var_246);
     }
@@ -1191,7 +1247,7 @@ pub fn serialize_structure_crate_input_post_comment_for_compared_commit_input(
     }
     if let Some(var_249) = &input.location {
         let mut object_250 = object.key("location").start_object();
-        crate::json_ser::serialize_structure_crate_model_location(&mut object_250, var_249);
+        crate::json_ser::serialize_structure_crate_model_location(&mut object_250, var_249)?;
         object_250.finish();
     }
     if let Some(var_251) = &input.content {
@@ -1200,12 +1256,13 @@ pub fn serialize_structure_crate_input_post_comment_for_compared_commit_input(
     if let Some(var_252) = &input.client_request_token {
         object.key("clientRequestToken").string(var_252);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_post_comment_for_pull_request_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PostCommentForPullRequestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_253) = &input.pull_request_id {
         object.key("pullRequestId").string(var_253);
     }
@@ -1220,7 +1277,7 @@ pub fn serialize_structure_crate_input_post_comment_for_pull_request_input(
     }
     if let Some(var_257) = &input.location {
         let mut object_258 = object.key("location").start_object();
-        crate::json_ser::serialize_structure_crate_model_location(&mut object_258, var_257);
+        crate::json_ser::serialize_structure_crate_model_location(&mut object_258, var_257)?;
         object_258.finish();
     }
     if let Some(var_259) = &input.content {
@@ -1229,12 +1286,13 @@ pub fn serialize_structure_crate_input_post_comment_for_pull_request_input(
     if let Some(var_260) = &input.client_request_token {
         object.key("clientRequestToken").string(var_260);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_post_comment_reply_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PostCommentReplyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_261) = &input.in_reply_to {
         object.key("inReplyTo").string(var_261);
     }
@@ -1244,24 +1302,26 @@ pub fn serialize_structure_crate_input_post_comment_reply_input(
     if let Some(var_263) = &input.content {
         object.key("content").string(var_263);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_comment_reaction_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutCommentReactionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_264) = &input.comment_id {
         object.key("commentId").string(var_264);
     }
     if let Some(var_265) = &input.reaction_value {
         object.key("reactionValue").string(var_265);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_file_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutFileInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_266) = &input.repository_name {
         object.key("repositoryName").string(var_266);
     }
@@ -1291,12 +1351,13 @@ pub fn serialize_structure_crate_input_put_file_input(
     if let Some(var_274) = &input.email {
         object.key("email").string(var_274);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_repository_triggers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutRepositoryTriggersInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_275) = &input.repository_name {
         object.key("repositoryName").string(var_275);
     }
@@ -1308,18 +1369,19 @@ pub fn serialize_structure_crate_input_put_repository_triggers_input(
                 crate::json_ser::serialize_structure_crate_model_repository_trigger(
                     &mut object_279,
                     item_278,
-                );
+                )?;
                 object_279.finish();
             }
         }
         array_277.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_280) = &input.resource_arn {
         object.key("resourceArn").string(var_280);
     }
@@ -1332,12 +1394,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_282.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_test_repository_triggers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TestRepositoryTriggersInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_285) = &input.repository_name {
         object.key("repositoryName").string(var_285);
     }
@@ -1349,18 +1412,19 @@ pub fn serialize_structure_crate_input_test_repository_triggers_input(
                 crate::json_ser::serialize_structure_crate_model_repository_trigger(
                     &mut object_289,
                     item_288,
-                );
+                )?;
                 object_289.finish();
             }
         }
         array_287.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_290) = &input.resource_arn {
         object.key("resourceArn").string(var_290);
     }
@@ -1373,12 +1437,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_292.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_approval_rule_template_content_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateApprovalRuleTemplateContentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_294) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_294);
     }
@@ -1388,12 +1453,13 @@ pub fn serialize_structure_crate_input_update_approval_rule_template_content_inp
     if let Some(var_296) = &input.existing_rule_content_sha256 {
         object.key("existingRuleContentSha256").string(var_296);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_approval_rule_template_description_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateApprovalRuleTemplateDescriptionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_297) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_297);
     }
@@ -1402,48 +1468,52 @@ pub fn serialize_structure_crate_input_update_approval_rule_template_description
             .key("approvalRuleTemplateDescription")
             .string(var_298);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_approval_rule_template_name_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateApprovalRuleTemplateNameInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_299) = &input.old_approval_rule_template_name {
         object.key("oldApprovalRuleTemplateName").string(var_299);
     }
     if let Some(var_300) = &input.new_approval_rule_template_name {
         object.key("newApprovalRuleTemplateName").string(var_300);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_comment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCommentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_301) = &input.comment_id {
         object.key("commentId").string(var_301);
     }
     if let Some(var_302) = &input.content {
         object.key("content").string(var_302);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_default_branch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDefaultBranchInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_303) = &input.repository_name {
         object.key("repositoryName").string(var_303);
     }
     if let Some(var_304) = &input.default_branch_name {
         object.key("defaultBranchName").string(var_304);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_pull_request_approval_rule_content_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePullRequestApprovalRuleContentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_305) = &input.pull_request_id {
         object.key("pullRequestId").string(var_305);
     }
@@ -1456,12 +1526,13 @@ pub fn serialize_structure_crate_input_update_pull_request_approval_rule_content
     if let Some(var_308) = &input.new_rule_content {
         object.key("newRuleContent").string(var_308);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_pull_request_approval_state_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePullRequestApprovalStateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_309) = &input.pull_request_id {
         object.key("pullRequestId").string(var_309);
     }
@@ -1471,72 +1542,78 @@ pub fn serialize_structure_crate_input_update_pull_request_approval_state_input(
     if let Some(var_311) = &input.approval_state {
         object.key("approvalState").string(var_311.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_pull_request_description_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePullRequestDescriptionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_312) = &input.pull_request_id {
         object.key("pullRequestId").string(var_312);
     }
     if let Some(var_313) = &input.description {
         object.key("description").string(var_313);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_pull_request_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePullRequestStatusInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_314) = &input.pull_request_id {
         object.key("pullRequestId").string(var_314);
     }
     if let Some(var_315) = &input.pull_request_status {
         object.key("pullRequestStatus").string(var_315.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_pull_request_title_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePullRequestTitleInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_316) = &input.pull_request_id {
         object.key("pullRequestId").string(var_316);
     }
     if let Some(var_317) = &input.title {
         object.key("title").string(var_317);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_repository_description_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRepositoryDescriptionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_318) = &input.repository_name {
         object.key("repositoryName").string(var_318);
     }
     if let Some(var_319) = &input.repository_description {
         object.key("repositoryDescription").string(var_319);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_repository_name_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRepositoryNameInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_320) = &input.old_name {
         object.key("oldName").string(var_320);
     }
     if let Some(var_321) = &input.new_name {
         object.key("newName").string(var_321);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_put_file_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PutFileEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_322) = &input.file_path {
         object.key("filePath").string(var_322);
     }
@@ -1553,36 +1630,39 @@ pub fn serialize_structure_crate_model_put_file_entry(
         crate::json_ser::serialize_structure_crate_model_source_file_specifier(
             &mut object_326,
             var_325,
-        );
+        )?;
         object_326.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_delete_file_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeleteFileEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_327) = &input.file_path {
         object.key("filePath").string(var_327);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_set_file_mode_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SetFileModeEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_328) = &input.file_path {
         object.key("filePath").string(var_328);
     }
     if let Some(var_329) = &input.file_mode {
         object.key("fileMode").string(var_329.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_target(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Target,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_330) = &input.repository_name {
         object.key("repositoryName").string(var_330);
     }
@@ -1592,12 +1672,13 @@ pub fn serialize_structure_crate_model_target(
     if let Some(var_332) = &input.destination_reference {
         object.key("destinationReference").string(var_332);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_conflict_resolution(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConflictResolution,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_333) = &input.replace_contents {
         let mut array_334 = object.key("replaceContents").start_array();
         for item_335 in var_333 {
@@ -1606,7 +1687,7 @@ pub fn serialize_structure_crate_model_conflict_resolution(
                 crate::json_ser::serialize_structure_crate_model_replace_content_entry(
                     &mut object_336,
                     item_335,
-                );
+                )?;
                 object_336.finish();
             }
         }
@@ -1620,7 +1701,7 @@ pub fn serialize_structure_crate_model_conflict_resolution(
                 crate::json_ser::serialize_structure_crate_model_delete_file_entry(
                     &mut object_340,
                     item_339,
-                );
+                )?;
                 object_340.finish();
             }
         }
@@ -1634,18 +1715,19 @@ pub fn serialize_structure_crate_model_conflict_resolution(
                 crate::json_ser::serialize_structure_crate_model_set_file_mode_entry(
                     &mut object_344,
                     item_343,
-                );
+                )?;
                 object_344.finish();
             }
         }
         array_342.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Location,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_345) = &input.file_path {
         object.key("filePath").string(var_345);
     }
@@ -1658,12 +1740,13 @@ pub fn serialize_structure_crate_model_location(
     if let Some(var_347) = &input.relative_file_version {
         object.key("relativeFileVersion").string(var_347.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_repository_trigger(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RepositoryTrigger,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_348) = &input.name {
         object.key("name").string(var_348);
     }
@@ -1691,24 +1774,26 @@ pub fn serialize_structure_crate_model_repository_trigger(
         }
         array_355.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_source_file_specifier(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SourceFileSpecifier,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_357) = &input.file_path {
         object.key("filePath").string(var_357);
     }
     if input.is_move {
         object.key("isMove").boolean(input.is_move);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_replace_content_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ReplaceContentEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_358) = &input.file_path {
         object.key("filePath").string(var_358);
     }
@@ -1723,4 +1808,5 @@ pub fn serialize_structure_crate_model_replace_content_entry(
     if let Some(var_361) = &input.file_mode {
         object.key("fileMode").string(var_361.as_str());
     }
+    Ok(())
 }

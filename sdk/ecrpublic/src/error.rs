@@ -3522,6 +3522,24 @@ pub struct InvalidLayerPartException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidLayerPartException {
+    /// <p>The AWS account ID associated with the layer part.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The upload ID associated with the layer part.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The position of the last byte of the layer part.</p>
+    pub fn last_valid_byte_received(&self) -> std::option::Option<i64> {
+        self.last_valid_byte_received
+    }
+}
 impl std::fmt::Debug for InvalidLayerPartException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidLayerPartException");

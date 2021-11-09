@@ -36,6 +36,12 @@ pub struct UpdateRuleVersionOutput {
     /// <p>The new rule version that was created.</p>
     pub rule: std::option::Option<crate::model::Rule>,
 }
+impl UpdateRuleVersionOutput {
+    /// <p>The new rule version that was created.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+        self.rule.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRuleVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleVersionOutput");
@@ -147,6 +153,24 @@ pub struct UpdateModelVersionOutput {
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The status of the updated model version.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl UpdateModelVersionOutput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number of the model version updated.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+    /// <p>The status of the updated model version.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateModelVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -693,6 +717,16 @@ pub struct ListTagsForResourceOutput {
     /// <p>The next token for subsequent requests. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The next token for subsequent requests. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -764,6 +798,16 @@ pub struct GetVariablesOutput {
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
     /// <p>The next page token to be used in subsequent requests. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetVariablesOutput {
+    /// <p>The names of the variables returned. </p>
+    pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
+        self.variables.as_deref()
+    }
+    /// <p>The next page token to be used in subsequent requests. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVariablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -837,6 +881,16 @@ pub struct GetRulesOutput {
     /// <p>The next page token to be used in subsequent requests.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetRulesOutput {
+    /// <p>The details of the requested rule.</p>
+    pub fn rule_details(&self) -> std::option::Option<&[crate::model::RuleDetail]> {
+        self.rule_details.as_deref()
+    }
+    /// <p>The next page token to be used in subsequent requests.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRulesOutput");
@@ -908,6 +962,16 @@ pub struct GetOutcomesOutput {
     pub outcomes: std::option::Option<std::vec::Vec<crate::model::Outcome>>,
     /// <p>The next page token for subsequent requests.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetOutcomesOutput {
+    /// <p>The outcomes. </p>
+    pub fn outcomes(&self) -> std::option::Option<&[crate::model::Outcome]> {
+        self.outcomes.as_deref()
+    }
+    /// <p>The next page token for subsequent requests.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOutcomesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1045,6 +1109,101 @@ pub struct GetModelVersionOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The model version ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetModelVersionOutput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+    /// <p>The training data source.</p>
+    pub fn training_data_source(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingDataSourceEnum> {
+        self.training_data_source.as_ref()
+    }
+    /// <p>The training data schema.</p>
+    pub fn training_data_schema(&self) -> std::option::Option<&crate::model::TrainingDataSchema> {
+        self.training_data_schema.as_ref()
+    }
+    /// <p>The details of the external events data used for training the model version.
+    /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
+    /// </p>
+    pub fn external_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalEventsDetail> {
+        self.external_events_detail.as_ref()
+    }
+    /// <p>The details of the ingested events data used for training the model version.
+    /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub fn ingested_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestedEventsDetail> {
+        self.ingested_events_detail.as_ref()
+    }
+    /// <p>The model version status.</p>
+    /// <p>Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TRAINING_IN_PROGRESS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TRAINING_COMPLETE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATE_REQUESTED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATE_IN_PROGRESS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVATE_REQUESTED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVATE_IN_PROGRESS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The model version ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1320,6 +1479,16 @@ pub struct GetModelsOutput {
     /// <p>The array of models.</p>
     pub models: std::option::Option<std::vec::Vec<crate::model::Model>>,
 }
+impl GetModelsOutput {
+    /// <p>The next page token to be used in subsequent requests.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The array of models.</p>
+    pub fn models(&self) -> std::option::Option<&[crate::model::Model]> {
+        self.models.as_deref()
+    }
+}
 impl std::fmt::Debug for GetModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetModelsOutput");
@@ -1392,6 +1561,16 @@ pub struct GetLabelsOutput {
     /// <p>The next page token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetLabelsOutput {
+    /// <p>An array of labels.</p>
+    pub fn labels(&self) -> std::option::Option<&[crate::model::Label]> {
+        self.labels.as_deref()
+    }
+    /// <p>The next page token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLabelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLabelsOutput");
@@ -1462,6 +1641,12 @@ pub struct GetKmsEncryptionKeyOutput {
     /// <p>The KMS encryption key.</p>
     pub kms_key: std::option::Option<crate::model::KmsKey>,
 }
+impl GetKmsEncryptionKeyOutput {
+    /// <p>The KMS encryption key.</p>
+    pub fn kms_key(&self) -> std::option::Option<&crate::model::KmsKey> {
+        self.kms_key.as_ref()
+    }
+}
 impl std::fmt::Debug for GetKmsEncryptionKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKmsEncryptionKeyOutput");
@@ -1511,6 +1696,16 @@ pub struct GetExternalModelsOutput {
     pub external_models: std::option::Option<std::vec::Vec<crate::model::ExternalModel>>,
     /// <p>The next page token to be used in subsequent requests.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetExternalModelsOutput {
+    /// <p>Gets the Amazon SageMaker models.</p>
+    pub fn external_models(&self) -> std::option::Option<&[crate::model::ExternalModel]> {
+        self.external_models.as_deref()
+    }
+    /// <p>The next page token to be used in subsequent requests.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetExternalModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1583,6 +1778,16 @@ pub struct GetEventTypesOutput {
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>The next page token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetEventTypesOutput {
+    /// <p>An array of event types.</p>
+    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.event_types.as_deref()
+    }
+    /// <p>The next page token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEventTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1658,6 +1863,22 @@ pub struct GetEventPredictionOutput {
     /// <p>The model scores for Amazon SageMaker models.</p>
     pub external_model_outputs:
         std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
+}
+impl GetEventPredictionOutput {
+    /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
+    pub fn model_scores(&self) -> std::option::Option<&[crate::model::ModelScores]> {
+        self.model_scores.as_deref()
+    }
+    /// <p>The results from the rules.</p>
+    pub fn rule_results(&self) -> std::option::Option<&[crate::model::RuleResult]> {
+        self.rule_results.as_deref()
+    }
+    /// <p>The model scores for Amazon SageMaker models.</p>
+    pub fn external_model_outputs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExternalModelOutputs]> {
+        self.external_model_outputs.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEventPredictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1764,6 +1985,12 @@ pub struct GetEventOutput {
     /// <p>The details of the event.</p>
     pub event: std::option::Option<crate::model::Event>,
 }
+impl GetEventOutput {
+    /// <p>The details of the event.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEventOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventOutput");
@@ -1811,6 +2038,16 @@ pub struct GetEntityTypesOutput {
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
     /// <p>The next page token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetEntityTypesOutput {
+    /// <p>An array of entity types.</p>
+    pub fn entity_types(&self) -> std::option::Option<&[crate::model::EntityType]> {
+        self.entity_types.as_deref()
+    }
+    /// <p>The next page token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEntityTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1906,6 +2143,57 @@ pub struct GetDetectorVersionOutput {
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
     /// <p>The detector version ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetDetectorVersionOutput {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The detector version ID.</p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p>The detector version description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
+    pub fn external_model_endpoints(&self) -> std::option::Option<&[std::string::String]> {
+        self.external_model_endpoints.as_deref()
+    }
+    /// <p>The model versions included in the detector version. </p>
+    pub fn model_versions(&self) -> std::option::Option<&[crate::model::ModelVersion]> {
+        self.model_versions.as_deref()
+    }
+    /// <p>The rules included in the detector version.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>The status of the detector version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp when the detector version was last updated.
+    /// </p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>The timestamp when the detector version was created. </p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The execution mode of the rule in the dectector</p>
+    /// <p>
+    /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>
+    /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
+        self.rule_execution_mode.as_ref()
+    }
+    /// <p>The detector version ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDetectorVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2137,6 +2425,16 @@ pub struct GetDetectorsOutput {
     /// <p>The next page token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDetectorsOutput {
+    /// <p>The detectors.</p>
+    pub fn detectors(&self) -> std::option::Option<&[crate::model::Detector]> {
+        self.detectors.as_deref()
+    }
+    /// <p>The next page token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDetectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDetectorsOutput");
@@ -2209,6 +2507,16 @@ pub struct GetDeleteEventsByEventTypeStatusOutput {
     /// <p>The deletion status.</p>
     pub events_deletion_status: std::option::Option<crate::model::AsyncJobStatus>,
 }
+impl GetDeleteEventsByEventTypeStatusOutput {
+    /// <p>The event type name.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The deletion status.</p>
+    pub fn events_deletion_status(&self) -> std::option::Option<&crate::model::AsyncJobStatus> {
+        self.events_deletion_status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDeleteEventsByEventTypeStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeleteEventsByEventTypeStatusOutput");
@@ -2277,6 +2585,16 @@ pub struct GetBatchPredictionJobsOutput {
     pub batch_predictions: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
     /// <p>The next token for the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetBatchPredictionJobsOutput {
+    /// <p>An array containing the details of each batch prediction job.</p>
+    pub fn batch_predictions(&self) -> std::option::Option<&[crate::model::BatchPrediction]> {
+        self.batch_predictions.as_deref()
+    }
+    /// <p>The next token for the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBatchPredictionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2354,6 +2672,16 @@ pub struct GetBatchImportJobsOutput {
     /// <p>The next token for the subsequent resquest.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetBatchImportJobsOutput {
+    /// <p>An array containing the details of each batch import job.</p>
+    pub fn batch_imports(&self) -> std::option::Option<&[crate::model::BatchImport]> {
+        self.batch_imports.as_deref()
+    }
+    /// <p>The next token for the subsequent resquest.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBatchImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBatchImportJobsOutput");
@@ -2425,6 +2753,18 @@ pub struct DescribeModelVersionsOutput {
     pub model_version_details: std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>,
     /// <p>The next token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeModelVersionsOutput {
+    /// <p>The model version details.</p>
+    pub fn model_version_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelVersionDetail]> {
+        self.model_version_details.as_deref()
+    }
+    /// <p>The next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeModelVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2506,6 +2846,26 @@ pub struct DescribeDetectorOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The detector ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DescribeDetectorOutput {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The status and description for each detector version.</p>
+    pub fn detector_version_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DetectorVersionSummary]> {
+        self.detector_version_summaries.as_deref()
+    }
+    /// <p>The next token to be used for subsequent requests.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The detector ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2852,6 +3212,16 @@ pub struct DeleteEventsByEventTypeOutput {
     /// <p>The status of the delete request.</p>
     pub events_deletion_status: std::option::Option<std::string::String>,
 }
+impl DeleteEventsByEventTypeOutput {
+    /// <p>Name of event type for which to delete the events.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The status of the delete request.</p>
+    pub fn events_deletion_status(&self) -> std::option::Option<&str> {
+        self.events_deletion_status.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventsByEventTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventsByEventTypeOutput");
@@ -3129,6 +3499,12 @@ pub struct CreateRuleOutput {
     /// <p>The created rule.</p>
     pub rule: std::option::Option<crate::model::Rule>,
 }
+impl CreateRuleOutput {
+    /// <p>The created rule.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+        self.rule.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleOutput");
@@ -3180,6 +3556,24 @@ pub struct CreateModelVersionOutput {
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The model version status. </p>
     pub status: std::option::Option<std::string::String>,
+}
+impl CreateModelVersionOutput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number of the model version created.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+    /// <p>The model version status. </p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3307,6 +3701,20 @@ pub struct CreateDetectorVersionOutput {
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The status of the detector version.</p>
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
+}
+impl CreateDetectorVersionOutput {
+    /// <p>The ID for the created version's parent detector.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The ID for the created detector. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p>The status of the detector version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDetectorVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3510,6 +3918,16 @@ pub struct BatchGetVariableOutput {
     /// <p>The errors from the request.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetVariableError>>,
 }
+impl BatchGetVariableOutput {
+    /// <p>The returned variables.</p>
+    pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
+        self.variables.as_deref()
+    }
+    /// <p>The errors from the request.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetVariableError]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetVariableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetVariableOutput");
@@ -3588,6 +4006,12 @@ impl BatchGetVariableOutput {
 pub struct BatchCreateVariableOutput {
     /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>,
+}
+impl BatchCreateVariableOutput {
+    /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchCreateVariableError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateVariableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

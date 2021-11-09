@@ -182,7 +182,7 @@ impl AssociateDeviceWithPlacementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_device_with_placement(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_device_with_placement(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -394,10 +394,7 @@ impl CreatePlacementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_placement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_placement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -607,10 +604,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2358,10 +2352,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2765,10 +2756,7 @@ impl UpdatePlacementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_placement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_placement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2965,10 +2953,7 @@ impl UpdateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3044,6 +3029,23 @@ pub struct UpdateProjectInput {
     /// API.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
 }
+impl UpdateProjectInput {
+    /// <p>The name of the project to be updated.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>An optional user-defined description for the project.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An object defining the project update. Once a project has been created, you cannot add
+    /// device template names to the project. However, for a given <code>placementTemplate</code>, you
+    /// can update the associated <code>callbackOverrides</code> for the device definition using this
+    /// API.</p>
+    pub fn placement_template(&self) -> std::option::Option<&crate::model::PlacementTemplate> {
+        self.placement_template.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
@@ -3067,6 +3069,24 @@ pub struct UpdatePlacementInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdatePlacementInput {
+    /// <p>The name of the placement to update.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The name of the project containing the placement to be updated.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The user-defined object of attributes used to update the placement. The maximum number of
+    /// key/value pairs is 50.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePlacementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePlacementInput");
@@ -3085,6 +3105,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of those tags which you want to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ARN of the resource whose tag you want to remove.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of those tags which you want to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3106,6 +3136,20 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3121,6 +3165,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource whose tags you want to list.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource whose tags you want to list.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3139,6 +3189,17 @@ pub struct ListProjectsInput {
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
     /// used.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProjectsInput {
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
+    /// used.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3161,6 +3222,21 @@ pub struct ListPlacementsInput {
     /// used.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPlacementsInput {
+    /// <p>The project containing the placements to be listed.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
+    /// used.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPlacementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPlacementsInput");
@@ -3179,6 +3255,16 @@ pub struct GetDevicesInPlacementInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement to get the devices from.</p>
     pub placement_name: std::option::Option<std::string::String>,
+}
+impl GetDevicesInPlacementInput {
+    /// <p>The name of the project containing the placement.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The name of the placement to get the devices from.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDevicesInPlacementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3200,6 +3286,20 @@ pub struct DisassociateDeviceFromPlacementInput {
     /// <p>The device ID that should be removed from the placement.</p>
     pub device_template_name: std::option::Option<std::string::String>,
 }
+impl DisassociateDeviceFromPlacementInput {
+    /// <p>The name of the project that contains the placement.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The name of the placement that the device should be removed from.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The device ID that should be removed from the placement.</p>
+    pub fn device_template_name(&self) -> std::option::Option<&str> {
+        self.device_template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateDeviceFromPlacementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateDeviceFromPlacementInput");
@@ -3216,6 +3316,12 @@ impl std::fmt::Debug for DisassociateDeviceFromPlacementInput {
 pub struct DescribeProjectInput {
     /// <p>The name of the project to be described.</p>
     pub project_name: std::option::Option<std::string::String>,
+}
+impl DescribeProjectInput {
+    /// <p>The name of the project to be described.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3234,6 +3340,16 @@ pub struct DescribePlacementInput {
     /// <p>The project containing the placement to be described.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
+impl DescribePlacementInput {
+    /// <p>The name of the placement within a project.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The project containing the placement to be described.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePlacementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePlacementInput");
@@ -3249,6 +3365,12 @@ impl std::fmt::Debug for DescribePlacementInput {
 pub struct DeleteProjectInput {
     /// <p>The name of the empty project to delete.</p>
     pub project_name: std::option::Option<std::string::String>,
+}
+impl DeleteProjectInput {
+    /// <p>The name of the empty project to delete.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3266,6 +3388,16 @@ pub struct DeletePlacementInput {
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The project containing the empty placement to delete.</p>
     pub project_name: std::option::Option<std::string::String>,
+}
+impl DeletePlacementInput {
+    /// <p>The name of the empty placement to delete.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The project containing the empty placement to delete.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePlacementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3295,6 +3427,32 @@ pub struct CreateProjectInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateProjectInput {
+    /// <p>The name of the project to create.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>An optional description for the project.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The schema defining the placement to be created. A placement template defines placement
+    /// default attributes and device templates. You cannot add or remove device templates after the
+    /// project has been created. However, you can update <code>callbackOverrides</code> for the
+    /// device templates using the <code>UpdateProject</code> API.</p>
+    pub fn placement_template(&self) -> std::option::Option<&crate::model::PlacementTemplate> {
+        self.placement_template.as_ref()
+    }
+    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
+    /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+    /// Strategies</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectInput");
@@ -3318,6 +3476,24 @@ pub struct CreatePlacementInput {
     /// function) for the placement.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreatePlacementInput {
+    /// <p>The name of the placement to be created.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The name of the project in which to create the placement.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
+    /// function) for the placement.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePlacementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3343,6 +3519,26 @@ pub struct AssociateDeviceWithPlacementInput {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device template name to associate with the device ID.</p>
     pub device_template_name: std::option::Option<std::string::String>,
+}
+impl AssociateDeviceWithPlacementInput {
+    /// <p>The name of the project containing the placement in which to associate the device.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The name of the placement in which to associate the device.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The ID of the physical device to be associated with the given placement in the project.
+    /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
+    /// values.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The device template name to associate with the device ID.</p>
+    pub fn device_template_name(&self) -> std::option::Option<&str> {
+        self.device_template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateDeviceWithPlacementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

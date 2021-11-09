@@ -6145,6 +6145,12 @@ pub struct InternalServerErrorException {
     /// <p>The error type.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
+impl InternalServerErrorException {
+    /// <p>The error type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerErrorException");
@@ -6223,6 +6229,12 @@ pub struct BadRequestException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The error type.</p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl BadRequestException {
+    /// <p>The error type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

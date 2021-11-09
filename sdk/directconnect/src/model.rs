@@ -8,6 +8,16 @@ pub struct Tag {
     /// <p>The value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -124,6 +134,86 @@ pub struct BgpPeer {
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
     /// different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
+}
+impl BgpPeer {
+    /// <p>The ID of the BGP peer.</p>
+    pub fn bgp_peer_id(&self) -> std::option::Option<&str> {
+        self.bgp_peer_id.as_deref()
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The state of the BGP peer. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: The BGP peer is ready to be established.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>:  The BGP peer is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>:  The BGP peer is deleted and cannot be established.</p>
+    /// </li>
+    /// </ul>
+    pub fn bgp_peer_state(&self) -> std::option::Option<&crate::model::BgpPeerState> {
+        self.bgp_peer_state.as_ref()
+    }
+    /// <p>The status of the BGP peer. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>up</code>: The BGP peer is established. This state does not indicate the
+    /// state of the routing function. Ensure that you are receiving routes over the BGP session.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>down</code>: The BGP peer is down.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unknown</code>: The BGP peer status is not available.</p>
+    /// </li>
+    /// </ul>
+    pub fn bgp_status(&self) -> std::option::Option<&crate::model::BgpStatus> {
+        self.bgp_status.as_ref()
+    }
+    /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
+    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+        self.aws_device_v2.as_deref()
+    }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+        self.aws_logical_device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BgpPeer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -569,6 +659,12 @@ pub struct RouteFilterPrefix {
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
     pub cidr: std::option::Option<std::string::String>,
 }
+impl RouteFilterPrefix {
+    /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
+}
 impl std::fmt::Debug for RouteFilterPrefix {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteFilterPrefix");
@@ -732,6 +828,43 @@ pub struct MacSecKey {
     pub state: std::option::Option<std::string::String>,
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
     pub start_on: std::option::Option<std::string::String>,
+}
+impl MacSecKey {
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
+    pub fn ckn(&self) -> std::option::Option<&str> {
+        self.ckn.as_deref()
+    }
+    /// <p>The state of the MAC Security (MACsec) secret key.</p>
+    /// <p>The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p>
+    /// </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
+    pub fn start_on(&self) -> std::option::Option<&str> {
+        self.start_on.as_deref()
+    }
 }
 impl std::fmt::Debug for MacSecKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -999,6 +1132,139 @@ pub struct Connection {
     pub encryption_mode: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+}
+impl Connection {
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The name of the connection.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The state of the connection. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>down</code>: The network link is down.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: The connection is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: The connection has been deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unknown</code>: The state of the connection is not available.</p>
+    /// </li>
+    /// </ul>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The location of the connection.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The bandwidth of the connection.</p>
+    pub fn bandwidth(&self) -> std::option::Option<&str> {
+        self.bandwidth.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The name of the Direct Connect service provider associated with the connection.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.loa_issue_time.as_ref()
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    pub fn aws_device(&self) -> std::option::Option<&str> {
+        self.aws_device.as_deref()
+    }
+    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    pub fn jumbo_frame_capable(&self) -> std::option::Option<bool> {
+        self.jumbo_frame_capable
+    }
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+        self.aws_device_v2.as_deref()
+    }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+        self.aws_logical_device_id.as_deref()
+    }
+    /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    pub fn has_logical_redundancy(
+        &self,
+    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+        self.has_logical_redundancy.as_ref()
+    }
+    /// <p>The tags associated with the connection.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the service provider associated with the connection.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
+        self.mac_sec_capable
+    }
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+        self.port_encryption_status.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+        self.encryption_mode.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+        self.mac_sec_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for Connection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1667,6 +1933,70 @@ pub struct DirectConnectGatewayAssociation {
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
     pub virtual_gateway_owner_account: std::option::Option<std::string::String>,
 }
+impl DirectConnectGatewayAssociation {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
+    pub fn direct_connect_gateway_owner_account(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_owner_account.as_deref()
+    }
+    /// <p>The state of the association. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+    /// </li>
+    /// </ul>
+    pub fn association_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociationState> {
+        self.association_state.as_ref()
+    }
+    /// <p>The error message if the state of an object failed to advance.</p>
+    pub fn state_change_error(&self) -> std::option::Option<&str> {
+        self.state_change_error.as_deref()
+    }
+    /// <p>Information about the associated gateway.</p>
+    pub fn associated_gateway(&self) -> std::option::Option<&crate::model::AssociatedGateway> {
+        self.associated_gateway.as_ref()
+    }
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.allowed_prefixes_to_direct_connect_gateway.as_deref()
+    }
+    /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
+    pub fn virtual_gateway_region(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_region.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
+    pub fn virtual_gateway_owner_account(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_owner_account.as_deref()
+    }
+}
 impl std::fmt::Debug for DirectConnectGatewayAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DirectConnectGatewayAssociation");
@@ -1936,6 +2266,24 @@ pub struct AssociatedGateway {
     /// <p>The Region where the associated gateway is located.</p>
     pub region: std::option::Option<std::string::String>,
 }
+impl AssociatedGateway {
+    /// <p>The ID of the associated gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of associated gateway.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::GatewayType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The Region where the associated gateway is located.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociatedGateway {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociatedGateway");
@@ -2181,6 +2529,52 @@ pub struct DirectConnectGateway {
     pub direct_connect_gateway_state: std::option::Option<crate::model::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
     pub state_change_error: std::option::Option<std::string::String>,
+}
+impl DirectConnectGateway {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The name of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_name(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_name.as_deref()
+    }
+    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    pub fn amazon_side_asn(&self) -> std::option::Option<i64> {
+        self.amazon_side_asn
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
+    /// </li>
+    /// </ul>
+    pub fn direct_connect_gateway_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectConnectGatewayState> {
+        self.direct_connect_gateway_state.as_ref()
+    }
+    /// <p>The error message if the state of an object failed to advance.</p>
+    pub fn state_change_error(&self) -> std::option::Option<&str> {
+        self.state_change_error.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectConnectGateway {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2436,6 +2830,40 @@ pub struct VirtualInterfaceTestHistory {
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl VirtualInterfaceTestHistory {
+    /// <p>The ID of the virtual interface failover test.</p>
+    pub fn test_id(&self) -> std::option::Option<&str> {
+        self.test_id.as_deref()
+    }
+    /// <p>The ID of the tested virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
+    pub fn bgp_peers(&self) -> std::option::Option<&[std::string::String]> {
+        self.bgp_peers.as_deref()
+    }
+    /// <p>The status of the virtual interface failover test.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The owner ID of the tested virtual interface.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The time that the virtual interface failover test ran in minutes.</p>
+    pub fn test_duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.test_duration_in_minutes
+    }
+    /// <p>The time that the virtual interface moves to the DOWN state.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time that the virtual interface moves out of the DOWN state.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualInterfaceTestHistory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualInterfaceTestHistory");
@@ -2683,6 +3111,150 @@ pub struct VirtualInterface {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl VirtualInterface {
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The location of the connection.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    pub fn virtual_interface_type(&self) -> std::option::Option<&str> {
+        self.virtual_interface_type.as_deref()
+    }
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    pub fn amazon_side_asn(&self) -> std::option::Option<i64> {
+        self.amazon_side_asn
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The state of the virtual interface. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>down</code>: A virtual interface that is BGP down.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
+    /// </li>
+    /// </ul>
+    pub fn virtual_interface_state(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+        self.virtual_interface_state.as_ref()
+    }
+    /// <p>The customer router configuration.</p>
+    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+        self.customer_router_config.as_deref()
+    }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    pub fn mtu(&self) -> std::option::Option<i32> {
+        self.mtu
+    }
+    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    pub fn jumbo_frame_capable(&self) -> std::option::Option<bool> {
+        self.jumbo_frame_capable
+    }
+    /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.route_filter_prefixes.as_deref()
+    }
+    /// <p>The BGP peers configured on this virtual interface.</p>
+    pub fn bgp_peers(&self) -> std::option::Option<&[crate::model::BgpPeer]> {
+        self.bgp_peers.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+        self.aws_device_v2.as_deref()
+    }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+        self.aws_logical_device_id.as_deref()
+    }
+    /// <p>The tags associated with the virtual interface.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3221,6 +3793,34 @@ pub struct VirtualGateway {
     /// </ul>
     pub virtual_gateway_state: std::option::Option<std::string::String>,
 }
+impl VirtualGateway {
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+    /// <p>The state of the virtual private gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: Initial state after creating the virtual private gateway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: Ready for use by a private virtual interface.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: Initial state after deleting the virtual private gateway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p>
+    /// </li>
+    /// </ul>
+    pub fn virtual_gateway_state(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_state.as_deref()
+    }
+}
 impl std::fmt::Debug for VirtualGateway {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGateway");
@@ -3326,6 +3926,16 @@ pub struct ResourceTag {
     /// <p>The tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ResourceTag {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceTag");
@@ -3405,6 +4015,32 @@ pub struct RouterType {
     pub xslt_template_name_for_mac_sec: std::option::Option<std::string::String>,
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
     pub router_type_identifier: std::option::Option<std::string::String>,
+}
+impl RouterType {
+    /// <p>The vendor for the virtual interface's router.</p>
+    pub fn vendor(&self) -> std::option::Option<&str> {
+        self.vendor.as_deref()
+    }
+    /// <p>The virtual interface router platform.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The router software. </p>
+    pub fn software(&self) -> std::option::Option<&str> {
+        self.software.as_deref()
+    }
+    /// <p>The template for the virtual interface's router.</p>
+    pub fn xslt_template_name(&self) -> std::option::Option<&str> {
+        self.xslt_template_name.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
+    pub fn xslt_template_name_for_mac_sec(&self) -> std::option::Option<&str> {
+        self.xslt_template_name_for_mac_sec.as_deref()
+    }
+    /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    pub fn router_type_identifier(&self) -> std::option::Option<&str> {
+        self.router_type_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for RouterType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3543,6 +4179,32 @@ pub struct Location {
     pub available_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
     pub available_mac_sec_port_speeds: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Location {
+    /// <p>The code for the location.</p>
+    pub fn location_code(&self) -> std::option::Option<&str> {
+        self.location_code.as_deref()
+    }
+    /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
+    pub fn location_name(&self) -> std::option::Option<&str> {
+        self.location_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Region for the location.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The available port speeds for the location.</p>
+    pub fn available_port_speeds(&self) -> std::option::Option<&[std::string::String]> {
+        self.available_port_speeds.as_deref()
+    }
+    /// <p>The name of the service provider for the location.</p>
+    pub fn available_providers(&self) -> std::option::Option<&[std::string::String]> {
+        self.available_providers.as_deref()
+    }
+    /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
+    pub fn available_mac_sec_port_speeds(&self) -> std::option::Option<&[std::string::String]> {
+        self.available_mac_sec_port_speeds.as_deref()
+    }
 }
 impl std::fmt::Debug for Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3821,6 +4483,128 @@ pub struct Lag {
     pub encryption_mode: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+}
+impl Lag {
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
+    /// values are 1Gbps and 10Gbps. </p>
+    pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
+        self.connections_bandwidth.as_deref()
+    }
+    /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    pub fn number_of_connections(&self) -> i32 {
+        self.number_of_connections
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The name of the LAG.</p>
+    pub fn lag_name(&self) -> std::option::Option<&str> {
+        self.lag_name.as_deref()
+    }
+    /// <p>The state of the LAG. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
+    /// requested state until the Letter of Authorization (LOA) is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>down</code>: The network link is down.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: The LAG is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: The LAG is deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unknown</code>: The state of the LAG is not available.</p>
+    /// </li>
+    /// </ul>
+    pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
+        self.lag_state.as_ref()
+    }
+    /// <p>The location of the LAG.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
+    pub fn minimum_links(&self) -> i32 {
+        self.minimum_links
+    }
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
+    pub fn aws_device(&self) -> std::option::Option<&str> {
+        self.aws_device.as_deref()
+    }
+    /// <p>The Direct Connect endpoint that hosts the LAG.</p>
+    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+        self.aws_device_v2.as_deref()
+    }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+        self.aws_logical_device_id.as_deref()
+    }
+    /// <p>The connections bundled by the LAG.</p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+        self.connections.as_deref()
+    }
+    /// <p>Indicates whether the LAG can host other connections.</p>
+    pub fn allows_hosted_connections(&self) -> bool {
+        self.allows_hosted_connections
+    }
+    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    pub fn jumbo_frame_capable(&self) -> std::option::Option<bool> {
+        self.jumbo_frame_capable
+    }
+    /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    pub fn has_logical_redundancy(
+        &self,
+    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+        self.has_logical_redundancy.as_ref()
+    }
+    /// <p>The tags associated with the LAG.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the service provider associated with the LAG.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+    pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
+        self.mac_sec_capable
+    }
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+        self.encryption_mode.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+        self.mac_sec_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for Lag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4306,6 +5090,102 @@ pub struct Interconnect {
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
+impl Interconnect {
+    /// <p>The ID of the interconnect.</p>
+    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+        self.interconnect_id.as_deref()
+    }
+    /// <p>The name of the interconnect.</p>
+    pub fn interconnect_name(&self) -> std::option::Option<&str> {
+        self.interconnect_name.as_deref()
+    }
+    /// <p>The state of the interconnect. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
+    /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>down</code>: The network link is down.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: The interconnect is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: The interconnect is deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unknown</code>: The state of the interconnect is not available.</p>
+    /// </li>
+    /// </ul>
+    pub fn interconnect_state(&self) -> std::option::Option<&crate::model::InterconnectState> {
+        self.interconnect_state.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The location of the connection.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The bandwidth of the connection.</p>
+    pub fn bandwidth(&self) -> std::option::Option<&str> {
+        self.bandwidth.as_deref()
+    }
+    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.loa_issue_time.as_ref()
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    pub fn aws_device(&self) -> std::option::Option<&str> {
+        self.aws_device.as_deref()
+    }
+    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    pub fn jumbo_frame_capable(&self) -> std::option::Option<bool> {
+        self.jumbo_frame_capable
+    }
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+        self.aws_device_v2.as_deref()
+    }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+    /// different than the device that terminates the physical connection.</p>
+    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+        self.aws_logical_device_id.as_deref()
+    }
+    /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
+    pub fn has_logical_redundancy(
+        &self,
+    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+        self.has_logical_redundancy.as_ref()
+    }
+    /// <p>The tags associated with the interconnect.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the service provider associated with the interconnect.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Interconnect {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Interconnect");
@@ -4718,6 +5598,16 @@ pub struct Loa {
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
+impl Loa {
+    /// <p>The binary contents of the LOA-CFA document.</p>
+    pub fn loa_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.loa_content.as_ref()
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn loa_content_type(&self) -> std::option::Option<&crate::model::LoaContentType> {
+        self.loa_content_type.as_ref()
+    }
+}
 impl std::fmt::Debug for Loa {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Loa");
@@ -4814,6 +5704,58 @@ pub struct DirectConnectGatewayAttachment {
     pub attachment_type: std::option::Option<crate::model::DirectConnectGatewayAttachmentType>,
     /// <p>The error message if the state of an object failed to advance.</p>
     pub state_change_error: std::option::Option<std::string::String>,
+}
+impl DirectConnectGatewayAttachment {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    pub fn virtual_interface_region(&self) -> std::option::Option<&str> {
+        self.virtual_interface_region.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    pub fn virtual_interface_owner_account(&self) -> std::option::Option<&str> {
+        self.virtual_interface_owner_account.as_deref()
+    }
+    /// <p>The state of the attachment. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p>
+    /// </li>
+    /// </ul>
+    pub fn attachment_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectConnectGatewayAttachmentState> {
+        self.attachment_state.as_ref()
+    }
+    /// <p>The type of attachment.</p>
+    pub fn attachment_type(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectConnectGatewayAttachmentType> {
+        self.attachment_type.as_ref()
+    }
+    /// <p>The error message if the state of an object failed to advance.</p>
+    pub fn state_change_error(&self) -> std::option::Option<&str> {
+        self.state_change_error.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectConnectGatewayAttachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5167,6 +6109,58 @@ pub struct DirectConnectGatewayAssociationProposal {
     pub requested_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
 }
+impl DirectConnectGatewayAssociationProposal {
+    /// <p>The ID of the association proposal.</p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_owner_account(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_owner_account.as_deref()
+    }
+    /// <p>The state of the proposal. The following are possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: The proposal has been deleted by the owner that made the proposal.  The Direct Connect gateway association cannot be used in this state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p>
+    /// </li>
+    /// </ul>
+    pub fn proposal_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociationProposalState> {
+        self.proposal_state.as_ref()
+    }
+    /// <p>Information about the associated gateway.</p>
+    pub fn associated_gateway(&self) -> std::option::Option<&crate::model::AssociatedGateway> {
+        self.associated_gateway.as_ref()
+    }
+    /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
+    pub fn existing_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.existing_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn requested_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.requested_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
+}
 impl std::fmt::Debug for DirectConnectGatewayAssociationProposal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DirectConnectGatewayAssociationProposal");
@@ -5502,6 +6496,17 @@ pub struct CustomerAgreement {
     /// </p>
     pub status: std::option::Option<std::string::String>,
 }
+impl CustomerAgreement {
+    /// <p>The name of the agreement.</p>
+    pub fn agreement_name(&self) -> std::option::Option<&str> {
+        self.agreement_name.as_deref()
+    }
+    /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomerAgreement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomerAgreement");
@@ -5586,6 +6591,49 @@ pub struct NewTransitVirtualInterface {
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the transitive virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl NewTransitVirtualInterface {
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    pub fn mtu(&self) -> std::option::Option<i32> {
+        self.mtu
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The tags associated with the transitive virtual interface.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for NewTransitVirtualInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5795,6 +6843,45 @@ pub struct NewPublicVirtualInterface {
     /// <p>The tags associated with the public virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl NewPublicVirtualInterface {
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.route_filter_prefixes.as_deref()
+    }
+    /// <p>The tags associated with the public virtual interface.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for NewPublicVirtualInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NewPublicVirtualInterface");
@@ -6003,6 +7090,53 @@ pub struct NewPrivateVirtualInterface {
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the private virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl NewPrivateVirtualInterface {
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    pub fn mtu(&self) -> std::option::Option<i32> {
+        self.mtu
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The tags associated with the private virtual interface.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for NewPrivateVirtualInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6219,6 +7353,28 @@ pub struct NewBgpPeer {
     /// <p>The IP address assigned to the customer interface.</p>
     pub customer_address: std::option::Option<std::string::String>,
 }
+impl NewBgpPeer {
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+}
 impl std::fmt::Debug for NewBgpPeer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NewBgpPeer");
@@ -6344,6 +7500,45 @@ pub struct NewTransitVirtualInterfaceAllocation {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The tags associated with the transitive virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl NewTransitVirtualInterfaceAllocation {
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500. </p>
+    pub fn mtu(&self) -> std::option::Option<i32> {
+        self.mtu
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The tags associated with the transitive virtual interface.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for NewTransitVirtualInterfaceAllocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6536,6 +7731,45 @@ pub struct NewPublicVirtualInterfaceAllocation {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The tags associated with the public virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl NewPublicVirtualInterfaceAllocation {
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.route_filter_prefixes.as_deref()
+    }
+    /// <p>The tags associated with the public virtual interface.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for NewPublicVirtualInterfaceAllocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6741,6 +7975,45 @@ pub struct NewPrivateVirtualInterfaceAllocation {
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The tags associated with the private virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl NewPrivateVirtualInterfaceAllocation {
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
+    /// <p>The ID of the VLAN.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    pub fn mtu(&self) -> std::option::Option<i32> {
+        self.mtu
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn auth_key(&self) -> std::option::Option<&str> {
+        self.auth_key.as_deref()
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn amazon_address(&self) -> std::option::Option<&str> {
+        self.amazon_address.as_deref()
+    }
+    /// <p>The address family for the BGP peer.</p>
+    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+        self.address_family.as_ref()
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The tags associated with the private virtual interface.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for NewPrivateVirtualInterfaceAllocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

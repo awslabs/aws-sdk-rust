@@ -105,10 +105,8 @@ impl AcknowledgeJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_acknowledge_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_acknowledge_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -289,10 +287,7 @@ impl AcknowledgeThirdPartyJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_acknowledge_third_party_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -580,10 +575,7 @@ impl CreateCustomActionTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_custom_action_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -758,10 +750,8 @@ impl CreatePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -944,10 +934,7 @@ impl DeleteCustomActionTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_custom_action_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1094,10 +1081,8 @@ impl DeletePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1244,10 +1229,7 @@ impl DeleteWebhookInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_webhook(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_webhook(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1398,7 +1380,7 @@ impl DeregisterWebhookWithThirdPartyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_webhook_with_third_party(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_webhook_with_third_party(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1607,10 +1589,7 @@ impl DisableStageTransitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_stage_transition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1800,10 +1779,7 @@ impl EnableStageTransitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_stage_transition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2061,10 +2037,8 @@ impl GetActionTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_action_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_action_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2213,10 +2187,8 @@ impl GetJobDetailsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_job_details(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_job_details(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2381,10 +2353,7 @@ impl GetPipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2554,10 +2523,9 @@ impl GetPipelineExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_pipeline_execution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_pipeline_execution(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2705,10 +2673,7 @@ impl GetPipelineStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_pipeline_state(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_pipeline_state(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2875,10 +2840,7 @@ impl GetThirdPartyJobDetailsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_third_party_job_details(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3086,10 +3048,9 @@ impl ListActionExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_action_executions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_action_executions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3271,10 +3232,7 @@ impl ListActionTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_action_types(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_action_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3465,10 +3423,7 @@ impl ListPipelineExecutionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_pipeline_executions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3635,10 +3590,7 @@ impl ListPipelinesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3816,10 +3768,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3984,10 +3935,7 @@ impl ListWebhooksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_webhooks(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_webhooks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4186,10 +4134,7 @@ impl PollForJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_poll_for_jobs(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_poll_for_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4356,10 +4301,7 @@ impl PollForThirdPartyJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_poll_for_third_party_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4553,10 +4495,7 @@ impl PutActionRevisionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_action_revision(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_action_revision(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4764,10 +4703,7 @@ impl PutApprovalResultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_approval_result(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_approval_result(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4934,10 +4870,9 @@ impl PutJobFailureResultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_job_failure_result(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_job_failure_result(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5179,10 +5114,9 @@ impl PutJobSuccessResultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_job_success_result(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_job_success_result(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5364,7 +5298,7 @@ impl PutThirdPartyJobFailureResultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_third_party_job_failure_result(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_third_party_job_failure_result(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5587,7 +5521,7 @@ impl PutThirdPartyJobSuccessResultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_third_party_job_success_result(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_third_party_job_success_result(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5767,10 +5701,7 @@ impl PutWebhookInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_webhook(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_webhook(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5923,7 +5854,7 @@ impl RegisterWebhookWithThirdPartyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_webhook_with_third_party(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_webhook_with_third_party(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6123,10 +6054,7 @@ impl RetryStageExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_retry_stage_execution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_retry_stage_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6298,10 +6226,7 @@ impl StartPipelineExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_pipeline_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6507,10 +6432,7 @@ impl StopPipelineExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_pipeline_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6680,10 +6602,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6853,10 +6772,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7009,10 +6925,7 @@ impl UpdateActionTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_action_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_action_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7164,10 +7077,8 @@ impl UpdatePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7236,6 +7147,12 @@ pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to be updated.</p>
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
 }
+impl UpdatePipelineInput {
+    /// <p>The name of the pipeline to be updated.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
+        self.pipeline.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePipelineInput");
@@ -7250,6 +7167,12 @@ impl std::fmt::Debug for UpdatePipelineInput {
 pub struct UpdateActionTypeInput {
     /// <p>The action type definition for the action type to be updated.</p>
     pub action_type: std::option::Option<crate::model::ActionTypeDeclaration>,
+}
+impl UpdateActionTypeInput {
+    /// <p>The action type definition for the action type to be updated.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionTypeDeclaration> {
+        self.action_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateActionTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7268,6 +7191,16 @@ pub struct UntagResourceInput {
     /// <p>The list of keys for the tags to be removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of keys for the tags to be removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -7285,6 +7218,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags you want to modify or add to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags you want to modify or add to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7314,6 +7257,30 @@ pub struct StopPipelineExecutionInput {
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl StopPipelineExecutionInput {
+    /// <p>The name of the pipeline to stop.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
+    /// <code>GetPipelineState</code> action to retrieve the current
+    /// pipelineExecutionId.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
+    /// in-progress actions.</p>
+    /// <note>
+    /// <p>This option can lead to failed or out-of-sequence tasks.</p>
+    /// </note>
+    pub fn abandon(&self) -> bool {
+        self.abandon
+    }
+    /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for StopPipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopPipelineExecutionInput");
@@ -7334,6 +7301,17 @@ pub struct StartPipelineExecutionInput {
     /// <p>The system-generated unique ID used to identify a unique execution
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl StartPipelineExecutionInput {
+    /// <p>The name of the pipeline to start.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The system-generated unique ID used to identify a unique execution
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StartPipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7359,6 +7337,26 @@ pub struct RetryStageExecutionInput {
     /// FAILED_ACTIONS.</p>
     pub retry_mode: std::option::Option<crate::model::StageRetryMode>,
 }
+impl RetryStageExecutionInput {
+    /// <p>The name of the pipeline that contains the failed stage.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The name of the failed stage to be retried.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
+    /// the failed stage</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+    /// <p>The scope of the retry attempt. Currently, the only supported value is
+    /// FAILED_ACTIONS.</p>
+    pub fn retry_mode(&self) -> std::option::Option<&crate::model::StageRetryMode> {
+        self.retry_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for RetryStageExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryStageExecutionInput");
@@ -7377,6 +7375,13 @@ pub struct RegisterWebhookWithThirdPartyInput {
     /// <p>The name of an existing webhook created with PutWebhook to register with a
     /// supported third party. </p>
     pub webhook_name: std::option::Option<std::string::String>,
+}
+impl RegisterWebhookWithThirdPartyInput {
+    /// <p>The name of an existing webhook created with PutWebhook to register with a
+    /// supported third party. </p>
+    pub fn webhook_name(&self) -> std::option::Option<&str> {
+        self.webhook_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterWebhookWithThirdPartyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7397,6 +7402,19 @@ pub struct PutWebhookInput {
     pub webhook: std::option::Option<crate::model::WebhookDefinition>,
     /// <p>The tags for the webhook.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl PutWebhookInput {
+    /// <p>The detail provided in an input file to create the webhook, such as the webhook
+    /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
+    /// you identify it. You might name the webhook after the pipeline and action it targets so
+    /// that you can easily recognize what it's used for later.</p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::WebhookDefinition> {
+        self.webhook.as_ref()
+    }
+    /// <p>The tags for the webhook.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for PutWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7430,6 +7448,35 @@ pub struct PutThirdPartyJobSuccessResultInput {
     /// through stages in the pipeline. </p>
     pub execution_details: std::option::Option<crate::model::ExecutionDetails>,
 }
+impl PutThirdPartyJobSuccessResultInput {
+    /// <p>The ID of the job that successfully completed. This is the same ID returned from
+    /// <code>PollForThirdPartyJobs</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
+    /// the calling entity is allowed access to the job and its details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Represents information about a current revision.</p>
+    pub fn current_revision(&self) -> std::option::Option<&crate::model::CurrentRevision> {
+        self.current_revision.as_ref()
+    }
+    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
+    /// successful job provides to identify a partner action in progress. Future jobs use this
+    /// token to identify the running instance of the action. It can be reused to return more
+    /// information about the progress of the partner action. When the action is complete, no
+    /// continuation token should be supplied.</p>
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
+        self.continuation_token.as_deref()
+    }
+    /// <p>The details of the actions taken and results produced on an artifact as it passes
+    /// through stages in the pipeline. </p>
+    pub fn execution_details(&self) -> std::option::Option<&crate::model::ExecutionDetails> {
+        self.execution_details.as_ref()
+    }
+}
 impl std::fmt::Debug for PutThirdPartyJobSuccessResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutThirdPartyJobSuccessResultInput");
@@ -7455,6 +7502,22 @@ pub struct PutThirdPartyJobFailureResultInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Represents information about failure details.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
+}
+impl PutThirdPartyJobFailureResultInput {
+    /// <p>The ID of the job that failed. This is the same ID returned from
+    /// <code>PollForThirdPartyJobs</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
+    /// the calling entity is allowed access to the job and its details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Represents information about failure details.</p>
+    pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
+        self.failure_details.as_ref()
+    }
 }
 impl std::fmt::Debug for PutThirdPartyJobFailureResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7491,6 +7554,40 @@ pub struct PutJobSuccessResultInput {
     pub output_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PutJobSuccessResultInput {
+    /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
+    /// returned from <code>PollForJobs</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The ID of the current revision of the artifact successfully worked on by the
+    /// job.</p>
+    pub fn current_revision(&self) -> std::option::Option<&crate::model::CurrentRevision> {
+        self.current_revision.as_ref()
+    }
+    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
+    /// successful job provides to identify a custom action in progress. Future jobs use this
+    /// token to identify the running instance of the action. It can be reused to return more
+    /// information about the progress of the custom action. When the action is complete, no
+    /// continuation token should be supplied.</p>
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
+        self.continuation_token.as_deref()
+    }
+    /// <p>The execution details of the successful job, such as the actions taken by the job
+    /// worker.</p>
+    pub fn execution_details(&self) -> std::option::Option<&crate::model::ExecutionDetails> {
+        self.execution_details.as_ref()
+    }
+    /// <p>Key-value pairs produced as output by a job worker that can be made available to a
+    /// downstream action configuration. <code>outputVariables</code> can be included only when
+    /// there is no continuation token on the request.</p>
+    pub fn output_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.output_variables.as_ref()
+    }
+}
 impl std::fmt::Debug for PutJobSuccessResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutJobSuccessResultInput");
@@ -7512,6 +7609,17 @@ pub struct PutJobFailureResultInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The details about the failure of a job.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
+}
+impl PutJobFailureResultInput {
+    /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
+    /// from <code>PollForJobs</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The details about the failure of a job.</p>
+    pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
+        self.failure_details.as_ref()
+    }
 }
 impl std::fmt::Debug for PutJobFailureResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7539,6 +7647,30 @@ pub struct PutApprovalResultInput {
     /// request corresponding to this token is still valid.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl PutApprovalResultInput {
+    /// <p>The name of the pipeline that contains the action. </p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The name of the stage that contains the action.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The name of the action for which approval is requested.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>Represents information about the result of the approval request.</p>
+    pub fn result(&self) -> std::option::Option<&crate::model::ApprovalResult> {
+        self.result.as_ref()
+    }
+    /// <p>The system-generated token used to identify a unique approval request. The token
+    /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
+    /// request corresponding to this token is still valid.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for PutApprovalResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutApprovalResultInput");
@@ -7565,6 +7697,25 @@ pub struct PutActionRevisionInput {
     /// <p>Represents information about the version (or revision) of an action.</p>
     pub action_revision: std::option::Option<crate::model::ActionRevision>,
 }
+impl PutActionRevisionInput {
+    /// <p>The name of the pipeline that starts processing the revision to the
+    /// source.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The name of the stage that contains the action that acts on the revision.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The name of the action that processes the revision.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>Represents information about the version (or revision) of an action.</p>
+    pub fn action_revision(&self) -> std::option::Option<&crate::model::ActionRevision> {
+        self.action_revision.as_ref()
+    }
+}
 impl std::fmt::Debug for PutActionRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutActionRevisionInput");
@@ -7584,6 +7735,16 @@ pub struct PollForThirdPartyJobsInput {
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub max_batch_size: std::option::Option<i32>,
+}
+impl PollForThirdPartyJobsInput {
+    /// <p>Represents information about an action type.</p>
+    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+        self.action_type_id.as_ref()
+    }
+    /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    pub fn max_batch_size(&self) -> std::option::Option<i32> {
+        self.max_batch_size
+    }
 }
 impl std::fmt::Debug for PollForThirdPartyJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7609,6 +7770,26 @@ pub struct PollForJobsInput {
     pub query_param:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PollForJobsInput {
+    /// <p>Represents information about an action type.</p>
+    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+        self.action_type_id.as_ref()
+    }
+    /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    pub fn max_batch_size(&self) -> std::option::Option<i32> {
+        self.max_batch_size
+    }
+    /// <p>A map of property names and values. For an action type with no queryable
+    /// properties, this value must be null or an empty map. For an action type with a queryable
+    /// property, you must supply that property as a key in the map. Only jobs whose action
+    /// configuration matches the mapped value are returned.</p>
+    pub fn query_param(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.query_param.as_ref()
+    }
+}
 impl std::fmt::Debug for PollForJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PollForJobsInput");
@@ -7629,6 +7810,18 @@ pub struct ListWebhooksInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining
     /// results, make another call with the returned nextToken value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListWebhooksInput {
+    /// <p>The token that was returned from the previous ListWebhooks call, which can be used
+    /// to return the next set of webhooks in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned nextToken value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListWebhooksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7652,6 +7845,22 @@ pub struct ListTagsForResourceInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The token that was returned from the previous API call, which would be used to return
+    /// the next page of the list. The ListTagsforResource call lists all available tags in one
+    /// call and does not use pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -7673,6 +7882,19 @@ pub struct ListPipelinesInput {
     /// pipelines, make another call with the returned nextToken value. The minimum value you
     /// can specify is 1. The maximum accepted value is 1000.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPipelinesInput {
+    /// <p>An identifier that was returned from the previous list pipelines call. It can be
+    /// used to return the next set of pipelines in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
+    /// pipelines, make another call with the returned nextToken value. The minimum value you
+    /// can specify is 1. The maximum accepted value is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7700,6 +7922,26 @@ pub struct ListPipelineExecutionsInput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPipelineExecutionsInput {
+    /// <p>The name of the pipeline for which you want to get execution summary
+    /// information.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned nextToken value. Pipeline history is
+    /// limited to the most recent 12 months, based on pipeline execution start times. Default
+    /// value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
+    /// call, which can be used to return the next set of pipeline executions in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPipelineExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipelineExecutionsInput");
@@ -7721,6 +7963,21 @@ pub struct ListActionTypesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Region to filter on for the list of action types.</p>
     pub region_filter: std::option::Option<std::string::String>,
+}
+impl ListActionTypesInput {
+    /// <p>Filters the list of action types to those created by a specified entity.</p>
+    pub fn action_owner_filter(&self) -> std::option::Option<&crate::model::ActionOwner> {
+        self.action_owner_filter.as_ref()
+    }
+    /// <p>An identifier that was returned from the previous list action types call, which can
+    /// be used to return the next set of action types in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Region to filter on for the list of action types.</p>
+    pub fn region_filter(&self) -> std::option::Option<&str> {
+        self.region_filter.as_deref()
+    }
 }
 impl std::fmt::Debug for ListActionTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7753,6 +8010,32 @@ pub struct ListActionExecutionsInput {
     /// which can be used to return the next set of action executions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListActionExecutionsInput {
+    /// <p> The name of the pipeline for which you want to list action execution history.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>Input information used to filter action execution history.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ActionExecutionFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned nextToken value. Action execution history
+    /// is retained for up to 12 months, based on action execution start times. Default value is
+    /// 100. </p>
+    /// <note>
+    /// <p>Detailed execution history is available for executions run on or after February
+    /// 21, 2019.</p>
+    /// </note>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
+    /// which can be used to return the next set of action executions in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListActionExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActionExecutionsInput");
@@ -7774,6 +8057,17 @@ pub struct GetThirdPartyJobDetailsInput {
     /// the calling entity is allowed access to the job and its details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl GetThirdPartyJobDetailsInput {
+    /// <p>The unique system-generated ID used for identifying the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
+    /// the calling entity is allowed access to the job and its details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetThirdPartyJobDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetThirdPartyJobDetailsInput");
@@ -7789,6 +8083,12 @@ impl std::fmt::Debug for GetThirdPartyJobDetailsInput {
 pub struct GetPipelineStateInput {
     /// <p>The name of the pipeline about which you want to get information.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetPipelineStateInput {
+    /// <p>The name of the pipeline about which you want to get information.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPipelineStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7807,6 +8107,17 @@ pub struct GetPipelineExecutionInput {
     /// <p>The ID of the pipeline execution about which you want to get execution
     /// details.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
+}
+impl GetPipelineExecutionInput {
+    /// <p>The name of the pipeline about which you want to get execution details.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The ID of the pipeline execution about which you want to get execution
+    /// details.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7828,6 +8139,18 @@ pub struct GetPipelineInput {
     /// the current version.</p>
     pub version: std::option::Option<i32>,
 }
+impl GetPipelineInput {
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must
+    /// be unique under an AWS user account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version number of the pipeline. If you do not specify a version, defaults to
+    /// the current version.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+}
 impl std::fmt::Debug for GetPipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPipelineInput");
@@ -7843,6 +8166,12 @@ impl std::fmt::Debug for GetPipelineInput {
 pub struct GetJobDetailsInput {
     /// <p>The unique system-generated ID for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl GetJobDetailsInput {
+    /// <p>The unique system-generated ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7900,6 +8229,59 @@ pub struct GetActionTypeInput {
     /// <p>A string that describes the action type version.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetActionTypeInput {
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Source</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Build</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Test</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Deploy</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Approval</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invoke</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The creator of an action type that was created with any supported integration model.
+    /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The provider of the action type being called. The provider name is specified when the
+    /// action type is created.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>A string that describes the action type version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetActionTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActionTypeInput");
@@ -7925,6 +8307,24 @@ pub struct EnableStageTransitionInput {
     /// actions in that stage (inbound) or whether already processed artifacts are allowed to
     /// transition to the next stage (outbound).</p>
     pub transition_type: std::option::Option<crate::model::StageTransitionType>,
+}
+impl EnableStageTransitionInput {
+    /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
+    /// stage to another.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The name of the stage where you want to enable the transition of artifacts, either
+    /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
+    /// actions in that stage (inbound) or whether already processed artifacts are allowed to
+    /// transition to the next stage (outbound).</p>
+    pub fn transition_type(&self) -> std::option::Option<&crate::model::StageTransitionType> {
+        self.transition_type.as_ref()
+    }
 }
 impl std::fmt::Debug for EnableStageTransitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7956,6 +8356,31 @@ pub struct DisableStageTransitionInput {
     /// UI.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl DisableStageTransitionInput {
+    /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
+    /// one stage to another.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The name of the stage where you want to disable the inbound or outbound transition
+    /// of artifacts.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
+    /// being processed by the actions in that stage (inbound), or prevented from transitioning
+    /// from the stage after they have been processed by the actions in that stage
+    /// (outbound).</p>
+    pub fn transition_type(&self) -> std::option::Option<&crate::model::StageTransitionType> {
+        self.transition_type.as_ref()
+    }
+    /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
+    /// approval or manual tests. This message is displayed in the pipeline console
+    /// UI.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableStageTransitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableStageTransitionInput");
@@ -7974,6 +8399,12 @@ pub struct DeregisterWebhookWithThirdPartyInput {
     /// <p>The name of the webhook you want to deregister.</p>
     pub webhook_name: std::option::Option<std::string::String>,
 }
+impl DeregisterWebhookWithThirdPartyInput {
+    /// <p>The name of the webhook you want to deregister.</p>
+    pub fn webhook_name(&self) -> std::option::Option<&str> {
+        self.webhook_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterWebhookWithThirdPartyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterWebhookWithThirdPartyInput");
@@ -7989,6 +8420,12 @@ pub struct DeleteWebhookInput {
     /// <p>The name of the webhook you want to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteWebhookInput {
+    /// <p>The name of the webhook you want to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWebhookInput");
@@ -8003,6 +8440,12 @@ impl std::fmt::Debug for DeleteWebhookInput {
 pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to be deleted.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeletePipelineInput {
+    /// <p>The name of the pipeline to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8026,6 +8469,22 @@ pub struct DeleteCustomActionTypeInput {
     /// <p>The version of the custom action to delete.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl DeleteCustomActionTypeInput {
+    /// <p>The category of the custom action that you want to delete, such as source or
+    /// deploy.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The provider of the service used in the custom action, such as AWS
+    /// CodeDeploy.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The version of the custom action to delete.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCustomActionTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCustomActionTypeInput");
@@ -8045,6 +8504,17 @@ pub struct CreatePipelineInput {
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
     /// <p>The tags for the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreatePipelineInput {
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
+    /// </p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
+        self.pipeline.as_ref()
+    }
+    /// <p>The tags for the pipeline.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8086,6 +8556,51 @@ pub struct CreateCustomActionTypeInput {
     /// <p>The tags for the custom action.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateCustomActionTypeInput {
+    /// <p>The category of the custom action, such as a build action or a test
+    /// action.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The provider of the service used in the custom action, such as AWS
+    /// CodeDeploy.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The version identifier of the custom action.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>URLs that provide users information about this custom action.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::ActionTypeSettings> {
+        self.settings.as_ref()
+    }
+    /// <p>The configuration properties for the custom action.</p>
+    /// <note>
+    /// <p>You can refer to a name in the configuration properties of the custom action
+    /// within the URL templates by following the format of {Config:name}, as long as the
+    /// configuration property is both required and not secret. For more information, see
+    /// <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
+    /// Custom Action for a Pipeline</a>.</p>
+    /// </note>
+    pub fn configuration_properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::ActionConfigurationProperty]> {
+        self.configuration_properties.as_deref()
+    }
+    /// <p>The details of the input artifact for the action, such as its commit ID.</p>
+    pub fn input_artifact_details(&self) -> std::option::Option<&crate::model::ArtifactDetails> {
+        self.input_artifact_details.as_ref()
+    }
+    /// <p>The details of the output artifact of the action, such as its commit ID.</p>
+    pub fn output_artifact_details(&self) -> std::option::Option<&crate::model::ArtifactDetails> {
+        self.output_artifact_details.as_ref()
+    }
+    /// <p>The tags for the custom action.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCustomActionTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomActionTypeInput");
@@ -8114,6 +8629,22 @@ pub struct AcknowledgeThirdPartyJobInput {
     /// the calling entity is allowed access to the job and its details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl AcknowledgeThirdPartyJobInput {
+    /// <p>The unique system-generated ID of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
+    /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
+    pub fn nonce(&self) -> std::option::Option<&str> {
+        self.nonce.as_deref()
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
+    /// the calling entity is allowed access to the job and its details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AcknowledgeThirdPartyJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcknowledgeThirdPartyJobInput");
@@ -8135,6 +8666,19 @@ pub struct AcknowledgeJobInput {
     /// is being worked on by only one job worker. Get this number from the response of the
     /// <a>PollForJobs</a> request that returned this job.</p>
     pub nonce: std::option::Option<std::string::String>,
+}
+impl AcknowledgeJobInput {
+    /// <p>The unique system-generated ID of the job for which you want to confirm
+    /// receipt.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
+    /// is being worked on by only one job worker. Get this number from the response of the
+    /// <a>PollForJobs</a> request that returned this job.</p>
+    pub fn nonce(&self) -> std::option::Option<&str> {
+        self.nonce.as_deref()
+    }
 }
 impl std::fmt::Debug for AcknowledgeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -63,6 +63,13 @@ pub struct CustomDomainConfigType {
     /// this certificate for the subdomain of your custom domain.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl CustomDomainConfigType {
+    /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use
+    /// this certificate for the subdomain of your custom domain.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomDomainConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomDomainConfigType");
@@ -279,6 +286,226 @@ pub struct UserPoolClientType {
     /// create a new user pool client, token revocation is enabled by default. For more information
     /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub enable_token_revocation: std::option::Option<bool>,
+}
+impl UserPoolClientType {
+    /// <p>The user pool ID for the user pool client.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The client name from the user pool request of the client type.</p>
+    pub fn client_name(&self) -> std::option::Option<&str> {
+        self.client_name.as_deref()
+    }
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The client secret from the user pool request of the client type.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p>The date the user pool client was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The date the user pool client was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
+    /// be used.</p>
+    pub fn refresh_token_validity(&self) -> i32 {
+        self.refresh_token_validity
+    }
+    /// <p>The time limit, specified by tokenValidityUnits, defaulting to hours, after which the
+    /// access token is no longer valid and cannot be used.</p>
+    pub fn access_token_validity(&self) -> std::option::Option<i32> {
+        self.access_token_validity
+    }
+    /// <p>The time limit, specified by tokenValidityUnits, defaulting to hours, after which the
+    /// refresh token is no longer valid and cannot be used.</p>
+    pub fn id_token_validity(&self) -> std::option::Option<i32> {
+        self.id_token_validity
+    }
+    /// <p>The time units used to specify the token validity times of their respective
+    /// token.</p>
+    pub fn token_validity_units(
+        &self,
+    ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
+        self.token_validity_units.as_ref()
+    }
+    /// <p>The Read-only attributes.</p>
+    pub fn read_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.read_attributes.as_deref()
+    }
+    /// <p>The writeable attributes.</p>
+    pub fn write_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.write_attributes.as_deref()
+    }
+    /// <p>The authentication flows that are supported by the user pool clients. Flow names
+    /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
+    /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
+    /// be used along with values without <code>ALLOW_</code> prefix.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+    /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+    /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
+    /// Cognito receives the password in the request instead of using the SRP (Secure
+    /// Remote Password protocol) protocol to verify passwords.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
+    /// authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+    /// authentication. In this flow, Cognito receives the password in the request
+    /// instead of using the SRP protocol to verify passwords.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
+    /// tokens.</p>
+    /// </li>
+    /// </ul>
+    pub fn explicit_auth_flows(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
+        self.explicit_auth_flows.as_deref()
+    }
+    /// <p>A list of provider names for the identity providers that are supported on this
+    /// client.</p>
+    pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_identity_providers.as_deref()
+    }
+    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Be an absolute URI.</p>
+    /// </li>
+    /// <li>
+    /// <p>Be registered with the authorization server.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not include a fragment component.</p>
+    /// </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+    /// Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+    /// purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+        self.callback_ur_ls.as_deref()
+    }
+    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    pub fn logout_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+        self.logout_ur_ls.as_deref()
+    }
+    /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Be an absolute URI.</p>
+    /// </li>
+    /// <li>
+    /// <p>Be registered with the authorization server.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not include a fragment component.</p>
+    /// </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+    /// Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+    /// purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn default_redirect_uri(&self) -> std::option::Option<&str> {
+        self.default_redirect_uri.as_deref()
+    }
+    /// <p>The allowed OAuth flows.</p>
+    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+    /// authorization code as the response. This code can be exchanged for access tokens with
+    /// the token endpoint.</p>
+    /// <p>Set to <code>implicit</code> to specify that the client should get the access token
+    /// (and, optionally, ID token, based on scopes) directly.</p>
+    /// <p>Set to <code>client_credentials</code> to specify that the client should get the
+    /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
+    /// a combination of client and client_secret.</p>
+    pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
+        self.allowed_o_auth_flows.as_deref()
+    }
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+    /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+    /// in Resource Servers are also supported.</p>
+    pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_o_auth_scopes.as_deref()
+    }
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
+    /// with Cognito user pools.</p>
+    pub fn allowed_o_auth_flows_user_pool_client(&self) -> std::option::Option<bool> {
+        self.allowed_o_auth_flows_user_pool_client
+    }
+    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
+    /// <note>
+    /// <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the
+    /// US East (N. Virginia) us-east-1 Region, regardless of the region in which the user
+    /// pool resides.</p>
+    /// </note>
+    pub fn analytics_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AnalyticsConfigurationType> {
+        self.analytics_configuration.as_ref()
+    }
+    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
+    /// during authentication, account confirmation, and password recovery when the user does
+    /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
+    /// exist, authentication returns an error indicating either the username or password was
+    /// incorrect, and account confirmation and password recovery return a response indicating a
+    /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
+    /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
+    /// the user pool.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
+    /// existence related errors are not prevented.</p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <note>
+    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
+    /// will default to <code>ENABLED</code> for newly created user pool clients if no value
+    /// is provided.</p>
+    /// </note>
+    pub fn prevent_user_existence_errors(
+        &self,
+    ) -> std::option::Option<&crate::model::PreventUserExistenceErrorTypes> {
+        self.prevent_user_existence_errors.as_ref()
+    }
+    /// <p>Indicates whether token revocation is enabled for the user pool client. When you
+    /// create a new user pool client, token revocation is enabled by default. For more information
+    /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
+        self.enable_token_revocation
+    }
 }
 impl std::fmt::Debug for UserPoolClientType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1049,6 +1276,32 @@ pub struct AnalyticsConfigurationType {
     /// data in the events it publishes to Amazon Pinpoint analytics.</p>
     pub user_data_shared: bool,
 }
+impl AnalyticsConfigurationType {
+    /// <p>The application ID for an Amazon Pinpoint application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon
+    /// Pinpoint project for Pinpoint integration with the chosen User Pool Client. Amazon
+    /// Cognito publishes events to the pinpoint project declared by the app ARN.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon
+    /// Pinpoint analytics.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The external ID.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will include user
+    /// data in the events it publishes to Amazon Pinpoint analytics.</p>
+    pub fn user_data_shared(&self) -> bool {
+        self.user_data_shared
+    }
+}
 impl std::fmt::Debug for AnalyticsConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyticsConfigurationType");
@@ -1318,6 +1571,23 @@ pub struct TokenValidityUnitsType {
     /// RefreshTokenValidity, defaults to days.</p>
     pub refresh_token: std::option::Option<crate::model::TimeUnitsType>,
 }
+impl TokenValidityUnitsType {
+    /// <p> A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+    /// AccessTokenValidity, defaults to hours.</p>
+    pub fn access_token(&self) -> std::option::Option<&crate::model::TimeUnitsType> {
+        self.access_token.as_ref()
+    }
+    /// <p>A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+    /// IdTokenValidity, defaults to hours.</p>
+    pub fn id_token(&self) -> std::option::Option<&crate::model::TimeUnitsType> {
+        self.id_token.as_ref()
+    }
+    /// <p>A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+    /// RefreshTokenValidity, defaults to days.</p>
+    pub fn refresh_token(&self) -> std::option::Option<&crate::model::TimeUnitsType> {
+        self.refresh_token.as_ref()
+    }
+}
 impl std::fmt::Debug for TokenValidityUnitsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TokenValidityUnitsType");
@@ -1470,6 +1740,12 @@ pub struct AccountRecoverySettingType {
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
     pub recovery_mechanisms: std::option::Option<std::vec::Vec<crate::model::RecoveryOptionType>>,
 }
+impl AccountRecoverySettingType {
+    /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
+    pub fn recovery_mechanisms(&self) -> std::option::Option<&[crate::model::RecoveryOptionType]> {
+        self.recovery_mechanisms.as_deref()
+    }
+}
 impl std::fmt::Debug for AccountRecoverySettingType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountRecoverySettingType");
@@ -1533,6 +1809,17 @@ pub struct RecoveryOptionType {
     pub priority: i32,
     /// <p>Specifies the recovery method for a user.</p>
     pub name: std::option::Option<crate::model::RecoveryOptionNameType>,
+}
+impl RecoveryOptionType {
+    /// <p>A positive integer specifying priority of a method with 1 being the highest
+    /// priority.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>Specifies the recovery method for a user.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::RecoveryOptionNameType> {
+        self.name.as_ref()
+    }
 }
 impl std::fmt::Debug for RecoveryOptionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1658,6 +1945,14 @@ impl AsRef<str> for RecoveryOptionNameType {
 pub struct UserPoolAddOnsType {
     /// <p>The advanced security mode.</p>
     pub advanced_security_mode: std::option::Option<crate::model::AdvancedSecurityModeType>,
+}
+impl UserPoolAddOnsType {
+    /// <p>The advanced security mode.</p>
+    pub fn advanced_security_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedSecurityModeType> {
+        self.advanced_security_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for UserPoolAddOnsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1788,6 +2083,33 @@ pub struct AdminCreateUserConfigType {
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
     pub invite_message_template: std::option::Option<crate::model::MessageTemplateType>,
 }
+impl AdminCreateUserConfigType {
+    /// <p>Set to <code>True</code> if only the administrator is allowed to create user profiles.
+    /// Set to <code>False</code> if users can sign themselves up via an app.</p>
+    pub fn allow_admin_create_user_only(&self) -> bool {
+        self.allow_admin_create_user_only
+    }
+    /// <p>The user account expiration limit, in days, after which the account is no longer
+    /// usable. To reset the account after that time limit, you must call
+    /// <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
+    /// <code>MessageAction</code> parameter. The default value for this parameter is 7. </p>
+    /// <note>
+    /// <p>If you set a value for <code>TemporaryPasswordValidityDays</code> in
+    /// <code>PasswordPolicy</code>, that value will be used and
+    /// <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+    /// </p>
+    /// </note>
+    pub fn unused_account_validity_days(&self) -> i32 {
+        self.unused_account_validity_days
+    }
+    /// <p>The message template to be used for the welcome message to new users.</p>
+    /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
+    pub fn invite_message_template(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageTemplateType> {
+        self.invite_message_template.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminCreateUserConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminCreateUserConfigType");
@@ -1900,6 +2222,20 @@ pub struct MessageTemplateType {
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub email_subject: std::option::Option<std::string::String>,
 }
+impl MessageTemplateType {
+    /// <p>The message template for SMS messages.</p>
+    pub fn sms_message(&self) -> std::option::Option<&str> {
+        self.sms_message.as_deref()
+    }
+    /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn email_message(&self) -> std::option::Option<&str> {
+        self.email_message.as_deref()
+    }
+    /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn email_subject(&self) -> std::option::Option<&str> {
+        self.email_subject.as_deref()
+    }
+}
 impl std::fmt::Debug for MessageTemplateType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageTemplateType");
@@ -1996,6 +2332,28 @@ pub struct SmsConfigurationType {
     /// party</a>
     /// </p>
     pub external_id: std::option::Option<std::string::String>,
+}
+impl SmsConfigurationType {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+    /// This is the ARN of the IAM role in your account which Cognito will use to send SMS
+    /// messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
+    pub fn sns_caller_arn(&self) -> std::option::Option<&str> {
+        self.sns_caller_arn.as_deref()
+    }
+    /// <p>The external ID is a value that we recommend you use to add security to your IAM role
+    /// which is used to call Amazon SNS to send SMS messages for your user pool. If you provide
+    /// an <code>ExternalId</code>, the Cognito User Pool will include it when attempting to
+    /// assume your IAM role, so that you can set your roles trust policy to require the
+    /// <code>ExternalID</code>. If you use the Cognito Management Console to create a role
+    /// for SMS MFA, Cognito will create a role with the required permissions and a trust policy
+    /// that demonstrates use of the <code>ExternalId</code>.</p>
+    /// <p>For more information about the <code>ExternalId</code> of a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to use an
+    /// external ID when granting access to your Amazon Web Services resources to a third
+    /// party</a>
+    /// </p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SmsConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2197,6 +2555,131 @@ pub struct EmailConfigurationType {
     /// </li>
     /// </ul>
     pub configuration_set: std::option::Option<std::string::String>,
+}
+impl EmailConfigurationType {
+    /// <p>The Amazon Resource Name (ARN) of a verified email address in Amazon SES. This email
+    /// address is used in one of the following ways, depending on the value that you specify
+    /// for the <code>EmailSendingAccount</code> parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address
+    /// as the custom FROM address when it emails your users by using its built-in email
+    /// account.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with
+    /// this address by calling Amazon SES on your behalf.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The destination to which the receiver of the email should reply to.</p>
+    pub fn reply_to_email_address(&self) -> std::option::Option<&str> {
+        self.reply_to_email_address.as_deref()
+    }
+    /// <p>Specifies whether Amazon Cognito emails your users by using its built-in email
+    /// functionality or your Amazon SES email configuration. Specify one of the following
+    /// values:</p>
+    /// <dl>
+    /// <dt>COGNITO_DEFAULT</dt>
+    /// <dd>
+    /// <p>When Amazon Cognito emails your users, it uses its built-in email
+    /// functionality. When you use the default option, Amazon Cognito allows only a
+    /// limited number of emails each day for your user pool. For typical production
+    /// environments, the default email limit is below the required delivery volume.
+    /// To achieve a higher delivery volume, specify DEVELOPER to use your Amazon
+    /// SES email configuration.</p>
+    /// <p>To look up the email delivery limit for the default option, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits in Amazon Cognito</a> in the <i>Amazon Cognito
+    /// Developer Guide</i>.</p>
+    /// <p>The default FROM address is no-reply@verificationemail.com. To customize
+    /// the FROM address, provide the ARN of an Amazon SES verified email address
+    /// for the <code>SourceArn</code> parameter.</p>
+    /// <p> If EmailSendingAccount is COGNITO_DEFAULT, the following parameters
+    /// aren't allowed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>EmailVerificationMessage</p>
+    /// </li>
+    /// <li>
+    /// <p>EmailVerificationSubject</p>
+    /// </li>
+    /// <li>
+    /// <p>InviteMessageTemplate.EmailMessage</p>
+    /// </li>
+    /// <li>
+    /// <p>InviteMessageTemplate.EmailSubject</p>
+    /// </li>
+    /// <li>
+    /// <p>VerificationMessageTemplate.EmailMessage</p>
+    /// </li>
+    /// <li>
+    /// <p>VerificationMessageTemplate.EmailMessageByLink</p>
+    /// </li>
+    /// <li>
+    /// <p>VerificationMessageTemplate.EmailSubject,</p>
+    /// </li>
+    /// <li>
+    /// <p>VerificationMessageTemplate.EmailSubjectByLink</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>DEVELOPER EmailSendingAccount is required.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>DEVELOPER</dt>
+    /// <dd>
+    /// <p>When Amazon Cognito emails your users, it uses your Amazon SES
+    /// configuration. Amazon Cognito calls Amazon SES on your behalf to send email
+    /// from your verified email address. When you use this option, the email
+    /// delivery limits are the same limits that apply to your Amazon SES verified
+    /// email address in your account.</p>
+    /// <p>If you use this option, you must provide the ARN of an Amazon SES verified
+    /// email address for the <code>SourceArn</code> parameter.</p>
+    /// <p>Before Amazon Cognito can email your users, it requires additional
+    /// permissions to call Amazon SES on your behalf. When you update your user
+    /// pool with this option, Amazon Cognito creates a <i>service-linked
+    /// role</i>, which is a type of IAM role, in your account. This
+    /// role contains the permissions that allow Amazon Cognito to access Amazon SES
+    /// and send email messages with your address. For more information about the
+    /// service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon
+    /// Cognito</a> in the <i>Amazon Cognito Developer
+    /// Guide</i>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn email_sending_account(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailSendingAccountType> {
+        self.email_sending_account.as_ref()
+    }
+    /// <p>Identifies either the sender’s email address or the sender’s name with their email
+    /// address. For example, <code>testuser@example.com</code> or <code>Test User
+    /// <testuser@example.com></code>. This address will appear before the body of the
+    /// email.</p>
+    pub fn from(&self) -> std::option::Option<&str> {
+        self.from.as_deref()
+    }
+    /// <p>The set of configuration rules that can be applied to emails sent using Amazon SES. A
+    /// configuration set is applied to an email by including a reference to the configuration
+    /// set in the headers of the email. Once applied, all of the rules in that configuration
+    /// set are applied to the email. Configuration sets can be used to apply the following
+    /// types of rules to emails: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Event publishing – Amazon SES can track the number of send, delivery, open,
+    /// click, bounce, and complaint events for each email sent. Use event publishing to
+    /// send information about these events to other Amazon Web Services services such as SNS and
+    /// CloudWatch.</p>
+    /// </li>
+    /// <li>
+    /// <p>IP pool management – When leasing dedicated IP addresses with Amazon SES, you
+    /// can create groups of IP addresses, called dedicated IP pools. You can then
+    /// associate the dedicated IP pools with configuration sets.</p>
+    /// </li>
+    /// </ul>
+    pub fn configuration_set(&self) -> std::option::Option<&str> {
+        self.configuration_set.as_deref()
+    }
 }
 impl std::fmt::Debug for EmailConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2571,6 +3054,17 @@ pub struct DeviceConfigurationType {
     /// <p>If true, a device is only remembered on user prompt.</p>
     pub device_only_remembered_on_user_prompt: bool,
 }
+impl DeviceConfigurationType {
+    /// <p>Indicates whether a challenge is required on a new device. Only applicable to a new
+    /// device.</p>
+    pub fn challenge_required_on_new_device(&self) -> bool {
+        self.challenge_required_on_new_device
+    }
+    /// <p>If true, a device is only remembered on user prompt.</p>
+    pub fn device_only_remembered_on_user_prompt(&self) -> bool {
+        self.device_only_remembered_on_user_prompt
+    }
+}
 impl std::fmt::Debug for DeviceConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceConfigurationType");
@@ -2721,6 +3215,37 @@ pub struct VerificationMessageTemplateType {
     pub email_subject_by_link: std::option::Option<std::string::String>,
     /// <p>The default email option.</p>
     pub default_email_option: std::option::Option<crate::model::DefaultEmailOptionType>,
+}
+impl VerificationMessageTemplateType {
+    /// <p>The SMS message template.</p>
+    pub fn sms_message(&self) -> std::option::Option<&str> {
+        self.sms_message.as_deref()
+    }
+    /// <p>The email message template. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn email_message(&self) -> std::option::Option<&str> {
+        self.email_message.as_deref()
+    }
+    /// <p>The subject line for the email message template. EmailSubject is allowed only if
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn email_subject(&self) -> std::option::Option<&str> {
+        self.email_subject.as_deref()
+    }
+    /// <p>The email message template for sending a confirmation link to the user.
+    /// EmailMessageByLink is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+    pub fn email_message_by_link(&self) -> std::option::Option<&str> {
+        self.email_message_by_link.as_deref()
+    }
+    /// <p>The subject line for the email message template for sending a confirmation link to the
+    /// user. EmailSubjectByLink is allowed only <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"> EmailSendingAccount</a> is DEVELOPER.</p>
+    pub fn email_subject_by_link(&self) -> std::option::Option<&str> {
+        self.email_subject_by_link.as_deref()
+    }
+    /// <p>The default email option.</p>
+    pub fn default_email_option(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultEmailOptionType> {
+        self.default_email_option.as_ref()
+    }
 }
 impl std::fmt::Debug for VerificationMessageTemplateType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2992,6 +3517,66 @@ pub struct LambdaConfigType {
     /// sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl LambdaConfigType {
+    /// <p>A pre-registration Lambda trigger.</p>
+    pub fn pre_sign_up(&self) -> std::option::Option<&str> {
+        self.pre_sign_up.as_deref()
+    }
+    /// <p>A custom Message Lambda trigger.</p>
+    pub fn custom_message(&self) -> std::option::Option<&str> {
+        self.custom_message.as_deref()
+    }
+    /// <p>A post-confirmation Lambda trigger.</p>
+    pub fn post_confirmation(&self) -> std::option::Option<&str> {
+        self.post_confirmation.as_deref()
+    }
+    /// <p>A pre-authentication Lambda trigger.</p>
+    pub fn pre_authentication(&self) -> std::option::Option<&str> {
+        self.pre_authentication.as_deref()
+    }
+    /// <p>A post-authentication Lambda trigger.</p>
+    pub fn post_authentication(&self) -> std::option::Option<&str> {
+        self.post_authentication.as_deref()
+    }
+    /// <p>Defines the authentication challenge.</p>
+    pub fn define_auth_challenge(&self) -> std::option::Option<&str> {
+        self.define_auth_challenge.as_deref()
+    }
+    /// <p>Creates an authentication challenge.</p>
+    pub fn create_auth_challenge(&self) -> std::option::Option<&str> {
+        self.create_auth_challenge.as_deref()
+    }
+    /// <p>Verifies the authentication challenge response.</p>
+    pub fn verify_auth_challenge_response(&self) -> std::option::Option<&str> {
+        self.verify_auth_challenge_response.as_deref()
+    }
+    /// <p>A Lambda trigger that is invoked before token generation.</p>
+    pub fn pre_token_generation(&self) -> std::option::Option<&str> {
+        self.pre_token_generation.as_deref()
+    }
+    /// <p>The user migration Lambda config type.</p>
+    pub fn user_migration(&self) -> std::option::Option<&str> {
+        self.user_migration.as_deref()
+    }
+    /// <p>A custom SMS sender Lambda trigger.</p>
+    pub fn custom_sms_sender(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomSmsLambdaVersionConfigType> {
+        self.custom_sms_sender.as_ref()
+    }
+    /// <p>A custom email sender Lambda trigger.</p>
+    pub fn custom_email_sender(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomEmailLambdaVersionConfigType> {
+        self.custom_email_sender.as_ref()
+    }
+    /// <p>The Amazon Resource Name of Key Management Service <a href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+    /// keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+    /// sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaConfigType");
@@ -3252,6 +3837,21 @@ pub struct CustomEmailLambdaVersionConfigType {
     /// send email notifications to users.</p>
     pub lambda_arn: std::option::Option<std::string::String>,
 }
+impl CustomEmailLambdaVersionConfigType {
+    /// <p>The Lambda version represents the signature of the "request" attribute in the "event"
+    /// information Amazon Cognito passes to your custom email Lambda function. The only
+    /// supported value is <code>V1_0</code>.</p>
+    pub fn lambda_version(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomEmailSenderLambdaVersionType> {
+        self.lambda_version.as_ref()
+    }
+    /// <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to
+    /// send email notifications to users.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomEmailLambdaVersionConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomEmailLambdaVersionConfigType");
@@ -3382,6 +3982,21 @@ pub struct CustomSmsLambdaVersionConfigType {
     /// send SMS notifications to users.</p>
     pub lambda_arn: std::option::Option<std::string::String>,
 }
+impl CustomSmsLambdaVersionConfigType {
+    /// <p>The Lambda version represents the signature of the "request" attribute in the "event"
+    /// information Amazon Cognito passes to your custom SMS Lambda function. The only supported
+    /// value is <code>V1_0</code>.</p>
+    pub fn lambda_version(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomSmsSenderLambdaVersionType> {
+        self.lambda_version.as_ref()
+    }
+    /// <p>The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to
+    /// send SMS notifications to users.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomSmsLambdaVersionConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomSmsLambdaVersionConfigType");
@@ -3507,6 +4122,12 @@ pub struct UserPoolPolicyType {
     /// <p>The password policy.</p>
     pub password_policy: std::option::Option<crate::model::PasswordPolicyType>,
 }
+impl UserPoolPolicyType {
+    /// <p>The password policy.</p>
+    pub fn password_policy(&self) -> std::option::Option<&crate::model::PasswordPolicyType> {
+        self.password_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for UserPoolPolicyType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserPoolPolicyType");
@@ -3579,6 +4200,44 @@ pub struct PasswordPolicyType {
     /// for that user pool.</p>
     /// </note>
     pub temporary_password_validity_days: i32,
+}
+impl PasswordPolicyType {
+    /// <p>The minimum length of the password policy that you have set. Cannot be less than
+    /// 6.</p>
+    pub fn minimum_length(&self) -> i32 {
+        self.minimum_length
+    }
+    /// <p>In the password policy that you have set, refers to whether you have required users to
+    /// use at least one uppercase letter in their password.</p>
+    pub fn require_uppercase(&self) -> bool {
+        self.require_uppercase
+    }
+    /// <p>In the password policy that you have set, refers to whether you have required users to
+    /// use at least one lowercase letter in their password.</p>
+    pub fn require_lowercase(&self) -> bool {
+        self.require_lowercase
+    }
+    /// <p>In the password policy that you have set, refers to whether you have required users to
+    /// use at least one number in their password.</p>
+    pub fn require_numbers(&self) -> bool {
+        self.require_numbers
+    }
+    /// <p>In the password policy that you have set, refers to whether you have required users to
+    /// use at least one symbol in their password.</p>
+    pub fn require_symbols(&self) -> bool {
+        self.require_symbols
+    }
+    /// <p>In the password policy you have set, refers to the number of days a temporary password
+    /// is valid. If the user does not sign-in during this time, their password will need to be
+    /// reset by an administrator.</p>
+    /// <note>
+    /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you will
+    /// no longer be able to set the deprecated <code>UnusedAccountValidityDays</code> value
+    /// for that user pool.</p>
+    /// </note>
+    pub fn temporary_password_validity_days(&self) -> i32 {
+        self.temporary_password_validity_days
+    }
 }
 impl std::fmt::Debug for PasswordPolicyType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3729,6 +4388,20 @@ pub struct CodeDeliveryDetailsType {
     /// <p>The attribute name.</p>
     pub attribute_name: std::option::Option<std::string::String>,
 }
+impl CodeDeliveryDetailsType {
+    /// <p>The destination for the code delivery details.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// <p>The delivery medium (email message or phone number).</p>
+    pub fn delivery_medium(&self) -> std::option::Option<&crate::model::DeliveryMediumType> {
+        self.delivery_medium.as_ref()
+    }
+    /// <p>The attribute name.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CodeDeliveryDetailsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeDeliveryDetailsType");
@@ -3866,6 +4539,16 @@ pub struct AttributeType {
     /// <p>The value of the attribute.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl AttributeType {
+    /// <p>The name of the attribute.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for AttributeType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeType");
@@ -3932,6 +4615,24 @@ pub struct ResourceServerType {
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of scopes that are defined for the resource server.</p>
     pub scopes: std::option::Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
+}
+impl ResourceServerType {
+    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identifier for the resource server.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The name of the resource server.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of scopes that are defined for the resource server.</p>
+    pub fn scopes(&self) -> std::option::Option<&[crate::model::ResourceServerScopeType]> {
+        self.scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceServerType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4031,6 +4732,16 @@ pub struct ResourceServerScopeType {
     pub scope_name: std::option::Option<std::string::String>,
     /// <p>A description of the scope.</p>
     pub scope_description: std::option::Option<std::string::String>,
+}
+impl ResourceServerScopeType {
+    /// <p>The name of the scope.</p>
+    pub fn scope_name(&self) -> std::option::Option<&str> {
+        self.scope_name.as_deref()
+    }
+    /// <p>A description of the scope.</p>
+    pub fn scope_description(&self) -> std::option::Option<&str> {
+        self.scope_description.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceServerScopeType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4218,6 +4929,153 @@ pub struct IdentityProviderType {
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the identity provider was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl IdentityProviderType {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identity provider name.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The identity provider type.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::IdentityProviderTypeType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The identity provider details. The following list describes the provider detail keys
+    /// for each identity provider type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>client_secret</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For Facebook:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>client_secret</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// <li>
+    /// <p>api_version</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>team_id</p>
+    /// </li>
+    /// <li>
+    /// <p>key_id</p>
+    /// </li>
+    /// <li>
+    /// <p>private_key</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>client_secret</p>
+    /// </li>
+    /// <li>
+    /// <p>attributes_request_method</p>
+    /// </li>
+    /// <li>
+    /// <p>oidc_issuer</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_url <i>if not available from discovery URL specified
+    /// by oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>token_url <i>if not available from discovery URL specified by
+    /// oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>attributes_url <i>if not available from discovery URL specified
+    /// by oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>jwks_uri <i>if not available from discovery URL specified by
+    /// oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For SAML providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>MetadataFile OR MetadataURL</p>
+    /// </li>
+    /// <li>
+    /// <p>IDPSignOut <i>optional</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn provider_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.provider_details.as_ref()
+    }
+    /// <p>A mapping of identity provider attributes to standard and custom user pool
+    /// attributes.</p>
+    pub fn attribute_mapping(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attribute_mapping.as_ref()
+    }
+    /// <p>A list of identity provider identifiers.</p>
+    pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.idp_identifiers.as_deref()
+    }
+    /// <p>The date the identity provider was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The date the identity provider was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for IdentityProviderType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4730,6 +5588,49 @@ pub struct GroupType {
     /// <p>The date the group was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GroupType {
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>A string containing the description of the group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The role ARN for the group.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A nonnegative integer value that specifies the precedence of this group relative to
+    /// the other groups that a user can belong to in the user pool. If a user belongs to two or
+    /// more groups, it is the group with the highest precedence whose role ARN will be used in
+    /// the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
+    /// user's tokens. Groups with higher <code>Precedence</code> values take precedence over
+    /// groups with lower <code>Precedence</code> values or with null <code>Precedence</code>
+    /// values.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither
+    /// group takes precedence over the other. If two groups with the same
+    /// <code>Precedence</code> have the same role ARN, that role is used in the
+    /// <code>cognito:preferred_role</code> claim in tokens for users in each group. If the
+    /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
+    /// not set in users' tokens.</p>
+    /// <p>The default <code>Precedence</code> value is null.</p>
+    pub fn precedence(&self) -> std::option::Option<i32> {
+        self.precedence
+    }
+    /// <p>The date the group was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The date the group was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for GroupType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupType");
@@ -5063,6 +5964,102 @@ pub struct UserImportJobType {
     pub failed_users: i64,
     /// <p>The message returned when the user import job is completed.</p>
     pub completion_message: std::option::Option<std::string::String>,
+}
+impl UserImportJobType {
+    /// <p>The job name for the user import job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job ID for the user import job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
+    pub fn pre_signed_url(&self) -> std::option::Option<&str> {
+        self.pre_signed_url.as_deref()
+    }
+    /// <p>The date the user import job was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date when the user import job was started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>The date when the user import job was completed.</p>
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_date.as_ref()
+    }
+    /// <p>The status of the user import job. One of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Created</code> - The job was created but not started.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Pending</code> - A transition state. You have started the job, but it
+    /// has not begun importing users yet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InProgress</code> - The job has started, and users are being
+    /// imported.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stopping</code> - You have stopped the job, but the job has not stopped
+    /// importing users yet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stopped</code> - You have stopped the job, and the job has stopped
+    /// importing users.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Succeeded</code> - The job has completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code> - The job has stopped due to an error.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Expired</code> - You created a job, but did not start the job within
+    /// 24-48 hours. All data associated with the job was deleted, and the job cannot be
+    /// started.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::UserImportJobStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The role ARN for the Amazon CloudWatch Logging role for the user import job. For more
+    /// information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer
+    /// Guide.</p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>The number of users that were successfully imported.</p>
+    pub fn imported_users(&self) -> i64 {
+        self.imported_users
+    }
+    /// <p>The number of users that were skipped.</p>
+    pub fn skipped_users(&self) -> i64 {
+        self.skipped_users
+    }
+    /// <p>The number of users that could not be imported.</p>
+    pub fn failed_users(&self) -> i64 {
+        self.failed_users
+    }
+    /// <p>The message returned when the user import job is completed.</p>
+    pub fn completion_message(&self) -> std::option::Option<&str> {
+        self.completion_message.as_deref()
+    }
 }
 impl std::fmt::Debug for UserImportJobType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5465,6 +6462,14 @@ pub struct UserContextDataType {
     /// security.</p>
     pub encoded_data: std::option::Option<std::string::String>,
 }
+impl UserContextDataType {
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn encoded_data(&self) -> std::option::Option<&str> {
+        self.encoded_data.as_deref()
+    }
+}
 impl std::fmt::Debug for UserContextDataType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserContextDataType");
@@ -5524,6 +6529,12 @@ pub struct AnalyticsMetadataType {
     /// <p>The endpoint ID.</p>
     pub analytics_endpoint_id: std::option::Option<std::string::String>,
 }
+impl AnalyticsMetadataType {
+    /// <p>The endpoint ID.</p>
+    pub fn analytics_endpoint_id(&self) -> std::option::Option<&str> {
+        self.analytics_endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AnalyticsMetadataType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyticsMetadataType");
@@ -5581,6 +6592,18 @@ pub struct MfaOptionType {
     /// <p>The attribute name of the MFA option type. The only valid value is
     /// <code>phone_number</code>.</p>
     pub attribute_name: std::option::Option<std::string::String>,
+}
+impl MfaOptionType {
+    /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the
+    /// <code>SMS</code> delivery medium value.</p>
+    pub fn delivery_medium(&self) -> std::option::Option<&crate::model::DeliveryMediumType> {
+        self.delivery_medium.as_ref()
+    }
+    /// <p>The attribute name of the MFA option type. The only valid value is
+    /// <code>phone_number</code>.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
 }
 impl std::fmt::Debug for MfaOptionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5653,6 +6676,12 @@ pub struct SoftwareTokenMfaConfigType {
     /// <p>Specifies whether software token MFA is enabled.</p>
     pub enabled: bool,
 }
+impl SoftwareTokenMfaConfigType {
+    /// <p>Specifies whether software token MFA is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for SoftwareTokenMfaConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SoftwareTokenMfaConfigType");
@@ -5704,6 +6733,18 @@ pub struct SmsMfaConfigType {
     pub sms_authentication_message: std::option::Option<std::string::String>,
     /// <p>The SMS configuration.</p>
     pub sms_configuration: std::option::Option<crate::model::SmsConfigurationType>,
+}
+impl SmsMfaConfigType {
+    /// <p>The SMS authentication message that will be sent to users with the code they need to
+    /// sign in. The message must contain the ‘{####}’ placeholder, which will be replaced with
+    /// the code. If the message is not included, and default message will be used.</p>
+    pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
+        self.sms_authentication_message.as_deref()
+    }
+    /// <p>The SMS configuration.</p>
+    pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
+        self.sms_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for SmsMfaConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5787,6 +6828,18 @@ pub struct SoftwareTokenMfaSettingsType {
     /// <p>Specifies whether software token MFA is the preferred MFA method.</p>
     pub preferred_mfa: bool,
 }
+impl SoftwareTokenMfaSettingsType {
+    /// <p>Specifies whether software token MFA is enabled. If an MFA type is enabled for a user,
+    /// the user will be prompted for MFA during all sign in attempts, unless device tracking is
+    /// turned on and the device has been trusted.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Specifies whether software token MFA is the preferred MFA method.</p>
+    pub fn preferred_mfa(&self) -> bool {
+        self.preferred_mfa
+    }
+}
 impl std::fmt::Debug for SoftwareTokenMfaSettingsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SoftwareTokenMfaSettingsType");
@@ -5860,6 +6913,18 @@ pub struct SmsMfaSettingsType {
     pub enabled: bool,
     /// <p>Specifies whether SMS is the preferred MFA method.</p>
     pub preferred_mfa: bool,
+}
+impl SmsMfaSettingsType {
+    /// <p>Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a
+    /// user, the user will be prompted for MFA during all sign in attempts, unless device
+    /// tracking is turned on and the device has been trusted.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Specifies whether SMS is the preferred MFA method.</p>
+    pub fn preferred_mfa(&self) -> bool {
+        self.preferred_mfa
+    }
 }
 impl std::fmt::Debug for SmsMfaSettingsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5938,6 +7003,36 @@ pub struct UiCustomizationType {
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The creation date for the UI customization.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UiCustomizationType {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The client ID for the client app.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The logo image for the UI customization.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The CSS values in the UI customization.</p>
+    pub fn css(&self) -> std::option::Option<&str> {
+        self.css.as_deref()
+    }
+    /// <p>The CSS version number.</p>
+    pub fn css_version(&self) -> std::option::Option<&str> {
+        self.css_version.as_deref()
+    }
+    /// <p>The last-modified date for the UI customization.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The creation date for the UI customization.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for UiCustomizationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6087,6 +7182,42 @@ pub struct RiskConfigurationType {
         std::option::Option<crate::model::RiskExceptionConfigurationType>,
     /// <p>The last modified date.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RiskConfigurationType {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The app client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The compromised credentials risk configuration object including the
+    /// <code>EventFilter</code> and the <code>EventAction</code>
+    /// </p>
+    pub fn compromised_credentials_risk_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CompromisedCredentialsRiskConfigurationType> {
+        self.compromised_credentials_risk_configuration.as_ref()
+    }
+    /// <p>The account takeover risk configuration object including the
+    /// <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the case
+    /// of an account takeover.</p>
+    pub fn account_takeover_risk_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountTakeoverRiskConfigurationType> {
+        self.account_takeover_risk_configuration.as_ref()
+    }
+    /// <p>The configuration to override the risk decision.</p>
+    pub fn risk_exception_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RiskExceptionConfigurationType> {
+        self.risk_exception_configuration.as_ref()
+    }
+    /// <p>The last modified date.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
 }
 impl std::fmt::Debug for RiskConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6248,6 +7379,19 @@ pub struct RiskExceptionConfigurationType {
     /// in CIDR notation.</p>
     pub skipped_ip_range_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RiskExceptionConfigurationType {
+    /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP
+    /// range is in CIDR notation: a compact representation of an IP address and its associated
+    /// routing prefix.</p>
+    pub fn blocked_ip_range_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.blocked_ip_range_list.as_deref()
+    }
+    /// <p>Risk detection is not performed on the IP addresses in the range list. The IP range is
+    /// in CIDR notation.</p>
+    pub fn skipped_ip_range_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.skipped_ip_range_list.as_deref()
+    }
+}
 impl std::fmt::Debug for RiskExceptionConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RiskExceptionConfigurationType");
@@ -6336,6 +7480,18 @@ pub struct AccountTakeoverRiskConfigurationType {
     /// <p>Account takeover risk configuration actions</p>
     pub actions: std::option::Option<crate::model::AccountTakeoverActionsType>,
 }
+impl AccountTakeoverRiskConfigurationType {
+    /// <p>The notify configuration used to construct email notifications.</p>
+    pub fn notify_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NotifyConfigurationType> {
+        self.notify_configuration.as_ref()
+    }
+    /// <p>Account takeover risk configuration actions</p>
+    pub fn actions(&self) -> std::option::Option<&crate::model::AccountTakeoverActionsType> {
+        self.actions.as_ref()
+    }
+}
 impl std::fmt::Debug for AccountTakeoverRiskConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountTakeoverRiskConfigurationType");
@@ -6409,6 +7565,20 @@ pub struct AccountTakeoverActionsType {
     pub medium_action: std::option::Option<crate::model::AccountTakeoverActionType>,
     /// <p>Action to take for a high risk.</p>
     pub high_action: std::option::Option<crate::model::AccountTakeoverActionType>,
+}
+impl AccountTakeoverActionsType {
+    /// <p>Action to take for a low risk.</p>
+    pub fn low_action(&self) -> std::option::Option<&crate::model::AccountTakeoverActionType> {
+        self.low_action.as_ref()
+    }
+    /// <p>Action to take for a medium risk.</p>
+    pub fn medium_action(&self) -> std::option::Option<&crate::model::AccountTakeoverActionType> {
+        self.medium_action.as_ref()
+    }
+    /// <p>Action to take for a high risk.</p>
+    pub fn high_action(&self) -> std::option::Option<&crate::model::AccountTakeoverActionType> {
+        self.high_action.as_ref()
+    }
 }
 impl std::fmt::Debug for AccountTakeoverActionsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6514,6 +7684,38 @@ pub struct AccountTakeoverActionType {
     /// </li>
     /// </ul>
     pub event_action: std::option::Option<crate::model::AccountTakeoverEventActionType>,
+}
+impl AccountTakeoverActionType {
+    /// <p>Flag specifying whether to send a notification.</p>
+    pub fn notify(&self) -> bool {
+        self.notify
+    }
+    /// <p>The event action.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>BLOCK</code> Choosing this action will block the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MFA_IF_CONFIGURED</code> Throw MFA challenge if user has configured it,
+    /// else allow the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it, else
+    /// block the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NO_ACTION</code> Allow the user sign-in.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_action(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountTakeoverEventActionType> {
+        self.event_action.as_ref()
+    }
 }
 impl std::fmt::Debug for AccountTakeoverActionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6695,6 +7897,35 @@ pub struct NotifyConfigurationType {
     /// <p>The MFA email template used when MFA is challenged as part of a detected risk.</p>
     pub mfa_email: std::option::Option<crate::model::NotifyEmailType>,
 }
+impl NotifyConfigurationType {
+    /// <p>The email address that is sending the email. It must be either individually verified
+    /// with Amazon SES, or from a domain that has been verified with Amazon SES.</p>
+    pub fn from(&self) -> std::option::Option<&str> {
+        self.from.as_deref()
+    }
+    /// <p>The destination to which the receiver of an email should reply to.</p>
+    pub fn reply_to(&self) -> std::option::Option<&str> {
+        self.reply_to.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending
+    /// authorization policy. It permits Amazon Cognito to send for the email address specified
+    /// in the <code>From</code> parameter.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>Email template used when a detected risk event is blocked.</p>
+    pub fn block_email(&self) -> std::option::Option<&crate::model::NotifyEmailType> {
+        self.block_email.as_ref()
+    }
+    /// <p>The email template used when a detected risk event is allowed.</p>
+    pub fn no_action_email(&self) -> std::option::Option<&crate::model::NotifyEmailType> {
+        self.no_action_email.as_ref()
+    }
+    /// <p>The MFA email template used when MFA is challenged as part of a detected risk.</p>
+    pub fn mfa_email(&self) -> std::option::Option<&crate::model::NotifyEmailType> {
+        self.mfa_email.as_ref()
+    }
+}
 impl std::fmt::Debug for NotifyConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyConfigurationType");
@@ -6827,6 +8058,20 @@ pub struct NotifyEmailType {
     /// <p>The text body.</p>
     pub text_body: std::option::Option<std::string::String>,
 }
+impl NotifyEmailType {
+    /// <p>The subject.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The HTML body.</p>
+    pub fn html_body(&self) -> std::option::Option<&str> {
+        self.html_body.as_deref()
+    }
+    /// <p>The text body.</p>
+    pub fn text_body(&self) -> std::option::Option<&str> {
+        self.text_body.as_deref()
+    }
+}
 impl std::fmt::Debug for NotifyEmailType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyEmailType");
@@ -6904,6 +8149,17 @@ pub struct CompromisedCredentialsRiskConfigurationType {
     /// <p>The compromised credentials risk configuration actions.</p>
     pub actions: std::option::Option<crate::model::CompromisedCredentialsActionsType>,
 }
+impl CompromisedCredentialsRiskConfigurationType {
+    /// <p>Perform the action for these events. The default is to perform all events if no event
+    /// filter is specified.</p>
+    pub fn event_filter(&self) -> std::option::Option<&[crate::model::EventFilterType]> {
+        self.event_filter.as_deref()
+    }
+    /// <p>The compromised credentials risk configuration actions.</p>
+    pub fn actions(&self) -> std::option::Option<&crate::model::CompromisedCredentialsActionsType> {
+        self.actions.as_ref()
+    }
+}
 impl std::fmt::Debug for CompromisedCredentialsRiskConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompromisedCredentialsRiskConfigurationType");
@@ -6978,6 +8234,14 @@ impl CompromisedCredentialsRiskConfigurationType {
 pub struct CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
     pub event_action: std::option::Option<crate::model::CompromisedCredentialsEventActionType>,
+}
+impl CompromisedCredentialsActionsType {
+    /// <p>The event action.</p>
+    pub fn event_action(
+        &self,
+    ) -> std::option::Option<&crate::model::CompromisedCredentialsEventActionType> {
+        self.event_action.as_ref()
+    }
 }
 impl std::fmt::Debug for CompromisedCredentialsActionsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7158,6 +8422,32 @@ pub struct AuthenticationResultType {
     /// <p>The new device metadata from an authentication result.</p>
     pub new_device_metadata: std::option::Option<crate::model::NewDeviceMetadataType>,
 }
+impl AuthenticationResultType {
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The expiration period of the authentication result in seconds.</p>
+    pub fn expires_in(&self) -> i32 {
+        self.expires_in
+    }
+    /// <p>The token type.</p>
+    pub fn token_type(&self) -> std::option::Option<&str> {
+        self.token_type.as_deref()
+    }
+    /// <p>The refresh token.</p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p>The ID token.</p>
+    pub fn id_token(&self) -> std::option::Option<&str> {
+        self.id_token.as_deref()
+    }
+    /// <p>The new device metadata from an authentication result.</p>
+    pub fn new_device_metadata(&self) -> std::option::Option<&crate::model::NewDeviceMetadataType> {
+        self.new_device_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for AuthenticationResultType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationResultType");
@@ -7278,6 +8568,16 @@ pub struct NewDeviceMetadataType {
     pub device_key: std::option::Option<std::string::String>,
     /// <p>The device group key.</p>
     pub device_group_key: std::option::Option<std::string::String>,
+}
+impl NewDeviceMetadataType {
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+    /// <p>The device group key.</p>
+    pub fn device_group_key(&self) -> std::option::Option<&str> {
+        self.device_group_key.as_deref()
+    }
 }
 impl std::fmt::Debug for NewDeviceMetadataType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7478,6 +8778,62 @@ pub struct UserType {
     pub user_status: std::option::Option<crate::model::UserStatusType>,
     /// <p>The MFA options for the user.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
+}
+impl UserType {
+    /// <p>The user name of the user you wish to describe.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>A container with information about the user type attributes.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The creation date of the user.</p>
+    pub fn user_create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.user_create_date.as_ref()
+    }
+    /// <p>The last modified date of the user.</p>
+    pub fn user_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.user_last_modified_date.as_ref()
+    }
+    /// <p>Specifies whether the user is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The user status. Can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>UNCONFIRMED - User has been created but not confirmed.</p>
+    /// </li>
+    /// <li>
+    /// <p>CONFIRMED - User has been confirmed.</p>
+    /// </li>
+    /// <li>
+    /// <p>ARCHIVED - User is no longer active.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+    /// </li>
+    /// <li>
+    /// <p>UNKNOWN - User status is not known.</p>
+    /// </li>
+    /// <li>
+    /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset
+    /// his or her password before he or she can sign in.</p>
+    /// </li>
+    /// <li>
+    /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a
+    /// temporary password, but on first sign-in, the user must change his or her
+    /// password to a new value before doing anything else. </p>
+    /// </li>
+    /// </ul>
+    pub fn user_status(&self) -> std::option::Option<&crate::model::UserStatusType> {
+        self.user_status.as_ref()
+    }
+    /// <p>The MFA options for the user.</p>
+    pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
+        self.mfa_options.as_deref()
+    }
 }
 impl std::fmt::Debug for UserType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7777,6 +9133,32 @@ pub struct UserPoolDescriptionType {
     /// <p>The date the user pool description was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UserPoolDescriptionType {
+    /// <p>The ID in a user pool description.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name in a user pool description.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Lambda configuration information in a user pool description.</p>
+    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaConfigType> {
+        self.lambda_config.as_ref()
+    }
+    /// <p>The user pool status in a user pool description.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date the user pool description was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The date the user pool description was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for UserPoolDescriptionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserPoolDescriptionType");
@@ -7959,6 +9341,21 @@ pub struct UserPoolClientDescription {
     /// <p>The client name from the user pool client description.</p>
     pub client_name: std::option::Option<std::string::String>,
 }
+impl UserPoolClientDescription {
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The user pool ID for the user pool where you want to describe the user pool
+    /// client.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The client name from the user pool client description.</p>
+    pub fn client_name(&self) -> std::option::Option<&str> {
+        self.client_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UserPoolClientDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserPoolClientDescription");
@@ -8040,6 +9437,24 @@ pub struct ProviderDescription {
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the provider was added to the user pool.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ProviderDescription {
+    /// <p>The identity provider name.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The identity provider type.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::IdentityProviderTypeType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The date the provider was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The date the provider was added to the user pool.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for ProviderDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8147,6 +9562,30 @@ pub struct DeviceType {
     pub device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date in which the device was last authenticated.</p>
     pub device_last_authenticated_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DeviceType {
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+    /// <p>The device attributes.</p>
+    pub fn device_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.device_attributes.as_deref()
+    }
+    /// <p>The creation date of the device.</p>
+    pub fn device_create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.device_create_date.as_ref()
+    }
+    /// <p>The last modified date of the device.</p>
+    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.device_last_modified_date.as_ref()
+    }
+    /// <p>The date in which the device was last authenticated.</p>
+    pub fn device_last_authenticated_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.device_last_authenticated_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DeviceType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8367,6 +9806,43 @@ pub struct DomainDescriptionType {
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
     /// your application.</p>
     pub custom_domain_config: std::option::Option<crate::model::CustomDomainConfigType>,
+}
+impl DomainDescriptionType {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The account ID for the user pool owner.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The domain string.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The S3 bucket where the static files for this domain are stored.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The ARN of the CloudFront distribution.</p>
+    pub fn cloud_front_distribution(&self) -> std::option::Option<&str> {
+        self.cloud_front_distribution.as_deref()
+    }
+    /// <p>The app version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The domain status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DomainStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
+    /// your application.</p>
+    pub fn custom_domain_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDomainConfigType> {
+        self.custom_domain_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainDescriptionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8697,6 +10173,197 @@ pub struct UserPoolType {
     /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
     /// the recovery method where SMS is preferred over email.</p>
     pub account_recovery_setting: std::option::Option<crate::model::AccountRecoverySettingType>,
+}
+impl UserPoolType {
+    /// <p>The ID of the user pool.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the user pool.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The policies associated with the user pool.</p>
+    pub fn policies(&self) -> std::option::Option<&crate::model::UserPoolPolicyType> {
+        self.policies.as_ref()
+    }
+    /// <p>The Lambda triggers associated with the user pool.</p>
+    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaConfigType> {
+        self.lambda_config.as_ref()
+    }
+    /// <p>The status of a user pool.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date the user pool was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The date the user pool was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>A container with the schema attributes of a user pool.</p>
+    pub fn schema_attributes(&self) -> std::option::Option<&[crate::model::SchemaAttributeType]> {
+        self.schema_attributes.as_deref()
+    }
+    /// <p>Specifies the attributes that are auto-verified in a user pool.</p>
+    pub fn auto_verified_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
+        self.auto_verified_attributes.as_deref()
+    }
+    /// <p>Specifies the attributes that are aliased in a user pool.</p>
+    pub fn alias_attributes(&self) -> std::option::Option<&[crate::model::AliasAttributeType]> {
+        self.alias_attributes.as_deref()
+    }
+    /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
+    /// a user signs up.</p>
+    pub fn username_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::UsernameAttributeType]> {
+        self.username_attributes.as_deref()
+    }
+    /// <p>The contents of the SMS verification message.</p>
+    pub fn sms_verification_message(&self) -> std::option::Option<&str> {
+        self.sms_verification_message.as_deref()
+    }
+    /// <p>The contents of the email verification message.</p>
+    pub fn email_verification_message(&self) -> std::option::Option<&str> {
+        self.email_verification_message.as_deref()
+    }
+    /// <p>The subject of the email verification message.</p>
+    pub fn email_verification_subject(&self) -> std::option::Option<&str> {
+        self.email_verification_subject.as_deref()
+    }
+    /// <p>The template for verification messages.</p>
+    pub fn verification_message_template(
+        &self,
+    ) -> std::option::Option<&crate::model::VerificationMessageTemplateType> {
+        self.verification_message_template.as_ref()
+    }
+    /// <p>The contents of the SMS authentication message.</p>
+    pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
+        self.sms_authentication_message.as_deref()
+    }
+    /// <p>Can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>OFF</code> - MFA tokens are not required and cannot be specified during
+    /// user registration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ON</code> - MFA tokens are required for all user registrations. You can
+    /// only specify required when you are initially creating a user pool.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+    /// token.</p>
+    /// </li>
+    /// </ul>
+    pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
+        self.mfa_configuration.as_ref()
+    }
+    /// <p>The device configuration.</p>
+    pub fn device_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceConfigurationType> {
+        self.device_configuration.as_ref()
+    }
+    /// <p>A number estimating the size of the user pool.</p>
+    pub fn estimated_number_of_users(&self) -> i32 {
+        self.estimated_number_of_users
+    }
+    /// <p>The email configuration.</p>
+    pub fn email_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailConfigurationType> {
+        self.email_configuration.as_ref()
+    }
+    /// <p>The SMS configuration.</p>
+    pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
+        self.sms_configuration.as_ref()
+    }
+    /// <p>The tags that are assigned to the user pool. A tag is a label that you can apply to
+    /// user pools to categorize and manage them in different ways, such as by purpose, owner,
+    /// environment, or other criteria.</p>
+    pub fn user_pool_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_pool_tags.as_ref()
+    }
+    /// <p>The reason why the SMS configuration cannot send the messages to your users.</p>
+    /// <p>This message might include comma-separated values to describe why your SMS configuration
+    /// can't send messages to user pool end users.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+    /// SMS messages is not properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>SNSSandbox - The account is in SNS Sandbox and messages won’t reach
+    /// unverified end users. This parameter won’t get populated
+    /// with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions.
+    /// To learn how to move your account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn sms_configuration_failure(&self) -> std::option::Option<&str> {
+        self.sms_configuration_failure.as_deref()
+    }
+    /// <p>The reason why the email configuration cannot send the messages to your users.</p>
+    pub fn email_configuration_failure(&self) -> std::option::Option<&str> {
+        self.email_configuration_failure.as_deref()
+    }
+    /// <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>A custom domain name that you provide to Amazon Cognito. This parameter applies only
+    /// if you use a custom domain to host the sign-up and sign-in pages for your application.
+    /// For example: <code>auth.example.com</code>.</p>
+    /// <p>For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using Your Own Domain for the Hosted UI</a>.</p>
+    pub fn custom_domain(&self) -> std::option::Option<&str> {
+        self.custom_domain.as_deref()
+    }
+    /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+    pub fn admin_create_user_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AdminCreateUserConfigType> {
+        self.admin_create_user_config.as_ref()
+    }
+    /// <p>The user pool add-ons.</p>
+    pub fn user_pool_add_ons(&self) -> std::option::Option<&crate::model::UserPoolAddOnsType> {
+        self.user_pool_add_ons.as_ref()
+    }
+    /// <p>You can choose to enable case sensitivity on the username input for the selected
+    /// sign-in option. For example, when this is set to <code>False</code>, users will be able
+    /// to sign in using either "username" or "Username". This configuration is immutable once
+    /// it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+    pub fn username_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UsernameConfigurationType> {
+        self.username_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the user pool.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Use this setting to define which verified available method a user can use to recover
+    /// their password when they call <code>ForgotPassword</code>. It allows you to define a
+    /// preferred method when a user has more than one method available. With this setting, SMS
+    /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
+    /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
+    /// the recovery method where SMS is preferred over email.</p>
+    pub fn account_recovery_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountRecoverySettingType> {
+        self.account_recovery_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for UserPoolType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9418,6 +11085,36 @@ pub struct UsernameConfigurationType {
     /// </ul>
     pub case_sensitive: std::option::Option<bool>,
 }
+impl UsernameConfigurationType {
+    /// <p>Specifies whether username case sensitivity will be applied for all users in the user
+    /// pool through Cognito APIs.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>True</code>
+    /// </b>: Enables case sensitivity
+    /// for all username input. When this option is set to <code>True</code>, users must
+    /// sign in using the exact capitalization of their given username. For example,
+    /// “UserName”. This is the default value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>False</code>
+    /// </b>: Enables case
+    /// insensitivity for all username input. For example, when this option is set to
+    /// <code>False</code>, users will be able to sign in using either "username" or
+    /// "Username". This option also enables both <code>preferred_username</code> and
+    /// <code>email</code> alias to be case insensitive, in addition to the
+    /// <code>username</code> attribute.</p>
+    /// </li>
+    /// </ul>
+    pub fn case_sensitive(&self) -> std::option::Option<bool> {
+        self.case_sensitive
+    }
+}
 impl std::fmt::Debug for UsernameConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsernameConfigurationType");
@@ -9657,6 +11354,55 @@ pub struct SchemaAttributeType {
     pub string_attribute_constraints:
         std::option::Option<crate::model::StringAttributeConstraintsType>,
 }
+impl SchemaAttributeType {
+    /// <p>A schema attribute of the name type.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The attribute data type.</p>
+    pub fn attribute_data_type(&self) -> std::option::Option<&crate::model::AttributeDataType> {
+        self.attribute_data_type.as_ref()
+    }
+    /// <note>
+    /// <p>We recommend that you use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a> in the user pool client to control how attributes can
+    /// be mutated for new use cases instead of using
+    /// <code>DeveloperOnlyAttribute</code>.</p>
+    /// </note>
+    /// <p>Specifies whether the attribute type is developer only. This attribute can only be
+    /// modified by an administrator. Users will not be able to modify this attribute using
+    /// their access token. For example, <code>DeveloperOnlyAttribute</code> can be modified
+    /// using AdminUpdateUserAttributes but cannot be updated using UpdateUserAttributes.</p>
+    pub fn developer_only_attribute(&self) -> std::option::Option<bool> {
+        self.developer_only_attribute
+    }
+    /// <p>Specifies whether the value of the attribute can be changed.</p>
+    /// <p>For any user pool attribute that's mapped to an identity provider attribute, you must
+    /// set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+    /// users sign in to your application through an identity provider. If an attribute is
+    /// immutable, Amazon Cognito throws an error when it attempts to update the attribute. For
+    /// more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
+    /// Pool</a>.</p>
+    pub fn mutable(&self) -> std::option::Option<bool> {
+        self.mutable
+    }
+    /// <p>Specifies whether a user pool attribute is required. If the attribute is required and
+    /// the user does not provide a value, registration or sign-in will fail.</p>
+    pub fn required(&self) -> std::option::Option<bool> {
+        self.required
+    }
+    /// <p>Specifies the constraints for an attribute of the number type.</p>
+    pub fn number_attribute_constraints(
+        &self,
+    ) -> std::option::Option<&crate::model::NumberAttributeConstraintsType> {
+        self.number_attribute_constraints.as_ref()
+    }
+    /// <p>Specifies the constraints for an attribute of the string type.</p>
+    pub fn string_attribute_constraints(
+        &self,
+    ) -> std::option::Option<&crate::model::StringAttributeConstraintsType> {
+        self.string_attribute_constraints.as_ref()
+    }
+}
 impl std::fmt::Debug for SchemaAttributeType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SchemaAttributeType");
@@ -9838,6 +11584,16 @@ pub struct StringAttributeConstraintsType {
     /// <p>The maximum length.</p>
     pub max_length: std::option::Option<std::string::String>,
 }
+impl StringAttributeConstraintsType {
+    /// <p>The minimum length.</p>
+    pub fn min_length(&self) -> std::option::Option<&str> {
+        self.min_length.as_deref()
+    }
+    /// <p>The maximum length.</p>
+    pub fn max_length(&self) -> std::option::Option<&str> {
+        self.max_length.as_deref()
+    }
+}
 impl std::fmt::Debug for StringAttributeConstraintsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StringAttributeConstraintsType");
@@ -9900,6 +11656,16 @@ pub struct NumberAttributeConstraintsType {
     pub min_value: std::option::Option<std::string::String>,
     /// <p>The maximum value of an attribute that is of the number data type.</p>
     pub max_value: std::option::Option<std::string::String>,
+}
+impl NumberAttributeConstraintsType {
+    /// <p>The minimum value of an attribute that is of the number data type.</p>
+    pub fn min_value(&self) -> std::option::Option<&str> {
+        self.min_value.as_deref()
+    }
+    /// <p>The maximum value of an attribute that is of the number data type.</p>
+    pub fn max_value(&self) -> std::option::Option<&str> {
+        self.max_value.as_deref()
+    }
 }
 impl std::fmt::Debug for NumberAttributeConstraintsType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10027,6 +11793,16 @@ pub struct DeviceSecretVerifierConfigType {
     /// <p>The salt.</p>
     pub salt: std::option::Option<std::string::String>,
 }
+impl DeviceSecretVerifierConfigType {
+    /// <p>The password verifier.</p>
+    pub fn password_verifier(&self) -> std::option::Option<&str> {
+        self.password_verifier.as_deref()
+    }
+    /// <p>The salt.</p>
+    pub fn salt(&self) -> std::option::Option<&str> {
+        self.salt.as_deref()
+    }
+}
 impl std::fmt::Debug for DeviceSecretVerifierConfigType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceSecretVerifierConfigType");
@@ -10100,6 +11876,29 @@ pub struct ContextDataType {
     /// <p>Encoded data containing device fingerprinting details, collected using the Amazon
     /// Cognito context data collection library.</p>
     pub encoded_data: std::option::Option<std::string::String>,
+}
+impl ContextDataType {
+    /// <p>Source IP address of your user.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>Your server endpoint where this API is invoked.</p>
+    pub fn server_name(&self) -> std::option::Option<&str> {
+        self.server_name.as_deref()
+    }
+    /// <p>Your server path where this API is invoked. </p>
+    pub fn server_path(&self) -> std::option::Option<&str> {
+        self.server_path.as_deref()
+    }
+    /// <p>HttpHeaders received on your server in same order.</p>
+    pub fn http_headers(&self) -> std::option::Option<&[crate::model::HttpHeader]> {
+        self.http_headers.as_deref()
+    }
+    /// <p>Encoded data containing device fingerprinting details, collected using the Amazon
+    /// Cognito context data collection library.</p>
+    pub fn encoded_data(&self) -> std::option::Option<&str> {
+        self.encoded_data.as_deref()
+    }
 }
 impl std::fmt::Debug for ContextDataType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10214,6 +12013,16 @@ pub struct HttpHeader {
     /// <p>The header value.</p>
     pub header_value: std::option::Option<std::string::String>,
 }
+impl HttpHeader {
+    /// <p>The header name</p>
+    pub fn header_name(&self) -> std::option::Option<&str> {
+        self.header_name.as_deref()
+    }
+    /// <p>The header value.</p>
+    pub fn header_value(&self) -> std::option::Option<&str> {
+        self.header_value.as_deref()
+    }
+}
 impl std::fmt::Debug for HttpHeader {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpHeader");
@@ -10291,6 +12100,44 @@ pub struct AuthEventType {
     /// <p>A flag specifying the user feedback captured at the time of an event request is good
     /// or bad. </p>
     pub event_feedback: std::option::Option<crate::model::EventFeedbackType>,
+}
+impl AuthEventType {
+    /// <p>The event ID.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The event type.</p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::EventType> {
+        self.event_type.as_ref()
+    }
+    /// <p>The creation date</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The event response.</p>
+    pub fn event_response(&self) -> std::option::Option<&crate::model::EventResponseType> {
+        self.event_response.as_ref()
+    }
+    /// <p>The event risk.</p>
+    pub fn event_risk(&self) -> std::option::Option<&crate::model::EventRiskType> {
+        self.event_risk.as_ref()
+    }
+    /// <p>The challenge responses.</p>
+    pub fn challenge_responses(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChallengeResponseType]> {
+        self.challenge_responses.as_deref()
+    }
+    /// <p>The user context data captured at the time of an event request. It provides additional
+    /// information about the client from which event the request is received.</p>
+    pub fn event_context_data(&self) -> std::option::Option<&crate::model::EventContextDataType> {
+        self.event_context_data.as_ref()
+    }
+    /// <p>A flag specifying the user feedback captured at the time of an event request is good
+    /// or bad. </p>
+    pub fn event_feedback(&self) -> std::option::Option<&crate::model::EventFeedbackType> {
+        self.event_feedback.as_ref()
+    }
 }
 impl std::fmt::Debug for AuthEventType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10470,6 +12317,20 @@ pub struct EventFeedbackType {
     /// <p>The event feedback date.</p>
     pub feedback_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EventFeedbackType {
+    /// <p>The event feedback value.</p>
+    pub fn feedback_value(&self) -> std::option::Option<&crate::model::FeedbackValueType> {
+        self.feedback_value.as_ref()
+    }
+    /// <p>The provider.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The event feedback date.</p>
+    pub fn feedback_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.feedback_date.as_ref()
+    }
+}
 impl std::fmt::Debug for EventFeedbackType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventFeedbackType");
@@ -10557,6 +12418,28 @@ pub struct EventContextDataType {
     pub city: std::option::Option<std::string::String>,
     /// <p>The user's country.</p>
     pub country: std::option::Option<std::string::String>,
+}
+impl EventContextDataType {
+    /// <p>The user's IP address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The user's device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The user's time zone.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>The user's city.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The user's country.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
 }
 impl std::fmt::Debug for EventContextDataType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10659,6 +12542,16 @@ pub struct ChallengeResponseType {
     pub challenge_name: std::option::Option<crate::model::ChallengeName>,
     /// <p>The challenge response.</p>
     pub challenge_response: std::option::Option<crate::model::ChallengeResponse>,
+}
+impl ChallengeResponseType {
+    /// <p>The challenge name</p>
+    pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeName> {
+        self.challenge_name.as_ref()
+    }
+    /// <p>The challenge response.</p>
+    pub fn challenge_response(&self) -> std::option::Option<&crate::model::ChallengeResponse> {
+        self.challenge_response.as_ref()
+    }
 }
 impl std::fmt::Debug for ChallengeResponseType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10841,6 +12734,21 @@ pub struct EventRiskType {
     /// <p>Indicates whether compromised credentials were detected during an authentication
     /// event.</p>
     pub compromised_credentials_detected: std::option::Option<bool>,
+}
+impl EventRiskType {
+    /// <p>The risk decision.</p>
+    pub fn risk_decision(&self) -> std::option::Option<&crate::model::RiskDecisionType> {
+        self.risk_decision.as_ref()
+    }
+    /// <p>The risk level.</p>
+    pub fn risk_level(&self) -> std::option::Option<&crate::model::RiskLevelType> {
+        self.risk_level.as_ref()
+    }
+    /// <p>Indicates whether compromised credentials were detected during an authentication
+    /// event.</p>
+    pub fn compromised_credentials_detected(&self) -> std::option::Option<bool> {
+        self.compromised_credentials_detected
+    }
 }
 impl std::fmt::Debug for EventRiskType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11167,6 +13075,22 @@ pub struct ProviderUserIdentifierType {
     /// <p>The value of the provider attribute to link to, for example,
     /// <code>xxxxx_account</code>.</p>
     pub provider_attribute_value: std::option::Option<std::string::String>,
+}
+impl ProviderUserIdentifierType {
+    /// <p>The name of the provider, for example, Facebook, Google, or Login with Amazon.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The name of the provider attribute to link to, for example,
+    /// <code>NameID</code>.</p>
+    pub fn provider_attribute_name(&self) -> std::option::Option<&str> {
+        self.provider_attribute_name.as_deref()
+    }
+    /// <p>The value of the provider attribute to link to, for example,
+    /// <code>xxxxx_account</code>.</p>
+    pub fn provider_attribute_value(&self) -> std::option::Option<&str> {
+        self.provider_attribute_value.as_deref()
+    }
 }
 impl std::fmt::Debug for ProviderUserIdentifierType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

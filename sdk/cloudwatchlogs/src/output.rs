@@ -36,6 +36,12 @@ pub struct TestMetricFilterOutput {
     /// <p>The matched events.</p>
     pub matches: std::option::Option<std::vec::Vec<crate::model::MetricFilterMatchRecord>>,
 }
+impl TestMetricFilterOutput {
+    /// <p>The matched events.</p>
+    pub fn matches(&self) -> std::option::Option<&[crate::model::MetricFilterMatchRecord]> {
+        self.matches.as_deref()
+    }
+}
 impl std::fmt::Debug for TestMetricFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestMetricFilterOutput");
@@ -124,6 +130,12 @@ pub struct StopQueryOutput {
     /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
     pub success: bool,
 }
+impl StopQueryOutput {
+    /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
+    pub fn success(&self) -> bool {
+        self.success
+    }
+}
 impl std::fmt::Debug for StopQueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopQueryOutput");
@@ -171,6 +183,12 @@ impl StopQueryOutput {
 pub struct StartQueryOutput {
     /// <p>The unique ID of the query. </p>
     pub query_id: std::option::Option<std::string::String>,
+}
+impl StartQueryOutput {
+    /// <p>The unique ID of the query. </p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartQueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -280,6 +298,12 @@ pub struct PutResourcePolicyOutput {
     /// <p>The new policy.</p>
     pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
 }
+impl PutResourcePolicyOutput {
+    /// <p>The new policy.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.resource_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyOutput");
@@ -330,6 +354,12 @@ impl PutResourcePolicyOutput {
 pub struct PutQueryDefinitionOutput {
     /// <p>The ID of the query definition.</p>
     pub query_definition_id: std::option::Option<std::string::String>,
+}
+impl PutQueryDefinitionOutput {
+    /// <p>The ID of the query definition.</p>
+    pub fn query_definition_id(&self) -> std::option::Option<&str> {
+        self.query_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutQueryDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -413,6 +443,18 @@ pub struct PutLogEventsOutput {
     pub next_sequence_token: std::option::Option<std::string::String>,
     /// <p>The rejected events.</p>
     pub rejected_log_events_info: std::option::Option<crate::model::RejectedLogEventsInfo>,
+}
+impl PutLogEventsOutput {
+    /// <p>The next sequence token.</p>
+    pub fn next_sequence_token(&self) -> std::option::Option<&str> {
+        self.next_sequence_token.as_deref()
+    }
+    /// <p>The rejected events.</p>
+    pub fn rejected_log_events_info(
+        &self,
+    ) -> std::option::Option<&crate::model::RejectedLogEventsInfo> {
+        self.rejected_log_events_info.as_ref()
+    }
 }
 impl std::fmt::Debug for PutLogEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -515,6 +557,12 @@ pub struct PutDestinationOutput {
     /// <p>The destination.</p>
     pub destination: std::option::Option<crate::model::Destination>,
 }
+impl PutDestinationOutput {
+    /// <p>The destination.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+}
 impl std::fmt::Debug for PutDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDestinationOutput");
@@ -566,6 +614,15 @@ pub struct ListTagsLogGroupOutput {
     /// <p>The tags for the log group.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsLogGroupOutput {
+    /// <p>The tags for the log group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsLogGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -642,6 +699,29 @@ pub struct GetQueryResultsOutput {
     /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out,
     /// reduce the time range being searched or partition your query into a number of queries.</p>
     pub status: std::option::Option<crate::model::QueryStatus>,
+}
+impl GetQueryResultsOutput {
+    /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
+    /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the
+    /// top-level array. Each of these log event objects is an array of
+    /// <code>field</code>/<code>value</code> pairs.</p>
+    pub fn results(&self) -> std::option::Option<&[std::vec::Vec<crate::model::ResultField>]> {
+        self.results.as_deref()
+    }
+    /// <p>Includes the number of log events scanned by the query, the number of log events that matched the
+    /// query criteria, and the total number of bytes in the log events that were scanned. These values
+    /// reflect the full raw results of the query.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::QueryStatistics> {
+        self.statistics.as_ref()
+    }
+    /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
+    /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
+    /// <code>Timeout</code>, and <code>Unknown</code>.</p>
+    /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out,
+    /// reduce the time range being searched or partition your query into a number of queries.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetQueryResultsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -752,6 +832,15 @@ pub struct GetLogRecordOutput {
     pub log_record:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetLogRecordOutput {
+    /// <p>The requested log event, as a JSON string.</p>
+    pub fn log_record(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.log_record.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLogRecordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLogRecordOutput");
@@ -817,6 +906,13 @@ pub struct GetLogGroupFieldsOutput {
     /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the
     /// percentage of time it appeared in the log events that were queried.</p>
     pub log_group_fields: std::option::Option<std::vec::Vec<crate::model::LogGroupField>>,
+}
+impl GetLogGroupFieldsOutput {
+    /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the
+    /// percentage of time it appeared in the log events that were queried.</p>
+    pub fn log_group_fields(&self) -> std::option::Option<&[crate::model::LogGroupField]> {
+        self.log_group_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLogGroupFieldsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -885,6 +981,24 @@ pub struct GetLogEventsOutput {
     /// 24 hours. This token is never null. If you have reached the end of the stream, it returns the
     /// same token you passed in.</p>
     pub next_backward_token: std::option::Option<std::string::String>,
+}
+impl GetLogEventsOutput {
+    /// <p>The events.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::OutputLogEvent]> {
+        self.events.as_deref()
+    }
+    /// <p>The token for the next set of items in the forward direction. The token expires after
+    /// 24 hours. If you have reached the end of the stream, it returns the same token you passed
+    /// in.</p>
+    pub fn next_forward_token(&self) -> std::option::Option<&str> {
+        self.next_forward_token.as_deref()
+    }
+    /// <p>The token for the next set of items in the backward direction. The token expires after
+    /// 24 hours. This token is never null. If you have reached the end of the stream, it returns the
+    /// same token you passed in.</p>
+    pub fn next_backward_token(&self) -> std::option::Option<&str> {
+        self.next_backward_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLogEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -990,6 +1104,24 @@ pub struct FilterLogEventsOutput {
     pub searched_log_streams: std::option::Option<std::vec::Vec<crate::model::SearchedLogStream>>,
     /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl FilterLogEventsOutput {
+    /// <p>The matched events.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::FilteredLogEvent]> {
+        self.events.as_deref()
+    }
+    /// <p>
+    /// <b>IMPORTANT</b> Starting on May 15, 2020,
+    /// this parameter will be deprecated. This parameter will be an empty list
+    /// after the deprecation occurs.</p>
+    /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
+    pub fn searched_log_streams(&self) -> std::option::Option<&[crate::model::SearchedLogStream]> {
+        self.searched_log_streams.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for FilterLogEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1127,6 +1259,16 @@ pub struct DescribeSubscriptionFiltersOutput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSubscriptionFiltersOutput {
+    /// <p>The subscription filters.</p>
+    pub fn subscription_filters(&self) -> std::option::Option<&[crate::model::SubscriptionFilter]> {
+        self.subscription_filters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSubscriptionFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubscriptionFiltersOutput");
@@ -1203,6 +1345,16 @@ pub struct DescribeResourcePoliciesOutput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeResourcePoliciesOutput {
+    /// <p>The resource policies that exist in this account.</p>
+    pub fn resource_policies(&self) -> std::option::Option<&[crate::model::ResourcePolicy]> {
+        self.resource_policies.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeResourcePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourcePoliciesOutput");
@@ -1275,6 +1427,16 @@ pub struct DescribeQueryDefinitionsOutput {
     pub query_definitions: std::option::Option<std::vec::Vec<crate::model::QueryDefinition>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeQueryDefinitionsOutput {
+    /// <p>The list of query definitions that match your request.</p>
+    pub fn query_definitions(&self) -> std::option::Option<&[crate::model::QueryDefinition]> {
+        self.query_definitions.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeQueryDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1352,6 +1514,16 @@ pub struct DescribeQueriesOutput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeQueriesOutput {
+    /// <p>The list of queries that match the request.</p>
+    pub fn queries(&self) -> std::option::Option<&[crate::model::QueryInfo]> {
+        self.queries.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeQueriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeQueriesOutput");
@@ -1424,6 +1596,16 @@ pub struct DescribeMetricFiltersOutput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMetricFiltersOutput {
+    /// <p>The metric filters.</p>
+    pub fn metric_filters(&self) -> std::option::Option<&[crate::model::MetricFilter]> {
+        self.metric_filters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMetricFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMetricFiltersOutput");
@@ -1495,6 +1677,16 @@ pub struct DescribeLogStreamsOutput {
     pub log_streams: std::option::Option<std::vec::Vec<crate::model::LogStream>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLogStreamsOutput {
+    /// <p>The log streams.</p>
+    pub fn log_streams(&self) -> std::option::Option<&[crate::model::LogStream]> {
+        self.log_streams.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLogStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1569,6 +1761,18 @@ pub struct DescribeLogGroupsOutput {
     pub log_groups: std::option::Option<std::vec::Vec<crate::model::LogGroup>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLogGroupsOutput {
+    /// <p>The log groups.</p>
+    /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group
+    /// is set to have its events never expire.</p>
+    pub fn log_groups(&self) -> std::option::Option<&[crate::model::LogGroup]> {
+        self.log_groups.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLogGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1646,6 +1850,16 @@ pub struct DescribeExportTasksOutput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeExportTasksOutput {
+    /// <p>The export tasks.</p>
+    pub fn export_tasks(&self) -> std::option::Option<&[crate::model::ExportTask]> {
+        self.export_tasks.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeExportTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExportTasksOutput");
@@ -1717,6 +1931,16 @@ pub struct DescribeDestinationsOutput {
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDestinationsOutput {
+    /// <p>The destinations.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
+        self.destinations.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1878,6 +2102,13 @@ pub struct DeleteQueryDefinitionOutput {
     /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation
     /// failed.</p>
     pub success: bool,
+}
+impl DeleteQueryDefinitionOutput {
+    /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation
+    /// failed.</p>
+    pub fn success(&self) -> bool {
+        self.success
+    }
 }
 impl std::fmt::Debug for DeleteQueryDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2108,6 +2339,12 @@ impl CreateLogGroupOutput {
 pub struct CreateExportTaskOutput {
     /// <p>The ID of the export task.</p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl CreateExportTaskOutput {
+    /// <p>The ID of the export task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExportTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

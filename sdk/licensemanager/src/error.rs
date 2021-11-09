@@ -8489,6 +8489,12 @@ pub struct FailedDependencyException {
     #[allow(missing_docs)] // documentation missing in model
     pub error_code: std::option::Option<std::string::String>,
 }
+impl FailedDependencyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for FailedDependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailedDependencyException");
@@ -8567,6 +8573,12 @@ pub struct RedirectException {
     pub location: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl RedirectException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for RedirectException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -143,10 +143,7 @@ impl CreateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -370,10 +367,7 @@ impl CreateHostInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_host(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_host(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -532,10 +526,7 @@ impl DeleteConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -684,10 +675,7 @@ impl DeleteHostInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_host(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_host(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -839,10 +827,7 @@ impl GetConnectionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_connection(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -989,10 +974,7 @@ impl GetHostInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_host(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_host(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1188,10 +1170,7 @@ impl ListConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_connections(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_connections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1354,10 +1333,7 @@ impl ListHostsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_hosts(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_hosts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1505,10 +1481,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1678,10 +1653,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1851,10 +1823,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2035,10 +2004,7 @@ impl UpdateHostInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_host(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_host(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2112,6 +2078,21 @@ pub struct UpdateHostInput {
     /// infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
+impl UpdateHostInput {
+    /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
+    pub fn host_arn(&self) -> std::option::Option<&str> {
+        self.host_arn.as_deref()
+    }
+    /// <p>The URL or endpoint of the host to be updated.</p>
+    pub fn provider_endpoint(&self) -> std::option::Option<&str> {
+        self.provider_endpoint.as_deref()
+    }
+    /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
+    /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateHostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateHostInput");
@@ -2131,6 +2112,16 @@ pub struct UntagResourceInput {
     /// <p>The list of keys for the tags to be removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of keys for the tags to be removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2149,6 +2140,16 @@ pub struct TagResourceInput {
     /// <p>The tags you want to modify or add to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags you want to modify or add to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2164,6 +2165,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2183,6 +2190,18 @@ pub struct ListHostsInput {
     /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
     /// used to return the next set of hosts in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHostsInput {
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
+    /// used to return the next set of hosts in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHostsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2209,6 +2228,27 @@ pub struct ListConnectionsInput {
     /// can be used to return the next set of connections in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConnectionsInput {
+    /// <p>Filters the list of connections to those associated with a specified provider, such as
+    /// Bitbucket.</p>
+    pub fn provider_type_filter(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type_filter.as_ref()
+    }
+    /// <p>Filters the list of connections to those associated with a specified host.</p>
+    pub fn host_arn_filter(&self) -> std::option::Option<&str> {
+        self.host_arn_filter.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
+    /// can be used to return the next set of connections in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectionsInput");
@@ -2227,6 +2267,12 @@ pub struct GetHostInput {
     /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
     pub host_arn: std::option::Option<std::string::String>,
 }
+impl GetHostInput {
+    /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
+    pub fn host_arn(&self) -> std::option::Option<&str> {
+        self.host_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetHostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHostInput");
@@ -2242,6 +2288,12 @@ pub struct GetConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
     pub connection_arn: std::option::Option<std::string::String>,
 }
+impl GetConnectionInput {
+    /// <p>The Amazon Resource Name (ARN) of a connection.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionInput");
@@ -2256,6 +2308,12 @@ impl std::fmt::Debug for GetConnectionInput {
 pub struct DeleteHostInput {
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
     pub host_arn: std::option::Option<std::string::String>,
+}
+impl DeleteHostInput {
+    /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
+    pub fn host_arn(&self) -> std::option::Option<&str> {
+        self.host_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteHostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2274,6 +2332,15 @@ pub struct DeleteConnectionInput {
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub connection_arn: std::option::Option<std::string::String>,
+}
+impl DeleteConnectionInput {
+    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
+    /// <note>
+    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// </note>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2303,6 +2370,33 @@ pub struct CreateHostInput {
     #[allow(missing_docs)] // documentation missing in model
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateHostInput {
+    /// <p>The name of the host to be created. The name must be unique in the calling AWS
+    /// account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the installed provider to be associated with your connection. The host
+    /// resource represents the infrastructure where your provider type is installed. The valid
+    /// provider type is GitHub Enterprise Server.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The endpoint of the infrastructure to be represented by the host after it is
+    /// created.</p>
+    pub fn provider_endpoint(&self) -> std::option::Option<&str> {
+        self.provider_endpoint.as_deref()
+    }
+    /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
+    /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHostInput");
@@ -2329,6 +2423,26 @@ pub struct CreateConnectionInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub host_arn: std::option::Option<std::string::String>,
+}
+impl CreateConnectionInput {
+    /// <p>The name of the external provider where your third-party code repository is
+    /// configured.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The name of the connection to be created. The name must be unique in the calling AWS
+    /// account.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The key-value pair to use when tagging the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
+    pub fn host_arn(&self) -> std::option::Option<&str> {
+        self.host_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

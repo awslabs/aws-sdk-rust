@@ -124,7 +124,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_realtime_contact_analysis_segments(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_realtime_contact_analysis_segments(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -200,6 +200,25 @@ pub struct ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous
     /// response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRealtimeContactAnalysisSegmentsInput {
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The maximimum number of results to return per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRealtimeContactAnalysisSegmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -29,6 +29,59 @@ pub struct Environment {
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub federation_parameters: std::option::Option<crate::model::FederationParameters>,
 }
+impl Environment {
+    /// <p>The name of the FinSpace environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the FinSpace environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The ID of the AWS account in which the FinSpace environment is created.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The current status of creation of the FinSpace environment.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The sign-in url for the web application of your FinSpace environment.</p>
+    pub fn environment_url(&self) -> std::option::Option<&str> {
+        self.environment_url.as_deref()
+    }
+    /// <p>The description of the FinSpace environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of your FinSpace environment.</p>
+    pub fn environment_arn(&self) -> std::option::Option<&str> {
+        self.environment_arn.as_deref()
+    }
+    /// <p>The url of the integrated FinSpace notebook environment in your web application.</p>
+    pub fn sage_maker_studio_domain_url(&self) -> std::option::Option<&str> {
+        self.sage_maker_studio_domain_url.as_deref()
+    }
+    /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The AWS account ID of the dedicated service account associated with your FinSpace
+    /// environment.</p>
+    pub fn dedicated_service_account_id(&self) -> std::option::Option<&str> {
+        self.dedicated_service_account_id.as_deref()
+    }
+    /// <p>The authentication mode for the environment.</p>
+    pub fn federation_mode(&self) -> std::option::Option<&crate::model::FederationMode> {
+        self.federation_mode.as_ref()
+    }
+    /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    pub fn federation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::FederationParameters> {
+        self.federation_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for Environment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Environment");
@@ -275,6 +328,39 @@ pub struct FederationParameters {
     /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
     pub attribute_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl FederationParameters {
+    /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
+    pub fn saml_metadata_document(&self) -> std::option::Option<&str> {
+        self.saml_metadata_document.as_deref()
+    }
+    /// <p>Provide the metadata URL from your SAML 2.0 compliant identity provider (IdP).</p>
+    pub fn saml_metadata_url(&self) -> std::option::Option<&str> {
+        self.saml_metadata_url.as_deref()
+    }
+    /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration
+    /// (IdP).</p>
+    pub fn application_call_back_url(&self) -> std::option::Option<&str> {
+        self.application_call_back_url.as_deref()
+    }
+    /// <p>The Uniform Resource Name (URN). Also referred as Service Provider URN or Audience URI or Service Provider Entity ID.</p>
+    pub fn federation_urn(&self) -> std::option::Option<&str> {
+        self.federation_urn.as_deref()
+    }
+    /// <p>Name of the identity provider (IdP).</p>
+    pub fn federation_provider_name(&self) -> std::option::Option<&str> {
+        self.federation_provider_name.as_deref()
+    }
+    /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to
+    /// the attribute definition in which user email is set. For example, name would be <code>Email</code> and
+    /// value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
+    /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
+    pub fn attribute_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attribute_map.as_ref()
+    }
 }
 impl std::fmt::Debug for FederationParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -7,6 +7,12 @@ pub struct RollbackTransactionOutput {
     /// <p>The status of the rollback operation.</p>
     pub transaction_status: std::option::Option<std::string::String>,
 }
+impl RollbackTransactionOutput {
+    /// <p>The status of the rollback operation.</p>
+    pub fn transaction_status(&self) -> std::option::Option<&str> {
+        self.transaction_status.as_deref()
+    }
+}
 impl std::fmt::Debug for RollbackTransactionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RollbackTransactionOutput");
@@ -71,6 +77,31 @@ pub struct ExecuteStatementOutput {
     /// Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     pub generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+}
+impl ExecuteStatementOutput {
+    /// <p>The records returned by the SQL statement.</p>
+    pub fn records(&self) -> std::option::Option<&[std::vec::Vec<crate::model::Field>]> {
+        self.records.as_deref()
+    }
+    /// <p>Metadata for the columns included in the results.</p>
+    pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+        self.column_metadata.as_deref()
+    }
+    /// <p>The number of records updated by the request.</p>
+    pub fn number_of_records_updated(&self) -> i64 {
+        self.number_of_records_updated
+    }
+    /// <p>Values for fields generated during the request.</p>
+    ///
+    /// <note>
+    /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL.
+    /// To get the values of generated fields, use the <code>RETURNING</code> clause. For
+    /// more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From
+    /// Modified Rows</a> in the PostgreSQL documentation.</p>
+    /// </note>
+    pub fn generated_fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.generated_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -202,6 +233,14 @@ pub struct ExecuteSqlOutput {
     /// <p>The results of the SQL statement or statements.</p>
     pub sql_statement_results: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
 }
+impl ExecuteSqlOutput {
+    /// <p>The results of the SQL statement or statements.</p>
+    pub fn sql_statement_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::SqlStatementResult]> {
+        self.sql_statement_results.as_deref()
+    }
+}
 impl std::fmt::Debug for ExecuteSqlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteSqlOutput");
@@ -263,6 +302,12 @@ pub struct CommitTransactionOutput {
     /// <p>The status of the commit operation.</p>
     pub transaction_status: std::option::Option<std::string::String>,
 }
+impl CommitTransactionOutput {
+    /// <p>The status of the commit operation.</p>
+    pub fn transaction_status(&self) -> std::option::Option<&str> {
+        self.transaction_status.as_deref()
+    }
+}
 impl std::fmt::Debug for CommitTransactionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CommitTransactionOutput");
@@ -315,6 +360,12 @@ pub struct BeginTransactionOutput {
     /// <p>The transaction ID of the transaction started by the call.</p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
+impl BeginTransactionOutput {
+    /// <p>The transaction ID of the transaction started by the call.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BeginTransactionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BeginTransactionOutput");
@@ -366,6 +417,12 @@ impl BeginTransactionOutput {
 pub struct BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
     pub update_results: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
+}
+impl BatchExecuteStatementOutput {
+    /// <p>The execution results of each batch entry.</p>
+    pub fn update_results(&self) -> std::option::Option<&[crate::model::UpdateResult]> {
+        self.update_results.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

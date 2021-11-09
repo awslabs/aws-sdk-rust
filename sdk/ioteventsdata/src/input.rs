@@ -98,10 +98,7 @@ impl BatchAcknowledgeAlarmInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_acknowledge_alarm(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -259,10 +256,7 @@ impl BatchDisableAlarmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disable_alarm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_disable_alarm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -420,10 +414,7 @@ impl BatchEnableAlarmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_enable_alarm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_enable_alarm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -581,10 +572,7 @@ impl BatchPutMessageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_put_message(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_message(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -742,10 +730,7 @@ impl BatchResetAlarmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_reset_alarm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_reset_alarm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -903,10 +888,7 @@ impl BatchSnoozeAlarmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_snooze_alarm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_snooze_alarm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1061,10 +1043,7 @@ impl BatchUpdateDetectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_update_detector(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_update_detector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1888,6 +1867,24 @@ pub struct ListDetectorsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDetectorsInput {
+    /// <p>The name of the detector model whose detectors (instances) are listed.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
+    pub fn state_name(&self) -> std::option::Option<&str> {
+        self.state_name.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDetectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectorsInput");
@@ -1910,6 +1907,20 @@ pub struct ListAlarmsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAlarmsInput {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAlarmsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlarmsInput");
@@ -1931,6 +1942,18 @@ pub struct DescribeDetectorInput {
     /// ID.</p>
     pub key_value: std::option::Option<std::string::String>,
 }
+impl DescribeDetectorInput {
+    /// <p>The name of the detector model whose detectors (instances) you want information
+    /// about.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>A filter used to limit results to detectors (instances) created because of the given key
+    /// ID.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDetectorInput");
@@ -1950,6 +1973,17 @@ pub struct DescribeAlarmInput {
     /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
 }
+impl DescribeAlarmInput {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlarmInput");
@@ -1965,6 +1999,12 @@ impl std::fmt::Debug for DescribeAlarmInput {
 pub struct BatchUpdateDetectorInput {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
     pub detectors: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
+}
+impl BatchUpdateDetectorInput {
+    /// <p>The list of detectors (instances) to update, along with the values to update.</p>
+    pub fn detectors(&self) -> std::option::Option<&[crate::model::UpdateDetectorRequest]> {
+        self.detectors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdateDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1982,6 +2022,14 @@ pub struct BatchSnoozeAlarmInput {
     pub snooze_action_requests:
         std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
 }
+impl BatchSnoozeAlarmInput {
+    /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
+    pub fn snooze_action_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::SnoozeAlarmActionRequest]> {
+        self.snooze_action_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchSnoozeAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchSnoozeAlarmInput");
@@ -1997,6 +2045,14 @@ pub struct BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
     pub reset_action_requests:
         std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
+}
+impl BatchResetAlarmInput {
+    /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
+    pub fn reset_action_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResetAlarmActionRequest]> {
+        self.reset_action_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchResetAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2015,6 +2071,14 @@ pub struct BatchPutMessageInput {
     /// </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
+impl BatchPutMessageInput {
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
+    /// "string", "inputName": "string", "payload": "string"}'</code>
+    /// </p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+        self.messages.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchPutMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutMessageInput");
@@ -2030,6 +2094,14 @@ pub struct BatchEnableAlarmInput {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
     pub enable_action_requests:
         std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
+}
+impl BatchEnableAlarmInput {
+    /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
+    pub fn enable_action_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnableAlarmActionRequest]> {
+        self.enable_action_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchEnableAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2047,6 +2119,14 @@ pub struct BatchDisableAlarmInput {
     pub disable_action_requests:
         std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
 }
+impl BatchDisableAlarmInput {
+    /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
+    pub fn disable_action_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::DisableAlarmActionRequest]> {
+        self.disable_action_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisableAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisableAlarmInput");
@@ -2062,6 +2142,14 @@ pub struct BatchAcknowledgeAlarmInput {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
     pub acknowledge_action_requests:
         std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
+}
+impl BatchAcknowledgeAlarmInput {
+    /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
+    pub fn acknowledge_action_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::AcknowledgeAlarmActionRequest]> {
+        self.acknowledge_action_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAcknowledgeAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

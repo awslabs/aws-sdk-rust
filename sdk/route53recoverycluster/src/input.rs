@@ -93,10 +93,7 @@ impl GetRoutingControlStateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_routing_control_state(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -267,10 +264,7 @@ impl UpdateRoutingControlStateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_routing_control_state(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -436,7 +430,7 @@ impl UpdateRoutingControlStatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_control_states(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_routing_control_states(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -507,6 +501,14 @@ pub struct UpdateRoutingControlStatesInput {
     pub update_routing_control_state_entries:
         std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
 }
+impl UpdateRoutingControlStatesInput {
+    /// <p>A set of routing control entries that you want to update.</p>
+    pub fn update_routing_control_state_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateRoutingControlStateEntry]> {
+        self.update_routing_control_state_entries.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRoutingControlStatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingControlStatesInput");
@@ -527,6 +529,16 @@ pub struct UpdateRoutingControlStateInput {
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
 }
+impl UpdateRoutingControlStateInput {
+    /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
+    /// <p>The state of the routing control. You can set the value to be On or Off.</p>
+    pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
+        self.routing_control_state.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRoutingControlStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingControlStateInput");
@@ -542,6 +554,12 @@ impl std::fmt::Debug for UpdateRoutingControlStateInput {
 pub struct GetRoutingControlStateInput {
     /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
+}
+impl GetRoutingControlStateInput {
+    /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRoutingControlStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

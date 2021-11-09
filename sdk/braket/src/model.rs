@@ -23,6 +23,47 @@ pub struct QuantumTaskSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl QuantumTaskSummary {
+    /// <p>The ARN of the task.</p>
+    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
+        self.quantum_task_arn.as_deref()
+    }
+    /// <p>The status of the task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QuantumTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ARN of the device the task ran on.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The shots used for the task.</p>
+    pub fn shots(&self) -> std::option::Option<i64> {
+        self.shots
+    }
+    /// <p>The S3 bucket where the task result file is stored..</p>
+    pub fn output_s3_bucket(&self) -> std::option::Option<&str> {
+        self.output_s3_bucket.as_deref()
+    }
+    /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    pub fn output_s3_directory(&self) -> std::option::Option<&str> {
+        self.output_s3_directory.as_deref()
+    }
+    /// <p>The time at which the task was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the task finished.</p>
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.ended_at.as_ref()
+    }
+    /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for QuantumTaskSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QuantumTaskSummary");
@@ -297,6 +338,20 @@ pub struct SearchQuantumTasksFilter {
     /// <p>An operator to use in the filter.</p>
     pub operator: std::option::Option<crate::model::SearchQuantumTasksFilterOperator>,
 }
+impl SearchQuantumTasksFilter {
+    /// <p>The name of the device used for the task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The values to use for the filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>An operator to use in the filter.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::SearchQuantumTasksFilterOperator> {
+        self.operator.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchQuantumTasksFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchQuantumTasksFilter");
@@ -516,6 +571,28 @@ pub struct DeviceSummary {
     pub device_type: std::option::Option<crate::model::DeviceType>,
     /// <p>The status of the device.</p>
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
+}
+impl DeviceSummary {
+    /// <p>The ARN of the device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The name of the device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The provider of the device.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The type of the device.</p>
+    pub fn device_type(&self) -> std::option::Option<&crate::model::DeviceType> {
+        self.device_type.as_ref()
+    }
+    /// <p>The status of the device.</p>
+    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.device_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeviceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -741,6 +818,16 @@ pub struct SearchDevicesFilter {
     pub name: std::option::Option<std::string::String>,
     /// <p>The values to use to filter results.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SearchDevicesFilter {
+    /// <p>The name to use to filter results.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The values to use to filter results.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchDevicesFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -195,10 +195,7 @@ impl CreateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -387,10 +384,7 @@ impl CreateComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_component(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -598,10 +592,7 @@ impl CreateLogPatternInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_log_pattern(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_log_pattern(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -754,10 +745,7 @@ impl DeleteApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -925,10 +913,7 @@ impl DeleteComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_component(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1108,10 +1093,7 @@ impl DeleteLogPatternInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_log_pattern(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_log_pattern(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1264,10 +1246,7 @@ impl DescribeApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_application(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1435,10 +1414,7 @@ impl DescribeComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_component(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1607,7 +1583,7 @@ impl DescribeComponentConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_component_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_component_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1796,7 +1772,7 @@ impl DescribeComponentConfigurationRecommendationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_component_configuration_recommendation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_component_configuration_recommendation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1978,10 +1954,7 @@ impl DescribeLogPatternInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_log_pattern(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_log_pattern(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2134,10 +2107,7 @@ impl DescribeObservationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_observation(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_observation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2287,10 +2257,7 @@ impl DescribeProblemInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_problem(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_problem(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2441,7 +2408,7 @@ impl DescribeProblemObservationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_problem_observations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_problem_observations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2606,10 +2573,7 @@ impl ListApplicationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_applications(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_applications(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2787,10 +2751,8 @@ impl ListComponentsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_components(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_components(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3033,10 +2995,7 @@ impl ListConfigurationHistoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_configuration_history(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3230,10 +3189,7 @@ impl ListLogPatternsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_log_patterns(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_log_patterns(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3412,10 +3368,7 @@ impl ListLogPatternSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_log_pattern_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_log_pattern_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3642,10 +3595,7 @@ impl ListProblemsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_problems(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_problems(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3797,10 +3747,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3976,10 +3925,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4157,10 +4103,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4390,10 +4333,7 @@ impl UpdateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4597,10 +4537,7 @@ impl UpdateComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_component(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4828,7 +4765,7 @@ impl UpdateComponentConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_component_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_component_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5037,10 +4974,7 @@ impl UpdateLogPatternInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_log_pattern(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_log_pattern(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5119,6 +5053,30 @@ pub struct UpdateLogPatternInput {
     /// </p>
     pub rank: i32,
 }
+impl UpdateLogPatternInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the log pattern set.</p>
+    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
+        self.pattern_set_name.as_deref()
+    }
+    /// <p>The name of the log pattern.</p>
+    pub fn pattern_name(&self) -> std::option::Option<&str> {
+        self.pattern_name.as_deref()
+    }
+    /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+    /// </p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+}
 impl std::fmt::Debug for UpdateLogPatternInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLogPatternInput");
@@ -5152,6 +5110,36 @@ pub struct UpdateComponentConfigurationInput {
     #[allow(missing_docs)] // documentation missing in model
     pub auto_config_enabled: std::option::Option<bool>,
 }
+impl UpdateComponentConfigurationInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>Indicates whether the application component is monitored.</p>
+    pub fn monitor(&self) -> std::option::Option<bool> {
+        self.monitor
+    }
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
+    /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
+    }
+    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
+    /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
+    /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
+    /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+    pub fn component_configuration(&self) -> std::option::Option<&str> {
+        self.component_configuration.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
+        self.auto_config_enabled
+    }
+}
 impl std::fmt::Debug for UpdateComponentConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateComponentConfigurationInput");
@@ -5177,6 +5165,24 @@ pub struct UpdateComponentInput {
     pub new_component_name: std::option::Option<std::string::String>,
     /// <p>The list of resource ARNs that belong to the component.</p>
     pub resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateComponentInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The new name of the component.</p>
+    pub fn new_component_name(&self) -> std::option::Option<&str> {
+        self.new_component_name.as_deref()
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn resource_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_list.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5213,6 +5219,39 @@ pub struct UpdateApplicationInput {
     #[allow(missing_docs)] // documentation missing in model
     pub auto_config_enabled: std::option::Option<bool>,
 }
+impl UpdateApplicationInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>
+    /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
+    /// </p>
+    pub fn ops_center_enabled(&self) -> std::option::Option<bool> {
+        self.ops_center_enabled
+    }
+    /// <p>
+    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+    /// </p>
+    pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
+        self.cwe_monitor_enabled
+    }
+    /// <p>
+    /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
+    /// receive notifications for updates to the opsItem.</p>
+    pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.ops_item_sns_topic_arn.as_deref()
+    }
+    /// <p>
+    /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    pub fn remove_sns_topic(&self) -> std::option::Option<bool> {
+        self.remove_sns_topic
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
+        self.auto_config_enabled
+    }
+}
 impl std::fmt::Debug for UpdateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationInput");
@@ -5239,6 +5278,20 @@ pub struct UntagResourceInput {
     /// </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
+    /// key, the action removes both that key and its associated tag value.</p>
+    /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
+    /// parameter and argument for each additional tag to remove, separated by an ampersand.
+    /// </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -5260,6 +5313,19 @@ pub struct TagResourceInput {
     /// characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tags that to add to the application. A tag consists of a required
+    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
+    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
+    /// characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5276,6 +5342,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
     /// information for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
+    /// information for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5305,6 +5378,35 @@ pub struct ListProblemsInput {
     #[allow(missing_docs)] // documentation missing in model
     pub component_name: std::option::Option<std::string::String>,
 }
+impl ListProblemsInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The time when the problem was detected, in epoch
+    /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
+    /// past seven days are returned.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProblemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProblemsInput");
@@ -5330,6 +5432,21 @@ pub struct ListLogPatternSetsInput {
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLogPatternSetsInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLogPatternSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLogPatternSetsInput");
@@ -5353,6 +5470,25 @@ pub struct ListLogPatternsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLogPatternsInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the log pattern set.</p>
+    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
+        self.pattern_set_name.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLogPatternsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5391,6 +5527,41 @@ pub struct ListConfigurationHistoryInput {
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConfigurationHistoryInput {
+    /// <p>Resource group to which the application belongs. </p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The start time of the event. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the event.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
+    pub fn event_status(&self) -> std::option::Option<&crate::model::ConfigurationEventStatus> {
+        self.event_status.as_ref()
+    }
+    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
+    /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
+    /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListConfigurationHistory</code> request with the returned
+    /// <code>NextToken</code> value. If this parameter is not used, then
+    /// <code>ListConfigurationHistory</code> returns all results. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
+    /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
+    /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationHistoryInput");
@@ -5416,6 +5587,21 @@ pub struct ListComponentsInput {
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListComponentsInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListComponentsInput");
@@ -5436,6 +5622,17 @@ pub struct ListApplicationsInput {
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationsInput {
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
+    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationsInput");
@@ -5452,6 +5649,12 @@ pub struct DescribeProblemObservationsInput {
     /// <p>The ID of the problem.</p>
     pub problem_id: std::option::Option<std::string::String>,
 }
+impl DescribeProblemObservationsInput {
+    /// <p>The ID of the problem.</p>
+    pub fn problem_id(&self) -> std::option::Option<&str> {
+        self.problem_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProblemObservationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProblemObservationsInput");
@@ -5467,6 +5670,12 @@ pub struct DescribeProblemInput {
     /// <p>The ID of the problem.</p>
     pub problem_id: std::option::Option<std::string::String>,
 }
+impl DescribeProblemInput {
+    /// <p>The ID of the problem.</p>
+    pub fn problem_id(&self) -> std::option::Option<&str> {
+        self.problem_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProblemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProblemInput");
@@ -5481,6 +5690,12 @@ impl std::fmt::Debug for DescribeProblemInput {
 pub struct DescribeObservationInput {
     /// <p>The ID of the observation.</p>
     pub observation_id: std::option::Option<std::string::String>,
+}
+impl DescribeObservationInput {
+    /// <p>The ID of the observation.</p>
+    pub fn observation_id(&self) -> std::option::Option<&str> {
+        self.observation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeObservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5500,6 +5715,20 @@ pub struct DescribeLogPatternInput {
     pub pattern_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern.</p>
     pub pattern_name: std::option::Option<std::string::String>,
+}
+impl DescribeLogPatternInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the log pattern set.</p>
+    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
+        self.pattern_set_name.as_deref()
+    }
+    /// <p>The name of the log pattern.</p>
+    pub fn pattern_name(&self) -> std::option::Option<&str> {
+        self.pattern_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLogPatternInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5524,6 +5753,22 @@ pub struct DescribeComponentConfigurationRecommendationInput {
     /// and <code>DEFAULT</code>.</p>
     pub tier: std::option::Option<crate::model::Tier>,
 }
+impl DescribeComponentConfigurationRecommendationInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The tier of the application component. Supported tiers include
+    /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+    /// and <code>DEFAULT</code>.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeComponentConfigurationRecommendationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComponentConfigurationRecommendationInput");
@@ -5543,6 +5788,16 @@ pub struct DescribeComponentConfigurationInput {
     /// <p>The name of the component.</p>
     pub component_name: std::option::Option<std::string::String>,
 }
+impl DescribeComponentConfigurationInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComponentConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComponentConfigurationInput");
@@ -5561,6 +5816,16 @@ pub struct DescribeComponentInput {
     /// <p>The name of the component.</p>
     pub component_name: std::option::Option<std::string::String>,
 }
+impl DescribeComponentInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComponentInput");
@@ -5576,6 +5841,12 @@ impl std::fmt::Debug for DescribeComponentInput {
 pub struct DescribeApplicationInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
+}
+impl DescribeApplicationInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5596,6 +5867,20 @@ pub struct DeleteLogPatternInput {
     /// <p>The name of the log pattern.</p>
     pub pattern_name: std::option::Option<std::string::String>,
 }
+impl DeleteLogPatternInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the log pattern set.</p>
+    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
+        self.pattern_set_name.as_deref()
+    }
+    /// <p>The name of the log pattern.</p>
+    pub fn pattern_name(&self) -> std::option::Option<&str> {
+        self.pattern_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLogPatternInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLogPatternInput");
@@ -5615,6 +5900,16 @@ pub struct DeleteComponentInput {
     /// <p>The name of the component.</p>
     pub component_name: std::option::Option<std::string::String>,
 }
+impl DeleteComponentInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteComponentInput");
@@ -5630,6 +5925,12 @@ impl std::fmt::Debug for DeleteComponentInput {
 pub struct DeleteApplicationInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteApplicationInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5656,6 +5957,30 @@ pub struct CreateLogPatternInput {
     /// </p>
     pub rank: i32,
 }
+impl CreateLogPatternInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the log pattern set.</p>
+    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
+        self.pattern_set_name.as_deref()
+    }
+    /// <p>The name of the log pattern.</p>
+    pub fn pattern_name(&self) -> std::option::Option<&str> {
+        self.pattern_name.as_deref()
+    }
+    /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+    /// </p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+}
 impl std::fmt::Debug for CreateLogPatternInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLogPatternInput");
@@ -5678,6 +6003,20 @@ pub struct CreateComponentInput {
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The list of resource ARNs that belong to the component.</p>
     pub resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateComponentInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn resource_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_list.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5717,6 +6056,46 @@ pub struct CreateApplicationInput {
     pub auto_config_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     pub auto_create: std::option::Option<bool>,
+}
+impl CreateApplicationInput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>
+    /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
+    /// </p>
+    pub fn ops_center_enabled(&self) -> std::option::Option<bool> {
+        self.ops_center_enabled
+    }
+    /// <p>
+    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+    /// </p>
+    pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
+        self.cwe_monitor_enabled
+    }
+    /// <p>
+    /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
+    /// receive notifications for updates to the opsItem.
+    /// </p>
+    pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.ops_item_sns_topic_arn.as_deref()
+    }
+    /// <p>List of tags to add to the application.
+    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
+    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
+    /// characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
+        self.auto_config_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn auto_create(&self) -> std::option::Option<bool> {
+        self.auto_create
+    }
 }
 impl std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

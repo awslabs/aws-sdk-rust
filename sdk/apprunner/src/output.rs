@@ -10,6 +10,18 @@ pub struct UpdateServiceOutput {
     /// the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl UpdateServiceOutput {
+    /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect
+    /// configuration changes that are being applied by this request.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
+    /// the operation's progress.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceOutput");
@@ -136,6 +148,13 @@ pub struct StartDeploymentOutput {
     /// the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl StartDeploymentOutput {
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
+    /// the operation's progress.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeploymentOutput");
@@ -188,6 +207,17 @@ pub struct ResumeServiceOutput {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
     /// the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl ResumeServiceOutput {
+    /// <p>A description of the App Runner service that this request just resumed.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
+    /// the operation's progress.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResumeServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -255,6 +285,17 @@ pub struct PauseServiceOutput {
     /// the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl PauseServiceOutput {
+    /// <p>A description of the App Runner service that this request just paused.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
+    /// the operation's progress.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PauseServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PauseServiceOutput");
@@ -318,6 +359,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of the tag key-value pairs that are associated with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of the tag key-value pairs that are associated with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -374,6 +421,16 @@ pub struct ListServicesOutput {
     pub service_summary_list: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListServicesOutput {
+    /// <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    pub fn service_summary_list(&self) -> std::option::Option<&[crate::model::ServiceSummary]> {
+        self.service_summary_list.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -451,6 +508,17 @@ pub struct ListOperationsOutput {
     pub operation_summary_list: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOperationsOutput {
+    /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each
+    /// call.</p>
+    pub fn operation_summary_list(&self) -> std::option::Option<&[crate::model::OperationSummary]> {
+        self.operation_summary_list.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOperationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -532,6 +600,19 @@ pub struct ListConnectionsOutput {
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConnectionsOutput {
+    /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each
+    /// call.</p>
+    pub fn connection_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectionSummary]> {
+        self.connection_summary_list.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectionsOutput");
@@ -611,6 +692,19 @@ pub struct ListAutoScalingConfigurationsOutput {
         std::option::Option<std::vec::Vec<crate::model::AutoScalingConfigurationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAutoScalingConfigurationsOutput {
+    /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code>
+    /// records for each call.</p>
+    pub fn auto_scaling_configuration_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoScalingConfigurationSummary]> {
+        self.auto_scaling_configuration_summary_list.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAutoScalingConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -700,6 +794,20 @@ pub struct DisassociateCustomDomainOutput {
     /// <p>A description of the domain name that's being disassociated.</p>
     pub custom_domain: std::option::Option<crate::model::CustomDomain>,
 }
+impl DisassociateCustomDomainOutput {
+    /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
+    pub fn dns_target(&self) -> std::option::Option<&str> {
+        self.dns_target.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A description of the domain name that's being disassociated.</p>
+    pub fn custom_domain(&self) -> std::option::Option<&crate::model::CustomDomain> {
+        self.custom_domain.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateCustomDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateCustomDomainOutput");
@@ -777,6 +885,12 @@ pub struct DescribeServiceOutput {
     /// <p>A full description of the App Runner service that you specified in this request.</p>
     pub service: std::option::Option<crate::model::Service>,
 }
+impl DescribeServiceOutput {
+    /// <p>A full description of the App Runner service that you specified in this request.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceOutput");
@@ -831,6 +945,25 @@ pub struct DescribeCustomDomainsOutput {
     pub custom_domains: std::option::Option<std::vec::Vec<crate::model::CustomDomain>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeCustomDomainsOutput {
+    /// <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
+    pub fn dns_target(&self) -> std::option::Option<&str> {
+        self.dns_target.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to
+    /// <code>MaxResults</code> records per call.</p>
+    pub fn custom_domains(&self) -> std::option::Option<&[crate::model::CustomDomain]> {
+        self.custom_domains.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCustomDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -930,6 +1063,14 @@ pub struct DescribeAutoScalingConfigurationOutput {
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
 }
+impl DescribeAutoScalingConfigurationOutput {
+    /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
+    pub fn auto_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingConfiguration> {
+        self.auto_scaling_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAutoScalingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAutoScalingConfigurationOutput");
@@ -990,6 +1131,17 @@ pub struct DeleteServiceOutput {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
     /// the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl DeleteServiceOutput {
+    /// <p>A description of the App Runner service that this request just deleted.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
+    /// the operation's progress.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1054,6 +1206,12 @@ pub struct DeleteConnectionOutput {
     /// <p>A description of the App Runner connection that this request just deleted.</p>
     pub connection: std::option::Option<crate::model::Connection>,
 }
+impl DeleteConnectionOutput {
+    /// <p>A description of the App Runner connection that this request just deleted.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConnectionOutput");
@@ -1104,6 +1262,14 @@ impl DeleteConnectionOutput {
 pub struct DeleteAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+}
+impl DeleteAutoScalingConfigurationOutput {
+    /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
+    pub fn auto_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingConfiguration> {
+        self.auto_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteAutoScalingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1164,6 +1330,16 @@ pub struct CreateServiceOutput {
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl CreateServiceOutput {
+    /// <p>A description of the App Runner service that's created by this request.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1226,6 +1402,12 @@ pub struct CreateConnectionOutput {
     /// <p>A description of the App Runner connection that's created by this request.</p>
     pub connection: std::option::Option<crate::model::Connection>,
 }
+impl CreateConnectionOutput {
+    /// <p>A description of the App Runner connection that's created by this request.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionOutput");
@@ -1276,6 +1458,14 @@ impl CreateConnectionOutput {
 pub struct CreateAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+}
+impl CreateAutoScalingConfigurationOutput {
+    /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
+    pub fn auto_scaling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingConfiguration> {
+        self.auto_scaling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAutoScalingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1338,6 +1528,20 @@ pub struct AssociateCustomDomainOutput {
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>A description of the domain name that's being associated.</p>
     pub custom_domain: std::option::Option<crate::model::CustomDomain>,
+}
+impl AssociateCustomDomainOutput {
+    /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
+    pub fn dns_target(&self) -> std::option::Option<&str> {
+        self.dns_target.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A description of the domain name that's being associated.</p>
+    pub fn custom_domain(&self) -> std::option::Option<&crate::model::CustomDomain> {
+        self.custom_domain.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateCustomDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

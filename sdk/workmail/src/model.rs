@@ -12,6 +12,21 @@ pub struct BookingOptions {
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
     pub auto_decline_conflicting_requests: bool,
 }
+impl BookingOptions {
+    /// <p>The resource's ability to automatically reply to requests. If disabled, delegates
+    /// must be associated to the resource.</p>
+    pub fn auto_accept_requests(&self) -> bool {
+        self.auto_accept_requests
+    }
+    /// <p>The resource's ability to automatically decline any recurring requests.</p>
+    pub fn auto_decline_recurring_requests(&self) -> bool {
+        self.auto_decline_recurring_requests
+    }
+    /// <p>The resource's ability to automatically decline any conflicting requests.</p>
+    pub fn auto_decline_conflicting_requests(&self) -> bool {
+        self.auto_decline_conflicting_requests
+    }
+}
 impl std::fmt::Debug for BookingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BookingOptions");
@@ -161,6 +176,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -227,6 +252,21 @@ pub struct FolderConfiguration {
     pub action: std::option::Option<crate::model::RetentionAction>,
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub period: std::option::Option<i32>,
+}
+impl FolderConfiguration {
+    /// <p>The folder name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::FolderName> {
+        self.name.as_ref()
+    }
+    /// <p>The action to take on the folder contents at the end of the folder configuration
+    /// period.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::RetentionAction> {
+        self.action.as_ref()
+    }
+    /// <p>The number of days for which the folder-configuration action applies.</p>
+    pub fn period(&self) -> std::option::Option<i32> {
+        self.period
+    }
 }
 impl std::fmt::Debug for FolderConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -567,6 +607,40 @@ pub struct User {
     /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl User {
+    /// <p>The identifier of the user.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The email of the user.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The name of the user.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The display name of the user.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+        self.state.as_ref()
+    }
+    /// <p>The role of the user.</p>
+    pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
+        self.user_role.as_ref()
+    }
+    /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enabled_date.as_ref()
+    }
+    /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.disabled_date.as_ref()
+    }
+}
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
@@ -842,6 +916,36 @@ pub struct Resource {
     /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Resource {
+    /// <p>The identifier of the resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The email of the resource.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the resource: equipment or room.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+        self.state.as_ref()
+    }
+    /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enabled_date.as_ref()
+    }
+    /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.disabled_date.as_ref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -1032,6 +1136,16 @@ pub struct Delegate {
     /// <p>The type of the delegate: user or group.</p>
     pub r#type: std::option::Option<crate::model::MemberType>,
 }
+impl Delegate {
+    /// <p>The identifier for the user or group associated as the resource's delegate.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of the delegate: user or group.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::MemberType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for Delegate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Delegate");
@@ -1157,6 +1271,30 @@ pub struct OrganizationSummary {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The state associated with the organization.</p>
     pub state: std::option::Option<std::string::String>,
+}
+impl OrganizationSummary {
+    /// <p>The identifier associated with the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The alias associated with the organization.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The default email domain associated with the organization.</p>
+    pub fn default_mail_domain(&self) -> std::option::Option<&str> {
+        self.default_mail_domain.as_deref()
+    }
+    /// <p>The error message associated with the organization. It is only present if unexpected
+    /// behavior has occurred with regards to the organization. It provides insight or solutions
+    /// regarding unexpected behavior.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The state associated with the organization.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
 }
 impl std::fmt::Debug for OrganizationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1296,6 +1434,64 @@ pub struct MobileDeviceAccessRule {
     pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time at which an access rule was modified.</p>
     pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MobileDeviceAccessRule {
+    /// <p>The ID assigned to a mobile access rule. </p>
+    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+        self.mobile_device_access_rule_id.as_deref()
+    }
+    /// <p>The name of a mobile access rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of a mobile access rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>Device types that a rule will match. </p>
+    pub fn device_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_types.as_deref()
+    }
+    /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
+    pub fn not_device_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_types.as_deref()
+    }
+    /// <p>Device models that a rule will match.</p>
+    pub fn device_models(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_models.as_deref()
+    }
+    /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
+    pub fn not_device_models(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_models.as_deref()
+    }
+    /// <p>Device operating systems that a rule will match.</p>
+    pub fn device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_operating_systems.as_deref()
+    }
+    /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
+    pub fn not_device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_operating_systems.as_deref()
+    }
+    /// <p>Device user agents that a rule will match.</p>
+    pub fn device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_user_agents.as_deref()
+    }
+    /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
+    pub fn not_device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_user_agents.as_deref()
+    }
+    /// <p>The date and time at which an access rule was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date and time at which an access rule was modified.</p>
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_modified.as_ref()
+    }
 }
 impl std::fmt::Debug for MobileDeviceAccessRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1622,6 +1818,32 @@ pub struct MobileDeviceAccessOverride {
     /// <p>The date the override was last modified.</p>
     pub date_modified: std::option::Option<aws_smithy_types::Instant>,
 }
+impl MobileDeviceAccessOverride {
+    /// <p>The WorkMail user to which the access override applies.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The device to which the override applies.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>A description of the override.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date the override was first created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date the override was last modified.</p>
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_modified.as_ref()
+    }
+}
 impl std::fmt::Debug for MobileDeviceAccessOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MobileDeviceAccessOverride");
@@ -1746,6 +1968,16 @@ pub struct MailDomainSummary {
     /// <p>Whether the domain is default or not.</p>
     pub default_domain: bool,
 }
+impl MailDomainSummary {
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Whether the domain is default or not.</p>
+    pub fn default_domain(&self) -> bool {
+        self.default_domain
+    }
+}
 impl std::fmt::Debug for MailDomainSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MailDomainSummary");
@@ -1817,6 +2049,26 @@ pub struct Permission {
     /// access to the mailbox, irrespective of other folder-level permissions set on the
     /// mailbox.</p>
     pub permission_values: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+}
+impl Permission {
+    /// <p>The identifier of the user, group, or resource to which the permissions are
+    /// granted.</p>
+    pub fn grantee_id(&self) -> std::option::Option<&str> {
+        self.grantee_id.as_deref()
+    }
+    /// <p>The type of user, group, or resource referred to in GranteeId.</p>
+    pub fn grantee_type(&self) -> std::option::Option<&crate::model::MemberType> {
+        self.grantee_type.as_ref()
+    }
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
+    /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
+    /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
+    /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
+    /// access to the mailbox, irrespective of other folder-level permissions set on the
+    /// mailbox.</p>
+    pub fn permission_values(&self) -> std::option::Option<&[crate::model::PermissionType]> {
+        self.permission_values.as_deref()
+    }
 }
 impl std::fmt::Debug for Permission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1933,6 +2185,44 @@ pub struct MailboxExportJob {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The mailbox export job end timestamp.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MailboxExportJob {
+    /// <p>The identifier of the mailbox export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The mailbox export job description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
+    pub fn s3_path(&self) -> std::option::Option<&str> {
+        self.s3_path.as_deref()
+    }
+    /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
+    pub fn estimated_progress(&self) -> i32 {
+        self.estimated_progress
+    }
+    /// <p>The state of the mailbox export job.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::MailboxExportJobState> {
+        self.state.as_ref()
+    }
+    /// <p>The mailbox export job start timestamp.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The mailbox export job end timestamp.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for MailboxExportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2171,6 +2461,32 @@ pub struct Group {
     /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Group {
+    /// <p>The identifier of the group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The email of the group.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+        self.state.as_ref()
+    }
+    /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enabled_date.as_ref()
+    }
+    /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.disabled_date.as_ref()
+    }
+}
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Group");
@@ -2299,6 +2615,32 @@ pub struct Member {
     pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Member {
+    /// <p>The identifier of the member.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the member.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A member can be a user or group.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::MemberType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+        self.state.as_ref()
+    }
+    /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enabled_date.as_ref()
+    }
+    /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.disabled_date.as_ref()
+    }
 }
 impl std::fmt::Debug for Member {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2442,6 +2784,56 @@ pub struct AccessControlRule {
     pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the rule was modified.</p>
     pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AccessControlRule {
+    /// <p>The rule name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The rule effect.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::AccessControlRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>The rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>IPv4 CIDR ranges to include in the rule.</p>
+    pub fn ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_ranges.as_deref()
+    }
+    /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    pub fn not_ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_ip_ranges.as_deref()
+    }
+    /// <p>Access protocol actions to include in the rule. Valid values include
+    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.actions.as_deref()
+    }
+    /// <p>Access protocol actions to exclude from the rule. Valid values include
+    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn not_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_actions.as_deref()
+    }
+    /// <p>User IDs to include in the rule.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>User IDs to exclude from the rule.</p>
+    pub fn not_user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_user_ids.as_deref()
+    }
+    /// <p>The date that the rule was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date that the rule was modified.</p>
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_modified.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessControlRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2694,6 +3086,16 @@ pub struct MobileDeviceAccessMatchedRule {
     /// <p>Name of a rule that a simulated user matches.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl MobileDeviceAccessMatchedRule {
+    /// <p>Identifier of the rule that a simulated user matches.</p>
+    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+        self.mobile_device_access_rule_id.as_deref()
+    }
+    /// <p>Name of a rule that a simulated user matches.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for MobileDeviceAccessMatchedRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MobileDeviceAccessMatchedRule");
@@ -2827,6 +3229,20 @@ pub struct DnsRecord {
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl DnsRecord {
+    /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for DnsRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DnsRecord");
@@ -2903,6 +3319,16 @@ pub struct Domain {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
+}
+impl Domain {
+    /// <p>The fully qualified domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Domain {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

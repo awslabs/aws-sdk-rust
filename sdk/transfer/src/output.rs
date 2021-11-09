@@ -12,6 +12,18 @@ pub struct UpdateUserOutput {
     /// in the request.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
+impl UpdateUserOutput {
+    /// <p>A system-assigned unique identifier for a server instance that the user account is
+    /// assigned to.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The unique identifier for a user that is assigned to a server instance that was specified
+    /// in the request.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserOutput");
@@ -78,6 +90,13 @@ pub struct UpdateServerOutput {
     /// to.</p>
     pub server_id: std::option::Option<std::string::String>,
 }
+impl UpdateServerOutput {
+    /// <p>A system-assigned unique identifier for a server that the user account is assigned
+    /// to.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServerOutput");
@@ -130,6 +149,17 @@ pub struct UpdateAccessOutput {
     /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
     /// resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     pub external_id: std::option::Option<std::string::String>,
+}
+impl UpdateAccessOutput {
+    /// <p>The ID of the server that the user is attached to.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
+    /// resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -229,6 +259,24 @@ pub struct TestIdentityProviderOutput {
     pub message: std::option::Option<std::string::String>,
     /// <p>The endpoint of the service used to authenticate a user.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl TestIdentityProviderOutput {
+    /// <p>The response that is returned from your API Gateway.</p>
+    pub fn response(&self) -> std::option::Option<&str> {
+        self.response.as_deref()
+    }
+    /// <p>The HTTP status code that is the response from your API Gateway.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+    /// <p>A message that indicates whether the test was successful or not.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The endpoint of the service used to authenticate a user.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for TestIdentityProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -442,6 +490,19 @@ pub struct ListWorkflowsOutput {
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
     pub workflows: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
 }
+impl ListWorkflowsOutput {
+    /// <p>
+    /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+    /// continue listing additional workflows.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
+    pub fn workflows(&self) -> std::option::Option<&[crate::model::ListedWorkflow]> {
+        self.workflows.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkflowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkflowsOutput");
@@ -525,6 +586,24 @@ pub struct ListUsersOutput {
     /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that
     /// you specify.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::ListedUser>>,
+}
+impl ListUsersOutput {
+    /// <p>When you can get additional results from the <code>ListUsers</code> call, a
+    /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+    /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+    /// users.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that
+    /// you specify.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::ListedUser]> {
+        self.users.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -625,6 +704,24 @@ pub struct ListTagsForResourceOutput {
     /// searching for items. Tags are metadata that you define.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The ARN you specified to list the tags of.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>When you can get additional results from the <code>ListTagsForResource</code> call, a
+    /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+    /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+    /// tags.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and
+    /// searching for items. Tags are metadata that you define.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -720,6 +817,18 @@ pub struct ListServersOutput {
     /// <p>An array of servers that were listed.</p>
     pub servers: std::option::Option<std::vec::Vec<crate::model::ListedServer>>,
 }
+impl ListServersOutput {
+    /// <p>When you can get additional results from the <code>ListServers</code> operation, a
+    /// <code>NextToken</code> parameter is returned in the output. In a following command, you can
+    /// pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of servers that were listed.</p>
+    pub fn servers(&self) -> std::option::Option<&[crate::model::ListedServer]> {
+        self.servers.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServersOutput");
@@ -797,6 +906,18 @@ pub struct ListSecurityPoliciesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of security policies that were listed.</p>
     pub security_policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListSecurityPoliciesOutput {
+    /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation,
+    /// a <code>NextToken</code> parameter is returned in the output. In a following command, you can
+    /// pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of security policies that were listed.</p>
+    pub fn security_policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_policy_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSecurityPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -900,6 +1021,45 @@ pub struct ListExecutionsOutput {
     /// </li>
     /// </ul>
     pub executions: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
+}
+impl ListExecutionsOutput {
+    /// <p>
+    /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+    /// continue listing additional executions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>Returns the details for each execution.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>NextToken</b>: returned from a call to several APIs,
+    /// you can use pass it to a subsequent command to continue listing additional executions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>StartTime</b>: timestamp indicating when the execution began.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Executions</b>: details of the execution, including the execution ID, initial file location,
+    /// and Service metadata.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Status</b>: one of the following values:
+    /// <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn executions(&self) -> std::option::Option<&[crate::model::ListedExecution]> {
+        self.executions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1042,6 +1202,24 @@ pub struct ListAccessesOutput {
     /// specify.</p>
     pub accesses: std::option::Option<std::vec::Vec<crate::model::ListedAccess>>,
 }
+impl ListAccessesOutput {
+    /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
+    /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+    /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+    /// accesses.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you
+    /// specify.</p>
+    pub fn accesses(&self) -> std::option::Option<&[crate::model::ListedAccess]> {
+        self.accesses.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccessesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessesOutput");
@@ -1139,6 +1317,20 @@ pub struct ImportSshPublicKeyOutput {
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
+impl ImportSshPublicKeyOutput {
+    /// <p>A system-assigned unique identifier for a server.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The name given to a public key by the system that was imported.</p>
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_id.as_deref()
+    }
+    /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportSshPublicKeyOutput");
@@ -1216,6 +1408,12 @@ pub struct DescribeWorkflowOutput {
     /// <p>The structure that contains the details of the workflow.</p>
     pub workflow: std::option::Option<crate::model::DescribedWorkflow>,
 }
+impl DescribeWorkflowOutput {
+    /// <p>The structure that contains the details of the workflow.</p>
+    pub fn workflow(&self) -> std::option::Option<&crate::model::DescribedWorkflow> {
+        self.workflow.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkflowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkflowOutput");
@@ -1269,6 +1467,17 @@ pub struct DescribeUserOutput {
     /// <p>An array containing the properties of the user account for the <code>ServerID</code> value
     /// that you specified.</p>
     pub user: std::option::Option<crate::model::DescribedUser>,
+}
+impl DescribeUserOutput {
+    /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>An array containing the properties of the user account for the <code>ServerID</code> value
+    /// that you specified.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::DescribedUser> {
+        self.user.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1334,6 +1543,13 @@ pub struct DescribeServerOutput {
     /// specified.</p>
     pub server: std::option::Option<crate::model::DescribedServer>,
 }
+impl DescribeServerOutput {
+    /// <p>An array containing the properties of a server with the <code>ServerID</code> you
+    /// specified.</p>
+    pub fn server(&self) -> std::option::Option<&crate::model::DescribedServer> {
+        self.server.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServerOutput");
@@ -1387,6 +1603,12 @@ pub struct DescribeSecurityPolicyOutput {
     /// <p>An array containing the properties of the security policy.</p>
     pub security_policy: std::option::Option<crate::model::DescribedSecurityPolicy>,
 }
+impl DescribeSecurityPolicyOutput {
+    /// <p>An array containing the properties of the security policy.</p>
+    pub fn security_policy(&self) -> std::option::Option<&crate::model::DescribedSecurityPolicy> {
+        self.security_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSecurityPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSecurityPolicyOutput");
@@ -1439,6 +1661,16 @@ pub struct DescribeExecutionOutput {
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The structure that contains the details of the workflow' execution.</p>
     pub execution: std::option::Option<crate::model::DescribedExecution>,
+}
+impl DescribeExecutionOutput {
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The structure that contains the details of the workflow' execution.</p>
+    pub fn execution(&self) -> std::option::Option<&crate::model::DescribedExecution> {
+        self.execution.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1505,6 +1737,16 @@ pub struct DescribeAccessOutput {
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The external ID of the server that the access is attached to.</p>
     pub access: std::option::Option<crate::model::DescribedAccess>,
+}
+impl DescribeAccessOutput {
+    /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The external ID of the server that the access is attached to.</p>
+    pub fn access(&self) -> std::option::Option<&crate::model::DescribedAccess> {
+        self.access.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1720,6 +1962,12 @@ pub struct CreateWorkflowOutput {
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: std::option::Option<std::string::String>,
 }
+impl CreateWorkflowOutput {
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkflowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkflowOutput");
@@ -1769,6 +2017,16 @@ pub struct CreateUserOutput {
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies a user account associated with a server.</p>
     pub user_name: std::option::Option<std::string::String>,
+}
+impl CreateUserOutput {
+    /// <p>The ID of the server that the user is attached to.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>A unique string that identifies a user account associated with a server.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1831,6 +2089,12 @@ pub struct CreateServerOutput {
     /// <p>The service-assigned ID of the server that is created.</p>
     pub server_id: std::option::Option<std::string::String>,
 }
+impl CreateServerOutput {
+    /// <p>The service-assigned ID of the server that is created.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServerOutput");
@@ -1881,6 +2145,17 @@ pub struct CreateAccessOutput {
     /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
     /// resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
     pub external_id: std::option::Option<std::string::String>,
+}
+impl CreateAccessOutput {
+    /// <p>The ID of the server that the user is attached to.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
+    /// resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

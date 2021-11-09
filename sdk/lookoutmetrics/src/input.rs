@@ -89,10 +89,7 @@ impl ActivateAnomalyDetectorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_activate_anomaly_detector(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -243,10 +240,7 @@ impl BackTestAnomalyDetectorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_back_test_anomaly_detector(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -473,10 +467,7 @@ impl CreateAlertInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_alert(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_alert(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -704,10 +695,7 @@ impl CreateAnomalyDetectorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_anomaly_detector(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1025,10 +1013,7 @@ impl CreateMetricSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_metric_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_metric_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1172,10 +1157,7 @@ impl DeleteAlertInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_alert(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_alert(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1325,10 +1307,7 @@ impl DeleteAnomalyDetectorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_anomaly_detector(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1472,10 +1451,7 @@ impl DescribeAlertInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_alert(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_alert(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1661,7 +1637,7 @@ impl DescribeAnomalyDetectionExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_anomaly_detection_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_anomaly_detection_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1813,10 +1789,7 @@ impl DescribeAnomalyDetectorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_anomaly_detector(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1964,10 +1937,7 @@ impl DescribeMetricSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_metric_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_metric_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2130,10 +2100,7 @@ impl GetAnomalyGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_anomaly_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_anomaly_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2323,10 +2290,7 @@ impl GetFeedbackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_feedback(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_feedback(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2473,10 +2437,8 @@ impl GetSampleDataInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_sample_data(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_sample_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2649,10 +2611,7 @@ impl ListAlertsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_alerts(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_alerts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2811,10 +2770,9 @@ impl ListAnomalyDetectorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_anomaly_detectors(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_anomaly_detectors(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3001,10 +2959,7 @@ impl ListAnomalyGroupSummariesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_anomaly_group_summaries(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3204,7 +3159,7 @@ impl ListAnomalyGroupTimeSeriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_anomaly_group_time_series(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_anomaly_group_time_series(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3381,10 +3336,7 @@ impl ListMetricSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_metric_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_metric_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3697,10 +3649,7 @@ impl PutFeedbackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_feedback(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_feedback(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3893,10 +3842,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4272,10 +4218,7 @@ impl UpdateAnomalyDetectorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_anomaly_detector(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4537,10 +4480,7 @@ impl UpdateMetricSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_metric_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_metric_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4623,6 +4563,40 @@ pub struct UpdateMetricSetInput {
     /// <p>Contains information about source data used to generate a metric.</p>
     pub metric_source: std::option::Option<crate::model::MetricSource>,
 }
+impl UpdateMetricSetInput {
+    /// <p>The ARN of the dataset to update.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+    /// <p>The dataset's description.</p>
+    pub fn metric_set_description(&self) -> std::option::Option<&str> {
+        self.metric_set_description.as_deref()
+    }
+    /// <p>The metric list.</p>
+    pub fn metric_list(&self) -> std::option::Option<&[crate::model::Metric]> {
+        self.metric_list.as_deref()
+    }
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    pub fn offset(&self) -> std::option::Option<i32> {
+        self.offset
+    }
+    /// <p>The timestamp column.</p>
+    pub fn timestamp_column(&self) -> std::option::Option<&crate::model::TimestampColumn> {
+        self.timestamp_column.as_ref()
+    }
+    /// <p>The dimension list.</p>
+    pub fn dimension_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.dimension_list.as_deref()
+    }
+    /// <p>The dataset's interval.</p>
+    pub fn metric_set_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.metric_set_frequency.as_ref()
+    }
+    /// <p>Contains information about source data used to generate a metric.</p>
+    pub fn metric_source(&self) -> std::option::Option<&crate::model::MetricSource> {
+        self.metric_source.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMetricSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMetricSetInput");
@@ -4651,6 +4625,26 @@ pub struct UpdateAnomalyDetectorInput {
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
     pub anomaly_detector_config: std::option::Option<crate::model::AnomalyDetectorConfig>,
 }
+impl UpdateAnomalyDetectorInput {
+    /// <p>The ARN of the detector to update.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The updated detector description.</p>
+    pub fn anomaly_detector_description(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_description.as_deref()
+    }
+    /// <p>Contains information about the configuration to which the detector will be updated.</p>
+    pub fn anomaly_detector_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyDetectorConfig> {
+        self.anomaly_detector_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAnomalyDetectorInput");
@@ -4674,6 +4668,16 @@ pub struct UntagResourceInput {
     /// <p>Keys to remove from the resource's tags.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The resource's Amazon Resource Name (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Keys to remove from the resource's tags.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4695,6 +4699,21 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The resource's Amazon Resource Name (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
+    /// symbols: <code>_.:/=+@-</code>
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4714,6 +4733,18 @@ pub struct PutFeedbackInput {
     pub anomaly_group_time_series_feedback:
         std::option::Option<crate::model::AnomalyGroupTimeSeriesFeedback>,
 }
+impl PutFeedbackInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>Feedback for an anomalous metric.</p>
+    pub fn anomaly_group_time_series_feedback(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyGroupTimeSeriesFeedback> {
+        self.anomaly_group_time_series_feedback.as_ref()
+    }
+}
 impl std::fmt::Debug for PutFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutFeedbackInput");
@@ -4732,6 +4763,12 @@ impl std::fmt::Debug for PutFeedbackInput {
 pub struct ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The resource's Amazon Resource Name (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4753,6 +4790,22 @@ pub struct ListMetricSetsInput {
     /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
     /// request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMetricSetsInput {
+    /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMetricSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4779,6 +4832,28 @@ pub struct ListAnomalyGroupTimeSeriesInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAnomalyGroupTimeSeriesInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>The name of the measure field.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAnomalyGroupTimeSeriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnomalyGroupTimeSeriesInput");
@@ -4804,6 +4879,24 @@ pub struct ListAnomalyGroupSummariesInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAnomalyGroupSummariesInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The minimum severity score for inclusion in the output.</p>
+    pub fn sensitivity_threshold(&self) -> i32 {
+        self.sensitivity_threshold
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAnomalyGroupSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnomalyGroupSummariesInput");
@@ -4824,6 +4917,17 @@ pub struct ListAnomalyDetectorsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
     /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnomalyDetectorsInput {
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
+    /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAnomalyDetectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4846,6 +4950,21 @@ pub struct ListAlertsInput {
     /// <p>The maximum number of results that will be displayed by the request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAlertsInput {
+    /// <p>The ARN of the alert's detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
+    /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results that will be displayed by the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAlertsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlertsInput");
@@ -4862,6 +4981,12 @@ impl std::fmt::Debug for ListAlertsInput {
 pub struct GetSampleDataInput {
     /// <p>A datasource bucket in Amazon S3.</p>
     pub s3_source_config: std::option::Option<crate::model::SampleDataS3SourceConfig>,
+}
+impl GetSampleDataInput {
+    /// <p>A datasource bucket in Amazon S3.</p>
+    pub fn s3_source_config(&self) -> std::option::Option<&crate::model::SampleDataS3SourceConfig> {
+        self.s3_source_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSampleDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4884,6 +5009,26 @@ pub struct GetFeedbackInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetFeedbackInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The anomalous metric and group ID.</p>
+    pub fn anomaly_group_time_series_feedback(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyGroupTimeSeries> {
+        self.anomaly_group_time_series_feedback.as_ref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4908,6 +5053,16 @@ pub struct GetAnomalyGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
+impl GetAnomalyGroupInput {
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAnomalyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnomalyGroupInput");
@@ -4924,6 +5079,12 @@ pub struct DescribeMetricSetInput {
     /// <p>The ARN of the dataset.</p>
     pub metric_set_arn: std::option::Option<std::string::String>,
 }
+impl DescribeMetricSetInput {
+    /// <p>The ARN of the dataset.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMetricSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMetricSetInput");
@@ -4938,6 +5099,12 @@ impl std::fmt::Debug for DescribeMetricSetInput {
 pub struct DescribeAnomalyDetectorInput {
     /// <p>The ARN of the detector to describe.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
+}
+impl DescribeAnomalyDetectorInput {
+    /// <p>The ARN of the detector to describe.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4960,6 +5127,24 @@ pub struct DescribeAnomalyDetectionExecutionsInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAnomalyDetectionExecutionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The timestamp of the anomaly detection job.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAnomalyDetectionExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnomalyDetectionExecutionsInput");
@@ -4978,6 +5163,12 @@ pub struct DescribeAlertInput {
     /// <p>The ARN of the alert to describe.</p>
     pub alert_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAlertInput {
+    /// <p>The ARN of the alert to describe.</p>
+    pub fn alert_arn(&self) -> std::option::Option<&str> {
+        self.alert_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAlertInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlertInput");
@@ -4993,6 +5184,12 @@ pub struct DeleteAnomalyDetectorInput {
     /// <p>The ARN of the detector to delete.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
+impl DeleteAnomalyDetectorInput {
+    /// <p>The ARN of the detector to delete.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAnomalyDetectorInput");
@@ -5007,6 +5204,12 @@ impl std::fmt::Debug for DeleteAnomalyDetectorInput {
 pub struct DeleteAlertInput {
     /// <p>The ARN of the alert to delete.</p>
     pub alert_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAlertInput {
+    /// <p>The ARN of the alert to delete.</p>
+    pub fn alert_arn(&self) -> std::option::Option<&str> {
+        self.alert_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAlertInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5044,6 +5247,55 @@ pub struct CreateMetricSetInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateMetricSetInput {
+    /// <p>The ARN of the anomaly detector that will use the dataset.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn metric_set_name(&self) -> std::option::Option<&str> {
+        self.metric_set_name.as_deref()
+    }
+    /// <p>A description of the dataset you are creating.</p>
+    pub fn metric_set_description(&self) -> std::option::Option<&str> {
+        self.metric_set_description.as_deref()
+    }
+    /// <p>A list of metrics that the dataset will contain.</p>
+    pub fn metric_list(&self) -> std::option::Option<&[crate::model::Metric]> {
+        self.metric_list.as_deref()
+    }
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    pub fn offset(&self) -> std::option::Option<i32> {
+        self.offset
+    }
+    /// <p>Contains information about the column used for tracking time in your source data.</p>
+    pub fn timestamp_column(&self) -> std::option::Option<&crate::model::TimestampColumn> {
+        self.timestamp_column.as_ref()
+    }
+    /// <p>A list of the fields you want to treat as dimensions.</p>
+    pub fn dimension_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.dimension_list.as_deref()
+    }
+    /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
+    pub fn metric_set_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.metric_set_frequency.as_ref()
+    }
+    /// <p>Contains information about how the source data should be interpreted.</p>
+    pub fn metric_source(&self) -> std::option::Option<&crate::model::MetricSource> {
+        self.metric_source.as_ref()
+    }
+    /// <p>The time zone in which your source data was recorded.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMetricSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMetricSetInput");
@@ -5078,6 +5330,33 @@ pub struct CreateAnomalyDetectorInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAnomalyDetectorInput {
+    /// <p>The name of the detector.</p>
+    pub fn anomaly_detector_name(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_name.as_deref()
+    }
+    /// <p>A description of the detector.</p>
+    pub fn anomaly_detector_description(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_description.as_deref()
+    }
+    /// <p>Contains information about the configuration of the anomaly detector.</p>
+    pub fn anomaly_detector_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyDetectorConfig> {
+        self.anomaly_detector_config.as_ref()
+    }
+    /// <p>The ARN of the KMS key to use to encrypt your data.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAnomalyDetectorInput");
@@ -5111,6 +5390,35 @@ pub struct CreateAlertInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAlertInput {
+    /// <p>The name of the alert.</p>
+    pub fn alert_name(&self) -> std::option::Option<&str> {
+        self.alert_name.as_deref()
+    }
+    /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    pub fn alert_sensitivity_threshold(&self) -> i32 {
+        self.alert_sensitivity_threshold
+    }
+    /// <p>A description of the alert.</p>
+    pub fn alert_description(&self) -> std::option::Option<&str> {
+        self.alert_description.as_deref()
+    }
+    /// <p>The ARN of the detector to which the alert is attached.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>Action that will be triggered when there is an alert.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAlertInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAlertInput");
@@ -5134,6 +5442,12 @@ pub struct BackTestAnomalyDetectorInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
+impl BackTestAnomalyDetectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for BackTestAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackTestAnomalyDetectorInput");
@@ -5148,6 +5462,12 @@ impl std::fmt::Debug for BackTestAnomalyDetectorInput {
 pub struct ActivateAnomalyDetectorInput {
     /// <p>The ARN of the anomaly detector.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
+}
+impl ActivateAnomalyDetectorInput {
+    /// <p>The ARN of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ActivateAnomalyDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -118,10 +118,7 @@ impl AssociateApprovedOriginInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_approved_origin(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -312,10 +309,7 @@ impl AssociateBotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_associate_bot(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_associate_bot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -511,7 +505,7 @@ impl AssociateInstanceStorageConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_instance_storage_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_instance_storage_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -694,10 +688,7 @@ impl AssociateLambdaFunctionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_lambda_function(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -874,10 +865,7 @@ impl AssociateLexBotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_lex_bot(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_lex_bot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1092,7 +1080,7 @@ impl AssociateQueueQuickConnectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_queue_quick_connects(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_queue_quick_connects(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1315,7 +1303,7 @@ impl AssociateRoutingProfileQueuesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_routing_profile_queues(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_routing_profile_queues(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1493,10 +1481,9 @@ impl AssociateSecurityKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_security_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_security_key(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1741,10 +1728,7 @@ impl CreateAgentStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_agent_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_agent_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1991,10 +1975,7 @@ impl CreateContactFlowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_contact_flow(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_contact_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2247,10 +2228,7 @@ impl CreateHoursOfOperationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_hours_of_operation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2460,10 +2438,8 @@ impl CreateInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2733,7 +2709,7 @@ impl CreateIntegrationAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_integration_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_integration_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3010,10 +2986,7 @@ impl CreateQueueInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_queue(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_queue(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3246,10 +3219,7 @@ impl CreateQuickConnectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_quick_connect(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_quick_connect(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3536,10 +3506,9 @@ impl CreateRoutingProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_routing_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_routing_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3774,10 +3743,8 @@ impl CreateUseCaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_use_case(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_use_case(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4104,10 +4071,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4304,10 +4268,7 @@ impl CreateUserHierarchyGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_hierarchy_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8077,10 +8038,7 @@ impl DisassociateBotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_bot(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_bot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8868,7 +8826,7 @@ impl DisassociateQueueQuickConnectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_queue_quick_connects(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_queue_quick_connects(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9091,7 +9049,7 @@ impl DisassociateRoutingProfileQueuesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_routing_profile_queues(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_routing_profile_queues(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9910,10 +9868,7 @@ impl GetCurrentMetricDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_current_metric_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10652,10 +10607,8 @@ impl GetMetricDataInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_metric_data(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_metric_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15662,10 +15615,7 @@ impl ResumeContactRecordingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resume_contact_recording(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15919,10 +15869,7 @@ impl StartChatContactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_chat_contact(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_chat_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16117,10 +16064,7 @@ impl StartContactRecordingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_contact_recording(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16317,10 +16261,7 @@ impl StartContactStreamingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_contact_streaming(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16655,10 +16596,7 @@ impl StartOutboundVoiceContactInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_outbound_voice_contact(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16952,10 +16890,7 @@ impl StartTaskContactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_task_contact(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_task_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17111,10 +17046,7 @@ impl StopContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17288,10 +17220,9 @@ impl StopContactRecordingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_contact_recording(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_contact_recording(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17462,10 +17393,9 @@ impl StopContactStreamingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_contact_streaming(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_contact_streaming(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17642,10 +17572,7 @@ impl SuspendContactRecordingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_suspend_contact_recording(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17834,10 +17761,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18273,10 +18197,7 @@ impl UpdateAgentStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_agent_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_agent_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18476,10 +18397,7 @@ impl UpdateContactAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_contact_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18694,10 +18612,7 @@ impl UpdateContactFlowContentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_contact_flow_content(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18919,10 +18834,7 @@ impl UpdateContactFlowNameInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_contact_flow_name(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19177,10 +19089,7 @@ impl UpdateHoursOfOperationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_hours_of_operation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19399,10 +19308,7 @@ impl UpdateInstanceAttributeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_instance_attribute(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19642,7 +19548,7 @@ impl UpdateInstanceStorageConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_instance_storage_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_instance_storage_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -19852,7 +19758,7 @@ impl UpdateQueueHoursOfOperationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_hours_of_operation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_queue_hours_of_operation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -20060,10 +19966,7 @@ impl UpdateQueueMaxContactsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_queue_max_contacts(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20280,10 +20183,7 @@ impl UpdateQueueNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_name(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_queue_name(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20492,7 +20392,7 @@ impl UpdateQueueOutboundCallerConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_outbound_caller_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_queue_outbound_caller_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -20698,10 +20598,7 @@ impl UpdateQueueStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_queue_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20915,10 +20812,7 @@ impl UpdateQuickConnectConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_quick_connect_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21140,10 +21034,7 @@ impl UpdateQuickConnectNameInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_quick_connect_name(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21365,7 +21256,7 @@ impl UpdateRoutingProfileConcurrencyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_concurrency(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_concurrency(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21581,7 +21472,7 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_default_outbound_queue(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_default_outbound_queue(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21805,10 +21696,7 @@ impl UpdateRoutingProfileNameInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_name(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22034,7 +21922,7 @@ impl UpdateRoutingProfileQueuesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_queues(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_queues(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -22243,10 +22131,7 @@ impl UpdateUserHierarchyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22455,7 +22340,7 @@ impl UpdateUserHierarchyGroupNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy_group_name(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy_group_name(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -22640,7 +22525,7 @@ impl UpdateUserHierarchyStructureInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy_structure(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy_structure(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -22851,10 +22736,7 @@ impl UpdateUserIdentityInfoInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_identity_info(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23064,10 +22946,7 @@ impl UpdateUserPhoneConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_phone_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23278,10 +23157,7 @@ impl UpdateUserRoutingProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_routing_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23496,7 +23372,7 @@ impl UpdateUserSecurityProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_security_profiles(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_user_security_profiles(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23570,6 +23446,20 @@ pub struct UpdateUserSecurityProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl UpdateUserSecurityProfilesInput {
+    /// <p>The identifiers of the security profiles for the user.</p>
+    pub fn security_profile_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_profile_ids.as_deref()
+    }
+    /// <p>The identifier of the user account.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserSecurityProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserSecurityProfilesInput");
@@ -23590,6 +23480,20 @@ pub struct UpdateUserRoutingProfileInput {
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl UpdateUserRoutingProfileInput {
+    /// <p>The identifier of the routing profile for the user.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The identifier of the user account.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateUserRoutingProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23612,6 +23516,20 @@ pub struct UpdateUserPhoneConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl UpdateUserPhoneConfigInput {
+    /// <p>Information about phone configuration settings for the user.</p>
+    pub fn phone_config(&self) -> std::option::Option<&crate::model::UserPhoneConfig> {
+        self.phone_config.as_ref()
+    }
+    /// <p>The identifier of the user account.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserPhoneConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserPhoneConfigInput");
@@ -23633,6 +23551,20 @@ pub struct UpdateUserIdentityInfoInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl UpdateUserIdentityInfoInput {
+    /// <p>The identity information for the user.</p>
+    pub fn identity_info(&self) -> std::option::Option<&crate::model::UserIdentityInfo> {
+        self.identity_info.as_ref()
+    }
+    /// <p>The identifier of the user account.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserIdentityInfoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserIdentityInfoInput");
@@ -23651,6 +23583,18 @@ pub struct UpdateUserHierarchyStructureInput {
     pub hierarchy_structure: std::option::Option<crate::model::HierarchyStructureUpdate>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl UpdateUserHierarchyStructureInput {
+    /// <p>The hierarchy levels to update.</p>
+    pub fn hierarchy_structure(
+        &self,
+    ) -> std::option::Option<&crate::model::HierarchyStructureUpdate> {
+        self.hierarchy_structure.as_ref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateUserHierarchyStructureInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23672,6 +23616,20 @@ pub struct UpdateUserHierarchyGroupNameInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl UpdateUserHierarchyGroupNameInput {
+    /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserHierarchyGroupNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserHierarchyGroupNameInput");
@@ -23692,6 +23650,20 @@ pub struct UpdateUserHierarchyInput {
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl UpdateUserHierarchyInput {
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The identifier of the user account.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateUserHierarchyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23716,6 +23688,22 @@ pub struct UpdateRoutingProfileQueuesInput {
     /// profile. You can do this using AssociateRoutingProfileQueues.</p>
     pub queue_configs: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
 }
+impl UpdateRoutingProfileQueuesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The queues to be updated for this routing profile.
+    /// Queues must first be associated to the routing
+    /// profile. You can do this using AssociateRoutingProfileQueues.</p>
+    pub fn queue_configs(&self) -> std::option::Option<&[crate::model::RoutingProfileQueueConfig]> {
+        self.queue_configs.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRoutingProfileQueuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingProfileQueuesInput");
@@ -23739,6 +23727,24 @@ pub struct UpdateRoutingProfileNameInput {
     /// <p>The description of the routing profile. Must not be more than 250 characters.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateRoutingProfileNameInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the routing profile. Must not be more than 250 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRoutingProfileNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingProfileNameInput");
@@ -23761,6 +23767,20 @@ pub struct UpdateRoutingProfileDefaultOutboundQueueInput {
     /// <p>The identifier for the default outbound queue.</p>
     pub default_outbound_queue_id: std::option::Option<std::string::String>,
 }
+impl UpdateRoutingProfileDefaultOutboundQueueInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The identifier for the default outbound queue.</p>
+    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
+        self.default_outbound_queue_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRoutingProfileDefaultOutboundQueueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingProfileDefaultOutboundQueueInput");
@@ -23781,6 +23801,20 @@ pub struct UpdateRoutingProfileConcurrencyInput {
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
+}
+impl UpdateRoutingProfileConcurrencyInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
+        self.media_concurrencies.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRoutingProfileConcurrencyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23805,6 +23839,24 @@ pub struct UpdateQuickConnectNameInput {
     /// <p>The description of the quick connect.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateQuickConnectNameInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn quick_connect_id(&self) -> std::option::Option<&str> {
+        self.quick_connect_id.as_deref()
+    }
+    /// <p>The name of the quick connect.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the quick connect.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateQuickConnectNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQuickConnectNameInput");
@@ -23827,6 +23879,20 @@ pub struct UpdateQuickConnectConfigInput {
     /// <p>Information about the configuration settings for the quick connect.</p>
     pub quick_connect_config: std::option::Option<crate::model::QuickConnectConfig>,
 }
+impl UpdateQuickConnectConfigInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn quick_connect_id(&self) -> std::option::Option<&str> {
+        self.quick_connect_id.as_deref()
+    }
+    /// <p>Information about the configuration settings for the quick connect.</p>
+    pub fn quick_connect_config(&self) -> std::option::Option<&crate::model::QuickConnectConfig> {
+        self.quick_connect_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateQuickConnectConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQuickConnectConfigInput");
@@ -23848,6 +23914,20 @@ pub struct UpdateQueueStatusInput {
     /// <p>The status of the queue.</p>
     pub status: std::option::Option<crate::model::QueueStatus>,
 }
+impl UpdateQueueStatusInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The status of the queue.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateQueueStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQueueStatusInput");
@@ -23868,6 +23948,22 @@ pub struct UpdateQueueOutboundCallerConfigInput {
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
+}
+impl UpdateQueueOutboundCallerConfigInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    pub fn outbound_caller_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundCallerConfig> {
+        self.outbound_caller_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateQueueOutboundCallerConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23892,6 +23988,24 @@ pub struct UpdateQueueNameInput {
     /// <p>The description of the queue.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateQueueNameInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The name of the queue.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the queue.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateQueueNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQueueNameInput");
@@ -23914,6 +24028,20 @@ pub struct UpdateQueueMaxContactsInput {
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     pub max_contacts: std::option::Option<i32>,
 }
+impl UpdateQueueMaxContactsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn max_contacts(&self) -> std::option::Option<i32> {
+        self.max_contacts
+    }
+}
 impl std::fmt::Debug for UpdateQueueMaxContactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQueueMaxContactsInput");
@@ -23934,6 +24062,20 @@ pub struct UpdateQueueHoursOfOperationInput {
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: std::option::Option<std::string::String>,
+}
+impl UpdateQueueHoursOfOperationInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateQueueHoursOfOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23957,6 +24099,24 @@ pub struct UpdateInstanceStorageConfigInput {
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
     /// <p>The storage configuration for the instance.</p>
     pub storage_config: std::option::Option<crate::model::InstanceStorageConfig>,
+}
+impl UpdateInstanceStorageConfigInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>A valid resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::InstanceStorageResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The storage configuration for the instance.</p>
+    pub fn storage_config(&self) -> std::option::Option<&crate::model::InstanceStorageConfig> {
+        self.storage_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateInstanceStorageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23983,6 +24143,24 @@ pub struct UpdateInstanceAttributeInput {
     pub attribute_type: std::option::Option<crate::model::InstanceAttributeType>,
     /// <p>The value for the attribute. Maximum character limit is 100. </p>
     pub value: std::option::Option<std::string::String>,
+}
+impl UpdateInstanceAttributeInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of attribute.</p>
+    /// <note>
+    /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature,
+    /// contact AWS Support for allowlisting.</p>
+    /// </note>
+    pub fn attribute_type(&self) -> std::option::Option<&crate::model::InstanceAttributeType> {
+        self.attribute_type.as_ref()
+    }
+    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateInstanceAttributeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24011,6 +24189,32 @@ pub struct UpdateHoursOfOperationInput {
     /// <p>Configuration information of the hours of operation.</p>
     pub config: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
 }
+impl UpdateHoursOfOperationInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
+    /// <p>The name of the hours of operation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the hours of operation.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time zone of the hours of operation.</p>
+    pub fn time_zone(&self) -> std::option::Option<&str> {
+        self.time_zone.as_deref()
+    }
+    /// <p>Configuration information of the hours of operation.</p>
+    pub fn config(&self) -> std::option::Option<&[crate::model::HoursOfOperationConfig]> {
+        self.config.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateHoursOfOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateHoursOfOperationInput");
@@ -24037,6 +24241,24 @@ pub struct UpdateContactFlowNameInput {
     /// <p>The description of the contact flow.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateContactFlowNameInput {
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>The name of the contact flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the contact flow.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateContactFlowNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContactFlowNameInput");
@@ -24060,6 +24282,22 @@ pub struct UpdateContactFlowContentInput {
     /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </p>
     pub content: std::option::Option<std::string::String>,
+}
+impl UpdateContactFlowContentInput {
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
+    /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// </p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateContactFlowContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24086,6 +24324,27 @@ pub struct UpdateContactAttributesInput {
     /// can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateContactAttributesInput {
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with the contact center.</p>
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+        self.initial_contact_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
+    /// contact attributes.</p>
+    /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys
+    /// can include only alphanumeric, dash, and underscore characters.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateContactAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24116,6 +24375,36 @@ pub struct UpdateAgentStatusInput {
     /// <p>A number indicating the reset order of the agent status.</p>
     pub reset_order_number: bool,
 }
+impl UpdateAgentStatusInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the agent status.</p>
+    pub fn agent_status_id(&self) -> std::option::Option<&str> {
+        self.agent_status_id.as_deref()
+    }
+    /// <p>The name of the agent status.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the agent status.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The state of the agent status.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AgentStatusState> {
+        self.state.as_ref()
+    }
+    /// <p>The display order of the agent status.</p>
+    pub fn display_order(&self) -> std::option::Option<i32> {
+        self.display_order
+    }
+    /// <p>A number indicating the reset order of the agent status.</p>
+    pub fn reset_order_number(&self) -> bool {
+        self.reset_order_number
+    }
+}
 impl std::fmt::Debug for UpdateAgentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAgentStatusInput");
@@ -24139,6 +24428,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -24157,6 +24456,19 @@ pub struct TagResourceInput {
     /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24178,6 +24490,21 @@ pub struct SuspendContactRecordingInput {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the
     /// first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
+}
+impl SuspendContactRecordingInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with the contact center.</p>
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+        self.initial_contact_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SuspendContactRecordingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24201,6 +24528,21 @@ pub struct StopContactStreamingInput {
     /// <p>The identifier of the streaming configuration enabled. </p>
     pub streaming_id: std::option::Option<std::string::String>,
 }
+impl StopContactStreamingInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
+    /// the first interaction with the contact center.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The identifier of the streaming configuration enabled. </p>
+    pub fn streaming_id(&self) -> std::option::Option<&str> {
+        self.streaming_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopContactStreamingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopContactStreamingInput");
@@ -24223,6 +24565,21 @@ pub struct StopContactRecordingInput {
     /// first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
+impl StopContactRecordingInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with the contact center.</p>
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+        self.initial_contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopContactRecordingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopContactRecordingInput");
@@ -24241,6 +24598,16 @@ pub struct StopContactInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl StopContactInput {
+    /// <p>The ID of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24285,6 +24652,57 @@ pub struct StartTaskContactInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl StartTaskContactInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the previous chat, voice, or task contact. </p>
+    pub fn previous_contact_id(&self) -> std::option::Option<&str> {
+        self.previous_contact_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
+    /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
+    /// the contact flow page, under the name of the contact flow, choose <b>Show
+    /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
+    /// here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+    /// </p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
+    /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
+    /// can include only alphanumeric, dash, and underscore characters.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn references(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Reference>>
+    {
+        self.references.as_ref()
+    }
+    /// <p>A description of the task that is shown to an agent in the Contact Control Panel
+    /// (CCP).</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StartTaskContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24348,6 +24766,73 @@ pub struct StartOutboundVoiceContactInput {
     /// <code>GENERAL</code>. </p>
     pub traffic_type: std::option::Option<crate::model::TrafficType>,
 }
+impl StartOutboundVoiceContactInput {
+    /// <p>The phone number of the customer, in E.164 format.</p>
+    pub fn destination_phone_number(&self) -> std::option::Option<&str> {
+        self.destination_phone_number.as_deref()
+    }
+    /// <p>The
+    /// identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
+    /// console user interface, on the navigation menu go to <b>Routing</b>,
+    /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow
+    /// page, under the name of the contact flow, choose <b>Show additional flow
+    /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+    /// </p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. The token is valid for 7 days after creation. If a contact is already started, the
+    /// contact ID is returned.
+    /// </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
+    /// a source phone number, you must specify a queue.</p>
+    pub fn source_phone_number(&self) -> std::option::Option<&str> {
+        self.source_phone_number.as_deref()
+    }
+    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
+    /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
+    /// contact flow is used. If you do not specify a queue, you must specify a source phone
+    /// number.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
+    /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
+    /// can include only alphanumeric, dash, and underscore characters.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>Configuration of the answering machine detection for this outbound call. </p>
+    pub fn answer_machine_detection_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AnswerMachineDetectionConfig> {
+        self.answer_machine_detection_config.as_ref()
+    }
+    /// <p>The campaign identifier of the outbound communication.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
+    /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
+    /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
+    /// <code>GENERAL</code>. </p>
+    pub fn traffic_type(&self) -> std::option::Option<&crate::model::TrafficType> {
+        self.traffic_type.as_ref()
+    }
+}
 impl std::fmt::Debug for StartOutboundVoiceContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartOutboundVoiceContactInput");
@@ -24383,6 +24868,28 @@ pub struct StartContactStreamingInput {
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl StartContactStreamingInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with the contact center.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
+    pub fn chat_streaming_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ChatStreamingConfiguration> {
+        self.chat_streaming_configuration.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartContactStreamingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartContactStreamingInput");
@@ -24411,6 +24918,27 @@ pub struct StartContactRecordingInput {
     /// <p>The person being recorded.</p>
     pub voice_recording_configuration:
         std::option::Option<crate::model::VoiceRecordingConfiguration>,
+}
+impl StartContactRecordingInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with the contact center.</p>
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+        self.initial_contact_id.as_deref()
+    }
+    /// <p>The person being recorded.</p>
+    pub fn voice_recording_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::VoiceRecordingConfiguration> {
+        self.voice_recording_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for StartContactRecordingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24454,6 +24982,45 @@ pub struct StartChatContactInput {
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl StartChatContactInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow for initiating the chat.
+    /// To
+    /// see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
+    /// contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
+    /// the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+    /// </p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
+    /// attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
+    /// can include only alphanumeric, dash, and underscore characters.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>Information identifying the participant.</p>
+    pub fn participant_details(&self) -> std::option::Option<&crate::model::ParticipantDetails> {
+        self.participant_details.as_ref()
+    }
+    /// <p>The initial message to be sent to the newly created chat.</p>
+    pub fn initial_message(&self) -> std::option::Option<&crate::model::ChatMessage> {
+        self.initial_message.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartChatContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartChatContactInput");
@@ -24479,6 +25046,21 @@ pub struct ResumeContactRecordingInput {
     /// first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
+impl ResumeContactRecordingInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
+    /// first interaction with the contact center.</p>
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+        self.initial_contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResumeContactRecordingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResumeContactRecordingInput");
@@ -24501,6 +25083,21 @@ pub struct ListUsersInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListUsersInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
@@ -24522,6 +25119,21 @@ pub struct ListUserHierarchyGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListUserHierarchyGroupsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListUserHierarchyGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24548,6 +25160,25 @@ pub struct ListUseCasesInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListUseCasesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the integration association.</p>
+    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+        self.integration_association_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListUseCasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUseCasesInput");
@@ -24569,6 +25200,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -24588,6 +25225,21 @@ pub struct ListSecurityProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListSecurityProfilesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListSecurityProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24611,6 +25263,21 @@ pub struct ListSecurityKeysInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListSecurityKeysInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListSecurityKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecurityKeysInput");
@@ -24632,6 +25299,21 @@ pub struct ListRoutingProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListRoutingProfilesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRoutingProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24656,6 +25338,25 @@ pub struct ListRoutingProfileQueuesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListRoutingProfileQueuesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRoutingProfileQueuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24683,6 +25384,26 @@ pub struct ListQuickConnectsInput {
     /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub quick_connect_types: std::option::Option<std::vec::Vec<crate::model::QuickConnectType>>,
 }
+impl ListQuickConnectsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    pub fn quick_connect_types(&self) -> std::option::Option<&[crate::model::QuickConnectType]> {
+        self.quick_connect_types.as_deref()
+    }
+}
 impl std::fmt::Debug for ListQuickConnectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQuickConnectsInput");
@@ -24707,6 +25428,25 @@ pub struct ListQueuesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
+}
+impl ListQueuesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of queue.</p>
+    pub fn queue_types(&self) -> std::option::Option<&[crate::model::QueueType]> {
+        self.queue_types.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListQueuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24733,6 +25473,25 @@ pub struct ListQueueQuickConnectsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListQueueQuickConnectsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListQueueQuickConnectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQueueQuickConnectsInput");
@@ -24755,6 +25514,21 @@ pub struct ListPromptsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPromptsInput {
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in
+    /// the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPromptsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24782,6 +25556,31 @@ pub struct ListPhoneNumbersInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
+}
+impl ListPhoneNumbersInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of phone number.</p>
+    pub fn phone_number_types(&self) -> std::option::Option<&[crate::model::PhoneNumberType]> {
+        self.phone_number_types.as_deref()
+    }
+    /// <p>The ISO country code.</p>
+    pub fn phone_number_country_codes(
+        &self,
+    ) -> std::option::Option<&[crate::model::PhoneNumberCountryCode]> {
+        self.phone_number_country_codes.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPhoneNumbersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24811,6 +25610,22 @@ pub struct ListLexBotsInput {
     /// </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListLexBotsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page. If no value is specified, the default is 10.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListLexBotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLexBotsInput");
@@ -24832,6 +25647,21 @@ pub struct ListLambdaFunctionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListLambdaFunctionsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListLambdaFunctionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24856,6 +25686,25 @@ pub struct ListIntegrationAssociationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListIntegrationAssociationsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p></p>
+    pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.integration_type.as_ref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListIntegrationAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24882,6 +25731,25 @@ pub struct ListInstanceStorageConfigsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListInstanceStorageConfigsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A valid resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::InstanceStorageResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListInstanceStorageConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceStorageConfigsInput");
@@ -24902,6 +25770,17 @@ pub struct ListInstancesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListInstancesInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24924,6 +25803,21 @@ pub struct ListInstanceAttributesInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListInstanceAttributesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListInstanceAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceAttributesInput");
@@ -24945,6 +25839,21 @@ pub struct ListHoursOfOperationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
+}
+impl ListHoursOfOperationsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListHoursOfOperationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24969,6 +25878,25 @@ pub struct ListContactFlowsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
+}
+impl ListContactFlowsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of contact flow.</p>
+    pub fn contact_flow_types(&self) -> std::option::Option<&[crate::model::ContactFlowType]> {
+        self.contact_flow_types.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListContactFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24995,6 +25923,25 @@ pub struct ListBotsInput {
     /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
     pub lex_version: std::option::Option<crate::model::LexVersion>,
 }
+impl ListBotsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
+    pub fn lex_version(&self) -> std::option::Option<&crate::model::LexVersion> {
+        self.lex_version.as_ref()
+    }
+}
 impl std::fmt::Debug for ListBotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBotsInput");
@@ -25017,6 +25964,21 @@ pub struct ListApprovedOriginsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListApprovedOriginsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListApprovedOriginsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25041,6 +26003,25 @@ pub struct ListAgentStatusesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Available agent status types.</p>
     pub agent_status_types: std::option::Option<std::vec::Vec<crate::model::AgentStatusType>>,
+}
+impl ListAgentStatusesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Available agent status types.</p>
+    pub fn agent_status_types(&self) -> std::option::Option<&[crate::model::AgentStatusType]> {
+        self.agent_status_types.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAgentStatusesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25230,6 +26211,196 @@ pub struct GetMetricDataInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetMetricDataInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
+    /// retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,
+    /// such as 10:05, 10:10, 10:15.</p>
+    /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
+    /// metrics are available only for 24 hours.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
+    /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
+    /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+    /// <p>The time range between the start and end time must be less than 24 hours.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
+    /// retrieved only for the resources associated with the queues or channels included in the filter.
+    /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+    /// <note>
+    /// <p>To filter by <code>Queues</code>, enter the queue
+    /// ID/ARN, not the name of the queue.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&crate::model::Filters> {
+        self.filters.as_ref()
+    }
+    /// <p>The grouping applied to the metrics returned. For example, when results are grouped by
+    /// queue, the metrics returned are grouped by queue. The values returned apply to the metrics for
+    /// each queue rather than aggregated for all queues.</p>
+    ///
+    /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
+    pub fn groupings(&self) -> std::option::Option<&[crate::model::Grouping]> {
+        self.groupings.as_deref()
+    }
+    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
+    /// following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.</p>
+    /// <note>
+    /// <p>This API does not support a contacts
+    /// incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// </note>
+    ///
+    /// <dl>
+    /// <dt>ABANDON_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>AFTER_CONTACT_WORK_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>API_CONTACTS_HANDLED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CALLBACK_CONTACTS_HANDLED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_ABANDONED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_CONSULTED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_HANDLED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_HANDLED_INCOMING</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_HANDLED_OUTBOUND</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_HOLD_ABANDONS</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_MISSED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_QUEUED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_TRANSFERRED_IN</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_TRANSFERRED_OUT</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Statistic: SUM</p>
+    /// </dd>
+    /// <dt>HANDLE_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>HOLD_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>INTERACTION_AND_HOLD_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>INTERACTION_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>OCCUPANCY</dt>
+    /// <dd>
+    /// <p>Unit: PERCENT</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>QUEUE_ANSWER_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// </dd>
+    /// <dt>QUEUED_TIME</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: MAX</p>
+    /// </dd>
+    /// <dt>SERVICE_LEVEL</dt>
+    /// <dd>
+    /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
+    /// <p>Unit: PERCENT</p>
+    /// <p>Statistic: AVG</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+    /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for
+    /// "Less than"). </p>
+    /// </dd>
+    /// </dl>
+    pub fn historical_metrics(&self) -> std::option::Option<&[crate::model::HistoricalMetric]> {
+        self.historical_metrics.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMetricDataInput");
@@ -25251,6 +26422,12 @@ impl std::fmt::Debug for GetMetricDataInput {
 pub struct GetFederationTokenInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl GetFederationTokenInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFederationTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25381,6 +26558,136 @@ pub struct GetCurrentMetricDataInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetCurrentMetricDataInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
+    /// retrieved only for the resources associated with the queues or channels included in the filter.
+    /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::Filters> {
+        self.filters.as_ref()
+    }
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by
+    /// <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all
+    /// queues. If you group by <code>CHANNEL</code>, you should include a Channels filter.
+    /// VOICE, CHAT, and TASK channels are supported.</p>
+    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
+    /// returned.</p>
+    pub fn groupings(&self) -> std::option::Option<&[crate::model::Grouping]> {
+        self.groupings.as_deref()
+    }
+    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics
+    /// are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
+    /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <dl>
+    /// <dt>AGENTS_AFTER_CONTACT_WORK</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+    /// </p>
+    ///
+    /// </dd>
+    /// <dt>AGENTS_AVAILABLE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+    /// </p>
+    /// </dd>
+    /// <dt>AGENTS_ERROR</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+    /// </p>
+    /// </dd>
+    /// <dt>AGENTS_NON_PRODUCTIVE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a>
+    /// </p>
+    /// </dd>
+    /// <dt>AGENTS_ON_CALL</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+    /// contact</a>
+    /// </p>
+    /// </dd>
+    /// <dt>AGENTS_ON_CONTACT</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+    /// contact</a>
+    /// </p>
+    /// </dd>
+    /// <dt>AGENTS_ONLINE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+    /// </p>
+    /// </dd>
+    /// <dt>AGENTS_STAFFED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+    /// </p>
+    /// </dd>
+    /// <dt>CONTACTS_IN_QUEUE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+    /// queue</a>
+    /// </p>
+    /// </dd>
+    /// <dt>CONTACTS_SCHEDULED</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+    /// </p>
+    /// </dd>
+    /// <dt>OLDEST_CONTACT_AGE</dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+    /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in
+    /// MILLISECONDS. For example, if you get a response like this:</p>
+    /// <p>
+    /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+    /// </code>}</p>
+    /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
+    ///
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+    /// </p>
+    /// </dd>
+    /// <dt>SLOTS_ACTIVE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+    /// </p>
+    /// </dd>
+    /// <dt>SLOTS_AVAILABLE</dt>
+    /// <dd>
+    /// <p>Unit: COUNT</p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+    /// </p>
+    /// </dd>
+    /// </dl>
+    pub fn current_metrics(&self) -> std::option::Option<&[crate::model::CurrentMetric]> {
+        self.current_metrics.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
+    /// the token must use the same request parameters as the request that generated the token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetCurrentMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCurrentMetricDataInput");
@@ -25403,6 +26710,16 @@ pub struct GetContactAttributesInput {
     /// <p>The identifier of the initial contact.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
+impl GetContactAttributesInput {
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the initial contact.</p>
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+        self.initial_contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContactAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactAttributesInput");
@@ -25420,6 +26737,16 @@ pub struct DisassociateSecurityKeyInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub association_id: std::option::Option<std::string::String>,
+}
+impl DisassociateSecurityKeyInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateSecurityKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25442,6 +26769,22 @@ pub struct DisassociateRoutingProfileQueuesInput {
     pub queue_references:
         std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueReference>>,
 }
+impl DisassociateRoutingProfileQueuesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The queues to disassociate from this routing profile.</p>
+    pub fn queue_references(
+        &self,
+    ) -> std::option::Option<&[crate::model::RoutingProfileQueueReference]> {
+        self.queue_references.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateRoutingProfileQueuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateRoutingProfileQueuesInput");
@@ -25462,6 +26805,20 @@ pub struct DisassociateQueueQuickConnectsInput {
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The quick connects to disassociate from the queue.</p>
     pub quick_connect_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DisassociateQueueQuickConnectsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The quick connects to disassociate from the queue.</p>
+    pub fn quick_connect_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.quick_connect_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateQueueQuickConnectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25484,6 +26841,20 @@ pub struct DisassociateLexBotInput {
     /// <p>The Region in which the Amazon Lex bot has been created.</p>
     pub lex_region: std::option::Option<std::string::String>,
 }
+impl DisassociateLexBotInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The Region in which the Amazon Lex bot has been created.</p>
+    pub fn lex_region(&self) -> std::option::Option<&str> {
+        self.lex_region.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateLexBotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateLexBotInput");
@@ -25502,6 +26873,16 @@ pub struct DisassociateLambdaFunctionInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
     pub function_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateLambdaFunctionInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateLambdaFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25522,6 +26903,20 @@ pub struct DisassociateInstanceStorageConfigInput {
     pub association_id: std::option::Option<std::string::String>,
     /// <p>A valid resource type.</p>
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
+}
+impl DisassociateInstanceStorageConfigInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>A valid resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::InstanceStorageResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateInstanceStorageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25544,6 +26939,20 @@ pub struct DisassociateBotInput {
     /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
     pub lex_v2_bot: std::option::Option<crate::model::LexV2Bot>,
 }
+impl DisassociateBotInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Configuration information of an Amazon Lex bot.</p>
+    pub fn lex_bot(&self) -> std::option::Option<&crate::model::LexBot> {
+        self.lex_bot.as_ref()
+    }
+    /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
+    pub fn lex_v2_bot(&self) -> std::option::Option<&crate::model::LexV2Bot> {
+        self.lex_v2_bot.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateBotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateBotInput");
@@ -25563,6 +26972,16 @@ pub struct DisassociateApprovedOriginInput {
     /// <p>The domain URL of the integrated application.</p>
     pub origin: std::option::Option<std::string::String>,
 }
+impl DisassociateApprovedOriginInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The domain URL of the integrated application.</p>
+    pub fn origin(&self) -> std::option::Option<&str> {
+        self.origin.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateApprovedOriginInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateApprovedOriginInput");
@@ -25578,6 +26997,12 @@ impl std::fmt::Debug for DisassociateApprovedOriginInput {
 pub struct DescribeUserHierarchyStructureInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl DescribeUserHierarchyStructureInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserHierarchyStructureInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25595,6 +27020,16 @@ pub struct DescribeUserHierarchyGroupInput {
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl DescribeUserHierarchyGroupInput {
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserHierarchyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25614,6 +27049,16 @@ pub struct DescribeUserInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl DescribeUserInput {
+    /// <p>The identifier of the user account.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserInput");
@@ -25631,6 +27076,16 @@ pub struct DescribeRoutingProfileInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
     pub routing_profile_id: std::option::Option<std::string::String>,
+}
+impl DescribeRoutingProfileInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRoutingProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25650,6 +27105,16 @@ pub struct DescribeQuickConnectInput {
     /// <p>The identifier for the quick connect.</p>
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
+impl DescribeQuickConnectInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn quick_connect_id(&self) -> std::option::Option<&str> {
+        self.quick_connect_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeQuickConnectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeQuickConnectInput");
@@ -25667,6 +27132,16 @@ pub struct DescribeQueueInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
     pub queue_id: std::option::Option<std::string::String>,
+}
+impl DescribeQueueInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeQueueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25688,6 +27163,20 @@ pub struct DescribeInstanceStorageConfigInput {
     /// <p>A valid resource type.</p>
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
 }
+impl DescribeInstanceStorageConfigInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>A valid resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::InstanceStorageResourceType> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceStorageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceStorageConfigInput");
@@ -25707,6 +27196,16 @@ pub struct DescribeInstanceAttributeInput {
     /// <p>The type of attribute.</p>
     pub attribute_type: std::option::Option<crate::model::InstanceAttributeType>,
 }
+impl DescribeInstanceAttributeInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of attribute.</p>
+    pub fn attribute_type(&self) -> std::option::Option<&crate::model::InstanceAttributeType> {
+        self.attribute_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceAttributeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceAttributeInput");
@@ -25722,6 +27221,12 @@ impl std::fmt::Debug for DescribeInstanceAttributeInput {
 pub struct DescribeInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl DescribeInstanceInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25739,6 +27244,16 @@ pub struct DescribeHoursOfOperationInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: std::option::Option<std::string::String>,
+}
+impl DescribeHoursOfOperationInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHoursOfOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25758,6 +27273,16 @@ pub struct DescribeContactFlowInput {
     /// <p>The identifier of the contact flow.</p>
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
+impl DescribeContactFlowInput {
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeContactFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeContactFlowInput");
@@ -25775,6 +27300,16 @@ pub struct DescribeAgentStatusInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the agent status.</p>
     pub agent_status_id: std::option::Option<std::string::String>,
+}
+impl DescribeAgentStatusInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the agent status.</p>
+    pub fn agent_status_id(&self) -> std::option::Option<&str> {
+        self.agent_status_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAgentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25794,6 +27329,16 @@ pub struct DeleteUserHierarchyGroupInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl DeleteUserHierarchyGroupInput {
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserHierarchyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserHierarchyGroupInput");
@@ -25811,6 +27356,16 @@ pub struct DeleteUserInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl DeleteUserInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25831,6 +27386,20 @@ pub struct DeleteUseCaseInput {
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the use case.</p>
     pub use_case_id: std::option::Option<std::string::String>,
+}
+impl DeleteUseCaseInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the integration association.</p>
+    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+        self.integration_association_id.as_deref()
+    }
+    /// <p>The identifier for the use case.</p>
+    pub fn use_case_id(&self) -> std::option::Option<&str> {
+        self.use_case_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUseCaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25854,6 +27423,16 @@ pub struct DeleteQuickConnectInput {
     /// <p>The identifier for the quick connect.</p>
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
+impl DeleteQuickConnectInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn quick_connect_id(&self) -> std::option::Option<&str> {
+        self.quick_connect_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteQuickConnectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteQuickConnectInput");
@@ -25871,6 +27450,16 @@ pub struct DeleteIntegrationAssociationInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the integration association.</p>
     pub integration_association_id: std::option::Option<std::string::String>,
+}
+impl DeleteIntegrationAssociationInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the integration association.</p>
+    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+        self.integration_association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteIntegrationAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25891,6 +27480,12 @@ pub struct DeleteInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl DeleteInstanceInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInstanceInput");
@@ -25907,6 +27502,16 @@ pub struct DeleteHoursOfOperationInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: std::option::Option<std::string::String>,
+}
+impl DeleteHoursOfOperationInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteHoursOfOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25928,6 +27533,21 @@ pub struct CreateUserHierarchyGroupInput {
     pub parent_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl CreateUserHierarchyGroupInput {
+    /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
+    /// the parent group ID is null.</p>
+    pub fn parent_group_id(&self) -> std::option::Option<&str> {
+        self.parent_group_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUserHierarchyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25974,6 +27594,60 @@ pub struct CreateUserInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateUserInput {
+    /// <p>The user name for the account. For instances not using SAML for identity management, the
+    /// user name can include up to 20 characters. If you are using SAML for identity management, the
+    /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password for the user account. A password is required if you are using Amazon Connect for
+    /// identity management. Otherwise, it is an error to include a password.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The information about the identity of the user.</p>
+    pub fn identity_info(&self) -> std::option::Option<&crate::model::UserIdentityInfo> {
+        self.identity_info.as_ref()
+    }
+    /// <p>The phone settings for the user.</p>
+    pub fn phone_config(&self) -> std::option::Option<&crate::model::UserPhoneConfig> {
+        self.phone_config.as_ref()
+    }
+    /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
+    /// cannot access the directory, you can specify this identifier to authenticate users. If you
+    /// include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity
+    /// information is used to authenticate users from your directory.</p>
+    /// <p>This parameter is required if you are using an existing directory for identity management in
+    /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
+    /// identity management and include this parameter, an error is returned.</p>
+    pub fn directory_user_id(&self) -> std::option::Option<&str> {
+        self.directory_user_id.as_deref()
+    }
+    /// <p>The identifier of the security profile for the user.</p>
+    pub fn security_profile_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_profile_ids.as_deref()
+    }
+    /// <p>The identifier of the routing profile for the user.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The identifier of the hierarchy group for the user.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
@@ -26005,6 +27679,28 @@ pub struct CreateUseCaseInput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateUseCaseInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the integration association.</p>
+    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+        self.integration_association_id.as_deref()
+    }
+    /// <p>The type of use case to associate to the integration association. Each integration
+    /// association can have only one of each use case type.</p>
+    pub fn use_case_type(&self) -> std::option::Option<&crate::model::UseCaseType> {
+        self.use_case_type.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUseCaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26042,6 +27738,41 @@ pub struct CreateRoutingProfileInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRoutingProfileInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The default outbound queue for the routing profile.</p>
+    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
+        self.default_outbound_queue_id.as_deref()
+    }
+    /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
+    /// make only outbound calls.</p>
+    pub fn queue_configs(&self) -> std::option::Option<&[crate::model::RoutingProfileQueueConfig]> {
+        self.queue_configs.as_deref()
+    }
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
+    /// profile.</p>
+    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
+        self.media_concurrencies.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRoutingProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoutingProfileInput");
@@ -26071,6 +27802,31 @@ pub struct CreateQuickConnectInput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateQuickConnectInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the quick connect.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the quick connect.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configuration settings for the quick connect.</p>
+    pub fn quick_connect_config(&self) -> std::option::Option<&crate::model::QuickConnectConfig> {
+        self.quick_connect_config.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateQuickConnectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26105,6 +27861,45 @@ pub struct CreateQueueInput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateQueueInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the queue.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the queue.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    pub fn outbound_caller_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundCallerConfig> {
+        self.outbound_caller_config.as_ref()
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn max_contacts(&self) -> std::option::Option<i32> {
+        self.max_contacts
+    }
+    /// <p>The quick connects available to agents who are working the queue.</p>
+    pub fn quick_connect_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.quick_connect_ids.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateQueueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26141,6 +27936,39 @@ pub struct CreateIntegrationAssociationInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateIntegrationAssociationInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of information to be ingested.</p>
+    pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.integration_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn integration_arn(&self) -> std::option::Option<&str> {
+        self.integration_arn.as_deref()
+    }
+    /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
+    pub fn source_application_url(&self) -> std::option::Option<&str> {
+        self.source_application_url.as_deref()
+    }
+    /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
+    pub fn source_application_name(&self) -> std::option::Option<&str> {
+        self.source_application_name.as_deref()
+    }
+    /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateIntegrationAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIntegrationAssociationInput");
@@ -26172,6 +28000,32 @@ pub struct CreateInstanceInput {
     /// <p>Your contact center allows outbound calls.</p>
     pub outbound_calls_enabled: std::option::Option<bool>,
 }
+impl CreateInstanceInput {
+    /// <p>The idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The type of identity management for your Amazon Connect users.</p>
+    pub fn identity_management_type(&self) -> std::option::Option<&crate::model::DirectoryType> {
+        self.identity_management_type.as_ref()
+    }
+    /// <p>The name for your instance.</p>
+    pub fn instance_alias(&self) -> std::option::Option<&str> {
+        self.instance_alias.as_deref()
+    }
+    /// <p>The identifier for the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>Your contact center handles incoming contacts.</p>
+    pub fn inbound_calls_enabled(&self) -> std::option::Option<bool> {
+        self.inbound_calls_enabled
+    }
+    /// <p>Your contact center allows outbound calls.</p>
+    pub fn outbound_calls_enabled(&self) -> std::option::Option<bool> {
+        self.outbound_calls_enabled
+    }
+}
 impl std::fmt::Debug for CreateInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceInput");
@@ -26202,6 +28056,35 @@ pub struct CreateHoursOfOperationInput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateHoursOfOperationInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the hours of operation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the hours of operation.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time zone of the hours of operation.</p>
+    pub fn time_zone(&self) -> std::option::Option<&str> {
+        self.time_zone.as_deref()
+    }
+    /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
+    pub fn config(&self) -> std::option::Option<&[crate::model::HoursOfOperationConfig]> {
+        self.config.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateHoursOfOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26235,6 +28118,36 @@ pub struct CreateContactFlowInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateContactFlowInput {
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the contact flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The description of the contact flow. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The content of the contact flow. </p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateContactFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactFlowInput");
@@ -26266,6 +28179,35 @@ pub struct CreateAgentStatusInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAgentStatusInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the status.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the status.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The state of the status.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AgentStatusState> {
+        self.state.as_ref()
+    }
+    /// <p>The display order of the status.</p>
+    pub fn display_order(&self) -> std::option::Option<i32> {
+        self.display_order
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAgentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAgentStatusInput");
@@ -26288,6 +28230,16 @@ pub struct AssociateSecurityKeyInput {
     /// <p>A valid security key in PEM format.</p>
     pub key: std::option::Option<std::string::String>,
 }
+impl AssociateSecurityKeyInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A valid security key in PEM format.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateSecurityKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSecurityKeyInput");
@@ -26307,6 +28259,20 @@ pub struct AssociateRoutingProfileQueuesInput {
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The queues to associate with this routing profile.</p>
     pub queue_configs: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
+}
+impl AssociateRoutingProfileQueuesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The queues to associate with this routing profile.</p>
+    pub fn queue_configs(&self) -> std::option::Option<&[crate::model::RoutingProfileQueueConfig]> {
+        self.queue_configs.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateRoutingProfileQueuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26329,6 +28295,20 @@ pub struct AssociateQueueQuickConnectsInput {
     /// <p>The quick connects to associate with this queue.</p>
     pub quick_connect_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AssociateQueueQuickConnectsInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The quick connects to associate with this queue.</p>
+    pub fn quick_connect_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.quick_connect_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateQueueQuickConnectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateQueueQuickConnectsInput");
@@ -26347,6 +28327,16 @@ pub struct AssociateLexBotInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Lex bot to associate with the instance.</p>
     pub lex_bot: std::option::Option<crate::model::LexBot>,
+}
+impl AssociateLexBotInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The Amazon Lex bot to associate with the instance.</p>
+    pub fn lex_bot(&self) -> std::option::Option<&crate::model::LexBot> {
+        self.lex_bot.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateLexBotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26367,6 +28357,17 @@ pub struct AssociateLambdaFunctionInput {
     /// 140.</p>
     pub function_arn: std::option::Option<std::string::String>,
 }
+impl AssociateLambdaFunctionInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
+    /// 140.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateLambdaFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateLambdaFunctionInput");
@@ -26386,6 +28387,20 @@ pub struct AssociateInstanceStorageConfigInput {
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
     /// <p>A valid storage type.</p>
     pub storage_config: std::option::Option<crate::model::InstanceStorageConfig>,
+}
+impl AssociateInstanceStorageConfigInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A valid resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::InstanceStorageResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>A valid storage type.</p>
+    pub fn storage_config(&self) -> std::option::Option<&crate::model::InstanceStorageConfig> {
+        self.storage_config.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateInstanceStorageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26408,6 +28423,20 @@ pub struct AssociateBotInput {
     /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
     pub lex_v2_bot: std::option::Option<crate::model::LexV2Bot>,
 }
+impl AssociateBotInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Configuration information of an Amazon Lex bot.</p>
+    pub fn lex_bot(&self) -> std::option::Option<&crate::model::LexBot> {
+        self.lex_bot.as_ref()
+    }
+    /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
+    pub fn lex_v2_bot(&self) -> std::option::Option<&crate::model::LexV2Bot> {
+        self.lex_v2_bot.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateBotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateBotInput");
@@ -26426,6 +28455,16 @@ pub struct AssociateApprovedOriginInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The domain to add to your allow list.</p>
     pub origin: std::option::Option<std::string::String>,
+}
+impl AssociateApprovedOriginInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The domain to add to your allow list.</p>
+    pub fn origin(&self) -> std::option::Option<&str> {
+        self.origin.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateApprovedOriginInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

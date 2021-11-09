@@ -8,6 +8,16 @@ pub struct AccessPoliciesStatus {
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl AccessPoliciesStatus {
+    /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
+    pub fn options(&self) -> std::option::Option<&str> {
+        self.options.as_deref()
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AccessPoliciesStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessPoliciesStatus");
@@ -84,6 +94,33 @@ pub struct OptionStatus {
     pub state: std::option::Option<crate::model::OptionState>,
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
     pub pending_deletion: std::option::Option<bool>,
+}
+impl OptionStatus {
+    /// <p>A timestamp for when this option was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>A timestamp for when this option was last updated.</p>
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date.as_ref()
+    }
+    /// <p>A unique integer that indicates when this option was last updated.</p>
+    pub fn update_version(&self) -> i32 {
+        self.update_version
+    }
+    /// <p>The state of processing a change to an option.  Possible values:</p><ul>
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until  <a>IndexDocuments</a> has been called and indexing is complete.</li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.  </li>
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::OptionState> {
+        self.state.as_ref()
+    }
+    /// <p>Indicates that the option will be deleted once processing is complete.</p>
+    pub fn pending_deletion(&self) -> std::option::Option<bool> {
+        self.pending_deletion
+    }
 }
 impl std::fmt::Debug for OptionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -277,6 +314,16 @@ pub struct ScalingParametersStatus {
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl ScalingParametersStatus {
+    /// <p>The desired instance type and desired number of replicas of each index partition.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::ScalingParameters> {
+        self.options.as_ref()
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ScalingParametersStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScalingParametersStatus");
@@ -348,6 +395,23 @@ pub struct ScalingParameters {
     /// <p>The number of partitions you want to preconfigure for your domain. Only valid when
     /// you select <code>m2.2xlarge</code> as the desired instance type.</p>
     pub desired_partition_count: i32,
+}
+impl ScalingParameters {
+    /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
+    pub fn desired_instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::PartitionInstanceType> {
+        self.desired_instance_type.as_ref()
+    }
+    /// <p>The number of replicas you want to preconfigure for each index partition.</p>
+    pub fn desired_replication_count(&self) -> i32 {
+        self.desired_replication_count
+    }
+    /// <p>The number of partitions you want to preconfigure for your domain. Only valid when
+    /// you select <code>m2.2xlarge</code> as the desired instance type.</p>
+    pub fn desired_partition_count(&self) -> i32 {
+        self.desired_partition_count
+    }
 }
 impl std::fmt::Debug for ScalingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -579,6 +643,16 @@ pub struct DomainEndpointOptionsStatus {
     /// <p>The status of the configured domain endpoint options.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl DomainEndpointOptionsStatus {
+    /// <p>The domain endpoint options configured for the domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the configured domain endpoint options.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DomainEndpointOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainEndpointOptionsStatus");
@@ -647,6 +721,16 @@ pub struct DomainEndpointOptions {
     pub enforce_https: std::option::Option<bool>,
     /// <p>The minimum required TLS version</p>
     pub tls_security_policy: std::option::Option<crate::model::TlsSecurityPolicy>,
+}
+impl DomainEndpointOptions {
+    /// <p>Whether the domain is HTTPS only enabled.</p>
+    pub fn enforce_https(&self) -> std::option::Option<bool> {
+        self.enforce_https
+    }
+    /// <p>The minimum required TLS version</p>
+    pub fn tls_security_policy(&self) -> std::option::Option<&crate::model::TlsSecurityPolicy> {
+        self.tls_security_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainEndpointOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -769,6 +853,16 @@ pub struct AvailabilityOptionsStatus {
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl AvailabilityOptionsStatus {
+    /// <p>The availability options configured for the domain.</p>
+    pub fn options(&self) -> bool {
+        self.options
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AvailabilityOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityOptionsStatus");
@@ -834,6 +928,16 @@ pub struct SuggesterStatus {
     pub options: std::option::Option<crate::model::Suggester>,
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
+}
+impl SuggesterStatus {
+    /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+    pub fn options(&self) -> std::option::Option<&crate::model::Suggester> {
+        self.options.as_ref()
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for SuggesterStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -901,6 +1005,19 @@ pub struct Suggester {
     pub suggester_name: std::option::Option<std::string::String>,
     /// <p>Options for a search suggester.</p>
     pub document_suggester_options: std::option::Option<crate::model::DocumentSuggesterOptions>,
+}
+impl Suggester {
+    /// <p>Names must begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    pub fn suggester_name(&self) -> std::option::Option<&str> {
+        self.suggester_name.as_deref()
+    }
+    /// <p>Options for a search suggester.</p>
+    pub fn document_suggester_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentSuggesterOptions> {
+        self.document_suggester_options.as_ref()
+    }
 }
 impl std::fmt::Debug for Suggester {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -987,6 +1104,26 @@ pub struct DocumentSuggesterOptions {
     /// the name of the field or expression. If no expression is configured for the suggester, the
     /// suggestions are sorted with the closest matches listed first.</p>
     pub sort_expression: std::option::Option<std::string::String>,
+}
+impl DocumentSuggesterOptions {
+    /// <p>The name of the index field you want to use for suggestions.
+    /// </p>
+    pub fn source_field(&self) -> std::option::Option<&str> {
+        self.source_field.as_deref()
+    }
+    /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
+    pub fn fuzzy_matching(&self) -> std::option::Option<&crate::model::SuggesterFuzzyMatching> {
+        self.fuzzy_matching.as_ref()
+    }
+    /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest
+    /// integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed
+    /// for suggestions, so sort expressions cannot reference the <code>_score</code> value.
+    /// To sort suggestions using a numeric field or existing expression, simply specify
+    /// the name of the field or expression. If no expression is configured for the suggester, the
+    /// suggestions are sorted with the closest matches listed first.</p>
+    pub fn sort_expression(&self) -> std::option::Option<&str> {
+        self.sort_expression.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentSuggesterOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1141,6 +1278,16 @@ pub struct IndexFieldStatus {
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl IndexFieldStatus {
+    /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::IndexField> {
+        self.options.as_ref()
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for IndexFieldStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IndexFieldStatus");
@@ -1241,6 +1388,73 @@ pub struct IndexField {
     pub text_array_options: std::option::Option<crate::model::TextArrayOptions>,
     /// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
     pub date_array_options: std::option::Option<crate::model::DateArrayOptions>,
+}
+impl IndexField {
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+    /// Any document fields that don't map to a regular index field but do match a  
+    /// dynamic field's pattern are configured with the dynamic field's indexing options.
+    /// </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).
+    /// Dynamic field names must begin or end with a wildcard (*).
+    /// The wildcard can also be the only character in a dynamic field name.
+    /// Multiple wildcards, and wildcards embedded within a string are not supported.
+    /// </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+    /// To reference a document's ID, you can use the name <code>_id</code>.
+    /// </p>
+    pub fn index_field_name(&self) -> std::option::Option<&str> {
+        self.index_field_name.as_deref()
+    }
+    /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    pub fn index_field_type(&self) -> std::option::Option<&crate::model::IndexFieldType> {
+        self.index_field_type.as_ref()
+    }
+    /// <p>Options for a 64-bit signed integer field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+    pub fn int_options(&self) -> std::option::Option<&crate::model::IntOptions> {
+        self.int_options.as_ref()
+    }
+    /// <p>Options for a double-precision 64-bit floating point field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+    pub fn double_options(&self) -> std::option::Option<&crate::model::DoubleOptions> {
+        self.double_options.as_ref()
+    }
+    /// <p>Options for literal field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+    pub fn literal_options(&self) -> std::option::Option<&crate::model::LiteralOptions> {
+        self.literal_options.as_ref()
+    }
+    /// <p>Options for text field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+    pub fn text_options(&self) -> std::option::Option<&crate::model::TextOptions> {
+        self.text_options.as_ref()
+    }
+    /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+    pub fn date_options(&self) -> std::option::Option<&crate::model::DateOptions> {
+        self.date_options.as_ref()
+    }
+    /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
+    pub fn lat_lon_options(&self) -> std::option::Option<&crate::model::LatLonOptions> {
+        self.lat_lon_options.as_ref()
+    }
+    /// <p>Options for a field that contains an array of 64-bit signed integers.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+    pub fn int_array_options(&self) -> std::option::Option<&crate::model::IntArrayOptions> {
+        self.int_array_options.as_ref()
+    }
+    /// <p>Options for a field that contains an array of double-precision 64-bit floating point values.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.  All options are enabled by default.</p>
+    pub fn double_array_options(&self) -> std::option::Option<&crate::model::DoubleArrayOptions> {
+        self.double_array_options.as_ref()
+    }
+    /// <p>Options for a field that contains an array of literal strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+    pub fn literal_array_options(&self) -> std::option::Option<&crate::model::LiteralArrayOptions> {
+        self.literal_array_options.as_ref()
+    }
+    /// <p>Options for a field that contains an array of text strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+    pub fn text_array_options(&self) -> std::option::Option<&crate::model::TextArrayOptions> {
+        self.text_array_options.as_ref()
+    }
+    /// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+    pub fn date_array_options(&self) -> std::option::Option<&crate::model::DateArrayOptions> {
+        self.date_array_options.as_ref()
+    }
 }
 impl std::fmt::Debug for IndexField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1519,6 +1733,28 @@ pub struct DateArrayOptions {
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub return_enabled: std::option::Option<bool>,
 }
+impl DateArrayOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>A list of source fields to map to the field. </p>
+    pub fn source_fields(&self) -> std::option::Option<&str> {
+        self.source_fields.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+}
 impl std::fmt::Debug for DateArrayOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DateArrayOptions");
@@ -1632,6 +1868,28 @@ pub struct TextArrayOptions {
     pub highlight_enabled: std::option::Option<bool>,
     /// <p>The name of an analysis scheme for a  <code>text-array</code> field.</p>
     pub analysis_scheme: std::option::Option<std::string::String>,
+}
+impl TextArrayOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>A list of source fields to map to the field. </p>
+    pub fn source_fields(&self) -> std::option::Option<&str> {
+        self.source_fields.as_deref()
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+    /// <p>Whether highlights can be returned for the field.</p>
+    pub fn highlight_enabled(&self) -> std::option::Option<bool> {
+        self.highlight_enabled
+    }
+    /// <p>The name of an analysis scheme for a  <code>text-array</code> field.</p>
+    pub fn analysis_scheme(&self) -> std::option::Option<&str> {
+        self.analysis_scheme.as_deref()
+    }
 }
 impl std::fmt::Debug for TextArrayOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1750,6 +2008,28 @@ pub struct LiteralArrayOptions {
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub return_enabled: std::option::Option<bool>,
 }
+impl LiteralArrayOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>A list of source fields to map to the field. </p>
+    pub fn source_fields(&self) -> std::option::Option<&str> {
+        self.source_fields.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+}
 impl std::fmt::Debug for LiteralArrayOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LiteralArrayOptions");
@@ -1864,6 +2144,28 @@ pub struct DoubleArrayOptions {
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub return_enabled: std::option::Option<bool>,
 }
+impl DoubleArrayOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<f64> {
+        self.default_value
+    }
+    /// <p>A list of source fields to map to the field. </p>
+    pub fn source_fields(&self) -> std::option::Option<&str> {
+        self.source_fields.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+}
 impl std::fmt::Debug for DoubleArrayOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DoubleArrayOptions");
@@ -1974,6 +2276,28 @@ pub struct IntArrayOptions {
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub return_enabled: std::option::Option<bool>,
+}
+impl IntArrayOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<i64> {
+        self.default_value
+    }
+    /// <p>A list of source fields to map to the field. </p>
+    pub fn source_fields(&self) -> std::option::Option<&str> {
+        self.source_fields.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
 }
 impl std::fmt::Debug for IntArrayOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2100,6 +2424,45 @@ pub struct LatLonOptions {
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
     pub sort_enabled: std::option::Option<bool>,
+}
+impl LatLonOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+    /// Any document fields that don't map to a regular index field but do match a  
+    /// dynamic field's pattern are configured with the dynamic field's indexing options.
+    /// </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).
+    /// Dynamic field names must begin or end with a wildcard (*).
+    /// The wildcard can also be the only character in a dynamic field name.
+    /// Multiple wildcards, and wildcards embedded within a string are not supported.
+    /// </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+    /// To reference a document's ID, you can use the name <code>_id</code>.
+    /// </p>
+    pub fn source_field(&self) -> std::option::Option<&str> {
+        self.source_field.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn sort_enabled(&self) -> std::option::Option<bool> {
+        self.sort_enabled
+    }
 }
 impl std::fmt::Debug for LatLonOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2266,6 +2629,45 @@ pub struct DateOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub sort_enabled: std::option::Option<bool>,
 }
+impl DateOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+    /// Any document fields that don't map to a regular index field but do match a  
+    /// dynamic field's pattern are configured with the dynamic field's indexing options.
+    /// </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).
+    /// Dynamic field names must begin or end with a wildcard (*).
+    /// The wildcard can also be the only character in a dynamic field name.
+    /// Multiple wildcards, and wildcards embedded within a string are not supported.
+    /// </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+    /// To reference a document's ID, you can use the name <code>_id</code>.
+    /// </p>
+    pub fn source_field(&self) -> std::option::Option<&str> {
+        self.source_field.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn sort_enabled(&self) -> std::option::Option<bool> {
+        self.sort_enabled
+    }
+}
 impl std::fmt::Debug for DateOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DateOptions");
@@ -2430,6 +2832,45 @@ pub struct TextOptions {
     pub highlight_enabled: std::option::Option<bool>,
     /// <p>The name of an analysis scheme for a  <code>text</code> field.</p>
     pub analysis_scheme: std::option::Option<std::string::String>,
+}
+impl TextOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+    /// Any document fields that don't map to a regular index field but do match a  
+    /// dynamic field's pattern are configured with the dynamic field's indexing options.
+    /// </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).
+    /// Dynamic field names must begin or end with a wildcard (*).
+    /// The wildcard can also be the only character in a dynamic field name.
+    /// Multiple wildcards, and wildcards embedded within a string are not supported.
+    /// </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+    /// To reference a document's ID, you can use the name <code>_id</code>.
+    /// </p>
+    pub fn source_field(&self) -> std::option::Option<&str> {
+        self.source_field.as_deref()
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn sort_enabled(&self) -> std::option::Option<bool> {
+        self.sort_enabled
+    }
+    /// <p>Whether highlights can be returned for the field.</p>
+    pub fn highlight_enabled(&self) -> std::option::Option<bool> {
+        self.highlight_enabled
+    }
+    /// <p>The name of an analysis scheme for a  <code>text</code> field.</p>
+    pub fn analysis_scheme(&self) -> std::option::Option<&str> {
+        self.analysis_scheme.as_deref()
+    }
 }
 impl std::fmt::Debug for TextOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2599,6 +3040,45 @@ pub struct LiteralOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub sort_enabled: std::option::Option<bool>,
 }
+impl LiteralOptions {
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+    /// Any document fields that don't map to a regular index field but do match a  
+    /// dynamic field's pattern are configured with the dynamic field's indexing options.
+    /// </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).
+    /// Dynamic field names must begin or end with a wildcard (*).
+    /// The wildcard can also be the only character in a dynamic field name.
+    /// Multiple wildcards, and wildcards embedded within a string are not supported.
+    /// </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+    /// To reference a document's ID, you can use the name <code>_id</code>.
+    /// </p>
+    pub fn source_field(&self) -> std::option::Option<&str> {
+        self.source_field.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn sort_enabled(&self) -> std::option::Option<bool> {
+        self.sort_enabled
+    }
+}
 impl std::fmt::Debug for LiteralOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LiteralOptions");
@@ -2751,6 +3231,32 @@ pub struct DoubleOptions {
     /// <p>Whether the field can be used to sort the search results.</p>
     pub sort_enabled: std::option::Option<bool>,
 }
+impl DoubleOptions {
+    /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
+    pub fn default_value(&self) -> std::option::Option<f64> {
+        self.default_value
+    }
+    /// <p>The name of the source field to map to the field. </p>
+    pub fn source_field(&self) -> std::option::Option<&str> {
+        self.source_field.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn sort_enabled(&self) -> std::option::Option<bool> {
+        self.sort_enabled
+    }
+}
 impl std::fmt::Debug for DoubleOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DoubleOptions");
@@ -2873,6 +3379,32 @@ pub struct IntOptions {
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
     pub sort_enabled: std::option::Option<bool>,
+}
+impl IntOptions {
+    /// A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.
+    pub fn default_value(&self) -> std::option::Option<i64> {
+        self.default_value
+    }
+    /// <p>The name of the source field to map to the field. </p>
+    pub fn source_field(&self) -> std::option::Option<&str> {
+        self.source_field.as_deref()
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn facet_enabled(&self) -> std::option::Option<bool> {
+        self.facet_enabled
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn search_enabled(&self) -> std::option::Option<bool> {
+        self.search_enabled
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn return_enabled(&self) -> std::option::Option<bool> {
+        self.return_enabled
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn sort_enabled(&self) -> std::option::Option<bool> {
+        self.sort_enabled
+    }
 }
 impl std::fmt::Debug for IntOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3092,6 +3624,16 @@ pub struct ExpressionStatus {
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl ExpressionStatus {
+    /// <p>The expression that is evaluated for sorting while processing a search request.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::Expression> {
+        self.options.as_ref()
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ExpressionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExpressionStatus");
@@ -3158,6 +3700,17 @@ pub struct Expression {
     pub expression_name: std::option::Option<std::string::String>,
     /// <p>The expression to evaluate for sorting while processing a search request.  The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub expression_value: std::option::Option<std::string::String>,
+}
+impl Expression {
+    /// <p>Names must begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    pub fn expression_name(&self) -> std::option::Option<&str> {
+        self.expression_name.as_deref()
+    }
+    /// <p>The expression to evaluate for sorting while processing a search request.  The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    pub fn expression_value(&self) -> std::option::Option<&str> {
+        self.expression_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Expression {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3251,6 +3804,60 @@ pub struct DomainStatus {
     pub search_instance_count: i32,
     #[allow(missing_docs)] // documentation missing in model
     pub limits: std::option::Option<crate::model::Limits>,
+}
+impl DomainStatus {
+    /// <p>An internally generated unique identifier for a domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the search domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>
+    pub fn created(&self) -> std::option::Option<bool> {
+        self.created
+    }
+    /// <p>True if the search domain has been deleted.  The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called.  Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
+    pub fn deleted(&self) -> std::option::Option<bool> {
+        self.deleted
+    }
+    /// <p>The service endpoint for updating documents in a search domain.</p>
+    pub fn doc_service(&self) -> std::option::Option<&crate::model::ServiceEndpoint> {
+        self.doc_service.as_ref()
+    }
+    /// <p>The service endpoint for requesting search results from a search domain.</p>
+    pub fn search_service(&self) -> std::option::Option<&crate::model::ServiceEndpoint> {
+        self.search_service.as_ref()
+    }
+    /// <p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>
+    pub fn requires_index_documents(&self) -> std::option::Option<bool> {
+        self.requires_index_documents
+    }
+    /// <p>True if processing is being done to activate the current domain configuration.</p>
+    pub fn processing(&self) -> std::option::Option<bool> {
+        self.processing
+    }
+    /// <p>The instance type that is being used to process search requests.</p>
+    pub fn search_instance_type(&self) -> std::option::Option<&str> {
+        self.search_instance_type.as_deref()
+    }
+    /// <p>The number of partitions across which the search index is spread.</p>
+    pub fn search_partition_count(&self) -> i32 {
+        self.search_partition_count
+    }
+    /// <p>The number of search instances that are available to process search requests.</p>
+    pub fn search_instance_count(&self) -> i32 {
+        self.search_instance_count
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limits(&self) -> std::option::Option<&crate::model::Limits> {
+        self.limits.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3467,6 +4074,16 @@ pub struct Limits {
     #[allow(missing_docs)] // documentation missing in model
     pub maximum_partition_count: i32,
 }
+impl Limits {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn maximum_replication_count(&self) -> i32 {
+        self.maximum_replication_count
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn maximum_partition_count(&self) -> i32 {
+        self.maximum_partition_count
+    }
+}
 impl std::fmt::Debug for Limits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Limits");
@@ -3528,6 +4145,12 @@ pub struct ServiceEndpoint {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
     pub endpoint: std::option::Option<std::string::String>,
 }
+impl ServiceEndpoint {
+    /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceEndpoint");
@@ -3577,6 +4200,16 @@ pub struct AnalysisSchemeStatus {
     pub options: std::option::Option<crate::model::AnalysisScheme>,
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
+}
+impl AnalysisSchemeStatus {
+    /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::AnalysisScheme> {
+        self.options.as_ref()
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for AnalysisSchemeStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3649,6 +4282,23 @@ pub struct AnalysisScheme {
     pub analysis_scheme_language: std::option::Option<crate::model::AnalysisSchemeLanguage>,
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub analysis_options: std::option::Option<crate::model::AnalysisOptions>,
+}
+impl AnalysisScheme {
+    /// <p>Names must begin with a letter and can contain the following characters:
+    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    pub fn analysis_scheme_name(&self) -> std::option::Option<&str> {
+        self.analysis_scheme_name.as_deref()
+    }
+    /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
+    pub fn analysis_scheme_language(
+        &self,
+    ) -> std::option::Option<&crate::model::AnalysisSchemeLanguage> {
+        self.analysis_scheme_language.as_ref()
+    }
+    /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
+    pub fn analysis_options(&self) -> std::option::Option<&crate::model::AnalysisOptions> {
+        self.analysis_options.as_ref()
+    }
 }
 impl std::fmt::Debug for AnalysisScheme {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3746,6 +4396,28 @@ pub struct AnalysisOptions {
     pub japanese_tokenization_dictionary: std::option::Option<std::string::String>,
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
     pub algorithmic_stemming: std::option::Option<crate::model::AlgorithmicStemming>,
+}
+impl AnalysisOptions {
+    /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    pub fn synonyms(&self) -> std::option::Option<&str> {
+        self.synonyms.as_deref()
+    }
+    /// <p>A  JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
+    pub fn stopwords(&self) -> std::option::Option<&str> {
+        self.stopwords.as_deref()
+    }
+    /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
+    pub fn stemming_dictionary(&self) -> std::option::Option<&str> {
+        self.stemming_dictionary.as_deref()
+    }
+    /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
+    pub fn japanese_tokenization_dictionary(&self) -> std::option::Option<&str> {
+        self.japanese_tokenization_dictionary.as_deref()
+    }
+    /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
+    pub fn algorithmic_stemming(&self) -> std::option::Option<&crate::model::AlgorithmicStemming> {
+        self.algorithmic_stemming.as_ref()
+    }
 }
 impl std::fmt::Debug for AnalysisOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

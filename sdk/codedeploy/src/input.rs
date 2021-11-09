@@ -123,7 +123,7 @@ impl AddTagsToOnPremisesInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_on_premises_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_on_premises_instances(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -305,7 +305,7 @@ impl BatchGetApplicationRevisionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_application_revisions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_application_revisions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -467,10 +467,9 @@ impl BatchGetApplicationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_applications(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_applications(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -649,10 +648,7 @@ impl BatchGetDeploymentGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_deployment_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -829,7 +825,7 @@ impl BatchGetDeploymentInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_deployment_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_deployment_instances(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -991,10 +987,7 @@ impl BatchGetDeploymentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_deployments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_deployments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1221,10 +1214,7 @@ impl BatchGetDeploymentTargetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_deployment_targets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1386,7 +1376,7 @@ impl BatchGetOnPremisesInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_on_premises_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_on_premises_instances(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1563,10 +1553,7 @@ impl ContinueDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_continue_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_continue_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1763,10 +1750,7 @@ impl CreateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2157,10 +2141,7 @@ impl CreateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2398,10 +2379,7 @@ impl CreateDeploymentConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_deployment_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2941,10 +2919,7 @@ impl CreateDeploymentGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_deployment_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3099,10 +3074,7 @@ impl DeleteApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3259,10 +3231,7 @@ impl DeleteDeploymentConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_deployment_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3434,10 +3403,7 @@ impl DeleteDeploymentGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_deployment_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3590,10 +3556,7 @@ impl DeleteGitHubAccountTokenInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_git_hub_account_token(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3746,7 +3709,7 @@ impl DeleteResourcesByExternalIdInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resources_by_external_id(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_resources_by_external_id(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3901,7 +3864,7 @@ impl DeregisterOnPremisesInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_on_premises_instance(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_on_premises_instance(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4056,10 +4019,8 @@ impl GetApplicationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_application(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4229,10 +4190,7 @@ impl GetApplicationRevisionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_application_revision(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4384,10 +4342,7 @@ impl GetDeploymentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_deployment(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4542,10 +4497,7 @@ impl GetDeploymentConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_deployment_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_deployment_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4715,10 +4667,7 @@ impl GetDeploymentGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_deployment_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_deployment_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4885,10 +4834,7 @@ impl GetDeploymentInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_deployment_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5053,10 +4999,7 @@ impl GetDeploymentTargetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_deployment_target(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_deployment_target(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5211,10 +5154,7 @@ impl GetOnPremisesInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_on_premises_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5558,10 +5498,7 @@ impl ListApplicationRevisionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_application_revisions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5713,10 +5650,7 @@ impl ListApplicationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_applications(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_applications(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5870,10 +5804,7 @@ impl ListDeploymentConfigsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_deployment_configs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6042,10 +5973,9 @@ impl ListDeploymentGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_deployment_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_deployment_groups(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6327,10 +6257,7 @@ impl ListDeploymentInstancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_deployment_instances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6648,10 +6575,7 @@ impl ListDeploymentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_deployments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_deployments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6883,10 +6807,7 @@ impl ListDeploymentTargetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_deployment_targets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7039,7 +6960,7 @@ impl ListGitHubAccountTokenNamesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_git_hub_account_token_names(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_git_hub_account_token_names(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7257,10 +7178,7 @@ impl ListOnPremisesInstancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_on_premises_instances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7428,10 +7346,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7627,7 +7544,7 @@ impl PutLifecycleEventHookExecutionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_lifecycle_event_hook_execution_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_lifecycle_event_hook_execution_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7813,7 +7730,7 @@ impl RegisterApplicationRevisionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_application_revision(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_application_revision(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7995,7 +7912,7 @@ impl RegisterOnPremisesInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_on_premises_instance(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_on_premises_instance(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8177,7 +8094,7 @@ impl RemoveTagsFromOnPremisesInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_on_premises_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_on_premises_instances(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8334,7 +8251,7 @@ impl SkipWaitTimeForInstanceTerminationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_skip_wait_time_for_instance_termination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_skip_wait_time_for_instance_termination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8501,10 +8418,8 @@ impl StopDeploymentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_deployment(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_stop_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8676,10 +8591,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8855,10 +8767,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9026,10 +8935,7 @@ impl UpdateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9540,10 +9446,7 @@ impl UpdateDeploymentGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_deployment_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9672,6 +9575,112 @@ pub struct UpdateDeploymentGroupInput {
     /// on-premises instances identified by all the tag groups.</p>
     pub on_premises_tag_set: std::option::Option<crate::model::OnPremisesTagSet>,
 }
+impl UpdateDeploymentGroupInput {
+    /// <p>The application name that corresponds to the deployment group to update.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The current name of the deployment group.</p>
+    pub fn current_deployment_group_name(&self) -> std::option::Option<&str> {
+        self.current_deployment_group_name.as_deref()
+    }
+    /// <p>The new name of the deployment group, if you want to change it.</p>
+    pub fn new_deployment_group_name(&self) -> std::option::Option<&str> {
+        self.new_deployment_group_name.as_deref()
+    }
+    /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+    /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
+    /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
+    /// names.</p>
+    pub fn ec2_tag_filters(&self) -> std::option::Option<&[crate::model::Ec2TagFilter]> {
+        self.ec2_tag_filters.as_deref()
+    }
+    /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
+    /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
+    /// any tag names.</p>
+    pub fn on_premises_instance_tag_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::TagFilter]> {
+        self.on_premises_instance_tag_filters.as_deref()
+    }
+    /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if
+    /// you want to change them. To keep the Auto Scaling groups, enter their names. To remove
+    /// Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+    pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_scaling_groups.as_deref()
+    }
+    /// <p>A replacement ARN for the service role, if you want to change it.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>Information about triggers to change when the deployment group is updated. For
+    /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
+    /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+    /// Guide</i>.</p>
+    pub fn trigger_configurations(&self) -> std::option::Option<&[crate::model::TriggerConfig]> {
+        self.trigger_configurations.as_deref()
+    }
+    /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
+    /// is updated.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>Information for an automatic rollback configuration that is added or changed when a
+    /// deployment group is updated.</p>
+    pub fn auto_rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
+        self.auto_rollback_configuration.as_ref()
+    }
+    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
+    /// receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
+    /// one or more 'auto-update outdated instances' deployments to apply the deployed
+    /// application revision to the new EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
+    /// deployment to update the new EC2 instances. This may result in instances having
+    /// different revisions.</p>
+    pub fn outdated_instances_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::OutdatedInstancesStrategy> {
+        self.outdated_instances_strategy.as_ref()
+    }
+    /// <p>Information about the type of deployment, either in-place or blue/green, you want to
+    /// run and whether to route deployment traffic behind a load balancer.</p>
+    pub fn deployment_style(&self) -> std::option::Option<&crate::model::DeploymentStyle> {
+        self.deployment_style.as_ref()
+    }
+    /// <p>Information about blue/green deployment options for a deployment group.</p>
+    pub fn blue_green_deployment_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BlueGreenDeploymentConfiguration> {
+        self.blue_green_deployment_configuration.as_ref()
+    }
+    /// <p>Information about the load balancer used in a deployment.</p>
+    pub fn load_balancer_info(&self) -> std::option::Option<&crate::model::LoadBalancerInfo> {
+        self.load_balancer_info.as_ref()
+    }
+    /// <p>Information about groups of tags applied to on-premises instances. The deployment
+    /// group includes only EC2 instances identified by all the tag groups.</p>
+    pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
+        self.ec2_tag_set.as_ref()
+    }
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to
+    /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
+    /// is specified as an Amazon ECS cluster and service name pair using the format
+    /// <code><clustername>:<servicename></code>. </p>
+    pub fn ecs_services(&self) -> std::option::Option<&[crate::model::EcsService]> {
+        self.ecs_services.as_deref()
+    }
+    /// <p>Information about an on-premises instance tag set. The deployment group includes only
+    /// on-premises instances identified by all the tag groups.</p>
+    pub fn on_premises_tag_set(&self) -> std::option::Option<&crate::model::OnPremisesTagSet> {
+        self.on_premises_tag_set.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDeploymentGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeploymentGroupInput");
@@ -9721,6 +9730,16 @@ pub struct UpdateApplicationInput {
     /// <p>The new name to give the application.</p>
     pub new_application_name: std::option::Option<std::string::String>,
 }
+impl UpdateApplicationInput {
+    /// <p>The current name of the application you want to change.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The new name to give the application.</p>
+    pub fn new_application_name(&self) -> std::option::Option<&str> {
+        self.new_application_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationInput");
@@ -9742,6 +9761,19 @@ pub struct UntagResourceInput {
     /// <code>ResourceArn</code> input parameter. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
+    /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified
+    /// by the keys are disassociated from the resource specified by the
+    /// <code>ResourceArn</code> input parameter. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -9760,6 +9792,17 @@ pub struct TagResourceInput {
     /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
     /// is identified by the <code>ResourceArn</code> input parameter. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
+    /// is identified by the <code>ResourceArn</code> input parameter. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9780,6 +9823,17 @@ pub struct StopDeploymentInput {
     /// should be rolled back to the previous version of the application revision. </p>
     pub auto_rollback_enabled: std::option::Option<bool>,
 }
+impl StopDeploymentInput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
+    /// should be rolled back to the previous version of the application revision. </p>
+    pub fn auto_rollback_enabled(&self) -> std::option::Option<bool> {
+        self.auto_rollback_enabled
+    }
+}
 impl std::fmt::Debug for StopDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDeploymentInput");
@@ -9796,6 +9850,13 @@ pub struct SkipWaitTimeForInstanceTerminationInput {
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
     /// termination wait time. </p>
     pub deployment_id: std::option::Option<std::string::String>,
+}
+impl SkipWaitTimeForInstanceTerminationInput {
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
+    /// termination wait time. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SkipWaitTimeForInstanceTerminationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9814,6 +9875,16 @@ pub struct RemoveTagsFromOnPremisesInstancesInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The names of the on-premises instances from which to remove tags.</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RemoveTagsFromOnPremisesInstancesInput {
+    /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The names of the on-premises instances from which to remove tags.</p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTagsFromOnPremisesInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9834,6 +9905,20 @@ pub struct RegisterOnPremisesInstanceInput {
     pub iam_session_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
     pub iam_user_arn: std::option::Option<std::string::String>,
+}
+impl RegisterOnPremisesInstanceInput {
+    /// <p>The name of the on-premises instance to register.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
+    pub fn iam_session_arn(&self) -> std::option::Option<&str> {
+        self.iam_session_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterOnPremisesInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9857,6 +9942,22 @@ pub struct RegisterApplicationRevisionInput {
     /// <p>Information about the application revision to register, including type and
     /// location.</p>
     pub revision: std::option::Option<crate::model::RevisionLocation>,
+}
+impl RegisterApplicationRevisionInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>A comment about the revision.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the application revision to register, including type and
+    /// location.</p>
+    pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.revision.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisterApplicationRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9883,6 +9984,24 @@ pub struct PutLifecycleEventHookExecutionStatusInput {
     /// <code>status</code>.</p>
     pub status: std::option::Option<crate::model::LifecycleEventStatus>,
 }
+impl PutLifecycleEventHookExecutionStatusInput {
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
+    /// deployment lifecycle event. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
+    /// specified in the <code>hooks</code> section of the AppSpec file. </p>
+    pub fn lifecycle_event_hook_execution_id(&self) -> std::option::Option<&str> {
+        self.lifecycle_event_hook_execution_id.as_deref()
+    }
+    /// <p>The result of a Lambda function that validates a deployment lifecycle event.
+    /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
+    /// <code>status</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LifecycleEventStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for PutLifecycleEventHookExecutionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLifecycleEventHookExecutionStatusInput");
@@ -9907,6 +10026,19 @@ pub struct ListTagsForResourceInput {
     /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
     /// be used to return the next set of applications in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
+    /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
+    /// be used to return the next set of applications in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9942,6 +10074,34 @@ pub struct ListOnPremisesInstancesInput {
     /// used to return the next set of on-premises instances in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOnPremisesInstancesInput {
+    /// <p>The registration status of the on-premises instances:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Deregistered</code>: Include deregistered on-premises instances in the
+    /// resulting list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Registered</code>: Include registered on-premises instances in the
+    /// resulting list.</p>
+    /// </li>
+    /// </ul>
+    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+        self.registration_status.as_ref()
+    }
+    /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
+    /// returned.</p>
+    pub fn tag_filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
+        self.tag_filters.as_deref()
+    }
+    /// <p>An identifier returned from the previous list on-premises instances call. It can be
+    /// used to return the next set of on-premises instances in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOnPremisesInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOnPremisesInstancesInput");
@@ -9959,6 +10119,13 @@ pub struct ListGitHubAccountTokenNamesInput {
     /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
     /// call. It can be used to return the next set of names in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGitHubAccountTokenNamesInput {
+    /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
+    /// call. It can be used to return the next set of names in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGitHubAccountTokenNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9998,6 +10165,42 @@ pub struct ListDeploymentTargetsInput {
             std::vec::Vec<std::string::String>,
         >,
     >,
+}
+impl ListDeploymentTargetsInput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
+    /// call. It can be used to return the next set of deployment targets in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> A key used to filter the returned targets. The two valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be
+    /// <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>,
+    /// <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or
+    /// <code>Unknown</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+    /// string can be <code>Blue</code> or <code>Green</code>. </p>
+    /// </li>
+    /// </ul>
+    pub fn target_filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::TargetFilterName,
+            std::vec::Vec<std::string::String>,
+        >,
+    > {
+        self.target_filters.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDeploymentTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10069,6 +10272,75 @@ pub struct ListDeploymentsInput {
     /// return the next set of deployments in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentsInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    /// <note>
+    /// <p>If <code>applicationName</code> is specified, then
+    /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
+    /// <code>deploymentGroupName</code> must not be specified. </p>
+    /// </note>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of a deployment group for the specified application.</p>
+    /// <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then
+    /// <code>applicationName</code> must be specified. If it is not specified, then
+    /// <code>applicationName</code> must not be specified. </p>
+    /// </note>
+    pub fn deployment_group_name(&self) -> std::option::Option<&str> {
+        self.deployment_group_name.as_deref()
+    }
+    /// <p>The unique ID of an external resource for returning deployments linked to the external
+    /// resource.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>A subset of deployments to list by status:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Created</code>: Include created deployments in the resulting
+    /// list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Queued</code>: Include queued deployments in the resulting list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>In Progress</code>: Include in-progress deployments in the resulting
+    /// list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Succeeded</code>: Include successful deployments in the resulting
+    /// list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code>: Include failed deployments in the resulting list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stopped</code>: Include stopped deployments in the resulting
+    /// list.</p>
+    /// </li>
+    /// </ul>
+    pub fn include_only_statuses(&self) -> std::option::Option<&[crate::model::DeploymentStatus]> {
+        self.include_only_statuses.as_deref()
+    }
+    /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
+    pub fn create_time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.create_time_range.as_ref()
+    }
+    /// <p>An identifier returned from the previous list deployments call. It can be used to
+    /// return the next set of deployments in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentsInput");
@@ -10127,6 +10399,56 @@ pub struct ListDeploymentInstancesInput {
     /// want to view instance information.</p>
     pub instance_type_filter: std::option::Option<std::vec::Vec<crate::model::InstanceType>>,
 }
+impl ListDeploymentInstancesInput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>An identifier returned from the previous list deployment instances call. It can be
+    /// used to return the next set of deployment instances in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A subset of instances to list by status:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Pending</code>: Include those instances with pending deployments.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InProgress</code>: Include those instances where deployments are still
+    /// in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Succeeded</code>: Include those instances with successful
+    /// deployments.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code>: Include those instances with failed deployments.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Skipped</code>: Include those instances with skipped deployments.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unknown</code>: Include those instances with deployments in an unknown
+    /// state.</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_status_filter(&self) -> std::option::Option<&[crate::model::InstanceStatus]> {
+        self.instance_status_filter.as_deref()
+    }
+    /// <p>The set of instances in a blue/green deployment, either those in the original
+    /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
+    /// want to view instance information.</p>
+    pub fn instance_type_filter(&self) -> std::option::Option<&[crate::model::InstanceType]> {
+        self.instance_type_filter.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentInstancesInput");
@@ -10149,6 +10471,18 @@ pub struct ListDeploymentGroupsInput {
     /// to return the next set of deployment groups in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentGroupsInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>An identifier returned from the previous list deployment groups call. It can be used
+    /// to return the next set of deployment groups in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentGroupsInput");
@@ -10166,6 +10500,13 @@ pub struct ListDeploymentConfigsInput {
     /// can be used to return the next set of deployment configurations in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentConfigsInput {
+    /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
+    /// can be used to return the next set of deployment configurations in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentConfigsInput");
@@ -10181,6 +10522,13 @@ pub struct ListApplicationsInput {
     /// <p>An identifier returned from the previous list applications call. It can be used to
     /// return the next set of applications in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsInput {
+    /// <p>An identifier returned from the previous list applications call. It can be used to
+    /// return the next set of applications in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10261,6 +10609,88 @@ pub struct ListApplicationRevisionsInput {
     /// It can be used to return the next set of applications in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationRevisionsInput {
+    /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account. </p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The column name to use to sort the list results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>registerTime</code>: Sort by the time the revisions were registered with
+    /// AWS CodeDeploy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>firstUsedTime</code>: Sort by the time the revisions were first used in
+    /// a deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
+    /// deployment.</p>
+    /// </li>
+    /// </ul>
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order.
+    /// </p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ApplicationRevisionSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p> The order in which to sort the list results: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ascending</code>: ascending order.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>descending</code>: descending order.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If not specified, the results are sorted in ascending order.</p>
+    /// <p>If set to null, the results are sorted in an arbitrary order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
+    /// <p> If set to null, all of the user's buckets are searched. </p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
+    /// </p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a
+    /// deployment group: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>include</code>: List revisions that are target revisions of a deployment
+    /// group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>exclude</code>: Do not list revisions that are target revisions of a
+    /// deployment group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ignore</code>: List all revisions.</p>
+    /// </li>
+    /// </ul>
+    pub fn deployed(&self) -> std::option::Option<&crate::model::ListStateFilterAction> {
+        self.deployed.as_ref()
+    }
+    /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
+    /// It can be used to return the next set of applications in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationRevisionsInput");
@@ -10282,6 +10712,12 @@ pub struct GetOnPremisesInstanceInput {
     /// <p> The name of the on-premises instance about which to get information. </p>
     pub instance_name: std::option::Option<std::string::String>,
 }
+impl GetOnPremisesInstanceInput {
+    /// <p> The name of the on-premises instance about which to get information. </p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOnPremisesInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOnPremisesInstanceInput");
@@ -10298,6 +10734,16 @@ pub struct GetDeploymentTargetInput {
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment target. </p>
     pub target_id: std::option::Option<std::string::String>,
+}
+impl GetDeploymentTargetInput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The unique ID of a deployment target. </p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10316,6 +10762,16 @@ pub struct GetDeploymentInstanceInput {
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of an instance in the deployment group. </p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl GetDeploymentInstanceInput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The unique ID of an instance in the deployment group. </p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10336,6 +10792,17 @@ pub struct GetDeploymentGroupInput {
     /// <p>The name of a deployment group for the specified application.</p>
     pub deployment_group_name: std::option::Option<std::string::String>,
 }
+impl GetDeploymentGroupInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of a deployment group for the specified application.</p>
+    pub fn deployment_group_name(&self) -> std::option::Option<&str> {
+        self.deployment_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentGroupInput");
@@ -10353,6 +10820,13 @@ pub struct GetDeploymentConfigInput {
     /// account.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
 }
+impl GetDeploymentConfigInput {
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS
+    /// account.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentConfigInput");
@@ -10367,6 +10841,12 @@ impl std::fmt::Debug for GetDeploymentConfigInput {
 pub struct GetDeploymentInput {
     /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
     pub deployment_id: std::option::Option<std::string::String>,
+}
+impl GetDeploymentInput {
+    /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10385,6 +10865,16 @@ pub struct GetApplicationRevisionInput {
     /// <p>Information about the application revision to get, including type and location.</p>
     pub revision: std::option::Option<crate::model::RevisionLocation>,
 }
+impl GetApplicationRevisionInput {
+    /// <p>The name of the application that corresponds to the revision.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Information about the application revision to get, including type and location.</p>
+    pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.revision.as_ref()
+    }
+}
 impl std::fmt::Debug for GetApplicationRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationRevisionInput");
@@ -10402,6 +10892,13 @@ pub struct GetApplicationInput {
     /// account.</p>
     pub application_name: std::option::Option<std::string::String>,
 }
+impl GetApplicationInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationInput");
@@ -10416,6 +10913,12 @@ impl std::fmt::Debug for GetApplicationInput {
 pub struct DeregisterOnPremisesInstanceInput {
     /// <p>The name of the on-premises instance to deregister.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl DeregisterOnPremisesInstanceInput {
+    /// <p>The name of the on-premises instance to deregister.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterOnPremisesInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10433,6 +10936,13 @@ pub struct DeleteResourcesByExternalIdInput {
     /// linked to one or more CodeDeploy resources.</p>
     pub external_id: std::option::Option<std::string::String>,
 }
+impl DeleteResourcesByExternalIdInput {
+    /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
+    /// linked to one or more CodeDeploy resources.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourcesByExternalIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcesByExternalIdInput");
@@ -10447,6 +10957,12 @@ impl std::fmt::Debug for DeleteResourcesByExternalIdInput {
 pub struct DeleteGitHubAccountTokenInput {
     /// <p>The name of the GitHub account connection to delete.</p>
     pub token_name: std::option::Option<std::string::String>,
+}
+impl DeleteGitHubAccountTokenInput {
+    /// <p>The name of the GitHub account connection to delete.</p>
+    pub fn token_name(&self) -> std::option::Option<&str> {
+        self.token_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGitHubAccountTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10466,6 +10982,17 @@ pub struct DeleteDeploymentGroupInput {
     /// <p>The name of a deployment group for the specified application.</p>
     pub deployment_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteDeploymentGroupInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of a deployment group for the specified application.</p>
+    pub fn deployment_group_name(&self) -> std::option::Option<&str> {
+        self.deployment_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeploymentGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeploymentGroupInput");
@@ -10483,6 +11010,13 @@ pub struct DeleteDeploymentConfigInput {
     /// account.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
 }
+impl DeleteDeploymentConfigInput {
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS
+    /// account.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeploymentConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeploymentConfigInput");
@@ -10498,6 +11032,13 @@ pub struct DeleteApplicationInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
     /// account.</p>
     pub application_name: std::option::Option<std::string::String>,
+}
+impl DeleteApplicationInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10587,6 +11128,125 @@ pub struct CreateDeploymentGroupInput {
     /// define. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDeploymentGroupInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of a new deployment group for the specified application.</p>
+    pub fn deployment_group_name(&self) -> std::option::Option<&str> {
+        self.deployment_group_name.as_deref()
+    }
+    /// <p>If specified, the deployment configuration name can be either one of the predefined
+    /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
+    /// you create by calling the create deployment configuration operation.</p>
+    /// <p>
+    /// <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It
+    /// is used if a configuration isn't specified for the deployment or deployment
+    /// group.</p>
+    /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy,
+    /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
+    /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
+    /// Guide</i>.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+    /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
+    /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+    pub fn ec2_tag_filters(&self) -> std::option::Option<&[crate::model::Ec2TagFilter]> {
+        self.ec2_tag_filters.as_deref()
+    }
+    /// <p>The on-premises instance tags on which to filter. The deployment group includes
+    /// on-premises instances with any of the specified tags. Cannot be used in the same call as
+    /// <code>OnPremisesTagSet</code>.</p>
+    pub fn on_premises_instance_tag_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::TagFilter]> {
+        self.on_premises_instance_tag_filters.as_deref()
+    }
+    /// <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
+    pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_scaling_groups.as_deref()
+    }
+    /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
+    /// user's behalf when interacting with AWS services.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>Information about triggers to create when the deployment group is created. For
+    /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
+    /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
+    /// Guide</i>.</p>
+    pub fn trigger_configurations(&self) -> std::option::Option<&[crate::model::TriggerConfig]> {
+        self.trigger_configurations.as_deref()
+    }
+    /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
+    /// created.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>Configuration information for an automatic rollback that is added when a deployment
+    /// group is created.</p>
+    pub fn auto_rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
+        self.auto_rollback_configuration.as_ref()
+    }
+    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
+    /// receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
+    /// one or more 'auto-update outdated instances' deployments to apply the deployed
+    /// application revision to the new EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
+    /// deployment to update the new EC2 instances. This may result in instances having
+    /// different revisions.</p>
+    pub fn outdated_instances_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::OutdatedInstancesStrategy> {
+        self.outdated_instances_strategy.as_ref()
+    }
+    /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
+    /// and whether to route deployment traffic behind a load balancer.</p>
+    pub fn deployment_style(&self) -> std::option::Option<&crate::model::DeploymentStyle> {
+        self.deployment_style.as_ref()
+    }
+    /// <p>Information about blue/green deployment options for a deployment group.</p>
+    pub fn blue_green_deployment_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BlueGreenDeploymentConfiguration> {
+        self.blue_green_deployment_configuration.as_ref()
+    }
+    /// <p>Information about the load balancer used in a deployment.</p>
+    pub fn load_balancer_info(&self) -> std::option::Option<&crate::model::LoadBalancerInfo> {
+        self.load_balancer_info.as_ref()
+    }
+    /// <p>Information about groups of tags applied to EC2 instances. The deployment group
+    /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
+    /// call as <code>ec2TagFilters</code>.</p>
+    pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
+        self.ec2_tag_set.as_ref()
+    }
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to
+    /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
+    /// is specified as an Amazon ECS cluster and service name pair using the format
+    /// <code><clustername>:<servicename></code>. </p>
+    pub fn ecs_services(&self) -> std::option::Option<&[crate::model::EcsService]> {
+        self.ecs_services.as_deref()
+    }
+    /// <p>Information about groups of tags applied to on-premises instances. The deployment
+    /// group includes only on-premises instances identified by all of the tag groups. Cannot be
+    /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+    pub fn on_premises_tag_set(&self) -> std::option::Option<&crate::model::OnPremisesTagSet> {
+        self.on_premises_tag_set.as_ref()
+    }
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
+    /// categorize them. Each tag consists of a key and an optional value, both of which you
+    /// define. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentGroupInput");
@@ -10655,6 +11315,45 @@ pub struct CreateDeploymentConfigInput {
     /// <p>The destination platform type for the deployment (<code>Lambda</code>,
     /// <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
+}
+impl CreateDeploymentConfigInput {
+    /// <p>The name of the deployment configuration to create.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+    /// <p>The minimum number of healthy instances that should be available at any time during
+    /// the deployment. There are two parameters expected in the input: type and value.</p>
+    /// <p>The type parameter takes either of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>HOST_COUNT: The value parameter represents the minimum number of healthy
+    /// instances as an absolute value.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy
+    /// instances as a percentage of the total number of instances in the deployment. If
+    /// you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy
+    /// converts the percentage to the equivalent number of instances and rounds up
+    /// fractional instances.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The value parameter takes an integer.</p>
+    /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
+    /// and a value of 95.</p>
+    pub fn minimum_healthy_hosts(&self) -> std::option::Option<&crate::model::MinimumHealthyHosts> {
+        self.minimum_healthy_hosts.as_ref()
+    }
+    /// <p>The configuration that specifies how the deployment traffic is routed.</p>
+    pub fn traffic_routing_config(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficRoutingConfig> {
+        self.traffic_routing_config.as_ref()
+    }
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>,
+    /// <code>Server</code>, or <code>ECS</code>).</p>
+    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+        self.compute_platform.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10741,6 +11440,99 @@ pub struct CreateDeploymentInput {
     /// </ul>
     pub file_exists_behavior: std::option::Option<crate::model::FileExistsBehavior>,
 }
+impl CreateDeploymentInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+    /// account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the deployment group.</p>
+    pub fn deployment_group_name(&self) -> std::option::Option<&str> {
+        self.deployment_group_name.as_deref()
+    }
+    /// <p> The type and location of the revision to deploy. </p>
+    pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.revision.as_ref()
+    }
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS
+    /// account.</p>
+    /// <p>If not specified, the value configured in the deployment group is used as the default.
+    /// If the deployment group does not have a deployment configuration associated with it,
+    /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+    /// <p>A comment about the deployment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
+    /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
+    /// the deployment continues to the next deployment lifecycle event. For example, if
+    /// <code>ApplicationStop</code> fails, the deployment continues with
+    /// <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the
+    /// deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code>
+    /// fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    ///
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
+    /// instance, that deployment fails. If deployment to that instance is part of an overall
+    /// deployment and the number of healthy hosts is not less than the minimum number of
+    /// healthy hosts, then a deployment to the next instance is attempted. </p>
+    ///
+    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
+    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
+    /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
+    /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
+    /// If one of these scripts contains an error and does not run successfully, the deployment
+    /// can fail. </p>
+    ///
+    /// <p> If the cause of the failure is a script from the last successful deployment that will
+    /// never run successfully, create a new deployment and use
+    /// <code>ignoreApplicationStopFailures</code> to specify that the
+    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
+    /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    pub fn ignore_application_stop_failures(&self) -> bool {
+        self.ignore_application_stop_failures
+    }
+    /// <p> Information about the instances that belong to the replacement environment in a
+    /// blue/green deployment. </p>
+    pub fn target_instances(&self) -> std::option::Option<&crate::model::TargetInstances> {
+        self.target_instances.as_ref()
+    }
+    /// <p>Configuration information for an automatic rollback that is added when a deployment is
+    /// created.</p>
+    pub fn auto_rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
+        self.auto_rollback_configuration.as_ref()
+    }
+    /// <p> Indicates whether to deploy to all instances or only to instances that are not
+    /// running the latest application revision. </p>
+    pub fn update_outdated_instances_only(&self) -> bool {
+        self.update_outdated_instances_only
+    }
+    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
+    /// target location but weren't part of the previous successful deployment.</p>
+    /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>DISALLOW: The deployment fails. This is also the default behavior if no option
+    /// is specified.</p>
+    /// </li>
+    /// <li>
+    /// <p>OVERWRITE: The version of the file from the application revision currently
+    /// being deployed replaces the version already on the instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>RETAIN: The version of the file already on the instance is kept and used as
+    /// part of the new deployment.</p>
+    /// </li>
+    /// </ul>
+    pub fn file_exists_behavior(&self) -> std::option::Option<&crate::model::FileExistsBehavior> {
+        self.file_exists_behavior.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentInput");
@@ -10782,6 +11574,24 @@ pub struct CreateApplicationInput {
     /// define. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateApplicationInput {
+    /// <p>The name of the application. This name must be unique with the applicable IAM user or
+    /// AWS account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p> The destination platform type for the deployment (<code>Lambda</code>,
+    /// <code>Server</code>, or <code>ECS</code>).</p>
+    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+        self.compute_platform.as_ref()
+    }
+    /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
+    /// categorize them. Each tag consists of a key and an optional value, both of which you
+    /// define. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationInput");
@@ -10805,6 +11615,20 @@ pub struct ContinueDeploymentInput {
     /// </p>
     pub deployment_wait_type: std::option::Option<crate::model::DeploymentWaitType>,
 }
+impl ContinueDeploymentInput {
+    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
+    /// traffic to the replacement environment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
+    /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
+    /// indicates that the traffic is shifted, but the original target is not terminated.
+    /// </p>
+    pub fn deployment_wait_type(&self) -> std::option::Option<&crate::model::DeploymentWaitType> {
+        self.deployment_wait_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ContinueDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContinueDeploymentInput");
@@ -10821,6 +11645,13 @@ pub struct BatchGetOnPremisesInstancesInput {
     /// <p>The names of the on-premises instances about which to get information. The maximum
     /// number of instance names you can specify is 25.</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetOnPremisesInstancesInput {
+    /// <p>The names of the on-premises instances about which to get information. The maximum
+    /// number of instance names you can specify is 25.</p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetOnPremisesInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10864,6 +11695,41 @@ pub struct BatchGetDeploymentTargetsInput {
     /// </ul>
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetDeploymentTargetsInput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment
+    /// determines the type of the targets and their formats. The maximum number of deployment
+    /// target IDs you can specify is 25.</p>
+    /// <ul>
+    /// <li>
+    /// <p> For deployments that use the EC2/On-premises compute platform, the target IDs
+    /// are EC2 or on-premises instances IDs, and their target type is
+    /// <code>instanceTarget</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p> For deployments that use the AWS Lambda compute platform, the target IDs are
+    /// the names of Lambda functions, and their target type is
+    /// <code>instanceTarget</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p> For deployments that use the Amazon ECS compute platform, the target IDs are
+    /// pairs of Amazon ECS clusters and services specified using the format
+    /// <code><clustername>:<servicename></code>. Their target type is
+    /// <code>ecsTarget</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p> For deployments that are deployed with AWS CloudFormation, the target IDs are
+    /// CloudFormation stack IDs. Their target type is
+    /// <code>cloudFormationTarget</code>. </p>
+    /// </li>
+    /// </ul>
+    pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetDeploymentTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDeploymentTargetsInput");
@@ -10880,6 +11746,13 @@ pub struct BatchGetDeploymentsInput {
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
     /// you can specify is 25.</p>
     pub deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetDeploymentsInput {
+    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
+    /// you can specify is 25.</p>
+    pub fn deployment_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployment_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10898,6 +11771,17 @@ pub struct BatchGetDeploymentInstancesInput {
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
     /// you can specify is 25.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetDeploymentInstancesInput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
+    /// you can specify is 25.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetDeploymentInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10918,6 +11802,17 @@ pub struct BatchGetDeploymentGroupsInput {
     /// <p>The names of the deployment groups.</p>
     pub deployment_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetDeploymentGroupsInput {
+    /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
+    /// AWS account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The names of the deployment groups.</p>
+    pub fn deployment_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployment_group_names.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetDeploymentGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDeploymentGroupsInput");
@@ -10934,6 +11829,13 @@ pub struct BatchGetApplicationsInput {
     /// <p>A list of application names separated by spaces. The maximum number of application
     /// names you can specify is 100.</p>
     pub application_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetApplicationsInput {
+    /// <p>A list of application names separated by spaces. The maximum number of application
+    /// names you can specify is 100.</p>
+    pub fn application_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.application_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10955,6 +11857,19 @@ pub struct BatchGetApplicationRevisionsInput {
     /// <code>RevisionLocation</code> objects you can specify is 25.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
 }
+impl BatchGetApplicationRevisionsInput {
+    /// <p>The name of an AWS CodeDeploy application about which to get revision
+    /// information.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
+    /// about the application revisions, including type and location. The maximum number of
+    /// <code>RevisionLocation</code> objects you can specify is 25.</p>
+    pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionLocation]> {
+        self.revisions.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetApplicationRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetApplicationRevisionsInput");
@@ -10974,6 +11889,18 @@ pub struct AddTagsToOnPremisesInstancesInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The names of the on-premises instances to which to add tags.</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AddTagsToOnPremisesInstancesInput {
+    /// <p>The tag key-value pairs to add to the on-premises instances.</p>
+    /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
+    /// tags are not allowed.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The names of the on-premises instances to which to add tags.</p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToOnPremisesInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

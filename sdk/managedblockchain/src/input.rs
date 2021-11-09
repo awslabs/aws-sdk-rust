@@ -150,10 +150,7 @@ impl CreateMemberInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_member(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_member(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -447,10 +444,7 @@ impl CreateNetworkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_network(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_network(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -730,10 +724,7 @@ impl CreateNodeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_node(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_node(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -989,10 +980,8 @@ impl CreateProposalInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_proposal(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_proposal(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3850,10 +3839,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4241,10 +4227,7 @@ impl UpdateMemberInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_member(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_member(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4469,10 +4452,7 @@ impl UpdateNodeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_node(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_node(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4706,10 +4686,7 @@ impl VoteOnProposalInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_vote_on_proposal(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_vote_on_proposal(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4791,6 +4768,31 @@ pub struct VoteOnProposalInput {
     /// </p>
     pub vote: std::option::Option<crate::model::VoteValue>,
 }
+impl VoteOnProposalInput {
+    /// <p>
+    /// The unique identifier of the network.
+    /// </p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>
+    /// The unique identifier of the proposal.
+    /// </p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
+    /// <p>The unique identifier of the member casting the vote.
+    /// </p>
+    pub fn voter_member_id(&self) -> std::option::Option<&str> {
+        self.voter_member_id.as_deref()
+    }
+    /// <p>
+    /// The value of the vote.
+    /// </p>
+    pub fn vote(&self) -> std::option::Option<&crate::model::VoteValue> {
+        self.vote.as_ref()
+    }
+}
 impl std::fmt::Debug for VoteOnProposalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoteOnProposalInput");
@@ -4816,6 +4818,27 @@ pub struct UpdateNodeInput {
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub log_publishing_configuration:
         std::option::Option<crate::model::NodeLogPublishingConfiguration>,
+}
+impl UpdateNodeInput {
+    /// <p>The unique identifier of the network that the node is on.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member that owns the node.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
+    pub fn log_publishing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeLogPublishingConfiguration> {
+        self.log_publishing_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4843,6 +4866,22 @@ pub struct UpdateMemberInput {
     pub log_publishing_configuration:
         std::option::Option<crate::model::MemberLogPublishingConfiguration>,
 }
+impl UpdateMemberInput {
+    /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
+    pub fn log_publishing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MemberLogPublishingConfiguration> {
+        self.log_publishing_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMemberInput");
@@ -4865,6 +4904,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4884,6 +4933,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4900,6 +4962,12 @@ pub struct RejectInvitationInput {
     /// <p>The unique identifier of the invitation to reject.</p>
     pub invitation_id: std::option::Option<std::string::String>,
 }
+impl RejectInvitationInput {
+    /// <p>The unique identifier of the invitation to reject.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectInvitationInput");
@@ -4914,6 +4982,12 @@ impl std::fmt::Debug for RejectInvitationInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4944,6 +5018,32 @@ pub struct ListProposalVotesInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProposalVotesInput {
+    /// <p>
+    /// The unique identifier of the network.
+    /// </p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>
+    /// The unique identifier of the proposal.
+    /// </p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
+    /// <p>
+    /// The maximum number of votes to return.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// The pagination token that indicates the next set of results to retrieve.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProposalVotesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProposalVotesInput");
@@ -4972,6 +5072,26 @@ pub struct ListProposalsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProposalsInput {
+    /// <p>
+    /// The unique identifier of the network.
+    /// </p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>
+    /// The maximum number of proposals to return.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// The pagination token that indicates the next set of results to retrieve.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProposalsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProposalsInput");
@@ -4997,6 +5117,29 @@ pub struct ListNodesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNodesInput {
+    /// <p>The unique identifier of the network for which to list nodes.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member who owns the nodes to list.</p>
+    /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NodeStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of nodes to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNodesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5025,6 +5168,29 @@ pub struct ListNetworksInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNetworksInput {
+    /// <p>The name of the network.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
+    pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
+        self.framework.as_ref()
+    }
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NetworkStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of networks to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNetworksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5057,6 +5223,34 @@ pub struct ListMembersInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMembersInput {
+    /// <p>The unique identifier of the network for which to list members.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The optional name of the member to list.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An optional Boolean value. If provided, the request is limited either to
+    /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
+    /// own (<code>false</code>). If omitted, all members are listed.</p>
+    pub fn is_owned(&self) -> std::option::Option<bool> {
+        self.is_owned
+    }
+    /// <p>The maximum number of members to return in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMembersInput");
@@ -5079,6 +5273,16 @@ pub struct ListInvitationsInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInvitationsInput {
+    /// <p>The maximum number of invitations to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsInput");
@@ -5096,6 +5300,16 @@ pub struct GetProposalInput {
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the proposal.</p>
     pub proposal_id: std::option::Option<std::string::String>,
+}
+impl GetProposalInput {
+    /// <p>The unique identifier of the network for which the proposal is made.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the proposal.</p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProposalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5118,6 +5332,21 @@ pub struct GetNodeInput {
     /// <p>The unique identifier of the node.</p>
     pub node_id: std::option::Option<std::string::String>,
 }
+impl GetNodeInput {
+    /// <p>The unique identifier of the network that the node is on.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member that owns the node.</p>
+    /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNodeInput");
@@ -5135,6 +5364,12 @@ pub struct GetNetworkInput {
     /// <p>The unique identifier of the network to get information about.</p>
     pub network_id: std::option::Option<std::string::String>,
 }
+impl GetNetworkInput {
+    /// <p>The unique identifier of the network to get information about.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNetworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkInput");
@@ -5151,6 +5386,16 @@ pub struct GetMemberInput {
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member.</p>
     pub member_id: std::option::Option<std::string::String>,
+}
+impl GetMemberInput {
+    /// <p>The unique identifier of the network to which the member belongs.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5191,6 +5436,39 @@ pub struct DeleteNodeInput {
     /// <p>The unique identifier of the node.</p>
     pub node_id: std::option::Option<std::string::String>,
 }
+impl DeleteNodeInput {
+    /// <p>The unique identifier of the network that the node is on.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>n-ethereum-mainnet</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>n-ethereum-rinkeby</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>n-ethereum-ropsten</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member that owns this node.</p>
+    /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNodeInput");
@@ -5209,6 +5487,16 @@ pub struct DeleteMemberInput {
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member to remove.</p>
     pub member_id: std::option::Option<std::string::String>,
+}
+impl DeleteMemberInput {
+    /// <p>The unique identifier of the network from which the member is removed.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member to remove.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5239,6 +5527,38 @@ pub struct CreateProposalInput {
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateProposalInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>
+    /// The unique identifier of the network for which the proposal is made.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
+    pub fn actions(&self) -> std::option::Option<&crate::model::ProposalActions> {
+        self.actions.as_ref()
+    }
+    /// <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
+    /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation inherits the tags added to the proposal.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateProposalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5290,6 +5610,52 @@ pub struct CreateNodeInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateNodeInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The unique identifier of the network for the node.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>n-ethereum-mainnet</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>n-ethereum-rinkeby</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>n-ethereum-ropsten</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier of the member that owns this node.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The properties of a node configuration.</p>
+    pub fn node_configuration(&self) -> std::option::Option<&crate::model::NodeConfiguration> {
+        self.node_configuration.as_ref()
+    }
+    /// <p>Tags to assign to the node. Each tag consists of a key and optional value.</p>
+    /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNodeInput");
@@ -5332,6 +5698,55 @@ pub struct CreateNetworkInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateNetworkInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The name of the network.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description for the network.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The blockchain framework that the network uses.</p>
+    pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
+        self.framework.as_ref()
+    }
+    /// <p>The version of the blockchain framework that the network uses.</p>
+    pub fn framework_version(&self) -> std::option::Option<&str> {
+        self.framework_version.as_deref()
+    }
+    /// <p>
+    /// Configuration properties of the blockchain framework relevant to the network configuration.
+    /// </p>
+    pub fn framework_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkFrameworkConfiguration> {
+        self.framework_configuration.as_ref()
+    }
+    /// <p>
+    /// The voting rules used by the network to determine if a proposal is approved.
+    /// </p>
+    pub fn voting_policy(&self) -> std::option::Option<&crate::model::VotingPolicy> {
+        self.voting_policy.as_ref()
+    }
+    /// <p>Configuration properties for the first member within the network.</p>
+    pub fn member_configuration(&self) -> std::option::Option<&crate::model::MemberConfiguration> {
+        self.member_configuration.as_ref()
+    }
+    /// <p>Tags to assign to the network. Each tag consists of a key and optional value.</p>
+    /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateNetworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkInput");
@@ -5360,6 +5775,24 @@ pub struct CreateMemberInput {
     pub network_id: std::option::Option<std::string::String>,
     /// <p>Member configuration parameters.</p>
     pub member_configuration: std::option::Option<crate::model::MemberConfiguration>,
+}
+impl CreateMemberInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
+    /// <p>The unique identifier of the network in which the member is created.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>Member configuration parameters.</p>
+    pub fn member_configuration(&self) -> std::option::Option<&crate::model::MemberConfiguration> {
+        self.member_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

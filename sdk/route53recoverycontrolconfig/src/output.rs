@@ -8,6 +8,16 @@ pub struct UpdateSafetyRuleOutput {
     /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
+impl UpdateSafetyRuleOutput {
+    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    pub fn assertion_rule(&self) -> std::option::Option<&crate::model::AssertionRule> {
+        self.assertion_rule.as_ref()
+    }
+    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    pub fn gating_rule(&self) -> std::option::Option<&crate::model::GatingRule> {
+        self.gating_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSafetyRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSafetyRuleOutput");
@@ -75,6 +85,12 @@ pub struct UpdateRoutingControlOutput {
     /// <p>The routing control that was updated.</p>
     pub routing_control: std::option::Option<crate::model::RoutingControl>,
 }
+impl UpdateRoutingControlOutput {
+    /// <p>The routing control that was updated.</p>
+    pub fn routing_control(&self) -> std::option::Option<&crate::model::RoutingControl> {
+        self.routing_control.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRoutingControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingControlOutput");
@@ -125,6 +141,12 @@ impl UpdateRoutingControlOutput {
 pub struct UpdateControlPanelOutput {
     /// <p>The control panel to update.</p>
     pub control_panel: std::option::Option<crate::model::ControlPanel>,
+}
+impl UpdateControlPanelOutput {
+    /// <p>The control panel to update.</p>
+    pub fn control_panel(&self) -> std::option::Option<&crate::model::ControlPanel> {
+        self.control_panel.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateControlPanelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -178,6 +200,16 @@ pub struct ListSafetyRulesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of safety rules in a control panel.</p>
     pub safety_rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+}
+impl ListSafetyRulesOutput {
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of safety rules in a control panel.</p>
+    pub fn safety_rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.safety_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSafetyRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -250,6 +282,16 @@ pub struct ListRoutingControlsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of routing controls.</p>
     pub routing_controls: std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
+}
+impl ListRoutingControlsOutput {
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of routing controls.</p>
+    pub fn routing_controls(&self) -> std::option::Option<&[crate::model::RoutingControl]> {
+        self.routing_controls.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoutingControlsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -324,6 +366,16 @@ pub struct ListControlPanelsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListControlPanelsOutput {
+    /// <p>The result of a successful ListControlPanel request.</p>
+    pub fn control_panels(&self) -> std::option::Option<&[crate::model::ControlPanel]> {
+        self.control_panels.as_deref()
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListControlPanelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListControlPanelsOutput");
@@ -395,6 +447,16 @@ pub struct ListClustersOutput {
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClustersOutput {
+    /// <p>An array of the clusters in an account.</p>
+    pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.clusters.as_deref()
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -468,6 +530,16 @@ pub struct ListAssociatedRoute53HealthChecksOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociatedRoute53HealthChecksOutput {
+    /// <p>Identifiers for the health checks.</p>
+    pub fn health_check_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.health_check_ids.as_deref()
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociatedRoute53HealthChecksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedRoute53HealthChecksOutput");
@@ -540,6 +612,16 @@ pub struct DescribeSafetyRuleOutput {
     /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
+impl DescribeSafetyRuleOutput {
+    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    pub fn assertion_rule(&self) -> std::option::Option<&crate::model::AssertionRule> {
+        self.assertion_rule.as_ref()
+    }
+    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    pub fn gating_rule(&self) -> std::option::Option<&crate::model::GatingRule> {
+        self.gating_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSafetyRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSafetyRuleOutput");
@@ -607,6 +689,12 @@ pub struct DescribeRoutingControlOutput {
     /// <p>Information about the routing control.</p>
     pub routing_control: std::option::Option<crate::model::RoutingControl>,
 }
+impl DescribeRoutingControlOutput {
+    /// <p>Information about the routing control.</p>
+    pub fn routing_control(&self) -> std::option::Option<&crate::model::RoutingControl> {
+        self.routing_control.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRoutingControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRoutingControlOutput");
@@ -658,6 +746,12 @@ pub struct DescribeControlPanelOutput {
     /// <p>Information about the control panel.</p>
     pub control_panel: std::option::Option<crate::model::ControlPanel>,
 }
+impl DescribeControlPanelOutput {
+    /// <p>Information about the control panel.</p>
+    pub fn control_panel(&self) -> std::option::Option<&crate::model::ControlPanel> {
+        self.control_panel.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeControlPanelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeControlPanelOutput");
@@ -708,6 +802,12 @@ impl DescribeControlPanelOutput {
 pub struct DescribeClusterOutput {
     /// <p>The cluster for the DescribeCluster request.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl DescribeClusterOutput {
+    /// <p>The cluster for the DescribeCluster request.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -879,6 +979,16 @@ pub struct CreateSafetyRuleOutput {
     /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
+impl CreateSafetyRuleOutput {
+    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    pub fn assertion_rule(&self) -> std::option::Option<&crate::model::AssertionRule> {
+        self.assertion_rule.as_ref()
+    }
+    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    pub fn gating_rule(&self) -> std::option::Option<&crate::model::GatingRule> {
+        self.gating_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSafetyRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSafetyRuleOutput");
@@ -946,6 +1056,12 @@ pub struct CreateRoutingControlOutput {
     /// <p>The routing control that is created.</p>
     pub routing_control: std::option::Option<crate::model::RoutingControl>,
 }
+impl CreateRoutingControlOutput {
+    /// <p>The routing control that is created.</p>
+    pub fn routing_control(&self) -> std::option::Option<&crate::model::RoutingControl> {
+        self.routing_control.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRoutingControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoutingControlOutput");
@@ -997,6 +1113,12 @@ pub struct CreateControlPanelOutput {
     /// <p>Information about a control panel.</p>
     pub control_panel: std::option::Option<crate::model::ControlPanel>,
 }
+impl CreateControlPanelOutput {
+    /// <p>Information about a control panel.</p>
+    pub fn control_panel(&self) -> std::option::Option<&crate::model::ControlPanel> {
+        self.control_panel.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateControlPanelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateControlPanelOutput");
@@ -1047,6 +1169,12 @@ impl CreateControlPanelOutput {
 pub struct CreateClusterOutput {
     /// <p>The cluster that was created.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl CreateClusterOutput {
+    /// <p>The cluster that was created.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

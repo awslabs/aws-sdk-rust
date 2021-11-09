@@ -6,6 +6,12 @@ pub struct UpdateSamplingRuleOutput {
     /// <p>The updated rule definition and metadata.</p>
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
+impl UpdateSamplingRuleOutput {
+    /// <p>The updated rule definition and metadata.</p>
+    pub fn sampling_rule_record(&self) -> std::option::Option<&crate::model::SamplingRuleRecord> {
+        self.sampling_rule_record.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSamplingRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSamplingRuleOutput");
@@ -58,6 +64,14 @@ pub struct UpdateGroupOutput {
     /// ARN of the group that was updated, the updated filter expression, and the updated insight
     /// configuration assigned to the group.</p>
     pub group: std::option::Option<crate::model::Group>,
+}
+impl UpdateGroupOutput {
+    /// <p>The group that was updated. Contains the name of the group that was updated, the
+    /// ARN of the group that was updated, the updated filter expression, and the updated insight
+    /// configuration assigned to the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -170,6 +184,14 @@ pub struct PutTraceSegmentsOutput {
     pub unprocessed_trace_segments:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
 }
+impl PutTraceSegmentsOutput {
+    /// <p>Segments that failed processing.</p>
+    pub fn unprocessed_trace_segments(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnprocessedTraceSegment]> {
+        self.unprocessed_trace_segments.as_deref()
+    }
+}
 impl std::fmt::Debug for PutTraceSegmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutTraceSegmentsOutput");
@@ -264,6 +286,12 @@ pub struct PutEncryptionConfigOutput {
     /// <p>The new encryption configuration.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
+impl PutEncryptionConfigOutput {
+    /// <p>The new encryption configuration.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEncryptionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEncryptionConfigOutput");
@@ -317,6 +345,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
     /// the current page of results to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+    /// the current page of results to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -398,6 +437,27 @@ pub struct GetTraceSummariesOutput {
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the
     /// next page. The first page contains the most recent results, closest to the end of the time frame.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTraceSummariesOutput {
+    /// <p>Trace IDs and annotations for traces that were found in the specified time
+    /// frame.</p>
+    pub fn trace_summaries(&self) -> std::option::Option<&[crate::model::TraceSummary]> {
+        self.trace_summaries.as_deref()
+    }
+    /// <p>The start time of this page of results.</p>
+    pub fn approximate_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.approximate_time.as_ref()
+    }
+    /// <p>The total number of traces processed, including traces that did not match the specified
+    /// filter expression.</p>
+    pub fn traces_processed_count(&self) -> std::option::Option<i64> {
+        self.traces_processed_count
+    }
+    /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the
+    /// next page. The first page contains the most recent results, closest to the end of the time frame.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTraceSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -506,6 +566,16 @@ pub struct GetTraceGraphOutput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetTraceGraphOutput {
+    /// <p>The services that have processed one of the specified requests.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+        self.services.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTraceGraphOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTraceGraphOutput");
@@ -581,6 +651,23 @@ pub struct GetTimeSeriesServiceStatisticsOutput {
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTimeSeriesServiceStatisticsOutput {
+    /// <p>The collection of statistics.</p>
+    pub fn time_series_service_statistics(
+        &self,
+    ) -> std::option::Option<&[crate::model::TimeSeriesServiceStatistics]> {
+        self.time_series_service_statistics.as_deref()
+    }
+    /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned
+    /// aggregation might show statistics from an older version of the group's filter expression.</p>
+    pub fn contains_old_group_versions(&self) -> bool {
+        self.contains_old_group_versions
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTimeSeriesServiceStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -687,6 +774,31 @@ pub struct GetServiceGraphOutput {
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetServiceGraphOutput {
+    /// <p>The start of the time frame for which the graph was generated.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time frame for which the graph was generated.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The services that have processed a traced request during the specified time
+    /// frame.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+        self.services.as_deref()
+    }
+    /// <p>A flag indicating whether the group's filter expression has been consistent, or
+    /// if the returned service graph may show traces from an older version of the group's filter
+    /// expression.</p>
+    pub fn contains_old_group_versions(&self) -> bool {
+        self.contains_old_group_versions
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServiceGraphOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -821,6 +933,27 @@ pub struct GetSamplingTargetsOutput {
     pub unprocessed_statistics:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
 }
+impl GetSamplingTargetsOutput {
+    /// <p>Updated rules that the service should use to sample requests.</p>
+    pub fn sampling_target_documents(
+        &self,
+    ) -> std::option::Option<&[crate::model::SamplingTargetDocument]> {
+        self.sampling_target_documents.as_deref()
+    }
+    /// <p>The last time a user changed the sampling rule configuration. If
+    /// the sampling rule configuration changed since the service last retrieved it, the service
+    /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
+    pub fn last_rule_modification(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_rule_modification.as_ref()
+    }
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
+    /// process.</p>
+    pub fn unprocessed_statistics(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnprocessedStatistics]> {
+        self.unprocessed_statistics.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSamplingTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSamplingTargetsOutput");
@@ -934,6 +1067,19 @@ pub struct GetSamplingStatisticSummariesOutput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSamplingStatisticSummariesOutput {
+    /// <p>Information about the number of requests instrumented for each sampling
+    /// rule.</p>
+    pub fn sampling_statistic_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::SamplingStatisticSummary]> {
+        self.sampling_statistic_summaries.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSamplingStatisticSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSamplingStatisticSummariesOutput");
@@ -1015,6 +1161,18 @@ pub struct GetSamplingRulesOutput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSamplingRulesOutput {
+    /// <p>Rule definitions and metadata.</p>
+    pub fn sampling_rule_records(
+        &self,
+    ) -> std::option::Option<&[crate::model::SamplingRuleRecord]> {
+        self.sampling_rule_records.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSamplingRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSamplingRulesOutput");
@@ -1092,6 +1250,18 @@ pub struct GetInsightSummariesOutput {
     pub insight_summaries: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetInsightSummariesOutput {
+    /// <p>The summary of each insight within the group matching the provided filters. The summary
+    /// contains the InsightID, start and end time, the root cause service, the root cause and
+    /// client impact statistics, the top anomalous services, and the status of the insight.</p>
+    pub fn insight_summaries(&self) -> std::option::Option<&[crate::model::InsightSummary]> {
+        self.insight_summaries.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInsightSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1179,6 +1349,36 @@ pub struct GetInsightImpactGraphOutput {
     pub services: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetInsightImpactGraphOutput {
+    /// <p>The insight's unique identifier.</p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>The provided start time.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The provided end time. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The time, in Unix seconds, at which the service graph started.</p>
+    pub fn service_graph_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.service_graph_start_time.as_ref()
+    }
+    /// <p>The time, in Unix seconds, at which the service graph ended.</p>
+    pub fn service_graph_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.service_graph_end_time.as_ref()
+    }
+    /// <p>The Amazon Web Services instrumented services related to the insight.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::InsightImpactGraphService]> {
+        self.services.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInsightImpactGraphOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1335,6 +1535,18 @@ pub struct GetInsightEventsOutput {
     /// <p>Use this token to retrieve the next page of insight events.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetInsightEventsOutput {
+    /// <p>A detailed description of the event. This includes the time of the event, client and
+    /// root cause impact statistics, and the top anomalous service at the time of the
+    /// event.</p>
+    pub fn insight_events(&self) -> std::option::Option<&[crate::model::InsightEvent]> {
+        self.insight_events.as_deref()
+    }
+    /// <p>Use this token to retrieve the next page of insight events.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInsightEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightEventsOutput");
@@ -1409,6 +1621,12 @@ pub struct GetInsightOutput {
     /// <p>The summary information of an insight.</p>
     pub insight: std::option::Option<crate::model::Insight>,
 }
+impl GetInsightOutput {
+    /// <p>The summary information of an insight.</p>
+    pub fn insight(&self) -> std::option::Option<&crate::model::Insight> {
+        self.insight.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInsightOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightOutput");
@@ -1458,6 +1676,16 @@ pub struct GetGroupsOutput {
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetGroupsOutput {
+    /// <p>The collection of all active groups.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupSummary]> {
+        self.groups.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1530,6 +1758,13 @@ pub struct GetGroupOutput {
     /// the filter expression, and the insight configuration assigned to the group.</p>
     pub group: std::option::Option<crate::model::Group>,
 }
+impl GetGroupOutput {
+    /// <p>The group that was requested. Contains the name of the group, the ARN of the group,
+    /// the filter expression, and the insight configuration assigned to the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupOutput");
@@ -1577,6 +1812,12 @@ impl GetGroupOutput {
 pub struct GetEncryptionConfigOutput {
     /// <p>The encryption configuration document.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
+}
+impl GetEncryptionConfigOutput {
+    /// <p>The encryption configuration document.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEncryptionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1628,6 +1869,12 @@ impl GetEncryptionConfigOutput {
 pub struct DeleteSamplingRuleOutput {
     /// <p>The deleted rule definition and metadata.</p>
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
+}
+impl DeleteSamplingRuleOutput {
+    /// <p>The deleted rule definition and metadata.</p>
+    pub fn sampling_rule_record(&self) -> std::option::Option<&crate::model::SamplingRuleRecord> {
+        self.sampling_rule_record.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteSamplingRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1710,6 +1957,12 @@ pub struct CreateSamplingRuleOutput {
     /// <p>The saved rule definition and metadata.</p>
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
+impl CreateSamplingRuleOutput {
+    /// <p>The saved rule definition and metadata.</p>
+    pub fn sampling_rule_record(&self) -> std::option::Option<&crate::model::SamplingRuleRecord> {
+        self.sampling_rule_record.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSamplingRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSamplingRuleOutput");
@@ -1762,6 +2015,14 @@ pub struct CreateGroupOutput {
     /// (ARN) of the group that was generated based on the group name, the filter expression, and the insight
     /// configuration that was assigned to the group.</p>
     pub group: std::option::Option<crate::model::Group>,
+}
+impl CreateGroupOutput {
+    /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name
+    /// (ARN) of the group that was generated based on the group name, the filter expression, and the insight
+    /// configuration that was assigned to the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1816,6 +2077,20 @@ pub struct BatchGetTracesOutput {
     pub unprocessed_trace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchGetTracesOutput {
+    /// <p>Full traces for the specified requests.</p>
+    pub fn traces(&self) -> std::option::Option<&[crate::model::Trace]> {
+        self.traces.as_deref()
+    }
+    /// <p>Trace IDs of requests that haven't been processed.</p>
+    pub fn unprocessed_trace_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.unprocessed_trace_ids.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetTracesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

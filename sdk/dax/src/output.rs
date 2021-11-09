@@ -6,6 +6,12 @@ pub struct UpdateSubnetGroupOutput {
     /// <p>The subnet group that has been modified.</p>
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
 }
+impl UpdateSubnetGroupOutput {
+    /// <p>The subnet group that has been modified.</p>
+    pub fn subnet_group(&self) -> std::option::Option<&crate::model::SubnetGroup> {
+        self.subnet_group.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubnetGroupOutput");
@@ -56,6 +62,12 @@ impl UpdateSubnetGroupOutput {
 pub struct UpdateParameterGroupOutput {
     /// <p>The parameter group that has been modified.</p>
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
+}
+impl UpdateParameterGroupOutput {
+    /// <p>The parameter group that has been modified.</p>
+    pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroup> {
+        self.parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +120,12 @@ pub struct UpdateClusterOutput {
     /// <p>A description of the DAX cluster, after it has been modified.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl UpdateClusterOutput {
+    /// <p>A description of the DAX cluster, after it has been modified.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterOutput");
@@ -155,6 +173,12 @@ impl UpdateClusterOutput {
 pub struct UntagResourceOutput {
     /// <p>The tag keys that have been removed from the cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UntagResourceOutput {
+    /// <p>The tag keys that have been removed from the cluster.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -211,6 +235,12 @@ pub struct TagResourceOutput {
     /// <p>The list of tags that are associated with the DAX resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceOutput {
+    /// <p>The list of tags that are associated with the DAX resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceOutput");
@@ -266,6 +296,12 @@ pub struct RebootNodeOutput {
     /// <p>A description of the DAX cluster after a node has been rebooted.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl RebootNodeOutput {
+    /// <p>A description of the DAX cluster after a node has been rebooted.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RebootNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootNodeOutput");
@@ -316,6 +352,17 @@ pub struct ListTagsOutput {
     /// <p>If this value is present, there are additional results to be displayed.  To retrieve them, call
     /// <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsOutput {
+    /// <p>A list of tags currently associated with the DAX cluster.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If this value is present, there are additional results to be displayed.  To retrieve them, call
+    /// <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -389,6 +436,12 @@ pub struct IncreaseReplicationFactorOutput {
     /// <p>A description of the DAX cluster. with its new replication factor.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl IncreaseReplicationFactorOutput {
+    /// <p>A description of the DAX cluster. with its new replication factor.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for IncreaseReplicationFactorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncreaseReplicationFactorOutput");
@@ -438,6 +491,16 @@ pub struct DescribeSubnetGroupsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>
     pub subnet_groups: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
+}
+impl DescribeSubnetGroupsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>
+    pub fn subnet_groups(&self) -> std::option::Option<&[crate::model::SubnetGroup]> {
+        self.subnet_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSubnetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -511,6 +574,16 @@ pub struct DescribeParametersOutput {
     /// <p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
+impl DescribeParametersOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeParametersOutput");
@@ -582,6 +655,16 @@ pub struct DescribeParameterGroupsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of parameter groups.  Each element in the array represents one parameter group.</p>
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
+}
+impl DescribeParameterGroupsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of parameter groups.  Each element in the array represents one parameter group.</p>
+    pub fn parameter_groups(&self) -> std::option::Option<&[crate::model::ParameterGroup]> {
+        self.parameter_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeParameterGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -656,6 +739,16 @@ pub struct DescribeEventsOutput {
     /// <p>An array of events.  Each element in the array represents one event.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl DescribeEventsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of events.  Each element in the array represents one event.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -727,6 +820,16 @@ pub struct DescribeDefaultParametersOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of parameters.  Each element in the list represents one parameter.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+}
+impl DescribeDefaultParametersOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of parameters.  Each element in the list represents one parameter.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDefaultParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -801,6 +904,17 @@ pub struct DescribeClustersOutput {
     /// <i>DescribeClusters</i> request.</p>
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
+impl DescribeClustersOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The descriptions of your DAX clusters, in response to a
+    /// <i>DescribeClusters</i> request.</p>
+    pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.clusters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClustersOutput");
@@ -874,6 +988,13 @@ pub struct DeleteSubnetGroupOutput {
     /// group).</p>
     pub deletion_message: std::option::Option<std::string::String>,
 }
+impl DeleteSubnetGroupOutput {
+    /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet
+    /// group).</p>
+    pub fn deletion_message(&self) -> std::option::Option<&str> {
+        self.deletion_message.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSubnetGroupOutput");
@@ -928,6 +1049,13 @@ pub struct DeleteParameterGroupOutput {
     /// group).</p>
     pub deletion_message: std::option::Option<std::string::String>,
 }
+impl DeleteParameterGroupOutput {
+    /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter
+    /// group).</p>
+    pub fn deletion_message(&self) -> std::option::Option<&str> {
+        self.deletion_message.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteParameterGroupOutput");
@@ -981,6 +1109,12 @@ pub struct DeleteClusterOutput {
     /// <p>A description of the DAX cluster that is being deleted.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl DeleteClusterOutput {
+    /// <p>A description of the DAX cluster that is being deleted.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterOutput");
@@ -1029,6 +1163,13 @@ pub struct DecreaseReplicationFactorOutput {
     /// <p>A description of the DAX cluster, after you have decreased its replication
     /// factor.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl DecreaseReplicationFactorOutput {
+    /// <p>A description of the DAX cluster, after you have decreased its replication
+    /// factor.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for DecreaseReplicationFactorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1080,6 +1221,13 @@ pub struct CreateSubnetGroupOutput {
     /// <p>Represents the output of a <i>CreateSubnetGroup</i>
     /// operation.</p>
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
+}
+impl CreateSubnetGroupOutput {
+    /// <p>Represents the output of a <i>CreateSubnetGroup</i>
+    /// operation.</p>
+    pub fn subnet_group(&self) -> std::option::Option<&crate::model::SubnetGroup> {
+        self.subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1135,6 +1283,13 @@ pub struct CreateParameterGroupOutput {
     /// action.</p>
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
+impl CreateParameterGroupOutput {
+    /// <p>Represents the output of a <i>CreateParameterGroup</i>
+    /// action.</p>
+    pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroup> {
+        self.parameter_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateParameterGroupOutput");
@@ -1187,6 +1342,12 @@ impl CreateParameterGroupOutput {
 pub struct CreateClusterOutput {
     /// <p>A description of the DAX cluster that you have created.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl CreateClusterOutput {
+    /// <p>A description of the DAX cluster that you have created.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

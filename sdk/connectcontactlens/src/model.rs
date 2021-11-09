@@ -8,6 +8,16 @@ pub struct RealtimeContactAnalysisSegment {
     /// <p>The matched category rules.</p>
     pub categories: std::option::Option<crate::model::Categories>,
 }
+impl RealtimeContactAnalysisSegment {
+    /// <p>The analyzed transcript.</p>
+    pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
+        self.transcript.as_ref()
+    }
+    /// <p>The matched category rules.</p>
+    pub fn categories(&self) -> std::option::Option<&crate::model::Categories> {
+        self.categories.as_ref()
+    }
+}
 impl std::fmt::Debug for RealtimeContactAnalysisSegment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RealtimeContactAnalysisSegment");
@@ -79,6 +89,20 @@ pub struct Categories {
     pub matched_details: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
     >,
+}
+impl Categories {
+    /// <p>The category rules that have been matched in the analyzed segment.</p>
+    pub fn matched_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.matched_categories.as_deref()
+    }
+    /// <p>The category rule that was matched and when it occurred in the transcript.</p>
+    pub fn matched_details(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
+    > {
+        self.matched_details.as_ref()
+    }
 }
 impl std::fmt::Debug for Categories {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -167,6 +191,12 @@ pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
     pub points_of_interest: std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
 }
+impl CategoryDetails {
+    /// <p>The section of audio where the category rule was detected.</p>
+    pub fn points_of_interest(&self) -> std::option::Option<&[crate::model::PointOfInterest]> {
+        self.points_of_interest.as_deref()
+    }
+}
 impl std::fmt::Debug for CategoryDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CategoryDetails");
@@ -229,6 +259,16 @@ pub struct PointOfInterest {
     pub begin_offset_millis: i32,
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
     pub end_offset_millis: i32,
+}
+impl PointOfInterest {
+    /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
+    pub fn begin_offset_millis(&self) -> i32 {
+        self.begin_offset_millis
+    }
+    /// <p>The ending offset in milliseconds where the category rule was detected.</p>
+    pub fn end_offset_millis(&self) -> i32 {
+        self.end_offset_millis
+    }
 }
 impl std::fmt::Debug for PointOfInterest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -304,6 +344,40 @@ pub struct Transcript {
     pub sentiment: std::option::Option<crate::model::SentimentValue>,
     /// <p>List of positions where issues were detected on the transcript.</p>
     pub issues_detected: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
+}
+impl Transcript {
+    /// <p>The identifier of the transcript.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the participant.</p>
+    pub fn participant_id(&self) -> std::option::Option<&str> {
+        self.participant_id.as_deref()
+    }
+    /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
+    pub fn participant_role(&self) -> std::option::Option<&str> {
+        self.participant_role.as_deref()
+    }
+    /// <p>The content of the transcript.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The beginning offset in the contact for this transcript.</p>
+    pub fn begin_offset_millis(&self) -> i32 {
+        self.begin_offset_millis
+    }
+    /// <p>The end offset in the contact for this transcript.</p>
+    pub fn end_offset_millis(&self) -> i32 {
+        self.end_offset_millis
+    }
+    /// <p>The sentiment of the detected for this piece of transcript.</p>
+    pub fn sentiment(&self) -> std::option::Option<&crate::model::SentimentValue> {
+        self.sentiment.as_ref()
+    }
+    /// <p>List of positions where issues were detected on the transcript.</p>
+    pub fn issues_detected(&self) -> std::option::Option<&[crate::model::IssueDetected]> {
+        self.issues_detected.as_deref()
+    }
 }
 impl std::fmt::Debug for Transcript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -463,6 +537,12 @@ pub struct IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
     pub character_offsets: std::option::Option<crate::model::CharacterOffsets>,
 }
+impl IssueDetected {
+    /// <p>The offset for when the issue was detected in the segment.</p>
+    pub fn character_offsets(&self) -> std::option::Option<&crate::model::CharacterOffsets> {
+        self.character_offsets.as_ref()
+    }
+}
 impl std::fmt::Debug for IssueDetected {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IssueDetected");
@@ -515,6 +595,16 @@ pub struct CharacterOffsets {
     pub begin_offset_char: i32,
     /// <p>The end of the issue.</p>
     pub end_offset_char: i32,
+}
+impl CharacterOffsets {
+    /// <p>The beginning of the issue.</p>
+    pub fn begin_offset_char(&self) -> i32 {
+        self.begin_offset_char
+    }
+    /// <p>The end of the issue.</p>
+    pub fn end_offset_char(&self) -> i32 {
+        self.end_offset_char
+    }
 }
 impl std::fmt::Debug for CharacterOffsets {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

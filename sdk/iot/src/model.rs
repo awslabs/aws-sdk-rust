@@ -6,6 +6,12 @@ pub struct ValidationError {
     /// <p>The description of an error found in the behaviors.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl ValidationError {
+    /// <p>The description of an error found in the behaviors.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationError");
@@ -69,6 +75,33 @@ pub struct Behavior {
     /// Suppresses alerts.
     /// </p>
     pub suppress_alerts: std::option::Option<bool>,
+}
+impl Behavior {
+    /// <p>The name
+    /// you've given to the behavior.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>What is measured by the behavior.</p>
+    pub fn metric(&self) -> std::option::Option<&str> {
+        self.metric.as_deref()
+    }
+    /// <p>The dimension for a metric in your behavior. For example, using a
+    /// <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
+    pub fn metric_dimension(&self) -> std::option::Option<&crate::model::MetricDimension> {
+        self.metric_dimension.as_ref()
+    }
+    /// <p>The criteria that determine if a device is behaving normally in regard to
+    /// the <code>metric</code>.</p>
+    pub fn criteria(&self) -> std::option::Option<&crate::model::BehaviorCriteria> {
+        self.criteria.as_ref()
+    }
+    /// <p>
+    /// Suppresses alerts.
+    /// </p>
+    pub fn suppress_alerts(&self) -> std::option::Option<bool> {
+        self.suppress_alerts
+    }
 }
 impl std::fmt::Debug for Behavior {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -232,6 +265,75 @@ pub struct BehaviorCriteria {
     /// The configuration of an ML Detect
     /// </p>
     pub ml_detection_config: std::option::Option<crate::model::MachineLearningDetectionConfig>,
+}
+impl BehaviorCriteria {
+    /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria
+    /// (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>The value to be compared with the <code>metric</code>.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::MetricValue> {
+        self.value.as_ref()
+    }
+    /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that
+    /// have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a
+    /// <code>statisticalThreshhold</code> metric comparison, measurements from all devices are
+    /// accumulated over this time duration before being used to calculate percentiles, and later,
+    /// measurements from an individual device are also accumulated over this time duration before
+    /// being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<i32> {
+        self.duration_seconds
+    }
+    /// <p>If a device is in violation of the behavior for the specified number of consecutive
+    /// datapoints, an alarm occurs. If not specified, the default is 1.</p>
+    pub fn consecutive_datapoints_to_alarm(&self) -> std::option::Option<i32> {
+        self.consecutive_datapoints_to_alarm
+    }
+    /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior
+    /// for the specified number of consecutive datapoints, the alarm is cleared. If not specified,
+    /// the default is 1.</p>
+    pub fn consecutive_datapoints_to_clear(&self) -> std::option::Option<i32> {
+        self.consecutive_datapoints_to_clear
+    }
+    /// <p>A statistical ranking (percentile)that
+    /// indicates a threshold value by which a behavior is determined to be in compliance or in
+    /// violation of the behavior.</p>
+    pub fn statistical_threshold(
+        &self,
+    ) -> std::option::Option<&crate::model::StatisticalThreshold> {
+        self.statistical_threshold.as_ref()
+    }
+    /// <p>
+    /// The configuration of an ML Detect
+    /// </p>
+    pub fn ml_detection_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MachineLearningDetectionConfig> {
+        self.ml_detection_config.as_ref()
+    }
 }
 impl std::fmt::Debug for BehaviorCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -458,6 +560,14 @@ pub struct MachineLearningDetectionConfig {
     /// </p>
     pub confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
 }
+impl MachineLearningDetectionConfig {
+    /// <p>
+    /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
+    /// </p>
+    pub fn confidence_level(&self) -> std::option::Option<&crate::model::ConfidenceLevel> {
+        self.confidence_level.as_ref()
+    }
+}
 impl std::fmt::Debug for MachineLearningDetectionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MachineLearningDetectionConfig");
@@ -581,6 +691,19 @@ pub struct StatisticalThreshold {
     /// occurs.</p>
     pub statistic: std::option::Option<std::string::String>,
 }
+impl StatisticalThreshold {
+    /// <p>The percentile that
+    /// resolves to a threshold value by which compliance with a behavior is determined. Metrics are
+    /// collected over the specified period (<code>durationSeconds</code>) from all reporting devices
+    /// in your account and statistical ranks are calculated. Then, the measurements from a device are
+    /// collected over the same period. If the accumulated measurements from the device fall above or
+    /// below (<code>comparisonOperator</code>) the value associated with the percentile specified,
+    /// then the device is considered to be in compliance with the behavior, otherwise a violation
+    /// occurs.</p>
+    pub fn statistic(&self) -> std::option::Option<&str> {
+        self.statistic.as_deref()
+    }
+}
 impl std::fmt::Debug for StatisticalThreshold {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatisticalThreshold");
@@ -661,6 +784,41 @@ pub struct MetricValue {
     /// The string values of a metric.
     /// </p>
     pub strings: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl MetricValue {
+    /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this
+    /// to specify that numeric value to be compared with the <code>metric</code>.</p>
+    pub fn count(&self) -> std::option::Option<i64> {
+        self.count
+    }
+    /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this
+    /// to specify that set to be compared with the <code>metric</code>.</p>
+    pub fn cidrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.cidrs.as_deref()
+    }
+    /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this
+    /// to specify that set to be compared with the <code>metric</code>.</p>
+    pub fn ports(&self) -> std::option::Option<&[i32]> {
+        self.ports.as_deref()
+    }
+    /// <p>
+    /// The numeral value of a metric.
+    /// </p>
+    pub fn number(&self) -> std::option::Option<f64> {
+        self.number
+    }
+    /// <p>
+    /// The numeral values of a metric.
+    /// </p>
+    pub fn numbers(&self) -> std::option::Option<&[f64]> {
+        self.numbers.as_deref()
+    }
+    /// <p>
+    /// The string values of a metric.
+    /// </p>
+    pub fn strings(&self) -> std::option::Option<&[std::string::String]> {
+        self.strings.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,6 +1081,16 @@ pub struct MetricDimension {
     /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
     pub operator: std::option::Option<crate::model::DimensionValueOperator>,
 }
+impl MetricDimension {
+    /// <p>A unique identifier for the dimension.</p>
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
+        self.dimension_name.as_deref()
+    }
+    /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::DimensionValueOperator> {
+        self.operator.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricDimension");
@@ -1114,6 +1282,16 @@ pub struct ThingGroupProperties {
     /// <p>The thing group attributes in JSON format.</p>
     pub attribute_payload: std::option::Option<crate::model::AttributePayload>,
 }
+impl ThingGroupProperties {
+    /// <p>The thing group description.</p>
+    pub fn thing_group_description(&self) -> std::option::Option<&str> {
+        self.thing_group_description.as_deref()
+    }
+    /// <p>The thing group attributes in JSON format.</p>
+    pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
+        self.attribute_payload.as_ref()
+    }
+}
 impl std::fmt::Debug for ThingGroupProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThingGroupProperties");
@@ -1191,6 +1369,27 @@ pub struct AttributePayload {
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub merge: bool,
+}
+impl AttributePayload {
+    /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
+    /// <p>
+    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
+    /// </p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with
+    /// the attributes stored in the registry, instead of overwriting them.</p>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p>
+    /// <note>
+    /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
+    /// </note>
+    pub fn merge(&self) -> bool {
+        self.merge
+    }
 }
 impl std::fmt::Debug for AttributePayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1288,6 +1487,16 @@ pub struct StreamFile {
     /// <p>The location of the file in S3.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl StreamFile {
+    /// <p>The file ID.</p>
+    pub fn file_id(&self) -> std::option::Option<i32> {
+        self.file_id
+    }
+    /// <p>The location of the file in S3.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for StreamFile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamFile");
@@ -1355,6 +1564,20 @@ pub struct S3Location {
     pub key: std::option::Option<std::string::String>,
     /// <p>The S3 bucket version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The S3 bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The S3 key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The S3 bucket version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1432,6 +1655,16 @@ pub struct MetricToRetain {
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub metric_dimension: std::option::Option<crate::model::MetricDimension>,
 }
+impl MetricToRetain {
+    /// <p>What is measured by the behavior.</p>
+    pub fn metric(&self) -> std::option::Option<&str> {
+        self.metric.as_deref()
+    }
+    /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
+    pub fn metric_dimension(&self) -> std::option::Option<&crate::model::MetricDimension> {
+        self.metric_dimension.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricToRetain {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricToRetain");
@@ -1498,6 +1731,17 @@ pub struct AlertTarget {
     /// <p>The ARN of the role that grants permission to send alerts to the
     /// notification target.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl AlertTarget {
+    /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
+    pub fn alert_target_arn(&self) -> std::option::Option<&str> {
+        self.alert_target_arn.as_deref()
+    }
+    /// <p>The ARN of the role that grants permission to send alerts to the
+    /// notification target.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AlertTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1761,6 +2005,20 @@ pub struct ProvisioningHook {
     /// <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub target_arn: std::option::Option<std::string::String>,
 }
+impl ProvisioningHook {
+    /// <p>The payload that was sent to the target function.</p>
+    /// <p>
+    /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+    pub fn payload_version(&self) -> std::option::Option<&str> {
+        self.payload_version.as_deref()
+    }
+    /// <p>The ARN of the target function.</p>
+    /// <p>
+    /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisioningHook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisioningHook");
@@ -1845,6 +2103,44 @@ pub struct MitigationActionParams {
     pub enable_io_t_logging_params: std::option::Option<crate::model::EnableIoTLoggingParams>,
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
     pub publish_finding_to_sns_params: std::option::Option<crate::model::PublishFindingToSnsParams>,
+}
+impl MitigationActionParams {
+    /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
+    pub fn update_device_certificate_params(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateDeviceCertificateParams> {
+        self.update_device_certificate_params.as_ref()
+    }
+    /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
+    pub fn update_ca_certificate_params(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateCaCertificateParams> {
+        self.update_ca_certificate_params.as_ref()
+    }
+    /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
+    pub fn add_things_to_thing_group_params(
+        &self,
+    ) -> std::option::Option<&crate::model::AddThingsToThingGroupParams> {
+        self.add_things_to_thing_group_params.as_ref()
+    }
+    /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
+    pub fn replace_default_policy_version_params(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplaceDefaultPolicyVersionParams> {
+        self.replace_default_policy_version_params.as_ref()
+    }
+    /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
+    pub fn enable_io_t_logging_params(
+        &self,
+    ) -> std::option::Option<&crate::model::EnableIoTLoggingParams> {
+        self.enable_io_t_logging_params.as_ref()
+    }
+    /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
+    pub fn publish_finding_to_sns_params(
+        &self,
+    ) -> std::option::Option<&crate::model::PublishFindingToSnsParams> {
+        self.publish_finding_to_sns_params.as_ref()
+    }
 }
 impl std::fmt::Debug for MitigationActionParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2019,6 +2315,12 @@ pub struct PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl PublishFindingToSnsParams {
+    /// <p>The ARN of the topic to which you want to publish the findings.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishFindingToSnsParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishFindingToSnsParams");
@@ -2068,6 +2370,16 @@ pub struct EnableIoTLoggingParams {
     pub role_arn_for_logging: std::option::Option<std::string::String>,
     /// <p>Specifies the type of information to be logged.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl EnableIoTLoggingParams {
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
+    pub fn role_arn_for_logging(&self) -> std::option::Option<&str> {
+        self.role_arn_for_logging.as_deref()
+    }
+    /// <p>Specifies the type of information to be logged.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
 }
 impl std::fmt::Debug for EnableIoTLoggingParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2200,6 +2512,12 @@ pub struct ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
     pub template_name: std::option::Option<crate::model::PolicyTemplateName>,
 }
+impl ReplaceDefaultPolicyVersionParams {
+    /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
+    pub fn template_name(&self) -> std::option::Option<&crate::model::PolicyTemplateName> {
+        self.template_name.as_ref()
+    }
+}
 impl std::fmt::Debug for ReplaceDefaultPolicyVersionParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplaceDefaultPolicyVersionParams");
@@ -2304,6 +2622,16 @@ pub struct AddThingsToThingGroupParams {
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub override_dynamic_groups: bool,
 }
+impl AddThingsToThingGroupParams {
+    /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
+    pub fn thing_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.thing_group_names.as_deref()
+    }
+    /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
+    pub fn override_dynamic_groups(&self) -> bool {
+        self.override_dynamic_groups
+    }
+}
 impl std::fmt::Debug for AddThingsToThingGroupParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddThingsToThingGroupParams");
@@ -2373,6 +2701,12 @@ impl AddThingsToThingGroupParams {
 pub struct UpdateCaCertificateParams {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     pub action: std::option::Option<crate::model::CaCertificateUpdateAction>,
+}
+impl UpdateCaCertificateParams {
+    /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::CaCertificateUpdateAction> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCaCertificateParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2475,6 +2809,12 @@ impl AsRef<str> for CaCertificateUpdateAction {
 pub struct UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     pub action: std::option::Option<crate::model::DeviceCertificateUpdateAction>,
+}
+impl UpdateDeviceCertificateParams {
+    /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::DeviceCertificateUpdateAction> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDeviceCertificateParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2585,6 +2925,16 @@ pub struct TimeoutConfig {
     /// and switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
+impl TimeoutConfig {
+    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job.  
+    /// The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The
+    /// in progress timer can't be updated and will apply to all job executions for the job. Whenever a job
+    /// execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail
+    /// and switch to the terminal <code>TIMED_OUT</code> status.</p>
+    pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
+        self.in_progress_timeout_in_minutes
+    }
+}
 impl std::fmt::Debug for TimeoutConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeoutConfig");
@@ -2646,6 +2996,12 @@ impl TimeoutConfig {
 pub struct AbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     pub criteria_list: std::option::Option<std::vec::Vec<crate::model::AbortCriteria>>,
+}
+impl AbortConfig {
+    /// <p>The list of criteria that determine when and how to abort the job.</p>
+    pub fn criteria_list(&self) -> std::option::Option<&[crate::model::AbortCriteria]> {
+        self.criteria_list.as_deref()
+    }
 }
 impl std::fmt::Debug for AbortConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2711,6 +3067,26 @@ pub struct AbortCriteria {
     /// <p>The minimum number of things which must receive job execution notifications before the job
     /// can be aborted.</p>
     pub min_number_of_executed_things: std::option::Option<i32>,
+}
+impl AbortCriteria {
+    /// <p>The type of job execution failures that can initiate a job abort.</p>
+    pub fn failure_type(&self) -> std::option::Option<&crate::model::JobExecutionFailureType> {
+        self.failure_type.as_ref()
+    }
+    /// <p>The type of job action to take to initiate the job abort.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::AbortAction> {
+        self.action.as_ref()
+    }
+    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
+    /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    pub fn threshold_percentage(&self) -> std::option::Option<f64> {
+        self.threshold_percentage
+    }
+    /// <p>The minimum number of things which must receive job execution notifications before the job
+    /// can be aborted.</p>
+    pub fn min_number_of_executed_things(&self) -> std::option::Option<i32> {
+        self.min_number_of_executed_things
+    }
 }
 impl std::fmt::Debug for AbortCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2930,6 +3306,18 @@ pub struct JobExecutionsRolloutConfig {
     /// This parameter allows you to define an exponential rate for a job rollout.</p>
     pub exponential_rate: std::option::Option<crate::model::ExponentialRolloutRate>,
 }
+impl JobExecutionsRolloutConfig {
+    /// <p>The maximum number of things that will be notified of a pending job, per minute.
+    /// This parameter allows you to create a staged rollout.</p>
+    pub fn maximum_per_minute(&self) -> std::option::Option<i32> {
+        self.maximum_per_minute
+    }
+    /// <p>The rate of increase for a job rollout.
+    /// This parameter allows you to define an exponential rate for a job rollout.</p>
+    pub fn exponential_rate(&self) -> std::option::Option<&crate::model::ExponentialRolloutRate> {
+        self.exponential_rate.as_ref()
+    }
+}
 impl std::fmt::Debug for JobExecutionsRolloutConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobExecutionsRolloutConfig");
@@ -3003,6 +3391,24 @@ pub struct ExponentialRolloutRate {
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     pub rate_increase_criteria: std::option::Option<crate::model::RateIncreaseCriteria>,
+}
+impl ExponentialRolloutRate {
+    /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout.
+    /// This parameter allows you to define the initial rate of rollout.</p>
+    pub fn base_rate_per_minute(&self) -> std::option::Option<i32> {
+        self.base_rate_per_minute
+    }
+    /// <p>The exponential factor to increase the rate of rollout for a job.</p>
+    /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    pub fn increment_factor(&self) -> f64 {
+        self.increment_factor
+    }
+    /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
+    pub fn rate_increase_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::RateIncreaseCriteria> {
+        self.rate_increase_criteria.as_ref()
+    }
 }
 impl std::fmt::Debug for ExponentialRolloutRate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3087,6 +3493,16 @@ pub struct RateIncreaseCriteria {
     /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
     pub number_of_succeeded_things: std::option::Option<i32>,
 }
+impl RateIncreaseCriteria {
+    /// <p>The threshold for number of notified things that will initiate the increase in rate of rollout.</p>
+    pub fn number_of_notified_things(&self) -> std::option::Option<i32> {
+        self.number_of_notified_things
+    }
+    /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
+    pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
+        self.number_of_succeeded_things
+    }
+}
 impl std::fmt::Debug for RateIncreaseCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RateIncreaseCriteria");
@@ -3154,6 +3570,18 @@ pub struct PresignedUrlConfig {
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600
     /// seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
     pub expires_in_sec: std::option::Option<i64>,
+}
+impl PresignedUrlConfig {
+    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
+    /// data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600
+    /// seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
+    pub fn expires_in_sec(&self) -> std::option::Option<i64> {
+        self.expires_in_sec
+    }
 }
 impl std::fmt::Debug for PresignedUrlConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3226,6 +3654,25 @@ pub struct ThingGroupIndexingConfiguration {
     /// the GetIndexingConfiguration API to get a list of managed fields.</p>
     /// <p>Contains custom field names and their data type.</p>
     pub custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+}
+impl ThingGroupIndexingConfiguration {
+    /// <p>Thing group indexing mode.</p>
+    pub fn thing_group_indexing_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingGroupIndexingMode> {
+        self.thing_group_indexing_mode.as_ref()
+    }
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
+    /// service.</p>
+    pub fn managed_fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.managed_fields.as_deref()
+    }
+    /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use
+    /// the GetIndexingConfiguration API to get a list of managed fields.</p>
+    /// <p>Contains custom field names and their data type.</p>
+    pub fn custom_fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.custom_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for ThingGroupIndexingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3333,6 +3780,16 @@ pub struct Field {
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the field.</p>
     pub r#type: std::option::Option<crate::model::FieldType>,
+}
+impl Field {
+    /// <p>The name of the field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the field.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FieldType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Field {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3538,6 +3995,48 @@ pub struct ThingIndexingConfiguration {
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>Contains custom field names and their data type.</p>
     pub custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+}
+impl ThingIndexingConfiguration {
+    /// <p>Thing indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>REGISTRY – Your thing index contains registry data only.</p>
+    /// </li>
+    /// <li>
+    /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p>
+    /// </li>
+    /// <li>
+    /// <p>OFF - Thing indexing is disabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn thing_indexing_mode(&self) -> std::option::Option<&crate::model::ThingIndexingMode> {
+        self.thing_indexing_mode.as_ref()
+    }
+    /// <p>Thing connectivity indexing mode. Valid values are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>STATUS – Your thing index contains connectivity status. To enable thing
+    /// connectivity indexing, <i>thingIndexMode</i> must not be set to
+    /// OFF.</p>
+    /// </li>
+    /// <li>
+    /// <p>OFF - Thing connectivity status indexing is disabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn thing_connectivity_indexing_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingConnectivityIndexingMode> {
+        self.thing_connectivity_indexing_mode.as_ref()
+    }
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
+    /// service.</p>
+    pub fn managed_fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.managed_fields.as_deref()
+    }
+    /// <p>Contains custom field names and their data type.</p>
+    pub fn custom_fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.custom_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for ThingIndexingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4000,6 +4499,16 @@ pub struct AggregationType {
     /// <p>A list of the values of aggregation types.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AggregationType {
+    /// <p>The name of the aggregation type.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::AggregationTypeName> {
+        self.name.as_ref()
+    }
+    /// <p>A list of the values of aggregation types.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for AggregationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregationType");
@@ -4131,6 +4640,12 @@ impl AsRef<str> for AggregationTypeName {
 pub struct Configuration {
     /// <p>True to enable the configuration.</p>
     pub enabled: bool,
+}
+impl Configuration {
+    /// <p>True to enable the configuration.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4339,6 +4854,16 @@ pub struct AuthorizerConfig {
     pub default_authorizer_name: std::option::Option<std::string::String>,
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
     pub allow_authorizer_override: std::option::Option<bool>,
+}
+impl AuthorizerConfig {
+    /// <p>The name of the authorization service for a domain configuration.</p>
+    pub fn default_authorizer_name(&self) -> std::option::Option<&str> {
+        self.default_authorizer_name.as_deref()
+    }
+    /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
+    pub fn allow_authorizer_override(&self) -> std::option::Option<bool> {
+        self.allow_authorizer_override
+    }
 }
 impl std::fmt::Debug for AuthorizerConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4598,6 +5123,16 @@ pub struct RegistrationConfig {
     /// <p>The ARN of the role.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl RegistrationConfig {
+    /// <p>The template body.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The ARN of the role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RegistrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegistrationConfig");
@@ -4772,6 +5307,12 @@ pub struct BillingGroupProperties {
     /// <p>The description of the billing group.</p>
     pub billing_group_description: std::option::Option<std::string::String>,
 }
+impl BillingGroupProperties {
+    /// <p>The description of the billing group.</p>
+    pub fn billing_group_description(&self) -> std::option::Option<&str> {
+        self.billing_group_description.as_deref()
+    }
+}
 impl std::fmt::Debug for BillingGroupProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BillingGroupProperties");
@@ -4891,6 +5432,42 @@ pub struct ResourceIdentifier {
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
     pub role_alias_arn: std::option::Option<std::string::String>,
+}
+impl ResourceIdentifier {
+    /// <p>The ID of the certificate attached to the resource.</p>
+    pub fn device_certificate_id(&self) -> std::option::Option<&str> {
+        self.device_certificate_id.as_deref()
+    }
+    /// <p>The ID of the CA certificate used to authorize the certificate.</p>
+    pub fn ca_certificate_id(&self) -> std::option::Option<&str> {
+        self.ca_certificate_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Cognito identity pool.</p>
+    pub fn cognito_identity_pool_id(&self) -> std::option::Option<&str> {
+        self.cognito_identity_pool_id.as_deref()
+    }
+    /// <p>The client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The version of the policy associated with the resource.</p>
+    pub fn policy_version_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::PolicyVersionIdentifier> {
+        self.policy_version_identifier.as_ref()
+    }
+    /// <p>The account with which the resource is associated.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p>The ARN of the IAM role that has overly permissive actions.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The ARN of the role alias that has overly permissive actions.</p>
+    pub fn role_alias_arn(&self) -> std::option::Option<&str> {
+        self.role_alias_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5052,6 +5629,16 @@ pub struct PolicyVersionIdentifier {
     /// <p>The ID of the version of the policy associated with the resource.</p>
     pub policy_version_id: std::option::Option<std::string::String>,
 }
+impl PolicyVersionIdentifier {
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The ID of the version of the policy associated with the resource.</p>
+    pub fn policy_version_id(&self) -> std::option::Option<&str> {
+        self.policy_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyVersionIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyVersionIdentifier");
@@ -5116,6 +5703,12 @@ pub struct AuditCheckConfiguration {
     /// <p>True if this audit check is enabled for this account.</p>
     pub enabled: bool,
 }
+impl AuditCheckConfiguration {
+    /// <p>True if this audit check is enabled for this account.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for AuditCheckConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuditCheckConfiguration");
@@ -5167,6 +5760,20 @@ pub struct AuditNotificationTarget {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>True if notifications to the target are enabled.</p>
     pub enabled: bool,
+}
+impl AuditNotificationTarget {
+    /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>True if notifications to the target are enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for AuditNotificationTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5293,6 +5900,12 @@ pub struct TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
     pub server_name: std::option::Option<std::string::String>,
 }
+impl TlsContext {
+    /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
+    pub fn server_name(&self) -> std::option::Option<&str> {
+        self.server_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TlsContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TlsContext");
@@ -5344,6 +5957,20 @@ pub struct MqttContext {
     pub password: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
     pub client_id: std::option::Option<std::string::String>,
+}
+impl MqttContext {
+    /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
+    pub fn password(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.password.as_ref()
+    }
+    /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MqttContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5421,6 +6048,19 @@ pub struct HttpContext {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The query string keys and values in an HTTP authorization request.</p>
     pub query_string: std::option::Option<std::string::String>,
+}
+impl HttpContext {
+    /// <p>The header keys and values in an HTTP authorization request.</p>
+    pub fn headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.headers.as_ref()
+    }
+    /// <p>The query string keys and values in an HTTP authorization request.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5509,6 +6149,30 @@ pub struct AuthResult {
     pub auth_decision: std::option::Option<crate::model::AuthDecision>,
     /// <p>Contains any missing context values found while evaluating policy.</p>
     pub missing_context_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AuthResult {
+    /// <p>Authorization information.</p>
+    pub fn auth_info(&self) -> std::option::Option<&crate::model::AuthInfo> {
+        self.auth_info.as_ref()
+    }
+    /// <p>The policies and statements that allowed the specified action.</p>
+    pub fn allowed(&self) -> std::option::Option<&crate::model::Allowed> {
+        self.allowed.as_ref()
+    }
+    /// <p>The policies and statements that denied the specified action.</p>
+    pub fn denied(&self) -> std::option::Option<&crate::model::Denied> {
+        self.denied.as_ref()
+    }
+    /// <p>The final authorization decision of this scenario. Multiple statements are taken into
+    /// account when determining the authorization decision. An explicit deny statement can
+    /// override multiple allow statements.</p>
+    pub fn auth_decision(&self) -> std::option::Option<&crate::model::AuthDecision> {
+        self.auth_decision.as_ref()
+    }
+    /// <p>Contains any missing context values found while evaluating policy.</p>
+    pub fn missing_context_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.missing_context_values.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5689,6 +6353,18 @@ pub struct Denied {
     /// <p>Information that explicitly denies the authorization. </p>
     pub explicit_deny: std::option::Option<crate::model::ExplicitDeny>,
 }
+impl Denied {
+    /// <p>Information that implicitly denies the authorization. When a policy doesn't
+    /// explicitly deny or allow an action on a resource it is considered an implicit
+    /// deny.</p>
+    pub fn implicit_deny(&self) -> std::option::Option<&crate::model::ImplicitDeny> {
+        self.implicit_deny.as_ref()
+    }
+    /// <p>Information that explicitly denies the authorization. </p>
+    pub fn explicit_deny(&self) -> std::option::Option<&crate::model::ExplicitDeny> {
+        self.explicit_deny.as_ref()
+    }
+}
 impl std::fmt::Debug for Denied {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Denied");
@@ -5760,6 +6436,12 @@ pub struct ExplicitDeny {
     /// <p>The policies that denied the authorization.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
 }
+impl ExplicitDeny {
+    /// <p>The policies that denied the authorization.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
+        self.policies.as_deref()
+    }
+}
 impl std::fmt::Debug for ExplicitDeny {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExplicitDeny");
@@ -5818,6 +6500,16 @@ pub struct Policy {
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy ARN.</p>
     pub policy_arn: std::option::Option<std::string::String>,
+}
+impl Policy {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy ARN.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Policy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5882,6 +6574,13 @@ pub struct ImplicitDeny {
     /// action on the specified resource. </p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
 }
+impl ImplicitDeny {
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified
+    /// action on the specified resource. </p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
+        self.policies.as_deref()
+    }
+}
 impl std::fmt::Debug for ImplicitDeny {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImplicitDeny");
@@ -5940,6 +6639,12 @@ impl ImplicitDeny {
 pub struct Allowed {
     /// <p>A list of policies that allowed the authentication.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
+}
+impl Allowed {
+    /// <p>A list of policies that allowed the authentication.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
+        self.policies.as_deref()
+    }
 }
 impl std::fmt::Debug for Allowed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6000,6 +6705,17 @@ pub struct AuthInfo {
     /// <p>The resources for which the principal is being authorized to perform the specified
     /// action.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AuthInfo {
+    /// <p>The type of action for which the principal is being authorized.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>The resources for which the principal is being authorized to perform the specified
+    /// action.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6141,6 +6857,16 @@ pub struct Tag {
     /// <p>The tag's value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag's key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -6209,6 +6935,20 @@ pub struct ViolationEventOccurrenceRange {
     /// The end date and time of a time period in which violation events occurred.
     /// </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ViolationEventOccurrenceRange {
+    /// <p>
+    /// The start date and time of a time period in which violation events occurred.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>
+    /// The end date and time of a time period in which violation events occurred.
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ViolationEventOccurrenceRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6296,6 +7036,26 @@ pub struct DetectMitigationActionsTaskTarget {
     /// The name of the behavior.
     /// </p>
     pub behavior_name: std::option::Option<std::string::String>,
+}
+impl DetectMitigationActionsTaskTarget {
+    /// <p>
+    /// The unique identifiers of the violations.
+    /// </p>
+    pub fn violation_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.violation_ids.as_deref()
+    }
+    /// <p>
+    /// The name of the security profile.
+    /// </p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>
+    /// The name of the behavior.
+    /// </p>
+    pub fn behavior_name(&self) -> std::option::Option<&str> {
+        self.behavior_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectMitigationActionsTaskTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6404,6 +7164,24 @@ pub struct AuditMitigationActionsTaskTarget {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
+impl AuditMitigationActionsTaskTarget {
+    /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
+    pub fn audit_task_id(&self) -> std::option::Option<&str> {
+        self.audit_task_id.as_deref()
+    }
+    /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
+    /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
+    pub fn audit_check_to_reason_code_filter(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.audit_check_to_reason_code_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for AuditMitigationActionsTaskTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuditMitigationActionsTaskTarget");
@@ -6511,6 +7289,16 @@ pub struct LogTarget {
     pub target_type: std::option::Option<crate::model::LogTargetType>,
     /// <p>The target name.</p>
     pub target_name: std::option::Option<std::string::String>,
+}
+impl LogTarget {
+    /// <p>The target type.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::LogTargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The target name.</p>
+    pub fn target_name(&self) -> std::option::Option<&str> {
+        self.target_name.as_deref()
+    }
 }
 impl std::fmt::Debug for LogTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6633,6 +7421,16 @@ pub struct LoggingOptionsPayload {
     /// <p>The log level.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
+impl LoggingOptionsPayload {
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The log level.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+}
 impl std::fmt::Debug for LoggingOptionsPayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoggingOptionsPayload");
@@ -6702,6 +7500,31 @@ pub struct ThingGroupDocument {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Parent group names.</p>
     pub parent_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ThingGroupDocument {
+    /// <p>The thing group name.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The thing group ID.</p>
+    pub fn thing_group_id(&self) -> std::option::Option<&str> {
+        self.thing_group_id.as_deref()
+    }
+    /// <p>The thing group description.</p>
+    pub fn thing_group_description(&self) -> std::option::Option<&str> {
+        self.thing_group_description.as_deref()
+    }
+    /// <p>The thing group attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>Parent group names.</p>
+    pub fn parent_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.parent_group_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ThingGroupDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6850,6 +7673,39 @@ pub struct ThingDocument {
     pub shadow: std::option::Option<std::string::String>,
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub connectivity: std::option::Option<crate::model::ThingConnectivity>,
+}
+impl ThingDocument {
+    /// <p>The thing name.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The thing ID.</p>
+    pub fn thing_id(&self) -> std::option::Option<&str> {
+        self.thing_id.as_deref()
+    }
+    /// <p>The thing type name.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>Thing group names.</p>
+    pub fn thing_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.thing_group_names.as_deref()
+    }
+    /// <p>The attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The shadow.</p>
+    pub fn shadow(&self) -> std::option::Option<&str> {
+        self.shadow.as_deref()
+    }
+    /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
+    pub fn connectivity(&self) -> std::option::Option<&crate::model::ThingConnectivity> {
+        self.connectivity.as_ref()
+    }
 }
 impl std::fmt::Debug for ThingDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7015,6 +7871,22 @@ pub struct ThingConnectivity {
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
     pub disconnect_reason: std::option::Option<std::string::String>,
 }
+impl ThingConnectivity {
+    /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not
+    /// connected.</p>
+    pub fn connected(&self) -> bool {
+        self.connected
+    }
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the
+    /// thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    pub fn timestamp(&self) -> std::option::Option<i64> {
+        self.timestamp
+    }
+    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    pub fn disconnect_reason(&self) -> std::option::Option<&str> {
+        self.disconnect_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for ThingConnectivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThingConnectivity");
@@ -7106,6 +7978,33 @@ pub struct TopicRulePayload {
     pub aws_iot_sql_version: std::option::Option<std::string::String>,
     /// <p>The action to take when an error occurs.</p>
     pub error_action: std::option::Option<crate::model::Action>,
+}
+impl TopicRulePayload {
+    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL
+    /// Reference</a> in the <i>IoT Developer Guide</i>.</p>
+    pub fn sql(&self) -> std::option::Option<&str> {
+        self.sql.as_deref()
+    }
+    /// <p>The description of the rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The actions associated with the rule.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn rule_disabled(&self) -> std::option::Option<bool> {
+        self.rule_disabled
+    }
+    /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+    pub fn aws_iot_sql_version(&self) -> std::option::Option<&str> {
+        self.aws_iot_sql_version.as_deref()
+    }
+    /// <p>The action to take when an error occurs.</p>
+    pub fn error_action(&self) -> std::option::Option<&crate::model::Action> {
+        self.error_action.as_ref()
+    }
 }
 impl std::fmt::Debug for TopicRulePayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7289,6 +8188,107 @@ pub struct Action {
     pub kafka: std::option::Option<crate::model::KafkaAction>,
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
     pub open_search: std::option::Option<crate::model::OpenSearchAction>,
+}
+impl Action {
+    /// <p>Write to a DynamoDB table.</p>
+    pub fn dynamo_db(&self) -> std::option::Option<&crate::model::DynamoDbAction> {
+        self.dynamo_db.as_ref()
+    }
+    /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows
+    /// you to write each attribute in an MQTT message payload into a separate DynamoDB
+    /// column.</p>
+    pub fn dynamo_d_bv2(&self) -> std::option::Option<&crate::model::DynamoDBv2Action> {
+        self.dynamo_d_bv2.as_ref()
+    }
+    /// <p>Invoke a Lambda function.</p>
+    pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaAction> {
+        self.lambda.as_ref()
+    }
+    /// <p>Publish to an Amazon SNS topic.</p>
+    pub fn sns(&self) -> std::option::Option<&crate::model::SnsAction> {
+        self.sns.as_ref()
+    }
+    /// <p>Publish to an Amazon SQS queue.</p>
+    pub fn sqs(&self) -> std::option::Option<&crate::model::SqsAction> {
+        self.sqs.as_ref()
+    }
+    /// <p>Write data to an Amazon Kinesis stream.</p>
+    pub fn kinesis(&self) -> std::option::Option<&crate::model::KinesisAction> {
+        self.kinesis.as_ref()
+    }
+    /// <p>Publish to another MQTT topic.</p>
+    pub fn republish(&self) -> std::option::Option<&crate::model::RepublishAction> {
+        self.republish.as_ref()
+    }
+    /// <p>Write to an Amazon S3 bucket.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Action> {
+        self.s3.as_ref()
+    }
+    /// <p>Write to an Amazon Kinesis Firehose stream.</p>
+    pub fn firehose(&self) -> std::option::Option<&crate::model::FirehoseAction> {
+        self.firehose.as_ref()
+    }
+    /// <p>Capture a CloudWatch metric.</p>
+    pub fn cloudwatch_metric(&self) -> std::option::Option<&crate::model::CloudwatchMetricAction> {
+        self.cloudwatch_metric.as_ref()
+    }
+    /// <p>Change the state of a CloudWatch alarm.</p>
+    pub fn cloudwatch_alarm(&self) -> std::option::Option<&crate::model::CloudwatchAlarmAction> {
+        self.cloudwatch_alarm.as_ref()
+    }
+    /// <p>Send data to CloudWatch Logs.</p>
+    pub fn cloudwatch_logs(&self) -> std::option::Option<&crate::model::CloudwatchLogsAction> {
+        self.cloudwatch_logs.as_ref()
+    }
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p>   
+    /// <note>
+    /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions.
+    /// To create a new rule action or to update an existing rule action, use the
+    /// <code>OpenSearch</code> rule action instead. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+    /// </note>
+    pub fn elasticsearch(&self) -> std::option::Option<&crate::model::ElasticsearchAction> {
+        self.elasticsearch.as_ref()
+    }
+    /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+    pub fn salesforce(&self) -> std::option::Option<&crate::model::SalesforceAction> {
+        self.salesforce.as_ref()
+    }
+    /// <p>Sends message data to an IoT Analytics channel.</p>
+    pub fn iot_analytics(&self) -> std::option::Option<&crate::model::IotAnalyticsAction> {
+        self.iot_analytics.as_ref()
+    }
+    /// <p>Sends an input to an IoT Events detector.</p>
+    pub fn iot_events(&self) -> std::option::Option<&crate::model::IotEventsAction> {
+        self.iot_events.as_ref()
+    }
+    /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset
+    /// properties.</p>
+    pub fn iot_site_wise(&self) -> std::option::Option<&crate::model::IotSiteWiseAction> {
+        self.iot_site_wise.as_ref()
+    }
+    /// <p>Starts execution of a Step Functions state machine.</p>
+    pub fn step_functions(&self) -> std::option::Option<&crate::model::StepFunctionsAction> {
+        self.step_functions.as_ref()
+    }
+    /// <p>The Timestream rule action writes attributes (measures) from an MQTT message
+    /// into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+    /// topic rule action documentation.</p>
+    pub fn timestream(&self) -> std::option::Option<&crate::model::TimestreamAction> {
+        self.timestream.as_ref()
+    }
+    /// <p>Send data to an HTTPS endpoint.</p>
+    pub fn http(&self) -> std::option::Option<&crate::model::HttpAction> {
+        self.http.as_ref()
+    }
+    /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
+    pub fn kafka(&self) -> std::option::Option<&crate::model::KafkaAction> {
+        self.kafka.as_ref()
+    }
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p>
+    pub fn open_search(&self) -> std::option::Option<&crate::model::OpenSearchAction> {
+        self.open_search.as_ref()
+    }
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7693,6 +8693,28 @@ pub struct OpenSearchAction {
     /// <p>The unique identifier for the document you are storing.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl OpenSearchAction {
+    /// <p>The IAM role ARN that has access to OpenSearch.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The endpoint of your OpenSearch domain.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The OpenSearch index where you want to store your data.</p>
+    pub fn index(&self) -> std::option::Option<&str> {
+        self.index.as_deref()
+    }
+    /// <p>The type of document you are storing.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The unique identifier for the document you are storing.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for OpenSearchAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenSearchAction");
@@ -7801,6 +8823,31 @@ pub struct KafkaAction {
     /// <p>Properties of the Apache Kafka producer client.</p>
     pub client_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl KafkaAction {
+    /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The Kafka message key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The Kafka message partition.</p>
+    pub fn partition(&self) -> std::option::Option<&str> {
+        self.partition.as_deref()
+    }
+    /// <p>Properties of the Apache Kafka producer client.</p>
+    pub fn client_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for KafkaAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7935,6 +8982,31 @@ pub struct HttpAction {
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
     pub auth: std::option::Option<crate::model::HttpAuthorization>,
 }
+impl HttpAction {
+    /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a
+    /// <code>confirmationUrl</code>. If this is a new destination, a new
+    /// <code>TopicRuleDestination</code> is created if possible.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL
+    /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses
+    /// the endpoint URL as the confirmation URL. If you use substitution templates in the
+    /// confirmationUrl, you must create and enable topic rule destinations that match each
+    /// possible value of the substitution template before traffic is allowed to your endpoint
+    /// URL.</p>
+    pub fn confirmation_url(&self) -> std::option::Option<&str> {
+        self.confirmation_url.as_deref()
+    }
+    /// <p>The HTTP headers to send with the message data.</p>
+    pub fn headers(&self) -> std::option::Option<&[crate::model::HttpActionHeader]> {
+        self.headers.as_deref()
+    }
+    /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
+    pub fn auth(&self) -> std::option::Option<&crate::model::HttpAuthorization> {
+        self.auth.as_ref()
+    }
+}
 impl std::fmt::Debug for HttpAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpAction");
@@ -8052,6 +9124,13 @@ pub struct HttpAuthorization {
     /// Version 4 Signing Process</a>.</p>
     pub sigv4: std::option::Option<crate::model::SigV4Authorization>,
 }
+impl HttpAuthorization {
+    /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 Signing Process</a>.</p>
+    pub fn sigv4(&self) -> std::option::Option<&crate::model::SigV4Authorization> {
+        self.sigv4.as_ref()
+    }
+}
 impl std::fmt::Debug for HttpAuthorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpAuthorization");
@@ -8106,6 +9185,20 @@ pub struct SigV4Authorization {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing role.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl SigV4Authorization {
+    /// <p>The signing region.</p>
+    pub fn signing_region(&self) -> std::option::Option<&str> {
+        self.signing_region.as_deref()
+    }
+    /// <p>The service name to use while signing with Sig V4.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The ARN of the signing role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SigV4Authorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8186,6 +9279,16 @@ pub struct HttpActionHeader {
     /// <p>The HTTP header value. Substitution templates are supported.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl HttpActionHeader {
+    /// <p>The HTTP header key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The HTTP header value. Substitution templates are supported.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for HttpActionHeader {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpActionHeader");
@@ -8263,6 +9366,35 @@ pub struct TimestreamAction {
     /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it
     /// processed the rule. </p>
     pub timestamp: std::option::Option<crate::model::TimestreamTimestamp>,
+}
+impl TimestreamAction {
+    /// <p>The ARN of the role that grants permission to write to the
+    /// Amazon Timestream database table.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of an Amazon Timestream database.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the database table into which to write the measure records.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Metadata attributes of the time series that are written in each measure record.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::TimestreamDimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>Specifies an application-defined value to replace the default value assigned to the
+    /// Timestream record's timestamp in the <code>time</code> column.</p>
+    /// <p>You can use this property to specify the value and the precision of the Timestream
+    /// record's timestamp. You can specify a value from the message payload or a value computed by
+    /// a substitution template.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it
+    /// processed the rule. </p>
+    pub fn timestamp(&self) -> std::option::Option<&crate::model::TimestreamTimestamp> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for TimestreamAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8401,6 +9533,20 @@ pub struct TimestreamTimestamp {
     /// <code>MILLISECONDS</code>.</p>
     pub unit: std::option::Option<std::string::String>,
 }
+impl TimestreamTimestamp {
+    /// <p>An expression that returns a long epoch time value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The precision of the timestamp value that results from the expression
+    /// described in <code>value</code>.</p>
+    /// <p>Valid values:  <code>SECONDS</code> | <code>MILLISECONDS</code> |
+    /// <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is
+    /// <code>MILLISECONDS</code>.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+}
 impl std::fmt::Debug for TimestreamTimestamp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimestreamTimestamp");
@@ -8478,6 +9624,23 @@ pub struct TimestreamDimension {
     pub name: std::option::Option<std::string::String>,
     /// <p>The value to write in this column of the database record.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl TimestreamDimension {
+    /// <p>The metadata dimension name. This is the name of the column in the
+    /// Amazon Timestream database table record.</p>
+    /// <p>Dimensions cannot be named: <code>measure_name</code>,
+    /// <code>measure_value</code>, or <code>time</code>.
+    /// These  names are reserved. Dimension names cannot start
+    /// with <code>ts_</code> or <code>measure_value</code> and
+    /// they cannot contain the colon (<code>:</code>)
+    /// character.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value to write in this column of the database record.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for TimestreamDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8560,6 +9723,23 @@ pub struct StepFunctionsAction {
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine
     /// ("Action":"states:StartExecution").</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl StepFunctionsAction {
+    /// <p>(Optional) A name will be given to the state machine execution consisting of this
+    /// prefix followed by a UUID. Step Functions automatically creates a unique name for each state
+    /// machine execution if one is not provided.</p>
+    pub fn execution_name_prefix(&self) -> std::option::Option<&str> {
+        self.execution_name_prefix.as_deref()
+    }
+    /// <p>The name of the Step Functions state machine whose execution will be started.</p>
+    pub fn state_machine_name(&self) -> std::option::Option<&str> {
+        self.state_machine_name.as_deref()
+    }
+    /// <p>The ARN of the role that grants IoT permission to start execution of a state machine
+    /// ("Action":"states:StartExecution").</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StepFunctionsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8651,6 +9831,19 @@ pub struct IotSiteWiseAction {
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
     /// policy can restrict access to specific asset hierarchy paths.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl IotSiteWiseAction {
+    /// <p>A list of asset property value entries.</p>
+    pub fn put_asset_property_value_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::PutAssetPropertyValueEntry]> {
+        self.put_asset_property_value_entries.as_deref()
+    }
+    /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
+    /// policy can restrict access to specific asset hierarchy paths.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for IotSiteWiseAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8747,6 +9940,37 @@ pub struct PutAssetPropertyValueEntry {
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV)
     /// information.</p>
     pub property_values: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+}
+impl PutAssetPropertyValueEntry {
+    /// <p>Optional. A unique identifier for this entry that you can define to better track which
+    /// message caused an error in case of failure. Accepts substitution templates. Defaults to a new
+    /// UUID.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
+    /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
+    /// templates.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or
+    /// both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
+    /// templates.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The name of the property alias associated with your asset property. You must specify
+    /// either a <code>propertyAlias</code> or both an <code>aliasId</code> and a
+    /// <code>propertyId</code>. Accepts substitution templates.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV)
+    /// information.</p>
+    pub fn property_values(&self) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
+        self.property_values.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAssetPropertyValueEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8887,6 +10111,21 @@ pub struct AssetPropertyValue {
     /// templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
     pub quality: std::option::Option<std::string::String>,
 }
+impl AssetPropertyValue {
+    /// <p>The value of the asset property.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::AssetPropertyVariant> {
+        self.value.as_ref()
+    }
+    /// <p>The asset property value timestamp.</p>
+    pub fn timestamp(&self) -> std::option::Option<&crate::model::AssetPropertyTimestamp> {
+        self.timestamp.as_ref()
+    }
+    /// <p>Optional. A string that describes the quality of the value. Accepts substitution
+    /// templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
+    pub fn quality(&self) -> std::option::Option<&str> {
+        self.quality.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetPropertyValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetPropertyValue");
@@ -8973,6 +10212,18 @@ pub struct AssetPropertyTimestamp {
     /// templates.</p>
     pub offset_in_nanos: std::option::Option<std::string::String>,
 }
+impl AssetPropertyTimestamp {
+    /// <p>A string that contains the time in seconds since epoch. Accepts substitution
+    /// templates.</p>
+    pub fn time_in_seconds(&self) -> std::option::Option<&str> {
+        self.time_in_seconds.as_deref()
+    }
+    /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution
+    /// templates.</p>
+    pub fn offset_in_nanos(&self) -> std::option::Option<&str> {
+        self.offset_in_nanos.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetPropertyTimestamp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetPropertyTimestamp");
@@ -9052,6 +10303,15 @@ pub enum AssetPropertyVariant {
     IntegerValue(std::string::String),
     /// <p>Optional. The string value of the value entry. Accepts substitution templates.</p>
     StringValue(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AssetPropertyVariant {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::model::AssetPropertyVariant::BooleanValue), extracting the inner [`String`](std::string::String).
@@ -9106,6 +10366,10 @@ impl AssetPropertyVariant {
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Sends an input to an IoT Events detector.</p>
@@ -9134,6 +10398,38 @@ pub struct IotEventsAction {
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
     /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl IotEventsAction {
+    /// <p>The name of the IoT Events input.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
+    /// <code>messageId</code>--a new UUID value will be assigned.</p>
+    /// <p>Assign a value to this property to ensure that only one input (message) with a given
+    /// <code>messageId</code> will be processed by an IoT Events detector.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>Whether to process the event actions as a batch. The default value is
+    /// <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
+    /// <code>messageId</code>. </p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
+    /// to an Array, each Array element is treated as a separate message when it's sent to IoT
+    /// Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+    /// <code>BatchPutMessage</code>
+    /// </a>.  The resulting array can't have more
+    /// than 10 messages.</p>
+    pub fn batch_mode(&self) -> std::option::Option<bool> {
+        self.batch_mode
+    }
+    /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
+    /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for IotEventsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9264,6 +10560,32 @@ pub struct IotAnalyticsAction {
     /// message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl IotAnalyticsAction {
+    /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be
+    /// sent.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Whether to process the action as a batch. The default value is
+    /// <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
+    /// to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+    /// <code>BatchPutMessage</code>
+    /// </a> to the IoT Analytics channel. The resulting array can't have more
+    /// than 100 messages.</p>
+    pub fn batch_mode(&self) -> std::option::Option<bool> {
+        self.batch_mode
+    }
+    /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send
+    /// message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for IotAnalyticsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IotAnalyticsAction");
@@ -9373,6 +10695,19 @@ pub struct SalesforceAction {
     /// the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl SalesforceAction {
+    /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The
+    /// token is available from the Salesforce IoT Cloud platform after creation of the Input
+    /// Stream.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from
+    /// the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for SalesforceAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SalesforceAction");
@@ -9453,6 +10788,28 @@ pub struct ElasticsearchAction {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the document you are storing.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl ElasticsearchAction {
+    /// <p>The IAM role ARN that has access to OpenSearch.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The endpoint of your OpenSearch domain.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The index where you want to store your data.</p>
+    pub fn index(&self) -> std::option::Option<&str> {
+        self.index.as_deref()
+    }
+    /// <p>The type of document you are storing.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The unique identifier for the document you are storing.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for ElasticsearchAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9556,6 +10913,16 @@ pub struct CloudwatchLogsAction {
     /// <p>The CloudWatch log group to which the action sends data.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl CloudwatchLogsAction {
+    /// <p>The IAM role that allows access to the CloudWatch log.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The CloudWatch log group to which the action sends data.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudwatchLogsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudwatchLogsAction");
@@ -9626,6 +10993,25 @@ pub struct CloudwatchAlarmAction {
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM,
     /// INSUFFICIENT_DATA.</p>
     pub state_value: std::option::Option<std::string::String>,
+}
+impl CloudwatchAlarmAction {
+    /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The CloudWatch alarm name.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
+    /// <p>The reason for the alarm change.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The value of the alarm state. Acceptable values are: OK, ALARM,
+    /// INSUFFICIENT_DATA.</p>
+    pub fn state_value(&self) -> std::option::Option<&str> {
+        self.state_value.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudwatchAlarmAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9726,6 +11112,33 @@ pub struct CloudwatchMetricAction {
     pub metric_unit: std::option::Option<std::string::String>,
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
     pub metric_timestamp: std::option::Option<std::string::String>,
+}
+impl CloudwatchMetricAction {
+    /// <p>The IAM role that allows access to the CloudWatch metric.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The CloudWatch metric namespace name.</p>
+    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+        self.metric_namespace.as_deref()
+    }
+    /// <p>The CloudWatch metric name.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The CloudWatch metric value.</p>
+    pub fn metric_value(&self) -> std::option::Option<&str> {
+        self.metric_value.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+    /// unit</a> supported by CloudWatch.</p>
+    pub fn metric_unit(&self) -> std::option::Option<&str> {
+        self.metric_unit.as_deref()
+    }
+    /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
+    pub fn metric_timestamp(&self) -> std::option::Option<&str> {
+        self.metric_timestamp.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudwatchMetricAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9864,6 +11277,34 @@ pub struct FirehoseAction {
     /// than 500 records.</p>
     pub batch_mode: std::option::Option<bool>,
 }
+impl FirehoseAction {
+    /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The delivery stream name.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>A character separator that will be used to separate records written to the Firehose
+    /// stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ','
+    /// (comma).</p>
+    pub fn separator(&self) -> std::option::Option<&str> {
+        self.separator.as_deref()
+    }
+    /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+    /// <code>PutRecordBatch</code>
+    /// </a>.  The default value is
+    /// <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
+    /// evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+    /// <code>PutRecordBatch</code>
+    /// </a> request. The resulting array can't have more
+    /// than 500 records.</p>
+    pub fn batch_mode(&self) -> std::option::Option<bool> {
+        self.batch_mode
+    }
+}
 impl std::fmt::Debug for FirehoseAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirehoseAction");
@@ -9980,6 +11421,25 @@ pub struct S3Action {
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object
     /// key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub canned_acl: std::option::Option<crate::model::CannedAccessControlList>,
+}
+impl S3Action {
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon S3 bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object
+    /// key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
+    pub fn canned_acl(&self) -> std::option::Option<&crate::model::CannedAccessControlList> {
+        self.canned_acl.as_ref()
+    }
 }
 impl std::fmt::Debug for S3Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10166,6 +11626,21 @@ pub struct RepublishAction {
     /// is 0.</p>
     pub qos: std::option::Option<i32>,
 }
+impl RepublishAction {
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the MQTT topic.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value
+    /// is 0.</p>
+    pub fn qos(&self) -> std::option::Option<i32> {
+        self.qos
+    }
+}
 impl std::fmt::Debug for RepublishAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RepublishAction");
@@ -10245,6 +11720,20 @@ pub struct KinesisAction {
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The partition key.</p>
     pub partition_key: std::option::Option<std::string::String>,
+}
+impl KinesisAction {
+    /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the Amazon Kinesis stream.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The partition key.</p>
+    pub fn partition_key(&self) -> std::option::Option<&str> {
+        self.partition_key.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10327,6 +11816,20 @@ pub struct SqsAction {
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub use_base64: std::option::Option<bool>,
 }
+impl SqsAction {
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The URL of the Amazon SQS queue.</p>
+    pub fn queue_url(&self) -> std::option::Option<&str> {
+        self.queue_url.as_deref()
+    }
+    /// <p>Specifies whether to use Base64 encoding.</p>
+    pub fn use_base64(&self) -> std::option::Option<bool> {
+        self.use_base64
+    }
+}
 impl std::fmt::Debug for SqsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqsAction");
@@ -10407,6 +11910,23 @@ pub struct SnsAction {
     /// if the payload should be parsed and relevant platform-specific bits of the payload should
     /// be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub message_format: std::option::Option<crate::model::MessageFormat>,
+}
+impl SnsAction {
+    /// <p>The ARN of the SNS topic.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON"
+    /// and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine
+    /// if the payload should be parsed and relevant platform-specific bits of the payload should
+    /// be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
+    pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormat> {
+        self.message_format.as_ref()
+    }
 }
 impl std::fmt::Debug for SnsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10546,6 +12066,12 @@ pub struct LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
 }
+impl LambdaAction {
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaAction");
@@ -10604,6 +12130,23 @@ pub struct DynamoDBv2Action {
     /// <p>Each attribute in the message payload will be written to a separate column in the
     /// DynamoDB database.</p>
     pub put_item: std::option::Option<crate::model::PutItemInput>,
+}
+impl DynamoDBv2Action {
+    /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Specifies the DynamoDB table to which the message data will be written. For
+    /// example:</p>
+    /// <p>
+    /// <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName":
+    /// "my-table" } } }</code>
+    /// </p>
+    /// <p>Each attribute in the message payload will be written to a separate column in the
+    /// DynamoDB database.</p>
+    pub fn put_item(&self) -> std::option::Option<&crate::model::PutItemInput> {
+        self.put_item.as_ref()
+    }
 }
 impl std::fmt::Debug for DynamoDBv2Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10683,6 +12226,12 @@ impl DynamoDBv2Action {
 pub struct PutItemInput {
     /// <p>The table where the message data will be written.</p>
     pub table_name: std::option::Option<std::string::String>,
+}
+impl PutItemInput {
+    /// <p>The table where the message data will be written.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PutItemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10766,6 +12315,50 @@ pub struct DynamoDbAction {
     pub range_key_type: std::option::Option<crate::model::DynamoKeyType>,
     /// <p>The action payload. This name can be customized.</p>
     pub payload_field: std::option::Option<std::string::String>,
+}
+impl DynamoDbAction {
+    /// <p>The name of the DynamoDB table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The type of operation to be performed. This follows the substitution template, so it
+    /// can be <code>${operation}</code>, but the substitution must result in one of the following:
+    /// <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The hash key name.</p>
+    pub fn hash_key_field(&self) -> std::option::Option<&str> {
+        self.hash_key_field.as_deref()
+    }
+    /// <p>The hash key value.</p>
+    pub fn hash_key_value(&self) -> std::option::Option<&str> {
+        self.hash_key_value.as_deref()
+    }
+    /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+    pub fn hash_key_type(&self) -> std::option::Option<&crate::model::DynamoKeyType> {
+        self.hash_key_type.as_ref()
+    }
+    /// <p>The range key name.</p>
+    pub fn range_key_field(&self) -> std::option::Option<&str> {
+        self.range_key_field.as_deref()
+    }
+    /// <p>The range key value.</p>
+    pub fn range_key_value(&self) -> std::option::Option<&str> {
+        self.range_key_value.as_deref()
+    }
+    /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+    pub fn range_key_type(&self) -> std::option::Option<&crate::model::DynamoKeyType> {
+        self.range_key_type.as_ref()
+    }
+    /// <p>The action payload. This name can be customized.</p>
+    pub fn payload_field(&self) -> std::option::Option<&str> {
+        self.payload_field.as_deref()
+    }
 }
 impl std::fmt::Debug for DynamoDbAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11101,6 +12694,52 @@ pub struct ViolationEvent {
     /// <p>The time the violation event occurred.</p>
     pub violation_event_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ViolationEvent {
+    /// <p>The ID of the violation event.</p>
+    pub fn violation_id(&self) -> std::option::Option<&str> {
+        self.violation_id.as_deref()
+    }
+    /// <p>The name of the thing responsible for the violation event.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the security profile whose behavior was violated.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The behavior that was violated.</p>
+    pub fn behavior(&self) -> std::option::Option<&crate::model::Behavior> {
+        self.behavior.as_ref()
+    }
+    /// <p>The value of the metric (the measurement).</p>
+    pub fn metric_value(&self) -> std::option::Option<&crate::model::MetricValue> {
+        self.metric_value.as_ref()
+    }
+    /// <p>
+    /// The details of a violation event.
+    /// </p>
+    pub fn violation_event_additional_info(
+        &self,
+    ) -> std::option::Option<&crate::model::ViolationEventAdditionalInfo> {
+        self.violation_event_additional_info.as_ref()
+    }
+    /// <p>The type of violation event.</p>
+    pub fn violation_event_type(&self) -> std::option::Option<&crate::model::ViolationEventType> {
+        self.violation_event_type.as_ref()
+    }
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
+        self.verification_state.as_ref()
+    }
+    /// <p>The description of the verification state of the violation.</p>
+    pub fn verification_state_description(&self) -> std::option::Option<&str> {
+        self.verification_state_description.as_deref()
+    }
+    /// <p>The time the violation event occurred.</p>
+    pub fn violation_event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.violation_event_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ViolationEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ViolationEvent");
@@ -11367,6 +13006,14 @@ pub struct ViolationEventAdditionalInfo {
     /// </p>
     pub confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
 }
+impl ViolationEventAdditionalInfo {
+    /// <p>
+    /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
+    /// </p>
+    pub fn confidence_level(&self) -> std::option::Option<&crate::model::ConfidenceLevel> {
+        self.confidence_level.as_ref()
+    }
+}
 impl std::fmt::Debug for ViolationEventAdditionalInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ViolationEventAdditionalInfo");
@@ -11483,6 +13130,16 @@ pub struct LogTargetConfiguration {
     /// <p>The logging level.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
+impl LogTargetConfiguration {
+    /// <p>A log target</p>
+    pub fn log_target(&self) -> std::option::Option<&crate::model::LogTarget> {
+        self.log_target.as_ref()
+    }
+    /// <p>The logging level.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+}
 impl std::fmt::Debug for LogTargetConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogTargetConfiguration");
@@ -11554,6 +13211,28 @@ pub struct TopicRuleListItem {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the rule is disabled.</p>
     pub rule_disabled: std::option::Option<bool>,
+}
+impl TopicRuleListItem {
+    /// <p>The rule ARN.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>The name of the rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The pattern for the topic names that apply.</p>
+    pub fn topic_pattern(&self) -> std::option::Option<&str> {
+        self.topic_pattern.as_deref()
+    }
+    /// <p>The date and time the rule was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn rule_disabled(&self) -> std::option::Option<bool> {
+        self.rule_disabled
+    }
 }
 impl std::fmt::Debug for TopicRuleListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11703,6 +13382,71 @@ pub struct TopicRuleDestinationSummary {
     pub http_url_summary: std::option::Option<crate::model::HttpUrlDestinationSummary>,
     /// <p>Information about the virtual private cloud (VPC) connection.</p>
     pub vpc_destination_summary: std::option::Option<crate::model::VpcDestinationSummary>,
+}
+impl TopicRuleDestinationSummary {
+    /// <p>The topic rule destination ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the topic rule destination. Valid values are:</p>
+    /// <dl>
+    /// <dt>IN_PROGRESS</dt>
+    /// <dd>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set
+    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>. Calling
+    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
+    /// be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// <dt>ENABLED</dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
+    /// set <code>status</code> to <code>DISABLED</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>DISABLED</dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
+    /// can set <code>status</code> to <code>ENABLED</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>ERROR</dt>
+    /// <dd>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
+    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
+    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>. Calling
+    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
+    /// be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&crate::model::TopicRuleDestinationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the topic rule destination was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time when the topic rule destination was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The reason the topic rule destination is in the current status.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Information about the HTTP URL.</p>
+    pub fn http_url_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::HttpUrlDestinationSummary> {
+        self.http_url_summary.as_ref()
+    }
+    /// <p>Information about the virtual private cloud (VPC) connection.</p>
+    pub fn vpc_destination_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcDestinationSummary> {
+        self.vpc_destination_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for TopicRuleDestinationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11920,6 +13664,24 @@ pub struct VpcDestinationSummary {
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl VpcDestinationSummary {
+    /// <p>The subnet IDs of the VPC destination.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups of the VPC destination.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcDestinationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcDestinationSummary");
@@ -12026,6 +13788,13 @@ pub struct HttpUrlDestinationSummary {
     /// URL.</p>
     pub confirmation_url: std::option::Option<std::string::String>,
 }
+impl HttpUrlDestinationSummary {
+    /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination
+    /// URL.</p>
+    pub fn confirmation_url(&self) -> std::option::Option<&str> {
+        self.confirmation_url.as_deref()
+    }
+}
 impl std::fmt::Debug for HttpUrlDestinationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpUrlDestinationSummary");
@@ -12086,6 +13855,26 @@ pub struct ThingTypeDefinition {
     /// time, a value indicating whether the thing type is deprecated, and a date and time when it was
     /// deprecated.</p>
     pub thing_type_metadata: std::option::Option<crate::model::ThingTypeMetadata>,
+}
+impl ThingTypeDefinition {
+    /// <p>The name of the thing type.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>The thing type ARN.</p>
+    pub fn thing_type_arn(&self) -> std::option::Option<&str> {
+        self.thing_type_arn.as_deref()
+    }
+    /// <p>The ThingTypeProperties for the thing type.</p>
+    pub fn thing_type_properties(&self) -> std::option::Option<&crate::model::ThingTypeProperties> {
+        self.thing_type_properties.as_ref()
+    }
+    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and
+    /// time, a value indicating whether the thing type is deprecated, and a date and time when it was
+    /// deprecated.</p>
+    pub fn thing_type_metadata(&self) -> std::option::Option<&crate::model::ThingTypeMetadata> {
+        self.thing_type_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for ThingTypeDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12197,6 +13986,21 @@ pub struct ThingTypeMetadata {
     /// <p>The date and time when the thing type was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ThingTypeMetadata {
+    /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be
+    /// associated with this type.</p>
+    pub fn deprecated(&self) -> bool {
+        self.deprecated
+    }
+    /// <p>The date and time when the thing type was deprecated.</p>
+    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deprecation_date.as_ref()
+    }
+    /// <p>The date and time when the thing type was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for ThingTypeMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThingTypeMetadata");
@@ -12282,6 +14086,16 @@ pub struct ThingTypeProperties {
     /// <p>A list of searchable thing attribute names.</p>
     pub searchable_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ThingTypeProperties {
+    /// <p>The description of the thing type.</p>
+    pub fn thing_type_description(&self) -> std::option::Option<&str> {
+        self.thing_type_description.as_deref()
+    }
+    /// <p>A list of searchable thing attribute names.</p>
+    pub fn searchable_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.searchable_attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for ThingTypeProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThingTypeProperties");
@@ -12364,6 +14178,31 @@ pub struct ThingAttribute {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the thing record in the registry.</p>
     pub version: i64,
+}
+impl ThingAttribute {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the thing type, if the thing has been associated with a type.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>The thing ARN.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>A list of thing attributes which are name-value pairs.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The version of the thing record in the registry.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
 }
 impl std::fmt::Debug for ThingAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12615,6 +14454,16 @@ pub struct GroupNameAndArn {
     /// <p>The group ARN.</p>
     pub group_arn: std::option::Option<std::string::String>,
 }
+impl GroupNameAndArn {
+    /// <p>The group name.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The group ARN.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupNameAndArn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupNameAndArn");
@@ -12677,6 +14526,12 @@ pub struct SecurityProfileTarget {
     /// <p>The ARN of the security profile.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl SecurityProfileTarget {
+    /// <p>The ARN of the security profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityProfileTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityProfileTarget");
@@ -12728,6 +14583,24 @@ pub struct StreamSummary {
     pub stream_version: std::option::Option<i32>,
     /// <p>A description of the stream.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl StreamSummary {
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>The stream ARN.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The stream version.</p>
+    pub fn stream_version(&self) -> std::option::Option<i32> {
+        self.stream_version
+    }
+    /// <p>A description of the stream.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for StreamSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12818,6 +14691,18 @@ pub struct SecurityProfileTargetMapping {
     /// <p>Information about the target (thing group) associated with the security profile.</p>
     pub target: std::option::Option<crate::model::SecurityProfileTarget>,
 }
+impl SecurityProfileTargetMapping {
+    /// <p>Information that identifies the security profile.</p>
+    pub fn security_profile_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::SecurityProfileIdentifier> {
+        self.security_profile_identifier.as_ref()
+    }
+    /// <p>Information about the target (thing group) associated with the security profile.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::SecurityProfileTarget> {
+        self.target.as_ref()
+    }
+}
 impl std::fmt::Debug for SecurityProfileTargetMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityProfileTargetMapping");
@@ -12894,6 +14779,16 @@ pub struct SecurityProfileIdentifier {
     /// <p>The ARN of the security profile.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl SecurityProfileIdentifier {
+    /// <p>The name you've given to the security profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the security profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityProfileIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityProfileIdentifier");
@@ -12966,6 +14861,32 @@ pub struct ScheduledAuditMetadata {
     /// <p>The day of the week on which the scheduled audit is run (if the
     /// <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
+}
+impl ScheduledAuditMetadata {
+    /// <p>The name of the scheduled audit.</p>
+    pub fn scheduled_audit_name(&self) -> std::option::Option<&str> {
+        self.scheduled_audit_name.as_deref()
+    }
+    /// <p>The ARN of the scheduled audit.</p>
+    pub fn scheduled_audit_arn(&self) -> std::option::Option<&str> {
+        self.scheduled_audit_arn.as_deref()
+    }
+    /// <p>How often the scheduled audit occurs.</p>
+    pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
+        self.frequency.as_ref()
+    }
+    /// <p>The day of the month on which the scheduled audit is run (if the
+    /// <code>frequency</code> is "MONTHLY").
+    /// If days 29-31 are specified, and the month does not have that many
+    /// days, the audit takes place on the "LAST" day of the month.</p>
+    pub fn day_of_month(&self) -> std::option::Option<&str> {
+        self.day_of_month.as_deref()
+    }
+    /// <p>The day of the week on which the scheduled audit is run (if the
+    /// <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+    pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
+        self.day_of_week.as_ref()
+    }
 }
 impl std::fmt::Debug for ScheduledAuditMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13092,6 +15013,21 @@ pub struct ProvisioningTemplateVersionSummary {
     /// false.</p>
     pub is_default_version: bool,
 }
+impl ProvisioningTemplateVersionSummary {
+    /// <p>The ID of the fleet privisioning template version.</p>
+    pub fn version_id(&self) -> std::option::Option<i32> {
+        self.version_id
+    }
+    /// <p>The date when the fleet provisioning template version was created</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>True if the fleet provisioning template version is the default version, otherwise
+    /// false.</p>
+    pub fn is_default_version(&self) -> bool {
+        self.is_default_version
+    }
+}
 impl std::fmt::Debug for ProvisioningTemplateVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisioningTemplateVersionSummary");
@@ -13180,6 +15116,32 @@ pub struct ProvisioningTemplateSummary {
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
     pub enabled: bool,
+}
+impl ProvisioningTemplateSummary {
+    /// <p>The ARN of the fleet provisioning template.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>The name of the fleet provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The description of the fleet provisioning template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date when the fleet provisioning template summary was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date when the fleet provisioning template summary was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>True if the fleet provision template is enabled, otherwise false.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for ProvisioningTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13307,6 +15269,20 @@ pub struct PolicyVersion {
     /// <p>The date and time the policy was created.</p>
     pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PolicyVersion {
+    /// <p>The policy version ID.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Specifies whether the policy version is the default.</p>
+    pub fn is_default_version(&self) -> bool {
+        self.is_default_version
+    }
+    /// <p>The date and time the policy was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+}
 impl std::fmt::Debug for PolicyVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyVersion");
@@ -13393,6 +15369,32 @@ pub struct OutgoingCertificate {
     pub transfer_message: std::option::Option<std::string::String>,
     /// <p>The certificate creation date.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl OutgoingCertificate {
+    /// <p>The certificate ARN.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The certificate ID.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account to which the transfer was made.</p>
+    pub fn transferred_to(&self) -> std::option::Option<&str> {
+        self.transferred_to.as_deref()
+    }
+    /// <p>The date the transfer was initiated.</p>
+    pub fn transfer_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.transfer_date.as_ref()
+    }
+    /// <p>The transfer message.</p>
+    pub fn transfer_message(&self) -> std::option::Option<&str> {
+        self.transfer_message.as_deref()
+    }
+    /// <p>The certificate creation date.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for OutgoingCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13528,6 +15530,20 @@ pub struct OtaUpdateSummary {
     pub ota_update_arn: std::option::Option<std::string::String>,
     /// <p>The date when the OTA update was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl OtaUpdateSummary {
+    /// <p>The OTA update ID.</p>
+    pub fn ota_update_id(&self) -> std::option::Option<&str> {
+        self.ota_update_id.as_deref()
+    }
+    /// <p>The OTA update ARN.</p>
+    pub fn ota_update_arn(&self) -> std::option::Option<&str> {
+        self.ota_update_arn.as_deref()
+    }
+    /// <p>The date when the OTA update was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for OtaUpdateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13683,6 +15699,20 @@ pub struct MitigationActionIdentifier {
     pub action_arn: std::option::Option<std::string::String>,
     /// <p>The date when this mitigation action was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MitigationActionIdentifier {
+    /// <p>The friendly name of the mitigation action.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The IAM role ARN used to apply this mitigation action.</p>
+    pub fn action_arn(&self) -> std::option::Option<&str> {
+        self.action_arn.as_deref()
+    }
+    /// <p>The date when this mitigation action was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for MitigationActionIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13845,6 +15875,24 @@ pub struct JobTemplateSummary {
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl JobTemplateSummary {
+    /// <p>The ARN of the job template.</p>
+    pub fn job_template_arn(&self) -> std::option::Option<&str> {
+        self.job_template_arn.as_deref()
+    }
+    /// <p>The unique identifier of the job template.</p>
+    pub fn job_template_id(&self) -> std::option::Option<&str> {
+        self.job_template_id.as_deref()
+    }
+    /// <p>A description of the job template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for JobTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobTemplateSummary");
@@ -13957,6 +16005,43 @@ pub struct JobSummary {
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time, in seconds since the epoch, when the job completed.</p>
     pub completed_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl JobSummary {
+    /// <p>The job ARN.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The ID of the thing group.</p>
+    pub fn thing_group_id(&self) -> std::option::Option<&str> {
+        self.thing_group_id.as_deref()
+    }
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
+    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
+    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
+    /// target group, even after the job was completed by all things originally in the group.</p>
+    pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
+        self.target_selection.as_ref()
+    }
+    /// <p>The job summary status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job completed.</p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
 }
 impl std::fmt::Debug for JobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14243,6 +16328,16 @@ pub struct JobExecutionSummaryForThing {
     /// <p>Contains a subset of information about a job execution.</p>
     pub job_execution_summary: std::option::Option<crate::model::JobExecutionSummary>,
 }
+impl JobExecutionSummaryForThing {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Contains a subset of information about a job execution.</p>
+    pub fn job_execution_summary(&self) -> std::option::Option<&crate::model::JobExecutionSummary> {
+        self.job_execution_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for JobExecutionSummaryForThing {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobExecutionSummaryForThing");
@@ -14316,6 +16411,30 @@ pub struct JobExecutionSummary {
     /// this particular device. It can be used later in commands which return or update job execution
     /// information.</p>
     pub execution_number: std::option::Option<i64>,
+}
+impl JobExecutionSummary {
+    /// <p>The status of the job execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
+    pub fn queued_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.queued_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
+    /// this particular device. It can be used later in commands which return or update job execution
+    /// information.</p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
 }
 impl std::fmt::Debug for JobExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14523,6 +16642,16 @@ pub struct JobExecutionSummaryForJob {
     /// <p>Contains a subset of information about a job execution.</p>
     pub job_execution_summary: std::option::Option<crate::model::JobExecutionSummary>,
 }
+impl JobExecutionSummaryForJob {
+    /// <p>The ARN of the thing on which the job execution is running.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>Contains a subset of information about a job execution.</p>
+    pub fn job_execution_summary(&self) -> std::option::Option<&crate::model::JobExecutionSummary> {
+        self.job_execution_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for JobExecutionSummaryForJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobExecutionSummaryForJob");
@@ -14588,6 +16717,16 @@ pub struct FleetMetricNameAndArn {
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The fleet metric ARN.</p>
     pub metric_arn: std::option::Option<std::string::String>,
+}
+impl FleetMetricNameAndArn {
+    /// <p>The fleet metric name.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The fleet metric ARN.</p>
+    pub fn metric_arn(&self) -> std::option::Option<&str> {
+        self.metric_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for FleetMetricNameAndArn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14666,6 +16805,20 @@ pub struct DomainConfigurationSummary {
     pub domain_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The type of service delivered by the endpoint.</p>
     pub service_type: std::option::Option<crate::model::ServiceType>,
+}
+impl DomainConfigurationSummary {
+    /// <p>The name of the domain configuration. This value must be unique to a region.</p>
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
+        self.domain_configuration_name.as_deref()
+    }
+    /// <p>The ARN of the domain configuration.</p>
+    pub fn domain_configuration_arn(&self) -> std::option::Option<&str> {
+        self.domain_configuration_arn.as_deref()
+    }
+    /// <p>The type of service delivered by the endpoint.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainConfigurationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14849,6 +17002,74 @@ pub struct DetectMitigationActionsTaskSummary {
     /// The statistics of a mitigation action task.
     /// </p>
     pub task_statistics: std::option::Option<crate::model::DetectMitigationActionsTaskStatistics>,
+}
+impl DetectMitigationActionsTaskSummary {
+    /// <p>
+    /// The unique identifier of the task.
+    /// </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>
+    /// The status of the task.
+    /// </p>
+    pub fn task_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectMitigationActionsTaskStatus> {
+        self.task_status.as_ref()
+    }
+    /// <p>
+    /// The date the task started.
+    /// </p>
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.task_start_time.as_ref()
+    }
+    /// <p>
+    /// The date the task ended.
+    /// </p>
+    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.task_end_time.as_ref()
+    }
+    /// <p>
+    /// Specifies the ML Detect findings to which the mitigation actions are applied.
+    /// </p>
+    pub fn target(&self) -> std::option::Option<&crate::model::DetectMitigationActionsTaskTarget> {
+        self.target.as_ref()
+    }
+    /// <p>
+    /// Specifies the time period of which violation events occurred between.
+    /// </p>
+    pub fn violation_event_occurrence_range(
+        &self,
+    ) -> std::option::Option<&crate::model::ViolationEventOccurrenceRange> {
+        self.violation_event_occurrence_range.as_ref()
+    }
+    /// <p>
+    /// Includes only active violations.
+    /// </p>
+    pub fn only_active_violations_included(&self) -> bool {
+        self.only_active_violations_included
+    }
+    /// <p>
+    /// Includes suppressed alerts.
+    /// </p>
+    pub fn suppressed_alerts_included(&self) -> bool {
+        self.suppressed_alerts_included
+    }
+    /// <p>
+    /// The definition of the actions.
+    /// </p>
+    pub fn actions_definition(&self) -> std::option::Option<&[crate::model::MitigationAction]> {
+        self.actions_definition.as_deref()
+    }
+    /// <p>
+    /// The statistics of a mitigation action task.
+    /// </p>
+    pub fn task_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectMitigationActionsTaskStatistics> {
+        self.task_statistics.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectMitigationActionsTaskSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15124,6 +17345,26 @@ pub struct DetectMitigationActionsTaskStatistics {
     /// </p>
     pub actions_failed: std::option::Option<i64>,
 }
+impl DetectMitigationActionsTaskStatistics {
+    /// <p>
+    /// The actions that were performed.
+    /// </p>
+    pub fn actions_executed(&self) -> std::option::Option<i64> {
+        self.actions_executed
+    }
+    /// <p>
+    /// The actions that were skipped.
+    /// </p>
+    pub fn actions_skipped(&self) -> std::option::Option<i64> {
+        self.actions_skipped
+    }
+    /// <p>
+    /// The actions that failed.
+    /// </p>
+    pub fn actions_failed(&self) -> std::option::Option<i64> {
+        self.actions_failed
+    }
+}
 impl std::fmt::Debug for DetectMitigationActionsTaskStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectMitigationActionsTaskStatistics");
@@ -15215,6 +17456,24 @@ pub struct MitigationAction {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
+}
+impl MitigationAction {
+    /// <p>A user-friendly name for the mitigation action.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique identifier for the mitigation action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The IAM role ARN used to apply this mitigation action.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
+    pub fn action_params(&self) -> std::option::Option<&crate::model::MitigationActionParams> {
+        self.action_params.as_ref()
+    }
 }
 impl std::fmt::Debug for MitigationAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15404,6 +17663,64 @@ pub struct DetectMitigationActionExecution {
     /// The message of a mitigation action.
     /// </p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DetectMitigationActionExecution {
+    /// <p>
+    /// The unique identifier of the task.
+    /// </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>
+    /// The unique identifier of the violation.
+    /// </p>
+    pub fn violation_id(&self) -> std::option::Option<&str> {
+        self.violation_id.as_deref()
+    }
+    /// <p>
+    /// The friendly name that uniquely identifies the mitigation action.
+    /// </p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>
+    /// The name of the thing.
+    /// </p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>
+    /// The date a mitigation action was started.
+    /// </p>
+    pub fn execution_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.execution_start_date.as_ref()
+    }
+    /// <p>
+    /// The date a mitigation action ended.
+    /// </p>
+    pub fn execution_end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.execution_end_date.as_ref()
+    }
+    /// <p>
+    /// The status of a mitigation action.
+    /// </p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectMitigationActionExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// The error code of a mitigation action.
+    /// </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>
+    /// The message of a mitigation action.
+    /// </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectMitigationActionExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15678,6 +17995,30 @@ pub struct Certificate {
     /// <p>The date and time the certificate was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Certificate {
+    /// <p>The ARN of the certificate.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The status of the certificate.</p>
+    /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The mode of the certificate.</p>
+    pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
+        self.certificate_mode.as_ref()
+    }
+    /// <p>The date and time the certificate was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for Certificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Certificate");
@@ -15859,6 +18200,25 @@ pub struct CaCertificate {
     /// <p>The date the CA certificate was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CaCertificate {
+    /// <p>The ARN of the CA certificate.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The ID of the CA certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The status of the CA certificate.</p>
+    /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CaCertificateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date the CA certificate was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for CaCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CaCertificate");
@@ -15962,6 +18322,16 @@ pub struct AuthorizerSummary {
     /// <p>The authorizer ARN.</p>
     pub authorizer_arn: std::option::Option<std::string::String>,
 }
+impl AuthorizerSummary {
+    /// <p>The authorizer name.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
+    /// <p>The authorizer ARN.</p>
+    pub fn authorizer_arn(&self) -> std::option::Option<&str> {
+        self.authorizer_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthorizerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizerSummary");
@@ -16033,6 +18403,21 @@ pub struct AuditTaskMetadata {
     pub task_status: std::option::Option<crate::model::AuditTaskStatus>,
     /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
+}
+impl AuditTaskMetadata {
+    /// <p>The ID of this audit.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED",
+    /// "FAILED", or "CANCELED".</p>
+    pub fn task_status(&self) -> std::option::Option<&crate::model::AuditTaskStatus> {
+        self.task_status.as_ref()
+    }
+    /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::AuditTaskType> {
+        self.task_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AuditTaskMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16251,6 +18636,37 @@ pub struct AuditSuppression {
     /// </p>
     pub description: std::option::Option<std::string::String>,
 }
+impl AuditSuppression {
+    /// <p>An audit check name. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>
+    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
+    /// </p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+    /// <p>
+    /// Indicates whether a suppression should exist indefinitely or not.
+    /// </p>
+    pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
+        self.suppress_indefinitely
+    }
+    /// <p>
+    /// The description of the audit suppression.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for AuditSuppression {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuditSuppression");
@@ -16378,6 +18794,22 @@ pub struct AuditMitigationActionsTaskMetadata {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current state of the audit mitigation actions task.</p>
     pub task_status: std::option::Option<crate::model::AuditMitigationActionsTaskStatus>,
+}
+impl AuditMitigationActionsTaskMetadata {
+    /// <p>The unique identifier for the task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The time at which the audit mitigation actions task was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The current state of the audit mitigation actions task.</p>
+    pub fn task_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AuditMitigationActionsTaskStatus> {
+        self.task_status.as_ref()
+    }
 }
 impl std::fmt::Debug for AuditMitigationActionsTaskMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16540,6 +18972,46 @@ pub struct AuditMitigationActionExecutionMetadata {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>If an error occurred, a message that describes the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl AuditMitigationActionExecutionMetadata {
+    /// <p>The unique identifier for the task that applies the mitigation action.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
+    pub fn finding_id(&self) -> std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
+    /// <p>The friendly name of the mitigation action being applied by the task.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The unique identifier for the mitigation action being applied by the task.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>The current status of the task being executed.</p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::AuditMitigationActionsExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the task was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>If an error occurred, a message that describes the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for AuditMitigationActionExecutionMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16807,6 +19279,58 @@ pub struct AuditFinding {
     /// </p>
     pub is_suppressed: std::option::Option<bool>,
 }
+impl AuditFinding {
+    /// <p>A unique identifier for this set of audit findings. This identifier is used to apply
+    /// mitigation tasks to one or more sets of findings.</p>
+    pub fn finding_id(&self) -> std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
+    /// <p>The ID of the audit that generated this result (finding).</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The audit check that generated this result.</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>The time the audit started.</p>
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.task_start_time.as_ref()
+    }
+    /// <p>The time the result (finding) was discovered.</p>
+    pub fn finding_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finding_time.as_ref()
+    }
+    /// <p>The severity of the result (finding).</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::AuditFindingSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>The resource that was found to be noncompliant with the
+    /// audit check.</p>
+    pub fn non_compliant_resource(
+        &self,
+    ) -> std::option::Option<&crate::model::NonCompliantResource> {
+        self.non_compliant_resource.as_ref()
+    }
+    /// <p>The list of related resources.</p>
+    pub fn related_resources(&self) -> std::option::Option<&[crate::model::RelatedResource]> {
+        self.related_resources.as_deref()
+    }
+    /// <p>The reason the resource was noncompliant.</p>
+    pub fn reason_for_non_compliance(&self) -> std::option::Option<&str> {
+        self.reason_for_non_compliance.as_deref()
+    }
+    /// <p>A code that indicates the reason that the resource was noncompliant.</p>
+    pub fn reason_for_non_compliance_code(&self) -> std::option::Option<&str> {
+        self.reason_for_non_compliance_code.as_deref()
+    }
+    /// <p>
+    /// Indicates whether the audit finding was suppressed or not during reporting.
+    /// </p>
+    pub fn is_suppressed(&self) -> std::option::Option<bool> {
+        self.is_suppressed
+    }
+}
 impl std::fmt::Debug for AuditFinding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuditFinding");
@@ -17035,6 +19559,23 @@ pub struct RelatedResource {
     pub additional_info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RelatedResource {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Information that identifies the resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>Other information about the resource.</p>
+    pub fn additional_info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_info.as_ref()
+    }
+}
 impl std::fmt::Debug for RelatedResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RelatedResource");
@@ -17225,6 +19766,23 @@ pub struct NonCompliantResource {
     pub additional_info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl NonCompliantResource {
+    /// <p>The type of the noncompliant resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>Other information about the noncompliant resource.</p>
+    pub fn additional_info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_info.as_ref()
+    }
+}
 impl std::fmt::Debug for NonCompliantResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NonCompliantResource");
@@ -17405,6 +19963,52 @@ pub struct ActiveViolation {
     pub last_violation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the violation started.</p>
     pub violation_start_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ActiveViolation {
+    /// <p>The ID of the active violation.</p>
+    pub fn violation_id(&self) -> std::option::Option<&str> {
+        self.violation_id.as_deref()
+    }
+    /// <p>The name of the thing responsible for the active violation.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The security profile with the behavior is in violation.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The behavior that is being violated.</p>
+    pub fn behavior(&self) -> std::option::Option<&crate::model::Behavior> {
+        self.behavior.as_ref()
+    }
+    /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
+    pub fn last_violation_value(&self) -> std::option::Option<&crate::model::MetricValue> {
+        self.last_violation_value.as_ref()
+    }
+    /// <p>
+    /// The details of a violation event.
+    /// </p>
+    pub fn violation_event_additional_info(
+        &self,
+    ) -> std::option::Option<&crate::model::ViolationEventAdditionalInfo> {
+        self.violation_event_additional_info.as_ref()
+    }
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
+        self.verification_state.as_ref()
+    }
+    /// <p>The description of the verification state of the violation.</p>
+    pub fn verification_state_description(&self) -> std::option::Option<&str> {
+        self.verification_state_description.as_deref()
+    }
+    /// <p>The time the most recent violation occurred.</p>
+    pub fn last_violation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_violation_time.as_ref()
+    }
+    /// <p>The time the violation started.</p>
+    pub fn violation_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.violation_start_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ActiveViolation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17653,6 +20257,70 @@ pub struct TopicRuleDestination {
     /// <p>Properties of the virtual private cloud (VPC) connection.</p>
     pub vpc_properties: std::option::Option<crate::model::VpcDestinationProperties>,
 }
+impl TopicRuleDestination {
+    /// <p>The topic rule destination URL.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the topic rule destination. Valid values are:</p>
+    /// <dl>
+    /// <dt>IN_PROGRESS</dt>
+    /// <dd>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set
+    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>. Calling
+    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
+    /// be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// <dt>ENABLED</dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
+    /// set <code>status</code> to <code>DISABLED</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>DISABLED</dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
+    /// can set <code>status</code> to <code>ENABLED</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>ERROR</dt>
+    /// <dd>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
+    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
+    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>. Calling
+    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
+    /// be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&crate::model::TopicRuleDestinationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the topic rule destination was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time when the topic rule destination was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>Additional details or reason why the topic rule destination is in the current
+    /// status.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Properties of the HTTP URL.</p>
+    pub fn http_url_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::HttpUrlDestinationProperties> {
+        self.http_url_properties.as_ref()
+    }
+    /// <p>Properties of the virtual private cloud (VPC) connection.</p>
+    pub fn vpc_properties(&self) -> std::option::Option<&crate::model::VpcDestinationProperties> {
+        self.vpc_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for TopicRuleDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TopicRuleDestination");
@@ -17871,6 +20539,24 @@ pub struct VpcDestinationProperties {
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl VpcDestinationProperties {
+    /// <p>The subnet IDs of the VPC destination.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups of the VPC destination.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcDestinationProperties");
@@ -17976,6 +20662,12 @@ pub struct HttpUrlDestinationProperties {
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
     pub confirmation_url: std::option::Option<std::string::String>,
 }
+impl HttpUrlDestinationProperties {
+    /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
+    pub fn confirmation_url(&self) -> std::option::Option<&str> {
+        self.confirmation_url.as_deref()
+    }
+}
 impl std::fmt::Debug for HttpUrlDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpUrlDestinationProperties");
@@ -18041,6 +20733,41 @@ pub struct TopicRule {
     pub aws_iot_sql_version: std::option::Option<std::string::String>,
     /// <p>The action to perform when an error occurs.</p>
     pub error_action: std::option::Option<crate::model::Action>,
+}
+impl TopicRule {
+    /// <p>The name of the rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The SQL statement used to query the topic. When using a SQL query with multiple
+    /// lines, be sure to escape the newline characters.</p>
+    pub fn sql(&self) -> std::option::Option<&str> {
+        self.sql.as_deref()
+    }
+    /// <p>The description of the rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time the rule was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The actions associated with the rule.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn rule_disabled(&self) -> std::option::Option<bool> {
+        self.rule_disabled
+    }
+    /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+    pub fn aws_iot_sql_version(&self) -> std::option::Option<&str> {
+        self.aws_iot_sql_version.as_deref()
+    }
+    /// <p>The action to perform when an error occurs.</p>
+    pub fn error_action(&self) -> std::option::Option<&crate::model::Action> {
+        self.error_action.as_ref()
+    }
 }
 impl std::fmt::Debug for TopicRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18216,6 +20943,40 @@ pub struct Statistics {
     /// <p>The standard deviation of the aggregated field values.</p>
     pub std_deviation: std::option::Option<f64>,
 }
+impl Statistics {
+    /// <p>The count of things that match the query.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// <p>The average of the aggregated field values.</p>
+    pub fn average(&self) -> std::option::Option<f64> {
+        self.average
+    }
+    /// <p>The sum of the aggregated field values.</p>
+    pub fn sum(&self) -> std::option::Option<f64> {
+        self.sum
+    }
+    /// <p>The minimum aggregated field value.</p>
+    pub fn minimum(&self) -> std::option::Option<f64> {
+        self.minimum
+    }
+    /// <p>The maximum aggregated field value.</p>
+    pub fn maximum(&self) -> std::option::Option<f64> {
+        self.maximum
+    }
+    /// <p>The sum of the squares of the aggregated field values.</p>
+    pub fn sum_of_squares(&self) -> std::option::Option<f64> {
+        self.sum_of_squares
+    }
+    /// <p>The variance of the aggregated field values.</p>
+    pub fn variance(&self) -> std::option::Option<f64> {
+        self.variance
+    }
+    /// <p>The standard deviation of the aggregated field values.</p>
+    pub fn std_deviation(&self) -> std::option::Option<f64> {
+        self.std_deviation
+    }
+}
 impl std::fmt::Debug for Statistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Statistics");
@@ -18357,6 +21118,16 @@ pub struct PercentPair {
     /// <p>The value of the percentile.</p>
     pub value: f64,
 }
+impl PercentPair {
+    /// <p>The percentile.</p>
+    pub fn percent(&self) -> f64 {
+        self.percent
+    }
+    /// <p>The value of the percentile.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+}
 impl std::fmt::Debug for PercentPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PercentPair");
@@ -18455,6 +21226,85 @@ pub struct OtaUpdateInfo {
     /// <p>A collection of name/value pairs</p>
     pub additional_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl OtaUpdateInfo {
+    /// <p>The OTA update ID.</p>
+    pub fn ota_update_id(&self) -> std::option::Option<&str> {
+        self.ota_update_id.as_deref()
+    }
+    /// <p>The OTA update ARN.</p>
+    pub fn ota_update_arn(&self) -> std::option::Option<&str> {
+        self.ota_update_arn.as_deref()
+    }
+    /// <p>The date when the OTA update was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date when the OTA update was last updated.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>A description of the OTA update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The targets of the OTA update.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
+    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
+        self.protocols.as_deref()
+    }
+    /// <p>Configuration for the rollout of OTA updates.</p>
+    pub fn aws_job_executions_rollout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobExecutionsRolloutConfig> {
+        self.aws_job_executions_rollout_config.as_ref()
+    }
+    /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code>
+    /// contains HTTP.</p>
+    pub fn aws_job_presigned_url_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobPresignedUrlConfig> {
+        self.aws_job_presigned_url_config.as_ref()
+    }
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those
+    /// things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also
+    /// be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when
+    /// the thing is added to a target group, even after the OTA update was completed by all things originally in
+    /// the group. </p>
+    pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
+        self.target_selection.as_ref()
+    }
+    /// <p>A list of files associated with the OTA update.</p>
+    pub fn ota_update_files(&self) -> std::option::Option<&[crate::model::OtaUpdateFile]> {
+        self.ota_update_files.as_deref()
+    }
+    /// <p>The status of the OTA update.</p>
+    pub fn ota_update_status(&self) -> std::option::Option<&crate::model::OtaUpdateStatus> {
+        self.ota_update_status.as_ref()
+    }
+    /// <p>The IoT job ID associated with the OTA update.</p>
+    pub fn aws_iot_job_id(&self) -> std::option::Option<&str> {
+        self.aws_iot_job_id.as_deref()
+    }
+    /// <p>The IoT job ARN associated with the OTA update.</p>
+    pub fn aws_iot_job_arn(&self) -> std::option::Option<&str> {
+        self.aws_iot_job_arn.as_deref()
+    }
+    /// <p>Error information associated with the OTA update.</p>
+    pub fn error_info(&self) -> std::option::Option<&crate::model::ErrorInfo> {
+        self.error_info.as_ref()
+    }
+    /// <p>A collection of name/value pairs</p>
+    pub fn additional_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for OtaUpdateInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18805,6 +21655,16 @@ pub struct ErrorInfo {
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ErrorInfo {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorInfo");
@@ -18877,6 +21737,36 @@ pub struct OtaUpdateFile {
     /// <p>A list of name/attribute pairs.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl OtaUpdateFile {
+    /// <p>The name of the file.</p>
+    pub fn file_name(&self) -> std::option::Option<&str> {
+        self.file_name.as_deref()
+    }
+    /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received
+    /// from the cloud.</p>
+    pub fn file_type(&self) -> std::option::Option<i32> {
+        self.file_type
+    }
+    /// <p>The file version.</p>
+    pub fn file_version(&self) -> std::option::Option<&str> {
+        self.file_version.as_deref()
+    }
+    /// <p>The location of the updated firmware.</p>
+    pub fn file_location(&self) -> std::option::Option<&crate::model::FileLocation> {
+        self.file_location.as_ref()
+    }
+    /// <p>The code signing method of the file.</p>
+    pub fn code_signing(&self) -> std::option::Option<&crate::model::CodeSigning> {
+        self.code_signing.as_ref()
+    }
+    /// <p>A list of name/attribute pairs.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for OtaUpdateFile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19020,6 +21910,22 @@ pub struct CodeSigning {
     /// <p>A custom method for code signing a file.</p>
     pub custom_code_signing: std::option::Option<crate::model::CustomCodeSigning>,
 }
+impl CodeSigning {
+    /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
+    pub fn aws_signer_job_id(&self) -> std::option::Option<&str> {
+        self.aws_signer_job_id.as_deref()
+    }
+    /// <p>Describes the code-signing job.</p>
+    pub fn start_signing_job_parameter(
+        &self,
+    ) -> std::option::Option<&crate::model::StartSigningJobParameter> {
+        self.start_signing_job_parameter.as_ref()
+    }
+    /// <p>A custom method for code signing a file.</p>
+    pub fn custom_code_signing(&self) -> std::option::Option<&crate::model::CustomCodeSigning> {
+        self.custom_code_signing.as_ref()
+    }
+}
 impl std::fmt::Debug for CodeSigning {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeSigning");
@@ -19115,6 +22021,26 @@ pub struct CustomCodeSigning {
     pub hash_algorithm: std::option::Option<std::string::String>,
     /// <p>The signature algorithm used to code sign the file.</p>
     pub signature_algorithm: std::option::Option<std::string::String>,
+}
+impl CustomCodeSigning {
+    /// <p>The signature for the file.</p>
+    pub fn signature(&self) -> std::option::Option<&crate::model::CodeSigningSignature> {
+        self.signature.as_ref()
+    }
+    /// <p>The certificate chain.</p>
+    pub fn certificate_chain(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeSigningCertificateChain> {
+        self.certificate_chain.as_ref()
+    }
+    /// <p>The hash algorithm used to code sign the file.</p>
+    pub fn hash_algorithm(&self) -> std::option::Option<&str> {
+        self.hash_algorithm.as_deref()
+    }
+    /// <p>The signature algorithm used to code sign the file.</p>
+    pub fn signature_algorithm(&self) -> std::option::Option<&str> {
+        self.signature_algorithm.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomCodeSigning {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19221,6 +22147,16 @@ pub struct CodeSigningCertificateChain {
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
     pub inline_document: std::option::Option<std::string::String>,
 }
+impl CodeSigningCertificateChain {
+    /// <p>The name of the certificate.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
+    pub fn inline_document(&self) -> std::option::Option<&str> {
+        self.inline_document.as_deref()
+    }
+}
 impl std::fmt::Debug for CodeSigningCertificateChain {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeSigningCertificateChain");
@@ -19288,6 +22224,12 @@ pub struct CodeSigningSignature {
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
     pub inline_document: std::option::Option<aws_smithy_types::Blob>,
 }
+impl CodeSigningSignature {
+    /// <p>A base64 encoded binary representation of the code signing signature.</p>
+    pub fn inline_document(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.inline_document.as_ref()
+    }
+}
 impl std::fmt::Debug for CodeSigningSignature {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeSigningSignature");
@@ -19342,6 +22284,22 @@ pub struct StartSigningJobParameter {
     pub signing_profile_name: std::option::Option<std::string::String>,
     /// <p>The location to write the code-signed file.</p>
     pub destination: std::option::Option<crate::model::Destination>,
+}
+impl StartSigningJobParameter {
+    /// <p>Describes the code-signing profile.</p>
+    pub fn signing_profile_parameter(
+        &self,
+    ) -> std::option::Option<&crate::model::SigningProfileParameter> {
+        self.signing_profile_parameter.as_ref()
+    }
+    /// <p>The code-signing profile name.</p>
+    pub fn signing_profile_name(&self) -> std::option::Option<&str> {
+        self.signing_profile_name.as_deref()
+    }
+    /// <p>The location to write the code-signed file.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
 }
 impl std::fmt::Debug for StartSigningJobParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19430,6 +22388,12 @@ pub struct Destination {
     /// <p>Describes the location in S3 of the updated firmware.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
+impl Destination {
+    /// <p>Describes the location in S3 of the updated firmware.</p>
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Destination");
@@ -19482,6 +22446,16 @@ pub struct S3Destination {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The S3 prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl S3Destination {
+    /// <p>The S3 bucket that contains the updated firmware.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The S3 prefix.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19547,6 +22521,20 @@ pub struct SigningProfileParameter {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The location of the code-signing certificate on your device.</p>
     pub certificate_path_on_device: std::option::Option<std::string::String>,
+}
+impl SigningProfileParameter {
+    /// <p>Certificate ARN.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The hardware platform of your device.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The location of the code-signing certificate on your device.</p>
+    pub fn certificate_path_on_device(&self) -> std::option::Option<&str> {
+        self.certificate_path_on_device.as_deref()
+    }
 }
 impl std::fmt::Debug for SigningProfileParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19633,6 +22621,16 @@ pub struct FileLocation {
     /// <p>The location of the updated firmware in S3.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl FileLocation {
+    /// <p>The stream that contains the OTA update.</p>
+    pub fn stream(&self) -> std::option::Option<&crate::model::Stream> {
+        self.stream.as_ref()
+    }
+    /// <p>The location of the updated firmware in S3.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for FileLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileLocation");
@@ -19699,6 +22697,16 @@ pub struct Stream {
     /// <p>The ID of a file associated with a stream.</p>
     pub file_id: std::option::Option<i32>,
 }
+impl Stream {
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>The ID of a file associated with a stream.</p>
+    pub fn file_id(&self) -> std::option::Option<i32> {
+        self.file_id
+    }
+}
 impl std::fmt::Debug for Stream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Stream");
@@ -19762,6 +22770,13 @@ pub struct AwsJobPresignedUrlConfig {
     /// seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
     pub expires_in_sec: std::option::Option<i64>,
 }
+impl AwsJobPresignedUrlConfig {
+    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800
+    /// seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
+    pub fn expires_in_sec(&self) -> std::option::Option<i64> {
+        self.expires_in_sec
+    }
+}
 impl std::fmt::Debug for AwsJobPresignedUrlConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsJobPresignedUrlConfig");
@@ -19814,6 +22829,19 @@ pub struct AwsJobExecutionsRolloutConfig {
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate
     /// increase for a job rollout.</p>
     pub exponential_rate: std::option::Option<crate::model::AwsJobExponentialRolloutRate>,
+}
+impl AwsJobExecutionsRolloutConfig {
+    /// <p>The maximum number of OTA update job executions started per minute.</p>
+    pub fn maximum_per_minute(&self) -> std::option::Option<i32> {
+        self.maximum_per_minute
+    }
+    /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate
+    /// increase for a job rollout.</p>
+    pub fn exponential_rate(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobExponentialRolloutRate> {
+        self.exponential_rate.as_ref()
+    }
 }
 impl std::fmt::Debug for AwsJobExecutionsRolloutConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19892,6 +22920,25 @@ pub struct AwsJobExponentialRolloutRate {
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
     pub rate_increase_criteria: std::option::Option<crate::model::AwsJobRateIncreaseCriteria>,
+}
+impl AwsJobExponentialRolloutRate {
+    /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start
+    /// of the job rollout. This is the initial rate of the rollout.</p>
+    pub fn base_rate_per_minute(&self) -> std::option::Option<i32> {
+        self.base_rate_per_minute
+    }
+    /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this
+    /// factor.</p>
+    pub fn increment_factor(&self) -> f64 {
+        self.increment_factor
+    }
+    /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
+    /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    pub fn rate_increase_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobRateIncreaseCriteria> {
+        self.rate_increase_criteria.as_ref()
+    }
 }
 impl std::fmt::Debug for AwsJobExponentialRolloutRate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19983,6 +23030,18 @@ pub struct AwsJobRateIncreaseCriteria {
     /// <p>When this number of things have succeeded in their job execution, it will initiate an
     /// increase in the rollout rate.</p>
     pub number_of_succeeded_things: std::option::Option<i32>,
+}
+impl AwsJobRateIncreaseCriteria {
+    /// <p>When this number of things have been notified, it will initiate an increase in the rollout
+    /// rate.</p>
+    pub fn number_of_notified_things(&self) -> std::option::Option<i32> {
+        self.number_of_notified_things
+    }
+    /// <p>When this number of things have succeeded in their job execution, it will initiate an
+    /// increase in the rollout rate.</p>
+    pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
+        self.number_of_succeeded_things
+    }
 }
 impl std::fmt::Debug for AwsJobRateIncreaseCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20111,6 +23170,20 @@ pub struct EffectivePolicy {
     /// <p>The IAM policy document.</p>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl EffectivePolicy {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy ARN.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The IAM policy document.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for EffectivePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EffectivePolicy");
@@ -20190,6 +23263,16 @@ pub struct Bucket {
     /// <p>The number of documents that have the value counted for the particular bucket.</p>
     pub count: i32,
 }
+impl Bucket {
+    /// <p>The value counted for the particular bucket.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The number of documents that have the value counted for the particular bucket.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+}
 impl std::fmt::Debug for Bucket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Bucket");
@@ -20251,6 +23334,12 @@ pub struct BucketsAggregationType {
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
     pub terms_aggregation: std::option::Option<crate::model::TermsAggregation>,
 }
+impl BucketsAggregationType {
+    /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
+    pub fn terms_aggregation(&self) -> std::option::Option<&crate::model::TermsAggregation> {
+        self.terms_aggregation.as_ref()
+    }
+}
 impl std::fmt::Debug for BucketsAggregationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketsAggregationType");
@@ -20301,6 +23390,12 @@ impl BucketsAggregationType {
 pub struct TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
     pub max_buckets: i32,
+}
+impl TermsAggregation {
+    /// <p>The number of buckets to return in the response. Default to 10.</p>
+    pub fn max_buckets(&self) -> i32 {
+        self.max_buckets
+    }
 }
 impl std::fmt::Debug for TermsAggregation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20373,6 +23468,46 @@ pub struct BehaviorModelTrainingSummary {
     /// The date the model was last refreshed.
     /// </p>
     pub last_model_refresh_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BehaviorModelTrainingSummary {
+    /// <p>
+    /// The name of the security profile.
+    /// </p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>
+    /// The name of the behavior.
+    /// </p>
+    pub fn behavior_name(&self) -> std::option::Option<&str> {
+        self.behavior_name.as_deref()
+    }
+    /// <p>
+    /// The date a training model started collecting data.
+    /// </p>
+    pub fn training_data_collection_start_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_data_collection_start_date.as_ref()
+    }
+    /// <p>
+    /// The status of the behavior model.
+    /// </p>
+    pub fn model_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.model_status.as_ref()
+    }
+    /// <p>
+    /// The percentage of datapoints collected.
+    /// </p>
+    pub fn datapoints_collection_percentage(&self) -> std::option::Option<f64> {
+        self.datapoints_collection_percentage
+    }
+    /// <p>
+    /// The date the model was last refreshed.
+    /// </p>
+    pub fn last_model_refresh_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_model_refresh_date.as_ref()
+    }
 }
 impl std::fmt::Debug for BehaviorModelTrainingSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20662,6 +23797,22 @@ pub struct ThingGroupMetadata {
     /// <p>The UNIX timestamp of when the thing group was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ThingGroupMetadata {
+    /// <p>The parent thing group name.</p>
+    pub fn parent_group_name(&self) -> std::option::Option<&str> {
+        self.parent_group_name.as_deref()
+    }
+    /// <p>The root parent thing group.</p>
+    pub fn root_to_parent_thing_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::GroupNameAndArn]> {
+        self.root_to_parent_thing_groups.as_deref()
+    }
+    /// <p>The UNIX timestamp of when the thing group was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for ThingGroupMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThingGroupMetadata");
@@ -20771,6 +23922,40 @@ pub struct StreamInfo {
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An IAM role IoT assumes to access your S3 files.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl StreamInfo {
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>The stream ARN.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The stream version.</p>
+    pub fn stream_version(&self) -> std::option::Option<i32> {
+        self.stream_version
+    }
+    /// <p>The description of the stream.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The files to stream.</p>
+    pub fn files(&self) -> std::option::Option<&[crate::model::StreamFile]> {
+        self.files.as_deref()
+    }
+    /// <p>The date when the stream was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date when the stream was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>An IAM role IoT assumes to access your S3 files.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StreamInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20938,6 +24123,36 @@ pub struct RoleAliasDescription {
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl RoleAliasDescription {
+    /// <p>The role alias.</p>
+    pub fn role_alias(&self) -> std::option::Option<&str> {
+        self.role_alias.as_deref()
+    }
+    /// <p>The ARN of the role alias.</p>
+    pub fn role_alias_arn(&self) -> std::option::Option<&str> {
+        self.role_alias_arn.as_deref()
+    }
+    /// <p>The role ARN.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The role alias owner.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The number of seconds for which the credential is valid.</p>
+    pub fn credential_duration_seconds(&self) -> std::option::Option<i32> {
+        self.credential_duration_seconds
+    }
+    /// <p>The UNIX timestamp of when the role alias was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The UNIX timestamp of when the role alias was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+}
 impl std::fmt::Debug for RoleAliasDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoleAliasDescription");
@@ -21103,6 +24318,60 @@ pub struct JobExecution {
     /// The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
     /// This value will not be included if the job execution has reached a terminal status.</p>
     pub approximate_seconds_before_timed_out: std::option::Option<i64>,
+}
+impl JobExecution {
+    /// <p>The unique identifier you assigned to the job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT,
+    /// CANCELED, or REJECTED).</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
+    /// parameter set to <code>true</code>.</p>
+    pub fn force_canceled(&self) -> std::option::Option<bool> {
+        self.force_canceled
+    }
+    /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    pub fn status_details(&self) -> std::option::Option<&crate::model::JobExecutionStatusDetails> {
+        self.status_details.as_ref()
+    }
+    /// <p>The ARN of the thing on which the job execution is running.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
+    pub fn queued_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.queued_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
+    /// this particular device. It can be used in commands which return or update job execution information.
+    /// </p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated
+    /// by a device.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The estimated number of seconds that remain before the job execution status will be
+    /// changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
+    /// The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
+    /// This value will not be included if the job execution has reached a terminal status.</p>
+    pub fn approximate_seconds_before_timed_out(&self) -> std::option::Option<i64> {
+        self.approximate_seconds_before_timed_out
+    }
 }
 impl std::fmt::Debug for JobExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21320,6 +24589,15 @@ pub struct JobExecutionStatusDetails {
     pub details_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl JobExecutionStatusDetails {
+    /// <p>The job execution status.</p>
+    pub fn details_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.details_map.as_ref()
+    }
+}
 impl std::fmt::Debug for JobExecutionStatusDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobExecutionStatusDetails");
@@ -21438,6 +24716,103 @@ pub struct Job {
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
     pub job_template_arn: std::option::Option<std::string::String>,
+}
+impl Job {
+    /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
+    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
+    /// when a change is detected in a target. For example, a job will run on a device when the thing representing
+    /// the device is added to a target group, even after the job was completed by all things originally in the
+    /// group. </p>
+    pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
+        self.target_selection.as_ref()
+    }
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
+    /// <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+    /// <code>true</code>.</p>
+    pub fn force_canceled(&self) -> std::option::Option<bool> {
+        self.force_canceled
+    }
+    /// <p>If the job was updated, provides the reason code for the update.</p>
+    pub fn reason_code(&self) -> std::option::Option<&str> {
+        self.reason_code.as_deref()
+    }
+    /// <p>If the job was updated, describes the reason for the update.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>A short text description of the job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configuration for pre-signed S3 URLs.</p>
+    pub fn presigned_url_config(&self) -> std::option::Option<&crate::model::PresignedUrlConfig> {
+        self.presigned_url_config.as_ref()
+    }
+    /// <p>Allows you to create a staged rollout of a job.</p>
+    pub fn job_executions_rollout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRolloutConfig> {
+        self.job_executions_rollout_config.as_ref()
+    }
+    /// <p>Configuration for criteria to abort the job.</p>
+    pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
+        self.abort_config.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The time, in seconds since the epoch, when the job was completed.</p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
+    /// <p>Details about the job process.</p>
+    pub fn job_process_details(&self) -> std::option::Option<&crate::model::JobProcessDetails> {
+        self.job_process_details.as_ref()
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
+    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
+    /// execution status is not set to another terminal state before the timer expires, it will
+    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
+        self.timeout_config.as_ref()
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+    /// <p>The ARN of the job template used to create the job.</p>
+    pub fn job_template_arn(&self) -> std::option::Option<&str> {
+        self.job_template_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21818,6 +25193,45 @@ pub struct JobProcessDetails {
     /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
     pub number_of_timed_out_things: std::option::Option<i32>,
 }
+impl JobProcessDetails {
+    /// <p>The target devices to which the job execution is being rolled out. This value will be null after the job execution has finished rolling out to all the target devices.</p>
+    pub fn processing_targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.processing_targets.as_deref()
+    }
+    /// <p>The number of things that cancelled the job.</p>
+    pub fn number_of_canceled_things(&self) -> std::option::Option<i32> {
+        self.number_of_canceled_things
+    }
+    /// <p>The number of things which successfully completed the job.</p>
+    pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
+        self.number_of_succeeded_things
+    }
+    /// <p>The number of things that failed executing the job.</p>
+    pub fn number_of_failed_things(&self) -> std::option::Option<i32> {
+        self.number_of_failed_things
+    }
+    /// <p>The number of things that rejected the job.</p>
+    pub fn number_of_rejected_things(&self) -> std::option::Option<i32> {
+        self.number_of_rejected_things
+    }
+    /// <p>The number of things that are awaiting execution of the job.</p>
+    pub fn number_of_queued_things(&self) -> std::option::Option<i32> {
+        self.number_of_queued_things
+    }
+    /// <p>The number of things currently executing the job.</p>
+    pub fn number_of_in_progress_things(&self) -> std::option::Option<i32> {
+        self.number_of_in_progress_things
+    }
+    /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or
+    /// have been removed from the group that was a target of the job.</p>
+    pub fn number_of_removed_things(&self) -> std::option::Option<i32> {
+        self.number_of_removed_things
+    }
+    /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
+    pub fn number_of_timed_out_things(&self) -> std::option::Option<i32> {
+        self.number_of_timed_out_things
+    }
+}
 impl std::fmt::Debug for JobProcessDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobProcessDetails");
@@ -22112,6 +25526,22 @@ pub struct ServerCertificateSummary {
     /// <p>Details that explain the status of the server certificate.</p>
     pub server_certificate_status_detail: std::option::Option<std::string::String>,
 }
+impl ServerCertificateSummary {
+    /// <p>The ARN of the server certificate.</p>
+    pub fn server_certificate_arn(&self) -> std::option::Option<&str> {
+        self.server_certificate_arn.as_deref()
+    }
+    /// <p>The status of the server certificate.</p>
+    pub fn server_certificate_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerCertificateStatus> {
+        self.server_certificate_status.as_ref()
+    }
+    /// <p>Details that explain the status of the server certificate.</p>
+    pub fn server_certificate_status_detail(&self) -> std::option::Option<&str> {
+        self.server_certificate_status_detail.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerCertificateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerCertificateSummary");
@@ -22277,6 +25707,48 @@ pub struct AuthorizerDescription {
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub signing_disabled: std::option::Option<bool>,
+}
+impl AuthorizerDescription {
+    /// <p>The authorizer name.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
+    /// <p>The authorizer ARN.</p>
+    pub fn authorizer_arn(&self) -> std::option::Option<&str> {
+        self.authorizer_arn.as_deref()
+    }
+    /// <p>The authorizer's Lambda function ARN.</p>
+    pub fn authorizer_function_arn(&self) -> std::option::Option<&str> {
+        self.authorizer_function_arn.as_deref()
+    }
+    /// <p>The key used to extract the token from the HTTP headers.</p>
+    pub fn token_key_name(&self) -> std::option::Option<&str> {
+        self.token_key_name.as_deref()
+    }
+    /// <p>The public keys used to validate the token signature returned by your custom
+    /// authentication service.</p>
+    pub fn token_signing_public_keys(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.token_signing_public_keys.as_ref()
+    }
+    /// <p>The status of the authorizer.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizerStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The UNIX timestamp of when the authorizer was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
+    pub fn signing_disabled(&self) -> std::option::Option<bool> {
+        self.signing_disabled
+    }
 }
 impl std::fmt::Debug for AuthorizerDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22495,6 +25967,64 @@ pub struct CertificateDescription {
     pub validity: std::option::Option<crate::model::CertificateValidity>,
     /// <p>The mode of the certificate.</p>
     pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
+}
+impl CertificateDescription {
+    /// <p>The ARN of the certificate.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The ID of the certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+    pub fn ca_certificate_id(&self) -> std::option::Option<&str> {
+        self.ca_certificate_id.as_deref()
+    }
+    /// <p>The status of the certificate.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+        self.certificate_pem.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the certificate.</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
+    pub fn previous_owned_by(&self) -> std::option::Option<&str> {
+        self.previous_owned_by.as_deref()
+    }
+    /// <p>The date and time the certificate was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time the certificate was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The customer version of the certificate.</p>
+    pub fn customer_version(&self) -> std::option::Option<i32> {
+        self.customer_version
+    }
+    /// <p>The transfer data.</p>
+    pub fn transfer_data(&self) -> std::option::Option<&crate::model::TransferData> {
+        self.transfer_data.as_ref()
+    }
+    /// <p>The generation ID of the certificate.</p>
+    pub fn generation_id(&self) -> std::option::Option<&str> {
+        self.generation_id.as_deref()
+    }
+    /// <p>When the certificate is valid.</p>
+    pub fn validity(&self) -> std::option::Option<&crate::model::CertificateValidity> {
+        self.validity.as_ref()
+    }
+    /// <p>The mode of the certificate.</p>
+    pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
+        self.certificate_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for CertificateDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22751,6 +26281,16 @@ pub struct CertificateValidity {
     /// <p>The certificate is not valid after this date.</p>
     pub not_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CertificateValidity {
+    /// <p>The certificate is not valid before this date.</p>
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_before.as_ref()
+    }
+    /// <p>The certificate is not valid after this date.</p>
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_after.as_ref()
+    }
+}
 impl std::fmt::Debug for CertificateValidity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CertificateValidity");
@@ -22825,6 +26365,28 @@ pub struct TransferData {
     pub accept_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the transfer was rejected.</p>
     pub reject_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TransferData {
+    /// <p>The transfer message.</p>
+    pub fn transfer_message(&self) -> std::option::Option<&str> {
+        self.transfer_message.as_deref()
+    }
+    /// <p>The reason why the transfer was rejected.</p>
+    pub fn reject_reason(&self) -> std::option::Option<&str> {
+        self.reject_reason.as_deref()
+    }
+    /// <p>The date the transfer took place.</p>
+    pub fn transfer_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.transfer_date.as_ref()
+    }
+    /// <p>The date the transfer was accepted.</p>
+    pub fn accept_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.accept_date.as_ref()
+    }
+    /// <p>The date the transfer was rejected.</p>
+    pub fn reject_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.reject_date.as_ref()
+    }
 }
 impl std::fmt::Debug for TransferData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22961,6 +26523,55 @@ pub struct CaCertificateDescription {
     pub generation_id: std::option::Option<std::string::String>,
     /// <p>When the CA certificate is valid.</p>
     pub validity: std::option::Option<crate::model::CertificateValidity>,
+}
+impl CaCertificateDescription {
+    /// <p>The CA certificate ARN.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The CA certificate ID.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The status of a CA certificate.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CaCertificateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The CA certificate data, in PEM format.</p>
+    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+        self.certificate_pem.as_deref()
+    }
+    /// <p>The owner of the CA certificate.</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>The date the CA certificate was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>Whether the CA certificate configured for auto registration of device certificates.
+    /// Valid values are "ENABLE" and "DISABLE"</p>
+    pub fn auto_registration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoRegistrationStatus> {
+        self.auto_registration_status.as_ref()
+    }
+    /// <p>The date the CA certificate was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The customer version of the CA certificate.</p>
+    pub fn customer_version(&self) -> std::option::Option<i32> {
+        self.customer_version
+    }
+    /// <p>The generation ID of the CA certificate.</p>
+    pub fn generation_id(&self) -> std::option::Option<&str> {
+        self.generation_id.as_deref()
+    }
+    /// <p>When the CA certificate is valid.</p>
+    pub fn validity(&self) -> std::option::Option<&crate::model::CertificateValidity> {
+        self.validity.as_ref()
+    }
 }
 impl std::fmt::Debug for CaCertificateDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23173,6 +26784,12 @@ pub struct BillingGroupMetadata {
     /// <p>The date the billing group was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BillingGroupMetadata {
+    /// <p>The date the billing group was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for BillingGroupMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BillingGroupMetadata");
@@ -23239,6 +26856,40 @@ pub struct AuditCheckDetails {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl AuditCheckDetails {
+    /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION",
+    /// "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+    pub fn check_run_status(&self) -> std::option::Option<&crate::model::AuditCheckRunStatus> {
+        self.check_run_status.as_ref()
+    }
+    /// <p>True if the check is complete and found all resources compliant.</p>
+    pub fn check_compliant(&self) -> std::option::Option<bool> {
+        self.check_compliant
+    }
+    /// <p>The number of resources on which the check was performed.</p>
+    pub fn total_resources_count(&self) -> std::option::Option<i64> {
+        self.total_resources_count
+    }
+    /// <p>The number of resources that were found noncompliant during the check.</p>
+    pub fn non_compliant_resources_count(&self) -> std::option::Option<i64> {
+        self.non_compliant_resources_count
+    }
+    /// <p>
+    /// Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.
+    /// </p>
+    pub fn suppressed_non_compliant_resources_count(&self) -> std::option::Option<i64> {
+        self.suppressed_non_compliant_resources_count
+    }
+    /// <p>The code of any error encountered when this check is performed during this audit.
+    /// One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for AuditCheckDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23480,6 +27131,36 @@ pub struct TaskStatistics {
     /// <p>The number of checks that did not run because the audit was canceled.</p>
     pub canceled_checks: std::option::Option<i32>,
 }
+impl TaskStatistics {
+    /// <p>The number of checks in this audit.</p>
+    pub fn total_checks(&self) -> std::option::Option<i32> {
+        self.total_checks
+    }
+    /// <p>The number of checks in progress.</p>
+    pub fn in_progress_checks(&self) -> std::option::Option<i32> {
+        self.in_progress_checks
+    }
+    /// <p>The number of checks waiting for data collection.</p>
+    pub fn waiting_for_data_collection_checks(&self) -> std::option::Option<i32> {
+        self.waiting_for_data_collection_checks
+    }
+    /// <p>The number of checks that found compliant resources.</p>
+    pub fn compliant_checks(&self) -> std::option::Option<i32> {
+        self.compliant_checks
+    }
+    /// <p>The number of checks that found noncompliant resources.</p>
+    pub fn non_compliant_checks(&self) -> std::option::Option<i32> {
+        self.non_compliant_checks
+    }
+    /// <p>The number of checks.</p>
+    pub fn failed_checks(&self) -> std::option::Option<i32> {
+        self.failed_checks
+    }
+    /// <p>The number of checks that did not run because the audit was canceled.</p>
+    pub fn canceled_checks(&self) -> std::option::Option<i32> {
+        self.canceled_checks
+    }
+}
 impl std::fmt::Debug for TaskStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskStatistics");
@@ -23620,6 +27301,28 @@ pub struct TaskStatisticsForAuditCheck {
     /// <p>The number of findings to which the mitigation action task was canceled when applied.</p>
     pub canceled_findings_count: std::option::Option<i64>,
 }
+impl TaskStatisticsForAuditCheck {
+    /// <p>The total number of findings to which a task is being applied.</p>
+    pub fn total_findings_count(&self) -> std::option::Option<i64> {
+        self.total_findings_count
+    }
+    /// <p>The number of findings for which at least one of the actions failed when applied.</p>
+    pub fn failed_findings_count(&self) -> std::option::Option<i64> {
+        self.failed_findings_count
+    }
+    /// <p>The number of findings for which all mitigation actions succeeded when applied.</p>
+    pub fn succeeded_findings_count(&self) -> std::option::Option<i64> {
+        self.succeeded_findings_count
+    }
+    /// <p>The number of findings skipped because of filter conditions provided in the parameters to the command.</p>
+    pub fn skipped_findings_count(&self) -> std::option::Option<i64> {
+        self.skipped_findings_count
+    }
+    /// <p>The number of findings to which the mitigation action task was canceled when applied.</p>
+    pub fn canceled_findings_count(&self) -> std::option::Option<i64> {
+        self.canceled_findings_count
+    }
+}
 impl std::fmt::Debug for TaskStatisticsForAuditCheck {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskStatisticsForAuditCheck");
@@ -23722,6 +27425,20 @@ pub struct TopicRuleDestinationConfiguration {
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcDestinationConfiguration>,
 }
+impl TopicRuleDestinationConfiguration {
+    /// <p>Configuration of the HTTP URL.</p>
+    pub fn http_url_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::HttpUrlDestinationConfiguration> {
+        self.http_url_configuration.as_ref()
+    }
+    /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcDestinationConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for TopicRuleDestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TopicRuleDestinationConfiguration");
@@ -23802,6 +27519,24 @@ pub struct VpcDestinationConfiguration {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl VpcDestinationConfiguration {
+    /// <p>The subnet IDs of the VPC destination.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups of the VPC destination.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcDestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23909,6 +27644,13 @@ pub struct HttpUrlDestinationConfiguration {
     /// URL.</p>
     pub confirmation_url: std::option::Option<std::string::String>,
 }
+impl HttpUrlDestinationConfiguration {
+    /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination
+    /// URL.</p>
+    pub fn confirmation_url(&self) -> std::option::Option<&str> {
+        self.confirmation_url.as_deref()
+    }
+}
 impl std::fmt::Debug for HttpUrlDestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpUrlDestinationConfiguration");
@@ -23963,6 +27705,16 @@ pub struct KeyPair {
     pub public_key: std::option::Option<std::string::String>,
     /// <p>The private key.</p>
     pub private_key: std::option::Option<std::string::String>,
+}
+impl KeyPair {
+    /// <p>The public key.</p>
+    pub fn public_key(&self) -> std::option::Option<&str> {
+        self.public_key.as_deref()
+    }
+    /// <p>The private key.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
 }
 impl std::fmt::Debug for KeyPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24032,6 +27784,16 @@ pub struct AwsJobTimeoutConfig {
     /// switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
+impl AwsJobTimeoutConfig {
+    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The
+    /// timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress
+    /// timer can't be updated and will apply to all job executions for the job. Whenever a job execution
+    /// remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and
+    /// switch to the terminal <code>TIMED_OUT</code> status.</p>
+    pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
+        self.in_progress_timeout_in_minutes
+    }
+}
 impl std::fmt::Debug for AwsJobTimeoutConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsJobTimeoutConfig");
@@ -24093,6 +27855,12 @@ impl AwsJobTimeoutConfig {
 pub struct AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     pub abort_criteria_list: std::option::Option<std::vec::Vec<crate::model::AwsJobAbortCriteria>>,
+}
+impl AwsJobAbortConfig {
+    /// <p>The list of criteria that determine when and how to abort the job.</p>
+    pub fn abort_criteria_list(&self) -> std::option::Option<&[crate::model::AwsJobAbortCriteria]> {
+        self.abort_criteria_list.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsJobAbortConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24162,6 +27930,28 @@ pub struct AwsJobAbortCriteria {
     /// <p>The minimum number of things which must receive job execution notifications before the job
     /// can be aborted.</p>
     pub min_number_of_executed_things: std::option::Option<i32>,
+}
+impl AwsJobAbortCriteria {
+    /// <p>The type of job execution failures that can initiate a job abort.</p>
+    pub fn failure_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobAbortCriteriaFailureType> {
+        self.failure_type.as_ref()
+    }
+    /// <p>The type of job action to take to initiate the job abort.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::AwsJobAbortCriteriaAbortAction> {
+        self.action.as_ref()
+    }
+    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
+    /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    pub fn threshold_percentage(&self) -> std::option::Option<f64> {
+        self.threshold_percentage
+    }
+    /// <p>The minimum number of things which must receive job execution notifications before the job
+    /// can be aborted.</p>
+    pub fn min_number_of_executed_things(&self) -> std::option::Option<i32> {
+        self.min_number_of_executed_things
+    }
 }
 impl std::fmt::Debug for AwsJobAbortCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

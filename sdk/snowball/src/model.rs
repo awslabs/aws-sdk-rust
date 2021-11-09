@@ -212,6 +212,14 @@ pub struct OnDeviceServiceConfiguration {
     /// <p>Represents the NFS service on a Snow Family device.</p>
     pub nfs_on_device_service: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
 }
+impl OnDeviceServiceConfiguration {
+    /// <p>Represents the NFS service on a Snow Family device.</p>
+    pub fn nfs_on_device_service(
+        &self,
+    ) -> std::option::Option<&crate::model::NfsOnDeviceServiceConfiguration> {
+        self.nfs_on_device_service.as_ref()
+    }
+}
 impl std::fmt::Debug for OnDeviceServiceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OnDeviceServiceConfiguration");
@@ -269,6 +277,17 @@ pub struct NfsOnDeviceServiceConfiguration {
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
     pub storage_unit: std::option::Option<crate::model::StorageUnit>,
+}
+impl NfsOnDeviceServiceConfiguration {
+    /// <p>The maximum NFS storage for one Snowball Family device.</p>
+    pub fn storage_limit(&self) -> i32 {
+        self.storage_limit
+    }
+    /// <p>The scale unit of the NFS storage on the device.</p>
+    /// <p>Valid values: TB.</p>
+    pub fn storage_unit(&self) -> std::option::Option<&crate::model::StorageUnit> {
+        self.storage_unit.as_ref()
+    }
 }
 impl std::fmt::Debug for NfsOnDeviceServiceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -393,6 +412,20 @@ pub struct JobResource {
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
     pub ec2_ami_resources: std::option::Option<std::vec::Vec<crate::model::Ec2AmiResource>>,
 }
+impl JobResource {
+    /// <p>An array of <code>S3Resource</code> objects.</p>
+    pub fn s3_resources(&self) -> std::option::Option<&[crate::model::S3Resource]> {
+        self.s3_resources.as_deref()
+    }
+    /// <p>The Python-language Lambda functions for this job.</p>
+    pub fn lambda_resources(&self) -> std::option::Option<&[crate::model::LambdaResource]> {
+        self.lambda_resources.as_deref()
+    }
+    /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
+    pub fn ec2_ami_resources(&self) -> std::option::Option<&[crate::model::Ec2AmiResource]> {
+        self.ec2_ami_resources.as_deref()
+    }
+}
 impl std::fmt::Debug for JobResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobResource");
@@ -500,6 +533,16 @@ pub struct Ec2AmiResource {
     /// <p>The ID of the AMI on the Snow device.</p>
     pub snowball_ami_id: std::option::Option<std::string::String>,
 }
+impl Ec2AmiResource {
+    /// <p>The ID of the AMI in Amazon EC2.</p>
+    pub fn ami_id(&self) -> std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The ID of the AMI on the Snow device.</p>
+    pub fn snowball_ami_id(&self) -> std::option::Option<&str> {
+        self.snowball_ami_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Ec2AmiResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ec2AmiResource");
@@ -566,6 +609,17 @@ pub struct LambdaResource {
     pub lambda_arn: std::option::Option<std::string::String>,
     /// <p>The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.</p>
     pub event_triggers: std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
+}
+impl LambdaResource {
+    /// <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be triggered by
+    /// PUT object actions on the associated local Amazon S3 resource.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+    /// <p>The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.</p>
+    pub fn event_triggers(&self) -> std::option::Option<&[crate::model::EventTriggerDefinition]> {
+        self.event_triggers.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -644,6 +698,13 @@ pub struct EventTriggerDefinition {
     /// function's event trigger associated with this job.</p>
     pub event_resource_arn: std::option::Option<std::string::String>,
 }
+impl EventTriggerDefinition {
+    /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an AWS Lambda
+    /// function's event trigger associated with this job.</p>
+    pub fn event_resource_arn(&self) -> std::option::Option<&str> {
+        self.event_resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for EventTriggerDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventTriggerDefinition");
@@ -709,6 +770,26 @@ pub struct S3Resource {
     /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
     pub target_on_device_services:
         std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
+}
+impl S3Resource {
+    /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific
+    /// Amazon S3 bucket. The length of the range is defined at job creation, and has either an
+    /// inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are
+    /// UTF-8 binary sorted.</p>
+    pub fn key_range(&self) -> std::option::Option<&crate::model::KeyRange> {
+        self.key_range.as_ref()
+    }
+    /// <p>Specifies the service or services on the Snow Family device that your
+    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    pub fn target_on_device_services(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetOnDeviceService]> {
+        self.target_on_device_services.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -808,6 +889,17 @@ pub struct TargetOnDeviceService {
     pub service_name: std::option::Option<crate::model::DeviceServiceName>,
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
     pub transfer_option: std::option::Option<crate::model::TransferOption>,
+}
+impl TargetOnDeviceService {
+    /// <p>Specifies the name of the service on the Snow Family device that your
+    /// transferred data will be exported from or imported into.</p>
+    pub fn service_name(&self) -> std::option::Option<&crate::model::DeviceServiceName> {
+        self.service_name.as_ref()
+    }
+    /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
+    pub fn transfer_option(&self) -> std::option::Option<&crate::model::TransferOption> {
+        self.transfer_option.as_ref()
+    }
 }
 impl std::fmt::Debug for TargetOnDeviceService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -999,6 +1091,18 @@ pub struct KeyRange {
     /// UTF-8 binary sorted.</p>
     pub end_marker: std::option::Option<std::string::String>,
 }
+impl KeyRange {
+    /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and
+    /// UTF-8 binary sorted.</p>
+    pub fn begin_marker(&self) -> std::option::Option<&str> {
+        self.begin_marker.as_deref()
+    }
+    /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and
+    /// UTF-8 binary sorted.</p>
+    pub fn end_marker(&self) -> std::option::Option<&str> {
+        self.end_marker.as_deref()
+    }
+}
 impl std::fmt::Debug for KeyRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyRange");
@@ -1080,6 +1184,25 @@ pub struct Notification {
     pub job_states_to_notify: std::option::Option<std::vec::Vec<crate::model::JobState>>,
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub notify_all: bool,
+}
+impl Notification {
+    /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can
+    /// create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API
+    /// action.</p>
+    ///
+    /// <p>You can subscribe email addresses to an Amazon SNS topic through the AWS Management
+    /// Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The list of job states that will trigger a notification for this job.</p>
+    pub fn job_states_to_notify(&self) -> std::option::Option<&[crate::model::JobState]> {
+        self.job_states_to_notify.as_deref()
+    }
+    /// <p>Any change in job state will trigger a notification for this job.</p>
+    pub fn notify_all(&self) -> bool {
+        self.notify_all
+    }
 }
 impl std::fmt::Debug for Notification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1308,6 +1431,51 @@ pub struct LongTermPricingListEntry {
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
     pub job_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl LongTermPricingListEntry {
+    /// <p>The ID of the long-term pricing type for the device.</p>
+    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+        self.long_term_pricing_id.as_deref()
+    }
+    /// <p>The end date the long-term pricing contract.</p>
+    pub fn long_term_pricing_end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.long_term_pricing_end_date.as_ref()
+    }
+    /// <p>The start date of the long-term pricing contract.</p>
+    pub fn long_term_pricing_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.long_term_pricing_start_date.as_ref()
+    }
+    /// <p>The type of long-term pricing that was selected for the device.</p>
+    pub fn long_term_pricing_type(
+        &self,
+    ) -> std::option::Option<&crate::model::LongTermPricingType> {
+        self.long_term_pricing_type.as_ref()
+    }
+    /// <p>The current active jobs on the device the long-term pricing type.</p>
+    pub fn current_active_job(&self) -> std::option::Option<&str> {
+        self.current_active_job.as_deref()
+    }
+    /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
+    pub fn replacement_job(&self) -> std::option::Option<&str> {
+        self.replacement_job.as_deref()
+    }
+    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
+    /// device should be automatically renewed before the long-term pricing contract expires.</p>
+    pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
+        self.is_long_term_pricing_auto_renew
+    }
+    /// <p>The status of the long-term pricing type.</p>
+    pub fn long_term_pricing_status(&self) -> std::option::Option<&str> {
+        self.long_term_pricing_status.as_deref()
+    }
+    /// <p>The type of AWS Snow Family device associated with this long-term pricing job.</p>
+    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+        self.snowball_type.as_ref()
+    }
+    /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
+    pub fn job_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for LongTermPricingListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1672,6 +1840,42 @@ pub struct JobListEntry {
     /// 2016-08-11</code>.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl JobListEntry {
+    /// <p>The automatically generated ID for a job, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current state of this job.</p>
+    pub fn job_state(&self) -> std::option::Option<&crate::model::JobState> {
+        self.job_state.as_ref()
+    }
+    /// <p>A value that indicates that this job is a main job. A main job represents a
+    /// successful request to create an export job. Main jobs aren't associated with any Snowballs.
+    /// Instead, each main job will have at least one job part, and each job part is associated with
+    /// a Snowball. It might take some time before the job parts associated with a particular main
+    /// job are listed, because they are created after the main job is created.</p>
+    pub fn is_master(&self) -> bool {
+        self.is_master
+    }
+    /// <p>The type of job.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The type of device used with this job.</p>
+    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+        self.snowball_type.as_ref()
+    }
+    /// <p>The creation date for this job.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The optional description of this specific job, for example <code>Important Photos
+    /// 2016-08-11</code>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for JobListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobListEntry");
@@ -1880,6 +2084,16 @@ pub struct CompatibleImage {
     /// <p>The optional name of a compatible image.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CompatibleImage {
+    /// <p>The unique identifier for an individual Snow device AMI.</p>
+    pub fn ami_id(&self) -> std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The optional name of a compatible image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CompatibleImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompatibleImage");
@@ -1949,6 +2163,27 @@ pub struct ClusterListEntry {
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data
     /// Cluster-01</code>.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl ClusterListEntry {
+    /// <p>The 39-character ID for the cluster that you want to list, for example
+    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The current state of this cluster. For information about the state of a specific node,
+    /// see <a>JobListEntry$JobState</a>.</p>
+    pub fn cluster_state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.cluster_state.as_ref()
+    }
+    /// <p>The creation date for this cluster.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>Defines an optional description of the cluster, for example <code>Environmental Data
+    /// Cluster-01</code>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2257,6 +2492,128 @@ pub struct JobMetadata {
     /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+}
+impl JobMetadata {
+    /// <p>The automatically generated ID for a job, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status of the jobs.</p>
+    pub fn job_state(&self) -> std::option::Option<&crate::model::JobState> {
+        self.job_state.as_ref()
+    }
+    /// <p>The type of job.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The type of device used with this job.</p>
+    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+        self.snowball_type.as_ref()
+    }
+    /// <p>The creation date for this job.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object
+    /// represents an Amazon S3 bucket that your transferred data will be exported from or imported
+    /// into.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+        self.resources.as_ref()
+    }
+    /// <p>The description of the job, provided at job creation.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key
+    /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
+    /// KMS.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+    /// API action in AWS Identity and Access Management (IAM).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The ID for the address that you want the Snow device shipped to.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
+    /// <p>A job's shipping information, including inbound and outbound tracking numbers and
+    /// shipping speed options.</p>
+    pub fn shipping_details(&self) -> std::option::Option<&crate::model::ShippingDetails> {
+        self.shipping_details.as_ref()
+    }
+    /// <p>The Snow device capacity preference for this job, specified at job creation. In US
+    /// regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB
+    /// capacity Snowballs.</p>
+    ///
+    /// <p>For more information, see
+    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn snowball_capacity_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::SnowballCapacity> {
+        self.snowball_capacity_preference.as_ref()
+    }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated
+    /// with a specific job. The <code>Notification</code> object is returned as a part of the
+    /// response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data
+    /// type.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>A value that defines the real-time status of a Snow device's data transfer while the
+    /// device is at AWS. This data is only available while a job has a <code>JobState</code> value of
+    /// <code>InProgress</code>, for both import and export jobs.</p>
+    pub fn data_transfer_progress(&self) -> std::option::Option<&crate::model::DataTransfer> {
+        self.data_transfer_progress.as_ref()
+    }
+    /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF
+    /// job report becomes available at the end of the import process. For export jobs, your job
+    /// report typically becomes available while the Snow device for your job part is being delivered to
+    /// you.</p>
+    pub fn job_log_info(&self) -> std::option::Option<&crate::model::JobLogs> {
+        self.job_log_info.as_ref()
+    }
+    /// <p>The 39-character ID for the cluster, for example
+    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The ID of the address that you want a job shipped to, after it will be
+    /// shipped to its primary address. This field is not supported in most regions.</p>
+    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+        self.forwarding_address_id.as_deref()
+    }
+    /// <p>The metadata associated with the tax documents required in your AWS Region.</p>
+    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+        self.tax_documents.as_ref()
+    }
+    /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
+    pub fn device_configuration(&self) -> std::option::Option<&crate::model::DeviceConfiguration> {
+        self.device_configuration.as_ref()
+    }
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
+    /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
+    /// automatically be available when the device arrives at your location. Otherwise, you need to
+    /// use the Snowball Client to manage the device.</p>
+    pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
+        self.remote_management.as_ref()
+    }
+    /// <p>The ID of the long-term pricing type for the device.</p>
+    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+        self.long_term_pricing_id.as_deref()
+    }
+    /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+    pub fn on_device_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+        self.on_device_service_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for JobMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2747,6 +3104,14 @@ pub struct DeviceConfiguration {
     pub snowcone_device_configuration:
         std::option::Option<crate::model::SnowconeDeviceConfiguration>,
 }
+impl DeviceConfiguration {
+    /// <p>Returns information about the device configuration for an AWS Snowcone job.</p>
+    pub fn snowcone_device_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SnowconeDeviceConfiguration> {
+        self.snowcone_device_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceConfiguration");
@@ -2805,6 +3170,12 @@ pub struct SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the AWS Snowcone device.</p>
     pub wireless_connection: std::option::Option<crate::model::WirelessConnection>,
 }
+impl SnowconeDeviceConfiguration {
+    /// <p>Configures the wireless connection for the AWS Snowcone device.</p>
+    pub fn wireless_connection(&self) -> std::option::Option<&crate::model::WirelessConnection> {
+        self.wireless_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for SnowconeDeviceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnowconeDeviceConfiguration");
@@ -2856,6 +3227,12 @@ pub struct WirelessConnection {
     /// <p>Enables the Wi-Fi adapter on an AWS Snowcone device.</p>
     pub is_wifi_enabled: bool,
 }
+impl WirelessConnection {
+    /// <p>Enables the Wi-Fi adapter on an AWS Snowcone device.</p>
+    pub fn is_wifi_enabled(&self) -> bool {
+        self.is_wifi_enabled
+    }
+}
 impl std::fmt::Debug for WirelessConnection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WirelessConnection");
@@ -2903,6 +3280,12 @@ impl WirelessConnection {
 pub struct TaxDocuments {
     /// <p>The tax documents required in AWS Regions in India.</p>
     pub ind: std::option::Option<crate::model::IndTaxDocuments>,
+}
+impl TaxDocuments {
+    /// <p>The tax documents required in AWS Regions in India.</p>
+    pub fn ind(&self) -> std::option::Option<&crate::model::IndTaxDocuments> {
+        self.ind.as_ref()
+    }
 }
 impl std::fmt::Debug for TaxDocuments {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2952,6 +3335,12 @@ impl TaxDocuments {
 pub struct IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in AWS Regions in India.</p>
     pub gstin: std::option::Option<std::string::String>,
+}
+impl IndTaxDocuments {
+    /// <p>The Goods and Services Tax (GST) documents required in AWS Regions in India.</p>
+    pub fn gstin(&self) -> std::option::Option<&str> {
+        self.gstin.as_deref()
+    }
 }
 impl std::fmt::Debug for IndTaxDocuments {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3020,6 +3409,21 @@ pub struct JobLogs {
     pub job_success_log_uri: std::option::Option<std::string::String>,
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
     pub job_failure_log_uri: std::option::Option<std::string::String>,
+}
+impl JobLogs {
+    /// <p>A link to an Amazon S3 presigned URL where the job completion report is
+    /// located.</p>
+    pub fn job_completion_report_uri(&self) -> std::option::Option<&str> {
+        self.job_completion_report_uri.as_deref()
+    }
+    /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
+    pub fn job_success_log_uri(&self) -> std::option::Option<&str> {
+        self.job_success_log_uri.as_deref()
+    }
+    /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
+    pub fn job_failure_log_uri(&self) -> std::option::Option<&str> {
+        self.job_failure_log_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for JobLogs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3115,6 +3519,26 @@ pub struct DataTransfer {
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value
     /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub total_objects: i64,
+}
+impl DataTransfer {
+    /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
+    pub fn bytes_transferred(&self) -> i64 {
+        self.bytes_transferred
+    }
+    /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
+    pub fn objects_transferred(&self) -> i64 {
+        self.objects_transferred
+    }
+    /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is
+    /// set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    pub fn total_bytes(&self) -> i64 {
+        self.total_bytes
+    }
+    /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value
+    /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    pub fn total_objects(&self) -> i64 {
+        self.total_objects
+    }
 }
 impl std::fmt::Debug for DataTransfer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3235,6 +3659,44 @@ pub struct ShippingDetails {
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
     /// delivered to the address that you specified for a particular job.</p>
     pub outbound_shipment: std::option::Option<crate::model::Shipment>,
+}
+impl ShippingDetails {
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get
+    /// the Snow device from the job's creation date. This speed represents how quickly it moves to its
+    /// destination while in transit. Regional shipping speeds are as follows:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
+    /// express are delivered in about a day.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically,
+    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// EU have access to standard shipping, which typically takes less than a week, one
+    /// way.</p>
+    /// </li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the United States of America (US), you have access to one-day shipping and
+    /// two-day shipping.</p>
+    /// </li>
+    /// </ul>
+    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+        self.shipping_option.as_ref()
+    }
+    /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
+    /// returned to AWS for a particular job.</p>
+    pub fn inbound_shipment(&self) -> std::option::Option<&crate::model::Shipment> {
+        self.inbound_shipment.as_ref()
+    }
+    /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
+    /// delivered to the address that you specified for a particular job.</p>
+    pub fn outbound_shipment(&self) -> std::option::Option<&crate::model::Shipment> {
+        self.outbound_shipment.as_ref()
+    }
 }
 impl std::fmt::Debug for ShippingDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3373,6 +3835,19 @@ pub struct Shipment {
     /// carrier.</p>
     pub tracking_number: std::option::Option<std::string::String>,
 }
+impl Shipment {
+    /// <p>Status information for a shipment.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The tracking number for this job. Using this tracking number with your region's
+    /// carrier's website, you can track a Snow device as the carrier transports it.</p>
+    /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the
+    /// carrier.</p>
+    pub fn tracking_number(&self) -> std::option::Option<&str> {
+        self.tracking_number.as_deref()
+    }
+}
 impl std::fmt::Debug for Shipment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Shipment");
@@ -3502,6 +3977,101 @@ pub struct ClusterMetadata {
     /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
+}
+impl ClusterMetadata {
+    /// <p>The automatically generated ID for a cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The optional description of the cluster.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster.
+    /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
+    /// Management Service (AWS KMS).</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+    /// API action in AWS Identity and Access Management (IAM).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The current status of the cluster.</p>
+    pub fn cluster_state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.cluster_state.as_ref()
+    }
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
+    /// is <code>LOCAL_USE</code>.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The type of AWS Snow device to use for this cluster.
+    /// </p>
+    /// <note>
+    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// </note>
+    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+        self.snowball_type.as_ref()
+    }
+    /// <p>The creation date for this cluster.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The arrays of <a>JobResource</a> objects that can include updated <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+        self.resources.as_ref()
+    }
+    /// <p>The automatically generated ID for a specific address.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
+    /// you'll get each device, rather it represents how quickly each device moves to
+    /// its destination while in transit. Regional shipping speeds are as follows:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, devices shipped
+    /// express are delivered in about a day.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically,
+    /// Snow devices shipped express are delivered in about a day. In addition, most countries
+    /// in the EU have access to standard shipping, which typically takes less than a week, one
+    /// way.</p>
+    /// </li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
+    /// </li>
+    /// </ul>
+    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+        self.shipping_option.as_ref()
+    }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
+    /// cluster.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The ID of the address that you want a cluster shipped to, after it will be
+    /// shipped to its primary address. This field is not supported in most regions.</p>
+    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+        self.forwarding_address_id.as_deref()
+    }
+    /// <p>The tax documents required in your AWS Region.</p>
+    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+        self.tax_documents.as_ref()
+    }
+    /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+    pub fn on_device_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+        self.on_device_service_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ClusterMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3863,6 +4433,69 @@ pub struct Address {
     /// <p>If the address you are creating is a primary address, then set this option to
     /// true. This field is not supported in most regions.</p>
     pub is_restricted: bool,
+}
+impl Address {
+    /// <p>The unique ID for an address.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
+    /// <p>The name of a person to receive a Snow device at an address.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the company to receive a Snow device at an address.</p>
+    pub fn company(&self) -> std::option::Option<&str> {
+        self.company.as_deref()
+    }
+    /// <p>The first line in a street address that a Snow device is to be delivered
+    /// to.</p>
+    pub fn street1(&self) -> std::option::Option<&str> {
+        self.street1.as_deref()
+    }
+    /// <p>The second line in a street address that a Snow device is to be delivered
+    /// to.</p>
+    pub fn street2(&self) -> std::option::Option<&str> {
+        self.street2.as_deref()
+    }
+    /// <p>The third line in a street address that a Snow device is to be delivered
+    /// to.</p>
+    pub fn street3(&self) -> std::option::Option<&str> {
+        self.street3.as_deref()
+    }
+    /// <p>The city in an address that a Snow device is to be delivered to.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
+    pub fn state_or_province(&self) -> std::option::Option<&str> {
+        self.state_or_province.as_deref()
+    }
+    /// <p>This field is no longer used and the value is ignored.</p>
+    pub fn prefecture_or_district(&self) -> std::option::Option<&str> {
+        self.prefecture_or_district.as_deref()
+    }
+    /// <p>This field is no longer used and the value is ignored.</p>
+    pub fn landmark(&self) -> std::option::Option<&str> {
+        self.landmark.as_deref()
+    }
+    /// <p>The country in an address that a Snow device is to be delivered to.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
+    /// <p>The phone number associated with an address that a Snow device is to be delivered
+    /// to.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>If the address you are creating is a primary address, then set this option to
+    /// true. This field is not supported in most regions.</p>
+    pub fn is_restricted(&self) -> bool {
+        self.is_restricted
+    }
 }
 impl std::fmt::Debug for Address {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

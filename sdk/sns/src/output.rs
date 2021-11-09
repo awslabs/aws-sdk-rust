@@ -129,6 +129,15 @@ pub struct SubscribeOutput {
     /// subscription ARN, even if the subscription requires confirmation.</p>
     pub subscription_arn: std::option::Option<std::string::String>,
 }
+impl SubscribeOutput {
+    /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation"
+    /// if the subscription requires confirmation. However, if the API request parameter
+    /// <code>ReturnSubscriptionArn</code> is true, then the value is always the
+    /// subscription ARN, even if the subscription requires confirmation.</p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SubscribeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribeOutput");
@@ -373,6 +382,21 @@ pub struct PublishOutput {
     /// <code>MessageGroupId</code>.</p>
     pub sequence_number: std::option::Option<std::string::String>,
 }
+impl PublishOutput {
+    /// <p>Unique identifier assigned to the published message.</p>
+    /// <p>Length Constraint: Maximum 100 characters</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+    /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each
+    /// message. The length of <code>SequenceNumber</code> is 128 bits.
+    /// <code>SequenceNumber</code> continues to increase for each
+    /// <code>MessageGroupId</code>.</p>
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
+        self.sequence_number.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishOutput");
@@ -480,6 +504,17 @@ pub struct ListTopicsOutput {
     /// returned if there are additional topics to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTopicsOutput {
+    /// <p>A list of topic ARNs.</p>
+    pub fn topics(&self) -> std::option::Option<&[crate::model::Topic]> {
+        self.topics.as_deref()
+    }
+    /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is
+    /// returned if there are additional topics to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTopicsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTopicsOutput");
@@ -552,6 +587,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the specified topic.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with the specified topic.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -609,6 +650,17 @@ pub struct ListSubscriptionsByTopicOutput {
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This
     /// element is returned if there are more subscriptions to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSubscriptionsByTopicOutput {
+    /// <p>A list of subscriptions.</p>
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+        self.subscriptions.as_deref()
+    }
+    /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This
+    /// element is returned if there are more subscriptions to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSubscriptionsByTopicOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -685,6 +737,17 @@ pub struct ListSubscriptionsOutput {
     /// is returned if there are more subscriptions to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSubscriptionsOutput {
+    /// <p>A list of subscriptions.</p>
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+        self.subscriptions.as_deref()
+    }
+    /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element
+    /// is returned if there are more subscriptions to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSubscriptionsOutput");
@@ -760,6 +823,18 @@ pub struct ListSmsSandboxPhoneNumbersOutput {
     /// <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of
     /// records are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSmsSandboxPhoneNumbersOutput {
+    /// <p>A list of the calling account's pending and verified phone numbers.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::SmsSandboxPhoneNumber]> {
+        self.phone_numbers.as_deref()
+    }
+    /// <p>A <code>NextToken</code> string is returned when you call the
+    /// <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of
+    /// records are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSmsSandboxPhoneNumbersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -843,6 +918,19 @@ pub struct ListPlatformApplicationsOutput {
     /// additional records are available after the first page results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPlatformApplicationsOutput {
+    /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
+    pub fn platform_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlatformApplication]> {
+        self.platform_applications.as_deref()
+    }
+    /// <p>NextToken string is returned when calling ListPlatformApplications action if
+    /// additional records are available after the first page results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPlatformApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPlatformApplicationsOutput");
@@ -924,6 +1012,19 @@ pub struct ListPhoneNumbersOptedOutOutput {
     /// after the first page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPhoneNumbersOptedOutOutput {
+    /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is
+    /// paginated, and each page can contain up to 100 phone numbers.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.phone_numbers.as_deref()
+    }
+    /// <p>A <code>NextToken</code> string is returned when you call the
+    /// <code>ListPhoneNumbersOptedOut</code> action if additional records are available
+    /// after the first page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPhoneNumbersOptedOutOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhoneNumbersOptedOutOutput");
@@ -1003,6 +1104,18 @@ pub struct ListOriginationNumbersOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the calling account's verified and pending origination numbers.</p>
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
+}
+impl ListOriginationNumbersOutput {
+    /// <p>A <code>NextToken</code> string is returned when you call the
+    /// <code>ListOriginationNumbers</code> operation if additional pages of records are
+    /// available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of the calling account's verified and pending origination numbers.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumberInformation]> {
+        self.phone_numbers.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOriginationNumbersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1084,6 +1197,17 @@ pub struct ListEndpointsByPlatformApplicationOutput {
     /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if
     /// additional records are available after the first page results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEndpointsByPlatformApplicationOutput {
+    /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if
+    /// additional records are available after the first page results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEndpointsByPlatformApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1246,6 +1370,104 @@ pub struct GetTopicAttributesOutput {
     /// </ul>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetTopicAttributesOutput {
+    /// <p>A map of the topic's attributes. Attributes in this map include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DeliveryPolicy</code> – The JSON serialization of the topic's
+    /// delivery policy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DisplayName</code> – The human-readable name used in the
+    /// <code>From</code> field for notifications to <code>email</code> and
+    /// <code>email-json</code> endpoints.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Owner</code> – The account ID of the topic's owner.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Policy</code> – The JSON serialization of the topic's access
+    /// control policy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SubscriptionsConfirmed</code> – The number of confirmed
+    /// subscriptions for the topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SubscriptionsDeleted</code> – The number of deleted subscriptions
+    /// for the topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SubscriptionsPending</code> – The number of subscriptions pending
+    /// confirmation for the topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TopicArn</code> – The topic's ARN.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the
+    /// effective delivery policy, taking system defaults into account.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services managed customer master key
+    /// (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+    /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+    /// Reference</i>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
+    /// topic is created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+    /// FIFO topics.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+    /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+    /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+    /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+    /// </li>
+    /// <li>
+    /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+    /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+    /// the body of the message (but not the attributes of the message).</p>
+    /// <p>(Optional) To override the generated value, you can specify a value
+    /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+    /// action.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetTopicAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1568,6 +1790,92 @@ pub struct GetSubscriptionAttributesOutput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetSubscriptionAttributesOutput {
+    /// <p>A map of the subscription's attributes. Attributes in this map include the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ConfirmationWasAuthenticated</code> – <code>true</code> if the
+    /// subscription confirmation request was authenticated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DeliveryPolicy</code> – The JSON serialization of the
+    /// subscription's delivery policy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the
+    /// effective delivery policy that takes into account the topic delivery policy and
+    /// account system defaults.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FilterPolicy</code> – The filter policy JSON that is assigned to
+    /// the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message
+    /// Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Owner</code> – The account ID of the subscription's
+    /// owner.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PendingConfirmation</code> – <code>true</code> if the subscription
+    /// hasn't been confirmed. To confirm a pending subscription, call the
+    /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RawMessageDelivery</code> – <code>true</code> if raw message
+    /// delivery is enabled for the subscription. Raw messages are free of JSON
+    /// formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+    /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+    /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+    /// in the dead-letter queue for further analysis or reprocessing.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SubscriptionArn</code> – The subscription's ARN.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TopicArn</code> – The topic ARN that the subscription is associated
+    /// with.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p>
+    /// </li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+    /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+    /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSubscriptionAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSubscriptionAttributesOutput");
@@ -1787,6 +2095,12 @@ pub struct GetSmsSandboxAccountStatusOutput {
     /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
     pub is_in_sandbox: bool,
 }
+impl GetSmsSandboxAccountStatusOutput {
+    /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
+    pub fn is_in_sandbox(&self) -> bool {
+        self.is_in_sandbox
+    }
+}
 impl std::fmt::Debug for GetSmsSandboxAccountStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSmsSandboxAccountStatusOutput");
@@ -1835,6 +2149,15 @@ pub struct GetSmsAttributesOutput {
     /// <p>The SMS attribute names and their values.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetSmsAttributesOutput {
+    /// <p>The SMS attribute names and their values.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSmsAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1924,6 +2247,38 @@ pub struct GetPlatformApplicationAttributesOutput {
     /// </ul>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetPlatformApplicationAttributesOutput {
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
+    /// event notifications should be sent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted
+    /// event notifications should be sent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate
+    /// event notifications should be sent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure
+    /// event notifications should be sent upon Direct Publish delivery failure
+    /// (permanent) to one of the application's endpoints.</p>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPlatformApplicationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2061,6 +2416,40 @@ pub struct GetEndpointAttributesOutput {
     /// </ul>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetEndpointAttributesOutput {
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CustomUserData</code> – arbitrary user data to associate with the
+    /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
+    /// less than 2KB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Enabled</code> – flag that enables/disables delivery to the
+    /// endpoint. Amazon SNS will set this to false when a notification service indicates to
+    /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
+    /// after updating Token.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Token</code> – device token, also referred to as a registration id,
+    /// for an app and mobile device. This is returned from the notification service
+    /// when an app and mobile device are registered with the notification
+    /// service.</p>
+    /// <note>
+    /// <p>The device token for the iOS platform is returned in lowercase.</p>
+    /// </note>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEndpointAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2297,6 +2686,12 @@ pub struct CreateTopicOutput {
     /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl CreateTopicOutput {
+    /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTopicOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTopicOutput");
@@ -2375,6 +2770,12 @@ pub struct CreatePlatformEndpointOutput {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl CreatePlatformEndpointOutput {
+    /// <p>EndpointArn returned from CreateEndpoint action.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePlatformEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlatformEndpointOutput");
@@ -2422,6 +2823,12 @@ impl CreatePlatformEndpointOutput {
 pub struct CreatePlatformApplicationOutput {
     /// <p>PlatformApplicationArn is returned.</p>
     pub platform_application_arn: std::option::Option<std::string::String>,
+}
+impl CreatePlatformApplicationOutput {
+    /// <p>PlatformApplicationArn is returned.</p>
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
+        self.platform_application_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePlatformApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2473,6 +2880,12 @@ impl CreatePlatformApplicationOutput {
 pub struct ConfirmSubscriptionOutput {
     /// <p>The ARN of the created subscription.</p>
     pub subscription_arn: std::option::Option<std::string::String>,
+}
+impl ConfirmSubscriptionOutput {
+    /// <p>The ARN of the created subscription.</p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfirmSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2536,6 +2949,24 @@ pub struct CheckIfPhoneNumberIsOptedOutOutput {
     /// </li>
     /// </ul>
     pub is_opted_out: bool,
+}
+impl CheckIfPhoneNumberIsOptedOutOutput {
+    /// <p>Indicates whether the phone number is opted out:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>true</code> – The phone number is opted out, meaning you cannot publish
+    /// SMS messages to it.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>false</code> – The phone number is opted in, meaning you can publish SMS
+    /// messages to it.</p>
+    /// </li>
+    /// </ul>
+    pub fn is_opted_out(&self) -> bool {
+        self.is_opted_out
+    }
 }
 impl std::fmt::Debug for CheckIfPhoneNumberIsOptedOutOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

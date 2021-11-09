@@ -3253,6 +3253,12 @@ pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
 }
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -3332,6 +3338,12 @@ pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
 }
+impl InvalidInputException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+}
 impl std::fmt::Debug for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidInputException");
@@ -3410,6 +3422,12 @@ pub struct InternalServerException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
+}
+impl InternalServerException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
 }
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3554,6 +3572,12 @@ pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
 }
+impl LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -3696,6 +3720,12 @@ pub struct IdempotentParameterMismatchException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
+}
+impl IdempotentParameterMismatchException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
 }
 impl std::fmt::Debug for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

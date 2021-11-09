@@ -16,6 +16,28 @@ pub struct UpdateSubnetChangeProtectionOutput {
     /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub subnet_change_protection: bool,
 }
+impl UpdateSubnetChangeProtectionOutput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
+    /// Use this setting to protect against
+    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn subnet_change_protection(&self) -> bool {
+        self.subnet_change_protection
+    }
+}
 impl std::fmt::Debug for UpdateSubnetChangeProtectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubnetChangeProtectionOutput");
@@ -117,6 +139,17 @@ pub struct UpdateRuleGroupOutput {
     /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
 }
+impl UpdateRuleGroupOutput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
+        self.rule_group_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleGroupOutput");
@@ -186,6 +219,22 @@ pub struct UpdateLoggingConfigurationOutput {
     pub firewall_name: std::option::Option<std::string::String>,
     /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+}
+impl UpdateLoggingConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -276,6 +325,28 @@ pub struct UpdateFirewallPolicyChangeProtectionOutput {
     /// Use this setting to protect against
     /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub firewall_policy_change_protection: bool,
+}
+impl UpdateFirewallPolicyChangeProtectionOutput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
+    /// Use this setting to protect against
+    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn firewall_policy_change_protection(&self) -> bool {
+        self.firewall_policy_change_protection
+    }
 }
 impl std::fmt::Debug for UpdateFirewallPolicyChangeProtectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -386,6 +457,19 @@ pub struct UpdateFirewallPolicyOutput {
     /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
 }
+impl UpdateFirewallPolicyOutput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    pub fn firewall_policy_response(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
+        self.firewall_policy_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFirewallPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallPolicyOutput");
@@ -463,6 +547,26 @@ pub struct UpdateFirewallDescriptionOutput {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
+}
+impl UpdateFirewallDescriptionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>A description of the firewall.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallDescriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -565,6 +669,26 @@ pub struct UpdateFirewallDeleteProtectionOutput {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
+}
+impl UpdateFirewallDeleteProtectionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p></p>
+    pub fn delete_protection(&self) -> bool {
+        self.delete_protection
+    }
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallDeleteProtectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -754,6 +878,18 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags that are associated with the resource. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The tags that are associated with the resource. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -832,6 +968,19 @@ pub struct ListRuleGroupsOutput {
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max
     /// results and the number of rule groups, this might not be the full list. </p>
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>>,
+}
+impl ListRuleGroupsOutput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The rule group metadata objects that you've defined. Depending on your setting for max
+    /// results and the number of rule groups, this might not be the full list. </p>
+    pub fn rule_groups(&self) -> std::option::Option<&[crate::model::RuleGroupMetadata]> {
+        self.rule_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRuleGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -915,6 +1064,20 @@ pub struct ListFirewallsOutput {
     /// list. </p>
     pub firewalls: std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>>,
 }
+impl ListFirewallsOutput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting
+    /// for max results and the number of firewalls you have, a single call might not be the full
+    /// list. </p>
+    pub fn firewalls(&self) -> std::option::Option<&[crate::model::FirewallMetadata]> {
+        self.firewalls.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallsOutput");
@@ -997,6 +1160,21 @@ pub struct ListFirewallPoliciesOutput {
     /// <p>The metadata for the firewall policies. Depending on your setting for max results and
     /// the number of firewall policies that you have, this might not be the full list. </p>
     pub firewall_policies: std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>>,
+}
+impl ListFirewallPoliciesOutput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The metadata for the firewall policies. Depending on your setting for max results and
+    /// the number of firewall policies that you have, this might not be the full list. </p>
+    pub fn firewall_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::FirewallPolicyMetadata]> {
+        self.firewall_policies.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFirewallPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1085,6 +1263,26 @@ pub struct DisassociateSubnetsOutput {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
+}
+impl DisassociateSubnetsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The IDs of the subnets that are associated with the firewall. </p>
+    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
+        self.subnet_mappings.as_deref()
+    }
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateSubnetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1199,6 +1397,26 @@ pub struct DescribeRuleGroupOutput {
     /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
 }
+impl DescribeRuleGroupOutput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic.
+    /// You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their
+    /// traffic flow. </p>
+    /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from
+    /// more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
+    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
+        self.rule_group.as_ref()
+    }
+    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
+        self.rule_group_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRuleGroupOutput");
@@ -1291,6 +1509,12 @@ pub struct DescribeResourcePolicyOutput {
     /// <p>The AWS Identity and Access Management policy for the resource. </p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl DescribeResourcePolicyOutput {
+    /// <p>The AWS Identity and Access Management policy for the resource. </p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourcePolicyOutput");
@@ -1340,6 +1564,18 @@ pub struct DescribeLoggingConfigurationOutput {
     pub firewall_arn: std::option::Option<std::string::String>,
     /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+}
+impl DescribeLoggingConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1409,6 +1645,23 @@ pub struct DescribeFirewallPolicyOutput {
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
     /// <p>The policy for the specified firewall policy. </p>
     pub firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
+}
+impl DescribeFirewallPolicyOutput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    pub fn firewall_policy_response(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
+        self.firewall_policy_response.as_ref()
+    }
+    /// <p>The policy for the specified firewall policy. </p>
+    pub fn firewall_policy(&self) -> std::option::Option<&crate::model::FirewallPolicy> {
+        self.firewall_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFirewallPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1502,6 +1755,22 @@ pub struct DescribeFirewallOutput {
     /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
 }
+impl DescribeFirewallOutput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
+    pub fn firewall(&self) -> std::option::Option<&crate::model::Firewall> {
+        self.firewall.as_ref()
+    }
+    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    pub fn firewall_status(&self) -> std::option::Option<&crate::model::FirewallStatus> {
+        self.firewall_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFirewallOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFirewallOutput");
@@ -1582,6 +1851,12 @@ impl DescribeFirewallOutput {
 pub struct DeleteRuleGroupOutput {
     /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+}
+impl DeleteRuleGroupOutput {
+    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
+        self.rule_group_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1665,6 +1940,15 @@ pub struct DeleteFirewallPolicyOutput {
     /// that you asked to delete. </p>
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
 }
+impl DeleteFirewallPolicyOutput {
+    /// <p>The object containing the definition of the <a>FirewallPolicyResponse</a>
+    /// that you asked to delete. </p>
+    pub fn firewall_policy_response(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
+        self.firewall_policy_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteFirewallPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFirewallPolicyOutput");
@@ -1726,6 +2010,19 @@ pub struct DeleteFirewallOutput {
     pub firewall: std::option::Option<crate::model::Firewall>,
     /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
+}
+impl DeleteFirewallOutput {
+    /// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
+    /// <p>The status of the firewall, for example whether it's ready to filter network traffic,
+    /// is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both
+    /// objects by calling <a>DescribeFirewall</a>.</p>
+    pub fn firewall(&self) -> std::option::Option<&crate::model::Firewall> {
+        self.firewall.as_ref()
+    }
+    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    pub fn firewall_status(&self) -> std::option::Option<&crate::model::FirewallStatus> {
+        self.firewall_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteFirewallOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1800,6 +2097,17 @@ pub struct CreateRuleGroupOutput {
     /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
 }
+impl CreateRuleGroupOutput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
+        self.rule_group_response.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleGroupOutput");
@@ -1868,6 +2176,19 @@ pub struct CreateFirewallPolicyOutput {
     pub update_token: std::option::Option<std::string::String>,
     /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
+}
+impl CreateFirewallPolicyOutput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    pub fn firewall_policy_response(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
+        self.firewall_policy_response.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFirewallPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,6 +2262,16 @@ pub struct CreateFirewallOutput {
     /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
 }
+impl CreateFirewallOutput {
+    /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
+    pub fn firewall(&self) -> std::option::Option<&crate::model::Firewall> {
+        self.firewall.as_ref()
+    }
+    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    pub fn firewall_status(&self) -> std::option::Option<&crate::model::FirewallStatus> {
+        self.firewall_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFirewallOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFirewallOutput");
@@ -2012,6 +2343,26 @@ pub struct AssociateSubnetsOutput {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
+}
+impl AssociateSubnetsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The IDs of the subnets that are associated with the firewall. </p>
+    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
+        self.subnet_mappings.as_deref()
+    }
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateSubnetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2123,6 +2474,26 @@ pub struct AssociateFirewallPolicyOutput {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
+}
+impl AssociateFirewallPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateFirewallPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

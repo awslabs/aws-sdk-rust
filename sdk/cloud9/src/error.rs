@@ -1989,6 +1989,16 @@ pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
 }
+impl TooManyRequestsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+}
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequestsException");
@@ -2082,6 +2092,16 @@ pub struct NotFoundException {
     pub class_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
+}
+impl NotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
 }
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2177,6 +2197,16 @@ pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
 }
+impl LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -2270,6 +2300,16 @@ pub struct InternalServerErrorException {
     pub class_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
+}
+impl InternalServerErrorException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
 }
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2365,6 +2405,16 @@ pub struct ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
 }
+impl ForbiddenException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+}
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ForbiddenException");
@@ -2458,6 +2508,16 @@ pub struct ConflictException {
     pub class_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
+}
+impl ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2553,6 +2613,16 @@ pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
 }
+impl BadRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+}
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BadRequestException");
@@ -2646,6 +2716,16 @@ pub struct ConcurrentAccessException {
     pub class_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
+}
+impl ConcurrentAccessException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> i32 {
+        self.code
+    }
 }
 impl std::fmt::Debug for ConcurrentAccessException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

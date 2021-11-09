@@ -16,6 +16,32 @@ pub struct ApplicationUpdate {
     pub cloud_watch_logging_option_updates:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionUpdate>>,
 }
+impl ApplicationUpdate {
+    /// <p>Describes application input configuration updates.</p>
+    pub fn input_updates(&self) -> std::option::Option<&[crate::model::InputUpdate]> {
+        self.input_updates.as_deref()
+    }
+    /// <p>Describes application code updates.</p>
+    pub fn application_code_update(&self) -> std::option::Option<&str> {
+        self.application_code_update.as_deref()
+    }
+    /// <p>Describes application output configuration updates.</p>
+    pub fn output_updates(&self) -> std::option::Option<&[crate::model::OutputUpdate]> {
+        self.output_updates.as_deref()
+    }
+    /// <p>Describes application reference data source updates.</p>
+    pub fn reference_data_source_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReferenceDataSourceUpdate]> {
+        self.reference_data_source_updates.as_deref()
+    }
+    /// <p>Describes application CloudWatch logging option updates.</p>
+    pub fn cloud_watch_logging_option_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionUpdate]> {
+        self.cloud_watch_logging_option_updates.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplicationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationUpdate");
@@ -173,6 +199,20 @@ pub struct CloudWatchLoggingOptionUpdate {
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
     pub role_arn_update: std::option::Option<std::string::String>,
 }
+impl CloudWatchLoggingOptionUpdate {
+    /// <p>ID of the CloudWatch logging option to update</p>
+    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logging_option_id.as_deref()
+    }
+    /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    pub fn log_stream_arn_update(&self) -> std::option::Option<&str> {
+        self.log_stream_arn_update.as_deref()
+    }
+    /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+        self.role_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLoggingOptionUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLoggingOptionUpdate");
@@ -269,6 +309,27 @@ pub struct ReferenceDataSourceUpdate {
         std::option::Option<crate::model::S3ReferenceDataSourceUpdate>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
     pub reference_schema_update: std::option::Option<crate::model::SourceSchema>,
+}
+impl ReferenceDataSourceUpdate {
+    /// <p>ID of the reference data source being updated. You can use the
+    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    pub fn reference_id(&self) -> std::option::Option<&str> {
+        self.reference_id.as_deref()
+    }
+    /// <p>In-application table name that is created by this update.</p>
+    pub fn table_name_update(&self) -> std::option::Option<&str> {
+        self.table_name_update.as_deref()
+    }
+    /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
+    pub fn s3_reference_data_source_update(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ReferenceDataSourceUpdate> {
+        self.s3_reference_data_source_update.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
+    pub fn reference_schema_update(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.reference_schema_update.as_ref()
+    }
 }
 impl std::fmt::Debug for ReferenceDataSourceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -379,6 +440,20 @@ pub struct SourceSchema {
     /// <p>A list of <code>RecordColumn</code> objects.</p>
     pub record_columns: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
 }
+impl SourceSchema {
+    /// <p>Specifies the format of the records on the streaming source.</p>
+    pub fn record_format(&self) -> std::option::Option<&crate::model::RecordFormat> {
+        self.record_format.as_ref()
+    }
+    /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
+    pub fn record_encoding(&self) -> std::option::Option<&str> {
+        self.record_encoding.as_deref()
+    }
+    /// <p>A list of <code>RecordColumn</code> objects.</p>
+    pub fn record_columns(&self) -> std::option::Option<&[crate::model::RecordColumn]> {
+        self.record_columns.as_deref()
+    }
+}
 impl std::fmt::Debug for SourceSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceSchema");
@@ -475,6 +550,21 @@ pub struct RecordColumn {
     /// <p>Type of column created in the in-application input stream or reference table.</p>
     pub sql_type: std::option::Option<std::string::String>,
 }
+impl RecordColumn {
+    /// <p>Name of the column created in the in-application input stream or reference table.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Reference to the data element in the streaming input or the reference data source. This element
+    /// is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
+    pub fn mapping(&self) -> std::option::Option<&str> {
+        self.mapping.as_deref()
+    }
+    /// <p>Type of column created in the in-application input stream or reference table.</p>
+    pub fn sql_type(&self) -> std::option::Option<&str> {
+        self.sql_type.as_deref()
+    }
+}
 impl std::fmt::Debug for RecordColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordColumn");
@@ -556,6 +646,16 @@ pub struct RecordFormat {
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub mapping_parameters: std::option::Option<crate::model::MappingParameters>,
 }
+impl RecordFormat {
+    /// <p>The type of record format.</p>
+    pub fn record_format_type(&self) -> std::option::Option<&crate::model::RecordFormatType> {
+        self.record_format_type.as_ref()
+    }
+    /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
+    pub fn mapping_parameters(&self) -> std::option::Option<&crate::model::MappingParameters> {
+        self.mapping_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for RecordFormat {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordFormat");
@@ -629,6 +729,21 @@ pub struct MappingParameters {
     /// <p>Provides additional mapping information when the record format uses delimiters
     /// (for example, CSV).</p>
     pub csv_mapping_parameters: std::option::Option<crate::model::CsvMappingParameters>,
+}
+impl MappingParameters {
+    /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
+    pub fn json_mapping_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::JsonMappingParameters> {
+        self.json_mapping_parameters.as_ref()
+    }
+    /// <p>Provides additional mapping information when the record format uses delimiters
+    /// (for example, CSV).</p>
+    pub fn csv_mapping_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::CsvMappingParameters> {
+        self.csv_mapping_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for MappingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -715,6 +830,16 @@ pub struct CsvMappingParameters {
     /// <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
     pub record_column_delimiter: std::option::Option<std::string::String>,
 }
+impl CsvMappingParameters {
+    /// <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
+    pub fn record_row_delimiter(&self) -> std::option::Option<&str> {
+        self.record_row_delimiter.as_deref()
+    }
+    /// <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
+    pub fn record_column_delimiter(&self) -> std::option::Option<&str> {
+        self.record_column_delimiter.as_deref()
+    }
+}
 impl std::fmt::Debug for CsvMappingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CsvMappingParameters");
@@ -781,6 +906,12 @@ impl CsvMappingParameters {
 pub struct JsonMappingParameters {
     /// <p>Path to the top-level parent that contains the records.</p>
     pub record_row_path: std::option::Option<std::string::String>,
+}
+impl JsonMappingParameters {
+    /// <p>Path to the top-level parent that contains the records.</p>
+    pub fn record_row_path(&self) -> std::option::Option<&str> {
+        self.record_row_path.as_deref()
+    }
 }
 impl std::fmt::Debug for JsonMappingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -892,6 +1023,20 @@ pub struct S3ReferenceDataSourceUpdate {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
     pub reference_role_arn_update: std::option::Option<std::string::String>,
 }
+impl S3ReferenceDataSourceUpdate {
+    /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn_update(&self) -> std::option::Option<&str> {
+        self.bucket_arn_update.as_deref()
+    }
+    /// <p>Object key name.</p>
+    pub fn file_key_update(&self) -> std::option::Option<&str> {
+        self.file_key_update.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
+    pub fn reference_role_arn_update(&self) -> std::option::Option<&str> {
+        self.reference_role_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for S3ReferenceDataSourceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ReferenceDataSourceUpdate");
@@ -992,6 +1137,41 @@ pub struct OutputUpdate {
     pub lambda_output_update: std::option::Option<crate::model::LambdaOutputUpdate>,
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
     pub destination_schema_update: std::option::Option<crate::model::DestinationSchema>,
+}
+impl OutputUpdate {
+    /// <p>Identifies the specific output configuration that you want to update.</p>
+    pub fn output_id(&self) -> std::option::Option<&str> {
+        self.output_id.as_deref()
+    }
+    /// <p>If you want to specify a different in-application stream
+    /// for this output configuration, use this field to
+    /// specify the new in-application stream name.</p>
+    pub fn name_update(&self) -> std::option::Option<&str> {
+        self.name_update.as_deref()
+    }
+    /// <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
+    pub fn kinesis_streams_output_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsOutputUpdate> {
+        self.kinesis_streams_output_update.as_ref()
+    }
+    /// <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for the
+    /// output.</p>
+    pub fn kinesis_firehose_output_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseOutputUpdate> {
+        self.kinesis_firehose_output_update.as_ref()
+    }
+    /// <p>Describes an AWS Lambda function as the destination for the output.</p>
+    pub fn lambda_output_update(&self) -> std::option::Option<&crate::model::LambdaOutputUpdate> {
+        self.lambda_output_update.as_ref()
+    }
+    /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    pub fn destination_schema_update(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationSchema> {
+        self.destination_schema_update.as_ref()
+    }
 }
 impl std::fmt::Debug for OutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1143,6 +1323,12 @@ pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
     pub record_format_type: std::option::Option<crate::model::RecordFormatType>,
 }
+impl DestinationSchema {
+    /// <p>Specifies the format of the records on the output stream.</p>
+    pub fn record_format_type(&self) -> std::option::Option<&crate::model::RecordFormatType> {
+        self.record_format_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DestinationSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationSchema");
@@ -1201,6 +1387,20 @@ pub struct LambdaOutputUpdate {
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
     pub role_arn_update: std::option::Option<std::string::String>,
+}
+impl LambdaOutputUpdate {
+    /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+        self.role_arn_update.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaOutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1285,6 +1485,17 @@ pub struct KinesisFirehoseOutputUpdate {
     /// on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseOutputUpdate {
+    /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream to write to.</p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream
+    /// on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+        self.role_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseOutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseOutputUpdate");
@@ -1360,6 +1571,16 @@ pub struct KinesisStreamsOutputUpdate {
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: std::option::Option<std::string::String>,
+}
+impl KinesisStreamsOutputUpdate {
+    /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+        self.role_arn_update.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamsOutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1447,6 +1668,49 @@ pub struct InputUpdate {
     /// <p>Describes the parallelism updates (the number in-application
     /// streams Amazon Kinesis Analytics creates for the specific streaming source).</p>
     pub input_parallelism_update: std::option::Option<crate::model::InputParallelismUpdate>,
+}
+impl InputUpdate {
+    /// <p>Input ID of the application input to be updated.</p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+    /// for the specific streaming source.</p>
+    pub fn name_prefix_update(&self) -> std::option::Option<&str> {
+        self.name_prefix_update.as_deref()
+    }
+    /// <p>Describes updates for an input processing configuration.</p>
+    pub fn input_processing_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfigurationUpdate> {
+        self.input_processing_configuration_update.as_ref()
+    }
+    /// <p>If an Amazon Kinesis stream is the streaming source to be updated, provides an
+    /// updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
+    pub fn kinesis_streams_input_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsInputUpdate> {
+        self.kinesis_streams_input_update.as_ref()
+    }
+    /// <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
+    /// updated, provides an updated stream ARN and IAM role ARN.</p>
+    pub fn kinesis_firehose_input_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseInputUpdate> {
+        self.kinesis_firehose_input_update.as_ref()
+    }
+    /// <p>Describes the data format on the streaming source, and
+    /// how record elements on the streaming source map to columns of the in-application stream that is created.</p>
+    pub fn input_schema_update(&self) -> std::option::Option<&crate::model::InputSchemaUpdate> {
+        self.input_schema_update.as_ref()
+    }
+    /// <p>Describes the parallelism updates (the number in-application
+    /// streams Amazon Kinesis Analytics creates for the specific streaming source).</p>
+    pub fn input_parallelism_update(
+        &self,
+    ) -> std::option::Option<&crate::model::InputParallelismUpdate> {
+        self.input_parallelism_update.as_ref()
+    }
 }
 impl std::fmt::Debug for InputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1628,6 +1892,13 @@ pub struct InputParallelismUpdate {
     /// streaming source.</p>
     pub count_update: std::option::Option<i32>,
 }
+impl InputParallelismUpdate {
+    /// <p>Number of in-application streams to create for the specified
+    /// streaming source.</p>
+    pub fn count_update(&self) -> std::option::Option<i32> {
+        self.count_update
+    }
+}
 impl std::fmt::Debug for InputParallelismUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputParallelismUpdate");
@@ -1682,6 +1953,21 @@ pub struct InputSchemaUpdate {
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
     /// of the streaming source element to the corresponding column in the in-application stream. </p>
     pub record_column_updates: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
+}
+impl InputSchemaUpdate {
+    /// <p>Specifies the format of the records on the streaming source.</p>
+    pub fn record_format_update(&self) -> std::option::Option<&crate::model::RecordFormat> {
+        self.record_format_update.as_ref()
+    }
+    /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
+    pub fn record_encoding_update(&self) -> std::option::Option<&str> {
+        self.record_encoding_update.as_deref()
+    }
+    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
+    /// of the streaming source element to the corresponding column in the in-application stream. </p>
+    pub fn record_column_updates(&self) -> std::option::Option<&[crate::model::RecordColumn]> {
+        self.record_column_updates.as_deref()
+    }
 }
 impl std::fmt::Debug for InputSchemaUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1783,6 +2069,18 @@ pub struct KinesisFirehoseInputUpdate {
     /// on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseInputUpdate {
+    /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to
+    /// read.</p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream
+    /// on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+        self.role_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseInputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseInputUpdate");
@@ -1857,6 +2155,16 @@ pub struct KinesisStreamsInputUpdate {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: std::option::Option<std::string::String>,
 }
+impl KinesisStreamsInputUpdate {
+    /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.</p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+        self.role_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisStreamsInputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisStreamsInputUpdate");
@@ -1925,6 +2233,14 @@ pub struct InputProcessingConfigurationUpdate {
     pub input_lambda_processor_update:
         std::option::Option<crate::model::InputLambdaProcessorUpdate>,
 }
+impl InputProcessingConfigurationUpdate {
+    /// <p>Provides update information for an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
+    pub fn input_lambda_processor_update(
+        &self,
+    ) -> std::option::Option<&crate::model::InputLambdaProcessorUpdate> {
+        self.input_lambda_processor_update.as_ref()
+    }
+}
 impl std::fmt::Debug for InputProcessingConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputProcessingConfigurationUpdate");
@@ -1990,6 +2306,22 @@ pub struct InputLambdaProcessorUpdate {
     /// <p>The ARN of the new IAM role that is used to access the AWS Lambda
     /// function.</p>
     pub role_arn_update: std::option::Option<std::string::String>,
+}
+impl InputLambdaProcessorUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that
+    /// is used to preprocess the records in the stream.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+    /// <p>The ARN of the new IAM role that is used to access the AWS Lambda
+    /// function.</p>
+    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+        self.role_arn_update.as_deref()
+    }
 }
 impl std::fmt::Debug for InputLambdaProcessorUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2074,6 +2406,16 @@ pub struct Tag {
     /// <p>The value of the key-value tag. The value is optional.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the key-value tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the key-value tag. The value is optional.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -2141,6 +2483,20 @@ pub struct InputConfiguration {
     /// records from the streaming source.</p>
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
+}
+impl InputConfiguration {
+    /// <p>Input source ID. You can get this ID by calling
+    /// the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Point at which you want the application to start processing
+    /// records from the streaming source.</p>
+    pub fn input_starting_position_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
+        self.input_starting_position_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for InputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2236,6 +2592,33 @@ pub struct InputStartingPositionConfiguration {
     /// </li>
     /// </ul>
     pub input_starting_position: std::option::Option<crate::model::InputStartingPosition>,
+}
+impl InputStartingPositionConfiguration {
+    /// <p>The starting position on the stream.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NOW</code> - Start reading just after the most recent record in the
+    /// stream, start at the request time stamp that the customer issued.</p>
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream,
+    /// which is the oldest record available in the stream. This option is not available
+    /// for an Amazon Kinesis Firehose delivery stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p>
+    /// </li>
+    /// </ul>
+    pub fn input_starting_position(
+        &self,
+    ) -> std::option::Option<&crate::model::InputStartingPosition> {
+        self.input_starting_position.as_ref()
+    }
 }
 impl std::fmt::Debug for InputStartingPositionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2395,6 +2778,20 @@ pub struct ApplicationSummary {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Status of the application.</p>
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
+}
+impl ApplicationSummary {
+    /// <p>Name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>ARN of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>Status of the application.</p>
+    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.application_status.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2556,6 +2953,15 @@ pub struct InputProcessingConfiguration {
     /// in the stream before being processed by your application code.</p>
     pub input_lambda_processor: std::option::Option<crate::model::InputLambdaProcessor>,
 }
+impl InputProcessingConfiguration {
+    /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records
+    /// in the stream before being processed by your application code.</p>
+    pub fn input_lambda_processor(
+        &self,
+    ) -> std::option::Option<&crate::model::InputLambdaProcessor> {
+        self.input_lambda_processor.as_ref()
+    }
+}
 impl std::fmt::Debug for InputProcessingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputProcessingConfiguration");
@@ -2617,6 +3023,21 @@ pub struct InputLambdaProcessor {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl InputLambdaProcessor {
+    /// <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that operates
+    /// on records in the stream.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for InputLambdaProcessor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2694,6 +3115,20 @@ pub struct S3Configuration {
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The name of the object that contains the data.</p>
     pub file_key: std::option::Option<std::string::String>,
+}
+impl S3Configuration {
+    /// <p>IAM ARN of the role used to access the data.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>ARN of the S3 bucket that contains the data.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The name of the object that contains the data.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2811,6 +3246,76 @@ pub struct ApplicationDetail {
     pub application_code: std::option::Option<std::string::String>,
     /// <p>Provides the current application version.</p>
     pub application_version_id: std::option::Option<i64>,
+}
+impl ApplicationDetail {
+    /// <p>Name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Description of the application.</p>
+    pub fn application_description(&self) -> std::option::Option<&str> {
+        self.application_description.as_deref()
+    }
+    /// <p>ARN of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>Status of the application.</p>
+    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.application_status.as_ref()
+    }
+    /// <p>Time stamp when the application version was created.</p>
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_timestamp.as_ref()
+    }
+    /// <p>Time stamp when the application was last updated.</p>
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_timestamp.as_ref()
+    }
+    /// <p>Describes the application input configuration.
+    /// For more information,
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
+    ///
+    /// </p>
+    pub fn input_descriptions(&self) -> std::option::Option<&[crate::model::InputDescription]> {
+        self.input_descriptions.as_deref()
+    }
+    /// <p>Describes the application output configuration.
+    /// For more information,
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
+    ///
+    /// </p>
+    pub fn output_descriptions(&self) -> std::option::Option<&[crate::model::OutputDescription]> {
+        self.output_descriptions.as_deref()
+    }
+    /// <p>Describes reference data sources configured for the application.
+    ///
+    /// For more information,
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
+    ///
+    /// </p>
+    pub fn reference_data_source_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReferenceDataSourceDescription]> {
+        self.reference_data_source_descriptions.as_deref()
+    }
+    /// <p>Describes the CloudWatch log streams that are configured to receive application
+    /// messages. For more information about using CloudWatch log streams with Amazon Kinesis
+    /// Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+    /// CloudWatch Logs</a>. </p>
+    pub fn cloud_watch_logging_option_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionDescription]> {
+        self.cloud_watch_logging_option_descriptions.as_deref()
+    }
+    /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
+    pub fn application_code(&self) -> std::option::Option<&str> {
+        self.application_code.as_deref()
+    }
+    /// <p>Provides the current application version.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
 }
 impl std::fmt::Debug for ApplicationDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3123,6 +3628,20 @@ pub struct CloudWatchLoggingOptionDescription {
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl CloudWatchLoggingOptionDescription {
+    /// <p>ID of the CloudWatch logging option description.</p>
+    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logging_option_id.as_deref()
+    }
+    /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    pub fn log_stream_arn(&self) -> std::option::Option<&str> {
+        self.log_stream_arn.as_deref()
+    }
+    /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLoggingOptionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLoggingOptionDescription");
@@ -3217,6 +3736,28 @@ pub struct ReferenceDataSourceDescription {
         std::option::Option<crate::model::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
+}
+impl ReferenceDataSourceDescription {
+    /// <p>ID of the reference data source. This is the ID
+    /// that Amazon Kinesis Analytics assigns when you add the reference data source
+    /// to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.</p>
+    pub fn reference_id(&self) -> std::option::Option<&str> {
+        self.reference_id.as_deref()
+    }
+    /// <p>The in-application table name created by the specific reference data source configuration.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
+    pub fn s3_reference_data_source_description(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ReferenceDataSourceDescription> {
+        self.s3_reference_data_source_description.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    pub fn reference_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.reference_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for ReferenceDataSourceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3326,6 +3867,20 @@ pub struct S3ReferenceDataSourceDescription {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p>
     pub reference_role_arn: std::option::Option<std::string::String>,
 }
+impl S3ReferenceDataSourceDescription {
+    /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>Amazon S3 object key name.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p>
+    pub fn reference_role_arn(&self) -> std::option::Option<&str> {
+        self.reference_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for S3ReferenceDataSourceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ReferenceDataSourceDescription");
@@ -3421,6 +3976,41 @@ pub struct OutputDescription {
     pub lambda_output_description: std::option::Option<crate::model::LambdaOutputDescription>,
     /// <p>Data format used for writing data to the destination.</p>
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
+}
+impl OutputDescription {
+    /// <p>A unique identifier for the output configuration.</p>
+    pub fn output_id(&self) -> std::option::Option<&str> {
+        self.output_id.as_deref()
+    }
+    /// <p>Name of the in-application stream configured as output.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Describes Amazon Kinesis stream configured as the
+    /// destination where output is written.</p>
+    pub fn kinesis_streams_output_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsOutputDescription> {
+        self.kinesis_streams_output_description.as_ref()
+    }
+    /// <p>Describes the Amazon Kinesis Firehose delivery stream configured as the
+    /// destination where output is written.</p>
+    pub fn kinesis_firehose_output_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseOutputDescription> {
+        self.kinesis_firehose_output_description.as_ref()
+    }
+    /// <p>Describes the AWS Lambda function configured as the destination where output is
+    /// written.</p>
+    pub fn lambda_output_description(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaOutputDescription> {
+        self.lambda_output_description.as_ref()
+    }
+    /// <p>Data format used for writing data to the destination.</p>
+    pub fn destination_schema(&self) -> std::option::Option<&crate::model::DestinationSchema> {
+        self.destination_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for OutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3574,6 +4164,16 @@ pub struct LambdaOutputDescription {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl LambdaOutputDescription {
+    /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaOutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaOutputDescription");
@@ -3640,6 +4240,16 @@ pub struct KinesisFirehoseOutputDescription {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseOutputDescription {
+    /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseOutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseOutputDescription");
@@ -3705,6 +4315,16 @@ pub struct KinesisStreamsOutputDescription {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl KinesisStreamsOutputDescription {
+    /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamsOutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3798,6 +4418,61 @@ pub struct InputDescription {
     /// <p>Point at which the application is configured to read from the input stream.</p>
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
+}
+impl InputDescription {
+    /// <p>Input ID associated with the application input.
+    /// This is the ID that Amazon Kinesis Analytics assigns to each
+    /// input configuration you add to your application. </p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// <p>In-application name prefix.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>Returns the in-application stream names that are mapped to the
+    /// stream source.</p>
+    pub fn in_app_stream_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.in_app_stream_names.as_deref()
+    }
+    /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
+    pub fn input_processing_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfigurationDescription> {
+        self.input_processing_configuration_description.as_ref()
+    }
+    /// <p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon
+    /// Kinesis stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis
+    /// Analytics to access the stream on your behalf.</p>
+    pub fn kinesis_streams_input_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsInputDescription> {
+        self.kinesis_streams_input_description.as_ref()
+    }
+    /// <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source,
+    /// provides the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics
+    /// to access the stream on your behalf.</p>
+    pub fn kinesis_firehose_input_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseInputDescription> {
+        self.kinesis_firehose_input_description.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding
+    /// columns in the in-application stream that is being created. </p>
+    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.input_schema.as_ref()
+    }
+    /// <p>Describes the configured parallelism (number of in-application streams
+    /// mapped to the streaming source).</p>
+    pub fn input_parallelism(&self) -> std::option::Option<&crate::model::InputParallelism> {
+        self.input_parallelism.as_ref()
+    }
+    /// <p>Point at which the application is configured to read from the input stream.</p>
+    pub fn input_starting_position_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
+        self.input_starting_position_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for InputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4030,6 +4705,14 @@ pub struct InputParallelism {
     /// </p>
     pub count: std::option::Option<i32>,
 }
+impl InputParallelism {
+    /// <p>Number of in-application streams to create.
+    /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+    /// </p>
+    pub fn count(&self) -> std::option::Option<i32> {
+        self.count
+    }
+}
 impl std::fmt::Debug for InputParallelism {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputParallelism");
@@ -4084,6 +4767,16 @@ pub struct KinesisFirehoseInputDescription {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl KinesisFirehoseInputDescription {
+    /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisFirehoseInputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4151,6 +4844,16 @@ pub struct KinesisStreamsInputDescription {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisStreamsInputDescription {
+    /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisStreamsInputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisStreamsInputDescription");
@@ -4214,6 +4917,14 @@ pub struct InputProcessingConfigurationDescription {
     pub input_lambda_processor_description:
         std::option::Option<crate::model::InputLambdaProcessorDescription>,
 }
+impl InputProcessingConfigurationDescription {
+    /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
+    pub fn input_lambda_processor_description(
+        &self,
+    ) -> std::option::Option<&crate::model::InputLambdaProcessorDescription> {
+        self.input_lambda_processor_description.as_ref()
+    }
+}
 impl std::fmt::Debug for InputProcessingConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputProcessingConfigurationDescription");
@@ -4275,6 +4986,16 @@ pub struct InputLambdaProcessorDescription {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl InputLambdaProcessorDescription {
+    /// <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess the records in the stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for InputLambdaProcessorDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4341,6 +5062,18 @@ pub struct CloudWatchLoggingOption {
     /// messages to CloudWatch, the IAM role that is used must have the
     /// <code>PutLogEvents</code> policy action enabled.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl CloudWatchLoggingOption {
+    /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    pub fn log_stream_arn(&self) -> std::option::Option<&str> {
+        self.log_stream_arn.as_deref()
+    }
+    /// <p>IAM ARN of the role to use to send application messages. Note: To write application
+    /// messages to CloudWatch, the IAM role that is used must have the
+    /// <code>PutLogEvents</code> policy action enabled.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchLoggingOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4429,6 +5162,33 @@ pub struct Output {
     pub lambda_output: std::option::Option<crate::model::LambdaOutput>,
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
+}
+impl Output {
+    /// <p>Name of the in-application stream.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Identifies an Amazon Kinesis stream
+    /// as the destination.</p>
+    pub fn kinesis_streams_output(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsOutput> {
+        self.kinesis_streams_output.as_ref()
+    }
+    /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
+    pub fn kinesis_firehose_output(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseOutput> {
+        self.kinesis_firehose_output.as_ref()
+    }
+    /// <p>Identifies an AWS Lambda function as the destination.</p>
+    pub fn lambda_output(&self) -> std::option::Option<&crate::model::LambdaOutput> {
+        self.lambda_output.as_ref()
+    }
+    /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    pub fn destination_schema(&self) -> std::option::Option<&crate::model::DestinationSchema> {
+        self.destination_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4557,6 +5317,21 @@ pub struct LambdaOutput {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl LambdaOutput {
+    /// <p>Amazon Resource Name (ARN) of the destination Lambda function to write
+    /// to.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaOutput");
@@ -4633,6 +5408,16 @@ pub struct KinesisFirehoseOutput {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseOutput {
+    /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseOutput");
@@ -4697,6 +5482,16 @@ pub struct KinesisStreamsOutput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl KinesisStreamsOutput {
+    /// <p>ARN of the destination Amazon Kinesis stream to write to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4787,6 +5582,51 @@ pub struct Input {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
+}
+impl Input {
+    /// <p>Name prefix to use when creating an in-application stream. Suppose that you specify
+    /// a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates one or more (as
+    /// per the <code>InputParallelism</code> count you specified) in-application streams with
+    /// names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on. </p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> for the input. An input
+    /// processor transforms records as they are received from the stream, before the
+    /// application's SQL code executes. Currently, the only input processing configuration
+    /// available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
+    pub fn input_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfiguration> {
+        self.input_processing_configuration.as_ref()
+    }
+    /// <p>If the streaming source is an Amazon Kinesis stream,
+    /// identifies the stream's Amazon Resource Name (ARN) and an IAM role
+    /// that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+    /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
+    pub fn kinesis_streams_input(&self) -> std::option::Option<&crate::model::KinesisStreamsInput> {
+        self.kinesis_streams_input.as_ref()
+    }
+    /// <p>If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies
+    /// the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to
+    /// access the stream on your behalf.</p>
+    /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
+    pub fn kinesis_firehose_input(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseInput> {
+        self.kinesis_firehose_input.as_ref()
+    }
+    /// <p>Describes the number of in-application streams to create. </p>
+    /// <p>Data from your source is routed to these in-application input streams.</p>
+    /// <p>    (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    pub fn input_parallelism(&self) -> std::option::Option<&crate::model::InputParallelism> {
+        self.input_parallelism.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
+    /// <p>Also used to describe the format of the reference data source.</p>
+    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.input_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4959,6 +5799,18 @@ pub struct KinesisFirehoseInput {
     /// access the stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseInput {
+    /// <p>ARN of the input delivery stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream
+    /// on your behalf. You need to make sure that the role has the necessary permissions to
+    /// access the stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseInput");
@@ -5028,6 +5880,16 @@ pub struct KinesisStreamsInput {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisStreamsInput {
+    /// <p>ARN of the input Amazon Kinesis stream to read.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisStreamsInput");
@@ -5094,6 +5956,24 @@ pub struct ReferenceDataSource {
     pub s3_reference_data_source: std::option::Option<crate::model::S3ReferenceDataSource>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
+}
+impl ReferenceDataSource {
+    /// <p>Name of the in-application table to create.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.
+    ///
+    /// An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    pub fn s3_reference_data_source(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ReferenceDataSource> {
+        self.s3_reference_data_source.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    pub fn reference_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.reference_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for ReferenceDataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5189,6 +6069,20 @@ pub struct S3ReferenceDataSource {
     pub file_key: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
     pub reference_role_arn: std::option::Option<std::string::String>,
+}
+impl S3ReferenceDataSource {
+    /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>Object key name containing reference data.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+    /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
+    pub fn reference_role_arn(&self) -> std::option::Option<&str> {
+        self.reference_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ReferenceDataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

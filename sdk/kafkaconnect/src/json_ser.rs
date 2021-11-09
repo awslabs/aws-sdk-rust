@@ -2,10 +2,10 @@
 pub fn serialize_structure_crate_input_create_connector_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateConnectorInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.capacity {
         let mut object_2 = object.key("capacity").start_object();
-        crate::json_ser::serialize_structure_crate_model_capacity(&mut object_2, var_1);
+        crate::json_ser::serialize_structure_crate_model_capacity(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.connector_configuration {
@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_input_create_connector_input(
     }
     if let Some(var_9) = &input.kafka_cluster {
         let mut object_10 = object.key("kafkaCluster").start_object();
-        crate::json_ser::serialize_structure_crate_model_kafka_cluster(&mut object_10, var_9);
+        crate::json_ser::serialize_structure_crate_model_kafka_cluster(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.kafka_cluster_client_authentication {
@@ -35,7 +35,7 @@ pub fn serialize_structure_crate_input_create_connector_input(
         crate::json_ser::serialize_structure_crate_model_kafka_cluster_client_authentication(
             &mut object_12,
             var_11,
-        );
+        )?;
         object_12.finish();
     }
     if let Some(var_13) = &input.kafka_cluster_encryption_in_transit {
@@ -43,7 +43,7 @@ pub fn serialize_structure_crate_input_create_connector_input(
         crate::json_ser::serialize_structure_crate_model_kafka_cluster_encryption_in_transit(
             &mut object_14,
             var_13,
-        );
+        )?;
         object_14.finish();
     }
     if let Some(var_15) = &input.kafka_connect_version {
@@ -51,7 +51,7 @@ pub fn serialize_structure_crate_input_create_connector_input(
     }
     if let Some(var_16) = &input.log_delivery {
         let mut object_17 = object.key("logDelivery").start_object();
-        crate::json_ser::serialize_structure_crate_model_log_delivery(&mut object_17, var_16);
+        crate::json_ser::serialize_structure_crate_model_log_delivery(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.plugins {
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_create_connector_input(
         for item_20 in var_18 {
             {
                 let mut object_21 = array_19.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_plugin(&mut object_21, item_20);
+                crate::json_ser::serialize_structure_crate_model_plugin(&mut object_21, item_20)?;
                 object_21.finish();
             }
         }
@@ -73,15 +73,16 @@ pub fn serialize_structure_crate_input_create_connector_input(
         crate::json_ser::serialize_structure_crate_model_worker_configuration(
             &mut object_24,
             var_23,
-        );
+        )?;
         object_24.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_custom_plugin_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateCustomPluginInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.content_type {
         object.key("contentType").string(var_25.as_str());
     }
@@ -93,18 +94,19 @@ pub fn serialize_structure_crate_input_create_custom_plugin_input(
         crate::json_ser::serialize_structure_crate_model_custom_plugin_location(
             &mut object_28,
             var_27,
-        );
+        )?;
         object_28.finish();
     }
     if let Some(var_29) = &input.name {
         object.key("name").string(var_29);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_worker_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWorkerConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.description {
         object.key("description").string(var_30);
     }
@@ -114,26 +116,28 @@ pub fn serialize_structure_crate_input_create_worker_configuration_input(
     if let Some(var_32) = &input.properties_file_content {
         object.key("propertiesFileContent").string(var_32);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_connector_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateConnectorInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.capacity {
         let mut object_34 = object.key("capacity").start_object();
-        crate::json_ser::serialize_structure_crate_model_capacity_update(&mut object_34, var_33);
+        crate::json_ser::serialize_structure_crate_model_capacity_update(&mut object_34, var_33)?;
         object_34.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_capacity(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Capacity,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.auto_scaling {
         let mut object_36 = object.key("autoScaling").start_object();
-        crate::json_ser::serialize_structure_crate_model_auto_scaling(&mut object_36, var_35);
+        crate::json_ser::serialize_structure_crate_model_auto_scaling(&mut object_36, var_35)?;
         object_36.finish();
     }
     if let Some(var_37) = &input.provisioned_capacity {
@@ -141,72 +145,78 @@ pub fn serialize_structure_crate_model_capacity(
         crate::json_ser::serialize_structure_crate_model_provisioned_capacity(
             &mut object_38,
             var_37,
-        );
+        )?;
         object_38.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_kafka_cluster(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KafkaCluster,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.apache_kafka_cluster {
         let mut object_40 = object.key("apacheKafkaCluster").start_object();
         crate::json_ser::serialize_structure_crate_model_apache_kafka_cluster(
             &mut object_40,
             var_39,
-        );
+        )?;
         object_40.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_kafka_cluster_client_authentication(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KafkaClusterClientAuthentication,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.authentication_type {
         object.key("authenticationType").string(var_41.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_kafka_cluster_encryption_in_transit(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KafkaClusterEncryptionInTransit,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.encryption_type {
         object.key("encryptionType").string(var_42.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_log_delivery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LogDelivery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.worker_log_delivery {
         let mut object_44 = object.key("workerLogDelivery").start_object();
         crate::json_ser::serialize_structure_crate_model_worker_log_delivery(
             &mut object_44,
             var_43,
-        );
+        )?;
         object_44.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_plugin(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Plugin,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.custom_plugin {
         let mut object_46 = object.key("customPlugin").start_object();
-        crate::json_ser::serialize_structure_crate_model_custom_plugin(&mut object_46, var_45);
+        crate::json_ser::serialize_structure_crate_model_custom_plugin(&mut object_46, var_45)?;
         object_46.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_worker_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkerConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("revision").number(
             #[allow(clippy::useless_conversion)]
@@ -216,29 +226,31 @@ pub fn serialize_structure_crate_model_worker_configuration(
     if let Some(var_47) = &input.worker_configuration_arn {
         object.key("workerConfigurationArn").string(var_47);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_custom_plugin_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CustomPluginLocation,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.s3_location {
         let mut object_49 = object.key("s3Location").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_49, var_48);
+        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_49, var_48)?;
         object_49.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_capacity_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CapacityUpdate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.auto_scaling {
         let mut object_51 = object.key("autoScaling").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_scaling_update(
             &mut object_51,
             var_50,
-        );
+        )?;
         object_51.finish();
     }
     if let Some(var_52) = &input.provisioned_capacity {
@@ -246,15 +258,16 @@ pub fn serialize_structure_crate_model_capacity_update(
         crate::json_ser::serialize_structure_crate_model_provisioned_capacity_update(
             &mut object_53,
             var_52,
-        );
+        )?;
         object_53.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_auto_scaling(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AutoScaling,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("maxWorkerCount").number(
             #[allow(clippy::useless_conversion)]
@@ -275,20 +288,21 @@ pub fn serialize_structure_crate_model_auto_scaling(
     }
     if let Some(var_54) = &input.scale_in_policy {
         let mut object_55 = object.key("scaleInPolicy").start_object();
-        crate::json_ser::serialize_structure_crate_model_scale_in_policy(&mut object_55, var_54);
+        crate::json_ser::serialize_structure_crate_model_scale_in_policy(&mut object_55, var_54)?;
         object_55.finish();
     }
     if let Some(var_56) = &input.scale_out_policy {
         let mut object_57 = object.key("scaleOutPolicy").start_object();
-        crate::json_ser::serialize_structure_crate_model_scale_out_policy(&mut object_57, var_56);
+        crate::json_ser::serialize_structure_crate_model_scale_out_policy(&mut object_57, var_56)?;
         object_57.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_provisioned_capacity(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProvisionedCapacity,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("mcuCount").number(
             #[allow(clippy::useless_conversion)]
@@ -301,32 +315,34 @@ pub fn serialize_structure_crate_model_provisioned_capacity(
             aws_smithy_types::Number::NegInt((input.worker_count).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_apache_kafka_cluster(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ApacheKafkaCluster,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.bootstrap_servers {
         object.key("bootstrapServers").string(var_58);
     }
     if let Some(var_59) = &input.vpc {
         let mut object_60 = object.key("vpc").start_object();
-        crate::json_ser::serialize_structure_crate_model_vpc(&mut object_60, var_59);
+        crate::json_ser::serialize_structure_crate_model_vpc(&mut object_60, var_59)?;
         object_60.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_worker_log_delivery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkerLogDelivery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.cloud_watch_logs {
         let mut object_62 = object.key("cloudWatchLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logs_log_delivery(
             &mut object_62,
             var_61,
-        );
+        )?;
         object_62.finish();
     }
     if let Some(var_63) = &input.firehose {
@@ -334,20 +350,21 @@ pub fn serialize_structure_crate_model_worker_log_delivery(
         crate::json_ser::serialize_structure_crate_model_firehose_log_delivery(
             &mut object_64,
             var_63,
-        );
+        )?;
         object_64.finish();
     }
     if let Some(var_65) = &input.s3 {
         let mut object_66 = object.key("s3").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_log_delivery(&mut object_66, var_65);
+        crate::json_ser::serialize_structure_crate_model_s3_log_delivery(&mut object_66, var_65)?;
         object_66.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_custom_plugin(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CustomPlugin,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.custom_plugin_arn {
         object.key("customPluginArn").string(var_67);
     }
@@ -357,12 +374,13 @@ pub fn serialize_structure_crate_model_custom_plugin(
             aws_smithy_types::Number::NegInt((input.revision).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Location,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.bucket_arn {
         object.key("bucketArn").string(var_68);
     }
@@ -372,12 +390,13 @@ pub fn serialize_structure_crate_model_s3_location(
     if let Some(var_70) = &input.object_version {
         object.key("objectVersion").string(var_70);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_auto_scaling_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AutoScalingUpdate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("maxWorkerCount").number(
             #[allow(clippy::useless_conversion)]
@@ -401,7 +420,7 @@ pub fn serialize_structure_crate_model_auto_scaling_update(
         crate::json_ser::serialize_structure_crate_model_scale_in_policy_update(
             &mut object_72,
             var_71,
-        );
+        )?;
         object_72.finish();
     }
     if let Some(var_73) = &input.scale_out_policy {
@@ -409,15 +428,16 @@ pub fn serialize_structure_crate_model_auto_scaling_update(
         crate::json_ser::serialize_structure_crate_model_scale_out_policy_update(
             &mut object_74,
             var_73,
-        );
+        )?;
         object_74.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_provisioned_capacity_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProvisionedCapacityUpdate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("mcuCount").number(
             #[allow(clippy::useless_conversion)]
@@ -430,36 +450,39 @@ pub fn serialize_structure_crate_model_provisioned_capacity_update(
             aws_smithy_types::Number::NegInt((input.worker_count).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_scale_in_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScaleInPolicy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("cpuUtilizationPercentage").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.cpu_utilization_percentage).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_scale_out_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScaleOutPolicy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("cpuUtilizationPercentage").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.cpu_utilization_percentage).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_vpc(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Vpc,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.security_groups {
         let mut array_76 = object.key("securityGroups").start_array();
         for item_77 in var_75 {
@@ -478,36 +501,39 @@ pub fn serialize_structure_crate_model_vpc(
         }
         array_79.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_cloud_watch_logs_log_delivery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CloudWatchLogsLogDelivery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_81) = &input.log_group {
         object.key("logGroup").string(var_81);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_firehose_log_delivery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FirehoseLogDelivery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.delivery_stream {
         object.key("deliveryStream").string(var_82);
     }
     {
         object.key("enabled").boolean(input.enabled);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_log_delivery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3LogDelivery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_83) = &input.bucket {
         object.key("bucket").string(var_83);
     }
@@ -517,28 +543,31 @@ pub fn serialize_structure_crate_model_s3_log_delivery(
     if let Some(var_84) = &input.prefix {
         object.key("prefix").string(var_84);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_scale_in_policy_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScaleInPolicyUpdate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("cpuUtilizationPercentage").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.cpu_utilization_percentage).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_scale_out_policy_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScaleOutPolicyUpdate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("cpuUtilizationPercentage").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((input.cpu_utilization_percentage).into()),
         );
     }
+    Ok(())
 }

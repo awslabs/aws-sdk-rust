@@ -34,6 +34,68 @@ pub struct User {
     /// <p>The storage for the user.</p>
     pub storage: std::option::Option<crate::model::UserStorageMetadata>,
 }
+impl User {
+    /// <p>The ID of the user.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The login name of the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The email address of the user.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The given name of the user.</p>
+    pub fn given_name(&self) -> std::option::Option<&str> {
+        self.given_name.as_deref()
+    }
+    /// <p>The surname of the user.</p>
+    pub fn surname(&self) -> std::option::Option<&str> {
+        self.surname.as_deref()
+    }
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The ID of the root folder.</p>
+    pub fn root_folder_id(&self) -> std::option::Option<&str> {
+        self.root_folder_id.as_deref()
+    }
+    /// <p>The ID of the recycle bin folder.</p>
+    pub fn recycle_bin_folder_id(&self) -> std::option::Option<&str> {
+        self.recycle_bin_folder_id.as_deref()
+    }
+    /// <p>The status of the user.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::UserStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The type of user.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time when the user was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time when the user was modified.</p>
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_timestamp.as_ref()
+    }
+    /// <p>The time zone ID of the user.</p>
+    pub fn time_zone_id(&self) -> std::option::Option<&str> {
+        self.time_zone_id.as_deref()
+    }
+    /// <p>The locale of the user.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::LocaleType> {
+        self.locale.as_ref()
+    }
+    /// <p>The storage for the user.</p>
+    pub fn storage(&self) -> std::option::Option<&crate::model::UserStorageMetadata> {
+        self.storage.as_ref()
+    }
+}
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
@@ -290,6 +352,16 @@ pub struct UserStorageMetadata {
     /// <p>The storage for a user.</p>
     pub storage_rule: std::option::Option<crate::model::StorageRuleType>,
 }
+impl UserStorageMetadata {
+    /// <p>The amount of storage used, in bytes.</p>
+    pub fn storage_utilized_in_bytes(&self) -> std::option::Option<i64> {
+        self.storage_utilized_in_bytes
+    }
+    /// <p>The storage for a user.</p>
+    pub fn storage_rule(&self) -> std::option::Option<&crate::model::StorageRuleType> {
+        self.storage_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for UserStorageMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserStorageMetadata");
@@ -355,6 +427,16 @@ pub struct StorageRuleType {
     pub storage_allocated_in_bytes: std::option::Option<i64>,
     /// <p>The type of storage.</p>
     pub storage_type: std::option::Option<crate::model::StorageType>,
+}
+impl StorageRuleType {
+    /// <p>The amount of storage allocated, in bytes.</p>
+    pub fn storage_allocated_in_bytes(&self) -> std::option::Option<i64> {
+        self.storage_allocated_in_bytes
+    }
+    /// <p>The type of storage.</p>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+        self.storage_type.as_ref()
+    }
 }
 impl std::fmt::Debug for StorageRuleType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -942,6 +1024,19 @@ pub struct UploadMetadata {
     pub signed_headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UploadMetadata {
+    /// <p>The URL of the upload.</p>
+    pub fn upload_url(&self) -> std::option::Option<&str> {
+        self.upload_url.as_deref()
+    }
+    /// <p>The signed headers.</p>
+    pub fn signed_headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.signed_headers.as_ref()
+    }
+}
 impl std::fmt::Debug for UploadMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMetadata");
@@ -1033,6 +1128,42 @@ pub struct DocumentMetadata {
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
     /// <p>List of labels on the document.</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DocumentMetadata {
+    /// <p>The ID of the document.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the creator.</p>
+    pub fn creator_id(&self) -> std::option::Option<&str> {
+        self.creator_id.as_deref()
+    }
+    /// <p>The ID of the parent folder.</p>
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+        self.parent_folder_id.as_deref()
+    }
+    /// <p>The time when the document was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time when the document was updated.</p>
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_timestamp.as_ref()
+    }
+    /// <p>The latest version of the document.</p>
+    pub fn latest_version_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentVersionMetadata> {
+        self.latest_version_metadata.as_ref()
+    }
+    /// <p>The resource state.</p>
+    pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
+        self.resource_state.as_ref()
+    }
+    /// <p>List of labels on the document.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1228,6 +1359,68 @@ pub struct DocumentVersionMetadata {
     pub source: std::option::Option<
         std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
     >,
+}
+impl DocumentVersionMetadata {
+    /// <p>The ID of the version.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the version.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The content type of the document.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The size of the document, in bytes.</p>
+    pub fn size(&self) -> std::option::Option<i64> {
+        self.size
+    }
+    /// <p>The signature of the document.</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
+    /// <p>The status of the document.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DocumentStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp when the document was first uploaded.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The timestamp when the document was last uploaded.</p>
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_timestamp.as_ref()
+    }
+    /// <p>The timestamp when the content of the document was originally created.</p>
+    pub fn content_created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.content_created_timestamp.as_ref()
+    }
+    /// <p>The timestamp when the content of the document was modified.</p>
+    pub fn content_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.content_modified_timestamp.as_ref()
+    }
+    /// <p>The ID of the creator.</p>
+    pub fn creator_id(&self) -> std::option::Option<&str> {
+        self.creator_id.as_deref()
+    }
+    /// <p>The thumbnail of the document.</p>
+    pub fn thumbnail(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
+    > {
+        self.thumbnail.as_ref()
+    }
+    /// <p>The source of the document.</p>
+    pub fn source(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
+    > {
+        self.source.as_ref()
+    }
 }
 impl std::fmt::Debug for DocumentVersionMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1675,6 +1868,53 @@ pub struct FolderMetadata {
     /// <p>The size of the latest version of the folder metadata.</p>
     pub latest_version_size: std::option::Option<i64>,
 }
+impl FolderMetadata {
+    /// <p>The ID of the folder.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the folder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the creator.</p>
+    pub fn creator_id(&self) -> std::option::Option<&str> {
+        self.creator_id.as_deref()
+    }
+    /// <p>The ID of the parent folder.</p>
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+        self.parent_folder_id.as_deref()
+    }
+    /// <p>The time when the folder was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time when the folder was updated.</p>
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_timestamp.as_ref()
+    }
+    /// <p>The resource state of the folder.</p>
+    pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
+        self.resource_state.as_ref()
+    }
+    /// <p>The unique identifier created from the subfolders and documents of the
+    /// folder.</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
+    /// <p>List of labels on the folder.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>The size of the folder metadata.</p>
+    pub fn size(&self) -> std::option::Option<i64> {
+        self.size
+    }
+    /// <p>The size of the latest version of the folder metadata.</p>
+    pub fn latest_version_size(&self) -> std::option::Option<i64> {
+        self.latest_version_size
+    }
+}
 impl std::fmt::Debug for FolderMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FolderMetadata");
@@ -1927,6 +2167,12 @@ pub struct ResourcePath {
     /// <p>The components of the resource path.</p>
     pub components: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
 }
+impl ResourcePath {
+    /// <p>The components of the resource path.</p>
+    pub fn components(&self) -> std::option::Option<&[crate::model::ResourcePathComponent]> {
+        self.components.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourcePath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourcePath");
@@ -1986,6 +2232,16 @@ pub struct ResourcePathComponent {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the resource path.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl ResourcePathComponent {
+    /// <p>The ID of the resource path.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the resource path.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourcePathComponent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2235,6 +2491,20 @@ pub struct Principal {
     /// <p>The permission information for the resource.</p>
     pub roles: std::option::Option<std::vec::Vec<crate::model::PermissionInfo>>,
 }
+impl Principal {
+    /// <p>The ID of the resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The permission information for the resource.</p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::PermissionInfo]> {
+        self.roles.as_deref()
+    }
+}
 impl std::fmt::Debug for Principal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Principal");
@@ -2319,6 +2589,16 @@ pub struct PermissionInfo {
     pub role: std::option::Option<crate::model::RoleType>,
     /// <p>The type of permissions.</p>
     pub r#type: std::option::Option<crate::model::RolePermissionType>,
+}
+impl PermissionInfo {
+    /// <p>The role of the user.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::RoleType> {
+        self.role.as_ref()
+    }
+    /// <p>The type of permissions.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RolePermissionType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for PermissionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2506,6 +2786,20 @@ pub struct Subscription {
     /// <p>The protocol of the subscription.</p>
     pub protocol: std::option::Option<crate::model::SubscriptionProtocolType>,
 }
+impl Subscription {
+    /// <p>The ID of the subscription.</p>
+    pub fn subscription_id(&self) -> std::option::Option<&str> {
+        self.subscription_id.as_deref()
+    }
+    /// <p>The endpoint of the subscription.</p>
+    pub fn end_point(&self) -> std::option::Option<&str> {
+        self.end_point.as_deref()
+    }
+    /// <p>The protocol of the subscription.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::SubscriptionProtocolType> {
+        self.protocol.as_ref()
+    }
+}
 impl std::fmt::Debug for Subscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subscription");
@@ -2638,6 +2932,16 @@ pub struct GroupMetadata {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GroupMetadata {
+    /// <p>The ID of the user group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GroupMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2832,6 +3136,47 @@ pub struct Comment {
     /// <p>If the comment is a reply to another user's comment, this field contains the user
     /// ID of the user being replied to.</p>
     pub recipient_id: std::option::Option<std::string::String>,
+}
+impl Comment {
+    /// <p>The ID of the comment.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+    /// <p>The ID of the parent comment.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The ID of the root comment in the thread.</p>
+    pub fn thread_id(&self) -> std::option::Option<&str> {
+        self.thread_id.as_deref()
+    }
+    /// <p>The text of the comment.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The details of the user who made the comment.</p>
+    pub fn contributor(&self) -> std::option::Option<&crate::model::User> {
+        self.contributor.as_ref()
+    }
+    /// <p>The time that the comment was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The status of the comment.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CommentStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
+    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
+    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    pub fn visibility(&self) -> std::option::Option<&crate::model::CommentVisibilityType> {
+        self.visibility.as_ref()
+    }
+    /// <p>If the comment is a reply to another user's comment, this field contains the user
+    /// ID of the user being replied to.</p>
+    pub fn recipient_id(&self) -> std::option::Option<&str> {
+        self.recipient_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Comment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3137,6 +3482,51 @@ pub struct Activity {
     /// commenting activities.</p>
     pub comment_metadata: std::option::Option<crate::model::CommentMetadata>,
 }
+impl Activity {
+    /// <p>The activity type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ActivityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The timestamp when the action was performed.</p>
+    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.time_stamp.as_ref()
+    }
+    /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
+    /// from a direct activity performed on a parent resource. For example, sharing a parent
+    /// folder (the direct activity) shares all of the subfolders and documents within the
+    /// parent folder (the indirect activity).</p>
+    pub fn is_indirect_activity(&self) -> bool {
+        self.is_indirect_activity
+    }
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The user who performed the action.</p>
+    pub fn initiator(&self) -> std::option::Option<&crate::model::UserMetadata> {
+        self.initiator.as_ref()
+    }
+    /// <p>The list of users or groups impacted by this action. This is an optional field and
+    /// is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED,
+    /// DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+    pub fn participants(&self) -> std::option::Option<&crate::model::Participants> {
+        self.participants.as_ref()
+    }
+    /// <p>The metadata of the resource involved in the user action.</p>
+    pub fn resource_metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.resource_metadata.as_ref()
+    }
+    /// <p>The original parent of the resource. This is an optional field and is filled for
+    /// move activities.</p>
+    pub fn original_parent(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.original_parent.as_ref()
+    }
+    /// <p>Metadata of the commenting activity. This is an optional field and is filled for
+    /// commenting activities.</p>
+    pub fn comment_metadata(&self) -> std::option::Option<&crate::model::CommentMetadata> {
+        self.comment_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for Activity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Activity");
@@ -3332,6 +3722,28 @@ pub struct CommentMetadata {
     /// <p>The ID of the user being replied to.</p>
     pub recipient_id: std::option::Option<std::string::String>,
 }
+impl CommentMetadata {
+    /// <p>The ID of the comment.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+    /// <p>The user who made the comment.</p>
+    pub fn contributor(&self) -> std::option::Option<&crate::model::User> {
+        self.contributor.as_ref()
+    }
+    /// <p>The timestamp that the comment was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The status of the comment.</p>
+    pub fn comment_status(&self) -> std::option::Option<&crate::model::CommentStatusType> {
+        self.comment_status.as_ref()
+    }
+    /// <p>The ID of the user being replied to.</p>
+    pub fn recipient_id(&self) -> std::option::Option<&str> {
+        self.recipient_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CommentMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CommentMetadata");
@@ -3450,6 +3862,37 @@ pub struct ResourceMetadata {
     pub owner: std::option::Option<crate::model::UserMetadata>,
     /// <p>The parent ID of the resource before a rename operation.</p>
     pub parent_id: std::option::Option<std::string::String>,
+}
+impl ResourceMetadata {
+    /// <p>The type of resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The original name of the resource before a rename operation.</p>
+    pub fn original_name(&self) -> std::option::Option<&str> {
+        self.original_name.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version ID of the resource. This is an optional field and is filled for action
+    /// on document version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The owner of the resource.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::UserMetadata> {
+        self.owner.as_ref()
+    }
+    /// <p>The parent ID of the resource before a rename operation.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3589,6 +4032,28 @@ pub struct UserMetadata {
     pub surname: std::option::Option<std::string::String>,
     /// <p>The email address of the user.</p>
     pub email_address: std::option::Option<std::string::String>,
+}
+impl UserMetadata {
+    /// <p>The ID of the user.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The given name of the user before a rename operation.</p>
+    pub fn given_name(&self) -> std::option::Option<&str> {
+        self.given_name.as_deref()
+    }
+    /// <p>The surname of the user.</p>
+    pub fn surname(&self) -> std::option::Option<&str> {
+        self.surname.as_deref()
+    }
+    /// <p>The email address of the user.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
 }
 impl std::fmt::Debug for UserMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3749,6 +4214,16 @@ pub struct Participants {
     pub users: std::option::Option<std::vec::Vec<crate::model::UserMetadata>>,
     /// <p>The list of user groups.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
+}
+impl Participants {
+    /// <p>The list of users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserMetadata]> {
+        self.users.as_deref()
+    }
+    /// <p>The list of user groups.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupMetadata]> {
+        self.groups.as_deref()
+    }
 }
 impl std::fmt::Debug for Participants {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4111,6 +4586,32 @@ pub struct ShareResult {
     /// <p>The status message.</p>
     pub status_message: std::option::Option<std::string::String>,
 }
+impl ShareResult {
+    /// <p>The ID of the principal.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The ID of the invited user.</p>
+    pub fn invitee_principal_id(&self) -> std::option::Option<&str> {
+        self.invitee_principal_id.as_deref()
+    }
+    /// <p>The role.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::RoleType> {
+        self.role.as_ref()
+    }
+    /// <p>The status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The ID of the resource that was shared.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+    /// <p>The status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ShareResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareResult");
@@ -4291,6 +4792,17 @@ pub struct NotificationOptions {
     /// <p>Text value to be included in the email body.</p>
     pub email_message: std::option::Option<std::string::String>,
 }
+impl NotificationOptions {
+    /// <p>Boolean value to indicate an email notification should be sent to the
+    /// receipients.</p>
+    pub fn send_email(&self) -> bool {
+        self.send_email
+    }
+    /// <p>Text value to be included in the email body.</p>
+    pub fn email_message(&self) -> std::option::Option<&str> {
+        self.email_message.as_deref()
+    }
+}
 impl std::fmt::Debug for NotificationOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationOptions");
@@ -4360,6 +4872,20 @@ pub struct SharePrincipal {
     pub r#type: std::option::Option<crate::model::PrincipalType>,
     /// <p>The role of the recipient.</p>
     pub role: std::option::Option<crate::model::RoleType>,
+}
+impl SharePrincipal {
+    /// <p>The ID of the recipient.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of the recipient.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The role of the recipient.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::RoleType> {
+        self.role.as_ref()
+    }
 }
 impl std::fmt::Debug for SharePrincipal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

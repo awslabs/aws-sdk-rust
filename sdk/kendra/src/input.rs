@@ -132,10 +132,7 @@ impl BatchDeleteDocumentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_document(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -317,10 +314,7 @@ impl BatchGetDocumentStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_document_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -553,10 +547,7 @@ impl BatchPutDocumentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_put_document(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -708,10 +699,7 @@ impl ClearQuerySuggestionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_clear_query_suggestions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1050,10 +1038,7 @@ impl CreateDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1342,10 +1327,7 @@ impl CreateFaqInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_faq(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_faq(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1723,10 +1705,7 @@ impl CreateIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1996,7 +1975,7 @@ impl CreateQuerySuggestionsBlockListInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_query_suggestions_block_list(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_query_suggestions_block_list(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2254,10 +2233,7 @@ impl CreateThesaurusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_thesaurus(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_thesaurus(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2421,10 +2397,7 @@ impl DeleteDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2583,10 +2556,7 @@ impl DeleteFaqInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_faq(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_faq(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2731,10 +2701,7 @@ impl DeleteIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2967,10 +2934,7 @@ impl DeletePrincipalMappingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_principal_mapping(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3133,7 +3097,7 @@ impl DeleteQuerySuggestionsBlockListInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_query_suggestions_block_list(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_query_suggestions_block_list(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3296,10 +3260,7 @@ impl DeleteThesaurusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_thesaurus(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_thesaurus(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3461,10 +3422,7 @@ impl DescribeDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_source(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3625,10 +3583,7 @@ impl DescribeFaqInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_faq(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_faq(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3775,10 +3730,7 @@ impl DescribeIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3970,10 +3922,7 @@ impl DescribePrincipalMappingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_principal_mapping(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4136,7 +4085,7 @@ impl DescribeQuerySuggestionsBlockListInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_query_suggestions_block_list(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_query_suggestions_block_list(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4290,7 +4239,7 @@ impl DescribeQuerySuggestionsConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_query_suggestions_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_query_suggestions_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4453,10 +4402,7 @@ impl DescribeThesaurusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_thesaurus(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_thesaurus(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4644,10 +4590,7 @@ impl GetQuerySuggestionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_query_suggestions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_query_suggestions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4827,10 +4770,7 @@ impl ListDataSourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_data_sources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_data_sources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5060,10 +5000,7 @@ impl ListDataSourceSyncJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_data_source_sync_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5240,10 +5177,7 @@ impl ListFaqsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_faqs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_faqs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5464,7 +5398,7 @@ impl ListGroupsOlderThanOrderingIdInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_groups_older_than_ordering_id(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_groups_older_than_ordering_id(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5632,10 +5566,7 @@ impl ListIndicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_indices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_indices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5822,7 +5753,7 @@ impl ListQuerySuggestionsBlockListsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_query_suggestions_block_lists(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_query_suggestions_block_lists(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5975,10 +5906,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6157,10 +6087,7 @@ impl ListThesauriInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_thesauri(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_thesauri(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6432,10 +6359,7 @@ impl PutPrincipalMappingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_principal_mapping(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_principal_mapping(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6834,9 +6758,7 @@ impl QueryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_query(&self).map_err(
-            |err| aws_smithy_http::operation::BuildError::SerializationError(err.into()),
-        )?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6995,10 +6917,7 @@ impl StartDataSourceSyncJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_data_source_sync_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7164,10 +7083,7 @@ impl StopDataSourceSyncJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_data_source_sync_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7386,10 +7302,8 @@ impl SubmitFeedbackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_submit_feedback(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_submit_feedback(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7563,10 +7477,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7740,10 +7651,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7999,10 +7907,7 @@ impl UpdateDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8305,10 +8210,7 @@ impl UpdateIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8540,7 +8442,7 @@ impl UpdateQuerySuggestionsBlockListInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_query_suggestions_block_list(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_query_suggestions_block_list(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8818,7 +8720,7 @@ impl UpdateQuerySuggestionsConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_query_suggestions_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_query_suggestions_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9034,10 +8936,7 @@ impl UpdateThesaurusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_thesaurus(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_thesaurus(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9117,6 +9016,33 @@ pub struct UpdateThesaurusInput {
     /// bucket.</p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
 }
+impl UpdateThesaurusInput {
+    /// <p>The identifier of the thesaurus to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The updated name of the thesaurus.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the index associated with the thesaurus to update.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The updated description of the thesaurus.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated role ARN of the thesaurus.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Information required to find a specific file in an Amazon S3
+    /// bucket.</p>
+    pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.source_s3_path.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateThesaurusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThesaurusInput");
@@ -9175,6 +9101,60 @@ pub struct UpdateQuerySuggestionsConfigInput {
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub minimum_query_count: std::option::Option<i32>,
 }
+impl UpdateQuerySuggestionsConfigInput {
+    /// <p>The identifier of the index you want to update query suggestions settings for.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
+    /// <p>By default, Amazon Kendra enables query suggestions.
+    /// <code>LEARN_ONLY</code> mode allows you to turn off query suggestions.
+    /// You can to update this at any time.</p>
+    /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new
+    /// queries to keep suggestions up to date for when you are ready to
+    /// switch to ENABLED mode again.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
+        self.mode.as_ref()
+    }
+    /// <p>How recent your queries are in your query log time window.</p>
+    /// <p>The time window is the number of days from current day to past days.</p>
+    /// <p>By default, Amazon Kendra sets this to 180.</p>
+    pub fn query_log_look_back_window_in_days(&self) -> std::option::Option<i32> {
+        self.query_log_look_back_window_in_days
+    }
+    /// <p>
+    /// <code>TRUE</code> to include queries without user information (i.e. all queries,
+    /// irrespective of the user), otherwise <code>FALSE</code> to only include queries
+    /// with user information.</p>
+    /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this
+    /// flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user
+    /// information.</p>
+    /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least
+    /// <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code>
+    /// unique users for suggestions.</p>
+    /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns
+    /// from all queries.</p>
+    pub fn include_queries_without_user_information(&self) -> std::option::Option<bool> {
+        self.include_queries_without_user_information
+    }
+    /// <p>The minimum number of unique users who must search a query in order for the query
+    /// to be eligible to suggest to your users.</p>
+    /// <p>Increasing this number might decrease the number of suggestions. However, this
+    /// ensures a query is searched by many users and is truly popular to suggest to users.</p>
+    /// <p>How you tune this setting depends on your specific needs.</p>
+    pub fn minimum_number_of_querying_users(&self) -> std::option::Option<i32> {
+        self.minimum_number_of_querying_users
+    }
+    /// <p>The the minimum number of times a query must be searched in order to be
+    /// eligible to suggest to your users.</p>
+    /// <p>Decreasing this number increases the number of suggestions. However, this
+    /// affects the quality of suggestions as it sets a low bar for a query to be
+    /// considered popular to suggest to users.</p>
+    /// <p>How you tune this setting depends on your specific needs.</p>
+    pub fn minimum_query_count(&self) -> std::option::Option<i32> {
+        self.minimum_query_count
+    }
+}
 impl std::fmt::Debug for UpdateQuerySuggestionsConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQuerySuggestionsConfigInput");
@@ -9223,6 +9203,41 @@ pub struct UpdateQuerySuggestionsBlockListInput {
     /// block list text file in S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateQuerySuggestionsBlockListInput {
+    /// <p>The identifier of the index for a block list.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The unique identifier of a block list.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of a block list.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description for a block list.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The S3 path where your block list text file sits in S3.</p>
+    /// <p>If you update your block list and provide the same path to the
+    /// block list text file in S3, then Amazon Kendra reloads the file to refresh
+    /// the block list. Amazon Kendra does not automatically refresh your block list.
+    /// You need to call the <code>UpdateQuerySuggestionsBlockList</code> API
+    /// to refresh you block list.</p>
+    /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes
+    /// all query suggestions with the latest content in the S3 file. This
+    /// means changes might not take effect immediately.</p>
+    pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.source_s3_path.as_ref()
+    }
+    /// <p>The IAM (Identity and Access Management) role used to access the
+    /// block list text file in S3.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateQuerySuggestionsBlockListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQuerySuggestionsBlockListInput");
@@ -9269,6 +9284,58 @@ pub struct UpdateIndexInput {
     /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
+}
+impl UpdateIndexInput {
+    /// <p>The identifier of the index to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the index to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A new IAM role that gives Amazon Kendra permission to access your
+    /// Amazon CloudWatch logs.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A new description for the index.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The document metadata to update. </p>
+    pub fn document_metadata_configuration_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::DocumentMetadataConfiguration]> {
+        self.document_metadata_configuration_updates.as_deref()
+    }
+    /// <p>Sets the number of additional storage and query capacity units that
+    /// should be used by the index. You can change the capacity of the index up
+    /// to 5 times per day.</p>
+    /// <p>If you are using extra storage units, you can't reduce the storage
+    /// capacity below that required to meet the storage needs for your
+    /// index.</p>
+    pub fn capacity_units(&self) -> std::option::Option<&crate::model::CapacityUnitsConfiguration> {
+        self.capacity_units.as_ref()
+    }
+    /// <p>The user token configuration.</p>
+    pub fn user_token_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserTokenConfiguration]> {
+        self.user_token_configurations.as_deref()
+    }
+    /// <p>The user context policy.</p>
+    pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
+        self.user_context_policy.as_ref()
+    }
+    /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+    /// identity source. To configure this, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    pub fn user_group_resolution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
+        self.user_group_resolution_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9321,6 +9388,48 @@ pub struct UpdateDataSourceInput {
     /// documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
 }
+impl UpdateDataSourceInput {
+    /// <p>The unique identifier of the data source to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the data source to update. The name of the data source
+    /// can't be updated. To rename a data source you must delete the data source
+    /// and re-create it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the index that contains the data source to
+    /// update.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>Configuration information for a Amazon Kendra data source.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The new description for the data source.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The new update schedule for the data source.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
+    /// source is accessing resources on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The code for a language. This allows you to support a language for all
+    /// documents when updating the data source. English is supported
+    /// by default. For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceInput");
@@ -9347,6 +9456,18 @@ pub struct UntagResourceInput {
     /// tag key does not exist on the resource, it is ignored.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
+    /// remove the tag from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a
+    /// tag key does not exist on the resource, it is ignored.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -9366,6 +9487,18 @@ pub struct TagResourceInput {
     /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag
     /// already exists, the existing value is replaced with the new value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
+    /// tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag
+    /// already exists, the existing value is replaced with the new value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9394,6 +9527,30 @@ pub struct SubmitFeedbackInput {
     pub relevance_feedback_items:
         std::option::Option<std::vec::Vec<crate::model::RelevanceFeedback>>,
 }
+impl SubmitFeedbackInput {
+    /// <p>The identifier of the index that was queried.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the specific query for which you are submitting
+    /// feedback. The query ID is returned in the response to the
+    /// <code>Query</code> operation.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen
+    /// by the user. </p>
+    pub fn click_feedback_items(&self) -> std::option::Option<&[crate::model::ClickFeedback]> {
+        self.click_feedback_items.as_deref()
+    }
+    /// <p>Provides Amazon Kendra with relevant or not relevant feedback for
+    /// whether a particular item was relevant to the search.</p>
+    pub fn relevance_feedback_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::RelevanceFeedback]> {
+        self.relevance_feedback_items.as_deref()
+    }
+}
 impl std::fmt::Debug for SubmitFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubmitFeedbackInput");
@@ -9415,6 +9572,17 @@ pub struct StopDataSourceSyncJobInput {
     /// <p>The identifier of the index that contains the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
+impl StopDataSourceSyncJobInput {
+    /// <p>The identifier of the data source for which to stop the
+    /// synchronization jobs.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index that contains the data source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopDataSourceSyncJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDataSourceSyncJobInput");
@@ -9432,6 +9600,16 @@ pub struct StartDataSourceSyncJobInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
+}
+impl StartDataSourceSyncJobInput {
+    /// <p>The identifier of the data source to synchronize.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index that contains the data source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDataSourceSyncJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9507,6 +9685,95 @@ pub struct QueryInput {
     /// email address, as the <code>VisitorId</code>.</p>
     pub visitor_id: std::option::Option<std::string::String>,
 }
+impl QueryInput {
+    /// <p>The unique identifier of the index to search. The identifier is
+    /// returned in the response from the <code>CreateIndex</code>
+    /// operation.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The text to search for.</p>
+    pub fn query_text(&self) -> std::option::Option<&str> {
+        self.query_text.as_deref()
+    }
+    /// <p>Enables filtered searches based on document attributes. You can only
+    /// provide one attribute filter; however, the <code>AndAllFilters</code>,
+    /// <code>NotFilter</code>, and <code>OrAllFilters</code> parameters
+    /// contain a list of other filters.</p>
+    /// <p>The <code>AttributeFilter</code> parameter enables you to create a
+    /// set of filtering rules that a document must satisfy to be included in
+    /// the query results.</p>
+    pub fn attribute_filter(&self) -> std::option::Option<&crate::model::AttributeFilter> {
+        self.attribute_filter.as_ref()
+    }
+    /// <p>An array of documents attributes. Amazon Kendra returns a count for
+    /// each attribute key specified. You can use this information to help
+    /// narrow the search for your user.</p>
+    pub fn facets(&self) -> std::option::Option<&[crate::model::Facet]> {
+        self.facets.as_deref()
+    }
+    /// <p>An array of document attributes to include in the response. No other
+    /// document attributes are included in the response. By default all
+    /// document attributes are included in the response. </p>
+    pub fn requested_document_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.requested_document_attributes.as_deref()
+    }
+    /// <p>Sets the type of query. Only results for the specified query type
+    /// are returned.</p>
+    pub fn query_result_type_filter(&self) -> std::option::Option<&crate::model::QueryResultType> {
+        self.query_result_type_filter.as_ref()
+    }
+    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+    /// <p>If you use this API to override the relevance tuning configured at the index
+    /// level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API
+    /// to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+    /// <p>If there is relevance tuning configured for fields at the index level,
+    /// but you use this API to override only some of these fields, then for the fields you did not override,
+    /// the importance is set to 1.</p>
+    pub fn document_relevance_override_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DocumentRelevanceConfiguration]> {
+        self.document_relevance_override_configurations.as_deref()
+    }
+    /// <p>Query results are returned in pages the size of the
+    /// <code>PageSize</code> parameter. By default, Amazon Kendra returns
+    /// the first page of results. Use this parameter to get result pages after
+    /// the first one.</p>
+    pub fn page_number(&self) -> std::option::Option<i32> {
+        self.page_number
+    }
+    /// <p>Sets the number of results that are returned in each page of
+    /// results. The default page size is 10. The maximum number of results
+    /// returned is 100. If you ask for more than 100 results, only 100 are
+    /// returned.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>Provides information that determines how the results of the query
+    /// are sorted. You can set the field that Amazon Kendra should sort the results
+    /// on, and specify whether the results should be sorted in ascending or
+    /// descending order. In the case of ties in sorting the results, the
+    /// results are sorted by relevance.</p>
+    /// <p>If you don't provide sorting configuration, the results are sorted
+    /// by the relevance that Amazon Kendra determines for the result.</p>
+    pub fn sorting_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SortingConfiguration> {
+        self.sorting_configuration.as_ref()
+    }
+    /// <p>The user context token or user and group information.</p>
+    pub fn user_context(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.user_context.as_ref()
+    }
+    /// <p>Provides an identifier for a specific user. The
+    /// <code>VisitorId</code> should be a unique identifier, such as a
+    /// GUID. Don't use personally identifiable information, such as the user's
+    /// email address, as the <code>VisitorId</code>.</p>
+    pub fn visitor_id(&self) -> std::option::Option<&str> {
+        self.visitor_id.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryInput");
@@ -9577,6 +9844,60 @@ pub struct PutPrincipalMappingInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl PutPrincipalMappingInput {
+    /// <p>The identifier of the index you want to map users to their groups.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the data source you want to map users to their groups.</p>
+    /// <p>This is useful if a group is tied to multiple data sources, but you only want
+    /// the group to access documents of a certain data source. For example, the groups
+    /// "Research", "Engineering", and "Sales and Marketing" are all tied to the company's
+    /// documents stored in the data sources Confluence and Salesforce. However,
+    /// "Sales and Marketing" team only needs access to customer-related documents
+    /// stored in Salesforce.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The identifier of the group you want to map its users to.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The list that contains your users or sub groups that belong
+    /// the same group.</p>
+    /// <p>For example, the group "Company" includes the user "CEO" and the
+    /// sub groups "Research", "Engineering", and "Sales and Marketing".</p>
+    /// <p>If you have more than 1000 users and/or sub groups for a single group,
+    /// you need to provide the path to the S3 file that lists your users and
+    /// sub groups for a group. Your sub groups can contain more than 1000 users,
+    /// but the list of sub groups that belong to a group (and/or users) must be
+    /// no more than 1000.</p>
+    pub fn group_members(&self) -> std::option::Option<&crate::model::GroupMembers> {
+        self.group_members.as_ref()
+    }
+    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override
+    /// the latest <code>PUT</code> action with previous actions. The highest number
+    /// ID, which is the ordering ID, is the latest action you want to process and
+    /// apply on top of other actions with lower number IDs. This prevents previous
+    /// actions with lower number IDs from possibly overriding the latest action.</p>
+    /// <p>The ordering ID can be the UNIX time of the last update you made to a
+    /// group members list. You would then provide this list when calling
+    /// <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action
+    /// for that updated group with the latest members list doesn't get overwritten
+    /// by earlier <code>PUT</code> actions for the same group which are yet to
+    /// be processed.</p>
+    /// <p>The default ordering ID is the current UNIX time in milliseconds that the
+    /// action was received by Amazon Kendra.</p>
+    pub fn ordering_id(&self) -> std::option::Option<i64> {
+        self.ordering_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
+    /// that contains your list of users or sub groups that belong to a group.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutPrincipalMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPrincipalMappingInput");
@@ -9604,6 +9925,23 @@ pub struct ListThesauriInput {
     /// <p>The maximum number of thesauri to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListThesauriInput {
+    /// <p>The identifier of the index associated with the thesaurus to list.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token to
+    /// retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>).
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of thesauri to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListThesauriInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThesauriInput");
@@ -9621,6 +9959,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
     /// get a list of tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
+    /// get a list of tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9647,6 +9992,26 @@ pub struct ListQuerySuggestionsBlockListsInput {
     /// <p>The maximum number of block lists to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListQuerySuggestionsBlockListsInput {
+    /// <p>The identifier of the index for a list of all block lists that exist for
+    /// that index.</p>
+    /// <p>For information on the current quota limits for block lists, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+    /// for Amazon Kendra</a>.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of block lists to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListQuerySuggestionsBlockListsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQuerySuggestionsBlockListsInput");
@@ -9668,6 +10033,19 @@ pub struct ListIndicesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of data sources to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListIndicesInput {
+    /// <p>If the previous response was incomplete (because there is more data to
+    /// retrieve), Amazon Kendra returns a pagination token in the response. You
+    /// can use this pagination token to retrieve the next set of indexes
+    /// (<code>DataSourceSummaryItems</code>). </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of data sources to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListIndicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9704,6 +10082,39 @@ pub struct ListGroupsOlderThanOrderingIdInput {
     /// </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListGroupsOlderThanOrderingIdInput {
+    /// <p>The identifier of the index for getting a list of groups mapped
+    /// to users before a given ordering or timestamp identifier.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the data source for getting a list of groups mapped
+    /// to users before a given ordering timestamp identifier.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The timestamp identifier used for the latest <code>PUT</code> or
+    /// <code>DELETE</code> action for mapping users to their groups.</p>
+    pub fn ordering_id(&self) -> std::option::Option<i64> {
+        self.ordering_id
+    }
+    /// <p>
+    /// If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of groups that are mapped to users before a
+    /// given ordering or timestamp identifier.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of returned groups that are mapped to users before a
+    /// given ordering or timestamp identifier.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListGroupsOlderThanOrderingIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsOlderThanOrderingIdInput");
@@ -9729,6 +10140,23 @@ pub struct ListFaqsInput {
     /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
     /// the list, this response contains only the actual results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFaqsInput {
+    /// <p>The index that contains the FAQ lists.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of FAQs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
+    /// the list, this response contains only the actual results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFaqsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9763,6 +10191,38 @@ pub struct ListDataSourceSyncJobsInput {
     /// <code>Status</code> field equal to the specified status.</p>
     pub status_filter: std::option::Option<crate::model::DataSourceSyncJobStatus>,
 }
+impl ListDataSourceSyncJobsInput {
+    /// <p>The identifier of the data source.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index that contains the data source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of jobs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of synchronization jobs to return in the response.
+    /// If there are fewer results in the list, this response contains only the
+    /// actual results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>When specified, the synchronization jobs returned in the list are
+    /// limited to jobs between the specified dates. </p>
+    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.start_time_filter.as_ref()
+    }
+    /// <p>When specified, only returns synchronization jobs with the
+    /// <code>Status</code> field equal to the specified status.</p>
+    pub fn status_filter(&self) -> std::option::Option<&crate::model::DataSourceSyncJobStatus> {
+        self.status_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDataSourceSyncJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSourceSyncJobsInput");
@@ -9789,6 +10249,23 @@ pub struct ListDataSourcesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of data sources to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDataSourcesInput {
+    /// <p>The identifier of the index that contains the data source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to
+    /// retrieve), Amazon Kendra returns a pagination token in the response. You
+    /// can use this pagination token to retrieve the next set of data sources
+    /// (<code>DataSourceSummaryItems</code>). </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of data sources to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDataSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9818,6 +10295,27 @@ pub struct GetQuerySuggestionsInput {
     /// to your users.</p>
     pub max_suggestions_count: std::option::Option<i32>,
 }
+impl GetQuerySuggestionsInput {
+    /// <p>The identifier of the index you want to get query suggestions from.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The text of a user's query to generate query suggestions.</p>
+    /// <p>A query is suggested if the query prefix matches
+    /// what a user starts to type as their query.</p>
+    /// <p>Amazon Kendra does not show any suggestions if a user
+    /// types fewer than two characters or more than 60 characters.
+    /// A query must also have at least one search result and contain
+    /// at least one word of more than four characters.</p>
+    pub fn query_text(&self) -> std::option::Option<&str> {
+        self.query_text.as_deref()
+    }
+    /// <p>The maximum number of query suggestions you want to show
+    /// to your users.</p>
+    pub fn max_suggestions_count(&self) -> std::option::Option<i32> {
+        self.max_suggestions_count
+    }
+}
 impl std::fmt::Debug for GetQuerySuggestionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetQuerySuggestionsInput");
@@ -9837,6 +10335,16 @@ pub struct DescribeThesaurusInput {
     /// <p>The identifier of the index associated with the thesaurus to describe.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
+impl DescribeThesaurusInput {
+    /// <p>The identifier of the thesaurus to describe.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeThesaurusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeThesaurusInput");
@@ -9854,6 +10362,13 @@ pub struct DescribeQuerySuggestionsConfigInput {
     /// settings for.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
+impl DescribeQuerySuggestionsConfigInput {
+    /// <p>The identifier of the index you want to describe query suggestions
+    /// settings for.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeQuerySuggestionsConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeQuerySuggestionsConfigInput");
@@ -9870,6 +10385,16 @@ pub struct DescribeQuerySuggestionsBlockListInput {
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the block list.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DescribeQuerySuggestionsBlockListInput {
+    /// <p>The identifier of the index for the block list.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The unique identifier of the block list.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeQuerySuggestionsBlockListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9897,6 +10422,26 @@ pub struct DescribePrincipalMappingInput {
     /// to their groups.</p>
     pub group_id: std::option::Option<std::string::String>,
 }
+impl DescribePrincipalMappingInput {
+    /// <p>The identifier of the index required to check the processing of
+    /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
+    /// to their groups.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the data source to check the processing of
+    /// <code>PUT</code> and <code>DELETE</code> actions for mapping
+    /// users to their groups.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The identifier of the group required to check the processing of
+    /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
+    /// to their groups.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePrincipalMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePrincipalMappingInput");
@@ -9914,6 +10459,12 @@ pub struct DescribeIndexInput {
     /// <p>The name of the index to describe.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeIndexInput {
+    /// <p>The name of the index to describe.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIndexInput");
@@ -9930,6 +10481,16 @@ pub struct DescribeFaqInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the FAQ.</p>
     pub index_id: std::option::Option<std::string::String>,
+}
+impl DescribeFaqInput {
+    /// <p>The unique identifier of the FAQ.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index that contains the FAQ.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFaqInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9949,6 +10510,16 @@ pub struct DescribeDataSourceInput {
     /// <p>The identifier of the index that contains the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
+impl DescribeDataSourceInput {
+    /// <p>The unique identifier of the data source to describe.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index that contains the data source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSourceInput");
@@ -9967,6 +10538,16 @@ pub struct DeleteThesaurusInput {
     /// <p>The identifier of the index associated with the thesaurus to delete.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
+impl DeleteThesaurusInput {
+    /// <p>The identifier of the thesaurus to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index associated with the thesaurus to delete.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteThesaurusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteThesaurusInput");
@@ -9984,6 +10565,16 @@ pub struct DeleteQuerySuggestionsBlockListInput {
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the block list that needs to be deleted.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteQuerySuggestionsBlockListInput {
+    /// <p>The identifier of the you want to delete a block list from.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The unique identifier of the block list that needs to be deleted.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteQuerySuggestionsBlockListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10028,6 +10619,45 @@ pub struct DeletePrincipalMappingInput {
     /// </p>
     pub ordering_id: std::option::Option<i64>,
 }
+impl DeletePrincipalMappingInput {
+    /// <p>The identifier of the index you want to delete a group from.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the data source you want to delete a group from.</p>
+    /// <p>This is useful if a group is tied to multiple data sources and you want
+    /// to delete a group from accessing documents in a certain data source. For example,
+    /// the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
+    /// the company's documents stored in the data sources Confluence and Salesforce.
+    /// You want to delete "Research" and "Engineering" groups from Salesforce, so that
+    /// these groups cannot access customer-related documents stored in Salesforce.
+    /// Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The identifier of the group you want to delete.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not
+    /// override the latest <code>DELETE</code> action with previous actions.
+    /// The highest number ID, which is the ordering ID, is the latest action
+    /// you want to process and apply on top of other actions with lower number
+    /// IDs. This prevents previous actions with lower number IDs from possibly
+    /// overriding the latest action.</p>
+    /// <p>The ordering ID can be the UNIX time of the last update you made to a group
+    /// members list. You would then provide this list when calling
+    /// <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action
+    /// for that updated group with the latest members list doesn't get overwritten
+    /// by earlier <code>DELETE</code> actions for the same group which are yet to
+    /// be processed.</p>
+    /// <p>The default ordering ID is the current UNIX time in milliseconds that the
+    /// action was received by Amazon Kendra.
+    /// </p>
+    pub fn ordering_id(&self) -> std::option::Option<i64> {
+        self.ordering_id
+    }
+}
 impl std::fmt::Debug for DeletePrincipalMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePrincipalMappingInput");
@@ -10046,6 +10676,12 @@ pub struct DeleteIndexInput {
     /// <p>The identifier of the index to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteIndexInput {
+    /// <p>The identifier of the index to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIndexInput");
@@ -10062,6 +10698,16 @@ pub struct DeleteFaqInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The index to remove the FAQ from.</p>
     pub index_id: std::option::Option<std::string::String>,
+}
+impl DeleteFaqInput {
+    /// <p>The identifier of the FAQ to remove.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The index to remove the FAQ from.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFaqInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10081,6 +10727,17 @@ pub struct DeleteDataSourceInput {
     /// <p>The unique identifier of the index associated with the data
     /// source.</p>
     pub index_id: std::option::Option<std::string::String>,
+}
+impl DeleteDataSourceInput {
+    /// <p>The unique identifier of the data source to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The unique identifier of the index associated with the data
+    /// source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10119,6 +10776,46 @@ pub struct CreateThesaurusInput {
     /// with the same client token will create only one thesaurus.
     /// </p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateThesaurusInput {
+    /// <p>The unique identifier of the index for the new thesaurus.
+    /// </p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The name for the new thesaurus.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description for the new thesaurus.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+    /// to access thesaurus file specified in <code>SourceS3Path</code>.
+    /// </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of key-value pairs that identify the thesaurus. You can use
+    /// the tags to identify and organize your resources and to control
+    /// access to resources.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The thesaurus file Amazon S3 source path.
+    /// </p>
+    pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.source_s3_path.as_ref()
+    }
+    /// <p>A token that you provide to identify the request to create a
+    /// thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation
+    /// with the same client token will create only one thesaurus.
+    /// </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateThesaurusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10168,6 +10865,52 @@ pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>A tag that you can assign to a block list that categorizes
     /// the block list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateQuerySuggestionsBlockListInput {
+    /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>A user friendly name for the block list.</p>
+    /// <p>For example, the block list named 'offensive-words' includes all
+    /// offensive words that could appear in user queries and need to be
+    /// blocked from suggestions.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A user-friendly description for the block list.</p>
+    /// <p>For example, the description "List of all offensive words that can
+    /// appear in user queries and need to be blocked from suggestions."</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The S3 path to your block list text file in your S3 bucket.</p>
+    /// <p>Each block word or phrase should be on a separate line in a text file.</p>
+    /// <p>For information on the current quota limits for block lists, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+    /// for Amazon Kendra</a>.</p>
+    pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.source_s3_path.as_ref()
+    }
+    /// <p>A token that you provide to identify the request to create a
+    /// query suggestions block list.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to
+    /// access the block list text file in your S3 bucket.</p>
+    /// <p>You need permissions to the role ARN (Amazon Resource Name).
+    /// The role needs S3 read permissions to your file in S3 and needs
+    /// to give STS (Security Token Service) assume role permissions
+    /// to Amazon Kendra.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A tag that you can assign to a block list that categorizes
+    /// the block list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateQuerySuggestionsBlockListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10250,6 +10993,93 @@ pub struct CreateIndexInput {
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
+impl CreateIndexInput {
+    /// <p>The name for the new index.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Kendra edition to use for the index. Choose
+    /// <code>DEVELOPER_EDITION</code> for indexes intended for development,
+    /// testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
+    /// production databases. Once you set the edition for an index, it can't be
+    /// changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a
+    /// value, the default is <code>ENTERPRISE_EDITION</code>.</p>
+    /// <p>For more information on quota limits for enterprise and developer editions,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    pub fn edition(&self) -> std::option::Option<&crate::model::IndexEdition> {
+        self.edition.as_ref()
+    }
+    /// <p>An Identity and Access Management(IAM) role that gives
+    /// Amazon Kendra permissions to access your Amazon CloudWatch logs and
+    /// metrics. This is also the role used when you use the
+    /// <code>BatchPutDocument</code> operation to index documents from an
+    /// Amazon S3 bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The identifier of the KMScustomer managed key (CMK) to use to
+    /// encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
+    /// asymmetric CMKs.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+    /// <p>A description for the index.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A token that you provide to identify the request to create an index.
+    /// Multiple calls to the <code>CreateIndex</code> operation with the same
+    /// client token will create only one index.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of key-value pairs that identify the index. You can use the
+    /// tags to identify and organize your resources and to control access to
+    /// resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The user token configuration.</p>
+    pub fn user_token_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserTokenConfiguration]> {
+        self.user_token_configurations.as_deref()
+    }
+    /// <p>The user context policy.</p>
+    /// <dl>
+    /// <dt>ATTRIBUTE_FILTER</dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable
+    /// for all users. If you want to filter search results on
+    /// user context, you can use the attribute filters of
+    /// <code>_user_id</code> and <code>_group_ids</code> or
+    /// you can provide user and group information in <code>UserContext</code>.
+    /// </p>
+    /// </dd>
+    /// <dt>USER_TOKEN</dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter
+    /// search results on user context. All documents with no
+    /// access control and all documents accessible to the user
+    /// will be searchable and displayable.
+    /// </p>
+    /// </dd>
+    /// </dl>
+    pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
+        self.user_context_policy.as_ref()
+    }
+    /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+    /// identity source. To configure this, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    pub fn user_group_resolution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
+        self.user_group_resolution_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIndexInput");
@@ -10309,6 +11139,58 @@ pub struct CreateFaqInput {
     /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
     /// documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
+}
+impl CreateFaqInput {
+    /// <p>The identifier of the index that contains the FAQ.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The name that should be associated with the FAQ.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the FAQ.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The S3 location of the FAQ input data.</p>
+    pub fn s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.s3_path.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
+    /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and
+    /// organize your resources and to control access to resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format
+    /// that includes customs attributes in a header, and a JSON format that includes custom
+    /// attributes.</p>
+    /// <p>The format must match the format of the file stored in the S3 bucket identified in the
+    /// <code>S3Path</code> parameter.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and
+    /// answers</a>.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::FaqFileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to
+    /// the <code>CreateFaqRequest</code> operation with the same client token will create only
+    /// one FAQ. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The code for a language. This allows you to support a language
+    /// for the FAQ document. English is supported by default.
+    /// For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFaqInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10381,6 +11263,78 @@ pub struct CreateDataSourceInput {
     /// documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
 }
+impl CreateDataSourceInput {
+    /// <p>A unique name for the data source. A data source name can't be changed
+    /// without deleting and recreating the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the index that should be associated with this data
+    /// source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The type of repository that contains the data source.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The connector configuration information that is required to access the
+    /// repository.</p>
+    /// <p>You can't specify the <code>Configuration</code> parameter when the
+    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+    /// you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>Configuration</code> parameter is required for all other
+    /// data sources.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>A description for the data source.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Sets the frequency that Amazon Kendra will check the documents in your
+    /// repository and update the index. If you don't set a schedule Amazon Kendra
+    /// will not periodically update the index. You can call the
+    /// <code>StartDataSourceSyncJob</code> operation to update the
+    /// index.</p>
+    /// <p>You can't specify the <code>Schedule</code> parameter when the
+    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+    /// you receive a <code>ValidationException</code> exception.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the
+    /// data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+    /// Amazon Kendra</a>.</p>
+    /// <p>You can't specify the <code>RoleArn</code> parameter when the
+    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+    /// you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>RoleArn</code> parameter is required for all other data
+    /// sources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of key-value pairs that identify the data source. You can use
+    /// the tags to identify and organize your resources and to control access to
+    /// resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A token that you provide to identify the request to create a data
+    /// source. Multiple calls to the <code>CreateDataSource</code> operation with
+    /// the same client token will create only one data source.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The code for a language. This allows you to support a language for all
+    /// documents when creating the data source. English is supported
+    /// by default. For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceInput");
@@ -10404,6 +11358,12 @@ impl std::fmt::Debug for CreateDataSourceInput {
 pub struct ClearQuerySuggestionsInput {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     pub index_id: std::option::Option<std::string::String>,
+}
+impl ClearQuerySuggestionsInput {
+    /// <p>The identifier of the index you want to clear query suggestions from.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ClearQuerySuggestionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10449,6 +11409,45 @@ pub struct BatchPutDocumentInput {
     /// quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub documents: std::option::Option<std::vec::Vec<crate::model::Document>>,
 }
+impl BatchPutDocumentInput {
+    /// <p>The identifier of the index to add the documents to. You need to
+    /// create the index first using the <code>CreateIndex</code>
+    /// operation.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
+    /// <code>BatchPutDocument</code> operation. For more information, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+    /// Roles for Amazon Kendra</a>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>One or more documents to add to the index.</p>
+    /// <p>Documents can include custom attributes. For example,
+    /// 'DataSourceId' and 'DataSourceSyncJobId' are custom
+    /// attributes that provide information on the synchronization
+    /// of documents running on a data source. Note,
+    /// 'DataSourceSyncJobId' could be an optional custom attribute
+    /// as Amazon Kendra will use the ID of a running sync job.</p>
+    /// <p>Documents have the following file size limits.</p>
+    /// <ul>
+    /// <li>
+    /// <p>5 MB total size for inline documents</p>
+    /// </li>
+    /// <li>
+    /// <p>50 MB total size for files from an S3 bucket</p>
+    /// </li>
+    /// <li>
+    /// <p>5 MB extracted text for any file</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about file size and transaction per second
+    /// quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    pub fn documents(&self) -> std::option::Option<&[crate::model::Document]> {
+        self.documents.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchPutDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutDocumentInput");
@@ -10472,6 +11471,20 @@ pub struct BatchGetDocumentStatusInput {
     /// their document ID and optional attributes.</p>
     pub document_info_list: std::option::Option<std::vec::Vec<crate::model::DocumentInfo>>,
 }
+impl BatchGetDocumentStatusInput {
+    /// <p>The identifier of the index to add documents to. The index ID is
+    /// returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex
+    /// </a> operation.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>A list of <code>DocumentInfo</code> objects that identify the
+    /// documents for which to get the status. You identify the documents by
+    /// their document ID and optional attributes.</p>
+    pub fn document_info_list(&self) -> std::option::Option<&[crate::model::DocumentInfo]> {
+        self.document_info_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetDocumentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDocumentStatusInput");
@@ -10494,6 +11507,24 @@ pub struct BatchDeleteDocumentInput {
     /// source.</p>
     pub data_source_sync_job_metric_target:
         std::option::Option<crate::model::DataSourceSyncJobMetricTarget>,
+}
+impl BatchDeleteDocumentInput {
+    /// <p>The identifier of the index that contains the documents to
+    /// delete.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>One or more identifiers for documents to delete from the index.</p>
+    pub fn document_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.document_id_list.as_deref()
+    }
+    /// <p>Maps a particular data source sync job to a particular data
+    /// source.</p>
+    pub fn data_source_sync_job_metric_target(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceSyncJobMetricTarget> {
+        self.data_source_sync_job_metric_target.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

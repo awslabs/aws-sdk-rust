@@ -7,6 +7,13 @@ pub struct UpdateServerEngineAttributesOutput {
     /// </p>
     pub server: std::option::Option<crate::model::Server>,
 }
+impl UpdateServerEngineAttributesOutput {
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.
+    /// </p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServerEngineAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServerEngineAttributesOutput");
@@ -57,6 +64,13 @@ pub struct UpdateServerOutput {
     /// <p>Contains the response to a <code>UpdateServer</code> request.
     /// </p>
     pub server: std::option::Option<crate::model::Server>,
+}
+impl UpdateServerOutput {
+    /// <p>Contains the response to a <code>UpdateServer</code> request.
+    /// </p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -169,6 +183,13 @@ pub struct StartMaintenanceOutput {
     /// </p>
     pub server: std::option::Option<crate::model::Server>,
 }
+impl StartMaintenanceOutput {
+    /// <p>Contains the response to a <code>StartMaintenance</code> request.
+    /// </p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
+}
 impl std::fmt::Debug for StartMaintenanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMaintenanceOutput");
@@ -219,6 +240,13 @@ pub struct RestoreServerOutput {
     /// <p>Describes a configuration management server.
     /// </p>
     pub server: std::option::Option<crate::model::Server>,
+}
+impl RestoreServerOutput {
+    /// <p>Describes a configuration management server.
+    /// </p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -271,6 +299,16 @@ pub struct ListTagsForResourceOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A token that you can use as the value of <code>NextToken</code> in subsequent calls to the API to show more results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>Tags that have been applied to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A token that you can use as the value of <code>NextToken</code> in subsequent calls to the API to show more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -344,6 +382,16 @@ pub struct ExportServerEngineAttributeOutput {
     /// <p>The server name used in the request.</p>
     pub server_name: std::option::Option<std::string::String>,
 }
+impl ExportServerEngineAttributeOutput {
+    /// <p>The requested engine attribute pair with attribute name and value.</p>
+    pub fn engine_attribute(&self) -> std::option::Option<&crate::model::EngineAttribute> {
+        self.engine_attribute.as_ref()
+    }
+    /// <p>The server name used in the request.</p>
+    pub fn server_name(&self) -> std::option::Option<&str> {
+        self.server_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportServerEngineAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportServerEngineAttributeOutput");
@@ -410,6 +458,15 @@ pub struct DisassociateNodeOutput {
     /// the disassociation request.
     /// </p>
     pub node_association_status_token: std::option::Option<std::string::String>,
+}
+impl DisassociateNodeOutput {
+    /// <p>Contains a token which can be passed to the
+    /// <code>DescribeNodeAssociationStatus</code> API call to get the status of
+    /// the disassociation request.
+    /// </p>
+    pub fn node_association_status_token(&self) -> std::option::Option<&str> {
+        self.node_association_status_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -497,6 +554,38 @@ pub struct DescribeServersOutput {
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeServersOutput {
+    /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
+    /// <p>
+    /// <i>For Chef Automate servers:</i>  If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+    /// CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running
+    /// Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
+    /// <p>
+    /// <i>For Puppet servers:</i>  
+    /// <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+    /// the following two responses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140.
+    /// The CA certificate is also used to sign node certificates.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
+    /// maintenance purposes only. For more information about the Puppet certificate revocation list, see
+    /// <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+    /// </li>
+    /// </ul>
+    pub fn servers(&self) -> std::option::Option<&[crate::model::Server]> {
+        self.servers.as_deref()
+    }
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeServersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -637,6 +726,41 @@ pub struct DescribeNodeAssociationStatusOutput {
     /// </p>
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
+impl DescribeNodeAssociationStatusOutput {
+    /// <p>The status of the association or disassociation request.
+    /// </p>
+    /// <p class="title">
+    /// <b>Possible values:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS</code>: The association or disassociation succeeded.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The association or disassociation failed.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn node_association_status(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeAssociationStatus> {
+        self.node_association_status.as_ref()
+    }
+    /// <p>Attributes specific to the node association.
+    /// In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).
+    /// </p>
+    pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
+        self.engine_attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNodeAssociationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNodeAssociationStatusOutput");
@@ -774,6 +898,24 @@ pub struct DescribeEventsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEventsOutput {
+    /// <p>Contains the response to a <code>DescribeEvents</code> request.
+    /// </p>
+    pub fn server_events(&self) -> std::option::Option<&[crate::model::ServerEvent]> {
+        self.server_events.as_deref()
+    }
+    /// <p>NextToken is a string that is returned in some command responses. It indicates that
+    /// not all entries have been returned, and that you must run at least one more request to get remaining
+    /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
+    /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
+    /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
+    /// Setting a <code>nextToken</code> value that was not returned in
+    /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -863,6 +1005,17 @@ pub struct DescribeBackupsOutput {
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBackupsOutput {
+    /// <p>Contains the response to a <code>DescribeBackups</code> request.
+    /// </p>
+    pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
+        self.backups.as_deref()
+    }
+    /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBackupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBackupsOutput");
@@ -936,6 +1089,14 @@ pub struct DescribeAccountAttributesOutput {
     /// The attributes that are currently set for the account.
     /// </p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
+}
+impl DescribeAccountAttributesOutput {
+    /// <p>
+    /// The attributes that are currently set for the account.
+    /// </p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AccountAttribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1059,6 +1220,13 @@ pub struct CreateServerOutput {
     /// </p>
     pub server: std::option::Option<crate::model::Server>,
 }
+impl CreateServerOutput {
+    /// <p>The server that is created by the request.
+    /// </p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServerOutput");
@@ -1109,6 +1277,12 @@ pub struct CreateBackupOutput {
     /// <p>Backup created by request.</p>
     pub backup: std::option::Option<crate::model::Backup>,
 }
+impl CreateBackupOutput {
+    /// <p>Backup created by request.</p>
+    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+        self.backup.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBackupOutput");
@@ -1157,6 +1331,13 @@ pub struct AssociateNodeOutput {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.
     /// </p>
     pub node_association_status_token: std::option::Option<std::string::String>,
+}
+impl AssociateNodeOutput {
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.
+    /// </p>
+    pub fn node_association_status_token(&self) -> std::option::Option<&str> {
+        self.node_association_status_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

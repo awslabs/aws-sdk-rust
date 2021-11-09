@@ -5479,6 +5479,12 @@ pub struct VerificationException {
     /// <p>The status of the verification error.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl VerificationException {
+    /// <p>The status of the verification error.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for VerificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerificationException");

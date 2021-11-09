@@ -6,6 +6,12 @@ pub struct UploadEntityDefinitionsOutput {
     /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
 }
+impl UploadEntityDefinitionsOutput {
+    /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UploadEntityDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadEntityDefinitionsOutput");
@@ -53,6 +59,12 @@ impl UploadEntityDefinitionsOutput {
 pub struct UpdateSystemTemplateOutput {
     /// <p>An object containing summary information about the updated system.</p>
     pub summary: std::option::Option<crate::model::SystemTemplateSummary>,
+}
+impl UpdateSystemTemplateOutput {
+    /// <p>An object containing summary information about the updated system.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::SystemTemplateSummary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSystemTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -104,6 +116,12 @@ impl UpdateSystemTemplateOutput {
 pub struct UpdateFlowTemplateOutput {
     /// <p>An object containing summary information about the updated workflow.</p>
     pub summary: std::option::Option<crate::model::FlowTemplateSummary>,
+}
+impl UpdateFlowTemplateOutput {
+    /// <p>An object containing summary information about the updated workflow.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::FlowTemplateSummary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFlowTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -185,6 +203,12 @@ impl UntagResourceOutput {
 pub struct UndeploySystemInstanceOutput {
     /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
     pub summary: std::option::Option<crate::model::SystemInstanceSummary>,
+}
+impl UndeploySystemInstanceOutput {
+    /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::SystemInstanceSummary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for UndeploySystemInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -269,6 +293,16 @@ pub struct SearchThingsOutput {
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchThingsOutput {
+    /// <p>An array of things in the result set.</p>
+    pub fn things(&self) -> std::option::Option<&[crate::model::Thing]> {
+        self.things.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchThingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchThingsOutput");
@@ -340,6 +374,16 @@ pub struct SearchSystemTemplatesOutput {
     pub summaries: std::option::Option<std::vec::Vec<crate::model::SystemTemplateSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchSystemTemplatesOutput {
+    /// <p>An array of objects that contain summary information about each system deployment in the result set.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::SystemTemplateSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchSystemTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -414,6 +458,16 @@ pub struct SearchSystemInstancesOutput {
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchSystemInstancesOutput {
+    /// <p>An array of objects that contain summary data abour the system instances in the result set.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::SystemInstanceSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchSystemInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchSystemInstancesOutput");
@@ -487,6 +541,16 @@ pub struct SearchFlowTemplatesOutput {
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchFlowTemplatesOutput {
+    /// <p>An array of objects that contain summary information about each workflow in the result set.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::FlowTemplateSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchFlowTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFlowTemplatesOutput");
@@ -558,6 +622,16 @@ pub struct SearchFlowExecutionsOutput {
     pub summaries: std::option::Option<std::vec::Vec<crate::model::FlowExecutionSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchFlowExecutionsOutput {
+    /// <p>An array of objects that contain summary information about each workflow execution in the result set.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::FlowExecutionSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchFlowExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -632,6 +706,16 @@ pub struct SearchEntitiesOutput {
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchEntitiesOutput {
+    /// <p>An array of descriptions for each entity returned in the search result.</p>
+    pub fn descriptions(&self) -> std::option::Option<&[crate::model::EntityDescription]> {
+        self.descriptions.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchEntitiesOutput");
@@ -705,6 +789,16 @@ pub struct ListTagsForResourceOutput {
     /// <p>The token that specifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The token that specifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -776,6 +870,16 @@ pub struct ListFlowExecutionMessagesOutput {
     pub messages: std::option::Option<std::vec::Vec<crate::model::FlowExecutionMessage>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFlowExecutionMessagesOutput {
+    /// <p>A list of objects that contain information about events in the specified flow execution.</p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::FlowExecutionMessage]> {
+        self.messages.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFlowExecutionMessagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -858,6 +962,36 @@ pub struct GetUploadStatusOutput {
     pub failure_reason: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date at which the upload was created.</p>
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetUploadStatusOutput {
+    /// <p>The ID of the upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
+    pub fn upload_status(&self) -> std::option::Option<&crate::model::UploadStatus> {
+        self.upload_status.as_ref()
+    }
+    /// <p>The ARN of the upload.</p>
+    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+        self.namespace_arn.as_deref()
+    }
+    /// <p>The name of the upload's namespace.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn namespace_version(&self) -> std::option::Option<i64> {
+        self.namespace_version
+    }
+    /// <p>The reason for an upload failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&[std::string::String]> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The date at which the upload was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
 }
 impl std::fmt::Debug for GetUploadStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1008,6 +1142,16 @@ pub struct GetSystemTemplateRevisionsOutput {
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSystemTemplateRevisionsOutput {
+    /// <p>An array of objects that contain summary data about the system template revisions.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::SystemTemplateSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSystemTemplateRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSystemTemplateRevisionsOutput");
@@ -1079,6 +1223,12 @@ pub struct GetSystemTemplateOutput {
     /// <p>An object that contains summary data about the system.</p>
     pub description: std::option::Option<crate::model::SystemTemplateDescription>,
 }
+impl GetSystemTemplateOutput {
+    /// <p>An object that contains summary data about the system.</p>
+    pub fn description(&self) -> std::option::Option<&crate::model::SystemTemplateDescription> {
+        self.description.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSystemTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSystemTemplateOutput");
@@ -1129,6 +1279,12 @@ impl GetSystemTemplateOutput {
 pub struct GetSystemInstanceOutput {
     /// <p>An object that describes the system instance.</p>
     pub description: std::option::Option<crate::model::SystemInstanceDescription>,
+}
+impl GetSystemInstanceOutput {
+    /// <p>An object that describes the system instance.</p>
+    pub fn description(&self) -> std::option::Option<&crate::model::SystemInstanceDescription> {
+        self.description.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSystemInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1188,6 +1344,30 @@ pub struct GetNamespaceDeletionStatusOutput {
     pub error_code: std::option::Option<crate::model::NamespaceDeletionStatusErrorCodes>,
     /// <p>An error code returned by the namespace deletion task.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl GetNamespaceDeletionStatusOutput {
+    /// <p>The ARN of the namespace that is being deleted.</p>
+    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+        self.namespace_arn.as_deref()
+    }
+    /// <p>The name of the namespace that is being deleted.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+    /// <p>The status of the deletion request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NamespaceDeletionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An error code returned by the namespace deletion task.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::NamespaceDeletionStatusErrorCodes> {
+        self.error_code.as_ref()
+    }
+    /// <p>An error code returned by the namespace deletion task.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for GetNamespaceDeletionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1309,6 +1489,16 @@ pub struct GetFlowTemplateRevisionsOutput {
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetFlowTemplateRevisionsOutput {
+    /// <p>An array of objects that provide summary data about each revision.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::FlowTemplateSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFlowTemplateRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFlowTemplateRevisionsOutput");
@@ -1379,6 +1569,12 @@ pub struct GetFlowTemplateOutput {
     /// <p>The object that describes the specified workflow.</p>
     pub description: std::option::Option<crate::model::FlowTemplateDescription>,
 }
+impl GetFlowTemplateOutput {
+    /// <p>The object that describes the specified workflow.</p>
+    pub fn description(&self) -> std::option::Option<&crate::model::FlowTemplateDescription> {
+        self.description.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFlowTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFlowTemplateOutput");
@@ -1429,6 +1625,12 @@ impl GetFlowTemplateOutput {
 pub struct GetEntitiesOutput {
     /// <p>An array of descriptions for the specified entities.</p>
     pub descriptions: std::option::Option<std::vec::Vec<crate::model::EntityDescription>>,
+}
+impl GetEntitiesOutput {
+    /// <p>An array of descriptions for the specified entities.</p>
+    pub fn descriptions(&self) -> std::option::Option<&[crate::model::EntityDescription]> {
+        self.descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1525,6 +1727,28 @@ pub struct DescribeNamespaceOutput {
     pub tracking_namespace_version: std::option::Option<i64>,
     /// <p>The version of the user's namespace to describe.</p>
     pub namespace_version: std::option::Option<i64>,
+}
+impl DescribeNamespaceOutput {
+    /// <p>The ARN of the namespace.</p>
+    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+        self.namespace_arn.as_deref()
+    }
+    /// <p>The name of the namespace.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+    /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
+    pub fn tracking_namespace_name(&self) -> std::option::Option<&str> {
+        self.tracking_namespace_name.as_deref()
+    }
+    /// <p>The version of the public namespace that the latest version is tracking.</p>
+    pub fn tracking_namespace_version(&self) -> std::option::Option<i64> {
+        self.tracking_namespace_version
+    }
+    /// <p>The version of the user's namespace to describe.</p>
+    pub fn namespace_version(&self) -> std::option::Option<i64> {
+        self.namespace_version
+    }
 }
 impl std::fmt::Debug for DescribeNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1700,6 +1924,16 @@ pub struct DeploySystemInstanceOutput {
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     pub greengrass_deployment_id: std::option::Option<std::string::String>,
 }
+impl DeploySystemInstanceOutput {
+    /// <p>An object that contains summary information about a system instance that was deployed. </p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::SystemInstanceSummary> {
+        self.summary.as_ref()
+    }
+    /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
+    pub fn greengrass_deployment_id(&self) -> std::option::Option<&str> {
+        self.greengrass_deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeploySystemInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploySystemInstanceOutput");
@@ -1829,6 +2063,16 @@ pub struct DeleteNamespaceOutput {
     /// <p>The name of the namespace to be deleted.</p>
     pub namespace_name: std::option::Option<std::string::String>,
 }
+impl DeleteNamespaceOutput {
+    /// <p>The ARN of the namespace to be deleted.</p>
+    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+        self.namespace_arn.as_deref()
+    }
+    /// <p>The name of the namespace to be deleted.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNamespaceOutput");
@@ -1926,6 +2170,12 @@ pub struct CreateSystemTemplateOutput {
     /// <p>The summary object that describes the created system.</p>
     pub summary: std::option::Option<crate::model::SystemTemplateSummary>,
 }
+impl CreateSystemTemplateOutput {
+    /// <p>The summary object that describes the created system.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::SystemTemplateSummary> {
+        self.summary.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSystemTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSystemTemplateOutput");
@@ -1977,6 +2227,12 @@ pub struct CreateSystemInstanceOutput {
     /// <p>The summary object that describes the new system instance.</p>
     pub summary: std::option::Option<crate::model::SystemInstanceSummary>,
 }
+impl CreateSystemInstanceOutput {
+    /// <p>The summary object that describes the new system instance.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::SystemInstanceSummary> {
+        self.summary.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSystemInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSystemInstanceOutput");
@@ -2027,6 +2283,12 @@ impl CreateSystemInstanceOutput {
 pub struct CreateFlowTemplateOutput {
     /// <p>The summary object that describes the created workflow.</p>
     pub summary: std::option::Option<crate::model::FlowTemplateSummary>,
+}
+impl CreateFlowTemplateOutput {
+    /// <p>The summary object that describes the created workflow.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::FlowTemplateSummary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFlowTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

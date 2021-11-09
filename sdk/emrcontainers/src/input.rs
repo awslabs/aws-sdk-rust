@@ -424,10 +424,7 @@ impl CreateManagedEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_managed_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -631,10 +628,9 @@ impl CreateVirtualClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_virtual_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_virtual_cluster(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2750,10 +2746,7 @@ impl StartJobRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_job_run(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_job_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2942,10 +2935,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3193,6 +3183,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys of the resources.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of resources.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys of the resources.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -3211,6 +3211,19 @@ pub struct TagResourceInput {
     /// <p>The tags assigned to resources.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of resources.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags assigned to resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3242,6 +3255,45 @@ pub struct StartJobRunInput {
     /// <p>The tags assigned to job runs.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StartJobRunInput {
+    /// <p>The name of the job run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The virtual cluster ID for which the job run request is submitted.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+    /// <p>The client idempotency token of the job run request. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The execution role ARN for the job run.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The Amazon EMR release version to use for the job run.</p>
+    pub fn release_label(&self) -> std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
+    /// <p>The job driver for the job run.</p>
+    pub fn job_driver(&self) -> std::option::Option<&crate::model::JobDriver> {
+        self.job_driver.as_ref()
+    }
+    /// <p>The configuration overrides for the job run.</p>
+    pub fn configuration_overrides(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationOverrides> {
+        self.configuration_overrides.as_ref()
+    }
+    /// <p>The tags assigned to job runs.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for StartJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3277,6 +3329,38 @@ pub struct ListVirtualClustersInput {
     /// <p>The token for the next set of virtual clusters to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListVirtualClustersInput {
+    /// <p>The container provider ID of the virtual cluster.</p>
+    pub fn container_provider_id(&self) -> std::option::Option<&str> {
+        self.container_provider_id.as_deref()
+    }
+    /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    pub fn container_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ContainerProviderType> {
+        self.container_provider_type.as_ref()
+    }
+    /// <p>The date and time after which the virtual clusters are created.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>The date and time before which the virtual clusters are created.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The states of the requested virtual clusters.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::VirtualClusterState]> {
+        self.states.as_deref()
+    }
+    /// <p>The maximum number of virtual clusters that can be listed.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of virtual clusters to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVirtualClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualClustersInput");
@@ -3297,6 +3381,12 @@ impl std::fmt::Debug for ListVirtualClustersInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of tagged resources.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of tagged resources.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3324,6 +3414,36 @@ pub struct ListManagedEndpointsInput {
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of managed endpoints to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListManagedEndpointsInput {
+    /// <p>The ID of the virtual cluster.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+    /// <p>The date and time before which the endpoints are created.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p> The date and time after which the endpoints are created.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>The types of the managed endpoints.</p>
+    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+        self.types.as_deref()
+    }
+    /// <p>The states of the managed endpoints.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::EndpointState]> {
+        self.states.as_deref()
+    }
+    /// <p>The maximum number of managed endpoints that can be listed.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> The token for the next set of managed endpoints to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListManagedEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3358,6 +3478,36 @@ pub struct ListJobRunsInput {
     /// <p>The token for the next set of job runs to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobRunsInput {
+    /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+    /// <p>The date and time before which the job runs were submitted.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The date and time after which the job runs were submitted.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>The name of the job run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The states of the job run.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::JobRunState]> {
+        self.states.as_deref()
+    }
+    /// <p>The maximum number of job runs that can be listed.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of job runs to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobRunsInput");
@@ -3379,6 +3529,12 @@ pub struct DescribeVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be described.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeVirtualClusterInput {
+    /// <p>The ID of the virtual cluster that will be described.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVirtualClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVirtualClusterInput");
@@ -3395,6 +3551,16 @@ pub struct DescribeManagedEndpointInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+}
+impl DescribeManagedEndpointInput {
+    /// <p>This output displays ID of the managed endpoint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the endpoint's virtual cluster.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeManagedEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3414,6 +3580,16 @@ pub struct DescribeJobRunInput {
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
+impl DescribeJobRunInput {
+    /// <p>The ID of the job run request. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobRunInput");
@@ -3429,6 +3605,12 @@ impl std::fmt::Debug for DescribeJobRunInput {
 pub struct DeleteVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteVirtualClusterInput {
+    /// <p>The ID of the virtual cluster that will be deleted.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3446,6 +3628,16 @@ pub struct DeleteManagedEndpointInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+}
+impl DeleteManagedEndpointInput {
+    /// <p>The ID of the managed endpoint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the endpoint's virtual cluster.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteManagedEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3469,6 +3661,27 @@ pub struct CreateVirtualClusterInput {
     /// <p>The tags assigned to the virtual cluster.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateVirtualClusterInput {
+    /// <p>The specified name of the virtual cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The container provider of the virtual cluster.</p>
+    pub fn container_provider(&self) -> std::option::Option<&crate::model::ContainerProvider> {
+        self.container_provider.as_ref()
+    }
+    /// <p>The client token of the virtual cluster.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags assigned to the virtual cluster.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVirtualClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3506,6 +3719,50 @@ pub struct CreateManagedEndpointInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateManagedEndpointInput {
+    /// <p>The name of the managed endpoint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+    /// <p>The type of the managed endpoint.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The Amazon EMR release version.</p>
+    pub fn release_label(&self) -> std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
+    /// <p>The ARN of the execution role.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The configuration settings that will be used to override existing configurations.</p>
+    pub fn configuration_overrides(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationOverrides> {
+        self.configuration_overrides.as_ref()
+    }
+    /// <p>The client idempotency token for this create call.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags of the managed endpoint.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateManagedEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateManagedEndpointInput");
@@ -3530,6 +3787,16 @@ pub struct CancelJobRunInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+}
+impl CancelJobRunInput {
+    /// <p>The ID of the job run to cancel.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

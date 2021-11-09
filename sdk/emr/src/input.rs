@@ -103,10 +103,7 @@ impl AddInstanceFleetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_instance_fleet(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_instance_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -281,10 +278,7 @@ impl AddInstanceGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_instance_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_instance_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -457,10 +451,7 @@ impl AddJobFlowStepsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_job_flow_steps(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_job_flow_steps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -634,10 +625,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -825,10 +813,7 @@ impl CancelStepsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_steps(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_steps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1000,7 +985,7 @@ impl CreateSecurityConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_security_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1354,10 +1339,7 @@ impl CreateStudioInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1573,7 +1555,7 @@ impl CreateStudioSessionMappingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_studio_session_mapping(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_studio_session_mapping(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1723,7 +1705,7 @@ impl DeleteSecurityConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_security_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1873,10 +1855,7 @@ impl DeleteStudioInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_studio(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_studio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2077,7 +2056,7 @@ impl DeleteStudioSessionMappingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_studio_session_mapping(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_studio_session_mapping(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2228,10 +2207,7 @@ impl DescribeClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2445,10 +2421,7 @@ impl DescribeJobFlowsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_job_flows(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_job_flows(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2604,10 +2577,7 @@ impl DescribeNotebookExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_notebook_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2784,10 +2754,9 @@ impl DescribeReleaseLabelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_release_label(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_release_label(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2936,7 +2905,7 @@ impl DescribeSecurityConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_security_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3098,10 +3067,7 @@ impl DescribeStepInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_step(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_step(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3250,10 +3216,8 @@ impl DescribeStudioInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_studio(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_studio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3406,10 +3370,7 @@ impl GetAutoTerminationPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_auto_termination_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3546,7 +3507,7 @@ impl GetBlockPublicAccessConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_block_public_access_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_block_public_access_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3694,10 +3655,7 @@ impl GetManagedScalingPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_managed_scaling_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3898,10 +3856,7 @@ impl GetStudioSessionMappingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_studio_session_mapping(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4063,10 +4018,9 @@ impl ListBootstrapActionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_bootstrap_actions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_bootstrap_actions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4266,10 +4220,7 @@ impl ListClustersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4431,10 +4382,7 @@ impl ListInstanceFleetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_instance_fleets(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_instance_fleets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4596,10 +4544,7 @@ impl ListInstanceGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_instance_groups(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_instance_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4853,10 +4798,7 @@ impl ListInstancesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5169,10 +5111,7 @@ impl ListNotebookExecutionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_notebook_executions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5349,10 +5288,7 @@ impl ListReleaseLabelsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_release_labels(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_release_labels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5505,10 +5441,7 @@ impl ListSecurityConfigurationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_security_configurations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5713,10 +5646,7 @@ impl ListStepsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_steps(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_steps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5863,10 +5793,7 @@ impl ListStudiosInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_studios(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_studios(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6048,10 +5975,7 @@ impl ListStudioSessionMappingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_studio_session_mappings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6212,10 +6136,7 @@ impl ModifyClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_modify_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6380,10 +6301,7 @@ impl ModifyInstanceFleetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_instance_fleet(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_instance_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6558,10 +6476,9 @@ impl ModifyInstanceGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_instance_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_instance_groups(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6747,10 +6664,7 @@ impl PutAutoScalingPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_auto_scaling_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6922,10 +6836,7 @@ impl PutAutoTerminationPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_auto_termination_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7111,7 +7022,7 @@ impl PutBlockPublicAccessConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_block_public_access_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_block_public_access_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7280,10 +7191,7 @@ impl PutManagedScalingPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_managed_scaling_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7453,10 +7361,7 @@ impl RemoveAutoScalingPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_auto_scaling_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7607,7 +7512,7 @@ impl RemoveAutoTerminationPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_auto_termination_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_auto_termination_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7761,7 +7666,7 @@ impl RemoveManagedScalingPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_managed_scaling_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_managed_scaling_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7934,10 +7839,7 @@ impl RemoveTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8739,10 +8641,7 @@ impl RunJobFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_run_job_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_run_job_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8922,10 +8821,7 @@ impl SetTerminationProtectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_termination_protection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9102,10 +8998,7 @@ impl SetVisibleToAllUsersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_visible_to_all_users(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9392,10 +9285,7 @@ impl StartNotebookExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_notebook_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9550,10 +9440,7 @@ impl StopNotebookExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_notebook_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9712,10 +9599,7 @@ impl TerminateJobFlowsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_terminate_job_flows(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_terminate_job_flows(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9924,10 +9808,7 @@ impl UpdateStudioInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10143,7 +10024,7 @@ impl UpdateStudioSessionMappingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_studio_session_mapping(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_studio_session_mapping(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10225,6 +10106,32 @@ pub struct UpdateStudioSessionMappingInput {
     /// user or group.</p>
     pub session_policy_arn: std::option::Option<std::string::String>,
 }
+impl UpdateStudioSessionMappingInput {
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
+    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn identity_name(&self) -> std::option::Option<&str> {
+        self.identity_name.as_deref()
+    }
+    /// <p>Specifies whether the identity to update is a user or a group.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
+    /// user or group.</p>
+    pub fn session_policy_arn(&self) -> std::option::Option<&str> {
+        self.session_policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStudioSessionMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioSessionMappingInput");
@@ -10252,6 +10159,28 @@ pub struct UpdateStudioInput {
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
     pub default_s3_location: std::option::Option<std::string::String>,
 }
+impl UpdateStudioInput {
+    /// <p>The ID of the Amazon EMR Studio to update.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>A descriptive name for the Amazon EMR Studio.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
+    pub fn default_s3_location(&self) -> std::option::Option<&str> {
+        self.default_s3_location.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioInput");
@@ -10271,6 +10200,12 @@ pub struct TerminateJobFlowsInput {
     /// <p>A list of job flows to be shut down.</p>
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TerminateJobFlowsInput {
+    /// <p>A list of job flows to be shut down.</p>
+    pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_flow_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminateJobFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateJobFlowsInput");
@@ -10285,6 +10220,12 @@ impl std::fmt::Debug for TerminateJobFlowsInput {
 pub struct StopNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
     pub notebook_execution_id: std::option::Option<std::string::String>,
+}
+impl StopNotebookExecutionInput {
+    /// <p>The unique identifier of the notebook execution.</p>
+    pub fn notebook_execution_id(&self) -> std::option::Option<&str> {
+        self.notebook_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopNotebookExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10327,6 +10268,52 @@ pub struct StartNotebookExecutionInput {
     /// optional value string with a maximum of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl StartNotebookExecutionInput {
+    /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
+    pub fn editor_id(&self) -> std::option::Option<&str> {
+        self.editor_id.as_deref()
+    }
+    /// <p>The path and file name of the notebook file for this execution, relative to the path
+    /// specified for the EMR Notebook. For example, if you specify a path of
+    /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
+    /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
+    /// request), and you specify a <code>RelativePath</code> of
+    /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
+    /// for the notebook execution is
+    /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+    pub fn relative_path(&self) -> std::option::Option<&str> {
+        self.relative_path.as_deref()
+    }
+    /// <p>An optional name for the notebook execution.</p>
+    pub fn notebook_execution_name(&self) -> std::option::Option<&str> {
+        self.notebook_execution_name.as_deref()
+    }
+    /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
+    /// execution.</p>
+    pub fn notebook_params(&self) -> std::option::Option<&str> {
+        self.notebook_params.as_deref()
+    }
+    /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
+    pub fn execution_engine(&self) -> std::option::Option<&crate::model::ExecutionEngineConfig> {
+        self.execution_engine.as_ref()
+    }
+    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
+    /// role) for the notebook execution.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
+    /// Notebook for this notebook execution.</p>
+    pub fn notebook_instance_security_group_id(&self) -> std::option::Option<&str> {
+        self.notebook_instance_security_group_id.as_deref()
+    }
+    /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
+    /// pairs that consist of a required key string with a maximum of 128 characters and an
+    /// optional value string with a maximum of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for StartNotebookExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartNotebookExecutionInput");
@@ -10356,6 +10343,18 @@ pub struct SetVisibleToAllUsersInput {
     /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
     pub visible_to_all_users: bool,
 }
+impl SetVisibleToAllUsersInput {
+    /// <p>The unique identifier of the job flow (cluster).</p>
+    pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_flow_ids.as_deref()
+    }
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
+    /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
+    /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    pub fn visible_to_all_users(&self) -> bool {
+        self.visible_to_all_users
+    }
+}
 impl std::fmt::Debug for SetVisibleToAllUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetVisibleToAllUsersInput");
@@ -10376,6 +10375,19 @@ pub struct SetTerminationProtectionInput {
     /// instances in the cluster from shutting down due to API calls, user intervention, or
     /// job-flow error.</p>
     pub termination_protected: bool,
+}
+impl SetTerminationProtectionInput {
+    /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
+    /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
+    pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_flow_ids.as_deref()
+    }
+    /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
+    /// instances in the cluster from shutting down due to API calls, user intervention, or
+    /// job-flow error.</p>
+    pub fn termination_protected(&self) -> bool {
+        self.termination_protected
+    }
 }
 impl std::fmt::Debug for SetTerminationProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10550,6 +10562,229 @@ pub struct RunJobFlowInput {
     /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
     pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
 }
+impl RunJobFlowInput {
+    /// <p>The name of the job flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
+    /// provided, logs are not created.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>The KMS key used for encrypting log files. If a value is not
+    /// provided, the logs remain encrypted by AES-256. This attribute is only available with
+    /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+    pub fn log_encryption_kms_key_id(&self) -> std::option::Option<&str> {
+        self.log_encryption_kms_key_id.as_deref()
+    }
+    /// <p>A JSON string for selecting additional features.</p>
+    pub fn additional_info(&self) -> std::option::Option<&str> {
+        self.additional_info.as_deref()
+    }
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+    /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+    /// <code>CustomAmiID</code>.</p>
+    pub fn ami_version(&self) -> std::option::Option<&str> {
+        self.ami_version.as_deref()
+    }
+    /// <p>The Amazon EMR release label, which determines the version of open-source application
+    /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
+    /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
+    /// information about Amazon EMR release versions and included application versions and
+    /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
+    /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
+    /// <code>AmiVersion</code>.</p>
+    pub fn release_label(&self) -> std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
+    /// <p>A specification of the number and type of Amazon EC2 instances.</p>
+    pub fn instances(&self) -> std::option::Option<&crate::model::JobFlowInstancesConfig> {
+        self.instances.as_ref()
+    }
+    /// <p>A list of steps to run.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::StepConfig]> {
+        self.steps.as_deref()
+    }
+    /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
+    pub fn bootstrap_actions(&self) -> std::option::Option<&[crate::model::BootstrapActionConfig]> {
+        self.bootstrap_actions.as_deref()
+    }
+    /// <note>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
+    /// Applications.</p>
+    /// </note>
+    /// <p>A list of strings that indicates third-party software to use. For more information, see
+    /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+    /// Developer Guide</a>. Currently supported values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
+    /// </li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
+    /// </li>
+    /// </ul>
+    pub fn supported_products(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_products.as_deref()
+    }
+    /// <note>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
+    /// Applications.</p>
+    /// </note>
+    /// <p>A list of strings that indicates third-party software to use with the job flow that
+    /// accepts a user argument list. EMR accepts and forwards the argument list to the
+    /// corresponding installation script as bootstrap action arguments. For more information, see
+    /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+    /// values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
+    /// </li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
+    /// </li>
+    /// <li>
+    /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
+    /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
+    /// </li>
+    /// <li>
+    /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
+    /// </li>
+    /// <li>
+    /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
+    /// </li>
+    /// <li>
+    /// <p>"hue"- launch the cluster with Hue installed.</p>
+    /// </li>
+    /// <li>
+    /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
+    /// </li>
+    /// <li>
+    /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
+    /// installed.</p>
+    /// </li>
+    /// </ul>
+    pub fn new_supported_products(
+        &self,
+    ) -> std::option::Option<&[crate::model::SupportedProductConfig]> {
+        self.new_supported_products.as_deref()
+    }
+    /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
+    /// for Amazon EMR to install and configure when launching the cluster. For a list of
+    /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
+    /// Guide</a>.</p>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
+        self.applications.as_deref()
+    }
+    /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
+    /// cluster you are creating.</p>
+    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+        self.configurations.as_deref()
+    }
+    /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
+    /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+    pub fn visible_to_all_users(&self) -> bool {
+        self.visible_to_all_users
+    }
+    /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
+    /// instances of the cluster assume this role. The default role is
+    /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
+    /// already created it using the CLI or console.</p>
+    pub fn job_flow_role(&self) -> std::option::Option<&str> {
+        self.job_flow_role.as_deref()
+    }
+    /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
+    /// your behalf.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of a security configuration to apply to the cluster.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>An IAM role for automatic scaling policies. The default role is
+    /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
+    /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
+    /// group.</p>
+    pub fn auto_scaling_role(&self) -> std::option::Option<&str> {
+        self.auto_scaling_role.as_deref()
+    }
+    /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
+    /// scale-in activity occurs or an instance group is resized.
+    /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+    /// the instance-hour boundary, regardless of when the request to terminate the instance was
+    /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
+    /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
+    /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
+    /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+    /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
+    /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+    /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+    /// earlier than 5.1.0.</p>
+    pub fn scale_down_behavior(&self) -> std::option::Option<&crate::model::ScaleDownBehavior> {
+        self.scale_down_behavior.as_ref()
+    }
+    /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
+    /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
+    /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
+    /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+    /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
+    /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+    /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
+    /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
+    /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
+    /// AMI</a>. </p>
+    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+        self.custom_ami_id.as_deref()
+    }
+    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
+    /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+    pub fn ebs_root_volume_size(&self) -> std::option::Option<i32> {
+        self.ebs_root_volume_size
+    }
+    /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
+    /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
+    /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
+    /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
+    /// and all updates must be applied manually.</p>
+    pub fn repo_upgrade_on_boot(&self) -> std::option::Option<&crate::model::RepoUpgradeOnBoot> {
+        self.repo_upgrade_on_boot.as_ref()
+    }
+    /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
+    /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
+    /// in the <i>Amazon EMR Management Guide</i>.</p>
+    pub fn kerberos_attributes(&self) -> std::option::Option<&crate::model::KerberosAttributes> {
+        self.kerberos_attributes.as_ref()
+    }
+    /// <p>Specifies the number of steps that can be executed concurrently. The default value is
+    /// <code>1</code>. The maximum value is <code>256</code>.</p>
+    pub fn step_concurrency_level(&self) -> std::option::Option<i32> {
+        self.step_concurrency_level
+    }
+    /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+    pub fn managed_scaling_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedScalingPolicy> {
+        self.managed_scaling_policy.as_ref()
+    }
+    /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+    pub fn placement_group_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlacementGroupConfig]> {
+        self.placement_group_configs.as_deref()
+    }
+    /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
+    pub fn auto_termination_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoTerminationPolicy> {
+        self.auto_termination_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for RunJobFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RunJobFlowInput");
@@ -10595,6 +10830,17 @@ pub struct RemoveTagsInput {
     /// <p>A list of tag keys to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsInput {
+    /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
+    /// cluster identifier or an Amazon EMR Studio ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A list of tag keys to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsInput");
@@ -10612,6 +10858,13 @@ pub struct RemoveManagedScalingPolicyInput {
     /// </p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
+impl RemoveManagedScalingPolicyInput {
+    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
+    /// </p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveManagedScalingPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveManagedScalingPolicyInput");
@@ -10626,6 +10879,12 @@ impl std::fmt::Debug for RemoveManagedScalingPolicyInput {
 pub struct RemoveAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
     pub cluster_id: std::option::Option<std::string::String>,
+}
+impl RemoveAutoTerminationPolicyInput {
+    /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveAutoTerminationPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10645,6 +10904,17 @@ pub struct RemoveAutoScalingPolicyInput {
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub instance_group_id: std::option::Option<std::string::String>,
 }
+impl RemoveAutoScalingPolicyInput {
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
+    /// is applied is within this cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+        self.instance_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveAutoScalingPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveAutoScalingPolicyInput");
@@ -10662,6 +10932,18 @@ pub struct PutManagedScalingPolicyInput {
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the constraints for the managed scaling policy. </p>
     pub managed_scaling_policy: std::option::Option<crate::model::ManagedScalingPolicy>,
+}
+impl PutManagedScalingPolicyInput {
+    /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>Specifies the constraints for the managed scaling policy. </p>
+    pub fn managed_scaling_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedScalingPolicy> {
+        self.managed_scaling_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for PutManagedScalingPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10694,6 +10976,28 @@ pub struct PutBlockPublicAccessConfigurationInput {
     pub block_public_access_configuration:
         std::option::Option<crate::model::BlockPublicAccessConfiguration>,
 }
+impl PutBlockPublicAccessConfigurationInput {
+    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
+    /// clusters created in your account for the current Region. The configuration specifies
+    /// whether block public access is enabled. If block public access is enabled, security groups
+    /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
+    /// ::/0 on a port, unless the port is specified as an exception using
+    /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
+    /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
+    /// and public access is allowed on this port. You can change this by updating
+    /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
+    /// <note>
+    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
+    /// access is disabled by default in that Region. To use this feature, you must manually
+    /// enable and configure it. For accounts that did not create an EMR cluster in a Region
+    /// before this date, block public access is enabled by default in that Region.</p>
+    /// </note>
+    pub fn block_public_access_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BlockPublicAccessConfiguration> {
+        self.block_public_access_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutBlockPublicAccessConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutBlockPublicAccessConfigurationInput");
@@ -10713,6 +11017,18 @@ pub struct PutAutoTerminationPolicyInput {
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
     pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
+}
+impl PutAutoTerminationPolicyInput {
+    /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
+    pub fn auto_termination_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoTerminationPolicy> {
+        self.auto_termination_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for PutAutoTerminationPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10736,6 +11052,22 @@ pub struct PutAutoScalingPolicyInput {
     /// <p>Specifies the definition of the automatic scaling policy.</p>
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicy>,
 }
+impl PutAutoScalingPolicyInput {
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
+    /// is applied is within this cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
+    /// applied.</p>
+    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+        self.instance_group_id.as_deref()
+    }
+    /// <p>Specifies the definition of the automatic scaling policy.</p>
+    pub fn auto_scaling_policy(&self) -> std::option::Option<&crate::model::AutoScalingPolicy> {
+        self.auto_scaling_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutAutoScalingPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAutoScalingPolicyInput");
@@ -10756,6 +11088,18 @@ pub struct ModifyInstanceGroupsInput {
     pub instance_groups:
         std::option::Option<std::vec::Vec<crate::model::InstanceGroupModifyConfig>>,
 }
+impl ModifyInstanceGroupsInput {
+    /// <p>The ID of the cluster to which the instance group belongs.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>Instance groups to change.</p>
+    pub fn instance_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceGroupModifyConfig]> {
+        self.instance_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyInstanceGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyInstanceGroupsInput");
@@ -10774,6 +11118,16 @@ pub struct ModifyInstanceFleetInput {
     /// <p>The configuration parameters of the instance fleet.</p>
     pub instance_fleet: std::option::Option<crate::model::InstanceFleetModifyConfig>,
 }
+impl ModifyInstanceFleetInput {
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The configuration parameters of the instance fleet.</p>
+    pub fn instance_fleet(&self) -> std::option::Option<&crate::model::InstanceFleetModifyConfig> {
+        self.instance_fleet.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyInstanceFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyInstanceFleetInput");
@@ -10791,6 +11145,16 @@ pub struct ModifyClusterInput {
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
     pub step_concurrency_level: std::option::Option<i32>,
+}
+impl ModifyClusterInput {
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
+    pub fn step_concurrency_level(&self) -> std::option::Option<i32> {
+        self.step_concurrency_level
+    }
 }
 impl std::fmt::Debug for ModifyClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10813,6 +11177,21 @@ pub struct ListStudioSessionMappingsInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListStudioSessionMappingsInput {
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
+    /// results include session mapping details for both users and groups.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStudioSessionMappingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStudioSessionMappingsInput");
@@ -10829,6 +11208,12 @@ impl std::fmt::Debug for ListStudioSessionMappingsInput {
 pub struct ListStudiosInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListStudiosInput {
+    /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStudiosInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10853,6 +11238,26 @@ pub struct ListStepsInput {
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListStepsInput {
+    /// <p>The identifier of the cluster for which to list the steps.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The filter to limit the step list based on certain states.</p>
+    pub fn step_states(&self) -> std::option::Option<&[crate::model::StepState]> {
+        self.step_states.as_deref()
+    }
+    /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
+    /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
+    /// array.</p>
+    pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.step_ids.as_deref()
+    }
+    /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStepsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStepsInput");
@@ -10870,6 +11275,12 @@ impl std::fmt::Debug for ListStepsInput {
 pub struct ListSecurityConfigurationsInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListSecurityConfigurationsInput {
+    /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSecurityConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10889,6 +11300,20 @@ pub struct ListReleaseLabelsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListReleaseLabelsInput {
+    /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ReleaseLabelFilter> {
+        self.filters.as_ref()
+    }
+    /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListReleaseLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10970,6 +11395,83 @@ pub struct ListNotebookExecutionsInput {
     /// call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListNotebookExecutionsInput {
+    /// <p>The unique ID of the editor associated with the notebook execution.</p>
+    pub fn editor_id(&self) -> std::option::Option<&str> {
+        self.editor_id.as_deref()
+    }
+    /// <p>The status filter for listing notebook executions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>START_PENDING</code> indicates that the cluster has received the execution
+    /// request but execution has not begun.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STARTING</code> indicates that the execution is starting on the
+    /// cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RUNNING</code> indicates that the execution is being processed by the
+    /// cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FINISHING</code> indicates that execution processing is in the final
+    /// stages.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FINISHED</code> indicates that the execution has completed without
+    /// error.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILING</code> indicates that the execution is failing and will not finish
+    /// successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> indicates that the execution failed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOP_PENDING</code> indicates that the cluster has received a
+    /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
+    /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOPPED</code> indicates that the execution stopped because of a
+    /// <code>StopNotebookExecution</code> request.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::NotebookExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The beginning of time range filter for listing notebook executions. The default is the
+    /// timestamp of 30 days ago.</p>
+    pub fn from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from.as_ref()
+    }
+    /// <p>The end of time range filter for listing notebook executions. The default is the current
+    /// timestamp.</p>
+    pub fn to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to.as_ref()
+    }
+    /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
+    /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
+    /// call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNotebookExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNotebookExecutionsInput");
@@ -11002,6 +11504,37 @@ pub struct ListInstancesInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListInstancesInput {
+    /// <p>The identifier of the cluster for which to list the instances.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The identifier of the instance group for which to list the instances.</p>
+    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+        self.instance_group_id.as_deref()
+    }
+    /// <p>The type of instance group for which to list the instances.</p>
+    pub fn instance_group_types(&self) -> std::option::Option<&[crate::model::InstanceGroupType]> {
+        self.instance_group_types.as_deref()
+    }
+    /// <p>The unique identifier of the instance fleet.</p>
+    pub fn instance_fleet_id(&self) -> std::option::Option<&str> {
+        self.instance_fleet_id.as_deref()
+    }
+    /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+    pub fn instance_fleet_type(&self) -> std::option::Option<&crate::model::InstanceFleetType> {
+        self.instance_fleet_type.as_ref()
+    }
+    /// <p>A list of instance states that will filter the instances returned with this
+    /// request.</p>
+    pub fn instance_states(&self) -> std::option::Option<&[crate::model::InstanceState]> {
+        self.instance_states.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstancesInput");
@@ -11025,6 +11558,16 @@ pub struct ListInstanceGroupsInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListInstanceGroupsInput {
+    /// <p>The identifier of the cluster for which to list the instance groups.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstanceGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceGroupsInput");
@@ -11042,6 +11585,16 @@ pub struct ListInstanceFleetsInput {
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListInstanceFleetsInput {
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstanceFleetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11066,6 +11619,24 @@ pub struct ListClustersInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListClustersInput {
+    /// <p>The creation date and time beginning value filter for listing clusters.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>The creation date and time end value filter for listing clusters.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
+    pub fn cluster_states(&self) -> std::option::Option<&[crate::model::ClusterState]> {
+        self.cluster_states.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClustersInput");
@@ -11085,6 +11656,16 @@ pub struct ListBootstrapActionsInput {
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListBootstrapActionsInput {
+    /// <p>The cluster identifier for the bootstrap actions to list.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBootstrapActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11111,6 +11692,27 @@ pub struct GetStudioSessionMappingInput {
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
 }
+impl GetStudioSessionMappingInput {
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
+    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn identity_name(&self) -> std::option::Option<&str> {
+        self.identity_name.as_deref()
+    }
+    /// <p>Specifies whether the identity to fetch is a user or a group.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetStudioSessionMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStudioSessionMappingInput");
@@ -11129,6 +11731,13 @@ pub struct GetManagedScalingPolicyInput {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
     /// </p>
     pub cluster_id: std::option::Option<std::string::String>,
+}
+impl GetManagedScalingPolicyInput {
+    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
+    /// </p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetManagedScalingPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11156,6 +11765,12 @@ pub struct GetAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
+impl GetAutoTerminationPolicyInput {
+    /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAutoTerminationPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAutoTerminationPolicyInput");
@@ -11170,6 +11785,12 @@ impl std::fmt::Debug for GetAutoTerminationPolicyInput {
 pub struct DescribeStudioInput {
     /// <p>The Amazon EMR Studio ID.</p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl DescribeStudioInput {
+    /// <p>The Amazon EMR Studio ID.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11188,6 +11809,16 @@ pub struct DescribeStepInput {
     /// <p>The identifier of the step to describe.</p>
     pub step_id: std::option::Option<std::string::String>,
 }
+impl DescribeStepInput {
+    /// <p>The identifier of the cluster with steps to describe.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The identifier of the step to describe.</p>
+    pub fn step_id(&self) -> std::option::Option<&str> {
+        self.step_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStepInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStepInput");
@@ -11203,6 +11834,12 @@ impl std::fmt::Debug for DescribeStepInput {
 pub struct DescribeSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeSecurityConfigurationInput {
+    /// <p>The name of the security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSecurityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11223,6 +11860,20 @@ pub struct DescribeReleaseLabelInput {
     /// <p>Reserved for future use. Currently set to null.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeReleaseLabelInput {
+    /// <p>The target release label to be described.</p>
+    pub fn release_label(&self) -> std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
+    /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Reserved for future use. Currently set to null.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeReleaseLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReleaseLabelInput");
@@ -11239,6 +11890,12 @@ impl std::fmt::Debug for DescribeReleaseLabelInput {
 pub struct DescribeNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
     pub notebook_execution_id: std::option::Option<std::string::String>,
+}
+impl DescribeNotebookExecutionInput {
+    /// <p>The unique identifier of the notebook execution.</p>
+    pub fn notebook_execution_id(&self) -> std::option::Option<&str> {
+        self.notebook_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNotebookExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11261,6 +11918,24 @@ pub struct DescribeJobFlowsInput {
     /// <p>Return only job flows whose state is contained in this list.</p>
     pub job_flow_states: std::option::Option<std::vec::Vec<crate::model::JobFlowExecutionState>>,
 }
+impl DescribeJobFlowsInput {
+    /// <p>Return only job flows created after this date and time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>Return only job flows created before this date and time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>Return only job flows whose job flow ID is contained in this list.</p>
+    pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_flow_ids.as_deref()
+    }
+    /// <p>Return only job flows whose state is contained in this list.</p>
+    pub fn job_flow_states(&self) -> std::option::Option<&[crate::model::JobFlowExecutionState]> {
+        self.job_flow_states.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobFlowsInput");
@@ -11278,6 +11953,12 @@ impl std::fmt::Debug for DescribeJobFlowsInput {
 pub struct DescribeClusterInput {
     /// <p>The identifier of the cluster to describe.</p>
     pub cluster_id: std::option::Option<std::string::String>,
+}
+impl DescribeClusterInput {
+    /// <p>The identifier of the cluster to describe.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11304,6 +11985,28 @@ pub struct DeleteStudioSessionMappingInput {
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
 }
+impl DeleteStudioSessionMappingInput {
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
+    /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
+    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn identity_name(&self) -> std::option::Option<&str> {
+        self.identity_name.as_deref()
+    }
+    /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteStudioSessionMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStudioSessionMappingInput");
@@ -11322,6 +12025,12 @@ pub struct DeleteStudioInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl DeleteStudioInput {
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStudioInput");
@@ -11336,6 +12045,12 @@ impl std::fmt::Debug for DeleteStudioInput {
 pub struct DeleteSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteSecurityConfigurationInput {
+    /// <p>The name of the security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSecurityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11363,6 +12078,32 @@ pub struct CreateStudioSessionMappingInput {
     /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
     /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
     pub session_policy_arn: std::option::Option<std::string::String>,
+}
+impl CreateStudioSessionMappingInput {
+    /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
+    /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    pub fn identity_name(&self) -> std::option::Option<&str> {
+        self.identity_name.as_deref()
+    }
+    /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
+    /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    pub fn session_policy_arn(&self) -> std::option::Option<&str> {
+        self.session_policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStudioSessionMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11419,6 +12160,72 @@ pub struct CreateStudioInput {
     /// string with a maximum of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateStudioInput {
+    /// <p>A descriptive name for the Amazon EMR Studio.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A detailed description of the Amazon EMR Studio.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
+        self.auth_mode.as_ref()
+    }
+    /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
+    /// Studio.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
+    /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+    /// specified subnets.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
+    /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
+    /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
+    /// session policies.</p>
+    pub fn user_role(&self) -> std::option::Option<&str> {
+        self.user_role.as_deref()
+    }
+    /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
+    /// allows outbound network traffic to resources in the Engine security group, and it must be
+    /// in the same VPC specified by <code>VpcId</code>.</p>
+    pub fn workspace_security_group_id(&self) -> std::option::Option<&str> {
+        self.workspace_security_group_id.as_deref()
+    }
+    /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
+    /// inbound network traffic from the Workspace security group, and it must be in the same VPC
+    /// specified by <code>VpcId</code>.</p>
+    pub fn engine_security_group_id(&self) -> std::option::Option<&str> {
+        self.engine_security_group_id.as_deref()
+    }
+    /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
+    pub fn default_s3_location(&self) -> std::option::Option<&str> {
+        self.default_s3_location.as_deref()
+    }
+    /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
+    pub fn idp_auth_url(&self) -> std::option::Option<&str> {
+        self.idp_auth_url.as_deref()
+    }
+    /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
+    pub fn idp_relay_state_parameter_name(&self) -> std::option::Option<&str> {
+        self.idp_relay_state_parameter_name.as_deref()
+    }
+    /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
+    /// consist of a required key string with a maximum of 128 characters, and an optional value
+    /// string with a maximum of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioInput");
@@ -11457,6 +12264,19 @@ pub struct CreateSecurityConfigurationInput {
     /// Guide</i>.</p>
     pub security_configuration: std::option::Option<std::string::String>,
 }
+impl CreateSecurityConfigurationInput {
+    /// <p>The name of the security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
+    /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+    /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
+    /// Guide</i>.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSecurityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSecurityConfigurationInput");
@@ -11478,6 +12298,24 @@ pub struct CancelStepsInput {
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
     /// <code>SEND_INTERRUPT</code>.</p>
     pub step_cancellation_option: std::option::Option<crate::model::StepCancellationOption>,
+}
+impl CancelStepsInput {
+    /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+    /// and their states for the specified cluster.</p>
+    pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.step_ids.as_deref()
+    }
+    /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
+    /// <code>SEND_INTERRUPT</code>.</p>
+    pub fn step_cancellation_option(
+        &self,
+    ) -> std::option::Option<&crate::model::StepCancellationOption> {
+        self.step_cancellation_option.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelStepsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11501,6 +12339,19 @@ pub struct AddTagsInput {
     /// characters, and an optional value string with a maximum of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl AddTagsInput {
+    /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
+    /// cluster identifier or an Amazon EMR Studio ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A list of tags to associate with a resource. Tags are
+    /// user-defined key-value pairs that consist of a required key string with a maximum of 128
+    /// characters, and an optional value string with a maximum of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsInput");
@@ -11520,6 +12371,17 @@ pub struct AddJobFlowStepsInput {
     /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
 }
+impl AddJobFlowStepsInput {
+    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
+    /// </p>
+    pub fn job_flow_id(&self) -> std::option::Option<&str> {
+        self.job_flow_id.as_deref()
+    }
+    /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::StepConfig]> {
+        self.steps.as_deref()
+    }
+}
 impl std::fmt::Debug for AddJobFlowStepsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddJobFlowStepsInput");
@@ -11538,6 +12400,16 @@ pub struct AddInstanceGroupsInput {
     /// <p>Job flow in which to add the instance groups.</p>
     pub job_flow_id: std::option::Option<std::string::String>,
 }
+impl AddInstanceGroupsInput {
+    /// <p>Instance groups to add.</p>
+    pub fn instance_groups(&self) -> std::option::Option<&[crate::model::InstanceGroupConfig]> {
+        self.instance_groups.as_deref()
+    }
+    /// <p>Job flow in which to add the instance groups.</p>
+    pub fn job_flow_id(&self) -> std::option::Option<&str> {
+        self.job_flow_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AddInstanceGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddInstanceGroupsInput");
@@ -11555,6 +12427,16 @@ pub struct AddInstanceFleetInput {
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration of the instance fleet.</p>
     pub instance_fleet: std::option::Option<crate::model::InstanceFleetConfig>,
+}
+impl AddInstanceFleetInput {
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>Specifies the configuration of the instance fleet.</p>
+    pub fn instance_fleet(&self) -> std::option::Option<&crate::model::InstanceFleetConfig> {
+        self.instance_fleet.as_ref()
+    }
 }
 impl std::fmt::Debug for AddInstanceFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

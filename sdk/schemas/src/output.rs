@@ -21,6 +21,43 @@ pub struct UpdateSchemaOutput {
     /// <p>The date the schema version was created.</p>
     pub version_created_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateSchemaOutput {
+    /// <p>The description of the schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that schema was modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The ARN of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The version number of the schema</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>Key-value pairs associated with a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of the schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The date the schema version was created.</p>
+    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.version_created_date.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSchemaOutput");
@@ -193,6 +230,27 @@ pub struct UpdateRegistryOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateRegistryOutput {
+    /// <p>The description of the registry.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>Tags associated with the registry.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRegistryOutput");
@@ -312,6 +370,39 @@ pub struct UpdateDiscovererOutput {
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateDiscovererOutput {
+    /// <p>The description of the discoverer.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the discoverer.</p>
+    pub fn discoverer_arn(&self) -> std::option::Option<&str> {
+        self.discoverer_arn.as_deref()
+    }
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+    /// <p>The ARN of the event bus.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+        self.state.as_ref()
+    }
+    /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    pub fn cross_account(&self) -> bool {
+        self.cross_account
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDiscovererOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -527,6 +618,16 @@ pub struct StopDiscovererOutput {
     /// <p>The state of the discoverer.</p>
     pub state: std::option::Option<crate::model::DiscovererState>,
 }
+impl StopDiscovererOutput {
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for StopDiscovererOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDiscovererOutput");
@@ -596,6 +697,16 @@ pub struct StartDiscovererOutput {
     /// <p>The state of the discoverer.</p>
     pub state: std::option::Option<crate::model::DiscovererState>,
 }
+impl StartDiscovererOutput {
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDiscovererOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDiscovererOutput");
@@ -664,6 +775,16 @@ pub struct SearchSchemasOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of SearchSchemaSummary information.</p>
     pub schemas: std::option::Option<std::vec::Vec<crate::model::SearchSchemaSummary>>,
+}
+impl SearchSchemasOutput {
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of SearchSchemaSummary information.</p>
+    pub fn schemas(&self) -> std::option::Option<&[crate::model::SearchSchemaSummary]> {
+        self.schemas.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchSchemasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -737,6 +858,16 @@ pub struct PutResourcePolicyOutput {
     /// <p>The revision ID of the policy.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl PutResourcePolicyOutput {
+    /// <p>The resource-based policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The revision ID of the policy.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyOutput");
@@ -803,6 +934,24 @@ pub struct PutCodeBindingOutput {
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The current status of code binding generation.</p>
     pub status: std::option::Option<crate::model::CodeGenerationStatus>,
+}
+impl PutCodeBindingOutput {
+    /// <p>The time and date that the code binding was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time that code bindings were modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>The current status of code binding generation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CodeGenerationStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for PutCodeBindingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -904,6 +1053,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Key-value pairs associated with a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -968,6 +1126,16 @@ pub struct ListSchemaVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of schema version summaries.</p>
     pub schema_versions: std::option::Option<std::vec::Vec<crate::model::SchemaVersionSummary>>,
+}
+impl ListSchemaVersionsOutput {
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of schema version summaries.</p>
+    pub fn schema_versions(&self) -> std::option::Option<&[crate::model::SchemaVersionSummary]> {
+        self.schema_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSchemaVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1045,6 +1213,16 @@ pub struct ListSchemasOutput {
     /// <p>An array of schema summaries.</p>
     pub schemas: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
 }
+impl ListSchemasOutput {
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of schema summaries.</p>
+    pub fn schemas(&self) -> std::option::Option<&[crate::model::SchemaSummary]> {
+        self.schemas.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSchemasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemasOutput");
@@ -1116,6 +1294,16 @@ pub struct ListRegistriesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of registry summaries.</p>
     pub registries: std::option::Option<std::vec::Vec<crate::model::RegistrySummary>>,
+}
+impl ListRegistriesOutput {
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of registry summaries.</p>
+    pub fn registries(&self) -> std::option::Option<&[crate::model::RegistrySummary]> {
+        self.registries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRegistriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1189,6 +1377,16 @@ pub struct ListDiscoverersOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDiscoverersOutput {
+    /// <p>An array of DiscovererSummary information.</p>
+    pub fn discoverers(&self) -> std::option::Option<&[crate::model::DiscovererSummary]> {
+        self.discoverers.as_deref()
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDiscoverersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDiscoverersOutput");
@@ -1261,6 +1459,16 @@ pub struct GetResourcePolicyOutput {
     /// <p>The revision ID.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl GetResourcePolicyOutput {
+    /// <p>The resource-based policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The revision ID.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePolicyOutput");
@@ -1322,6 +1530,12 @@ pub struct GetDiscoveredSchemaOutput {
     /// <p>The source of the schema definition.</p>
     pub content: std::option::Option<std::string::String>,
 }
+impl GetDiscoveredSchemaOutput {
+    /// <p>The source of the schema definition.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDiscoveredSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDiscoveredSchemaOutput");
@@ -1369,6 +1583,12 @@ impl GetDiscoveredSchemaOutput {
 pub struct GetCodeBindingSourceOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub body: std::option::Option<aws_smithy_types::Blob>,
+}
+impl GetCodeBindingSourceOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCodeBindingSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1423,6 +1643,28 @@ pub struct ExportSchemaOutput {
     pub schema_version: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub r#type: std::option::Option<std::string::String>,
+}
+impl ExportSchemaOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1543,6 +1785,47 @@ pub struct DescribeSchemaOutput {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date the schema version was created.</p>
     pub version_created_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeSchemaOutput {
+    /// <p>The source of the schema definition.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The description of the schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that schema was modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The ARN of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The version number of the schema</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of the schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The date the schema version was created.</p>
+    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.version_created_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1729,6 +2012,27 @@ pub struct DescribeRegistryOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl DescribeRegistryOutput {
+    /// <p>The description of the registry.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>Tags associated with the registry.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRegistryOutput");
@@ -1848,6 +2152,39 @@ pub struct DescribeDiscovererOutput {
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeDiscovererOutput {
+    /// <p>The description of the discoverer.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the discoverer.</p>
+    pub fn discoverer_arn(&self) -> std::option::Option<&str> {
+        self.discoverer_arn.as_deref()
+    }
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+    /// <p>The ARN of the event bus.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+        self.state.as_ref()
+    }
+    /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    pub fn cross_account(&self) -> bool {
+        self.cross_account
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDiscovererOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2006,6 +2343,24 @@ pub struct DescribeCodeBindingOutput {
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The current status of code binding generation.</p>
     pub status: std::option::Option<crate::model::CodeGenerationStatus>,
+}
+impl DescribeCodeBindingOutput {
+    /// <p>The time and date that the code binding was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date and time that code bindings were modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>The current status of code binding generation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CodeGenerationStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCodeBindingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2271,6 +2626,43 @@ pub struct CreateSchemaOutput {
     /// <p>The date the schema version was created.</p>
     pub version_created_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateSchemaOutput {
+    /// <p>The description of the schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that schema was modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The ARN of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The version number of the schema</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>Key-value pairs associated with a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of the schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The date the schema version was created.</p>
+    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.version_created_date.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSchemaOutput");
@@ -2443,6 +2835,27 @@ pub struct CreateRegistryOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRegistryOutput {
+    /// <p>The description of the registry.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>Tags associated with the registry.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRegistryOutput");
@@ -2562,6 +2975,39 @@ pub struct CreateDiscovererOutput {
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateDiscovererOutput {
+    /// <p>The description of the discoverer.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the discoverer.</p>
+    pub fn discoverer_arn(&self) -> std::option::Option<&str> {
+        self.discoverer_arn.as_deref()
+    }
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+    /// <p>The ARN of the event bus.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+        self.state.as_ref()
+    }
+    /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    pub fn cross_account(&self) -> bool {
+        self.cross_account
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDiscovererOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

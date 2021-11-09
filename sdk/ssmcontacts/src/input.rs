@@ -170,10 +170,7 @@ impl AcceptPageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_accept_page(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_accept_page(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -343,10 +340,7 @@ impl ActivateContactChannelInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_activate_contact_channel(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -580,10 +574,7 @@ impl CreateContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -866,10 +857,9 @@ impl CreateContactChannelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_contact_channel(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_contact_channel(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1025,10 +1015,7 @@ impl DeactivateContactChannelInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deactivate_contact_channel(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1177,10 +1164,7 @@ impl DeleteContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1333,10 +1317,9 @@ impl DeleteContactChannelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_contact_channel(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_contact_channel(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1489,10 +1472,7 @@ impl DescribeEngagementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_engagement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_engagement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1641,10 +1621,7 @@ impl DescribePageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_page(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_page(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1793,10 +1770,7 @@ impl GetContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1949,10 +1923,7 @@ impl GetContactChannelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_contact_channel(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_contact_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2102,10 +2073,7 @@ impl GetContactPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_contact_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_contact_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2279,10 +2247,7 @@ impl ListContactChannelsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_contact_channels(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_contact_channels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2469,10 +2434,7 @@ impl ListContactsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_contacts(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_contacts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2661,10 +2623,7 @@ impl ListEngagementsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_engagements(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_engagements(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2838,10 +2797,7 @@ impl ListPageReceiptsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_page_receipts(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_page_receipts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3015,10 +2971,7 @@ impl ListPagesByContactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_pages_by_contact(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_pages_by_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3199,10 +3152,7 @@ impl ListPagesByEngagementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_pages_by_engagement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3352,10 +3302,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3517,10 +3466,7 @@ impl PutContactPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_contact_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_contact_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3673,10 +3619,7 @@ impl SendActivationCodeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_activation_code(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_activation_code(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3932,10 +3875,7 @@ impl StartEngagementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_engagement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_engagement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4099,10 +4039,8 @@ impl StopEngagementInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_engagement(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_stop_engagement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4272,10 +4210,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4445,10 +4380,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4623,10 +4555,7 @@ impl UpdateContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4806,10 +4735,9 @@ impl UpdateContactChannelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_channel(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_contact_channel(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4882,6 +4810,20 @@ pub struct UpdateContactChannelInput {
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
 }
+impl UpdateContactChannelInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+        self.contact_channel_id.as_deref()
+    }
+    /// <p>The name of the contact channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
+        self.delivery_address.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateContactChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContactChannelInput");
@@ -4904,6 +4846,21 @@ pub struct UpdateContactInput {
     /// channels. An escalation plan uses these stages to contact specified contacts. </p>
     pub plan: std::option::Option<crate::model::Plan>,
 }
+impl UpdateContactInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The full name of the contact or escalation plan.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
+    /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+    pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
+        self.plan.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContactInput");
@@ -4923,6 +4880,16 @@ pub struct UntagResourceInput {
     /// <p>The key of the tag that you want to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key of the tag that you want to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4941,6 +4908,16 @@ pub struct TagResourceInput {
     /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4958,6 +4935,16 @@ pub struct StopEngagementInput {
     pub engagement_id: std::option::Option<std::string::String>,
     /// <p>The reason that you're stopping the engagement. </p>
     pub reason: std::option::Option<std::string::String>,
+}
+impl StopEngagementInput {
+    /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    pub fn engagement_id(&self) -> std::option::Option<&str> {
+        self.engagement_id.as_deref()
+    }
+    /// <p>The reason that you're stopping the engagement. </p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for StopEngagementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4994,6 +4981,45 @@ pub struct StartEngagementInput {
     /// details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl StartEngagementInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The user that started the engagement.</p>
+    pub fn sender(&self) -> std::option::Option<&str> {
+        self.sender.as_deref()
+    }
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for
+    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The secure content of the message that was sent to the contact. Use this field for
+    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
+    /// engagements to <code>SMS</code>.</p>
+    pub fn public_subject(&self) -> std::option::Option<&str> {
+        self.public_subject.as_deref()
+    }
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for
+    /// engagements to <code>SMS</code>.</p>
+    pub fn public_content(&self) -> std::option::Option<&str> {
+        self.public_content.as_deref()
+    }
+    /// <p>The ARN of the incident that the engagement is part of.</p>
+    pub fn incident_id(&self) -> std::option::Option<&str> {
+        self.incident_id.as_deref()
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartEngagementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartEngagementInput");
@@ -5016,6 +5042,12 @@ pub struct SendActivationCodeInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
+impl SendActivationCodeInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+        self.contact_channel_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendActivationCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendActivationCodeInput");
@@ -5033,6 +5065,16 @@ pub struct PutContactPolicyInput {
     /// <p>Details of the resource policy.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutContactPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>Details of the resource policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutContactPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutContactPolicyInput");
@@ -5048,6 +5090,12 @@ impl std::fmt::Debug for PutContactPolicyInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5068,6 +5116,21 @@ pub struct ListPagesByEngagementInput {
     /// <p>The maximum number of engagements to contact channels to list per page of
     /// results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPagesByEngagementInput {
+    /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    pub fn engagement_id(&self) -> std::option::Option<&str> {
+        self.engagement_id.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of engagements to contact channels to list per page of
+    /// results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPagesByEngagementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5090,6 +5153,20 @@ pub struct ListPagesByContactInput {
     /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPagesByContactInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPagesByContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPagesByContactInput");
@@ -5110,6 +5187,20 @@ pub struct ListPageReceiptsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of acknowledgements per page of results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPageReceiptsInput {
+    /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
+    pub fn page_id(&self) -> std::option::Option<&str> {
+        self.page_id.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of acknowledgements per page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPageReceiptsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5133,6 +5224,24 @@ pub struct ListEngagementsInput {
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time range to lists engagements for an incident.</p>
     pub time_range_value: std::option::Option<crate::model::TimeRange>,
+}
+impl ListEngagementsInput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of engagements per page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
+    pub fn incident_id(&self) -> std::option::Option<&str> {
+        self.incident_id.as_deref()
+    }
+    /// <p>The time range to lists engagements for an incident.</p>
+    pub fn time_range_value(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.time_range_value.as_ref()
+    }
 }
 impl std::fmt::Debug for ListEngagementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5159,6 +5268,25 @@ pub struct ListContactsInput {
     /// type <code>ESCALATION</code>.</p>
     pub r#type: std::option::Option<crate::model::ContactType>,
 }
+impl ListContactsInput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of contacts and escalation plans per page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
+    pub fn alias_prefix(&self) -> std::option::Option<&str> {
+        self.alias_prefix.as_deref()
+    }
+    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
+    /// type <code>ESCALATION</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for ListContactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContactsInput");
@@ -5181,6 +5309,20 @@ pub struct ListContactChannelsInput {
     /// <p>The maximum number of contact channels per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListContactChannelsInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of contact channels per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListContactChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContactChannelsInput");
@@ -5198,6 +5340,12 @@ pub struct GetContactPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub contact_arn: std::option::Option<std::string::String>,
 }
+impl GetContactPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContactPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactPolicyInput");
@@ -5212,6 +5360,12 @@ impl std::fmt::Debug for GetContactPolicyInput {
 pub struct GetContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     pub contact_channel_id: std::option::Option<std::string::String>,
+}
+impl GetContactChannelInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+        self.contact_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContactChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5228,6 +5382,12 @@ pub struct GetContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub contact_id: std::option::Option<std::string::String>,
 }
+impl GetContactInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactInput");
@@ -5242,6 +5402,12 @@ impl std::fmt::Debug for GetContactInput {
 pub struct DescribePageInput {
     /// <p>The ID of the engagement to a contact channel.</p>
     pub page_id: std::option::Option<std::string::String>,
+}
+impl DescribePageInput {
+    /// <p>The ID of the engagement to a contact channel.</p>
+    pub fn page_id(&self) -> std::option::Option<&str> {
+        self.page_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5258,6 +5424,12 @@ pub struct DescribeEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     pub engagement_id: std::option::Option<std::string::String>,
 }
+impl DescribeEngagementInput {
+    /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    pub fn engagement_id(&self) -> std::option::Option<&str> {
+        self.engagement_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEngagementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEngagementInput");
@@ -5272,6 +5444,12 @@ impl std::fmt::Debug for DescribeEngagementInput {
 pub struct DeleteContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_id: std::option::Option<std::string::String>,
+}
+impl DeleteContactChannelInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+        self.contact_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteContactChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5288,6 +5466,12 @@ pub struct DeleteContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
     pub contact_id: std::option::Option<std::string::String>,
 }
+impl DeleteContactInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContactInput");
@@ -5302,6 +5486,12 @@ impl std::fmt::Debug for DeleteContactInput {
 pub struct DeactivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
     pub contact_channel_id: std::option::Option<std::string::String>,
+}
+impl DeactivateContactChannelInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+        self.contact_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeactivateContactChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5360,6 +5550,64 @@ pub struct CreateContactChannelInput {
     /// details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl CreateContactChannelInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The name of the contact channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Incident Manager supports three types of contact channels:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SMS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VOICE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EMAIL</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
+    /// is dependent on the type of the contact channel. The following are the expected
+    /// formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SMS - '+' followed by the country code and phone number</p>
+    /// </li>
+    /// <li>
+    /// <p>VOICE - '+' followed by the country code and phone number</p>
+    /// </li>
+    /// <li>
+    /// <p>EMAIL - any standard email format</p>
+    /// </li>
+    /// </ul>
+    pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
+        self.delivery_address.as_ref()
+    }
+    /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
+    /// Incident Manager can't engage your contact channel until it has been activated.</p>
+    pub fn defer_activation(&self) -> std::option::Option<bool> {
+        self.defer_activation
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContactChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactChannelInput");
@@ -5395,6 +5643,37 @@ pub struct CreateContactInput {
     /// details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl CreateContactInput {
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
+    /// be unique and identifiable. </p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The full name of the contact or escalation plan.  </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
+    /// <code>PERSONAL</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
+    /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
+        self.plan.as_ref()
+    }
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
+    /// replication set. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactInput");
@@ -5416,6 +5695,16 @@ pub struct ActivateContactChannelInput {
     pub contact_channel_id: std::option::Option<std::string::String>,
     /// <p>The code sent to the contact channel when it was created in the contact. </p>
     pub activation_code: std::option::Option<std::string::String>,
+}
+impl ActivateContactChannelInput {
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+        self.contact_channel_id.as_deref()
+    }
+    /// <p>The code sent to the contact channel when it was created in the contact. </p>
+    pub fn activation_code(&self) -> std::option::Option<&str> {
+        self.activation_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ActivateContactChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5449,6 +5738,41 @@ pub struct AcceptPageInput {
     /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
     /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     pub accept_code_validation: std::option::Option<crate::model::AcceptCodeValidation>,
+}
+impl AcceptPageInput {
+    /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    pub fn page_id(&self) -> std::option::Option<&str> {
+        self.page_id.as_deref()
+    }
+    /// <p>The ARN of the contact channel.</p>
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
+        self.contact_channel_id.as_deref()
+    }
+    /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
+    pub fn accept_type(&self) -> std::option::Option<&crate::model::AcceptType> {
+        self.accept_type.as_ref()
+    }
+    /// <p>Information provided by the user when the user acknowledges the page.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
+    /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    pub fn accept_code(&self) -> std::option::Option<&str> {
+        self.accept_code.as_deref()
+    }
+    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+    /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
+    /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
+    /// validation causes Incident Manager to verify that the code entered by the user matches the
+    /// code sent by Incident Manager with the page.</p>
+    /// <p>Incident Manager can also <code>IGNORE</code>
+    /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
+    /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    pub fn accept_code_validation(
+        &self,
+    ) -> std::option::Option<&crate::model::AcceptCodeValidation> {
+        self.accept_code_validation.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptPageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

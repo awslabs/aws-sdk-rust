@@ -197,10 +197,7 @@ impl CreateAccessPointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_access_point(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_access_point(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -216,17 +213,8 @@ impl CreateAccessPointInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -437,7 +425,7 @@ impl CreateAccessPointForObjectLambdaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_access_point_for_object_lambda(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_access_point_for_object_lambda(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -454,17 +442,8 @@ impl CreateAccessPointForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -953,11 +932,10 @@ impl CreateBucketInput {
             properties,
         );
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -1263,10 +1241,7 @@ impl CreateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1282,17 +1257,8 @@ impl CreateJobInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1489,7 +1455,7 @@ impl CreateMultiRegionAccessPointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_multi_region_access_point(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_multi_region_access_point(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1506,23 +1472,13 @@ impl CreateMultiRegionAccessPointInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -1736,17 +1692,8 @@ impl DeleteAccessPointInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1944,17 +1891,8 @@ impl DeleteAccessPointForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2152,17 +2090,8 @@ impl DeleteAccessPointPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2361,17 +2290,8 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2568,17 +2488,8 @@ impl DeleteBucketInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2780,17 +2691,8 @@ impl DeleteBucketLifecycleConfigurationInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2987,17 +2889,8 @@ impl DeleteBucketPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3198,17 +3091,8 @@ impl DeleteBucketTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3401,17 +3285,8 @@ impl DeleteJobTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3600,7 +3475,7 @@ impl DeleteMultiRegionAccessPointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_multi_region_access_point(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_multi_region_access_point(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3617,23 +3492,13 @@ impl DeleteMultiRegionAccessPointInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -3819,17 +3684,8 @@ impl DeletePublicAccessBlockInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4027,17 +3883,8 @@ impl DeleteStorageLensConfigurationInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4236,17 +4083,8 @@ impl DeleteStorageLensConfigurationTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4439,17 +4277,8 @@ impl DescribeJobInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4655,23 +4484,13 @@ impl DescribeMultiRegionAccessPointOperationInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -4877,17 +4696,8 @@ impl GetAccessPointInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5088,17 +4898,8 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5297,17 +5098,8 @@ impl GetAccessPointForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5504,17 +5296,8 @@ impl GetAccessPointPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5713,17 +5496,8 @@ impl GetAccessPointPolicyForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5921,17 +5695,8 @@ impl GetAccessPointPolicyStatusInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6132,17 +5897,8 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6338,17 +6094,8 @@ impl GetBucketInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6548,17 +6295,8 @@ impl GetBucketLifecycleConfigurationInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6755,17 +6493,8 @@ impl GetBucketPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6966,17 +6695,8 @@ impl GetBucketTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7169,17 +6889,8 @@ impl GetJobTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7379,23 +7090,13 @@ impl GetMultiRegionAccessPointInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -7608,23 +7309,13 @@ impl GetMultiRegionAccessPointPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -7838,23 +7529,13 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -8031,17 +7712,8 @@ impl GetPublicAccessBlockInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8239,17 +7911,8 @@ impl GetStorageLensConfigurationInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8447,17 +8110,8 @@ impl GetStorageLensConfigurationTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8684,17 +8338,8 @@ impl ListAccessPointsInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8905,17 +8550,8 @@ impl ListAccessPointsForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9144,17 +8780,8 @@ impl ListJobsInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9358,23 +8985,13 @@ impl ListMultiRegionAccessPointsInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -9619,17 +9236,8 @@ impl ListRegionalBucketsInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9817,17 +9425,8 @@ impl ListStorageLensConfigurationsInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10033,7 +9632,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_access_point_configuration_for_object_lambda(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_access_point_configuration_for_object_lambda(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10050,17 +9649,8 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10270,10 +9860,7 @@ impl PutAccessPointPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10289,17 +9876,8 @@ impl PutAccessPointPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10508,7 +10086,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy_for_object_lambda(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy_for_object_lambda(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10525,17 +10103,8 @@ impl PutAccessPointPolicyForObjectLambdaInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10767,23 +10336,13 @@ impl PutBucketLifecycleConfigurationInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -11042,10 +10601,7 @@ impl PutBucketPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_bucket_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_bucket_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11061,23 +10617,13 @@ impl PutBucketPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -11312,23 +10858,13 @@ impl PutBucketTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -11548,10 +11084,8 @@ impl PutJobTaggingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_job_tagging(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_job_tagging(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11567,17 +11101,8 @@ impl PutJobTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -11777,7 +11302,7 @@ impl PutMultiRegionAccessPointPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_multi_region_access_point_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_multi_region_access_point_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11794,23 +11319,13 @@ impl PutMultiRegionAccessPointPolicyInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request = request.augment(|mut req, _| {
-            let data = req.body().bytes().ok_or_else(|| {
-                aws_smithy_http::operation::BuildError::SerializationError(
-                    "checksum can only be computed for non-streaming operations".into(),
-                )
-            })?;
+            let data = req
+                .body()
+                .bytes()
+                .expect("checksum can only be computed for non-streaming operations");
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
@@ -12021,17 +11536,8 @@ impl PutPublicAccessBlockInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12273,7 +11779,7 @@ impl PutStorageLensConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12290,17 +11796,8 @@ impl PutStorageLensConfigurationInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12523,7 +12020,7 @@ impl PutStorageLensConfigurationTaggingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration_tagging(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration_tagging(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12540,17 +12037,8 @@ impl PutStorageLensConfigurationTaggingInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12773,17 +12261,8 @@ impl UpdateJobPriorityInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -13022,17 +12501,8 @@ impl UpdateJobStatusInput {
                 "{AccountId}.",
                 AccountId = account_id
             ))
-        };
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        }?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -13093,6 +12563,24 @@ pub struct UpdateJobStatusInput {
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
     pub status_update_reason: std::option::Option<std::string::String>,
 }
+impl UpdateJobStatusInput {
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID of the job whose status you want to update.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status that you want to move the specified job to.</p>
+    pub fn requested_job_status(&self) -> std::option::Option<&crate::model::RequestedJobStatus> {
+        self.requested_job_status.as_ref()
+    }
+    /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
+    pub fn status_update_reason(&self) -> std::option::Option<&str> {
+        self.status_update_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateJobStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobStatusInput");
@@ -13114,6 +12602,20 @@ pub struct UpdateJobPriorityInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The priority you want to assign to this job.</p>
     pub priority: i32,
+}
+impl UpdateJobPriorityInput {
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID for the job whose priority you want to update.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The priority you want to assign to this job.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
 }
 impl std::fmt::Debug for UpdateJobPriorityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13138,6 +12640,23 @@ pub struct PutStorageLensConfigurationTaggingInput {
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
+}
+impl PutStorageLensConfigurationTaggingInput {
+    /// <p>The ID of the S3 Storage Lens configuration.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The tag set of the S3 Storage Lens configuration.</p>
+    /// <note>
+    /// <p>You can set up to a maximum of 50 tags.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::StorageLensTag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for PutStorageLensConfigurationTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13165,6 +12684,29 @@ pub struct PutStorageLensConfigurationInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
 }
+impl PutStorageLensConfigurationInput {
+    /// <p>The ID of the S3 Storage Lens configuration.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The S3 Storage Lens configuration.</p>
+    pub fn storage_lens_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageLensConfiguration> {
+        self.storage_lens_configuration.as_ref()
+    }
+    /// <p>The tag set of the S3 Storage Lens configuration.</p>
+    /// <note>
+    /// <p>You can set up to a maximum of 50 tags.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::StorageLensTag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutStorageLensConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutStorageLensConfigurationInput");
@@ -13190,6 +12732,19 @@ pub struct PutPublicAccessBlockInput {
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
+impl PutPublicAccessBlockInput {
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+    /// to set.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
+    pub fn public_access_block_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+        self.public_access_block_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutPublicAccessBlockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPublicAccessBlockInput");
@@ -13214,6 +12769,23 @@ pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
     pub details: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
 }
+impl PutMultiRegionAccessPointPolicyInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>An idempotency token used to identify the request and guarantee that requests are
+    /// unique.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+    pub fn details(
+        &self,
+    ) -> std::option::Option<&crate::model::PutMultiRegionAccessPointPolicyInput> {
+        self.details.as_ref()
+    }
+}
 impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMultiRegionAccessPointPolicyInput");
@@ -13234,6 +12806,20 @@ pub struct PutJobTaggingInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+}
+impl PutJobTaggingInput {
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for PutJobTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13257,6 +12843,22 @@ pub struct PutBucketTaggingInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p></p>
     pub tagging: std::option::Option<crate::model::Tagging>,
+}
+impl PutBucketTaggingInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p></p>
+    pub fn tagging(&self) -> std::option::Option<&crate::model::Tagging> {
+        self.tagging.as_ref()
+    }
 }
 impl std::fmt::Debug for PutBucketTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13286,6 +12888,29 @@ pub struct PutBucketPolicyInput {
     /// <p>The bucket policy as a JSON document.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutBucketPolicyInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn confirm_remove_self_bucket_access(&self) -> bool {
+        self.confirm_remove_self_bucket_access
+    }
+    /// <p>The bucket policy as a JSON document.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutBucketPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutBucketPolicyInput");
@@ -13311,6 +12936,22 @@ pub struct PutBucketLifecycleConfigurationInput {
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub lifecycle_configuration: std::option::Option<crate::model::LifecycleConfiguration>,
 }
+impl PutBucketLifecycleConfigurationInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the bucket for which to set the configuration.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
+    pub fn lifecycle_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LifecycleConfiguration> {
+        self.lifecycle_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutBucketLifecycleConfigurationInput");
@@ -13331,6 +12972,20 @@ pub struct PutAccessPointPolicyForObjectLambdaInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Object Lambda Access Point resource policy document.</p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl PutAccessPointPolicyForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Object Lambda Access Point resource policy document.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13355,6 +13010,22 @@ pub struct PutAccessPointPolicyInput {
     /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutAccessPointPolicyInput {
+    /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the access point that you want to associate with the specified policy.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAccessPointPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccessPointPolicyInput");
@@ -13376,6 +13047,20 @@ pub struct PutAccessPointConfigurationForObjectLambdaInput {
     /// <p>Object Lambda Access Point configuration document.</p>
     pub configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
 }
+impl PutAccessPointConfigurationForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Object Lambda Access Point configuration document.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ObjectLambdaConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutAccessPointConfigurationForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccessPointConfigurationForObjectLambdaInput");
@@ -13394,6 +13079,16 @@ pub struct ListStorageLensConfigurationsInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStorageLensConfigurationsInput {
+    /// <p>The account ID of the requester.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>A pagination token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStorageLensConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13420,6 +13115,27 @@ pub struct ListRegionalBucketsInput {
     /// </note>
     pub outpost_id: std::option::Option<std::string::String>,
 }
+impl ListRegionalBucketsInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p></p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p></p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The ID of the Outposts.</p>
+    /// <note>
+    /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRegionalBucketsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRegionalBucketsInput");
@@ -13441,6 +13157,20 @@ pub struct ListMultiRegionAccessPointsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Not currently used. Do not use this parameter.</p>
     pub max_results: i32,
+}
+impl ListMultiRegionAccessPointsInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Not currently used. Do not use this parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Not currently used. Do not use this parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListMultiRegionAccessPointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13465,6 +13195,24 @@ pub struct ListJobsInput {
     /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListJobsInput {
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
+    pub fn job_statuses(&self) -> std::option::Option<&[crate::model::JobStatus]> {
+        self.job_statuses.as_deref()
+    }
+    /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -13488,6 +13236,22 @@ pub struct ListAccessPointsForObjectLambdaInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub max_results: i32,
+}
+impl ListAccessPointsForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>If the list has more access points than can be returned in one call to this
+    /// API, this field contains a continuation token that you can provide in subsequent calls to
+    /// this API to retrieve additional access points.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAccessPointsForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13517,6 +13281,29 @@ pub struct ListAccessPointsInput {
     /// next page of access points.</p>
     pub max_results: i32,
 }
+impl ListAccessPointsInput {
+    /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the bucket whose associated access points you want to list.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of access points that you want to include in the list. If the specified
+    /// bucket has more than this number of access points, then the response will include a
+    /// continuation token in the <code>NextToken</code> field that you can use to retrieve the
+    /// next page of access points.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAccessPointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessPointsInput");
@@ -13537,6 +13324,16 @@ pub struct GetStorageLensConfigurationTaggingInput {
     /// <p>The account ID of the requester.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl GetStorageLensConfigurationTaggingInput {
+    /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStorageLensConfigurationTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStorageLensConfigurationTaggingInput");
@@ -13555,6 +13352,16 @@ pub struct GetStorageLensConfigurationInput {
     /// <p>The account ID of the requester.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl GetStorageLensConfigurationInput {
+    /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStorageLensConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStorageLensConfigurationInput");
@@ -13571,6 +13378,13 @@ pub struct GetPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
     /// to retrieve.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl GetPublicAccessBlockInput {
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+    /// to retrieve.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPublicAccessBlockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13591,6 +13405,19 @@ pub struct GetMultiRegionAccessPointPolicyStatusInput {
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
     /// <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetMultiRegionAccessPointPolicyStatusInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13613,6 +13440,19 @@ pub struct GetMultiRegionAccessPointPolicyInput {
     /// <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetMultiRegionAccessPointPolicyInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMultiRegionAccessPointPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyInput");
@@ -13634,6 +13474,19 @@ pub struct GetMultiRegionAccessPointInput {
     /// <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetMultiRegionAccessPointInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
+    /// the Multi-Region Access Point is different from the alias. For more information about the distinction
+    /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMultiRegionAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMultiRegionAccessPointInput");
@@ -13651,6 +13504,16 @@ pub struct GetJobTaggingInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl GetJobTaggingInput {
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13672,6 +13535,18 @@ pub struct GetBucketTaggingInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
 }
+impl GetBucketTaggingInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBucketTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketTaggingInput");
@@ -13691,6 +13566,18 @@ pub struct GetBucketPolicyInput {
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
+}
+impl GetBucketPolicyInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBucketPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13712,6 +13599,18 @@ pub struct GetBucketLifecycleConfigurationInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
 }
+impl GetBucketLifecycleConfigurationInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketLifecycleConfigurationInput");
@@ -13732,6 +13631,18 @@ pub struct GetBucketInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
 }
+impl GetBucketInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketInput");
@@ -13749,6 +13660,16 @@ pub struct GetAccessPointPolicyStatusForObjectLambdaInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetAccessPointPolicyStatusForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13768,6 +13689,16 @@ pub struct GetAccessPointPolicyStatusInput {
     /// <p>The name of the access point whose policy status you want to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetAccessPointPolicyStatusInput {
+    /// <p>The account ID for the account that owns the specified access point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the access point whose policy status you want to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointPolicyStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointPolicyStatusInput");
@@ -13785,6 +13716,16 @@ pub struct GetAccessPointPolicyForObjectLambdaInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetAccessPointPolicyForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13806,6 +13747,18 @@ pub struct GetAccessPointPolicyInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetAccessPointPolicyInput {
+    /// <p>The account ID for the account that owns the specified access point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the access point whose policy you want to retrieve.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointPolicyInput");
@@ -13824,6 +13777,16 @@ pub struct GetAccessPointForObjectLambdaInput {
     /// <p>The name of the Object Lambda Access Point.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetAccessPointForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointForObjectLambdaInput");
@@ -13841,6 +13804,16 @@ pub struct GetAccessPointConfigurationForObjectLambdaInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetAccessPointConfigurationForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13862,6 +13835,18 @@ pub struct GetAccessPointInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetAccessPointInput {
+    /// <p>The account ID for the account that owns the specified access point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the access point whose configuration information you want to retrieve.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointInput");
@@ -13882,6 +13867,18 @@ pub struct DescribeMultiRegionAccessPointOperationInput {
     /// this token to query about the status of the asynchronous action.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
 }
+impl DescribeMultiRegionAccessPointOperationInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The request token associated with the request you want to know about. This request token
+    /// is returned as part of the response when you make an asynchronous request. You provide
+    /// this token to query about the status of the asynchronous action.</p>
+    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+        self.request_token_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMultiRegionAccessPointOperationInput");
@@ -13899,6 +13896,16 @@ pub struct DescribeJobInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the job whose information you want to retrieve.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeJobInput {
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID for the job whose information you want to retrieve.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13918,6 +13925,16 @@ pub struct DeleteStorageLensConfigurationTaggingInput {
     /// <p>The account ID of the requester.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl DeleteStorageLensConfigurationTaggingInput {
+    /// <p>The ID of the S3 Storage Lens configuration.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStorageLensConfigurationTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStorageLensConfigurationTaggingInput");
@@ -13936,6 +13953,16 @@ pub struct DeleteStorageLensConfigurationInput {
     /// <p>The account ID of the requester.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl DeleteStorageLensConfigurationInput {
+    /// <p>The ID of the S3 Storage Lens configuration.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStorageLensConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStorageLensConfigurationInput");
@@ -13952,6 +13979,13 @@ pub struct DeletePublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
     /// to remove.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl DeletePublicAccessBlockInput {
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+    /// to remove.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePublicAccessBlockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13973,6 +14007,21 @@ pub struct DeleteMultiRegionAccessPointInput {
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
     pub details: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
 }
+impl DeleteMultiRegionAccessPointInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>An idempotency token used to identify the request and guarantee that requests are
+    /// unique.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::DeleteMultiRegionAccessPointInput> {
+        self.details.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMultiRegionAccessPointInput");
@@ -13991,6 +14040,16 @@ pub struct DeleteJobTaggingInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DeleteJobTaggingInput {
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteJobTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14012,6 +14071,18 @@ pub struct DeleteBucketTaggingInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
 }
+impl DeleteBucketTaggingInput {
+    /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bucket ARN that has the tag set to be removed.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBucketTaggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBucketTaggingInput");
@@ -14031,6 +14102,18 @@ pub struct DeleteBucketPolicyInput {
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
+}
+impl DeleteBucketPolicyInput {
+    /// <p>The account ID of the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBucketPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14052,6 +14135,18 @@ pub struct DeleteBucketLifecycleConfigurationInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
 }
+impl DeleteBucketLifecycleConfigurationInput {
+    /// <p>The account ID of the lifecycle configuration to delete.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBucketLifecycleConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBucketLifecycleConfigurationInput");
@@ -14072,6 +14167,18 @@ pub struct DeleteBucketInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket: std::option::Option<std::string::String>,
 }
+impl DeleteBucketInput {
+    /// <p>The account ID that owns the Outposts bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Specifies the bucket being deleted.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBucketInput");
@@ -14089,6 +14196,16 @@ pub struct DeleteAccessPointPolicyForObjectLambdaInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteAccessPointPolicyForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccessPointPolicyForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14110,6 +14227,18 @@ pub struct DeleteAccessPointPolicyInput {
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteAccessPointPolicyInput {
+    /// <p>The account ID for the account that owns the specified access point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the access point whose policy you want to delete.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAccessPointPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAccessPointPolicyInput");
@@ -14127,6 +14256,16 @@ pub struct DeleteAccessPointForObjectLambdaInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point you want to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteAccessPointForObjectLambdaInput {
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the access point you want to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccessPointForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14147,6 +14286,18 @@ pub struct DeleteAccessPointInput {
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteAccessPointInput {
+    /// <p>The account ID for the account that owns the specified access point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the access point you want to delete.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14169,6 +14320,22 @@ pub struct CreateMultiRegionAccessPointInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
     pub details: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+}
+impl CreateMultiRegionAccessPointInput {
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
+    /// the underlying buckets.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>An idempotency token used to identify the request and guarantee that requests are
+    /// unique.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::CreateMultiRegionAccessPointInput> {
+        self.details.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14208,6 +14375,52 @@ pub struct CreateJobInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+}
+impl CreateJobInput {
+    /// <p>The Amazon Web Services account ID that creates the job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
+    pub fn confirmation_required(&self) -> std::option::Option<bool> {
+        self.confirmation_required
+    }
+    /// <p>The action that you want this job to perform on every object listed in the manifest.
+    /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::JobOperation> {
+        self.operation.as_ref()
+    }
+    /// <p>Configuration parameters for the optional job-completion report.</p>
+    pub fn report(&self) -> std::option::Option<&crate::model::JobReport> {
+        self.report.as_ref()
+    }
+    /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Configuration parameters for the manifest.</p>
+    pub fn manifest(&self) -> std::option::Option<&crate::model::JobManifest> {
+        self.manifest.as_ref()
+    }
+    /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
+    /// that Batch Operations will use to run this job's action on every object in the
+    /// manifest.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14278,6 +14491,77 @@ pub struct CreateBucketInput {
     /// </note>
     pub create_bucket_configuration: std::option::Option<crate::model::CreateBucketConfiguration>,
 }
+impl CreateBucketInput {
+    /// <p>The canned ACL to apply to the bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn acl(&self) -> std::option::Option<&crate::model::BucketCannedAcl> {
+        self.acl.as_ref()
+    }
+    /// <p>The name of the bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn grant_full_control(&self) -> std::option::Option<&str> {
+        self.grant_full_control.as_deref()
+    }
+    /// <p>Allows grantee to list the objects in the bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn grant_read(&self) -> std::option::Option<&str> {
+        self.grant_read.as_deref()
+    }
+    /// <p>Allows grantee to read the bucket ACL.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn grant_read_acp(&self) -> std::option::Option<&str> {
+        self.grant_read_acp.as_deref()
+    }
+    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn grant_write(&self) -> std::option::Option<&str> {
+        self.grant_write.as_deref()
+    }
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn grant_write_acp(&self) -> std::option::Option<&str> {
+        self.grant_write_acp.as_deref()
+    }
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn object_lock_enabled_for_bucket(&self) -> bool {
+        self.object_lock_enabled_for_bucket
+    }
+    /// <p>The ID of the Outposts where the bucket is being created.</p>
+    /// <note>
+    /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>The configuration information for the bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn create_bucket_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateBucketConfiguration> {
+        self.create_bucket_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBucketInput");
@@ -14312,6 +14596,20 @@ pub struct CreateAccessPointForObjectLambdaInput {
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
     pub configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
 }
+impl CreateAccessPointForObjectLambdaInput {
+    /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name you want to assign to this Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Object Lambda Access Point configuration as a JSON document.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ObjectLambdaConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAccessPointForObjectLambdaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccessPointForObjectLambdaInput");
@@ -14345,6 +14643,38 @@ pub struct CreateAccessPointInput {
     /// </p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+}
+impl CreateAccessPointInput {
+    /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name you want to assign to this access point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the bucket that you want to associate this access point with.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the
+    /// specified virtual private cloud (VPC).</p>
+    /// <note>
+    /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>
+    /// The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
+    /// </p>
+    pub fn public_access_block_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+        self.public_access_block_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

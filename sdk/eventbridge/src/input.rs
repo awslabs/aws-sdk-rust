@@ -86,10 +86,7 @@ impl ActivateEventSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_activate_event_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_activate_event_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -238,10 +235,7 @@ impl CancelReplayInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_replay(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_replay(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -465,10 +459,9 @@ impl CreateApiDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_api_destination(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_api_destination(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -673,10 +666,7 @@ impl CreateArchiveInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_archive(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_archive(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -878,10 +868,7 @@ impl CreateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1079,10 +1066,7 @@ impl CreateEventBusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_event_bus(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_event_bus(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1259,10 +1243,7 @@ impl CreatePartnerEventSourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_partner_event_source(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1412,10 +1393,7 @@ impl DeactivateEventSourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deactivate_event_source(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1563,10 +1541,9 @@ impl DeauthorizeConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deauthorize_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deauthorize_connection(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1714,10 +1691,9 @@ impl DeleteApiDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_api_destination(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_api_destination(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1866,10 +1842,7 @@ impl DeleteArchiveInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_archive(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_archive(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2017,10 +1990,7 @@ impl DeleteConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2168,10 +2138,7 @@ impl DeleteEventBusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_event_bus(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_event_bus(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2336,10 +2303,7 @@ impl DeletePartnerEventSourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_partner_event_source(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2525,10 +2489,7 @@ impl DeleteRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2678,10 +2639,7 @@ impl DescribeApiDestinationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_api_destination(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2831,10 +2789,7 @@ impl DescribeArchiveInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_archive(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_archive(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2982,10 +2937,7 @@ impl DescribeConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3135,10 +3087,7 @@ impl DescribeEventBusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_event_bus(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_event_bus(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3286,10 +3235,7 @@ impl DescribeEventSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_event_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_event_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3438,7 +3384,7 @@ impl DescribePartnerEventSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_partner_event_source(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_partner_event_source(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3588,10 +3534,8 @@ impl DescribeReplayInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_replay(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_replay(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3757,10 +3701,7 @@ impl DescribeRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_rule(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3926,10 +3867,7 @@ impl DisableRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_disable_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_disable_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4095,10 +4033,7 @@ impl EnableRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4289,10 +4224,7 @@ impl ListApiDestinationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_api_destinations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_api_destinations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4494,10 +4426,7 @@ impl ListArchivesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_archives(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_archives(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4688,10 +4617,7 @@ impl ListConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_connections(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_connections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4871,10 +4797,7 @@ impl ListEventBusesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_event_buses(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_event_buses(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5054,10 +4977,7 @@ impl ListEventSourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_event_sources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_event_sources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5241,7 +5161,7 @@ impl ListPartnerEventSourceAccountsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_partner_event_source_accounts(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_partner_event_source_accounts(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5427,10 +5347,7 @@ impl ListPartnerEventSourcesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_partner_event_sources(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5632,10 +5549,7 @@ impl ListReplaysInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_replays(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_replays(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5828,10 +5742,7 @@ impl ListRuleNamesByTargetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_rule_names_by_target(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6019,10 +5930,7 @@ impl ListRulesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_rules(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6170,10 +6078,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6364,10 +6271,7 @@ impl ListTargetsByRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_targets_by_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_targets_by_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6527,10 +6431,7 @@ impl PutEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6691,10 +6592,7 @@ impl PutPartnerEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_partner_events(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_partner_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6951,10 +6849,7 @@ impl PutPermissionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_permission(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_permission(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7215,10 +7110,7 @@ impl PutRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7403,10 +7295,7 @@ impl PutTargetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_targets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_targets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7587,10 +7476,7 @@ impl RemovePermissionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_permission(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_remove_permission(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7797,10 +7683,7 @@ impl RemoveTargetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_targets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_targets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8027,10 +7910,7 @@ impl StartReplayInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_replay(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_replay(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8200,10 +8080,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8448,10 +8325,7 @@ impl TestEventPatternInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_test_event_pattern(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_test_event_pattern(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8621,10 +8495,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8846,10 +8717,9 @@ impl UpdateApiDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_api_destination(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_api_destination(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9037,10 +8907,7 @@ impl UpdateArchiveInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_archive(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_archive(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9240,10 +9107,7 @@ impl UpdateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9318,6 +9182,28 @@ pub struct UpdateConnectionInput {
     /// <p>The authorization parameters to use for the connection.</p>
     pub auth_parameters: std::option::Option<crate::model::UpdateConnectionAuthRequestParameters>,
 }
+impl UpdateConnectionInput {
+    /// <p>The name of the connection to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the connection.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of authorization to use for the connection.</p>
+    pub fn authorization_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionAuthorizationType> {
+        self.authorization_type.as_ref()
+    }
+    /// <p>The authorization parameters to use for the connection.</p>
+    pub fn auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateConnectionAuthRequestParameters> {
+        self.auth_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionInput");
@@ -9341,6 +9227,24 @@ pub struct UpdateArchiveInput {
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The number of days to retain events in the archive.</p>
     pub retention_days: std::option::Option<i32>,
+}
+impl UpdateArchiveInput {
+    /// <p>The name of the archive to update.</p>
+    pub fn archive_name(&self) -> std::option::Option<&str> {
+        self.archive_name.as_deref()
+    }
+    /// <p>The description for the archive.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The event pattern to use to filter events sent to the archive.</p>
+    pub fn event_pattern(&self) -> std::option::Option<&str> {
+        self.event_pattern.as_deref()
+    }
+    /// <p>The number of days to retain events in the archive.</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
 }
 impl std::fmt::Debug for UpdateArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9370,6 +9274,32 @@ pub struct UpdateApiDestinationInput {
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
 }
+impl UpdateApiDestinationInput {
+    /// <p>The name of the API destination to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the API destination to update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the connection to use for the API destination.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The URL to the endpoint to use for the API destination.</p>
+    pub fn invocation_endpoint(&self) -> std::option::Option<&str> {
+        self.invocation_endpoint.as_deref()
+    }
+    /// <p>The method to use for the API destination.</p>
+    pub fn http_method(&self) -> std::option::Option<&crate::model::ApiDestinationHttpMethod> {
+        self.http_method.as_ref()
+    }
+    /// <p>The maximum number of invocations per second to send to the API destination.</p>
+    pub fn invocation_rate_limit_per_second(&self) -> std::option::Option<i32> {
+        self.invocation_rate_limit_per_second
+    }
+}
 impl std::fmt::Debug for UpdateApiDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApiDestinationInput");
@@ -9394,6 +9324,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ARN of the EventBridge resource from which you are removing tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tag keys to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9453,6 +9393,56 @@ pub struct TestEventPatternInput {
     /// </ul>
     pub event: std::option::Option<std::string::String>,
 }
+impl TestEventPatternInput {
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
+    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn event_pattern(&self) -> std::option::Option<&str> {
+        self.event_pattern.as_deref()
+    }
+    /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
+    /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
+    /// fields are mandatory:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>id</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>account</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>source</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>time</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>region</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>resources</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>detail-type</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn event(&self) -> std::option::Option<&str> {
+        self.event.as_deref()
+    }
+}
 impl std::fmt::Debug for TestEventPatternInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestEventPatternInput");
@@ -9470,6 +9460,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the EventBridge resource that you're adding tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of key-value pairs to associate with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9499,6 +9499,35 @@ pub struct StartReplayInput {
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
     /// the replay.</p>
     pub destination: std::option::Option<crate::model::ReplayDestination>,
+}
+impl StartReplayInput {
+    /// <p>The name of the replay to start.</p>
+    pub fn replay_name(&self) -> std::option::Option<&str> {
+        self.replay_name.as_deref()
+    }
+    /// <p>A description for the replay to start.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the archive to replay events from.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
+    /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_start_time.as_ref()
+    }
+    /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
+    /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_end_time.as_ref()
+    }
+    /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
+    /// the replay.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::ReplayDestination> {
+        self.destination.as_ref()
+    }
 }
 impl std::fmt::Debug for StartReplayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9531,6 +9560,29 @@ pub struct RemoveTargetsInput {
     /// field of the response.</p>
     pub force: bool,
 }
+impl RemoveTargetsInput {
+    /// <p>The name of the rule.</p>
+    pub fn rule(&self) -> std::option::Option<&str> {
+        self.rule.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>The IDs of the targets to remove from the rule.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
+    /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
+    /// rules that are not managed rules. You can check whether a rule is a managed rule by using
+    /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
+    /// field of the response.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+}
 impl std::fmt::Debug for RemoveTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTargetsInput");
@@ -9555,6 +9607,22 @@ pub struct RemovePermissionInput {
     /// bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
+impl RemovePermissionInput {
+    /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
+    /// the default event bus.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
+    /// <p>Specifies whether to remove all permissions.</p>
+    pub fn remove_all_permissions(&self) -> bool {
+        self.remove_all_permissions
+    }
+    /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
+    /// bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RemovePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemovePermissionInput");
@@ -9576,6 +9644,21 @@ pub struct PutTargetsInput {
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The targets to update or add to the rule.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
+}
+impl PutTargetsInput {
+    /// <p>The name of the rule.</p>
+    pub fn rule(&self) -> std::option::Option<&str> {
+        self.rule.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>The targets to update or add to the rule.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
 }
 impl std::fmt::Debug for PutTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9613,6 +9696,46 @@ pub struct PutRuleInput {
     /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
     /// default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
+}
+impl PutRuleInput {
+    /// <p>The name of the rule that you are creating or updating.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
+    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn event_pattern(&self) -> std::option::Option<&str> {
+        self.event_pattern.as_deref()
+    }
+    /// <p>Indicates whether the rule is enabled or disabled.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RuleState> {
+        self.state.as_ref()
+    }
+    /// <p>A description of the rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted
+    /// permission to your account through an organization instead of directly by the account ID, you
+    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+    /// structure, instead of here in this parameter.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The list of key-value pairs to associate with the rule.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
+    /// default event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9667,6 +9790,53 @@ pub struct PutPermissionInput {
     /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutPermissionInput {
+    /// <p>The name of the event bus associated with the rule. If you omit this, the default event
+    /// bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>The action that you are enabling the other account to perform.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
+    /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
+    ///
+    /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
+    /// may match undesirable events. To create more secure rules, make sure that the event pattern
+    /// for each rule contains an <code>account</code> field with a specific account ID from which to
+    /// receive events. Rules with an account field do not match any events sent from other
+    /// accounts.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>An identifier string for the external account that you are granting permissions to. If you
+    /// later want to revoke the permission for this external account, specify this
+    /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
+    /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
+    /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
+    /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
+    /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+    /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
+    /// value for <code>Principal</code>, you grant permission to all the accounts in the named
+    /// organization.</p>
+    ///
+    /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
+    /// <code>Key</code>, and <code>Value</code> fields.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+        self.condition.as_ref()
+    }
+    /// <p>A JSON string that describes the permission policy statement. You can include a
+    /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
+    /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPermissionInput");
@@ -9687,6 +9857,12 @@ pub struct PutPartnerEventsInput {
     /// <p>The list of events to write to the event bus.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsRequestEntry>>,
 }
+impl PutPartnerEventsInput {
+    /// <p>The list of events to write to the event bus.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::PutPartnerEventsRequestEntry]> {
+        self.entries.as_deref()
+    }
+}
 impl std::fmt::Debug for PutPartnerEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPartnerEventsInput");
@@ -9703,6 +9879,14 @@ pub struct PutEventsInput {
     /// entry such as the source and type of the event, resources associated with the event, and so
     /// on.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
+}
+impl PutEventsInput {
+    /// <p>The entry that defines an event in your system. You can specify several parameters for the
+    /// entry such as the source and type of the event, resources associated with the event, and so
+    /// on.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::PutEventsRequestEntry]> {
+        self.entries.as_deref()
+    }
 }
 impl std::fmt::Debug for PutEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9726,6 +9910,25 @@ pub struct ListTargetsByRuleInput {
     /// <p>The maximum number of results to return.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListTargetsByRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn rule(&self) -> std::option::Option<&str> {
+        self.rule.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListTargetsByRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTargetsByRuleInput");
@@ -9743,6 +9946,12 @@ impl std::fmt::Debug for ListTargetsByRuleInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the EventBridge resource for which you want to view tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the EventBridge resource for which you want to view tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9765,6 +9974,25 @@ pub struct ListRulesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListRulesInput {
+    /// <p>The prefix matching the rule name.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9790,6 +10018,25 @@ pub struct ListRuleNamesByTargetInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListRuleNamesByTargetInput {
+    /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
+    /// bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListRuleNamesByTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9818,6 +10065,29 @@ pub struct ListReplaysInput {
     /// <p>The maximum number of replays to retrieve.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListReplaysInput {
+    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
+    /// are returned.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The state of the replay.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+        self.state.as_ref()
+    }
+    /// <p>The ARN of the archive from which the events are replayed.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of replays to retrieve.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListReplaysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReplaysInput");
@@ -9845,6 +10115,24 @@ pub struct ListPartnerEventSourcesInput {
     /// results.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListPartnerEventSourcesInput {
+    /// <p>If you specify this, the results are limited to only those partner event sources that
+    /// start with the string you specify.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
+    /// next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>pecifying this limits the number of results returned by this operation. The operation also
+    /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
+    /// results.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListPartnerEventSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPartnerEventSourcesInput");
@@ -9868,6 +10156,23 @@ pub struct ListPartnerEventSourceAccountsInput {
     /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
     /// of results.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListPartnerEventSourceAccountsInput {
+    /// <p>The name of the partner event source to display account information about.</p>
+    pub fn event_source_name(&self) -> std::option::Option<&str> {
+        self.event_source_name.as_deref()
+    }
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
+    /// next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifying this limits the number of results returned by this operation. The operation
+    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
+    /// of results.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListPartnerEventSourceAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9893,6 +10198,23 @@ pub struct ListEventSourcesInput {
     /// of results.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListEventSourcesInput {
+    /// <p>Specifying this limits the results to only those partner event sources with names that
+    /// start with the specified prefix.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifying this limits the number of results returned by this operation. The operation
+    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
+    /// of results.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListEventSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventSourcesInput");
@@ -9917,6 +10239,23 @@ pub struct ListEventBusesInput {
     /// of results.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListEventBusesInput {
+    /// <p>Specifying this limits the results to only those event buses with names that start with
+    /// the specified prefix.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifying this limits the number of results returned by this operation. The operation
+    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
+    /// of results.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListEventBusesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventBusesInput");
@@ -9940,6 +10279,25 @@ pub struct ListConnectionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of connections to return.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListConnectionsInput {
+    /// <p>A name prefix to filter results returned. Only connections with a name that starts with
+    /// the prefix are returned.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The state of the connection.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of connections to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9968,6 +10326,29 @@ pub struct ListArchivesInput {
     /// <p>The maximum number of results to return.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListArchivesInput {
+    /// <p>A name prefix to filter the archives returned. Only archives with name that match the
+    /// prefix are returned.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The ARN of the event source associated with the archive.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The state of the archive.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+        self.state.as_ref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListArchivesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListArchivesInput");
@@ -9994,6 +10375,25 @@ pub struct ListApiDestinationsInput {
     /// <p>The maximum number of API destinations to include in the response.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListApiDestinationsInput {
+    /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
+    /// with the prefix are returned.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The ARN of the connection specified for the API destination.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of API destinations to include in the response.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListApiDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApiDestinationsInput");
@@ -10015,6 +10415,17 @@ pub struct EnableRuleInput {
     /// event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
+impl EnableRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableRuleInput");
@@ -10033,6 +10444,17 @@ pub struct DisableRuleInput {
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
     /// event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
+}
+impl DisableRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10053,6 +10475,17 @@ pub struct DescribeRuleInput {
     /// event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
+impl DescribeRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRuleInput");
@@ -10069,6 +10502,12 @@ pub struct DescribeReplayInput {
     /// <p>The name of the replay to retrieve.</p>
     pub replay_name: std::option::Option<std::string::String>,
 }
+impl DescribeReplayInput {
+    /// <p>The name of the replay to retrieve.</p>
+    pub fn replay_name(&self) -> std::option::Option<&str> {
+        self.replay_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplayInput");
@@ -10084,6 +10523,12 @@ pub struct DescribePartnerEventSourceInput {
     /// <p>The name of the event source to display.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DescribePartnerEventSourceInput {
+    /// <p>The name of the event source to display.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePartnerEventSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePartnerEventSourceInput");
@@ -10098,6 +10543,12 @@ impl std::fmt::Debug for DescribePartnerEventSourceInput {
 pub struct DescribeEventSourceInput {
     /// <p>The name of the partner event source to display the details of.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeEventSourceInput {
+    /// <p>The name of the partner event source to display the details of.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10115,6 +10566,13 @@ pub struct DescribeEventBusInput {
     /// bus is displayed.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DescribeEventBusInput {
+    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
+    /// bus is displayed.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventBusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventBusInput");
@@ -10129,6 +10587,12 @@ impl std::fmt::Debug for DescribeEventBusInput {
 pub struct DescribeConnectionInput {
     /// <p>The name of the connection to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeConnectionInput {
+    /// <p>The name of the connection to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10145,6 +10609,12 @@ pub struct DescribeArchiveInput {
     /// <p>The name of the archive to retrieve.</p>
     pub archive_name: std::option::Option<std::string::String>,
 }
+impl DescribeArchiveInput {
+    /// <p>The name of the archive to retrieve.</p>
+    pub fn archive_name(&self) -> std::option::Option<&str> {
+        self.archive_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeArchiveInput");
@@ -10159,6 +10629,12 @@ impl std::fmt::Debug for DescribeArchiveInput {
 pub struct DescribeApiDestinationInput {
     /// <p>The name of the API destination to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeApiDestinationInput {
+    /// <p>The name of the API destination to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeApiDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10184,6 +10660,25 @@ pub struct DeleteRuleInput {
     /// field of the response.</p>
     pub force: bool,
 }
+impl DeleteRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
+    /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
+    /// rules that are not managed rules. You can check whether a rule is a managed rule by using
+    /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
+    /// field of the response.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+}
 impl std::fmt::Debug for DeleteRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRuleInput");
@@ -10203,6 +10698,16 @@ pub struct DeletePartnerEventSourceInput {
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub account: std::option::Option<std::string::String>,
 }
+impl DeletePartnerEventSourceInput {
+    /// <p>The name of the event source to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePartnerEventSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePartnerEventSourceInput");
@@ -10219,6 +10724,12 @@ pub struct DeleteEventBusInput {
     /// <p>The name of the event bus to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteEventBusInput {
+    /// <p>The name of the event bus to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventBusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventBusInput");
@@ -10233,6 +10744,12 @@ impl std::fmt::Debug for DeleteEventBusInput {
 pub struct DeleteConnectionInput {
     /// <p>The name of the connection to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteConnectionInput {
+    /// <p>The name of the connection to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10249,6 +10766,12 @@ pub struct DeleteArchiveInput {
     /// <p>The name of the archive to delete.</p>
     pub archive_name: std::option::Option<std::string::String>,
 }
+impl DeleteArchiveInput {
+    /// <p>The name of the archive to delete.</p>
+    pub fn archive_name(&self) -> std::option::Option<&str> {
+        self.archive_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteArchiveInput");
@@ -10263,6 +10786,12 @@ impl std::fmt::Debug for DeleteArchiveInput {
 pub struct DeleteApiDestinationInput {
     /// <p>The name of the destination to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteApiDestinationInput {
+    /// <p>The name of the destination to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApiDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10279,6 +10808,12 @@ pub struct DeauthorizeConnectionInput {
     /// <p>The name of the connection to remove authorization from.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeauthorizeConnectionInput {
+    /// <p>The name of the connection to remove authorization from.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeauthorizeConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeauthorizeConnectionInput");
@@ -10293,6 +10828,12 @@ impl std::fmt::Debug for DeauthorizeConnectionInput {
 pub struct DeactivateEventSourceInput {
     /// <p>The name of the partner event source to deactivate.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeactivateEventSourceInput {
+    /// <p>The name of the partner event source to deactivate.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeactivateEventSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10316,6 +10857,22 @@ pub struct CreatePartnerEventSourceInput {
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
     /// partner event source.</p>
     pub account: std::option::Option<std::string::String>,
+}
+impl CreatePartnerEventSourceInput {
+    /// <p>The name of the partner event source. This name must be unique and must be in the format
+    /// <code>
+    /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
+    /// </code>.
+    /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
+    /// with a name that matches the name of the partner event source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
+    /// partner event source.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePartnerEventSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10343,6 +10900,26 @@ pub struct CreateEventBusInput {
     /// <p>Tags to associate with the event bus.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateEventBusInput {
+    /// <p>The name of the new event bus. </p>
+    /// <p>Event bus names cannot contain the / character. You can't use the name
+    /// <code>default</code> for a custom event bus, as this name is already used for your account's
+    /// default event bus.</p>
+    /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
+    /// source that this event bus is matched to.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If you are creating a partner event bus, this specifies the partner event source that the
+    /// new event bus will be matched with.</p>
+    pub fn event_source_name(&self) -> std::option::Option<&str> {
+        self.event_source_name.as_deref()
+    }
+    /// <p>Tags to associate with the event bus.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEventBusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventBusInput");
@@ -10366,6 +10943,29 @@ pub struct CreateConnectionInput {
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
     /// authorization parameters to use to authorize with the endpoint. </p>
     pub auth_parameters: std::option::Option<crate::model::CreateConnectionAuthRequestParameters>,
+}
+impl CreateConnectionInput {
+    /// <p>The name for the connection to create.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the connection to create.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of authorization to use for the connection.</p>
+    pub fn authorization_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionAuthorizationType> {
+        self.authorization_type.as_ref()
+    }
+    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
+    /// authorization parameters to use to authorize with the endpoint. </p>
+    pub fn auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateConnectionAuthRequestParameters> {
+        self.auth_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10393,6 +10993,29 @@ pub struct CreateArchiveInput {
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
     /// retained indefinitely</p>
     pub retention_days: std::option::Option<i32>,
+}
+impl CreateArchiveInput {
+    /// <p>The name for the archive to create.</p>
+    pub fn archive_name(&self) -> std::option::Option<&str> {
+        self.archive_name.as_deref()
+    }
+    /// <p>The ARN of the event bus that sends events to the archive.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>A description for the archive.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An event pattern to use to filter events sent to the archive.</p>
+    pub fn event_pattern(&self) -> std::option::Option<&str> {
+        self.event_pattern.as_deref()
+    }
+    /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
+    /// retained indefinitely</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
 }
 impl std::fmt::Debug for CreateArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10424,6 +11047,33 @@ pub struct CreateApiDestinationInput {
     /// <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
 }
+impl CreateApiDestinationInput {
+    /// <p>The name for the API destination to create.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the API destination to create.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
+    /// support the authorization type specified for the connection.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
+    pub fn invocation_endpoint(&self) -> std::option::Option<&str> {
+        self.invocation_endpoint.as_deref()
+    }
+    /// <p>The method to use for the request to the HTTP invocation endpoint.</p>
+    pub fn http_method(&self) -> std::option::Option<&crate::model::ApiDestinationHttpMethod> {
+        self.http_method.as_ref()
+    }
+    /// <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
+    pub fn invocation_rate_limit_per_second(&self) -> std::option::Option<i32> {
+        self.invocation_rate_limit_per_second
+    }
+}
 impl std::fmt::Debug for CreateApiDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApiDestinationInput");
@@ -10447,6 +11097,12 @@ pub struct CancelReplayInput {
     /// <p>The name of the replay to cancel.</p>
     pub replay_name: std::option::Option<std::string::String>,
 }
+impl CancelReplayInput {
+    /// <p>The name of the replay to cancel.</p>
+    pub fn replay_name(&self) -> std::option::Option<&str> {
+        self.replay_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelReplayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelReplayInput");
@@ -10461,6 +11117,12 @@ impl std::fmt::Debug for CancelReplayInput {
 pub struct ActivateEventSourceInput {
     /// <p>The name of the partner event source to activate.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl ActivateEventSourceInput {
+    /// <p>The name of the partner event source to activate.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for ActivateEventSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

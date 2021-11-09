@@ -40,6 +40,20 @@ pub struct UpdateAppOutput {
     /// <p>The tags associated with the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UpdateAppOutput {
+    /// <p>A summary description of the application.</p>
+    pub fn app_summary(&self) -> std::option::Option<&crate::model::AppSummary> {
+        self.app_summary.as_ref()
+    }
+    /// <p>The updated server groups in the application.</p>
+    pub fn server_groups(&self) -> std::option::Option<&[crate::model::ServerGroup]> {
+        self.server_groups.as_deref()
+    }
+    /// <p>The tags associated with the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppOutput");
@@ -194,6 +208,12 @@ impl StopAppReplicationOutput {
 pub struct StartOnDemandReplicationRunOutput {
     /// <p>The ID of the replication run.</p>
     pub replication_run_id: std::option::Option<std::string::String>,
+}
+impl StartOnDemandReplicationRunOutput {
+    /// <p>The ID of the replication run.</p>
+    pub fn replication_run_id(&self) -> std::option::Option<&str> {
+        self.replication_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartOnDemandReplicationRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -429,6 +449,17 @@ pub struct ListAppsOutput {
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppsOutput {
+    /// <p>The application summaries.</p>
+    pub fn apps(&self) -> std::option::Option<&[crate::model::AppSummary]> {
+        self.apps.as_deref()
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppsOutput");
@@ -598,6 +629,25 @@ pub struct GetServersOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetServersOutput {
+    /// <p>The time when the server was last modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>The status of the server catalog.</p>
+    pub fn server_catalog_status(&self) -> std::option::Option<&crate::model::ServerCatalogStatus> {
+        self.server_catalog_status.as_ref()
+    }
+    /// <p>Information about the servers.</p>
+    pub fn server_list(&self) -> std::option::Option<&[crate::model::Server]> {
+        self.server_list.as_deref()
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServersOutput");
@@ -707,6 +757,21 @@ pub struct GetReplicationRunsOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetReplicationRunsOutput {
+    /// <p>Information about the replication job.</p>
+    pub fn replication_job(&self) -> std::option::Option<&crate::model::ReplicationJob> {
+        self.replication_job.as_ref()
+    }
+    /// <p>Information about the replication runs.</p>
+    pub fn replication_run_list(&self) -> std::option::Option<&[crate::model::ReplicationRun]> {
+        self.replication_run_list.as_deref()
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReplicationRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationRunsOutput");
@@ -802,6 +867,17 @@ pub struct GetReplicationJobsOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetReplicationJobsOutput {
+    /// <p>Information about the replication jobs.</p>
+    pub fn replication_job_list(&self) -> std::option::Option<&[crate::model::ReplicationJob]> {
+        self.replication_job_list.as_deref()
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReplicationJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationJobsOutput");
@@ -881,6 +957,17 @@ pub struct GetConnectorsOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetConnectorsOutput {
+    /// <p>Information about the registered connectors.</p>
+    pub fn connector_list(&self) -> std::option::Option<&[crate::model::Connector]> {
+        self.connector_list.as_deref()
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectorsOutput");
@@ -953,6 +1040,12 @@ pub struct GetAppValidationOutputOutput {
     /// <p>The validation output.</p>
     pub validation_output_list: std::option::Option<std::vec::Vec<crate::model::ValidationOutput>>,
 }
+impl GetAppValidationOutputOutput {
+    /// <p>The validation output.</p>
+    pub fn validation_output_list(&self) -> std::option::Option<&[crate::model::ValidationOutput]> {
+        self.validation_output_list.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppValidationOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppValidationOutputOutput");
@@ -1017,6 +1110,20 @@ pub struct GetAppValidationConfigurationOutput {
     /// <p>The configuration for instance validation.</p>
     pub server_group_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupValidationConfiguration>>,
+}
+impl GetAppValidationConfigurationOutput {
+    /// <p>The configuration for application validation.</p>
+    pub fn app_validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppValidationConfiguration]> {
+        self.app_validation_configurations.as_deref()
+    }
+    /// <p>The configuration for instance validation.</p>
+    pub fn server_group_validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerGroupValidationConfiguration]> {
+        self.server_group_validation_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppValidationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1116,6 +1223,14 @@ pub struct GetAppReplicationConfigurationOutput {
     pub server_group_replication_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupReplicationConfiguration>>,
 }
+impl GetAppReplicationConfigurationOutput {
+    /// <p>The replication configurations associated with server groups in this application.</p>
+    pub fn server_group_replication_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerGroupReplicationConfiguration]> {
+        self.server_group_replication_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppReplicationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppReplicationConfigurationOutput");
@@ -1192,6 +1307,27 @@ pub struct GetAppLaunchConfigurationOutput {
     /// <p>The launch configurations for server groups in this application.</p>
     pub server_group_launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupLaunchConfiguration>>,
+}
+impl GetAppLaunchConfigurationOutput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the
+    /// application.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    pub fn auto_launch(&self) -> std::option::Option<bool> {
+        self.auto_launch
+    }
+    /// <p>The launch configurations for server groups in this application.</p>
+    pub fn server_group_launch_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerGroupLaunchConfiguration]> {
+        self.server_group_launch_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppLaunchConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1302,6 +1438,20 @@ pub struct GetAppOutput {
     /// <p>The tags associated with the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl GetAppOutput {
+    /// <p>Information about the application.</p>
+    pub fn app_summary(&self) -> std::option::Option<&crate::model::AppSummary> {
+        self.app_summary.as_ref()
+    }
+    /// <p>The server groups that belong to the application.</p>
+    pub fn server_groups(&self) -> std::option::Option<&[crate::model::ServerGroup]> {
+        self.server_groups.as_deref()
+    }
+    /// <p>The tags associated with the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppOutput");
@@ -1397,6 +1547,12 @@ pub struct GenerateTemplateOutput {
     /// <p>The location of the Amazon S3 object.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl GenerateTemplateOutput {
+    /// <p>The location of the Amazon S3 object.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for GenerateTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateTemplateOutput");
@@ -1447,6 +1603,12 @@ impl GenerateTemplateOutput {
 pub struct GenerateChangeSetOutput {
     /// <p>The location of the Amazon S3 object.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
+}
+impl GenerateChangeSetOutput {
+    /// <p>The location of the Amazon S3 object.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateChangeSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1709,6 +1871,12 @@ pub struct CreateReplicationJobOutput {
     /// <p>The unique identifier of the replication job.</p>
     pub replication_job_id: std::option::Option<std::string::String>,
 }
+impl CreateReplicationJobOutput {
+    /// <p>The unique identifier of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationJobOutput");
@@ -1763,6 +1931,20 @@ pub struct CreateAppOutput {
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
     /// <p>The tags associated with the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateAppOutput {
+    /// <p>A summary description of the application.</p>
+    pub fn app_summary(&self) -> std::option::Option<&crate::model::AppSummary> {
+        self.app_summary.as_ref()
+    }
+    /// <p>The server groups included in the application.</p>
+    pub fn server_groups(&self) -> std::option::Option<&[crate::model::ServerGroup]> {
+        self.server_groups.as_deref()
+    }
+    /// <p>The tags associated with the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

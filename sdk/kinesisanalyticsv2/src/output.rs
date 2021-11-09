@@ -9,6 +9,19 @@ pub struct UpdateApplicationMaintenanceConfigurationOutput {
     pub application_maintenance_configuration_description:
         std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>,
 }
+impl UpdateApplicationMaintenanceConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The application maintenance configuration description after the update.</p>
+    pub fn application_maintenance_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationMaintenanceConfigurationDescription> {
+        self.application_maintenance_configuration_description
+            .as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationMaintenanceConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationMaintenanceConfigurationOutput");
@@ -86,6 +99,12 @@ impl UpdateApplicationMaintenanceConfigurationOutput {
 pub struct UpdateApplicationOutput {
     /// <p>Describes application updates.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
+}
+impl UpdateApplicationOutput {
+    /// <p>Describes application updates.</p>
+    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+        self.application_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -259,6 +278,13 @@ pub struct RollbackApplicationOutput {
     /// latest version, and input and output configurations.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
+impl RollbackApplicationOutput {
+    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
+    /// latest version, and input and output configurations.</p>
+    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+        self.application_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for RollbackApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RollbackApplicationOutput");
@@ -311,6 +337,12 @@ impl RollbackApplicationOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The key-value tags assigned to the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The key-value tags assigned to the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,6 +404,21 @@ pub struct ListApplicationVersionsOutput {
     /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
     /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationVersionsOutput {
+    /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
+    /// <p>To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a> operation.</p>
+    pub fn application_version_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationVersionSummary]> {
+        self.application_version_summaries.as_deref()
+    }
+    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
+    /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -458,6 +505,16 @@ pub struct ListApplicationSnapshotsOutput {
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationSnapshotsOutput {
+    /// <p>A collection of objects containing information about the application snapshots.</p>
+    pub fn snapshot_summaries(&self) -> std::option::Option<&[crate::model::SnapshotDetails]> {
+        self.snapshot_summaries.as_deref()
+    }
+    /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationSnapshotsOutput");
@@ -536,6 +593,21 @@ pub struct ListApplicationsOutput {
     /// For more information about pagination, see
     /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsOutput {
+    /// <p>A list of <code>ApplicationSummary</code> objects.</p>
+    pub fn application_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+        self.application_summaries.as_deref()
+    }
+    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
+    /// Pass this token into a subsequent command to retrieve the next set of items
+    /// For more information about pagination, see
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -627,6 +699,30 @@ pub struct DiscoverInputSchemaOutput {
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The raw stream data that was sampled to infer the schema.</p>
     pub raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DiscoverInputSchemaOutput {
+    /// <p>The schema inferred from the streaming source. It identifies the format of the data in the
+    /// streaming source and how each data element maps to corresponding columns in the in-application
+    /// stream that you can create.</p>
+    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.input_schema.as_ref()
+    }
+    /// <p>An array of elements, where each element corresponds to a row in a stream record
+    /// (a stream record can have more than one row).</p>
+    pub fn parsed_input_records(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.parsed_input_records.as_deref()
+    }
+    /// <p>The stream data that was modified by the processor specified in the
+    /// <code>InputProcessingConfiguration</code> parameter.</p>
+    pub fn processed_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.processed_input_records.as_deref()
+    }
+    /// <p>The raw stream data that was sampled to infer the schema.</p>
+    pub fn raw_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.raw_input_records.as_deref()
+    }
 }
 impl std::fmt::Debug for DiscoverInputSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -758,6 +854,15 @@ pub struct DescribeApplicationVersionOutput {
     /// latest version, and input and output configurations.</p>
     pub application_version_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
+impl DescribeApplicationVersionOutput {
+    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
+    /// latest version, and input and output configurations.</p>
+    pub fn application_version_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationDetail> {
+        self.application_version_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationVersionOutput");
@@ -817,6 +922,12 @@ pub struct DescribeApplicationSnapshotOutput {
     /// <p>An object containing information about the application snapshot.</p>
     pub snapshot_details: std::option::Option<crate::model::SnapshotDetails>,
 }
+impl DescribeApplicationSnapshotOutput {
+    /// <p>An object containing information about the application snapshot.</p>
+    pub fn snapshot_details(&self) -> std::option::Option<&crate::model::SnapshotDetails> {
+        self.snapshot_details.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationSnapshotOutput");
@@ -868,6 +979,13 @@ pub struct DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name
     /// (ARN), status, and latest version.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
+}
+impl DescribeApplicationOutput {
+    /// <p>Provides a description of the application, such as the application's Amazon Resource Name
+    /// (ARN), status, and latest version.</p>
+    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+        self.application_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,6 +1041,16 @@ pub struct DeleteApplicationVpcConfigurationOutput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The updated version ID of the application.</p>
     pub application_version_id: std::option::Option<i64>,
+}
+impl DeleteApplicationVpcConfigurationOutput {
+    /// <p>The ARN of the Kinesis Data Analytics application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The updated version ID of the application.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
 }
 impl std::fmt::Debug for DeleteApplicationVpcConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1020,6 +1148,16 @@ pub struct DeleteApplicationReferenceDataSourceOutput {
     /// <p>The updated version ID of the application.</p>
     pub application_version_id: std::option::Option<i64>,
 }
+impl DeleteApplicationReferenceDataSourceOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The updated version ID of the application.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+}
 impl std::fmt::Debug for DeleteApplicationReferenceDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApplicationReferenceDataSourceOutput");
@@ -1086,6 +1224,16 @@ pub struct DeleteApplicationOutputOutput {
     /// <p>The current application version ID.</p>
     pub application_version_id: std::option::Option<i64>,
 }
+impl DeleteApplicationOutputOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The current application version ID.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+}
 impl std::fmt::Debug for DeleteApplicationOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApplicationOutputOutput");
@@ -1151,6 +1299,16 @@ pub struct DeleteApplicationInputProcessingConfigurationOutput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The current application version ID.</p>
     pub application_version_id: std::option::Option<i64>,
+}
+impl DeleteApplicationInputProcessingConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The current application version ID.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1223,6 +1381,24 @@ pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     pub cloud_watch_logging_option_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
+}
+impl DeleteApplicationCloudWatchLoggingOptionOutput {
+    /// <p>The application's Amazon Resource Name (ARN).</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The version ID of the application. Kinesis Data Analytics updates the
+    /// <code>ApplicationVersionId</code> each time you change the CloudWatch logging
+    /// options.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
+    pub fn cloud_watch_logging_option_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionDescription]> {
+        self.cloud_watch_logging_option_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1387,6 +1563,12 @@ pub struct CreateApplicationPresignedUrlOutput {
     /// <p>The URL of the extension.</p>
     pub authorized_url: std::option::Option<std::string::String>,
 }
+impl CreateApplicationPresignedUrlOutput {
+    /// <p>The URL of the extension.</p>
+    pub fn authorized_url(&self) -> std::option::Option<&str> {
+        self.authorized_url.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationPresignedUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationPresignedUrlOutput");
@@ -1438,6 +1620,13 @@ pub struct CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a
     /// response with details of the application it created.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
+}
+impl CreateApplicationOutput {
+    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a
+    /// response with details of the application it created.</p>
+    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+        self.application_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1497,6 +1686,23 @@ pub struct AddApplicationVpcConfigurationOutput {
     /// <p>The parameters of the new VPC configuration.</p>
     pub vpc_configuration_description:
         std::option::Option<crate::model::VpcConfigurationDescription>,
+}
+impl AddApplicationVpcConfigurationOutput {
+    /// <p>The ARN of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
+    /// time you update the application.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The parameters of the new VPC configuration.</p>
+    pub fn vpc_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcConfigurationDescription> {
+        self.vpc_configuration_description.as_ref()
+    }
 }
 impl std::fmt::Debug for AddApplicationVpcConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1596,6 +1802,27 @@ pub struct AddApplicationReferenceDataSourceOutput {
     /// </p>
     pub reference_data_source_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
+}
+impl AddApplicationReferenceDataSourceOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when
+    /// the application is updated.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>Describes reference data sources configured for the application.
+    ///
+    ///
+    ///
+    /// </p>
+    pub fn reference_data_source_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReferenceDataSourceDescription]> {
+        self.reference_data_source_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for AddApplicationReferenceDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1709,6 +1936,25 @@ pub struct AddApplicationOutputOutput {
     /// </p>
     pub output_descriptions: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
 }
+impl AddApplicationOutputOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is
+    /// updated.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>Describes the application output configuration.
+    /// For more information,
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
+    ///
+    /// </p>
+    pub fn output_descriptions(&self) -> std::option::Option<&[crate::model::OutputDescription]> {
+        self.output_descriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for AddApplicationOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddApplicationOutputOutput");
@@ -1817,6 +2063,28 @@ pub struct AddApplicationInputProcessingConfigurationOutput {
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
     pub input_processing_configuration_description:
         std::option::Option<crate::model::InputProcessingConfigurationDescription>,
+}
+impl AddApplicationInputProcessingConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>Provides the current application version. </p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns
+    /// to each input configuration that you add to your
+    /// application.</p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
+    pub fn input_processing_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfigurationDescription> {
+        self.input_processing_configuration_description.as_ref()
+    }
 }
 impl std::fmt::Debug for AddApplicationInputProcessingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1931,6 +2199,23 @@ pub struct AddApplicationInputOutput {
     /// </p>
     pub input_descriptions: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
 }
+impl AddApplicationInputOutput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>Provides the current application version.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>Describes the application input configuration.
+    ///
+    ///
+    /// </p>
+    pub fn input_descriptions(&self) -> std::option::Option<&[crate::model::InputDescription]> {
+        self.input_descriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for AddApplicationInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddApplicationInputOutput");
@@ -2033,6 +2318,24 @@ pub struct AddApplicationCloudWatchLoggingOptionOutput {
     /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
     pub cloud_watch_logging_option_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
+}
+impl AddApplicationCloudWatchLoggingOptionOutput {
+    /// <p>The application's ARN.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
+    /// updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging
+    /// options. </p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    pub fn cloud_watch_logging_option_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionDescription]> {
+        self.cloud_watch_logging_option_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for AddApplicationCloudWatchLoggingOptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

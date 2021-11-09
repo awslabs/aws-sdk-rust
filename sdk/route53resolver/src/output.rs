@@ -6,6 +6,12 @@ pub struct UpdateResolverRuleOutput {
     /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
+impl UpdateResolverRuleOutput {
+    /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
+    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+        self.resolver_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResolverRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResolverRuleOutput");
@@ -56,6 +62,12 @@ impl UpdateResolverRuleOutput {
 pub struct UpdateResolverEndpointOutput {
     /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+}
+impl UpdateResolverEndpointOutput {
+    /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
+    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+        self.resolver_endpoint.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResolverEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +120,14 @@ pub struct UpdateResolverDnssecConfigOutput {
     /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
 }
+impl UpdateResolverDnssecConfigOutput {
+    /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
+    pub fn resolver_dnssec_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverDnssecConfig> {
+        self.resolver_dnssec_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResolverDnssecConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResolverDnssecConfigOutput");
@@ -158,6 +178,12 @@ impl UpdateResolverDnssecConfigOutput {
 pub struct UpdateResolverConfigOutput {
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
+}
+impl UpdateResolverConfigOutput {
+    /// <p>An array that contains settings for the specified Resolver configuration.</p>
+    pub fn resolver_config(&self) -> std::option::Option<&crate::model::ResolverConfig> {
+        self.resolver_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResolverConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -210,6 +236,14 @@ pub struct UpdateFirewallRuleGroupAssociationOutput {
     /// <p>The association that you just updated. </p>
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+}
+impl UpdateFirewallRuleGroupAssociationOutput {
+    /// <p>The association that you just updated. </p>
+    pub fn firewall_rule_group_association(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+        self.firewall_rule_group_association.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallRuleGroupAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -269,6 +303,12 @@ pub struct UpdateFirewallRuleOutput {
     /// <p>The firewall rule that you just updated. </p>
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
+impl UpdateFirewallRuleOutput {
+    /// <p>The firewall rule that you just updated. </p>
+    pub fn firewall_rule(&self) -> std::option::Option<&crate::model::FirewallRule> {
+        self.firewall_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFirewallRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallRuleOutput");
@@ -325,6 +365,24 @@ pub struct UpdateFirewallDomainsOutput {
     pub status: std::option::Option<crate::model::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl UpdateFirewallDomainsOutput {
+    /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the domain list. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FirewallDomainListStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the status of the list, if available.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -418,6 +476,12 @@ impl UpdateFirewallDomainsOutput {
 pub struct UpdateFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
+}
+impl UpdateFirewallConfigOutput {
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
+    pub fn firewall_config(&self) -> std::option::Option<&crate::model::FirewallConfig> {
+        self.firewall_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -530,6 +594,12 @@ pub struct PutResolverRulePolicyOutput {
     /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
     pub return_value: bool,
 }
+impl PutResolverRulePolicyOutput {
+    /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
+    pub fn return_value(&self) -> bool {
+        self.return_value
+    }
+}
 impl std::fmt::Debug for PutResolverRulePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResolverRulePolicyOutput");
@@ -578,6 +648,12 @@ pub struct PutResolverQueryLogConfigPolicyOutput {
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
     pub return_value: bool,
 }
+impl PutResolverQueryLogConfigPolicyOutput {
+    /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
+    pub fn return_value(&self) -> bool {
+        self.return_value
+    }
+}
 impl std::fmt::Debug for PutResolverQueryLogConfigPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResolverQueryLogConfigPolicyOutput");
@@ -625,6 +701,12 @@ impl PutResolverQueryLogConfigPolicyOutput {
 pub struct PutFirewallRuleGroupPolicyOutput {
     /// <p></p>
     pub return_value: bool,
+}
+impl PutFirewallRuleGroupPolicyOutput {
+    /// <p></p>
+    pub fn return_value(&self) -> bool {
+        self.return_value
+    }
 }
 impl std::fmt::Debug for PutFirewallRuleGroupPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +759,18 @@ pub struct ListTagsForResourceOutput {
     /// <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of
     /// <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another
+    /// <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of
+    /// <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -757,6 +851,22 @@ pub struct ListResolverRulesOutput {
     pub max_results: std::option::Option<i32>,
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
     pub resolver_rules: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
+}
+impl ListResolverRulesOutput {
+    /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
+    /// <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of
+    /// <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
+    pub fn resolver_rules(&self) -> std::option::Option<&[crate::model::ResolverRule]> {
+        self.resolver_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolverRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -852,6 +962,25 @@ pub struct ListResolverRuleAssociationsOutput {
     /// specified filters, if any.</p>
     pub resolver_rule_associations:
         std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
+}
+impl ListResolverRuleAssociationsOutput {
+    /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another
+    /// <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of
+    /// <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the
+    /// specified filters, if any.</p>
+    pub fn resolver_rule_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResolverRuleAssociation]> {
+        self.resolver_rule_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolverRuleAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -961,6 +1090,32 @@ pub struct ListResolverQueryLogConfigsOutput {
     /// values that you specified for <code>Filter</code>.</p>
     pub resolver_query_log_configs:
         std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
+}
+impl ListResolverQueryLogConfigsOutput {
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request
+    /// to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the
+    /// number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify
+    /// in the request.</p>
+    pub fn total_count(&self) -> i32 {
+        self.total_count
+    }
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters
+    /// that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the
+    /// current account in the specified Region, see <code>TotalCount</code>.</p>
+    pub fn total_filtered_count(&self) -> i32 {
+        self.total_filtered_count
+    }
+    /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the
+    /// values that you specified for <code>Filter</code>.</p>
+    pub fn resolver_query_log_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResolverQueryLogConfig]> {
+        self.resolver_query_log_configs.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolverQueryLogConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1090,6 +1245,32 @@ pub struct ListResolverQueryLogConfigAssociationsOutput {
     pub resolver_query_log_config_associations:
         std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
 }
+impl ListResolverQueryLogConfigAssociationsOutput {
+    /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request
+    /// to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the
+    /// number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify
+    /// in the request.</p>
+    pub fn total_count(&self) -> i32 {
+        self.total_count
+    }
+    /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters
+    /// that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the
+    /// current account in the specified Region, see <code>TotalCount</code>.</p>
+    pub fn total_filtered_count(&self) -> i32 {
+        self.total_filtered_count
+    }
+    /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the
+    /// values that you specified for <code>Filter</code>.</p>
+    pub fn resolver_query_log_config_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResolverQueryLogConfigAssociation]> {
+        self.resolver_query_log_config_associations.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResolverQueryLogConfigAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverQueryLogConfigAssociationsOutput");
@@ -1214,6 +1395,21 @@ pub struct ListResolverEndpointsOutput {
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     pub resolver_endpoints: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
 }
+impl ListResolverEndpointsOutput {
+    /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request
+    /// to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
+    pub fn resolver_endpoints(&self) -> std::option::Option<&[crate::model::ResolverEndpoint]> {
+        self.resolver_endpoints.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResolverEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverEndpointsOutput");
@@ -1309,6 +1505,23 @@ pub struct ListResolverEndpointIpAddressesOutput {
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
     /// DNS queries to (for inbound endpoints).</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
+}
+impl ListResolverEndpointIpAddressesOutput {
+    /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
+    /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
+    /// specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
+    /// DNS queries to (for inbound endpoints).</p>
+    pub fn ip_addresses(&self) -> std::option::Option<&[crate::model::IpAddressResponse]> {
+        self.ip_addresses.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolverEndpointIpAddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1410,6 +1623,25 @@ pub struct ListResolverDnssecConfigsOutput {
     pub resolver_dnssec_configs:
         std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
 }
+impl ListResolverDnssecConfigsOutput {
+    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account,
+    /// <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
+    /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
+    /// <code>NextToken</code> in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array that contains one
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element
+    /// for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    pub fn resolver_dnssec_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResolverDnssecConfig]> {
+        self.resolver_dnssec_configs.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResolverDnssecConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverDnssecConfigsOutput");
@@ -1507,6 +1739,23 @@ pub struct ListResolverConfigsOutput {
     /// with the current Amazon Web Services account.</p>
     pub resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
 }
+impl ListResolverConfigsOutput {
+    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
+    /// <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
+    /// <code>ListResolverConfigs</code> request.
+    /// Get the value of <code>NextToken</code> that Amazon Route 53
+    /// returned in the previous response and include it in
+    /// <code>NextToken</code> in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
+    /// with the current Amazon Web Services account.</p>
+    pub fn resolver_configs(&self) -> std::option::Option<&[crate::model::ResolverConfig]> {
+        self.resolver_configs.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResolverConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverConfigsOutput");
@@ -1597,6 +1846,19 @@ pub struct ListFirewallRulesOutput {
     /// see <code>MaxResults</code>. </p>
     pub firewall_rules: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
 }
+impl ListFirewallRulesOutput {
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
+    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of the rules that you have defined.  </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information,
+    /// see <code>MaxResults</code>. </p>
+    pub fn firewall_rules(&self) -> std::option::Option<&[crate::model::FirewallRule]> {
+        self.firewall_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallRulesOutput");
@@ -1677,6 +1939,20 @@ pub struct ListFirewallRuleGroupsOutput {
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
     pub firewall_rule_groups:
         std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
+}
+impl ListFirewallRuleGroupsOutput {
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
+    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of your firewall rule groups.</p>
+    /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    pub fn firewall_rule_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::FirewallRuleGroupMetadata]> {
+        self.firewall_rule_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFirewallRuleGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1760,6 +2036,20 @@ pub struct ListFirewallRuleGroupAssociationsOutput {
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
     pub firewall_rule_group_associations:
         std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
+}
+impl ListFirewallRuleGroupAssociationsOutput {
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
+    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of your firewall rule group associations.</p>
+    /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
+    pub fn firewall_rule_group_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FirewallRuleGroupAssociation]> {
+        self.firewall_rule_group_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFirewallRuleGroupAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1847,6 +2137,19 @@ pub struct ListFirewallDomainsOutput {
     /// information, see <code>MaxResults</code>. </p>
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListFirewallDomainsOutput {
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
+    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of the domains in the firewall domain list.  </p>
+    /// <p>This might be a partial list of the domains that you've defined in the domain list. For
+    /// information, see <code>MaxResults</code>. </p>
+    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.domains.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallDomainsOutput");
@@ -1928,6 +2231,21 @@ pub struct ListFirewallDomainListsOutput {
     /// see <code>MaxResults</code>. </p>
     pub firewall_domain_lists:
         std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
+}
+impl ListFirewallDomainListsOutput {
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
+    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of the domain lists that you have defined.   </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information,
+    /// see <code>MaxResults</code>. </p>
+    pub fn firewall_domain_lists(
+        &self,
+    ) -> std::option::Option<&[crate::model::FirewallDomainListMetadata]> {
+        self.firewall_domain_lists.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFirewallDomainListsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2013,6 +2331,18 @@ pub struct ListFirewallConfigsOutput {
     /// Amazon Virtual Private Cloud (Amazon VPC). </p>
     pub firewall_configs: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
 }
+impl ListFirewallConfigsOutput {
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
+    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from
+    /// Amazon Virtual Private Cloud (Amazon VPC). </p>
+    pub fn firewall_configs(&self) -> std::option::Option<&[crate::model::FirewallConfig]> {
+        self.firewall_configs.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallConfigsOutput");
@@ -2093,6 +2423,24 @@ pub struct ImportFirewallDomainsOutput {
     pub status: std::option::Option<crate::model::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl ImportFirewallDomainsOutput {
+    /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the domain list. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FirewallDomainListStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the status of the list, if available.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportFirewallDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2187,6 +2535,12 @@ pub struct GetResolverRulePolicyOutput {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
     pub resolver_rule_policy: std::option::Option<std::string::String>,
 }
+impl GetResolverRulePolicyOutput {
+    /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
+    pub fn resolver_rule_policy(&self) -> std::option::Option<&str> {
+        self.resolver_rule_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResolverRulePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverRulePolicyOutput");
@@ -2237,6 +2591,14 @@ impl GetResolverRulePolicyOutput {
 pub struct GetResolverRuleAssociationOutput {
     /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+}
+impl GetResolverRuleAssociationOutput {
+    /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
+    pub fn resolver_rule_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverRuleAssociation> {
+        self.resolver_rule_association.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResolverRuleAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2293,6 +2655,12 @@ pub struct GetResolverRuleOutput {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
+impl GetResolverRuleOutput {
+    /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
+    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+        self.resolver_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResolverRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverRuleOutput");
@@ -2344,6 +2712,13 @@ pub struct GetResolverQueryLogConfigPolicyOutput {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a
     /// <code>GetResolverQueryLogConfigPolicy</code> request.</p>
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
+}
+impl GetResolverQueryLogConfigPolicyOutput {
+    /// <p>Information about the query logging policy for the query logging configuration that you specified in a
+    /// <code>GetResolverQueryLogConfigPolicy</code> request.</p>
+    pub fn resolver_query_log_config_policy(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResolverQueryLogConfigPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2405,6 +2780,14 @@ pub struct GetResolverQueryLogConfigAssociationOutput {
     pub resolver_query_log_config_association:
         std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
 }
+impl GetResolverQueryLogConfigAssociationOutput {
+    /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
+    pub fn resolver_query_log_config_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociation> {
+        self.resolver_query_log_config_association.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResolverQueryLogConfigAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverQueryLogConfigAssociationOutput");
@@ -2463,6 +2846,14 @@ pub struct GetResolverQueryLogConfigOutput {
     /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
 }
+impl GetResolverQueryLogConfigOutput {
+    /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
+    pub fn resolver_query_log_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfig> {
+        self.resolver_query_log_config.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResolverQueryLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverQueryLogConfigOutput");
@@ -2518,6 +2909,12 @@ pub struct GetResolverEndpointOutput {
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
+impl GetResolverEndpointOutput {
+    /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
+    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+        self.resolver_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResolverEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverEndpointOutput");
@@ -2568,6 +2965,14 @@ impl GetResolverEndpointOutput {
 pub struct GetResolverDnssecConfigOutput {
     /// <p>The information about a configuration for DNSSEC validation.</p>
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
+}
+impl GetResolverDnssecConfigOutput {
+    /// <p>The information about a configuration for DNSSEC validation.</p>
+    pub fn resolver_dnssec_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverDnssecConfig> {
+        self.resolver_dnssec_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResolverDnssecConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2620,6 +3025,13 @@ pub struct GetResolverConfigOutput {
     /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
     /// specified in the <code>GetResolverConfig</code> request.</p>
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
+}
+impl GetResolverConfigOutput {
+    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
+    /// specified in the <code>GetResolverConfig</code> request.</p>
+    pub fn resolver_config(&self) -> std::option::Option<&crate::model::ResolverConfig> {
+        self.resolver_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResolverConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2675,6 +3087,14 @@ pub struct GetFirewallRuleGroupPolicyOutput {
     /// group. You can use the policy to share the rule group using Resource Access Manager
     /// (RAM). </p>
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
+}
+impl GetFirewallRuleGroupPolicyOutput {
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule
+    /// group. You can use the policy to share the rule group using Resource Access Manager
+    /// (RAM). </p>
+    pub fn firewall_rule_group_policy(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFirewallRuleGroupPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2735,6 +3155,14 @@ pub struct GetFirewallRuleGroupAssociationOutput {
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
+impl GetFirewallRuleGroupAssociationOutput {
+    /// <p>The association that you requested. </p>
+    pub fn firewall_rule_group_association(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+        self.firewall_rule_group_association.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFirewallRuleGroupAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFirewallRuleGroupAssociationOutput");
@@ -2793,6 +3221,12 @@ pub struct GetFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
 }
+impl GetFirewallRuleGroupOutput {
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
+    pub fn firewall_rule_group(&self) -> std::option::Option<&crate::model::FirewallRuleGroup> {
+        self.firewall_rule_group.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFirewallRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFirewallRuleGroupOutput");
@@ -2843,6 +3277,12 @@ impl GetFirewallRuleGroupOutput {
 pub struct GetFirewallDomainListOutput {
     /// <p>The domain list that you requested.  </p>
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+}
+impl GetFirewallDomainListOutput {
+    /// <p>The domain list that you requested.  </p>
+    pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
+        self.firewall_domain_list.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFirewallDomainListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2896,6 +3336,13 @@ pub struct GetFirewallConfigOutput {
     /// AmazonVPC. </p>
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
 }
+impl GetFirewallConfigOutput {
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from
+    /// AmazonVPC. </p>
+    pub fn firewall_config(&self) -> std::option::Option<&crate::model::FirewallConfig> {
+        self.firewall_config.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFirewallConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFirewallConfigOutput");
@@ -2948,6 +3395,14 @@ impl GetFirewallConfigOutput {
 pub struct DisassociateResolverRuleOutput {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+}
+impl DisassociateResolverRuleOutput {
+    /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
+    pub fn resolver_rule_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverRuleAssociation> {
+        self.resolver_rule_association.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateResolverRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3004,6 +3459,14 @@ pub struct DisassociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
     pub resolver_query_log_config_association:
         std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+}
+impl DisassociateResolverQueryLogConfigOutput {
+    /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
+    pub fn resolver_query_log_config_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociation> {
+        self.resolver_query_log_config_association.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateResolverQueryLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3063,6 +3526,12 @@ pub struct DisassociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
+impl DisassociateResolverEndpointIpAddressOutput {
+    /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
+    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+        self.resolver_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateResolverEndpointIpAddressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateResolverEndpointIpAddressOutput");
@@ -3114,6 +3583,14 @@ pub struct DisassociateFirewallRuleGroupOutput {
     /// <p>The firewall rule group association that you just removed. </p>
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+}
+impl DisassociateFirewallRuleGroupOutput {
+    /// <p>The firewall rule group association that you just removed. </p>
+    pub fn firewall_rule_group_association(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+        self.firewall_rule_group_association.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateFirewallRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3173,6 +3650,12 @@ pub struct DeleteResolverRuleOutput {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
+impl DeleteResolverRuleOutput {
+    /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
+    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+        self.resolver_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteResolverRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResolverRuleOutput");
@@ -3223,6 +3706,14 @@ impl DeleteResolverRuleOutput {
 pub struct DeleteResolverQueryLogConfigOutput {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+}
+impl DeleteResolverQueryLogConfigOutput {
+    /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
+    pub fn resolver_query_log_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfig> {
+        self.resolver_query_log_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteResolverQueryLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3279,6 +3770,12 @@ pub struct DeleteResolverEndpointOutput {
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
+impl DeleteResolverEndpointOutput {
+    /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
+    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+        self.resolver_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteResolverEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResolverEndpointOutput");
@@ -3329,6 +3826,12 @@ impl DeleteResolverEndpointOutput {
 pub struct DeleteFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+}
+impl DeleteFirewallRuleGroupOutput {
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
+    pub fn firewall_rule_group(&self) -> std::option::Option<&crate::model::FirewallRuleGroup> {
+        self.firewall_rule_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteFirewallRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3381,6 +3884,12 @@ pub struct DeleteFirewallRuleOutput {
     /// <p>The specification for the firewall rule that you just deleted.</p>
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
+impl DeleteFirewallRuleOutput {
+    /// <p>The specification for the firewall rule that you just deleted.</p>
+    pub fn firewall_rule(&self) -> std::option::Option<&crate::model::FirewallRule> {
+        self.firewall_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteFirewallRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFirewallRuleOutput");
@@ -3431,6 +3940,12 @@ impl DeleteFirewallRuleOutput {
 pub struct DeleteFirewallDomainListOutput {
     /// <p>The domain list that you just deleted. </p>
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+}
+impl DeleteFirewallDomainListOutput {
+    /// <p>The domain list that you just deleted. </p>
+    pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
+        self.firewall_domain_list.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteFirewallDomainListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3483,6 +3998,12 @@ pub struct CreateResolverRuleOutput {
     /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
+impl CreateResolverRuleOutput {
+    /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
+    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+        self.resolver_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResolverRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResolverRuleOutput");
@@ -3533,6 +4054,14 @@ impl CreateResolverRuleOutput {
 pub struct CreateResolverQueryLogConfigOutput {
     /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+}
+impl CreateResolverQueryLogConfigOutput {
+    /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
+    pub fn resolver_query_log_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfig> {
+        self.resolver_query_log_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateResolverQueryLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3589,6 +4118,12 @@ pub struct CreateResolverEndpointOutput {
     /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
+impl CreateResolverEndpointOutput {
+    /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
+    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+        self.resolver_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResolverEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResolverEndpointOutput");
@@ -3639,6 +4174,12 @@ impl CreateResolverEndpointOutput {
 pub struct CreateFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+}
+impl CreateFirewallRuleGroupOutput {
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
+    pub fn firewall_rule_group(&self) -> std::option::Option<&crate::model::FirewallRuleGroup> {
+        self.firewall_rule_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFirewallRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3691,6 +4232,13 @@ pub struct CreateFirewallRuleOutput {
     /// <p>The
     /// firewall rule that you just created. </p>
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
+}
+impl CreateFirewallRuleOutput {
+    /// <p>The
+    /// firewall rule that you just created. </p>
+    pub fn firewall_rule(&self) -> std::option::Option<&crate::model::FirewallRule> {
+        self.firewall_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFirewallRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3746,6 +4294,13 @@ pub struct CreateFirewallDomainListOutput {
     /// domain list that you just created.</p>
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
+impl CreateFirewallDomainListOutput {
+    /// <p>The
+    /// domain list that you just created.</p>
+    pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
+        self.firewall_domain_list.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFirewallDomainListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFirewallDomainListOutput");
@@ -3798,6 +4353,14 @@ impl CreateFirewallDomainListOutput {
 pub struct AssociateResolverRuleOutput {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+}
+impl AssociateResolverRuleOutput {
+    /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
+    pub fn resolver_rule_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverRuleAssociation> {
+        self.resolver_rule_association.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateResolverRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3854,6 +4417,14 @@ pub struct AssociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
     pub resolver_query_log_config_association:
         std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+}
+impl AssociateResolverQueryLogConfigOutput {
+    /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
+    pub fn resolver_query_log_config_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociation> {
+        self.resolver_query_log_config_association.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateResolverQueryLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3913,6 +4484,12 @@ pub struct AssociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
+impl AssociateResolverEndpointIpAddressOutput {
+    /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
+    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+        self.resolver_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateResolverEndpointIpAddressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateResolverEndpointIpAddressOutput");
@@ -3965,6 +4542,15 @@ pub struct AssociateFirewallRuleGroupOutput {
     /// identify it in other requests, like update and delete.</p>
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+}
+impl AssociateFirewallRuleGroupOutput {
+    /// <p>The association that you just created. The association has an ID that you can use to
+    /// identify it in other requests, like update and delete.</p>
+    pub fn firewall_rule_group_association(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+        self.firewall_rule_group_association.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateFirewallRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -217,10 +217,7 @@ impl BatchCreateTableRowsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_create_table_rows(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -495,10 +492,7 @@ impl BatchDeleteTableRowsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_table_rows(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -779,10 +773,7 @@ impl BatchUpdateTableRowsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_update_table_rows(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1065,10 +1056,7 @@ impl BatchUpsertTableRowsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_upsert_table_rows(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1549,10 +1537,8 @@ impl GetScreenDataInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_screen_data(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_screen_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1886,10 +1872,7 @@ impl InvokeScreenAutomationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_invoke_screen_automation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2380,10 +2363,8 @@ impl ListTableRowsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_table_rows(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_table_rows(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2847,10 +2828,7 @@ impl QueryTableRowsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_query_table_rows(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_query_table_rows(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3155,10 +3133,7 @@ impl StartTableDataImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_table_data_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3260,6 +3235,55 @@ pub struct StartTableDataImportJobInput {
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl StartTableDataImportJobInput {
+    /// <p>The ID of the workbook where the rows are being imported.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>
+    /// The source of the data that is being imported. The size of source must be no larger than 100 MB.
+    /// Source must have no more than 100,000 cells and no more than 1,000 rows.
+    /// </p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::ImportDataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>
+    /// The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT".
+    /// </p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::ImportSourceDataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The ID of the table where the rows are being imported.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn destination_table_id(&self) -> std::option::Option<&str> {
+        self.destination_table_id.as_deref()
+    }
+    /// <p>
+    /// The options for customizing this import request.
+    /// </p>
+    pub fn import_options(&self) -> std::option::Option<&crate::model::ImportOptions> {
+        self.import_options.as_ref()
+    }
+    /// <p>
+    /// The request token for performing the update action.
+    /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
+    /// like a failed network connection, you can retry the call with the same request token. The service ensures
+    /// that if the first call using that request token is successfully performed, the second call will not perform
+    /// the action again.
+    /// </p>
+    /// <p>
+    /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
+    /// spanning hours or days.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartTableDataImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTableDataImportJobInput");
@@ -3301,6 +3325,41 @@ pub struct QueryTableRowsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl QueryTableRowsInput {
+    /// <p>The ID of the workbook whose table rows are being queried.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table whose rows are being queried.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>An object that represents a filter formula along with the id of the context row under which the filter
+    /// function needs to evaluate.</p>
+    pub fn filter_formula(&self) -> std::option::Option<&crate::model::Filter> {
+        self.filter_formula.as_ref()
+    }
+    /// <p>The maximum number of rows to return in each page of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
+    /// </p>
+    /// <p>
+    /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
+    /// will throw ValidationException.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryTableRowsInput");
@@ -3332,6 +3391,29 @@ pub struct ListTablesInput {
     /// will throw ValidationException.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTablesInput {
+    /// <p>The ID of the workbook whose tables are being retrieved.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The maximum number of tables to return in each page of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
+    /// </p>
+    /// <p>
+    /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
+    /// will throw ValidationException.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3374,6 +3456,44 @@ pub struct ListTableRowsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTableRowsInput {
+    /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table whose rows are being retrieved.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>
+    /// This parameter is optional. If one or more row ids are specified in this list, then only the specified
+    /// row ids are returned in the result. If no row ids are specified here, then all the rows in the table are
+    /// returned.
+    /// </p>
+    pub fn row_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.row_ids.as_deref()
+    }
+    /// <p>The maximum number of rows to return in each page of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
+    /// </p>
+    /// <p>
+    /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
+    /// will throw ValidationException.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTableRowsInput");
@@ -3408,6 +3528,32 @@ pub struct ListTableColumnsInput {
     /// will throw ValidationException.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTableColumnsInput {
+    /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table whose columns are being retrieved.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>
+    /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
+    /// </p>
+    /// <p>
+    /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
+    /// will throw ValidationException.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTableColumnsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3455,6 +3601,56 @@ pub struct InvokeScreenAutomationInput {
     /// spanning hours or days.
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl InvokeScreenAutomationInput {
+    /// <p>The ID of the workbook that contains the screen automation.</p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the app that contains the screen automation.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The ID of the screen that contains the screen automation.</p>
+    pub fn screen_id(&self) -> std::option::Option<&str> {
+        self.screen_id.as_deref()
+    }
+    /// <p>The ID of the automation action to be performed.</p>
+    pub fn screen_automation_id(&self) -> std::option::Option<&str> {
+        self.screen_automation_id.as_deref()
+    }
+    /// <p>
+    /// Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an
+    /// object which currently has only one property, rawValue, which holds the value of the variable to be passed
+    /// to the screen. Any variables defined in a screen are required to be passed in the call.
+    /// </p>
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+    > {
+        self.variables.as_ref()
+    }
+    /// <p>
+    /// The row ID for the automation if the automation is defined inside a block with source or list.
+    /// </p>
+    pub fn row_id(&self) -> std::option::Option<&str> {
+        self.row_id.as_deref()
+    }
+    /// <p>
+    /// The request token for performing the automation action.
+    /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
+    /// like a failed network connection, you can retry the call with the same request token. The service ensures
+    /// that if the first call using that request token is successfully performed, the second call will return the
+    /// response of the previous call rather than performing the action again.
+    /// </p>
+    /// <p>
+    /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
+    /// spanning hours or days.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for InvokeScreenAutomationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3506,6 +3702,53 @@ pub struct GetScreenDataInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetScreenDataInput {
+    /// <p>The ID of the workbook that contains the screen.</p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the app that contains the screem.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The ID of the screen.</p>
+    pub fn screen_id(&self) -> std::option::Option<&str> {
+        self.screen_id.as_deref()
+    }
+    /// <p>
+    /// Variables are optional and are needed only if the screen requires them to render correctly. Variables are
+    /// specified as a map where the key is the name of the variable as defined on the screen. The value is an
+    /// object which currently has only one property, rawValue, which holds the value of the variable to be passed
+    /// to the screen.
+    /// </p>
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+    > {
+        self.variables.as_ref()
+    }
+    /// <p>
+    /// The number of results to be returned on a single page.
+    /// Specify a number between 1 and 100. The maximum value is 100.
+    /// </p>
+    /// <p>
+    /// This parameter is optional. If you don't specify this parameter, the default page size is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
+    /// </p>
+    /// <p>
+    /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
+    /// will throw ValidationException.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetScreenDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetScreenDataInput");
@@ -3538,6 +3781,29 @@ pub struct DescribeTableDataImportJobInput {
     /// If a job with the specified id could not be found, this API throws ResourceNotFoundException.
     /// </p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeTableDataImportJobInput {
+    /// <p>The ID of the workbook into which data was imported.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table into which data was imported.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
+    /// <p>
+    /// If a job with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTableDataImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3588,6 +3854,50 @@ pub struct BatchUpsertTableRowsInput {
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl BatchUpsertTableRowsInput {
+    /// <p>The ID of the workbook where the rows are being upserted.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table where the rows are being upserted.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>
+    /// The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely
+    /// identify the element in the request, a filter expression to find the rows to update for that element
+    /// and the cell values to set for each column in the upserted rows. You need to specify
+    /// at least one item in this list.
+    /// </p>
+    /// <p>
+    /// Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the
+    /// column ids in any of the rows does not exist in the table, then the request fails
+    /// and no updates are made to the table.
+    /// </p>
+    pub fn rows_to_upsert(&self) -> std::option::Option<&[crate::model::UpsertRowData]> {
+        self.rows_to_upsert.as_deref()
+    }
+    /// <p>
+    /// The request token for performing the update action.
+    /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
+    /// like a failed network connection, you can retry the call with the same request token. The service ensures
+    /// that if the first call using that request token is successfully performed, the second call will not perform
+    /// the action again.
+    /// </p>
+    /// <p>
+    /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
+    /// spanning hours or days.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpsertTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpsertTableRowsInput");
@@ -3637,6 +3947,49 @@ pub struct BatchUpdateTableRowsInput {
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl BatchUpdateTableRowsInput {
+    /// <p>The ID of the workbook where the rows are being updated.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table where the rows are being updated.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>
+    /// The list of rows to update in the table. Each item in this list needs to contain the row id to update
+    /// along with the map of column id to cell values for each column in that row that needs to be updated.
+    /// You need to specify at least one row in this list, and for each row, you need to specify at least one
+    /// column to update.
+    /// </p>
+    /// <p>
+    /// Note that if one of the row or column ids in the request does not exist in the table, then the request fails
+    /// and no updates are made to the table.
+    /// </p>
+    pub fn rows_to_update(&self) -> std::option::Option<&[crate::model::UpdateRowData]> {
+        self.rows_to_update.as_deref()
+    }
+    /// <p>
+    /// The request token for performing the update action.
+    /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
+    /// like a failed network connection, you can retry the call with the same request token. The service ensures
+    /// that if the first call using that request token is successfully performed, the second call will not perform
+    /// the action again.
+    /// </p>
+    /// <p>
+    /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
+    /// spanning hours or days.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateTableRowsInput");
@@ -3682,6 +4035,46 @@ pub struct BatchDeleteTableRowsInput {
     /// spanning hours or days.
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl BatchDeleteTableRowsInput {
+    /// <p>The ID of the workbook where the rows are being deleted.</p>
+    /// <p>
+    /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table where the rows are being deleted.</p>
+    /// <p>
+    /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>
+    /// The list of row ids to delete from the table. You need to specify at least one row id in this list.
+    /// </p>
+    /// <p>
+    /// Note that if one of the row ids provided in the request does not exist in the table, then the request fails
+    /// and no rows are deleted from the table.
+    /// </p>
+    pub fn row_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.row_ids.as_deref()
+    }
+    /// <p>
+    /// The request token for performing the delete action.
+    /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
+    /// like a failed network connection, you can retry the call with the same request token. The service ensures
+    /// that if the first call using that request token is successfully performed, the second call will not perform
+    /// the action again.
+    /// </p>
+    /// <p>
+    /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
+    /// spanning hours or days.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3730,6 +4123,48 @@ pub struct BatchCreateTableRowsInput {
     /// spanning hours or days.
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl BatchCreateTableRowsInput {
+    /// <p>The ID of the workbook where the new rows are being added.</p>
+    /// <p>
+    /// If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
+        self.workbook_id.as_deref()
+    }
+    /// <p>The ID of the table where the new rows are being added.</p>
+    /// <p>
+    /// If a table with the specified ID could not be found, this API throws ResourceNotFoundException.
+    /// </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>
+    /// The list of rows to create at the end of the table. Each item in this list needs to have a batch item id
+    /// to uniquely identify the element in the request and the cells to create for that row.
+    /// You need to specify at least one item in this list.
+    /// </p>
+    /// <p>
+    /// Note that if one of the column ids in any of the rows in the request does not exist in the table, then the
+    /// request fails and no updates are made to the table.
+    /// </p>
+    pub fn rows_to_create(&self) -> std::option::Option<&[crate::model::CreateRowData]> {
+        self.rows_to_create.as_deref()
+    }
+    /// <p>
+    /// The request token for performing the batch create operation.
+    /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
+    /// like a failed network connection, you can retry the call with the same request token. The service ensures
+    /// that if the first call using that request token is successfully performed, the second call will not perform
+    /// the operation again.
+    /// </p>
+    /// <p>
+    /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
+    /// spanning hours or days.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

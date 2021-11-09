@@ -83,10 +83,7 @@ impl BuildSuggestersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_build_suggesters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_build_suggesters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -230,10 +227,7 @@ impl CreateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -393,10 +387,9 @@ impl DefineAnalysisSchemeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_define_analysis_scheme(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_define_analysis_scheme(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -556,10 +549,7 @@ impl DefineExpressionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_define_expression(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_define_expression(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -719,10 +709,7 @@ impl DefineIndexFieldInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_define_index_field(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_define_index_field(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -882,10 +869,7 @@ impl DefineSuggesterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_define_suggester(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_define_suggester(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1045,10 +1029,9 @@ impl DeleteAnalysisSchemeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_analysis_scheme(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_analysis_scheme(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1192,10 +1175,7 @@ impl DeleteDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1355,10 +1335,7 @@ impl DeleteExpressionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_expression(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_expression(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1518,10 +1495,7 @@ impl DeleteIndexFieldInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_index_field(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_index_field(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1681,10 +1655,7 @@ impl DeleteSuggesterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_suggester(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_suggester(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1865,10 +1836,7 @@ impl DescribeAnalysisSchemesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_analysis_schemes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2026,7 +1994,7 @@ impl DescribeAvailabilityOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_availability_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_availability_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2185,7 +2153,7 @@ impl DescribeDomainEndpointOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_domain_endpoint_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_domain_endpoint_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2340,10 +2308,7 @@ impl DescribeDomainsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_domains(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2521,10 +2486,7 @@ impl DescribeExpressionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_expressions(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_expressions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2702,10 +2664,7 @@ impl DescribeIndexFieldsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_index_fields(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_index_fields(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2853,10 +2812,7 @@ impl DescribeScalingParametersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_scaling_parameters(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3014,7 +2970,7 @@ impl DescribeServiceAccessPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_service_access_policies(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_service_access_policies(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3193,10 +3149,7 @@ impl DescribeSuggestersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_suggesters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_suggesters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3340,10 +3293,8 @@ impl IndexDocumentsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_index_documents(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_index_documents(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3474,10 +3425,7 @@ impl ListDomainNamesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_domain_names(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_domain_names(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3629,10 +3577,7 @@ impl UpdateAvailabilityOptionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_availability_options(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3797,7 +3742,7 @@ impl UpdateDomainEndpointOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_endpoint_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_endpoint_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3961,10 +3906,7 @@ impl UpdateScalingParametersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_scaling_parameters(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4125,7 +4067,7 @@ impl UpdateServiceAccessPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_service_access_policies(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_service_access_policies(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4197,6 +4139,16 @@ pub struct UpdateServiceAccessPoliciesInput {
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
     pub access_policies: std::option::Option<std::string::String>,
 }
+impl UpdateServiceAccessPoliciesInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    pub fn access_policies(&self) -> std::option::Option<&str> {
+        self.access_policies.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceAccessPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceAccessPoliciesInput");
@@ -4214,6 +4166,16 @@ pub struct UpdateScalingParametersInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     pub scaling_parameters: std::option::Option<crate::model::ScalingParameters>,
+}
+impl UpdateScalingParametersInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The desired instance type and desired number of replicas of each index partition.</p>
+    pub fn scaling_parameters(&self) -> std::option::Option<&crate::model::ScalingParameters> {
+        self.scaling_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateScalingParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4233,6 +4195,18 @@ pub struct UpdateDomainEndpointOptionsInput {
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptions>,
 }
+impl UpdateDomainEndpointOptionsInput {
+    /// <p>A string that represents the name of a domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.domain_endpoint_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainEndpointOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainEndpointOptionsInput");
@@ -4250,6 +4224,16 @@ pub struct UpdateAvailabilityOptionsInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
     pub multi_az: std::option::Option<bool>,
+}
+impl UpdateAvailabilityOptionsInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
+    pub fn multi_az(&self) -> std::option::Option<bool> {
+        self.multi_az
+    }
 }
 impl std::fmt::Debug for UpdateAvailabilityOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4278,6 +4262,12 @@ pub struct IndexDocumentsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl IndexDocumentsInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for IndexDocumentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IndexDocumentsInput");
@@ -4296,6 +4286,20 @@ pub struct DescribeSuggestersInput {
     pub suggester_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
+}
+impl DescribeSuggestersInput {
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The suggesters you want to describe.</p>
+    pub fn suggester_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.suggester_names.as_deref()
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn deployed(&self) -> std::option::Option<bool> {
+        self.deployed
+    }
 }
 impl std::fmt::Debug for DescribeSuggestersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4316,6 +4320,16 @@ pub struct DescribeServiceAccessPoliciesInput {
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
 }
+impl DescribeServiceAccessPoliciesInput {
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn deployed(&self) -> std::option::Option<bool> {
+        self.deployed
+    }
+}
 impl std::fmt::Debug for DescribeServiceAccessPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceAccessPoliciesInput");
@@ -4331,6 +4345,12 @@ impl std::fmt::Debug for DescribeServiceAccessPoliciesInput {
 pub struct DescribeScalingParametersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DescribeScalingParametersInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScalingParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4350,6 +4370,20 @@ pub struct DescribeIndexFieldsInput {
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
+}
+impl DescribeIndexFieldsInput {
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
+    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.field_names.as_deref()
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn deployed(&self) -> std::option::Option<bool> {
+        self.deployed
+    }
 }
 impl std::fmt::Debug for DescribeIndexFieldsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4373,6 +4407,20 @@ pub struct DescribeExpressionsInput {
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
 }
+impl DescribeExpressionsInput {
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    pub fn expression_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.expression_names.as_deref()
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn deployed(&self) -> std::option::Option<bool> {
+        self.deployed
+    }
+}
 impl std::fmt::Debug for DescribeExpressionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExpressionsInput");
@@ -4389,6 +4437,12 @@ impl std::fmt::Debug for DescribeExpressionsInput {
 pub struct DescribeDomainsInput {
     /// <p>The names of the domains you want to include in the response.</p>
     pub domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeDomainsInput {
+    /// <p>The names of the domains you want to include in the response.</p>
+    pub fn domain_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.domain_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4407,6 +4461,16 @@ pub struct DescribeDomainEndpointOptionsInput {
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
 }
+impl DescribeDomainEndpointOptionsInput {
+    /// <p>A string that represents the name of a domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
+    pub fn deployed(&self) -> std::option::Option<bool> {
+        self.deployed
+    }
+}
 impl std::fmt::Debug for DescribeDomainEndpointOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainEndpointOptionsInput");
@@ -4424,6 +4488,16 @@ pub struct DescribeAvailabilityOptionsInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
+}
+impl DescribeAvailabilityOptionsInput {
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn deployed(&self) -> std::option::Option<bool> {
+        self.deployed
+    }
 }
 impl std::fmt::Debug for DescribeAvailabilityOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4445,6 +4519,20 @@ pub struct DescribeAnalysisSchemesInput {
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
 }
+impl DescribeAnalysisSchemesInput {
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The analysis schemes you want to describe.</p>
+    pub fn analysis_scheme_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.analysis_scheme_names.as_deref()
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn deployed(&self) -> std::option::Option<bool> {
+        self.deployed
+    }
+}
 impl std::fmt::Debug for DescribeAnalysisSchemesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnalysisSchemesInput");
@@ -4464,6 +4552,16 @@ pub struct DeleteSuggesterInput {
     /// <p>Specifies the name of the suggester you want to delete.</p>
     pub suggester_name: std::option::Option<std::string::String>,
 }
+impl DeleteSuggesterInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Specifies the name of the suggester you want to delete.</p>
+    pub fn suggester_name(&self) -> std::option::Option<&str> {
+        self.suggester_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSuggesterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSuggesterInput");
@@ -4481,6 +4579,16 @@ pub struct DeleteIndexFieldInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
     pub index_field_name: std::option::Option<std::string::String>,
+}
+impl DeleteIndexFieldInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
+    pub fn index_field_name(&self) -> std::option::Option<&str> {
+        self.index_field_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteIndexFieldInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4500,6 +4608,16 @@ pub struct DeleteExpressionInput {
     /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
     pub expression_name: std::option::Option<std::string::String>,
 }
+impl DeleteExpressionInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+    pub fn expression_name(&self) -> std::option::Option<&str> {
+        self.expression_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteExpressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteExpressionInput");
@@ -4515,6 +4633,12 @@ impl std::fmt::Debug for DeleteExpressionInput {
 pub struct DeleteDomainInput {
     /// <p>The name of the domain you want to permanently delete.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteDomainInput {
+    /// <p>The name of the domain you want to permanently delete.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4532,6 +4656,16 @@ pub struct DeleteAnalysisSchemeInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the analysis scheme you want to delete.</p>
     pub analysis_scheme_name: std::option::Option<std::string::String>,
+}
+impl DeleteAnalysisSchemeInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the analysis scheme you want to delete.</p>
+    pub fn analysis_scheme_name(&self) -> std::option::Option<&str> {
+        self.analysis_scheme_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAnalysisSchemeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4551,6 +4685,16 @@ pub struct DefineSuggesterInput {
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
     pub suggester: std::option::Option<crate::model::Suggester>,
 }
+impl DefineSuggesterInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+    pub fn suggester(&self) -> std::option::Option<&crate::model::Suggester> {
+        self.suggester.as_ref()
+    }
+}
 impl std::fmt::Debug for DefineSuggesterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefineSuggesterInput");
@@ -4568,6 +4712,16 @@ pub struct DefineIndexFieldInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The index field and field options you want to configure. </p>
     pub index_field: std::option::Option<crate::model::IndexField>,
+}
+impl DefineIndexFieldInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The index field and field options you want to configure. </p>
+    pub fn index_field(&self) -> std::option::Option<&crate::model::IndexField> {
+        self.index_field.as_ref()
+    }
 }
 impl std::fmt::Debug for DefineIndexFieldInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4587,6 +4741,16 @@ pub struct DefineExpressionInput {
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
     pub expression: std::option::Option<crate::model::Expression>,
 }
+impl DefineExpressionInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+    pub fn expression(&self) -> std::option::Option<&crate::model::Expression> {
+        self.expression.as_ref()
+    }
+}
 impl std::fmt::Debug for DefineExpressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefineExpressionInput");
@@ -4605,6 +4769,16 @@ pub struct DefineAnalysisSchemeInput {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     pub analysis_scheme: std::option::Option<crate::model::AnalysisScheme>,
 }
+impl DefineAnalysisSchemeInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    pub fn analysis_scheme(&self) -> std::option::Option<&crate::model::AnalysisScheme> {
+        self.analysis_scheme.as_ref()
+    }
+}
 impl std::fmt::Debug for DefineAnalysisSchemeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefineAnalysisSchemeInput");
@@ -4621,6 +4795,12 @@ pub struct CreateDomainInput {
     /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl CreateDomainInput {
+    /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainInput");
@@ -4635,6 +4815,12 @@ impl std::fmt::Debug for CreateDomainInput {
 pub struct BuildSuggestersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl BuildSuggestersInput {
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BuildSuggestersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

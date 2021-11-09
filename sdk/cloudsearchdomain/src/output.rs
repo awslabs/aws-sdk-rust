@@ -12,6 +12,24 @@ pub struct UploadDocumentsOutput {
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::DocumentServiceWarning>>,
 }
+impl UploadDocumentsOutput {
+    /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The number of documents that were added to the search domain.</p>
+    pub fn adds(&self) -> i64 {
+        self.adds
+    }
+    /// <p>The number of documents that were deleted from the search domain.</p>
+    pub fn deletes(&self) -> i64 {
+        self.deletes
+    }
+    /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::DocumentServiceWarning]> {
+        self.warnings.as_deref()
+    }
+}
 impl std::fmt::Debug for UploadDocumentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadDocumentsOutput");
@@ -111,6 +129,16 @@ pub struct SuggestOutput {
     /// <p>Container for the matching search suggestion information.</p>
     pub suggest: std::option::Option<crate::model::SuggestModel>,
 }
+impl SuggestOutput {
+    /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SuggestStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Container for the matching search suggestion information.</p>
+    pub fn suggest(&self) -> std::option::Option<&crate::model::SuggestModel> {
+        self.suggest.as_ref()
+    }
+}
 impl std::fmt::Debug for SuggestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuggestOutput");
@@ -187,6 +215,32 @@ pub struct SearchOutput {
     pub stats: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FieldStats>,
     >,
+}
+impl SearchOutput {
+    /// <p>The status information returned for the search request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SearchStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The documents that match the search criteria.</p>
+    pub fn hits(&self) -> std::option::Option<&crate::model::Hits> {
+        self.hits.as_ref()
+    }
+    /// <p>The requested facet information.</p>
+    pub fn facets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::BucketInfo>,
+    > {
+        self.facets.as_ref()
+    }
+    /// <p>The requested field statistics information.</p>
+    pub fn stats(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FieldStats>,
+    > {
+        self.stats.as_ref()
+    }
 }
 impl std::fmt::Debug for SearchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

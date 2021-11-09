@@ -155,7 +155,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_direct_connect_gateway_association_proposal(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_direct_connect_gateway_association_proposal(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -371,7 +371,7 @@ impl AllocateConnectionOnInterconnectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_allocate_connection_on_interconnect(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_allocate_connection_on_interconnect(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -603,10 +603,7 @@ impl AllocateHostedConnectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_allocate_hosted_connection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -795,7 +792,7 @@ impl AllocatePrivateVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_allocate_private_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_allocate_private_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -985,7 +982,7 @@ impl AllocatePublicVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_allocate_public_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_allocate_public_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1175,7 +1172,7 @@ impl AllocateTransitVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_allocate_transit_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_allocate_transit_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1342,7 +1339,7 @@ impl AssociateConnectionWithLagInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_connection_with_lag(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_connection_with_lag(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1514,10 +1511,7 @@ impl AssociateHostedConnectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_hosted_connection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1724,10 +1718,7 @@ impl AssociateMacSecKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_mac_sec_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_mac_sec_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1898,10 +1889,7 @@ impl AssociateVirtualInterfaceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_virtual_interface(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2054,10 +2042,7 @@ impl ConfirmConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_confirm_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_confirm_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2217,10 +2202,7 @@ impl ConfirmCustomerAgreementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_confirm_customer_agreement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2404,7 +2386,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_confirm_private_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_confirm_private_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2559,7 +2541,7 @@ impl ConfirmPublicVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_confirm_public_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_confirm_public_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2729,7 +2711,7 @@ impl ConfirmTransitVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_confirm_transit_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_confirm_transit_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2897,10 +2879,8 @@ impl CreateBgpPeerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_bgp_peer(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_bgp_peer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3139,10 +3119,7 @@ impl CreateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3315,7 +3292,7 @@ impl CreateDirectConnectGatewayInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3530,7 +3507,7 @@ impl CreateDirectConnectGatewayAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3774,7 +3751,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway_association_proposal(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway_association_proposal(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4001,10 +3978,7 @@ impl CreateInterconnectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_interconnect(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_interconnect(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4284,10 +4258,7 @@ impl CreateLagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_lag(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_lag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4458,7 +4429,7 @@ impl CreatePrivateVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_private_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_private_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4632,7 +4603,7 @@ impl CreatePublicVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_public_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_public_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4806,7 +4777,7 @@ impl CreateTransitVirtualInterfaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_transit_virtual_interface(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_transit_virtual_interface(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4998,10 +4969,8 @@ impl DeleteBgpPeerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_bgp_peer(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_bgp_peer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5154,10 +5123,7 @@ impl DeleteConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5311,7 +5277,7 @@ impl DeleteDirectConnectGatewayInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5497,7 +5463,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5652,7 +5618,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway_association_proposal(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway_association_proposal(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5807,10 +5773,7 @@ impl DeleteInterconnectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_interconnect(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_interconnect(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5957,10 +5920,7 @@ impl DeleteLagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_lag(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_lag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6113,10 +6073,7 @@ impl DeleteVirtualInterfaceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_virtual_interface(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6303,10 +6260,7 @@ impl DescribeConnectionLoaInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_connection_loa(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6459,10 +6413,7 @@ impl DescribeConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_connections(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_connections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6616,7 +6567,7 @@ impl DescribeConnectionsOnInterconnectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_connections_on_interconnect(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_connections_on_interconnect(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6756,10 +6707,7 @@ impl DescribeCustomerMetadataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_customer_metadata(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6965,7 +6913,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_association_proposals(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_association_proposals(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7200,7 +7148,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_associations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7401,7 +7349,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_attachments(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_attachments(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7586,7 +7534,7 @@ impl DescribeDirectConnectGatewaysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateways(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateways(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7743,10 +7691,7 @@ impl DescribeHostedConnectionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_hosted_connections(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7932,10 +7877,7 @@ impl DescribeInterconnectLoaInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_interconnect_loa(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8088,10 +8030,9 @@ impl DescribeInterconnectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_interconnects(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_interconnects(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8240,10 +8181,7 @@ impl DescribeLagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_lags(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_lags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8427,10 +8365,7 @@ impl DescribeLoaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_loa(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_loa(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8566,10 +8501,7 @@ impl DescribeLocationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_locations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_locations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8730,7 +8662,7 @@ impl DescribeRouterConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_router_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_router_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8889,10 +8821,7 @@ impl DescribeTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9031,10 +8960,7 @@ impl DescribeVirtualGatewaysInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_virtual_gateways(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9197,10 +9123,7 @@ impl DescribeVirtualInterfacesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_virtual_interfaces(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9366,7 +9289,7 @@ impl DisassociateConnectionFromLagInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_connection_from_lag(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_connection_from_lag(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9538,10 +9461,7 @@ impl DisassociateMacSecKeyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_mac_sec_key(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9770,7 +9690,7 @@ impl ListVirtualInterfaceTestHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_virtual_interface_test_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_virtual_interface_test_history(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9963,10 +9883,7 @@ impl StartBgpFailoverTestInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_bgp_failover_test(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10119,10 +10036,9 @@ impl StopBgpFailoverTestInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_bgp_failover_test(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_bgp_failover_test(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10292,10 +10208,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10465,10 +10378,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10655,10 +10565,7 @@ impl UpdateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10830,7 +10737,7 @@ impl UpdateDirectConnectGatewayInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_direct_connect_gateway(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_direct_connect_gateway(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11042,7 +10949,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_direct_connect_gateway_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_direct_connect_gateway_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11231,10 +11138,7 @@ impl UpdateLagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_lag(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_lag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11398,7 +11302,7 @@ impl UpdateVirtualInterfaceAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_virtual_interface_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_virtual_interface_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11470,6 +11374,16 @@ pub struct UpdateVirtualInterfaceAttributesInput {
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
     pub mtu: std::option::Option<i32>,
 }
+impl UpdateVirtualInterfaceAttributesInput {
+    /// <p>The ID of the virtual private interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    pub fn mtu(&self) -> std::option::Option<i32> {
+        self.mtu
+    }
+}
 impl std::fmt::Debug for UpdateVirtualInterfaceAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualInterfaceAttributesInput");
@@ -11492,6 +11406,25 @@ pub struct UpdateLagInput {
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
     pub encryption_mode: std::option::Option<std::string::String>,
+}
+impl UpdateLagInput {
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+    /// <p>The name of the LAG.</p>
+    pub fn lag_name(&self) -> std::option::Option<&str> {
+        self.lag_name.as_deref()
+    }
+    /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
+    pub fn minimum_links(&self) -> i32 {
+        self.minimum_links
+    }
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
+    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+        self.encryption_mode.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateLagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11516,6 +11449,26 @@ pub struct UpdateDirectConnectGatewayAssociationInput {
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
     pub remove_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+}
+impl UpdateDirectConnectGatewayAssociationInput {
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn add_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.add_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
+    /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    pub fn remove_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.remove_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDirectConnectGatewayAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11542,6 +11495,16 @@ pub struct UpdateDirectConnectGatewayInput {
     /// <p>The new name for the Direct Connect gateway.</p>
     pub new_direct_connect_gateway_name: std::option::Option<std::string::String>,
 }
+impl UpdateDirectConnectGatewayInput {
+    /// <p>The ID of the Direct Connect gateway to update.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The new name for the Direct Connect gateway.</p>
+    pub fn new_direct_connect_gateway_name(&self) -> std::option::Option<&str> {
+        self.new_direct_connect_gateway_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDirectConnectGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDirectConnectGatewayInput");
@@ -11567,6 +11530,22 @@ pub struct UpdateConnectionInput {
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     pub encryption_mode: std::option::Option<std::string::String>,
 }
+impl UpdateConnectionInput {
+    /// <p>The ID of the dedicated connection.</p>
+    /// <p>You can use <a>DescribeConnections</a> to retrieve the connection ID.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The name of the connection.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+        self.encryption_mode.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionInput");
@@ -11586,6 +11565,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys of the tags to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys of the tags to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -11604,6 +11593,16 @@ pub struct TagResourceInput {
     /// <p>The tags to add.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -11619,6 +11618,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
+}
+impl StopBgpFailoverTestInput {
+    /// <p>The ID of the virtual interface you no longer want to test.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopBgpFailoverTestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11640,6 +11645,22 @@ pub struct StartBgpFailoverTestInput {
     /// <p>Maximum value: 180 minutes (3 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub test_duration_in_minutes: std::option::Option<i32>,
+}
+impl StartBgpFailoverTestInput {
+    /// <p>The ID of the virtual interface you want to test.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The BGP peers to place in the DOWN state.</p>
+    pub fn bgp_peers(&self) -> std::option::Option<&[std::string::String]> {
+        self.bgp_peers.as_deref()
+    }
+    /// <p>The time in minutes that the virtual interface failover test will last.</p>
+    /// <p>Maximum value: 180 minutes (3 hours).</p>
+    /// <p>Default: 180 minutes (3 hours).</p>
+    pub fn test_duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.test_duration_in_minutes
+    }
 }
 impl std::fmt::Debug for StartBgpFailoverTestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11671,6 +11692,35 @@ pub struct ListVirtualInterfaceTestHistoryInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListVirtualInterfaceTestHistoryInput {
+    /// <p>The ID of the virtual interface failover test.</p>
+    pub fn test_id(&self) -> std::option::Option<&str> {
+        self.test_id.as_deref()
+    }
+    /// <p>The ID of the virtual interface that was tested.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
+    pub fn bgp_peers(&self) -> std::option::Option<&[std::string::String]> {
+        self.bgp_peers.as_deref()
+    }
+    /// <p>The status of the virtual interface failover test.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
+    /// returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVirtualInterfaceTestHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualInterfaceTestHistoryInput");
@@ -11695,6 +11745,18 @@ pub struct DisassociateMacSecKeyInput {
     /// <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub secret_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateMacSecKeyInput {
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    /// <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateMacSecKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateMacSecKeyInput");
@@ -11713,6 +11775,16 @@ pub struct DisassociateConnectionFromLagInput {
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
 }
+impl DisassociateConnectionFromLagInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateConnectionFromLagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateConnectionFromLagInput");
@@ -11730,6 +11802,16 @@ pub struct DescribeVirtualInterfacesInput {
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
+}
+impl DescribeVirtualInterfacesInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualInterfacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11758,6 +11840,12 @@ pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeTagsInput {
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsInput");
@@ -11774,6 +11862,16 @@ pub struct DescribeRouterConfigurationInput {
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
     pub router_type_identifier: std::option::Option<std::string::String>,
+}
+impl DescribeRouterConfigurationInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    pub fn router_type_identifier(&self) -> std::option::Option<&str> {
+        self.router_type_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRouterConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11807,6 +11905,21 @@ pub struct DescribeLoaInput {
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
+impl DescribeLoaInput {
+    /// <p>The ID of a connection, LAG, or interconnect.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the
+    /// LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn loa_content_type(&self) -> std::option::Option<&crate::model::LoaContentType> {
+        self.loa_content_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeLoaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoaInput");
@@ -11824,6 +11937,12 @@ pub struct DescribeLagsInput {
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
 }
+impl DescribeLagsInput {
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLagsInput");
@@ -11838,6 +11957,12 @@ impl std::fmt::Debug for DescribeLagsInput {
 pub struct DescribeInterconnectsInput {
     /// <p>The ID of the interconnect.</p>
     pub interconnect_id: std::option::Option<std::string::String>,
+}
+impl DescribeInterconnectsInput {
+    /// <p>The ID of the interconnect.</p>
+    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+        self.interconnect_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInterconnectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11858,6 +11983,20 @@ pub struct DescribeInterconnectLoaInput {
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
+impl DescribeInterconnectLoaInput {
+    /// <p>The ID of the interconnect.</p>
+    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+        self.interconnect_id.as_deref()
+    }
+    /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn loa_content_type(&self) -> std::option::Option<&crate::model::LoaContentType> {
+        self.loa_content_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInterconnectLoaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInterconnectLoaInput");
@@ -11874,6 +12013,12 @@ impl std::fmt::Debug for DescribeInterconnectLoaInput {
 pub struct DescribeHostedConnectionsInput {
     /// <p>The ID of the interconnect or LAG.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl DescribeHostedConnectionsInput {
+    /// <p>The ID of the interconnect or LAG.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHostedConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11896,6 +12041,23 @@ pub struct DescribeDirectConnectGatewaysInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDirectConnectGatewaysInput {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
+    /// returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token provided in the previous call to retrieve the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDirectConnectGatewaysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11922,6 +12084,27 @@ pub struct DescribeDirectConnectGatewayAttachmentsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDirectConnectGatewayAttachmentsInput {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
+    /// returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token provided in the previous call to retrieve the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDirectConnectGatewayAttachmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11954,6 +12137,35 @@ pub struct DescribeDirectConnectGatewayAssociationsInput {
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
     pub virtual_gateway_id: std::option::Option<std::string::String>,
 }
+impl DescribeDirectConnectGatewayAssociationsInput {
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The ID of the associated gateway.</p>
+    pub fn associated_gateway_id(&self) -> std::option::Option<&str> {
+        self.associated_gateway_id.as_deref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
+    /// returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token provided in the previous call to retrieve the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAssociationsInput");
@@ -11985,6 +12197,31 @@ pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeDirectConnectGatewayAssociationProposalsInput {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the proposal.</p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
+    /// <p>The ID of the associated gateway.</p>
+    pub fn associated_gateway_id(&self) -> std::option::Option<&str> {
+        self.associated_gateway_id.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
+    /// returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationProposalsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAssociationProposalsInput");
@@ -12015,6 +12252,12 @@ pub struct DescribeConnectionsOnInterconnectInput {
     /// <p>The ID of the interconnect.</p>
     pub interconnect_id: std::option::Option<std::string::String>,
 }
+impl DescribeConnectionsOnInterconnectInput {
+    /// <p>The ID of the interconnect.</p>
+    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+        self.interconnect_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectionsOnInterconnectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectionsOnInterconnectInput");
@@ -12029,6 +12272,12 @@ impl std::fmt::Debug for DescribeConnectionsOnInterconnectInput {
 pub struct DescribeConnectionsInput {
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl DescribeConnectionsInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12050,6 +12299,21 @@ pub struct DescribeConnectionLoaInput {
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
+impl DescribeConnectionLoaInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter,
+    /// the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn loa_content_type(&self) -> std::option::Option<&crate::model::LoaContentType> {
+        self.loa_content_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectionLoaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectionLoaInput");
@@ -12067,6 +12331,12 @@ pub struct DeleteVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
 }
+impl DeleteVirtualInterfaceInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVirtualInterfaceInput");
@@ -12081,6 +12351,12 @@ impl std::fmt::Debug for DeleteVirtualInterfaceInput {
 pub struct DeleteLagInput {
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
+}
+impl DeleteLagInput {
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12097,6 +12373,12 @@ pub struct DeleteInterconnectInput {
     /// <p>The ID of the interconnect.</p>
     pub interconnect_id: std::option::Option<std::string::String>,
 }
+impl DeleteInterconnectInput {
+    /// <p>The ID of the interconnect.</p>
+    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+        self.interconnect_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInterconnectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInterconnectInput");
@@ -12111,6 +12393,12 @@ impl std::fmt::Debug for DeleteInterconnectInput {
 pub struct DeleteDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the proposal.</p>
     pub proposal_id: std::option::Option<std::string::String>,
+}
+impl DeleteDirectConnectGatewayAssociationProposalInput {
+    /// <p>The ID of the proposal.</p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationProposalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12131,6 +12419,20 @@ pub struct DeleteDirectConnectGatewayAssociationInput {
     /// <p>The ID of the virtual private gateway.</p>
     pub virtual_gateway_id: std::option::Option<std::string::String>,
 }
+impl DeleteDirectConnectGatewayAssociationInput {
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDirectConnectGatewayAssociationInput");
@@ -12148,6 +12450,12 @@ pub struct DeleteDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
 }
+impl DeleteDirectConnectGatewayInput {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDirectConnectGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDirectConnectGatewayInput");
@@ -12162,6 +12470,12 @@ impl std::fmt::Debug for DeleteDirectConnectGatewayInput {
 pub struct DeleteConnectionInput {
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl DeleteConnectionInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12184,6 +12498,24 @@ pub struct DeleteBgpPeerInput {
     /// <p>The ID of the BGP peer.</p>
     pub bgp_peer_id: std::option::Option<std::string::String>,
 }
+impl DeleteBgpPeerInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    pub fn asn(&self) -> i32 {
+        self.asn
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn customer_address(&self) -> std::option::Option<&str> {
+        self.customer_address.as_deref()
+    }
+    /// <p>The ID of the BGP peer.</p>
+    pub fn bgp_peer_id(&self) -> std::option::Option<&str> {
+        self.bgp_peer_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBgpPeerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBgpPeerInput");
@@ -12204,6 +12536,18 @@ pub struct CreateTransitVirtualInterfaceInput {
     /// <p>Information about the transit virtual interface.</p>
     pub new_transit_virtual_interface:
         std::option::Option<crate::model::NewTransitVirtualInterface>,
+}
+impl CreateTransitVirtualInterfaceInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>Information about the transit virtual interface.</p>
+    pub fn new_transit_virtual_interface(
+        &self,
+    ) -> std::option::Option<&crate::model::NewTransitVirtualInterface> {
+        self.new_transit_virtual_interface.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTransitVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12226,6 +12570,18 @@ pub struct CreatePublicVirtualInterfaceInput {
     /// <p>Information about the public virtual interface.</p>
     pub new_public_virtual_interface: std::option::Option<crate::model::NewPublicVirtualInterface>,
 }
+impl CreatePublicVirtualInterfaceInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>Information about the public virtual interface.</p>
+    pub fn new_public_virtual_interface(
+        &self,
+    ) -> std::option::Option<&crate::model::NewPublicVirtualInterface> {
+        self.new_public_virtual_interface.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePublicVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePublicVirtualInterfaceInput");
@@ -12247,6 +12603,18 @@ pub struct CreatePrivateVirtualInterfaceInput {
     /// <p>Information about the private virtual interface.</p>
     pub new_private_virtual_interface:
         std::option::Option<crate::model::NewPrivateVirtualInterface>,
+}
+impl CreatePrivateVirtualInterfaceInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>Information about the private virtual interface.</p>
+    pub fn new_private_virtual_interface(
+        &self,
+    ) -> std::option::Option<&crate::model::NewPrivateVirtualInterface> {
+        self.new_private_virtual_interface.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePrivateVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12288,6 +12656,49 @@ pub struct CreateLagInput {
     /// </note>
     pub request_mac_sec: std::option::Option<bool>,
 }
+impl CreateLagInput {
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the
+    /// LAG.</p>
+    pub fn number_of_connections(&self) -> i32 {
+        self.number_of_connections
+    }
+    /// <p>The location for the LAG.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The
+    /// possible values are 1Gbps and 10Gbps. </p>
+    pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
+        self.connections_bandwidth.as_deref()
+    }
+    /// <p>The name of the LAG.</p>
+    pub fn lag_name(&self) -> std::option::Option<&str> {
+        self.lag_name.as_deref()
+    }
+    /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The tags to associate with the LAG.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The tags to associate with the automtically created LAGs.</p>
+    pub fn child_connection_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.child_connection_tags.as_deref()
+    }
+    /// <p>The name of the service provider associated with the LAG.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p>
+    /// <note>
+    /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// </note>
+    pub fn request_mac_sec(&self) -> std::option::Option<bool> {
+        self.request_mac_sec
+    }
+}
 impl std::fmt::Debug for CreateLagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLagInput");
@@ -12321,6 +12732,32 @@ pub struct CreateInterconnectInput {
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
+impl CreateInterconnectInput {
+    /// <p>The name of the interconnect.</p>
+    pub fn interconnect_name(&self) -> std::option::Option<&str> {
+        self.interconnect_name.as_deref()
+    }
+    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    pub fn bandwidth(&self) -> std::option::Option<&str> {
+        self.bandwidth.as_deref()
+    }
+    /// <p>The location of the interconnect.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+    /// <p>The tags to associate with the interconnect.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the service provider associated with the interconnect.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInterconnectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInterconnectInput");
@@ -12350,6 +12787,34 @@ pub struct CreateDirectConnectGatewayAssociationProposalInput {
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
     pub remove_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+}
+impl CreateDirectConnectGatewayAssociationProposalInput {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_owner_account(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_owner_account.as_deref()
+    }
+    /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn add_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.add_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
+    /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    pub fn remove_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.remove_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDirectConnectGatewayAssociationProposalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12388,6 +12853,29 @@ pub struct CreateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the virtual private gateway.</p>
     pub virtual_gateway_id: std::option::Option<std::string::String>,
 }
+impl CreateDirectConnectGatewayAssociationInput {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+    /// <p>This parameter is required when you create an association to a transit gateway.</p>
+    /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    pub fn add_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.add_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDirectConnectGatewayAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDirectConnectGatewayAssociationInput");
@@ -12412,6 +12900,18 @@ pub struct CreateDirectConnectGatewayInput {
     /// on the Amazon side of the connection. The ASN must be in the private range of 64,512 to
     /// 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub amazon_side_asn: std::option::Option<i64>,
+}
+impl CreateDirectConnectGatewayInput {
+    /// <p>The name of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_name(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_name.as_deref()
+    }
+    /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
+    /// on the Amazon side of the connection. The ASN must be in the private range of 64,512 to
+    /// 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+    pub fn amazon_side_asn(&self) -> std::option::Option<i64> {
+        self.amazon_side_asn
+    }
 }
 impl std::fmt::Debug for CreateDirectConnectGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12445,6 +12945,37 @@ pub struct CreateConnectionInput {
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub request_mac_sec: std::option::Option<bool>,
 }
+impl CreateConnectionInput {
+    /// <p>The location of the connection.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The bandwidth of the connection.</p>
+    pub fn bandwidth(&self) -> std::option::Option<&str> {
+        self.bandwidth.as_deref()
+    }
+    /// <p>The name of the connection.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
+    /// <p>The tags to associate with the lag.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the service provider associated with the requested connection.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
+    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    pub fn request_mac_sec(&self) -> std::option::Option<bool> {
+        self.request_mac_sec
+    }
+}
 impl std::fmt::Debug for CreateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionInput");
@@ -12468,6 +12999,16 @@ pub struct CreateBgpPeerInput {
     /// <p>Information about the BGP peer.</p>
     pub new_bgp_peer: std::option::Option<crate::model::NewBgpPeer>,
 }
+impl CreateBgpPeerInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>Information about the BGP peer.</p>
+    pub fn new_bgp_peer(&self) -> std::option::Option<&crate::model::NewBgpPeer> {
+        self.new_bgp_peer.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBgpPeerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBgpPeerInput");
@@ -12486,6 +13027,16 @@ pub struct ConfirmTransitVirtualInterfaceInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
 }
+impl ConfirmTransitVirtualInterfaceInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfirmTransitVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmTransitVirtualInterfaceInput");
@@ -12501,6 +13052,12 @@ impl std::fmt::Debug for ConfirmTransitVirtualInterfaceInput {
 pub struct ConfirmPublicVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
+}
+impl ConfirmPublicVirtualInterfaceInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfirmPublicVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12521,6 +13078,20 @@ pub struct ConfirmPrivateVirtualInterfaceInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
 }
+impl ConfirmPrivateVirtualInterfaceInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_id.as_deref()
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmPrivateVirtualInterfaceInput");
@@ -12540,6 +13111,14 @@ pub struct ConfirmCustomerAgreementInput {
     /// </p>
     pub agreement_name: std::option::Option<std::string::String>,
 }
+impl ConfirmCustomerAgreementInput {
+    /// <p>
+    /// The name of the customer agreement.
+    /// </p>
+    pub fn agreement_name(&self) -> std::option::Option<&str> {
+        self.agreement_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfirmCustomerAgreementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmCustomerAgreementInput");
@@ -12554,6 +13133,12 @@ impl std::fmt::Debug for ConfirmCustomerAgreementInput {
 pub struct ConfirmConnectionInput {
     /// <p>The ID of the hosted connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl ConfirmConnectionInput {
+    /// <p>The ID of the hosted connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfirmConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12571,6 +13156,16 @@ pub struct AssociateVirtualInterfaceInput {
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The ID of the LAG or connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl AssociateVirtualInterfaceInput {
+    /// <p>The ID of the virtual interface.</p>
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+        self.virtual_interface_id.as_deref()
+    }
+    /// <p>The ID of the LAG or connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12603,6 +13198,33 @@ pub struct AssociateMacSecKeyInput {
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub cak: std::option::Option<std::string::String>,
 }
+impl AssociateMacSecKeyInput {
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
+    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p>
+    /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
+    /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
+    pub fn ckn(&self) -> std::option::Option<&str> {
+        self.ckn.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
+    /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
+    /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
+    /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
+    pub fn cak(&self) -> std::option::Option<&str> {
+        self.cak.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateMacSecKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateMacSecKeyInput");
@@ -12623,6 +13245,16 @@ pub struct AssociateHostedConnectionInput {
     /// <p>The ID of the interconnect or the LAG.</p>
     pub parent_connection_id: std::option::Option<std::string::String>,
 }
+impl AssociateHostedConnectionInput {
+    /// <p>The ID of the hosted connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the interconnect or the LAG.</p>
+    pub fn parent_connection_id(&self) -> std::option::Option<&str> {
+        self.parent_connection_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateHostedConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateHostedConnectionInput");
@@ -12640,6 +13272,16 @@ pub struct AssociateConnectionWithLagInput {
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the LAG with which to associate the connection.</p>
     pub lag_id: std::option::Option<std::string::String>,
+}
+impl AssociateConnectionWithLagInput {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the LAG with which to associate the connection.</p>
+    pub fn lag_id(&self) -> std::option::Option<&str> {
+        self.lag_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateConnectionWithLagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12661,6 +13303,22 @@ pub struct AllocateTransitVirtualInterfaceInput {
     /// <p>Information about the transit virtual interface.</p>
     pub new_transit_virtual_interface_allocation:
         std::option::Option<crate::model::NewTransitVirtualInterfaceAllocation>,
+}
+impl AllocateTransitVirtualInterfaceInput {
+    /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>Information about the transit virtual interface.</p>
+    pub fn new_transit_virtual_interface_allocation(
+        &self,
+    ) -> std::option::Option<&crate::model::NewTransitVirtualInterfaceAllocation> {
+        self.new_transit_virtual_interface_allocation.as_ref()
+    }
 }
 impl std::fmt::Debug for AllocateTransitVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12687,6 +13345,22 @@ pub struct AllocatePublicVirtualInterfaceInput {
     pub new_public_virtual_interface_allocation:
         std::option::Option<crate::model::NewPublicVirtualInterfaceAllocation>,
 }
+impl AllocatePublicVirtualInterfaceInput {
+    /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>Information about the public virtual interface.</p>
+    pub fn new_public_virtual_interface_allocation(
+        &self,
+    ) -> std::option::Option<&crate::model::NewPublicVirtualInterfaceAllocation> {
+        self.new_public_virtual_interface_allocation.as_ref()
+    }
+}
 impl std::fmt::Debug for AllocatePublicVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AllocatePublicVirtualInterfaceInput");
@@ -12711,6 +13385,22 @@ pub struct AllocatePrivateVirtualInterfaceInput {
     /// <p>Information about the private virtual interface.</p>
     pub new_private_virtual_interface_allocation:
         std::option::Option<crate::model::NewPrivateVirtualInterfaceAllocation>,
+}
+impl AllocatePrivateVirtualInterfaceInput {
+    /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>Information about the private virtual interface.</p>
+    pub fn new_private_virtual_interface_allocation(
+        &self,
+    ) -> std::option::Option<&crate::model::NewPrivateVirtualInterfaceAllocation> {
+        self.new_private_virtual_interface_allocation.as_ref()
+    }
 }
 impl std::fmt::Debug for AllocatePrivateVirtualInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12741,6 +13431,32 @@ pub struct AllocateHostedConnectionInput {
     pub vlan: i32,
     /// <p>The tags associated with the connection.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AllocateHostedConnectionInput {
+    /// <p>The ID of the interconnect or LAG.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
+    pub fn bandwidth(&self) -> std::option::Option<&str> {
+        self.bandwidth.as_deref()
+    }
+    /// <p>The name of the hosted connection.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+    /// <p>The tags associated with the connection.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AllocateHostedConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12773,6 +13489,31 @@ pub struct AllocateConnectionOnInterconnectInput {
     /// <p>The dedicated VLAN provisioned to the connection.</p>
     pub vlan: i32,
 }
+impl AllocateConnectionOnInterconnectInput {
+    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
+    /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners
+    /// who have met specific requirements
+    /// are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+    pub fn bandwidth(&self) -> std::option::Option<&str> {
+        self.bandwidth.as_deref()
+    }
+    /// <p>The name of the provisioned connection.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
+    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+        self.interconnect_id.as_deref()
+    }
+    /// <p>The dedicated VLAN provisioned to the connection.</p>
+    pub fn vlan(&self) -> i32 {
+        self.vlan
+    }
+}
 impl std::fmt::Debug for AllocateConnectionOnInterconnectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AllocateConnectionOnInterconnectInput");
@@ -12799,6 +13540,28 @@ pub struct AcceptDirectConnectGatewayAssociationProposalInput {
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
     pub override_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+}
+impl AcceptDirectConnectGatewayAssociationProposalInput {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+        self.direct_connect_gateway_id.as_deref()
+    }
+    /// <p>The ID of the request proposal.</p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
+    pub fn associated_gateway_owner_account(&self) -> std::option::Option<&str> {
+        self.associated_gateway_owner_account.as_deref()
+    }
+    /// <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
+    /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    pub fn override_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+        self.override_allowed_prefixes_to_direct_connect_gateway
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptDirectConnectGatewayAssociationProposalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

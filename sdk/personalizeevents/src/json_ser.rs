@@ -2,13 +2,13 @@
 pub fn serialize_structure_crate_input_put_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutEventsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.event_list {
         let mut array_2 = object.key("eventList").start_array();
         for item_3 in var_1 {
             {
                 let mut object_4 = array_2.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_event(&mut object_4, item_3);
+                crate::json_ser::serialize_structure_crate_model_event(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -23,12 +23,13 @@ pub fn serialize_structure_crate_input_put_events_input(
     if let Some(var_7) = &input.user_id {
         object.key("userId").string(var_7);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_items_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutItemsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.dataset_arn {
         object.key("datasetArn").string(var_8);
     }
@@ -37,18 +38,19 @@ pub fn serialize_structure_crate_input_put_items_input(
         for item_11 in var_9 {
             {
                 let mut object_12 = array_10.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_item(&mut object_12, item_11);
+                crate::json_ser::serialize_structure_crate_model_item(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
         array_10.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_users_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutUsersInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.dataset_arn {
         object.key("datasetArn").string(var_13);
     }
@@ -57,18 +59,19 @@ pub fn serialize_structure_crate_input_put_users_input(
         for item_16 in var_14 {
             {
                 let mut object_17 = array_15.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_user(&mut object_17, item_16);
+                crate::json_ser::serialize_structure_crate_model_user(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
         array_15.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_event(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Event,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.event_id {
         object.key("eventId").string(var_18);
     }
@@ -104,28 +107,31 @@ pub fn serialize_structure_crate_model_event(
         }
         array_26.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_item(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Item,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.item_id {
         object.key("itemId").string(var_28);
     }
     if let Some(var_29) = &input.properties {
         object.key("properties").string(var_29);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_user(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::User,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.user_id {
         object.key("userId").string(var_30);
     }
     if let Some(var_31) = &input.properties {
         object.key("properties").string(var_31);
     }
+    Ok(())
 }

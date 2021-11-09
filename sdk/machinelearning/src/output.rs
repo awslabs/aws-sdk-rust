@@ -8,6 +8,13 @@ pub struct UpdateMlModelOutput {
     /// of the <code>MLModelID</code> in the request.</p>
     pub ml_model_id: std::option::Option<std::string::String>,
 }
+impl UpdateMlModelOutput {
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.  This value should be identical to the value
+    /// of the <code>MLModelID</code> in the request.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMlModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMlModelOutput");
@@ -59,6 +66,13 @@ pub struct UpdateEvaluationOutput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.  This value should be identical to the value
     /// of the <code>Evaluation</code> in the request.</p>
     pub evaluation_id: std::option::Option<std::string::String>,
+}
+impl UpdateEvaluationOutput {
+    /// <p>The ID assigned to the <code>Evaluation</code> during creation.  This value should be identical to the value
+    /// of the <code>Evaluation</code> in the request.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEvaluationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -115,6 +129,13 @@ pub struct UpdateDataSourceOutput {
     /// of the <code>DataSourceID</code> in the request.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
+impl UpdateDataSourceOutput {
+    /// <p>The ID assigned to the <code>DataSource</code> during creation.  This value should be identical to the value
+    /// of the <code>DataSourceID</code> in the request.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceOutput");
@@ -169,6 +190,13 @@ pub struct UpdateBatchPredictionOutput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.  This value should be identical to the value
     /// of the <code>BatchPredictionId</code> in the request.</p>
     pub batch_prediction_id: std::option::Option<std::string::String>,
+}
+impl UpdateBatchPredictionOutput {
+    /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.  This value should be identical to the value
+    /// of the <code>BatchPredictionId</code> in the request.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBatchPredictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -249,6 +277,39 @@ pub struct PredictOutput {
     /// </li>
     /// </ul>
     pub prediction: std::option::Option<crate::model::Prediction>,
+}
+impl PredictOutput {
+    /// <p>The output from a <code>Predict</code> operation: </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Details</code> - Contains the following attributes:
+    /// <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code>
+    /// <code>DetailsAttributes.ALGORITHM - SGD</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code>
+    /// <code>MLModel</code> request.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PredictedScores</code> - Contains the raw classification score corresponding to each label.
+    /// </p>        
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PredictedValue</code> - Present for a <code>REGRESSION</code>
+    /// <code>MLModel</code> request.
+    /// </p>        
+    /// </li>
+    /// </ul>
+    pub fn prediction(&self) -> std::option::Option<&crate::model::Prediction> {
+        self.prediction.as_ref()
+    }
 }
 impl std::fmt::Debug for PredictOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -487,6 +548,189 @@ pub struct GetMlModelOutput {
     /// <p>
     /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub schema: std::option::Option<std::string::String>,
+}
+impl GetMlModelOutput {
+    /// <p>The MLModel ID,
+    /// which is same as the <code>MLModelId</code> in the request.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The ID of the training <code>DataSource</code>.</p>
+    pub fn training_data_source_id(&self) -> std::option::Option<&str> {
+        self.training_data_source_id.as_deref()
+    }
+    /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INPROGRESS</code> - The request is processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The request did not run to completion. The ML model isn't
+    /// usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - The request completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't
+    /// usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn size_in_bytes(&self) -> std::option::Option<i64> {
+        self.size_in_bytes
+    }
+    /// <p>The current endpoint of the <code>MLModel</code>
+    /// </p>
+    pub fn endpoint_info(&self) -> std::option::Option<&crate::model::RealtimeEndpointInfo> {
+        self.endpoint_info.as_ref()
+    }
+    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
+    /// a map of key-value pairs.</p>
+    /// <p>The following is the current set of training parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
+    /// input data, the size of the model might affect its performance.</p>
+    /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
+    /// observations to build the <code>MLModel</code>. The value is an integer that
+    /// ranges from <code>1</code> to <code>10000</code>. The default value is
+    /// <code>10</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a
+    /// model's ability to find the optimal solution for a variety of data types. The
+    /// valid values are <code>auto</code> and <code>none</code>. The default value is
+    /// <code>none</code>. We strongly recommend that you shuffle your data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
+    /// overfitting the data by penalizing large coefficients. This tends to drive
+    /// coefficients to zero, resulting in a sparse feature set. If you use this
+    /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
+    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+    /// The default is to not use L1 normalization. This parameter can't be used when
+    /// <code>L2</code> is specified. Use this parameter sparingly.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
+    /// overfitting the data by penalizing large coefficients. This tends to drive
+    /// coefficients to small, nonzero values. If you use this parameter, start by
+    /// specifying a small value, such as <code>1.0E-08</code>.</p>
+    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+    /// The default is to not use L2 normalization. This parameter can't be used when
+    /// <code>L1</code> is specified. Use this parameter sparingly.</p>
+    /// </li>
+    /// </ul>
+    pub fn training_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.training_parameters.as_ref()
+    }
+    /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+        self.input_data_location_s3.as_deref()
+    }
+    /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
+    /// <ul>
+    /// <li>
+    /// <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p>
+    /// </li>
+    /// <li>
+    /// <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p>
+    /// </li>
+    /// <li>
+    /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p>
+    /// </li>
+    /// </ul>
+    pub fn ml_model_type(&self) -> std::option::Option<&crate::model::MlModelType> {
+        self.ml_model_type.as_ref()
+    }
+    /// <p>The scoring threshold is used in binary classification <code>MLModel</code>
+    /// models. It marks the boundary between a positive prediction and a
+    /// negative prediction.</p>
+    /// <p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as
+    /// <code>true</code>. Output values less than the threshold receive a negative response from the MLModel,
+    /// such as <code>false</code>.</p>
+    pub fn score_threshold(&self) -> std::option::Option<f32> {
+        self.score_threshold
+    }
+    /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
+    pub fn score_threshold_last_updated_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.score_threshold_last_updated_at.as_ref()
+    }
+    /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code>
+    /// provides detailed information about the observation data to use during training, and
+    /// manipulations to perform on the observation data during training.</p>
+    /// <p>
+    /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    pub fn recipe(&self) -> std::option::Option<&str> {
+        self.recipe.as_deref()
+    }
+    /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
+    /// <p>
+    /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMlModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1098,6 +1342,105 @@ pub struct GetEvaluationOutput {
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
     pub started_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetEvaluationOutput {
+    /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
+    /// <p>The ID of the <code>MLModel</code> that was the focus of the evaluation.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The <code>DataSource</code> used for this evaluation.</p>
+    pub fn evaluation_data_source_id(&self) -> std::option::Option<&str> {
+        self.evaluation_data_source_id.as_deref()
+    }
+    /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+        self.input_data_location_s3.as_deref()
+    }
+    /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the evaluation. This element can have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INPROGRESS</code> - The evaluation is underway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - The evaluation process completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p>
+    /// </li>
+    /// <li>
+    /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p>
+    /// </li>
+    /// <li>
+    /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
+    /// </p>
+    pub fn performance_metrics(&self) -> std::option::Option<&crate::model::PerformanceMetrics> {
+        self.performance_metrics.as_ref()
+    }
+    /// <p>A link to the file that contains logs of the <code>CreateEvaluation</code> operation.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEvaluationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvaluationOutput");
@@ -1496,6 +1839,115 @@ pub struct GetDataSourceOutput {
     /// <p>
     /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub data_source_schema: std::option::Option<std::string::String>,
+}
+impl GetDataSourceOutput {
+    /// <p>The ID assigned to the <code>DataSource</code> at creation.  This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn data_location_s3(&self) -> std::option::Option<&str> {
+        self.data_location_s3.as_deref()
+    }
+    /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code>
+    /// was created.</p>
+    pub fn data_rearrangement(&self) -> std::option::Option<&str> {
+        self.data_rearrangement.as_deref()
+    }
+    /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The total size of observations in the data files.</p>
+    pub fn data_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.data_size_in_bytes
+    }
+    /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
+    pub fn number_of_files(&self) -> std::option::Option<i64> {
+        self.number_of_files
+    }
+    /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INPROGRESS</code> - The creation process is underway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - The creation process completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
+    pub fn redshift_metadata(&self) -> std::option::Option<&crate::model::RedshiftMetadata> {
+        self.redshift_metadata.as_ref()
+    }
+    /// <p>The datasource details that are specific to Amazon RDS.</p>
+    pub fn rds_metadata(&self) -> std::option::Option<&crate::model::RdsMetadata> {
+        self.rds_metadata.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>
+    /// The parameter is <code>true</code> if statistics need to be generated from the observation data.
+    /// </p>
+    pub fn compute_statistics(&self) -> bool {
+        self.compute_statistics
+    }
+    /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
+    /// <p>
+    /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    pub fn data_source_schema(&self) -> std::option::Option<&str> {
+        self.data_source_schema.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1938,6 +2390,100 @@ pub struct GetBatchPredictionOutput {
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     pub invalid_record_count: std::option::Option<i64>,
 }
+impl GetBatchPredictionOutput {
+    /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code>
+    /// in the request.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
+    /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>.
+    /// </p>
+    pub fn batch_prediction_data_source_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_data_source_id.as_deref()
+    }
+    /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+        self.input_data_location_s3.as_deref()
+    }
+    /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INPROGRESS</code> - The batch predictions are in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - The batch prediction process completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
+    pub fn output_uri(&self) -> std::option::Option<&str> {
+        self.output_uri.as_deref()
+    }
+    /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>A description of the most recent details about processing the batch prediction request.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
+    pub fn total_record_count(&self) -> std::option::Option<i64> {
+        self.total_record_count
+    }
+    /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
+    pub fn invalid_record_count(&self) -> std::option::Option<i64> {
+        self.invalid_record_count
+    }
+}
 impl std::fmt::Debug for GetBatchPredictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBatchPredictionOutput");
@@ -2279,6 +2825,20 @@ pub struct DescribeTagsOutput {
     /// <p>A list of tags associated with the ML object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl DescribeTagsOutput {
+    /// <p>The ID of the tagged ML object.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the tagged ML object.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>A list of tags associated with the ML object.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsOutput");
@@ -2367,6 +2927,16 @@ pub struct DescribeMlModelsOutput {
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMlModelsOutput {
+    /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::MlModel]> {
+        self.results.as_deref()
+    }
+    /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMlModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMlModelsOutput");
@@ -2439,6 +3009,17 @@ pub struct DescribeEvaluationsOutput {
     pub results: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEvaluationsOutput {
+    /// <p>A list of <code>Evaluation</code> that meet the search criteria.
+    /// </p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::Evaluation]> {
+        self.results.as_deref()
+    }
+    /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEvaluationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2515,6 +3096,17 @@ pub struct DescribeDataSourcesOutput {
     /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeDataSourcesOutput {
+    /// <p>A list of <code>DataSource</code> that meet the search criteria.
+    /// </p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.results.as_deref()
+    }
+    /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSourcesOutput");
@@ -2590,6 +3182,17 @@ pub struct DescribeBatchPredictionsOutput {
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBatchPredictionsOutput {
+    /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+    /// </p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::BatchPrediction]> {
+        self.results.as_deref()
+    }
+    /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBatchPredictionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBatchPredictionsOutput");
@@ -2664,6 +3267,16 @@ pub struct DeleteTagsOutput {
     /// <p>The type of the ML object from which tags were deleted.</p>
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
+impl DeleteTagsOutput {
+    /// <p>The ID of the ML object from which tags were deleted.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the ML object from which tags were deleted.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsOutput");
@@ -2732,6 +3345,20 @@ pub struct DeleteRealtimeEndpointOutput {
     /// <p>The endpoint information of the <code>MLModel</code>
     /// </p>
     pub realtime_endpoint_info: std::option::Option<crate::model::RealtimeEndpointInfo>,
+}
+impl DeleteRealtimeEndpointOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the
+    /// <code>MLModelId</code> in the request.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The endpoint information of the <code>MLModel</code>
+    /// </p>
+    pub fn realtime_endpoint_info(
+        &self,
+    ) -> std::option::Option<&crate::model::RealtimeEndpointInfo> {
+        self.realtime_endpoint_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteRealtimeEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2803,6 +3430,12 @@ pub struct DeleteMlModelOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     pub ml_model_id: std::option::Option<std::string::String>,
 }
+impl DeleteMlModelOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMlModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMlModelOutput");
@@ -2852,6 +3485,12 @@ impl DeleteMlModelOutput {
 pub struct DeleteEvaluationOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     pub evaluation_id: std::option::Option<std::string::String>,
+}
+impl DeleteEvaluationOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEvaluationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2903,6 +3542,12 @@ impl DeleteEvaluationOutput {
 pub struct DeleteDataSourceOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub data_source_id: std::option::Option<std::string::String>,
+}
+impl DeleteDataSourceOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2956,6 +3601,12 @@ impl DeleteDataSourceOutput {
 pub struct DeleteBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
     pub batch_prediction_id: std::option::Option<std::string::String>,
+}
+impl DeleteBatchPredictionOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBatchPredictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3014,6 +3665,20 @@ pub struct CreateRealtimeEndpointOutput {
     /// <p>The endpoint information of the <code>MLModel</code>
     /// </p>
     pub realtime_endpoint_info: std::option::Option<crate::model::RealtimeEndpointInfo>,
+}
+impl CreateRealtimeEndpointOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the
+    /// <code>MLModelId</code> in the request.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The endpoint information of the <code>MLModel</code>
+    /// </p>
+    pub fn realtime_endpoint_info(
+        &self,
+    ) -> std::option::Option<&crate::model::RealtimeEndpointInfo> {
+        self.realtime_endpoint_info.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRealtimeEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3088,6 +3753,14 @@ pub struct CreateMlModelOutput {
     /// </p>
     pub ml_model_id: std::option::Option<std::string::String>,
 }
+impl CreateMlModelOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the
+    /// <code>MLModelId</code> in the request.
+    /// </p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMlModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMlModelOutput");
@@ -3146,6 +3819,13 @@ pub struct CreateEvaluationOutput {
     /// <code>EvaluationId</code> in the request.</p>
     pub evaluation_id: std::option::Option<std::string::String>,
 }
+impl CreateEvaluationOutput {
+    /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the
+    /// <code>EvaluationId</code> in the request.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEvaluationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEvaluationOutput");
@@ -3202,6 +3882,14 @@ pub struct CreateDataSourceFromS3Output {
     /// <code>DataSourceID</code> in the request.
     /// </p>
     pub data_source_id: std::option::Option<std::string::String>,
+}
+impl CreateDataSourceFromS3Output {
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the
+    /// <code>DataSourceID</code> in the request.
+    /// </p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDataSourceFromS3Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3261,6 +3949,14 @@ pub struct CreateDataSourceFromRedshiftOutput {
     /// <code>DataSourceID</code> in the request.
     /// </p>
     pub data_source_id: std::option::Option<std::string::String>,
+}
+impl CreateDataSourceFromRedshiftOutput {
+    /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the
+    /// <code>DataSourceID</code> in the request.
+    /// </p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDataSourceFromRedshiftOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3324,6 +4020,14 @@ pub struct CreateDataSourceFromRdsOutput {
     /// </p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
+impl CreateDataSourceFromRdsOutput {
+    /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the
+    /// <code>DataSourceID</code> in the request.
+    /// </p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDataSourceFromRdsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceFromRdsOutput");
@@ -3383,6 +4087,13 @@ pub struct CreateBatchPredictionOutput {
     /// <code>BatchPredictionId</code> in the request.</p>
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
+impl CreateBatchPredictionOutput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the
+    /// <code>BatchPredictionId</code> in the request.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBatchPredictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBatchPredictionOutput");
@@ -3437,6 +4148,16 @@ pub struct AddTagsOutput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object that was tagged.</p>
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
+}
+impl AddTagsOutput {
+    /// <p>The ID of the ML object that was tagged.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the ML object that was tagged.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AddTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

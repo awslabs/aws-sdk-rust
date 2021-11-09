@@ -46,6 +46,32 @@ pub struct UpdateConfigurationOutput {
     /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::SanitizationWarning>>,
 }
+impl UpdateConfigurationOutput {
+    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Required. The date and time of the configuration.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::SanitizationWarning]> {
+        self.warnings.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationOutput");
@@ -191,6 +217,54 @@ pub struct UpdateBrokerOutput {
     pub maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateBrokerOutput {
+    /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
+    pub fn auto_minor_version_upgrade(&self) -> bool {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>The ID of the updated configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ConfigurationId> {
+        self.configuration.as_ref()
+    }
+    /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+        self.host_instance_type.as_deref()
+    }
+    /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn ldap_server_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::LdapServerMetadataOutput> {
+        self.ldap_server_metadata.as_ref()
+    }
+    /// <p>The list of information about logs to be enabled for the specified broker.</p>
+    pub fn logs(&self) -> std::option::Option<&crate::model::Logs> {
+        self.logs.as_ref()
+    }
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
+    pub fn maintenance_window_start_time(
+        &self,
+    ) -> std::option::Option<&crate::model::WeeklyStartTime> {
+        self.maintenance_window_start_time.as_ref()
+    }
+    /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBrokerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -438,6 +512,24 @@ pub struct ListUsersOutput {
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
 }
+impl ListUsersOutput {
+    /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserSummary]> {
+        self.users.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersOutput");
@@ -535,6 +627,15 @@ pub struct ListTagsOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsOutput {
+    /// <p>The key-value pair for the resource tag.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -601,6 +702,20 @@ pub struct ListConfigurationsOutput {
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationsOutput {
+    /// <p>The list of all revisions for the specified configuration.</p>
+    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+        self.configurations.as_deref()
+    }
+    /// <p>The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -690,6 +805,24 @@ pub struct ListConfigurationRevisionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of all revisions for the specified configuration.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
+}
+impl ListConfigurationRevisionsOutput {
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of all revisions for the specified configuration.</p>
+    pub fn revisions(&self) -> std::option::Option<&[crate::model::ConfigurationRevision]> {
+        self.revisions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -793,6 +926,16 @@ pub struct ListBrokersOutput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBrokersOutput {
+    /// <p>A list of information about all brokers.</p>
+    pub fn broker_summaries(&self) -> std::option::Option<&[crate::model::BrokerSummary]> {
+        self.broker_summaries.as_deref()
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBrokersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBrokersOutput");
@@ -871,6 +1014,28 @@ pub struct DescribeUserOutput {
     pub pending: std::option::Option<crate::model::UserPendingChanges>,
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl DescribeUserOutput {
+    /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn console_access(&self) -> bool {
+        self.console_access
+    }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.groups.as_deref()
+    }
+    /// <p>The status of the changes pending for the ActiveMQ user.</p>
+    pub fn pending(&self) -> std::option::Option<&crate::model::UserPendingChanges> {
+        self.pending.as_ref()
+    }
+    /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -990,6 +1155,24 @@ pub struct DescribeConfigurationRevisionOutput {
     /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl DescribeConfigurationRevisionOutput {
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>Required. The date and time of the configuration.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>Required. The base64-encoded XML configuration.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationRevisionOutput");
@@ -1101,6 +1284,53 @@ pub struct DescribeConfigurationOutput {
     /// <p>The list of all tags associated with this configuration.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeConfigurationOutput {
+    /// <p>Required. The ARN of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>Required. The date and time of the configuration revision.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>Required. The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Required. The latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The list of all tags associated with this configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1308,6 +1538,22 @@ pub struct DescribeBrokerInstanceOptionsOutput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBrokerInstanceOptionsOutput {
+    /// <p>List of available broker instance options.</p>
+    pub fn broker_instance_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::BrokerInstanceOption]> {
+        self.broker_instance_options.as_deref()
+    }
+    /// <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBrokerInstanceOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBrokerInstanceOptionsOutput");
@@ -1398,6 +1644,20 @@ pub struct DescribeBrokerEngineTypesOutput {
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeBrokerEngineTypesOutput {
+    /// <p>List of available engine types and versions.</p>
+    pub fn broker_engine_types(&self) -> std::option::Option<&[crate::model::BrokerEngineType]> {
+        self.broker_engine_types.as_deref()
+    }
+    /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBrokerEngineTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1540,6 +1800,133 @@ pub struct DescribeBrokerOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of all broker usernames for the specified broker.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
+}
+impl DescribeBrokerOutput {
+    /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
+    pub fn auto_minor_version_upgrade(&self) -> bool {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The broker's Amazon Resource Name (ARN).</p>
+    pub fn broker_arn(&self) -> std::option::Option<&str> {
+        self.broker_arn.as_deref()
+    }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>A list of information about allocated brokers.</p>
+    pub fn broker_instances(&self) -> std::option::Option<&[crate::model::BrokerInstance]> {
+        self.broker_instances.as_deref()
+    }
+    /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    pub fn broker_name(&self) -> std::option::Option<&str> {
+        self.broker_name.as_deref()
+    }
+    /// <p>The broker's status.</p>
+    pub fn broker_state(&self) -> std::option::Option<&crate::model::BrokerState> {
+        self.broker_state.as_ref()
+    }
+    /// <p>The list of all revisions for the specified configuration.</p>
+    pub fn configurations(&self) -> std::option::Option<&crate::model::Configurations> {
+        self.configurations.as_ref()
+    }
+    /// <p>The time when the broker was created.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The broker's deployment mode.</p>
+    pub fn deployment_mode(&self) -> std::option::Option<&crate::model::DeploymentMode> {
+        self.deployment_mode.as_ref()
+    }
+    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn encryption_options(&self) -> std::option::Option<&crate::model::EncryptionOptions> {
+        self.encryption_options.as_ref()
+    }
+    /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The broker's instance type.</p>
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+        self.host_instance_type.as_deref()
+    }
+    /// <p>The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
+    pub fn ldap_server_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::LdapServerMetadataOutput> {
+        self.ldap_server_metadata.as_ref()
+    }
+    /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
+    pub fn logs(&self) -> std::option::Option<&crate::model::LogsSummary> {
+        self.logs.as_ref()
+    }
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
+    pub fn maintenance_window_start_time(
+        &self,
+    ) -> std::option::Option<&crate::model::WeeklyStartTime> {
+        self.maintenance_window_start_time.as_ref()
+    }
+    /// <p>The authentication strategy that will be applied when the broker is rebooted. The default is SIMPLE.</p>
+    pub fn pending_authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.pending_authentication_strategy.as_ref()
+    }
+    /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn pending_engine_version(&self) -> std::option::Option<&str> {
+        self.pending_engine_version.as_deref()
+    }
+    /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
+    pub fn pending_host_instance_type(&self) -> std::option::Option<&str> {
+        self.pending_host_instance_type.as_deref()
+    }
+    /// <p>The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker after it is rebooted.</p>
+    pub fn pending_ldap_server_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::LdapServerMetadataOutput> {
+        self.pending_ldap_server_metadata.as_ref()
+    }
+    /// <p>The list of pending security groups to authorize connections to brokers.</p>
+    pub fn pending_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.pending_security_groups.as_deref()
+    }
+    /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
+    pub fn publicly_accessible(&self) -> bool {
+        self.publicly_accessible
+    }
+    /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The broker's storage type.</p>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::BrokerStorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The list of all tags associated with this broker.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The list of all broker usernames for the specified broker.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserSummary]> {
+        self.users.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBrokerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2146,6 +2533,12 @@ pub struct DeleteBrokerOutput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
+impl DeleteBrokerOutput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBrokerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBrokerOutput");
@@ -2263,6 +2656,34 @@ pub struct CreateConfigurationOutput {
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateConfigurationOutput {
+    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>Required. The date and time of the configuration.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2391,6 +2812,16 @@ pub struct CreateBrokerOutput {
     pub broker_arn: std::option::Option<std::string::String>,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
+}
+impl CreateBrokerOutput {
+    /// <p>The broker's Amazon Resource Name (ARN).</p>
+    pub fn broker_arn(&self) -> std::option::Option<&str> {
+        self.broker_arn.as_deref()
+    }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBrokerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

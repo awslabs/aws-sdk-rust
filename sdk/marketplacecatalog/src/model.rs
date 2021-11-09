@@ -16,6 +16,27 @@ pub struct Change {
     /// <p>Optional name for the change.</p>
     pub change_name: std::option::Option<std::string::String>,
 }
+impl Change {
+    /// <p>Change types are single string values that describe your intention for the change.
+    /// Each change type is unique for each <code>EntityType</code> provided in the change's
+    /// scope.</p>
+    pub fn change_type(&self) -> std::option::Option<&str> {
+        self.change_type.as_deref()
+    }
+    /// <p>The entity to be changed.</p>
+    pub fn entity(&self) -> std::option::Option<&crate::model::Entity> {
+        self.entity.as_ref()
+    }
+    /// <p>This object contains details specific to the change type of the requested
+    /// change.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
+    /// <p>Optional name for the change.</p>
+    pub fn change_name(&self) -> std::option::Option<&str> {
+        self.change_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Change {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Change");
@@ -112,6 +133,16 @@ pub struct Entity {
     /// <p>The identifier for the entity.</p>
     pub identifier: std::option::Option<std::string::String>,
 }
+impl Entity {
+    /// <p>The type of entity.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The identifier for the entity.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for Entity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Entity");
@@ -193,6 +224,41 @@ pub struct EntitySummary {
     /// buyers
     /// can view it). </p>
     pub visibility: std::option::Option<std::string::String>,
+}
+impl EntitySummary {
+    /// <p>The name for the entity. This value is not unique. It is defined by the
+    /// seller.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the entity.</p>
+    pub fn entity_type(&self) -> std::option::Option<&str> {
+        self.entity_type.as_deref()
+    }
+    /// <p>The unique identifier for the entity.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The ARN associated with the unique identifier for the entity.</p>
+    pub fn entity_arn(&self) -> std::option::Option<&str> {
+        self.entity_arn.as_deref()
+    }
+    /// <p>The last time the entity was published, using ISO 8601 format
+    /// (2018-02-27T13:45:22Z).</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The visibility status of the entity to
+    /// buyers.
+    /// This value can be <code>Public</code> (everyone can view the entity),
+    /// <code>Limited</code> (the entity is visible to limited accounts only), or
+    /// <code>Restricted</code> (the entity was published and then unpublished and only
+    /// existing
+    /// buyers
+    /// can view it). </p>
+    pub fn visibility(&self) -> std::option::Option<&str> {
+        self.visibility.as_deref()
+    }
 }
 impl std::fmt::Debug for EntitySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -336,6 +402,22 @@ pub struct Sort {
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The
     /// default value is <code>DESCENDING</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl Sort {
+    /// <p>For <code>ListEntities</code>, supported attributes include
+    /// <code>LastModifiedDate</code> (default), <code>Visibility</code>,
+    /// <code>EntityId</code>, and <code>Name</code>.</p>
+    ///
+    /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
+    /// and <code>EndTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&str> {
+        self.sort_by.as_deref()
+    }
+    /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The
+    /// default value is <code>DESCENDING</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for Sort {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -515,6 +597,61 @@ pub struct Filter {
     /// </li>
     /// </ul>
     pub value_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Filter {
+    /// <p>For <code>ListEntities</code>, the supported value for this is an
+    /// <code>EntityId</code>.</p>
+    /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    ///
+    /// <p>
+    /// <code>ListChangeSets</code> - The supported filter names and associated
+    /// <code>ValueList</code>s is as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of
+    /// non-unique <code>ChangeSetName</code>s. These are defined when you call the
+    /// <code>StartChangeSet</code> action.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code> - The supported <code>ValueList</code> is a list of
+    /// statuses for all change set requests.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EntityId</code> - The supported <code>ValueList</code> is a list of
+    /// unique <code>EntityId</code>s.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list
+    /// of all change sets that started before the filter value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list
+    /// of all change sets that started after the filter value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of
+    /// all change sets that ended before the filter value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of
+    /// all change sets that ended after the filter value.</p>
+    /// </li>
+    /// </ul>
+    pub fn value_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.value_list.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -697,6 +834,47 @@ pub struct ChangeSetSummaryListItem {
     /// <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>,
     /// which means that there is a problem in the system, and you should retry your request.</p>
     pub failure_code: std::option::Option<crate::model::FailureCode>,
+}
+impl ChangeSetSummaryListItem {
+    /// <p>The unique identifier for a change set.</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
+    /// <p>The ARN associated with the unique identifier for the change set referenced in this
+    /// request.</p>
+    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+        self.change_set_arn.as_deref()
+    }
+    /// <p>The non-unique name for the change set.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was
+    /// started.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was
+    /// finished.</p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// <p>The current status of the change set.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChangeStatus> {
+        self.status.as_ref()
+    }
+    /// <p>This object is a list of entity IDs (string) that are a part of a change set. The
+    /// entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
+    pub fn entity_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_id_list.as_deref()
+    }
+    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+    /// <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the
+    /// <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>,
+    /// which means that there is a problem in the system, and you should retry your request.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::FailureCode> {
+        self.failure_code.as_ref()
+    }
 }
 impl std::fmt::Debug for ChangeSetSummaryListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1007,6 +1185,29 @@ pub struct ChangeSummary {
     /// <p>Optional name for the change.</p>
     pub change_name: std::option::Option<std::string::String>,
 }
+impl ChangeSummary {
+    /// <p>The type of the change.</p>
+    pub fn change_type(&self) -> std::option::Option<&str> {
+        self.change_type.as_deref()
+    }
+    /// <p>The entity to be changed.</p>
+    pub fn entity(&self) -> std::option::Option<&crate::model::Entity> {
+        self.entity.as_ref()
+    }
+    /// <p>This object contains details specific to the change type of the requested
+    /// change.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
+    /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
+    pub fn error_detail_list(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+        self.error_detail_list.as_deref()
+    }
+    /// <p>Optional name for the change.</p>
+    pub fn change_name(&self) -> std::option::Option<&str> {
+        self.change_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ChangeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangeSummary");
@@ -1119,6 +1320,16 @@ pub struct ErrorDetail {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The message for the error.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl ErrorDetail {
+    /// <p>The error code that identifies the type of error.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The message for the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

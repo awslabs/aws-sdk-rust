@@ -2,19 +2,20 @@
 pub fn serialize_structure_crate_input_accept_resource_share_invitation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AcceptResourceShareInvitationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1);
     }
     if let Some(var_2) = &input.resource_share_invitation_arn {
         object.key("resourceShareInvitationArn").string(var_2);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_associate_resource_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateResourceShareInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.client_token {
         object.key("clientToken").string(var_3);
     }
@@ -39,12 +40,13 @@ pub fn serialize_structure_crate_input_associate_resource_share_input(
     if let Some(var_10) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_10);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_associate_resource_share_permission_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateResourceSharePermissionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.client_token {
         object.key("clientToken").string(var_11);
     }
@@ -63,12 +65,13 @@ pub fn serialize_structure_crate_input_associate_resource_share_permission_input
     if let Some(var_15) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_15);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_resource_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateResourceShareInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.allow_external_principals {
         object.key("allowExternalPrincipals").boolean(*var_16);
     }
@@ -110,18 +113,19 @@ pub fn serialize_structure_crate_input_create_resource_share_input(
         for item_30 in var_28 {
             {
                 let mut object_31 = array_29.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
             }
         }
         array_29.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_resource_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateResourceShareInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.client_token {
         object.key("clientToken").string(var_32);
     }
@@ -146,12 +150,13 @@ pub fn serialize_structure_crate_input_disassociate_resource_share_input(
     if let Some(var_39) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_39);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_resource_share_permission_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateResourceSharePermissionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.client_token {
         object.key("clientToken").string(var_40);
     }
@@ -161,12 +166,13 @@ pub fn serialize_structure_crate_input_disassociate_resource_share_permission_in
     if let Some(var_42) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_42);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_permission_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPermissionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.permission_arn {
         object.key("permissionArn").string(var_43);
     }
@@ -176,12 +182,13 @@ pub fn serialize_structure_crate_input_get_permission_input(
             aws_smithy_types::Number::NegInt((*var_44).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_resource_policies_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourcePoliciesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -203,12 +210,13 @@ pub fn serialize_structure_crate_input_get_resource_policies_input(
         }
         array_49.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_resource_share_associations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceShareAssociationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.association_status {
         object.key("associationStatus").string(var_51.as_str());
     }
@@ -239,12 +247,13 @@ pub fn serialize_structure_crate_input_get_resource_share_associations_input(
         }
         array_58.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_resource_share_invitations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceShareInvitationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_60) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -272,12 +281,13 @@ pub fn serialize_structure_crate_input_get_resource_share_invitations_input(
         }
         array_66.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_resource_shares_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceSharesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -316,18 +326,19 @@ pub fn serialize_structure_crate_input_get_resource_shares_input(
                 crate::json_ser::serialize_structure_crate_model_tag_filter(
                     &mut object_80,
                     item_79,
-                );
+                )?;
                 object_80.finish();
             }
         }
         array_78.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_pending_invitation_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPendingInvitationResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -340,12 +351,13 @@ pub fn serialize_structure_crate_input_list_pending_invitation_resources_input(
     if let Some(var_83) = &input.resource_share_invitation_arn {
         object.key("resourceShareInvitationArn").string(var_83);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_permissions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPermissionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_84) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -358,12 +370,13 @@ pub fn serialize_structure_crate_input_list_permissions_input(
     if let Some(var_86) = &input.resource_type {
         object.key("resourceType").string(var_86);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_principals_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPrincipalsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -400,12 +413,13 @@ pub fn serialize_structure_crate_input_list_principals_input(
     if let Some(var_97) = &input.resource_type {
         object.key("resourceType").string(var_97);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -442,12 +456,13 @@ pub fn serialize_structure_crate_input_list_resources_input(
     if let Some(var_108) = &input.resource_type {
         object.key("resourceType").string(var_108);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_resource_share_permissions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourceSharePermissionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -460,12 +475,13 @@ pub fn serialize_structure_crate_input_list_resource_share_permissions_input(
     if let Some(var_111) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_111);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_resource_types_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourceTypesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_112) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -475,24 +491,26 @@ pub fn serialize_structure_crate_input_list_resource_types_input(
     if let Some(var_113) = &input.next_token {
         object.key("nextToken").string(var_113);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_reject_resource_share_invitation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RejectResourceShareInvitationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_114) = &input.client_token {
         object.key("clientToken").string(var_114);
     }
     if let Some(var_115) = &input.resource_share_invitation_arn {
         object.key("resourceShareInvitationArn").string(var_115);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_116) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_116);
     }
@@ -501,18 +519,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_119 in var_117 {
             {
                 let mut object_120 = array_118.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_120, item_119);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_120, item_119)?;
                 object_120.finish();
             }
         }
         array_118.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_121) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_121);
     }
@@ -525,12 +544,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_123.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_resource_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResourceShareInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_125) = &input.allow_external_principals {
         object.key("allowExternalPrincipals").boolean(*var_125);
     }
@@ -543,24 +563,26 @@ pub fn serialize_structure_crate_input_update_resource_share_input(
     if let Some(var_128) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_128);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_129) = &input.key {
         object.key("key").string(var_129);
     }
     if let Some(var_130) = &input.value {
         object.key("value").string(var_130);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TagFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_131) = &input.tag_key {
         object.key("tagKey").string(var_131);
     }
@@ -573,4 +595,5 @@ pub fn serialize_structure_crate_model_tag_filter(
         }
         array_133.finish();
     }
+    Ok(())
 }

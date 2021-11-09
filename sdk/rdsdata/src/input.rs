@@ -207,10 +207,7 @@ impl BatchExecuteStatementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_execute_statement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -391,10 +388,7 @@ impl BeginTransactionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_begin_transaction(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_begin_transaction(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -566,10 +560,7 @@ impl CommitTransactionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_commit_transaction(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_commit_transaction(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -776,10 +767,7 @@ impl ExecuteSqlInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_execute_sql(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_execute_sql(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1079,10 +1067,7 @@ impl ExecuteStatementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1254,10 +1239,7 @@ impl RollbackTransactionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_rollback_transaction(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_rollback_transaction(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1331,6 +1313,20 @@ pub struct RollbackTransactionInput {
     /// <p>The identifier of the transaction to roll back.</p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
+impl RollbackTransactionInput {
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The identifier of the transaction to roll back.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RollbackTransactionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RollbackTransactionInput");
@@ -1383,6 +1379,64 @@ pub struct ExecuteStatementInput {
     /// <p>Options that control how the result set is returned.</p>
     pub result_set_options: std::option::Option<crate::model::ResultSetOptions>,
 }
+impl ExecuteStatementInput {
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The SQL statement to run.</p>
+    pub fn sql(&self) -> std::option::Option<&str> {
+        self.sql.as_deref()
+    }
+    /// <p>The name of the database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the database schema.</p>
+    /// <note>
+    /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+    /// </note>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The parameters for the SQL statement.</p>
+    /// <note>
+    /// <p>Array parameters are not supported.</p>
+    /// </note>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::SqlParameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The identifier of a transaction that was started by using the
+    /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
+    /// transaction that you want to include the SQL statement in.</p>
+    /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>A value that indicates whether to include metadata in the results.</p>
+    pub fn include_result_metadata(&self) -> bool {
+        self.include_result_metadata
+    }
+    /// <p>A value that indicates whether to continue running the statement after
+    /// the call times out. By default, the statement stops running when the call
+    /// times out.</p>
+    /// <important>
+    /// <p>For DDL statements, we recommend continuing to run the statement after
+    /// the call times out. When a DDL statement terminates before it is finished
+    /// running, it can result in errors and possibly corrupted data structures.</p>
+    /// </important>
+    pub fn continue_after_timeout(&self) -> bool {
+        self.continue_after_timeout
+    }
+    /// <p>Options that control how the result set is returned.</p>
+    pub fn result_set_options(&self) -> std::option::Option<&crate::model::ResultSetOptions> {
+        self.result_set_options.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteStatementInput");
@@ -1419,6 +1473,31 @@ pub struct ExecuteSqlInput {
     /// <p>The name of the database schema.</p>
     pub schema: std::option::Option<std::string::String>,
 }
+impl ExecuteSqlInput {
+    /// <p>The ARN of the Aurora Serverless DB cluster.</p>
+    pub fn db_cluster_or_instance_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_or_instance_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+    pub fn aws_secret_store_arn(&self) -> std::option::Option<&str> {
+        self.aws_secret_store_arn.as_deref()
+    }
+    /// <p>One or more SQL statements to run on the DB cluster.</p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
+    /// statement is permitted, including data definition, data manipulation, and commit
+    /// statements. </p>
+    pub fn sql_statements(&self) -> std::option::Option<&str> {
+        self.sql_statements.as_deref()
+    }
+    /// <p>The name of the database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the database schema.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+}
 impl std::fmt::Debug for ExecuteSqlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteSqlInput");
@@ -1445,6 +1524,20 @@ pub struct CommitTransactionInput {
     /// <p>The identifier of the transaction to end and commit.</p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
+impl CommitTransactionInput {
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The identifier of the transaction to end and commit.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CommitTransactionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CommitTransactionInput");
@@ -1468,6 +1561,24 @@ pub struct BeginTransactionInput {
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the database schema.</p>
     pub schema: std::option::Option<std::string::String>,
+}
+impl BeginTransactionInput {
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The name of the database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the database schema.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
 }
 impl std::fmt::Debug for BeginTransactionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1517,6 +1628,55 @@ pub struct BatchExecuteStatementInput {
     /// <p>If the SQL statement is not part of a transaction, don't set this
     /// parameter.</p>
     pub transaction_id: std::option::Option<std::string::String>,
+}
+impl BatchExecuteStatementInput {
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The SQL statement to run.</p>
+    pub fn sql(&self) -> std::option::Option<&str> {
+        self.sql.as_deref()
+    }
+    /// <p>The name of the database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the database schema.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The parameter set for the batch operation.</p>
+    /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
+    /// To execute a SQL statement with no parameters, use one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify one or more empty parameter sets.</p>
+    /// </li>
+    /// <li>
+    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Array parameters are not supported.</p>
+    /// </note>
+    pub fn parameter_sets(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::model::SqlParameter>]> {
+        self.parameter_sets.as_deref()
+    }
+    /// <p>The identifier of a transaction that was started by using the
+    /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
+    /// transaction that you want to include the SQL statement in.</p>
+    /// <p>If the SQL statement is not part of a transaction, don't set this
+    /// parameter.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

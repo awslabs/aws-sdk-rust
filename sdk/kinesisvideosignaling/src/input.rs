@@ -123,10 +123,7 @@ impl GetIceServerConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ice_server_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_ice_server_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -305,10 +302,7 @@ impl SendAlexaOfferToMasterInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_alexa_offer_to_master(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -382,6 +376,21 @@ pub struct SendAlexaOfferToMasterInput {
     /// <p>The base64-encoded SDP offer content.</p>
     pub message_payload: std::option::Option<std::string::String>,
 }
+impl SendAlexaOfferToMasterInput {
+    /// <p>The ARN of the signaling channel by which Alexa and the master peer
+    /// communicate.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The unique identifier for the sender client.</p>
+    pub fn sender_client_id(&self) -> std::option::Option<&str> {
+        self.sender_client_id.as_deref()
+    }
+    /// <p>The base64-encoded SDP offer content.</p>
+    pub fn message_payload(&self) -> std::option::Option<&str> {
+        self.message_payload.as_deref()
+    }
+}
 impl std::fmt::Debug for SendAlexaOfferToMasterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendAlexaOfferToMasterInput");
@@ -406,6 +415,26 @@ pub struct GetIceServerConfigInput {
     pub service: std::option::Option<crate::model::Service>,
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl GetIceServerConfigInput {
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
+    /// configured peers. </p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
+    /// value.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+    /// <p>An optional user ID to be associated with the credentials.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIceServerConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

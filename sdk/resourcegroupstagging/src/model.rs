@@ -44,6 +44,23 @@ pub struct FailureInfo {
     /// <p>The message of the common error.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl FailureInfo {
+    /// <p>The HTTP status code of the common error.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+    /// <p>The code of the common error. Valid values include
+    /// <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and
+    /// any valid error code returned by the AWS service that hosts the resource that you want
+    /// to tag.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The message of the common error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for FailureInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailureInfo");
@@ -191,6 +208,21 @@ pub struct ResourceTagMapping {
     /// including details on any noncompliant tag keys.</p>
     pub compliance_details: std::option::Option<crate::model::ComplianceDetails>,
 }
+impl ResourceTagMapping {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags that have been applied to one or more AWS resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Information that shows whether a resource is compliant with the effective tag policy,
+    /// including details on any noncompliant tag keys.</p>
+    pub fn compliance_details(&self) -> std::option::Option<&crate::model::ComplianceDetails> {
+        self.compliance_details.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceTagMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceTagMapping");
@@ -284,6 +316,21 @@ pub struct ComplianceDetails {
     pub keys_with_noncompliant_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub compliance_status: std::option::Option<bool>,
+}
+impl ComplianceDetails {
+    /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
+    pub fn noncompliant_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.noncompliant_keys.as_deref()
+    }
+    /// <p>These are keys defined in the effective policy that are on the resource with either
+    /// incorrect case treatment or noncompliant values. </p>
+    pub fn keys_with_noncompliant_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys_with_noncompliant_values.as_deref()
+    }
+    /// <p>Whether a resource is compliant with the effective tag policy.</p>
+    pub fn compliance_status(&self) -> std::option::Option<bool> {
+        self.compliance_status
+    }
 }
 impl std::fmt::Debug for ComplianceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -391,6 +438,16 @@ pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -454,6 +511,16 @@ pub struct TagFilter {
     pub key: std::option::Option<std::string::String>,
     /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl TagFilter {
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for TagFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -535,6 +602,33 @@ pub struct Summary {
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The count of noncompliant resources.</p>
     pub non_compliant_resources: i64,
+}
+impl Summary {
+    /// <p>The timestamp that shows when this summary was generated in this Region. </p>
+    pub fn last_updated(&self) -> std::option::Option<&str> {
+        self.last_updated.as_deref()
+    }
+    /// <p>The account identifier or the root identifier of the organization. If you don't know
+    /// the root ID, you can call the AWS Organizations <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>Whether the target is an account, an OU, or the organization root.</p>
+    pub fn target_id_type(&self) -> std::option::Option<&crate::model::TargetIdType> {
+        self.target_id_type.as_ref()
+    }
+    /// <p>The AWS Region that the summary applies to.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The AWS resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The count of noncompliant resources.</p>
+    pub fn non_compliant_resources(&self) -> i64 {
+        self.non_compliant_resources
+    }
 }
 impl std::fmt::Debug for Summary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

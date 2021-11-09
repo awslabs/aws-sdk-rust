@@ -32,6 +32,12 @@ pub struct RawMessageContent {
     /// <p>The S3 reference of an email message.</p>
     pub s3_reference: std::option::Option<crate::model::S3Reference>,
 }
+impl RawMessageContent {
+    /// <p>The S3 reference of an email message.</p>
+    pub fn s3_reference(&self) -> std::option::Option<&crate::model::S3Reference> {
+        self.s3_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for RawMessageContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RawMessageContent");
@@ -92,6 +98,20 @@ pub struct S3Reference {
     pub key: std::option::Option<std::string::String>,
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
     pub object_version: std::option::Option<std::string::String>,
+}
+impl S3Reference {
+    /// <p>The S3 bucket name.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The S3 key object name.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
+    pub fn object_version(&self) -> std::option::Option<&str> {
+        self.object_version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Reference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

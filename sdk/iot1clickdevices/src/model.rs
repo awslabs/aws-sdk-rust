@@ -22,6 +22,44 @@ pub struct DeviceDescription {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl DeviceDescription {
+    /// <p>The ARN of the device.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An array of zero or more elements of DeviceAttribute objects providing
+    /// user specified device attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>A Boolean value indicating whether or not the device is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the
+    /// device.</p>
+    pub fn remaining_life(&self) -> f64 {
+        self.remaining_life
+    }
+    /// <p>The type of the device, such as "button".</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceDescription");
@@ -188,6 +226,16 @@ pub struct DeviceEvent {
     /// <p>A serialized JSON object representing the device-type specific event.</p>
     pub std_event: std::option::Option<std::string::String>,
 }
+impl DeviceEvent {
+    /// <p>An object representing the device associated with the event.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::Device> {
+        self.device.as_ref()
+    }
+    /// <p>A serialized JSON object representing the device-type specific event.</p>
+    pub fn std_event(&self) -> std::option::Option<&str> {
+        self.std_event.as_deref()
+    }
+}
 impl std::fmt::Debug for DeviceEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceEvent");
@@ -252,6 +300,20 @@ pub struct Device {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device type, such as "button".</p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl Device {
+    /// <p>The user specified attributes associated with the device for an event.</p>
+    pub fn attributes(&self) -> std::option::Option<&crate::model::Attributes> {
+        self.attributes.as_ref()
+    }
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The device type, such as "button".</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -361,6 +423,16 @@ pub struct DeviceMethod {
     pub device_type: std::option::Option<std::string::String>,
     /// <p>The name of the method applicable to the deviceType.</p>
     pub method_name: std::option::Option<std::string::String>,
+}
+impl DeviceMethod {
+    /// <p>The type of the device, such as "button".</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+    /// <p>The name of the method applicable to the deviceType.</p>
+    pub fn method_name(&self) -> std::option::Option<&str> {
+        self.method_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeviceMethod {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

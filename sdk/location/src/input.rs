@@ -134,27 +134,15 @@ impl AssociateTrackerConsumerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_tracker_consumer(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -349,7 +337,7 @@ impl BatchDeleteDevicePositionHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_device_position_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_device_position_history(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -357,17 +345,8 @@ impl BatchDeleteDevicePositionHistoryInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -550,27 +529,15 @@ impl BatchDeleteGeofenceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_geofence(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_geofence(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -763,27 +730,15 @@ impl BatchEvaluateGeofencesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_evaluate_geofences(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -980,27 +935,15 @@ impl BatchGetDevicePositionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_device_position(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1187,27 +1130,15 @@ impl BatchPutGeofenceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_put_geofence(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_geofence(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1390,27 +1321,15 @@ impl BatchUpdateDevicePositionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_update_device_position(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1921,27 +1840,16 @@ impl CalculateRouteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_calculate_route(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_calculate_route(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2277,27 +2185,15 @@ impl CreateGeofenceCollectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_geofence_collection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2574,27 +2470,15 @@ impl CreateMapInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_map(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_map(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2938,27 +2822,15 @@ impl CreatePlaceIndexInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_place_index(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_place_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3292,27 +3164,15 @@ impl CreateRouteCalculatorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_route_calculator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3684,27 +3544,15 @@ impl CreateTrackerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_tracker(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_tracker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3868,17 +3716,8 @@ impl DeleteGeofenceCollectionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4024,17 +3863,8 @@ impl DeleteMapInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4184,17 +4014,8 @@ impl DeletePlaceIndexInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4349,17 +4170,8 @@ impl DeleteRouteCalculatorInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4511,17 +4323,8 @@ impl DeleteTrackerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4677,17 +4480,8 @@ impl DescribeGeofenceCollectionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4836,17 +4630,8 @@ impl DescribeMapInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4999,17 +4784,8 @@ impl DescribePlaceIndexInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5166,17 +4942,8 @@ impl DescribeRouteCalculatorInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5329,17 +5096,8 @@ impl DescribeTrackerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5537,17 +5295,8 @@ impl DisassociateTrackerConsumerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5727,17 +5476,8 @@ impl GetDevicePositionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6003,27 +5743,15 @@ impl GetDevicePositionHistoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_device_position_history(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6214,17 +5942,8 @@ impl GetGeofenceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6517,17 +6236,8 @@ impl GetMapGlyphsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6753,17 +6463,8 @@ impl GetMapSpritesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6915,17 +6616,8 @@ impl GetMapStyleDescriptorInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7161,17 +6853,8 @@ impl GetMapTileInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7356,27 +7039,15 @@ impl ListDevicePositionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_device_positions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_device_positions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7540,27 +7211,15 @@ impl ListGeofenceCollectionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_geofence_collections(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7739,27 +7398,15 @@ impl ListGeofencesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_geofences(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_geofences(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7917,27 +7564,15 @@ impl ListMapsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_maps(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_maps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8095,27 +7730,15 @@ impl ListPlaceIndexesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_place_indexes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_place_indexes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8276,27 +7899,17 @@ impl ListRouteCalculatorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_route_calculators(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_route_calculators(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8464,17 +8077,8 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8659,27 +8263,17 @@ impl ListTrackerConsumersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tracker_consumers(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tracker_consumers(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8839,27 +8433,15 @@ impl ListTrackersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_trackers(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_trackers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9069,27 +8651,15 @@ impl PutGeofenceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_geofence(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_geofence(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9301,7 +8871,7 @@ impl SearchPlaceIndexForPositionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_position(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_position(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9309,17 +8879,8 @@ impl SearchPlaceIndexForPositionInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9658,27 +9219,15 @@ impl SearchPlaceIndexForTextInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_text(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9885,27 +9434,15 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10103,17 +9640,8 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10342,27 +9870,15 @@ impl UpdateGeofenceCollectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_geofence_collection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10543,27 +10059,15 @@ impl UpdateMapInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_map(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_map(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10768,27 +10272,15 @@ impl UpdatePlaceIndexInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_place_index(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_place_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10983,27 +10475,15 @@ impl UpdateRouteCalculatorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_route_calculator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -11280,27 +10760,15 @@ impl UpdateTrackerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_tracker(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_tracker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -11372,6 +10840,25 @@ pub struct ListTrackerConsumersInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTrackerConsumersInput {
+    /// <p>The tracker resource whose associated geofence collections you want to list.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>Default value: <code>100</code>
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTrackerConsumersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrackerConsumersInput");
@@ -11397,6 +10884,25 @@ pub struct ListDevicePositionsInput {
     /// <p>Default value: <code>null</code>
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDevicePositionsInput {
+    /// <p>The tracker resource containing the requested devices.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>An optional limit for the number of entries returned in a single call.</p>
+    /// <p>Default value: <code>100</code>
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicePositionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11444,6 +10950,49 @@ pub struct GetDevicePositionHistoryInput {
     /// </ul>
     pub end_time_exclusive: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetDevicePositionHistoryInput {
+    /// <p>The tracker resource receiving the request for the device position history.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>The device whose position history you want to retrieve.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours
+    /// prior to the time that the request is made.</p>
+    /// <p>Requirement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The time specified for <code>StartTimeInclusive</code> must be before
+    /// <code>EndTimeExclusive</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn start_time_inclusive(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time_inclusive.as_ref()
+    }
+    /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
+    /// that the request is made.</p>
+    /// <p>Requirement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for
+    /// <code>StartTimeInclusive</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn end_time_exclusive(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time_exclusive.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDevicePositionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicePositionHistoryInput");
@@ -11464,6 +11013,16 @@ pub struct GetDevicePositionInput {
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The device whose position you want to retrieve.</p>
     pub device_id: std::option::Option<std::string::String>,
+}
+impl GetDevicePositionInput {
+    /// <p>The tracker resource receiving the position update.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>The device whose position you want to retrieve.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDevicePositionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11491,6 +11050,24 @@ pub struct DisassociateTrackerConsumerInput {
     /// </ul>
     pub consumer_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateTrackerConsumerInput {
+    /// <p>The name of the tracker resource to be dissociated from the consumer.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
+    /// the tracker resource. Used when you need to specify a resource across all AWS. </p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example:
+    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+        self.consumer_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateTrackerConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateTrackerConsumerInput");
@@ -11508,6 +11085,16 @@ pub struct BatchUpdateDevicePositionInput {
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Contains the position update details for each device.</p>
     pub updates: std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
+}
+impl BatchUpdateDevicePositionInput {
+    /// <p>The name of the tracker resource to update.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>Contains the position update details for each device.</p>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::DevicePositionUpdate]> {
+        self.updates.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdateDevicePositionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11534,6 +11121,23 @@ pub struct BatchGetDevicePositionInput {
     /// </ul>
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetDevicePositionInput {
+    /// <p>The tracker resource retrieving the device position.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>Devices whose position you want to retrieve.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, for two devices:
+    /// <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetDevicePositionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDevicePositionInput");
@@ -11558,6 +11162,23 @@ pub struct BatchDeleteDevicePositionHistoryInput {
     /// </li>
     /// </ul>
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteDevicePositionHistoryInput {
+    /// <p>The name of the tracker resource to delete the device position history from.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>Devices whose position history you want to delete.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, for two devices:
+    /// <code>“DeviceIds” : [DeviceId1,DeviceId2]</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteDevicePositionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11585,6 +11206,24 @@ pub struct AssociateTrackerConsumerInput {
     /// </ul>
     pub consumer_arn: std::option::Option<std::string::String>,
 }
+impl AssociateTrackerConsumerInput {
+    /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker
+    /// resource. Used when you need to specify a resource across all AWS.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example:
+    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+        self.consumer_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateTrackerConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateTrackerConsumerInput");
@@ -11607,6 +11246,21 @@ pub struct ListTrackersInput {
     /// <p>Default value: <code>null</code>
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTrackersInput {
+    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>Default value: <code>100</code>
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTrackersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11705,6 +11359,107 @@ pub struct CreateTrackerInput {
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
 }
+impl CreateTrackerInput {
+    /// <p>The name for the tracker resource.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be a unique tracker resource name.</p>
+    /// </li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>Specifies the pricing plan for the tracker resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies the data provider for the tracker resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
+    /// </code>| <code>MobileAssetManagement</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
+    /// Service product page.</p>
+    /// <note>
+    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
+    /// </note>
+    /// <p>Valid values: <code>Esri</code> | <code>Here</code>
+    /// </p>
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+        self.pricing_plan_data_source.as_deref()
+    }
+    /// <p>An optional description for the tracker resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps
+    /// manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code>
+    /// </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p>
+    /// </li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+    /// + - = . _ : / @. </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies the position filtering for the tracker resource.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+    /// but not every location update is stored. If your update frequency is more often than 30 seconds,
+    /// only one update per 30 seconds is stored for each unique device ID.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+    /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
+    /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+    /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
+    pub fn position_filtering(&self) -> std::option::Option<&crate::model::PositionFiltering> {
+        self.position_filtering.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTrackerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrackerInput");
@@ -11725,6 +11480,12 @@ impl std::fmt::Debug for CreateTrackerInput {
 pub struct DeleteTrackerInput {
     /// <p>The name of the tracker resource to be deleted.</p>
     pub tracker_name: std::option::Option<std::string::String>,
+}
+impl DeleteTrackerInput {
+    /// <p>The name of the tracker resource to be deleted.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTrackerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11780,6 +11541,59 @@ pub struct UpdateTrackerInput {
     /// </ul>
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
 }
+impl UpdateTrackerInput {
+    /// <p>The name of the tracker resource to update.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>Updates the pricing plan for the tracker resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+    /// pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>Updates the data provider for the tracker resource. </p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
+    /// </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
+    /// page</p>
+    /// <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+    /// request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+    /// billing for your tracker resource. Your data won't be shared with the data provider,
+    /// and will remain in your AWS account and Region unless you move it.</p>
+    /// </note>
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+        self.pricing_plan_data_source.as_deref()
+    }
+    /// <p>Updates the description for the tracker resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Updates the position filtering for the tracker resource.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+    /// but not every location update is stored. If your update frequency is more often than 30 seconds,
+    /// only one update per 30 seconds is stored for each unique device ID.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+    /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
+    /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+    /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn position_filtering(&self) -> std::option::Option<&crate::model::PositionFiltering> {
+        self.position_filtering.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTrackerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrackerInput");
@@ -11798,6 +11612,12 @@ impl std::fmt::Debug for UpdateTrackerInput {
 pub struct DescribeTrackerInput {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: std::option::Option<std::string::String>,
+}
+impl DescribeTrackerInput {
+    /// <p>The name of the tracker resource.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrackerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11924,6 +11744,146 @@ pub struct CalculateRouteInput {
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     pub truck_mode_options: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
 }
+impl CalculateRouteInput {
+    /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
+    pub fn calculator_name(&self) -> std::option::Option<&str> {
+        self.calculator_name.as_deref()
+    }
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+    /// <code>[longitude, latitude]</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>[-123.115, 49.285]</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
+    /// position to the nearest road</a>. If Esri is the provider for your route calculator,
+    /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+    /// </p>
+    pub fn departure_position(&self) -> std::option::Option<&[f64]> {
+        self.departure_position.as_deref()
+    }
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+    /// <code>[longitude, latitude]</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p> For example, <code>[-122.339, 47.615]</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+    /// </p>
+    pub fn destination_position(&self) -> std::option::Option<&[f64]> {
+        self.destination_position.as_deref()
+    }
+    /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route
+    /// between the departure position and destination position. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, from the <code>DeparturePosition</code>
+    /// <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint
+    /// positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+    /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
+    /// error.</p>
+    /// <p>If Esri is the provider for your route calculator, specifying a
+    /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+    /// </p>
+    pub fn waypoint_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+        self.waypoint_positions.as_deref()
+    }
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed
+    /// of travel and road compatibility.</p>
+    /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+    /// <ul>
+    /// <li>
+    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+    /// parameter.</p>
+    /// </li>
+    /// <li>
+    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+    /// parameter.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default Value: <code>Car</code>
+    /// </p>
+    pub fn travel_mode(&self) -> std::option::Option<&crate::model::TravelMode> {
+        self.travel_mode.as_ref()
+    }
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+    /// Otherwise, the best time of day to travel with the best traffic conditions is used to
+    /// calculate the route.</p>
+    /// <note>
+    /// <p>Setting a departure time in the past returns a <code>400
+    /// ValidationException</code> error.</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+    /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+    /// <code>2020–07-2T12:15:20.000Z+01:00</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn departure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.departure_time.as_ref()
+    }
+    /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
+    /// route. Otherwise, the best time of day to travel with the best traffic conditions is
+    /// used to calculate the route.</p>
+    /// <p>Default Value: <code>false</code>
+    /// </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code>
+    /// </p>
+    pub fn depart_now(&self) -> std::option::Option<bool> {
+        self.depart_now
+    }
+    /// <p>Set the unit system to specify the distance.</p>
+    /// <p>Default Value: <code>Kilometers</code>
+    /// </p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
+    /// <p>Set to include the geometry details in the result for each path between a pair of
+    /// positions.</p>
+    /// <p>Default Value: <code>false</code>
+    /// </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code>
+    /// </p>
+    pub fn include_leg_geometry(&self) -> std::option::Option<bool> {
+        self.include_leg_geometry
+    }
+    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding
+    /// routes that use ferries or tolls.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+    pub fn car_mode_options(
+        &self,
+    ) -> std::option::Option<&crate::model::CalculateRouteCarModeOptions> {
+        self.car_mode_options.as_ref()
+    }
+    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
+    /// routes that use ferries or tolls, and truck specifications to consider when choosing an
+    /// optimal road.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+    pub fn truck_mode_options(
+        &self,
+    ) -> std::option::Option<&crate::model::CalculateRouteTruckModeOptions> {
+        self.truck_mode_options.as_ref()
+    }
+}
 impl std::fmt::Debug for CalculateRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateRouteInput");
@@ -11955,6 +11915,21 @@ pub struct ListRouteCalculatorsInput {
     /// <p>Default Value: <code>null</code>
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRouteCalculatorsInput {
+    /// <p>An optional maximum number of results returned in a single call.</p>
+    /// <p>Default Value: <code>100</code>
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page.</p>
+    /// <p>Default Value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRouteCalculatorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12042,6 +12017,92 @@ pub struct CreateRouteCalculatorInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRouteCalculatorInput {
+    /// <p>The name of the route calculator resource. </p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores
+    /// (_).</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be a unique Route calculator resource name.</p>
+    /// </li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn calculator_name(&self) -> std::option::Option<&str> {
+        self.calculator_name.as_deref()
+    }
+    /// <p>Specifies the data provider of traffic and road network data.</p>
+    /// <note>
+    /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
+    /// entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source
+    /// only calculate routes that are shorter than 400 km.</p>
+    /// </note>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+    /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+    /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>Specifies the pricing plan for your route calculator resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>The optional description for the route calculator resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair
+    /// helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" :
+    /// "value2"</code>}</p>
+    /// </li>
+    /// </ul>
+    /// <p>Format: <code>"key" : "value"</code>
+    /// </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p>
+    /// </li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+    /// + - = . _ : / @. </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRouteCalculatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteCalculatorInput");
@@ -12060,6 +12121,12 @@ impl std::fmt::Debug for CreateRouteCalculatorInput {
 pub struct DeleteRouteCalculatorInput {
     /// <p>The name of the route calculator resource to be deleted.</p>
     pub calculator_name: std::option::Option<std::string::String>,
+}
+impl DeleteRouteCalculatorInput {
+    /// <p>The name of the route calculator resource to be deleted.</p>
+    pub fn calculator_name(&self) -> std::option::Option<&str> {
+        self.calculator_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRouteCalculatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12082,6 +12149,22 @@ pub struct UpdateRouteCalculatorInput {
     /// <p>Updates the description for the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateRouteCalculatorInput {
+    /// <p>The name of the route calculator resource to update.</p>
+    pub fn calculator_name(&self) -> std::option::Option<&str> {
+        self.calculator_name.as_deref()
+    }
+    /// <p>Updates the pricing plan for the route calculator resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
+    /// Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>Updates the description for the route calculator resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRouteCalculatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRouteCalculatorInput");
@@ -12098,6 +12181,12 @@ impl std::fmt::Debug for UpdateRouteCalculatorInput {
 pub struct DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
     pub calculator_name: std::option::Option<std::string::String>,
+}
+impl DescribeRouteCalculatorInput {
+    /// <p>The name of the route calculator resource.</p>
+    pub fn calculator_name(&self) -> std::option::Option<&str> {
+        self.calculator_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRouteCalculatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12172,6 +12261,80 @@ pub struct SearchPlaceIndexForTextInput {
     /// </p>
     pub max_results: i32,
 }
+impl SearchPlaceIndexForTextInput {
+    /// <p>The name of the place index resource you want to use for the search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The address, name,
+    /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+    /// Street</code>.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Searches for results closest to the given position. An optional parameter defined by
+    /// longitude, and latitude.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
+    /// </li>
+    /// <li>
+    /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
+    pub fn bias_position(&self) -> std::option::Option<&[f64]> {
+        self.bias_position.as_deref()
+    }
+    /// <p>Filters the results by returning only Places within the provided bounding box. An
+    /// optional parameter.</p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
+    /// southwest corner.</p>
+    /// </li>
+    /// <li>
+    /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
+    /// southwest corner.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
+    /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
+    /// upper northeast corner.</p>
+    /// </li>
+    /// <li>
+    /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
+    /// upper northeast corner.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+    /// </p>
+    pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
+        self.filter_b_box.as_deref()
+    }
+    /// <p>Limits the search to the given a list of countries/regions. An optional
+    /// parameter.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+    /// country code. For example, Australia uses three upper-case characters:
+    /// <code>AUS</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter_countries(&self) -> std::option::Option<&[std::string::String]> {
+        self.filter_countries.as_deref()
+    }
+    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>The default: <code>50</code>
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for SearchPlaceIndexForTextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForTextInput");
@@ -12207,6 +12370,31 @@ pub struct SearchPlaceIndexForPositionInput {
     /// </p>
     pub max_results: i32,
 }
+impl SearchPlaceIndexForPositionInput {
+    /// <p>The name of the place index resource you want to use for the search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The first position is the X coordinate, or longitude.</p>
+    /// </li>
+    /// <li>
+    /// <p>The second position is the Y coordinate, or latitude. </p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
+    pub fn position(&self) -> std::option::Option<&[f64]> {
+        self.position.as_deref()
+    }
+    /// <p>An optional paramer. The maximum number of results returned per request. </p>
+    /// <p>Default value: <code>50</code>
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForPositionInput");
@@ -12230,6 +12418,21 @@ pub struct ListPlaceIndexesInput {
     /// <p>Default value: <code>null</code>
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlaceIndexesInput {
+    /// <p>An optional limit for the maximum number of results returned in a single call.</p>
+    /// <p>Default value: <code>100</code>
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPlaceIndexesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12318,6 +12521,97 @@ pub struct CreatePlaceIndexInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreatePlaceIndexInput {
+    /// <p>The name of the place index resource. </p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
+    /// underscores (_).</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be a unique place index resource name.</p>
+    /// </li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Specifies the data provider of geospatial data.</p>
+    /// <note>
+    /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
+    /// <code>HERE</code> returns an error.</p>
+    /// </note>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
+    /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
+    /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
+    /// <important>
+    /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+    /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+    /// for Amazon Location Service.</p>
+    /// </important>
+    /// </li>
+    /// </ul>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
+    /// on the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>Specifies the pricing plan for your place index resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>The optional description for the place index resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the data storage option requesting Places.</p>
+    pub fn data_source_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceConfiguration> {
+        self.data_source_configuration.as_ref()
+    }
+    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
+    /// manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code>
+    /// </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p>
+    /// </li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+    /// = . _ : / @. </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePlaceIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlaceIndexInput");
@@ -12337,6 +12631,12 @@ impl std::fmt::Debug for CreatePlaceIndexInput {
 pub struct DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
     pub index_name: std::option::Option<std::string::String>,
+}
+impl DeletePlaceIndexInput {
+    /// <p>The name of the place index resource to be deleted.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePlaceIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12360,6 +12660,27 @@ pub struct UpdatePlaceIndexInput {
     /// <p>Updates the data storage option for the place index resource.</p>
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
 }
+impl UpdatePlaceIndexInput {
+    /// <p>The name of the place index resource to update.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Updates the pricing plan for the place index resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>Updates the description for the place index resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Updates the data storage option for the place index resource.</p>
+    pub fn data_source_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceConfiguration> {
+        self.data_source_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePlaceIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePlaceIndexInput");
@@ -12377,6 +12698,12 @@ impl std::fmt::Debug for UpdatePlaceIndexInput {
 pub struct DescribePlaceIndexInput {
     /// <p>The name of the place index resource.</p>
     pub index_name: std::option::Option<std::string::String>,
+}
+impl DescribePlaceIndexInput {
+    /// <p>The name of the place index resource.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePlaceIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12399,6 +12726,24 @@ pub struct GetMapTileInput {
     /// <p>The Y axis value for the map tile. </p>
     pub y: std::option::Option<std::string::String>,
 }
+impl GetMapTileInput {
+    /// <p>The map resource to retrieve the map tiles from.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
+    /// <p>The zoom value for the map tile.</p>
+    pub fn z(&self) -> std::option::Option<&str> {
+        self.z.as_deref()
+    }
+    /// <p>The X axis value for the map tile.</p>
+    pub fn x(&self) -> std::option::Option<&str> {
+        self.x.as_deref()
+    }
+    /// <p>The Y axis value for the map tile. </p>
+    pub fn y(&self) -> std::option::Option<&str> {
+        self.y.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMapTileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMapTileInput");
@@ -12416,6 +12761,12 @@ impl std::fmt::Debug for GetMapTileInput {
 pub struct GetMapStyleDescriptorInput {
     /// <p>The map resource to retrieve the style descriptor from.</p>
     pub map_name: std::option::Option<std::string::String>,
+}
+impl GetMapStyleDescriptorInput {
+    /// <p>The map resource to retrieve the style descriptor from.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMapStyleDescriptorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12456,6 +12807,39 @@ pub struct GetMapSpritesInput {
     /// </li>
     /// </ul>
     pub file_name: std::option::Option<std::string::String>,
+}
+impl GetMapSpritesInput {
+    /// <p>The map resource associated with the sprite ﬁle.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sprites.png</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sprites@2x.png</code> for high pixel density displays</p>
+    /// </li>
+    /// </ul>
+    /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sprites.json</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sprites@2x.json</code> for high pixel density displays</p>
+    /// </li>
+    /// </ul>
+    pub fn file_name(&self) -> std::option::Option<&str> {
+        self.file_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMapSpritesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12518,6 +12902,61 @@ pub struct GetMapGlyphsInput {
     /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
     pub font_unicode_range: std::option::Option<std::string::String>,
 }
+impl GetMapGlyphsInput {
+    /// <p>The map resource associated with the glyph ﬁle.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
+    /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
+    /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+    /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+    /// <ul>
+    /// <li>
+    /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
+    /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
+    /// <code>Ubuntu Bold</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+    /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+    /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
+    /// Regular</code> | <code>Roboto Condensed Light Italic</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
+    /// <code>Arial Bold</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
+    /// | <code>Arial Bold</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
+    /// <ul>
+    /// <li>
+    /// <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO
+    /// Bold</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn font_stack(&self) -> std::option::Option<&str> {
+        self.font_stack.as_deref()
+    }
+    /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
+    /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
+    /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
+    pub fn font_unicode_range(&self) -> std::option::Option<&str> {
+        self.font_unicode_range.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMapGlyphsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMapGlyphsInput");
@@ -12541,6 +12980,21 @@ pub struct ListMapsInput {
     /// <p>Default value: <code>null</code>
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMapsInput {
+    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>Default value: <code>100</code>
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMapsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12602,6 +13056,66 @@ pub struct CreateMapInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateMapInput {
+    /// <p>The name for the map resource.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p>
+    /// </li>
+    /// <li>
+    /// <p>Must be a unique map resource name. </p>
+    /// </li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleMap</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
+    /// <p>Specifies the map style selected from an available data provider.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::MapConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>Specifies the pricing plan for your map resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>An optional description for the map resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
+    /// identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code>
+    /// </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p>
+    /// </li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length:  256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
+    /// @. </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMapInput");
@@ -12620,6 +13134,12 @@ impl std::fmt::Debug for CreateMapInput {
 pub struct DeleteMapInput {
     /// <p>The name of the map resource to be deleted.</p>
     pub map_name: std::option::Option<std::string::String>,
+}
+impl DeleteMapInput {
+    /// <p>The name of the map resource to be deleted.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12641,6 +13161,21 @@ pub struct UpdateMapInput {
     /// <p>Updates the description for the map resource.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateMapInput {
+    /// <p>The name of the map resource to update.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
+    /// <p>Updates the pricing plan for the map resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>Updates the description for the map resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMapInput");
@@ -12657,6 +13192,12 @@ impl std::fmt::Debug for UpdateMapInput {
 pub struct DescribeMapInput {
     /// <p>The name of the map resource.</p>
     pub map_name: std::option::Option<std::string::String>,
+}
+impl DescribeMapInput {
+    /// <p>The name of the map resource.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12680,6 +13221,23 @@ pub struct PutGeofenceInput {
     /// </note>
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
 }
+impl PutGeofenceInput {
+    /// <p>The geofence collection to store the geofence in.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
+        self.geofence_id.as_deref()
+    }
+    /// <p>Contains the polygon details to specify the position of the geofence.</p>
+    /// <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// </note>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
+        self.geometry.as_ref()
+    }
+}
 impl std::fmt::Debug for PutGeofenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutGeofenceInput");
@@ -12702,6 +13260,19 @@ pub struct ListGeofencesInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGeofencesInput {
+    /// <p>The name of the geofence collection storing the list of geofences.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGeofencesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGeofencesInput");
@@ -12720,6 +13291,16 @@ pub struct GetGeofenceInput {
     /// <p>The geofence you're retrieving details for.</p>
     pub geofence_id: std::option::Option<std::string::String>,
 }
+impl GetGeofenceInput {
+    /// <p>The geofence collection storing the target geofence.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>The geofence you're retrieving details for.</p>
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
+        self.geofence_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGeofenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGeofenceInput");
@@ -12737,6 +13318,16 @@ pub struct BatchPutGeofenceInput {
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceRequestEntry>>,
+}
+impl BatchPutGeofenceInput {
+    /// <p>The geofence collection storing the geofences.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>The batch of geofences to be stored in a geofence collection.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::BatchPutGeofenceRequestEntry]> {
+        self.entries.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutGeofenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12759,6 +13350,20 @@ pub struct BatchEvaluateGeofencesInput {
     pub device_position_updates:
         std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
 }
+impl BatchEvaluateGeofencesInput {
+    /// <p>The geofence collection used in evaluating the position of devices against its
+    /// geofences.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>Contains device details for each device to be evaluated against the given geofence
+    /// collection.</p>
+    pub fn device_position_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::DevicePositionUpdate]> {
+        self.device_position_updates.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchEvaluateGeofencesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchEvaluateGeofencesInput");
@@ -12776,6 +13381,16 @@ pub struct BatchDeleteGeofenceInput {
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The batch of geofences to be deleted.</p>
     pub geofence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteGeofenceInput {
+    /// <p>The geofence collection storing the geofences to be deleted.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>The batch of geofences to be deleted.</p>
+    pub fn geofence_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.geofence_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteGeofenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12799,6 +13414,21 @@ pub struct ListGeofenceCollectionsInput {
     /// <p>Default value: <code>null</code>
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGeofenceCollectionsInput {
+    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>Default value: <code>100</code>
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no
+    /// token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code>
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGeofenceCollectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12881,6 +13511,89 @@ pub struct CreateGeofenceCollectionInput {
     /// </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl CreateGeofenceCollectionInput {
+    /// <p>A custom name for the geofence collection.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+    /// (.), and underscores (_). </p>
+    /// </li>
+    /// <li>
+    /// <p>Must be a unique geofence collection name.</p>
+    /// </li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>Specifies the pricing plan for the geofence collection.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+    /// page</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>Specifies the data provider for the geofence collection.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
+    /// </code>| <code>MobileAssetManagement</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
+    /// Service product page.</p>
+    /// <note>
+    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for
+    /// your geofence collection. Your data won't be shared with the data provider, and will
+    /// remain in your AWS account or Region unless you move it.</p>
+    /// </note>
+    /// <p>Valid Values: <code>Esri </code>| <code>Here</code>
+    /// </p>
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+        self.pricing_plan_data_source.as_deref()
+    }
+    /// <p>An optional description for the geofence collection.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps
+    /// manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code>
+    /// </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p>
+    /// </li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+    /// + - = . _ : / @. </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+    /// </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGeofenceCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGeofenceCollectionInput");
@@ -12900,6 +13613,12 @@ impl std::fmt::Debug for CreateGeofenceCollectionInput {
 pub struct DeleteGeofenceCollectionInput {
     /// <p>The name of the geofence collection to be deleted.</p>
     pub collection_name: std::option::Option<std::string::String>,
+}
+impl DeleteGeofenceCollectionInput {
+    /// <p>The name of the geofence collection to be deleted.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGeofenceCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12937,6 +13656,39 @@ pub struct UpdateGeofenceCollectionInput {
     /// <p>Updates the description for the geofence collection.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateGeofenceCollectionInput {
+    /// <p>The name of the geofence collection to update.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>Updates the pricing plan for the geofence collection.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+    /// pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>Updates the data provider for the geofence collection. </p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
+    /// <code>MobileAssetManagement</code>
+    /// </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
+    /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
+    /// Amazon Location Service product page.</p>
+    /// <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+    /// request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+    /// billing for your geofence collection. Your data won't be shared with the data
+    /// provider, and will remain in your AWS account and Region unless you move it.</p>
+    /// </note>
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+        self.pricing_plan_data_source.as_deref()
+    }
+    /// <p>Updates the description for the geofence collection.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGeofenceCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGeofenceCollectionInput");
@@ -12954,6 +13706,12 @@ impl std::fmt::Debug for UpdateGeofenceCollectionInput {
 pub struct DescribeGeofenceCollectionInput {
     /// <p>The name of the geofence collection.</p>
     pub collection_name: std::option::Option<std::string::String>,
+}
+impl DescribeGeofenceCollectionInput {
+    /// <p>The name of the geofence collection.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGeofenceCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12977,6 +13735,22 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tag keys to remove from the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13009,6 +13783,31 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -13030,6 +13829,18 @@ pub struct ListTagsForResourceInput {
     /// </li>
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

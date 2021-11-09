@@ -149,7 +149,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_phone_numbers_with_voice_connector(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_phone_numbers_with_voice_connector(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -363,7 +363,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_phone_numbers_with_voice_connector_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_phone_numbers_with_voice_connector_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -582,7 +582,7 @@ impl AssociatePhoneNumberWithUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_phone_number_with_user(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_phone_number_with_user(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -781,7 +781,7 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_signin_delegate_groups_with_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_signin_delegate_groups_with_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -977,10 +977,7 @@ impl BatchCreateAttendeeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_attendee(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_attendee(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1234,7 +1231,7 @@ impl BatchCreateChannelMembershipInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1242,17 +1239,8 @@ impl BatchCreateChannelMembershipInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1475,10 +1463,7 @@ impl BatchCreateRoomMembershipInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_create_room_membership(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1639,10 +1624,7 @@ impl BatchDeletePhoneNumberInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_phone_number(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1833,10 +1815,7 @@ impl BatchSuspendUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_suspend_user(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_suspend_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2027,10 +2006,7 @@ impl BatchUnsuspendUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_unsuspend_user(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_unsuspend_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2195,10 +2171,7 @@ impl BatchUpdatePhoneNumberInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_update_phone_number(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2388,10 +2361,7 @@ impl BatchUpdateUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_update_user(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_update_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2533,10 +2503,7 @@ impl CreateAccountInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_account(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2732,27 +2699,15 @@ impl CreateAppInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_app_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_app_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2931,27 +2886,15 @@ impl CreateAppInstanceAdminInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_app_instance_admin(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3173,27 +3116,15 @@ impl CreateAppInstanceUserInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_app_instance_user(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3387,10 +3318,8 @@ impl CreateAttendeeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_attendee(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_attendee(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3572,10 +3501,7 @@ impl CreateBotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_bot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_bot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3854,27 +3780,15 @@ impl CreateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4081,27 +3995,15 @@ impl CreateChannelBanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_channel_ban(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_channel_ban(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4334,27 +4236,15 @@ impl CreateChannelMembershipInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_channel_membership(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4566,27 +4456,15 @@ impl CreateChannelModeratorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_channel_moderator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4807,7 +4685,7 @@ impl CreateMediaCapturePipelineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_media_capture_pipeline(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_media_capture_pipeline(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5124,10 +5002,7 @@ impl CreateMeetingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_meeting(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_meeting(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5336,10 +5211,7 @@ impl CreateMeetingDialOutInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_meeting_dial_out(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5696,7 +5568,7 @@ impl CreateMeetingWithAttendeesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_meeting_with_attendees(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_meeting_with_attendees(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5868,10 +5740,7 @@ impl CreatePhoneNumberOrderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_phone_number_order(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6155,10 +6024,7 @@ impl CreateProxySessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_proxy_session(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_proxy_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6352,10 +6218,7 @@ impl CreateRoomInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_room(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_room(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6575,10 +6438,9 @@ impl CreateRoomMembershipInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_room_membership(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_room_membership(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6763,10 +6625,7 @@ impl CreateSipMediaApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_sip_media_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6994,7 +6853,7 @@ impl CreateSipMediaApplicationCallInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_sip_media_application_call(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_sip_media_application_call(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7216,10 +7075,8 @@ impl CreateSipRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_sip_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_sip_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7424,10 +7281,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7607,10 +7461,9 @@ impl CreateVoiceConnectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_voice_connector(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_voice_connector(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7783,10 +7636,7 @@ impl CreateVoiceConnectorGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_voice_connector_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8102,17 +7952,8 @@ impl DeleteAppInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8298,17 +8139,8 @@ impl DeleteAppInstanceAdminInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8621,17 +8453,8 @@ impl DeleteAppInstanceUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8994,17 +8817,8 @@ impl DeleteChannelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9220,17 +9034,8 @@ impl DeleteChannelBanInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9447,17 +9252,8 @@ impl DeleteChannelMembershipInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9673,17 +9469,8 @@ impl DeleteChannelMessageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9902,17 +9689,8 @@ impl DeleteChannelModeratorInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12701,7 +12479,7 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_voice_connector_termination_credentials(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_voice_connector_termination_credentials(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12872,17 +12650,8 @@ impl DescribeAppInstanceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -13069,17 +12838,8 @@ impl DescribeAppInstanceAdminInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -13235,17 +12995,8 @@ impl DescribeAppInstanceUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -13429,17 +13180,8 @@ impl DescribeChannelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -13655,17 +13397,8 @@ impl DescribeChannelBanInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -13882,17 +13615,8 @@ impl DescribeChannelMembershipInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -14109,17 +13833,8 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -14337,17 +14052,8 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -14568,17 +14274,8 @@ impl DescribeChannelModeratorInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -14953,7 +14650,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_phone_numbers_from_voice_connector(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_phone_numbers_from_voice_connector(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15156,7 +14853,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_phone_numbers_from_voice_connector_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_phone_numbers_from_voice_connector_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15353,7 +15050,7 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_signin_delegate_groups_from_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_signin_delegate_groups_from_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15823,17 +15520,8 @@ impl GetAppInstanceRetentionSettingsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -16556,17 +16244,8 @@ impl GetChannelMessageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -17283,17 +16962,8 @@ impl GetMessagingSessionEndpointInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -20627,10 +20297,7 @@ impl InviteUsersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_invite_users(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_invite_users(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21031,17 +20698,8 @@ impl ListAppInstanceAdminsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -21201,17 +20859,8 @@ impl ListAppInstancesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -21392,17 +21041,8 @@ impl ListAppInstanceUsersInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -22182,17 +21822,8 @@ impl ListChannelBansInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -22446,17 +22077,8 @@ impl ListChannelMembershipsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -22681,17 +22303,8 @@ impl ListChannelMembershipsForAppInstanceUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -22991,17 +22604,8 @@ impl ListChannelMessagesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -23231,17 +22835,8 @@ impl ListChannelModeratorsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -23480,17 +23075,8 @@ impl ListChannelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -23715,17 +23301,8 @@ impl ListChannelsModeratedByAppInstanceUserInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -26910,7 +26487,7 @@ impl PutAppInstanceRetentionSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_app_instance_retention_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_app_instance_retention_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -26918,17 +26495,8 @@ impl PutAppInstanceRetentionSettingsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -27121,7 +26689,7 @@ impl PutAppInstanceStreamingConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_app_instance_streaming_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_app_instance_streaming_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -27350,10 +26918,7 @@ impl PutEventsConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_events_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27533,10 +27098,9 @@ impl PutRetentionSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_retention_settings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_retention_settings(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27728,7 +27292,7 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_sip_media_application_logging_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_sip_media_application_logging_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -27921,7 +27485,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_emergency_calling_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_emergency_calling_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28108,7 +27672,7 @@ impl PutVoiceConnectorLoggingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_logging_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_logging_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28293,7 +27857,7 @@ impl PutVoiceConnectorOriginationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_origination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_origination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28531,10 +28095,7 @@ impl PutVoiceConnectorProxyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_proxy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28723,7 +28284,7 @@ impl PutVoiceConnectorStreamingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_streaming_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_streaming_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28908,7 +28469,7 @@ impl PutVoiceConnectorTerminationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_termination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_termination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -29108,7 +28669,7 @@ impl PutVoiceConnectorTerminationCredentialsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_termination_credentials(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_termination_credentials(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -29344,17 +28905,8 @@ impl RedactChannelMessageInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -30838,27 +30390,15 @@ impl SendChannelMessageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_channel_message(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_channel_message(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -31047,10 +30587,7 @@ impl StartMeetingTranscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_meeting_transcription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31428,10 +30965,7 @@ impl TagAttendeeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_attendee(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_attendee(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31617,10 +31151,7 @@ impl TagMeetingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_meeting(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_meeting(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31790,10 +31321,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32011,10 +31539,7 @@ impl UntagAttendeeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_attendee(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_attendee(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32200,10 +31725,7 @@ impl UntagMeetingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_meeting(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_meeting(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32373,10 +31895,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32563,10 +32082,7 @@ impl UpdateAccountInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_account(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32748,10 +32264,7 @@ impl UpdateAccountSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_account_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32943,27 +32456,15 @@ impl UpdateAppInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_app_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_app_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -33151,27 +32652,15 @@ impl UpdateAppInstanceUserInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_app_instance_user(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("identity-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -33367,10 +32856,7 @@ impl UpdateBotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_bot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_bot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -33600,27 +33086,15 @@ impl UpdateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -33867,27 +33341,17 @@ impl UpdateChannelMessageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_channel_message(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_channel_message(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -34084,17 +33548,8 @@ impl UpdateChannelReadMarkerInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("messaging-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -34243,10 +33698,9 @@ impl UpdateGlobalSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_global_settings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_global_settings(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -34441,10 +33895,7 @@ impl UpdatePhoneNumberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_phone_number(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_phone_number(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -34592,10 +34043,7 @@ impl UpdatePhoneNumberSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_phone_number_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -34827,10 +34275,7 @@ impl UpdateProxySessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_proxy_session(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_proxy_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35034,10 +34479,7 @@ impl UpdateRoomInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_room(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_room(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35273,10 +34715,9 @@ impl UpdateRoomMembershipInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_room_membership(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_room_membership(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35484,10 +34925,7 @@ impl UpdateSipMediaApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_sip_media_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35716,7 +35154,7 @@ impl UpdateSipMediaApplicationCallInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_sip_media_application_call(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_sip_media_application_call(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -35926,10 +35364,8 @@ impl UpdateSipRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_sip_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_sip_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -36169,10 +35605,7 @@ impl UpdateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -36380,10 +35813,7 @@ impl UpdateUserSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_settings(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_user_settings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -36575,10 +36005,9 @@ impl UpdateVoiceConnectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_voice_connector(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_voice_connector(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -36786,10 +36215,7 @@ impl UpdateVoiceConnectorGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_voice_connector_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -36862,6 +36288,22 @@ pub struct UpdateVoiceConnectorGroupInput {
     /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
     pub voice_connector_items: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
 }
+impl UpdateVoiceConnectorGroupInput {
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_group_id.as_deref()
+    }
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+    pub fn voice_connector_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::VoiceConnectorItem]> {
+        self.voice_connector_items.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVoiceConnectorGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVoiceConnectorGroupInput");
@@ -36883,6 +36325,20 @@ pub struct UpdateVoiceConnectorInput {
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub require_encryption: std::option::Option<bool>,
 }
+impl UpdateVoiceConnectorInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The name of the Amazon Chime Voice Connector.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
+    pub fn require_encryption(&self) -> std::option::Option<bool> {
+        self.require_encryption
+    }
+}
 impl std::fmt::Debug for UpdateVoiceConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVoiceConnectorInput");
@@ -36903,6 +36359,20 @@ pub struct UpdateUserSettingsInput {
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The user settings to update.</p>
     pub user_settings: std::option::Option<crate::model::UserSettings>,
+}
+impl UpdateUserSettingsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The user settings to update.</p>
+    pub fn user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.user_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateUserSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36929,6 +36399,31 @@ pub struct UpdateUserInput {
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>The Alexa for Business metadata.</p>
     pub alexa_for_business_metadata: std::option::Option<crate::model::AlexaForBusinessMetadata>,
+}
+impl UpdateUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
+    /// account that the user belongs to.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::License> {
+        self.license_type.as_ref()
+    }
+    /// <p>The user type.</p>
+    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user_type.as_ref()
+    }
+    /// <p>The Alexa for Business metadata.</p>
+    pub fn alexa_for_business_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::AlexaForBusinessMetadata> {
+        self.alexa_for_business_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36959,6 +36454,26 @@ pub struct UpdateSipRuleInput {
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
 }
+impl UpdateSipRuleInput {
+    /// <p>The SIP rule ID.</p>
+    pub fn sip_rule_id(&self) -> std::option::Option<&str> {
+        self.sip_rule_id.as_deref()
+    }
+    /// <p>The new name for the specified SIP rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new value specified to indicate whether the rule is disabled.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+    /// <p>The new value of the list of target applications.</p>
+    pub fn target_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SipRuleTargetApplication]> {
+        self.target_applications.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSipRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSipRuleInput");
@@ -36982,6 +36497,23 @@ pub struct UpdateSipMediaApplicationCallInput {
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateSipMediaApplicationCallInput {
+    /// <p>The ID of the SIP media application handling the call.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+    /// <p>The ID of the call transaction.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
+    pub fn arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.arguments.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSipMediaApplicationCallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSipMediaApplicationCallInput");
@@ -37002,6 +36534,20 @@ pub struct UpdateSipMediaApplicationInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The new set of endpoints for the specified SIP media application.</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
+}
+impl UpdateSipMediaApplicationInput {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+    /// <p>The new name for the specified SIP media application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new set of endpoints for the specified SIP media application.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::SipMediaApplicationEndpoint]> {
+        self.endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSipMediaApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37026,6 +36572,24 @@ pub struct UpdateRoomMembershipInput {
     /// <p>The role of the member.</p>
     pub role: std::option::Option<crate::model::RoomMembershipRole>,
 }
+impl UpdateRoomMembershipInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The member ID.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The role of the member.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::RoomMembershipRole> {
+        self.role.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRoomMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoomMembershipInput");
@@ -37047,6 +36611,20 @@ pub struct UpdateRoomInput {
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The room name.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateRoomInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The room name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37071,6 +36649,24 @@ pub struct UpdateProxySessionInput {
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub expiry_minutes: std::option::Option<i32>,
 }
+impl UpdateProxySessionInput {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The proxy session ID.</p>
+    pub fn proxy_session_id(&self) -> std::option::Option<&str> {
+        self.proxy_session_id.as_deref()
+    }
+    /// <p>The proxy session capabilities.</p>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The number of minutes allowed for the proxy session.</p>
+    pub fn expiry_minutes(&self) -> std::option::Option<i32> {
+        self.expiry_minutes
+    }
+}
 impl std::fmt::Debug for UpdateProxySessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProxySessionInput");
@@ -37088,6 +36684,12 @@ impl std::fmt::Debug for UpdateProxySessionInput {
 pub struct UpdatePhoneNumberSettingsInput {
     /// <p>The default outbound calling name for the account.</p>
     pub calling_name: std::option::Option<std::string::String>,
+}
+impl UpdatePhoneNumberSettingsInput {
+    /// <p>The default outbound calling name for the account.</p>
+    pub fn calling_name(&self) -> std::option::Option<&str> {
+        self.calling_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePhoneNumberSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37108,6 +36710,20 @@ pub struct UpdatePhoneNumberInput {
     /// <p>The outbound calling name associated with the phone number.</p>
     pub calling_name: std::option::Option<std::string::String>,
 }
+impl UpdatePhoneNumberInput {
+    /// <p>The phone number ID.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The outbound calling name associated with the phone number.</p>
+    pub fn calling_name(&self) -> std::option::Option<&str> {
+        self.calling_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberInput");
@@ -37127,6 +36743,16 @@ pub struct UpdateGlobalSettingsInput {
     /// <p>The Amazon Chime Voice Connector settings.</p>
     pub voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
 }
+impl UpdateGlobalSettingsInput {
+    /// <p>The Amazon Chime Business Calling settings.</p>
+    pub fn business_calling(&self) -> std::option::Option<&crate::model::BusinessCallingSettings> {
+        self.business_calling.as_ref()
+    }
+    /// <p>The Amazon Chime Voice Connector settings.</p>
+    pub fn voice_connector(&self) -> std::option::Option<&crate::model::VoiceConnectorSettings> {
+        self.voice_connector.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGlobalSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGlobalSettingsInput");
@@ -37144,6 +36770,16 @@ pub struct UpdateChannelReadMarkerInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl UpdateChannelReadMarkerInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelReadMarkerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37168,6 +36804,28 @@ pub struct UpdateChannelMessageInput {
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl UpdateChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The content of the message being updated.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The metadata of the message being updated.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37196,6 +36854,28 @@ pub struct UpdateChannelInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl UpdateChannelInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The mode of the update request.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The metadata for the update request.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
@@ -37219,6 +36899,20 @@ pub struct UpdateBotInput {
     /// <p>When true, stops the specified bot from running in your account.</p>
     pub disabled: std::option::Option<bool>,
 }
+impl UpdateBotInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>When true, stops the specified bot from running in your account.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+}
 impl std::fmt::Debug for UpdateBotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBotInput");
@@ -37239,6 +36933,20 @@ pub struct UpdateAppInstanceUserInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
+}
+impl UpdateAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37261,6 +36969,20 @@ pub struct UpdateAppInstanceInput {
     /// <p>The metadata that you want to change.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl UpdateAppInstanceInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name that you want to change.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata that you want to change.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceInput");
@@ -37279,6 +37001,16 @@ pub struct UpdateAccountSettingsInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account settings to update.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
+}
+impl UpdateAccountSettingsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Chime account settings to update.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAccountSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37300,6 +37032,20 @@ pub struct UpdateAccountInput {
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
     pub default_license: std::option::Option<crate::model::License>,
 }
+impl UpdateAccountInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The new name for the specified Amazon Chime account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The default license applied when you add users to an Amazon Chime account.</p>
+    pub fn default_license(&self) -> std::option::Option<&crate::model::License> {
+        self.default_license.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountInput");
@@ -37319,6 +37065,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -37336,6 +37092,16 @@ pub struct UntagMeetingInput {
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagMeetingInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37357,6 +37123,20 @@ pub struct UntagAttendeeInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagAttendeeInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn attendee_id(&self) -> std::option::Option<&str> {
+        self.attendee_id.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagAttendeeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagAttendeeInput");
@@ -37376,6 +37156,16 @@ pub struct TagResourceInput {
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -37393,6 +37183,16 @@ pub struct TagMeetingInput {
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagMeetingInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37414,6 +37214,20 @@ pub struct TagAttendeeInput {
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagAttendeeInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn attendee_id(&self) -> std::option::Option<&str> {
+        self.attendee_id.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagAttendeeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagAttendeeInput");
@@ -37431,6 +37245,12 @@ pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
     pub meeting_id: std::option::Option<std::string::String>,
 }
+impl StopMeetingTranscriptionInput {
+    /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopMeetingTranscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopMeetingTranscriptionInput");
@@ -37447,6 +37267,18 @@ pub struct StartMeetingTranscriptionInput {
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     pub transcription_configuration: std::option::Option<crate::model::TranscriptionConfiguration>,
+}
+impl StartMeetingTranscriptionInput {
+    /// <p>The unique ID of the meeting being transcribed.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    pub fn transcription_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptionConfiguration> {
+        self.transcription_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for StartMeetingTranscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37478,6 +37310,36 @@ pub struct SendChannelMessageInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl SendChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The content of the message.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMessageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    pub fn persistence(&self) -> std::option::Option<&crate::model::ChannelMessagePersistenceType> {
+        self.persistence.as_ref()
+    }
+    /// <p>The optional metadata for each message.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>Idempotency</code> token for each client request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for SendChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37514,6 +37376,40 @@ pub struct SearchAvailablePhoneNumbersInput {
     /// <p>The token used to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchAvailablePhoneNumbersInput {
+    /// <p>The area code used to filter results. Only applies to the US.</p>
+    pub fn area_code(&self) -> std::option::Option<&str> {
+        self.area_code.as_deref()
+    }
+    /// <p>The city used to filter results. Only applies to the US.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
+    pub fn toll_free_prefix(&self) -> std::option::Option<&str> {
+        self.toll_free_prefix.as_deref()
+    }
+    /// <p>The phone number type used to filter results. Required for non-US numbers.</p>
+    pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.phone_number_type.as_ref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token used to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchAvailablePhoneNumbersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchAvailablePhoneNumbersInput");
@@ -37536,6 +37432,12 @@ pub struct RestorePhoneNumberInput {
     /// <p>The phone number.</p>
     pub phone_number_id: std::option::Option<std::string::String>,
 }
+impl RestorePhoneNumberInput {
+    /// <p>The phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RestorePhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestorePhoneNumberInput");
@@ -37552,6 +37454,16 @@ pub struct ResetPersonalPinInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl ResetPersonalPinInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetPersonalPinInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37570,6 +37482,16 @@ pub struct RegenerateSecurityTokenInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
     pub bot_id: std::option::Option<std::string::String>,
+}
+impl RegenerateSecurityTokenInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegenerateSecurityTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37590,6 +37512,20 @@ pub struct RedactRoomMessageInput {
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The message ID.</p>
     pub message_id: std::option::Option<std::string::String>,
+}
+impl RedactRoomMessageInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The message ID.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RedactRoomMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37612,6 +37548,20 @@ pub struct RedactConversationMessageInput {
     /// <p>The message ID.</p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl RedactConversationMessageInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The conversation ID.</p>
+    pub fn conversation_id(&self) -> std::option::Option<&str> {
+        self.conversation_id.as_deref()
+    }
+    /// <p>The message ID.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RedactConversationMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedactConversationMessageInput");
@@ -37633,6 +37583,20 @@ pub struct RedactChannelMessageInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl RedactChannelMessageInput {
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for RedactChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedactChannelMessageInput");
@@ -37652,6 +37616,16 @@ pub struct PutVoiceConnectorTerminationCredentialsInput {
     /// <p>The termination SIP credentials.</p>
     pub credentials: std::option::Option<std::vec::Vec<crate::model::Credential>>,
 }
+impl PutVoiceConnectorTerminationCredentialsInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The termination SIP credentials.</p>
+    pub fn credentials(&self) -> std::option::Option<&[crate::model::Credential]> {
+        self.credentials.as_deref()
+    }
+}
 impl std::fmt::Debug for PutVoiceConnectorTerminationCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorTerminationCredentialsInput");
@@ -37670,6 +37644,16 @@ pub struct PutVoiceConnectorTerminationInput {
     /// <p>The termination setting details to add.</p>
     pub termination: std::option::Option<crate::model::Termination>,
 }
+impl PutVoiceConnectorTerminationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The termination setting details to add.</p>
+    pub fn termination(&self) -> std::option::Option<&crate::model::Termination> {
+        self.termination.as_ref()
+    }
+}
 impl std::fmt::Debug for PutVoiceConnectorTerminationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorTerminationInput");
@@ -37687,6 +37671,18 @@ pub struct PutVoiceConnectorStreamingConfigurationInput {
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The streaming configuration details to add.</p>
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
+}
+impl PutVoiceConnectorStreamingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The streaming configuration details to add.</p>
+    pub fn streaming_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingConfiguration> {
+        self.streaming_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutVoiceConnectorStreamingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37711,6 +37707,28 @@ pub struct PutVoiceConnectorProxyInput {
     pub fall_back_phone_number: std::option::Option<std::string::String>,
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
     pub disabled: std::option::Option<bool>,
+}
+impl PutVoiceConnectorProxyInput {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The default number of minutes allowed for proxy sessions.</p>
+    pub fn default_session_expiry_minutes(&self) -> std::option::Option<i32> {
+        self.default_session_expiry_minutes
+    }
+    /// <p>The countries for proxy phone numbers to be selected from.</p>
+    pub fn phone_number_pool_countries(&self) -> std::option::Option<&[std::string::String]> {
+        self.phone_number_pool_countries.as_deref()
+    }
+    /// <p>The phone number to route calls to after a proxy session expires.</p>
+    pub fn fall_back_phone_number(&self) -> std::option::Option<&str> {
+        self.fall_back_phone_number.as_deref()
+    }
+    /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
 }
 impl std::fmt::Debug for PutVoiceConnectorProxyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37739,6 +37757,16 @@ pub struct PutVoiceConnectorOriginationInput {
     /// <p>The origination setting details to add.</p>
     pub origination: std::option::Option<crate::model::Origination>,
 }
+impl PutVoiceConnectorOriginationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The origination setting details to add.</p>
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
+}
 impl std::fmt::Debug for PutVoiceConnectorOriginationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorOriginationInput");
@@ -37756,6 +37784,18 @@ pub struct PutVoiceConnectorLoggingConfigurationInput {
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration details to add.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+}
+impl PutVoiceConnectorLoggingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The logging configuration details to add.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutVoiceConnectorLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37775,6 +37815,18 @@ pub struct PutVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The emergency calling configuration details.</p>
     pub emergency_calling_configuration:
         std::option::Option<crate::model::EmergencyCallingConfiguration>,
+}
+impl PutVoiceConnectorEmergencyCallingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The emergency calling configuration details.</p>
+    pub fn emergency_calling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EmergencyCallingConfiguration> {
+        self.emergency_calling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutVoiceConnectorEmergencyCallingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37798,6 +37850,18 @@ pub struct PutSipMediaApplicationLoggingConfigurationInput {
     pub sip_media_application_logging_configuration:
         std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
 }
+impl PutSipMediaApplicationLoggingConfigurationInput {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+    /// <p>The actual logging configuration.</p>
+    pub fn sip_media_application_logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SipMediaApplicationLoggingConfiguration> {
+        self.sip_media_application_logging_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutSipMediaApplicationLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSipMediaApplicationLoggingConfigurationInput");
@@ -37818,6 +37882,16 @@ pub struct PutRetentionSettingsInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The retention settings.</p>
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
+}
+impl PutRetentionSettingsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The retention settings.</p>
+    pub fn retention_settings(&self) -> std::option::Option<&crate::model::RetentionSettings> {
+        self.retention_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for PutRetentionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37840,6 +37914,24 @@ pub struct PutEventsConfigurationInput {
     pub outbound_events_https_endpoint: std::option::Option<std::string::String>,
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
+}
+impl PutEventsConfigurationInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
+    pub fn outbound_events_https_endpoint(&self) -> std::option::Option<&str> {
+        self.outbound_events_https_endpoint.as_deref()
+    }
+    /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+        self.lambda_function_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutEventsConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37865,6 +37957,18 @@ pub struct PutAppInstanceStreamingConfigurationsInput {
     pub app_instance_streaming_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
 }
+impl PutAppInstanceStreamingConfigurationsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The streaming configurations set for an <code>AppInstance</code>.</p>
+    pub fn app_instance_streaming_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceStreamingConfiguration]> {
+        self.app_instance_streaming_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAppInstanceStreamingConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAppInstanceStreamingConfigurationsInput");
@@ -37887,6 +37991,18 @@ pub struct PutAppInstanceRetentionSettingsInput {
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
 }
+impl PutAppInstanceRetentionSettingsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The time in days to retain data. Data type: number.</p>
+    pub fn app_instance_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceRetentionSettings> {
+        self.app_instance_retention_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for PutAppInstanceRetentionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAppInstanceRetentionSettingsInput");
@@ -37908,6 +38024,16 @@ pub struct LogoutUserInput {
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl LogoutUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for LogoutUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogoutUserInput");
@@ -37923,6 +38049,12 @@ impl std::fmt::Debug for LogoutUserInput {
 pub struct ListVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl ListVoiceConnectorTerminationCredentialsInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVoiceConnectorTerminationCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37941,6 +38073,16 @@ pub struct ListVoiceConnectorsInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListVoiceConnectorsInput {
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListVoiceConnectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVoiceConnectorsInput");
@@ -37958,6 +38100,16 @@ pub struct ListVoiceConnectorGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListVoiceConnectorGroupsInput {
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListVoiceConnectorGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37983,6 +38135,28 @@ pub struct ListUsersInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUsersInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
+    pub fn user_email(&self) -> std::option::Option<&str> {
+        self.user_email.as_deref()
+    }
+    /// <p>The user type.</p>
+    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user_type.as_ref()
+    }
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
@@ -38002,6 +38176,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -38016,6 +38196,12 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListSupportedPhoneNumberCountriesInput {
     /// <p>The phone number product type.</p>
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
+}
+impl ListSupportedPhoneNumberCountriesInput {
+    /// <p>The phone number product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+        self.product_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ListSupportedPhoneNumberCountriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38036,6 +38222,20 @@ pub struct ListSipRulesInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSipRulesInput {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSipRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSipRulesInput");
@@ -38054,6 +38254,16 @@ pub struct ListSipMediaApplicationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSipMediaApplicationsInput {
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSipMediaApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38076,6 +38286,24 @@ pub struct ListRoomsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRoomsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The member ID (user ID or bot ID).</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoomsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38101,6 +38329,24 @@ pub struct ListRoomMembershipsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRoomMembershipsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRoomMembershipsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRoomMembershipsInput");
@@ -38124,6 +38370,24 @@ pub struct ListProxySessionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProxySessionsInput {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The proxy session status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProxySessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProxySessionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38153,6 +38417,32 @@ pub struct ListPhoneNumbersInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPhoneNumbersInput {
+    /// <p>The phone number status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PhoneNumberStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The phone number product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The filter to use to limit the number of results.</p>
+    pub fn filter_name(&self) -> std::option::Option<&crate::model::PhoneNumberAssociationName> {
+        self.filter_name.as_ref()
+    }
+    /// <p>The value to use for the filter.</p>
+    pub fn filter_value(&self) -> std::option::Option<&str> {
+        self.filter_value.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPhoneNumbersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhoneNumbersInput");
@@ -38175,6 +38465,16 @@ pub struct ListPhoneNumberOrdersInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPhoneNumberOrdersInput {
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPhoneNumberOrdersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhoneNumberOrdersInput");
@@ -38190,6 +38490,12 @@ impl std::fmt::Debug for ListPhoneNumberOrdersInput {
 pub struct ListMeetingTagsInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub meeting_id: std::option::Option<std::string::String>,
+}
+impl ListMeetingTagsInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMeetingTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38208,6 +38514,16 @@ pub struct ListMeetingsInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListMeetingsInput {
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListMeetingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMeetingsInput");
@@ -38225,6 +38541,16 @@ pub struct ListMediaCapturePipelinesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListMediaCapturePipelinesInput {
+    /// <p>The token used to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListMediaCapturePipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38248,6 +38574,25 @@ pub struct ListChannelsModeratedByAppInstanceUserInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl ListChannelsModeratedByAppInstanceUserInput {
+    /// <p>The ARN of the user in the moderated channel.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The maximum number of channels in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from previous API requests until the number of channels moderated by
+    /// the user is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38277,6 +38622,30 @@ pub struct ListChannelsInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+    /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
+    /// can retrieve private channels. </p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The maximum number of channels that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsInput");
@@ -38302,6 +38671,25 @@ pub struct ListChannelModeratorsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl ListChannelModeratorsInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The maximum number of moderators that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested moderators are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelModeratorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38334,6 +38722,37 @@ pub struct ListChannelMessagesInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelMessagesInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time
+    /// created.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The initial or starting time stamp for your requested messages.</p>
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_before.as_ref()
+    }
+    /// <p>The final or ending time stamp for your requested messages.</p>
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_after.as_ref()
+    }
+    /// <p>The maximum number of messages that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMessagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMessagesInput");
@@ -38360,6 +38779,24 @@ pub struct ListChannelMembershipsForAppInstanceUserInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl ListChannelMembershipsForAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The maximum number of users that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38391,6 +38828,32 @@ pub struct ListChannelMembershipsInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelMembershipsInput {
+    /// <p>The maximum number of channel memberships that you want returned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The maximum number of channel memberships that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested channel memberships are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMembershipsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMembershipsInput");
@@ -38416,6 +38879,24 @@ pub struct ListChannelBansInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelBansInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The maximum number of bans that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelBansInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelBansInput");
@@ -38438,6 +38919,20 @@ pub struct ListBotsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBotsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. The default is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBotsInput");
@@ -38456,6 +38951,16 @@ pub struct ListAttendeeTagsInput {
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub attendee_id: std::option::Option<std::string::String>,
+}
+impl ListAttendeeTagsInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn attendee_id(&self) -> std::option::Option<&str> {
+        self.attendee_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAttendeeTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38476,6 +38981,20 @@ pub struct ListAttendeesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAttendeesInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAttendeesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38498,6 +39017,20 @@ pub struct ListAppInstanceUsersInput {
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppInstanceUsersInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The maximum number of requests that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppInstanceUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUsersInput");
@@ -38516,6 +39049,16 @@ pub struct ListAppInstancesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstancesInput {
+    /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38536,6 +39079,20 @@ pub struct ListAppInstanceAdminsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstanceAdminsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The maximum number of administrators that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstanceAdminsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38560,6 +39117,24 @@ pub struct ListAccountsInput {
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAccountsInput {
+    /// <p>Amazon Chime account name prefix with which to filter results.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>User email address with which to filter results.</p>
+    pub fn user_email(&self) -> std::option::Option<&str> {
+        self.user_email.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountsInput");
@@ -38582,6 +39157,20 @@ pub struct InviteUsersInput {
     /// <p>The user type.</p>
     pub user_type: std::option::Option<crate::model::UserType>,
 }
+impl InviteUsersInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user email addresses to which to send the email invitation.</p>
+    pub fn user_email_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_email_list.as_deref()
+    }
+    /// <p>The user type.</p>
+    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user_type.as_ref()
+    }
+}
 impl std::fmt::Debug for InviteUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InviteUsersInput");
@@ -38599,6 +39188,12 @@ pub struct GetVoiceConnectorTerminationHealthInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
+impl GetVoiceConnectorTerminationHealthInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorTerminationHealthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorTerminationHealthInput");
@@ -38613,6 +39208,12 @@ impl std::fmt::Debug for GetVoiceConnectorTerminationHealthInput {
 pub struct GetVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl GetVoiceConnectorTerminationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorTerminationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38629,6 +39230,12 @@ pub struct GetVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
+impl GetVoiceConnectorStreamingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorStreamingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorStreamingConfigurationInput");
@@ -38643,6 +39250,12 @@ impl std::fmt::Debug for GetVoiceConnectorStreamingConfigurationInput {
 pub struct GetVoiceConnectorProxyInput {
     /// <p>The Amazon Chime voice connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl GetVoiceConnectorProxyInput {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorProxyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38659,6 +39272,12 @@ pub struct GetVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
+impl GetVoiceConnectorOriginationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorOriginationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorOriginationInput");
@@ -38673,6 +39292,12 @@ impl std::fmt::Debug for GetVoiceConnectorOriginationInput {
 pub struct GetVoiceConnectorLoggingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl GetVoiceConnectorLoggingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38689,6 +39314,12 @@ pub struct GetVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     pub voice_connector_group_id: std::option::Option<std::string::String>,
 }
+impl GetVoiceConnectorGroupInput {
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorGroupInput");
@@ -38704,6 +39335,12 @@ pub struct GetVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
+impl GetVoiceConnectorEmergencyCallingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorEmergencyCallingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorEmergencyCallingConfigurationInput");
@@ -38718,6 +39355,12 @@ impl std::fmt::Debug for GetVoiceConnectorEmergencyCallingConfigurationInput {
 pub struct GetVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl GetVoiceConnectorInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38735,6 +39378,16 @@ pub struct GetUserSettingsInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl GetUserSettingsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUserSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38754,6 +39407,16 @@ pub struct GetUserInput {
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl GetUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserInput");
@@ -38770,6 +39433,12 @@ pub struct GetSipRuleInput {
     /// <p>The SIP rule ID.</p>
     pub sip_rule_id: std::option::Option<std::string::String>,
 }
+impl GetSipRuleInput {
+    /// <p>The SIP rule ID.</p>
+    pub fn sip_rule_id(&self) -> std::option::Option<&str> {
+        self.sip_rule_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSipRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSipRuleInput");
@@ -38785,6 +39454,12 @@ pub struct GetSipMediaApplicationLoggingConfigurationInput {
     /// <p>The SIP media application ID.</p>
     pub sip_media_application_id: std::option::Option<std::string::String>,
 }
+impl GetSipMediaApplicationLoggingConfigurationInput {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSipMediaApplicationLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSipMediaApplicationLoggingConfigurationInput");
@@ -38799,6 +39474,12 @@ impl std::fmt::Debug for GetSipMediaApplicationLoggingConfigurationInput {
 pub struct GetSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
     pub sip_media_application_id: std::option::Option<std::string::String>,
+}
+impl GetSipMediaApplicationInput {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSipMediaApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38817,6 +39498,16 @@ pub struct GetRoomInput {
     /// <p>The room ID.</p>
     pub room_id: std::option::Option<std::string::String>,
 }
+impl GetRoomInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoomInput");
@@ -38832,6 +39523,12 @@ impl std::fmt::Debug for GetRoomInput {
 pub struct GetRetentionSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl GetRetentionSettingsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRetentionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38849,6 +39546,16 @@ pub struct GetProxySessionInput {
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The proxy session ID.</p>
     pub proxy_session_id: std::option::Option<std::string::String>,
+}
+impl GetProxySessionInput {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The proxy session ID.</p>
+    pub fn proxy_session_id(&self) -> std::option::Option<&str> {
+        self.proxy_session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProxySessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38877,6 +39584,12 @@ pub struct GetPhoneNumberOrderInput {
     /// <p>The ID for the phone number order.</p>
     pub phone_number_order_id: std::option::Option<std::string::String>,
 }
+impl GetPhoneNumberOrderInput {
+    /// <p>The ID for the phone number order.</p>
+    pub fn phone_number_order_id(&self) -> std::option::Option<&str> {
+        self.phone_number_order_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPhoneNumberOrderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPhoneNumberOrderInput");
@@ -38891,6 +39604,12 @@ impl std::fmt::Debug for GetPhoneNumberOrderInput {
 pub struct GetPhoneNumberInput {
     /// <p>The phone number ID.</p>
     pub phone_number_id: std::option::Option<std::string::String>,
+}
+impl GetPhoneNumberInput {
+    /// <p>The phone number ID.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38918,6 +39637,12 @@ pub struct GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub meeting_id: std::option::Option<std::string::String>,
 }
+impl GetMeetingInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMeetingInput");
@@ -38932,6 +39657,12 @@ impl std::fmt::Debug for GetMeetingInput {
 pub struct GetMediaCapturePipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
     pub media_pipeline_id: std::option::Option<std::string::String>,
+}
+impl GetMediaCapturePipelineInput {
+    /// <p>The ID of the pipeline that you want to get.</p>
+    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
+        self.media_pipeline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMediaCapturePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38961,6 +39692,16 @@ pub struct GetEventsConfigurationInput {
     /// <p>The bot ID.</p>
     pub bot_id: std::option::Option<std::string::String>,
 }
+impl GetEventsConfigurationInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEventsConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventsConfigurationInput");
@@ -38981,6 +39722,20 @@ pub struct GetChannelMessageInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl GetChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelMessageInput");
@@ -39000,6 +39755,16 @@ pub struct GetBotInput {
     /// <p>The bot ID.</p>
     pub bot_id: std::option::Option<std::string::String>,
 }
+impl GetBotInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBotInput");
@@ -39018,6 +39783,16 @@ pub struct GetAttendeeInput {
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub attendee_id: std::option::Option<std::string::String>,
 }
+impl GetAttendeeInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn attendee_id(&self) -> std::option::Option<&str> {
+        self.attendee_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAttendeeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAttendeeInput");
@@ -39034,6 +39809,12 @@ pub struct GetAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl GetAppInstanceStreamingConfigurationsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppInstanceStreamingConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppInstanceStreamingConfigurationsInput");
@@ -39048,6 +39829,12 @@ impl std::fmt::Debug for GetAppInstanceStreamingConfigurationsInput {
 pub struct GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl GetAppInstanceRetentionSettingsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppInstanceRetentionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39064,6 +39851,12 @@ pub struct GetAccountSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl GetAccountSettingsInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccountSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccountSettingsInput");
@@ -39078,6 +39871,12 @@ impl std::fmt::Debug for GetAccountSettingsInput {
 pub struct GetAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl GetAccountInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39095,6 +39894,16 @@ pub struct DisassociateSigninDelegateGroupsFromAccountInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The sign-in delegate group names.</p>
     pub group_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DisassociateSigninDelegateGroupsFromAccountInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The sign-in delegate group names.</p>
+    pub fn group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.group_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateSigninDelegateGroupsFromAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39114,6 +39923,16 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_group_id.as_deref()
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.e164_phone_numbers.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociatePhoneNumbersFromVoiceConnectorGroupInput");
@@ -39132,6 +39951,16 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DisassociatePhoneNumbersFromVoiceConnectorInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.e164_phone_numbers.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociatePhoneNumbersFromVoiceConnectorInput");
@@ -39149,6 +39978,16 @@ pub struct DisassociatePhoneNumberFromUserInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl DisassociatePhoneNumberFromUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociatePhoneNumberFromUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39169,6 +40008,20 @@ pub struct DescribeChannelModeratorInput {
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DescribeChannelModeratorInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the channel moderator.</p>
+    pub fn channel_moderator_arn(&self) -> std::option::Option<&str> {
+        self.channel_moderator_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelModeratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39191,6 +40044,20 @@ pub struct DescribeChannelModeratedByAppInstanceUserInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelModeratedByAppInstanceUserInput {
+    /// <p>The ARN of the moderated channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelModeratedByAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelModeratedByAppInstanceUserInput");
@@ -39211,6 +40078,20 @@ pub struct DescribeChannelMembershipForAppInstanceUserInput {
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DescribeChannelMembershipForAppInstanceUserInput {
+    /// <p>The ARN of the channel to which the user belongs.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the user in a channel.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelMembershipForAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39233,6 +40114,20 @@ pub struct DescribeChannelMembershipInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelMembershipInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the member.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelMembershipInput");
@@ -39254,6 +40149,20 @@ pub struct DescribeChannelBanInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelBanInput {
+    /// <p>The ARN of the channel from which the user is banned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the member being banned.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelBanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelBanInput");
@@ -39273,6 +40182,16 @@ pub struct DescribeChannelInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelInput");
@@ -39288,6 +40207,12 @@ impl std::fmt::Debug for DescribeChannelInput {
 pub struct DescribeAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
+}
+impl DescribeAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39306,6 +40231,16 @@ pub struct DescribeAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAppInstanceAdminInput {
+    /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_admin_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAppInstanceAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInstanceAdminInput");
@@ -39321,6 +40256,12 @@ impl std::fmt::Debug for DescribeAppInstanceAdminInput {
 pub struct DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl DescribeAppInstanceInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39339,6 +40280,16 @@ pub struct DeleteVoiceConnectorTerminationCredentialsInput {
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub usernames: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteVoiceConnectorTerminationCredentialsInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
+    pub fn usernames(&self) -> std::option::Option<&[std::string::String]> {
+        self.usernames.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVoiceConnectorTerminationCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceConnectorTerminationCredentialsInput");
@@ -39355,6 +40306,12 @@ pub struct DeleteVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
+impl DeleteVoiceConnectorTerminationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVoiceConnectorTerminationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceConnectorTerminationInput");
@@ -39369,6 +40326,12 @@ impl std::fmt::Debug for DeleteVoiceConnectorTerminationInput {
 pub struct DeleteVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl DeleteVoiceConnectorStreamingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVoiceConnectorStreamingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39385,6 +40348,12 @@ pub struct DeleteVoiceConnectorProxyInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
+impl DeleteVoiceConnectorProxyInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVoiceConnectorProxyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceConnectorProxyInput");
@@ -39399,6 +40368,12 @@ impl std::fmt::Debug for DeleteVoiceConnectorProxyInput {
 pub struct DeleteVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl DeleteVoiceConnectorOriginationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVoiceConnectorOriginationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39415,6 +40390,12 @@ pub struct DeleteVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     pub voice_connector_group_id: std::option::Option<std::string::String>,
 }
+impl DeleteVoiceConnectorGroupInput {
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVoiceConnectorGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceConnectorGroupInput");
@@ -39429,6 +40410,12 @@ impl std::fmt::Debug for DeleteVoiceConnectorGroupInput {
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
+}
+impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVoiceConnectorEmergencyCallingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39446,6 +40433,12 @@ pub struct DeleteVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
+impl DeleteVoiceConnectorInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVoiceConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceConnectorInput");
@@ -39461,6 +40454,12 @@ pub struct DeleteSipRuleInput {
     /// <p>The SIP rule ID.</p>
     pub sip_rule_id: std::option::Option<std::string::String>,
 }
+impl DeleteSipRuleInput {
+    /// <p>The SIP rule ID.</p>
+    pub fn sip_rule_id(&self) -> std::option::Option<&str> {
+        self.sip_rule_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSipRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSipRuleInput");
@@ -39475,6 +40474,12 @@ impl std::fmt::Debug for DeleteSipRuleInput {
 pub struct DeleteSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
     pub sip_media_application_id: std::option::Option<std::string::String>,
+}
+impl DeleteSipMediaApplicationInput {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSipMediaApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39495,6 +40500,20 @@ pub struct DeleteRoomMembershipInput {
     /// <p>The member ID (user ID or bot ID).</p>
     pub member_id: std::option::Option<std::string::String>,
 }
+impl DeleteRoomMembershipInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The member ID (user ID or bot ID).</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRoomMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRoomMembershipInput");
@@ -39514,6 +40533,16 @@ pub struct DeleteRoomInput {
     /// <p>The chat room ID.</p>
     pub room_id: std::option::Option<std::string::String>,
 }
+impl DeleteRoomInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The chat room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRoomInput");
@@ -39532,6 +40561,16 @@ pub struct DeleteProxySessionInput {
     /// <p>The proxy session ID.</p>
     pub proxy_session_id: std::option::Option<std::string::String>,
 }
+impl DeleteProxySessionInput {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The proxy session ID.</p>
+    pub fn proxy_session_id(&self) -> std::option::Option<&str> {
+        self.proxy_session_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProxySessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProxySessionInput");
@@ -39548,6 +40587,12 @@ pub struct DeletePhoneNumberInput {
     /// <p>The phone number ID.</p>
     pub phone_number_id: std::option::Option<std::string::String>,
 }
+impl DeletePhoneNumberInput {
+    /// <p>The phone number ID.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePhoneNumberInput");
@@ -39563,6 +40608,12 @@ pub struct DeleteMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub meeting_id: std::option::Option<std::string::String>,
 }
+impl DeleteMeetingInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMeetingInput");
@@ -39577,6 +40628,12 @@ impl std::fmt::Debug for DeleteMeetingInput {
 pub struct DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media capture pipeline being deleted. </p>
     pub media_pipeline_id: std::option::Option<std::string::String>,
+}
+impl DeleteMediaCapturePipelineInput {
+    /// <p>The ID of the media capture pipeline being deleted. </p>
+    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
+        self.media_pipeline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMediaCapturePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39594,6 +40651,16 @@ pub struct DeleteEventsConfigurationInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
     pub bot_id: std::option::Option<std::string::String>,
+}
+impl DeleteEventsConfigurationInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEventsConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39614,6 +40681,20 @@ pub struct DeleteChannelModeratorInput {
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DeleteChannelModeratorInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the moderator being deleted.</p>
+    pub fn channel_moderator_arn(&self) -> std::option::Option<&str> {
+        self.channel_moderator_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelModeratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39636,6 +40717,20 @@ pub struct DeleteChannelMessageInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DeleteChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message being deleted.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteChannelMessageInput");
@@ -39656,6 +40751,20 @@ pub struct DeleteChannelMembershipInput {
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DeleteChannelMembershipInput {
+    /// <p>The ARN of the channel from which you want to remove the user.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the member that you're removing from the channel.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39678,6 +40787,20 @@ pub struct DeleteChannelBanInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DeleteChannelBanInput {
+    /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteChannelBanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteChannelBanInput");
@@ -39697,6 +40820,16 @@ pub struct DeleteChannelInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DeleteChannelInput {
+    /// <p>The ARN of the channel being deleted.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteChannelInput");
@@ -39715,6 +40848,16 @@ pub struct DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub attendee_id: std::option::Option<std::string::String>,
 }
+impl DeleteAttendeeInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn attendee_id(&self) -> std::option::Option<&str> {
+        self.attendee_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAttendeeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAttendeeInput");
@@ -39731,6 +40874,12 @@ pub struct DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
+impl DeleteAppInstanceUserInput {
+    /// <p>The ARN of the user request being deleted.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppInstanceUserInput");
@@ -39745,6 +40894,12 @@ impl std::fmt::Debug for DeleteAppInstanceUserInput {
 pub struct DeleteAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the streaming configurations being deleted.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAppInstanceStreamingConfigurationsInput {
+    /// <p>The ARN of the streaming configurations being deleted.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppInstanceStreamingConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39763,6 +40918,16 @@ pub struct DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl DeleteAppInstanceAdminInput {
+    /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_admin_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAppInstanceAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppInstanceAdminInput");
@@ -39779,6 +40944,12 @@ pub struct DeleteAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl DeleteAppInstanceInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppInstanceInput");
@@ -39793,6 +40964,12 @@ impl std::fmt::Debug for DeleteAppInstanceInput {
 pub struct DeleteAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl DeleteAccountInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39810,6 +40987,18 @@ pub struct CreateVoiceConnectorGroupInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
     pub voice_connector_items: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
+}
+impl CreateVoiceConnectorGroupInput {
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
+    pub fn voice_connector_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::VoiceConnectorItem]> {
+        self.voice_connector_items.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVoiceConnectorGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39835,6 +41024,24 @@ pub struct CreateVoiceConnectorInput {
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub require_encryption: std::option::Option<bool>,
 }
+impl CreateVoiceConnectorInput {
+    /// <p>The name of the Amazon Chime Voice Connector.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
+    /// <code>us-east-1</code>
+    /// .
+    /// </p>
+    pub fn aws_region(&self) -> std::option::Option<&crate::model::VoiceConnectorAwsRegion> {
+        self.aws_region.as_ref()
+    }
+    /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
+    pub fn require_encryption(&self) -> std::option::Option<bool> {
+        self.require_encryption
+    }
+}
 impl std::fmt::Debug for CreateVoiceConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVoiceConnectorInput");
@@ -39857,6 +41064,24 @@ pub struct CreateUserInput {
     pub email: std::option::Option<std::string::String>,
     /// <p>The user type.</p>
     pub user_type: std::option::Option<crate::model::UserType>,
+}
+impl CreateUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The user's email address.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The user type.</p>
+    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39890,6 +41115,35 @@ pub struct CreateSipRuleInput {
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
 }
+impl CreateSipRuleInput {
+    /// <p>The name of the SIP rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
+    pub fn trigger_type(&self) -> std::option::Option<&crate::model::SipRuleTriggerType> {
+        self.trigger_type.as_ref()
+    }
+    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
+    /// host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is
+    /// <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
+    /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
+    /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
+    /// <code>ToPhoneNumber</code> value.</p>
+    pub fn trigger_value(&self) -> std::option::Option<&str> {
+        self.trigger_value.as_deref()
+    }
+    /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+    /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
+    pub fn target_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SipRuleTargetApplication]> {
+        self.target_applications.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSipRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSipRuleInput");
@@ -39916,6 +41170,27 @@ pub struct CreateSipMediaApplicationCallInput {
     pub sip_headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateSipMediaApplicationCallInput {
+    /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
+    pub fn from_phone_number(&self) -> std::option::Option<&str> {
+        self.from_phone_number.as_deref()
+    }
+    /// <p>The phone number that the service should call.</p>
+    pub fn to_phone_number(&self) -> std::option::Option<&str> {
+        self.to_phone_number.as_deref()
+    }
+    /// <p>The ID of the SIP media application.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+    /// <p>The SIP headers added to an outbound call leg.</p>
+    pub fn sip_headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.sip_headers.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSipMediaApplicationCallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSipMediaApplicationCallInput");
@@ -39937,6 +41212,20 @@ pub struct CreateSipMediaApplicationInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
+}
+impl CreateSipMediaApplicationInput {
+    /// <p>The AWS Region assigned to the SIP media application.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The SIP media application name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::SipMediaApplicationEndpoint]> {
+        self.endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSipMediaApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39961,6 +41250,24 @@ pub struct CreateRoomMembershipInput {
     /// <p>The role of the member.</p>
     pub role: std::option::Option<crate::model::RoomMembershipRole>,
 }
+impl CreateRoomMembershipInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The role of the member.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::RoomMembershipRole> {
+        self.role.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRoomMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoomMembershipInput");
@@ -39982,6 +41289,20 @@ pub struct CreateRoomInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The idempotency token for the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreateRoomInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40014,6 +41335,42 @@ pub struct CreateProxySessionInput {
     /// <p>The country and area code for the proxy phone number.</p>
     pub geo_match_params: std::option::Option<crate::model::GeoMatchParams>,
 }
+impl CreateProxySessionInput {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The participant phone numbers.</p>
+    pub fn participant_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.participant_phone_numbers.as_deref()
+    }
+    /// <p>The name of the proxy session.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The number of minutes allowed for the proxy session.</p>
+    pub fn expiry_minutes(&self) -> std::option::Option<i32> {
+        self.expiry_minutes
+    }
+    /// <p>The proxy session capabilities.</p>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
+    pub fn number_selection_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::NumberSelectionBehavior> {
+        self.number_selection_behavior.as_ref()
+    }
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
+    pub fn geo_match_level(&self) -> std::option::Option<&crate::model::GeoMatchLevel> {
+        self.geo_match_level.as_ref()
+    }
+    /// <p>The country and area code for the proxy phone number.</p>
+    pub fn geo_match_params(&self) -> std::option::Option<&crate::model::GeoMatchParams> {
+        self.geo_match_params.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProxySessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProxySessionInput");
@@ -40037,6 +41394,16 @@ pub struct CreatePhoneNumberOrderInput {
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>List of phone numbers, in E.164 format.</p>
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreatePhoneNumberOrderInput {
+    /// <p>The phone number product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.e164_phone_numbers.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePhoneNumberOrderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40112,6 +41479,83 @@ pub struct CreateMeetingWithAttendeesInput {
     /// <p>The request containing the attendees to create.</p>
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
 }
+impl CreateMeetingWithAttendeesInput {
+    /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The external meeting ID.</p>
+    pub fn external_meeting_id(&self) -> std::option::Option<&str> {
+        self.external_meeting_id.as_deref()
+    }
+    /// <p>Reserved.</p>
+    pub fn meeting_host_id(&self) -> std::option::Option<&str> {
+        self.meeting_host_id.as_deref()
+    }
+    /// <p>
+    /// The Region in which to create the meeting. Default: <code>us-east-1</code>
+    /// .
+    /// </p>
+    ///
+    /// <p>
+    /// Available values:
+    /// <code>af-south-1</code>
+    /// ,
+    /// <code>ap-northeast-1</code>
+    /// ,
+    /// <code>ap-northeast-2</code>
+    /// ,
+    /// <code>ap-south-1</code>
+    /// ,
+    /// <code>ap-southeast-1</code>
+    /// ,
+    /// <code>ap-southeast-2</code>
+    /// ,
+    /// <code>ca-central-1</code>
+    /// ,
+    /// <code>eu-central-1</code>
+    /// ,
+    /// <code>eu-north-1</code>
+    /// ,
+    /// <code>eu-south-1</code>
+    /// ,
+    /// <code>eu-west-1</code>
+    /// ,
+    /// <code>eu-west-2</code>
+    /// ,
+    /// <code>eu-west-3</code>
+    /// ,
+    /// <code>sa-east-1</code>
+    /// ,
+    /// <code>us-east-1</code>
+    /// ,
+    /// <code>us-east-2</code>
+    /// ,
+    /// <code>us-west-1</code>
+    /// ,
+    /// <code>us-west-2</code>
+    /// .
+    /// </p>
+    pub fn media_region(&self) -> std::option::Option<&str> {
+        self.media_region.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
+    /// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
+    /// Virginia) AWS Region (<code>us-east-1</code>). </p>
+    pub fn notifications_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MeetingNotificationConfiguration> {
+        self.notifications_configuration.as_ref()
+    }
+    /// <p>The request containing the attendees to create.</p>
+    pub fn attendees(&self) -> std::option::Option<&[crate::model::CreateAttendeeRequestItem]> {
+        self.attendees.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingWithAttendeesInput");
@@ -40141,6 +41585,24 @@ pub struct CreateMeetingDialOutInput {
     pub to_phone_number: std::option::Option<std::string::String>,
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
     pub join_token: std::option::Option<std::string::String>,
+}
+impl CreateMeetingDialOutInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
+    pub fn from_phone_number(&self) -> std::option::Option<&str> {
+        self.from_phone_number.as_deref()
+    }
+    /// <p>Phone number called when inviting someone to a meeting.</p>
+    pub fn to_phone_number(&self) -> std::option::Option<&str> {
+        self.to_phone_number.as_deref()
+    }
+    /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
+    pub fn join_token(&self) -> std::option::Option<&str> {
+        self.join_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingDialOutInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40213,6 +41675,76 @@ pub struct CreateMeetingInput {
     pub notifications_configuration:
         std::option::Option<crate::model::MeetingNotificationConfiguration>,
 }
+impl CreateMeetingInput {
+    /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The external meeting ID.</p>
+    pub fn external_meeting_id(&self) -> std::option::Option<&str> {
+        self.external_meeting_id.as_deref()
+    }
+    /// <p>Reserved.</p>
+    pub fn meeting_host_id(&self) -> std::option::Option<&str> {
+        self.meeting_host_id.as_deref()
+    }
+    /// <p>
+    /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
+    /// </p>
+    ///
+    /// <p>
+    /// Available values:
+    /// <code>af-south-1</code>
+    /// ,
+    /// <code>ap-northeast-1</code>
+    /// ,
+    /// <code>ap-northeast-2</code>
+    /// ,
+    /// <code>ap-south-1</code>
+    /// ,
+    /// <code>ap-southeast-1</code>
+    /// ,
+    /// <code>ap-southeast-2</code>
+    /// ,
+    /// <code>ca-central-1</code>
+    /// ,
+    /// <code>eu-central-1</code>
+    /// ,
+    /// <code>eu-north-1</code>
+    /// ,
+    /// <code>eu-south-1</code>
+    /// ,
+    /// <code>eu-west-1</code>
+    /// ,
+    /// <code>eu-west-2</code>
+    /// ,
+    /// <code>eu-west-3</code>
+    /// ,
+    /// <code>sa-east-1</code>
+    /// ,
+    /// <code>us-east-1</code>
+    /// ,
+    /// <code>us-east-2</code>
+    /// ,
+    /// <code>us-west-1</code>
+    /// ,
+    /// <code>us-west-2</code>
+    /// .
+    /// </p>
+    pub fn media_region(&self) -> std::option::Option<&str> {
+        self.media_region.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    pub fn notifications_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MeetingNotificationConfiguration> {
+        self.notifications_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingInput");
@@ -40248,6 +41780,35 @@ pub struct CreateMediaCapturePipelineInput {
     pub chime_sdk_meeting_configuration:
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
 }
+impl CreateMediaCapturePipelineInput {
+    /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
+    /// is the only supported source.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::MediaPipelineSourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>ARN of the source from which the media artifacts are captured.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    pub fn sink_type(&self) -> std::option::Option<&crate::model::MediaPipelineSinkType> {
+        self.sink_type.as_ref()
+    }
+    /// <p>The ARN of the sink type.</p>
+    pub fn sink_arn(&self) -> std::option::Option<&str> {
+        self.sink_arn.as_deref()
+    }
+    /// <p>The token assigned to the client making the pipeline request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    pub fn chime_sdk_meeting_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ChimeSdkMeetingConfiguration> {
+        self.chime_sdk_meeting_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMediaCapturePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaCapturePipelineInput");
@@ -40274,6 +41835,20 @@ pub struct CreateChannelModeratorInput {
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl CreateChannelModeratorInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the moderator.</p>
+    pub fn channel_moderator_arn(&self) -> std::option::Option<&str> {
+        self.channel_moderator_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateChannelModeratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40302,6 +41877,28 @@ pub struct CreateChannelMembershipInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl CreateChannelMembershipInput {
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the member you want to add to the channel.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+    /// by moderators.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelMembershipInput");
@@ -40323,6 +41920,20 @@ pub struct CreateChannelBanInput {
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl CreateChannelBanInput {
+    /// <p>The ARN of the ban request.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the member being banned.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateChannelBanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40359,6 +41970,44 @@ pub struct CreateChannelInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl CreateChannelInput {
+    /// <p>The ARN of the channel request.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
+    /// moderators, and channel members can add themselves and other members to unrestricted
+    /// channels. Only administrators and moderators can add members to restricted channels.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
+    /// channels aren't discoverable by users outside the channel. Public channels are discoverable
+    /// by anyone in the <code>AppInstance</code>.</p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags for the creation request.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelInput");
@@ -40385,6 +42034,20 @@ pub struct CreateBotInput {
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
     pub domain: std::option::Option<std::string::String>,
 }
+impl CreateBotInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The bot display name.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The domain of the Amazon Chime Enterprise account.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBotInput");
@@ -40405,6 +42068,20 @@ pub struct CreateAttendeeInput {
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateAttendeeInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    pub fn external_user_id(&self) -> std::option::Option<&str> {
+        self.external_user_id.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAttendeeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40433,6 +42110,32 @@ pub struct CreateAppInstanceUserInput {
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The user ID of the <code>AppInstance</code>.</p>
+    pub fn app_instance_user_id(&self) -> std::option::Option<&str> {
+        self.app_instance_user_id.as_deref()
+    }
+    /// <p>The user's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceUserInput");
@@ -40454,6 +42157,16 @@ pub struct CreateAppInstanceAdminInput {
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl CreateAppInstanceAdminInput {
+    /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_admin_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInstanceAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40477,6 +42190,24 @@ pub struct CreateAppInstanceInput {
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAppInstanceInput {
+    /// <p>The name of the <code>AppInstance</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceInput");
@@ -40494,6 +42225,12 @@ impl std::fmt::Debug for CreateAppInstanceInput {
 pub struct CreateAccountInput {
     /// <p>The name of the Amazon Chime account.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateAccountInput {
+    /// <p>The name of the Amazon Chime account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40513,6 +42250,18 @@ pub struct BatchUpdateUserInput {
     pub update_user_request_items:
         std::option::Option<std::vec::Vec<crate::model::UpdateUserRequestItem>>,
 }
+impl BatchUpdateUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The request containing the user IDs and details to update.</p>
+    pub fn update_user_request_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateUserRequestItem]> {
+        self.update_user_request_items.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateUserInput");
@@ -40529,6 +42278,14 @@ pub struct BatchUpdatePhoneNumberInput {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
     pub update_phone_number_request_items:
         std::option::Option<std::vec::Vec<crate::model::UpdatePhoneNumberRequestItem>>,
+}
+impl BatchUpdatePhoneNumberInput {
+    /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
+    pub fn update_phone_number_request_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdatePhoneNumberRequestItem]> {
+        self.update_phone_number_request_items.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdatePhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40550,6 +42307,16 @@ pub struct BatchUnsuspendUserInput {
     /// <p>The request containing the user IDs to unsuspend.</p>
     pub user_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchUnsuspendUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The request containing the user IDs to unsuspend.</p>
+    pub fn user_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_id_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUnsuspendUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUnsuspendUserInput");
@@ -40568,6 +42335,16 @@ pub struct BatchSuspendUserInput {
     /// <p>The request containing the user IDs to suspend.</p>
     pub user_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchSuspendUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The request containing the user IDs to suspend.</p>
+    pub fn user_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_id_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchSuspendUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchSuspendUserInput");
@@ -40583,6 +42360,12 @@ impl std::fmt::Debug for BatchSuspendUserInput {
 pub struct BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
     pub phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeletePhoneNumberInput {
+    /// <p>List of phone number IDs.</p>
+    pub fn phone_number_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.phone_number_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeletePhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40602,6 +42385,20 @@ pub struct BatchCreateRoomMembershipInput {
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The list of membership items.</p>
     pub membership_item_list: std::option::Option<std::vec::Vec<crate::model::MembershipItem>>,
+}
+impl BatchCreateRoomMembershipInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The list of membership items.</p>
+    pub fn membership_item_list(&self) -> std::option::Option<&[crate::model::MembershipItem]> {
+        self.membership_item_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateRoomMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40630,6 +42427,28 @@ pub struct BatchCreateChannelMembershipInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl BatchCreateChannelMembershipInput {
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+    /// by moderators.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ARNs of the members you want to add to the channel.</p>
+    pub fn member_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.member_arns.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchCreateChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateChannelMembershipInput");
@@ -40650,6 +42469,16 @@ pub struct BatchCreateAttendeeInput {
     /// <p>The request containing the attendees to create.</p>
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
 }
+impl BatchCreateAttendeeInput {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The request containing the attendees to create.</p>
+    pub fn attendees(&self) -> std::option::Option<&[crate::model::CreateAttendeeRequestItem]> {
+        self.attendees.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchCreateAttendeeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateAttendeeInput");
@@ -40668,6 +42497,18 @@ pub struct AssociateSigninDelegateGroupsWithAccountInput {
     /// <p>The sign-in delegate groups.</p>
     pub signin_delegate_groups:
         std::option::Option<std::vec::Vec<crate::model::SigninDelegateGroup>>,
+}
+impl AssociateSigninDelegateGroupsWithAccountInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The sign-in delegate groups.</p>
+    pub fn signin_delegate_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::SigninDelegateGroup]> {
+        self.signin_delegate_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateSigninDelegateGroupsWithAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40688,6 +42529,20 @@ pub struct AssociatePhoneNumberWithUserInput {
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The phone number, in E.164 format.</p>
     pub e164_phone_number: std::option::Option<std::string::String>,
+}
+impl AssociatePhoneNumberWithUserInput {
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The phone number, in E.164 format.</p>
+    pub fn e164_phone_number(&self) -> std::option::Option<&str> {
+        self.e164_phone_number.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociatePhoneNumberWithUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40710,6 +42565,20 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub force_associate: std::option::Option<bool>,
 }
+impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_group_id.as_deref()
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.e164_phone_numbers.as_deref()
+    }
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
+    pub fn force_associate(&self) -> std::option::Option<bool> {
+        self.force_associate
+    }
+}
 impl std::fmt::Debug for AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociatePhoneNumbersWithVoiceConnectorGroupInput");
@@ -40730,6 +42599,20 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorInput {
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub force_associate: std::option::Option<bool>,
+}
+impl AssociatePhoneNumbersWithVoiceConnectorInput {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.e164_phone_numbers.as_deref()
+    }
+    /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
+    pub fn force_associate(&self) -> std::option::Option<bool> {
+        self.force_associate
+    }
 }
 impl std::fmt::Debug for AssociatePhoneNumbersWithVoiceConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -20,6 +20,40 @@ pub struct GatingRule {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: i32,
 }
+impl GatingRule {
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
+    pub fn gating_controls(&self) -> std::option::Option<&[std::string::String]> {
+        self.gating_controls.as_deref()
+    }
+    /// <p>The name for the gating rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The criteria that you set for specific gating controls (routing controls) that designates how many controls must be enabled to allow you to change (set or unset) the target controls.</p>
+    pub fn rule_config(&self) -> std::option::Option<&crate::model::RuleConfig> {
+        self.rule_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
+    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
+        self.safety_rule_arn.as_deref()
+    }
+    /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p> <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
+    pub fn target_controls(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_controls.as_deref()
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn wait_period_ms(&self) -> i32 {
+        self.wait_period_ms
+    }
+}
 impl std::fmt::Debug for GatingRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatingRule");
@@ -249,6 +283,20 @@ pub struct RuleConfig {
     /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
     pub r#type: std::option::Option<crate::model::RuleType>,
 }
+impl RuleConfig {
+    /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
+    pub fn inverted(&self) -> bool {
+        self.inverted
+    }
+    /// <p>The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.</p>
+    pub fn threshold(&self) -> i32 {
+        self.threshold
+    }
+    /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for RuleConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleConfig");
@@ -393,6 +441,36 @@ pub struct AssertionRule {
     pub status: std::option::Option<crate::model::Status>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: i32,
+}
+impl AssertionRule {
+    /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
+    pub fn asserted_controls(&self) -> std::option::Option<&[std::string::String]> {
+        self.asserted_controls.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>Name of the assertion rule. You can use any non-white space character in the name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The criteria that you set for specific assertion controls (routing controls) that designate how many controls must be enabled as the result of a transaction. For example, if you have three assertion controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion controls must be enabled, so that at least two Amazon Web Services Regions are enabled.</p>
+    pub fn rule_config(&self) -> std::option::Option<&crate::model::RuleConfig> {
+        self.rule_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
+    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
+        self.safety_rule_arn.as_deref()
+    }
+    /// <p>The deployment status of an assertion rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn wait_period_ms(&self) -> i32 {
+        self.wait_period_ms
+    }
 }
 impl std::fmt::Debug for AssertionRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -542,6 +620,20 @@ pub struct GatingRuleUpdate {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: i32,
 }
+impl GatingRuleUpdate {
+    /// <p>The name for the gating rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
+    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
+        self.safety_rule_arn.as_deref()
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn wait_period_ms(&self) -> i32 {
+        self.wait_period_ms
+    }
+}
 impl std::fmt::Debug for GatingRuleUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatingRuleUpdate");
@@ -622,6 +714,20 @@ pub struct AssertionRuleUpdate {
     pub safety_rule_arn: std::option::Option<std::string::String>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: i32,
+}
+impl AssertionRuleUpdate {
+    /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
+    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
+        self.safety_rule_arn.as_deref()
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn wait_period_ms(&self) -> i32 {
+        self.wait_period_ms
+    }
 }
 impl std::fmt::Debug for AssertionRuleUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -705,6 +811,24 @@ pub struct RoutingControl {
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl RoutingControl {
+    /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The name of the routing control.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
+    /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for RoutingControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -808,6 +932,32 @@ pub struct ControlPanel {
     pub routing_control_count: i32,
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl ControlPanel {
+    /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
+    pub fn default_control_panel(&self) -> bool {
+        self.default_control_panel
+    }
+    /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The number of routing controls in the control panel.</p>
+    pub fn routing_control_count(&self) -> i32 {
+        self.routing_control_count
+    }
+    /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ControlPanel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -927,6 +1077,16 @@ pub struct Rule {
     /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
     pub gating: std::option::Option<crate::model::GatingRule>,
 }
+impl Rule {
+    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    pub fn assertion(&self) -> std::option::Option<&crate::model::AssertionRule> {
+        self.assertion.as_ref()
+    }
+    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    pub fn gating(&self) -> std::option::Option<&crate::model::GatingRule> {
+        self.gating.as_ref()
+    }
+}
 impl std::fmt::Debug for Rule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Rule");
@@ -996,6 +1156,24 @@ pub struct Cluster {
     pub name: std::option::Option<std::string::String>,
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl Cluster {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data Plane) Actions.</p>
+    pub fn cluster_endpoints(&self) -> std::option::Option<&[crate::model::ClusterEndpoint]> {
+        self.cluster_endpoints.as_deref()
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1099,6 +1277,16 @@ pub struct ClusterEndpoint {
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
     pub region: std::option::Option<std::string::String>,
 }
+impl ClusterEndpoint {
+    /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p> <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data Plane) Actions.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterEndpoint");
@@ -1169,6 +1357,32 @@ pub struct NewGatingRule {
     pub target_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: i32,
+}
+impl NewGatingRule {
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
+    pub fn gating_controls(&self) -> std::option::Option<&[std::string::String]> {
+        self.gating_controls.as_deref()
+    }
+    /// <p>The name for the new gating rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The criteria that you set for specific gating controls (routing controls) that designates how many controls must be enabled to allow you to change (set or unset) the target controls.</p>
+    pub fn rule_config(&self) -> std::option::Option<&crate::model::RuleConfig> {
+        self.rule_config.as_ref()
+    }
+    /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p> <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
+    pub fn target_controls(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_controls.as_deref()
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn wait_period_ms(&self) -> i32 {
+        self.wait_period_ms
+    }
 }
 impl std::fmt::Debug for NewGatingRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1314,6 +1528,28 @@ pub struct NewAssertionRule {
     pub rule_config: std::option::Option<crate::model::RuleConfig>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: i32,
+}
+impl NewAssertionRule {
+    /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
+    pub fn asserted_controls(&self) -> std::option::Option<&[std::string::String]> {
+        self.asserted_controls.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the control panel.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The criteria that you set for specific assertion controls (routing controls) that designate how many controls must be enabled as the result of a transaction. For example, if you have three assertion controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion controls must be enabled, so that at least two Amazon Web Services Regions are enabled.</p>
+    pub fn rule_config(&self) -> std::option::Option<&crate::model::RuleConfig> {
+        self.rule_config.as_ref()
+    }
+    /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    pub fn wait_period_ms(&self) -> i32 {
+        self.wait_period_ms
+    }
 }
 impl std::fmt::Debug for NewAssertionRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

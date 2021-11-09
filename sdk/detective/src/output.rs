@@ -128,6 +128,16 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag
+    /// values.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -198,6 +208,20 @@ pub struct ListMembersOutput {
     /// <p>If there are more member accounts remaining in the results, then this is the pagination
     /// token to use to request the next page of member accounts.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMembersOutput {
+    /// <p>The list of member accounts in the behavior graph.</p>
+    /// <p>The results include member accounts that did not pass verification and member accounts
+    /// that have not yet accepted the invitation to the behavior graph. The results do not include
+    /// member accounts that were removed from the behavior graph.</p>
+    pub fn member_details(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
+        self.member_details.as_deref()
+    }
+    /// <p>If there are more member accounts remaining in the results, then this is the pagination
+    /// token to use to request the next page of member accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -281,6 +305,18 @@ pub struct ListInvitationsOutput {
     /// token to use to request the next page of behavior graphs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInvitationsOutput {
+    /// <p>The list of behavior graphs for which the member account has open or accepted
+    /// invitations.</p>
+    pub fn invitations(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
+        self.invitations.as_deref()
+    }
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
+    /// token to use to request the next page of behavior graphs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsOutput");
@@ -358,6 +394,17 @@ pub struct ListGraphsOutput {
     /// token to use to request the next page of behavior graphs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGraphsOutput {
+    /// <p>A list of behavior graphs that the account is an administrator account for.</p>
+    pub fn graph_list(&self) -> std::option::Option<&[crate::model::Graph]> {
+        self.graph_list.as_deref()
+    }
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
+    /// token to use to request the next page of behavior graphs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGraphsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGraphsOutput");
@@ -433,6 +480,18 @@ pub struct GetMembersOutput {
     /// details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl GetMembersOutput {
+    /// <p>The member account details that Detective is returning in response to the request.</p>
+    pub fn member_details(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
+        self.member_details.as_deref()
+    }
+    /// <p>The requested member accounts for which Detective was unable to return member
+    /// details.</p>
+    /// <p>For each account, provides the reason why the request could not be processed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -555,6 +614,19 @@ pub struct DeleteMembersOutput {
     /// For each member account, provides the reason that the deletion could not be
     /// processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl DeleteMembersOutput {
+    /// <p>The list of AWS account identifiers for the member accounts that Detective successfully
+    /// deleted from the behavior graph.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The list of member accounts that Detective was not able to delete from the behavior graph.
+    /// For each member account, provides the reason that the deletion could not be
+    /// processed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -681,6 +753,20 @@ pub struct CreateMembersOutput {
     /// includes accounts that are already member accounts in the behavior graph.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl CreateMembersOutput {
+    /// <p>The set of member account invitation requests that Detective was able to process. This
+    /// includes accounts that are being verified, that failed verification, and that passed
+    /// verification and are being sent an invitation.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
+        self.members.as_deref()
+    }
+    /// <p>The list of accounts for which Detective was unable to process the invitation request. For
+    /// each account, the list provides the reason why the request could not be processed. The list
+    /// includes accounts that are already member accounts in the behavior graph.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMembersOutput");
@@ -771,6 +857,12 @@ impl CreateMembersOutput {
 pub struct CreateGraphOutput {
     /// <p>The ARN of the new behavior graph.</p>
     pub graph_arn: std::option::Option<std::string::String>,
+}
+impl CreateGraphOutput {
+    /// <p>The ARN of the new behavior graph.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGraphOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

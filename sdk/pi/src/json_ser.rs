@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_describe_dimension_keys_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDimensionKeysInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.service_type {
         object.key("ServiceType").string(var_1.as_str());
     }
@@ -30,12 +30,12 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
     }
     if let Some(var_7) = &input.group_by {
         let mut object_8 = object.key("GroupBy").start_object();
-        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_8, var_7);
+        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.partition_by {
         let mut object_10 = object.key("PartitionBy").start_object();
-        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_10, var_9);
+        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.filter {
@@ -56,12 +56,13 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
     if let Some(var_16) = &input.next_token {
         object.key("NextToken").string(var_16);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_dimension_key_details_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDimensionKeyDetailsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.service_type {
         object.key("ServiceType").string(var_17.as_str());
     }
@@ -83,12 +84,13 @@ pub fn serialize_structure_crate_input_get_dimension_key_details_input(
         }
         array_22.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_resource_metrics_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceMetricsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.service_type {
         object.key("ServiceType").string(var_24.as_str());
     }
@@ -103,7 +105,7 @@ pub fn serialize_structure_crate_input_get_resource_metrics_input(
                 crate::json_ser::serialize_structure_crate_model_metric_query(
                     &mut object_29,
                     item_28,
-                );
+                )?;
                 object_29.finish();
             }
         }
@@ -134,12 +136,13 @@ pub fn serialize_structure_crate_input_get_resource_metrics_input(
     if let Some(var_34) = &input.next_token {
         object.key("NextToken").string(var_34);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_dimension_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DimensionGroup,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.group {
         object.key("Group").string(var_35);
     }
@@ -158,18 +161,19 @@ pub fn serialize_structure_crate_model_dimension_group(
             aws_smithy_types::Number::NegInt((*var_39).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_metric_query(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MetricQuery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.metric {
         object.key("Metric").string(var_40);
     }
     if let Some(var_41) = &input.group_by {
         let mut object_42 = object.key("GroupBy").start_object();
-        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_42, var_41);
+        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_42, var_41)?;
         object_42.finish();
     }
     if let Some(var_43) = &input.filter {
@@ -181,4 +185,5 @@ pub fn serialize_structure_crate_model_metric_query(
         }
         object_44.finish();
     }
+    Ok(())
 }

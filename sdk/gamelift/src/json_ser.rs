@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_accept_match_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AcceptMatchInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.ticket_id {
         object.key("TicketId").string(var_1);
     }
@@ -18,12 +18,13 @@ pub fn serialize_structure_crate_input_accept_match_input(
     if let Some(var_5) = &input.acceptance_type {
         object.key("AcceptanceType").string(var_5.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_claim_game_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ClaimGameServerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_6);
     }
@@ -33,12 +34,13 @@ pub fn serialize_structure_crate_input_claim_game_server_input(
     if let Some(var_8) = &input.game_server_data {
         object.key("GameServerData").string(var_8);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_alias_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAliasInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.name {
         object.key("Name").string(var_9);
     }
@@ -47,7 +49,7 @@ pub fn serialize_structure_crate_input_create_alias_input(
     }
     if let Some(var_11) = &input.routing_strategy {
         let mut object_12 = object.key("RoutingStrategy").start_object();
-        crate::json_ser::serialize_structure_crate_model_routing_strategy(&mut object_12, var_11);
+        crate::json_ser::serialize_structure_crate_model_routing_strategy(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.tags {
@@ -55,18 +57,19 @@ pub fn serialize_structure_crate_input_create_alias_input(
         for item_15 in var_13 {
             {
                 let mut object_16 = array_14.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_16, item_15);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
         array_14.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_build_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBuildInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.name {
         object.key("Name").string(var_17);
     }
@@ -75,7 +78,7 @@ pub fn serialize_structure_crate_input_create_build_input(
     }
     if let Some(var_19) = &input.storage_location {
         let mut object_20 = object.key("StorageLocation").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_20, var_19);
+        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.operating_system {
@@ -86,18 +89,19 @@ pub fn serialize_structure_crate_input_create_build_input(
         for item_24 in var_22 {
             {
                 let mut object_25 = array_23.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_25, item_24);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_25, item_24)?;
                 object_25.finish();
             }
         }
         array_23.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_fleet_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateFleetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.name {
         object.key("Name").string(var_26);
     }
@@ -136,7 +140,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
                 crate::json_ser::serialize_structure_crate_model_ip_permission(
                     &mut object_39,
                     item_38,
-                );
+                )?;
                 object_39.finish();
             }
         }
@@ -152,7 +156,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         crate::json_ser::serialize_structure_crate_model_runtime_configuration(
             &mut object_42,
             var_41,
-        );
+        )?;
         object_42.finish();
     }
     if let Some(var_43) = &input.resource_creation_limit_policy {
@@ -160,7 +164,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         crate::json_ser::serialize_structure_crate_model_resource_creation_limit_policy(
             &mut object_44,
             var_43,
-        );
+        )?;
         object_44.finish();
     }
     if let Some(var_45) = &input.metric_groups {
@@ -189,7 +193,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         crate::json_ser::serialize_structure_crate_model_certificate_configuration(
             &mut object_53,
             var_52,
-        );
+        )?;
         object_53.finish();
     }
     if let Some(var_54) = &input.locations {
@@ -200,7 +204,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
                 crate::json_ser::serialize_structure_crate_model_location_configuration(
                     &mut object_57,
                     item_56,
-                );
+                )?;
                 object_57.finish();
             }
         }
@@ -211,18 +215,19 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         for item_60 in var_58 {
             {
                 let mut object_61 = array_59.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_61, item_60);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_61, item_60)?;
                 object_61.finish();
             }
         }
         array_59.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_fleet_locations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateFleetLocationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_62) = &input.fleet_id {
         object.key("FleetId").string(var_62);
     }
@@ -234,18 +239,19 @@ pub fn serialize_structure_crate_input_create_fleet_locations_input(
                 crate::json_ser::serialize_structure_crate_model_location_configuration(
                     &mut object_66,
                     item_65,
-                );
+                )?;
                 object_66.finish();
             }
         }
         array_64.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_game_server_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGameServerGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_67);
     }
@@ -269,7 +275,7 @@ pub fn serialize_structure_crate_input_create_game_server_group_input(
         crate::json_ser::serialize_structure_crate_model_launch_template_specification(
             &mut object_72,
             var_71,
-        );
+        )?;
         object_72.finish();
     }
     if let Some(var_73) = &input.instance_definitions {
@@ -280,7 +286,7 @@ pub fn serialize_structure_crate_input_create_game_server_group_input(
                 crate::json_ser::serialize_structure_crate_model_instance_definition(
                     &mut object_76,
                     item_75,
-                );
+                )?;
                 object_76.finish();
             }
         }
@@ -291,7 +297,7 @@ pub fn serialize_structure_crate_input_create_game_server_group_input(
         crate::json_ser::serialize_structure_crate_model_game_server_group_auto_scaling_policy(
             &mut object_78,
             var_77,
-        );
+        )?;
         object_78.finish();
     }
     if let Some(var_79) = &input.balancing_strategy {
@@ -316,18 +322,19 @@ pub fn serialize_structure_crate_input_create_game_server_group_input(
         for item_86 in var_84 {
             {
                 let mut object_87 = array_85.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_87, item_86);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_87, item_86)?;
                 object_87.finish();
             }
         }
         array_85.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_game_session_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGameSessionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.fleet_id {
         object.key("FleetId").string(var_88);
     }
@@ -351,7 +358,7 @@ pub fn serialize_structure_crate_input_create_game_session_input(
                 crate::json_ser::serialize_structure_crate_model_game_property(
                     &mut object_95,
                     item_94,
-                );
+                )?;
                 object_95.finish();
             }
         }
@@ -372,12 +379,13 @@ pub fn serialize_structure_crate_input_create_game_session_input(
     if let Some(var_100) = &input.location {
         object.key("Location").string(var_100);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_game_session_queue_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGameSessionQueueInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.name {
         object.key("Name").string(var_101);
     }
@@ -395,7 +403,7 @@ pub fn serialize_structure_crate_input_create_game_session_queue_input(
                 crate::json_ser::serialize_structure_crate_model_player_latency_policy(
                     &mut object_106,
                     item_105,
-                );
+                )?;
                 object_106.finish();
             }
         }
@@ -409,7 +417,7 @@ pub fn serialize_structure_crate_input_create_game_session_queue_input(
                 crate::json_ser::serialize_structure_crate_model_game_session_queue_destination(
                     &mut object_110,
                     item_109,
-                );
+                )?;
                 object_110.finish();
             }
         }
@@ -420,7 +428,7 @@ pub fn serialize_structure_crate_input_create_game_session_queue_input(
         crate::json_ser::serialize_structure_crate_model_filter_configuration(
             &mut object_112,
             var_111,
-        );
+        )?;
         object_112.finish();
     }
     if let Some(var_113) = &input.priority_configuration {
@@ -428,7 +436,7 @@ pub fn serialize_structure_crate_input_create_game_session_queue_input(
         crate::json_ser::serialize_structure_crate_model_priority_configuration(
             &mut object_114,
             var_113,
-        );
+        )?;
         object_114.finish();
     }
     if let Some(var_115) = &input.custom_event_data {
@@ -442,18 +450,19 @@ pub fn serialize_structure_crate_input_create_game_session_queue_input(
         for item_119 in var_117 {
             {
                 let mut object_120 = array_118.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_120, item_119);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_120, item_119)?;
                 object_120.finish();
             }
         }
         array_118.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_matchmaking_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMatchmakingConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_121) = &input.name {
         object.key("Name").string(var_121);
     }
@@ -507,7 +516,7 @@ pub fn serialize_structure_crate_input_create_matchmaking_configuration_input(
                 crate::json_ser::serialize_structure_crate_model_game_property(
                     &mut object_136,
                     item_135,
-                );
+                )?;
                 object_136.finish();
             }
         }
@@ -527,18 +536,19 @@ pub fn serialize_structure_crate_input_create_matchmaking_configuration_input(
         for item_142 in var_140 {
             {
                 let mut object_143 = array_141.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_143, item_142);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_143, item_142)?;
                 object_143.finish();
             }
         }
         array_141.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_matchmaking_rule_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMatchmakingRuleSetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_144) = &input.name {
         object.key("Name").string(var_144);
     }
@@ -550,18 +560,19 @@ pub fn serialize_structure_crate_input_create_matchmaking_rule_set_input(
         for item_148 in var_146 {
             {
                 let mut object_149 = array_147.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_149, item_148);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_149, item_148)?;
                 object_149.finish();
             }
         }
         array_147.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_player_session_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePlayerSessionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_150) = &input.game_session_id {
         object.key("GameSessionId").string(var_150);
     }
@@ -571,12 +582,13 @@ pub fn serialize_structure_crate_input_create_player_session_input(
     if let Some(var_152) = &input.player_data {
         object.key("PlayerData").string(var_152);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_player_sessions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePlayerSessionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_153) = &input.game_session_id {
         object.key("GameSessionId").string(var_153);
     }
@@ -598,12 +610,13 @@ pub fn serialize_structure_crate_input_create_player_sessions_input(
         }
         object_158.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_script_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateScriptInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_161) = &input.name {
         object.key("Name").string(var_161);
     }
@@ -612,7 +625,7 @@ pub fn serialize_structure_crate_input_create_script_input(
     }
     if let Some(var_163) = &input.storage_location {
         let mut object_164 = object.key("StorageLocation").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_164, var_163);
+        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_164, var_163)?;
         object_164.finish();
     }
     if let Some(var_165) = &input.zip_file {
@@ -625,30 +638,32 @@ pub fn serialize_structure_crate_input_create_script_input(
         for item_168 in var_166 {
             {
                 let mut object_169 = array_167.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_169, item_168);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_169, item_168)?;
                 object_169.finish();
             }
         }
         array_167.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_vpc_peering_authorization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVpcPeeringAuthorizationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_170) = &input.game_lift_aws_account_id {
         object.key("GameLiftAwsAccountId").string(var_170);
     }
     if let Some(var_171) = &input.peer_vpc_id {
         object.key("PeerVpcId").string(var_171);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_vpc_peering_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVpcPeeringConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_172) = &input.fleet_id {
         object.key("FleetId").string(var_172);
     }
@@ -658,39 +673,43 @@ pub fn serialize_structure_crate_input_create_vpc_peering_connection_input(
     if let Some(var_174) = &input.peer_vpc_id {
         object.key("PeerVpcId").string(var_174);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_alias_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteAliasInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_175) = &input.alias_id {
         object.key("AliasId").string(var_175);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_build_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBuildInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_176) = &input.build_id {
         object.key("BuildId").string(var_176);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_fleet_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFleetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_177) = &input.fleet_id {
         object.key("FleetId").string(var_177);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_fleet_locations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFleetLocationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_178) = &input.fleet_id {
         object.key("FleetId").string(var_178);
     }
@@ -703,138 +722,151 @@ pub fn serialize_structure_crate_input_delete_fleet_locations_input(
         }
         array_180.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_game_server_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGameServerGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_182) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_182);
     }
     if let Some(var_183) = &input.delete_option {
         object.key("DeleteOption").string(var_183.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_game_session_queue_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGameSessionQueueInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_184) = &input.name {
         object.key("Name").string(var_184);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_matchmaking_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteMatchmakingConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_185) = &input.name {
         object.key("Name").string(var_185);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_matchmaking_rule_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteMatchmakingRuleSetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_186) = &input.name {
         object.key("Name").string(var_186);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_scaling_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteScalingPolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_187) = &input.name {
         object.key("Name").string(var_187);
     }
     if let Some(var_188) = &input.fleet_id {
         object.key("FleetId").string(var_188);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_script_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteScriptInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_189) = &input.script_id {
         object.key("ScriptId").string(var_189);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_vpc_peering_authorization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteVpcPeeringAuthorizationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_190) = &input.game_lift_aws_account_id {
         object.key("GameLiftAwsAccountId").string(var_190);
     }
     if let Some(var_191) = &input.peer_vpc_id {
         object.key("PeerVpcId").string(var_191);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_vpc_peering_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteVpcPeeringConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_192) = &input.fleet_id {
         object.key("FleetId").string(var_192);
     }
     if let Some(var_193) = &input.vpc_peering_connection_id {
         object.key("VpcPeeringConnectionId").string(var_193);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_deregister_game_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeregisterGameServerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_194) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_194);
     }
     if let Some(var_195) = &input.game_server_id {
         object.key("GameServerId").string(var_195);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_alias_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAliasInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_196) = &input.alias_id {
         object.key("AliasId").string(var_196);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_build_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeBuildInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.build_id {
         object.key("BuildId").string(var_197);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_ec2_instance_limits_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEc2InstanceLimitsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_198) = &input.ec2_instance_type {
         object.key("EC2InstanceType").string(var_198.as_str());
     }
     if let Some(var_199) = &input.location {
         object.key("Location").string(var_199);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_attributes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetAttributesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_200) = &input.fleet_ids {
         let mut array_201 = object.key("FleetIds").start_array();
         for item_202 in var_200 {
@@ -853,12 +885,13 @@ pub fn serialize_structure_crate_input_describe_fleet_attributes_input(
     if let Some(var_204) = &input.next_token {
         object.key("NextToken").string(var_204);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_capacity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetCapacityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_205) = &input.fleet_ids {
         let mut array_206 = object.key("FleetIds").start_array();
         for item_207 in var_205 {
@@ -877,12 +910,13 @@ pub fn serialize_structure_crate_input_describe_fleet_capacity_input(
     if let Some(var_209) = &input.next_token {
         object.key("NextToken").string(var_209);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetEventsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_210) = &input.fleet_id {
         object.key("FleetId").string(var_210);
     }
@@ -905,12 +939,13 @@ pub fn serialize_structure_crate_input_describe_fleet_events_input(
     if let Some(var_214) = &input.next_token {
         object.key("NextToken").string(var_214);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_location_attributes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetLocationAttributesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_215) = &input.fleet_id {
         object.key("FleetId").string(var_215);
     }
@@ -932,48 +967,52 @@ pub fn serialize_structure_crate_input_describe_fleet_location_attributes_input(
     if let Some(var_220) = &input.next_token {
         object.key("NextToken").string(var_220);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_location_capacity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetLocationCapacityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_221) = &input.fleet_id {
         object.key("FleetId").string(var_221);
     }
     if let Some(var_222) = &input.location {
         object.key("Location").string(var_222);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_location_utilization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetLocationUtilizationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_223) = &input.fleet_id {
         object.key("FleetId").string(var_223);
     }
     if let Some(var_224) = &input.location {
         object.key("Location").string(var_224);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_port_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetPortSettingsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_225) = &input.fleet_id {
         object.key("FleetId").string(var_225);
     }
     if let Some(var_226) = &input.location {
         object.key("Location").string(var_226);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_fleet_utilization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetUtilizationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_227) = &input.fleet_ids {
         let mut array_228 = object.key("FleetIds").start_array();
         for item_229 in var_227 {
@@ -992,33 +1031,36 @@ pub fn serialize_structure_crate_input_describe_fleet_utilization_input(
     if let Some(var_231) = &input.next_token {
         object.key("NextToken").string(var_231);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_game_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGameServerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_232) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_232);
     }
     if let Some(var_233) = &input.game_server_id {
         object.key("GameServerId").string(var_233);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_game_server_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGameServerGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_234) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_234);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_game_server_instances_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGameServerInstancesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_235) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_235);
     }
@@ -1040,12 +1082,13 @@ pub fn serialize_structure_crate_input_describe_game_server_instances_input(
     if let Some(var_240) = &input.next_token {
         object.key("NextToken").string(var_240);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_game_session_details_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGameSessionDetailsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_241) = &input.fleet_id {
         object.key("FleetId").string(var_241);
     }
@@ -1070,21 +1113,23 @@ pub fn serialize_structure_crate_input_describe_game_session_details_input(
     if let Some(var_247) = &input.next_token {
         object.key("NextToken").string(var_247);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_game_session_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGameSessionPlacementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_248) = &input.placement_id {
         object.key("PlacementId").string(var_248);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_game_session_queues_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGameSessionQueuesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_249) = &input.names {
         let mut array_250 = object.key("Names").start_array();
         for item_251 in var_249 {
@@ -1103,12 +1148,13 @@ pub fn serialize_structure_crate_input_describe_game_session_queues_input(
     if let Some(var_253) = &input.next_token {
         object.key("NextToken").string(var_253);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_game_sessions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGameSessionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_254) = &input.fleet_id {
         object.key("FleetId").string(var_254);
     }
@@ -1133,12 +1179,13 @@ pub fn serialize_structure_crate_input_describe_game_sessions_input(
     if let Some(var_260) = &input.next_token {
         object.key("NextToken").string(var_260);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_instances_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeInstancesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_261) = &input.fleet_id {
         object.key("FleetId").string(var_261);
     }
@@ -1157,12 +1204,13 @@ pub fn serialize_structure_crate_input_describe_instances_input(
     if let Some(var_265) = &input.location {
         object.key("Location").string(var_265);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_matchmaking_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeMatchmakingInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_266) = &input.ticket_ids {
         let mut array_267 = object.key("TicketIds").start_array();
         for item_268 in var_266 {
@@ -1172,12 +1220,13 @@ pub fn serialize_structure_crate_input_describe_matchmaking_input(
         }
         array_267.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_matchmaking_configurations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeMatchmakingConfigurationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_269) = &input.names {
         let mut array_270 = object.key("Names").start_array();
         for item_271 in var_269 {
@@ -1199,12 +1248,13 @@ pub fn serialize_structure_crate_input_describe_matchmaking_configurations_input
     if let Some(var_274) = &input.next_token {
         object.key("NextToken").string(var_274);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_matchmaking_rule_sets_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeMatchmakingRuleSetsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_275) = &input.names {
         let mut array_276 = object.key("Names").start_array();
         for item_277 in var_275 {
@@ -1223,12 +1273,13 @@ pub fn serialize_structure_crate_input_describe_matchmaking_rule_sets_input(
     if let Some(var_279) = &input.next_token {
         object.key("NextToken").string(var_279);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_player_sessions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribePlayerSessionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_280) = &input.game_session_id {
         object.key("GameSessionId").string(var_280);
     }
@@ -1250,21 +1301,23 @@ pub fn serialize_structure_crate_input_describe_player_sessions_input(
     if let Some(var_285) = &input.next_token {
         object.key("NextToken").string(var_285);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_runtime_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeRuntimeConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_286) = &input.fleet_id {
         object.key("FleetId").string(var_286);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_scaling_policies_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeScalingPoliciesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_287) = &input.fleet_id {
         object.key("FleetId").string(var_287);
     }
@@ -1283,51 +1336,56 @@ pub fn serialize_structure_crate_input_describe_scaling_policies_input(
     if let Some(var_291) = &input.location {
         object.key("Location").string(var_291);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_script_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeScriptInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_292) = &input.script_id {
         object.key("ScriptId").string(var_292);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_vpc_peering_connections_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeVpcPeeringConnectionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_293) = &input.fleet_id {
         object.key("FleetId").string(var_293);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_game_session_log_url_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGameSessionLogUrlInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_294) = &input.game_session_id {
         object.key("GameSessionId").string(var_294);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_instance_access_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetInstanceAccessInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_295) = &input.fleet_id {
         object.key("FleetId").string(var_295);
     }
     if let Some(var_296) = &input.instance_id {
         object.key("InstanceId").string(var_296);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_aliases_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAliasesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_297) = &input.routing_strategy_type {
         object.key("RoutingStrategyType").string(var_297.as_str());
     }
@@ -1343,12 +1401,13 @@ pub fn serialize_structure_crate_input_list_aliases_input(
     if let Some(var_300) = &input.next_token {
         object.key("NextToken").string(var_300);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_builds_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListBuildsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_301) = &input.status {
         object.key("Status").string(var_301.as_str());
     }
@@ -1361,12 +1420,13 @@ pub fn serialize_structure_crate_input_list_builds_input(
     if let Some(var_303) = &input.next_token {
         object.key("NextToken").string(var_303);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_fleets_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFleetsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_304) = &input.build_id {
         object.key("BuildId").string(var_304);
     }
@@ -1382,12 +1442,13 @@ pub fn serialize_structure_crate_input_list_fleets_input(
     if let Some(var_307) = &input.next_token {
         object.key("NextToken").string(var_307);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_game_server_groups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGameServerGroupsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_308) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
@@ -1397,12 +1458,13 @@ pub fn serialize_structure_crate_input_list_game_server_groups_input(
     if let Some(var_309) = &input.next_token {
         object.key("NextToken").string(var_309);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_game_servers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGameServersInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_310) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_310);
     }
@@ -1418,12 +1480,13 @@ pub fn serialize_structure_crate_input_list_game_servers_input(
     if let Some(var_313) = &input.next_token {
         object.key("NextToken").string(var_313);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_scripts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListScriptsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_314) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
@@ -1433,21 +1496,23 @@ pub fn serialize_structure_crate_input_list_scripts_input(
     if let Some(var_315) = &input.next_token {
         object.key("NextToken").string(var_315);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_316) = &input.resource_arn {
         object.key("ResourceARN").string(var_316);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_scaling_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutScalingPolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_317) = &input.name {
         object.key("Name").string(var_317);
     }
@@ -1489,15 +1554,16 @@ pub fn serialize_structure_crate_input_put_scaling_policy_input(
         crate::json_ser::serialize_structure_crate_model_target_configuration(
             &mut object_325,
             var_324,
-        );
+        )?;
         object_325.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_register_game_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterGameServerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_326) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_326);
     }
@@ -1513,30 +1579,33 @@ pub fn serialize_structure_crate_input_register_game_server_input(
     if let Some(var_330) = &input.game_server_data {
         object.key("GameServerData").string(var_330);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_request_upload_credentials_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RequestUploadCredentialsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_331) = &input.build_id {
         object.key("BuildId").string(var_331);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_resolve_alias_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ResolveAliasInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_332) = &input.alias_id {
         object.key("AliasId").string(var_332);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_resume_game_server_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ResumeGameServerGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_333) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_333);
     }
@@ -1549,12 +1618,13 @@ pub fn serialize_structure_crate_input_resume_game_server_group_input(
         }
         array_335.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_search_game_sessions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchGameSessionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_337) = &input.fleet_id {
         object.key("FleetId").string(var_337);
     }
@@ -1579,12 +1649,13 @@ pub fn serialize_structure_crate_input_search_game_sessions_input(
     if let Some(var_343) = &input.next_token {
         object.key("NextToken").string(var_343);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_fleet_actions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartFleetActionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_344) = &input.fleet_id {
         object.key("FleetId").string(var_344);
     }
@@ -1600,12 +1671,13 @@ pub fn serialize_structure_crate_input_start_fleet_actions_input(
     if let Some(var_348) = &input.location {
         object.key("Location").string(var_348);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_game_session_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartGameSessionPlacementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_349) = &input.placement_id {
         object.key("PlacementId").string(var_349);
     }
@@ -1620,7 +1692,7 @@ pub fn serialize_structure_crate_input_start_game_session_placement_input(
                 crate::json_ser::serialize_structure_crate_model_game_property(
                     &mut object_354,
                     item_353,
-                );
+                )?;
                 object_354.finish();
             }
         }
@@ -1643,7 +1715,7 @@ pub fn serialize_structure_crate_input_start_game_session_placement_input(
                 crate::json_ser::serialize_structure_crate_model_player_latency(
                     &mut object_360,
                     item_359,
-                );
+                )?;
                 object_360.finish();
             }
         }
@@ -1657,7 +1729,7 @@ pub fn serialize_structure_crate_input_start_game_session_placement_input(
                 crate::json_ser::serialize_structure_crate_model_desired_player_session(
                     &mut object_364,
                     item_363,
-                );
+                )?;
                 object_364.finish();
             }
         }
@@ -1666,12 +1738,13 @@ pub fn serialize_structure_crate_input_start_game_session_placement_input(
     if let Some(var_365) = &input.game_session_data {
         object.key("GameSessionData").string(var_365);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_match_backfill_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartMatchBackfillInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_366) = &input.ticket_id {
         object.key("TicketId").string(var_366);
     }
@@ -1686,18 +1759,19 @@ pub fn serialize_structure_crate_input_start_match_backfill_input(
         for item_371 in var_369 {
             {
                 let mut object_372 = array_370.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_player(&mut object_372, item_371);
+                crate::json_ser::serialize_structure_crate_model_player(&mut object_372, item_371)?;
                 object_372.finish();
             }
         }
         array_370.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_matchmaking_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartMatchmakingInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_373) = &input.ticket_id {
         object.key("TicketId").string(var_373);
     }
@@ -1709,18 +1783,19 @@ pub fn serialize_structure_crate_input_start_matchmaking_input(
         for item_377 in var_375 {
             {
                 let mut object_378 = array_376.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_player(&mut object_378, item_377);
+                crate::json_ser::serialize_structure_crate_model_player(&mut object_378, item_377)?;
                 object_378.finish();
             }
         }
         array_376.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_stop_fleet_actions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopFleetActionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_379) = &input.fleet_id {
         object.key("FleetId").string(var_379);
     }
@@ -1736,30 +1811,33 @@ pub fn serialize_structure_crate_input_stop_fleet_actions_input(
     if let Some(var_383) = &input.location {
         object.key("Location").string(var_383);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_stop_game_session_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopGameSessionPlacementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_384) = &input.placement_id {
         object.key("PlacementId").string(var_384);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_stop_matchmaking_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopMatchmakingInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_385) = &input.ticket_id {
         object.key("TicketId").string(var_385);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_suspend_game_server_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SuspendGameServerGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_386) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_386);
     }
@@ -1772,12 +1850,13 @@ pub fn serialize_structure_crate_input_suspend_game_server_group_input(
         }
         array_388.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_390) = &input.resource_arn {
         object.key("ResourceARN").string(var_390);
     }
@@ -1786,18 +1865,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_393 in var_391 {
             {
                 let mut object_394 = array_392.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_394, item_393);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_394, item_393)?;
                 object_394.finish();
             }
         }
         array_392.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_395) = &input.resource_arn {
         object.key("ResourceARN").string(var_395);
     }
@@ -1810,12 +1890,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_397.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_alias_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAliasInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_399) = &input.alias_id {
         object.key("AliasId").string(var_399);
     }
@@ -1827,15 +1908,19 @@ pub fn serialize_structure_crate_input_update_alias_input(
     }
     if let Some(var_402) = &input.routing_strategy {
         let mut object_403 = object.key("RoutingStrategy").start_object();
-        crate::json_ser::serialize_structure_crate_model_routing_strategy(&mut object_403, var_402);
+        crate::json_ser::serialize_structure_crate_model_routing_strategy(
+            &mut object_403,
+            var_402,
+        )?;
         object_403.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_build_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBuildInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_404) = &input.build_id {
         object.key("BuildId").string(var_404);
     }
@@ -1845,12 +1930,13 @@ pub fn serialize_structure_crate_input_update_build_input(
     if let Some(var_406) = &input.version {
         object.key("Version").string(var_406);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_fleet_attributes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFleetAttributesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_407) = &input.fleet_id {
         object.key("FleetId").string(var_407);
     }
@@ -1870,7 +1956,7 @@ pub fn serialize_structure_crate_input_update_fleet_attributes_input(
         crate::json_ser::serialize_structure_crate_model_resource_creation_limit_policy(
             &mut object_412,
             var_411,
-        );
+        )?;
         object_412.finish();
     }
     if let Some(var_413) = &input.metric_groups {
@@ -1882,12 +1968,13 @@ pub fn serialize_structure_crate_input_update_fleet_attributes_input(
         }
         array_414.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_fleet_capacity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFleetCapacityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_416) = &input.fleet_id {
         object.key("FleetId").string(var_416);
     }
@@ -1912,12 +1999,13 @@ pub fn serialize_structure_crate_input_update_fleet_capacity_input(
     if let Some(var_420) = &input.location {
         object.key("Location").string(var_420);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_fleet_port_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFleetPortSettingsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_421) = &input.fleet_id {
         object.key("FleetId").string(var_421);
     }
@@ -1929,7 +2017,7 @@ pub fn serialize_structure_crate_input_update_fleet_port_settings_input(
                 crate::json_ser::serialize_structure_crate_model_ip_permission(
                     &mut object_425,
                     item_424,
-                );
+                )?;
                 object_425.finish();
             }
         }
@@ -1943,18 +2031,19 @@ pub fn serialize_structure_crate_input_update_fleet_port_settings_input(
                 crate::json_ser::serialize_structure_crate_model_ip_permission(
                     &mut object_429,
                     item_428,
-                );
+                )?;
                 object_429.finish();
             }
         }
         array_427.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_game_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGameServerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_430) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_430);
     }
@@ -1970,12 +2059,13 @@ pub fn serialize_structure_crate_input_update_game_server_input(
     if let Some(var_434) = &input.health_check {
         object.key("HealthCheck").string(var_434.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_game_server_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGameServerGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_435) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_435);
     }
@@ -1990,7 +2080,7 @@ pub fn serialize_structure_crate_input_update_game_server_group_input(
                 crate::json_ser::serialize_structure_crate_model_instance_definition(
                     &mut object_440,
                     item_439,
-                );
+                )?;
                 object_440.finish();
             }
         }
@@ -2004,12 +2094,13 @@ pub fn serialize_structure_crate_input_update_game_server_group_input(
     if let Some(var_442) = &input.balancing_strategy {
         object.key("BalancingStrategy").string(var_442.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_game_session_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGameSessionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_443) = &input.game_session_id {
         object.key("GameSessionId").string(var_443);
     }
@@ -2030,12 +2121,13 @@ pub fn serialize_structure_crate_input_update_game_session_input(
     if let Some(var_447) = &input.protection_policy {
         object.key("ProtectionPolicy").string(var_447.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_game_session_queue_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGameSessionQueueInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_448) = &input.name {
         object.key("Name").string(var_448);
     }
@@ -2053,7 +2145,7 @@ pub fn serialize_structure_crate_input_update_game_session_queue_input(
                 crate::json_ser::serialize_structure_crate_model_player_latency_policy(
                     &mut object_453,
                     item_452,
-                );
+                )?;
                 object_453.finish();
             }
         }
@@ -2067,7 +2159,7 @@ pub fn serialize_structure_crate_input_update_game_session_queue_input(
                 crate::json_ser::serialize_structure_crate_model_game_session_queue_destination(
                     &mut object_457,
                     item_456,
-                );
+                )?;
                 object_457.finish();
             }
         }
@@ -2078,7 +2170,7 @@ pub fn serialize_structure_crate_input_update_game_session_queue_input(
         crate::json_ser::serialize_structure_crate_model_filter_configuration(
             &mut object_459,
             var_458,
-        );
+        )?;
         object_459.finish();
     }
     if let Some(var_460) = &input.priority_configuration {
@@ -2086,7 +2178,7 @@ pub fn serialize_structure_crate_input_update_game_session_queue_input(
         crate::json_ser::serialize_structure_crate_model_priority_configuration(
             &mut object_461,
             var_460,
-        );
+        )?;
         object_461.finish();
     }
     if let Some(var_462) = &input.custom_event_data {
@@ -2095,12 +2187,13 @@ pub fn serialize_structure_crate_input_update_game_session_queue_input(
     if let Some(var_463) = &input.notification_target {
         object.key("NotificationTarget").string(var_463);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_matchmaking_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateMatchmakingConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_464) = &input.name {
         object.key("Name").string(var_464);
     }
@@ -2154,7 +2247,7 @@ pub fn serialize_structure_crate_input_update_matchmaking_configuration_input(
                 crate::json_ser::serialize_structure_crate_model_game_property(
                     &mut object_479,
                     item_478,
-                );
+                )?;
                 object_479.finish();
             }
         }
@@ -2169,12 +2262,13 @@ pub fn serialize_structure_crate_input_update_matchmaking_configuration_input(
     if let Some(var_482) = &input.flex_match_mode {
         object.key("FlexMatchMode").string(var_482.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_runtime_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRuntimeConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_483) = &input.fleet_id {
         object.key("FleetId").string(var_483);
     }
@@ -2183,15 +2277,16 @@ pub fn serialize_structure_crate_input_update_runtime_configuration_input(
         crate::json_ser::serialize_structure_crate_model_runtime_configuration(
             &mut object_485,
             var_484,
-        );
+        )?;
         object_485.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_script_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateScriptInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_486) = &input.script_id {
         object.key("ScriptId").string(var_486);
     }
@@ -2203,7 +2298,7 @@ pub fn serialize_structure_crate_input_update_script_input(
     }
     if let Some(var_489) = &input.storage_location {
         let mut object_490 = object.key("StorageLocation").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_490, var_489);
+        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_490, var_489)?;
         object_490.finish();
     }
     if let Some(var_491) = &input.zip_file {
@@ -2211,21 +2306,23 @@ pub fn serialize_structure_crate_input_update_script_input(
             .key("ZipFile")
             .string_unchecked(&aws_smithy_types::base64::encode(var_491));
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_validate_matchmaking_rule_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ValidateMatchmakingRuleSetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_492) = &input.rule_set_body {
         object.key("RuleSetBody").string(var_492);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_routing_strategy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RoutingStrategy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_493) = &input.r#type {
         object.key("Type").string(var_493.as_str());
     }
@@ -2235,24 +2332,26 @@ pub fn serialize_structure_crate_model_routing_strategy(
     if let Some(var_495) = &input.message {
         object.key("Message").string(var_495);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_496) = &input.key {
         object.key("Key").string(var_496);
     }
     if let Some(var_497) = &input.value {
         object.key("Value").string(var_497);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Location,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_498) = &input.bucket {
         object.key("Bucket").string(var_498);
     }
@@ -2265,12 +2364,13 @@ pub fn serialize_structure_crate_model_s3_location(
     if let Some(var_501) = &input.object_version {
         object.key("ObjectVersion").string(var_501);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_ip_permission(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::IpPermission,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_502) = &input.from_port {
         object.key("FromPort").number(
             #[allow(clippy::useless_conversion)]
@@ -2289,12 +2389,13 @@ pub fn serialize_structure_crate_model_ip_permission(
     if let Some(var_505) = &input.protocol {
         object.key("Protocol").string(var_505.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_runtime_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuntimeConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_506) = &input.server_processes {
         let mut array_507 = object.key("ServerProcesses").start_array();
         for item_508 in var_506 {
@@ -2303,7 +2404,7 @@ pub fn serialize_structure_crate_model_runtime_configuration(
                 crate::json_ser::serialize_structure_crate_model_server_process(
                     &mut object_509,
                     item_508,
-                );
+                )?;
                 object_509.finish();
             }
         }
@@ -2321,12 +2422,13 @@ pub fn serialize_structure_crate_model_runtime_configuration(
             aws_smithy_types::Number::NegInt((*var_511).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_resource_creation_limit_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceCreationLimitPolicy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_512) = &input.new_game_sessions_per_creator {
         object.key("NewGameSessionsPerCreator").number(
             #[allow(clippy::useless_conversion)]
@@ -2339,30 +2441,33 @@ pub fn serialize_structure_crate_model_resource_creation_limit_policy(
             aws_smithy_types::Number::NegInt((*var_513).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_certificate_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CertificateConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_514) = &input.certificate_type {
         object.key("CertificateType").string(var_514.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_location_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LocationConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_515) = &input.location {
         object.key("Location").string(var_515);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_launch_template_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LaunchTemplateSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_516) = &input.launch_template_id {
         object.key("LaunchTemplateId").string(var_516);
     }
@@ -2372,24 +2477,26 @@ pub fn serialize_structure_crate_model_launch_template_specification(
     if let Some(var_518) = &input.version {
         object.key("Version").string(var_518);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_instance_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InstanceDefinition,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_519) = &input.instance_type {
         object.key("InstanceType").string(var_519.as_str());
     }
     if let Some(var_520) = &input.weighted_capacity {
         object.key("WeightedCapacity").string(var_520);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_game_server_group_auto_scaling_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GameServerGroupAutoScalingPolicy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_521) = &input.estimated_instance_warmup {
         object.key("EstimatedInstanceWarmup").number(
             #[allow(clippy::useless_conversion)]
@@ -2401,27 +2508,29 @@ pub fn serialize_structure_crate_model_game_server_group_auto_scaling_policy(
         crate::json_ser::serialize_structure_crate_model_target_tracking_configuration(
             &mut object_523,
             var_522,
-        );
+        )?;
         object_523.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_game_property(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GameProperty,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_524) = &input.key {
         object.key("Key").string(var_524);
     }
     if let Some(var_525) = &input.value {
         object.key("Value").string(var_525);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_player_latency_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PlayerLatencyPolicy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_526) = &input.maximum_individual_player_latency_milliseconds {
         object
             .key("MaximumIndividualPlayerLatencyMilliseconds")
@@ -2436,21 +2545,23 @@ pub fn serialize_structure_crate_model_player_latency_policy(
             aws_smithy_types::Number::NegInt((*var_527).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_game_session_queue_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GameSessionQueueDestination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_528) = &input.destination_arn {
         object.key("DestinationArn").string(var_528);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_filter_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FilterConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_529) = &input.allowed_locations {
         let mut array_530 = object.key("AllowedLocations").start_array();
         for item_531 in var_529 {
@@ -2460,12 +2571,13 @@ pub fn serialize_structure_crate_model_filter_configuration(
         }
         array_530.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_priority_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PriorityConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_532) = &input.priority_order {
         let mut array_533 = object.key("PriorityOrder").start_array();
         for item_534 in var_532 {
@@ -2484,24 +2596,26 @@ pub fn serialize_structure_crate_model_priority_configuration(
         }
         array_536.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_target_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TargetConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("TargetValue").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::Float((input.target_value).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_player_latency(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PlayerLatency,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_538) = &input.player_id {
         object.key("PlayerId").string(var_538);
     }
@@ -2514,24 +2628,26 @@ pub fn serialize_structure_crate_model_player_latency(
             aws_smithy_types::Number::Float((input.latency_in_milliseconds).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_desired_player_session(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DesiredPlayerSession,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_540) = &input.player_id {
         object.key("PlayerId").string(var_540);
     }
     if let Some(var_541) = &input.player_data {
         object.key("PlayerData").string(var_541);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_player(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Player,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_542) = &input.player_id {
         object.key("PlayerId").string(var_542);
     }
@@ -2543,7 +2659,7 @@ pub fn serialize_structure_crate_model_player(
                 crate::json_ser::serialize_structure_crate_model_attribute_value(
                     &mut object_547,
                     value_546,
-                );
+                )?;
                 object_547.finish();
             }
         }
@@ -2564,12 +2680,13 @@ pub fn serialize_structure_crate_model_player(
         }
         object_550.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_server_process(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ServerProcess,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_553) = &input.launch_path {
         object.key("LaunchPath").string(var_553);
     }
@@ -2582,24 +2699,26 @@ pub fn serialize_structure_crate_model_server_process(
             aws_smithy_types::Number::NegInt((*var_555).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_target_tracking_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TargetTrackingConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_556) = &input.target_value {
         object.key("TargetValue").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::Float((*var_556).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_attribute_value(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AttributeValue,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_557) = &input.s {
         object.key("S").string(var_557);
     }
@@ -2630,4 +2749,5 @@ pub fn serialize_structure_crate_model_attribute_value(
         }
         object_563.finish();
     }
+    Ok(())
 }

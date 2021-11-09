@@ -3636,6 +3636,12 @@ pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub error_code: std::option::Option<std::string::String>,
 }
+impl InvalidRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidRequestException");
@@ -3714,6 +3720,12 @@ pub struct InternalException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub error_code: std::option::Option<std::string::String>,
+}
+impl InternalException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for InternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

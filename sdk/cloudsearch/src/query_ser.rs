@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_analysis_scheme(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AnalysisScheme,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AnalysisSchemeName");
     if let Some(var_2) = &input.analysis_scheme_name {
@@ -17,15 +17,16 @@ pub fn serialize_structure_crate_model_analysis_scheme(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("AnalysisOptions");
     if let Some(var_6) = &input.analysis_options {
-        crate::query_ser::serialize_structure_crate_model_analysis_options(scope_5, var_6);
+        crate::query_ser::serialize_structure_crate_model_analysis_options(scope_5, var_6)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_expression(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Expression,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("ExpressionName");
     if let Some(var_8) = &input.expression_name {
@@ -36,13 +37,14 @@ pub fn serialize_structure_crate_model_expression(
     if let Some(var_10) = &input.expression_value {
         scope_9.string(var_10);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_index_field(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::IndexField,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("IndexFieldName");
     if let Some(var_12) = &input.index_field_name {
@@ -56,65 +58,66 @@ pub fn serialize_structure_crate_model_index_field(
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("IntOptions");
     if let Some(var_16) = &input.int_options {
-        crate::query_ser::serialize_structure_crate_model_int_options(scope_15, var_16);
+        crate::query_ser::serialize_structure_crate_model_int_options(scope_15, var_16)?;
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("DoubleOptions");
     if let Some(var_18) = &input.double_options {
-        crate::query_ser::serialize_structure_crate_model_double_options(scope_17, var_18);
+        crate::query_ser::serialize_structure_crate_model_double_options(scope_17, var_18)?;
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("LiteralOptions");
     if let Some(var_20) = &input.literal_options {
-        crate::query_ser::serialize_structure_crate_model_literal_options(scope_19, var_20);
+        crate::query_ser::serialize_structure_crate_model_literal_options(scope_19, var_20)?;
     }
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("TextOptions");
     if let Some(var_22) = &input.text_options {
-        crate::query_ser::serialize_structure_crate_model_text_options(scope_21, var_22);
+        crate::query_ser::serialize_structure_crate_model_text_options(scope_21, var_22)?;
     }
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("DateOptions");
     if let Some(var_24) = &input.date_options {
-        crate::query_ser::serialize_structure_crate_model_date_options(scope_23, var_24);
+        crate::query_ser::serialize_structure_crate_model_date_options(scope_23, var_24)?;
     }
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("LatLonOptions");
     if let Some(var_26) = &input.lat_lon_options {
-        crate::query_ser::serialize_structure_crate_model_lat_lon_options(scope_25, var_26);
+        crate::query_ser::serialize_structure_crate_model_lat_lon_options(scope_25, var_26)?;
     }
     #[allow(unused_mut)]
     let mut scope_27 = writer.prefix("IntArrayOptions");
     if let Some(var_28) = &input.int_array_options {
-        crate::query_ser::serialize_structure_crate_model_int_array_options(scope_27, var_28);
+        crate::query_ser::serialize_structure_crate_model_int_array_options(scope_27, var_28)?;
     }
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("DoubleArrayOptions");
     if let Some(var_30) = &input.double_array_options {
-        crate::query_ser::serialize_structure_crate_model_double_array_options(scope_29, var_30);
+        crate::query_ser::serialize_structure_crate_model_double_array_options(scope_29, var_30)?;
     }
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("LiteralArrayOptions");
     if let Some(var_32) = &input.literal_array_options {
-        crate::query_ser::serialize_structure_crate_model_literal_array_options(scope_31, var_32);
+        crate::query_ser::serialize_structure_crate_model_literal_array_options(scope_31, var_32)?;
     }
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("TextArrayOptions");
     if let Some(var_34) = &input.text_array_options {
-        crate::query_ser::serialize_structure_crate_model_text_array_options(scope_33, var_34);
+        crate::query_ser::serialize_structure_crate_model_text_array_options(scope_33, var_34)?;
     }
     #[allow(unused_mut)]
     let mut scope_35 = writer.prefix("DateArrayOptions");
     if let Some(var_36) = &input.date_array_options {
-        crate::query_ser::serialize_structure_crate_model_date_array_options(scope_35, var_36);
+        crate::query_ser::serialize_structure_crate_model_date_array_options(scope_35, var_36)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_suggester(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Suggester,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_37 = writer.prefix("SuggesterName");
     if let Some(var_38) = &input.suggester_name {
@@ -125,15 +128,16 @@ pub fn serialize_structure_crate_model_suggester(
     if let Some(var_40) = &input.document_suggester_options {
         crate::query_ser::serialize_structure_crate_model_document_suggester_options(
             scope_39, var_40,
-        );
+        )?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_domain_endpoint_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DomainEndpointOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("EnforceHTTPS");
     if let Some(var_42) = &input.enforce_https {
@@ -144,13 +148,14 @@ pub fn serialize_structure_crate_model_domain_endpoint_options(
     if let Some(var_44) = &input.tls_security_policy {
         scope_43.string(var_44.as_str());
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_scaling_parameters(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ScalingParameters,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_45 = writer.prefix("DesiredInstanceType");
     if let Some(var_46) = &input.desired_instance_type {
@@ -172,13 +177,14 @@ pub fn serialize_structure_crate_model_scaling_parameters(
             aws_smithy_types::Number::NegInt((input.desired_partition_count).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_analysis_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AnalysisOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("Synonyms");
     if let Some(var_50) = &input.synonyms {
@@ -204,13 +210,14 @@ pub fn serialize_structure_crate_model_analysis_options(
     if let Some(var_58) = &input.algorithmic_stemming {
         scope_57.string(var_58.as_str());
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_int_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::IntOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_59 = writer.prefix("DefaultValue");
     if let Some(var_60) = &input.default_value {
@@ -244,13 +251,14 @@ pub fn serialize_structure_crate_model_int_options(
     if let Some(var_70) = &input.sort_enabled {
         scope_69.boolean(*var_70);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_double_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DoubleOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_71 = writer.prefix("DefaultValue");
     if let Some(var_72) = &input.default_value {
@@ -284,13 +292,14 @@ pub fn serialize_structure_crate_model_double_options(
     if let Some(var_82) = &input.sort_enabled {
         scope_81.boolean(*var_82);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_literal_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LiteralOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_83 = writer.prefix("DefaultValue");
     if let Some(var_84) = &input.default_value {
@@ -321,13 +330,14 @@ pub fn serialize_structure_crate_model_literal_options(
     if let Some(var_94) = &input.sort_enabled {
         scope_93.boolean(*var_94);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_text_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TextOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_95 = writer.prefix("DefaultValue");
     if let Some(var_96) = &input.default_value {
@@ -358,13 +368,14 @@ pub fn serialize_structure_crate_model_text_options(
     if let Some(var_106) = &input.analysis_scheme {
         scope_105.string(var_106);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_date_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DateOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_107 = writer.prefix("DefaultValue");
     if let Some(var_108) = &input.default_value {
@@ -395,13 +406,14 @@ pub fn serialize_structure_crate_model_date_options(
     if let Some(var_118) = &input.sort_enabled {
         scope_117.boolean(*var_118);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_lat_lon_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LatLonOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_119 = writer.prefix("DefaultValue");
     if let Some(var_120) = &input.default_value {
@@ -432,13 +444,14 @@ pub fn serialize_structure_crate_model_lat_lon_options(
     if let Some(var_130) = &input.sort_enabled {
         scope_129.boolean(*var_130);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_int_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::IntArrayOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_131 = writer.prefix("DefaultValue");
     if let Some(var_132) = &input.default_value {
@@ -467,13 +480,14 @@ pub fn serialize_structure_crate_model_int_array_options(
     if let Some(var_140) = &input.return_enabled {
         scope_139.boolean(*var_140);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_double_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DoubleArrayOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_141 = writer.prefix("DefaultValue");
     if let Some(var_142) = &input.default_value {
@@ -502,13 +516,14 @@ pub fn serialize_structure_crate_model_double_array_options(
     if let Some(var_150) = &input.return_enabled {
         scope_149.boolean(*var_150);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_literal_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LiteralArrayOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_151 = writer.prefix("DefaultValue");
     if let Some(var_152) = &input.default_value {
@@ -534,13 +549,14 @@ pub fn serialize_structure_crate_model_literal_array_options(
     if let Some(var_160) = &input.return_enabled {
         scope_159.boolean(*var_160);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_text_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TextArrayOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_161 = writer.prefix("DefaultValue");
     if let Some(var_162) = &input.default_value {
@@ -566,13 +582,14 @@ pub fn serialize_structure_crate_model_text_array_options(
     if let Some(var_170) = &input.analysis_scheme {
         scope_169.string(var_170);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_date_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DateArrayOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_171 = writer.prefix("DefaultValue");
     if let Some(var_172) = &input.default_value {
@@ -598,13 +615,14 @@ pub fn serialize_structure_crate_model_date_array_options(
     if let Some(var_180) = &input.return_enabled {
         scope_179.boolean(*var_180);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_document_suggester_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DocumentSuggesterOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_181 = writer.prefix("SourceField");
     if let Some(var_182) = &input.source_field {
@@ -620,4 +638,5 @@ pub fn serialize_structure_crate_model_document_suggester_options(
     if let Some(var_186) = &input.sort_expression {
         scope_185.string(var_186);
     }
+    Ok(())
 }

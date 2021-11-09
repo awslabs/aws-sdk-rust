@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>The message describing why the parameter failed validation.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The name of the parameter that failed validation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The message describing why the parameter failed validation.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -379,6 +389,20 @@ pub struct EmergencyContact {
     /// <p>Additional notes regarding the contact. </p>
     pub contact_notes: std::option::Option<std::string::String>,
 }
+impl EmergencyContact {
+    /// <p>The email address for the contact.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The phone number for the contact.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>Additional notes regarding the contact. </p>
+    pub fn contact_notes(&self) -> std::option::Option<&str> {
+        self.contact_notes.as_deref()
+    }
+}
 impl std::fmt::Debug for EmergencyContact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmergencyContact");
@@ -461,6 +485,16 @@ pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -529,6 +563,28 @@ pub struct Protection {
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
     pub protection_arn: std::option::Option<std::string::String>,
+}
+impl Protection {
+    /// <p>The unique identifier (ID) of the protection.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+    pub fn health_check_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.health_check_ids.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the protection.</p>
+    pub fn protection_arn(&self) -> std::option::Option<&str> {
+        self.protection_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Protection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -663,6 +719,44 @@ pub struct ProtectionGroup {
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
     pub protection_group_arn: std::option::Option<std::string::String>,
+}
+impl ProtectionGroup {
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+        self.protection_group_id.as_deref()
+    }
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
+    /// </li>
+    /// <li>
+    /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
+    /// </li>
+    /// <li>
+    /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
+    /// </li>
+    /// </ul>
+    pub fn aggregation(&self) -> std::option::Option<&crate::model::ProtectionGroupAggregation> {
+        self.aggregation.as_ref()
+    }
+    /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+    pub fn pattern(&self) -> std::option::Option<&crate::model::ProtectionGroupPattern> {
+        self.pattern.as_ref()
+    }
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
+    /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ProtectedResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    pub fn members(&self) -> std::option::Option<&[std::string::String]> {
+        self.members.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
+    pub fn protection_group_arn(&self) -> std::option::Option<&str> {
+        self.protection_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ProtectionGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -832,6 +926,28 @@ pub struct AttackSummary {
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The list of attacks for a specified time period.</p>
     pub attack_vectors: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
+}
+impl AttackSummary {
+    /// <p>The unique identifier (ID) of the attack.</p>
+    pub fn attack_id(&self) -> std::option::Option<&str> {
+        self.attack_id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The list of attacks for a specified time period.</p>
+    pub fn attack_vectors(&self) -> std::option::Option<&[crate::model::AttackVectorDescription]> {
+        self.attack_vectors.as_deref()
+    }
 }
 impl std::fmt::Debug for AttackSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1008,6 +1124,68 @@ pub struct AttackVectorDescription {
     /// </ul>
     pub vector_type: std::option::Option<std::string::String>,
 }
+impl AttackVectorDescription {
+    /// <p>The attack type. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>UDP_TRAFFIC</p>
+    /// </li>
+    /// <li>
+    /// <p>UDP_FRAGMENT</p>
+    /// </li>
+    /// <li>
+    /// <p>GENERIC_UDP_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>DNS_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>NTP_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>CHARGEN_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>SSDP_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>PORT_MAPPER</p>
+    /// </li>
+    /// <li>
+    /// <p>RIP_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>SNMP_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>MSSQL_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>NET_BIOS_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>SYN_FLOOD</p>
+    /// </li>
+    /// <li>
+    /// <p>ACK_FLOOD</p>
+    /// </li>
+    /// <li>
+    /// <p>REQUEST_FLOOD</p>
+    /// </li>
+    /// <li>
+    /// <p>HTTP_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>UDS_REFLECTION</p>
+    /// </li>
+    /// <li>
+    /// <p>MEMCACHED_REFLECTION</p>
+    /// </li>
+    /// </ul>
+    pub fn vector_type(&self) -> std::option::Option<&str> {
+        self.vector_type.as_deref()
+    }
+}
 impl std::fmt::Debug for AttackVectorDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttackVectorDescription");
@@ -1170,6 +1348,16 @@ pub struct TimeRange {
     /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
     pub to_exclusive: std::option::Option<aws_smithy_types::Instant>,
 }
+impl TimeRange {
+    /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    pub fn from_inclusive(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from_inclusive.as_ref()
+    }
+    /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    pub fn to_exclusive(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to_exclusive.as_ref()
+    }
+}
 impl std::fmt::Debug for TimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeRange");
@@ -1308,6 +1496,45 @@ pub struct Subscription {
     pub subscription_limits: std::option::Option<crate::model::SubscriptionLimits>,
     /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
     pub subscription_arn: std::option::Option<std::string::String>,
+}
+impl Subscription {
+    /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time your subscription will end.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
+    pub fn time_commitment_in_seconds(&self) -> i64 {
+        self.time_commitment_in_seconds
+    }
+    /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
+    /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    pub fn auto_renew(&self) -> std::option::Option<&crate::model::AutoRenew> {
+        self.auto_renew.as_ref()
+    }
+    /// <p>Specifies how many protections of a given type you can create.</p>
+    pub fn limits(&self) -> std::option::Option<&[crate::model::Limit]> {
+        self.limits.as_deref()
+    }
+    /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
+    /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
+    /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
+    pub fn proactive_engagement_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ProactiveEngagementStatus> {
+        self.proactive_engagement_status.as_ref()
+    }
+    /// <p>Limits settings for your subscription. </p>
+    pub fn subscription_limits(&self) -> std::option::Option<&crate::model::SubscriptionLimits> {
+        self.subscription_limits.as_ref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Subscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1493,6 +1720,18 @@ pub struct SubscriptionLimits {
     /// <p>Limits settings on protection groups for your subscription. </p>
     pub protection_group_limits: std::option::Option<crate::model::ProtectionGroupLimits>,
 }
+impl SubscriptionLimits {
+    /// <p>Limits settings on protections for your subscription. </p>
+    pub fn protection_limits(&self) -> std::option::Option<&crate::model::ProtectionLimits> {
+        self.protection_limits.as_ref()
+    }
+    /// <p>Limits settings on protection groups for your subscription. </p>
+    pub fn protection_group_limits(
+        &self,
+    ) -> std::option::Option<&crate::model::ProtectionGroupLimits> {
+        self.protection_group_limits.as_ref()
+    }
+}
 impl std::fmt::Debug for SubscriptionLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscriptionLimits");
@@ -1566,6 +1805,18 @@ pub struct ProtectionGroupLimits {
     /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
     pub pattern_type_limits: std::option::Option<crate::model::ProtectionGroupPatternTypeLimits>,
 }
+impl ProtectionGroupLimits {
+    /// <p>The maximum number of protection groups that you can have at one time. </p>
+    pub fn max_protection_groups(&self) -> i64 {
+        self.max_protection_groups
+    }
+    /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
+    pub fn pattern_type_limits(
+        &self,
+    ) -> std::option::Option<&crate::model::ProtectionGroupPatternTypeLimits> {
+        self.pattern_type_limits.as_ref()
+    }
+}
 impl std::fmt::Debug for ProtectionGroupLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectionGroupLimits");
@@ -1635,6 +1886,14 @@ pub struct ProtectionGroupPatternTypeLimits {
     pub arbitrary_pattern_limits:
         std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
 }
+impl ProtectionGroupPatternTypeLimits {
+    /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
+    pub fn arbitrary_pattern_limits(
+        &self,
+    ) -> std::option::Option<&crate::model::ProtectionGroupArbitraryPatternLimits> {
+        self.arbitrary_pattern_limits.as_ref()
+    }
+}
 impl std::fmt::Debug for ProtectionGroupPatternTypeLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectionGroupPatternTypeLimits");
@@ -1690,6 +1949,12 @@ pub struct ProtectionGroupArbitraryPatternLimits {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     pub max_members: i64,
 }
+impl ProtectionGroupArbitraryPatternLimits {
+    /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
+    pub fn max_members(&self) -> i64 {
+        self.max_members
+    }
+}
 impl std::fmt::Debug for ProtectionGroupArbitraryPatternLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectionGroupArbitraryPatternLimits");
@@ -1737,6 +2002,12 @@ impl ProtectionGroupArbitraryPatternLimits {
 pub struct ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
     pub protected_resource_type_limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
+}
+impl ProtectionLimits {
+    /// <p>The maximum number of resource types that you can specify in a protection.</p>
+    pub fn protected_resource_type_limits(&self) -> std::option::Option<&[crate::model::Limit]> {
+        self.protected_resource_type_limits.as_deref()
+    }
 }
 impl std::fmt::Debug for ProtectionLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1803,6 +2074,16 @@ pub struct Limit {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
     pub max: i64,
+}
+impl Limit {
+    /// <p>The type of protection.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
+    pub fn max(&self) -> i64 {
+        self.max
+    }
 }
 impl std::fmt::Debug for Limit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1926,6 +2207,16 @@ pub struct AttackStatisticsDataItem {
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
     pub attack_count: i64,
 }
+impl AttackStatisticsDataItem {
+    /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
+    pub fn attack_volume(&self) -> std::option::Option<&crate::model::AttackVolume> {
+        self.attack_volume.as_ref()
+    }
+    /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
+    pub fn attack_count(&self) -> i64 {
+        self.attack_count
+    }
+}
 impl std::fmt::Debug for AttackStatisticsDataItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttackStatisticsDataItem");
@@ -1993,6 +2284,22 @@ pub struct AttackVolume {
     pub packets_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
     pub requests_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
+}
+impl AttackVolume {
+    /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
+    pub fn bits_per_second(&self) -> std::option::Option<&crate::model::AttackVolumeStatistics> {
+        self.bits_per_second.as_ref()
+    }
+    /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
+    pub fn packets_per_second(&self) -> std::option::Option<&crate::model::AttackVolumeStatistics> {
+        self.packets_per_second.as_ref()
+    }
+    /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
+    pub fn requests_per_second(
+        &self,
+    ) -> std::option::Option<&crate::model::AttackVolumeStatistics> {
+        self.requests_per_second.as_ref()
+    }
 }
 impl std::fmt::Debug for AttackVolume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2077,6 +2384,12 @@ pub struct AttackVolumeStatistics {
     /// <p>The maximum attack volume observed for the given unit.</p>
     pub max: f64,
 }
+impl AttackVolumeStatistics {
+    /// <p>The maximum attack volume observed for the given unit.</p>
+    pub fn max(&self) -> f64 {
+        self.max
+    }
+}
 impl std::fmt::Debug for AttackVolumeStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttackVolumeStatistics");
@@ -2142,6 +2455,44 @@ pub struct AttackDetail {
     pub attack_properties: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
     /// <p>List of mitigation actions taken for the attack.</p>
     pub mitigations: std::option::Option<std::vec::Vec<crate::model::Mitigation>>,
+}
+impl AttackDetail {
+    /// <p>The unique identifier (ID) of the attack.</p>
+    pub fn attack_id(&self) -> std::option::Option<&str> {
+        self.attack_id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
+    pub fn sub_resources(&self) -> std::option::Option<&[crate::model::SubResourceSummary]> {
+        self.sub_resources.as_deref()
+    }
+    /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>List of counters that describe the attack for the specified time period.</p>
+    pub fn attack_counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
+        self.attack_counters.as_deref()
+    }
+    /// <p>The array of objects that provide details of the Shield event. </p>
+    /// <p>For infrastructure  
+    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+    /// in the <i>WAF Developer Guide</i>. </p>
+    pub fn attack_properties(&self) -> std::option::Option<&[crate::model::AttackProperty]> {
+        self.attack_properties.as_deref()
+    }
+    /// <p>List of mitigation actions taken for the attack.</p>
+    pub fn mitigations(&self) -> std::option::Option<&[crate::model::Mitigation]> {
+        self.mitigations.as_deref()
+    }
 }
 impl std::fmt::Debug for AttackDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2338,6 +2689,12 @@ pub struct Mitigation {
     /// <p>The name of the mitigation taken for this attack.</p>
     pub mitigation_name: std::option::Option<std::string::String>,
 }
+impl Mitigation {
+    /// <p>The name of the mitigation taken for this attack.</p>
+    pub fn mitigation_name(&self) -> std::option::Option<&str> {
+        self.mitigation_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Mitigation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Mitigation");
@@ -2404,6 +2761,38 @@ pub struct AttackProperty {
     pub unit: std::option::Option<crate::model::Unit>,
     /// <p>The total contributions made to this Shield event by all contributors.</p>
     pub total: i64,
+}
+impl AttackProperty {
+    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
+    /// indicates layer 7 events.</p>
+    /// <p>For infrastructure  
+    /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+    /// in the <i>WAF Developer Guide</i>. </p>
+    pub fn attack_layer(&self) -> std::option::Option<&crate::model::AttackLayer> {
+        self.attack_layer.as_ref()
+    }
+    /// <p>Defines the Shield event property information that is provided. The
+    /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
+    /// values are valid only for WordPress reflective pingback events.</p>
+    pub fn attack_property_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::AttackPropertyIdentifier> {
+        self.attack_property_identifier.as_ref()
+    }
+    /// <p>Contributor objects for the top five contributors to a Shield event. </p>
+    pub fn top_contributors(&self) -> std::option::Option<&[crate::model::Contributor]> {
+        self.top_contributors.as_deref()
+    }
+    /// <p>The unit used for the <code>Contributor</code>
+    /// <code>Value</code> property. </p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
+        self.unit.as_ref()
+    }
+    /// <p>The total contributions made to this Shield event by all contributors.</p>
+    pub fn total(&self) -> i64 {
+        self.total
+    }
 }
 impl std::fmt::Debug for AttackProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2607,6 +2996,16 @@ pub struct Contributor {
     pub name: std::option::Option<std::string::String>,
     /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
     pub value: i64,
+}
+impl Contributor {
+    /// <p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
+    pub fn value(&self) -> i64 {
+        self.value
+    }
 }
 impl std::fmt::Debug for Contributor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2822,6 +3221,32 @@ pub struct SummarizedCounter {
     /// <p>The unit of the counters.</p>
     pub unit: std::option::Option<std::string::String>,
 }
+impl SummarizedCounter {
+    /// <p>The counter name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The maximum value of the counter for a specified time period.</p>
+    pub fn max(&self) -> f64 {
+        self.max
+    }
+    /// <p>The average value of the counter for a specified time period.</p>
+    pub fn average(&self) -> f64 {
+        self.average
+    }
+    /// <p>The total of counter values for a specified time period.</p>
+    pub fn sum(&self) -> f64 {
+        self.sum
+    }
+    /// <p>The number of counters for a specified time period.</p>
+    pub fn n(&self) -> i32 {
+        self.n
+    }
+    /// <p>The unit of the counters.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+}
 impl std::fmt::Debug for SummarizedCounter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SummarizedCounter");
@@ -2941,6 +3366,24 @@ pub struct SubResourceSummary {
     /// <p>The counters that describe the details of the attack.</p>
     pub counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
 }
+impl SubResourceSummary {
+    /// <p>The <code>SubResource</code> type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SubResourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The list of attack types and associated counters.</p>
+    pub fn attack_vectors(&self) -> std::option::Option<&[crate::model::SummarizedAttackVector]> {
+        self.attack_vectors.as_deref()
+    }
+    /// <p>The counters that describe the details of the attack.</p>
+    pub fn counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
+        self.counters.as_deref()
+    }
+}
 impl std::fmt::Debug for SubResourceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubResourceSummary");
@@ -3054,6 +3497,16 @@ pub struct SummarizedAttackVector {
     pub vector_type: std::option::Option<std::string::String>,
     /// <p>The list of counters that describe the details of the attack.</p>
     pub vector_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
+}
+impl SummarizedAttackVector {
+    /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
+    pub fn vector_type(&self) -> std::option::Option<&str> {
+        self.vector_type.as_deref()
+    }
+    /// <p>The list of counters that describe the details of the attack.</p>
+    pub fn vector_counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
+        self.vector_counters.as_deref()
+    }
 }
 impl std::fmt::Debug for SummarizedAttackVector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

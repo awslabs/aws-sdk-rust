@@ -8055,6 +8055,20 @@ pub struct WafInvalidParameterException {
     /// <p>Additional information about the exception.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl WafInvalidParameterException {
+    /// <p>The settings where the invalid parameter was found. </p>
+    pub fn field(&self) -> std::option::Option<&crate::model::ParameterExceptionField> {
+        self.field.as_ref()
+    }
+    /// <p>The invalid parameter that resulted in the exception. </p>
+    pub fn parameter(&self) -> std::option::Option<&str> {
+        self.parameter.as_deref()
+    }
+    /// <p>Additional information about the exception.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for WafInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WafInvalidParameterException");

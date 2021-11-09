@@ -6,6 +6,12 @@ pub struct UpdateReportDefinitionOutput {
     /// <p>ID of the report.</p>
     pub report_id: std::option::Option<std::string::String>,
 }
+impl UpdateReportDefinitionOutput {
+    /// <p>ID of the report.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateReportDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReportDefinitionOutput");
@@ -53,6 +59,12 @@ impl UpdateReportDefinitionOutput {
 pub struct PutReportDefinitionOutput {
     /// <p>ID of the report.</p>
     pub report_id: std::option::Option<std::string::String>,
+}
+impl PutReportDefinitionOutput {
+    /// <p>ID of the report.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutReportDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -103,6 +115,16 @@ pub struct ListReportDefinitionsOutput {
     pub report_definitions: std::option::Option<std::vec::Vec<crate::model::ReportDefinition>>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReportDefinitionsOutput {
+    /// <p>The retrieved reports.</p>
+    pub fn report_definitions(&self) -> std::option::Option<&[crate::model::ReportDefinition]> {
+        self.report_definitions.as_deref()
+    }
+    /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReportDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -178,6 +200,12 @@ pub struct ImportApplicationUsageOutput {
     /// <p>ID of the import request.</p>
     pub import_id: std::option::Option<std::string::String>,
 }
+impl ImportApplicationUsageOutput {
+    /// <p>ID of the import request.</p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportApplicationUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportApplicationUsageOutput");
@@ -237,6 +265,36 @@ pub struct GetReportDefinitionOutput {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetReportDefinitionOutput {
+    /// <p>ID of the report retrieved.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+    /// <p>Description of the report.</p>
+    pub fn report_description(&self) -> std::option::Option<&str> {
+        self.report_description.as_deref()
+    }
+    /// <p>Cadence used to generate the report.</p>
+    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+        self.report_frequency.as_ref()
+    }
+    /// <p>Format of the generated report.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
+    pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.destination_s3_location.as_ref()
+    }
+    /// <p>Timestamp (milliseconds) when this report definition was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
 }
 impl std::fmt::Debug for GetReportDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -378,6 +436,12 @@ impl GetReportDefinitionOutput {
 pub struct DeleteReportDefinitionOutput {
     /// <p>ID of the report that was deleted.</p>
     pub report_id: std::option::Option<std::string::String>,
+}
+impl DeleteReportDefinitionOutput {
+    /// <p>ID of the report that was deleted.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReportDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,16 @@ pub struct UpdateFlowSourceOutput {
     /// The settings for the source of the flow.
     pub source: std::option::Option<crate::model::Source>,
 }
+impl UpdateFlowSourceOutput {
+    /// The ARN of the flow that you want to update.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The settings for the source of the flow.
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowSourceOutput");
@@ -71,6 +81,16 @@ pub struct UpdateFlowOutputOutput {
     /// The new settings of the output that you updated.
     pub output: std::option::Option<crate::model::Output>,
 }
+impl UpdateFlowOutputOutput {
+    /// The ARN of the flow that is associated with the updated output.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The new settings of the output that you updated.
+    pub fn output(&self) -> std::option::Option<&crate::model::Output> {
+        self.output.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowOutputOutput");
@@ -133,6 +153,16 @@ pub struct UpdateFlowMediaStreamOutput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The media stream that you updated.
     pub media_stream: std::option::Option<crate::model::MediaStream>,
+}
+impl UpdateFlowMediaStreamOutput {
+    /// The ARN of the flow that is associated with the media stream that you updated.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The media stream that you updated.
+    pub fn media_stream(&self) -> std::option::Option<&crate::model::MediaStream> {
+        self.media_stream.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFlowMediaStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -200,6 +230,16 @@ pub struct UpdateFlowEntitlementOutput {
     /// The ARN of the flow that this entitlement was granted on.
     pub flow_arn: std::option::Option<std::string::String>,
 }
+impl UpdateFlowEntitlementOutput {
+    /// The new configuration of the entitlement that you updated.
+    pub fn entitlement(&self) -> std::option::Option<&crate::model::Entitlement> {
+        self.entitlement.as_ref()
+    }
+    /// The ARN of the flow that this entitlement was granted on.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowEntitlementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowEntitlementOutput");
@@ -263,6 +303,12 @@ impl UpdateFlowEntitlementOutput {
 pub struct UpdateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
     pub flow: std::option::Option<crate::model::Flow>,
+}
+impl UpdateFlowOutput {
+    /// The settings for a flow, including its source, outputs, and entitlements.
+    pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
+        self.flow.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,6 +418,16 @@ pub struct StopFlowOutput {
     /// The status of the flow when the StopFlow process begins.
     pub status: std::option::Option<crate::model::Status>,
 }
+impl StopFlowOutput {
+    /// The ARN of the flow that you stopped.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The status of the flow when the StopFlow process begins.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopFlowOutput");
@@ -435,6 +491,16 @@ pub struct StartFlowOutput {
     /// The status of the flow when the StartFlow process begins.
     pub status: std::option::Option<crate::model::Status>,
 }
+impl StartFlowOutput {
+    /// The ARN of the flow that you started.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The status of the flow when the StartFlow process begins.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFlowOutput");
@@ -497,6 +563,16 @@ pub struct RevokeFlowEntitlementOutput {
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The ARN of the flow that the entitlement was revoked from.
     pub flow_arn: std::option::Option<std::string::String>,
+}
+impl RevokeFlowEntitlementOutput {
+    /// The ARN of the entitlement that was revoked.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// The ARN of the flow that the entitlement was revoked from.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RevokeFlowEntitlementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -565,6 +641,20 @@ pub struct RemoveFlowVpcInterfaceOutput {
     pub non_deleted_network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The name of the VPC interface that was removed.
     pub vpc_interface_name: std::option::Option<std::string::String>,
+}
+impl RemoveFlowVpcInterfaceOutput {
+    /// The ARN of the flow that is associated with the VPC interface you removed.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
+    pub fn non_deleted_network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.non_deleted_network_interface_ids.as_deref()
+    }
+    /// The name of the VPC interface that was removed.
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+        self.vpc_interface_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveFlowVpcInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -661,6 +751,16 @@ pub struct RemoveFlowSourceOutput {
     /// The ARN of the source that was removed.
     pub source_arn: std::option::Option<std::string::String>,
 }
+impl RemoveFlowSourceOutput {
+    /// The ARN of the flow that is associated with the source you removed.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The ARN of the source that was removed.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveFlowSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowSourceOutput");
@@ -724,6 +824,16 @@ pub struct RemoveFlowOutputOutput {
     /// The ARN of the output that was removed.
     pub output_arn: std::option::Option<std::string::String>,
 }
+impl RemoveFlowOutputOutput {
+    /// The ARN of the flow that is associated with the output you removed.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The ARN of the output that was removed.
+    pub fn output_arn(&self) -> std::option::Option<&str> {
+        self.output_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveFlowOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowOutputOutput");
@@ -786,6 +896,16 @@ pub struct RemoveFlowMediaStreamOutput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the media stream that was removed.
     pub media_stream_name: std::option::Option<std::string::String>,
+}
+impl RemoveFlowMediaStreamOutput {
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The name of the media stream that was removed.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveFlowMediaStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -851,6 +971,12 @@ pub struct PurchaseOfferingOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
+impl PurchaseOfferingOutput {
+    /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
+    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+        self.reservation.as_ref()
+    }
+}
 impl std::fmt::Debug for PurchaseOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseOfferingOutput");
@@ -902,6 +1028,15 @@ pub struct ListTagsForResourceOutput {
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -967,6 +1102,16 @@ pub struct ListReservationsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
+}
+impl ListReservationsOutput {
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of all reservations that have been purchased by this account in the current AWS Region.
+    pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
+        self.reservations.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReservationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1040,6 +1185,16 @@ pub struct ListOfferingsOutput {
     /// A list of offerings that are available to this account in the current AWS Region.
     pub offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
 }
+impl ListOfferingsOutput {
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of offerings that are available to this account in the current AWS Region.
+    pub fn offerings(&self) -> std::option::Option<&[crate::model::Offering]> {
+        self.offerings.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingsOutput");
@@ -1112,6 +1267,16 @@ pub struct ListFlowsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFlowsOutput {
+    /// A list of flow summaries.
+    pub fn flows(&self) -> std::option::Option<&[crate::model::ListedFlow]> {
+        self.flows.as_deref()
+    }
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFlowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFlowsOutput");
@@ -1183,6 +1348,16 @@ pub struct ListEntitlementsOutput {
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEntitlementsOutput {
+    /// A list of entitlements that have been granted to you from other AWS accounts.
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::ListedEntitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEntitlementsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1257,6 +1432,16 @@ pub struct GrantFlowEntitlementsOutput {
     /// The ARN of the flow that these entitlements were granted to.
     pub flow_arn: std::option::Option<std::string::String>,
 }
+impl GrantFlowEntitlementsOutput {
+    /// The entitlements that were just granted.
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// The ARN of the flow that these entitlements were granted to.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GrantFlowEntitlementsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrantFlowEntitlementsOutput");
@@ -1327,6 +1512,12 @@ pub struct DescribeReservationOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
+impl DescribeReservationOutput {
+    /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
+    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+        self.reservation.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservationOutput");
@@ -1378,6 +1569,12 @@ pub struct DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     pub offering: std::option::Option<crate::model::Offering>,
 }
+impl DescribeOfferingOutput {
+    /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    pub fn offering(&self) -> std::option::Option<&crate::model::Offering> {
+        self.offering.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOfferingOutput");
@@ -1427,6 +1624,16 @@ pub struct DescribeFlowOutput {
     pub flow: std::option::Option<crate::model::Flow>,
     /// Messages that provide the state of the flow.
     pub messages: std::option::Option<crate::model::Messages>,
+}
+impl DescribeFlowOutput {
+    /// The settings for a flow, including its source, outputs, and entitlements.
+    pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
+        self.flow.as_ref()
+    }
+    /// Messages that provide the state of the flow.
+    pub fn messages(&self) -> std::option::Option<&crate::model::Messages> {
+        self.messages.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1491,6 +1698,16 @@ pub struct DeleteFlowOutput {
     /// The status of the flow when the DeleteFlow process begins.
     pub status: std::option::Option<crate::model::Status>,
 }
+impl DeleteFlowOutput {
+    /// The ARN of the flow that was deleted.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The status of the flow when the DeleteFlow process begins.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFlowOutput");
@@ -1552,6 +1769,12 @@ pub struct CreateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
     pub flow: std::option::Option<crate::model::Flow>,
 }
+impl CreateFlowOutput {
+    /// The settings for a flow, including its source, outputs, and entitlements.
+    pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
+        self.flow.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFlowOutput");
@@ -1599,6 +1822,16 @@ pub struct AddFlowVpcInterfacesOutput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The details of the newly added VPC interfaces.
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
+}
+impl AddFlowVpcInterfacesOutput {
+    /// The ARN of the flow that these VPC interfaces were added to.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The details of the newly added VPC interfaces.
+    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterface]> {
+        self.vpc_interfaces.as_deref()
+    }
 }
 impl std::fmt::Debug for AddFlowVpcInterfacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1672,6 +1905,16 @@ pub struct AddFlowSourcesOutput {
     /// The details of the newly added sources.
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
 }
+impl AddFlowSourcesOutput {
+    /// The ARN of the flow that these sources were added to.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The details of the newly added sources.
+    pub fn sources(&self) -> std::option::Option<&[crate::model::Source]> {
+        self.sources.as_deref()
+    }
+}
 impl std::fmt::Debug for AddFlowSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowSourcesOutput");
@@ -1744,6 +1987,16 @@ pub struct AddFlowOutputsOutput {
     /// The details of the newly added outputs.
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
+impl AddFlowOutputsOutput {
+    /// The ARN of the flow that these outputs were added to.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The details of the newly added outputs.
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for AddFlowOutputsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowOutputsOutput");
@@ -1815,6 +2068,16 @@ pub struct AddFlowMediaStreamsOutput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The media streams that you added to the flow.
     pub media_streams: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
+}
+impl AddFlowMediaStreamsOutput {
+    /// The ARN of the flow that you added media streams to.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The media streams that you added to the flow.
+    pub fn media_streams(&self) -> std::option::Option<&[crate::model::MediaStream]> {
+        self.media_streams.as_deref()
+    }
 }
 impl std::fmt::Debug for AddFlowMediaStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

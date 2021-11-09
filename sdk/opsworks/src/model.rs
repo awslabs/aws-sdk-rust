@@ -96,6 +96,55 @@ pub struct Source {
     /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
     pub revision: std::option::Option<std::string::String>,
 }
+impl Source {
+    /// <p>The repository type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The source URL. The following is an example of an Amazon S3 source URL:  <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>This parameter depends on the repository type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code>
+    /// to the user name.</p>
+    /// </li>
+    /// </ul>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>When included in a request, the parameter depends on the repository type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access
+    /// key.</p>
+    /// </li>
+    /// <li>
+    /// <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the
+    /// password.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
+    /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>In requests, the repository's SSH key.</p>
+    /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    pub fn ssh_key(&self) -> std::option::Option<&str> {
+        self.ssh_key.as_deref()
+    }
+    /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
+    pub fn revision(&self) -> std::option::Option<&str> {
+        self.revision.as_deref()
+    }
+}
 impl std::fmt::Debug for Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Source");
@@ -320,6 +369,16 @@ pub struct ChefConfiguration {
     /// <p>The Berkshelf version.</p>
     pub berkshelf_version: std::option::Option<std::string::String>,
 }
+impl ChefConfiguration {
+    /// <p>Whether to enable Berkshelf.</p>
+    pub fn manage_berkshelf(&self) -> std::option::Option<bool> {
+        self.manage_berkshelf
+    }
+    /// <p>The Berkshelf version.</p>
+    pub fn berkshelf_version(&self) -> std::option::Option<&str> {
+        self.berkshelf_version.as_deref()
+    }
+}
 impl std::fmt::Debug for ChefConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChefConfiguration");
@@ -385,6 +444,16 @@ pub struct StackConfigurationManager {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl StackConfigurationManager {
+    /// <p>The name. This parameter must be set to "Chef".</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for StackConfigurationManager {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -499,6 +568,13 @@ pub struct LifecycleEventConfiguration {
     /// configuration.</p>
     pub shutdown: std::option::Option<crate::model::ShutdownEventConfiguration>,
 }
+impl LifecycleEventConfiguration {
+    /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event
+    /// configuration.</p>
+    pub fn shutdown(&self) -> std::option::Option<&crate::model::ShutdownEventConfiguration> {
+        self.shutdown.as_ref()
+    }
+}
 impl std::fmt::Debug for LifecycleEventConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecycleEventConfiguration");
@@ -554,6 +630,17 @@ pub struct ShutdownEventConfiguration {
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a>
     /// </p>
     pub delay_until_elb_connections_drained: std::option::Option<bool>,
+}
+impl ShutdownEventConfiguration {
+    /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
+    pub fn execution_timeout(&self) -> std::option::Option<i32> {
+        self.execution_timeout
+    }
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a>
+    /// </p>
+    pub fn delay_until_elb_connections_drained(&self) -> std::option::Option<bool> {
+        self.delay_until_elb_connections_drained
+    }
 }
 impl std::fmt::Debug for ShutdownEventConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -639,6 +726,28 @@ pub struct Recipes {
     pub undeploy: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
     pub shutdown: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Recipes {
+    /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
+    pub fn setup(&self) -> std::option::Option<&[std::string::String]> {
+        self.setup.as_deref()
+    }
+    /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
+    pub fn configure(&self) -> std::option::Option<&[std::string::String]> {
+        self.configure.as_deref()
+    }
+    /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
+    pub fn deploy(&self) -> std::option::Option<&[std::string::String]> {
+        self.deploy.as_deref()
+    }
+    /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
+    pub fn undeploy(&self) -> std::option::Option<&[std::string::String]> {
+        self.undeploy.as_deref()
+    }
+    /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
+    pub fn shutdown(&self) -> std::option::Option<&[std::string::String]> {
+        self.shutdown.as_deref()
+    }
 }
 impl std::fmt::Debug for Recipes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -821,6 +930,60 @@ pub struct VolumeConfiguration {
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub encrypted: std::option::Option<bool>,
 }
+impl VolumeConfiguration {
+    /// <p>The volume mount point. For example "/dev/sdh".</p>
+    pub fn mount_point(&self) -> std::option::Option<&str> {
+        self.mount_point.as_deref()
+    }
+    /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
+    pub fn raid_level(&self) -> std::option::Option<i32> {
+        self.raid_level
+    }
+    /// <p>The number of disks in the volume.</p>
+    pub fn number_of_disks(&self) -> std::option::Option<i32> {
+        self.number_of_disks
+    }
+    /// <p>The volume size.</p>
+    pub fn size(&self) -> std::option::Option<i32> {
+        self.size
+    }
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+    /// Amazon EBS Volume Types</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// </ul>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+}
 impl std::fmt::Debug for VolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeConfiguration");
@@ -997,6 +1160,16 @@ pub struct CloudWatchLogsConfiguration {
     /// <p>A list of configuration options for CloudWatch Logs.</p>
     pub log_streams: std::option::Option<std::vec::Vec<crate::model::CloudWatchLogsLogStream>>,
 }
+impl CloudWatchLogsConfiguration {
+    /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A list of configuration options for CloudWatch Logs.</p>
+    pub fn log_streams(&self) -> std::option::Option<&[crate::model::CloudWatchLogsLogStream]> {
+        self.log_streams.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLogsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLogsConfiguration");
@@ -1107,6 +1280,71 @@ pub struct CloudWatchLogsLogStream {
     /// The default value is 32768 bytes. This size is calculated as the sum of all event messages
     /// in UTF-8, plus 26 bytes for each log event.</p>
     pub batch_size: std::option::Option<i32>,
+}
+impl CloudWatchLogsLogStream {
+    /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist.
+    /// Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore),
+    /// '-' (hyphen), '/' (forward slash), and '.' (period).</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>Specifies how the time stamp is extracted from logs. For more information, see the
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
+    pub fn datetime_format(&self) -> std::option::Option<&str> {
+        self.datetime_format.as_deref()
+    }
+    /// <p>Specifies the time zone of log event time stamps.</p>
+    pub fn time_zone(&self) -> std::option::Option<&crate::model::CloudWatchLogsTimeZone> {
+        self.time_zone.as_ref()
+    }
+    /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
+    /// <p>
+    /// <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>).
+    /// Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series
+    /// of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on
+    /// by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types,
+    /// such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another
+    /// log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+    /// <p>Zipped files are not supported.</p>
+    pub fn file(&self) -> std::option::Option<&str> {
+        self.file.as_deref()
+    }
+    /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers,
+    /// such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are
+    /// not sent to CloudWatch Logs unless all specified lines are available.</p>
+    pub fn file_fingerprint_lines(&self) -> std::option::Option<&str> {
+        self.file_fingerprint_lines.as_deref()
+    }
+    /// <p>Specifies the pattern for identifying the start of a log message.</p>
+    pub fn multi_line_start_pattern(&self) -> std::option::Option<&str> {
+        self.multi_line_start_pattern.as_deref()
+    }
+    /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file.
+    /// This setting is only used if there is no state persisted for that log stream.</p>
+    pub fn initial_position(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsInitialPosition> {
+        self.initial_position.as_ref()
+    }
+    /// <p>Specifies the encoding of the log file so that the file can be read correctly.
+    /// The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
+    pub fn encoding(&self) -> std::option::Option<&crate::model::CloudWatchLogsEncoding> {
+        self.encoding.as_ref()
+    }
+    /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
+    pub fn buffer_duration(&self) -> std::option::Option<i32> {
+        self.buffer_duration
+    }
+    /// <p>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</p>
+    pub fn batch_count(&self) -> std::option::Option<i32> {
+        self.batch_count
+    }
+    /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes.
+    /// The default value is 32768 bytes. This size is calculated as the sum of all event messages
+    /// in UTF-8, plus 26 bytes for each log event.</p>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
 }
 impl std::fmt::Debug for CloudWatchLogsLogStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2253,6 +2491,23 @@ pub struct EnvironmentVariable {
     /// value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub secure: std::option::Option<bool>,
 }
+impl EnvironmentVariable {
+    /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action.
+    /// To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>.
+    /// <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual
+    /// value. The default value for <code>Secure</code> is <code>false</code>. </p>
+    pub fn secure(&self) -> std::option::Option<bool> {
+        self.secure
+    }
+}
 impl std::fmt::Debug for EnvironmentVariable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentVariable");
@@ -2404,6 +2659,20 @@ pub struct SslConfiguration {
     pub private_key: std::option::Option<std::string::String>,
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub chain: std::option::Option<std::string::String>,
+}
+impl SslConfiguration {
+    /// <p>The contents of the certificate's domain.crt file.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The private key; the contents of the certificate's domain.kex file.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
+    /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
+    pub fn chain(&self) -> std::option::Option<&str> {
+        self.chain.as_deref()
+    }
 }
 impl std::fmt::Debug for SslConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2567,6 +2836,21 @@ pub struct DataSource {
     /// <p>The database name.</p>
     pub database_name: std::option::Option<std::string::String>,
 }
+impl DataSource {
+    /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
+    /// <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The data source's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The database name.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataSource");
@@ -2677,6 +2961,57 @@ pub struct WeeklyAutoScalingSchedule {
     /// <p>The schedule for Sunday.</p>
     pub sunday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl WeeklyAutoScalingSchedule {
+    /// <p>The schedule for Monday.</p>
+    pub fn monday(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.monday.as_ref()
+    }
+    /// <p>The schedule for Tuesday.</p>
+    pub fn tuesday(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tuesday.as_ref()
+    }
+    /// <p>The schedule for Wednesday.</p>
+    pub fn wednesday(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.wednesday.as_ref()
+    }
+    /// <p>The schedule for Thursday.</p>
+    pub fn thursday(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.thursday.as_ref()
+    }
+    /// <p>The schedule for Friday.</p>
+    pub fn friday(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.friday.as_ref()
+    }
+    /// <p>The schedule for Saturday.</p>
+    pub fn saturday(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.saturday.as_ref()
+    }
+    /// <p>The schedule for Sunday.</p>
+    pub fn sunday(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.sunday.as_ref()
+    }
 }
 impl std::fmt::Debug for WeeklyAutoScalingSchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2947,6 +3282,48 @@ pub struct AutoScalingThresholds {
     /// </note>
     pub alarms: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AutoScalingThresholds {
+    /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
+    pub fn instance_count(&self) -> std::option::Option<i32> {
+        self.instance_count
+    }
+    /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
+    pub fn thresholds_wait_time(&self) -> std::option::Option<i32> {
+        self.thresholds_wait_time
+    }
+    /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics
+    /// and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following
+    /// an upscaling event but the instances won't start reducing the load until they have been booted
+    /// and configured. There is no point in raising additional scaling events during that operation,
+    /// which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct
+    /// AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
+    pub fn ignore_metrics_time(&self) -> std::option::Option<i32> {
+        self.ignore_metrics_time
+    }
+    /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
+    pub fn cpu_threshold(&self) -> std::option::Option<f64> {
+        self.cpu_threshold
+    }
+    /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
+    pub fn memory_threshold(&self) -> std::option::Option<f64> {
+        self.memory_threshold
+    }
+    /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
+    pub fn load_threshold(&self) -> std::option::Option<f64> {
+        self.load_threshold
+    }
+    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names,
+    /// which are case sensitive and must be in the same region as the stack.</p>
+    /// <note>
+    /// <p>To use custom alarms, you must update your service role to allow
+    /// <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for
+    /// you when you first use this feature or you can edit the role manually. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+    /// </note>
+    pub fn alarms(&self) -> std::option::Option<&[std::string::String]> {
+        self.alarms.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoScalingThresholds {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingThresholds");
@@ -3109,6 +3486,16 @@ pub struct InstanceIdentity {
     /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
     pub signature: std::option::Option<std::string::String>,
 }
+impl InstanceIdentity {
+    /// <p>A JSON document that contains the metadata.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
+    /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceIdentity");
@@ -3175,6 +3562,24 @@ pub struct TemporaryCredential {
     pub valid_for_in_minutes: std::option::Option<i32>,
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl TemporaryCredential {
+    /// <p>The user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    pub fn valid_for_in_minutes(&self) -> std::option::Option<i32> {
+        self.valid_for_in_minutes
+    }
+    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for TemporaryCredential {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3312,6 +3717,88 @@ pub struct Volume {
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub encrypted: std::option::Option<bool>,
+}
+impl Volume {
+    /// <p>The volume ID.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The Amazon EC2 volume ID.</p>
+    pub fn ec2_volume_id(&self) -> std::option::Option<&str> {
+        self.ec2_volume_id.as_deref()
+    }
+    /// <p>The volume name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The RAID array ID.</p>
+    pub fn raid_array_id(&self) -> std::option::Option<&str> {
+        self.raid_array_id.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The volume size.</p>
+    pub fn size(&self) -> std::option::Option<i32> {
+        self.size
+    }
+    /// <p>The device name.</p>
+    pub fn device(&self) -> std::option::Option<&str> {
+        self.device.as_deref()
+    }
+    /// <p>The volume mount point. For example, "/mnt/disk1".</p>
+    pub fn mount_point(&self) -> std::option::Option<&str> {
+        self.mount_point.as_deref()
+    }
+    /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+    /// Amazon EBS Volume Types</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
+    /// </li>
+    /// </ul>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
 }
 impl std::fmt::Debug for Volume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3597,6 +4084,30 @@ pub struct UserProfile {
     /// Permissions</a>.</p>
     pub allow_self_management: std::option::Option<bool>,
 }
+impl UserProfile {
+    /// <p>The user's IAM ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>The user's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The user's SSH user name.</p>
+    pub fn ssh_username(&self) -> std::option::Option<&str> {
+        self.ssh_username.as_deref()
+    }
+    /// <p>The user's SSH public key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+    /// Permissions</a>.</p>
+    pub fn allow_self_management(&self) -> std::option::Option<bool> {
+        self.allow_self_management
+    }
+}
 impl std::fmt::Debug for UserProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserProfile");
@@ -3706,6 +4217,18 @@ pub struct TimeBasedAutoScalingConfiguration {
     /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
     pub auto_scaling_schedule: std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
 }
+impl TimeBasedAutoScalingConfiguration {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
+    pub fn auto_scaling_schedule(
+        &self,
+    ) -> std::option::Option<&crate::model::WeeklyAutoScalingSchedule> {
+        self.auto_scaling_schedule.as_ref()
+    }
+}
 impl std::fmt::Debug for TimeBasedAutoScalingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeBasedAutoScalingConfiguration");
@@ -3783,6 +4306,32 @@ pub struct StackSummary {
     pub apps_count: std::option::Option<i32>,
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     pub instances_count: std::option::Option<crate::model::InstancesCount>,
+}
+impl StackSummary {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The stack name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The stack's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The number of layers.</p>
+    pub fn layers_count(&self) -> std::option::Option<i32> {
+        self.layers_count
+    }
+    /// <p>The number of apps.</p>
+    pub fn apps_count(&self) -> std::option::Option<i32> {
+        self.apps_count
+    }
+    /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    pub fn instances_count(&self) -> std::option::Option<&crate::model::InstancesCount> {
+        self.instances_count.as_ref()
+    }
 }
 impl std::fmt::Debug for StackSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3937,6 +4486,88 @@ pub struct InstancesCount {
     pub terminating: std::option::Option<i32>,
     /// <p>The number of instances in the Unassigning state.</p>
     pub unassigning: std::option::Option<i32>,
+}
+impl InstancesCount {
+    /// <p>The number of instances in the Assigning state.</p>
+    pub fn assigning(&self) -> std::option::Option<i32> {
+        self.assigning
+    }
+    /// <p>The number of instances with <code>booting</code> status.</p>
+    pub fn booting(&self) -> std::option::Option<i32> {
+        self.booting
+    }
+    /// <p>The number of instances with <code>connection_lost</code> status.</p>
+    pub fn connection_lost(&self) -> std::option::Option<i32> {
+        self.connection_lost
+    }
+    /// <p>The number of instances in the Deregistering state.</p>
+    pub fn deregistering(&self) -> std::option::Option<i32> {
+        self.deregistering
+    }
+    /// <p>The number of instances with <code>online</code> status.</p>
+    pub fn online(&self) -> std::option::Option<i32> {
+        self.online
+    }
+    /// <p>The number of instances with <code>pending</code> status.</p>
+    pub fn pending(&self) -> std::option::Option<i32> {
+        self.pending
+    }
+    /// <p>The number of instances with <code>rebooting</code> status.</p>
+    pub fn rebooting(&self) -> std::option::Option<i32> {
+        self.rebooting
+    }
+    /// <p>The number of instances in the Registered state.</p>
+    pub fn registered(&self) -> std::option::Option<i32> {
+        self.registered
+    }
+    /// <p>The number of instances in the Registering state.</p>
+    pub fn registering(&self) -> std::option::Option<i32> {
+        self.registering
+    }
+    /// <p>The number of instances with <code>requested</code> status.</p>
+    pub fn requested(&self) -> std::option::Option<i32> {
+        self.requested
+    }
+    /// <p>The number of instances with <code>running_setup</code> status.</p>
+    pub fn running_setup(&self) -> std::option::Option<i32> {
+        self.running_setup
+    }
+    /// <p>The number of instances with <code>setup_failed</code> status.</p>
+    pub fn setup_failed(&self) -> std::option::Option<i32> {
+        self.setup_failed
+    }
+    /// <p>The number of instances with <code>shutting_down</code> status.</p>
+    pub fn shutting_down(&self) -> std::option::Option<i32> {
+        self.shutting_down
+    }
+    /// <p>The number of instances with <code>start_failed</code> status.</p>
+    pub fn start_failed(&self) -> std::option::Option<i32> {
+        self.start_failed
+    }
+    /// <p>The number of instances with <code>stop_failed</code> status.</p>
+    pub fn stop_failed(&self) -> std::option::Option<i32> {
+        self.stop_failed
+    }
+    /// <p>The number of instances with <code>stopped</code> status.</p>
+    pub fn stopped(&self) -> std::option::Option<i32> {
+        self.stopped
+    }
+    /// <p>The number of instances with <code>stopping</code> status.</p>
+    pub fn stopping(&self) -> std::option::Option<i32> {
+        self.stopping
+    }
+    /// <p>The number of instances with <code>terminated</code> status.</p>
+    pub fn terminated(&self) -> std::option::Option<i32> {
+        self.terminated
+    }
+    /// <p>The number of instances with <code>terminating</code> status.</p>
+    pub fn terminating(&self) -> std::option::Option<i32> {
+        self.terminating
+    }
+    /// <p>The number of instances in the Unassigning state.</p>
+    pub fn unassigning(&self) -> std::option::Option<i32> {
+        self.unassigning
+    }
 }
 impl std::fmt::Debug for InstancesCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4288,6 +4919,114 @@ pub struct Stack {
     /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update.
     /// or a version number for a fixed agent version.</p>
     pub agent_version: std::option::Option<std::string::String>,
+}
+impl Stack {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The stack name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The stack's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The stack's attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
+    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.default_instance_profile_arn.as_deref()
+    }
+    /// <p>The stack's default operating system.</p>
+    pub fn default_os(&self) -> std::option::Option<&str> {
+        self.default_os.as_deref()
+    }
+    /// <p>The stack host name theme, with spaces replaced by underscores.</p>
+    pub fn hostname_theme(&self) -> std::option::Option<&str> {
+        self.hostname_theme.as_deref()
+    }
+    /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn default_availability_zone(&self) -> std::option::Option<&str> {
+        self.default_availability_zone.as_deref()
+    }
+    /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
+    pub fn default_subnet_id(&self) -> std::option::Option<&str> {
+        self.default_subnet_id.as_deref()
+    }
+    /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
+    /// <p>
+    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+    /// </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+    /// Modify the Stack Configuration Attributes</a>.</p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>The configuration manager.</p>
+    pub fn configuration_manager(
+        &self,
+    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+        self.configuration_manager.as_ref()
+    }
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
+    /// Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
+        self.chef_configuration.as_ref()
+    }
+    /// <p>Whether the stack uses custom cookbooks.</p>
+    pub fn use_custom_cookbooks(&self) -> std::option::Option<bool> {
+        self.use_custom_cookbooks
+    }
+    /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
+        self.use_opsworks_security_groups
+    }
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
+    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
+        self.custom_cookbooks_source.as_ref()
+    }
+    /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
+    pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
+        self.default_ssh_key_name.as_deref()
+    }
+    /// <p>The date when the stack was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>The default root device type. This value is used by default for all instances in the stack,
+    /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+        self.default_root_device_type.as_ref()
+    }
+    /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update.
+    /// or a version number for a fixed agent version.</p>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
 }
 impl std::fmt::Debug for Stack {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4710,6 +5449,32 @@ pub struct ServiceError {
     /// <p>When the error occurred.</p>
     pub created_at: std::option::Option<std::string::String>,
 }
+impl ServiceError {
+    /// <p>The error ID.</p>
+    pub fn service_error_id(&self) -> std::option::Option<&str> {
+        self.service_error_id.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The error type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the error occurred.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceError");
@@ -4843,6 +5608,46 @@ pub struct RdsDbInstance {
     /// to discover the instance only once. If this value is set to <code>true</code>, you must
     /// deregister the instance, and then register it again.</p>
     pub missing_on_rds: std::option::Option<bool>,
+}
+impl RdsDbInstance {
+    /// <p>The instance's ARN.</p>
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
+        self.rds_db_instance_arn.as_deref()
+    }
+    /// <p>The DB instance identifier.</p>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>The master user name.</p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    pub fn db_password(&self) -> std::option::Option<&str> {
+        self.db_password.as_deref()
+    }
+    /// <p>The instance's AWS region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The instance's address.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The instance's database engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The ID of the stack with which the instance is registered.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts
+    /// to discover the instance only once. If this value is set to <code>true</code>, you must
+    /// deregister the instance, and then register it again.</p>
+    pub fn missing_on_rds(&self) -> std::option::Option<bool> {
+        self.missing_on_rds
+    }
 }
 impl std::fmt::Debug for RdsDbInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5029,6 +5834,60 @@ pub struct RaidArray {
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub iops: std::option::Option<i32>,
+}
+impl RaidArray {
+    /// <p>The array ID.</p>
+    pub fn raid_array_id(&self) -> std::option::Option<&str> {
+        self.raid_array_id.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The array name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
+    pub fn raid_level(&self) -> std::option::Option<i32> {
+        self.raid_level
+    }
+    /// <p>The number of disks in the array.</p>
+    pub fn number_of_disks(&self) -> std::option::Option<i32> {
+        self.number_of_disks
+    }
+    /// <p>The array's size.</p>
+    pub fn size(&self) -> std::option::Option<i32> {
+        self.size
+    }
+    /// <p>The array's Linux device. For example /dev/mdadm0.</p>
+    pub fn device(&self) -> std::option::Option<&str> {
+        self.device.as_deref()
+    }
+    /// <p>The array's mount point.</p>
+    pub fn mount_point(&self) -> std::option::Option<&str> {
+        self.mount_point.as_deref()
+    }
+    /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>When the RAID array was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The volume type, standard or PIOPS.</p>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
 }
 impl std::fmt::Debug for RaidArray {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5279,6 +6138,59 @@ pub struct Permission {
     /// </p>
     pub level: std::option::Option<std::string::String>,
 }
+impl Permission {
+    /// <p>A stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more
+    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>Whether the user can use SSH.</p>
+    pub fn allow_ssh(&self) -> std::option::Option<bool> {
+        self.allow_ssh
+    }
+    /// <p>Whether the user can use <b>sudo</b>.</p>
+    pub fn allow_sudo(&self) -> std::option::Option<bool> {
+        self.allow_sudo
+    }
+    /// <p>The user's permission level, which must be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>deny</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>show</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deploy</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>manage</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>iam_only</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
+    /// </p>
+    pub fn level(&self) -> std::option::Option<&str> {
+        self.level.as_deref()
+    }
+}
 impl std::fmt::Debug for Permission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Permission");
@@ -5454,6 +6366,38 @@ pub struct OperatingSystem {
     /// <p>Indicates that an operating system is not supported for new instances.</p>
     pub supported: std::option::Option<bool>,
 }
+impl OperatingSystem {
+    /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
+    pub fn configuration_managers(
+        &self,
+    ) -> std::option::Option<&[crate::model::OperatingSystemConfigurationManager]> {
+        self.configuration_managers.as_deref()
+    }
+    /// <p>A short name for the operating system manufacturer.</p>
+    pub fn reported_name(&self) -> std::option::Option<&str> {
+        self.reported_name.as_deref()
+    }
+    /// <p>The version of the operating system, including the release and edition, if applicable.</p>
+    pub fn reported_version(&self) -> std::option::Option<&str> {
+        self.reported_version.as_deref()
+    }
+    /// <p>Indicates that an operating system is not supported for new instances.</p>
+    pub fn supported(&self) -> std::option::Option<bool> {
+        self.supported
+    }
+}
 impl std::fmt::Debug for OperatingSystem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OperatingSystem");
@@ -5603,6 +6547,16 @@ pub struct OperatingSystemConfigurationManager {
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl OperatingSystemConfigurationManager {
+    /// <p>The name of the configuration manager, which is Chef.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The versions of the configuration manager that are supported by an operating system.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for OperatingSystemConfigurationManager {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OperatingSystemConfigurationManager");
@@ -5669,6 +6623,24 @@ pub struct SelfUserProfile {
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's SSH public key.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
+}
+impl SelfUserProfile {
+    /// <p>The user's IAM ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>The user's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The user's SSH user name.</p>
+    pub fn ssh_username(&self) -> std::option::Option<&str> {
+        self.ssh_username.as_deref()
+    }
+    /// <p>The user's SSH public key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
 }
 impl std::fmt::Debug for SelfUserProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5767,6 +6739,26 @@ pub struct LoadBasedAutoScalingConfiguration {
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration,
     /// which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     pub down_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
+}
+impl LoadBasedAutoScalingConfiguration {
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+    /// <p>Whether load-based auto scaling is enabled for the layer.</p>
+    pub fn enable(&self) -> std::option::Option<bool> {
+        self.enable
+    }
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration,
+    /// which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
+    pub fn up_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
+        self.up_scaling.as_ref()
+    }
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration,
+    /// which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
+    pub fn down_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
+        self.down_scaling.as_ref()
+    }
 }
 impl std::fmt::Debug for LoadBasedAutoScalingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5940,6 +6932,137 @@ pub struct Layer {
     /// configuration.</p>
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
+}
+impl Layer {
+    /// <p>The Amazon Resource Number (ARN) of a layer.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The layer stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+    /// <p>The layer type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LayerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The layer name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The layer short name.</p>
+    pub fn shortname(&self) -> std::option::Option<&str> {
+        self.shortname.as_deref()
+    }
+    /// <p>The layer attributes.</p>
+    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
+    /// <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+    /// instead of the actual value</p>
+    /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+    pub fn cloud_watch_logs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsConfiguration> {
+        self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more
+    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.custom_instance_profile_arn.as_deref()
+    }
+    /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>An array containing the layer's custom security group IDs.</p>
+    pub fn custom_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_security_group_ids.as_deref()
+    }
+    /// <p>An array containing the layer's security group names.</p>
+    pub fn default_security_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.default_security_group_names.as_deref()
+    }
+    /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    pub fn packages(&self) -> std::option::Option<&[std::string::String]> {
+        self.packages.as_deref()
+    }
+    /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    pub fn volume_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::VolumeConfiguration]> {
+        self.volume_configurations.as_deref()
+    }
+    /// <p>Whether auto healing is disabled for the layer.</p>
+    pub fn enable_auto_healing(&self) -> std::option::Option<bool> {
+        self.enable_auto_healing
+    }
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+    /// a Layer</a>.</p>
+    pub fn auto_assign_elastic_ips(&self) -> std::option::Option<bool> {
+        self.auto_assign_elastic_ips
+    }
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
+    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+    /// a Layer</a>.</p>
+    pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
+        self.auto_assign_public_ips
+    }
+    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
+    /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>.
+    /// For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide
+    /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard
+    /// recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of
+    /// the five events.</p>
+    /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
+    /// name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the
+    /// <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
+    pub fn default_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
+        self.default_recipes.as_ref()
+    }
+    /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    pub fn custom_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
+        self.custom_recipes.as_ref()
+    }
+    /// <p>Date when the layer was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default
+    /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
+    /// your instances manually by using <a>CreateDeployment</a> to run the
+    /// <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon
+    /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
+    /// <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
+    /// instances have the latest security updates.</p>
+    /// </note>
+    pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
+        self.install_updates_on_boot
+    }
+    /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
+    pub fn use_ebs_optimized_instances(&self) -> std::option::Option<bool> {
+        self.use_ebs_optimized_instances
+    }
+    /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event
+    /// configuration.</p>
+    pub fn lifecycle_event_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LifecycleEventConfiguration> {
+        self.lifecycle_event_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Layer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6713,6 +7836,268 @@ pub struct Instance {
     pub tenancy: std::option::Option<std::string::String>,
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     pub virtualization_type: std::option::Option<crate::model::VirtualizationType>,
+}
+impl Instance {
+    /// <p>The agent version. This parameter is set to <code>INHERIT</code> if
+    /// the instance inherits the default stack setting or to a
+    /// a version number for a fixed agent version.</p>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+    /// <p>A custom AMI ID to be used to create the instance. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+    /// </p>
+    pub fn ami_id(&self) -> std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The instance architecture: "i386" or "x86_64".</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>The instance's Amazon Resource Number (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>For load-based or time-based instances, the type.</p>
+    pub fn auto_scaling_type(&self) -> std::option::Option<&crate::model::AutoScalingType> {
+        self.auto_scaling_type.as_ref()
+    }
+    /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device
+    /// mappings.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::BlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+    /// <p>The time that the instance was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>Whether this is an Amazon EBS-optimized instance.</p>
+    pub fn ebs_optimized(&self) -> std::option::Option<bool> {
+        self.ebs_optimized
+    }
+    /// <p>The ID of the associated Amazon EC2 instance.</p>
+    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+        self.ec2_instance_id.as_deref()
+    }
+    /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+        self.ecs_cluster_arn.as_deref()
+    }
+    /// <p>For container instances, the instance's ARN.</p>
+    pub fn ecs_container_instance_arn(&self) -> std::option::Option<&str> {
+        self.ecs_container_instance_arn.as_deref()
+    }
+    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>The instance host name.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>For registered instances, the infrastructure class: <code>ec2</code> or
+    /// <code>on-premises</code>.</p>
+    pub fn infrastructure_class(&self) -> std::option::Option<&str> {
+        self.infrastructure_class.as_deref()
+    }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default
+    /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
+    /// your instances manually by using <a>CreateDeployment</a> to run the
+    /// <code>update_dependencies</code> stack command or
+    /// by manually running <code>yum</code> (Amazon
+    /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
+    /// <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
+    /// instances have the latest security updates.</p>
+    /// </note>
+    pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
+        self.install_updates_on_boot
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.instance_profile_arn.as_deref()
+    }
+    /// <p>The instance type, such as <code>t2.micro</code>.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The ID of the last service error. For more information, call
+    /// <a>DescribeServiceErrors</a>.</p>
+    pub fn last_service_error_id(&self) -> std::option::Option<&str> {
+        self.last_service_error_id.as_deref()
+    }
+    /// <p>An array containing the instance layer IDs.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
+    /// <p>The instance's operating system.</p>
+    pub fn os(&self) -> std::option::Option<&str> {
+        self.os.as_deref()
+    }
+    /// <p>The instance's platform.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The instance's private DNS name.</p>
+    pub fn private_dns(&self) -> std::option::Option<&str> {
+        self.private_dns.as_deref()
+    }
+    /// <p>The instance's private IP address.</p>
+    pub fn private_ip(&self) -> std::option::Option<&str> {
+        self.private_ip.as_deref()
+    }
+    /// <p>The instance public DNS name.</p>
+    pub fn public_dns(&self) -> std::option::Option<&str> {
+        self.public_dns.as_deref()
+    }
+    /// <p>The instance public IP address.</p>
+    pub fn public_ip(&self) -> std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
+    /// <p>For registered instances, who performed the registration.</p>
+    pub fn registered_by(&self) -> std::option::Option<&str> {
+        self.registered_by.as_deref()
+    }
+    /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+    pub fn reported_agent_version(&self) -> std::option::Option<&str> {
+        self.reported_agent_version.as_deref()
+    }
+    /// <p>For registered instances, the reported operating system.</p>
+    pub fn reported_os(&self) -> std::option::Option<&crate::model::ReportedOs> {
+        self.reported_os.as_ref()
+    }
+    /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+        self.root_device_type.as_ref()
+    }
+    /// <p>The root device volume ID.</p>
+    pub fn root_device_volume_id(&self) -> std::option::Option<&str> {
+        self.root_device_volume_id.as_deref()
+    }
+    /// <p>An array containing the instance security group IDs.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
+    pub fn ssh_host_dsa_key_fingerprint(&self) -> std::option::Option<&str> {
+        self.ssh_host_dsa_key_fingerprint.as_deref()
+    }
+    /// <p>The SSH key's RSA fingerprint.</p>
+    pub fn ssh_host_rsa_key_fingerprint(&self) -> std::option::Option<&str> {
+        self.ssh_host_rsa_key_fingerprint.as_deref()
+    }
+    /// <p>The instance's Amazon EC2 key-pair name.</p>
+    pub fn ssh_key_name(&self) -> std::option::Option<&str> {
+        self.ssh_key_name.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The instance status:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>booting</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>connection_lost</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>online</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rebooting</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>requested</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>running_setup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>setup_failed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>shutting_down</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>start_failed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stop_failed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stopped</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stopping</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>terminated</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>terminating</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
+    pub fn tenancy(&self) -> std::option::Option<&str> {
+        self.tenancy.as_deref()
+    }
+    /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
+    pub fn virtualization_type(&self) -> std::option::Option<&crate::model::VirtualizationType> {
+        self.virtualization_type.as_ref()
+    }
 }
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7632,6 +9017,20 @@ pub struct ReportedOs {
     /// <p>The operating system version.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl ReportedOs {
+    /// <p>The operating system family.</p>
+    pub fn family(&self) -> std::option::Option<&str> {
+        self.family.as_deref()
+    }
+    /// <p>The operating system name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The operating system version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for ReportedOs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportedOs");
@@ -7714,6 +9113,27 @@ pub struct BlockDeviceMapping {
     /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the
     /// instance is launched.</p>
     pub ebs: std::option::Option<crate::model::EbsBlockDevice>,
+}
+impl BlockDeviceMapping {
+    /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root
+    /// device, you can use the explicit device name or you can set this parameter to
+    /// <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>Suppresses the specified device included in the AMI's block device mapping.</p>
+    pub fn no_device(&self) -> std::option::Option<&str> {
+        self.no_device.as_deref()
+    }
+    /// <p>The virtual device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
+    pub fn virtual_name(&self) -> std::option::Option<&str> {
+        self.virtual_name.as_deref()
+    }
+    /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the
+    /// instance is launched.</p>
+    pub fn ebs(&self) -> std::option::Option<&crate::model::EbsBlockDevice> {
+        self.ebs.as_ref()
+    }
 }
 impl std::fmt::Debug for BlockDeviceMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7821,6 +9241,33 @@ pub struct EbsBlockDevice {
     pub volume_type: std::option::Option<crate::model::VolumeType>,
     /// <p>Whether the volume is deleted on instance termination.</p>
     pub delete_on_termination: std::option::Option<bool>,
+}
+impl EbsBlockDevice {
+    /// <p>The snapshot ID.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>The volume size, in GiB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+    pub fn volume_size(&self) -> std::option::Option<i32> {
+        self.volume_size
+    }
+    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
+    /// Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+    /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute.
+    /// The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
+    /// specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
+    pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
+        self.volume_type.as_ref()
+    }
+    /// <p>Whether the volume is deleted on instance termination.</p>
+    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+        self.delete_on_termination
+    }
 }
 impl std::fmt::Debug for EbsBlockDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8009,6 +9456,44 @@ pub struct ElasticLoadBalancer {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
     pub ec2_instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ElasticLoadBalancer {
+    /// <p>The Elastic Load Balancing instance's name.</p>
+    pub fn elastic_load_balancer_name(&self) -> std::option::Option<&str> {
+        self.elastic_load_balancer_name.as_deref()
+    }
+    /// <p>The instance's AWS region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The instance's public DNS name.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The ID of the stack that the instance is associated with.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The ID of the layer that the instance is attached to.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+    /// <p>The VPC ID.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of Availability Zones.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    pub fn ec2_instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ec2_instance_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ElasticLoadBalancer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8203,6 +9688,28 @@ pub struct ElasticIp {
     /// <p>The ID of the instance that the address is attached to.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl ElasticIp {
+    /// <p>The IP address.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+    /// <p>The name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The domain.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The ID of the instance that the address is attached to.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ElasticIp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ElasticIp");
@@ -8308,6 +9815,24 @@ pub struct EcsCluster {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The time and date that the cluster was registered with the stack.</p>
     pub registered_at: std::option::Option<std::string::String>,
+}
+impl EcsCluster {
+    /// <p>The cluster's ARN.</p>
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+        self.ecs_cluster_arn.as_deref()
+    }
+    /// <p>The cluster name.</p>
+    pub fn ecs_cluster_name(&self) -> std::option::Option<&str> {
+        self.ecs_cluster_name.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The time and date that the cluster was registered with the stack.</p>
+    pub fn registered_at(&self) -> std::option::Option<&str> {
+        self.registered_at.as_deref()
+    }
 }
 impl std::fmt::Debug for EcsCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8442,6 +9967,72 @@ pub struct Deployment {
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The IDs of the target instances.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Deployment {
+    /// <p>The deployment ID.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>Date when the deployment was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>Date when the deployment completed.</p>
+    pub fn completed_at(&self) -> std::option::Option<&str> {
+        self.completed_at.as_deref()
+    }
+    /// <p>The deployment duration.</p>
+    pub fn duration(&self) -> std::option::Option<i32> {
+        self.duration
+    }
+    /// <p>The user's IAM ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>A user-defined comment.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>Used to specify a stack or deployment command.</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::DeploymentCommand> {
+        self.command.as_ref()
+    }
+    /// <p>The deployment status:</p>
+    /// <ul>
+    /// <li>
+    /// <p>running</p>
+    /// </li>
+    /// <li>
+    /// <p>successful</p>
+    /// </li>
+    /// <li>
+    /// <p>failed</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
+    /// <p>
+    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+    /// </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+    /// Modify the Stack Configuration Attributes</a>.</p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>The IDs of the target instances.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for Deployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8764,6 +10355,100 @@ pub struct DeploymentCommand {
     pub args: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+}
+impl DeploymentCommand {
+    /// <p>Specifies the operation. You can specify only one command.</p>
+    /// <p>For stacks, the following commands are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an
+    /// <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be
+    /// executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to
+    /// <code>{"recipes":["phpapp::appsetup"]}</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>install_dependencies</code>: Install the stack's dependencies.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>update_dependencies</code>: Update the stack's dependencies.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
+    /// </note>
+    /// <p>For apps, the following commands are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code>
+    /// parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+    /// migrate the database. The default setting is {"migrate":["false"]}.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rollback</code> Roll the app back to the previous version. When you update an app,
+    /// AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this
+    /// command to roll an app back as many as four versions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>start</code>: Start the app's web or application server.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stop</code>: Stop the app's web or application server.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>restart</code>: Restart the app's web or application server.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>undeploy</code>: Undeploy the app.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::DeploymentCommandName> {
+        self.name.as_ref()
+    }
+    /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
+    /// <p>
+    /// <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
+    /// ...}</code>
+    /// </p>
+    /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances
+    /// whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set
+    /// the <code>allow_reboot</code> argument to true.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
+    /// necessary, after installing the updates. This argument can be set to either
+    /// <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the
+    /// following.</p>
+    /// <p>
+    /// <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+    /// </p>
+    pub fn args(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.args.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentCommand {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9208,6 +10893,124 @@ pub struct Command {
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
 }
+impl Command {
+    /// <p>The command ID.</p>
+    pub fn command_id(&self) -> std::option::Option<&str> {
+        self.command_id.as_deref()
+    }
+    /// <p>The ID of the instance where the command was executed.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The command deployment ID.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>Date and time when the command was run.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>Date and time when the command was acknowledged.</p>
+    pub fn acknowledged_at(&self) -> std::option::Option<&str> {
+        self.acknowledged_at.as_deref()
+    }
+    /// <p>Date when the command completed.</p>
+    pub fn completed_at(&self) -> std::option::Option<&str> {
+        self.completed_at.as_deref()
+    }
+    /// <p>The command status:</p>
+    /// <ul>
+    /// <li>
+    /// <p>failed</p>
+    /// </li>
+    /// <li>
+    /// <p>successful</p>
+    /// </li>
+    /// <li>
+    /// <p>skipped</p>
+    /// </li>
+    /// <li>
+    /// <p>pending</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The command exit code.</p>
+    pub fn exit_code(&self) -> std::option::Option<i32> {
+        self.exit_code
+    }
+    /// <p>The URL of the command log.</p>
+    pub fn log_url(&self) -> std::option::Option<&str> {
+        self.log_url.as_deref()
+    }
+    /// <p>The command type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>configure</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deploy</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>execute_recipes</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>install_dependencies</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>restart</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rollback</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>setup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>start</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stop</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>undeploy</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>update_custom_cookbooks</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>update_dependencies</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for Command {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Command");
@@ -9566,6 +11369,75 @@ pub struct App {
     /// </note>
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
 }
+impl App {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The app stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The app's short name.</p>
+    pub fn shortname(&self) -> std::option::Option<&str> {
+        self.shortname.as_deref()
+    }
+    /// <p>The app name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the app.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The app's data sources.</p>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>The app type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A <code>Source</code> object that describes the app repository.</p>
+    pub fn app_source(&self) -> std::option::Option<&crate::model::Source> {
+        self.app_source.as_ref()
+    }
+    /// <p>The app vhost settings with multiple domains separated by commas. For example:
+    /// <code>'www.example.com, example.com'</code>
+    /// </p>
+    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.domains.as_deref()
+    }
+    /// <p>Whether to enable SSL for the app.</p>
+    pub fn enable_ssl(&self) -> std::option::Option<bool> {
+        self.enable_ssl
+    }
+    /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    pub fn ssl_configuration(&self) -> std::option::Option<&crate::model::SslConfiguration> {
+        self.ssl_configuration.as_ref()
+    }
+    /// <p>The stack attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>When the app was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
+    /// associated with the app. After you deploy the app, these variables are defined on the
+    /// associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p>
+    /// <note>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
+    /// </note>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+        self.environment.as_deref()
+    }
+}
 impl std::fmt::Debug for App {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("App");
@@ -9846,6 +11718,18 @@ pub struct AgentVersion {
     pub version: std::option::Option<std::string::String>,
     /// <p>The configuration manager.</p>
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
+}
+impl AgentVersion {
+    /// <p>The agent version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The configuration manager.</p>
+    pub fn configuration_manager(
+        &self,
+    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+        self.configuration_manager.as_ref()
+    }
 }
 impl std::fmt::Debug for AgentVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -69,6 +69,15 @@ pub struct RequestCertificateOutput {
     /// </p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl RequestCertificateOutput {
+    /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
+    /// <p>
+    /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RequestCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestCertificateOutput");
@@ -216,6 +225,12 @@ pub struct ListTagsForCertificateOutput {
     /// <p>The key-value pairs that define the applied tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForCertificateOutput {
+    /// <p>The key-value pairs that define the applied tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForCertificateOutput");
@@ -274,6 +289,19 @@ pub struct ListCertificatesOutput {
     /// <p>A list of ACM certificates.</p>
     pub certificate_summary_list:
         std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
+}
+impl ListCertificatesOutput {
+    /// <p>When the list is truncated, this value is present and contains the value to use for the
+    /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of ACM certificates.</p>
+    pub fn certificate_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::CertificateSummary]> {
+        self.certificate_summary_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -352,6 +380,13 @@ pub struct ImportCertificateOutput {
     /// (ARN)</a> of the imported certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl ImportCertificateOutput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+    /// (ARN)</a> of the imported certificate.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportCertificateOutput");
@@ -408,6 +443,18 @@ pub struct GetCertificateOutput {
     /// certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.
     /// </p>
     pub certificate_chain: std::option::Option<std::string::String>,
+}
+impl GetCertificateOutput {
+    /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the
+    /// certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.
+    /// </p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -478,6 +525,13 @@ pub struct GetAccountConfigurationOutput {
     /// configuration options associated with the Amazon Web Services account.</p>
     pub expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
 }
+impl GetAccountConfigurationOutput {
+    /// <p>Expiration events
+    /// configuration options associated with the Amazon Web Services account.</p>
+    pub fn expiry_events(&self) -> std::option::Option<&crate::model::ExpiryEventsConfiguration> {
+        self.expiry_events.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAccountConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccountConfigurationOutput");
@@ -536,6 +590,22 @@ pub struct ExportCertificateOutput {
     /// <p>The encrypted private key associated with the public key in the certificate. The key is
     /// output in PKCS #8 format and is base64 PEM-encoded. </p>
     pub private_key: std::option::Option<std::string::String>,
+}
+impl ExportCertificateOutput {
+    /// <p>The base64 PEM-encoded certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you
+    /// are exporting.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>The encrypted private key associated with the public key in the certificate. The key is
+    /// output in PKCS #8 format and is base64 PEM-encoded. </p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -617,6 +687,12 @@ impl ExportCertificateOutput {
 pub struct DescribeCertificateOutput {
     /// <p>Metadata about an ACM certificate.</p>
     pub certificate: std::option::Option<crate::model::CertificateDetail>,
+}
+impl DescribeCertificateOutput {
+    /// <p>Metadata about an ACM certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::CertificateDetail> {
+        self.certificate.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

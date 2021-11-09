@@ -187,6 +187,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags assigned to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -255,6 +264,20 @@ pub struct ListProposalVotesOutput {
     /// The pagination token that indicates the next set of results to retrieve.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProposalVotesOutput {
+    /// <p>
+    /// The list of votes.
+    /// </p>
+    pub fn proposal_votes(&self) -> std::option::Option<&[crate::model::VoteSummary]> {
+        self.proposal_votes.as_deref()
+    }
+    /// <p>
+    /// The pagination token that indicates the next set of results to retrieve.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProposalVotesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -336,6 +359,16 @@ pub struct ListProposalsOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProposalsOutput {
+    /// <p>The summary of each proposal made on the network.</p>
+    pub fn proposals(&self) -> std::option::Option<&[crate::model::ProposalSummary]> {
+        self.proposals.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProposalsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProposalsOutput");
@@ -407,6 +440,16 @@ pub struct ListNodesOutput {
     pub nodes: std::option::Option<std::vec::Vec<crate::model::NodeSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNodesOutput {
+    /// <p>An array of <code>NodeSummary</code> objects that contain configuration properties for each node.</p>
+    pub fn nodes(&self) -> std::option::Option<&[crate::model::NodeSummary]> {
+        self.nodes.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNodesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -480,6 +523,16 @@ pub struct ListNetworksOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListNetworksOutput {
+    /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
+    pub fn networks(&self) -> std::option::Option<&[crate::model::NetworkSummary]> {
+        self.networks.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNetworksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNetworksOutput");
@@ -551,6 +604,16 @@ pub struct ListMembersOutput {
     pub members: std::option::Option<std::vec::Vec<crate::model::MemberSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMembersOutput {
+    /// <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::MemberSummary]> {
+        self.members.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -624,6 +687,16 @@ pub struct ListInvitationsOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInvitationsOutput {
+    /// <p>The invitations for the network.</p>
+    pub fn invitations(&self) -> std::option::Option<&[crate::model::Invitation]> {
+        self.invitations.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsOutput");
@@ -694,6 +767,12 @@ pub struct GetProposalOutput {
     /// <p>Information about a proposal.</p>
     pub proposal: std::option::Option<crate::model::Proposal>,
 }
+impl GetProposalOutput {
+    /// <p>Information about a proposal.</p>
+    pub fn proposal(&self) -> std::option::Option<&crate::model::Proposal> {
+        self.proposal.as_ref()
+    }
+}
 impl std::fmt::Debug for GetProposalOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProposalOutput");
@@ -742,6 +821,12 @@ pub struct GetNodeOutput {
     /// <p>Properties of the node configuration.</p>
     pub node: std::option::Option<crate::model::Node>,
 }
+impl GetNodeOutput {
+    /// <p>Properties of the node configuration.</p>
+    pub fn node(&self) -> std::option::Option<&crate::model::Node> {
+        self.node.as_ref()
+    }
+}
 impl std::fmt::Debug for GetNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNodeOutput");
@@ -787,6 +872,12 @@ impl GetNodeOutput {
 pub struct GetNetworkOutput {
     /// <p>An object containing network configuration parameters.</p>
     pub network: std::option::Option<crate::model::Network>,
+}
+impl GetNetworkOutput {
+    /// <p>An object containing network configuration parameters.</p>
+    pub fn network(&self) -> std::option::Option<&crate::model::Network> {
+        self.network.as_ref()
+    }
 }
 impl std::fmt::Debug for GetNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -835,6 +926,12 @@ impl GetNetworkOutput {
 pub struct GetMemberOutput {
     /// <p>The properties of a member.</p>
     pub member: std::option::Option<crate::model::Member>,
+}
+impl GetMemberOutput {
+    /// <p>The properties of a member.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Member> {
+        self.member.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -944,6 +1041,12 @@ pub struct CreateProposalOutput {
     /// <p>The unique identifier of the proposal.</p>
     pub proposal_id: std::option::Option<std::string::String>,
 }
+impl CreateProposalOutput {
+    /// <p>The unique identifier of the proposal.</p>
+    pub fn proposal_id(&self) -> std::option::Option<&str> {
+        self.proposal_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProposalOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProposalOutput");
@@ -991,6 +1094,12 @@ impl CreateProposalOutput {
 pub struct CreateNodeOutput {
     /// <p>The unique identifier of the node.</p>
     pub node_id: std::option::Option<std::string::String>,
+}
+impl CreateNodeOutput {
+    /// <p>The unique identifier of the node.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1041,6 +1150,16 @@ pub struct CreateNetworkOutput {
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the first member within the network.</p>
     pub member_id: std::option::Option<std::string::String>,
+}
+impl CreateNetworkOutput {
+    /// <p>The unique identifier for the network.</p>
+    pub fn network_id(&self) -> std::option::Option<&str> {
+        self.network_id.as_deref()
+    }
+    /// <p>The unique identifier for the first member within the network.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1102,6 +1221,12 @@ impl CreateNetworkOutput {
 pub struct CreateMemberOutput {
     /// <p>The unique identifier of the member.</p>
     pub member_id: std::option::Option<std::string::String>,
+}
+impl CreateMemberOutput {
+    /// <p>The unique identifier of the member.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -112,6 +112,30 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>
+    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// keys are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a <i>tag value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team name).
+    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+    /// values are case sensitive.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -211,6 +235,21 @@ pub struct ListRepositoryAssociationsOutput {
     /// results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRepositoryAssociationsOutput {
+    /// <p>A list of repository associations that meet the criteria of the request.</p>
+    pub fn repository_association_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::RepositoryAssociationSummary]> {
+        self.repository_association_summaries.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request.
+    /// When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this
+    /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+    /// results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRepositoryAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRepositoryAssociationsOutput");
@@ -301,6 +340,22 @@ pub struct ListRecommendationsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRecommendationsOutput {
+    /// <p>
+    /// List of recommendations for the requested code review.
+    /// </p>
+    pub fn recommendation_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationSummary]> {
+        self.recommendation_summaries.as_deref()
+    }
+    /// <p>
+    /// Pagination token.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecommendationsOutput");
@@ -388,6 +443,21 @@ pub struct ListRecommendationFeedbackOutput {
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecommendationFeedbackOutput {
+    /// <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
+    pub fn recommendation_feedback_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationFeedbackSummary]> {
+        self.recommendation_feedback_summaries.as_deref()
+    }
+    /// <p>
+    /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecommendationFeedbackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -477,6 +547,20 @@ pub struct ListCodeReviewsOutput {
     /// Pagination token.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCodeReviewsOutput {
+    /// <p>
+    /// A list of code reviews that meet the criteria of the request.
+    /// </p>
+    pub fn code_review_summaries(&self) -> std::option::Option<&[crate::model::CodeReviewSummary]> {
+        self.code_review_summaries.as_deref()
+    }
+    /// <p>
+    /// Pagination token.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCodeReviewsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -577,6 +661,36 @@ pub struct DisassociateRepositoryOutput {
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DisassociateRepositoryOutput {
+    /// <p>Information about the disassociated repository.</p>
+    pub fn repository_association(
+        &self,
+    ) -> std::option::Option<&crate::model::RepositoryAssociation> {
+        self.repository_association.as_ref()
+    }
+    /// <p>
+    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// keys are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a <i>tag value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team name).
+    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+    /// values are case sensitive.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -710,6 +824,36 @@ pub struct DescribeRepositoryAssociationOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl DescribeRepositoryAssociationOutput {
+    /// <p>Information about the repository association.</p>
+    pub fn repository_association(
+        &self,
+    ) -> std::option::Option<&crate::model::RepositoryAssociation> {
+        self.repository_association.as_ref()
+    }
+    /// <p>
+    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// keys are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a <i>tag value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team name).
+    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+    /// values are case sensitive.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRepositoryAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRepositoryAssociationOutput");
@@ -826,6 +970,16 @@ pub struct DescribeRecommendationFeedbackOutput {
     /// </p>
     pub recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
 }
+impl DescribeRecommendationFeedbackOutput {
+    /// <p>
+    /// The recommendation feedback given by the user.
+    /// </p>
+    pub fn recommendation_feedback(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationFeedback> {
+        self.recommendation_feedback.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRecommendationFeedbackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRecommendationFeedbackOutput");
@@ -887,6 +1041,14 @@ pub struct DescribeCodeReviewOutput {
     /// </p>
     pub code_review: std::option::Option<crate::model::CodeReview>,
 }
+impl DescribeCodeReviewOutput {
+    /// <p>
+    /// Information about the code review.
+    /// </p>
+    pub fn code_review(&self) -> std::option::Option<&crate::model::CodeReview> {
+        self.code_review.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCodeReviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCodeReviewOutput");
@@ -943,6 +1105,14 @@ pub struct CreateCodeReviewOutput {
     /// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
     /// </p>
     pub code_review: std::option::Option<crate::model::CodeReview>,
+}
+impl CreateCodeReviewOutput {
+    /// <p>
+    /// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
+    /// </p>
+    pub fn code_review(&self) -> std::option::Option<&crate::model::CodeReview> {
+        self.code_review.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCodeReviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1016,6 +1186,36 @@ pub struct AssociateRepositoryOutput {
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AssociateRepositoryOutput {
+    /// <p>Information about the repository association.</p>
+    pub fn repository_association(
+        &self,
+    ) -> std::option::Option<&crate::model::RepositoryAssociation> {
+        self.repository_association.as_ref()
+    }
+    /// <p>
+    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// keys are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a <i>tag value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team name).
+    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+    /// values are case sensitive.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

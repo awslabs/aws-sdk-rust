@@ -101,6 +101,20 @@ pub struct ListProgressUpdateStreamsOutput {
     /// passed to the next call as a bookmark of where to start from.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProgressUpdateStreamsOutput {
+    /// <p>List of progress update streams up to the max number of results passed in the
+    /// input.</p>
+    pub fn progress_update_stream_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProgressUpdateStreamSummary]> {
+        self.progress_update_stream_summary_list.as_deref()
+    }
+    /// <p>If there are more streams created than the max result, return the next token to be
+    /// passed to the next call as a bookmark of where to start from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProgressUpdateStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProgressUpdateStreamsOutput");
@@ -187,6 +201,21 @@ pub struct ListMigrationTasksOutput {
     /// and the <code>UpdateDateTime</code> for each task.</p>
     pub migration_task_summary_list:
         std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
+}
+impl ListMigrationTasksOutput {
+    /// <p>If there are more migration tasks than the max result, return the next token to be
+    /// passed to the next call as a bookmark of where to start from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>,
+    /// <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>,
+    /// and the <code>UpdateDateTime</code> for each task.</p>
+    pub fn migration_task_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MigrationTaskSummary]> {
+        self.migration_task_summary_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMigrationTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -275,6 +304,19 @@ pub struct ListDiscoveredResourcesOutput {
     pub discovered_resource_list:
         std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
 }
+impl ListDiscoveredResourcesOutput {
+    /// <p>If there are more discovered resources than the max result, return the next token to be
+    /// passed to the next call as a bookmark of where to start from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
+    pub fn discovered_resource_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DiscoveredResource]> {
+        self.discovered_resource_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDiscoveredResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDiscoveredResourcesOutput");
@@ -354,6 +396,18 @@ pub struct ListCreatedArtifactsOutput {
     /// <p>List of created artifacts up to the maximum number of results specified in the
     /// request.</p>
     pub created_artifact_list: std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
+}
+impl ListCreatedArtifactsOutput {
+    /// <p>If there are more created artifacts than the max result, return the next token to be
+    /// passed to the next call as a bookmark of where to start from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of created artifacts up to the maximum number of results specified in the
+    /// request.</p>
+    pub fn created_artifact_list(&self) -> std::option::Option<&[crate::model::CreatedArtifact]> {
+        self.created_artifact_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCreatedArtifactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -436,6 +490,18 @@ pub struct ListApplicationStatesOutput {
     /// available. To retrieve the next page of results, make the call again using the returned
     /// token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationStatesOutput {
+    /// <p>A list of Applications that exist in Application Discovery Service.</p>
+    pub fn application_state_list(&self) -> std::option::Option<&[crate::model::ApplicationState]> {
+        self.application_state_list.as_deref()
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+    /// available. To retrieve the next page of results, make the call again using the returned
+    /// token in <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationStatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -605,6 +671,12 @@ pub struct DescribeMigrationTaskOutput {
     /// <p>Object encapsulating information about the migration task.</p>
     pub migration_task: std::option::Option<crate::model::MigrationTask>,
 }
+impl DescribeMigrationTaskOutput {
+    /// <p>Object encapsulating information about the migration task.</p>
+    pub fn migration_task(&self) -> std::option::Option<&crate::model::MigrationTask> {
+        self.migration_task.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeMigrationTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMigrationTaskOutput");
@@ -657,6 +729,16 @@ pub struct DescribeApplicationStateOutput {
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application status was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeApplicationStateOutput {
+    /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.application_status.as_ref()
+    }
+    /// <p>The timestamp when the application status was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,14 @@ pub struct UpdateRepositoryOutput {
     /// </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
+impl UpdateRepositoryOutput {
+    /// <p>
+    /// The updated repository.
+    /// </p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
+        self.repository.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRepositoryOutput");
@@ -72,6 +80,28 @@ pub struct UpdatePackageVersionsStatusOutput {
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
+}
+impl UpdatePackageVersionsStatusOutput {
+    /// <p>
+    /// A list of <code>PackageVersionError</code> objects, one for each package version with
+    /// a status that failed to update.
+    /// </p>
+    pub fn successful_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
+    > {
+        self.successful_versions.as_ref()
+    }
+    /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version
+    /// with a status that successfully updated. </p>
+    pub fn failed_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
+    > {
+        self.failed_versions.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePackageVersionsStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -242,6 +272,12 @@ pub struct PutRepositoryPermissionsPolicyOutput {
     /// <p> The resource policy that was set after processing the request. </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
+impl PutRepositoryPermissionsPolicyOutput {
+    /// <p> The resource policy that was set after processing the request. </p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutRepositoryPermissionsPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRepositoryPermissionsPolicyOutput");
@@ -293,6 +329,12 @@ pub struct PutDomainPermissionsPolicyOutput {
     /// <p> The resource policy that was set after processing the request. </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
+impl PutDomainPermissionsPolicyOutput {
+    /// <p> The resource policy that was set after processing the request. </p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutDomainPermissionsPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDomainPermissionsPolicyOutput");
@@ -343,6 +385,12 @@ impl PutDomainPermissionsPolicyOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A list of tag key and value pairs associated with the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -404,6 +452,20 @@ pub struct ListRepositoriesInDomainOutput {
     /// If there are additional results, this is the token for the next set of results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRepositoriesInDomainOutput {
+    /// <p>
+    /// The returned list of repositories.
+    /// </p>
+    pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositorySummary]> {
+        self.repositories.as_deref()
+    }
+    /// <p>
+    /// If there are additional results, this is the token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRepositoriesInDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -490,6 +552,21 @@ pub struct ListRepositoriesOutput {
     /// If there are additional results, this is the token for the next set of results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRepositoriesOutput {
+    /// <p>
+    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+    /// objects.
+    /// </p>
+    pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositorySummary]> {
+        self.repositories.as_deref()
+    }
+    /// <p>
+    /// If there are additional results, this is the token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRepositoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -644,6 +721,95 @@ pub struct ListPackageVersionsOutput {
     /// If there are additional results, this is the token for the next set of results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackageVersionsOutput {
+    /// <p>
+    /// The default package version to display. This depends on the package format:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// For Maven and PyPI packages, it's the most recently published package version.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// For npm packages, it's the version referenced by the
+    /// <code>latest</code> tag. If the  <code>latest</code> tag is not set, it's the most recently published package version.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn default_display_version(&self) -> std::option::Option<&str> {
+        self.default_display_version.as_deref()
+    }
+    /// <p>
+    /// A format of the package. Valid package format values are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>npm</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pypi</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>maven</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>
+    /// The namespace of the package. The package component that specifies its
+    /// namespace depends on its type. For example:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// The namespace of a Maven package is its <code>groupId</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// The namespace of an npm package is its <code>scope</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// A Python package does not contain a corresponding component, so
+    /// Python packages do not have a namespace.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// The name of the package.
+    /// </p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+    /// <p>
+    /// The returned list of
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+    /// objects.
+    /// </p>
+    pub fn versions(&self) -> std::option::Option<&[crate::model::PackageVersionSummary]> {
+        self.versions.as_deref()
+    }
+    /// <p>
+    /// If there are additional results, this is the token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackageVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -962,6 +1128,86 @@ pub struct ListPackageVersionDependenciesOutput {
     /// </p>
     pub dependencies: std::option::Option<std::vec::Vec<crate::model::PackageDependency>>,
 }
+impl ListPackageVersionDependenciesOutput {
+    /// <p>
+    /// A format that specifies the type of the package that contains the returned dependencies. The valid values are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>npm</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pypi</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>maven</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>
+    /// The namespace of the package. The package component that specifies its
+    /// namespace depends on its type. For example:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// The namespace of a Maven package is its <code>groupId</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// The namespace of an npm package is its <code>scope</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// A Python package does not contain a corresponding component, so
+    /// Python packages do not have a namespace.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// The name of the package that contains the returned package versions dependencies.
+    /// </p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+    /// <p>
+    /// The version of the package that is specified in the request.
+    /// </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>
+    /// The current revision associated with the package version.
+    /// </p>
+    pub fn version_revision(&self) -> std::option::Option<&str> {
+        self.version_revision.as_deref()
+    }
+    /// <p>
+    /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.
+    /// </p>
+    pub fn dependencies(&self) -> std::option::Option<&[crate::model::PackageDependency]> {
+        self.dependencies.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPackageVersionDependenciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackageVersionDependenciesOutput");
@@ -1249,6 +1495,69 @@ pub struct ListPackageVersionAssetsOutput {
     /// </p>
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
 }
+impl ListPackageVersionAssetsOutput {
+    /// <p>
+    /// The format of the package that contains the returned package version assets.
+    /// </p>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>
+    /// The namespace of the package. The package component that specifies its
+    /// namespace depends on its type. For example:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// The namespace of a Maven package is its <code>groupId</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// The namespace of an npm package is its <code>scope</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// A Python package does not contain a corresponding component, so
+    /// Python packages do not have a namespace.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// The name of the package that contains the returned package version assets.
+    /// </p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+    /// <p>
+    /// The version of the package associated with the returned assets.
+    /// </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>
+    /// The current revision associated with the package version.
+    /// </p>
+    pub fn version_revision(&self) -> std::option::Option<&str> {
+        self.version_revision.as_deref()
+    }
+    /// <p>
+    /// If there are additional results, this is the token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.
+    /// </p>
+    pub fn assets(&self) -> std::option::Option<&[crate::model::AssetSummary]> {
+        self.assets.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPackageVersionAssetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackageVersionAssetsOutput");
@@ -1463,6 +1772,21 @@ pub struct ListPackagesOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPackagesOutput {
+    /// <p>
+    /// The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+    /// objects.
+    /// </p>
+    pub fn packages(&self) -> std::option::Option<&[crate::model::PackageSummary]> {
+        self.packages.as_deref()
+    }
+    /// <p>
+    /// If there are additional results, this is the token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackagesOutput");
@@ -1549,6 +1873,20 @@ pub struct ListDomainsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsOutput {
+    /// <p>
+    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects.
+    /// </p>
+    pub fn domains(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
+        self.domains.as_deref()
+    }
+    /// <p>
+    /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsOutput");
@@ -1629,6 +1967,14 @@ pub struct GetRepositoryPermissionsPolicyOutput {
     /// </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
+impl GetRepositoryPermissionsPolicyOutput {
+    /// <p>
+    /// The returned resource policy.
+    /// </p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRepositoryPermissionsPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRepositoryPermissionsPolicyOutput");
@@ -1685,6 +2031,14 @@ pub struct GetRepositoryEndpointOutput {
     /// A string that specifies the URL of the returned endpoint.
     /// </p>
     pub repository_endpoint: std::option::Option<std::string::String>,
+}
+impl GetRepositoryEndpointOutput {
+    /// <p>
+    /// A string that specifies the URL of the returned endpoint.
+    /// </p>
+    pub fn repository_endpoint(&self) -> std::option::Option<&str> {
+        self.repository_endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRepositoryEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1798,6 +2152,80 @@ pub struct GetPackageVersionReadmeOutput {
     /// The text of the returned readme file.
     /// </p>
     pub readme: std::option::Option<std::string::String>,
+}
+impl GetPackageVersionReadmeOutput {
+    /// <p>
+    /// The format of the package with the requested readme file. Valid format types are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>npm</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pypi</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>maven</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>
+    /// The namespace of the package. The package component that specifies its
+    /// namespace depends on its type. For example:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// The namespace of a Maven package is its <code>groupId</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// The namespace of an npm package is its <code>scope</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// A Python package does not contain a corresponding component, so
+    /// Python packages do not have a namespace.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// The name of the package that contains the returned readme file.
+    /// </p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+    /// <p>
+    /// The version of the package with the requested readme file.
+    /// </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>
+    /// The current revision associated with the package version.
+    /// </p>
+    pub fn version_revision(&self) -> std::option::Option<&str> {
+        self.version_revision.as_deref()
+    }
+    /// <p>
+    /// The text of the returned readme file.
+    /// </p>
+    pub fn readme(&self) -> std::option::Option<&str> {
+        self.readme.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPackageVersionReadmeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2025,6 +2453,30 @@ pub struct GetPackageVersionAssetOutput {
     /// </p>
     pub package_version_revision: std::option::Option<std::string::String>,
 }
+impl GetPackageVersionAssetOutput {
+    /// <p> The binary file, or asset, that is downloaded.</p>
+    pub fn asset(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.asset
+    }
+    /// <p>
+    /// The name of the asset that is downloaded.
+    /// </p>
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
+    /// <p>
+    /// A string that contains the package version (for example, <code>3.5.2</code>).
+    /// </p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>
+    /// The name of the package version revision that contains the downloaded asset.
+    /// </p>
+    pub fn package_version_revision(&self) -> std::option::Option<&str> {
+        self.package_version_revision.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPackageVersionAssetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPackageVersionAssetOutput");
@@ -2135,6 +2587,14 @@ pub struct GetDomainPermissionsPolicyOutput {
     /// </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
+impl GetDomainPermissionsPolicyOutput {
+    /// <p>
+    /// The returned resource policy.
+    /// </p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDomainPermissionsPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainPermissionsPolicyOutput");
@@ -2195,6 +2655,20 @@ pub struct GetAuthorizationTokenOutput {
     /// A timestamp that specifies the date and time the authorization token expires.
     /// </p>
     pub expiration: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetAuthorizationTokenOutput {
+    /// <p>
+    /// The returned authentication token.
+    /// </p>
+    pub fn authorization_token(&self) -> std::option::Option<&str> {
+        self.authorization_token.as_deref()
+    }
+    /// <p>
+    /// A timestamp that specifies the date and time the authorization token expires.
+    /// </p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAuthorizationTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2313,6 +2787,61 @@ pub struct DisposePackageVersionsOutput {
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
+}
+impl DisposePackageVersionsOutput {
+    /// <p>
+    /// A list of the package versions that were successfully disposed.
+    /// </p>
+    pub fn successful_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
+    > {
+        self.successful_versions.as_ref()
+    }
+    /// <p>
+    /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
+    /// disposed package versions that failed. The possible error codes are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALREADY_EXISTS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_REVISION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_STATUS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_ALLOWED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_FOUND</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SKIPPED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn failed_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
+    > {
+        self.failed_versions.as_ref()
+    }
 }
 impl std::fmt::Debug for DisposePackageVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2491,6 +3020,14 @@ pub struct DisassociateExternalConnectionOutput {
     /// </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
+impl DisassociateExternalConnectionOutput {
+    /// <p>
+    /// The repository associated with the removed external connection.
+    /// </p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
+        self.repository.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateExternalConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateExternalConnectionOutput");
@@ -2547,6 +3084,14 @@ pub struct DescribeRepositoryOutput {
     /// A <code>RepositoryDescription</code> object that contains the requested repository information.
     /// </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
+}
+impl DescribeRepositoryOutput {
+    /// <p>
+    /// A <code>RepositoryDescription</code> object that contains the requested repository information.
+    /// </p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
+        self.repository.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2605,6 +3150,15 @@ pub struct DescribePackageVersionOutput {
     /// object that contains information about the requested package version.
     /// </p>
     pub package_version: std::option::Option<crate::model::PackageVersionDescription>,
+}
+impl DescribePackageVersionOutput {
+    /// <p>
+    /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+    /// object that contains information about the requested package version.
+    /// </p>
+    pub fn package_version(&self) -> std::option::Option<&crate::model::PackageVersionDescription> {
+        self.package_version.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePackageVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2666,6 +3220,15 @@ pub struct DescribeDomainOutput {
     /// </p>
     pub domain: std::option::Option<crate::model::DomainDescription>,
 }
+impl DescribeDomainOutput {
+    /// <p>
+    /// Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you
+    /// add one or more repositories.
+    /// </p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::DomainDescription> {
+        self.domain.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainOutput");
@@ -2725,6 +3288,14 @@ pub struct DeleteRepositoryPermissionsPolicyOutput {
     /// </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
+impl DeleteRepositoryPermissionsPolicyOutput {
+    /// <p>
+    /// Information about the deleted policy after processing the request.
+    /// </p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteRepositoryPermissionsPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryPermissionsPolicyOutput");
@@ -2781,6 +3352,14 @@ pub struct DeleteRepositoryOutput {
     /// Information about the deleted repository after processing the request.
     /// </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
+}
+impl DeleteRepositoryOutput {
+    /// <p>
+    /// Information about the deleted repository after processing the request.
+    /// </p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
+        self.repository.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2879,6 +3458,61 @@ pub struct DeletePackageVersionsOutput {
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
+}
+impl DeletePackageVersionsOutput {
+    /// <p>
+    /// A list of the package versions that were successfully deleted.
+    /// </p>
+    pub fn successful_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
+    > {
+        self.successful_versions.as_ref()
+    }
+    /// <p>
+    /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
+    /// deleted package that failed. The possible error codes are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALREADY_EXISTS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_REVISION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_STATUS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_ALLOWED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_FOUND</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SKIPPED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn failed_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
+    > {
+        self.failed_versions.as_ref()
+    }
 }
 impl std::fmt::Debug for DeletePackageVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3057,6 +3691,14 @@ pub struct DeleteDomainPermissionsPolicyOutput {
     /// </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
+impl DeleteDomainPermissionsPolicyOutput {
+    /// <p>
+    /// Information about the deleted resource policy after processing the request.
+    /// </p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainPermissionsPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainPermissionsPolicyOutput");
@@ -3113,6 +3755,14 @@ pub struct DeleteDomainOutput {
     /// Contains information about the deleted domain after processing the request.
     /// </p>
     pub domain: std::option::Option<crate::model::DomainDescription>,
+}
+impl DeleteDomainOutput {
+    /// <p>
+    /// Contains information about the deleted domain after processing the request.
+    /// </p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::DomainDescription> {
+        self.domain.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3171,6 +3821,14 @@ pub struct CreateRepositoryOutput {
     /// </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
+impl CreateRepositoryOutput {
+    /// <p>
+    /// Information about the created repository after processing the request.
+    /// </p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
+        self.repository.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRepositoryOutput");
@@ -3227,6 +3885,14 @@ pub struct CreateDomainOutput {
     /// Contains information about the created domain after processing the request.
     /// </p>
     pub domain: std::option::Option<crate::model::DomainDescription>,
+}
+impl CreateDomainOutput {
+    /// <p>
+    /// Contains information about the created domain after processing the request.
+    /// </p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::DomainDescription> {
+        self.domain.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3325,6 +3991,61 @@ pub struct CopyPackageVersionsOutput {
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
+}
+impl CopyPackageVersionsOutput {
+    /// <p>
+    /// A list of the package versions that were successfully copied to your repository.
+    /// </p>
+    pub fn successful_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
+    > {
+        self.successful_versions.as_ref()
+    }
+    /// <p>
+    /// A map of package versions that failed to copy and their error codes. The possible error codes are in
+    /// the <code>PackageVersionError</code> data type. They are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALREADY_EXISTS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_REVISION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_STATUS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_ALLOWED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_FOUND</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SKIPPED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn failed_versions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
+    > {
+        self.failed_versions.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyPackageVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3502,6 +4223,14 @@ pub struct AssociateExternalConnectionOutput {
     /// Information about the connected repository after processing the request.
     /// </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
+}
+impl AssociateExternalConnectionOutput {
+    /// <p>
+    /// Information about the connected repository after processing the request.
+    /// </p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
+        self.repository.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateExternalConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

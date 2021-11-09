@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -14,13 +14,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_4) = &input.value {
         scope_3.string(var_4);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_message_attribute_value(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MessageAttributeValue,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("DataType");
     if let Some(var_6) = &input.data_type {
@@ -36,4 +37,5 @@ pub fn serialize_structure_crate_model_message_attribute_value(
     if let Some(var_10) = &input.binary_value {
         scope_9.string(&aws_smithy_types::base64::encode(var_10));
     }
+    Ok(())
 }

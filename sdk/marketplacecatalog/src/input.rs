@@ -629,10 +629,7 @@ impl ListChangeSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -853,10 +850,7 @@ impl ListEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_entities(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1056,10 +1050,7 @@ impl StartChangeSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_change_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_change_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1136,6 +1127,26 @@ pub struct StartChangeSetInput {
     /// <p>A unique token to identify the request to ensure idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl StartChangeSetInput {
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+    /// </p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+    /// <p>Array of <code>change</code> object.</p>
+    pub fn change_set(&self) -> std::option::Option<&[crate::model::Change]> {
+        self.change_set.as_deref()
+    }
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
+    /// be used to filter the list of change sets. </p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>A unique token to identify the request to ensure idempotency.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartChangeSetInput");
@@ -1167,6 +1178,36 @@ pub struct ListEntitiesInput {
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
     /// the default value is 20.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEntitiesInput {
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+    /// </p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+    /// <p>The type of entities to retrieve.</p>
+    pub fn entity_type(&self) -> std::option::Option<&str> {
+        self.entity_type.as_deref()
+    }
+    /// <p>An array of filter objects. Each filter object contains two attributes,
+    /// <code>filterName</code> and <code>filterValues</code>.</p>
+    pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filter_list.as_deref()
+    }
+    /// <p>An object that contains two attributes, <code>SortBy</code> and
+    /// <code>SortOrder</code>.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
+        self.sort.as_ref()
+    }
+    /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
+    /// the default value is 20.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1201,6 +1242,33 @@ pub struct ListChangeSetsInput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChangeSetsInput {
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+    /// </p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+    /// <p>An array of filter objects.</p>
+    pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filter_list.as_deref()
+    }
+    /// <p>An object that contains two attributes, <code>SortBy</code> and
+    /// <code>SortOrder</code>.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
+        self.sort.as_ref()
+    }
+    /// <p>The maximum number of results returned by a single call. This value must be provided
+    /// in the next call to retrieve the next set of results. By default, this value is
+    /// 20.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChangeSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChangeSetsInput");
@@ -1224,6 +1292,18 @@ pub struct DescribeEntityInput {
     /// <p>Required. The unique ID of the entity to describe.</p>
     pub entity_id: std::option::Option<std::string::String>,
 }
+impl DescribeEntityInput {
+    /// <p>Required. The catalog related to the request. Fixed value:
+    /// <code>AWSMarketplace</code>
+    /// </p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+    /// <p>Required. The unique ID of the entity to describe.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEntityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEntityInput");
@@ -1245,6 +1325,19 @@ pub struct DescribeChangeSetInput {
     /// want to describe the details for.</p>
     pub change_set_id: std::option::Option<std::string::String>,
 }
+impl DescribeChangeSetInput {
+    /// <p>Required. The catalog related to the request. Fixed value:
+    /// <code>AWSMarketplace</code>
+    /// </p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+    /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
+    /// want to describe the details for.</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChangeSetInput");
@@ -1264,6 +1357,18 @@ pub struct CancelChangeSetInput {
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
     /// want to cancel.</p>
     pub change_set_id: std::option::Option<std::string::String>,
+}
+impl CancelChangeSetInput {
+    /// <p>Required. The catalog related to the request. Fixed value:
+    /// <code>AWSMarketplace</code>.</p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+    /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
+    /// want to cancel.</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

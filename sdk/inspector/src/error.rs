@@ -5015,6 +5015,12 @@ pub struct ServiceTemporarilyUnavailableException {
     /// <p>You can wait and then retry your request.</p>
     pub can_retry: std::option::Option<bool>,
 }
+impl ServiceTemporarilyUnavailableException {
+    /// <p>You can wait and then retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
+}
 impl std::fmt::Debug for ServiceTemporarilyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemporarilyUnavailableException");
@@ -5096,6 +5102,16 @@ pub struct NoSuchEntityException {
     pub error_code: std::option::Option<crate::model::NoSuchEntityErrorCode>,
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
+}
+impl NoSuchEntityException {
+    /// <p>Code that indicates the type of error that is generated.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::NoSuchEntityErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
 }
 impl std::fmt::Debug for NoSuchEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5195,6 +5211,16 @@ pub struct InvalidInputException {
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
 }
+impl InvalidInputException {
+    /// <p>Code that indicates the type of error that is generated.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::InvalidInputErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
+}
 impl std::fmt::Debug for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidInputException");
@@ -5290,6 +5316,12 @@ pub struct InternalException {
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
 }
+impl InternalException {
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
+}
 impl std::fmt::Debug for InternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalException");
@@ -5370,6 +5402,16 @@ pub struct AccessDeniedException {
     pub error_code: std::option::Option<crate::model::AccessDeniedErrorCode>,
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
+}
+impl AccessDeniedException {
+    /// <p>Code that indicates the type of error that is generated.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::AccessDeniedErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
 }
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5469,6 +5511,16 @@ pub struct LimitExceededException {
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
 }
+impl LimitExceededException {
+    /// <p>Code that indicates the type of error that is generated.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::LimitExceededErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -5566,6 +5618,18 @@ pub struct InvalidCrossAccountRoleException {
     pub error_code: std::option::Option<crate::model::InvalidCrossAccountRoleErrorCode>,
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
+}
+impl InvalidCrossAccountRoleException {
+    /// <p>Code that indicates the type of error that is generated.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::InvalidCrossAccountRoleErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
 }
 impl std::fmt::Debug for InvalidCrossAccountRoleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5666,6 +5730,20 @@ pub struct AgentsAlreadyRunningAssessmentException {
     pub agents_truncated: std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
+}
+impl AgentsAlreadyRunningAssessmentException {
+    /// <p></p>
+    pub fn agents(&self) -> std::option::Option<&[crate::model::AgentAlreadyRunningAssessment]> {
+        self.agents.as_deref()
+    }
+    /// <p></p>
+    pub fn agents_truncated(&self) -> std::option::Option<bool> {
+        self.agents_truncated
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
 }
 impl std::fmt::Debug for AgentsAlreadyRunningAssessmentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5789,6 +5867,12 @@ pub struct UnsupportedFeatureException {
     #[allow(missing_docs)] // documentation missing in model
     pub can_retry: std::option::Option<bool>,
 }
+impl UnsupportedFeatureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
+}
 impl std::fmt::Debug for UnsupportedFeatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsupportedFeatureException");
@@ -5873,6 +5957,21 @@ pub struct AssessmentRunInProgressException {
     pub assessment_run_arns_truncated: std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
+}
+impl AssessmentRunInProgressException {
+    /// <p>The ARNs of the assessment runs that are currently in progress.</p>
+    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_run_arns.as_deref()
+    }
+    /// <p>Boolean value that indicates whether the ARN list of the assessment runs is
+    /// truncated.</p>
+    pub fn assessment_run_arns_truncated(&self) -> std::option::Option<bool> {
+        self.assessment_run_arns_truncated
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn can_retry(&self) -> std::option::Option<bool> {
+        self.can_retry
+    }
 }
 impl std::fmt::Debug for AssessmentRunInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

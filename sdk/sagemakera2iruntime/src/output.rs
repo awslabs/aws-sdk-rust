@@ -36,6 +36,12 @@ pub struct StartHumanLoopOutput {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     pub human_loop_arn: std::option::Option<std::string::String>,
 }
+impl StartHumanLoopOutput {
+    /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
+    pub fn human_loop_arn(&self) -> std::option::Option<&str> {
+        self.human_loop_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartHumanLoopOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartHumanLoopOutput");
@@ -88,6 +94,16 @@ pub struct ListHumanLoopsOutput {
     pub human_loop_summaries: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
     /// <p>A token to display the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHumanLoopsOutput {
+    /// <p>An array of objects that contain information about the human loops.</p>
+    pub fn human_loop_summaries(&self) -> std::option::Option<&[crate::model::HumanLoopSummary]> {
+        self.human_loop_summaries.as_deref()
+    }
+    /// <p>A token to display the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHumanLoopsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -181,6 +197,45 @@ pub struct DescribeHumanLoopOutput {
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>An object that contains information about the output of the human loop.</p>
     pub human_loop_output: std::option::Option<crate::model::HumanLoopOutput>,
+}
+impl DescribeHumanLoopOutput {
+    /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
+    /// human loop is <code>Failed</code>.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>A failure code that identifies the type of failure.</p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>,
+    /// <code>InternalError</code>
+    /// </p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>The status of the human loop. </p>
+    pub fn human_loop_status(&self) -> std::option::Option<&crate::model::HumanLoopStatus> {
+        self.human_loop_status.as_ref()
+    }
+    /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your
+    /// account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
+    pub fn human_loop_arn(&self) -> std::option::Option<&str> {
+        self.human_loop_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
+    /// <p>An object that contains information about the output of the human loop.</p>
+    pub fn human_loop_output(&self) -> std::option::Option<&crate::model::HumanLoopOutput> {
+        self.human_loop_output.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeHumanLoopOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -310,10 +310,7 @@ impl AddThingToBillingGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_thing_to_billing_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -521,10 +518,7 @@ impl AddThingToThingGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_thing_to_thing_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -756,10 +750,7 @@ impl AssociateTargetsWithJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_targets_with_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -935,10 +926,7 @@ impl AttachPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2326,10 +2314,7 @@ impl CancelJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2609,10 +2594,7 @@ impl CancelJobExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_job_execution(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_job_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3129,10 +3111,7 @@ impl CreateAuditSuppressionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_audit_suppression(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3423,10 +3402,7 @@ impl CreateAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3634,10 +3610,7 @@ impl CreateBillingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_billing_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_billing_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3816,10 +3789,7 @@ impl CreateCertificateFromCsrInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_certificate_from_csr(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4080,10 +4050,7 @@ impl CreateCustomMetricInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_metric(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_metric(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4319,10 +4286,7 @@ impl CreateDimensionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dimension(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_dimension(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4616,10 +4580,7 @@ impl CreateDomainConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_domain_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4881,10 +4842,7 @@ impl CreateDynamicThingGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_dynamic_thing_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5180,10 +5138,7 @@ impl CreateFleetMetricInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_fleet_metric(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_fleet_metric(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5573,10 +5528,7 @@ impl CreateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5902,10 +5854,7 @@ impl CreateJobTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_job_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_job_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6265,10 +6214,7 @@ impl CreateMitigationActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_mitigation_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6674,10 +6620,7 @@ impl CreateOtaUpdateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_ota_update(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_ota_update(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6889,10 +6832,7 @@ impl CreatePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7100,10 +7040,7 @@ impl CreatePolicyVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_policy_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_policy_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7515,10 +7452,7 @@ impl CreateProvisioningTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_provisioning_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7727,7 +7661,7 @@ impl CreateProvisioningTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_provisioning_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_provisioning_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7950,10 +7884,7 @@ impl CreateRoleAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_role_alias(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_role_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8243,10 +8174,9 @@ impl CreateScheduledAuditInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_scheduled_audit(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_scheduled_audit(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8567,10 +8497,7 @@ impl CreateSecurityProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_security_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8796,10 +8723,7 @@ impl CreateStreamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_stream(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9016,10 +8940,7 @@ impl CreateThingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_thing(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_thing(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9238,10 +9159,7 @@ impl CreateThingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_thing_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_thing_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9449,10 +9367,7 @@ impl CreateThingTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_thing_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_thing_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9831,7 +9746,7 @@ impl CreateTopicRuleDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_topic_rule_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_topic_rule_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10146,10 +10061,7 @@ impl DeleteAuditSuppressionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_audit_suppression(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15184,10 +15096,7 @@ impl DeprecateThingTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deprecate_thing_type(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_deprecate_thing_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15777,10 +15686,7 @@ impl DescribeAuditSuppressionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_audit_suppression(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20273,10 +20179,7 @@ impl DetachPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21534,10 +21437,7 @@ impl GetBucketsAggregationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_buckets_aggregation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21723,10 +21623,8 @@ impl GetCardinalityInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_cardinality(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_cardinality(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21905,10 +21803,9 @@ impl GetEffectivePoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_effective_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_effective_policies(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22648,10 +22545,8 @@ impl GetPercentilesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_percentiles(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_percentiles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23281,10 +23176,7 @@ impl GetStatisticsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_statistics(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_statistics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24403,10 +24295,7 @@ impl ListAuditFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_audit_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_audit_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25107,10 +24996,7 @@ impl ListAuditSuppressionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_audit_suppressions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -34666,7 +34552,7 @@ impl PutVerificationStateOnViolationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_verification_state_on_violation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_verification_state_on_violation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -34925,10 +34811,7 @@ impl RegisterCaCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_ca_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35128,10 +35011,7 @@ impl RegisterCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_certificate(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35295,7 +35175,7 @@ impl RegisterCertificateWithoutCaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_certificate_without_ca(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_certificate_without_ca(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -35472,10 +35352,7 @@ impl RegisterThingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_thing(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_register_thing(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35663,10 +35540,7 @@ impl RejectCertificateTransferInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reject_certificate_transfer(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35855,7 +35729,7 @@ impl RemoveThingFromBillingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_billing_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_billing_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -36045,7 +35919,7 @@ impl RemoveThingFromThingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_thing_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_thing_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -36419,10 +36293,7 @@ impl SearchIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -36570,10 +36441,9 @@ impl SetDefaultAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_default_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_default_authorizer(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -37069,10 +36939,7 @@ impl SetV2LoggingLevelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_level(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_level(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -37244,10 +37111,9 @@ impl SetV2LoggingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_options(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_options(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -37481,7 +37347,7 @@ impl StartAuditMitigationActionsTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_audit_mitigation_actions_task(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_audit_mitigation_actions_task(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -37776,7 +37642,7 @@ impl StartDetectMitigationActionsTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_detect_mitigation_actions_task(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_detect_mitigation_actions_task(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -37939,10 +37805,7 @@ impl StartOnDemandAuditTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_on_demand_audit_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -38137,7 +38000,7 @@ impl StartThingRegistrationTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_thing_registration_task(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_thing_registration_task(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -38455,10 +38318,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -38706,10 +38566,7 @@ impl TestAuthorizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_test_authorization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_test_authorization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -38951,10 +38808,9 @@ impl TestInvokeAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_test_invoke_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_test_invoke_authorizer(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -39164,10 +39020,7 @@ impl TransferCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_transfer_certificate(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_transfer_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -39332,10 +39185,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -39589,7 +39439,7 @@ impl UpdateAccountAuditConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_account_audit_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_account_audit_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -39809,10 +39659,7 @@ impl UpdateAuditSuppressionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_audit_suppression(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -40054,10 +39901,7 @@ impl UpdateAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -40262,10 +40106,7 @@ impl UpdateBillingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_billing_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_billing_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -40515,10 +40356,7 @@ impl UpdateCaCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_ca_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_ca_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -40903,10 +40741,7 @@ impl UpdateCustomMetricInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_metric(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_metric(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -41087,10 +40922,7 @@ impl UpdateDimensionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_dimension(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_dimension(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -41307,10 +41139,7 @@ impl UpdateDomainConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_domain_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -41561,10 +41390,7 @@ impl UpdateDynamicThingGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_dynamic_thing_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -41729,10 +41555,7 @@ impl UpdateEventConfigurationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_event_configurations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42019,10 +41842,7 @@ impl UpdateFleetMetricInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_fleet_metric(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_fleet_metric(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42194,7 +42014,7 @@ impl UpdateIndexingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_indexing_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_indexing_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -42468,10 +42288,7 @@ impl UpdateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42669,10 +42486,7 @@ impl UpdateMitigationActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_mitigation_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42926,10 +42740,7 @@ impl UpdateProvisioningTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_provisioning_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43114,10 +42925,7 @@ impl UpdateRoleAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_role_alias(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_role_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43380,10 +43188,9 @@ impl UpdateScheduledAuditInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_scheduled_audit(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_scheduled_audit(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43764,10 +43571,7 @@ impl UpdateSecurityProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_security_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43972,10 +43776,7 @@ impl UpdateStreamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_stream(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -44211,10 +44012,7 @@ impl UpdateThingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_thing(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_thing(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -44411,10 +44209,7 @@ impl UpdateThingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_thing_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_thing_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -44621,7 +44416,7 @@ impl UpdateThingGroupsForThingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_thing_groups_for_thing(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_thing_groups_for_thing(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -44845,7 +44640,7 @@ impl UpdateTopicRuleDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_topic_rule_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_topic_rule_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -45002,7 +44797,7 @@ impl ValidateSecurityProfileBehaviorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_validate_security_profile_behaviors(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_validate_security_profile_behaviors(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -45072,6 +44867,12 @@ pub struct ValidateSecurityProfileBehaviorsInput {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     pub behaviors: std::option::Option<std::vec::Vec<crate::model::Behavior>>,
 }
+impl ValidateSecurityProfileBehaviorsInput {
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn behaviors(&self) -> std::option::Option<&[crate::model::Behavior]> {
+        self.behaviors.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateSecurityProfileBehaviorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateSecurityProfileBehaviorsInput");
@@ -45120,6 +44921,47 @@ pub struct UpdateTopicRuleDestinationInput {
     /// </dl>
     pub status: std::option::Option<crate::model::TopicRuleDestinationStatus>,
 }
+impl UpdateTopicRuleDestinationInput {
+    /// <p>The ARN of the topic rule destination.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the topic rule destination. Valid values are:</p>
+    /// <dl>
+    /// <dt>IN_PROGRESS</dt>
+    /// <dd>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set
+    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>. Calling
+    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
+    /// be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// <dt>ENABLED</dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
+    /// set <code>status</code> to <code>DISABLED</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>DISABLED</dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
+    /// can set <code>status</code> to <code>ENABLED</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>ERROR</dt>
+    /// <dd>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
+    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
+    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
+    /// <code>UpdateTopicRuleDestination</code>. Calling
+    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
+    /// be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&crate::model::TopicRuleDestinationStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTopicRuleDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTopicRuleDestinationInput");
@@ -45145,6 +44987,27 @@ pub struct UpdateThingGroupsForThingInput {
     /// dynamic group.</p>
     pub override_dynamic_groups: bool,
 }
+impl UpdateThingGroupsForThingInput {
+    /// <p>The thing whose group memberships will be updated.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The groups to which the thing will be added.</p>
+    pub fn thing_groups_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.thing_groups_to_add.as_deref()
+    }
+    /// <p>The groups from which the thing will be removed.</p>
+    pub fn thing_groups_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.thing_groups_to_remove.as_deref()
+    }
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
+    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
+    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
+    /// dynamic group.</p>
+    pub fn override_dynamic_groups(&self) -> bool {
+        self.override_dynamic_groups
+    }
+}
 impl std::fmt::Debug for UpdateThingGroupsForThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThingGroupsForThingInput");
@@ -45167,6 +45030,23 @@ pub struct UpdateThingGroupInput {
     /// <p>The expected version of the thing group. If this does not match the version of the
     /// thing group being updated, the update will fail.</p>
     pub expected_version: std::option::Option<i64>,
+}
+impl UpdateThingGroupInput {
+    /// <p>The thing group to update.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The thing group properties.</p>
+    pub fn thing_group_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingGroupProperties> {
+        self.thing_group_properties.as_ref()
+    }
+    /// <p>The expected version of the thing group. If this does not match the version of the
+    /// thing group being updated, the update will fail.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
 }
 impl std::fmt::Debug for UpdateThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45204,6 +45084,39 @@ pub struct UpdateThingInput {
     /// association is removed.</p>
     pub remove_thing_type: bool,
 }
+impl UpdateThingInput {
+    /// <p>The name of the thing to update.</p>
+    /// <p>You can't change a thing's name. To change a thing's name, you must create a
+    /// new thing, give it the new name, and then delete the old thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the thing type.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
+    /// example:</p>
+    /// <p>
+    /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
+    /// </p>
+    /// <p>This data is used to add new attributes or update existing attributes.</p>
+    pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
+        self.attribute_payload.as_ref()
+    }
+    /// <p>The expected version of the thing record in the registry. If the version of the
+    /// record in the registry does not match the expected version specified in the request, the
+    /// <code>UpdateThing</code> request is rejected with a
+    /// <code>VersionConflictException</code>.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+    /// <p>Remove a thing type association. If <b>true</b>, the
+    /// association is removed.</p>
+    pub fn remove_thing_type(&self) -> bool {
+        self.remove_thing_type
+    }
+}
 impl std::fmt::Debug for UpdateThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThingInput");
@@ -45228,6 +45141,24 @@ pub struct UpdateStreamInput {
     pub files: std::option::Option<std::vec::Vec<crate::model::StreamFile>>,
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl UpdateStreamInput {
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>The description of the stream.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The files associated with the stream.</p>
+    pub fn files(&self) -> std::option::Option<&[crate::model::StreamFile]> {
+        self.files.as_deref()
+    }
+    /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45282,6 +45213,69 @@ pub struct UpdateSecurityProfileInput {
     /// the security profile is updated. If you specify a value that is different from the actual
     /// version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: std::option::Option<i64>,
+}
+impl UpdateSecurityProfileInput {
+    /// <p>The name of the security profile you want to update.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>A description of the security profile.</p>
+    pub fn security_profile_description(&self) -> std::option::Option<&str> {
+        self.security_profile_description.as_deref()
+    }
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn behaviors(&self) -> std::option::Option<&[crate::model::Behavior]> {
+        self.behaviors.as_deref()
+    }
+    /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
+    pub fn alert_targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
+    > {
+        self.alert_targets.as_ref()
+    }
+    /// <p>
+    /// <i>Please use
+    /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
+    /// instead.</i>
+    /// </p>
+    /// <p>A list of metrics
+    /// whose data is retained (stored). By default, data is retained for any metric
+    /// used in the profile's <code>behaviors</code>, but
+    /// it is
+    /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_metrics_to_retain.as_deref()
+    }
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    pub fn additional_metrics_to_retain_v2(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricToRetain]> {
+        self.additional_metrics_to_retain_v2.as_deref()
+    }
+    /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
+    /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+    pub fn delete_behaviors(&self) -> bool {
+        self.delete_behaviors
+    }
+    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
+    /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+    pub fn delete_alert_targets(&self) -> bool {
+        self.delete_alert_targets
+    }
+    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
+    /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
+    /// invocation, an exception occurs.</p>
+    pub fn delete_additional_metrics_to_retain(&self) -> bool {
+        self.delete_additional_metrics_to_retain
+    }
+    /// <p>The expected version of the security profile. A new version is generated whenever
+    /// the security profile is updated. If you specify a value that is different from the actual
+    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
 }
 impl std::fmt::Debug for UpdateSecurityProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45343,6 +45337,44 @@ pub struct UpdateScheduledAuditInput {
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
 }
+impl UpdateScheduledAuditInput {
+    /// <p>How often the scheduled audit takes
+    /// place,
+    /// either <code>DAILY</code>,
+    /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
+    /// system.</p>
+    pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
+        self.frequency.as_ref()
+    }
+    /// <p>The day of the month on which the scheduled audit takes place.
+    /// This
+    /// can
+    /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
+    /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
+    /// takes place on the "LAST" day of the month.</p>
+    pub fn day_of_month(&self) -> std::option::Option<&str> {
+        self.day_of_month.as_deref()
+    }
+    /// <p>The day of the week on which the scheduled audit takes place.
+    /// This
+    /// can
+    /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
+    /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
+        self.day_of_week.as_ref()
+    }
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_check_names.as_deref()
+    }
+    /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
+    pub fn scheduled_audit_name(&self) -> std::option::Option<&str> {
+        self.scheduled_audit_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateScheduledAuditInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateScheduledAuditInput");
@@ -45365,6 +45397,20 @@ pub struct UpdateRoleAliasInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The number of seconds the credential will be valid.</p>
     pub credential_duration_seconds: std::option::Option<i32>,
+}
+impl UpdateRoleAliasInput {
+    /// <p>The role alias to update.</p>
+    pub fn role_alias(&self) -> std::option::Option<&str> {
+        self.role_alias.as_deref()
+    }
+    /// <p>The role ARN.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The number of seconds the credential will be valid.</p>
+    pub fn credential_duration_seconds(&self) -> std::option::Option<i32> {
+        self.credential_duration_seconds
+    }
 }
 impl std::fmt::Debug for UpdateRoleAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45399,6 +45445,37 @@ pub struct UpdateProvisioningTemplateInput {
     /// <p>Removes pre-provisioning hook template.</p>
     pub remove_pre_provisioning_hook: std::option::Option<bool>,
 }
+impl UpdateProvisioningTemplateInput {
+    /// <p>The name of the fleet provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The description of the fleet provisioning template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The ID of the default provisioning template version.</p>
+    pub fn default_version_id(&self) -> std::option::Option<i32> {
+        self.default_version_id
+    }
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
+    /// permission to provision a device.</p>
+    pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
+        self.provisioning_role_arn.as_deref()
+    }
+    /// <p>Updates the pre-provisioning hook template.</p>
+    pub fn pre_provisioning_hook(&self) -> std::option::Option<&crate::model::ProvisioningHook> {
+        self.pre_provisioning_hook.as_ref()
+    }
+    /// <p>Removes pre-provisioning hook template.</p>
+    pub fn remove_pre_provisioning_hook(&self) -> std::option::Option<bool> {
+        self.remove_pre_provisioning_hook
+    }
+}
 impl std::fmt::Debug for UpdateProvisioningTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProvisioningTemplateInput");
@@ -45429,6 +45506,23 @@ pub struct UpdateMitigationActionInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
+}
+impl UpdateMitigationActionInput {
+    /// <p>The friendly name for the mitigation action. You cannot change the name by using
+    /// <code>UpdateMitigationAction</code>. Instead, you must delete and
+    /// recreate the
+    /// mitigation action with the new name.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Defines the type of action and the parameters for that action.</p>
+    pub fn action_params(&self) -> std::option::Option<&crate::model::MitigationActionParams> {
+        self.action_params.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMitigationActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45469,6 +45563,47 @@ pub struct UpdateJobInput {
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
 }
+impl UpdateJobInput {
+    /// <p>The ID of the job to be updated.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>A short text description of the job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configuration information for pre-signed S3 URLs.</p>
+    pub fn presigned_url_config(&self) -> std::option::Option<&crate::model::PresignedUrlConfig> {
+        self.presigned_url_config.as_ref()
+    }
+    /// <p>Allows you to create a staged rollout of the job.</p>
+    pub fn job_executions_rollout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRolloutConfig> {
+        self.job_executions_rollout_config.as_ref()
+    }
+    /// <p>Allows you to create criteria to abort a job.</p>
+    pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
+        self.abort_config.as_ref()
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
+    /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+    pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
+        self.timeout_config.as_ref()
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobInput");
@@ -45495,6 +45630,20 @@ pub struct UpdateIndexingConfigurationInput {
     /// <p>Thing group indexing configuration.</p>
     pub thing_group_indexing_configuration:
         std::option::Option<crate::model::ThingGroupIndexingConfiguration>,
+}
+impl UpdateIndexingConfigurationInput {
+    /// <p>Thing indexing configuration.</p>
+    pub fn thing_indexing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingIndexingConfiguration> {
+        self.thing_indexing_configuration.as_ref()
+    }
+    /// <p>Thing group indexing configuration.</p>
+    pub fn thing_group_indexing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingGroupIndexingConfiguration> {
+        self.thing_group_indexing_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateIndexingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45537,6 +45686,49 @@ pub struct UpdateFleetMetricInput {
     /// <p>The expected version of the fleet metric record in the registry.</p>
     pub expected_version: std::option::Option<i64>,
 }
+impl UpdateFleetMetricInput {
+    /// <p>The name of the fleet metric to update.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The search query string.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The type of the aggregation query.</p>
+    pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
+        self.aggregation_type.as_ref()
+    }
+    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    pub fn period(&self) -> std::option::Option<i32> {
+        self.period
+    }
+    /// <p>The field to aggregate.</p>
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
+        self.aggregation_field.as_deref()
+    }
+    /// <p>The description of the fleet metric.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The version of the query.</p>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
+    /// <p>The name of the index to search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::FleetMetricUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The expected version of the fleet metric record in the registry.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+}
 impl std::fmt::Debug for UpdateFleetMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFleetMetricInput");
@@ -45562,6 +45754,16 @@ pub struct UpdateEventConfigurationsInput {
     pub event_configurations: std::option::Option<
         std::collections::HashMap<crate::model::EventType, crate::model::Configuration>,
     >,
+}
+impl UpdateEventConfigurationsInput {
+    /// <p>The new event configuration values.</p>
+    pub fn event_configurations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::EventType, crate::model::Configuration>,
+    > {
+        self.event_configurations.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEventConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45595,6 +45797,41 @@ pub struct UpdateDynamicThingGroupInput {
     /// </note>
     pub query_version: std::option::Option<std::string::String>,
 }
+impl UpdateDynamicThingGroupInput {
+    /// <p>The name of the dynamic thing group to update.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The dynamic thing group properties to update.</p>
+    pub fn thing_group_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingGroupProperties> {
+        self.thing_group_properties.as_ref()
+    }
+    /// <p>The expected version of the dynamic thing group to update.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+    /// <p>The dynamic thing group index to update.</p>
+    /// <note>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// </note>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The dynamic thing group search query string to update.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The dynamic thing group query version to update.</p>
+    /// <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
+    /// query version defaults to this value.</p>
+    /// </note>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDynamicThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDynamicThingGroupInput");
@@ -45621,6 +45858,26 @@ pub struct UpdateDomainConfigurationInput {
     /// <p>Removes the authorization configuration from a domain.</p>
     pub remove_authorizer_config: bool,
 }
+impl UpdateDomainConfigurationInput {
+    /// <p>The name of the domain configuration to be updated.</p>
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
+        self.domain_configuration_name.as_deref()
+    }
+    /// <p>An object that specifies the authorization service for a domain.</p>
+    pub fn authorizer_config(&self) -> std::option::Option<&crate::model::AuthorizerConfig> {
+        self.authorizer_config.as_ref()
+    }
+    /// <p>The status to which the domain configuration should be updated.</p>
+    pub fn domain_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainConfigurationStatus> {
+        self.domain_configuration_status.as_ref()
+    }
+    /// <p>Removes the authorization configuration from a domain.</p>
+    pub fn remove_authorizer_config(&self) -> bool {
+        self.remove_authorizer_config
+    }
+}
 impl std::fmt::Debug for UpdateDomainConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainConfigurationInput");
@@ -45643,6 +45900,16 @@ pub struct UpdateDimensionInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateDimensionInput {
+    /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    pub fn string_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.string_values.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDimensionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45670,6 +45937,24 @@ pub struct UpdateCustomMetricInput {
     /// be updated. </p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl UpdateCustomMetricInput {
+    /// <p> The name of the custom metric.
+    /// Cannot be updated. </p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>
+    /// Field
+    /// represents a friendly name in the console for the custom metric,
+    /// it
+    /// doesn't have to be unique. Don't use this name as the metric identifier in
+    /// the device metric report.
+    /// Can
+    /// be updated. </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCustomMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomMetricInput");
@@ -45695,6 +45980,24 @@ pub struct UpdateCertificateInput {
     /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
     /// should not be used.</p>
     pub new_status: std::option::Option<crate::model::CertificateStatus>,
+}
+impl UpdateCertificateInput {
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The new status.</p>
+    /// <p>
+    /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
+    /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
+    /// are not intended for developer use.</p>
+    /// <p>
+    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
+    /// should not be used.</p>
+    pub fn new_status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
+        self.new_status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45723,6 +46026,34 @@ pub struct UpdateCaCertificateInput {
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
     /// <p>If true, removes auto registration.</p>
     pub remove_auto_registration: bool,
+}
+impl UpdateCaCertificateInput {
+    /// <p>The CA certificate identifier.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The updated status of the CA certificate.</p>
+    /// <p>
+    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
+    /// should not be used.</p>
+    pub fn new_status(&self) -> std::option::Option<&crate::model::CaCertificateStatus> {
+        self.new_status.as_ref()
+    }
+    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
+    /// "DISABLE".</p>
+    pub fn new_auto_registration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoRegistrationStatus> {
+        self.new_auto_registration_status.as_ref()
+    }
+    /// <p>Information about the registration configuration.</p>
+    pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
+        self.registration_config.as_ref()
+    }
+    /// <p>If true, removes auto registration.</p>
+    pub fn remove_auto_registration(&self) -> bool {
+        self.remove_auto_registration
+    }
 }
 impl std::fmt::Debug for UpdateCaCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45753,6 +46084,25 @@ pub struct UpdateBillingGroupInput {
     /// <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
+impl UpdateBillingGroupInput {
+    /// <p>The name of the billing group.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+    /// <p>The properties of the billing group.</p>
+    pub fn billing_group_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::BillingGroupProperties> {
+        self.billing_group_properties.as_ref()
+    }
+    /// <p>The expected version of the billing group. If the version of the billing group does
+    /// not match the expected version specified in the request, the
+    /// <code>UpdateBillingGroup</code> request is rejected with a
+    /// <code>VersionConflictException</code>.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+}
 impl std::fmt::Debug for UpdateBillingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBillingGroupInput");
@@ -45778,6 +46128,31 @@ pub struct UpdateAuthorizerInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the update authorizer request.</p>
     pub status: std::option::Option<crate::model::AuthorizerStatus>,
+}
+impl UpdateAuthorizerInput {
+    /// <p>The authorizer name.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn authorizer_function_arn(&self) -> std::option::Option<&str> {
+        self.authorizer_function_arn.as_deref()
+    }
+    /// <p>The key used to extract the token from the HTTP headers. </p>
+    pub fn token_key_name(&self) -> std::option::Option<&str> {
+        self.token_key_name.as_deref()
+    }
+    /// <p>The public keys used to verify the token signature.</p>
+    pub fn token_signing_public_keys(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.token_signing_public_keys.as_ref()
+    }
+    /// <p>The status of the update authorizer request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizerStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45814,6 +46189,37 @@ pub struct UpdateAuditSuppressionInput {
     /// The description of the audit suppression.
     /// </p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateAuditSuppressionInput {
+    /// <p>An audit check name. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>
+    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
+    /// </p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+    /// <p>
+    /// Indicates whether a suppression should exist indefinitely or not.
+    /// </p>
+    pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
+        self.suppress_indefinitely
+    }
+    /// <p>
+    /// The description of the audit suppression.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAuditSuppressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45864,6 +46270,50 @@ pub struct UpdateAccountAuditConfigurationInput {
         std::collections::HashMap<std::string::String, crate::model::AuditCheckConfiguration>,
     >,
 }
+impl UpdateAccountAuditConfigurationInput {
+    /// <p>The Amazon
+    /// Resource Name
+    /// (ARN)
+    /// of the role that grants permission
+    /// to
+    /// IoT to access information about your devices, policies,
+    /// certificates,
+    /// and other items as required when performing an audit.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Information about the targets to which audit notifications are sent.</p>
+    pub fn audit_notification_target_configurations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::AuditNotificationType,
+            crate::model::AuditNotificationTarget,
+        >,
+    > {
+        self.audit_notification_target_configurations.as_ref()
+    }
+    /// <p>Specifies which audit checks are enabled and disabled for this account. Use
+    /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
+    /// that are currently enabled.</p>
+    /// <p>Some data collection might start immediately when certain checks are enabled.
+    /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+    /// <p>You
+    /// cannot
+    /// disable a check if
+    /// it's
+    /// used by any scheduled audit. You must first delete the check from the scheduled audit or
+    /// delete the scheduled audit itself.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
+    /// this parameter is required and must specify at least one enabled check.</p>
+    pub fn audit_check_configurations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AuditCheckConfiguration>,
+    > {
+        self.audit_check_configurations.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAccountAuditConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountAuditConfigurationInput");
@@ -45889,6 +46339,16 @@ pub struct UntagResourceInput {
     /// <p>A list of the keys of the tags to be removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the keys of the tags to be removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -45909,6 +46369,21 @@ pub struct TransferCertificateInput {
     pub target_aws_account: std::option::Option<std::string::String>,
     /// <p>The transfer message.</p>
     pub transfer_message: std::option::Option<std::string::String>,
+}
+impl TransferCertificateInput {
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account.</p>
+    pub fn target_aws_account(&self) -> std::option::Option<&str> {
+        self.target_aws_account.as_deref()
+    }
+    /// <p>The transfer message.</p>
+    pub fn transfer_message(&self) -> std::option::Option<&str> {
+        self.transfer_message.as_deref()
+    }
 }
 impl std::fmt::Debug for TransferCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45937,6 +46412,33 @@ pub struct TestInvokeAuthorizerInput {
     pub mqtt_context: std::option::Option<crate::model::MqttContext>,
     /// <p>Specifies a test TLS authorization request.</p>
     pub tls_context: std::option::Option<crate::model::TlsContext>,
+}
+impl TestInvokeAuthorizerInput {
+    /// <p>The custom authorizer name.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
+    /// <p>The token returned by your custom authentication service.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>The signature made with the token and your custom authentication service's private
+    /// key. This value must be Base-64-encoded.</p>
+    pub fn token_signature(&self) -> std::option::Option<&str> {
+        self.token_signature.as_deref()
+    }
+    /// <p>Specifies a test HTTP authorization request.</p>
+    pub fn http_context(&self) -> std::option::Option<&crate::model::HttpContext> {
+        self.http_context.as_ref()
+    }
+    /// <p>Specifies a test MQTT authorization request.</p>
+    pub fn mqtt_context(&self) -> std::option::Option<&crate::model::MqttContext> {
+        self.mqtt_context.as_ref()
+    }
+    /// <p>Specifies a test TLS authorization request.</p>
+    pub fn tls_context(&self) -> std::option::Option<&crate::model::TlsContext> {
+        self.tls_context.as_ref()
+    }
 }
 impl std::fmt::Debug for TestInvokeAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45971,6 +46473,35 @@ pub struct TestAuthorizationInput {
     /// are not attached to the principal being authorized.</p>
     pub policy_names_to_skip: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TestAuthorizationInput {
+    /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The Cognito identity pool ID.</p>
+    pub fn cognito_identity_pool_id(&self) -> std::option::Option<&str> {
+        self.cognito_identity_pool_id.as_deref()
+    }
+    /// <p>A list of authorization info objects. Simulating authorization will create a response
+    /// for each <code>authInfo</code> object in the list.</p>
+    pub fn auth_infos(&self) -> std::option::Option<&[crate::model::AuthInfo]> {
+        self.auth_infos.as_deref()
+    }
+    /// <p>The MQTT client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>When testing custom authorization, the policies specified here are treated as if they
+    /// are attached to the principal being authorized.</p>
+    pub fn policy_names_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names_to_add.as_deref()
+    }
+    /// <p>When testing custom authorization, the policies specified here are treated as if they
+    /// are not attached to the principal being authorized.</p>
+    pub fn policy_names_to_skip(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names_to_skip.as_deref()
+    }
+}
 impl std::fmt::Debug for TestAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestAuthorizationInput");
@@ -45993,6 +46524,16 @@ pub struct TagResourceInput {
     /// <p>The new or modified tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The new or modified tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -46008,6 +46549,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopThingRegistrationTaskInput {
     /// <p>The bulk thing provisioning task ID.</p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl StopThingRegistrationTaskInput {
+    /// <p>The bulk thing provisioning task ID.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopThingRegistrationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46032,6 +46579,26 @@ pub struct StartThingRegistrationTaskInput {
     /// <p>The IAM role ARN that grants permission the input file.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl StartThingRegistrationTaskInput {
+    /// <p>The provisioning template.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The S3 bucket that contains the input file.</p>
+    pub fn input_file_bucket(&self) -> std::option::Option<&str> {
+        self.input_file_bucket.as_deref()
+    }
+    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
+    /// JSON file. Each line contains the parameter values to provision one device
+    /// (thing).</p>
+    pub fn input_file_key(&self) -> std::option::Option<&str> {
+        self.input_file_key.as_deref()
+    }
+    /// <p>The IAM role ARN that grants permission the input file.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartThingRegistrationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartThingRegistrationTaskInput");
@@ -46052,6 +46619,15 @@ pub struct StartOnDemandAuditTaskInput {
     /// to see the list of all checks, including those that are enabled or
     /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StartOnDemandAuditTaskInput {
+    /// <p>Which checks are performed during the audit. The checks you specify must be enabled
+    /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
+    /// to see the list of all checks, including those that are enabled or
+    /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_check_names.as_deref()
+    }
 }
 impl std::fmt::Debug for StartOnDemandAuditTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46095,6 +46671,52 @@ pub struct StartDetectMitigationActionsTaskInput {
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl StartDetectMitigationActionsTaskInput {
+    /// <p>
+    /// The unique identifier of the task.
+    /// </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>
+    /// Specifies the ML Detect findings to which the mitigation actions are applied.
+    /// </p>
+    pub fn target(&self) -> std::option::Option<&crate::model::DetectMitigationActionsTaskTarget> {
+        self.target.as_ref()
+    }
+    /// <p>
+    /// The actions to be performed when a device has unexpected behavior.
+    /// </p>
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.actions.as_deref()
+    }
+    /// <p>
+    /// Specifies the time period of which violation events occurred between.
+    /// </p>
+    pub fn violation_event_occurrence_range(
+        &self,
+    ) -> std::option::Option<&crate::model::ViolationEventOccurrenceRange> {
+        self.violation_event_occurrence_range.as_ref()
+    }
+    /// <p>
+    /// Specifies to list only active violations.
+    /// </p>
+    pub fn include_only_active_violations(&self) -> std::option::Option<bool> {
+        self.include_only_active_violations
+    }
+    /// <p>
+    /// Specifies to include suppressed alerts.
+    /// </p>
+    pub fn include_suppressed_alerts(&self) -> std::option::Option<bool> {
+        self.include_suppressed_alerts
+    }
+    /// <p>
+    /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDetectMitigationActionsTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDetectMitigationActionsTaskInput");
@@ -46133,6 +46755,31 @@ pub struct StartAuditMitigationActionsTaskInput {
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl StartAuditMitigationActionsTaskInput {
+    /// <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
+    /// them to a type of audit check, to all findings from an audit, or to a
+    /// specific set of
+    /// findings.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::AuditMitigationActionsTaskTarget> {
+        self.target.as_ref()
+    }
+    /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
+    pub fn audit_check_to_actions_mapping(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.audit_check_to_actions_mapping.as_ref()
+    }
+    /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartAuditMitigationActionsTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAuditMitigationActionsTaskInput");
@@ -46158,6 +46805,20 @@ pub struct SetV2LoggingOptionsInput {
     /// <p>If true all logs are disabled. The default is false.</p>
     pub disable_all_logs: bool,
 }
+impl SetV2LoggingOptionsInput {
+    /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The default logging level.</p>
+    pub fn default_log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.default_log_level.as_ref()
+    }
+    /// <p>If true all logs are disabled. The default is false.</p>
+    pub fn disable_all_logs(&self) -> bool {
+        self.disable_all_logs
+    }
+}
 impl std::fmt::Debug for SetV2LoggingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetV2LoggingOptionsInput");
@@ -46177,6 +46838,16 @@ pub struct SetV2LoggingLevelInput {
     /// <p>The log level.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
+impl SetV2LoggingLevelInput {
+    /// <p>The log target.</p>
+    pub fn log_target(&self) -> std::option::Option<&crate::model::LogTarget> {
+        self.log_target.as_ref()
+    }
+    /// <p>The log level.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+}
 impl std::fmt::Debug for SetV2LoggingLevelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetV2LoggingLevelInput");
@@ -46192,6 +46863,14 @@ impl std::fmt::Debug for SetV2LoggingLevelInput {
 pub struct SetLoggingOptionsInput {
     /// <p>The logging options payload.</p>
     pub logging_options_payload: std::option::Option<crate::model::LoggingOptionsPayload>,
+}
+impl SetLoggingOptionsInput {
+    /// <p>The logging options payload.</p>
+    pub fn logging_options_payload(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingOptionsPayload> {
+        self.logging_options_payload.as_ref()
+    }
 }
 impl std::fmt::Debug for SetLoggingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46210,6 +46889,16 @@ pub struct SetDefaultPolicyVersionInput {
     /// <p>The policy version ID.</p>
     pub policy_version_id: std::option::Option<std::string::String>,
 }
+impl SetDefaultPolicyVersionInput {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy version ID.</p>
+    pub fn policy_version_id(&self) -> std::option::Option<&str> {
+        self.policy_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SetDefaultPolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetDefaultPolicyVersionInput");
@@ -46225,6 +46914,12 @@ impl std::fmt::Debug for SetDefaultPolicyVersionInput {
 pub struct SetDefaultAuthorizerInput {
     /// <p>The authorizer name.</p>
     pub authorizer_name: std::option::Option<std::string::String>,
+}
+impl SetDefaultAuthorizerInput {
+    /// <p>The authorizer name.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SetDefaultAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46250,6 +46945,29 @@ pub struct SearchIndexInput {
     /// <p>The query version.</p>
     pub query_version: std::option::Option<std::string::String>,
 }
+impl SearchIndexInput {
+    /// <p>The search index name.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The search query string.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The query version.</p>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchIndexInput");
@@ -46270,6 +46988,16 @@ pub struct ReplaceTopicRuleInput {
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The rule payload.</p>
     pub topic_rule_payload: std::option::Option<crate::model::TopicRulePayload>,
+}
+impl ReplaceTopicRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The rule payload.</p>
+    pub fn topic_rule_payload(&self) -> std::option::Option<&crate::model::TopicRulePayload> {
+        self.topic_rule_payload.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplaceTopicRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46292,6 +47020,24 @@ pub struct RemoveThingFromThingGroupInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing to remove from the group.</p>
     pub thing_arn: std::option::Option<std::string::String>,
+}
+impl RemoveThingFromThingGroupInput {
+    /// <p>The group name.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The group ARN.</p>
+    pub fn thing_group_arn(&self) -> std::option::Option<&str> {
+        self.thing_group_arn.as_deref()
+    }
+    /// <p>The name of the thing to remove from the group.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the thing to remove from the group.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveThingFromThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46317,6 +47063,24 @@ pub struct RemoveThingFromBillingGroupInput {
     /// <p>The ARN of the thing to be removed from the billing group.</p>
     pub thing_arn: std::option::Option<std::string::String>,
 }
+impl RemoveThingFromBillingGroupInput {
+    /// <p>The name of the billing group.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+    /// <p>The ARN of the billing group.</p>
+    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
+        self.billing_group_arn.as_deref()
+    }
+    /// <p>The name of the thing to be removed from the billing group.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the thing to be removed from the billing group.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveThingFromBillingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveThingFromBillingGroupInput");
@@ -46338,6 +47102,17 @@ pub struct RejectCertificateTransferInput {
     /// <p>The reason the certificate transfer was rejected.</p>
     pub reject_reason: std::option::Option<std::string::String>,
 }
+impl RejectCertificateTransferInput {
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The reason the certificate transfer was rejected.</p>
+    pub fn reject_reason(&self) -> std::option::Option<&str> {
+        self.reject_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectCertificateTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectCertificateTransferInput");
@@ -46357,6 +47132,19 @@ pub struct RegisterThingInput {
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RegisterThingInput {
+    /// <p>The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterThingInput");
@@ -46374,6 +47162,16 @@ pub struct RegisterCertificateWithoutCaInput {
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The status of the register certificate request.</p>
     pub status: std::option::Option<crate::model::CertificateStatus>,
+}
+impl RegisterCertificateWithoutCaInput {
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+        self.certificate_pem.as_deref()
+    }
+    /// <p>The status of the register certificate request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisterCertificateWithoutCaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46396,6 +47194,24 @@ pub struct RegisterCertificateInput {
     pub set_as_active: std::option::Option<bool>,
     /// <p>The status of the register certificate request.</p>
     pub status: std::option::Option<crate::model::CertificateStatus>,
+}
+impl RegisterCertificateInput {
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+        self.certificate_pem.as_deref()
+    }
+    /// <p>The CA certificate used to sign the device certificate being registered.</p>
+    pub fn ca_certificate_pem(&self) -> std::option::Option<&str> {
+        self.ca_certificate_pem.as_deref()
+    }
+    /// <p>A boolean value that specifies if the certificate is set to active.</p>
+    pub fn set_as_active(&self) -> std::option::Option<bool> {
+        self.set_as_active
+    }
+    /// <p>The status of the register certificate request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisterCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46433,6 +47249,40 @@ pub struct RegisterCaCertificateInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl RegisterCaCertificateInput {
+    /// <p>The CA certificate.</p>
+    pub fn ca_certificate(&self) -> std::option::Option<&str> {
+        self.ca_certificate.as_deref()
+    }
+    /// <p>The private key verification certificate.</p>
+    pub fn verification_certificate(&self) -> std::option::Option<&str> {
+        self.verification_certificate.as_deref()
+    }
+    /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
+    pub fn set_as_active(&self) -> bool {
+        self.set_as_active
+    }
+    /// <p>Allows this CA certificate to be used for auto registration of device
+    /// certificates.</p>
+    pub fn allow_auto_registration(&self) -> bool {
+        self.allow_auto_registration
+    }
+    /// <p>Information about the registration configuration.</p>
+    pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
+        self.registration_config.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the CA certificate.</p>
+    /// <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &&tags
+    /// "key1=value1&key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags":
+    /// "key1=value1&key2=value2..."</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterCaCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterCaCertificateInput");
@@ -46456,6 +47306,20 @@ pub struct PutVerificationStateOnViolationInput {
     pub verification_state: std::option::Option<crate::model::VerificationState>,
     /// <p>The description of the verification state of the violation (detect alarm).</p>
     pub verification_state_description: std::option::Option<std::string::String>,
+}
+impl PutVerificationStateOnViolationInput {
+    /// <p>The violation ID.</p>
+    pub fn violation_id(&self) -> std::option::Option<&str> {
+        self.violation_id.as_deref()
+    }
+    /// <p>The verification state of the violation.</p>
+    pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
+        self.verification_state.as_ref()
+    }
+    /// <p>The description of the verification state of the violation (detect alarm).</p>
+    pub fn verification_state_description(&self) -> std::option::Option<&str> {
+        self.verification_state_description.as_deref()
+    }
 }
 impl std::fmt::Debug for PutVerificationStateOnViolationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46497,6 +47361,50 @@ pub struct ListViolationEventsInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListViolationEventsInput {
+    /// <p>The start time for the alerts to be listed.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time for the alerts to be listed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A filter to limit results to those alerts caused by the specified thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>A filter to limit results to those alerts generated by the specified security profile.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>
+    /// The criteria for a behavior.
+    /// </p>
+    pub fn behavior_criteria_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BehaviorCriteriaType> {
+        self.behavior_criteria_type.as_ref()
+    }
+    /// <p>
+    /// A list of all suppressed alerts.
+    /// </p>
+    pub fn list_suppressed_alerts(&self) -> std::option::Option<bool> {
+        self.list_suppressed_alerts
+    }
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
+        self.verification_state.as_ref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListViolationEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListViolationEventsInput");
@@ -46527,6 +47435,23 @@ pub struct ListV2LoggingLevelsInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListV2LoggingLevelsInput {
+    /// <p>The type of resource for which you are configuring logging. Must be
+    /// <code>THING_Group</code>.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::LogTargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListV2LoggingLevelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListV2LoggingLevelsInput");
@@ -46552,6 +47477,26 @@ pub struct ListTopicRulesInput {
     /// <p>Specifies whether the rule is disabled.</p>
     pub rule_disabled: std::option::Option<bool>,
 }
+impl ListTopicRulesInput {
+    /// <p>The topic.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn rule_disabled(&self) -> std::option::Option<bool> {
+        self.rule_disabled
+    }
+}
 impl std::fmt::Debug for ListTopicRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTopicRulesInput");
@@ -46574,6 +47519,18 @@ pub struct ListTopicRuleDestinationsInput {
     /// the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTopicRuleDestinationsInput {
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTopicRuleDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTopicRuleDestinationsInput");
@@ -46595,6 +47552,22 @@ pub struct ListThingTypesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the thing type.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
+}
+impl ListThingTypesInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the thing type.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListThingTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46622,6 +47595,27 @@ pub struct ListThingsInThingGroupInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListThingsInThingGroupInput {
+    /// <p>The thing group name.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>When true, list things in this thing group and in all child groups as
+    /// well.</p>
+    pub fn recursive(&self) -> bool {
+        self.recursive
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListThingsInThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThingsInThingGroupInput");
@@ -46645,6 +47639,22 @@ pub struct ListThingsInBillingGroupInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListThingsInBillingGroupInput {
+    /// <p>The name of the billing group.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListThingsInBillingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46679,6 +47689,38 @@ pub struct ListThingsInput {
     /// provided. </p>
     pub use_prefix_attribute_value: bool,
 }
+impl ListThingsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The attribute name used to search for things.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The attribute value used to search for things.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
+    /// <p>The name of the thing type used to search for things.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>When <code>true</code>, the action returns the thing resources with attribute values
+    /// that start with the <code>attributeValue</code> provided.</p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing
+    /// resources with attribute values that match the entire <code>attributeValue</code>
+    /// provided. </p>
+    pub fn use_prefix_attribute_value(&self) -> bool {
+        self.use_prefix_attribute_value
+    }
+}
 impl std::fmt::Debug for ListThingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThingsInput");
@@ -46708,6 +47750,22 @@ pub struct ListThingRegistrationTasksInput {
     /// <p>The status of the bulk thing provisioning task.</p>
     pub status: std::option::Option<crate::model::Status>,
 }
+impl ListThingRegistrationTasksInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The status of the bulk thing provisioning task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ListThingRegistrationTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThingRegistrationTasksInput");
@@ -46733,6 +47791,26 @@ pub struct ListThingRegistrationTaskReportsInput {
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListThingRegistrationTaskReportsInput {
+    /// <p>The id of the task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The type of task report.</p>
+    pub fn report_type(&self) -> std::option::Option<&crate::model::ReportType> {
+        self.report_type.as_ref()
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListThingRegistrationTaskReportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThingRegistrationTaskReportsInput");
@@ -46757,6 +47835,22 @@ pub struct ListThingPrincipalsInput {
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
 }
+impl ListThingPrincipalsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListThingPrincipalsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThingPrincipalsInput");
@@ -46779,6 +47873,22 @@ pub struct ListThingGroupsForThingInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListThingGroupsForThingInput {
+    /// <p>The thing name.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListThingGroupsForThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46807,6 +47917,30 @@ pub struct ListThingGroupsInput {
     /// <p>If true, return child groups as well.</p>
     pub recursive: std::option::Option<bool>,
 }
+impl ListThingGroupsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter that limits the results to those with the specified parent group.</p>
+    pub fn parent_group(&self) -> std::option::Option<&str> {
+        self.parent_group.as_deref()
+    }
+    /// <p>A filter that limits the results to those with the specified name prefix.</p>
+    pub fn name_prefix_filter(&self) -> std::option::Option<&str> {
+        self.name_prefix_filter.as_deref()
+    }
+    /// <p>If true, return child groups as well.</p>
+    pub fn recursive(&self) -> std::option::Option<bool> {
+        self.recursive
+    }
+}
 impl std::fmt::Debug for ListThingGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThingGroupsInput");
@@ -46830,6 +47964,20 @@ pub struct ListTargetsForSecurityProfileInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTargetsForSecurityProfileInput {
+    /// <p>The security profile.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTargetsForSecurityProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTargetsForSecurityProfileInput");
@@ -46850,6 +47998,20 @@ pub struct ListTargetsForPolicyInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub page_size: std::option::Option<i32>,
+}
+impl ListTargetsForPolicyInput {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for ListTargetsForPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46872,6 +48034,18 @@ pub struct ListTagsForResourceInput {
     /// the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -46891,6 +48065,20 @@ pub struct ListStreamsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub ascending_order: bool,
+}
+impl ListStreamsInput {
+    /// <p>The maximum number of results to return at a time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Set to true to return the list of streams in ascending order.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
 }
 impl std::fmt::Debug for ListStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46914,6 +48102,24 @@ pub struct ListSecurityProfilesForTargetInput {
     pub recursive: bool,
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
     pub security_profile_target_arn: std::option::Option<std::string::String>,
+}
+impl ListSecurityProfilesForTargetInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If true, return child groups too.</p>
+    pub fn recursive(&self) -> bool {
+        self.recursive
+    }
+    /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
+    pub fn security_profile_target_arn(&self) -> std::option::Option<&str> {
+        self.security_profile_target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSecurityProfilesForTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46945,6 +48151,27 @@ pub struct ListSecurityProfilesInput {
     /// Cannot be used with <code>dimensionName</code>. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
+impl ListSecurityProfilesInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter to limit results to the security profiles that use the defined dimension.
+    /// Cannot be used with <code>metricName</code>
+    /// </p>
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
+        self.dimension_name.as_deref()
+    }
+    /// <p> The name of the custom metric.
+    /// Cannot be used with <code>dimensionName</code>. </p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSecurityProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecurityProfilesInput");
@@ -46965,6 +48192,16 @@ pub struct ListScheduledAuditsInput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListScheduledAuditsInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListScheduledAuditsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListScheduledAuditsInput");
@@ -46984,6 +48221,20 @@ pub struct ListRoleAliasesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
     pub ascending_order: bool,
+}
+impl ListRoleAliasesInput {
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Return the list of role aliases in ascending alphabetical order.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
 }
 impl std::fmt::Debug for ListRoleAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47006,6 +48257,20 @@ pub struct ListProvisioningTemplateVersionsInput {
     /// <p>A token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProvisioningTemplateVersionsInput {
+    /// <p>The name of the fleet provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProvisioningTemplateVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProvisioningTemplateVersionsInput");
@@ -47024,6 +48289,16 @@ pub struct ListProvisioningTemplatesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProvisioningTemplatesInput {
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProvisioningTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47046,6 +48321,22 @@ pub struct ListPrincipalThingsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The principal.</p>
     pub principal: std::option::Option<std::string::String>,
+}
+impl ListPrincipalThingsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The principal.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPrincipalThingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47071,6 +48362,25 @@ pub struct ListPrincipalPoliciesInput {
     /// order.</p>
     pub ascending_order: bool,
 }
+impl ListPrincipalPoliciesInput {
+    /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>Specifies the order for results. If true, results are returned in ascending creation
+    /// order.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
+}
 impl std::fmt::Debug for ListPrincipalPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPrincipalPoliciesInput");
@@ -47088,6 +48398,12 @@ impl std::fmt::Debug for ListPrincipalPoliciesInput {
 pub struct ListPolicyVersionsInput {
     /// <p>The policy name.</p>
     pub policy_name: std::option::Option<std::string::String>,
+}
+impl ListPolicyVersionsInput {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPolicyVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47110,6 +48426,25 @@ pub struct ListPolicyPrincipalsInput {
     /// <p>Specifies the order for results. If true, the results are returned in ascending
     /// creation order.</p>
     pub ascending_order: bool,
+}
+impl ListPolicyPrincipalsInput {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>Specifies the order for results. If true, the results are returned in ascending
+    /// creation order.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
 }
 impl std::fmt::Debug for ListPolicyPrincipalsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47134,6 +48469,21 @@ pub struct ListPoliciesInput {
     /// creation order.</p>
     pub ascending_order: bool,
 }
+impl ListPoliciesInput {
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>Specifies the order for results. If true, the results are returned in ascending
+    /// creation order.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
+}
 impl std::fmt::Debug for ListPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoliciesInput");
@@ -47156,6 +48506,21 @@ pub struct ListOutgoingCertificatesInput {
     /// order, based on the creation date.</p>
     pub ascending_order: bool,
 }
+impl ListOutgoingCertificatesInput {
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Specifies the order for results. If True, the results are returned in ascending
+    /// order, based on the creation date.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
+}
 impl std::fmt::Debug for ListOutgoingCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOutgoingCertificatesInput");
@@ -47176,6 +48541,20 @@ pub struct ListOtaUpdatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The OTA update job status.</p>
     pub ota_update_status: std::option::Option<crate::model::OtaUpdateStatus>,
+}
+impl ListOtaUpdatesInput {
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token used to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The OTA update job status.</p>
+    pub fn ota_update_status(&self) -> std::option::Option<&crate::model::OtaUpdateStatus> {
+        self.ota_update_status.as_ref()
+    }
 }
 impl std::fmt::Debug for ListOtaUpdatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47198,6 +48577,20 @@ pub struct ListMitigationActionsInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMitigationActionsInput {
+    /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::MitigationActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMitigationActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMitigationActionsInput");
@@ -47216,6 +48609,16 @@ pub struct ListJobTemplatesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to return the next set of results in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJobTemplatesInput {
+    /// <p>The maximum number of results to return in the list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to return the next set of results in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47256,6 +48659,47 @@ pub struct ListJobsInput {
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
 }
+impl ListJobsInput {
+    /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
+    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
+    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
+    /// target group, even after the job was completed by all things originally in the group. </p>
+    pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
+        self.target_selection.as_ref()
+    }
+    /// <p>The maximum number of results to return per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A filter that limits the returned jobs to those for the specified group.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>A filter that limits the returned jobs to those for the specified group.</p>
+    pub fn thing_group_id(&self) -> std::option::Option<&str> {
+        self.thing_group_id.as_deref()
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -47293,6 +48737,36 @@ pub struct ListJobExecutionsForThingInput {
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobExecutionsForThingInput {
+    /// <p>The thing name.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobExecutionsForThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobExecutionsForThingInput");
@@ -47318,6 +48792,24 @@ pub struct ListJobExecutionsForJobInput {
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobExecutionsForJobInput {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobExecutionsForJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobExecutionsForJobInput");
@@ -47339,6 +48831,17 @@ pub struct ListIndicesInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListIndicesInput {
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListIndicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIndicesInput");
@@ -47357,6 +48860,17 @@ pub struct ListFleetMetricsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFleetMetricsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
+    /// otherwise <code>null</code> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFleetMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47378,6 +48892,20 @@ pub struct ListDomainConfigurationsInput {
     /// <p>The type of service delivered by the endpoint.</p>
     pub service_type: std::option::Option<crate::model::ServiceType>,
 }
+impl ListDomainConfigurationsInput {
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>The type of service delivered by the endpoint.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDomainConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainConfigurationsInput");
@@ -47396,6 +48924,16 @@ pub struct ListDimensionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve at one time.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDimensionsInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDimensionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47425,6 +48963,31 @@ pub struct ListDetectMitigationActionsTasksInput {
     /// The end of the time period for which ML Detect mitigation actions tasks are returned.
     /// </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListDetectMitigationActionsTasksInput {
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// The token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// A filter to limit results to those found after the specified time. You must
+    /// specify either the startTime and endTime or the taskId, but not both.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>
+    /// The end of the time period for which ML Detect mitigation actions tasks are returned.
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDetectMitigationActionsTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47471,6 +49034,51 @@ pub struct ListDetectMitigationActionsExecutionsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDetectMitigationActionsExecutionsInput {
+    /// <p>
+    /// The unique identifier of the task.
+    /// </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>
+    /// The unique identifier of the violation.
+    /// </p>
+    pub fn violation_id(&self) -> std::option::Option<&str> {
+        self.violation_id.as_deref()
+    }
+    /// <p>
+    /// The name of the thing whose mitigation actions are listed.
+    /// </p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>
+    /// A filter to limit results to those found after the specified time. You must
+    /// specify either the startTime and endTime or the taskId, but not both.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>
+    /// The end of the time period for which ML Detect mitigation actions executions are returned.
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>
+    /// The maximum number of results to return at one time. The default is 25.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// The token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDetectMitigationActionsExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectMitigationActionsExecutionsInput");
@@ -47498,6 +49106,20 @@ pub struct ListCustomMetricsInput {
     /// </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListCustomMetricsInput {
+    /// <p>
+    /// The token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of results to return at one time. The default is 25.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListCustomMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomMetricsInput");
@@ -47522,6 +49144,26 @@ pub struct ListCertificatesByCaInput {
     /// order, based on the creation date.</p>
     pub ascending_order: bool,
 }
+impl ListCertificatesByCaInput {
+    /// <p>The ID of the CA certificate. This operation will list all registered device
+    /// certificate that were signed by this CA certificate.</p>
+    pub fn ca_certificate_id(&self) -> std::option::Option<&str> {
+        self.ca_certificate_id.as_deref()
+    }
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Specifies the order for results. If True, the results are returned in ascending
+    /// order, based on the creation date.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
+}
 impl std::fmt::Debug for ListCertificatesByCaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCertificatesByCaInput");
@@ -47545,6 +49187,21 @@ pub struct ListCertificatesInput {
     /// order, based on the creation date.</p>
     pub ascending_order: bool,
 }
+impl ListCertificatesInput {
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Specifies the order for results. If True, the results are returned in ascending
+    /// order, based on the creation date.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
+}
 impl std::fmt::Debug for ListCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCertificatesInput");
@@ -47565,6 +49222,20 @@ pub struct ListCaCertificatesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Determines the order of the results.</p>
     pub ascending_order: bool,
+}
+impl ListCaCertificatesInput {
+    /// <p>The result page size.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Determines the order of the results.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
 }
 impl std::fmt::Debug for ListCaCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47589,6 +49260,22 @@ pub struct ListBillingGroupsInput {
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
     pub name_prefix_filter: std::option::Option<std::string::String>,
 }
+impl ListBillingGroupsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code>
+    /// value from a previous response; otherwise <b>null</b> to receive
+    /// the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Limit the results to billing groups whose names have the given prefix.</p>
+    pub fn name_prefix_filter(&self) -> std::option::Option<&str> {
+        self.name_prefix_filter.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBillingGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBillingGroupsInput");
@@ -47611,6 +49298,24 @@ pub struct ListAuthorizersInput {
     pub ascending_order: bool,
     /// <p>The status of the list authorizers request.</p>
     pub status: std::option::Option<crate::model::AuthorizerStatus>,
+}
+impl ListAuthorizersInput {
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Return the list of authorizers in ascending alphabetical order.</p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
+    /// <p>The status of the list authorizers request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizerStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ListAuthorizersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47643,6 +49348,36 @@ pub struct ListAuditTasksInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAuditTasksInput {
+    /// <p>The beginning of the time period. Audit information is retained for a
+    /// limited time (90 days). Requesting a start time prior to what is retained
+    /// results in an "InvalidRequestException".</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time period.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A filter to limit the output to the specified type of audit: can be one of
+    /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::AuditTaskType> {
+        self.task_type.as_ref()
+    }
+    /// <p>A filter to limit the output to audits with the specified completion
+    /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    pub fn task_status(&self) -> std::option::Option<&crate::model::AuditTaskStatus> {
+        self.task_status.as_ref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAuditTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47681,6 +49416,37 @@ pub struct ListAuditSuppressionsInput {
     /// </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAuditSuppressionsInput {
+    /// <p>An audit check name. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>
+    /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
+    /// </p>
+    pub fn ascending_order(&self) -> bool {
+        self.ascending_order
+    }
+    /// <p>
+    /// The token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of results to return at one time. The default is 25.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAuditSuppressionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAuditSuppressionsInput");
@@ -47712,6 +49478,38 @@ pub struct ListAuditMitigationActionsTasksInput {
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListAuditMitigationActionsTasksInput {
+    /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
+    pub fn audit_task_id(&self) -> std::option::Option<&str> {
+        self.audit_task_id.as_deref()
+    }
+    /// <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
+    pub fn finding_id(&self) -> std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
+    /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
+    pub fn task_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AuditMitigationActionsTaskStatus> {
+        self.task_status.as_ref()
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ListAuditMitigationActionsTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAuditMitigationActionsTasksInput");
@@ -47740,6 +49538,30 @@ pub struct ListAuditMitigationActionsExecutionsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAuditMitigationActionsExecutionsInput {
+    /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>Specify this filter to limit results to those with a specific status.</p>
+    pub fn action_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AuditMitigationActionsExecutionStatus> {
+        self.action_status.as_ref()
+    }
+    /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
+    pub fn finding_id(&self) -> std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAuditMitigationActionsExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47779,6 +49601,45 @@ pub struct ListAuditFindingsInput {
     /// </p>
     pub list_suppressed_findings: bool,
 }
+impl ListAuditFindingsInput {
+    /// <p>A filter to limit results to the audit with the specified ID. You must
+    /// specify either the taskId or the startTime and endTime, but not both.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>A filter to limit results to the findings for the specified audit check.</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Information identifying the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A filter to limit results to those found after the specified time. You must
+    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A filter to limit results to those found before the specified time. You must
+    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>
+    /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
+    /// </p>
+    pub fn list_suppressed_findings(&self) -> bool {
+        self.list_suppressed_findings
+    }
+}
 impl std::fmt::Debug for ListAuditFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAuditFindingsInput");
@@ -47806,6 +49667,24 @@ pub struct ListAttachedPoliciesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub page_size: std::option::Option<i32>,
+}
+impl ListAttachedPoliciesInput {
+    /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>When true, recursively list attached policies.</p>
+    pub fn recursive(&self) -> bool {
+        self.recursive
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for ListAttachedPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47841,6 +49720,42 @@ pub struct ListActiveViolationsInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListActiveViolationsInput {
+    /// <p>The name of the thing whose active violations are listed.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the Device Defender security profile for which violations are listed.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>
+    /// The criteria for a behavior.
+    /// </p>
+    pub fn behavior_criteria_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BehaviorCriteriaType> {
+        self.behavior_criteria_type.as_ref()
+    }
+    /// <p>
+    /// A list of all suppressed alerts.
+    /// </p>
+    pub fn list_suppressed_alerts(&self) -> std::option::Option<bool> {
+        self.list_suppressed_alerts
+    }
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
+        self.verification_state.as_ref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListActiveViolationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActiveViolationsInput");
@@ -47873,6 +49788,12 @@ pub struct GetTopicRuleDestinationInput {
     /// <p>The ARN of the topic rule destination.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetTopicRuleDestinationInput {
+    /// <p>The ARN of the topic rule destination.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTopicRuleDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTopicRuleDestinationInput");
@@ -47887,6 +49808,12 @@ impl std::fmt::Debug for GetTopicRuleDestinationInput {
 pub struct GetTopicRuleInput {
     /// <p>The name of the rule.</p>
     pub rule_name: std::option::Option<std::string::String>,
+}
+impl GetTopicRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTopicRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47909,6 +49836,25 @@ pub struct GetStatisticsInput {
     pub aggregation_field: std::option::Option<std::string::String>,
     /// <p>The version of the query used to search.</p>
     pub query_version: std::option::Option<std::string::String>,
+}
+impl GetStatisticsInput {
+    /// <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The query used to search. You can specify "*" for the query string to get the count of all
+    /// indexed things in your Amazon Web Services account.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The aggregation field name.</p>
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
+        self.aggregation_field.as_deref()
+    }
+    /// <p>The version of the query used to search.</p>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47941,6 +49887,16 @@ pub struct GetPolicyVersionInput {
     /// <p>The policy version ID.</p>
     pub policy_version_id: std::option::Option<std::string::String>,
 }
+impl GetPolicyVersionInput {
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy version ID.</p>
+    pub fn policy_version_id(&self) -> std::option::Option<&str> {
+        self.policy_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPolicyVersionInput");
@@ -47956,6 +49912,12 @@ impl std::fmt::Debug for GetPolicyVersionInput {
 pub struct GetPolicyInput {
     /// <p>The name of the policy.</p>
     pub policy_name: std::option::Option<std::string::String>,
+}
+impl GetPolicyInput {
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47980,6 +49942,28 @@ pub struct GetPercentilesInput {
     /// <p>The percentile groups returned.</p>
     pub percents: std::option::Option<std::vec::Vec<f64>>,
 }
+impl GetPercentilesInput {
+    /// <p>The name of the index to search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The search query string.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The field to aggregate.</p>
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
+        self.aggregation_field.as_deref()
+    }
+    /// <p>The query version.</p>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
+    /// <p>The percentile groups returned.</p>
+    pub fn percents(&self) -> std::option::Option<&[f64]> {
+        self.percents.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPercentilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPercentilesInput");
@@ -47998,6 +49982,12 @@ impl std::fmt::Debug for GetPercentilesInput {
 pub struct GetOtaUpdateInput {
     /// <p>The OTA update ID.</p>
     pub ota_update_id: std::option::Option<std::string::String>,
+}
+impl GetOtaUpdateInput {
+    /// <p>The OTA update ID.</p>
+    pub fn ota_update_id(&self) -> std::option::Option<&str> {
+        self.ota_update_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOtaUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48024,6 +50014,12 @@ impl std::fmt::Debug for GetLoggingOptionsInput {
 pub struct GetJobDocumentInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl GetJobDocumentInput {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48055,6 +50051,20 @@ pub struct GetEffectivePoliciesInput {
     /// <p>The thing name.</p>
     pub thing_name: std::option::Option<std::string::String>,
 }
+impl GetEffectivePoliciesInput {
+    /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The Cognito identity pool ID.</p>
+    pub fn cognito_identity_pool_id(&self) -> std::option::Option<&str> {
+        self.cognito_identity_pool_id.as_deref()
+    }
+    /// <p>The thing name.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEffectivePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEffectivePoliciesInput");
@@ -48077,6 +50087,24 @@ pub struct GetCardinalityInput {
     pub aggregation_field: std::option::Option<std::string::String>,
     /// <p>The query version.</p>
     pub query_version: std::option::Option<std::string::String>,
+}
+impl GetCardinalityInput {
+    /// <p>The name of the index to search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The search query string.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The field to aggregate.</p>
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
+        self.aggregation_field.as_deref()
+    }
+    /// <p>The query version.</p>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCardinalityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48103,6 +50131,30 @@ pub struct GetBucketsAggregationInput {
     pub query_version: std::option::Option<std::string::String>,
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
     pub buckets_aggregation_type: std::option::Option<crate::model::BucketsAggregationType>,
+}
+impl GetBucketsAggregationInput {
+    /// <p>The name of the index to search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The search query string.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The aggregation field.</p>
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
+        self.aggregation_field.as_deref()
+    }
+    /// <p>The version of the query.</p>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    pub fn buckets_aggregation_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketsAggregationType> {
+        self.buckets_aggregation_type.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBucketsAggregationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48133,6 +50185,26 @@ pub struct GetBehaviorModelTrainingSummariesInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetBehaviorModelTrainingSummariesInput {
+    /// <p>
+    /// The name of the security profile.
+    /// </p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>
+    /// The maximum number of results to return at one time. The default is 25.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// The token for the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBehaviorModelTrainingSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBehaviorModelTrainingSummariesInput");
@@ -48150,6 +50222,12 @@ pub struct EnableTopicRuleInput {
     /// <p>The name of the topic rule to enable.</p>
     pub rule_name: std::option::Option<std::string::String>,
 }
+impl EnableTopicRuleInput {
+    /// <p>The name of the topic rule to enable.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableTopicRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableTopicRuleInput");
@@ -48164,6 +50242,12 @@ impl std::fmt::Debug for EnableTopicRuleInput {
 pub struct DisableTopicRuleInput {
     /// <p>The name of the rule to disable.</p>
     pub rule_name: std::option::Option<std::string::String>,
+}
+impl DisableTopicRuleInput {
+    /// <p>The name of the rule to disable.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableTopicRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48184,6 +50268,18 @@ pub struct DetachThingPrincipalInput {
     /// Cognito identity.</p>
     pub principal: std::option::Option<std::string::String>,
 }
+impl DetachThingPrincipalInput {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
+    /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
+    /// Cognito identity.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachThingPrincipalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachThingPrincipalInput");
@@ -48201,6 +50297,16 @@ pub struct DetachSecurityProfileInput {
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
     pub security_profile_target_arn: std::option::Option<std::string::String>,
+}
+impl DetachSecurityProfileInput {
+    /// <p>The security profile that is detached.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The ARN of the thing group from which the security profile is detached.</p>
+    pub fn security_profile_target_arn(&self) -> std::option::Option<&str> {
+        self.security_profile_target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachSecurityProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48224,6 +50330,17 @@ pub struct DetachPrincipalPolicyInput {
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub principal: std::option::Option<std::string::String>,
 }
+impl DetachPrincipalPolicyInput {
+    /// <p>The name of the policy to detach.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The principal.</p>
+    /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachPrincipalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachPrincipalPolicyInput");
@@ -48242,6 +50359,16 @@ pub struct DetachPolicyInput {
     /// <p>The target from which the policy will be detached.</p>
     pub target: std::option::Option<std::string::String>,
 }
+impl DetachPolicyInput {
+    /// <p>The policy to detach.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The target from which the policy will be detached.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachPolicyInput");
@@ -48258,6 +50385,12 @@ pub struct DescribeThingTypeInput {
     /// <p>The name of the thing type.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
 }
+impl DescribeThingTypeInput {
+    /// <p>The name of the thing type.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeThingTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeThingTypeInput");
@@ -48272,6 +50405,12 @@ impl std::fmt::Debug for DescribeThingTypeInput {
 pub struct DescribeThingRegistrationTaskInput {
     /// <p>The task ID.</p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl DescribeThingRegistrationTaskInput {
+    /// <p>The task ID.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeThingRegistrationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48288,6 +50427,12 @@ pub struct DescribeThingGroupInput {
     /// <p>The name of the thing group.</p>
     pub thing_group_name: std::option::Option<std::string::String>,
 }
+impl DescribeThingGroupInput {
+    /// <p>The name of the thing group.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeThingGroupInput");
@@ -48303,6 +50448,12 @@ pub struct DescribeThingInput {
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
 }
+impl DescribeThingInput {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeThingInput");
@@ -48317,6 +50468,12 @@ impl std::fmt::Debug for DescribeThingInput {
 pub struct DescribeStreamInput {
     /// <p>The stream ID.</p>
     pub stream_id: std::option::Option<std::string::String>,
+}
+impl DescribeStreamInput {
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48334,6 +50491,13 @@ pub struct DescribeSecurityProfileInput {
     /// whose information you want to get.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
 }
+impl DescribeSecurityProfileInput {
+    /// <p>The name of the security profile
+    /// whose information you want to get.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSecurityProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSecurityProfileInput");
@@ -48349,6 +50513,12 @@ pub struct DescribeScheduledAuditInput {
     /// <p>The name of the scheduled audit whose information you want to get.</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
 }
+impl DescribeScheduledAuditInput {
+    /// <p>The name of the scheduled audit whose information you want to get.</p>
+    pub fn scheduled_audit_name(&self) -> std::option::Option<&str> {
+        self.scheduled_audit_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeScheduledAuditInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScheduledAuditInput");
@@ -48363,6 +50533,12 @@ impl std::fmt::Debug for DescribeScheduledAuditInput {
 pub struct DescribeRoleAliasInput {
     /// <p>The role alias to describe.</p>
     pub role_alias: std::option::Option<std::string::String>,
+}
+impl DescribeRoleAliasInput {
+    /// <p>The role alias to describe.</p>
+    pub fn role_alias(&self) -> std::option::Option<&str> {
+        self.role_alias.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRoleAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48381,6 +50557,16 @@ pub struct DescribeProvisioningTemplateVersionInput {
     /// <p>The fleet provisioning template version ID.</p>
     pub version_id: std::option::Option<i32>,
 }
+impl DescribeProvisioningTemplateVersionInput {
+    /// <p>The template name.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The fleet provisioning template version ID.</p>
+    pub fn version_id(&self) -> std::option::Option<i32> {
+        self.version_id
+    }
+}
 impl std::fmt::Debug for DescribeProvisioningTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProvisioningTemplateVersionInput");
@@ -48397,6 +50583,12 @@ pub struct DescribeProvisioningTemplateInput {
     /// <p>The name of the fleet provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
 }
+impl DescribeProvisioningTemplateInput {
+    /// <p>The name of the fleet provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProvisioningTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProvisioningTemplateInput");
@@ -48412,6 +50604,12 @@ pub struct DescribeMitigationActionInput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
     pub action_name: std::option::Option<std::string::String>,
 }
+impl DescribeMitigationActionInput {
+    /// <p>The friendly name that uniquely identifies the mitigation action.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMitigationActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMitigationActionInput");
@@ -48426,6 +50624,12 @@ impl std::fmt::Debug for DescribeMitigationActionInput {
 pub struct DescribeJobTemplateInput {
     /// <p>The unique identifier of the job template.</p>
     pub job_template_id: std::option::Option<std::string::String>,
+}
+impl DescribeJobTemplateInput {
+    /// <p>The unique identifier of the job template.</p>
+    pub fn job_template_id(&self) -> std::option::Option<&str> {
+        self.job_template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48447,6 +50651,21 @@ pub struct DescribeJobExecutionInput {
     /// on a particular device.</p>
     pub execution_number: std::option::Option<i64>,
 }
+impl DescribeJobExecutionInput {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the thing on which the job execution is running.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
+    /// on a particular device.</p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
+}
 impl std::fmt::Debug for DescribeJobExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobExecutionInput");
@@ -48464,6 +50683,12 @@ pub struct DescribeJobInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeJobInput {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobInput");
@@ -48479,6 +50704,12 @@ pub struct DescribeIndexInput {
     /// <p>The index name.</p>
     pub index_name: std::option::Option<std::string::String>,
 }
+impl DescribeIndexInput {
+    /// <p>The index name.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIndexInput");
@@ -48493,6 +50724,12 @@ impl std::fmt::Debug for DescribeIndexInput {
 pub struct DescribeFleetMetricInput {
     /// <p>The name of the fleet metric to describe.</p>
     pub metric_name: std::option::Option<std::string::String>,
+}
+impl DescribeFleetMetricInput {
+    /// <p>The name of the fleet metric to describe.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48548,6 +50785,40 @@ pub struct DescribeEndpointInput {
     /// issues related to the widespread distrust of Symantec certificate authorities.</p>
     pub endpoint_type: std::option::Option<std::string::String>,
 }
+impl DescribeEndpointInput {
+    /// <p>The endpoint type. Valid endpoint types include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
+    /// endpoint.</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
+    /// endpoint.</p>
+    /// </li>
+    /// </ul>
+    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
+    /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointInput");
@@ -48563,6 +50834,12 @@ pub struct DescribeDomainConfigurationInput {
     /// <p>The name of the domain configuration.</p>
     pub domain_configuration_name: std::option::Option<std::string::String>,
 }
+impl DescribeDomainConfigurationInput {
+    /// <p>The name of the domain configuration.</p>
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
+        self.domain_configuration_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainConfigurationInput");
@@ -48577,6 +50854,12 @@ impl std::fmt::Debug for DescribeDomainConfigurationInput {
 pub struct DescribeDimensionInput {
     /// <p>The unique identifier for the dimension.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeDimensionInput {
+    /// <p>The unique identifier for the dimension.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDimensionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48594,6 +50877,14 @@ pub struct DescribeDetectMitigationActionsTaskInput {
     /// The unique identifier of the task.
     /// </p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl DescribeDetectMitigationActionsTaskInput {
+    /// <p>
+    /// The unique identifier of the task.
+    /// </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDetectMitigationActionsTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48623,6 +50914,14 @@ pub struct DescribeCustomMetricInput {
     /// </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
+impl DescribeCustomMetricInput {
+    /// <p>
+    /// The name of the custom metric.
+    /// </p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCustomMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomMetricInput");
@@ -48639,6 +50938,13 @@ pub struct DescribeCertificateInput {
     /// certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
+impl DescribeCertificateInput {
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCertificateInput");
@@ -48653,6 +50959,12 @@ impl std::fmt::Debug for DescribeCertificateInput {
 pub struct DescribeCaCertificateInput {
     /// <p>The CA certificate identifier.</p>
     pub certificate_id: std::option::Option<std::string::String>,
+}
+impl DescribeCaCertificateInput {
+    /// <p>The CA certificate identifier.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCaCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48669,6 +50981,12 @@ pub struct DescribeBillingGroupInput {
     /// <p>The name of the billing group.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
 }
+impl DescribeBillingGroupInput {
+    /// <p>The name of the billing group.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBillingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBillingGroupInput");
@@ -48684,6 +51002,12 @@ pub struct DescribeAuthorizerInput {
     /// <p>The name of the authorizer to describe.</p>
     pub authorizer_name: std::option::Option<std::string::String>,
 }
+impl DescribeAuthorizerInput {
+    /// <p>The name of the authorizer to describe.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAuthorizerInput");
@@ -48698,6 +51022,12 @@ impl std::fmt::Debug for DescribeAuthorizerInput {
 pub struct DescribeAuditTaskInput {
     /// <p>The ID of the audit whose information you want to get.</p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl DescribeAuditTaskInput {
+    /// <p>The ID of the audit whose information you want to get.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAuditTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48719,6 +51049,19 @@ pub struct DescribeAuditSuppressionInput {
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
 }
+impl DescribeAuditSuppressionInput {
+    /// <p>An audit check name. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAuditSuppressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAuditSuppressionInput");
@@ -48735,6 +51078,12 @@ pub struct DescribeAuditMitigationActionsTaskInput {
     /// <p>The unique identifier for the audit mitigation task.</p>
     pub task_id: std::option::Option<std::string::String>,
 }
+impl DescribeAuditMitigationActionsTaskInput {
+    /// <p>The unique identifier for the audit mitigation task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAuditMitigationActionsTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAuditMitigationActionsTaskInput");
@@ -48749,6 +51098,12 @@ impl std::fmt::Debug for DescribeAuditMitigationActionsTaskInput {
 pub struct DescribeAuditFindingInput {
     /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
     pub finding_id: std::option::Option<std::string::String>,
+}
+impl DescribeAuditFindingInput {
+    /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
+    pub fn finding_id(&self) -> std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAuditFindingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48779,6 +51134,17 @@ pub struct DeprecateThingTypeInput {
     /// associate it with things.</p>
     pub undo_deprecate: bool,
 }
+impl DeprecateThingTypeInput {
+    /// <p>The name of the thing type to deprecate.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
+    /// associate it with things.</p>
+    pub fn undo_deprecate(&self) -> bool {
+        self.undo_deprecate
+    }
+}
 impl std::fmt::Debug for DeprecateThingTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeprecateThingTypeInput");
@@ -48798,6 +51164,17 @@ pub struct DeleteV2LoggingLevelInput {
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub target_name: std::option::Option<std::string::String>,
 }
+impl DeleteV2LoggingLevelInput {
+    /// <p>The type of resource for which you are configuring logging. Must be
+    /// <code>THING_Group</code>.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::LogTargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The name of the resource for which you are configuring logging.</p>
+    pub fn target_name(&self) -> std::option::Option<&str> {
+        self.target_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteV2LoggingLevelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteV2LoggingLevelInput");
@@ -48814,6 +51191,12 @@ pub struct DeleteTopicRuleDestinationInput {
     /// <p>The ARN of the topic rule destination to delete.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteTopicRuleDestinationInput {
+    /// <p>The ARN of the topic rule destination to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTopicRuleDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTopicRuleDestinationInput");
@@ -48829,6 +51212,12 @@ pub struct DeleteTopicRuleInput {
     /// <p>The name of the rule.</p>
     pub rule_name: std::option::Option<std::string::String>,
 }
+impl DeleteTopicRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTopicRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTopicRuleInput");
@@ -48843,6 +51232,12 @@ impl std::fmt::Debug for DeleteTopicRuleInput {
 pub struct DeleteThingTypeInput {
     /// <p>The name of the thing type.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
+}
+impl DeleteThingTypeInput {
+    /// <p>The name of the thing type.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteThingTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48860,6 +51255,16 @@ pub struct DeleteThingGroupInput {
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The expected version of the thing group to delete.</p>
     pub expected_version: std::option::Option<i64>,
+}
+impl DeleteThingGroupInput {
+    /// <p>The name of the thing group to delete.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The expected version of the thing group to delete.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
 }
 impl std::fmt::Debug for DeleteThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48882,6 +51287,19 @@ pub struct DeleteThingInput {
     /// <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
+impl DeleteThingInput {
+    /// <p>The name of the thing to delete.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The expected version of the thing record in the registry. If the version of the
+    /// record in the registry does not match the expected version specified in the request, the
+    /// <code>DeleteThing</code> request is rejected with a
+    /// <code>VersionConflictException</code>.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+}
 impl std::fmt::Debug for DeleteThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteThingInput");
@@ -48897,6 +51315,12 @@ impl std::fmt::Debug for DeleteThingInput {
 pub struct DeleteStreamInput {
     /// <p>The stream ID.</p>
     pub stream_id: std::option::Option<std::string::String>,
+}
+impl DeleteStreamInput {
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48917,6 +51341,18 @@ pub struct DeleteSecurityProfileInput {
     /// version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: std::option::Option<i64>,
 }
+impl DeleteSecurityProfileInput {
+    /// <p>The name of the security profile to be deleted.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The expected version of the security profile. A new version is generated whenever
+    /// the security profile is updated. If you specify a value that is different from the actual
+    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+}
 impl std::fmt::Debug for DeleteSecurityProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSecurityProfileInput");
@@ -48933,6 +51369,12 @@ pub struct DeleteScheduledAuditInput {
     /// <p>The name of the scheduled audit you want to delete.</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
 }
+impl DeleteScheduledAuditInput {
+    /// <p>The name of the scheduled audit you want to delete.</p>
+    pub fn scheduled_audit_name(&self) -> std::option::Option<&str> {
+        self.scheduled_audit_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteScheduledAuditInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteScheduledAuditInput");
@@ -48947,6 +51389,12 @@ impl std::fmt::Debug for DeleteScheduledAuditInput {
 pub struct DeleteRoleAliasInput {
     /// <p>The role alias to delete.</p>
     pub role_alias: std::option::Option<std::string::String>,
+}
+impl DeleteRoleAliasInput {
+    /// <p>The role alias to delete.</p>
+    pub fn role_alias(&self) -> std::option::Option<&str> {
+        self.role_alias.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRoleAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48976,6 +51424,16 @@ pub struct DeleteProvisioningTemplateVersionInput {
     /// <p>The fleet provisioning template version ID to delete.</p>
     pub version_id: std::option::Option<i32>,
 }
+impl DeleteProvisioningTemplateVersionInput {
+    /// <p>The name of the fleet provisioning template version to delete.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The fleet provisioning template version ID to delete.</p>
+    pub fn version_id(&self) -> std::option::Option<i32> {
+        self.version_id
+    }
+}
 impl std::fmt::Debug for DeleteProvisioningTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProvisioningTemplateVersionInput");
@@ -48991,6 +51449,12 @@ impl std::fmt::Debug for DeleteProvisioningTemplateVersionInput {
 pub struct DeleteProvisioningTemplateInput {
     /// <p>The name of the fleet provision template to delete.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl DeleteProvisioningTemplateInput {
+    /// <p>The name of the fleet provision template to delete.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProvisioningTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49009,6 +51473,16 @@ pub struct DeletePolicyVersionInput {
     /// <p>The policy version ID.</p>
     pub policy_version_id: std::option::Option<std::string::String>,
 }
+impl DeletePolicyVersionInput {
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy version ID.</p>
+    pub fn policy_version_id(&self) -> std::option::Option<&str> {
+        self.policy_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePolicyVersionInput");
@@ -49024,6 +51498,12 @@ impl std::fmt::Debug for DeletePolicyVersionInput {
 pub struct DeletePolicyInput {
     /// <p>The name of the policy to delete.</p>
     pub policy_name: std::option::Option<std::string::String>,
+}
+impl DeletePolicyInput {
+    /// <p>The name of the policy to delete.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49046,6 +51526,22 @@ pub struct DeleteOtaUpdateInput {
     /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub force_delete_aws_job: bool,
 }
+impl DeleteOtaUpdateInput {
+    /// <p>The ID of the OTA update to delete.</p>
+    pub fn ota_update_id(&self) -> std::option::Option<&str> {
+        self.ota_update_id.as_deref()
+    }
+    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
+    /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    pub fn delete_stream(&self) -> bool {
+        self.delete_stream
+    }
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+    /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    pub fn force_delete_aws_job(&self) -> bool {
+        self.force_delete_aws_job
+    }
+}
 impl std::fmt::Debug for DeleteOtaUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOtaUpdateInput");
@@ -49063,6 +51559,12 @@ pub struct DeleteMitigationActionInput {
     /// <p>The name of the mitigation action that you want to delete.</p>
     pub action_name: std::option::Option<std::string::String>,
 }
+impl DeleteMitigationActionInput {
+    /// <p>The name of the mitigation action that you want to delete.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMitigationActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMitigationActionInput");
@@ -49077,6 +51579,12 @@ impl std::fmt::Debug for DeleteMitigationActionInput {
 pub struct DeleteJobTemplateInput {
     /// <p>The unique identifier of the job template to delete.</p>
     pub job_template_id: std::option::Option<std::string::String>,
+}
+impl DeleteJobTemplateInput {
+    /// <p>The unique identifier of the job template to delete.</p>
+    pub fn job_template_id(&self) -> std::option::Option<&str> {
+        self.job_template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteJobTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49118,6 +51626,46 @@ pub struct DeleteJobExecutionInput {
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
+}
+impl DeleteJobExecutionInput {
+    /// <p>The ID of the job whose execution on a particular device will be deleted.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the thing whose job execution will be deleted.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
+    /// execution of a particular job on a particular device.</p>
+    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
+    /// by IoT, so be sure you get and use the correct value here.</p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
+    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
+    /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
+    /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
+    /// <note>
+    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
+    /// to be unable to access job information or update the job execution status.
+    /// Use caution and ensure that the device is able to recover to a valid state.</p>
+    /// </note>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteJobExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49161,6 +51709,39 @@ pub struct DeleteJobInput {
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
 }
+impl DeleteJobInput {
+    /// <p>The ID of the job to be deleted.</p>
+    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
+    /// However, this is not recommended, and you must ensure that your devices are not using the
+    /// jobId to refer to the deleted job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
+    /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
+    /// will occur. The default is false.</p>
+    /// <note>
+    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
+    /// the job to be unable to access job information or update the job execution status.
+    /// Use caution and ensure that each device executing a job which is deleted is able to recover to
+    /// a valid state.</p>
+    /// </note>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteJobInput");
@@ -49180,6 +51761,16 @@ pub struct DeleteFleetMetricInput {
     /// <p>The expected version of the fleet metric to delete.</p>
     pub expected_version: std::option::Option<i64>,
 }
+impl DeleteFleetMetricInput {
+    /// <p>The name of the fleet metric to delete.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The expected version of the fleet metric to delete.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+}
 impl std::fmt::Debug for DeleteFleetMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFleetMetricInput");
@@ -49198,6 +51789,16 @@ pub struct DeleteDynamicThingGroupInput {
     /// <p>The expected version of the dynamic thing group to delete.</p>
     pub expected_version: std::option::Option<i64>,
 }
+impl DeleteDynamicThingGroupInput {
+    /// <p>The name of the dynamic thing group to delete.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The expected version of the dynamic thing group to delete.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+}
 impl std::fmt::Debug for DeleteDynamicThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDynamicThingGroupInput");
@@ -49214,6 +51815,12 @@ pub struct DeleteDomainConfigurationInput {
     /// <p>The name of the domain configuration to be deleted.</p>
     pub domain_configuration_name: std::option::Option<std::string::String>,
 }
+impl DeleteDomainConfigurationInput {
+    /// <p>The name of the domain configuration to be deleted.</p>
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
+        self.domain_configuration_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainConfigurationInput");
@@ -49228,6 +51835,12 @@ impl std::fmt::Debug for DeleteDomainConfigurationInput {
 pub struct DeleteDimensionInput {
     /// <p>The unique identifier for the dimension that you want to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteDimensionInput {
+    /// <p>The unique identifier for the dimension that you want to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDimensionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49245,6 +51858,14 @@ pub struct DeleteCustomMetricInput {
     /// The name of the custom metric.
     /// </p>
     pub metric_name: std::option::Option<std::string::String>,
+}
+impl DeleteCustomMetricInput {
+    /// <p>
+    /// The name of the custom metric.
+    /// </p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCustomMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49265,6 +51886,18 @@ pub struct DeleteCertificateInput {
     /// thing.</p>
     pub force_delete: bool,
 }
+impl DeleteCertificateInput {
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
+    /// thing.</p>
+    pub fn force_delete(&self) -> bool {
+        self.force_delete
+    }
+}
 impl std::fmt::Debug for DeleteCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCertificateInput");
@@ -49281,6 +51914,13 @@ pub struct DeleteCaCertificateInput {
     /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
     /// the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
+}
+impl DeleteCaCertificateInput {
+    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
+    /// the certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCaCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49302,6 +51942,19 @@ pub struct DeleteBillingGroupInput {
     /// <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
+impl DeleteBillingGroupInput {
+    /// <p>The name of the billing group.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+    /// <p>The expected version of the billing group. If the version of the billing group does
+    /// not match the expected version specified in the request, the
+    /// <code>DeleteBillingGroup</code> request is rejected with a
+    /// <code>VersionConflictException</code>.</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+}
 impl std::fmt::Debug for DeleteBillingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBillingGroupInput");
@@ -49317,6 +51970,12 @@ impl std::fmt::Debug for DeleteBillingGroupInput {
 pub struct DeleteAuthorizerInput {
     /// <p>The name of the authorizer to delete.</p>
     pub authorizer_name: std::option::Option<std::string::String>,
+}
+impl DeleteAuthorizerInput {
+    /// <p>The name of the authorizer to delete.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49338,6 +51997,19 @@ pub struct DeleteAuditSuppressionInput {
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
 }
+impl DeleteAuditSuppressionInput {
+    /// <p>An audit check name. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAuditSuppressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAuditSuppressionInput");
@@ -49354,6 +52026,12 @@ pub struct DeleteAccountAuditConfigurationInput {
     /// <p>If true, all scheduled audits are deleted.</p>
     pub delete_scheduled_audits: bool,
 }
+impl DeleteAccountAuditConfigurationInput {
+    /// <p>If true, all scheduled audits are deleted.</p>
+    pub fn delete_scheduled_audits(&self) -> bool {
+        self.delete_scheduled_audits
+    }
+}
 impl std::fmt::Debug for DeleteAccountAuditConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAccountAuditConfigurationInput");
@@ -49369,6 +52047,14 @@ pub struct CreateTopicRuleDestinationInput {
     /// <p>The topic rule destination configuration.</p>
     pub destination_configuration:
         std::option::Option<crate::model::TopicRuleDestinationConfiguration>,
+}
+impl CreateTopicRuleDestinationInput {
+    /// <p>The topic rule destination configuration.</p>
+    pub fn destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TopicRuleDestinationConfiguration> {
+        self.destination_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTopicRuleDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49396,6 +52082,27 @@ pub struct CreateTopicRuleInput {
     /// </note>
     pub tags: std::option::Option<std::string::String>,
 }
+impl CreateTopicRuleInput {
+    /// <p>The name of the rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The rule payload.</p>
+    pub fn topic_rule_payload(&self) -> std::option::Option<&crate::model::TopicRulePayload> {
+        self.topic_rule_payload.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the topic rule.</p>
+    /// <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: --tags
+    /// "key1=value1&key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags":
+    /// "key1=value1&key2=value2..."</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&str> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTopicRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTopicRuleInput");
@@ -49419,6 +52126,22 @@ pub struct CreateThingTypeInput {
     /// <p>Metadata which can be used to manage the thing type.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateThingTypeInput {
+    /// <p>The name of the thing type.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>The ThingTypeProperties for the thing type to create. It contains information about
+    /// the new thing type including a description, and a list of searchable thing attribute
+    /// names.</p>
+    pub fn thing_type_properties(&self) -> std::option::Option<&crate::model::ThingTypeProperties> {
+        self.thing_type_properties.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the thing type.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateThingTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateThingTypeInput");
@@ -49441,6 +52164,26 @@ pub struct CreateThingGroupInput {
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
     /// <p>Metadata which can be used to manage the thing group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateThingGroupInput {
+    /// <p>The thing group name to create.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The name of the parent thing group.</p>
+    pub fn parent_group_name(&self) -> std::option::Option<&str> {
+        self.parent_group_name.as_deref()
+    }
+    /// <p>The thing group properties.</p>
+    pub fn thing_group_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingGroupProperties> {
+        self.thing_group_properties.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the thing group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49472,6 +52215,30 @@ pub struct CreateThingInput {
     /// <p>The name of the billing group the thing will be added to.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
 }
+impl CreateThingInput {
+    /// <p>The name of the thing to create.</p>
+    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
+    /// new thing, give it the new name, and then delete the old thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The name of the thing type associated with the new thing.</p>
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+        self.thing_type_name.as_deref()
+    }
+    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
+    /// document. For example:</p>
+    /// <p>
+    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
+    /// </p>
+    pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
+        self.attribute_payload.as_ref()
+    }
+    /// <p>The name of the billing group the thing will be added to.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateThingInput");
@@ -49497,6 +52264,28 @@ pub struct CreateStreamInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata which can be used to manage streams.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateStreamInput {
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>A description of the stream.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The files to stream.</p>
+    pub fn files(&self) -> std::option::Option<&[crate::model::StreamFile]> {
+        self.files.as_deref()
+    }
+    /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Metadata which can be used to manage streams.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49537,6 +52326,48 @@ pub struct CreateSecurityProfileInput {
         std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
     /// <p>Metadata that can be used to manage the security profile.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateSecurityProfileInput {
+    /// <p>The name you are giving to the security profile.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>A description of the security profile.</p>
+    pub fn security_profile_description(&self) -> std::option::Option<&str> {
+        self.security_profile_description.as_deref()
+    }
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn behaviors(&self) -> std::option::Option<&[crate::model::Behavior]> {
+        self.behaviors.as_deref()
+    }
+    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
+    /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+    pub fn alert_targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
+    > {
+        self.alert_targets.as_ref()
+    }
+    /// <p>
+    /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
+    /// </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained
+    /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
+    /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_metrics_to_retain.as_deref()
+    }
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    pub fn additional_metrics_to_retain_v2(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricToRetain]> {
+        self.additional_metrics_to_retain_v2.as_deref()
+    }
+    /// <p>Metadata that can be used to manage the security profile.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSecurityProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49597,6 +52428,51 @@ pub struct CreateScheduledAuditInput {
     /// <p>Metadata that can be used to manage the scheduled audit.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateScheduledAuditInput {
+    /// <p>How often the scheduled audit takes
+    /// place, either
+    /// <code>DAILY</code>,
+    /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
+    /// determined by the system.</p>
+    pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
+        self.frequency.as_ref()
+    }
+    /// <p>The day of the month on which the scheduled audit takes place.
+    /// This
+    /// can be "1" through "31" or "LAST". This field is required if the "frequency"
+    /// parameter is set to <code>MONTHLY</code>. If days
+    /// 29
+    /// to 31 are specified, and the month
+    /// doesn't
+    /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+    pub fn day_of_month(&self) -> std::option::Option<&str> {
+        self.day_of_month.as_deref()
+    }
+    /// <p>The day of the week on which the scheduled audit takes
+    /// place,
+    /// either
+    /// <code>SUN</code>,
+    /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
+    /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
+        self.day_of_week.as_ref()
+    }
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_check_names.as_deref()
+    }
+    /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+    pub fn scheduled_audit_name(&self) -> std::option::Option<&str> {
+        self.scheduled_audit_name.as_deref()
+    }
+    /// <p>Metadata that can be used to manage the scheduled audit.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateScheduledAuditInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateScheduledAuditInput");
@@ -49631,6 +52507,32 @@ pub struct CreateRoleAliasInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateRoleAliasInput {
+    /// <p>The role alias that points to a role ARN. This allows you to change the role without
+    /// having to update the device.</p>
+    pub fn role_alias(&self) -> std::option::Option<&str> {
+        self.role_alias.as_deref()
+    }
+    /// <p>The role ARN.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+    pub fn credential_duration_seconds(&self) -> std::option::Option<i32> {
+        self.credential_duration_seconds
+    }
+    /// <p>Metadata which can be used to manage the role alias.</p>
+    /// <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &&tags
+    /// "key1=value1&key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags":
+    /// "key1=value1&key2=value2..."</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRoleAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoleAliasInput");
@@ -49655,6 +52557,20 @@ pub struct CreateProvisioningTemplateVersionInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>Sets a fleet provision template version as the default version.</p>
     pub set_as_default: bool,
+}
+impl CreateProvisioningTemplateVersionInput {
+    /// <p>The name of the fleet provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>Sets a fleet provision template version as the default version.</p>
+    pub fn set_as_default(&self) -> bool {
+        self.set_as_default
+    }
 }
 impl std::fmt::Debug for CreateProvisioningTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49693,6 +52609,44 @@ pub struct CreateProvisioningTemplateInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateProvisioningTemplateInput {
+    /// <p>The name of the fleet provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The description of the fleet provisioning template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
+    /// grants permission to provision a device.</p>
+    pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
+        self.provisioning_role_arn.as_deref()
+    }
+    /// <p>Creates a pre-provisioning hook template.</p>
+    pub fn pre_provisioning_hook(&self) -> std::option::Option<&crate::model::ProvisioningHook> {
+        self.pre_provisioning_hook.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
+    /// <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &&tags
+    /// "key1=value1&key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags":
+    /// "key1=value1&key2=value2..."</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProvisioningTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProvisioningTemplateInput");
@@ -49713,6 +52667,12 @@ impl std::fmt::Debug for CreateProvisioningTemplateInput {
 pub struct CreateProvisioningClaimInput {
     /// <p>The name of the provisioning template to use.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl CreateProvisioningClaimInput {
+    /// <p>The name of the provisioning template to use.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProvisioningClaimInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49735,6 +52695,23 @@ pub struct CreatePolicyVersionInput {
     /// true, the new policy version becomes the operative version (that is, the version that is in
     /// effect for the certificates to which the policy is attached).</p>
     pub set_as_default: bool,
+}
+impl CreatePolicyVersionInput {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
+    /// 2048, excluding whitespace.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>Specifies whether the policy version is set as the default. When this parameter is
+    /// true, the new policy version becomes the operative version (that is, the version that is in
+    /// effect for the certificates to which the policy is attached).</p>
+    pub fn set_as_default(&self) -> bool {
+        self.set_as_default
+    }
 }
 impl std::fmt::Debug for CreatePolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49764,6 +52741,28 @@ pub struct CreatePolicyInput {
     /// "key1=value1&key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreatePolicyInput {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
+    /// 2048, excluding whitespace.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>Metadata which can be used to manage the policy.</p>
+    /// <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &&tags
+    /// "key1=value1&key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags":
+    /// "key1=value1&key2=value2..."</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49817,6 +52816,78 @@ pub struct CreateOtaUpdateInput {
     /// <p>Metadata which can be used to manage updates.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateOtaUpdateInput {
+    /// <p>The ID of the OTA update to be created.</p>
+    pub fn ota_update_id(&self) -> std::option::Option<&str> {
+        self.ota_update_id.as_deref()
+    }
+    /// <p>The description of the OTA update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The devices targeted to receive OTA updates.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
+    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
+        self.protocols.as_deref()
+    }
+    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
+    /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
+    /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
+    /// added to a target group, even after the update was completed by all things originally in the group. Valid
+    /// values: CONTINUOUS | SNAPSHOT.</p>
+    pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
+        self.target_selection.as_ref()
+    }
+    /// <p>Configuration for the rollout of OTA updates.</p>
+    pub fn aws_job_executions_rollout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobExecutionsRolloutConfig> {
+        self.aws_job_executions_rollout_config.as_ref()
+    }
+    /// <p>Configuration information for pre-signed URLs.</p>
+    pub fn aws_job_presigned_url_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobPresignedUrlConfig> {
+        self.aws_job_presigned_url_config.as_ref()
+    }
+    /// <p>The criteria that determine when and how a job abort takes place.</p>
+    pub fn aws_job_abort_config(&self) -> std::option::Option<&crate::model::AwsJobAbortConfig> {
+        self.aws_job_abort_config.as_ref()
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
+    /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
+    /// status is not set to another terminal state before the timer expires, it will be automatically
+    /// set to <code>TIMED_OUT</code>.</p>
+    pub fn aws_job_timeout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsJobTimeoutConfig> {
+        self.aws_job_timeout_config.as_ref()
+    }
+    /// <p>The files to be streamed by the OTA update.</p>
+    pub fn files(&self) -> std::option::Option<&[crate::model::OtaUpdateFile]> {
+        self.files.as_deref()
+    }
+    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
+    /// to create an OTA update job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    pub fn additional_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_parameters.as_ref()
+    }
+    /// <p>Metadata which can be used to manage updates.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateOtaUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOtaUpdateInput");
@@ -49856,6 +52927,24 @@ pub struct CreateMitigationActionInput {
     /// <p>Metadata that can be used to manage the mitigation action.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateMitigationActionInput {
+    /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Defines the type of action and the parameters for that action.</p>
+    pub fn action_params(&self) -> std::option::Option<&crate::model::MitigationActionParams> {
+        self.action_params.as_ref()
+    }
+    /// <p>Metadata that can be used to manage the mitigation action.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMitigationActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMitigationActionInput");
@@ -49874,6 +52963,12 @@ impl std::fmt::Debug for CreateMitigationActionInput {
 pub struct CreateKeysAndCertificateInput {
     /// <p>Specifies whether the certificate is active.</p>
     pub set_as_active: bool,
+}
+impl CreateKeysAndCertificateInput {
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn set_as_active(&self) -> bool {
+        self.set_as_active
+    }
 }
 impl std::fmt::Debug for CreateKeysAndCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49920,6 +53015,62 @@ pub struct CreateJobTemplateInput {
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>Metadata that can be used to manage the job template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateJobTemplateInput {
+    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
+    /// characters, "-", and "_" are valid for use here.</p>
+    pub fn job_template_id(&self) -> std::option::Option<&str> {
+        self.job_template_id.as_deref()
+    }
+    /// <p>The ARN of the job to use as the basis for the job template.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
+    /// <note>
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
+    /// <p>The placeholder link is of the following form:</p>
+    /// <p>
+    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+    /// </p>
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// </note>
+    pub fn document_source(&self) -> std::option::Option<&str> {
+        self.document_source.as_deref()
+    }
+    /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
+    /// <p>A description of the job document.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configuration for pre-signed S3 URLs.</p>
+    pub fn presigned_url_config(&self) -> std::option::Option<&crate::model::PresignedUrlConfig> {
+        self.presigned_url_config.as_ref()
+    }
+    /// <p>Allows you to create a staged rollout of a job.</p>
+    pub fn job_executions_rollout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRolloutConfig> {
+        self.job_executions_rollout_config.as_ref()
+    }
+    /// <p>The criteria that determine when and how a job abort takes place.</p>
+    pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
+        self.abort_config.as_ref()
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
+    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
+    /// execution status is not set to another terminal state before the timer expires, it will
+    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
+        self.timeout_config.as_ref()
+    }
+    /// <p>Metadata that can be used to manage the job template.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateJobTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49996,6 +53147,85 @@ pub struct CreateJobInput {
     /// <p>The ARN of the job template used to create the job.</p>
     pub job_template_arn: std::option::Option<std::string::String>,
 }
+impl CreateJobInput {
+    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
+    /// characters, "-" and "_" are valid for use here.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>A list of things and thing groups to which the job should be sent.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
+    /// <note>
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
+    /// <p>The placeholder link is of the following form:</p>
+    /// <p>
+    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+    /// </p>
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// </note>
+    pub fn document_source(&self) -> std::option::Option<&str> {
+        self.document_source.as_deref()
+    }
+    /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
+    /// <p>A short text description of the job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configuration information for pre-signed S3 URLs.</p>
+    pub fn presigned_url_config(&self) -> std::option::Option<&crate::model::PresignedUrlConfig> {
+        self.presigned_url_config.as_ref()
+    }
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
+    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
+    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
+    /// target group, even after the job was completed by all things originally in the group.</p>
+    pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
+        self.target_selection.as_ref()
+    }
+    /// <p>Allows you to create a staged rollout of the job.</p>
+    pub fn job_executions_rollout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRolloutConfig> {
+        self.job_executions_rollout_config.as_ref()
+    }
+    /// <p>Allows you to create criteria to abort a job.</p>
+    pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
+        self.abort_config.as_ref()
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
+    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
+    /// execution status is not set to another terminal state before the time expires, it will be
+    /// automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
+        self.timeout_config.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the job.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+    /// <p>The ARN of the job template used to create the job.</p>
+    pub fn job_template_arn(&self) -> std::option::Option<&str> {
+        self.job_template_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobInput");
@@ -50045,6 +53275,49 @@ pub struct CreateFleetMetricInput {
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateFleetMetricInput {
+    /// <p>The name of the fleet metric to create.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The search query string.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The type of the aggregation query.</p>
+    pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
+        self.aggregation_type.as_ref()
+    }
+    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    pub fn period(&self) -> std::option::Option<i32> {
+        self.period
+    }
+    /// <p>The field to aggregate.</p>
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
+        self.aggregation_field.as_deref()
+    }
+    /// <p>The fleet metric description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The query version.</p>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
+    /// <p>The name of the index to search.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
+    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::FleetMetricUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>Metadata, which can be used to manage the fleet metric.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFleetMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFleetMetricInput");
@@ -50086,6 +53359,42 @@ pub struct CreateDynamicThingGroupInput {
     pub query_version: std::option::Option<std::string::String>,
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDynamicThingGroupInput {
+    /// <p>The dynamic thing group name to create.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The dynamic thing group properties.</p>
+    pub fn thing_group_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ThingGroupProperties> {
+        self.thing_group_properties.as_ref()
+    }
+    /// <p>The dynamic thing group index name.</p>
+    /// <note>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// </note>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The dynamic thing group search query string.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The dynamic thing group query version.</p>
+    /// <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
+    /// query version defaults to this value.</p>
+    /// </note>
+    pub fn query_version(&self) -> std::option::Option<&str> {
+        self.query_version.as_deref()
+    }
+    /// <p>Metadata which can be used to manage the dynamic thing group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDynamicThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50131,6 +53440,48 @@ pub struct CreateDomainConfigurationInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDomainConfigurationInput {
+    /// <p>The name of the domain configuration. This value must be unique to a region.</p>
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
+        self.domain_configuration_name.as_deref()
+    }
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
+    /// This value is not required for Amazon Web Services-managed domains.</p>
+    pub fn server_certificate_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.server_certificate_arns.as_deref()
+    }
+    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
+    /// This value is not required for Amazon Web Services-managed domains.</p>
+    pub fn validation_certificate_arn(&self) -> std::option::Option<&str> {
+        self.validation_certificate_arn.as_deref()
+    }
+    /// <p>An object that specifies the authorization service for a domain.</p>
+    pub fn authorizer_config(&self) -> std::option::Option<&crate::model::AuthorizerConfig> {
+        self.authorizer_config.as_ref()
+    }
+    /// <p>The type of service delivered by the endpoint.</p>
+    /// <note>
+    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
+    /// </note>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the domain configuration.</p>
+    /// <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &&tags
+    /// "key1=value1&key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags":
+    /// "key1=value1&key2=value2..."</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDomainConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainConfigurationInput");
@@ -50164,6 +53515,30 @@ pub struct CreateDimensionInput {
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
     /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreateDimensionInput {
+    /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DimensionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    pub fn string_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.string_values.as_deref()
+    }
+    /// <p>Metadata that can be used to manage the dimension.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
+    /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDimensionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50207,6 +53582,43 @@ pub struct CreateCustomMetricInput {
     /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CreateCustomMetricInput {
+    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
+    /// Cannot be updated
+    /// once defined.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>
+    /// Field
+    /// represents a friendly name in the console for the custom metric;
+    /// it
+    /// doesn't have to be unique. Don't use this name as the metric identifier in
+    /// the device metric report. Can be updated once defined.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>
+    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
+    /// </p>
+    pub fn metric_type(&self) -> std::option::Option<&crate::model::CustomMetricType> {
+        self.metric_type.as_ref()
+    }
+    /// <p>
+    /// Metadata that can be used to manage the custom metric.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Each custom
+    /// metric must have a unique client request token. If you try to create a new custom metric that
+    /// already exists with a different token,
+    /// an exception
+    /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCustomMetricInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomMetricInput");
@@ -50227,6 +53639,16 @@ pub struct CreateCertificateFromCsrInput {
     pub certificate_signing_request: std::option::Option<std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
     pub set_as_active: bool,
+}
+impl CreateCertificateFromCsrInput {
+    /// <p>The certificate signing request (CSR).</p>
+    pub fn certificate_signing_request(&self) -> std::option::Option<&str> {
+        self.certificate_signing_request.as_deref()
+    }
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn set_as_active(&self) -> bool {
+        self.set_as_active
+    }
 }
 impl std::fmt::Debug for CreateCertificateFromCsrInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50250,6 +53672,22 @@ pub struct CreateBillingGroupInput {
     pub billing_group_properties: std::option::Option<crate::model::BillingGroupProperties>,
     /// <p>Metadata which can be used to manage the billing group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateBillingGroupInput {
+    /// <p>The name you wish to give to the billing group.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+    /// <p>The properties of the billing group.</p>
+    pub fn billing_group_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::BillingGroupProperties> {
+        self.billing_group_properties.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the billing group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBillingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50288,6 +53726,47 @@ pub struct CreateAuthorizerInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub signing_disabled: std::option::Option<bool>,
+}
+impl CreateAuthorizerInput {
+    /// <p>The authorizer name.</p>
+    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+        self.authorizer_name.as_deref()
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn authorizer_function_arn(&self) -> std::option::Option<&str> {
+        self.authorizer_function_arn.as_deref()
+    }
+    /// <p>The name of the token key used to extract the token from the HTTP headers.</p>
+    pub fn token_key_name(&self) -> std::option::Option<&str> {
+        self.token_key_name.as_deref()
+    }
+    /// <p>The public keys used to verify the digital signature returned by your custom
+    /// authentication service.</p>
+    pub fn token_signing_public_keys(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.token_signing_public_keys.as_ref()
+    }
+    /// <p>The status of the create authorizer request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizerStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the custom authorizer.</p>
+    /// <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &&tags
+    /// "key1=value1&key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags":
+    /// "key1=value1&key2=value2..."</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
+    pub fn signing_disabled(&self) -> std::option::Option<bool> {
+        self.signing_disabled
+    }
 }
 impl std::fmt::Debug for CreateAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50333,6 +53812,45 @@ pub struct CreateAuditSuppressionInput {
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CreateAuditSuppressionInput {
+    /// <p>An audit check name. Checks must be enabled
+    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
+    /// to select which checks are enabled.)</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>
+    /// The epoch timestamp in seconds at which this suppression expires.
+    /// </p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+    /// <p>
+    /// Indicates whether a suppression should exist indefinitely or not.
+    /// </p>
+    pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
+        self.suppress_indefinitely
+    }
+    /// <p>
+    /// The description of the audit suppression.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>
+    /// Each audit supression must have a unique client request token. If you try to create a new audit
+    /// suppression with the same token as one that already exists, an exception occurs. If you omit this
+    /// value, Amazon Web Services SDKs will automatically generate a unique client request.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAuditSuppressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAuditSuppressionInput");
@@ -50352,6 +53870,12 @@ impl std::fmt::Debug for CreateAuditSuppressionInput {
 pub struct ConfirmTopicRuleDestinationInput {
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
     pub confirmation_token: std::option::Option<std::string::String>,
+}
+impl ConfirmTopicRuleDestinationInput {
+    /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
+    pub fn confirmation_token(&self) -> std::option::Option<&str> {
+        self.confirmation_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfirmTopicRuleDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50401,6 +53925,44 @@ pub struct CancelJobExecutionInput {
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CancelJobExecutionInput {
+    /// <p>The ID of the job to be canceled.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the thing whose execution of the job will be canceled.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
+    /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
+    /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
+    /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
+    /// will be thrown. The default is <code>false</code>.</p>
+    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
+    /// to update the job execution status.  Use caution and ensure that the device is able to
+    /// recover to a valid state.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+    /// <p>(Optional) The expected current version of the job execution. Each time you update the job
+    /// execution, its version is incremented. If the version of the job execution stored in Jobs does
+    /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
+    /// contains the current job execution status data is returned. (This makes it unnecessary to
+    /// perform a separate DescribeJobExecution request in order to obtain the job execution status
+    /// data.)</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not
+    /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.status_details.as_ref()
+    }
+}
 impl std::fmt::Debug for CancelJobExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelJobExecutionInput");
@@ -50431,6 +53993,29 @@ pub struct CancelJobInput {
     /// device executing a job which is canceled is able to recover to a valid state.</p>
     pub force: bool,
 }
+impl CancelJobInput {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>(Optional)A reason code string that explains why the job was canceled.</p>
+    pub fn reason_code(&self) -> std::option::Option<&str> {
+        self.reason_code.as_deref()
+    }
+    /// <p>An optional comment string describing why the job was canceled.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
+    /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
+    /// is <code>false</code>.</p>
+    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
+    /// the job to be unable to update the job execution status.  Use caution and ensure that each
+    /// device executing a job which is canceled is able to recover to a valid state.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+}
 impl std::fmt::Debug for CancelJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelJobInput");
@@ -50451,6 +54036,14 @@ pub struct CancelDetectMitigationActionsTaskInput {
     /// </p>
     pub task_id: std::option::Option<std::string::String>,
 }
+impl CancelDetectMitigationActionsTaskInput {
+    /// <p>
+    /// The unique identifier of the task.
+    /// </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelDetectMitigationActionsTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelDetectMitigationActionsTaskInput");
@@ -50466,6 +54059,13 @@ pub struct CancelCertificateTransferInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
     /// certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
+}
+impl CancelCertificateTransferInput {
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelCertificateTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50483,6 +54083,13 @@ pub struct CancelAuditTaskInput {
     /// audit that is "IN_PROGRESS".</p>
     pub task_id: std::option::Option<std::string::String>,
 }
+impl CancelAuditTaskInput {
+    /// <p>The ID of the audit you want to cancel. You can only cancel an
+    /// audit that is "IN_PROGRESS".</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelAuditTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelAuditTaskInput");
@@ -50497,6 +54104,12 @@ impl std::fmt::Debug for CancelAuditTaskInput {
 pub struct CancelAuditMitigationActionsTaskInput {
     /// <p>The unique identifier for the task that you want to cancel. </p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl CancelAuditMitigationActionsTaskInput {
+    /// <p>The unique identifier for the task that you want to cancel. </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelAuditMitigationActionsTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50516,6 +54129,17 @@ pub struct AttachThingPrincipalInput {
     /// CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub principal: std::option::Option<std::string::String>,
 }
+impl AttachThingPrincipalInput {
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The principal, which can be a certificate ARN (as returned from the
+    /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachThingPrincipalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachThingPrincipalInput");
@@ -50533,6 +54157,16 @@ pub struct AttachSecurityProfileInput {
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
     pub security_profile_target_arn: std::option::Option<std::string::String>,
+}
+impl AttachSecurityProfileInput {
+    /// <p>The security profile that is attached.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
+    pub fn security_profile_target_arn(&self) -> std::option::Option<&str> {
+        self.security_profile_target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachSecurityProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50556,6 +54190,17 @@ pub struct AttachPrincipalPolicyInput {
     /// operation) or an Amazon Cognito ID.</p>
     pub principal: std::option::Option<std::string::String>,
 }
+impl AttachPrincipalPolicyInput {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
+    /// operation) or an Amazon Cognito ID.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachPrincipalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachPrincipalPolicyInput");
@@ -50573,6 +54218,16 @@ pub struct AttachPolicyInput {
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     pub target: std::option::Option<std::string::String>,
+}
+impl AttachPolicyInput {
+    /// <p>The name of the policy to attach.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50604,6 +54259,32 @@ pub struct AssociateTargetsWithJobInput {
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
 }
+impl AssociateTargetsWithJobInput {
+    /// <p>A list of thing group ARNs that define the targets of the job.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>An optional comment string describing why the job was associated with the targets.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
+    /// contain the value in the following format.</p>
+    /// <p>
+    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateTargetsWithJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateTargetsWithJobInput");
@@ -50633,6 +54314,31 @@ pub struct AddThingToThingGroupInput {
     /// dynamic group.</p>
     pub override_dynamic_groups: bool,
 }
+impl AddThingToThingGroupInput {
+    /// <p>The name of the group to which you are adding a thing.</p>
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+        self.thing_group_name.as_deref()
+    }
+    /// <p>The ARN of the group to which you are adding a thing.</p>
+    pub fn thing_group_arn(&self) -> std::option::Option<&str> {
+        self.thing_group_arn.as_deref()
+    }
+    /// <p>The name of the thing to add to a group.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the thing to add to a group.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
+    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
+    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
+    /// dynamic group.</p>
+    pub fn override_dynamic_groups(&self) -> bool {
+        self.override_dynamic_groups
+    }
+}
 impl std::fmt::Debug for AddThingToThingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddThingToThingGroupInput");
@@ -50658,6 +54364,24 @@ pub struct AddThingToBillingGroupInput {
     /// <p>The ARN of the thing to be added to the billing group.</p>
     pub thing_arn: std::option::Option<std::string::String>,
 }
+impl AddThingToBillingGroupInput {
+    /// <p>The name of the billing group.</p>
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+        self.billing_group_name.as_deref()
+    }
+    /// <p>The ARN of the billing group.</p>
+    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
+        self.billing_group_arn.as_deref()
+    }
+    /// <p>The name of the thing to be added to the billing group.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the thing to be added to the billing group.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AddThingToBillingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddThingToBillingGroupInput");
@@ -50678,6 +54402,17 @@ pub struct AcceptCertificateTransferInput {
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
     pub set_as_active: bool,
+}
+impl AcceptCertificateTransferInput {
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
+    /// certificate ID.)</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn set_as_active(&self) -> bool {
+        self.set_as_active
+    }
 }
 impl std::fmt::Debug for AcceptCertificateTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

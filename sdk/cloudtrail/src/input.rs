@@ -112,10 +112,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -522,10 +519,7 @@ impl CreateTrailInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_trail(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_trail(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -678,10 +672,7 @@ impl DeleteTrailInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trail(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trail(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -889,10 +880,8 @@ impl DescribeTrailsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_trails(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_trails(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1088,10 +1077,7 @@ impl GetEventSelectorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_event_selectors(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_event_selectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1287,10 +1273,7 @@ impl GetInsightSelectorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_insight_selectors(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_insight_selectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1435,10 +1418,7 @@ impl GetTrailInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_trail(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_trail(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1592,10 +1572,7 @@ impl GetTrailStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_trail_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_trail_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1779,10 +1756,7 @@ impl ListPublicKeysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_public_keys(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_public_keys(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1958,10 +1932,7 @@ impl ListTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2114,10 +2085,7 @@ impl ListTrailsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_trails(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_trails(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2352,10 +2320,7 @@ impl LookupEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_lookup_events(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_lookup_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2617,10 +2582,7 @@ impl PutEventSelectorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_event_selectors(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_event_selectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2795,10 +2757,7 @@ impl PutInsightSelectorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_insight_selectors(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_insight_selectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2974,10 +2933,7 @@ impl RemoveTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3132,10 +3088,7 @@ impl StartLoggingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_logging(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_logging(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3290,10 +3243,7 @@ impl StopLoggingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_logging(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_logging(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3697,10 +3647,7 @@ impl UpdateTrailInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_trail(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_trail(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3846,6 +3793,109 @@ pub struct UpdateTrailInput {
     /// deleted from all member accounts in the organization.</p>
     pub is_organization_trail: std::option::Option<bool>,
 }
+impl UpdateTrailInput {
+    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
+    /// string must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
+    /// </li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p>
+    /// </li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+    /// and <code>my--namespace</code> are not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    pub fn sns_topic_name(&self) -> std::option::Option<&str> {
+        self.sns_topic_name.as_deref()
+    }
+    /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    pub fn include_global_service_events(&self) -> std::option::Option<bool> {
+        self.include_global_service_events
+    }
+    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
+    /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
+    /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
+    /// using trails that log events in all regions.</p>
+    pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
+        self.is_multi_region_trail
+    }
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p>
+    /// <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
+    /// does not create digest files for log files that were delivered during a period in which log file integrity validation
+    /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
+    /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
+    /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// </note>
+    pub fn enable_log_file_validation(&self) -> std::option::Option<bool> {
+        self.enable_log_file_validation
+    }
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_log_group_arn.as_deref()
+    }
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
+    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
+    /// specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p>alias/MyAliasName</p>
+    /// </li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
+    /// </li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+    /// </li>
+    /// <li>
+    /// <p>12345678-1234-1234-1234-123456789012</p>
+    /// </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+    /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
+    /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
+    /// deleted from all member accounts in the organization.</p>
+    pub fn is_organization_trail(&self) -> std::option::Option<bool> {
+        self.is_organization_trail
+    }
+}
 impl std::fmt::Debug for UpdateTrailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrailInput");
@@ -3884,6 +3934,16 @@ pub struct StopLoggingInput {
     /// </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StopLoggingInput {
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
+    /// API calls. The following is the format of a trail ARN.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopLoggingInput");
@@ -3902,6 +3962,16 @@ pub struct StartLoggingInput {
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
     pub name: std::option::Option<std::string::String>,
+}
+impl StartLoggingInput {
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
+    /// The following is the format of a trail ARN.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3923,6 +3993,19 @@ pub struct RemoveTagsInput {
     /// <p>Specifies a list of tags to be removed.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl RemoveTagsInput {
+    /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Specifies a list of tags to be removed.</p>
+    pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_list.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsInput");
@@ -3940,6 +4023,16 @@ pub struct PutInsightSelectorsInput {
     pub trail_name: std::option::Option<std::string::String>,
     /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
+}
+impl PutInsightSelectorsInput {
+    /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    pub fn trail_name(&self) -> std::option::Option<&str> {
+        self.trail_name.as_deref()
+    }
+    /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+    pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
+        self.insight_selectors.as_deref()
+    }
 }
 impl std::fmt::Debug for PutInsightSelectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3995,6 +4088,55 @@ pub struct PutEventSelectorsInput {
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
 }
+impl PutEventSelectorsInput {
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
+    /// string must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
+    /// </li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p>
+    /// </li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+    /// and <code>my--namespace</code> are not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you specify a trail ARN, it must be in the following format.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn trail_name(&self) -> std::option::Option<&str> {
+        self.trail_name.as_deref()
+    }
+    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+    /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
+    /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    pub fn event_selectors(&self) -> std::option::Option<&[crate::model::EventSelector]> {
+        self.event_selectors.as_deref()
+    }
+    /// <p>
+    /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
+    /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
+    /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
+    /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
+    /// advanced event selectors, see
+    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
+    /// </p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+}
 impl std::fmt::Debug for PutEventSelectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventSelectorsInput");
@@ -4024,6 +4166,34 @@ pub struct LookupEventsInput {
     /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl LookupEventsInput {
+    /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
+    pub fn lookup_attributes(&self) -> std::option::Option<&[crate::model::LookupAttribute]> {
+        self.lookup_attributes.as_deref()
+    }
+    /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
+    /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    pub fn event_category(&self) -> std::option::Option<&crate::model::EventCategory> {
+        self.event_category.as_ref()
+    }
+    /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
+    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for LookupEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LookupEventsInput");
@@ -4047,6 +4217,15 @@ pub struct ListTrailsInput {
     /// include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTrailsInput {
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
+    /// in with the same parameters that were specified in the the original call. For example, if the original
+    /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
+    /// include those same parameters.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTrailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrailsInput");
@@ -4067,6 +4246,20 @@ pub struct ListTagsInput {
     pub resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsInput {
+    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
+    /// a trail ARN.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn resource_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_id_list.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4090,6 +4283,22 @@ pub struct ListPublicKeysInput {
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPublicKeysInput {
+    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
+    /// If not specified, the current time is used, and the current public key is returned.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
+    /// specified, the current time is used.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPublicKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPublicKeysInput");
@@ -4111,6 +4320,16 @@ pub struct GetTrailStatusInput {
     /// </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetTrailStatusInput {
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
+    /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTrailStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTrailStatusInput");
@@ -4125,6 +4344,12 @@ impl std::fmt::Debug for GetTrailStatusInput {
 pub struct GetTrailInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetTrailInput {
+    /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTrailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4164,6 +4389,35 @@ pub struct GetInsightSelectorsInput {
     /// </p>
     pub trail_name: std::option::Option<std::string::String>,
 }
+impl GetInsightSelectorsInput {
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
+    /// string must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
+    /// </li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p>
+    /// </li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+    /// and <code>my--namespace</code> are not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you specify a trail ARN, it must be in the format:</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn trail_name(&self) -> std::option::Option<&str> {
+        self.trail_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInsightSelectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightSelectorsInput");
@@ -4202,6 +4456,35 @@ pub struct GetEventSelectorsInput {
     /// </p>
     pub trail_name: std::option::Option<std::string::String>,
 }
+impl GetEventSelectorsInput {
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
+    /// string must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
+    /// </li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p>
+    /// </li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+    /// and <code>my--namespace</code> are not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you specify a trail ARN, it must be in the format:</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn trail_name(&self) -> std::option::Option<&str> {
+        self.trail_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEventSelectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventSelectorsInput");
@@ -4238,6 +4521,35 @@ pub struct DescribeTrailsInput {
     /// and region replication trails will not be returned. The default is true.</p>
     pub include_shadow_trails: std::option::Option<bool>,
 }
+impl DescribeTrailsInput {
+    /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    ///
+    /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
+    /// information for all trails in the current region is returned.</p>
+    /// </li>
+    /// <li>
+    /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
+    /// </note>
+    pub fn trail_name_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.trail_name_list.as_deref()
+    }
+    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
+    /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
+    /// and region replication trails will not be returned. The default is true.</p>
+    pub fn include_shadow_trails(&self) -> std::option::Option<bool> {
+        self.include_shadow_trails
+    }
+}
 impl std::fmt::Debug for DescribeTrailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrailsInput");
@@ -4256,6 +4568,15 @@ pub struct DeleteTrailInput {
     /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
     /// </p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteTrailInput {
+    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
+    /// trail ARN.
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTrailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4343,6 +4664,105 @@ pub struct CreateTrailInput {
     /// <p>A list of tags.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateTrailInput {
+    /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
+    /// </li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p>
+    /// </li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+    /// and <code>my--namespace</code> are not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    pub fn sns_topic_name(&self) -> std::option::Option<&str> {
+        self.sns_topic_name.as_deref()
+    }
+    /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    pub fn include_global_service_events(&self) -> std::option::Option<bool> {
+        self.include_global_service_events
+    }
+    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
+    /// creating trails that log events in all regions.</p>
+    pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
+        self.is_multi_region_trail
+    }
+    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
+    /// <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
+    /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
+    /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
+    /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
+    /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// </note>
+    pub fn enable_log_file_validation(&self) -> std::option::Option<bool> {
+        self.enable_log_file_validation
+    }
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
+    /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_log_group_arn.as_deref()
+    }
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
+    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
+    /// specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p>alias/MyAliasName</p>
+    /// </li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
+    /// </li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+    /// </li>
+    /// <li>
+    /// <p>12345678-1234-1234-1234-123456789012</p>
+    /// </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
+    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
+    /// Organizations.</p>
+    pub fn is_organization_trail(&self) -> std::option::Option<bool> {
+        self.is_organization_trail
+    }
+    /// <p>A list of tags.</p>
+    pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_list.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrailInput");
@@ -4382,6 +4802,19 @@ pub struct AddTagsInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Contains a list of tags, up to a limit of 50</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsInput {
+    /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Contains a list of tags, up to a limit of 50</p>
+    pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_list.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

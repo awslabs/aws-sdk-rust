@@ -4872,7 +4872,7 @@ pub fn deser_union_crate_model_lifecycle_rule_filter(
                 base = Some(crate::model::LifecycleRuleFilter::And(tmp));
             }
             ,
-            _ => {}
+            _unknown => base = Some(crate::model::LifecycleRuleFilter::Unknown),
         }
     }
     base.ok_or_else(|| aws_smithy_xml::decode::XmlError::custom("expected union, got nothing"))
@@ -5179,7 +5179,7 @@ pub fn deser_union_crate_model_analytics_filter(
                 base = Some(crate::model::AnalyticsFilter::And(tmp));
             }
             ,
-            _ => {}
+            _unknown => base = Some(crate::model::AnalyticsFilter::Unknown),
         }
     }
     base.ok_or_else(|| aws_smithy_xml::decode::XmlError::custom("expected union, got nothing"))
@@ -5439,7 +5439,7 @@ pub fn deser_union_crate_model_metrics_filter(
                 base = Some(crate::model::MetricsFilter::And(tmp));
             }
             ,
-            _ => {}
+            _unknown => base = Some(crate::model::MetricsFilter::Unknown),
         }
     }
     base.ok_or_else(|| aws_smithy_xml::decode::XmlError::custom("expected union, got nothing"))
@@ -6439,7 +6439,7 @@ pub fn deser_union_crate_model_replication_rule_filter(
                 base = Some(crate::model::ReplicationRuleFilter::And(tmp));
             }
             ,
-            _ => {}
+            _unknown => base = Some(crate::model::ReplicationRuleFilter::Unknown),
         }
     }
     base.ok_or_else(|| aws_smithy_xml::decode::XmlError::custom("expected union, got nothing"))

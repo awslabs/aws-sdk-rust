@@ -163,10 +163,7 @@ impl CreateLifecyclePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_lifecycle_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1054,10 +1051,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1458,10 +1452,7 @@ impl UpdateLifecyclePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_lifecycle_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1540,6 +1531,30 @@ pub struct UpdateLifecyclePolicyInput {
     /// resource type.</p>
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
 }
+impl UpdateLifecyclePolicyInput {
+    /// <p>The identifier of the lifecycle policy.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
+    /// the lifecycle policy.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SettablePolicyStateValues> {
+        self.state.as_ref()
+    }
+    /// <p>A description of the lifecycle policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
+    /// resource type.</p>
+    pub fn policy_details(&self) -> std::option::Option<&crate::model::PolicyDetails> {
+        self.policy_details.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLifecyclePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLifecyclePolicyInput");
@@ -1561,6 +1576,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -1580,6 +1605,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -1596,6 +1634,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -1610,6 +1654,12 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct GetLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: std::option::Option<std::string::String>,
+}
+impl GetLifecyclePolicyInput {
+    /// <p>The identifier of the lifecycle policy.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLifecyclePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1637,6 +1687,31 @@ pub struct GetLifecyclePoliciesInput {
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub tags_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetLifecyclePoliciesInput {
+    /// <p>The identifiers of the data lifecycle policies.</p>
+    pub fn policy_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_ids.as_deref()
+    }
+    /// <p>The activation state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::GettablePolicyStateValues> {
+        self.state.as_ref()
+    }
+    /// <p>The resource type.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[crate::model::ResourceTypeValues]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The target tag for a policy.</p>
+    /// <p>Tags are strings in the format <code>key=value</code>.</p>
+    pub fn target_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_tags.as_deref()
+    }
+    /// <p>The tags to add to objects created by the policy.</p>
+    /// <p>Tags are strings in the format <code>key=value</code>.</p>
+    /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
+    pub fn tags_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.tags_to_add.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLifecyclePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLifecyclePoliciesInput");
@@ -1655,6 +1730,12 @@ impl std::fmt::Debug for GetLifecyclePoliciesInput {
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: std::option::Option<std::string::String>,
+}
+impl DeleteLifecyclePolicyInput {
+    /// <p>The identifier of the lifecycle policy.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLifecyclePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1681,6 +1762,33 @@ pub struct CreateLifecyclePolicyInput {
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLifecyclePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
+    /// the lifecycle policy.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
+    /// supported.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SettablePolicyStateValues> {
+        self.state.as_ref()
+    }
+    /// <p>The configuration details of the lifecycle policy.</p>
+    pub fn policy_details(&self) -> std::option::Option<&crate::model::PolicyDetails> {
+        self.policy_details.as_ref()
+    }
+    /// <p>The tags to apply to the lifecycle policy during creation.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLifecyclePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

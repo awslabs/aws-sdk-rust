@@ -9,6 +9,16 @@ pub struct S3Location {
     /// <p>Prefix for the location to write to.</p>
     pub prefix: std::option::Option<std::string::String>,
 }
+impl S3Location {
+    /// <p>Name of the S3 bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Prefix for the location to write to.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Location");
@@ -196,6 +206,36 @@ pub struct ReportDefinition {
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ReportDefinition {
+    /// <p>The ID of the report.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+    /// <p>Description of the report</p>
+    pub fn report_description(&self) -> std::option::Option<&str> {
+        self.report_description.as_deref()
+    }
+    /// <p>The cadence at which the report is generated.</p>
+    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+        self.report_frequency.as_ref()
+    }
+    /// <p>The format used for the generated reports.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
+    pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.destination_s3_location.as_ref()
+    }
+    /// <p>Timestamp (milliseconds) when this report definition was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for ReportDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportDefinition");
@@ -343,6 +383,22 @@ pub struct SourceS3Location {
     /// For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">
     /// Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     pub region: std::option::Option<crate::model::S3BucketRegion>,
+}
+impl SourceS3Location {
+    /// <p>Name of the bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Key of the object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Region of the bucket. Only required for Regions that are disabled by default.
+    /// For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">
+    /// Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
+    pub fn region(&self) -> std::option::Option<&crate::model::S3BucketRegion> {
+        self.region.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceS3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

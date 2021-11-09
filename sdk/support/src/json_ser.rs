@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_add_attachments_to_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AddAttachmentsToSetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.attachment_set_id {
         object.key("attachmentSetId").string(var_1);
     }
@@ -11,18 +11,19 @@ pub fn serialize_structure_crate_input_add_attachments_to_set_input(
         for item_4 in var_2 {
             {
                 let mut object_5 = array_3.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_attachment(&mut object_5, item_4);
+                crate::json_ser::serialize_structure_crate_model_attachment(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
         array_3.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_add_communication_to_case_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AddCommunicationToCaseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.case_id {
         object.key("caseId").string(var_6);
     }
@@ -41,12 +42,13 @@ pub fn serialize_structure_crate_input_add_communication_to_case_input(
     if let Some(var_11) = &input.attachment_set_id {
         object.key("attachmentSetId").string(var_11);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_case_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateCaseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.subject {
         object.key("subject").string(var_12);
     }
@@ -80,21 +82,23 @@ pub fn serialize_structure_crate_input_create_case_input(
     if let Some(var_22) = &input.attachment_set_id {
         object.key("attachmentSetId").string(var_22);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_attachment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAttachmentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.attachment_id {
         object.key("attachmentId").string(var_23);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_cases_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeCasesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.case_id_list {
         let mut array_25 = object.key("caseIdList").start_array();
         for item_26 in var_24 {
@@ -133,12 +137,13 @@ pub fn serialize_structure_crate_input_describe_cases_input(
     if let Some(var_33) = &input.include_communications {
         object.key("includeCommunications").boolean(*var_33);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_communications_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeCommunicationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.case_id {
         object.key("caseId").string(var_34);
     }
@@ -157,12 +162,13 @@ pub fn serialize_structure_crate_input_describe_communications_input(
             aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_services_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeServicesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.service_code_list {
         let mut array_40 = object.key("serviceCodeList").start_array();
         for item_41 in var_39 {
@@ -175,21 +181,23 @@ pub fn serialize_structure_crate_input_describe_services_input(
     if let Some(var_42) = &input.language {
         object.key("language").string(var_42);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_severity_levels_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSeverityLevelsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.language {
         object.key("language").string(var_43);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_trusted_advisor_check_refresh_statuses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.check_ids {
         let mut array_45 = object.key("checkIds").start_array();
         for item_46 in var_44 {
@@ -199,33 +207,36 @@ pub fn serialize_structure_crate_input_describe_trusted_advisor_check_refresh_st
         }
         array_45.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_trusted_advisor_check_result_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTrustedAdvisorCheckResultInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.check_id {
         object.key("checkId").string(var_47);
     }
     if let Some(var_48) = &input.language {
         object.key("language").string(var_48);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_trusted_advisor_checks_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTrustedAdvisorChecksInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.language {
         object.key("language").string(var_49);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_trusted_advisor_check_summaries_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTrustedAdvisorCheckSummariesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.check_ids {
         let mut array_51 = object.key("checkIds").start_array();
         for item_52 in var_50 {
@@ -235,30 +246,33 @@ pub fn serialize_structure_crate_input_describe_trusted_advisor_check_summaries_
         }
         array_51.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_refresh_trusted_advisor_check_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RefreshTrustedAdvisorCheckInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.check_id {
         object.key("checkId").string(var_53);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_resolve_case_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ResolveCaseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.case_id {
         object.key("caseId").string(var_54);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_attachment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Attachment,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.file_name {
         object.key("fileName").string(var_55);
     }
@@ -267,4 +281,5 @@ pub fn serialize_structure_crate_model_attachment(
             .key("data")
             .string_unchecked(&aws_smithy_types::base64::encode(var_56));
     }
+    Ok(())
 }

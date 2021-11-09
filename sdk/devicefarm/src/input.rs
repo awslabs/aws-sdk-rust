@@ -155,10 +155,7 @@ impl CreateDevicePoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_device_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_device_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -381,10 +378,7 @@ impl CreateInstanceProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_instance_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -685,10 +679,9 @@ impl CreateNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_network_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -851,10 +844,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1223,10 +1213,7 @@ impl CreateRemoteAccessSessionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_remote_access_session(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1405,10 +1392,7 @@ impl CreateTestGridProjectInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_test_grid_project(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1572,10 +1556,7 @@ impl CreateTestGridUrlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_test_grid_url(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_test_grid_url(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1968,10 +1949,7 @@ impl CreateUploadInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_upload(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_upload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2179,10 +2157,7 @@ impl CreateVpceConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_vpce_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2330,10 +2305,7 @@ impl DeleteDevicePoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_device_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_device_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2485,10 +2457,7 @@ impl DeleteInstanceProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_instance_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2636,10 +2605,9 @@ impl DeleteNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_network_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2786,10 +2754,7 @@ impl DeleteProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2942,10 +2907,7 @@ impl DeleteRemoteAccessSessionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_remote_access_session(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3090,10 +3052,7 @@ impl DeleteRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_run(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3243,10 +3202,7 @@ impl DeleteTestGridProjectInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_test_grid_project(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3393,10 +3349,7 @@ impl DeleteUploadInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_upload(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_upload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3549,10 +3502,7 @@ impl DeleteVpceConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_vpce_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3688,10 +3638,7 @@ impl GetAccountSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_account_settings(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_account_settings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3828,10 +3775,7 @@ impl GetDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3979,10 +3923,7 @@ impl GetDeviceInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_device_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_device_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4129,10 +4070,8 @@ impl GetDevicePoolInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_device_pool(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_device_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4456,7 +4395,7 @@ impl GetDevicePoolCompatibilityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_device_pool_compatibility(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_device_pool_compatibility(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4605,10 +4544,7 @@ impl GetInstanceProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_instance_profile(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_instance_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4753,10 +4689,7 @@ impl GetJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4902,10 +4835,7 @@ impl GetNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_network_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5057,10 +4987,7 @@ impl GetOfferingStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_offering_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_offering_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5207,10 +5134,7 @@ impl GetProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5362,10 +5286,7 @@ impl GetRemoteAccessSessionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_remote_access_session(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5510,10 +5431,7 @@ impl GetRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_run(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5656,10 +5574,7 @@ impl GetSuiteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_suite(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_suite(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5802,10 +5717,7 @@ impl GetTestInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_test(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_test(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5953,10 +5865,7 @@ impl GetTestGridProjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_test_grid_project(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_test_grid_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6130,10 +6039,7 @@ impl GetTestGridSessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_test_grid_session(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_test_grid_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6278,10 +6184,7 @@ impl GetUploadInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_upload(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_upload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6429,10 +6332,9 @@ impl GetVpceConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_vpce_configuration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_vpce_configuration(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6600,7 +6502,7 @@ impl InstallToRemoteAccessSessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_install_to_remote_access_session(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_install_to_remote_access_session(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6803,10 +6705,7 @@ impl ListArtifactsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_artifacts(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_artifacts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6970,10 +6869,7 @@ impl ListDeviceInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_device_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_device_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7174,10 +7070,7 @@ impl ListDevicePoolsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_device_pools(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_device_pools(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7541,10 +7434,7 @@ impl ListDevicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7708,10 +7598,9 @@ impl ListInstanceProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_instance_profiles(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_instance_profiles(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7872,10 +7761,7 @@ impl ListJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8054,10 +7940,7 @@ impl ListNetworkProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_network_profiles(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_network_profiles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8211,10 +8094,7 @@ impl ListOfferingPromotionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_offering_promotions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8365,10 +8245,7 @@ impl ListOfferingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_offerings(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_offerings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8523,10 +8400,7 @@ impl ListOfferingTransactionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_offering_transactions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8693,10 +8567,7 @@ impl ListProjectsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8865,10 +8736,7 @@ impl ListRemoteAccessSessionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_remote_access_sessions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9031,10 +8899,7 @@ impl ListRunsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_runs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_runs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9195,10 +9060,7 @@ impl ListSamplesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_samples(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_samples(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9361,10 +9223,7 @@ impl ListSuitesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_suites(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_suites(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9522,10 +9381,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9689,10 +9547,7 @@ impl ListTestGridProjectsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_test_grid_projects(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9867,7 +9722,7 @@ impl ListTestGridSessionActionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_test_grid_session_actions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_test_grid_session_actions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10058,7 +9913,7 @@ impl ListTestGridSessionArtifactsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_test_grid_session_artifacts(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_test_grid_session_artifacts(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10310,10 +10165,7 @@ impl ListTestGridSessionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_test_grid_sessions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10474,10 +10326,7 @@ impl ListTestsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tests(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tests(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10639,10 +10488,7 @@ impl ListUniqueProblemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_unique_problems(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_unique_problems(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11017,10 +10863,7 @@ impl ListUploadsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_uploads(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_uploads(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11186,10 +11029,7 @@ impl ListVpceConfigurationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_vpce_configurations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11366,10 +11206,7 @@ impl PurchaseOfferingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11530,10 +11367,7 @@ impl RenewOfferingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_renew_offering(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_renew_offering(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11807,10 +11641,7 @@ impl ScheduleRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_schedule_run(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_schedule_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11955,10 +11786,7 @@ impl StopJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12107,10 +11935,7 @@ impl StopRemoteAccessSessionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_remote_access_session(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12255,10 +12080,7 @@ impl StopRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_run(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12436,10 +12258,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12617,10 +12436,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12803,10 +12619,9 @@ impl UpdateDeviceInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_device_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_device_instance(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13051,10 +12866,7 @@ impl UpdateDevicePoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_device_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_device_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13289,10 +13101,7 @@ impl UpdateInstanceProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_instance_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13597,10 +13406,9 @@ impl UpdateNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_network_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13773,10 +13581,7 @@ impl UpdateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13967,10 +13772,7 @@ impl UpdateTestGridProjectInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_test_grid_project(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14157,10 +13959,7 @@ impl UpdateUploadInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_upload(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_upload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14382,10 +14181,7 @@ impl UpdateVpceConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_vpce_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14465,6 +14261,31 @@ pub struct UpdateVpceConfigurationInput {
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub vpce_configuration_description: std::option::Option<std::string::String>,
 }
+impl UpdateVpceConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
+    /// update.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
+    /// easily.</p>
+    pub fn vpce_configuration_name(&self) -> std::option::Option<&str> {
+        self.vpce_configuration_name.as_deref()
+    }
+    /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    pub fn vpce_service_name(&self) -> std::option::Option<&str> {
+        self.vpce_service_name.as_deref()
+    }
+    /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
+    /// be in use on the internet.</p>
+    pub fn service_dns_name(&self) -> std::option::Option<&str> {
+        self.service_dns_name.as_deref()
+    }
+    /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    pub fn vpce_configuration_description(&self) -> std::option::Option<&str> {
+        self.vpce_configuration_description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVpceConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVpceConfigurationInput");
@@ -14494,6 +14315,25 @@ pub struct UpdateUploadInput {
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
     pub edit_content: std::option::Option<bool>,
 }
+impl UpdateUploadInput {
+    /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
+    /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
+    pub fn edit_content(&self) -> std::option::Option<bool> {
+        self.edit_content
+    }
+}
 impl std::fmt::Debug for UpdateUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUploadInput");
@@ -14518,6 +14358,24 @@ pub struct UpdateTestGridProjectInput {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
 }
+impl UpdateTestGridProjectInput {
+    /// <p>ARN of the project to update.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>Human-readable name for the project.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Human-readable description for the project.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::TestGridVpcConfig> {
+        self.vpc_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTestGridProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTestGridProjectInput");
@@ -14539,6 +14397,20 @@ pub struct UpdateProjectInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
     pub default_job_timeout_minutes: std::option::Option<i32>,
+}
+impl UpdateProjectInput {
+    /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A string that represents the new name of the project that you are updating.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The number of minutes a test run in the project executes before it times out.</p>
+    pub fn default_job_timeout_minutes(&self) -> std::option::Option<i32> {
+        self.default_job_timeout_minutes
+    }
 }
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14592,6 +14464,66 @@ pub struct UpdateNetworkProfileInput {
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub downlink_loss_percent: i32,
 }
+impl UpdateNetworkProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
+    /// profile settings.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the network profile about which you are returning
+    /// information.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the network profile about which you are returning
+    /// information.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of network profile to return information about. Valid values are listed here.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkProfileType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to
+    /// 104857600.</p>
+    pub fn uplink_bandwidth_bits(&self) -> std::option::Option<i64> {
+        self.uplink_bandwidth_bits
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to
+    /// 104857600.</p>
+    pub fn downlink_bandwidth_bits(&self) -> std::option::Option<i64> {
+        self.downlink_bandwidth_bits
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
+    /// 2000.</p>
+    pub fn uplink_delay_ms(&self) -> std::option::Option<i64> {
+        self.uplink_delay_ms
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
+    /// 2000.</p>
+    pub fn downlink_delay_ms(&self) -> std::option::Option<i64> {
+        self.downlink_delay_ms
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
+    /// 0 to 2000.</p>
+    pub fn uplink_jitter_ms(&self) -> std::option::Option<i64> {
+        self.uplink_jitter_ms
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
+    /// 0 to 2000.</p>
+    pub fn downlink_jitter_ms(&self) -> std::option::Option<i64> {
+        self.downlink_jitter_ms
+    }
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
+    /// percent.</p>
+    pub fn uplink_loss_percent(&self) -> i32 {
+        self.uplink_loss_percent
+    }
+    /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    pub fn downlink_loss_percent(&self) -> i32 {
+        self.downlink_loss_percent
+    }
+}
 impl std::fmt::Debug for UpdateNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNetworkProfileInput");
@@ -14632,6 +14564,37 @@ pub struct UpdateInstanceProfileInput {
     /// <p>The updated choice for whether you want to reboot the device after use. The default
     /// value is <code>true</code>.</p>
     pub reboot_after_use: std::option::Option<bool>,
+}
+impl UpdateInstanceProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The updated name for your instance profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated description for your instance profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated choice for whether you want to specify package cleanup. The default value
+    /// is <code>false</code> for private devices.</p>
+    pub fn package_cleanup(&self) -> std::option::Option<bool> {
+        self.package_cleanup
+    }
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
+    /// after a test run is over.</p>
+    /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
+    /// <code>true</code>.</p>
+    pub fn exclude_app_packages_from_cleanup(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclude_app_packages_from_cleanup.as_deref()
+    }
+    /// <p>The updated choice for whether you want to reboot the device after use. The default
+    /// value is <code>true</code>.</p>
+    pub fn reboot_after_use(&self) -> std::option::Option<bool> {
+        self.reboot_after_use
+    }
 }
 impl std::fmt::Debug for UpdateInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14679,6 +14642,45 @@ pub struct UpdateDevicePoolInput {
     /// parameter in the same request.</p>
     pub clear_max_devices: std::option::Option<bool>,
 }
+impl UpdateDevicePoolInput {
+    /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A string that represents the name of the device pool to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the device pool to update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
+    /// your request, the update replaces the existing rules.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
+    /// devices that are available and that meet the criteria that you assign for the
+    /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
+    /// your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
+    /// by running tests.</p>
+    /// <p>If you use this parameter in your request, you cannot use the
+    /// <code>clearMaxDevices</code> parameter in the same request.</p>
+    pub fn max_devices(&self) -> std::option::Option<i32> {
+        self.max_devices
+    }
+    /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
+    /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
+    /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
+    /// that meet the criteria specified in the <code>rules</code> parameter.</p>
+    /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
+    /// parameter in the same request.</p>
+    pub fn clear_max_devices(&self) -> std::option::Option<bool> {
+        self.clear_max_devices
+    }
+}
 impl std::fmt::Debug for UpdateDevicePoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDevicePoolInput");
@@ -14703,6 +14705,20 @@ pub struct UpdateDeviceInstanceInput {
     /// <p>An array of strings that you want to associate with the device instance.</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateDeviceInstanceInput {
+    /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN of the profile that you want to associate with the device instance.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+    /// <p>An array of strings that you want to associate with the device instance.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeviceInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceInstanceInput");
@@ -14725,6 +14741,20 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
+    /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
+    /// <code>VPCE_CONFIGURATION</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14749,6 +14779,21 @@ pub struct TagResourceInput {
     /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
+    /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
+    /// <code>VPCE_CONFIGURATION</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
+    /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -14765,6 +14810,12 @@ pub struct StopRunInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl StopRunInput {
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StopRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopRunInput");
@@ -14780,6 +14831,12 @@ pub struct StopRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl StopRemoteAccessSessionInput {
+    /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StopRemoteAccessSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopRemoteAccessSessionInput");
@@ -14794,6 +14851,12 @@ impl std::fmt::Debug for StopRemoteAccessSessionInput {
 pub struct StopJobInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl StopJobInput {
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14834,6 +14897,53 @@ pub struct ScheduleRunInput {
     /// (in minutes).</p>
     pub execution_configuration: std::option::Option<crate::model::ExecutionConfiguration>,
 }
+impl ScheduleRunInput {
+    /// <p>The ARN of the project for the run to be scheduled.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
+    /// See <a>ListUploads</a>.</p>
+    pub fn app_arn(&self) -> std::option::Option<&str> {
+        self.app_arn.as_deref()
+    }
+    /// <p>The ARN of the device pool for the run to be scheduled.</p>
+    pub fn device_pool_arn(&self) -> std::option::Option<&str> {
+        self.device_pool_arn.as_deref()
+    }
+    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
+    /// devices to be included in the run.</p>
+    /// <p>Either <b>
+    /// <code>devicePoolArn</code>
+    /// </b> or <b>
+    /// <code>deviceSelectionConfiguration</code>
+    /// </b> is required in a
+    /// request.</p>
+    pub fn device_selection_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceSelectionConfiguration> {
+        self.device_selection_configuration.as_ref()
+    }
+    /// <p>The name for the run to be scheduled.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the test for the run to be scheduled.</p>
+    pub fn test(&self) -> std::option::Option<&crate::model::ScheduleRunTest> {
+        self.test.as_ref()
+    }
+    /// <p>Information about the settings for the run to be scheduled.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ScheduleRunConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>Specifies configuration information about a test run, such as the execution timeout
+    /// (in minutes).</p>
+    pub fn execution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionConfiguration> {
+        self.execution_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ScheduleRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduleRunInput");
@@ -14861,6 +14971,16 @@ pub struct RenewOfferingInput {
     /// <p>The quantity requested in an offering renewal.</p>
     pub quantity: std::option::Option<i32>,
 }
+impl RenewOfferingInput {
+    /// <p>The ID of a request to renew an offering.</p>
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// <p>The quantity requested in an offering renewal.</p>
+    pub fn quantity(&self) -> std::option::Option<i32> {
+        self.quantity
+    }
+}
 impl std::fmt::Debug for RenewOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RenewOfferingInput");
@@ -14881,6 +15001,20 @@ pub struct PurchaseOfferingInput {
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
     pub offering_promotion_id: std::option::Option<std::string::String>,
 }
+impl PurchaseOfferingInput {
+    /// <p>The ID of the offering.</p>
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// <p>The number of device slots to purchase in an offering request.</p>
+    pub fn quantity(&self) -> std::option::Option<i32> {
+        self.quantity
+    }
+    /// <p>The ID of the offering promotion to be applied to the purchase.</p>
+    pub fn offering_promotion_id(&self) -> std::option::Option<&str> {
+        self.offering_promotion_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PurchaseOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseOfferingInput");
@@ -14900,6 +15034,17 @@ pub struct ListVpceConfigurationsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpceConfigurationsInput {
+    /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVpceConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15022,6 +15167,121 @@ pub struct ListUploadsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUploadsInput {
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
+    /// uploads.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of upload.</p>
+    /// <p>Must be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ANDROID_APP</p>
+    /// </li>
+    /// <li>
+    /// <p>IOS_APP</p>
+    /// </li>
+    /// <li>
+    /// <p>WEB_APP</p>
+    /// </li>
+    /// <li>
+    /// <p>EXTERNAL_DATA</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>CALABASH_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p> APPIUM_RUBY_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_SPEC</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UploadType> {
+        self.r#type.as_ref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUploadsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUploadsInput");
@@ -15042,6 +15302,17 @@ pub struct ListUniqueProblemsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUniqueProblemsInput {
+    /// <p>The unique problems' ARNs.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUniqueProblemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUniqueProblemsInput");
@@ -15060,6 +15331,17 @@ pub struct ListTestsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTestsInput {
+    /// <p>The test suite's Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTestsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15091,6 +15373,40 @@ pub struct ListTestGridSessionsInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTestGridSessionsInput {
+    /// <p>ARN of a <a>TestGridProject</a>.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>Return only sessions in this state.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TestGridSessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Return only sessions created after this time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Return only  sessions created before this time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Return only sessions that ended after this time.</p>
+    pub fn end_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time_after.as_ref()
+    }
+    /// <p>Return only sessions that ended before this time.</p>
+    pub fn end_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time_before.as_ref()
+    }
+    /// <p>Return only this many results at a time.</p>
+    pub fn max_result(&self) -> std::option::Option<i32> {
+        self.max_result
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTestGridSessionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTestGridSessionsInput");
@@ -15119,6 +15435,24 @@ pub struct ListTestGridSessionArtifactsInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTestGridSessionArtifactsInput {
+    /// <p>The ARN of a <a>TestGridSession</a>. </p>
+    pub fn session_arn(&self) -> std::option::Option<&str> {
+        self.session_arn.as_deref()
+    }
+    /// <p>Limit results to a specified type of artifact.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TestGridSessionArtifactCategory> {
+        self.r#type.as_ref()
+    }
+    /// <p>The maximum number of results to be returned by a request.</p>
+    pub fn max_result(&self) -> std::option::Option<i32> {
+        self.max_result
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTestGridSessionArtifactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTestGridSessionArtifactsInput");
@@ -15141,6 +15475,20 @@ pub struct ListTestGridSessionActionsInput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTestGridSessionActionsInput {
+    /// <p>The ARN of the session to retrieve.</p>
+    pub fn session_arn(&self) -> std::option::Option<&str> {
+        self.session_arn.as_deref()
+    }
+    /// <p>The maximum number of sessions to return per response.</p>
+    pub fn max_result(&self) -> std::option::Option<i32> {
+        self.max_result
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTestGridSessionActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTestGridSessionActionsInput");
@@ -15159,6 +15507,16 @@ pub struct ListTestGridProjectsInput {
     pub max_result: std::option::Option<i32>,
     /// <p>From a response, used to continue a paginated listing. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTestGridProjectsInput {
+    /// <p>Return no more than this number of results.</p>
+    pub fn max_result(&self) -> std::option::Option<i32> {
+        self.max_result
+    }
+    /// <p>From a response, used to continue a paginated listing. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTestGridProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15180,6 +15538,16 @@ pub struct ListTagsForResourceInput {
     /// <code>VPCE_CONFIGURATION</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
+    /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
+    /// <code>VPCE_CONFIGURATION</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -15197,6 +15565,17 @@ pub struct ListSuitesInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSuitesInput {
+    /// <p>The job's Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSuitesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15217,6 +15596,17 @@ pub struct ListSamplesInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSamplesInput {
+    /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSamplesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSamplesInput");
@@ -15236,6 +15626,18 @@ pub struct ListRunsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRunsInput {
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
+    /// runs.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15258,6 +15660,18 @@ pub struct ListRemoteAccessSessionsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRemoteAccessSessionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+    /// information.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRemoteAccessSessionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRemoteAccessSessionsInput");
@@ -15279,6 +15693,19 @@ pub struct ListProjectsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProjectsInput {
+    /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+    /// returns a list of all projects for the AWS account. You can also specify a project
+    /// ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsInput");
@@ -15296,6 +15723,13 @@ pub struct ListOfferingTransactionsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOfferingTransactionsInput {
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOfferingTransactionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingTransactionsInput");
@@ -15312,6 +15746,13 @@ pub struct ListOfferingsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOfferingsInput {
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingsInput");
@@ -15327,6 +15768,13 @@ pub struct ListOfferingPromotionsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOfferingPromotionsInput {
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOfferingPromotionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15349,6 +15797,22 @@ pub struct ListNetworkProfilesInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListNetworkProfilesInput {
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
+    /// profiles.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of network profile to return information about. Valid values are listed here.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkProfileType> {
+        self.r#type.as_ref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNetworkProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNetworkProfilesInput");
@@ -15369,6 +15833,17 @@ pub struct ListJobsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobsInput {
+    /// <p>The run's Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -15387,6 +15862,17 @@ pub struct ListInstanceProfilesInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInstanceProfilesInput {
+    /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstanceProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15499,6 +15985,111 @@ pub struct ListDevicesInput {
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
 }
+impl ListDevicesInput {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
+    /// one or more values.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Attribute: The aspect of a device such as platform or model used as the
+    /// selection criteria in a device filter.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
+    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
+    /// </li>
+    /// <li>
+    /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
+    /// </li>
+    /// <li>
+    /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
+    /// </li>
+    /// <li>
+    /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
+    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// </li>
+    /// <li>
+    /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
+    /// </li>
+    /// <li>
+    /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
+    /// </li>
+    /// <li>
+    /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
+    /// are TRUE or FALSE.</p>
+    /// </li>
+    /// <li>
+    /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
+    /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+    /// longer supported</a>, this attribute is ignored.</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
+    /// instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTANCE_LABELS: The label of the device instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Operator: The filter operator.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The EQUALS operator is available for every attribute except
+    /// INSTANCE_LABELS.</p>
+    /// </li>
+    /// <li>
+    /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
+    /// attributes.</p>
+    /// </li>
+    /// <li>
+    /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+    /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
+    /// </li>
+    /// <li>
+    /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
+    /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
+    /// attribute.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Values: An array of one or more filter values.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The IN and NOT_IN operators take a values array that has one or more
+    /// elements.</p>
+    /// </li>
+    /// <li>
+    /// <p>The other operators require an array with a single element.</p>
+    /// </li>
+    /// <li>
+    /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
+    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::DeviceFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesInput");
@@ -15532,6 +16123,32 @@ pub struct ListDevicePoolsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDevicePoolsInput {
+    /// <p>The project ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The device pools' type.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CURATED: A device pool that is created and managed by AWS Device
+    /// Farm.</p>
+    /// </li>
+    /// <li>
+    /// <p>PRIVATE: A device pool that is created and managed by the device pool
+    /// developer.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DevicePoolType> {
+        self.r#type.as_ref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicePoolsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicePoolsInput");
@@ -15551,6 +16168,17 @@ pub struct ListDeviceInstancesInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeviceInstancesInput {
+    /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeviceInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15585,6 +16213,33 @@ pub struct ListArtifactsInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListArtifactsInput {
+    /// <p>The run, job, suite, or test ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The artifacts' type.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>FILE</p>
+    /// </li>
+    /// <li>
+    /// <p>LOG</p>
+    /// </li>
+    /// <li>
+    /// <p>SCREENSHOT</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ArtifactCategory> {
+        self.r#type.as_ref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListArtifactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListArtifactsInput");
@@ -15606,6 +16261,17 @@ pub struct InstallToRemoteAccessSessionInput {
     /// <p>The ARN of the app about which you are requesting information.</p>
     pub app_arn: std::option::Option<std::string::String>,
 }
+impl InstallToRemoteAccessSessionInput {
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
+    /// requesting information.</p>
+    pub fn remote_access_session_arn(&self) -> std::option::Option<&str> {
+        self.remote_access_session_arn.as_deref()
+    }
+    /// <p>The ARN of the app about which you are requesting information.</p>
+    pub fn app_arn(&self) -> std::option::Option<&str> {
+        self.app_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for InstallToRemoteAccessSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstallToRemoteAccessSessionInput");
@@ -15623,6 +16289,13 @@ pub struct GetVpceConfigurationInput {
     /// describe.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetVpceConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
+    /// describe.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVpceConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpceConfigurationInput");
@@ -15637,6 +16310,12 @@ impl std::fmt::Debug for GetVpceConfigurationInput {
 pub struct GetUploadInput {
     /// <p>The upload's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetUploadInput {
+    /// <p>The upload's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15657,6 +16336,20 @@ pub struct GetTestGridSessionInput {
     /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
     pub session_arn: std::option::Option<std::string::String>,
 }
+impl GetTestGridSessionInput {
+    /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>An ID associated with this session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+    pub fn session_arn(&self) -> std::option::Option<&str> {
+        self.session_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTestGridSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTestGridSessionInput");
@@ -15674,6 +16367,12 @@ pub struct GetTestGridProjectInput {
     /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
     pub project_arn: std::option::Option<std::string::String>,
 }
+impl GetTestGridProjectInput {
+    /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTestGridProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTestGridProjectInput");
@@ -15688,6 +16387,12 @@ impl std::fmt::Debug for GetTestGridProjectInput {
 pub struct GetTestInput {
     /// <p>The test's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetTestInput {
+    /// <p>The test's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15704,6 +16409,12 @@ pub struct GetSuiteInput {
     /// <p>The suite's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetSuiteInput {
+    /// <p>The suite's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSuiteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSuiteInput");
@@ -15718,6 +16429,12 @@ impl std::fmt::Debug for GetSuiteInput {
 pub struct GetRunInput {
     /// <p>The run's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetRunInput {
+    /// <p>The run's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15736,6 +16453,13 @@ pub struct GetRemoteAccessSessionInput {
     /// get session information.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetRemoteAccessSessionInput {
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
+    /// get session information.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRemoteAccessSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRemoteAccessSessionInput");
@@ -15750,6 +16474,12 @@ impl std::fmt::Debug for GetRemoteAccessSessionInput {
 pub struct GetProjectInput {
     /// <p>The project's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetProjectInput {
+    /// <p>The project's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15768,6 +16498,13 @@ pub struct GetOfferingStatusInput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetOfferingStatusInput {
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOfferingStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOfferingStatusInput");
@@ -15782,6 +16519,12 @@ impl std::fmt::Debug for GetOfferingStatusInput {
 pub struct GetNetworkProfileInput {
     /// <p>The ARN of the network profile to return information about.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetNetworkProfileInput {
+    /// <p>The ARN of the network profile to return information about.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15798,6 +16541,12 @@ pub struct GetJobInput {
     /// <p>The job's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetJobInput {
+    /// <p>The job's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobInput");
@@ -15812,6 +16561,12 @@ impl std::fmt::Debug for GetJobInput {
 pub struct GetInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetInstanceProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15894,6 +16649,86 @@ pub struct GetDevicePoolCompatibilityInput {
     /// <p>An object that contains information about the settings for a run.</p>
     pub configuration: std::option::Option<crate::model::ScheduleRunConfiguration>,
 }
+impl GetDevicePoolCompatibilityInput {
+    /// <p>The device pool's ARN.</p>
+    pub fn device_pool_arn(&self) -> std::option::Option<&str> {
+        self.device_pool_arn.as_deref()
+    }
+    /// <p>The ARN of the app that is associated with the specified device pool.</p>
+    pub fn app_arn(&self) -> std::option::Option<&str> {
+        self.app_arn.as_deref()
+    }
+    /// <p>The test type for the specified device pool.</p>
+    /// <p>Allowed values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>BUILTIN_FUZZ.</p>
+    /// </li>
+    /// <li>
+    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
+    /// it and capturing screenshots at the same time.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_PYTHON.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_NODE.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_RUBY.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE.</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY.</p>
+    /// </li>
+    /// <li>
+    /// <p>CALABASH.</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTRUMENTATION.</p>
+    /// </li>
+    /// <li>
+    /// <p>UIAUTOMATION.</p>
+    /// </li>
+    /// <li>
+    /// <p>UIAUTOMATOR.</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST.</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST_UI.</p>
+    /// </li>
+    /// </ul>
+    pub fn test_type(&self) -> std::option::Option<&crate::model::TestType> {
+        self.test_type.as_ref()
+    }
+    /// <p>Information about the uploaded test to be run against the device pool.</p>
+    pub fn test(&self) -> std::option::Option<&crate::model::ScheduleRunTest> {
+        self.test.as_ref()
+    }
+    /// <p>An object that contains information about the settings for a run.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ScheduleRunConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDevicePoolCompatibilityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicePoolCompatibilityInput");
@@ -15913,6 +16748,12 @@ pub struct GetDevicePoolInput {
     /// <p>The device pool's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetDevicePoolInput {
+    /// <p>The device pool's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDevicePoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicePoolInput");
@@ -15929,6 +16770,13 @@ pub struct GetDeviceInstanceInput {
     /// about.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetDeviceInstanceInput {
+    /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
+    /// about.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceInstanceInput");
@@ -15943,6 +16791,12 @@ impl std::fmt::Debug for GetDeviceInstanceInput {
 pub struct GetDeviceInput {
     /// <p>The device type's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetDeviceInput {
+    /// <p>The device type's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15971,6 +16825,13 @@ pub struct DeleteVpceConfigurationInput {
     /// delete.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteVpceConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
+    /// delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVpceConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVpceConfigurationInput");
@@ -15985,6 +16846,12 @@ impl std::fmt::Debug for DeleteVpceConfigurationInput {
 pub struct DeleteUploadInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteUploadInput {
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16001,6 +16868,12 @@ pub struct DeleteTestGridProjectInput {
     /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
     pub project_arn: std::option::Option<std::string::String>,
 }
+impl DeleteTestGridProjectInput {
+    /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTestGridProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTestGridProjectInput");
@@ -16015,6 +16888,12 @@ impl std::fmt::Debug for DeleteTestGridProjectInput {
 pub struct DeleteRunInput {
     /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteRunInput {
+    /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16032,6 +16911,13 @@ pub struct DeleteRemoteAccessSessionInput {
     /// access.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteRemoteAccessSessionInput {
+    /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
+    /// access.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRemoteAccessSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRemoteAccessSessionInput");
@@ -16047,6 +16933,12 @@ pub struct DeleteProjectInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteProjectInput {
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectInput");
@@ -16061,6 +16953,12 @@ impl std::fmt::Debug for DeleteProjectInput {
 pub struct DeleteNetworkProfileInput {
     /// <p>The ARN of the network profile to delete.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteNetworkProfileInput {
+    /// <p>The ARN of the network profile to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16078,6 +16976,13 @@ pub struct DeleteInstanceProfileInput {
     /// delete.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteInstanceProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
+    /// delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInstanceProfileInput");
@@ -16092,6 +16997,12 @@ impl std::fmt::Debug for DeleteInstanceProfileInput {
 pub struct DeleteDevicePoolInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteDevicePoolInput {
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDevicePoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16115,6 +17026,26 @@ pub struct CreateVpceConfigurationInput {
     pub service_dns_name: std::option::Option<std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub vpce_configuration_description: std::option::Option<std::string::String>,
+}
+impl CreateVpceConfigurationInput {
+    /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
+    /// configurations more easily.</p>
+    pub fn vpce_configuration_name(&self) -> std::option::Option<&str> {
+        self.vpce_configuration_name.as_deref()
+    }
+    /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    pub fn vpce_service_name(&self) -> std::option::Option<&str> {
+        self.vpce_service_name.as_deref()
+    }
+    /// <p>The DNS name of the service running in your VPC that you want Device Farm to
+    /// test.</p>
+    pub fn service_dns_name(&self) -> std::option::Option<&str> {
+        self.service_dns_name.as_deref()
+    }
+    /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    pub fn vpce_configuration_description(&self) -> std::option::Option<&str> {
+        self.vpce_configuration_description.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVpceConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16247,6 +17178,128 @@ pub struct CreateUploadInput {
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub content_type: std::option::Option<std::string::String>,
 }
+impl CreateUploadInput {
+    /// <p>The ARN of the project for the upload.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
+    /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
+    /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
+    /// end with the <code>.zip</code> file extension.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The upload's upload type.</p>
+    /// <p>Must be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ANDROID_APP</p>
+    /// </li>
+    /// <li>
+    /// <p>IOS_APP</p>
+    /// </li>
+    /// <li>
+    /// <p>WEB_APP</p>
+    /// </li>
+    /// <li>
+    /// <p>EXTERNAL_DATA</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>CALABASH_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_PACKAGE</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_SPEC</p>
+    /// </li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_SPEC</p>
+    /// </li>
+    /// </ul>
+    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
+    /// Device Farm throws an <code>ArgumentException</code> error.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UploadType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUploadInput");
@@ -16268,6 +17321,17 @@ pub struct CreateTestGridUrlInput {
     /// <p>Lifetime, in seconds, of the URL.</p>
     pub expires_in_seconds: std::option::Option<i32>,
 }
+impl CreateTestGridUrlInput {
+    /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
+    /// with the short-term URL. </p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>Lifetime, in seconds, of the URL.</p>
+    pub fn expires_in_seconds(&self) -> std::option::Option<i32> {
+        self.expires_in_seconds
+    }
+}
 impl std::fmt::Debug for CreateTestGridUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTestGridUrlInput");
@@ -16287,6 +17351,20 @@ pub struct CreateTestGridProjectInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
+}
+impl CreateTestGridProjectInput {
+    /// <p>Human-readable name of the Selenium testing project.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Human-readable description of the project.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::TestGridVpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTestGridProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16361,6 +17439,92 @@ pub struct CreateRemoteAccessSessionInput {
     /// </p>
     pub skip_app_resign: std::option::Option<bool>,
 }
+impl CreateRemoteAccessSessionInput {
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
+    /// access session.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The ARN of the device for which you want to create a remote access session.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
+    /// remote access session.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
+    /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
+    /// set to <code>true</code>.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+    /// longer supported</a>.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
+    /// your remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+    /// longer supported</a>.</p>
+    pub fn remote_debug_enabled(&self) -> std::option::Option<bool> {
+        self.remote_debug_enabled
+    }
+    /// <p>Set to <code>true</code> to enable remote recording for the remote access
+    /// session.</p>
+    pub fn remote_record_enabled(&self) -> std::option::Option<bool> {
+        self.remote_record_enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
+    /// session.</p>
+    pub fn remote_record_app_arn(&self) -> std::option::Option<&str> {
+        self.remote_record_app_arn.as_deref()
+    }
+    /// <p>The name of the remote access session to create.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
+    /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
+    /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+    /// longer supported</a>.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The configuration information for the remote access session request.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateRemoteAccessSessionConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The interaction mode of the remote access session. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
+    /// rotating the screen. You cannot run XCUITest framework-based tests in this
+    /// mode.</p>
+    /// </li>
+    /// <li>
+    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
+    /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
+    /// mode.</p>
+    /// </li>
+    /// <li>
+    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
+    /// framework-based tests and watch the screen in this mode.</p>
+    /// </li>
+    /// </ul>
+    pub fn interaction_mode(&self) -> std::option::Option<&crate::model::InteractionMode> {
+        self.interaction_mode.as_ref()
+    }
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+    /// devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
+    /// </p>
+    pub fn skip_app_resign(&self) -> std::option::Option<bool> {
+        self.skip_app_resign
+    }
+}
 impl std::fmt::Debug for CreateRemoteAccessSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRemoteAccessSessionInput");
@@ -16389,6 +17553,17 @@ pub struct CreateProjectInput {
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
     /// specified execution timeout value unless overridden when scheduling a run.</p>
     pub default_job_timeout_minutes: std::option::Option<i32>,
+}
+impl CreateProjectInput {
+    /// <p>The project's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
+    /// specified execution timeout value unless overridden when scheduling a run.</p>
+    pub fn default_job_timeout_minutes(&self) -> std::option::Option<i32> {
+        self.default_job_timeout_minutes
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16439,6 +17614,64 @@ pub struct CreateNetworkProfileInput {
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub downlink_loss_percent: i32,
 }
+impl CreateNetworkProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
+    /// network profile.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The name for the new network profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the network profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of network profile to create. Valid values are listed here.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkProfileType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to
+    /// 104857600.</p>
+    pub fn uplink_bandwidth_bits(&self) -> std::option::Option<i64> {
+        self.uplink_bandwidth_bits
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to
+    /// 104857600.</p>
+    pub fn downlink_bandwidth_bits(&self) -> std::option::Option<i64> {
+        self.downlink_bandwidth_bits
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
+    /// 2000.</p>
+    pub fn uplink_delay_ms(&self) -> std::option::Option<i64> {
+        self.uplink_delay_ms
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
+    /// 2000.</p>
+    pub fn downlink_delay_ms(&self) -> std::option::Option<i64> {
+        self.downlink_delay_ms
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
+    /// 0 to 2000.</p>
+    pub fn uplink_jitter_ms(&self) -> std::option::Option<i64> {
+        self.uplink_jitter_ms
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
+    /// 0 to 2000.</p>
+    pub fn downlink_jitter_ms(&self) -> std::option::Option<i64> {
+        self.downlink_jitter_ms
+    }
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
+    /// percent.</p>
+    pub fn uplink_loss_percent(&self) -> i32 {
+        self.uplink_loss_percent
+    }
+    /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    pub fn downlink_loss_percent(&self) -> i32 {
+        self.downlink_loss_percent
+    }
+}
 impl std::fmt::Debug for CreateNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkProfileInput");
@@ -16478,6 +17711,33 @@ pub struct CreateInstanceProfileInput {
     /// <code>true</code>.</p>
     pub reboot_after_use: std::option::Option<bool>,
 }
+impl CreateInstanceProfileInput {
+    /// <p>The name of your instance profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of your instance profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
+    /// <code>false</code> for private devices.</p>
+    pub fn package_cleanup(&self) -> std::option::Option<bool> {
+        self.package_cleanup
+    }
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
+    /// after a test run.</p>
+    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
+    /// <code>true</code>.</p>
+    pub fn exclude_app_packages_from_cleanup(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclude_app_packages_from_cleanup.as_deref()
+    }
+    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
+    /// <code>true</code>.</p>
+    pub fn reboot_after_use(&self) -> std::option::Option<bool> {
+        self.reboot_after_use
+    }
+}
 impl std::fmt::Debug for CreateInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceProfileInput");
@@ -16512,6 +17772,33 @@ pub struct CreateDevicePoolInput {
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur
     /// by running tests.</p>
     pub max_devices: std::option::Option<i32>,
+}
+impl CreateDevicePoolInput {
+    /// <p>The ARN of the project for the device pool.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The device pool's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The device pool's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The device pool's rules.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+    /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
+    /// devices meet these constraints, your device pool might contain fewer devices than the value for this
+    /// parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
+    /// by running tests.</p>
+    pub fn max_devices(&self) -> std::option::Option<i32> {
+        self.max_devices
+    }
 }
 impl std::fmt::Debug for CreateDevicePoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

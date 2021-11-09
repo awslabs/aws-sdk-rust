@@ -186,6 +186,12 @@ pub struct TestWirelessDeviceOutput {
     /// <p>The result returned by the test.</p>
     pub result: std::option::Option<std::string::String>,
 }
+impl TestWirelessDeviceOutput {
+    /// <p>The result returned by the test.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+}
 impl std::fmt::Debug for TestWirelessDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestWirelessDeviceOutput");
@@ -263,6 +269,12 @@ impl TagResourceOutput {
 pub struct SendDataToWirelessDeviceOutput {
     /// <p>The ID of the message sent to the wireless device.</p>
     pub message_id: std::option::Option<std::string::String>,
+}
+impl SendDataToWirelessDeviceOutput {
+    /// <p>The ID of the message sent to the wireless device.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SendDataToWirelessDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -405,6 +417,18 @@ pub struct ListWirelessGatewayTaskDefinitionsOutput {
     pub task_definitions:
         std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
 }
+impl ListWirelessGatewayTaskDefinitionsOutput {
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of task definitions.</p>
+    pub fn task_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateWirelessGatewayTaskEntry]> {
+        self.task_definitions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWirelessGatewayTaskDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWirelessGatewayTaskDefinitionsOutput");
@@ -481,6 +505,18 @@ pub struct ListWirelessGatewaysOutput {
     /// <p>The ID of the wireless gateway.</p>
     pub wireless_gateway_list:
         std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
+}
+impl ListWirelessGatewaysOutput {
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn wireless_gateway_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::WirelessGatewayStatistics]> {
+        self.wireless_gateway_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWirelessGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -559,6 +595,18 @@ pub struct ListWirelessDevicesOutput {
     pub wireless_device_list:
         std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
 }
+impl ListWirelessDevicesOutput {
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn wireless_device_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::WirelessDeviceStatistics]> {
+        self.wireless_device_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWirelessDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWirelessDevicesOutput");
@@ -633,6 +681,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -689,6 +743,16 @@ pub struct ListServiceProfilesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of service profiles.</p>
     pub service_profile_list: std::option::Option<std::vec::Vec<crate::model::ServiceProfile>>,
+}
+impl ListServiceProfilesOutput {
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of service profiles.</p>
+    pub fn service_profile_list(&self) -> std::option::Option<&[crate::model::ServiceProfile]> {
+        self.service_profile_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServiceProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -766,6 +830,18 @@ pub struct ListPartnerAccountsOutput {
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk:
         std::option::Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>,
+}
+impl ListPartnerAccountsOutput {
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn sidewalk(
+        &self,
+    ) -> std::option::Option<&[crate::model::SidewalkAccountInfoWithFingerprint]> {
+        self.sidewalk.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPartnerAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -845,6 +921,16 @@ pub struct ListDeviceProfilesOutput {
     /// <p>The list of device profiles.</p>
     pub device_profile_list: std::option::Option<std::vec::Vec<crate::model::DeviceProfile>>,
 }
+impl ListDeviceProfilesOutput {
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of device profiles.</p>
+    pub fn device_profile_list(&self) -> std::option::Option<&[crate::model::DeviceProfile]> {
+        self.device_profile_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeviceProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceProfilesOutput");
@@ -921,6 +1007,16 @@ pub struct ListDestinationsOutput {
     /// <p>The list of destinations.</p>
     pub destination_list: std::option::Option<std::vec::Vec<crate::model::Destinations>>,
 }
+impl ListDestinationsOutput {
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of destinations.</p>
+    pub fn destination_list(&self) -> std::option::Option<&[crate::model::Destinations]> {
+        self.destination_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDestinationsOutput");
@@ -996,6 +1092,24 @@ pub struct GetWirelessGatewayTaskDefinitionOutput {
     pub update: std::option::Option<crate::model::UpdateWirelessGatewayTaskCreate>,
     /// <p>The Amazon Resource Name of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetWirelessGatewayTaskDefinitionOutput {
+    /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
+    pub fn auto_create_tasks(&self) -> bool {
+        self.auto_create_tasks
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the gateways to update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::UpdateWirelessGatewayTaskCreate> {
+        self.update.as_ref()
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1094,6 +1208,28 @@ pub struct GetWirelessGatewayTaskOutput {
     pub task_created_at: std::option::Option<std::string::String>,
     /// <p>The status of the request.</p>
     pub status: std::option::Option<crate::model::WirelessGatewayTaskStatus>,
+}
+impl GetWirelessGatewayTaskOutput {
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn wireless_gateway_id(&self) -> std::option::Option<&str> {
+        self.wireless_gateway_id.as_deref()
+    }
+    /// <p>The ID of the WirelessGatewayTask.</p>
+    pub fn wireless_gateway_task_definition_id(&self) -> std::option::Option<&str> {
+        self.wireless_gateway_task_definition_id.as_deref()
+    }
+    /// <p>The date and time when the most recent uplink was received.</p>
+    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+        self.last_uplink_received_at.as_deref()
+    }
+    /// <p>The date and time when the task was created.</p>
+    pub fn task_created_at(&self) -> std::option::Option<&str> {
+        self.task_created_at.as_deref()
+    }
+    /// <p>The status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::WirelessGatewayTaskStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetWirelessGatewayTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1220,6 +1356,20 @@ pub struct GetWirelessGatewayStatisticsOutput {
     /// <p>The connection status of the wireless gateway.</p>
     pub connection_status: std::option::Option<crate::model::ConnectionStatus>,
 }
+impl GetWirelessGatewayStatisticsOutput {
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn wireless_gateway_id(&self) -> std::option::Option<&str> {
+        self.wireless_gateway_id.as_deref()
+    }
+    /// <p>The date and time when the most recent uplink was received.</p>
+    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+        self.last_uplink_received_at.as_deref()
+    }
+    /// <p>The connection status of the wireless gateway.</p>
+    pub fn connection_status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWirelessGatewayStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessGatewayStatisticsOutput");
@@ -1303,6 +1453,12 @@ pub struct GetWirelessGatewayFirmwareInformationOutput {
     /// <p>Information about the wireless gateway's firmware.</p>
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGatewayCurrentVersion>,
 }
+impl GetWirelessGatewayFirmwareInformationOutput {
+    /// <p>Information about the wireless gateway's firmware.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGatewayCurrentVersion> {
+        self.lo_ra_wan.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessGatewayFirmwareInformationOutput");
@@ -1355,6 +1511,16 @@ pub struct GetWirelessGatewayCertificateOutput {
     pub iot_certificate_id: std::option::Option<std::string::String>,
     /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
     pub lo_ra_wan_network_server_certificate_id: std::option::Option<std::string::String>,
+}
+impl GetWirelessGatewayCertificateOutput {
+    /// <p>The ID of the certificate associated with the wireless gateway.</p>
+    pub fn iot_certificate_id(&self) -> std::option::Option<&str> {
+        self.iot_certificate_id.as_deref()
+    }
+    /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
+    pub fn lo_ra_wan_network_server_certificate_id(&self) -> std::option::Option<&str> {
+        self.lo_ra_wan_network_server_certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWirelessGatewayCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1442,6 +1608,36 @@ pub struct GetWirelessGatewayOutput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing associated with the wireless gateway.</p>
     pub thing_arn: std::option::Option<std::string::String>,
+}
+impl GetWirelessGatewayOutput {
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the wireless gateway.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGateway> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the thing associated with the wireless gateway.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWirelessGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1578,6 +1774,24 @@ pub struct GetWirelessDeviceStatisticsOutput {
     /// <p>MetaData for Sidewalk device.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkDeviceMetadata>,
 }
+impl GetWirelessDeviceStatisticsOutput {
+    /// <p>The ID of the wireless device.</p>
+    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+        self.wireless_device_id.as_deref()
+    }
+    /// <p>The date and time when the most recent uplink was received.</p>
+    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+        self.last_uplink_received_at.as_deref()
+    }
+    /// <p>Information about the wireless device's operations.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDeviceMetadata> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>MetaData for Sidewalk device.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkDeviceMetadata> {
+        self.sidewalk.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWirelessDeviceStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessDeviceStatisticsOutput");
@@ -1694,6 +1908,48 @@ pub struct GetWirelessDeviceOutput {
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanDevice>,
     /// <p>Sidewalk device object.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkDevice>,
+}
+impl GetWirelessDeviceOutput {
+    /// <p>The wireless device type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the destination to which the device is assigned.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the thing associated with the wireless device.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>Information about the wireless device.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDevice> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>Sidewalk device object.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkDevice> {
+        self.sidewalk.as_ref()
+    }
 }
 impl std::fmt::Debug for GetWirelessDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1878,6 +2134,24 @@ pub struct GetServiceProfileOutput {
     /// <p>Information about the service profile.</p>
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGetServiceProfileInfo>,
 }
+impl GetServiceProfileOutput {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the service profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Information about the service profile.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGetServiceProfileInfo> {
+        self.lo_ra_wan.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServiceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceProfileOutput");
@@ -1972,6 +2246,20 @@ pub struct GetServiceEndpointOutput {
     /// <p>The Root CA of the server trust certificate.</p>
     pub server_trust: std::option::Option<std::string::String>,
 }
+impl GetServiceEndpointOutput {
+    /// <p>The endpoint's service type.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::WirelessGatewayServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>The service endpoint value.</p>
+    pub fn service_endpoint(&self) -> std::option::Option<&str> {
+        self.service_endpoint.as_deref()
+    }
+    /// <p>The Root CA of the server trust certificate.</p>
+    pub fn server_trust(&self) -> std::option::Option<&str> {
+        self.server_trust.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceEndpointOutput");
@@ -2052,6 +2340,12 @@ pub struct GetResourceLogLevelOutput {
     /// <p>The log level for a log message.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
+impl GetResourceLogLevelOutput {
+    /// <p>The log level for a log message.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResourceLogLevelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceLogLevelOutput");
@@ -2101,6 +2395,18 @@ pub struct GetPartnerAccountOutput {
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>,
     /// <p>Whether the partner account is linked to the AWS account.</p>
     pub account_linked: bool,
+}
+impl GetPartnerAccountOutput {
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn sidewalk(
+        &self,
+    ) -> std::option::Option<&crate::model::SidewalkAccountInfoWithFingerprint> {
+        self.sidewalk.as_ref()
+    }
+    /// <p>Whether the partner account is linked to the AWS account.</p>
+    pub fn account_linked(&self) -> bool {
+        self.account_linked
+    }
 }
 impl std::fmt::Debug for GetPartnerAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2171,6 +2477,24 @@ pub struct GetLogLevelsByResourceTypesOutput {
     /// <p>The list of wireless device log options.</p>
     pub wireless_device_log_options:
         std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
+}
+impl GetLogLevelsByResourceTypesOutput {
+    /// <p>The log level for a log message.</p>
+    pub fn default_log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.default_log_level.as_ref()
+    }
+    /// <p>The list of wireless gateway log options.</p>
+    pub fn wireless_gateway_log_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::WirelessGatewayLogOption]> {
+        self.wireless_gateway_log_options.as_deref()
+    }
+    /// <p>The list of wireless device log options.</p>
+    pub fn wireless_device_log_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::WirelessDeviceLogOption]> {
+        self.wireless_device_log_options.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLogLevelsByResourceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2287,6 +2611,24 @@ pub struct GetDeviceProfileOutput {
     /// <p>Information about the device profile.</p>
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanDeviceProfile>,
 }
+impl GetDeviceProfileOutput {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the device profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Information about the device profile.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDeviceProfile> {
+        self.lo_ra_wan.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDeviceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceProfileOutput");
@@ -2386,6 +2728,32 @@ pub struct GetDestinationOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl GetDestinationOutput {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The rule name or topic rule to send messages to.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+        self.expression_type.as_ref()
+    }
+    /// <p>The description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2837,6 +3205,16 @@ pub struct CreateWirelessGatewayTaskDefinitionOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl CreateWirelessGatewayTaskDefinitionOutput {
+    /// <p>The ID of the new wireless gateway task definition.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWirelessGatewayTaskDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWirelessGatewayTaskDefinitionOutput");
@@ -2899,6 +3277,16 @@ pub struct CreateWirelessGatewayTaskOutput {
     pub wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
     /// <p>The status of the request.</p>
     pub status: std::option::Option<crate::model::WirelessGatewayTaskStatus>,
+}
+impl CreateWirelessGatewayTaskOutput {
+    /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    pub fn wireless_gateway_task_definition_id(&self) -> std::option::Option<&str> {
+        self.wireless_gateway_task_definition_id.as_deref()
+    }
+    /// <p>The status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::WirelessGatewayTaskStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateWirelessGatewayTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2975,6 +3363,16 @@ pub struct CreateWirelessGatewayOutput {
     /// <p>The ID of the new wireless gateway.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl CreateWirelessGatewayOutput {
+    /// <p>The Amazon Resource Name of the new resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the new wireless gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWirelessGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWirelessGatewayOutput");
@@ -3037,6 +3435,16 @@ pub struct CreateWirelessDeviceOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the new wireless device.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl CreateWirelessDeviceOutput {
+    /// <p>The Amazon Resource Name of the new resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the new wireless device.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWirelessDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3101,6 +3509,16 @@ pub struct CreateServiceProfileOutput {
     /// <p>The ID of the new service profile.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl CreateServiceProfileOutput {
+    /// <p>The Amazon Resource Name of the new resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the new service profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceProfileOutput");
@@ -3164,6 +3582,16 @@ pub struct CreateDeviceProfileOutput {
     /// <p>The ID of the new device profile.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl CreateDeviceProfileOutput {
+    /// <p>The Amazon Resource Name of the new resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the new device profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeviceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeviceProfileOutput");
@@ -3226,6 +3654,16 @@ pub struct CreateDestinationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the new resource.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateDestinationOutput {
+    /// <p>The Amazon Resource Name of the new resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3318,6 +3756,12 @@ pub struct AssociateWirelessGatewayWithCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
     pub iot_certificate_id: std::option::Option<std::string::String>,
 }
+impl AssociateWirelessGatewayWithCertificateOutput {
+    /// <p>The ID of the certificate associated with the wireless gateway.</p>
+    pub fn iot_certificate_id(&self) -> std::option::Option<&str> {
+        self.iot_certificate_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateWirelessGatewayWithCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateWirelessGatewayWithCertificateOutput");
@@ -3400,6 +3844,16 @@ pub struct AssociateAwsAccountWithPartnerAccountOutput {
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,
     /// <p>The Amazon Resource Name of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl AssociateAwsAccountWithPartnerAccountOutput {
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkAccountInfo> {
+        self.sidewalk.as_ref()
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateAwsAccountWithPartnerAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

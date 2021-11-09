@@ -92,10 +92,7 @@ impl AcceptHandshakeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_handshake(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_accept_handshake(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -306,10 +303,7 @@ impl AttachPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -465,10 +459,7 @@ impl CancelHandshakeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_handshake(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_handshake(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -769,10 +760,7 @@ impl CreateAccountInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_account(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1070,10 +1058,7 @@ impl CreateGovCloudAccountInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_gov_cloud_account(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1270,10 +1255,7 @@ impl CreateOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_organization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_organization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1507,10 +1489,7 @@ impl CreateOrganizationalUnitInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_organizational_unit(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1784,10 +1763,7 @@ impl CreatePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1943,10 +1919,7 @@ impl DeclineHandshakeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decline_handshake(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_decline_handshake(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2082,10 +2055,7 @@ impl DeleteOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_organization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_organization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2243,10 +2213,7 @@ impl DeleteOrganizationalUnitInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_organizational_unit(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2403,10 +2370,7 @@ impl DeletePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2584,7 +2548,7 @@ impl DeregisterDelegatedAdministratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_delegated_administrator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_delegated_administrator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2741,10 +2705,7 @@ impl DescribeAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_account(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2906,7 +2867,7 @@ impl DescribeCreateAccountStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_create_account_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_create_account_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3115,10 +3076,7 @@ impl DescribeEffectivePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_effective_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3276,10 +3234,7 @@ impl DescribeHandshakeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_handshake(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_handshake(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3415,10 +3370,7 @@ impl DescribeOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_organization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3578,10 +3530,7 @@ impl DescribeOrganizationalUnitInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_organizational_unit(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3738,10 +3687,8 @@ impl DescribePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3952,10 +3899,7 @@ impl DetachPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4117,10 +4061,7 @@ impl DisableAwsServiceAccessInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_aws_service_access(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4337,10 +4278,7 @@ impl DisablePolicyTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_policy_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disable_policy_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4476,10 +4414,7 @@ impl EnableAllFeaturesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_all_features(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_enable_all_features(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4632,10 +4567,7 @@ impl EnableAwsServiceAccessInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_aws_service_access(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4852,10 +4784,7 @@ impl EnablePolicyTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_policy_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_enable_policy_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5118,7 +5047,7 @@ impl InviteAccountToOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_invite_account_to_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_invite_account_to_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5255,10 +5184,7 @@ impl LeaveOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_leave_organization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_leave_organization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5433,10 +5359,7 @@ impl ListAccountsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_accounts(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_accounts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5636,10 +5559,7 @@ impl ListAccountsForParentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_accounts_for_parent(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5825,7 +5745,7 @@ impl ListAwsServiceAccessForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_aws_service_access_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_aws_service_access_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6068,10 +5988,7 @@ impl ListChildrenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_children(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_children(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6281,10 +6198,7 @@ impl ListCreateAccountStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_create_account_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6490,7 +6404,7 @@ impl ListDelegatedAdministratorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_delegated_administrators(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_delegated_administrators(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6688,7 +6602,7 @@ impl ListDelegatedServicesForAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_delegated_services_for_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_delegated_services_for_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6903,10 +6817,7 @@ impl ListHandshakesForAccountInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_handshakes_for_account(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7118,7 +7029,7 @@ impl ListHandshakesForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_handshakes_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_handshakes_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7346,7 +7257,7 @@ impl ListOrganizationalUnitsForParentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_organizational_units_for_parent(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_organizational_units_for_parent(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7574,10 +7485,7 @@ impl ListParentsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_parents(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_parents(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7818,10 +7726,7 @@ impl ListPoliciesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_policies(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8117,10 +8022,7 @@ impl ListPoliciesForTargetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_policies_for_target(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8301,10 +8203,7 @@ impl ListRootsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_roots(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_roots(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8520,10 +8419,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8725,10 +8623,7 @@ impl ListTargetsForPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_targets_for_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8975,10 +8870,7 @@ impl MoveAccountInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_move_account(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_move_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9148,7 +9040,7 @@ impl RegisterDelegatedAdministratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_delegated_administrator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_delegated_administrator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9306,7 +9198,7 @@ impl RemoveAccountFromOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_account_from_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_account_from_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9539,10 +9431,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9760,10 +9649,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9947,10 +9833,7 @@ impl UpdateOrganizationalUnitInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_organizational_unit(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10151,10 +10034,7 @@ impl UpdatePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10237,6 +10117,32 @@ pub struct UpdatePolicyInput {
     /// </p>
     pub content: std::option::Option<std::string::String>,
 }
+impl UpdatePolicyInput {
+    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
+    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>If provided, the new name for the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If provided, the new description for the policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON
+    /// that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+    /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+    /// </p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePolicyInput");
@@ -10264,6 +10170,24 @@ pub struct UpdateOrganizationalUnitInput {
     /// that is used to validate this parameter is a string of any of the characters in the ASCII
     /// character range.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateOrganizationalUnitInput {
+    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from
+    /// the <a>ListOrganizationalUnitsForParent</a> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
+    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
+    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
+    /// or digits.</p>
+    pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
+        self.organizational_unit_id.as_deref()
+    }
+    /// <p>The new name that you want to assign to the OU.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateOrganizationalUnitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10306,6 +10230,40 @@ pub struct UntagResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The list of keys for tags to remove from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ID of the resource to remove a tag from.</p>
+    /// <p>You can specify any of the following taggable resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS account – specify the account ID number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
+    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
+    /// to: <code>r-<i>1a2b</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
+    /// similar to: <code>p-<i>12abcdefg3</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The list of keys for tags to remove from the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10356,6 +10314,47 @@ pub struct TagResourceInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The ID of the resource to add a tag to.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A list of tags to add to the specified resource.</p>
+    /// <p>You can specify any of the following taggable resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS account – specify the account ID number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
+    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
+    /// to: <code>r-<i>1a2b</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
+    /// similar to: <code>p-<i>12abcdefg3</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
+    /// value to an empty string, but you can't set it to <code>null</code>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
+    /// an account user, then the entire request fails and the account is not
+    /// created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -10375,6 +10374,15 @@ pub struct RemoveAccountFromOrganizationInput {
     /// digits.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl RemoveAccountFromOrganizationInput {
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the
+    /// organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
+    /// digits.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveAccountFromOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveAccountFromOrganizationInput");
@@ -10393,6 +10401,18 @@ pub struct RegisterDelegatedAdministratorInput {
     /// <p>The service principal of the AWS service for which you want to make the member
     /// account a delegated administrator.</p>
     pub service_principal: std::option::Option<std::string::String>,
+}
+impl RegisterDelegatedAdministratorInput {
+    /// <p>The account ID number of the member account in the organization to register as a
+    /// delegated administrator.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The service principal of the AWS service for which you want to make the member
+    /// account a delegated administrator.</p>
+    pub fn service_principal(&self) -> std::option::Option<&str> {
+        self.service_principal.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterDelegatedAdministratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10448,6 +10468,54 @@ pub struct MoveAccountInput {
     /// </ul>
     pub destination_parent_id: std::option::Option<std::string::String>,
 }
+impl MoveAccountInput {
+    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
+    /// digits.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
+    /// the account from.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_parent_id(&self) -> std::option::Option<&str> {
+        self.source_parent_id.as_deref()
+    }
+    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
+    /// the account to.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination_parent_id(&self) -> std::option::Option<&str> {
+        self.destination_parent_id.as_deref()
+    }
+}
 impl std::fmt::Debug for MoveAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MoveAccountInput");
@@ -10481,6 +10549,33 @@ pub struct ListTargetsForPolicyInput {
     /// more results available. You should check <code>NextToken</code> after every operation to ensure
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListTargetsForPolicyInput {
+    /// <p>The unique identifier (ID) of the policy whose attachments you want to know.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
+    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListTargetsForPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10529,6 +10624,44 @@ pub struct ListTagsForResourceInput {
     /// from.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The ID of the resource with the tags to list.</p>
+    /// <p>You can specify any of the following taggable resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS account – specify the account ID number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
+    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
+    /// to: <code>r-<i>1a2b</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
+    /// similar to: <code>p-<i>12abcdefg3</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -10557,6 +10690,27 @@ pub struct ListRootsInput {
     /// more results available. You should check <code>NextToken</code> after every operation to ensure
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListRootsInput {
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRootsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10634,6 +10788,78 @@ pub struct ListPoliciesForTargetInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPoliciesForTargetInput {
+    /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies
+    /// you want to list.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The type of policy that you want to include in the returned list. You must specify one
+    /// of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filter(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.filter.as_ref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPoliciesForTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoliciesForTargetInput");
@@ -10690,6 +10916,54 @@ pub struct ListPoliciesInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPoliciesInput {
+    /// <p>Specifies the type of policy that you want to include in the response. You must
+    /// specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filter(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.filter.as_ref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoliciesInput");
@@ -10738,6 +11012,47 @@ pub struct ListParentsInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListParentsInput {
+    /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to
+    /// list. Don't specify a root.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with
+    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that
+    /// contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional
+    /// lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn child_id(&self) -> std::option::Option<&str> {
+        self.child_id.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListParentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListParentsInput");
@@ -10785,6 +11100,46 @@ pub struct ListOrganizationalUnitsForParentInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListOrganizationalUnitsForParentInput {
+    /// <p>The unique identifier (ID) of the root or OU whose child OUs you want to list.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListOrganizationalUnitsForParentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOrganizationalUnitsForParentInput");
@@ -10822,6 +11177,37 @@ pub struct ListHandshakesForOrganizationInput {
     /// more results available. You should check <code>NextToken</code> after every operation to ensure
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListHandshakesForOrganizationInput {
+    /// <p>A filter of the handshakes that you want included in the response. The default is all
+    /// types. Use the <code>ActionType</code> element to limit the output to only a specified
+    /// type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or
+    /// <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the
+    /// <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake
+    /// for each member account, you can specify the <code>ParentHandshakeId</code> to see only
+    /// the handshakes that were generated by that parent request.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::HandshakeFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListHandshakesForOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10861,6 +11247,37 @@ pub struct ListHandshakesForAccountInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListHandshakesForAccountInput {
+    /// <p>Filters the handshakes that you want included in the response. The default is all
+    /// types. Use the <code>ActionType</code> element to limit the output to only a specified
+    /// type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or
+    /// <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the
+    /// <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake
+    /// for each member account, you can specify <code>ParentHandshakeId</code> to see only the
+    /// handshakes that were generated by that parent request.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::HandshakeFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListHandshakesForAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHandshakesForAccountInput");
@@ -10892,6 +11309,31 @@ pub struct ListDelegatedServicesForAccountInput {
     /// more results available. You should check <code>NextToken</code> after every operation to ensure
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDelegatedServicesForAccountInput {
+    /// <p>The account ID number of a delegated administrator account in the organization.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDelegatedServicesForAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10928,6 +11370,34 @@ pub struct ListDelegatedAdministratorsInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDelegatedAdministratorsInput {
+    /// <p>Specifies a service principal name. If specified, then the operation lists the
+    /// delegated administrators only for the specified service.</p>
+    /// <p>If you don't specify a service principal, the operation lists all delegated
+    /// administrators for all services in your organization.</p>
+    pub fn service_principal(&self) -> std::option::Option<&str> {
+        self.service_principal.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDelegatedAdministratorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDelegatedAdministratorsInput");
@@ -10960,6 +11430,32 @@ pub struct ListCreateAccountStatusInput {
     /// more results available. You should check <code>NextToken</code> after every operation to ensure
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListCreateAccountStatusInput {
+    /// <p>A list of one or more states that you want included in the response. If this parameter
+    /// isn't present, all requests are included in the response.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::CreateAccountState]> {
+        self.states.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListCreateAccountStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11011,6 +11507,51 @@ pub struct ListChildrenInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListChildrenInput {
+    /// <p>The unique identifier (ID) for the parent root or OU whose children you want to
+    /// list.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>Filters the output to include only the specified child type.</p>
+    pub fn child_type(&self) -> std::option::Option<&crate::model::ChildType> {
+        self.child_type.as_ref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListChildrenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChildrenInput");
@@ -11041,6 +11582,27 @@ pub struct ListAwsServiceAccessForOrganizationInput {
     /// more results available. You should check <code>NextToken</code> after every operation to ensure
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAwsServiceAccessForOrganizationInput {
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAwsServiceAccessForOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11074,6 +11636,32 @@ pub struct ListAccountsForParentInput {
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAccountsForParentInput {
+    /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose
+    /// accounts you want to list.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAccountsForParentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountsForParentInput");
@@ -11103,6 +11691,27 @@ pub struct ListAccountsInput {
     /// more results available. You should check <code>NextToken</code> after every operation to ensure
     /// that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAccountsInput {
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value of the previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue
+    /// from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
+    /// more results available. You should check <code>NextToken</code> after every operation to ensure
+    /// that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11173,6 +11782,58 @@ pub struct InviteAccountToOrganizationInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl InviteAccountToOrganizationInput {
+    /// <p>The identifier (ID) of the AWS account that you want to invite to join your
+    /// organization. This is a JSON object that contains the following elements:</p>
+    /// <p>
+    /// <code>{ "Type": "ACCOUNT", "Id": "<<i>
+    /// <b>account id
+    /// number</b>
+    /// </i>>" }</code>
+    /// </p>
+    /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following
+    /// example:</p>
+    /// <p>
+    /// <code>--target Id=123456789012,Type=ACCOUNT</code>
+    /// </p>
+    /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID
+    /// number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+    /// specify the email address that is associated with the account.</p>
+    /// <p>
+    /// <code>--target Id=diego@example.com,Type=EMAIL</code>
+    /// </p>
+    pub fn target(&self) -> std::option::Option<&crate::model::HandshakeParty> {
+        self.target.as_ref()
+    }
+    /// <p>Additional information that you want to include in the generated email to the
+    /// recipient account owner.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the account when it becomes a member of the
+    /// organization. For each tag in the list, you must specify both a tag key and a value. You
+    /// can set the value to an empty string, but you can't set it to <code>null</code>. For
+    /// more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
+    /// AWS Organizations User Guide.</p>
+    /// <important>
+    /// <p>Any tags in the request are checked for compliance with any applicable tag
+    /// policies when the request is made. The request is rejected if the tags in the
+    /// request don't match the requirements of the policy at that time. Tag policy
+    /// compliance is <i>
+    /// <b>not</b>
+    /// </i> checked
+    /// again when the invitation is accepted and the tags are actually attached to the
+    /// account. That means that if the tag policy changes between the invitation and the
+    /// acceptance, then that tags could potentially be non-compliant.</p>
+    /// </important>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
+    /// an account, then the entire request fails and invitations are not sent.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for InviteAccountToOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InviteAccountToOrganizationInput");
@@ -11218,6 +11879,42 @@ pub struct EnablePolicyTypeInput {
     /// </ul>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
 }
+impl EnablePolicyTypeInput {
+    /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You
+    /// can get the ID from the <a>ListRoots</a> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
+    /// from 4 to 32 lowercase letters or digits.</p>
+    pub fn root_id(&self) -> std::option::Option<&str> {
+        self.root_id.as_deref()
+    }
+    /// <p>The policy type that you want to enable. You can specify one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.policy_type.as_ref()
+    }
+}
 impl std::fmt::Debug for EnablePolicyTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnablePolicyTypeInput");
@@ -11236,6 +11933,15 @@ pub struct EnableAwsServiceAccessInput {
     /// <code>
     /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
+}
+impl EnableAwsServiceAccessInput {
+    /// <p>The service principal name of the AWS service for which you want to enable
+    /// integration with your organization. This is typically in the form of a URL, such as
+    /// <code>
+    /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    pub fn service_principal(&self) -> std::option::Option<&str> {
+        self.service_principal.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableAwsServiceAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11291,6 +11997,42 @@ pub struct DisablePolicyTypeInput {
     /// </ul>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
 }
+impl DisablePolicyTypeInput {
+    /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You
+    /// can get the ID from the <a>ListRoots</a> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
+    /// from 4 to 32 lowercase letters or digits.</p>
+    pub fn root_id(&self) -> std::option::Option<&str> {
+        self.root_id.as_deref()
+    }
+    /// <p>The policy type that you want to disable in this root. You can specify one of the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.policy_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DisablePolicyTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisablePolicyTypeInput");
@@ -11309,6 +12051,15 @@ pub struct DisableAwsServiceAccessInput {
     /// <code>
     /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
+}
+impl DisableAwsServiceAccessInput {
+    /// <p>The service principal name of the AWS service for which you want to disable
+    /// integration with your organization. This is typically in the form of a URL, such as
+    /// <code>
+    /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    pub fn service_principal(&self) -> std::option::Option<&str> {
+        self.service_principal.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableAwsServiceAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11352,6 +12103,41 @@ pub struct DetachPolicyInput {
     /// </ul>
     pub target_id: std::option::Option<std::string::String>,
 }
+impl DetachPolicyInput {
+    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from
+    /// the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
+    /// operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
+    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the
+    /// policy from. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
+    /// operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachPolicyInput");
@@ -11371,6 +12157,16 @@ pub struct DescribePolicyInput {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
     /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
+}
+impl DescribePolicyInput {
+    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the
+    /// ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
+    /// operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
+    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11392,6 +12188,18 @@ pub struct DescribeOrganizationalUnitInput {
     /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
     /// or digits.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationalUnitInput {
+    /// <p>The unique identifier (ID) of the organizational unit that you want details about. You
+    /// can get the ID from the <a>ListOrganizationalUnitsForParent</a>
+    /// operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
+    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
+    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
+    /// or digits.</p>
+    pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
+        self.organizational_unit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationalUnitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11422,6 +12230,16 @@ pub struct DescribeHandshakeInput {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
     /// followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
+}
+impl DescribeHandshakeInput {
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can
+    /// get the ID from the original call to <a>InviteAccountToOrganization</a>, or
+    /// from a call to <a>ListHandshakesForAccount</a> or <a>ListHandshakesForOrganization</a>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
+    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn handshake_id(&self) -> std::option::Option<&str> {
+        self.handshake_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHandshakeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11460,6 +12278,36 @@ pub struct DescribeEffectivePolicyInput {
     /// the target is not supported.</p>
     pub target_id: std::option::Option<std::string::String>,
 }
+impl DescribeEffectivePolicyInput {
+    /// <p>The type of policy that you want information about. You can specify one of the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::EffectivePolicyType> {
+        self.policy_type.as_ref()
+    }
+    /// <p>When you're signed in as the management account, specify the ID of the account that
+    /// you want details about. Specifying an organization root or organizational unit (OU) as
+    /// the target is not supported.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEffectivePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEffectivePolicyInput");
@@ -11480,6 +12328,16 @@ pub struct DescribeCreateAccountStatusInput {
     /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub create_account_request_id: std::option::Option<std::string::String>,
 }
+impl DescribeCreateAccountStatusInput {
+    /// <p>Specifies the <code>Id</code> value that uniquely identifies the
+    /// <code>CreateAccount</code> request. You can get the value from the
+    /// <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
+    /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn create_account_request_id(&self) -> std::option::Option<&str> {
+        self.create_account_request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCreateAccountStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCreateAccountStatusInput");
@@ -11497,6 +12355,15 @@ pub struct DescribeAccountInput {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
     /// digits.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl DescribeAccountInput {
+    /// <p>The unique identifier (ID) of the AWS account that you want information about. You
+    /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
+    /// digits.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11521,6 +12388,22 @@ pub struct DeregisterDelegatedAdministratorInput {
     /// permissions.</p>
     pub service_principal: std::option::Option<std::string::String>,
 }
+impl DeregisterDelegatedAdministratorInput {
+    /// <p>The account ID number of the member account in the organization that you want to
+    /// deregister as a delegated administrator.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The service principal name of an AWS service for which the account is a delegated
+    /// administrator.</p>
+    /// <p>Delegated administrator privileges are revoked for only the specified AWS service
+    /// from the member account. If the specified service is the only service for which the
+    /// member account is a delegated administrator, the operation also revokes Organizations read action
+    /// permissions.</p>
+    pub fn service_principal(&self) -> std::option::Option<&str> {
+        self.service_principal.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterDelegatedAdministratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterDelegatedAdministratorInput");
@@ -11541,6 +12424,16 @@ pub struct DeletePolicyInput {
     /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
 }
+impl DeletePolicyInput {
+    /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID
+    /// from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
+    /// operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
+    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePolicyInput");
@@ -11560,6 +12453,17 @@ pub struct DeleteOrganizationalUnitInput {
     /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
     /// or digits.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
+}
+impl DeleteOrganizationalUnitInput {
+    /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can
+    /// get the ID from the <a>ListOrganizationalUnitsForParent</a> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
+    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
+    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
+    /// or digits.</p>
+    pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
+        self.organizational_unit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOrganizationalUnitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11589,6 +12493,15 @@ pub struct DeclineHandshakeInput {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
     /// followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
+}
+impl DeclineHandshakeInput {
+    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the
+    /// ID from the <a>ListHandshakesForAccount</a> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
+    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn handshake_id(&self) -> std::option::Option<&str> {
+        self.handshake_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeclineHandshakeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11647,6 +12560,62 @@ pub struct CreatePolicyInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreatePolicyInput {
+    /// <p>The policy text content to add to the new policy. The text that you supply must adhere
+    /// to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>An optional description to assign to the policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The friendly name to assign to the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of policy to create. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of tags that you want to attach to the newly created policy. For each tag in
+    /// the list, you must specify both a tag key and a value. You can set the value to an empty
+    /// string, but you can't set it to <code>null</code>. For more information about tagging,
+    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+    /// resources</a> in the AWS Organizations User Guide.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
+    /// a policy, then the entire request fails and the policy is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePolicyInput");
@@ -11694,6 +12663,44 @@ pub struct CreateOrganizationalUnitInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateOrganizationalUnitInput {
+    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU
+    /// in.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The friendly name to assign to the new OU.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the
+    /// list, you must specify both a tag key and a value. You can set the value to an empty
+    /// string, but you can't set it to <code>null</code>. For more information about tagging,
+    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+    /// resources</a> in the AWS Organizations User Guide.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
+    /// an OU, then the entire request fails and the OU is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateOrganizationalUnitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOrganizationalUnitInput");
@@ -11732,6 +12739,34 @@ pub struct CreateOrganizationInput {
     /// </li>
     /// </ul>
     pub feature_set: std::option::Option<crate::model::OrganizationFeatureSet>,
+}
+impl CreateOrganizationInput {
+    /// <p>Specifies the feature set supported by the new organization. Each feature set supports
+    /// different levels of functionality.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills
+    /// consolidated to and paid by the management account. For more information, see
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the
+    /// <i>AWS Organizations User Guide.</i>
+    /// </p>
+    /// <p> The consolidated billing feature subset isn't available for organizations in
+    /// the AWS GovCloud (US) Region.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code>: In addition to all the features supported by the
+    /// consolidated billing feature set, the management account can also apply any
+    /// policy type to any member account in the organization. For more information, see
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+    /// features</a> in the <i>AWS Organizations User Guide.</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn feature_set(&self) -> std::option::Option<&crate::model::OrganizationFeatureSet> {
+        self.feature_set.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11796,6 +12831,71 @@ pub struct CreateGovCloudAccountInput {
     /// an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateGovCloudAccountInput {
+    /// <p>The email address of the owner to assign to the new member account in the commercial
+    /// Region. This email address must not already be associated with another AWS account.
+    /// You must use a valid email address to complete account creation. You can't access the
+    /// root user of the account or remove an account that was created with an invalid email
+    /// address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request
+    /// for the email address for the AWS GovCloud (US) account originates from the commercial
+    /// Region, not from the AWS GovCloud (US) Region.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The friendly name of the member account.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>(Optional)</p>
+    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
+    /// accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role
+    /// trusts the management account, allowing users in the management account to assume the
+    /// role, as permitted by the management account administrator. The role has administrator
+    /// permissions in the new member account.</p>
+    /// <p>If you don't specify this parameter, the role name defaults to
+    /// <code>OrganizationAccountAccessRole</code>.</p>
+    /// <p>For more information about how to use this role to access the member account, see
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the
+    /// <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the
+    /// <i>IAM User Guide.</i>
+    /// </p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
+    /// is used to validate this parameter. The pattern can include uppercase
+    /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables
+    /// IAM users to access account billing information <i>if</i> they have the
+    /// required permissions. If set to <code>DENY</code>, only the root user of the new account
+    /// can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+    /// Access to the Billing and Cost Management Console</a> in the
+    /// <i>AWS Billing and Cost Management User Guide.</i>
+    /// </p>
+    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
+    /// IAM users and roles with the required permissions can access billing information for
+    /// the new account.</p>
+    pub fn iam_user_access_to_billing(
+        &self,
+    ) -> std::option::Option<&crate::model::IamUserAccessToBilling> {
+        self.iam_user_access_to_billing.as_ref()
+    }
+    /// <p>A list of tags that you want to attach to the newly created account. These tags are
+    /// attached to the commercial account associated with the GovCloud account, and not to the
+    /// GovCloud account itself. To add tags to the actual GovCloud account, call the <a>TagResource</a> operation in the GovCloud region after the new GovCloud
+    /// account exists.</p>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
+    /// value to an empty string, but you can't set it to <code>null</code>. For more
+    /// information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
+    /// AWS Organizations User Guide.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
+    /// an account, then the entire request fails and the account is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGovCloudAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11871,6 +12971,74 @@ pub struct CreateAccountInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAccountInput {
+    /// <p>The email address of the owner to assign to the new member account. This email address
+    /// must not already be associated with another AWS account. You must use a valid email
+    /// address to complete account creation. You can't access the root user of the account or
+    /// remove an account that was created with an invalid email address.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The friendly name of the member account.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>(Optional)</p>
+    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
+    /// account. This role trusts the management account, allowing users in the management
+    /// account to assume the role, as permitted by the management account administrator. The
+    /// role has administrator permissions in the new member account.</p>
+    /// <p>If you don't specify this parameter, the role name defaults to
+    /// <code>OrganizationAccountAccessRole</code>.</p>
+    /// <p>For more information about how to use this role to access the member account, see the
+    /// following links:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your
+    /// Organization</a> in the <i>AWS Organizations User Guide</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
+    /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the
+    /// <i>IAM User Guide</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
+    /// is used to validate this parameter. The pattern can include uppercase
+    /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account
+    /// billing information <i>if</i> they have the required permissions. If set
+    /// to <code>DENY</code>, only the root user of the new account can access account billing
+    /// information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
+    /// Access to the Billing and Cost Management Console</a> in the
+    /// <i>AWS Billing and Cost Management User Guide</i>.</p>
+    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
+    /// IAM users and roles with the required permissions can access billing information for
+    /// the new account.</p>
+    pub fn iam_user_access_to_billing(
+        &self,
+    ) -> std::option::Option<&crate::model::IamUserAccessToBilling> {
+        self.iam_user_access_to_billing.as_ref()
+    }
+    /// <p>A list of tags that you want to attach to the newly created account. For each tag in
+    /// the list, you must specify both a tag key and a value. You can set the value to an empty
+    /// string, but you can't set it to <code>null</code>. For more information about tagging,
+    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+    /// resources</a> in the AWS Organizations User Guide.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
+    /// an account, then the entire request fails and the account is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountInput");
@@ -11895,6 +13063,15 @@ pub struct CancelHandshakeInput {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
     /// followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
+}
+impl CancelHandshakeInput {
+    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the
+    /// ID from the <a>ListHandshakesForOrganization</a> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
+    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn handshake_id(&self) -> std::option::Option<&str> {
+        self.handshake_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelHandshakeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11938,6 +13115,41 @@ pub struct AttachPolicyInput {
     /// </ul>
     pub target_id: std::option::Option<std::string::String>,
 }
+impl AttachPolicyInput {
+    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You
+    /// can get the ID for the policy by calling the <a>ListPolicies</a>
+    /// operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
+    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the
+    /// policy to. You can get the ID by calling the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
+    /// operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachPolicyInput");
@@ -11955,6 +13167,14 @@ pub struct AcceptHandshakeInput {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
     /// followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
+}
+impl AcceptHandshakeInput {
+    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
+    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn handshake_id(&self) -> std::option::Option<&str> {
+        self.handshake_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptHandshakeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

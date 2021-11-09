@@ -18,6 +18,26 @@ pub struct AcceleratorType {
     /// </p>
     pub throughput_info: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
 }
+impl AcceleratorType {
+    /// <p>
+    /// The name of the Elastic Inference Accelerator type.
+    /// </p>
+    pub fn accelerator_type_name(&self) -> std::option::Option<&str> {
+        self.accelerator_type_name.as_deref()
+    }
+    /// <p>
+    /// The memory information of the Elastic Inference Accelerator type.
+    /// </p>
+    pub fn memory_info(&self) -> std::option::Option<&crate::model::MemoryInfo> {
+        self.memory_info.as_ref()
+    }
+    /// <p>
+    /// The throughput information of the Elastic Inference Accelerator type.
+    /// </p>
+    pub fn throughput_info(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.throughput_info.as_deref()
+    }
+}
 impl std::fmt::Debug for AcceleratorType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcceleratorType");
@@ -129,6 +149,22 @@ pub struct KeyValuePair {
     /// </p>
     pub value: i32,
 }
+impl KeyValuePair {
+    /// <p>
+    /// The throughput value of the Elastic Inference Accelerator type. It can assume the following values:
+    /// TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS.
+    /// TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS.
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>
+    /// The throughput value of the Elastic Inference Accelerator type.
+    /// </p>
+    pub fn value(&self) -> i32 {
+        self.value
+    }
+}
 impl std::fmt::Debug for KeyValuePair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyValuePair");
@@ -206,6 +242,14 @@ pub struct MemoryInfo {
     /// </p>
     pub size_in_mi_b: i32,
 }
+impl MemoryInfo {
+    /// <p>
+    /// The size in mebibytes of the Elastic Inference Accelerator type.
+    /// </p>
+    pub fn size_in_mi_b(&self) -> i32 {
+        self.size_in_mi_b
+    }
+}
 impl std::fmt::Debug for MemoryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MemoryInfo");
@@ -277,6 +321,40 @@ pub struct ElasticInferenceAccelerator {
     /// The ARN of the resource that the Elastic Inference Accelerator is attached to.
     /// </p>
     pub attached_resource: std::option::Option<std::string::String>,
+}
+impl ElasticInferenceAccelerator {
+    /// <p>
+    /// The health of the Elastic Inference Accelerator.
+    /// </p>
+    pub fn accelerator_health(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticInferenceAcceleratorHealth> {
+        self.accelerator_health.as_ref()
+    }
+    /// <p>
+    /// The type of the Elastic Inference Accelerator.
+    /// </p>
+    pub fn accelerator_type(&self) -> std::option::Option<&str> {
+        self.accelerator_type.as_deref()
+    }
+    /// <p>
+    /// The ID of the Elastic Inference Accelerator.
+    /// </p>
+    pub fn accelerator_id(&self) -> std::option::Option<&str> {
+        self.accelerator_id.as_deref()
+    }
+    /// <p>
+    /// The availability zone where the Elastic Inference Accelerator is present.
+    /// </p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>
+    /// The ARN of the resource that the Elastic Inference Accelerator is attached to.
+    /// </p>
+    pub fn attached_resource(&self) -> std::option::Option<&str> {
+        self.attached_resource.as_deref()
+    }
 }
 impl std::fmt::Debug for ElasticInferenceAccelerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -421,6 +499,14 @@ pub struct ElasticInferenceAcceleratorHealth {
     /// </p>
     pub status: std::option::Option<std::string::String>,
 }
+impl ElasticInferenceAcceleratorHealth {
+    /// <p>
+    /// The health status of the Elastic Inference Accelerator.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for ElasticInferenceAcceleratorHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ElasticInferenceAcceleratorHealth");
@@ -482,6 +568,22 @@ pub struct Filter {
     /// The values for the filter of the Elastic Inference Accelerator list.
     /// </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Filter {
+    /// <p>
+    /// The filter name for the Elastic Inference Accelerator list. It can assume the following values:
+    /// accelerator-type: the type of Elastic Inference Accelerator to filter for.
+    /// instance-id: an EC2 instance id to filter for.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The values for the filter of the Elastic Inference Accelerator list.
+    /// </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -580,6 +682,30 @@ pub struct AcceleratorTypeOffering {
     /// It will return either the region, availability zone or availability zone id for the offering depending on the locationType value.
     /// </p>
     pub location: std::option::Option<std::string::String>,
+}
+impl AcceleratorTypeOffering {
+    /// <p>
+    /// The name of the Elastic Inference Accelerator type.
+    /// </p>
+    pub fn accelerator_type(&self) -> std::option::Option<&str> {
+        self.accelerator_type.as_deref()
+    }
+    /// <p>
+    /// The location type for the offering. It can assume the following values:
+    /// region: defines that the offering is at the regional level.
+    /// availability-zone: defines that the offering is at the availability zone level.
+    /// availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id.
+    /// </p>
+    pub fn location_type(&self) -> std::option::Option<&crate::model::LocationType> {
+        self.location_type.as_ref()
+    }
+    /// <p>
+    /// The location for the offering.
+    /// It will return either the region, availability zone or availability zone id for the offering depending on the locationType value.
+    /// </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceleratorTypeOffering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

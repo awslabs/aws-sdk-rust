@@ -13,6 +13,25 @@ pub struct JobExecutionState {
     /// device.</p>
     pub version_number: i64,
 }
+impl JobExecutionState {
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
+    /// "REJECTED", or "REMOVED".</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.status_details.as_ref()
+    }
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
+    /// device.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+}
 impl std::fmt::Debug for JobExecutionState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobExecutionState");
@@ -223,6 +242,59 @@ pub struct JobExecution {
     pub execution_number: std::option::Option<i64>,
     /// <p>The content of the job document.</p>
     pub job_document: std::option::Option<std::string::String>,
+}
+impl JobExecution {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the thing that is executing the job.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
+    /// "REJECTED", or "REMOVED".</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.status_details.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    pub fn queued_at(&self) -> i64 {
+        self.queued_at
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
+    pub fn started_at(&self) -> std::option::Option<i64> {
+        self.started_at
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
+    pub fn last_updated_at(&self) -> i64 {
+        self.last_updated_at
+    }
+    /// <p>The estimated number of seconds that remain before the job execution status will be
+    /// changed to <code>TIMED_OUT</code>.</p>
+    pub fn approximate_seconds_before_timed_out(&self) -> std::option::Option<i64> {
+        self.approximate_seconds_before_timed_out
+    }
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
+    /// device.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>A number that identifies a particular job execution on a particular device. It can be used later in
+    /// commands that return or update job execution information.</p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
+    /// <p>The content of the job document.</p>
+    pub fn job_document(&self) -> std::option::Option<&str> {
+        self.job_document.as_deref()
+    }
 }
 impl std::fmt::Debug for JobExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -446,6 +518,33 @@ pub struct JobExecutionSummary {
     pub version_number: i64,
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     pub execution_number: std::option::Option<i64>,
+}
+impl JobExecutionSummary {
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    pub fn queued_at(&self) -> i64 {
+        self.queued_at
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    pub fn started_at(&self) -> std::option::Option<i64> {
+        self.started_at
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    pub fn last_updated_at(&self) -> i64 {
+        self.last_updated_at
+    }
+    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
+    /// an update from a device.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>A number that identifies a particular job execution on a particular device.</p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
 }
 impl std::fmt::Debug for JobExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

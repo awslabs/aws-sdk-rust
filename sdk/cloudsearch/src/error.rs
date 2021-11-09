@@ -3434,6 +3434,12 @@ pub struct ValidationException {
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -3512,6 +3518,12 @@ pub struct ResourceNotFoundException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3592,6 +3604,12 @@ pub struct LimitExceededException {
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl LimitExceededException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -3670,6 +3688,12 @@ pub struct InvalidTypeException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidTypeException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3751,6 +3775,12 @@ pub struct InternalException {
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InternalException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalException");
@@ -3829,6 +3859,12 @@ pub struct BaseException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BaseException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for BaseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3909,6 +3945,12 @@ pub struct DisabledOperationException {
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DisabledOperationException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for DisabledOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisabledOperationException");
@@ -3987,6 +4029,12 @@ pub struct ResourceAlreadyExistsException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceAlreadyExistsException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

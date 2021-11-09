@@ -240,10 +240,7 @@ impl CreateExperimentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_experiment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1626,10 +1623,7 @@ impl StartExperimentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_experiment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_experiment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1962,10 +1956,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2428,10 +2419,7 @@ impl UpdateExperimentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_experiment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2522,6 +2510,48 @@ pub struct UpdateExperimentTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateExperimentTemplateInput {
+    /// <p>The ID of the experiment template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A description for the template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The stop conditions for the experiment.</p>
+    pub fn stop_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateExperimentTemplateStopConditionInput]> {
+        self.stop_conditions.as_deref()
+    }
+    /// <p>The targets for the experiment.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::UpdateExperimentTemplateTargetInput,
+        >,
+    > {
+        self.targets.as_ref()
+    }
+    /// <p>The actions for the experiment.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::UpdateExperimentTemplateActionInputItem,
+        >,
+    > {
+        self.actions.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateExperimentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateExperimentTemplateInput");
@@ -2544,6 +2574,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2563,6 +2603,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2578,6 +2631,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopExperimentInput {
     /// <p>The ID of the experiment.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl StopExperimentInput {
+    /// <p>The ID of the experiment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopExperimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2599,6 +2658,23 @@ pub struct StartExperimentInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StartExperimentInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn experiment_template_id(&self) -> std::option::Option<&str> {
+        self.experiment_template_id.as_deref()
+    }
+    /// <p>The tags to apply to the experiment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StartExperimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartExperimentInput");
@@ -2616,6 +2692,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -2632,6 +2714,16 @@ pub struct ListExperimentTemplatesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExperimentTemplatesInput {
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExperimentTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2651,6 +2743,16 @@ pub struct ListExperimentsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExperimentsInput {
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExperimentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExperimentsInput");
@@ -2669,6 +2771,16 @@ pub struct ListActionsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListActionsInput {
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActionsInput");
@@ -2685,6 +2797,12 @@ pub struct GetExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetExperimentTemplateInput {
+    /// <p>The ID of the experiment template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetExperimentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExperimentTemplateInput");
@@ -2699,6 +2817,12 @@ impl std::fmt::Debug for GetExperimentTemplateInput {
 pub struct GetExperimentInput {
     /// <p>The ID of the experiment.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetExperimentInput {
+    /// <p>The ID of the experiment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetExperimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2715,6 +2839,12 @@ pub struct GetActionInput {
     /// <p>The ID of the action.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetActionInput {
+    /// <p>The ID of the action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActionInput");
@@ -2729,6 +2859,12 @@ impl std::fmt::Debug for GetActionInput {
 pub struct DeleteExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteExperimentTemplateInput {
+    /// <p>The ID of the experiment template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteExperimentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2769,6 +2905,55 @@ pub struct CreateExperimentTemplateInput {
     /// <p>The tags to apply to the experiment template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateExperimentTemplateInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The stop conditions.</p>
+    pub fn stop_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateExperimentTemplateStopConditionInput]> {
+        self.stop_conditions.as_deref()
+    }
+    /// <p>The targets for the experiment.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::CreateExperimentTemplateTargetInput,
+        >,
+    > {
+        self.targets.as_ref()
+    }
+    /// <p>The actions for the experiment.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::CreateExperimentTemplateActionInput,
+        >,
+    > {
+        self.actions.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The tags to apply to the experiment template.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

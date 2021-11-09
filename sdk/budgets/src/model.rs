@@ -20,6 +20,17 @@ pub struct Subscriber {
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
     pub address: std::option::Option<std::string::String>,
 }
+impl Subscriber {
+    /// <p>The type of notification that AWS sends to a subscriber.</p>
+    pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
+        self.subscription_type.as_ref()
+    }
+    /// <p>The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+    /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+}
 impl std::fmt::Debug for Subscriber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subscriber");
@@ -168,6 +179,28 @@ pub struct Notification {
     pub threshold_type: std::option::Option<crate::model::ThresholdType>,
     /// <p>Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.</p>
     pub notification_state: std::option::Option<crate::model::NotificationState>,
+}
+impl Notification {
+    /// <p>Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted to spend (<code>FORECASTED</code>).</p>
+    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+        self.notification_type.as_ref()
+    }
+    /// <p>The comparison that is used for this notification.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>The threshold that is associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
+    pub fn threshold(&self) -> f64 {
+        self.threshold
+    }
+    /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.</p>
+    pub fn threshold_type(&self) -> std::option::Option<&crate::model::ThresholdType> {
+        self.threshold_type.as_ref()
+    }
+    /// <p>Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.</p>
+    pub fn notification_state(&self) -> std::option::Option<&crate::model::NotificationState> {
+        self.notification_state.as_ref()
+    }
 }
 impl std::fmt::Debug for Notification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -541,6 +574,62 @@ pub struct Action {
     pub status: std::option::Option<crate::model::ActionStatus>,
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
+}
+impl Action {
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+        self.notification_type.as_ref()
+    }
+    /// <p>
+    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
+    /// </p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>
+    /// The trigger threshold of the action.
+    /// </p>
+    pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
+        self.action_threshold.as_ref()
+    }
+    /// <p>
+    /// Where you specify all of the type-specific parameters.
+    /// </p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
+        self.definition.as_ref()
+    }
+    /// <p>
+    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
+    /// </p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>
+    /// This specifies if the action needs manual or automatic approval.
+    /// </p>
+    pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
+        self.approval_model.as_ref()
+    }
+    /// <p>
+    /// The status of action.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A list of subscribers.</p>
+    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+        self.subscribers.as_deref()
+    }
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -930,6 +1019,26 @@ pub struct Definition {
     /// </p>
     pub ssm_action_definition: std::option::Option<crate::model::SsmActionDefinition>,
 }
+impl Definition {
+    /// <p>
+    /// The AWS Identity and Access Management (IAM) action definition details.
+    /// </p>
+    pub fn iam_action_definition(&self) -> std::option::Option<&crate::model::IamActionDefinition> {
+        self.iam_action_definition.as_ref()
+    }
+    /// <p>
+    /// The service control policies (SCPs) action definition details.
+    /// </p>
+    pub fn scp_action_definition(&self) -> std::option::Option<&crate::model::ScpActionDefinition> {
+        self.scp_action_definition.as_ref()
+    }
+    /// <p>
+    /// The AWS Systems Manager (SSM) action definition details.
+    /// </p>
+    pub fn ssm_action_definition(&self) -> std::option::Option<&crate::model::SsmActionDefinition> {
+        self.ssm_action_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for Definition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Definition");
@@ -1036,6 +1145,26 @@ pub struct SsmActionDefinition {
     /// The EC2 and RDS instance IDs.
     /// </p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SsmActionDefinition {
+    /// <p>
+    /// The action subType.
+    /// </p>
+    pub fn action_sub_type(&self) -> std::option::Option<&crate::model::ActionSubType> {
+        self.action_sub_type.as_ref()
+    }
+    /// <p>
+    /// The Region to run the SSM document.
+    /// </p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>
+    /// The EC2 and RDS instance IDs.
+    /// </p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for SsmActionDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1198,6 +1327,20 @@ pub struct ScpActionDefinition {
     /// </p>
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ScpActionDefinition {
+    /// <p>
+    /// The policy ID attached.
+    /// </p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>
+    /// A list of target IDs.
+    /// </p>
+    pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ScpActionDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScpActionDefinition");
@@ -1291,6 +1434,32 @@ pub struct IamActionDefinition {
     /// A list of users to be attached. There must be at least one user.
     /// </p>
     pub users: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl IamActionDefinition {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the policy to be attached.
+    /// </p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>
+    /// A list of roles to be attached. There must be at least one role.
+    /// </p>
+    pub fn roles(&self) -> std::option::Option<&[std::string::String]> {
+        self.roles.as_deref()
+    }
+    /// <p>
+    /// A list of groups to be attached. There must be at least one group.
+    /// </p>
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.groups.as_deref()
+    }
+    /// <p>
+    /// A list of users to be attached. There must be at least one user.
+    /// </p>
+    pub fn users(&self) -> std::option::Option<&[std::string::String]> {
+        self.users.as_deref()
+    }
 }
 impl std::fmt::Debug for IamActionDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1425,6 +1594,16 @@ pub struct ActionThreshold {
     pub action_threshold_value: f64,
     /// <p> The type of threshold for a notification.</p>
     pub action_threshold_type: std::option::Option<crate::model::ThresholdType>,
+}
+impl ActionThreshold {
+    /// <p> The threshold of a notification.</p>
+    pub fn action_threshold_value(&self) -> f64 {
+        self.action_threshold_value
+    }
+    /// <p> The type of threshold for a notification.</p>
+    pub fn action_threshold_type(&self) -> std::option::Option<&crate::model::ThresholdType> {
+        self.action_threshold_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ActionThreshold {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1607,6 +1786,89 @@ pub struct Budget {
     pub budget_type: std::option::Option<crate::model::BudgetType>,
     /// <p>The last time that you updated this budget.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Budget {
+    /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
+    /// <p>
+    /// <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
+    pub fn budget_limit(&self) -> std::option::Option<&crate::model::Spend> {
+        self.budget_limit.as_ref()
+    }
+    /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
+    /// <p>
+    /// <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+    /// <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p>
+    /// <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p>
+    /// <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+    /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+    /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
+    /// <p>
+    /// <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
+    pub fn planned_budget_limits(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Spend>>
+    {
+        self.planned_budget_limits.as_ref()
+    }
+    /// <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+    /// <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Elastic Compute Cloud - Compute</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Redshift</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Relational Database Service</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon ElastiCache</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Elasticsearch Service</p>
+    /// </li>
+    /// </ul>
+    pub fn cost_filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.cost_filters.as_ref()
+    }
+    /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
+    /// <p>
+    /// <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    pub fn cost_types(&self) -> std::option::Option<&crate::model::CostTypes> {
+        self.cost_types.as_ref()
+    }
+    /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
+    pub fn time_unit(&self) -> std::option::Option<&crate::model::TimeUnit> {
+        self.time_unit.as_ref()
+    }
+    /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p>
+    /// <p>If you create your budget and don't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API. </p>
+    /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
+    /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers.</p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
+        self.time_period.as_ref()
+    }
+    /// <p>The actual and forecasted cost or usage that the budget tracks.</p>
+    pub fn calculated_spend(&self) -> std::option::Option<&crate::model::CalculatedSpend> {
+        self.calculated_spend.as_ref()
+    }
+    /// <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
+    pub fn budget_type(&self) -> std::option::Option<&crate::model::BudgetType> {
+        self.budget_type.as_ref()
+    }
+    /// <p>The last time that you updated this budget.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Budget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1973,6 +2235,16 @@ pub struct CalculatedSpend {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you are forecasted to use.</p>
     pub forecasted_spend: std::option::Option<crate::model::Spend>,
 }
+impl CalculatedSpend {
+    /// <p>The amount of cost, usage, RI units, or Savings Plans units that you have used.</p>
+    pub fn actual_spend(&self) -> std::option::Option<&crate::model::Spend> {
+        self.actual_spend.as_ref()
+    }
+    /// <p>The amount of cost, usage, RI units, or Savings Plans units that you are forecasted to use.</p>
+    pub fn forecasted_spend(&self) -> std::option::Option<&crate::model::Spend> {
+        self.forecasted_spend.as_ref()
+    }
+}
 impl std::fmt::Debug for CalculatedSpend {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedSpend");
@@ -2050,6 +2322,16 @@ pub struct Spend {
     /// <p>The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.</p>
     pub unit: std::option::Option<std::string::String>,
 }
+impl Spend {
+    /// <p>The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.</p>
+    pub fn amount(&self) -> std::option::Option<&str> {
+        self.amount.as_deref()
+    }
+    /// <p>The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+}
 impl std::fmt::Debug for Spend {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Spend");
@@ -2114,6 +2396,18 @@ pub struct TimePeriod {
     /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
     /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
     pub end: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TimePeriod {
+    /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
+    /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
+    pub fn start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start.as_ref()
+    }
+    /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
+    /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
+    pub fn end(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end.as_ref()
+    }
 }
 impl std::fmt::Debug for TimePeriod {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2275,6 +2569,63 @@ pub struct CostTypes {
     /// <p>Specifies whether a budget uses the amortized rate.</p>
     /// <p>The default value is <code>false</code>.</p>
     pub use_amortized: std::option::Option<bool>,
+}
+impl CostTypes {
+    /// <p>Specifies whether a budget includes taxes.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_tax(&self) -> std::option::Option<bool> {
+        self.include_tax
+    }
+    /// <p>Specifies whether a budget includes subscriptions.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_subscription(&self) -> std::option::Option<bool> {
+        self.include_subscription
+    }
+    /// <p>Specifies whether a budget uses a blended rate.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn use_blended(&self) -> std::option::Option<bool> {
+        self.use_blended
+    }
+    /// <p>Specifies whether a budget includes refunds.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_refund(&self) -> std::option::Option<bool> {
+        self.include_refund
+    }
+    /// <p>Specifies whether a budget includes credits.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_credit(&self) -> std::option::Option<bool> {
+        self.include_credit
+    }
+    /// <p>Specifies whether a budget includes upfront RI costs.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_upfront(&self) -> std::option::Option<bool> {
+        self.include_upfront
+    }
+    /// <p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_recurring(&self) -> std::option::Option<bool> {
+        self.include_recurring
+    }
+    /// <p>Specifies whether a budget includes non-RI subscription costs.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_other_subscription(&self) -> std::option::Option<bool> {
+        self.include_other_subscription
+    }
+    /// <p>Specifies whether a budget includes support subscription fees.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_support(&self) -> std::option::Option<bool> {
+        self.include_support
+    }
+    /// <p>Specifies whether a budget includes discounts.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    pub fn include_discount(&self) -> std::option::Option<bool> {
+        self.include_discount
+    }
+    /// <p>Specifies whether a budget uses the amortized rate.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn use_amortized(&self) -> std::option::Option<bool> {
+        self.use_amortized
+    }
 }
 impl std::fmt::Debug for CostTypes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2562,6 +2913,40 @@ pub struct BudgetPerformanceHistory {
     pub budgeted_and_actual_amounts_list:
         std::option::Option<std::vec::Vec<crate::model::BudgetedAndActualAmounts>>,
 }
+impl BudgetPerformanceHistory {
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p> The type of a budget. It must be one of the following types: </p>
+    /// <p>
+    /// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    pub fn budget_type(&self) -> std::option::Option<&crate::model::BudgetType> {
+        self.budget_type.as_ref()
+    }
+    /// <p>The history of the cost filters for a budget during the specified time period.</p>
+    pub fn cost_filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.cost_filters.as_ref()
+    }
+    /// <p>The history of the cost types for a budget during the specified time period.</p>
+    pub fn cost_types(&self) -> std::option::Option<&crate::model::CostTypes> {
+        self.cost_types.as_ref()
+    }
+    /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+    pub fn time_unit(&self) -> std::option::Option<&crate::model::TimeUnit> {
+        self.time_unit.as_ref()
+    }
+    /// <p>A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.</p>
+    pub fn budgeted_and_actual_amounts_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::BudgetedAndActualAmounts]> {
+        self.budgeted_and_actual_amounts_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BudgetPerformanceHistory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BudgetPerformanceHistory");
@@ -2722,6 +3107,20 @@ pub struct BudgetedAndActualAmounts {
     /// <p>The time period covered by this budget comparison.</p>
     pub time_period: std::option::Option<crate::model::TimePeriod>,
 }
+impl BudgetedAndActualAmounts {
+    /// <p>The amount of cost or usage that you created the budget for.</p>
+    pub fn budgeted_amount(&self) -> std::option::Option<&crate::model::Spend> {
+        self.budgeted_amount.as_ref()
+    }
+    /// <p>Your actual costs or usage for a budget period.</p>
+    pub fn actual_amount(&self) -> std::option::Option<&crate::model::Spend> {
+        self.actual_amount.as_ref()
+    }
+    /// <p>The time period covered by this budget comparison.</p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
+        self.time_period.as_ref()
+    }
+}
 impl std::fmt::Debug for BudgetedAndActualAmounts {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BudgetedAndActualAmounts");
@@ -2818,6 +3217,32 @@ pub struct ActionHistory {
     /// The description of details of the event.
     /// </p>
     pub action_history_details: std::option::Option<crate::model::ActionHistoryDetails>,
+}
+impl ActionHistory {
+    /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>
+    /// The status of action at the time of the event.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// This distinguishes between whether the events are triggered by the user or generated by the system.
+    /// </p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::EventType> {
+        self.event_type.as_ref()
+    }
+    /// <p>
+    /// The description of details of the event.
+    /// </p>
+    pub fn action_history_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActionHistoryDetails> {
+        self.action_history_details.as_ref()
+    }
 }
 impl std::fmt::Debug for ActionHistory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2935,6 +3360,18 @@ pub struct ActionHistoryDetails {
     /// The budget action resource.
     /// </p>
     pub action: std::option::Option<crate::model::Action>,
+}
+impl ActionHistoryDetails {
+    /// <p> A generic string.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>
+    /// The budget action resource.
+    /// </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for ActionHistoryDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3075,6 +3512,16 @@ pub struct NotificationWithSubscribers {
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>A list of subscribers who are subscribed to this notification.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
+}
+impl NotificationWithSubscribers {
+    /// <p>The notification that is associated with a budget.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>A list of subscribers who are subscribed to this notification.</p>
+    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+        self.subscribers.as_deref()
+    }
 }
 impl std::fmt::Debug for NotificationWithSubscribers {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -273,10 +273,7 @@ impl CreateConfigInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_config(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -461,7 +458,7 @@ impl CreateDataflowEndpointGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dataflow_endpoint_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_dataflow_endpoint_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -726,10 +723,9 @@ impl CreateMissionProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_mission_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_mission_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1857,10 +1853,7 @@ impl GetMinuteUsageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_minute_usage(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_minute_usage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2573,10 +2566,7 @@ impl ListContactsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_contacts(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_contacts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3605,10 +3595,8 @@ impl ReserveContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reserve_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_reserve_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3797,10 +3785,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4199,10 +4184,7 @@ impl UpdateConfigInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_config(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4472,10 +4454,9 @@ impl UpdateMissionProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_mission_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_mission_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4546,6 +4527,16 @@ pub struct ListSatellitesInput {
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSatellitesInput {
+    /// <p>Maximum number of satellites returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSatellitesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSatellitesInput");
@@ -4561,6 +4552,12 @@ impl std::fmt::Debug for ListSatellitesInput {
 pub struct GetSatelliteInput {
     /// <p>UUID of a satellite.</p>
     pub satellite_id: std::option::Option<std::string::String>,
+}
+impl GetSatelliteInput {
+    /// <p>UUID of a satellite.</p>
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
+        self.satellite_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSatelliteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4578,6 +4575,16 @@ pub struct ListMissionProfilesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMissionProfilesInput {
+    /// <p>Maximum number of mission profiles returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMissionProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4610,6 +4617,41 @@ pub struct CreateMissionProfileInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateMissionProfileInput {
+    /// <p>Name of a mission profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    pub fn contact_pre_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_pre_pass_duration_seconds
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn contact_post_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_post_pass_duration_seconds
+    }
+    /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    pub fn minimum_viable_contact_duration_seconds(&self) -> std::option::Option<i32> {
+        self.minimum_viable_contact_duration_seconds
+    }
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+    /// <code>Config</code> and a <i>to</i>
+    /// <code>Config</code>.</p>
+    pub fn dataflow_edges(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.dataflow_edges.as_deref()
+    }
+    /// <p>ARN of a tracking <code>Config</code>.</p>
+    pub fn tracking_config_arn(&self) -> std::option::Option<&str> {
+        self.tracking_config_arn.as_deref()
+    }
+    /// <p>Tags assigned to a mission profile.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMissionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMissionProfileInput");
@@ -4640,6 +4682,12 @@ pub struct DeleteMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
+impl DeleteMissionProfileInput {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMissionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMissionProfileInput");
@@ -4668,6 +4716,38 @@ pub struct UpdateMissionProfileInput {
     pub dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub tracking_config_arn: std::option::Option<std::string::String>,
+}
+impl UpdateMissionProfileInput {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
+    /// <p>Name of a mission profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn contact_pre_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_pre_pass_duration_seconds
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn contact_post_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_post_pass_duration_seconds
+    }
+    /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    pub fn minimum_viable_contact_duration_seconds(&self) -> std::option::Option<i32> {
+        self.minimum_viable_contact_duration_seconds
+    }
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+    /// <code>Config</code> and a <i>to</i>
+    /// <code>Config</code>.</p>
+    pub fn dataflow_edges(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.dataflow_edges.as_deref()
+    }
+    /// <p>ARN of a tracking <code>Config</code>.</p>
+    pub fn tracking_config_arn(&self) -> std::option::Option<&str> {
+        self.tracking_config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMissionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4699,6 +4779,12 @@ pub struct GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
+impl GetMissionProfileInput {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMissionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMissionProfileInput");
@@ -4717,6 +4803,20 @@ pub struct ListGroundStationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGroundStationsInput {
+    /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
+        self.satellite_id.as_deref()
+    }
+    /// <p>Maximum number of ground stations returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroundStationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4737,6 +4837,16 @@ pub struct ListDataflowEndpointGroupsInput {
     /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDataflowEndpointGroupsInput {
+    /// <p>Maximum number of dataflow endpoint groups returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDataflowEndpointGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataflowEndpointGroupsInput");
@@ -4756,6 +4866,19 @@ pub struct CreateDataflowEndpointGroupInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDataflowEndpointGroupInput {
+    /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
+    pub fn endpoint_details(&self) -> std::option::Option<&[crate::model::EndpointDetails]> {
+        self.endpoint_details.as_deref()
+    }
+    /// <p>Tags of a dataflow endpoint group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDataflowEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataflowEndpointGroupInput");
@@ -4771,6 +4894,12 @@ impl std::fmt::Debug for CreateDataflowEndpointGroupInput {
 pub struct DeleteDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
+}
+impl DeleteDataflowEndpointGroupInput {
+    /// <p>UUID of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataflowEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4789,6 +4918,12 @@ impl std::fmt::Debug for DeleteDataflowEndpointGroupInput {
 pub struct GetDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
+}
+impl GetDataflowEndpointGroupInput {
+    /// <p>UUID of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataflowEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4821,6 +4956,40 @@ pub struct ListContactsInput {
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>ARN of a mission profile.</p>
     pub mission_profile_arn: std::option::Option<std::string::String>,
+}
+impl ListContactsInput {
+    /// <p>Maximum number of contacts returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Status of a contact reservation.</p>
+    pub fn status_list(&self) -> std::option::Option<&[crate::model::ContactStatus]> {
+        self.status_list.as_deref()
+    }
+    /// <p>Start time of a contact.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>End time of a contact.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Name of a ground station.</p>
+    pub fn ground_station(&self) -> std::option::Option<&str> {
+        self.ground_station.as_deref()
+    }
+    /// <p>ARN of a satellite.</p>
+    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+        self.satellite_arn.as_deref()
+    }
+    /// <p>ARN of a mission profile.</p>
+    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+        self.mission_profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4855,6 +5024,35 @@ pub struct ReserveContactInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ReserveContactInput {
+    /// <p>ARN of a mission profile.</p>
+    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+        self.mission_profile_arn.as_deref()
+    }
+    /// <p>ARN of a satellite</p>
+    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+        self.satellite_arn.as_deref()
+    }
+    /// <p>Start time of a contact.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>End time of a contact.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Name of a ground station.</p>
+    pub fn ground_station(&self) -> std::option::Option<&str> {
+        self.ground_station.as_deref()
+    }
+    /// <p>Tags assigned to a contact.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ReserveContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReserveContactInput");
@@ -4875,6 +5073,12 @@ pub struct CancelContactInput {
     /// <p>UUID of a contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
 }
+impl CancelContactInput {
+    /// <p>UUID of a contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelContactInput");
@@ -4889,6 +5093,12 @@ impl std::fmt::Debug for CancelContactInput {
 pub struct DescribeContactInput {
     /// <p>UUID of a contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
+}
+impl DescribeContactInput {
+    /// <p>UUID of a contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4906,6 +5116,16 @@ pub struct ListConfigsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigsInput {
+    /// <p>Maximum number of <code>Configs</code> returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4928,6 +5148,23 @@ pub struct CreateConfigInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateConfigInput {
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Parameters of a <code>Config</code>.</p>
+    pub fn config_data(&self) -> std::option::Option<&crate::model::ConfigTypeData> {
+        self.config_data.as_ref()
+    }
+    /// <p>Tags assigned to a <code>Config</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigInput");
@@ -4946,6 +5183,16 @@ pub struct DeleteConfigInput {
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
+}
+impl DeleteConfigInput {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4969,6 +5216,24 @@ pub struct UpdateConfigInput {
     /// <p>Parameters of a <code>Config</code>.</p>
     pub config_data: std::option::Option<crate::model::ConfigTypeData>,
 }
+impl UpdateConfigInput {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>Parameters of a <code>Config</code>.</p>
+    pub fn config_data(&self) -> std::option::Option<&crate::model::ConfigTypeData> {
+        self.config_data.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigInput");
@@ -4989,6 +5254,16 @@ pub struct GetConfigInput {
     /// <p>Type of a <code>Config</code>.</p>
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
 }
+impl GetConfigInput {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigInput");
@@ -5006,6 +5281,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys of a resource tag.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>ARN of a resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Keys of a resource tag.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5026,6 +5311,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>ARN of a resource tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags assigned to a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5041,6 +5339,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>ARN of a resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>ARN of a resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5058,6 +5362,16 @@ pub struct GetMinuteUsageInput {
     pub month: std::option::Option<i32>,
     /// <p>The year being requested, in the format of YYYY.</p>
     pub year: std::option::Option<i32>,
+}
+impl GetMinuteUsageInput {
+    /// <p>The month being requested, with a value of 1-12.</p>
+    pub fn month(&self) -> std::option::Option<i32> {
+        self.month
+    }
+    /// <p>The year being requested, in the format of YYYY.</p>
+    pub fn year(&self) -> std::option::Option<i32> {
+        self.year
+    }
 }
 impl std::fmt::Debug for GetMinuteUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

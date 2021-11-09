@@ -127,6 +127,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -192,6 +201,17 @@ pub struct ListProjectsOutput {
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there
     /// are no further results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProjectsOutput {
+    /// <p>An object containing the list of projects.</p>
+    pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
+        self.projects.as_deref()
+    }
+    /// <p>The token used to retrieve the next set of results - will be effectively empty if there
+    /// are no further results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -268,6 +288,17 @@ pub struct ListPlacementsOutput {
     /// are no further results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPlacementsOutput {
+    /// <p>An object listing the requested placements.</p>
+    pub fn placements(&self) -> std::option::Option<&[crate::model::PlacementSummary]> {
+        self.placements.as_deref()
+    }
+    /// <p>The token used to retrieve the next set of results - will be effectively empty if there
+    /// are no further results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPlacementsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPlacementsOutput");
@@ -340,6 +371,15 @@ pub struct GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
     pub devices:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetDevicesInPlacementOutput {
+    /// <p>An object containing the devices (zero or more) within the placement.</p>
+    pub fn devices(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.devices.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDevicesInPlacementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -436,6 +476,12 @@ pub struct DescribeProjectOutput {
     /// <p>An object describing the project.</p>
     pub project: std::option::Option<crate::model::ProjectDescription>,
 }
+impl DescribeProjectOutput {
+    /// <p>An object describing the project.</p>
+    pub fn project(&self) -> std::option::Option<&crate::model::ProjectDescription> {
+        self.project.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectOutput");
@@ -486,6 +532,12 @@ impl DescribeProjectOutput {
 pub struct DescribePlacementOutput {
     /// <p>An object describing the placement.</p>
     pub placement: std::option::Option<crate::model::PlacementDescription>,
+}
+impl DescribePlacementOutput {
+    /// <p>An object describing the placement.</p>
+    pub fn placement(&self) -> std::option::Option<&crate::model::PlacementDescription> {
+        self.placement.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePlacementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

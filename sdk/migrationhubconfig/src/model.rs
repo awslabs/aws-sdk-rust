@@ -19,6 +19,29 @@ pub struct HomeRegionControl {
     /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
     pub requested_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl HomeRegionControl {
+    /// <p>A unique identifier that's generated for each home region control. It's always a string
+    /// that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p>The AWS Region that's been set as home region. For example, "us-west-2" or "eu-central-1"
+    /// are valid home regions.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>The target parameter specifies the identifier to which the home region is applied, which
+    /// is always an <code>ACCOUNT</code>. It applies the home region to the current
+    /// <code>ACCOUNT</code>.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::Target> {
+        self.target.as_ref()
+    }
+    /// <p>A timestamp representing the time when the customer called
+    /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
+    pub fn requested_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.requested_time.as_ref()
+    }
+}
 impl std::fmt::Debug for HomeRegionControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HomeRegionControl");
@@ -123,6 +146,17 @@ pub struct Target {
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for
     /// which the control was created. (This must be the current account.) </p>
     pub id: std::option::Option<std::string::String>,
+}
+impl Target {
+    /// <p>The target type is always an <code>ACCOUNT</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for
+    /// which the control was created. (This must be the current account.) </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for Target {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

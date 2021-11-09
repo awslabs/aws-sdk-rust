@@ -154,10 +154,9 @@ impl AssociateChannelFlowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_channel_flow(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_channel_flow(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -411,7 +410,7 @@ impl BatchCreateChannelMembershipInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -620,10 +619,7 @@ impl ChannelFlowCallbackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_channel_flow_callback(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_channel_flow_callback(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -904,10 +900,7 @@ impl CreateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1120,10 +1113,7 @@ impl CreateChannelBanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_channel_ban(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_channel_ban(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1340,10 +1330,7 @@ impl CreateChannelFlowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_channel_flow(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_channel_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1582,10 +1569,7 @@ impl CreateChannelMembershipInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_channel_membership(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1803,10 +1787,7 @@ impl CreateChannelModeratorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_channel_moderator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7850,7 +7831,7 @@ impl PutChannelMembershipPreferencesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_channel_membership_preferences(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_channel_membership_preferences(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8392,10 +8373,7 @@ impl SendChannelMessageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_channel_message(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_channel_message(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8565,10 +8543,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8738,10 +8713,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8973,10 +8945,7 @@ impl UpdateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9177,10 +9146,7 @@ impl UpdateChannelFlowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_channel_flow(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_channel_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9433,10 +9399,9 @@ impl UpdateChannelMessageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_channel_message(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_channel_message(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9695,6 +9660,16 @@ pub struct UpdateChannelReadMarkerInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl UpdateChannelReadMarkerInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelReadMarkerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelReadMarkerInput");
@@ -9719,6 +9694,28 @@ pub struct UpdateChannelMessageInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl UpdateChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The content of the message being updated.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The metadata of the message being updated.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelMessageInput");
@@ -9741,6 +9738,20 @@ pub struct UpdateChannelFlowInput {
     pub processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
     /// <p>The name of the channel flow.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateChannelFlowInput {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+    /// <p>Information about the processor Lambda functions </p>
+    pub fn processors(&self) -> std::option::Option<&[crate::model::Processor]> {
+        self.processors.as_deref()
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9767,6 +9778,28 @@ pub struct UpdateChannelInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl UpdateChannelInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The mode of the update request.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The metadata for the update request.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
@@ -9788,6 +9821,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -9805,6 +9848,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9840,6 +9893,50 @@ pub struct SendChannelMessageInput {
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
 }
+impl SendChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The content of the message.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMessageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    pub fn persistence(&self) -> std::option::Option<&crate::model::ChannelMessagePersistenceType> {
+        self.persistence.as_ref()
+    }
+    /// <p>The optional metadata for each message.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>Idempotency</code> token for each client request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+    /// <p>The push notification configuration of the message.</p>
+    pub fn push_notification(
+        &self,
+    ) -> std::option::Option<&crate::model::PushNotificationConfiguration> {
+        self.push_notification.as_ref()
+    }
+    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    pub fn message_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    > {
+        self.message_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for SendChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendChannelMessageInput");
@@ -9867,6 +9964,20 @@ pub struct RedactChannelMessageInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl RedactChannelMessageInput {
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for RedactChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedactChannelMessageInput");
@@ -9890,6 +10001,24 @@ pub struct PutChannelMembershipPreferencesInput {
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
 }
+impl PutChannelMembershipPreferencesInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+    /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+    pub fn preferences(&self) -> std::option::Option<&crate::model::ChannelMembershipPreferences> {
+        self.preferences.as_ref()
+    }
+}
 impl std::fmt::Debug for PutChannelMembershipPreferencesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutChannelMembershipPreferencesInput");
@@ -9907,6 +10036,12 @@ impl std::fmt::Debug for PutChannelMembershipPreferencesInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9930,6 +10065,25 @@ pub struct ListChannelsModeratedByAppInstanceUserInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelsModeratedByAppInstanceUserInput {
+    /// <p>The ARN of the user in the moderated channel.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The maximum number of channels in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from previous API requests until the number of channels moderated by
+    /// the user is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsModeratedByAppInstanceUserInput");
@@ -9951,6 +10105,20 @@ pub struct ListChannelsAssociatedWithChannelFlowInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsAssociatedWithChannelFlowInput {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+    /// <p>The maximum number of channels that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9979,6 +10147,30 @@ pub struct ListChannelsInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+    /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
+    /// can retrieve private channels. </p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The maximum number of channels that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsInput");
@@ -10004,6 +10196,25 @@ pub struct ListChannelModeratorsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl ListChannelModeratorsInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The maximum number of moderators that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested moderators are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelModeratorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10036,6 +10247,37 @@ pub struct ListChannelMessagesInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelMessagesInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time
+    /// created.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The initial or starting time stamp for your requested messages.</p>
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_before.as_ref()
+    }
+    /// <p>The final or ending time stamp for your requested messages.</p>
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_after.as_ref()
+    }
+    /// <p>The maximum number of messages that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMessagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMessagesInput");
@@ -10063,6 +10305,25 @@ pub struct ListChannelMembershipsForAppInstanceUserInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl ListChannelMembershipsForAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The maximum number of users that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from previous API requests until the number of channel memberships is
+    /// reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10094,6 +10355,32 @@ pub struct ListChannelMembershipsInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl ListChannelMembershipsInput {
+    /// <p>The maximum number of channel memberships that you want returned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The maximum number of channel memberships that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested channel memberships are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMembershipsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMembershipsInput");
@@ -10117,6 +10404,20 @@ pub struct ListChannelFlowsInput {
     /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelFlowsInput {
+    /// <p>The ARN of the app instance.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The maximum number of channel flows that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelFlowsInput");
@@ -10139,6 +10440,24 @@ pub struct ListChannelBansInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl ListChannelBansInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The maximum number of bans that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelBansInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10173,6 +10492,20 @@ pub struct GetChannelMessageStatusInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl GetChannelMessageStatusInput {
+    /// <p>The ARN of the channel</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelMessageStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelMessageStatusInput");
@@ -10193,6 +10526,20 @@ pub struct GetChannelMessageInput {
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl GetChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for GetChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10215,6 +10562,20 @@ pub struct GetChannelMembershipPreferencesInput {
     /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl GetChannelMembershipPreferencesInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelMembershipPreferencesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelMembershipPreferencesInput");
@@ -10235,6 +10596,20 @@ pub struct DisassociateChannelFlowInput {
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DisassociateChannelFlowInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10257,6 +10632,20 @@ pub struct DescribeChannelModeratorInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelModeratorInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
+    pub fn channel_moderator_arn(&self) -> std::option::Option<&str> {
+        self.channel_moderator_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelModeratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelModeratorInput");
@@ -10277,6 +10666,20 @@ pub struct DescribeChannelModeratedByAppInstanceUserInput {
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DescribeChannelModeratedByAppInstanceUserInput {
+    /// <p>The ARN of the moderated channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelModeratedByAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10299,6 +10702,20 @@ pub struct DescribeChannelMembershipForAppInstanceUserInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelMembershipForAppInstanceUserInput {
+    /// <p>The ARN of the channel to which the user belongs.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the user in a channel.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelMembershipForAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelMembershipForAppInstanceUserInput");
@@ -10320,6 +10737,20 @@ pub struct DescribeChannelMembershipInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelMembershipInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelMembershipInput");
@@ -10336,6 +10767,12 @@ impl std::fmt::Debug for DescribeChannelMembershipInput {
 pub struct DescribeChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
     pub channel_flow_arn: std::option::Option<std::string::String>,
+}
+impl DescribeChannelFlowInput {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10356,6 +10793,20 @@ pub struct DescribeChannelBanInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DescribeChannelBanInput {
+    /// <p>The ARN of the channel from which the user is banned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelBanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelBanInput");
@@ -10374,6 +10825,16 @@ pub struct DescribeChannelInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DescribeChannelInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10394,6 +10855,20 @@ pub struct DeleteChannelModeratorInput {
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DeleteChannelModeratorInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
+    pub fn channel_moderator_arn(&self) -> std::option::Option<&str> {
+        self.channel_moderator_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelModeratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10416,6 +10891,20 @@ pub struct DeleteChannelMessageInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DeleteChannelMessageInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message being deleted.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteChannelMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteChannelMessageInput");
@@ -10437,6 +10926,20 @@ pub struct DeleteChannelMembershipInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DeleteChannelMembershipInput {
+    /// <p>The ARN of the channel from which you want to remove the user.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteChannelMembershipInput");
@@ -10453,6 +10956,12 @@ impl std::fmt::Debug for DeleteChannelMembershipInput {
 pub struct DeleteChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
     pub channel_flow_arn: std::option::Option<std::string::String>,
+}
+impl DeleteChannelFlowInput {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10473,6 +10982,20 @@ pub struct DeleteChannelBanInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl DeleteChannelBanInput {
+    /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteChannelBanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteChannelBanInput");
@@ -10491,6 +11014,16 @@ pub struct DeleteChannelInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl DeleteChannelInput {
+    /// <p>The ARN of the channel being deleted.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10511,6 +11044,20 @@ pub struct CreateChannelModeratorInput {
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl CreateChannelModeratorInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
+    pub fn channel_moderator_arn(&self) -> std::option::Option<&str> {
+        self.channel_moderator_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateChannelModeratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10539,6 +11086,28 @@ pub struct CreateChannelMembershipInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl CreateChannelMembershipInput {
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+    /// by moderators.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelMembershipInput");
@@ -10565,6 +11134,28 @@ pub struct CreateChannelFlowInput {
     /// <p>The client token for the request. An Idempotency token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CreateChannelFlowInput {
+    /// <p>The ARN of the channel flow request.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>Information about the processor Lambda functions.</p>
+    pub fn processors(&self) -> std::option::Option<&[crate::model::Processor]> {
+        self.processors.as_deref()
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The tags for the creation request.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The client token for the request. An Idempotency token.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelFlowInput");
@@ -10587,6 +11178,20 @@ pub struct CreateChannelBanInput {
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl CreateChannelBanInput {
+    /// <p>The ARN of the ban request.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateChannelBanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10623,6 +11228,44 @@ pub struct CreateChannelInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl CreateChannelInput {
+    /// <p>The ARN of the channel request.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
+    /// moderators, and channel members can add themselves and other members to unrestricted
+    /// channels. Only administrators and moderators can add members to restricted channels.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
+    /// channels aren't discoverable by users outside the channel. Public channels are discoverable
+    /// by anyone in the <code>AppInstance</code>.</p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags for the creation request.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelInput");
@@ -10650,6 +11293,24 @@ pub struct ChannelFlowCallbackInput {
     pub delete_resource: bool,
     /// <p>Stores information about the processed message.</p>
     pub channel_message: std::option::Option<crate::model::ChannelMessageCallback>,
+}
+impl ChannelFlowCallbackInput {
+    /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    pub fn callback_id(&self) -> std::option::Option<&str> {
+        self.callback_id.as_deref()
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
+    pub fn delete_resource(&self) -> bool {
+        self.delete_resource
+    }
+    /// <p>Stores information about the processed message.</p>
+    pub fn channel_message(&self) -> std::option::Option<&crate::model::ChannelMessageCallback> {
+        self.channel_message.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelFlowCallbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10679,6 +11340,28 @@ pub struct BatchCreateChannelMembershipInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
 }
+impl BatchCreateChannelMembershipInput {
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+    /// by moderators.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
+    pub fn member_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.member_arns.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchCreateChannelMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateChannelMembershipInput");
@@ -10700,6 +11383,20 @@ pub struct AssociateChannelFlowInput {
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
+}
+impl AssociateChannelFlowInput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+        self.chime_bearer.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -68,6 +68,16 @@ pub struct GetRoutingControlStateOutput {
     /// <p>The state of the routing control.</p>
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
 }
+impl GetRoutingControlStateOutput {
+    /// <p>The Amazon Resource Number (ARN) of the response.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
+    /// <p>The state of the routing control.</p>
+    pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
+        self.routing_control_state.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRoutingControlStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoutingControlStateOutput");

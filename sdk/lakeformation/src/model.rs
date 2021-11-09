@@ -12,6 +12,24 @@ pub struct TaggedTable {
     /// <p>A list of tags attached to columns in the table.</p>
     pub lf_tags_on_columns: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
 }
+impl TaggedTable {
+    /// <p>A table that has tags attached to it.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::TableResource> {
+        self.table.as_ref()
+    }
+    /// <p>A list of tags attached to the database where the table resides.</p>
+    pub fn lf_tag_on_database(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tag_on_database.as_deref()
+    }
+    /// <p>A list of tags attached to the table.</p>
+    pub fn lf_tags_on_table(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tags_on_table.as_deref()
+    }
+    /// <p>A list of tags attached to columns in the table.</p>
+    pub fn lf_tags_on_columns(&self) -> std::option::Option<&[crate::model::ColumnLfTag]> {
+        self.lf_tags_on_columns.as_deref()
+    }
+}
 impl std::fmt::Debug for TaggedTable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaggedTable");
@@ -132,6 +150,16 @@ pub struct ColumnLfTag {
     /// <p>The tags attached to a column resource.</p>
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
+impl ColumnLfTag {
+    /// <p>The name of a column resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The tags attached to a column resource.</p>
+    pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ColumnLfTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnLfTag");
@@ -205,6 +233,20 @@ pub struct LfTagPair {
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl LfTagPair {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>A list of possible values an attribute can take.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
 }
 impl std::fmt::Debug for LfTagPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -296,6 +338,26 @@ pub struct TableResource {
     ///
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     pub table_wildcard: std::option::Option<crate::model::TableWildcard>,
+}
+impl TableResource {
+    /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A wildcard object representing every table under a database.</p>
+    ///
+    /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
+    pub fn table_wildcard(&self) -> std::option::Option<&crate::model::TableWildcard> {
+        self.table_wildcard.as_ref()
+    }
 }
 impl std::fmt::Debug for TableResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -426,6 +488,16 @@ pub struct LfTag {
     /// <p>A list of possible values an attribute can take.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl LfTag {
+    /// <p>The key-name for the tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>A list of possible values an attribute can take.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for LfTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LfTag");
@@ -497,6 +569,16 @@ pub struct TaggedDatabase {
     pub database: std::option::Option<crate::model::DatabaseResource>,
     /// <p>A list of tags attached to the database.</p>
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
+}
+impl TaggedDatabase {
+    /// <p>A database that has tags attached to it.</p>
+    pub fn database(&self) -> std::option::Option<&crate::model::DatabaseResource> {
+        self.database.as_ref()
+    }
+    /// <p>A list of tags attached to the database.</p>
+    pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TaggedDatabase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -572,6 +654,16 @@ pub struct DatabaseResource {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DatabaseResource {
+    /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the database resource. Unique to the Data Catalog.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DatabaseResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -769,6 +861,38 @@ pub struct Resource {
     /// <p>A list of tag conditions that define a resource's tag policy.</p>
     pub lf_tag_policy: std::option::Option<crate::model::LfTagPolicyResource>,
 }
+impl Resource {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog(&self) -> std::option::Option<&crate::model::CatalogResource> {
+        self.catalog.as_ref()
+    }
+    /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    pub fn database(&self) -> std::option::Option<&crate::model::DatabaseResource> {
+        self.database.as_ref()
+    }
+    /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    pub fn table(&self) -> std::option::Option<&crate::model::TableResource> {
+        self.table.as_ref()
+    }
+    /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
+    pub fn table_with_columns(
+        &self,
+    ) -> std::option::Option<&crate::model::TableWithColumnsResource> {
+        self.table_with_columns.as_ref()
+    }
+    /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    pub fn data_location(&self) -> std::option::Option<&crate::model::DataLocationResource> {
+        self.data_location.as_ref()
+    }
+    /// <p>The tag key and values attached to a resource.</p>
+    pub fn lf_tag(&self) -> std::option::Option<&crate::model::LfTagKeyResource> {
+        self.lf_tag.as_ref()
+    }
+    /// <p>A list of tag conditions that define a resource's tag policy.</p>
+    pub fn lf_tag_policy(&self) -> std::option::Option<&crate::model::LfTagPolicyResource> {
+        self.lf_tag_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -920,6 +1044,20 @@ pub struct LfTagPolicyResource {
     /// <p>A list of tag conditions that apply to the resource's tag policy.</p>
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
 }
+impl LfTagPolicyResource {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The resource type for which the tag policy applies.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>A list of tag conditions that apply to the resource's tag policy.</p>
+    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+        self.expression.as_deref()
+    }
+}
 impl std::fmt::Debug for LfTagPolicyResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LfTagPolicyResource");
@@ -1065,6 +1203,20 @@ pub struct LfTagKeyResource {
     /// <p>A list of possible values an attribute can take.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl LfTagKeyResource {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>A list of possible values an attribute can take.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for LfTagKeyResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LfTagKeyResource");
@@ -1150,6 +1302,16 @@ pub struct DataLocationResource {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DataLocationResource {
+    /// <p>The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is the account ID of the caller.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DataLocationResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataLocationResource");
@@ -1219,6 +1381,28 @@ pub struct TableWithColumnsResource {
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub column_wildcard: std::option::Option<crate::model::ColumnWildcard>,
+}
+impl TableWithColumnsResource {
+    /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
+    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.column_names.as_deref()
+    }
+    /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
+    pub fn column_wildcard(&self) -> std::option::Option<&crate::model::ColumnWildcard> {
+        self.column_wildcard.as_ref()
+    }
 }
 impl std::fmt::Debug for TableWithColumnsResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1335,6 +1519,12 @@ pub struct ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     pub excluded_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ColumnWildcard {
+    /// <p>Excludes column names. Any column with this name will be excluded.</p>
+    pub fn excluded_column_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_column_names.as_deref()
+    }
+}
 impl std::fmt::Debug for ColumnWildcard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnWildcard");
@@ -1422,6 +1612,12 @@ pub struct DataLakePrincipal {
     /// <p>An identifier for the AWS Lake Formation principal.</p>
     pub data_lake_principal_identifier: std::option::Option<std::string::String>,
 }
+impl DataLakePrincipal {
+    /// <p>An identifier for the AWS Lake Formation principal.</p>
+    pub fn data_lake_principal_identifier(&self) -> std::option::Option<&str> {
+        self.data_lake_principal_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DataLakePrincipal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataLakePrincipal");
@@ -1480,6 +1676,16 @@ pub struct LfTagError {
     pub lf_tag: std::option::Option<crate::model::LfTagPair>,
     /// <p>An error that occurred with the attachment or detachment of the tag.</p>
     pub error: std::option::Option<crate::model::ErrorDetail>,
+}
+impl LfTagError {
+    /// <p>The key-name of the tag.</p>
+    pub fn lf_tag(&self) -> std::option::Option<&crate::model::LfTagPair> {
+        self.lf_tag.as_ref()
+    }
+    /// <p>An error that occurred with the attachment or detachment of the tag.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for LfTagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1543,6 +1749,16 @@ pub struct ErrorDetail {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A message describing the error.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl ErrorDetail {
+    /// <p>The code associated with this error.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>A message describing the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1617,6 +1833,30 @@ pub struct DataLakeSettings {
     ///
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     pub trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataLakeSettings {
+    /// <p>A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
+    pub fn data_lake_admins(&self) -> std::option::Option<&[crate::model::DataLakePrincipal]> {
+        self.data_lake_admins.as_deref()
+    }
+    /// <p>A structure representing a list of up to three principal permissions entries for default create database permissions.</p>
+    pub fn create_database_default_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrincipalPermissions]> {
+        self.create_database_default_permissions.as_deref()
+    }
+    /// <p>A structure representing a list of up to three principal permissions entries for default create table permissions.</p>
+    pub fn create_table_default_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrincipalPermissions]> {
+        self.create_table_default_permissions.as_deref()
+    }
+    /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+    ///
+    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
+    pub fn trusted_resource_owners(&self) -> std::option::Option<&[std::string::String]> {
+        self.trusted_resource_owners.as_deref()
+    }
 }
 impl std::fmt::Debug for DataLakeSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1765,6 +2005,16 @@ pub struct PrincipalPermissions {
     /// <p>The permissions that are granted to the principal.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
+impl PrincipalPermissions {
+    /// <p>The principal who is granted permissions.</p>
+    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+        self.principal.as_ref()
+    }
+    /// <p>The permissions that are granted to the principal.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+}
 impl std::fmt::Debug for PrincipalPermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PrincipalPermissions");
@@ -1841,6 +2091,20 @@ pub struct ResourceInfo {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the resource was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ResourceInfo {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The IAM role that registered a resource.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The date and time the resource was last modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1922,6 +2186,20 @@ pub struct FilterCondition {
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>A string with values used in evaluating the filter condition.</p>
     pub string_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FilterCondition {
+    /// <p>The field to filter in the filter condition.</p>
+    pub fn field(&self) -> std::option::Option<&crate::model::FieldNameString> {
+        self.field.as_ref()
+    }
+    /// <p>The comparison operator used in the filter condition.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>A string with values used in evaluating the filter condition.</p>
+    pub fn string_value_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.string_value_list.as_deref()
+    }
 }
 impl std::fmt::Debug for FilterCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2182,6 +2460,30 @@ pub struct PrincipalResourcePermissions {
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub additional_details: std::option::Option<crate::model::DetailsMap>,
 }
+impl PrincipalResourcePermissions {
+    /// <p>The Data Lake principal to be granted or revoked permissions.</p>
+    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+        self.principal.as_ref()
+    }
+    /// <p>The resource where permissions are to be granted or revoked.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The permissions to be granted or revoked on the resource.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
+    pub fn permissions_with_grant_option(
+        &self,
+    ) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions_with_grant_option.as_deref()
+    }
+    /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
+    pub fn additional_details(&self) -> std::option::Option<&crate::model::DetailsMap> {
+        self.additional_details.as_ref()
+    }
+}
 impl std::fmt::Debug for PrincipalResourcePermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PrincipalResourcePermissions");
@@ -2314,6 +2616,12 @@ impl PrincipalResourcePermissions {
 pub struct DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through AWS Resource Access Manager (AWS RAM).</p>
     pub resource_share: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DetailsMap {
+    /// <p>A resource share ARN for a catalog resource shared through AWS Resource Access Manager (AWS RAM).</p>
+    pub fn resource_share(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_share.as_deref()
+    }
 }
 impl std::fmt::Debug for DetailsMap {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2517,6 +2825,18 @@ pub struct BatchPermissionsFailureEntry {
     /// <p>An error message that applies to the failure of the entry.</p>
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
+impl BatchPermissionsFailureEntry {
+    /// <p>An identifier for an entry of the batch request.</p>
+    pub fn request_entry(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchPermissionsRequestEntry> {
+        self.request_entry.as_ref()
+    }
+    /// <p>An error message that applies to the failure of the entry.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchPermissionsFailureEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPermissionsFailureEntry");
@@ -2588,6 +2908,30 @@ pub struct BatchPermissionsRequestEntry {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>Indicates if the option to pass permissions is granted.</p>
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
+}
+impl BatchPermissionsRequestEntry {
+    /// <p>A unique identifier for the batch permissions request entry.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The principal to be granted a permission.</p>
+    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+        self.principal.as_ref()
+    }
+    /// <p>The resource to which the principal is to be granted a permission.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The permissions to be granted.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>Indicates if the option to pass permissions is granted.</p>
+    pub fn permissions_with_grant_option(
+        &self,
+    ) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions_with_grant_option.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPermissionsRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

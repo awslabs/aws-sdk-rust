@@ -6,6 +6,12 @@ pub struct ValidateConfigurationSettingsOutput {
     /// <p> A list of <a>ValidationMessage</a>. </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::ValidationMessage>>,
 }
+impl ValidateConfigurationSettingsOutput {
+    /// <p> A list of <a>ValidationMessage</a>. </p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::ValidationMessage]> {
+        self.messages.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateConfigurationSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateConfigurationSettingsOutput");
@@ -192,6 +198,152 @@ pub struct UpdateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
     /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
+}
+impl UpdateEnvironmentOutput {
+    /// <p>The name of this environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The ID of this environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the application associated with this environment.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The application version deployed in this environment.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>The name of the configuration template used to originally launch this
+    /// environment.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Describes this environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
+    /// single-instance environments, the IP address of the instance.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p>The URL to the CNAME for this environment.</p>
+    pub fn cname(&self) -> std::option::Option<&str> {
+        self.cname.as_deref()
+    }
+    /// <p>The creation date for this environment.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The last modified date for this environment.</p>
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_updated.as_ref()
+    }
+    /// <p>The current operational status of the environment:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Updating</code>: Environment is in the process of updating its configuration
+    /// settings or application version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
+    /// update or terminate.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Terminated</code>: Environment is not running.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates if there is an in-progress environment configuration update or application
+    /// version deployment that you can cancel.</p>
+    /// <p>
+    /// <code>true:</code> There is an update in progress. </p>
+    /// <p>
+    /// <code>false:</code> There are no updates currently in progress. </p>
+    pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
+        self.abortable_operation_in_progress
+    }
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
+    /// failure levels for a running environment:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
+    /// consecutive failures occur for an environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
+    /// failures occur for an environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
+    /// launched and health checks have not started or health checks are suspended during an
+    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
+    /// </li>
+    /// </ul>
+    /// <p> Default: <code>Grey</code>
+    /// </p>
+    pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
+        self.health.as_ref()
+    }
+    /// <p>Returns the health status of the application running in your environment. For more
+    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+    /// Statuses</a>.</p>
+    pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
+        self.health_status.as_ref()
+    }
+    /// <p>The description of the AWS resources used by this environment.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::EnvironmentResourcesDescription> {
+        self.resources.as_ref()
+    }
+    /// <p>Describes the current tier of this environment.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::EnvironmentTier> {
+        self.tier.as_ref()
+    }
+    /// <p>A list of links to other environments in the same group.</p>
+    pub fn environment_links(&self) -> std::option::Option<&[crate::model::EnvironmentLink]> {
+        self.environment_links.as_deref()
+    }
+    /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    pub fn environment_arn(&self) -> std::option::Option<&str> {
+        self.environment_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
+    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    pub fn operations_role(&self) -> std::option::Option<&str> {
+        self.operations_role.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -731,6 +883,79 @@ pub struct UpdateConfigurationTemplateOutput {
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
+impl UpdateConfigurationTemplateOutput {
+    /// <p>The name of the solution stack this configuration set uses.</p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>The name of the application associated with this configuration set.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p> If not <code>null</code>, the name of the configuration template for this
+    /// configuration set. </p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Describes this configuration set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p> If this configuration set is associated with an environment, the
+    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
+    /// configuration set: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>null</code>: This configuration is not associated with a running
+    /// environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
+    /// environment but is in the process of deploying.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deployed</code>: This is the configuration that is currently deployed to the
+    /// associated running environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>failed</code>: This is a draft configuration that failed to successfully
+    /// deploy.</p>
+    /// </li>
+    /// </ul>
+    pub fn deployment_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationDeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>The date (in UTC time) when this configuration set was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date (in UTC time) when this configuration set was last modified.</p>
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_updated.as_ref()
+    }
+    /// <p>A list of the configuration options and their values in this configuration
+    /// set.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationTemplateOutput");
@@ -989,6 +1214,15 @@ pub struct UpdateApplicationVersionOutput {
     /// </p>
     pub application_version: std::option::Option<crate::model::ApplicationVersionDescription>,
 }
+impl UpdateApplicationVersionOutput {
+    /// <p> The <a>ApplicationVersionDescription</a> of the application version.
+    /// </p>
+    pub fn application_version(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationVersionDescription> {
+        self.application_version.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationVersionOutput");
@@ -1048,6 +1282,18 @@ pub struct UpdateApplicationResourceLifecycleOutput {
     /// <p>The lifecycle configuration.</p>
     pub resource_lifecycle_config:
         std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
+}
+impl UpdateApplicationResourceLifecycleOutput {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The lifecycle configuration.</p>
+    pub fn resource_lifecycle_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationResourceLifecycleConfig> {
+        self.resource_lifecycle_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationResourceLifecycleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1119,6 +1365,12 @@ impl UpdateApplicationResourceLifecycleOutput {
 pub struct UpdateApplicationOutput {
     /// <p> The <a>ApplicationDescription</a> of the application. </p>
     pub application: std::option::Option<crate::model::ApplicationDescription>,
+}
+impl UpdateApplicationOutput {
+    /// <p> The <a>ApplicationDescription</a> of the application. </p>
+    pub fn application(&self) -> std::option::Option<&crate::model::ApplicationDescription> {
+        self.application.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1270,6 +1522,152 @@ pub struct TerminateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
     /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
+}
+impl TerminateEnvironmentOutput {
+    /// <p>The name of this environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The ID of this environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the application associated with this environment.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The application version deployed in this environment.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>The name of the configuration template used to originally launch this
+    /// environment.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Describes this environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
+    /// single-instance environments, the IP address of the instance.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p>The URL to the CNAME for this environment.</p>
+    pub fn cname(&self) -> std::option::Option<&str> {
+        self.cname.as_deref()
+    }
+    /// <p>The creation date for this environment.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The last modified date for this environment.</p>
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_updated.as_ref()
+    }
+    /// <p>The current operational status of the environment:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Updating</code>: Environment is in the process of updating its configuration
+    /// settings or application version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
+    /// update or terminate.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Terminated</code>: Environment is not running.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates if there is an in-progress environment configuration update or application
+    /// version deployment that you can cancel.</p>
+    /// <p>
+    /// <code>true:</code> There is an update in progress. </p>
+    /// <p>
+    /// <code>false:</code> There are no updates currently in progress. </p>
+    pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
+        self.abortable_operation_in_progress
+    }
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
+    /// failure levels for a running environment:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
+    /// consecutive failures occur for an environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
+    /// failures occur for an environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
+    /// launched and health checks have not started or health checks are suspended during an
+    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
+    /// </li>
+    /// </ul>
+    /// <p> Default: <code>Grey</code>
+    /// </p>
+    pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
+        self.health.as_ref()
+    }
+    /// <p>Returns the health status of the application running in your environment. For more
+    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+    /// Statuses</a>.</p>
+    pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
+        self.health_status.as_ref()
+    }
+    /// <p>The description of the AWS resources used by this environment.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::EnvironmentResourcesDescription> {
+        self.resources.as_ref()
+    }
+    /// <p>Describes the current tier of this environment.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::EnvironmentTier> {
+        self.tier.as_ref()
+    }
+    /// <p>A list of links to other environments in the same group.</p>
+    pub fn environment_links(&self) -> std::option::Option<&[crate::model::EnvironmentLink]> {
+        self.environment_links.as_deref()
+    }
+    /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    pub fn environment_arn(&self) -> std::option::Option<&str> {
+        self.environment_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
+    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    pub fn operations_role(&self) -> std::option::Option<&str> {
+        self.operations_role.as_deref()
+    }
 }
 impl std::fmt::Debug for TerminateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1794,6 +2192,14 @@ pub struct RetrieveEnvironmentInfoOutput {
     pub environment_info:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentInfoDescription>>,
 }
+impl RetrieveEnvironmentInfoOutput {
+    /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+    pub fn environment_info(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentInfoDescription]> {
+        self.environment_info.as_deref()
+    }
+}
 impl std::fmt::Debug for RetrieveEnvironmentInfoOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveEnvironmentInfoOutput");
@@ -1947,6 +2353,16 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key-value pairs.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which a tag list was requested.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag key-value pairs.</p>
+    pub fn resource_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.resource_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -2019,6 +2435,17 @@ pub struct ListPlatformVersionsOutput {
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
     /// pass in a subsequent request to get the next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlatformVersionsOutput {
+    /// <p>Summary information about the platform versions.</p>
+    pub fn platform_summary_list(&self) -> std::option::Option<&[crate::model::PlatformSummary]> {
+        self.platform_summary_list.as_deref()
+    }
+    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
+    /// pass in a subsequent request to get the next response page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPlatformVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2099,6 +2526,19 @@ pub struct ListPlatformBranchesOutput {
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
     /// pass in a subsequent request to get the next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlatformBranchesOutput {
+    /// <p>Summary information about the platform branches.</p>
+    pub fn platform_branch_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlatformBranchSummary]> {
+        self.platform_branch_summary_list.as_deref()
+    }
+    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
+    /// pass in a subsequent request to get the next response page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPlatformBranchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2181,6 +2621,18 @@ pub struct ListAvailableSolutionStacksOutput {
     /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
     pub solution_stack_details:
         std::option::Option<std::vec::Vec<crate::model::SolutionStackDescription>>,
+}
+impl ListAvailableSolutionStacksOutput {
+    /// <p>A list of available solution stacks.</p>
+    pub fn solution_stacks(&self) -> std::option::Option<&[std::string::String]> {
+        self.solution_stacks.as_deref()
+    }
+    /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
+    pub fn solution_stack_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::SolutionStackDescription]> {
+        self.solution_stack_details.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAvailableSolutionStacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2295,6 +2747,12 @@ pub struct DescribePlatformVersionOutput {
     /// <p>Detailed information about the platform version.</p>
     pub platform_description: std::option::Option<crate::model::PlatformDescription>,
 }
+impl DescribePlatformVersionOutput {
+    /// <p>Detailed information about the platform version.</p>
+    pub fn platform_description(&self) -> std::option::Option<&crate::model::PlatformDescription> {
+        self.platform_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePlatformVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePlatformVersionOutput");
@@ -2353,6 +2811,24 @@ pub struct DescribeInstancesHealthOutput {
     pub refreshed_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Pagination token for the next page of results, if available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstancesHealthOutput {
+    /// <p>Detailed health information about each instance.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference
+    /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
+    pub fn instance_health_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SingleInstanceHealth]> {
+        self.instance_health_list.as_deref()
+    }
+    /// <p>The date and time that the health information was retrieved.</p>
+    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.refreshed_at.as_ref()
+    }
+    /// <p>Pagination token for the next page of results, if available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstancesHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2451,6 +2927,17 @@ pub struct DescribeEventsOutput {
     /// the next <a>DescribeEvents</a> call to get the next batch of events. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEventsOutput {
+    /// <p> A list of <a>EventDescription</a>. </p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::EventDescription]> {
+        self.events.as_deref()
+    }
+    /// <p> If returned, this indicates that there are more results to obtain. Use this token in
+    /// the next <a>DescribeEvents</a> call to get the next batch of events. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -2525,6 +3012,17 @@ pub struct DescribeEnvironmentsOutput {
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
     /// next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEnvironmentsOutput {
+    /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    pub fn environments(&self) -> std::option::Option<&[crate::model::EnvironmentDescription]> {
+        self.environments.as_deref()
+    }
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
+    /// next response page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2602,6 +3100,14 @@ pub struct DescribeEnvironmentResourcesOutput {
     /// <p> A list of <a>EnvironmentResourceDescription</a>. </p>
     pub environment_resources: std::option::Option<crate::model::EnvironmentResourceDescription>,
 }
+impl DescribeEnvironmentResourcesOutput {
+    /// <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+    pub fn environment_resources(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentResourceDescription> {
+        self.environment_resources.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEnvironmentResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEnvironmentResourcesOutput");
@@ -2656,6 +3162,12 @@ impl DescribeEnvironmentResourcesOutput {
 pub struct DescribeEnvironmentManagedActionsOutput {
     /// <p>A list of upcoming and in-progress managed actions.</p>
     pub managed_actions: std::option::Option<std::vec::Vec<crate::model::ManagedAction>>,
+}
+impl DescribeEnvironmentManagedActionsOutput {
+    /// <p>A list of upcoming and in-progress managed actions.</p>
+    pub fn managed_actions(&self) -> std::option::Option<&[crate::model::ManagedAction]> {
+        self.managed_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentManagedActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2717,6 +3229,19 @@ pub struct DescribeEnvironmentManagedActionHistoryOutput {
     /// <p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEnvironmentManagedActionHistoryOutput {
+    /// <p>A list of completed and failed managed actions.</p>
+    pub fn managed_action_history_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::ManagedActionHistoryItem]> {
+        self.managed_action_history_items.as_deref()
+    }
+    /// <p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentManagedActionHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2814,6 +3339,44 @@ pub struct DescribeEnvironmentHealthOutput {
     pub instances_health: std::option::Option<crate::model::InstanceHealthSummary>,
     /// <p>The date and time that the health information was retrieved.</p>
     pub refreshed_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeEnvironmentHealthOutput {
+    /// <p>The environment's name.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the
+    /// environment. For example, <code>Ok</code>.</p>
+    pub fn health_status(&self) -> std::option::Option<&str> {
+        self.health_status.as_deref()
+    }
+    /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>,
+    /// <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
+        self.status.as_ref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the
+    /// environment.</p>
+    pub fn color(&self) -> std::option::Option<&str> {
+        self.color.as_deref()
+    }
+    /// <p>Descriptions of the data that contributed to the environment's current health
+    /// status.</p>
+    pub fn causes(&self) -> std::option::Option<&[std::string::String]> {
+        self.causes.as_deref()
+    }
+    /// <p>Application request metrics for the environment.</p>
+    pub fn application_metrics(&self) -> std::option::Option<&crate::model::ApplicationMetrics> {
+        self.application_metrics.as_ref()
+    }
+    /// <p>Summary health information for the instances in the environment.</p>
+    pub fn instances_health(&self) -> std::option::Option<&crate::model::InstanceHealthSummary> {
+        self.instances_health.as_ref()
+    }
+    /// <p>The date and time that the health information was retrieved.</p>
+    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.refreshed_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2991,6 +3554,14 @@ pub struct DescribeConfigurationSettingsOutput {
     pub configuration_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationSettingsDescription>>,
 }
+impl DescribeConfigurationSettingsOutput {
+    /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+    pub fn configuration_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationSettingsDescription]> {
+        self.configuration_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationSettingsOutput");
@@ -3057,6 +3628,20 @@ pub struct DescribeConfigurationOptionsOutput {
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
     pub options: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionDescription>>,
+}
+impl DescribeConfigurationOptionsOutput {
+    /// <p>The name of the solution stack these configuration options belong to.</p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
+    pub fn options(&self) -> std::option::Option<&[crate::model::ConfigurationOptionDescription]> {
+        self.options.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3153,6 +3738,20 @@ pub struct DescribeApplicationVersionsOutput {
     /// next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeApplicationVersionsOutput {
+    /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
+    /// creation.</p>
+    pub fn application_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationVersionDescription]> {
+        self.application_versions.as_deref()
+    }
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
+    /// next response page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationVersionsOutput");
@@ -3231,6 +3830,12 @@ pub struct DescribeApplicationsOutput {
     /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationDescription>>,
 }
+impl DescribeApplicationsOutput {
+    /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationDescription]> {
+        self.applications.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationsOutput");
@@ -3292,6 +3897,12 @@ pub struct DescribeAccountAttributesOutput {
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
     pub resource_quotas: std::option::Option<crate::model::ResourceQuotas>,
 }
+impl DescribeAccountAttributesOutput {
+    /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    pub fn resource_quotas(&self) -> std::option::Option<&crate::model::ResourceQuotas> {
+        self.resource_quotas.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAccountAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountAttributesOutput");
@@ -3342,6 +3953,12 @@ impl DescribeAccountAttributesOutput {
 pub struct DeletePlatformVersionOutput {
     /// <p>Detailed information about the version of the custom platform.</p>
     pub platform_summary: std::option::Option<crate::model::PlatformSummary>,
+}
+impl DeletePlatformVersionOutput {
+    /// <p>Detailed information about the version of the custom platform.</p>
+    pub fn platform_summary(&self) -> std::option::Option<&crate::model::PlatformSummary> {
+        self.platform_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for DeletePlatformVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3514,6 +4131,12 @@ pub struct CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
 }
+impl CreateStorageLocationOutput {
+    /// <p>The name of the Amazon S3 bucket created.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStorageLocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStorageLocationOutput");
@@ -3562,13 +4185,27 @@ pub struct CreatePlatformVersionOutput {
     /// <p>Detailed information about the new version of the custom platform.</p>
     pub platform_summary: std::option::Option<crate::model::PlatformSummary>,
     /// <p>The builder used to create the custom platform.</p>
-    pub builder: std::option::Option<crate::model::Builder>,
+    ///
+    /// _Note: This member has been renamed from `builder`._
+    pub builder_value: std::option::Option<crate::model::Builder>,
+}
+impl CreatePlatformVersionOutput {
+    /// <p>Detailed information about the new version of the custom platform.</p>
+    pub fn platform_summary(&self) -> std::option::Option<&crate::model::PlatformSummary> {
+        self.platform_summary.as_ref()
+    }
+    /// <p>The builder used to create the custom platform.</p>
+    ///
+    /// _Note: This member has been renamed from `builder`._
+    pub fn builder_value(&self) -> std::option::Option<&crate::model::Builder> {
+        self.builder_value.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePlatformVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlatformVersionOutput");
         formatter.field("platform_summary", &self.platform_summary);
-        formatter.field("builder", &self.builder);
+        formatter.field("builder_value", &self.builder_value);
         formatter.finish()
     }
 }
@@ -3579,7 +4216,7 @@ pub mod create_platform_version_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_summary: std::option::Option<crate::model::PlatformSummary>,
-        pub(crate) builder: std::option::Option<crate::model::Builder>,
+        pub(crate) builder_value: std::option::Option<crate::model::Builder>,
     }
     impl Builder {
         /// <p>Detailed information about the new version of the custom platform.</p>
@@ -3596,20 +4233,20 @@ pub mod create_platform_version_output {
             self
         }
         /// <p>The builder used to create the custom platform.</p>
-        pub fn builder(mut self, input: crate::model::Builder) -> Self {
-            self.builder = Some(input);
+        pub fn builder_value(mut self, input: crate::model::Builder) -> Self {
+            self.builder_value = Some(input);
             self
         }
         /// <p>The builder used to create the custom platform.</p>
         pub fn set_builder(mut self, input: std::option::Option<crate::model::Builder>) -> Self {
-            self.builder = input;
+            self.builder_value = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePlatformVersionOutput`](crate::output::CreatePlatformVersionOutput)
         pub fn build(self) -> crate::output::CreatePlatformVersionOutput {
             crate::output::CreatePlatformVersionOutput {
                 platform_summary: self.platform_summary,
-                builder: self.builder,
+                builder_value: self.builder_value,
             }
         }
     }
@@ -3727,6 +4364,152 @@ pub struct CreateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
     /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
+}
+impl CreateEnvironmentOutput {
+    /// <p>The name of this environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The ID of this environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the application associated with this environment.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The application version deployed in this environment.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>The name of the configuration template used to originally launch this
+    /// environment.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Describes this environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
+    /// single-instance environments, the IP address of the instance.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p>The URL to the CNAME for this environment.</p>
+    pub fn cname(&self) -> std::option::Option<&str> {
+        self.cname.as_deref()
+    }
+    /// <p>The creation date for this environment.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The last modified date for this environment.</p>
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_updated.as_ref()
+    }
+    /// <p>The current operational status of the environment:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Updating</code>: Environment is in the process of updating its configuration
+    /// settings or application version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
+    /// update or terminate.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Terminated</code>: Environment is not running.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates if there is an in-progress environment configuration update or application
+    /// version deployment that you can cancel.</p>
+    /// <p>
+    /// <code>true:</code> There is an update in progress. </p>
+    /// <p>
+    /// <code>false:</code> There are no updates currently in progress. </p>
+    pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
+        self.abortable_operation_in_progress
+    }
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
+    /// failure levels for a running environment:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
+    /// consecutive failures occur for an environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
+    /// failures occur for an environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
+    /// launched and health checks have not started or health checks are suspended during an
+    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
+    /// </li>
+    /// </ul>
+    /// <p> Default: <code>Grey</code>
+    /// </p>
+    pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
+        self.health.as_ref()
+    }
+    /// <p>Returns the health status of the application running in your environment. For more
+    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+    /// Statuses</a>.</p>
+    pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
+        self.health_status.as_ref()
+    }
+    /// <p>The description of the AWS resources used by this environment.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::EnvironmentResourcesDescription> {
+        self.resources.as_ref()
+    }
+    /// <p>Describes the current tier of this environment.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::EnvironmentTier> {
+        self.tier.as_ref()
+    }
+    /// <p>A list of links to other environments in the same group.</p>
+    pub fn environment_links(&self) -> std::option::Option<&[crate::model::EnvironmentLink]> {
+        self.environment_links.as_deref()
+    }
+    /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    pub fn environment_arn(&self) -> std::option::Option<&str> {
+        self.environment_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
+    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    pub fn operations_role(&self) -> std::option::Option<&str> {
+        self.operations_role.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4266,6 +5049,79 @@ pub struct CreateConfigurationTemplateOutput {
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
+impl CreateConfigurationTemplateOutput {
+    /// <p>The name of the solution stack this configuration set uses.</p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>The name of the application associated with this configuration set.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p> If not <code>null</code>, the name of the configuration template for this
+    /// configuration set. </p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Describes this configuration set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p> If this configuration set is associated with an environment, the
+    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
+    /// configuration set: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>null</code>: This configuration is not associated with a running
+    /// environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
+    /// environment but is in the process of deploying.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deployed</code>: This is the configuration that is currently deployed to the
+    /// associated running environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>failed</code>: This is a draft configuration that failed to successfully
+    /// deploy.</p>
+    /// </li>
+    /// </ul>
+    pub fn deployment_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationDeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>The date (in UTC time) when this configuration set was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date (in UTC time) when this configuration set was last modified.</p>
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_updated.as_ref()
+    }
+    /// <p>A list of the configuration options and their values in this configuration
+    /// set.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConfigurationTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationTemplateOutput");
@@ -4524,6 +5380,15 @@ pub struct CreateApplicationVersionOutput {
     /// </p>
     pub application_version: std::option::Option<crate::model::ApplicationVersionDescription>,
 }
+impl CreateApplicationVersionOutput {
+    /// <p> The <a>ApplicationVersionDescription</a> of the application version.
+    /// </p>
+    pub fn application_version(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationVersionDescription> {
+        self.application_version.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationVersionOutput");
@@ -4581,6 +5446,12 @@ pub struct CreateApplicationOutput {
     /// <p> The <a>ApplicationDescription</a> of the application. </p>
     pub application: std::option::Option<crate::model::ApplicationDescription>,
 }
+impl CreateApplicationOutput {
+    /// <p> The <a>ApplicationDescription</a> of the application. </p>
+    pub fn application(&self) -> std::option::Option<&crate::model::ApplicationDescription> {
+        self.application.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationOutput");
@@ -4634,6 +5505,17 @@ pub struct ComposeEnvironmentsOutput {
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
     /// next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ComposeEnvironmentsOutput {
+    /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    pub fn environments(&self) -> std::option::Option<&[crate::model::EnvironmentDescription]> {
+        self.environments.as_deref()
+    }
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
+    /// next response page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ComposeEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4723,6 +5605,27 @@ pub struct CheckDnsAvailabilityOutput {
     /// <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
     /// with the provided prefix.</p>
     pub fully_qualified_cname: std::option::Option<std::string::String>,
+}
+impl CheckDnsAvailabilityOutput {
+    /// <p>Indicates if the specified CNAME is available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>true</code> : The CNAME is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>false</code> : The CNAME is not available.</p>
+    /// </li>
+    /// </ul>
+    pub fn available(&self) -> std::option::Option<bool> {
+        self.available
+    }
+    /// <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+    /// with the provided prefix.</p>
+    pub fn fully_qualified_cname(&self) -> std::option::Option<&str> {
+        self.fully_qualified_cname.as_deref()
+    }
 }
 impl std::fmt::Debug for CheckDnsAvailabilityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4845,6 +5748,24 @@ pub struct ApplyEnvironmentManagedActionOutput {
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>The status of the managed action.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl ApplyEnvironmentManagedActionOutput {
+    /// <p>The action ID of the managed action.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>A description of the managed action.</p>
+    pub fn action_description(&self) -> std::option::Option<&str> {
+        self.action_description.as_deref()
+    }
+    /// <p>The type of managed action.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>The status of the managed action.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplyEnvironmentManagedActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

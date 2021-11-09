@@ -148,6 +148,201 @@ pub struct TaskSet {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TaskSet {
+    /// <p>The ID of the task set.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task set.</p>
+    pub fn task_set_arn(&self) -> std::option::Option<&str> {
+        self.task_set_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists
+    /// in.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The tag specified when a task set is started. If the task set is created by an CodeDeploy
+    /// deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task
+    /// set created for an external deployment, the startedBy field isn't used.</p>
+    pub fn started_by(&self) -> std::option::Option<&str> {
+        self.started_by.as_deref()
+    }
+    /// <p>The external ID associated with the task set.</p>
+    /// <p>If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter
+    /// contains the CodeDeploy deployment ID.</p>
+    /// <p>If a task set is created for an external deployment and is associated with a service
+    /// discovery registry, the <code>externalId</code> parameter contains the
+    /// <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>The status of the task set. The following describes each state:</p>
+    /// <dl>
+    /// <dt>PRIMARY</dt>
+    /// <dd>
+    /// <p>The task set is serving production traffic.</p>
+    /// </dd>
+    /// <dt>ACTIVE</dt>
+    /// <dd>
+    /// <p>The task set is not serving production traffic.</p>
+    /// </dd>
+    /// <dt>DRAINING</dt>
+    /// <dd>
+    /// <p>The tasks in the task set are being stopped and their corresponding
+    /// targets are being deregistered from their target group.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The task definition the task set is using.</p>
+    pub fn task_definition(&self) -> std::option::Option<&str> {
+        self.task_definition.as_deref()
+    }
+    /// <p>The computed desired count for the task set. This is calculated by multiplying the
+    /// service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The
+    /// result is always rounded up. For example, if the computed desired count is 1.2, it
+    /// rounds up to 2 tasks.</p>
+    pub fn computed_desired_count(&self) -> i32 {
+        self.computed_desired_count
+    }
+    /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during
+    /// a deployment. A task in the <code>PENDING</code> state is preparing to enter the
+    /// <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when
+    /// it launches for the first time or when it is restarted after being in the
+    /// <code>STOPPED</code> state.</p>
+    pub fn pending_count(&self) -> i32 {
+        self.pending_count
+    }
+    /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during
+    /// a deployment. A task in the <code>RUNNING</code> state is running and ready for
+    /// use.</p>
+    pub fn running_count(&self) -> i32 {
+        self.running_count
+    }
+    /// <p>The Unix timestamp for when the task set was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix timestamp for when the task set was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
+        self.launch_type.as_ref()
+    }
+    /// <p>The capacity provider strategy associated with the task set.</p>
+    pub fn capacity_provider_strategy(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
+        self.capacity_provider_strategy.as_deref()
+    }
+    /// <p>The Fargate platform version on which the tasks in the task set are running. A
+    /// platform version is only specified for tasks run on Fargate. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+    /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>The operating system  that your tasks in the set are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks in the set must have the same value.</p>
+    pub fn platform_family(&self) -> std::option::Option<&str> {
+        self.platform_family.as_deref()
+    }
+    /// <p>The network configuration for the task set.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
+    /// <p>Details on a load balancer that is used with a task set.</p>
+    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
+        self.load_balancers.as_deref()
+    }
+    /// <p>The details of the service discovery registries to assign to this task set. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+    /// discovery</a>.</p>
+    pub fn service_registries(&self) -> std::option::Option<&[crate::model::ServiceRegistry]> {
+        self.service_registries.as_deref()
+    }
+    /// <p>A floating-point percentage of the desired number of tasks to place and keep running
+    /// in the task set.</p>
+    pub fn scale(&self) -> std::option::Option<&crate::model::Scale> {
+        self.scale.as_ref()
+    }
+    /// <p>The stability status, which indicates whether the task set has reached a steady state.
+    /// If the following conditions are met, the task set will be in
+    /// <code>STEADY_STATE</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The task <code>runningCount</code> is equal to the
+    /// <code>computedDesiredCount</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>The <code>pendingCount</code> is <code>0</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>There are no tasks running on container instances in the <code>DRAINING</code>
+    /// status.</p>
+    /// </li>
+    /// <li>
+    /// <p>All tasks are reporting a healthy status from the load balancers, service
+    /// discovery, and container health checks.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If any of those conditions are not met, the stability status returns
+    /// <code>STABILIZING</code>.</p>
+    pub fn stability_status(&self) -> std::option::Option<&crate::model::StabilityStatus> {
+        self.stability_status.as_ref()
+    }
+    /// <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+    pub fn stability_status_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stability_status_at.as_ref()
+    }
+    /// <p>The metadata that you apply to the task set to help you categorize and organize them.
+    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only
+    /// one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources,
+    /// remember that other services may have restrictions on allowed characters.
+    /// Generally allowed characters are: letters, numbers, and spaces representable in
+    /// UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+    /// combination of such as a prefix for either keys or values as it is reserved for
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// this prefix do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TaskSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskSet");
@@ -791,6 +986,18 @@ pub struct Tag {
     /// a descriptor within a tag category (key).</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
+    /// that acts like a category for more specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as
+    /// a descriptor within a tag category (key).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -914,6 +1121,17 @@ pub struct Scale {
     pub value: f64,
     /// <p>The unit of measure for the scale value.</p>
     pub unit: std::option::Option<crate::model::ScaleUnit>,
+}
+impl Scale {
+    /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to
+    /// scale the task set. Accepted values are numbers between 0 and 100.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+    /// <p>The unit of measure for the scale value.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::ScaleUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for Scale {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1051,6 +1269,41 @@ pub struct ServiceRegistry {
     /// either a <code>containerName</code> and <code>containerPort</code> combination or a
     /// <code>port</code> value, but not both.</p>
     pub container_port: std::option::Option<i32>,
+}
+impl ServiceRegistry {
+    /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is
+    /// Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The port value used if your service discovery service specified an SRV record. This
+    /// field may be used if both the <code>awsvpc</code> network mode and SRV records are
+    /// used.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The container name value, already specified in the task definition, to be used for
+    /// your service discovery service. If the task definition that your service task specifies
+    /// uses the <code>bridge</code> or <code>host</code> network mode, you must specify a
+    /// <code>containerName</code> and <code>containerPort</code> combination from the task
+    /// definition. If the task definition that your service task specifies uses the
+    /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
+    /// either a <code>containerName</code> and <code>containerPort</code> combination or a
+    /// <code>port</code> value, but not both.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The port value, already specified in the task definition, to be used for your service
+    /// discovery service. If the task definition your service task specifies uses the
+    /// <code>bridge</code> or <code>host</code> network mode, you must specify a
+    /// <code>containerName</code> and <code>containerPort</code> combination from the task
+    /// definition. If the task definition your service task specifies uses the
+    /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
+    /// either a <code>containerName</code> and <code>containerPort</code> combination or a
+    /// <code>port</code> value, but not both.</p>
+    pub fn container_port(&self) -> std::option::Option<i32> {
+        self.container_port
+    }
 }
 impl std::fmt::Debug for ServiceRegistry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1208,6 +1461,48 @@ pub struct LoadBalancer {
     /// the port mapping.</p>
     pub container_port: std::option::Option<i32>,
 }
+impl LoadBalancer {
+    /// <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or
+    /// task set.</p>
+    /// <p>A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are using a
+    /// Classic Load Balancer the target group ARN should be omitted.</p>
+    /// <p>For services using the <code>ECS</code> deployment controller, you can specify one or
+    /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering Multiple Target Groups with a Service</a> in
+    /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For services using the <code>CODE_DEPLOY</code> deployment controller, you are
+    /// required to define two target groups for the load balancer. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green Deployment with CodeDeploy</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <important>
+    /// <p>If your service's task definition uses the <code>awsvpc</code> network mode (which
+    /// is required for the Fargate launch type), you must choose
+    /// <code>ip</code> as the target type, not <code>instance</code>, when creating
+    /// your target groups because tasks that use the <code>awsvpc</code> network mode are
+    /// associated with an elastic network interface, not an Amazon EC2 instance.</p>
+    /// </important>
+    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+        self.target_group_arn.as_deref()
+    }
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
+    /// <p>A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer
+    /// or a Network Load Balancer the load balancer name parameter should be omitted.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The name of the container (as it appears in a container definition) to associate with
+    /// the load balancer.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The port on the container to associate with the load balancer. This port must
+    /// correspond to a <code>containerPort</code> in the task definition the tasks in the
+    /// service are using. For tasks that use the EC2 launch type, the container
+    /// instance they are launched on must allow ingress traffic on the <code>hostPort</code> of
+    /// the port mapping.</p>
+    pub fn container_port(&self) -> std::option::Option<i32> {
+        self.container_port
+    }
+}
 impl std::fmt::Debug for LoadBalancer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoadBalancer");
@@ -1355,6 +1650,15 @@ pub struct NetworkConfiguration {
     /// </note>
     pub awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
 }
+impl NetworkConfiguration {
+    /// <p>The VPC subnets and security groups associated with a task.</p>
+    /// <note>
+    /// <p>All specified subnets and security groups must be from the same VPC.</p>
+    /// </note>
+    pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::model::AwsVpcConfiguration> {
+        self.awsvpc_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for NetworkConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkConfiguration");
@@ -1428,6 +1732,33 @@ pub struct AwsVpcConfiguration {
     /// <p>Whether the task's elastic network interface receives a public IP address. The default
     /// value is <code>DISABLED</code>.</p>
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
+}
+impl AwsVpcConfiguration {
+    /// <p>The IDs of the subnets associated with the task or service. There is a limit of 16
+    /// subnets that can be specified per <code>AwsVpcConfiguration</code>.</p>
+    ///
+    /// <note>
+    /// <p>All specified subnets must be from the same VPC.</p>
+    /// </note>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The IDs of the security groups associated with the task or service. If you do not
+    /// specify a security group, the default security group for the VPC is used. There is a
+    /// limit of 5 security groups that can be specified per
+    /// <code>AwsVpcConfiguration</code>.</p>
+    ///
+    /// <note>
+    /// <p>All specified security groups must be from the same VPC.</p>
+    /// </note>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>Whether the task's elastic network interface receives a public IP address. The default
+    /// value is <code>DISABLED</code>.</p>
+    pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
+        self.assign_public_ip.as_ref()
+    }
 }
 impl std::fmt::Debug for AwsVpcConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1643,6 +1974,41 @@ pub struct CapacityProviderStrategyItem {
     /// strategy can have a <i>base</i> defined. If no value is specified, the
     /// default value of <code>0</code> is used.</p>
     pub base: i32,
+}
+impl CapacityProviderStrategyItem {
+    /// <p>The short name of the capacity provider.</p>
+    pub fn capacity_provider(&self) -> std::option::Option<&str> {
+        self.capacity_provider.as_deref()
+    }
+    /// <p>The <i>weight</i> value designates the relative percentage of the total
+    /// number of tasks launched that should use the specified capacity provider. The
+    /// <code>weight</code> value is taken into consideration after the <code>base</code>
+    /// value, if defined, is satisfied.</p>
+    /// <p>If no <code>weight</code> value is specified, the default value of <code>0</code> is
+    /// used. When multiple capacity providers are specified within a capacity provider
+    /// strategy, at least one of the capacity providers must have a weight value greater than
+    /// zero and any capacity providers with a weight of <code>0</code> will not be used to
+    /// place tasks. If you specify multiple capacity providers in a strategy that all have a
+    /// weight of <code>0</code>, any <code>RunTask</code> or <code>CreateService</code> actions
+    /// using the capacity provider strategy will fail.</p>
+    /// <p>An example scenario for using weights is defining a strategy that contains two
+    /// capacity providers and both have a weight of <code>1</code>, then when the
+    /// <code>base</code> is satisfied, the tasks will be split evenly across the two
+    /// capacity providers. Using that same logic, if you specify a weight of <code>1</code> for
+    /// <i>capacityProviderA</i> and a weight of <code>4</code> for
+    /// <i>capacityProviderB</i>, then for every one task that is run using
+    /// <i>capacityProviderA</i>, four tasks would use
+    /// <i>capacityProviderB</i>.</p>
+    pub fn weight(&self) -> i32 {
+        self.weight
+    }
+    /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on
+    /// the specified capacity provider. Only one capacity provider in a capacity provider
+    /// strategy can have a <i>base</i> defined. If no value is specified, the
+    /// default value of <code>0</code> is used.</p>
+    pub fn base(&self) -> i32 {
+        self.base
+    }
 }
 impl std::fmt::Debug for CapacityProviderStrategyItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1969,6 +2335,228 @@ pub struct Service {
     /// <code>true</code>, the execute command functionality is enabled for all containers
     /// in tasks as part of the service.</p>
     pub enable_execute_command: bool,
+}
+impl Service {
+    /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
+    /// a cluster, but you can have similarly named services in multiple clusters within a
+    /// Region or across multiple Regions.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the
+    /// container name (as it appears in a container definition), and the container port to
+    /// access from the load balancer.</p>
+    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
+        self.load_balancers.as_deref()
+    }
+    /// <p>The details of the service discovery registries to assign to this service. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+    /// Discovery</a>.</p>
+    pub fn service_registries(&self) -> std::option::Option<&[crate::model::ServiceRegistry]> {
+        self.service_registries.as_deref()
+    }
+    /// <p>The status of the service. The valid values are <code>ACTIVE</code>,
+    /// <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The desired number of instantiations of the task definition to keep running on the
+    /// service. This value is specified when the service is created with <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
+    pub fn desired_count(&self) -> i32 {
+        self.desired_count
+    }
+    /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
+    pub fn running_count(&self) -> i32 {
+        self.running_count
+    }
+    /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
+    pub fn pending_count(&self) -> i32 {
+        self.pending_count
+    }
+    /// <p>The launch type the service is using. When using the DescribeServices API, this field
+    /// is omitted if the service was created using a capacity provider strategy.</p>
+    pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
+        self.launch_type.as_ref()
+    }
+    /// <p>The capacity provider strategy the service is using. When using the DescribeServices
+    /// API, this field is omitted if the service was created using a launch type.</p>
+    pub fn capacity_provider_strategy(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
+        self.capacity_provider_strategy.as_deref()
+    }
+    /// <p>The platform version on which to run your service. A platform version is only
+    /// specified for tasks hosted on Fargate. If one is not specified, the
+    /// <code>LATEST</code> platform version is used by default. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+    /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>The operating system  that your tasks in the service are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX</code>.</p>
+    pub fn platform_family(&self) -> std::option::Option<&str> {
+        self.platform_family.as_deref()
+    }
+    /// <p>The task definition to use for tasks in the service. This value is specified when the
+    /// service is created with <a>CreateService</a>, and it can be modified with
+    /// <a>UpdateService</a>.</p>
+    pub fn task_definition(&self) -> std::option::Option<&str> {
+        self.task_definition.as_deref()
+    }
+    /// <p>Optional deployment parameters that control how many tasks run during the deployment
+    /// and the ordering of stopping and starting tasks.</p>
+    pub fn deployment_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentConfiguration> {
+        self.deployment_configuration.as_ref()
+    }
+    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
+    /// deployment. An Amazon ECS task set includes details such as the desired number of tasks, how
+    /// many tasks are running, and whether the task set serves production traffic.</p>
+    pub fn task_sets(&self) -> std::option::Option<&[crate::model::TaskSet]> {
+        self.task_sets.as_deref()
+    }
+    /// <p>The current state of deployments for the service.</p>
+    pub fn deployments(&self) -> std::option::Option<&[crate::model::Deployment]> {
+        self.deployments.as_deref()
+    }
+    /// <p>The ARN of the IAM role associated with the service that allows the Amazon ECS container
+    /// agent to register container instances with an Elastic Load Balancing load balancer.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The event stream for your service. A maximum of 100 of the latest events are
+    /// displayed.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::ServiceEvent]> {
+        self.events.as_deref()
+    }
+    /// <p>The Unix timestamp for when the service was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The placement constraints for the tasks in the service.</p>
+    pub fn placement_constraints(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
+        self.placement_constraints.as_deref()
+    }
+    /// <p>The placement strategy that determines how tasks for the service are placed.</p>
+    pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
+        self.placement_strategy.as_deref()
+    }
+    /// <p>The VPC subnet and security group configuration for tasks that receive their own
+    /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+    /// Elastic Load Balancing target health checks after a task has first started.</p>
+    pub fn health_check_grace_period_seconds(&self) -> std::option::Option<i32> {
+        self.health_check_grace_period_seconds
+    }
+    /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+    /// <p>There are two service scheduler strategies available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REPLICA</code>-The replica scheduling strategy places and
+    /// maintains the desired number of tasks across your cluster. By default, the
+    /// service scheduler spreads tasks across Availability Zones. You can use task
+    /// placement strategies and constraints to customize task placement
+    /// decisions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one
+    /// task on each active container instance that meets all of the task placement
+    /// constraints that you specify in your cluster. The service scheduler also
+    /// evaluates the task placement constraints for running tasks and will stop tasks
+    /// that do not meet the placement constraints.</p>
+    /// <note>
+    /// <p>Fargate tasks do not support the <code>DAEMON</code>
+    /// scheduling strategy.</p>
+    /// </note>
+    /// </li>
+    /// </ul>
+    pub fn scheduling_strategy(&self) -> std::option::Option<&crate::model::SchedulingStrategy> {
+        self.scheduling_strategy.as_ref()
+    }
+    /// <p>The deployment controller type the service is using. When using the DescribeServices
+    /// API, this field is omitted if the service is using the <code>ECS</code> deployment
+    /// controller type.</p>
+    pub fn deployment_controller(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentController> {
+        self.deployment_controller.as_ref()
+    }
+    /// <p>The metadata that you apply to the service to help you categorize and organize them.
+    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only
+    /// one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources,
+    /// remember that other services may have restrictions on allowed characters.
+    /// Generally allowed characters are: letters, numbers, and spaces representable in
+    /// UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+    /// combination of such as a prefix for either keys or values as it is reserved for
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// this prefix do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The principal that created the service.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+    /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn enable_ecs_managed_tags(&self) -> bool {
+        self.enable_ecs_managed_tags
+    }
+    /// <p>Specifies whether to propagate the tags from the task definition or the service to the
+    /// task. If no value is specified, the tags are not propagated.</p>
+    pub fn propagate_tags(&self) -> std::option::Option<&crate::model::PropagateTags> {
+        self.propagate_tags.as_ref()
+    }
+    /// <p>Whether or not the execute command functionality is enabled for the service. If
+    /// <code>true</code>, the execute command functionality is enabled for all containers
+    /// in tasks as part of the service.</p>
+    pub fn enable_execute_command(&self) -> bool {
+        self.enable_execute_command
+    }
 }
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2798,6 +3386,35 @@ pub struct DeploymentController {
     /// </dl>
     pub r#type: std::option::Option<crate::model::DeploymentControllerType>,
 }
+impl DeploymentController {
+    /// <p>The deployment controller type to use.</p>
+    /// <p>There are three deployment controller types available:</p>
+    /// <dl>
+    /// <dt>ECS</dt>
+    /// <dd>
+    /// <p>The rolling update (<code>ECS</code>) deployment type involves replacing
+    /// the current running version of the container with the latest version. The
+    /// number of containers Amazon ECS adds or removes from the service during a rolling
+    /// update is controlled by adjusting the minimum and maximum number of healthy
+    /// tasks allowed during a service deployment, as specified in the <a>DeploymentConfiguration</a>.</p>
+    /// </dd>
+    /// <dt>CODE_DEPLOY</dt>
+    /// <dd>
+    /// <p>The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the
+    /// blue/green deployment model powered by CodeDeploy, which allows you to verify a
+    /// new deployment of a service before sending production traffic to it.</p>
+    /// </dd>
+    /// <dt>EXTERNAL</dt>
+    /// <dd>
+    /// <p>The external (<code>EXTERNAL</code>) deployment type enables you to use
+    /// any third-party deployment controller for full control over the deployment
+    /// process for an Amazon ECS service.</p>
+    /// </dd>
+    /// </dl>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DeploymentControllerType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeploymentController {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentController");
@@ -3024,6 +3641,28 @@ pub struct PlacementStrategy {
     /// not used.</p>
     pub field: std::option::Option<std::string::String>,
 }
+impl PlacementStrategy {
+    /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly
+    /// places tasks on available candidates. The <code>spread</code> placement strategy spreads
+    /// placement across available candidates evenly based on the <code>field</code> parameter.
+    /// The <code>binpack</code> strategy places tasks on available candidates that have the
+    /// least available amount of the resource that is specified with the <code>field</code>
+    /// parameter. For example, if you binpack on memory, a task is placed on the instance with
+    /// the least amount of remaining memory (but still enough to run the task).</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementStrategyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The field to apply the placement strategy against. For the <code>spread</code>
+    /// placement strategy, valid values are <code>instanceId</code> (or <code>host</code>,
+    /// which has the same effect), or any platform or custom attribute that is applied to a
+    /// container instance, such as <code>attribute:ecs.availability-zone</code>. For the
+    /// <code>binpack</code> placement strategy, valid values are <code>cpu</code> and
+    /// <code>memory</code>. For the <code>random</code> placement strategy, this field is
+    /// not used.</p>
+    pub fn field(&self) -> std::option::Option<&str> {
+        self.field.as_deref()
+    }
+}
 impl std::fmt::Debug for PlacementStrategy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementStrategy");
@@ -3185,6 +3824,22 @@ pub struct PlacementConstraint {
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
 }
+impl PlacementConstraint {
+    /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in
+    /// a particular group is running on a different container instance. Use
+    /// <code>memberOf</code> to restrict the selection to a group of valid
+    /// candidates.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementConstraintType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A cluster query language expression to apply to the constraint. The expression can
+    /// have a maximum length of 2000 characters. You can't specify an expression if the
+    /// constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+}
 impl std::fmt::Debug for PlacementConstraint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementConstraint");
@@ -3319,6 +3974,20 @@ pub struct ServiceEvent {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The event message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ServiceEvent {
+    /// <p>The ID string of the event.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Unix timestamp for when the event was triggered.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The event message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3471,6 +4140,119 @@ pub struct Deployment {
     pub rollout_state: std::option::Option<crate::model::DeploymentRolloutState>,
     /// <p>A description of the rollout state of a deployment.</p>
     pub rollout_state_reason: std::option::Option<std::string::String>,
+}
+impl Deployment {
+    /// <p>The ID of the deployment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The status of the deployment. The following describes each state:</p>
+    /// <dl>
+    /// <dt>PRIMARY</dt>
+    /// <dd>
+    /// <p>The most recent deployment of a service.</p>
+    /// </dd>
+    /// <dt>ACTIVE</dt>
+    /// <dd>
+    /// <p>A service deployment that still has running tasks, but are in the process
+    /// of being replaced with a new <code>PRIMARY</code> deployment.</p>
+    /// </dd>
+    /// <dt>INACTIVE</dt>
+    /// <dd>
+    /// <p>A deployment that has been completely replaced.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The most recent task definition that was specified for the tasks in the service to
+    /// use.</p>
+    pub fn task_definition(&self) -> std::option::Option<&str> {
+        self.task_definition.as_deref()
+    }
+    /// <p>The most recent desired count of tasks that was specified for the service to deploy or
+    /// maintain.</p>
+    pub fn desired_count(&self) -> i32 {
+        self.desired_count
+    }
+    /// <p>The number of tasks in the deployment that are in the <code>PENDING</code>
+    /// status.</p>
+    pub fn pending_count(&self) -> i32 {
+        self.pending_count
+    }
+    /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
+    /// status.</p>
+    pub fn running_count(&self) -> i32 {
+        self.running_count
+    }
+    /// <p>The number of consecutively failed tasks in the deployment. A task is considered a
+    /// failure if the service scheduler can't launch the task, the task doesn't transition to a
+    /// <code>RUNNING</code> state, or if it fails any of its defined health checks and is
+    /// stopped.</p>
+    /// <note>
+    /// <p>Once a service deployment has one or more successfully running tasks, the failed
+    /// task count resets to zero and stops being evaluated.</p>
+    /// </note>
+    pub fn failed_tasks(&self) -> i32 {
+        self.failed_tasks
+    }
+    /// <p>The Unix timestamp for when the service deployment was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix timestamp for when the service deployment was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The capacity provider strategy that the deployment is using.</p>
+    pub fn capacity_provider_strategy(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
+        self.capacity_provider_strategy.as_deref()
+    }
+    /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
+        self.launch_type.as_ref()
+    }
+    /// <p>The platform version on which your tasks in the service are running. A platform
+    /// version is only specified for tasks using the Fargate launch type. If one
+    /// is not specified, the <code>LATEST</code> platform version is used by default. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+    /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>The operating system  that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    pub fn platform_family(&self) -> std::option::Option<&str> {
+        self.platform_family.as_deref()
+    }
+    /// <p>The VPC subnet and security group configuration for tasks that receive their own
+    /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
+    /// <note>
+    /// <p>The <code>rolloutState</code> of a service is only returned for services that use
+    /// the rolling update (<code>ECS</code>) deployment type that are not behind a
+    /// Classic Load Balancer.</p>
+    /// </note>
+    /// <p>The rollout state of the deployment. When a service deployment is started, it begins
+    /// in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+    /// deployment will transition to a <code>COMPLETED</code> state. If the service fails to
+    /// reach a steady state and circuit breaker is enabled, the deployment will transition to a
+    /// <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch no
+    /// new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.</p>
+    pub fn rollout_state(&self) -> std::option::Option<&crate::model::DeploymentRolloutState> {
+        self.rollout_state.as_ref()
+    }
+    /// <p>A description of the rollout state of a deployment.</p>
+    pub fn rollout_state_reason(&self) -> std::option::Option<&str> {
+        self.rollout_state_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for Deployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3955,6 +4737,69 @@ pub struct DeploymentConfiguration {
     /// although it is returned when describing your service.</p>
     pub minimum_healthy_percent: std::option::Option<i32>,
 }
+impl DeploymentConfiguration {
+    /// <note>
+    /// <p>The deployment circuit breaker can only be used for services using the rolling
+    /// update (<code>ECS</code>) deployment type.</p>
+    /// </note>
+    /// <p>The <b>deployment circuit breaker</b> determines whether a
+    /// service deployment will fail if the service can't reach a steady state. If deployment
+    /// circuit breaker is enabled, a service deployment will transition to a failed state and
+    /// stop launching new tasks. If rollback is enabled, when a service deployment fails, the
+    /// service is rolled back to the last deployment that completed successfully.</p>
+    pub fn deployment_circuit_breaker(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentCircuitBreaker> {
+        self.deployment_circuit_breaker.as_ref()
+    }
+    /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
+    /// <b>maximum percent</b> parameter represents an upper limit
+    /// on the number of tasks in a service that are allowed in the <code>RUNNING</code> or
+    /// <code>PENDING</code> state during a deployment, as a percentage of the desired
+    /// number of tasks (rounded down to the nearest integer), and while any container instances
+    /// are in the <code>DRAINING</code> state if the service contains tasks using the
+    /// EC2 launch type. This parameter enables you to define the deployment batch
+    /// size. For example, if your service has a desired number of four tasks and a maximum
+    /// percent value of 200%, the scheduler may start four new tasks before stopping the four
+    /// older tasks (provided that the cluster resources required to do this are available). The
+    /// default value for maximum percent is 200%.</p>
+    /// <p>If a service is using the blue/green (<code>CODE_DEPLOY</code>) or
+    /// <code>EXTERNAL</code> deployment types and tasks that use the EC2
+    /// launch type, the <b>maximum percent</b> value is set to the
+    /// default value and is used to define the upper limit on the number of the tasks in the
+    /// service that remain in the <code>RUNNING</code> state while the container instances are
+    /// in the <code>DRAINING</code> state. If the tasks in the service use the
+    /// Fargate launch type, the maximum percent value is not used, although it is
+    /// returned when describing your service.</p>
+    pub fn maximum_percent(&self) -> std::option::Option<i32> {
+        self.maximum_percent
+    }
+    /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
+    /// <b>minimum healthy percent</b> represents a lower limit on
+    /// the number of tasks in a service that must remain in the <code>RUNNING</code> state
+    /// during a deployment, as a percentage of the desired number of tasks (rounded up to the
+    /// nearest integer), and while any container instances are in the <code>DRAINING</code>
+    /// state if the service contains tasks using the EC2 launch type. This
+    /// parameter enables you to deploy without using additional cluster capacity. For example,
+    /// if your service has a desired number of four tasks and a minimum healthy percent of 50%,
+    /// the scheduler may stop two existing tasks to free up cluster capacity before starting
+    /// two new tasks. Tasks for services that <i>do not</i> use a load balancer
+    /// are considered healthy if they are in the <code>RUNNING</code> state; tasks for services
+    /// that <i>do</i> use a load balancer are considered healthy if they are in
+    /// the <code>RUNNING</code> state and they are reported as healthy by the load balancer.
+    /// The default value for minimum healthy percent is 100%.</p>
+    /// <p>If a service is using the blue/green (<code>CODE_DEPLOY</code>) or
+    /// <code>EXTERNAL</code> deployment types and tasks that use the EC2
+    /// launch type, the <b>minimum healthy percent</b> value is set
+    /// to the default value and is used to define the lower limit on the number of the tasks in
+    /// the service that remain in the <code>RUNNING</code> state while the container instances
+    /// are in the <code>DRAINING</code> state. If the tasks in the service use the
+    /// Fargate launch type, the minimum healthy percent value is not used,
+    /// although it is returned when describing your service.</p>
+    pub fn minimum_healthy_percent(&self) -> std::option::Option<i32> {
+        self.minimum_healthy_percent
+    }
+}
 impl std::fmt::Debug for DeploymentConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentConfiguration");
@@ -4146,6 +4991,18 @@ pub struct DeploymentCircuitBreaker {
     /// last deployment that completed successfully.</p>
     pub rollback: bool,
 }
+impl DeploymentCircuitBreaker {
+    /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
+    pub fn enable(&self) -> bool {
+        self.enable
+    }
+    /// <p>Whether to enable Amazon ECS to roll back the service if a service deployment fails. If
+    /// rollback is enabled, when a service deployment fails, the service is rolled back to the
+    /// last deployment that completed successfully.</p>
+    pub fn rollback(&self) -> bool {
+        self.rollback
+    }
+}
 impl std::fmt::Debug for DeploymentCircuitBreaker {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentCircuitBreaker");
@@ -4215,6 +5072,20 @@ pub struct Failure {
     pub reason: std::option::Option<std::string::String>,
     /// <p>The details of the failure.</p>
     pub detail: std::option::Option<std::string::String>,
+}
+impl Failure {
+    /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The details of the failure.</p>
+    pub fn detail(&self) -> std::option::Option<&str> {
+        self.detail.as_deref()
+    }
 }
 impl std::fmt::Debug for Failure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4399,6 +5270,153 @@ pub struct ContainerInstance {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ContainerInstance {
+    /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+    pub fn container_instance_arn(&self) -> std::option::Option<&str> {
+        self.container_instance_arn.as_deref()
+    }
+    /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2
+    /// instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
+    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+        self.ec2_instance_id.as_deref()
+    }
+    /// <p>The capacity provider associated with the container instance.</p>
+    pub fn capacity_provider_name(&self) -> std::option::Option<&str> {
+        self.capacity_provider_name.as_deref()
+    }
+    /// <p>The version counter for the container instance. Every time a container instance
+    /// experiences a change that triggers a CloudWatch event, the version counter is
+    /// incremented. If you are replicating your Amazon ECS container instance state with CloudWatch
+    /// Events, you can compare the version of a container instance reported by the Amazon ECS APIs
+    /// with the version reported in CloudWatch Events for the container instance (inside the
+    /// <code>detail</code> object) to verify that the version in your event stream is
+    /// current.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
+    /// container instance.</p>
+    pub fn version_info(&self) -> std::option::Option<&crate::model::VersionInfo> {
+        self.version_info.as_ref()
+    }
+    /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and
+    /// memory that has not already been allocated to tasks and is therefore available for new
+    /// tasks. For port resource types, this parameter describes the ports that were reserved by
+    /// the Amazon ECS container agent (at instance registration time) and any task containers that
+    /// have reserved port mappings on the host (with the <code>host</code> or
+    /// <code>bridge</code> network mode). Any port that is not specified here is available
+    /// for new tasks.</p>
+    pub fn remaining_resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.remaining_resources.as_deref()
+    }
+    /// <p>For CPU and memory resource types, this parameter describes the amount of each
+    /// resource that was available on the container instance when the container agent
+    /// registered it with Amazon ECS. This value represents the total amount of CPU and memory that
+    /// can be allocated on this container instance to tasks. For port resource types, this
+    /// parameter describes the ports that were reserved by the Amazon ECS container agent when it
+    /// registered the container instance with Amazon ECS.</p>
+    pub fn registered_resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.registered_resources.as_deref()
+    }
+    /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>,
+    /// <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>,
+    /// <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+    /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then
+    /// any newly registered container instance will transition to a <code>REGISTERING</code>
+    /// status while the trunk elastic network interface is provisioned for the instance. If the
+    /// registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code>
+    /// status. You can describe the container instance and see the reason for failure in the
+    /// <code>statusReason</code> parameter. Once the container instance is terminated, the
+    /// instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic
+    /// network interface is deprovisioned. The instance then transitions to an
+    /// <code>INACTIVE</code> status.</p>
+    /// <p>The <code>ACTIVE</code> status indicates that the container instance can accept tasks.
+    /// The <code>DRAINING</code> indicates that new tasks are not placed on the container
+    /// instance and any service tasks running on the container instance are removed if
+    /// possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container Instance Draining</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The reason that the container instance reached its current status.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS.
+    /// Registered instances with an agent that may be unhealthy or stopped return
+    /// <code>false</code>. Only instances connected to an agent can accept placement
+    /// requests.</p>
+    pub fn agent_connected(&self) -> bool {
+        self.agent_connected
+    }
+    /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code>
+    /// status.</p>
+    pub fn running_tasks_count(&self) -> i32 {
+        self.running_tasks_count
+    }
+    /// <p>The number of tasks on the container instance that are in the <code>PENDING</code>
+    /// status.</p>
+    pub fn pending_tasks_count(&self) -> i32 {
+        self.pending_tasks_count
+    }
+    /// <p>The status of the most recent agent update. If an update has never been requested,
+    /// this value is <code>NULL</code>.</p>
+    pub fn agent_update_status(&self) -> std::option::Option<&crate::model::AgentUpdateStatus> {
+        self.agent_update_status.as_ref()
+    }
+    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at
+    /// instance registration or manually with the <a>PutAttributes</a>
+    /// operation.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The Unix timestamp for when the container instance was registered.</p>
+    pub fn registered_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registered_at.as_ref()
+    }
+    /// <p>The resources attached to a container instance, such as elastic network
+    /// interfaces.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
+        self.attachments.as_deref()
+    }
+    /// <p>The metadata that you apply to the container instance to help you categorize and
+    /// organize them. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only
+    /// one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources,
+    /// remember that other services may have restrictions on allowed characters.
+    /// Generally allowed characters are: letters, numbers, and spaces representable in
+    /// UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+    /// combination of such as a prefix for either keys or values as it is reserved for
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// this prefix do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ContainerInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4885,6 +5903,27 @@ pub struct Attachment {
     /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     pub details: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
 }
+impl Attachment {
+    /// <p>The unique identifier for the attachment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
+    /// <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
+    /// <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Details of the attachment. For elastic network interfaces, this includes the network
+    /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    pub fn details(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.details.as_deref()
+    }
+}
 impl std::fmt::Debug for Attachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Attachment");
@@ -4991,6 +6030,18 @@ pub struct KeyValuePair {
     /// environment variable.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl KeyValuePair {
+    /// <p>The name of the key-value pair. For environment variables, this is the name of the
+    /// environment variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the key-value pair. For environment variables, this is the value of the
+    /// environment variable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for KeyValuePair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyValuePair");
@@ -5070,6 +6121,31 @@ pub struct Attribute {
     /// <p>The ID of the target. You can specify the short form ID for a resource or the full
     /// Amazon Resource Name (ARN).</p>
     pub target_id: std::option::Option<std::string::String>,
+}
+impl Attribute {
+    /// <p>The name of the attribute. The <code>name</code> must contain between 1 and 128
+    /// characters and name may contain letters (uppercase and lowercase), numbers, hyphens,
+    /// underscores, forward slashes, back slashes, or periods.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128
+    /// characters and may contain letters (uppercase and lowercase), numbers, hyphens,
+    /// underscores, periods, at signs (@), forward slashes, back slashes, colons, or spaces.
+    /// The value cannot contain any leading or trailing whitespace.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of the target with which to attach the attribute. This parameter is required
+    /// if you use the short form ID for a resource instead of the full ARN.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The ID of the target. You can specify the short form ID for a resource or the full
+    /// Amazon Resource Name (ARN).</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5315,6 +6391,38 @@ pub struct Resource {
     /// string type.</p>
     pub string_set_value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Resource {
+    /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
+    /// <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
+    /// <code>LONG</code>, or <code>STRINGSET</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a
+    /// double precision floating-point type.</p>
+    pub fn double_value(&self) -> f64 {
+        self.double_value
+    }
+    /// <p>When the <code>longValue</code> type is set, the value of the resource must be an
+    /// extended precision floating-point type.</p>
+    pub fn long_value(&self) -> i64 {
+        self.long_value
+    }
+    /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an
+    /// integer.</p>
+    pub fn integer_value(&self) -> i32 {
+        self.integer_value
+    }
+    /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a
+    /// string type.</p>
+    pub fn string_set_value(&self) -> std::option::Option<&[std::string::String]> {
+        self.string_set_value.as_deref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -5454,6 +6562,21 @@ pub struct VersionInfo {
     pub agent_hash: std::option::Option<std::string::String>,
     /// <p>The Docker version running on the container instance.</p>
     pub docker_version: std::option::Option<std::string::String>,
+}
+impl VersionInfo {
+    /// <p>The version number of the Amazon ECS container agent.</p>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+    /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+    /// </a> GitHub repository.</p>
+    pub fn agent_hash(&self) -> std::option::Option<&str> {
+        self.agent_hash.as_deref()
+    }
+    /// <p>The Docker version running on the container instance.</p>
+    pub fn docker_version(&self) -> std::option::Option<&str> {
+        self.docker_version.as_deref()
+    }
 }
 impl std::fmt::Debug for VersionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5752,6 +6875,181 @@ pub struct Cluster {
     /// </dd>
     /// </dl>
     pub attachments_status: std::option::Option<std::string::String>,
+}
+impl Cluster {
+    /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>A user-generated string that you use to identify your cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The execute command configuration for the cluster.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ClusterConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The status of the cluster. The following are the possible states that will be
+    /// returned.</p>
+    /// <dl>
+    /// <dt>ACTIVE</dt>
+    /// <dd>
+    /// <p>The cluster is ready to accept tasks and if applicable you can register
+    /// container instances with the cluster.</p>
+    /// </dd>
+    /// <dt>PROVISIONING</dt>
+    /// <dd>
+    /// <p>The cluster has capacity providers associated with it and the resources
+    /// needed for the capacity provider are being created.</p>
+    /// </dd>
+    /// <dt>DEPROVISIONING</dt>
+    /// <dd>
+    /// <p>The cluster has capacity providers associated with it and the resources
+    /// needed for the capacity provider are being deleted.</p>
+    /// </dd>
+    /// <dt>FAILED</dt>
+    /// <dd>
+    /// <p>The cluster has capacity providers associated with it and the resources
+    /// needed for the capacity provider have failed to create.</p>
+    /// </dd>
+    /// <dt>INACTIVE</dt>
+    /// <dd>
+    /// <p>The cluster has been deleted. Clusters with an <code>INACTIVE</code>
+    /// status may remain discoverable in your account for a period of time.
+    /// However, this behavior is subject to change in the future, so you should not
+    /// rely on <code>INACTIVE</code> clusters persisting.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The number of container instances registered into the cluster. This includes container
+    /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
+    pub fn registered_container_instances_count(&self) -> i32 {
+        self.registered_container_instances_count
+    }
+    /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
+    pub fn running_tasks_count(&self) -> i32 {
+        self.running_tasks_count
+    }
+    /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
+    pub fn pending_tasks_count(&self) -> i32 {
+        self.pending_tasks_count
+    }
+    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code>
+    /// state. You can view these services with <a>ListServices</a>.</p>
+    pub fn active_services_count(&self) -> i32 {
+        self.active_services_count
+    }
+    /// <p>Additional information about your clusters that are separated by launch type,
+    /// including:</p>
+    /// <ul>
+    /// <li>
+    /// <p>runningEC2TasksCount</p>
+    /// </li>
+    /// <li>
+    /// <p>RunningFargateTasksCount</p>
+    /// </li>
+    /// <li>
+    /// <p>pendingEC2TasksCount</p>
+    /// </li>
+    /// <li>
+    /// <p>pendingFargateTasksCount</p>
+    /// </li>
+    /// <li>
+    /// <p>activeEC2ServiceCount</p>
+    /// </li>
+    /// <li>
+    /// <p>activeFargateServiceCount</p>
+    /// </li>
+    /// <li>
+    /// <p>drainingEC2ServiceCount</p>
+    /// </li>
+    /// <li>
+    /// <p>drainingFargateServiceCount</p>
+    /// </li>
+    /// </ul>
+    pub fn statistics(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.statistics.as_deref()
+    }
+    /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
+    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only
+    /// one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources,
+    /// remember that other services may have restrictions on allowed characters.
+    /// Generally allowed characters are: letters, numbers, and spaces representable in
+    /// UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+    /// combination of such as a prefix for either keys or values as it is reserved for
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// this prefix do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights
+    /// is enabled or disabled for a cluster.</p>
+    pub fn settings(&self) -> std::option::Option<&[crate::model::ClusterSetting]> {
+        self.settings.as_deref()
+    }
+    /// <p>The capacity providers associated with the cluster.</p>
+    pub fn capacity_providers(&self) -> std::option::Option<&[std::string::String]> {
+        self.capacity_providers.as_deref()
+    }
+    /// <p>The default capacity provider strategy for the cluster. When services or tasks are run
+    /// in the cluster with no launch type or capacity provider strategy specified, the default
+    /// capacity provider strategy is used.</p>
+    pub fn default_capacity_provider_strategy(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
+        self.default_capacity_provider_strategy.as_deref()
+    }
+    /// <p>The resources attached to a cluster. When using a capacity provider with a cluster,
+    /// the Auto Scaling plan that is created will be returned as a cluster attachment.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
+        self.attachments.as_deref()
+    }
+    /// <p>The status of the capacity providers associated with the cluster. The following are
+    /// the states that will be returned:</p>
+    /// <dl>
+    /// <dt>UPDATE_IN_PROGRESS</dt>
+    /// <dd>
+    /// <p>The available capacity providers for the cluster are updating. This occurs
+    /// when the Auto Scaling plan is provisioning or deprovisioning.</p>
+    /// </dd>
+    /// <dt>UPDATE_COMPLETE</dt>
+    /// <dd>
+    /// <p>The capacity providers have successfully updated.</p>
+    /// </dd>
+    /// <dt>UPDATE_FAILED</dt>
+    /// <dd>
+    /// <p>The capacity provider updates failed.</p>
+    /// </dd>
+    /// </dl>
+    pub fn attachments_status(&self) -> std::option::Option<&str> {
+        self.attachments_status.as_deref()
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6289,6 +7587,22 @@ pub struct ClusterSetting {
     /// set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ClusterSetting {
+    /// <p>The name of the cluster setting. The only supported value is
+    /// <code>containerInsights</code>.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ClusterSettingName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to set for the cluster setting. The supported values are
+    /// <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
+    /// specified, CloudWatch Container Insights will be enabled for the cluster, otherwise it will be
+    /// disabled unless the <code>containerInsights</code> account setting is enabled. If a
+    /// cluster value is specified, it will override the <code>containerInsights</code> value
+    /// set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterSetting");
@@ -6417,6 +7731,14 @@ pub struct ClusterConfiguration {
     pub execute_command_configuration:
         std::option::Option<crate::model::ExecuteCommandConfiguration>,
 }
+impl ClusterConfiguration {
+    /// <p>The details of the execute command configuration.</p>
+    pub fn execute_command_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecuteCommandConfiguration> {
+        self.execute_command_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ClusterConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterConfiguration");
@@ -6501,6 +7823,45 @@ pub struct ExecuteCommandConfiguration {
     /// sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is
     /// specified, a <code>logConfiguration</code> must be provided.</p>
     pub log_configuration: std::option::Option<crate::model::ExecuteCommandLogConfiguration>,
+}
+impl ExecuteCommandConfiguration {
+    /// <p>Specify an Key Management Service key ID to encrypt the data between the local client
+    /// and the container.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The log setting to use for redirecting logs for your execute command results. The
+    /// following log settings are available.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>: The execute command session is not logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task
+    /// definition is used. If no logging parameter is specified, it defaults to this
+    /// value. If no <code>awslogs</code> log driver is configured in the task
+    /// definition, the output won't be logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OVERRIDE</code>: Specify the logging details as a part of
+    /// <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option
+    /// is specified, the <code>logConfiguration</code> is required.</p>
+    /// </li>
+    /// </ul>
+    pub fn logging(&self) -> std::option::Option<&crate::model::ExecuteCommandLogging> {
+        self.logging.as_ref()
+    }
+    /// <p>The log configuration for the results of the execute command actions. The logs can be
+    /// sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is
+    /// specified, a <code>logConfiguration</code> must be provided.</p>
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecuteCommandLogConfiguration> {
+        self.log_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteCommandConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6648,6 +8009,36 @@ pub struct ExecuteCommandLogConfiguration {
     pub s3_encryption_enabled: bool,
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
+}
+impl ExecuteCommandLogConfiguration {
+    /// <p>The name of the CloudWatch log group to send logs to.</p>
+    /// <note>
+    /// <p>The CloudWatch log group must already be created.</p>
+    /// </note>
+    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_name.as_deref()
+    }
+    /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
+    /// encryption will be disabled.</p>
+    pub fn cloud_watch_encryption_enabled(&self) -> bool {
+        self.cloud_watch_encryption_enabled
+    }
+    /// <p>The name of the S3 bucket to send logs to.</p>
+    /// <note>
+    /// <p>The S3 bucket must already be created.</p>
+    /// </note>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Whether or not to use encryption on the S3 logs. If not specified,
+    /// encryption is not used.</p>
+    pub fn s3_encryption_enabled(&self) -> bool {
+        self.s3_encryption_enabled
+    }
+    /// <p>An optional folder in the S3 bucket to place logs in.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteCommandLogConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6908,6 +8299,93 @@ pub struct CapacityProvider {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CapacityProvider {
+    /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
+    pub fn capacity_provider_arn(&self) -> std::option::Option<&str> {
+        self.capacity_provider_arn.as_deref()
+    }
+    /// <p>The name of the capacity provider.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the capacity provider. Only capacity providers in an
+    /// <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+    /// successfully deleted, it will have an <code>INACTIVE</code> status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CapacityProviderStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Auto Scaling group settings for the capacity provider.</p>
+    pub fn auto_scaling_group_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingGroupProvider> {
+        self.auto_scaling_group_provider.as_ref()
+    }
+    /// <p>The update status of the capacity provider. The following are the possible states that
+    /// will be returned.</p>
+    /// <dl>
+    /// <dt>DELETE_IN_PROGRESS</dt>
+    /// <dd>
+    /// <p>The capacity provider is in the process of being deleted.</p>
+    /// </dd>
+    /// <dt>DELETE_COMPLETE</dt>
+    /// <dd>
+    /// <p>The capacity provider has been successfully deleted and will have an
+    /// <code>INACTIVE</code> status.</p>
+    /// </dd>
+    /// <dt>DELETE_FAILED</dt>
+    /// <dd>
+    /// <p>The capacity provider was unable to be deleted. The update status reason
+    /// will provide further details about why the delete failed.</p>
+    /// </dd>
+    /// </dl>
+    pub fn update_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CapacityProviderUpdateStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p>The update status reason. This provides further details about the update status for
+    /// the capacity provider.</p>
+    pub fn update_status_reason(&self) -> std::option::Option<&str> {
+        self.update_status_reason.as_deref()
+    }
+    /// <p>The metadata that you apply to the capacity provider to help you categorize and
+    /// organize it. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only
+    /// one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources,
+    /// remember that other services may have restrictions on allowed characters.
+    /// Generally allowed characters are: letters, numbers, and spaces representable in
+    /// UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+    /// combination of such as a prefix for either keys or values as it is reserved for
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// this prefix do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CapacityProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7267,6 +8745,34 @@ pub struct AutoScalingGroupProvider {
     pub managed_termination_protection:
         std::option::Option<crate::model::ManagedTerminationProtection>,
 }
+impl AutoScalingGroupProvider {
+    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+    pub fn auto_scaling_group_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_group_arn.as_deref()
+    }
+    /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
+    pub fn managed_scaling(&self) -> std::option::Option<&crate::model::ManagedScaling> {
+        self.managed_scaling.as_ref()
+    }
+    /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
+    /// provider. This determines whether the Auto Scaling group has managed termination
+    /// protection.</p>
+    /// <important>
+    /// <p>When using managed termination protection, managed scaling must also be used
+    /// otherwise managed termination protection will not work.</p>
+    /// </important>
+    /// <p>When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in
+    /// an Auto Scaling group that contain tasks from being terminated during a scale-in action.
+    /// The Auto Scaling group and each instance in the Auto Scaling group must have instance
+    /// protection from scale-in actions enabled as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
+    /// <p>When managed termination protection is disabled, your Amazon EC2 instances are not
+    /// protected from termination when the Auto Scaling group scales in.</p>
+    pub fn managed_termination_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedTerminationProtection> {
+        self.managed_termination_protection.as_ref()
+    }
+}
 impl std::fmt::Debug for AutoScalingGroupProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingGroupProvider");
@@ -7457,6 +8963,36 @@ pub struct ManagedScaling {
     /// to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value
     /// of <code>300</code> seconds is used.</p>
     pub instance_warmup_period: std::option::Option<i32>,
+}
+impl ManagedScaling {
+    /// <p>Whether or not to enable managed scaling for the capacity provider.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ManagedScalingStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The target capacity value for the capacity provider. The specified value must be
+    /// greater than <code>0</code> and less than or equal to <code>100</code>. A value of
+    /// <code>100</code> will result in the Amazon EC2 instances in your Auto Scaling group being
+    /// completely utilized.</p>
+    pub fn target_capacity(&self) -> std::option::Option<i32> {
+        self.target_capacity
+    }
+    /// <p>The minimum number of container instances that Amazon ECS will scale in or scale out at one
+    /// time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
+    pub fn minimum_scaling_step_size(&self) -> std::option::Option<i32> {
+        self.minimum_scaling_step_size
+    }
+    /// <p>The maximum number of container instances that Amazon ECS will scale in or scale out at one
+    /// time. If this parameter is omitted, the default value of <code>10000</code> is
+    /// used.</p>
+    pub fn maximum_scaling_step_size(&self) -> std::option::Option<i32> {
+        self.maximum_scaling_step_size
+    }
+    /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute
+    /// to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value
+    /// of <code>300</code> seconds is used.</p>
+    pub fn instance_warmup_period(&self) -> std::option::Option<i32> {
+        self.instance_warmup_period
+    }
 }
 impl std::fmt::Debug for ManagedScaling {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7702,6 +9238,30 @@ pub struct AutoScalingGroupProviderUpdate {
     pub managed_termination_protection:
         std::option::Option<crate::model::ManagedTerminationProtection>,
 }
+impl AutoScalingGroupProviderUpdate {
+    /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
+    pub fn managed_scaling(&self) -> std::option::Option<&crate::model::ManagedScaling> {
+        self.managed_scaling.as_ref()
+    }
+    /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
+    /// provider. This determines whether the Auto Scaling group has managed termination
+    /// protection.</p>
+    /// <important>
+    /// <p>When using managed termination protection, managed scaling must also be used
+    /// otherwise managed termination protection will not work.</p>
+    /// </important>
+    /// <p>When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in
+    /// an Auto Scaling group that contain tasks from being terminated during a scale-in action.
+    /// The Auto Scaling group and each instance in the Auto Scaling group must have instance
+    /// protection from scale-in actions enabled as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
+    /// <p>When managed termination protection is disabled, your Amazon EC2 instances are not
+    /// protected from termination when the Auto Scaling group scales in.</p>
+    pub fn managed_termination_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedTerminationProtection> {
+        self.managed_termination_protection.as_ref()
+    }
+}
 impl std::fmt::Debug for AutoScalingGroupProviderUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingGroupProviderUpdate");
@@ -7805,6 +9365,24 @@ pub struct ManagedAgentStateChange {
     pub status: std::option::Option<std::string::String>,
     /// <p>The reason for the status of the managed agent.</p>
     pub reason: std::option::Option<std::string::String>,
+}
+impl ManagedAgentStateChange {
+    /// <p>The name of the container associated with the managed agent.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The name of the managed agent.</p>
+    pub fn managed_agent_name(&self) -> std::option::Option<&crate::model::ManagedAgentName> {
+        self.managed_agent_name.as_ref()
+    }
+    /// <p>The status of the managed agent.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The reason for the status of the managed agent.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ManagedAgentStateChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7952,6 +9530,16 @@ pub struct AttachmentStateChange {
     /// <p>The status of the attachment.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl AttachmentStateChange {
+    /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
+    pub fn attachment_arn(&self) -> std::option::Option<&str> {
+        self.attachment_arn.as_deref()
+    }
+    /// <p>The status of the attachment.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachmentStateChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachmentStateChange");
@@ -8028,6 +9616,37 @@ pub struct ContainerStateChange {
     pub reason: std::option::Option<std::string::String>,
     /// <p>The status of the container.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl ContainerStateChange {
+    /// <p>The name of the container.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The container image SHA 256 digest.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The ID of the Docker container.</p>
+    pub fn runtime_id(&self) -> std::option::Option<&str> {
+        self.runtime_id.as_deref()
+    }
+    /// <p>The exit code for the container, if the state change is a result of the container
+    /// exiting.</p>
+    pub fn exit_code(&self) -> std::option::Option<i32> {
+        self.exit_code
+    }
+    /// <p>Any network bindings associated with the container.</p>
+    pub fn network_bindings(&self) -> std::option::Option<&[crate::model::NetworkBinding]> {
+        self.network_bindings.as_deref()
+    }
+    /// <p>The reason for the state change.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The status of the container.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for ContainerStateChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8178,6 +9797,24 @@ pub struct NetworkBinding {
     pub host_port: std::option::Option<i32>,
     /// <p>The protocol used for the network binding.</p>
     pub protocol: std::option::Option<crate::model::TransportProtocol>,
+}
+impl NetworkBinding {
+    /// <p>The IP address that the container is bound to on the container instance.</p>
+    pub fn bind_ip(&self) -> std::option::Option<&str> {
+        self.bind_ip.as_deref()
+    }
+    /// <p>The port number on the container that is used with the network binding.</p>
+    pub fn container_port(&self) -> std::option::Option<i32> {
+        self.container_port
+    }
+    /// <p>The port number on the host that is used with the network binding.</p>
+    pub fn host_port(&self) -> std::option::Option<i32> {
+        self.host_port
+    }
+    /// <p>The protocol used for the network binding.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::TransportProtocol> {
+        self.protocol.as_ref()
+    }
 }
 impl std::fmt::Debug for NetworkBinding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8514,6 +10151,274 @@ pub struct Task {
     pub version: i64,
     /// <p>The ephemeral storage settings for the task.</p>
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
+}
+impl Task {
+    /// <p>The Elastic Network Adapter associated with the task if the task uses the
+    /// <code>awsvpc</code> network mode.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
+        self.attachments.as_deref()
+    }
+    /// <p>The attributes of the task</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The availability zone of the task.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The capacity provider associated with the task.</p>
+    pub fn capacity_provider_name(&self) -> std::option::Option<&str> {
+        self.capacity_provider_name.as_deref()
+    }
+    /// <p>The ARN of the cluster that hosts the task.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The connectivity status of a task.</p>
+    pub fn connectivity(&self) -> std::option::Option<&crate::model::Connectivity> {
+        self.connectivity.as_ref()
+    }
+    /// <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
+    /// status.</p>
+    pub fn connectivity_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.connectivity_at.as_ref()
+    }
+    /// <p>The ARN of the container instances that host the task.</p>
+    pub fn container_instance_arn(&self) -> std::option::Option<&str> {
+        self.container_instance_arn.as_deref()
+    }
+    /// <p>The containers associated with the task.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
+        self.containers.as_deref()
+    }
+    /// <p>The number of CPU units used by the task as expressed in a task definition. It can be
+    /// expressed as an integer using CPU units, for example <code>1024</code>. It can also be
+    /// expressed as a string using vCPUs, for example <code>1 vCPU</code> or <code>1
+    /// vcpu</code>. String values are converted to an integer indicating the CPU units when
+    /// the task definition is registered.</p>
+    /// <p>If you are using the EC2 launch type, this field is optional. Supported
+    /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+    /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
+    /// <p>If you are using the Fargate launch type, this field is required and you
+    /// must use one of the following values, which determines your range of supported values
+    /// for the <code>memory</code> parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
+    /// </li>
+    /// </ul>
+    pub fn cpu(&self) -> std::option::Option<&str> {
+        self.cpu.as_deref()
+    }
+    /// <p>The Unix timestamp for when the task was created (the task entered the
+    /// <code>PENDING</code> state).</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
+    /// Lifecycle</a>.</p>
+    pub fn desired_status(&self) -> std::option::Option<&str> {
+        self.desired_status.as_deref()
+    }
+    /// <p>Whether or not execute command functionality is enabled for this task. If
+    /// <code>true</code>, this enables execute command functionality on all containers in
+    /// the task.</p>
+    pub fn enable_execute_command(&self) -> bool {
+        self.enable_execute_command
+    }
+    /// <p>The Unix timestamp for when the task execution stopped.</p>
+    pub fn execution_stopped_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.execution_stopped_at.as_ref()
+    }
+    /// <p>The name of the task group associated with the task.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The health status for the task, which is determined by the health of the essential
+    /// containers in the task. If all essential containers in the task are reporting as
+    /// <code>HEALTHY</code>, then the task status also reports as <code>HEALTHY</code>. If
+    /// any essential containers in the task are reporting as <code>UNHEALTHY</code> or
+    /// <code>UNKNOWN</code>, then the task status also reports as <code>UNHEALTHY</code> or
+    /// <code>UNKNOWN</code>, accordingly.</p>
+    /// <note>
+    /// <p>The Amazon ECS container agent does not monitor or report on Docker health checks that
+    /// are embedded in a container image (such as those specified in a parent image or from
+    /// the image's Dockerfile) and not specified in the container definition. Health check
+    /// parameters that are specified in a container definition override any Docker health
+    /// checks that exist in the container image.</p>
+    /// </note>
+    pub fn health_status(&self) -> std::option::Option<&crate::model::HealthStatus> {
+        self.health_status.as_ref()
+    }
+    /// <p>The Elastic Inference accelerator associated with the task.</p>
+    pub fn inference_accelerators(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceAccelerator]> {
+        self.inference_accelerators.as_deref()
+    }
+    /// <p>The last known status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
+    /// Lifecycle</a>.</p>
+    pub fn last_status(&self) -> std::option::Option<&str> {
+        self.last_status.as_deref()
+    }
+    /// <p>The infrastructure on which your task is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+    /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
+        self.launch_type.as_ref()
+    }
+    /// <p>The amount of memory (in MiB) used by the task as expressed in a task definition. It
+    /// can be expressed as an integer using MiB, for example <code>1024</code>. It can also be
+    /// expressed as a string using GB, for example <code>1GB</code> or <code>1 GB</code>.
+    /// String values are converted to an integer indicating the MiB when the task definition is
+    /// registered.</p>
+    /// <p>If you are using the EC2 launch type, this field is optional.</p>
+    /// <p>If you are using the Fargate launch type, this field is required and you
+    /// must use one of the following values, which determines your range of supported values
+    /// for the <code>cpu</code> parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+    /// </li>
+    /// </ul>
+    pub fn memory(&self) -> std::option::Option<&str> {
+        self.memory.as_deref()
+    }
+    /// <p>One or more container overrides.</p>
+    pub fn overrides(&self) -> std::option::Option<&crate::model::TaskOverride> {
+        self.overrides.as_ref()
+    }
+    /// <p>The platform version on which your task is running. A platform version is only
+    /// specified for tasks using the Fargate launch type. If one is not
+    /// specified, the <code>LATEST</code> platform version is used by default. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+    /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>The operating system  that your tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX.</code>.</p>
+    pub fn platform_family(&self) -> std::option::Option<&str> {
+        self.platform_family.as_deref()
+    }
+    /// <p>The Unix timestamp for when the container image pull began.</p>
+    pub fn pull_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.pull_started_at.as_ref()
+    }
+    /// <p>The Unix timestamp for when the container image pull completed.</p>
+    pub fn pull_stopped_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.pull_stopped_at.as_ref()
+    }
+    /// <p>The Unix timestamp for when the task started (the task transitioned from the
+    /// <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The tag specified when a task is started. If the task is started by an Amazon ECS service,
+    /// then the <code>startedBy</code> parameter contains the deployment ID of the service that
+    /// starts it.</p>
+    pub fn started_by(&self) -> std::option::Option<&str> {
+        self.started_by.as_deref()
+    }
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> may
+    /// contain additional details.</p>
+    pub fn stop_code(&self) -> std::option::Option<&crate::model::TaskStopCode> {
+        self.stop_code.as_ref()
+    }
+    /// <p>The Unix timestamp for when the task was stopped (the task transitioned from the
+    /// <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
+    pub fn stopped_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stopped_at.as_ref()
+    }
+    /// <p>The reason that the task was stopped.</p>
+    pub fn stopped_reason(&self) -> std::option::Option<&str> {
+        self.stopped_reason.as_deref()
+    }
+    /// <p>The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
+    /// state to <code>STOPPED</code>).</p>
+    pub fn stopping_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stopping_at.as_ref()
+    }
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
+    /// tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only
+    /// one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources,
+    /// remember that other services may have restrictions on allowed characters.
+    /// Generally allowed characters are: letters, numbers, and spaces representable in
+    /// UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+    /// combination of such as a prefix for either keys or values as it is reserved for
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// this prefix do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The ARN of the task definition that creates the task.</p>
+    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+        self.task_definition_arn.as_deref()
+    }
+    /// <p>The version counter for the task. Every time a task experiences a change that triggers
+    /// a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task
+    /// state with CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API
+    /// actions with the version reported in CloudWatch Events for the task (inside the
+    /// <code>detail</code> object) to verify that the version in your event stream is
+    /// current.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The ephemeral storage settings for the task.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for Task {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9391,6 +11296,14 @@ pub struct EphemeralStorage {
     /// <code>200</code> GiB.</p>
     pub size_in_gi_b: i32,
 }
+impl EphemeralStorage {
+    /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum
+    /// supported value is <code>21</code> GiB and the maximum supported value is
+    /// <code>200</code> GiB.</p>
+    pub fn size_in_gi_b(&self) -> i32 {
+        self.size_in_gi_b
+    }
+}
 impl std::fmt::Debug for EphemeralStorage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EphemeralStorage");
@@ -9536,6 +11449,56 @@ pub struct TaskOverride {
     /// </ul>
     /// </note>
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
+}
+impl TaskOverride {
+    /// <p>One or more container overrides sent to a task.</p>
+    pub fn container_overrides(&self) -> std::option::Option<&[crate::model::ContainerOverride]> {
+        self.container_overrides.as_deref()
+    }
+    /// <p>The cpu override for the task.</p>
+    pub fn cpu(&self) -> std::option::Option<&str> {
+        self.cpu.as_deref()
+    }
+    /// <p>The Elastic Inference accelerator override for the task.</p>
+    pub fn inference_accelerator_overrides(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceAcceleratorOverride]> {
+        self.inference_accelerator_overrides.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+    /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The memory override for the task.</p>
+    pub fn memory(&self) -> std::option::Option<&str> {
+        self.memory.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
+    /// this task are granted the permissions that are specified in this role. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a>
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn task_role_arn(&self) -> std::option::Option<&str> {
+        self.task_role_arn.as_deref()
+    }
+    /// <p>The ephemeral storage setting override for the task.</p>
+    /// <note>
+    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
+    /// version <code>1.4.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for TaskOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9743,6 +11706,17 @@ pub struct InferenceAcceleratorOverride {
     /// <p>The Elastic Inference accelerator type to use.</p>
     pub device_type: std::option::Option<std::string::String>,
 }
+impl InferenceAcceleratorOverride {
+    /// <p>The Elastic Inference accelerator device name to override for the task. This parameter
+    /// must match a <code>deviceName</code> specified in the task definition.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The Elastic Inference accelerator type to use.</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+}
 impl std::fmt::Debug for InferenceAcceleratorOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InferenceAcceleratorOverride");
@@ -9834,6 +11808,53 @@ pub struct ContainerOverride {
     /// value from the task definition. The only supported resource is a GPU.</p>
     pub resource_requirements:
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
+}
+impl ContainerOverride {
+    /// <p>The name of the container that receives the override. This parameter is required if
+    /// any override is specified.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The command to send to the container that overrides the default command from the
+    /// Docker image or the task definition. You must also specify a container name.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>The environment variables to send to the container. You can add new environment
+    /// variables, which are added to the container at launch, or you can override the existing
+    /// environment variables from the Docker image or the task definition. You must also
+    /// specify a container name.</p>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.environment.as_deref()
+    }
+    /// <p>A list of files containing the environment variables to pass to a container, instead
+    /// of the value from the container definition.</p>
+    pub fn environment_files(&self) -> std::option::Option<&[crate::model::EnvironmentFile]> {
+        self.environment_files.as_deref()
+    }
+    /// <p>The number of <code>cpu</code> units reserved for the container, instead of the
+    /// default value from the task definition. You must also specify a container name.</p>
+    pub fn cpu(&self) -> std::option::Option<i32> {
+        self.cpu
+    }
+    /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default
+    /// value from the task definition. If your container attempts to exceed the memory
+    /// specified here, the container is killed. You must also specify a container name.</p>
+    pub fn memory(&self) -> std::option::Option<i32> {
+        self.memory
+    }
+    /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default
+    /// value from the task definition. You must also specify a container name.</p>
+    pub fn memory_reservation(&self) -> std::option::Option<i32> {
+        self.memory_reservation
+    }
+    /// <p>The type and amount of a resource to assign to a container, instead of the default
+    /// value from the task definition. The only supported resource is a GPU.</p>
+    pub fn resource_requirements(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceRequirement]> {
+        self.resource_requirements.as_deref()
+    }
 }
 impl std::fmt::Debug for ContainerOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10054,6 +12075,24 @@ pub struct ResourceRequirement {
     /// <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
     pub r#type: std::option::Option<crate::model::ResourceType>,
 }
+impl ResourceRequirement {
+    /// <p>The value for the specified resource type.</p>
+    /// <p>If the <code>GPU</code> type is used, the value is the number of physical
+    /// <code>GPUs</code> the Amazon ECS container agent will reserve for the container. The
+    /// number of GPUs reserved for all containers in a task should not exceed the number of
+    /// available GPUs on the container instance the task is launched on.</p>
+    /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should
+    /// match the <code>deviceName</code> for an <a>InferenceAccelerator</a>
+    /// specified in a task definition.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of resource to assign to a container. The supported values are
+    /// <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceRequirement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceRequirement");
@@ -10212,6 +12251,17 @@ pub struct EnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     pub r#type: std::option::Option<crate::model::EnvironmentFileType>,
 }
+impl EnvironmentFile {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment
+    /// variable file.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EnvironmentFileType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for EnvironmentFile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentFile");
@@ -10333,6 +12383,17 @@ pub struct InferenceAccelerator {
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator type to use.</p>
     pub device_type: std::option::Option<std::string::String>,
+}
+impl InferenceAccelerator {
+    /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also
+    /// be referenced in a container definition as a <a>ResourceRequirement</a>.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The Elastic Inference accelerator type to use.</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
 }
 impl std::fmt::Debug for InferenceAccelerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10496,6 +12557,85 @@ pub struct Container {
     pub memory_reservation: std::option::Option<std::string::String>,
     /// <p>The IDs of each GPU assigned to the container.</p>
     pub gpu_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Container {
+    /// <p>The Amazon Resource Name (ARN) of the container.</p>
+    pub fn container_arn(&self) -> std::option::Option<&str> {
+        self.container_arn.as_deref()
+    }
+    /// <p>The ARN of the task.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The name of the container.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The image used for the container.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The container image manifest digest.</p>
+    /// <note>
+    /// <p>The <code>imageDigest</code> is only returned if the container is using an image
+    /// hosted in Amazon ECR, otherwise it is omitted.</p>
+    /// </note>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The ID of the Docker container.</p>
+    pub fn runtime_id(&self) -> std::option::Option<&str> {
+        self.runtime_id.as_deref()
+    }
+    /// <p>The last known status of the container.</p>
+    pub fn last_status(&self) -> std::option::Option<&str> {
+        self.last_status.as_deref()
+    }
+    /// <p>The exit code returned from the container.</p>
+    pub fn exit_code(&self) -> std::option::Option<i32> {
+        self.exit_code
+    }
+    /// <p>A short (255 max characters) human-readable string to provide additional details about
+    /// a running or stopped container.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The network bindings associated with the container.</p>
+    pub fn network_bindings(&self) -> std::option::Option<&[crate::model::NetworkBinding]> {
+        self.network_bindings.as_deref()
+    }
+    /// <p>The network interfaces associated with the container.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
+    /// <p>The health status of the container. If health checks are not configured for this
+    /// container in its task definition, then it reports the health status as
+    /// <code>UNKNOWN</code>.</p>
+    pub fn health_status(&self) -> std::option::Option<&crate::model::HealthStatus> {
+        self.health_status.as_ref()
+    }
+    /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
+    pub fn managed_agents(&self) -> std::option::Option<&[crate::model::ManagedAgent]> {
+        self.managed_agents.as_deref()
+    }
+    /// <p>The number of CPU units set for the container. The value will be <code>0</code> if no
+    /// value was specified in the container definition when the task definition was
+    /// registered.</p>
+    pub fn cpu(&self) -> std::option::Option<&str> {
+        self.cpu.as_deref()
+    }
+    /// <p>The hard limit (in MiB) of memory set for the container.</p>
+    pub fn memory(&self) -> std::option::Option<&str> {
+        self.memory.as_deref()
+    }
+    /// <p>The soft limit (in MiB) of memory set for the container.</p>
+    pub fn memory_reservation(&self) -> std::option::Option<&str> {
+        self.memory_reservation.as_deref()
+    }
+    /// <p>The IDs of each GPU assigned to the container.</p>
+    pub fn gpu_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.gpu_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for Container {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10828,6 +12968,25 @@ pub struct ManagedAgent {
     /// <p>The last known status of the managed agent.</p>
     pub last_status: std::option::Option<std::string::String>,
 }
+impl ManagedAgent {
+    /// <p>The Unix timestamp for when the managed agent was last started.</p>
+    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_started_at.as_ref()
+    }
+    /// <p>The name of the managed agent. When the execute command feature is enabled, the
+    /// managed agent name is <code>ExecuteCommandAgent</code>.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ManagedAgentName> {
+        self.name.as_ref()
+    }
+    /// <p>The reason for why the managed agent is in the state it is in.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The last known status of the managed agent.</p>
+    pub fn last_status(&self) -> std::option::Option<&str> {
+        self.last_status.as_deref()
+    }
+}
 impl std::fmt::Debug for ManagedAgent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ManagedAgent");
@@ -10927,6 +13086,20 @@ pub struct NetworkInterface {
     pub private_ipv4_address: std::option::Option<std::string::String>,
     /// <p>The private IPv6 address for the network interface.</p>
     pub ipv6_address: std::option::Option<std::string::String>,
+}
+impl NetworkInterface {
+    /// <p>The attachment ID for the network interface.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>The private IPv4 address for the network interface.</p>
+    pub fn private_ipv4_address(&self) -> std::option::Option<&str> {
+        self.private_ipv4_address.as_deref()
+    }
+    /// <p>The private IPv6 address for the network interface.</p>
+    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+        self.ipv6_address.as_deref()
+    }
 }
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11278,6 +13451,274 @@ pub struct TaskDefinition {
     pub registered_by: std::option::Option<std::string::String>,
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
+}
+impl TaskDefinition {
+    /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
+    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+        self.task_definition_arn.as_deref()
+    }
+    /// <p>A list of container definitions in JSON format that describe the different containers
+    /// that make up your task. For more information about container definition parameters and
+    /// defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+    /// Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn container_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContainerDefinition]> {
+        self.container_definitions.as_deref()
+    }
+    /// <p>The name of a family that this task definition is registered to. Up to 255 letters
+    /// (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+    /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task
+    /// definition that you registered to a family a revision number of 1. Amazon ECS gives
+    /// sequential revision numbers to each task definition that you add.</p>
+    pub fn family(&self) -> std::option::Option<&str> {
+        self.family.as_deref()
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access Management role that grants containers in the
+    /// task permission to call Amazon Web Services APIs on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon ECS
+    /// Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option
+    /// is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some
+    /// configuration code in order to take advantage of the feature. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
+    /// for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn task_role_arn(&self) -> std::option::Option<&str> {
+        self.task_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+    /// permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required
+    /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+    /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The Docker networking mode to use for the containers in the task. The valid values are
+    /// <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+    /// If no network mode is specified, the default is <code>bridge</code>.</p>
+    /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
+    /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.  For Amazon ECS tasks on Amazon EC2 Windows instances, <code><default></code> or <code>awsvpc</code> can be used. If the network
+    /// mode is set to <code>none</code>, you cannot specify port mappings in your container
+    /// definitions, and the tasks containers do not have external connectivity. The
+    /// <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+    /// performance for containers because they use the EC2 network stack instead of the
+    /// virtualized network stack provided by the <code>bridge</code> mode.</p>
+    /// <p>With the <code>host</code> and <code>awsvpc</code> network modes, exposed container
+    /// ports are mapped directly to the corresponding host port (for the <code>host</code>
+    /// network mode) or the attached elastic network interface port (for the
+    /// <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port
+    /// mappings. </p>
+    /// <important>
+    /// <p>When using the <code>host</code> network mode, you should not run
+    /// containers using the root user (UID 0). It is considered best practice
+    /// to use a non-root user.</p>
+    /// </important>
+    /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
+    /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
+    /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the
+    /// same task on a single container instance when port mappings are used.</p>
+    /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+    /// settings</a> in the <i>Docker run reference</i>.</p>
+    pub fn network_mode(&self) -> std::option::Option<&crate::model::NetworkMode> {
+        self.network_mode.as_ref()
+    }
+    /// <p>The revision of the task in a particular family. The revision is a version number of a
+    /// task definition in a family. When you register a task definition for the first time, the
+    /// revision is <code>1</code>. Each time that you register a new revision of a task
+    /// definition in the same family, the revision value always increases by one, even if you
+    /// have deregistered previous revisions in this family.</p>
+    pub fn revision(&self) -> i32 {
+        self.revision
+    }
+    /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <note>
+    /// <p>The <code>host</code> and <code>sourcePath</code> parameters are not supported for
+    /// tasks run on Fargate.</p>
+    /// </note>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+    /// <p>The status of the task definition.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskDefinitionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is
+    /// registered to your cluster, the Amazon ECS container agent assigns some standard attributes
+    /// to the instance. You can apply custom attributes, specified as key-value pairs using the
+    /// Amazon ECS console or the <a>PutAttributes</a> API. These attributes are used when
+    /// considering task placement for tasks hosted on Amazon EC2 instances. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for tasks run on Fargate.</p>
+    /// </note>
+    pub fn requires_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.requires_attributes.as_deref()
+    }
+    /// <p>An array of placement constraint objects to use for tasks.</p>
+    /// <note>
+    /// <p>This parameter is not supported for tasks run on Fargate.</p>
+    /// </note>
+    pub fn placement_constraints(
+        &self,
+    ) -> std::option::Option<&[crate::model::TaskDefinitionPlacementConstraint]> {
+        self.placement_constraints.as_deref()
+    }
+    /// <p>The task launch types the task definition validated against during task definition
+    /// registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn compatibilities(&self) -> std::option::Option<&[crate::model::Compatibility]> {
+        self.compatibilities.as_deref()
+    }
+    /// <p>The operating system  that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+    pub fn runtime_platform(&self) -> std::option::Option<&crate::model::RuntimePlatform> {
+        self.runtime_platform.as_ref()
+    }
+    /// <p>The task launch types the task definition was validated against. To determine which
+    /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.</p>
+    pub fn requires_compatibilities(&self) -> std::option::Option<&[crate::model::Compatibility]> {
+        self.requires_compatibilities.as_deref()
+    }
+    /// <p>The number of <code>cpu</code> units used by the task. If you are using the EC2 launch
+    /// type, this field is optional and any value can be used. If you are using the Fargate
+    /// launch type, this field is required and you must use one of the following values, which
+    /// determines your range of valid values for the <code>memory</code> parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
+    /// </li>
+    /// </ul>
+    pub fn cpu(&self) -> std::option::Option<&str> {
+        self.cpu.as_deref()
+    }
+    /// <p>The amount (in MiB) of memory used by the task.</p>
+    /// <p>If your tasks will be run on Amazon EC2 instances, you must specify either a task-level
+    /// memory value or a container-level memory value. This field is optional and any value can
+    /// be used. If a task-level memory value is specified then the container-level memory value
+    /// is optional. For more information regarding container-level memory and memory
+    /// reservation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
+    /// <p>If your tasks will be run on Fargate, this field is required and you must use one of
+    /// the following values, which determines your range of valid values for the
+    /// <code>cpu</code> parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+    /// </li>
+    /// <li>
+    /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+    /// </li>
+    /// </ul>
+    pub fn memory(&self) -> std::option::Option<&str> {
+        self.memory.as_deref()
+    }
+    /// <p>The Elastic Inference accelerator associated with the task.</p>
+    pub fn inference_accelerators(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceAccelerator]> {
+        self.inference_accelerators.as_deref()
+    }
+    /// <p>The process namespace to use for the containers in the task. The valid
+    /// values are <code>host</code> or <code>task</code>. If <code>host</code>
+    /// is specified, then all containers within the tasks that specified the
+    /// <code>host</code> PID mode on the same container instance share the
+    /// same process namespace with the host Amazon EC2 instance. If <code>task</code> is
+    /// specified, all containers within the specified task share the same
+    /// process namespace. If no value is specified, the default is a private
+    /// namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+    /// reference</i>.</p>
+    /// <p>If the <code>host</code> PID mode is used, be aware that there is a
+    /// heightened risk of undesired process namespace expose. For more
+    /// information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+    /// security</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// </note>
+    pub fn pid_mode(&self) -> std::option::Option<&crate::model::PidMode> {
+        self.pid_mode.as_ref()
+    }
+    /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
+    /// <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is
+    /// specified, then all containers within the tasks that specified the <code>host</code> IPC
+    /// mode on the same container instance share the same IPC resources with the host Amazon EC2
+    /// instance. If <code>task</code> is specified, all containers within the specified task
+    /// share the same IPC resources. If <code>none</code> is specified, then IPC resources
+    /// within the containers of a task are private and not shared with other containers in a
+    /// task or on the container instance. If no value is specified, then the IPC resource
+    /// namespace sharing depends on the Docker daemon setting on the container instance. For
+    /// more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
+    /// settings</a> in the <i>Docker run reference</i>.</p>
+    /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of
+    /// undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+    /// security</a>.</p>
+    /// <p>If you are setting namespaced kernel parameters using <code>systemControls</code> for
+    /// the containers in the task, the following will apply to your IPC resource namespace. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+    /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For tasks that use the <code>host</code> IPC mode, IPC namespace related
+    /// <code>systemControls</code> are not supported.</p>
+    /// </li>
+    /// <li>
+    /// <p>For tasks that use the <code>task</code> IPC mode, IPC namespace related
+    /// <code>systemControls</code> will apply to all containers within a
+    /// task.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// </note>
+    pub fn ipc_mode(&self) -> std::option::Option<&crate::model::IpcMode> {
+        self.ipc_mode.as_ref()
+    }
+    /// <p>The configuration details for the App Mesh proxy.</p>
+    /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent
+    /// and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+    /// configuration. If your container instances are launched from the Amazon ECS-optimized AMI
+    /// version <code>20190301</code> or later, then they contain the required versions of the
+    /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn proxy_configuration(&self) -> std::option::Option<&crate::model::ProxyConfiguration> {
+        self.proxy_configuration.as_ref()
+    }
+    /// <p>The Unix timestamp for when the task definition was registered.</p>
+    pub fn registered_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registered_at.as_ref()
+    }
+    /// <p>The Unix timestamp for when the task definition was deregistered.</p>
+    pub fn deregistered_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deregistered_at.as_ref()
+    }
+    /// <p>The principal that registered the task definition.</p>
+    pub fn registered_by(&self) -> std::option::Option<&str> {
+        self.registered_by.as_deref()
+    }
+    /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for TaskDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12124,6 +14565,65 @@ pub struct ProxyConfiguration {
     /// </ul>
     pub properties: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
 }
+impl ProxyConfiguration {
+    /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ProxyConfigurationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the container that will serve as the App Mesh proxy.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The set of network configuration parameters to provide the Container Network Interface
+    /// (CNI) plugin, specified as key-value pairs.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>IgnoredUID</code> - (Required) The user ID (UID) of the proxy
+    /// container as defined by the <code>user</code> parameter in a container
+    /// definition. This is used to ensure the proxy ignores its own traffic. If
+    /// <code>IgnoredGID</code> is specified, this field can be empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IgnoredGID</code> - (Required) The group ID (GID) of the proxy
+    /// container as defined by the <code>user</code> parameter in a container
+    /// definition. This is used to ensure the proxy ignores its own traffic. If
+    /// <code>IgnoredUID</code> is specified, this field can be empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AppPorts</code> - (Required) The list of ports that the
+    /// application uses. Network traffic to these ports is forwarded to the
+    /// <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ProxyIngressPort</code> - (Required) Specifies the port that
+    /// incoming traffic to the <code>AppPorts</code> is directed to.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ProxyEgressPort</code> - (Required) Specifies the port that
+    /// outgoing traffic from the <code>AppPorts</code> is directed to.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to
+    /// the specified ports is ignored and not redirected to the
+    /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to
+    /// the specified IP addresses is ignored and not redirected to the
+    /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
+    /// </li>
+    /// </ul>
+    pub fn properties(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.properties.as_deref()
+    }
+}
 impl std::fmt::Debug for ProxyConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProxyConfiguration");
@@ -12529,6 +15029,16 @@ pub struct RuntimePlatform {
     /// <p>The operating system.</p>
     pub operating_system_family: std::option::Option<crate::model::OsFamily>,
 }
+impl RuntimePlatform {
+    /// <p>The CPU architecture.</p>
+    pub fn cpu_architecture(&self) -> std::option::Option<&crate::model::CpuArchitecture> {
+        self.cpu_architecture.as_ref()
+    }
+    /// <p>The operating system.</p>
+    pub fn operating_system_family(&self) -> std::option::Option<&crate::model::OsFamily> {
+        self.operating_system_family.as_ref()
+    }
+}
 impl std::fmt::Debug for RuntimePlatform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuntimePlatform");
@@ -12749,6 +15259,21 @@ pub struct TaskDefinitionPlacementConstraint {
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
 }
+impl TaskDefinitionPlacementConstraint {
+    /// <p>The type of constraint. The <code>MemberOf</code> constraint restricts selection to be
+    /// from a group of valid candidates.</p>
+    pub fn r#type(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskDefinitionPlacementConstraintType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A cluster query language expression to apply to the constraint. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+}
 impl std::fmt::Debug for TaskDefinitionPlacementConstraint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskDefinitionPlacementConstraint");
@@ -12963,6 +15488,53 @@ pub struct Volume {
     pub fsx_windows_file_server_volume_configuration:
         std::option::Option<crate::model::FSxWindowsFileServerVolumeConfiguration>,
 }
+impl Volume {
+    /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the
+    /// <code>sourceVolume</code> parameter of container definition
+    /// <code>mountPoints</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This parameter is specified when you are using bind mount host volumes. The contents
+    /// of the <code>host</code> parameter determine whether your bind mount host volume
+    /// persists on the host container instance and where it is stored. If the <code>host</code>
+    /// parameter is empty, then the Docker daemon assigns a host path for your data volume.
+    /// However, the data is not guaranteed to persist after the containers associated with it
+    /// stop running.</p>
+    /// <p>Windows containers can mount whole directories on the same drive as
+    /// <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+    /// different drive, and mount point cannot be across drives. For example, you can mount
+    /// <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+    /// <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
+    pub fn host(&self) -> std::option::Option<&crate::model::HostVolumeProperties> {
+        self.host.as_ref()
+    }
+    /// <p>This parameter is specified when you are using Docker volumes.</p>
+    /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind
+    /// mounts, specify the <code>host</code> parameter instead.</p>
+    /// <note>
+    /// <p>Docker volumes are not supported by tasks run on Fargate.</p>
+    /// </note>
+    pub fn docker_volume_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DockerVolumeConfiguration> {
+        self.docker_volume_configuration.as_ref()
+    }
+    /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for task
+    /// storage.</p>
+    pub fn efs_volume_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EfsVolumeConfiguration> {
+        self.efs_volume_configuration.as_ref()
+    }
+    /// <p>This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
+    /// storage.</p>
+    pub fn fsx_windows_file_server_volume_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FSxWindowsFileServerVolumeConfiguration> {
+        self.fsx_windows_file_server_volume_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for Volume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Volume");
@@ -13141,6 +15713,23 @@ pub struct FSxWindowsFileServerVolumeConfiguration {
     pub authorization_config:
         std::option::Option<crate::model::FSxWindowsFileServerAuthorizationConfig>,
 }
+impl FSxWindowsFileServerVolumeConfiguration {
+    /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory
+    /// inside the host.</p>
+    pub fn root_directory(&self) -> std::option::Option<&str> {
+        self.root_directory.as_deref()
+    }
+    /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
+    pub fn authorization_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FSxWindowsFileServerAuthorizationConfig> {
+        self.authorization_config.as_ref()
+    }
+}
 impl std::fmt::Debug for FSxWindowsFileServerVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FSxWindowsFileServerVolumeConfiguration");
@@ -13238,6 +15827,19 @@ pub struct FSxWindowsFileServerAuthorizationConfig {
     /// Amazon EC2.</p>
     pub domain: std::option::Option<std::string::String>,
 }
+impl FSxWindowsFileServerAuthorizationConfig {
+    /// <p>The authorization credential option to use. The authorization credential options can
+    /// be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM
+    /// Parameter Store parameter. The ARNs refer to the stored credentials.</p>
+    pub fn credentials_parameter(&self) -> std::option::Option<&str> {
+        self.credentials_parameter.as_deref()
+    }
+    /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on
+    /// Amazon EC2.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+}
 impl std::fmt::Debug for FSxWindowsFileServerAuthorizationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FSxWindowsFileServerAuthorizationConfig");
@@ -13331,6 +15933,44 @@ pub struct EfsVolumeConfiguration {
     pub transit_encryption_port: std::option::Option<i32>,
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     pub authorization_config: std::option::Option<crate::model::EfsAuthorizationConfig>,
+}
+impl EfsVolumeConfiguration {
+    /// <p>The Amazon EFS file system ID to use.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the
+    /// host. If this parameter is omitted, the root of the Amazon EFS volume will be used.
+    /// Specifying <code>/</code> will have the same effect as omitting this parameter.</p>
+    /// <important>
+    /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the
+    /// root directory parameter must either be omitted or set to <code>/</code> which will
+    /// enforce the path set on the EFS access point.</p>
+    /// </important>
+    pub fn root_directory(&self) -> std::option::Option<&str> {
+        self.root_directory.as_deref()
+    }
+    /// <p>Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host
+    /// and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is
+    /// used. If this parameter is omitted, the default value of <code>DISABLED</code> is used.
+    /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in
+    /// the <i>Amazon Elastic File System User Guide</i>.</p>
+    pub fn transit_encryption(&self) -> std::option::Option<&crate::model::EfsTransitEncryption> {
+        self.transit_encryption.as_ref()
+    }
+    /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS
+    /// server. If you do not specify a transit encryption port, it will use the port selection
+    /// strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
+    /// Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    pub fn transit_encryption_port(&self) -> std::option::Option<i32> {
+        self.transit_encryption_port
+    }
+    /// <p>The authorization configuration details for the Amazon EFS file system.</p>
+    pub fn authorization_config(
+        &self,
+    ) -> std::option::Option<&crate::model::EfsAuthorizationConfig> {
+        self.authorization_config.as_ref()
+    }
 }
 impl std::fmt::Debug for EfsVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13482,6 +16122,25 @@ pub struct EfsAuthorizationConfig {
     /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
     /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
+}
+impl EfsAuthorizationConfig {
+    /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory
+    /// value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set
+    /// to <code>/</code> which will enforce the path set on the EFS access point. If an access
+    /// point is used, transit encryption must be enabled in the
+    /// <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon
+    /// EFS Access Points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    pub fn access_point_id(&self) -> std::option::Option<&str> {
+        self.access_point_id.as_deref()
+    }
+    /// <p>Whether or not to use the Amazon ECS task IAM role defined in a task definition when
+    /// mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the
+    /// <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value
+    /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
+    /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn iam(&self) -> std::option::Option<&crate::model::EfsAuthorizationConfigIam> {
+        self.iam.as_ref()
+    }
 }
 impl std::fmt::Debug for EfsAuthorizationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13711,6 +16370,55 @@ pub struct DockerVolumeConfiguration {
     /// volume create</a>.</p>
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DockerVolumeConfiguration {
+    /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are
+    /// scoped to a <code>task</code> are automatically provisioned when the task starts and
+    /// destroyed when the task stops. Docker volumes that are scoped as <code>shared</code>
+    /// persist after the task stops.</p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
+        self.scope.as_ref()
+    }
+    /// <p>If this value is <code>true</code>, the Docker volume is created if it does not
+    /// already exist.</p>
+    /// <note>
+    /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
+    /// </note>
+    pub fn autoprovision(&self) -> std::option::Option<bool> {
+        self.autoprovision
+    }
+    /// <p>The Docker volume driver to use. The driver value must match the driver name provided
+    /// by Docker because it is used for task placement. If the driver was installed using the
+    /// Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from
+    /// your container instance. If the driver was installed using another method, use Docker
+    /// plugin discovery to retrieve the driver name. For more information, see <a href="https://docs.docker.com/engine/extend/plugin_api/#plugin-discovery">Docker
+    /// plugin discovery</a>. This parameter maps to <code>Driver</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>xxdriver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+    /// volume create</a>.</p>
+    pub fn driver(&self) -> std::option::Option<&str> {
+        self.driver.as_deref()
+    }
+    /// <p>A map of Docker driver-specific options passed through. This parameter maps to
+    /// <code>DriverOpts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+    /// volume create</a>.</p>
+    pub fn driver_opts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.driver_opts.as_ref()
+    }
+    /// <p>Custom metadata to add to your Docker volume. This parameter maps to
+    /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+    /// volume create</a>.</p>
+    pub fn labels(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.labels.as_ref()
+    }
 }
 impl std::fmt::Debug for DockerVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13951,6 +16659,21 @@ pub struct HostVolumeProperties {
     /// <p>If you are using the Fargate launch type, the <code>sourcePath</code>
     /// parameter is not supported.</p>
     pub source_path: std::option::Option<std::string::String>,
+}
+impl HostVolumeProperties {
+    /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to
+    /// declare the path on the host container instance that is presented to the container. If
+    /// this parameter is empty, then the Docker daemon has assigned a host path for you. If the
+    /// <code>host</code> parameter contains a <code>sourcePath</code> file location, then
+    /// the data volume persists at the specified location on the host container instance until
+    /// you delete it manually. If the <code>sourcePath</code> value does not exist on the host
+    /// container instance, the Docker daemon creates it. If the location does exist, the
+    /// contents of the source path folder are exported.</p>
+    /// <p>If you are using the Fargate launch type, the <code>sourcePath</code>
+    /// parameter is not supported.</p>
+    pub fn source_path(&self) -> std::option::Option<&str> {
+        self.source_path.as_deref()
+    }
 }
 impl std::fmt::Debug for HostVolumeProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14637,6 +17360,651 @@ pub struct ContainerDefinition {
     /// log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub firelens_configuration: std::option::Option<crate::model::FirelensConfiguration>,
+}
+impl ContainerDefinition {
+    /// <p>The name of a container. If you are linking multiple containers together in a task
+    /// definition, the <code>name</code> of one container can be entered in the
+    /// <code>links</code> of another container to connect the containers.
+    /// Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This parameter maps to <code>name</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The image used to start a container. This string is passed directly to the Docker
+    /// daemon. Images in the Docker Hub registry are available by default. Other repositories
+    /// are specified with either <code>
+    /// <i>repository-url</i>/<i>image</i>:<i>tag</i>
+    /// </code> or <code>
+    /// <i>repository-url</i>/<i>image</i>@<i>digest</i>
+    /// </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>When a new task starts, the Amazon ECS container agent pulls the latest version of
+    /// the specified image and tag for the container to use. However, subsequent
+    /// updates to a repository image are not propagated to already running
+    /// tasks.</p>
+    /// </li>
+    /// <li>
+    /// <p>Images in Amazon ECR repositories can be specified by either using the full
+    /// <code>registry/repository:tag</code> or
+    /// <code>registry/repository@digest</code>. For example,
+    /// <code>012345678910.dkr.ecr.<region-name>.amazonaws.com/<repository-name>:latest</code>
+    /// or
+    /// <code>012345678910.dkr.ecr.<region-name>.amazonaws.com/<repository-name>@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Images in official repositories on Docker Hub use a single name (for example,
+    /// <code>ubuntu</code> or <code>mongo</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>Images in other repositories on Docker Hub are qualified with an organization
+    /// name (for example, <code>amazon/amazon-ecs-agent</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>Images in other online repositories are qualified further by a domain name
+    /// (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>
+    /// </li>
+    /// </ul>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn repository_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::RepositoryCredentials> {
+        self.repository_credentials.as_ref()
+    }
+    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps
+    /// to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <p>This field is optional for tasks using the Fargate launch type, and the
+    /// only requirement is that the total amount of CPU reserved for all containers within a
+    /// task be lower than the task-level <code>cpu</code> value.</p>
+    /// <note>
+    /// <p>You can determine the number of CPU units that are available per EC2 instance type
+    /// by multiplying the vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail page
+    /// by 1,024.</p>
+    /// </note>
+    /// <p>Linux containers share unallocated CPU units with other containers on the container
+    /// instance with the same ratio as their allocated amount. For example, if you run a
+    /// single-container task on a single-core instance type with 512 CPU units specified for
+    /// that container, and that is the only task running on the container instance, that
+    /// container could use the full 1,024 CPU unit share at any given time. However, if you
+    /// launched another copy of the same task on that container instance, each task would be
+    /// guaranteed a minimum of 512 CPU units when needed, and each container could float to
+    /// higher CPU usage if the other container was not using it, but if both tasks were 100%
+    /// active all of the time, they would be limited to 512 CPU units.</p>
+    /// <p>On Linux container instances, the Docker daemon on the container instance uses the CPU
+    /// value to calculate the relative CPU share ratios for running containers. For more
+    /// information, see <a href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share
+    /// constraint</a> in the Docker documentation. The minimum valid CPU share value
+    /// that the Linux kernel allows is 2. However, the CPU parameter is not required, and you
+    /// can use CPU values below 2 in your container definitions. For CPU values below 2
+    /// (including null), the behavior varies based on your Amazon ECS container agent
+    /// version:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Agent versions less than or equal to 1.1.0:</b>
+    /// Null and zero CPU values are passed to Docker as 0, which Docker then converts
+    /// to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux
+    /// kernel converts to two CPU shares.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Agent versions greater than or equal to 1.2.0:</b>
+    /// Null, zero, and CPU values of 1 are passed to Docker as 2.</p>
+    /// </li>
+    /// </ul>
+    /// <p>On Windows container instances, the CPU limit is enforced as an absolute limit, or a
+    /// quota. Windows containers only have access to the specified amount of CPU that is
+    /// described in the task definition. A null or zero CPU value is passed to Docker as
+    /// <code>0</code>, which Windows interprets as 1% of one CPU.</p>
+    pub fn cpu(&self) -> i32 {
+        self.cpu
+    }
+    /// <p>The amount (in MiB) of memory to present to the container. If your container attempts
+    /// to exceed the memory specified here, the container is killed. The total amount of memory
+    /// reserved for all containers within a task must be lower than the task
+    /// <code>memory</code> value, if one is specified. This parameter maps to
+    /// <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <p>If using the Fargate launch type, this parameter is optional.</p>
+    /// <p>If using the EC2 launch type, you must specify either a task-level
+    /// memory value or a container-level memory value. If you specify both a container-level
+    /// <code>memory</code> and <code>memoryReservation</code> value, <code>memory</code>
+    /// must be greater than <code>memoryReservation</code>. If you specify
+    /// <code>memoryReservation</code>, then that value is subtracted from the available
+    /// memory resources for the container instance on which the container is placed. Otherwise,
+    /// the value of <code>memory</code> is used.</p>
+    /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
+    /// not specify fewer than 4 MiB of memory for your containers.</p>
+    pub fn memory(&self) -> std::option::Option<i32> {
+        self.memory
+    }
+    /// <p>The soft limit (in MiB) of memory to reserve for the container. When system memory is
+    /// under heavy contention, Docker attempts to keep the container memory to this soft limit.
+    /// However, your container can consume more memory when it needs to, up to either the hard
+    /// limit specified with the <code>memory</code> parameter (if applicable), or all of the
+    /// available memory on the container instance, whichever comes first. This parameter maps
+    /// to <code>MemoryReservation</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of
+    /// the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--memory-reservation</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <p>If a task-level memory value is not specified, you must specify a non-zero integer for
+    /// one or both of <code>memory</code> or <code>memoryReservation</code> in a container
+    /// definition. If you specify both, <code>memory</code> must be greater than
+    /// <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then
+    /// that value is subtracted from the available memory resources for the container instance
+    /// on which the container is placed. Otherwise, the value of <code>memory</code> is
+    /// used.</p>
+    /// <p>For example, if your container normally uses 128 MiB of memory, but occasionally
+    /// bursts to 256 MiB of memory for short periods of time, you can set a
+    /// <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit of
+    /// 300 MiB. This configuration would allow the container to only reserve 128 MiB of memory
+    /// from the remaining resources on the container instance, but also allow the container to
+    /// consume more memory resources when needed.</p>
+    /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
+    /// not specify fewer than 4 MiB of memory for your containers. </p>
+    pub fn memory_reservation(&self) -> std::option::Option<i32> {
+        self.memory_reservation
+    }
+    /// <p>The <code>links</code> parameter allows containers to communicate with each other
+    /// without the need for port mappings. This parameter is only supported if the network mode
+    /// of a task definition is <code>bridge</code>. The <code>name:internalName</code>
+    /// construct is analogous to <code>name:alias</code> in Docker links.
+    /// Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about linking Docker containers, go to
+    /// <a href="https://docs.docker.com/network/links/">Legacy container links</a>
+    /// in the Docker documentation. This parameter maps to <code>Links</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    /// <important>
+    /// <p>Containers that are collocated on a single container instance may be able to
+    /// communicate with each other without requiring links or host port mappings. Network
+    /// isolation is achieved on the container instance using security groups and VPC
+    /// settings.</p>
+    /// </important>
+    pub fn links(&self) -> std::option::Option<&[std::string::String]> {
+        self.links.as_deref()
+    }
+    /// <p>The list of port mappings for the container. Port mappings allow containers to access
+    /// ports on the host container instance to send or receive traffic.</p>
+    /// <p>For task definitions that use the <code>awsvpc</code> network mode, you should only
+    /// specify the <code>containerPort</code>. The <code>hostPort</code> can be left blank or
+    /// it must be the same value as the <code>containerPort</code>.</p>
+    /// <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather than
+    /// <code>localhost</code>. There is no loopback for port mappings on Windows, so you
+    /// cannot access a container's mapped port from the host itself. </p>
+    /// <p>This parameter maps to <code>PortBindings</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>. If the network mode of a task definition is set to <code>none</code>,
+    /// then you can't specify port mappings. If the network mode of a task definition is set to
+    /// <code>host</code>, then host ports must either be undefined or they must match the
+    /// container port in the port mapping.</p>
+    /// <note>
+    /// <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host
+    /// and container port assignments are visible in the <b>Network
+    /// Bindings</b> section of a container description for a selected task in
+    /// the Amazon ECS console. The assignments are also visible in the
+    /// <code>networkBindings</code> section <a>DescribeTasks</a>
+    /// responses.</p>
+    /// </note>
+    pub fn port_mappings(&self) -> std::option::Option<&[crate::model::PortMapping]> {
+        self.port_mappings.as_deref()
+    }
+    /// <p>If the <code>essential</code> parameter of a container is marked as <code>true</code>,
+    /// and that container fails or stops for any reason, all other containers that are part of
+    /// the task are stopped. If the <code>essential</code> parameter of a container is marked
+    /// as <code>false</code>, then its failure does not affect the rest of the containers in a
+    /// task. If this parameter is omitted, a container is assumed to be essential.</p>
+    /// <p>All tasks must have at least one essential container. If you have an application that
+    /// is composed of multiple containers, you should group containers that are used for a
+    /// common purpose into components, and separate the different components into multiple task
+    /// definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+    /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn essential(&self) -> std::option::Option<bool> {
+        self.essential
+    }
+    /// <important>
+    /// <p>Early versions of the Amazon ECS container agent do not properly handle
+    /// <code>entryPoint</code> parameters. If you have problems using
+    /// <code>entryPoint</code>, update your container agent or enter your commands and
+    /// arguments as <code>command</code> array items instead.</p>
+    /// </important>
+    /// <p>The entry point that is passed to the container. This parameter maps to
+    /// <code>Entrypoint</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
+    pub fn entry_point(&self) -> std::option::Option<&[std::string::String]> {
+        self.entry_point.as_deref()
+    }
+    /// <p>The command that is passed to the container. This parameter maps to <code>Cmd</code>
+    /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>. If there are multiple arguments, each
+    /// argument should be a separated string in the array.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>The environment variables to pass to a container. This parameter maps to
+    /// <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <important>
+    /// <p>We do not recommend using plaintext environment variables for sensitive
+    /// information, such as credential data.</p>
+    /// </important>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.environment.as_deref()
+    }
+    /// <p>A list of files containing the environment variables to pass to a container. This
+    /// parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <p>You can specify up to ten environment files. The file must have a <code>.env</code>
+    /// file extension. Each line in an environment file should contain an environment variable
+    /// in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated
+    /// as comments and are ignored. For more information on the environment variable file
+    /// syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default
+    /// environment variables in file</a>.</p>
+    /// <p>If there are environment variables specified using the <code>environment</code>
+    /// parameter in a container definition, they take precedence over the variables contained
+    /// within an environment file. If multiple environment files are specified that contain the
+    /// same variable, they are processed from the top down. It is recommended to use unique
+    /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+    /// Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn environment_files(&self) -> std::option::Option<&[crate::model::EnvironmentFile]> {
+        self.environment_files.as_deref()
+    }
+    /// <p>The mount points for data volumes in your container.</p>
+    /// <p>This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+    /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <p>Windows containers can mount whole directories on the same drive as
+    /// <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+    /// different drive, and mount point cannot be across drives.</p>
+    pub fn mount_points(&self) -> std::option::Option<&[crate::model::MountPoint]> {
+        self.mount_points.as_deref()
+    }
+    /// <p>Data volumes to mount from another container. This parameter maps to
+    /// <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    pub fn volumes_from(&self) -> std::option::Option<&[crate::model::VolumeFrom]> {
+        self.volumes_from.as_deref()
+    }
+    /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel
+    /// capabilities. For more information see <a>KernelCapabilities</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    pub fn linux_parameters(&self) -> std::option::Option<&crate::model::LinuxParameters> {
+        self.linux_parameters.as_ref()
+    }
+    /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+    /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn secrets(&self) -> std::option::Option<&[crate::model::Secret]> {
+        self.secrets.as_deref()
+    }
+    /// <p>The dependencies defined for container startup and shutdown. A container can contain
+    /// multiple dependencies. When a dependency is defined for container startup, for container
+    /// shutdown it is reversed.</p>
+    /// <p>For tasks using the EC2 launch type, the container instances require at
+    /// least version 1.26.0 of the container agent to enable container dependencies. However,
+    /// we recommend using the latest container agent version. For information about checking
+    /// your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+    /// Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+    /// using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+    /// <code>ecs-init</code> package. If your container instances are launched from version
+    /// <code>20190301</code> or later, then they contain the required versions of the
+    /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
+    /// version <code>1.3.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
+    pub fn depends_on(&self) -> std::option::Option<&[crate::model::ContainerDependency]> {
+        self.depends_on.as_deref()
+    }
+    /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a
+    /// container. For example, you specify two containers in a task definition with containerA
+    /// having a dependency on containerB reaching a <code>COMPLETE</code>,
+    /// <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code>
+    /// value is specified for containerB and it does not reach the desired status within that
+    /// time then containerA will give up and not start. This results in the task transitioning
+    /// to a <code>STOPPED</code> state.</p>
+    /// <note>
+    /// <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
+    /// variable is used, it is enforced indendently from this start timeout value.</p>
+    /// </note>
+    /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
+    /// version <code>1.3.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For tasks using the EC2 launch type, your container instances require at
+    /// least version <code>1.26.0</code> of the container agent to enable a container start
+    /// timeout value. However, we recommend using the latest container agent version. For
+    /// information about checking your agent version and updating to the latest version, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+    /// Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+    /// using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of
+    /// the <code>ecs-init</code> package. If your container instances are launched from version
+    /// <code>20190301</code> or later, then they contain the required versions of the
+    /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn start_timeout(&self) -> std::option::Option<i32> {
+        self.start_timeout
+    }
+    /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it
+    /// doesn't exit normally on its own.</p>
+    /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
+    /// version <code>1.3.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The max stop timeout value is 120 seconds and if the
+    /// parameter is not specified, the default value of 30 seconds is used.</p>
+    /// <p>For tasks using the EC2 launch type, if the <code>stopTimeout</code>
+    /// parameter is not specified, the value set for the Amazon ECS container agent configuration
+    /// variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the
+    /// <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code>
+    /// agent configuration variable are set, then the default values of 30 seconds for Linux
+    /// containers and 30 seconds on Windows containers are used. Your container instances
+    /// require at least version 1.26.0 of the container agent to enable a container stop
+    /// timeout value. However, we recommend using the latest container agent version. For
+    /// information about checking your agent version and updating to the latest version, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+    /// Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+    /// using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+    /// <code>ecs-init</code> package. If your container instances are launched from version
+    /// <code>20190301</code> or later, then they contain the required versions of the
+    /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn stop_timeout(&self) -> std::option::Option<i32> {
+        self.stop_timeout
+    }
+    /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code>
+    /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>The <code>hostname</code> parameter is not supported if you are using the
+    /// <code>awsvpc</code> network mode.</p>
+    /// </note>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The user to use inside the container. This parameter maps to <code>User</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <important>
+    /// <p>When running tasks using the <code>host</code> network mode, you should not run
+    /// containers using the root user (UID 0). It is considered best practice to use a
+    /// non-root user.</p>
+    /// </important>
+    /// <p>You can specify the <code>user</code> using the following formats. If specifying a UID
+    /// or GID, you must specify it as a positive integer.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>user</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>user:group</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>uid</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>uid:gid</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>user:gid</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>uid:group</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The working directory in which to run commands inside the container. This parameter
+    /// maps to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--workdir</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>When this parameter is true, networking is disabled within the container. This
+    /// parameter maps to <code>NetworkDisabled</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+    /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    pub fn disable_networking(&self) -> std::option::Option<bool> {
+        self.disable_networking
+    }
+    /// <p>When this parameter is true, the container is given elevated privileges on the host
+    /// container instance (similar to the <code>root</code> user). This parameter maps to
+    /// <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// </note>
+    pub fn privileged(&self) -> std::option::Option<bool> {
+        self.privileged
+    }
+    /// <p>When this parameter is true, the container is given read-only access to its root file
+    /// system. This parameter maps to <code>ReadonlyRootfs</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    pub fn readonly_root_filesystem(&self) -> std::option::Option<bool> {
+        self.readonly_root_filesystem
+    }
+    /// <p>A list of DNS servers that are presented to the container. This parameter maps to
+    /// <code>Dns</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    pub fn dns_servers(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_servers.as_deref()
+    }
+    /// <p>A list of DNS search domains that are presented to the container. This parameter maps
+    /// to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    pub fn dns_search_domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_search_domains.as_deref()
+    }
+    /// <p>A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code>
+    /// file on the container. This parameter maps to <code>ExtraHosts</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers or tasks that use the
+    /// <code>awsvpc</code> network mode.</p>
+    /// </note>
+    pub fn extra_hosts(&self) -> std::option::Option<&[crate::model::HostEntry]> {
+        self.extra_hosts.as_deref()
+    }
+    /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level
+    /// security systems. This field is not valid for containers in tasks using the
+    /// Fargate launch type.</p>
+    /// <p>With Windows containers, this parameter can be used to reference a credential spec
+    /// file when configuring a container for Active Directory authentication. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+    /// Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>This parameter maps to <code>SecurityOpt</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>The Amazon ECS container agent running on a container instance must register with the
+    /// <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code>
+    /// environment variables before containers placed on that instance can use these
+    /// security options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+    /// Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note>
+    /// <p>For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+    /// Run Security Configuration</a>. </p>
+    /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" |
+    /// "credentialspec:CredentialSpecFilePath"</p>
+    pub fn docker_security_options(&self) -> std::option::Option<&[std::string::String]> {
+        self.docker_security_options.as_deref()
+    }
+    /// <p>When this parameter is <code>true</code>, this allows you to deploy containerized
+    /// applications that require <code>stdin</code> or a <code>tty</code> to be allocated. This
+    /// parameter maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+    /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--interactive</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    pub fn interactive(&self) -> std::option::Option<bool> {
+        self.interactive
+    }
+    /// <p>When this parameter is <code>true</code>, a TTY is allocated. This parameter maps to
+    /// <code>Tty</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--tty</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    pub fn pseudo_terminal(&self) -> std::option::Option<bool> {
+        self.pseudo_terminal
+    }
+    /// <p>A key/value map of labels to add to the container. This parameter maps to
+    /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+    /// </p>
+    pub fn docker_labels(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.docker_labels.as_ref()
+    }
+    /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified
+    /// in a task definition, it will override the default values set by Docker. This parameter
+    /// maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed
+    /// in the <a>Ulimit</a> data type.</p>
+    /// <p>Amazon ECS tasks hosted on Fargate use the default
+    /// resource limit values set by the operating system with the exception of
+    /// the <code>nofile</code> resource limit parameter which Fargate
+    /// overrides. The <code>nofile</code> resource limit sets a restriction on
+    /// the number of open files that a container can use. The default
+    /// <code>nofile</code> soft limit is <code>1024</code> and hard limit
+    /// is <code>4096</code>.</p>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+    /// </p>
+    /// <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note>
+    pub fn ulimits(&self) -> std::option::Option<&[crate::model::Ulimit]> {
+        self.ulimits.as_deref()
+    }
+    /// <p>The log configuration specification for the container.</p>
+    /// <p>This parameter maps to <code>LogConfig</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>. By default, containers use the same logging driver that the Docker
+    /// daemon uses. However the container may use a different logging driver than the Docker
+    /// daemon by specifying a log driver with this parameter in the container definition. To
+    /// use a different logging driver for a container, the log system must be configured
+    /// properly on the container instance (or on a different log server for remote logging
+    /// options). For more information on the options for different supported log drivers, see
+    /// <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+    /// logging drivers</a> in the Docker documentation.</p>
+    /// <note>
+    /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker
+    /// daemon (shown in the <a>LogConfiguration</a> data type). Additional log
+    /// drivers may be available in future releases of the Amazon ECS container agent.</p>
+    /// </note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+    /// </p>
+    /// <note>
+    /// <p>The Amazon ECS container agent running on a container instance must register the
+    /// logging drivers available on that instance with the
+    /// <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+    /// containers placed on that instance can use these log configuration options. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+    /// Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note>
+    pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
+        self.log_configuration.as_ref()
+    }
+    /// <p>The container health check command and associated configuration parameters for the
+    /// container. This parameter maps to <code>HealthCheck</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+        self.health_check.as_ref()
+    }
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to
+    /// <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <note>
+    /// <p>It is not recommended that you specify network-related <code>systemControls</code>
+    /// parameters for multiple containers in a single task that also uses either the
+    /// <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
+    /// <code>awsvpc</code> network mode, the container that is started last determines
+    /// which <code>systemControls</code> parameters take effect. For tasks that use the
+    /// <code>host</code> network mode, it changes the container instance's namespaced
+    /// kernel parameters as well as the containers.</p>
+    /// </note>
+    pub fn system_controls(&self) -> std::option::Option<&[crate::model::SystemControl]> {
+        self.system_controls.as_deref()
+    }
+    /// <p>The type and amount of a resource to assign to a container. The only supported
+    /// resource is a GPU.</p>
+    pub fn resource_requirements(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceRequirement]> {
+        self.resource_requirements.as_deref()
+    }
+    /// <p>The FireLens configuration for the container. This is used to specify and configure a
+    /// log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a>
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn firelens_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FirelensConfiguration> {
+        self.firelens_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ContainerDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16356,6 +19724,31 @@ pub struct FirelensConfiguration {
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl FirelensConfiguration {
+    /// <p>The log router to use. The valid values are <code>fluentd</code> or
+    /// <code>fluentbit</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FirelensConfigurationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The options to use when configuring the log router. This field is optional and can be
+    /// used to specify a custom configuration file or to add additional metadata, such as the
+    /// task, task definition, cluster, and container instance details to the log event. If
+    /// specified, the syntax to use is
+    /// <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
+    /// a Task Definition that Uses a FireLens Configuration</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Tasks hosted on Fargate only support the <code>file</code> configuration file
+    /// type.</p>
+    /// </note>
+    pub fn options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.options.as_ref()
+    }
+}
 impl std::fmt::Debug for FirelensConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirelensConfiguration");
@@ -16540,6 +19933,17 @@ pub struct SystemControl {
     /// <code>namespace</code>.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl SystemControl {
+    /// <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The value for the namespaced kernel parameter specified in
+    /// <code>namespace</code>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for SystemControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SystemControl");
@@ -16700,6 +20104,53 @@ pub struct HealthCheck {
     /// retries.</p>
     /// </note>
     pub start_period: std::option::Option<i32>,
+}
+impl HealthCheck {
+    /// <p>A string array representing the command that the container runs to determine if it is
+    /// healthy. The string array must start with <code>CMD</code> to execute the command
+    /// arguments directly, or <code>CMD-SHELL</code> to run the command with the container's
+    /// default shell. </p>
+    /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you should enclose the list of commands in brackets, as shown below.</p>
+    /// <p>
+    /// <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
+    /// </p>
+    /// <p>You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.</p>
+    /// <p>
+    /// <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
+    /// </p>
+    /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For
+    /// more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+    /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>The time period in seconds between each health check execution. You may specify
+    /// between 5 and 300 seconds. The default value is 30 seconds.</p>
+    pub fn interval(&self) -> std::option::Option<i32> {
+        self.interval
+    }
+    /// <p>The time period in seconds to wait for a health check to succeed before it is
+    /// considered a failure. You may specify between 2 and 60 seconds. The default value is
+    /// 5.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The number of times to retry a failed health check before the container is considered
+    /// unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
+    pub fn retries(&self) -> std::option::Option<i32> {
+        self.retries
+    }
+    /// <p>The optional grace period within which to provide containers time to bootstrap before
+    /// failed health checks count towards the maximum number of retries. You may specify
+    /// between 0 and 300 seconds. The <code>startPeriod</code> is disabled by default.</p>
+    /// <note>
+    /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container
+    /// is considered healthy and any subsequent failures count toward the maximum number of
+    /// retries.</p>
+    /// </note>
+    pub fn start_period(&self) -> std::option::Option<i32> {
+        self.start_period
+    }
 }
 impl std::fmt::Debug for HealthCheck {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16922,6 +20373,43 @@ pub struct LogConfiguration {
     /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
 }
+impl LogConfiguration {
+    /// <p>The log driver to use for the container.</p>
+    /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>,
+    /// <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are
+    /// <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
+    /// <code>json-file</code>, <code>journald</code>,
+    /// <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
+    /// <code>awsfirelens</code>.</p>
+    /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+    /// the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <note>
+    /// <p>If you have a custom driver that is not listed, you can fork the Amazon ECS container
+    /// agent project that is <a href="https://github.com/aws/amazon-ecs-agent">available
+    /// on GitHub</a> and customize it to work with that driver. We encourage you to
+    /// submit pull requests for changes that you would like to have included. However, we
+    /// do not currently provide support for running modified copies of this
+    /// software.</p>
+    /// </note>
+    pub fn log_driver(&self) -> std::option::Option<&crate::model::LogDriver> {
+        self.log_driver.as_ref()
+    }
+    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+    /// </p>
+    pub fn options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.options.as_ref()
+    }
+    /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+    /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn secret_options(&self) -> std::option::Option<&[crate::model::Secret]> {
+        self.secret_options.as_deref()
+    }
+}
 impl std::fmt::Debug for LogConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogConfiguration");
@@ -17085,6 +20573,22 @@ pub struct Secret {
     /// parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
     pub value_from: std::option::Option<std::string::String>,
+}
+impl Secret {
+    /// <p>The name of the secret.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The secret to expose to the container. The supported values are either the full ARN of
+    /// the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+    /// <note>
+    /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you
+    /// are launching, then you can use either the full ARN or name of the parameter. If the
+    /// parameter exists in a different Region, then the full ARN must be specified.</p>
+    /// </note>
+    pub fn value_from(&self) -> std::option::Option<&str> {
+        self.value_from.as_deref()
+    }
 }
 impl std::fmt::Debug for Secret {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17257,6 +20761,20 @@ pub struct Ulimit {
     pub soft_limit: i32,
     /// <p>The hard limit for the ulimit type.</p>
     pub hard_limit: i32,
+}
+impl Ulimit {
+    /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::UlimitName> {
+        self.name.as_ref()
+    }
+    /// <p>The soft limit for the ulimit type.</p>
+    pub fn soft_limit(&self) -> i32 {
+        self.soft_limit
+    }
+    /// <p>The hard limit for the ulimit type.</p>
+    pub fn hard_limit(&self) -> i32 {
+        self.hard_limit
+    }
 }
 impl std::fmt::Debug for Ulimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17458,6 +20976,16 @@ pub struct HostEntry {
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
     pub ip_address: std::option::Option<std::string::String>,
 }
+impl HostEntry {
+    /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+}
 impl std::fmt::Debug for HostEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HostEntry");
@@ -17574,6 +21102,46 @@ pub struct ContainerDependency {
     /// </li>
     /// </ul>
     pub condition: std::option::Option<crate::model::ContainerCondition>,
+}
+impl ContainerDependency {
+    /// <p>The name of a container.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The dependency condition of the container. The following are the available conditions
+    /// and their behavior:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>START</code> - This condition emulates the behavior of links and
+    /// volumes today. It validates that a dependent container is started before
+    /// permitting other containers to start.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETE</code> - This condition validates that a dependent
+    /// container runs to completion (exits) before permitting other containers to
+    /// start. This can be useful for nonessential containers that run a script and then
+    /// exit. This condition cannot be set on an essential container.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS</code> - This condition is the same as
+    /// <code>COMPLETE</code>, but it also requires that the container exits with a
+    /// <code>zero</code> status. This condition cannot be set on an essential
+    /// container.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>HEALTHY</code> - This condition validates that the dependent
+    /// container passes its Docker health check before permitting other containers to
+    /// start. This requires that the dependent container has health checks configured.
+    /// This condition is confirmed only at task startup.</p>
+    /// </li>
+    /// </ul>
+    pub fn condition(&self) -> std::option::Option<&crate::model::ContainerCondition> {
+        self.condition.as_ref()
+    }
 }
 impl std::fmt::Debug for ContainerDependency {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17824,6 +21392,84 @@ pub struct LinuxParameters {
     /// <code>swappiness</code> parameter is not supported.</p>
     /// </note>
     pub swappiness: std::option::Option<i32>,
+}
+impl LinuxParameters {
+    /// <p>The Linux capabilities for the container that are added to or dropped from the default
+    /// configuration provided by Docker.</p>
+    /// <note>
+    /// <p>For tasks that use the Fargate launch type,
+    /// <code>capabilities</code> is supported for all platform versions but the
+    /// <code>add</code> parameter is only supported if using platform version 1.4.0 or
+    /// later.</p>
+    /// </note>
+    pub fn capabilities(&self) -> std::option::Option<&crate::model::KernelCapabilities> {
+        self.capabilities.as_ref()
+    }
+    /// <p>Any host devices to expose to the container. This parameter maps to
+    /// <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <note>
+    /// <p>If you are using tasks that use the Fargate launch type, the
+    /// <code>devices</code> parameter is not supported.</p>
+    /// </note>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
+    /// <p>Run an <code>init</code> process inside the container that forwards signals and reaps
+    /// processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+    /// </p>
+    pub fn init_process_enabled(&self) -> std::option::Option<bool> {
+        self.init_process_enabled
+    }
+    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter
+    /// maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>If you are using tasks that use the Fargate launch type, the
+    /// <code>sharedMemorySize</code> parameter is not supported.</p>
+    /// </note>
+    pub fn shared_memory_size(&self) -> std::option::Option<i32> {
+        self.shared_memory_size
+    }
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+    /// parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <note>
+    /// <p>If you are using tasks that use the Fargate launch type, the
+    /// <code>tmpfs</code> parameter is not supported.</p>
+    /// </note>
+    pub fn tmpfs(&self) -> std::option::Option<&[crate::model::Tmpfs]> {
+        self.tmpfs.as_deref()
+    }
+    /// <p>The total amount of swap memory (in MiB) a container can use. This parameter will be
+    /// translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value would be the sum of
+    /// the container memory plus the <code>maxSwap</code> value.</p>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not
+    /// use swap. Accepted values are <code>0</code> or any positive integer. If the
+    /// <code>maxSwap</code> parameter is omitted, the container will use the swap
+    /// configuration for the container instance it is running on. A <code>maxSwap</code> value
+    /// must be set for the <code>swappiness</code> parameter to be used.</p>
+    /// <note>
+    /// <p>If you are using tasks that use the Fargate launch type, the
+    /// <code>maxSwap</code> parameter is not supported.</p>
+    /// </note>
+    pub fn max_swap(&self) -> std::option::Option<i32> {
+        self.max_swap
+    }
+    /// <p>This allows you to tune a container's memory swappiness behavior. A
+    /// <code>swappiness</code> value of <code>0</code> will cause swapping to not happen
+    /// unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will
+    /// cause pages to be swapped very aggressively. Accepted values are whole numbers between
+    /// <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+    /// specified, a default value of <code>60</code> is used. If a value is not specified for
+    /// <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+    /// <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+    /// <note>
+    /// <p>If you are using tasks that use the Fargate launch type, the
+    /// <code>swappiness</code> parameter is not supported.</p>
+    /// </note>
+    pub fn swappiness(&self) -> std::option::Option<i32> {
+        self.swappiness
+    }
 }
 impl std::fmt::Debug for LinuxParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18079,6 +21725,27 @@ pub struct Tmpfs {
     /// </p>
     pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Tmpfs {
+    /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
+    pub fn container_path(&self) -> std::option::Option<&str> {
+        self.container_path.as_deref()
+    }
+    /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
+    /// <p>The list of tmpfs volume mount options.</p>
+    /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" |
+    /// "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" |
+    /// "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" |
+    /// "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" |
+    /// "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid"
+    /// | "nr_inodes" | "nr_blocks" | "mpol"</code>
+    /// </p>
+    pub fn mount_options(&self) -> std::option::Option<&[std::string::String]> {
+        self.mount_options.as_deref()
+    }
+}
 impl std::fmt::Debug for Tmpfs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tmpfs");
@@ -18184,6 +21851,22 @@ pub struct Device {
     /// container has permissions for <code>read</code>, <code>write</code>, and
     /// <code>mknod</code> for the device.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::DeviceCgroupPermission>>,
+}
+impl Device {
+    /// <p>The path for the device on the host container instance.</p>
+    pub fn host_path(&self) -> std::option::Option<&str> {
+        self.host_path.as_deref()
+    }
+    /// <p>The path inside the container at which to expose the host device.</p>
+    pub fn container_path(&self) -> std::option::Option<&str> {
+        self.container_path.as_deref()
+    }
+    /// <p>The explicit permissions to provide to the container for the device. By default, the
+    /// container has permissions for <code>read</code>, <code>write</code>, and
+    /// <code>mknod</code> for the device.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::DeviceCgroupPermission]> {
+        self.permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18374,6 +22057,46 @@ pub struct KernelCapabilities {
     /// </p>
     pub drop: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl KernelCapabilities {
+    /// <p>The Linux capabilities for the container that have been added to the default
+    /// configuration provided by Docker. This parameter maps to <code>CapAdd</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>Tasks launched on Fargate only support adding the <code>SYS_PTRACE</code> kernel
+    /// capability.</p>
+    /// </note>
+    /// <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
+    /// "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
+    /// "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" |
+    /// "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP"
+    /// | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" |
+    /// "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" |
+    /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
+    /// "WAKE_ALARM"</code>
+    /// </p>
+    pub fn add(&self) -> std::option::Option<&[std::string::String]> {
+        self.add.as_deref()
+    }
+    /// <p>The Linux capabilities for the container that have been removed from the default
+    /// configuration provided by Docker. This parameter maps to <code>CapDrop</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+    /// <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+    /// run</a>.</p>
+    /// <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
+    /// "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
+    /// "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" |
+    /// "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP"
+    /// | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" |
+    /// "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" |
+    /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
+    /// "WAKE_ALARM"</code>
+    /// </p>
+    pub fn drop(&self) -> std::option::Option<&[std::string::String]> {
+        self.drop.as_deref()
+    }
+}
 impl std::fmt::Debug for KernelCapabilities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KernelCapabilities");
@@ -18518,6 +22241,19 @@ pub struct VolumeFrom {
     /// default value is <code>false</code>.</p>
     pub read_only: std::option::Option<bool>,
 }
+impl VolumeFrom {
+    /// <p>The name of another container within the same task definition from which to mount
+    /// volumes.</p>
+    pub fn source_container(&self) -> std::option::Option<&str> {
+        self.source_container.as_deref()
+    }
+    /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
+    /// If this value is <code>false</code>, then the container can write to the volume. The
+    /// default value is <code>false</code>.</p>
+    pub fn read_only(&self) -> std::option::Option<bool> {
+        self.read_only
+    }
+}
 impl std::fmt::Debug for VolumeFrom {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeFrom");
@@ -18594,6 +22330,23 @@ pub struct MountPoint {
     /// If this value is <code>false</code>, then the container can write to the volume. The
     /// default value is <code>false</code>.</p>
     pub read_only: std::option::Option<bool>,
+}
+impl MountPoint {
+    /// <p>The name of the volume to mount. Must be a volume name referenced in the
+    /// <code>name</code> parameter of task definition <code>volume</code>.</p>
+    pub fn source_volume(&self) -> std::option::Option<&str> {
+        self.source_volume.as_deref()
+    }
+    /// <p>The path on the container to mount the host volume at.</p>
+    pub fn container_path(&self) -> std::option::Option<&str> {
+        self.container_path.as_deref()
+    }
+    /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
+    /// If this value is <code>false</code>, then the container can write to the volume. The
+    /// default value is <code>false</code>.</p>
+    pub fn read_only(&self) -> std::option::Option<bool> {
+        self.read_only
+    }
 }
 impl std::fmt::Debug for MountPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18734,6 +22487,57 @@ pub struct PortMapping {
     /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
     /// <code>udp</code>. The default is <code>tcp</code>.</p>
     pub protocol: std::option::Option<crate::model::TransportProtocol>,
+}
+impl PortMapping {
+    /// <p>The port number on the container that is bound to the user-specified or automatically
+    /// assigned host port.</p>
+    /// <p>If you are using containers in a task with the <code>awsvpc</code> or
+    /// <code>host</code> network mode, exposed ports should be specified using
+    /// <code>containerPort</code>.</p>
+    /// <p>If you are using containers in a task with the <code>bridge</code> network mode and
+    /// you specify a container port and not a host port, your container automatically receives
+    /// a host port in the ephemeral port range. For more information, see
+    /// <code>hostPort</code>. Port mappings that are automatically assigned in this way do not
+    /// count toward the 100 reserved ports limit of a container instance.</p>
+    pub fn container_port(&self) -> std::option::Option<i32> {
+        self.container_port
+    }
+    /// <p>The port number on the container instance to reserve for your container.</p>
+    /// <p>If you are using containers in a task with the <code>awsvpc</code> or
+    /// <code>host</code> network mode, the <code>hostPort</code> can either be left blank
+    /// or set to the same value as the <code>containerPort</code>.</p>
+    /// <p>If you are using containers in a task with the <code>bridge</code> network mode, you
+    /// can specify a non-reserved host port for your container port mapping, or you can omit
+    /// the <code>hostPort</code> (or set it to <code>0</code>) while specifying a
+    /// <code>containerPort</code> and your container automatically receives a port in the
+    /// ephemeral port range for your container instance operating system and Docker
+    /// version.</p>
+    /// <p>The default ephemeral port range for Docker version 1.6.0 and later is listed on the
+    /// instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel
+    /// parameter is unavailable, the default ephemeral port range from 49153 through 65535 is
+    /// used. Do not attempt to specify a host port in the ephemeral port range as these are
+    /// reserved for automatic assignment. In general, ports below 32768 are outside of the
+    /// ephemeral port range.</p>
+    /// <note>
+    /// <p>The default ephemeral port range from 49153 through 65535 is always used for
+    /// Docker versions before 1.6.0.</p>
+    /// </note>
+    /// <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+    /// Amazon ECS container agent ports 51678-51680. Any host port that was previously specified in
+    /// a running task is also reserved while the task is running (after a task stops, the host
+    /// port is released). The current reserved ports are displayed in the
+    /// <code>remainingResources</code> of <a>DescribeContainerInstances</a>
+    /// output. A container instance can have up to 100 reserved ports at a time, including the
+    /// default reserved ports. Automatically assigned ports don't count toward the 100 reserved
+    /// ports limit.</p>
+    pub fn host_port(&self) -> std::option::Option<i32> {
+        self.host_port
+    }
+    /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
+    /// <code>udp</code>. The default is <code>tcp</code>.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::TransportProtocol> {
+        self.protocol.as_ref()
+    }
 }
 impl std::fmt::Debug for PortMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18893,6 +22697,19 @@ pub struct RepositoryCredentials {
     /// </note>
     pub credentials_parameter: std::option::Option<std::string::String>,
 }
+impl RepositoryCredentials {
+    /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository
+    /// credentials.</p>
+    /// <note>
+    /// <p>When you are using the Amazon ECS API, CLI, or Amazon Web Services SDK, if the secret exists in the
+    /// same Region as the task that you are launching then you can use either the full ARN
+    /// or the name of the secret. When you are using the Amazon Web Services Management Console, you must specify the
+    /// full ARN of the secret.</p>
+    /// </note>
+    pub fn credentials_parameter(&self) -> std::option::Option<&str> {
+        self.credentials_parameter.as_deref()
+    }
+}
 impl std::fmt::Debug for RepositoryCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RepositoryCredentials");
@@ -18963,6 +22780,19 @@ pub struct PlatformDevice {
     /// <p>The type of device that is available on the container instance. The only supported
     /// value is <code>GPU</code>.</p>
     pub r#type: std::option::Option<crate::model::PlatformDeviceType>,
+}
+impl PlatformDevice {
+    /// <p>The ID for the GPU(s) on the container instance. The available GPU IDs can also be
+    /// obtained on the container instance in the
+    /// <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of device that is available on the container instance. The only supported
+    /// value is <code>GPU</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PlatformDeviceType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for PlatformDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19089,6 +22919,21 @@ pub struct Setting {
     /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
     /// this field is omitted, the authenticated user is assumed.</p>
     pub principal_arn: std::option::Option<std::string::String>,
+}
+impl Setting {
+    /// <p>The Amazon ECS resource name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SettingName> {
+        self.name.as_ref()
+    }
+    /// <p>Whether the account setting is enabled or disabled for the specified resource.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
+    /// this field is omitted, the authenticated user is assumed.</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Setting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19420,6 +23265,22 @@ pub struct Session {
     /// <p>An encrypted token value containing session and caller information. Used to
     /// authenticate the connection to the container.</p>
     pub token_value: std::option::Option<std::string::String>,
+}
+impl Session {
+    /// <p>The ID of the execute command session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses
+    /// to send commands and receive output from the container.</p>
+    pub fn stream_url(&self) -> std::option::Option<&str> {
+        self.stream_url.as_deref()
+    }
+    /// <p>An encrypted token value containing session and caller information. Used to
+    /// authenticate the connection to the container.</p>
+    pub fn token_value(&self) -> std::option::Option<&str> {
+        self.token_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Session {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

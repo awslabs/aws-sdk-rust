@@ -382,10 +382,7 @@ impl ImportApplicationUsageInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_application_usage(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -747,10 +744,7 @@ impl PutReportDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_report_definition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_report_definition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -972,10 +966,7 @@ impl UpdateReportDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_report_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1053,6 +1044,29 @@ pub struct UpdateReportDefinitionInput {
     /// report.</p>
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl UpdateReportDefinitionInput {
+    /// <p>Required. ID of the report to update.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+    /// <p>Required. Description of the report.</p>
+    pub fn report_description(&self) -> std::option::Option<&str> {
+        self.report_description.as_deref()
+    }
+    /// <p>Required. The cadence to generate the report.</p>
+    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+        self.report_frequency.as_ref()
+    }
+    /// <p>Required. The format to use for the generated report.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
+    /// report.</p>
+    pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.destination_s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateReportDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReportDefinitionInput");
@@ -1082,6 +1096,30 @@ pub struct PutReportDefinitionInput {
     /// report.</p>
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl PutReportDefinitionInput {
+    /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
+    /// ID.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+    /// <p>Required. Description of the report.</p>
+    pub fn report_description(&self) -> std::option::Option<&str> {
+        self.report_description.as_deref()
+    }
+    /// <p>Required. The cadence to generate the report.</p>
+    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+        self.report_frequency.as_ref()
+    }
+    /// <p>Required. The format to use for the generated report.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
+    /// report.</p>
+    pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.destination_s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for PutReportDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutReportDefinitionInput");
@@ -1103,6 +1141,16 @@ pub struct ListReportDefinitionsInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListReportDefinitionsInput {
+    /// <p>The token value from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListReportDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReportDefinitionsInput");
@@ -1119,6 +1167,12 @@ pub struct ImportApplicationUsageInput {
     /// <p>Amazon S3 location to import application usage data from.</p>
     pub source_s3_location: std::option::Option<crate::model::SourceS3Location>,
 }
+impl ImportApplicationUsageInput {
+    /// <p>Amazon S3 location to import application usage data from.</p>
+    pub fn source_s3_location(&self) -> std::option::Option<&crate::model::SourceS3Location> {
+        self.source_s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportApplicationUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportApplicationUsageInput");
@@ -1134,6 +1188,12 @@ pub struct GetReportDefinitionInput {
     /// <p>ID of the report to retrieve.</p>
     pub report_id: std::option::Option<std::string::String>,
 }
+impl GetReportDefinitionInput {
+    /// <p>ID of the report to retrieve.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReportDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReportDefinitionInput");
@@ -1148,6 +1208,12 @@ impl std::fmt::Debug for GetReportDefinitionInput {
 pub struct DeleteReportDefinitionInput {
     /// <p>Required. ID of the report to delete.</p>
     pub report_id: std::option::Option<std::string::String>,
+}
+impl DeleteReportDefinitionInput {
+    /// <p>Required. ID of the report to delete.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReportDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

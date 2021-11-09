@@ -17,6 +17,33 @@ pub struct DetectorSummary {
     /// <p>The time the detector (instance) was last updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DetectorSummary {
+    /// <p>The name of the detector model that created this detector (instance).</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The value of the key (identifying the device or system) that caused the creation of this
+    /// detector (instance).</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The version of the detector model that created this detector (instance).</p>
+    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+        self.detector_model_version.as_deref()
+    }
+    /// <p>The current state of the detector (instance).</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DetectorStateSummary> {
+        self.state.as_ref()
+    }
+    /// <p>The time the detector (instance) was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the detector (instance) was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DetectorSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectorSummary");
@@ -147,6 +174,12 @@ pub struct DetectorStateSummary {
     /// <p>The name of the state.</p>
     pub state_name: std::option::Option<std::string::String>,
 }
+impl DetectorStateSummary {
+    /// <p>The name of the state.</p>
+    pub fn state_name(&self) -> std::option::Option<&str> {
+        self.state_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectorStateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectorStateSummary");
@@ -240,6 +273,68 @@ pub struct AlarmSummary {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AlarmSummary {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+        self.alarm_model_version.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
+    /// it isn't ready to evaluate data. To enable the alarm,
+    /// you must change the alarm to the <code>NORMAL</code> state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
+    /// it's ready to evaluate data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
+    /// the alarm is invoked.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
+    /// the alarm was invoked and you acknowledged the alarm.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
+    /// the alarm is disabled for a specified period of time. After the snooze time,
+    /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
+    /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
+    /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
+    /// </li>
+    /// </ul>
+    pub fn state_name(&self) -> std::option::Option<&crate::model::AlarmStateName> {
+        self.state_name.as_ref()
+    }
+    /// <p>The time the alarm was created, in the Unix epoch format.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for AlarmSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -530,6 +625,33 @@ pub struct Detector {
     /// <p>The time the detector (instance) was last updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Detector {
+    /// <p>The name of the detector model that created this detector (instance).</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The value of the key (identifying the device or system) that caused the creation of this
+    /// detector (instance).</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The version of the detector model that created this detector (instance).</p>
+    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+        self.detector_model_version.as_deref()
+    }
+    /// <p>The current state of the detector (instance).</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DetectorState> {
+        self.state.as_ref()
+    }
+    /// <p>The time the detector (instance) was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the detector (instance) was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Detector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Detector");
@@ -664,6 +786,20 @@ pub struct DetectorState {
     /// <p>The current state of the detector's timers.</p>
     pub timers: std::option::Option<std::vec::Vec<crate::model::Timer>>,
 }
+impl DetectorState {
+    /// <p>The name of the state.</p>
+    pub fn state_name(&self) -> std::option::Option<&str> {
+        self.state_name.as_deref()
+    }
+    /// <p>The current values of the detector's variables.</p>
+    pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
+        self.variables.as_deref()
+    }
+    /// <p>The current state of the detector's timers.</p>
+    pub fn timers(&self) -> std::option::Option<&[crate::model::Timer]> {
+        self.timers.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectorState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectorState");
@@ -758,6 +894,16 @@ pub struct Timer {
     /// <p>The number of seconds which have elapsed on the timer.</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Timer {
+    /// <p>The name of the timer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The number of seconds which have elapsed on the timer.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for Timer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Timer");
@@ -823,6 +969,16 @@ pub struct Variable {
     pub name: std::option::Option<std::string::String>,
     /// <p>The current value of the variable.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Variable {
+    /// <p>The name of the variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current value of the variable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Variable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -897,6 +1053,37 @@ pub struct Alarm {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Alarm {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+        self.alarm_model_version.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>Contains information about the current state of the alarm.</p>
+    pub fn alarm_state(&self) -> std::option::Option<&crate::model::AlarmState> {
+        self.alarm_state.as_ref()
+    }
+    /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    pub fn severity(&self) -> std::option::Option<i32> {
+        self.severity
+    }
+    /// <p>The time the alarm was created, in the Unix epoch format.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Alarm {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1082,6 +1269,59 @@ pub struct AlarmState {
     /// <p>Contains information about alarm state changes.</p>
     pub system_event: std::option::Option<crate::model::SystemEvent>,
 }
+impl AlarmState {
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
+    /// it isn't ready to evaluate data. To enable the alarm,
+    /// you must change the alarm to the <code>NORMAL</code> state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
+    /// it's ready to evaluate data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
+    /// the alarm is invoked.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
+    /// the alarm was invoked and you acknowledged the alarm.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
+    /// the alarm is disabled for a specified period of time. After the snooze time,
+    /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
+    /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
+    /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
+    /// </li>
+    /// </ul>
+    pub fn state_name(&self) -> std::option::Option<&crate::model::AlarmStateName> {
+        self.state_name.as_ref()
+    }
+    /// <p>Information needed to evaluate data.</p>
+    pub fn rule_evaluation(&self) -> std::option::Option<&crate::model::RuleEvaluation> {
+        self.rule_evaluation.as_ref()
+    }
+    /// <p>Contains information about the action that you can take to respond to the alarm.</p>
+    pub fn customer_action(&self) -> std::option::Option<&crate::model::CustomerAction> {
+        self.customer_action.as_ref()
+    }
+    /// <p>Contains information about alarm state changes.</p>
+    pub fn system_event(&self) -> std::option::Option<&crate::model::SystemEvent> {
+        self.system_event.as_ref()
+    }
+}
 impl std::fmt::Debug for AlarmState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AlarmState");
@@ -1254,6 +1494,19 @@ pub struct SystemEvent {
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub state_change_configuration: std::option::Option<crate::model::StateChangeConfiguration>,
 }
+impl SystemEvent {
+    /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information
+    /// about alarm state changes.</p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::EventType> {
+        self.event_type.as_ref()
+    }
+    /// <p>Contains the configuration information of alarm state changes.</p>
+    pub fn state_change_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StateChangeConfiguration> {
+        self.state_change_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for SystemEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SystemEvent");
@@ -1330,6 +1583,13 @@ pub struct StateChangeConfiguration {
     /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends
     /// and the alarm automatically changes to the <code>NORMAL</code> state.</p>
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
+}
+impl StateChangeConfiguration {
+    /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends
+    /// and the alarm automatically changes to the <code>NORMAL</code> state.</p>
+    pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
+        self.trigger_type.as_ref()
+    }
 }
 impl std::fmt::Debug for StateChangeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1519,6 +1779,65 @@ pub struct CustomerAction {
         std::option::Option<crate::model::AcknowledgeActionConfiguration>,
     /// <p>Contains the configuration information of a reset action.</p>
     pub reset_action_configuration: std::option::Option<crate::model::ResetActionConfiguration>,
+}
+impl CustomerAction {
+    /// <p>The name of the action. The action name can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
+    pub fn action_name(&self) -> std::option::Option<&crate::model::CustomerActionName> {
+        self.action_name.as_ref()
+    }
+    /// <p>Contains the configuration information of a snooze action.</p>
+    pub fn snooze_action_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SnoozeActionConfiguration> {
+        self.snooze_action_configuration.as_ref()
+    }
+    /// <p>Contains the configuration information of an enable action.</p>
+    pub fn enable_action_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EnableActionConfiguration> {
+        self.enable_action_configuration.as_ref()
+    }
+    /// <p>Contains the configuration information of a disable action.</p>
+    pub fn disable_action_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DisableActionConfiguration> {
+        self.disable_action_configuration.as_ref()
+    }
+    /// <p>Contains the configuration information of an acknowledge action.</p>
+    pub fn acknowledge_action_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AcknowledgeActionConfiguration> {
+        self.acknowledge_action_configuration.as_ref()
+    }
+    /// <p>Contains the configuration information of a reset action.</p>
+    pub fn reset_action_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ResetActionConfiguration> {
+        self.reset_action_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CustomerAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1732,6 +2051,12 @@ pub struct ResetActionConfiguration {
     /// <p>The note that you can leave when you reset the alarm.</p>
     pub note: std::option::Option<std::string::String>,
 }
+impl ResetActionConfiguration {
+    /// <p>The note that you can leave when you reset the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetActionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetActionConfiguration");
@@ -1777,6 +2102,12 @@ impl ResetActionConfiguration {
 pub struct AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     pub note: std::option::Option<std::string::String>,
+}
+impl AcknowledgeActionConfiguration {
+    /// <p>The note that you can leave when you acknowledge the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
 }
 impl std::fmt::Debug for AcknowledgeActionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1824,6 +2155,12 @@ pub struct DisableActionConfiguration {
     /// <p>The note that you can leave when you disable the alarm.</p>
     pub note: std::option::Option<std::string::String>,
 }
+impl DisableActionConfiguration {
+    /// <p>The note that you can leave when you disable the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableActionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableActionConfiguration");
@@ -1869,6 +2206,12 @@ impl DisableActionConfiguration {
 pub struct EnableActionConfiguration {
     /// <p>The note that you can leave when you enable the alarm.</p>
     pub note: std::option::Option<std::string::String>,
+}
+impl EnableActionConfiguration {
+    /// <p>The note that you can leave when you enable the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableActionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1917,6 +2260,16 @@ pub struct SnoozeActionConfiguration {
     pub snooze_duration: std::option::Option<i32>,
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub note: std::option::Option<std::string::String>,
+}
+impl SnoozeActionConfiguration {
+    /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
+    pub fn snooze_duration(&self) -> std::option::Option<i32> {
+        self.snooze_duration
+    }
+    /// <p>The note that you can leave when you snooze the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
 }
 impl std::fmt::Debug for SnoozeActionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2046,6 +2399,14 @@ pub struct RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
     pub simple_rule_evaluation: std::option::Option<crate::model::SimpleRuleEvaluation>,
 }
+impl RuleEvaluation {
+    /// <p>Information needed to compare two values with a comparison operator.</p>
+    pub fn simple_rule_evaluation(
+        &self,
+    ) -> std::option::Option<&crate::model::SimpleRuleEvaluation> {
+        self.simple_rule_evaluation.as_ref()
+    }
+}
 impl std::fmt::Debug for RuleEvaluation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleEvaluation");
@@ -2100,6 +2461,20 @@ pub struct SimpleRuleEvaluation {
     pub operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The threshold value, on the right side of the comparison operator.</p>
     pub threshold_value: std::option::Option<std::string::String>,
+}
+impl SimpleRuleEvaluation {
+    /// <p>The value of the input property, on the left side of the comparison operator.</p>
+    pub fn input_property_value(&self) -> std::option::Option<&str> {
+        self.input_property_value.as_deref()
+    }
+    /// <p>The comparison operator.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.operator.as_ref()
+    }
+    /// <p>The threshold value, on the right side of the comparison operator.</p>
+    pub fn threshold_value(&self) -> std::option::Option<&str> {
+        self.threshold_value.as_deref()
+    }
 }
 impl std::fmt::Debug for SimpleRuleEvaluation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2267,6 +2642,21 @@ pub struct BatchUpdateDetectorErrorEntry {
     /// <p>A message that describes the error.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl BatchUpdateDetectorErrorEntry {
+    /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of
+    /// the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateDetectorErrorEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateDetectorErrorEntry");
@@ -2430,6 +2820,26 @@ pub struct UpdateDetectorRequest {
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
     pub state: std::option::Option<crate::model::DetectorStateDefinition>,
 }
+impl UpdateDetectorRequest {
+    /// <p>The ID to assign to the detector update <code>"message"</code>. Each
+    /// <code>"messageId"</code> must be unique within each batch sent.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The name of the detector model that created the detectors (instances).</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The value of the input key attribute (identifying the device or system) that caused the
+    /// creation of this detector (instance).</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DetectorStateDefinition> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDetectorRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDetectorRequest");
@@ -2533,6 +2943,22 @@ pub struct DetectorStateDefinition {
     /// and its timeout event won't occur.</p>
     pub timers: std::option::Option<std::vec::Vec<crate::model::TimerDefinition>>,
 }
+impl DetectorStateDefinition {
+    /// <p>The name of the new state of the detector (instance).</p>
+    pub fn state_name(&self) -> std::option::Option<&str> {
+        self.state_name.as_deref()
+    }
+    /// <p>The new values of the detector's variables. Any variable whose value isn't specified is
+    /// cleared.</p>
+    pub fn variables(&self) -> std::option::Option<&[crate::model::VariableDefinition]> {
+        self.variables.as_deref()
+    }
+    /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared,
+    /// and its timeout event won't occur.</p>
+    pub fn timers(&self) -> std::option::Option<&[crate::model::TimerDefinition]> {
+        self.timers.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectorStateDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectorStateDefinition");
@@ -2631,6 +3057,16 @@ pub struct TimerDefinition {
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub seconds: std::option::Option<i32>,
 }
+impl TimerDefinition {
+    /// <p>The name of the timer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
+    pub fn seconds(&self) -> std::option::Option<i32> {
+        self.seconds
+    }
+}
 impl std::fmt::Debug for TimerDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimerDefinition");
@@ -2693,6 +3129,16 @@ pub struct VariableDefinition {
     pub name: std::option::Option<std::string::String>,
     /// <p>The new value of the variable.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl VariableDefinition {
+    /// <p>The name of the variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new value of the variable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for VariableDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2786,6 +3232,20 @@ pub struct BatchAlarmActionErrorEntry {
     /// <p>A message that describes the error.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl BatchAlarmActionErrorEntry {
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchAlarmActionErrorEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchAlarmActionErrorEntry");
@@ -2874,6 +3334,29 @@ pub struct SnoozeAlarmActionRequest {
     pub note: std::option::Option<std::string::String>,
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub snooze_duration: std::option::Option<i32>,
+}
+impl SnoozeAlarmActionRequest {
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The note that you can leave when you snooze the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
+    /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
+    pub fn snooze_duration(&self) -> std::option::Option<i32> {
+        self.snooze_duration
+    }
 }
 impl std::fmt::Debug for SnoozeAlarmActionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2987,6 +3470,25 @@ pub struct ResetAlarmActionRequest {
     /// <p>The note that you can leave when you reset the alarm.</p>
     pub note: std::option::Option<std::string::String>,
 }
+impl ResetAlarmActionRequest {
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The note that you can leave when you reset the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetAlarmActionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetAlarmActionRequest");
@@ -3084,6 +3586,21 @@ pub struct BatchPutMessageErrorEntry {
     /// <p>A message that describes the error.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl BatchPutMessageErrorEntry {
+    /// <p>The ID of the message that caused the error. (See the value corresponding to the
+    /// <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchPutMessageErrorEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutMessageErrorEntry");
@@ -3173,6 +3690,26 @@ pub struct Message {
     pub payload: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The timestamp associated with the message.</p>
     pub timestamp: std::option::Option<crate::model::TimestampValue>,
+}
+impl Message {
+    /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code>
+    /// must be unique.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The name of the input into which the message payload is transformed.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string
+    /// representing binary data (in which case you must decode it).</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
+    /// <p>The timestamp associated with the message.</p>
+    pub fn timestamp(&self) -> std::option::Option<&crate::model::TimestampValue> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3268,6 +3805,12 @@ pub struct TimestampValue {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
     pub time_in_millis: std::option::Option<i64>,
 }
+impl TimestampValue {
+    /// <p>The value of the timestamp, in the Unix epoch format.</p>
+    pub fn time_in_millis(&self) -> std::option::Option<i64> {
+        self.time_in_millis
+    }
+}
 impl std::fmt::Debug for TimestampValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimestampValue");
@@ -3322,6 +3865,25 @@ pub struct EnableAlarmActionRequest {
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you enable the alarm.</p>
     pub note: std::option::Option<std::string::String>,
+}
+impl EnableAlarmActionRequest {
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The note that you can leave when you enable the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableAlarmActionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3422,6 +3984,25 @@ pub struct DisableAlarmActionRequest {
     /// <p>The note that you can leave when you disable the alarm.</p>
     pub note: std::option::Option<std::string::String>,
 }
+impl DisableAlarmActionRequest {
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The note that you can leave when you disable the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableAlarmActionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableAlarmActionRequest");
@@ -3520,6 +4101,25 @@ pub struct AcknowledgeAlarmActionRequest {
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     pub note: std::option::Option<std::string::String>,
+}
+impl AcknowledgeAlarmActionRequest {
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
+    /// <p>The note that you can leave when you acknowledge the alarm.</p>
+    pub fn note(&self) -> std::option::Option<&str> {
+        self.note.as_deref()
+    }
 }
 impl std::fmt::Debug for AcknowledgeAlarmActionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

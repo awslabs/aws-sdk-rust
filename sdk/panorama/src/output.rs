@@ -6,6 +6,12 @@ pub struct UpdateDeviceMetadataOutput {
     /// <p>The device's ID.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl UpdateDeviceMetadataOutput {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeviceMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceMetadataOutput");
@@ -182,6 +188,28 @@ pub struct ProvisionDeviceOutput {
     /// <p>The device's IoT thing name.</p>
     pub iot_thing_name: std::option::Option<std::string::String>,
 }
+impl ProvisionDeviceOutput {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The device's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The device's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The device's configuration bundle.</p>
+    pub fn certificates(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.certificates.as_ref()
+    }
+    /// <p>The device's IoT thing name.</p>
+    pub fn iot_thing_name(&self) -> std::option::Option<&str> {
+        self.iot_thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisionDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionDeviceOutput");
@@ -292,6 +320,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -356,6 +393,16 @@ pub struct ListPackagesOutput {
     pub packages: std::option::Option<std::vec::Vec<crate::model::PackageListItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackagesOutput {
+    /// <p>A list of packages.</p>
+    pub fn packages(&self) -> std::option::Option<&[crate::model::PackageListItem]> {
+        self.packages.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -428,6 +475,16 @@ pub struct ListPackageImportJobsOutput {
     pub package_import_jobs: std::option::Option<std::vec::Vec<crate::model::PackageImportJob>>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackageImportJobsOutput {
+    /// <p>A list of package import jobs.</p>
+    pub fn package_import_jobs(&self) -> std::option::Option<&[crate::model::PackageImportJob]> {
+        self.package_import_jobs.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackageImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -505,6 +562,16 @@ pub struct ListNodesOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListNodesOutput {
+    /// <p>A list of nodes.</p>
+    pub fn nodes(&self) -> std::option::Option<&[crate::model::Node]> {
+        self.nodes.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNodesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNodesOutput");
@@ -577,6 +644,18 @@ pub struct ListNodeFromTemplateJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::NodeFromTemplateJob>>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNodeFromTemplateJobsOutput {
+    /// <p>A list of jobs.</p>
+    pub fn node_from_template_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::NodeFromTemplateJob]> {
+        self.node_from_template_jobs.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNodeFromTemplateJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -654,6 +733,16 @@ pub struct ListDevicesJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDevicesJobsOutput {
+    /// <p>A list of jobs.</p>
+    pub fn device_jobs(&self) -> std::option::Option<&[crate::model::DeviceJob]> {
+        self.device_jobs.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicesJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesJobsOutput");
@@ -725,6 +814,16 @@ pub struct ListDevicesOutput {
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDevicesOutput {
+    /// <p>A list of devices.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -798,6 +897,18 @@ pub struct ListApplicationInstancesOutput {
         std::option::Option<std::vec::Vec<crate::model::ApplicationInstance>>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationInstancesOutput {
+    /// <p>A list of application instances.</p>
+    pub fn application_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationInstance]> {
+        self.application_instances.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -875,6 +986,16 @@ pub struct ListApplicationInstanceNodeInstancesOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationInstanceNodeInstancesOutput {
+    /// <p>A list of node instances.</p>
+    pub fn node_instances(&self) -> std::option::Option<&[crate::model::NodeInstance]> {
+        self.node_instances.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationInstanceNodeInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationInstanceNodeInstancesOutput");
@@ -946,6 +1067,16 @@ pub struct ListApplicationInstanceDependenciesOutput {
     pub package_objects: std::option::Option<std::vec::Vec<crate::model::PackageObject>>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationInstanceDependenciesOutput {
+    /// <p>A list of package objects.</p>
+    pub fn package_objects(&self) -> std::option::Option<&[crate::model::PackageObject]> {
+        self.package_objects.as_deref()
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationInstanceDependenciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1034,6 +1165,48 @@ pub struct DescribePackageVersionOutput {
     pub status_description: std::option::Option<std::string::String>,
     /// <p>The version's registered time.</p>
     pub registered_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribePackageVersionOutput {
+    /// <p>The account ID of the version's owner.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The version's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The ARN of the package.</p>
+    pub fn package_arn(&self) -> std::option::Option<&str> {
+        self.package_arn.as_deref()
+    }
+    /// <p>The version's name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The version's version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The version's patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+    /// <p>Whether the version is the latest available.</p>
+    pub fn is_latest_patch(&self) -> std::option::Option<bool> {
+        self.is_latest_patch
+    }
+    /// <p>The version's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The version's status description.</p>
+    pub fn status_description(&self) -> std::option::Option<&str> {
+        self.status_description.as_deref()
+    }
+    /// <p>The version's registered time.</p>
+    pub fn registered_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registered_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePackageVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1237,6 +1410,54 @@ pub struct DescribePackageImportJobOutput {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The job's tags.</p>
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
+}
+impl DescribePackageImportJobOutput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The job's client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The job's type.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::PackageImportJobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The job's input config.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::PackageImportJobInputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>The job's output config.</p>
+    pub fn output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageImportJobOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The job's output.</p>
+    pub fn output(&self) -> std::option::Option<&crate::model::PackageImportJobOutput> {
+        self.output.as_ref()
+    }
+    /// <p>When the job was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>When the job was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The job's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PackageImportJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The job's status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The job's tags.</p>
+    pub fn job_tags(&self) -> std::option::Option<&[crate::model::JobResourceTags]> {
+        self.job_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePackageImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1464,6 +1685,43 @@ pub struct DescribePackageOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl DescribePackageOutput {
+    /// <p>The package's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The package's name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The package's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The package's storage location.</p>
+    pub fn storage_location(&self) -> std::option::Option<&crate::model::StorageLocation> {
+        self.storage_location.as_ref()
+    }
+    /// <p>ARNs of accounts that have read access to the package.</p>
+    pub fn read_access_principal_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.read_access_principal_arns.as_deref()
+    }
+    /// <p>ARNs of accounts that have write access to the package.</p>
+    pub fn write_access_principal_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.write_access_principal_arns.as_deref()
+    }
+    /// <p>When the package was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The package's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageOutput");
@@ -1677,6 +1935,59 @@ pub struct DescribeNodeFromTemplateJobOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The job's tags.</p>
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
+}
+impl DescribeNodeFromTemplateJobOutput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The job's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NodeFromTemplateJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The job's status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>When the job was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>When the job was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The job's output package name.</p>
+    pub fn output_package_name(&self) -> std::option::Option<&str> {
+        self.output_package_name.as_deref()
+    }
+    /// <p>The job's output package version.</p>
+    pub fn output_package_version(&self) -> std::option::Option<&str> {
+        self.output_package_version.as_deref()
+    }
+    /// <p>The node's name.</p>
+    pub fn node_name(&self) -> std::option::Option<&str> {
+        self.node_name.as_deref()
+    }
+    /// <p>The node's description.</p>
+    pub fn node_description(&self) -> std::option::Option<&str> {
+        self.node_description.as_deref()
+    }
+    /// <p>The job's template type.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The job's template parameters.</p>
+    pub fn template_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.template_parameters.as_ref()
+    }
+    /// <p>The job's tags.</p>
+    pub fn job_tags(&self) -> std::option::Option<&[crate::model::JobResourceTags]> {
+        self.job_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNodeFromTemplateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1945,6 +2256,64 @@ pub struct DescribeNodeOutput {
     /// <p>When the node was updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeNodeOutput {
+    /// <p>The node's ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>The node's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The node's category.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::NodeCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The account ID of the node's owner.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The node's package name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The node's package ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The node's ARN.</p>
+    pub fn package_arn(&self) -> std::option::Option<&str> {
+        self.package_arn.as_deref()
+    }
+    /// <p>The node's package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The node's patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+    /// <p>The node's interface.</p>
+    pub fn node_interface(&self) -> std::option::Option<&crate::model::NodeInterface> {
+        self.node_interface.as_ref()
+    }
+    /// <p>The node's asset name.</p>
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
+    /// <p>The node's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>When the node was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>When the node was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNodeOutput");
@@ -2197,6 +2566,40 @@ pub struct DescribeDeviceJobOutput {
     /// <p>When the job was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeDeviceJobOutput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The device's ARN.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The device's name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The device's type.</p>
+    pub fn device_type(&self) -> std::option::Option<&crate::model::DeviceType> {
+        self.device_type.as_ref()
+    }
+    /// <p>For an OTA job, the target version of the device software.</p>
+    pub fn image_version(&self) -> std::option::Option<&str> {
+        self.image_version.as_deref()
+    }
+    /// <p>The job's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::UpdateProgress> {
+        self.status.as_ref()
+    }
+    /// <p>When the job was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDeviceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceJobOutput");
@@ -2376,6 +2779,73 @@ pub struct DescribeDeviceOutput {
     pub current_networking_status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The device's lease expiration time.</p>
     pub lease_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeDeviceOutput {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The device's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The device's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The device's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The device's type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DeviceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The device's connection status.</p>
+    pub fn device_connection_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceConnectionStatus> {
+        self.device_connection_status.as_ref()
+    }
+    /// <p>When the device was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The device's provisioning status.</p>
+    pub fn provisioning_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.provisioning_status.as_ref()
+    }
+    /// <p>The latest software version available for the device.</p>
+    pub fn latest_software(&self) -> std::option::Option<&str> {
+        self.latest_software.as_deref()
+    }
+    /// <p>The device's current software version.</p>
+    pub fn current_software(&self) -> std::option::Option<&str> {
+        self.current_software.as_deref()
+    }
+    /// <p>The device's serial number.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>The device's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The device's networking configuration.</p>
+    pub fn networking_configuration(&self) -> std::option::Option<&crate::model::NetworkPayload> {
+        self.networking_configuration.as_ref()
+    }
+    /// <p>The device's networking status.</p>
+    pub fn current_networking_status(&self) -> std::option::Option<&crate::model::NetworkStatus> {
+        self.current_networking_status.as_ref()
+    }
+    /// <p>The device's lease expiration time.</p>
+    pub fn lease_expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.lease_expiration_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2669,6 +3139,42 @@ pub struct DescribeApplicationInstanceDetailsOutput {
     /// <p>The application instance's ID.</p>
     pub application_instance_id: std::option::Option<std::string::String>,
 }
+impl DescribeApplicationInstanceDetailsOutput {
+    /// <p>The application instance's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The application instance's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The application instance's default runtime context device.</p>
+    pub fn default_runtime_context_device(&self) -> std::option::Option<&str> {
+        self.default_runtime_context_device.as_deref()
+    }
+    /// <p>The application instance's configuration manifest.</p>
+    pub fn manifest_payload(&self) -> std::option::Option<&crate::model::ManifestPayload> {
+        self.manifest_payload.as_ref()
+    }
+    /// <p>Parameter overrides for the configuration manifest.</p>
+    pub fn manifest_overrides_payload(
+        &self,
+    ) -> std::option::Option<&crate::model::ManifestOverridesPayload> {
+        self.manifest_overrides_payload.as_ref()
+    }
+    /// <p>The ID of the application instance that this instance replaced.</p>
+    pub fn application_instance_id_to_replace(&self) -> std::option::Option<&str> {
+        self.application_instance_id_to_replace.as_deref()
+    }
+    /// <p>When the application instance was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The application instance's ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationInstanceDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationInstanceDetailsOutput");
@@ -2871,6 +3377,69 @@ pub struct DescribeApplicationInstanceOutput {
     /// <p>The application instance's tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeApplicationInstanceOutput {
+    /// <p>The application instance's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The application instance's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The device's ID.</p>
+    pub fn default_runtime_context_device(&self) -> std::option::Option<&str> {
+        self.default_runtime_context_device.as_deref()
+    }
+    /// <p>The device's bane.</p>
+    pub fn default_runtime_context_device_name(&self) -> std::option::Option<&str> {
+        self.default_runtime_context_device_name.as_deref()
+    }
+    /// <p>The ID of the application instance that this instance replaced.</p>
+    pub fn application_instance_id_to_replace(&self) -> std::option::Option<&str> {
+        self.application_instance_id_to_replace.as_deref()
+    }
+    /// <p>The application instance's runtime role ARN.</p>
+    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+        self.runtime_role_arn.as_deref()
+    }
+    /// <p>The application instance's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ApplicationInstanceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The application instance's health status.</p>
+    pub fn health_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationInstanceHealthStatus> {
+        self.health_status.as_ref()
+    }
+    /// <p>The application instance's status description.</p>
+    pub fn status_description(&self) -> std::option::Option<&str> {
+        self.status_description.as_deref()
+    }
+    /// <p>When the application instance was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The application instance was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The application instance's ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+    /// <p>The application instance's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The application instance's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3218,6 +3787,12 @@ pub struct DeleteDeviceOutput {
     /// <p>The device's ID.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl DeleteDeviceOutput {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceOutput");
@@ -3265,6 +3840,12 @@ impl DeleteDeviceOutput {
 pub struct CreatePackageImportJobOutput {
     /// <p>The job's ID.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl CreatePackageImportJobOutput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePackageImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3317,6 +3898,20 @@ pub struct CreatePackageOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The package's storage location.</p>
     pub storage_location: std::option::Option<crate::model::StorageLocation>,
+}
+impl CreatePackageOutput {
+    /// <p>The package's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The package's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The package's storage location.</p>
+    pub fn storage_location(&self) -> std::option::Option<&crate::model::StorageLocation> {
+        self.storage_location.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3395,6 +3990,12 @@ pub struct CreateNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CreateNodeFromTemplateJobOutput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateNodeFromTemplateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNodeFromTemplateJobOutput");
@@ -3442,6 +4043,12 @@ impl CreateNodeFromTemplateJobOutput {
 pub struct CreateJobForDevicesOutput {
     /// <p>A list of jobs.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
+}
+impl CreateJobForDevicesOutput {
+    /// <p>A list of jobs.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateJobForDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3497,6 +4104,12 @@ impl CreateJobForDevicesOutput {
 pub struct CreateApplicationInstanceOutput {
     /// <p>The application instance's ID.</p>
     pub application_instance_id: std::option::Option<std::string::String>,
+}
+impl CreateApplicationInstanceOutput {
+    /// <p>The application instance's ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

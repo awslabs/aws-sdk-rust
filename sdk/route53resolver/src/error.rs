@@ -9554,6 +9554,12 @@ pub struct ResourceUnavailableException {
     /// <p>For a <code>ResourceUnavailableException</code> error, the type of resource that isn't available.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceUnavailableException {
+    /// <p>For a <code>ResourceUnavailableException</code> error, the type of resource that isn't available.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceUnavailableException");
@@ -9636,6 +9642,12 @@ pub struct ResourceNotFoundException {
     /// <p>For a <code>ResourceNotFoundException</code> error, the type of resource that doesn't exist.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>For a <code>ResourceNotFoundException</code> error, the type of resource that doesn't exist.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -9717,6 +9729,12 @@ pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>For a <code>LimitExceededException</code> error, the type of resource that exceeded the current limit.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl LimitExceededException {
+    /// <p>For a <code>LimitExceededException</code> error, the type of resource that exceeded the current limit.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9863,6 +9881,12 @@ pub struct InvalidParameterException {
     pub message: std::option::Option<std::string::String>,
     /// <p>For an <code>InvalidParameterException</code> error, the name of the parameter that's invalid.</p>
     pub field_name: std::option::Option<std::string::String>,
+}
+impl InvalidParameterException {
+    /// <p>For an <code>InvalidParameterException</code> error, the name of the parameter that's invalid.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10455,6 +10479,12 @@ pub struct ResourceExistsException {
     /// <p>For a <code>ResourceExistsException</code> error, the type of resource that the error applies to.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceExistsException {
+    /// <p>For a <code>ResourceExistsException</code> error, the type of resource that the error applies to.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceExistsException");
@@ -10536,6 +10566,12 @@ pub struct ResourceInUseException {
     pub message: std::option::Option<std::string::String>,
     /// <p>For a <code>ResourceInUseException</code> error, the type of resource that is currently in use.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl ResourceInUseException {
+    /// <p>For a <code>ResourceInUseException</code> error, the type of resource that is currently in use.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

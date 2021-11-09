@@ -3053,6 +3053,20 @@ pub struct ValidationException {
     /// <p>Validate exception field list.</p>
     pub field_list: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
+impl ValidationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Validate exception reason.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+    /// <p>Validate exception field list.</p>
+    pub fn field_list(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
+        self.field_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -3174,6 +3188,12 @@ pub struct UninitializedAccountException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl UninitializedAccountException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for UninitializedAccountException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UninitializedAccountException");
@@ -3256,6 +3276,20 @@ pub struct ResourceNotFoundException {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Resource type not found error.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Resource ID not found error.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Resource type not found error.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3369,6 +3403,20 @@ pub struct ConflictException {
     /// <p>A conflict occured when prompting for resource type.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A conflict occured when prompting for the Resource ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A conflict occured when prompting for resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");
@@ -3477,6 +3525,12 @@ pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessDeniedException");
@@ -3559,6 +3613,20 @@ pub struct ThrottlingException {
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>Reached throttling quota exception will retry after x seconds.</p>
     pub retry_after_seconds: std::option::Option<std::string::String>,
+}
+impl ThrottlingException {
+    /// <p>Reached throttling quota exception service code.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>Reached throttling quota exception.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>Reached throttling quota exception will retry after x seconds.</p>
+    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+        self.retry_after_seconds.as_deref()
+    }
 }
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3667,6 +3735,12 @@ pub struct InternalServerException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The server encountered an unexpected condition that prevented it from fulfilling the request. The request will be retried again after x seconds.</p>
     pub retry_after_seconds: i64,
+}
+impl InternalServerException {
+    /// <p>The server encountered an unexpected condition that prevented it from fulfilling the request. The request will be retried again after x seconds.</p>
+    pub fn retry_after_seconds(&self) -> i64 {
+        self.retry_after_seconds
+    }
 }
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

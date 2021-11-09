@@ -18,6 +18,34 @@ pub struct StartDeviceAuthorizationOutput {
     /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
     pub interval: i32,
 }
+impl StartDeviceAuthorizationOutput {
+    /// <p>The short-lived code that is used by the device when polling for a session token.</p>
+    pub fn device_code(&self) -> std::option::Option<&str> {
+        self.device_code.as_deref()
+    }
+    /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
+    pub fn user_code(&self) -> std::option::Option<&str> {
+        self.user_code.as_deref()
+    }
+    /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
+    pub fn verification_uri(&self) -> std::option::Option<&str> {
+        self.verification_uri.as_deref()
+    }
+    /// <p>An alternate URL that the client can use to automatically launch a browser. This process
+    /// skips the manual step in which the user visits the verification page and enters their
+    /// code.</p>
+    pub fn verification_uri_complete(&self) -> std::option::Option<&str> {
+        self.verification_uri_complete.as_deref()
+    }
+    /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
+    pub fn expires_in(&self) -> i32 {
+        self.expires_in
+    }
+    /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
+    pub fn interval(&self) -> i32 {
+        self.interval
+    }
+}
 impl std::fmt::Debug for StartDeviceAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeviceAuthorizationOutput");
@@ -152,6 +180,34 @@ pub struct RegisterClientOutput {
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The endpoint where the client can get an access token.</p>
     pub token_endpoint: std::option::Option<std::string::String>,
+}
+impl RegisterClientOutput {
+    /// <p>The unique identifier string for each client. This client uses this identifier to get
+    /// authenticated by the service in subsequent calls.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A secret string generated for the client. The client will use this string to get
+    /// authenticated by the service in subsequent calls.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
+    pub fn client_id_issued_at(&self) -> i64 {
+        self.client_id_issued_at
+    }
+    /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
+    pub fn client_secret_expires_at(&self) -> i64 {
+        self.client_secret_expires_at
+    }
+    /// <p>The endpoint where the client can request authorization.</p>
+    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
+        self.authorization_endpoint.as_deref()
+    }
+    /// <p>The endpoint where the client can get an access token.</p>
+    pub fn token_endpoint(&self) -> std::option::Option<&str> {
+        self.token_endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -288,6 +344,30 @@ pub struct CreateTokenOutput {
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     pub id_token: std::option::Option<std::string::String>,
+}
+impl CreateTokenOutput {
+    /// <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>Used to notify the client that the returned token is an access token. The supported type
+    /// is <code>BearerToken</code>.</p>
+    pub fn token_type(&self) -> std::option::Option<&str> {
+        self.token_type.as_deref()
+    }
+    /// <p>Indicates the time in seconds when an access token will expire.</p>
+    pub fn expires_in(&self) -> i32 {
+        self.expires_in
+    }
+    /// <p>A token that, if present, can be used to refresh a previously issued access token that
+    /// might have expired.</p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p>The identifier of the user that associated with the access token, if present.</p>
+    pub fn id_token(&self) -> std::option::Option<&str> {
+        self.id_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

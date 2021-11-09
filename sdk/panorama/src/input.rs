@@ -212,10 +212,7 @@ impl CreateApplicationInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_application_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -396,10 +393,9 @@ impl CreateJobForDevicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_job_for_devices(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_job_for_devices(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -655,7 +651,7 @@ impl CreateNodeFromTemplateJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_node_from_template_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_node_from_template_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -829,10 +825,7 @@ impl CreatePackageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_package(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1045,10 +1038,7 @@ impl CreatePackageImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_package_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5067,10 +5057,7 @@ impl ProvisionDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_provision_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_provision_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5326,10 +5313,7 @@ impl RegisterPackageVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_package_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5673,10 +5657,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6026,10 +6007,9 @@ impl UpdateDeviceMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_device_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_device_metadata(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6100,6 +6080,16 @@ pub struct UpdateDeviceMetadataInput {
     /// <p>A description for the device.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateDeviceMetadataInput {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>A description for the device.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeviceMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceMetadataInput");
@@ -6117,6 +6107,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tag keys to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The resource's ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tag keys to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6137,6 +6137,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The resource's ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -6152,6 +6165,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct RemoveApplicationInstanceInput {
     /// <p>An application instance ID.</p>
     pub application_instance_id: std::option::Option<std::string::String>,
+}
+impl RemoveApplicationInstanceInput {
+    /// <p>An application instance ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveApplicationInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6175,6 +6194,28 @@ pub struct RegisterPackageVersionInput {
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>Whether to mark the new version as the latest version.</p>
     pub mark_latest: std::option::Option<bool>,
+}
+impl RegisterPackageVersionInput {
+    /// <p>An owner account.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>A package ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>A package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>A patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+    /// <p>Whether to mark the new version as the latest version.</p>
+    pub fn mark_latest(&self) -> std::option::Option<bool> {
+        self.mark_latest
+    }
 }
 impl std::fmt::Debug for RegisterPackageVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6202,6 +6243,27 @@ pub struct ProvisionDeviceInput {
     /// <p>A networking configuration for the device.</p>
     pub networking_configuration: std::option::Option<crate::model::NetworkPayload>,
 }
+impl ProvisionDeviceInput {
+    /// <p>A name for the device.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the device.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Tags for the device.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A networking configuration for the device.</p>
+    pub fn networking_configuration(&self) -> std::option::Option<&crate::model::NetworkPayload> {
+        self.networking_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisionDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionDeviceInput");
@@ -6220,6 +6282,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The resource's ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The resource's ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -6236,6 +6304,16 @@ pub struct ListPackagesInput {
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackagesInput {
+    /// <p>The maximum number of packages to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6254,6 +6332,16 @@ pub struct ListPackageImportJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of package import jobs to return in one page of results.</p>
     pub max_results: i32,
+}
+impl ListPackageImportJobsInput {
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of package import jobs to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPackageImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6283,6 +6371,36 @@ pub struct ListNodesInput {
     /// <p>The maximum number of nodes to return in one page of results.</p>
     pub max_results: i32,
 }
+impl ListNodesInput {
+    /// <p>Search for nodes by category.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::NodeCategory> {
+        self.category.as_ref()
+    }
+    /// <p>Search for nodes by the account ID of the nodes' owner.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>Search for nodes by name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>Search for nodes by version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>Search for nodes by patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of nodes to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListNodesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNodesInput");
@@ -6306,6 +6424,16 @@ pub struct ListNodeFromTemplateJobsInput {
     /// <p>The maximum number of node from template jobs to return in one page of results.</p>
     pub max_results: i32,
 }
+impl ListNodeFromTemplateJobsInput {
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of node from template jobs to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListNodeFromTemplateJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNodeFromTemplateJobsInput");
@@ -6326,6 +6454,20 @@ pub struct ListDevicesJobsInput {
     /// <p>The maximum number of device jobs to return in one page of results.</p>
     pub max_results: i32,
 }
+impl ListDevicesJobsInput {
+    /// <p>Filter results by the job's target device ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of device jobs to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDevicesJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesJobsInput");
@@ -6344,6 +6486,16 @@ pub struct ListDevicesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of devices to return in one page of results.</p>
     pub max_results: i32,
+}
+impl ListDevicesInput {
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of devices to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6367,6 +6519,24 @@ pub struct ListApplicationInstancesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationInstancesInput {
+    /// <p>The application instances' device ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>Only include instances with a specific status.</p>
+    pub fn status_filter(&self) -> std::option::Option<&crate::model::StatusFilter> {
+        self.status_filter.as_ref()
+    }
+    /// <p>The maximum number of application instances to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationInstancesInput");
@@ -6389,6 +6559,20 @@ pub struct ListApplicationInstanceNodeInstancesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationInstanceNodeInstancesInput {
+    /// <p>The node instances' application instance ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+    /// <p>The maximum number of node instances to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationInstanceNodeInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationInstanceNodeInstancesInput");
@@ -6409,6 +6593,20 @@ pub struct ListApplicationInstanceDependenciesInput {
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationInstanceDependenciesInput {
+    /// <p>The application instance's ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+    /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationInstanceDependenciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6433,6 +6631,24 @@ pub struct DescribePackageVersionInput {
     /// <p>The version's patch version.</p>
     pub patch_version: std::option::Option<std::string::String>,
 }
+impl DescribePackageVersionInput {
+    /// <p>The version's owner account.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The version's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The version's version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The version's patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePackageVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageVersionInput");
@@ -6451,6 +6667,12 @@ pub struct DescribePackageImportJobInput {
     /// <p>The job's ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribePackageImportJobInput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePackageImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageImportJobInput");
@@ -6466,6 +6688,12 @@ pub struct DescribePackageInput {
     /// <p>The package's ID.</p>
     pub package_id: std::option::Option<std::string::String>,
 }
+impl DescribePackageInput {
+    /// <p>The package's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageInput");
@@ -6480,6 +6708,12 @@ impl std::fmt::Debug for DescribePackageInput {
 pub struct DescribeNodeFromTemplateJobInput {
     /// <p>The job's ID.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeNodeFromTemplateJobInput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNodeFromTemplateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6498,6 +6732,16 @@ pub struct DescribeNodeInput {
     /// <p>The account ID of the node's owner.</p>
     pub owner_account: std::option::Option<std::string::String>,
 }
+impl DescribeNodeInput {
+    /// <p>The node's ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>The account ID of the node's owner.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNodeInput");
@@ -6514,6 +6758,12 @@ pub struct DescribeDeviceJobInput {
     /// <p>The job's ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeDeviceJobInput {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeviceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceJobInput");
@@ -6528,6 +6778,12 @@ impl std::fmt::Debug for DescribeDeviceJobInput {
 pub struct DescribeDeviceInput {
     /// <p>The device's ID.</p>
     pub device_id: std::option::Option<std::string::String>,
+}
+impl DescribeDeviceInput {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6544,6 +6800,12 @@ pub struct DescribeApplicationInstanceDetailsInput {
     /// <p>The application instance's ID.</p>
     pub application_instance_id: std::option::Option<std::string::String>,
 }
+impl DescribeApplicationInstanceDetailsInput {
+    /// <p>The application instance's ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationInstanceDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationInstanceDetailsInput");
@@ -6558,6 +6820,12 @@ impl std::fmt::Debug for DescribeApplicationInstanceDetailsInput {
 pub struct DescribeApplicationInstanceInput {
     /// <p>The application instance's ID.</p>
     pub application_instance_id: std::option::Option<std::string::String>,
+}
+impl DescribeApplicationInstanceInput {
+    /// <p>The application instance's ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6581,6 +6849,28 @@ pub struct DeregisterPackageVersionInput {
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
     pub updated_latest_patch_version: std::option::Option<std::string::String>,
+}
+impl DeregisterPackageVersionInput {
+    /// <p>An owner account.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>A package ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>A package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>A patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+    /// <p>If the version was marked latest, the new version to maker as latest.</p>
+    pub fn updated_latest_patch_version(&self) -> std::option::Option<&str> {
+        self.updated_latest_patch_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterPackageVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6607,6 +6897,17 @@ pub struct DeletePackageInput {
     /// Deletes the package's artifacts from Amazon S3.</p>
     pub force_delete: std::option::Option<bool>,
 }
+impl DeletePackageInput {
+    /// <p>The package's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>Delete the package even if it has artifacts stored in its access point.
+    /// Deletes the package's artifacts from Amazon S3.</p>
+    pub fn force_delete(&self) -> std::option::Option<bool> {
+        self.force_delete
+    }
+}
 impl std::fmt::Debug for DeletePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePackageInput");
@@ -6622,6 +6923,12 @@ impl std::fmt::Debug for DeletePackageInput {
 pub struct DeleteDeviceInput {
     /// <p>The device's ID.</p>
     pub device_id: std::option::Option<std::string::String>,
+}
+impl DeleteDeviceInput {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6646,6 +6953,30 @@ pub struct CreatePackageImportJobInput {
     /// <p>Tags for the package import job.</p>
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
+impl CreatePackageImportJobInput {
+    /// <p>A job type for the package import job.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::PackageImportJobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>An input config for the package import job.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::PackageImportJobInputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>An output config for the package import job.</p>
+    pub fn output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageImportJobOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>A client token for the package import job.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Tags for the package import job.</p>
+    pub fn job_tags(&self) -> std::option::Option<&[crate::model::JobResourceTags]> {
+        self.job_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePackageImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePackageImportJobInput");
@@ -6667,6 +6998,19 @@ pub struct CreatePackageInput {
     /// <p>Tags for the package.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreatePackageInput {
+    /// <p>A name for the package.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>Tags for the package.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6697,6 +7041,39 @@ pub struct CreateNodeFromTemplateJobInput {
     /// <p>Tags for the job.</p>
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
+impl CreateNodeFromTemplateJobInput {
+    /// <p>The type of node.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>An output package name for the node.</p>
+    pub fn output_package_name(&self) -> std::option::Option<&str> {
+        self.output_package_name.as_deref()
+    }
+    /// <p>An output package version for the node.</p>
+    pub fn output_package_version(&self) -> std::option::Option<&str> {
+        self.output_package_version.as_deref()
+    }
+    /// <p>A name for the node.</p>
+    pub fn node_name(&self) -> std::option::Option<&str> {
+        self.node_name.as_deref()
+    }
+    /// <p>A description for the node.</p>
+    pub fn node_description(&self) -> std::option::Option<&str> {
+        self.node_description.as_deref()
+    }
+    /// <p>Template parameters for the node.</p>
+    pub fn template_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.template_parameters.as_ref()
+    }
+    /// <p>Tags for the job.</p>
+    pub fn job_tags(&self) -> std::option::Option<&[crate::model::JobResourceTags]> {
+        self.job_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateNodeFromTemplateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNodeFromTemplateJobInput");
@@ -6721,6 +7098,20 @@ pub struct CreateJobForDevicesInput {
     pub device_job_config: std::option::Option<crate::model::DeviceJobConfig>,
     /// <p>The type of job to run.</p>
     pub job_type: std::option::Option<crate::model::JobType>,
+}
+impl CreateJobForDevicesInput {
+    /// <p>IDs of target devices.</p>
+    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_ids.as_deref()
+    }
+    /// <p>Configuration settings for the job.</p>
+    pub fn device_job_config(&self) -> std::option::Option<&crate::model::DeviceJobConfig> {
+        self.device_job_config.as_ref()
+    }
+    /// <p>The type of job to run.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobForDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6753,6 +7144,45 @@ pub struct CreateApplicationInstanceInput {
     /// <p>Tags for the application instance.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateApplicationInstanceInput {
+    /// <p>A name for the application instance.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the application instance.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The application's manifest document.</p>
+    pub fn manifest_payload(&self) -> std::option::Option<&crate::model::ManifestPayload> {
+        self.manifest_payload.as_ref()
+    }
+    /// <p>Setting overrides for the application manifest.</p>
+    pub fn manifest_overrides_payload(
+        &self,
+    ) -> std::option::Option<&crate::model::ManifestOverridesPayload> {
+        self.manifest_overrides_payload.as_ref()
+    }
+    /// <p>The ID of an application instance to replace with the new instance.</p>
+    pub fn application_instance_id_to_replace(&self) -> std::option::Option<&str> {
+        self.application_instance_id_to_replace.as_deref()
+    }
+    /// <p>The ARN of a runtime role for the application instance.</p>
+    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+        self.runtime_role_arn.as_deref()
+    }
+    /// <p>A device's ID.</p>
+    pub fn default_runtime_context_device(&self) -> std::option::Option<&str> {
+        self.default_runtime_context_device.as_deref()
+    }
+    /// <p>Tags for the application instance.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

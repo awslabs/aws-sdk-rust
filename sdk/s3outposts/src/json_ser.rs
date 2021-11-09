@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEndpointInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.access_type {
         object.key("AccessType").string(var_1.as_str());
     }
@@ -18,4 +18,5 @@ pub fn serialize_structure_crate_input_create_endpoint_input(
     if let Some(var_5) = &input.subnet_id {
         object.key("SubnetId").string(var_5);
     }
+    Ok(())
 }

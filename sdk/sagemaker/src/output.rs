@@ -6,6 +6,12 @@ pub struct UpdateWorkteamOutput {
     /// <p>A <code>Workteam</code> object that describes the updated work team.</p>
     pub workteam: std::option::Option<crate::model::Workteam>,
 }
+impl UpdateWorkteamOutput {
+    /// <p>A <code>Workteam</code> object that describes the updated work team.</p>
+    pub fn workteam(&self) -> std::option::Option<&crate::model::Workteam> {
+        self.workteam.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkteamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkteamOutput");
@@ -55,6 +61,14 @@ pub struct UpdateWorkforceOutput {
     /// any workforce-related API operation used in a specific region will apply to the
     /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     pub workforce: std::option::Option<crate::model::Workforce>,
+}
+impl UpdateWorkforceOutput {
+    /// <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default,
+    /// any workforce-related API operation used in a specific region will apply to the
+    /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
+    pub fn workforce(&self) -> std::option::Option<&crate::model::Workforce> {
+        self.workforce.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateWorkforceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -111,6 +125,12 @@ pub struct UpdateUserProfileOutput {
     /// <p>The user profile Amazon Resource Name (ARN).</p>
     pub user_profile_arn: std::option::Option<std::string::String>,
 }
+impl UpdateUserProfileOutput {
+    /// <p>The user profile Amazon Resource Name (ARN).</p>
+    pub fn user_profile_arn(&self) -> std::option::Option<&str> {
+        self.user_profile_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserProfileOutput");
@@ -161,6 +181,12 @@ impl UpdateUserProfileOutput {
 pub struct UpdateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub trial_component_arn: std::option::Option<std::string::String>,
+}
+impl UpdateTrialComponentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+        self.trial_component_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTrialComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -213,6 +239,12 @@ pub struct UpdateTrialOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub trial_arn: std::option::Option<std::string::String>,
 }
+impl UpdateTrialOutput {
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn trial_arn(&self) -> std::option::Option<&str> {
+        self.trial_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTrialOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrialOutput");
@@ -260,6 +292,12 @@ impl UpdateTrialOutput {
 pub struct UpdateTrainingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     pub training_job_arn: std::option::Option<std::string::String>,
+}
+impl UpdateTrainingJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+        self.training_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTrainingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -312,6 +350,12 @@ pub struct UpdateProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub project_arn: std::option::Option<std::string::String>,
 }
+impl UpdateProjectOutput {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectOutput");
@@ -359,6 +403,12 @@ impl UpdateProjectOutput {
 pub struct UpdatePipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
+}
+impl UpdatePipelineExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -410,6 +460,12 @@ impl UpdatePipelineExecutionOutput {
 pub struct UpdatePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
     pub pipeline_arn: std::option::Option<std::string::String>,
+}
+impl UpdatePipelineOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -519,6 +575,12 @@ pub struct UpdateMonitoringScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub monitoring_schedule_arn: std::option::Option<std::string::String>,
 }
+impl UpdateMonitoringScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMonitoringScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMonitoringScheduleOutput");
@@ -569,6 +631,12 @@ impl UpdateMonitoringScheduleOutput {
 pub struct UpdateModelPackageOutput {
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub model_package_arn: std::option::Option<std::string::String>,
+}
+impl UpdateModelPackageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn model_package_arn(&self) -> std::option::Option<&str> {
+        self.model_package_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateModelPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -621,6 +689,12 @@ pub struct UpdateImageOutput {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
     pub image_arn: std::option::Option<std::string::String>,
 }
+impl UpdateImageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateImageOutput");
@@ -668,6 +742,12 @@ impl UpdateImageOutput {
 pub struct UpdateExperimentOutput {
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     pub experiment_arn: std::option::Option<std::string::String>,
+}
+impl UpdateExperimentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn experiment_arn(&self) -> std::option::Option<&str> {
+        self.experiment_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateExperimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -720,6 +800,12 @@ pub struct UpdateEndpointWeightsAndCapacitiesOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl UpdateEndpointWeightsAndCapacitiesOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEndpointWeightsAndCapacitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEndpointWeightsAndCapacitiesOutput");
@@ -768,6 +854,12 @@ pub struct UpdateEndpointOutput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl UpdateEndpointOutput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEndpointOutput");
@@ -815,6 +907,12 @@ impl UpdateEndpointOutput {
 pub struct UpdateDomainOutput {
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
     pub domain_arn: std::option::Option<std::string::String>,
+}
+impl UpdateDomainOutput {
+    /// <p>The Amazon Resource Name (ARN) of the domain.</p>
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
+        self.domain_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -924,6 +1022,12 @@ pub struct UpdateContextOutput {
     /// <p>The Amazon Resource Name (ARN) of the context.</p>
     pub context_arn: std::option::Option<std::string::String>,
 }
+impl UpdateContextOutput {
+    /// <p>The Amazon Resource Name (ARN) of the context.</p>
+    pub fn context_arn(&self) -> std::option::Option<&str> {
+        self.context_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateContextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContextOutput");
@@ -971,6 +1075,12 @@ impl UpdateContextOutput {
 pub struct UpdateCodeRepositoryOutput {
     /// <p>The ARN of the Git repository.</p>
     pub code_repository_arn: std::option::Option<std::string::String>,
+}
+impl UpdateCodeRepositoryOutput {
+    /// <p>The ARN of the Git repository.</p>
+    pub fn code_repository_arn(&self) -> std::option::Option<&str> {
+        self.code_repository_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCodeRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1023,6 +1133,12 @@ pub struct UpdateArtifactOutput {
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub artifact_arn: std::option::Option<std::string::String>,
 }
+impl UpdateArtifactOutput {
+    /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
+    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+        self.artifact_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateArtifactOutput");
@@ -1070,6 +1186,12 @@ impl UpdateArtifactOutput {
 pub struct UpdateAppImageConfigOutput {
     /// <p>The Amazon Resource Name (ARN) for the AppImageConfig.</p>
     pub app_image_config_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAppImageConfigOutput {
+    /// <p>The Amazon Resource Name (ARN) for the AppImageConfig.</p>
+    pub fn app_image_config_arn(&self) -> std::option::Option<&str> {
+        self.app_image_config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAppImageConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1121,6 +1243,12 @@ impl UpdateAppImageConfigOutput {
 pub struct UpdateActionOutput {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub action_arn: std::option::Option<std::string::String>,
+}
+impl UpdateActionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn action_arn(&self) -> std::option::Option<&str> {
+        self.action_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1259,6 +1387,12 @@ impl StopProcessingJobOutput {
 pub struct StopPipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
+}
+impl StopPipelineExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopPipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1521,6 +1655,12 @@ pub struct StartPipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
 }
+impl StartPipelineExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartPipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPipelineExecutionOutput");
@@ -1632,6 +1772,12 @@ pub struct SendPipelineExecutionStepSuccessOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
 }
+impl SendPipelineExecutionStepSuccessOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SendPipelineExecutionStepSuccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendPipelineExecutionStepSuccessOutput");
@@ -1682,6 +1828,12 @@ impl SendPipelineExecutionStepSuccessOutput {
 pub struct SendPipelineExecutionStepFailureOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
+}
+impl SendPipelineExecutionStepFailureOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SendPipelineExecutionStepFailureOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1737,6 +1889,18 @@ pub struct SearchOutput {
     /// includes a NextToken. To retrieve the next set of results, use the token in the next
     /// request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchOutput {
+    /// <p>A list of <code>SearchRecord</code> objects.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::SearchRecord]> {
+        self.results.as_deref()
+    }
+    /// <p>If the result of the previous <code>Search</code> request was truncated, the response
+    /// includes a NextToken. To retrieve the next set of results, use the token in the next
+    /// request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1812,6 +1976,12 @@ pub struct RetryPipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
 }
+impl RetryPipelineExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RetryPipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryPipelineExecutionOutput");
@@ -1865,6 +2035,17 @@ pub struct RenderUiTemplateOutput {
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered
     /// while rendering the template. If there were no errors, the list is empty.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::RenderingError>>,
+}
+impl RenderUiTemplateOutput {
+    /// <p>A Liquid template that renders the HTML for the worker UI.</p>
+    pub fn rendered_content(&self) -> std::option::Option<&str> {
+        self.rendered_content.as_deref()
+    }
+    /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered
+    /// while rendering the template. If there were no errors, the list is empty.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::RenderingError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for RenderUiTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1971,6 +2152,12 @@ pub struct PutModelPackageGroupPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the model package group.</p>
     pub model_package_group_arn: std::option::Option<std::string::String>,
 }
+impl PutModelPackageGroupPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model package group.</p>
+    pub fn model_package_group_arn(&self) -> std::option::Option<&str> {
+        self.model_package_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutModelPackageGroupPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutModelPackageGroupPolicyOutput");
@@ -2024,6 +2211,17 @@ pub struct ListWorkteamsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
     /// work teams, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListWorkteamsOutput {
+    /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
+    pub fn workteams(&self) -> std::option::Option<&[crate::model::Workteam]> {
+        self.workteams.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// work teams, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWorkteamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2099,6 +2297,16 @@ pub struct ListWorkforcesOutput {
     /// <p>A token to resume pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkforcesOutput {
+    /// <p>A list containing information about your workforce.</p>
+    pub fn workforces(&self) -> std::option::Option<&[crate::model::Workforce]> {
+        self.workforces.as_deref()
+    }
+    /// <p>A token to resume pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkforcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkforcesOutput");
@@ -2171,6 +2379,17 @@ pub struct ListUserProfilesOutput {
     /// <p>If the previous response was truncated, you will receive this token.
     /// Use it in your next request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUserProfilesOutput {
+    /// <p>The list of user profiles.</p>
+    pub fn user_profiles(&self) -> std::option::Option<&[crate::model::UserProfileDetails]> {
+        self.user_profiles.as_deref()
+    }
+    /// <p>If the previous response was truncated, you will receive this token.
+    /// Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUserProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2247,6 +2466,16 @@ pub struct ListTrialsOutput {
     /// <p>A token for getting the next set of trials, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTrialsOutput {
+    /// <p>A list of the summaries of your trials.</p>
+    pub fn trial_summaries(&self) -> std::option::Option<&[crate::model::TrialSummary]> {
+        self.trial_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of trials, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTrialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrialsOutput");
@@ -2319,6 +2548,18 @@ pub struct ListTrialComponentsOutput {
         std::option::Option<std::vec::Vec<crate::model::TrialComponentSummary>>,
     /// <p>A token for getting the next set of components, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTrialComponentsOutput {
+    /// <p>A list of the summaries of your trial components.</p>
+    pub fn trial_component_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrialComponentSummary]> {
+        self.trial_component_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of components, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTrialComponentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2399,6 +2640,21 @@ pub struct ListTransformJobsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
     /// transform jobs, use it in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTransformJobsOutput {
+    /// <p>An array of
+    /// <code>TransformJobSummary</code>
+    /// objects.</p>
+    pub fn transform_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransformJobSummary]> {
+        self.transform_job_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// transform jobs, use it in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTransformJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2487,6 +2743,23 @@ pub struct ListTrainingJobsForHyperParameterTuningJobOutput {
     /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
     /// of training jobs, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTrainingJobsForHyperParameterTuningJobOutput {
+    /// <p>A list of <a>TrainingJobSummary</a> objects that
+    /// describe
+    /// the training jobs that the
+    /// <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
+    pub fn training_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::HyperParameterTrainingJobSummary]> {
+        self.training_job_summaries.as_deref()
+    }
+    /// <p>If the result of this <code>ListTrainingJobsForHyperParameterTuningJob</code> request
+    /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
+    /// of training jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTrainingJobsForHyperParameterTuningJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2580,6 +2853,20 @@ pub struct ListTrainingJobsOutput {
     /// training jobs, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTrainingJobsOutput {
+    /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training
+    /// job.</p>
+    pub fn training_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrainingJobSummary]> {
+        self.training_job_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// training jobs, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTrainingJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrainingJobsOutput");
@@ -2661,6 +2948,17 @@ pub struct ListTagsOutput {
     /// token in your subsequent request to fetch next set of tokens. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsOutput {
+    /// <p>An array of <code>Tag</code> objects, each with a tag key and a value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p> If response is truncated, Amazon SageMaker includes a token in the response. You can use this
+    /// token in your subsequent request to fetch next set of tokens. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -2735,6 +3033,17 @@ pub struct ListSubscribedWorkteamsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
     /// work teams, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSubscribedWorkteamsOutput {
+    /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
+    pub fn subscribed_workteams(&self) -> std::option::Option<&[crate::model::SubscribedWorkteam]> {
+        self.subscribed_workteams.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// work teams, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSubscribedWorkteamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2815,6 +3124,18 @@ pub struct ListStudioLifecycleConfigsOutput {
     pub studio_lifecycle_configs:
         std::option::Option<std::vec::Vec<crate::model::StudioLifecycleConfigDetails>>,
 }
+impl ListStudioLifecycleConfigsOutput {
+    /// <p>A token for getting the next set of actions, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of Lifecycle Configurations and their properties.</p>
+    pub fn studio_lifecycle_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::StudioLifecycleConfigDetails]> {
+        self.studio_lifecycle_configs.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStudioLifecycleConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStudioLifecycleConfigsOutput");
@@ -2892,6 +3213,18 @@ pub struct ListProjectsOutput {
     /// the response includes a <code>NextToken</code>. To retrieve the next set of model
     /// compilation jobs, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProjectsOutput {
+    /// <p>A list of summaries of projects.</p>
+    pub fn project_summary_list(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
+        self.project_summary_list.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of model
+    /// compilation jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2976,6 +3309,20 @@ pub struct ListProcessingJobsOutput {
     /// processing jobs, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProcessingJobsOutput {
+    /// <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing
+    /// job.</p>
+    pub fn processing_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProcessingJobSummary]> {
+        self.processing_job_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// processing jobs, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProcessingJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProcessingJobsOutput");
@@ -3059,6 +3406,20 @@ pub struct ListPipelinesOutput {
     /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
     /// the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPipelinesOutput {
+    /// <p>Contains a sorted list of <code>PipelineSummary</code> objects matching the specified
+    /// filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName,
+    /// ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and
+    /// RoleArn. This list can be empty. </p>
+    pub fn pipeline_summaries(&self) -> std::option::Option<&[crate::model::PipelineSummary]> {
+        self.pipeline_summaries.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3145,6 +3506,17 @@ pub struct ListPipelineParametersForExecutionOutput {
     /// the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPipelineParametersForExecutionOutput {
+    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    pub fn pipeline_parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.pipeline_parameters.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPipelineParametersForExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipelineParametersForExecutionOutput");
@@ -3223,6 +3595,22 @@ pub struct ListPipelineExecutionStepsOutput {
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
     /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPipelineExecutionStepsOutput {
+    /// <p>A list of <code>PipeLineExecutionStep</code> objects. Each
+    /// <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus,
+    /// and Metadata. Metadata is an object with properties for each job that contains relevant
+    /// information about the job created by the step.</p>
+    pub fn pipeline_execution_steps(
+        &self,
+    ) -> std::option::Option<&[crate::model::PipelineExecutionStep]> {
+        self.pipeline_execution_steps.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPipelineExecutionStepsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3311,6 +3699,21 @@ pub struct ListPipelineExecutionsOutput {
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
     /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPipelineExecutionsOutput {
+    /// <p>Contains a sorted list of pipeline execution summary objects matching the specified
+    /// filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date,
+    /// and the status. This list can be empty. </p>
+    pub fn pipeline_execution_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::PipelineExecutionSummary]> {
+        self.pipeline_execution_summaries.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPipelineExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3401,6 +3804,21 @@ pub struct ListNotebookInstancesOutput {
     pub notebook_instances:
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceSummary>>,
 }
+impl ListNotebookInstancesOutput {
+    /// <p>If the response to the previous <code>ListNotebookInstances</code> request was
+    /// truncated, Amazon SageMaker returns this token. To retrieve the next set of notebook instances, use
+    /// the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook
+    /// instance.</p>
+    pub fn notebook_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotebookInstanceSummary]> {
+        self.notebook_instances.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNotebookInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNotebookInstancesOutput");
@@ -3485,6 +3903,20 @@ pub struct ListNotebookInstanceLifecycleConfigsOutput {
     /// a lifecycle configuration.</p>
     pub notebook_instance_lifecycle_configs:
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleConfigSummary>>,
+}
+impl ListNotebookInstanceLifecycleConfigsOutput {
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To get the next set of
+    /// lifecycle configurations, use it in the next request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing
+    /// a lifecycle configuration.</p>
+    pub fn notebook_instance_lifecycle_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotebookInstanceLifecycleConfigSummary]> {
+        self.notebook_instance_lifecycle_configs.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNotebookInstanceLifecycleConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3574,6 +4006,19 @@ pub struct ListMonitoringSchedulesOutput {
     /// use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMonitoringSchedulesOutput {
+    /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
+    pub fn monitoring_schedule_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringScheduleSummary]> {
+        self.monitoring_schedule_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs,
+    /// use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMonitoringSchedulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMonitoringSchedulesOutput");
@@ -3656,6 +4101,19 @@ pub struct ListMonitoringExecutionsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs,
     /// use it in the subsequent reques</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMonitoringExecutionsOutput {
+    /// <p>A JSON array in which each element is a summary for a monitoring execution.</p>
+    pub fn monitoring_execution_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringExecutionSummary]> {
+        self.monitoring_execution_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs,
+    /// use it in the subsequent reques</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMonitoringExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3740,6 +4198,18 @@ pub struct ListModelsOutput {
     /// models, use it in the subsequent request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListModelsOutput {
+    /// <p>An array of <code>ModelSummary</code> objects, each of which lists a
+    /// model.</p>
+    pub fn models(&self) -> std::option::Option<&[crate::model::ModelSummary]> {
+        self.models.as_deref()
+    }
+    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// models, use it in the subsequent request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelsOutput");
@@ -3817,6 +4287,19 @@ pub struct ListModelQualityJobDefinitionsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model
     /// quality monitoring job definitions, use it in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelQualityJobDefinitionsOutput {
+    /// <p>A list of summaries of model quality monitoring job definitions.</p>
+    pub fn job_definition_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringJobDefinitionSummary]> {
+        self.job_definition_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model
+    /// quality monitoring job definitions, use it in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListModelQualityJobDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3898,6 +4381,20 @@ pub struct ListModelPackagesOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
     /// model packages, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelPackagesOutput {
+    /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model
+    /// package.</p>
+    pub fn model_package_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelPackageSummary]> {
+        self.model_package_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// model packages, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListModelPackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3984,6 +4481,19 @@ pub struct ListModelPackageGroupsOutput {
     /// of model groups, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListModelPackageGroupsOutput {
+    /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
+    pub fn model_package_group_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelPackageGroupSummary]> {
+        self.model_package_group_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set
+    /// of model groups, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListModelPackageGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelPackageGroupsOutput");
@@ -4067,6 +4577,19 @@ pub struct ListModelExplainabilityJobDefinitionsOutput {
     /// use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListModelExplainabilityJobDefinitionsOutput {
+    /// <p>A JSON array in which each element is a summary for a explainability bias jobs.</p>
+    pub fn job_definition_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringJobDefinitionSummary]> {
+        self.job_definition_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs,
+    /// use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListModelExplainabilityJobDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelExplainabilityJobDefinitionsOutput");
@@ -4146,6 +4669,19 @@ pub struct ListModelBiasJobDefinitionsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs,
     /// use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelBiasJobDefinitionsOutput {
+    /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
+    pub fn job_definition_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringJobDefinitionSummary]> {
+        self.job_definition_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs,
+    /// use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListModelBiasJobDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4227,6 +4763,20 @@ pub struct ListLabelingJobsForWorkteamOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
     /// labeling jobs, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLabelingJobsForWorkteamOutput {
+    /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling
+    /// job.</p>
+    pub fn labeling_job_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::LabelingJobForWorkteamSummary]> {
+        self.labeling_job_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// labeling jobs, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLabelingJobsForWorkteamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4311,6 +4861,20 @@ pub struct ListLabelingJobsOutput {
     /// labeling jobs, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLabelingJobsOutput {
+    /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling
+    /// job.</p>
+    pub fn labeling_job_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::LabelingJobSummary]> {
+        self.labeling_job_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// labeling jobs, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLabelingJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLabelingJobsOutput");
@@ -4391,6 +4955,16 @@ pub struct ListImageVersionsOutput {
     /// <p>A token for getting the next set of versions, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImageVersionsOutput {
+    /// <p>A list of versions and their properties.</p>
+    pub fn image_versions(&self) -> std::option::Option<&[crate::model::ImageVersion]> {
+        self.image_versions.as_deref()
+    }
+    /// <p>A token for getting the next set of versions, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImageVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImageVersionsOutput");
@@ -4462,6 +5036,16 @@ pub struct ListImagesOutput {
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
     /// <p>A token for getting the next set of images, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImagesOutput {
+    /// <p>A list of images and their properties.</p>
+    pub fn images(&self) -> std::option::Option<&[crate::model::Image]> {
+        self.images.as_deref()
+    }
+    /// <p>A token for getting the next set of images, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4540,6 +5124,23 @@ pub struct ListHyperParameterTuningJobsOutput {
     /// the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs,
     /// use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHyperParameterTuningJobsOutput {
+    /// <p>A list of <a>HyperParameterTuningJobSummary</a> objects that
+    /// describe
+    /// the tuning jobs that the <code>ListHyperParameterTuningJobs</code>
+    /// request returned.</p>
+    pub fn hyper_parameter_tuning_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::HyperParameterTuningJobSummary]> {
+        self.hyper_parameter_tuning_job_summaries.as_deref()
+    }
+    /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs,
+    /// use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHyperParameterTuningJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4633,6 +5234,18 @@ pub struct ListHumanTaskUisOutput {
     /// <p>A token to resume pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHumanTaskUisOutput {
+    /// <p>An array of objects describing the human task user interfaces.</p>
+    pub fn human_task_ui_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::HumanTaskUiSummary]> {
+        self.human_task_ui_summaries.as_deref()
+    }
+    /// <p>A token to resume pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHumanTaskUisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHumanTaskUisOutput");
@@ -4709,6 +5322,18 @@ pub struct ListFlowDefinitionsOutput {
         std::option::Option<std::vec::Vec<crate::model::FlowDefinitionSummary>>,
     /// <p>A token to resume pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFlowDefinitionsOutput {
+    /// <p>An array of objects describing the flow definitions.</p>
+    pub fn flow_definition_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::FlowDefinitionSummary]> {
+        self.flow_definition_summaries.as_deref()
+    }
+    /// <p>A token to resume pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFlowDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4787,6 +5412,18 @@ pub struct ListFeatureGroupsOutput {
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFeatureGroupsOutput {
+    /// <p>A summary of feature groups.</p>
+    pub fn feature_group_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::FeatureGroupSummary]> {
+        self.feature_group_summaries.as_deref()
+    }
+    /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFeatureGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFeatureGroupsOutput");
@@ -4862,6 +5499,16 @@ pub struct ListExperimentsOutput {
     pub experiment_summaries: std::option::Option<std::vec::Vec<crate::model::ExperimentSummary>>,
     /// <p>A token for getting the next set of experiments, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExperimentsOutput {
+    /// <p>A list of the summaries of your experiments.</p>
+    pub fn experiment_summaries(&self) -> std::option::Option<&[crate::model::ExperimentSummary]> {
+        self.experiment_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of experiments, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExperimentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4940,6 +5587,17 @@ pub struct ListEndpointsOutput {
     /// training jobs, use it in the subsequent request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEndpointsOutput {
+    /// <p> An array or endpoint objects. </p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::EndpointSummary]> {
+        self.endpoints.as_deref()
+    }
+    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// training jobs, use it in the subsequent request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointsOutput");
@@ -5014,6 +5672,17 @@ pub struct ListEndpointConfigsOutput {
     /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
     /// endpoint configurations, use it in the subsequent request </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEndpointConfigsOutput {
+    /// <p>An array of endpoint configurations.</p>
+    pub fn endpoint_configs(&self) -> std::option::Option<&[crate::model::EndpointConfigSummary]> {
+        self.endpoint_configs.as_deref()
+    }
+    /// <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// endpoint configurations, use it in the subsequent request </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEndpointConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5093,6 +5762,18 @@ pub struct ListEdgePackagingJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::EdgePackagingJobSummary>>,
     /// <p>Token to use when calling the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEdgePackagingJobsOutput {
+    /// <p>Summaries of edge packaging jobs.</p>
+    pub fn edge_packaging_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::EdgePackagingJobSummary]> {
+        self.edge_packaging_job_summaries.as_deref()
+    }
+    /// <p>Token to use when calling the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEdgePackagingJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5174,6 +5855,17 @@ pub struct ListDomainsOutput {
     /// Use it in your next request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsOutput {
+    /// <p>The list of domains.</p>
+    pub fn domains(&self) -> std::option::Option<&[crate::model::DomainDetails]> {
+        self.domains.as_deref()
+    }
+    /// <p>If the previous response was truncated, you will receive this token.
+    /// Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsOutput");
@@ -5248,6 +5940,16 @@ pub struct ListDevicesOutput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDevicesOutput {
+    /// <p>Summary of devices.</p>
+    pub fn device_summaries(&self) -> std::option::Option<&[crate::model::DeviceSummary]> {
+        self.device_summaries.as_deref()
+    }
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesOutput");
@@ -5321,6 +6023,18 @@ pub struct ListDeviceFleetsOutput {
         std::option::Option<std::vec::Vec<crate::model::DeviceFleetSummary>>,
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeviceFleetsOutput {
+    /// <p>Summary of the device fleet.</p>
+    pub fn device_fleet_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeviceFleetSummary]> {
+        self.device_fleet_summaries.as_deref()
+    }
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeviceFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5400,6 +6114,20 @@ pub struct ListDataQualityJobDefinitionsOutput {
     /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data
     /// quality monitoring job definitions, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDataQualityJobDefinitionsOutput {
+    /// <p>A list of data quality monitoring job definitions.</p>
+    pub fn job_definition_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoringJobDefinitionSummary]> {
+        self.job_definition_summaries.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data
+    /// quality monitoring job definitions, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDataQualityJobDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5481,6 +6209,16 @@ pub struct ListContextsOutput {
     /// <p>A token for getting the next set of contexts, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListContextsOutput {
+    /// <p>A list of contexts and their properties.</p>
+    pub fn context_summaries(&self) -> std::option::Option<&[crate::model::ContextSummary]> {
+        self.context_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of contexts, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListContextsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContextsOutput");
@@ -5556,6 +6294,20 @@ pub struct ListCompilationJobsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve
     /// the next set of model compilation jobs, use this token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCompilationJobsOutput {
+    /// <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
+    /// compilation job. </p>
+    pub fn compilation_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::CompilationJobSummary]> {
+        self.compilation_job_summaries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve
+    /// the next set of model compilation jobs, use this token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCompilationJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5659,6 +6411,40 @@ pub struct ListCodeRepositoriesOutput {
     /// response includes a <code>NextToken</code>. To get the next set of Git repositories, use
     /// the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCodeRepositoriesOutput {
+    /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following
+    /// values for the repository: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Name</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN)</p>
+    /// </li>
+    /// <li>
+    /// <p>Creation time</p>
+    /// </li>
+    /// <li>
+    /// <p>Last modified time</p>
+    /// </li>
+    /// <li>
+    /// <p>Configuration information, including the URL location of the repository and
+    /// the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used
+    /// to access the repository.</p>
+    /// </li>
+    /// </ul>
+    pub fn code_repository_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::CodeRepositorySummary]> {
+        self.code_repository_summary_list.as_deref()
+    }
+    /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the
+    /// response includes a <code>NextToken</code>. To get the next set of Git repositories, use
+    /// the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCodeRepositoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5784,6 +6570,17 @@ pub struct ListCandidatesForAutoMlJobOutput {
     /// request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCandidatesForAutoMlJobOutput {
+    /// <p>Summaries about the <code>AutoMLCandidates</code>.</p>
+    pub fn candidates(&self) -> std::option::Option<&[crate::model::AutoMlCandidate]> {
+        self.candidates.as_deref()
+    }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next
+    /// request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCandidatesForAutoMlJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCandidatesForAutoMlJobOutput");
@@ -5858,6 +6655,17 @@ pub struct ListAutoMlJobsOutput {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next
     /// request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAutoMlJobsOutput {
+    /// <p>Returns a summary list of jobs.</p>
+    pub fn auto_ml_job_summaries(&self) -> std::option::Option<&[crate::model::AutoMlJobSummary]> {
+        self.auto_ml_job_summaries.as_deref()
+    }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next
+    /// request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAutoMlJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5937,6 +6745,18 @@ pub struct ListAssociationsOutput {
     /// <p>A token for getting the next set of associations, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociationsOutput {
+    /// <p>A list of associations and their properties.</p>
+    pub fn association_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociationSummary]> {
+        self.association_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of associations, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociationsOutput");
@@ -6012,6 +6832,16 @@ pub struct ListArtifactsOutput {
     pub artifact_summaries: std::option::Option<std::vec::Vec<crate::model::ArtifactSummary>>,
     /// <p>A token for getting the next set of artifacts, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListArtifactsOutput {
+    /// <p>A list of artifacts and their properties.</p>
+    pub fn artifact_summaries(&self) -> std::option::Option<&[crate::model::ArtifactSummary]> {
+        self.artifact_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of artifacts, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListArtifactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6090,6 +6920,17 @@ pub struct ListAppsOutput {
     /// Use it in your next request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppsOutput {
+    /// <p>The list of apps.</p>
+    pub fn apps(&self) -> std::option::Option<&[crate::model::AppDetails]> {
+        self.apps.as_deref()
+    }
+    /// <p>If the previous response was truncated, you will receive this token.
+    /// Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppsOutput");
@@ -6163,6 +7004,16 @@ pub struct ListAppImageConfigsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of AppImageConfigs and their properties.</p>
     pub app_image_configs: std::option::Option<std::vec::Vec<crate::model::AppImageConfigDetails>>,
+}
+impl ListAppImageConfigsOutput {
+    /// <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of AppImageConfigs and their properties.</p>
+    pub fn app_image_configs(&self) -> std::option::Option<&[crate::model::AppImageConfigDetails]> {
+        self.app_image_configs.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppImageConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6241,6 +7092,18 @@ pub struct ListAlgorithmsOutput {
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
     /// algorithms, use it in the subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAlgorithmsOutput {
+    /// <p>>An array of <code>AlgorithmSummary</code> objects, each of which lists an
+    /// algorithm.</p>
+    pub fn algorithm_summary_list(&self) -> std::option::Option<&[crate::model::AlgorithmSummary]> {
+        self.algorithm_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of
+    /// algorithms, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAlgorithmsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6322,6 +7185,16 @@ pub struct ListActionsOutput {
     /// <p>A token for getting the next set of actions, if there are any.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListActionsOutput {
+    /// <p>A list of actions and their properties.</p>
+    pub fn action_summaries(&self) -> std::option::Option<&[crate::model::ActionSummary]> {
+        self.action_summaries.as_deref()
+    }
+    /// <p>A token for getting the next set of actions, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActionsOutput");
@@ -6395,6 +7268,15 @@ pub struct GetSearchSuggestionsOutput {
     pub property_name_suggestions:
         std::option::Option<std::vec::Vec<crate::model::PropertyNameSuggestion>>,
 }
+impl GetSearchSuggestionsOutput {
+    /// <p>A list of property names for a <code>Resource</code> that match a
+    /// <code>SuggestionQuery</code>.</p>
+    pub fn property_name_suggestions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PropertyNameSuggestion]> {
+        self.property_name_suggestions.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSearchSuggestionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSearchSuggestionsOutput");
@@ -6458,6 +7340,12 @@ pub struct GetSagemakerServicecatalogPortfolioStatusOutput {
     /// <p>Whether Service Catalog is enabled or disabled in SageMaker.</p>
     pub status: std::option::Option<crate::model::SagemakerServicecatalogStatus>,
 }
+impl GetSagemakerServicecatalogPortfolioStatusOutput {
+    /// <p>Whether Service Catalog is enabled or disabled in SageMaker.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SagemakerServicecatalogStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSagemakerServicecatalogPortfolioStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSagemakerServicecatalogPortfolioStatusOutput");
@@ -6509,6 +7397,12 @@ impl GetSagemakerServicecatalogPortfolioStatusOutput {
 pub struct GetModelPackageGroupPolicyOutput {
     /// <p>The resource policy for the model group.</p>
     pub resource_policy: std::option::Option<std::string::String>,
+}
+impl GetModelPackageGroupPolicyOutput {
+    /// <p>The resource policy for the model group.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelPackageGroupPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6574,6 +7468,40 @@ pub struct GetDeviceFleetReportOutput {
     pub agent_versions: std::option::Option<std::vec::Vec<crate::model::AgentVersion>>,
     /// <p>Status of model on device.</p>
     pub model_stats: std::option::Option<std::vec::Vec<crate::model::EdgeModelStat>>,
+}
+impl GetDeviceFleetReportOutput {
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn device_fleet_arn(&self) -> std::option::Option<&str> {
+        self.device_fleet_arn.as_deref()
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The output configuration for storing sample data collected by the fleet.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::EdgeOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>Description of the fleet.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Timestamp of when the report was generated.</p>
+    pub fn report_generated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.report_generated.as_ref()
+    }
+    /// <p>Status of devices.</p>
+    pub fn device_stats(&self) -> std::option::Option<&crate::model::DeviceStats> {
+        self.device_stats.as_ref()
+    }
+    /// <p>The versions of Edge Manager agent deployed on the fleet.</p>
+    pub fn agent_versions(&self) -> std::option::Option<&[crate::model::AgentVersion]> {
+        self.agent_versions.as_deref()
+    }
+    /// <p>Status of model on device.</p>
+    pub fn model_stats(&self) -> std::option::Option<&[crate::model::EdgeModelStat]> {
+        self.model_stats.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceFleetReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6779,6 +7707,16 @@ pub struct DisassociateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub trial_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateTrialComponentOutput {
+    /// <p>The ARN of the trial component.</p>
+    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+        self.trial_component_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn trial_arn(&self) -> std::option::Option<&str> {
+        self.trial_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateTrialComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateTrialComponentOutput");
@@ -6874,6 +7812,13 @@ pub struct DescribeWorkteamOutput {
     /// </p>
     pub workteam: std::option::Option<crate::model::Workteam>,
 }
+impl DescribeWorkteamOutput {
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.
+    /// </p>
+    pub fn workteam(&self) -> std::option::Option<&crate::model::Workteam> {
+        self.workteam.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkteamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkteamOutput");
@@ -6926,6 +7871,15 @@ pub struct DescribeWorkforceOutput {
     /// any workforce-related API operation used in a specific region will apply to the
     /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     pub workforce: std::option::Option<crate::model::Workforce>,
+}
+impl DescribeWorkforceOutput {
+    /// <p>A single private workforce, which is automatically created when you create your first
+    /// private work team. You can create one private work force in each Amazon Web Services Region. By default,
+    /// any workforce-related API operation used in a specific region will apply to the
+    /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
+    pub fn workforce(&self) -> std::option::Option<&crate::model::Workforce> {
+        self.workforce.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkforceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7003,6 +7957,52 @@ pub struct DescribeUserProfileOutput {
     pub single_sign_on_user_value: std::option::Option<std::string::String>,
     /// <p>A collection of settings.</p>
     pub user_settings: std::option::Option<crate::model::UserSettings>,
+}
+impl DescribeUserProfileOutput {
+    /// <p>The ID of the domain that contains the profile.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile Amazon Resource Name (ARN).</p>
+    pub fn user_profile_arn(&self) -> std::option::Option<&str> {
+        self.user_profile_arn.as_deref()
+    }
+    /// <p>The user profile name.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
+    pub fn home_efs_file_system_uid(&self) -> std::option::Option<&str> {
+        self.home_efs_file_system_uid.as_deref()
+    }
+    /// <p>The status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::UserProfileStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The last modified time.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The creation time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The failure reason.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The SSO user identifier.</p>
+    pub fn single_sign_on_user_identifier(&self) -> std::option::Option<&str> {
+        self.single_sign_on_user_identifier.as_deref()
+    }
+    /// <p>The SSO user value.</p>
+    pub fn single_sign_on_user_value(&self) -> std::option::Option<&str> {
+        self.single_sign_on_user_value.as_deref()
+    }
+    /// <p>A collection of settings.</p>
+    pub fn user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.user_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7265,6 +8265,96 @@ pub struct DescribeTrialComponentOutput {
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>The metrics for the component.</p>
     pub metrics: std::option::Option<std::vec::Vec<crate::model::TrialComponentMetricSummary>>,
+}
+impl DescribeTrialComponentOutput {
+    /// <p>The name of the trial component.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+        self.trial_component_arn.as_deref()
+    }
+    /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified,
+    /// <code>TrialComponentName</code> is displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the job type.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::TrialComponentSource> {
+        self.source.as_ref()
+    }
+    /// <p>The status of the component. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>InProgress</p>
+    /// </li>
+    /// <li>
+    /// <p>Completed</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::TrialComponentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>When the component started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>When the component ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>When the component was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Who created the trial component.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>When the component was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Who last modified the component.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+    /// <p>The hyperparameters of the component.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentParameterValue>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The input artifacts of the component.</p>
+    pub fn input_artifacts(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
+    > {
+        self.input_artifacts.as_ref()
+    }
+    /// <p>The output artifacts of the component.</p>
+    pub fn output_artifacts(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
+    > {
+        self.output_artifacts.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+    /// <p>The metrics for the component.</p>
+    pub fn metrics(&self) -> std::option::Option<&[crate::model::TrialComponentMetricSummary]> {
+        self.metrics.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrialComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7661,6 +8751,49 @@ pub struct DescribeTrialOutput {
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
 }
+impl DescribeTrialOutput {
+    /// <p>The name of the trial.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn trial_arn(&self) -> std::option::Option<&str> {
+        self.trial_arn.as_deref()
+    }
+    /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified,
+    /// <code>TrialName</code> is displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The name of the experiment the trial is part of.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the job type.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::TrialSource> {
+        self.source.as_ref()
+    }
+    /// <p>When the trial was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Who created the trial.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>When the trial was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Who last modified the trial.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeTrialOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrialOutput");
@@ -7945,6 +9078,152 @@ pub struct DescribeTransformJobOutput {
     /// </li>
     /// </ul>
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
+}
+impl DescribeTransformJobOutput {
+    /// <p>The name of the transform job.</p>
+    pub fn transform_job_name(&self) -> std::option::Option<&str> {
+        self.transform_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
+    pub fn transform_job_arn(&self) -> std::option::Option<&str> {
+        self.transform_job_arn.as_deref()
+    }
+    /// <p>The
+    /// status of the transform job. If the transform job failed, the reason
+    /// is returned in the <code>FailureReason</code> field.</p>
+    pub fn transform_job_status(&self) -> std::option::Option<&crate::model::TransformJobStatus> {
+        self.transform_job_status.as_ref()
+    }
+    /// <p>If the transform job failed, <code>FailureReason</code> describes
+    /// why
+    /// it failed. A transform job creates a log file, which includes error
+    /// messages, and stores it
+    /// as
+    /// an Amazon S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+    /// Amazon CloudWatch</a>.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The name of the model used in the transform job.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The
+    /// maximum number
+    /// of
+    /// parallel requests on each instance node
+    /// that can be launched in a transform job. The default value is 1.</p>
+    pub fn max_concurrent_transforms(&self) -> std::option::Option<i32> {
+        self.max_concurrent_transforms
+    }
+    /// <p>The timeout and maximum number of retries for processing a transform job
+    /// invocation.</p>
+    pub fn model_client_config(&self) -> std::option::Option<&crate::model::ModelClientConfig> {
+        self.model_client_config.as_ref()
+    }
+    /// <p>The
+    /// maximum
+    /// payload size, in MB, used in the
+    /// transform job.</p>
+    pub fn max_payload_in_mb(&self) -> std::option::Option<i32> {
+        self.max_payload_in_mb
+    }
+    /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference
+    /// request.
+    /// A <i>record</i>
+    /// <i></i> is a single unit of input data that inference
+    /// can be made on. For example, a single line in a CSV file is a record. </p>
+    /// <p>To enable the batch strategy, you must set <code>SplitType</code>
+    /// to
+    /// <code>Line</code>, <code>RecordIO</code>, or
+    /// <code>TFRecord</code>.</p>
+    pub fn batch_strategy(&self) -> std::option::Option<&crate::model::BatchStrategy> {
+        self.batch_strategy.as_ref()
+    }
+    /// <p>The
+    /// environment variables to set in the Docker container. We support up to 16 key and values
+    /// entries in the map.</p>
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment.as_ref()
+    }
+    /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is
+    /// stored.</p>
+    pub fn transform_input(&self) -> std::option::Option<&crate::model::TransformInput> {
+        self.transform_input.as_ref()
+    }
+    /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the
+    /// transform job.</p>
+    pub fn transform_output(&self) -> std::option::Option<&crate::model::TransformOutput> {
+        self.transform_output.as_ref()
+    }
+    /// <p>Describes
+    /// the resources, including ML instance types and ML instance count, to
+    /// use for the transform job.</p>
+    pub fn transform_resources(&self) -> std::option::Option<&crate::model::TransformResources> {
+        self.transform_resources.as_ref()
+    }
+    /// <p>A timestamp that shows when the transform Job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Indicates when the transform job starts
+    /// on
+    /// ML instances. You are billed for the time interval between this time
+    /// and the value of <code>TransformEndTime</code>.</p>
+    pub fn transform_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.transform_start_time.as_ref()
+    }
+    /// <p>Indicates when the transform job has been
+    ///
+    /// completed, or has stopped or failed. You are billed for the time
+    /// interval between this time and the value of <code>TransformStartTime</code>.</p>
+    pub fn transform_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.transform_end_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+    /// transform or training job.</p>
+    pub fn labeling_job_arn(&self) -> std::option::Option<&str> {
+        self.labeling_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
+    pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_arn.as_deref()
+    }
+    /// <p>The data structure used to specify the data to be used for inference in a batch
+    /// transform job and to associate the data that is relevant to the prediction results in
+    /// the output. The input filter provided allows you to exclude input data that is not
+    /// needed for inference in a batch transform job. The output filter provided allows you to
+    /// include input data relevant to interpreting the predictions in the output from the job.
+    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
+    /// Results with their Corresponding Input Records</a>.</p>
+    pub fn data_processing(&self) -> std::option::Option<&crate::model::DataProcessing> {
+        self.data_processing.as_ref()
+    }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
+    /// you call the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>CreateProcessingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTrainingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTransformJob</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
+        self.experiment_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTransformJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8714,6 +9993,390 @@ pub struct DescribeTrainingJobOutput {
     /// <p>The environment variables to set in the Docker container.</p>
     pub environment:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeTrainingJobOutput {
+    /// <p> Name of the model training job. </p>
+    pub fn training_job_name(&self) -> std::option::Option<&str> {
+        self.training_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+        self.training_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the
+    /// training job was launched by a hyperparameter tuning job.</p>
+    pub fn tuning_job_arn(&self) -> std::option::Option<&str> {
+        self.tuning_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+    /// transform or training job.</p>
+    pub fn labeling_job_arn(&self) -> std::option::Option<&str> {
+        self.labeling_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
+    pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_arn.as_deref()
+    }
+    /// <p>Information about the Amazon S3 location that is configured for storing model artifacts.
+    /// </p>
+    pub fn model_artifacts(&self) -> std::option::Option<&crate::model::ModelArtifacts> {
+        self.model_artifacts.as_ref()
+    }
+    /// <p>The status of the
+    /// training
+    /// job.</p>
+    /// <p>Amazon SageMaker provides the following training job statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>InProgress</code> - The training is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Completed</code> - The training job has completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code> - The training job has failed. To see the reason for the
+    /// failure, see the <code>FailureReason</code> field in the response to a
+    /// <code>DescribeTrainingJobResponse</code> call.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stopping</code> - The training job is stopping.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stopped</code> - The training job has stopped.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For
+    /// more detailed information, see <code>SecondaryStatus</code>. </p>
+    pub fn training_job_status(&self) -> std::option::Option<&crate::model::TrainingJobStatus> {
+        self.training_job_status.as_ref()
+    }
+    /// <p> Provides detailed information about the state of the training job. For detailed
+    /// information on the secondary status of the training job, see <code>StatusMessage</code>
+    /// under <a>SecondaryStatusTransition</a>.</p>
+    /// <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of
+    /// them:</p>
+    /// <dl>
+    /// <dt>InProgress</dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Starting</code>
+    /// - Starting the training job.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Downloading</code> - An optional stage for algorithms that
+    /// support <code>File</code> training input mode. It indicates that
+    /// data is being downloaded to the ML storage volumes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Training</code> - Training is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Interrupted</code> - The job stopped because the managed
+    /// spot training instances were interrupted. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Uploading</code> - Training is complete and the model
+    /// artifacts are being uploaded to the S3 location.</p>
+    /// </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>Completed</dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Completed</code> - The training job has completed.</p>
+    /// </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>Failed</dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code> - The training job has failed. The reason for
+    /// the failure is returned in the <code>FailureReason</code> field of
+    /// <code>DescribeTrainingJobResponse</code>.</p>
+    /// </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>Stopped</dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MaxRuntimeExceeded</code> - The job stopped because it
+    /// exceeded the maximum allowed runtime.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MaxWaitTimeExceeded</code> - The job stopped because it
+    /// exceeded the maximum allowed wait time.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Stopped</code> - The training job has stopped.</p>
+    /// </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>Stopping</dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Stopping</code> - Stopping the training job.</p>
+    /// </li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    ///
+    /// <important>
+    /// <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>
+    /// </important>
+    /// <p>We no longer support the following secondary statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LaunchingMLInstances</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PreparingTraining</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DownloadingTrainingImage</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn secondary_status(&self) -> std::option::Option<&crate::model::SecondaryStatus> {
+        self.secondary_status.as_ref()
+    }
+    /// <p>If the training job failed, the reason it failed. </p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Algorithm-specific parameters. </p>
+    pub fn hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.hyper_parameters.as_ref()
+    }
+    /// <p>Information about the algorithm used for training, and algorithm metadata.
+    /// </p>
+    pub fn algorithm_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::AlgorithmSpecification> {
+        self.algorithm_specification.as_ref()
+    }
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An array of <code>Channel</code> objects that describes each data input channel.
+    /// </p>
+    pub fn input_data_config(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.input_data_config.as_deref()
+    }
+    /// <p>The S3 path where model artifacts that you configured when creating the job are
+    /// stored. Amazon SageMaker creates subfolders for model artifacts. </p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>Resources, including ML compute instances and ML storage volumes, that are
+    /// configured for model training. </p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+    /// access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+    /// Virtual Private Cloud</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long
+    /// a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker
+    /// ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
+    /// job termination for 120 seconds. Algorithms can use this 120-second window to save the
+    /// model artifacts, so the results of training are not lost. </p>
+    pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>A timestamp that indicates when the training job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Indicates the time when the training job starts on training instances. You are
+    /// billed for the time interval between this time and the value of
+    /// <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time.
+    /// The difference is due to the time it takes to download the training data and to the size
+    /// of the training container.</p>
+    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_start_time.as_ref()
+    }
+    /// <p>Indicates the time when the training job ends on training instances. You are billed
+    /// for the time interval between the value of <code>TrainingStartTime</code> and this time.
+    /// For successful jobs and stopped jobs, this is the time after model artifacts are
+    /// uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_end_time.as_ref()
+    }
+    /// <p>A timestamp that indicates when the status of the training job was last
+    /// modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A history of all of the secondary statuses that the training job has transitioned
+    /// through.</p>
+    pub fn secondary_status_transitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecondaryStatusTransition]> {
+        self.secondary_status_transitions.as_deref()
+    }
+    /// <p>A collection of <code>MetricData</code> objects that specify the names, values, and
+    /// dates and times that the training algorithm emitted to Amazon CloudWatch.</p>
+    pub fn final_metric_data_list(&self) -> std::option::Option<&[crate::model::MetricData]> {
+        self.final_metric_data_list.as_deref()
+    }
+    /// <p>If you want to allow inbound or outbound network calls, except for calls between peers
+    /// within a training cluster for distributed training, choose <code>True</code>. If you
+    /// enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker
+    /// downloads and uploads customer data and model artifacts through the specified VPC, but
+    /// the training container does not have network access.</p>
+    pub fn enable_network_isolation(&self) -> bool {
+        self.enable_network_isolation
+    }
+    /// <p>To encrypt all communications between ML compute instances in distributed training,
+    /// choose <code>True</code>. Encryption provides greater security for distributed training,
+    /// but training might take longer. How long it takes depends on the amount of communication
+    /// between compute instances, especially if you use a deep learning algorithms in
+    /// distributed training.</p>
+    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+        self.enable_inter_container_traffic_encryption
+    }
+    /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or
+    /// not (<code>False</code>).</p>
+    pub fn enable_managed_spot_training(&self) -> bool {
+        self.enable_managed_spot_training
+    }
+    /// <p>Contains information about the output location for managed spot training checkpoint
+    /// data. </p>
+    pub fn checkpoint_config(&self) -> std::option::Option<&crate::model::CheckpointConfig> {
+        self.checkpoint_config.as_ref()
+    }
+    /// <p>The training time in seconds.</p>
+    pub fn training_time_in_seconds(&self) -> std::option::Option<i32> {
+        self.training_time_in_seconds
+    }
+    /// <p>The billable time in seconds. Billable time refers to the absolute wall-clock
+    /// time.</p>
+    /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances
+    /// (<code>InstanceCount</code>) in your training cluster to get the total compute time
+    /// SageMaker will bill you if you run distributed training. The formula is as follows:
+    /// <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+    /// <p>You can calculate the savings from using managed spot training using the formula
+    /// <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example,
+    /// if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is
+    /// 500, the savings is 80%.</p>
+    pub fn billable_time_in_seconds(&self) -> std::option::Option<i32> {
+        self.billable_time_in_seconds
+    }
+    /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and
+    /// storage paths. To learn more about
+    /// how to configure the <code>DebugHookConfig</code> parameter,
+    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    pub fn debug_hook_config(&self) -> std::option::Option<&crate::model::DebugHookConfig> {
+        self.debug_hook_config.as_ref()
+    }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
+    /// you call the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>CreateProcessingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTrainingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTransformJob</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
+        self.experiment_config.as_ref()
+    }
+    /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    pub fn debug_rule_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DebugRuleConfiguration]> {
+        self.debug_rule_configurations.as_deref()
+    }
+    /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    pub fn tensor_board_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::TensorBoardOutputConfig> {
+        self.tensor_board_output_config.as_ref()
+    }
+    /// <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+    pub fn debug_rule_evaluation_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::DebugRuleEvaluationStatus]> {
+        self.debug_rule_evaluation_statuses.as_deref()
+    }
+    /// <p>Configuration information for Debugger system monitoring, framework profiling, and
+    /// storage paths.</p>
+    pub fn profiler_config(&self) -> std::option::Option<&crate::model::ProfilerConfig> {
+        self.profiler_config.as_ref()
+    }
+    /// <p>Configuration information for Debugger rules for profiling system and framework
+    /// metrics.</p>
+    pub fn profiler_rule_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProfilerRuleConfiguration]> {
+        self.profiler_rule_configurations.as_deref()
+    }
+    /// <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+    pub fn profiler_rule_evaluation_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProfilerRuleEvaluationStatus]> {
+        self.profiler_rule_evaluation_statuses.as_deref()
+    }
+    /// <p>Profiling status of a training job.</p>
+    pub fn profiling_status(&self) -> std::option::Option<&crate::model::ProfilingStatus> {
+        self.profiling_status.as_ref()
+    }
+    /// <p>The number of times to retry the job when the job fails due to an
+    /// <code>InternalServerError</code>.</p>
+    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
+        self.retry_strategy.as_ref()
+    }
+    /// <p>The environment variables to set in the Docker container.</p>
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTrainingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9907,6 +11570,12 @@ pub struct DescribeSubscribedWorkteamOutput {
     /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     pub subscribed_workteam: std::option::Option<crate::model::SubscribedWorkteam>,
 }
+impl DescribeSubscribedWorkteamOutput {
+    /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
+    pub fn subscribed_workteam(&self) -> std::option::Option<&crate::model::SubscribedWorkteam> {
+        self.subscribed_workteam.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSubscribedWorkteamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubscribedWorkteamOutput");
@@ -9968,6 +11637,34 @@ pub struct DescribeStudioLifecycleConfigOutput {
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
     pub studio_lifecycle_config_app_type:
         std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+}
+impl DescribeStudioLifecycleConfigOutput {
+    /// <p>The ARN of the Lifecycle Configuration to describe.</p>
+    pub fn studio_lifecycle_config_arn(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_arn.as_deref()
+    }
+    /// <p>The name of the Studio Lifecycle Configuration that is described.</p>
+    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_name.as_deref()
+    }
+    /// <p>The creation time of the Studio Lifecycle Configuration.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The content of your Studio Lifecycle Configuration script.</p>
+    pub fn studio_lifecycle_config_content(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_content.as_deref()
+    }
+    /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    pub fn studio_lifecycle_config_app_type(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioLifecycleConfigAppType> {
+        self.studio_lifecycle_config_app_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStudioLifecycleConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10149,6 +11846,59 @@ pub struct DescribeProjectOutput {
     /// <p>Information about the user who created or modified an experiment, trial, trial
     /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
+}
+impl DescribeProjectOutput {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The description of the project.</p>
+    pub fn project_description(&self) -> std::option::Option<&str> {
+        self.project_description.as_deref()
+    }
+    /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+    /// Catalog</a>.</p>
+    pub fn service_catalog_provisioning_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceCatalogProvisioningDetails> {
+        self.service_catalog_provisioning_details.as_ref()
+    }
+    /// <p>Information about a provisioned service catalog product.</p>
+    pub fn service_catalog_provisioned_product_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceCatalogProvisionedProductDetails> {
+        self.service_catalog_provisioned_product_details.as_ref()
+    }
+    /// <p>The status of the project.</p>
+    pub fn project_status(&self) -> std::option::Option<&crate::model::ProjectStatus> {
+        self.project_status.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>The time when the project was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The timestamp when project was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10419,6 +12169,105 @@ pub struct DescribeProcessingJobOutput {
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of a training job associated with this processing job.</p>
     pub training_job_arn: std::option::Option<std::string::String>,
+}
+impl DescribeProcessingJobOutput {
+    /// <p>The inputs for a processing job.</p>
+    pub fn processing_inputs(&self) -> std::option::Option<&[crate::model::ProcessingInput]> {
+        self.processing_inputs.as_deref()
+    }
+    /// <p>Output configuration for the processing job.</p>
+    pub fn processing_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProcessingOutputConfig> {
+        self.processing_output_config.as_ref()
+    }
+    /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
+    pub fn processing_job_name(&self) -> std::option::Option<&str> {
+        self.processing_job_name.as_deref()
+    }
+    /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
+    /// processing job. In distributed training, you specify more than one instance.</p>
+    pub fn processing_resources(&self) -> std::option::Option<&crate::model::ProcessingResources> {
+        self.processing_resources.as_ref()
+    }
+    /// <p>The time limit for how long the processing job is allowed to run.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::ProcessingStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>Configures the processing job to run a specified container image.</p>
+    pub fn app_specification(&self) -> std::option::Option<&crate::model::AppSpecification> {
+        self.app_specification.as_ref()
+    }
+    /// <p>The environment variables set in the Docker container.</p>
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment.as_ref()
+    }
+    /// <p>Networking options for a processing job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::NetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on
+    /// your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The configuration information used to create an experiment.</p>
+    pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
+        self.experiment_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
+    pub fn processing_job_arn(&self) -> std::option::Option<&str> {
+        self.processing_job_arn.as_deref()
+    }
+    /// <p>Provides the status of a processing job.</p>
+    pub fn processing_job_status(&self) -> std::option::Option<&crate::model::ProcessingJobStatus> {
+        self.processing_job_status.as_ref()
+    }
+    /// <p>An optional string, up to one KB in size, that contains metadata from the processing
+    /// container when the processing job exits.</p>
+    pub fn exit_message(&self) -> std::option::Option<&str> {
+        self.exit_message.as_deref()
+    }
+    /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if
+    /// it failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The time at which the processing job completed.</p>
+    pub fn processing_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.processing_end_time.as_ref()
+    }
+    /// <p>The time at which the processing job started.</p>
+    pub fn processing_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.processing_start_time.as_ref()
+    }
+    /// <p>The time at which the processing job was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The time at which the processing job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing
+    /// job.</p>
+    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_arn.as_deref()
+    }
+    /// <p>The ARN of an AutoML job associated with this processing job.</p>
+    pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_arn.as_deref()
+    }
+    /// <p>The ARN of a training job associated with this processing job.</p>
+    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+        self.training_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProcessingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10851,6 +12700,58 @@ pub struct DescribePipelineExecutionOutput {
     /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
+impl DescribePipelineExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+    /// <p>The display name of the pipeline execution.</p>
+    pub fn pipeline_execution_display_name(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_display_name.as_deref()
+    }
+    /// <p>The status of the pipeline execution.</p>
+    pub fn pipeline_execution_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PipelineExecutionStatus> {
+        self.pipeline_execution_status.as_ref()
+    }
+    /// <p>The description of the pipeline execution.</p>
+    pub fn pipeline_execution_description(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_description.as_deref()
+    }
+    /// <p>Specifies the names of the experiment and trial created by a pipeline.</p>
+    pub fn pipeline_experiment_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PipelineExperimentConfig> {
+        self.pipeline_experiment_config.as_ref()
+    }
+    /// <p>If the execution failed, a message describing why.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The time when the pipeline execution was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the pipeline execution was modified last.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipelineExecutionOutput");
@@ -11088,6 +12989,16 @@ pub struct DescribePipelineDefinitionForExecutionOutput {
     /// <p>The time when the pipeline was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribePipelineDefinitionForExecutionOutput {
+    /// <p>The JSON pipeline definition.</p>
+    pub fn pipeline_definition(&self) -> std::option::Option<&str> {
+        self.pipeline_definition.as_deref()
+    }
+    /// <p>The time when the pipeline was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePipelineDefinitionForExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipelineDefinitionForExecutionOutput");
@@ -11178,6 +13089,58 @@ pub struct DescribePipelineOutput {
     /// <p>Information about the user who created or modified an experiment, trial, trial
     /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
+}
+impl DescribePipelineOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The display name of the pipeline.</p>
+    pub fn pipeline_display_name(&self) -> std::option::Option<&str> {
+        self.pipeline_display_name.as_deref()
+    }
+    /// <p>The JSON pipeline definition.</p>
+    pub fn pipeline_definition(&self) -> std::option::Option<&str> {
+        self.pipeline_definition.as_deref()
+    }
+    /// <p>The description of the pipeline.</p>
+    pub fn pipeline_description(&self) -> std::option::Option<&str> {
+        self.pipeline_description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The status of the pipeline execution.</p>
+    pub fn pipeline_status(&self) -> std::option::Option<&crate::model::PipelineStatus> {
+        self.pipeline_status.as_ref()
+    }
+    /// <p>The time when the pipeline was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the pipeline was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The time when the pipeline was last run.</p>
+    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_run_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11414,6 +13377,33 @@ pub struct DescribeNotebookInstanceLifecycleConfigOutput {
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeNotebookInstanceLifecycleConfigOutput {
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
+    pub fn notebook_instance_lifecycle_config_arn(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_arn.as_deref()
+    }
+    /// <p>The name of the lifecycle configuration.</p>
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_name.as_deref()
+    }
+    /// <p>The shell script that runs only once, when you create a notebook instance.</p>
+    pub fn on_create(&self) -> std::option::Option<&[crate::model::NotebookInstanceLifecycleHook]> {
+        self.on_create.as_deref()
+    }
+    /// <p>The shell script that runs every time you start a notebook instance, including when
+    /// you create the notebook instance.</p>
+    pub fn on_start(&self) -> std::option::Option<&[crate::model::NotebookInstanceLifecycleHook]> {
+        self.on_start.as_deref()
+    }
+    /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeNotebookInstanceLifecycleConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11653,6 +13643,129 @@ pub struct DescribeNotebookInstanceOutput {
     pub root_access: std::option::Option<crate::model::RootAccess>,
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
     pub platform_identifier: std::option::Option<std::string::String>,
+}
+impl DescribeNotebookInstanceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    pub fn notebook_instance_arn(&self) -> std::option::Option<&str> {
+        self.notebook_instance_arn.as_deref()
+    }
+    /// <p>The name of the Amazon SageMaker notebook instance. </p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+    /// <p>The status of the notebook instance.</p>
+    pub fn notebook_instance_status(
+        &self,
+    ) -> std::option::Option<&crate::model::NotebookInstanceStatus> {
+        self.notebook_instance_status.as_ref()
+    }
+    /// <p>If status is <code>Failed</code>, the reason it failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The URL that you use to connect to the Jupyter notebook that is running in your
+    /// notebook instance. </p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The type of ML compute instance running on the notebook instance.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The ID of the VPC subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The IDs of the VPC security groups.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance.
+    /// </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+    /// volume attached to the instance. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The network interface IDs that Amazon SageMaker created at the time of creating the instance.
+    /// </p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was
+    /// last modified. </p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A timestamp. Use this parameter to return the time when the notebook instance was
+    /// created</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+    /// 2.1: (Optional) Customize a Notebook Instance</a>
+    /// </p>
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_name.as_deref()
+    }
+    /// <p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this
+    /// value is set to <i>Disabled</i>, the notebook instance does not have
+    /// internet access, and cannot connect to Amazon SageMaker training and endpoint services.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
+    pub fn direct_internet_access(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectInternetAccess> {
+        self.direct_internet_access.as_ref()
+    }
+    /// <p>The size, in GB, of the ML storage volume attached to the notebook instance.</p>
+    pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
+        self.volume_size_in_gb
+    }
+    /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook
+    /// instance. Currently only one EI instance type can be associated with a notebook
+    /// instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+    /// SageMaker</a>.</p>
+    pub fn accelerator_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotebookInstanceAcceleratorType]> {
+        self.accelerator_types.as_deref()
+    }
+    /// <p>The Git repository associated with the notebook instance as its default code
+    /// repository. This can be either the name of a Git repository stored as a resource in your
+    /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
+    /// other Git repository. When you open a notebook instance, it opens in the directory that
+    /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
+    /// Notebook Instances</a>.</p>
+    pub fn default_code_repository(&self) -> std::option::Option<&str> {
+        self.default_code_repository.as_deref()
+    }
+    /// <p>An array of up to three Git repositories associated with the notebook instance. These
+    /// can be either the names of Git repositories stored as resources in your account, or the
+    /// URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
+    /// other Git repository. These repositories are cloned at the same level as the default
+    /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+    /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    pub fn additional_code_repositories(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_code_repositories.as_deref()
+    }
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p>
+    /// <note>
+    /// <p>Lifecycle configurations need root access to be able to set up a notebook
+    /// instance. Because of this, lifecycle configurations associated with a notebook
+    /// instance always run with root access even if you disable root access for
+    /// users.</p>
+    /// </note>
+    pub fn root_access(&self) -> std::option::Option<&crate::model::RootAccess> {
+        self.root_access.as_ref()
+    }
+    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    pub fn platform_identifier(&self) -> std::option::Option<&str> {
+        self.platform_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNotebookInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12158,6 +14271,76 @@ pub struct DescribeMonitoringScheduleOutput {
     pub last_monitoring_execution_summary:
         std::option::Option<crate::model::MonitoringExecutionSummary>,
 }
+impl DescribeMonitoringScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_arn.as_deref()
+    }
+    /// <p>Name of the monitoring schedule.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
+    /// <p>The status of an monitoring job.</p>
+    pub fn monitoring_schedule_status(&self) -> std::option::Option<&crate::model::ScheduleStatus> {
+        self.monitoring_schedule_status.as_ref()
+    }
+    /// <p>The type of the monitoring job that this schedule runs. This is one of the following
+    /// values.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring
+    /// job.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring
+    /// job.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability
+    /// monitoring job.</p>
+    /// </li>
+    /// </ul>
+    pub fn monitoring_type(&self) -> std::option::Option<&crate::model::MonitoringType> {
+        self.monitoring_type.as_ref()
+    }
+    /// <p>A string, up to one KB in size, that contains the reason a monitoring job failed, if it
+    /// failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The time at which the monitoring job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the monitoring job was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The configuration object that specifies the monitoring schedule and defines the
+    /// monitoring job.</p>
+    pub fn monitoring_schedule_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringScheduleConfig> {
+        self.monitoring_schedule_config.as_ref()
+    }
+    /// <p> The name of the endpoint for the monitoring job.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>Describes metadata on the last execution to run, if there was one.</p>
+    pub fn last_monitoring_execution_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringExecutionSummary> {
+        self.last_monitoring_execution_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeMonitoringScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMonitoringScheduleOutput");
@@ -12442,6 +14625,64 @@ pub struct DescribeModelQualityJobDefinitionOutput {
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
 }
+impl DescribeModelQualityJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model quality job.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+    /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in
+    /// the Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The time at which the model quality job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The baseline configuration for a model quality job.</p>
+    pub fn model_quality_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelQualityBaselineConfig> {
+        self.model_quality_baseline_config.as_ref()
+    }
+    /// <p>Configures the model quality job to run a specified Docker container image.</p>
+    pub fn model_quality_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelQualityAppSpecification> {
+        self.model_quality_app_specification.as_ref()
+    }
+    /// <p>Inputs for the model quality job.</p>
+    pub fn model_quality_job_input(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelQualityJobInput> {
+        self.model_quality_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn model_quality_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.model_quality_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>Networking options for a model quality job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
+    /// perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeModelQualityJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelQualityJobDefinitionOutput");
@@ -12693,6 +14934,35 @@ pub struct DescribeModelPackageGroupOutput {
     /// <p>The status of the model group.</p>
     pub model_package_group_status: std::option::Option<crate::model::ModelPackageGroupStatus>,
 }
+impl DescribeModelPackageGroupOutput {
+    /// <p>The name of the model group.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model group.</p>
+    pub fn model_package_group_arn(&self) -> std::option::Option<&str> {
+        self.model_package_group_arn.as_deref()
+    }
+    /// <p>A description of the model group.</p>
+    pub fn model_package_group_description(&self) -> std::option::Option<&str> {
+        self.model_package_group_description.as_deref()
+    }
+    /// <p>The time that the model group was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>The status of the model group.</p>
+    pub fn model_package_group_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelPackageGroupStatus> {
+        self.model_package_group_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeModelPackageGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelPackageGroupOutput");
@@ -12884,6 +15154,104 @@ pub struct DescribeModelPackageOutput {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub customer_metadata_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeModelPackageOutput {
+    /// <p>The name of the model package being described.</p>
+    pub fn model_package_name(&self) -> std::option::Option<&str> {
+        self.model_package_name.as_deref()
+    }
+    /// <p>If the model is a versioned model, the name of the model group that the versioned
+    /// model belongs to.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>The version of the model package.</p>
+    pub fn model_package_version(&self) -> std::option::Option<i32> {
+        self.model_package_version
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    pub fn model_package_arn(&self) -> std::option::Option<&str> {
+        self.model_package_arn.as_deref()
+    }
+    /// <p>A brief summary of the model package.</p>
+    pub fn model_package_description(&self) -> std::option::Option<&str> {
+        self.model_package_description.as_deref()
+    }
+    /// <p>A timestamp specifying when the model package was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Details about inference jobs that can be run with models based on this model
+    /// package.</p>
+    pub fn inference_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceSpecification> {
+        self.inference_specification.as_ref()
+    }
+    /// <p>Details about the algorithm that was used to create the model package.</p>
+    pub fn source_algorithm_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceAlgorithmSpecification> {
+        self.source_algorithm_specification.as_ref()
+    }
+    /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model
+    /// package.</p>
+    pub fn validation_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelPackageValidationSpecification> {
+        self.validation_specification.as_ref()
+    }
+    /// <p>The current status of the model package.</p>
+    pub fn model_package_status(&self) -> std::option::Option<&crate::model::ModelPackageStatus> {
+        self.model_package_status.as_ref()
+    }
+    /// <p>Details about the current status of the model package.</p>
+    pub fn model_package_status_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelPackageStatusDetails> {
+        self.model_package_status_details.as_ref()
+    }
+    /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
+    pub fn certify_for_marketplace(&self) -> bool {
+        self.certify_for_marketplace
+    }
+    /// <p>The approval status of the model package.</p>
+    pub fn model_approval_status(&self) -> std::option::Option<&crate::model::ModelApprovalStatus> {
+        self.model_approval_status.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+    /// <p>Metrics for the model.</p>
+    pub fn model_metrics(&self) -> std::option::Option<&crate::model::ModelMetrics> {
+        self.model_metrics.as_ref()
+    }
+    /// <p>The last time the model package was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+    /// <p>A description provided for the model approval.</p>
+    pub fn approval_description(&self) -> std::option::Option<&str> {
+        self.approval_description.as_deref()
+    }
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub fn customer_metadata_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.customer_metadata_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeModelPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13311,6 +15679,66 @@ pub struct DescribeModelExplainabilityJobDefinitionOutput {
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
 }
+impl DescribeModelExplainabilityJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+    /// <p>The name of the explainability job definition. The name must be unique within an Amazon Web Services
+    /// Region in the Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The time at which the model explainability job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The baseline configuration for a model explainability job.</p>
+    pub fn model_explainability_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelExplainabilityBaselineConfig> {
+        self.model_explainability_baseline_config.as_ref()
+    }
+    /// <p>Configures the model explainability job to run a specified Docker container
+    /// image.</p>
+    pub fn model_explainability_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelExplainabilityAppSpecification> {
+        self.model_explainability_app_specification.as_ref()
+    }
+    /// <p>Inputs for the model explainability job.</p>
+    pub fn model_explainability_job_input(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelExplainabilityJobInput> {
+        self.model_explainability_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn model_explainability_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.model_explainability_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>Networking options for a model explainability job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+    /// has read permission to the input data location and write permission to the output data
+    /// location in Amazon S3.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeModelExplainabilityJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelExplainabilityJobDefinitionOutput");
@@ -13583,6 +16011,63 @@ pub struct DescribeModelBiasJobDefinitionOutput {
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
 }
+impl DescribeModelBiasJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model bias job.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+    /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The time at which the model bias job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The baseline configuration for a model bias job.</p>
+    pub fn model_bias_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelBiasBaselineConfig> {
+        self.model_bias_baseline_config.as_ref()
+    }
+    /// <p>Configures the model bias job to run a specified Docker container image.</p>
+    pub fn model_bias_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelBiasAppSpecification> {
+        self.model_bias_app_specification.as_ref()
+    }
+    /// <p>Inputs for the model bias job.</p>
+    pub fn model_bias_job_input(&self) -> std::option::Option<&crate::model::ModelBiasJobInput> {
+        self.model_bias_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn model_bias_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.model_bias_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>Networking options for a model bias job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+    /// has read permission to the input data location and write permission to the output data
+    /// location in Amazon S3.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeModelBiasJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelBiasJobDefinitionOutput");
@@ -13844,6 +16329,53 @@ pub struct DescribeModelOutput {
     /// <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the
     /// model container.</p>
     pub enable_network_isolation: bool,
+}
+impl DescribeModelOutput {
+    /// <p>Name of the Amazon SageMaker model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The location of the primary inference code, associated artifacts, and custom
+    /// environment map that the inference code uses when it is deployed in production.
+    /// </p>
+    pub fn primary_container(&self) -> std::option::Option<&crate::model::ContainerDefinition> {
+        self.primary_container.as_ref()
+    }
+    /// <p>The containers in the inference pipeline.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::ContainerDefinition]> {
+        self.containers.as_deref()
+    }
+    /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
+    pub fn inference_execution_config(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceExecutionConfig> {
+        self.inference_execution_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
+    /// model.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+    /// to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+    /// Private Cloud</a>
+    /// </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>A timestamp that shows when the model was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the
+    /// model container.</p>
+    pub fn enable_network_isolation(&self) -> bool {
+        self.enable_network_isolation
+    }
 }
 impl std::fmt::Debug for DescribeModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14143,6 +16675,150 @@ pub struct DescribeLabelingJobOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The location of the output produced by the labeling job.</p>
     pub labeling_job_output: std::option::Option<crate::model::LabelingJobOutput>,
+}
+impl DescribeLabelingJobOutput {
+    /// <p>The processing status of the labeling job. </p>
+    pub fn labeling_job_status(&self) -> std::option::Option<&crate::model::LabelingJobStatus> {
+        self.labeling_job_status.as_ref()
+    }
+    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of
+    /// objects labeled by machine, the number of objects than couldn't be labeled, and the
+    /// total number of objects labeled. </p>
+    pub fn label_counters(&self) -> std::option::Option<&crate::model::LabelCounters> {
+        self.label_counters.as_ref()
+    }
+    /// <p>If the job failed, the reason that it failed. </p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The date and time that the labeling job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the labeling job was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A unique identifier for work done as part of a labeling job.</p>
+    pub fn job_reference_code(&self) -> std::option::Option<&str> {
+        self.job_reference_code.as_deref()
+    }
+    /// <p>The name assigned to the labeling job when it was created.</p>
+    pub fn labeling_job_name(&self) -> std::option::Option<&str> {
+        self.labeling_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
+    pub fn labeling_job_arn(&self) -> std::option::Option<&str> {
+        self.labeling_job_arn.as_deref()
+    }
+    /// <p>The attribute used as the label in the output manifest file.</p>
+    pub fn label_attribute_name(&self) -> std::option::Option<&str> {
+        self.label_attribute_name.as_deref()
+    }
+    /// <p>Input configuration information for the labeling job, such as the Amazon S3 location of the
+    /// data objects and the location of the manifest file that describes the data
+    /// objects.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::LabelingJobInputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to
+    /// encrypt the output data, if any.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::LabelingJobOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
+    /// during data labeling.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The S3 location of the JSON file that defines the categories used to label data
+    /// objects. Please note the following label-category limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+    /// </li>
+    /// <li>
+    /// <p>Box bounding labeling jobs (all): 10 labels</p>
+    /// </li>
+    /// </ul>
+    /// <p>The file is a JSON structure in the following format:</p>
+    /// <p>
+    /// <code>{</code>
+    /// </p>
+    /// <p>
+    /// <code> "document-version": "2018-11-28"</code>
+    /// </p>
+    /// <p>
+    /// <code> "labels": [</code>
+    /// </p>
+    /// <p>
+    /// <code> {</code>
+    /// </p>
+    /// <p>
+    /// <code> "label": "<i>label 1</i>"</code>
+    /// </p>
+    /// <p>
+    /// <code> },</code>
+    /// </p>
+    /// <p>
+    /// <code> {</code>
+    /// </p>
+    /// <p>
+    /// <code> "label": "<i>label 2</i>"</code>
+    /// </p>
+    /// <p>
+    /// <code> },</code>
+    /// </p>
+    /// <p>
+    /// <code> ...</code>
+    /// </p>
+    /// <p>
+    /// <code> {</code>
+    /// </p>
+    /// <p>
+    /// <code> "label": "<i>label n</i>"</code>
+    /// </p>
+    /// <p>
+    /// <code> }</code>
+    /// </p>
+    /// <p>
+    /// <code> ]</code>
+    /// </p>
+    /// <p>
+    /// <code>}</code>
+    /// </p>
+    pub fn label_category_config_s3_uri(&self) -> std::option::Option<&str> {
+        self.label_category_config_s3_uri.as_deref()
+    }
+    /// <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the
+    /// job is automatically stopped.</p>
+    pub fn stopping_conditions(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelingJobStoppingConditions> {
+        self.stopping_conditions.as_ref()
+    }
+    /// <p>Configuration information for automated data labeling.</p>
+    pub fn labeling_job_algorithms_config(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelingJobAlgorithmsConfig> {
+        self.labeling_job_algorithms_config.as_ref()
+    }
+    /// <p>Configuration information required for human workers to complete a labeling
+    /// task.</p>
+    pub fn human_task_config(&self) -> std::option::Option<&crate::model::HumanTaskConfig> {
+        self.human_task_config.as_ref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The location of the output produced by the labeling job.</p>
+    pub fn labeling_job_output(&self) -> std::option::Option<&crate::model::LabelingJobOutput> {
+        self.labeling_job_output.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeLabelingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14635,6 +17311,44 @@ pub struct DescribeImageVersionOutput {
     /// <p>The version number.</p>
     pub version: std::option::Option<i32>,
 }
+impl DescribeImageVersionOutput {
+    /// <p>The registry path of the container image on which this image version is based.</p>
+    pub fn base_image(&self) -> std::option::Option<&str> {
+        self.base_image.as_deref()
+    }
+    /// <p>The registry path of the container image that contains this image version.</p>
+    pub fn container_image(&self) -> std::option::Option<&str> {
+        self.container_image.as_deref()
+    }
+    /// <p>When the version was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>When a create or delete operation fails, the reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image the version is based on.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>The ARN of the version.</p>
+    pub fn image_version_arn(&self) -> std::option::Option<&str> {
+        self.image_version_arn.as_deref()
+    }
+    /// <p>The status of the version.</p>
+    pub fn image_version_status(&self) -> std::option::Option<&crate::model::ImageVersionStatus> {
+        self.image_version_status.as_ref()
+    }
+    /// <p>When the version was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The version number.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+}
 impl std::fmt::Debug for DescribeImageVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImageVersionOutput");
@@ -14820,6 +17534,44 @@ pub struct DescribeImageOutput {
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl DescribeImageOutput {
+    /// <p>When the image was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the image as displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>When a create, update, or delete operation fails, the reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>The name of the image.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The status of the image.</p>
+    pub fn image_status(&self) -> std::option::Option<&crate::model::ImageStatus> {
+        self.image_status.as_ref()
+    }
+    /// <p>When the image was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15034,6 +17786,104 @@ pub struct DescribeHyperParameterTuningJobOutput {
         std::option::Option<crate::model::HyperParameterTuningJobWarmStartConfig>,
     /// <p>If the tuning job failed, the reason it failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl DescribeHyperParameterTuningJobOutput {
+    /// <p>The name of the tuning job.</p>
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_name.as_deref()
+    }
+    /// <p>The
+    /// Amazon Resource Name (ARN) of the tuning job.</p>
+    pub fn hyper_parameter_tuning_job_arn(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_arn.as_deref()
+    }
+    /// <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
+    /// configuration of the tuning job.</p>
+    pub fn hyper_parameter_tuning_job_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobConfig> {
+        self.hyper_parameter_tuning_job_config.as_ref()
+    }
+    /// <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
+    /// definition of the training jobs that this tuning job launches.</p>
+    pub fn training_job_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTrainingJobDefinition> {
+        self.training_job_definition.as_ref()
+    }
+    /// <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched
+    /// for this tuning job.</p>
+    pub fn training_job_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::HyperParameterTrainingJobDefinition]> {
+        self.training_job_definitions.as_deref()
+    }
+    /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
+    /// Stopped.</p>
+    pub fn hyper_parameter_tuning_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobStatus> {
+        self.hyper_parameter_tuning_job_status.as_ref()
+    }
+    /// <p>The date and time that the tuning job started.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the tuning job ended.</p>
+    pub fn hyper_parameter_tuning_end_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.hyper_parameter_tuning_end_time.as_ref()
+    }
+    /// <p>The date and time that the status of the tuning job was modified. </p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
+    /// training jobs, categorized by status, that this tuning job launched.</p>
+    pub fn training_job_status_counters(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingJobStatusCounters> {
+        self.training_job_status_counters.as_ref()
+    }
+    /// <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
+    /// training jobs, categorized by the status of their final objective metric, that this
+    /// tuning job launched.</p>
+    pub fn objective_status_counters(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectiveStatusCounters> {
+        self.objective_status_counters.as_ref()
+    }
+    /// <p>A <a>TrainingJobSummary</a> object that describes the training job that
+    /// completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
+    pub fn best_training_job(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTrainingJobSummary> {
+        self.best_training_job.as_ref()
+    }
+    /// <p>If the hyperparameter tuning job is an warm start tuning job with a
+    /// <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the
+    /// <a>TrainingJobSummary</a> for the training job with the best objective
+    /// metric value of all training jobs launched by this tuning job and all parent jobs
+    /// specified for the warm start tuning job.</p>
+    pub fn overall_best_training_job(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTrainingJobSummary> {
+        self.overall_best_training_job.as_ref()
+    }
+    /// <p>The configuration for starting the hyperparameter parameter tuning job using one or
+    /// more previous tuning jobs as a starting point. The results of previous tuning jobs are
+    /// used to inform which combinations of hyperparameters to search over in the new tuning
+    /// job.</p>
+    pub fn warm_start_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobWarmStartConfig> {
+        self.warm_start_config.as_ref()
+    }
+    /// <p>If the tuning job failed, the reason it failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHyperParameterTuningJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15418,6 +18268,28 @@ pub struct DescribeHumanTaskUiOutput {
     /// <p>Container for user interface template information.</p>
     pub ui_template: std::option::Option<crate::model::UiTemplateInfo>,
 }
+impl DescribeHumanTaskUiOutput {
+    /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
+    pub fn human_task_ui_arn(&self) -> std::option::Option<&str> {
+        self.human_task_ui_arn.as_deref()
+    }
+    /// <p>The name of the human task user interface (worker task template).</p>
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
+        self.human_task_ui_name.as_deref()
+    }
+    /// <p>The status of the human task user interface (worker task template). Valid values are listed below.</p>
+    pub fn human_task_ui_status(&self) -> std::option::Option<&crate::model::HumanTaskUiStatus> {
+        self.human_task_ui_status.as_ref()
+    }
+    /// <p>The timestamp when the human task user interface was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Container for user interface template information.</p>
+    pub fn ui_template(&self) -> std::option::Option<&crate::model::UiTemplateInfo> {
+        self.ui_template.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeHumanTaskUiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHumanTaskUiOutput");
@@ -15551,6 +18423,55 @@ pub struct DescribeFlowDefinitionOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The reason your flow definition failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl DescribeFlowDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the flow defintion.</p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    pub fn flow_definition_name(&self) -> std::option::Option<&str> {
+        self.flow_definition_name.as_deref()
+    }
+    /// <p>The status of the flow definition. Valid values are listed below.</p>
+    pub fn flow_definition_status(
+        &self,
+    ) -> std::option::Option<&crate::model::FlowDefinitionStatus> {
+        self.flow_definition_status.as_ref()
+    }
+    /// <p>The timestamp when the flow definition was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Container for configuring the source of human task requests. Used to specify if
+    /// Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+    pub fn human_loop_request_source(
+        &self,
+    ) -> std::option::Option<&crate::model::HumanLoopRequestSource> {
+        self.human_loop_request_source.as_ref()
+    }
+    /// <p>An object containing information about what triggers a human review workflow.</p>
+    pub fn human_loop_activation_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HumanLoopActivationConfig> {
+        self.human_loop_activation_config.as_ref()
+    }
+    /// <p>An object containing information about who works on the task, the workforce task price, and other task details.</p>
+    pub fn human_loop_config(&self) -> std::option::Option<&crate::model::HumanLoopConfig> {
+        self.human_loop_config.as_ref()
+    }
+    /// <p>An object containing information about the output file.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::FlowDefinitionOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The reason your flow definition failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFlowDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15807,6 +18728,89 @@ pub struct DescribeFeatureGroupOutput {
     /// <p>A token to resume pagination of the list of <code>Features</code>
     /// (<code>FeatureDefinitions</code>).</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFeatureGroupOutput {
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.  </p>
+    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+        self.feature_group_arn.as_deref()
+    }
+    /// <p>he name of the <code>FeatureGroup</code>.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value
+    /// uniquely identifies a record stored in the feature store.</p>
+    pub fn record_identifier_feature_name(&self) -> std::option::Option<&str> {
+        self.record_identifier_feature_name.as_deref()
+    }
+    /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a
+    /// <code>FeatureGroup</code>.</p>
+    /// <p> An <code>EventTime</code> is a point in time when a new event occurs that
+    /// corresponds to the creation or update of a <code>Record</code> in a
+    /// <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code>
+    /// have a corresponding <code>EventTime</code>.</p>
+    pub fn event_time_feature_name(&self) -> std::option::Option<&str> {
+        self.event_time_feature_name.as_deref()
+    }
+    /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>.
+    /// Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
+    pub fn feature_definitions(&self) -> std::option::Option<&[crate::model::FeatureDefinition]> {
+        self.feature_definitions.as_deref()
+    }
+    /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The configuration for the <code>OnlineStore</code>.</p>
+    pub fn online_store_config(&self) -> std::option::Option<&crate::model::OnlineStoreConfig> {
+        self.online_store_config.as_ref()
+    }
+    /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
+    /// <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the
+    /// security configuration.</p>
+    pub fn offline_store_config(&self) -> std::option::Option<&crate::model::OfflineStoreConfig> {
+        self.offline_store_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
+    /// <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The status of the feature group.</p>
+    pub fn feature_group_status(&self) -> std::option::Option<&crate::model::FeatureGroupStatus> {
+        self.feature_group_status.as_ref()
+    }
+    /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the
+    /// <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or
+    /// <code>Blocked</code>
+    /// </p>
+    pub fn offline_store_status(&self) -> std::option::Option<&crate::model::OfflineStoreStatus> {
+        self.offline_store_status.as_ref()
+    }
+    /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the
+    /// <code>OfflineStore</code>. This is failure can occur because:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be created in the
+    /// <code>OfflineStore</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be deleted from the
+    /// <code>OfflineStore</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>A free form description of the feature group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A token to resume pagination of the list of <code>Features</code>
+    /// (<code>FeatureDefinitions</code>).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFeatureGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16141,6 +19145,45 @@ pub struct DescribeExperimentOutput {
     /// <p>Who last modified the experiment.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
+impl DescribeExperimentOutput {
+    /// <p>The name of the experiment.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn experiment_arn(&self) -> std::option::Option<&str> {
+        self.experiment_arn.as_deref()
+    }
+    /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified,
+    /// <code>ExperimentName</code> is displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The ARN of the source and, optionally, the type.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ExperimentSource> {
+        self.source.as_ref()
+    }
+    /// <p>The description of the experiment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>When the experiment was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Who created the experiment.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>When the experiment was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Who last modified the experiment.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeExperimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExperimentOutput");
@@ -16332,6 +19375,43 @@ pub struct DescribeEndpointConfigOutput {
     /// <code>CreateEndpointConfig</code>
     /// </a> API.</p>
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
+}
+impl DescribeEndpointConfigOutput {
+    /// <p>Name of the Amazon SageMaker endpoint configuration.</p>
+    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+        self.endpoint_config_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    pub fn endpoint_config_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_config_arn.as_deref()
+    }
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you
+    /// want to host at this endpoint.</p>
+    pub fn production_variants(&self) -> std::option::Option<&[crate::model::ProductionVariant]> {
+        self.production_variants.as_deref()
+    }
+    /// <p></p>
+    pub fn data_capture_config(&self) -> std::option::Option<&crate::model::DataCaptureConfig> {
+        self.data_capture_config.as_ref()
+    }
+    /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+    /// volume attached to the instance.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A timestamp that shows when the endpoint configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Returns the description of an endpoint configuration created using the
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+    /// <code>CreateEndpointConfig</code>
+    /// </a> API.</p>
+    pub fn async_inference_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AsyncInferenceConfig> {
+        self.async_inference_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16570,6 +19650,111 @@ pub struct DescribeEndpointOutput {
     /// <code>CreateEndpointConfig</code>
     /// </a> API.</p>
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
+}
+impl DescribeEndpointOutput {
+    /// <p>Name of the endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>The name of the endpoint configuration associated with this endpoint.</p>
+    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+        self.endpoint_config_name.as_deref()
+    }
+    /// <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
+    /// hosted behind this endpoint. </p>
+    pub fn production_variants(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductionVariantSummary]> {
+        self.production_variants.as_deref()
+    }
+    /// <p></p>
+    pub fn data_capture_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DataCaptureConfigSummary> {
+        self.data_capture_config.as_ref()
+    }
+    /// <p>The status of the endpoint.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>OutOfService</code>: Endpoint is not available to take incoming
+    /// requests.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Creating</code>: <a>CreateEndpoint</a> is executing.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
+    /// updated or deleted or re-scaled until it has completed. This maintenance
+    /// operation does not change any customer-specified values such as VPC config, KMS
+    /// encryption, model, instance type, or instance count.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RollingBack</code>: Endpoint fails to scale up or down or change its
+    /// variant weight and is in the process of rolling back to its previous
+    /// configuration. Once the rollback completes, endpoint returns to an
+    /// <code>InService</code> status. This transitional status only applies to an
+    /// endpoint that has autoscaling enabled and is undergoing variant weight or
+    /// capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called
+    /// explicitly.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InService</code>: Endpoint is available to process incoming
+    /// requests.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
+    /// <a>DescribeEndpointOutput$FailureReason</a> for information about
+    /// the failure. <a>DeleteEndpoint</a> is the only operation that can be
+    /// performed on a failed endpoint.</p>
+    /// </li>
+    /// </ul>
+    pub fn endpoint_status(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+        self.endpoint_status.as_ref()
+    }
+    /// <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed.
+    /// </p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>A timestamp that shows when the endpoint was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the endpoint was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The most recent deployment configuration for the endpoint.</p>
+    pub fn last_deployment_config(&self) -> std::option::Option<&crate::model::DeploymentConfig> {
+        self.last_deployment_config.as_ref()
+    }
+    /// <p>Returns the description of an endpoint configuration created
+    /// using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+    /// <code>CreateEndpointConfig</code>
+    /// </a> API.</p>
+    pub fn async_inference_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AsyncInferenceConfig> {
+        self.async_inference_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16926,6 +20111,72 @@ pub struct DescribeEdgePackagingJobOutput {
     /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
     pub preset_deployment_output: std::option::Option<crate::model::EdgePresetDeploymentOutput>,
 }
+impl DescribeEdgePackagingJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
+    pub fn edge_packaging_job_arn(&self) -> std::option::Option<&str> {
+        self.edge_packaging_job_arn.as_deref()
+    }
+    /// <p>The name of the edge packaging job.</p>
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+        self.edge_packaging_job_name.as_deref()
+    }
+    /// <p>The name of the SageMaker Neo compilation job that is used to locate model artifacts that are being packaged.</p>
+    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+        self.compilation_job_name.as_deref()
+    }
+    /// <p>The name of the model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The version of the model.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to  download and upload the model, and to contact Neo.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The output configuration for the edge packaging job.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::EdgeOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job run on.</p>
+    pub fn resource_key(&self) -> std::option::Option<&str> {
+        self.resource_key.as_deref()
+    }
+    /// <p>The current status of the packaging job.</p>
+    pub fn edge_packaging_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::EdgePackagingJobStatus> {
+        self.edge_packaging_job_status.as_ref()
+    }
+    /// <p>Returns a message describing the job status and error messages.</p>
+    pub fn edge_packaging_job_status_message(&self) -> std::option::Option<&str> {
+        self.edge_packaging_job_status_message.as_deref()
+    }
+    /// <p>The timestamp of when the packaging job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The timestamp of when the job was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Simple Storage (S3) URI where model artifacts ares stored.</p>
+    pub fn model_artifact(&self) -> std::option::Option<&str> {
+        self.model_artifact.as_deref()
+    }
+    /// <p>The signature document of files in the model artifact.</p>
+    pub fn model_signature(&self) -> std::option::Option<&str> {
+        self.model_signature.as_deref()
+    }
+    /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
+    pub fn preset_deployment_output(
+        &self,
+    ) -> std::option::Option<&crate::model::EdgePresetDeploymentOutput> {
+        self.preset_deployment_output.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEdgePackagingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEdgePackagingJobOutput");
@@ -17260,6 +20511,109 @@ pub struct DescribeDomainOutput {
         std::option::Option<crate::model::AppSecurityGroupManagement>,
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
     pub security_group_id_for_domain_boundary: std::option::Option<std::string::String>,
+}
+impl DescribeDomainOutput {
+    /// <p>The domain's Amazon Resource Name (ARN).</p>
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
+        self.domain_arn.as_deref()
+    }
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+    pub fn home_efs_file_system_id(&self) -> std::option::Option<&str> {
+        self.home_efs_file_system_id.as_deref()
+    }
+    /// <p>The SSO managed application instance ID.</p>
+    pub fn single_sign_on_managed_application_instance_id(&self) -> std::option::Option<&str> {
+        self.single_sign_on_managed_application_instance_id
+            .as_deref()
+    }
+    /// <p>The status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The creation time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last modified time.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The failure reason.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The domain's authentication mode.</p>
+    pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
+        self.auth_mode.as_ref()
+    }
+    /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified
+    /// in a given UserProfile.
+    /// </p>
+    pub fn default_user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.default_user_settings.as_ref()
+    }
+    /// <p>Specifies the VPC used for non-EFS traffic. The default value is
+    /// <code>PublicInternetOnly</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+    /// Amazon SageMaker, which allows direct internet access</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p>
+    /// </li>
+    /// </ul>
+    pub fn app_network_access_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AppNetworkAccessType> {
+        self.app_network_access_type.as_ref()
+    }
+    /// <p>This member is deprecated and replaced with <code>KmsKeyId</code>.</p>
+    pub fn home_efs_file_system_kms_key_id(&self) -> std::option::Option<&str> {
+        self.home_efs_file_system_kms_key_id.as_deref()
+    }
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The domain's URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS customer managed key used to encrypt
+    /// the EFS volume attached to the domain.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn domain_settings(&self) -> std::option::Option<&crate::model::DomainSettings> {
+        self.domain_settings.as_ref()
+    }
+    /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode.
+    /// Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+    pub fn app_security_group_management(
+        &self,
+    ) -> std::option::Option<&crate::model::AppSecurityGroupManagement> {
+        self.app_security_group_management.as_ref()
+    }
+    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    pub fn security_group_id_for_domain_boundary(&self) -> std::option::Option<&str> {
+        self.security_group_id_for_domain_boundary.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17677,6 +21031,40 @@ pub struct DescribeDeviceFleetOutput {
     /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
     pub iot_role_alias: std::option::Option<std::string::String>,
 }
+impl DescribeDeviceFleetOutput {
+    /// <p>The name of the fleet.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn device_fleet_arn(&self) -> std::option::Option<&str> {
+        self.device_fleet_arn.as_deref()
+    }
+    /// <p>The output configuration for storing sampled data.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::EdgeOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>A description of the fleet.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Timestamp of when the device fleet was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Timestamp of when the device fleet was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
+    pub fn iot_role_alias(&self) -> std::option::Option<&str> {
+        self.iot_role_alias.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeviceFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceFleetOutput");
@@ -17851,6 +21239,48 @@ pub struct DescribeDeviceOutput {
     pub max_models: i32,
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDeviceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>A description of the device.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the fleet the device belongs to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
+    pub fn iot_thing_name(&self) -> std::option::Option<&str> {
+        self.iot_thing_name.as_deref()
+    }
+    /// <p>The timestamp of the last registration or de-reregistration.</p>
+    pub fn registration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registration_time.as_ref()
+    }
+    /// <p>The last heartbeat received from the device.</p>
+    pub fn latest_heartbeat(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_heartbeat.as_ref()
+    }
+    /// <p>Models on the device.</p>
+    pub fn models(&self) -> std::option::Option<&[crate::model::EdgeModel]> {
+        self.models.as_deref()
+    }
+    /// <p>The maximum number of models.</p>
+    pub fn max_models(&self) -> i32 {
+        self.max_models
+    }
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18060,6 +21490,64 @@ pub struct DescribeDataQualityJobDefinitionOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
+}
+impl DescribeDataQualityJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the data quality monitoring job definition.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+    /// <p>The name of the data quality monitoring job definition.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The time that the data quality monitoring job definition was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The constraints and baselines for the data quality monitoring job definition.</p>
+    pub fn data_quality_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityBaselineConfig> {
+        self.data_quality_baseline_config.as_ref()
+    }
+    /// <p>Information about the container that runs the data quality monitoring job.</p>
+    pub fn data_quality_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityAppSpecification> {
+        self.data_quality_app_specification.as_ref()
+    }
+    /// <p>The list of inputs for the data quality monitoring job. Currently endpoints are
+    /// supported.</p>
+    pub fn data_quality_job_input(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityJobInput> {
+        self.data_quality_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn data_quality_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.data_quality_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>The networking configuration for the data quality monitoring job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
+    /// perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDataQualityJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18319,6 +21807,53 @@ pub struct DescribeContextOutput {
     /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
+impl DescribeContextOutput {
+    /// <p>The name of the context.</p>
+    pub fn context_name(&self) -> std::option::Option<&str> {
+        self.context_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the context.</p>
+    pub fn context_arn(&self) -> std::option::Option<&str> {
+        self.context_arn.as_deref()
+    }
+    /// <p>The source of the context.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ContextSource> {
+        self.source.as_ref()
+    }
+    /// <p>The type of the context.</p>
+    pub fn context_type(&self) -> std::option::Option<&str> {
+        self.context_type.as_deref()
+    }
+    /// <p>The description of the context.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of the context's properties.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>When the context was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>When the context was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeContextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeContextOutput");
@@ -18568,6 +22103,93 @@ pub struct DescribeCompilationJobOutput {
     /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
     /// Virtual Private Cloud</a>.</p>
     pub vpc_config: std::option::Option<crate::model::NeoVpcConfig>,
+}
+impl DescribeCompilationJobOutput {
+    /// <p>The name of the model compilation job.</p>
+    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+        self.compilation_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+    pub fn compilation_job_arn(&self) -> std::option::Option<&str> {
+        self.compilation_job_arn.as_deref()
+    }
+    /// <p>The status of the model compilation job.</p>
+    pub fn compilation_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CompilationJobStatus> {
+        self.compilation_job_status.as_ref()
+    }
+    /// <p>The time when the model compilation job started the <code>CompilationJob</code>
+    /// instances. </p>
+    /// <p>You are billed for the time between this timestamp and the timestamp in the <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs,
+    /// the start time might be later than this time. That's because it takes time to download
+    /// the compilation job, which depends on the size of the compilation job container. </p>
+    pub fn compilation_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.compilation_start_time.as_ref()
+    }
+    /// <p>The time when the model compilation job on a compilation job instance ended. For a
+    /// successful or stopped job, this is when the job's model artifacts have finished
+    /// uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
+    pub fn compilation_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.compilation_end_time.as_ref()
+    }
+    /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
+    /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
+    /// costs.</p>
+    pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>The inference image to use when compiling a model.
+    /// Specify an image only if the target device is a cloud instance.</p>
+    pub fn inference_image(&self) -> std::option::Option<&str> {
+        self.inference_image.as_deref()
+    }
+    /// <p>The time that the model compilation job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that the status
+    /// of
+    /// the model compilation job was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If a model compilation job failed, the reason it failed. </p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Information about the location in Amazon S3 that has been configured for storing the model
+    /// artifacts used in the compilation job.</p>
+    pub fn model_artifacts(&self) -> std::option::Option<&crate::model::ModelArtifacts> {
+        self.model_artifacts.as_ref()
+    }
+    /// <p>Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.</p>
+    pub fn model_digests(&self) -> std::option::Option<&crate::model::ModelDigests> {
+        self.model_digests.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
+    /// compilation job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Information about the location in Amazon S3 of the input model artifacts, the name and
+    /// shape of the expected data inputs, and the framework in which the model was
+    /// trained.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::InputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>Information about the output location for the compiled model and the target device
+    /// that the model runs on.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+    /// compilation job to connect to. Control access to your models by
+    /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+    /// Virtual Private Cloud</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::NeoVpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCompilationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18905,6 +22527,30 @@ pub struct DescribeCodeRepositoryOutput {
     /// Manager secret that contains the credentials used to access the repository.</p>
     pub git_config: std::option::Option<crate::model::GitConfig>,
 }
+impl DescribeCodeRepositoryOutput {
+    /// <p>The name of the Git repository.</p>
+    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+        self.code_repository_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
+    pub fn code_repository_arn(&self) -> std::option::Option<&str> {
+        self.code_repository_arn.as_deref()
+    }
+    /// <p>The date and time that the repository was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the repository was last changed.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Configuration details about the repository, including the URL where the repository is
+    /// located, the default branch, and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets
+    /// Manager secret that contains the credentials used to access the repository.</p>
+    pub fn git_config(&self) -> std::option::Option<&crate::model::GitConfig> {
+        self.git_config.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCodeRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCodeRepositoryOutput");
@@ -19071,6 +22717,103 @@ pub struct DescribeAutoMlJobOutput {
     pub model_deploy_config: std::option::Option<crate::model::ModelDeployConfig>,
     /// <p>Provides information about endpoint for the model deployment.</p>
     pub model_deploy_result: std::option::Option<crate::model::ModelDeployResult>,
+}
+impl DescribeAutoMlJobOutput {
+    /// <p>Returns the name of the AutoML job.</p>
+    pub fn auto_ml_job_name(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_name.as_deref()
+    }
+    /// <p>Returns the ARN of the AutoML job.</p>
+    pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_arn.as_deref()
+    }
+    /// <p>Returns the input data configuration for the AutoML job..</p>
+    pub fn input_data_config(&self) -> std::option::Option<&[crate::model::AutoMlChannel]> {
+        self.input_data_config.as_deref()
+    }
+    /// <p>Returns the job's output data config.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::AutoMlOutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+    /// has read permission to the input data location and write permission to the output data
+    /// location in Amazon S3.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Returns the job's objective.</p>
+    pub fn auto_ml_job_objective(&self) -> std::option::Option<&crate::model::AutoMlJobObjective> {
+        self.auto_ml_job_objective.as_ref()
+    }
+    /// <p>Returns the job's problem type.</p>
+    pub fn problem_type(&self) -> std::option::Option<&crate::model::ProblemType> {
+        self.problem_type.as_ref()
+    }
+    /// <p>Returns the configuration for the AutoML job.</p>
+    pub fn auto_ml_job_config(&self) -> std::option::Option<&crate::model::AutoMlJobConfig> {
+        self.auto_ml_job_config.as_ref()
+    }
+    /// <p>Returns the creation time of the AutoML job.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Returns the end time of the AutoML job.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Returns the job's last modified time.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Returns the failure reason for an AutoML job, when applicable.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
+    pub fn partial_failure_reasons(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoMlPartialFailureReason]> {
+        self.partial_failure_reasons.as_deref()
+    }
+    /// <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+    pub fn best_candidate(&self) -> std::option::Option<&crate::model::AutoMlCandidate> {
+        self.best_candidate.as_ref()
+    }
+    /// <p>Returns the status of the AutoML job.</p>
+    pub fn auto_ml_job_status(&self) -> std::option::Option<&crate::model::AutoMlJobStatus> {
+        self.auto_ml_job_status.as_ref()
+    }
+    /// <p>Returns the secondary status of the AutoML job.</p>
+    pub fn auto_ml_job_secondary_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoMlJobSecondaryStatus> {
+        self.auto_ml_job_secondary_status.as_ref()
+    }
+    /// <p>Indicates whether the output for an AutoML job generates candidate definitions
+    /// only.</p>
+    pub fn generate_candidate_definitions_only(&self) -> bool {
+        self.generate_candidate_definitions_only
+    }
+    /// <p>Returns information on the job's artifacts found in
+    /// <code>AutoMLJobArtifacts</code>.</p>
+    pub fn auto_ml_job_artifacts(&self) -> std::option::Option<&crate::model::AutoMlJobArtifacts> {
+        self.auto_ml_job_artifacts.as_ref()
+    }
+    /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
+    /// <code>CompletionCriteria</code>. If you do not provide these values, they are
+    /// auto-inferred. If you do provide them, the values used are the ones you provide.</p>
+    pub fn resolved_attributes(&self) -> std::option::Option<&crate::model::ResolvedAttributes> {
+        self.resolved_attributes.as_ref()
+    }
+    /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of
+    /// that endpoint if deployed automatically.</p>
+    pub fn model_deploy_config(&self) -> std::option::Option<&crate::model::ModelDeployConfig> {
+        self.model_deploy_config.as_ref()
+    }
+    /// <p>Provides information about endpoint for the model deployment.</p>
+    pub fn model_deploy_result(&self) -> std::option::Option<&crate::model::ModelDeployResult> {
+        self.model_deploy_result.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAutoMlJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19504,6 +23247,53 @@ pub struct DescribeArtifactOutput {
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
 }
+impl DescribeArtifactOutput {
+    /// <p>The name of the artifact.</p>
+    pub fn artifact_name(&self) -> std::option::Option<&str> {
+        self.artifact_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
+    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+        self.artifact_arn.as_deref()
+    }
+    /// <p>The source of the artifact.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ArtifactSource> {
+        self.source.as_ref()
+    }
+    /// <p>The type of the artifact.</p>
+    pub fn artifact_type(&self) -> std::option::Option<&str> {
+        self.artifact_type.as_deref()
+    }
+    /// <p>A list of the artifact's properties.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>When the artifact was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>When the artifact was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeArtifactOutput");
@@ -19722,6 +23512,30 @@ pub struct DescribeAppImageConfigOutput {
     /// <p>The configuration of a KernelGateway app.</p>
     pub kernel_gateway_image_config: std::option::Option<crate::model::KernelGatewayImageConfig>,
 }
+impl DescribeAppImageConfigOutput {
+    /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+    pub fn app_image_config_arn(&self) -> std::option::Option<&str> {
+        self.app_image_config_arn.as_deref()
+    }
+    /// <p>The name of the AppImageConfig.</p>
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
+        self.app_image_config_name.as_deref()
+    }
+    /// <p>When the AppImageConfig was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>When the AppImageConfig was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The configuration of a KernelGateway app.</p>
+    pub fn kernel_gateway_image_config(
+        &self,
+    ) -> std::option::Option<&crate::model::KernelGatewayImageConfig> {
+        self.kernel_gateway_image_config.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAppImageConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppImageConfigOutput");
@@ -19863,6 +23677,52 @@ pub struct DescribeAppOutput {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub resource_spec: std::option::Option<crate::model::ResourceSpec>,
+}
+impl DescribeAppOutput {
+    /// <p>The Amazon Resource Name (ARN) of the app.</p>
+    pub fn app_arn(&self) -> std::option::Option<&str> {
+        self.app_arn.as_deref()
+    }
+    /// <p>The type of app.</p>
+    pub fn app_type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.app_type.as_ref()
+    }
+    /// <p>The name of the app.</p>
+    pub fn app_name(&self) -> std::option::Option<&str> {
+        self.app_name.as_deref()
+    }
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile name.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>The status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AppStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp of the last health check.</p>
+    pub fn last_health_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_health_check_timestamp.as_ref()
+    }
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
+    pub fn last_user_activity_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_user_activity_timestamp.as_ref()
+    }
+    /// <p>The creation time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The failure reason.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    pub fn resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
+        self.resource_spec.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20087,6 +23947,61 @@ pub struct DescribeAlgorithmOutput {
     pub product_id: std::option::Option<std::string::String>,
     /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
     pub certify_for_marketplace: bool,
+}
+impl DescribeAlgorithmOutput {
+    /// <p>The name of the algorithm being described.</p>
+    pub fn algorithm_name(&self) -> std::option::Option<&str> {
+        self.algorithm_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+        self.algorithm_arn.as_deref()
+    }
+    /// <p>A brief summary about the algorithm.</p>
+    pub fn algorithm_description(&self) -> std::option::Option<&str> {
+        self.algorithm_description.as_deref()
+    }
+    /// <p>A timestamp specifying when the algorithm was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Details about training jobs run by this algorithm.</p>
+    pub fn training_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingSpecification> {
+        self.training_specification.as_ref()
+    }
+    /// <p>Details about inference jobs that the algorithm runs.</p>
+    pub fn inference_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceSpecification> {
+        self.inference_specification.as_ref()
+    }
+    /// <p>Details about configurations for one or more training jobs that Amazon SageMaker runs to test the
+    /// algorithm.</p>
+    pub fn validation_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::AlgorithmValidationSpecification> {
+        self.validation_specification.as_ref()
+    }
+    /// <p>The current status of the algorithm.</p>
+    pub fn algorithm_status(&self) -> std::option::Option<&crate::model::AlgorithmStatus> {
+        self.algorithm_status.as_ref()
+    }
+    /// <p>Details about the current status of the algorithm.</p>
+    pub fn algorithm_status_details(
+        &self,
+    ) -> std::option::Option<&crate::model::AlgorithmStatusDetails> {
+        self.algorithm_status_details.as_ref()
+    }
+    /// <p>The product identifier of the algorithm.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
+    pub fn certify_for_marketplace(&self) -> bool {
+        self.certify_for_marketplace
+    }
 }
 impl std::fmt::Debug for DescribeAlgorithmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20334,6 +24249,61 @@ pub struct DescribeActionOutput {
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
+}
+impl DescribeActionOutput {
+    /// <p>The name of the action.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn action_arn(&self) -> std::option::Option<&str> {
+        self.action_arn.as_deref()
+    }
+    /// <p>The source of the action.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ActionSource> {
+        self.source.as_ref()
+    }
+    /// <p>The type of the action.</p>
+    pub fn action_type(&self) -> std::option::Option<&str> {
+        self.action_type.as_deref()
+    }
+    /// <p>The description of the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A list of the action's properties.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>When the action was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>When the action was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
+        self.last_modified_by.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20599,6 +24569,13 @@ pub struct DeleteWorkteamOutput {
     /// returns <code>false</code>.</p>
     pub success: bool,
 }
+impl DeleteWorkteamOutput {
+    /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise,
+    /// returns <code>false</code>.</p>
+    pub fn success(&self) -> bool {
+        self.success
+    }
+}
 impl std::fmt::Debug for DeleteWorkteamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkteamOutput");
@@ -20709,6 +24686,12 @@ pub struct DeleteTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
     pub trial_component_arn: std::option::Option<std::string::String>,
 }
+impl DeleteTrialComponentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
+    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+        self.trial_component_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTrialComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTrialComponentOutput");
@@ -20759,6 +24742,12 @@ impl DeleteTrialComponentOutput {
 pub struct DeleteTrialOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial that is being deleted.</p>
     pub trial_arn: std::option::Option<std::string::String>,
+}
+impl DeleteTrialOutput {
+    /// <p>The Amazon Resource Name (ARN) of the trial that is being deleted.</p>
+    pub fn trial_arn(&self) -> std::option::Option<&str> {
+        self.trial_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTrialOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20897,6 +24886,12 @@ impl DeleteProjectOutput {
 pub struct DeletePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
     pub pipeline_arn: std::option::Option<std::string::String>,
+}
+impl DeletePipelineOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21396,6 +25391,12 @@ pub struct DeleteExperimentOutput {
     /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
     pub experiment_arn: std::option::Option<std::string::String>,
 }
+impl DeleteExperimentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
+    pub fn experiment_arn(&self) -> std::option::Option<&str> {
+        self.experiment_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteExperimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteExperimentOutput");
@@ -21597,6 +25598,12 @@ pub struct DeleteContextOutput {
     /// <p>The Amazon Resource Name (ARN) of the context.</p>
     pub context_arn: std::option::Option<std::string::String>,
 }
+impl DeleteContextOutput {
+    /// <p>The Amazon Resource Name (ARN) of the context.</p>
+    pub fn context_arn(&self) -> std::option::Option<&str> {
+        self.context_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContextOutput");
@@ -21677,6 +25684,16 @@ pub struct DeleteAssociationOutput {
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub destination_arn: std::option::Option<std::string::String>,
 }
+impl DeleteAssociationOutput {
+    /// <p>The ARN of the source.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssociationOutput");
@@ -21740,6 +25757,12 @@ impl DeleteAssociationOutput {
 pub struct DeleteArtifactOutput {
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub artifact_arn: std::option::Option<std::string::String>,
+}
+impl DeleteArtifactOutput {
+    /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
+    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+        self.artifact_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21879,6 +25902,12 @@ pub struct DeleteActionOutput {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub action_arn: std::option::Option<std::string::String>,
 }
+impl DeleteActionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn action_arn(&self) -> std::option::Option<&str> {
+        self.action_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteActionOutput");
@@ -21927,6 +25956,13 @@ pub struct CreateWorkteamOutput {
     /// <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the
     /// work team.</p>
     pub workteam_arn: std::option::Option<std::string::String>,
+}
+impl CreateWorkteamOutput {
+    /// <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the
+    /// work team.</p>
+    pub fn workteam_arn(&self) -> std::option::Option<&str> {
+        self.workteam_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkteamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21977,6 +26013,12 @@ impl CreateWorkteamOutput {
 pub struct CreateWorkforceOutput {
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
     pub workforce_arn: std::option::Option<std::string::String>,
+}
+impl CreateWorkforceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
+    pub fn workforce_arn(&self) -> std::option::Option<&str> {
+        self.workforce_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkforceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22029,6 +26071,12 @@ pub struct CreateUserProfileOutput {
     /// <p>The user profile Amazon Resource Name (ARN).</p>
     pub user_profile_arn: std::option::Option<std::string::String>,
 }
+impl CreateUserProfileOutput {
+    /// <p>The user profile Amazon Resource Name (ARN).</p>
+    pub fn user_profile_arn(&self) -> std::option::Option<&str> {
+        self.user_profile_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserProfileOutput");
@@ -22079,6 +26127,12 @@ impl CreateUserProfileOutput {
 pub struct CreateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub trial_component_arn: std::option::Option<std::string::String>,
+}
+impl CreateTrialComponentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+        self.trial_component_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTrialComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22131,6 +26185,12 @@ pub struct CreateTrialOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub trial_arn: std::option::Option<std::string::String>,
 }
+impl CreateTrialOutput {
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn trial_arn(&self) -> std::option::Option<&str> {
+        self.trial_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrialOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrialOutput");
@@ -22178,6 +26238,12 @@ impl CreateTrialOutput {
 pub struct CreateTransformJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
     pub transform_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateTransformJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
+    pub fn transform_job_arn(&self) -> std::option::Option<&str> {
+        self.transform_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTransformJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22230,6 +26296,12 @@ pub struct CreateTrainingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     pub training_job_arn: std::option::Option<std::string::String>,
 }
+impl CreateTrainingJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+        self.training_job_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrainingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrainingJobOutput");
@@ -22280,6 +26352,12 @@ impl CreateTrainingJobOutput {
 pub struct CreateStudioLifecycleConfigOutput {
     /// <p>The ARN of your created Lifecycle Configuration.</p>
     pub studio_lifecycle_config_arn: std::option::Option<std::string::String>,
+}
+impl CreateStudioLifecycleConfigOutput {
+    /// <p>The ARN of your created Lifecycle Configuration.</p>
+    pub fn studio_lifecycle_config_arn(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStudioLifecycleConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22339,6 +26417,16 @@ pub struct CreateProjectOutput {
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the new project.</p>
     pub project_id: std::option::Option<std::string::String>,
+}
+impl CreateProjectOutput {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The ID of the new project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22401,6 +26489,12 @@ pub struct CreateProcessingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
     pub processing_job_arn: std::option::Option<std::string::String>,
 }
+impl CreateProcessingJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
+    pub fn processing_job_arn(&self) -> std::option::Option<&str> {
+        self.processing_job_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProcessingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProcessingJobOutput");
@@ -22451,6 +26545,12 @@ impl CreateProcessingJobOutput {
 pub struct CreatePresignedNotebookInstanceUrlOutput {
     /// <p>A JSON object that contains the URL string. </p>
     pub authorized_url: std::option::Option<std::string::String>,
+}
+impl CreatePresignedNotebookInstanceUrlOutput {
+    /// <p>A JSON object that contains the URL string. </p>
+    pub fn authorized_url(&self) -> std::option::Option<&str> {
+        self.authorized_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePresignedNotebookInstanceUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22503,6 +26603,12 @@ pub struct CreatePresignedDomainUrlOutput {
     /// <p>The presigned URL.</p>
     pub authorized_url: std::option::Option<std::string::String>,
 }
+impl CreatePresignedDomainUrlOutput {
+    /// <p>The presigned URL.</p>
+    pub fn authorized_url(&self) -> std::option::Option<&str> {
+        self.authorized_url.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePresignedDomainUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePresignedDomainUrlOutput");
@@ -22554,6 +26660,12 @@ pub struct CreatePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the created pipeline.</p>
     pub pipeline_arn: std::option::Option<std::string::String>,
 }
+impl CreatePipelineOutput {
+    /// <p>The Amazon Resource Name (ARN) of the created pipeline.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePipelineOutput");
@@ -22601,6 +26713,12 @@ impl CreatePipelineOutput {
 pub struct CreateNotebookInstanceLifecycleConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
     pub notebook_instance_lifecycle_config_arn: std::option::Option<std::string::String>,
+}
+impl CreateNotebookInstanceLifecycleConfigOutput {
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
+    pub fn notebook_instance_lifecycle_config_arn(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNotebookInstanceLifecycleConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22659,6 +26777,12 @@ pub struct CreateNotebookInstanceOutput {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     pub notebook_instance_arn: std::option::Option<std::string::String>,
 }
+impl CreateNotebookInstanceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
+    pub fn notebook_instance_arn(&self) -> std::option::Option<&str> {
+        self.notebook_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateNotebookInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNotebookInstanceOutput");
@@ -22709,6 +26833,12 @@ impl CreateNotebookInstanceOutput {
 pub struct CreateMonitoringScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub monitoring_schedule_arn: std::option::Option<std::string::String>,
+}
+impl CreateMonitoringScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMonitoringScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22761,6 +26891,12 @@ pub struct CreateModelQualityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model quality monitoring job.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
 }
+impl CreateModelQualityJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model quality monitoring job.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelQualityJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelQualityJobDefinitionOutput");
@@ -22811,6 +26947,12 @@ impl CreateModelQualityJobDefinitionOutput {
 pub struct CreateModelPackageGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     pub model_package_group_arn: std::option::Option<std::string::String>,
+}
+impl CreateModelPackageGroupOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model group.</p>
+    pub fn model_package_group_arn(&self) -> std::option::Option<&str> {
+        self.model_package_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelPackageGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22863,6 +27005,12 @@ pub struct CreateModelPackageOutput {
     /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
     pub model_package_arn: std::option::Option<std::string::String>,
 }
+impl CreateModelPackageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
+    pub fn model_package_arn(&self) -> std::option::Option<&str> {
+        self.model_package_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelPackageOutput");
@@ -22913,6 +27061,12 @@ impl CreateModelPackageOutput {
 pub struct CreateModelExplainabilityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
+}
+impl CreateModelExplainabilityJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelExplainabilityJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22965,6 +27119,12 @@ pub struct CreateModelBiasJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model bias job.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
 }
+impl CreateModelBiasJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model bias job.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelBiasJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelBiasJobDefinitionOutput");
@@ -23016,6 +27176,12 @@ pub struct CreateModelOutput {
     /// <p>The ARN of the model created in Amazon SageMaker.</p>
     pub model_arn: std::option::Option<std::string::String>,
 }
+impl CreateModelOutput {
+    /// <p>The ARN of the model created in Amazon SageMaker.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelOutput");
@@ -23064,6 +27230,13 @@ pub struct CreateLabelingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the
     /// labeling job.</p>
     pub labeling_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateLabelingJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the
+    /// labeling job.</p>
+    pub fn labeling_job_arn(&self) -> std::option::Option<&str> {
+        self.labeling_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLabelingJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23118,6 +27291,12 @@ pub struct CreateImageVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the image version.</p>
     pub image_version_arn: std::option::Option<std::string::String>,
 }
+impl CreateImageVersionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the image version.</p>
+    pub fn image_version_arn(&self) -> std::option::Option<&str> {
+        self.image_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageVersionOutput");
@@ -23169,6 +27348,12 @@ pub struct CreateImageOutput {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
     pub image_arn: std::option::Option<std::string::String>,
 }
+impl CreateImageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageOutput");
@@ -23217,6 +27402,13 @@ pub struct CreateHyperParameterTuningJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a
     /// hyperparameter tuning job when you create it.</p>
     pub hyper_parameter_tuning_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateHyperParameterTuningJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a
+    /// hyperparameter tuning job when you create it.</p>
+    pub fn hyper_parameter_tuning_job_arn(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateHyperParameterTuningJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23277,6 +27469,12 @@ pub struct CreateHumanTaskUiOutput {
     /// <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
     pub human_task_ui_arn: std::option::Option<std::string::String>,
 }
+impl CreateHumanTaskUiOutput {
+    /// <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
+    pub fn human_task_ui_arn(&self) -> std::option::Option<&str> {
+        self.human_task_ui_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHumanTaskUiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHumanTaskUiOutput");
@@ -23327,6 +27525,12 @@ impl CreateHumanTaskUiOutput {
 pub struct CreateFlowDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the flow definition you create.</p>
     pub flow_definition_arn: std::option::Option<std::string::String>,
+}
+impl CreateFlowDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the flow definition you create.</p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFlowDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23379,6 +27583,13 @@ pub struct CreateFeatureGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique
     /// identifier for the feature group. </p>
     pub feature_group_arn: std::option::Option<std::string::String>,
+}
+impl CreateFeatureGroupOutput {
+    /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique
+    /// identifier for the feature group. </p>
+    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+        self.feature_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFeatureGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23433,6 +27644,12 @@ pub struct CreateExperimentOutput {
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     pub experiment_arn: std::option::Option<std::string::String>,
 }
+impl CreateExperimentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn experiment_arn(&self) -> std::option::Option<&str> {
+        self.experiment_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateExperimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateExperimentOutput");
@@ -23484,6 +27701,12 @@ pub struct CreateEndpointConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     pub endpoint_config_arn: std::option::Option<std::string::String>,
 }
+impl CreateEndpointConfigOutput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
+    pub fn endpoint_config_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_config_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEndpointConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEndpointConfigOutput");
@@ -23534,6 +27757,12 @@ impl CreateEndpointConfigOutput {
 pub struct CreateEndpointOutput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
+}
+impl CreateEndpointOutput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23614,6 +27843,16 @@ pub struct CreateDomainOutput {
     pub domain_arn: std::option::Option<std::string::String>,
     /// <p>The URL to the created domain.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl CreateDomainOutput {
+    /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
+        self.domain_arn.as_deref()
+    }
+    /// <p>The URL to the created domain.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23706,6 +27945,12 @@ pub struct CreateDataQualityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
 }
+impl CreateDataQualityJobDefinitionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDataQualityJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataQualityJobDefinitionOutput");
@@ -23756,6 +28001,12 @@ impl CreateDataQualityJobDefinitionOutput {
 pub struct CreateContextOutput {
     /// <p>The Amazon Resource Name (ARN) of the context.</p>
     pub context_arn: std::option::Option<std::string::String>,
+}
+impl CreateContextOutput {
+    /// <p>The Amazon Resource Name (ARN) of the context.</p>
+    pub fn context_arn(&self) -> std::option::Option<&str> {
+        self.context_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateContextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23812,6 +28063,20 @@ pub struct CreateCompilationJobOutput {
     /// </li>
     /// </ul>
     pub compilation_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateCompilationJobOutput {
+    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns
+    /// the following data in JSON format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
+    /// job.</p>
+    /// </li>
+    /// </ul>
+    pub fn compilation_job_arn(&self) -> std::option::Option<&str> {
+        self.compilation_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCompilationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23880,6 +28145,12 @@ pub struct CreateCodeRepositoryOutput {
     /// <p>The Amazon Resource Name (ARN) of the new repository.</p>
     pub code_repository_arn: std::option::Option<std::string::String>,
 }
+impl CreateCodeRepositoryOutput {
+    /// <p>The Amazon Resource Name (ARN) of the new repository.</p>
+    pub fn code_repository_arn(&self) -> std::option::Option<&str> {
+        self.code_repository_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCodeRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCodeRepositoryOutput");
@@ -23930,6 +28201,12 @@ impl CreateCodeRepositoryOutput {
 pub struct CreateAutoMlJobOutput {
     /// <p>The unique ARN assigned to the AutoML job when it is created.</p>
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateAutoMlJobOutput {
+    /// <p>The unique ARN assigned to the AutoML job when it is created.</p>
+    pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAutoMlJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23982,6 +28259,12 @@ pub struct CreateArtifactOutput {
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub artifact_arn: std::option::Option<std::string::String>,
 }
+impl CreateArtifactOutput {
+    /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
+    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+        self.artifact_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateArtifactOutput");
@@ -24029,6 +28312,12 @@ impl CreateArtifactOutput {
 pub struct CreateAppImageConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
     pub app_image_config_arn: std::option::Option<std::string::String>,
+}
+impl CreateAppImageConfigOutput {
+    /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+    pub fn app_image_config_arn(&self) -> std::option::Option<&str> {
+        self.app_image_config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppImageConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24081,6 +28370,12 @@ pub struct CreateAppOutput {
     /// <p>The Amazon Resource Name (ARN) of the app.</p>
     pub app_arn: std::option::Option<std::string::String>,
 }
+impl CreateAppOutput {
+    /// <p>The Amazon Resource Name (ARN) of the app.</p>
+    pub fn app_arn(&self) -> std::option::Option<&str> {
+        self.app_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppOutput");
@@ -24128,6 +28423,12 @@ impl CreateAppOutput {
 pub struct CreateAlgorithmOutput {
     /// <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
     pub algorithm_arn: std::option::Option<std::string::String>,
+}
+impl CreateAlgorithmOutput {
+    /// <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+        self.algorithm_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAlgorithmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24179,6 +28480,12 @@ impl CreateAlgorithmOutput {
 pub struct CreateActionOutput {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub action_arn: std::option::Option<std::string::String>,
+}
+impl CreateActionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn action_arn(&self) -> std::option::Option<&str> {
+        self.action_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24240,6 +28547,31 @@ pub struct BatchDescribeModelPackageOutput {
             crate::model::BatchDescribeModelPackageError,
         >,
     >,
+}
+impl BatchDescribeModelPackageOutput {
+    /// <p>The summaries for the model package versions</p>
+    pub fn model_package_summaries(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::BatchDescribeModelPackageSummary,
+        >,
+    > {
+        self.model_package_summaries.as_ref()
+    }
+    /// <p>A map of the resource and BatchDescribeModelPackageError objects
+    /// reporting the error associated with describing the model package.</p>
+    pub fn batch_describe_model_package_error_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::BatchDescribeModelPackageError,
+        >,
+    > {
+        self.batch_describe_model_package_error_map.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchDescribeModelPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24357,6 +28689,16 @@ pub struct AssociateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub trial_arn: std::option::Option<std::string::String>,
 }
+impl AssociateTrialComponentOutput {
+    /// <p>The ARN of the trial component.</p>
+    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+        self.trial_component_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn trial_arn(&self) -> std::option::Option<&str> {
+        self.trial_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateTrialComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateTrialComponentOutput");
@@ -24421,6 +28763,12 @@ pub struct AddTagsOutput {
     /// <p>A list of tags associated with the Amazon SageMaker resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl AddTagsOutput {
+    /// <p>A list of tags associated with the Amazon SageMaker resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for AddTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsOutput");
@@ -24477,6 +28825,16 @@ pub struct AddAssociationOutput {
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub destination_arn: std::option::Option<std::string::String>,
+}
+impl AddAssociationOutput {
+    /// <p>The ARN of the source.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AddAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

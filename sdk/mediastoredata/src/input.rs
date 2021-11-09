@@ -1090,6 +1090,56 @@ pub struct PutObjectInput {
     /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
     pub upload_availability: std::option::Option<crate::model::UploadAvailability>,
 }
+impl PutObjectInput {
+    /// <p>The bytes to be stored. </p>
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.body
+    }
+    /// <p>The path (including the file name) where the object is stored in the container.
+    /// Format: <folder name>/<folder name>/<file name></p>
+    /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
+    /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
+    /// <code>premium/canada/mlaw.avi</code>.</p>
+    /// <p>Do not include the container name in this path.</p>
+    /// <p>If the path includes any folders that don't exist yet, the service creates them. For
+    /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
+    /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
+    /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
+    /// <code>canada</code>, in the <code>premium</code> folder. </p>
+    /// <p>There is no correlation between the path to the source and the path (folders) in the
+    /// container in AWS Elemental MediaStore.</p>
+    /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
+    /// Guide</a>.</p>
+    /// <p>The file name is the name that is assigned to the file that you upload. The file can
+    /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
+    /// name. The file name can include or omit an extension. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The content type of the object.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
+    /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>Headers with a custom user-defined value are also accepted.</p>
+    pub fn cache_control(&self) -> std::option::Option<&str> {
+        self.cache_control.as_deref()
+    }
+    /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to
+    /// high-performance temporal storage class, and objects are persisted into durable storage
+    /// shortly after being received.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for
+    /// downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is
+    /// available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
+    /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+    pub fn upload_availability(&self) -> std::option::Option<&crate::model::UploadAvailability> {
+        self.upload_availability.as_ref()
+    }
+}
 impl std::fmt::Debug for PutObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutObjectInput");
@@ -1126,6 +1176,33 @@ pub struct ListItemsInput {
     /// second time and specify the <code>NextToken</code> value.</p>
     /// <p>Tokens expire after 15 minutes.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListItemsInput {
+    /// <p>The path in the container from which to retrieve items. Format: <folder
+    /// name>/<folder name>/<file name></p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The maximum number of results to return per API request. For example, you submit a
+    /// <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000
+    /// items match your request, the service returns no more than the first 500 items. (The
+    /// service also returns a <code>NextToken</code> value that you can use to fetch the next
+    /// batch of results.) The service might return fewer results than the <code>MaxResults</code>
+    /// value.</p>
+    /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to
+    /// pagination with a maximum of 1,000 results per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token that identifies which batch of results that you want to see. For example,
+    /// you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The
+    /// service returns the first batch of results (up to 500) and a <code>NextToken</code> value.
+    /// To see the next batch of results, you can submit the <code>ListItems</code> request a
+    /// second time and specify the <code>NextToken</code> value.</p>
+    /// <p>Tokens expire after 15 minutes.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1164,6 +1241,34 @@ pub struct GetObjectInput {
     /// <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
     pub range: std::option::Option<std::string::String>,
 }
+impl GetObjectInput {
+    /// <p>The path (including the file name) where the object is stored in the container.
+    /// Format: <folder name>/<folder name>/<file name></p>
+    /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
+    /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
+    /// <code>premium/canada/mlaw.avi</code>.</p>
+    /// <p>Do not include the container name in this path.</p>
+    /// <p>If the path includes any folders that don't exist yet, the service creates them. For
+    /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
+    /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
+    /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
+    /// <code>canada</code>, in the <code>premium</code> folder. </p>
+    /// <p>There is no correlation between the path to the source and the path (folders) in the
+    /// container in AWS Elemental MediaStore.</p>
+    /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
+    /// Guide</a>.</p>
+    /// <p>The file name is the name that is assigned to the file that you upload. The file can
+    /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
+    /// name. The file name can include or omit an extension. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The range bytes of an object to retrieve. For more information about the
+    /// <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
+    pub fn range(&self) -> std::option::Option<&str> {
+        self.range.as_deref()
+    }
+}
 impl std::fmt::Debug for GetObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetObjectInput");
@@ -1181,6 +1286,13 @@ pub struct DescribeObjectInput {
     /// Format: <folder name>/<folder name>/<file name></p>
     pub path: std::option::Option<std::string::String>,
 }
+impl DescribeObjectInput {
+    /// <p>The path (including the file name) where the object is stored in the container.
+    /// Format: <folder name>/<folder name>/<file name></p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeObjectInput");
@@ -1196,6 +1308,13 @@ pub struct DeleteObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container.
     /// Format: <folder name>/<folder name>/<file name></p>
     pub path: std::option::Option<std::string::String>,
+}
+impl DeleteObjectInput {
+    /// <p>The path (including the file name) where the object is stored in the container.
+    /// Format: <folder name>/<folder name>/<file name></p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

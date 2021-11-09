@@ -10,6 +10,20 @@ pub struct SanitizationWarning {
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
     pub reason: std::option::Option<crate::model::SanitizationWarningReason>,
 }
+impl SanitizationWarning {
+    /// <p>The name of the XML attribute that has been sanitized.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The name of the XML element that has been sanitized.</p>
+    pub fn element_name(&self) -> std::option::Option<&str> {
+        self.element_name.as_deref()
+    }
+    /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::SanitizationWarningReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for SanitizationWarning {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SanitizationWarning");
@@ -161,6 +175,20 @@ pub struct ConfigurationRevision {
     /// <p>Required. The revision number of the configuration.</p>
     pub revision: i32,
 }
+impl ConfigurationRevision {
+    /// <p>Required. The date and time of the configuration revision.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The description of the configuration revision.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Required. The revision number of the configuration.</p>
+    pub fn revision(&self) -> i32 {
+        self.revision
+    }
+}
 impl std::fmt::Debug for ConfigurationRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationRevision");
@@ -241,6 +269,20 @@ pub struct WeeklyStartTime {
     pub time_of_day: std::option::Option<std::string::String>,
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
     pub time_zone: std::option::Option<std::string::String>,
+}
+impl WeeklyStartTime {
+    /// <p>Required. The day of the week.</p>
+    pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
+        self.day_of_week.as_ref()
+    }
+    /// <p>Required. The time, in 24-hour format.</p>
+    pub fn time_of_day(&self) -> std::option::Option<&str> {
+        self.time_of_day.as_deref()
+    }
+    /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
+    pub fn time_zone(&self) -> std::option::Option<&str> {
+        self.time_zone.as_deref()
+    }
 }
 impl std::fmt::Debug for WeeklyStartTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -404,6 +446,16 @@ pub struct Logs {
     /// <p>Enables general logging.</p>
     pub general: bool,
 }
+impl Logs {
+    /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
+    pub fn audit(&self) -> bool {
+        self.audit
+    }
+    /// <p>Enables general logging.</p>
+    pub fn general(&self) -> bool {
+        self.general
+    }
+}
 impl std::fmt::Debug for Logs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Logs");
@@ -486,6 +538,52 @@ pub struct LdapServerMetadataOutput {
     pub user_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub user_search_subtree: bool,
+}
+impl LdapServerMetadataOutput {
+    /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    pub fn hosts(&self) -> std::option::Option<&[std::string::String]> {
+        self.hosts.as_deref()
+    }
+    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
+    /// dc=example, dc=com.</p>
+    pub fn role_base(&self) -> std::option::Option<&str> {
+        self.role_base.as_deref()
+    }
+    /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
+    pub fn role_search_matching(&self) -> std::option::Option<&str> {
+        self.role_search_matching.as_deref()
+    }
+    /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
+    pub fn role_search_subtree(&self) -> bool {
+        self.role_search_subtree
+    }
+    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
+    /// dc=com.</p>
+    pub fn service_account_username(&self) -> std::option::Option<&str> {
+        self.service_account_username.as_deref()
+    }
+    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
+    /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    pub fn user_base(&self) -> std::option::Option<&str> {
+        self.user_base.as_deref()
+    }
+    /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
+    pub fn user_role_name(&self) -> std::option::Option<&str> {
+        self.user_role_name.as_deref()
+    }
+    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
+    /// dc=com.</p>
+    pub fn user_search_matching(&self) -> std::option::Option<&str> {
+        self.user_search_matching.as_deref()
+    }
+    /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
+    pub fn user_search_subtree(&self) -> bool {
+        self.user_search_subtree
+    }
 }
 impl std::fmt::Debug for LdapServerMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -683,6 +781,16 @@ pub struct ConfigurationId {
     /// <p>The revision number of the configuration.</p>
     pub revision: i32,
 }
+impl ConfigurationId {
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The revision number of the configuration.</p>
+    pub fn revision(&self) -> i32 {
+        self.revision
+    }
+}
 impl std::fmt::Debug for ConfigurationId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationId");
@@ -823,6 +931,57 @@ pub struct LdapServerMetadataInput {
     pub user_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub user_search_subtree: bool,
+}
+impl LdapServerMetadataInput {
+    /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    pub fn hosts(&self) -> std::option::Option<&[std::string::String]> {
+        self.hosts.as_deref()
+    }
+    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
+    /// dc=example, dc=com.</p>
+    pub fn role_base(&self) -> std::option::Option<&str> {
+        self.role_base.as_deref()
+    }
+    /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
+    pub fn role_search_matching(&self) -> std::option::Option<&str> {
+        self.role_search_matching.as_deref()
+    }
+    /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
+    pub fn role_search_subtree(&self) -> bool {
+        self.role_search_subtree
+    }
+    /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
+    /// dc=com.</p>
+    pub fn service_account_password(&self) -> std::option::Option<&str> {
+        self.service_account_password.as_deref()
+    }
+    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
+    /// dc=com.</p>
+    pub fn service_account_username(&self) -> std::option::Option<&str> {
+        self.service_account_username.as_deref()
+    }
+    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
+    /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    pub fn user_base(&self) -> std::option::Option<&str> {
+        self.user_base.as_deref()
+    }
+    /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
+    pub fn user_role_name(&self) -> std::option::Option<&str> {
+        self.user_role_name.as_deref()
+    }
+    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
+    /// dc=com.</p>
+    pub fn user_search_matching(&self) -> std::option::Option<&str> {
+        self.user_search_matching.as_deref()
+    }
+    /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
+    pub fn user_search_subtree(&self) -> bool {
+        self.user_search_subtree
+    }
 }
 impl std::fmt::Debug for LdapServerMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1038,6 +1197,16 @@ pub struct UserSummary {
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
+impl UserSummary {
+    /// <p>The type of change pending for the broker user.</p>
+    pub fn pending_change(&self) -> std::option::Option<&crate::model::ChangeType> {
+        self.pending_change.as_ref()
+    }
+    /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+}
 impl std::fmt::Debug for UserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserSummary");
@@ -1179,6 +1348,53 @@ pub struct Configuration {
     /// <p>The list of all tags associated with this configuration.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Configuration {
+    /// <p>Required. The ARN of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>Required. The date and time of the configuration revision.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>Required. The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Required. The latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The list of all tags associated with this configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1449,6 +1665,40 @@ pub struct BrokerSummary {
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The broker's instance type.</p>
     pub host_instance_type: std::option::Option<std::string::String>,
+}
+impl BrokerSummary {
+    /// <p>The broker's Amazon Resource Name (ARN).</p>
+    pub fn broker_arn(&self) -> std::option::Option<&str> {
+        self.broker_arn.as_deref()
+    }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    pub fn broker_name(&self) -> std::option::Option<&str> {
+        self.broker_name.as_deref()
+    }
+    /// <p>The broker's status.</p>
+    pub fn broker_state(&self) -> std::option::Option<&crate::model::BrokerState> {
+        self.broker_state.as_ref()
+    }
+    /// <p>The time when the broker was created.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The broker's deployment mode.</p>
+    pub fn deployment_mode(&self) -> std::option::Option<&crate::model::DeploymentMode> {
+        self.deployment_mode.as_ref()
+    }
+    /// <p>The type of broker engine.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>The broker's instance type.</p>
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+        self.host_instance_type.as_deref()
+    }
 }
 impl std::fmt::Debug for BrokerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1744,6 +1994,20 @@ pub struct UserPendingChanges {
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub pending_change: std::option::Option<crate::model::ChangeType>,
 }
+impl UserPendingChanges {
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn console_access(&self) -> bool {
+        self.console_access
+    }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.groups.as_deref()
+    }
+    /// <p>Required. The type of change pending for the ActiveMQ user.</p>
+    pub fn pending_change(&self) -> std::option::Option<&crate::model::ChangeType> {
+        self.pending_change.as_ref()
+    }
+}
 impl std::fmt::Debug for UserPendingChanges {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserPendingChanges");
@@ -1840,6 +2104,34 @@ pub struct BrokerInstanceOption {
         std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>,
     /// <p>The list of supported engine versions.</p>
     pub supported_engine_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BrokerInstanceOption {
+    /// <p>The list of available az.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The broker's engine type.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>The broker's instance type.</p>
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+        self.host_instance_type.as_deref()
+    }
+    /// <p>The broker's storage type.</p>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::BrokerStorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The list of supported deployment modes.</p>
+    pub fn supported_deployment_modes(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeploymentMode]> {
+        self.supported_deployment_modes.as_deref()
+    }
+    /// <p>The list of supported engine versions.</p>
+    pub fn supported_engine_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_engine_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for BrokerInstanceOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2057,6 +2349,12 @@ pub struct AvailabilityZone {
     /// <p>Id for the availability zone.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl AvailabilityZone {
+    /// <p>Id for the availability zone.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for AvailabilityZone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityZone");
@@ -2104,6 +2402,16 @@ pub struct BrokerEngineType {
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The list of engine versions.</p>
     pub engine_versions: std::option::Option<std::vec::Vec<crate::model::EngineVersion>>,
+}
+impl BrokerEngineType {
+    /// <p>The broker's engine type.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>The list of engine versions.</p>
+    pub fn engine_versions(&self) -> std::option::Option<&[crate::model::EngineVersion]> {
+        self.engine_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for BrokerEngineType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2178,6 +2486,12 @@ pub struct EngineVersion {
     /// <p>Id for the version.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl EngineVersion {
+    /// <p>Id for the version.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for EngineVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EngineVersion");
@@ -2231,6 +2545,28 @@ pub struct LogsSummary {
     pub general_log_group: std::option::Option<std::string::String>,
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
     pub pending: std::option::Option<crate::model::PendingLogs>,
+}
+impl LogsSummary {
+    /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
+    pub fn audit(&self) -> bool {
+        self.audit
+    }
+    /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
+    pub fn audit_log_group(&self) -> std::option::Option<&str> {
+        self.audit_log_group.as_deref()
+    }
+    /// <p>Enables general logging.</p>
+    pub fn general(&self) -> bool {
+        self.general
+    }
+    /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
+    pub fn general_log_group(&self) -> std::option::Option<&str> {
+        self.general_log_group.as_deref()
+    }
+    /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
+    pub fn pending(&self) -> std::option::Option<&crate::model::PendingLogs> {
+        self.pending.as_ref()
+    }
 }
 impl std::fmt::Debug for LogsSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2343,6 +2679,16 @@ pub struct PendingLogs {
     /// <p>Enables general logging.</p>
     pub general: bool,
 }
+impl PendingLogs {
+    /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
+    pub fn audit(&self) -> bool {
+        self.audit
+    }
+    /// <p>Enables general logging.</p>
+    pub fn general(&self) -> bool {
+        self.general
+    }
+}
 impl std::fmt::Debug for PendingLogs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PendingLogs");
@@ -2405,6 +2751,16 @@ pub struct EncryptionOptions {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
     pub use_aws_owned_key: bool,
+}
+impl EncryptionOptions {
+    /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
+    pub fn use_aws_owned_key(&self) -> bool {
+        self.use_aws_owned_key
+    }
 }
 impl std::fmt::Debug for EncryptionOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2470,6 +2826,20 @@ pub struct Configurations {
     pub history: std::option::Option<std::vec::Vec<crate::model::ConfigurationId>>,
     /// <p>The broker's pending configuration.</p>
     pub pending: std::option::Option<crate::model::ConfigurationId>,
+}
+impl Configurations {
+    /// <p>The broker's current configuration.</p>
+    pub fn current(&self) -> std::option::Option<&crate::model::ConfigurationId> {
+        self.current.as_ref()
+    }
+    /// <p>The history of configurations applied to the broker.</p>
+    pub fn history(&self) -> std::option::Option<&[crate::model::ConfigurationId]> {
+        self.history.as_deref()
+    }
+    /// <p>The broker's pending configuration.</p>
+    pub fn pending(&self) -> std::option::Option<&crate::model::ConfigurationId> {
+        self.pending.as_ref()
+    }
 }
 impl std::fmt::Debug for Configurations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2564,6 +2934,20 @@ pub struct BrokerInstance {
     /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
     pub ip_address: std::option::Option<std::string::String>,
 }
+impl BrokerInstance {
+    /// <p>The brokers web console URL.</p>
+    pub fn console_url(&self) -> std::option::Option<&str> {
+        self.console_url.as_deref()
+    }
+    /// <p>The broker's wire-level protocol endpoints.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[std::string::String]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+}
 impl std::fmt::Debug for BrokerInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BrokerInstance");
@@ -2652,6 +3036,24 @@ pub struct User {
     pub password: std::option::Option<std::string::String>,
     /// <p>important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title> <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></important></para>
     pub username: std::option::Option<std::string::String>,
+}
+impl User {
+    /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
+    pub fn console_access(&self) -> bool {
+        self.console_access
+    }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.groups.as_deref()
+    }
+    /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title> <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></important></para>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

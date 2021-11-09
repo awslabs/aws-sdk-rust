@@ -6,6 +6,12 @@ pub struct WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
+impl WithdrawByoipCidrOutput {
+    /// <p>Information about the address pool.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
+}
 impl std::fmt::Debug for WithdrawByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WithdrawByoipCidrOutput");
@@ -57,6 +63,12 @@ pub struct UpdateSecurityGroupRuleDescriptionsIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl UpdateSecurityGroupRuleDescriptionsIngressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for UpdateSecurityGroupRuleDescriptionsIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecurityGroupRuleDescriptionsIngressOutput");
@@ -106,6 +118,12 @@ pub struct UpdateSecurityGroupRuleDescriptionsEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl UpdateSecurityGroupRuleDescriptionsEgressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for UpdateSecurityGroupRuleDescriptionsEgressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecurityGroupRuleDescriptionsEgressOutput");
@@ -154,6 +172,12 @@ impl UpdateSecurityGroupRuleDescriptionsEgressOutput {
 pub struct UnmonitorInstancesOutput {
     /// <p>The monitoring information.</p>
     pub instance_monitorings: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
+}
+impl UnmonitorInstancesOutput {
+    /// <p>The monitoring information.</p>
+    pub fn instance_monitorings(&self) -> std::option::Option<&[crate::model::InstanceMonitoring]> {
+        self.instance_monitorings.as_deref()
+    }
 }
 impl std::fmt::Debug for UnmonitorInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -249,6 +273,20 @@ pub struct UnassignIpv6AddressesOutput {
     pub unassigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
     pub unassigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UnassignIpv6AddressesOutput {
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
+    pub fn unassigned_ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.unassigned_ipv6_addresses.as_deref()
+    }
+    /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+    pub fn unassigned_ipv6_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+        self.unassigned_ipv6_prefixes.as_deref()
+    }
 }
 impl std::fmt::Debug for UnassignIpv6AddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -348,6 +386,14 @@ pub struct TerminateInstancesOutput {
     pub terminating_instances:
         std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
 }
+impl TerminateInstancesOutput {
+    /// <p>Information about the terminated instances.</p>
+    pub fn terminating_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceStateChange]> {
+        self.terminating_instances.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminateInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateInstancesOutput");
@@ -413,6 +459,22 @@ pub struct TerminateClientVpnConnectionsOutput {
     /// <p>The current state of the client connections.</p>
     pub connection_statuses:
         std::option::Option<std::vec::Vec<crate::model::TerminateConnectionStatus>>,
+}
+impl TerminateClientVpnConnectionsOutput {
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn client_vpn_endpoint_id(&self) -> std::option::Option<&str> {
+        self.client_vpn_endpoint_id.as_deref()
+    }
+    /// <p>The user who established the terminated client connections.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The current state of the client connections.</p>
+    pub fn connection_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::TerminateConnectionStatus]> {
+        self.connection_statuses.as_deref()
+    }
 }
 impl std::fmt::Debug for TerminateClientVpnConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -504,6 +566,12 @@ pub struct StopInstancesOutput {
     /// <p>Information about the stopped instances.</p>
     pub stopping_instances: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
 }
+impl StopInstancesOutput {
+    /// <p>Information about the stopped instances.</p>
+    pub fn stopping_instances(&self) -> std::option::Option<&[crate::model::InstanceStateChange]> {
+        self.stopping_instances.as_deref()
+    }
+}
 impl std::fmt::Debug for StopInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopInstancesOutput");
@@ -565,6 +633,12 @@ pub struct StartVpcEndpointServicePrivateDnsVerificationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub return_value: std::option::Option<bool>,
 }
+impl StartVpcEndpointServicePrivateDnsVerificationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
 impl std::fmt::Debug for StartVpcEndpointServicePrivateDnsVerificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartVpcEndpointServicePrivateDnsVerificationOutput");
@@ -614,6 +688,14 @@ impl StartVpcEndpointServicePrivateDnsVerificationOutput {
 pub struct StartNetworkInsightsAnalysisOutput {
     /// <p>Information about the network insights analysis.</p>
     pub network_insights_analysis: std::option::Option<crate::model::NetworkInsightsAnalysis>,
+}
+impl StartNetworkInsightsAnalysisOutput {
+    /// <p>Information about the network insights analysis.</p>
+    pub fn network_insights_analysis(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInsightsAnalysis> {
+        self.network_insights_analysis.as_ref()
+    }
 }
 impl std::fmt::Debug for StartNetworkInsightsAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -669,6 +751,12 @@ impl StartNetworkInsightsAnalysisOutput {
 pub struct StartInstancesOutput {
     /// <p>Information about the started instances.</p>
     pub starting_instances: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
+}
+impl StartInstancesOutput {
+    /// <p>Information about the started instances.</p>
+    pub fn starting_instances(&self) -> std::option::Option<&[crate::model::InstanceStateChange]> {
+        self.starting_instances.as_deref()
+    }
 }
 impl std::fmt::Debug for StartInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -763,6 +851,16 @@ pub struct SearchTransitGatewayRoutesOutput {
     /// <p>Indicates whether there are additional routes available.</p>
     pub additional_routes_available: std::option::Option<bool>,
 }
+impl SearchTransitGatewayRoutesOutput {
+    /// <p>Information about the routes.</p>
+    pub fn routes(&self) -> std::option::Option<&[crate::model::TransitGatewayRoute]> {
+        self.routes.as_deref()
+    }
+    /// <p>Indicates whether there are additional routes available.</p>
+    pub fn additional_routes_available(&self) -> std::option::Option<bool> {
+        self.additional_routes_available
+    }
+}
 impl std::fmt::Debug for SearchTransitGatewayRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchTransitGatewayRoutesOutput");
@@ -838,6 +936,18 @@ pub struct SearchTransitGatewayMulticastGroupsOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchTransitGatewayMulticastGroupsOutput {
+    /// <p>Information about the  transit gateway multicast group.</p>
+    pub fn multicast_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayMulticastGroup]> {
+        self.multicast_groups.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchTransitGatewayMulticastGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -915,6 +1025,16 @@ pub struct SearchLocalGatewayRoutesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchLocalGatewayRoutesOutput {
+    /// <p>Information about the routes.</p>
+    pub fn routes(&self) -> std::option::Option<&[crate::model::LocalGatewayRoute]> {
+        self.routes.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchLocalGatewayRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchLocalGatewayRoutesOutput");
@@ -985,6 +1105,12 @@ pub struct RunScheduledInstancesOutput {
     /// <p>The IDs of the newly launched instances.</p>
     pub instance_id_set: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RunScheduledInstancesOutput {
+    /// <p>The IDs of the newly launched instances.</p>
+    pub fn instance_id_set(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_id_set.as_deref()
+    }
+}
 impl std::fmt::Debug for RunScheduledInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RunScheduledInstancesOutput");
@@ -1052,6 +1178,29 @@ pub struct RunInstancesOutput {
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>The ID of the reservation.</p>
     pub reservation_id: std::option::Option<std::string::String>,
+}
+impl RunInstancesOutput {
+    /// <p>[EC2-Classic only] The security groups.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupIdentifier]> {
+        self.groups.as_deref()
+    }
+    /// <p>The instances.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The ID of the requester that launched the instances on your behalf (for example,
+    /// Amazon Web Services Management Console or Auto Scaling).</p>
+    pub fn requester_id(&self) -> std::option::Option<&str> {
+        self.requester_id.as_deref()
+    }
+    /// <p>The ID of the reservation.</p>
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
+        self.reservation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RunInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1180,6 +1329,18 @@ pub struct RevokeSecurityGroupIngressOutput {
     /// parameter. </p>
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
+impl RevokeSecurityGroupIngressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>The inbound rules that were unknown to the service. In some cases,
+    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
+    /// parameter. </p>
+    pub fn unknown_ip_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
+        self.unknown_ip_permissions.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokeSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeSecurityGroupIngressOutput");
@@ -1262,6 +1423,18 @@ pub struct RevokeSecurityGroupEgressOutput {
     /// parameter. </p>
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
+impl RevokeSecurityGroupEgressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>The outbound rules that were unknown to the service. In some cases,
+    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
+    /// parameter. </p>
+    pub fn unknown_ip_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
+        self.unknown_ip_permissions.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokeSecurityGroupEgressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeSecurityGroupEgressOutput");
@@ -1340,6 +1513,12 @@ pub struct RevokeClientVpnIngressOutput {
     /// <p>The current state of the authorization rule.</p>
     pub status: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
 }
+impl RevokeClientVpnIngressOutput {
+    /// <p>The current state of the authorization rule.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClientVpnAuthorizationRuleStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for RevokeClientVpnIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeClientVpnIngressOutput");
@@ -1390,6 +1569,12 @@ impl RevokeClientVpnIngressOutput {
 pub struct RestoreManagedPrefixListVersionOutput {
     /// <p>Information about the prefix list.</p>
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
+}
+impl RestoreManagedPrefixListVersionOutput {
+    /// <p>Information about the prefix list.</p>
+    pub fn prefix_list(&self) -> std::option::Option<&crate::model::ManagedPrefixList> {
+        self.prefix_list.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreManagedPrefixListVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1443,6 +1628,16 @@ pub struct RestoreAddressToClassicOutput {
     pub public_ip: std::option::Option<std::string::String>,
     /// <p>The move status for the IP address.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl RestoreAddressToClassicOutput {
+    /// <p>The Elastic IP address.</p>
+    pub fn public_ip(&self) -> std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
+    /// <p>The move status for the IP address.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreAddressToClassicOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1625,6 +1820,12 @@ pub struct ResetFpgaImageAttributeOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ResetFpgaImageAttributeOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ResetFpgaImageAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetFpgaImageAttributeOutput");
@@ -1673,6 +1874,12 @@ pub struct ResetEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for EBS encryption by default.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl ResetEbsDefaultKmsKeyIdOutput {
+    /// <p>The Amazon Resource Name (ARN) of the default KMS key for EBS encryption by default.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetEbsDefaultKmsKeyIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetEbsDefaultKmsKeyIdOutput");
@@ -1720,6 +1927,12 @@ impl ResetEbsDefaultKmsKeyIdOutput {
 pub struct ResetAddressAttributeOutput {
     /// <p>Information about the IP address.</p>
     pub address: std::option::Option<crate::model::AddressAttribute>,
+}
+impl ResetAddressAttributeOutput {
+    /// <p>Information about the IP address.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::AddressAttribute> {
+        self.address.as_ref()
+    }
 }
 impl std::fmt::Debug for ResetAddressAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1772,6 +1985,14 @@ pub struct RequestSpotInstancesOutput {
     /// <p>One or more Spot Instance requests.</p>
     pub spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
+}
+impl RequestSpotInstancesOutput {
+    /// <p>One or more Spot Instance requests.</p>
+    pub fn spot_instance_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::SpotInstanceRequest]> {
+        self.spot_instance_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for RequestSpotInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1833,6 +2054,12 @@ impl RequestSpotInstancesOutput {
 pub struct RequestSpotFleetOutput {
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
+}
+impl RequestSpotFleetOutput {
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
+        self.spot_fleet_request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RequestSpotFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1915,6 +2142,12 @@ pub struct ReplaceTransitGatewayRouteOutput {
     /// <p>Information about the modified route.</p>
     pub route: std::option::Option<crate::model::TransitGatewayRoute>,
 }
+impl ReplaceTransitGatewayRouteOutput {
+    /// <p>Information about the modified route.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::TransitGatewayRoute> {
+        self.route.as_ref()
+    }
+}
 impl std::fmt::Debug for ReplaceTransitGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplaceTransitGatewayRouteOutput");
@@ -1965,6 +2198,18 @@ pub struct ReplaceRouteTableAssociationOutput {
     pub new_association_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
     pub association_state: std::option::Option<crate::model::RouteTableAssociationState>,
+}
+impl ReplaceRouteTableAssociationOutput {
+    /// <p>The ID of the new association.</p>
+    pub fn new_association_id(&self) -> std::option::Option<&str> {
+        self.new_association_id.as_deref()
+    }
+    /// <p>The state of the association.</p>
+    pub fn association_state(
+        &self,
+    ) -> std::option::Option<&crate::model::RouteTableAssociationState> {
+        self.association_state.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplaceRouteTableAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2096,6 +2341,12 @@ pub struct ReplaceNetworkAclAssociationOutput {
     /// <p>The ID of the new association.</p>
     pub new_association_id: std::option::Option<std::string::String>,
 }
+impl ReplaceNetworkAclAssociationOutput {
+    /// <p>The ID of the new association.</p>
+    pub fn new_association_id(&self) -> std::option::Option<&str> {
+        self.new_association_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplaceNetworkAclAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplaceNetworkAclAssociationOutput");
@@ -2147,6 +2398,14 @@ pub struct ReplaceIamInstanceProfileAssociationOutput {
     /// <p>Information about the IAM instance profile association.</p>
     pub iam_instance_profile_association:
         std::option::Option<crate::model::IamInstanceProfileAssociation>,
+}
+impl ReplaceIamInstanceProfileAssociationOutput {
+    /// <p>Information about the IAM instance profile association.</p>
+    pub fn iam_instance_profile_association(
+        &self,
+    ) -> std::option::Option<&crate::model::IamInstanceProfileAssociation> {
+        self.iam_instance_profile_association.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplaceIamInstanceProfileAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2208,6 +2467,17 @@ pub struct ReleaseHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
     /// message.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+}
+impl ReleaseHostsOutput {
+    /// <p>The IDs of the Dedicated Hosts that were successfully released.</p>
+    pub fn successful(&self) -> std::option::Option<&[std::string::String]> {
+        self.successful.as_deref()
+    }
+    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
+    /// message.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for ReleaseHostsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2320,6 +2590,12 @@ pub struct RejectVpcPeeringConnectionOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl RejectVpcPeeringConnectionOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for RejectVpcPeeringConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectVpcPeeringConnectionOutput");
@@ -2367,6 +2643,12 @@ impl RejectVpcPeeringConnectionOutput {
 pub struct RejectVpcEndpointConnectionsOutput {
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+}
+impl RejectVpcEndpointConnectionsOutput {
+    /// <p>Information about the endpoints that were not rejected, if applicable.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectVpcEndpointConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2425,6 +2707,14 @@ pub struct RejectTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the attachment.</p>
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
+}
+impl RejectTransitGatewayVpcAttachmentOutput {
+    /// <p>Information about the attachment.</p>
+    pub fn transit_gateway_vpc_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayVpcAttachment> {
+        self.transit_gateway_vpc_attachment.as_ref()
+    }
 }
 impl std::fmt::Debug for RejectTransitGatewayVpcAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2485,6 +2775,14 @@ pub struct RejectTransitGatewayPeeringAttachmentOutput {
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
+impl RejectTransitGatewayPeeringAttachmentOutput {
+    /// <p>The transit gateway peering attachment.</p>
+    pub fn transit_gateway_peering_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPeeringAttachment> {
+        self.transit_gateway_peering_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for RejectTransitGatewayPeeringAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectTransitGatewayPeeringAttachmentOutput");
@@ -2543,6 +2841,14 @@ pub struct RejectTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Describes the multicast domain associations.</p>
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
+impl RejectTransitGatewayMulticastDomainAssociationsOutput {
+    /// <p>Describes the multicast domain associations.</p>
+    pub fn associations(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomainAssociations> {
+        self.associations.as_ref()
+    }
+}
 impl std::fmt::Debug for RejectTransitGatewayMulticastDomainAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectTransitGatewayMulticastDomainAssociationsOutput");
@@ -2600,6 +2906,14 @@ pub struct RegisterTransitGatewayMulticastGroupSourcesOutput {
     /// <p>Information about the  transit gateway multicast group sources.</p>
     pub registered_multicast_group_sources:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
+}
+impl RegisterTransitGatewayMulticastGroupSourcesOutput {
+    /// <p>Information about the  transit gateway multicast group sources.</p>
+    pub fn registered_multicast_group_sources(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastRegisteredGroupSources> {
+        self.registered_multicast_group_sources.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisterTransitGatewayMulticastGroupSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2661,6 +2975,14 @@ pub struct RegisterTransitGatewayMulticastGroupMembersOutput {
     pub registered_multicast_group_members:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
 }
+impl RegisterTransitGatewayMulticastGroupMembersOutput {
+    /// <p>Information about the registered  transit gateway multicast group members.</p>
+    pub fn registered_multicast_group_members(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastRegisteredGroupMembers> {
+        self.registered_multicast_group_members.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterTransitGatewayMulticastGroupMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterTransitGatewayMulticastGroupMembersOutput");
@@ -2720,6 +3042,14 @@ pub struct RegisterInstanceEventNotificationAttributesOutput {
     /// <p>The resulting set of tag keys.</p>
     pub instance_tag_attribute: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
 }
+impl RegisterInstanceEventNotificationAttributesOutput {
+    /// <p>The resulting set of tag keys.</p>
+    pub fn instance_tag_attribute(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceTagNotificationAttribute> {
+        self.instance_tag_attribute.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterInstanceEventNotificationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterInstanceEventNotificationAttributesOutput");
@@ -2775,6 +3105,12 @@ impl RegisterInstanceEventNotificationAttributesOutput {
 pub struct RegisterImageOutput {
     /// <p>The ID of the newly registered AMI.</p>
     pub image_id: std::option::Option<std::string::String>,
+}
+impl RegisterImageOutput {
+    /// <p>The ID of the newly registered AMI.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2854,6 +3190,14 @@ pub struct PurchaseScheduledInstancesOutput {
     /// <p>Information about the Scheduled Instances.</p>
     pub scheduled_instance_set: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
 }
+impl PurchaseScheduledInstancesOutput {
+    /// <p>Information about the Scheduled Instances.</p>
+    pub fn scheduled_instance_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScheduledInstance]> {
+        self.scheduled_instance_set.as_deref()
+    }
+}
 impl std::fmt::Debug for PurchaseScheduledInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseScheduledInstancesOutput");
@@ -2916,6 +3260,14 @@ pub struct PurchaseReservedInstancesOfferingOutput {
     /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
     /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub reserved_instances_id: std::option::Option<std::string::String>,
+}
+impl PurchaseReservedInstancesOfferingOutput {
+    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
+    /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+    /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn reserved_instances_id(&self) -> std::option::Option<&str> {
+        self.reserved_instances_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PurchaseReservedInstancesOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2981,6 +3333,30 @@ pub struct PurchaseHostReservationOutput {
     pub total_hourly_price: std::option::Option<std::string::String>,
     /// <p>The total amount charged to your account when you purchase the reservation.</p>
     pub total_upfront_price: std::option::Option<std::string::String>,
+}
+impl PurchaseHostReservationOutput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
+    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
+    /// supported currency is <code>USD</code>.</p>
+    pub fn currency_code(&self) -> std::option::Option<&crate::model::CurrencyCodeValues> {
+        self.currency_code.as_ref()
+    }
+    /// <p>Describes the details of the purchase.</p>
+    pub fn purchase(&self) -> std::option::Option<&[crate::model::Purchase]> {
+        self.purchase.as_deref()
+    }
+    /// <p>The total hourly price of the reservation calculated per hour.</p>
+    pub fn total_hourly_price(&self) -> std::option::Option<&str> {
+        self.total_hourly_price.as_deref()
+    }
+    /// <p>The total amount charged to your account when you purchase the reservation.</p>
+    pub fn total_upfront_price(&self) -> std::option::Option<&str> {
+        self.total_upfront_price.as_deref()
+    }
 }
 impl std::fmt::Debug for PurchaseHostReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3104,6 +3480,12 @@ pub struct ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
+impl ProvisionByoipCidrOutput {
+    /// <p>Information about the address range.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisionByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionByoipCidrOutput");
@@ -3156,6 +3538,16 @@ pub struct MoveAddressToVpcOutput {
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The status of the move of the IP address.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl MoveAddressToVpcOutput {
+    /// <p>The allocation ID for the Elastic IP address.</p>
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
+        self.allocation_id.as_deref()
+    }
+    /// <p>The status of the move of the IP address.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for MoveAddressToVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3221,6 +3613,12 @@ pub struct MonitorInstancesOutput {
     /// <p>The monitoring information.</p>
     pub instance_monitorings: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
 }
+impl MonitorInstancesOutput {
+    /// <p>The monitoring information.</p>
+    pub fn instance_monitorings(&self) -> std::option::Option<&[crate::model::InstanceMonitoring]> {
+        self.instance_monitorings.as_deref()
+    }
+}
 impl std::fmt::Debug for MonitorInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MonitorInstancesOutput");
@@ -3282,6 +3680,12 @@ pub struct ModifyVpnTunnelOptionsOutput {
     /// <p>Describes a VPN connection.</p>
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
+impl ModifyVpnTunnelOptionsOutput {
+    /// <p>Describes a VPN connection.</p>
+    pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
+        self.vpn_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyVpnTunnelOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVpnTunnelOptionsOutput");
@@ -3332,6 +3736,12 @@ impl ModifyVpnTunnelOptionsOutput {
 pub struct ModifyVpnTunnelCertificateOutput {
     /// <p>Describes a VPN connection.</p>
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
+}
+impl ModifyVpnTunnelCertificateOutput {
+    /// <p>Describes a VPN connection.</p>
+    pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
+        self.vpn_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyVpnTunnelCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3384,6 +3794,12 @@ pub struct ModifyVpnConnectionOptionsOutput {
     /// <p>Describes a VPN connection.</p>
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
+impl ModifyVpnConnectionOptionsOutput {
+    /// <p>Describes a VPN connection.</p>
+    pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
+        self.vpn_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyVpnConnectionOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVpnConnectionOptionsOutput");
@@ -3434,6 +3850,12 @@ impl ModifyVpnConnectionOptionsOutput {
 pub struct ModifyVpnConnectionOutput {
     /// <p>Describes a VPN connection.</p>
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
+}
+impl ModifyVpnConnectionOutput {
+    /// <p>Describes a VPN connection.</p>
+    pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
+        self.vpn_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyVpnConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3486,6 +3908,13 @@ pub struct ModifyVpcTenancyOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
     /// error.</p>
     pub return_value: std::option::Option<bool>,
+}
+impl ModifyVpcTenancyOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
+    /// error.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
 }
 impl std::fmt::Debug for ModifyVpcTenancyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3540,6 +3969,20 @@ pub struct ModifyVpcPeeringConnectionOptionsOutput {
     /// <p>Information about the VPC peering connection options for the requester VPC.</p>
     pub requester_peering_connection_options:
         std::option::Option<crate::model::PeeringConnectionOptions>,
+}
+impl ModifyVpcPeeringConnectionOptionsOutput {
+    /// <p>Information about the VPC peering connection options for the accepter VPC.</p>
+    pub fn accepter_peering_connection_options(
+        &self,
+    ) -> std::option::Option<&crate::model::PeeringConnectionOptions> {
+        self.accepter_peering_connection_options.as_ref()
+    }
+    /// <p>Information about the VPC peering connection options for the requester VPC.</p>
+    pub fn requester_peering_connection_options(
+        &self,
+    ) -> std::option::Option<&crate::model::PeeringConnectionOptions> {
+        self.requester_peering_connection_options.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyVpcPeeringConnectionOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3622,6 +4065,12 @@ pub struct ModifyVpcEndpointServicePermissionsOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub return_value: std::option::Option<bool>,
 }
+impl ModifyVpcEndpointServicePermissionsOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
 impl std::fmt::Debug for ModifyVpcEndpointServicePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVpcEndpointServicePermissionsOutput");
@@ -3669,6 +4118,12 @@ impl ModifyVpcEndpointServicePermissionsOutput {
 pub struct ModifyVpcEndpointServiceConfigurationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
+}
+impl ModifyVpcEndpointServiceConfigurationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
 }
 impl std::fmt::Debug for ModifyVpcEndpointServiceConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3718,6 +4173,12 @@ pub struct ModifyVpcEndpointConnectionNotificationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub return_value: std::option::Option<bool>,
 }
+impl ModifyVpcEndpointConnectionNotificationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
 impl std::fmt::Debug for ModifyVpcEndpointConnectionNotificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVpcEndpointConnectionNotificationOutput");
@@ -3765,6 +4226,12 @@ impl ModifyVpcEndpointConnectionNotificationOutput {
 pub struct ModifyVpcEndpointOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
+}
+impl ModifyVpcEndpointOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
 }
 impl std::fmt::Debug for ModifyVpcEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3874,6 +4341,12 @@ pub struct ModifyVolumeOutput {
     /// <p>Information about the volume modification.</p>
     pub volume_modification: std::option::Option<crate::model::VolumeModification>,
 }
+impl ModifyVolumeOutput {
+    /// <p>Information about the volume modification.</p>
+    pub fn volume_modification(&self) -> std::option::Option<&crate::model::VolumeModification> {
+        self.volume_modification.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyVolumeOutput");
@@ -3925,6 +4398,14 @@ pub struct ModifyTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the modified attachment.</p>
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
+}
+impl ModifyTransitGatewayVpcAttachmentOutput {
+    /// <p>Information about the modified attachment.</p>
+    pub fn transit_gateway_vpc_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayVpcAttachment> {
+        self.transit_gateway_vpc_attachment.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyTransitGatewayVpcAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3985,6 +4466,14 @@ pub struct ModifyTransitGatewayPrefixListReferenceOutput {
     pub transit_gateway_prefix_list_reference:
         std::option::Option<crate::model::TransitGatewayPrefixListReference>,
 }
+impl ModifyTransitGatewayPrefixListReferenceOutput {
+    /// <p>Information about the prefix list reference.</p>
+    pub fn transit_gateway_prefix_list_reference(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPrefixListReference> {
+        self.transit_gateway_prefix_list_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyTransitGatewayPrefixListReferenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyTransitGatewayPrefixListReferenceOutput");
@@ -4044,6 +4533,12 @@ pub struct ModifyTransitGatewayOutput {
     /// <p>Describes a transit gateway.</p>
     pub transit_gateway: std::option::Option<crate::model::TransitGateway>,
 }
+impl ModifyTransitGatewayOutput {
+    /// <p>Describes a transit gateway.</p>
+    pub fn transit_gateway(&self) -> std::option::Option<&crate::model::TransitGateway> {
+        self.transit_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyTransitGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyTransitGatewayOutput");
@@ -4095,6 +4590,14 @@ pub struct ModifyTrafficMirrorSessionOutput {
     /// <p>Information about the Traffic Mirror session.</p>
     pub traffic_mirror_session: std::option::Option<crate::model::TrafficMirrorSession>,
 }
+impl ModifyTrafficMirrorSessionOutput {
+    /// <p>Information about the Traffic Mirror session.</p>
+    pub fn traffic_mirror_session(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficMirrorSession> {
+        self.traffic_mirror_session.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyTrafficMirrorSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyTrafficMirrorSessionOutput");
@@ -4145,6 +4648,14 @@ impl ModifyTrafficMirrorSessionOutput {
 pub struct ModifyTrafficMirrorFilterRuleOutput {
     /// <p>Modifies a Traffic Mirror rule.</p>
     pub traffic_mirror_filter_rule: std::option::Option<crate::model::TrafficMirrorFilterRule>,
+}
+impl ModifyTrafficMirrorFilterRuleOutput {
+    /// <p>Modifies a Traffic Mirror rule.</p>
+    pub fn traffic_mirror_filter_rule(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficMirrorFilterRule> {
+        self.traffic_mirror_filter_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyTrafficMirrorFilterRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4203,6 +4714,12 @@ impl ModifyTrafficMirrorFilterRuleOutput {
 pub struct ModifyTrafficMirrorFilterNetworkServicesOutput {
     /// <p>The Traffic Mirror filter that the network service is associated with.</p>
     pub traffic_mirror_filter: std::option::Option<crate::model::TrafficMirrorFilter>,
+}
+impl ModifyTrafficMirrorFilterNetworkServicesOutput {
+    /// <p>The Traffic Mirror filter that the network service is associated with.</p>
+    pub fn traffic_mirror_filter(&self) -> std::option::Option<&crate::model::TrafficMirrorFilter> {
+        self.traffic_mirror_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyTrafficMirrorFilterNetworkServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4286,6 +4803,12 @@ pub struct ModifySpotFleetRequestOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ModifySpotFleetRequestOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ModifySpotFleetRequestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifySpotFleetRequestOutput");
@@ -4364,6 +4887,12 @@ pub struct ModifySecurityGroupRulesOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ModifySecurityGroupRulesOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ModifySecurityGroupRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifySecurityGroupRulesOutput");
@@ -4411,6 +4940,12 @@ impl ModifySecurityGroupRulesOutput {
 pub struct ModifyReservedInstancesOutput {
     /// <p>The ID for the modification.</p>
     pub reserved_instances_modification_id: std::option::Option<std::string::String>,
+}
+impl ModifyReservedInstancesOutput {
+    /// <p>The ID for the modification.</p>
+    pub fn reserved_instances_modification_id(&self) -> std::option::Option<&str> {
+        self.reserved_instances_modification_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyReservedInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4499,6 +5034,12 @@ pub struct ModifyManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
 }
+impl ModifyManagedPrefixListOutput {
+    /// <p>Information about the prefix list.</p>
+    pub fn prefix_list(&self) -> std::option::Option<&crate::model::ManagedPrefixList> {
+        self.prefix_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyManagedPrefixListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyManagedPrefixListOutput");
@@ -4549,6 +5090,12 @@ impl ModifyManagedPrefixListOutput {
 pub struct ModifyLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
+}
+impl ModifyLaunchTemplateOutput {
+    /// <p>Information about the launch template.</p>
+    pub fn launch_template(&self) -> std::option::Option<&crate::model::LaunchTemplate> {
+        self.launch_template.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyLaunchTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4601,6 +5148,12 @@ pub struct ModifyInstancePlacementOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ModifyInstancePlacementOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ModifyInstancePlacementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyInstancePlacementOutput");
@@ -4651,6 +5204,18 @@ pub struct ModifyInstanceMetadataOptionsOutput {
     /// <p>The metadata options for the instance.</p>
     pub instance_metadata_options:
         std::option::Option<crate::model::InstanceMetadataOptionsResponse>,
+}
+impl ModifyInstanceMetadataOptionsOutput {
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The metadata options for the instance.</p>
+    pub fn instance_metadata_options(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceMetadataOptionsResponse> {
+        self.instance_metadata_options.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyInstanceMetadataOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4720,6 +5285,12 @@ pub struct ModifyInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
+impl ModifyInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub fn instance_event_window(&self) -> std::option::Option<&crate::model::InstanceEventWindow> {
+        self.instance_event_window.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyInstanceEventWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyInstanceEventWindowOutput");
@@ -4770,6 +5341,12 @@ impl ModifyInstanceEventWindowOutput {
 pub struct ModifyInstanceEventStartTimeOutput {
     /// <p>Describes a scheduled event for an instance.</p>
     pub event: std::option::Option<crate::model::InstanceStatusEvent>,
+}
+impl ModifyInstanceEventStartTimeOutput {
+    /// <p>Describes a scheduled event for an instance.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::InstanceStatusEvent> {
+        self.event.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyInstanceEventStartTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4826,6 +5403,22 @@ pub struct ModifyInstanceCreditSpecificationOutput {
     pub unsuccessful_instance_credit_specifications: std::option::Option<
         std::vec::Vec<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
     >,
+}
+impl ModifyInstanceCreditSpecificationOutput {
+    /// <p>Information about the instances whose credit option for CPU usage was successfully
+    /// modified.</p>
+    pub fn successful_instance_credit_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SuccessfulInstanceCreditSpecificationItem]> {
+        self.successful_instance_credit_specifications.as_deref()
+    }
+    /// <p>Information about the instances whose credit option for CPU usage was not
+    /// modified.</p>
+    pub fn unsuccessful_instance_credit_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnsuccessfulInstanceCreditSpecificationItem]> {
+        self.unsuccessful_instance_credit_specifications.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyInstanceCreditSpecificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4935,6 +5528,12 @@ impl ModifyInstanceCreditSpecificationOutput {
 pub struct ModifyInstanceCapacityReservationAttributesOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
+}
+impl ModifyInstanceCapacityReservationAttributesOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
 }
 impl std::fmt::Debug for ModifyInstanceCapacityReservationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5108,6 +5707,17 @@ pub struct ModifyHostsOutput {
     /// setting you requested can be used.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
+impl ModifyHostsOutput {
+    /// <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
+    pub fn successful(&self) -> std::option::Option<&[std::string::String]> {
+        self.successful.as_deref()
+    }
+    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
+    /// setting you requested can be used.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyHostsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyHostsOutput");
@@ -5189,6 +5799,12 @@ pub struct ModifyFpgaImageAttributeOutput {
     /// <p>Information about the attribute.</p>
     pub fpga_image_attribute: std::option::Option<crate::model::FpgaImageAttribute>,
 }
+impl ModifyFpgaImageAttributeOutput {
+    /// <p>Information about the attribute.</p>
+    pub fn fpga_image_attribute(&self) -> std::option::Option<&crate::model::FpgaImageAttribute> {
+        self.fpga_image_attribute.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyFpgaImageAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyFpgaImageAttributeOutput");
@@ -5240,6 +5856,12 @@ pub struct ModifyFleetOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ModifyFleetOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ModifyFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyFleetOutput");
@@ -5287,6 +5909,12 @@ impl ModifyFleetOutput {
 pub struct ModifyEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl ModifyEbsDefaultKmsKeyIdOutput {
+    /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyEbsDefaultKmsKeyIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5336,6 +5964,14 @@ pub struct ModifyDefaultCreditSpecificationOutput {
     /// <p>The default credit option for CPU usage of the instance family.</p>
     pub instance_family_credit_specification:
         std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
+}
+impl ModifyDefaultCreditSpecificationOutput {
+    /// <p>The default credit option for CPU usage of the instance family.</p>
+    pub fn instance_family_credit_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceFamilyCreditSpecification> {
+        self.instance_family_credit_specification.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDefaultCreditSpecificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5395,6 +6031,12 @@ pub struct ModifyClientVpnEndpointOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ModifyClientVpnEndpointOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ModifyClientVpnEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClientVpnEndpointOutput");
@@ -5442,6 +6084,12 @@ impl ModifyClientVpnEndpointOutput {
 pub struct ModifyCapacityReservationFleetOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
+}
+impl ModifyCapacityReservationFleetOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
 }
 impl std::fmt::Debug for ModifyCapacityReservationFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5491,6 +6139,12 @@ pub struct ModifyCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ModifyCapacityReservationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ModifyCapacityReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyCapacityReservationOutput");
@@ -5539,6 +6193,12 @@ pub struct ModifyAvailabilityZoneGroupOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ModifyAvailabilityZoneGroupOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ModifyAvailabilityZoneGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyAvailabilityZoneGroupOutput");
@@ -5586,6 +6246,12 @@ impl ModifyAvailabilityZoneGroupOutput {
 pub struct ModifyAddressAttributeOutput {
     /// <p>Information about the Elastic IP address.</p>
     pub address: std::option::Option<crate::model::AddressAttribute>,
+}
+impl ModifyAddressAttributeOutput {
+    /// <p>Information about the Elastic IP address.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::AddressAttribute> {
+        self.address.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyAddressAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5637,6 +6303,12 @@ impl ModifyAddressAttributeOutput {
 pub struct ImportVolumeOutput {
     /// <p>Information about the conversion task.</p>
     pub conversion_task: std::option::Option<crate::model::ConversionTask>,
+}
+impl ImportVolumeOutput {
+    /// <p>Information about the conversion task.</p>
+    pub fn conversion_task(&self) -> std::option::Option<&crate::model::ConversionTask> {
+        self.conversion_task.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5694,6 +6366,24 @@ pub struct ImportSnapshotOutput {
     pub snapshot_task_detail: std::option::Option<crate::model::SnapshotTaskDetail>,
     /// <p>Any tags assigned to the import snapshot task.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ImportSnapshotOutput {
+    /// <p>A description of the import snapshot task.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the import snapshot task.</p>
+    pub fn import_task_id(&self) -> std::option::Option<&str> {
+        self.import_task_id.as_deref()
+    }
+    /// <p>Information about the import snapshot task.</p>
+    pub fn snapshot_task_detail(&self) -> std::option::Option<&crate::model::SnapshotTaskDetail> {
+        self.snapshot_task_detail.as_ref()
+    }
+    /// <p>Any tags assigned to the import snapshot task.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5803,6 +6493,24 @@ pub struct ImportKeyPairOutput {
     /// <p>The tags applied to the imported key pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ImportKeyPairOutput {
+    /// <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
+        self.key_fingerprint.as_deref()
+    }
+    /// <p>The key pair name that you provided.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>The ID of the resulting key pair.</p>
+    pub fn key_pair_id(&self) -> std::option::Option<&str> {
+        self.key_pair_id.as_deref()
+    }
+    /// <p>The tags applied to the imported key pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportKeyPairOutput");
@@ -5902,6 +6610,12 @@ pub struct ImportInstanceOutput {
     /// <p>Information about the conversion task.</p>
     pub conversion_task: std::option::Option<crate::model::ConversionTask>,
 }
+impl ImportInstanceOutput {
+    /// <p>Information about the conversion task.</p>
+    pub fn conversion_task(&self) -> std::option::Option<&crate::model::ConversionTask> {
+        self.conversion_task.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportInstanceOutput");
@@ -5983,6 +6697,74 @@ pub struct ImportImageOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The usage operation value.</p>
     pub usage_operation: std::option::Option<std::string::String>,
+}
+impl ImportImageOutput {
+    /// <p>The architecture of the virtual machine.</p>
+    pub fn architecture(&self) -> std::option::Option<&str> {
+        self.architecture.as_deref()
+    }
+    /// <p>A description of the import task.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the AMI is encrypted.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The target hypervisor of the import task.</p>
+    pub fn hypervisor(&self) -> std::option::Option<&str> {
+        self.hypervisor.as_deref()
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The task ID of the import image task.</p>
+    pub fn import_task_id(&self) -> std::option::Option<&str> {
+        self.import_task_id.as_deref()
+    }
+    /// <p>The identifier for the symmetric KMS key that was used to create the encrypted AMI.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The license type of the virtual machine.</p>
+    pub fn license_type(&self) -> std::option::Option<&str> {
+        self.license_type.as_deref()
+    }
+    /// <p>The operating system of the virtual machine.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The progress of the task.</p>
+    pub fn progress(&self) -> std::option::Option<&str> {
+        self.progress.as_deref()
+    }
+    /// <p>Information about the snapshots.</p>
+    pub fn snapshot_details(&self) -> std::option::Option<&[crate::model::SnapshotDetail]> {
+        self.snapshot_details.as_deref()
+    }
+    /// <p>A brief status of the task.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A detailed status message of the import task.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The ARNs of the license configurations.</p>
+    pub fn license_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::ImportImageLicenseConfigurationResponse]> {
+        self.license_specifications.as_deref()
+    }
+    /// <p>Any tags assigned to the import image task.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The usage operation value.</p>
+    pub fn usage_operation(&self) -> std::option::Option<&str> {
+        self.usage_operation.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6271,6 +7053,12 @@ pub struct ImportClientVpnClientCertificateRevocationListOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl ImportClientVpnClientCertificateRevocationListOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for ImportClientVpnClientCertificateRevocationListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportClientVpnClientCertificateRevocationListOutput");
@@ -6328,6 +7116,23 @@ pub struct GetVpnConnectionDeviceTypesOutput {
     /// this value can be used to retrieve the next page of results. This value is null when
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetVpnConnectionDeviceTypesOutput {
+    /// <p>List of customer gateway devices that have a sample configuration file available for
+    /// use.</p>
+    pub fn vpn_connection_device_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpnConnectionDeviceType]> {
+        self.vpn_connection_device_types.as_deref()
+    }
+    /// <p>The <code>NextToken</code> value to include in a future
+    /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
+    /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
+    /// this value can be used to retrieve the next page of results. This value is null when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVpnConnectionDeviceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6416,6 +7221,12 @@ pub struct GetVpnConnectionDeviceSampleConfigurationOutput {
     /// <p>Sample configuration file for the specified customer gateway device.</p>
     pub vpn_connection_device_sample_configuration: std::option::Option<std::string::String>,
 }
+impl GetVpnConnectionDeviceSampleConfigurationOutput {
+    /// <p>Sample configuration file for the specified customer gateway device.</p>
+    pub fn vpn_connection_device_sample_configuration(&self) -> std::option::Option<&str> {
+        self.vpn_connection_device_sample_configuration.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutput");
@@ -6478,6 +7289,18 @@ pub struct GetTransitGatewayRouteTablePropagationsOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTablePropagation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayRouteTablePropagationsOutput {
+    /// <p>Information about the route table propagations.</p>
+    pub fn transit_gateway_route_table_propagations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayRouteTablePropagation]> {
+        self.transit_gateway_route_table_propagations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTransitGatewayRouteTablePropagationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6565,6 +7388,18 @@ pub struct GetTransitGatewayRouteTableAssociationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetTransitGatewayRouteTableAssociationsOutput {
+    /// <p>Information about the associations.</p>
+    pub fn associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayRouteTableAssociation]> {
+        self.associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTransitGatewayRouteTableAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTransitGatewayRouteTableAssociationsOutput");
@@ -6644,6 +7479,18 @@ pub struct GetTransitGatewayPrefixListReferencesOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayPrefixListReference>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayPrefixListReferencesOutput {
+    /// <p>Information about the prefix list references.</p>
+    pub fn transit_gateway_prefix_list_references(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayPrefixListReference]> {
+        self.transit_gateway_prefix_list_references.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTransitGatewayPrefixListReferencesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6729,6 +7576,18 @@ pub struct GetTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetTransitGatewayMulticastDomainAssociationsOutput {
+    /// <p>Information about the multicast domain associations.</p>
+    pub fn multicast_domain_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayMulticastDomainAssociation]> {
+        self.multicast_domain_associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTransitGatewayMulticastDomainAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTransitGatewayMulticastDomainAssociationsOutput");
@@ -6812,6 +7671,18 @@ pub struct GetTransitGatewayAttachmentPropagationsOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayAttachmentPropagation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayAttachmentPropagationsOutput {
+    /// <p>Information about the propagation route tables.</p>
+    pub fn transit_gateway_attachment_propagations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayAttachmentPropagation]> {
+        self.transit_gateway_attachment_propagations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTransitGatewayAttachmentPropagationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6900,6 +7771,24 @@ pub struct GetSubnetCidrReservationsOutput {
         std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetSubnetCidrReservationsOutput {
+    /// <p>Information about the IPv4 subnet CIDR reservations.</p>
+    pub fn subnet_ipv4_cidr_reservations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SubnetCidrReservation]> {
+        self.subnet_ipv4_cidr_reservations.as_deref()
+    }
+    /// <p>Information about the IPv6 subnet CIDR reservations.</p>
+    pub fn subnet_ipv6_cidr_reservations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SubnetCidrReservation]> {
+        self.subnet_ipv6_cidr_reservations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSubnetCidrReservationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7024,6 +7913,33 @@ pub struct GetSpotPlacementScoresOutput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSpotPlacementScoresOutput {
+    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
+    /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
+    /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
+    /// placement score request</i>. A score of <code>10</code> means that your Spot
+    /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
+    /// request will be configured to use all Availability Zones and the
+    /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
+    /// score for Availability Zones, a high score assumes that your fleet request will be
+    /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
+    /// allocation strategy.</p>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p>
+    /// <note>
+    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
+    /// Spot request will be fully or partially fulfilled.</p>
+    /// </note>
+    pub fn spot_placement_scores(
+        &self,
+    ) -> std::option::Option<&[crate::model::SpotPlacementScore]> {
+        self.spot_placement_scores.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSpotPlacementScoresOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSpotPlacementScoresOutput");
@@ -7130,6 +8046,14 @@ pub struct GetSerialConsoleAccessStatusOutput {
     /// is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
+impl GetSerialConsoleAccessStatusOutput {
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
+    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
+    /// is disabled for your account.</p>
+    pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
+        self.serial_console_access_enabled
+    }
+}
 impl std::fmt::Debug for GetSerialConsoleAccessStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSerialConsoleAccessStatusOutput");
@@ -7205,6 +8129,54 @@ pub struct GetReservedInstancesExchangeQuoteOutput {
         std::option::Option<std::vec::Vec<crate::model::TargetReservationValue>>,
     /// <p>Describes the reason why the exchange cannot be completed.</p>
     pub validation_failure_reason: std::option::Option<std::string::String>,
+}
+impl GetReservedInstancesExchangeQuoteOutput {
+    /// <p>The currency of the transaction.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.</p>
+    pub fn is_valid_exchange(&self) -> std::option::Option<bool> {
+        self.is_valid_exchange
+    }
+    /// <p>The new end date of the reservation term.</p>
+    pub fn output_reserved_instances_will_expire_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.output_reserved_instances_will_expire_at.as_ref()
+    }
+    /// <p>The total true upfront charge for the exchange.</p>
+    pub fn payment_due(&self) -> std::option::Option<&str> {
+        self.payment_due.as_deref()
+    }
+    /// <p>The cost associated with the Reserved Instance.</p>
+    pub fn reserved_instance_value_rollup(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationValue> {
+        self.reserved_instance_value_rollup.as_ref()
+    }
+    /// <p>The configuration of your Convertible Reserved Instances.</p>
+    pub fn reserved_instance_value_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedInstanceReservationValue]> {
+        self.reserved_instance_value_set.as_deref()
+    }
+    /// <p>The cost associated with the Reserved Instance.</p>
+    pub fn target_configuration_value_rollup(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationValue> {
+        self.target_configuration_value_rollup.as_ref()
+    }
+    /// <p>The values of the target Convertible Reserved Instances.</p>
+    pub fn target_configuration_value_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetReservationValue]> {
+        self.target_configuration_value_set.as_deref()
+    }
+    /// <p>Describes the reason why the exchange cannot be completed.</p>
+    pub fn validation_failure_reason(&self) -> std::option::Option<&str> {
+        self.validation_failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReservedInstancesExchangeQuoteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7434,6 +8406,21 @@ pub struct GetPasswordDataOutput {
     /// <p>The time the data was last updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetPasswordDataOutput {
+    /// <p>The ID of the Windows instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The password of the instance. Returns an empty string if the password is not
+    /// available.</p>
+    pub fn password_data(&self) -> std::option::Option<&str> {
+        self.password_data.as_deref()
+    }
+    /// <p>The time the data was last updated.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPasswordDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPasswordDataOutput");
@@ -7518,6 +8505,16 @@ pub struct GetManagedPrefixListEntriesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetManagedPrefixListEntriesOutput {
+    /// <p>Information about the prefix list entries.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::PrefixListEntry]> {
+        self.entries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetManagedPrefixListEntriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetManagedPrefixListEntriesOutput");
@@ -7590,6 +8587,18 @@ pub struct GetManagedPrefixListAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::PrefixListAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetManagedPrefixListAssociationsOutput {
+    /// <p>Information about the associations.</p>
+    pub fn prefix_list_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrefixListAssociation]> {
+        self.prefix_list_associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetManagedPrefixListAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7665,6 +8674,14 @@ pub struct GetLaunchTemplateDataOutput {
     /// <p>The instance data.</p>
     pub launch_template_data: std::option::Option<crate::model::ResponseLaunchTemplateData>,
 }
+impl GetLaunchTemplateDataOutput {
+    /// <p>The instance data.</p>
+    pub fn launch_template_data(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseLaunchTemplateData> {
+        self.launch_template_data.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLaunchTemplateDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLaunchTemplateDataOutput");
@@ -7722,6 +8739,18 @@ pub struct GetInstanceTypesFromInstanceRequirementsOutput {
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfoFromInstanceRequirements>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetInstanceTypesFromInstanceRequirementsOutput {
+    /// <p>The instance types with the specified instance attributes.</p>
+    pub fn instance_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceTypeInfoFromInstanceRequirements]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceTypesFromInstanceRequirementsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7809,6 +8838,27 @@ pub struct GetHostReservationPurchasePreviewOutput {
     pub total_hourly_price: std::option::Option<std::string::String>,
     /// <p>The potential total upfront price. This is billed immediately.</p>
     pub total_upfront_price: std::option::Option<std::string::String>,
+}
+impl GetHostReservationPurchasePreviewOutput {
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
+    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
+    /// supported currency is <code>USD</code>.</p>
+    pub fn currency_code(&self) -> std::option::Option<&crate::model::CurrencyCodeValues> {
+        self.currency_code.as_ref()
+    }
+    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
+    /// associated with it.</p>
+    pub fn purchase(&self) -> std::option::Option<&[crate::model::Purchase]> {
+        self.purchase.as_deref()
+    }
+    /// <p>The potential total hourly price of the reservation per hour.</p>
+    pub fn total_hourly_price(&self) -> std::option::Option<&str> {
+        self.total_hourly_price.as_deref()
+    }
+    /// <p>The potential total upfront price. This is billed immediately.</p>
+    pub fn total_upfront_price(&self) -> std::option::Option<&str> {
+        self.total_upfront_price.as_deref()
+    }
 }
 impl std::fmt::Debug for GetHostReservationPurchasePreviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7924,6 +8974,18 @@ pub struct GetGroupsForCapacityReservationOutput {
     pub capacity_reservation_groups:
         std::option::Option<std::vec::Vec<crate::model::CapacityReservationGroup>>,
 }
+impl GetGroupsForCapacityReservationOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
+    pub fn capacity_reservation_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityReservationGroup]> {
+        self.capacity_reservation_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupsForCapacityReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupsForCapacityReservationOutput");
@@ -8001,6 +9063,12 @@ pub struct GetFlowLogsIntegrationTemplateOutput {
     /// <p>The generated CloudFormation template.</p>
     pub result: std::option::Option<std::string::String>,
 }
+impl GetFlowLogsIntegrationTemplateOutput {
+    /// <p>The generated CloudFormation template.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFlowLogsIntegrationTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFlowLogsIntegrationTemplateOutput");
@@ -8048,6 +9116,12 @@ impl GetFlowLogsIntegrationTemplateOutput {
 pub struct GetEbsEncryptionByDefaultOutput {
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub ebs_encryption_by_default: std::option::Option<bool>,
+}
+impl GetEbsEncryptionByDefaultOutput {
+    /// <p>Indicates whether encryption by default is enabled.</p>
+    pub fn ebs_encryption_by_default(&self) -> std::option::Option<bool> {
+        self.ebs_encryption_by_default
+    }
 }
 impl std::fmt::Debug for GetEbsEncryptionByDefaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8097,6 +9171,12 @@ pub struct GetEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl GetEbsDefaultKmsKeyIdOutput {
+    /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEbsDefaultKmsKeyIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEbsDefaultKmsKeyIdOutput");
@@ -8145,6 +9225,14 @@ pub struct GetDefaultCreditSpecificationOutput {
     /// <p>The default credit option for CPU usage of the instance family.</p>
     pub instance_family_credit_specification:
         std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
+}
+impl GetDefaultCreditSpecificationOutput {
+    /// <p>The default credit option for CPU usage of the instance family.</p>
+    pub fn instance_family_credit_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceFamilyCreditSpecification> {
+        self.instance_family_credit_specification.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDefaultCreditSpecificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8205,6 +9293,16 @@ pub struct GetConsoleScreenshotOutput {
     pub image_data: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl GetConsoleScreenshotOutput {
+    /// <p>The data that comprises the image.</p>
+    pub fn image_data(&self) -> std::option::Option<&str> {
+        self.image_data.as_deref()
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConsoleScreenshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8271,6 +9369,21 @@ pub struct GetConsoleOutputOutput {
     pub output: std::option::Option<std::string::String>,
     /// <p>The time at which the output was last updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetConsoleOutputOutput {
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
+    /// decodes the output for you.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>The time at which the output was last updated.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for GetConsoleOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8354,6 +9467,20 @@ pub struct GetCoipPoolUsageOutput {
     pub coip_address_usages: std::option::Option<std::vec::Vec<crate::model::CoipAddressUsage>>,
     /// <p>The ID of the local gateway route table.</p>
     pub local_gateway_route_table_id: std::option::Option<std::string::String>,
+}
+impl GetCoipPoolUsageOutput {
+    /// <p>The ID of the customer-owned address pool.</p>
+    pub fn coip_pool_id(&self) -> std::option::Option<&str> {
+        self.coip_pool_id.as_deref()
+    }
+    /// <p>Information about the address usage.</p>
+    pub fn coip_address_usages(&self) -> std::option::Option<&[crate::model::CoipAddressUsage]> {
+        self.coip_address_usages.as_deref()
+    }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn local_gateway_route_table_id(&self) -> std::option::Option<&str> {
+        self.local_gateway_route_table_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCoipPoolUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8489,6 +9616,63 @@ pub struct GetCapacityReservationUsageOutput {
     pub state: std::option::Option<crate::model::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
     pub instance_usages: std::option::Option<std::vec::Vec<crate::model::InstanceUsage>>,
+}
+impl GetCapacityReservationUsageOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the Capacity Reservation.</p>
+    pub fn capacity_reservation_id(&self) -> std::option::Option<&str> {
+        self.capacity_reservation_id.as_deref()
+    }
+    /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The number of instances for which the Capacity Reservation reserves capacity.</p>
+    pub fn total_instance_count(&self) -> std::option::Option<i32> {
+        self.total_instance_count
+    }
+    /// <p>The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.</p>
+    pub fn available_instance_count(&self) -> std::option::Option<i32> {
+        self.available_instance_count
+    }
+    /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
+    /// in your request. The reserved capacity is no longer available for your use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
+    /// longer available for your use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
+    /// provisioning is still pending.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
+    /// due to invalid request parameters, capacity constraints, or instance limit constraints.
+    /// Failed requests are retained for 60 minutes.</p>
+    /// </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::CapacityReservationState> {
+        self.state.as_ref()
+    }
+    /// <p>Information about the Capacity Reservation usage.</p>
+    pub fn instance_usages(&self) -> std::option::Option<&[crate::model::InstanceUsage]> {
+        self.instance_usages.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCapacityReservationUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8691,6 +9875,18 @@ pub struct GetAssociatedIpv6PoolCidrsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetAssociatedIpv6PoolCidrsOutput {
+    /// <p>Information about the IPv6 CIDR block associations.</p>
+    pub fn ipv6_cidr_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::Ipv6CidrAssociation]> {
+        self.ipv6_cidr_associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssociatedIpv6PoolCidrsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssociatedIpv6PoolCidrsOutput");
@@ -8765,6 +9961,12 @@ pub struct GetAssociatedEnclaveCertificateIamRolesOutput {
     /// <p>Information about the associated IAM roles.</p>
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::AssociatedRole>>,
 }
+impl GetAssociatedEnclaveCertificateIamRolesOutput {
+    /// <p>Information about the associated IAM roles.</p>
+    pub fn associated_roles(&self) -> std::option::Option<&[crate::model::AssociatedRole]> {
+        self.associated_roles.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssociatedEnclaveCertificateIamRolesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssociatedEnclaveCertificateIamRolesOutput");
@@ -8824,6 +10026,13 @@ pub struct ExportTransitGatewayRoutesOutput {
     /// <p>The URL of the exported file in Amazon S3. For example,
     /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     pub s3_location: std::option::Option<std::string::String>,
+}
+impl ExportTransitGatewayRoutesOutput {
+    /// <p>The URL of the exported file in Amazon S3. For example,
+    /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+    pub fn s3_location(&self) -> std::option::Option<&str> {
+        self.s3_location.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportTransitGatewayRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8894,6 +10103,50 @@ pub struct ExportImageOutput {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the export image task.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ExportImageOutput {
+    /// <p>A description of the image being exported.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The disk image format for the exported image.</p>
+    pub fn disk_image_format(&self) -> std::option::Option<&crate::model::DiskImageFormat> {
+        self.disk_image_format.as_ref()
+    }
+    /// <p>The ID of the export image task.</p>
+    pub fn export_image_task_id(&self) -> std::option::Option<&str> {
+        self.export_image_task_id.as_deref()
+    }
+    /// <p>The ID of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
+    /// S3 bucket.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The percent complete of the export image task.</p>
+    pub fn progress(&self) -> std::option::Option<&str> {
+        self.progress.as_deref()
+    }
+    /// <p>Information about the destination Amazon S3 bucket.</p>
+    pub fn s3_export_location(&self) -> std::option::Option<&crate::model::ExportTaskS3Location> {
+        self.s3_export_location.as_ref()
+    }
+    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
+    /// <code>deleting</code>, and <code>deleted</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The status message for the export image task.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Any tags assigned to the export image task.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9085,6 +10338,12 @@ pub struct ExportClientVpnClientConfigurationOutput {
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
     pub client_configuration: std::option::Option<std::string::String>,
 }
+impl ExportClientVpnClientConfigurationOutput {
+    /// <p>The contents of the Client VPN endpoint configuration file.</p>
+    pub fn client_configuration(&self) -> std::option::Option<&str> {
+        self.client_configuration.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportClientVpnClientConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportClientVpnClientConfigurationOutput");
@@ -9137,6 +10396,18 @@ pub struct ExportClientVpnClientCertificateRevocationListOutput {
     pub certificate_revocation_list: std::option::Option<std::string::String>,
     /// <p>The current state of the client certificate revocation list.</p>
     pub status: std::option::Option<crate::model::ClientCertificateRevocationListStatus>,
+}
+impl ExportClientVpnClientCertificateRevocationListOutput {
+    /// <p>Information about the client certificate revocation list.</p>
+    pub fn certificate_revocation_list(&self) -> std::option::Option<&str> {
+        self.certificate_revocation_list.as_deref()
+    }
+    /// <p>The current state of the client certificate revocation list.</p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientCertificateRevocationListStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportClientVpnClientCertificateRevocationListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9216,6 +10487,12 @@ pub struct EnableVpcClassicLinkDnsSupportOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl EnableVpcClassicLinkDnsSupportOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for EnableVpcClassicLinkDnsSupportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableVpcClassicLinkDnsSupportOutput");
@@ -9263,6 +10540,12 @@ impl EnableVpcClassicLinkDnsSupportOutput {
 pub struct EnableVpcClassicLinkOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
+}
+impl EnableVpcClassicLinkOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
 }
 impl std::fmt::Debug for EnableVpcClassicLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9372,6 +10655,12 @@ pub struct EnableTransitGatewayRouteTablePropagationOutput {
     /// <p>Information about route propagation.</p>
     pub propagation: std::option::Option<crate::model::TransitGatewayPropagation>,
 }
+impl EnableTransitGatewayRouteTablePropagationOutput {
+    /// <p>Information about route propagation.</p>
+    pub fn propagation(&self) -> std::option::Option<&crate::model::TransitGatewayPropagation> {
+        self.propagation.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableTransitGatewayRouteTablePropagationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableTransitGatewayRouteTablePropagationOutput");
@@ -9425,6 +10714,14 @@ pub struct EnableSerialConsoleAccessOutput {
     /// your account. If <code>false</code>, access to the EC2 serial console of all instances
     /// is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
+}
+impl EnableSerialConsoleAccessOutput {
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
+    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
+    /// is disabled for your account.</p>
+    pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
+        self.serial_console_access_enabled
+    }
 }
 impl std::fmt::Debug for EnableSerialConsoleAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9484,6 +10781,12 @@ pub struct EnableImageDeprecationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl EnableImageDeprecationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for EnableImageDeprecationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableImageDeprecationOutput");
@@ -9535,6 +10838,20 @@ pub struct EnableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
     pub unsuccessful:
         std::option::Option<std::vec::Vec<crate::model::EnableFastSnapshotRestoreErrorItem>>,
+}
+impl EnableFastSnapshotRestoresOutput {
+    /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
+    pub fn successful(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnableFastSnapshotRestoreSuccessItem]> {
+        self.successful.as_deref()
+    }
+    /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
+    pub fn unsuccessful(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnableFastSnapshotRestoreErrorItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableFastSnapshotRestoresOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9627,6 +10944,12 @@ pub struct EnableEbsEncryptionByDefaultOutput {
     /// <p>The updated status of encryption by default.</p>
     pub ebs_encryption_by_default: std::option::Option<bool>,
 }
+impl EnableEbsEncryptionByDefaultOutput {
+    /// <p>The updated status of encryption by default.</p>
+    pub fn ebs_encryption_by_default(&self) -> std::option::Option<bool> {
+        self.ebs_encryption_by_default
+    }
+}
 impl std::fmt::Debug for EnableEbsEncryptionByDefaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableEbsEncryptionByDefaultOutput");
@@ -9678,6 +11001,24 @@ pub struct DisassociateVpcCidrBlockOutput {
     pub cidr_block_association: std::option::Option<crate::model::VpcCidrBlockAssociation>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
+}
+impl DisassociateVpcCidrBlockOutput {
+    /// <p>Information about the IPv6 CIDR block association.</p>
+    pub fn ipv6_cidr_block_association(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcIpv6CidrBlockAssociation> {
+        self.ipv6_cidr_block_association.as_ref()
+    }
+    /// <p>Information about the IPv4 CIDR block association.</p>
+    pub fn cidr_block_association(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcCidrBlockAssociation> {
+        self.cidr_block_association.as_ref()
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateVpcCidrBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9774,6 +11115,18 @@ pub struct DisassociateTrunkInterfaceOutput {
     /// Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DisassociateTrunkInterfaceOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+    /// Idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateTrunkInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateTrunkInterfaceOutput");
@@ -9839,6 +11192,12 @@ pub struct DisassociateTransitGatewayRouteTableOutput {
     /// <p>Information about the association.</p>
     pub association: std::option::Option<crate::model::TransitGatewayAssociation>,
 }
+impl DisassociateTransitGatewayRouteTableOutput {
+    /// <p>Information about the association.</p>
+    pub fn association(&self) -> std::option::Option<&crate::model::TransitGatewayAssociation> {
+        self.association.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateTransitGatewayRouteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateTransitGatewayRouteTableOutput");
@@ -9889,6 +11248,14 @@ impl DisassociateTransitGatewayRouteTableOutput {
 pub struct DisassociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the association.</p>
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
+}
+impl DisassociateTransitGatewayMulticastDomainOutput {
+    /// <p>Information about the association.</p>
+    pub fn associations(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomainAssociations> {
+        self.associations.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateTransitGatewayMulticastDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9948,6 +11315,18 @@ pub struct DisassociateSubnetCidrBlockOutput {
         std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
     pub subnet_id: std::option::Option<std::string::String>,
+}
+impl DisassociateSubnetCidrBlockOutput {
+    /// <p>Information about the IPv6 CIDR block association.</p>
+    pub fn ipv6_cidr_block_association(
+        &self,
+    ) -> std::option::Option<&crate::model::SubnetIpv6CidrBlockAssociation> {
+        self.ipv6_cidr_block_association.as_ref()
+    }
+    /// <p>The ID of the subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateSubnetCidrBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10050,6 +11429,12 @@ pub struct DisassociateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
+impl DisassociateInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub fn instance_event_window(&self) -> std::option::Option<&crate::model::InstanceEventWindow> {
+        self.instance_event_window.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateInstanceEventWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateInstanceEventWindowOutput");
@@ -10101,6 +11486,14 @@ pub struct DisassociateIamInstanceProfileOutput {
     /// <p>Information about the IAM instance profile association.</p>
     pub iam_instance_profile_association:
         std::option::Option<crate::model::IamInstanceProfileAssociation>,
+}
+impl DisassociateIamInstanceProfileOutput {
+    /// <p>Information about the IAM instance profile association.</p>
+    pub fn iam_instance_profile_association(
+        &self,
+    ) -> std::option::Option<&crate::model::IamInstanceProfileAssociation> {
+        self.iam_instance_profile_association.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateIamInstanceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10160,6 +11553,12 @@ pub struct DisassociateEnclaveCertificateIamRoleOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl DisassociateEnclaveCertificateIamRoleOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for DisassociateEnclaveCertificateIamRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateEnclaveCertificateIamRoleOutput");
@@ -10209,6 +11608,16 @@ pub struct DisassociateClientVpnTargetNetworkOutput {
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The current state of the target network association.</p>
     pub status: std::option::Option<crate::model::AssociationStatus>,
+}
+impl DisassociateClientVpnTargetNetworkOutput {
+    /// <p>The ID of the target network association.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The current state of the target network association.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssociationStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateClientVpnTargetNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10307,6 +11716,12 @@ pub struct DisableVpcClassicLinkDnsSupportOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl DisableVpcClassicLinkDnsSupportOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for DisableVpcClassicLinkDnsSupportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableVpcClassicLinkDnsSupportOutput");
@@ -10354,6 +11769,12 @@ impl DisableVpcClassicLinkDnsSupportOutput {
 pub struct DisableVpcClassicLinkOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
+}
+impl DisableVpcClassicLinkOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
 }
 impl std::fmt::Debug for DisableVpcClassicLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10433,6 +11854,12 @@ pub struct DisableTransitGatewayRouteTablePropagationOutput {
     /// <p>Information about route propagation.</p>
     pub propagation: std::option::Option<crate::model::TransitGatewayPropagation>,
 }
+impl DisableTransitGatewayRouteTablePropagationOutput {
+    /// <p>Information about route propagation.</p>
+    pub fn propagation(&self) -> std::option::Option<&crate::model::TransitGatewayPropagation> {
+        self.propagation.as_ref()
+    }
+}
 impl std::fmt::Debug for DisableTransitGatewayRouteTablePropagationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableTransitGatewayRouteTablePropagationOutput");
@@ -10486,6 +11913,14 @@ pub struct DisableSerialConsoleAccessOutput {
     /// your account. If <code>false</code>, access to the EC2 serial console of all instances
     /// is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
+}
+impl DisableSerialConsoleAccessOutput {
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
+    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
+    /// is disabled for your account.</p>
+    pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
+        self.serial_console_access_enabled
+    }
 }
 impl std::fmt::Debug for DisableSerialConsoleAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10545,6 +11980,12 @@ pub struct DisableImageDeprecationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl DisableImageDeprecationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for DisableImageDeprecationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableImageDeprecationOutput");
@@ -10596,6 +12037,20 @@ pub struct DisableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
     pub unsuccessful:
         std::option::Option<std::vec::Vec<crate::model::DisableFastSnapshotRestoreErrorItem>>,
+}
+impl DisableFastSnapshotRestoresOutput {
+    /// <p>Information about the snapshots for which fast snapshot restores were successfully disabled.</p>
+    pub fn successful(
+        &self,
+    ) -> std::option::Option<&[crate::model::DisableFastSnapshotRestoreSuccessItem]> {
+        self.successful.as_deref()
+    }
+    /// <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
+    pub fn unsuccessful(
+        &self,
+    ) -> std::option::Option<&[crate::model::DisableFastSnapshotRestoreErrorItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableFastSnapshotRestoresOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10688,6 +12143,12 @@ pub struct DisableEbsEncryptionByDefaultOutput {
     /// <p>The updated status of encryption by default.</p>
     pub ebs_encryption_by_default: std::option::Option<bool>,
 }
+impl DisableEbsEncryptionByDefaultOutput {
+    /// <p>The updated status of encryption by default.</p>
+    pub fn ebs_encryption_by_default(&self) -> std::option::Option<bool> {
+        self.ebs_encryption_by_default
+    }
+}
 impl std::fmt::Debug for DisableEbsEncryptionByDefaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableEbsEncryptionByDefaultOutput");
@@ -10775,6 +12236,32 @@ pub struct DetachVolumeOutput {
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub delete_on_termination: std::option::Option<bool>,
+}
+impl DetachVolumeOutput {
+    /// <p>The time stamp when the attachment initiated.</p>
+    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.attach_time.as_ref()
+    }
+    /// <p>The device name.</p>
+    pub fn device(&self) -> std::option::Option<&str> {
+        self.device.as_deref()
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The attachment state of the volume.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VolumeAttachmentState> {
+        self.state.as_ref()
+    }
+    /// <p>The ID of the volume.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+        self.delete_on_termination
+    }
 }
 impl std::fmt::Debug for DetachVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10955,6 +12442,12 @@ pub struct DetachClassicLinkVpcOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl DetachClassicLinkVpcOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for DetachClassicLinkVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachClassicLinkVpcOutput");
@@ -11002,6 +12495,12 @@ impl DetachClassicLinkVpcOutput {
 pub struct DescribeVpnGatewaysOutput {
     /// <p>Information about one or more virtual private gateways.</p>
     pub vpn_gateways: std::option::Option<std::vec::Vec<crate::model::VpnGateway>>,
+}
+impl DescribeVpnGatewaysOutput {
+    /// <p>Information about one or more virtual private gateways.</p>
+    pub fn vpn_gateways(&self) -> std::option::Option<&[crate::model::VpnGateway]> {
+        self.vpn_gateways.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpnGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11059,6 +12558,12 @@ impl DescribeVpnGatewaysOutput {
 pub struct DescribeVpnConnectionsOutput {
     /// <p>Information about one or more VPN connections.</p>
     pub vpn_connections: std::option::Option<std::vec::Vec<crate::model::VpnConnection>>,
+}
+impl DescribeVpnConnectionsOutput {
+    /// <p>Information about one or more VPN connections.</p>
+    pub fn vpn_connections(&self) -> std::option::Option<&[crate::model::VpnConnection]> {
+        self.vpn_connections.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpnConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11118,6 +12623,16 @@ pub struct DescribeVpcsOutput {
     pub vpcs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVpcsOutput {
+    /// <p>Information about one or more VPCs.</p>
+    pub fn vpcs(&self) -> std::option::Option<&[crate::model::Vpc]> {
+        self.vpcs.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11191,6 +12706,18 @@ pub struct DescribeVpcPeeringConnectionsOutput {
         std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVpcPeeringConnectionsOutput {
+    /// <p>Information about the VPC peering connections.</p>
+    pub fn vpc_peering_connections(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcPeeringConnection]> {
+        self.vpc_peering_connections.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcPeeringConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11269,6 +12796,20 @@ pub struct DescribeVpcEndpointServicesOutput {
     pub service_details: std::option::Option<std::vec::Vec<crate::model::ServiceDetail>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVpcEndpointServicesOutput {
+    /// <p>A list of supported services.</p>
+    pub fn service_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_names.as_deref()
+    }
+    /// <p>Information about the service.</p>
+    pub fn service_details(&self) -> std::option::Option<&[crate::model::ServiceDetail]> {
+        self.service_details.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcEndpointServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11364,6 +12905,16 @@ pub struct DescribeVpcEndpointServicePermissionsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeVpcEndpointServicePermissionsOutput {
+    /// <p>Information about one or more allowed principals.</p>
+    pub fn allowed_principals(&self) -> std::option::Option<&[crate::model::AllowedPrincipal]> {
+        self.allowed_principals.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVpcEndpointServicePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVpcEndpointServicePermissionsOutput");
@@ -11440,6 +12991,18 @@ pub struct DescribeVpcEndpointServiceConfigurationsOutput {
         std::option::Option<std::vec::Vec<crate::model::ServiceConfiguration>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVpcEndpointServiceConfigurationsOutput {
+    /// <p>Information about one or more services.</p>
+    pub fn service_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceConfiguration]> {
+        self.service_configurations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcEndpointServiceConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11518,6 +13081,16 @@ pub struct DescribeVpcEndpointsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeVpcEndpointsOutput {
+    /// <p>Information about the endpoints.</p>
+    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
+        self.vpc_endpoints.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVpcEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVpcEndpointsOutput");
@@ -11590,6 +13163,18 @@ pub struct DescribeVpcEndpointConnectionsOutput {
         std::option::Option<std::vec::Vec<crate::model::VpcEndpointConnection>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVpcEndpointConnectionsOutput {
+    /// <p>Information about one or more VPC endpoint connections.</p>
+    pub fn vpc_endpoint_connections(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcEndpointConnection]> {
+        self.vpc_endpoint_connections.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcEndpointConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11668,6 +13253,19 @@ pub struct DescribeVpcEndpointConnectionNotificationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is
     /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVpcEndpointConnectionNotificationsOutput {
+    /// <p>One or more notifications.</p>
+    pub fn connection_notification_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectionNotification]> {
+        self.connection_notification_set.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcEndpointConnectionNotificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11751,6 +13349,16 @@ pub struct DescribeVpcClassicLinkDnsSupportOutput {
     /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
     pub vpcs: std::option::Option<std::vec::Vec<crate::model::ClassicLinkDnsSupport>>,
 }
+impl DescribeVpcClassicLinkDnsSupportOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+    pub fn vpcs(&self) -> std::option::Option<&[crate::model::ClassicLinkDnsSupport]> {
+        self.vpcs.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVpcClassicLinkDnsSupportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVpcClassicLinkDnsSupportOutput");
@@ -11821,6 +13429,12 @@ pub struct DescribeVpcClassicLinkOutput {
     /// <p>The ClassicLink status of one or more VPCs.</p>
     pub vpcs: std::option::Option<std::vec::Vec<crate::model::VpcClassicLink>>,
 }
+impl DescribeVpcClassicLinkOutput {
+    /// <p>The ClassicLink status of one or more VPCs.</p>
+    pub fn vpcs(&self) -> std::option::Option<&[crate::model::VpcClassicLink]> {
+        self.vpcs.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVpcClassicLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVpcClassicLinkOutput");
@@ -11884,6 +13498,27 @@ pub struct DescribeVpcAttributeOutput {
     /// resolves DNS hostnames for your instances to their corresponding
     /// IP addresses; otherwise, it does not.</p>
     pub enable_dns_support: std::option::Option<crate::model::AttributeBooleanValue>,
+}
+impl DescribeVpcAttributeOutput {
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
+    /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
+    /// otherwise, they do not.</p>
+    pub fn enable_dns_hostnames(
+        &self,
+    ) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.enable_dns_hostnames.as_ref()
+    }
+    /// <p>Indicates whether DNS resolution is enabled for
+    /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
+    /// resolves DNS hostnames for your instances to their corresponding
+    /// IP addresses; otherwise, it does not.</p>
+    pub fn enable_dns_support(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.enable_dns_support.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11978,6 +13613,17 @@ pub struct DescribeVolumeStatusOutput {
     /// <p>Information about the status of the volumes.</p>
     pub volume_statuses: std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
 }
+impl DescribeVolumeStatusOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the status of the volumes.</p>
+    pub fn volume_statuses(&self) -> std::option::Option<&[crate::model::VolumeStatusItem]> {
+        self.volume_statuses.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVolumeStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVolumeStatusOutput");
@@ -12052,6 +13698,18 @@ pub struct DescribeVolumesModificationsOutput {
     pub volumes_modifications: std::option::Option<std::vec::Vec<crate::model::VolumeModification>>,
     /// <p>Token for pagination, null if there are no more results </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVolumesModificationsOutput {
+    /// <p>Information about the volume modifications.</p>
+    pub fn volumes_modifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::VolumeModification]> {
+        self.volumes_modifications.as_deref()
+    }
+    /// <p>Token for pagination, null if there are no more results </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVolumesModificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12132,6 +13790,19 @@ pub struct DescribeVolumesOutput {
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeVolumesOutput {
+    /// <p>Information about the volumes.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
+    /// request. When the results of a <code>DescribeVolumes</code> request exceed
+    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVolumesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVolumesOutput");
@@ -12211,6 +13882,20 @@ pub struct DescribeVolumeAttributeOutput {
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The ID of the volume.</p>
     pub volume_id: std::option::Option<std::string::String>,
+}
+impl DescribeVolumeAttributeOutput {
+    /// <p>The state of <code>autoEnableIO</code> attribute.</p>
+    pub fn auto_enable_io(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.auto_enable_io.as_ref()
+    }
+    /// <p>A list of product codes.</p>
+    pub fn product_codes(&self) -> std::option::Option<&[crate::model::ProductCode]> {
+        self.product_codes.as_deref()
+    }
+    /// <p>The ID of the volume.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVolumeAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12301,6 +13986,18 @@ pub struct DescribeTrunkInterfaceAssociationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTrunkInterfaceAssociationsOutput {
+    /// <p>Information about the trunk associations.</p>
+    pub fn interface_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrunkInterfaceAssociation]> {
+        self.interface_associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTrunkInterfaceAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrunkInterfaceAssociationsOutput");
@@ -12377,6 +14074,18 @@ pub struct DescribeTransitGatewayVpcAttachmentsOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayVpcAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTransitGatewayVpcAttachmentsOutput {
+    /// <p>Information about the VPC attachments.</p>
+    pub fn transit_gateway_vpc_attachments(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayVpcAttachment]> {
+        self.transit_gateway_vpc_attachments.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTransitGatewayVpcAttachmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12457,6 +14166,16 @@ pub struct DescribeTransitGatewaysOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTransitGatewaysOutput {
+    /// <p>Information about the transit gateways.</p>
+    pub fn transit_gateways(&self) -> std::option::Option<&[crate::model::TransitGateway]> {
+        self.transit_gateways.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTransitGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTransitGatewaysOutput");
@@ -12530,6 +14249,18 @@ pub struct DescribeTransitGatewayRouteTablesOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTable>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTransitGatewayRouteTablesOutput {
+    /// <p>Information about the transit gateway route tables.</p>
+    pub fn transit_gateway_route_tables(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayRouteTable]> {
+        self.transit_gateway_route_tables.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTransitGatewayRouteTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12610,6 +14341,18 @@ pub struct DescribeTransitGatewayPeeringAttachmentsOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayPeeringAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTransitGatewayPeeringAttachmentsOutput {
+    /// <p>The transit gateway peering attachments.</p>
+    pub fn transit_gateway_peering_attachments(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayPeeringAttachment]> {
+        self.transit_gateway_peering_attachments.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTransitGatewayPeeringAttachmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12694,6 +14437,18 @@ pub struct DescribeTransitGatewayMulticastDomainsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTransitGatewayMulticastDomainsOutput {
+    /// <p>Information about the transit gateway multicast domains.</p>
+    pub fn transit_gateway_multicast_domains(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayMulticastDomain]> {
+        self.transit_gateway_multicast_domains.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTransitGatewayMulticastDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTransitGatewayMulticastDomainsOutput");
@@ -12774,6 +14529,18 @@ pub struct DescribeTransitGatewayConnectsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTransitGatewayConnectsOutput {
+    /// <p>Information about the Connect attachments.</p>
+    pub fn transit_gateway_connects(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayConnect]> {
+        self.transit_gateway_connects.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTransitGatewayConnectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTransitGatewayConnectsOutput");
@@ -12850,6 +14617,18 @@ pub struct DescribeTransitGatewayConnectPeersOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnectPeer>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTransitGatewayConnectPeersOutput {
+    /// <p>Information about the Connect peers.</p>
+    pub fn transit_gateway_connect_peers(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayConnectPeer]> {
+        self.transit_gateway_connect_peers.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTransitGatewayConnectPeersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12931,6 +14710,18 @@ pub struct DescribeTransitGatewayAttachmentsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTransitGatewayAttachmentsOutput {
+    /// <p>Information about the attachments.</p>
+    pub fn transit_gateway_attachments(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayAttachment]> {
+        self.transit_gateway_attachments.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTransitGatewayAttachmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTransitGatewayAttachmentsOutput");
@@ -13011,6 +14802,18 @@ pub struct DescribeTrafficMirrorTargetsOutput {
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTrafficMirrorTargetsOutput {
+    /// <p>Information about one or more Traffic Mirror targets.</p>
+    pub fn traffic_mirror_targets(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficMirrorTarget]> {
+        self.traffic_mirror_targets.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTrafficMirrorTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrafficMirrorTargetsOutput");
@@ -13087,6 +14890,18 @@ pub struct DescribeTrafficMirrorSessionsOutput {
         std::option::Option<std::vec::Vec<crate::model::TrafficMirrorSession>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTrafficMirrorSessionsOutput {
+    /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
+    pub fn traffic_mirror_sessions(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficMirrorSession]> {
+        self.traffic_mirror_sessions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrafficMirrorSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13165,6 +14980,18 @@ pub struct DescribeTrafficMirrorFiltersOutput {
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTrafficMirrorFiltersOutput {
+    /// <p>Information about one or more Traffic Mirror filters.</p>
+    pub fn traffic_mirror_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficMirrorFilter]> {
+        self.traffic_mirror_filters.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTrafficMirrorFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrafficMirrorFiltersOutput");
@@ -13242,6 +15069,17 @@ pub struct DescribeTagsOutput {
     /// <p>The tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
 }
+impl DescribeTagsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagDescription]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsOutput");
@@ -13316,6 +15154,16 @@ pub struct DescribeSubnetsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSubnetsOutput {
+    /// <p>Information about one or more subnets.</p>
+    pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSubnetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubnetsOutput");
@@ -13389,6 +15237,19 @@ pub struct DescribeStoreImageTasksOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStoreImageTasksOutput {
+    /// <p>The information about the AMI store tasks.</p>
+    pub fn store_image_task_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::StoreImageTaskResult]> {
+        self.store_image_task_results.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStoreImageTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13469,6 +15330,18 @@ pub struct DescribeStaleSecurityGroupsOutput {
     pub stale_security_group_set:
         std::option::Option<std::vec::Vec<crate::model::StaleSecurityGroup>>,
 }
+impl DescribeStaleSecurityGroupsOutput {
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the stale security groups.</p>
+    pub fn stale_security_group_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::StaleSecurityGroup]> {
+        self.stale_security_group_set.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStaleSecurityGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStaleSecurityGroupsOutput");
@@ -13546,6 +15419,17 @@ pub struct DescribeSpotPriceHistoryOutput {
     /// <p>The historical Spot prices.</p>
     pub spot_price_history: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
 }
+impl DescribeSpotPriceHistoryOutput {
+    /// <p>The token required to retrieve the next set of results. This value is null or an empty
+    /// string when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The historical Spot prices.</p>
+    pub fn spot_price_history(&self) -> std::option::Option<&[crate::model::SpotPrice]> {
+        self.spot_price_history.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSpotPriceHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpotPriceHistoryOutput");
@@ -13621,6 +15505,19 @@ pub struct DescribeSpotInstanceRequestsOutput {
     /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSpotInstanceRequestsOutput {
+    /// <p>One or more Spot Instance requests.</p>
+    pub fn spot_instance_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::SpotInstanceRequest]> {
+        self.spot_instance_requests.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSpotInstanceRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13701,6 +15598,19 @@ pub struct DescribeSpotFleetRequestsOutput {
     /// <p>Information about the configuration of your Spot Fleet.</p>
     pub spot_fleet_request_configs:
         std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
+}
+impl DescribeSpotFleetRequestsOutput {
+    /// <p>The token required to retrieve the next set of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the configuration of your Spot Fleet.</p>
+    pub fn spot_fleet_request_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::SpotFleetRequestConfig]> {
+        self.spot_fleet_request_configs.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSpotFleetRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13794,6 +15704,34 @@ pub struct DescribeSpotFleetRequestHistoryOutput {
     /// <p>The starting date and time for the events, in UTC format (for example,
     /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeSpotFleetRequestHistoryOutput {
+    /// <p>Information about the events in the history of the Spot Fleet request.</p>
+    pub fn history_records(&self) -> std::option::Option<&[crate::model::HistoryRecord]> {
+        self.history_records.as_deref()
+    }
+    /// <p>The last date and time for the events, in UTC format (for example,
+    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+    /// All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
+    /// present.</p>
+    pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_evaluated_time.as_ref()
+    }
+    /// <p>The token required to retrieve the next set of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
+        self.spot_fleet_request_id.as_deref()
+    }
+    /// <p>The starting date and time for the events, in UTC format (for example,
+    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSpotFleetRequestHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13931,6 +15869,22 @@ pub struct DescribeSpotFleetInstancesOutput {
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
 }
+impl DescribeSpotFleetInstancesOutput {
+    /// <p>The running instances. This list is refreshed periodically and might be out of
+    /// date.</p>
+    pub fn active_instances(&self) -> std::option::Option<&[crate::model::ActiveInstance]> {
+        self.active_instances.as_deref()
+    }
+    /// <p>The token required to retrieve the next set of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
+        self.spot_fleet_request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSpotFleetInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpotFleetInstancesOutput");
@@ -14022,6 +15976,14 @@ pub struct DescribeSpotDatafeedSubscriptionOutput {
     /// <p>The Spot Instance data feed subscription.</p>
     pub spot_datafeed_subscription: std::option::Option<crate::model::SpotDatafeedSubscription>,
 }
+impl DescribeSpotDatafeedSubscriptionOutput {
+    /// <p>The Spot Instance data feed subscription.</p>
+    pub fn spot_datafeed_subscription(
+        &self,
+    ) -> std::option::Option<&crate::model::SpotDatafeedSubscription> {
+        self.spot_datafeed_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSpotDatafeedSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpotDatafeedSubscriptionOutput");
@@ -14084,6 +16046,19 @@ pub struct DescribeSnapshotsOutput {
     /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSnapshotsOutput {
+    /// <p>Information about the snapshots.</p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.snapshots.as_deref()
+    }
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
+    /// request. When the results of a <code>DescribeSnapshots</code> request exceed
+    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14166,6 +16141,23 @@ pub struct DescribeSnapshotAttributeOutput {
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The ID of the EBS snapshot.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
+}
+impl DescribeSnapshotAttributeOutput {
+    /// <p>The users and groups that have the permissions for creating volumes from the
+    /// snapshot.</p>
+    pub fn create_volume_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateVolumePermission]> {
+        self.create_volume_permissions.as_deref()
+    }
+    /// <p>The product codes.</p>
+    pub fn product_codes(&self) -> std::option::Option<&[crate::model::ProductCode]> {
+        self.product_codes.as_deref()
+    }
+    /// <p>The ID of the EBS snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSnapshotAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14267,6 +16259,16 @@ pub struct DescribeSecurityGroupsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSecurityGroupsOutput {
+    /// <p>Information about the security groups.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroup]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSecurityGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSecurityGroupsOutput");
@@ -14338,6 +16340,16 @@ pub struct DescribeSecurityGroupRulesOutput {
     pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSecurityGroupRulesOutput {
+    /// <p>Information about security group rules.</p>
+    pub fn security_group_rules(&self) -> std::option::Option<&[crate::model::SecurityGroupRule]> {
+        self.security_group_rules.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSecurityGroupRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14414,6 +16426,14 @@ pub struct DescribeSecurityGroupReferencesOutput {
     pub security_group_reference_set:
         std::option::Option<std::vec::Vec<crate::model::SecurityGroupReference>>,
 }
+impl DescribeSecurityGroupReferencesOutput {
+    /// <p>Information about the VPCs with the referencing security groups.</p>
+    pub fn security_group_reference_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecurityGroupReference]> {
+        self.security_group_reference_set.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSecurityGroupReferencesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSecurityGroupReferencesOutput");
@@ -14479,6 +16499,18 @@ pub struct DescribeScheduledInstancesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the Scheduled Instances.</p>
     pub scheduled_instance_set: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
+}
+impl DescribeScheduledInstancesOutput {
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the Scheduled Instances.</p>
+    pub fn scheduled_instance_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScheduledInstance]> {
+        self.scheduled_instance_set.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduledInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14556,6 +16588,18 @@ pub struct DescribeScheduledInstanceAvailabilityOutput {
     /// <p>Information about the available Scheduled Instances.</p>
     pub scheduled_instance_availability_set:
         std::option::Option<std::vec::Vec<crate::model::ScheduledInstanceAvailability>>,
+}
+impl DescribeScheduledInstanceAvailabilityOutput {
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the available Scheduled Instances.</p>
+    pub fn scheduled_instance_availability_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScheduledInstanceAvailability]> {
+        self.scheduled_instance_availability_set.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduledInstanceAvailabilityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14636,6 +16680,16 @@ pub struct DescribeRouteTablesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeRouteTablesOutput {
+    /// <p>Information about one or more route tables.</p>
+    pub fn route_tables(&self) -> std::option::Option<&[crate::model::RouteTable]> {
+        self.route_tables.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRouteTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRouteTablesOutput");
@@ -14709,6 +16763,19 @@ pub struct DescribeReservedInstancesOfferingsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReservedInstancesOfferingsOutput {
+    /// <p>A list of Reserved Instances offerings.</p>
+    pub fn reserved_instances_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedInstancesOffering]> {
+        self.reserved_instances_offerings.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedInstancesOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14793,6 +16860,19 @@ pub struct DescribeReservedInstancesModificationsOutput {
     pub reserved_instances_modifications:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
 }
+impl DescribeReservedInstancesModificationsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Reserved Instance modification information.</p>
+    pub fn reserved_instances_modifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedInstancesModification]> {
+        self.reserved_instances_modifications.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedInstancesModificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedInstancesModificationsOutput");
@@ -14873,6 +16953,14 @@ pub struct DescribeReservedInstancesListingsOutput {
     pub reserved_instances_listings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
 }
+impl DescribeReservedInstancesListingsOutput {
+    /// <p>Information about the Reserved Instance listing.</p>
+    pub fn reserved_instances_listings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedInstancesListing]> {
+        self.reserved_instances_listings.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedInstancesListingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedInstancesListingsOutput");
@@ -14937,6 +17025,12 @@ pub struct DescribeReservedInstancesOutput {
     /// <p>A list of Reserved Instances.</p>
     pub reserved_instances: std::option::Option<std::vec::Vec<crate::model::ReservedInstances>>,
 }
+impl DescribeReservedInstancesOutput {
+    /// <p>A list of Reserved Instances.</p>
+    pub fn reserved_instances(&self) -> std::option::Option<&[crate::model::ReservedInstances]> {
+        self.reserved_instances.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedInstancesOutput");
@@ -15000,6 +17094,18 @@ pub struct DescribeReplaceRootVolumeTasksOutput {
         std::option::Option<std::vec::Vec<crate::model::ReplaceRootVolumeTask>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReplaceRootVolumeTasksOutput {
+    /// <p>Information about the root volume replacement task.</p>
+    pub fn replace_root_volume_tasks(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplaceRootVolumeTask]> {
+        self.replace_root_volume_tasks.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplaceRootVolumeTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15075,6 +17181,12 @@ pub struct DescribeRegionsOutput {
     /// <p>Information about the Regions.</p>
     pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
 }
+impl DescribeRegionsOutput {
+    /// <p>Information about the Regions.</p>
+    pub fn regions(&self) -> std::option::Option<&[crate::model::Region]> {
+        self.regions.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRegionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRegionsOutput");
@@ -15133,6 +17245,16 @@ pub struct DescribePublicIpv4PoolsOutput {
     pub public_ipv4_pools: std::option::Option<std::vec::Vec<crate::model::PublicIpv4Pool>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePublicIpv4PoolsOutput {
+    /// <p>Information about the address pools.</p>
+    pub fn public_ipv4_pools(&self) -> std::option::Option<&[crate::model::PublicIpv4Pool]> {
+        self.public_ipv4_pools.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePublicIpv4PoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15207,6 +17329,16 @@ pub struct DescribePrincipalIdFormatOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePrincipalIdFormatOutput {
+    /// <p>Information about the ID format settings for the ARN.</p>
+    pub fn principals(&self) -> std::option::Option<&[crate::model::PrincipalIdFormat]> {
+        self.principals.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePrincipalIdFormatOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePrincipalIdFormatOutput");
@@ -15279,6 +17411,16 @@ pub struct DescribePrefixListsOutput {
     /// <p>All available prefix lists.</p>
     pub prefix_lists: std::option::Option<std::vec::Vec<crate::model::PrefixList>>,
 }
+impl DescribePrefixListsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>All available prefix lists.</p>
+    pub fn prefix_lists(&self) -> std::option::Option<&[crate::model::PrefixList]> {
+        self.prefix_lists.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePrefixListsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePrefixListsOutput");
@@ -15349,6 +17491,12 @@ pub struct DescribePlacementGroupsOutput {
     /// <p>Information about the placement groups.</p>
     pub placement_groups: std::option::Option<std::vec::Vec<crate::model::PlacementGroup>>,
 }
+impl DescribePlacementGroupsOutput {
+    /// <p>Information about the placement groups.</p>
+    pub fn placement_groups(&self) -> std::option::Option<&[crate::model::PlacementGroup]> {
+        self.placement_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePlacementGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePlacementGroupsOutput");
@@ -15408,6 +17556,16 @@ pub struct DescribeNetworkInterfacesOutput {
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeNetworkInterfacesOutput {
+    /// <p>Information about one or more network interfaces.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNetworkInterfacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15485,6 +17643,18 @@ pub struct DescribeNetworkInterfacePermissionsOutput {
         std::option::Option<std::vec::Vec<crate::model::NetworkInterfacePermission>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeNetworkInterfacePermissionsOutput {
+    /// <p>The network interface permissions.</p>
+    pub fn network_interface_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::NetworkInterfacePermission]> {
+        self.network_interface_permissions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNetworkInterfacePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15570,6 +17740,28 @@ pub struct DescribeNetworkInterfaceAttributeOutput {
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub source_dest_check: std::option::Option<crate::model::AttributeBooleanValue>,
+}
+impl DescribeNetworkInterfaceAttributeOutput {
+    /// <p>The attachment (if any) of the network interface.</p>
+    pub fn attachment(&self) -> std::option::Option<&crate::model::NetworkInterfaceAttachment> {
+        self.attachment.as_ref()
+    }
+    /// <p>The description of the network interface.</p>
+    pub fn description(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.description.as_ref()
+    }
+    /// <p>The security groups associated with the network interface.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupIdentifier]> {
+        self.groups.as_deref()
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>Indicates whether source/destination checking is enabled.</p>
+    pub fn source_dest_check(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.source_dest_check.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeNetworkInterfaceAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15695,6 +17887,18 @@ pub struct DescribeNetworkInsightsPathsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeNetworkInsightsPathsOutput {
+    /// <p>Information about the paths.</p>
+    pub fn network_insights_paths(
+        &self,
+    ) -> std::option::Option<&[crate::model::NetworkInsightsPath]> {
+        self.network_insights_paths.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNetworkInsightsPathsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNetworkInsightsPathsOutput");
@@ -15772,6 +17976,18 @@ pub struct DescribeNetworkInsightsAnalysesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeNetworkInsightsAnalysesOutput {
+    /// <p>Information about the network insights analyses.</p>
+    pub fn network_insights_analyses(
+        &self,
+    ) -> std::option::Option<&[crate::model::NetworkInsightsAnalysis]> {
+        self.network_insights_analyses.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNetworkInsightsAnalysesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNetworkInsightsAnalysesOutput");
@@ -15848,6 +18064,16 @@ pub struct DescribeNetworkAclsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeNetworkAclsOutput {
+    /// <p>Information about one or more network ACLs.</p>
+    pub fn network_acls(&self) -> std::option::Option<&[crate::model::NetworkAcl]> {
+        self.network_acls.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNetworkAclsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNetworkAclsOutput");
@@ -15919,6 +18145,16 @@ pub struct DescribeNatGatewaysOutput {
     pub nat_gateways: std::option::Option<std::vec::Vec<crate::model::NatGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeNatGatewaysOutput {
+    /// <p>Information about the NAT gateways.</p>
+    pub fn nat_gateways(&self) -> std::option::Option<&[crate::model::NatGateway]> {
+        self.nat_gateways.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNatGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15992,6 +18228,18 @@ pub struct DescribeMovingAddressesOutput {
         std::option::Option<std::vec::Vec<crate::model::MovingAddressStatus>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMovingAddressesOutput {
+    /// <p>The status for each Elastic IP address.</p>
+    pub fn moving_address_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::MovingAddressStatus]> {
+        self.moving_address_statuses.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMovingAddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16069,6 +18317,16 @@ pub struct DescribeManagedPrefixListsOutput {
     /// <p>Information about the prefix lists.</p>
     pub prefix_lists: std::option::Option<std::vec::Vec<crate::model::ManagedPrefixList>>,
 }
+impl DescribeManagedPrefixListsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the prefix lists.</p>
+    pub fn prefix_lists(&self) -> std::option::Option<&[crate::model::ManagedPrefixList]> {
+        self.prefix_lists.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeManagedPrefixListsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeManagedPrefixListsOutput");
@@ -16142,6 +18400,18 @@ pub struct DescribeLocalGatewayVirtualInterfacesOutput {
         std::option::Option<std::vec::Vec<crate::model::LocalGatewayVirtualInterface>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLocalGatewayVirtualInterfacesOutput {
+    /// <p>Information about the virtual interfaces.</p>
+    pub fn local_gateway_virtual_interfaces(
+        &self,
+    ) -> std::option::Option<&[crate::model::LocalGatewayVirtualInterface]> {
+        self.local_gateway_virtual_interfaces.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocalGatewayVirtualInterfacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16222,6 +18492,18 @@ pub struct DescribeLocalGatewayVirtualInterfaceGroupsOutput {
         std::option::Option<std::vec::Vec<crate::model::LocalGatewayVirtualInterfaceGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLocalGatewayVirtualInterfaceGroupsOutput {
+    /// <p>The virtual interface groups.</p>
+    pub fn local_gateway_virtual_interface_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::LocalGatewayVirtualInterfaceGroup]> {
+        self.local_gateway_virtual_interface_groups.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocalGatewayVirtualInterfaceGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16307,6 +18589,16 @@ pub struct DescribeLocalGatewaysOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeLocalGatewaysOutput {
+    /// <p>Information about the local gateways.</p>
+    pub fn local_gateways(&self) -> std::option::Option<&[crate::model::LocalGateway]> {
+        self.local_gateways.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLocalGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocalGatewaysOutput");
@@ -16379,6 +18671,18 @@ pub struct DescribeLocalGatewayRouteTableVpcAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::LocalGatewayRouteTableVpcAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLocalGatewayRouteTableVpcAssociationsOutput {
+    /// <p>Information about the associations.</p>
+    pub fn local_gateway_route_table_vpc_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LocalGatewayRouteTableVpcAssociation]> {
+        self.local_gateway_route_table_vpc_associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocalGatewayRouteTableVpcAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16467,6 +18771,20 @@ pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput
     >,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
+    /// <p>Information about the associations.</p>
+    pub fn local_gateway_route_table_virtual_interface_group_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation]>
+    {
+        self.local_gateway_route_table_virtual_interface_group_associations
+            .as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16559,6 +18877,18 @@ pub struct DescribeLocalGatewayRouteTablesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeLocalGatewayRouteTablesOutput {
+    /// <p>Information about the local gateway route tables.</p>
+    pub fn local_gateway_route_tables(
+        &self,
+    ) -> std::option::Option<&[crate::model::LocalGatewayRouteTable]> {
+        self.local_gateway_route_tables.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLocalGatewayRouteTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocalGatewayRouteTablesOutput");
@@ -16640,6 +18970,19 @@ pub struct DescribeLaunchTemplateVersionsOutput {
     /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeLaunchTemplateVersionsOutput {
+    /// <p>Information about the launch template versions.</p>
+    pub fn launch_template_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::LaunchTemplateVersion]> {
+        self.launch_template_versions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLaunchTemplateVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLaunchTemplateVersionsOutput");
@@ -16719,6 +19062,17 @@ pub struct DescribeLaunchTemplatesOutput {
     /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeLaunchTemplatesOutput {
+    /// <p>Information about the launch templates.</p>
+    pub fn launch_templates(&self) -> std::option::Option<&[crate::model::LaunchTemplate]> {
+        self.launch_templates.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLaunchTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLaunchTemplatesOutput");
@@ -16792,6 +19146,12 @@ pub struct DescribeKeyPairsOutput {
     /// <p>Information about the key pairs.</p>
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::KeyPairInfo>>,
 }
+impl DescribeKeyPairsOutput {
+    /// <p>Information about the key pairs.</p>
+    pub fn key_pairs(&self) -> std::option::Option<&[crate::model::KeyPairInfo]> {
+        self.key_pairs.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeKeyPairsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeKeyPairsOutput");
@@ -16850,6 +19210,16 @@ pub struct DescribeIpv6PoolsOutput {
     pub ipv6_pools: std::option::Option<std::vec::Vec<crate::model::Ipv6Pool>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeIpv6PoolsOutput {
+    /// <p>Information about the IPv6 address pools.</p>
+    pub fn ipv6_pools(&self) -> std::option::Option<&[crate::model::Ipv6Pool]> {
+        self.ipv6_pools.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIpv6PoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16922,6 +19292,16 @@ pub struct DescribeInternetGatewaysOutput {
     pub internet_gateways: std::option::Option<std::vec::Vec<crate::model::InternetGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInternetGatewaysOutput {
+    /// <p>Information about one or more internet gateways.</p>
+    pub fn internet_gateways(&self) -> std::option::Option<&[crate::model::InternetGateway]> {
+        self.internet_gateways.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInternetGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17000,6 +19380,17 @@ pub struct DescribeInstanceTypesOutput {
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceTypesOutput {
+    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[crate::model::InstanceTypeInfo]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceTypesOutput");
@@ -17076,6 +19467,19 @@ pub struct DescribeInstanceTypeOfferingsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstanceTypeOfferingsOutput {
+    /// <p>The instance types offered.</p>
+    pub fn instance_type_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceTypeOffering]> {
+        self.instance_type_offerings.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceTypeOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17156,6 +19560,17 @@ pub struct DescribeInstanceStatusOutput {
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceStatusOutput {
+    /// <p>Information about the status of the instances.</p>
+    pub fn instance_statuses(&self) -> std::option::Option<&[crate::model::InstanceStatus]> {
+        self.instance_statuses.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceStatusOutput");
@@ -17232,6 +19647,17 @@ pub struct DescribeInstancesOutput {
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstancesOutput {
+    /// <p>Information about the reservations.</p>
+    pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
+        self.reservations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstancesOutput");
@@ -17307,6 +19733,18 @@ pub struct DescribeInstanceEventWindowsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceEventWindowsOutput {
+    /// <p>Information about the event windows.</p>
+    pub fn instance_event_windows(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceEventWindow]> {
+        self.instance_event_windows.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceEventWindowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceEventWindowsOutput");
@@ -17381,6 +19819,14 @@ pub struct DescribeInstanceEventNotificationAttributesOutput {
     /// <p>Information about the registered tag keys.</p>
     pub instance_tag_attribute: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
 }
+impl DescribeInstanceEventNotificationAttributesOutput {
+    /// <p>Information about the registered tag keys.</p>
+    pub fn instance_tag_attribute(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceTagNotificationAttribute> {
+        self.instance_tag_attribute.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceEventNotificationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceEventNotificationAttributesOutput");
@@ -17440,6 +19886,19 @@ pub struct DescribeInstanceCreditSpecificationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstanceCreditSpecificationsOutput {
+    /// <p>Information about the credit option for CPU usage of an instance.</p>
+    pub fn instance_credit_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceCreditSpecification]> {
+        self.instance_credit_specifications.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceCreditSpecificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17560,6 +20019,88 @@ pub struct DescribeInstanceAttributeOutput {
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>The user data.</p>
     pub user_data: std::option::Option<crate::model::AttributeValue>,
+}
+impl DescribeInstanceAttributeOutput {
+    /// <p>The security groups associated with the instance.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupIdentifier]> {
+        self.groups.as_deref()
+    }
+    /// <p>The block device mapping of the instance.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
+    /// EC2 console, CLI, or API; otherwise, you can.</p>
+    pub fn disable_api_termination(
+        &self,
+    ) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.disable_api_termination.as_ref()
+    }
+    /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
+    pub fn ena_support(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.ena_support.as_ref()
+    }
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
+    /// set it to <code>false</code>.</p>
+    pub fn enclave_options(&self) -> std::option::Option<&crate::model::EnclaveOptions> {
+        self.enclave_options.as_ref()
+    }
+    /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
+    pub fn ebs_optimized(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.ebs_optimized.as_ref()
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
+    /// instance (using the operating system command for system shutdown).</p>
+    pub fn instance_initiated_shutdown_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::AttributeValue> {
+        self.instance_initiated_shutdown_behavior.as_ref()
+    }
+    /// <p>The instance type.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The kernel ID.</p>
+    pub fn kernel_id(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.kernel_id.as_ref()
+    }
+    /// <p>A list of product codes.</p>
+    pub fn product_codes(&self) -> std::option::Option<&[crate::model::ProductCode]> {
+        self.product_codes.as_deref()
+    }
+    /// <p>The RAM disk ID.</p>
+    pub fn ramdisk_id(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.ramdisk_id.as_ref()
+    }
+    /// <p>The device name of the root device volume (for example,
+    /// <code>/dev/sda1</code>).</p>
+    pub fn root_device_name(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.root_device_name.as_ref()
+    }
+    /// <p>Enable or disable source/destination checks, which ensure that the instance
+    /// is either the source or the destination of any traffic that it receives.
+    /// If the value is <code>true</code>, source/destination checks are enabled;
+    /// otherwise, they are disabled. The default value is <code>true</code>.
+    /// You must disable source/destination checks if the instance runs services
+    /// such as network address translation, routing, or firewalls.</p>
+    pub fn source_dest_check(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
+        self.source_dest_check.as_ref()
+    }
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
+    /// is enabled.</p>
+    pub fn sriov_net_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.sriov_net_support.as_ref()
+    }
+    /// <p>The user data.</p>
+    pub fn user_data(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.user_data.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17906,6 +20447,20 @@ pub struct DescribeImportSnapshotTasksOutput {
     /// to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeImportSnapshotTasksOutput {
+    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
+    /// previous 7 days.</p>
+    pub fn import_snapshot_tasks(
+        &self,
+    ) -> std::option::Option<&[crate::model::ImportSnapshotTask]> {
+        self.import_snapshot_tasks.as_deref()
+    }
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
+    /// to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImportSnapshotTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImportSnapshotTasksOutput");
@@ -17988,6 +20543,18 @@ pub struct DescribeImportImageTasksOutput {
     /// to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeImportImageTasksOutput {
+    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
+    /// previous 7 days.</p>
+    pub fn import_image_tasks(&self) -> std::option::Option<&[crate::model::ImportImageTask]> {
+        self.import_image_tasks.as_deref()
+    }
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
+    /// to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImportImageTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImportImageTasksOutput");
@@ -18066,6 +20633,12 @@ pub struct DescribeImagesOutput {
     /// <p>Information about the images.</p>
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
 }
+impl DescribeImagesOutput {
+    /// <p>Information about the images.</p>
+    pub fn images(&self) -> std::option::Option<&[crate::model::Image]> {
+        self.images.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImagesOutput");
@@ -18138,6 +20711,46 @@ pub struct DescribeImageAttributeOutput {
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>Describes a value for a resource attribute that is a String.</p>
     pub boot_mode: std::option::Option<crate::model::AttributeValue>,
+}
+impl DescribeImageAttributeOutput {
+    /// <p>The block device mapping entries.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::BlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+    /// <p>The ID of the AMI.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The launch permissions.</p>
+    pub fn launch_permissions(&self) -> std::option::Option<&[crate::model::LaunchPermission]> {
+        self.launch_permissions.as_deref()
+    }
+    /// <p>The product codes.</p>
+    pub fn product_codes(&self) -> std::option::Option<&[crate::model::ProductCode]> {
+        self.product_codes.as_deref()
+    }
+    /// <p>A description for the AMI.</p>
+    pub fn description(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.description.as_ref()
+    }
+    /// <p>The kernel ID.</p>
+    pub fn kernel_id(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.kernel_id.as_ref()
+    }
+    /// <p>The RAM disk ID.</p>
+    pub fn ramdisk_id(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.ramdisk_id.as_ref()
+    }
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
+    pub fn sriov_net_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.sriov_net_support.as_ref()
+    }
+    /// <p>Describes a value for a resource attribute that is a String.</p>
+    pub fn boot_mode(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.boot_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeImageAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18341,6 +20954,12 @@ pub struct DescribeIdFormatOutput {
     /// <p>Information about the ID format for the resource.</p>
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
 }
+impl DescribeIdFormatOutput {
+    /// <p>Information about the ID format for the resource.</p>
+    pub fn statuses(&self) -> std::option::Option<&[crate::model::IdFormat]> {
+        self.statuses.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeIdFormatOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdFormatOutput");
@@ -18397,6 +21016,12 @@ impl DescribeIdFormatOutput {
 pub struct DescribeIdentityIdFormatOutput {
     /// <p>Information about the ID format for the resources.</p>
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
+}
+impl DescribeIdentityIdFormatOutput {
+    /// <p>Information about the ID format for the resources.</p>
+    pub fn statuses(&self) -> std::option::Option<&[crate::model::IdFormat]> {
+        self.statuses.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityIdFormatOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18457,6 +21082,18 @@ pub struct DescribeIamInstanceProfileAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::IamInstanceProfileAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeIamInstanceProfileAssociationsOutput {
+    /// <p>Information about the IAM instance profile associations.</p>
+    pub fn iam_instance_profile_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::IamInstanceProfileAssociation]> {
+        self.iam_instance_profile_associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIamInstanceProfileAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18537,6 +21174,16 @@ pub struct DescribeHostsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeHostsOutput {
+    /// <p>Information about the Dedicated Hosts.</p>
+    pub fn hosts(&self) -> std::option::Option<&[crate::model::Host]> {
+        self.hosts.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHostsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHostsOutput");
@@ -18608,6 +21255,16 @@ pub struct DescribeHostReservationsOutput {
     pub host_reservation_set: std::option::Option<std::vec::Vec<crate::model::HostReservation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeHostReservationsOutput {
+    /// <p>Details about the reservation's configuration.</p>
+    pub fn host_reservation_set(&self) -> std::option::Option<&[crate::model::HostReservation]> {
+        self.host_reservation_set.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHostReservationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18685,6 +21342,16 @@ pub struct DescribeHostReservationOfferingsOutput {
     /// <p>Information about the offerings.</p>
     pub offering_set: std::option::Option<std::vec::Vec<crate::model::HostOffering>>,
 }
+impl DescribeHostReservationOfferingsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the offerings.</p>
+    pub fn offering_set(&self) -> std::option::Option<&[crate::model::HostOffering]> {
+        self.offering_set.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHostReservationOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHostReservationOfferingsOutput");
@@ -18757,6 +21424,16 @@ pub struct DescribeFpgaImagesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFpgaImagesOutput {
+    /// <p>Information about the FPGA images.</p>
+    pub fn fpga_images(&self) -> std::option::Option<&[crate::model::FpgaImage]> {
+        self.fpga_images.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFpgaImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFpgaImagesOutput");
@@ -18827,6 +21504,12 @@ pub struct DescribeFpgaImageAttributeOutput {
     /// <p>Information about the attribute.</p>
     pub fpga_image_attribute: std::option::Option<crate::model::FpgaImageAttribute>,
 }
+impl DescribeFpgaImageAttributeOutput {
+    /// <p>Information about the attribute.</p>
+    pub fn fpga_image_attribute(&self) -> std::option::Option<&crate::model::FpgaImageAttribute> {
+        self.fpga_image_attribute.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFpgaImageAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFpgaImageAttributeOutput");
@@ -18879,6 +21562,16 @@ pub struct DescribeFlowLogsOutput {
     pub flow_logs: std::option::Option<std::vec::Vec<crate::model::FlowLog>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFlowLogsOutput {
+    /// <p>Information about the flow logs.</p>
+    pub fn flow_logs(&self) -> std::option::Option<&[crate::model::FlowLog]> {
+        self.flow_logs.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFlowLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18951,6 +21644,16 @@ pub struct DescribeFleetsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the EC2 Fleets.</p>
     pub fleets: std::option::Option<std::vec::Vec<crate::model::FleetData>>,
+}
+impl DescribeFleetsOutput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the EC2 Fleets.</p>
+    pub fn fleets(&self) -> std::option::Option<&[crate::model::FleetData]> {
+        self.fleets.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19026,6 +21729,21 @@ pub struct DescribeFleetInstancesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the EC2 Fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
+}
+impl DescribeFleetInstancesOutput {
+    /// <p>The running instances. This list is refreshed periodically and might be out of
+    /// date.</p>
+    pub fn active_instances(&self) -> std::option::Option<&[crate::model::ActiveInstance]> {
+        self.active_instances.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19125,6 +21843,33 @@ pub struct DescribeFleetHistoryOutput {
     /// <p>The start date and time for the events, in UTC format (for example,
     /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeFleetHistoryOutput {
+    /// <p>Information about the events in the history of the EC2 Fleet.</p>
+    pub fn history_records(&self) -> std::option::Option<&[crate::model::HistoryRecordEntry]> {
+        self.history_records.as_deref()
+    }
+    /// <p>The last date and time for the events, in UTC format (for example,
+    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+    /// All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
+    /// present.</p>
+    pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_evaluated_time.as_ref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The ID of the EC Fleet.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The start date and time for the events, in UTC format (for example,
+    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19258,6 +22003,18 @@ pub struct DescribeFastSnapshotRestoresOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFastSnapshotRestoresOutput {
+    /// <p>Information about the state of fast snapshot restores.</p>
+    pub fn fast_snapshot_restores(
+        &self,
+    ) -> std::option::Option<&[crate::model::DescribeFastSnapshotRestoreSuccessItem]> {
+        self.fast_snapshot_restores.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFastSnapshotRestoresOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFastSnapshotRestoresOutput");
@@ -19335,6 +22092,12 @@ pub struct DescribeExportTasksOutput {
     /// <p>Information about the export tasks.</p>
     pub export_tasks: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
 }
+impl DescribeExportTasksOutput {
+    /// <p>Information about the export tasks.</p>
+    pub fn export_tasks(&self) -> std::option::Option<&[crate::model::ExportTask]> {
+        self.export_tasks.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeExportTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExportTasksOutput");
@@ -19394,6 +22157,17 @@ pub struct DescribeExportImageTasksOutput {
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
     /// to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeExportImageTasksOutput {
+    /// <p>Information about the export image tasks.</p>
+    pub fn export_image_tasks(&self) -> std::option::Option<&[crate::model::ExportImageTask]> {
+        self.export_image_tasks.as_deref()
+    }
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
+    /// to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeExportImageTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19477,6 +22251,23 @@ pub struct DescribeElasticGpusOutput {
     /// <p>The token to use to retrieve the next page of results. This value is
     /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeElasticGpusOutput {
+    /// <p>Information about the Elastic Graphics accelerators.</p>
+    pub fn elastic_gpu_set(&self) -> std::option::Option<&[crate::model::ElasticGpus]> {
+        self.elastic_gpu_set.as_deref()
+    }
+    /// <p>The total number of items to return. If the total number of items available is more
+    /// than the value specified in max-items then a Next-Token will be provided in the output
+    /// that you can use to resume pagination.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeElasticGpusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19570,6 +22361,18 @@ pub struct DescribeEgressOnlyInternetGatewaysOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEgressOnlyInternetGatewaysOutput {
+    /// <p>Information about the egress-only internet gateways.</p>
+    pub fn egress_only_internet_gateways(
+        &self,
+    ) -> std::option::Option<&[crate::model::EgressOnlyInternetGateway]> {
+        self.egress_only_internet_gateways.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEgressOnlyInternetGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEgressOnlyInternetGatewaysOutput");
@@ -19649,6 +22452,16 @@ pub struct DescribeDhcpOptionsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeDhcpOptionsOutput {
+    /// <p>Information about one or more DHCP options sets.</p>
+    pub fn dhcp_options(&self) -> std::option::Option<&[crate::model::DhcpOptions]> {
+        self.dhcp_options.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDhcpOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDhcpOptionsOutput");
@@ -19719,6 +22532,12 @@ pub struct DescribeCustomerGatewaysOutput {
     /// <p>Information about one or more customer gateways.</p>
     pub customer_gateways: std::option::Option<std::vec::Vec<crate::model::CustomerGateway>>,
 }
+impl DescribeCustomerGatewaysOutput {
+    /// <p>Information about one or more customer gateways.</p>
+    pub fn customer_gateways(&self) -> std::option::Option<&[crate::model::CustomerGateway]> {
+        self.customer_gateways.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCustomerGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomerGatewaysOutput");
@@ -19780,6 +22599,12 @@ pub struct DescribeConversionTasksOutput {
     /// <p>Information about the conversion tasks.</p>
     pub conversion_tasks: std::option::Option<std::vec::Vec<crate::model::ConversionTask>>,
 }
+impl DescribeConversionTasksOutput {
+    /// <p>Information about the conversion tasks.</p>
+    pub fn conversion_tasks(&self) -> std::option::Option<&[crate::model::ConversionTask]> {
+        self.conversion_tasks.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConversionTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConversionTasksOutput");
@@ -19839,6 +22664,16 @@ pub struct DescribeCoipPoolsOutput {
     pub coip_pools: std::option::Option<std::vec::Vec<crate::model::CoipPool>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeCoipPoolsOutput {
+    /// <p>Information about the address pools.</p>
+    pub fn coip_pools(&self) -> std::option::Option<&[crate::model::CoipPool]> {
+        self.coip_pools.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCoipPoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19911,6 +22746,18 @@ pub struct DescribeClientVpnTargetNetworksOutput {
     pub client_vpn_target_networks: std::option::Option<std::vec::Vec<crate::model::TargetNetwork>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeClientVpnTargetNetworksOutput {
+    /// <p>Information about the associated target networks.</p>
+    pub fn client_vpn_target_networks(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetNetwork]> {
+        self.client_vpn_target_networks.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClientVpnTargetNetworksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19991,6 +22838,16 @@ pub struct DescribeClientVpnRoutesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeClientVpnRoutesOutput {
+    /// <p>Information about the Client VPN endpoint routes.</p>
+    pub fn routes(&self) -> std::option::Option<&[crate::model::ClientVpnRoute]> {
+        self.routes.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClientVpnRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClientVpnRoutesOutput");
@@ -20062,6 +22919,16 @@ pub struct DescribeClientVpnEndpointsOutput {
     pub client_vpn_endpoints: std::option::Option<std::vec::Vec<crate::model::ClientVpnEndpoint>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeClientVpnEndpointsOutput {
+    /// <p>Information about the Client VPN endpoints.</p>
+    pub fn client_vpn_endpoints(&self) -> std::option::Option<&[crate::model::ClientVpnEndpoint]> {
+        self.client_vpn_endpoints.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClientVpnEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20139,6 +23006,16 @@ pub struct DescribeClientVpnConnectionsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeClientVpnConnectionsOutput {
+    /// <p>Information about the active and terminated client connections.</p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::ClientVpnConnection]> {
+        self.connections.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClientVpnConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClientVpnConnectionsOutput");
@@ -20211,6 +23088,16 @@ pub struct DescribeClientVpnAuthorizationRulesOutput {
     pub authorization_rules: std::option::Option<std::vec::Vec<crate::model::AuthorizationRule>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeClientVpnAuthorizationRulesOutput {
+    /// <p>Information about the authorization rules.</p>
+    pub fn authorization_rules(&self) -> std::option::Option<&[crate::model::AuthorizationRule]> {
+        self.authorization_rules.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClientVpnAuthorizationRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20288,6 +23175,16 @@ pub struct DescribeClassicLinkInstancesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeClassicLinkInstancesOutput {
+    /// <p>Information about one or more linked EC2-Classic instances.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::ClassicLinkInstance]> {
+        self.instances.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClassicLinkInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClassicLinkInstancesOutput");
@@ -20359,6 +23256,16 @@ pub struct DescribeCarrierGatewaysOutput {
     pub carrier_gateways: std::option::Option<std::vec::Vec<crate::model::CarrierGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeCarrierGatewaysOutput {
+    /// <p>Information about the carrier gateway.</p>
+    pub fn carrier_gateways(&self) -> std::option::Option<&[crate::model::CarrierGateway]> {
+        self.carrier_gateways.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCarrierGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20433,6 +23340,18 @@ pub struct DescribeCapacityReservationsOutput {
     /// <p>Information about the Capacity Reservations.</p>
     pub capacity_reservations:
         std::option::Option<std::vec::Vec<crate::model::CapacityReservation>>,
+}
+impl DescribeCapacityReservationsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the Capacity Reservations.</p>
+    pub fn capacity_reservations(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityReservation]> {
+        self.capacity_reservations.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCapacityReservationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20510,6 +23429,18 @@ pub struct DescribeCapacityReservationFleetsOutput {
         std::option::Option<std::vec::Vec<crate::model::CapacityReservationFleet>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeCapacityReservationFleetsOutput {
+    /// <p>Information about the Capacity Reservation Fleets.</p>
+    pub fn capacity_reservation_fleets(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityReservationFleet]> {
+        self.capacity_reservation_fleets.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCapacityReservationFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20590,6 +23521,16 @@ pub struct DescribeByoipCidrsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeByoipCidrsOutput {
+    /// <p>Information about your address ranges.</p>
+    pub fn byoip_cidrs(&self) -> std::option::Option<&[crate::model::ByoipCidr]> {
+        self.byoip_cidrs.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeByoipCidrsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeByoipCidrsOutput");
@@ -20660,6 +23601,12 @@ pub struct DescribeBundleTasksOutput {
     /// <p>Information about the bundle tasks.</p>
     pub bundle_tasks: std::option::Option<std::vec::Vec<crate::model::BundleTask>>,
 }
+impl DescribeBundleTasksOutput {
+    /// <p>Information about the bundle tasks.</p>
+    pub fn bundle_tasks(&self) -> std::option::Option<&[crate::model::BundleTask]> {
+        self.bundle_tasks.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBundleTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBundleTasksOutput");
@@ -20716,6 +23663,12 @@ impl DescribeBundleTasksOutput {
 pub struct DescribeAvailabilityZonesOutput {
     /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
+}
+impl DescribeAvailabilityZonesOutput {
+    /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+        self.availability_zones.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAvailabilityZonesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20781,6 +23734,18 @@ pub struct DescribeAggregateIdFormatOutput {
     pub use_long_ids_aggregated: std::option::Option<bool>,
     /// <p>Information about each resource's ID format.</p>
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
+}
+impl DescribeAggregateIdFormatOutput {
+    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
+    /// This value is only <code>true</code> if all users are configured to use longer IDs for
+    /// all resources types in the Region.</p>
+    pub fn use_long_ids_aggregated(&self) -> std::option::Option<bool> {
+        self.use_long_ids_aggregated
+    }
+    /// <p>Information about each resource's ID format.</p>
+    pub fn statuses(&self) -> std::option::Option<&[crate::model::IdFormat]> {
+        self.statuses.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAggregateIdFormatOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20858,6 +23823,16 @@ pub struct DescribeAddressesAttributeOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAddressesAttributeOutput {
+    /// <p>Information about the IP addresses.</p>
+    pub fn addresses(&self) -> std::option::Option<&[crate::model::AddressAttribute]> {
+        self.addresses.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAddressesAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAddressesAttributeOutput");
@@ -20928,6 +23903,12 @@ pub struct DescribeAddressesOutput {
     /// <p>Information about the Elastic IP addresses.</p>
     pub addresses: std::option::Option<std::vec::Vec<crate::model::Address>>,
 }
+impl DescribeAddressesOutput {
+    /// <p>Information about the Elastic IP addresses.</p>
+    pub fn addresses(&self) -> std::option::Option<&[crate::model::Address]> {
+        self.addresses.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAddressesOutput");
@@ -20984,6 +23965,12 @@ impl DescribeAddressesOutput {
 pub struct DescribeAccountAttributesOutput {
     /// <p>Information about the account attributes.</p>
     pub account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
+}
+impl DescribeAccountAttributesOutput {
+    /// <p>Information about the account attributes.</p>
+    pub fn account_attributes(&self) -> std::option::Option<&[crate::model::AccountAttribute]> {
+        self.account_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21047,6 +24034,14 @@ pub struct DeregisterTransitGatewayMulticastGroupSourcesOutput {
     pub deregistered_multicast_group_sources:
         std::option::Option<crate::model::TransitGatewayMulticastDeregisteredGroupSources>,
 }
+impl DeregisterTransitGatewayMulticastGroupSourcesOutput {
+    /// <p>Information about the deregistered group sources.</p>
+    pub fn deregistered_multicast_group_sources(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDeregisteredGroupSources> {
+        self.deregistered_multicast_group_sources.as_ref()
+    }
+}
 impl std::fmt::Debug for DeregisterTransitGatewayMulticastGroupSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTransitGatewayMulticastGroupSourcesOutput");
@@ -21109,6 +24104,14 @@ pub struct DeregisterTransitGatewayMulticastGroupMembersOutput {
     pub deregistered_multicast_group_members:
         std::option::Option<crate::model::TransitGatewayMulticastDeregisteredGroupMembers>,
 }
+impl DeregisterTransitGatewayMulticastGroupMembersOutput {
+    /// <p>Information about the deregistered members.</p>
+    pub fn deregistered_multicast_group_members(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDeregisteredGroupMembers> {
+        self.deregistered_multicast_group_members.as_ref()
+    }
+}
 impl std::fmt::Debug for DeregisterTransitGatewayMulticastGroupMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTransitGatewayMulticastGroupMembersOutput");
@@ -21169,6 +24172,14 @@ impl DeregisterTransitGatewayMulticastGroupMembersOutput {
 pub struct DeregisterInstanceEventNotificationAttributesOutput {
     /// <p>The resulting set of tag keys.</p>
     pub instance_tag_attribute: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
+}
+impl DeregisterInstanceEventNotificationAttributesOutput {
+    /// <p>The resulting set of tag keys.</p>
+    pub fn instance_tag_attribute(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceTagNotificationAttribute> {
+        self.instance_tag_attribute.as_ref()
+    }
 }
 impl std::fmt::Debug for DeregisterInstanceEventNotificationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21255,6 +24266,12 @@ impl DeregisterImageOutput {
 pub struct DeprovisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+}
+impl DeprovisionByoipCidrOutput {
+    /// <p>Information about the address range.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
 }
 impl std::fmt::Debug for DeprovisionByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21397,6 +24414,12 @@ pub struct DeleteVpcPeeringConnectionOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl DeleteVpcPeeringConnectionOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for DeleteVpcPeeringConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVpcPeeringConnectionOutput");
@@ -21445,6 +24468,13 @@ pub struct DeleteVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about the service configurations that were not deleted, if
     /// applicable.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+}
+impl DeleteVpcEndpointServiceConfigurationsOutput {
+    /// <p>Information about the service configurations that were not deleted, if
+    /// applicable.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVpcEndpointServiceConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21505,6 +24535,12 @@ pub struct DeleteVpcEndpointsOutput {
     /// <p>Information about the VPC endpoints that were not successfully deleted.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
+impl DeleteVpcEndpointsOutput {
+    /// <p>Information about the VPC endpoints that were not successfully deleted.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVpcEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVpcEndpointsOutput");
@@ -21562,6 +24598,13 @@ pub struct DeleteVpcEndpointConnectionNotificationsOutput {
     /// <p>Information about the notifications that could not be deleted
     /// successfully.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+}
+impl DeleteVpcEndpointConnectionNotificationsOutput {
+    /// <p>Information about the notifications that could not be deleted
+    /// successfully.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVpcEndpointConnectionNotificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21684,6 +24727,14 @@ pub struct DeleteTransitGatewayVpcAttachmentOutput {
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
+impl DeleteTransitGatewayVpcAttachmentOutput {
+    /// <p>Information about the deleted VPC attachment.</p>
+    pub fn transit_gateway_vpc_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayVpcAttachment> {
+        self.transit_gateway_vpc_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTransitGatewayVpcAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTransitGatewayVpcAttachmentOutput");
@@ -21741,6 +24792,14 @@ impl DeleteTransitGatewayVpcAttachmentOutput {
 pub struct DeleteTransitGatewayRouteTableOutput {
     /// <p>Information about the deleted transit gateway route table.</p>
     pub transit_gateway_route_table: std::option::Option<crate::model::TransitGatewayRouteTable>,
+}
+impl DeleteTransitGatewayRouteTableOutput {
+    /// <p>Information about the deleted transit gateway route table.</p>
+    pub fn transit_gateway_route_table(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRouteTable> {
+        self.transit_gateway_route_table.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteTransitGatewayRouteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21800,6 +24859,12 @@ pub struct DeleteTransitGatewayRouteOutput {
     /// <p>Information about the route.</p>
     pub route: std::option::Option<crate::model::TransitGatewayRoute>,
 }
+impl DeleteTransitGatewayRouteOutput {
+    /// <p>Information about the route.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::TransitGatewayRoute> {
+        self.route.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTransitGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTransitGatewayRouteOutput");
@@ -21849,6 +24914,14 @@ pub struct DeleteTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the deleted prefix list reference.</p>
     pub transit_gateway_prefix_list_reference:
         std::option::Option<crate::model::TransitGatewayPrefixListReference>,
+}
+impl DeleteTransitGatewayPrefixListReferenceOutput {
+    /// <p>Information about the deleted prefix list reference.</p>
+    pub fn transit_gateway_prefix_list_reference(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPrefixListReference> {
+        self.transit_gateway_prefix_list_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteTransitGatewayPrefixListReferenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21910,6 +24983,14 @@ pub struct DeleteTransitGatewayPeeringAttachmentOutput {
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
+impl DeleteTransitGatewayPeeringAttachmentOutput {
+    /// <p>The transit gateway peering attachment.</p>
+    pub fn transit_gateway_peering_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPeeringAttachment> {
+        self.transit_gateway_peering_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTransitGatewayPeeringAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTransitGatewayPeeringAttachmentOutput");
@@ -21969,6 +25050,14 @@ pub struct DeleteTransitGatewayMulticastDomainOutput {
     pub transit_gateway_multicast_domain:
         std::option::Option<crate::model::TransitGatewayMulticastDomain>,
 }
+impl DeleteTransitGatewayMulticastDomainOutput {
+    /// <p>Information about the deleted transit gateway multicast domain.</p>
+    pub fn transit_gateway_multicast_domain(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomain> {
+        self.transit_gateway_multicast_domain.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTransitGatewayMulticastDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTransitGatewayMulticastDomainOutput");
@@ -22026,6 +25115,14 @@ impl DeleteTransitGatewayMulticastDomainOutput {
 pub struct DeleteTransitGatewayConnectPeerOutput {
     /// <p>Information about the deleted Connect peer.</p>
     pub transit_gateway_connect_peer: std::option::Option<crate::model::TransitGatewayConnectPeer>,
+}
+impl DeleteTransitGatewayConnectPeerOutput {
+    /// <p>Information about the deleted Connect peer.</p>
+    pub fn transit_gateway_connect_peer(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayConnectPeer> {
+        self.transit_gateway_connect_peer.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteTransitGatewayConnectPeerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22085,6 +25182,14 @@ pub struct DeleteTransitGatewayConnectOutput {
     /// <p>Information about the deleted Connect attachment.</p>
     pub transit_gateway_connect: std::option::Option<crate::model::TransitGatewayConnect>,
 }
+impl DeleteTransitGatewayConnectOutput {
+    /// <p>Information about the deleted Connect attachment.</p>
+    pub fn transit_gateway_connect(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayConnect> {
+        self.transit_gateway_connect.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTransitGatewayConnectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTransitGatewayConnectOutput");
@@ -22140,6 +25245,12 @@ pub struct DeleteTransitGatewayOutput {
     /// <p>Information about the deleted transit gateway.</p>
     pub transit_gateway: std::option::Option<crate::model::TransitGateway>,
 }
+impl DeleteTransitGatewayOutput {
+    /// <p>Information about the deleted transit gateway.</p>
+    pub fn transit_gateway(&self) -> std::option::Option<&crate::model::TransitGateway> {
+        self.transit_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTransitGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTransitGatewayOutput");
@@ -22190,6 +25301,12 @@ impl DeleteTransitGatewayOutput {
 pub struct DeleteTrafficMirrorTargetOutput {
     /// <p>The ID of the deleted Traffic Mirror target.</p>
     pub traffic_mirror_target_id: std::option::Option<std::string::String>,
+}
+impl DeleteTrafficMirrorTargetOutput {
+    /// <p>The ID of the deleted Traffic Mirror target.</p>
+    pub fn traffic_mirror_target_id(&self) -> std::option::Option<&str> {
+        self.traffic_mirror_target_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTrafficMirrorTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22242,6 +25359,12 @@ pub struct DeleteTrafficMirrorSessionOutput {
     /// <p>The ID of the deleted Traffic Mirror session.</p>
     pub traffic_mirror_session_id: std::option::Option<std::string::String>,
 }
+impl DeleteTrafficMirrorSessionOutput {
+    /// <p>The ID of the deleted Traffic Mirror session.</p>
+    pub fn traffic_mirror_session_id(&self) -> std::option::Option<&str> {
+        self.traffic_mirror_session_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTrafficMirrorSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTrafficMirrorSessionOutput");
@@ -22292,6 +25415,12 @@ impl DeleteTrafficMirrorSessionOutput {
 pub struct DeleteTrafficMirrorFilterRuleOutput {
     /// <p>The ID of the deleted Traffic Mirror rule.</p>
     pub traffic_mirror_filter_rule_id: std::option::Option<std::string::String>,
+}
+impl DeleteTrafficMirrorFilterRuleOutput {
+    /// <p>The ID of the deleted Traffic Mirror rule.</p>
+    pub fn traffic_mirror_filter_rule_id(&self) -> std::option::Option<&str> {
+        self.traffic_mirror_filter_rule_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTrafficMirrorFilterRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22349,6 +25478,12 @@ impl DeleteTrafficMirrorFilterRuleOutput {
 pub struct DeleteTrafficMirrorFilterOutput {
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub traffic_mirror_filter_id: std::option::Option<std::string::String>,
+}
+impl DeleteTrafficMirrorFilterOutput {
+    /// <p>The ID of the Traffic Mirror filter.</p>
+    pub fn traffic_mirror_filter_id(&self) -> std::option::Option<&str> {
+        self.traffic_mirror_filter_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTrafficMirrorFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22430,6 +25565,14 @@ impl DeleteTagsOutput {
 pub struct DeleteSubnetCidrReservationOutput {
     /// <p>Information about the deleted subnet CIDR reservation.</p>
     pub deleted_subnet_cidr_reservation: std::option::Option<crate::model::SubnetCidrReservation>,
+}
+impl DeleteSubnetCidrReservationOutput {
+    /// <p>Information about the deleted subnet CIDR reservation.</p>
+    pub fn deleted_subnet_cidr_reservation(
+        &self,
+    ) -> std::option::Option<&crate::model::SubnetCidrReservation> {
+        self.deleted_subnet_cidr_reservation.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteSubnetCidrReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22673,6 +25816,20 @@ pub struct DeleteQueuedReservedInstancesOutput {
     pub failed_queued_purchase_deletions:
         std::option::Option<std::vec::Vec<crate::model::FailedQueuedPurchaseDeletion>>,
 }
+impl DeleteQueuedReservedInstancesOutput {
+    /// <p>Information about the queued purchases that were successfully deleted.</p>
+    pub fn successful_queued_purchase_deletions(
+        &self,
+    ) -> std::option::Option<&[crate::model::SuccessfulQueuedPurchaseDeletion]> {
+        self.successful_queued_purchase_deletions.as_deref()
+    }
+    /// <p>Information about the queued purchases that could not be deleted.</p>
+    pub fn failed_queued_purchase_deletions(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedQueuedPurchaseDeletion]> {
+        self.failed_queued_purchase_deletions.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteQueuedReservedInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteQueuedReservedInstancesOutput");
@@ -22800,6 +25957,12 @@ pub struct DeleteNetworkInterfacePermissionOutput {
     /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl DeleteNetworkInterfacePermissionOutput {
+    /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for DeleteNetworkInterfacePermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNetworkInterfacePermissionOutput");
@@ -22878,6 +26041,12 @@ pub struct DeleteNetworkInsightsPathOutput {
     /// <p>The ID of the path.</p>
     pub network_insights_path_id: std::option::Option<std::string::String>,
 }
+impl DeleteNetworkInsightsPathOutput {
+    /// <p>The ID of the path.</p>
+    pub fn network_insights_path_id(&self) -> std::option::Option<&str> {
+        self.network_insights_path_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNetworkInsightsPathOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNetworkInsightsPathOutput");
@@ -22928,6 +26097,12 @@ impl DeleteNetworkInsightsPathOutput {
 pub struct DeleteNetworkInsightsAnalysisOutput {
     /// <p>The ID of the network insights analysis.</p>
     pub network_insights_analysis_id: std::option::Option<std::string::String>,
+}
+impl DeleteNetworkInsightsAnalysisOutput {
+    /// <p>The ID of the network insights analysis.</p>
+    pub fn network_insights_analysis_id(&self) -> std::option::Option<&str> {
+        self.network_insights_analysis_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteNetworkInsightsAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23046,6 +26221,12 @@ pub struct DeleteNatGatewayOutput {
     /// <p>The ID of the NAT gateway.</p>
     pub nat_gateway_id: std::option::Option<std::string::String>,
 }
+impl DeleteNatGatewayOutput {
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn nat_gateway_id(&self) -> std::option::Option<&str> {
+        self.nat_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNatGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNatGatewayOutput");
@@ -23096,6 +26277,12 @@ impl DeleteNatGatewayOutput {
 pub struct DeleteManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
+}
+impl DeleteManagedPrefixListOutput {
+    /// <p>Information about the prefix list.</p>
+    pub fn prefix_list(&self) -> std::option::Option<&crate::model::ManagedPrefixList> {
+        self.prefix_list.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteManagedPrefixListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23148,6 +26335,14 @@ pub struct DeleteLocalGatewayRouteTableVpcAssociationOutput {
     /// <p>Information about the association.</p>
     pub local_gateway_route_table_vpc_association:
         std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
+}
+impl DeleteLocalGatewayRouteTableVpcAssociationOutput {
+    /// <p>Information about the association.</p>
+    pub fn local_gateway_route_table_vpc_association(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalGatewayRouteTableVpcAssociation> {
+        self.local_gateway_route_table_vpc_association.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteLocalGatewayRouteTableVpcAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23209,6 +26404,12 @@ pub struct DeleteLocalGatewayRouteOutput {
     /// <p>Information about the route.</p>
     pub route: std::option::Option<crate::model::LocalGatewayRoute>,
 }
+impl DeleteLocalGatewayRouteOutput {
+    /// <p>Information about the route.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::LocalGatewayRoute> {
+        self.route.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteLocalGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLocalGatewayRouteOutput");
@@ -23264,6 +26465,23 @@ pub struct DeleteLaunchTemplateVersionsOutput {
     pub unsuccessfully_deleted_launch_template_versions: std::option::Option<
         std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseErrorItem>,
     >,
+}
+impl DeleteLaunchTemplateVersionsOutput {
+    /// <p>Information about the launch template versions that were successfully
+    /// deleted.</p>
+    pub fn successfully_deleted_launch_template_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem]> {
+        self.successfully_deleted_launch_template_versions
+            .as_deref()
+    }
+    /// <p>Information about the launch template versions that could not be deleted.</p>
+    pub fn unsuccessfully_deleted_launch_template_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeleteLaunchTemplateVersionsResponseErrorItem]> {
+        self.unsuccessfully_deleted_launch_template_versions
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLaunchTemplateVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23371,6 +26589,12 @@ impl DeleteLaunchTemplateVersionsOutput {
 pub struct DeleteLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
+}
+impl DeleteLaunchTemplateOutput {
+    /// <p>Information about the launch template.</p>
+    pub fn launch_template(&self) -> std::option::Option<&crate::model::LaunchTemplate> {
+        self.launch_template.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteLaunchTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23484,6 +26708,14 @@ pub struct DeleteInstanceEventWindowOutput {
     pub instance_event_window_state:
         std::option::Option<crate::model::InstanceEventWindowStateChange>,
 }
+impl DeleteInstanceEventWindowOutput {
+    /// <p>The state of the event window.</p>
+    pub fn instance_event_window_state(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceEventWindowStateChange> {
+        self.instance_event_window_state.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteInstanceEventWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInstanceEventWindowOutput");
@@ -23542,6 +26774,12 @@ pub struct DeleteFpgaImageOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl DeleteFpgaImageOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for DeleteFpgaImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFpgaImageOutput");
@@ -23589,6 +26827,12 @@ impl DeleteFpgaImageOutput {
 pub struct DeleteFlowLogsOutput {
     /// <p>Information about the flow logs that could not be deleted successfully.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+}
+impl DeleteFlowLogsOutput {
+    /// <p>Information about the flow logs that could not be deleted successfully.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFlowLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23650,6 +26894,20 @@ pub struct DeleteFleetsOutput {
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
     pub unsuccessful_fleet_deletions:
         std::option::Option<std::vec::Vec<crate::model::DeleteFleetErrorItem>>,
+}
+impl DeleteFleetsOutput {
+    /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
+    pub fn successful_fleet_deletions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeleteFleetSuccessItem]> {
+        self.successful_fleet_deletions.as_deref()
+    }
+    /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
+    pub fn unsuccessful_fleet_deletions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeleteFleetErrorItem]> {
+        self.unsuccessful_fleet_deletions.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23743,6 +27001,12 @@ impl DeleteFleetsOutput {
 pub struct DeleteEgressOnlyInternetGatewayOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub return_code: std::option::Option<bool>,
+}
+impl DeleteEgressOnlyInternetGatewayOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn return_code(&self) -> std::option::Option<bool> {
+        self.return_code
+    }
 }
 impl std::fmt::Debug for DeleteEgressOnlyInternetGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23852,6 +27116,12 @@ pub struct DeleteClientVpnRouteOutput {
     /// <p>The current state of the route.</p>
     pub status: std::option::Option<crate::model::ClientVpnRouteStatus>,
 }
+impl DeleteClientVpnRouteOutput {
+    /// <p>The current state of the route.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClientVpnRouteStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteClientVpnRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClientVpnRouteOutput");
@@ -23902,6 +27172,12 @@ impl DeleteClientVpnRouteOutput {
 pub struct DeleteClientVpnEndpointOutput {
     /// <p>The current state of the Client VPN endpoint.</p>
     pub status: std::option::Option<crate::model::ClientVpnEndpointStatus>,
+}
+impl DeleteClientVpnEndpointOutput {
+    /// <p>The current state of the Client VPN endpoint.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClientVpnEndpointStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteClientVpnEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23954,6 +27230,12 @@ pub struct DeleteCarrierGatewayOutput {
     /// <p>Information about the carrier gateway.</p>
     pub carrier_gateway: std::option::Option<crate::model::CarrierGateway>,
 }
+impl DeleteCarrierGatewayOutput {
+    /// <p>Information about the carrier gateway.</p>
+    pub fn carrier_gateway(&self) -> std::option::Option<&crate::model::CarrierGateway> {
+        self.carrier_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteCarrierGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCarrierGatewayOutput");
@@ -24004,6 +27286,12 @@ impl DeleteCarrierGatewayOutput {
 pub struct CreateVpnGatewayOutput {
     /// <p>Information about the virtual private gateway.</p>
     pub vpn_gateway: std::option::Option<crate::model::VpnGateway>,
+}
+impl CreateVpnGatewayOutput {
+    /// <p>Information about the virtual private gateway.</p>
+    pub fn vpn_gateway(&self) -> std::option::Option<&crate::model::VpnGateway> {
+        self.vpn_gateway.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVpnGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24086,6 +27374,12 @@ pub struct CreateVpnConnectionOutput {
     /// <p>Information about the VPN connection.</p>
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
+impl CreateVpnConnectionOutput {
+    /// <p>Information about the VPN connection.</p>
+    pub fn vpn_connection(&self) -> std::option::Option<&crate::model::VpnConnection> {
+        self.vpn_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVpnConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVpnConnectionOutput");
@@ -24136,6 +27430,14 @@ impl CreateVpnConnectionOutput {
 pub struct CreateVpcPeeringConnectionOutput {
     /// <p>Information about the VPC peering connection.</p>
     pub vpc_peering_connection: std::option::Option<crate::model::VpcPeeringConnection>,
+}
+impl CreateVpcPeeringConnectionOutput {
+    /// <p>Information about the VPC peering connection.</p>
+    pub fn vpc_peering_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcPeeringConnection> {
+        self.vpc_peering_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVpcPeeringConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24190,6 +27492,19 @@ pub struct CreateVpcEndpointServiceConfigurationOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateVpcEndpointServiceConfigurationOutput {
+    /// <p>Information about the service configuration.</p>
+    pub fn service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceConfiguration> {
+        self.service_configuration.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVpcEndpointServiceConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24259,6 +27574,19 @@ pub struct CreateVpcEndpointConnectionNotificationOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateVpcEndpointConnectionNotificationOutput {
+    /// <p>Information about the notification.</p>
+    pub fn connection_notification(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionNotification> {
+        self.connection_notification.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVpcEndpointConnectionNotificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24333,6 +27661,17 @@ pub struct CreateVpcEndpointOutput {
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateVpcEndpointOutput {
+    /// <p>Information about the endpoint.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateVpcEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVpcEndpointOutput");
@@ -24398,6 +27737,12 @@ impl CreateVpcEndpointOutput {
 pub struct CreateVpcOutput {
     /// <p>Information about the VPC.</p>
     pub vpc: std::option::Option<crate::model::Vpc>,
+}
+impl CreateVpcOutput {
+    /// <p>Information about the VPC.</p>
+    pub fn vpc(&self) -> std::option::Option<&crate::model::Vpc> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24477,6 +27822,75 @@ pub struct CreateVolumeOutput {
     pub multi_attach_enabled: std::option::Option<bool>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub throughput: std::option::Option<i32>,
+}
+impl CreateVolumeOutput {
+    /// <p>Information about the volume attachments.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::VolumeAttachment]> {
+        self.attachments.as_deref()
+    }
+    /// <p>The Availability Zone for the volume.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The time stamp when volume creation was initiated.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>Indicates whether the volume is encrypted.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
+    /// volume encryption key for the volume.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
+    /// <p>The size of the volume, in GiBs.</p>
+    pub fn size(&self) -> std::option::Option<i32> {
+        self.size
+    }
+    /// <p>The snapshot from which the volume was created, if applicable.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The volume state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VolumeState> {
+        self.state.as_ref()
+    }
+    /// <p>The ID of the volume.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
+    /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
+    /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>Any tags assigned to the volume.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The volume type.</p>
+    pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
+        self.volume_type.as_ref()
+    }
+    /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
+    pub fn fast_restored(&self) -> std::option::Option<bool> {
+        self.fast_restored
+    }
+    /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
+    pub fn multi_attach_enabled(&self) -> std::option::Option<bool> {
+        self.multi_attach_enabled
+    }
+    /// <p>The throughput that the volume supports, in MiB/s.</p>
+    pub fn throughput(&self) -> std::option::Option<i32> {
+        self.throughput
+    }
 }
 impl std::fmt::Debug for CreateVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24755,6 +28169,14 @@ pub struct CreateTransitGatewayVpcAttachmentOutput {
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
+impl CreateTransitGatewayVpcAttachmentOutput {
+    /// <p>Information about the VPC attachment.</p>
+    pub fn transit_gateway_vpc_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayVpcAttachment> {
+        self.transit_gateway_vpc_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTransitGatewayVpcAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTransitGatewayVpcAttachmentOutput");
@@ -24812,6 +28234,14 @@ impl CreateTransitGatewayVpcAttachmentOutput {
 pub struct CreateTransitGatewayRouteTableOutput {
     /// <p>Information about the transit gateway route table.</p>
     pub transit_gateway_route_table: std::option::Option<crate::model::TransitGatewayRouteTable>,
+}
+impl CreateTransitGatewayRouteTableOutput {
+    /// <p>Information about the transit gateway route table.</p>
+    pub fn transit_gateway_route_table(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRouteTable> {
+        self.transit_gateway_route_table.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTransitGatewayRouteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24871,6 +28301,12 @@ pub struct CreateTransitGatewayRouteOutput {
     /// <p>Information about the route.</p>
     pub route: std::option::Option<crate::model::TransitGatewayRoute>,
 }
+impl CreateTransitGatewayRouteOutput {
+    /// <p>Information about the route.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::TransitGatewayRoute> {
+        self.route.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTransitGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTransitGatewayRouteOutput");
@@ -24920,6 +28356,14 @@ pub struct CreateTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the prefix list reference.</p>
     pub transit_gateway_prefix_list_reference:
         std::option::Option<crate::model::TransitGatewayPrefixListReference>,
+}
+impl CreateTransitGatewayPrefixListReferenceOutput {
+    /// <p>Information about the prefix list reference.</p>
+    pub fn transit_gateway_prefix_list_reference(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPrefixListReference> {
+        self.transit_gateway_prefix_list_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTransitGatewayPrefixListReferenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24981,6 +28425,14 @@ pub struct CreateTransitGatewayPeeringAttachmentOutput {
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
+impl CreateTransitGatewayPeeringAttachmentOutput {
+    /// <p>The transit gateway peering attachment.</p>
+    pub fn transit_gateway_peering_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPeeringAttachment> {
+        self.transit_gateway_peering_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTransitGatewayPeeringAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTransitGatewayPeeringAttachmentOutput");
@@ -25040,6 +28492,14 @@ pub struct CreateTransitGatewayMulticastDomainOutput {
     pub transit_gateway_multicast_domain:
         std::option::Option<crate::model::TransitGatewayMulticastDomain>,
 }
+impl CreateTransitGatewayMulticastDomainOutput {
+    /// <p>Information about the transit gateway multicast domain.</p>
+    pub fn transit_gateway_multicast_domain(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomain> {
+        self.transit_gateway_multicast_domain.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTransitGatewayMulticastDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTransitGatewayMulticastDomainOutput");
@@ -25097,6 +28557,14 @@ impl CreateTransitGatewayMulticastDomainOutput {
 pub struct CreateTransitGatewayConnectPeerOutput {
     /// <p>Information about the Connect peer.</p>
     pub transit_gateway_connect_peer: std::option::Option<crate::model::TransitGatewayConnectPeer>,
+}
+impl CreateTransitGatewayConnectPeerOutput {
+    /// <p>Information about the Connect peer.</p>
+    pub fn transit_gateway_connect_peer(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayConnectPeer> {
+        self.transit_gateway_connect_peer.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTransitGatewayConnectPeerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25156,6 +28624,14 @@ pub struct CreateTransitGatewayConnectOutput {
     /// <p>Information about the Connect attachment.</p>
     pub transit_gateway_connect: std::option::Option<crate::model::TransitGatewayConnect>,
 }
+impl CreateTransitGatewayConnectOutput {
+    /// <p>Information about the Connect attachment.</p>
+    pub fn transit_gateway_connect(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayConnect> {
+        self.transit_gateway_connect.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTransitGatewayConnectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTransitGatewayConnectOutput");
@@ -25211,6 +28687,12 @@ pub struct CreateTransitGatewayOutput {
     /// <p>Information about the transit gateway.</p>
     pub transit_gateway: std::option::Option<crate::model::TransitGateway>,
 }
+impl CreateTransitGatewayOutput {
+    /// <p>Information about the transit gateway.</p>
+    pub fn transit_gateway(&self) -> std::option::Option<&crate::model::TransitGateway> {
+        self.transit_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTransitGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTransitGatewayOutput");
@@ -25263,6 +28745,16 @@ pub struct CreateTrafficMirrorTargetOutput {
     pub traffic_mirror_target: std::option::Option<crate::model::TrafficMirrorTarget>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateTrafficMirrorTargetOutput {
+    /// <p>Information about the Traffic Mirror target.</p>
+    pub fn traffic_mirror_target(&self) -> std::option::Option<&crate::model::TrafficMirrorTarget> {
+        self.traffic_mirror_target.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTrafficMirrorTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25330,6 +28822,18 @@ pub struct CreateTrafficMirrorSessionOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateTrafficMirrorSessionOutput {
+    /// <p>Information about the Traffic Mirror session.</p>
+    pub fn traffic_mirror_session(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficMirrorSession> {
+        self.traffic_mirror_session.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrafficMirrorSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrafficMirrorSessionOutput");
@@ -25395,6 +28899,18 @@ pub struct CreateTrafficMirrorFilterRuleOutput {
     pub traffic_mirror_filter_rule: std::option::Option<crate::model::TrafficMirrorFilterRule>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateTrafficMirrorFilterRuleOutput {
+    /// <p>The Traffic Mirror rule.</p>
+    pub fn traffic_mirror_filter_rule(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficMirrorFilterRule> {
+        self.traffic_mirror_filter_rule.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTrafficMirrorFilterRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25468,6 +28984,16 @@ pub struct CreateTrafficMirrorFilterOutput {
     pub traffic_mirror_filter: std::option::Option<crate::model::TrafficMirrorFilter>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateTrafficMirrorFilterOutput {
+    /// <p>Information about the Traffic Mirror filter.</p>
+    pub fn traffic_mirror_filter(&self) -> std::option::Option<&crate::model::TrafficMirrorFilter> {
+        self.traffic_mirror_filter.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTrafficMirrorFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25563,6 +29089,14 @@ pub struct CreateSubnetCidrReservationOutput {
     /// <p>Information about the created subnet CIDR reservation.</p>
     pub subnet_cidr_reservation: std::option::Option<crate::model::SubnetCidrReservation>,
 }
+impl CreateSubnetCidrReservationOutput {
+    /// <p>Information about the created subnet CIDR reservation.</p>
+    pub fn subnet_cidr_reservation(
+        &self,
+    ) -> std::option::Option<&crate::model::SubnetCidrReservation> {
+        self.subnet_cidr_reservation.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSubnetCidrReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSubnetCidrReservationOutput");
@@ -25618,6 +29152,12 @@ pub struct CreateSubnetOutput {
     /// <p>Information about the subnet.</p>
     pub subnet: std::option::Option<crate::model::Subnet>,
 }
+impl CreateSubnetOutput {
+    /// <p>Information about the subnet.</p>
+    pub fn subnet(&self) -> std::option::Option<&crate::model::Subnet> {
+        self.subnet.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSubnetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSubnetOutput");
@@ -25666,6 +29206,12 @@ pub struct CreateStoreImageTaskOutput {
     /// <p>The name of the stored AMI object in the S3 bucket.</p>
     pub object_key: std::option::Option<std::string::String>,
 }
+impl CreateStoreImageTaskOutput {
+    /// <p>The name of the stored AMI object in the S3 bucket.</p>
+    pub fn object_key(&self) -> std::option::Option<&str> {
+        self.object_key.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStoreImageTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStoreImageTaskOutput");
@@ -25713,6 +29259,14 @@ impl CreateStoreImageTaskOutput {
 pub struct CreateSpotDatafeedSubscriptionOutput {
     /// <p>The Spot Instance data feed subscription.</p>
     pub spot_datafeed_subscription: std::option::Option<crate::model::SpotDatafeedSubscription>,
+}
+impl CreateSpotDatafeedSubscriptionOutput {
+    /// <p>The Spot Instance data feed subscription.</p>
+    pub fn spot_datafeed_subscription(
+        &self,
+    ) -> std::option::Option<&crate::model::SpotDatafeedSubscription> {
+        self.spot_datafeed_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSpotDatafeedSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25771,6 +29325,12 @@ impl CreateSpotDatafeedSubscriptionOutput {
 pub struct CreateSnapshotsOutput {
     /// <p>List of snapshots.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::SnapshotInfo>>,
+}
+impl CreateSnapshotsOutput {
+    /// <p>List of snapshots.</p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::SnapshotInfo]> {
+        self.snapshots.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25868,6 +29428,80 @@ pub struct CreateSnapshotOutput {
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the snapshot.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateSnapshotOutput {
+    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
+    /// that corresponds to the data encryption key that was used to encrypt the original volume or
+    /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
+    /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
+    /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+    pub fn data_encryption_key_id(&self) -> std::option::Option<&str> {
+        self.data_encryption_key_id.as_deref()
+    }
+    /// <p>The description for the snapshot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the snapshot is encrypted.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
+    /// volume encryption key for the parent volume.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The progress of the snapshot, as a percentage.</p>
+    pub fn progress(&self) -> std::option::Option<&str> {
+        self.progress.as_deref()
+    }
+    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+    /// created.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The time stamp when the snapshot was initiated.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The snapshot state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SnapshotState> {
+        self.state.as_ref()
+    }
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
+    /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
+    /// state details to help you diagnose why the error occurred. This parameter is only returned by
+    /// <a>DescribeSnapshots</a>.</p>
+    pub fn state_message(&self) -> std::option::Option<&str> {
+        self.state_message.as_deref()
+    }
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
+    /// purpose.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn volume_size(&self) -> std::option::Option<i32> {
+        self.volume_size
+    }
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
+    /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+    pub fn owner_alias(&self) -> std::option::Option<&str> {
+        self.owner_alias.as_deref()
+    }
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
+    /// <p>Any tags assigned to the snapshot.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26146,6 +29780,16 @@ pub struct CreateSecurityGroupOutput {
     /// <p>The tags assigned to the security group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateSecurityGroupOutput {
+    /// <p>The ID of the security group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The tags assigned to the security group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSecurityGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSecurityGroupOutput");
@@ -26216,6 +29860,12 @@ pub struct CreateRouteTableOutput {
     /// <p>Information about the route table.</p>
     pub route_table: std::option::Option<crate::model::RouteTable>,
 }
+impl CreateRouteTableOutput {
+    /// <p>Information about the route table.</p>
+    pub fn route_table(&self) -> std::option::Option<&crate::model::RouteTable> {
+        self.route_table.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRouteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteTableOutput");
@@ -26267,6 +29917,12 @@ pub struct CreateRouteOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl CreateRouteOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for CreateRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteOutput");
@@ -26314,6 +29970,12 @@ impl CreateRouteOutput {
 pub struct CreateRestoreImageTaskOutput {
     /// <p>The AMI ID.</p>
     pub image_id: std::option::Option<std::string::String>,
+}
+impl CreateRestoreImageTaskOutput {
+    /// <p>The AMI ID.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRestoreImageTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26363,6 +30025,14 @@ pub struct CreateReservedInstancesListingOutput {
     /// <p>Information about the Standard Reserved Instance listing.</p>
     pub reserved_instances_listings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
+}
+impl CreateReservedInstancesListingOutput {
+    /// <p>Information about the Standard Reserved Instance listing.</p>
+    pub fn reserved_instances_listings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedInstancesListing]> {
+        self.reserved_instances_listings.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReservedInstancesListingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26428,6 +30098,14 @@ pub struct CreateReplaceRootVolumeTaskOutput {
     /// <p>Information about the root volume replacement task.</p>
     pub replace_root_volume_task: std::option::Option<crate::model::ReplaceRootVolumeTask>,
 }
+impl CreateReplaceRootVolumeTaskOutput {
+    /// <p>Information about the root volume replacement task.</p>
+    pub fn replace_root_volume_task(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplaceRootVolumeTask> {
+        self.replace_root_volume_task.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReplaceRootVolumeTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplaceRootVolumeTaskOutput");
@@ -26483,6 +30161,12 @@ pub struct CreatePlacementGroupOutput {
     /// <p>Describes a placement group.</p>
     pub placement_group: std::option::Option<crate::model::PlacementGroup>,
 }
+impl CreatePlacementGroupOutput {
+    /// <p>Describes a placement group.</p>
+    pub fn placement_group(&self) -> std::option::Option<&crate::model::PlacementGroup> {
+        self.placement_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePlacementGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlacementGroupOutput");
@@ -26533,6 +30217,14 @@ impl CreatePlacementGroupOutput {
 pub struct CreateNetworkInterfacePermissionOutput {
     /// <p>Information about the permission for the network interface.</p>
     pub interface_permission: std::option::Option<crate::model::NetworkInterfacePermission>,
+}
+impl CreateNetworkInterfacePermissionOutput {
+    /// <p>Information about the permission for the network interface.</p>
+    pub fn interface_permission(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInterfacePermission> {
+        self.interface_permission.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNetworkInterfacePermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26590,6 +30282,16 @@ pub struct CreateNetworkInterfaceOutput {
     pub network_interface: std::option::Option<crate::model::NetworkInterface>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateNetworkInterfaceOutput {
+    /// <p>Information about the network interface.</p>
+    pub fn network_interface(&self) -> std::option::Option<&crate::model::NetworkInterface> {
+        self.network_interface.as_ref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNetworkInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26654,6 +30356,12 @@ impl CreateNetworkInterfaceOutput {
 pub struct CreateNetworkInsightsPathOutput {
     /// <p>Information about the path.</p>
     pub network_insights_path: std::option::Option<crate::model::NetworkInsightsPath>,
+}
+impl CreateNetworkInsightsPathOutput {
+    /// <p>Information about the path.</p>
+    pub fn network_insights_path(&self) -> std::option::Option<&crate::model::NetworkInsightsPath> {
+        self.network_insights_path.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNetworkInsightsPathOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26736,6 +30444,12 @@ pub struct CreateNetworkAclOutput {
     /// <p>Information about the network ACL.</p>
     pub network_acl: std::option::Option<crate::model::NetworkAcl>,
 }
+impl CreateNetworkAclOutput {
+    /// <p>Information about the network ACL.</p>
+    pub fn network_acl(&self) -> std::option::Option<&crate::model::NetworkAcl> {
+        self.network_acl.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateNetworkAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkAclOutput");
@@ -26788,6 +30502,16 @@ pub struct CreateNatGatewayOutput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Information about the NAT gateway.</p>
     pub nat_gateway: std::option::Option<crate::model::NatGateway>,
+}
+impl CreateNatGatewayOutput {
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Information about the NAT gateway.</p>
+    pub fn nat_gateway(&self) -> std::option::Option<&crate::model::NatGateway> {
+        self.nat_gateway.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNatGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26853,6 +30577,12 @@ pub struct CreateManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
 }
+impl CreateManagedPrefixListOutput {
+    /// <p>Information about the prefix list.</p>
+    pub fn prefix_list(&self) -> std::option::Option<&crate::model::ManagedPrefixList> {
+        self.prefix_list.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateManagedPrefixListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateManagedPrefixListOutput");
@@ -26904,6 +30634,14 @@ pub struct CreateLocalGatewayRouteTableVpcAssociationOutput {
     /// <p>Information about the association.</p>
     pub local_gateway_route_table_vpc_association:
         std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
+}
+impl CreateLocalGatewayRouteTableVpcAssociationOutput {
+    /// <p>Information about the association.</p>
+    pub fn local_gateway_route_table_vpc_association(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalGatewayRouteTableVpcAssociation> {
+        self.local_gateway_route_table_vpc_association.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLocalGatewayRouteTableVpcAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26965,6 +30703,12 @@ pub struct CreateLocalGatewayRouteOutput {
     /// <p>Information about the route.</p>
     pub route: std::option::Option<crate::model::LocalGatewayRoute>,
 }
+impl CreateLocalGatewayRouteOutput {
+    /// <p>Information about the route.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::LocalGatewayRoute> {
+        self.route.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLocalGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocalGatewayRouteOutput");
@@ -27015,6 +30759,18 @@ pub struct CreateLaunchTemplateVersionOutput {
     pub launch_template_version: std::option::Option<crate::model::LaunchTemplateVersion>,
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     pub warning: std::option::Option<crate::model::ValidationWarning>,
+}
+impl CreateLaunchTemplateVersionOutput {
+    /// <p>Information about the launch template version.</p>
+    pub fn launch_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchTemplateVersion> {
+        self.launch_template_version.as_ref()
+    }
+    /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
+    pub fn warning(&self) -> std::option::Option<&crate::model::ValidationWarning> {
+        self.warning.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLaunchTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27088,6 +30844,16 @@ pub struct CreateLaunchTemplateOutput {
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     pub warning: std::option::Option<crate::model::ValidationWarning>,
+}
+impl CreateLaunchTemplateOutput {
+    /// <p>Information about the launch template.</p>
+    pub fn launch_template(&self) -> std::option::Option<&crate::model::LaunchTemplate> {
+        self.launch_template.as_ref()
+    }
+    /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
+    pub fn warning(&self) -> std::option::Option<&crate::model::ValidationWarning> {
+        self.warning.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLaunchTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27163,6 +30929,28 @@ pub struct CreateKeyPairOutput {
     pub key_pair_id: std::option::Option<std::string::String>,
     /// <p>Any tags applied to the key pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateKeyPairOutput {
+    /// <p>The SHA-1 digest of the DER encoded private key.</p>
+    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
+        self.key_fingerprint.as_deref()
+    }
+    /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
+    pub fn key_material(&self) -> std::option::Option<&str> {
+        self.key_material.as_deref()
+    }
+    /// <p>The name of the key pair.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>The ID of the key pair.</p>
+    pub fn key_pair_id(&self) -> std::option::Option<&str> {
+        self.key_pair_id.as_deref()
+    }
+    /// <p>Any tags applied to the key pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27276,6 +31064,12 @@ pub struct CreateInternetGatewayOutput {
     /// <p>Information about the internet gateway.</p>
     pub internet_gateway: std::option::Option<crate::model::InternetGateway>,
 }
+impl CreateInternetGatewayOutput {
+    /// <p>Information about the internet gateway.</p>
+    pub fn internet_gateway(&self) -> std::option::Option<&crate::model::InternetGateway> {
+        self.internet_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInternetGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInternetGatewayOutput");
@@ -27326,6 +31120,12 @@ impl CreateInternetGatewayOutput {
 pub struct CreateInstanceExportTaskOutput {
     /// <p>Information about the export instance task.</p>
     pub export_task: std::option::Option<crate::model::ExportTask>,
+}
+impl CreateInstanceExportTaskOutput {
+    /// <p>Information about the export instance task.</p>
+    pub fn export_task(&self) -> std::option::Option<&crate::model::ExportTask> {
+        self.export_task.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateInstanceExportTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27378,6 +31178,12 @@ pub struct CreateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
+impl CreateInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub fn instance_event_window(&self) -> std::option::Option<&crate::model::InstanceEventWindow> {
+        self.instance_event_window.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceEventWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceEventWindowOutput");
@@ -27429,6 +31235,12 @@ pub struct CreateImageOutput {
     /// <p>The ID of the new AMI.</p>
     pub image_id: std::option::Option<std::string::String>,
 }
+impl CreateImageOutput {
+    /// <p>The ID of the new AMI.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageOutput");
@@ -27478,6 +31290,16 @@ pub struct CreateFpgaImageOutput {
     pub fpga_image_id: std::option::Option<std::string::String>,
     /// <p>The global FPGA image identifier (AGFI ID).</p>
     pub fpga_image_global_id: std::option::Option<std::string::String>,
+}
+impl CreateFpgaImageOutput {
+    /// <p>The FPGA image identifier (AFI ID).</p>
+    pub fn fpga_image_id(&self) -> std::option::Option<&str> {
+        self.fpga_image_id.as_deref()
+    }
+    /// <p>The global FPGA image identifier (AGFI ID).</p>
+    pub fn fpga_image_global_id(&self) -> std::option::Option<&str> {
+        self.fpga_image_global_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFpgaImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27550,6 +31372,21 @@ pub struct CreateFlowLogsOutput {
     pub flow_log_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the flow logs that could not be created successfully.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+}
+impl CreateFlowLogsOutput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The IDs of the flow logs.</p>
+    pub fn flow_log_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.flow_log_ids.as_deref()
+    }
+    /// <p>Information about the flow logs that could not be created successfully.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFlowLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27651,6 +31488,22 @@ pub struct CreateFleetOutput {
     /// fleets of type <code>instant</code>.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
 }
+impl CreateFleetOutput {
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>Information about the instances that could not be launched by the fleet. Supported only for
+    /// fleets of type <code>instant</code>.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::CreateFleetError]> {
+        self.errors.as_deref()
+    }
+    /// <p>Information about the instances that were launched by the fleet. Supported only for
+    /// fleets of type <code>instant</code>.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::CreateFleetInstance]> {
+        self.instances.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFleetOutput");
@@ -27750,6 +31603,19 @@ pub struct CreateEgressOnlyInternetGatewayOutput {
     /// <p>Information about the egress-only internet gateway.</p>
     pub egress_only_internet_gateway: std::option::Option<crate::model::EgressOnlyInternetGateway>,
 }
+impl CreateEgressOnlyInternetGatewayOutput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Information about the egress-only internet gateway.</p>
+    pub fn egress_only_internet_gateway(
+        &self,
+    ) -> std::option::Option<&crate::model::EgressOnlyInternetGateway> {
+        self.egress_only_internet_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEgressOnlyInternetGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEgressOnlyInternetGatewayOutput");
@@ -27823,6 +31689,12 @@ pub struct CreateDhcpOptionsOutput {
     /// <p>A set of DHCP options.</p>
     pub dhcp_options: std::option::Option<crate::model::DhcpOptions>,
 }
+impl CreateDhcpOptionsOutput {
+    /// <p>A set of DHCP options.</p>
+    pub fn dhcp_options(&self) -> std::option::Option<&crate::model::DhcpOptions> {
+        self.dhcp_options.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDhcpOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDhcpOptionsOutput");
@@ -27874,6 +31746,12 @@ pub struct CreateDefaultVpcOutput {
     /// <p>Information about the VPC.</p>
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
+impl CreateDefaultVpcOutput {
+    /// <p>Information about the VPC.</p>
+    pub fn vpc(&self) -> std::option::Option<&crate::model::Vpc> {
+        self.vpc.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDefaultVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDefaultVpcOutput");
@@ -27919,6 +31797,12 @@ impl CreateDefaultVpcOutput {
 pub struct CreateDefaultSubnetOutput {
     /// <p>Information about the subnet.</p>
     pub subnet: std::option::Option<crate::model::Subnet>,
+}
+impl CreateDefaultSubnetOutput {
+    /// <p>Information about the subnet.</p>
+    pub fn subnet(&self) -> std::option::Option<&crate::model::Subnet> {
+        self.subnet.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDefaultSubnetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27967,6 +31851,12 @@ impl CreateDefaultSubnetOutput {
 pub struct CreateCustomerGatewayOutput {
     /// <p>Information about the customer gateway.</p>
     pub customer_gateway: std::option::Option<crate::model::CustomerGateway>,
+}
+impl CreateCustomerGatewayOutput {
+    /// <p>Information about the customer gateway.</p>
+    pub fn customer_gateway(&self) -> std::option::Option<&crate::model::CustomerGateway> {
+        self.customer_gateway.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCustomerGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28018,6 +31908,12 @@ impl CreateCustomerGatewayOutput {
 pub struct CreateClientVpnRouteOutput {
     /// <p>The current state of the route.</p>
     pub status: std::option::Option<crate::model::ClientVpnRouteStatus>,
+}
+impl CreateClientVpnRouteOutput {
+    /// <p>The current state of the route.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClientVpnRouteStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClientVpnRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28073,6 +31969,20 @@ pub struct CreateClientVpnEndpointOutput {
     pub status: std::option::Option<crate::model::ClientVpnEndpointStatus>,
     /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
     pub dns_name: std::option::Option<std::string::String>,
+}
+impl CreateClientVpnEndpointOutput {
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn client_vpn_endpoint_id(&self) -> std::option::Option<&str> {
+        self.client_vpn_endpoint_id.as_deref()
+    }
+    /// <p>The current state of the Client VPN endpoint.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClientVpnEndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClientVpnEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28154,6 +32064,12 @@ pub struct CreateCarrierGatewayOutput {
     /// <p>Information about the carrier gateway.</p>
     pub carrier_gateway: std::option::Option<crate::model::CarrierGateway>,
 }
+impl CreateCarrierGatewayOutput {
+    /// <p>Information about the carrier gateway.</p>
+    pub fn carrier_gateway(&self) -> std::option::Option<&crate::model::CarrierGateway> {
+        self.carrier_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCarrierGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCarrierGatewayOutput");
@@ -28225,6 +32141,56 @@ pub struct CreateCapacityReservationFleetOutput {
         std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateCapacityReservationFleetOutput {
+    /// <p>The ID of the Capacity Reservation Fleet.</p>
+    pub fn capacity_reservation_fleet_id(&self) -> std::option::Option<&str> {
+        self.capacity_reservation_fleet_id.as_deref()
+    }
+    /// <p>The status of the Capacity Reservation Fleet.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CapacityReservationFleetState> {
+        self.state.as_ref()
+    }
+    /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.</p>
+    pub fn total_target_capacity(&self) -> std::option::Option<i32> {
+        self.total_target_capacity
+    }
+    /// <p>The requested capacity units that have been successfully reserved.</p>
+    pub fn total_fulfilled_capacity(&self) -> std::option::Option<f64> {
+        self.total_fulfilled_capacity
+    }
+    /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
+    pub fn instance_match_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::FleetInstanceMatchCriteria> {
+        self.instance_match_criteria.as_ref()
+    }
+    /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
+    pub fn allocation_strategy(&self) -> std::option::Option<&str> {
+        self.allocation_strategy.as_deref()
+    }
+    /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date.as_ref()
+    }
+    /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
+    pub fn tenancy(&self) -> std::option::Option<&crate::model::FleetCapacityReservationTenancy> {
+        self.tenancy.as_ref()
+    }
+    /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
+    pub fn fleet_capacity_reservations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FleetCapacityReservation]> {
+        self.fleet_capacity_reservations.as_deref()
+    }
+    /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCapacityReservationFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28460,6 +32426,12 @@ pub struct CreateCapacityReservationOutput {
     /// <p>Information about the Capacity Reservation.</p>
     pub capacity_reservation: std::option::Option<crate::model::CapacityReservation>,
 }
+impl CreateCapacityReservationOutput {
+    /// <p>Information about the Capacity Reservation.</p>
+    pub fn capacity_reservation(&self) -> std::option::Option<&crate::model::CapacityReservation> {
+        self.capacity_reservation.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCapacityReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCapacityReservationOutput");
@@ -28512,6 +32484,16 @@ pub struct CopySnapshotOutput {
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>Any tags applied to the new snapshot.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CopySnapshotOutput {
+    /// <p>The ID of the new snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>Any tags applied to the new snapshot.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CopySnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28583,6 +32565,12 @@ pub struct CopyImageOutput {
     /// <p>The ID of the new AMI.</p>
     pub image_id: std::option::Option<std::string::String>,
 }
+impl CopyImageOutput {
+    /// <p>The ID of the new AMI.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyImageOutput");
@@ -28630,6 +32618,12 @@ impl CopyImageOutput {
 pub struct CopyFpgaImageOutput {
     /// <p>The ID of the new AFI.</p>
     pub fpga_image_id: std::option::Option<std::string::String>,
+}
+impl CopyFpgaImageOutput {
+    /// <p>The ID of the new AFI.</p>
+    pub fn fpga_image_id(&self) -> std::option::Option<&str> {
+        self.fpga_image_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyFpgaImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28685,6 +32679,18 @@ pub struct ConfirmProductInstanceOutput {
     /// <p>The return value of the request. Returns <code>true</code> if the specified product
     /// code is owned by the requester and associated with the specified instance.</p>
     pub r#return: std::option::Option<bool>,
+}
+impl ConfirmProductInstanceOutput {
+    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
+    /// attached to the instance.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The return value of the request. Returns <code>true</code> if the specified product
+    /// code is owned by the requester and associated with the specified instance.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
 }
 impl std::fmt::Debug for ConfirmProductInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28751,6 +32757,14 @@ pub struct CancelSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
     pub cancelled_spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::model::CancelledSpotInstanceRequest>>,
+}
+impl CancelSpotInstanceRequestsOutput {
+    /// <p>One or more Spot Instance requests.</p>
+    pub fn cancelled_spot_instance_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::CancelledSpotInstanceRequest]> {
+        self.cancelled_spot_instance_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelSpotInstanceRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28819,6 +32833,20 @@ pub struct CancelSpotFleetRequestsOutput {
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
     pub unsuccessful_fleet_requests:
         std::option::Option<std::vec::Vec<crate::model::CancelSpotFleetRequestsErrorItem>>,
+}
+impl CancelSpotFleetRequestsOutput {
+    /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
+    pub fn successful_fleet_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::CancelSpotFleetRequestsSuccessItem]> {
+        self.successful_fleet_requests.as_deref()
+    }
+    /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
+    pub fn unsuccessful_fleet_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::CancelSpotFleetRequestsErrorItem]> {
+        self.unsuccessful_fleet_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelSpotFleetRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28915,6 +32943,14 @@ pub struct CancelReservedInstancesListingOutput {
     pub reserved_instances_listings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
 }
+impl CancelReservedInstancesListingOutput {
+    /// <p>The Reserved Instance listing.</p>
+    pub fn reserved_instances_listings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedInstancesListing]> {
+        self.reserved_instances_listings.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelReservedInstancesListingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelReservedInstancesListingOutput");
@@ -28982,6 +33018,20 @@ pub struct CancelImportTaskOutput {
     pub previous_state: std::option::Option<std::string::String>,
     /// <p>The current state of the task being canceled.</p>
     pub state: std::option::Option<std::string::String>,
+}
+impl CancelImportTaskOutput {
+    /// <p>The ID of the task being canceled.</p>
+    pub fn import_task_id(&self) -> std::option::Option<&str> {
+        self.import_task_id.as_deref()
+    }
+    /// <p>The current state of the task being canceled.</p>
+    pub fn previous_state(&self) -> std::option::Option<&str> {
+        self.previous_state.as_deref()
+    }
+    /// <p>The current state of the task being canceled.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelImportTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29128,6 +33178,21 @@ pub struct CancelCapacityReservationFleetsOutput {
         std::vec::Vec<crate::model::FailedCapacityReservationFleetCancellationResult>,
     >,
 }
+impl CancelCapacityReservationFleetsOutput {
+    /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
+    pub fn successful_fleet_cancellations(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityReservationFleetCancellationState]> {
+        self.successful_fleet_cancellations.as_deref()
+    }
+    /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
+    pub fn failed_fleet_cancellations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedCapacityReservationFleetCancellationResult]>
+    {
+        self.failed_fleet_cancellations.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelCapacityReservationFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelCapacityReservationFleetsOutput");
@@ -29227,6 +33292,12 @@ pub struct CancelCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl CancelCapacityReservationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for CancelCapacityReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelCapacityReservationOutput");
@@ -29274,6 +33345,12 @@ impl CancelCapacityReservationOutput {
 pub struct CancelBundleTaskOutput {
     /// <p>Information about the bundle task.</p>
     pub bundle_task: std::option::Option<crate::model::BundleTask>,
+}
+impl CancelBundleTaskOutput {
+    /// <p>Information about the bundle task.</p>
+    pub fn bundle_task(&self) -> std::option::Option<&crate::model::BundleTask> {
+        self.bundle_task.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelBundleTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29325,6 +33402,12 @@ impl CancelBundleTaskOutput {
 pub struct BundleInstanceOutput {
     /// <p>Information about the bundle task.</p>
     pub bundle_task: std::option::Option<crate::model::BundleTask>,
+}
+impl BundleInstanceOutput {
+    /// <p>Information about the bundle task.</p>
+    pub fn bundle_task(&self) -> std::option::Option<&crate::model::BundleTask> {
+        self.bundle_task.as_ref()
+    }
 }
 impl std::fmt::Debug for BundleInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29378,6 +33461,16 @@ pub struct AuthorizeSecurityGroupIngressOutput {
     pub r#return: std::option::Option<bool>,
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
     pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
+}
+impl AuthorizeSecurityGroupIngressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>Information about the inbound (ingress) security group rules that were added.</p>
+    pub fn security_group_rules(&self) -> std::option::Option<&[crate::model::SecurityGroupRule]> {
+        self.security_group_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthorizeSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29455,6 +33548,16 @@ pub struct AuthorizeSecurityGroupEgressOutput {
     /// <p>Information about the outbound (egress) security group rules that were added.</p>
     pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
 }
+impl AuthorizeSecurityGroupEgressOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>Information about the outbound (egress) security group rules that were added.</p>
+    pub fn security_group_rules(&self) -> std::option::Option<&[crate::model::SecurityGroupRule]> {
+        self.security_group_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthorizeSecurityGroupEgressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeSecurityGroupEgressOutput");
@@ -29529,6 +33632,12 @@ pub struct AuthorizeClientVpnIngressOutput {
     /// <p>The current state of the authorization rule.</p>
     pub status: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
 }
+impl AuthorizeClientVpnIngressOutput {
+    /// <p>The current state of the authorization rule.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClientVpnAuthorizationRuleStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AuthorizeClientVpnIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeClientVpnIngressOutput");
@@ -29579,6 +33688,12 @@ impl AuthorizeClientVpnIngressOutput {
 pub struct AttachVpnGatewayOutput {
     /// <p>Information about the attachment.</p>
     pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
+}
+impl AttachVpnGatewayOutput {
+    /// <p>Information about the attachment.</p>
+    pub fn vpc_attachment(&self) -> std::option::Option<&crate::model::VpcAttachment> {
+        self.vpc_attachment.as_ref()
+    }
 }
 impl std::fmt::Debug for AttachVpnGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29640,6 +33755,32 @@ pub struct AttachVolumeOutput {
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub delete_on_termination: std::option::Option<bool>,
+}
+impl AttachVolumeOutput {
+    /// <p>The time stamp when the attachment initiated.</p>
+    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.attach_time.as_ref()
+    }
+    /// <p>The device name.</p>
+    pub fn device(&self) -> std::option::Option<&str> {
+        self.device.as_deref()
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The attachment state of the volume.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VolumeAttachmentState> {
+        self.state.as_ref()
+    }
+    /// <p>The ID of the volume.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+        self.delete_on_termination
+    }
 }
 impl std::fmt::Debug for AttachVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29762,6 +33903,16 @@ pub struct AttachNetworkInterfaceOutput {
     /// <p>The index of the network card.</p>
     pub network_card_index: std::option::Option<i32>,
 }
+impl AttachNetworkInterfaceOutput {
+    /// <p>The ID of the network interface attachment.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>The index of the network card.</p>
+    pub fn network_card_index(&self) -> std::option::Option<i32> {
+        self.network_card_index
+    }
+}
 impl std::fmt::Debug for AttachNetworkInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachNetworkInterfaceOutput");
@@ -29856,6 +34007,12 @@ pub struct AttachClassicLinkVpcOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
 }
+impl AttachClassicLinkVpcOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
 impl std::fmt::Debug for AttachClassicLinkVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachClassicLinkVpcOutput");
@@ -29907,6 +34064,24 @@ pub struct AssociateVpcCidrBlockOutput {
     pub cidr_block_association: std::option::Option<crate::model::VpcCidrBlockAssociation>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
+}
+impl AssociateVpcCidrBlockOutput {
+    /// <p>Information about the IPv6 CIDR block association.</p>
+    pub fn ipv6_cidr_block_association(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcIpv6CidrBlockAssociation> {
+        self.ipv6_cidr_block_association.as_ref()
+    }
+    /// <p>Information about the IPv4 CIDR block association.</p>
+    pub fn cidr_block_association(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcCidrBlockAssociation> {
+        self.cidr_block_association.as_ref()
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateVpcCidrBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30003,6 +34178,20 @@ pub struct AssociateTrunkInterfaceOutput {
     /// Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl AssociateTrunkInterfaceOutput {
+    /// <p>Information about the association between the trunk network interface and branch network interface.</p>
+    pub fn interface_association(
+        &self,
+    ) -> std::option::Option<&crate::model::TrunkInterfaceAssociation> {
+        self.interface_association.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+    /// Idempotency</a>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateTrunkInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateTrunkInterfaceOutput");
@@ -30075,6 +34264,12 @@ pub struct AssociateTransitGatewayRouteTableOutput {
     /// <p>The ID of the association.</p>
     pub association: std::option::Option<crate::model::TransitGatewayAssociation>,
 }
+impl AssociateTransitGatewayRouteTableOutput {
+    /// <p>The ID of the association.</p>
+    pub fn association(&self) -> std::option::Option<&crate::model::TransitGatewayAssociation> {
+        self.association.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateTransitGatewayRouteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateTransitGatewayRouteTableOutput");
@@ -30125,6 +34320,14 @@ impl AssociateTransitGatewayRouteTableOutput {
 pub struct AssociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the transit gateway multicast domain associations.</p>
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
+}
+impl AssociateTransitGatewayMulticastDomainOutput {
+    /// <p>Information about the transit gateway multicast domain associations.</p>
+    pub fn associations(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomainAssociations> {
+        self.associations.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateTransitGatewayMulticastDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30183,6 +34386,18 @@ pub struct AssociateSubnetCidrBlockOutput {
         std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
     pub subnet_id: std::option::Option<std::string::String>,
+}
+impl AssociateSubnetCidrBlockOutput {
+    /// <p>Information about the IPv6 CIDR block association.</p>
+    pub fn ipv6_cidr_block_association(
+        &self,
+    ) -> std::option::Option<&crate::model::SubnetIpv6CidrBlockAssociation> {
+        self.ipv6_cidr_block_association.as_ref()
+    }
+    /// <p>The ID of the subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateSubnetCidrBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30258,6 +34473,19 @@ pub struct AssociateRouteTableOutput {
     /// <p>The state of the association.</p>
     pub association_state: std::option::Option<crate::model::RouteTableAssociationState>,
 }
+impl AssociateRouteTableOutput {
+    /// <p>The route table association ID. This ID is required for disassociating the route
+    /// table.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The state of the association.</p>
+    pub fn association_state(
+        &self,
+    ) -> std::option::Option<&crate::model::RouteTableAssociationState> {
+        self.association_state.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateRouteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateRouteTableOutput");
@@ -30330,6 +34558,12 @@ pub struct AssociateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
+impl AssociateInstanceEventWindowOutput {
+    /// <p>Information about the event window.</p>
+    pub fn instance_event_window(&self) -> std::option::Option<&crate::model::InstanceEventWindow> {
+        self.instance_event_window.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateInstanceEventWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateInstanceEventWindowOutput");
@@ -30381,6 +34615,14 @@ pub struct AssociateIamInstanceProfileOutput {
     /// <p>Information about the IAM instance profile association.</p>
     pub iam_instance_profile_association:
         std::option::Option<crate::model::IamInstanceProfileAssociation>,
+}
+impl AssociateIamInstanceProfileOutput {
+    /// <p>Information about the IAM instance profile association.</p>
+    pub fn iam_instance_profile_association(
+        &self,
+    ) -> std::option::Option<&crate::model::IamInstanceProfileAssociation> {
+        self.iam_instance_profile_association.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateIamInstanceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30444,6 +34686,21 @@ pub struct AssociateEnclaveCertificateIamRoleOutput {
     pub certificate_s3_object_key: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
     pub encryption_kms_key_id: std::option::Option<std::string::String>,
+}
+impl AssociateEnclaveCertificateIamRoleOutput {
+    /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
+    pub fn certificate_s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.certificate_s3_bucket_name.as_deref()
+    }
+    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
+    /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    pub fn certificate_s3_object_key(&self) -> std::option::Option<&str> {
+        self.certificate_s3_object_key.as_deref()
+    }
+    /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
+    pub fn encryption_kms_key_id(&self) -> std::option::Option<&str> {
+        self.encryption_kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateEnclaveCertificateIamRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30565,6 +34822,16 @@ pub struct AssociateClientVpnTargetNetworkOutput {
     /// <p>The current state of the target network association.</p>
     pub status: std::option::Option<crate::model::AssociationStatus>,
 }
+impl AssociateClientVpnTargetNetworkOutput {
+    /// <p>The unique ID of the target network association.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The current state of the target network association.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssociationStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateClientVpnTargetNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateClientVpnTargetNetworkOutput");
@@ -30632,6 +34899,12 @@ pub struct AssociateAddressOutput {
     /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
     pub association_id: std::option::Option<std::string::String>,
 }
+impl AssociateAddressOutput {
+    /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateAddressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateAddressOutput");
@@ -30688,6 +34961,24 @@ pub struct AssignPrivateIpAddressesOutput {
     /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
     pub assigned_ipv4_prefixes:
         std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
+}
+impl AssignPrivateIpAddressesOutput {
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The private IP addresses assigned to the network interface.</p>
+    pub fn assigned_private_ip_addresses(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssignedPrivateIpAddress]> {
+        self.assigned_private_ip_addresses.as_deref()
+    }
+    /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
+    pub fn assigned_ipv4_prefixes(
+        &self,
+    ) -> std::option::Option<&[crate::model::Ipv4PrefixSpecification]> {
+        self.assigned_ipv4_prefixes.as_deref()
+    }
 }
 impl std::fmt::Debug for AssignPrivateIpAddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30800,6 +35091,21 @@ pub struct AssignIpv6AddressesOutput {
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
 }
+impl AssignIpv6AddressesOutput {
+    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
+    /// that were assigned to the network interface before the request are not included.</p>
+    pub fn assigned_ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.assigned_ipv6_addresses.as_deref()
+    }
+    /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
+    pub fn assigned_ipv6_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+        self.assigned_ipv6_prefixes.as_deref()
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssignIpv6AddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssignIpv6AddressesOutput");
@@ -30897,6 +35203,12 @@ pub struct ApplySecurityGroupsToClientVpnTargetNetworkOutput {
     /// <p>The IDs of the applied security groups.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ApplySecurityGroupsToClientVpnTargetNetworkOutput {
+    /// <p>The IDs of the applied security groups.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplySecurityGroupsToClientVpnTargetNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplySecurityGroupsToClientVpnTargetNetworkOutput");
@@ -30955,6 +35267,13 @@ pub struct AllocateHostsOutput {
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
     /// specific host.</p>
     pub host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AllocateHostsOutput {
+    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
+    /// specific host.</p>
+    pub fn host_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.host_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for AllocateHostsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31031,6 +35350,43 @@ pub struct AllocateAddressOutput {
     /// <p>The carrier IP address. This option is only available for network interfaces which  reside
     /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub carrier_ip: std::option::Option<std::string::String>,
+}
+impl AllocateAddressOutput {
+    /// <p>The Elastic IP address.</p>
+    pub fn public_ip(&self) -> std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
+    /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
+        self.allocation_id.as_deref()
+    }
+    /// <p>The ID of an address pool.</p>
+    pub fn public_ipv4_pool(&self) -> std::option::Option<&str> {
+        self.public_ipv4_pool.as_deref()
+    }
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
+    /// IP addresses.</p>
+    pub fn network_border_group(&self) -> std::option::Option<&str> {
+        self.network_border_group.as_deref()
+    }
+    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
+    /// instances in EC2-Classic (<code>standard</code>).</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::DomainType> {
+        self.domain.as_ref()
+    }
+    /// <p>The customer-owned IP address.</p>
+    pub fn customer_owned_ip(&self) -> std::option::Option<&str> {
+        self.customer_owned_ip.as_deref()
+    }
+    /// <p>The ID of the customer-owned address pool.</p>
+    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
+        self.customer_owned_ipv4_pool.as_deref()
+    }
+    /// <p>The carrier IP address. This option is only available for network interfaces which  reside
+    /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    pub fn carrier_ip(&self) -> std::option::Option<&str> {
+        self.carrier_ip.as_deref()
+    }
 }
 impl std::fmt::Debug for AllocateAddressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31192,6 +35548,12 @@ pub struct AdvertiseByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
+impl AdvertiseByoipCidrOutput {
+    /// <p>Information about the address range.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
+}
 impl std::fmt::Debug for AdvertiseByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdvertiseByoipCidrOutput");
@@ -31242,6 +35604,14 @@ impl AdvertiseByoipCidrOutput {
 pub struct AcceptVpcPeeringConnectionOutput {
     /// <p>Information about the VPC peering connection.</p>
     pub vpc_peering_connection: std::option::Option<crate::model::VpcPeeringConnection>,
+}
+impl AcceptVpcPeeringConnectionOutput {
+    /// <p>Information about the VPC peering connection.</p>
+    pub fn vpc_peering_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcPeeringConnection> {
+        self.vpc_peering_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptVpcPeeringConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31294,6 +35664,13 @@ pub struct AcceptVpcEndpointConnectionsOutput {
     /// <p>Information about the interface endpoints that were not accepted, if
     /// applicable.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+}
+impl AcceptVpcEndpointConnectionsOutput {
+    /// <p>Information about the interface endpoints that were not accepted, if
+    /// applicable.</p>
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
+        self.unsuccessful.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptVpcEndpointConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31355,6 +35732,14 @@ pub struct AcceptTransitGatewayVpcAttachmentOutput {
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
+impl AcceptTransitGatewayVpcAttachmentOutput {
+    /// <p>The VPC attachment.</p>
+    pub fn transit_gateway_vpc_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayVpcAttachment> {
+        self.transit_gateway_vpc_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for AcceptTransitGatewayVpcAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptTransitGatewayVpcAttachmentOutput");
@@ -31414,6 +35799,14 @@ pub struct AcceptTransitGatewayPeeringAttachmentOutput {
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
+impl AcceptTransitGatewayPeeringAttachmentOutput {
+    /// <p>The transit gateway peering attachment.</p>
+    pub fn transit_gateway_peering_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPeeringAttachment> {
+        self.transit_gateway_peering_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for AcceptTransitGatewayPeeringAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptTransitGatewayPeeringAttachmentOutput");
@@ -31472,6 +35865,14 @@ pub struct AcceptTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Describes the multicast domain associations.</p>
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
+impl AcceptTransitGatewayMulticastDomainAssociationsOutput {
+    /// <p>Describes the multicast domain associations.</p>
+    pub fn associations(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayMulticastDomainAssociations> {
+        self.associations.as_ref()
+    }
+}
 impl std::fmt::Debug for AcceptTransitGatewayMulticastDomainAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptTransitGatewayMulticastDomainAssociationsOutput");
@@ -31528,6 +35929,12 @@ impl AcceptTransitGatewayMulticastDomainAssociationsOutput {
 pub struct AcceptReservedInstancesExchangeQuoteOutput {
     /// <p>The ID of the successful exchange.</p>
     pub exchange_id: std::option::Option<std::string::String>,
+}
+impl AcceptReservedInstancesExchangeQuoteOutput {
+    /// <p>The ID of the successful exchange.</p>
+    pub fn exchange_id(&self) -> std::option::Option<&str> {
+        self.exchange_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptReservedInstancesExchangeQuoteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

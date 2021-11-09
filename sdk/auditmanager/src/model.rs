@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p> The body of the error message. </p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p> The name of the validation error. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The body of the error message. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -146,6 +156,30 @@ pub struct Settings {
     /// <p> The KMS key details. </p>
     pub kms_key: std::option::Option<std::string::String>,
 }
+impl Settings {
+    /// <p> Specifies whether Organizations is enabled. </p>
+    pub fn is_aws_org_enabled(&self) -> std::option::Option<bool> {
+        self.is_aws_org_enabled
+    }
+    /// <p> The designated Amazon Simple Notification Service (Amazon SNS) topic. </p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
+    /// <p> The default storage destination for assessment reports. </p>
+    pub fn default_assessment_reports_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
+        self.default_assessment_reports_destination.as_ref()
+    }
+    /// <p> The designated default audit owners. </p>
+    pub fn default_process_owners(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.default_process_owners.as_deref()
+    }
+    /// <p> The KMS key details. </p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+}
 impl std::fmt::Debug for Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Settings");
@@ -276,6 +310,24 @@ pub struct Role {
     pub role_type: std::option::Option<crate::model::RoleType>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl Role {
+    /// <p> The type of customer persona. </p>
+    /// <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
+    /// <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
+    /// <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
+    /// <code>RESOURCE_OWNER</code>.</p>
+    /// </note>
+    pub fn role_type(&self) -> std::option::Option<&crate::model::RoleType> {
+        self.role_type.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Role {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -411,6 +463,18 @@ pub struct AssessmentReportsDestination {
     pub destination_type: std::option::Option<crate::model::AssessmentReportDestinationType>,
     /// <p> The destination of the assessment report. </p>
     pub destination: std::option::Option<std::string::String>,
+}
+impl AssessmentReportsDestination {
+    /// <p> The destination type, such as Amazon S3. </p>
+    pub fn destination_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentReportDestinationType> {
+        self.destination_type.as_ref()
+    }
+    /// <p> The destination of the assessment report. </p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
 }
 impl std::fmt::Debug for AssessmentReportsDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -562,6 +626,75 @@ pub struct Control {
     /// <p> The tags associated with the control. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Control {
+    /// <p> The Amazon Resource Name (ARN) of the control. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The unique identifier for the control. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The type of control, such as a custom control or a standard control. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ControlType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The name of the control. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the control. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The steps that you should follow to determine if the control has been satisfied.
+    /// </p>
+    pub fn testing_information(&self) -> std::option::Option<&str> {
+        self.testing_information.as_deref()
+    }
+    /// <p> The title of the action plan for remediating the control. </p>
+    pub fn action_plan_title(&self) -> std::option::Option<&str> {
+        self.action_plan_title.as_deref()
+    }
+    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    pub fn action_plan_instructions(&self) -> std::option::Option<&str> {
+        self.action_plan_instructions.as_deref()
+    }
+    /// <p> The data source that determines where Audit Manager collects evidence from for
+    /// the control. </p>
+    pub fn control_sources(&self) -> std::option::Option<&str> {
+        self.control_sources.as_deref()
+    }
+    /// <p> The data mapping sources for the control. </p>
+    pub fn control_mapping_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ControlMappingSource]> {
+        self.control_mapping_sources.as_deref()
+    }
+    /// <p> Specifies when the control was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> Specifies when the control was most recently updated. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The IAM user or role that created the control. </p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p> The IAM user or role that most recently updated the control. </p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
+    /// <p> The tags associated with the control. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Control {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -865,6 +998,42 @@ pub struct ControlMappingSource {
     /// <p> The instructions for troubleshooting the control. </p>
     pub troubleshooting_text: std::option::Option<std::string::String>,
 }
+impl ControlMappingSource {
+    /// <p> The unique identifier for the source. </p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p> The name of the source. </p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p> The description of the source. </p>
+    pub fn source_description(&self) -> std::option::Option<&str> {
+        self.source_description.as_deref()
+    }
+    /// <p> The setup option for the data source. This option reflects if the evidence collection
+    /// is automated or manual. </p>
+    pub fn source_set_up_option(&self) -> std::option::Option<&crate::model::SourceSetUpOption> {
+        self.source_set_up_option.as_ref()
+    }
+    /// <p> Specifies one of the five types of data sources for evidence collection. </p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p> The keyword to search for in CloudTrail logs, Config rules,
+    /// Security Hub checks, and Amazon Web Services API names. </p>
+    pub fn source_keyword(&self) -> std::option::Option<&crate::model::SourceKeyword> {
+        self.source_keyword.as_ref()
+    }
+    /// <p> The frequency of evidence collection for the control mapping source. </p>
+    pub fn source_frequency(&self) -> std::option::Option<&crate::model::SourceFrequency> {
+        self.source_frequency.as_ref()
+    }
+    /// <p> The instructions for troubleshooting the control. </p>
+    pub fn troubleshooting_text(&self) -> std::option::Option<&str> {
+        self.troubleshooting_text.as_deref()
+    }
+}
 impl std::fmt::Debug for ControlMappingSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ControlMappingSource");
@@ -1088,6 +1257,17 @@ pub struct SourceKeyword {
     /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names
     /// when mapping a control data source. </p>
     pub keyword_value: std::option::Option<std::string::String>,
+}
+impl SourceKeyword {
+    /// <p> The method of input for the keyword. </p>
+    pub fn keyword_input_type(&self) -> std::option::Option<&crate::model::KeywordInputType> {
+        self.keyword_input_type.as_ref()
+    }
+    /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names
+    /// when mapping a control data source. </p>
+    pub fn keyword_value(&self) -> std::option::Option<&str> {
+        self.keyword_value.as_deref()
+    }
 }
 impl std::fmt::Debug for SourceKeyword {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1403,6 +1583,31 @@ pub struct Assessment {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl Assessment {
+    /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The Amazon Web Services account that's associated with the assessment. </p>
+    pub fn aws_account(&self) -> std::option::Option<&crate::model::AwsAccount> {
+        self.aws_account.as_ref()
+    }
+    /// <p> The metadata for the assessment. </p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::AssessmentMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p> The framework that the assessment was created from. </p>
+    pub fn framework(&self) -> std::option::Option<&crate::model::AssessmentFramework> {
+        self.framework.as_ref()
+    }
+    /// <p> The tags that are associated with the assessment. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for Assessment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Assessment");
@@ -1536,6 +1741,24 @@ pub struct AssessmentFramework {
     /// <p> The control sets that are associated with the framework. </p>
     pub control_sets: std::option::Option<std::vec::Vec<crate::model::AssessmentControlSet>>,
 }
+impl AssessmentFramework {
+    /// <p> The unique identifier for the framework. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the framework. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The metadata of a framework, such as the name, ID, or description. </p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::FrameworkMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn control_sets(&self) -> std::option::Option<&[crate::model::AssessmentControlSet]> {
+        self.control_sets.as_deref()
+    }
+}
 impl std::fmt::Debug for AssessmentFramework {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssessmentFramework");
@@ -1655,6 +1878,43 @@ pub struct AssessmentControlSet {
     /// <p> The total number of evidence objects that are uploaded manually to the control set.
     /// </p>
     pub manual_evidence_count: i32,
+}
+impl AssessmentControlSet {
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a
+    /// plain string format. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The description for the control set. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> Specifies the current status of the control set. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ControlSetStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The roles that are associated with the control set. </p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.roles.as_deref()
+    }
+    /// <p> The list of controls that's contained with the control set. </p>
+    pub fn controls(&self) -> std::option::Option<&[crate::model::AssessmentControl]> {
+        self.controls.as_deref()
+    }
+    /// <p> The delegations that are associated with the control set. </p>
+    pub fn delegations(&self) -> std::option::Option<&[crate::model::Delegation]> {
+        self.delegations.as_deref()
+    }
+    /// <p> The total number of evidence objects that are retrieved automatically for the control
+    /// set. </p>
+    pub fn system_evidence_count(&self) -> i32 {
+        self.system_evidence_count
+    }
+    /// <p> The total number of evidence objects that are uploaded manually to the control set.
+    /// </p>
+    pub fn manual_evidence_count(&self) -> i32 {
+        self.manual_evidence_count
+    }
 }
 impl std::fmt::Debug for AssessmentControlSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1858,6 +2118,60 @@ pub struct Delegation {
     pub comment: std::option::Option<std::string::String>,
     /// <p> The IAM user or role that created the delegation. </p>
     pub created_by: std::option::Option<std::string::String>,
+}
+impl Delegation {
+    /// <p> The unique identifier for the delegation. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the assessment that's associated with the delegation. </p>
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
+        self.assessment_name.as_deref()
+    }
+    /// <p> The identifier for the assessment that's associated with the delegation. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The status of the delegation. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DelegationStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p> The type of customer persona. </p>
+    /// <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
+    /// <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
+    /// <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
+    /// <code>RESOURCE_OWNER</code>.</p>
+    /// </note>
+    pub fn role_type(&self) -> std::option::Option<&crate::model::RoleType> {
+        self.role_type.as_ref()
+    }
+    /// <p> Specifies when the delegation was created. </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> Specifies when the delegation was last updated. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p> The identifier for the control set that's associated with the delegation. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The comment that's related to the delegation. </p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p> The IAM user or role that created the delegation. </p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl std::fmt::Debug for Delegation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2146,6 +2460,44 @@ pub struct AssessmentControl {
     /// <p> The amount of evidence in the assessment report. </p>
     pub assessment_report_evidence_count: i32,
 }
+impl AssessmentControl {
+    /// <p> The identifier for the control. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the control. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the control. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The status of the control. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ControlStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The response of the control. </p>
+    pub fn response(&self) -> std::option::Option<&crate::model::ControlResponse> {
+        self.response.as_ref()
+    }
+    /// <p> The list of comments that's attached to the control. </p>
+    pub fn comments(&self) -> std::option::Option<&[crate::model::ControlComment]> {
+        self.comments.as_deref()
+    }
+    /// <p> The list of data sources for the evidence. </p>
+    pub fn evidence_sources(&self) -> std::option::Option<&[std::string::String]> {
+        self.evidence_sources.as_deref()
+    }
+    /// <p> The amount of evidence that's generated for the control. </p>
+    pub fn evidence_count(&self) -> i32 {
+        self.evidence_count
+    }
+    /// <p> The amount of evidence in the assessment report. </p>
+    pub fn assessment_report_evidence_count(&self) -> i32 {
+        self.assessment_report_evidence_count
+    }
+}
 impl std::fmt::Debug for AssessmentControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssessmentControl");
@@ -2334,6 +2686,20 @@ pub struct ControlComment {
     pub comment_body: std::option::Option<std::string::String>,
     /// <p> The time when the comment was posted. </p>
     pub posted_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ControlComment {
+    /// <p> The name of the user who authored the comment. </p>
+    pub fn author_name(&self) -> std::option::Option<&str> {
+        self.author_name.as_deref()
+    }
+    /// <p> The body text of a control comment. </p>
+    pub fn comment_body(&self) -> std::option::Option<&str> {
+        self.comment_body.as_deref()
+    }
+    /// <p> The time when the comment was posted. </p>
+    pub fn posted_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.posted_date.as_ref()
+    }
 }
 impl std::fmt::Debug for ControlComment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2600,6 +2966,25 @@ pub struct FrameworkMetadata {
     /// be PCI DSS or HIPAA. </p>
     pub compliance_type: std::option::Option<std::string::String>,
 }
+impl FrameworkMetadata {
+    /// <p> The name of the framework. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the framework. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The logo that's associated with the framework. </p>
+    pub fn logo(&self) -> std::option::Option<&str> {
+        self.logo.as_deref()
+    }
+    /// <p> The compliance standard that's associated with the framework. For example, this could
+    /// be PCI DSS or HIPAA. </p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+}
 impl std::fmt::Debug for FrameworkMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FrameworkMetadata");
@@ -2714,6 +3099,56 @@ pub struct AssessmentMetadata {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The time of the most recent update. </p>
     pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AssessmentMetadata {
+    /// <p> The name of the assessment. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The description of the assessment. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
+    /// </p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+    /// <p> The overall status of the assessment. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssessmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The destination that evidence reports are stored in for the assessment. </p>
+    pub fn assessment_reports_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
+        self.assessment_reports_destination.as_ref()
+    }
+    /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the
+    /// assessment. </p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
+        self.scope.as_ref()
+    }
+    /// <p> The roles that are associated with the assessment. </p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.roles.as_deref()
+    }
+    /// <p> The delegations that are associated with the assessment. </p>
+    pub fn delegations(&self) -> std::option::Option<&[crate::model::Delegation]> {
+        self.delegations.as_deref()
+    }
+    /// <p> Specifies when the assessment was created. </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> The time of the most recent update. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2942,6 +3377,18 @@ pub struct Scope {
     /// </p>
     pub aws_services: std::option::Option<std::vec::Vec<crate::model::AwsService>>,
 }
+impl Scope {
+    /// <p> The Amazon Web Services accounts that are included in the scope of the assessment.
+    /// </p>
+    pub fn aws_accounts(&self) -> std::option::Option<&[crate::model::AwsAccount]> {
+        self.aws_accounts.as_deref()
+    }
+    /// <p> The Amazon Web Services services that are included in the scope of the assessment.
+    /// </p>
+    pub fn aws_services(&self) -> std::option::Option<&[crate::model::AwsService]> {
+        self.aws_services.as_deref()
+    }
+}
 impl std::fmt::Debug for Scope {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Scope");
@@ -3026,6 +3473,12 @@ pub struct AwsService {
     /// <p> The name of the Amazon Web Service. </p>
     pub service_name: std::option::Option<std::string::String>,
 }
+impl AwsService {
+    /// <p> The name of the Amazon Web Service. </p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AwsService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsService");
@@ -3078,6 +3531,20 @@ pub struct AwsAccount {
     pub email_address: std::option::Option<std::string::String>,
     /// <p> The name of the Amazon Web Services account. </p>
     pub name: std::option::Option<std::string::String>,
+}
+impl AwsAccount {
+    /// <p> The identifier for the Amazon Web Services account. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The email address that's associated with the Amazon Web Services account. </p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p> The name of the Amazon Web Services account. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3238,6 +3705,68 @@ pub struct AssessmentFrameworkShareRequest {
     pub custom_controls_count: std::option::Option<i32>,
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
     pub compliance_type: std::option::Option<std::string::String>,
+}
+impl AssessmentFrameworkShareRequest {
+    /// <p> The unique identifier for the share request. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The unique identifier for the shared custom framework. </p>
+    pub fn framework_id(&self) -> std::option::Option<&str> {
+        self.framework_id.as_deref()
+    }
+    /// <p> The name of the custom framework that the share request is for. </p>
+    pub fn framework_name(&self) -> std::option::Option<&str> {
+        self.framework_name.as_deref()
+    }
+    /// <p>The description of the shared custom framework.</p>
+    pub fn framework_description(&self) -> std::option::Option<&str> {
+        self.framework_description.as_deref()
+    }
+    /// <p> The status of the share request. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShareRequestStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The Amazon Web Services account of the sender. </p>
+    pub fn source_account(&self) -> std::option::Option<&str> {
+        self.source_account.as_deref()
+    }
+    /// <p> The Amazon Web Services account of the recipient. </p>
+    pub fn destination_account(&self) -> std::option::Option<&str> {
+        self.destination_account.as_deref()
+    }
+    /// <p> The Amazon Web Services Region of the recipient. </p>
+    pub fn destination_region(&self) -> std::option::Option<&str> {
+        self.destination_region.as_deref()
+    }
+    /// <p> The time when the share request expires. </p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
+    /// <p> The time when the share request was created. </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> Specifies when the share request was last updated. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p> An optional comment from the sender about the share request. </p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The number of standard controls that are part of the shared custom framework. </p>
+    pub fn standard_controls_count(&self) -> std::option::Option<i32> {
+        self.standard_controls_count
+    }
+    /// <p>The number of custom controls that are part of the shared custom framework.</p>
+    pub fn custom_controls_count(&self) -> std::option::Option<i32> {
+        self.custom_controls_count
+    }
+    /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
 }
 impl std::fmt::Debug for AssessmentFrameworkShareRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3730,6 +4259,68 @@ pub struct Framework {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl Framework {
+    /// <p> The Amazon Resource Name (ARN) of the framework. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The unique identifier for the framework. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the framework. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FrameworkType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
+    /// </p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+    /// <p> The description of the framework. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The logo that's associated with the framework. </p>
+    pub fn logo(&self) -> std::option::Option<&str> {
+        self.logo.as_deref()
+    }
+    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
+    pub fn control_sources(&self) -> std::option::Option<&str> {
+        self.control_sources.as_deref()
+    }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn control_sets(&self) -> std::option::Option<&[crate::model::ControlSet]> {
+        self.control_sets.as_deref()
+    }
+    /// <p> Specifies when the framework was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> Specifies when the framework was most recently updated. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The IAM user or role that created the framework. </p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p> The IAM user or role that most recently updated the framework. </p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
+    /// <p> The tags that are associated with the framework. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for Framework {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Framework");
@@ -3995,6 +4586,21 @@ pub struct ControlSet {
     /// <p> The list of controls within the control set. </p>
     pub controls: std::option::Option<std::vec::Vec<crate::model::Control>>,
 }
+impl ControlSet {
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a
+    /// plain string format. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the control set. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The list of controls within the control set. </p>
+    pub fn controls(&self) -> std::option::Option<&[crate::model::Control]> {
+        self.controls.as_deref()
+    }
+}
 impl std::fmt::Debug for ControlSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ControlSet");
@@ -4140,6 +4746,22 @@ pub struct UpdateAssessmentFrameworkControlSet {
     pub controls:
         std::option::Option<std::vec::Vec<crate::model::CreateAssessmentFrameworkControl>>,
 }
+impl UpdateAssessmentFrameworkControlSet {
+    /// <p> The unique identifier for the control set. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the control set. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The list of controls that are contained within the control set. </p>
+    pub fn controls(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateAssessmentFrameworkControl]> {
+        self.controls.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssessmentFrameworkControlSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentFrameworkControlSet");
@@ -4229,6 +4851,12 @@ impl UpdateAssessmentFrameworkControlSet {
 pub struct CreateAssessmentFrameworkControl {
     /// <p> The unique identifier of the control. </p>
     pub id: std::option::Option<std::string::String>,
+}
+impl CreateAssessmentFrameworkControl {
+    /// <p> The unique identifier of the control. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssessmentFrameworkControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4350,6 +4978,40 @@ pub struct Notification {
     pub event_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The sender of the notification. </p>
     pub source: std::option::Option<std::string::String>,
+}
+impl Notification {
+    /// <p> The unique identifier for the notification. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The name of the related assessment. </p>
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
+        self.assessment_name.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> Specifies the name of the control set that the notification is about. </p>
+    pub fn control_set_name(&self) -> std::option::Option<&str> {
+        self.control_set_name.as_deref()
+    }
+    /// <p> The description of the notification. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The time when the notification was sent. </p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p> The sender of the notification. </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
 }
 impl std::fmt::Debug for Notification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4516,6 +5178,33 @@ pub struct ControlMetadata {
     /// <p> Specifies when the control was most recently updated. </p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ControlMetadata {
+    /// <p> The Amazon Resource Name (ARN) of the control. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The unique identifier for the control. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the control. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The data source that determines where Audit Manager collects evidence from for
+    /// the control. </p>
+    pub fn control_sources(&self) -> std::option::Option<&str> {
+        self.control_sources.as_deref()
+    }
+    /// <p> Specifies when the control was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> Specifies when the control was most recently updated. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for ControlMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ControlMetadata");
@@ -4655,6 +5344,41 @@ pub struct AssessmentMetadataItem {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The time of the most recent update. </p>
     pub last_updated: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AssessmentMetadataItem {
+    /// <p> The name of the assessment. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
+    /// </p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+    /// <p> The current status of the assessment. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssessmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The roles that are associated with the assessment. </p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.roles.as_deref()
+    }
+    /// <p> The delegations that are associated with the assessment. </p>
+    pub fn delegations(&self) -> std::option::Option<&[crate::model::Delegation]> {
+        self.delegations.as_deref()
+    }
+    /// <p> Specifies when the assessment was created. </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> The time of the most recent update. </p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentMetadataItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4840,6 +5564,40 @@ pub struct AssessmentReportMetadata {
     pub status: std::option::Option<crate::model::AssessmentReportStatus>,
     /// <p> Specifies when the assessment report was created. </p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AssessmentReportMetadata {
+    /// <p> The unique identifier for the assessment report. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the assessment report. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the assessment report. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The unique identifier for the associated assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p>The name of the associated assessment. </p>
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
+        self.assessment_name.as_deref()
+    }
+    /// <p> The name of the user who created the assessment report. </p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p> The current status of the assessment report. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssessmentReportStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Specifies when the assessment report was created. </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentReportMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5071,6 +5829,53 @@ pub struct AssessmentFrameworkMetadata {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p> Specifies when the framework was most recently updated. </p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AssessmentFrameworkMetadata {
+    /// <p> The Amazon Resource Name (ARN) of the framework. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The unique identifier for the framework. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The framework type, such as a standard framework or a custom framework. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FrameworkType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The name of the framework. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the framework. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The logo that's associated with the framework. </p>
+    pub fn logo(&self) -> std::option::Option<&str> {
+        self.logo.as_deref()
+    }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
+    /// </p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+    /// <p> The number of controls that are associated with the framework. </p>
+    pub fn controls_count(&self) -> i32 {
+        self.controls_count
+    }
+    /// <p> The number of control sets that are associated with the framework. </p>
+    pub fn control_sets_count(&self) -> i32 {
+        self.control_sets_count
+    }
+    /// <p> Specifies when the framework was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> Specifies when the framework was most recently updated. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentFrameworkMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5345,6 +6150,25 @@ pub struct ServiceMetadata {
     /// or database. </p>
     pub category: std::option::Option<std::string::String>,
 }
+impl ServiceMetadata {
+    /// <p> The name of the Amazon Web Service. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The display name of the Amazon Web Service. </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p> The description of the Amazon Web Service. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The category that the Amazon Web Service belongs to, such as compute, storage,
+    /// or database. </p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceMetadata");
@@ -5473,6 +6297,86 @@ pub struct AssessmentEvidenceFolder {
     /// <p> The total number of Amazon Web Services resources that were assessed to generate the
     /// evidence. </p>
     pub evidence_aws_service_source_count: i32,
+}
+impl AssessmentEvidenceFolder {
+    /// <p> The name of the evidence folder. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The date when the first evidence was added to the evidence folder. </p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The unique identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The Amazon Web Service that the evidence was collected from. </p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p> The name of the user who created the evidence folder. </p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p> The total amount of evidence in the evidence folder. </p>
+    pub fn total_evidence(&self) -> i32 {
+        self.total_evidence
+    }
+    /// <p> The total count of evidence that's included in the assessment report. </p>
+    pub fn assessment_report_selection_count(&self) -> i32 {
+        self.assessment_report_selection_count
+    }
+    /// <p> The name of the control. </p>
+    pub fn control_name(&self) -> std::option::Option<&str> {
+        self.control_name.as_deref()
+    }
+    /// <p> The amount of evidence that's included in the evidence folder. </p>
+    pub fn evidence_resources_included_count(&self) -> i32 {
+        self.evidence_resources_included_count
+    }
+    /// <p> The number of evidence that falls under the configuration data category. This
+    /// evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+    pub fn evidence_by_type_configuration_data_count(&self) -> i32 {
+        self.evidence_by_type_configuration_data_count
+    }
+    /// <p> The number of evidence that falls under the manual category. This evidence is imported
+    /// manually. </p>
+    pub fn evidence_by_type_manual_count(&self) -> i32 {
+        self.evidence_by_type_manual_count
+    }
+    /// <p> The number of evidence that falls under the compliance check category. This evidence is
+    /// collected from Config or Security Hub. </p>
+    pub fn evidence_by_type_compliance_check_count(&self) -> i32 {
+        self.evidence_by_type_compliance_check_count
+    }
+    /// <p> The total number of issues that were reported directly from Security Hub,
+    /// Config, or both. </p>
+    pub fn evidence_by_type_compliance_check_issues_count(&self) -> i32 {
+        self.evidence_by_type_compliance_check_issues_count
+    }
+    /// <p> The number of evidence that falls under the user activity category. This evidence is
+    /// collected from CloudTrail logs. </p>
+    pub fn evidence_by_type_user_activity_count(&self) -> i32 {
+        self.evidence_by_type_user_activity_count
+    }
+    /// <p> The total number of Amazon Web Services resources that were assessed to generate the
+    /// evidence. </p>
+    pub fn evidence_aws_service_source_count(&self) -> i32 {
+        self.evidence_aws_service_source_count
+    }
 }
 impl std::fmt::Debug for AssessmentEvidenceFolder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5863,6 +6767,78 @@ pub struct Evidence {
     /// <p> Specifies whether the evidence is included in the assessment report. </p>
     pub assessment_report_selection: std::option::Option<std::string::String>,
 }
+impl Evidence {
+    /// <p> The data source where the evidence was collected from. </p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p> The identifier for the Amazon Web Services account. </p>
+    pub fn evidence_aws_account_id(&self) -> std::option::Option<&str> {
+        self.evidence_aws_account_id.as_deref()
+    }
+    /// <p> The timestamp that represents when the evidence was collected. </p>
+    pub fn time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.time.as_ref()
+    }
+    /// <p> The Amazon Web Service that the evidence is collected from. </p>
+    pub fn event_source(&self) -> std::option::Option<&str> {
+        self.event_source.as_deref()
+    }
+    /// <p> The name of the evidence event. </p>
+    pub fn event_name(&self) -> std::option::Option<&str> {
+        self.event_name.as_deref()
+    }
+    /// <p> The type of automated evidence. </p>
+    pub fn evidence_by_type(&self) -> std::option::Option<&str> {
+        self.evidence_by_type.as_deref()
+    }
+    /// <p> The list of resources that are assessed to generate the evidence. </p>
+    pub fn resources_included(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources_included.as_deref()
+    }
+    /// <p> The names and values that are used by the evidence event. This includes an attribute
+    /// name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code>
+    /// or <code>false</code>). </p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p> The unique identifier for the IAM user or role that's associated with
+    /// the evidence. </p>
+    pub fn iam_id(&self) -> std::option::Option<&str> {
+        self.iam_id.as_deref()
+    }
+    /// <p> The evaluation status for evidence that falls under the compliance check category. For
+    /// evidence collected from Security Hub, a <i>Pass</i> or
+    /// <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i>
+    /// result is shown. </p>
+    pub fn compliance_check(&self) -> std::option::Option<&str> {
+        self.compliance_check.as_deref()
+    }
+    /// <p> The Amazon Web Services account that the evidence is collected from, and its
+    /// organization path. </p>
+    pub fn aws_organization(&self) -> std::option::Option<&str> {
+        self.aws_organization.as_deref()
+    }
+    /// <p> The identifier for the Amazon Web Services account. </p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
+    /// <p> The identifier for the evidence. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> Specifies whether the evidence is included in the assessment report. </p>
+    pub fn assessment_report_selection(&self) -> std::option::Option<&str> {
+        self.assessment_report_selection.as_deref()
+    }
+}
 impl std::fmt::Debug for Evidence {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Evidence");
@@ -6162,6 +7138,16 @@ pub struct Resource {
     /// <p> The value of the resource. </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Resource {
+    /// <p> The Amazon Resource Name (ARN) for the resource. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The value of the resource. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -6234,6 +7220,36 @@ pub struct DelegationMetadata {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> Specifies the name of the control set that was delegated for review. </p>
     pub control_set_name: std::option::Option<std::string::String>,
+}
+impl DelegationMetadata {
+    /// <p> The unique identifier for the delegation. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name of the associated assessment. </p>
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
+        self.assessment_name.as_deref()
+    }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The current status of the delegation. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DelegationStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p> Specifies when the delegation was created. </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> Specifies the name of the control set that was delegated for review. </p>
+    pub fn control_set_name(&self) -> std::option::Option<&str> {
+        self.control_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DelegationMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6385,6 +7401,29 @@ pub struct ChangeLog {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The IAM user or role that performed the action. </p>
     pub created_by: std::option::Option<std::string::String>,
+}
+impl ChangeLog {
+    /// <p> The object that was changed, such as an assessment, control, or control set. </p>
+    pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectTypeEnum> {
+        self.object_type.as_ref()
+    }
+    /// <p> The name of the object that changed. This could be the name of an assessment, control,
+    /// or control set.</p>
+    pub fn object_name(&self) -> std::option::Option<&str> {
+        self.object_name.as_deref()
+    }
+    /// <p> The action that was performed. </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ActionEnum> {
+        self.action.as_ref()
+    }
+    /// <p> The time when the action was performed and the changelog record was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> The IAM user or role that performed the action. </p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl std::fmt::Debug for ChangeLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6658,6 +7697,16 @@ pub struct Url {
     /// <p> The unique identifier for the internet resource. </p>
     pub link: std::option::Option<std::string::String>,
 }
+impl Url {
+    /// <p> The name or word that's used as a hyperlink to the URL. </p>
+    pub fn hyperlink_name(&self) -> std::option::Option<&str> {
+        self.hyperlink_name.as_deref()
+    }
+    /// <p> The unique identifier for the internet resource. </p>
+    pub fn link(&self) -> std::option::Option<&str> {
+        self.link.as_deref()
+    }
+}
 impl std::fmt::Debug for Url {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Url");
@@ -6737,6 +7786,39 @@ pub struct CreateControlMappingSource {
     pub source_frequency: std::option::Option<crate::model::SourceFrequency>,
     /// <p> The instructions for troubleshooting the control. </p>
     pub troubleshooting_text: std::option::Option<std::string::String>,
+}
+impl CreateControlMappingSource {
+    /// <p> The name of the control mapping data source. </p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p> The description of the data source that determines where Audit Manager collects
+    /// evidence from for the control. </p>
+    pub fn source_description(&self) -> std::option::Option<&str> {
+        self.source_description.as_deref()
+    }
+    /// <p> The setup option for the data source, which reflects if the evidence collection is
+    /// automated or manual. </p>
+    pub fn source_set_up_option(&self) -> std::option::Option<&crate::model::SourceSetUpOption> {
+        self.source_set_up_option.as_ref()
+    }
+    /// <p> Specifies one of the five types of data sources for evidence collection. </p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p> The keyword to search for in CloudTrail logs, Config rules,
+    /// Security Hub checks, and Amazon Web Services API names. </p>
+    pub fn source_keyword(&self) -> std::option::Option<&crate::model::SourceKeyword> {
+        self.source_keyword.as_ref()
+    }
+    /// <p> The frequency of evidence collection for the control mapping source. </p>
+    pub fn source_frequency(&self) -> std::option::Option<&crate::model::SourceFrequency> {
+        self.source_frequency.as_ref()
+    }
+    /// <p> The instructions for troubleshooting the control. </p>
+    pub fn troubleshooting_text(&self) -> std::option::Option<&str> {
+        self.troubleshooting_text.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateControlMappingSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6906,6 +7988,44 @@ pub struct AssessmentReport {
     pub status: std::option::Option<crate::model::AssessmentReportStatus>,
     /// <p> Specifies when the assessment report was created. </p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AssessmentReport {
+    /// <p> The unique identifier for the assessment report. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> The name that's given to the assessment report. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the specified assessment report. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The identifier for the specified Amazon Web Services account. </p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p> The identifier for the specified assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The name of the associated assessment. </p>
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
+        self.assessment_name.as_deref()
+    }
+    /// <p> The name of the user who created the assessment report. </p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p> The current status of the specified assessment report. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssessmentReportStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Specifies when the assessment report was created. </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7078,6 +8198,19 @@ pub struct CreateAssessmentFrameworkControlSet {
     pub controls:
         std::option::Option<std::vec::Vec<crate::model::CreateAssessmentFrameworkControl>>,
 }
+impl CreateAssessmentFrameworkControlSet {
+    /// <p> The name of the control set. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The list of controls within the control set. This doesn't contain the control set ID.
+    /// </p>
+    pub fn controls(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateAssessmentFrameworkControl]> {
+        self.controls.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAssessmentFrameworkControlSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentFrameworkControlSet");
@@ -7163,6 +8296,22 @@ pub struct BatchImportEvidenceToAssessmentControlError {
     /// returned. </p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl BatchImportEvidenceToAssessmentControlError {
+    /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
+    pub fn manual_evidence(&self) -> std::option::Option<&crate::model::ManualEvidence> {
+        self.manual_evidence.as_ref()
+    }
+    /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API
+    /// returned. </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API
+    /// returned. </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchImportEvidenceToAssessmentControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchImportEvidenceToAssessmentControlError");
@@ -7247,6 +8396,12 @@ pub struct ManualEvidence {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
     pub s3_resource_path: std::option::Option<std::string::String>,
 }
+impl ManualEvidence {
+    /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
+    pub fn s3_resource_path(&self) -> std::option::Option<&str> {
+        self.s3_resource_path.as_deref()
+    }
+}
 impl std::fmt::Debug for ManualEvidence {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ManualEvidence");
@@ -7302,6 +8457,20 @@ pub struct AssessmentReportEvidenceError {
     pub error_code: std::option::Option<std::string::String>,
     /// <p> The error message that the <code>AssessmentReportEvidence</code> API returned. </p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl AssessmentReportEvidenceError {
+    /// <p> The identifier for the evidence. </p>
+    pub fn evidence_id(&self) -> std::option::Option<&str> {
+        self.evidence_id.as_deref()
+    }
+    /// <p> The error code that the <code>AssessmentReportEvidence</code> API returned. </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p> The error message that the <code>AssessmentReportEvidence</code> API returned. </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for AssessmentReportEvidenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7386,6 +8555,22 @@ pub struct BatchDeleteDelegationByAssessmentError {
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned.
     /// </p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl BatchDeleteDelegationByAssessmentError {
+    /// <p> The identifier for the delegation. </p>
+    pub fn delegation_id(&self) -> std::option::Option<&str> {
+        self.delegation_id.as_deref()
+    }
+    /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned.
+    /// </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned.
+    /// </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteDelegationByAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7477,6 +8662,24 @@ pub struct BatchCreateDelegationByAssessmentError {
     /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
     /// </p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl BatchCreateDelegationByAssessmentError {
+    /// <p> The API request to batch create delegations in Audit Manager. </p>
+    pub fn create_delegation_request(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateDelegationRequest> {
+        self.create_delegation_request.as_ref()
+    }
+    /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned.
+    /// </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
+    /// </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateDelegationByAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7580,6 +8783,32 @@ pub struct CreateDelegationRequest {
     /// <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub role_type: std::option::Option<crate::model::RoleType>,
+}
+impl CreateDelegationRequest {
+    /// <p> A comment that's related to the delegation request. </p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p> The unique identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p> The type of customer persona. </p>
+    /// <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
+    /// <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
+    /// <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
+    /// <code>RESOURCE_OWNER</code>.</p>
+    /// </note>
+    pub fn role_type(&self) -> std::option::Option<&crate::model::RoleType> {
+        self.role_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDelegationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

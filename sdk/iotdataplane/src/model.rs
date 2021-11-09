@@ -12,6 +12,24 @@ pub struct RetainedMessageSummary {
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub last_modified_time: i64,
 }
+impl RetainedMessageSummary {
+    /// <p>The topic name to which the retained message was published.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The size of the retained message's payload in bytes.</p>
+    pub fn payload_size(&self) -> i64 {
+        self.payload_size
+    }
+    /// <p>The quality of service (QoS) level used to publish the retained message.</p>
+    pub fn qos(&self) -> i32 {
+        self.qos
+    }
+    /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
+    pub fn last_modified_time(&self) -> i64 {
+        self.last_modified_time
+    }
+}
 impl std::fmt::Debug for RetainedMessageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetainedMessageSummary");

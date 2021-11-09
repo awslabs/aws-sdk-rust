@@ -7,6 +7,13 @@ pub struct StartExpenseAnalysisOutput {
     /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StartExpenseAnalysisOutput {
+    /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
+    /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartExpenseAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartExpenseAnalysisOutput");
@@ -58,6 +65,14 @@ pub struct StartDocumentTextDetectionOutput {
     /// identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
     /// A <code>JobId</code> value is only valid for 7 days.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StartDocumentTextDetectionOutput {
+    /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to
+    /// identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
+    /// A <code>JobId</code> value is only valid for 7 days.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDocumentTextDetectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -112,6 +127,14 @@ pub struct StartDocumentAnalysisOutput {
     /// the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value
     /// is only valid for 7 days.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StartDocumentAnalysisOutput {
+    /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify
+    /// the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value
+    /// is only valid for 7 days.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDocumentAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -179,6 +202,39 @@ pub struct GetExpenseAnalysisOutput {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The current model version of AnalyzeExpense.</p>
     pub analyze_expense_model_version: std::option::Option<std::string::String>,
+}
+impl GetExpenseAnalysisOutput {
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
+    /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The current status of the text detection job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
+    /// the subsequent request to retrieve the next set of text-detection results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The expenses detected by Amazon Textract.</p>
+    pub fn expense_documents(&self) -> std::option::Option<&[crate::model::ExpenseDocument]> {
+        self.expense_documents.as_deref()
+    }
+    /// <p>A list of warnings that occurred during the text-detection operation for the
+    /// document.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+        self.warnings.as_deref()
+    }
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The current model version of AnalyzeExpense.</p>
+    pub fn analyze_expense_model_version(&self) -> std::option::Option<&str> {
+        self.analyze_expense_model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetExpenseAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -367,6 +423,39 @@ pub struct GetDocumentTextDetectionOutput {
     /// <p></p>
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
 }
+impl GetDocumentTextDetectionOutput {
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
+    /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The current status of the text detection job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
+    /// the subsequent request to retrieve the next set of text-detection results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The results of the text-detection operation.</p>
+    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+        self.blocks.as_deref()
+    }
+    /// <p>A list of warnings that occurred during the text-detection operation for the
+    /// document.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+        self.warnings.as_deref()
+    }
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p></p>
+    pub fn detect_document_text_model_version(&self) -> std::option::Option<&str> {
+        self.detect_document_text_model_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDocumentTextDetectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentTextDetectionOutput");
@@ -549,6 +638,38 @@ pub struct GetDocumentAnalysisOutput {
     /// <p></p>
     pub analyze_document_model_version: std::option::Option<std::string::String>,
 }
+impl GetDocumentAnalysisOutput {
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
+    /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The current status of the text detection job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
+    /// the subsequent request to retrieve the next set of text detection results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The results of the text-analysis operation.</p>
+    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+        self.blocks.as_deref()
+    }
+    /// <p>A list of warnings that occurred during the document-analysis operation.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+        self.warnings.as_deref()
+    }
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p></p>
+    pub fn analyze_document_model_version(&self) -> std::option::Option<&str> {
+        self.analyze_document_model_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDocumentAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentAnalysisOutput");
@@ -721,6 +842,22 @@ pub struct DetectDocumentTextOutput {
     /// <p></p>
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
 }
+impl DetectDocumentTextOutput {
+    /// <p>Metadata about the document. It contains the number of pages that are detected in the
+    /// document.</p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>An array of <code>Block</code> objects that contain the text that's detected in the
+    /// document.</p>
+    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+        self.blocks.as_deref()
+    }
+    /// <p></p>
+    pub fn detect_document_text_model_version(&self) -> std::option::Option<&str> {
+        self.detect_document_text_model_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectDocumentTextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDocumentTextOutput");
@@ -822,6 +959,16 @@ pub struct AnalyzeExpenseOutput {
     /// <p>The expenses detected by Amazon Textract.</p>
     pub expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
 }
+impl AnalyzeExpenseOutput {
+    /// <p>Information about the input document.</p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The expenses detected by Amazon Textract.</p>
+    pub fn expense_documents(&self) -> std::option::Option<&[crate::model::ExpenseDocument]> {
+        self.expense_documents.as_deref()
+    }
+}
 impl std::fmt::Debug for AnalyzeExpenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyzeExpenseOutput");
@@ -904,6 +1051,26 @@ pub struct AnalyzeDocumentOutput {
     pub human_loop_activation_output: std::option::Option<crate::model::HumanLoopActivationOutput>,
     /// <p>The version of the model used to analyze the document.</p>
     pub analyze_document_model_version: std::option::Option<std::string::String>,
+}
+impl AnalyzeDocumentOutput {
+    /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
+    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+        self.blocks.as_deref()
+    }
+    /// <p>Shows the results of the human in the loop evaluation.</p>
+    pub fn human_loop_activation_output(
+        &self,
+    ) -> std::option::Option<&crate::model::HumanLoopActivationOutput> {
+        self.human_loop_activation_output.as_ref()
+    }
+    /// <p>The version of the model used to analyze the document.</p>
+    pub fn analyze_document_model_version(&self) -> std::option::Option<&str> {
+        self.analyze_document_model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for AnalyzeDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

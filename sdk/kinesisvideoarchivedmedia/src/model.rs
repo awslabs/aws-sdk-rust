@@ -16,6 +16,30 @@ pub struct Fragment {
     /// <p>The playback duration or other time value associated with the fragment.</p>
     pub fragment_length_in_milliseconds: i64,
 }
+impl Fragment {
+    /// <p>The unique identifier of the fragment. This value monotonically increases based on the
+    /// ingestion order.</p>
+    pub fn fragment_number(&self) -> std::option::Option<&str> {
+        self.fragment_number.as_deref()
+    }
+    /// <p>The total fragment size, including information about the fragment and contained media
+    /// data.</p>
+    pub fn fragment_size_in_bytes(&self) -> i64 {
+        self.fragment_size_in_bytes
+    }
+    /// <p>The timestamp from the producer corresponding to the fragment.</p>
+    pub fn producer_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.producer_timestamp.as_ref()
+    }
+    /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    pub fn server_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.server_timestamp.as_ref()
+    }
+    /// <p>The playback duration or other time value associated with the fragment.</p>
+    pub fn fragment_length_in_milliseconds(&self) -> i64 {
+        self.fragment_length_in_milliseconds
+    }
+}
 impl std::fmt::Debug for Fragment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Fragment");
@@ -158,6 +182,18 @@ pub struct FragmentSelector {
     /// <p>The range of timestamps to return.</p>
     pub timestamp_range: std::option::Option<crate::model::TimestampRange>,
 }
+impl FragmentSelector {
+    /// <p>The origin of the timestamps to use (Server or Producer).</p>
+    pub fn fragment_selector_type(
+        &self,
+    ) -> std::option::Option<&crate::model::FragmentSelectorType> {
+        self.fragment_selector_type.as_ref()
+    }
+    /// <p>The range of timestamps to return.</p>
+    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+        self.timestamp_range.as_ref()
+    }
+}
 impl std::fmt::Debug for FragmentSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FragmentSelector");
@@ -227,6 +263,17 @@ pub struct TimestampRange {
     pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
     pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TimestampRange {
+    /// <p>The starting timestamp in the range of timestamps for which to return
+    /// fragments.</p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_timestamp.as_ref()
+    }
+    /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for TimestampRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -546,6 +593,40 @@ pub struct HlsFragmentSelector {
     /// <code>LIVE</code>.</p>
     pub timestamp_range: std::option::Option<crate::model::HlsTimestampRange>,
 }
+impl HlsFragmentSelector {
+    /// <p>The source of the timestamps for the requested media.</p>
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
+    /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is
+    /// <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with
+    /// a producer timestamp within the specified <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
+    /// addition, the fragments with producer timestamps within the <code>TimestampRange</code>
+    /// ingested immediately following the first fragment (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a> value)
+    /// are included. </p>
+    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if
+    /// producers are producing a stream of fragments with producer timestamps that are
+    /// approximately equal to the true clock time, the HLS media playlists will contain all of
+    /// the fragments within the requested timestamp range. If some fragments are ingested
+    /// within the same time range and very different points in time, only the oldest ingested
+    /// collection of fragments are returned.</p>
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
+    /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>LIVE</code>,
+    /// the producer timestamps are used in the MP4 fragments and for deduplication. But the
+    /// most recently ingested fragments based on server timestamps are included in the HLS
+    /// media playlist. This means that even if fragments ingested in the past have producer
+    /// timestamps with values now, they are not included in the HLS media playlist.</p>
+    /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
+    pub fn fragment_selector_type(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsFragmentSelectorType> {
+        self.fragment_selector_type.as_ref()
+    }
+    /// <p>The start and end of the timestamp range for the requested media.</p>
+    /// <p>This value should not be present if <code>PlaybackType</code> is
+    /// <code>LIVE</code>.</p>
+    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::HlsTimestampRange> {
+        self.timestamp_range.as_ref()
+    }
+}
 impl std::fmt::Debug for HlsFragmentSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HlsFragmentSelector");
@@ -685,6 +766,37 @@ pub struct HlsTimestampRange {
     /// session.</p>
     /// </note>
     pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl HlsTimestampRange {
+    /// <p>The start of the timestamp range for the requested media.</p>
+    /// <p>If the <code>HLSTimestampRange</code> value is specified, the
+    /// <code>StartTimestamp</code> value is required. </p>
+    /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included
+    /// in the session. Fragments that start before <code>StartTimestamp</code> and continue
+    /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
+    /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
+    /// the stream head. </p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_timestamp.as_ref()
+    }
+    /// <p>The end of the timestamp range for the requested media. This value must be within 24
+    /// hours of the specified <code>StartTimestamp</code>, and it must be later than the
+    /// <code>StartTimestamp</code> value.</p>
+    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>,
+    /// this value must be in the past.</p>
+    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+    /// optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set
+    /// for <code>LIVE_REPLAY</code> mode then the session will continue to include newly
+    /// ingested fragments until the session expires.</p>
+    /// <note>
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the
+    /// (starting) timestamp of the fragment. Fragments that start before the
+    /// <code>EndTimestamp</code> value and continue past it are included in the
+    /// session.</p>
+    /// </note>
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for HlsTimestampRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -934,6 +1046,40 @@ pub struct DashFragmentSelector {
     /// <code>LIVE</code>.</p>
     pub timestamp_range: std::option::Option<crate::model::DashTimestampRange>,
 }
+impl DashFragmentSelector {
+    /// <p>The source of the timestamps for the requested media.</p>
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
+    /// <a>GetDASHStreamingSessionURLInput$PlaybackMode</a> is
+    /// <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with
+    /// a producer timestamp within the specified <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
+    /// addition, the fragments with producer timestamps within the <code>TimestampRange</code>
+    /// ingested immediately following the first fragment (up to the <a>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</a> value) are
+    /// included. </p>
+    /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if
+    /// producers are producing a stream of fragments with producer timestamps that are
+    /// approximately equal to the true clock time, the MPEG-DASH manifest will contain all of
+    /// the fragments within the requested timestamp range. If some fragments are ingested
+    /// within the same time range and very different points in time, only the oldest ingested
+    /// collection of fragments are returned.</p>
+    /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
+    /// <a>GetDASHStreamingSessionURLInput$PlaybackMode</a> is <code>LIVE</code>,
+    /// the producer timestamps are used in the MP4 fragments and for deduplication. But the
+    /// most recently ingested fragments based on server timestamps are included in the
+    /// MPEG-DASH manifest. This means that even if fragments ingested in the past have producer
+    /// timestamps with values now, they are not included in the HLS media playlist.</p>
+    /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
+    pub fn fragment_selector_type(
+        &self,
+    ) -> std::option::Option<&crate::model::DashFragmentSelectorType> {
+        self.fragment_selector_type.as_ref()
+    }
+    /// <p>The start and end of the timestamp range for the requested media.</p>
+    /// <p>This value should not be present if <code>PlaybackType</code> is
+    /// <code>LIVE</code>.</p>
+    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::DashTimestampRange> {
+        self.timestamp_range.as_ref()
+    }
+}
 impl std::fmt::Debug for DashFragmentSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashFragmentSelector");
@@ -1077,6 +1223,38 @@ pub struct DashTimestampRange {
     /// session.</p>
     /// </note>
     pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DashTimestampRange {
+    /// <p>The start of the timestamp range for the requested media.</p>
+    /// <p>If the <code>DASHTimestampRange</code> value is specified, the
+    /// <code>StartTimestamp</code> value is required.</p>
+    /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included
+    /// in the session. Fragments that start before <code>StartTimestamp</code> and continue
+    /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
+    /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
+    /// the stream head. </p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_timestamp.as_ref()
+    }
+    /// <p>The end of the timestamp range for the requested media. This value must be within 24
+    /// hours of the specified <code>StartTimestamp</code>, and it must be later than the
+    /// <code>StartTimestamp</code> value.</p>
+    /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>,
+    /// this value must be in the past.</p>
+    ///
+    /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+    /// optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set
+    /// for <code>LIVE_REPLAY</code> mode then the session will continue to include newly
+    /// ingested fragments until the session expires.</p>
+    /// <note>
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the
+    /// (starting) timestamp of the fragment. Fragments that start before the
+    /// <code>EndTimestamp</code> value and continue past it are included in the
+    /// session.</p>
+    /// </note>
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for DashTimestampRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1421,6 +1599,18 @@ pub struct ClipFragmentSelector {
     /// <p>The range of timestamps to return.</p>
     pub timestamp_range: std::option::Option<crate::model::ClipTimestampRange>,
 }
+impl ClipFragmentSelector {
+    /// <p>The origin of the timestamps to use (Server or Producer).</p>
+    pub fn fragment_selector_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ClipFragmentSelectorType> {
+        self.fragment_selector_type.as_ref()
+    }
+    /// <p>The range of timestamps to return.</p>
+    pub fn timestamp_range(&self) -> std::option::Option<&crate::model::ClipTimestampRange> {
+        self.timestamp_range.as_ref()
+    }
+}
 impl std::fmt::Debug for ClipFragmentSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClipFragmentSelector");
@@ -1505,6 +1695,28 @@ pub struct ClipTimestampRange {
     /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
     /// value and continue past it are included in the session. </p>
     pub end_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ClipTimestampRange {
+    /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
+    /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included
+    /// in the session. Fragments that start before <code>StartTimestamp</code> and continue
+    /// past it aren't included in the session. If <code>FragmentSelectorType</code> is
+    /// <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
+    /// the stream head. </p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_timestamp.as_ref()
+    }
+    /// <p>The end of the timestamp range for the requested media.</p>
+    /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and
+    /// it must be later than the <code>StartTimestamp</code> value. If
+    /// <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>,
+    /// this value must be in the past. </p>
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
+    /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
+    /// value and continue past it are included in the session. </p>
+    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ClipTimestampRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

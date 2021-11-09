@@ -14,6 +14,32 @@ pub struct EventDestinationDefinition {
     /// An object that contains information about an event destination that sends data to Amazon SNS.
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
 }
+impl EventDestinationDefinition {
+    /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
+    pub fn cloud_watch_logs_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
+        self.cloud_watch_logs_destination.as_ref()
+    }
+    /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
+    pub fn kinesis_firehose_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+        self.kinesis_firehose_destination.as_ref()
+    }
+    /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.matching_event_types.as_deref()
+    }
+    /// An object that contains information about an event destination that sends data to Amazon SNS.
+    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+        self.sns_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for EventDestinationDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventDestinationDefinition");
@@ -146,6 +172,12 @@ impl EventDestinationDefinition {
 pub struct SnsDestination {
     /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
     pub topic_arn: std::option::Option<std::string::String>,
+}
+impl SnsDestination {
+    /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SnsDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -280,6 +312,16 @@ pub struct KinesisFirehoseDestination {
     /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseDestination {
+    /// The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.
+    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+        self.delivery_stream_arn.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseDestination");
@@ -345,6 +387,16 @@ pub struct CloudWatchLogsDestination {
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// The name of the Amazon CloudWatch Log Group that you want to record events in.
     pub log_group_arn: std::option::Option<std::string::String>,
+}
+impl CloudWatchLogsDestination {
+    /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// The name of the Amazon CloudWatch Log Group that you want to record events in.
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchLogsDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -413,6 +465,22 @@ pub struct VoiceMessageContent {
     pub plain_text_message: std::option::Option<crate::model::PlainTextMessageType>,
     /// An object that defines a message that contains SSML-formatted text.
     pub ssml_message: std::option::Option<crate::model::SsmlMessageType>,
+}
+impl VoiceMessageContent {
+    /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
+    pub fn call_instructions_message(
+        &self,
+    ) -> std::option::Option<&crate::model::CallInstructionsMessageType> {
+        self.call_instructions_message.as_ref()
+    }
+    /// An object that defines a message that contains unformatted text.
+    pub fn plain_text_message(&self) -> std::option::Option<&crate::model::PlainTextMessageType> {
+        self.plain_text_message.as_ref()
+    }
+    /// An object that defines a message that contains SSML-formatted text.
+    pub fn ssml_message(&self) -> std::option::Option<&crate::model::SsmlMessageType> {
+        self.ssml_message.as_ref()
+    }
 }
 impl std::fmt::Debug for VoiceMessageContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -505,6 +573,20 @@ pub struct SsmlMessageType {
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
     pub voice_id: std::option::Option<std::string::String>,
 }
+impl SsmlMessageType {
+    /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+    /// The SSML-formatted text to deliver to the recipient.
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
+    pub fn voice_id(&self) -> std::option::Option<&str> {
+        self.voice_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SsmlMessageType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SsmlMessageType");
@@ -586,6 +668,20 @@ pub struct PlainTextMessageType {
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
     pub voice_id: std::option::Option<std::string::String>,
 }
+impl PlainTextMessageType {
+    /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+    /// The plain (not SSML-formatted) text to deliver to the recipient.
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
+    pub fn voice_id(&self) -> std::option::Option<&str> {
+        self.voice_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PlainTextMessageType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlainTextMessageType");
@@ -663,6 +759,12 @@ pub struct CallInstructionsMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     pub text: std::option::Option<std::string::String>,
 }
+impl CallInstructionsMessageType {
+    /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
 impl std::fmt::Debug for CallInstructionsMessageType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CallInstructionsMessageType");
@@ -718,6 +820,36 @@ pub struct EventDestination {
     pub name: std::option::Option<std::string::String>,
     /// An object that contains information about an event destination that sends data to Amazon SNS.
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
+}
+impl EventDestination {
+    /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
+    pub fn cloud_watch_logs_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
+        self.cloud_watch_logs_destination.as_ref()
+    }
+    /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
+    pub fn kinesis_firehose_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+        self.kinesis_firehose_destination.as_ref()
+    }
+    /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.matching_event_types.as_deref()
+    }
+    /// A name that identifies the event destination configuration.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// An object that contains information about an event destination that sends data to Amazon SNS.
+    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+        self.sns_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for EventDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

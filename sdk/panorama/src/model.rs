@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>The field's message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The field's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The field's message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -70,6 +80,16 @@ pub struct ValidationExceptionErrorArgument {
     pub name: std::option::Option<std::string::String>,
     /// <p>The argument's value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ValidationExceptionErrorArgument {
+    /// <p>The argument's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The argument's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ValidationExceptionErrorArgument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -201,6 +221,16 @@ pub struct ConflictExceptionErrorArgument {
     pub name: std::option::Option<std::string::String>,
     /// <p>The error argument's value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ConflictExceptionErrorArgument {
+    /// <p>The error argument's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The error argument's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictExceptionErrorArgument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -343,6 +373,16 @@ pub struct NetworkPayload {
     /// <p>Settings for Ethernet port 1.</p>
     pub ethernet1: std::option::Option<crate::model::EthernetPayload>,
 }
+impl NetworkPayload {
+    /// <p>Settings for Ethernet port 0.</p>
+    pub fn ethernet0(&self) -> std::option::Option<&crate::model::EthernetPayload> {
+        self.ethernet0.as_ref()
+    }
+    /// <p>Settings for Ethernet port 1.</p>
+    pub fn ethernet1(&self) -> std::option::Option<&crate::model::EthernetPayload> {
+        self.ethernet1.as_ref()
+    }
+}
 impl std::fmt::Debug for NetworkPayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkPayload");
@@ -411,6 +451,18 @@ pub struct EthernetPayload {
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>Network configuration for a static IP connection.</p>
     pub static_ip_connection_info: std::option::Option<crate::model::StaticIpConnectionInfo>,
+}
+impl EthernetPayload {
+    /// <p>How the device gets an IP address.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>Network configuration for a static IP connection.</p>
+    pub fn static_ip_connection_info(
+        &self,
+    ) -> std::option::Option<&crate::model::StaticIpConnectionInfo> {
+        self.static_ip_connection_info.as_ref()
+    }
 }
 impl std::fmt::Debug for EthernetPayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -488,6 +540,24 @@ pub struct StaticIpConnectionInfo {
     pub dns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The connection's default gateway.</p>
     pub default_gateway: std::option::Option<std::string::String>,
+}
+impl StaticIpConnectionInfo {
+    /// <p>The connection's IP address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The connection's DNS mask.</p>
+    pub fn mask(&self) -> std::option::Option<&str> {
+        self.mask.as_deref()
+    }
+    /// <p>The connection's DNS address.</p>
+    pub fn dns(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns.as_deref()
+    }
+    /// <p>The connection's default gateway.</p>
+    pub fn default_gateway(&self) -> std::option::Option<&str> {
+        self.default_gateway.as_deref()
+    }
 }
 impl std::fmt::Debug for StaticIpConnectionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -652,6 +722,31 @@ pub struct PackageListItem {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PackageListItem {
+    /// <p>The package's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The package's name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The package's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>When the package was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The package's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for PackageListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageListItem");
@@ -781,6 +876,32 @@ pub struct PackageImportJob {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the job was updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PackageImportJob {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The job's type.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::PackageImportJobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The job's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PackageImportJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The job's status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>When the job was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>When the job was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for PackageImportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1039,6 +1160,52 @@ pub struct Node {
     pub description: std::option::Option<std::string::String>,
     /// <p>When the node was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Node {
+    /// <p>The node's ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>The node's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The node's category.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::NodeCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The account ID of the node's owner.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The node's package name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The node's package ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The node's ARN.</p>
+    pub fn package_arn(&self) -> std::option::Option<&str> {
+        self.package_arn.as_deref()
+    }
+    /// <p>The node's package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The node's patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+    /// <p>The node's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>When the node was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Node {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1306,6 +1473,32 @@ pub struct NodeFromTemplateJob {
     /// <p>The node's name.</p>
     pub node_name: std::option::Option<std::string::String>,
 }
+impl NodeFromTemplateJob {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The job's template type.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The job's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NodeFromTemplateJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The job's status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>When the job was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The node's name.</p>
+    pub fn node_name(&self) -> std::option::Option<&str> {
+        self.node_name.as_deref()
+    }
+}
 impl std::fmt::Debug for NodeFromTemplateJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeFromTemplateJob");
@@ -1547,6 +1740,24 @@ pub struct DeviceJob {
     /// <p>When the job was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeviceJob {
+    /// <p>The name of the target device</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The ID of the target device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>When the job was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceJob");
@@ -1646,6 +1857,32 @@ pub struct Device {
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The device's lease expiration time.</p>
     pub lease_expiration_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Device {
+    /// <p>The device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The device's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>When the device was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The device's provisioning status.</p>
+    pub fn provisioning_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.provisioning_status.as_ref()
+    }
+    /// <p>When the device was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The device's lease expiration time.</p>
+    pub fn lease_expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.lease_expiration_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1792,6 +2029,57 @@ pub struct ApplicationInstance {
     /// <p>The application instance's tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ApplicationInstance {
+    /// <p>The application instance's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The application instance's ID.</p>
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+        self.application_instance_id.as_deref()
+    }
+    /// <p>The device's ID.</p>
+    pub fn default_runtime_context_device(&self) -> std::option::Option<&str> {
+        self.default_runtime_context_device.as_deref()
+    }
+    /// <p>The device's name.</p>
+    pub fn default_runtime_context_device_name(&self) -> std::option::Option<&str> {
+        self.default_runtime_context_device_name.as_deref()
+    }
+    /// <p>The application instance's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The application instance's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ApplicationInstanceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The application instance's health status.</p>
+    pub fn health_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationInstanceHealthStatus> {
+        self.health_status.as_ref()
+    }
+    /// <p>The application instance's status description.</p>
+    pub fn status_description(&self) -> std::option::Option<&str> {
+        self.status_description.as_deref()
+    }
+    /// <p>When the application instance was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The application instance's ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The application instance's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2272,6 +2560,36 @@ pub struct NodeInstance {
     /// <p>The instance's current status.</p>
     pub current_status: std::option::Option<crate::model::NodeInstanceStatus>,
 }
+impl NodeInstance {
+    /// <p>The instance's ID.</p>
+    pub fn node_instance_id(&self) -> std::option::Option<&str> {
+        self.node_instance_id.as_deref()
+    }
+    /// <p>The node's ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>The instance's package name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The instance's package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The instance's package patch version.</p>
+    pub fn package_patch_version(&self) -> std::option::Option<&str> {
+        self.package_patch_version.as_deref()
+    }
+    /// <p>The instance's name.</p>
+    pub fn node_name(&self) -> std::option::Option<&str> {
+        self.node_name.as_deref()
+    }
+    /// <p>The instance's current status.</p>
+    pub fn current_status(&self) -> std::option::Option<&crate::model::NodeInstanceStatus> {
+        self.current_status.as_ref()
+    }
+}
 impl std::fmt::Debug for NodeInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeInstance");
@@ -2473,6 +2791,20 @@ pub struct PackageObject {
     /// <p>The object's patch version.</p>
     pub patch_version: std::option::Option<std::string::String>,
 }
+impl PackageObject {
+    /// <p>The object's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The object's package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The object's patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+}
 impl std::fmt::Debug for PackageObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageObject");
@@ -2624,6 +2956,19 @@ pub struct JobResourceTags {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl JobResourceTags {
+    /// <p>The job's type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::JobResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The job's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for JobResourceTags {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobResourceTags");
@@ -2762,6 +3107,24 @@ pub struct PackageImportJobOutput {
     /// <p>The package's output location.</p>
     pub output_s3_location: std::option::Option<crate::model::OutPutS3Location>,
 }
+impl PackageImportJobOutput {
+    /// <p>The package's ID.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The package's version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The package's patch version.</p>
+    pub fn patch_version(&self) -> std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
+    /// <p>The package's output location.</p>
+    pub fn output_s3_location(&self) -> std::option::Option<&crate::model::OutPutS3Location> {
+        self.output_s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for PackageImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageImportJobOutput");
@@ -2860,6 +3223,16 @@ pub struct OutPutS3Location {
     /// <p>The object's key.</p>
     pub object_key: std::option::Option<std::string::String>,
 }
+impl OutPutS3Location {
+    /// <p>The object's bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The object's key.</p>
+    pub fn object_key(&self) -> std::option::Option<&str> {
+        self.object_key.as_deref()
+    }
+}
 impl std::fmt::Debug for OutPutS3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutPutS3Location");
@@ -2922,6 +3295,14 @@ pub struct PackageImportJobOutputConfig {
     pub package_version_output_config:
         std::option::Option<crate::model::PackageVersionOutputConfig>,
 }
+impl PackageImportJobOutputConfig {
+    /// <p>The package version's output configuration.</p>
+    pub fn package_version_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageVersionOutputConfig> {
+        self.package_version_output_config.as_ref()
+    }
+}
 impl std::fmt::Debug for PackageImportJobOutputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageImportJobOutputConfig");
@@ -2983,6 +3364,20 @@ pub struct PackageVersionOutputConfig {
     pub package_version: std::option::Option<std::string::String>,
     /// <p>Indicates that the version is recommended for all users.</p>
     pub mark_latest: std::option::Option<bool>,
+}
+impl PackageVersionOutputConfig {
+    /// <p>The output's package name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The output's package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>Indicates that the version is recommended for all users.</p>
+    pub fn mark_latest(&self) -> std::option::Option<bool> {
+        self.mark_latest
+    }
 }
 impl std::fmt::Debug for PackageVersionOutputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3061,6 +3456,14 @@ pub struct PackageImportJobInputConfig {
     /// <p>The package version's input configuration.</p>
     pub package_version_input_config: std::option::Option<crate::model::PackageVersionInputConfig>,
 }
+impl PackageImportJobInputConfig {
+    /// <p>The package version's input configuration.</p>
+    pub fn package_version_input_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageVersionInputConfig> {
+        self.package_version_input_config.as_ref()
+    }
+}
 impl std::fmt::Debug for PackageImportJobInputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageImportJobInputConfig");
@@ -3119,6 +3522,12 @@ pub struct PackageVersionInputConfig {
     /// <p>A location in Amazon S3.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl PackageVersionInputConfig {
+    /// <p>A location in Amazon S3.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for PackageVersionInputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageVersionInputConfig");
@@ -3173,6 +3582,20 @@ pub struct S3Location {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>An object key.</p>
     pub object_key: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The bucket's Region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>A bucket name.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>An object key.</p>
+    pub fn object_key(&self) -> std::option::Option<&str> {
+        self.object_key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3255,6 +3678,28 @@ pub struct StorageLocation {
     pub binary_prefix_location: std::option::Option<std::string::String>,
     /// <p>The location's manifest prefix.</p>
     pub manifest_prefix_location: std::option::Option<std::string::String>,
+}
+impl StorageLocation {
+    /// <p>The location's bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The location's repo prefix.</p>
+    pub fn repo_prefix_location(&self) -> std::option::Option<&str> {
+        self.repo_prefix_location.as_deref()
+    }
+    /// <p>The location's generated prefix.</p>
+    pub fn generated_prefix_location(&self) -> std::option::Option<&str> {
+        self.generated_prefix_location.as_deref()
+    }
+    /// <p>The location's binary prefix.</p>
+    pub fn binary_prefix_location(&self) -> std::option::Option<&str> {
+        self.binary_prefix_location.as_deref()
+    }
+    /// <p>The location's manifest prefix.</p>
+    pub fn manifest_prefix_location(&self) -> std::option::Option<&str> {
+        self.manifest_prefix_location.as_deref()
+    }
 }
 impl std::fmt::Debug for StorageLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3370,6 +3815,16 @@ pub struct NodeInterface {
     /// <p>The node interface's outputs.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::NodeOutputPort>>,
 }
+impl NodeInterface {
+    /// <p>The node interface's inputs.</p>
+    pub fn inputs(&self) -> std::option::Option<&[crate::model::NodeInputPort]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The node interface's outputs.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::NodeOutputPort]> {
+        self.outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for NodeInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeInterface");
@@ -3452,6 +3907,20 @@ pub struct NodeOutputPort {
     pub description: std::option::Option<std::string::String>,
     /// <p>The output port's type.</p>
     pub r#type: std::option::Option<crate::model::PortType>,
+}
+impl NodeOutputPort {
+    /// <p>The output port's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The output port's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The output port's type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PortType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for NodeOutputPort {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3601,6 +4070,28 @@ pub struct NodeInputPort {
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The input port's max connections.</p>
     pub max_connections: i32,
+}
+impl NodeInputPort {
+    /// <p>The input port's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The input port's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The input port's type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PortType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The input port's default value.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The input port's max connections.</p>
+    pub fn max_connections(&self) -> i32 {
+        self.max_connections
+    }
 }
 impl std::fmt::Debug for NodeInputPort {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3845,6 +4336,16 @@ pub struct NetworkStatus {
     /// <p>The status of Ethernet port 1.</p>
     pub ethernet1_status: std::option::Option<crate::model::EthernetStatus>,
 }
+impl NetworkStatus {
+    /// <p>The status of Ethernet port 0.</p>
+    pub fn ethernet0_status(&self) -> std::option::Option<&crate::model::EthernetStatus> {
+        self.ethernet0_status.as_ref()
+    }
+    /// <p>The status of Ethernet port 1.</p>
+    pub fn ethernet1_status(&self) -> std::option::Option<&crate::model::EthernetStatus> {
+        self.ethernet1_status.as_ref()
+    }
+}
 impl std::fmt::Debug for NetworkStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkStatus");
@@ -3915,6 +4416,20 @@ pub struct EthernetStatus {
     pub connection_status: std::option::Option<crate::model::NetworkConnectionStatus>,
     /// <p>The device's physical address.</p>
     pub hw_address: std::option::Option<std::string::String>,
+}
+impl EthernetStatus {
+    /// <p>The device's IP address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The device's connection status.</p>
+    pub fn connection_status(&self) -> std::option::Option<&crate::model::NetworkConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+    /// <p>The device's physical address.</p>
+    pub fn hw_address(&self) -> std::option::Option<&str> {
+        self.hw_address.as_deref()
+    }
 }
 impl std::fmt::Debug for EthernetStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4122,6 +4637,15 @@ impl AsRef<str> for DeviceConnectionStatus {
 pub enum ManifestOverridesPayload {
     /// <p>The overrides document.</p>
     PayloadData(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ManifestOverridesPayload {
     #[allow(irrefutable_let_patterns)]
@@ -4138,6 +4662,10 @@ impl ManifestOverridesPayload {
     pub fn is_payload_data(&self) -> bool {
         self.as_payload_data().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A application verion's manifest file. This is a JSON document that has a
@@ -4149,6 +4677,15 @@ impl ManifestOverridesPayload {
 pub enum ManifestPayload {
     /// <p>The application manifest.</p>
     PayloadData(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ManifestPayload {
     #[allow(irrefutable_let_patterns)]
@@ -4165,6 +4702,10 @@ impl ManifestPayload {
     pub fn is_payload_data(&self) -> bool {
         self.as_payload_data().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A job for a device.</p>
@@ -4175,6 +4716,16 @@ pub struct Job {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The target device's ID.</p>
     pub device_id: std::option::Option<std::string::String>,
+}
+impl Job {
+    /// <p>The job's ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The target device's ID.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4288,6 +4839,12 @@ pub struct DeviceJobConfig {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
     pub ota_job_config: std::option::Option<crate::model::OtaJobConfig>,
 }
+impl DeviceJobConfig {
+    /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
+    pub fn ota_job_config(&self) -> std::option::Option<&crate::model::OtaJobConfig> {
+        self.ota_job_config.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceJobConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceJobConfig");
@@ -4338,6 +4895,12 @@ impl DeviceJobConfig {
 pub struct OtaJobConfig {
     /// <p>The target version of the device software.</p>
     pub image_version: std::option::Option<std::string::String>,
+}
+impl OtaJobConfig {
+    /// <p>The target version of the device software.</p>
+    pub fn image_version(&self) -> std::option::Option<&str> {
+        self.image_version.as_deref()
+    }
 }
 impl std::fmt::Debug for OtaJobConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

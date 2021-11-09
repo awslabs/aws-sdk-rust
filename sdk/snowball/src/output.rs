@@ -131,6 +131,20 @@ pub struct ListLongTermPricingOutput {
     /// returned <code>ListLongTermPricing</code> list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLongTermPricingOutput {
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information
+    /// about the <code>LongTermPricing</code> type. </p>
+    pub fn long_term_pricing_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::LongTermPricingListEntry]> {
+        self.long_term_pricing_entries.as_deref()
+    }
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
+    /// returned <code>ListLongTermPricing</code> list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLongTermPricingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLongTermPricingOutput");
@@ -214,6 +228,19 @@ pub struct ListJobsOutput {
     /// <code>JobListEntry</code> objects will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobsOutput {
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
+    /// that indicates whether the job is a job part, in the case of export jobs. </p>
+    pub fn job_list_entries(&self) -> std::option::Option<&[crate::model::JobListEntry]> {
+        self.job_list_entries.as_deref()
+    }
+    /// <p>HTTP requests are stateless. If you use this automatically generated
+    /// <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned
+    /// <code>JobListEntry</code> objects will start from this point in the array.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsOutput");
@@ -293,6 +320,18 @@ pub struct ListCompatibleImagesOutput {
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
     /// returned images.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCompatibleImagesOutput {
+    /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for
+    /// a Snow device AMI.</p>
+    pub fn compatible_images(&self) -> std::option::Option<&[crate::model::CompatibleImage]> {
+        self.compatible_images.as_deref()
+    }
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
+    /// returned images.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCompatibleImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -376,6 +415,19 @@ pub struct ListClustersOutput {
     /// <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of
     /// returned clusters will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClustersOutput {
+    /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID,
+    /// and other important status information.</p>
+    pub fn cluster_list_entries(&self) -> std::option::Option<&[crate::model::ClusterListEntry]> {
+        self.cluster_list_entries.as_deref()
+    }
+    /// <p>HTTP requests are stateless. If you use the automatically generated
+    /// <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of
+    /// returned clusters will start from this point in the array.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -462,6 +514,19 @@ pub struct ListClusterJobsOutput {
     /// of returned jobs will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListClusterJobsOutput {
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
+    /// that indicates whether the job is a job part, in the case of export jobs. </p>
+    pub fn job_list_entries(&self) -> std::option::Option<&[crate::model::JobListEntry]> {
+        self.job_list_entries.as_deref()
+    }
+    /// <p>HTTP requests are stateless. If you use the automatically generated
+    /// <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list
+    /// of returned jobs will start from this point in the array.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClusterJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClusterJobsOutput");
@@ -540,6 +605,14 @@ pub struct GetSoftwareUpdatesOutput {
     /// To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
     pub updates_uri: std::option::Option<std::string::String>,
 }
+impl GetSoftwareUpdatesOutput {
+    /// <p>The Amazon S3 presigned URL for the update file associated with the specified
+    /// <code>JobId</code> value. The software update will be available for 2 days after this request is made.
+    /// To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+    pub fn updates_uri(&self) -> std::option::Option<&str> {
+        self.updates_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSoftwareUpdatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSoftwareUpdatesOutput");
@@ -594,6 +667,17 @@ pub struct GetSnowballUsageOutput {
     pub snowball_limit: std::option::Option<i32>,
     /// <p>The number of Snow devices that this account is currently using.</p>
     pub snowballs_in_use: std::option::Option<i32>,
+}
+impl GetSnowballUsageOutput {
+    /// <p>The service limit for number of Snow devices this account can have at once. The default
+    /// service limit is 1 (one).</p>
+    pub fn snowball_limit(&self) -> std::option::Option<i32> {
+        self.snowball_limit
+    }
+    /// <p>The number of Snow devices that this account is currently using.</p>
+    pub fn snowballs_in_use(&self) -> std::option::Option<i32> {
+        self.snowballs_in_use
+    }
 }
 impl std::fmt::Debug for GetSnowballUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -659,6 +743,13 @@ pub struct GetJobUnlockCodeOutput {
     /// value can be accessed for up to 360 days after the job has been created.</p>
     pub unlock_code: std::option::Option<std::string::String>,
 }
+impl GetJobUnlockCodeOutput {
+    /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code>
+    /// value can be accessed for up to 360 days after the job has been created.</p>
+    pub fn unlock_code(&self) -> std::option::Option<&str> {
+        self.unlock_code.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobUnlockCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobUnlockCodeOutput");
@@ -709,6 +800,13 @@ pub struct GetJobManifestOutput {
     /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified
     /// <code>JobId</code> value.</p>
     pub manifest_uri: std::option::Option<std::string::String>,
+}
+impl GetJobManifestOutput {
+    /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified
+    /// <code>JobId</code> value.</p>
+    pub fn manifest_uri(&self) -> std::option::Option<&str> {
+        self.manifest_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobManifestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -761,6 +859,16 @@ pub struct DescribeReturnShippingLabelOutput {
     pub status: std::option::Option<crate::model::ShippingLabelStatus>,
     /// <p>The expiration date of the current return shipping label.</p>
     pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeReturnShippingLabelOutput {
+    /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShippingLabelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The expiration date of the current return shipping label.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeReturnShippingLabelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -832,6 +940,18 @@ pub struct DescribeJobOutput {
     /// <p>Information about a specific job part (in the case of an export job), including
     /// shipping information, job status, and other important metadata.</p>
     pub sub_job_metadata: std::option::Option<std::vec::Vec<crate::model::JobMetadata>>,
+}
+impl DescribeJobOutput {
+    /// <p>Information about a specific job, including shipping information, job status, and other
+    /// important metadata.</p>
+    pub fn job_metadata(&self) -> std::option::Option<&crate::model::JobMetadata> {
+        self.job_metadata.as_ref()
+    }
+    /// <p>Information about a specific job part (in the case of an export job), including
+    /// shipping information, job status, and other important metadata.</p>
+    pub fn sub_job_metadata(&self) -> std::option::Option<&[crate::model::JobMetadata]> {
+        self.sub_job_metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -911,6 +1031,13 @@ pub struct DescribeClusterOutput {
     /// and other important metadata.</p>
     pub cluster_metadata: std::option::Option<crate::model::ClusterMetadata>,
 }
+impl DescribeClusterOutput {
+    /// <p>Information about a specific cluster, including shipping information, cluster status,
+    /// and other important metadata.</p>
+    pub fn cluster_metadata(&self) -> std::option::Option<&crate::model::ClusterMetadata> {
+        self.cluster_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterOutput");
@@ -967,6 +1094,18 @@ pub struct DescribeAddressesOutput {
     /// <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of
     /// returned addresses will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAddressesOutput {
+    /// <p>The Snow device shipping addresses that were created for this account.</p>
+    pub fn addresses(&self) -> std::option::Option<&[crate::model::Address]> {
+        self.addresses.as_deref()
+    }
+    /// <p>HTTP requests are stateless. If you use the automatically generated
+    /// <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of
+    /// returned addresses will start from this point in the array.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1043,6 +1182,13 @@ pub struct DescribeAddressOutput {
     /// be shipped to.</p>
     pub address: std::option::Option<crate::model::Address>,
 }
+impl DescribeAddressOutput {
+    /// <p>The address that you want the Snow device(s) associated with a specific job to
+    /// be shipped to.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::Address> {
+        self.address.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAddressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAddressOutput");
@@ -1092,6 +1238,12 @@ impl DescribeAddressOutput {
 pub struct CreateReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
     pub status: std::option::Option<crate::model::ShippingLabelStatus>,
+}
+impl CreateReturnShippingLabelOutput {
+    /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShippingLabelStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateReturnShippingLabelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1143,6 +1295,12 @@ impl CreateReturnShippingLabelOutput {
 pub struct CreateLongTermPricingOutput {
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: std::option::Option<std::string::String>,
+}
+impl CreateLongTermPricingOutput {
+    /// <p>The ID of the long-term pricing type for the device.</p>
+    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+        self.long_term_pricing_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLongTermPricingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1196,6 +1354,13 @@ pub struct CreateJobOutput {
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CreateJobOutput {
+    /// <p>The automatically generated ID for a job, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobOutput");
@@ -1246,6 +1411,12 @@ pub struct CreateClusterOutput {
     /// <p>The automatically generated ID for a cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
+impl CreateClusterOutput {
+    /// <p>The automatically generated ID for a cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterOutput");
@@ -1294,6 +1465,13 @@ pub struct CreateAddressOutput {
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you
     /// create a job to specify which address you want the Snow device for that job shipped to.</p>
     pub address_id: std::option::Option<std::string::String>,
+}
+impl CreateAddressOutput {
+    /// <p>The automatically generated ID for a specific address. You'll use this ID when you
+    /// create a job to specify which address you want the Snow device for that job shipped to.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAddressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

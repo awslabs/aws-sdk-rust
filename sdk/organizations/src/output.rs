@@ -7,6 +7,13 @@ pub struct UpdatePolicyOutput {
     /// changes.</p>
     pub policy: std::option::Option<crate::model::Policy>,
 }
+impl UpdatePolicyOutput {
+    /// <p>A structure that contains details about the updated policy, showing the requested
+    /// changes.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePolicyOutput");
@@ -57,6 +64,13 @@ pub struct UpdateOrganizationalUnitOutput {
     /// <p>A structure that contains the details about the specified OU, including its new
     /// name.</p>
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
+}
+impl UpdateOrganizationalUnitOutput {
+    /// <p>A structure that contains the details about the specified OU, including its new
+    /// name.</p>
+    pub fn organizational_unit(&self) -> std::option::Option<&crate::model::OrganizationalUnit> {
+        self.organizational_unit.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateOrganizationalUnitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -267,6 +281,20 @@ pub struct ListTargetsForPolicyOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTargetsForPolicyOutput {
+    /// <p>A list of structures, each of which contains details about one of the entities to
+    /// which the specified policy is attached.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::PolicyTargetSummary]> {
+        self.targets.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTargetsForPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTargetsForPolicyOutput");
@@ -350,6 +378,19 @@ pub struct ListTagsForResourceOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags that are assigned to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -430,6 +471,19 @@ pub struct ListRootsOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRootsOutput {
+    /// <p>A list of roots that are defined in an organization.</p>
+    pub fn roots(&self) -> std::option::Option<&[crate::model::Root]> {
+        self.roots.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRootsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -512,6 +566,19 @@ pub struct ListPoliciesForTargetOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPoliciesForTargetOutput {
+    /// <p>The list of policies that match the criteria in the request.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
+        self.policies.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPoliciesForTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoliciesForTargetOutput");
@@ -593,6 +660,20 @@ pub struct ListPoliciesOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPoliciesOutput {
+    /// <p>A list of policies that match the filter criteria in the request. The output list
+    /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
+        self.policies.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +758,19 @@ pub struct ListParentsOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListParentsOutput {
+    /// <p>A list of parents for the specified child account or OU.</p>
+    pub fn parents(&self) -> std::option::Option<&[crate::model::Parent]> {
+        self.parents.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListParentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListParentsOutput");
@@ -757,6 +851,19 @@ pub struct ListOrganizationalUnitsForParentOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationalUnitsForParentOutput {
+    /// <p>A list of the OUs in the specified root or parent OU.</p>
+    pub fn organizational_units(&self) -> std::option::Option<&[crate::model::OrganizationalUnit]> {
+        self.organizational_units.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOrganizationalUnitsForParentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -844,6 +951,20 @@ pub struct ListHandshakesForOrganizationOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHandshakesForOrganizationOutput {
+    /// <p>A list of <a>Handshake</a> objects with details about each of the
+    /// handshakes that are associated with an organization.</p>
+    pub fn handshakes(&self) -> std::option::Option<&[crate::model::Handshake]> {
+        self.handshakes.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHandshakesForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHandshakesForOrganizationOutput");
@@ -928,6 +1049,20 @@ pub struct ListHandshakesForAccountOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHandshakesForAccountOutput {
+    /// <p>A list of <a>Handshake</a> objects with details about each of the
+    /// handshakes that is associated with the specified account.</p>
+    pub fn handshakes(&self) -> std::option::Option<&[crate::model::Handshake]> {
+        self.handshakes.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHandshakesForAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHandshakesForAccountOutput");
@@ -1010,6 +1145,19 @@ pub struct ListDelegatedServicesForAccountOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDelegatedServicesForAccountOutput {
+    /// <p>The services for which the account is a delegated administrator.</p>
+    pub fn delegated_services(&self) -> std::option::Option<&[crate::model::DelegatedService]> {
+        self.delegated_services.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDelegatedServicesForAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1096,6 +1244,21 @@ pub struct ListDelegatedAdministratorsOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDelegatedAdministratorsOutput {
+    /// <p>The list of delegated administrators in your organization.</p>
+    pub fn delegated_administrators(
+        &self,
+    ) -> std::option::Option<&[crate::model::DelegatedAdministrator]> {
+        self.delegated_administrators.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDelegatedAdministratorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1184,6 +1347,23 @@ pub struct ListCreateAccountStatusOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCreateAccountStatusOutput {
+    /// <p>A list of objects with details about the requests. Certain elements, such as the
+    /// accountId number, are present in the output only after the account has been successfully
+    /// created.</p>
+    pub fn create_account_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateAccountStatus]> {
+        self.create_account_statuses.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCreateAccountStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1274,6 +1454,19 @@ pub struct ListChildrenOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChildrenOutput {
+    /// <p>The list of children of the specified parent container.</p>
+    pub fn children(&self) -> std::option::Option<&[crate::model::Child]> {
+        self.children.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChildrenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChildrenOutput");
@@ -1357,6 +1550,23 @@ pub struct ListAwsServiceAccessForOrganizationOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAwsServiceAccessForOrganizationOutput {
+    /// <p>A list of the service principals for the services that are enabled to integrate with
+    /// your organization. Each principal is a structure that includes the name and the date
+    /// that it was enabled for integration with AWS Organizations.</p>
+    pub fn enabled_service_principals(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnabledServicePrincipal]> {
+        self.enabled_service_principals.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAwsServiceAccessForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1450,6 +1660,19 @@ pub struct ListAccountsForParentOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAccountsForParentOutput {
+    /// <p>A list of the accounts in the specified root or OU.</p>
+    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+        self.accounts.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccountsForParentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountsForParentOutput");
@@ -1530,6 +1753,19 @@ pub struct ListAccountsOutput {
     /// in a subsequent call to the operation to get the next part of the output. You should repeat this
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccountsOutput {
+    /// <p>A list of objects in the organization.</p>
+    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+        self.accounts.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1638,6 +1874,13 @@ pub struct InviteAccountToOrganizationOutput {
     /// invitation request.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
+impl InviteAccountToOrganizationOutput {
+    /// <p>A structure that contains details about the handshake that is created to support this
+    /// invitation request.</p>
+    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+        self.handshake.as_ref()
+    }
+}
 impl std::fmt::Debug for InviteAccountToOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InviteAccountToOrganizationOutput");
@@ -1690,6 +1933,12 @@ impl InviteAccountToOrganizationOutput {
 pub struct EnablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
     pub root: std::option::Option<crate::model::Root>,
+}
+impl EnablePolicyTypeOutput {
+    /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
+    pub fn root(&self) -> std::option::Option<&crate::model::Root> {
+        self.root.as_ref()
+    }
 }
 impl std::fmt::Debug for EnablePolicyTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1768,6 +2017,13 @@ pub struct EnableAllFeaturesOutput {
     /// to enable all features in the organization.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
+impl EnableAllFeaturesOutput {
+    /// <p>A structure that contains details about the handshake created to support this request
+    /// to enable all features in the organization.</p>
+    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+        self.handshake.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableAllFeaturesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableAllFeaturesOutput");
@@ -1820,6 +2076,12 @@ impl EnableAllFeaturesOutput {
 pub struct DisablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
     pub root: std::option::Option<crate::model::Root>,
+}
+impl DisablePolicyTypeOutput {
+    /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
+    pub fn root(&self) -> std::option::Option<&crate::model::Root> {
+        self.root.as_ref()
+    }
 }
 impl std::fmt::Debug for DisablePolicyTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1927,6 +2189,12 @@ pub struct DescribePolicyOutput {
     /// <p>A structure that contains details about the specified policy.</p>
     pub policy: std::option::Option<crate::model::Policy>,
 }
+impl DescribePolicyOutput {
+    /// <p>A structure that contains details about the specified policy.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePolicyOutput");
@@ -1974,6 +2242,12 @@ impl DescribePolicyOutput {
 pub struct DescribeOrganizationalUnitOutput {
     /// <p>A structure that contains details about the specified OU.</p>
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
+}
+impl DescribeOrganizationalUnitOutput {
+    /// <p>A structure that contains details about the specified OU.</p>
+    pub fn organizational_unit(&self) -> std::option::Option<&crate::model::OrganizationalUnit> {
+        self.organizational_unit.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationalUnitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2033,6 +2307,20 @@ pub struct DescribeOrganizationOutput {
     /// </code> operation.</p>
     /// </important>
     pub organization: std::option::Option<crate::model::Organization>,
+}
+impl DescribeOrganizationOutput {
+    /// <p>A structure that contains information about the organization.</p>
+    /// <important>
+    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you
+    /// shouldn't use it in your apps. It doesn't include any policy type supported by Organizations
+    /// other than SCPs. To determine which policy types are enabled in your organization,
+    /// use the <code>
+    /// <a>ListRoots</a>
+    /// </code> operation.</p>
+    /// </important>
+    pub fn organization(&self) -> std::option::Option<&crate::model::Organization> {
+        self.organization.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2101,6 +2389,12 @@ pub struct DescribeHandshakeOutput {
     /// <p>A structure that contains information about the specified handshake.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
+impl DescribeHandshakeOutput {
+    /// <p>A structure that contains information about the specified handshake.</p>
+    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+        self.handshake.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeHandshakeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHandshakeOutput");
@@ -2151,6 +2445,12 @@ impl DescribeHandshakeOutput {
 pub struct DescribeEffectivePolicyOutput {
     /// <p>The contents of the effective policy.</p>
     pub effective_policy: std::option::Option<crate::model::EffectivePolicy>,
+}
+impl DescribeEffectivePolicyOutput {
+    /// <p>The contents of the effective policy.</p>
+    pub fn effective_policy(&self) -> std::option::Option<&crate::model::EffectivePolicy> {
+        self.effective_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEffectivePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2203,6 +2503,12 @@ pub struct DescribeCreateAccountStatusOutput {
     /// <p>A structure that contains the current status of an account creation request.</p>
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
+impl DescribeCreateAccountStatusOutput {
+    /// <p>A structure that contains the current status of an account creation request.</p>
+    pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
+        self.create_account_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCreateAccountStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCreateAccountStatusOutput");
@@ -2253,6 +2559,12 @@ impl DescribeCreateAccountStatusOutput {
 pub struct DescribeAccountOutput {
     /// <p>A structure that contains information about the requested account.</p>
     pub account: std::option::Option<crate::model::Account>,
+}
+impl DescribeAccountOutput {
+    /// <p>A structure that contains information about the requested account.</p>
+    pub fn account(&self) -> std::option::Option<&crate::model::Account> {
+        self.account.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2423,6 +2735,13 @@ pub struct DeclineHandshakeOutput {
     /// to show the value <code>DECLINED</code>.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
+impl DeclineHandshakeOutput {
+    /// <p>A structure that contains details about the declined handshake. The state is updated
+    /// to show the value <code>DECLINED</code>.</p>
+    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+        self.handshake.as_ref()
+    }
+}
 impl std::fmt::Debug for DeclineHandshakeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeclineHandshakeOutput");
@@ -2476,6 +2795,12 @@ pub struct CreatePolicyOutput {
     /// <p>A structure that contains details about the newly created policy.</p>
     pub policy: std::option::Option<crate::model::Policy>,
 }
+impl CreatePolicyOutput {
+    /// <p>A structure that contains details about the newly created policy.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePolicyOutput");
@@ -2523,6 +2848,12 @@ impl CreatePolicyOutput {
 pub struct CreateOrganizationalUnitOutput {
     /// <p>A structure that contains details about the newly created OU.</p>
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
+}
+impl CreateOrganizationalUnitOutput {
+    /// <p>A structure that contains details about the newly created OU.</p>
+    pub fn organizational_unit(&self) -> std::option::Option<&crate::model::OrganizationalUnit> {
+        self.organizational_unit.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOrganizationalUnitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2575,6 +2906,12 @@ pub struct CreateOrganizationOutput {
     /// <p>A structure that contains details about the newly created organization.</p>
     pub organization: std::option::Option<crate::model::Organization>,
 }
+impl CreateOrganizationOutput {
+    /// <p>A structure that contains details about the newly created organization.</p>
+    pub fn organization(&self) -> std::option::Option<&crate::model::Organization> {
+        self.organization.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOrganizationOutput");
@@ -2626,6 +2963,13 @@ pub struct CreateGovCloudAccountOutput {
     /// <p>Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS
     /// GovCloud (US) account in an organization.</p>
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
+}
+impl CreateGovCloudAccountOutput {
+    /// <p>Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS
+    /// GovCloud (US) account in an organization.</p>
+    pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
+        self.create_account_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGovCloudAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2685,6 +3029,18 @@ pub struct CreateAccountOutput {
     /// <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your
     /// Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
+}
+impl CreateAccountOutput {
+    /// <p>A structure that contains details about the request to create an account. This
+    /// response structure might not be fully populated when you first receive it because
+    /// account creation is an asynchronous process. You can pass the returned
+    /// <code>CreateAccountStatus</code> ID as a parameter to <a>DescribeCreateAccountStatus</a> to get status about the progress of the
+    /// request at later times. You can also check the AWS CloudTrail log for the
+    /// <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your
+    /// Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
+        self.create_account_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2748,6 +3104,12 @@ impl CreateAccountOutput {
 pub struct CancelHandshakeOutput {
     /// <p>A structure that contains details about the handshake that you canceled.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
+}
+impl CancelHandshakeOutput {
+    /// <p>A structure that contains details about the handshake that you canceled.</p>
+    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+        self.handshake.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelHandshakeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2829,6 +3191,12 @@ impl AttachPolicyOutput {
 pub struct AcceptHandshakeOutput {
     /// <p>A structure that contains details about the accepted handshake.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
+}
+impl AcceptHandshakeOutput {
+    /// <p>A structure that contains details about the accepted handshake.</p>
+    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+        self.handshake.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptHandshakeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -10,6 +10,20 @@ pub struct FetchPageResult {
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     pub consumed_i_os: std::option::Option<crate::model::IoUsage>,
 }
+impl FetchPageResult {
+    /// <p>Contains details of the fetched page.</p>
+    pub fn page(&self) -> std::option::Option<&crate::model::Page> {
+        self.page.as_ref()
+    }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+        self.timing_information.as_ref()
+    }
+    /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    pub fn consumed_i_os(&self) -> std::option::Option<&crate::model::IoUsage> {
+        self.consumed_i_os.as_ref()
+    }
+}
 impl std::fmt::Debug for FetchPageResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FetchPageResult");
@@ -92,6 +106,16 @@ pub struct IoUsage {
     /// <p>The number of write I/O requests that the command made.</p>
     pub write_i_os: i64,
 }
+impl IoUsage {
+    /// <p>The number of read I/O requests that the command made.</p>
+    pub fn read_i_os(&self) -> i64 {
+        self.read_i_os
+    }
+    /// <p>The number of write I/O requests that the command made.</p>
+    pub fn write_i_os(&self) -> i64 {
+        self.write_i_os
+    }
+}
 impl std::fmt::Debug for IoUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IoUsage");
@@ -156,6 +180,13 @@ pub struct TimingInformation {
     /// milliseconds.</p>
     pub processing_time_milliseconds: i64,
 }
+impl TimingInformation {
+    /// <p>The amount of time that QLDB spent on processing the command, measured in
+    /// milliseconds.</p>
+    pub fn processing_time_milliseconds(&self) -> i64 {
+        self.processing_time_milliseconds
+    }
+}
 impl std::fmt::Debug for TimingInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimingInformation");
@@ -210,6 +241,16 @@ pub struct Page {
     pub values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
     /// <p>The token of the next page.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl Page {
+    /// <p>A structure that contains values in multiple encoding formats.</p>
+    pub fn values(&self) -> std::option::Option<&[crate::model::ValueHolder]> {
+        self.values.as_deref()
+    }
+    /// <p>The token of the next page.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for Page {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -286,6 +327,16 @@ pub struct ValueHolder {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
     pub ion_text: std::option::Option<std::string::String>,
 }
+impl ValueHolder {
+    /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
+    pub fn ion_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.ion_binary.as_ref()
+    }
+    /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
+    pub fn ion_text(&self) -> std::option::Option<&str> {
+        self.ion_text.as_deref()
+    }
+}
 impl std::fmt::Debug for ValueHolder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValueHolder");
@@ -353,6 +404,20 @@ pub struct ExecuteStatementResult {
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     pub consumed_i_os: std::option::Option<crate::model::IoUsage>,
+}
+impl ExecuteStatementResult {
+    /// <p>Contains the details of the first fetched page.</p>
+    pub fn first_page(&self) -> std::option::Option<&crate::model::Page> {
+        self.first_page.as_ref()
+    }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+        self.timing_information.as_ref()
+    }
+    /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    pub fn consumed_i_os(&self) -> std::option::Option<&crate::model::IoUsage> {
+        self.consumed_i_os.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -434,6 +499,12 @@ pub struct AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
+impl AbortTransactionResult {
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+        self.timing_information.as_ref()
+    }
+}
 impl std::fmt::Debug for AbortTransactionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AbortTransactionResult");
@@ -490,6 +561,24 @@ pub struct CommitTransactionResult {
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     pub consumed_i_os: std::option::Option<crate::model::IoUsage>,
+}
+impl CommitTransactionResult {
+    /// <p>The transaction ID of the committed transaction.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>The commit digest of the committed transaction.</p>
+    pub fn commit_digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.commit_digest.as_ref()
+    }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+        self.timing_information.as_ref()
+    }
+    /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    pub fn consumed_i_os(&self) -> std::option::Option<&crate::model::IoUsage> {
+        self.consumed_i_os.as_ref()
+    }
 }
 impl std::fmt::Debug for CommitTransactionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -590,6 +679,12 @@ pub struct EndSessionResult {
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
+impl EndSessionResult {
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+        self.timing_information.as_ref()
+    }
+}
 impl std::fmt::Debug for EndSessionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndSessionResult");
@@ -642,6 +737,16 @@ pub struct StartTransactionResult {
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
+}
+impl StartTransactionResult {
+    /// <p>The transaction ID of the started transaction.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+        self.timing_information.as_ref()
+    }
 }
 impl std::fmt::Debug for StartTransactionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -712,6 +817,17 @@ pub struct StartSessionResult {
     pub session_token: std::option::Option<std::string::String>,
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
+}
+impl StartSessionResult {
+    /// <p>Session token of the started session. This <code>SessionToken</code> is required for
+    /// every subsequent command that is issued during the current session.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+        self.timing_information.as_ref()
+    }
 }
 impl std::fmt::Debug for StartSessionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -784,6 +900,16 @@ pub struct FetchPageRequest {
     /// <p>Specifies the next page token of the page to be fetched.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl FetchPageRequest {
+    /// <p>Specifies the transaction ID of the page to be fetched.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>Specifies the next page token of the page to be fetched.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for FetchPageRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FetchPageRequest");
@@ -854,6 +980,20 @@ pub struct ExecuteStatementRequest {
     pub statement: std::option::Option<std::string::String>,
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
+}
+impl ExecuteStatementRequest {
+    /// <p>Specifies the transaction ID of the request.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>Specifies the statement of the request.</p>
+    pub fn statement(&self) -> std::option::Option<&str> {
+        self.statement.as_deref()
+    }
+    /// <p>Specifies the parameters for the parameterized statement in the request.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::ValueHolder]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -978,6 +1118,22 @@ pub struct CommitTransactionRequest {
     /// a transaction if and only if the server has processed the exact set of statements sent by
     /// the client, in the same order that client sent them, and with no duplicates.</p>
     pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
+}
+impl CommitTransactionRequest {
+    /// <p>Specifies the transaction ID of the transaction to commit.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction,
+    /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
+    /// the commit with an error if the digest computed on the client does not match the digest
+    /// computed by QLDB.</p>
+    /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
+    /// a transaction if and only if the server has processed the exact set of statements sent by
+    /// the client, in the same order that client sent them, and with no duplicates.</p>
+    pub fn commit_digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.commit_digest.as_ref()
+    }
 }
 impl std::fmt::Debug for CommitTransactionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1117,6 +1273,12 @@ impl StartTransactionRequest {
 pub struct StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
     pub ledger_name: std::option::Option<std::string::String>,
+}
+impl StartSessionRequest {
+    /// <p>The name of the ledger to start a new session against.</p>
+    pub fn ledger_name(&self) -> std::option::Option<&str> {
+        self.ledger_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartSessionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

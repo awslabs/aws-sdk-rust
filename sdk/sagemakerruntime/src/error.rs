@@ -433,6 +433,20 @@ pub struct ModelError {
     /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
     pub log_stream_arn: std::option::Option<std::string::String>,
 }
+impl ModelError {
+    /// <p> Original status code. </p>
+    pub fn original_status_code(&self) -> std::option::Option<i32> {
+        self.original_status_code
+    }
+    /// <p> Original message. </p>
+    pub fn original_message(&self) -> std::option::Option<&str> {
+        self.original_message.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
+    pub fn log_stream_arn(&self) -> std::option::Option<&str> {
+        self.log_stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModelError");

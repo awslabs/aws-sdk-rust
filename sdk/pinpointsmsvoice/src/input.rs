@@ -88,10 +88,7 @@ impl CreateConfigurationSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -294,7 +291,7 @@ impl CreateConfigurationSetEventDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1144,10 +1141,7 @@ impl SendVoiceMessageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_voice_message(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_voice_message(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1360,7 +1354,7 @@ impl UpdateConfigurationSetEventDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1434,6 +1428,22 @@ pub struct UpdateConfigurationSetEventDestinationInput {
     /// EventDestinationName
     pub event_destination_name: std::option::Option<std::string::String>,
 }
+impl UpdateConfigurationSetEventDestinationInput {
+    /// ConfigurationSetName
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// An object that defines a single event destination.
+    pub fn event_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
+        self.event_destination.as_ref()
+    }
+    /// EventDestinationName
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationInput");
@@ -1459,6 +1469,28 @@ pub struct SendVoiceMessageInput {
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
     pub origination_phone_number: std::option::Option<std::string::String>,
 }
+impl SendVoiceMessageInput {
+    /// The phone number that appears on recipients' devices when they receive the message.
+    pub fn caller_id(&self) -> std::option::Option<&str> {
+        self.caller_id.as_deref()
+    }
+    /// The name of the configuration set that you want to use to send the message.
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// An object that contains a voice message and information about the recipient that you want to send it to.
+    pub fn content(&self) -> std::option::Option<&crate::model::VoiceMessageContent> {
+        self.content.as_ref()
+    }
+    /// The phone number that you want to send the voice message to.
+    pub fn destination_phone_number(&self) -> std::option::Option<&str> {
+        self.destination_phone_number.as_deref()
+    }
+    /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
+    pub fn origination_phone_number(&self) -> std::option::Option<&str> {
+        self.origination_phone_number.as_deref()
+    }
+}
 impl std::fmt::Debug for SendVoiceMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendVoiceMessageInput");
@@ -1480,6 +1512,16 @@ pub struct ListConfigurationSetsInput {
     /// Used to specify the number of items that should be returned in the response.
     pub page_size: std::option::Option<std::string::String>,
 }
+impl ListConfigurationSetsInput {
+    /// A token returned from a previous call to the API that indicates the position in the list of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Used to specify the number of items that should be returned in the response.
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationSetsInput");
@@ -1495,6 +1537,12 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
 pub struct GetConfigurationSetEventDestinationsInput {
     /// ConfigurationSetName
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl GetConfigurationSetEventDestinationsInput {
+    /// ConfigurationSetName
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1513,6 +1561,16 @@ pub struct DeleteConfigurationSetEventDestinationInput {
     /// EventDestinationName
     pub event_destination_name: std::option::Option<std::string::String>,
 }
+impl DeleteConfigurationSetEventDestinationInput {
+    /// ConfigurationSetName
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// EventDestinationName
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationInput");
@@ -1528,6 +1586,12 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
 pub struct DeleteConfigurationSetInput {
     /// ConfigurationSetName
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl DeleteConfigurationSetInput {
+    /// ConfigurationSetName
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1548,6 +1612,22 @@ pub struct CreateConfigurationSetEventDestinationInput {
     /// A name that identifies the event destination.
     pub event_destination_name: std::option::Option<std::string::String>,
 }
+impl CreateConfigurationSetEventDestinationInput {
+    /// ConfigurationSetName
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// An object that defines a single event destination.
+    pub fn event_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
+        self.event_destination.as_ref()
+    }
+    /// A name that identifies the event destination.
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationInput");
@@ -1564,6 +1644,12 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
 pub struct CreateConfigurationSetInput {
     /// The name that you want to give the configuration set.
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl CreateConfigurationSetInput {
+    /// The name that you want to give the configuration set.
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

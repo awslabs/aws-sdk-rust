@@ -8,6 +8,13 @@ pub struct UpdateRecordsOutput {
     /// updated.
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
 }
+impl UpdateRecordsOutput {
+    /// A list of records that have been
+    /// updated.
+    pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
+        self.records.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecordsOutput");
@@ -132,6 +139,21 @@ pub struct SetIdentityPoolConfigurationOutput {
     /// Options to apply to this identity pool for Amazon Cognito streams.
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
 }
+impl SetIdentityPoolConfigurationOutput {
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+    /// Amazon Cognito.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>Options to apply to this identity pool for push synchronization.</p>
+    pub fn push_sync(&self) -> std::option::Option<&crate::model::PushSync> {
+        self.push_sync.as_ref()
+    }
+    /// Options to apply to this identity pool for Amazon Cognito streams.
+    pub fn cognito_streams(&self) -> std::option::Option<&crate::model::CognitoStreams> {
+        self.cognito_streams.as_ref()
+    }
+}
 impl std::fmt::Debug for SetIdentityPoolConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityPoolConfigurationOutput");
@@ -244,6 +266,12 @@ pub struct RegisterDeviceOutput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl RegisterDeviceOutput {
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterDeviceOutput");
@@ -315,6 +343,51 @@ pub struct ListRecordsOutput {
     /// A token containing a session ID,
     /// identity ID, and expiration.
     pub sync_session_token: std::option::Option<std::string::String>,
+}
+impl ListRecordsOutput {
+    /// A list of all records.
+    pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
+        self.records.as_deref()
+    }
+    /// A pagination token for obtaining the next
+    /// page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Total number of records.
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// Server sync count for this
+    /// dataset.
+    pub fn dataset_sync_count(&self) -> std::option::Option<i64> {
+        self.dataset_sync_count
+    }
+    /// The user/device that made the last
+    /// change to this record.
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// Names of merged
+    /// datasets.
+    pub fn merged_dataset_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.merged_dataset_names.as_deref()
+    }
+    /// Indicates whether the dataset
+    /// exists.
+    pub fn dataset_exists(&self) -> bool {
+        self.dataset_exists
+    }
+    /// A boolean value
+    /// specifying whether to delete the dataset locally.
+    pub fn dataset_deleted_after_requested_sync_count(&self) -> bool {
+        self.dataset_deleted_after_requested_sync_count
+    }
+    /// A token containing a session ID,
+    /// identity ID, and expiration.
+    pub fn sync_session_token(&self) -> std::option::Option<&str> {
+        self.sync_session_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -525,6 +598,28 @@ pub struct ListIdentityPoolUsageOutput {
     /// the next page of results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIdentityPoolUsageOutput {
+    /// Usage information for
+    /// the identity pools.
+    pub fn identity_pool_usages(&self) -> std::option::Option<&[crate::model::IdentityPoolUsage]> {
+        self.identity_pool_usages.as_deref()
+    }
+    /// The maximum number of results to
+    /// be returned.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Total number of identities for the
+    /// identity pool.
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// A pagination token for obtaining
+    /// the next page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIdentityPoolUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIdentityPoolUsageOutput");
@@ -639,6 +734,21 @@ pub struct ListDatasetsOutput {
     /// page of results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatasetsOutput {
+    /// A set of datasets.
+    pub fn datasets(&self) -> std::option::Option<&[crate::model::Dataset]> {
+        self.datasets.as_deref()
+    }
+    /// Number of datasets returned.
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// A pagination token for obtaining the next
+    /// page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsOutput");
@@ -729,6 +839,21 @@ pub struct GetIdentityPoolConfigurationOutput {
     /// Options to apply to this identity pool for Amazon Cognito streams.
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
 }
+impl GetIdentityPoolConfigurationOutput {
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+    /// Amazon Cognito.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>Options to apply to this identity pool for push synchronization.</p>
+    pub fn push_sync(&self) -> std::option::Option<&crate::model::PushSync> {
+        self.push_sync.as_ref()
+    }
+    /// Options to apply to this identity pool for Amazon Cognito streams.
+    pub fn cognito_streams(&self) -> std::option::Option<&crate::model::CognitoStreams> {
+        self.cognito_streams.as_ref()
+    }
+}
 impl std::fmt::Debug for GetIdentityPoolConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityPoolConfigurationOutput");
@@ -812,6 +937,15 @@ pub struct GetCognitoEventsOutput {
     pub events:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetCognitoEventsOutput {
+    /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    pub fn events(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.events.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCognitoEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCognitoEventsOutput");
@@ -890,6 +1024,34 @@ pub struct GetBulkPublishDetailsOutput {
     pub bulk_publish_status: std::option::Option<crate::model::BulkPublishStatus>,
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
     pub failure_message: std::option::Option<std::string::String>,
+}
+impl GetBulkPublishDetailsOutput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// The date/time at which the last bulk publish was initiated.
+    pub fn bulk_publish_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.bulk_publish_start_time.as_ref()
+    }
+    /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
+    pub fn bulk_publish_complete_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.bulk_publish_complete_time.as_ref()
+    }
+    /// Status of the last bulk publish operation, valid values are:
+    /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
+    /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
+    /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
+    /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
+    pub fn bulk_publish_status(&self) -> std::option::Option<&crate::model::BulkPublishStatus> {
+        self.bulk_publish_status.as_ref()
+    }
+    /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBulkPublishDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1023,6 +1185,13 @@ pub struct DescribeIdentityUsageOutput {
     /// identity.
     pub identity_usage: std::option::Option<crate::model::IdentityUsage>,
 }
+impl DescribeIdentityUsageOutput {
+    /// Usage information for the
+    /// identity.
+    pub fn identity_usage(&self) -> std::option::Option<&crate::model::IdentityUsage> {
+        self.identity_usage.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeIdentityUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdentityUsageOutput");
@@ -1077,6 +1246,13 @@ pub struct DescribeIdentityPoolUsageOutput {
     /// Information about the
     /// usage of the identity pool.
     pub identity_pool_usage: std::option::Option<crate::model::IdentityPoolUsage>,
+}
+impl DescribeIdentityPoolUsageOutput {
+    /// Information about the
+    /// usage of the identity pool.
+    pub fn identity_pool_usage(&self) -> std::option::Option<&crate::model::IdentityPoolUsage> {
+        self.identity_pool_usage.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityPoolUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1135,6 +1311,16 @@ pub struct DescribeDatasetOutput {
     /// if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value
     /// pairs.
     pub dataset: std::option::Option<crate::model::Dataset>,
+}
+impl DescribeDatasetOutput {
+    /// Meta data for a collection of data for an
+    /// identity. An identity can have multiple datasets. A dataset can be general or associated with
+    /// a particular entity in an application (like a saved game). Datasets are automatically created
+    /// if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value
+    /// pairs.
+    pub fn dataset(&self) -> std::option::Option<&crate::model::Dataset> {
+        self.dataset.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1197,6 +1383,16 @@ pub struct DeleteDatasetOutput {
     /// up to 1MB of key-value pairs.
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
+impl DeleteDatasetOutput {
+    /// A collection of data for an identity pool.
+    /// An identity pool can have multiple datasets. A dataset is per identity and can be general or
+    /// associated with a particular entity in an application (like a saved game). Datasets are
+    /// automatically created if they don't exist. Data is synced by dataset, and a dataset can hold
+    /// up to 1MB of key-value pairs.
+    pub fn dataset(&self) -> std::option::Option<&crate::model::Dataset> {
+        self.dataset.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetOutput");
@@ -1254,6 +1450,14 @@ pub struct BulkPublishOutput {
     /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
     /// unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
+}
+impl BulkPublishOutput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BulkPublishOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

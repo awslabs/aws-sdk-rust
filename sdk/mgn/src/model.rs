@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>Validate exception field message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>Validate exception field name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Validate exception field message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -254,6 +264,27 @@ pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>Replication Configuration replicated disk IOPs.</p>
     pub iops: i64,
 }
+impl ReplicationConfigurationReplicatedDisk {
+    /// <p>Replication Configuration replicated disk device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>Replication Configuration replicated disk boot disk.</p>
+    pub fn is_boot_disk(&self) -> std::option::Option<bool> {
+        self.is_boot_disk
+    }
+    /// <p>Replication Configuration replicated disk staging disk type.</p>
+    pub fn staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>
+    {
+        self.staging_disk_type.as_ref()
+    }
+    /// <p>Replication Configuration replicated disk IOPs.</p>
+    pub fn iops(&self) -> i64 {
+        self.iops
+    }
+}
 impl std::fmt::Debug for ReplicationConfigurationReplicatedDisk {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationConfigurationReplicatedDisk");
@@ -481,6 +512,12 @@ pub struct Licensing {
     /// <p>Configure BYOL OS licensing.</p>
     pub os_byol: std::option::Option<bool>,
 }
+impl Licensing {
+    /// <p>Configure BYOL OS licensing.</p>
+    pub fn os_byol(&self) -> std::option::Option<bool> {
+        self.os_byol
+    }
+}
 impl std::fmt::Debug for Licensing {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Licensing");
@@ -652,6 +689,40 @@ pub struct SourceProperties {
     pub ram_bytes: i64,
     /// <p>Source server OS.</p>
     pub os: std::option::Option<crate::model::Os>,
+}
+impl SourceProperties {
+    /// <p>Source server last update date and time.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&str> {
+        self.last_updated_date_time.as_deref()
+    }
+    /// <p>Source server recommended instance type.</p>
+    pub fn recommended_instance_type(&self) -> std::option::Option<&str> {
+        self.recommended_instance_type.as_deref()
+    }
+    /// <p>Source server identification hints.</p>
+    pub fn identification_hints(&self) -> std::option::Option<&crate::model::IdentificationHints> {
+        self.identification_hints.as_ref()
+    }
+    /// <p>Source server network interfaces.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
+    /// <p>Source Server disks.</p>
+    pub fn disks(&self) -> std::option::Option<&[crate::model::Disk]> {
+        self.disks.as_deref()
+    }
+    /// <p>Source Server CPUs.</p>
+    pub fn cpus(&self) -> std::option::Option<&[crate::model::Cpu]> {
+        self.cpus.as_deref()
+    }
+    /// <p>Source server RAM in bytes.</p>
+    pub fn ram_bytes(&self) -> i64 {
+        self.ram_bytes
+    }
+    /// <p>Source server OS.</p>
+    pub fn os(&self) -> std::option::Option<&crate::model::Os> {
+        self.os.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -832,6 +903,12 @@ pub struct Os {
     /// <p>OS full string.</p>
     pub full_string: std::option::Option<std::string::String>,
 }
+impl Os {
+    /// <p>OS full string.</p>
+    pub fn full_string(&self) -> std::option::Option<&str> {
+        self.full_string.as_deref()
+    }
+}
 impl std::fmt::Debug for Os {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Os");
@@ -881,6 +958,16 @@ pub struct Cpu {
     pub cores: i64,
     /// <p>The source server's CPU model name.</p>
     pub model_name: std::option::Option<std::string::String>,
+}
+impl Cpu {
+    /// <p>The number of CPU cores on the source server.</p>
+    pub fn cores(&self) -> i64 {
+        self.cores
+    }
+    /// <p>The source server's CPU model name.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
 }
 impl std::fmt::Debug for Cpu {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -944,6 +1031,16 @@ pub struct Disk {
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
     pub bytes: i64,
+}
+impl Disk {
+    /// <p>The disk or device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The amount of storage on the disk in bytes.</p>
+    pub fn bytes(&self) -> i64 {
+        self.bytes
+    }
 }
 impl std::fmt::Debug for Disk {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1009,6 +1106,20 @@ pub struct NetworkInterface {
     pub ips: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Network interface primary IP.</p>
     pub is_primary: std::option::Option<bool>,
+}
+impl NetworkInterface {
+    /// <p>Network interface Mac address.</p>
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+    /// <p>Network interface IPs.</p>
+    pub fn ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.ips.as_deref()
+    }
+    /// <p>Network interface primary IP.</p>
+    pub fn is_primary(&self) -> std::option::Option<bool> {
+        self.is_primary
+    }
 }
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1098,6 +1209,24 @@ pub struct IdentificationHints {
     pub vm_ware_uuid: std::option::Option<std::string::String>,
     /// <p>AWS Instance ID identification hint.</p>
     pub aws_instance_id: std::option::Option<std::string::String>,
+}
+impl IdentificationHints {
+    /// <p>FQDN address identification hint.</p>
+    pub fn fqdn(&self) -> std::option::Option<&str> {
+        self.fqdn.as_deref()
+    }
+    /// <p>Hostname identification hint.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>vmWare UUID identification hint.</p>
+    pub fn vm_ware_uuid(&self) -> std::option::Option<&str> {
+        self.vm_ware_uuid.as_deref()
+    }
+    /// <p>AWS Instance ID identification hint.</p>
+    pub fn aws_instance_id(&self) -> std::option::Option<&str> {
+        self.aws_instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for IdentificationHints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1200,6 +1329,36 @@ pub struct LifeCycle {
     pub last_cutover: std::option::Option<crate::model::LifeCycleLastCutover>,
     /// <p>Lifecycle state.</p>
     pub state: std::option::Option<crate::model::LifeCycleState>,
+}
+impl LifeCycle {
+    /// <p>Lifecycle added to service data and time.</p>
+    pub fn added_to_service_date_time(&self) -> std::option::Option<&str> {
+        self.added_to_service_date_time.as_deref()
+    }
+    /// <p>Lifecycle replication initiation date and time.</p>
+    pub fn first_byte_date_time(&self) -> std::option::Option<&str> {
+        self.first_byte_date_time.as_deref()
+    }
+    /// <p>Lifecycle elapsed time and duration.</p>
+    pub fn elapsed_replication_duration(&self) -> std::option::Option<&str> {
+        self.elapsed_replication_duration.as_deref()
+    }
+    /// <p>Lifecycle last seen date and time.</p>
+    pub fn last_seen_by_service_date_time(&self) -> std::option::Option<&str> {
+        self.last_seen_by_service_date_time.as_deref()
+    }
+    /// <p>Lifecycle last Test.</p>
+    pub fn last_test(&self) -> std::option::Option<&crate::model::LifeCycleLastTest> {
+        self.last_test.as_ref()
+    }
+    /// <p>Lifecycle last Cutover.</p>
+    pub fn last_cutover(&self) -> std::option::Option<&crate::model::LifeCycleLastCutover> {
+        self.last_cutover.as_ref()
+    }
+    /// <p>Lifecycle state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for LifeCycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1455,6 +1614,20 @@ pub struct LifeCycleLastCutover {
     /// <p>Lifecycle Cutover finalized date and time.</p>
     pub finalized: std::option::Option<crate::model::LifeCycleLastCutoverFinalized>,
 }
+impl LifeCycleLastCutover {
+    /// <p>Lifecycle last Cutover initiated.</p>
+    pub fn initiated(&self) -> std::option::Option<&crate::model::LifeCycleLastCutoverInitiated> {
+        self.initiated.as_ref()
+    }
+    /// <p>Lifecycle last Cutover reverted.</p>
+    pub fn reverted(&self) -> std::option::Option<&crate::model::LifeCycleLastCutoverReverted> {
+        self.reverted.as_ref()
+    }
+    /// <p>Lifecycle Cutover finalized date and time.</p>
+    pub fn finalized(&self) -> std::option::Option<&crate::model::LifeCycleLastCutoverFinalized> {
+        self.finalized.as_ref()
+    }
+}
 impl std::fmt::Debug for LifeCycleLastCutover {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifeCycleLastCutover");
@@ -1538,6 +1711,12 @@ pub struct LifeCycleLastCutoverFinalized {
     /// <p>Lifecycle Cutover finalized date and time.</p>
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
+impl LifeCycleLastCutoverFinalized {
+    /// <p>Lifecycle Cutover finalized date and time.</p>
+    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+        self.api_call_date_time.as_deref()
+    }
+}
 impl std::fmt::Debug for LifeCycleLastCutoverFinalized {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifeCycleLastCutoverFinalized");
@@ -1588,6 +1767,12 @@ impl LifeCycleLastCutoverFinalized {
 pub struct LifeCycleLastCutoverReverted {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
     pub api_call_date_time: std::option::Option<std::string::String>,
+}
+impl LifeCycleLastCutoverReverted {
+    /// <p>Lifecycle last Cutover reverted API call date time.</p>
+    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+        self.api_call_date_time.as_deref()
+    }
 }
 impl std::fmt::Debug for LifeCycleLastCutoverReverted {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1641,6 +1826,16 @@ pub struct LifeCycleLastCutoverInitiated {
     pub api_call_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle last Cutover initiated by Job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl LifeCycleLastCutoverInitiated {
+    /// <p/>
+    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+        self.api_call_date_time.as_deref()
+    }
+    /// <p>Lifecycle last Cutover initiated by Job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for LifeCycleLastCutoverInitiated {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1709,6 +1904,20 @@ pub struct LifeCycleLastTest {
     pub reverted: std::option::Option<crate::model::LifeCycleLastTestReverted>,
     /// <p>Lifecycle last Test finlized.</p>
     pub finalized: std::option::Option<crate::model::LifeCycleLastTestFinalized>,
+}
+impl LifeCycleLastTest {
+    /// <p>Lifecycle last Test initiated.</p>
+    pub fn initiated(&self) -> std::option::Option<&crate::model::LifeCycleLastTestInitiated> {
+        self.initiated.as_ref()
+    }
+    /// <p>Lifecycle last Test reverted.</p>
+    pub fn reverted(&self) -> std::option::Option<&crate::model::LifeCycleLastTestReverted> {
+        self.reverted.as_ref()
+    }
+    /// <p>Lifecycle last Test finlized.</p>
+    pub fn finalized(&self) -> std::option::Option<&crate::model::LifeCycleLastTestFinalized> {
+        self.finalized.as_ref()
+    }
 }
 impl std::fmt::Debug for LifeCycleLastTest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1793,6 +2002,12 @@ pub struct LifeCycleLastTestFinalized {
     /// <p>Lifecycle Test failed API call date and time.</p>
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
+impl LifeCycleLastTestFinalized {
+    /// <p>Lifecycle Test failed API call date and time.</p>
+    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+        self.api_call_date_time.as_deref()
+    }
+}
 impl std::fmt::Debug for LifeCycleLastTestFinalized {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifeCycleLastTestFinalized");
@@ -1843,6 +2058,12 @@ impl LifeCycleLastTestFinalized {
 pub struct LifeCycleLastTestReverted {
     /// <p>Lifecycle last Test reverted API call date and time.</p>
     pub api_call_date_time: std::option::Option<std::string::String>,
+}
+impl LifeCycleLastTestReverted {
+    /// <p>Lifecycle last Test reverted API call date and time.</p>
+    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+        self.api_call_date_time.as_deref()
+    }
 }
 impl std::fmt::Debug for LifeCycleLastTestReverted {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1896,6 +2117,16 @@ pub struct LifeCycleLastTestInitiated {
     pub api_call_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle last Test initiated Job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl LifeCycleLastTestInitiated {
+    /// <p>Lifecycle last Test initiated API call date and time.</p>
+    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+        self.api_call_date_time.as_deref()
+    }
+    /// <p>Lifecycle last Test initiated Job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for LifeCycleLastTestInitiated {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1971,6 +2202,40 @@ pub struct DataReplicationInfo {
     pub data_replication_initiation: std::option::Option<crate::model::DataReplicationInitiation>,
     /// <p>Error in obtaining data replication info.</p>
     pub data_replication_error: std::option::Option<crate::model::DataReplicationError>,
+}
+impl DataReplicationInfo {
+    /// <p>Request to query data replication lag durating.</p>
+    pub fn lag_duration(&self) -> std::option::Option<&str> {
+        self.lag_duration.as_deref()
+    }
+    /// <p>Request to query the time when data replication will be complete.</p>
+    pub fn eta_date_time(&self) -> std::option::Option<&str> {
+        self.eta_date_time.as_deref()
+    }
+    /// <p>Request to query disks replicated.</p>
+    pub fn replicated_disks(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataReplicationInfoReplicatedDisk]> {
+        self.replicated_disks.as_deref()
+    }
+    /// <p>Request to query the data replication state.</p>
+    pub fn data_replication_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DataReplicationState> {
+        self.data_replication_state.as_ref()
+    }
+    /// <p>Request to query whether data replication has been initiated.</p>
+    pub fn data_replication_initiation(
+        &self,
+    ) -> std::option::Option<&crate::model::DataReplicationInitiation> {
+        self.data_replication_initiation.as_ref()
+    }
+    /// <p>Error in obtaining data replication info.</p>
+    pub fn data_replication_error(
+        &self,
+    ) -> std::option::Option<&crate::model::DataReplicationError> {
+        self.data_replication_error.as_ref()
+    }
 }
 impl std::fmt::Debug for DataReplicationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2120,6 +2385,16 @@ pub struct DataReplicationError {
     pub error: std::option::Option<crate::model::DataReplicationErrorString>,
     /// <p>Error in data replication.</p>
     pub raw_error: std::option::Option<std::string::String>,
+}
+impl DataReplicationError {
+    /// <p>Error in data replication.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::DataReplicationErrorString> {
+        self.error.as_ref()
+    }
+    /// <p>Error in data replication.</p>
+    pub fn raw_error(&self) -> std::option::Option<&str> {
+        self.raw_error.as_deref()
+    }
 }
 impl std::fmt::Debug for DataReplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2347,6 +2622,20 @@ pub struct DataReplicationInitiation {
     /// <p>Request to query data initiation steps.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>,
 }
+impl DataReplicationInitiation {
+    /// <p>Request to query data initiation start date and time.</p>
+    pub fn start_date_time(&self) -> std::option::Option<&str> {
+        self.start_date_time.as_deref()
+    }
+    /// <p>Request to query next data initiation date and time.</p>
+    pub fn next_attempt_date_time(&self) -> std::option::Option<&str> {
+        self.next_attempt_date_time.as_deref()
+    }
+    /// <p>Request to query data initiation steps.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::DataReplicationInitiationStep]> {
+        self.steps.as_deref()
+    }
+}
 impl std::fmt::Debug for DataReplicationInitiation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataReplicationInitiation");
@@ -2441,6 +2730,18 @@ pub struct DataReplicationInitiationStep {
     pub name: std::option::Option<crate::model::DataReplicationInitiationStepName>,
     /// <p>Request to query data initiation status.</p>
     pub status: std::option::Option<crate::model::DataReplicationInitiationStepStatus>,
+}
+impl DataReplicationInitiationStep {
+    /// <p>Request to query data initiation step name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::DataReplicationInitiationStepName> {
+        self.name.as_ref()
+    }
+    /// <p>Request to query data initiation status.</p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::DataReplicationInitiationStepStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DataReplicationInitiationStep {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2811,6 +3112,28 @@ pub struct DataReplicationInfoReplicatedDisk {
     /// <p>Request to query data replication backlog size in bytes.</p>
     pub backlogged_storage_bytes: i64,
 }
+impl DataReplicationInfoReplicatedDisk {
+    /// <p>Request to query device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>Request to query total amount of data replicated in bytes.</p>
+    pub fn total_storage_bytes(&self) -> i64 {
+        self.total_storage_bytes
+    }
+    /// <p>Request to query amount of data replicated in bytes.</p>
+    pub fn replicated_storage_bytes(&self) -> i64 {
+        self.replicated_storage_bytes
+    }
+    /// <p>Request to query amount of data rescanned in bytes.</p>
+    pub fn rescanned_storage_bytes(&self) -> i64 {
+        self.rescanned_storage_bytes
+    }
+    /// <p>Request to query data replication backlog size in bytes.</p>
+    pub fn backlogged_storage_bytes(&self) -> i64 {
+        self.backlogged_storage_bytes
+    }
+}
 impl std::fmt::Debug for DataReplicationInfoReplicatedDisk {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataReplicationInfoReplicatedDisk");
@@ -2914,6 +3237,20 @@ pub struct LaunchedInstance {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Configure launced instance first boot.</p>
     pub first_boot: std::option::Option<crate::model::FirstBoot>,
+}
+impl LaunchedInstance {
+    /// <p>Configure launced instance EC2 ID.</p>
+    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+        self.ec2_instance_id.as_deref()
+    }
+    /// <p>Configure launced instance Job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Configure launced instance first boot.</p>
+    pub fn first_boot(&self) -> std::option::Option<&crate::model::FirstBoot> {
+        self.first_boot.as_ref()
+    }
 }
 impl std::fmt::Debug for LaunchedInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3059,6 +3396,15 @@ pub struct ChangeServerLifeCycleStateSourceServerLifecycle {
     pub state:
         std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
+impl ChangeServerLifeCycleStateSourceServerLifecycle {
+    /// <p>The request to change the source server migration lifecycle state.</p>
+    pub fn state(
+        &self,
+    ) -> std::option::Option<&crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>
+    {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for ChangeServerLifeCycleStateSourceServerLifecycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangeServerLifeCycleStateSourceServerLifecycle");
@@ -3199,6 +3545,49 @@ pub struct Job {
     /// <p>Tags associated with spcific Job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Job {
+    /// <p>Job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>the ARN of the specific Job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Job type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Job initiated by field.</p>
+    pub fn initiated_by(&self) -> std::option::Option<&crate::model::InitiatedBy> {
+        self.initiated_by.as_ref()
+    }
+    /// <p>Job creation time.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+        self.creation_date_time.as_deref()
+    }
+    /// <p>Job end time.</p>
+    pub fn end_date_time(&self) -> std::option::Option<&str> {
+        self.end_date_time.as_deref()
+    }
+    /// <p>Job status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Servers participating in a specific Job.</p>
+    pub fn participating_servers(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParticipatingServer]> {
+        self.participating_servers.as_deref()
+    }
+    /// <p>Tags associated with spcific Job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3392,6 +3781,16 @@ pub struct ParticipatingServer {
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Participating server launch status.</p>
     pub launch_status: std::option::Option<crate::model::LaunchStatus>,
+}
+impl ParticipatingServer {
+    /// <p>Participating server Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Participating server launch status.</p>
+    pub fn launch_status(&self) -> std::option::Option<&crate::model::LaunchStatus> {
+        self.launch_status.as_ref()
+    }
 }
 impl std::fmt::Debug for ParticipatingServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3719,6 +4118,43 @@ pub struct SourceServer {
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
 }
+impl SourceServer {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for SourceServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceServer");
@@ -3892,6 +4328,16 @@ pub struct DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by archived.</p>
     pub is_archived: std::option::Option<bool>,
 }
+impl DescribeSourceServersRequestFilters {
+    /// <p>Request to filter Source Servers list by Source Server ID.</p>
+    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_server_i_ds.as_deref()
+    }
+    /// <p>Request to filter Source Servers list by archived.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+}
 impl std::fmt::Debug for DescribeSourceServersRequestFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSourceServersRequestFilters");
@@ -3994,6 +4440,83 @@ pub struct ReplicationConfigurationTemplate {
     /// <p>Replication Configuration template Tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ReplicationConfigurationTemplate {
+    /// <p>Replication Configuration template template ID.</p>
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.replication_configuration_template_id.as_deref()
+    }
+    /// <p>Replication Configuration template ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Replication Configuration template Staging Area subnet ID.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Replication Configuration template server Security Groups IDs.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Replication Configuration template server instance type.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Replication Configuration template use Dedicated Replication Server.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Replication Configuration template EBS encryption.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Replication Configuration template EBS encryption key ARN.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Replication Configuration template bandwidth throtting.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Replication Configuration template data plane routing.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Replication Configuration template create Public IP.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Replication Configuration template Staging Area Tags.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
+    /// <p>Replication Configuration template Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicationConfigurationTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4344,6 +4867,20 @@ pub struct JobLog {
     /// <p>Job event data</p>
     pub event_data: std::option::Option<crate::model::JobLogEventData>,
 }
+impl JobLog {
+    /// <p>Job log event date and time.</p>
+    pub fn log_date_time(&self) -> std::option::Option<&str> {
+        self.log_date_time.as_deref()
+    }
+    /// <p>Job log event.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::JobLogEvent> {
+        self.event.as_ref()
+    }
+    /// <p>Job event data</p>
+    pub fn event_data(&self) -> std::option::Option<&crate::model::JobLogEventData> {
+        self.event_data.as_ref()
+    }
+}
 impl std::fmt::Debug for JobLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobLog");
@@ -4429,6 +4966,24 @@ pub struct JobLogEventData {
     pub target_instance_id: std::option::Option<std::string::String>,
     /// <p>Job error.</p>
     pub raw_error: std::option::Option<std::string::String>,
+}
+impl JobLogEventData {
+    /// <p>Job Event Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Job Event conversion Server ID.</p>
+    pub fn conversion_server_id(&self) -> std::option::Option<&str> {
+        self.conversion_server_id.as_deref()
+    }
+    /// <p>Job Event Target instance ID.</p>
+    pub fn target_instance_id(&self) -> std::option::Option<&str> {
+        self.target_instance_id.as_deref()
+    }
+    /// <p>Job error.</p>
+    pub fn raw_error(&self) -> std::option::Option<&str> {
+        self.raw_error.as_deref()
+    }
 }
 impl std::fmt::Debug for JobLogEventData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4657,6 +5212,20 @@ pub struct DescribeJobsRequestFilters {
     pub from_date: std::option::Option<std::string::String>,
     /// <p>Request to describe Job log by last date.</p>
     pub to_date: std::option::Option<std::string::String>,
+}
+impl DescribeJobsRequestFilters {
+    /// <p>Request to describe Job log filters by job ID.</p>
+    pub fn job_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_i_ds.as_deref()
+    }
+    /// <p>Request to describe Job log filters by date.</p>
+    pub fn from_date(&self) -> std::option::Option<&str> {
+        self.from_date.as_deref()
+    }
+    /// <p>Request to describe Job log by last date.</p>
+    pub fn to_date(&self) -> std::option::Option<&str> {
+        self.to_date.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobsRequestFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -275,10 +275,7 @@ impl CreateChangesetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_changeset(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_changeset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -617,10 +614,7 @@ impl GetWorkingLocationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_working_location(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_working_location(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -701,6 +695,24 @@ pub struct GetWorkingLocationInput {
     /// </ul>
     pub location_type: std::option::Option<crate::model::LocationType>,
 }
+impl GetWorkingLocationInput {
+    /// <p>Specify the type of the working location.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
+    /// working with FinSpace Notebooks that run on SageMaker studio.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
+    /// data content and then use the location with the changeset creation operation.</p>
+    /// </li>
+    /// </ul>
+    pub fn location_type(&self) -> std::option::Option<&crate::model::LocationType> {
+        self.location_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWorkingLocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkingLocationInput");
@@ -717,6 +729,16 @@ pub struct GetProgrammaticAccessCredentialsInput {
     pub duration_in_minutes: i64,
     /// <p>The habanero environment identifier.</p>
     pub environment_id: std::option::Option<std::string::String>,
+}
+impl GetProgrammaticAccessCredentialsInput {
+    /// <p>The time duration in which the credentials remain valid. </p>
+    pub fn duration_in_minutes(&self) -> i64 {
+        self.duration_in_minutes
+    }
+    /// <p>The habanero environment identifier.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProgrammaticAccessCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -768,6 +790,65 @@ pub struct CreateChangesetInput {
     /// <p>Metadata tags to apply to this changeset.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateChangesetInput {
+    /// <p>The unique identifier for the FinSpace dataset in which the changeset will be
+    /// created.</p>
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
+        self.dataset_id.as_deref()
+    }
+    /// <p>Option to indicate how a changeset will be applied to a dataset.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
+    /// loaded changesets.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
+    /// prior loaded changesets.</p>
+    /// </li>
+    /// </ul>
+    pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
+        self.change_type.as_ref()
+    }
+    /// <p>Type of the data source from which the files to create the changeset will be
+    /// sourced.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>S3</code> - Amazon S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>Source path from which the files to create the changeset will be sourced.</p>
+    pub fn source_params(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.source_params.as_ref()
+    }
+    /// <p>Format type of the input files being loaded into the changeset.</p>
+    pub fn format_type(&self) -> std::option::Option<&crate::model::FormatType> {
+        self.format_type.as_ref()
+    }
+    /// <p>Options that define the structure of the source file(s).</p>
+    pub fn format_params(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.format_params.as_ref()
+    }
+    /// <p>Metadata tags to apply to this changeset.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChangesetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

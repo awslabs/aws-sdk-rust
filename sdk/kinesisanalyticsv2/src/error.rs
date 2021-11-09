@@ -5288,6 +5288,16 @@ pub struct UnableToDetectSchemaException {
     /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UnableToDetectSchemaException {
+    /// <p>Raw stream data that was sampled to infer the schema.</p>
+    pub fn raw_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.raw_input_records.as_deref()
+    }
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
+    pub fn processed_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.processed_input_records.as_deref()
+    }
+}
 impl std::fmt::Debug for UnableToDetectSchemaException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnableToDetectSchemaException");

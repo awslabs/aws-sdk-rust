@@ -147,10 +147,7 @@ impl AssociateTeamMemberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_team_member(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_team_member(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -409,10 +406,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -610,10 +604,7 @@ impl CreateUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -797,10 +788,7 @@ impl DeleteProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -950,10 +938,7 @@ impl DeleteUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1101,10 +1086,7 @@ impl DescribeProjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_project(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1254,10 +1236,7 @@ impl DescribeUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1423,10 +1402,7 @@ impl DisassociateTeamMemberInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_team_member(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1589,10 +1565,7 @@ impl ListProjectsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1767,10 +1740,7 @@ impl ListResourcesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1944,10 +1914,7 @@ impl ListTagsForProjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_project(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2123,10 +2090,7 @@ impl ListTeamMembersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_team_members(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_team_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2290,10 +2254,7 @@ impl ListUserProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_user_profiles(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_user_profiles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2471,10 +2432,7 @@ impl TagProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2644,10 +2602,7 @@ impl UntagProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_project(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2820,10 +2775,7 @@ impl UpdateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3019,10 +2971,7 @@ impl UpdateTeamMemberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_team_member(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_team_member(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3222,10 +3171,7 @@ impl UpdateUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3304,6 +3250,28 @@ pub struct UpdateUserProfileInput {
     /// private key for SSH access.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
+impl UpdateUserProfileInput {
+    /// <p>The name that will be displayed as the friendly name for the user in AWS
+    /// CodeStar.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The email address that is displayed as part of the user's profile in AWS
+    /// CodeStar.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
+    /// user remote access to project resources, this public key will be used along with the user's
+    /// private key for SSH access.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserProfileInput");
@@ -3333,6 +3301,29 @@ pub struct UpdateTeamMemberInput {
     /// associate a public key with their profile before the user can access resources.</p>
     pub remote_access_allowed: std::option::Option<bool>,
 }
+impl UpdateTeamMemberInput {
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
+    /// attributes.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The role assigned to the user in the project. Project roles have different levels of
+    /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
+    /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    pub fn project_role(&self) -> std::option::Option<&str> {
+        self.project_role.as_deref()
+    }
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH
+    /// public key associated with the user's profile. Even if this is set to True, the user must
+    /// associate a public key with their profile before the user can access resources.</p>
+    pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
+        self.remote_access_allowed
+    }
+}
 impl std::fmt::Debug for UpdateTeamMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTeamMemberInput");
@@ -3355,6 +3346,20 @@ pub struct UpdateProjectInput {
     /// <p>The description of the project, if any.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateProjectInput {
+    /// <p>The ID of the project you want to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the project you want to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the project, if any.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
@@ -3373,6 +3378,16 @@ pub struct UntagProjectInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The tags to remove from the project.</p>
     pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagProjectInput {
+    /// <p>The ID of the project to remove tags from.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The tags to remove from the project.</p>
+    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3393,6 +3408,19 @@ pub struct TagProjectInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagProjectInput {
+    /// <p>The ID of the project you want to add a tag to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The tags you want to add to the project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagProjectInput");
@@ -3411,6 +3439,17 @@ pub struct ListUserProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListUserProfilesInput {
+    /// <p>The continuation token for the next set of results, if the results cannot be returned
+    /// in one response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListUserProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3433,6 +3472,21 @@ pub struct ListTeamMembersInput {
     /// <p>The maximum number of team members you want returned in a response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTeamMembersInput {
+    /// <p>The ID of the project for which you want to list team members.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The continuation token for the next set of results, if the results cannot be returned
+    /// in one response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of team members you want returned in a response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTeamMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTeamMembersInput");
@@ -3453,6 +3507,20 @@ pub struct ListTagsForProjectInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListTagsForProjectInput {
+    /// <p>The ID of the project to get tags for.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListTagsForProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3476,6 +3544,21 @@ pub struct ListResourcesInput {
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListResourcesInput {
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The continuation token for the next set of results, if the results cannot be returned
+    /// in one response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum amount of data that can be contained in a single set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesInput");
@@ -3496,6 +3579,17 @@ pub struct ListProjectsInput {
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListProjectsInput {
+    /// <p>The continuation token to be used to return the next set of results, if the results
+    /// cannot be returned in one response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum amount of data that can be contained in a single set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsInput");
@@ -3515,6 +3609,17 @@ pub struct DisassociateTeamMemberInput {
     /// the project.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateTeamMemberInput {
+    /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
+    /// the project.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateTeamMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateTeamMemberInput");
@@ -3531,6 +3636,12 @@ pub struct DescribeUserProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl DescribeUserProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserProfileInput");
@@ -3546,6 +3657,12 @@ pub struct DescribeProjectInput {
     /// <p>The ID of the project.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeProjectInput {
+    /// <p>The ID of the project.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectInput");
@@ -3560,6 +3677,12 @@ impl std::fmt::Debug for DescribeProjectInput {
 pub struct DeleteUserProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
     pub user_arn: std::option::Option<std::string::String>,
+}
+impl DeleteUserProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3583,6 +3706,24 @@ pub struct DeleteProjectInput {
     /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
     /// Recommended for most use cases.</p>
     pub delete_stack: bool,
+}
+impl DeleteProjectInput {
+    /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A user- or system-generated token that identifies the entity that requested project
+    /// deletion. This token can be used to repeat the request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
+    /// used to generate the project and its resources. This option will delete all AWS resources for
+    /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
+    /// Recommended for most use cases.</p>
+    pub fn delete_stack(&self) -> bool {
+        self.delete_stack
+    }
 }
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3609,6 +3750,27 @@ pub struct CreateUserProfileInput {
     /// user remote access to project resources, this public key will be used along with the user's
     /// private key for SSH access.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
+}
+impl CreateUserProfileInput {
+    /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The email address that will be displayed as part of the user's profile in
+    /// AWS CodeStar.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
+    /// user remote access to project resources, this public key will be used along with the user's
+    /// private key for SSH access.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3644,6 +3806,42 @@ pub struct CreateProjectInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateProjectInput {
+    /// <p>The display name for the project to be created in AWS CodeStar.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the project to be created in AWS CodeStar.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description of the project, if any.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A user- or system-generated token that identifies the entity that requested project
+    /// creation. This token can be used to repeat the request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>A list of the Code objects submitted with the project request. If this
+    /// parameter is specified, the request must also include the toolchain parameter.</p>
+    pub fn source_code(&self) -> std::option::Option<&[crate::model::Code]> {
+        self.source_code.as_deref()
+    }
+    /// <p>The name of the toolchain template file submitted with the project request. If
+    /// this parameter is specified, the request must also include the sourceCode parameter.</p>
+    pub fn toolchain(&self) -> std::option::Option<&crate::model::Toolchain> {
+        self.toolchain.as_ref()
+    }
+    /// <p>The tags created for the project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectInput");
@@ -3676,6 +3874,32 @@ pub struct AssociateTeamMemberInput {
     /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
     /// access project resources, for example Amazon EC2 instances.</p>
     pub remote_access_allowed: std::option::Option<bool>,
+}
+impl AssociateTeamMemberInput {
+    /// <p>The ID of the project to which you will add the IAM user.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>A user- or system-generated token that identifies the entity that requested the team
+    /// member association to the project. This token can be used to repeat the request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
+    /// project.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
+    /// a user can take in an AWS CodeStar project.</p>
+    pub fn project_role(&self) -> std::option::Option<&str> {
+        self.project_role.as_deref()
+    }
+    /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
+    /// access project resources, for example Amazon EC2 instances.</p>
+    pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
+        self.remote_access_allowed
+    }
 }
 impl std::fmt::Debug for AssociateTeamMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

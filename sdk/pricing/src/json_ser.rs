@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_describe_services_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeServicesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.service_code {
         object.key("ServiceCode").string(var_1);
     }
@@ -18,12 +18,13 @@ pub fn serialize_structure_crate_input_describe_services_input(
             aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_attribute_values_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAttributeValuesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.service_code {
         object.key("ServiceCode").string(var_5);
     }
@@ -39,12 +40,13 @@ pub fn serialize_structure_crate_input_get_attribute_values_input(
             aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_products_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetProductsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.service_code {
         object.key("ServiceCode").string(var_9);
     }
@@ -53,7 +55,7 @@ pub fn serialize_structure_crate_input_get_products_input(
         for item_12 in var_10 {
             {
                 let mut object_13 = array_11.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_13, item_12);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -71,12 +73,13 @@ pub fn serialize_structure_crate_input_get_products_input(
             aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.r#type {
         object.key("Type").string(var_17.as_str());
     }
@@ -86,4 +89,5 @@ pub fn serialize_structure_crate_model_filter(
     if let Some(var_19) = &input.value {
         object.key("Value").string(var_19);
     }
+    Ok(())
 }

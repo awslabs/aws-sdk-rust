@@ -8,6 +8,16 @@ pub struct Identity {
     /// <p>The User Agent of the API caller.</p>
     pub user_agent: std::option::Option<std::string::String>,
 }
+impl Identity {
+    /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
+    pub fn source_ip(&self) -> std::option::Option<&str> {
+        self.source_ip.as_deref()
+    }
+    /// <p>The User Agent of the API caller.</p>
+    pub fn user_agent(&self) -> std::option::Option<&str> {
+        self.user_agent.as_deref()
+    }
+}
 impl std::fmt::Debug for Identity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Identity");

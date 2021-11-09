@@ -6,6 +6,12 @@ pub struct UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     pub checksum: std::option::Option<std::string::String>,
 }
+impl UploadMultipartPartOutput {
+    /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+}
 impl std::fmt::Debug for UploadMultipartPartOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMultipartPartOutput");
@@ -60,6 +66,20 @@ pub struct UploadArchiveOutput {
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
     pub archive_id: std::option::Option<std::string::String>,
+}
+impl UploadArchiveOutput {
+    /// <p>The relative URI path of the newly added archive resource.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>The ID of the archive. This value is also included as part of the location.</p>
+    pub fn archive_id(&self) -> std::option::Option<&str> {
+        self.archive_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UploadArchiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -255,6 +275,12 @@ pub struct PurchaseProvisionedCapacityOutput {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     pub capacity_id: std::option::Option<std::string::String>,
 }
+impl PurchaseProvisionedCapacityOutput {
+    /// <p>The ID that identifies the provisioned capacity unit.</p>
+    pub fn capacity_id(&self) -> std::option::Option<&str> {
+        self.capacity_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PurchaseProvisionedCapacityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseProvisionedCapacityOutput");
@@ -305,6 +331,17 @@ pub struct ListVaultsOutput {
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in
     /// another List Vaults request to obtain more vaults in the list.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListVaultsOutput {
+    /// <p>List of vaults.</p>
+    pub fn vault_list(&self) -> std::option::Option<&[crate::model::DescribeVaultOutput]> {
+        self.vault_list.as_deref()
+    }
+    /// <p>The vault ARN at which to continue pagination of the results. You use the marker in
+    /// another List Vaults request to obtain more vaults in the list.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVaultsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -380,6 +417,15 @@ pub struct ListTagsForVaultOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForVaultOutput {
+    /// <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForVaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForVaultOutput");
@@ -443,6 +489,14 @@ pub struct ListProvisionedCapacityOutput {
     /// <p>The response body contains the following JSON fields.</p>
     pub provisioned_capacity_list:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
+}
+impl ListProvisionedCapacityOutput {
+    /// <p>The response body contains the following JSON fields.</p>
+    pub fn provisioned_capacity_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisionedCapacityDescription]> {
+        self.provisioned_capacity_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProvisionedCapacityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -523,6 +577,43 @@ pub struct ListPartsOutput {
     /// the marker in a new List Parts request to obtain more jobs in the list. If there are no
     /// more parts, this value is <code>null</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListPartsOutput {
+    /// <p>The ID of the upload to which the parts are associated.</p>
+    pub fn multipart_upload_id(&self) -> std::option::Option<&str> {
+        self.multipart_upload_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was
+    /// initiated.</p>
+    pub fn vault_arn(&self) -> std::option::Option<&str> {
+        self.vault_arn.as_deref()
+    }
+    /// <p>The description of the archive that was specified in the Initiate Multipart Upload
+    /// request.</p>
+    pub fn archive_description(&self) -> std::option::Option<&str> {
+        self.archive_description.as_deref()
+    }
+    /// <p>The part size in bytes. This is the same value that you specified in the Initiate
+    /// Multipart Upload request.</p>
+    pub fn part_size_in_bytes(&self) -> i64 {
+        self.part_size_in_bytes
+    }
+    /// <p>The UTC time at which the multipart upload was initiated.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a
+    /// <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+    /// pair.</p>
+    pub fn parts(&self) -> std::option::Option<&[crate::model::PartListElement]> {
+        self.parts.as_deref()
+    }
+    /// <p>An opaque string that represents where to continue pagination of the results. You use
+    /// the marker in a new List Parts request to obtain more jobs in the list. If there are no
+    /// more parts, this value is <code>null</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPartsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -686,6 +777,18 @@ pub struct ListMultipartUploadsOutput {
     /// there are no more uploads, this value is <code>null</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListMultipartUploadsOutput {
+    /// <p>A list of in-progress multipart uploads.</p>
+    pub fn uploads_list(&self) -> std::option::Option<&[crate::model::UploadListElement]> {
+        self.uploads_list.as_deref()
+    }
+    /// <p>An opaque string that represents where to continue pagination of the results. You use
+    /// the marker in a new List Multipart Uploads request to obtain more uploads in the list. If
+    /// there are no more uploads, this value is <code>null</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMultipartUploadsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMultipartUploadsOutput");
@@ -768,6 +871,21 @@ pub struct ListJobsOutput {
     /// previous List Jobs request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListJobsOutput {
+    /// <p>A list of job objects. Each job object contains metadata describing the
+    /// job.</p>
+    pub fn job_list(&self) -> std::option::Option<&[crate::model::GlacierJobDescription]> {
+        self.job_list.as_deref()
+    }
+    /// <p>  
+    /// An opaque string used for pagination that specifies the job at which the listing of jobs should begin.
+    /// You get the <code>marker</code> value from a previous List Jobs response.
+    /// You only need to include the marker if you are continuing the pagination of the results started in a
+    /// previous List Jobs request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsOutput");
@@ -849,6 +967,12 @@ pub struct InitiateVaultLockOutput {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
     pub lock_id: std::option::Option<std::string::String>,
 }
+impl InitiateVaultLockOutput {
+    /// <p>The lock ID, which is used to complete the vault locking process.</p>
+    pub fn lock_id(&self) -> std::option::Option<&str> {
+        self.lock_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InitiateVaultLockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateVaultLockOutput");
@@ -899,6 +1023,17 @@ pub struct InitiateMultipartUploadOutput {
     /// <p>The ID of the multipart upload. This value is also included as part of the
     /// location.</p>
     pub upload_id: std::option::Option<std::string::String>,
+}
+impl InitiateMultipartUploadOutput {
+    /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The ID of the multipart upload. This value is also included as part of the
+    /// location.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
 }
 impl std::fmt::Debug for InitiateMultipartUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -966,6 +1101,20 @@ pub struct InitiateJobOutput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The path to the location of where the select results are stored.</p>
     pub job_output_path: std::option::Option<std::string::String>,
+}
+impl InitiateJobOutput {
+    /// <p>The relative URI path of the job.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The ID of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The path to the location of where the select results are stored.</p>
+    pub fn job_output_path(&self) -> std::option::Option<&str> {
+        self.job_output_path.as_deref()
+    }
 }
 impl std::fmt::Debug for InitiateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1044,6 +1193,14 @@ pub struct GetVaultNotificationsOutput {
     /// <p>Returns the notification configuration set on the vault.</p>
     pub vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
 }
+impl GetVaultNotificationsOutput {
+    /// <p>Returns the notification configuration set on the vault.</p>
+    pub fn vault_notification_config(
+        &self,
+    ) -> std::option::Option<&crate::model::VaultNotificationConfig> {
+        self.vault_notification_config.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVaultNotificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVaultNotificationsOutput");
@@ -1108,6 +1265,28 @@ pub struct GetVaultLockOutput {
     /// <p>The UTC date and time at which the vault lock was put into the
     /// <code>InProgress</code> state.</p>
     pub creation_date: std::option::Option<std::string::String>,
+}
+impl GetVaultLockOutput {
+    /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
+    /// character.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The state of the vault lock. <code>InProgress</code> or
+    /// <code>Locked</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The UTC date and time at which the lock ID expires. This value can be
+    /// <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&str> {
+        self.expiration_date.as_deref()
+    }
+    /// <p>The UTC date and time at which the vault lock was put into the
+    /// <code>InProgress</code> state.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVaultLockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1210,6 +1389,12 @@ pub struct GetVaultAccessPolicyOutput {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
     pub policy: std::option::Option<crate::model::VaultAccessPolicy>,
 }
+impl GetVaultAccessPolicyOutput {
+    /// <p>Contains the returned vault access policy as a JSON string.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::VaultAccessPolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVaultAccessPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVaultAccessPolicyOutput");
@@ -1297,6 +1482,62 @@ pub struct GetJobOutputOutput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The description of an archive.</p>
     pub archive_description: std::option::Option<std::string::String>,
+}
+impl GetJobOutputOutput {
+    /// <p>The job data, either archive data or inventory data.</p>
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.body
+    }
+    /// <p>The checksum of the data in the response. This header is returned only when
+    /// retrieving the output for an archive retrieval job. Furthermore, this header appears only
+    /// under the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You get the entire range of the archive.</p>
+    /// </li>
+    /// <li>
+    /// <p>You request a range to return of the archive that starts and ends on a multiple
+    /// of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return
+    /// that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as
+    /// a response header.</p>
+    /// </li>
+    /// <li>
+    /// <p>You request a range of the archive to return that starts on a multiple of 1 MB
+    /// and goes to the end of the archive. For example, if you have a 3.1 MB archive and you
+    /// specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then
+    /// the x-amz-sha256-tree-hash is returned as a response header.</p>
+    /// </li>
+    /// </ul>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>The HTTP response code for a job output request. The value depends on whether a range
+    /// was specified in the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded,
+    /// the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes
+    /// 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
+    pub fn content_range(&self) -> std::option::Option<&str> {
+        self.content_range.as_deref()
+    }
+    /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
+    pub fn accept_ranges(&self) -> std::option::Option<&str> {
+        self.accept_ranges.as_deref()
+    }
+    /// <p>The Content-Type depends on whether the job output is an archive or a vault
+    /// inventory. For archive data, the Content-Type is application/octet-stream. For vault
+    /// inventory, if you requested CSV format when you initiated the job, the Content-Type is
+    /// text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type
+    /// is application/json.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The description of an archive.</p>
+    pub fn archive_description(&self) -> std::option::Option<&str> {
+        self.archive_description.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1489,6 +1730,12 @@ pub struct GetDataRetrievalPolicyOutput {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
     pub policy: std::option::Option<crate::model::DataRetrievalPolicy>,
 }
+impl GetDataRetrievalPolicyOutput {
+    /// <p>Contains the returned data retrieval policy in JSON format.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::DataRetrievalPolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDataRetrievalPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataRetrievalPolicyOutput");
@@ -1557,6 +1804,40 @@ pub struct DescribeVaultOutput {
     /// This field will return null if an inventory has not yet run on the vault, for example if
     /// you just created the vault.</p>
     pub size_in_bytes: i64,
+}
+impl DescribeVaultOutput {
+    /// <p>The Amazon Resource Name (ARN) of the vault.</p>
+    pub fn vault_arn(&self) -> std::option::Option<&str> {
+        self.vault_arn.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value
+    /// should be a string in the ISO 8601 date format, for example
+    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
+    /// vault inventory.  This value should be a string in the ISO 8601 date format, for example
+    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    pub fn last_inventory_date(&self) -> std::option::Option<&str> {
+        self.last_inventory_date.as_deref()
+    }
+    /// <p>The number of archives in the vault as of the last inventory date. This field will
+    /// return <code>null</code> if an inventory has not yet run on the vault, for example if you
+    /// just created the vault.</p>
+    pub fn number_of_archives(&self) -> i64 {
+        self.number_of_archives
+    }
+    /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date.
+    /// This field will return null if an inventory has not yet run on the vault, for example if
+    /// you just created the vault.</p>
+    pub fn size_in_bytes(&self) -> i64 {
+        self.size_in_bytes
+    }
 }
 impl std::fmt::Debug for DescribeVaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1780,6 +2061,141 @@ pub struct DescribeJobOutput {
     pub select_parameters: std::option::Option<crate::model::SelectParameters>,
     /// <p>Contains the location where the data from the select job is stored.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
+}
+impl DescribeJobOutput {
+    /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The job description provided when initiating the job.</p>
+    pub fn job_description(&self) -> std::option::Option<&str> {
+        self.job_description.as_deref()
+    }
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>,
+    /// <code>InventoryRetrieval</code>, or
+    /// <code>Select</code>. </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ActionCode> {
+        self.action.as_ref()
+    }
+    /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this
+    /// field is null.</p>
+    pub fn archive_id(&self) -> std::option::Option<&str> {
+        self.archive_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was
+    /// requested.</p>
+    pub fn vault_arn(&self) -> std::option::Option<&str> {
+        self.vault_arn.as_deref()
+    }
+    /// <p>The UTC date when the job was created. This value is a string representation of ISO
+    /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The job status. When a job is completed, you get the job's output using Get Job
+    /// Output (GET output).</p>
+    pub fn completed(&self) -> bool {
+        self.completed
+    }
+    /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
+    /// <code>Failed</code>, and indicates the status of the job.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>A friendly message that describes the job status.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>For an archive retrieval job, this value is the size in bytes of the archive being
+    /// requested for download. For an inventory retrieval or select job, this value is
+    /// null.</p>
+    pub fn archive_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.archive_size_in_bytes
+    }
+    /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory
+    /// requested for download. For an archive retrieval or select job, this value is
+    /// null.</p>
+    pub fn inventory_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.inventory_size_in_bytes
+    }
+    /// <p>An Amazon SNS topic that receives notification.</p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
+    /// <p>The UTC time that the job request completed. While the job is in progress, the
+    /// value is null.</p>
+    pub fn completion_date(&self) -> std::option::Option<&str> {
+        self.completion_date.as_deref()
+    }
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise,
+    /// this value is null.</p>
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash
+    /// aligned range, then this field returns a value.</p>
+    /// <p>If the whole archive is retrieved, this value is the same as the
+    /// ArchiveSHA256TreeHash value.</p>
+    /// <p>This field is null for the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Archive retrieval jobs that specify a range that is not tree-hash
+    /// aligned</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>Archival jobs that specify a range that is equal to the whole archive, when
+    /// the job status is <code>InProgress</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>Inventory jobs</p>
+    /// </li>
+    /// <li>
+    /// <p>Select jobs</p>
+    /// </li>
+    /// </ul>
+    pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
+        self.sha256_tree_hash.as_deref()
+    }
+    /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
+    /// retrieval or select jobs, this field is null.</p>
+    pub fn archive_sha256_tree_hash(&self) -> std::option::Option<&str> {
+        self.archive_sha256_tree_hash.as_deref()
+    }
+    /// <p>The retrieved byte range for archive retrieval jobs in the form
+    /// <i>StartByteValue</i>-<i>EndByteValue</i>. If no range
+    /// was specified in the archive retrieval, then the whole archive is retrieved. In this
+    /// case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i>
+    /// equals the size of the archive minus 1. For inventory retrieval or select jobs, this
+    /// field is null. </p>
+    pub fn retrieval_byte_range(&self) -> std::option::Option<&str> {
+        self.retrieval_byte_range.as_deref()
+    }
+    /// <p>The tier to use for a select or an archive retrieval. Valid values are
+    /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+    /// <code>Standard</code> is the default.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
+    /// <p>Parameters used for range inventory retrieval.</p>
+    pub fn inventory_retrieval_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::InventoryRetrievalJobDescription> {
+        self.inventory_retrieval_parameters.as_ref()
+    }
+    /// <p>Contains the job output location.</p>
+    pub fn job_output_path(&self) -> std::option::Option<&str> {
+        self.job_output_path.as_deref()
+    }
+    /// <p>Contains the parameters used for a select.</p>
+    pub fn select_parameters(&self) -> std::option::Option<&crate::model::SelectParameters> {
+        self.select_parameters.as_ref()
+    }
+    /// <p>Contains the location where the data from the select job is stored.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2346,6 +2762,12 @@ pub struct CreateVaultOutput {
     /// <p>The URI of the vault that was created.</p>
     pub location: std::option::Option<std::string::String>,
 }
+impl CreateVaultOutput {
+    /// <p>The URI of the vault that was created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateVaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVaultOutput");
@@ -2430,6 +2852,20 @@ pub struct CompleteMultipartUploadOutput {
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
     pub archive_id: std::option::Option<std::string::String>,
+}
+impl CompleteMultipartUploadOutput {
+    /// <p>The relative URI path of the newly added archive resource.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>The ID of the archive. This value is also included as part of the location.</p>
+    pub fn archive_id(&self) -> std::option::Option<&str> {
+        self.archive_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CompleteMultipartUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

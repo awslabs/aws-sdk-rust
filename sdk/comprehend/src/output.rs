@@ -160,6 +160,18 @@ pub struct StopSentimentDetectionJobOutput {
     /// <code>StopSentimentDetectionJob</code> operation.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StopSentimentDetectionJobOutput {
+    /// <p>The identifier of the sentiment detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
+    /// <code>STOPPED</code> if the job was previously stopped with the
+    /// <code>StopSentimentDetectionJob</code> operation.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopSentimentDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopSentimentDetectionJobOutput");
@@ -230,6 +242,16 @@ pub struct StopPiiEntitiesDetectionJobOutput {
     /// <p>The status of the PII entities detection job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StopPiiEntitiesDetectionJobOutput {
+    /// <p>The identifier of the PII entities detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the PII entities detection job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopPiiEntitiesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopPiiEntitiesDetectionJobOutput");
@@ -297,6 +319,18 @@ pub struct StopKeyPhrasesDetectionJobOutput {
     /// <code>STOPPED</code> if the job was previously stopped with the
     /// <code>StopKeyPhrasesDetectionJob</code> operation.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StopKeyPhrasesDetectionJobOutput {
+    /// <p>The identifier of the key phrases detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
+    /// <code>STOPPED</code> if the job was previously stopped with the
+    /// <code>StopKeyPhrasesDetectionJob</code> operation.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StopKeyPhrasesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -368,6 +402,16 @@ pub struct StopEventsDetectionJobOutput {
     /// <p>The status of the events detection job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StopEventsDetectionJobOutput {
+    /// <p>The identifier of the events detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the events detection job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopEventsDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopEventsDetectionJobOutput");
@@ -435,6 +479,18 @@ pub struct StopEntitiesDetectionJobOutput {
     /// <code>STOPPED</code> if the job was previously stopped with the
     /// <code>StopEntitiesDetectionJob</code> operation.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StopEntitiesDetectionJobOutput {
+    /// <p>The identifier of the entities detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
+    /// <code>STOPPED</code> if the job was previously stopped with the
+    /// <code>StopEntitiesDetectionJob</code> operation.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StopEntitiesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -507,6 +563,18 @@ pub struct StopDominantLanguageDetectionJobOutput {
     /// <code>STOPPED</code> if the job was previously stopped with the
     /// <code>StopDominantLanguageDetectionJob</code> operation.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StopDominantLanguageDetectionJobOutput {
+    /// <p>The identifier of the dominant language detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or
+    /// <code>STOPPED</code> if the job was previously stopped with the
+    /// <code>StopDominantLanguageDetectionJob</code> operation.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StopDominantLanguageDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -605,6 +673,46 @@ pub struct StartTopicsDetectionJobOutput {
     /// </li>
     /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StartTopicsDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of the job, use this identifier
+    /// with the <code>DescribeTopicDetectionJob</code> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:topics-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job: </p>
+    /// <ul>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is
+    /// available.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the
+    /// <code>DescribeTopicDetectionJob</code> operation.</p>
+    /// </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StartTopicsDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -763,6 +871,44 @@ pub struct StartSentimentDetectionJobOutput {
     /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StartSentimentDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
+    /// the  operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:sentiment-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job. </p>
+    /// <ul>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the  operation.</p>
+    /// </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartSentimentDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSentimentDetectionJobOutput");
@@ -901,6 +1047,29 @@ pub struct StartPiiEntitiesDetectionJobOutput {
     /// <p>The status of the job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StartPiiEntitiesDetectionJobOutput {
+    /// <p>The identifier generated for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:pii-entities-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartPiiEntitiesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPiiEntitiesDetectionJobOutput");
@@ -1023,6 +1192,44 @@ pub struct StartKeyPhrasesDetectionJobOutput {
     /// </li>
     /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StartKeyPhrasesDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
+    /// the  operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:key-phrases-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job. </p>
+    /// <ul>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the  operation.</p>
+    /// </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StartKeyPhrasesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1163,6 +1370,30 @@ pub struct StartEventsDetectionJobOutput {
     /// <p>The status of the events detection job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StartEventsDetectionJobOutput {
+    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:events-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the events detection job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartEventsDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartEventsDetectionJobOutput");
@@ -1294,6 +1525,51 @@ pub struct StartEntitiesDetectionJobOutput {
     /// </li>
     /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StartEntitiesDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of job, use this identifier with
+    /// the  operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:entities-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job. </p>
+    /// <ul>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the  operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is
+    /// processing the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>STOPPED - The job was successfully stopped without completing.</p>
+    /// </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StartEntitiesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1462,6 +1738,44 @@ pub struct StartDominantLanguageDetectionJobOutput {
     /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StartDominantLanguageDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
+    /// the  operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique,
+    /// fully qualified identifier for the job. It includes the AWS account, Region, and the job ID.
+    /// The format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:dominant-language-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job. </p>
+    /// <ul>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the  operation.</p>
+    /// </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDominantLanguageDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDominantLanguageDetectionJobOutput");
@@ -1622,6 +1936,51 @@ pub struct StartDocumentClassificationJobOutput {
     /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StartDocumentClassificationJobOutput {
+    /// <p>The identifier generated for the job. To get the status of the job, use this identifier
+    /// with the  operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:document-classification-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and queued for processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. For details, use the  operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is
+    /// processing the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>STOPPED - The job was successfully stopped without completing.</p>
+    /// </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDocumentClassificationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDocumentClassificationJobOutput");
@@ -1764,6 +2123,18 @@ pub struct ListTopicsDetectionJobsOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTopicsDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn topics_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::TopicsDetectionJobProperties]> {
+        self.topics_detection_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTopicsDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTopicsDetectionJobsOutput");
@@ -1849,6 +2220,20 @@ pub struct ListTagsForResourceOutput {
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are
+    /// querying.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value
+    /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
+    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1929,6 +2314,18 @@ pub struct ListSentimentDetectionJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSentimentDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn sentiment_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SentimentDetectionJobProperties]> {
+        self.sentiment_detection_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSentimentDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2015,6 +2412,18 @@ pub struct ListPiiEntitiesDetectionJobsOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPiiEntitiesDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn pii_entities_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PiiEntitiesDetectionJobProperties]> {
+        self.pii_entities_detection_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPiiEntitiesDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPiiEntitiesDetectionJobsOutput");
@@ -2099,6 +2508,18 @@ pub struct ListKeyPhrasesDetectionJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListKeyPhrasesDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn key_phrases_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::KeyPhrasesDetectionJobProperties]> {
+        self.key_phrases_detection_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListKeyPhrasesDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2185,6 +2606,18 @@ pub struct ListEventsDetectionJobsOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEventsDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn events_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventsDetectionJobProperties]> {
+        self.events_detection_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEventsDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventsDetectionJobsOutput");
@@ -2267,6 +2700,18 @@ pub struct ListEntityRecognizerSummariesOutput {
     /// <p>The list entity recognizer summaries.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEntityRecognizerSummariesOutput {
+    /// <p>The list entity recognizer summaries.</p>
+    pub fn entity_recognizer_summaries_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EntityRecognizerSummary]> {
+        self.entity_recognizer_summaries_list.as_deref()
+    }
+    /// <p>The list entity recognizer summaries.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEntityRecognizerSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntityRecognizerSummariesOutput");
@@ -2347,6 +2792,18 @@ pub struct ListEntityRecognizersOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEntityRecognizersOutput {
+    /// <p>The list of properties of an entity recognizer.</p>
+    pub fn entity_recognizer_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EntityRecognizerProperties]> {
+        self.entity_recognizer_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEntityRecognizersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntityRecognizersOutput");
@@ -2426,6 +2883,18 @@ pub struct ListEntitiesDetectionJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEntitiesDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn entities_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EntitiesDetectionJobProperties]> {
+        self.entities_detection_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEntitiesDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2510,6 +2979,19 @@ pub struct ListEndpointsOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEndpointsOutput {
+    /// <p>Displays a list of endpoint properties being retrieved by the service in response to the
+    /// request.</p>
+    pub fn endpoint_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointProperties]> {
+        self.endpoint_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointsOutput");
@@ -2588,6 +3070,19 @@ pub struct ListDominantLanguageDetectionJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDominantLanguageDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn dominant_language_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DominantLanguageDetectionJobProperties]> {
+        self.dominant_language_detection_job_properties_list
+            .as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDominantLanguageDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2675,6 +3170,18 @@ pub struct ListDocumentClassifierSummariesOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDocumentClassifierSummariesOutput {
+    /// <p>The list of summaries of document classifiers.</p>
+    pub fn document_classifier_summaries_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DocumentClassifierSummary]> {
+        self.document_classifier_summaries_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDocumentClassifierSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDocumentClassifierSummariesOutput");
@@ -2755,6 +3262,18 @@ pub struct ListDocumentClassifiersOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDocumentClassifiersOutput {
+    /// <p>A list containing the properties of each job returned.</p>
+    pub fn document_classifier_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DocumentClassifierProperties]> {
+        self.document_classifier_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDocumentClassifiersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDocumentClassifiersOutput");
@@ -2834,6 +3353,18 @@ pub struct ListDocumentClassificationJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDocumentClassificationJobsOutput {
+    /// <p>A list containing the properties of each job returned.</p>
+    pub fn document_classification_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DocumentClassificationJobProperties]> {
+        self.document_classification_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDocumentClassificationJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2919,6 +3450,14 @@ pub struct DetectSyntaxOutput {
     /// Amazon Comprehend has that the token is correct. For a list of token types, see <a>how-syntax</a>.</p>
     pub syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
 }
+impl DetectSyntaxOutput {
+    /// <p>A collection of syntax tokens describing the text. For each token, the response provides
+    /// the text, the token type, where the text begins and ends, and the level of confidence that
+    /// Amazon Comprehend has that the token is correct. For a list of token types, see <a>how-syntax</a>.</p>
+    pub fn syntax_tokens(&self) -> std::option::Option<&[crate::model::SyntaxToken]> {
+        self.syntax_tokens.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectSyntaxOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSyntaxOutput");
@@ -2983,6 +3522,18 @@ pub struct DetectSentimentOutput {
     /// <p>An object that lists the sentiments, and their corresponding confidence
     /// levels.</p>
     pub sentiment_score: std::option::Option<crate::model::SentimentScore>,
+}
+impl DetectSentimentOutput {
+    /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence
+    /// in.</p>
+    pub fn sentiment(&self) -> std::option::Option<&crate::model::SentimentType> {
+        self.sentiment.as_ref()
+    }
+    /// <p>An object that lists the sentiments, and their corresponding confidence
+    /// levels.</p>
+    pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
+        self.sentiment_score.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectSentimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3057,6 +3608,14 @@ pub struct DetectPiiEntitiesOutput {
     /// that Amazon Comprehend has in the detection.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>,
 }
+impl DetectPiiEntitiesOutput {
+    /// <p>A collection of PII entities identified in the input text. For each entity, the response
+    /// provides the entity type, where the entity text begins and ends, and the level of confidence
+    /// that Amazon Comprehend has in the detection.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::PiiEntity]> {
+        self.entities.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectPiiEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectPiiEntitiesOutput");
@@ -3120,6 +3679,15 @@ pub struct DetectKeyPhrasesOutput {
     /// and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the
     /// detection. </p>
     pub key_phrases: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
+}
+impl DetectKeyPhrasesOutput {
+    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For
+    /// each key phrase, the response provides the text of the key phrase, where the key phrase begins
+    /// and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the
+    /// detection. </p>
+    pub fn key_phrases(&self) -> std::option::Option<&[crate::model::KeyPhrase]> {
+        self.key_phrases.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectKeyPhrasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3188,6 +3756,17 @@ pub struct DetectEntitiesOutput {
     /// entities that the model is trained to recognize. Otherwise, it detects the default entity
     /// types. For a list of default entity types, see <a>how-entities</a>.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+}
+impl DetectEntitiesOutput {
+    /// <p>A collection of entities identified in the input text. For each entity, the response
+    /// provides the entity text, entity type, where the entity text begins and ends, and the level of
+    /// confidence that Amazon Comprehend has in the detection. </p>
+    /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the
+    /// entities that the model is trained to recognize. Otherwise, it detects the default entity
+    /// types. For a list of default entity types, see <a>how-entities</a>.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3259,6 +3838,15 @@ pub struct DetectDominantLanguageOutput {
     /// <i>IETF Tools</i> web site.</p>
     pub languages: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,
 }
+impl DetectDominantLanguageOutput {
+    /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the
+    /// response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend
+    /// has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the
+    /// <i>IETF Tools</i> web site.</p>
+    pub fn languages(&self) -> std::option::Option<&[crate::model::DominantLanguage]> {
+        self.languages.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectDominantLanguageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDominantLanguageOutput");
@@ -3323,6 +3911,14 @@ pub struct DescribeTopicsDetectionJobOutput {
     pub topics_detection_job_properties:
         std::option::Option<crate::model::TopicsDetectionJobProperties>,
 }
+impl DescribeTopicsDetectionJobOutput {
+    /// <p>The list of properties for the requested job.</p>
+    pub fn topics_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::TopicsDetectionJobProperties> {
+        self.topics_detection_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeTopicsDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTopicsDetectionJobOutput");
@@ -3381,6 +3977,14 @@ pub struct DescribeSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
     pub sentiment_detection_job_properties:
         std::option::Option<crate::model::SentimentDetectionJobProperties>,
+}
+impl DescribeSentimentDetectionJobOutput {
+    /// <p>An object that contains the properties associated with a sentiment detection job.</p>
+    pub fn sentiment_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::SentimentDetectionJobProperties> {
+        self.sentiment_detection_job_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSentimentDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3441,6 +4045,14 @@ pub struct DescribePiiEntitiesDetectionJobOutput {
     pub pii_entities_detection_job_properties:
         std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
 }
+impl DescribePiiEntitiesDetectionJobOutput {
+    /// <p>Provides information about a PII entities detection job.</p>
+    pub fn pii_entities_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::PiiEntitiesDetectionJobProperties> {
+        self.pii_entities_detection_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePiiEntitiesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePiiEntitiesDetectionJobOutput");
@@ -3500,6 +4112,15 @@ pub struct DescribeKeyPhrasesDetectionJobOutput {
     /// </p>
     pub key_phrases_detection_job_properties:
         std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
+}
+impl DescribeKeyPhrasesDetectionJobOutput {
+    /// <p>An object that contains the properties associated with a key phrases detection job.
+    /// </p>
+    pub fn key_phrases_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::KeyPhrasesDetectionJobProperties> {
+        self.key_phrases_detection_job_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeKeyPhrasesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3562,6 +4183,14 @@ pub struct DescribeEventsDetectionJobOutput {
     pub events_detection_job_properties:
         std::option::Option<crate::model::EventsDetectionJobProperties>,
 }
+impl DescribeEventsDetectionJobOutput {
+    /// <p>An object that contains the properties associated with an event detection job.</p>
+    pub fn events_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::EventsDetectionJobProperties> {
+        self.events_detection_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsDetectionJobOutput");
@@ -3619,6 +4248,14 @@ impl DescribeEventsDetectionJobOutput {
 pub struct DescribeEntityRecognizerOutput {
     /// <p>Describes information associated with an entity recognizer.</p>
     pub entity_recognizer_properties: std::option::Option<crate::model::EntityRecognizerProperties>,
+}
+impl DescribeEntityRecognizerOutput {
+    /// <p>Describes information associated with an entity recognizer.</p>
+    pub fn entity_recognizer_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::EntityRecognizerProperties> {
+        self.entity_recognizer_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEntityRecognizerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3679,6 +4316,14 @@ pub struct DescribeEntitiesDetectionJobOutput {
     pub entities_detection_job_properties:
         std::option::Option<crate::model::EntitiesDetectionJobProperties>,
 }
+impl DescribeEntitiesDetectionJobOutput {
+    /// <p>An object that contains the properties associated with an entities detection job.</p>
+    pub fn entities_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::EntitiesDetectionJobProperties> {
+        self.entities_detection_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEntitiesDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEntitiesDetectionJobOutput");
@@ -3737,6 +4382,12 @@ pub struct DescribeEndpointOutput {
     /// <p>Describes information associated with the specific endpoint.</p>
     pub endpoint_properties: std::option::Option<crate::model::EndpointProperties>,
 }
+impl DescribeEndpointOutput {
+    /// <p>Describes information associated with the specific endpoint.</p>
+    pub fn endpoint_properties(&self) -> std::option::Option<&crate::model::EndpointProperties> {
+        self.endpoint_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointOutput");
@@ -3789,6 +4440,15 @@ pub struct DescribeDominantLanguageDetectionJobOutput {
     /// job.</p>
     pub dominant_language_detection_job_properties:
         std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
+}
+impl DescribeDominantLanguageDetectionJobOutput {
+    /// <p>An object that contains the properties associated with a dominant language detection
+    /// job.</p>
+    pub fn dominant_language_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DominantLanguageDetectionJobProperties> {
+        self.dominant_language_detection_job_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDominantLanguageDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3852,6 +4512,14 @@ pub struct DescribeDocumentClassifierOutput {
     pub document_classifier_properties:
         std::option::Option<crate::model::DocumentClassifierProperties>,
 }
+impl DescribeDocumentClassifierOutput {
+    /// <p>An object that contains the properties associated with a document classifier.</p>
+    pub fn document_classifier_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentClassifierProperties> {
+        self.document_classifier_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDocumentClassifierOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDocumentClassifierOutput");
@@ -3911,6 +4579,15 @@ pub struct DescribeDocumentClassificationJobOutput {
     /// job.</p>
     pub document_classification_job_properties:
         std::option::Option<crate::model::DocumentClassificationJobProperties>,
+}
+impl DescribeDocumentClassificationJobOutput {
+    /// <p>An object that describes the properties associated with the document classification
+    /// job.</p>
+    pub fn document_classification_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentClassificationJobProperties> {
+        self.document_classification_job_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDocumentClassificationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4062,6 +4739,12 @@ pub struct CreateEntityRecognizerOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
 }
+impl CreateEntityRecognizerOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEntityRecognizerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEntityRecognizerOutput");
@@ -4113,6 +4796,12 @@ pub struct CreateEndpointOutput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl CreateEndpointOutput {
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEndpointOutput");
@@ -4160,6 +4849,12 @@ impl CreateEndpointOutput {
 pub struct CreateDocumentClassifierOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
+}
+impl CreateDocumentClassifierOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDocumentClassifierOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4212,6 +4907,13 @@ pub struct ContainsPiiEntitiesOutput {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally
     /// identifiable information (PII) entity types.</p>
     pub labels: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>,
+}
+impl ContainsPiiEntitiesOutput {
+    /// <p>The labels used in the document being analyzed. Individual labels represent personally
+    /// identifiable information (PII) entity types.</p>
+    pub fn labels(&self) -> std::option::Option<&[crate::model::EntityLabel]> {
+        self.labels.as_deref()
+    }
 }
 impl std::fmt::Debug for ContainsPiiEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4279,6 +4981,22 @@ pub struct ClassifyDocumentOutput {
     /// are not mutually exclusive. For example, a movie can be just an action movie, or it can be an
     /// action movie, a science fiction movie, and a comedy, all at the same time. </p>
     pub labels: std::option::Option<std::vec::Vec<crate::model::DocumentLabel>>,
+}
+impl ClassifyDocumentOutput {
+    /// <p>The classes used by the document being analyzed. These are used for multi-class trained
+    /// models. Individual classes are mutually exclusive and each document is expected to have only a
+    /// single class assigned to it. For example, an animal can be a dog or a cat, but not both at the
+    /// same time. </p>
+    pub fn classes(&self) -> std::option::Option<&[crate::model::DocumentClass]> {
+        self.classes.as_deref()
+    }
+    /// <p>The labels used the document being analyzed. These are used for multi-label trained
+    /// models. Individual labels represent different categories that are related in some manner and
+    /// are not mutually exclusive. For example, a movie can be just an action movie, or it can be an
+    /// action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    pub fn labels(&self) -> std::option::Option<&[crate::model::DocumentLabel]> {
+        self.labels.as_deref()
+    }
 }
 impl std::fmt::Debug for ClassifyDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4378,6 +5096,22 @@ pub struct BatchDetectSyntaxOutput {
     /// and match the order of the documents in the input list. If there are no errors in the batch,
     /// the <code>ErrorList</code> is empty.</p>
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+}
+impl BatchDetectSyntaxOutput {
+    /// <p>A list of  objects containing the results
+    /// of the operation. The results are sorted in ascending order by the <code>Index</code> field
+    /// and match the order of the documents in the input list. If all of the documents contain an
+    /// error, the <code>ResultList</code> is empty.</p>
+    pub fn result_list(&self) -> std::option::Option<&[crate::model::BatchDetectSyntaxItemResult]> {
+        self.result_list.as_deref()
+    }
+    /// <p>A list containing one  object for each document that
+    /// contained an error. The results are sorted in ascending order by the <code>Index</code> field
+    /// and match the order of the documents in the input list. If there are no errors in the batch,
+    /// the <code>ErrorList</code> is empty.</p>
+    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+        self.error_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetectSyntaxOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4483,6 +5217,24 @@ pub struct BatchDetectSentimentOutput {
     /// batch, the <code>ErrorList</code> is empty.</p>
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
+impl BatchDetectSentimentOutput {
+    /// <p>A list of  objects containing the
+    /// results of the operation. The results are sorted in ascending order by the <code>Index</code>
+    /// field and match the order of the documents in the input list. If all of the documents contain
+    /// an error, the <code>ResultList</code> is empty.</p>
+    pub fn result_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDetectSentimentItemResult]> {
+        self.result_list.as_deref()
+    }
+    /// <p>A list containing one  object for each document
+    /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
+    /// field and match the order of the documents in the input list. If there are no errors in the
+    /// batch, the <code>ErrorList</code> is empty.</p>
+    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+        self.error_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDetectSentimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectSentimentOutput");
@@ -4586,6 +5338,24 @@ pub struct BatchDetectKeyPhrasesOutput {
     /// field and match the order of the documents in the input list. If there are no errors in the
     /// batch, the <code>ErrorList</code> is empty.</p>
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+}
+impl BatchDetectKeyPhrasesOutput {
+    /// <p>A list of  objects containing the
+    /// results of the operation. The results are sorted in ascending order by the <code>Index</code>
+    /// field and match the order of the documents in the input list. If all of the documents contain
+    /// an error, the <code>ResultList</code> is empty.</p>
+    pub fn result_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDetectKeyPhrasesItemResult]> {
+        self.result_list.as_deref()
+    }
+    /// <p>A list containing one  object for each document
+    /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
+    /// field and match the order of the documents in the input list. If there are no errors in the
+    /// batch, the <code>ErrorList</code> is empty.</p>
+    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+        self.error_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetectKeyPhrasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4693,6 +5463,24 @@ pub struct BatchDetectEntitiesOutput {
     /// batch, the <code>ErrorList</code> is empty.</p>
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
+impl BatchDetectEntitiesOutput {
+    /// <p>A list of  objects containing the
+    /// results of the operation. The results are sorted in ascending order by the <code>Index</code>
+    /// field and match the order of the documents in the input list. If all of the documents contain
+    /// an error, the <code>ResultList</code> is empty.</p>
+    pub fn result_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDetectEntitiesItemResult]> {
+        self.result_list.as_deref()
+    }
+    /// <p>A list containing one  object for each document
+    /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
+    /// field and match the order of the documents in the input list. If there are no errors in the
+    /// batch, the <code>ErrorList</code> is empty.</p>
+    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+        self.error_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDetectEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectEntitiesOutput");
@@ -4796,6 +5584,24 @@ pub struct BatchDetectDominantLanguageOutput {
     /// field and match the order of the documents in the input list. If there are no errors in the
     /// batch, the <code>ErrorList</code> is empty.</p>
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+}
+impl BatchDetectDominantLanguageOutput {
+    /// <p>A list of  objects
+    /// containing the results of the operation. The results are sorted in ascending order by the
+    /// <code>Index</code> field and match the order of the documents in the input list. If all of
+    /// the documents contain an error, the <code>ResultList</code> is empty.</p>
+    pub fn result_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDetectDominantLanguageItemResult]> {
+        self.result_list.as_deref()
+    }
+    /// <p>A list containing one  object for each document
+    /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
+    /// field and match the order of the documents in the input list. If there are no errors in the
+    /// batch, the <code>ErrorList</code> is empty.</p>
+    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+        self.error_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetectDominantLanguageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

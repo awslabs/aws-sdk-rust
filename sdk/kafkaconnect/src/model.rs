@@ -75,6 +75,18 @@ pub struct CapacityUpdate {
     /// <p>The target settings for provisioned capacity.</p>
     pub provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacityUpdate>,
 }
+impl CapacityUpdate {
+    /// <p>The target auto scaling setting.</p>
+    pub fn auto_scaling(&self) -> std::option::Option<&crate::model::AutoScalingUpdate> {
+        self.auto_scaling.as_ref()
+    }
+    /// <p>The target settings for provisioned capacity.</p>
+    pub fn provisioned_capacity(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedCapacityUpdate> {
+        self.provisioned_capacity.as_ref()
+    }
+}
 impl std::fmt::Debug for CapacityUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CapacityUpdate");
@@ -148,6 +160,16 @@ pub struct ProvisionedCapacityUpdate {
     /// <p>The number of workers that are allocated to the connector.</p>
     pub worker_count: i32,
 }
+impl ProvisionedCapacityUpdate {
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn mcu_count(&self) -> i32 {
+        self.mcu_count
+    }
+    /// <p>The number of workers that are allocated to the connector.</p>
+    pub fn worker_count(&self) -> i32 {
+        self.worker_count
+    }
+}
 impl std::fmt::Debug for ProvisionedCapacityUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedCapacityUpdate");
@@ -216,6 +238,28 @@ pub struct AutoScalingUpdate {
     pub scale_in_policy: std::option::Option<crate::model::ScaleInPolicyUpdate>,
     /// <p>The target sacle-out policy for the connector.</p>
     pub scale_out_policy: std::option::Option<crate::model::ScaleOutPolicyUpdate>,
+}
+impl AutoScalingUpdate {
+    /// <p>The target maximum number of workers allocated to the connector.</p>
+    pub fn max_worker_count(&self) -> i32 {
+        self.max_worker_count
+    }
+    /// <p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn mcu_count(&self) -> i32 {
+        self.mcu_count
+    }
+    /// <p>The target minimum number of workers allocated to the connector.</p>
+    pub fn min_worker_count(&self) -> i32 {
+        self.min_worker_count
+    }
+    /// <p>The target sacle-in policy for the connector.</p>
+    pub fn scale_in_policy(&self) -> std::option::Option<&crate::model::ScaleInPolicyUpdate> {
+        self.scale_in_policy.as_ref()
+    }
+    /// <p>The target sacle-out policy for the connector.</p>
+    pub fn scale_out_policy(&self) -> std::option::Option<&crate::model::ScaleOutPolicyUpdate> {
+        self.scale_out_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoScalingUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -323,6 +367,12 @@ pub struct ScaleOutPolicyUpdate {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     pub cpu_utilization_percentage: i32,
 }
+impl ScaleOutPolicyUpdate {
+    /// <p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
+    pub fn cpu_utilization_percentage(&self) -> i32 {
+        self.cpu_utilization_percentage
+    }
+}
 impl std::fmt::Debug for ScaleOutPolicyUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScaleOutPolicyUpdate");
@@ -373,6 +423,12 @@ impl ScaleOutPolicyUpdate {
 pub struct ScaleInPolicyUpdate {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub cpu_utilization_percentage: i32,
+}
+impl ScaleInPolicyUpdate {
+    /// <p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
+    pub fn cpu_utilization_percentage(&self) -> i32 {
+        self.cpu_utilization_percentage
+    }
 }
 impl std::fmt::Debug for ScaleInPolicyUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -432,6 +488,30 @@ pub struct WorkerConfigurationSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
     pub worker_configuration_arn: std::option::Option<std::string::String>,
+}
+impl WorkerConfigurationSummary {
+    /// <p>The time that a worker configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of a worker configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The latest revision of a worker configuration.</p>
+    pub fn latest_revision(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkerConfigurationRevisionSummary> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>The name of the worker configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
+        self.worker_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for WorkerConfigurationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -550,6 +630,20 @@ pub struct WorkerConfigurationRevisionSummary {
     /// <p>The revision of a worker configuration.</p>
     pub revision: i64,
 }
+impl WorkerConfigurationRevisionSummary {
+    /// <p>The time that a worker configuration revision was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of a worker configuration revision.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The revision of a worker configuration.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+}
 impl std::fmt::Debug for WorkerConfigurationRevisionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionSummary");
@@ -636,6 +730,34 @@ pub struct CustomPluginSummary {
     pub latest_revision: std::option::Option<crate::model::CustomPluginRevisionSummary>,
     /// <p>The name of the custom plugin.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CustomPluginSummary {
+    /// <p>The time that the custom plugin was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
+    }
+    /// <p>The state of the custom plugin.</p>
+    pub fn custom_plugin_state(&self) -> std::option::Option<&crate::model::CustomPluginState> {
+        self.custom_plugin_state.as_ref()
+    }
+    /// <p>A description of the custom plugin.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The latest revision of the custom plugin.</p>
+    pub fn latest_revision(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomPluginRevisionSummary> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>The name of the custom plugin.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomPluginSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -772,6 +894,34 @@ pub struct CustomPluginRevisionSummary {
     /// <p>The revision of the custom plugin.</p>
     pub revision: i64,
 }
+impl CustomPluginRevisionSummary {
+    /// <p>The format of the plugin file.</p>
+    pub fn content_type(&self) -> std::option::Option<&crate::model::CustomPluginContentType> {
+        self.content_type.as_ref()
+    }
+    /// <p>The time that the custom plugin was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the custom plugin.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Details about the custom plugin file.</p>
+    pub fn file_description(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomPluginFileDescription> {
+        self.file_description.as_ref()
+    }
+    /// <p>Information about the location of the custom plugin.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::CustomPluginLocationDescription> {
+        self.location.as_ref()
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+}
 impl std::fmt::Debug for CustomPluginRevisionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomPluginRevisionSummary");
@@ -900,6 +1050,12 @@ pub struct CustomPluginLocationDescription {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     pub s3_location: std::option::Option<crate::model::S3LocationDescription>,
 }
+impl CustomPluginLocationDescription {
+    /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3LocationDescription> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for CustomPluginLocationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomPluginLocationDescription");
@@ -954,6 +1110,20 @@ pub struct S3LocationDescription {
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of an object in an S3 bucket.</p>
     pub object_version: std::option::Option<std::string::String>,
+}
+impl S3LocationDescription {
+    /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The file key for an object in an S3 bucket.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+    /// <p>The version of an object in an S3 bucket.</p>
+    pub fn object_version(&self) -> std::option::Option<&str> {
+        self.object_version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3LocationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1033,6 +1203,16 @@ pub struct CustomPluginFileDescription {
     pub file_md5: std::option::Option<std::string::String>,
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
     pub file_size: i64,
+}
+impl CustomPluginFileDescription {
+    /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
+    pub fn file_md5(&self) -> std::option::Option<&str> {
+        self.file_md5.as_deref()
+    }
+    /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
+    pub fn file_size(&self) -> i64 {
+        self.file_size
+    }
 }
 impl std::fmt::Debug for CustomPluginFileDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1257,6 +1437,74 @@ pub struct ConnectorSummary {
     pub service_execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The worker configurations that are in use with the connector.</p>
     pub worker_configuration: std::option::Option<crate::model::WorkerConfigurationDescription>,
+}
+impl ConnectorSummary {
+    /// <p>The connector's compute capacity settings.</p>
+    pub fn capacity(&self) -> std::option::Option<&crate::model::CapacityDescription> {
+        self.capacity.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connector.</p>
+    pub fn connector_arn(&self) -> std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
+    /// <p>The description of the connector.</p>
+    pub fn connector_description(&self) -> std::option::Option<&str> {
+        self.connector_description.as_deref()
+    }
+    /// <p>The name of the connector.</p>
+    pub fn connector_name(&self) -> std::option::Option<&str> {
+        self.connector_name.as_deref()
+    }
+    /// <p>The state of the connector.</p>
+    pub fn connector_state(&self) -> std::option::Option<&crate::model::ConnectorState> {
+        self.connector_state.as_ref()
+    }
+    /// <p>The time that the connector was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The current version of the connector.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
+    pub fn kafka_cluster(&self) -> std::option::Option<&crate::model::KafkaClusterDescription> {
+        self.kafka_cluster.as_ref()
+    }
+    /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
+    pub fn kafka_cluster_client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterClientAuthenticationDescription> {
+        self.kafka_cluster_client_authentication.as_ref()
+    }
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn kafka_cluster_encryption_in_transit(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterEncryptionInTransitDescription> {
+        self.kafka_cluster_encryption_in_transit.as_ref()
+    }
+    /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    pub fn kafka_connect_version(&self) -> std::option::Option<&str> {
+        self.kafka_connect_version.as_deref()
+    }
+    /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
+    pub fn log_delivery(&self) -> std::option::Option<&crate::model::LogDeliveryDescription> {
+        self.log_delivery.as_ref()
+    }
+    /// <p>Specifies which plugins were used for this connector.</p>
+    pub fn plugins(&self) -> std::option::Option<&[crate::model::PluginDescription]> {
+        self.plugins.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
+    pub fn service_execution_role_arn(&self) -> std::option::Option<&str> {
+        self.service_execution_role_arn.as_deref()
+    }
+    /// <p>The worker configurations that are in use with the connector.</p>
+    pub fn worker_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkerConfigurationDescription> {
+        self.worker_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectorSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1562,6 +1810,16 @@ pub struct WorkerConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
+impl WorkerConfigurationDescription {
+    /// <p>The revision of the worker configuration.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+    /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
+        self.worker_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for WorkerConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerConfigurationDescription");
@@ -1626,6 +1884,12 @@ pub struct PluginDescription {
     /// <p>Details about a custom plugin.</p>
     pub custom_plugin: std::option::Option<crate::model::CustomPluginDescription>,
 }
+impl PluginDescription {
+    /// <p>Details about a custom plugin.</p>
+    pub fn custom_plugin(&self) -> std::option::Option<&crate::model::CustomPluginDescription> {
+        self.custom_plugin.as_ref()
+    }
+}
 impl std::fmt::Debug for PluginDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PluginDescription");
@@ -1678,6 +1942,16 @@ pub struct CustomPluginDescription {
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the custom plugin.</p>
     pub revision: i64,
+}
+impl CustomPluginDescription {
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
 }
 impl std::fmt::Debug for CustomPluginDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1743,6 +2017,14 @@ pub struct LogDeliveryDescription {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
     pub worker_log_delivery: std::option::Option<crate::model::WorkerLogDeliveryDescription>,
 }
+impl LogDeliveryDescription {
+    /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
+    pub fn worker_log_delivery(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkerLogDeliveryDescription> {
+        self.worker_log_delivery.as_ref()
+    }
+}
 impl std::fmt::Debug for LogDeliveryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogDeliveryDescription");
@@ -1801,6 +2083,22 @@ pub struct WorkerLogDeliveryDescription {
     pub firehose: std::option::Option<crate::model::FirehoseLogDeliveryDescription>,
     /// <p>Details about delivering logs to Amazon S3.</p>
     pub s3: std::option::Option<crate::model::S3LogDeliveryDescription>,
+}
+impl WorkerLogDeliveryDescription {
+    /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
+    pub fn cloud_watch_logs(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsLogDeliveryDescription> {
+        self.cloud_watch_logs.as_ref()
+    }
+    /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
+    pub fn firehose(&self) -> std::option::Option<&crate::model::FirehoseLogDeliveryDescription> {
+        self.firehose.as_ref()
+    }
+    /// <p>Details about delivering logs to Amazon S3.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3LogDeliveryDescription> {
+        self.s3.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkerLogDeliveryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1893,6 +2191,20 @@ pub struct S3LogDeliveryDescription {
     /// <p>The S3 prefix that is the destination for log delivery.</p>
     pub prefix: std::option::Option<std::string::String>,
 }
+impl S3LogDeliveryDescription {
+    /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The S3 prefix that is the destination for log delivery.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for S3LogDeliveryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3LogDeliveryDescription");
@@ -1969,6 +2281,16 @@ pub struct FirehoseLogDeliveryDescription {
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
     pub enabled: bool,
 }
+impl FirehoseLogDeliveryDescription {
+    /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
+    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+        self.delivery_stream.as_deref()
+    }
+    /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for FirehoseLogDeliveryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirehoseLogDeliveryDescription");
@@ -2035,6 +2357,16 @@ pub struct CloudWatchLogsLogDeliveryDescription {
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
     pub log_group: std::option::Option<std::string::String>,
 }
+impl CloudWatchLogsLogDeliveryDescription {
+    /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
+    pub fn log_group(&self) -> std::option::Option<&str> {
+        self.log_group.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLogsLogDeliveryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLogsLogDeliveryDescription");
@@ -2095,6 +2427,14 @@ impl CloudWatchLogsLogDeliveryDescription {
 pub struct KafkaClusterEncryptionInTransitDescription {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     pub encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
+}
+impl KafkaClusterEncryptionInTransitDescription {
+    /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn encryption_type(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterEncryptionInTransitType> {
+        self.encryption_type.as_ref()
+    }
 }
 impl std::fmt::Debug for KafkaClusterEncryptionInTransitDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2207,6 +2547,14 @@ pub struct KafkaClusterClientAuthenticationDescription {
     pub authentication_type:
         std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
 }
+impl KafkaClusterClientAuthenticationDescription {
+    /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterClientAuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+}
 impl std::fmt::Debug for KafkaClusterClientAuthenticationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KafkaClusterClientAuthenticationDescription");
@@ -2317,6 +2665,14 @@ pub struct KafkaClusterDescription {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
     pub apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaClusterDescription>,
 }
+impl KafkaClusterDescription {
+    /// <p>The Apache Kafka cluster to which the connector is connected.</p>
+    pub fn apache_kafka_cluster(
+        &self,
+    ) -> std::option::Option<&crate::model::ApacheKafkaClusterDescription> {
+        self.apache_kafka_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for KafkaClusterDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KafkaClusterDescription");
@@ -2373,6 +2729,16 @@ pub struct ApacheKafkaClusterDescription {
     pub bootstrap_servers: std::option::Option<std::string::String>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub vpc: std::option::Option<crate::model::VpcDescription>,
+}
+impl ApacheKafkaClusterDescription {
+    /// <p>The bootstrap servers of the cluster.</p>
+    pub fn bootstrap_servers(&self) -> std::option::Option<&str> {
+        self.bootstrap_servers.as_deref()
+    }
+    /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
+    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcDescription> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for ApacheKafkaClusterDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2439,6 +2805,16 @@ pub struct VpcDescription {
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnets for the connector.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcDescription {
+    /// <p>The security groups for the connector.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The subnets for the connector.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2521,6 +2897,18 @@ pub struct CapacityDescription {
     /// <p>Describes a connector's provisioned capacity.</p>
     pub provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacityDescription>,
 }
+impl CapacityDescription {
+    /// <p>Describes the connector's auto scaling capacity.</p>
+    pub fn auto_scaling(&self) -> std::option::Option<&crate::model::AutoScalingDescription> {
+        self.auto_scaling.as_ref()
+    }
+    /// <p>Describes a connector's provisioned capacity.</p>
+    pub fn provisioned_capacity(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedCapacityDescription> {
+        self.provisioned_capacity.as_ref()
+    }
+}
 impl std::fmt::Debug for CapacityDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CapacityDescription");
@@ -2594,6 +2982,16 @@ pub struct ProvisionedCapacityDescription {
     /// <p>The number of workers that are allocated to the connector.</p>
     pub worker_count: i32,
 }
+impl ProvisionedCapacityDescription {
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn mcu_count(&self) -> i32 {
+        self.mcu_count
+    }
+    /// <p>The number of workers that are allocated to the connector.</p>
+    pub fn worker_count(&self) -> i32 {
+        self.worker_count
+    }
+}
 impl std::fmt::Debug for ProvisionedCapacityDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedCapacityDescription");
@@ -2662,6 +3060,30 @@ pub struct AutoScalingDescription {
     pub scale_in_policy: std::option::Option<crate::model::ScaleInPolicyDescription>,
     /// <p>The sacle-out policy for the connector.&gt;</p>
     pub scale_out_policy: std::option::Option<crate::model::ScaleOutPolicyDescription>,
+}
+impl AutoScalingDescription {
+    /// <p>The maximum number of workers allocated to the connector.</p>
+    pub fn max_worker_count(&self) -> i32 {
+        self.max_worker_count
+    }
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn mcu_count(&self) -> i32 {
+        self.mcu_count
+    }
+    /// <p>The minimum number of workers allocated to the connector.</p>
+    pub fn min_worker_count(&self) -> i32 {
+        self.min_worker_count
+    }
+    /// <p>The sacle-in policy for the connector.</p>
+    pub fn scale_in_policy(&self) -> std::option::Option<&crate::model::ScaleInPolicyDescription> {
+        self.scale_in_policy.as_ref()
+    }
+    /// <p>The sacle-out policy for the connector.&gt;</p>
+    pub fn scale_out_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ScaleOutPolicyDescription> {
+        self.scale_out_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoScalingDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2769,6 +3191,12 @@ pub struct ScaleOutPolicyDescription {
     /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     pub cpu_utilization_percentage: i32,
 }
+impl ScaleOutPolicyDescription {
+    /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
+    pub fn cpu_utilization_percentage(&self) -> i32 {
+        self.cpu_utilization_percentage
+    }
+}
 impl std::fmt::Debug for ScaleOutPolicyDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScaleOutPolicyDescription");
@@ -2819,6 +3247,12 @@ impl ScaleOutPolicyDescription {
 pub struct ScaleInPolicyDescription {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub cpu_utilization_percentage: i32,
+}
+impl ScaleInPolicyDescription {
+    /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
+    pub fn cpu_utilization_percentage(&self) -> i32 {
+        self.cpu_utilization_percentage
+    }
 }
 impl std::fmt::Debug for ScaleInPolicyDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2876,6 +3310,24 @@ pub struct WorkerConfigurationRevisionDescription {
     pub properties_file_content: std::option::Option<std::string::String>,
     /// <p>The description of a revision of the worker configuration.</p>
     pub revision: i64,
+}
+impl WorkerConfigurationRevisionDescription {
+    /// <p>The time that the worker configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the worker configuration revision.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
+    pub fn properties_file_content(&self) -> std::option::Option<&str> {
+        self.properties_file_content.as_deref()
+    }
+    /// <p>The description of a revision of the worker configuration.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
 }
 impl std::fmt::Debug for WorkerConfigurationRevisionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2970,6 +3422,12 @@ pub struct CustomPluginLocation {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl CustomPluginLocation {
+    /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for CustomPluginLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomPluginLocation");
@@ -3024,6 +3482,20 @@ pub struct S3Location {
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of an object in an S3 bucket.</p>
     pub object_version: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The file key for an object in an S3 bucket.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+    /// <p>The version of an object in an S3 bucket.</p>
+    pub fn object_version(&self) -> std::option::Option<&str> {
+        self.object_version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3104,6 +3576,16 @@ pub struct WorkerConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
+impl WorkerConfiguration {
+    /// <p>The revision of the worker configuration.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+    /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
+        self.worker_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for WorkerConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerConfiguration");
@@ -3168,6 +3650,12 @@ pub struct Plugin {
     /// <p>Details about a custom plugin.</p>
     pub custom_plugin: std::option::Option<crate::model::CustomPlugin>,
 }
+impl Plugin {
+    /// <p>Details about a custom plugin.</p>
+    pub fn custom_plugin(&self) -> std::option::Option<&crate::model::CustomPlugin> {
+        self.custom_plugin.as_ref()
+    }
+}
 impl std::fmt::Debug for Plugin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Plugin");
@@ -3220,6 +3708,16 @@ pub struct CustomPlugin {
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the custom plugin.</p>
     pub revision: i64,
+}
+impl CustomPlugin {
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
 }
 impl std::fmt::Debug for CustomPlugin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3285,6 +3783,12 @@ pub struct LogDelivery {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
     pub worker_log_delivery: std::option::Option<crate::model::WorkerLogDelivery>,
 }
+impl LogDelivery {
+    /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
+    pub fn worker_log_delivery(&self) -> std::option::Option<&crate::model::WorkerLogDelivery> {
+        self.worker_log_delivery.as_ref()
+    }
+}
 impl std::fmt::Debug for LogDelivery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogDelivery");
@@ -3339,6 +3843,22 @@ pub struct WorkerLogDelivery {
     pub firehose: std::option::Option<crate::model::FirehoseLogDelivery>,
     /// <p>Details about delivering logs to Amazon S3.</p>
     pub s3: std::option::Option<crate::model::S3LogDelivery>,
+}
+impl WorkerLogDelivery {
+    /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
+    pub fn cloud_watch_logs(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsLogDelivery> {
+        self.cloud_watch_logs.as_ref()
+    }
+    /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
+    pub fn firehose(&self) -> std::option::Option<&crate::model::FirehoseLogDelivery> {
+        self.firehose.as_ref()
+    }
+    /// <p>Details about delivering logs to Amazon S3.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3LogDelivery> {
+        self.s3.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkerLogDelivery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3424,6 +3944,20 @@ pub struct S3LogDelivery {
     /// <p>The S3 prefix that is the destination for log delivery.</p>
     pub prefix: std::option::Option<std::string::String>,
 }
+impl S3LogDelivery {
+    /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The S3 prefix that is the destination for log delivery.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for S3LogDelivery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3LogDelivery");
@@ -3500,6 +4034,16 @@ pub struct FirehoseLogDelivery {
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
     pub enabled: bool,
 }
+impl FirehoseLogDelivery {
+    /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
+    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+        self.delivery_stream.as_deref()
+    }
+    /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for FirehoseLogDelivery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirehoseLogDelivery");
@@ -3566,6 +4110,16 @@ pub struct CloudWatchLogsLogDelivery {
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
     pub log_group: std::option::Option<std::string::String>,
 }
+impl CloudWatchLogsLogDelivery {
+    /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
+    pub fn log_group(&self) -> std::option::Option<&str> {
+        self.log_group.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLogsLogDelivery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLogsLogDelivery");
@@ -3627,6 +4181,14 @@ pub struct KafkaClusterEncryptionInTransit {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     pub encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
 }
+impl KafkaClusterEncryptionInTransit {
+    /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn encryption_type(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterEncryptionInTransitType> {
+        self.encryption_type.as_ref()
+    }
+}
 impl std::fmt::Debug for KafkaClusterEncryptionInTransit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KafkaClusterEncryptionInTransit");
@@ -3683,6 +4245,14 @@ pub struct KafkaClusterClientAuthentication {
     pub authentication_type:
         std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
 }
+impl KafkaClusterClientAuthentication {
+    /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterClientAuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+}
 impl std::fmt::Debug for KafkaClusterClientAuthentication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KafkaClusterClientAuthentication");
@@ -3738,6 +4308,12 @@ pub struct KafkaCluster {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
     pub apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaCluster>,
 }
+impl KafkaCluster {
+    /// <p>The Apache Kafka cluster to which the connector is connected.</p>
+    pub fn apache_kafka_cluster(&self) -> std::option::Option<&crate::model::ApacheKafkaCluster> {
+        self.apache_kafka_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for KafkaCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KafkaCluster");
@@ -3790,6 +4366,16 @@ pub struct ApacheKafkaCluster {
     pub bootstrap_servers: std::option::Option<std::string::String>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub vpc: std::option::Option<crate::model::Vpc>,
+}
+impl ApacheKafkaCluster {
+    /// <p>The bootstrap servers of the cluster.</p>
+    pub fn bootstrap_servers(&self) -> std::option::Option<&str> {
+        self.bootstrap_servers.as_deref()
+    }
+    /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
+    pub fn vpc(&self) -> std::option::Option<&crate::model::Vpc> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for ApacheKafkaCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3856,6 +4442,16 @@ pub struct Vpc {
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnets for the connector.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Vpc {
+    /// <p>The security groups for the connector.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The subnets for the connector.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
 }
 impl std::fmt::Debug for Vpc {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3938,6 +4534,16 @@ pub struct Capacity {
     /// <p>Details about a fixed capacity allocated to a connector.</p>
     pub provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacity>,
 }
+impl Capacity {
+    /// <p>Information about the auto scaling parameters for the connector.</p>
+    pub fn auto_scaling(&self) -> std::option::Option<&crate::model::AutoScaling> {
+        self.auto_scaling.as_ref()
+    }
+    /// <p>Details about a fixed capacity allocated to a connector.</p>
+    pub fn provisioned_capacity(&self) -> std::option::Option<&crate::model::ProvisionedCapacity> {
+        self.provisioned_capacity.as_ref()
+    }
+}
 impl std::fmt::Debug for Capacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Capacity");
@@ -4007,6 +4613,16 @@ pub struct ProvisionedCapacity {
     /// <p>The number of workers that are allocated to the connector.</p>
     pub worker_count: i32,
 }
+impl ProvisionedCapacity {
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn mcu_count(&self) -> i32 {
+        self.mcu_count
+    }
+    /// <p>The number of workers that are allocated to the connector.</p>
+    pub fn worker_count(&self) -> i32 {
+        self.worker_count
+    }
+}
 impl std::fmt::Debug for ProvisionedCapacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedCapacity");
@@ -4075,6 +4691,28 @@ pub struct AutoScaling {
     pub scale_in_policy: std::option::Option<crate::model::ScaleInPolicy>,
     /// <p>The sacle-out policy for the connector.</p>
     pub scale_out_policy: std::option::Option<crate::model::ScaleOutPolicy>,
+}
+impl AutoScaling {
+    /// <p>The maximum number of workers allocated to the connector.</p>
+    pub fn max_worker_count(&self) -> i32 {
+        self.max_worker_count
+    }
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn mcu_count(&self) -> i32 {
+        self.mcu_count
+    }
+    /// <p>The minimum number of workers allocated to the connector.</p>
+    pub fn min_worker_count(&self) -> i32 {
+        self.min_worker_count
+    }
+    /// <p>The sacle-in policy for the connector.</p>
+    pub fn scale_in_policy(&self) -> std::option::Option<&crate::model::ScaleInPolicy> {
+        self.scale_in_policy.as_ref()
+    }
+    /// <p>The sacle-out policy for the connector.</p>
+    pub fn scale_out_policy(&self) -> std::option::Option<&crate::model::ScaleOutPolicy> {
+        self.scale_out_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoScaling {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4182,6 +4820,12 @@ pub struct ScaleOutPolicy {
     /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     pub cpu_utilization_percentage: i32,
 }
+impl ScaleOutPolicy {
+    /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
+    pub fn cpu_utilization_percentage(&self) -> i32 {
+        self.cpu_utilization_percentage
+    }
+}
 impl std::fmt::Debug for ScaleOutPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScaleOutPolicy");
@@ -4232,6 +4876,12 @@ impl ScaleOutPolicy {
 pub struct ScaleInPolicy {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub cpu_utilization_percentage: i32,
+}
+impl ScaleInPolicy {
+    /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
+    pub fn cpu_utilization_percentage(&self) -> i32 {
+        self.cpu_utilization_percentage
+    }
 }
 impl std::fmt::Debug for ScaleInPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

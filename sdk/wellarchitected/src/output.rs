@@ -38,6 +38,16 @@ pub struct UpdateWorkloadShareOutput {
     /// <p>A workload share return object.</p>
     pub workload_share: std::option::Option<crate::model::WorkloadShare>,
 }
+impl UpdateWorkloadShareOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>A workload share return object.</p>
+    pub fn workload_share(&self) -> std::option::Option<&crate::model::WorkloadShare> {
+        self.workload_share.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkloadShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkloadShareOutput");
@@ -102,6 +112,12 @@ pub struct UpdateWorkloadOutput {
     /// <p>A workload return object.</p>
     pub workload: std::option::Option<crate::model::Workload>,
 }
+impl UpdateWorkloadOutput {
+    /// <p>A workload return object.</p>
+    pub fn workload(&self) -> std::option::Option<&crate::model::Workload> {
+        self.workload.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkloadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkloadOutput");
@@ -149,6 +165,12 @@ impl UpdateWorkloadOutput {
 pub struct UpdateShareInvitationOutput {
     /// <p>The updated workload share invitation.</p>
     pub share_invitation: std::option::Option<crate::model::ShareInvitation>,
+}
+impl UpdateShareInvitationOutput {
+    /// <p>The updated workload share invitation.</p>
+    pub fn share_invitation(&self) -> std::option::Option<&crate::model::ShareInvitation> {
+        self.share_invitation.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateShareInvitationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -202,6 +224,16 @@ pub struct UpdateLensReviewOutput {
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A lens review of a question.</p>
     pub lens_review: std::option::Option<crate::model::LensReview>,
+}
+impl UpdateLensReviewOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>A lens review of a question.</p>
+    pub fn lens_review(&self) -> std::option::Option<&crate::model::LensReview> {
+        self.lens_review.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLensReviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -271,6 +303,21 @@ pub struct UpdateAnswerOutput {
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>An answer of the question.</p>
     pub answer: std::option::Option<crate::model::Answer>,
+}
+impl UpdateAnswerOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>An answer of the question.</p>
+    pub fn answer(&self) -> std::option::Option<&crate::model::Answer> {
+        self.answer.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAnswerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -413,6 +460,22 @@ pub struct ListWorkloadSharesOutput {
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkloadSharesOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>A list of workload share summaries.</p>
+    pub fn workload_share_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::WorkloadShareSummary]> {
+        self.workload_share_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkloadSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkloadSharesOutput");
@@ -502,6 +565,16 @@ pub struct ListWorkloadsOutput {
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkloadsOutput {
+    /// <p>A list of workload summaries.</p>
+    pub fn workload_summaries(&self) -> std::option::Option<&[crate::model::WorkloadSummary]> {
+        self.workload_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkloadsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkloadsOutput");
@@ -577,6 +650,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -642,6 +724,18 @@ pub struct ListShareInvitationsOutput {
         std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListShareInvitationsOutput {
+    /// <p>List of share invitation summaries in a workload.</p>
+    pub fn share_invitation_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ShareInvitationSummary]> {
+        self.share_invitation_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListShareInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -723,6 +817,18 @@ pub struct ListNotificationsOutput {
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListNotificationsOutput {
+    /// <p>List of lens notification summaries in a workload.</p>
+    pub fn notification_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationSummary]> {
+        self.notification_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNotificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNotificationsOutput");
@@ -800,6 +906,20 @@ pub struct ListMilestonesOutput {
     pub milestone_summaries: std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMilestonesOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>A list of milestone summaries.</p>
+    pub fn milestone_summaries(&self) -> std::option::Option<&[crate::model::MilestoneSummary]> {
+        self.milestone_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMilestonesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -894,6 +1014,25 @@ pub struct ListLensReviewsOutput {
     pub lens_review_summaries: std::option::Option<std::vec::Vec<crate::model::LensReviewSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLensReviewsOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>List of lens summaries of lens reviews of a workload.</p>
+    pub fn lens_review_summaries(&self) -> std::option::Option<&[crate::model::LensReviewSummary]> {
+        self.lens_review_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLensReviewsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1006,6 +1145,32 @@ pub struct ListLensReviewImprovementsOutput {
     pub improvement_summaries: std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLensReviewImprovementsOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>List of improvement summaries of lens review in a workload.</p>
+    pub fn improvement_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ImprovementSummary]> {
+        self.improvement_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLensReviewImprovementsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1126,6 +1291,16 @@ pub struct ListLensesOutput {
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLensesOutput {
+    /// <p>List of lens summaries of available lenses.</p>
+    pub fn lens_summaries(&self) -> std::option::Option<&[crate::model::LensSummary]> {
+        self.lens_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLensesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLensesOutput");
@@ -1205,6 +1380,30 @@ pub struct ListAnswersOutput {
     pub answer_summaries: std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnswersOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>List of answer summaries of lens review in a workload.</p>
+    pub fn answer_summaries(&self) -> std::option::Option<&[crate::model::AnswerSummary]> {
+        self.answer_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAnswersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1320,6 +1519,12 @@ pub struct GetWorkloadOutput {
     /// <p>A workload return object.</p>
     pub workload: std::option::Option<crate::model::Workload>,
 }
+impl GetWorkloadOutput {
+    /// <p>A workload return object.</p>
+    pub fn workload(&self) -> std::option::Option<&crate::model::Workload> {
+        self.workload.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWorkloadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkloadOutput");
@@ -1369,6 +1574,16 @@ pub struct GetMilestoneOutput {
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A milestone return object.</p>
     pub milestone: std::option::Option<crate::model::Milestone>,
+}
+impl GetMilestoneOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>A milestone return object.</p>
+    pub fn milestone(&self) -> std::option::Option<&crate::model::Milestone> {
+        self.milestone.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMilestoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1440,6 +1655,25 @@ pub struct GetLensVersionDifferenceOutput {
     pub latest_lens_version: std::option::Option<std::string::String>,
     /// <p>The differences between the base and latest versions of the lens.</p>
     pub version_differences: std::option::Option<crate::model::VersionDifferences>,
+}
+impl GetLensVersionDifferenceOutput {
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The base version of the lens.</p>
+    pub fn base_lens_version(&self) -> std::option::Option<&str> {
+        self.base_lens_version.as_deref()
+    }
+    /// <p>The latest version of the lens.</p>
+    pub fn latest_lens_version(&self) -> std::option::Option<&str> {
+        self.latest_lens_version.as_deref()
+    }
+    /// <p>The differences between the base and latest versions of the lens.</p>
+    pub fn version_differences(&self) -> std::option::Option<&crate::model::VersionDifferences> {
+        self.version_differences.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLensVersionDifferenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1544,6 +1778,21 @@ pub struct GetLensReviewReportOutput {
     /// <p>A report of a lens review.</p>
     pub lens_review_report: std::option::Option<crate::model::LensReviewReport>,
 }
+impl GetLensReviewReportOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>A report of a lens review.</p>
+    pub fn lens_review_report(&self) -> std::option::Option<&crate::model::LensReviewReport> {
+        self.lens_review_report.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLensReviewReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLensReviewReportOutput");
@@ -1627,6 +1876,21 @@ pub struct GetLensReviewOutput {
     pub milestone_number: i32,
     /// <p>A lens review of a question.</p>
     pub lens_review: std::option::Option<crate::model::LensReview>,
+}
+impl GetLensReviewOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>A lens review of a question.</p>
+    pub fn lens_review(&self) -> std::option::Option<&crate::model::LensReview> {
+        self.lens_review.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLensReviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1714,6 +1978,26 @@ pub struct GetAnswerOutput {
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>An answer of the question.</p>
     pub answer: std::option::Option<crate::model::Answer>,
+}
+impl GetAnswerOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>An answer of the question.</p>
+    pub fn answer(&self) -> std::option::Option<&crate::model::Answer> {
+        self.answer.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAnswerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1898,6 +2182,16 @@ pub struct CreateWorkloadShareOutput {
     /// <p>The ID associated with the workload share.</p>
     pub share_id: std::option::Option<std::string::String>,
 }
+impl CreateWorkloadShareOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The ID associated with the workload share.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkloadShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkloadShareOutput");
@@ -1960,6 +2254,16 @@ pub struct CreateWorkloadOutput {
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
+}
+impl CreateWorkloadOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The ARN for the workload.</p>
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
+        self.workload_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkloadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2024,6 +2328,17 @@ pub struct CreateMilestoneOutput {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
+}
+impl CreateMilestoneOutput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
 }
 impl std::fmt::Debug for CreateMilestoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

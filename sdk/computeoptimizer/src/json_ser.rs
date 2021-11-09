@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_describe_recommendation_export_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeRecommendationExportJobsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.job_ids {
         let mut array_2 = object.key("jobIds").start_array();
         for item_3 in var_1 {
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_describe_recommendation_export_jobs_input
         for item_6 in var_4 {
             {
                 let mut object_7 = array_5.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_job_filter(&mut object_7, item_6);
+                crate::json_ser::serialize_structure_crate_model_job_filter(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -32,12 +32,13 @@ pub fn serialize_structure_crate_input_describe_recommendation_export_jobs_input
             aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExportAutoScalingGroupRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.account_ids {
         let mut array_11 = object.key("accountIds").start_array();
         for item_12 in var_10 {
@@ -52,7 +53,7 @@ pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations
         for item_15 in var_13 {
             {
                 let mut object_16 = array_14.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_16, item_15);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -72,7 +73,7 @@ pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_21,
             var_20,
-        );
+        )?;
         object_21.finish();
     }
     if let Some(var_22) = &input.file_format {
@@ -88,15 +89,16 @@ pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_24,
             var_23,
-        );
+        )?;
         object_24.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_export_ebs_volume_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExportEbsVolumeRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.account_ids {
         let mut array_26 = object.key("accountIds").start_array();
         for item_27 in var_25 {
@@ -114,7 +116,7 @@ pub fn serialize_structure_crate_input_export_ebs_volume_recommendations_input(
                 crate::json_ser::serialize_structure_crate_model_ebs_filter(
                     &mut object_31,
                     item_30,
-                );
+                )?;
                 object_31.finish();
             }
         }
@@ -134,7 +136,7 @@ pub fn serialize_structure_crate_input_export_ebs_volume_recommendations_input(
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_36,
             var_35,
-        );
+        )?;
         object_36.finish();
     }
     if let Some(var_37) = &input.file_format {
@@ -145,12 +147,13 @@ pub fn serialize_structure_crate_input_export_ebs_volume_recommendations_input(
             .key("includeMemberAccounts")
             .boolean(input.include_member_accounts);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExportEc2InstanceRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.account_ids {
         let mut array_39 = object.key("accountIds").start_array();
         for item_40 in var_38 {
@@ -165,7 +168,7 @@ pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input
         for item_43 in var_41 {
             {
                 let mut object_44 = array_42.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_44, item_43);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_44, item_43)?;
                 object_44.finish();
             }
         }
@@ -185,7 +188,7 @@ pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_49,
             var_48,
-        );
+        )?;
         object_49.finish();
     }
     if let Some(var_50) = &input.file_format {
@@ -201,15 +204,16 @@ pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_52,
             var_51,
-        );
+        )?;
         object_52.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_export_lambda_function_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExportLambdaFunctionRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.account_ids {
         let mut array_54 = object.key("accountIds").start_array();
         for item_55 in var_53 {
@@ -224,7 +228,7 @@ pub fn serialize_structure_crate_input_export_lambda_function_recommendations_in
         for item_58 in var_56 {
             {
                 let mut object_59 = array_57.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_lambda_function_recommendation_filter(&mut object_59, item_58);
+                crate::json_ser::serialize_structure_crate_model_lambda_function_recommendation_filter(&mut object_59, item_58)?;
                 object_59.finish();
             }
         }
@@ -244,7 +248,7 @@ pub fn serialize_structure_crate_input_export_lambda_function_recommendations_in
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_64,
             var_63,
-        );
+        )?;
         object_64.finish();
     }
     if let Some(var_65) = &input.file_format {
@@ -255,12 +259,13 @@ pub fn serialize_structure_crate_input_export_lambda_function_recommendations_in
             .key("includeMemberAccounts")
             .boolean(input.include_member_accounts);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_auto_scaling_group_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAutoScalingGroupRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_66) = &input.account_ids {
         let mut array_67 = object.key("accountIds").start_array();
         for item_68 in var_66 {
@@ -293,7 +298,7 @@ pub fn serialize_structure_crate_input_get_auto_scaling_group_recommendations_in
         for item_76 in var_74 {
             {
                 let mut object_77 = array_75.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_77, item_76);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_77, item_76)?;
                 object_77.finish();
             }
         }
@@ -304,15 +309,16 @@ pub fn serialize_structure_crate_input_get_auto_scaling_group_recommendations_in
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_79,
             var_78,
-        );
+        )?;
         object_79.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_ebs_volume_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetEbsVolumeRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_80) = &input.volume_arns {
         let mut array_81 = object.key("volumeArns").start_array();
         for item_82 in var_80 {
@@ -339,7 +345,7 @@ pub fn serialize_structure_crate_input_get_ebs_volume_recommendations_input(
                 crate::json_ser::serialize_structure_crate_model_ebs_filter(
                     &mut object_88,
                     item_87,
-                );
+                )?;
                 object_88.finish();
             }
         }
@@ -354,12 +360,13 @@ pub fn serialize_structure_crate_input_get_ebs_volume_recommendations_input(
         }
         array_90.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_ec2_instance_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetEc2InstanceRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.instance_arns {
         let mut array_93 = object.key("instanceArns").start_array();
         for item_94 in var_92 {
@@ -383,7 +390,7 @@ pub fn serialize_structure_crate_input_get_ec2_instance_recommendations_input(
         for item_99 in var_97 {
             {
                 let mut object_100 = array_98.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_100, item_99);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_100, item_99)?;
                 object_100.finish();
             }
         }
@@ -403,15 +410,16 @@ pub fn serialize_structure_crate_input_get_ec2_instance_recommendations_input(
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_105,
             var_104,
-        );
+        )?;
         object_105.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_ec2_recommendation_projected_metrics_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetEc2RecommendationProjectedMetricsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_106) = &input.instance_arn {
         object.key("instanceArn").string(var_106);
     }
@@ -439,15 +447,16 @@ pub fn serialize_structure_crate_input_get_ec2_recommendation_projected_metrics_
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_111,
             var_110,
-        );
+        )?;
         object_111.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_enrollment_statuses_for_organization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetEnrollmentStatusesForOrganizationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_112) = &input.filters {
         let mut array_113 = object.key("filters").start_array();
         for item_114 in var_112 {
@@ -456,7 +465,7 @@ pub fn serialize_structure_crate_input_get_enrollment_statuses_for_organization_
                 crate::json_ser::serialize_structure_crate_model_enrollment_filter(
                     &mut object_115,
                     item_114,
-                );
+                )?;
                 object_115.finish();
             }
         }
@@ -471,12 +480,13 @@ pub fn serialize_structure_crate_input_get_enrollment_statuses_for_organization_
             aws_smithy_types::Number::NegInt((*var_117).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_lambda_function_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLambdaFunctionRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.function_arns {
         let mut array_119 = object.key("functionArns").start_array();
         for item_120 in var_118 {
@@ -500,7 +510,7 @@ pub fn serialize_structure_crate_input_get_lambda_function_recommendations_input
         for item_126 in var_124 {
             {
                 let mut object_127 = array_125.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_lambda_function_recommendation_filter(&mut object_127, item_126);
+                crate::json_ser::serialize_structure_crate_model_lambda_function_recommendation_filter(&mut object_127, item_126)?;
                 object_127.finish();
             }
         }
@@ -515,12 +525,13 @@ pub fn serialize_structure_crate_input_get_lambda_function_recommendations_input
             aws_smithy_types::Number::NegInt((*var_129).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_recommendation_summaries_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRecommendationSummariesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_130) = &input.account_ids {
         let mut array_131 = object.key("accountIds").start_array();
         for item_132 in var_130 {
@@ -539,12 +550,13 @@ pub fn serialize_structure_crate_input_get_recommendation_summaries_input(
             aws_smithy_types::Number::NegInt((*var_134).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_enrollment_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEnrollmentStatusInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_135) = &input.status {
         object.key("status").string(var_135.as_str());
     }
@@ -553,12 +565,13 @@ pub fn serialize_structure_crate_input_update_enrollment_status_input(
             .key("includeMemberAccounts")
             .boolean(input.include_member_accounts);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_job_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::JobFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_136) = &input.name {
         object.key("name").string(var_136.as_str());
     }
@@ -571,12 +584,13 @@ pub fn serialize_structure_crate_model_job_filter(
         }
         array_138.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_140) = &input.name {
         object.key("name").string(var_140.as_str());
     }
@@ -589,24 +603,26 @@ pub fn serialize_structure_crate_model_filter(
         }
         array_142.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_destination_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3DestinationConfig,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_144) = &input.bucket {
         object.key("bucket").string(var_144);
     }
     if let Some(var_145) = &input.key_prefix {
         object.key("keyPrefix").string(var_145);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_recommendation_preferences(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RecommendationPreferences,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_146) = &input.cpu_vendor_architectures {
         let mut array_147 = object.key("cpuVendorArchitectures").start_array();
         for item_148 in var_146 {
@@ -616,12 +632,13 @@ pub fn serialize_structure_crate_model_recommendation_preferences(
         }
         array_147.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_ebs_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EbsFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_149) = &input.name {
         object.key("name").string(var_149.as_str());
     }
@@ -634,12 +651,13 @@ pub fn serialize_structure_crate_model_ebs_filter(
         }
         array_151.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_lambda_function_recommendation_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LambdaFunctionRecommendationFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_153) = &input.name {
         object.key("name").string(var_153.as_str());
     }
@@ -652,12 +670,13 @@ pub fn serialize_structure_crate_model_lambda_function_recommendation_filter(
         }
         array_155.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_enrollment_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EnrollmentFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_157) = &input.name {
         object.key("name").string(var_157.as_str());
     }
@@ -670,4 +689,5 @@ pub fn serialize_structure_crate_model_enrollment_filter(
         }
         array_159.finish();
     }
+    Ok(())
 }

@@ -216,6 +216,12 @@ pub struct StartMailboxExportJobOutput {
     /// <p>The job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StartMailboxExportJobOutput {
+    /// <p>The job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartMailboxExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMailboxExportJobOutput");
@@ -507,6 +513,17 @@ pub struct ListUsersOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUsersOutput {
+    /// <p>The overview of users for an organization.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p> The token to use to retrieve the next page of results. This value is `null` when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersOutput");
@@ -579,6 +596,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -637,6 +660,18 @@ pub struct ListResourcesOutput {
     /// are still available, it has an associated value. When the last page is reached, the token
     /// is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourcesOutput {
+    /// <p>One page of the organization's resource representation.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// <p> The token used to paginate through all the organization's resources. While results
+    /// are still available, it has an associated value. When the last page is reached, the token
+    /// is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -715,6 +750,18 @@ pub struct ListResourceDelegatesOutput {
     /// results are still available, it has an associated value. When the last page is reached, the
     /// token is empty. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceDelegatesOutput {
+    /// <p>One page of the resource's delegates.</p>
+    pub fn delegates(&self) -> std::option::Option<&[crate::model::Delegate]> {
+        self.delegates.as_deref()
+    }
+    /// <p>The token used to paginate through the delegates associated with a resource. While
+    /// results are still available, it has an associated value. When the last page is reached, the
+    /// token is empty. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceDelegatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -795,6 +842,20 @@ pub struct ListOrganizationsOutput {
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOrganizationsOutput {
+    /// <p>The overview of owned organizations presented as a list of organization
+    /// summaries.</p>
+    pub fn organization_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationSummary]> {
+        self.organization_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOrganizationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOrganizationsOutput");
@@ -873,6 +934,12 @@ pub struct ListMobileDeviceAccessRulesOutput {
     /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessRule>>,
 }
+impl ListMobileDeviceAccessRulesOutput {
+    /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::MobileDeviceAccessRule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMobileDeviceAccessRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMobileDeviceAccessRulesOutput");
@@ -929,6 +996,16 @@ pub struct ListMobileDeviceAccessOverridesOutput {
     pub overrides: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMobileDeviceAccessOverridesOutput {
+    /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+    pub fn overrides(&self) -> std::option::Option<&[crate::model::MobileDeviceAccessOverride]> {
+        self.overrides.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMobileDeviceAccessOverridesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1006,6 +1083,16 @@ pub struct ListMailDomainsOutput {
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMailDomainsOutput {
+    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail  organization, along with the information about whether the domain is or isn't the default.</p>
+    pub fn mail_domains(&self) -> std::option::Option<&[crate::model::MailDomainSummary]> {
+        self.mail_domains.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMailDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMailDomainsOutput");
@@ -1079,6 +1166,17 @@ pub struct ListMailboxPermissionsOutput {
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMailboxPermissionsOutput {
+    /// <p>One page of the user, group, or resource mailbox permissions.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMailboxPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1154,6 +1252,16 @@ pub struct ListMailboxExportJobsOutput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMailboxExportJobsOutput {
+    /// <p>The mailbox export job details.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::MailboxExportJob]> {
+        self.jobs.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMailboxExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMailboxExportJobsOutput");
@@ -1226,6 +1334,17 @@ pub struct ListGroupsOutput {
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGroupsOutput {
+    /// <p>The overview of groups for an organization.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.groups.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1302,6 +1421,17 @@ pub struct ListGroupMembersOutput {
     /// contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupMembersOutput {
+    /// <p>The members associated to the group.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+        self.members.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupMembersOutput");
@@ -1377,6 +1507,17 @@ pub struct ListAliasesOutput {
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAliasesOutput {
+    /// <p>The entity's paginated aliases.</p>
+    pub fn aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.aliases.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAliasesOutput");
@@ -1449,6 +1590,12 @@ pub struct ListAccessControlRulesOutput {
     /// <p>The access control rules.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::AccessControlRule>>,
 }
+impl ListAccessControlRulesOutput {
+    /// <p>The access control rules.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::AccessControlRule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccessControlRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessControlRulesOutput");
@@ -1513,6 +1660,32 @@ pub struct GetMobileDeviceAccessOverrideOutput {
     pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the description was last modified.</p>
     pub date_modified: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetMobileDeviceAccessOverrideOutput {
+    /// <p>The WorkMail user to which the access override applies.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The device to which the access override applies.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>A description of the override.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date the override was first created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date the description was last modified.</p>
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_modified.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMobileDeviceAccessOverrideOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1640,6 +1813,19 @@ pub struct GetMobileDeviceAccessEffectOutput {
     pub matched_rules:
         std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessMatchedRule>>,
 }
+impl GetMobileDeviceAccessEffectOutput {
+    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated
+    /// user parameters.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
+    pub fn matched_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::MobileDeviceAccessMatchedRule]> {
+        self.matched_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMobileDeviceAccessEffectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMobileDeviceAccessEffectOutput");
@@ -1728,6 +1914,33 @@ pub struct GetMailDomainOutput {
         std::option::Option<crate::model::DnsRecordVerificationStatus>,
     /// <p>Indicates the status of a DKIM verification.</p>
     pub dkim_verification_status: std::option::Option<crate::model::DnsRecordVerificationStatus>,
+}
+impl GetMailDomainOutput {
+    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming
+    /// email traffic to SES. See admin guide for more details.</p>
+    pub fn records(&self) -> std::option::Option<&[crate::model::DnsRecord]> {
+        self.records.as_deref()
+    }
+    /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
+    pub fn is_test_domain(&self) -> bool {
+        self.is_test_domain
+    }
+    /// <p>Specifies whether the domain is the default domain for your organization.</p>
+    pub fn is_default(&self) -> bool {
+        self.is_default
+    }
+    /// <p> Indicates the status of the domain ownership verification.</p>
+    pub fn ownership_verification_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DnsRecordVerificationStatus> {
+        self.ownership_verification_status.as_ref()
+    }
+    /// <p>Indicates the status of a DKIM verification.</p>
+    pub fn dkim_verification_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DnsRecordVerificationStatus> {
+        self.dkim_verification_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMailDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1859,6 +2072,16 @@ pub struct GetMailboxDetailsOutput {
     /// <p>The current mailbox size, in MB, for the specified user.</p>
     pub mailbox_size: f64,
 }
+impl GetMailboxDetailsOutput {
+    /// <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
+    pub fn mailbox_quota(&self) -> std::option::Option<i32> {
+        self.mailbox_quota
+    }
+    /// <p>The current mailbox size, in MB, for the specified user.</p>
+    pub fn mailbox_size(&self) -> f64 {
+        self.mailbox_size
+    }
+}
 impl std::fmt::Debug for GetMailboxDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMailboxDetailsOutput");
@@ -1926,6 +2149,26 @@ pub struct GetDefaultRetentionPolicyOutput {
     /// <p>The retention policy folder configurations.</p>
     pub folder_configurations:
         std::option::Option<std::vec::Vec<crate::model::FolderConfiguration>>,
+}
+impl GetDefaultRetentionPolicyOutput {
+    /// <p>The retention policy ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The retention policy name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The retention policy description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The retention policy folder configurations.</p>
+    pub fn folder_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FolderConfiguration]> {
+        self.folder_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDefaultRetentionPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2028,6 +2271,16 @@ pub struct GetAccessControlEffectOutput {
     pub effect: std::option::Option<crate::model::AccessControlRuleEffect>,
     /// <p>The rules that match the given parameters, resulting in an effect.</p>
     pub matched_rules: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetAccessControlEffectOutput {
+    /// <p>The rule effect.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::AccessControlRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>The rules that match the given parameters, resulting in an effect.</p>
+    pub fn matched_rules(&self) -> std::option::Option<&[std::string::String]> {
+        self.matched_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessControlEffectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2182,6 +2435,47 @@ pub struct DescribeUserOutput {
     /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
     /// time format.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeUserOutput {
+    /// <p>The identifier for the described user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The name for the user.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The email of the user.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The display name of the user.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
+    /// never registered to WorkMail).</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+        self.state.as_ref()
+    }
+    /// <p>In certain cases, other entities are modeled as users. If interoperability is
+    /// enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail
+    /// organizations rely on different directory types, administrators can distinguish between an
+    /// unregistered user (account is disabled and has a user role) and the directory
+    /// administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
+        self.user_role.as_ref()
+    }
+    /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
+    /// time format.</p>
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enabled_date.as_ref()
+    }
+    /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
+    /// time format.</p>
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.disabled_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2359,6 +2653,43 @@ pub struct DescribeResourceOutput {
     /// format.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeResourceOutput {
+    /// <p>The identifier of the described resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The email of the described resource.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The name of the described resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the described resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The booking options for the described resource.</p>
+    pub fn booking_options(&self) -> std::option::Option<&crate::model::BookingOptions> {
+        self.booking_options.as_ref()
+    }
+    /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered
+    /// or never registered to WorkMail), or deleted.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
+    /// format.</p>
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enabled_date.as_ref()
+    }
+    /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
+    /// format.</p>
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.disabled_date.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourceOutput");
@@ -2530,6 +2861,46 @@ pub struct DescribeOrganizationOutput {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationOutput {
+    /// <p>The identifier of an organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The alias for an organization.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The state of an organization.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The type of directory associated with the WorkMail organization.</p>
+    pub fn directory_type(&self) -> std::option::Option<&str> {
+        self.directory_type.as_deref()
+    }
+    /// <p>The default mail domain associated with the organization.</p>
+    pub fn default_mail_domain(&self) -> std::option::Option<&str> {
+        self.default_mail_domain.as_deref()
+    }
+    /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
+    /// time format.</p>
+    pub fn completed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_date.as_ref()
+    }
+    /// <p>(Optional) The error message indicating if unexpected behavior was encountered with
+    /// regards to the organization.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the organization.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2726,6 +3097,59 @@ pub struct DescribeMailboxExportJobOutput {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The mailbox export job end timestamp.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeMailboxExportJobOutput {
+    /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The mailbox export job description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple
+    /// Storage Service (Amazon S3) bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
+    /// key that encrypts the exported mailbox content.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The S3 bucket prefix.</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
+    /// <p>The path to the S3 bucket and file that the mailbox export job is exporting
+    /// to.</p>
+    pub fn s3_path(&self) -> std::option::Option<&str> {
+        self.s3_path.as_deref()
+    }
+    /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
+    pub fn estimated_progress(&self) -> i32 {
+        self.estimated_progress
+    }
+    /// <p>The state of the mailbox export job.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::MailboxExportJobState> {
+        self.state.as_ref()
+    }
+    /// <p>Error information for failed mailbox export jobs.</p>
+    pub fn error_info(&self) -> std::option::Option<&str> {
+        self.error_info.as_deref()
+    }
+    /// <p>The mailbox export job start timestamp.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The mailbox export job end timestamp.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeMailboxExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2936,6 +3360,12 @@ pub struct DescribeInboundDmarcSettingsOutput {
     /// <p>Lists the enforcement setting of the applied policy.</p>
     pub enforced: bool,
 }
+impl DescribeInboundDmarcSettingsOutput {
+    /// <p>Lists the enforcement setting of the applied policy.</p>
+    pub fn enforced(&self) -> bool {
+        self.enforced
+    }
+}
 impl std::fmt::Debug for DescribeInboundDmarcSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInboundDmarcSettingsOutput");
@@ -2996,6 +3426,35 @@ pub struct DescribeGroupOutput {
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
     /// format.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeGroupOutput {
+    /// <p>The identifier of the described group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The name of the described group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The email of the described group.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
+    /// never registered to WorkMail).</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
+    /// format.</p>
+    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enabled_date.as_ref()
+    }
+    /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
+    /// format.</p>
+    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.disabled_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3274,6 +3733,16 @@ pub struct DeleteOrganizationOutput {
     /// <p>The state of the organization.</p>
     pub state: std::option::Option<std::string::String>,
 }
+impl DeleteOrganizationOutput {
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The state of the organization.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOrganizationOutput");
@@ -3518,6 +3987,12 @@ pub struct CreateUserOutput {
     /// <p>The identifier for the new user.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl CreateUserOutput {
+    /// <p>The identifier for the new user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -3566,6 +4041,12 @@ pub struct CreateResourceOutput {
     /// <p>The identifier of the new resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl CreateResourceOutput {
+    /// <p>The identifier of the new resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceOutput");
@@ -3613,6 +4094,12 @@ impl CreateResourceOutput {
 pub struct CreateOrganizationOutput {
     /// <p>The organization ID.</p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl CreateOrganizationOutput {
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3664,6 +4151,12 @@ impl CreateOrganizationOutput {
 pub struct CreateMobileDeviceAccessRuleOutput {
     /// <p>The identifier for the newly created mobile device access rule.</p>
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
+}
+impl CreateMobileDeviceAccessRuleOutput {
+    /// <p>The identifier for the newly created mobile device access rule.</p>
+    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+        self.mobile_device_access_rule_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMobileDeviceAccessRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3721,6 +4214,12 @@ impl CreateMobileDeviceAccessRuleOutput {
 pub struct CreateGroupOutput {
     /// <p>The identifier of the group.</p>
     pub group_id: std::option::Option<std::string::String>,
+}
+impl CreateGroupOutput {
+    /// <p>The identifier of the group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

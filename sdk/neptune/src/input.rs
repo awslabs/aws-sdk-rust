@@ -114,10 +114,9 @@ impl AddRoleToDbClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_role_to_db_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_role_to_db_cluster(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -321,7 +320,7 @@ impl AddSourceIdentifierToSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_source_identifier_to_subscription(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_add_source_identifier_to_subscription(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -495,10 +494,7 @@ impl AddTagsToResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -715,7 +711,7 @@ impl ApplyPendingMaintenanceActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_apply_pending_maintenance_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_apply_pending_maintenance_action(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1001,7 +997,7 @@ impl CopyDbClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_copy_db_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_copy_db_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1319,10 +1315,7 @@ impl CopyDbClusterSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_copy_db_cluster_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1596,10 +1589,7 @@ impl CopyDbParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_copy_db_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2333,10 +2323,7 @@ impl CreateDbClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_db_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_db_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2589,10 +2576,7 @@ impl CreateDbClusterEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_db_cluster_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2816,7 +2800,7 @@ impl CreateDbClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_db_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_db_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3055,10 +3039,7 @@ impl CreateDbClusterSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_db_cluster_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4057,10 +4038,7 @@ impl CreateDbInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_db_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_db_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4292,10 +4270,7 @@ impl CreateDbParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_db_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4511,10 +4486,9 @@ impl CreateDbSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_db_subnet_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_db_subnet_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4841,10 +4815,7 @@ impl CreateEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5088,10 +5059,7 @@ impl DeleteDbClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_db_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_db_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5245,10 +5213,7 @@ impl DeleteDbClusterEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_db_cluster_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5424,7 +5389,7 @@ impl DeleteDbClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_db_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_db_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5583,10 +5548,7 @@ impl DeleteDbClusterSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_db_cluster_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5842,10 +5804,7 @@ impl DeleteDbInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_db_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_db_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6019,10 +5978,7 @@ impl DeleteDbParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_db_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6184,10 +6140,9 @@ impl DeleteDbSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_db_subnet_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_db_subnet_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6338,10 +6293,7 @@ impl DeleteEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6589,7 +6541,7 @@ impl DescribeDbClusterEndpointsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_endpoints(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_endpoints(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6813,7 +6765,7 @@ impl DescribeDbClusterParameterGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_parameter_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_parameter_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7051,7 +7003,7 @@ impl DescribeDbClusterParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7305,10 +7257,7 @@ impl DescribeDbClustersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_clusters(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_clusters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7461,7 +7410,7 @@ impl DescribeDbClusterSnapshotAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_snapshot_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_snapshot_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7849,7 +7798,7 @@ impl DescribeDbClusterSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_snapshots(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_snapshots(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8150,10 +8099,7 @@ impl DescribeDbEngineVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_db_engine_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8406,10 +8352,7 @@ impl DescribeDbInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8629,10 +8572,7 @@ impl DescribeDbParameterGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_db_parameter_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8867,10 +8807,9 @@ impl DescribeDbParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_db_parameters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_db_parameters(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9077,10 +9016,7 @@ impl DescribeDbSubnetGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_db_subnet_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9291,7 +9227,7 @@ impl DescribeEngineDefaultClusterParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_cluster_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_cluster_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9500,7 +9436,7 @@ impl DescribeEngineDefaultParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9672,10 +9608,7 @@ impl DescribeEventCategoriesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_event_categories(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10027,10 +9960,8 @@ impl DescribeEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10238,10 +10169,7 @@ impl DescribeEventSubscriptionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_event_subscriptions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10509,7 +10437,7 @@ impl DescribeOrderableDbInstanceOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_orderable_db_instance_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_orderable_db_instance_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10750,7 +10678,7 @@ impl DescribePendingMaintenanceActionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_pending_maintenance_actions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_pending_maintenance_actions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10901,7 +10829,7 @@ impl DescribeValidDbInstanceModificationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_valid_db_instance_modifications(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_valid_db_instance_modifications(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11086,10 +11014,7 @@ impl FailoverDbClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_failover_db_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_failover_db_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11262,10 +11187,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11879,10 +11803,7 @@ impl ModifyDbClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12097,10 +12018,7 @@ impl ModifyDbClusterEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12273,7 +12191,7 @@ impl ModifyDbClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12511,7 +12429,7 @@ impl ModifyDbClusterSnapshotAttributeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster_snapshot_attribute(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster_snapshot_attribute(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13468,10 +13386,7 @@ impl ModifyDbInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_db_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_db_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13672,10 +13587,7 @@ impl ModifyDbParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_db_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13870,10 +13782,9 @@ impl ModifyDbSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_db_subnet_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_db_subnet_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14100,10 +14011,7 @@ impl ModifyEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14252,7 +14160,7 @@ impl PromoteReadReplicaDbClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_promote_read_replica_db_cluster(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_promote_read_replica_db_cluster(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14429,10 +14337,7 @@ impl RebootDbInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reboot_db_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reboot_db_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14611,10 +14516,7 @@ impl RemoveRoleFromDbClusterInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_role_from_db_cluster(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14783,7 +14685,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_source_identifier_from_subscription(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_source_identifier_from_subscription(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14959,10 +14861,7 @@ impl RemoveTagsFromResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15157,7 +15056,7 @@ impl ResetDbClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reset_db_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reset_db_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15369,10 +15268,7 @@ impl ResetDbParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reset_db_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15911,7 +15807,7 @@ impl RestoreDbClusterFromSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_db_cluster_from_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_restore_db_cluster_from_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16484,7 +16380,7 @@ impl RestoreDbClusterToPointInTimeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_db_cluster_to_point_in_time(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_restore_db_cluster_to_point_in_time(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16635,10 +16531,7 @@ impl StartDbClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_db_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_db_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16787,10 +16680,8 @@ impl StopDbClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_db_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_stop_db_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16860,6 +16751,13 @@ pub struct StopDbClusterInput {
     /// This parameter is stored as a lowercase string.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
 }
+impl StopDbClusterInput {
+    /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped.
+    /// This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for StopDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDbClusterInput");
@@ -16875,6 +16773,13 @@ pub struct StartDbClusterInput {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be started.
     /// This parameter is stored as a lowercase string.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
+}
+impl StartDbClusterInput {
+    /// <p>The DB cluster identifier of the Neptune DB cluster to be started.
+    /// This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17019,6 +16924,168 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// </p>
     pub deletion_protection: std::option::Option<bool>,
 }
+impl RestoreDbClusterToPointInTimeInput {
+    /// <p>The name of the new DB cluster to be created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>full-copy</code> - The new DB cluster is restored as a full copy of the source
+    /// DB cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source
+    /// DB cluster.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored
+    /// as a full copy of the source DB cluster.</p>
+    pub fn restore_type(&self) -> std::option::Option<&str> {
+        self.restore_type.as_deref()
+    }
+    /// <p>The identifier of the source DB cluster from which to restore.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.source_db_cluster_identifier.as_deref()
+    }
+    /// <p>The date and time to restore the DB cluster to.</p>
+    /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the DB instance</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not
+    /// provided</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be specified if <code>RestoreType</code> parameter is
+    /// <code>copy-on-write</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>2015-03-07T23:45:00Z</code>
+    /// </p>
+    pub fn restore_to_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.restore_to_time.as_ref()
+    }
+    /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest
+    /// restorable backup time, and <code>false</code> otherwise.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is
+    /// provided.</p>
+    pub fn use_latest_restorable_time(&self) -> bool {
+        self.use_latest_restorable_time
+    }
+    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>Constraints: Value must be <code>1150-65535</code>
+    /// </p>
+    /// <p>Default: The same port as the original DB cluster.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The DB subnet group name to use for the new DB cluster.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mySubnetgroup</code>
+    /// </p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn option_group_name(&self) -> std::option::Option<&str> {
+        self.option_group_name.as_deref()
+    }
+    /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The tags to be applied to the restored DB cluster.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted
+    /// DB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+    /// you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used
+    /// to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the
+    /// KMS encryption key.</p>
+    /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is
+    /// different than the KMS key used to encrypt the source DB cluster. The new DB cluster is
+    /// encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
+    /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
+    /// will occur:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+    /// KMS key that was used to encrypt the source DB cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+    /// encrypted.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the
+    /// restore request is rejected.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
+    /// accounts, and otherwise false.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
+        self.enable_iam_database_authentication
+    }
+    /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
+    pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.enable_cloudwatch_logs_exports.as_deref()
+    }
+    /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
+    /// The database can't be deleted when deletion protection is enabled. By default,
+    /// deletion protection is disabled.
+    /// </p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+}
 impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbClusterToPointInTimeInput");
@@ -17162,6 +17229,143 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// </p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
 }
+impl RestoreDbClusterFromSnapshotInput {
+    /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can
+    /// be created in.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This
+    /// parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-snapshot-id</code>
+    /// </p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
+    /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster
+    /// snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p>
+    /// </li>
+    /// </ul>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The database engine to use for the new DB cluster.</p>
+    /// <p>Default: The same as source</p>
+    /// <p>Constraint: Must be compatible with the engine of the source</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version of the database engine to use for the new DB cluster.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>Constraints: Value must be <code>1150-65535</code>
+    /// </p>
+    /// <p>Default: The same port as the original DB cluster.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mySubnetgroup</code>
+    /// </p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>Not supported.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn option_group_name(&self) -> std::option::Option<&str> {
+        self.option_group_name.as_deref()
+    }
+    /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The tags to be assigned to the restored DB cluster.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB
+    /// snapshot or DB cluster snapshot.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+    /// you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used
+    /// to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the
+    /// KMS encryption key.</p>
+    /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
+    /// will occur:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
+    /// encrypted, then the restored DB cluster is encrypted using the KMS key that was used to
+    /// encrypt the DB snapshot or DB cluster snapshot.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+    /// encrypted, then the restored DB cluster is not encrypted.</p>
+    /// </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
+    /// accounts, and otherwise false.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
+        self.enable_iam_database_authentication
+    }
+    /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.</p>
+    pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.enable_cloudwatch_logs_exports.as_deref()
+    }
+    /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
+    /// The database can't be deleted when deletion protection is enabled. By default,
+    /// deletion protection is disabled.
+    /// </p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>
+    /// <i>If set to <code>true</code>, tags are copied to any snapshot of
+    /// the restored DB cluster that is created.</i>
+    /// </p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
+}
 impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbClusterFromSnapshotInput");
@@ -17220,6 +17424,34 @@ pub struct ResetDbParameterGroupInput {
     /// </p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
+impl ResetDbParameterGroupInput {
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the name of an existing DBParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters
+    /// in the DB parameter group to default values.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn reset_all_parameters(&self) -> bool {
+        self.reset_all_parameters
+    }
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+    /// <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of
+    /// the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20
+    /// parameters can be modified in a single request.</p>
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code>
+    /// </p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetDbParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetDbParameterGroupInput");
@@ -17246,6 +17478,25 @@ pub struct ResetDbClusterParameterGroupInput {
     /// to <code>true</code>.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
+impl ResetDbClusterParameterGroupInput {
+    /// <p>The name of the DB cluster parameter group to reset.</p>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>A value that is set to <code>true</code> to reset all parameters in the DB cluster
+    /// parameter group to their default values, and <code>false</code> otherwise. You can't use this
+    /// parameter if there is a list of parameter names specified for the <code>Parameters</code>
+    /// parameter.</p>
+    pub fn reset_all_parameters(&self) -> bool {
+        self.reset_all_parameters
+    }
+    /// <p>A list of parameter names in the DB cluster parameter group to reset to the default
+    /// values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set
+    /// to <code>true</code>.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetDbClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetDbClusterParameterGroupInput");
@@ -17270,6 +17521,18 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>The tag key (name) of the tag to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsFromResourceInput {
+    /// <p>The Amazon Neptune resource that the tags are removed from. This value is an Amazon
+    /// Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
+    /// Amazon Resource Name (ARN)</a>.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The tag key (name) of the tag to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
@@ -17289,6 +17552,18 @@ pub struct RemoveSourceIdentifierFromSubscriptionInput {
     /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security
     /// group.</p>
     pub source_identifier: std::option::Option<std::string::String>,
+}
+impl RemoveSourceIdentifierFromSubscriptionInput {
+    /// <p>The name of the event notification subscription you want to remove a source identifier
+    /// from.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security
+    /// group.</p>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveSourceIdentifierFromSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17311,6 +17586,22 @@ pub struct RemoveRoleFromDbClusterInput {
     /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
     /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
     pub feature_name: std::option::Option<std::string::String>,
+}
+impl RemoveRoleFromDbClusterInput {
+    /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for
+    /// example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
+    /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveRoleFromDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17339,6 +17630,24 @@ pub struct RebootDbInstanceInput {
     /// MultiAZ.</p>
     pub force_failover: std::option::Option<bool>,
 }
+impl RebootDbInstanceInput {
+    /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
+    /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for
+    /// MultiAZ.</p>
+    pub fn force_failover(&self) -> std::option::Option<bool> {
+        self.force_failover
+    }
+}
 impl std::fmt::Debug for RebootDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootDbInstanceInput");
@@ -17354,6 +17663,12 @@ impl std::fmt::Debug for RebootDbInstanceInput {
 pub struct PromoteReadReplicaDbClusterInput {
     /// <p>Not supported.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
+}
+impl PromoteReadReplicaDbClusterInput {
+    /// <p>Not supported.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for PromoteReadReplicaDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17386,6 +17701,36 @@ pub struct ModifyEventSubscriptionInput {
     /// subscription.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl ModifyEventSubscriptionInput {
+    /// <p>The name of the event notification subscription.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is
+    /// created by Amazon SNS when you create a topic and subscribe to it.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The type of source that is generating the events. For example, if you want to be notified
+    /// of events generated by a DB instance, you would set this parameter to db-instance. if this
+    /// value is not specified, all events are returned.</p>
+    /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a
+    /// list of the categories for a given SourceType
+    ///
+    /// by using the <b>DescribeEventCategories</b> action.</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p> A Boolean value; set to <b>true</b> to activate the
+    /// subscription.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for ModifyEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyEventSubscriptionInput");
@@ -17412,6 +17757,24 @@ pub struct ModifyDbSubnetGroupInput {
     pub db_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ModifyDbSubnetGroupInput {
+    /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't
+    /// modify the default subnet group.</p>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mySubnetgroup</code>
+    /// </p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>The description for the DB subnet group.</p>
+    pub fn db_subnet_group_description(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_description.as_deref()
+    }
+    /// <p>The EC2 subnet IDs for the DB subnet group.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17449,6 +17812,31 @@ pub struct ModifyDbParameterGroupInput {
     /// you reboot the DB instance without failover.</p>
     /// </note>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+}
+impl ModifyDbParameterGroupInput {
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>An array of parameter names, values, and the apply method for the parameter update. At
+    /// least one parameter name, value, and apply method must be supplied; subsequent arguments are
+    /// optional. A maximum of 20 parameters can be modified in a single request.</p>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code>
+    /// </p>
+    /// <note>
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the
+    /// pending-reboot value for both dynamic and static parameters, and changes are applied when
+    /// you reboot the DB instance without failover.</p>
+    /// </note>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17686,6 +18074,305 @@ pub struct ModifyDbInstanceInput {
     /// a DB Instance</a>.</p>
     pub deletion_protection: std::option::Option<bool>,
 }
+impl ModifyDbInstanceInput {
+    /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>The new compute and memory capacity of the DB instance, for example,
+    /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon
+    /// Regions.</p>
+    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is
+    /// applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified
+    /// as <code>true</code> for this request.</p>
+    /// <p>Default: Uses existing setting</p>
+    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+        self.db_instance_class.as_deref()
+    }
+    /// <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB
+    /// instance to a different VPC.</p>
+    /// <p>Changing the subnet group causes an outage during the change. The change is applied during
+    /// the next maintenance window, unless you specify <code>true</code> for the
+    /// <code>ApplyImmediately</code> parameter.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mySubnetGroup</code>
+    /// </p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting
+    /// doesn't result in an outage and the change is asynchronously applied as soon as
+    /// possible.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match existing DBSecurityGroups.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.db_security_groups.as_deref()
+    }
+    /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is
+    /// asynchronously applied as soon as possible.</p>
+    /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB
+    /// cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match existing VpcSecurityGroupIds.</p>
+    /// </li>
+    /// </ul>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>Specifies whether the modifications in this request and any pending modifications are
+    /// asynchronously applied as soon as possible, regardless of the
+    /// <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
+    /// <p> If this parameter is set to <code>false</code>, changes to the DB instance are applied
+    /// during the next maintenance window. Some parameter changes can cause an outage and are applied
+    /// on the next call to <a>RebootDBInstance</a>, or the next
+    /// failure reboot.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>The name of the DB parameter group to apply to the DB instance. Changing this setting
+    /// doesn't result in an outage. The parameter group name itself is changed immediately, but the
+    /// actual parameter changes are not applied until you reboot the instance without failover. The
+    /// db instance will NOT be rebooted automatically and the parameter changes will NOT be applied
+    /// during the next maintenance window.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this
+    /// DB instance.</p>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster.
+    /// For more information, see <a>ModifyDBCluster</a>.</p>
+    /// <p>Default: Uses existing setting</p>
+    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p> The daily time range during which automated backups are created if automated backups are
+    /// enabled.</p>
+    /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB
+    /// cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format hh24:mi-hh24:mi</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be in Universal Time Coordinated (UTC)</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 30 minutes</p>
+    /// </li>
+    /// </ul>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
+    /// result in an outage. Changing this parameter doesn't result in an outage, except in the
+    /// following situation, and the change is asynchronously applied as soon as possible. If there
+    /// are pending actions that cause a reboot, and the maintenance window is changed to include the
+    /// current time, then changing this parameter will cause a reboot of the DB instance. If moving
+    /// this window to the current time, there must be at least 30 minutes between the current time
+    /// and end of the window to ensure pending changes are applied.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
+    /// <p>Constraints: Must be at least 30 minutes</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't
+    /// result in an outage and the change is applied during the next maintenance window unless the
+    /// <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
+    pub fn multi_az(&self) -> std::option::Option<bool> {
+        self.multi_az
+    }
+    /// <p>The version number of the database engine to upgrade to. Currently, setting this
+    /// parameter has no effect. To upgrade your database engine to the most recent release,
+    /// use the <a>ApplyPendingMaintenanceAction</a> API.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result
+    /// in an outage and the change is asynchronously applied as soon as possible.</p>
+    pub fn allow_major_version_upgrade(&self) -> bool {
+        self.allow_major_version_upgrade
+    }
+    /// <p> Indicates that minor version upgrades are applied automatically to the DB instance during
+    /// the maintenance window. Changing this parameter doesn't result in an outage except in the
+    /// following case and the change is asynchronously applied as soon as possible. An outage will
+    /// result if this parameter is set to <code>true</code> during the maintenance window, and a
+    /// newer minor version is available, and Neptune has enabled auto patching for that engine
+    /// version.</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
+    /// <p>Changing this setting doesn't result in an outage and the change is applied during the
+    /// next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
+    /// <code>true</code> for this request.</p>
+    /// <p>Default: Uses existing setting</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn option_group_name(&self) -> std::option::Option<&str> {
+        self.option_group_name.as_deref()
+    }
+    /// <p> The new DB instance identifier for the DB instance when renaming a DB instance. When you
+    /// change the DB instance identifier, an instance reboot will occur immediately if you set
+    /// <code>Apply Immediately</code> to true, or will occur during the next maintenance window if
+    /// <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>mydbinstance</code>
+    /// </p>
+    pub fn new_db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.new_db_instance_identifier.as_deref()
+    }
+    /// <p>Not supported.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+    pub fn tde_credential_arn(&self) -> std::option::Option<&str> {
+        self.tde_credential_arn.as_deref()
+    }
+    /// <p>The password for the given ARN from the key store in order to access the device.</p>
+    pub fn tde_credential_password(&self) -> std::option::Option<&str> {
+        self.tde_credential_password.as_deref()
+    }
+    /// <p>Indicates the certificate that needs to be associated with the instance.</p>
+    pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
+    /// <p>Not supported.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
+    /// false. The default is false.</p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+    /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default
+    /// is 0.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set
+    /// <code>MonitoringInterval</code> to a value other than 0.</p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+    /// </p>
+    pub fn monitoring_interval(&self) -> std::option::Option<i32> {
+        self.monitoring_interval
+    }
+    /// <p>The port number on which the database accepts connections.</p>
+    /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values
+    /// specified for options in the option group for the DB instance.</p>
+    /// <p>Your database will restart when you change the <code>DBPortNumber</code> value regardless
+    /// of the value of the <code>ApplyImmediately</code> parameter.</p>
+    /// <p> Default: <code>8182</code>
+    /// </p>
+    pub fn db_port_number(&self) -> std::option::Option<i32> {
+        self.db_port_number
+    }
+    /// <p>This flag should no longer be used.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to
+    /// Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+    /// <code>MonitoringRoleArn</code> value.</p>
+    pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_role_arn.as_deref()
+    }
+    /// <p>Not supported</p>
+    pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
+        self.domain_iam_role_name.as_deref()
+    }
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary
+    /// instance after a failure of the existing primary instance.</p>
+    /// <p>Default: 1</p>
+    /// <p>Valid Values: 0 - 15</p>
+    pub fn promotion_tier(&self) -> std::option::Option<i32> {
+        self.promotion_tier
+    }
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
+    /// accounts, and otherwise false.</p>
+    /// <p>You can enable IAM database authentication for the following database engines</p>
+    /// <p>Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB
+    /// cluster. For more information, see <a>ModifyDBCluster</a>.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
+        self.enable_iam_database_authentication
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
+        self.enable_performance_insights
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs
+    /// for a specific DB instance or DB cluster.</p>
+    pub fn cloudwatch_logs_export_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudwatchLogsExportConfiguration> {
+        self.cloudwatch_logs_export_configuration.as_ref()
+    }
+    /// <p>A value that indicates whether the DB instance has deletion protection enabled.
+    /// The database can't be deleted when deletion protection is enabled. By default,
+    /// deletion protection is disabled.  See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+    /// a DB Instance</a>.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+}
 impl std::fmt::Debug for ModifyDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbInstanceInput");
@@ -17781,6 +18468,38 @@ pub struct ModifyDbClusterSnapshotAttributeInput {
     /// <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.</p>
     pub values_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ModifyDbClusterSnapshotAttributeInput {
+    /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The name of the DB cluster snapshot attribute to modify.</p>
+    /// <p>To manage authorization for other Amazon accounts to copy or restore a manual DB cluster
+    /// snapshot, set this value to <code>restore</code>.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>A list of DB cluster snapshot attributes to add to the attribute specified by
+    /// <code>AttributeName</code>.</p>
+    /// <p>To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+    /// list to include one or more Amazon account IDs, or <code>all</code> to make the manual DB cluster
+    /// snapshot restorable by any Amazon account. Do not add the <code>all</code> value for any manual
+    /// DB cluster snapshots that contain private information that you don't want available to all Amazon
+    /// accounts.</p>
+    pub fn values_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.values_to_add.as_deref()
+    }
+    /// <p>A list of DB cluster snapshot attributes to remove from the attribute specified by
+    /// <code>AttributeName</code>.</p>
+    /// <p>To remove authorization for other Amazon accounts to copy or restore a manual DB cluster
+    /// snapshot, set this list to include one or more Amazon account identifiers, or <code>all</code> to
+    /// remove authorization for any Amazon account to copy or restore the DB cluster snapshot. If you
+    /// specify <code>all</code>, an Amazon account whose account ID is explicitly added to the
+    /// <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.</p>
+    pub fn values_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.values_to_remove.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyDbClusterSnapshotAttributeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbClusterSnapshotAttributeInput");
@@ -17803,6 +18522,16 @@ pub struct ModifyDbClusterParameterGroupInput {
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+}
+impl ModifyDbClusterParameterGroupInput {
+    /// <p>The name of the DB cluster parameter group to modify.</p>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17830,6 +18559,26 @@ pub struct ModifyDbClusterEndpointInput {
     /// All other eligible instances are reachable through the custom endpoint.
     /// Only relevant if the list of static members is empty.</p>
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ModifyDbClusterEndpointInput {
+    /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.static_members.as_deref()
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
+    /// All other eligible instances are reachable through the custom endpoint.
+    /// Only relevant if the list of static members is empty.</p>
+    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_members.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17992,6 +18741,187 @@ pub struct ModifyDbClusterInput {
     /// </p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
 }
+impl ModifyDbClusterInput {
+    /// <p>The DB cluster identifier for the cluster being modified. This parameter is not
+    /// case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is
+    /// stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>The first character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster2</code>
+    /// </p>
+    pub fn new_db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.new_db_cluster_identifier.as_deref()
+    }
+    /// <p>A value that specifies whether the modifications in this request and any pending
+    /// modifications are asynchronously applied as soon as possible, regardless of the
+    /// <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set
+    /// to <code>false</code>, changes to the DB cluster are applied during the next maintenance
+    /// window.</p>
+    /// <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code>
+    /// values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to
+    /// <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window.
+    /// All other changes are applied immediately, regardless of the value of the
+    /// <code>ApplyImmediately</code> parameter.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>The number of days for which automated backups are retained. You must specify a minimum
+    /// value of 1.</p>
+    /// <p>Default: 1</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p>
+    /// </li>
+    /// </ul>
+    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The port number on which the DB cluster accepts connections.</p>
+    /// <p>Constraints: Value must be <code>1150-65535</code>
+    /// </p>
+    /// <p>Default: The same port as the original DB cluster.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>
+    /// <i>Not supported by Neptune.</i>
+    /// </p>
+    pub fn option_group_name(&self) -> std::option::Option<&str> {
+        self.option_group_name.as_deref()
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are
+    /// enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// Amazon Region.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p>
+    /// </li>
+    /// </ul>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated
+    /// Time (UTC).</p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+    /// </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// Amazon Region, occurring on a random day of the
+    /// week.</p>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
+    /// accounts, and otherwise false.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
+        self.enable_iam_database_authentication
+    }
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs
+    /// for a specific DB cluster.</p>
+    pub fn cloudwatch_logs_export_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudwatchLogsExportConfiguration> {
+        self.cloudwatch_logs_export_configuration.as_ref()
+    }
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this
+    /// parameter results in an outage. The change is applied during the next maintenance window
+    /// unless the <code>ApplyImmediately</code> parameter is set to true.</p>
+    /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
+    /// Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
+    /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an
+    /// <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current
+    /// version.</p>
+    pub fn allow_major_version_upgrade(&self) -> bool {
+        self.allow_major_version_upgrade
+    }
+    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
+    /// <note>
+    /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>,
+    /// parameter changes aren't applied during the next maintenance window but instead are
+    /// applied immediately.</p>
+    /// </note>
+    /// <p>Default: The existing name setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The DB parameter group must be in the same DB parameter group family as
+    /// the target DB cluster version.</p>
+    /// </li>
+    /// <li>
+    /// <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with
+    /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_instance_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_instance_parameter_group_name.as_deref()
+    }
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
+    /// The database can't be deleted when deletion protection is enabled. By default,
+    /// deletion protection is disabled.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>
+    /// <i>If set to <code>true</code>, tags are copied to any snapshot of
+    /// the DB cluster that is created.</i>
+    /// </p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
+}
 impl std::fmt::Debug for ModifyDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbClusterInput");
@@ -18046,6 +18976,18 @@ pub struct ListTagsForResourceInput {
     /// <p>This parameter is not currently supported.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name
+    /// (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
+    /// Amazon Resource Name (ARN)</a>.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -18073,6 +19015,25 @@ pub struct FailoverDbClusterInput {
     /// example, <code>mydbcluster-replica1</code>.</p>
     pub target_db_instance_identifier: std::option::Option<std::string::String>,
 }
+impl FailoverDbClusterInput {
+    /// <p>A DB cluster identifier to force a failover for. This parameter is not
+    /// case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The name of the instance to promote to the primary instance.</p>
+    /// <p>You must specify the instance identifier for an Read Replica in the DB cluster. For
+    /// example, <code>mydbcluster-replica1</code>.</p>
+    pub fn target_db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.target_db_instance_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for FailoverDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailoverDbClusterInput");
@@ -18091,6 +19052,12 @@ impl std::fmt::Debug for FailoverDbClusterInput {
 pub struct DescribeValidDbInstanceModificationsInput {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
     pub db_instance_identifier: std::option::Option<std::string::String>,
+}
+impl DescribeValidDbInstanceModificationsInput {
+    /// <p>The customer identifier or the ARN of your DB instance.</p>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeValidDbInstanceModificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18136,6 +19103,47 @@ pub struct DescribePendingMaintenanceActionsInput {
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
 }
+impl DescribePendingMaintenanceActionsInput {
+    /// <p>The ARN of a resource to return pending maintenance actions for.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>A filter that specifies one or more resources to return pending maintenance actions
+    /// for.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
+    /// Resource Names (ARNs). The results list will only include pending maintenance actions for
+    /// the DB clusters identified by these ARNs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs.
+    /// The results list will only include pending maintenance actions for the DB instances
+    /// identified by these ARNs.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> An optional pagination token provided by a previous
+    /// <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to a number of records specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+}
 impl std::fmt::Debug for DescribePendingMaintenanceActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePendingMaintenanceActionsInput");
@@ -18178,6 +19186,50 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeOrderableDbInstanceOptionsInput {
+    /// <p>The name of the engine to retrieve DB instance options for.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The engine version filter value. Specify this parameter to show only the available
+    /// offerings matching the specified engine version.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The DB instance class filter value. Specify this parameter to show only the available
+    /// offerings matching the specified DB instance class.</p>
+    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+        self.db_instance_class.as_deref()
+    }
+    /// <p>The license model filter value. Specify this parameter to show only the available
+    /// offerings matching the specified license model.</p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>The VPC filter value. Specify this parameter to show only the available VPC or non-VPC
+    /// offerings.</p>
+    pub fn vpc(&self) -> std::option::Option<bool> {
+        self.vpc
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
+    /// request. If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrderableDbInstanceOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrderableDbInstanceOptionsInput");
@@ -18211,6 +19263,30 @@ pub struct DescribeEventSubscriptionsInput {
     /// request. If this parameter is specified, the response includes only records beyond the marker,
     /// up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeEventSubscriptionsInput {
+    /// <p>The name of the event notification subscription you want to describe.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
+    /// request. If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18287,6 +19363,85 @@ pub struct DescribeEventsInput {
     /// specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEventsInput {
+    /// <p>The identifier of the event source for which events are returned. If not specified, then
+    /// all sources are included in the response.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If SourceIdentifier is supplied, SourceType must also be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is <code>DBInstance</code>, then a
+    /// <code>DBInstanceIdentifier</code> must be supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code>
+    /// must be supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is <code>DBParameterGroup</code>, a
+    /// <code>DBParameterGroupName</code> must be supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code>
+    /// must be supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+    /// <p>The event source to retrieve events for. If no value is specified, all events are
+    /// returned.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+    /// For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+    /// </p>
+    /// <p>Example: 2009-07-08T18:00Z</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format.
+    /// For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+    /// </p>
+    /// <p>Example: 2009-07-08T18:00Z</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The number of minutes to retrieve events for.</p>
+    /// <p>Default: 60</p>
+    pub fn duration(&self) -> std::option::Option<i32> {
+        self.duration
+    }
+    /// <p>A list of event categories that trigger notifications for a event notification
+    /// subscription.</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous DescribeEvents request. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the value
+    /// specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsInput");
@@ -18312,6 +19467,17 @@ pub struct DescribeEventCategoriesInput {
     pub source_type: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl DescribeEventCategoriesInput {
+    /// <p>The type of source that is generating the events.</p>
+    /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventCategoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18341,6 +19507,31 @@ pub struct DescribeEngineDefaultParametersInput {
     /// response includes only records beyond the marker, up to the value specified by
     /// <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeEngineDefaultParametersInput {
+    /// <p>The name of the DB parameter group family.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>Not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous
+    /// <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEngineDefaultParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18374,6 +19565,32 @@ pub struct DescribeEngineDefaultClusterParametersInput {
     /// <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEngineDefaultClusterParametersInput {
+    /// <p>The name of the DB cluster parameter group family to return engine parameter information
+    /// for.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous
+    /// <code>DescribeEngineDefaultClusterParameters</code> request. If this parameter is specified,
+    /// the response includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEngineDefaultClusterParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEngineDefaultClusterParametersInput");
@@ -18403,6 +19620,30 @@ pub struct DescribeDbSubnetGroupsInput {
     /// this parameter is specified, the response includes only records beyond the marker, up to the
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbSubnetGroupsInput {
+    /// <p>The name of the DB subnet group to return details for.</p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous DescribeDBSubnetGroups request. If
+    /// this parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbSubnetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18445,6 +19686,43 @@ pub struct DescribeDbParametersInput {
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbParametersInput {
+    /// <p>The name of a specific DB parameter group to return details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>The parameter types to return.</p>
+    /// <p>Default: All parameter types returned</p>
+    /// <p>Valid Values: <code>user | system | engine-default</code>
+    /// </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBParameters</code>
+    /// request. If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbParametersInput");
@@ -18481,6 +19759,36 @@ pub struct DescribeDbParameterGroupsInput {
     /// <code>DescribeDBParameterGroups</code> request. If this parameter is specified, the response
     /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbParameterGroupsInput {
+    /// <p>The name of a specific DB parameter group to return details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeDBParameterGroups</code> request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbParameterGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18536,6 +19844,54 @@ pub struct DescribeDbInstancesInput {
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbInstancesInput {
+    /// <p>The user-supplied instance identifier. If this parameter is specified, information from
+    /// only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>A filter that specifies one or more DB instances to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
+    /// Resource Names (ARNs). The results list will only include information about the DB
+    /// instances associated with the DB clusters identified by these ARNs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>engine</code> - Accepts an engine name (such as <code>neptune</code>),
+    /// and restricts the results list to DB instances created by that engine.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>For example, to invoke this API from the Amazon CLI and filter so that only
+    /// Neptune DB instances are returned, you could use the following command:</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBInstances</code>
+    /// request. If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbInstancesInput");
@@ -18588,6 +19944,63 @@ pub struct DescribeDbEngineVersionsInput {
     /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported time
     /// zones for each engine version.</p>
     pub list_supported_timezones: std::option::Option<bool>,
+}
+impl DescribeDbEngineVersionsInput {
+    /// <p>The database engine to return.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The database engine version to return.</p>
+    /// <p>Example: <code>5.1.49</code>
+    /// </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of a specific DB parameter group family to return details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match an existing DBParameterGroupFamily.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>Not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more than the
+    /// <code>MaxRecords</code> value is available, a pagination token called a marker is included in
+    /// the response so that the following results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Indicates that only the default version of the specified engine or engine and major
+    /// version combination is returned.</p>
+    pub fn default_only(&self) -> bool {
+        self.default_only
+    }
+    /// <p>If this parameter is specified and the requested engine supports the
+    /// <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response
+    /// includes a list of supported character sets for each engine version.</p>
+    pub fn list_supported_character_sets(&self) -> std::option::Option<bool> {
+        self.list_supported_character_sets
+    }
+    /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code>
+    /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported time
+    /// zones for each engine version.</p>
+    pub fn list_supported_timezones(&self) -> std::option::Option<bool> {
+        self.list_supported_timezones
+    }
 }
 impl std::fmt::Debug for DescribeDbEngineVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18697,6 +20110,108 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <p>You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
     pub include_public: bool,
 }
+impl DescribeDbClusterSnapshotsInput {
+    /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
+    /// can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This
+    /// parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing DBCluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in
+    /// conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a
+    /// lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p>
+    /// </li>
+    /// <li>
+    /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code>
+    /// parameter must also be specified.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>automated</code> - Return all DB cluster snapshots that have been automatically
+    /// taken by Amazon Neptune for my Amazon account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon
+    /// account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>shared</code> - Return all manual DB cluster snapshots that have been shared to
+    /// my Amazon account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>public</code> - Return all DB cluster snapshots that have been marked as
+    /// public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB
+    /// cluster snapshots are returned. You can include shared DB cluster snapshots with these results
+    /// by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include
+    /// public DB cluster snapshots with these results by setting the <code>IncludePublic</code>
+    /// parameter to <code>true</code>.</p>
+    /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+    /// <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The
+    /// <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to
+    /// <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+    /// <code>SnapshotType</code> is set to <code>public</code>.</p>
+    pub fn snapshot_type(&self) -> std::option::Option<&str> {
+        self.snapshot_type.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon
+    /// account has been given permission to copy or restore, and otherwise false. The default is
+    /// <code>false</code>.</p>
+    /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from
+    /// another Amazon account by the <a>ModifyDBClusterSnapshotAttribute</a> API
+    /// action.</p>
+    pub fn include_shared(&self) -> bool {
+        self.include_shared
+    }
+    /// <p>True to include manual DB cluster snapshots that are public and can be copied or restored
+    /// by any Amazon account, and otherwise false. The default is <code>false</code>. The default is
+    /// false.</p>
+    /// <p>You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+    pub fn include_public(&self) -> bool {
+        self.include_public
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterSnapshotsInput");
@@ -18721,6 +20236,12 @@ impl std::fmt::Debug for DescribeDbClusterSnapshotsInput {
 pub struct DescribeDbClusterSnapshotAttributesInput {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
+}
+impl DescribeDbClusterSnapshotAttributesInput {
+    /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClusterSnapshotAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18776,6 +20297,54 @@ pub struct DescribeDbClustersInput {
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbClustersInput {
+    /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from
+    /// only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>A filter that specifies one or more DB clusters to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
+    /// Resource Names (ARNs). The results list will only include information about the DB
+    /// clusters identified by these ARNs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>engine</code> - Accepts an engine name (such as <code>neptune</code>),
+    /// and restricts the results list to DB clusters created by that engine.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>For example, to invoke this API from the Amazon CLI and filter so that only
+    /// Neptune DB clusters are returned, you could use the following command:</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous <a>DescribeDBClusters</a>
+    /// request. If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClustersInput");
@@ -18815,6 +20384,42 @@ pub struct DescribeDbClusterParametersInput {
     /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
     /// </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbClusterParametersInput {
+    /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p> A value that indicates to return only parameters for a specific source. Parameter sources
+    /// can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous
+    /// <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClusterParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18856,6 +20461,37 @@ pub struct DescribeDbClusterParameterGroupsInput {
     /// response includes only records beyond the marker, up to the value specified by
     /// <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbClusterParameterGroupsInput {
+    /// <p>The name of a specific DB cluster parameter group to return details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in the
+    /// response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous
+    /// <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClusterParameterGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18904,6 +20540,46 @@ pub struct DescribeDbClusterEndpointsInput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbClusterEndpointsInput {
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
+    /// stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
+    /// <p>A set of name-value pairs that define which endpoints to include in the output.
+    /// The filters are specified as name-value pairs, in the format
+    /// <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>.
+    /// <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>.
+    /// <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>.
+    /// <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>.
+    /// <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response.
+    /// If more records exist than the specified <code>MaxRecords</code> value,
+    /// a pagination token called a marker is included in the response so you can retrieve the remaining results.
+    /// </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous
+    /// <code>DescribeDBClusterEndpoints</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterEndpointsInput");
@@ -18926,6 +20602,12 @@ pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the event notification subscription you want to delete.</p>
     pub subscription_name: std::option::Option<std::string::String>,
 }
+impl DeleteEventSubscriptionInput {
+    /// <p>The name of the event notification subscription you want to delete.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventSubscriptionInput");
@@ -18947,6 +20629,19 @@ pub struct DeleteDbSubnetGroupInput {
     /// <p>Example: <code>mySubnetgroup</code>
     /// </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteDbSubnetGroupInput {
+    /// <p>The name of the database subnet group to delete.</p>
+    /// <note>
+    /// <p>You can't delete the default subnet group.</p>
+    /// </note>
+    /// <p>Constraints:</p>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mySubnetgroup</code>
+    /// </p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDbSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18974,6 +20669,24 @@ pub struct DeleteDbParameterGroupInput {
     /// </li>
     /// </ul>
     pub db_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteDbParameterGroupInput {
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be the name of an existing DB parameter group</p>
+    /// </li>
+    /// <li>
+    /// <p>You can't delete a default DB parameter group</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be associated with any DB instances</p>
+    /// </li>
+    /// </ul>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDbParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19033,6 +20746,59 @@ pub struct DeleteDbInstanceInput {
     /// </ul>
     pub final_db_snapshot_identifier: std::option::Option<std::string::String>,
 }
+impl DeleteDbInstanceInput {
+    /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't
+    /// case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the name of an existing DB instance.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p> Determines whether a final DB snapshot is created before the DB instance is deleted. If
+    /// <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> is specified,
+    /// a DB snapshot is created before the DB instance is deleted.</p>
+    /// <p>Note that when a DB instance is in a failure state and has a status of 'failed',
+    /// 'incompatible-restore', or 'incompatible-network', it can only be deleted when the
+    /// SkipFinalSnapshot parameter is set to "true".</p>
+    /// <p>Specify <code>true</code> when deleting a Read Replica.</p>
+    /// <note>
+    /// <p>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
+    /// <code>false</code>.</p>
+    /// </note>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn skip_final_snapshot(&self) -> bool {
+        self.skip_final_snapshot
+    }
+    /// <p> The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to
+    /// <code>false</code>.</p>
+    /// <note>
+    /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true
+    /// results in an error.</p>
+    /// </note>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 letters or numbers.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be specified when deleting a Read Replica.</p>
+    /// </li>
+    /// </ul>
+    pub fn final_db_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.final_db_snapshot_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbInstanceInput");
@@ -19054,6 +20820,14 @@ pub struct DeleteDbClusterSnapshotInput {
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the
     /// <code>available</code> state.</p>
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteDbClusterSnapshotInput {
+    /// <p>The identifier of the DB cluster snapshot to delete.</p>
+    /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the
+    /// <code>available</code> state.</p>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDbClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19085,6 +20859,24 @@ pub struct DeleteDbClusterParameterGroupInput {
     /// </ul>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteDbClusterParameterGroupInput {
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be the name of an existing DB cluster parameter group.</p>
+    /// </li>
+    /// <li>
+    /// <p>You can't delete a default DB cluster parameter group.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be associated with any DB clusters.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDbClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbClusterParameterGroupInput");
@@ -19102,6 +20894,12 @@ impl std::fmt::Debug for DeleteDbClusterParameterGroupInput {
 pub struct DeleteDbClusterEndpointInput {
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteDbClusterEndpointInput {
+    /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDbClusterEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19157,6 +20955,53 @@ pub struct DeleteDbClusterInput {
     /// </li>
     /// </ul>
     pub final_db_snapshot_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteDbClusterInput {
+    /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't
+    /// case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match an existing DBClusterIdentifier.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is
+    /// deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If
+    /// <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is
+    /// deleted.</p>
+    /// <note>
+    /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+    /// <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
+    /// </note>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn skip_final_snapshot(&self) -> bool {
+        self.skip_final_snapshot
+    }
+    /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when
+    /// <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>
+    /// <note>
+    /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter
+    /// to true results in an error.</p>
+    /// </note>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    pub fn final_db_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.final_db_snapshot_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19227,6 +21072,73 @@ pub struct CreateEventSubscriptionInput {
     /// <p>The tags to be applied to the new event subscription.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateEventSubscriptionInput {
+    /// <p>The name of the subscription.</p>
+    /// <p>Constraints: The name must be less than 255 characters.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is
+    /// created by Amazon SNS when you create a topic and subscribe to it.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The type of source that is generating the events. For example, if you want to be notified
+    /// of events generated by a DB instance, you would set this parameter to db-instance. if this
+    /// value is not specified, all events are returned.</p>
+    /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> |
+    /// <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> |
+    /// <code>db-cluster-snapshot</code>
+    /// </p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a
+    /// list of the categories for a given SourceType by using the
+    /// <b>DescribeEventCategories</b> action.</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>The list of identifiers of the event sources for which events are returned. If not
+    /// specified, then all sources are included in the response. An identifier must begin with a
+    /// letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or
+    /// contain two consecutive hyphens.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If SourceIds are supplied, SourceType must also be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be
+    /// supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+    /// supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must
+    /// be supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+    /// supplied.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_ids.as_deref()
+    }
+    /// <p> A Boolean value; set to <b>true</b> to activate the
+    /// subscription, set to <b>false</b> to create the subscription but not
+    /// active it.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The tags to be applied to the new event subscription.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventSubscriptionInput");
@@ -19257,6 +21169,28 @@ pub struct CreateDbSubnetGroupInput {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the new DB subnet group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDbSubnetGroupInput {
+    /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces,
+    /// or hyphens. Must not be default.</p>
+    /// <p>Example: <code>mySubnetgroup</code>
+    /// </p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>The description for the DB subnet group.</p>
+    pub fn db_subnet_group_description(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_description.as_deref()
+    }
+    /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The tags to be assigned to the new DB subnet group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19301,6 +21235,41 @@ pub struct CreateDbParameterGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the new DB parameter group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDbParameterGroupInput {
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>The DB parameter group family name. A DB parameter group can be associated with one and
+    /// only one DB parameter group family, and can be applied only to a DB instance running a
+    /// database engine and engine version compatible with that DB parameter group family.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>The description for the DB parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags to be assigned to the new DB parameter group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19526,6 +21495,302 @@ pub struct CreateDbInstanceInput {
     /// protection is enabled in their parent DB cluster.</p>
     pub deletion_protection: std::option::Option<bool>,
 }
+impl CreateDbInstanceInput {
+    /// <p>Not supported.</p>
+    pub fn db_name(&self) -> std::option::Option<&str> {
+        self.db_name.as_deref()
+    }
+    /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>mydbinstance</code>
+    /// </p>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+    /// Not all DB instance classes are available in all Amazon Regions.</p>
+    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+        self.db_instance_class.as_deref()
+    }
+    /// <p>The name of the database engine to be used for this instance.</p>
+    /// <p>Valid Values: <code>neptune</code>
+    /// </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>A list of DB security groups to associate with this DB instance.</p>
+    /// <p>Default: The default DB security group for the database engine.</p>
+    pub fn db_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.db_security_groups.as_deref()
+    }
+    /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+    /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB
+    /// cluster. For more information, see <a>CreateDBCluster</a>.</p>
+    /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p> The EC2 Availability Zone that the DB instance is created in</p>
+    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+    /// <p> Example: <code>us-east-1d</code>
+    /// </p>
+    /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is
+    /// set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as
+    /// the current endpoint.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>A DB subnet group to associate with this DB instance.</p>
+    /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>The time range each week during which system maintenance can occur, in Universal
+    /// Coordinated Time (UTC).</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+    /// </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// Amazon Region, occurring on a random day of the week.</p>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is
+    /// omitted, the default DBParameterGroup for the specified engine is used.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>The number of days for which automated backups are
+    /// retained.</p>
+    /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster.
+    /// For more information, see <a>CreateDBCluster</a>.</p>
+    /// <p>Default: 1</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 0 to 35</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p>
+    /// </li>
+    /// </ul>
+    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p> The daily time range during which automated backups are created.</p>
+    /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB
+    /// cluster. For more information, see <a>CreateDBCluster</a>.</p>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>The port number on which the database accepts connections.</p>
+    /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
+    /// <p> Default: <code>8182</code>
+    /// </p>
+    /// <p>Type: Integer</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
+    /// parameter if the MultiAZ parameter is set to true.</p>
+    pub fn multi_az(&self) -> std::option::Option<bool> {
+        self.multi_az
+    }
+    /// <p>The version number of the database engine to use. Currently, setting this
+    /// parameter has no effect.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during
+    /// the maintenance window.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>License model information for this DB instance.</p>
+    /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+    /// <code>general-public-license</code>
+    /// </p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially
+    /// allocated for the DB instance.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn option_group_name(&self) -> std::option::Option<&str> {
+        self.option_group_name.as_deref()
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn character_set_name(&self) -> std::option::Option<&str> {
+        self.character_set_name.as_deref()
+    }
+    /// <p>This flag should no longer be used.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>The tags to assign to the new instance.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The identifier of the DB cluster that the instance will belong to.</p>
+    /// <p>For information on creating a DB cluster, see <a>CreateDBCluster</a>.</p>
+    /// <p>Type: String</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    /// <p>Not applicable. Storage is managed by the DB Cluster.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+    pub fn tde_credential_arn(&self) -> std::option::Option<&str> {
+        self.tde_credential_arn.as_deref()
+    }
+    /// <p>The password for the given ARN from the key store in order to access the device.</p>
+    pub fn tde_credential_password(&self) -> std::option::Option<&str> {
+        self.tde_credential_password.as_deref()
+    }
+    /// <p>Specifies whether the DB instance is encrypted.</p>
+    /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster. For more
+    /// information, see <a>CreateDBCluster</a>.</p>
+    /// <p>Default: false</p>
+    pub fn storage_encrypted(&self) -> std::option::Option<bool> {
+        self.storage_encrypted
+    }
+    /// <p>The Amazon KMS key identifier for an encrypted DB instance.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+    /// you are creating a DB instance with the same Amazon account that owns the KMS encryption key used
+    /// to encrypt the new DB instance, then you can use the KMS key alias instead of the ARN for the
+    /// KM encryption key.</p>
+    /// <p>Not applicable. The KMS key identifier is managed by the DB cluster. For more information,
+    /// see <a>CreateDBCluster</a>.</p>
+    /// <p>If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for
+    /// the <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key.
+    /// Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a
+    /// different default encryption key for each Amazon Region.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specify the Active Directory Domain to create the instance in.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
+    /// false. The default is false.</p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+    /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default
+    /// is 0.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set
+    /// <code>MonitoringInterval</code> to a value other than 0.</p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+    /// </p>
+    pub fn monitoring_interval(&self) -> std::option::Option<i32> {
+        self.monitoring_interval
+    }
+    /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to
+    /// Amazon CloudWatch Logs. For example,
+    /// <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
+    /// <code>MonitoringRoleArn</code> value.</p>
+    pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_role_arn.as_deref()
+    }
+    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory
+    /// Service.</p>
+    pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
+        self.domain_iam_role_name.as_deref()
+    }
+    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary
+    /// instance after a failure of the existing primary instance.
+    /// </p>
+    /// <p>Default: 1</p>
+    /// <p>Valid Values: 0 - 15</p>
+    pub fn promotion_tier(&self) -> std::option::Option<i32> {
+        self.promotion_tier
+    }
+    /// <p>The time zone of the DB instance.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>Not supported by Neptune (ignored).</p>
+    pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
+        self.enable_iam_database_authentication
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
+        self.enable_performance_insights
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
+    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.enable_cloudwatch_logs_exports.as_deref()
+    }
+    /// <p>A value that indicates whether the DB instance has deletion protection enabled.
+    /// The database can't be deleted when deletion protection is enabled. By default,
+    /// deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+    /// a DB Instance</a>.</p>
+    ///
+    /// <p>DB instances in a DB cluster can be deleted even when deletion
+    /// protection is enabled in their parent DB cluster.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+}
 impl std::fmt::Debug for CreateDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbInstanceInput");
@@ -19629,6 +21894,44 @@ pub struct CreateDbClusterSnapshotInput {
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDbClusterSnapshotInput {
+    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase
+    /// string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1-snapshot1</code>
+    /// </p>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not
+    /// case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1</code>
+    /// </p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The tags to be assigned to the DB cluster snapshot.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDbClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbClusterSnapshotInput");
@@ -19667,6 +21970,36 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <p>The tags to be assigned to the new DB cluster parameter group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDbClusterParameterGroupInput {
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the name of an existing DBClusterParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated
+    /// with one and only one DB cluster parameter group family, and can be applied only to a DB
+    /// cluster running a database engine and engine version compatible with that DB cluster parameter
+    /// group family.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>The description for the DB cluster parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags to be assigned to the new DB cluster parameter group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDbClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbClusterParameterGroupInput");
@@ -19700,6 +22033,35 @@ pub struct CreateDbClusterEndpointInput {
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDbClusterEndpointInput {
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
+    /// stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.static_members.as_deref()
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
+    /// All other eligible instances are reachable through the custom endpoint.
+    /// Only relevant if the list of static members is empty.</p>
+    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_members.as_deref()
+    }
+    /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbClusterEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19877,6 +22239,213 @@ pub struct CreateDbClusterInput {
     /// deletion protection is enabled.</p>
     pub deletion_protection: std::option::Option<bool>,
 }
+impl CreateDbClusterInput {
+    /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created
+    /// in.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The number of days for which automated backups are retained. You must specify a minimum
+    /// value of 1.</p>
+    /// <p>Default: 1</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p>
+    /// </li>
+    /// </ul>
+    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn character_set_name(&self) -> std::option::Option<&str> {
+        self.character_set_name.as_deref()
+    }
+    /// <p>
+    /// <i>If set to <code>true</code>, tags are copied to any snapshot of
+    /// the DB cluster that is created.</i>
+    /// </p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
+    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a
+    /// name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster1</code>
+    /// </p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p> The name of the DB cluster parameter group to associate with this DB cluster. If this
+    /// argument is omitted, the default is used.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>A DB subnet group to associate with this DB cluster.</p>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mySubnetgroup</code>
+    /// </p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>The name of the database engine to be used for this DB cluster.</p>
+    /// <p>Valid Values: <code>neptune</code>
+    /// </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the database engine to use for the new DB cluster.</p>
+    /// <p>Example: <code>1.0.2.1</code>
+    /// </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The port number on which the instances in the DB cluster accept connections.</p>
+    /// <p> Default: <code>8182</code>
+    /// </p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn option_group_name(&self) -> std::option::Option<&str> {
+        self.option_group_name.as_deref()
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are
+    /// enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred
+    /// Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+    /// </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p>
+    /// </li>
+    /// </ul>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated
+    /// Time (UTC).</p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+    /// </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// Amazon Region, occurring on a random day of the week. To see the time blocks available, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred
+    /// Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+    /// </p>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster
+    /// is created as a Read Replica.</p>
+    pub fn replication_source_identifier(&self) -> std::option::Option<&str> {
+        self.replication_source_identifier.as_deref()
+    }
+    /// <p>The tags to assign to the new DB cluster.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies whether the DB cluster is encrypted.</p>
+    pub fn storage_encrypted(&self) -> std::option::Option<bool> {
+        self.storage_encrypted
+    }
+    /// <p>The Amazon KMS key identifier for an encrypted DB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+    /// you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used
+    /// to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the
+    /// KMS encryption key.</p>
+    /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
+    /// Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon
+    /// Neptune will use your default encryption key.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is true and
+    /// <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use
+    /// your default encryption key.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a
+    /// different default encryption key for each Amazon Region.</p>
+    /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must
+    /// set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This
+    /// key is used to encrypt the Read Replica in that Amazon Region.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn pre_signed_url(&self) -> std::option::Option<&str> {
+        self.pre_signed_url.as_deref()
+    }
+    /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management
+    /// (IAM) authentication for the entire DB cluster (this cannot be set at an
+    /// instance level).</p>
+    /// <p>Default: <code>false</code>.</p>
+    pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
+        self.enable_iam_database_authentication
+    }
+    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.enable_cloudwatch_logs_exports.as_deref()
+    }
+    /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
+    /// The database can't be deleted when deletion protection is enabled. By default,
+    /// deletion protection is enabled.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+}
 impl std::fmt::Debug for CreateDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbClusterInput");
@@ -19969,6 +22538,56 @@ pub struct CopyDbParameterGroupInput {
     /// <p>The tags to be assigned to the copied DB parameter group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CopyDbParameterGroupInput {
+    /// <p>The identifier or ARN for the source DB parameter group. For information about creating
+    /// an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
+    /// Amazon Resource Name (ARN)</a>.</p>
+    ///
+    /// <p>Constraints:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Must specify a valid DB parameter group.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must specify a valid DB parameter group identifier, for example
+    /// <code>my-db-param-group</code>, or a valid ARN.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_db_parameter_group_identifier(&self) -> std::option::Option<&str> {
+        self.source_db_parameter_group_identifier.as_deref()
+    }
+    /// <p>The identifier for the copied DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Example: <code>my-db-parameter-group</code>
+    /// </p>
+    pub fn target_db_parameter_group_identifier(&self) -> std::option::Option<&str> {
+        self.target_db_parameter_group_identifier.as_deref()
+    }
+    /// <p>A description for the copied DB parameter group.</p>
+    pub fn target_db_parameter_group_description(&self) -> std::option::Option<&str> {
+        self.target_db_parameter_group_description.as_deref()
+    }
+    /// <p>The tags to be assigned to the copied DB parameter group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyDbParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyDbParameterGroupInput");
@@ -20049,6 +22668,75 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CopyDbClusterSnapshotInput {
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not
+    /// case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the "available" state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify a valid DB snapshot identifier.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-snapshot1</code>
+    /// </p>
+    pub fn source_db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.source_db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster
+    /// snapshot. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-snapshot2</code>
+    /// </p>
+    pub fn target_db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.target_db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon
+    /// Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+    ///
+    /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a
+    /// value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+    /// don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is
+    /// encrypted with the same KMS key as the source DB cluster snapshot.</p>
+    ///
+    /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then
+    /// you must specify a value for <code>KmsKeyId</code>.</p>
+    /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you
+    /// can't use encryption keys from one Amazon Region in another Amazon Region.</p>
+    ///
+    /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to
+    /// copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an
+    /// error is returned.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Not currently supported.</p>
+    pub fn pre_signed_url(&self) -> std::option::Option<&str> {
+        self.pre_signed_url.as_deref()
+    }
+    /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster
+    /// snapshot, and otherwise false. The default is false.</p>
+    pub fn copy_tags(&self) -> std::option::Option<bool> {
+        self.copy_tags
+    }
+    /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyDbClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyDbClusterSnapshotInput");
@@ -20116,6 +22804,60 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <p>The tags to be assigned to the copied DB cluster parameter group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CopyDbClusterParameterGroupInput {
+    /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group.
+    /// For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
+    /// Amazon Resource Name (ARN)</a>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must specify a valid DB cluster parameter group.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy,
+    /// specify a valid DB parameter group identifier, for example
+    /// <code>my-db-cluster-param-group</code>, or a valid ARN.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a
+    /// valid DB cluster parameter group ARN, for example
+    /// <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_db_cluster_parameter_group_identifier(&self) -> std::option::Option<&str> {
+        self.source_db_cluster_parameter_group_identifier.as_deref()
+    }
+    /// <p>The identifier for the copied DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-param-group1</code>
+    /// </p>
+    pub fn target_db_cluster_parameter_group_identifier(&self) -> std::option::Option<&str> {
+        self.target_db_cluster_parameter_group_identifier.as_deref()
+    }
+    /// <p>A description for the copied DB cluster parameter group.</p>
+    pub fn target_db_cluster_parameter_group_description(&self) -> std::option::Option<&str> {
+        self.target_db_cluster_parameter_group_description
+            .as_deref()
+    }
+    /// <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyDbClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyDbClusterParameterGroupInput");
@@ -20169,6 +22911,42 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// </ul>
     pub opt_in_type: std::option::Option<std::string::String>,
 }
+impl ApplyPendingMaintenanceActionInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies
+    /// to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
+    /// Amazon Resource Name (ARN)</a>.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>The pending maintenance action to apply to this resource.</p>
+    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>
+    /// </p>
+    pub fn apply_action(&self) -> std::option::Option<&str> {
+        self.apply_action.as_deref()
+    }
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in
+    /// request of type <code>immediate</code> can't be undone.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>immediate</code> - Apply the maintenance action immediately.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>next-maintenance</code> - Apply the maintenance action during the next
+    /// maintenance window for the resource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
+    /// requests.</p>
+    /// </li>
+    /// </ul>
+    pub fn opt_in_type(&self) -> std::option::Option<&str> {
+        self.opt_in_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplyPendingMaintenanceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplyPendingMaintenanceActionInput");
@@ -20189,6 +22967,18 @@ pub struct AddTagsToResourceInput {
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToResourceInput {
+    /// <p>The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource
+    /// Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
+    /// Amazon Resource Name (ARN)</a>.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20228,6 +23018,36 @@ pub struct AddSourceIdentifierToSubscriptionInput {
     /// </ul>
     pub source_identifier: std::option::Option<std::string::String>,
 }
+impl AddSourceIdentifierToSubscriptionInput {
+    /// <p>The name of the event notification subscription you want to add a source identifier
+    /// to.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>The identifier of the event source to be added.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be
+    /// supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+    /// supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must
+    /// be supplied.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+    /// supplied.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for AddSourceIdentifierToSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddSourceIdentifierToSubscriptionInput");
@@ -20249,6 +23069,22 @@ pub struct AddRoleToDbClusterInput {
     /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with.
     /// For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
     pub feature_name: std::option::Option<std::string::String>,
+}
+impl AddRoleToDbClusterInput {
+    /// <p>The name of the DB cluster to associate the IAM role with.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster,
+    /// for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with.
+    /// For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AddRoleToDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

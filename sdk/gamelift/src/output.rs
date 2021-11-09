@@ -6,6 +6,12 @@ pub struct ValidateMatchmakingRuleSetOutput {
     /// <p>A response indicating whether the rule set is valid.</p>
     pub valid: std::option::Option<bool>,
 }
+impl ValidateMatchmakingRuleSetOutput {
+    /// <p>A response indicating whether the rule set is valid.</p>
+    pub fn valid(&self) -> std::option::Option<bool> {
+        self.valid
+    }
+}
 impl std::fmt::Debug for ValidateMatchmakingRuleSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateMatchmakingRuleSetOutput");
@@ -56,6 +62,17 @@ pub struct UpdateScriptOutput {
     /// a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift
     /// service.</p>
     pub script: std::option::Option<crate::model::Script>,
+}
+impl UpdateScriptOutput {
+    /// <p>The newly created script record with a unique script ID. The new script's storage
+    /// location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket
+    /// under your account, the storage location reflects the information that was provided in
+    /// the <i>CreateScript</i> request; (2) If the script file was uploaded from
+    /// a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift
+    /// service.</p>
+    pub fn script(&self) -> std::option::Option<&crate::model::Script> {
+        self.script.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateScriptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -116,6 +133,15 @@ pub struct UpdateRuntimeConfigurationOutput {
     /// update was successful, all property changes are shown. </p>
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
+impl UpdateRuntimeConfigurationOutput {
+    /// <p>The runtime configuration currently in use by all instances in the fleet. If the
+    /// update was successful, all property changes are shown. </p>
+    pub fn runtime_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
+        self.runtime_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRuntimeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuntimeConfigurationOutput");
@@ -169,6 +195,12 @@ pub struct UpdateMatchmakingConfigurationOutput {
     /// <p>The updated matchmaking configuration.</p>
     pub configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
 }
+impl UpdateMatchmakingConfigurationOutput {
+    /// <p>The updated matchmaking configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::MatchmakingConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMatchmakingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMatchmakingConfigurationOutput");
@@ -219,6 +251,12 @@ impl UpdateMatchmakingConfigurationOutput {
 pub struct UpdateGameSessionQueueOutput {
     /// <p>An object that describes the newly updated game session queue.</p>
     pub game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
+}
+impl UpdateGameSessionQueueOutput {
+    /// <p>An object that describes the newly updated game session queue.</p>
+    pub fn game_session_queue(&self) -> std::option::Option<&crate::model::GameSessionQueue> {
+        self.game_session_queue.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateGameSessionQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -271,6 +309,12 @@ pub struct UpdateGameSessionOutput {
     /// <p>The updated game session properties.</p>
     pub game_session: std::option::Option<crate::model::GameSession>,
 }
+impl UpdateGameSessionOutput {
+    /// <p>The updated game session properties.</p>
+    pub fn game_session(&self) -> std::option::Option<&crate::model::GameSession> {
+        self.game_session.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGameSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGameSessionOutput");
@@ -321,6 +365,12 @@ impl UpdateGameSessionOutput {
 pub struct UpdateGameServerGroupOutput {
     /// <p>An object that describes the game server group resource with updated properties. </p>
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
+}
+impl UpdateGameServerGroupOutput {
+    /// <p>An object that describes the game server group resource with updated properties. </p>
+    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+        self.game_server_group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateGameServerGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -373,6 +423,12 @@ pub struct UpdateGameServerOutput {
     /// <p>Object that describes the newly updated game server.</p>
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
+impl UpdateGameServerOutput {
+    /// <p>Object that describes the newly updated game server.</p>
+    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+        self.game_server.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGameServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGameServerOutput");
@@ -423,6 +479,12 @@ impl UpdateGameServerOutput {
 pub struct UpdateFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
     pub fleet_id: std::option::Option<std::string::String>,
+}
+impl UpdateFleetPortSettingsOutput {
+    /// <p>A unique identifier for the fleet that was updated.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFleetPortSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -476,6 +538,21 @@ pub struct UpdateFleetCapacityOutput {
     /// <p>The remote location being updated, expressed as an AWS Region code,
     /// such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl UpdateFleetCapacityOutput {
+    /// <p>A unique identifier for the fleet that was updated.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The remote location being updated, expressed as an AWS Region code,
+    /// such as <code>us-west-2</code>.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFleetCapacityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -553,6 +630,12 @@ pub struct UpdateFleetAttributesOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
     pub fleet_id: std::option::Option<std::string::String>,
 }
+impl UpdateFleetAttributesOutput {
+    /// <p>A unique identifier for the fleet that was updated.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFleetAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFleetAttributesOutput");
@@ -599,7 +682,17 @@ impl UpdateFleetAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBuildOutput {
     /// <p>The updated build resource.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
+}
+impl UpdateBuildOutput {
+    /// <p>The updated build resource.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
+    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+        self.build_value.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateBuildOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -648,6 +741,12 @@ impl UpdateBuildOutput {
 pub struct UpdateAliasOutput {
     /// <p>The updated alias resource.</p>
     pub alias: std::option::Option<crate::model::Alias>,
+}
+impl UpdateAliasOutput {
+    /// <p>The updated alias resource.</p>
+    pub fn alias(&self) -> std::option::Option<&crate::model::Alias> {
+        self.alias.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -757,6 +856,14 @@ pub struct SuspendGameServerGroupOutput {
     /// activity.</p>
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
+impl SuspendGameServerGroupOutput {
+    /// <p>An object that describes the game server group resource, with the
+    /// <code>SuspendedActions</code> property updated to reflect the suspended
+    /// activity.</p>
+    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+        self.game_server_group.as_ref()
+    }
+}
 impl std::fmt::Debug for SuspendGameServerGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuspendGameServerGroupOutput");
@@ -843,6 +950,15 @@ pub struct StopGameSessionPlacementOutput {
     /// <code>CANCELLED</code> status and an end time stamp. </p>
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
+impl StopGameSessionPlacementOutput {
+    /// <p>Object that describes the canceled game session placement, with
+    /// <code>CANCELLED</code> status and an end time stamp. </p>
+    pub fn game_session_placement(
+        &self,
+    ) -> std::option::Option<&crate::model::GameSessionPlacement> {
+        self.game_session_placement.as_ref()
+    }
+}
 impl std::fmt::Debug for StopGameSessionPlacementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopGameSessionPlacementOutput");
@@ -897,6 +1013,16 @@ pub struct StopFleetActionsOutput {
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
+}
+impl StopFleetActionsOutput {
+    /// <p>A unique identifier for the fleet to stop actions on.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopFleetActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -961,6 +1087,14 @@ pub struct StartMatchmakingOutput {
     /// matchmaking process.</p>
     pub matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
 }
+impl StartMatchmakingOutput {
+    /// <p>Ticket representing the matchmaking request. This object include the information
+    /// included in the request, ticket status, and match results as generated during the
+    /// matchmaking process.</p>
+    pub fn matchmaking_ticket(&self) -> std::option::Option<&crate::model::MatchmakingTicket> {
+        self.matchmaking_ticket.as_ref()
+    }
+}
 impl std::fmt::Debug for StartMatchmakingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMatchmakingOutput");
@@ -1017,6 +1151,14 @@ pub struct StartMatchBackfillOutput {
     /// information in the request, ticket status, and match results as generated during the
     /// matchmaking process.</p>
     pub matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
+}
+impl StartMatchBackfillOutput {
+    /// <p>Ticket representing the backfill matchmaking request. This object includes the
+    /// information in the request, ticket status, and match results as generated during the
+    /// matchmaking process.</p>
+    pub fn matchmaking_ticket(&self) -> std::option::Option<&crate::model::MatchmakingTicket> {
+        self.matchmaking_ticket.as_ref()
+    }
 }
 impl std::fmt::Debug for StartMatchBackfillOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1075,6 +1217,16 @@ pub struct StartGameSessionPlacementOutput {
     /// and placement status. </p>
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
+impl StartGameSessionPlacementOutput {
+    /// <p>Object that describes the newly created game session placement. This object
+    /// includes all the information provided in the request, as well as start/end time stamps
+    /// and placement status. </p>
+    pub fn game_session_placement(
+        &self,
+    ) -> std::option::Option<&crate::model::GameSessionPlacement> {
+        self.game_session_placement.as_ref()
+    }
+}
 impl std::fmt::Debug for StartGameSessionPlacementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartGameSessionPlacementOutput");
@@ -1131,6 +1283,16 @@ pub struct StartFleetActionsOutput {
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
+}
+impl StartFleetActionsOutput {
+    /// <p>A unique identifier for the fleet to restart actions on.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StartFleetActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1195,6 +1357,17 @@ pub struct SearchGameSessionsOutput {
     pub game_sessions: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchGameSessionsOutput {
+    /// <p>A collection of objects containing game session properties for each session that
+    /// matches the request.</p>
+    pub fn game_sessions(&self) -> std::option::Option<&[crate::model::GameSession]> {
+        self.game_sessions.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchGameSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1270,6 +1443,14 @@ pub struct ResumeGameServerGroupOutput {
     /// activity.</p>
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
+impl ResumeGameServerGroupOutput {
+    /// <p>An object that describes the game server group resource, with the
+    /// <code>SuspendedActions</code> property updated to reflect the resumed
+    /// activity.</p>
+    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+        self.game_server_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ResumeGameServerGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResumeGameServerGroupOutput");
@@ -1328,6 +1509,18 @@ pub struct ResolveAliasOutput {
     /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to.
     /// </p>
     pub fleet_arn: std::option::Option<std::string::String>,
+}
+impl ResolveAliasOutput {
+    /// <p>The fleet identifier that the alias is pointing to.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to.
+    /// </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ResolveAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1398,6 +1591,19 @@ pub struct RequestUploadCredentialsOutput {
     /// <p>Amazon S3 path and key, identifying where the game build files are
     /// stored.</p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
+}
+impl RequestUploadCredentialsOutput {
+    /// <p>AWS credentials required when uploading a game build to the storage location.
+    /// These credentials have a limited lifespan and are valid only for the build they were
+    /// issued for.</p>
+    pub fn upload_credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
+        self.upload_credentials.as_ref()
+    }
+    /// <p>Amazon S3 path and key, identifying where the game build files are
+    /// stored.</p>
+    pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.storage_location.as_ref()
+    }
 }
 impl std::fmt::Debug for RequestUploadCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1472,6 +1678,12 @@ pub struct RegisterGameServerOutput {
     /// <p>Object that describes the newly registered game server.</p>
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
+impl RegisterGameServerOutput {
+    /// <p>Object that describes the newly registered game server.</p>
+    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+        self.game_server.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterGameServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterGameServerOutput");
@@ -1523,6 +1735,12 @@ pub struct PutScalingPolicyOutput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl PutScalingPolicyOutput {
+    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for PutScalingPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutScalingPolicyOutput");
@@ -1570,6 +1788,14 @@ pub struct ListTagsForResourceOutput {
     /// The collection of tags that have been assigned to the specified resource.
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>
+    /// The collection of tags that have been assigned to the specified resource.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1631,6 +1857,16 @@ pub struct ListScriptsOutput {
     pub scripts: std::option::Option<std::vec::Vec<crate::model::Script>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListScriptsOutput {
+    /// <p>A set of properties describing the requested script.</p>
+    pub fn scripts(&self) -> std::option::Option<&[crate::model::Script]> {
+        self.scripts.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListScriptsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1704,6 +1940,16 @@ pub struct ListGameServersOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGameServersOutput {
+    /// <p>A collection of game server objects that match the request.</p>
+    pub fn game_servers(&self) -> std::option::Option<&[crate::model::GameServer]> {
+        self.game_servers.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGameServersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGameServersOutput");
@@ -1775,6 +2021,16 @@ pub struct ListGameServerGroupsOutput {
     pub game_server_groups: std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGameServerGroupsOutput {
+    /// <p>A collection of game server group objects that match the request.</p>
+    pub fn game_server_groups(&self) -> std::option::Option<&[crate::model::GameServerGroup]> {
+        self.game_server_groups.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGameServerGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1855,6 +2111,19 @@ pub struct ListFleetsOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFleetsOutput {
+    /// <p>A set of fleet IDs that match the list request.
+    /// You can retrieve additional information about all
+    /// returned fleets by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
+    /// <a>DescribeFleetUtilization</a> call.</p>
+    pub fn fleet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.fleet_ids.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFleetsOutput");
@@ -1933,6 +2202,16 @@ pub struct ListBuildsOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBuildsOutput {
+    /// <p>A collection of build resources that match the request.</p>
+    pub fn builds(&self) -> std::option::Option<&[crate::model::Build]> {
+        self.builds.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuildsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildsOutput");
@@ -2005,6 +2284,16 @@ pub struct ListAliasesOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAliasesOutput {
+    /// <p>A collection of alias resources that match the request parameters.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+        self.aliases.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAliasesOutput");
@@ -2076,6 +2365,13 @@ pub struct GetInstanceAccessOutput {
     /// address and access credentials.</p>
     pub instance_access: std::option::Option<crate::model::InstanceAccess>,
 }
+impl GetInstanceAccessOutput {
+    /// <p>The connection information for a fleet instance, including IP
+    /// address and access credentials.</p>
+    pub fn instance_access(&self) -> std::option::Option<&crate::model::InstanceAccess> {
+        self.instance_access.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInstanceAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstanceAccessOutput");
@@ -2131,6 +2427,15 @@ pub struct GetGameSessionLogUrlOutput {
     /// You can request a new URL any time within the 14-day period that the logs are
     /// retained.</p>
     pub pre_signed_url: std::option::Option<std::string::String>,
+}
+impl GetGameSessionLogUrlOutput {
+    /// <p>Location of the requested game session logs, available for download. This URL is
+    /// valid for 15 minutes, after which S3 will reject any download request using this URL.
+    /// You can request a new URL any time within the 14-day period that the logs are
+    /// retained.</p>
+    pub fn pre_signed_url(&self) -> std::option::Option<&str> {
+        self.pre_signed_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGameSessionLogUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2189,6 +2494,14 @@ pub struct DescribeVpcPeeringConnectionsOutput {
     /// <p>A collection of VPC peering connection records that match the request.</p>
     pub vpc_peering_connections:
         std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
+}
+impl DescribeVpcPeeringConnectionsOutput {
+    /// <p>A collection of VPC peering connection records that match the request.</p>
+    pub fn vpc_peering_connections(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcPeeringConnection]> {
+        self.vpc_peering_connections.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcPeeringConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2252,6 +2565,15 @@ pub struct DescribeVpcPeeringAuthorizationsOutput {
     /// current AWS account.</p>
     pub vpc_peering_authorizations:
         std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
+}
+impl DescribeVpcPeeringAuthorizationsOutput {
+    /// <p>A collection of objects that describe all valid VPC peering operations for the
+    /// current AWS account.</p>
+    pub fn vpc_peering_authorizations(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcPeeringAuthorization]> {
+        self.vpc_peering_authorizations.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVpcPeeringAuthorizationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2319,6 +2641,12 @@ pub struct DescribeScriptOutput {
     /// <p>A set of properties describing the requested script.</p>
     pub script: std::option::Option<crate::model::Script>,
 }
+impl DescribeScriptOutput {
+    /// <p>A set of properties describing the requested script.</p>
+    pub fn script(&self) -> std::option::Option<&crate::model::Script> {
+        self.script.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeScriptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScriptOutput");
@@ -2369,6 +2697,17 @@ pub struct DescribeScalingPoliciesOutput {
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScalingPoliciesOutput {
+    /// <p>A collection of objects containing the scaling policies matching the
+    /// request.</p>
+    pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
+        self.scaling_policies.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScalingPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2444,6 +2783,15 @@ pub struct DescribeRuntimeConfigurationOutput {
     /// each instance in the fleet.</p>
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
+impl DescribeRuntimeConfigurationOutput {
+    /// <p>Instructions that describe how server processes should be launched and maintained on
+    /// each instance in the fleet.</p>
+    pub fn runtime_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
+        self.runtime_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRuntimeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRuntimeConfigurationOutput");
@@ -2499,6 +2847,17 @@ pub struct DescribePlayerSessionsOutput {
     pub player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePlayerSessionsOutput {
+    /// <p>A collection of objects containing properties for each player session that matches
+    /// the request.</p>
+    pub fn player_sessions(&self) -> std::option::Option<&[crate::model::PlayerSession]> {
+        self.player_sessions.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePlayerSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2574,6 +2933,16 @@ pub struct DescribeMatchmakingRuleSetsOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMatchmakingRuleSetsOutput {
+    /// <p>A collection of requested matchmaking rule set objects. </p>
+    pub fn rule_sets(&self) -> std::option::Option<&[crate::model::MatchmakingRuleSet]> {
+        self.rule_sets.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMatchmakingRuleSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMatchmakingRuleSetsOutput");
@@ -2645,6 +3014,16 @@ pub struct DescribeMatchmakingConfigurationsOutput {
     pub configurations: std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMatchmakingConfigurationsOutput {
+    /// <p>A collection of requested matchmaking configurations.</p>
+    pub fn configurations(&self) -> std::option::Option<&[crate::model::MatchmakingConfiguration]> {
+        self.configurations.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMatchmakingConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2720,6 +3099,12 @@ pub struct DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
     pub ticket_list: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>,
 }
+impl DescribeMatchmakingOutput {
+    /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
+    pub fn ticket_list(&self) -> std::option::Option<&[crate::model::MatchmakingTicket]> {
+        self.ticket_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMatchmakingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMatchmakingOutput");
@@ -2778,6 +3163,16 @@ pub struct DescribeInstancesOutput {
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstancesOutput {
+    /// <p>A collection of objects containing properties for each instance returned.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2851,6 +3246,16 @@ pub struct DescribeGameSessionsOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeGameSessionsOutput {
+    /// <p>A collection of properties for each game session that matches the request.</p>
+    pub fn game_sessions(&self) -> std::option::Option<&[crate::model::GameSession]> {
+        self.game_sessions.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGameSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGameSessionsOutput");
@@ -2922,6 +3327,16 @@ pub struct DescribeGameSessionQueuesOutput {
     pub game_session_queues: std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeGameSessionQueuesOutput {
+    /// <p>A collection of objects that describe the requested game session queues.</p>
+    pub fn game_session_queues(&self) -> std::option::Option<&[crate::model::GameSessionQueue]> {
+        self.game_session_queues.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGameSessionQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2997,6 +3412,14 @@ pub struct DescribeGameSessionPlacementOutput {
     /// <p>Object that describes the requested game session placement.</p>
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
+impl DescribeGameSessionPlacementOutput {
+    /// <p>Object that describes the requested game session placement.</p>
+    pub fn game_session_placement(
+        &self,
+    ) -> std::option::Option<&crate::model::GameSessionPlacement> {
+        self.game_session_placement.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeGameSessionPlacementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGameSessionPlacementOutput");
@@ -3049,6 +3472,16 @@ pub struct DescribeGameSessionDetailsOutput {
     pub game_session_details: std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeGameSessionDetailsOutput {
+    /// <p>A collection of properties for each game session that matches the request.</p>
+    pub fn game_session_details(&self) -> std::option::Option<&[crate::model::GameSessionDetail]> {
+        self.game_session_details.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGameSessionDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3129,6 +3562,22 @@ pub struct DescribeGameServerInstancesOutput {
     /// A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeGameServerInstancesOutput {
+    /// <p>
+    /// The collection of requested game server instances.
+    /// </p>
+    pub fn game_server_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::GameServerInstance]> {
+        self.game_server_instances.as_deref()
+    }
+    /// <p>
+    /// A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGameServerInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3212,6 +3661,12 @@ pub struct DescribeGameServerGroupOutput {
     /// <p>An object with the property settings for the requested game server group resource. </p>
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
+impl DescribeGameServerGroupOutput {
+    /// <p>An object with the property settings for the requested game server group resource. </p>
+    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+        self.game_server_group.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeGameServerGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGameServerGroupOutput");
@@ -3262,6 +3717,12 @@ impl DescribeGameServerGroupOutput {
 pub struct DescribeGameServerOutput {
     /// <p>Object that describes the requested game server.</p>
     pub game_server: std::option::Option<crate::model::GameServer>,
+}
+impl DescribeGameServerOutput {
+    /// <p>Object that describes the requested game server.</p>
+    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+        self.game_server.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeGameServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3316,6 +3777,17 @@ pub struct DescribeFleetUtilizationOutput {
     pub fleet_utilization: std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetUtilizationOutput {
+    /// <p>A collection of objects containing utilization information for each requested fleet
+    /// ID. Utilization objects are returned only for fleets that currently exist.</p>
+    pub fn fleet_utilization(&self) -> std::option::Option<&[crate::model::FleetUtilization]> {
+        self.fleet_utilization.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetUtilizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3403,6 +3875,31 @@ pub struct DescribeFleetPortSettingsOutput {
     /// <p>The requested fleet location, expressed as an AWS Region code,
     /// such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
+}
+impl DescribeFleetPortSettingsOutput {
+    /// <p>A unique identifier for the fleet that was requested. </p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The port settings for the requested fleet ID.</p>
+    pub fn inbound_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
+        self.inbound_permissions.as_deref()
+    }
+    /// <p>The current status of updates to the fleet's port settings in the requested fleet
+    /// location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested
+    /// for the fleet but has not yet been completed for the location.</p>
+    pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p>The requested fleet location, expressed as an AWS Region code,
+    /// such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetPortSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3524,6 +4021,13 @@ pub struct DescribeFleetLocationUtilizationOutput {
     /// returned only for fleets and locations that currently exist.</p>
     pub fleet_utilization: std::option::Option<crate::model::FleetUtilization>,
 }
+impl DescribeFleetLocationUtilizationOutput {
+    /// <p>Utilization information for the requested fleet location. Utilization objects are
+    /// returned only for fleets and locations that currently exist.</p>
+    pub fn fleet_utilization(&self) -> std::option::Option<&crate::model::FleetUtilization> {
+        self.fleet_utilization.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFleetLocationUtilizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFleetLocationUtilizationOutput");
@@ -3577,6 +4081,13 @@ pub struct DescribeFleetLocationCapacityOutput {
     /// <p>Resource capacity information for the requested fleet location. Capacity objects are
     /// returned only for fleets and locations that currently exist.</p>
     pub fleet_capacity: std::option::Option<crate::model::FleetCapacity>,
+}
+impl DescribeFleetLocationCapacityOutput {
+    /// <p>Resource capacity information for the requested fleet location. Capacity objects are
+    /// returned only for fleets and locations that currently exist.</p>
+    pub fn fleet_capacity(&self) -> std::option::Option<&crate::model::FleetCapacity> {
+        self.fleet_capacity.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetLocationCapacityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3636,6 +4147,24 @@ pub struct DescribeFleetLocationAttributesOutput {
     pub location_attributes: std::option::Option<std::vec::Vec<crate::model::LocationAttributes>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetLocationAttributesOutput {
+    /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p> Location-specific information on the requested fleet's remote locations. </p>
+    pub fn location_attributes(&self) -> std::option::Option<&[crate::model::LocationAttributes]> {
+        self.location_attributes.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetLocationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3740,6 +4269,17 @@ pub struct DescribeFleetEventsOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFleetEventsOutput {
+    /// <p>A collection of objects containing event log entries for the specified
+    /// fleet.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFleetEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFleetEventsOutput");
@@ -3814,6 +4354,17 @@ pub struct DescribeFleetCapacityOutput {
     pub fleet_capacity: std::option::Option<std::vec::Vec<crate::model::FleetCapacity>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetCapacityOutput {
+    /// <p>A collection of objects that contains capacity information for each requested fleet
+    /// ID. Capacity objects are returned only for fleets that currently exist.</p>
+    pub fn fleet_capacity(&self) -> std::option::Option<&[crate::model::FleetCapacity]> {
+        self.fleet_capacity.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetCapacityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3890,6 +4441,17 @@ pub struct DescribeFleetAttributesOutput {
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFleetAttributesOutput {
+    /// <p>A collection of objects containing attribute metadata for each requested fleet ID.
+    /// Attribute objects are returned only for fleets that currently exist.</p>
+    pub fn fleet_attributes(&self) -> std::option::Option<&[crate::model::FleetAttributes]> {
+        self.fleet_attributes.as_deref()
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFleetAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFleetAttributesOutput");
@@ -3964,6 +4526,13 @@ pub struct DescribeEc2InstanceLimitsOutput {
     /// type.</p>
     pub ec2_instance_limits: std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
 }
+impl DescribeEc2InstanceLimitsOutput {
+    /// <p>The maximum number of instances for the specified instance
+    /// type.</p>
+    pub fn ec2_instance_limits(&self) -> std::option::Option<&[crate::model::Ec2InstanceLimit]> {
+        self.ec2_instance_limits.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEc2InstanceLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEc2InstanceLimitsOutput");
@@ -4025,7 +4594,17 @@ impl DescribeEc2InstanceLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBuildOutput {
     /// <p>Set of properties describing the requested build.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
+}
+impl DescribeBuildOutput {
+    /// <p>Set of properties describing the requested build.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
+    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+        self.build_value.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeBuildOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4074,6 +4653,12 @@ impl DescribeBuildOutput {
 pub struct DescribeAliasOutput {
     /// <p>The requested alias resource.</p>
     pub alias: std::option::Option<crate::model::Alias>,
+}
+impl DescribeAliasOutput {
+    /// <p>The requested alias resource.</p>
+    pub fn alias(&self) -> std::option::Option<&crate::model::Alias> {
+        self.alias.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4362,6 +4947,13 @@ pub struct DeleteGameServerGroupOutput {
     /// to <code>DELETE_SCHEDULED</code>. </p>
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
+impl DeleteGameServerGroupOutput {
+    /// <p>An object that describes the deleted game server group resource, with status updated
+    /// to <code>DELETE_SCHEDULED</code>. </p>
+    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+        self.game_server_group.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteGameServerGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGameServerGroupOutput");
@@ -4419,6 +5011,21 @@ pub struct DeleteFleetLocationsOutput {
     /// <p>The remote locations that are being deleted, with each location status set to
     /// <code>DELETING</code>.</p>
     pub location_states: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
+}
+impl DeleteFleetLocationsOutput {
+    /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The remote locations that are being deleted, with each location status set to
+    /// <code>DELETING</code>.</p>
+    pub fn location_states(&self) -> std::option::Option<&[crate::model::LocationState]> {
+        self.location_states.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFleetLocationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4625,6 +5232,14 @@ pub struct CreateVpcPeeringAuthorizationOutput {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
     pub vpc_peering_authorization: std::option::Option<crate::model::VpcPeeringAuthorization>,
 }
+impl CreateVpcPeeringAuthorizationOutput {
+    /// <p>Details on the requested VPC peering authorization, including expiration.</p>
+    pub fn vpc_peering_authorization(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcPeeringAuthorization> {
+        self.vpc_peering_authorization.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVpcPeeringAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVpcPeeringAuthorizationOutput");
@@ -4685,6 +5300,17 @@ pub struct CreateScriptOutput {
     /// the Amazon GameLift service.</p>
     pub script: std::option::Option<crate::model::Script>,
 }
+impl CreateScriptOutput {
+    /// <p>The newly created script record with a unique script ID and ARN. The new script's
+    /// storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3
+    /// bucket under your account, the storage location reflects the information that was
+    /// provided in the <i>CreateScript</i> request; (2) If the script file was
+    /// uploaded from a local zip file, the storage location reflects an S3 location controls by
+    /// the Amazon GameLift service.</p>
+    pub fn script(&self) -> std::option::Option<&crate::model::Script> {
+        self.script.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateScriptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateScriptOutput");
@@ -4743,6 +5369,12 @@ pub struct CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
     pub player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
 }
+impl CreatePlayerSessionsOutput {
+    /// <p>A collection of player session objects created for the added players.</p>
+    pub fn player_sessions(&self) -> std::option::Option<&[crate::model::PlayerSession]> {
+        self.player_sessions.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePlayerSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlayerSessionsOutput");
@@ -4800,6 +5432,12 @@ pub struct CreatePlayerSessionOutput {
     /// <p>Object that describes the newly created player session record.</p>
     pub player_session: std::option::Option<crate::model::PlayerSession>,
 }
+impl CreatePlayerSessionOutput {
+    /// <p>Object that describes the newly created player session record.</p>
+    pub fn player_session(&self) -> std::option::Option<&crate::model::PlayerSession> {
+        self.player_session.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePlayerSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlayerSessionOutput");
@@ -4850,6 +5488,12 @@ impl CreatePlayerSessionOutput {
 pub struct CreateMatchmakingRuleSetOutput {
     /// <p>The newly created matchmaking rule set.</p>
     pub rule_set: std::option::Option<crate::model::MatchmakingRuleSet>,
+}
+impl CreateMatchmakingRuleSetOutput {
+    /// <p>The newly created matchmaking rule set.</p>
+    pub fn rule_set(&self) -> std::option::Option<&crate::model::MatchmakingRuleSet> {
+        self.rule_set.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMatchmakingRuleSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4902,6 +5546,12 @@ pub struct CreateMatchmakingConfigurationOutput {
     /// <p>Object that describes the newly created matchmaking configuration.</p>
     pub configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
 }
+impl CreateMatchmakingConfigurationOutput {
+    /// <p>Object that describes the newly created matchmaking configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::MatchmakingConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMatchmakingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMatchmakingConfigurationOutput");
@@ -4953,6 +5603,12 @@ pub struct CreateGameSessionQueueOutput {
     /// <p>An object that describes the newly created game session queue.</p>
     pub game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
 }
+impl CreateGameSessionQueueOutput {
+    /// <p>An object that describes the newly created game session queue.</p>
+    pub fn game_session_queue(&self) -> std::option::Option<&crate::model::GameSessionQueue> {
+        self.game_session_queue.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateGameSessionQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGameSessionQueueOutput");
@@ -5003,6 +5659,12 @@ impl CreateGameSessionQueueOutput {
 pub struct CreateGameSessionOutput {
     /// <p>Object that describes the newly created game session record.</p>
     pub game_session: std::option::Option<crate::model::GameSession>,
+}
+impl CreateGameSessionOutput {
+    /// <p>Object that describes the newly created game session record.</p>
+    pub fn game_session(&self) -> std::option::Option<&crate::model::GameSession> {
+        self.game_session.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGameSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5057,6 +5719,15 @@ pub struct CreateGameServerGroupOutput {
     /// null, since the group has not yet been created. This value is added once the game server
     /// group status reaches <code>ACTIVE</code>. </p>
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
+}
+impl CreateGameServerGroupOutput {
+    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ
+    /// game server group and the object's status. The EC2 Auto Scaling group ARN is initially
+    /// null, since the group has not yet been created. This value is added once the game server
+    /// group status reaches <code>ACTIVE</code>. </p>
+    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+        self.game_server_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGameServerGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5123,6 +5794,25 @@ pub struct CreateFleetLocationsOutput {
     /// This list does not include the fleet home Region or any remote locations that were already
     /// added to the fleet.</p>
     pub location_states: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
+}
+impl CreateFleetLocationsOutput {
+    /// <p>A unique identifier for the fleet that was updated with new locations.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location.
+    /// For new locations, the status is set to <code>NEW</code>.
+    /// During location creation, GameLift updates each location's status as instances
+    /// are deployed there and prepared for game hosting.
+    /// This list does not include the fleet home Region or any remote locations that were already
+    /// added to the fleet.</p>
+    pub fn location_states(&self) -> std::option::Option<&[crate::model::LocationState]> {
+        self.location_states.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFleetLocationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5224,6 +5914,21 @@ pub struct CreateFleetOutput {
     /// remote locations, only one entry, representing the home Region, is returned.</p>
     pub location_states: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
 }
+impl CreateFleetOutput {
+    /// <p>The properties for the new fleet, including the current status. All fleets are placed
+    /// in <code>NEW</code> status on creation. </p>
+    pub fn fleet_attributes(&self) -> std::option::Option<&crate::model::FleetAttributes> {
+        self.fleet_attributes.as_ref()
+    }
+    /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the
+    /// status of all locations is set to <code>NEW</code>. During fleet creation, GameLift
+    /// updates each location status as instances are deployed there and prepared for game
+    /// hosting. This list includes an entry for the fleet's home Region. For fleets with no
+    /// remote locations, only one entry, representing the home Region, is returned.</p>
+    pub fn location_states(&self) -> std::option::Option<&[crate::model::LocationState]> {
+        self.location_states.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFleetOutput");
@@ -5305,6 +6010,8 @@ impl CreateFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBuildOutput {
     /// <p>The newly created build resource, including a unique build IDs and status. </p>
+    ///
+    /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
     /// <p>This element is returned only when the operation is called without a storage
     /// location. It contains credentials to use when you are uploading a build file to an Amazon S3
@@ -5314,6 +6021,26 @@ pub struct CreateBuildOutput {
     /// <p>Amazon S3 location for your game build file, including bucket name and
     /// key.</p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
+}
+impl CreateBuildOutput {
+    /// <p>The newly created build resource, including a unique build IDs and status. </p>
+    ///
+    /// _Note: This member has been renamed from `build`._
+    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+        self.build_value.as_ref()
+    }
+    /// <p>This element is returned only when the operation is called without a storage
+    /// location. It contains credentials to use when you are uploading a build file to an Amazon S3
+    /// bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these
+    /// credentials, call <a>RequestUploadCredentials</a>. </p>
+    pub fn upload_credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
+        self.upload_credentials.as_ref()
+    }
+    /// <p>Amazon S3 location for your game build file, including bucket name and
+    /// key.</p>
+    pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.storage_location.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBuildOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5403,6 +6130,12 @@ pub struct CreateAliasOutput {
     /// <p>The newly created alias resource.</p>
     pub alias: std::option::Option<crate::model::Alias>,
 }
+impl CreateAliasOutput {
+    /// <p>The newly created alias resource.</p>
+    pub fn alias(&self) -> std::option::Option<&crate::model::Alias> {
+        self.alias.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAliasOutput");
@@ -5448,6 +6181,12 @@ impl CreateAliasOutput {
 pub struct ClaimGameServerOutput {
     /// <p>Object that describes the newly claimed game server.</p>
     pub game_server: std::option::Option<crate::model::GameServer>,
+}
+impl ClaimGameServerOutput {
+    /// <p>Object that describes the newly claimed game server.</p>
+    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+        self.game_server.as_ref()
+    }
 }
 impl std::fmt::Debug for ClaimGameServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

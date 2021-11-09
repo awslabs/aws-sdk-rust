@@ -70,6 +70,20 @@ pub struct StartFhirImportJobOutput {
     /// <p>The AWS-generated Data Store ID.</p>
     pub datastore_id: std::option::Option<std::string::String>,
 }
+impl StartFhirImportJobOutput {
+    /// <p>The AWS-generated job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of an import job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The AWS-generated Data Store ID.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartFhirImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFhirImportJobOutput");
@@ -151,6 +165,20 @@ pub struct StartFhirExportJobOutput {
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
     pub datastore_id: std::option::Option<std::string::String>,
 }
+impl StartFhirExportJobOutput {
+    /// <p>The AWS generated ID for an export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartFhirExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFhirExportJobOutput");
@@ -230,6 +258,14 @@ pub struct ListTagsForResourceOutput {
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>
+    /// Returns a list of tags associated with a Data Store.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -295,6 +331,22 @@ pub struct ListFhirImportJobsOutput {
     /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFhirImportJobsOutput {
+    /// <p>
+    /// The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+    /// </p>
+    pub fn import_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ImportJobProperties]> {
+        self.import_job_properties_list.as_deref()
+    }
+    /// <p>
+    /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFhirImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -388,6 +440,22 @@ pub struct ListFhirExportJobsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFhirExportJobsOutput {
+    /// <p>
+    /// The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.
+    /// </p>
+    pub fn export_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExportJobProperties]> {
+        self.export_job_properties_list.as_deref()
+    }
+    /// <p>
+    /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFhirExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFhirExportJobsOutput");
@@ -476,6 +544,18 @@ pub struct ListFhirDatastoresOutput {
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFhirDatastoresOutput {
+    /// <p>All properties associated with the listed Data Stores.</p>
+    pub fn datastore_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatastoreProperties]> {
+        self.datastore_properties_list.as_deref()
+    }
+    /// <p>Pagination token that can be used to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFhirDatastoresOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFhirDatastoresOutput");
@@ -550,6 +630,12 @@ pub struct DescribeFhirImportJobOutput {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
     pub import_job_properties: std::option::Option<crate::model::ImportJobProperties>,
 }
+impl DescribeFhirImportJobOutput {
+    /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    pub fn import_job_properties(&self) -> std::option::Option<&crate::model::ImportJobProperties> {
+        self.import_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFhirImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFhirImportJobOutput");
@@ -600,6 +686,12 @@ impl DescribeFhirImportJobOutput {
 pub struct DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     pub export_job_properties: std::option::Option<crate::model::ExportJobProperties>,
+}
+impl DescribeFhirExportJobOutput {
+    /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
+    pub fn export_job_properties(&self) -> std::option::Option<&crate::model::ExportJobProperties> {
+        self.export_job_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFhirExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -653,6 +745,14 @@ pub struct DescribeFhirDatastoreOutput {
     /// Data Store name, Data Store status, created at, Data Store type version, and Data Store
     /// endpoint.</p>
     pub datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
+}
+impl DescribeFhirDatastoreOutput {
+    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN,
+    /// Data Store name, Data Store status, created at, Data Store type version, and Data Store
+    /// endpoint.</p>
+    pub fn datastore_properties(&self) -> std::option::Option<&crate::model::DatastoreProperties> {
+        self.datastore_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFhirDatastoreOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -715,6 +815,25 @@ pub struct DeleteFhirDatastoreOutput {
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
     pub datastore_endpoint: std::option::Option<std::string::String>,
+}
+impl DeleteFhirDatastoreOutput {
+    /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+        self.datastore_arn.as_deref()
+    }
+    /// <p>The status of the Data Store that the user has requested to be deleted.
+    /// </p>
+    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+        self.datastore_status.as_ref()
+    }
+    /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
+    pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
+        self.datastore_endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFhirDatastoreOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -823,6 +942,28 @@ pub struct CreateFhirDatastoreOutput {
     /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are
     /// supported.</p>
     pub datastore_endpoint: std::option::Option<std::string::String>,
+}
+impl CreateFhirDatastoreOutput {
+    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store
+    /// creation call.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in
+    /// the output from the initial Data Store creation call.</p>
+    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+        self.datastore_arn.as_deref()
+    }
+    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’,
+    /// ‘DELETED’.</p>
+    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+        self.datastore_status.as_ref()
+    }
+    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are
+    /// supported.</p>
+    pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
+        self.datastore_endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFhirDatastoreOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

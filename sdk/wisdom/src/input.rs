@@ -172,10 +172,7 @@ impl CreateAssistantInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_assistant(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_assistant(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -419,10 +416,7 @@ impl CreateAssistantAssociationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_assistant_association(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -723,10 +717,7 @@ impl CreateContentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_content(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_content(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1003,10 +994,7 @@ impl CreateKnowledgeBaseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_knowledge_base(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_knowledge_base(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1240,10 +1228,7 @@ impl CreateSessionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_session(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4234,7 +4219,7 @@ impl NotifyRecommendationsReceivedInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_notify_recommendations_received(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_notify_recommendations_received(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4437,10 +4422,8 @@ impl QueryAssistantInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_query_assistant(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_query_assistant(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4816,10 +4799,7 @@ impl SearchContentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_content(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_content(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5037,10 +5017,8 @@ impl SearchSessionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_sessions(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_sessions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5220,10 +5198,7 @@ impl StartContentUploadInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_content_upload(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_content_upload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5412,10 +5387,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5900,10 +5872,7 @@ impl UpdateContentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_content(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_content(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6084,7 +6053,7 @@ impl UpdateKnowledgeBaseTemplateUriInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_knowledge_base_template_uri(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_knowledge_base_template_uri(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6156,6 +6125,16 @@ pub struct UpdateKnowledgeBaseTemplateUriInput {
     /// <p>The template URI to update.</p>
     pub template_uri: std::option::Option<std::string::String>,
 }
+impl UpdateKnowledgeBaseTemplateUriInput {
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The template URI to update.</p>
+    pub fn template_uri(&self) -> std::option::Option<&str> {
+        self.template_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateKnowledgeBaseTemplateUriInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateKnowledgeBaseTemplateUriInput");
@@ -6173,6 +6152,16 @@ pub struct StartContentUploadInput {
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The type of content to upload.</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl StartContentUploadInput {
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The type of content to upload.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for StartContentUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6197,6 +6186,25 @@ pub struct SearchContentInput {
     /// <p>The search expression to filter results.</p>
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
 }
+impl SearchContentInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The search expression to filter results.</p>
+    pub fn search_expression(&self) -> std::option::Option<&crate::model::SearchExpression> {
+        self.search_expression.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchContentInput");
@@ -6215,6 +6223,12 @@ pub struct RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
+impl RemoveKnowledgeBaseTemplateUriInput {
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveKnowledgeBaseTemplateUriInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveKnowledgeBaseTemplateUriInput");
@@ -6232,6 +6246,17 @@ pub struct ListKnowledgeBasesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListKnowledgeBasesInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListKnowledgeBasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6269,6 +6294,51 @@ pub struct CreateKnowledgeBaseInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateKnowledgeBaseInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the knowledge base.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
+    /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
+    /// synchronized automatically. </p>
+    pub fn knowledge_base_type(&self) -> std::option::Option<&crate::model::KnowledgeBaseType> {
+        self.knowledge_base_type.as_ref()
+    }
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
+    /// bases.</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>Information about how to render the content.</p>
+    pub fn rendering_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RenderingConfiguration> {
+        self.rendering_configuration.as_ref()
+    }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateKnowledgeBaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateKnowledgeBaseInput");
@@ -6294,6 +6364,12 @@ pub struct DeleteKnowledgeBaseInput {
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
+impl DeleteKnowledgeBaseInput {
+    /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteKnowledgeBaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteKnowledgeBaseInput");
@@ -6308,6 +6384,12 @@ impl std::fmt::Debug for DeleteKnowledgeBaseInput {
 pub struct GetKnowledgeBaseInput {
     /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
+}
+impl GetKnowledgeBaseInput {
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetKnowledgeBaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6325,6 +6407,16 @@ pub struct GetContentSummaryInput {
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
+}
+impl GetContentSummaryInput {
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn content_id(&self) -> std::option::Option<&str> {
+        self.content_id.as_deref()
+    }
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContentSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6346,6 +6438,21 @@ pub struct ListContentsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
+}
+impl ListContentsInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6385,6 +6492,51 @@ pub struct CreateContentInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateContentInput {
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
+    /// name. You can retrieve a piece of content using only its knowledge base and its name with the
+    /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The title of the content. If not set, the title is equal to the name.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
+    /// this argument overrides it for this piece of content.</p>
+    pub fn override_link_out_uri(&self) -> std::option::Option<&str> {
+        self.override_link_out_uri.as_deref()
+    }
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
+    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
+    /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContentInput");
@@ -6408,6 +6560,16 @@ pub struct DeleteContentInput {
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: std::option::Option<std::string::String>,
+}
+impl DeleteContentInput {
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn content_id(&self) -> std::option::Option<&str> {
+        self.content_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6449,6 +6611,52 @@ pub struct UpdateContentInput {
     /// </p>
     pub upload_id: std::option::Option<std::string::String>,
 }
+impl UpdateContentInput {
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn content_id(&self) -> std::option::Option<&str> {
+        self.content_id.as_deref()
+    }
+    /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
+    /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
+    /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
+    /// content was not modified since it was last read. If it has been modified, this API throws a
+    /// <code>PreconditionFailedException</code>.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The title of the content.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
+    /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
+    /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+    pub fn override_link_out_uri(&self) -> std::option::Option<&str> {
+        self.override_link_out_uri.as_deref()
+    }
+    /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
+    pub fn remove_override_link_out_uri(&self) -> std::option::Option<bool> {
+        self.remove_override_link_out_uri
+    }
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
+    /// example, when synchronizing data between an external system and Wisdom, you can store an
+    /// external version identifier as metadata to utilize for determining drift.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
+    /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
+    /// </p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContentInput");
@@ -6476,6 +6684,16 @@ pub struct GetContentInput {
     /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
+impl GetContentInput {
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn content_id(&self) -> std::option::Option<&str> {
+        self.content_id.as_deref()
+    }
+    /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContentInput");
@@ -6498,6 +6716,25 @@ pub struct SearchSessionsInput {
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The search expression to filter results.</p>
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
+}
+impl SearchSessionsInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The search expression to filter results.</p>
+    pub fn search_expression(&self) -> std::option::Option<&crate::model::SearchExpression> {
+        self.search_expression.as_ref()
+    }
 }
 impl std::fmt::Debug for SearchSessionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6524,6 +6761,25 @@ pub struct QueryAssistantInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl QueryAssistantInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The text to search for.</p>
+    pub fn query_text(&self) -> std::option::Option<&str> {
+        self.query_text.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for QueryAssistantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryAssistantInput");
@@ -6545,6 +6801,20 @@ pub struct NotifyRecommendationsReceivedInput {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the recommendations.</p>
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl NotifyRecommendationsReceivedInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The identifiers of the recommendations.</p>
+    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.recommendation_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for NotifyRecommendationsReceivedInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6572,6 +6842,27 @@ pub struct GetRecommendationsInput {
     /// call returns successfully with an empty list.</p>
     pub wait_time_seconds: i32,
 }
+impl GetRecommendationsInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
+    /// available before returning. If a recommendation is available, the call returns sooner than
+    /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
+    /// call returns successfully with an empty list.</p>
+    pub fn wait_time_seconds(&self) -> i32 {
+        self.wait_time_seconds
+    }
+}
 impl std::fmt::Debug for GetRecommendationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecommendationsInput");
@@ -6592,6 +6883,17 @@ pub struct ListAssistantsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAssistantsInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAssistantsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6622,6 +6924,38 @@ pub struct CreateAssistantInput {
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
+impl CreateAssistantInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the assistant.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of assistant.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AssistantType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The description of the assistant.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssistantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssistantInput");
@@ -6645,6 +6979,12 @@ pub struct DeleteAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: std::option::Option<std::string::String>,
 }
+impl DeleteAssistantInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssistantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssistantInput");
@@ -6659,6 +6999,12 @@ impl std::fmt::Debug for DeleteAssistantInput {
 pub struct GetAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: std::option::Option<std::string::String>,
+}
+impl GetAssistantInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAssistantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6685,6 +7031,32 @@ pub struct CreateSessionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateSessionInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The name of the session.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSessionInput");
@@ -6706,6 +7078,16 @@ pub struct GetSessionInput {
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub session_id: std::option::Option<std::string::String>,
 }
+impl GetSessionInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionInput");
@@ -6726,6 +7108,21 @@ pub struct ListAssistantAssociationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: std::option::Option<std::string::String>,
+}
+impl ListAssistantAssociationsInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssistantAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6754,6 +7151,32 @@ pub struct CreateAssistantAssociationInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAssistantAssociationInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The type of association.</p>
+    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationType> {
+        self.association_type.as_ref()
+    }
+    /// <p>The identifier of the associated resource.</p>
+    pub fn association(&self) -> std::option::Option<&crate::model::AssistantAssociationInputData> {
+        self.association.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssistantAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssistantAssociationInput");
@@ -6775,6 +7198,16 @@ pub struct DeleteAssistantAssociationInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: std::option::Option<std::string::String>,
 }
+impl DeleteAssistantAssociationInput {
+    /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
+        self.assistant_association_id.as_deref()
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssistantAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssistantAssociationInput");
@@ -6793,6 +7226,16 @@ pub struct GetAssistantAssociationInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: std::option::Option<std::string::String>,
 }
+impl GetAssistantAssociationInput {
+    /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
+        self.assistant_association_id.as_deref()
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssistantAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssistantAssociationInput");
@@ -6810,6 +7253,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6830,6 +7283,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -6845,6 +7311,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -6,6 +6,12 @@ pub struct UpdateGroupQueryOutput {
     /// <p>The updated resource query associated with the resource group after the update.</p>
     pub group_query: std::option::Option<crate::model::GroupQuery>,
 }
+impl UpdateGroupQueryOutput {
+    /// <p>The updated resource query associated with the resource group after the update.</p>
+    pub fn group_query(&self) -> std::option::Option<&crate::model::GroupQuery> {
+        self.group_query.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupQueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupQueryOutput");
@@ -57,6 +63,12 @@ pub struct UpdateGroupOutput {
     /// <p>The update description of the resource group.</p>
     pub group: std::option::Option<crate::model::Group>,
 }
+impl UpdateGroupOutput {
+    /// <p>The update description of the resource group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupOutput");
@@ -104,6 +116,16 @@ pub struct UntagOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags that were removed.</p>
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagOutput {
+    /// <p>The ARN of the resource group from which tags have been removed.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The keys of the tags that were removed.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -185,6 +207,27 @@ pub struct UngroupResourcesOutput {
     /// </code> operation. After the resource is successfully removed, it no longer
     /// appears in the response.</p>
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
+}
+impl UngroupResourcesOutput {
+    /// <p>A list of resources that were successfully removed from the group by this
+    /// operation.</p>
+    pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
+        self.succeeded.as_deref()
+    }
+    /// <p>A list of any resources that failed to be removed from the group by this
+    /// operation.</p>
+    pub fn failed(&self) -> std::option::Option<&[crate::model::FailedResource]> {
+        self.failed.as_deref()
+    }
+    /// <p>A list of any resources that are still in the process of being removed from the group
+    /// by this operation. These pending removals continue asynchronously. You can check the
+    /// status of pending removals by using the <code>
+    /// <a>ListGroupResources</a>
+    /// </code> operation. After the resource is successfully removed, it no longer
+    /// appears in the response.</p>
+    pub fn pending(&self) -> std::option::Option<&[crate::model::PendingResource]> {
+        self.pending.as_deref()
+    }
 }
 impl std::fmt::Debug for UngroupResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -304,6 +347,19 @@ pub struct TagOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagOutput {
+    /// <p>The ARN of the tagged resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The tags that have been added to the specified resource group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagOutput");
@@ -392,6 +448,27 @@ pub struct SearchResourcesOutput {
     /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
     /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
+}
+impl SearchResourcesOutput {
+    /// <p>The ARNs and resource types of resources that are members of the group that you
+    /// specified.</p>
+    pub fn resource_identifiers(&self) -> std::option::Option<&[crate::model::ResourceIdentifier]> {
+        self.resource_identifiers.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
+    /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
+    /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
+    /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    pub fn query_errors(&self) -> std::option::Option<&[crate::model::QueryError]> {
+        self.query_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -549,6 +626,32 @@ pub struct ListGroupsOutput {
     /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupsOutput {
+    /// <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+    /// contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+    pub fn group_identifiers(&self) -> std::option::Option<&[crate::model::GroupIdentifier]> {
+        self.group_identifiers.as_deref()
+    }
+    /// <important>
+    /// <p>
+    /// <i>
+    /// <b>Deprecated - don't use this field. Use the
+    /// <code>GroupIdentifiers</code> response field
+    /// instead.</b>
+    /// </i>
+    /// </p>
+    /// </important>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.groups.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsOutput");
@@ -689,6 +792,39 @@ pub struct ListGroupResourcesOutput {
     /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
     /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
+}
+impl ListGroupResourcesOutput {
+    /// <p>An array of resources from which you can determine each resource's identity, type, and
+    /// group membership status.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::ListGroupResourcesItem]> {
+        self.resources.as_deref()
+    }
+    /// <important>
+    /// <p>
+    /// <b>
+    /// <i>Deprecated - don't use this parameter. Use the
+    /// <code>Resources</code> response field
+    /// instead.</i>
+    /// </b>
+    /// </p>
+    /// </important>
+    pub fn resource_identifiers(&self) -> std::option::Option<&[crate::model::ResourceIdentifier]> {
+        self.resource_identifiers.as_deref()
+    }
+    /// <p>If present, indicates that more output is available than is
+    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
+    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
+    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
+    /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
+    /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
+    /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    pub fn query_errors(&self) -> std::option::Option<&[crate::model::QueryError]> {
+        self.query_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -850,6 +986,27 @@ pub struct GroupResourcesOutput {
     /// and the <code>Status</code> field of each object in that array. </p>
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
 }
+impl GroupResourcesOutput {
+    /// <p>A list of ARNs of resources that were successfully added to the group by this
+    /// operation.</p>
+    pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
+        self.succeeded.as_deref()
+    }
+    /// <p>A list of ARNs of any resources that failed to be added to the group by this
+    /// operation.</p>
+    pub fn failed(&self) -> std::option::Option<&[crate::model::FailedResource]> {
+        self.failed.as_deref()
+    }
+    /// <p>A list of ARNs of any resources that are still in the process of being added to the
+    /// group by this operation. These pending additions continue asynchronously. You can check
+    /// the status of pending additions by using the <code>
+    /// <a>ListGroupResources</a>
+    /// </code> operation, and checking the <code>Resources</code> array in the response
+    /// and the <code>Status</code> field of each object in that array. </p>
+    pub fn pending(&self) -> std::option::Option<&[crate::model::PendingResource]> {
+        self.pending.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupResourcesOutput");
@@ -968,6 +1125,19 @@ pub struct GetTagsOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetTagsOutput {
+    /// <p>The ARN of the tagged resource group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The tags associated with the specified resource group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTagsOutput");
@@ -1048,6 +1218,14 @@ pub struct GetGroupQueryOutput {
     /// a tag-based group in Resource Groups</a>.</p>
     pub group_query: std::option::Option<crate::model::GroupQuery>,
 }
+impl GetGroupQueryOutput {
+    /// <p>The resource query associated with the specified group. For more information about
+    /// resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+    /// a tag-based group in Resource Groups</a>.</p>
+    pub fn group_query(&self) -> std::option::Option<&crate::model::GroupQuery> {
+        self.group_query.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGroupQueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupQueryOutput");
@@ -1105,6 +1283,14 @@ pub struct GetGroupConfigurationOutput {
     /// groups</a>.</p>
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
 }
+impl GetGroupConfigurationOutput {
+    /// <p>The service configuration associated with the specified group. For details about the
+    /// service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+    /// groups</a>.</p>
+    pub fn group_configuration(&self) -> std::option::Option<&crate::model::GroupConfiguration> {
+        self.group_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGroupConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupConfigurationOutput");
@@ -1160,6 +1346,12 @@ pub struct GetGroupOutput {
     /// <p>A full description of the resource group.</p>
     pub group: std::option::Option<crate::model::Group>,
 }
+impl GetGroupOutput {
+    /// <p>A full description of the resource group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupOutput");
@@ -1205,6 +1397,12 @@ impl GetGroupOutput {
 pub struct DeleteGroupOutput {
     /// <p>A full description of the deleted resource group.</p>
     pub group: std::option::Option<crate::model::Group>,
+}
+impl DeleteGroupOutput {
+    /// <p>A full description of the deleted resource group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1262,6 +1460,31 @@ pub struct CreateGroupOutput {
     /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
     /// groups</a>.</p>
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
+}
+impl CreateGroupOutput {
+    /// <p>The description of the resource group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+    /// <p>The resource query associated with the group. For more information about resource
+    /// queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+    /// a tag-based group in Resource Groups</a>. </p>
+    pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
+        self.resource_query.as_ref()
+    }
+    /// <p>The tags associated with the group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The service configuration associated with the resource group. For details about the
+    /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+    /// groups</a>.</p>
+    pub fn group_configuration(&self) -> std::option::Option<&crate::model::GroupConfiguration> {
+        self.group_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

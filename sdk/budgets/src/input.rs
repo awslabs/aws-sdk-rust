@@ -124,10 +124,7 @@ impl CreateBudgetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_budget(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_budget(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -420,10 +417,7 @@ impl CreateBudgetActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_budget_action(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_budget_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -621,10 +615,7 @@ impl CreateNotificationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_notification(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_notification(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -816,10 +807,7 @@ impl CreateSubscriberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_subscriber(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_subscriber(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -980,10 +968,7 @@ impl DeleteBudgetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_budget(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_budget(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1161,10 +1146,7 @@ impl DeleteBudgetActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_budget_action(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_budget_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1341,10 +1323,7 @@ impl DeleteNotificationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_notification(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_notification(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1536,10 +1515,7 @@ impl DeleteSubscriberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_subscriber(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_subscriber(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1700,10 +1676,8 @@ impl DescribeBudgetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_budget(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1881,10 +1855,9 @@ impl DescribeBudgetActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2102,7 +2075,7 @@ impl DescribeBudgetActionHistoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action_histories(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action_histories(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2278,7 +2251,7 @@ impl DescribeBudgetActionsForAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2466,7 +2439,7 @@ impl DescribeBudgetActionsForBudgetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_budget(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_budget(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2669,7 +2642,7 @@ impl DescribeBudgetPerformanceHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_performance_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_performance_history(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2844,10 +2817,7 @@ impl DescribeBudgetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budgets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_budgets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3034,7 +3004,7 @@ impl DescribeNotificationsForBudgetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_notifications_for_budget(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_notifications_for_budget(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3237,7 +3207,7 @@ impl DescribeSubscribersForNotificationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_subscribers_for_notification(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_subscribers_for_notification(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3435,10 +3405,7 @@ impl ExecuteBudgetActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_budget_action(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_execute_budget_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3599,10 +3566,7 @@ impl UpdateBudgetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_budget(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_budget(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3892,10 +3856,7 @@ impl UpdateBudgetActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_budget_action(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_budget_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4087,10 +4048,7 @@ impl UpdateNotificationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_notification(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_notification(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4297,10 +4255,7 @@ impl UpdateSubscriberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_subscriber(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_subscriber(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4377,6 +4332,28 @@ pub struct UpdateSubscriberInput {
     /// <p>The updated subscriber that is associated with a budget notification.</p>
     pub new_subscriber: std::option::Option<crate::model::Subscriber>,
 }
+impl UpdateSubscriberInput {
+    /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget whose subscriber you want to update.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The notification whose subscriber you want to update.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The previous subscriber that is associated with a budget notification.</p>
+    pub fn old_subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+        self.old_subscriber.as_ref()
+    }
+    /// <p>The updated subscriber that is associated with a budget notification.</p>
+    pub fn new_subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+        self.new_subscriber.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSubscriberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubscriberInput");
@@ -4401,6 +4378,24 @@ pub struct UpdateNotificationInput {
     pub old_notification: std::option::Option<crate::model::Notification>,
     /// <p>The updated notification to be associated with a budget.</p>
     pub new_notification: std::option::Option<crate::model::Notification>,
+}
+impl UpdateNotificationInput {
+    /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget whose notification you want to update.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The previous notification that is associated with a budget.</p>
+    pub fn old_notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.old_notification.as_ref()
+    }
+    /// <p>The updated notification to be associated with a budget.</p>
+    pub fn new_notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.new_notification.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateNotificationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4446,6 +4441,54 @@ pub struct UpdateBudgetActionInput {
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
+impl UpdateBudgetActionInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+        self.notification_type.as_ref()
+    }
+    /// <p>
+    /// The trigger threshold of the action.
+    /// </p>
+    pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
+        self.action_threshold.as_ref()
+    }
+    /// <p>
+    /// Specifies all of the type-specific parameters.
+    /// </p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
+        self.definition.as_ref()
+    }
+    /// <p>
+    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
+    /// </p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>
+    /// This specifies if the action needs manual or automatic approval.
+    /// </p>
+    pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
+        self.approval_model.as_ref()
+    }
+    /// <p> A list of subscribers.</p>
+    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+        self.subscribers.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBudgetActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBudgetActionInput");
@@ -4470,6 +4513,16 @@ pub struct UpdateBudgetInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The budget that you want to update your budget to.</p>
     pub new_budget: std::option::Option<crate::model::Budget>,
+}
+impl UpdateBudgetInput {
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The budget that you want to update your budget to.</p>
+    pub fn new_budget(&self) -> std::option::Option<&crate::model::Budget> {
+        self.new_budget.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateBudgetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4497,6 +4550,28 @@ pub struct ExecuteBudgetActionInput {
     /// </p>
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
+impl ExecuteBudgetActionInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>
+    /// The type of execution.
+    /// </p>
+    pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
+        self.execution_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecuteBudgetActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteBudgetActionInput");
@@ -4523,6 +4598,28 @@ pub struct DescribeSubscribersForNotificationInput {
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSubscribersForNotificationInput {
+    /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget whose subscribers you want descriptions of.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The notification whose subscribers you want to list.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSubscribersForNotificationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubscribersForNotificationInput");
@@ -4548,6 +4645,24 @@ pub struct DescribeNotificationsForBudgetInput {
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeNotificationsForBudgetInput {
+    /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget whose notifications you want descriptions of.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNotificationsForBudgetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNotificationsForBudgetInput");
@@ -4569,6 +4684,20 @@ pub struct DescribeBudgetsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeBudgetsInput {
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBudgetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4595,6 +4724,28 @@ pub struct DescribeBudgetPerformanceHistoryInput {
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBudgetPerformanceHistoryInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
+        self.time_period.as_ref()
+    }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBudgetPerformanceHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBudgetPerformanceHistoryInput");
@@ -4620,6 +4771,24 @@ pub struct DescribeBudgetActionsForBudgetInput {
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBudgetActionsForBudgetInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBudgetActionsForBudgetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBudgetActionsForBudgetInput");
@@ -4641,6 +4810,20 @@ pub struct DescribeBudgetActionsForAccountInput {
     pub max_results: std::option::Option<i32>,
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeBudgetActionsForAccountInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBudgetActionsForAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4671,6 +4854,34 @@ pub struct DescribeBudgetActionHistoriesInput {
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBudgetActionHistoriesInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
+        self.time_period.as_ref()
+    }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBudgetActionHistoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBudgetActionHistoriesInput");
@@ -4697,6 +4908,22 @@ pub struct DescribeBudgetActionInput {
     /// </p>
     pub action_id: std::option::Option<std::string::String>,
 }
+impl DescribeBudgetActionInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBudgetActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBudgetActionInput");
@@ -4715,6 +4942,16 @@ pub struct DescribeBudgetInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget that you want a description of.</p>
     pub budget_name: std::option::Option<std::string::String>,
+}
+impl DescribeBudgetInput {
+    /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget that you want a description of.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBudgetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4738,6 +4975,24 @@ pub struct DeleteSubscriberInput {
     /// <p>The subscriber that you want to delete.</p>
     pub subscriber: std::option::Option<crate::model::Subscriber>,
 }
+impl DeleteSubscriberInput {
+    /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget whose subscriber you want to delete.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The notification whose subscriber you want to delete.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The subscriber that you want to delete.</p>
+    pub fn subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+        self.subscriber.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteSubscriberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSubscriberInput");
@@ -4759,6 +5014,20 @@ pub struct DeleteNotificationInput {
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification that you want to delete.</p>
     pub notification: std::option::Option<crate::model::Notification>,
+}
+impl DeleteNotificationInput {
+    /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget whose notification you want to delete.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The notification that you want to delete.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteNotificationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4783,6 +5052,22 @@ pub struct DeleteBudgetActionInput {
     /// </p>
     pub action_id: std::option::Option<std::string::String>,
 }
+impl DeleteBudgetActionInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBudgetActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBudgetActionInput");
@@ -4801,6 +5086,16 @@ pub struct DeleteBudgetInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget that you want to delete.</p>
     pub budget_name: std::option::Option<std::string::String>,
+}
+impl DeleteBudgetInput {
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget that you want to delete.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBudgetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4823,6 +5118,24 @@ pub struct CreateSubscriberInput {
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>The subscriber that you want to associate with a budget notification.</p>
     pub subscriber: std::option::Option<crate::model::Subscriber>,
+}
+impl CreateSubscriberInput {
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The notification that you want to create a subscriber for.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The subscriber that you want to associate with a budget notification.</p>
+    pub fn subscriber(&self) -> std::option::Option<&crate::model::Subscriber> {
+        self.subscriber.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSubscriberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4847,6 +5160,24 @@ pub struct CreateNotificationInput {
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
+}
+impl CreateNotificationInput {
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The notification that you want to create.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
+    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+        self.subscribers.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNotificationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4892,6 +5223,54 @@ pub struct CreateBudgetActionInput {
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
+impl CreateBudgetActionInput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+        self.notification_type.as_ref()
+    }
+    /// <p>
+    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
+    /// </p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>
+    /// The trigger threshold of the action.
+    /// </p>
+    pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
+        self.action_threshold.as_ref()
+    }
+    /// <p>
+    /// Specifies all of the type-specific parameters.
+    /// </p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
+        self.definition.as_ref()
+    }
+    /// <p>
+    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
+    /// </p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>
+    /// This specifies if the action needs manual or automatic approval.
+    /// </p>
+    pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
+        self.approval_model.as_ref()
+    }
+    /// <p> A list of subscribers.</p>
+    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+        self.subscribers.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBudgetActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBudgetActionInput");
@@ -4919,6 +5298,22 @@ pub struct CreateBudgetInput {
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
     pub notifications_with_subscribers:
         std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
+}
+impl CreateBudgetInput {
+    /// <p>The <code>accountId</code> that is associated with the budget.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The budget object that you want to create.</p>
+    pub fn budget(&self) -> std::option::Option<&crate::model::Budget> {
+        self.budget.as_ref()
+    }
+    /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+    pub fn notifications_with_subscribers(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationWithSubscribers]> {
+        self.notifications_with_subscribers.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBudgetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -146,6 +146,34 @@ pub struct VoiceConnectorGroup {
     /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
     pub voice_connector_group_arn: std::option::Option<std::string::String>,
 }
+impl VoiceConnectorGroup {
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_group_id.as_deref()
+    }
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
+    pub fn voice_connector_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::VoiceConnectorItem]> {
+        self.voice_connector_items.as_deref()
+    }
+    /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+    pub fn voice_connector_group_arn(&self) -> std::option::Option<&str> {
+        self.voice_connector_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for VoiceConnectorGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceConnectorGroup");
@@ -288,6 +316,16 @@ pub struct VoiceConnectorItem {
     /// <p>The priority associated with the Amazon Chime Voice Connector, with 1 being the highest priority. Higher priority Amazon Chime Voice Connectors are attempted first.</p>
     pub priority: std::option::Option<i32>,
 }
+impl VoiceConnectorItem {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The priority associated with the Amazon Chime Voice Connector, with 1 being the highest priority. Higher priority Amazon Chime Voice Connectors are attempted first.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+}
 impl std::fmt::Debug for VoiceConnectorItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceConnectorItem");
@@ -369,6 +407,43 @@ pub struct VoiceConnector {
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
     pub voice_connector_arn: std::option::Option<std::string::String>,
+}
+impl VoiceConnector {
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>
+    /// The AWS Region in which the Amazon Chime Voice Connector is created. Default:
+    /// <code>us-east-1</code>.
+    /// </p>
+    pub fn aws_region(&self) -> std::option::Option<&crate::model::VoiceConnectorAwsRegion> {
+        self.aws_region.as_ref()
+    }
+    /// <p>The name of the Amazon Chime Voice Connector.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The outbound host name for the Amazon Chime Voice Connector.</p>
+    pub fn outbound_host_name(&self) -> std::option::Option<&str> {
+        self.outbound_host_name.as_deref()
+    }
+    /// <p>Designates whether encryption is required for the Amazon Chime Voice Connector.</p>
+    pub fn require_encryption(&self) -> std::option::Option<bool> {
+        self.require_encryption
+    }
+    /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+    pub fn voice_connector_arn(&self) -> std::option::Option<&str> {
+        self.voice_connector_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for VoiceConnector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -589,6 +664,12 @@ pub struct UserSettings {
     /// <p>The telephony settings associated with the user.</p>
     pub telephony: std::option::Option<crate::model::TelephonySettings>,
 }
+impl UserSettings {
+    /// <p>The telephony settings associated with the user.</p>
+    pub fn telephony(&self) -> std::option::Option<&crate::model::TelephonySettings> {
+        self.telephony.as_ref()
+    }
+}
 impl std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserSettings");
@@ -644,6 +725,20 @@ pub struct TelephonySettings {
     pub outbound_calling: std::option::Option<bool>,
     /// <p>Allows or denies SMS messaging.</p>
     pub sms: std::option::Option<bool>,
+}
+impl TelephonySettings {
+    /// <p>Allows or denies inbound calling.</p>
+    pub fn inbound_calling(&self) -> std::option::Option<bool> {
+        self.inbound_calling
+    }
+    /// <p>Allows or denies outbound calling.</p>
+    pub fn outbound_calling(&self) -> std::option::Option<bool> {
+        self.outbound_calling
+    }
+    /// <p>Allows or denies SMS messaging.</p>
+    pub fn sms(&self) -> std::option::Option<bool> {
+        self.sms
+    }
 }
 impl std::fmt::Debug for TelephonySettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -742,6 +837,64 @@ pub struct User {
     pub alexa_for_business_metadata: std::option::Option<crate::model::AlexaForBusinessMetadata>,
     /// <p>The user's personal meeting PIN.</p>
     pub personal_pin: std::option::Option<std::string::String>,
+}
+impl User {
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The primary email address of the user.</p>
+    pub fn primary_email(&self) -> std::option::Option<&str> {
+        self.primary_email.as_deref()
+    }
+    /// <p>The primary phone number associated with the user.</p>
+    pub fn primary_provisioned_number(&self) -> std::option::Option<&str> {
+        self.primary_provisioned_number.as_deref()
+    }
+    /// <p>The display name of the user.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The license type for the user.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::License> {
+        self.license_type.as_ref()
+    }
+    /// <p>The user type.</p>
+    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user_type.as_ref()
+    }
+    /// <p>The user registration status.</p>
+    pub fn user_registration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistrationStatus> {
+        self.user_registration_status.as_ref()
+    }
+    /// <p>The user invite status.</p>
+    pub fn user_invitation_status(&self) -> std::option::Option<&crate::model::InviteStatus> {
+        self.user_invitation_status.as_ref()
+    }
+    /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
+    pub fn registered_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registered_on.as_ref()
+    }
+    /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
+    pub fn invited_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.invited_on.as_ref()
+    }
+    /// <p>The Alexa for Business metadata.</p>
+    pub fn alexa_for_business_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::AlexaForBusinessMetadata> {
+        self.alexa_for_business_metadata.as_ref()
+    }
+    /// <p>The user's personal meeting PIN.</p>
+    pub fn personal_pin(&self) -> std::option::Option<&str> {
+        self.personal_pin.as_deref()
+    }
 }
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -982,6 +1135,16 @@ pub struct AlexaForBusinessMetadata {
     pub is_alexa_for_business_enabled: std::option::Option<bool>,
     /// <p>The ARN of the room resource.</p>
     pub alexa_for_business_room_arn: std::option::Option<std::string::String>,
+}
+impl AlexaForBusinessMetadata {
+    /// <p>Starts or stops Alexa for Business.</p>
+    pub fn is_alexa_for_business_enabled(&self) -> std::option::Option<bool> {
+        self.is_alexa_for_business_enabled
+    }
+    /// <p>The ARN of the room resource.</p>
+    pub fn alexa_for_business_room_arn(&self) -> std::option::Option<&str> {
+        self.alexa_for_business_room_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AlexaForBusinessMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1316,6 +1479,48 @@ pub struct SipRule {
     /// <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SipRule {
+    /// <p>The SIP rule ID.</p>
+    pub fn sip_rule_id(&self) -> std::option::Option<&str> {
+        self.sip_rule_id.as_deref()
+    }
+    /// <p>The name of the SIP rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+    /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or
+    /// <code>ToPhoneNumber</code>.</p>
+    pub fn trigger_type(&self) -> std::option::Option<&crate::model::SipRuleTriggerType> {
+        self.trigger_type.as_ref()
+    }
+    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
+    /// outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is
+    /// <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in
+    /// E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or
+    /// <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
+    pub fn trigger_value(&self) -> std::option::Option<&str> {
+        self.trigger_value.as_deref()
+    }
+    /// <p>Target SIP media application and other details, such as priority and AWS Region, to be
+    /// specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+    pub fn target_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SipRuleTargetApplication]> {
+        self.target_applications.as_deref()
+    }
+    /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for SipRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipRule");
@@ -1497,6 +1702,20 @@ pub struct SipRuleTargetApplication {
     /// <p>The AWS Region of the target application.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
+impl SipRuleTargetApplication {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+    /// <p>Priority of the SIP media application in the target list.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The AWS Region of the target application.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for SipRuleTargetApplication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipRuleTargetApplication");
@@ -1629,6 +1848,12 @@ pub struct SipMediaApplicationCall {
     /// <p>The transaction ID of a call.</p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
+impl SipMediaApplicationCall {
+    /// <p>The transaction ID of a call.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SipMediaApplicationCall {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipMediaApplicationCall");
@@ -1689,6 +1914,32 @@ pub struct SipMediaApplication {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl SipMediaApplication {
+    /// <p>The SIP media application ID.</p>
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+        self.sip_media_application_id.as_deref()
+    }
+    /// <p>The AWS Region in which the SIP media application is created.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The name of the SIP media application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::SipMediaApplicationEndpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for SipMediaApplication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1825,6 +2076,12 @@ pub struct SipMediaApplicationEndpoint {
     /// <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as the SIP media application.</p>
     pub lambda_arn: std::option::Option<std::string::String>,
 }
+impl SipMediaApplicationEndpoint {
+    /// <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as the SIP media application.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SipMediaApplicationEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipMediaApplicationEndpoint");
@@ -1880,6 +2137,28 @@ pub struct RoomMembership {
     pub invited_by: std::option::Option<std::string::String>,
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RoomMembership {
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The member details, such as email address, name, member ID, and member type.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Member> {
+        self.member.as_ref()
+    }
+    /// <p>The membership role.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::RoomMembershipRole> {
+        self.role.as_ref()
+    }
+    /// <p>The identifier of the user that invited the room member.</p>
+    pub fn invited_by(&self) -> std::option::Option<&str> {
+        self.invited_by.as_deref()
+    }
+    /// <p>The room membership update timestamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for RoomMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2049,6 +2328,28 @@ pub struct Member {
     pub full_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl Member {
+    /// <p>The member ID (user ID or bot ID).</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The member type.</p>
+    pub fn member_type(&self) -> std::option::Option<&crate::model::MemberType> {
+        self.member_type.as_ref()
+    }
+    /// <p>The member email address.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The member name.</p>
+    pub fn full_name(&self) -> std::option::Option<&str> {
+        self.full_name.as_deref()
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Member {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2222,6 +2523,32 @@ pub struct Room {
     /// <p>The room update timestamp, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Room {
+    /// <p>The room ID.</p>
+    pub fn room_id(&self) -> std::option::Option<&str> {
+        self.room_id.as_deref()
+    }
+    /// <p>The room name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The identifier of the room creator.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The room creation timestamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The room update timestamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for Room {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Room");
@@ -2364,6 +2691,62 @@ pub struct ProxySession {
     pub geo_match_level: std::option::Option<crate::model::GeoMatchLevel>,
     /// <p>The country and area code for the proxy phone number.</p>
     pub geo_match_params: std::option::Option<crate::model::GeoMatchParams>,
+}
+impl ProxySession {
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+        self.voice_connector_id.as_deref()
+    }
+    /// <p>The proxy session ID.</p>
+    pub fn proxy_session_id(&self) -> std::option::Option<&str> {
+        self.proxy_session_id.as_deref()
+    }
+    /// <p>The name of the proxy session.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the proxy session.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProxySessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The number of minutes allowed for the proxy session.</p>
+    pub fn expiry_minutes(&self) -> std::option::Option<i32> {
+        self.expiry_minutes
+    }
+    /// <p>The proxy session capabilities.</p>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The created time stamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The updated time stamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p>The ended time stamp, in ISO 8601 format.</p>
+    pub fn ended_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.ended_timestamp.as_ref()
+    }
+    /// <p>The proxy session participants.</p>
+    pub fn participants(&self) -> std::option::Option<&[crate::model::Participant]> {
+        self.participants.as_deref()
+    }
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
+    pub fn number_selection_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::NumberSelectionBehavior> {
+        self.number_selection_behavior.as_ref()
+    }
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
+    pub fn geo_match_level(&self) -> std::option::Option<&crate::model::GeoMatchLevel> {
+        self.geo_match_level.as_ref()
+    }
+    /// <p>The country and area code for the proxy phone number.</p>
+    pub fn geo_match_params(&self) -> std::option::Option<&crate::model::GeoMatchParams> {
+        self.geo_match_params.as_ref()
+    }
 }
 impl std::fmt::Debug for ProxySession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2620,6 +3003,16 @@ pub struct GeoMatchParams {
     /// <p>The area code.</p>
     pub area_code: std::option::Option<std::string::String>,
 }
+impl GeoMatchParams {
+    /// <p>The country.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The area code.</p>
+    pub fn area_code(&self) -> std::option::Option<&str> {
+        self.area_code.as_deref()
+    }
+}
 impl std::fmt::Debug for GeoMatchParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GeoMatchParams");
@@ -2792,6 +3185,16 @@ pub struct Participant {
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The participant's proxy phone number.</p>
     pub proxy_phone_number: std::option::Option<std::string::String>,
+}
+impl Participant {
+    /// <p>The participant's phone number.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The participant's proxy phone number.</p>
+    pub fn proxy_phone_number(&self) -> std::option::Option<&str> {
+        self.proxy_phone_number.as_deref()
+    }
 }
 impl std::fmt::Debug for Participant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2995,6 +3398,60 @@ pub struct PhoneNumber {
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
     pub deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PhoneNumber {
+    /// <p>The phone number ID.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The phone number, in E.164 format.</p>
+    pub fn e164_phone_number(&self) -> std::option::Option<&str> {
+        self.e164_phone_number.as_deref()
+    }
+    /// <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The phone number type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The phone number product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The phone number status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PhoneNumberStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The phone number capabilities.</p>
+    pub fn capabilities(&self) -> std::option::Option<&crate::model::PhoneNumberCapabilities> {
+        self.capabilities.as_ref()
+    }
+    /// <p>The phone number associations.</p>
+    pub fn associations(&self) -> std::option::Option<&[crate::model::PhoneNumberAssociation]> {
+        self.associations.as_deref()
+    }
+    /// <p>The outbound calling name associated with the phone number.</p>
+    pub fn calling_name(&self) -> std::option::Option<&str> {
+        self.calling_name.as_deref()
+    }
+    /// <p>The outbound calling name status.</p>
+    pub fn calling_name_status(&self) -> std::option::Option<&crate::model::CallingNameStatus> {
+        self.calling_name_status.as_ref()
+    }
+    /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
+    pub fn deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deletion_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for PhoneNumber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3317,6 +3774,21 @@ pub struct PhoneNumberAssociation {
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
     pub associated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PhoneNumberAssociation {
+    /// <p>Contains the ID for the entity specified in Name.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector
+    /// ID, or Amazon Chime Voice Connector group ID.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::PhoneNumberAssociationName> {
+        self.name.as_ref()
+    }
+    /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
+    pub fn associated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.associated_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for PhoneNumberAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberAssociation");
@@ -3482,6 +3954,32 @@ pub struct PhoneNumberCapabilities {
     pub inbound_mms: std::option::Option<bool>,
     /// <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
     pub outbound_mms: std::option::Option<bool>,
+}
+impl PhoneNumberCapabilities {
+    /// <p>Allows or denies inbound calling for the specified phone number.</p>
+    pub fn inbound_call(&self) -> std::option::Option<bool> {
+        self.inbound_call
+    }
+    /// <p>Allows or denies outbound calling for the specified phone number.</p>
+    pub fn outbound_call(&self) -> std::option::Option<bool> {
+        self.outbound_call
+    }
+    /// <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
+    pub fn inbound_sms(&self) -> std::option::Option<bool> {
+        self.inbound_sms
+    }
+    /// <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
+    pub fn outbound_sms(&self) -> std::option::Option<bool> {
+        self.outbound_sms
+    }
+    /// <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
+    pub fn inbound_mms(&self) -> std::option::Option<bool> {
+        self.inbound_mms
+    }
+    /// <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
+    pub fn outbound_mms(&self) -> std::option::Option<bool> {
+        self.outbound_mms
+    }
 }
 impl std::fmt::Debug for PhoneNumberCapabilities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3803,6 +4301,12 @@ pub struct VoiceConnectorSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
     pub cdr_bucket: std::option::Option<std::string::String>,
 }
+impl VoiceConnectorSettings {
+    /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
+    pub fn cdr_bucket(&self) -> std::option::Option<&str> {
+        self.cdr_bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for VoiceConnectorSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceConnectorSettings");
@@ -3851,6 +4355,12 @@ impl VoiceConnectorSettings {
 pub struct BusinessCallingSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
     pub cdr_bucket: std::option::Option<std::string::String>,
+}
+impl BusinessCallingSettings {
+    /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
+    pub fn cdr_bucket(&self) -> std::option::Option<&str> {
+        self.cdr_bucket.as_deref()
+    }
 }
 impl std::fmt::Debug for BusinessCallingSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3970,6 +4480,44 @@ pub struct Bot {
     pub bot_email: std::option::Option<std::string::String>,
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
     pub security_token: std::option::Option<std::string::String>,
+}
+impl Bot {
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The unique ID for the bot user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The bot display name.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The bot type.</p>
+    pub fn bot_type(&self) -> std::option::Option<&crate::model::BotType> {
+        self.bot_type.as_ref()
+    }
+    /// <p>When true, the bot is stopped from running in your account.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+    /// <p>The bot creation timestamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The updated bot timestamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p>The bot email address.</p>
+    pub fn bot_email(&self) -> std::option::Option<&str> {
+        self.bot_email.as_deref()
+    }
+    /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
+    pub fn security_token(&self) -> std::option::Option<&str> {
+        self.security_token.as_deref()
+    }
 }
 impl std::fmt::Debug for Bot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4188,6 +4736,17 @@ pub struct AccountSettings {
     /// <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     pub enable_dial_out: std::option::Option<bool>,
 }
+impl AccountSettings {
+    /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
+    pub fn disable_remote_control(&self) -> std::option::Option<bool> {
+        self.disable_remote_control
+    }
+    /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see
+    /// <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
+    pub fn enable_dial_out(&self) -> std::option::Option<bool> {
+        self.enable_dial_out
+    }
+}
 impl std::fmt::Debug for AccountSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountSettings");
@@ -4269,6 +4828,48 @@ pub struct Account {
     /// <p>The sign-in delegate groups associated with the account.</p>
     pub signin_delegate_groups:
         std::option::Option<std::vec::Vec<crate::model::SigninDelegateGroup>>,
+}
+impl Account {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Chime account name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Chime account type. For more information about different account types, see
+    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
+    /// Guide</i>.</p>
+    pub fn account_type(&self) -> std::option::Option<&crate::model::AccountType> {
+        self.account_type.as_ref()
+    }
+    /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The default license for the Amazon Chime account.</p>
+    pub fn default_license(&self) -> std::option::Option<&crate::model::License> {
+        self.default_license.as_ref()
+    }
+    /// <p>Supported licenses for the Amazon Chime account.</p>
+    pub fn supported_licenses(&self) -> std::option::Option<&[crate::model::License]> {
+        self.supported_licenses.as_deref()
+    }
+    /// <p>The status of the account.</p>
+    pub fn account_status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+        self.account_status.as_ref()
+    }
+    /// <p>The sign-in delegate groups associated with the account.</p>
+    pub fn signin_delegate_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::SigninDelegateGroup]> {
+        self.signin_delegate_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for Account {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4463,6 +5064,12 @@ pub struct SigninDelegateGroup {
     /// <p>The group name.</p>
     pub group_name: std::option::Option<std::string::String>,
 }
+impl SigninDelegateGroup {
+    /// <p>The group name.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SigninDelegateGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SigninDelegateGroup");
@@ -4636,6 +5243,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -4699,6 +5316,20 @@ pub struct TranscriptionConfiguration {
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
     pub engine_transcribe_medical_settings:
         std::option::Option<crate::model::EngineTranscribeMedicalSettings>,
+}
+impl TranscriptionConfiguration {
+    /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+    pub fn engine_transcribe_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::EngineTranscribeSettings> {
+        self.engine_transcribe_settings.as_ref()
+    }
+    /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
+    pub fn engine_transcribe_medical_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::EngineTranscribeMedicalSettings> {
+        self.engine_transcribe_medical_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for TranscriptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4788,6 +5419,30 @@ pub struct EngineTranscribeMedicalSettings {
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub region: std::option::Option<crate::model::TranscribeMedicalRegion>,
+}
+impl EngineTranscribeMedicalSettings {
+    /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
+    pub fn language_code(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscribeMedicalLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
+    pub fn specialty(&self) -> std::option::Option<&crate::model::TranscribeMedicalSpecialty> {
+        self.specialty.as_ref()
+    }
+    /// <p>The type of transcription.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TranscribeMedicalType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    pub fn region(&self) -> std::option::Option<&crate::model::TranscribeMedicalRegion> {
+        self.region.as_ref()
+    }
 }
 impl std::fmt::Debug for EngineTranscribeMedicalSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5179,6 +5834,30 @@ pub struct EngineTranscribeSettings {
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub region: std::option::Option<crate::model::TranscribeRegion>,
+}
+impl EngineTranscribeSettings {
+    /// <p>The language code specified for the Amazon Transcribe engine.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::TranscribeLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The filtering method passed to Amazon Transcribe.</p>
+    pub fn vocabulary_filter_method(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscribeVocabularyFilterMethod> {
+        self.vocabulary_filter_method.as_ref()
+    }
+    /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    pub fn region(&self) -> std::option::Option<&crate::model::TranscribeRegion> {
+        self.region.as_ref()
+    }
 }
 impl std::fmt::Debug for EngineTranscribeSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5677,6 +6356,17 @@ pub struct Credential {
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
     pub password: std::option::Option<std::string::String>,
 }
+impl Credential {
+    /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII
+    /// format.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
 impl std::fmt::Debug for Credential {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Credential");
@@ -5749,6 +6439,29 @@ pub struct Termination {
     pub cidr_allowed_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When termination settings are disabled, outbound calls can not be made.</p>
     pub disabled: std::option::Option<bool>,
+}
+impl Termination {
+    /// <p>The limit on calls per second. Max value based on account service quota. Default value of
+    /// 1.</p>
+    pub fn cps_limit(&self) -> std::option::Option<i32> {
+        self.cps_limit
+    }
+    /// <p>The default caller ID phone number.</p>
+    pub fn default_phone_number(&self) -> std::option::Option<&str> {
+        self.default_phone_number.as_deref()
+    }
+    /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
+    pub fn calling_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.calling_regions.as_deref()
+    }
+    /// <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
+    pub fn cidr_allowed_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.cidr_allowed_list.as_deref()
+    }
+    /// <p>When termination settings are disabled, outbound calls can not be made.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
 }
 impl std::fmt::Debug for Termination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5880,6 +6593,22 @@ pub struct StreamingConfiguration {
     pub streaming_notification_targets:
         std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>,
 }
+impl StreamingConfiguration {
+    /// <p>The retention period, in hours, for the Amazon Kinesis data.</p>
+    pub fn data_retention_in_hours(&self) -> std::option::Option<i32> {
+        self.data_retention_in_hours
+    }
+    /// <p>When true, media streaming to Amazon Kinesis is turned off.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+    /// <p>The streaming notification targets.</p>
+    pub fn streaming_notification_targets(
+        &self,
+    ) -> std::option::Option<&[crate::model::StreamingNotificationTarget]> {
+        self.streaming_notification_targets.as_deref()
+    }
+}
 impl std::fmt::Debug for StreamingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingConfiguration");
@@ -5969,6 +6698,12 @@ impl StreamingConfiguration {
 pub struct StreamingNotificationTarget {
     /// <p>The streaming notification target.</p>
     pub notification_target: std::option::Option<crate::model::NotificationTarget>,
+}
+impl StreamingNotificationTarget {
+    /// <p>The streaming notification target.</p>
+    pub fn notification_target(&self) -> std::option::Option<&crate::model::NotificationTarget> {
+        self.notification_target.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamingNotificationTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6086,6 +6821,24 @@ pub struct Proxy {
     /// <p>The countries for proxy phone numbers to be selected from.</p>
     pub phone_number_countries: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Proxy {
+    /// <p>The default number of minutes allowed for proxy sessions.</p>
+    pub fn default_session_expiry_minutes(&self) -> std::option::Option<i32> {
+        self.default_session_expiry_minutes
+    }
+    /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+    /// <p>The phone number to route calls to after a proxy session expires.</p>
+    pub fn fall_back_phone_number(&self) -> std::option::Option<&str> {
+        self.fall_back_phone_number.as_deref()
+    }
+    /// <p>The countries for proxy phone numbers to be selected from.</p>
+    pub fn phone_number_countries(&self) -> std::option::Option<&[std::string::String]> {
+        self.phone_number_countries.as_deref()
+    }
+}
 impl std::fmt::Debug for Proxy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Proxy");
@@ -6199,6 +6952,18 @@ pub struct Origination {
     /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     pub disabled: std::option::Option<bool>,
 }
+impl Origination {
+    /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1.
+    /// Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
+    pub fn routes(&self) -> std::option::Option<&[crate::model::OriginationRoute]> {
+        self.routes.as_deref()
+    }
+    /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime
+    /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
+    pub fn disabled(&self) -> std::option::Option<bool> {
+        self.disabled
+    }
+}
 impl std::fmt::Debug for Origination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Origination");
@@ -6287,6 +7052,30 @@ pub struct OriginationRoute {
     /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among
     /// them based on their relative weight.</p>
     pub weight: std::option::Option<i32>,
+}
+impl OriginationRoute {
+    /// <p>The FQDN or IP address to contact for origination traffic.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>The designated origination route port. Defaults to 5060.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::OriginationRouteProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority
+    /// hosts are attempted first.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among
+    /// them based on their relative weight.</p>
+    pub fn weight(&self) -> std::option::Option<i32> {
+        self.weight
+    }
 }
 impl std::fmt::Debug for OriginationRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6450,6 +7239,12 @@ pub struct LoggingConfiguration {
     /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
     pub enable_sip_logs: std::option::Option<bool>,
 }
+impl LoggingConfiguration {
+    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+    pub fn enable_sip_logs(&self) -> std::option::Option<bool> {
+        self.enable_sip_logs
+    }
+}
 impl std::fmt::Debug for LoggingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoggingConfiguration");
@@ -6497,6 +7292,12 @@ impl LoggingConfiguration {
 pub struct EmergencyCallingConfiguration {
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
     pub dnis: std::option::Option<std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>>,
+}
+impl EmergencyCallingConfiguration {
+    /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
+    pub fn dnis(&self) -> std::option::Option<&[crate::model::DnisEmergencyCallingConfiguration]> {
+        self.dnis.as_deref()
+    }
 }
 impl std::fmt::Debug for EmergencyCallingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6562,6 +7363,20 @@ pub struct DnisEmergencyCallingConfiguration {
     pub test_phone_number: std::option::Option<std::string::String>,
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
     pub calling_country: std::option::Option<std::string::String>,
+}
+impl DnisEmergencyCallingConfiguration {
+    /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
+    pub fn emergency_phone_number(&self) -> std::option::Option<&str> {
+        self.emergency_phone_number.as_deref()
+    }
+    /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
+    pub fn test_phone_number(&self) -> std::option::Option<&str> {
+        self.test_phone_number.as_deref()
+    }
+    /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
+    pub fn calling_country(&self) -> std::option::Option<&str> {
+        self.calling_country.as_deref()
+    }
 }
 impl std::fmt::Debug for DnisEmergencyCallingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6646,6 +7461,12 @@ pub struct SipMediaApplicationLoggingConfiguration {
     /// <p>Enables application message logs for the SIP media application.</p>
     pub enable_sip_media_application_message_logs: std::option::Option<bool>,
 }
+impl SipMediaApplicationLoggingConfiguration {
+    /// <p>Enables application message logs for the SIP media application.</p>
+    pub fn enable_sip_media_application_message_logs(&self) -> std::option::Option<bool> {
+        self.enable_sip_media_application_message_logs
+    }
+}
 impl std::fmt::Debug for SipMediaApplicationLoggingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipMediaApplicationLoggingConfiguration");
@@ -6703,6 +7524,20 @@ pub struct RetentionSettings {
     /// <p>The chat conversation retention settings.</p>
     pub conversation_retention_settings:
         std::option::Option<crate::model::ConversationRetentionSettings>,
+}
+impl RetentionSettings {
+    /// <p>The chat room retention settings.</p>
+    pub fn room_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::RoomRetentionSettings> {
+        self.room_retention_settings.as_ref()
+    }
+    /// <p>The chat conversation retention settings.</p>
+    pub fn conversation_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ConversationRetentionSettings> {
+        self.conversation_retention_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for RetentionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6782,6 +7617,12 @@ pub struct ConversationRetentionSettings {
     /// <p>The number of days for which to retain conversation messages.</p>
     pub retention_days: std::option::Option<i32>,
 }
+impl ConversationRetentionSettings {
+    /// <p>The number of days for which to retain conversation messages.</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
+}
 impl std::fmt::Debug for ConversationRetentionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConversationRetentionSettings");
@@ -6829,6 +7670,12 @@ impl ConversationRetentionSettings {
 pub struct RoomRetentionSettings {
     /// <p>The number of days for which to retain chat-room messages.</p>
     pub retention_days: std::option::Option<i32>,
+}
+impl RoomRetentionSettings {
+    /// <p>The number of days for which to retain chat-room messages.</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
 }
 impl std::fmt::Debug for RoomRetentionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6881,6 +7728,20 @@ pub struct EventsConfiguration {
     pub outbound_events_https_endpoint: std::option::Option<std::string::String>,
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
+}
+impl EventsConfiguration {
+    /// <p>The bot ID.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
+    pub fn outbound_events_https_endpoint(&self) -> std::option::Option<&str> {
+        self.outbound_events_https_endpoint.as_deref()
+    }
+    /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+        self.lambda_function_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EventsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6969,6 +7830,18 @@ pub struct AppInstanceStreamingConfiguration {
     pub app_instance_data_type: std::option::Option<crate::model::AppInstanceDataType>,
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl AppInstanceStreamingConfiguration {
+    /// <p>The type of data to be streamed.</p>
+    pub fn app_instance_data_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceDataType> {
+        self.app_instance_data_type.as_ref()
+    }
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AppInstanceStreamingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7089,6 +7962,14 @@ pub struct AppInstanceRetentionSettings {
     /// <p>The length of time in days to retain the messages in a channel.</p>
     pub channel_retention_settings: std::option::Option<crate::model::ChannelRetentionSettings>,
 }
+impl AppInstanceRetentionSettings {
+    /// <p>The length of time in days to retain the messages in a channel.</p>
+    pub fn channel_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ChannelRetentionSettings> {
+        self.channel_retention_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceRetentionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceRetentionSettings");
@@ -7147,6 +8028,12 @@ pub struct ChannelRetentionSettings {
     /// <p>The time in days to retain the messages in a channel.</p>
     pub retention_days: std::option::Option<i32>,
 }
+impl ChannelRetentionSettings {
+    /// <p>The time in days to retain the messages in a channel.</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
+}
 impl std::fmt::Debug for ChannelRetentionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelRetentionSettings");
@@ -7197,6 +8084,18 @@ pub struct PhoneNumberCountry {
     /// <p>The supported phone number types. </p>
     pub supported_phone_number_types:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
+}
+impl PhoneNumberCountry {
+    /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
+    pub fn country_code(&self) -> std::option::Option<&str> {
+        self.country_code.as_deref()
+    }
+    /// <p>The supported phone number types. </p>
+    pub fn supported_phone_number_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::PhoneNumberType]> {
+        self.supported_phone_number_types.as_deref()
+    }
 }
 impl std::fmt::Debug for PhoneNumberCountry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7285,6 +8184,35 @@ pub struct PhoneNumberOrder {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PhoneNumberOrder {
+    /// <p>The phone number order ID.</p>
+    pub fn phone_number_order_id(&self) -> std::option::Option<&str> {
+        self.phone_number_order_id.as_deref()
+    }
+    /// <p>The phone number order product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The status of the phone number order.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PhoneNumberOrderStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone
+    /// number status.</p>
+    pub fn ordered_phone_numbers(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrderedPhoneNumber]> {
+        self.ordered_phone_numbers.as_deref()
+    }
+    /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for PhoneNumberOrder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7430,6 +8358,16 @@ pub struct OrderedPhoneNumber {
     pub e164_phone_number: std::option::Option<std::string::String>,
     /// <p>The phone number status.</p>
     pub status: std::option::Option<crate::model::OrderedPhoneNumberStatus>,
+}
+impl OrderedPhoneNumber {
+    /// <p>The phone number, in E.164 format.</p>
+    pub fn e164_phone_number(&self) -> std::option::Option<&str> {
+        self.e164_phone_number.as_deref()
+    }
+    /// <p>The phone number status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OrderedPhoneNumberStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for OrderedPhoneNumber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7631,6 +8569,29 @@ pub struct Meeting {
     /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
     pub media_region: std::option::Option<std::string::String>,
 }
+impl Meeting {
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
+        self.meeting_id.as_deref()
+    }
+    /// <p>The external meeting ID.</p>
+    pub fn external_meeting_id(&self) -> std::option::Option<&str> {
+        self.external_meeting_id.as_deref()
+    }
+    /// <p>The media placement for the meeting.</p>
+    pub fn media_placement(&self) -> std::option::Option<&crate::model::MediaPlacement> {
+        self.media_placement.as_ref()
+    }
+    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
+    /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
+    /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
+    /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
+    /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
+    /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    pub fn media_region(&self) -> std::option::Option<&str> {
+        self.media_region.as_deref()
+    }
+}
 impl std::fmt::Debug for Meeting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Meeting");
@@ -7747,6 +8708,40 @@ pub struct MediaPlacement {
     pub turn_control_url: std::option::Option<std::string::String>,
     /// <p>The event ingestion URL.</p>
     pub event_ingestion_url: std::option::Option<std::string::String>,
+}
+impl MediaPlacement {
+    /// <p>The audio host URL.</p>
+    pub fn audio_host_url(&self) -> std::option::Option<&str> {
+        self.audio_host_url.as_deref()
+    }
+    /// <p>The audio fallback URL.</p>
+    pub fn audio_fallback_url(&self) -> std::option::Option<&str> {
+        self.audio_fallback_url.as_deref()
+    }
+    /// <p>The screen data URL.</p>
+    pub fn screen_data_url(&self) -> std::option::Option<&str> {
+        self.screen_data_url.as_deref()
+    }
+    /// <p>The screen sharing URL.</p>
+    pub fn screen_sharing_url(&self) -> std::option::Option<&str> {
+        self.screen_sharing_url.as_deref()
+    }
+    /// <p>The screen viewing URL.</p>
+    pub fn screen_viewing_url(&self) -> std::option::Option<&str> {
+        self.screen_viewing_url.as_deref()
+    }
+    /// <p>The signaling URL.</p>
+    pub fn signaling_url(&self) -> std::option::Option<&str> {
+        self.signaling_url.as_deref()
+    }
+    /// <p>The turn control URL.</p>
+    pub fn turn_control_url(&self) -> std::option::Option<&str> {
+        self.turn_control_url.as_deref()
+    }
+    /// <p>The event ingestion URL.</p>
+    pub fn event_ingestion_url(&self) -> std::option::Option<&str> {
+        self.event_ingestion_url.as_deref()
+    }
 }
 impl std::fmt::Debug for MediaPlacement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7927,6 +8922,46 @@ pub struct MediaCapturePipeline {
     /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub chime_sdk_meeting_configuration:
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
+}
+impl MediaCapturePipeline {
+    /// <p>The ID of a media capture pipeline.</p>
+    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
+        self.media_pipeline_id.as_deref()
+    }
+    /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::MediaPipelineSourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>ARN of the source from which the media artifacts will be saved.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The status of the media capture pipeline.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MediaPipelineStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
+    pub fn sink_type(&self) -> std::option::Option<&crate::model::MediaPipelineSinkType> {
+        self.sink_type.as_ref()
+    }
+    /// <p>ARN of the destination to which the media artifacts are saved.</p>
+    pub fn sink_arn(&self) -> std::option::Option<&str> {
+        self.sink_arn.as_deref()
+    }
+    /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_timestamp.as_ref()
+    }
+    /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    pub fn chime_sdk_meeting_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ChimeSdkMeetingConfiguration> {
+        self.chime_sdk_meeting_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for MediaCapturePipeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8110,6 +9145,18 @@ pub struct ChimeSdkMeetingConfiguration {
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
     pub artifacts_configuration: std::option::Option<crate::model::ArtifactsConfiguration>,
 }
+impl ChimeSdkMeetingConfiguration {
+    /// <p>The source configuration for a specified media capture pipline.</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
+    pub fn artifacts_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ArtifactsConfiguration> {
+        self.artifacts_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ChimeSdkMeetingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChimeSdkMeetingConfiguration");
@@ -8184,6 +9231,20 @@ pub struct ArtifactsConfiguration {
     pub video: std::option::Option<crate::model::VideoArtifactsConfiguration>,
     /// <p>The configuration for the content artifacts.</p>
     pub content: std::option::Option<crate::model::ContentArtifactsConfiguration>,
+}
+impl ArtifactsConfiguration {
+    /// <p>The configuration for the audio artifacts.</p>
+    pub fn audio(&self) -> std::option::Option<&crate::model::AudioArtifactsConfiguration> {
+        self.audio.as_ref()
+    }
+    /// <p>The configuration for the video artifacts.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::VideoArtifactsConfiguration> {
+        self.video.as_ref()
+    }
+    /// <p>The configuration for the content artifacts.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::ContentArtifactsConfiguration> {
+        self.content.as_ref()
+    }
 }
 impl std::fmt::Debug for ArtifactsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8269,6 +9330,16 @@ pub struct ContentArtifactsConfiguration {
     pub state: std::option::Option<crate::model::ArtifactsState>,
     /// <p>The MUX type of the artifact configuration.</p>
     pub mux_type: std::option::Option<crate::model::ContentMuxType>,
+}
+impl ContentArtifactsConfiguration {
+    /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsState> {
+        self.state.as_ref()
+    }
+    /// <p>The MUX type of the artifact configuration.</p>
+    pub fn mux_type(&self) -> std::option::Option<&crate::model::ContentMuxType> {
+        self.mux_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ContentArtifactsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8445,6 +9516,16 @@ pub struct VideoArtifactsConfiguration {
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub mux_type: std::option::Option<crate::model::VideoMuxType>,
 }
+impl VideoArtifactsConfiguration {
+    /// <p>Indicates whether the video artifact is enabled or disabled.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ArtifactsState> {
+        self.state.as_ref()
+    }
+    /// <p>The MUX type of the video artifact configuration object.</p>
+    pub fn mux_type(&self) -> std::option::Option<&crate::model::VideoMuxType> {
+        self.mux_type.as_ref()
+    }
+}
 impl std::fmt::Debug for VideoArtifactsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VideoArtifactsConfiguration");
@@ -8563,6 +9644,12 @@ pub struct AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
     pub mux_type: std::option::Option<crate::model::AudioMuxType>,
 }
+impl AudioArtifactsConfiguration {
+    /// <p>The MUX type of the audio artifact configuration object.</p>
+    pub fn mux_type(&self) -> std::option::Option<&crate::model::AudioMuxType> {
+        self.mux_type.as_ref()
+    }
+}
 impl std::fmt::Debug for AudioArtifactsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioArtifactsConfiguration");
@@ -8669,6 +9756,14 @@ pub struct SourceConfiguration {
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
     pub selected_video_streams: std::option::Option<crate::model::SelectedVideoStreams>,
 }
+impl SourceConfiguration {
+    /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
+    pub fn selected_video_streams(
+        &self,
+    ) -> std::option::Option<&crate::model::SelectedVideoStreams> {
+        self.selected_video_streams.as_ref()
+    }
+}
 impl std::fmt::Debug for SourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceConfiguration");
@@ -8721,6 +9816,16 @@ pub struct SelectedVideoStreams {
     pub attendee_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
     pub external_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SelectedVideoStreams {
+    /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
+    pub fn attendee_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.attendee_ids.as_deref()
+    }
+    /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
+    pub fn external_user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.external_user_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for SelectedVideoStreams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8976,6 +10081,12 @@ pub struct ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
 }
+impl ChannelModeratedByAppInstanceUserSummary {
+    /// <p>Summary of the details of a <code>Channel</code>.</p>
+    pub fn channel_summary(&self) -> std::option::Option<&crate::model::ChannelSummary> {
+        self.channel_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelModeratedByAppInstanceUserSummary");
@@ -9036,6 +10147,32 @@ pub struct ChannelSummary {
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the last message in a channel was sent.</p>
     pub last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ChannelSummary {
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The mode of the channel.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The privacy setting of the channel.</p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The metadata of the channel.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The time at which the last message in a channel was sent.</p>
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9211,6 +10348,12 @@ pub struct ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
     pub moderator: std::option::Option<crate::model::Identity>,
 }
+impl ChannelModeratorSummary {
+    /// <p>The data for a moderator.</p>
+    pub fn moderator(&self) -> std::option::Option<&crate::model::Identity> {
+        self.moderator.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelModeratorSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelModeratorSummary");
@@ -9260,6 +10403,16 @@ pub struct Identity {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name in an Identity.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl Identity {
+    /// <p>The ARN in an Identity.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name in an Identity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for Identity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9337,6 +10490,44 @@ pub struct ChannelMessageSummary {
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Indicates whether a message was redacted.</p>
     pub redacted: bool,
+}
+impl ChannelMessageSummary {
+    /// <p>The ID of the message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The content of the message.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The metadata of the message.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The type of message.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMessageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time at which the message summary was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was last edited.</p>
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_edited_timestamp.as_ref()
+    }
+    /// <p>The message sender.</p>
+    pub fn sender(&self) -> std::option::Option<&crate::model::Identity> {
+        self.sender.as_ref()
+    }
+    /// <p>Indicates whether a message was redacted.</p>
+    pub fn redacted(&self) -> bool {
+        self.redacted
+    }
 }
 impl std::fmt::Debug for ChannelMessageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9560,6 +10751,18 @@ pub struct ChannelMembershipForAppInstanceUserSummary {
     pub app_instance_user_membership_summary:
         std::option::Option<crate::model::AppInstanceUserMembershipSummary>,
 }
+impl ChannelMembershipForAppInstanceUserSummary {
+    /// <p>Summary of the details of a <code>Channel</code>.</p>
+    pub fn channel_summary(&self) -> std::option::Option<&crate::model::ChannelSummary> {
+        self.channel_summary.as_ref()
+    }
+    /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_membership_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceUserMembershipSummary> {
+        self.app_instance_user_membership_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelMembershipForAppInstanceUserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMembershipForAppInstanceUserSummary");
@@ -9635,6 +10838,16 @@ pub struct AppInstanceUserMembershipSummary {
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The time at which a message was last read.</p>
     pub read_marker_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AppInstanceUserMembershipSummary {
+    /// <p>The type of <code>ChannelMembership</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time at which a message was last read.</p>
+    pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.read_marker_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for AppInstanceUserMembershipSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9758,6 +10971,12 @@ pub struct ChannelMembershipSummary {
     /// <p>A member's summary data.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
+impl ChannelMembershipSummary {
+    /// <p>A member's summary data.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelMembershipSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMembershipSummary");
@@ -9805,6 +11024,12 @@ impl ChannelMembershipSummary {
 pub struct ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
     pub member: std::option::Option<crate::model::Identity>,
+}
+impl ChannelBanSummary {
+    /// <p>The member being banned from a channel.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelBanSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9873,6 +11098,20 @@ pub struct Attendee {
     pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
     pub join_token: std::option::Option<std::string::String>,
+}
+impl Attendee {
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    pub fn external_user_id(&self) -> std::option::Option<&str> {
+        self.external_user_id.as_deref()
+    }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn attendee_id(&self) -> std::option::Option<&str> {
+        self.attendee_id.as_deref()
+    }
+    /// <p>The join token used by the Amazon Chime SDK attendee.</p>
+    pub fn join_token(&self) -> std::option::Option<&str> {
+        self.join_token.as_deref()
+    }
 }
 impl std::fmt::Debug for Attendee {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9955,6 +11194,20 @@ pub struct AppInstanceUserSummary {
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl AppInstanceUserSummary {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The name of an <code>AppInstanceUser</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for AppInstanceUserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserSummary");
@@ -10036,6 +11289,20 @@ pub struct AppInstanceSummary {
     /// <p>The metadata of the <code>AppInstance</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl AppInstanceSummary {
+    /// <p>The <code>AppInstance</code> ARN.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name of the <code>AppInstance</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstance</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for AppInstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceSummary");
@@ -10113,6 +11380,12 @@ pub struct AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     pub admin: std::option::Option<crate::model::Identity>,
 }
+impl AppInstanceAdminSummary {
+    /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
+    pub fn admin(&self) -> std::option::Option<&crate::model::Identity> {
+        self.admin.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceAdminSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceAdminSummary");
@@ -10165,6 +11438,24 @@ pub struct Invite {
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The status of the invite email.</p>
     pub email_status: std::option::Option<crate::model::EmailStatus>,
+}
+impl Invite {
+    /// <p>The invite ID.</p>
+    pub fn invite_id(&self) -> std::option::Option<&str> {
+        self.invite_id.as_deref()
+    }
+    /// <p>The status of the invite.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InviteStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The email address to which the invite is sent.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The status of the invite email.</p>
+    pub fn email_status(&self) -> std::option::Option<&crate::model::EmailStatus> {
+        self.email_status.as_ref()
+    }
 }
 impl std::fmt::Debug for Invite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10324,6 +11615,16 @@ pub struct TerminationHealth {
     /// <p>The source IP address.</p>
     pub source: std::option::Option<std::string::String>,
 }
+impl TerminationHealth {
+    /// <p>The timestamp, in ISO 8601 format.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The source IP address.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminationHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminationHealth");
@@ -10387,6 +11688,12 @@ impl TerminationHealth {
 pub struct MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl MessagingSessionEndpoint {
+    /// <p>The endpoint to which you establish a websocket connection.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for MessagingSessionEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10453,6 +11760,52 @@ pub struct ChannelMessage {
     pub redacted: bool,
     /// <p>The persistence setting for a channel message.</p>
     pub persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
+}
+impl ChannelMessage {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of a message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The message content.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The message metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The message type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMessageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time at which the message was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was edited.</p>
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_edited_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The message sender.</p>
+    pub fn sender(&self) -> std::option::Option<&crate::model::Identity> {
+        self.sender.as_ref()
+    }
+    /// <p>Hides the content of a message.</p>
+    pub fn redacted(&self) -> bool {
+        self.redacted
+    }
+    /// <p>The persistence setting for a channel message.</p>
+    pub fn persistence(&self) -> std::option::Option<&crate::model::ChannelMessagePersistenceType> {
+        self.persistence.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10652,6 +12005,20 @@ pub struct PhoneNumberError {
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl PhoneNumberError {
+    /// <p>The phone number ID for which the action failed.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for PhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberError");
@@ -10740,6 +12107,24 @@ pub struct ChannelModerator {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
+}
+impl ChannelModerator {
+    /// <p>The moderator's data.</p>
+    pub fn moderator(&self) -> std::option::Option<&crate::model::Identity> {
+        self.moderator.as_ref()
+    }
+    /// <p>The ARN of the moderator's channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The time at which the moderator was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.created_by.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelModerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10843,6 +12228,32 @@ pub struct ChannelMembership {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which a channel membership was last updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ChannelMembership {
+    /// <p>The identifier of the member who invited another member.</p>
+    pub fn invited_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.invited_by.as_ref()
+    }
+    /// <p>The membership type set for the channel member.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The data of the channel member.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+    /// <p>The ARN of the member's channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The time at which the channel membership was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a channel membership was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10975,6 +12386,24 @@ pub struct ChannelBan {
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
 }
+impl ChannelBan {
+    /// <p>The member being banned from the channel.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+    /// <p>The ARN of the channel from which a member is being banned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The time at which the ban was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.created_by.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelBan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelBan");
@@ -11083,6 +12512,44 @@ pub struct Channel {
     pub last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which a channel was last updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Channel {
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The mode of the channel.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The channel's privacy setting.</p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The channel's metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.created_by.as_ref()
+    }
+    /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a member sent the last message in the channel.</p>
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_timestamp.as_ref()
+    }
+    /// <p>The time at which a channel was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11259,6 +12726,28 @@ pub struct AppInstanceUser {
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AppInstanceUser {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUser");
@@ -11372,6 +12861,20 @@ pub struct AppInstanceAdmin {
     /// <p>The time at which an administrator was created.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AppInstanceAdmin {
+    /// <p>The <code>AppInstanceAdmin</code> data.</p>
+    pub fn admin(&self) -> std::option::Option<&crate::model::Identity> {
+        self.admin.as_ref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The time at which an administrator was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceAdmin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceAdmin");
@@ -11459,6 +12962,28 @@ pub struct AppInstance {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AppInstance {
+    /// <p>The ARN of the messaging instance.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name of an <code>AppInstance</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of an <code>AppInstance</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for AppInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11573,6 +13098,20 @@ pub struct CreateAttendeeError {
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl CreateAttendeeError {
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    pub fn external_user_id(&self) -> std::option::Option<&str> {
+        self.external_user_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAttendeeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttendeeError");
@@ -11655,6 +13194,16 @@ pub struct CreateAttendeeRequestItem {
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAttendeeRequestItem {
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    pub fn external_user_id(&self) -> std::option::Option<&str> {
+        self.external_user_id.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAttendeeRequestItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttendeeRequestItem");
@@ -11732,6 +13281,16 @@ pub struct MeetingNotificationConfiguration {
     /// <p>The SQS queue ARN.</p>
     pub sqs_queue_arn: std::option::Option<std::string::String>,
 }
+impl MeetingNotificationConfiguration {
+    /// <p>The SNS topic ARN.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The SQS queue ARN.</p>
+    pub fn sqs_queue_arn(&self) -> std::option::Option<&str> {
+        self.sqs_queue_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for MeetingNotificationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeetingNotificationConfiguration");
@@ -11803,6 +13362,20 @@ pub struct UserError {
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl UserError {
+    /// <p>The user ID for which the action failed.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for UserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11890,6 +13463,26 @@ pub struct UpdateUserRequestItem {
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>The Alexa for Business metadata.</p>
     pub alexa_for_business_metadata: std::option::Option<crate::model::AlexaForBusinessMetadata>,
+}
+impl UpdateUserRequestItem {
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The user license type.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::License> {
+        self.license_type.as_ref()
+    }
+    /// <p>The user type.</p>
+    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user_type.as_ref()
+    }
+    /// <p>The Alexa for Business metadata.</p>
+    pub fn alexa_for_business_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::AlexaForBusinessMetadata> {
+        self.alexa_for_business_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateUserRequestItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11996,6 +13589,20 @@ pub struct UpdatePhoneNumberRequestItem {
     /// <p>The outbound calling name to update.</p>
     pub calling_name: std::option::Option<std::string::String>,
 }
+impl UpdatePhoneNumberRequestItem {
+    /// <p>The phone number ID to update.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The product type to update.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The outbound calling name to update.</p>
+    pub fn calling_name(&self) -> std::option::Option<&str> {
+        self.calling_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberRequestItem");
@@ -12080,6 +13687,20 @@ pub struct MemberError {
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl MemberError {
+    /// <p>The member ID.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for MemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MemberError");
@@ -12162,6 +13783,16 @@ pub struct MembershipItem {
     /// <p>The member role.</p>
     pub role: std::option::Option<crate::model::RoomMembershipRole>,
 }
+impl MembershipItem {
+    /// <p>The member ID.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The member role.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::RoomMembershipRole> {
+        self.role.as_ref()
+    }
+}
 impl std::fmt::Debug for MembershipItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MembershipItem");
@@ -12229,6 +13860,20 @@ pub struct BatchCreateChannelMembershipError {
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl BatchCreateChannelMembershipError {
+    /// <p>The ARN of the member that the service couldn't add.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateChannelMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12316,6 +13961,24 @@ pub struct BatchChannelMemberships {
     pub members: std::option::Option<std::vec::Vec<crate::model::Identity>>,
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub channel_arn: std::option::Option<std::string::String>,
+}
+impl BatchChannelMemberships {
+    /// <p>The identifier of the member who invited another member.</p>
+    pub fn invited_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.invited_by.as_ref()
+    }
+    /// <p>The membership types set for the channel users.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The users successfully added to the request.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Identity]> {
+        self.members.as_deref()
+    }
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchChannelMemberships {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

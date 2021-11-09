@@ -95,10 +95,7 @@ impl AcceptSharedDirectoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_accept_shared_directory(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -423,10 +420,7 @@ impl AddIpRoutesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_ip_routes(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_ip_routes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -602,10 +596,7 @@ impl AddRegionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_region(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_region(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -774,10 +765,7 @@ impl AddTagsToResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -944,10 +932,7 @@ impl CancelSchemaExtensionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_schema_extension(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1185,10 +1170,7 @@ impl ConnectDirectoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_connect_directory(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_connect_directory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1353,10 +1335,7 @@ impl CreateAliasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1573,10 +1552,8 @@ impl CreateComputerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_computer(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_computer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1769,10 +1746,7 @@ impl CreateConditionalForwarderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_conditional_forwarder(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2064,10 +2038,7 @@ impl CreateDirectoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_directory(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_directory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2238,10 +2209,7 @@ impl CreateLogSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_log_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2492,10 +2460,7 @@ impl CreateMicrosoftAdInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_microsoft_ad(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_microsoft_ad(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2656,10 +2621,8 @@ impl CreateSnapshotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_snapshot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2914,10 +2877,7 @@ impl CreateTrustInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_trust(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_trust(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3087,10 +3047,7 @@ impl DeleteConditionalForwarderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_conditional_forwarder(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3240,10 +3197,7 @@ impl DeleteDirectoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_directory(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_directory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3395,10 +3349,7 @@ impl DeleteLogSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_log_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3547,10 +3498,8 @@ impl DeleteSnapshotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_snapshot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3716,10 +3665,7 @@ impl DeleteTrustInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trust(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trust(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3884,10 +3830,9 @@ impl DeregisterCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_certificate(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4053,10 +3998,9 @@ impl DeregisterEventTopicInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_event_topic(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_event_topic(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4221,10 +4165,7 @@ impl DescribeCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_certificate(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4415,7 +4356,7 @@ impl DescribeClientAuthenticationSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_client_authentication_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_client_authentication_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4594,7 +4535,7 @@ impl DescribeConditionalForwardersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_conditional_forwarders(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_conditional_forwarders(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4784,10 +4725,7 @@ impl DescribeDirectoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_directories(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_directories(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4993,10 +4931,7 @@ impl DescribeDomainControllersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_domain_controllers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5175,10 +5110,7 @@ impl DescribeEventTopicsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_event_topics(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_event_topics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5368,10 +5300,7 @@ impl DescribeLdapsSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_ldaps_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5545,10 +5474,7 @@ impl DescribeRegionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_regions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_regions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5751,10 +5677,7 @@ impl DescribeSharedDirectoriesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_shared_directories(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5955,10 +5878,7 @@ impl DescribeSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_snapshots(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_snapshots(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6162,10 +6082,8 @@ impl DescribeTrustsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_trusts(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_trusts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6331,7 +6249,7 @@ impl DisableClientAuthenticationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_client_authentication(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_client_authentication(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6495,10 +6413,7 @@ impl DisableLdapsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_disable_ldaps(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_disable_ldaps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6647,10 +6562,7 @@ impl DisableRadiusInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_disable_radius(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_disable_radius(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6841,10 +6753,7 @@ impl DisableSsoInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_disable_sso(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_disable_sso(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7018,10 +6927,7 @@ impl EnableClientAuthenticationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_client_authentication(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7184,10 +7090,7 @@ impl EnableLdapsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_ldaps(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_ldaps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7353,10 +7256,7 @@ impl EnableRadiusInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_radius(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_radius(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7545,10 +7445,7 @@ impl EnableSsoInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_sso(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_sso(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7682,10 +7579,7 @@ impl GetDirectoryLimitsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_directory_limits(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_directory_limits(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7827,10 +7721,7 @@ impl GetSnapshotLimitsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_snapshot_limits(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_snapshot_limits(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8010,10 +7901,7 @@ impl ListCertificatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_certificates(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_certificates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8190,10 +8078,7 @@ impl ListIpRoutesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_ip_routes(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_ip_routes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8373,10 +8258,9 @@ impl ListLogSubscriptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_log_subscriptions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_log_subscriptions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8554,10 +8438,9 @@ impl ListSchemaExtensionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_schema_extensions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_schema_extensions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8731,10 +8614,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8933,10 +8815,7 @@ impl RegisterCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_certificate(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9100,10 +8979,7 @@ impl RegisterEventTopicInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_event_topic(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_event_topic(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9260,10 +9136,7 @@ impl RejectSharedDirectoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reject_shared_directory(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9436,10 +9309,7 @@ impl RemoveIpRoutesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_ip_routes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_remove_ip_routes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9588,10 +9458,7 @@ impl RemoveRegionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_region(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_region(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9764,10 +9631,7 @@ impl RemoveTagsFromResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9943,10 +9807,7 @@ impl ResetUserPasswordInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reset_user_password(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reset_user_password(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10096,10 +9957,7 @@ impl RestoreFromSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_from_snapshot(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_restore_from_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10300,10 +10158,8 @@ impl ShareDirectoryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_share_directory(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_share_directory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10502,10 +10358,9 @@ impl StartSchemaExtensionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_schema_extension(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_schema_extension(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10674,10 +10529,7 @@ impl UnshareDirectoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_unshare_directory(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_unshare_directory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10872,10 +10724,7 @@ impl UpdateConditionalForwarderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_conditional_forwarder(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11040,7 +10889,7 @@ impl UpdateNumberOfDomainControllersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_number_of_domain_controllers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_number_of_domain_controllers(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11209,10 +11058,7 @@ impl UpdateRadiusInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_radius(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_radius(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11376,10 +11222,7 @@ impl UpdateTrustInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_trust(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_trust(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11528,10 +11371,7 @@ impl VerifyTrustInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_verify_trust(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_verify_trust(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11601,6 +11441,12 @@ pub struct VerifyTrustInput {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
     pub trust_id: std::option::Option<std::string::String>,
 }
+impl VerifyTrustInput {
+    /// <p>The unique Trust ID of the trust relationship to verify.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifyTrustInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyTrustInput");
@@ -11617,6 +11463,16 @@ pub struct UpdateTrustInput {
     pub trust_id: std::option::Option<std::string::String>,
     /// <p>Updates selective authentication for the trust.</p>
     pub selective_auth: std::option::Option<crate::model::SelectiveAuth>,
+}
+impl UpdateTrustInput {
+    /// <p>Identifier of the trust relationship.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
+    /// <p>Updates selective authentication for the trust.</p>
+    pub fn selective_auth(&self) -> std::option::Option<&crate::model::SelectiveAuth> {
+        self.selective_auth.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTrustInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11638,6 +11494,18 @@ pub struct UpdateRadiusInput {
     /// server.</p>
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
 }
+impl UpdateRadiusInput {
+    /// <p>The identifier of the directory for which to update the RADIUS server
+    /// information.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+    /// server.</p>
+    pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
+        self.radius_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRadiusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRadiusInput");
@@ -11656,6 +11524,17 @@ pub struct UpdateNumberOfDomainControllersInput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The number of domain controllers desired in the directory.</p>
     pub desired_number: i32,
+}
+impl UpdateNumberOfDomainControllersInput {
+    /// <p>Identifier of the directory to which the domain controllers will be added or
+    /// removed.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The number of domain controllers desired in the directory.</p>
+    pub fn desired_number(&self) -> i32 {
+        self.desired_number
+    }
 }
 impl std::fmt::Debug for UpdateNumberOfDomainControllersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11680,6 +11559,23 @@ pub struct UpdateConditionalForwarderInput {
     /// forwarder.</p>
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateConditionalForwarderInput {
+    /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
+    /// forwarder.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
+    /// a trust relationship.</p>
+    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+        self.remote_domain_name.as_deref()
+    }
+    /// <p>The updated IP addresses of the remote DNS server associated with the conditional
+    /// forwarder.</p>
+    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ip_addrs.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConditionalForwarderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConditionalForwarderInput");
@@ -11700,6 +11596,18 @@ pub struct UnshareDirectoryInput {
     /// <p>Identifier for the directory consumer account with whom the directory has to be
     /// unshared.</p>
     pub unshare_target: std::option::Option<crate::model::UnshareTarget>,
+}
+impl UnshareDirectoryInput {
+    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
+    /// sharing.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>Identifier for the directory consumer account with whom the directory has to be
+    /// unshared.</p>
+    pub fn unshare_target(&self) -> std::option::Option<&crate::model::UnshareTarget> {
+        self.unshare_target.as_ref()
+    }
 }
 impl std::fmt::Debug for UnshareDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11726,6 +11634,28 @@ pub struct StartSchemaExtensionInput {
     pub ldif_content: std::option::Option<std::string::String>,
     /// <p>A description of the schema extension.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl StartSchemaExtensionInput {
+    /// <p>The identifier of the directory for which the schema extension will be applied
+    /// to.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>If true, creates a snapshot of the directory before applying the schema
+    /// extension.</p>
+    pub fn create_snapshot_before_schema_extension(&self) -> bool {
+        self.create_snapshot_before_schema_extension
+    }
+    /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
+    /// each line as it would be formatted in an ldif file with \n. See the example request below for
+    /// more details. The file size can be no larger than 1MB.</p>
+    pub fn ldif_content(&self) -> std::option::Option<&str> {
+        self.ldif_content.as_deref()
+    }
+    /// <p>A description of the schema extension.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for StartSchemaExtensionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11759,6 +11689,29 @@ pub struct ShareDirectoryInput {
     /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
     pub share_method: std::option::Option<crate::model::ShareMethod>,
 }
+impl ShareDirectoryInput {
+    /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
+    /// The request includes a typed message to help the directory consumer administrator determine
+    /// whether to approve or reject the share invitation.</p>
+    pub fn share_notes(&self) -> std::option::Option<&str> {
+        self.share_notes.as_deref()
+    }
+    /// <p>Identifier for the directory consumer account with whom the directory is to be
+    /// shared.</p>
+    pub fn share_target(&self) -> std::option::Option<&crate::model::ShareTarget> {
+        self.share_target.as_ref()
+    }
+    /// <p>The method used when sharing a directory to determine whether the directory should be
+    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
+    /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+    pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
+        self.share_method.as_ref()
+    }
+}
 impl std::fmt::Debug for ShareDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareDirectoryInput");
@@ -11776,6 +11729,12 @@ impl std::fmt::Debug for ShareDirectoryInput {
 pub struct RestoreFromSnapshotInput {
     /// <p>The identifier of the snapshot to restore from.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
+}
+impl RestoreFromSnapshotInput {
+    /// <p>The identifier of the snapshot to restore from.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreFromSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11797,6 +11756,21 @@ pub struct ResetUserPasswordInput {
     /// <p>The new password that will be reset.</p>
     pub new_password: std::option::Option<std::string::String>,
 }
+impl ResetUserPasswordInput {
+    /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
+    /// resides.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The user name of the user whose password will be reset.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The new password that will be reset.</p>
+    pub fn new_password(&self) -> std::option::Option<&str> {
+        self.new_password.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetUserPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetUserPasswordInput");
@@ -11816,6 +11790,16 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>The tag key (name) of the tag to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsFromResourceInput {
+    /// <p>Identifier (ID) of the directory from which to remove the tag.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The tag key (name) of the tag to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
@@ -11831,6 +11815,12 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
 pub struct RemoveRegionInput {
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
     pub directory_id: std::option::Option<std::string::String>,
+}
+impl RemoveRegionInput {
+    /// <p>The identifier of the directory for which you want to remove Region replication.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveRegionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11850,6 +11840,17 @@ pub struct RemoveIpRoutesInput {
     /// <p>IP address blocks that you want to remove.</p>
     pub cidr_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveIpRoutesInput {
+    /// <p>Identifier (ID) of the directory from which you want to remove the IP
+    /// addresses.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>IP address blocks that you want to remove.</p>
+    pub fn cidr_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.cidr_ips.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveIpRoutesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveIpRoutesInput");
@@ -11866,6 +11867,13 @@ pub struct RejectSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
     /// different for each directory owner account.</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
+}
+impl RejectSharedDirectoryInput {
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
+    /// different for each directory owner account.</p>
+    pub fn shared_directory_id(&self) -> std::option::Option<&str> {
+        self.shared_directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectSharedDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11884,6 +11892,17 @@ pub struct RegisterEventTopicInput {
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
     /// topic must be in the same region as the specified Directory ID.</p>
     pub topic_name: std::option::Option<std::string::String>,
+}
+impl RegisterEventTopicInput {
+    /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
+    /// topic must be in the same region as the specified Directory ID.</p>
+    pub fn topic_name(&self) -> std::option::Option<&str> {
+        self.topic_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterEventTopicInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11907,6 +11926,26 @@ pub struct RegisterCertificateInput {
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
     pub client_cert_auth_settings: std::option::Option<crate::model::ClientCertAuthSettings>,
 }
+impl RegisterCertificateInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The certificate PEM string that needs to be registered.</p>
+    pub fn certificate_data(&self) -> std::option::Option<&str> {
+        self.certificate_data.as_deref()
+    }
+    /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
+    pub fn client_cert_auth_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientCertAuthSettings> {
+        self.client_cert_auth_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterCertificateInput");
@@ -11928,6 +11967,20 @@ pub struct ListTagsForResourceInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListTagsForResourceInput {
+    /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11951,6 +12004,22 @@ pub struct ListSchemaExtensionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListSchemaExtensionsInput {
+    /// <p>The identifier of the directory from which to retrieve the schema extension
+    /// information.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
+    /// <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListSchemaExtensionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11976,6 +12045,23 @@ pub struct ListLogSubscriptionsInput {
     /// <p>The maximum number of items returned.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListLogSubscriptionsInput {
+    /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
+    /// associated with that directory. If no <i>DirectoryId</i> is provided, lists all
+    /// log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the
+    /// Amazon Web Services account or the directory, an empty list will be returned.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The token for the next set of items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items returned.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListLogSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLogSubscriptionsInput");
@@ -11998,6 +12084,22 @@ pub struct ListIpRoutesInput {
     /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
     /// is specified by the limitations of the operation.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListIpRoutesInput {
+    /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
+    /// addresses.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
+    /// is specified by the limitations of the operation.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListIpRoutesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12023,6 +12125,23 @@ pub struct ListCertificatesInput {
     /// <p>The number of items that should show up on one page</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListCertificatesInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response
+    /// element indicates that more certificates are available. Use the value of the returned
+    /// <code>NextToken</code> element in your request until the token comes back as
+    /// <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items that should show up on one page</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCertificatesInput");
@@ -12039,6 +12158,12 @@ impl std::fmt::Debug for ListCertificatesInput {
 pub struct GetSnapshotLimitsInput {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
     pub directory_id: std::option::Option<std::string::String>,
+}
+impl GetSnapshotLimitsInput {
+    /// <p>Contains the identifier of the directory to obtain the limits for.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSnapshotLimitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12079,6 +12204,29 @@ pub struct EnableSsoInput {
     /// parameter.</p>
     pub password: std::option::Option<std::string::String>,
 }
+impl EnableSsoInput {
+    /// <p>The identifier of the directory for which to enable single-sign on.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The username of an alternate account to use to enable single-sign on. This is only used
+    /// for AD Connector directories. This account must have privileges to add a service principal
+    /// name.</p>
+    /// <p>If the AD Connector service account does not have privileges to add a service principal
+    /// name, you can specify an alternate account with the <i>UserName</i> and
+    /// <i>Password</i> parameters. These credentials are only used to enable single
+    /// sign-on and are not stored by the service. The AD Connector service account is not
+    /// changed.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The password of an alternate account to use to enable single-sign on. This is only used
+    /// for AD Connector directories. For more information, see the <i>UserName</i>
+    /// parameter.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableSsoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableSsoInput");
@@ -12099,6 +12247,17 @@ pub struct EnableRadiusInput {
     /// server.</p>
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
 }
+impl EnableRadiusInput {
+    /// <p>The identifier of the directory for which to enable MFA.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+    /// server.</p>
+    pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
+        self.radius_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableRadiusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableRadiusInput");
@@ -12117,6 +12276,17 @@ pub struct EnableLdapsInput {
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
     /// supported.</p>
     pub r#type: std::option::Option<crate::model::LdapsType>,
+}
+impl EnableLdapsInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
+    /// supported.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LdapsType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for EnableLdapsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12138,6 +12308,19 @@ pub struct EnableClientAuthenticationInput {
     /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
     /// </p>
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
+}
+impl EnableClientAuthenticationInput {
+    /// <p>The identifier of the specified directory. </p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
+    /// supported. Smart card authentication in AD Connector requires that you enable Kerberos
+    /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for EnableClientAuthenticationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12168,6 +12351,29 @@ pub struct DisableSsoInput {
     /// parameter.</p>
     pub password: std::option::Option<std::string::String>,
 }
+impl DisableSsoInput {
+    /// <p>The identifier of the directory for which to disable single-sign on.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The username of an alternate account to use to disable single-sign on. This is only used
+    /// for AD Connector directories. This account must have privileges to remove a service
+    /// principal name.</p>
+    /// <p>If the AD Connector service account does not have privileges to remove a service
+    /// principal name, you can specify an alternate account with the <i>UserName</i>
+    /// and <i>Password</i> parameters. These credentials are only used to disable
+    /// single sign-on and are not stored by the service. The AD Connector service account is not
+    /// changed.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The password of an alternate account to use to disable single-sign on. This is only used
+    /// for AD Connector directories. For more information, see the <i>UserName</i>
+    /// parameter.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableSsoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableSsoInput");
@@ -12184,6 +12390,12 @@ impl std::fmt::Debug for DisableSsoInput {
 pub struct DisableRadiusInput {
     /// <p>The identifier of the directory for which to disable MFA.</p>
     pub directory_id: std::option::Option<std::string::String>,
+}
+impl DisableRadiusInput {
+    /// <p>The identifier of the directory for which to disable MFA.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableRadiusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12203,6 +12415,17 @@ pub struct DisableLdapsInput {
     /// supported.</p>
     pub r#type: std::option::Option<crate::model::LdapsType>,
 }
+impl DisableLdapsInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
+    /// supported.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LdapsType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for DisableLdapsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableLdapsInput");
@@ -12220,6 +12443,16 @@ pub struct DisableClientAuthenticationInput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
+}
+impl DisableClientAuthenticationInput {
+    /// <p>The identifier of the directory </p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for DisableClientAuthenticationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12250,6 +12483,29 @@ pub struct DescribeTrustsInput {
     /// <p>The maximum number of objects to return.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeTrustsInput {
+    /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
+    /// relationship.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If
+    /// this member is null, all trust relationships that belong to the current account are
+    /// returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    pub fn trust_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.trust_ids.as_deref()
+    }
+    /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
+    /// <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeTrustsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrustsInput");
@@ -12277,6 +12533,27 @@ pub struct DescribeSnapshotsInput {
     /// <p>The maximum number of objects to return.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeSnapshotsInput {
+    /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is
+    /// null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i>
+    /// members.</p>
+    pub fn snapshot_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.snapshot_ids.as_deref()
+    }
+    /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
+    /// <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSnapshotsInput");
@@ -12302,6 +12579,25 @@ pub struct DescribeSharedDirectoriesInput {
     /// <p>The number of shared directories to return in the response object.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeSharedDirectoriesInput {
+    /// <p>Returns the identifier of the directory in the directory owner account. </p>
+    pub fn owner_directory_id(&self) -> std::option::Option<&str> {
+        self.owner_directory_id.as_deref()
+    }
+    /// <p>A list of identifiers of all shared directories in your account. </p>
+    pub fn shared_directory_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.shared_directory_ids.as_deref()
+    }
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to
+    /// <a>DescribeSharedDirectories</a>. Pass null if this is the first call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of shared directories to return in the response object.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeSharedDirectoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSharedDirectoriesInput");
@@ -12323,6 +12619,20 @@ pub struct DescribeRegionsInput {
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeRegionsInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRegionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12348,6 +12658,25 @@ pub struct DescribeLdapsSettingsInput {
     /// <p>Specifies the number of items that should be displayed on one page.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeLdapsSettingsInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
+    /// supported.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LdapsType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The type of next token used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the number of items that should be displayed on one page.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeLdapsSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLdapsSettingsInput");
@@ -12371,6 +12700,20 @@ pub struct DescribeEventTopicsInput {
     /// <p>An empty list results in an <code>InvalidParameterException</code> being
     /// thrown.</p>
     pub topic_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeEventTopicsInput {
+    /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
+    /// is null, associations for all Directory IDs are returned.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is
+    /// null, all associations for the specified Directory ID are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being
+    /// thrown.</p>
+    pub fn topic_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.topic_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventTopicsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12398,6 +12741,28 @@ pub struct DescribeDomainControllersInput {
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeDomainControllersInput {
+    /// <p>Identifier of the directory for which to retrieve the domain controller
+    /// information.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>A list of identifiers for the domain controllers whose information will be
+    /// provided.</p>
+    pub fn domain_controller_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.domain_controller_ids.as_deref()
+    }
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
+    /// to <a>DescribeDomainControllers</a>. Pass null if this is the first call.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeDomainControllersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainControllersInput");
@@ -12423,6 +12788,23 @@ pub struct DescribeDirectoriesInput {
     /// is specified by the limitations of the operation.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeDirectoriesInput {
+    /// <p>A list of identifiers of the directories for which to obtain the information. If this
+    /// member is null, all directories that belong to the current account are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    pub fn directory_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.directory_ids.as_deref()
+    }
+    /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items
+    /// is specified by the limitations of the operation.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeDirectoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDirectoriesInput");
@@ -12444,6 +12826,19 @@ pub struct DescribeConditionalForwardersInput {
     /// of associated conditional forwarders. If this member is null, all conditional forwarders are
     /// returned.</p>
     pub remote_domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeConditionalForwardersInput {
+    /// <p>The directory ID for which to get the list of associated conditional
+    /// forwarders.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list
+    /// of associated conditional forwarders. If this member is null, all conditional forwarders are
+    /// returned.</p>
+    pub fn remote_domain_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.remote_domain_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConditionalForwardersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12467,6 +12862,24 @@ pub struct DescribeClientAuthenticationSettingsInput {
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeClientAuthenticationSettingsInput {
+    /// <p>The identifier of the directory for which to retrieve information.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeClientAuthenticationSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClientAuthenticationSettingsInput");
@@ -12486,6 +12899,16 @@ pub struct DescribeCertificateInput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the certificate.</p>
     pub certificate_id: std::option::Option<std::string::String>,
+}
+impl DescribeCertificateInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The identifier of the certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12507,6 +12930,18 @@ pub struct DeregisterEventTopicInput {
     /// publisher.</p>
     pub topic_name: std::option::Option<std::string::String>,
 }
+impl DeregisterEventTopicInput {
+    /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
+    /// to the specified Amazon SNS topic.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the Amazon SNS topic from which to remove the directory as a
+    /// publisher.</p>
+    pub fn topic_name(&self) -> std::option::Option<&str> {
+        self.topic_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterEventTopicInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterEventTopicInput");
@@ -12524,6 +12959,16 @@ pub struct DeregisterCertificateInput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the certificate.</p>
     pub certificate_id: std::option::Option<std::string::String>,
+}
+impl DeregisterCertificateInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The identifier of the certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12544,6 +12989,16 @@ pub struct DeleteTrustInput {
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     pub delete_associated_conditional_forwarder: bool,
 }
+impl DeleteTrustInput {
+    /// <p>The Trust ID of the trust relationship to be deleted.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
+    /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+    pub fn delete_associated_conditional_forwarder(&self) -> bool {
+        self.delete_associated_conditional_forwarder
+    }
+}
 impl std::fmt::Debug for DeleteTrustInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTrustInput");
@@ -12563,6 +13018,12 @@ pub struct DeleteSnapshotInput {
     /// <p>The identifier of the directory snapshot to be deleted.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
 }
+impl DeleteSnapshotInput {
+    /// <p>The identifier of the directory snapshot to be deleted.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSnapshotInput");
@@ -12578,6 +13039,12 @@ pub struct DeleteLogSubscriptionInput {
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
     pub directory_id: std::option::Option<std::string::String>,
 }
+impl DeleteLogSubscriptionInput {
+    /// <p>Identifier of the directory whose log subscription you want to delete.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLogSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLogSubscriptionInput");
@@ -12592,6 +13059,12 @@ impl std::fmt::Debug for DeleteLogSubscriptionInput {
 pub struct DeleteDirectoryInput {
     /// <p>The identifier of the directory to delete.</p>
     pub directory_id: std::option::Option<std::string::String>,
+}
+impl DeleteDirectoryInput {
+    /// <p>The identifier of the directory to delete.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12610,6 +13083,17 @@ pub struct DeleteConditionalForwarderInput {
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
     /// the conditional forwarder.</p>
     pub remote_domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteConditionalForwarderInput {
+    /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
+    /// the conditional forwarder.</p>
+    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+        self.remote_domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConditionalForwarderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12647,6 +13131,39 @@ pub struct CreateTrustInput {
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub selective_auth: std::option::Option<crate::model::SelectiveAuth>,
 }
+impl CreateTrustInput {
+    /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
+    /// relationship.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
+    /// trust relationship.</p>
+    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+        self.remote_domain_name.as_deref()
+    }
+    /// <p>The trust password. The must be the same password that was used when creating the trust
+    /// relationship on the external domain.</p>
+    pub fn trust_password(&self) -> std::option::Option<&str> {
+        self.trust_password.as_deref()
+    }
+    /// <p>The direction of the trust relationship.</p>
+    pub fn trust_direction(&self) -> std::option::Option<&crate::model::TrustDirection> {
+        self.trust_direction.as_ref()
+    }
+    /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
+    pub fn trust_type(&self) -> std::option::Option<&crate::model::TrustType> {
+        self.trust_type.as_ref()
+    }
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn conditional_forwarder_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.conditional_forwarder_ip_addrs.as_deref()
+    }
+    /// <p>Optional parameter to enable selective authentication for the trust.</p>
+    pub fn selective_auth(&self) -> std::option::Option<&crate::model::SelectiveAuth> {
+        self.selective_auth.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTrustInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrustInput");
@@ -12672,6 +13189,16 @@ pub struct CreateSnapshotInput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The descriptive name to apply to the snapshot.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateSnapshotInput {
+    /// <p>The identifier of the directory of which to take a snapshot.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The descriptive name to apply to the snapshot.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12708,6 +13235,43 @@ pub struct CreateMicrosoftAdInput {
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateMicrosoftAdInput {
+    /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
+    /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need
+    /// to be publicly resolvable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
+    /// NetBIOS name, it will default to the first part of your directory DNS. For example,
+    /// <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+    pub fn short_name(&self) -> std::option::Option<&str> {
+        self.short_name.as_deref()
+    }
+    /// <p>The password for the default administrative user named <code>Admin</code>.</p>
+    /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>A description for the directory. This label will appear on the Amazon Web Services console
+    /// <code>Directory Details</code> page after the directory is created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
+        self.vpc_settings.as_ref()
+    }
+    /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
+    /// <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+    pub fn edition(&self) -> std::option::Option<&crate::model::DirectoryEdition> {
+        self.edition.as_ref()
+    }
+    /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMicrosoftAdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMicrosoftAdInput");
@@ -12732,6 +13296,18 @@ pub struct CreateLogSubscriptionInput {
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
     /// forwarded.</p>
     pub log_group_name: std::option::Option<std::string::String>,
+}
+impl CreateLogSubscriptionInput {
+    /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to
+    /// your specified CloudWatch log group.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
+    /// forwarded.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLogSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12790,6 +13366,65 @@ pub struct CreateDirectoryInput {
     /// <p>The tags to be assigned to the Simple AD directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDirectoryInput {
+    /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
+    pub fn short_name(&self) -> std::option::Option<&str> {
+        self.short_name.as_deref()
+    }
+    /// <p>The password for the directory administrator. The directory creation process creates a
+    /// directory administrator account with the user name <code>Administrator</code> and this
+    /// password.</p>
+    /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+    /// <p>The regex pattern for this string is made up of the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p>
+    /// </li>
+    /// </ul>
+    /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p>
+    /// </li>
+    /// <li>
+    /// <p>Numbers and special characters and lower case
+    /// (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p>
+    /// </li>
+    /// <li>
+    /// <p>Special characters and upper case and lower case
+    /// (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p>
+    /// </li>
+    /// <li>
+    /// <p>Numbers and upper case and special characters
+    /// (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p>
+    /// </li>
+    /// </ul>
+    /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>A description for the directory.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The size of the directory.</p>
+    pub fn size(&self) -> std::option::Option<&crate::model::DirectorySize> {
+        self.size.as_ref()
+    }
+    /// <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
+    /// the operation.</p>
+    pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
+        self.vpc_settings.as_ref()
+    }
+    /// <p>The tags to be assigned to the Simple AD directory.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDirectoryInput");
@@ -12819,6 +13454,22 @@ pub struct CreateConditionalForwarderInput {
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateConditionalForwarderInput {
+    /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
+    /// forwarder.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
+    /// a trust relationship.</p>
+    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+        self.remote_domain_name.as_deref()
+    }
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ip_addrs.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConditionalForwarderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConditionalForwarderInput");
@@ -12845,6 +13496,29 @@ pub struct CreateComputerInput {
     /// computer account.</p>
     pub computer_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
+impl CreateComputerInput {
+    /// <p>The identifier of the directory in which to create the computer account.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the computer account.</p>
+    pub fn computer_name(&self) -> std::option::Option<&str> {
+        self.computer_name.as_deref()
+    }
+    /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+        self.organizational_unit_distinguished_name.as_deref()
+    }
+    /// <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the
+    /// computer account.</p>
+    pub fn computer_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.computer_attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateComputerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateComputerInput");
@@ -12870,6 +13544,18 @@ pub struct CreateAliasInput {
     /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
     /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
     pub alias: std::option::Option<std::string::String>,
+}
+impl CreateAliasInput {
+    /// <p>The identifier of the directory for which to create the alias.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The requested alias.</p>
+    /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
+    /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12901,6 +13587,38 @@ pub struct ConnectDirectoryInput {
     /// <p>The tags to be assigned to AD Connector.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ConnectDirectoryInput {
+    /// <p>The fully qualified name of your self-managed directory, such as
+    /// <code>corp.example.com</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
+    pub fn short_name(&self) -> std::option::Option<&str> {
+        self.short_name.as_deref()
+    }
+    /// <p>The password for your self-managed user account.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>A description for the directory.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The size of the directory.</p>
+    pub fn size(&self) -> std::option::Option<&crate::model::DirectorySize> {
+        self.size.as_ref()
+    }
+    /// <p>A <a>DirectoryConnectSettings</a> object that contains additional information
+    /// for the operation.</p>
+    pub fn connect_settings(&self) -> std::option::Option<&crate::model::DirectoryConnectSettings> {
+        self.connect_settings.as_ref()
+    }
+    /// <p>The tags to be assigned to AD Connector.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectDirectoryInput");
@@ -12924,6 +13642,16 @@ pub struct CancelSchemaExtensionInput {
     /// <p>The identifier of the schema extension that will be canceled.</p>
     pub schema_extension_id: std::option::Option<std::string::String>,
 }
+impl CancelSchemaExtensionInput {
+    /// <p>The identifier of the directory whose schema extension will be canceled.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The identifier of the schema extension that will be canceled.</p>
+    pub fn schema_extension_id(&self) -> std::option::Option<&str> {
+        self.schema_extension_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelSchemaExtensionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelSchemaExtensionInput");
@@ -12941,6 +13669,16 @@ pub struct AddTagsToResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToResourceInput {
+    /// <p>Identifier (ID) for the directory to which to add the tag.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The tags to be assigned to the directory.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12962,6 +13700,21 @@ pub struct AddRegionInput {
     pub region_name: std::option::Option<std::string::String>,
     /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
+}
+impl AddRegionInput {
+    /// <p>The identifier of the directory to which you want to add Region replication.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the Region where you want to add domain controllers for replication. For
+    /// example, <code>us-east-1</code>.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
+        self.vpc_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for AddRegionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13053,6 +13806,89 @@ pub struct AddIpRoutesInput {
     /// publicly.</p>
     pub update_security_group_for_directory_controllers: bool,
 }
+impl AddIpRoutesInput {
+    /// <p>Identifier (ID) of the directory to which to add the address block.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP
+    /// address block of the DNS server used for your self-managed domain.</p>
+    pub fn ip_routes(&self) -> std::option::Option<&[crate::model::IpRoute]> {
+        self.ip_routes.as_deref()
+    }
+    /// <p>If set to true, updates the inbound and outbound rules of the security group that has
+    /// the description: "Amazon Web Services created security group for <i>directory ID</i>
+    /// directory controllers." Following are the new rules: </p>
+    /// <p>Inbound:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
+    /// 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
+    /// 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// <li>
+    /// <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p></p>
+    /// <p>Outbound:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p>
+    /// </li>
+    /// </ul>
+    /// <p>These security rules impact an internal network interface that is not exposed
+    /// publicly.</p>
+    pub fn update_security_group_for_directory_controllers(&self) -> bool {
+        self.update_security_group_for_directory_controllers
+    }
+}
 impl std::fmt::Debug for AddIpRoutesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddIpRoutesInput");
@@ -13073,6 +13909,13 @@ pub struct AcceptSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
     /// different for each directory owner account. </p>
     pub shared_directory_id: std::option::Option<std::string::String>,
+}
+impl AcceptSharedDirectoryInput {
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
+    /// different for each directory owner account. </p>
+    pub fn shared_directory_id(&self) -> std::option::Option<&str> {
+        self.shared_directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptSharedDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

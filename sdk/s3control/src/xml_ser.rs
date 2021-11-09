@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_access_point_input(
     input: &crate::input::CreateAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.bucket {
@@ -19,21 +19,22 @@ pub fn serialize_structure_crate_input_create_access_point_input(
         crate::xml_ser::serialize_structure_crate_model_public_access_block_configuration(
             &var_2,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_3) = &input.vpc_configuration {
         let inner_writer = scope
             .start_el("VpcConfiguration")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc_configuration(&var_3, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_vpc_configuration(&var_3, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_access_point_for_object_lambda_input(
     input: &crate::input::CreateAccessPointForObjectLambdaInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.configuration {
@@ -43,14 +44,15 @@ pub fn serialize_structure_crate_input_create_access_point_for_object_lambda_inp
         crate::xml_ser::serialize_structure_crate_model_object_lambda_configuration(
             &var_4,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_create_bucket_configuration(
     input: &crate::model::CreateBucketConfiguration,
-) -> std::result::Result<std::vec::Vec<u8>, String> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -58,7 +60,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_cr
         let mut root = writer
             .start_el("CreateBucketConfiguration")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_create_bucket_configuration(&&input, root)
+        crate::xml_ser::serialize_structure_crate_model_create_bucket_configuration(&&input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -66,7 +68,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_cr
 pub fn serialize_structure_crate_input_create_job_input(
     input: &crate::input::CreateJobInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_5) = &input.client_request_token {
@@ -94,13 +96,13 @@ pub fn serialize_structure_crate_input_create_job_input(
         let inner_writer = scope
             .start_el("Manifest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_job_manifest(&var_8, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_job_manifest(&var_8, inner_writer)?
     }
     if let Some(var_9) = &input.operation {
         let inner_writer = scope
             .start_el("Operation")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_job_operation(&var_9, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_job_operation(&var_9, inner_writer)?
     }
     if let Some(var_10) = &input.priority {
         let mut inner_writer = scope
@@ -113,7 +115,7 @@ pub fn serialize_structure_crate_input_create_job_input(
         let inner_writer = scope
             .start_el("Report")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_job_report(&var_11, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_job_report(&var_11, inner_writer)?
     }
     if let Some(var_12) = &input.role_arn {
         let mut inner_writer = scope
@@ -132,17 +134,18 @@ pub fn serialize_structure_crate_input_create_job_input(
                 let inner_writer = inner_writer
                     .start_el("member")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_14, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_14, inner_writer)?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_multi_region_access_point_input(
     input: &crate::input::CreateMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_15) = &input.client_token {
@@ -159,15 +162,16 @@ pub fn serialize_structure_crate_input_create_multi_region_access_point_input(
         crate::xml_ser::serialize_structure_crate_model_create_multi_region_access_point_input(
             &var_16,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_multi_region_access_point_input(
     input: &crate::input::DeleteMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_17) = &input.client_token {
@@ -184,15 +188,16 @@ pub fn serialize_structure_crate_input_delete_multi_region_access_point_input(
         crate::xml_ser::serialize_structure_crate_model_delete_multi_region_access_point_input(
             &var_18,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_access_point_configuration_for_object_lambda_input(
     input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_19) = &input.configuration {
@@ -202,15 +207,16 @@ pub fn serialize_structure_crate_input_put_access_point_configuration_for_object
         crate::xml_ser::serialize_structure_crate_model_object_lambda_configuration(
             &var_19,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_access_point_policy_input(
     input: &crate::input::PutAccessPointPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_20) = &input.policy {
@@ -221,12 +227,13 @@ pub fn serialize_structure_crate_input_put_access_point_policy_input(
         inner_writer.data(var_20.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_access_point_policy_for_object_lambda_input(
     input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_21) = &input.policy {
@@ -237,11 +244,12 @@ pub fn serialize_structure_crate_input_put_access_point_policy_for_object_lambda
         inner_writer.data(var_21.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_configuration_input_lifecycle_configuration(
     input: &crate::model::LifecycleConfiguration,
-) -> std::result::Result<std::vec::Vec<u8>, String> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -249,7 +257,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_c
         let mut root = writer
             .start_el("LifecycleConfiguration")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_lifecycle_configuration(&&input, root)
+        crate::xml_ser::serialize_structure_crate_model_lifecycle_configuration(&&input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -257,7 +265,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_c
 pub fn serialize_structure_crate_input_put_bucket_policy_input(
     input: &crate::input::PutBucketPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_22) = &input.policy {
@@ -268,11 +276,12 @@ pub fn serialize_structure_crate_input_put_bucket_policy_input(
         inner_writer.data(var_22.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_input_tagging(
     input: &crate::model::Tagging,
-) -> std::result::Result<std::vec::Vec<u8>, String> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -280,7 +289,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_inp
         let mut root = writer
             .start_el("Tagging")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_tagging(&&input, root)
+        crate::xml_ser::serialize_structure_crate_model_tagging(&&input, root)?
     }
     Ok(out.into_bytes())
 }
@@ -288,7 +297,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_inp
 pub fn serialize_structure_crate_input_put_job_tagging_input(
     input: &crate::input::PutJobTaggingInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_23) = &input.tags {
@@ -301,17 +310,18 @@ pub fn serialize_structure_crate_input_put_job_tagging_input(
                 let inner_writer = inner_writer
                     .start_el("member")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_24, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_24, inner_writer)?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_multi_region_access_point_policy_input(
     input: &crate::input::PutMultiRegionAccessPointPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_25) = &input.client_token {
@@ -328,14 +338,15 @@ pub fn serialize_structure_crate_input_put_multi_region_access_point_policy_inpu
         crate::xml_ser::serialize_structure_crate_model_put_multi_region_access_point_policy_input(
             &var_26,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_put_public_access_block_input_public_access_block_configuration(
     input: &crate::model::PublicAccessBlockConfiguration,
-) -> std::result::Result<std::vec::Vec<u8>, String> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -345,7 +356,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_public_access_bloc
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_crate_model_public_access_block_configuration(
             &&input, root,
-        )
+        )?
     }
     Ok(out.into_bytes())
 }
@@ -353,7 +364,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_public_access_bloc
 pub fn serialize_structure_crate_input_put_storage_lens_configuration_input(
     input: &crate::input::PutStorageLensConfigurationInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_27) = &input.storage_lens_configuration {
@@ -363,7 +374,7 @@ pub fn serialize_structure_crate_input_put_storage_lens_configuration_input(
         crate::xml_ser::serialize_structure_crate_model_storage_lens_configuration(
             &var_27,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_28) = &input.tags {
         let mut inner_writer = scope
@@ -378,17 +389,18 @@ pub fn serialize_structure_crate_input_put_storage_lens_configuration_input(
                 crate::xml_ser::serialize_structure_crate_model_storage_lens_tag(
                     &list_item_29,
                     inner_writer,
-                )
+                )?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_storage_lens_configuration_tagging_input(
     input: &crate::input::PutStorageLensConfigurationTaggingInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_30) = &input.tags {
@@ -404,17 +416,18 @@ pub fn serialize_structure_crate_input_put_storage_lens_configuration_tagging_in
                 crate::xml_ser::serialize_structure_crate_model_storage_lens_tag(
                     &list_item_31,
                     inner_writer,
-                )
+                )?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_public_access_block_configuration(
     input: &crate::model::PublicAccessBlockConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.block_public_acls {
@@ -451,12 +464,13 @@ pub fn serialize_structure_crate_model_public_access_block_configuration(
         );
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_vpc_configuration(
     input: &crate::model::VpcConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_32) = &input.vpc_id {
@@ -467,12 +481,13 @@ pub fn serialize_structure_crate_model_vpc_configuration(
         inner_writer.data(var_32.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_object_lambda_configuration(
     input: &crate::model::ObjectLambdaConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_33) = &input.supporting_access_point {
@@ -516,17 +531,18 @@ pub fn serialize_structure_crate_model_object_lambda_configuration(
                 let inner_writer = inner_writer
                     .start_el("TransformationConfiguration")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_object_lambda_transformation_configuration(&list_item_37, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_object_lambda_transformation_configuration(&list_item_37, inner_writer)?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_create_bucket_configuration(
     input: &crate::model::CreateBucketConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_38) = &input.location_constraint {
@@ -537,33 +553,38 @@ pub fn serialize_structure_crate_model_create_bucket_configuration(
         inner_writer.data(var_38.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_job_manifest(
     input: &crate::model::JobManifest,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_39) = &input.spec {
         let inner_writer = scope
             .start_el("Spec")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_job_manifest_spec(&var_39, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_job_manifest_spec(&var_39, inner_writer)?
     }
     if let Some(var_40) = &input.location {
         let inner_writer = scope
             .start_el("Location")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_job_manifest_location(&var_40, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_job_manifest_location(
+            &var_40,
+            inner_writer,
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_job_operation(
     input: &crate::model::JobOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_41) = &input.lambda_invoke {
@@ -573,7 +594,7 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_lambda_invoke_operation(
             &var_41,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_42) = &input.s3_put_object_copy {
         let inner_writer = scope
@@ -582,7 +603,7 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_copy_object_operation(
             &var_42,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_43) = &input.s3_put_object_acl {
         let inner_writer = scope
@@ -591,7 +612,7 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_set_object_acl_operation(
             &var_43,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_44) = &input.s3_put_object_tagging {
         let inner_writer = scope
@@ -600,7 +621,7 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_set_object_tagging_operation(
             &var_44,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_45) = &input.s3_delete_object_tagging {
         let inner_writer = scope
@@ -609,7 +630,7 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_delete_object_tagging_operation(
             &var_45,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_46) = &input.s3_initiate_restore_object {
         let inner_writer = scope
@@ -618,7 +639,7 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_initiate_restore_object_operation(
             &var_46,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_47) = &input.s3_put_object_legal_hold {
         let inner_writer = scope
@@ -627,7 +648,7 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_set_object_legal_hold_operation(
             &var_47,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_48) = &input.s3_put_object_retention {
         let inner_writer = scope
@@ -636,15 +657,16 @@ pub fn serialize_structure_crate_model_job_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_set_object_retention_operation(
             &var_48,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_job_report(
     input: &crate::model::JobReport,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_49) = &input.bucket {
@@ -683,12 +705,13 @@ pub fn serialize_structure_crate_model_job_report(
         inner_writer.data(var_52.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_tag(
     input: &crate::model::S3Tag,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_53) = &input.key {
@@ -706,12 +729,13 @@ pub fn serialize_structure_crate_model_s3_tag(
         inner_writer.data(var_54.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_create_multi_region_access_point_input(
     input: &crate::model::CreateMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_55) = &input.name {
@@ -728,7 +752,7 @@ pub fn serialize_structure_crate_model_create_multi_region_access_point_input(
         crate::xml_ser::serialize_structure_crate_model_public_access_block_configuration(
             &var_56,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_57) = &input.regions {
         let mut inner_writer = scope
@@ -740,17 +764,18 @@ pub fn serialize_structure_crate_model_create_multi_region_access_point_input(
                 let inner_writer = inner_writer
                     .start_el("Region")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_region(&list_item_58, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_region(&list_item_58, inner_writer)?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_delete_multi_region_access_point_input(
     input: &crate::model::DeleteMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_59) = &input.name {
@@ -761,12 +786,13 @@ pub fn serialize_structure_crate_model_delete_multi_region_access_point_input(
         inner_writer.data(var_59.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_lifecycle_configuration(
     input: &crate::model::LifecycleConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_60) = &input.rules {
@@ -782,17 +808,18 @@ pub fn serialize_structure_crate_model_lifecycle_configuration(
                 crate::xml_ser::serialize_structure_crate_model_lifecycle_rule(
                     &list_item_61,
                     inner_writer,
-                )
+                )?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tagging(
     input: &crate::model::Tagging,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_62) = &input.tag_set {
@@ -805,17 +832,18 @@ pub fn serialize_structure_crate_model_tagging(
                 let inner_writer = inner_writer
                     .start_el("member")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_63, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_63, inner_writer)?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_put_multi_region_access_point_policy_input(
     input: &crate::model::PutMultiRegionAccessPointPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_64) = &input.name {
@@ -833,12 +861,13 @@ pub fn serialize_structure_crate_model_put_multi_region_access_point_policy_inpu
         inner_writer.data(var_65.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_storage_lens_configuration(
     input: &crate::model::StorageLensConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_66) = &input.id {
@@ -852,19 +881,19 @@ pub fn serialize_structure_crate_model_storage_lens_configuration(
         let inner_writer = scope
             .start_el("AccountLevel")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_account_level(&var_67, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_account_level(&var_67, inner_writer)?
     }
     if let Some(var_68) = &input.include {
         let inner_writer = scope
             .start_el("Include")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_include(&var_68, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_include(&var_68, inner_writer)?
     }
     if let Some(var_69) = &input.exclude {
         let inner_writer = scope
             .start_el("Exclude")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_exclude(&var_69, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_exclude(&var_69, inner_writer)?
     }
     if let Some(var_70) = &input.data_export {
         let inner_writer = scope
@@ -873,7 +902,7 @@ pub fn serialize_structure_crate_model_storage_lens_configuration(
         crate::xml_ser::serialize_structure_crate_model_storage_lens_data_export(
             &var_70,
             inner_writer,
-        )
+        )?
     }
     {
         let mut inner_writer = scope
@@ -886,7 +915,7 @@ pub fn serialize_structure_crate_model_storage_lens_configuration(
         let inner_writer = scope
             .start_el("AwsOrg")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_storage_lens_aws_org(&var_71, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_storage_lens_aws_org(&var_71, inner_writer)?
     }
     if let Some(var_72) = &input.storage_lens_arn {
         let mut inner_writer = scope
@@ -896,12 +925,13 @@ pub fn serialize_structure_crate_model_storage_lens_configuration(
         inner_writer.data(var_72.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_storage_lens_tag(
     input: &crate::model::StorageLensTag,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_73) = &input.key {
@@ -919,12 +949,13 @@ pub fn serialize_structure_crate_model_storage_lens_tag(
         inner_writer.data(var_74.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_object_lambda_transformation_configuration(
     input: &crate::model::ObjectLambdaTransformationConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_75) = &input.actions {
@@ -949,15 +980,16 @@ pub fn serialize_structure_crate_model_object_lambda_transformation_configuratio
         crate::xml_ser::serialize_union_crate_model_object_lambda_content_transformation(
             &var_77,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_job_manifest_spec(
     input: &crate::model::JobManifestSpec,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_78) = &input.format {
@@ -983,12 +1015,13 @@ pub fn serialize_structure_crate_model_job_manifest_spec(
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_job_manifest_location(
     input: &crate::model::JobManifestLocation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_81) = &input.object_arn {
@@ -1013,12 +1046,13 @@ pub fn serialize_structure_crate_model_job_manifest_location(
         inner_writer.data(var_83.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_lambda_invoke_operation(
     input: &crate::model::LambdaInvokeOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_84) = &input.function_arn {
@@ -1029,12 +1063,13 @@ pub fn serialize_structure_crate_model_lambda_invoke_operation(
         inner_writer.data(var_84.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_copy_object_operation(
     input: &crate::model::S3CopyObjectOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_85) = &input.target_resource {
@@ -1064,7 +1099,7 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
                 crate::xml_ser::serialize_structure_crate_model_s3_grant(
                     &list_item_88,
                     inner_writer,
-                )
+                )?
             }
         }
     }
@@ -1090,7 +1125,7 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
         let inner_writer = scope
             .start_el("NewObjectMetadata")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_object_metadata(&var_91, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_s3_object_metadata(&var_91, inner_writer)?
     }
     if let Some(var_92) = &input.new_object_tagging {
         let mut inner_writer = scope
@@ -1102,7 +1137,7 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
                 let inner_writer = inner_writer
                     .start_el("member")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_93, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_93, inner_writer)?
             }
         }
     }
@@ -1187,12 +1222,13 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
             .data(aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_set_object_acl_operation(
     input: &crate::model::S3SetObjectAclOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_102) = &input.access_control_policy {
@@ -1202,15 +1238,16 @@ pub fn serialize_structure_crate_model_s3_set_object_acl_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_access_control_policy(
             &var_102,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_set_object_tagging_operation(
     input: &crate::model::S3SetObjectTaggingOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_103) = &input.tag_set {
@@ -1223,27 +1260,32 @@ pub fn serialize_structure_crate_model_s3_set_object_tagging_operation(
                 let inner_writer = inner_writer
                     .start_el("member")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_104, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_s3_tag(
+                    &list_item_104,
+                    inner_writer,
+                )?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_delete_object_tagging_operation(
     input: &crate::model::S3DeleteObjectTaggingOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     let _ = input;
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_initiate_restore_object_operation(
     input: &crate::model::S3InitiateRestoreObjectOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_105) = &input.expiration_in_days {
@@ -1261,12 +1303,13 @@ pub fn serialize_structure_crate_model_s3_initiate_restore_object_operation(
         inner_writer.data(var_106.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_set_object_legal_hold_operation(
     input: &crate::model::S3SetObjectLegalHoldOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_107) = &input.legal_hold {
@@ -1276,15 +1319,16 @@ pub fn serialize_structure_crate_model_s3_set_object_legal_hold_operation(
         crate::xml_ser::serialize_structure_crate_model_s3_object_lock_legal_hold(
             &var_107,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_set_object_retention_operation(
     input: &crate::model::S3SetObjectRetentionOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_108) = &input.bypass_governance_retention {
@@ -1298,15 +1342,16 @@ pub fn serialize_structure_crate_model_s3_set_object_retention_operation(
         let inner_writer = scope
             .start_el("Retention")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_retention(&var_109, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_s3_retention(&var_109, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_region(
     input: &crate::model::Region,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_110) = &input.bucket {
@@ -1317,19 +1362,23 @@ pub fn serialize_structure_crate_model_region(
         inner_writer.data(var_110.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_lifecycle_rule(
     input: &crate::model::LifecycleRule,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_111) = &input.expiration {
         let inner_writer = scope
             .start_el("Expiration")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_lifecycle_expiration(&var_111, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_lifecycle_expiration(
+            &var_111,
+            inner_writer,
+        )?
     }
     if let Some(var_112) = &input.id {
         let mut inner_writer = scope
@@ -1345,7 +1394,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
         crate::xml_ser::serialize_structure_crate_model_lifecycle_rule_filter(
             &var_113,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_114) = &input.status {
         let mut inner_writer = scope
@@ -1367,7 +1416,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
                 crate::xml_ser::serialize_structure_crate_model_transition(
                     &list_item_116,
                     inner_writer,
-                )
+                )?
             }
         }
     }
@@ -1384,7 +1433,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
                 crate::xml_ser::serialize_structure_crate_model_noncurrent_version_transition(
                     &list_item_118,
                     inner_writer,
-                )
+                )?
             }
         }
     }
@@ -1395,7 +1444,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
         crate::xml_ser::serialize_structure_crate_model_noncurrent_version_expiration(
             &var_119,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_120) = &input.abort_incomplete_multipart_upload {
         let inner_writer = scope
@@ -1404,36 +1453,38 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
         crate::xml_ser::serialize_structure_crate_model_abort_incomplete_multipart_upload(
             &var_120,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_account_level(
     input: &crate::model::AccountLevel,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_121) = &input.activity_metrics {
         let inner_writer = scope
             .start_el("ActivityMetrics")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_activity_metrics(&var_121, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_activity_metrics(&var_121, inner_writer)?
     }
     if let Some(var_122) = &input.bucket_level {
         let inner_writer = scope
             .start_el("BucketLevel")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_bucket_level(&var_122, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_bucket_level(&var_122, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_include(
     input: &crate::model::Include,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_123) = &input.buckets {
@@ -1467,12 +1518,13 @@ pub fn serialize_structure_crate_model_include(
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_exclude(
     input: &crate::model::Exclude,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_127) = &input.buckets {
@@ -1506,12 +1558,13 @@ pub fn serialize_structure_crate_model_exclude(
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_storage_lens_data_export(
     input: &crate::model::StorageLensDataExport,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_131) = &input.s3_bucket_destination {
@@ -1521,15 +1574,16 @@ pub fn serialize_structure_crate_model_storage_lens_data_export(
         crate::xml_ser::serialize_structure_crate_model_s3_bucket_destination(
             &var_131,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_storage_lens_aws_org(
     input: &crate::model::StorageLensAwsOrg,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_132) = &input.arn {
@@ -1540,12 +1594,13 @@ pub fn serialize_structure_crate_model_storage_lens_aws_org(
         inner_writer.data(var_132.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_union_crate_model_object_lambda_content_transformation(
     input: &crate::model::ObjectLambdaContentTransformation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::model::ObjectLambdaContentTransformation::AwsLambda(inner) => {
@@ -1555,22 +1610,30 @@ pub fn serialize_union_crate_model_object_lambda_content_transformation(
             crate::xml_ser::serialize_structure_crate_model_aws_lambda_transformation(
                 &inner,
                 inner_writer,
+            )?
+        }
+        crate::model::ObjectLambdaContentTransformation::Unknown => {
+            return Err(
+                aws_smithy_http::operation::SerializationError::unknown_variant(
+                    "ObjectLambdaContentTransformation",
+                ),
             )
         }
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_grant(
     input: &crate::model::S3Grant,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_133) = &input.grantee {
         let inner_writer = scope
             .start_el("Grantee")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_grantee(&var_133, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_s3_grantee(&var_133, inner_writer)?
     }
     if let Some(var_134) = &input.permission {
         let mut inner_writer = scope
@@ -1580,12 +1643,13 @@ pub fn serialize_structure_crate_model_s3_grant(
         inner_writer.data(var_134.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_object_metadata(
     input: &crate::model::S3ObjectMetadata,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_135) = &input.cache_control {
@@ -1687,12 +1751,13 @@ pub fn serialize_structure_crate_model_s3_object_metadata(
         inner_writer.data(var_146.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_access_control_policy(
     input: &crate::model::S3AccessControlPolicy,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_147) = &input.access_control_list {
@@ -1702,7 +1767,7 @@ pub fn serialize_structure_crate_model_s3_access_control_policy(
         crate::xml_ser::serialize_structure_crate_model_s3_access_control_list(
             &var_147,
             inner_writer,
-        )
+        )?
     }
     if let Some(var_148) = &input.canned_access_control_list {
         let mut inner_writer = scope
@@ -1712,12 +1777,13 @@ pub fn serialize_structure_crate_model_s3_access_control_policy(
         inner_writer.data(var_148.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_object_lock_legal_hold(
     input: &crate::model::S3ObjectLockLegalHold,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_149) = &input.status {
@@ -1728,12 +1794,13 @@ pub fn serialize_structure_crate_model_s3_object_lock_legal_hold(
         inner_writer.data(var_149.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_retention(
     input: &crate::model::S3Retention,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_150) = &input.retain_until_date {
@@ -1755,12 +1822,13 @@ pub fn serialize_structure_crate_model_s3_retention(
         inner_writer.data(var_151.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_lifecycle_expiration(
     input: &crate::model::LifecycleExpiration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_152) = &input.date {
@@ -1791,12 +1859,13 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
         );
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_lifecycle_rule_filter(
     input: &crate::model::LifecycleRuleFilter,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_153) = &input.prefix {
@@ -1810,7 +1879,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule_filter(
         let inner_writer = scope
             .start_el("Tag")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_tag(&var_154, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_s3_tag(&var_154, inner_writer)?
     }
     if let Some(var_155) = &input.and {
         let inner_writer = scope
@@ -1819,15 +1888,16 @@ pub fn serialize_structure_crate_model_lifecycle_rule_filter(
         crate::xml_ser::serialize_structure_crate_model_lifecycle_rule_and_operator(
             &var_155,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_transition(
     input: &crate::model::Transition,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_156) = &input.date {
@@ -1856,12 +1926,13 @@ pub fn serialize_structure_crate_model_transition(
         inner_writer.data(var_157.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_noncurrent_version_transition(
     input: &crate::model::NoncurrentVersionTransition,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.noncurrent_days != 0 {
@@ -1880,12 +1951,13 @@ pub fn serialize_structure_crate_model_noncurrent_version_transition(
         inner_writer.data(var_158.as_str());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_noncurrent_version_expiration(
     input: &crate::model::NoncurrentVersionExpiration,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.noncurrent_days != 0 {
@@ -1897,12 +1969,13 @@ pub fn serialize_structure_crate_model_noncurrent_version_expiration(
             .data(aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_abort_incomplete_multipart_upload(
     input: &crate::model::AbortIncompleteMultipartUpload,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.days_after_initiation != 0 {
@@ -1914,12 +1987,13 @@ pub fn serialize_structure_crate_model_abort_incomplete_multipart_upload(
             .data(aws_smithy_types::primitive::Encoder::from(input.days_after_initiation).encode());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_activity_metrics(
     input: &crate::model::ActivityMetrics,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {
@@ -1930,33 +2004,35 @@ pub fn serialize_structure_crate_model_activity_metrics(
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.is_enabled).encode());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_bucket_level(
     input: &crate::model::BucketLevel,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_159) = &input.activity_metrics {
         let inner_writer = scope
             .start_el("ActivityMetrics")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_activity_metrics(&var_159, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_activity_metrics(&var_159, inner_writer)?
     }
     if let Some(var_160) = &input.prefix_level {
         let inner_writer = scope
             .start_el("PrefixLevel")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_prefix_level(&var_160, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_prefix_level(&var_160, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_bucket_destination(
     input: &crate::model::S3BucketDestination,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_161) = &input.format {
@@ -2001,15 +2077,16 @@ pub fn serialize_structure_crate_model_s3_bucket_destination(
         crate::xml_ser::serialize_structure_crate_model_storage_lens_data_export_encryption(
             &var_166,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_aws_lambda_transformation(
     input: &crate::model::AwsLambdaTransformation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_167) = &input.function_arn {
@@ -2027,12 +2104,13 @@ pub fn serialize_structure_crate_model_aws_lambda_transformation(
         inner_writer.data(var_168.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_grantee(
     input: &crate::model::S3Grantee,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_169) = &input.type_identifier {
@@ -2057,19 +2135,20 @@ pub fn serialize_structure_crate_model_s3_grantee(
         inner_writer.data(var_171.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_access_control_list(
     input: &crate::model::S3AccessControlList,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_172) = &input.owner {
         let inner_writer = scope
             .start_el("Owner")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_object_owner(&var_172, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_s3_object_owner(&var_172, inner_writer)?
     }
     if let Some(var_173) = &input.grants {
         let mut inner_writer = scope
@@ -2084,17 +2163,18 @@ pub fn serialize_structure_crate_model_s3_access_control_list(
                 crate::xml_ser::serialize_structure_crate_model_s3_grant(
                     &list_item_174,
                     inner_writer,
-                )
+                )?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
     input: &crate::model::LifecycleRuleAndOperator,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_175) = &input.prefix {
@@ -2114,17 +2194,21 @@ pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
                 let inner_writer = inner_writer
                     .start_el("member")
                     .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-                crate::xml_ser::serialize_structure_crate_model_s3_tag(&list_item_177, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_s3_tag(
+                    &list_item_177,
+                    inner_writer,
+                )?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_prefix_level(
     input: &crate::model::PrefixLevel,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_178) = &input.storage_metrics {
@@ -2134,36 +2218,38 @@ pub fn serialize_structure_crate_model_prefix_level(
         crate::xml_ser::serialize_structure_crate_model_prefix_level_storage_metrics(
             &var_178,
             inner_writer,
-        )
+        )?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_storage_lens_data_export_encryption(
     input: &crate::model::StorageLensDataExportEncryption,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_179) = &input.sses3 {
         let inner_writer = scope
             .start_el("SSE-S3")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_sses3(&var_179, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_sses3(&var_179, inner_writer)?
     }
     if let Some(var_180) = &input.ssekms {
         let inner_writer = scope
             .start_el("SSE-KMS")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_ssekms(&var_180, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_ssekms(&var_180, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_object_owner(
     input: &crate::model::S3ObjectOwner,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_181) = &input.id {
@@ -2181,12 +2267,13 @@ pub fn serialize_structure_crate_model_s3_object_owner(
         inner_writer.data(var_182.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_prefix_level_storage_metrics(
     input: &crate::model::PrefixLevelStorageMetrics,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {
@@ -2200,25 +2287,27 @@ pub fn serialize_structure_crate_model_prefix_level_storage_metrics(
         let inner_writer = scope
             .start_el("SelectionCriteria")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::xml_ser::serialize_structure_crate_model_selection_criteria(&var_183, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_selection_criteria(&var_183, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_sses3(
     input: &crate::model::Sses3,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     let _ = input;
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_ssekms(
     input: &crate::model::Ssekms,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_184) = &input.key_id {
@@ -2229,12 +2318,13 @@ pub fn serialize_structure_crate_model_ssekms(
         inner_writer.data(var_184.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_selection_criteria(
     input: &crate::model::SelectionCriteria,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_185) = &input.delimiter {
@@ -2261,4 +2351,5 @@ pub fn serialize_structure_crate_model_selection_criteria(
         );
     }
     scope.finish();
+    Ok(())
 }

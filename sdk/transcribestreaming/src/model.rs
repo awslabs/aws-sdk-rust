@@ -228,6 +228,15 @@ pub enum TranscriptResultStream {
     /// stream, or it can be the entire transcription of that portion of the audio stream.
     /// </p>
     TranscriptEvent(crate::model::TranscriptEvent),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl TranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
@@ -246,6 +255,10 @@ impl TranscriptResultStream {
     pub fn is_transcript_event(&self) -> bool {
         self.as_transcript_event().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Represents a set of transcription results from the server to the client. It contains one
@@ -256,6 +269,13 @@ pub struct TranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the items
     /// in the results list.</p>
     pub transcript: std::option::Option<crate::model::Transcript>,
+}
+impl TranscriptEvent {
+    /// <p>The transcription of the audio stream. The transcription is composed of all of the items
+    /// in the results list.</p>
+    pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
+        self.transcript.as_ref()
+    }
 }
 impl std::fmt::Debug for TranscriptEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -311,6 +331,14 @@ pub struct Transcript {
     /// <a>Result</a> objects that contain the results of transcribing a portion of the
     /// input audio stream. The array can be empty.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::Result>>,
+}
+impl Transcript {
+    /// <p>
+    /// <a>Result</a> objects that contain the results of transcribing a portion of the
+    /// input audio stream. The array can be empty.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::Result]> {
+        self.results.as_deref()
+    }
 }
 impl std::fmt::Debug for Transcript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -392,6 +420,42 @@ pub struct Result {
     /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
     /// channel in your audio stream.</p>
     pub channel_id: std::option::Option<std::string::String>,
+}
+impl Result {
+    /// <p>A unique identifier for the result. </p>
+    pub fn result_id(&self) -> std::option::Option<&str> {
+        self.result_id.as_deref()
+    }
+    /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the
+    /// result.</p>
+    pub fn start_time(&self) -> f64 {
+        self.start_time
+    }
+    /// <p>The offset in seconds from the beginning of the audio stream to the end of the
+    /// result.</p>
+    pub fn end_time(&self) -> f64 {
+        self.end_time
+    }
+    /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio.
+    /// Transcription results are returned based on these segments. </p>
+    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has
+    /// additional transcription data to send, <code>false</code> to indicate that this is the last
+    /// transcription result for the segment.</p>
+    pub fn is_partial(&self) -> bool {
+        self.is_partial
+    }
+    /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one
+    /// <code>item</code> that contains the result of the transcription.</p>
+    pub fn alternatives(&self) -> std::option::Option<&[crate::model::Alternative]> {
+        self.alternatives.as_deref()
+    }
+    /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio
+    /// channel separately.</p>
+    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
+    /// channel in your audio stream.</p>
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Result {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -539,6 +603,20 @@ pub struct Alternative {
     /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
+impl Alternative {
+    /// <p>The text that was transcribed from the audio.</p>
+    pub fn transcript(&self) -> std::option::Option<&str> {
+        self.transcript.as_deref()
+    }
+    /// <p>One or more alternative interpretations of the input audio. </p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Item]> {
+        self.items.as_deref()
+    }
+    /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
+}
 impl std::fmt::Debug for Alternative {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Alternative");
@@ -640,6 +718,32 @@ pub struct Entity {
     pub content: std::option::Option<std::string::String>,
     /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
     pub confidence: std::option::Option<f64>,
+}
+impl Entity {
+    /// <p>The start time of speech that was identified as PII.</p>
+    pub fn start_time(&self) -> f64 {
+        self.start_time
+    }
+    /// <p>The end time of speech that was identified as PII.</p>
+    pub fn end_time(&self) -> f64 {
+        self.end_time
+    }
+    /// <p>The category of of information identified in this entity; for example, PII.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+    pub fn confidence(&self) -> std::option::Option<f64> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for Entity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -776,6 +880,49 @@ pub struct Item {
     /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in
     /// the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
     pub stable: std::option::Option<bool>,
+}
+impl Item {
+    /// <p>The offset from the beginning of the audio stream to the beginning of the audio that
+    /// resulted in the item.</p>
+    pub fn start_time(&self) -> f64 {
+        self.start_time
+    }
+    /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in
+    /// the item.</p>
+    pub fn end_time(&self) -> f64 {
+        self.end_time
+    }
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that
+    /// was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was
+    /// interpreted as a pause in the input audio.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The word or punctuation that was recognized in the input audio.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
+    /// for your real-time stream. If <code>true</code> then a word in the item matches your
+    /// vocabulary filter.</p>
+    pub fn vocabulary_filter_match(&self) -> bool {
+        self.vocabulary_filter_match
+    }
+    /// <p>If speaker identification is enabled, shows the speakers identified in the real-time
+    /// stream.</p>
+    pub fn speaker(&self) -> std::option::Option<&str> {
+        self.speaker.as_deref()
+    }
+    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe assigns to each
+    /// word or phrase that it transcribes.</p>
+    pub fn confidence(&self) -> std::option::Option<f64> {
+        self.confidence
+    }
+    /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in
+    /// the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+    pub fn stable(&self) -> std::option::Option<bool> {
+        self.stable
+    }
 }
 impl std::fmt::Debug for Item {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1150,6 +1297,15 @@ pub enum AudioStream {
     /// <p>For more information on stream encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>. For
     /// information on stream encoding in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream-med.html">Event stream encoding</a>.</p>
     AudioEvent(crate::model::AudioEvent),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AudioStream {
     #[allow(irrefutable_let_patterns)]
@@ -1166,6 +1322,10 @@ impl AudioStream {
     pub fn is_audio_event(&self) -> bool {
         self.as_audio_event().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Provides a wrapper for the audio chunks that you are sending.</p>
@@ -1179,6 +1339,13 @@ pub struct AudioEvent {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The
     /// maximum audio chunk size is 32 KB.</p>
     pub audio_chunk: std::option::Option<aws_smithy_types::Blob>,
+}
+impl AudioEvent {
+    /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The
+    /// maximum audio chunk size is 32 KB.</p>
+    pub fn audio_chunk(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.audio_chunk.as_ref()
+    }
 }
 impl std::fmt::Debug for AudioEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1286,6 +1453,15 @@ pub enum MedicalTranscriptResultStream {
     /// audio stream, or it can be the entire transcription of that portion of the audio
     /// stream.</p>
     TranscriptEvent(crate::model::MedicalTranscriptEvent),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl MedicalTranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
@@ -1304,6 +1480,10 @@ impl MedicalTranscriptResultStream {
     pub fn is_transcript_event(&self) -> bool {
         self.as_transcript_event().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Represents a set of transcription results from the server to the client. It contains
@@ -1314,6 +1494,13 @@ pub struct MedicalTranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the
     /// items in the results list.</p>
     pub transcript: std::option::Option<crate::model::MedicalTranscript>,
+}
+impl MedicalTranscriptEvent {
+    /// <p>The transcription of the audio stream. The transcription is composed of all of the
+    /// items in the results list.</p>
+    pub fn transcript(&self) -> std::option::Option<&crate::model::MedicalTranscript> {
+        self.transcript.as_ref()
+    }
 }
 impl std::fmt::Debug for MedicalTranscriptEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1369,6 +1556,14 @@ pub struct MedicalTranscript {
     /// <a>MedicalResult</a> objects that contain the results of transcribing a
     /// portion of the input audio stream. The array can be empty.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
+}
+impl MedicalTranscript {
+    /// <p>
+    /// <a>MedicalResult</a> objects that contain the results of transcribing a
+    /// portion of the input audio stream. The array can be empty.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::MedicalResult]> {
+        self.results.as_deref()
+    }
 }
 impl std::fmt::Debug for MedicalTranscript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1451,6 +1646,43 @@ pub struct MedicalResult {
     /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
     /// channel in your audio stream.</p>
     pub channel_id: std::option::Option<std::string::String>,
+}
+impl MedicalResult {
+    /// <p>A unique identifier for the result.</p>
+    pub fn result_id(&self) -> std::option::Option<&str> {
+        self.result_id.as_deref()
+    }
+    /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the
+    /// result.</p>
+    pub fn start_time(&self) -> f64 {
+        self.start_time
+    }
+    /// <p>The time, in seconds, from the beginning of the audio stream to the end of the
+    /// result.</p>
+    pub fn end_time(&self) -> f64 {
+        self.end_time
+    }
+    /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio.
+    /// Transcription results are returned based on these segments.</p>
+    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has
+    /// additional transcription data to send. The <code>IsPartial</code> field is
+    /// <code>false</code> to indicate that this is the last transcription result for the
+    /// segment.</p>
+    pub fn is_partial(&self) -> bool {
+        self.is_partial
+    }
+    /// <p>A list of possible transcriptions of the audio. Each alternative typically contains
+    /// one <code>Item</code> that contains the result of the transcription.</p>
+    pub fn alternatives(&self) -> std::option::Option<&[crate::model::MedicalAlternative]> {
+        self.alternatives.as_deref()
+    }
+    /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio
+    /// channel separately.</p>
+    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
+    /// channel in your audio stream.</p>
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MedicalResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1602,6 +1834,21 @@ pub struct MedicalAlternative {
     /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>,
 }
+impl MedicalAlternative {
+    /// <p>The text that was transcribed from the audio.</p>
+    pub fn transcript(&self) -> std::option::Option<&str> {
+        self.transcript.as_deref()
+    }
+    /// <p>A list of objects that contains words and punctuation marks that represents one or
+    /// more interpretations of the input audio.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::MedicalItem]> {
+        self.items.as_deref()
+    }
+    /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::MedicalEntity]> {
+        self.entities.as_deref()
+    }
+}
 impl std::fmt::Debug for MedicalAlternative {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MedicalAlternative");
@@ -1706,6 +1953,31 @@ pub struct MedicalEntity {
     /// that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher
     /// confidence in the personal health information that it identified.</p>
     pub confidence: std::option::Option<f64>,
+}
+impl MedicalEntity {
+    /// <p>The start time of the speech that was identified as a medical entity.</p>
+    pub fn start_time(&self) -> f64 {
+        self.start_time
+    }
+    /// <p>The end time of the speech that was identified as a medical entity.</p>
+    pub fn end_time(&self) -> f64 {
+        self.end_time
+    }
+    /// <p>The type of personal health information of the medical entity.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>The word or words in the transcription output that have been identified as a
+    /// medical entity.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information
+    /// that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher
+    /// confidence in the personal health information that it identified.</p>
+    pub fn confidence(&self) -> std::option::Option<f64> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for MedicalEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1833,6 +2105,43 @@ pub struct MedicalItem {
     /// <code>0</code> corresponds to one speaker and the value of <code>1</code>
     /// corresponds to the other speaker.</p>
     pub speaker: std::option::Option<std::string::String>,
+}
+impl MedicalItem {
+    /// <p>The number of seconds into an audio stream that indicates the creation time of an
+    /// item.</p>
+    pub fn start_time(&self) -> f64 {
+        self.start_time
+    }
+    /// <p>The number of seconds into an audio stream that indicates the creation time of an
+    /// item.</p>
+    pub fn end_time(&self) -> f64 {
+        self.end_time
+    }
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
+    /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
+    /// was interpreted as a pause in the input audio, such as a period to indicate the end of a
+    /// sentence.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The word or punctuation mark that was recognized in the input audio.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to
+    /// each word that it transcribes.</p>
+    pub fn confidence(&self) -> std::option::Option<f64> {
+        self.confidence
+    }
+    /// <p>If speaker identification is enabled, shows the integer values that correspond to the
+    /// different speakers identified in the stream. For example, if the value of
+    /// <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>,
+    /// that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of
+    /// <code>0</code> corresponds to one speaker and the value of <code>1</code>
+    /// corresponds to the other speaker.</p>
+    pub fn speaker(&self) -> std::option::Option<&str> {
+        self.speaker.as_deref()
+    }
 }
 impl std::fmt::Debug for MedicalItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

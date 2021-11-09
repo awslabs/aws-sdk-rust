@@ -12,6 +12,20 @@ pub struct UpdateCostCategoryDefinitionOutput {
     /// </p>
     pub effective_start: std::option::Option<std::string::String>,
 }
+impl UpdateCostCategoryDefinitionOutput {
+    /// <p>
+    /// The unique identifier for your Cost Category.
+    /// </p>
+    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+        self.cost_category_arn.as_deref()
+    }
+    /// <p>
+    /// The Cost Category's effective start date.
+    /// </p>
+    pub fn effective_start(&self) -> std::option::Option<&str> {
+        self.effective_start.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCostCategoryDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCostCategoryDefinitionOutput");
@@ -87,6 +101,12 @@ pub struct UpdateAnomalySubscriptionOutput {
     /// <p>A cost anomaly subscription ARN. </p>
     pub subscription_arn: std::option::Option<std::string::String>,
 }
+impl UpdateAnomalySubscriptionOutput {
+    /// <p>A cost anomaly subscription ARN. </p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAnomalySubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAnomalySubscriptionOutput");
@@ -138,6 +158,12 @@ pub struct UpdateAnomalyMonitorOutput {
     /// <p>A cost anomaly monitor ARN. </p>
     pub monitor_arn: std::option::Option<std::string::String>,
 }
+impl UpdateAnomalyMonitorOutput {
+    /// <p>A cost anomaly monitor ARN. </p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAnomalyMonitorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAnomalyMonitorOutput");
@@ -185,6 +211,12 @@ impl UpdateAnomalyMonitorOutput {
 pub struct ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
     pub anomaly_id: std::option::Option<std::string::String>,
+}
+impl ProvideAnomalyFeedbackOutput {
+    /// <p>The ID of the modified cost anomaly. </p>
+    pub fn anomaly_id(&self) -> std::option::Option<&str> {
+        self.anomaly_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ProvideAnomalyFeedbackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -240,6 +272,22 @@ pub struct ListCostCategoryDefinitionsOutput {
     /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCostCategoryDefinitionsOutput {
+    /// <p>
+    /// A reference to a Cost Category containing enough information to identify the Cost Category.
+    /// </p>
+    pub fn cost_category_references(
+        &self,
+    ) -> std::option::Option<&[crate::model::CostCategoryReference]> {
+        self.cost_category_references.as_deref()
+    }
+    /// <p>
+    /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCostCategoryDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -326,6 +374,17 @@ pub struct GetUsageForecastOutput {
     /// this is a list of months.</p>
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
 }
+impl GetUsageForecastOutput {
+    /// <p>How much you're forecasted to use over the forecast period.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::MetricValue> {
+        self.total.as_ref()
+    }
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
+    /// this is a list of months.</p>
+    pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
+        self.forecast_results_by_time.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUsageForecastOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsageForecastOutput");
@@ -407,6 +466,24 @@ pub struct GetTagsOutput {
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of query results.</p>
     pub total_size: std::option::Option<i32>,
+}
+impl GetTagsOutput {
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The tags that match your request.</p>
+    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.tags.as_deref()
+    }
+    /// <p>The number of query results that Amazon Web Services returns at a time.</p>
+    pub fn return_size(&self) -> std::option::Option<i32> {
+        self.return_size
+    }
+    /// <p>The total number of query results.</p>
+    pub fn total_size(&self) -> std::option::Option<i32> {
+        self.total_size
+    }
 }
 impl std::fmt::Debug for GetTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -513,6 +590,26 @@ pub struct GetSavingsPlansUtilizationDetailsOutput {
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetSavingsPlansUtilizationDetailsOutput {
+    /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
+    pub fn savings_plans_utilization_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlansUtilizationDetail]> {
+        self.savings_plans_utilization_details.as_deref()
+    }
+    /// <p>The total Savings Plans utilization, regardless of time period.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::SavingsPlansUtilizationAggregates> {
+        self.total.as_ref()
+    }
+    /// <p>The time period of the request. </p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+        self.time_period.as_ref()
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSavingsPlansUtilizationDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -626,6 +723,18 @@ pub struct GetSavingsPlansUtilizationOutput {
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
 }
+impl GetSavingsPlansUtilizationOutput {
+    /// <p>The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.</p>
+    pub fn savings_plans_utilizations_by_time(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlansUtilizationByTime]> {
+        self.savings_plans_utilizations_by_time.as_deref()
+    }
+    /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::SavingsPlansUtilizationAggregates> {
+        self.total.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSavingsPlansUtilizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSavingsPlansUtilizationOutput");
@@ -710,6 +819,24 @@ pub struct GetSavingsPlansPurchaseRecommendationOutput {
         std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetSavingsPlansPurchaseRecommendationOutput {
+    /// <p>Information regarding this specific recommendation set.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendationMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
+    pub fn savings_plans_purchase_recommendation(
+        &self,
+    ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendation> {
+        self.savings_plans_purchase_recommendation.as_ref()
+    }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSavingsPlansPurchaseRecommendationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -808,6 +935,18 @@ pub struct GetSavingsPlansCoverageOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSavingsPlansCoverageOutput {
+    /// <p>The amount of spend that your Savings Plans covered.</p>
+    pub fn savings_plans_coverages(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlansCoverage]> {
+        self.savings_plans_coverages.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSavingsPlansCoverageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSavingsPlansCoverageOutput");
@@ -894,6 +1033,38 @@ pub struct GetRightsizingRecommendationOutput {
     /// with consideration of existing Savings Plans or RI benefits, or
     /// neither. </p>
     pub configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
+}
+impl GetRightsizingRecommendationOutput {
+    /// <p>Information regarding this specific recommendation set.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::RightsizingRecommendationMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>Summary of this recommendation set.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::RightsizingRecommendationSummary> {
+        self.summary.as_ref()
+    }
+    /// <p>Recommendations to rightsize resources.</p>
+    pub fn rightsizing_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RightsizingRecommendation]> {
+        self.rightsizing_recommendations.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p> Enables you to customize recommendations across two attributes. You can choose to view
+    /// recommendations for instances within the same instance families or across different instance
+    /// families. You can also choose to view your estimated savings associated with recommendations
+    /// with consideration of existing Savings Plans or RI benefits, or
+    /// neither. </p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RightsizingRecommendationConfiguration> {
+        self.configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRightsizingRecommendationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1039,6 +1210,20 @@ pub struct GetReservationUtilizationOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetReservationUtilizationOutput {
+    /// <p>The amount of time that you used your RIs.</p>
+    pub fn utilizations_by_time(&self) -> std::option::Option<&[crate::model::UtilizationByTime]> {
+        self.utilizations_by_time.as_deref()
+    }
+    /// <p>The total amount of time that you used your RIs.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
+        self.total.as_ref()
+    }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReservationUtilizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReservationUtilizationOutput");
@@ -1136,6 +1321,24 @@ pub struct GetReservationPurchaseRecommendationOutput {
         std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>,
     /// <p>The pagination token for the next set of retrievable results.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetReservationPurchaseRecommendationOutput {
+    /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationPurchaseRecommendationMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>Recommendations for reservations to purchase.</p>
+    pub fn recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservationPurchaseRecommendation]> {
+        self.recommendations.as_deref()
+    }
+    /// <p>The pagination token for the next set of retrievable results.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReservationPurchaseRecommendationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1239,6 +1442,20 @@ pub struct GetReservationCoverageOutput {
     pub total: std::option::Option<crate::model::Coverage>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetReservationCoverageOutput {
+    /// <p>The amount of time that your reservations covered.</p>
+    pub fn coverages_by_time(&self) -> std::option::Option<&[crate::model::CoverageByTime]> {
+        self.coverages_by_time.as_deref()
+    }
+    /// <p>The total amount of instance usage that a reservation covered.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::Coverage> {
+        self.total.as_ref()
+    }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReservationCoverageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1440,6 +1657,133 @@ pub struct GetDimensionValuesOutput {
     pub total_size: std::option::Option<i32>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetDimensionValuesOutput {
+    /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
+    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
+    /// dimensions for searching:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
+    /// </li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
+    /// field contains the Amazon Web Services ID of the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
+    /// </li>
+    /// <li>
+    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
+    /// </li>
+    /// <li>
+    /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
+    /// Instances and Standard Reserved Instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
+    /// </li>
+    /// <li>
+    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
+    /// includes a unit attribute. Examples include GB and Hrs.</p>
+    /// </li>
+    /// <li>
+    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
+    /// operation includes a unit attribute.</p>
+    /// </li>
+    /// <li>
+    /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
+    /// </li>
+    /// <li>
+    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
+    /// dimensions for searching:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+    /// </li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
+    /// field contains the Amazon Web Services ID of the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
+    /// </li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p>
+    /// </li>
+    /// <li>
+    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
+    /// </li>
+    /// <li>
+    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
+    /// </li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
+    /// </li>
+    /// <li>
+    /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
+    /// </li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p>
+    /// </li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
+    /// field contains the Amazon Web Services ID of the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
+    /// </li>
+    /// </ul>
+    pub fn dimension_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::DimensionValuesWithAttributes]> {
+        self.dimension_values.as_deref()
+    }
+    /// <p>The number of results that Amazon Web Services returned at one time.</p>
+    pub fn return_size(&self) -> std::option::Option<i32> {
+        self.return_size
+    }
+    /// <p>The total number of search results.</p>
+    pub fn total_size(&self) -> std::option::Option<i32> {
+        self.total_size
+    }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDimensionValuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1761,6 +2105,17 @@ pub struct GetCostForecastOutput {
     /// this is a list of months.</p>
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
 }
+impl GetCostForecastOutput {
+    /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::MetricValue> {
+        self.total.as_ref()
+    }
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
+    /// this is a list of months.</p>
+    pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
+        self.forecast_results_by_time.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCostForecastOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCostForecastOutput");
@@ -1846,6 +2201,30 @@ pub struct GetCostCategoriesOutput {
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of objects.</p>
     pub total_size: std::option::Option<i32>,
+}
+impl GetCostCategoriesOutput {
+    /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The names of the Cost Categories.</p>
+    pub fn cost_category_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.cost_category_names.as_deref()
+    }
+    /// <p>The Cost Category values.</p>
+    /// <p>
+    /// <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+    pub fn cost_category_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.cost_category_values.as_deref()
+    }
+    /// <p>The number of objects returned.</p>
+    pub fn return_size(&self) -> std::option::Option<i32> {
+        self.return_size
+    }
+    /// <p>The total number of objects.</p>
+    pub fn total_size(&self) -> std::option::Option<i32> {
+        self.total_size
+    }
 }
 impl std::fmt::Debug for GetCostCategoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1979,6 +2358,27 @@ pub struct GetCostAndUsageWithResourcesOutput {
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     pub dimension_value_attributes:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+}
+impl GetCostAndUsageWithResourcesOutput {
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code>
+    /// parameters in the request.</p>
+    pub fn group_definitions(&self) -> std::option::Option<&[crate::model::GroupDefinition]> {
+        self.group_definitions.as_deref()
+    }
+    /// <p>The time period that is covered by the results in the response.</p>
+    pub fn results_by_time(&self) -> std::option::Option<&[crate::model::ResultByTime]> {
+        self.results_by_time.as_deref()
+    }
+    /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
+    pub fn dimension_value_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::DimensionValuesWithAttributes]> {
+        self.dimension_value_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCostAndUsageWithResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2117,6 +2517,26 @@ pub struct GetCostAndUsageOutput {
     pub dimension_value_attributes:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
 }
+impl GetCostAndUsageOutput {
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
+    pub fn group_definitions(&self) -> std::option::Option<&[crate::model::GroupDefinition]> {
+        self.group_definitions.as_deref()
+    }
+    /// <p>The time period that's covered by the results in the response.</p>
+    pub fn results_by_time(&self) -> std::option::Option<&[crate::model::ResultByTime]> {
+        self.results_by_time.as_deref()
+    }
+    /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
+    pub fn dimension_value_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::DimensionValuesWithAttributes]> {
+        self.dimension_value_attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCostAndUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCostAndUsageOutput");
@@ -2249,6 +2669,19 @@ pub struct GetAnomalySubscriptionsOutput {
     /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetAnomalySubscriptionsOutput {
+    /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
+    pub fn anomaly_subscriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AnomalySubscription]> {
+        self.anomaly_subscriptions.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAnomalySubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnomalySubscriptionsOutput");
@@ -2331,6 +2764,17 @@ pub struct GetAnomalyMonitorsOutput {
     /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetAnomalyMonitorsOutput {
+    /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
+    pub fn anomaly_monitors(&self) -> std::option::Option<&[crate::model::AnomalyMonitor]> {
+        self.anomaly_monitors.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAnomalyMonitorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnomalyMonitorsOutput");
@@ -2410,6 +2854,17 @@ pub struct GetAnomaliesOutput {
     /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetAnomaliesOutput {
+    /// <p>A list of cost anomalies. </p>
+    pub fn anomalies(&self) -> std::option::Option<&[crate::model::Anomaly]> {
+        self.anomalies.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAnomaliesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnomaliesOutput");
@@ -2486,6 +2941,13 @@ pub struct DescribeCostCategoryDefinitionOutput {
     /// for the <code>CostCategory</code> object.</p>
     pub cost_category: std::option::Option<crate::model::CostCategory>,
 }
+impl DescribeCostCategoryDefinitionOutput {
+    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules
+    /// for the <code>CostCategory</code> object.</p>
+    pub fn cost_category(&self) -> std::option::Option<&crate::model::CostCategory> {
+        self.cost_category.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCostCategoryDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCostCategoryDefinitionOutput");
@@ -2544,6 +3006,20 @@ pub struct DeleteCostCategoryDefinitionOutput {
     /// The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category.
     /// </p>
     pub effective_end: std::option::Option<std::string::String>,
+}
+impl DeleteCostCategoryDefinitionOutput {
+    /// <p>
+    /// The unique identifier for your Cost Category.
+    /// </p>
+    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+        self.cost_category_arn.as_deref()
+    }
+    /// <p>
+    /// The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category.
+    /// </p>
+    pub fn effective_end(&self) -> std::option::Option<&str> {
+        self.effective_end.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCostCategoryDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2686,6 +3162,20 @@ pub struct CreateCostCategoryDefinitionOutput {
     /// </p>
     pub effective_start: std::option::Option<std::string::String>,
 }
+impl CreateCostCategoryDefinitionOutput {
+    /// <p>
+    /// The unique identifier for your newly created Cost Category.
+    /// </p>
+    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+        self.cost_category_arn.as_deref()
+    }
+    /// <p>
+    /// The Cost Category's effective start date.
+    /// </p>
+    pub fn effective_start(&self) -> std::option::Option<&str> {
+        self.effective_start.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCostCategoryDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCostCategoryDefinitionOutput");
@@ -2761,6 +3251,12 @@ pub struct CreateAnomalySubscriptionOutput {
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
     pub subscription_arn: std::option::Option<std::string::String>,
 }
+impl CreateAnomalySubscriptionOutput {
+    /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAnomalySubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAnomalySubscriptionOutput");
@@ -2811,6 +3307,12 @@ impl CreateAnomalySubscriptionOutput {
 pub struct CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
     pub monitor_arn: std::option::Option<std::string::String>,
+}
+impl CreateAnomalyMonitorOutput {
+    /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAnomalyMonitorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

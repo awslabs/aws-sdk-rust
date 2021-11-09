@@ -120,7 +120,7 @@ impl BatchGetAggregateResourceConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_aggregate_resource_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_aggregate_resource_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -286,10 +286,7 @@ impl BatchGetResourceConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_resource_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -460,7 +457,7 @@ impl DeleteAggregationAuthorizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_aggregation_authorization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_aggregation_authorization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -616,10 +613,7 @@ impl DeleteConfigRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_config_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_config_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -776,7 +770,7 @@ impl DeleteConfigurationAggregatorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_aggregator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_aggregator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -938,7 +932,7 @@ impl DeleteConfigurationRecorderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_recorder(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_recorder(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1094,10 +1088,7 @@ impl DeleteConformancePackInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_conformance_pack(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1252,10 +1243,7 @@ impl DeleteDeliveryChannelInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_delivery_channel(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1413,10 +1401,7 @@ impl DeleteEvaluationResultsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_evaluation_results(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1573,7 +1558,7 @@ impl DeleteOrganizationConfigRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_organization_config_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_organization_config_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1731,7 +1716,7 @@ impl DeleteOrganizationConformancePackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_organization_conformance_pack(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_organization_conformance_pack(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1903,7 +1888,7 @@ impl DeletePendingAggregationRequestInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_pending_aggregation_request(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_pending_aggregation_request(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2073,7 +2058,7 @@ impl DeleteRemediationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_remediation_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_remediation_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2255,7 +2240,7 @@ impl DeleteRemediationExceptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_remediation_exceptions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_remediation_exceptions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2421,10 +2406,9 @@ impl DeleteResourceConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_config(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2581,7 +2565,7 @@ impl DeleteRetentionConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_retention_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_retention_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2732,10 +2716,7 @@ impl DeleteStoredQueryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_stored_query(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_stored_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2892,10 +2873,7 @@ impl DeliverConfigSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deliver_config_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3104,7 +3082,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_config_rules(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_config_rules(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3308,7 +3286,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_conformance_packs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_conformance_packs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3479,7 +3457,7 @@ impl DescribeAggregationAuthorizationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_aggregation_authorizations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_aggregation_authorizations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3682,7 +3660,7 @@ impl DescribeComplianceByConfigRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_config_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_config_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3917,7 +3895,7 @@ impl DescribeComplianceByResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4126,7 +4104,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_config_rule_evaluation_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_config_rule_evaluation_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4306,10 +4284,7 @@ impl DescribeConfigRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_config_rules(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_config_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4503,7 +4478,7 @@ impl DescribeConfigurationAggregatorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregators(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregators(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4747,7 +4722,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregator_sources_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregator_sources_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4913,7 +4888,7 @@ impl DescribeConfigurationRecordersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorders(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorders(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5083,7 +5058,7 @@ impl DescribeConfigurationRecorderStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorder_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorder_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5277,7 +5252,7 @@ impl DescribeConformancePackComplianceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_compliance(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_compliance(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5464,10 +5439,7 @@ impl DescribeConformancePacksInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_conformance_packs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5651,7 +5623,7 @@ impl DescribeConformancePackStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5814,10 +5786,7 @@ impl DescribeDeliveryChannelsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_delivery_channels(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5977,7 +5946,7 @@ impl DescribeDeliveryChannelStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_delivery_channel_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_delivery_channel_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6166,7 +6135,7 @@ impl DescribeOrganizationConfigRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rules(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rules(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6356,7 +6325,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rule_statuses(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rule_statuses(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6550,7 +6519,7 @@ impl DescribeOrganizationConformancePacksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_packs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_packs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6746,7 +6715,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_pack_statuses(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_pack_statuses(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6917,7 +6886,7 @@ impl DescribePendingAggregationRequestsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_pending_aggregation_requests(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_pending_aggregation_requests(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7078,7 +7047,7 @@ impl DescribeRemediationConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_remediation_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_remediation_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7284,7 +7253,7 @@ impl DescribeRemediationExceptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_remediation_exceptions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_remediation_exceptions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7484,7 +7453,7 @@ impl DescribeRemediationExecutionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_remediation_execution_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_remediation_execution_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7677,7 +7646,7 @@ impl DescribeRetentionConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_retention_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_retention_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7940,7 +7909,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_compliance_details_by_config_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_compliance_details_by_config_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8166,7 +8135,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_config_rule_compliance_summary(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_config_rule_compliance_summary(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8393,7 +8362,7 @@ impl GetAggregateConformancePackComplianceSummaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_conformance_pack_compliance_summary(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_conformance_pack_compliance_summary(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8607,7 +8576,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_discovered_resource_counts(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_discovered_resource_counts(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8784,7 +8753,7 @@ impl GetAggregateResourceConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_resource_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aggregate_resource_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9001,7 +8970,7 @@ impl GetComplianceDetailsByConfigRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_config_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_config_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9216,7 +9185,7 @@ impl GetComplianceDetailsByResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9354,7 +9323,7 @@ impl GetComplianceSummaryByConfigRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_config_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_config_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9519,7 +9488,7 @@ impl GetComplianceSummaryByResourceTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_resource_type(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_resource_type(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9714,7 +9683,7 @@ impl GetConformancePackComplianceDetailsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_details(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_details(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9900,7 +9869,7 @@ impl GetConformancePackComplianceSummaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_summary(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_summary(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10121,7 +10090,7 @@ impl GetDiscoveredResourceCountsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_discovered_resource_counts(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_discovered_resource_counts(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10319,7 +10288,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_organization_config_rule_detailed_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_organization_config_rule_detailed_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10525,7 +10494,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_organization_conformance_pack_detailed_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_organization_conformance_pack_detailed_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10786,10 +10755,7 @@ impl GetResourceConfigHistoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resource_config_history(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10939,10 +10905,7 @@ impl GetStoredQueryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_stored_query(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_stored_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11153,7 +11116,7 @@ impl ListAggregateDiscoveredResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_aggregate_discovered_resources(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_aggregate_discovered_resources(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11402,10 +11365,7 @@ impl ListDiscoveredResourcesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_discovered_resources(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11567,10 +11527,7 @@ impl ListStoredQueriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stored_queries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_stored_queries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11744,10 +11701,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11937,7 +11893,7 @@ impl PutAggregationAuthorizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_aggregation_authorization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_aggregation_authorization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12111,10 +12067,8 @@ impl PutConfigRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_config_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_config_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12342,10 +12296,7 @@ impl PutConfigurationAggregatorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_aggregator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12506,10 +12457,7 @@ impl PutConfigurationRecorderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_recorder(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12771,10 +12719,7 @@ impl PutConformancePackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_conformance_pack(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_conformance_pack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12931,10 +12876,7 @@ impl PutDeliveryChannelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_delivery_channel(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_delivery_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13144,10 +13086,8 @@ impl PutEvaluationsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_evaluations(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_evaluations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13317,10 +13257,7 @@ impl PutExternalEvaluationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_external_evaluation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13538,10 +13475,7 @@ impl PutOrganizationConfigRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_organization_config_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13826,7 +13760,7 @@ impl PutOrganizationConformancePackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_organization_conformance_pack(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_organization_conformance_pack(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13991,7 +13925,7 @@ impl PutRemediationConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_remediation_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_remediation_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14202,10 +14136,7 @@ impl PutRemediationExceptionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_remediation_exceptions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14456,10 +14387,7 @@ impl PutResourceConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14622,10 +14550,7 @@ impl PutRetentionConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_retention_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14809,10 +14734,7 @@ impl PutStoredQueryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_stored_query(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_stored_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15017,7 +14939,7 @@ impl SelectAggregateResourceConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_select_aggregate_resource_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_select_aggregate_resource_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15192,10 +15114,9 @@ impl SelectResourceConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_select_resource_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_select_resource_config(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15357,7 +15278,7 @@ impl StartConfigRulesEvaluationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_config_rules_evaluation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_config_rules_evaluation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15519,10 +15440,7 @@ impl StartConfigurationRecorderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_configuration_recorder(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15699,10 +15617,7 @@ impl StartRemediationExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_remediation_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15861,10 +15776,7 @@ impl StopConfigurationRecorderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_configuration_recorder(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16034,10 +15946,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16207,10 +16116,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16281,6 +16187,16 @@ pub struct UntagResourceInput {
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -16299,6 +16215,16 @@ pub struct TagResourceInput {
     /// <p>An array of tag object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An array of tag object.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -16314,6 +16240,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub configuration_recorder_name: std::option::Option<std::string::String>,
+}
+impl StopConfigurationRecorderInput {
+    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
+        self.configuration_recorder_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopConfigurationRecorderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16335,6 +16267,16 @@ pub struct StartRemediationExecutionInput {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
+impl StartRemediationExecutionInput {
+    /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    pub fn resource_keys(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
+        self.resource_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for StartRemediationExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartRemediationExecutionInput");
@@ -16352,6 +16294,13 @@ pub struct StartConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration
     /// change made to the resources.</p>
     pub configuration_recorder_name: std::option::Option<std::string::String>,
+}
+impl StartConfigurationRecorderInput {
+    /// <p>The name of the recorder object that records each configuration
+    /// change made to the resources.</p>
+    pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
+        self.configuration_recorder_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartConfigurationRecorderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16372,6 +16321,13 @@ pub struct StartConfigRulesEvaluationInput {
     /// evaluations for.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl StartConfigRulesEvaluationInput {
+    /// <p>The list of names of Config rules that you want to run
+    /// evaluations for.</p>
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.config_rule_names.as_deref()
+    }
+}
 impl std::fmt::Debug for StartConfigRulesEvaluationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartConfigRulesEvaluationInput");
@@ -16390,6 +16346,20 @@ pub struct SelectResourceConfigInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SelectResourceConfigInput {
+    /// <p>The SQL query <code>SELECT</code> command.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The maximum number of query results returned on each page. </p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SelectResourceConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16415,6 +16385,28 @@ pub struct SelectAggregateResourceConfigInput {
     pub max_results: i32,
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SelectAggregateResourceConfigInput {
+    /// <p>The SQL query SELECT command. </p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>The maximum number of query results returned on each page. </p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SelectAggregateResourceConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16445,6 +16437,21 @@ pub struct PutStoredQueryInput {
     /// <p>A list of <code>Tags</code> object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PutStoredQueryInput {
+    /// <p>A list of <code>StoredQuery</code> objects.
+    /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
+    /// <note>
+    /// <p>When you are creating a query, you must provide a query name and an expression.
+    /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+    /// </note>
+    pub fn stored_query(&self) -> std::option::Option<&crate::model::StoredQuery> {
+        self.stored_query.as_ref()
+    }
+    /// <p>A list of <code>Tags</code> object.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutStoredQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutStoredQueryInput");
@@ -16465,6 +16472,17 @@ pub struct PutRetentionConfigurationInput {
     /// history.</p>
     /// </note>
     pub retention_period_in_days: i32,
+}
+impl PutRetentionConfigurationInput {
+    /// <p>Number of days Config stores your historical
+    /// information.</p>
+    /// <note>
+    /// <p>Currently, only applicable to the configuration item
+    /// history.</p>
+    /// </note>
+    pub fn retention_period_in_days(&self) -> i32 {
+        self.retention_period_in_days
+    }
 }
 impl std::fmt::Debug for PutRetentionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16498,6 +16516,41 @@ pub struct PutResourceConfigInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PutResourceConfigInput {
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
+    /// <note>
+    /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
+    /// </note>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>Unique identifier of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
+    /// <note>
+    /// <p>The configuration JSON must not exceed 64 KB.</p>
+    /// </note>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for PutResourceConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourceConfigInput");
@@ -16525,6 +16578,26 @@ pub struct PutRemediationExceptionsInput {
     /// <p>The exception is automatically deleted after the expiration date.</p>
     pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PutRemediationExceptionsInput {
+    /// <p>The name of the Config rule for which you want to create remediation exception.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    pub fn resource_keys(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationExceptionResourceKey]> {
+        self.resource_keys.as_deref()
+    }
+    /// <p>The message contains an explanation of the exception.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The exception is automatically deleted after the expiration date.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
+}
 impl std::fmt::Debug for PutRemediationExceptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRemediationExceptionsInput");
@@ -16543,6 +16616,14 @@ pub struct PutRemediationConfigurationsInput {
     /// <p>A list of remediation configuration objects.</p>
     pub remediation_configurations:
         std::option::Option<std::vec::Vec<crate::model::RemediationConfiguration>>,
+}
+impl PutRemediationConfigurationsInput {
+    /// <p>A list of remediation configuration objects.</p>
+    pub fn remediation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationConfiguration]> {
+        self.remediation_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRemediationConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16586,6 +16667,49 @@ pub struct PutOrganizationConformancePackInput {
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PutOrganizationConformancePackInput {
+    /// <p>Name of the organization conformance pack you want to create.</p>
+    pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.organization_conformance_pack_name.as_deref()
+    }
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template
+    /// (max size: 300 KB).</p>
+    /// <note>
+    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// </note>
+    pub fn template_s3_uri(&self) -> std::option::Option<&str> {
+        self.template_s3_uri.as_deref()
+    }
+    /// <p>A string containing full conformance pack template body. Structure containing the template body
+    /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
+    /// <note>
+    /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
+    /// </note>
+    pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
+        self.delivery_s3_bucket.as_deref()
+    }
+    /// <p>The prefix for the Amazon S3 bucket.</p>
+    /// <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.delivery_s3_key_prefix.as_deref()
+    }
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    pub fn conformance_pack_input_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackInputParameter]> {
+        self.conformance_pack_input_parameters.as_deref()
+    }
+    /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
+    pub fn excluded_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for PutOrganizationConformancePackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutOrganizationConformancePackInput");
@@ -16621,6 +16745,28 @@ pub struct PutOrganizationConfigRuleInput {
     /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PutOrganizationConfigRuleInput {
+    /// <p>The name that you assign to an organization config rule.</p>
+    pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_name.as_deref()
+    }
+    /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
+    pub fn organization_managed_rule_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationManagedRuleMetadata> {
+        self.organization_managed_rule_metadata.as_ref()
+    }
+    /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
+    pub fn organization_custom_rule_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationCustomRuleMetadata> {
+        self.organization_custom_rule_metadata.as_ref()
+    }
+    /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+    pub fn excluded_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for PutOrganizationConfigRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutOrganizationConfigRuleInput");
@@ -16649,6 +16795,16 @@ pub struct PutExternalEvaluationInput {
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
     pub external_evaluation: std::option::Option<crate::model::ExternalEvaluation>,
+}
+impl PutExternalEvaluationInput {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
+    pub fn external_evaluation(&self) -> std::option::Option<&crate::model::ExternalEvaluation> {
+        self.external_evaluation.as_ref()
+    }
 }
 impl std::fmt::Debug for PutExternalEvaluationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16684,6 +16840,34 @@ pub struct PutEvaluationsInput {
     /// </note>
     pub test_mode: bool,
 }
+impl PutEvaluationsInput {
+    /// <p>The assessments that the Lambda function performs. Each
+    /// evaluation identifies an Amazon Web Services resource and indicates whether it
+    /// complies with the Config rule that invokes the Lambda
+    /// function.</p>
+    pub fn evaluations(&self) -> std::option::Option<&[crate::model::Evaluation]> {
+        self.evaluations.as_deref()
+    }
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
+    /// evaluation.</p>
+    pub fn result_token(&self) -> std::option::Option<&str> {
+        self.result_token.as_deref()
+    }
+    /// <p>Use this parameter to specify a test run for
+    /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
+    /// updates occur to your existing evaluations, and evaluation results
+    /// are not sent to Config.</p>
+    ///
+    /// <note>
+    /// <p>When <code>TestMode</code> is <code>true</code>,
+    /// <code>PutEvaluations</code> doesn't require a valid value
+    /// for the <code>ResultToken</code> parameter, but the value cannot
+    /// be null.</p>
+    /// </note>
+    pub fn test_mode(&self) -> bool {
+        self.test_mode
+    }
+}
 impl std::fmt::Debug for PutEvaluationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEvaluationsInput");
@@ -16703,6 +16887,14 @@ pub struct PutDeliveryChannelInput {
     /// configuration information to an Amazon S3 bucket and to an Amazon
     /// SNS topic.</p>
     pub delivery_channel: std::option::Option<crate::model::DeliveryChannel>,
+}
+impl PutDeliveryChannelInput {
+    /// <p>The configuration delivery channel object that delivers the
+    /// configuration information to an Amazon S3 bucket and to an Amazon
+    /// SNS topic.</p>
+    pub fn delivery_channel(&self) -> std::option::Option<&crate::model::DeliveryChannel> {
+        self.delivery_channel.as_ref()
+    }
 }
 impl std::fmt::Debug for PutDeliveryChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16742,6 +16934,46 @@ pub struct PutConformancePackInput {
     pub conformance_pack_input_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
 }
+impl PutConformancePackInput {
+    /// <p>Name of the conformance pack you want to create.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
+    /// <note>
+    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// </note>
+    pub fn template_s3_uri(&self) -> std::option::Option<&str> {
+        self.template_s3_uri.as_deref()
+    }
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    /// <note>
+    /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
+    /// </note>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
+    /// <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
+        self.delivery_s3_bucket.as_deref()
+    }
+    /// <p>The prefix for the Amazon S3 bucket. </p>
+    /// <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.delivery_s3_key_prefix.as_deref()
+    }
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    pub fn conformance_pack_input_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackInputParameter]> {
+        self.conformance_pack_input_parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for PutConformancePackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConformancePackInput");
@@ -16767,6 +16999,15 @@ pub struct PutConfigurationRecorderInput {
     /// configuration change made to the resources.</p>
     pub configuration_recorder: std::option::Option<crate::model::ConfigurationRecorder>,
 }
+impl PutConfigurationRecorderInput {
+    /// <p>The configuration recorder object that records each
+    /// configuration change made to the resources.</p>
+    pub fn configuration_recorder(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationRecorder> {
+        self.configuration_recorder.as_ref()
+    }
+}
 impl std::fmt::Debug for PutConfigurationRecorderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigurationRecorderInput");
@@ -16791,6 +17032,30 @@ pub struct PutConfigurationAggregatorInput {
         std::option::Option<crate::model::OrganizationAggregationSource>,
     /// <p>An array of tag object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl PutConfigurationAggregatorInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>A list of AccountAggregationSource object.
+    ///
+    /// </p>
+    pub fn account_aggregation_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountAggregationSource]> {
+        self.account_aggregation_sources.as_deref()
+    }
+    /// <p>An OrganizationAggregationSource object.</p>
+    pub fn organization_aggregation_source(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationAggregationSource> {
+        self.organization_aggregation_source.as_ref()
+    }
+    /// <p>An array of tag object.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for PutConfigurationAggregatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16821,6 +17086,16 @@ pub struct PutConfigRuleInput {
     /// <p>An array of tag object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PutConfigRuleInput {
+    /// <p>The rule that you want to add to your account.</p>
+    pub fn config_rule(&self) -> std::option::Option<&crate::model::ConfigRule> {
+        self.config_rule.as_ref()
+    }
+    /// <p>An array of tag object.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutConfigRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigRuleInput");
@@ -16840,6 +17115,20 @@ pub struct PutAggregationAuthorizationInput {
     pub authorized_aws_region: std::option::Option<std::string::String>,
     /// <p>An array of tag object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl PutAggregationAuthorizationInput {
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    pub fn authorized_account_id(&self) -> std::option::Option<&str> {
+        self.authorized_account_id.as_deref()
+    }
+    /// <p>The region authorized to collect aggregated data.</p>
+    pub fn authorized_aws_region(&self) -> std::option::Option<&str> {
+        self.authorized_aws_region.as_deref()
+    }
+    /// <p>An array of tag object.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAggregationAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16862,6 +17151,20 @@ pub struct ListTagsForResourceInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -16880,6 +17183,16 @@ pub struct ListStoredQueriesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned with a single call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListStoredQueriesInput {
+    /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListStoredQueriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16917,6 +17230,42 @@ pub struct ListDiscoveredResourcesInput {
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDiscoveredResourcesInput {
+    /// <p>The type of resources that you want Config to list in the
+    /// response.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The IDs of only those resources that you want Config to
+    /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
+    /// discovered.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
+    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
+    /// parameter, Config lists all resources of the specified type that
+    /// it has discovered.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The maximum number of resource identifiers returned on each
+    /// page. The default is 100. You cannot specify a number greater than
+    /// 100. If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>Specifies whether Config includes deleted resources in the
+    /// results. By default, deleted resources are not included.</p>
+    pub fn include_deleted_resources(&self) -> bool {
+        self.include_deleted_resources
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDiscoveredResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDiscoveredResourcesInput");
@@ -16945,6 +17294,28 @@ pub struct ListAggregateDiscoveredResourcesInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAggregateDiscoveredResourcesInput {
+    /// <p>The name of the configuration aggregator. </p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>The type of resources that you want Config to list in the response.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ResourceFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAggregateDiscoveredResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAggregateDiscoveredResourcesInput");
@@ -16966,6 +17337,12 @@ impl std::fmt::Debug for ListAggregateDiscoveredResourcesInput {
 pub struct GetStoredQueryInput {
     /// <p>The name of the query.</p>
     pub query_name: std::option::Option<std::string::String>,
+}
+impl GetStoredQueryInput {
+    /// <p>The name of the query.</p>
+    pub fn query_name(&self) -> std::option::Option<&str> {
+        self.query_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStoredQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17006,6 +17383,47 @@ pub struct GetResourceConfigHistoryInput {
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourceConfigHistoryInput {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the resource (for example.,
+    /// <code>sg-xxxxxx</code>).</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The time stamp that indicates a later time. If not specified,
+    /// current time is taken.</p>
+    pub fn later_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.later_time.as_ref()
+    }
+    /// <p>The time stamp that indicates an earlier time. If not
+    /// specified, the action returns paginated results that contain
+    /// configuration items that start when the first configuration item was
+    /// recorded.</p>
+    pub fn earlier_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.earlier_time.as_ref()
+    }
+    /// <p>The chronological order for configuration items listed. By
+    /// default, the results are listed in reverse chronological
+    /// order.</p>
+    pub fn chronological_order(&self) -> std::option::Option<&crate::model::ChronologicalOrder> {
+        self.chronological_order.as_ref()
+    }
+    /// <p>The maximum number of configuration items returned on each
+    /// page. The default is 10. You cannot specify a number greater than
+    /// 100. If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceConfigHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceConfigHistoryInput");
@@ -17034,6 +17452,27 @@ pub struct GetOrganizationConformancePackDetailedStatusInput {
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetOrganizationConformancePackDetailedStatusInput {
+    /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
+    pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.organization_conformance_pack_name.as_deref()
+    }
+    /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationResourceDetailedStatusFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
+    /// If you do not specify a number, Config uses the default. The default is 100. </p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOrganizationConformancePackDetailedStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOrganizationConformancePackDetailedStatusInput");
@@ -17060,6 +17499,24 @@ pub struct GetOrganizationConfigRuleDetailedStatusInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetOrganizationConfigRuleDetailedStatusInput {
+    /// <p>The name of organization config rule for which you want status details for member accounts.</p>
+    pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_name.as_deref()
+    }
+    /// <p>A <code>StatusDetailFilters</code> object.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::StatusDetailFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOrganizationConfigRuleDetailedStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17104,6 +17561,38 @@ pub struct GetDiscoveredResourceCountsInput {
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDiscoveredResourceCountsInput {
+    /// <p>The comma-separated list that specifies the resource types that
+    /// you want Config to return (for example,
+    /// <code>"AWS::EC2::Instance"</code>,
+    /// <code>"AWS::IAM::User"</code>).</p>
+    ///
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
+    /// the region for your account.</p>
+    /// <note>
+    /// <p>If the configuration recorder is turned off, Config
+    /// returns an empty list of <a>ResourceCount</a>
+    /// objects. If the configuration recorder is not recording a
+    /// specific resource type (for example, S3 buckets), that resource
+    /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+    /// </note>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The maximum number of <a>ResourceCount</a> objects
+    /// returned on each page. The default is 100. You cannot specify a
+    /// number greater than 100. If you specify 0, Config uses the
+    /// default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDiscoveredResourceCountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDiscoveredResourceCountsInput");
@@ -17124,6 +17613,20 @@ pub struct GetConformancePackComplianceSummaryInput {
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetConformancePackComplianceSummaryInput {
+    /// <p>Names of conformance packs.</p>
+    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.conformance_pack_names.as_deref()
+    }
+    /// <p>The maximum number of conformance packs returned on each page.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConformancePackComplianceSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17148,6 +17651,24 @@ pub struct GetConformancePackComplianceDetailsInput {
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetConformancePackComplianceDetailsInput {
+    /// <p>Name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ConformancePackEvaluationFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConformancePackComplianceDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConformancePackComplianceDetailsInput");
@@ -17171,6 +17692,18 @@ pub struct GetComplianceSummaryByResourceTypeInput {
     /// resource type is an Amazon Web Services account by specifying
     /// <code>AWS::::Account</code>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetComplianceSummaryByResourceTypeInput {
+    /// <p>Specify one or more resource types to get the number of
+    /// resources that are compliant and the number that are noncompliant
+    /// for each resource type.</p>
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as
+    /// <code>AWS::EC2::Instance</code>. You can specify that the
+    /// resource type is an Amazon Web Services account by specifying
+    /// <code>AWS::::Account</code>.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
 }
 impl std::fmt::Debug for GetComplianceSummaryByResourceTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17211,6 +17744,31 @@ pub struct GetComplianceDetailsByResourceInput {
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetComplianceDetailsByResourceInput {
+    /// <p>The type of the Amazon Web Services resource for which you want compliance
+    /// information.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance
+    /// information.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Filters the results by compliance.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>,
+    /// <code>NON_COMPLIANT</code>, and
+    /// <code>NOT_APPLICABLE</code>.</p>
+    pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
+        self.compliance_types.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComplianceDetailsByResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComplianceDetailsByResourceInput");
@@ -17243,6 +17801,32 @@ pub struct GetComplianceDetailsByConfigRuleInput {
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetComplianceDetailsByConfigRuleInput {
+    /// <p>The name of the Config rule for which you want compliance
+    /// information.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>Filters the results by compliance.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>,
+    /// <code>NON_COMPLIANT</code>, and
+    /// <code>NOT_APPLICABLE</code>.</p>
+    pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
+        self.compliance_types.as_deref()
+    }
+    /// <p>The maximum number of evaluation results returned on each page.
+    /// The default is 10. You cannot specify a number greater than 100. If
+    /// you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComplianceDetailsByConfigRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComplianceDetailsByConfigRuleInput");
@@ -17262,6 +17846,18 @@ pub struct GetAggregateResourceConfigInput {
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>An object that identifies aggregate resource.</p>
     pub resource_identifier: std::option::Option<crate::model::AggregateResourceIdentifier>,
+}
+impl GetAggregateResourceConfigInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>An object that identifies aggregate resource.</p>
+    pub fn resource_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregateResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAggregateResourceConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17289,6 +17885,28 @@ pub struct GetAggregateDiscoveredResourceCountsInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetAggregateDiscoveredResourceCountsInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ResourceCountFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The key to group the resource counts.</p>
+    pub fn group_by_key(&self) -> std::option::Option<&crate::model::ResourceCountGroupKey> {
+        self.group_by_key.as_ref()
+    }
+    /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAggregateDiscoveredResourceCountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17321,6 +17939,32 @@ pub struct GetAggregateConformancePackComplianceSummaryInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetAggregateConformancePackComplianceSummaryInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregateConformancePackComplianceSummaryFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    pub fn group_by_key(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregateConformancePackComplianceSummaryGroupKey> {
+        self.group_by_key.as_ref()
+    }
+    /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAggregateConformancePackComplianceSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17355,6 +17999,36 @@ pub struct GetAggregateConfigRuleComplianceSummaryInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetAggregateConfigRuleComplianceSummaryInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>Filters the results based on the
+    /// ConfigRuleComplianceSummaryFilters object.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigRuleComplianceSummaryFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    pub fn group_by_key(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigRuleComplianceSummaryGroupKey> {
+        self.group_by_key.as_ref()
+    }
+    /// <p>The maximum number of evaluation results returned on each page.
+    /// The default is 1000. You cannot specify a number greater than 1000.
+    /// If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17402,6 +18076,48 @@ pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetAggregateComplianceDetailsByConfigRuleInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>The name of the Config rule for which you want compliance
+    /// information.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source region from where the data is aggregated.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The resource compliance status.</p>
+    /// <note>
+    /// <p>For the
+    /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
+    /// data type, Config supports only the <code>COMPLIANT</code>
+    /// and <code>NON_COMPLIANT</code>. Config does not support the
+    /// <code>NOT_APPLICABLE</code> and
+    /// <code>INSUFFICIENT_DATA</code> values.</p>
+    /// </note>
+    pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>The maximum number of evaluation results returned on each page.
+    /// The default is 50. You cannot specify a number greater than 100. If
+    /// you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAggregateComplianceDetailsByConfigRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAggregateComplianceDetailsByConfigRuleInput");
@@ -17436,6 +18152,24 @@ pub struct DescribeRetentionConfigurationsInput {
     /// response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeRetentionConfigurationsInput {
+    /// <p>A list of names of retention configurations for which you want
+    /// details. If you do not specify a name, Config returns details
+    /// for all the retention configurations for that account.</p>
+    /// <note>
+    /// <p>Currently, Config supports only one retention
+    /// configuration per region in your account.</p>
+    /// </note>
+    pub fn retention_configuration_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.retention_configuration_names.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRetentionConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRetentionConfigurationsInput");
@@ -17460,6 +18194,24 @@ pub struct DescribeRemediationExecutionStatusInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeRemediationExecutionStatusInput {
+    /// <p>A list of Config rule names.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    pub fn resource_keys(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
+        self.resource_keys.as_deref()
+    }
+    /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRemediationExecutionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17486,6 +18238,26 @@ pub struct DescribeRemediationExceptionsInput {
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeRemediationExceptionsInput {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    pub fn resource_keys(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationExceptionResourceKey]> {
+        self.resource_keys.as_deref()
+    }
+    /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRemediationExceptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRemediationExceptionsInput");
@@ -17503,6 +18275,12 @@ impl std::fmt::Debug for DescribeRemediationExceptionsInput {
 pub struct DescribeRemediationConfigurationsInput {
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeRemediationConfigurationsInput {
+    /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.config_rule_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRemediationConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17523,6 +18301,19 @@ pub struct DescribePendingAggregationRequestsInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePendingAggregationRequestsInput {
+    /// <p>The maximum number of evaluation results returned on each page.
+    /// The default is maximum. If you specify 0, Config uses the
+    /// default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePendingAggregationRequestsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17546,6 +18337,24 @@ pub struct DescribeOrganizationConformancePackStatusesInput {
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationConformancePackStatusesInput {
+    /// <p>The names of organization conformance packs for which you want status details.
+    /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+    pub fn organization_conformance_pack_names(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.organization_conformance_pack_names.as_deref()
+    }
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
+    /// If you do no specify a number, Config uses the default. The default is 100. </p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationConformancePackStatusesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17574,6 +18383,24 @@ pub struct DescribeOrganizationConformancePacksInput {
     /// paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeOrganizationConformancePacksInput {
+    /// <p>The name that you assign to an organization conformance pack.</p>
+    pub fn organization_conformance_pack_names(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.organization_conformance_pack_names.as_deref()
+    }
+    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
+    /// number, Config uses the default. The default is 100.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
+    /// paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrganizationConformancePacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrganizationConformancePacksInput");
@@ -17597,6 +18424,20 @@ pub struct DescribeOrganizationConfigRuleStatusesInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationConfigRuleStatusesInput {
+    /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    pub fn organization_config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.organization_config_rule_names.as_deref()
+    }
+    /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationConfigRuleStatusesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17622,6 +18463,20 @@ pub struct DescribeOrganizationConfigRulesInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeOrganizationConfigRulesInput {
+    /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+    pub fn organization_config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.organization_config_rule_names.as_deref()
+    }
+    /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrganizationConfigRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrganizationConfigRulesInput");
@@ -17643,6 +18498,12 @@ pub struct DescribeDeliveryChannelStatusInput {
     /// <p>A list of delivery channel names.</p>
     pub delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeDeliveryChannelStatusInput {
+    /// <p>A list of delivery channel names.</p>
+    pub fn delivery_channel_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.delivery_channel_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeliveryChannelStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeliveryChannelStatusInput");
@@ -17658,6 +18519,12 @@ impl std::fmt::Debug for DescribeDeliveryChannelStatusInput {
 pub struct DescribeDeliveryChannelsInput {
     /// <p>A list of delivery channel names.</p>
     pub delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeDeliveryChannelsInput {
+    /// <p>A list of delivery channel names.</p>
+    pub fn delivery_channel_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.delivery_channel_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeliveryChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17677,6 +18544,20 @@ pub struct DescribeConformancePackStatusInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConformancePackStatusInput {
+    /// <p>Comma-separated list of conformance pack names.</p>
+    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.conformance_pack_names.as_deref()
+    }
+    /// <p>The maximum number of conformance packs status returned on each page.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConformancePackStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17698,6 +18579,20 @@ pub struct DescribeConformancePacksInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConformancePacksInput {
+    /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
+    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.conformance_pack_names.as_deref()
+    }
+    /// <p>The maximum number of conformance packs returned on each page.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConformancePacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17722,6 +18617,24 @@ pub struct DescribeConformancePackComplianceInput {
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConformancePackComplianceInput {
+    /// <p>Name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ConformancePackComplianceFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConformancePackComplianceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConformancePackComplianceInput");
@@ -17743,6 +18656,14 @@ pub struct DescribeConfigurationRecorderStatusInput {
     /// configuration recorders associated with the account.</p>
     pub configuration_recorder_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeConfigurationRecorderStatusInput {
+    /// <p>The name(s) of the configuration recorder. If the name is not
+    /// specified, the action returns the current status of all the
+    /// configuration recorders associated with the account.</p>
+    pub fn configuration_recorder_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.configuration_recorder_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationRecorderStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationRecorderStatusInput");
@@ -17760,6 +18681,12 @@ impl std::fmt::Debug for DescribeConfigurationRecorderStatusInput {
 pub struct DescribeConfigurationRecordersInput {
     /// <p>A list of configuration recorder names.</p>
     pub configuration_recorder_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeConfigurationRecordersInput {
+    /// <p>A list of configuration recorder names.</p>
+    pub fn configuration_recorder_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.configuration_recorder_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationRecordersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17802,6 +18729,43 @@ pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// default.</p>
     pub limit: i32,
 }
+impl DescribeConfigurationAggregatorSourcesStatusInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>Filters the status type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving
+    /// data.</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was
+    /// successfully moved.</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most
+    /// recent.</p>
+    /// </li>
+    /// </ul>
+    pub fn update_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregatedSourceStatusType]> {
+        self.update_status.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of AggregatorSourceStatus returned on each
+    /// page. The default is maximum. If you specify 0, Config uses the
+    /// default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationAggregatorSourcesStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationAggregatorSourcesStatusInput");
@@ -17830,6 +18794,23 @@ pub struct DescribeConfigurationAggregatorsInput {
     /// the default.</p>
     pub limit: i32,
 }
+impl DescribeConfigurationAggregatorsInput {
+    /// <p>The name of the configuration aggregators.</p>
+    pub fn configuration_aggregator_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.configuration_aggregator_names.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of configuration aggregators returned on
+    /// each page. The default is maximum. If you specify 0, Config uses
+    /// the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationAggregatorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationAggregatorsInput");
@@ -17855,6 +18836,20 @@ pub struct DescribeConfigRulesInput {
     /// that you use to get the next page of results in a paginated
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConfigRulesInput {
+    /// <p>The names of the Config rules for which you want details.
+    /// If you do not specify any names, Config returns details for all
+    /// your rules.</p>
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.config_rule_names.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17887,6 +18882,32 @@ pub struct DescribeConfigRuleEvaluationStatusInput {
     /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
     /// Reference Guide</i>.</p>
     pub limit: i32,
+}
+impl DescribeConfigRuleEvaluationStatusInput {
+    /// <p>The name of the Config managed rules for which you want
+    /// status information. If you do not specify any names, Config
+    /// returns status information for all Config managed rules that you
+    /// use.</p>
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.config_rule_names.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of rule evaluation results that you want
+    /// returned.</p>
+    ///
+    /// <p>This parameter is required if the rule limit for your account
+    /// is more than the default of 150 rules.</p>
+    /// <p>For information about requesting a rule limit increase, see
+    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
+    /// Reference Guide</i>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
 }
 impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17924,6 +18945,39 @@ pub struct DescribeComplianceByResourceInput {
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeComplianceByResourceInput {
+    /// <p>The types of Amazon Web Services resources for which you want compliance
+    /// information (for example, <code>AWS::EC2::Instance</code>). For this
+    /// action, you can specify that the resource type is an Amazon Web Services account by
+    /// specifying <code>AWS::::Account</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance
+    /// information. You can specify only one resource ID. If you specify a
+    /// resource ID, you must also specify a type for
+    /// <code>ResourceType</code>.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Filters the results by compliance.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
+    pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
+        self.compliance_types.as_deref()
+    }
+    /// <p>The maximum number of evaluation results returned on each page.
+    /// The default is 10. You cannot specify a number greater than 100. If
+    /// you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComplianceByResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComplianceByResourceInput");
@@ -17951,6 +19005,24 @@ pub struct DescribeComplianceByConfigRuleInput {
     /// response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeComplianceByConfigRuleInput {
+    /// <p>Specify one or more Config rule names to filter the results
+    /// by rule.</p>
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.config_rule_names.as_deref()
+    }
+    /// <p>Filters the results by compliance.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+    pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
+        self.compliance_types.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComplianceByConfigRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComplianceByConfigRuleInput");
@@ -17973,6 +19045,19 @@ pub struct DescribeAggregationAuthorizationsInput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAggregationAuthorizationsInput {
+    /// <p>The maximum number of AggregationAuthorizations returned on
+    /// each page. The default is maximum. If you specify 0, Config uses
+    /// the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAggregationAuthorizationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAggregationAuthorizationsInput");
@@ -17994,6 +19079,26 @@ pub struct DescribeAggregateComplianceByConformancePacksInput {
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAggregateComplianceByConformancePacksInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregateConformancePackComplianceFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAggregateComplianceByConformancePacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18027,6 +19132,29 @@ pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAggregateComplianceByConfigRulesInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>Filters the results by ConfigRuleComplianceFilters object.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ConfigRuleComplianceFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of evaluation results returned on each page.
+    /// The default is
+    /// maximum.
+    /// If you specify 0, Config uses the default.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAggregateComplianceByConfigRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAggregateComplianceByConfigRulesInput");
@@ -18050,6 +19178,13 @@ pub struct DeliverConfigSnapshotInput {
     /// delivered.</p>
     pub delivery_channel_name: std::option::Option<std::string::String>,
 }
+impl DeliverConfigSnapshotInput {
+    /// <p>The name of the delivery channel through which the snapshot is
+    /// delivered.</p>
+    pub fn delivery_channel_name(&self) -> std::option::Option<&str> {
+        self.delivery_channel_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeliverConfigSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeliverConfigSnapshotInput");
@@ -18065,6 +19200,12 @@ pub struct DeleteStoredQueryInput {
     /// <p>The name of the query that you want to delete.</p>
     pub query_name: std::option::Option<std::string::String>,
 }
+impl DeleteStoredQueryInput {
+    /// <p>The name of the query that you want to delete.</p>
+    pub fn query_name(&self) -> std::option::Option<&str> {
+        self.query_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStoredQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStoredQueryInput");
@@ -18079,6 +19220,12 @@ impl std::fmt::Debug for DeleteStoredQueryInput {
 pub struct DeleteRetentionConfigurationInput {
     /// <p>The name of the retention configuration to delete.</p>
     pub retention_configuration_name: std::option::Option<std::string::String>,
+}
+impl DeleteRetentionConfigurationInput {
+    /// <p>The name of the retention configuration to delete.</p>
+    pub fn retention_configuration_name(&self) -> std::option::Option<&str> {
+        self.retention_configuration_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRetentionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18100,6 +19247,16 @@ pub struct DeleteResourceConfigInput {
     /// <p>Unique identifier of the resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl DeleteResourceConfigInput {
+    /// <p>The type of the resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Unique identifier of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourceConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourceConfigInput");
@@ -18119,6 +19276,18 @@ pub struct DeleteRemediationExceptionsInput {
     pub resource_keys:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
 }
+impl DeleteRemediationExceptionsInput {
+    /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    pub fn resource_keys(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationExceptionResourceKey]> {
+        self.resource_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRemediationExceptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRemediationExceptionsInput");
@@ -18136,6 +19305,16 @@ pub struct DeleteRemediationConfigurationInput {
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The type of a resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl DeleteRemediationConfigurationInput {
+    /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The type of a resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRemediationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18156,6 +19335,17 @@ pub struct DeletePendingAggregationRequestInput {
     /// <p>The region requesting to aggregate data.</p>
     pub requester_aws_region: std::option::Option<std::string::String>,
 }
+impl DeletePendingAggregationRequestInput {
+    /// <p>The 12-digit account ID of the account requesting to aggregate
+    /// data.</p>
+    pub fn requester_account_id(&self) -> std::option::Option<&str> {
+        self.requester_account_id.as_deref()
+    }
+    /// <p>The region requesting to aggregate data.</p>
+    pub fn requester_aws_region(&self) -> std::option::Option<&str> {
+        self.requester_aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePendingAggregationRequestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePendingAggregationRequestInput");
@@ -18171,6 +19361,12 @@ impl std::fmt::Debug for DeletePendingAggregationRequestInput {
 pub struct DeleteOrganizationConformancePackInput {
     /// <p>The name of organization conformance pack that you want to delete.</p>
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
+}
+impl DeleteOrganizationConformancePackInput {
+    /// <p>The name of organization conformance pack that you want to delete.</p>
+    pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.organization_conformance_pack_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOrganizationConformancePackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18189,6 +19385,12 @@ impl std::fmt::Debug for DeleteOrganizationConformancePackInput {
 pub struct DeleteOrganizationConfigRuleInput {
     /// <p>The name of organization config rule that you want to delete.</p>
     pub organization_config_rule_name: std::option::Option<std::string::String>,
+}
+impl DeleteOrganizationConfigRuleInput {
+    /// <p>The name of organization config rule that you want to delete.</p>
+    pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOrganizationConfigRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18209,6 +19411,13 @@ pub struct DeleteEvaluationResultsInput {
     /// the evaluation results.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }
+impl DeleteEvaluationResultsInput {
+    /// <p>The name of the Config rule for which you want to delete
+    /// the evaluation results.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEvaluationResultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEvaluationResultsInput");
@@ -18226,6 +19435,12 @@ pub struct DeleteDeliveryChannelInput {
     /// <p>The name of the delivery channel to delete.</p>
     pub delivery_channel_name: std::option::Option<std::string::String>,
 }
+impl DeleteDeliveryChannelInput {
+    /// <p>The name of the delivery channel to delete.</p>
+    pub fn delivery_channel_name(&self) -> std::option::Option<&str> {
+        self.delivery_channel_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeliveryChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeliveryChannelInput");
@@ -18240,6 +19455,12 @@ impl std::fmt::Debug for DeleteDeliveryChannelInput {
 pub struct DeleteConformancePackInput {
     /// <p>Name of the conformance pack you want to delete.</p>
     pub conformance_pack_name: std::option::Option<std::string::String>,
+}
+impl DeleteConformancePackInput {
+    /// <p>Name of the conformance pack you want to delete.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConformancePackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18259,6 +19480,14 @@ pub struct DeleteConfigurationRecorderInput {
     /// <code>DescribeConfigurationRecorders</code> action.</p>
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
+impl DeleteConfigurationRecorderInput {
+    /// <p>The name of the configuration recorder to be deleted. You can
+    /// retrieve the name of your configuration recorder by using the
+    /// <code>DescribeConfigurationRecorders</code> action.</p>
+    pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
+        self.configuration_recorder_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigurationRecorderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationRecorderInput");
@@ -18276,6 +19505,12 @@ impl std::fmt::Debug for DeleteConfigurationRecorderInput {
 pub struct DeleteConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
+}
+impl DeleteConfigurationAggregatorInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigurationAggregatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18296,6 +19531,13 @@ pub struct DeleteConfigRuleInput {
     /// delete.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }
+impl DeleteConfigRuleInput {
+    /// <p>The name of the Config rule that you want to
+    /// delete.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigRuleInput");
@@ -18313,6 +19555,17 @@ pub struct DeleteAggregationAuthorizationInput {
     pub authorized_account_id: std::option::Option<std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
     pub authorized_aws_region: std::option::Option<std::string::String>,
+}
+impl DeleteAggregationAuthorizationInput {
+    /// <p>The 12-digit account ID of the account authorized to aggregate
+    /// data.</p>
+    pub fn authorized_account_id(&self) -> std::option::Option<&str> {
+        self.authorized_account_id.as_deref()
+    }
+    /// <p>The region authorized to collect aggregated data.</p>
+    pub fn authorized_aws_region(&self) -> std::option::Option<&str> {
+        self.authorized_aws_region.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAggregationAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18332,6 +19585,14 @@ pub struct BatchGetResourceConfigInput {
     /// resource ID.</p>
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
+impl BatchGetResourceConfigInput {
+    /// <p>A list of resource keys to be processed with the current
+    /// request. Each element in the list consists of the resource type and
+    /// resource ID.</p>
+    pub fn resource_keys(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
+        self.resource_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetResourceConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetResourceConfigInput");
@@ -18349,6 +19610,18 @@ pub struct BatchGetAggregateResourceConfigInput {
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     pub resource_identifiers:
         std::option::Option<std::vec::Vec<crate::model::AggregateResourceIdentifier>>,
+}
+impl BatchGetAggregateResourceConfigInput {
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>A list of aggregate ResourceIdentifiers objects. </p>
+    pub fn resource_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateResourceIdentifier]> {
+        self.resource_identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetAggregateResourceConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

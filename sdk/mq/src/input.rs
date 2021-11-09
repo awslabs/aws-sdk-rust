@@ -389,10 +389,7 @@ impl CreateBrokerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_broker(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_broker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -615,10 +612,7 @@ impl CreateConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -807,10 +801,7 @@ impl CreateTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1047,10 +1038,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3889,10 +3877,7 @@ impl UpdateBrokerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_broker(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_broker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4084,10 +4069,7 @@ impl UpdateConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4324,10 +4306,7 @@ impl UpdateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4404,6 +4383,28 @@ pub struct UpdateUserInput {
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
+impl UpdateUserInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn console_access(&self) -> bool {
+        self.console_access
+    }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.groups.as_deref()
+    }
+    /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserInput");
@@ -4426,6 +4427,20 @@ pub struct UpdateConfigurationInput {
     pub data: std::option::Option<std::string::String>,
     /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateConfigurationInput {
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>Required. The base64-encoded XML configuration.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4462,6 +4477,54 @@ pub struct UpdateBrokerInput {
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateBrokerInput {
+    /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
+    pub fn auto_minor_version_upgrade(&self) -> bool {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>A list of information about the configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ConfigurationId> {
+        self.configuration.as_ref()
+    }
+    /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+        self.host_instance_type.as_deref()
+    }
+    /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn ldap_server_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::LdapServerMetadataInput> {
+        self.ldap_server_metadata.as_ref()
+    }
+    /// <p>Enables Amazon CloudWatch logging for brokers.</p>
+    pub fn logs(&self) -> std::option::Option<&crate::model::Logs> {
+        self.logs.as_ref()
+    }
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
+    pub fn maintenance_window_start_time(
+        &self,
+    ) -> std::option::Option<&crate::model::WeeklyStartTime> {
+        self.maintenance_window_start_time.as_ref()
+    }
+    /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBrokerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBrokerInput");
@@ -4492,6 +4555,12 @@ pub struct RebootBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
+impl RebootBrokerInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RebootBrokerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootBrokerInput");
@@ -4511,6 +4580,20 @@ pub struct ListUsersInput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUsersInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
@@ -4528,6 +4611,12 @@ pub struct ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsInput");
@@ -4544,6 +4633,16 @@ pub struct ListConfigurationsInput {
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationsInput {
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4565,6 +4664,20 @@ pub struct ListConfigurationRevisionsInput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConfigurationRevisionsInput {
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationRevisionsInput");
@@ -4584,6 +4697,16 @@ pub struct ListBrokersInput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBrokersInput {
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBrokersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBrokersInput");
@@ -4601,6 +4724,16 @@ pub struct DescribeUserInput {
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl DescribeUserInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4620,6 +4753,16 @@ pub struct DescribeConfigurationRevisionInput {
     /// <p>The revision of the configuration.</p>
     pub configuration_revision: std::option::Option<std::string::String>,
 }
+impl DescribeConfigurationRevisionInput {
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>The revision of the configuration.</p>
+    pub fn configuration_revision(&self) -> std::option::Option<&str> {
+        self.configuration_revision.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationRevisionInput");
@@ -4635,6 +4778,12 @@ impl std::fmt::Debug for DescribeConfigurationRevisionInput {
 pub struct DescribeConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: std::option::Option<std::string::String>,
+}
+impl DescribeConfigurationInput {
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4659,6 +4808,28 @@ pub struct DescribeBrokerInstanceOptionsInput {
     /// <p>Filter response by storage type.</p>
     pub storage_type: std::option::Option<std::string::String>,
 }
+impl DescribeBrokerInstanceOptionsInput {
+    /// <p>Filter response by engine type.</p>
+    pub fn engine_type(&self) -> std::option::Option<&str> {
+        self.engine_type.as_deref()
+    }
+    /// <p>Filter response by host instance type.</p>
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+        self.host_instance_type.as_deref()
+    }
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filter response by storage type.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBrokerInstanceOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBrokerInstanceOptionsInput");
@@ -4682,6 +4853,20 @@ pub struct DescribeBrokerEngineTypesInput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBrokerEngineTypesInput {
+    /// <p>Filter response by engine type.</p>
+    pub fn engine_type(&self) -> std::option::Option<&str> {
+        self.engine_type.as_deref()
+    }
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBrokerEngineTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBrokerEngineTypesInput");
@@ -4699,6 +4884,12 @@ pub struct DescribeBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
 }
+impl DescribeBrokerInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBrokerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBrokerInput");
@@ -4715,6 +4906,16 @@ pub struct DeleteUserInput {
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl DeleteUserInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4734,6 +4935,16 @@ pub struct DeleteTagsInput {
     /// <p>An array of tag keys to delete</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteTagsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An array of tag keys to delete</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsInput");
@@ -4749,6 +4960,12 @@ impl std::fmt::Debug for DeleteTagsInput {
 pub struct DeleteBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: std::option::Option<std::string::String>,
+}
+impl DeleteBrokerInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBrokerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4773,6 +4990,28 @@ pub struct CreateUserInput {
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: std::option::Option<std::string::String>,
 }
+impl CreateUserInput {
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn broker_id(&self) -> std::option::Option<&str> {
+        self.broker_id.as_deref()
+    }
+    /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
+    pub fn console_access(&self) -> bool {
+        self.console_access
+    }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.groups.as_deref()
+    }
+    /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
@@ -4794,6 +5033,19 @@ pub struct CreateTagsInput {
     /// <p>The key-value pair for the resource tag.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateTagsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value pair for the resource tag.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4819,6 +5071,33 @@ pub struct CreateConfigurationInput {
     /// <p>Create tags when creating the configuration.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateConfigurationInput {
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Create tags when creating the configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4875,6 +5154,93 @@ pub struct CreateBrokerInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title> <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p></important>
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
+}
+impl CreateBrokerInput {
+    /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+        self.authentication_strategy.as_ref()
+    }
+    /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
+    pub fn auto_minor_version_upgrade(&self) -> bool {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    pub fn broker_name(&self) -> std::option::Option<&str> {
+        self.broker_name.as_deref()
+    }
+    /// <p>A list of information about the configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ConfigurationId> {
+        self.configuration.as_ref()
+    }
+    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>Required. The broker's deployment mode.</p>
+    pub fn deployment_mode(&self) -> std::option::Option<&crate::model::DeploymentMode> {
+        self.deployment_mode.as_ref()
+    }
+    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn encryption_options(&self) -> std::option::Option<&crate::model::EncryptionOptions> {
+        self.encryption_options.as_ref()
+    }
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Required. The broker's instance type.</p>
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+        self.host_instance_type.as_deref()
+    }
+    /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn ldap_server_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::LdapServerMetadataInput> {
+        self.ldap_server_metadata.as_ref()
+    }
+    /// <p>Enables Amazon CloudWatch logging for brokers.</p>
+    pub fn logs(&self) -> std::option::Option<&crate::model::Logs> {
+        self.logs.as_ref()
+    }
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
+    pub fn maintenance_window_start_time(
+        &self,
+    ) -> std::option::Option<&crate::model::WeeklyStartTime> {
+        self.maintenance_window_start_time.as_ref()
+    }
+    /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
+    pub fn publicly_accessible(&self) -> bool {
+        self.publicly_accessible
+    }
+    /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The broker's storage type.</p>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::BrokerStorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important><p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p></important>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>Create tags when creating the broker.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title> <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p></important>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBrokerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

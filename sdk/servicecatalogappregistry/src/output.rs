@@ -6,6 +6,12 @@ pub struct UpdateAttributeGroupOutput {
     /// <p>The updated information of the attribute group.</p>
     pub attribute_group: std::option::Option<crate::model::AttributeGroup>,
 }
+impl UpdateAttributeGroupOutput {
+    /// <p>The updated information of the attribute group.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&crate::model::AttributeGroup> {
+        self.attribute_group.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAttributeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAttributeGroupOutput");
@@ -56,6 +62,12 @@ impl UpdateAttributeGroupOutput {
 pub struct UpdateApplicationOutput {
     /// <p>The updated information of the application.</p>
     pub application: std::option::Option<crate::model::Application>,
+}
+impl UpdateApplicationOutput {
+    /// <p>The updated information of the application.</p>
+    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+        self.application.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -172,6 +184,20 @@ pub struct SyncResourceOutput {
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
     pub action_taken: std::option::Option<crate::model::SyncAction>,
 }
+impl SyncResourceOutput {
+    /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
+    pub fn action_taken(&self) -> std::option::Option<&crate::model::SyncAction> {
+        self.action_taken.as_ref()
+    }
+}
 impl std::fmt::Debug for SyncResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SyncResourceOutput");
@@ -253,6 +279,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags on the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -317,6 +352,16 @@ pub struct ListAttributeGroupsOutput {
     pub attribute_groups: std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAttributeGroupsOutput {
+    /// <p>This list of attribute groups.</p>
+    pub fn attribute_groups(&self) -> std::option::Option<&[crate::model::AttributeGroupSummary]> {
+        self.attribute_groups.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAttributeGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -394,6 +439,16 @@ pub struct ListAssociatedResourcesOutput {
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociatedResourcesOutput {
+    /// <p>Information about the resources.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::ResourceInfo]> {
+        self.resources.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociatedResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedResourcesOutput");
@@ -466,6 +521,16 @@ pub struct ListAssociatedAttributeGroupsOutput {
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociatedAttributeGroupsOutput {
+    /// <p>A list of attribute group IDs.</p>
+    pub fn attribute_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_groups.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociatedAttributeGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedAttributeGroupsOutput");
@@ -537,6 +602,16 @@ pub struct ListApplicationsOutput {
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsOutput {
+    /// <p>This list of applications.</p>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+        self.applications.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -623,6 +698,43 @@ pub struct GetAttributeGroupOutput {
     /// <p>Key-value pairs associated with the attribute group.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetAttributeGroupOutput {
+    /// <p>The identifier of the attribute group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the attribute group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn attributes(&self) -> std::option::Option<&str> {
+        self.attributes.as_deref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>Key-value pairs associated with the attribute group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAttributeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -786,6 +898,12 @@ pub struct GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
     pub resource: std::option::Option<crate::model::Resource>,
 }
+impl GetAssociatedResourceOutput {
+    /// <p>The resource associated with the application.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAssociatedResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssociatedResourceOutput");
@@ -850,6 +968,47 @@ pub struct GetApplicationOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
     pub integrations: std::option::Option<crate::model::Integrations>,
+}
+impl GetApplicationOutput {
+    /// <p>The identifier of the application.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The number of top-level resources that were registered as part of this application.</p>
+    pub fn associated_resource_count(&self) -> i32 {
+        self.associated_resource_count
+    }
+    /// <p>Key-value pairs associated with the application.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    pub fn integrations(&self) -> std::option::Option<&crate::model::Integrations> {
+        self.integrations.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1031,6 +1190,16 @@ pub struct DisassociateResourceOutput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateResourceOutput {
+    /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateResourceOutput");
@@ -1096,6 +1265,16 @@ pub struct DisassociateAttributeGroupOutput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     pub attribute_group_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateAttributeGroupOutput {
+    /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+    pub fn attribute_group_arn(&self) -> std::option::Option<&str> {
+        self.attribute_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateAttributeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1164,6 +1343,12 @@ pub struct DeleteAttributeGroupOutput {
     /// <p>Information about the deleted attribute group.</p>
     pub attribute_group: std::option::Option<crate::model::AttributeGroupSummary>,
 }
+impl DeleteAttributeGroupOutput {
+    /// <p>Information about the deleted attribute group.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&crate::model::AttributeGroupSummary> {
+        self.attribute_group.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAttributeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAttributeGroupOutput");
@@ -1214,6 +1399,12 @@ impl DeleteAttributeGroupOutput {
 pub struct DeleteApplicationOutput {
     /// <p>Information about the deleted application.</p>
     pub application: std::option::Option<crate::model::ApplicationSummary>,
+}
+impl DeleteApplicationOutput {
+    /// <p>Information about the deleted application.</p>
+    pub fn application(&self) -> std::option::Option<&crate::model::ApplicationSummary> {
+        self.application.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1266,6 +1457,12 @@ pub struct CreateAttributeGroupOutput {
     /// <p>Information about the attribute group.</p>
     pub attribute_group: std::option::Option<crate::model::AttributeGroup>,
 }
+impl CreateAttributeGroupOutput {
+    /// <p>Information about the attribute group.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&crate::model::AttributeGroup> {
+        self.attribute_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAttributeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttributeGroupOutput");
@@ -1316,6 +1513,12 @@ impl CreateAttributeGroupOutput {
 pub struct CreateApplicationOutput {
     /// <p>Information about the application.</p>
     pub application: std::option::Option<crate::model::Application>,
+}
+impl CreateApplicationOutput {
+    /// <p>Information about the application.</p>
+    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+        self.application.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1369,6 +1572,16 @@ pub struct AssociateResourceOutput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl AssociateResourceOutput {
+    /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1435,6 +1648,16 @@ pub struct AssociateAttributeGroupOutput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
     pub attribute_group_arn: std::option::Option<std::string::String>,
+}
+impl AssociateAttributeGroupOutput {
+    /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
+    pub fn attribute_group_arn(&self) -> std::option::Option<&str> {
+        self.attribute_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateAttributeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

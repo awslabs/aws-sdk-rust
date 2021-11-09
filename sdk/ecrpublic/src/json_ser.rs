@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_batch_check_layer_availability_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchCheckLayerAvailabilityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.registry_id {
         object.key("registryId").string(var_1);
     }
@@ -18,12 +18,13 @@ pub fn serialize_structure_crate_input_batch_check_layer_availability_input(
         }
         array_4.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_batch_delete_image_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDeleteImageInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.registry_id {
         object.key("registryId").string(var_6);
     }
@@ -38,18 +39,19 @@ pub fn serialize_structure_crate_input_batch_delete_image_input(
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_11,
                     item_10,
-                );
+                )?;
                 object_11.finish();
             }
         }
         array_9.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_complete_layer_upload_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CompleteLayerUploadInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.registry_id {
         object.key("registryId").string(var_12);
     }
@@ -68,12 +70,13 @@ pub fn serialize_structure_crate_input_complete_layer_upload_input(
         }
         array_16.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.repository_name {
         object.key("repositoryName").string(var_18);
     }
@@ -82,7 +85,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         crate::json_ser::serialize_structure_crate_model_repository_catalog_data_input(
             &mut object_20,
             var_19,
-        );
+        )?;
         object_20.finish();
     }
     if let Some(var_21) = &input.tags {
@@ -90,18 +93,19 @@ pub fn serialize_structure_crate_input_create_repository_input(
         for item_23 in var_21 {
             {
                 let mut object_24 = array_22.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_24, item_23);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_24, item_23)?;
                 object_24.finish();
             }
         }
         array_22.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_repository_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteRepositoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.registry_id {
         object.key("registryId").string(var_25);
     }
@@ -111,24 +115,26 @@ pub fn serialize_structure_crate_input_delete_repository_input(
     if input.force {
         object.key("force").boolean(input.force);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_repository_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteRepositoryPolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.registry_id {
         object.key("registryId").string(var_27);
     }
     if let Some(var_28) = &input.repository_name {
         object.key("repositoryName").string(var_28);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_images_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeImagesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.registry_id {
         object.key("registryId").string(var_29);
     }
@@ -143,7 +149,7 @@ pub fn serialize_structure_crate_input_describe_images_input(
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_34,
                     item_33,
-                );
+                )?;
                 object_34.finish();
             }
         }
@@ -158,12 +164,13 @@ pub fn serialize_structure_crate_input_describe_images_input(
             aws_smithy_types::Number::NegInt((*var_36).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_image_tags_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeImageTagsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.registry_id {
         object.key("registryId").string(var_37);
     }
@@ -179,12 +186,13 @@ pub fn serialize_structure_crate_input_describe_image_tags_input(
             aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_registries_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeRegistriesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.next_token {
         object.key("nextToken").string(var_41);
     }
@@ -194,12 +202,13 @@ pub fn serialize_structure_crate_input_describe_registries_input(
             aws_smithy_types::Number::NegInt((*var_42).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_repositories_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeRepositoriesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.registry_id {
         object.key("registryId").string(var_43);
     }
@@ -221,57 +230,62 @@ pub fn serialize_structure_crate_input_describe_repositories_input(
             aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_repository_catalog_data_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRepositoryCatalogDataInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.registry_id {
         object.key("registryId").string(var_49);
     }
     if let Some(var_50) = &input.repository_name {
         object.key("repositoryName").string(var_50);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_repository_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRepositoryPolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.registry_id {
         object.key("registryId").string(var_51);
     }
     if let Some(var_52) = &input.repository_name {
         object.key("repositoryName").string(var_52);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_initiate_layer_upload_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::InitiateLayerUploadInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.registry_id {
         object.key("registryId").string(var_53);
     }
     if let Some(var_54) = &input.repository_name {
         object.key("repositoryName").string(var_54);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.resource_arn {
         object.key("resourceArn").string(var_55);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_image_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutImageInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.registry_id {
         object.key("registryId").string(var_56);
     }
@@ -290,21 +304,23 @@ pub fn serialize_structure_crate_input_put_image_input(
     if let Some(var_61) = &input.image_digest {
         object.key("imageDigest").string(var_61);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_registry_catalog_data_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutRegistryCatalogDataInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_62) = &input.display_name {
         object.key("displayName").string(var_62);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_repository_catalog_data_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutRepositoryCatalogDataInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.registry_id {
         object.key("registryId").string(var_63);
     }
@@ -316,15 +332,16 @@ pub fn serialize_structure_crate_input_put_repository_catalog_data_input(
         crate::json_ser::serialize_structure_crate_model_repository_catalog_data_input(
             &mut object_66,
             var_65,
-        );
+        )?;
         object_66.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_set_repository_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SetRepositoryPolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.registry_id {
         object.key("registryId").string(var_67);
     }
@@ -337,12 +354,13 @@ pub fn serialize_structure_crate_input_set_repository_policy_input(
     if input.force {
         object.key("force").boolean(input.force);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.resource_arn {
         object.key("resourceArn").string(var_70);
     }
@@ -351,18 +369,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_73 in var_71 {
             {
                 let mut object_74 = array_72.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_74, item_73);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_74, item_73)?;
                 object_74.finish();
             }
         }
         array_72.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.resource_arn {
         object.key("resourceArn").string(var_75);
     }
@@ -375,12 +394,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_77.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_upload_layer_part_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UploadLayerPartInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.registry_id {
         object.key("registryId").string(var_79);
     }
@@ -407,24 +427,26 @@ pub fn serialize_structure_crate_input_upload_layer_part_input(
             .key("layerPartBlob")
             .string_unchecked(&aws_smithy_types::base64::encode(var_84));
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_image_identifier(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ImageIdentifier,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.image_digest {
         object.key("imageDigest").string(var_85);
     }
     if let Some(var_86) = &input.image_tag {
         object.key("imageTag").string(var_86);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_repository_catalog_data_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RepositoryCatalogDataInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.description {
         object.key("description").string(var_87);
     }
@@ -457,16 +479,18 @@ pub fn serialize_structure_crate_model_repository_catalog_data_input(
     if let Some(var_96) = &input.usage_text {
         object.key("usageText").string(var_96);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.key {
         object.key("Key").string(var_97);
     }
     if let Some(var_98) = &input.value {
         object.key("Value").string(var_98);
     }
+    Ok(())
 }

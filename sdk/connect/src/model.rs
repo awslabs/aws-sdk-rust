@@ -12,6 +12,24 @@ pub struct UserPhoneConfig {
     /// <p>The phone number for the user's desk phone.</p>
     pub desk_phone_number: std::option::Option<std::string::String>,
 }
+impl UserPhoneConfig {
+    /// <p>The phone type.</p>
+    pub fn phone_type(&self) -> std::option::Option<&crate::model::PhoneType> {
+        self.phone_type.as_ref()
+    }
+    /// <p>The Auto accept setting.</p>
+    pub fn auto_accept(&self) -> bool {
+        self.auto_accept
+    }
+    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+    pub fn after_contact_work_time_limit(&self) -> i32 {
+        self.after_contact_work_time_limit
+    }
+    /// <p>The phone number for the user's desk phone.</p>
+    pub fn desk_phone_number(&self) -> std::option::Option<&str> {
+        self.desk_phone_number.as_deref()
+    }
+}
 impl std::fmt::Debug for UserPhoneConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserPhoneConfig");
@@ -174,6 +192,23 @@ pub struct UserIdentityInfo {
     /// <p>The email address. If you are using SAML for identity management and include this parameter,
     /// an error is returned.</p>
     pub email: std::option::Option<std::string::String>,
+}
+impl UserIdentityInfo {
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity
+    /// management.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity
+    /// management.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The email address. If you are using SAML for identity management and include this parameter,
+    /// an error is returned.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
 }
 impl std::fmt::Debug for UserIdentityInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -348,6 +383,30 @@ pub struct HierarchyStructureUpdate {
     /// <p>The update for level five.</p>
     pub level_five: std::option::Option<crate::model::HierarchyLevelUpdate>,
 }
+impl HierarchyStructureUpdate {
+    /// <p>The
+    /// update
+    /// for level one.</p>
+    pub fn level_one(&self) -> std::option::Option<&crate::model::HierarchyLevelUpdate> {
+        self.level_one.as_ref()
+    }
+    /// <p>The update for level two.</p>
+    pub fn level_two(&self) -> std::option::Option<&crate::model::HierarchyLevelUpdate> {
+        self.level_two.as_ref()
+    }
+    /// <p>The update for level three.</p>
+    pub fn level_three(&self) -> std::option::Option<&crate::model::HierarchyLevelUpdate> {
+        self.level_three.as_ref()
+    }
+    /// <p>The update for level four.</p>
+    pub fn level_four(&self) -> std::option::Option<&crate::model::HierarchyLevelUpdate> {
+        self.level_four.as_ref()
+    }
+    /// <p>The update for level five.</p>
+    pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyLevelUpdate> {
+        self.level_five.as_ref()
+    }
+}
 impl std::fmt::Debug for HierarchyStructureUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HierarchyStructureUpdate");
@@ -467,6 +526,12 @@ pub struct HierarchyLevelUpdate {
     /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl HierarchyLevelUpdate {
+    /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for HierarchyLevelUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HierarchyLevelUpdate");
@@ -521,6 +586,26 @@ pub struct RoutingProfileQueueConfig {
     /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
     /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub delay: std::option::Option<i32>,
+}
+impl RoutingProfileQueueConfig {
+    /// <p>Contains information about a queue resource.</p>
+    pub fn queue_reference(
+        &self,
+    ) -> std::option::Option<&crate::model::RoutingProfileQueueReference> {
+        self.queue_reference.as_ref()
+    }
+    /// <p>The order in which contacts are to be handled for the queue. For more information, see
+    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+    /// delay</a>.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an
+    /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+    /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn delay(&self) -> std::option::Option<i32> {
+        self.delay
+    }
 }
 impl std::fmt::Debug for RoutingProfileQueueConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -612,6 +697,17 @@ pub struct RoutingProfileQueueReference {
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
     /// profile.</p>
     pub channel: std::option::Option<crate::model::Channel>,
+}
+impl RoutingProfileQueueReference {
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
+    /// profile.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for RoutingProfileQueueReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -741,6 +837,19 @@ pub struct MediaConcurrency {
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub concurrency: i32,
 }
+impl MediaConcurrency {
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
+    /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
+    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
+    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
+    /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
+    pub fn concurrency(&self) -> i32 {
+        self.concurrency
+    }
+}
 impl std::fmt::Debug for MediaConcurrency {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MediaConcurrency");
@@ -814,6 +923,27 @@ pub struct QuickConnectConfig {
     pub queue_config: std::option::Option<crate::model::QueueQuickConnectConfig>,
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
     pub phone_config: std::option::Option<crate::model::PhoneNumberQuickConnectConfig>,
+}
+impl QuickConnectConfig {
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+    pub fn quick_connect_type(&self) -> std::option::Option<&crate::model::QuickConnectType> {
+        self.quick_connect_type.as_ref()
+    }
+    /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
+    pub fn user_config(&self) -> std::option::Option<&crate::model::UserQuickConnectConfig> {
+        self.user_config.as_ref()
+    }
+    /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
+    pub fn queue_config(&self) -> std::option::Option<&crate::model::QueueQuickConnectConfig> {
+        self.queue_config.as_ref()
+    }
+    /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
+    pub fn phone_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PhoneNumberQuickConnectConfig> {
+        self.phone_config.as_ref()
+    }
 }
 impl std::fmt::Debug for QuickConnectConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -916,6 +1046,12 @@ pub struct PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
     pub phone_number: std::option::Option<std::string::String>,
 }
+impl PhoneNumberQuickConnectConfig {
+    /// <p>The phone number in E.164 format.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+}
 impl std::fmt::Debug for PhoneNumberQuickConnectConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberQuickConnectConfig");
@@ -966,6 +1102,16 @@ pub struct QueueQuickConnectConfig {
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
     pub contact_flow_id: std::option::Option<std::string::String>,
+}
+impl QueueQuickConnectConfig {
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
 }
 impl std::fmt::Debug for QueueQuickConnectConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1033,6 +1179,16 @@ pub struct UserQuickConnectConfig {
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
     pub contact_flow_id: std::option::Option<std::string::String>,
+}
+impl UserQuickConnectConfig {
+    /// <p>The identifier of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The identifier of the contact flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UserQuickConnectConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1216,6 +1372,20 @@ pub struct OutboundCallerConfig {
     /// <p>The outbound whisper flow to be used during an outbound call.</p>
     pub outbound_flow_id: std::option::Option<std::string::String>,
 }
+impl OutboundCallerConfig {
+    /// <p>The caller ID name.</p>
+    pub fn outbound_caller_id_name(&self) -> std::option::Option<&str> {
+        self.outbound_caller_id_name.as_deref()
+    }
+    /// <p>The caller ID number.</p>
+    pub fn outbound_caller_id_number_id(&self) -> std::option::Option<&str> {
+        self.outbound_caller_id_number_id.as_deref()
+    }
+    /// <p>The outbound whisper flow to be used during an outbound call.</p>
+    pub fn outbound_flow_id(&self) -> std::option::Option<&str> {
+        self.outbound_flow_id.as_deref()
+    }
+}
 impl std::fmt::Debug for OutboundCallerConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutboundCallerConfig");
@@ -1315,6 +1485,37 @@ pub struct InstanceStorageConfig {
     pub kinesis_stream_config: std::option::Option<crate::model::KinesisStreamConfig>,
     /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
     pub kinesis_firehose_config: std::option::Option<crate::model::KinesisFirehoseConfig>,
+}
+impl InstanceStorageConfig {
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>A valid storage type.</p>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The S3 bucket
+    /// configuration.</p>
+    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
+        self.s3_config.as_ref()
+    }
+    /// <p>The configuration of the Kinesis video stream.</p>
+    pub fn kinesis_video_stream_config(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisVideoStreamConfig> {
+        self.kinesis_video_stream_config.as_ref()
+    }
+    /// <p>The configuration of the Kinesis data stream.</p>
+    pub fn kinesis_stream_config(&self) -> std::option::Option<&crate::model::KinesisStreamConfig> {
+        self.kinesis_stream_config.as_ref()
+    }
+    /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
+    pub fn kinesis_firehose_config(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseConfig> {
+        self.kinesis_firehose_config.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceStorageConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1457,6 +1658,12 @@ pub struct KinesisFirehoseConfig {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub firehose_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseConfig {
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    pub fn firehose_arn(&self) -> std::option::Option<&str> {
+        self.firehose_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseConfig");
@@ -1504,6 +1711,12 @@ impl KinesisFirehoseConfig {
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     pub stream_arn: std::option::Option<std::string::String>,
+}
+impl KinesisStreamConfig {
+    /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1558,6 +1771,22 @@ pub struct KinesisVideoStreamConfig {
     pub retention_period_hours: i32,
     /// <p>The encryption configuration.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
+}
+impl KinesisVideoStreamConfig {
+    /// <p>The prefix of the video stream.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data
+    /// in a data store that is associated with the stream.</p>
+    /// <p>The default value is 0, indicating that the stream does not persist data.</p>
+    pub fn retention_period_hours(&self) -> i32 {
+        self.retention_period_hours
+    }
+    /// <p>The encryption configuration.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
 }
 impl std::fmt::Debug for KinesisVideoStreamConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1644,6 +1873,19 @@ pub struct EncryptionConfig {
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
     pub key_id: std::option::Option<std::string::String>,
+}
+impl EncryptionConfig {
+    /// <p>The type of encryption.</p>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.encryption_type.as_ref()
+    }
+    /// <p>The full ARN of the encryption key. </p>
+    /// <note>
+    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
+    /// </note>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1769,6 +2011,20 @@ pub struct S3Config {
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 encryption configuration.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
+}
+impl S3Config {
+    /// <p>The S3 bucket name.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The S3 bucket prefix.</p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p>The Amazon S3 encryption configuration.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
 }
 impl std::fmt::Debug for S3Config {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2083,6 +2339,20 @@ pub struct HoursOfOperationConfig {
     /// <p>The end time that your contact center closes.</p>
     pub end_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
 }
+impl HoursOfOperationConfig {
+    /// <p>The day that the hours of operation applies to.</p>
+    pub fn day(&self) -> std::option::Option<&crate::model::HoursOfOperationDays> {
+        self.day.as_ref()
+    }
+    /// <p>The start time that your contact center opens.</p>
+    pub fn start_time(&self) -> std::option::Option<&crate::model::HoursOfOperationTimeSlice> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time that your contact center closes.</p>
+    pub fn end_time(&self) -> std::option::Option<&crate::model::HoursOfOperationTimeSlice> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for HoursOfOperationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HoursOfOperationConfig");
@@ -2167,6 +2437,16 @@ pub struct HoursOfOperationTimeSlice {
     pub hours: std::option::Option<i32>,
     /// <p>The minutes.</p>
     pub minutes: std::option::Option<i32>,
+}
+impl HoursOfOperationTimeSlice {
+    /// <p>The hours.</p>
+    pub fn hours(&self) -> std::option::Option<i32> {
+        self.hours
+    }
+    /// <p>The minutes.</p>
+    pub fn minutes(&self) -> std::option::Option<i32> {
+        self.minutes
+    }
 }
 impl std::fmt::Debug for HoursOfOperationTimeSlice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2312,6 +2592,12 @@ pub struct ProblemDetail {
     /// <p>The problem detail's message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ProblemDetail {
+    /// <p>The problem detail's message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ProblemDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProblemDetail");
@@ -2418,6 +2704,17 @@ pub struct Reference {
     /// <p>A valid
     /// URL.</p>
     pub r#type: std::option::Option<crate::model::ReferenceType>,
+}
+impl Reference {
+    /// <p>A formatted URL that displays to an agent in the Contact Control Panel (CCP)</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>A valid
+    /// URL.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ReferenceType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Reference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2592,6 +2889,18 @@ pub struct AnswerMachineDetectionConfig {
     /// <p>Wait for the answering machine prompt.</p>
     pub await_answer_machine_prompt: bool,
 }
+impl AnswerMachineDetectionConfig {
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
+    /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
+    /// </p>
+    pub fn enable_answer_machine_detection(&self) -> bool {
+        self.enable_answer_machine_detection
+    }
+    /// <p>Wait for the answering machine prompt.</p>
+    pub fn await_answer_machine_prompt(&self) -> bool {
+        self.await_answer_machine_prompt
+    }
+}
 impl std::fmt::Debug for AnswerMachineDetectionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnswerMachineDetectionConfig");
@@ -2669,6 +2978,13 @@ pub struct ChatStreamingConfiguration {
     /// to publish real-time message streaming for chat conversations.</p>
     pub streaming_endpoint_arn: std::option::Option<std::string::String>,
 }
+impl ChatStreamingConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
+    /// to publish real-time message streaming for chat conversations.</p>
+    pub fn streaming_endpoint_arn(&self) -> std::option::Option<&str> {
+        self.streaming_endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ChatStreamingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChatStreamingConfiguration");
@@ -2721,6 +3037,12 @@ impl ChatStreamingConfiguration {
 pub struct VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
     pub voice_recording_track: std::option::Option<crate::model::VoiceRecordingTrack>,
+}
+impl VoiceRecordingConfiguration {
+    /// <p>Identifies which track is being recorded.</p>
+    pub fn voice_recording_track(&self) -> std::option::Option<&crate::model::VoiceRecordingTrack> {
+        self.voice_recording_track.as_ref()
+    }
 }
 impl std::fmt::Debug for VoiceRecordingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2834,6 +3156,16 @@ pub struct ChatMessage {
     /// <p>The content of the chat message.</p>
     pub content: std::option::Option<std::string::String>,
 }
+impl ChatMessage {
+    /// <p>The type of the content. Supported types are text and plain.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The content of the chat message.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+}
 impl std::fmt::Debug for ChatMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChatMessage");
@@ -2895,6 +3227,12 @@ pub struct ParticipantDetails {
     /// <p>Display name of the participant.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl ParticipantDetails {
+    /// <p>Display name of the participant.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ParticipantDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParticipantDetails");
@@ -2946,6 +3284,20 @@ pub struct UserSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Connect user name of the user account.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl UserSummary {
+    /// <p>The identifier of the user account.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Connect user name of the user account.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for UserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3024,6 +3376,20 @@ pub struct HierarchyGroupSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the hierarchy group.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl HierarchyGroupSummary {
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the hierarchy group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for HierarchyGroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3105,6 +3471,21 @@ pub struct UseCase {
     /// <p>The type of use case to associate to the integration association. Each integration
     /// association can have only one of each use case type.</p>
     pub use_case_type: std::option::Option<crate::model::UseCaseType>,
+}
+impl UseCase {
+    /// <p>The identifier for the use case.</p>
+    pub fn use_case_id(&self) -> std::option::Option<&str> {
+        self.use_case_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the use case.</p>
+    pub fn use_case_arn(&self) -> std::option::Option<&str> {
+        self.use_case_arn.as_deref()
+    }
+    /// <p>The type of use case to associate to the integration association. Each integration
+    /// association can have only one of each use case type.</p>
+    pub fn use_case_type(&self) -> std::option::Option<&crate::model::UseCaseType> {
+        self.use_case_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UseCase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3244,6 +3625,20 @@ pub struct SecurityProfileSummary {
     /// <p>The name of the security profile.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl SecurityProfileSummary {
+    /// <p>The identifier of the security profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the security profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityProfileSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityProfileSummary");
@@ -3321,6 +3716,20 @@ pub struct SecurityKey {
     pub key: std::option::Option<std::string::String>,
     /// <p>When the security key was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl SecurityKey {
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The key of the security key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>When the security key was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for SecurityKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3405,6 +3814,20 @@ pub struct RoutingProfileSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the routing profile.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl RoutingProfileSummary {
+    /// <p>The identifier of the routing profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the routing profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for RoutingProfileSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3493,6 +3916,36 @@ pub struct RoutingProfileQueueConfigSummary {
     pub delay: i32,
     /// <p>The channels this queue supports.</p>
     pub channel: std::option::Option<crate::model::Channel>,
+}
+impl RoutingProfileQueueConfigSummary {
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    pub fn queue_arn(&self) -> std::option::Option<&str> {
+        self.queue_arn.as_deref()
+    }
+    /// <p>The name of the queue.</p>
+    pub fn queue_name(&self) -> std::option::Option<&str> {
+        self.queue_name.as_deref()
+    }
+    /// <p>The order in which contacts are to be handled for the queue. For more information, see
+    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+    /// delay</a>.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an
+    /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+    /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn delay(&self) -> i32 {
+        self.delay
+    }
+    /// <p>The channels this queue supports.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for RoutingProfileQueueConfigSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3622,6 +4075,25 @@ pub struct QuickConnectSummary {
     /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub quick_connect_type: std::option::Option<crate::model::QuickConnectType>,
 }
+impl QuickConnectSummary {
+    /// <p>The identifier for the quick connect.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the quick connect.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    pub fn quick_connect_type(&self) -> std::option::Option<&crate::model::QuickConnectType> {
+        self.quick_connect_type.as_ref()
+    }
+}
 impl std::fmt::Debug for QuickConnectSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QuickConnectSummary");
@@ -3719,6 +4191,24 @@ pub struct QueueSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of queue.</p>
     pub queue_type: std::option::Option<crate::model::QueueType>,
+}
+impl QueueSummary {
+    /// <p>The identifier of the queue.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the queue.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of queue.</p>
+    pub fn queue_type(&self) -> std::option::Option<&crate::model::QueueType> {
+        self.queue_type.as_ref()
+    }
 }
 impl std::fmt::Debug for QueueSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3869,6 +4359,20 @@ pub struct PromptSummary {
     /// <p>The name of the prompt.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl PromptSummary {
+    /// <p>The identifier of the prompt.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the prompt.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for PromptSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PromptSummary");
@@ -3950,6 +4454,30 @@ pub struct PhoneNumberSummary {
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
     /// <p>The ISO country code.</p>
     pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
+}
+impl PhoneNumberSummary {
+    /// <p>The identifier of the phone number.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The phone number.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The type of phone number.</p>
+    pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.phone_number_type.as_ref()
+    }
+    /// <p>The ISO country code.</p>
+    pub fn phone_number_country_code(
+        &self,
+    ) -> std::option::Option<&crate::model::PhoneNumberCountryCode> {
+        self.phone_number_country_code.as_ref()
+    }
 }
 impl std::fmt::Debug for PhoneNumberSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5131,6 +5659,16 @@ pub struct LexBot {
     /// <p>The Region that the Amazon Lex bot was created in.</p>
     pub lex_region: std::option::Option<std::string::String>,
 }
+impl LexBot {
+    /// <p>The name of the Amazon Lex bot.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Region that the Amazon Lex bot was created in.</p>
+    pub fn lex_region(&self) -> std::option::Option<&str> {
+        self.lex_region.as_deref()
+    }
+}
 impl std::fmt::Debug for LexBot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LexBot");
@@ -5205,6 +5743,40 @@ pub struct IntegrationAssociationSummary {
     pub source_application_name: std::option::Option<std::string::String>,
     /// <p>The name of the source.</p>
     pub source_type: std::option::Option<crate::model::SourceType>,
+}
+impl IntegrationAssociationSummary {
+    /// <p>The identifier for the AppIntegration association.</p>
+    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+        self.integration_association_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
+    pub fn integration_association_arn(&self) -> std::option::Option<&str> {
+        self.integration_association_arn.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The integration type.</p>
+    pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.integration_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
+    pub fn integration_arn(&self) -> std::option::Option<&str> {
+        self.integration_arn.as_deref()
+    }
+    /// <p>The URL for the external application.</p>
+    pub fn source_application_url(&self) -> std::option::Option<&str> {
+        self.source_application_url.as_deref()
+    }
+    /// <p>The user-provided, friendly name for the external application.</p>
+    pub fn source_application_name(&self) -> std::option::Option<&str> {
+        self.source_application_name.as_deref()
+    }
+    /// <p>The name of the source.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
 }
 impl std::fmt::Debug for IntegrationAssociationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5519,6 +6091,44 @@ pub struct InstanceSummary {
     /// <p>Whether outbound calls are enabled.</p>
     pub outbound_calls_enabled: std::option::Option<bool>,
 }
+impl InstanceSummary {
+    /// <p>The identifier of the instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The identity management type of the instance.</p>
+    pub fn identity_management_type(&self) -> std::option::Option<&crate::model::DirectoryType> {
+        self.identity_management_type.as_ref()
+    }
+    /// <p>The alias of the instance.</p>
+    pub fn instance_alias(&self) -> std::option::Option<&str> {
+        self.instance_alias.as_deref()
+    }
+    /// <p>When the instance was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The service role of the instance.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The state of the instance.</p>
+    pub fn instance_status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
+        self.instance_status.as_ref()
+    }
+    /// <p>Whether inbound calls are enabled.</p>
+    pub fn inbound_calls_enabled(&self) -> std::option::Option<bool> {
+        self.inbound_calls_enabled
+    }
+    /// <p>Whether outbound calls are enabled.</p>
+    pub fn outbound_calls_enabled(&self) -> std::option::Option<bool> {
+        self.outbound_calls_enabled
+    }
+}
 impl std::fmt::Debug for InstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceSummary");
@@ -5803,6 +6413,16 @@ pub struct Attribute {
     /// <p>The value of the attribute.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Attribute {
+    /// <p>The type of attribute.</p>
+    pub fn attribute_type(&self) -> std::option::Option<&crate::model::InstanceAttributeType> {
+        self.attribute_type.as_ref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Attribute");
@@ -5870,6 +6490,20 @@ pub struct HoursOfOperationSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the hours of operation.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl HoursOfOperationSummary {
+    /// <p>The identifier of the hours of operation.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hours of operation.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the hours of operation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for HoursOfOperationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5952,6 +6586,24 @@ pub struct ContactFlowSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of contact flow.</p>
     pub contact_flow_type: std::option::Option<crate::model::ContactFlowType>,
+}
+impl ContactFlowSummary {
+    /// <p>The identifier of the contact flow.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the contact flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of contact flow.</p>
+    pub fn contact_flow_type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
+        self.contact_flow_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ContactFlowSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6138,6 +6790,16 @@ pub struct LexBotConfig {
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     pub lex_v2_bot: std::option::Option<crate::model::LexV2Bot>,
 }
+impl LexBotConfig {
+    /// <p>Configuration information of an Amazon Lex bot.</p>
+    pub fn lex_bot(&self) -> std::option::Option<&crate::model::LexBot> {
+        self.lex_bot.as_ref()
+    }
+    /// <p>Configuration information of an Amazon Lex V2 bot.</p>
+    pub fn lex_v2_bot(&self) -> std::option::Option<&crate::model::LexV2Bot> {
+        self.lex_v2_bot.as_ref()
+    }
+}
 impl std::fmt::Debug for LexBotConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LexBotConfig");
@@ -6201,6 +6863,12 @@ impl LexBotConfig {
 pub struct LexV2Bot {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
     pub alias_arn: std::option::Option<std::string::String>,
+}
+impl LexV2Bot {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
+    pub fn alias_arn(&self) -> std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for LexV2Bot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6310,6 +6978,24 @@ pub struct AgentStatusSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the agent status.</p>
     pub r#type: std::option::Option<crate::model::AgentStatusType>,
+}
+impl AgentStatusSummary {
+    /// <p>The identifier for an agent status.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the agent status.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the agent status.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the agent status.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AgentStatusType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for AgentStatusSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6462,6 +7148,16 @@ pub struct HistoricalMetricResult {
     /// <p>The set of metrics.</p>
     pub collections: std::option::Option<std::vec::Vec<crate::model::HistoricalMetricData>>,
 }
+impl HistoricalMetricResult {
+    /// <p>The dimension for the metrics.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::Dimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The set of metrics.</p>
+    pub fn collections(&self) -> std::option::Option<&[crate::model::HistoricalMetricData]> {
+        self.collections.as_deref()
+    }
+}
 impl std::fmt::Debug for HistoricalMetricResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HistoricalMetricResult");
@@ -6538,6 +7234,16 @@ pub struct HistoricalMetricData {
     /// <p>The value of the metric.</p>
     pub value: std::option::Option<f64>,
 }
+impl HistoricalMetricData {
+    /// <p>Information about the metric.</p>
+    pub fn metric(&self) -> std::option::Option<&crate::model::HistoricalMetric> {
+        self.metric.as_ref()
+    }
+    /// <p>The value of the metric.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+}
 impl std::fmt::Debug for HistoricalMetricData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HistoricalMetricData");
@@ -6608,6 +7314,24 @@ pub struct HistoricalMetric {
     pub statistic: std::option::Option<crate::model::Statistic>,
     /// <p>The unit for the metric.</p>
     pub unit: std::option::Option<crate::model::Unit>,
+}
+impl HistoricalMetric {
+    /// <p>The name of the metric.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::HistoricalMetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The threshold for the metric, used with service level metrics.</p>
+    pub fn threshold(&self) -> std::option::Option<&crate::model::Threshold> {
+        self.threshold.as_ref()
+    }
+    /// <p>The statistic for the metric.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::Statistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The unit for the metric.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for HistoricalMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6824,6 +7548,16 @@ pub struct Threshold {
     pub comparison: std::option::Option<crate::model::Comparison>,
     /// <p>The threshold value to compare.</p>
     pub threshold_value: std::option::Option<f64>,
+}
+impl Threshold {
+    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    pub fn comparison(&self) -> std::option::Option<&crate::model::Comparison> {
+        self.comparison.as_ref()
+    }
+    /// <p>The threshold value to compare.</p>
+    pub fn threshold_value(&self) -> std::option::Option<f64> {
+        self.threshold_value
+    }
 }
 impl std::fmt::Debug for Threshold {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7123,6 +7857,16 @@ pub struct Dimensions {
     /// <p>The channel used for grouping and filters.</p>
     pub channel: std::option::Option<crate::model::Channel>,
 }
+impl Dimensions {
+    /// <p>Information about the queue for which metrics are returned.</p>
+    pub fn queue(&self) -> std::option::Option<&crate::model::QueueReference> {
+        self.queue.as_ref()
+    }
+    /// <p>The channel used for grouping and filters.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
+}
 impl std::fmt::Debug for Dimensions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Dimensions");
@@ -7188,6 +7932,16 @@ pub struct QueueReference {
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl QueueReference {
+    /// <p>The identifier of the queue.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for QueueReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7308,6 +8062,17 @@ pub struct Filters {
     /// <p>The channel to use to filter the metrics.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
+impl Filters {
+    /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+    /// request.</p>
+    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+        self.queues.as_deref()
+    }
+    /// <p>The channel to use to filter the metrics.</p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.channels.as_deref()
+    }
+}
 impl std::fmt::Debug for Filters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filters");
@@ -7395,6 +8160,25 @@ pub struct Credentials {
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>Renews the expiration timer for a generated token.</p>
     pub refresh_token_expiration: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Credentials {
+    /// <p>An access token generated for a federated user to access Amazon Connect.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>A token generated with an expiration time for the session a user is logged in to
+    /// Amazon Connect.</p>
+    pub fn access_token_expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.access_token_expiration.as_ref()
+    }
+    /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p>Renews the expiration timer for a generated token.</p>
+    pub fn refresh_token_expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.refresh_token_expiration.as_ref()
+    }
 }
 impl std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7496,6 +8280,16 @@ pub struct CurrentMetricResult {
     /// <p>The set of metrics.</p>
     pub collections: std::option::Option<std::vec::Vec<crate::model::CurrentMetricData>>,
 }
+impl CurrentMetricResult {
+    /// <p>The dimensions for the metrics.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::Dimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The set of metrics.</p>
+    pub fn collections(&self) -> std::option::Option<&[crate::model::CurrentMetricData]> {
+        self.collections.as_deref()
+    }
+}
 impl std::fmt::Debug for CurrentMetricResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CurrentMetricResult");
@@ -7571,6 +8365,16 @@ pub struct CurrentMetricData {
     /// <p>The value of the metric.</p>
     pub value: std::option::Option<f64>,
 }
+impl CurrentMetricData {
+    /// <p>Information about the metric.</p>
+    pub fn metric(&self) -> std::option::Option<&crate::model::CurrentMetric> {
+        self.metric.as_ref()
+    }
+    /// <p>The value of the metric.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+}
 impl std::fmt::Debug for CurrentMetricData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CurrentMetricData");
@@ -7637,6 +8441,16 @@ pub struct CurrentMetric {
     pub name: std::option::Option<crate::model::CurrentMetricName>,
     /// <p>The unit for the metric.</p>
     pub unit: std::option::Option<crate::model::Unit>,
+}
+impl CurrentMetric {
+    /// <p>The name of the metric.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::CurrentMetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The unit for the metric.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for CurrentMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7823,6 +8637,28 @@ pub struct HierarchyStructure {
     /// <p>Information about level five.</p>
     pub level_five: std::option::Option<crate::model::HierarchyLevel>,
 }
+impl HierarchyStructure {
+    /// <p>Information about level one.</p>
+    pub fn level_one(&self) -> std::option::Option<&crate::model::HierarchyLevel> {
+        self.level_one.as_ref()
+    }
+    /// <p>Information about level two.</p>
+    pub fn level_two(&self) -> std::option::Option<&crate::model::HierarchyLevel> {
+        self.level_two.as_ref()
+    }
+    /// <p>Information about level three.</p>
+    pub fn level_three(&self) -> std::option::Option<&crate::model::HierarchyLevel> {
+        self.level_three.as_ref()
+    }
+    /// <p>Information about level four.</p>
+    pub fn level_four(&self) -> std::option::Option<&crate::model::HierarchyLevel> {
+        self.level_four.as_ref()
+    }
+    /// <p>Information about level five.</p>
+    pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyLevel> {
+        self.level_five.as_ref()
+    }
+}
 impl std::fmt::Debug for HierarchyStructure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HierarchyStructure");
@@ -7942,6 +8778,20 @@ pub struct HierarchyLevel {
     /// <p>The name of the hierarchy level.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl HierarchyLevel {
+    /// <p>The identifier of the hierarchy level.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy level.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the hierarchy level.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for HierarchyLevel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HierarchyLevel");
@@ -8023,6 +8873,28 @@ pub struct HierarchyGroup {
     pub level_id: std::option::Option<std::string::String>,
     /// <p>Information about the levels in the hierarchy group.</p>
     pub hierarchy_path: std::option::Option<crate::model::HierarchyPath>,
+}
+impl HierarchyGroup {
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the hierarchy group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the level in the hierarchy group.</p>
+    pub fn level_id(&self) -> std::option::Option<&str> {
+        self.level_id.as_deref()
+    }
+    /// <p>Information about the levels in the hierarchy group.</p>
+    pub fn hierarchy_path(&self) -> std::option::Option<&crate::model::HierarchyPath> {
+        self.hierarchy_path.as_ref()
+    }
 }
 impl std::fmt::Debug for HierarchyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8134,6 +9006,28 @@ pub struct HierarchyPath {
     pub level_four: std::option::Option<crate::model::HierarchyGroupSummary>,
     /// <p>Information about level five.</p>
     pub level_five: std::option::Option<crate::model::HierarchyGroupSummary>,
+}
+impl HierarchyPath {
+    /// <p>Information about level one.</p>
+    pub fn level_one(&self) -> std::option::Option<&crate::model::HierarchyGroupSummary> {
+        self.level_one.as_ref()
+    }
+    /// <p>Information about level two.</p>
+    pub fn level_two(&self) -> std::option::Option<&crate::model::HierarchyGroupSummary> {
+        self.level_two.as_ref()
+    }
+    /// <p>Information about level three.</p>
+    pub fn level_three(&self) -> std::option::Option<&crate::model::HierarchyGroupSummary> {
+        self.level_three.as_ref()
+    }
+    /// <p>Information about level four.</p>
+    pub fn level_four(&self) -> std::option::Option<&crate::model::HierarchyGroupSummary> {
+        self.level_four.as_ref()
+    }
+    /// <p>Information about level five.</p>
+    pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyGroupSummary> {
+        self.level_five.as_ref()
+    }
 }
 impl std::fmt::Debug for HierarchyPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8269,6 +9163,52 @@ pub struct User {
     /// tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl User {
+    /// <p>The identifier of the user account.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The user name assigned to the user account.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>Information about the user identity.</p>
+    pub fn identity_info(&self) -> std::option::Option<&crate::model::UserIdentityInfo> {
+        self.identity_info.as_ref()
+    }
+    /// <p>Information about the phone configuration for the user.</p>
+    pub fn phone_config(&self) -> std::option::Option<&crate::model::UserPhoneConfig> {
+        self.phone_config.as_ref()
+    }
+    /// <p>The identifier of the user account in the directory used for identity management.</p>
+    pub fn directory_user_id(&self) -> std::option::Option<&str> {
+        self.directory_user_id.as_deref()
+    }
+    /// <p>The identifiers of the security profiles for the user.</p>
+    pub fn security_profile_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_profile_ids.as_deref()
+    }
+    /// <p>The identifier of the routing profile for the user.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The identifier of the hierarchy group for the user.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The
+    /// tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8494,6 +9434,44 @@ pub struct RoutingProfile {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RoutingProfile {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the routing profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn routing_profile_arn(&self) -> std::option::Option<&str> {
+        self.routing_profile_arn.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The description of the routing profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
+    /// profile.</p>
+    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
+        self.media_concurrencies.as_deref()
+    }
+    /// <p>The identifier of the default outbound queue for this routing profile.</p>
+    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
+        self.default_outbound_queue_id.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for RoutingProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoutingProfile");
@@ -8685,6 +9663,35 @@ pub struct QuickConnect {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl QuickConnect {
+    /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
+    pub fn quick_connect_arn(&self) -> std::option::Option<&str> {
+        self.quick_connect_arn.as_deref()
+    }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn quick_connect_id(&self) -> std::option::Option<&str> {
+        self.quick_connect_id.as_deref()
+    }
+    /// <p>The name of the quick connect.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Contains information about the quick connect.</p>
+    pub fn quick_connect_config(&self) -> std::option::Option<&crate::model::QuickConnectConfig> {
+        self.quick_connect_config.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for QuickConnect {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QuickConnect");
@@ -8840,6 +9847,49 @@ pub struct Queue {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Queue {
+    /// <p>The name of the queue.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the queue.</p>
+    pub fn queue_arn(&self) -> std::option::Option<&str> {
+        self.queue_arn.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The description of the queue.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    pub fn outbound_caller_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundCallerConfig> {
+        self.outbound_caller_config.as_ref()
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn max_contacts(&self) -> std::option::Option<i32> {
+        self.max_contacts
+    }
+    /// <p>The status of the queue.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
+        self.status.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Queue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9035,6 +10085,49 @@ pub struct Instance {
     /// <p>Whether outbound calls are enabled.</p>
     pub outbound_calls_enabled: std::option::Option<bool>,
 }
+impl Instance {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The identity management type.</p>
+    pub fn identity_management_type(&self) -> std::option::Option<&crate::model::DirectoryType> {
+        self.identity_management_type.as_ref()
+    }
+    /// <p>The alias of instance.</p>
+    pub fn instance_alias(&self) -> std::option::Option<&str> {
+        self.instance_alias.as_deref()
+    }
+    /// <p>When the instance was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The service role of the instance.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The state of the instance.</p>
+    pub fn instance_status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
+        self.instance_status.as_ref()
+    }
+    /// <p>Relevant
+    /// details why the instance was not successfully created. </p>
+    pub fn status_reason(&self) -> std::option::Option<&crate::model::InstanceStatusReason> {
+        self.status_reason.as_ref()
+    }
+    /// <p>Whether inbound calls are enabled.</p>
+    pub fn inbound_calls_enabled(&self) -> std::option::Option<bool> {
+        self.inbound_calls_enabled
+    }
+    /// <p>Whether outbound calls are enabled.</p>
+    pub fn outbound_calls_enabled(&self) -> std::option::Option<bool> {
+        self.outbound_calls_enabled
+    }
+}
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Instance");
@@ -9218,6 +10311,12 @@ pub struct InstanceStatusReason {
     /// <p>The message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InstanceStatusReason {
+    /// <p>The message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceStatusReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceStatusReason");
@@ -9278,6 +10377,39 @@ pub struct HoursOfOperation {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl HoursOfOperation {
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+    pub fn hours_of_operation_arn(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_arn.as_deref()
+    }
+    /// <p>The name for the hours of operation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description for the hours of operation.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time zone for the hours of operation.</p>
+    pub fn time_zone(&self) -> std::option::Option<&str> {
+        self.time_zone.as_deref()
+    }
+    /// <p>Configuration information for the hours of operation.</p>
+    pub fn config(&self) -> std::option::Option<&[crate::model::HoursOfOperationConfig]> {
+        self.config.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for HoursOfOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9451,6 +10583,40 @@ pub struct ContactFlow {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ContactFlow {
+    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The identifier of the contact flow.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the contact flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The description of the contact flow.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The content of the contact flow.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ContactFlow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContactFlow");
@@ -9613,6 +10779,43 @@ pub struct AgentStatus {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AgentStatus {
+    /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    pub fn agent_status_arn(&self) -> std::option::Option<&str> {
+        self.agent_status_arn.as_deref()
+    }
+    /// <p>The identifier of the agent status.</p>
+    pub fn agent_status_id(&self) -> std::option::Option<&str> {
+        self.agent_status_id.as_deref()
+    }
+    /// <p>The name of the agent status.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the agent status.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of agent status.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AgentStatusType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The display order of the agent status.</p>
+    pub fn display_order(&self) -> std::option::Option<i32> {
+        self.display_order
+    }
+    /// <p>The state of the agent status.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AgentStatusState> {
+        self.state.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AgentStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

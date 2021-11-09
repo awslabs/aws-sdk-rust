@@ -68,6 +68,16 @@ pub struct PutScalingPolicyOutput {
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
 }
+impl PutScalingPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
+    pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
+        self.alarms.as_deref()
+    }
+}
 impl std::fmt::Debug for PutScalingPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutScalingPolicyOutput");
@@ -140,6 +150,17 @@ pub struct DescribeScheduledActionsOutput {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScheduledActionsOutput {
+    /// <p>Information about the scheduled actions.</p>
+    pub fn scheduled_actions(&self) -> std::option::Option<&[crate::model::ScheduledAction]> {
+        self.scheduled_actions.as_deref()
+    }
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduledActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -220,6 +241,17 @@ pub struct DescribeScalingPoliciesOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeScalingPoliciesOutput {
+    /// <p>Information about the scaling policies.</p>
+    pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
+        self.scaling_policies.as_deref()
+    }
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeScalingPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScalingPoliciesOutput");
@@ -295,6 +327,17 @@ pub struct DescribeScalingActivitiesOutput {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScalingActivitiesOutput {
+    /// <p>A list of scaling activity objects.</p>
+    pub fn scaling_activities(&self) -> std::option::Option<&[crate::model::ScalingActivity]> {
+        self.scaling_activities.as_deref()
+    }
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScalingActivitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -374,6 +417,17 @@ pub struct DescribeScalableTargetsOutput {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScalableTargetsOutput {
+    /// <p>The scalable targets that match the request parameters.</p>
+    pub fn scalable_targets(&self) -> std::option::Option<&[crate::model::ScalableTarget]> {
+        self.scalable_targets.as_deref()
+    }
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScalableTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

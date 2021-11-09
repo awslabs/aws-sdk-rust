@@ -1900,6 +1900,12 @@ pub struct UnsupportedDocumentException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl UnsupportedDocumentException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for UnsupportedDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsupportedDocumentException");
@@ -1978,6 +1984,12 @@ pub struct ThrottlingException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2058,6 +2070,12 @@ pub struct ProvisionedThroughputExceededException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl ProvisionedThroughputExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2142,6 +2160,12 @@ pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -2223,6 +2247,12 @@ pub struct InvalidS3ObjectException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl InvalidS3ObjectException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidS3ObjectException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2307,6 +2337,12 @@ pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl InvalidParameterException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidParameterException");
@@ -2387,6 +2423,12 @@ pub struct InvalidKmsKeyException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl InvalidKmsKeyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidKmsKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidKmsKeyException");
@@ -2465,6 +2507,12 @@ pub struct InternalServerError {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl InternalServerError {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2547,6 +2595,12 @@ pub struct IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl IdempotentParameterMismatchException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdempotentParameterMismatchException");
@@ -2628,6 +2682,12 @@ pub struct DocumentTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl DocumentTooLargeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for DocumentTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentTooLargeException");
@@ -2707,6 +2767,12 @@ pub struct BadDocumentException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl BadDocumentException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for BadDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2788,6 +2854,12 @@ pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessDeniedException");
@@ -2867,6 +2939,12 @@ pub struct InvalidJobIdException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl InvalidJobIdException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidJobIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2952,6 +3030,24 @@ pub struct HumanLoopQuotaExceededException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl HumanLoopQuotaExceededException {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The quota code.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The service code.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

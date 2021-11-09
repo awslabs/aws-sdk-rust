@@ -73,6 +73,18 @@ pub struct VerifyDomainIdentityOutput {
     /// restart the verification process from the beginning.</p>
     pub verification_token: std::option::Option<std::string::String>,
 }
+impl VerifyDomainIdentityOutput {
+    /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain
+    /// verification with Amazon SES.</p>
+    /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending".
+    /// When Amazon SES detects the record, the domain's verification status changes to "Success". If
+    /// Amazon SES is unable to detect the record within 72 hours, the domain's verification status
+    /// changes to "Failed." In that case, if you still want to verify the domain, you must
+    /// restart the verification process from the beginning.</p>
+    pub fn verification_token(&self) -> std::option::Option<&str> {
+        self.verification_token.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifyDomainIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyDomainIdentityOutput");
@@ -144,6 +156,20 @@ pub struct VerifyDomainDkimOutput {
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
     /// Guide</a>.</p>
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VerifyDomainDkimOutput {
+    /// <p>A set of character strings that represent the domain's identity. If the identity is an
+    /// email address, the tokens represent the domain of that address.</p>
+    /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public
+    /// keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS
+    /// records. This detection process might take up to 72 hours. After successful detection,
+    /// Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to
+    /// domain identities, not email address identities.)</p>
+    /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn dkim_tokens(&self) -> std::option::Option<&[std::string::String]> {
+        self.dkim_tokens.as_deref()
+    }
 }
 impl std::fmt::Debug for VerifyDomainDkimOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -461,6 +487,13 @@ pub struct TestRenderTemplateOutput {
     /// to the template specified in the TemplateName parameter.</p>
     pub rendered_template: std::option::Option<std::string::String>,
 }
+impl TestRenderTemplateOutput {
+    /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter
+    /// to the template specified in the TemplateName parameter.</p>
+    pub fn rendered_template(&self) -> std::option::Option<&str> {
+        self.rendered_template.as_deref()
+    }
+}
 impl std::fmt::Debug for TestRenderTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestRenderTemplateOutput");
@@ -726,6 +759,13 @@ pub struct SendTemplatedEmailOutput {
     /// action. </p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendTemplatedEmailOutput {
+    /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code>
+    /// action. </p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendTemplatedEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendTemplatedEmailOutput");
@@ -777,6 +817,13 @@ pub struct SendRawEmailOutput {
     /// </p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendRawEmailOutput {
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.
+    /// </p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendRawEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendRawEmailOutput");
@@ -827,6 +874,12 @@ pub struct SendEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendEmail</code> action. </p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendEmailOutput {
+    /// <p>The unique message identifier returned from the <code>SendEmail</code> action. </p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEmailOutput");
@@ -875,6 +928,13 @@ pub struct SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the
     /// <code>SendCustomVerificationEmail</code> operation.</p>
     pub message_id: std::option::Option<std::string::String>,
+}
+impl SendCustomVerificationEmailOutput {
+    /// <p>The unique message identifier returned from the
+    /// <code>SendCustomVerificationEmail</code> operation.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SendCustomVerificationEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -926,6 +986,13 @@ pub struct SendBulkTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
     /// action.</p>
     pub status: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestinationStatus>>,
+}
+impl SendBulkTemplatedEmailOutput {
+    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
+    /// action.</p>
+    pub fn status(&self) -> std::option::Option<&[crate::model::BulkEmailDestinationStatus]> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for SendBulkTemplatedEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -989,6 +1056,12 @@ impl SendBulkTemplatedEmailOutput {
 pub struct SendBounceOutput {
     /// <p>The message ID of the bounce message.</p>
     pub message_id: std::option::Option<std::string::String>,
+}
+impl SendBounceOutput {
+    /// <p>The message ID of the bounce message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SendBounceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1130,6 +1203,12 @@ pub struct ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
     pub verified_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListVerifiedEmailAddressesOutput {
+    /// <p>A list of email addresses that have been verified.</p>
+    pub fn verified_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.verified_email_addresses.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVerifiedEmailAddressesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVerifiedEmailAddressesOutput");
@@ -1192,6 +1271,19 @@ pub struct ListTemplatesOutput {
     /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next
     /// 50 email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTemplatesOutput {
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
+    /// account.</p>
+    pub fn templates_metadata(&self) -> std::option::Option<&[crate::model::TemplateMetadata]> {
+        self.templates_metadata.as_deref()
+    }
+    /// <p>A token indicating that there are additional email templates available to be listed.
+    /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next
+    /// 50 email templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1278,6 +1370,19 @@ pub struct ListReceiptRuleSetsOutput {
     /// to 100 receipt rule sets at a time.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListReceiptRuleSetsOutput {
+    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
+    /// rule set name and the timestamp of when the rule set was created.</p>
+    pub fn rule_sets(&self) -> std::option::Option<&[crate::model::ReceiptRuleSetMetadata]> {
+        self.rule_sets.as_deref()
+    }
+    /// <p>A token indicating that there are additional receipt rule sets available to be listed.
+    /// Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up
+    /// to 100 receipt rule sets at a time.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReceiptRuleSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReceiptRuleSetsOutput");
@@ -1356,6 +1461,13 @@ pub struct ListReceiptFiltersOutput {
     /// address range, and whether to allow or block mail from it.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ReceiptFilter>>,
 }
+impl ListReceiptFiltersOutput {
+    /// <p>A list of IP address filter data structures, which each consist of a name, an IP
+    /// address range, and whether to allow or block mail from it.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ReceiptFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReceiptFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReceiptFiltersOutput");
@@ -1414,6 +1526,12 @@ impl ListReceiptFiltersOutput {
 pub struct ListIdentityPoliciesOutput {
     /// <p>A list of names of policies that apply to the specified identity.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListIdentityPoliciesOutput {
+    /// <p>A list of names of policies that apply to the specified identity.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIdentityPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1474,6 +1592,16 @@ pub struct ListIdentitiesOutput {
     pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIdentitiesOutput {
+    /// <p>A list of identities.</p>
+    pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
+        self.identities.as_deref()
+    }
+    /// <p>The token used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIdentitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1550,6 +1678,21 @@ pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <code>ListTemplates</code> to retrieve the next 50 custom verification email
     /// templates.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomVerificationEmailTemplatesOutput {
+    /// <p>A list of the custom verification email templates that exist in your account.</p>
+    pub fn custom_verification_email_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomVerificationEmailTemplate]> {
+        self.custom_verification_email_templates.as_deref()
+    }
+    /// <p>A token indicating that there are additional custom verification email templates
+    /// available to be listed. Pass this token to a subsequent call to
+    /// <code>ListTemplates</code> to retrieve the next 50 custom verification email
+    /// templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomVerificationEmailTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1643,6 +1786,18 @@ pub struct ListConfigurationSetsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConfigurationSetsOutput {
+    /// <p>A list of configuration sets.</p>
+    pub fn configuration_sets(&self) -> std::option::Option<&[crate::model::ConfigurationSet]> {
+        self.configuration_sets.as_deref()
+    }
+    /// <p>A token indicating that there are additional configuration sets available to be
+    /// listed. Pass this token to successive calls of <code>ListConfigurationSets</code>.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationSetsOutput");
@@ -1722,6 +1877,13 @@ pub struct GetTemplateOutput {
     /// part.</p>
     pub template: std::option::Option<crate::model::Template>,
 }
+impl GetTemplateOutput {
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
+    /// part.</p>
+    pub fn template(&self) -> std::option::Option<&crate::model::Template> {
+        self.template.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTemplateOutput");
@@ -1772,6 +1934,12 @@ impl GetTemplateOutput {
 pub struct GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
     pub send_data_points: std::option::Option<std::vec::Vec<crate::model::SendDataPoint>>,
+}
+impl GetSendStatisticsOutput {
+    /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
+    pub fn send_data_points(&self) -> std::option::Option<&[crate::model::SendDataPoint]> {
+        self.send_data_points.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSendStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1841,6 +2009,26 @@ pub struct GetSendQuotaOutput {
     pub max_send_rate: f64,
     /// <p>The number of emails sent during the previous 24 hours.</p>
     pub sent_last24_hours: f64,
+}
+impl GetSendQuotaOutput {
+    /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A
+    /// value of -1 signifies an unlimited quota.</p>
+    pub fn max24_hour_send(&self) -> f64 {
+        self.max24_hour_send
+    }
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per
+    /// second.</p>
+    /// <note>
+    /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum
+    /// send rate.</p>
+    /// </note>
+    pub fn max_send_rate(&self) -> f64 {
+        self.max_send_rate
+    }
+    /// <p>The number of emails sent during the previous 24 hours.</p>
+    pub fn sent_last24_hours(&self) -> f64 {
+        self.sent_last24_hours
+    }
 }
 impl std::fmt::Debug for GetSendQuotaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1934,6 +2122,19 @@ pub struct GetIdentityVerificationAttributesOutput {
         >,
     >,
 }
+impl GetIdentityVerificationAttributesOutput {
+    /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    pub fn verification_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::IdentityVerificationAttributes,
+        >,
+    > {
+        self.verification_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for GetIdentityVerificationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityVerificationAttributesOutput");
@@ -2006,6 +2207,15 @@ pub struct GetIdentityPoliciesOutput {
     pub policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetIdentityPoliciesOutput {
+    /// <p>A map of policy names to policies.</p>
+    pub fn policies(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.policies.as_ref()
+    }
+}
 impl std::fmt::Debug for GetIdentityPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityPoliciesOutput");
@@ -2075,6 +2285,19 @@ pub struct GetIdentityNotificationAttributesOutput {
             crate::model::IdentityNotificationAttributes,
         >,
     >,
+}
+impl GetIdentityNotificationAttributesOutput {
+    /// <p>A map of Identity to IdentityNotificationAttributes.</p>
+    pub fn notification_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::IdentityNotificationAttributes,
+        >,
+    > {
+        self.notification_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIdentityNotificationAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2151,6 +2374,19 @@ pub struct GetIdentityMailFromDomainAttributesOutput {
             crate::model::IdentityMailFromDomainAttributes,
         >,
     >,
+}
+impl GetIdentityMailFromDomainAttributesOutput {
+    /// <p>A map of identities to custom MAIL FROM attributes.</p>
+    pub fn mail_from_domain_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::IdentityMailFromDomainAttributes,
+        >,
+    > {
+        self.mail_from_domain_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIdentityMailFromDomainAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2231,6 +2467,16 @@ pub struct GetIdentityDkimAttributesOutput {
         std::collections::HashMap<std::string::String, crate::model::IdentityDkimAttributes>,
     >,
 }
+impl GetIdentityDkimAttributesOutput {
+    /// <p>The DKIM attributes for an email address or a domain.</p>
+    pub fn dkim_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::IdentityDkimAttributes>,
+    > {
+        self.dkim_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for GetIdentityDkimAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityDkimAttributesOutput");
@@ -2310,6 +2556,34 @@ pub struct GetCustomVerificationEmailTemplateOutput {
     /// <p>The URL that the recipient of the verification email is sent to if his or her address
     /// is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
+}
+impl GetCustomVerificationEmailTemplateOutput {
+    /// <p>The name of the custom verification email template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The email address that the custom verification email is sent from.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>The subject line of the custom verification email.</p>
+    pub fn template_subject(&self) -> std::option::Option<&str> {
+        self.template_subject.as_deref()
+    }
+    /// <p>The content of the custom verification email.</p>
+    pub fn template_content(&self) -> std::option::Option<&str> {
+        self.template_content.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is successfully verified.</p>
+    pub fn success_redirection_url(&self) -> std::option::Option<&str> {
+        self.success_redirection_url.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is not successfully verified.</p>
+    pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
+        self.failure_redirection_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCustomVerificationEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2448,6 +2722,13 @@ pub struct GetAccountSendingEnabledOutput {
     /// current AWS Region.</p>
     pub enabled: bool,
 }
+impl GetAccountSendingEnabledOutput {
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
+    /// current AWS Region.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for GetAccountSendingEnabledOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccountSendingEnabledOutput");
@@ -2500,6 +2781,17 @@ pub struct DescribeReceiptRuleSetOutput {
     pub metadata: std::option::Option<crate::model::ReceiptRuleSetMetadata>,
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
+}
+impl DescribeReceiptRuleSetOutput {
+    /// <p>The metadata for the receipt rule set, which consists of the rule set name and the
+    /// timestamp of when the rule set was created.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ReceiptRuleSetMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ReceiptRule]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReceiptRuleSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2577,6 +2869,13 @@ pub struct DescribeReceiptRuleOutput {
     /// domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     pub rule: std::option::Option<crate::model::ReceiptRule>,
 }
+impl DescribeReceiptRuleOutput {
+    /// <p>A data structure that contains the specified receipt rule's name, actions, recipients,
+    /// domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::ReceiptRule> {
+        self.rule.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeReceiptRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReceiptRuleOutput");
@@ -2637,6 +2936,30 @@ pub struct DescribeConfigurationSetOutput {
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     /// <p>An object that represents the reputation settings for the configuration set. </p>
     pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
+}
+impl DescribeConfigurationSetOutput {
+    /// <p>The configuration set object associated with the specified configuration set.</p>
+    pub fn configuration_set(&self) -> std::option::Option<&crate::model::ConfigurationSet> {
+        self.configuration_set.as_ref()
+    }
+    /// <p>A list of event destinations associated with the configuration set. </p>
+    pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
+        self.event_destinations.as_deref()
+    }
+    /// <p>The name of the custom open and click tracking domain associated with the
+    /// configuration set.</p>
+    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+        self.tracking_options.as_ref()
+    }
+    /// <p>Specifies whether messages that use the configuration set are required to use
+    /// Transport Layer Security (TLS).</p>
+    pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
+        self.delivery_options.as_ref()
+    }
+    /// <p>An object that represents the reputation settings for the configuration set. </p>
+    pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
+        self.reputation_options.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2770,6 +3093,17 @@ pub struct DescribeActiveReceiptRuleSetOutput {
     pub metadata: std::option::Option<crate::model::ReceiptRuleSetMetadata>,
     /// <p>The receipt rules that belong to the active rule set.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
+}
+impl DescribeActiveReceiptRuleSetOutput {
+    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
+    /// rule set name and a timestamp of when the rule set was created.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ReceiptRuleSetMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The receipt rules that belong to the active rule set.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ReceiptRule]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeActiveReceiptRuleSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -149,10 +149,7 @@ impl CreateParallelDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_parallel_data(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_parallel_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -300,10 +297,7 @@ impl DeleteParallelDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_parallel_data(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_parallel_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -451,10 +445,7 @@ impl DeleteTerminologyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_terminology(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_terminology(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -607,7 +598,7 @@ impl DescribeTextTranslationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_text_translation_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_text_translation_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -756,10 +747,7 @@ impl GetParallelDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_parallel_data(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_parallel_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -927,10 +915,8 @@ impl GetTerminologyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_terminology(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_terminology(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1141,10 +1127,7 @@ impl ImportTerminologyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_terminology(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_terminology(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1306,10 +1289,7 @@ impl ListParallelDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_parallel_data(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_parallel_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1473,10 +1453,7 @@ impl ListTerminologiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_terminologies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_terminologies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1658,10 +1635,7 @@ impl ListTextTranslationJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_text_translation_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1970,10 +1944,7 @@ impl StartTextTranslationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_text_translation_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2125,10 +2096,7 @@ impl StopTextTranslationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_text_translation_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2346,10 +2314,7 @@ impl TranslateTextInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_translate_text(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_translate_text(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2543,10 +2508,7 @@ impl UpdateParallelDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_parallel_data(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_parallel_data(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2622,6 +2584,25 @@ pub struct UpdateParallelDataInput {
     /// Amazon Translate through an AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateParallelDataInput {
+    /// <p>The name of the parallel data resource being updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    pub fn parallel_data_config(&self) -> std::option::Option<&crate::model::ParallelDataConfig> {
+        self.parallel_data_config.as_ref()
+    }
+    /// <p>A unique identifier for the request. This token is automatically generated when you use
+    /// Amazon Translate through an AWS SDK.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateParallelDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateParallelDataInput");
@@ -2655,6 +2636,33 @@ pub struct TranslateTextInput {
     /// language supported by Amazon Translate.</p>
     pub target_language_code: std::option::Option<std::string::String>,
 }
+impl TranslateTextInput {
+    /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
+    /// your character set, this may be fewer than 5,000 characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The name of the terminology list file to be used in the TranslateText request. You can use
+    /// 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can
+    /// contain a maximum of 256 terms.</p>
+    pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.terminology_names.as_deref()
+    }
+    /// <p>The language code for the language of the source text. The language must be a language
+    /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify
+    /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
+    /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+    /// Comprehend</a> to determine the source language.</p>
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
+        self.source_language_code.as_deref()
+    }
+    /// <p>The language code requested for the language of the target text. The language must be a
+    /// language supported by Amazon Translate.</p>
+    pub fn target_language_code(&self) -> std::option::Option<&str> {
+        self.target_language_code.as_deref()
+    }
+}
 impl std::fmt::Debug for TranslateTextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TranslateTextInput");
@@ -2672,6 +2680,12 @@ impl std::fmt::Debug for TranslateTextInput {
 pub struct StopTextTranslationJobInput {
     /// <p>The job ID of the job to be stopped.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopTextTranslationJobInput {
+    /// <p>The job ID of the job to be stopped.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopTextTranslationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2713,6 +2727,53 @@ pub struct StartTextTranslationJobInput {
     /// SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl StartTextTranslationJobInput {
+    /// <p>The name of the batch translation job to be performed.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Specifies the format and S3 location of the input documents for the translation
+    /// job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies the S3 folder to which your job output will be saved.
+    /// </p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
+    /// that grants Amazon Translate read access to your input data. For more nformation, see <a>identity-and-access-management</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
+    /// <p>Amazon Translate does not automatically detect a source language during batch translation
+    /// jobs.</p>
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
+        self.source_language_code.as_deref()
+    }
+    /// <p>The language code of the output language.</p>
+    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_language_codes.as_deref()
+    }
+    /// <p>The name of the terminology to use in the batch translation job. For a list of available
+    /// terminologies, use the <a>ListTerminologies</a> operation.</p>
+    pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.terminology_names.as_deref()
+    }
+    /// <p>The names of the parallel data resources to use in the batch translation job. For a list
+    /// of available parallel data resources, use the <a>ListParallelData</a>
+    /// operation.</p>
+    pub fn parallel_data_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.parallel_data_names.as_deref()
+    }
+    /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
+    /// SDK.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartTextTranslationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTextTranslationJobInput");
@@ -2741,6 +2802,21 @@ pub struct ListTextTranslationJobsInput {
     /// <p>The maximum number of results to return in each page. The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTextTranslationJobsInput {
+    /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
+    /// name, job status, and submission time. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::TextTranslationJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTextTranslationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTextTranslationJobsInput");
@@ -2761,6 +2837,17 @@ pub struct ListTerminologiesInput {
     /// <p>The maximum number of custom terminologies returned per list request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTerminologiesInput {
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
+    /// fetch the next group of custom terminologies. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of custom terminologies returned per list request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTerminologiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTerminologiesInput");
@@ -2778,6 +2865,16 @@ pub struct ListParallelDataInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of parallel data resources returned for each request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListParallelDataInput {
+    /// <p>A string that specifies the next page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of parallel data resources returned for each request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListParallelDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2805,6 +2902,30 @@ pub struct ImportTerminologyInput {
     /// <p>The encryption key for the custom terminology being imported.</p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
+impl ImportTerminologyInput {
+    /// <p>The name of the custom terminology being imported.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
+    /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
+    /// terminology of the same name.</p>
+    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+        self.merge_strategy.as_ref()
+    }
+    /// <p>The description of the custom terminology being imported.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The terminology data for the custom terminology being imported.</p>
+    pub fn terminology_data(&self) -> std::option::Option<&crate::model::TerminologyData> {
+        self.terminology_data.as_ref()
+    }
+    /// <p>The encryption key for the custom terminology being imported.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+        self.encryption_key.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportTerminologyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportTerminologyInput");
@@ -2826,6 +2947,18 @@ pub struct GetTerminologyInput {
     /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
     pub terminology_data_format: std::option::Option<crate::model::TerminologyDataFormat>,
 }
+impl GetTerminologyInput {
+    /// <p>The name of the custom terminology being retrieved.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>
+    pub fn terminology_data_format(
+        &self,
+    ) -> std::option::Option<&crate::model::TerminologyDataFormat> {
+        self.terminology_data_format.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTerminologyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTerminologyInput");
@@ -2841,6 +2974,12 @@ impl std::fmt::Debug for GetTerminologyInput {
 pub struct GetParallelDataInput {
     /// <p>The name of the parallel data resource that is being retrieved.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetParallelDataInput {
+    /// <p>The name of the parallel data resource that is being retrieved.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetParallelDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2858,6 +2997,13 @@ pub struct DescribeTextTranslationJobInput {
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeTextTranslationJobInput {
+    /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTextTranslationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTextTranslationJobInput");
@@ -2873,6 +3019,12 @@ pub struct DeleteTerminologyInput {
     /// <p>The name of the custom terminology being deleted. </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteTerminologyInput {
+    /// <p>The name of the custom terminology being deleted. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTerminologyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTerminologyInput");
@@ -2887,6 +3039,12 @@ impl std::fmt::Debug for DeleteTerminologyInput {
 pub struct DeleteParallelDataInput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteParallelDataInput {
+    /// <p>The name of the parallel data resource that is being deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteParallelDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2912,6 +3070,30 @@ pub struct CreateParallelDataInput {
     /// <p>A unique identifier for the request. This token is automatically generated when you use
     /// Amazon Translate through an AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateParallelDataInput {
+    /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
+    /// that is unique in the account and region.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    pub fn parallel_data_config(&self) -> std::option::Option<&crate::model::ParallelDataConfig> {
+        self.parallel_data_config.as_ref()
+    }
+    /// <p>The encryption key used to encrypt this object.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+        self.encryption_key.as_ref()
+    }
+    /// <p>A unique identifier for the request. This token is automatically generated when you use
+    /// Amazon Translate through an AWS SDK.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateParallelDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

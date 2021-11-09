@@ -34,6 +34,58 @@ pub struct RuleGroupResponse {
     /// <p>The number of firewall policies that use this rule group.</p>
     pub number_of_associations: std::option::Option<i32>,
 }
+impl RuleGroupResponse {
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    /// <note>
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to
+    /// <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid
+    /// resource.</p>
+    /// </note>
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+        self.rule_group_arn.as_deref()
+    }
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
+        self.rule_group_name.as_deref()
+    }
+    /// <p>The unique identifier for the rule group. </p>
+    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+        self.rule_group_id.as_deref()
+    }
+    /// <p>A description of the rule group. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
+    /// stateless rules. If it is stateful, it contains stateful rules. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
+    /// When you update a rule group, you are limited to this capacity. When you reference a rule group
+    /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
+    /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
+    pub fn capacity(&self) -> std::option::Option<i32> {
+        self.capacity
+    }
+    /// <p>Detailed information about the current status of a rule group. </p>
+    pub fn rule_group_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.rule_group_status.as_ref()
+    }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The number of capacity units currently consumed by the rule group rules. </p>
+    pub fn consumed_capacity(&self) -> std::option::Option<i32> {
+        self.consumed_capacity
+    }
+    /// <p>The number of firewall policies that use this rule group.</p>
+    pub fn number_of_associations(&self) -> std::option::Option<i32> {
+        self.number_of_associations
+    }
+}
 impl std::fmt::Debug for RuleGroupResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleGroupResponse");
@@ -248,6 +300,19 @@ pub struct Tag {
     /// case-sensitive.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The part of the key:value pair that defines a tag. You can use a tag key to describe a
+    /// category of information, such as "customer." Tag keys are case-sensitive.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The part of the key:value pair that defines a tag. You can use a tag value to describe a
+    /// specific value within a category, such as "companyA" or "companyB." Tag values are
+    /// case-sensitive.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -436,6 +501,22 @@ pub struct RuleGroup {
     /// rule group must have stateful rule options settings that are compatible with these settings.</p>
     pub stateful_rule_options: std::option::Option<crate::model::StatefulRuleOptions>,
 }
+impl RuleGroup {
+    /// <p>Settings that are available for use in the rules in the rule group. You can only use
+    /// these for stateful rule groups. </p>
+    pub fn rule_variables(&self) -> std::option::Option<&crate::model::RuleVariables> {
+        self.rule_variables.as_ref()
+    }
+    /// <p>The stateful rules or stateless rules for the rule group. </p>
+    pub fn rules_source(&self) -> std::option::Option<&crate::model::RulesSource> {
+        self.rules_source.as_ref()
+    }
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful
+    /// rule group must have stateful rule options settings that are compatible with these settings.</p>
+    pub fn stateful_rule_options(&self) -> std::option::Option<&crate::model::StatefulRuleOptions> {
+        self.stateful_rule_options.as_ref()
+    }
+}
 impl std::fmt::Debug for RuleGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleGroup");
@@ -525,6 +606,15 @@ pub struct StatefulRuleOptions {
     /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that they're listed
     /// in your Suricata rules string. </p>
     pub rule_order: std::option::Option<crate::model::RuleOrder>,
+}
+impl StatefulRuleOptions {
+    /// <p>Indicates how to manage the order of the rule evaluation for the rule group. By default, Network Firewall
+    /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+    /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that they're listed
+    /// in your Suricata rules string. </p>
+    pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
+        self.rule_order.as_ref()
+    }
 }
 impl std::fmt::Debug for StatefulRuleOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -654,6 +744,34 @@ pub struct RulesSource {
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
     pub stateless_rules_and_custom_actions:
         std::option::Option<crate::model::StatelessRulesAndCustomActions>,
+}
+impl RulesSource {
+    /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention
+    /// system (IPS) rules. Suricata is an open-source network IPS that includes a standard
+    /// rule-based language for network traffic inspection.</p>
+    /// <p>These rules contain the inspection criteria and the action to take for traffic that
+    /// matches the criteria, so this type of rule group doesn't have a separate action
+    /// setting.</p>
+    pub fn rules_string(&self) -> std::option::Option<&str> {
+        self.rules_string.as_deref()
+    }
+    /// <p>Stateful inspection criteria for a domain list rule group. </p>
+    pub fn rules_source_list(&self) -> std::option::Option<&crate::model::RulesSourceList> {
+        self.rules_source_list.as_ref()
+    }
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
+    /// Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options.
+    /// For information about the Suricata <code>Rules</code> format, see
+    /// <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
+    pub fn stateful_rules(&self) -> std::option::Option<&[crate::model::StatefulRule]> {
+        self.stateful_rules.as_deref()
+    }
+    /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
+    pub fn stateless_rules_and_custom_actions(
+        &self,
+    ) -> std::option::Option<&crate::model::StatelessRulesAndCustomActions> {
+        self.stateless_rules_and_custom_actions.as_ref()
+    }
 }
 impl std::fmt::Debug for RulesSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -787,6 +905,20 @@ pub struct StatelessRulesAndCustomActions {
     /// <code>Actions</code> specification.</p>
     pub custom_actions: std::option::Option<std::vec::Vec<crate::model::CustomAction>>,
 }
+impl StatelessRulesAndCustomActions {
+    /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
+    pub fn stateless_rules(&self) -> std::option::Option<&[crate::model::StatelessRule]> {
+        self.stateless_rules.as_deref()
+    }
+    /// <p>Defines an array of individual custom action definitions that are available for use by
+    /// the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You
+    /// name each custom action that you define, and then you can use it by name in your <a>StatelessRule</a>
+    /// <a>RuleDefinition</a>
+    /// <code>Actions</code> specification.</p>
+    pub fn custom_actions(&self) -> std::option::Option<&[crate::model::CustomAction]> {
+        self.custom_actions.as_deref()
+    }
+}
 impl std::fmt::Debug for StatelessRulesAndCustomActions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatelessRulesAndCustomActions");
@@ -896,6 +1028,16 @@ pub struct CustomAction {
     /// <p>The custom action associated with the action name.</p>
     pub action_definition: std::option::Option<crate::model::ActionDefinition>,
 }
+impl CustomAction {
+    /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The custom action associated with the action name.</p>
+    pub fn action_definition(&self) -> std::option::Option<&crate::model::ActionDefinition> {
+        self.action_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for CustomAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomAction");
@@ -965,6 +1107,17 @@ pub struct ActionDefinition {
     /// publishes metrics for the packet and forwards it. </p>
     pub publish_metric_action: std::option::Option<crate::model::PublishMetricAction>,
 }
+impl ActionDefinition {
+    /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the
+    /// matching packet. This setting defines a CloudWatch dimension value to be published.</p>
+    /// <p>You can pair this custom action with any of the standard stateless rule actions. For
+    /// example, you could pair this in a rule action with the standard action that forwards the
+    /// packet for stateful inspection. Then, when a packet matches the rule, Network Firewall
+    /// publishes metrics for the packet and forwards it. </p>
+    pub fn publish_metric_action(&self) -> std::option::Option<&crate::model::PublishMetricAction> {
+        self.publish_metric_action.as_ref()
+    }
+}
 impl std::fmt::Debug for ActionDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionDefinition");
@@ -1026,6 +1179,12 @@ impl ActionDefinition {
 pub struct PublishMetricAction {
     /// <p></p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+}
+impl PublishMetricAction {
+    /// <p></p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+        self.dimensions.as_deref()
+    }
 }
 impl std::fmt::Debug for PublishMetricAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1091,6 +1250,12 @@ pub struct Dimension {
     /// <p>The value to use in the custom metric dimension.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Dimension {
+    /// <p>The value to use in the custom metric dimension.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Dimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Dimension");
@@ -1150,6 +1315,28 @@ pub struct StatelessRule {
     /// insert rules later, number them so there's a wide range in between, for example use 100,
     /// 200, and so on. </p>
     pub priority: i32,
+}
+impl StatelessRule {
+    /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a
+    /// packet that matches the criteria. </p>
+    pub fn rule_definition(&self) -> std::option::Option<&crate::model::RuleDefinition> {
+        self.rule_definition.as_ref()
+    }
+    /// <p>Indicates the order in which to run this rule relative to all of the
+    /// rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a
+    /// rule group starting with the lowest priority setting. You must ensure that the priority
+    /// settings are unique for the rule group. </p>
+    /// <p>Each stateless rule group uses exactly one <code>StatelessRulesAndCustomActions</code>
+    /// object, and each <code>StatelessRulesAndCustomActions</code> contains exactly one
+    /// <code>StatelessRules</code> object. To ensure unique priority settings for your rule
+    /// groups, set unique priorities for the stateless rules that you define inside any single
+    /// <code>StatelessRules</code> object.</p>
+    /// <p>You can change the priority settings of your rules at any time. To make it easier to
+    /// insert rules later, number them so there's a wide range in between, for example use 100,
+    /// 200, and so on. </p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
 }
 impl std::fmt::Debug for StatelessRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1278,6 +1465,52 @@ pub struct RuleDefinition {
     /// <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
     /// “MyMetricsAction”]</code>. </p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RuleDefinition {
+    /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
+    pub fn match_attributes(&self) -> std::option::Option<&crate::model::MatchAttributes> {
+        self.match_attributes.as_ref()
+    }
+    /// <p>The actions to take on a packet that matches one of the stateless rule definition's
+    /// match attributes. You must specify a standard action and you can add custom actions. </p>
+    /// <note>
+    /// <p>Network Firewall only forwards a packet for stateful rule inspection if you specify
+    /// <code>aws:forward_to_sfe</code> for a rule that the packet matches, or if the packet
+    /// doesn't match any stateless rule and you specify <code>aws:forward_to_sfe</code> for the
+    /// <code>StatelessDefaultActions</code> setting for the <a>FirewallPolicy</a>.</p>
+    /// </note>
+    /// <p>For every rule, you must specify exactly one of the following standard actions. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>aws:pass</b> - Discontinues all inspection of
+    /// the packet and permits it to go to its intended destination.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>aws:drop</b> - Discontinues all inspection of
+    /// the packet and blocks it from going to its intended destination.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>aws:forward_to_sfe</b> - Discontinues
+    /// stateless inspection of the packet and forwards it to the stateful rule engine for
+    /// inspection. </p>
+    /// </li>
+    /// </ul>
+    /// <p>Additionally, you can specify a custom action.
+    /// To
+    /// do this, you define a custom action by name and type, then provide the name you've assigned
+    /// to the action in this <code>Actions</code> setting. For information about the options, see
+    /// <a>CustomAction</a>. </p>
+    /// <p>To provide more than one action in this setting, separate the settings with a comma. For
+    /// example, if you have a custom <code>PublishMetrics</code> action that you've named
+    /// <code>MyMetricsAction</code>, then you could specify the standard action
+    /// <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
+    /// “MyMetricsAction”]</code>. </p>
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.actions.as_deref()
+    }
 }
 impl std::fmt::Debug for RuleDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1443,6 +1676,42 @@ pub struct MatchAttributes {
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any
     /// settings. This setting is only used for protocol 6 (TCP).</p>
     pub tcp_flags: std::option::Option<std::vec::Vec<crate::model::TcpFlagField>>,
+}
+impl MatchAttributes {
+    /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not
+    /// specified, this matches with any source address. </p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::Address]> {
+        self.sources.as_deref()
+    }
+    /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not
+    /// specified, this matches with any destination address. </p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::Address]> {
+        self.destinations.as_deref()
+    }
+    /// <p>The source ports to inspect for. If not specified, this matches with any source port.
+    /// This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
+    /// ranges, for example <code>1990:1994</code>. </p>
+    pub fn source_ports(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.source_ports.as_deref()
+    }
+    /// <p>The destination ports to inspect for. If not specified, this matches with any
+    /// destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
+    /// ranges, for example <code>1990:1994</code>. </p>
+    pub fn destination_ports(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.destination_ports.as_deref()
+    }
+    /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol
+    /// number (IANA). If not specified, this matches with any protocol. </p>
+    pub fn protocols(&self) -> std::option::Option<&[i32]> {
+        self.protocols.as_deref()
+    }
+    /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any
+    /// settings. This setting is only used for protocol 6 (TCP).</p>
+    pub fn tcp_flags(&self) -> std::option::Option<&[crate::model::TcpFlagField]> {
+        self.tcp_flags.as_deref()
+    }
 }
 impl std::fmt::Debug for MatchAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1639,6 +1908,25 @@ pub struct TcpFlagField {
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
     pub masks: std::option::Option<std::vec::Vec<crate::model::TcpFlag>>,
 }
+impl TcpFlagField {
+    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
+    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The ones that are set in this flags setting must be set in the packet. </p>
+    /// </li>
+    /// <li>
+    /// <p>The ones that are not set in this flags setting must also not be set in the packet. </p>
+    /// </li>
+    /// </ul>
+    pub fn flags(&self) -> std::option::Option<&[crate::model::TcpFlag]> {
+        self.flags.as_deref()
+    }
+    /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
+    pub fn masks(&self) -> std::option::Option<&[crate::model::TcpFlag]> {
+        self.masks.as_deref()
+    }
+}
 impl std::fmt::Debug for TcpFlagField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TcpFlagField");
@@ -1821,6 +2109,18 @@ pub struct PortRange {
     /// <code>FromPort</code> specification. </p>
     pub to_port: i32,
 }
+impl PortRange {
+    /// <p>The lower limit of the port range. This must be less than or equal to the
+    /// <code>ToPort</code> specification. </p>
+    pub fn from_port(&self) -> i32 {
+        self.from_port
+    }
+    /// <p>The upper limit of the port range. This must be greater than or equal to the
+    /// <code>FromPort</code> specification. </p>
+    pub fn to_port(&self) -> i32 {
+        self.to_port
+    }
+}
 impl std::fmt::Debug for PortRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PortRange");
@@ -1897,6 +2197,23 @@ pub struct Address {
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
     /// Inter-Domain Routing</a>.</p>
     pub address_definition: std::option::Option<std::string::String>,
+}
+impl Address {
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Examples: </p>
+    /// <ul>
+    /// <li>
+    /// <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// Inter-Domain Routing</a>.</p>
+    pub fn address_definition(&self) -> std::option::Option<&str> {
+        self.address_definition.as_deref()
+    }
 }
 impl std::fmt::Debug for Address {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2003,6 +2320,46 @@ pub struct StatefulRule {
     pub header: std::option::Option<crate::model::Header>,
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
     pub rule_options: std::option::Option<std::vec::Vec<crate::model::RuleOption>>,
+}
+impl StatefulRule {
+    /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow
+    /// matches the stateful rule criteria. For all actions, Network Firewall performs the specified
+    /// action and discontinues stateful inspection of the traffic flow. </p>
+    /// <p>The actions for a stateful rule are defined as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>PASS</b> - Permits the packets to go to the
+    /// intended destination.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DROP</b> - Blocks the packets from going to
+    /// the intended destination and sends an alert log message, if alert logging is configured in the <a>Firewall</a>
+    /// <a>LoggingConfiguration</a>. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ALERT</b> - Permits the packets to go to the
+    /// intended destination and sends an alert log message, if alert logging is configured in the <a>Firewall</a>
+    /// <a>LoggingConfiguration</a>. </p>
+    /// <p>You can use this action to test a rule that you intend to use to drop traffic. You
+    /// can enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+    /// is filtering as you want, then change the action to <code>DROP</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::StatefulAction> {
+        self.action.as_ref()
+    }
+    /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.
+    /// </p>
+    pub fn header(&self) -> std::option::Option<&crate::model::Header> {
+        self.header.as_ref()
+    }
+    /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
+    pub fn rule_options(&self) -> std::option::Option<&[crate::model::RuleOption]> {
+        self.rule_options.as_deref()
+    }
 }
 impl std::fmt::Debug for StatefulRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2144,6 +2501,16 @@ pub struct RuleOption {
     /// <p></p>
     pub settings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RuleOption {
+    /// <p></p>
+    pub fn keyword(&self) -> std::option::Option<&str> {
+        self.keyword.as_deref()
+    }
+    /// <p></p>
+    pub fn settings(&self) -> std::option::Option<&[std::string::String]> {
+        self.settings.as_deref()
+    }
+}
 impl std::fmt::Debug for RuleOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleOption");
@@ -2260,6 +2627,67 @@ pub struct Header {
     /// a port range, for example <code>1990:1994</code>.
     /// To match with any port, specify <code>ANY</code>. </p>
     pub destination_port: std::option::Option<std::string::String>,
+}
+impl Header {
+    /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the internet is IP.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::StatefulRuleProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The source IP address or address range to inspect for, in CIDR notation.
+    /// To match with any address, specify <code>ANY</code>. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Examples: </p>
+    /// <ul>
+    /// <li>
+    /// <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// Inter-Domain Routing</a>.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The source port to inspect for. You can specify an individual port, for
+    /// example <code>1994</code> and you can specify a port
+    /// range, for example <code>1990:1994</code>.
+    /// To match with any port, specify <code>ANY</code>. </p>
+    pub fn source_port(&self) -> std::option::Option<&str> {
+        self.source_port.as_deref()
+    }
+    /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection
+    /// matches bidirectional traffic, both from the source to the destination and from the
+    /// destination to the source. If set to <code>FORWARD</code>, the inspection only matches
+    /// traffic going from the source to the destination. </p>
+    pub fn direction(&self) -> std::option::Option<&crate::model::StatefulRuleDirection> {
+        self.direction.as_ref()
+    }
+    /// <p>The destination IP address or address range to inspect for, in CIDR notation.
+    /// To match with any address, specify <code>ANY</code>. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Examples: </p>
+    /// <ul>
+    /// <li>
+    /// <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// Inter-Domain Routing</a>.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// <p>The destination port to inspect for. You can specify an individual port, for
+    /// example <code>1994</code> and you can specify
+    /// a port range, for example <code>1990:1994</code>.
+    /// To match with any port, specify <code>ANY</code>. </p>
+    pub fn destination_port(&self) -> std::option::Option<&str> {
+        self.destination_port.as_deref()
+    }
 }
 impl std::fmt::Debug for Header {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2708,6 +3136,29 @@ pub struct RulesSourceList {
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub generated_rules_type: std::option::Option<crate::model::GeneratedRulesType>,
 }
+impl RulesSourceList {
+    /// <p>The domains that you want to inspect for in your traffic flows. To provide multiple
+    /// domains, separate them with commas. Valid domain specifications are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p>
+    /// </li>
+    /// </ul>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
+    pub fn target_types(&self) -> std::option::Option<&[crate::model::TargetType]> {
+        self.target_types.as_deref()
+    }
+    /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    pub fn generated_rules_type(&self) -> std::option::Option<&crate::model::GeneratedRulesType> {
+        self.generated_rules_type.as_ref()
+    }
+}
 impl std::fmt::Debug for RulesSourceList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RulesSourceList");
@@ -2936,6 +3387,22 @@ pub struct RuleVariables {
     pub port_sets:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::PortSet>>,
 }
+impl RuleVariables {
+    /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
+    pub fn ip_sets(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::IpSet>>
+    {
+        self.ip_sets.as_ref()
+    }
+    /// <p>A list of port ranges. </p>
+    pub fn port_sets(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::PortSet>>
+    {
+        self.port_sets.as_ref()
+    }
+}
 impl std::fmt::Debug for RuleVariables {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleVariables");
@@ -3032,6 +3499,13 @@ pub struct PortSet {
     /// </p>
     pub definition: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PortSet {
+    /// <p>The set of port ranges.
+    /// </p>
+    pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
+        self.definition.as_deref()
+    }
+}
 impl std::fmt::Debug for PortSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PortSet");
@@ -3092,6 +3566,14 @@ pub struct IpSet {
     ///
     /// </p>
     pub definition: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl IpSet {
+    /// <p>The list of IP addresses and address ranges, in CIDR notation.
+    ///
+    /// </p>
+    pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
+        self.definition.as_deref()
+    }
 }
 impl std::fmt::Debug for IpSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3155,6 +3637,15 @@ pub struct LoggingConfiguration {
     /// logs for stateful rule groups. </p>
     pub log_destination_configs:
         std::option::Option<std::vec::Vec<crate::model::LogDestinationConfig>>,
+}
+impl LoggingConfiguration {
+    /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates
+    /// logs for stateful rule groups. </p>
+    pub fn log_destination_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::LogDestinationConfig]> {
+        self.log_destination_configs.as_deref()
+    }
 }
 impl std::fmt::Debug for LoggingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3260,6 +3751,55 @@ pub struct LogDestinationConfig {
     /// </ul>
     pub log_destination:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl LogDestinationConfig {
+    /// <p>The type of log to send. Alert logs report traffic that matches a <a>StatefulRule</a> with an action setting that sends an alert log message. Flow logs are
+    /// standard network traffic flow logs. </p>
+    pub fn log_type(&self) -> std::option::Option<&crate::model::LogType> {
+        self.log_type.as_ref()
+    }
+    /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket,
+    /// a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
+    pub fn log_destination_type(&self) -> std::option::Option<&crate::model::LogDestinationType> {
+        self.log_destination_type.as_ref()
+    }
+    /// <p>The named location for the logs, provided in a key:value mapping that is specific to the
+    /// chosen destination type. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For an Amazon S3 bucket, provide the name of the bucket, with key <code>bucketName</code>,
+    /// and optionally provide a prefix, with key <code>prefix</code>. The following example
+    /// specifies an Amazon S3 bucket named
+    /// <code>DOC-EXAMPLE-BUCKET</code> and the prefix <code>alerts</code>: </p>
+    /// <p>
+    /// <code>"LogDestination": { "bucketName": "DOC-EXAMPLE-BUCKET", "prefix": "alerts"
+    /// }</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key
+    /// <code>logGroup</code>. The following example specifies a log group named
+    /// <code>alert-log-group</code>: </p>
+    /// <p>
+    /// <code>"LogDestination": { "logGroup": "alert-log-group" }</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key
+    /// <code>deliveryStream</code>. The following example specifies a delivery stream
+    /// named <code>alert-delivery-stream</code>: </p>
+    /// <p>
+    /// <code>"LogDestination": { "deliveryStream": "alert-delivery-stream"
+    /// }</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn log_destination(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.log_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for LogDestinationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3556,6 +4096,51 @@ pub struct FirewallPolicyResponse {
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
     pub number_of_associations: std::option::Option<i32>,
 }
+impl FirewallPolicyResponse {
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
+        self.firewall_policy_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <note>
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to
+    /// <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid
+    /// resource.</p>
+    /// </note>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
+    /// <p>The unique identifier for the firewall policy. </p>
+    pub fn firewall_policy_id(&self) -> std::option::Option<&str> {
+        self.firewall_policy_id.as_deref()
+    }
+    /// <p>A description of the firewall policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy
+    /// by calling <a>DescribeFirewallPolicy</a> and providing the firewall policy's
+    /// name or ARN.</p>
+    pub fn firewall_policy_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.firewall_policy_status.as_ref()
+    }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
+    pub fn consumed_stateless_rule_capacity(&self) -> std::option::Option<i32> {
+        self.consumed_stateless_rule_capacity
+    }
+    /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
+    pub fn consumed_stateful_rule_capacity(&self) -> std::option::Option<i32> {
+        self.consumed_stateful_rule_capacity
+    }
+    /// <p>The number of firewalls that are associated with this firewall policy.</p>
+    pub fn number_of_associations(&self) -> std::option::Option<i32> {
+        self.number_of_associations
+    }
+}
 impl std::fmt::Debug for FirewallPolicyResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirewallPolicyResponse");
@@ -3794,6 +4379,66 @@ pub struct FirewallPolicy {
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful
     /// rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
     pub stateful_engine_options: std::option::Option<crate::model::StatefulEngineOptions>,
+}
+impl FirewallPolicy {
+    /// <p>References to the stateless rule groups that are used in the policy. These define the
+    /// matching criteria in stateless rules. </p>
+    pub fn stateless_rule_group_references(
+        &self,
+    ) -> std::option::Option<&[crate::model::StatelessRuleGroupReference]> {
+        self.stateless_rule_group_references.as_deref()
+    }
+    /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the
+    /// policy. If you want non-matching packets to be forwarded for stateful inspection, specify
+    /// <code>aws:forward_to_sfe</code>. </p>
+    /// <p>You must specify one of the standard actions: <code>aws:pass</code>,
+    /// <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify
+    /// custom actions that are compatible with your standard section choice.</p>
+    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify
+    /// <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see
+    /// the custom action descriptions under <a>CustomAction</a>.</p>
+    pub fn stateless_default_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.stateless_default_actions.as_deref()
+    }
+    /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless
+    /// rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols.
+    /// If you want non-matching fragmented UDP packets to be forwarded for
+    /// stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
+    /// <p>You must specify one of the standard actions: <code>aws:pass</code>,
+    /// <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify
+    /// custom actions that are compatible with your standard section choice.</p>
+    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify
+    /// <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see
+    /// the custom action descriptions under <a>CustomAction</a>.</p>
+    pub fn stateless_fragment_default_actions(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.stateless_fragment_default_actions.as_deref()
+    }
+    /// <p>The custom action definitions that are available for use in the firewall policy's
+    /// <code>StatelessDefaultActions</code> setting. You name each custom action that you
+    /// define, and then you can use it by name in your default actions specifications.</p>
+    pub fn stateless_custom_actions(&self) -> std::option::Option<&[crate::model::CustomAction]> {
+        self.stateless_custom_actions.as_deref()
+    }
+    /// <p>References to the stateful rule groups that are used in the policy. These define the
+    /// inspection criteria in stateful rules. </p>
+    pub fn stateful_rule_group_references(
+        &self,
+    ) -> std::option::Option<&[crate::model::StatefulRuleGroupReference]> {
+        self.stateful_rule_group_references.as_deref()
+    }
+    /// <p>The default actions to take on a packet that doesn't match any stateful rules.</p>
+    pub fn stateful_default_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.stateful_default_actions.as_deref()
+    }
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful
+    /// rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
+    pub fn stateful_engine_options(
+        &self,
+    ) -> std::option::Option<&crate::model::StatefulEngineOptions> {
+        self.stateful_engine_options.as_ref()
+    }
 }
 impl std::fmt::Debug for FirewallPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4057,6 +4702,16 @@ pub struct StatefulEngineOptions {
     /// the rules in each rule group are processed in the order that they're defined. </p>
     pub rule_order: std::option::Option<crate::model::RuleOrder>,
 }
+impl StatefulEngineOptions {
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. By default, Network Firewall
+    /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+    /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that you provide them
+    /// in the policy. With strict ordering, the rule groups are evaluated by order of priority, starting from the lowest number, and
+    /// the rules in each rule group are processed in the order that they're defined. </p>
+    pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
+        self.rule_order.as_ref()
+    }
+}
 impl std::fmt::Debug for StatefulEngineOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatefulEngineOptions");
@@ -4126,6 +4781,24 @@ pub struct StatefulRuleGroupReference {
     /// insert rule groups later, number them so there's a wide range in between, for example use 100,
     /// 200, and so on. </p>
     pub priority: std::option::Option<i32>,
+}
+impl StatefulRuleGroupReference {
+    /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An integer setting that indicates the order in which to run the stateful rule groups in
+    /// a single <a>FirewallPolicy</a>. This setting only applies to firewall policies
+    /// that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+    /// <p>Network Firewall evalutes each stateful rule group
+    /// against a packet starting with the group that has the lowest priority setting. You must ensure
+    /// that the priority settings are unique within each policy.</p>
+    /// <p>You can change the priority settings of your rule groups at any time. To make it easier to
+    /// insert rule groups later, number them so there's a wide range in between, for example use 100,
+    /// 200, and so on. </p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
 }
 impl std::fmt::Debug for StatefulRuleGroupReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4210,6 +4883,19 @@ pub struct StatelessRuleGroupReference {
     /// that the priority settings are unique within each policy.</p>
     pub priority: i32,
 }
+impl StatelessRuleGroupReference {
+    /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An integer setting that indicates the order in which to run the stateless rule groups in
+    /// a single <a>FirewallPolicy</a>. Network Firewall applies each stateless rule group
+    /// to a packet starting with the group that has the lowest priority setting. You must ensure
+    /// that the priority settings are unique within each policy.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+}
 impl std::fmt::Debug for StatelessRuleGroupReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatelessRuleGroupReference");
@@ -4281,6 +4967,16 @@ pub struct RuleGroupMetadata {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl RuleGroupMetadata {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RuleGroupMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleGroupMetadata");
@@ -4345,6 +5041,16 @@ pub struct FirewallMetadata {
     pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: std::option::Option<std::string::String>,
+}
+impl FirewallMetadata {
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for FirewallMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4414,6 +5120,16 @@ pub struct FirewallPolicyMetadata {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl FirewallPolicyMetadata {
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for FirewallPolicyMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirewallPolicyMetadata");
@@ -4477,6 +5193,12 @@ impl FirewallPolicyMetadata {
 pub struct SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
     pub subnet_id: std::option::Option<std::string::String>,
+}
+impl SubnetMapping {
+    /// <p>The unique identifier for the subnet. </p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SubnetMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4549,6 +5271,43 @@ pub struct FirewallStatus {
     pub sync_states: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SyncState>,
     >,
+}
+impl FirewallStatus {
+    /// <p>The readiness of the configured firewall to handle network traffic across all of the
+    /// Availability Zones where you've configured it. This setting is <code>READY</code> only when
+    /// the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the
+    /// <code>Attachment</code>
+    /// <code>Status</code> values for all of the configured subnets are <code>READY</code>.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FirewallStatusValue> {
+        self.status.as_ref()
+    }
+    /// <p>The configuration sync state for the firewall. This summarizes the sync states reported
+    /// in the <code>Config</code> settings for all of the Availability Zones where you have
+    /// configured the firewall. </p>
+    /// <p>When you create a firewall or update its configuration, for example by adding a rule
+    /// group to its firewall policy, Network Firewall distributes the configuration changes to all
+    /// zones where the firewall is in use. This summary indicates whether the configuration
+    /// changes have been applied everywhere. </p>
+    /// <p>This status must be <code>IN_SYNC</code> for the firewall to be ready for use, but it
+    /// doesn't indicate that the firewall is ready. The <code>Status</code> setting indicates
+    /// firewall readiness.</p>
+    pub fn configuration_sync_state_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationSyncState> {
+        self.configuration_sync_state_summary.as_ref()
+    }
+    /// <p>The subnets that you've configured for use by the Network Firewall firewall. This contains
+    /// one array element per Availability Zone where you've configured a subnet. These objects
+    /// provide details of the information that is summarized in the
+    /// <code>ConfigurationSyncStateSummary</code> and <code>Status</code>, broken down by zone
+    /// and configuration object. </p>
+    pub fn sync_states(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::SyncState>>
+    {
+        self.sync_states.as_ref()
+    }
 }
 impl std::fmt::Debug for FirewallStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4714,6 +5473,25 @@ pub struct SyncState {
         std::collections::HashMap<std::string::String, crate::model::PerObjectStatus>,
     >,
 }
+impl SyncState {
+    /// <p>The attachment status of the firewall's association with a single VPC subnet. For each
+    /// configured subnet, Network Firewall creates the attachment by instantiating the firewall
+    /// endpoint in the subnet so that it's ready to take traffic. This is part of the <a>FirewallStatus</a>.</p>
+    pub fn attachment(&self) -> std::option::Option<&crate::model::Attachment> {
+        self.attachment.as_ref()
+    }
+    /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall
+    /// provides each endpoint with the rules that are configured in the firewall policy. Each time
+    /// you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the
+    /// rules in the endpoint, so it can properly filter network traffic. This is part of the <a>FirewallStatus</a>.</p>
+    pub fn config(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PerObjectStatus>,
+    > {
+        self.config.as_ref()
+    }
+}
 impl std::fmt::Debug for SyncState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SyncState");
@@ -4809,6 +5587,16 @@ pub struct PerObjectStatus {
     pub sync_status: std::option::Option<crate::model::PerObjectSyncStatus>,
     /// <p>The current version of the object that is either in sync or pending synchronization. </p>
     pub update_token: std::option::Option<std::string::String>,
+}
+impl PerObjectStatus {
+    /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
+    pub fn sync_status(&self) -> std::option::Option<&crate::model::PerObjectSyncStatus> {
+        self.sync_status.as_ref()
+    }
+    /// <p>The current version of the object that is either in sync or pending synchronization. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
 }
 impl std::fmt::Debug for PerObjectStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4941,6 +5729,28 @@ pub struct Attachment {
     /// available for traffic, this value will reflect its state, for example
     /// <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
     pub status: std::option::Option<crate::model::AttachmentStatus>,
+}
+impl Attachment {
+    /// <p>The unique identifier of the subnet that you've specified to be used for a firewall
+    /// endpoint. </p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the
+    /// subnet. You use this to identify the firewall endpoint in the VPC route tables, when you
+    /// redirect the VPC traffic through the endpoint. </p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the
+    /// instantiation of the endpoint in the VPC subnet and the sync states that are reported in
+    /// the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is
+    /// available and configured properly to handle network traffic. When the endpoint isn't
+    /// available for traffic, this value will reflect its state, for example
+    /// <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AttachmentStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for Attachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5244,6 +6054,62 @@ pub struct Firewall {
     pub firewall_id: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Firewall {
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires
+    /// one firewall policy association, and you can use the same firewall policy for multiple
+    /// firewalls. </p>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
+    /// <p>The unique identifier of the VPC where the firewall is in use. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong
+    /// to a different Availability Zone. </p>
+    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
+        self.subnet_mappings.as_deref()
+    }
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
+    /// that the firewall is protected against deletion. Use this setting to protect against
+    /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    pub fn delete_protection(&self) -> bool {
+        self.delete_protection
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
+    /// Use this setting to protect against
+    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn subnet_change_protection(&self) -> bool {
+        self.subnet_change_protection
+    }
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
+    /// Use this setting to protect against
+    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn firewall_policy_change_protection(&self) -> bool {
+        self.firewall_policy_change_protection
+    }
+    /// <p>A description of the firewall.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the firewall. </p>
+    pub fn firewall_id(&self) -> std::option::Option<&str> {
+        self.firewall_id.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for Firewall {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

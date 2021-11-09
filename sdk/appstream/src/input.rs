@@ -99,10 +99,8 @@ impl AssociateFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_associate_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -268,10 +266,7 @@ impl BatchAssociateUserStackInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_user_stack(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -435,7 +430,7 @@ impl BatchDisassociateUserStackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_user_stack(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_user_stack(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -634,10 +629,7 @@ impl CopyImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_copy_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_copy_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -837,10 +829,7 @@ impl CreateDirectoryConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_directory_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1505,10 +1494,7 @@ impl CreateFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2064,10 +2050,7 @@ impl CreateImageBuilderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_image_builder(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_image_builder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2232,7 +2215,7 @@ impl CreateImageBuilderStreamingUrlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_image_builder_streaming_url(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_image_builder_streaming_url(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2577,10 +2560,7 @@ impl CreateStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2800,10 +2780,7 @@ impl CreateStreamingUrlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_streaming_url(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_streaming_url(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3050,10 +3027,7 @@ impl CreateUpdatedImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_updated_image(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_updated_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3190,7 +3164,7 @@ impl CreateUsageReportSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_usage_report_subscription(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_usage_report_subscription(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3402,10 +3376,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3560,10 +3531,7 @@ impl DeleteDirectoryConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_directory_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3710,10 +3678,7 @@ impl DeleteFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3860,10 +3825,7 @@ impl DeleteImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4011,10 +3973,7 @@ impl DeleteImageBuilderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_image_builder(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_image_builder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4181,10 +4140,7 @@ impl DeleteImagePermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_image_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4331,10 +4287,7 @@ impl DeleteStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4471,7 +4424,7 @@ impl DeleteUsageReportSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_usage_report_subscription(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_usage_report_subscription(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4636,10 +4589,7 @@ impl DeleteUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4825,10 +4775,7 @@ impl DescribeDirectoryConfigsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_directory_configs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4998,10 +4945,8 @@ impl DescribeFleetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_fleets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5186,10 +5131,7 @@ impl DescribeImageBuildersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_image_builders(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5387,10 +5329,7 @@ impl DescribeImagePermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_image_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5608,10 +5547,8 @@ impl DescribeImagesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_images(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_images(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5828,10 +5765,7 @@ impl DescribeSessionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_sessions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_sessions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6001,10 +5935,8 @@ impl DescribeStacksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6167,7 +6099,7 @@ impl DescribeUsageReportSubscriptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_usage_report_subscriptions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_usage_report_subscriptions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6344,10 +6276,7 @@ impl DescribeUsersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_users(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_users(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6557,7 +6486,7 @@ impl DescribeUserStackAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_user_stack_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_user_stack_associations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6730,10 +6659,7 @@ impl DisableUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_disable_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_disable_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6895,10 +6821,7 @@ impl DisassociateFleetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_fleet(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7070,10 +6993,7 @@ impl EnableUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7222,10 +7142,7 @@ impl ExpireSessionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_expire_session(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_expire_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7387,10 +7304,9 @@ impl ListAssociatedFleetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_associated_fleets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_associated_fleets(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7552,10 +7468,9 @@ impl ListAssociatedStacksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_associated_stacks(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_associated_stacks(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7705,10 +7620,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7855,10 +7769,7 @@ impl StartFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8023,10 +7934,7 @@ impl StartImageBuilderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_image_builder(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_image_builder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8171,10 +8079,7 @@ impl StopFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8320,10 +8225,7 @@ impl StopImageBuilderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_image_builder(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_image_builder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8511,10 +8413,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8684,10 +8583,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8889,10 +8785,7 @@ impl UpdateDirectoryConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_directory_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9512,10 +9405,7 @@ impl UpdateFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9697,10 +9587,7 @@ impl UpdateImagePermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_image_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10038,10 +9925,7 @@ impl UpdateStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10132,6 +10016,56 @@ pub struct UpdateStackInput {
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateStackInput {
+    /// <p>The stack name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the stack.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The storage connectors to enable.</p>
+    pub fn storage_connectors(&self) -> std::option::Option<&[crate::model::StorageConnector]> {
+        self.storage_connectors.as_deref()
+    }
+    /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+    pub fn delete_storage_connectors(&self) -> bool {
+        self.delete_storage_connectors
+    }
+    /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    pub fn redirect_url(&self) -> std::option::Option<&str> {
+        self.redirect_url.as_deref()
+    }
+    /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    pub fn feedback_url(&self) -> std::option::Option<&str> {
+        self.feedback_url.as_deref()
+    }
+    /// <p>The stack attributes to delete.</p>
+    pub fn attributes_to_delete(&self) -> std::option::Option<&[crate::model::StackAttribute]> {
+        self.attributes_to_delete.as_deref()
+    }
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    pub fn user_settings(&self) -> std::option::Option<&[crate::model::UserSetting]> {
+        self.user_settings.as_deref()
+    }
+    /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    pub fn application_settings(&self) -> std::option::Option<&crate::model::ApplicationSettings> {
+        self.application_settings.as_ref()
+    }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
+        self.access_endpoints.as_deref()
+    }
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.embed_host_domains.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStackInput");
@@ -10161,6 +10095,20 @@ pub struct UpdateImagePermissionsInput {
     pub shared_account_id: std::option::Option<std::string::String>,
     /// <p>The permissions for the image.</p>
     pub image_permissions: std::option::Option<crate::model::ImagePermissions>,
+}
+impl UpdateImagePermissionsInput {
+    /// <p>The name of the private image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+        self.shared_account_id.as_deref()
+    }
+    /// <p>The permissions for the image.</p>
+    pub fn image_permissions(&self) -> std::option::Option<&crate::model::ImagePermissions> {
+        self.image_permissions.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateImagePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10332,6 +10280,197 @@ pub struct UpdateFleetInput {
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
 }
+impl UpdateFleetInput {
+    /// <p>The name of the image used to create the fleet.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The ARN of the public, private, or shared image to use.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>A unique name for the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>stream.standard.small</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.medium</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.3xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.6xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-desktop.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.16xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.16xlarge</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The desired capacity for the fleet.</p>
+    pub fn compute_capacity(&self) -> std::option::Option<&crate::model::ComputeCapacity> {
+        self.compute_capacity.as_ref()
+    }
+    /// <p>The VPC configuration for the fleet.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
+    /// <p>Specify a value between 600 and 360000.</p>
+    pub fn max_user_duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.max_user_duration_in_seconds
+    }
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
+    /// <p>Specify a value between 60 and 360000.</p>
+    pub fn disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.disconnect_timeout_in_seconds
+    }
+    /// <p>Deletes the VPC association for the specified fleet.</p>
+    pub fn delete_vpc_config(&self) -> bool {
+        self.delete_vpc_config
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The fleet name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>Enables or disables default internet access for the fleet.</p>
+    pub fn enable_default_internet_access(&self) -> std::option::Option<bool> {
+        self.enable_default_internet_access
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
+        self.domain_join_info.as_ref()
+    }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
+    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
+    /// interval begins. Users are notified before they are disconnected due to inactivity. If
+    /// users try to reconnect to the streaming session before the time interval specified in
+    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+    /// previous session. Users are considered idle when they stop providing keyboard or mouse
+    /// input during their streaming session. File uploads and downloads, audio in, audio out,
+    /// and pixels changing do not qualify as user activity. If users continue to be idle after
+    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
+    /// disconnected. </p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
+    ///
+    /// <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// </note>
+    pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_disconnect_timeout_in_seconds
+    }
+    /// <p>The fleet attributes to delete.</p>
+    pub fn attributes_to_delete(&self) -> std::option::Option<&[crate::model::FleetAttribute]> {
+        self.attributes_to_delete.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    ///
+    /// <p>The default value is <code>APP</code>.</p>
+    pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
+        self.stream_view.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFleetInput");
@@ -10380,6 +10519,24 @@ pub struct UpdateDirectoryConfigInput {
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
 }
+impl UpdateDirectoryConfigInput {
+    /// <p>The name of the Directory Config object.</p>
+    pub fn directory_name(&self) -> std::option::Option<&str> {
+        self.directory_name.as_deref()
+    }
+    /// <p>The distinguished names of the organizational units for computer accounts.</p>
+    pub fn organizational_unit_distinguished_names(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_distinguished_names.as_deref()
+    }
+    /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    pub fn service_account_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceAccountCredentials> {
+        self.service_account_credentials.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDirectoryConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDirectoryConfigInput");
@@ -10405,6 +10562,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys for the tags to disassociate.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys for the tags to disassociate.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -10429,6 +10596,24 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    ///
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    ///
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -10445,6 +10630,12 @@ pub struct StopImageBuilderInput {
     /// <p>The name of the image builder.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StopImageBuilderInput {
+    /// <p>The name of the image builder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopImageBuilderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopImageBuilderInput");
@@ -10459,6 +10650,12 @@ impl std::fmt::Debug for StopImageBuilderInput {
 pub struct StopFleetInput {
     /// <p>The name of the fleet.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl StopFleetInput {
+    /// <p>The name of the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10477,6 +10674,16 @@ pub struct StartImageBuilderInput {
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub appstream_agent_version: std::option::Option<std::string::String>,
 }
+impl StartImageBuilderInput {
+    /// <p>The name of the image builder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    pub fn appstream_agent_version(&self) -> std::option::Option<&str> {
+        self.appstream_agent_version.as_deref()
+    }
+}
 impl std::fmt::Debug for StartImageBuilderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartImageBuilderInput");
@@ -10493,6 +10700,12 @@ pub struct StartFleetInput {
     /// <p>The name of the fleet.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StartFleetInput {
+    /// <p>The name of the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFleetInput");
@@ -10507,6 +10720,12 @@ impl std::fmt::Debug for StartFleetInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10524,6 +10743,16 @@ pub struct ListAssociatedStacksInput {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociatedStacksInput {
+    /// <p>The name of the fleet.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssociatedStacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10543,6 +10772,16 @@ pub struct ListAssociatedFleetsInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociatedFleetsInput {
+    /// <p>The name of the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociatedFleetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedFleetsInput");
@@ -10558,6 +10797,12 @@ impl std::fmt::Debug for ListAssociatedFleetsInput {
 pub struct ExpireSessionInput {
     /// <p>The identifier of the streaming session.</p>
     pub session_id: std::option::Option<std::string::String>,
+}
+impl ExpireSessionInput {
+    /// <p>The identifier of the streaming session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExpireSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10580,6 +10825,20 @@ pub struct EnableUserInput {
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
+impl EnableUserInput {
+    /// <p>The email address of the user.</p>
+    ///
+    /// <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
+    /// </note>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableUserInput");
@@ -10597,6 +10856,16 @@ pub struct DisassociateFleetInput {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The name of the stack.</p>
     pub stack_name: std::option::Option<std::string::String>,
+}
+impl DisassociateFleetInput {
+    /// <p>The name of the fleet.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The name of the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10619,6 +10888,20 @@ pub struct DisableUserInput {
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
+}
+impl DisableUserInput {
+    /// <p>The email address of the user.</p>
+    ///
+    /// <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DisableUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10648,6 +10931,32 @@ pub struct DescribeUserStackAssociationsInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeUserStackAssociationsInput {
+    /// <p>The name of the stack that is associated with the user.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The email address of the user who is associated with the stack.</p>
+    ///
+    /// <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserStackAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserStackAssociationsInput");
@@ -10671,6 +10980,20 @@ pub struct DescribeUsersInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeUsersInput {
+    /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsersInput");
@@ -10690,6 +11013,16 @@ pub struct DescribeUsageReportSubscriptionsInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeUsageReportSubscriptionsInput {
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUsageReportSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsageReportSubscriptionsInput");
@@ -10707,6 +11040,16 @@ pub struct DescribeStacksInput {
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStacksInput {
+    /// <p>The names of the stacks to describe.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10736,6 +11079,34 @@ pub struct DescribeSessionsInput {
     /// The default is to authenticate users using a streaming URL.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
+impl DescribeSessionsInput {
+    /// <p>The name of the stack. This value is case-sensitive.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name of the fleet. This value is case-sensitive.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The authentication method. Specify <code>API</code> for a user
+    /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
+    /// The default is to authenticate users using a streaming URL.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSessionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSessionsInput");
@@ -10764,6 +11135,28 @@ pub struct DescribeImagesInput {
     /// <p>The maximum size of each page of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeImagesInput {
+    /// <p>The names of the public or private images to describe.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The ARNs of the public, private, and shared images to describe.</p>
+    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.arns.as_deref()
+    }
+    /// <p>The type of image (public, private, or shared) to describe. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::VisibilityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImagesInput");
@@ -10789,6 +11182,24 @@ pub struct DescribeImagePermissionsInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeImagePermissionsInput {
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
+    pub fn shared_aws_account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.shared_aws_account_ids.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImagePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImagePermissionsInput");
@@ -10811,6 +11222,20 @@ pub struct DescribeImageBuildersInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeImageBuildersInput {
+    /// <p>The names of the image builders to describe.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImageBuildersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImageBuildersInput");
@@ -10829,6 +11254,16 @@ pub struct DescribeFleetsInput {
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetsInput {
+    /// <p>The names of the fleets to describe.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10849,6 +11284,20 @@ pub struct DescribeDirectoryConfigsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDirectoryConfigsInput {
+    /// <p>The directory names.</p>
+    pub fn directory_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.directory_names.as_deref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDirectoryConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10872,6 +11321,20 @@ pub struct DeleteUserInput {
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
+}
+impl DeleteUserInput {
+    /// <p>The email address of the user.</p>
+    ///
+    /// <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10900,6 +11363,12 @@ pub struct DeleteStackInput {
     /// <p>The name of the stack.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteStackInput {
+    /// <p>The name of the stack.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStackInput");
@@ -10917,6 +11386,16 @@ pub struct DeleteImagePermissionsInput {
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
     pub shared_account_id: std::option::Option<std::string::String>,
 }
+impl DeleteImagePermissionsInput {
+    /// <p>The name of the private image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+        self.shared_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteImagePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImagePermissionsInput");
@@ -10933,6 +11412,12 @@ pub struct DeleteImageBuilderInput {
     /// <p>The name of the image builder.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteImageBuilderInput {
+    /// <p>The name of the image builder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteImageBuilderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageBuilderInput");
@@ -10947,6 +11432,12 @@ impl std::fmt::Debug for DeleteImageBuilderInput {
 pub struct DeleteImageInput {
     /// <p>The name of the image.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteImageInput {
+    /// <p>The name of the image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10963,6 +11454,12 @@ pub struct DeleteFleetInput {
     /// <p>The name of the fleet.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteFleetInput {
+    /// <p>The name of the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFleetInput");
@@ -10977,6 +11474,12 @@ impl std::fmt::Debug for DeleteFleetInput {
 pub struct DeleteDirectoryConfigInput {
     /// <p>The name of the directory configuration.</p>
     pub directory_name: std::option::Option<std::string::String>,
+}
+impl DeleteDirectoryConfigInput {
+    /// <p>The name of the directory configuration.</p>
+    pub fn directory_name(&self) -> std::option::Option<&str> {
+        self.directory_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDirectoryConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11008,6 +11511,36 @@ pub struct CreateUserInput {
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL. </p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
+}
+impl CreateUserInput {
+    /// <p>The email address of the user.</p>
+    ///
+    /// <note>
+    /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
+    /// </note>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
+    ///
+    /// <note>
+    /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
+    /// </note>
+    pub fn message_action(&self) -> std::option::Option<&crate::model::MessageAction> {
+        self.message_action.as_ref()
+    }
+    /// <p>The first name, or given name, of the user.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name, or surname, of the user.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL. </p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11054,6 +11587,39 @@ pub struct CreateUpdatedImageInput {
     /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
     pub dry_run: bool,
 }
+impl CreateUpdatedImageInput {
+    /// <p>The name of the image to update.</p>
+    pub fn existing_image_name(&self) -> std::option::Option<&str> {
+        self.existing_image_name.as_deref()
+    }
+    /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
+    pub fn new_image_name(&self) -> std::option::Option<&str> {
+        self.new_image_name.as_deref()
+    }
+    /// <p>The description to display for the new image.</p>
+    pub fn new_image_description(&self) -> std::option::Option<&str> {
+        self.new_image_description.as_deref()
+    }
+    /// <p>The name to display for the new image.</p>
+    pub fn new_image_display_name(&self) -> std::option::Option<&str> {
+        self.new_image_display_name.as_deref()
+    }
+    /// <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn new_image_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.new_image_tags.as_ref()
+    }
+    /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for CreateUpdatedImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUpdatedImageInput");
@@ -11085,6 +11651,34 @@ pub struct CreateStreamingUrlInput {
     pub validity: std::option::Option<i64>,
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub session_context: std::option::Option<std::string::String>,
+}
+impl CreateStreamingUrlInput {
+    /// <p>The name of the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The identifier of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The name of the application to launch after the session starts. This is the name that you specified
+    /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The time that the streaming URL will be valid, in seconds.
+    /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+    pub fn validity(&self) -> std::option::Option<i64> {
+        self.validity
+    }
+    /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn session_context(&self) -> std::option::Option<&str> {
+        self.session_context.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStreamingUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11134,6 +11728,62 @@ pub struct CreateStackInput {
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateStackInput {
+    /// <p>The name of the stack.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The stack name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The storage connectors to enable.</p>
+    pub fn storage_connectors(&self) -> std::option::Option<&[crate::model::StorageConnector]> {
+        self.storage_connectors.as_deref()
+    }
+    /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    pub fn redirect_url(&self) -> std::option::Option<&str> {
+        self.redirect_url.as_deref()
+    }
+    /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    pub fn feedback_url(&self) -> std::option::Option<&str> {
+        self.feedback_url.as_deref()
+    }
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
+    pub fn user_settings(&self) -> std::option::Option<&[crate::model::UserSetting]> {
+        self.user_settings.as_deref()
+    }
+    /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    pub fn application_settings(&self) -> std::option::Option<&crate::model::ApplicationSettings> {
+        self.application_settings.as_ref()
+    }
+    /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    ///
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    ///
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    ///
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
+        self.access_endpoints.as_deref()
+    }
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.embed_host_domains.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStackInput");
@@ -11161,6 +11811,17 @@ pub struct CreateImageBuilderStreamingUrlInput {
     /// <p>The time that the streaming URL will be valid, in seconds.
     /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub validity: std::option::Option<i64>,
+}
+impl CreateImageBuilderStreamingUrlInput {
+    /// <p>The name of the image builder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time that the streaming URL will be valid, in seconds.
+    /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    pub fn validity(&self) -> std::option::Option<i64> {
+        self.validity
+    }
 }
 impl std::fmt::Debug for CreateImageBuilderStreamingUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11312,6 +11973,173 @@ pub struct CreateImageBuilderInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
+}
+impl CreateImageBuilderInput {
+    /// <p>A unique name for the image builder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the image used to create the image builder.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The ARN of the public, private, or shared image to use.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+    /// <ul>
+    /// <li>
+    /// <p>stream.standard.small</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.medium</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.3xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.6xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-desktop.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.16xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.16xlarge</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The image builder name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>Enables or disables default internet access for the image builder.</p>
+    pub fn enable_default_internet_access(&self) -> std::option::Option<bool> {
+        self.enable_default_internet_access
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
+    pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
+        self.domain_join_info.as_ref()
+    }
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    pub fn appstream_agent_version(&self) -> std::option::Option<&str> {
+        self.appstream_agent_version.as_deref()
+    }
+    /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    ///
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    ///
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    ///
+    /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
+    pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
+        self.access_endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateImageBuilderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11516,6 +12344,219 @@ pub struct CreateFleetInput {
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
 }
+impl CreateFleetInput {
+    /// <p>A unique name for the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the image used to create the fleet.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The ARN of the public, private, or shared image to use.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+    /// <ul>
+    /// <li>
+    /// <p>stream.standard.small</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.medium</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.3xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.6xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-desktop.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.16xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.16xlarge</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The fleet type.</p>
+    /// <dl>
+    /// <dt>ALWAYS_ON</dt>
+    /// <dd>
+    /// <p>Provides users with instant-on access to their apps.
+    /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// </dd>
+    /// <dt>ON_DEMAND</dt>
+    /// <dd>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
+    /// You are charged for instance streaming when users are connected and a
+    /// small hourly fee for instances that are not streaming apps.</p>
+    /// </dd>
+    /// </dl>
+    pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
+        self.fleet_type.as_ref()
+    }
+    /// <p>The desired capacity for the fleet.</p>
+    pub fn compute_capacity(&self) -> std::option::Option<&crate::model::ComputeCapacity> {
+        self.compute_capacity.as_ref()
+    }
+    /// <p>The VPC configuration for the fleet.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
+    /// <p>Specify a value between 600 and 360000.</p>
+    pub fn max_user_duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.max_user_duration_in_seconds
+    }
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
+    /// <p>Specify a value between 60 and 360000.</p>
+    pub fn disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.disconnect_timeout_in_seconds
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The fleet name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>Enables or disables default internet access for the fleet.</p>
+    pub fn enable_default_internet_access(&self) -> std::option::Option<bool> {
+        self.enable_default_internet_access
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
+        self.domain_join_info.as_ref()
+    }
+    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    ///
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    ///
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
+    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
+    /// interval begins. Users are notified before they are disconnected due to inactivity. If
+    /// they try to reconnect to the streaming session before the time interval specified in
+    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+    /// previous session. Users are considered idle when they stop providing keyboard or mouse
+    /// input during their streaming session. File uploads and downloads, audio in, audio out,
+    /// and pixels changing do not qualify as user activity. If users continue to be idle after
+    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
+    /// disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
+    /// <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// </note>
+    pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_disconnect_timeout_in_seconds
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    ///
+    /// <p>The default value is <code>APP</code>.</p>
+    pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
+        self.stream_view.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFleetInput");
@@ -11564,6 +12605,24 @@ pub struct CreateDirectoryConfigInput {
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
 }
+impl CreateDirectoryConfigInput {
+    /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    pub fn directory_name(&self) -> std::option::Option<&str> {
+        self.directory_name.as_deref()
+    }
+    /// <p>The distinguished names of the organizational units for computer accounts.</p>
+    pub fn organizational_unit_distinguished_names(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_distinguished_names.as_deref()
+    }
+    /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    pub fn service_account_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceAccountCredentials> {
+        self.service_account_credentials.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDirectoryConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDirectoryConfigInput");
@@ -11593,6 +12652,24 @@ pub struct CopyImageInput {
     /// <p>The description that the image will have when it is copied to the destination.</p>
     pub destination_image_description: std::option::Option<std::string::String>,
 }
+impl CopyImageInput {
+    /// <p>The name of the image to copy.</p>
+    pub fn source_image_name(&self) -> std::option::Option<&str> {
+        self.source_image_name.as_deref()
+    }
+    /// <p>The name that the image will have when it is copied to the destination.</p>
+    pub fn destination_image_name(&self) -> std::option::Option<&str> {
+        self.destination_image_name.as_deref()
+    }
+    /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
+    pub fn destination_region(&self) -> std::option::Option<&str> {
+        self.destination_region.as_deref()
+    }
+    /// <p>The description that the image will have when it is copied to the destination.</p>
+    pub fn destination_image_description(&self) -> std::option::Option<&str> {
+        self.destination_image_description.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyImageInput");
@@ -11615,6 +12692,14 @@ pub struct BatchDisassociateUserStackInput {
     pub user_stack_associations:
         std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
 }
+impl BatchDisassociateUserStackInput {
+    /// <p>The list of UserStackAssociation objects.</p>
+    pub fn user_stack_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserStackAssociation]> {
+        self.user_stack_associations.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisassociateUserStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisassociateUserStackInput");
@@ -11630,6 +12715,14 @@ pub struct BatchAssociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
     pub user_stack_associations:
         std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
+}
+impl BatchAssociateUserStackInput {
+    /// <p>The list of UserStackAssociation objects.</p>
+    pub fn user_stack_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserStackAssociation]> {
+        self.user_stack_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateUserStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11647,6 +12740,16 @@ pub struct AssociateFleetInput {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The name of the stack.</p>
     pub stack_name: std::option::Option<std::string::String>,
+}
+impl AssociateFleetInput {
+    /// <p>The name of the fleet. </p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The name of the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

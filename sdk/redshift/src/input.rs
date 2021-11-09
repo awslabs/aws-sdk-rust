@@ -111,7 +111,7 @@ impl AcceptReservedNodeExchangeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_reserved_node_exchange(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_reserved_node_exchange(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -298,10 +298,7 @@ impl AddPartnerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_partner(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_partner(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -476,7 +473,7 @@ impl AssociateDataShareConsumerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_data_share_consumer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_data_share_consumer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -683,7 +680,7 @@ impl AuthorizeClusterSecurityGroupIngressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_authorize_cluster_security_group_ingress(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_authorize_cluster_security_group_ingress(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -849,10 +846,7 @@ impl AuthorizeDataShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_authorize_data_share(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_authorize_data_share(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1036,10 +1030,7 @@ impl AuthorizeEndpointAccessInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_authorize_endpoint_access(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1234,10 +1225,7 @@ impl AuthorizeSnapshotAccessInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_authorize_snapshot_access(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1396,7 +1384,7 @@ impl BatchDeleteClusterSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_cluster_snapshots(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_cluster_snapshots(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1592,7 +1580,7 @@ impl BatchModifyClusterSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_modify_cluster_snapshots(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_modify_cluster_snapshots(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1742,10 +1730,7 @@ impl CancelResizeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_resize(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_resize(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2013,10 +1998,7 @@ impl CopyClusterSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_copy_cluster_snapshot(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_copy_cluster_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2188,7 +2170,7 @@ impl CreateAuthenticationProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_authentication_profile(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_authentication_profile(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3227,10 +3209,7 @@ impl CreateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3475,7 +3454,7 @@ impl CreateClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3691,7 +3670,7 @@ impl CreateClusterSecurityGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_cluster_security_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_cluster_security_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3939,10 +3918,7 @@ impl CreateClusterSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cluster_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4179,10 +4155,7 @@ impl CreateClusterSubnetGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cluster_subnet_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4404,10 +4377,9 @@ impl CreateEndpointAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_endpoint_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint_access(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4736,10 +4708,7 @@ impl CreateEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4914,7 +4883,7 @@ impl CreateHsmClientCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_hsm_client_certificate(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_hsm_client_certificate(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5168,10 +5137,7 @@ impl CreateHsmConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_hsm_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5438,10 +5404,7 @@ impl CreateScheduledActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_scheduled_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5665,10 +5628,7 @@ impl CreateSnapshotCopyGrantInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_snapshot_copy_grant(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5903,10 +5863,7 @@ impl CreateSnapshotScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_snapshot_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6086,10 +6043,7 @@ impl CreateTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6344,10 +6298,7 @@ impl CreateUsageLimitInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_usage_limit(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_usage_limit(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6512,10 +6463,9 @@ impl DeauthorizeDataShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deauthorize_data_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deauthorize_data_share(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6667,7 +6617,7 @@ impl DeleteAuthenticationProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_authentication_profile(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_authentication_profile(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6945,10 +6895,7 @@ impl DeleteClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7115,7 +7062,7 @@ impl DeleteClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7268,7 +7215,7 @@ impl DeleteClusterSecurityGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_cluster_security_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_cluster_security_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7449,10 +7396,7 @@ impl DeleteClusterSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cluster_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7603,10 +7547,7 @@ impl DeleteClusterSubnetGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cluster_subnet_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7754,10 +7695,9 @@ impl DeleteEndpointAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_access(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7908,10 +7848,7 @@ impl DeleteEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8063,7 +8000,7 @@ impl DeleteHsmClientCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_hsm_client_certificate(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_hsm_client_certificate(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8217,10 +8154,7 @@ impl DeleteHsmConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_hsm_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8406,10 +8340,7 @@ impl DeletePartnerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_partner(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_partner(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8559,10 +8490,7 @@ impl DeleteScheduledActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_scheduled_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8713,10 +8641,7 @@ impl DeleteSnapshotCopyGrantInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_snapshot_copy_grant(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8866,10 +8791,7 @@ impl DeleteSnapshotScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_snapshot_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9039,10 +8961,7 @@ impl DeleteTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9190,10 +9109,7 @@ impl DeleteUsageLimitInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_usage_limit(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_usage_limit(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9350,10 +9266,7 @@ impl DescribeAccountAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9505,7 +9418,7 @@ impl DescribeAuthenticationProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_authentication_profiles(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_authentication_profiles(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9709,7 +9622,7 @@ impl DescribeClusterDbRevisionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_db_revisions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_db_revisions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9971,7 +9884,7 @@ impl DescribeClusterParameterGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_parameter_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_parameter_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10191,10 +10104,7 @@ impl DescribeClusterParametersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_parameters(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10454,10 +10364,7 @@ impl DescribeClustersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_clusters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_clusters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10725,7 +10632,7 @@ impl DescribeClusterSecurityGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_security_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_security_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11179,10 +11086,7 @@ impl DescribeClusterSnapshotsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_snapshots(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11439,7 +11343,7 @@ impl DescribeClusterSubnetGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_subnet_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cluster_subnet_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11624,10 +11528,7 @@ impl DescribeClusterTracksInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_tracks(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11872,10 +11773,7 @@ impl DescribeClusterVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12053,10 +11951,7 @@ impl DescribeDataSharesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_shares(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_shares(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12259,7 +12154,7 @@ impl DescribeDataSharesForConsumerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_shares_for_consumer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_shares_for_consumer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12463,7 +12358,7 @@ impl DescribeDataSharesForProducerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_shares_for_producer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_shares_for_producer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12659,7 +12554,7 @@ impl DescribeDefaultClusterParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_default_cluster_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_default_cluster_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12886,10 +12781,7 @@ impl DescribeEndpointAccessInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_access(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13102,7 +12994,7 @@ impl DescribeEndpointAuthorizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_authorization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_authorization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13255,10 +13147,7 @@ impl DescribeEventCategoriesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_event_categories(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13626,10 +13515,8 @@ impl DescribeEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13890,10 +13777,7 @@ impl DescribeEventSubscriptionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_event_subscriptions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14157,7 +14041,7 @@ impl DescribeHsmClientCertificatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_hsm_client_certificates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_hsm_client_certificates(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14424,10 +14308,7 @@ impl DescribeHsmConfigurationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_hsm_configurations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14581,10 +14462,7 @@ impl DescribeLoggingStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_logging_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14861,7 +14739,7 @@ impl DescribeNodeConfigurationOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_node_configuration_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_node_configuration_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15077,7 +14955,7 @@ impl DescribeOrderableClusterOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_orderable_cluster_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_orderable_cluster_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15265,10 +15143,7 @@ impl DescribePartnersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_partners(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_partners(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15463,7 +15338,7 @@ impl DescribeReservedNodeOfferingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_node_offerings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_node_offerings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15660,10 +15535,7 @@ impl DescribeReservedNodesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_nodes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15816,10 +15688,8 @@ impl DescribeResizeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_resize(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_resize(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16103,10 +15973,7 @@ impl DescribeScheduledActionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_scheduled_actions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16361,7 +16228,7 @@ impl DescribeSnapshotCopyGrantsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_snapshot_copy_grants(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_snapshot_copy_grants(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16612,10 +16479,7 @@ impl DescribeSnapshotSchedulesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_snapshot_schedules(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16746,10 +16610,7 @@ impl DescribeStorageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_storage(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_storage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16945,7 +16806,7 @@ impl DescribeTableRestoreStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_table_restore_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_table_restore_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17278,10 +17139,7 @@ impl DescribeTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17567,10 +17425,7 @@ impl DescribeUsageLimitsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_usage_limits(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_usage_limits(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17721,10 +17576,8 @@ impl DisableLoggingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_disable_logging(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disable_logging(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17878,10 +17731,7 @@ impl DisableSnapshotCopyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_snapshot_copy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disable_snapshot_copy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18058,7 +17908,7 @@ impl DisassociateDataShareConsumerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_data_share_consumer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_data_share_consumer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -18309,10 +18159,7 @@ impl EnableLoggingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_logging(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_logging(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18541,10 +18388,7 @@ impl EnableSnapshotCopyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_snapshot_copy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_enable_snapshot_copy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18921,10 +18765,7 @@ impl GetClusterCredentialsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_cluster_credentials(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19103,7 +18944,7 @@ impl GetReservedNodeExchangeOfferingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_reserved_node_exchange_offerings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_reserved_node_exchange_offerings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -19296,10 +19137,7 @@ impl ModifyAquaConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_aqua_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19471,7 +19309,7 @@ impl ModifyAuthenticationProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_authentication_profile(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_authentication_profile(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -20277,10 +20115,7 @@ impl ModifyClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_modify_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20452,10 +20287,7 @@ impl ModifyClusterDbRevisionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cluster_db_revision(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20655,10 +20487,7 @@ impl ModifyClusterIamRolesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cluster_iam_roles(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20885,10 +20714,7 @@ impl ModifyClusterMaintenanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cluster_maintenance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21068,7 +20894,7 @@ impl ModifyClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21256,10 +21082,7 @@ impl ModifyClusterSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cluster_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21441,7 +21264,7 @@ impl ModifyClusterSnapshotScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_cluster_snapshot_schedule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_cluster_snapshot_schedule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21628,10 +21451,7 @@ impl ModifyClusterSubnetGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cluster_subnet_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21800,10 +21620,9 @@ impl ModifyEndpointAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_endpoint_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_endpoint_access(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22079,10 +21898,7 @@ impl ModifyEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22341,10 +22157,7 @@ impl ModifyScheduledActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_scheduled_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22551,7 +22364,7 @@ impl ModifySnapshotCopyRetentionPeriodInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_snapshot_copy_retention_period(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_snapshot_copy_retention_period(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -22725,10 +22538,7 @@ impl ModifySnapshotScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_snapshot_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22907,10 +22717,7 @@ impl ModifyUsageLimitInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_usage_limit(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_usage_limit(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23057,10 +22864,7 @@ impl PauseClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_pause_cluster(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_pause_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23225,7 +23029,7 @@ impl PurchaseReservedNodeOfferingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_node_offering(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_node_offering(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23373,10 +23177,7 @@ impl RebootClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23524,10 +23325,7 @@ impl RejectDataShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_data_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reject_data_share(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23721,7 +23519,7 @@ impl ResetClusterParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reset_cluster_parameter_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reset_cluster_parameter_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23921,10 +23719,7 @@ impl ResizeClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_resize_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_resize_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24714,7 +24509,7 @@ impl RestoreFromClusterSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_from_cluster_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_restore_from_cluster_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24996,7 +24791,7 @@ impl RestoreTableFromClusterSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_table_from_cluster_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_restore_table_from_cluster_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -25144,10 +24939,7 @@ impl ResumeClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_resume_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_resume_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25366,7 +25158,7 @@ impl RevokeClusterSecurityGroupIngressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_cluster_security_group_ingress(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_revoke_cluster_security_group_ingress(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -25562,10 +25354,9 @@ impl RevokeEndpointAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_endpoint_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_revoke_endpoint_access(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25755,10 +25546,9 @@ impl RevokeSnapshotAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_snapshot_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_revoke_snapshot_access(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25912,10 +25702,7 @@ impl RotateEncryptionKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_rotate_encryption_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_rotate_encryption_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26132,10 +25919,7 @@ impl UpdatePartnerStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_partner_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_partner_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26214,6 +25998,32 @@ pub struct UpdatePartnerStatusInput {
     /// <p>The status message provided by the partner.</p>
     pub status_message: std::option::Option<std::string::String>,
 }
+impl UpdatePartnerStatusInput {
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of the database whose partner integration status is being updated.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner whose integration status is being updated.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+    /// <p>The value of the updated status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PartnerIntegrationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message provided by the partner.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePartnerStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePartnerStatusInput");
@@ -26237,6 +26047,15 @@ pub struct RotateEncryptionKeyInput {
     /// enabled.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
+impl RotateEncryptionKeyInput {
+    /// <p>The unique identifier of the cluster that you want to rotate the encryption keys
+    /// for.</p>
+    /// <p>Constraints: Must be the name of valid cluster that has encryption
+    /// enabled.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for RotateEncryptionKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotateEncryptionKeyInput");
@@ -26258,6 +26077,23 @@ pub struct RevokeSnapshotAccessInput {
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified
     /// snapshot.</p>
     pub account_with_restore_access: std::option::Option<std::string::String>,
+}
+impl RevokeSnapshotAccessInput {
+    /// <p>The identifier of the snapshot that the account can no longer access.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The identifier of the cluster the snapshot was created from. This parameter is
+    /// required if your IAM user has a policy containing a snapshot resource element that
+    /// specifies anything other than * for the cluster name.</p>
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified
+    /// snapshot.</p>
+    pub fn account_with_restore_access(&self) -> std::option::Option<&str> {
+        self.account_with_restore_access.as_deref()
+    }
 }
 impl std::fmt::Debug for RevokeSnapshotAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26288,6 +26124,25 @@ pub struct RevokeEndpointAccessInput {
     /// <p>Indicates whether to force the revoke action.
     /// If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
     pub force: bool,
+}
+impl RevokeEndpointAccessInput {
+    /// <p>The cluster to revoke access from.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
+    pub fn vpc_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_ids.as_deref()
+    }
+    /// <p>Indicates whether to force the revoke action.
+    /// If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
 }
 impl std::fmt::Debug for RevokeEndpointAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26324,6 +26179,35 @@ pub struct RevokeClusterSecurityGroupIngressInput {
     /// </p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
+impl RevokeClusterSecurityGroupIngressInput {
+    /// <p>The name of the security Group from which to revoke the ingress rule.</p>
+    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_name.as_deref()
+    }
+    /// <p>The IP range for which to revoke access. This range must be a valid Classless
+    /// Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified,
+    /// <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be
+    /// provided. </p>
+    pub fn cidrip(&self) -> std::option::Option<&str> {
+        self.cidrip.as_deref()
+    }
+    /// <p>The name of the EC2 Security Group whose access is to be revoked. If
+    /// <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code>
+    /// must also be provided and <code>CIDRIP</code> cannot be provided. </p>
+    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_name.as_deref()
+    }
+    /// <p>The Amazon Web Services account number of the owner of the security group specified in the
+    /// <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an
+    /// acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified,
+    /// <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
+    /// cannot be provided. </p>
+    /// <p>Example: <code>111122223333</code>
+    /// </p>
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_owner_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokeClusterSecurityGroupIngressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeClusterSecurityGroupIngressInput");
@@ -26347,6 +26231,12 @@ impl std::fmt::Debug for RevokeClusterSecurityGroupIngressInput {
 pub struct ResumeClusterInput {
     /// <p>The identifier of the cluster to be resumed.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
+}
+impl ResumeClusterInput {
+    /// <p>The identifier of the cluster to be resumed.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for ResumeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26384,6 +26274,50 @@ pub struct RestoreTableFromClusterSnapshotInput {
     /// If <code>true</code>, the names are case sensitive.
     /// If <code>false</code> (default), the names are not case sensitive.</p>
     pub enable_case_sensitive_identifier: std::option::Option<bool>,
+}
+impl RestoreTableFromClusterSnapshotInput {
+    /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the snapshot to restore the table from. This snapshot must have
+    /// been created from the Amazon Redshift cluster specified by the
+    /// <code>ClusterIdentifier</code> parameter.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The name of the source database that contains the table to restore from.</p>
+    pub fn source_database_name(&self) -> std::option::Option<&str> {
+        self.source_database_name.as_deref()
+    }
+    /// <p>The name of the source schema that contains the table to restore from. If you do
+    /// not specify a <code>SourceSchemaName</code> value, the default is
+    /// <code>public</code>.</p>
+    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+        self.source_schema_name.as_deref()
+    }
+    /// <p>The name of the source table to restore from.</p>
+    pub fn source_table_name(&self) -> std::option::Option<&str> {
+        self.source_table_name.as_deref()
+    }
+    /// <p>The name of the database to restore the table to.</p>
+    pub fn target_database_name(&self) -> std::option::Option<&str> {
+        self.target_database_name.as_deref()
+    }
+    /// <p>The name of the schema to restore the table to.</p>
+    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+        self.target_schema_name.as_deref()
+    }
+    /// <p>The name of the table to create as a result of the current request.</p>
+    pub fn new_table_name(&self) -> std::option::Option<&str> {
+        self.new_table_name.as_deref()
+    }
+    /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive.
+    /// If <code>true</code>, the names are case sensitive.
+    /// If <code>false</code> (default), the names are not case sensitive.</p>
+    pub fn enable_case_sensitive_identifier(&self) -> std::option::Option<bool> {
+        self.enable_case_sensitive_identifier
+    }
 }
 impl std::fmt::Debug for RestoreTableFromClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26575,6 +26509,232 @@ pub struct RestoreFromClusterSnapshotInput {
     /// </ul>
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
 }
+impl RestoreFromClusterSnapshotInput {
+    /// <p>The identifier of the cluster that will be created from restoring the
+    /// snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't
+    /// case sensitive.</p>
+    /// <p>Example: <code>my-snapshot-id</code>
+    /// </p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is
+    /// required if your IAM user has a policy containing a snapshot resource element that
+    /// specifies anything other than * for the cluster name.</p>
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_cluster_identifier.as_deref()
+    }
+    /// <p>The port number on which the cluster accepts connections.</p>
+    /// <p>Default: The same port as the original cluster.</p>
+    /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
+    /// <p>Default: A random, system-chosen Availability Zone.</p>
+    /// <p>Example: <code>us-east-2a</code>
+    /// </p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance
+    /// window to the Amazon Redshift engine that is running on the cluster. </p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn allow_version_upgrade(&self) -> std::option::Option<bool> {
+        self.allow_version_upgrade
+    }
+    /// <p>The name of the subnet group where you want to cluster restored.</p>
+    /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must
+    /// provide subnet group name where you want the cluster restored.</p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
+    /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are
+    /// restoring a snapshot you do not own, optional if you own the snapshot.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
+    /// retrieve the data encryption keys stored in an HSM.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+    /// <p>Specifies the name of the HSM configuration that contains the information the
+    /// Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
+    /// <p>The elastic IP (EIP) address for the cluster.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>The name of the parameter group to be associated with this cluster.</p>
+    /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the
+    /// default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon
+    /// Redshift Parameter Groups</a>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_parameter_group_name.as_deref()
+    }
+    /// <p>A list of security groups to be associated with this cluster.</p>
+    /// <p>Default: The default cluster security group for Amazon Redshift.</p>
+    /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    pub fn cluster_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.cluster_security_groups.as_deref()
+    }
+    /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the
+    /// cluster.</p>
+    /// <p>Default: The default VPC security group is associated with the cluster.</p>
+    /// <p>VPC security groups only apply to clusters in VPCs.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The weekly time range (in UTC) during which automated cluster maintenance can
+    /// occur.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+    /// </p>
+    /// <p> Default: The value selected for the cluster from which the snapshot was taken. For
+    /// more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The number of days that automated snapshots are retained. If the value is 0,
+    /// automated snapshots are disabled. Even if automated snapshots are disabled, you can
+    /// still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p>
+    ///
+    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>Default: The value selected for the cluster from which the snapshot was
+    /// taken.</p>
+    /// <p>Constraints: Must be a value from 0 to 35.</p>
+    pub fn automated_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.automated_snapshot_retention_period
+    }
+    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the
+    /// snapshot is retained indefinitely. This setting doesn't change the retention period
+    /// of existing snapshots.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
+    /// use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The node type that the restored cluster will be provisioned with.</p>
+    /// <p>Default: The node type of the cluster from which the snapshot was taken. You can
+    /// modify this if you are using any DS node type. In that case, you can choose to restore
+    /// into another DS node type of the same size. For example, you can restore ds1.8xlarge
+    /// into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you
+    /// must restore into that same instance type and size. In other words, you can only restore
+    /// a dc1.large instance type into another dc1.large instance type or dc2.large instance
+    /// type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge
+    /// cluster, then resize to a dc2.8large cluster. For more information about node types, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+    /// About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
+    /// enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a
+    /// VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in
+    /// the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn enhanced_vpc_routing(&self) -> std::option::Option<bool> {
+        self.enhanced_vpc_routing
+    }
+    /// <p>Reserved.</p>
+    pub fn additional_info(&self) -> std::option::Option<&str> {
+        self.additional_info.as_deref()
+    }
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+    /// cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon
+    /// Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+    /// request.</p>
+    /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+    pub fn iam_roles(&self) -> std::option::Option<&[std::string::String]> {
+        self.iam_roles.as_deref()
+    }
+    /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot,
+    /// the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The
+    /// snapshot might be on a different track than the cluster that was the source for the
+    /// snapshot. For example, suppose that you take a snapshot of a cluster that is on the
+    /// current track and then change the cluster to be on the trailing track. In this case, the
+    /// snapshot and the source cluster are on different tracks.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>A unique identifier for the snapshot schedule.</p>
+    pub fn snapshot_schedule_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_schedule_identifier.as_deref()
+    }
+    /// <p>The number of nodes specified when provisioning the restored cluster.</p>
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+        self.number_of_nodes
+    }
+    /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
+    pub fn availability_zone_relocation(&self) -> std::option::Option<bool> {
+        self.availability_zone_relocation
+    }
+    /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
+    /// </li>
+    /// <li>
+    /// <p>disabled - Don't use AQUA. </p>
+    /// </li>
+    /// <li>
+    /// <p>auto - Amazon Redshift determines whether to use AQUA.</p>
+    /// </li>
+    /// </ul>
+    pub fn aqua_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
+        self.aqua_configuration_status.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreFromClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreFromClusterSnapshotInput");
@@ -26654,6 +26814,30 @@ pub struct ResizeClusterInput {
     /// <code>false</code>, the resize type is elastic. </p>
     pub classic: std::option::Option<bool>,
 }
+impl ResizeClusterInput {
+    /// <p>The unique identifier for the cluster to resize.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The new cluster type for the specified cluster.</p>
+    pub fn cluster_type(&self) -> std::option::Option<&str> {
+        self.cluster_type.as_deref()
+    }
+    /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+        self.number_of_nodes
+    }
+    /// <p>A boolean value indicating whether the resize operation is using the classic resize
+    /// process. If you don't provide this parameter or set the value to
+    /// <code>false</code>, the resize type is elastic. </p>
+    pub fn classic(&self) -> std::option::Option<bool> {
+        self.classic
+    }
+}
 impl std::fmt::Debug for ResizeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResizeClusterInput");
@@ -26683,6 +26867,26 @@ pub struct ResetClusterParameterGroupInput {
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
+impl ResetClusterParameterGroupInput {
+    /// <p>The name of the cluster parameter group to be reset.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset
+    /// to their default values. </p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn reset_all_parameters(&self) -> bool {
+        self.reset_all_parameters
+    }
+    /// <p>An array of names of parameters to be reset. If
+    /// <i>ResetAllParameters</i> option is not used, then at least one
+    /// parameter name must be supplied. </p>
+    /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetClusterParameterGroupInput");
@@ -26700,6 +26904,12 @@ pub struct RejectDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
     pub data_share_arn: std::option::Option<std::string::String>,
 }
+impl RejectDataShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectDataShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectDataShareInput");
@@ -26714,6 +26924,12 @@ impl std::fmt::Debug for RejectDataShareInput {
 pub struct RebootClusterInput {
     /// <p>The cluster identifier.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
+}
+impl RebootClusterInput {
+    /// <p>The cluster identifier.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for RebootClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26734,6 +26950,18 @@ pub struct PurchaseReservedNodeOfferingInput {
     /// </p>
     pub node_count: std::option::Option<i32>,
 }
+impl PurchaseReservedNodeOfferingInput {
+    /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    pub fn reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_offering_id.as_deref()
+    }
+    /// <p>The number of reserved nodes that you want to purchase.</p>
+    /// <p>Default: <code>1</code>
+    /// </p>
+    pub fn node_count(&self) -> std::option::Option<i32> {
+        self.node_count
+    }
+}
 impl std::fmt::Debug for PurchaseReservedNodeOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseReservedNodeOfferingInput");
@@ -26749,6 +26977,12 @@ impl std::fmt::Debug for PurchaseReservedNodeOfferingInput {
 pub struct PauseClusterInput {
     /// <p>The identifier of the cluster to be paused.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
+}
+impl PauseClusterInput {
+    /// <p>The identifier of the cluster to be paused.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for PauseClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26771,6 +27005,22 @@ pub struct ModifyUsageLimitInput {
     /// For more information about this parameter, see <a>UsageLimit</a>. </p>
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
 }
+impl ModifyUsageLimitInput {
+    /// <p>The identifier of the usage limit to modify.</p>
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+        self.usage_limit_id.as_deref()
+    }
+    /// <p>The new limit amount.
+    /// For more information about this parameter, see <a>UsageLimit</a>. </p>
+    pub fn amount(&self) -> std::option::Option<i64> {
+        self.amount
+    }
+    /// <p>The new action that Amazon Redshift takes when the limit is reached.
+    /// For more information about this parameter, see <a>UsageLimit</a>. </p>
+    pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
+        self.breach_action.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyUsageLimitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyUsageLimitInput");
@@ -26790,6 +27040,17 @@ pub struct ModifySnapshotScheduleInput {
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule
     /// expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
     pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ModifySnapshotScheduleInput {
+    /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+    /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule
+    /// expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
+    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
+        self.schedule_definitions.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifySnapshotScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26828,6 +27089,37 @@ pub struct ModifySnapshotCopyRetentionPeriodInput {
     /// snapshots instead of automated snapshots.</p>
     pub manual: bool,
 }
+impl ModifySnapshotCopyRetentionPeriodInput {
+    /// <p>The unique identifier of the cluster for which you want to change the retention
+    /// period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
+    /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region
+    /// snapshot copy enabled.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region
+    /// after they are copied from the source Amazon Web Services Region.</p>
+    /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
+    /// <p>If you decrease the retention period for automated snapshots that are copied to a
+    /// destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were
+    /// copied to the destination Amazon Web Services Region and that fall outside of the new retention
+    /// period.</p>
+    /// <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>
+    /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will
+    /// have the new retention period. </p>
+    /// <p>If you specify the value of -1 newly copied manual snapshots are retained
+    /// indefinitely.</p>
+    /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653
+    /// for manual snapshots.</p>
+    pub fn retention_period(&self) -> i32 {
+        self.retention_period
+    }
+    /// <p>Indicates whether to apply the snapshot retention period to newly copied manual
+    /// snapshots instead of automated snapshots.</p>
+    pub fn manual(&self) -> bool {
+        self.manual
+    }
+}
 impl std::fmt::Debug for ModifySnapshotCopyRetentionPeriodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifySnapshotCopyRetentionPeriodInput");
@@ -26863,6 +27155,45 @@ pub struct ModifyScheduledActionInput {
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
     pub enable: std::option::Option<bool>,
+}
+impl ModifyScheduledActionInput {
+    /// <p>The name of the scheduled action to modify. </p>
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+        self.scheduled_action_name.as_deref()
+    }
+    /// <p>A modified JSON format of the scheduled action.
+    /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
+    pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
+        self.target_action.as_ref()
+    }
+    /// <p>A modified schedule in either <code>at( )</code> or <code>cron( )</code> format.
+    /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>A different IAM role to assume to run the target action.
+    /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>A modified description of the scheduled action. </p>
+    pub fn scheduled_action_description(&self) -> std::option::Option<&str> {
+        self.scheduled_action_description.as_deref()
+    }
+    /// <p>A modified start time of the scheduled action.
+    /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A modified end time of the scheduled action.
+    /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
+    pub fn enable(&self) -> std::option::Option<bool> {
+        self.enable
+    }
 }
 impl std::fmt::Debug for ModifyScheduledActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26917,6 +27248,52 @@ pub struct ModifyEventSubscriptionInput {
     /// indicates the subscription is enabled </p>
     pub enabled: std::option::Option<bool>,
 }
+impl ModifyEventSubscriptionInput {
+    /// <p>The name of the modified Amazon Redshift event notification subscription.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event
+    /// notification subscription.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The type of source that will be generating the events. For example, if you want to
+    /// be notified of events generated by a cluster, you would set this parameter to cluster.
+    /// If this value is not specified, events are returned for all Amazon Redshift objects in your
+    /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
+    /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects
+    /// must be of the same type as was specified in the source type parameter. The event
+    /// subscription will return only events generated by the specified objects. If not
+    /// specified, then events are returned for all objects within the source type
+    /// specified.</p>
+    /// <p>Example: my-cluster-1, my-cluster-2</p>
+    /// <p>Example: my-snapshot-20131010</p>
+    pub fn source_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_ids.as_deref()
+    }
+    /// <p>Specifies the Amazon Redshift event categories to be published by the event notification
+    /// subscription.</p>
+    /// <p>Values: configuration, management, monitoring, security, pending</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
+    /// subscription.</p>
+    /// <p>Values: ERROR, INFO</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code>
+    /// indicates the subscription is enabled </p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for ModifyEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyEventSubscriptionInput");
@@ -26940,6 +27317,16 @@ pub struct ModifyEndpointAccessInput {
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ModifyEndpointAccessInput {
+    /// <p>The endpoint to be modified.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyEndpointAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyEndpointAccessInput");
@@ -26960,6 +27347,21 @@ pub struct ModifyClusterSubnetGroupInput {
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single
     /// request.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ModifyClusterSubnetGroupInput {
+    /// <p>The name of the subnet group to be modified.</p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
+    /// <p>A text description of the subnet group to be modified.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single
+    /// request.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyClusterSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26984,6 +27386,23 @@ pub struct ModifyClusterSnapshotScheduleInput {
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the
     /// schedule.</p>
     pub disassociate_schedule: std::option::Option<bool>,
+}
+impl ModifyClusterSnapshotScheduleInput {
+    /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.
+    /// </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the
+    /// cluster.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+    /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the
+    /// schedule.</p>
+    pub fn disassociate_schedule(&self) -> std::option::Option<bool> {
+        self.disassociate_schedule
+    }
 }
 impl std::fmt::Debug for ModifyClusterSnapshotScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27010,6 +27429,25 @@ pub struct ModifyClusterSnapshotInput {
     /// <p>A Boolean option to override an exception if the retention period has already
     /// passed.</p>
     pub force: bool,
+}
+impl ModifyClusterSnapshotInput {
+    /// <p>The identifier of the snapshot whose setting you want to modify.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
+    /// snapshot is retained indefinitely.</p>
+    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the
+    /// force option to immediately delete the snapshot.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>A Boolean option to override an exception if the retention period has already
+    /// passed.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
 }
 impl std::fmt::Debug for ModifyClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27038,6 +27476,21 @@ pub struct ModifyClusterParameterGroupInput {
     /// pairs in the wlm_json_configuration parameter.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
+impl ModifyClusterParameterGroupInput {
+    /// <p>The name of the parameter group to be modified.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified
+    /// in a single request.</p>
+    /// <p>For each parameter to be modified, you must supply at least the parameter name and
+    /// parameter value; other name-value pairs of the parameter are optional.</p>
+    /// <p>For the workload management (WLM) configuration, you must supply all the name-value
+    /// pairs in the wlm_json_configuration parameter.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterParameterGroupInput");
@@ -27065,6 +27518,34 @@ pub struct ModifyClusterMaintenanceInput {
     /// <p>An integer indicating the duration of the maintenance window in days. If you specify a
     /// duration, you can't specify an end time. The duration must be 45 days or less.</p>
     pub defer_maintenance_duration: std::option::Option<i32>,
+}
+impl ModifyClusterMaintenanceInput {
+    /// <p>A unique identifier for the cluster.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
+    pub fn defer_maintenance(&self) -> std::option::Option<bool> {
+        self.defer_maintenance
+    }
+    /// <p>A unique identifier for the deferred maintenance window.</p>
+    pub fn defer_maintenance_identifier(&self) -> std::option::Option<&str> {
+        self.defer_maintenance_identifier.as_deref()
+    }
+    /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
+    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.defer_maintenance_start_time.as_ref()
+    }
+    /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an
+    /// end time, you can't specify a duration.</p>
+    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.defer_maintenance_end_time.as_ref()
+    }
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a
+    /// duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    pub fn defer_maintenance_duration(&self) -> std::option::Option<i32> {
+        self.defer_maintenance_duration
+    }
 }
 impl std::fmt::Debug for ModifyClusterMaintenanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27106,6 +27587,24 @@ pub struct ModifyClusterIamRolesInput {
     /// disassociate up to 10 IAM roles from a single cluster in a single request.</p>
     pub remove_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ModifyClusterIamRolesInput {
+    /// <p>The unique identifier of the cluster for which you want to associate or
+    /// disassociate IAM roles.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their
+    /// Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single
+    /// cluster in a single request.</p>
+    pub fn add_iam_roles(&self) -> std::option::Option<&[std::string::String]> {
+        self.add_iam_roles.as_deref()
+    }
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can
+    /// disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+    pub fn remove_iam_roles(&self) -> std::option::Option<&[std::string::String]> {
+        self.remove_iam_roles.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyClusterIamRolesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterIamRolesInput");
@@ -27127,6 +27626,19 @@ pub struct ModifyClusterDbRevisionInput {
     /// <p>The identifier of the database revision. You can retrieve this value from the
     /// response to the <a>DescribeClusterDbRevisions</a> request.</p>
     pub revision_target: std::option::Option<std::string::String>,
+}
+impl ModifyClusterDbRevisionInput {
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>Example: <code>examplecluster</code>
+    /// </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the database revision. You can retrieve this value from the
+    /// response to the <a>DescribeClusterDbRevisions</a> request.</p>
+    pub fn revision_target(&self) -> std::option::Option<&str> {
+        self.revision_target.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyClusterDbRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27344,6 +27856,260 @@ pub struct ModifyClusterInput {
     /// <p>The option to change the port of an Amazon Redshift cluster.</p>
     pub port: std::option::Option<i32>,
 }
+impl ModifyClusterInput {
+    /// <p>The unique identifier of the cluster to be modified.</p>
+    /// <p>Example: <code>examplecluster</code>
+    /// </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The new cluster type.</p>
+    /// <p>When you submit your cluster resize request, your existing cluster goes into a
+    /// read-only mode. After Amazon Redshift provisions a new cluster based on your resize
+    /// requirements, there will be outage for a period while the old cluster is deleted and
+    /// your connection is switched to the new cluster. You can use <a>DescribeResize</a> to track the progress of the resize request. </p>
+    /// <p>Valid Values: <code> multi-node | single-node </code>
+    /// </p>
+    pub fn cluster_type(&self) -> std::option::Option<&str> {
+        self.cluster_type.as_deref()
+    }
+    /// <p>The new node type of the cluster. If you specify a new node type, you must also
+    /// specify the number of nodes parameter.</p>
+    /// <p>
+    /// For more information about resizing clusters, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    ///
+    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+    /// <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+    /// <code>dc2.large</code> | <code>dc2.8xlarge</code> |
+    /// <code>ra3.xlplus</code> |  <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
+    /// </p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you
+    /// must also specify the node type parameter.</p>
+    /// <p>
+    /// For more information about resizing clusters, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    ///
+    /// <p>Valid Values: Integer greater than <code>0</code>.</p>
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+        self.number_of_nodes
+    }
+    /// <p>A list of cluster security groups to be authorized on this cluster. This change is
+    /// asynchronously applied as soon as possible.</p>
+    /// <p>Security groups currently associated with the cluster, and not in the list of
+    /// groups to apply, will be revoked from the cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.cluster_security_groups.as_deref()
+    }
+    /// <p>A list of virtual private cloud (VPC) security groups to be associated with the
+    /// cluster. This change is asynchronously applied as soon as possible.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied
+    /// as soon as possible. Between the time of the request and the completion of the request,
+    /// the <code>MasterUserPassword</code> element exists in the
+    /// <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <note>
+    /// <p>Operations never return the password, so this operation provides a way to
+    /// regain access to the admin user account for a cluster if the password is
+    /// lost.</p>
+    /// </note>
+    /// <p>Default: Uses existing setting.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain one number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
+    /// (single quote), " (double quote), \, /, @, or space.</p>
+    /// </li>
+    /// </ul>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>The name of the cluster parameter group to apply to this cluster. This change is
+    /// applied only after the cluster is rebooted. To reboot a cluster use <a>RebootCluster</a>. </p>
+    /// <p>Default: Uses existing setting.</p>
+    /// <p>Constraints: The cluster parameter group must be in the same parameter group family
+    /// that matches the cluster version.</p>
+    pub fn cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_parameter_group_name.as_deref()
+    }
+    /// <p>The number of days that automated snapshots are retained. If the value is 0,
+    /// automated snapshots are disabled. Even if automated snapshots are disabled, you can
+    /// still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p>
+    /// <p>If you decrease the automated snapshot retention period from its current value,
+    /// existing automated snapshots that fall outside of the new retention period will be
+    /// immediately deleted.</p>
+    ///
+    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>Default: Uses existing setting.</p>
+    /// <p>Constraints: Must be a value from 0 to 35.</p>
+    pub fn automated_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.automated_snapshot_retention_period
+    }
+    /// <p>The default for number of days that a newly created manual snapshot is retained. If
+    /// the value is -1, the manual snapshot is retained indefinitely. This value doesn't
+    /// retroactively change the retention periods of existing manual snapshots.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The default value is -1.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, if
+    /// necessary. If system maintenance is necessary during the window, it may result in an
+    /// outage.</p>
+    /// <p>This maintenance window change is made immediately. If the new maintenance window
+    /// indicates the current time, there must be at least 120 minutes between the current time
+    /// and end of the window in order to ensure that pending changes are applied.</p>
+    /// <p>Default: Uses existing setting.</p>
+    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example
+    /// <code>wed:07:30-wed:08:00</code>.</p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
+    /// <p>Constraints: Must be at least 30 minutes.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
+    /// <p>For major version upgrades, if a non-default cluster parameter group is currently
+    /// in use, a new cluster parameter group in the cluster parameter group family for the new
+    /// version must be specified. The new cluster parameter group can be the default for that
+    /// cluster parameter group family.
+    /// For more information about parameters and parameter groups, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    /// <p>Example: <code>1.0</code>
+    /// </p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>If <code>true</code>, major version upgrades will be applied automatically to the
+    /// cluster during the maintenance window. </p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn allow_version_upgrade(&self) -> std::option::Option<bool> {
+        self.allow_version_upgrade
+    }
+    /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
+    /// retrieve the data encryption keys stored in an HSM.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+    /// <p>Specifies the name of the HSM configuration that contains the information the
+    /// Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
+    /// <p>The new identifier for the cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Example: <code>examplecluster</code>
+    /// </p>
+    pub fn new_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.new_cluster_identifier.as_deref()
+    }
+    /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only
+    /// clusters in VPCs can be set to be publicly available.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>The Elastic IP (EIP) address for the cluster.</p>
+    /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible
+    /// through an Internet gateway. For more information about provisioning clusters in
+    /// EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+    /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
+    /// enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a
+    /// VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in
+    /// the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn enhanced_vpc_routing(&self) -> std::option::Option<bool> {
+        self.enhanced_vpc_routing
+    }
+    /// <p>The name for the maintenance track that you want to assign for the cluster. This name
+    /// change is asynchronous. The new track name stays in the
+    /// <code>PendingModifiedValues</code> for the cluster until the next maintenance
+    /// window. When the maintenance track changes, the cluster is switched to the latest
+    /// cluster release available for the maintenance track. At this point, the maintenance
+    /// track name is applied.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you
+    /// provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster
+    /// with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>,
+    /// we encrypt with the default key. </p>
+    /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use
+    /// to encrypt data in the cluster.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
+    pub fn availability_zone_relocation(&self) -> std::option::Option<bool> {
+        self.availability_zone_relocation
+    }
+    /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The option to change the port of an Amazon Redshift cluster.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+}
 impl std::fmt::Debug for ModifyClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterInput");
@@ -27407,6 +28173,17 @@ pub struct ModifyAuthenticationProfileInput {
     /// The maximum length of the JSON string is determined by a quota for your account.</p>
     pub authentication_profile_content: std::option::Option<std::string::String>,
 }
+impl ModifyAuthenticationProfileInput {
+    /// <p>The name of the authentication profile to replace.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
+    /// <p>The new content of the authentication profile in JSON format.
+    /// The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
+        self.authentication_profile_content.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyAuthenticationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyAuthenticationProfileInput");
@@ -27442,6 +28219,29 @@ pub struct ModifyAquaConfigurationInput {
     /// </ul>
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
 }
+impl ModifyAquaConfigurationInput {
+    /// <p>The identifier of the cluster to be modified.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
+    /// </li>
+    /// <li>
+    /// <p>disabled - Don't use AQUA. </p>
+    /// </li>
+    /// <li>
+    /// <p>auto - Amazon Redshift determines whether to use AQUA.</p>
+    /// </li>
+    /// </ul>
+    pub fn aqua_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
+        self.aqua_configuration_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyAquaConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyAquaConfigurationInput");
@@ -27464,6 +28264,23 @@ pub struct GetReservedNodeExchangeOfferingsInput {
     /// <p>A value that indicates the starting point for the next set of
     /// ReservedNodeOfferings.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl GetReservedNodeExchangeOfferingsInput {
+    /// <p>A string representing the node identifier for the DC1 Reserved Node to be
+    /// exchanged.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>An integer setting the maximum number of ReservedNodeOfferings to
+    /// retrieve.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>A value that indicates the starting point for the next set of
+    /// ReservedNodeOfferings.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReservedNodeExchangeOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27571,6 +28388,111 @@ pub struct GetClusterCredentialsInput {
     /// </ul>
     pub db_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetClusterCredentialsInput {
+    /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in
+    /// the database, the temporary user credentials have the same permissions as the existing
+    /// user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code>
+    /// is <code>True</code>, a new user is created using the value for <code>DbUser</code> with
+    /// PUBLIC permissions. If a database user matching the value for <code>DbUser</code>
+    /// doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command
+    /// succeeds but the connection attempt will fail because the user doesn't exist in the
+    /// database.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
+    /// Redshift Database Developer Guide. </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be
+    /// <code>PUBLIC</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period
+    /// (dot), at symbol (@), or hyphen.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not contain a colon ( : ) or slash ( / ). </p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon
+    /// Redshift Database Developer Guide.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If
+    /// <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing
+    /// database.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 64 alphanumeric characters or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period
+    /// (dot), at symbol (@), or hyphen.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not contain a colon ( : ) or slash ( / ). </p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon
+    /// Redshift Database Developer Guide.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_name(&self) -> std::option::Option<&str> {
+        self.db_name.as_deref()
+    }
+    /// <p>The unique identifier of the cluster that contains the database for which your are
+    /// requesting credentials. This parameter is case sensitive.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The number of seconds until the returned temporary password expires.</p>
+    /// <p>Constraint: minimum 900, maximum 3600.</p>
+    /// <p>Default: 900</p>
+    pub fn duration_seconds(&self) -> std::option::Option<i32> {
+        self.duration_seconds
+    }
+    /// <p>Create a database user with the name specified for the user named in
+    /// <code>DbUser</code> if one does not exist.</p>
+    pub fn auto_create(&self) -> std::option::Option<bool> {
+        self.auto_create
+    }
+    /// <p>A list of the names of existing database groups that the user named in
+    /// <code>DbUser</code> will join for the current session, in addition to any group
+    /// memberships for an existing user. If not specified, a new user is added only to
+    /// PUBLIC.</p>
+    /// <p>Database group name constraints</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 64 alphanumeric characters or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period
+    /// (dot), at symbol (@), or hyphen.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not contain a colon ( : ) or slash ( / ). </p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon
+    /// Redshift Database Developer Guide.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.db_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for GetClusterCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClusterCredentialsInput");
@@ -27610,6 +28532,40 @@ pub struct EnableSnapshotCopyInput {
     /// snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: std::option::Option<i32>,
+}
+impl EnableSnapshotCopyInput {
+    /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
+    /// <p>Constraints: Must be the valid name of an existing cluster that does not already
+    /// have cross-region snapshot copy enabled.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
+    /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.
+    /// </p>
+    pub fn destination_region(&self) -> std::option::Option<&str> {
+        self.destination_region.as_deref()
+    }
+    /// <p>The number of days to retain automated snapshots in the destination region after
+    /// they are copied from the source region.</p>
+    /// <p>Default: 7.</p>
+    /// <p>Constraints: Must be at least 1 and no more than 35.</p>
+    pub fn retention_period(&self) -> std::option::Option<i32> {
+        self.retention_period
+    }
+    /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted
+    /// cluster are copied to the destination region.</p>
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+        self.snapshot_copy_grant_name.as_deref()
+    }
+    /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region
+    /// after they are copied from the source Amazon Web Services Region. If the value is -1, the manual
+    /// snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
 }
 impl std::fmt::Debug for EnableSnapshotCopyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27675,6 +28631,58 @@ pub struct EnableLoggingInput {
     /// </ul>
     pub s3_key_prefix: std::option::Option<std::string::String>,
 }
+impl EnableLoggingInput {
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
+    /// <p>Example: <code>examplecluster</code>
+    /// </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the same region as the cluster</p>
+    /// </li>
+    /// <li>
+    /// <p>The cluster must have read bucket and put object permissions</p>
+    /// </li>
+    /// </ul>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot exceed 512 characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash
+    /// (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>x00 to x20</p>
+    /// </li>
+    /// <li>
+    /// <p>x22</p>
+    /// </li>
+    /// <li>
+    /// <p>x27</p>
+    /// </li>
+    /// <li>
+    /// <p>x5c</p>
+    /// </li>
+    /// <li>
+    /// <p>x7f or larger</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableLoggingInput");
@@ -27697,6 +28705,22 @@ pub struct DisassociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for
     /// the datashare is removed from.</p>
     pub consumer_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateDataShareConsumerInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>A value that specifies whether association for the datashare is removed from the
+    /// entire account.</p>
+    pub fn disassociate_entire_account(&self) -> std::option::Option<bool> {
+        self.disassociate_entire_account
+    }
+    /// <p>The Amazon Resource Name (ARN) of the consumer that association for
+    /// the datashare is removed from.</p>
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+        self.consumer_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateDataShareConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27721,6 +28745,15 @@ pub struct DisableSnapshotCopyInput {
     /// snapshot copy enabled.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
+impl DisableSnapshotCopyInput {
+    /// <p>The unique identifier of the source cluster that you want to disable copying of
+    /// snapshots to a destination region.</p>
+    /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region
+    /// snapshot copy enabled.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableSnapshotCopyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableSnapshotCopyInput");
@@ -27737,6 +28770,14 @@ pub struct DisableLoggingInput {
     /// <p>Example: <code>examplecluster</code>
     /// </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
+}
+impl DisableLoggingInput {
+    /// <p>The identifier of the cluster on which logging is to be stopped.</p>
+    /// <p>Example: <code>examplecluster</code>
+    /// </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27785,6 +28826,57 @@ pub struct DescribeUsageLimitsInput {
     /// returns a response with the usage limit objects that have either or both of these tag
     /// values associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeUsageLimitsInput {
+    /// <p>The identifier of the usage limit to describe.</p>
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+        self.usage_limit_id.as_deref()
+    }
+    /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The feature type for which you want to describe usage limits.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::UsageLimitFeatureType> {
+        self.feature_type.as_ref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeUsageLimits</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching usage limit objects
+    /// that are associated with the specified key or keys. For example, suppose that you
+    /// have parameter groups that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the usage limit objects have either or both of these
+    /// tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching usage limit objects
+    /// that are associated with the specified tag value or values. For example, suppose
+    /// that you have parameter groups that are tagged with values called <code>admin</code> and
+    /// <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift
+    /// returns a response with the usage limit objects that have either or both of these tag
+    /// values associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUsageLimitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27869,6 +28961,84 @@ pub struct DescribeTagsInput {
     /// resources that have either or both of these tag values associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeTagsInput {
+    /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For
+    /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Cluster</p>
+    /// </li>
+    /// <li>
+    /// <p>CIDR/IP</p>
+    /// </li>
+    /// <li>
+    /// <p>EC2 security group</p>
+    /// </li>
+    /// <li>
+    /// <p>Snapshot</p>
+    /// </li>
+    /// <li>
+    /// <p>Cluster security group</p>
+    /// </li>
+    /// <li>
+    /// <p>Subnet group</p>
+    /// </li>
+    /// <li>
+    /// <p>HSM connection</p>
+    /// </li>
+    /// <li>
+    /// <p>HSM certificate</p>
+    /// </li>
+    /// <li>
+    /// <p>Parameter group</p>
+    /// </li>
+    /// <li>
+    /// <p>Snapshot copy grant</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in
+    /// the Amazon Redshift Cluster Management Guide. </p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The maximum number or response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned <code>marker</code> value.
+    /// </p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>marker</code> parameter
+    /// and retrying the command. If the <code>marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching resources that are
+    /// associated with the specified key or keys. For example, suppose that you have resources
+    /// tagged with keys called <code>owner</code> and <code>environment</code>. If you specify
+    /// both of these tag keys in the request, Amazon Redshift returns a response with all resources
+    /// that have either or both of these tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching resources that are
+    /// associated with the specified value or values. For example, suppose that you have
+    /// resources tagged with values called <code>admin</code> and <code>test</code>. If you
+    /// specify both of these tag values in the request, Amazon Redshift returns a response with all
+    /// resources that have either or both of these tag values associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsInput");
@@ -27902,6 +29072,32 @@ pub struct DescribeTableRestoreStatusInput {
     /// response includes only records beyond the marker, up to the value specified by the
     /// <code>MaxRecords</code> parameter.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeTableRestoreStatusInput {
+    /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the table restore request to return status for. If you don't
+    /// specify a <code>TableRestoreRequestId</code> value, then
+    /// <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table
+    /// restore requests.</p>
+    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
+        self.table_restore_request_id.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist
+    /// than the specified <code>MaxRecords</code> value, a pagination token called a marker is
+    /// included in the response so that the remaining results can be retrieved.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to the value specified by the
+    /// <code>MaxRecords</code> parameter.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTableRestoreStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27951,6 +29147,41 @@ pub struct DescribeSnapshotSchedulesInput {
     /// value.</p>
     pub max_records: std::option::Option<i32>,
 }
+impl DescribeSnapshotSchedulesInput {
+    /// <p>The unique identifier for the cluster whose snapshot schedules you want to
+    /// view.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>A unique identifier for a snapshot schedule.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+    /// <p>The key value for a snapshot schedule tag.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>marker</code> parameter
+    /// and retrying the command. If the <code>marker</code> field is empty, all response
+    /// records have been retrieved for the request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number or response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned <code>marker</code>
+    /// value.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+}
 impl std::fmt::Debug for DescribeSnapshotSchedulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSnapshotSchedulesInput");
@@ -27999,6 +29230,48 @@ pub struct DescribeSnapshotCopyGrantsInput {
     /// resources that have either or both of these tag values associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeSnapshotCopyGrantsInput {
+    /// <p>The name of the snapshot copy grant.</p>
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+        self.snapshot_copy_grant_name.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
+    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching resources that are
+    /// associated with the specified key or keys. For example, suppose that you have resources
+    /// tagged with keys called <code>owner</code> and <code>environment</code>. If you specify
+    /// both of these tag keys in the request, Amazon Redshift returns a response with all resources
+    /// that have either or both of these tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching resources that are
+    /// associated with the specified value or values. For example, suppose that you have
+    /// resources tagged with values called <code>admin</code> and <code>test</code>. If you
+    /// specify both of these tag values in the request, Amazon Redshift returns a response with all
+    /// resources that have either or both of these tag values associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSnapshotCopyGrantsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSnapshotCopyGrantsInput");
@@ -28046,6 +29319,56 @@ pub struct DescribeScheduledActionsInput {
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
 }
+impl DescribeScheduledActionsInput {
+    /// <p>The name of the scheduled action to retrieve. </p>
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+        self.scheduled_action_name.as_deref()
+    }
+    /// <p>The type of the scheduled actions to retrieve. </p>
+    pub fn target_action_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ScheduledActionTypeValues> {
+        self.target_action_type.as_ref()
+    }
+    /// <p>The start time in UTC of the scheduled actions to retrieve.
+    /// Only active scheduled actions that have invocations after this time are retrieved.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time in UTC of the scheduled action to retrieve.
+    /// Only active scheduled actions that have invocations before this time are retrieved.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>If true, retrieve only active scheduled actions.
+    /// If false, retrieve only disabled scheduled actions. </p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+    /// <p>List of scheduled action filters. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ScheduledActionFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeScheduledActions</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+}
 impl std::fmt::Debug for DescribeScheduledActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScheduledActionsInput");
@@ -28070,6 +29393,15 @@ pub struct DescribeResizeInput {
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are
     /// returned.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
+}
+impl DescribeResizeInput {
+    /// <p>The unique identifier of a cluster whose resize progress you are requesting. This
+    /// parameter is case-sensitive.</p>
+    /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are
+    /// returned.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeResizeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28100,6 +29432,31 @@ pub struct DescribeReservedNodesInput {
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeReservedNodesInput {
+    /// <p>Identifier for the node reservation.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeReservedNodes</a> request exceed
+    /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedNodesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28133,6 +29490,31 @@ pub struct DescribeReservedNodeOfferingsInput {
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeReservedNodeOfferingsInput {
+    /// <p>The unique identifier for the offering.</p>
+    pub fn reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_offering_id.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeReservedNodeOfferings</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedNodeOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedNodeOfferingsInput");
@@ -28155,6 +29537,24 @@ pub struct DescribePartnersInput {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
     pub partner_name: std::option::Option<std::string::String>,
+}
+impl DescribePartnersInput {
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePartnersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28194,6 +29594,39 @@ pub struct DescribeOrderableClusterOptionsInput {
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeOrderableClusterOptionsInput {
+    /// <p>The version filter value. Specify this parameter to show only the available
+    /// offerings matching the specified version.</p>
+    /// <p>Default: All versions.</p>
+    /// <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>The node type filter value. Specify this parameter to show only the available
+    /// offerings matching the specified node type.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeOrderableClusterOptions</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrderableClusterOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28242,6 +29675,53 @@ pub struct DescribeNodeConfigurationOptionsInput {
     /// <p>Constraints: minimum 100, maximum 500.</p>
     pub max_records: std::option::Option<i32>,
 }
+impl DescribeNodeConfigurationOptionsInput {
+    /// <p>The action type to evaluate for possible node configurations.
+    /// Specify "restore-cluster" to get configuration combinations based on an existing snapshot.
+    /// Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot.
+    /// Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.
+    /// </p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account used to create or copy the snapshot.
+    /// Required if you are restoring a snapshot you do not own,
+    /// optional if you own the snapshot.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>A set of name, operator, and value items to filter the results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::NodeConfigurationOptionsFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeNodeConfigurationOptions</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>500</code>
+    /// </p>
+    /// <p>Constraints: minimum 100, maximum 500.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+}
 impl std::fmt::Debug for DescribeNodeConfigurationOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNodeConfigurationOptionsInput");
@@ -28264,6 +29744,14 @@ pub struct DescribeLoggingStatusInput {
     /// <p>Example: <code>examplecluster</code>
     /// </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
+}
+impl DescribeLoggingStatusInput {
+    /// <p>The identifier of the cluster from which to get the logging status.</p>
+    /// <p>Example: <code>examplecluster</code>
+    /// </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoggingStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28310,6 +29798,51 @@ pub struct DescribeHsmConfigurationsInput {
     /// returns a response with the HSM configurations that have either or both of these tag
     /// values associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeHsmConfigurationsInput {
+    /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no
+    /// identifier is specified, information is returned for all HSM configurations owned by
+    /// your Amazon Web Services account.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeHsmConfigurations</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching HSM configurations that
+    /// are associated with the specified key or keys. For example, suppose that you have HSM
+    /// configurations that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the HSM configurations that have either or both of
+    /// these tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching HSM configurations
+    /// that are associated with the specified tag value or values. For example, suppose that
+    /// you have HSM configurations that are tagged with values called <code>admin</code> and
+    /// <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift
+    /// returns a response with the HSM configurations that have either or both of these tag
+    /// values associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHsmConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28364,6 +29897,51 @@ pub struct DescribeHsmClientCertificatesInput {
     /// either or both of these tag values associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeHsmClientCertificatesInput {
+    /// <p>The identifier of a specific HSM client certificate for which you want information.
+    /// If no identifier is specified, information is returned for all HSM client certificates
+    /// owned by your Amazon Web Services account.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeHsmClientCertificates</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching HSM client certificates
+    /// that are associated with the specified key or keys. For example, suppose that you have
+    /// HSM client certificates that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the HSM client certificates that have either or both
+    /// of these tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching HSM client
+    /// certificates that are associated with the specified tag value or values. For example,
+    /// suppose that you have HSM client certificates that are tagged with values called
+    /// <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+    /// the request, Amazon Redshift returns a response with the HSM client certificates that have
+    /// either or both of these tag values associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHsmClientCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHsmClientCertificatesInput");
@@ -28415,6 +29993,50 @@ pub struct DescribeEventSubscriptionsInput {
     /// the request, Amazon Redshift returns a response with the subscriptions that have either or
     /// both of these tag values associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeEventSubscriptionsInput {
+    /// <p>The name of the Amazon Redshift event notification subscription to be
+    /// described.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a DescribeEventSubscriptions request exceed the value
+    /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
+    /// field of the response. You can retrieve the next set of response records by providing
+    /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching event notification
+    /// subscriptions that are associated with the specified key or keys. For example, suppose
+    /// that you have subscriptions that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the subscriptions that have either or both of these
+    /// tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching event notification
+    /// subscriptions that are associated with the specified tag value or values. For example,
+    /// suppose that you have subscriptions that are tagged with values called
+    /// <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+    /// the request, Amazon Redshift returns a response with the subscriptions that have either or
+    /// both of these tag values associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28517,6 +30139,106 @@ pub struct DescribeEventsInput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEventsInput {
+    /// <p>The identifier of the event source for which events will be returned. If this
+    /// parameter is not specified, then all sources are included in the response.</p>
+    /// <p>Constraints:</p>
+    /// <p>If <i>SourceIdentifier</i> is supplied,
+    /// <i>SourceType</i> must also be provided.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is
+    /// <code>cluster</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i>
+    /// is <code>cluster-security-group</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i>
+    /// is <code>cluster-parameter-group</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i>
+    /// is <code>cluster-snapshot</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+    /// <p>The event source to retrieve events for. If no value is specified, all events are
+    /// returned.</p>
+    /// <p>Constraints:</p>
+    /// <p>If <i>SourceType</i> is supplied,
+    /// <i>SourceIdentifier</i> must also be provided.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is
+    /// a cluster identifier.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when
+    /// <i>SourceIdentifier</i> is a cluster security group
+    /// name.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when
+    /// <i>SourceIdentifier</i> is a cluster parameter group
+    /// name.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when
+    /// <i>SourceIdentifier</i> is a cluster snapshot
+    /// identifier.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
+    /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+    /// </p>
+    /// <p>Example: <code>2009-07-08T18:00Z</code>
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
+    /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+    /// </p>
+    /// <p>Example: <code>2009-07-08T18:00Z</code>
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The number of minutes prior to the time of the request for which to retrieve
+    /// events. For example, if the request is sent at 18:00 and you specify a duration of 60,
+    /// then only events which have occurred after 17:00 will be returned.</p>
+    /// <p>Default: <code>60</code>
+    /// </p>
+    pub fn duration(&self) -> std::option::Option<i32> {
+        self.duration
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeEvents</a> request exceed the value
+    /// specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
+    /// field of the response. You can retrieve the next set of response records by providing
+    /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsInput");
@@ -28539,6 +30261,14 @@ pub struct DescribeEventCategoriesInput {
     /// categories apply.</p>
     /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
     pub source_type: std::option::Option<std::string::String>,
+}
+impl DescribeEventCategoriesInput {
+    /// <p>The source type, such as cluster or parameter group, to which the described event
+    /// categories apply.</p>
+    /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventCategoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28570,6 +30300,36 @@ pub struct DescribeEndpointAuthorizationInput {
     /// response includes only records beyond the marker, up to the value specified by the
     /// <code>MaxRecords</code> parameter.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointAuthorizationInput {
+    /// <p>The cluster identifier of the cluster to access.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee.
+    /// If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p>Indicates whether to check authorization from a grantor or grantee point of view.
+    /// If true, Amazon Redshift returns endpoint authorizations that you've been granted.
+    /// If false (default), checks authorization from a grantor point of view.</p>
+    pub fn grantee(&self) -> std::option::Option<bool> {
+        self.grantee
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist
+    /// than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is
+    /// included in the response so that the remaining results can be retrieved.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to the value specified by the
+    /// <code>MaxRecords</code> parameter.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28604,6 +30364,37 @@ pub struct DescribeEndpointAccessInput {
     /// response includes only records beyond the marker, up to the value specified by the
     /// <code>MaxRecords</code> parameter.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointAccessInput {
+    /// <p>The cluster identifier associated with the described endpoint.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The name of the endpoint to be described.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The virtual private cloud (VPC) identifier with access to the cluster.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist
+    /// than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is
+    /// included in the response so that the remaining results can be retrieved.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeEndpointAccess</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to the value specified by the
+    /// <code>MaxRecords</code> parameter.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28640,6 +30431,31 @@ pub struct DescribeDefaultClusterParametersInput {
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDefaultClusterParametersInput {
+    /// <p>The name of the cluster parameter group family.</p>
+    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+        self.parameter_group_family.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDefaultClusterParameters</a>
+    /// request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in
+    /// the <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDefaultClusterParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDefaultClusterParametersInput");
@@ -28671,6 +30487,33 @@ pub struct DescribeDataSharesForProducerInput {
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDataSharesForProducerInput {
+    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
+        self.producer_arn.as_deref()
+    }
+    /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon
+    /// Redshift returns the list of datashares that have the specified status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataShareStatusForProducer> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataSharesForProducerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28705,6 +30548,33 @@ pub struct DescribeDataSharesForConsumerInput {
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDataSharesForConsumerInput {
+    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+        self.consumer_arn.as_deref()
+    }
+    /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon
+    /// Redshift returns the list of datashares that have the specified status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataShareStatusForConsumer> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataSharesForConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSharesForConsumerInput");
@@ -28729,6 +30599,23 @@ pub struct DescribeDataSharesInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDataSharesInput {
+    /// <p>The identifier of the datashare to describe details of.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataSharesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28779,6 +30666,50 @@ pub struct DescribeClusterVersionsInput {
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeClusterVersionsInput {
+    /// <p>The specific cluster version to return.</p>
+    /// <p>Example: <code>1.0</code>
+    /// </p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>The name of a specific cluster parameter group family to return details
+    /// for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.cluster_parameter_group_family.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeClusterVersions</a> request exceed
+    /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterVersionsInput");
@@ -28808,6 +30739,25 @@ pub struct DescribeClusterTracksInput {
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeClusterTracksInput {
+    /// <p>The name of the maintenance track. </p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <code>DescribeClusterTracks</code> request exceed the
+    /// value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterTracksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28854,6 +30804,49 @@ pub struct DescribeClusterSubnetGroupsInput {
     /// returns a response with the subnet groups that have either or both of these tag values
     /// associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeClusterSubnetGroupsInput {
+    /// <p>The name of the cluster subnet group for which information is requested.</p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeClusterSubnetGroups</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching cluster subnet groups
+    /// that are associated with the specified key or keys. For example, suppose that you have
+    /// subnet groups that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the subnet groups that have either or both of these
+    /// tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching cluster subnet
+    /// groups that are associated with the specified tag value or values. For example, suppose
+    /// that you have subnet groups that are tagged with values called <code>admin</code> and
+    /// <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift
+    /// returns a response with the subnet groups that have either or both of these tag values
+    /// associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterSubnetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28958,6 +30951,118 @@ pub struct DescribeClusterSnapshotsInput {
     /// <p></p>
     pub sorting_entities: std::option::Option<std::vec::Vec<crate::model::SnapshotSortingEntity>>,
 }
+impl DescribeClusterSnapshotsInput {
+    /// <p>The identifier of the cluster which generated the requested snapshots.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The snapshot identifier of the snapshot about which to return
+    /// information.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The type of snapshots for which you are requesting information. By default,
+    /// snapshots of all types are returned.</p>
+    /// <p>Valid Values: <code>automated</code> | <code>manual</code>
+    /// </p>
+    pub fn snapshot_type(&self) -> std::option::Option<&str> {
+        self.snapshot_type.as_deref()
+    }
+    /// <p>A value that requests only snapshots created at or after the specified time. The
+    /// time value is specified in ISO 8601 format. For more information about ISO 8601, go to
+    /// the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+    /// </p>
+    /// <p>Example: <code>2012-07-16T18:00:00Z</code>
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A time value that requests only snapshots created at or before the specified time.
+    /// The time value is specified in ISO 8601 format. For more information about ISO 8601, go
+    /// to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+    /// page.</a>
+    /// </p>
+    /// <p>Example: <code>2012-07-16T18:00:00Z</code>
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeClusterSnapshots</a> request exceed
+    /// the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to
+    /// filter the results to snapshots owned by a particular account. To describe snapshots you
+    /// own, either specify your Amazon Web Services account, or do not specify the
+    /// parameter.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching cluster snapshots that
+    /// are associated with the specified key or keys. For example, suppose that you have
+    /// snapshots that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the snapshots that have either or both of these tag
+    /// keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching cluster snapshots
+    /// that are associated with the specified tag value or values. For example, suppose that
+    /// you have snapshots that are tagged with values called <code>admin</code> and
+    /// <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift
+    /// returns a response with the snapshots that have either or both of these tag values
+    /// associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+    /// <p>A value that indicates whether to return snapshots only for an existing cluster.
+    /// You can perform table-level restore only by using a snapshot of an existing cluster,
+    /// that is, a cluster that has not been deleted. Values for this parameter work as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>ClusterExists</code> is set to <code>true</code>,
+    /// <code>ClusterIdentifier</code> is required.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>ClusterExists</code> is set to <code>false</code> and
+    /// <code>ClusterIdentifier</code> isn't specified, all snapshots
+    /// associated with deleted clusters (orphaned snapshots) are returned. </p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>ClusterExists</code> is set to <code>false</code> and
+    /// <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+    /// associated with that cluster are returned.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>ClusterExists</code> is set to <code>false</code> and
+    /// <code>ClusterIdentifier</code> is specified for an existing cluster, no
+    /// snapshots are returned. </p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_exists(&self) -> std::option::Option<bool> {
+        self.cluster_exists
+    }
+    /// <p></p>
+    pub fn sorting_entities(&self) -> std::option::Option<&[crate::model::SnapshotSortingEntity]> {
+        self.sorting_entities.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterSnapshotsInput");
@@ -29017,6 +31122,53 @@ pub struct DescribeClusterSecurityGroupsInput {
     /// associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeClusterSecurityGroupsInput {
+    /// <p>The name of a cluster security group for which you are requesting details. You can
+    /// specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
+    /// <p> Example: <code>securitygroup1</code>
+    /// </p>
+    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_name.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeClusterSecurityGroups</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching cluster security groups
+    /// that are associated with the specified key or keys. For example, suppose that you have
+    /// security groups that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the security groups that have either or both of these
+    /// tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching cluster security
+    /// groups that are associated with the specified tag value or values. For example, suppose
+    /// that you have security groups that are tagged with values called <code>admin</code> and
+    /// <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift
+    /// returns a response with the security groups that have either or both of these tag values
+    /// associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterSecurityGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterSecurityGroupsInput");
@@ -29070,6 +31222,51 @@ pub struct DescribeClustersInput {
     /// them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeClustersInput {
+    /// <p>The unique identifier of a cluster whose properties you are requesting. This
+    /// parameter is case sensitive.</p>
+    /// <p>The default is that all clusters defined for an account are returned.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeClusters</a> request exceed the
+    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    /// <p>Constraints: You can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching clusters that are
+    /// associated with the specified key or keys. For example, suppose that you have clusters
+    /// that are tagged with keys called <code>owner</code> and <code>environment</code>. If you
+    /// specify both of these tag keys in the request, Amazon Redshift returns a response with the
+    /// clusters that have either or both of these tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching clusters that are
+    /// associated with the specified tag value or values. For example, suppose that you have
+    /// clusters that are tagged with values called <code>admin</code> and <code>test</code>. If
+    /// you specify both of these tag values in the request, Amazon Redshift returns a response with
+    /// the clusters that have either or both of these tag values associated with
+    /// them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClustersInput");
@@ -29110,6 +31307,40 @@ pub struct DescribeClusterParametersInput {
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeClusterParametersInput {
+    /// <p>The name of a cluster parameter group for which to return details.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The parameter types to return. Specify <code>user</code> to show parameters that
+    /// are different form the default. Similarly, specify <code>engine-default</code> to show
+    /// parameters that are the same as the default parameter group. </p>
+    /// <p>Default: All parameter types returned.</p>
+    /// <p>Valid Values: <code>user</code> | <code>engine-default</code>
+    /// </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeClusterParameters</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29160,6 +31391,51 @@ pub struct DescribeClusterParameterGroupsInput {
     /// values associated with them.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeClusterParameterGroupsInput {
+    /// <p>The name of a specific parameter group for which to return details. By default,
+    /// details about all parameter groups and the default parameter group are
+    /// returned.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeClusterParameterGroups</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A tag key or keys for which you want to return all matching cluster parameter
+    /// groups that are associated with the specified key or keys. For example, suppose that you
+    /// have parameter groups that are tagged with keys called <code>owner</code> and
+    /// <code>environment</code>. If you specify both of these tag keys in the request,
+    /// Amazon Redshift returns a response with the parameter groups that have either or both of these
+    /// tag keys associated with them.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>A tag value or values for which you want to return all matching cluster parameter
+    /// groups that are associated with the specified tag value or values. For example, suppose
+    /// that you have parameter groups that are tagged with values called <code>admin</code> and
+    /// <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift
+    /// returns a response with the parameter groups that have either or both of these tag
+    /// values associated with them.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterParameterGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterParameterGroupsInput");
@@ -29198,6 +31474,35 @@ pub struct DescribeClusterDbRevisionsInput {
     /// the <code>marker</code> parameter, but not both.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeClusterDbRevisionsInput {
+    /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are
+    /// requesting. This parameter is case sensitive. All clusters defined for an account are
+    /// returned by default.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified MaxRecords value, a value is returned
+    /// in the <code>marker</code> field of the response. You can retrieve the next set of
+    /// response records by providing the returned <code>marker</code> value in the
+    /// <code>marker</code> parameter and retrying the request. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional parameter that specifies the starting point for returning a set of
+    /// response records. When the results of a <code>DescribeClusterDbRevisions</code> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value
+    /// in the <code>marker</code> field of the response. You can retrieve the next set of
+    /// response records by providing the returned <code>marker</code> value in the
+    /// <code>marker</code> parameter and retrying the request. </p>
+    /// <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or
+    /// the <code>marker</code> parameter, but not both.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterDbRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterDbRevisionsInput");
@@ -29214,6 +31519,12 @@ impl std::fmt::Debug for DescribeClusterDbRevisionsInput {
 pub struct DescribeAuthenticationProfilesInput {
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
     pub authentication_profile_name: std::option::Option<std::string::String>,
+}
+impl DescribeAuthenticationProfilesInput {
+    /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAuthenticationProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29233,6 +31544,12 @@ pub struct DescribeAccountAttributesInput {
     /// <p>A list of attribute names.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeAccountAttributesInput {
+    /// <p>A list of attribute names.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAccountAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
@@ -29247,6 +31564,12 @@ impl std::fmt::Debug for DescribeAccountAttributesInput {
 pub struct DeleteUsageLimitInput {
     /// <p>The identifier of the usage limit to delete.</p>
     pub usage_limit_id: std::option::Option<std::string::String>,
+}
+impl DeleteUsageLimitInput {
+    /// <p>The identifier of the usage limit to delete.</p>
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+        self.usage_limit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUsageLimitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29266,6 +31589,17 @@ pub struct DeleteTagsInput {
     /// <p>The tag key that you want to delete.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteTagsInput {
+    /// <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For
+    /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The tag key that you want to delete.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsInput");
@@ -29282,6 +31616,12 @@ pub struct DeleteSnapshotScheduleInput {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
     pub schedule_identifier: std::option::Option<std::string::String>,
 }
+impl DeleteSnapshotScheduleInput {
+    /// <p>A unique identifier of the snapshot schedule to delete.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSnapshotScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSnapshotScheduleInput");
@@ -29297,6 +31637,12 @@ pub struct DeleteSnapshotCopyGrantInput {
     /// <p>The name of the snapshot copy grant to delete.</p>
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
 }
+impl DeleteSnapshotCopyGrantInput {
+    /// <p>The name of the snapshot copy grant to delete.</p>
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+        self.snapshot_copy_grant_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSnapshotCopyGrantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSnapshotCopyGrantInput");
@@ -29311,6 +31657,12 @@ impl std::fmt::Debug for DeleteSnapshotCopyGrantInput {
 pub struct DeleteScheduledActionInput {
     /// <p>The name of the scheduled action to delete. </p>
     pub scheduled_action_name: std::option::Option<std::string::String>,
+}
+impl DeleteScheduledActionInput {
+    /// <p>The name of the scheduled action to delete. </p>
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+        self.scheduled_action_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteScheduledActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29333,6 +31685,24 @@ pub struct DeletePartnerInput {
     /// <p>The name of the partner that is authorized to send data.</p>
     pub partner_name: std::option::Option<std::string::String>,
 }
+impl DeletePartnerInput {
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of the database that receives data from the partner.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner that is authorized to send data.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePartnerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePartnerInput");
@@ -29350,6 +31720,12 @@ impl std::fmt::Debug for DeletePartnerInput {
 pub struct DeleteHsmConfigurationInput {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteHsmConfigurationInput {
+    /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteHsmConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29369,6 +31745,12 @@ pub struct DeleteHsmClientCertificateInput {
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
 }
+impl DeleteHsmClientCertificateInput {
+    /// <p>The identifier of the HSM client certificate to be deleted.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteHsmClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteHsmClientCertificateInput");
@@ -29387,6 +31769,12 @@ pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
     pub subscription_name: std::option::Option<std::string::String>,
 }
+impl DeleteEventSubscriptionInput {
+    /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventSubscriptionInput");
@@ -29402,6 +31790,12 @@ pub struct DeleteEndpointAccessInput {
     /// <p>The Redshift-managed VPC endpoint to delete.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
 }
+impl DeleteEndpointAccessInput {
+    /// <p>The Redshift-managed VPC endpoint to delete.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEndpointAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEndpointAccessInput");
@@ -29416,6 +31810,12 @@ impl std::fmt::Debug for DeleteEndpointAccessInput {
 pub struct DeleteClusterSubnetGroupInput {
     /// <p>The name of the cluster subnet group name to be deleted.</p>
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteClusterSubnetGroupInput {
+    /// <p>The name of the cluster subnet group name to be deleted.</p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29440,6 +31840,22 @@ pub struct DeleteClusterSnapshotInput {
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
 }
+impl DeleteClusterSnapshotInput {
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+    /// <p>Constraints: Must be the name of an existing snapshot that is in the
+    /// <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+    /// state.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter
+    /// is required if your IAM user has a policy containing a snapshot resource element that
+    /// specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints: Must be the name of valid cluster.</p>
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_cluster_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterSnapshotInput");
@@ -29458,6 +31874,12 @@ impl std::fmt::Debug for DeleteClusterSnapshotInput {
 pub struct DeleteClusterSecurityGroupInput {
     /// <p>The name of the cluster security group to be deleted.</p>
     pub cluster_security_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteClusterSecurityGroupInput {
+    /// <p>The name of the cluster security group to be deleted.</p>
+    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29485,6 +31907,21 @@ pub struct DeleteClusterParameterGroupInput {
     /// </li>
     /// </ul>
     pub parameter_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteClusterParameterGroupInput {
+    /// <p>The name of the parameter group to be deleted.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be the name of an existing cluster parameter group.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot delete a default cluster parameter group.</p>
+    /// </li>
+    /// </ul>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29549,6 +31986,66 @@ pub struct DeleteClusterInput {
     /// <p>The default value is -1.</p>
     pub final_cluster_snapshot_retention_period: std::option::Option<i32>,
 }
+impl DeleteClusterInput {
+    /// <p>The identifier of the cluster to be deleted.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain lowercase characters.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift
+    /// deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If
+    /// <code>false</code>, a final cluster snapshot is created before the cluster is
+    /// deleted. </p>
+    /// <note>
+    /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be
+    /// specified if <i>SkipFinalClusterSnapshot</i> is
+    /// <code>false</code>.</p>
+    /// </note>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn skip_final_cluster_snapshot(&self) -> bool {
+        self.skip_final_cluster_snapshot
+    }
+    /// <p>The identifier of the final snapshot that is to be created immediately before
+    /// deleting the cluster. If this parameter is provided,
+    /// <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn final_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.final_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
+    /// snapshot is retained indefinitely.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The default value is -1.</p>
+    pub fn final_cluster_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.final_cluster_snapshot_retention_period
+    }
+}
 impl std::fmt::Debug for DeleteClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterInput");
@@ -29576,6 +32073,12 @@ pub struct DeleteAuthenticationProfileInput {
     /// <p>The name of the authentication profile to delete.</p>
     pub authentication_profile_name: std::option::Option<std::string::String>,
 }
+impl DeleteAuthenticationProfileInput {
+    /// <p>The name of the authentication profile to delete.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAuthenticationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAuthenticationProfileInput");
@@ -29596,6 +32099,17 @@ pub struct DeauthorizeDataShareInput {
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
     /// This identifier is an AWS account ID.</p>
     pub consumer_identifier: std::option::Option<std::string::String>,
+}
+impl DeauthorizeDataShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
+    /// This identifier is an AWS account ID.</p>
+    pub fn consumer_identifier(&self) -> std::option::Option<&str> {
+        self.consumer_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeauthorizeDataShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29632,6 +32146,43 @@ pub struct CreateUsageLimitInput {
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateUsageLimitInput {
+    /// <p>The identifier of the cluster that you want to limit usage.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Redshift feature that you want to limit.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::UsageLimitFeatureType> {
+        self.feature_type.as_ref()
+    }
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.
+    /// If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>.
+    /// If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>.
+    /// </p>
+    pub fn limit_type(&self) -> std::option::Option<&crate::model::UsageLimitLimitType> {
+        self.limit_type.as_ref()
+    }
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).
+    /// The value must be a positive number.
+    /// </p>
+    pub fn amount(&self) -> i64 {
+        self.amount
+    }
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.
+    /// </p>
+    pub fn period(&self) -> std::option::Option<&crate::model::UsageLimitPeriod> {
+        self.period.as_ref()
+    }
+    /// <p>The action that Amazon Redshift takes when the limit is reached. The default is log.
+    /// For more information about this parameter, see <a>UsageLimit</a>.</p>
+    pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
+        self.breach_action.as_ref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUsageLimitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUsageLimitInput");
@@ -29661,6 +32212,22 @@ pub struct CreateTagsInput {
     /// "Key"="environment","Value"="test" "Key"="version","Value"="1.0"</code>. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateTagsInput {
+    /// <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
+    /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>One or more name/value pairs to add as tags to the specified resource. Each tag
+    /// name is passed in with the parameter <code>Key</code> and the corresponding value is
+    /// passed in with the parameter <code>Value</code>. The <code>Key</code> and
+    /// <code>Value</code> parameters are separated by a comma (,). Separate multiple tags
+    /// with a space. For example, <code>--tags "Key"="owner","Value"="admin"
+    /// "Key"="environment","Value"="test" "Key"="version","Value"="1.0"</code>. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTagsInput");
@@ -29688,6 +32255,34 @@ pub struct CreateSnapshotScheduleInput {
     pub dry_run: std::option::Option<bool>,
     /// <p></p>
     pub next_invocations: std::option::Option<i32>,
+}
+impl CreateSnapshotScheduleInput {
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule
+    /// expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
+        self.schedule_definitions.as_deref()
+    }
+    /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed
+    /// for the identifier.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+    /// <p>The description of the snapshot schedule.</p>
+    pub fn schedule_description(&self) -> std::option::Option<&str> {
+        self.schedule_description.as_deref()
+    }
+    /// <p>An optional set of tags you can use to search for the schedule.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p></p>
+    pub fn dry_run(&self) -> std::option::Option<bool> {
+        self.dry_run
+    }
+    /// <p></p>
+    pub fn next_invocations(&self) -> std::option::Option<i32> {
+        self.next_invocations
+    }
 }
 impl std::fmt::Debug for CreateSnapshotScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29733,6 +32328,40 @@ pub struct CreateSnapshotCopyGrantInput {
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateSnapshotCopyGrantInput {
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the
+    /// Amazon Web Services account.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+        self.snapshot_copy_grant_name.as_deref()
+    }
+    /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift
+    /// permission. If no key is specified, the default key is used.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSnapshotCopyGrantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSnapshotCopyGrantInput");
@@ -29773,6 +32402,49 @@ pub struct CreateScheduledActionInput {
     /// For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. </p>
     pub enable: std::option::Option<bool>,
 }
+impl CreateScheduledActionInput {
+    /// <p>The name of the scheduled action. The name must be unique within an account.
+    /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+        self.scheduled_action_name.as_deref()
+    }
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.
+    /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
+    pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
+        self.target_action.as_ref()
+    }
+    /// <p>The schedule in <code>at( )</code> or <code>cron( )</code> format.
+    /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The IAM role to assume to run the target action.
+    /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>The description of the scheduled action.
+    /// </p>
+    pub fn scheduled_action_description(&self) -> std::option::Option<&str> {
+        self.scheduled_action_description.as_deref()
+    }
+    /// <p>The start time in UTC of the scheduled action.
+    /// Before this time, the scheduled action does not trigger.
+    /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger.
+    /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger.
+    /// For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. </p>
+    pub fn enable(&self) -> std::option::Option<bool> {
+        self.enable
+    }
+}
 impl std::fmt::Debug for CreateScheduledActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateScheduledActionInput");
@@ -29812,6 +32484,38 @@ pub struct CreateHsmConfigurationInput {
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateHsmConfigurationInput {
+    /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
+    /// <p>A text description of the HSM configuration to be created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    pub fn hsm_ip_address(&self) -> std::option::Option<&str> {
+        self.hsm_ip_address.as_deref()
+    }
+    /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their
+    /// database encryption keys.</p>
+    pub fn hsm_partition_name(&self) -> std::option::Option<&str> {
+        self.hsm_partition_name.as_deref()
+    }
+    /// <p>The password required to access the HSM partition.</p>
+    pub fn hsm_partition_password(&self) -> std::option::Option<&str> {
+        self.hsm_partition_password.as_deref()
+    }
+    /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is
+    /// server.pem.</p>
+    pub fn hsm_server_public_certificate(&self) -> std::option::Option<&str> {
+        self.hsm_server_public_certificate.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHsmConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHsmConfigurationInput");
@@ -29841,6 +32545,17 @@ pub struct CreateHsmClientCertificateInput {
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateHsmClientCertificateInput {
+    /// <p>The identifier to be assigned to the new HSM client certificate that the cluster
+    /// will use to connect to the HSM to use the database encryption keys.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateHsmClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29907,6 +32622,72 @@ pub struct CreateEventSubscriptionInput {
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateEventSubscriptionInput {
+    /// <p>The name of the event subscription to be created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event
+    /// notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to
+    /// it.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The type of source that will be generating the events. For example, if you want to
+    /// be notified of events generated by a cluster, you would set this parameter to cluster.
+    /// If this value is not specified, events are returned for all Amazon Redshift objects in your
+    /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
+    /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects
+    /// must be of the same type as was specified in the source type parameter. The event
+    /// subscription will return only events generated by the specified objects. If not
+    /// specified, then events are returned for all objects within the source type
+    /// specified.</p>
+    /// <p>Example: my-cluster-1, my-cluster-2</p>
+    /// <p>Example: my-snapshot-20131010</p>
+    pub fn source_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_ids.as_deref()
+    }
+    /// <p>Specifies the Amazon Redshift event categories to be published by the event notification
+    /// subscription.</p>
+    /// <p>Values: configuration, management, monitoring, security, pending</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
+    /// subscription.</p>
+    /// <p>Values: ERROR, INFO</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>A boolean value; set to <code>true</code> to activate the subscription, and set to
+    /// <code>false</code> to create the subscription but not activate it. </p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventSubscriptionInput");
@@ -29940,6 +32721,32 @@ pub struct CreateEndpointAccessInput {
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateEndpointAccessInput {
+    /// <p>The cluster identifier of the cluster to access.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The Redshift-managed VPC endpoint name.</p>
+    /// <p>An endpoint name must contain 1-30 characters.
+    /// Valid characters are A-Z, a-z, 0-9, and hyphen(-).
+    /// The first character must be a letter.
+    /// The name can't contain two consecutive hyphens or end with a hyphen.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29981,6 +32788,40 @@ pub struct CreateClusterSubnetGroupInput {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateClusterSubnetGroupInput {
+    /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase
+    /// string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not be "Default".</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>examplesubnetgroup</code>
+    /// </p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
+    /// <p>A description for the subnet group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single
+    /// request.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClusterSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30029,6 +32870,47 @@ pub struct CreateClusterSnapshotInput {
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateClusterSnapshotInput {
+    /// <p>A unique identifier for the snapshot that you are requesting. This identifier must
+    /// be unique for all snapshots within the Amazon Web Services account.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>my-snapshot-id</code>
+    /// </p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The cluster identifier for which you want a snapshot.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
+    /// snapshot is retained indefinitely. </p>
+    ///
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    ///
+    /// <p>The default value is -1.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterSnapshotInput");
@@ -30068,6 +32950,35 @@ pub struct CreateClusterSecurityGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateClusterSecurityGroupInput {
+    /// <p>The name for the security group. Amazon Redshift stores the value as a lowercase
+    /// string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not be "Default".</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>examplesecuritygroup</code>
+    /// </p>
+    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_name.as_deref()
+    }
+    /// <p>A description for the security group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClusterSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30118,6 +33029,48 @@ pub struct CreateClusterParameterGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateClusterParameterGroupInput {
+    /// <p>The name of the cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique withing your Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This value is stored as a lower-case string.</p>
+    /// </note>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The
+    /// cluster engine version determines the set of parameters.</p>
+    /// <p>To get a list of valid parameter group family names, you can call <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a list of
+    /// all the parameter groups that are owned by your Amazon Web Services account, including the default
+    /// parameter groups for each Amazon Redshift engine version. The parameter group family names
+    /// associated with the default parameter groups provide you the valid values. For example,
+    /// a valid family name is "redshift-1.0". </p>
+    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+        self.parameter_group_family.as_deref()
+    }
+    /// <p>A description of the parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClusterParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30407,6 +33360,346 @@ pub struct CreateClusterInput {
     /// </ul>
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
 }
+impl CreateClusterInput {
+    /// <p>The name of the first database to be created when the cluster is created.</p>
+    /// <p>To create additional databases after the cluster is created, connect to the cluster
+    /// with a SQL client and use SQL commands to create a database. For more information, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+    /// a Database</a> in the Amazon Redshift Database Developer Guide. </p>
+    /// <p>Default: <code>dev</code>
+    /// </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain 1 to 64 alphanumeric characters.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain only lowercase letters.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be a word that is reserved by the service. A list of reserved words
+    /// can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the
+    /// Amazon Redshift Database Developer Guide. </p>
+    /// </li>
+    /// </ul>
+    pub fn db_name(&self) -> std::option::Option<&str> {
+        self.db_name.as_deref()
+    }
+    /// <p>A unique identifier for the cluster. You use this identifier to refer to the
+    /// cluster for any subsequent cluster operations such as deleting or modifying. The
+    /// identifier also appears in the Amazon Redshift console.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Example: <code>myexamplecluster</code>
+    /// </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The type of the cluster. When cluster type is specified as</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>single-node</code>, the <b>NumberOfNodes</b>
+    /// parameter is not required.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>multi-node</code>, the <b>NumberOfNodes</b>
+    /// parameter is required.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
+    /// </p>
+    /// <p>Default: <code>multi-node</code>
+    /// </p>
+    pub fn cluster_type(&self) -> std::option::Option<&str> {
+        self.cluster_type.as_deref()
+    }
+    /// <p>The node type to be provisioned for the cluster. For information about node types,
+    /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with
+    /// Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+    /// <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+    /// <code>dc2.large</code> | <code>dc2.8xlarge</code> |
+    /// <code>ra3.xlplus</code> |  <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
+    /// </p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The user name associated with the admin user account for the cluster that is being
+    /// created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 - 128 alphanumeric characters. The user name can't be
+    /// <code>PUBLIC</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    ///
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+    /// Words</a> in the Amazon Redshift Database Developer Guide. </p>
+    /// </li>
+    /// </ul>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>The password associated with the admin user account for the cluster that is being
+    /// created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain one number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
+    /// (single quote), " (double quote), \, /, @, or space.</p>
+    /// </li>
+    /// </ul>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>A list of security groups to be associated with this cluster.</p>
+    /// <p>Default: The default cluster security group for Amazon Redshift.</p>
+    pub fn cluster_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.cluster_security_groups.as_deref()
+    }
+    /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the
+    /// cluster.</p>
+    /// <p>Default: The default VPC security group is associated with the cluster.</p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
+    /// <p>If this parameter is not provided the resulting cluster will be deployed outside
+    /// virtual private cloud (VPC).</p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
+    /// <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the
+    /// cluster. For example, if you have several EC2 instances running in a specific
+    /// Availability Zone, then you might want the cluster to be provisioned in the same zone in
+    /// order to decrease network latency.</p>
+    /// <p>Default: A random, system-chosen Availability Zone in the region that is specified
+    /// by the endpoint.</p>
+    /// <p>Example: <code>us-east-2d</code>
+    /// </p>
+    /// <p>Constraint: The specified Availability Zone must be in the same region as the
+    /// current endpoint.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The weekly time range (in UTC) during which automated cluster maintenance can
+    /// occur.</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+    /// </p>
+    /// <p> Default: A 30-minute window selected at random from an 8-hour block of time per
+    /// region, occurring on a random day of the week. For more information about the time
+    /// blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The name of the parameter group to be associated with this cluster.</p>
+    /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the
+    /// default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon
+    /// Redshift Parameter Groups</a>
+    /// </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_parameter_group_name.as_deref()
+    }
+    /// <p>The number of days that automated snapshots are retained. If the value is 0,
+    /// automated snapshots are disabled. Even if automated snapshots are disabled, you can
+    /// still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p>
+    ///
+    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>Default: <code>1</code>
+    /// </p>
+    /// <p>Constraints: Must be a value from 0 to 35.</p>
+    pub fn automated_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.automated_snapshot_retention_period
+    }
+    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the
+    /// snapshot is retained indefinitely. This setting doesn't change the retention period
+    /// of existing snapshots.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>The port number on which the cluster accepts incoming connections.</p>
+    /// <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of
+    /// the connection string requires the port on which the cluster will listen for incoming
+    /// connections.</p>
+    /// <p>Default: <code>5439</code>
+    /// </p>
+    /// <p>Valid Values: <code>1150-65535</code>
+    /// </p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The version of the Amazon Redshift engine software that you want to deploy on the
+    /// cluster.</p>
+    /// <p>The version selected runs on all the nodes in the cluster.</p>
+    /// <p>Constraints: Only version 1.0 is currently available.</p>
+    /// <p>Example: <code>1.0</code>
+    /// </p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance
+    /// window to the Amazon Redshift engine that is running on the cluster.</p>
+    /// <p>When a new major version of the Amazon Redshift engine is released, you can request that
+    /// the service automatically apply upgrades during the maintenance window to the Amazon Redshift
+    /// engine that is running on your cluster.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn allow_version_upgrade(&self) -> std::option::Option<bool> {
+        self.allow_version_upgrade
+    }
+    /// <p>The number of compute nodes in the cluster. This parameter is required when the
+    /// <b>ClusterType</b> parameter is specified as
+    /// <code>multi-node</code>. </p>
+    /// <p>For information about determining how many nodes you need, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with
+    /// Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// <p>If you don't specify this parameter, you get a single-node cluster. When requesting
+    /// a multi-node cluster, you must specify the number of nodes that you want in the
+    /// cluster.</p>
+    /// <p>Default: <code>1</code>
+    /// </p>
+    /// <p>Constraints: Value must be at least 1 and no more than 100.</p>
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+        self.number_of_nodes
+    }
+    /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>
+    /// <p>Default: false</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
+    /// retrieve the data encryption keys stored in an HSM.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+    /// <p>Specifies the name of the HSM configuration that contains the information the
+    /// Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
+    /// <p>The Elastic IP (EIP) address for the cluster.</p>
+    /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible
+    /// through an Internet gateway. For more information about provisioning clusters in
+    /// EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+    /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
+    /// use to encrypt data in the cluster.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
+    /// enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a
+    /// VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in
+    /// the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn enhanced_vpc_routing(&self) -> std::option::Option<bool> {
+        self.enhanced_vpc_routing
+    }
+    /// <p>Reserved.</p>
+    pub fn additional_info(&self) -> std::option::Option<&str> {
+        self.additional_info.as_deref()
+    }
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+    /// cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon
+    /// Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+    /// request.</p>
+    /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+    pub fn iam_roles(&self) -> std::option::Option<&[std::string::String]> {
+        self.iam_roles.as_deref()
+    }
+    /// <p>An optional parameter for the name of the maintenance track for the cluster. If you
+    /// don't provide a maintenance track name, the cluster is assigned to the
+    /// <code>current</code> track.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>A unique identifier for the snapshot schedule.</p>
+    pub fn snapshot_schedule_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_schedule_identifier.as_deref()
+    }
+    /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
+    pub fn availability_zone_relocation(&self) -> std::option::Option<bool> {
+        self.availability_zone_relocation
+    }
+    /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
+    /// </li>
+    /// <li>
+    /// <p>disabled - Don't use AQUA. </p>
+    /// </li>
+    /// <li>
+    /// <p>auto - Amazon Redshift determines whether to use AQUA.</p>
+    /// </li>
+    /// </ul>
+    pub fn aqua_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
+        self.aqua_configuration_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
@@ -30480,6 +33773,17 @@ pub struct CreateAuthenticationProfileInput {
     /// The maximum length of the JSON string is determined by a quota for your account.</p>
     pub authentication_profile_content: std::option::Option<std::string::String>,
 }
+impl CreateAuthenticationProfileInput {
+    /// <p>The name of the authentication profile to be created.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
+    /// <p>The content of the authentication profile in JSON format.
+    /// The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
+        self.authentication_profile_content.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAuthenticationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAuthenticationProfileInput");
@@ -30544,6 +33848,60 @@ pub struct CopyClusterSnapshotInput {
     /// <p>The default value is -1.</p>
     pub manual_snapshot_retention_period: std::option::Option<i32>,
 }
+impl CopyClusterSnapshotInput {
+    /// <p>The identifier for the source snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be the identifier for a valid automated snapshot whose state is
+    /// <code>available</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.source_snapshot_identifier.as_deref()
+    }
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter
+    /// is required if your IAM user has a policy containing a snapshot resource element that
+    /// specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be the identifier for a valid cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.source_snapshot_cluster_identifier.as_deref()
+    }
+    /// <p>The identifier given to the new manual snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be unique for the Amazon Web Services account that is making the request.</p>
+    /// </li>
+    /// </ul>
+    pub fn target_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.target_snapshot_identifier.as_deref()
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
+    /// snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The default value is -1.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+}
 impl std::fmt::Debug for CopyClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyClusterSnapshotInput");
@@ -30575,6 +33933,13 @@ pub struct CancelResizeInput {
     /// for.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
+impl CancelResizeInput {
+    /// <p>The unique identifier for the cluster that you want to cancel a resize operation
+    /// for.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelResizeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelResizeInput");
@@ -30600,6 +33965,26 @@ pub struct BatchModifyClusterSnapshotsInput {
     /// has passed. </p>
     pub force: bool,
 }
+impl BatchModifyClusterSnapshotsInput {
+    /// <p>A list of snapshot identifiers you want to modify.</p>
+    pub fn snapshot_identifier_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.snapshot_identifier_list.as_deref()
+    }
+    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1,
+    /// the manual snapshot is retained indefinitely.</p>
+    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>If you decrease the manual snapshot retention period from its current value, existing
+    /// manual snapshots that fall outside of the new retention period will return an error. If
+    /// you want to suppress the errors and delete the snapshots, use the force option. </p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>A boolean value indicating whether to override an exception if the retention period
+    /// has passed. </p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+}
 impl std::fmt::Debug for BatchModifyClusterSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchModifyClusterSnapshotsInput");
@@ -30619,6 +34004,14 @@ impl std::fmt::Debug for BatchModifyClusterSnapshotsInput {
 pub struct BatchDeleteClusterSnapshotsInput {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
     pub identifiers: std::option::Option<std::vec::Vec<crate::model::DeleteClusterSnapshotMessage>>,
+}
+impl BatchDeleteClusterSnapshotsInput {
+    /// <p>A list of identifiers for the snapshots that you want to delete.</p>
+    pub fn identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeleteClusterSnapshotMessage]> {
+        self.identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteClusterSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30642,6 +34035,24 @@ pub struct AuthorizeSnapshotAccessInput {
     /// snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
     pub account_with_restore_access: std::option::Option<std::string::String>,
+}
+impl AuthorizeSnapshotAccessInput {
+    /// <p>The identifier of the snapshot the account is authorized to restore.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The identifier of the cluster the snapshot was created from. This parameter is
+    /// required if your IAM user has a policy containing a snapshot resource element that
+    /// specifies anything other than * for the cluster name.</p>
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the Amazon Web Services account authorized to restore the specified
+    /// snapshot.</p>
+    /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+    pub fn account_with_restore_access(&self) -> std::option::Option<&str> {
+        self.account_with_restore_access.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthorizeSnapshotAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30670,6 +34081,20 @@ pub struct AuthorizeEndpointAccessInput {
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
     pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AuthorizeEndpointAccessInput {
+    /// <p>The cluster identifier of the cluster to grant access to.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID to grant access to.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
+    pub fn vpc_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthorizeEndpointAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeEndpointAccessInput");
@@ -30689,6 +34114,17 @@ pub struct AuthorizeDataShareInput {
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
     pub consumer_identifier: std::option::Option<std::string::String>,
+}
+impl AuthorizeDataShareInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize
+    /// sharing for.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+    pub fn consumer_identifier(&self) -> std::option::Option<&str> {
+        self.consumer_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthorizeDataShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30715,6 +34151,28 @@ pub struct AuthorizeClusterSecurityGroupIngressInput {
     /// <p>Example: <code>111122223333</code>
     /// </p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
+}
+impl AuthorizeClusterSecurityGroupIngressInput {
+    /// <p>The name of the security group to which the ingress rule is added.</p>
+    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_name.as_deref()
+    }
+    /// <p>The IP range to be added the Amazon Redshift security group.</p>
+    pub fn cidrip(&self) -> std::option::Option<&str> {
+        self.cidrip.as_deref()
+    }
+    /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
+    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_name.as_deref()
+    }
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the
+    /// <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an
+    /// acceptable value. </p>
+    /// <p>Example: <code>111122223333</code>
+    /// </p>
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_owner_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthorizeClusterSecurityGroupIngressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30745,6 +34203,21 @@ pub struct AssociateDataShareConsumerInput {
     /// datashare.</p>
     pub consumer_arn: std::option::Option<std::string::String>,
 }
+impl AssociateDataShareConsumerInput {
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
+    pub fn associate_entire_account(&self) -> std::option::Option<bool> {
+        self.associate_entire_account
+    }
+    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
+    /// datashare.</p>
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+        self.consumer_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateDataShareConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateDataShareConsumerInput");
@@ -30768,6 +34241,24 @@ pub struct AddPartnerInput {
     /// <p>The name of the partner that is authorized to send data.</p>
     pub partner_name: std::option::Option<std::string::String>,
 }
+impl AddPartnerInput {
+    /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of the database that receives data from the partner.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner that is authorized to send data.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AddPartnerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddPartnerInput");
@@ -30790,6 +34281,19 @@ pub struct AcceptReservedNodeExchangeInput {
     /// You can obtain the value for the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
     /// </p>
     pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
+}
+impl AcceptReservedNodeExchangeInput {
+    /// <p>A string representing the node identifier of the DC1 Reserved Node to be
+    /// exchanged.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange.
+    /// You can obtain the value for the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
+    /// </p>
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.target_reserved_node_offering_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptReservedNodeExchangeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

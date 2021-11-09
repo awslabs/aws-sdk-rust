@@ -127,6 +127,14 @@ pub struct TerminateWorkspacesOutput {
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
+impl TerminateWorkspacesOutput {
+    /// <p>Information about the WorkSpaces that could not be terminated.</p>
+    pub fn failed_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedWorkspaceChangeRequest]> {
+        self.failed_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminateWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateWorkspacesOutput");
@@ -189,6 +197,14 @@ pub struct StopWorkspacesOutput {
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
+impl StopWorkspacesOutput {
+    /// <p>Information about the WorkSpaces that could not be stopped.</p>
+    pub fn failed_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedWorkspaceChangeRequest]> {
+        self.failed_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for StopWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopWorkspacesOutput");
@@ -250,6 +266,14 @@ pub struct StartWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be started.</p>
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
+}
+impl StartWorkspacesOutput {
+    /// <p>Information about the WorkSpaces that could not be started.</p>
+    pub fn failed_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedWorkspaceChangeRequest]> {
+        self.failed_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for StartWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -403,6 +427,14 @@ pub struct RebuildWorkspacesOutput {
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
+impl RebuildWorkspacesOutput {
+    /// <p>Information about the WorkSpace that could not be rebuilt.</p>
+    pub fn failed_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedWorkspaceChangeRequest]> {
+        self.failed_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for RebuildWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebuildWorkspacesOutput");
@@ -464,6 +496,14 @@ pub struct RebootWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be rebooted.</p>
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
+}
+impl RebootWorkspacesOutput {
+    /// <p>Information about the WorkSpaces that could not be rebooted.</p>
+    pub fn failed_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedWorkspaceChangeRequest]> {
+        self.failed_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for RebootWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -739,6 +779,17 @@ pub struct MigrateWorkspaceOutput {
     /// the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
     pub target_workspace_id: std::option::Option<std::string::String>,
 }
+impl MigrateWorkspaceOutput {
+    /// <p>The original identifier of the WorkSpace that is being migrated.</p>
+    pub fn source_workspace_id(&self) -> std::option::Option<&str> {
+        self.source_workspace_id.as_deref()
+    }
+    /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed,
+    /// the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+    pub fn target_workspace_id(&self) -> std::option::Option<&str> {
+        self.target_workspace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for MigrateWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MigrateWorkspaceOutput");
@@ -810,6 +861,16 @@ pub struct ListAvailableManagementCidrRangesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAvailableManagementCidrRangesOutput {
+    /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
+    pub fn management_cidr_ranges(&self) -> std::option::Option<&[std::string::String]> {
+        self.management_cidr_ranges.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAvailableManagementCidrRangesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAvailableManagementCidrRangesOutput");
@@ -879,6 +940,12 @@ impl ListAvailableManagementCidrRangesOutput {
 pub struct ImportWorkspaceImageOutput {
     /// <p>The identifier of the WorkSpace image.</p>
     pub image_id: std::option::Option<std::string::String>,
+}
+impl ImportWorkspaceImageOutput {
+    /// <p>The identifier of the WorkSpace image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportWorkspaceImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1059,18 @@ pub struct DescribeWorkspaceSnapshotsOutput {
     /// include both the root volume and the user volume.</p>
     pub restore_snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
+impl DescribeWorkspaceSnapshotsOutput {
+    /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include
+    /// the user volume.</p>
+    pub fn rebuild_snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.rebuild_snapshots.as_deref()
+    }
+    /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots
+    /// include both the root volume and the user volume.</p>
+    pub fn restore_snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.restore_snapshots.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceSnapshotsOutput");
@@ -1078,6 +1157,18 @@ pub struct DescribeWorkspacesConnectionStatusOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspacesConnectionStatusOutput {
+    /// <p>Information about the connection status of the WorkSpace.</p>
+    pub fn workspaces_connection_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::WorkspaceConnectionStatus]> {
+        self.workspaces_connection_status.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspacesConnectionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspacesConnectionStatusOutput");
@@ -1159,6 +1250,18 @@ pub struct DescribeWorkspacesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspacesOutput {
+    /// <p>Information about the WorkSpaces.</p>
+    /// <p>Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the
+    /// returned information could be incomplete.</p>
+    pub fn workspaces(&self) -> std::option::Option<&[crate::model::Workspace]> {
+        self.workspaces.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspacesOutput");
@@ -1235,6 +1338,16 @@ pub struct DescribeWorkspaceImagesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspaceImagesOutput {
+    /// <p>Information about the images.</p>
+    pub fn images(&self) -> std::option::Option<&[crate::model::WorkspaceImage]> {
+        self.images.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceImagesOutput");
@@ -1308,6 +1421,20 @@ pub struct DescribeWorkspaceImagePermissionsOutput {
     pub image_permissions: std::option::Option<std::vec::Vec<crate::model::ImagePermission>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeWorkspaceImagePermissionsOutput {
+    /// <p>The identifier of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
+    pub fn image_permissions(&self) -> std::option::Option<&[crate::model::ImagePermission]> {
+        self.image_permissions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkspaceImagePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1398,6 +1525,16 @@ pub struct DescribeWorkspaceDirectoriesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspaceDirectoriesOutput {
+    /// <p>Information about the directories.</p>
+    pub fn directories(&self) -> std::option::Option<&[crate::model::WorkspaceDirectory]> {
+        self.directories.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceDirectoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceDirectoriesOutput");
@@ -1473,6 +1610,18 @@ pub struct DescribeWorkspaceBundlesOutput {
     /// frame.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspaceBundlesOutput {
+    /// <p>Information about the bundles.</p>
+    pub fn bundles(&self) -> std::option::Option<&[crate::model::WorkspaceBundle]> {
+        self.bundles.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
+    /// results to return. This token is valid for one day and must be used within that time
+    /// frame.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceBundlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceBundlesOutput");
@@ -1547,6 +1696,12 @@ pub struct DescribeTagsOutput {
     /// <p>The tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl DescribeTagsOutput {
+    /// <p>The tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsOutput");
@@ -1605,6 +1760,16 @@ pub struct DescribeIpGroupsOutput {
     pub result: std::option::Option<std::vec::Vec<crate::model::WorkspacesIpGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeIpGroupsOutput {
+    /// <p>Information about the IP access control groups.</p>
+    pub fn result(&self) -> std::option::Option<&[crate::model::WorkspacesIpGroup]> {
+        self.result.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIpGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1680,6 +1845,22 @@ pub struct DescribeConnectionAliasPermissionsOutput {
         std::option::Option<std::vec::Vec<crate::model::ConnectionAliasPermission>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConnectionAliasPermissionsOutput {
+    /// <p>The identifier of the connection alias.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+    /// <p>The permissions associated with a connection alias.</p>
+    pub fn connection_alias_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectionAliasPermission]> {
+        self.connection_alias_permissions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectionAliasPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1773,6 +1954,16 @@ pub struct DescribeConnectionAliasesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConnectionAliasesOutput {
+    /// <p>Information about the specified connection aliases.</p>
+    pub fn connection_aliases(&self) -> std::option::Option<&[crate::model::ConnectionAlias]> {
+        self.connection_aliases.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectionAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectionAliasesOutput");
@@ -1848,6 +2039,14 @@ pub struct DescribeClientPropertiesOutput {
     pub client_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ClientPropertiesResult>>,
 }
+impl DescribeClientPropertiesOutput {
+    /// <p>Information about the specified Amazon WorkSpaces clients.</p>
+    pub fn client_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClientPropertiesResult]> {
+        self.client_properties_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClientPropertiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClientPropertiesOutput");
@@ -1912,6 +2111,19 @@ pub struct DescribeAccountModificationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there
     /// are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAccountModificationsOutput {
+    /// <p>The list of modifications to the configuration of BYOL.</p>
+    pub fn account_modifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountModification]> {
+        self.account_modifications.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there
+    /// are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountModificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1995,6 +2207,22 @@ pub struct DescribeAccountOutput {
     /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
     /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
+}
+impl DescribeAccountOutput {
+    /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
+    pub fn dedicated_tenancy_support(
+        &self,
+    ) -> std::option::Option<&crate::model::DedicatedTenancySupportResultEnum> {
+        self.dedicated_tenancy_support.as_ref()
+    }
+    /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network
+    /// interface.</p>
+    /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
+    /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
+    /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+    pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
+        self.dedicated_tenancy_management_cidr_range.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2269,6 +2497,21 @@ pub struct CreateWorkspacesOutput {
     /// can be incomplete.</p>
     pub pending_requests: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
 }
+impl CreateWorkspacesOutput {
+    /// <p>Information about the WorkSpaces that could not be created.</p>
+    pub fn failed_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedCreateWorkspaceRequest]> {
+        self.failed_requests.as_deref()
+    }
+    /// <p>Information about the WorkSpaces that were created.</p>
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately
+    /// available for use with other operations. For example, if you call <a>DescribeWorkspaces</a> before the WorkSpace is created, the information returned
+    /// can be incomplete.</p>
+    pub fn pending_requests(&self) -> std::option::Option<&[crate::model::Workspace]> {
+        self.pending_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspacesOutput");
@@ -2358,6 +2601,12 @@ pub struct CreateWorkspaceBundleOutput {
     /// <p>Describes a WorkSpace bundle.</p>
     pub workspace_bundle: std::option::Option<crate::model::WorkspaceBundle>,
 }
+impl CreateWorkspaceBundleOutput {
+    /// <p>Describes a WorkSpace bundle.</p>
+    pub fn workspace_bundle(&self) -> std::option::Option<&crate::model::WorkspaceBundle> {
+        self.workspace_bundle.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateWorkspaceBundleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceBundleOutput");
@@ -2408,6 +2657,12 @@ impl CreateWorkspaceBundleOutput {
 pub struct CreateUpdatedWorkspaceImageOutput {
     /// <p>The identifier of the new updated WorkSpace image.</p>
     pub image_id: std::option::Option<std::string::String>,
+}
+impl CreateUpdatedWorkspaceImageOutput {
+    /// <p>The identifier of the new updated WorkSpace image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUpdatedWorkspaceImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2487,6 +2742,12 @@ pub struct CreateIpGroupOutput {
     /// <p>The identifier of the group.</p>
     pub group_id: std::option::Option<std::string::String>,
 }
+impl CreateIpGroupOutput {
+    /// <p>The identifier of the group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateIpGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIpGroupOutput");
@@ -2535,6 +2796,12 @@ pub struct CreateConnectionAliasOutput {
     /// <p>The identifier of the connection alias.</p>
     pub alias_id: std::option::Option<std::string::String>,
 }
+impl CreateConnectionAliasOutput {
+    /// <p>The identifier of the connection alias.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConnectionAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionAliasOutput");
@@ -2582,6 +2849,12 @@ impl CreateConnectionAliasOutput {
 pub struct CopyWorkspaceImageOutput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
+}
+impl CopyWorkspaceImageOutput {
+    /// <p>The identifier of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyWorkspaceImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2691,6 +2964,13 @@ pub struct AssociateConnectionAliasOutput {
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
     /// you're configuring your DNS routing policies. </p>
     pub connection_identifier: std::option::Option<std::string::String>,
+}
+impl AssociateConnectionAliasOutput {
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
+    /// you're configuring your DNS routing policies. </p>
+    pub fn connection_identifier(&self) -> std::option::Option<&str> {
+        self.connection_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateConnectionAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

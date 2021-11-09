@@ -31,6 +31,59 @@ pub struct UpdateSlotTypeOutput {
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateSlotTypeOutput {
+    /// <p>The unique identifier of the updated slot type.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>The updated name of the slot type.</p>
+    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+        self.slot_type_name.as_deref()
+    }
+    /// <p>The updated description of the slot type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated values that the slot type provides.</p>
+    pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
+        self.slot_type_values.as_deref()
+    }
+    /// <p>The updated strategy that Amazon Lex uses to determine which value to
+    /// select from the slot type.</p>
+    pub fn value_selection_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
+        self.value_selection_setting.as_ref()
+    }
+    /// <p>The updated signature of the built-in slot type that is the parent
+    /// of this slot type.</p>
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+        self.parent_slot_type_signature.as_deref()
+    }
+    /// <p>The identifier of the bot that contains the slot type.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the slot type. This is always
+    /// <code>DRAFT</code>.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale of the updated slot type.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The timestamp of the date and time that the slot type was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the slot type was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSlotTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSlotTypeOutput");
@@ -281,6 +334,70 @@ pub struct UpdateSlotOutput {
     /// response.</p>
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
 }
+impl UpdateSlotOutput {
+    /// <p>The unique identifier of the slot that was updated.</p>
+    pub fn slot_id(&self) -> std::option::Option<&str> {
+        self.slot_id.as_deref()
+    }
+    /// <p>The updated name of the slot.</p>
+    pub fn slot_name(&self) -> std::option::Option<&str> {
+        self.slot_name.as_deref()
+    }
+    /// <p>The updated description of the bot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated identifier of the slot type that provides values for the
+    /// slot.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>The updated prompts that Amazon Lex sends to the user to elicit a
+    /// response that provides a value for the slot.</p>
+    pub fn value_elicitation_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
+        self.value_elicitation_setting.as_ref()
+    }
+    /// <p>The updated setting that determines whether the slot value is
+    /// obfuscated in the Amazon CloudWatch logs.</p>
+    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
+        self.obfuscation_setting.as_ref()
+    }
+    /// <p>The identifier of the bot that contains the slot.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The identifier of the slot version that contains the slot. Will
+    /// always be <code>DRAFT</code>.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale that contains the slot.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The intent that contains the slot.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>The timestamp of the date and time that the slot was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The timestamp of the date and time that the slot was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>Indicates whether the slot accepts multiple values in one
+    /// response.</p>
+    pub fn multiple_values_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
+        self.multiple_values_setting.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSlotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSlotOutput");
@@ -526,6 +643,20 @@ pub struct UpdateResourcePolicyOutput {
     /// resource, or update a resource.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl UpdateResourcePolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+    /// resource policy is attached to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The current revision of the resource policy. Use the revision ID to
+    /// make sure that you are updating the most current version of a resource
+    /// policy when you add a policy statement to a resource, delete a
+    /// resource, or update a resource.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourcePolicyOutput");
@@ -638,6 +769,96 @@ pub struct UpdateIntentOutput {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp of the last time that the intent was modified.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UpdateIntentOutput {
+    /// <p>The identifier of the intent that was updated.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>The updated name of the intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>The updated description of the intent.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated built-in intent that is the parent of this
+    /// intent.</p>
+    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+        self.parent_intent_signature.as_deref()
+    }
+    /// <p>The updated list of sample utterances for the intent.</p>
+    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+        self.sample_utterances.as_deref()
+    }
+    /// <p>The updated Lambda function called during each turn of the
+    /// conversation with the user.</p>
+    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
+        self.dialog_code_hook.as_ref()
+    }
+    /// <p>The updated Lambda function called when the intent is ready for
+    /// fulfillment.</p>
+    pub fn fulfillment_code_hook(
+        &self,
+    ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
+        self.fulfillment_code_hook.as_ref()
+    }
+    /// <p>The updated list of slots and their priorities that are elicited
+    /// from the user for the intent.</p>
+    pub fn slot_priorities(&self) -> std::option::Option<&[crate::model::SlotPriority]> {
+        self.slot_priorities.as_deref()
+    }
+    /// <p>The updated prompts that Amazon Lex sends to the user to confirm the
+    /// completion of an intent.</p>
+    pub fn intent_confirmation_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
+        self.intent_confirmation_setting.as_ref()
+    }
+    /// <p>The updated response that Amazon Lex sends the user when the intent is
+    /// closed.</p>
+    pub fn intent_closing_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::IntentClosingSetting> {
+        self.intent_closing_setting.as_ref()
+    }
+    /// <p>The updated list of contexts that must be active for the intent to
+    /// be considered by Amazon Lex.</p>
+    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+        self.input_contexts.as_deref()
+    }
+    /// <p>The updated list of contexts that Amazon Lex activates when the intent is
+    /// fulfilled.</p>
+    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+        self.output_contexts.as_deref()
+    }
+    /// <p>The updated configuration for connecting to an Amazon Kendra index with the
+    /// <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+        self.kendra_configuration.as_ref()
+    }
+    /// <p>The identifier of the bot that contains the intent.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the intent. Will always be
+    /// <code>DRAFT</code>.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The updated language and locale of the intent.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>A timestamp of when the intent was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the last time that the intent was modified.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateIntentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1015,6 +1236,36 @@ pub struct UpdateExportOutput {
     /// <p>The date and time that the export was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateExportOutput {
+    /// <p>The unique identifier Amazon Lex assigned to the export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>A description of the type of resource that was exported, either a
+    /// bot or a bot locale.</p>
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// <p>The file format used for the files that define the resource.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>The status of the export. When the status is <code>Completed</code>
+    /// the export archive is available for download.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
+    /// <p>The date and time that the export was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time that the export was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateExportOutput");
@@ -1178,6 +1429,60 @@ pub struct UpdateBotLocaleOutput {
     /// <p>A timestamp of the date and time that the locale was last
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UpdateBotLocaleOutput {
+    /// <p>The identifier of the bot that contains the updated locale.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the updated locale.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale of the updated bot locale.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The updated locale name for the locale.</p>
+    pub fn locale_name(&self) -> std::option::Option<&str> {
+        self.locale_name.as_deref()
+    }
+    /// <p>The updated description of the locale.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated confidence threshold for inserting the
+    /// <code>AMAZON.FallbackIntent</code> and
+    /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
+    /// possible intents for an utterance.</p>
+    pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
+        self.nlu_intent_confidence_threshold
+    }
+    /// <p>The updated Amazon Polly voice to use for voice interaction with the
+    /// user.</p>
+    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+        self.voice_settings.as_ref()
+    }
+    /// <p>The current status of the locale. When the bot status is
+    /// <code>Built</code> the locale is ready for use.</p>
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+        self.bot_locale_status.as_ref()
+    }
+    /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the
+    /// <code>failureReasons</code> field lists the errors that occurred
+    /// while building the bot.</p>
+    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.failure_reasons.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the locale was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the locale was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateBotLocaleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1426,6 +1731,65 @@ pub struct UpdateBotAliasOutput {
     /// <p>A timestamp of the date and time that the bot was last
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UpdateBotAliasOutput {
+    /// <p>The identifier of the updated bot alias.</p>
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+        self.bot_alias_id.as_deref()
+    }
+    /// <p>The updated name of the bot alias.</p>
+    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+        self.bot_alias_name.as_deref()
+    }
+    /// <p>The updated description of the bot alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated version of the bot that the alias points to.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The updated Lambda functions to use in each locale for the bot
+    /// alias.</p>
+    pub fn bot_alias_locale_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
+    > {
+        self.bot_alias_locale_settings.as_ref()
+    }
+    /// <p>The updated settings for storing conversation logs in Amazon CloudWatch Logs and
+    /// Amazon S3 buckets.</p>
+    pub fn conversation_log_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ConversationLogSettings> {
+        self.conversation_log_settings.as_ref()
+    }
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
+    /// user utterances.</p>
+    pub fn sentiment_analysis_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
+        self.sentiment_analysis_settings.as_ref()
+    }
+    /// <p>The current status of the bot alias. When the status is
+    /// <code>Available</code> the alias is ready for use.</p>
+    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+        self.bot_alias_status.as_ref()
+    }
+    /// <p>The identifier of the bot with the updated alias.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the bot was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateBotAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1686,6 +2050,50 @@ pub struct UpdateBotOutput {
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateBotOutput {
+    /// <p>The unique identifier of the bot that was updated.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The name of the bot after the update.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The description of the bot after the update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used by the bot after
+    /// the update.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The data privacy settings for the bot after the update.</p>
+    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+        self.data_privacy.as_ref()
+    }
+    /// <p>The session timeout, in seconds, for the bot after the
+    /// update.</p>
+    pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_session_ttl_in_seconds
+    }
+    /// <p>Shows the current status of the bot. The bot is first in the
+    /// <code>Creating</code> status. Once the bot is read for use, it
+    /// changes to the <code>Available</code> status. After the bot is created,
+    /// you can use the <code>DRAFT</code> version of the bot.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBotOutput");
@@ -1937,6 +2345,34 @@ pub struct StartImportOutput {
     /// <p>The date and time that the import request was created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StartImportOutput {
+    /// <p>A unique identifier for the import.</p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p>The parameters used when importing the bot or bot locale.</p>
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// <p>The strategy used when there was a name conflict between the
+    /// imported resource and an existing resource. When the merge strategy is
+    /// <code>FailOnConflict</code> existing resources are not overwritten
+    /// and the import fails.</p>
+    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+        self.merge_strategy.as_ref()
+    }
+    /// <p>The current status of the import. When the status is
+    /// <code>Complete</code> the bot or bot alias is ready to use.</p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p>The date and time that the import request was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for StartImportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartImportOutput");
@@ -2062,6 +2498,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -2140,6 +2585,36 @@ pub struct ListSlotTypesOutput {
     /// the <code>nextToken</code> parameter of a <code>ListSlotTypes</code>
     /// operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSlotTypesOutput {
+    /// <p>The identifier of the bot that contains the slot types.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the slot types.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and local of the slot types in the list.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>Summary information for the slot types that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// <code>maxResults</code> parameter of the request. If there are more
+    /// slot types available, the <code>nextToken</code> field contains a token
+    /// to get the next page of results.</p>
+    pub fn slot_type_summaries(&self) -> std::option::Option<&[crate::model::SlotTypeSummary]> {
+        self.slot_type_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListSlotTypes</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListSlotTypes</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSlotTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2287,6 +2762,40 @@ pub struct ListSlotsOutput {
     /// the <code>nextToken</code> parameter of a <code>ListSlots</code>
     /// operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSlotsOutput {
+    /// <p>The identifier of the bot that contains the slots.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the slots.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale of the slots in the list.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The identifier of the intent that contains the slots.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>Summary information for the slots that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// <code>maxResults</code> parameter of the request. If there are more
+    /// slots available, the <code>nextToken</code> field contains a token to
+    /// get the next page of results.</p>
+    pub fn slot_summaries(&self) -> std::option::Option<&[crate::model::SlotSummary]> {
+        self.slot_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListSlots</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListSlots</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSlotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2442,6 +2951,36 @@ pub struct ListIntentsOutput {
     /// operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIntentsOutput {
+    /// <p>The identifier of the bot that contains the intent.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the intent.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale of the intents in the list.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>Summary information for the intents that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// <code>maxResults</code> parameter of the request. If there are more
+    /// intents available, the <code>nextToken</code> field contains a token to
+    /// get the next page of results.</p>
+    pub fn intent_summaries(&self) -> std::option::Option<&[crate::model::IntentSummary]> {
+        self.intent_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListIntents</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListIntents</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIntentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIntentsOutput");
@@ -2583,6 +3122,33 @@ pub struct ListImportsOutput {
     /// operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImportsOutput {
+    /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that was imported. It will always be
+    /// <code>DRAFT</code>.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>Summary information for the imports that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// <code>maxResults</code> parameter. If there are more imports
+    /// available, the <code>nextToken</code> field contains a token to get the
+    /// next page of results.</p>
+    pub fn import_summaries(&self) -> std::option::Option<&[crate::model::ImportSummary]> {
+        self.import_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListImports</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListImports</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImportsOutput");
@@ -2712,6 +3278,32 @@ pub struct ListExportsOutput {
     /// operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExportsOutput {
+    /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that was exported.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>Summary information for the exports that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// <code>maxResults</code> parameter. If there are more exports
+    /// available, the <code>nextToken</code> field contains a token to get the
+    /// next page of results.</p>
+    pub fn export_summaries(&self) -> std::option::Option<&[crate::model::ExportSummary]> {
+        self.export_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListExports</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListExports</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExportsOutput");
@@ -2839,6 +3431,31 @@ pub struct ListBuiltInSlotTypesOutput {
     /// <p>The language and locale of the slot types in the list.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
+impl ListBuiltInSlotTypesOutput {
+    /// <p>Summary information for the built-in slot types that meet the filter
+    /// criteria specified in the request. The length of the list is specified
+    /// in the <code>maxResults</code> parameter of the request. If there are
+    /// more slot types available, the <code>nextToken</code> field contains a
+    /// token to get the next page of results.</p>
+    pub fn built_in_slot_type_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BuiltInSlotTypeSummary]> {
+        self.built_in_slot_type_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListBuiltInSlotTypes</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a
+    /// <code>LIstBuiltInSlotTypes</code> operation request to get the next
+    /// page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The language and locale of the slot types in the list.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuiltInSlotTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuiltInSlotTypesOutput");
@@ -2960,6 +3577,30 @@ pub struct ListBuiltInIntentsOutput {
     /// <p>The language and locale of the intents in the list.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
+impl ListBuiltInIntentsOutput {
+    /// <p>Summary information for the built-in intents that meet the filter
+    /// criteria specified in the request. The length of the list is specified
+    /// in the <code>maxResults</code> parameter of the request. If there are
+    /// more intents available, the <code>nextToken</code> field contains a
+    /// token to get the next page of results.</p>
+    pub fn built_in_intent_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BuiltInIntentSummary]> {
+        self.built_in_intent_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListBuiltInIntents</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListBotAliases</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The language and locale of the intents in the list.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuiltInIntentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuiltInIntentsOutput");
@@ -3075,6 +3716,28 @@ pub struct ListBotVersionsOutput {
     /// operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBotVersionsOutput {
+    /// <p>The identifier of the bot to list versions for.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>Summary information for the bot versions that meet the filter
+    /// criteria specified in the request. The length of the list is specified
+    /// in the <code>maxResults</code> parameter of the request. If there are
+    /// more versions available, the <code>nextToken</code> field contains a
+    /// token to get the next page of results.</p>
+    pub fn bot_version_summaries(&self) -> std::option::Option<&[crate::model::BotVersionSummary]> {
+        self.bot_version_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListBotVersions</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListBotAliases</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBotVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBotVersionsOutput");
@@ -3188,6 +3851,24 @@ pub struct ListBotsOutput {
     /// operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBotsOutput {
+    /// <p>Summary information for the bots that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// <code>maxResults</code> parameter of the request. If there are more
+    /// bots available, the <code>nextToken</code> field contains a token to
+    /// the next page of results.</p>
+    pub fn bot_summaries(&self) -> std::option::Option<&[crate::model::BotSummary]> {
+        self.bot_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListBots</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListBots</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBotsOutput");
@@ -3287,6 +3968,32 @@ pub struct ListBotLocalesOutput {
     /// locales available, the <code>nextToken</code> field contains a token to
     /// get the next page of results.</p>
     pub bot_locale_summaries: std::option::Option<std::vec::Vec<crate::model::BotLocaleSummary>>,
+}
+impl ListBotLocalesOutput {
+    /// <p>The identifier of the bot to list locales for.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListBotLocales</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListBotLocales</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Summary information for the locales that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// <code>maxResults</code> parameter of the request. If there are more
+    /// locales available, the <code>nextToken</code> field contains a token to
+    /// get the next page of results.</p>
+    pub fn bot_locale_summaries(&self) -> std::option::Option<&[crate::model::BotLocaleSummary]> {
+        self.bot_locale_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBotLocalesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3415,6 +4122,28 @@ pub struct ListBotAliasesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The identifier of the bot associated with the aliases.</p>
     pub bot_id: std::option::Option<std::string::String>,
+}
+impl ListBotAliasesOutput {
+    /// <p>Summary information for the bot aliases that meet the filter
+    /// criteria specified in the request. The length of the list is specified
+    /// in the <code>maxResults</code> parameter of the request. If there are
+    /// more aliases available, the <code>nextToken</code> field contains a
+    /// token to get the next page of results.</p>
+    pub fn bot_alias_summaries(&self) -> std::option::Option<&[crate::model::BotAliasSummary]> {
+        self.bot_alias_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListBotAliases</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a <code>ListBotAliases</code>
+    /// operation request to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The identifier of the bot associated with the aliases.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBotAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3568,6 +4297,85 @@ pub struct ListAggregatedUtterancesOutput {
     /// <code>ListAggregatedUtterances</code> operation request to get the
     /// next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAggregatedUtterancesOutput {
+    /// <p>The identifier of the bot that contains the utterances.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The identifier of the bot alias that contains the utterances. If you
+    /// specified the bot version, the bot alias ID isn't returned.</p>
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+        self.bot_alias_id.as_deref()
+    }
+    /// <p>The identifier of the bot version that contains the utterances. If
+    /// you specified the bot alias, the bot version isn't returned.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale that the utterances are
+    /// in.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The time period used to aggregate the utterance data.</p>
+    pub fn aggregation_duration(
+        &self,
+    ) -> std::option::Option<&crate::model::UtteranceAggregationDuration> {
+        self.aggregation_duration.as_ref()
+    }
+    /// <p>The date and time that the aggregation window begins. Only data
+    /// collected after this time is returned in the results.</p>
+    pub fn aggregation_window_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.aggregation_window_start_time.as_ref()
+    }
+    /// <p>The date and time that the aggregation window ends. Only data
+    /// collected between the start time and the end time are returned in the
+    /// results. </p>
+    pub fn aggregation_window_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.aggregation_window_end_time.as_ref()
+    }
+    /// <p>The last date and time that the aggregated data was collected. The
+    /// time period depends on the length of the aggregation window.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Hours</b> - for 1 hour time
+    /// window, every half hour; otherwise every hour.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Days</b> - every 6 hours</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Weeks</b> - for a one week time
+    /// window, every 12 hours; otherwise, every day</p>
+    /// </li>
+    /// </ul>
+    pub fn aggregation_last_refreshed_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.aggregation_last_refreshed_date_time.as_ref()
+    }
+    /// <p>Summaries of the aggregated utterance data. Each response contains
+    /// information about the number of times that the utterance was seen
+    /// during the time period, whether it was detected or missed, and when it
+    /// was seen during the time period.</p>
+    pub fn aggregated_utterances_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregatedUtterancesSummary]> {
+        self.aggregated_utterances_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListAggregatedUtterances</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a
+    /// <code>ListAggregatedUtterances</code> operation request to get the
+    /// next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAggregatedUtterancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3865,6 +4673,58 @@ pub struct DescribeSlotTypeOutput {
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeSlotTypeOutput {
+    /// <p>The unique identifier for the slot type.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>The name specified for the slot type.</p>
+    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+        self.slot_type_name.as_deref()
+    }
+    /// <p>The description specified for the slot type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The values that the slot type can take. Includes any synonyms for
+    /// the slot type values.</p>
+    pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
+        self.slot_type_values.as_deref()
+    }
+    /// <p>The strategy that Amazon Lex uses to choose a value from a list of
+    /// possible values.</p>
+    pub fn value_selection_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
+        self.value_selection_setting.as_ref()
+    }
+    /// <p>The built in slot type used as a parent to this slot type.</p>
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+        self.parent_slot_type_signature.as_deref()
+    }
+    /// <p>The identifier of the bot associated with the slot type.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot associated with the slot type.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale specified for the slot type.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the slot type was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the slot type was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSlotTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSlotTypeOutput");
@@ -4113,6 +4973,71 @@ pub struct DescribeSlotOutput {
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default
     /// value is <code>false</code>.</p>
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
+}
+impl DescribeSlotOutput {
+    /// <p>The unique identifier generated for the slot.</p>
+    pub fn slot_id(&self) -> std::option::Option<&str> {
+        self.slot_id.as_deref()
+    }
+    /// <p>The name specified for the slot.</p>
+    pub fn slot_name(&self) -> std::option::Option<&str> {
+        self.slot_name.as_deref()
+    }
+    /// <p>The description specified for the slot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the slot type that determines the values entered
+    /// into the slot.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
+    pub fn value_elicitation_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
+        self.value_elicitation_setting.as_ref()
+    }
+    /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is
+    /// <code>None</code>, the actual value of the slot is shown in
+    /// logs.</p>
+    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
+        self.obfuscation_setting.as_ref()
+    }
+    /// <p>The identifier of the bot associated with the slot.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot associated with the slot.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale specified for the slot.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The identifier of the intent associated with the slot.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the slot was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the slot was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>Indicates whether the slot accepts multiple values in a single
+    /// utterance.</p>
+    /// <p>If the <code>multipleValuesSetting</code> is not set, the default
+    /// value is <code>false</code>.</p>
+    pub fn multiple_values_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
+        self.multiple_values_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSlotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4365,6 +5290,26 @@ pub struct DescribeResourcePolicyOutput {
     /// resource, or update a resource.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl DescribeResourcePolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+    /// resource policy is attached to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The JSON structure that contains the resource policy. For more
+    /// information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
+    /// reference </a>.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The current revision of the resource policy. Use the revision ID to
+    /// make sure that you are updating the most current version of a resource
+    /// policy when you add a policy statement to a resource, delete a
+    /// resource, or update a resource.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourcePolicyOutput");
@@ -4494,6 +5439,96 @@ pub struct DescribeIntentOutput {
     /// <p>A timestamp of the date and time that the intent was last
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeIntentOutput {
+    /// <p>The unique identifier assigned to the intent when it was
+    /// created.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>The name specified for the intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>The description of the intent.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the built-in intent that this intent is derived
+    /// from, if any.</p>
+    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+        self.parent_intent_signature.as_deref()
+    }
+    /// <p>User utterances that trigger this intent.</p>
+    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+        self.sample_utterances.as_deref()
+    }
+    /// <p>The Lambda function called during each turn of a conversation with
+    /// the intent.</p>
+    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
+        self.dialog_code_hook.as_ref()
+    }
+    /// <p>The Lambda function called when the intent is complete and ready for
+    /// fulfillment.</p>
+    pub fn fulfillment_code_hook(
+        &self,
+    ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
+        self.fulfillment_code_hook.as_ref()
+    }
+    /// <p>The list that determines the priority that slots should be elicited
+    /// from the user.</p>
+    pub fn slot_priorities(&self) -> std::option::Option<&[crate::model::SlotPriority]> {
+        self.slot_priorities.as_deref()
+    }
+    /// <p>Prompts that Amazon Lex sends to the user to confirm completion of an
+    /// intent.</p>
+    pub fn intent_confirmation_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
+        self.intent_confirmation_setting.as_ref()
+    }
+    /// <p>The response that Amazon Lex sends to when the intent is closed.</p>
+    pub fn intent_closing_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::IntentClosingSetting> {
+        self.intent_closing_setting.as_ref()
+    }
+    /// <p>A list of contexts that must be active for the intent to be
+    /// considered for sending to the user.</p>
+    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+        self.input_contexts.as_deref()
+    }
+    /// <p>A list of contexts that are activated when the intent is
+    /// fulfilled.</p>
+    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+        self.output_contexts.as_deref()
+    }
+    /// <p>Configuration information required to use the
+    /// <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+        self.kendra_configuration.as_ref()
+    }
+    /// <p>The identifier of the bot associated with the intent.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot associated with the intent.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale specified for the intent.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the intent was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the intent was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeIntentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4882,6 +5917,53 @@ pub struct DescribeImportOutput {
     /// <p>The date and time that the import was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeImportOutput {
+    /// <p>The unique identifier of the described import.</p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p>The specifications of the imported bot or bot locale.</p>
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// <p>The unique identifier that Amazon Lex assigned to the resource created by
+    /// the import.</p>
+    pub fn imported_resource_id(&self) -> std::option::Option<&str> {
+        self.imported_resource_id.as_deref()
+    }
+    /// <p>The name of the imported resource.</p>
+    pub fn imported_resource_name(&self) -> std::option::Option<&str> {
+        self.imported_resource_name.as_deref()
+    }
+    /// <p>The strategy used when there was a name conflict between the
+    /// imported resource and an existing resource. When the merge strategy is
+    /// <code>FailOnConflict</code> existing resources are not overwritten
+    /// and the import fails.</p>
+    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+        self.merge_strategy.as_ref()
+    }
+    /// <p>The status of the import process. When the status is
+    /// <code>Completed</code> the resource is imported and ready for
+    /// use.</p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this
+    /// provides one or more reasons for the failure.</p>
+    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.failure_reasons.as_deref()
+    }
+    /// <p>The date and time that the import was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time that the import was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeImportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImportOutput");
@@ -5102,6 +6184,48 @@ pub struct DescribeExportOutput {
     /// <p>The last date and time that the export was updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeExportOutput {
+    /// <p>The unique identifier of the described export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot
+    /// locale.</p>
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// <p>The file format used in the files that describe the bot or bot
+    /// locale.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>The status of the export. When the status is <code>Complete</code>
+    /// the export archive file is available for download.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
+    /// <p>If the <code>exportStatus</code> is failed, contains one or more
+    /// reasons why the export could not be completed.</p>
+    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.failure_reasons.as_deref()
+    }
+    /// <p>A pre-signed S3 URL that points to the bot or bot locale archive.
+    /// The URL is only available for 5 minutes after calling the
+    /// <code>DescribeExport</code> operation.</p>
+    pub fn download_url(&self) -> std::option::Option<&str> {
+        self.download_url.as_deref()
+    }
+    /// <p>The date and time that the export was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The last date and time that the export was updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExportOutput");
@@ -5303,6 +6427,53 @@ pub struct DescribeBotVersionOutput {
     /// <p>A timestamp of the date and time that the bot version was
     /// created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeBotVersionOutput {
+    /// <p>The identifier of the bot that contains the version.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The name of the bot that contains the version.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The version of the bot to describe.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The description specified for the bot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
+    /// access the bot version.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Data privacy settings for the bot version.</p>
+    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+        self.data_privacy.as_ref()
+    }
+    /// <p>The number of seconds that a session with the bot remains active
+    /// before it is discarded by Amazon Lex.</p>
+    pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_session_ttl_in_seconds
+    }
+    /// <p>The current status of the bot. When the status is
+    /// <code>Available</code>, the bot version is ready for use.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+    /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains
+    /// a list of reasons that the version couldn't be built.</p>
+    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.failure_reasons.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the bot version was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeBotVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5538,6 +6709,82 @@ pub struct DescribeBotLocaleOutput {
     /// have taken place for the locale.</p>
     pub bot_locale_history_events:
         std::option::Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>,
+}
+impl DescribeBotLocaleOutput {
+    /// <p>The identifier of the bot associated with the locale.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The identifier of the version of the bot associated with the
+    /// locale.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The unique identifier of the described locale.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The name of the locale.</p>
+    pub fn locale_name(&self) -> std::option::Option<&str> {
+        self.locale_name.as_deref()
+    }
+    /// <p>The description of the locale.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The confidence threshold where Amazon Lex inserts the
+    /// <code>AMAZON.FallbackIntent</code> and
+    /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
+    /// possible intents for an utterance.</p>
+    pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
+        self.nlu_intent_confidence_threshold
+    }
+    /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the
+    /// user.</p>
+    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+        self.voice_settings.as_ref()
+    }
+    /// <p>The number of intents defined for the locale.</p>
+    pub fn intents_count(&self) -> std::option::Option<i32> {
+        self.intents_count
+    }
+    /// <p>The number of slot types defined for the locale.</p>
+    pub fn slot_types_count(&self) -> std::option::Option<i32> {
+        self.slot_types_count
+    }
+    /// <p>The status of the bot. If the status is <code>Failed</code>, the
+    /// reasons for the failure are listed in the <code>failureReasons</code>
+    /// field.</p>
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+        self.bot_locale_status.as_ref()
+    }
+    /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex
+    /// explains why it failed to build the bot.</p>
+    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.failure_reasons.as_deref()
+    }
+    /// <p>The date and time that the locale was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time that the locale was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The date and time that the locale was last submitted for
+    /// building.</p>
+    pub fn last_build_submitted_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_build_submitted_date_time.as_ref()
+    }
+    /// <p>History of changes, such as when a locale is used in an alias, that
+    /// have taken place for the locale.</p>
+    pub fn bot_locale_history_events(
+        &self,
+    ) -> std::option::Option<&[crate::model::BotLocaleHistoryEvent]> {
+        self.bot_locale_history_events.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBotLocaleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5866,6 +7113,72 @@ pub struct DescribeBotAliasOutput {
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeBotAliasOutput {
+    /// <p>The identifier of the bot alias.</p>
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+        self.bot_alias_id.as_deref()
+    }
+    /// <p>The name of the bot alias.</p>
+    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+        self.bot_alias_name.as_deref()
+    }
+    /// <p>The description of the bot alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The version of the bot associated with the bot alias.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale settings that are unique to the alias.</p>
+    pub fn bot_alias_locale_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
+    > {
+        self.bot_alias_locale_settings.as_ref()
+    }
+    /// <p>Specifics of how Amazon Lex logs text and audio conversations with the
+    /// bot associated with the alias.</p>
+    pub fn conversation_log_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ConversationLogSettings> {
+        self.conversation_log_settings.as_ref()
+    }
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
+    /// user utterances.</p>
+    pub fn sentiment_analysis_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
+        self.sentiment_analysis_settings.as_ref()
+    }
+    /// <p>A list of events that affect a bot alias. For example, an event is
+    /// recorded when the version that the alias points to changes.</p>
+    pub fn bot_alias_history_events(
+        &self,
+    ) -> std::option::Option<&[crate::model::BotAliasHistoryEvent]> {
+        self.bot_alias_history_events.as_deref()
+    }
+    /// <p>The current status of the alias. When the alias is
+    /// <code>Available</code>, the alias is ready for use with your
+    /// bot.</p>
+    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+        self.bot_alias_status.as_ref()
+    }
+    /// <p>The identifier of the bot associated with the bot alias.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the alias was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the alias was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeBotAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBotAliasOutput");
@@ -6153,6 +7466,50 @@ pub struct DescribeBotOutput {
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeBotOutput {
+    /// <p>The unique identifier of the bot.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The name of the bot.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The description of the bot. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
+    /// access the bot.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Settings for managing data privacy of the bot and its conversations
+    /// with users.</p>
+    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+        self.data_privacy.as_ref()
+    }
+    /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in
+    /// a conversation.</p>
+    pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_session_ttl_in_seconds
+    }
+    /// <p>The current status of the bot. When the status is
+    /// <code>Available</code> the bot is ready to be used in conversations
+    /// with users.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBotOutput");
@@ -6428,6 +7785,20 @@ pub struct DeleteResourcePolicyStatementOutput {
     /// resource, or update a resource.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl DeleteResourcePolicyStatementOutput {
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+    /// resource policy statement was removed from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The current revision of the resource policy. Use the revision ID to
+    /// make sure that you are updating the most current version of a resource
+    /// policy when you add a policy statement to a resource, delete a
+    /// resource, or update a resource.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourcePolicyStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcePolicyStatementOutput");
@@ -6502,6 +7873,20 @@ pub struct DeleteResourcePolicyOutput {
     /// policy when you add a policy statement to a resource, delete a
     /// resource, or update a resource.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl DeleteResourcePolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+    /// resource policy was deleted from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The current revision of the resource policy. Use the revision ID to
+    /// make sure that you are updating the most current version of a resource
+    /// policy when you add a policy statement to a resource, delete a
+    /// resource, or update a resource.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6606,6 +7991,18 @@ pub struct DeleteImportOutput {
     /// fail.</p>
     pub import_status: std::option::Option<crate::model::ImportStatus>,
 }
+impl DeleteImportOutput {
+    /// <p>The unique identifier of the deleted import.</p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p>The current status of the deletion. When the deletion is complete,
+    /// the import will no longer be returned by the  operation and calls to the  with the import identifier will
+    /// fail.</p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteImportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImportOutput");
@@ -6678,6 +8075,18 @@ pub struct DeleteExportOutput {
     /// fail.</p>
     pub export_status: std::option::Option<crate::model::ExportStatus>,
 }
+impl DeleteExportOutput {
+    /// <p>The unique identifier of the deleted export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>The current status of the deletion. When the deletion is complete,
+    /// the export will no longer be returned by the  operation and calls to the  with the export identifier will
+    /// fail.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteExportOutput");
@@ -6749,6 +8158,20 @@ pub struct DeleteBotVersionOutput {
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The current status of the bot. </p>
     pub bot_status: std::option::Option<crate::model::BotStatus>,
+}
+impl DeleteBotVersionOutput {
+    /// <p>The identifier of the bot that is being deleted.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that is being deleted.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The current status of the bot. </p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteBotVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6834,6 +8257,26 @@ pub struct DeleteBotLocaleOutput {
     /// <code>Deleting</code> status. Once the locale is deleted it no
     /// longer appears in the list of locales for the bot.</p>
     pub bot_locale_status: std::option::Option<crate::model::BotLocaleStatus>,
+}
+impl DeleteBotLocaleOutput {
+    /// <p>The identifier of the bot that contained the deleted locale.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contained the deleted locale.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale of the deleted locale.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The status of deleting the bot locale. The locale first enters the
+    /// <code>Deleting</code> status. Once the locale is deleted it no
+    /// longer appears in the list of locales for the bot.</p>
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+        self.bot_locale_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteBotLocaleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6937,6 +8380,24 @@ pub struct DeleteBotAliasOutput {
     /// the <code>ListBotAliases</code> operation.</p>
     pub bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
 }
+impl DeleteBotAliasOutput {
+    /// <p>The unique identifier of the bot alias to delete.</p>
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+        self.bot_alias_id.as_deref()
+    }
+    /// <p>The unique identifier of the bot that contains the alias to
+    /// delete.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The current status of the alias. The status is <code>Deleting</code>
+    /// while the alias is in the process of being deleted. Once the alias is
+    /// deleted, it will no longer appear in the list of aliases returned by
+    /// the <code>ListBotAliases</code> operation.</p>
+    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+        self.bot_alias_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteBotAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBotAliasOutput");
@@ -7025,6 +8486,17 @@ pub struct DeleteBotOutput {
     /// while the bot and its associated resources are being deleted.</p>
     pub bot_status: std::option::Option<crate::model::BotStatus>,
 }
+impl DeleteBotOutput {
+    /// <p>The unique identifier of the bot that Amazon Lex is deleting.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The current status of the bot. The status is <code>Deleting</code>
+    /// while the bot and its associated resources are being deleted.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBotOutput");
@@ -7094,6 +8566,18 @@ pub struct CreateUploadUrlOutput {
     /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains
     /// the definition of your bot or bot locale.</p>
     pub upload_url: std::option::Option<std::string::String>,
+}
+impl CreateUploadUrlOutput {
+    /// <p>An identifier for a unique import job. Use it when you call the
+    /// operation.</p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains
+    /// the definition of your bot or bot locale.</p>
+    pub fn upload_url(&self) -> std::option::Option<&str> {
+        self.upload_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUploadUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7182,6 +8666,55 @@ pub struct CreateSlotTypeOutput {
     /// <p>A timestamp of the date and time that the slot type was
     /// created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateSlotTypeOutput {
+    /// <p>The unique identifier assigned to the slot type. Use this to
+    /// identify the slot type in the <code>UpdateSlotType</code> and
+    /// <code>DeleteSlotType</code> operations.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>The name specified for the slot type.</p>
+    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+        self.slot_type_name.as_deref()
+    }
+    /// <p>The description specified for the slot type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The list of values that the slot type can assume.</p>
+    pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
+        self.slot_type_values.as_deref()
+    }
+    /// <p>The strategy that Amazon Lex uses to select a value from the list of
+    /// possible values.</p>
+    pub fn value_selection_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
+        self.value_selection_setting.as_ref()
+    }
+    /// <p>The signature of the base slot type specified for the slot
+    /// type.</p>
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+        self.parent_slot_type_signature.as_deref()
+    }
+    /// <p>The identifier for the bot associated with the slot type.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot associated with the slot type.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The specified language and local specified for the slot type.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the slot type was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSlotTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7413,6 +8946,64 @@ pub struct CreateSlotOutput {
     /// response.</p>
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
 }
+impl CreateSlotOutput {
+    /// <p>The unique identifier associated with the slot. Use this to identify
+    /// the slot when you update or delete it.</p>
+    pub fn slot_id(&self) -> std::option::Option<&str> {
+        self.slot_id.as_deref()
+    }
+    /// <p>The name specified for the slot.</p>
+    pub fn slot_name(&self) -> std::option::Option<&str> {
+        self.slot_name.as_deref()
+    }
+    /// <p>The description associated with the slot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier of the slot type associated with this
+    /// slot.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>The value elicitation settings specified for the slot.</p>
+    pub fn value_elicitation_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
+        self.value_elicitation_setting.as_ref()
+    }
+    /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch
+    /// logs.</p>
+    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
+        self.obfuscation_setting.as_ref()
+    }
+    /// <p>The unique identifier of the bot associated with the slot.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot associated with the slot.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and local specified for the slot.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The unique identifier of the intent associated with the slot.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>The timestamp of the date and time that the slot was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>Indicates whether the slot returns multiple values in one
+    /// response.</p>
+    pub fn multiple_values_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
+        self.multiple_values_setting.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSlotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSlotOutput");
@@ -7638,6 +9229,20 @@ pub struct CreateResourcePolicyStatementOutput {
     /// resource, or update a resource.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl CreateResourcePolicyStatementOutput {
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+    /// resource policy is attached to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The current revision of the resource policy. Use the revision ID to
+    /// make sure that you are updating the most current version of a resource
+    /// policy when you add a policy statement to a resource, delete a
+    /// resource, or update a resource.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourcePolicyStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourcePolicyStatementOutput");
@@ -7712,6 +9317,20 @@ pub struct CreateResourcePolicyOutput {
     /// policy when you add a policy statement to a resource, delete a
     /// resource, or update a resource.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl CreateResourcePolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+    /// resource policy was attached to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The current revision of the resource policy. Use the revision ID to
+    /// make sure that you are updating the most current version of a resource
+    /// policy when you add a policy statement to a resource, delete a
+    /// resource, or update a resource.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7813,6 +9432,80 @@ pub struct CreateIntentOutput {
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>A timestamp of the date and time that the intent was created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateIntentOutput {
+    /// <p>A unique identifier for the intent.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>The name specified for the intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>The description specified for the intent.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The signature of the parent intent specified for the intent.</p>
+    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+        self.parent_intent_signature.as_deref()
+    }
+    /// <p>The sample utterances specified for the intent.</p>
+    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+        self.sample_utterances.as_deref()
+    }
+    /// <p>The dialog Lambda function specified for the intent.</p>
+    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
+        self.dialog_code_hook.as_ref()
+    }
+    /// <p>The fulfillment Lambda function specified for the intent.</p>
+    pub fn fulfillment_code_hook(
+        &self,
+    ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
+        self.fulfillment_code_hook.as_ref()
+    }
+    /// <p>The confirmation setting specified for the intent.</p>
+    pub fn intent_confirmation_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
+        self.intent_confirmation_setting.as_ref()
+    }
+    /// <p>The closing setting specified for the intent.</p>
+    pub fn intent_closing_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::IntentClosingSetting> {
+        self.intent_closing_setting.as_ref()
+    }
+    /// <p>The list of input contexts specified for the intent.</p>
+    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+        self.input_contexts.as_deref()
+    }
+    /// <p>The list of output contexts specified for the intent.</p>
+    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+        self.output_contexts.as_deref()
+    }
+    /// <p>Configuration for searching a Amazon Kendra index specified for the
+    /// intent.</p>
+    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+        self.kendra_configuration.as_ref()
+    }
+    /// <p>The identifier of the bot associated with the intent.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The identifier of the version of the bot associated with the
+    /// intent.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale that the intent is specified to use.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the intent was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateIntentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8137,6 +9830,35 @@ pub struct CreateExportOutput {
     /// created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateExportOutput {
+    /// <p>An identifier for a specific request to create an export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>A description of the type of resource that was exported, either a
+    /// bot or a bot locale.</p>
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// <p>The file format used for the bot or bot locale definition
+    /// files.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>The status of the export. When the status is <code>Completed</code>,
+    /// you can use the  operation to get
+    /// the pre-signed S3 URL link to your exported bot or bot locale.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
+    /// <p>The date and time that the request to export a bot was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateExportOutput");
@@ -8278,6 +10000,40 @@ pub struct CreateBotVersionOutput {
     /// <p>A timestamp of the date and time that the version was
     /// created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateBotVersionOutput {
+    /// <p>The bot identifier specified in the request.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The description of the version specified in the request.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The version number assigned to the version.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The source versions used for each locale in the new version.</p>
+    pub fn bot_version_locale_specification(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>,
+    > {
+        self.bot_version_locale_specification.as_ref()
+    }
+    /// <p>When you send a request to create or update a bot, Amazon Lex sets the
+    /// status response element to <code>Creating</code>. After Amazon Lex builds
+    /// the bot, it sets status to <code>Available</code>. If Amazon Lex can't build
+    /// the bot, it sets status to <code>Failed</code>.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the version was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBotVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8458,6 +10214,58 @@ pub struct CreateBotLocaleOutput {
     /// <p>A timestamp specifying the date and time that the bot locale was
     /// created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateBotLocaleOutput {
+    /// <p>The specified bot identifier.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The specified bot version.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The specified locale name.</p>
+    pub fn locale_name(&self) -> std::option::Option<&str> {
+        self.locale_name.as_deref()
+    }
+    /// <p>The specified locale identifier.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The specified description of the bot locale.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The specified confidence threshold for inserting the
+    /// <code>AMAZON.FallbackIntent</code> and
+    /// <code>AMAZON.KendraSearchIntent</code> intents.</p>
+    pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
+        self.nlu_intent_confidence_threshold
+    }
+    /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+    /// user.</p>
+    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+        self.voice_settings.as_ref()
+    }
+    /// <p>The status of the bot.</p>
+    /// <p>When the status is <code>Creating</code> the bot locale is being
+    /// configured. When the status is <code>Building</code> Amazon Lex is building
+    /// the bot for testing and use.</p>
+    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you
+    /// can test the bot using the exact utterances specified in the bots'
+    /// intents. When the bot is ready for full testing or to run, the status
+    /// is <code>Built</code>.</p>
+    /// <p>If there was a problem with building the bot, the status is
+    /// <code>Failed</code>. If the bot was saved but not built, the status
+    /// is <code>NotBuilt</code>.</p>
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+        self.bot_locale_status.as_ref()
+    }
+    /// <p>A timestamp specifying the date and time that the bot locale was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBotLocaleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8682,6 +10490,69 @@ pub struct CreateBotAliasOutput {
     /// <p>A list of tags associated with the bot alias.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateBotAliasOutput {
+    /// <p>The unique identifier of the bot alias.</p>
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+        self.bot_alias_id.as_deref()
+    }
+    /// <p>The name specified for the bot alias.</p>
+    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+        self.bot_alias_name.as_deref()
+    }
+    /// <p>The description specified for the bot alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The version of the bot associated with this alias.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>Configuration information for a specific locale.</p>
+    pub fn bot_alias_locale_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
+    > {
+        self.bot_alias_locale_settings.as_ref()
+    }
+    /// <p>The conversation log settings specified for the alias.</p>
+    pub fn conversation_log_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ConversationLogSettings> {
+        self.conversation_log_settings.as_ref()
+    }
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
+    /// user utterances.</p>
+    pub fn sentiment_analysis_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
+        self.sentiment_analysis_settings.as_ref()
+    }
+    /// <p>The current status of the alias. The alias is first put into the
+    /// <code>Creating</code> state. When the alias is ready to be used, it
+    /// is put into the <code>Available</code> state. You can use the
+    /// <code>DescribeBotAlias</code> operation to get the current state of
+    /// an alias.</p>
+    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+        self.bot_alias_status.as_ref()
+    }
+    /// <p>The unique identifier of the bot that this alias applies to.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>A Unix timestamp indicating the date and time that the bot alias was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A list of tags associated with the bot alias.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBotAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8961,6 +10832,59 @@ pub struct CreateBotOutput {
     pub test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateBotOutput {
+    /// <p>A unique identifier for a particular bot. You use this to identify
+    /// the bot when you call other Amazon Lex API operations.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The name specified for the bot.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The description specified for the bot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The IAM role specified for the bot.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The data privacy settings specified for the bot.</p>
+    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+        self.data_privacy.as_ref()
+    }
+    /// <p>The session idle time specified for the bot.</p>
+    pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_session_ttl_in_seconds
+    }
+    /// <p>Shows the current status of the bot. The bot is first in the
+    /// <code>Creating</code> status. Once the bot is read for use, it
+    /// changes to the <code>Available</code> status. After the bot is created,
+    /// you can use the <code>Draft</code> version of the bot.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+    /// <p>A timestamp indicating the date and time that the bot was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A list of tags associated with the bot.</p>
+    pub fn bot_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.bot_tags.as_ref()
+    }
+    /// <p>A list of tags associated with the test alias for the bot.</p>
+    pub fn test_bot_alias_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.test_bot_alias_tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBotOutput");
@@ -9196,6 +11120,37 @@ pub struct BuildBotLocaleOutput {
     /// <p>A timestamp indicating the date and time that the bot was last built
     /// for this locale.</p>
     pub last_build_submitted_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BuildBotLocaleOutput {
+    /// <p>The identifier of the specified bot.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that was built. This is only the draft
+    /// version of the bot.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The language and locale specified of where the bot can be
+    /// used.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The bot's build status. When the status is
+    /// <code>ReadyExpressTesting</code> you can test the bot using the
+    /// utterances defined for the intents and slot types. When the status is
+    /// <code>Built</code>, the bot is ready for use and can be tested using
+    /// any utterance.</p>
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+        self.bot_locale_status.as_ref()
+    }
+    /// <p>A timestamp indicating the date and time that the bot was last built
+    /// for this locale.</p>
+    pub fn last_build_submitted_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_build_submitted_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for BuildBotLocaleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

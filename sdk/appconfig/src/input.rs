@@ -128,10 +128,7 @@ impl CreateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -421,10 +418,7 @@ impl CreateConfigurationProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -748,10 +742,7 @@ impl CreateDeploymentStrategyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_deployment_strategy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -997,10 +988,7 @@ impl CreateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5155,10 +5143,7 @@ impl StartDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5559,10 +5544,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5931,10 +5913,7 @@ impl UpdateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6198,10 +6177,7 @@ impl UpdateConfigurationProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_configuration_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6498,10 +6474,7 @@ impl UpdateDeploymentStrategyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_deployment_strategy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6745,10 +6718,7 @@ impl UpdateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7025,6 +6995,20 @@ pub struct ValidateConfigurationInput {
     /// <p>The version of the configuration to validate.</p>
     pub configuration_version: std::option::Option<std::string::String>,
 }
+impl ValidateConfigurationInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The version of the configuration to validate.</p>
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
+        self.configuration_version.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateConfigurationInput");
@@ -7049,6 +7033,28 @@ pub struct UpdateEnvironmentInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
+}
+impl UpdateEnvironmentInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The environment ID.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
+    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+        self.monitors.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7109,6 +7115,62 @@ pub struct UpdateDeploymentStrategyInput {
     /// targets.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
 }
+impl UpdateDeploymentStrategyInput {
+    /// <p>The deployment strategy ID.</p>
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+        self.deployment_strategy_id.as_deref()
+    }
+    /// <p>A description of the deployment strategy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time for a deployment to last.</p>
+    pub fn deployment_duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> std::option::Option<i32> {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>The percentage of targets to receive a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> std::option::Option<f32> {
+        self.growth_factor
+    }
+    /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+    /// following growth types:</p>
+    /// <p>
+    /// <b>Linear</b>: For this type, AppConfig processes the
+    /// deployment by increments of the growth factor evenly distributed over the deployment time.
+    /// For example, a linear deployment that uses a growth factor of 20 initially makes the
+    /// configuration available to 20 percent of the targets. After 1/5th of the deployment time
+    /// has passed, the system updates the percentage to 40 percent. This continues until 100% of
+    /// the targets are set to receive the deployed configuration.</p>
+    ///
+    /// <p>
+    /// <b>Exponential</b>: For this type, AppConfig processes the
+    /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
+    /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
+    /// the number of steps until the configuration is deployed to all targets. For example, if you
+    /// specify a growth factor of 2, then the system rolls out the configuration as
+    /// follows:</p>
+    /// <p>
+    /// <code>2*(2^0)</code>
+    /// </p>
+    /// <p>
+    /// <code>2*(2^1)</code>
+    /// </p>
+    /// <p>
+    /// <code>2*(2^2)</code>
+    /// </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
+    /// targets, 8% of the targets, and continues until the configuration has been deployed to all
+    /// targets.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDeploymentStrategyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeploymentStrategyInput");
@@ -7146,6 +7208,33 @@ pub struct UpdateConfigurationProfileInput {
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
 }
+impl UpdateConfigurationProfileInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the configuration profile.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The name of the configuration profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the configuration profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
+    /// LocationUri.</p>
+    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+        self.retrieval_role_arn.as_deref()
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+        self.validators.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationProfileInput");
@@ -7170,6 +7259,20 @@ pub struct UpdateApplicationInput {
     /// <p>A description of the application.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateApplicationInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The name of the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationInput");
@@ -7188,6 +7291,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys to delete.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ARN of the resource for which to remove tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys to delete.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7210,6 +7323,21 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resource for which to retrieve tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
+    /// up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to
+    /// 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -7229,6 +7357,20 @@ pub struct StopDeploymentInput {
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The sequence number of the deployment.</p>
     pub deployment_number: std::option::Option<i32>,
+}
+impl StopDeploymentInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The environment ID.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn deployment_number(&self) -> std::option::Option<i32> {
+        self.deployment_number
+    }
 }
 impl std::fmt::Debug for StopDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7262,6 +7404,41 @@ pub struct StartDeploymentInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StartDeploymentInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The environment ID.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The deployment strategy ID.</p>
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+        self.deployment_strategy_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The configuration version to deploy.</p>
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
+        self.configuration_version.as_deref()
+    }
+    /// <p>A description of the deployment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
+    /// resources. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeploymentInput");
@@ -7282,6 +7459,12 @@ impl std::fmt::Debug for StartDeploymentInput {
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7304,6 +7487,25 @@ pub struct ListHostedConfigurationVersionsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHostedConfigurationVersionsInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that
+    /// you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHostedConfigurationVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7328,6 +7530,21 @@ pub struct ListEnvironmentsInput {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEnvironmentsInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that
+    /// you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnvironmentsInput");
@@ -7347,6 +7564,17 @@ pub struct ListDeploymentStrategiesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeploymentStrategiesInput {
+    /// <p>The maximum number of items to return for this call. The call also returns a token that
+    /// you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeploymentStrategiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7371,6 +7599,25 @@ pub struct ListDeploymentsInput {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentsInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The environment ID.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that
+    /// you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentsInput");
@@ -7394,6 +7641,21 @@ pub struct ListConfigurationProfilesInput {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConfigurationProfilesInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that
+    /// you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationProfilesInput");
@@ -7413,6 +7675,17 @@ pub struct ListApplicationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsInput {
+    /// <p>The maximum number of items to return for this call. The call also returns a token that
+    /// you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7434,6 +7707,20 @@ pub struct GetHostedConfigurationVersionInput {
     /// <p>The version.</p>
     pub version_number: i32,
 }
+impl GetHostedConfigurationVersionInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The version.</p>
+    pub fn version_number(&self) -> i32 {
+        self.version_number
+    }
+}
 impl std::fmt::Debug for GetHostedConfigurationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHostedConfigurationVersionInput");
@@ -7453,6 +7740,16 @@ pub struct GetEnvironmentInput {
     /// <p>The ID of the environment you wnat to get.</p>
     pub environment_id: std::option::Option<std::string::String>,
 }
+impl GetEnvironmentInput {
+    /// <p>The ID of the application that includes the environment you want to get.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the environment you wnat to get.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentInput");
@@ -7468,6 +7765,12 @@ impl std::fmt::Debug for GetEnvironmentInput {
 pub struct GetDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy to get.</p>
     pub deployment_strategy_id: std::option::Option<std::string::String>,
+}
+impl GetDeploymentStrategyInput {
+    /// <p>The ID of the deployment strategy to get.</p>
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+        self.deployment_strategy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentStrategyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7488,6 +7791,20 @@ pub struct GetDeploymentInput {
     /// <p>The sequence number of the deployment.</p>
     pub deployment_number: std::option::Option<i32>,
 }
+impl GetDeploymentInput {
+    /// <p>The ID of the application that includes the deployment you want to get. </p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the environment that includes the deployment you want to get. </p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn deployment_number(&self) -> std::option::Option<i32> {
+        self.deployment_number
+    }
+}
 impl std::fmt::Debug for GetDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentInput");
@@ -7507,6 +7824,17 @@ pub struct GetConfigurationProfileInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the configuration profile you want to get.</p>
     pub configuration_profile_id: std::option::Option<std::string::String>,
+}
+impl GetConfigurationProfileInput {
+    /// <p>The ID of the application that includes the configuration profile you want to
+    /// get.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the configuration profile you want to get.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConfigurationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7551,6 +7879,47 @@ pub struct GetConfigurationInput {
     /// <i>AWS AppConfig User Guide</i>.</p>
     pub client_configuration_version: std::option::Option<std::string::String>,
 }
+impl GetConfigurationInput {
+    /// <p>The application to get. Specify either the application name or the application
+    /// ID.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The environment to get. Specify either the environment name or the environment
+    /// ID.</p>
+    pub fn environment(&self) -> std::option::Option<&str> {
+        self.environment.as_deref()
+    }
+    /// <p>The configuration to get. Specify either the configuration name or the configuration
+    /// ID.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>A unique ID to identify the client for the configuration. This ID enables AppConfig to
+    /// deploy the configuration in intervals, as defined in the deployment strategy.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
+    /// response.</p>
+    /// <important>
+    /// <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
+    /// to identify the configuration version on your clients. If you don’t send
+    /// <code>ClientConfigurationVersion</code> with each call to
+    /// <code>GetConfiguration</code>, your clients receive the current configuration. You
+    /// are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the
+    /// <code>ClientConfigurationVersion</code> value with every call to
+    /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
+    /// calls to <code>GetConfiguration</code> must pass this value by using the
+    /// <code>ClientConfigurationVersion</code> parameter. </p>
+    /// </important>
+    /// <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the
+    /// <i>AWS AppConfig User Guide</i>.</p>
+    pub fn client_configuration_version(&self) -> std::option::Option<&str> {
+        self.client_configuration_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationInput");
@@ -7573,6 +7942,12 @@ pub struct GetApplicationInput {
     /// <p>The ID of the application you want to get.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl GetApplicationInput {
+    /// <p>The ID of the application you want to get.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationInput");
@@ -7591,6 +7966,20 @@ pub struct DeleteHostedConfigurationVersionInput {
     pub configuration_profile_id: std::option::Option<std::string::String>,
     /// <p>The versions number to delete.</p>
     pub version_number: i32,
+}
+impl DeleteHostedConfigurationVersionInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The versions number to delete.</p>
+    pub fn version_number(&self) -> i32 {
+        self.version_number
+    }
 }
 impl std::fmt::Debug for DeleteHostedConfigurationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7611,6 +8000,16 @@ pub struct DeleteEnvironmentInput {
     /// <p>The ID of the environment you want to delete.</p>
     pub environment_id: std::option::Option<std::string::String>,
 }
+impl DeleteEnvironmentInput {
+    /// <p>The application ID that includes the environment you want to delete.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the environment you want to delete.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEnvironmentInput");
@@ -7626,6 +8025,12 @@ impl std::fmt::Debug for DeleteEnvironmentInput {
 pub struct DeleteDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy you want to delete.</p>
     pub deployment_strategy_id: std::option::Option<std::string::String>,
+}
+impl DeleteDeploymentStrategyInput {
+    /// <p>The ID of the deployment strategy you want to delete.</p>
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+        self.deployment_strategy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDeploymentStrategyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7644,6 +8049,16 @@ pub struct DeleteConfigurationProfileInput {
     /// <p>The ID of the configuration profile you want to delete.</p>
     pub configuration_profile_id: std::option::Option<std::string::String>,
 }
+impl DeleteConfigurationProfileInput {
+    /// <p>The application ID that includes the configuration profile you want to delete.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the configuration profile you want to delete.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigurationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationProfileInput");
@@ -7659,6 +8074,12 @@ impl std::fmt::Debug for DeleteConfigurationProfileInput {
 pub struct DeleteApplicationInput {
     /// <p>The ID of the application to delete.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteApplicationInput {
+    /// <p>The ID of the application to delete.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7688,6 +8109,36 @@ pub struct CreateHostedConfigurationVersionInput {
     /// multiple hosted configuration versions in rapid succession, specify the version of the
     /// latest hosted configuration version.</p>
     pub latest_version_number: std::option::Option<i32>,
+}
+impl CreateHostedConfigurationVersionInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>A description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The content of the configuration or the configuration data.</p>
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.content.as_ref()
+    }
+    /// <p>A standard MIME type describing the format of the configuration content. For more
+    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>An optional locking token used to prevent race conditions from overwriting configuration
+    /// updates when creating a new version. To ensure your data is not overwritten when creating
+    /// multiple hosted configuration versions in rapid succession, specify the version of the
+    /// latest hosted configuration version.</p>
+    pub fn latest_version_number(&self) -> std::option::Option<i32> {
+        self.latest_version_number
+    }
 }
 impl std::fmt::Debug for CreateHostedConfigurationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7719,6 +8170,33 @@ pub struct CreateEnvironmentInput {
     /// define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateEnvironmentInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>A name for the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
+    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+        self.monitors.as_deref()
+    }
+    /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig
+    /// resources. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7787,6 +8265,76 @@ pub struct CreateDeploymentStrategyInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDeploymentStrategyInput {
+    /// <p>A name for the deployment strategy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the deployment strategy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time for a deployment to last.</p>
+    pub fn deployment_duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> i32 {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>The percentage of targets to receive a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> std::option::Option<f32> {
+        self.growth_factor
+    }
+    /// <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the
+    /// following growth types:</p>
+    /// <p>
+    /// <b>Linear</b>: For this type, AppConfig processes the
+    /// deployment by dividing the total number of targets by the value specified for <code>Step
+    /// percentage</code>. For example, a linear deployment that uses a <code>Step
+    /// percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After
+    /// those deployments are complete, the system deploys the configuration to the next 10
+    /// percent. This continues until 100% of the targets have successfully received the
+    /// configuration.</p>
+    ///
+    /// <p>
+    /// <b>Exponential</b>: For this type, AppConfig processes the
+    /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
+    /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
+    /// the number of steps until the configuration is deployed to all targets. For example, if you
+    /// specify a growth factor of 2, then the system rolls out the configuration as
+    /// follows:</p>
+    /// <p>
+    /// <code>2*(2^0)</code>
+    /// </p>
+    /// <p>
+    /// <code>2*(2^1)</code>
+    /// </p>
+    /// <p>
+    /// <code>2*(2^2)</code>
+    /// </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
+    /// targets, 8% of the targets, and continues until the configuration has been deployed to all
+    /// targets.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+    /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
+        self.replicate_to.as_ref()
+    }
+    /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your
+    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentStrategyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentStrategyInput");
@@ -7837,6 +8385,48 @@ pub struct CreateConfigurationProfileInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateConfigurationProfileInput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>A name for the configuration profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the configuration profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM
+    /// Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the
+    /// document name in the format <code>ssm-document://<Document_name></code> or the Amazon
+    /// Resource Name (ARN). For a parameter, specify either the parameter name in the format
+    /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
+    /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
+    /// </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
+    /// LocationUri.</p>
+    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+        self.retrieval_role_arn.as_deref()
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+        self.validators.as_deref()
+    }
+    /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your
+    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateConfigurationProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationProfileInput");
@@ -7864,6 +8454,25 @@ pub struct CreateApplicationInput {
     /// define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateApplicationInput {
+    /// <p>A name for the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig
+    /// resources. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

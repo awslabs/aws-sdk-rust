@@ -6,6 +6,12 @@ pub struct UpdateMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
     pub metric_set_arn: std::option::Option<std::string::String>,
 }
+impl UpdateMetricSetOutput {
+    /// <p>The ARN of the dataset.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMetricSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMetricSetOutput");
@@ -56,6 +62,12 @@ impl UpdateMetricSetOutput {
 pub struct UpdateAnomalyDetectorOutput {
     /// <p>The ARN of the updated detector.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAnomalyDetectorOutput {
+    /// <p>The ARN of the updated detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAnomalyDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -199,6 +211,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The resource's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -264,6 +285,19 @@ pub struct ListMetricSetsOutput {
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
     /// of results, use the token in the next list request. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMetricSetsOutput {
+    /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
+    pub fn metric_set_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricSetSummary]> {
+        self.metric_set_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
+    /// of results, use the token in the next list request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMetricSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -348,6 +382,28 @@ pub struct ListAnomalyGroupTimeSeriesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of anomalous metrics.</p>
     pub time_series_list: std::option::Option<std::vec::Vec<crate::model::TimeSeries>>,
+}
+impl ListAnomalyGroupTimeSeriesOutput {
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>The name of the measure field.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>Timestamps for the anomalous metrics.</p>
+    pub fn timestamp_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.timestamp_list.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of anomalous metrics.</p>
+    pub fn time_series_list(&self) -> std::option::Option<&[crate::model::TimeSeries]> {
+        self.time_series_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAnomalyGroupTimeSeriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -475,6 +531,24 @@ pub struct ListAnomalyGroupSummariesOutput {
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAnomalyGroupSummariesOutput {
+    /// <p>A list of anomaly group summaries.</p>
+    pub fn anomaly_group_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AnomalyGroupSummary]> {
+        self.anomaly_group_summary_list.as_deref()
+    }
+    /// <p>Aggregated details about the anomaly groups.</p>
+    pub fn anomaly_group_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyGroupStatistics> {
+        self.anomaly_group_statistics.as_ref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAnomalyGroupSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnomalyGroupSummariesOutput");
@@ -576,6 +650,19 @@ pub struct ListAnomalyDetectorsOutput {
     /// token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAnomalyDetectorsOutput {
+    /// <p>A list of anomaly detectors in the account in the current region.</p>
+    pub fn anomaly_detector_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AnomalyDetectorSummary]> {
+        self.anomaly_detector_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
+    /// token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAnomalyDetectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnomalyDetectorsOutput");
@@ -658,6 +745,17 @@ pub struct ListAlertsOutput {
     /// token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAlertsOutput {
+    /// <p>Contains information about an alert.</p>
+    pub fn alert_summary_list(&self) -> std::option::Option<&[crate::model::AlertSummary]> {
+        self.alert_summary_list.as_deref()
+    }
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
+    /// token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAlertsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlertsOutput");
@@ -732,6 +830,16 @@ pub struct GetSampleDataOutput {
     pub header_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of records.</p>
     pub sample_rows: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+}
+impl GetSampleDataOutput {
+    /// <p>A list of header labels for the records.</p>
+    pub fn header_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.header_values.as_deref()
+    }
+    /// <p>A list of records.</p>
+    pub fn sample_rows(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.sample_rows.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSampleDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -816,6 +924,18 @@ pub struct GetFeedbackOutput {
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetFeedbackOutput {
+    /// <p>Feedback for an anomalous metric.</p>
+    pub fn anomaly_group_time_series_feedback(
+        &self,
+    ) -> std::option::Option<&[crate::model::TimeSeriesFeedback]> {
+        self.anomaly_group_time_series_feedback.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFeedbackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFeedbackOutput");
@@ -893,6 +1013,12 @@ pub struct GetAnomalyGroupOutput {
     /// <p>Details about the anomaly group.</p>
     pub anomaly_group: std::option::Option<crate::model::AnomalyGroup>,
 }
+impl GetAnomalyGroupOutput {
+    /// <p>Details about the anomaly group.</p>
+    pub fn anomaly_group(&self) -> std::option::Option<&crate::model::AnomalyGroup> {
+        self.anomaly_group.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAnomalyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnomalyGroupOutput");
@@ -967,6 +1093,60 @@ pub struct DescribeMetricSetOutput {
     pub timezone: std::option::Option<std::string::String>,
     /// <p>Contains information about the dataset's source data.</p>
     pub metric_source: std::option::Option<crate::model::MetricSource>,
+}
+impl DescribeMetricSetOutput {
+    /// <p>The ARN of the dataset.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+    /// <p>The ARN of the detector that contains the dataset.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn metric_set_name(&self) -> std::option::Option<&str> {
+        self.metric_set_name.as_deref()
+    }
+    /// <p>The dataset's description.</p>
+    pub fn metric_set_description(&self) -> std::option::Option<&str> {
+        self.metric_set_description.as_deref()
+    }
+    /// <p>The time at which the dataset was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the dataset was last modified.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+    pub fn offset(&self) -> std::option::Option<i32> {
+        self.offset
+    }
+    /// <p>A list of the metrics defined by the dataset.</p>
+    pub fn metric_list(&self) -> std::option::Option<&[crate::model::Metric]> {
+        self.metric_list.as_deref()
+    }
+    /// <p>Contains information about the column used for tracking time in your source data.</p>
+    pub fn timestamp_column(&self) -> std::option::Option<&crate::model::TimestampColumn> {
+        self.timestamp_column.as_ref()
+    }
+    /// <p>A list of the dimensions chosen for analysis.</p>
+    pub fn dimension_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.dimension_list.as_deref()
+    }
+    /// <p>The interval at which the data will be analyzed for anomalies.</p>
+    pub fn metric_set_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.metric_set_frequency.as_ref()
+    }
+    /// <p>The time zone in which the dataset's data was recorded.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>Contains information about the dataset's source data.</p>
+    pub fn metric_source(&self) -> std::option::Option<&crate::model::MetricSource> {
+        self.metric_source.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeMetricSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1233,6 +1413,46 @@ pub struct DescribeAnomalyDetectorOutput {
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAnomalyDetectorOutput {
+    /// <p>The ARN of the detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The name of the detector.</p>
+    pub fn anomaly_detector_name(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_name.as_deref()
+    }
+    /// <p>A description of the detector.</p>
+    pub fn anomaly_detector_description(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_description.as_deref()
+    }
+    /// <p>Contains information about the detector's configuration.</p>
+    pub fn anomaly_detector_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyDetectorConfigSummary> {
+        self.anomaly_detector_config.as_ref()
+    }
+    /// <p>The time at which the detector was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the detector was last modified.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The status of the detector.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyDetectorStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason that the detector failed, if any.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The ARN of the KMS key to use to encrypt your data.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAnomalyDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnomalyDetectorOutput");
@@ -1421,6 +1641,16 @@ pub struct DescribeAnomalyDetectionExecutionsOutput {
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAnomalyDetectionExecutionsOutput {
+    /// <p>A list of detection jobs.</p>
+    pub fn execution_list(&self) -> std::option::Option<&[crate::model::ExecutionStatus]> {
+        self.execution_list.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAnomalyDetectionExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnomalyDetectionExecutionsOutput");
@@ -1491,6 +1721,12 @@ impl DescribeAnomalyDetectionExecutionsOutput {
 pub struct DescribeAlertOutput {
     /// <p>Contains information about an alert.</p>
     pub alert: std::option::Option<crate::model::Alert>,
+}
+impl DescribeAlertOutput {
+    /// <p>Contains information about an alert.</p>
+    pub fn alert(&self) -> std::option::Option<&crate::model::Alert> {
+        self.alert.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAlertOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1598,6 +1834,12 @@ pub struct CreateMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
     pub metric_set_arn: std::option::Option<std::string::String>,
 }
+impl CreateMetricSetOutput {
+    /// <p>The ARN of the dataset.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMetricSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMetricSetOutput");
@@ -1649,6 +1891,12 @@ pub struct CreateAnomalyDetectorOutput {
     /// <p>The ARN of the detector.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
+impl CreateAnomalyDetectorOutput {
+    /// <p>The ARN of the detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAnomalyDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAnomalyDetectorOutput");
@@ -1699,6 +1947,12 @@ impl CreateAnomalyDetectorOutput {
 pub struct CreateAlertOutput {
     /// <p>The ARN of the alert.</p>
     pub alert_arn: std::option::Option<std::string::String>,
+}
+impl CreateAlertOutput {
+    /// <p>The ARN of the alert.</p>
+    pub fn alert_arn(&self) -> std::option::Option<&str> {
+        self.alert_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAlertOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

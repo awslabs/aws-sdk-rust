@@ -156,6 +156,12 @@ pub struct PutMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl PutMetricStreamOutput {
+    /// <p>The ARN of the metric stream.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutMetricStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMetricStreamOutput");
@@ -297,6 +303,18 @@ pub struct PutDashboardOutput {
     pub dashboard_validation_messages:
         std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
 }
+impl PutDashboardOutput {
+    /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
+    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be
+    /// created or modified, but some elements of the dashboard
+    /// might not render.</p>
+    /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
+    pub fn dashboard_validation_messages(
+        &self,
+    ) -> std::option::Option<&[crate::model::DashboardValidationMessage]> {
+        self.dashboard_validation_messages.as_deref()
+    }
+}
 impl std::fmt::Debug for PutDashboardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDashboardOutput");
@@ -429,6 +447,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The list of tag keys and values associated with the resource you specified.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -486,6 +510,17 @@ pub struct ListMetricStreamsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The array of metric stream information.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::MetricStreamEntry>>,
+}
+impl ListMetricStreamsOutput {
+    /// <p>The token that marks the start of the next batch of returned results. You can use this
+    /// token in a subsequent operation to get the next batch of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The array of metric stream information.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::MetricStreamEntry]> {
+        self.entries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMetricStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -561,6 +596,16 @@ pub struct ListMetricsOutput {
     /// <p>The token that marks the start of the next batch of returned results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMetricsOutput {
+    /// <p>The metrics that match your request. </p>
+    pub fn metrics(&self) -> std::option::Option<&[crate::model::Metric]> {
+        self.metrics.as_deref()
+    }
+    /// <p>The token that marks the start of the next batch of returned results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMetricsOutput");
@@ -633,6 +678,16 @@ pub struct ListDashboardsOutput {
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDashboardsOutput {
+    /// <p>The list of matching dashboards.</p>
+    pub fn dashboard_entries(&self) -> std::option::Option<&[crate::model::DashboardEntry]> {
+        self.dashboard_entries.as_deref()
+    }
+    /// <p>The token that marks the start of the next batch of returned results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDashboardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDashboardsOutput");
@@ -703,6 +758,12 @@ impl ListDashboardsOutput {
 pub struct GetMetricWidgetImageOutput {
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
     pub metric_widget_image: std::option::Option<aws_smithy_types::Blob>,
+}
+impl GetMetricWidgetImageOutput {
+    /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
+    pub fn metric_widget_image(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.metric_widget_image.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMetricWidgetImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -778,6 +839,54 @@ pub struct GetMetricStreamOutput {
     pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p></p>
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
+}
+impl GetMetricStreamOutput {
+    /// <p>The ARN of the metric stream.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the metric stream.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If this array of metric namespaces is present, then these
+    /// namespaces are the only
+    /// metric namespaces that are streamed by this metric stream.</p>
+    pub fn include_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
+        self.include_filters.as_deref()
+    }
+    /// <p>If this array of metric namespaces is present, then these namespaces are the only
+    /// metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in
+    /// the account are streamed by this metric stream.</p>
+    pub fn exclude_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
+        self.exclude_filters.as_deref()
+    }
+    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by
+    /// this metric stream.</p>
+    pub fn firehose_arn(&self) -> std::option::Option<&str> {
+        self.firehose_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that is used by this metric stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The state of the metric stream. The possible values are <code>running</code>
+    /// and <code>stopped</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The date that the metric stream was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date of the most recent update to the metric stream's configuration.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+    /// <p></p>
+    pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
+        self.output_format.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMetricStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -993,6 +1102,16 @@ pub struct GetMetricStatisticsOutput {
     /// <p>The data points for the specified metric.</p>
     pub datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
 }
+impl GetMetricStatisticsOutput {
+    /// <p>A label for the specified metric.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The data points for the specified metric.</p>
+    pub fn datapoints(&self) -> std::option::Option<&[crate::model::Datapoint]> {
+        self.datapoints.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMetricStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMetricStatisticsOutput");
@@ -1071,6 +1190,25 @@ pub struct GetMetricDataOutput {
     /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
     /// about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
+}
+impl GetMetricDataOutput {
+    /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
+    pub fn metric_data_results(&self) -> std::option::Option<&[crate::model::MetricDataResult]> {
+        self.metric_data_results.as_deref()
+    }
+    /// <p>A token that marks the next batch of returned results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
+    /// An example of a message that
+    /// might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the
+    /// operation as possible is still executed.</p>
+    /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
+    /// about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::MessageData]> {
+        self.messages.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1190,6 +1328,36 @@ pub struct GetInsightRuleReportOutput {
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
     pub metric_datapoints:
         std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
+}
+impl GetInsightRuleReportOutput {
+    /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors.
+    /// If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+    pub fn key_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.key_labels.as_deref()
+    }
+    /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
+    pub fn aggregation_statistic(&self) -> std::option::Option<&str> {
+        self.aggregation_statistic.as_deref()
+    }
+    /// <p>The sum of the values from all individual contributors that match the rule.</p>
+    pub fn aggregate_value(&self) -> std::option::Option<f64> {
+        self.aggregate_value
+    }
+    /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
+    pub fn approximate_unique_count(&self) -> std::option::Option<i64> {
+        self.approximate_unique_count
+    }
+    /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values
+    /// for the keys counts as a unique contributor.</p>
+    pub fn contributors(&self) -> std::option::Option<&[crate::model::InsightRuleContributor]> {
+        self.contributors.as_deref()
+    }
+    /// <p>A time series of metric data points that matches the time period in the rule request.</p>
+    pub fn metric_datapoints(
+        &self,
+    ) -> std::option::Option<&[crate::model::InsightRuleMetricDatapoint]> {
+        self.metric_datapoints.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInsightRuleReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1352,6 +1520,22 @@ pub struct GetDashboardOutput {
     /// <p>The name of the dashboard.</p>
     pub dashboard_name: std::option::Option<std::string::String>,
 }
+impl GetDashboardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+        self.dashboard_arn.as_deref()
+    }
+    /// <p>The detailed information about the dashboard, including what widgets are included and their location
+    /// on the dashboard. For more information about the <code>DashboardBody</code> syntax,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+    pub fn dashboard_body(&self) -> std::option::Option<&str> {
+        self.dashboard_body.as_deref()
+    }
+    /// <p>The name of the dashboard.</p>
+    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+        self.dashboard_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDashboardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDashboardOutput");
@@ -1439,6 +1623,12 @@ pub struct EnableInsightRulesOutput {
     /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
+impl EnableInsightRulesOutput {
+    /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+        self.failures.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableInsightRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableInsightRulesOutput");
@@ -1525,6 +1715,12 @@ impl EnableAlarmActionsOutput {
 pub struct DisableInsightRulesOutput {
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
+}
+impl DisableInsightRulesOutput {
+    /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableInsightRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1615,6 +1811,16 @@ pub struct DescribeInsightRulesOutput {
     /// <p>The rules returned by the operation.</p>
     pub insight_rules: std::option::Option<std::vec::Vec<crate::model::InsightRule>>,
 }
+impl DescribeInsightRulesOutput {
+    /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.      </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The rules returned by the operation.</p>
+    pub fn insight_rules(&self) -> std::option::Option<&[crate::model::InsightRule]> {
+        self.insight_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInsightRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInsightRulesOutput");
@@ -1687,6 +1893,17 @@ pub struct DescribeAnomalyDetectorsOutput {
     /// <p>A token that you can use in a subsequent operation to
     /// retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAnomalyDetectorsOutput {
+    /// <p>The list of anomaly detection models returned by the operation.</p>
+    pub fn anomaly_detectors(&self) -> std::option::Option<&[crate::model::AnomalyDetector]> {
+        self.anomaly_detectors.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent operation to
+    /// retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAnomalyDetectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1764,6 +1981,12 @@ pub struct DescribeAlarmsForMetricOutput {
     /// <p>The information for each alarm with the specified metric.</p>
     pub metric_alarms: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
 }
+impl DescribeAlarmsForMetricOutput {
+    /// <p>The information for each alarm with the specified metric.</p>
+    pub fn metric_alarms(&self) -> std::option::Option<&[crate::model::MetricAlarm]> {
+        self.metric_alarms.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAlarmsForMetricOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlarmsForMetricOutput");
@@ -1824,6 +2047,20 @@ pub struct DescribeAlarmsOutput {
     pub metric_alarms: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAlarmsOutput {
+    /// <p>The information about any composite alarms returned by the operation.</p>
+    pub fn composite_alarms(&self) -> std::option::Option<&[crate::model::CompositeAlarm]> {
+        self.composite_alarms.as_deref()
+    }
+    /// <p>The information about any metric alarms returned by the operation.</p>
+    pub fn metric_alarms(&self) -> std::option::Option<&[crate::model::MetricAlarm]> {
+        self.metric_alarms.as_deref()
+    }
+    /// <p>The token that marks the start of the next batch of returned results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAlarmsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1919,6 +2156,16 @@ pub struct DescribeAlarmHistoryOutput {
     pub alarm_history_items: std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAlarmHistoryOutput {
+    /// <p>The alarm histories, in JSON format.</p>
+    pub fn alarm_history_items(&self) -> std::option::Option<&[crate::model::AlarmHistoryItem]> {
+        self.alarm_history_items.as_deref()
+    }
+    /// <p>The token that marks the start of the next batch of returned results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAlarmHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2023,6 +2270,12 @@ impl DeleteMetricStreamOutput {
 pub struct DeleteInsightRulesOutput {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
+}
+impl DeleteInsightRulesOutput {
+    /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInsightRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

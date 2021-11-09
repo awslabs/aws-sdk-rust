@@ -7,6 +7,12 @@ pub struct UploadSshPublicKeyOutput {
     /// <p>Contains information about the SSH public key.</p>
     pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
+impl UploadSshPublicKeyOutput {
+    /// <p>Contains information about the SSH public key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&crate::model::SshPublicKey> {
+        self.ssh_public_key.as_ref()
+    }
+}
 impl std::fmt::Debug for UploadSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadSshPublicKeyOutput");
@@ -58,6 +64,12 @@ impl UploadSshPublicKeyOutput {
 pub struct UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
     pub certificate: std::option::Option<crate::model::SigningCertificate>,
+}
+impl UploadSigningCertificateOutput {
+    /// <p>Information about the certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::SigningCertificate> {
+        self.certificate.as_ref()
+    }
 }
 impl std::fmt::Debug for UploadSigningCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -115,6 +127,21 @@ pub struct UploadServerCertificateOutput {
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UploadServerCertificateOutput {
+    /// <p>The meta information of the uploaded server certificate without its certificate body,
+    /// certificate chain, and private key.</p>
+    pub fn server_certificate_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerCertificateMetadata> {
+        self.server_certificate_metadata.as_ref()
+    }
+    /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key.
+    /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UploadServerCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -353,6 +380,12 @@ pub struct UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
     pub saml_provider_arn: std::option::Option<std::string::String>,
 }
+impl UpdateSamlProviderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSamlProviderOutput");
@@ -403,6 +436,12 @@ impl UpdateSamlProviderOutput {
 pub struct UpdateRoleDescriptionOutput {
     /// <p>A structure that contains details about the modified role.</p>
     pub role: std::option::Option<crate::model::Role>,
+}
+impl UpdateRoleDescriptionOutput {
+    /// <p>A structure that contains details about the modified role.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+        self.role.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRoleDescriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1152,6 +1191,27 @@ pub struct SimulatePrincipalPolicyOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl SimulatePrincipalPolicyOutput {
+    /// <p>The results of the simulation.</p>
+    pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
+        self.evaluation_results.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for SimulatePrincipalPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimulatePrincipalPolicyOutput");
@@ -1264,6 +1324,27 @@ pub struct SimulateCustomPolicyOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl SimulateCustomPolicyOutput {
+    /// <p>The results of the simulation.</p>
+    pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
+        self.evaluation_results.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for SimulateCustomPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1460,6 +1541,19 @@ pub struct ResetServiceSpecificCredentialOutput {
     /// password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
     pub service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
+}
+impl ResetServiceSpecificCredentialOutput {
+    /// <p>A structure with details about the updated service-specific credential, including the
+    /// new password.</p>
+    /// <important>
+    /// <p>This is the <b>only</b> time that you can access the
+    /// password. You cannot recover the password later, but you can reset it again.</p>
+    /// </important>
+    pub fn service_specific_credential(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSpecificCredential> {
+        self.service_specific_credential.as_ref()
+    }
 }
 impl std::fmt::Debug for ResetServiceSpecificCredentialOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1783,6 +1877,28 @@ pub struct ListVirtualMfaDevicesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListVirtualMfaDevicesOutput {
+    /// <p> The list of virtual MFA devices in the current account that match the
+    /// <code>AssignmentStatus</code> value that was passed in the request.</p>
+    pub fn virtual_mfa_devices(&self) -> std::option::Option<&[crate::model::VirtualMfaDevice]> {
+        self.virtual_mfa_devices.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and
+    /// contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVirtualMfaDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualMfaDevicesOutput");
@@ -1897,6 +2013,27 @@ pub struct ListUserTagsOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListUserTagsOutput {
+    /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUserTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUserTagsOutput");
@@ -2004,6 +2141,27 @@ pub struct ListUsersOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListUsersOutput {
+    /// <p>A list of users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2114,6 +2272,27 @@ pub struct ListUserPoliciesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListUserPoliciesOutput {
+    /// <p>A list of policy names.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUserPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUserPoliciesOutput");
@@ -2222,6 +2401,27 @@ pub struct ListSshPublicKeysOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListSshPublicKeysOutput {
+    /// <p>A list of the SSH public keys assigned to IAM user.</p>
+    pub fn ssh_public_keys(&self) -> std::option::Option<&[crate::model::SshPublicKeyMetadata]> {
+        self.ssh_public_keys.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSshPublicKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2336,6 +2536,27 @@ pub struct ListSigningCertificatesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListSigningCertificatesOutput {
+    /// <p>A list of the user's signing certificate information.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::SigningCertificate]> {
+        self.certificates.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSigningCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSigningCertificatesOutput");
@@ -2436,6 +2657,15 @@ pub struct ListServiceSpecificCredentialsOutput {
     pub service_specific_credentials:
         std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
 }
+impl ListServiceSpecificCredentialsOutput {
+    /// <p>A list of structures that each contain details about a service-specific
+    /// credential.</p>
+    pub fn service_specific_credentials(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceSpecificCredentialMetadata]> {
+        self.service_specific_credentials.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServiceSpecificCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServiceSpecificCredentialsOutput");
@@ -2515,6 +2745,28 @@ pub struct ListServerCertificateTagsOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListServerCertificateTagsOutput {
+    /// <p>The list of tags that are currently attached to the IAM server certificate.
+    /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServerCertificateTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2627,6 +2879,29 @@ pub struct ListServerCertificatesOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListServerCertificatesOutput {
+    /// <p>A list of server certificates.</p>
+    pub fn server_certificate_metadata_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerCertificateMetadata]> {
+        self.server_certificate_metadata_list.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServerCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2744,6 +3019,28 @@ pub struct ListSamlProviderTagsOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListSamlProviderTagsOutput {
+    /// <p>The list of tags that are currently attached to the Security Assertion Markup Language
+    /// (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSamlProviderTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSamlProviderTagsOutput");
@@ -2845,6 +3142,15 @@ pub struct ListSamlProvidersOutput {
     /// account.</p>
     pub saml_provider_list: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
 }
+impl ListSamlProvidersOutput {
+    /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services
+    /// account.</p>
+    pub fn saml_provider_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SamlProviderListEntry]> {
+        self.saml_provider_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSamlProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSamlProvidersOutput");
@@ -2918,6 +3224,27 @@ pub struct ListRoleTagsOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListRoleTagsOutput {
+    /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoleTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3027,6 +3354,27 @@ pub struct ListRolesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListRolesOutput {
+    /// <p>A list of roles.</p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.roles.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRolesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRolesOutput");
@@ -3135,6 +3483,27 @@ pub struct ListRolePoliciesOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListRolePoliciesOutput {
+    /// <p>A list of policy names.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRolePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3246,6 +3615,29 @@ pub struct ListPolicyVersionsOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListPolicyVersionsOutput {
+    /// <p>A list of policy versions.</p>
+    /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+    /// policies</a> in the <i>IAM User Guide</i>.</p>
+    pub fn versions(&self) -> std::option::Option<&[crate::model::PolicyVersion]> {
+        self.versions.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPolicyVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3360,6 +3752,28 @@ pub struct ListPolicyTagsOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListPolicyTagsOutput {
+    /// <p>The list of tags that are currently attached to the IAM customer managed policy.
+    /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPolicyTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPolicyTagsOutput");
@@ -3471,6 +3885,30 @@ pub struct ListPoliciesGrantingServiceAccessOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListPoliciesGrantingServiceAccessOutput {
+    /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about
+    /// the permissions policies attached to the specified identity (user, group, or
+    /// role).</p>
+    pub fn policies_granting_service_access(
+        &self,
+    ) -> std::option::Option<&[crate::model::ListPoliciesGrantingServiceAccessEntry]> {
+        self.policies_granting_service_access.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your results were
+    /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. We recommend that you check
+    /// <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPoliciesGrantingServiceAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3593,6 +4031,27 @@ pub struct ListPoliciesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListPoliciesOutput {
+    /// <p>A list of policies.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
+        self.policies.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoliciesOutput");
@@ -3702,6 +4161,28 @@ pub struct ListOpenIdConnectProviderTagsOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListOpenIdConnectProviderTagsOutput {
+    /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity
+    /// provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOpenIdConnectProviderTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOpenIdConnectProviderTagsOutput");
@@ -3803,6 +4284,14 @@ pub struct ListOpenIdConnectProvidersOutput {
     pub open_id_connect_provider_list:
         std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
 }
+impl ListOpenIdConnectProvidersOutput {
+    /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
+    pub fn open_id_connect_provider_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::OpenIdConnectProviderListEntry]> {
+        self.open_id_connect_provider_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOpenIdConnectProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOpenIdConnectProvidersOutput");
@@ -3877,6 +4366,27 @@ pub struct ListMfaDeviceTagsOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListMfaDeviceTagsOutput {
+    /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMfaDeviceTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3987,6 +4497,27 @@ pub struct ListMfaDevicesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListMfaDevicesOutput {
+    /// <p>A list of MFA devices.</p>
+    pub fn mfa_devices(&self) -> std::option::Option<&[crate::model::MfaDevice]> {
+        self.mfa_devices.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMfaDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMfaDevicesOutput");
@@ -4094,6 +4625,27 @@ pub struct ListInstanceProfileTagsOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListInstanceProfileTagsOutput {
+    /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstanceProfileTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4203,6 +4755,27 @@ pub struct ListInstanceProfilesForRoleOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListInstanceProfilesForRoleOutput {
+    /// <p>A list of instance profiles.</p>
+    pub fn instance_profiles(&self) -> std::option::Option<&[crate::model::InstanceProfile]> {
+        self.instance_profiles.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstanceProfilesForRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4317,6 +4890,27 @@ pub struct ListInstanceProfilesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListInstanceProfilesOutput {
+    /// <p>A list of instance profiles.</p>
+    pub fn instance_profiles(&self) -> std::option::Option<&[crate::model::InstanceProfile]> {
+        self.instance_profiles.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstanceProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceProfilesOutput");
@@ -4430,6 +5024,27 @@ pub struct ListGroupsForUserOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListGroupsForUserOutput {
+    /// <p>A list of groups.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.groups.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupsForUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsForUserOutput");
@@ -4537,6 +5152,27 @@ pub struct ListGroupsOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListGroupsOutput {
+    /// <p>A list of groups.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.groups.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4648,6 +5284,29 @@ pub struct ListGroupPoliciesOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListGroupPoliciesOutput {
+    /// <p>A list of policy names.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4765,6 +5424,35 @@ pub struct ListEntitiesForPolicyOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListEntitiesForPolicyOutput {
+    /// <p>A list of IAM groups that the policy is attached to.</p>
+    pub fn policy_groups(&self) -> std::option::Option<&[crate::model::PolicyGroup]> {
+        self.policy_groups.as_deref()
+    }
+    /// <p>A list of IAM users that the policy is attached to.</p>
+    pub fn policy_users(&self) -> std::option::Option<&[crate::model::PolicyUser]> {
+        self.policy_users.as_deref()
+    }
+    /// <p>A list of IAM roles that the policy is attached to.</p>
+    pub fn policy_roles(&self) -> std::option::Option<&[crate::model::PolicyRole]> {
+        self.policy_roles.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEntitiesForPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4919,6 +5607,27 @@ pub struct ListAttachedUserPoliciesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListAttachedUserPoliciesOutput {
+    /// <p>A list of the attached policies.</p>
+    pub fn attached_policies(&self) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+        self.attached_policies.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAttachedUserPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttachedUserPoliciesOutput");
@@ -5029,6 +5738,27 @@ pub struct ListAttachedRolePoliciesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListAttachedRolePoliciesOutput {
+    /// <p>A list of the attached policies.</p>
+    pub fn attached_policies(&self) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+        self.attached_policies.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAttachedRolePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttachedRolePoliciesOutput");
@@ -5138,6 +5868,27 @@ pub struct ListAttachedGroupPoliciesOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListAttachedGroupPoliciesOutput {
+    /// <p>A list of the attached policies.</p>
+    pub fn attached_policies(&self) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+        self.attached_policies.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAttachedGroupPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5250,6 +6001,28 @@ pub struct ListAccountAliasesOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListAccountAliasesOutput {
+    /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per
+    /// account.</p>
+    pub fn account_aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_aliases.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccountAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountAliasesOutput");
@@ -5361,6 +6134,27 @@ pub struct ListAccessKeysOutput {
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListAccessKeysOutput {
+    /// <p>A list of objects containing metadata about the access keys.</p>
+    pub fn access_key_metadata(&self) -> std::option::Option<&[crate::model::AccessKeyMetadata]> {
+        self.access_key_metadata.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccessKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessKeysOutput");
@@ -5470,6 +6264,23 @@ pub struct GetUserPolicyOutput {
     /// a YAML policy to JSON format before submitting it to IAM.</p>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl GetUserPolicyOutput {
+    /// <p>The user the policy is associated with.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy document.</p>
+    ///
+    /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
+    /// a YAML policy to JSON format before submitting it to IAM.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUserPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserPolicyOutput");
@@ -5568,6 +6379,27 @@ pub struct GetUserOutput {
     /// </important>
     pub user: std::option::Option<crate::model::User>,
 }
+impl GetUserOutput {
+    /// <p>A structure containing details about the IAM user.</p>
+    /// <important>
+    /// <p>Due to a service issue, password last used data does not include password use from
+    /// May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used
+    /// dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+    /// report</a>, and returned by this operation. If users signed in during the
+    /// affected time, the password last used date that is returned is the date the user
+    /// last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08
+    /// PDT, the returned password last used date is accurate.</p>
+    /// <p>You can use password last used information to identify unused credentials for
+    /// deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last
+    /// 90 days. In cases like this, we recommend that you adjust your evaluation window to
+    /// include dates after May 23, 2018. Alternatively, if your users use access keys to
+    /// access Amazon Web Services programmatically you can refer to access key last used information
+    /// because it is accurate for all dates. </p>
+    /// </important>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserOutput");
@@ -5645,6 +6477,12 @@ pub struct GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
     pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
+impl GetSshPublicKeyOutput {
+    /// <p>A structure containing details about the SSH public key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&crate::model::SshPublicKey> {
+        self.ssh_public_key.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSshPublicKeyOutput");
@@ -5697,6 +6535,16 @@ pub struct GetServiceLinkedRoleDeletionStatusOutput {
     pub status: std::option::Option<crate::model::DeletionTaskStatusType>,
     /// <p>An object that contains details about the reason the deletion failed.</p>
     pub reason: std::option::Option<crate::model::DeletionTaskFailureReasonType>,
+}
+impl GetServiceLinkedRoleDeletionStatusOutput {
+    /// <p>The status of the deletion.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DeletionTaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>An object that contains details about the reason the deletion failed.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::DeletionTaskFailureReasonType> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for GetServiceLinkedRoleDeletionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5789,6 +6637,49 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>An object that contains details about the reason the operation failed.</p>
     pub error: std::option::Option<crate::model::ErrorDetails>,
+}
+impl GetServiceLastAccessedDetailsWithEntitiesOutput {
+    /// <p>The status of the job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatusType> {
+        self.job_status.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the report job was created.</p>
+    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.job_creation_date.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the generated report job was completed or failed.</p>
+    /// <p>This field is null if the job is still in progress, as indicated by a job status value
+    /// of <code>IN_PROGRESS</code>.</p>
+    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.job_completion_date.as_ref()
+    }
+    /// <p>An <code>EntityDetailsList</code> object that contains details about when an IAM
+    /// entity (user or role) used group or policy permissions in an attempt to access the
+    /// specified Amazon Web Services service.</p>
+    pub fn entity_details_list(&self) -> std::option::Option<&[crate::model::EntityDetails]> {
+        self.entity_details_list.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>An object that contains details about the reason the operation failed.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for GetServiceLastAccessedDetailsWithEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5994,6 +6885,58 @@ pub struct GetServiceLastAccessedDetailsOutput {
     /// <p>An object that contains details about the reason the operation failed.</p>
     pub error: std::option::Option<crate::model::ErrorDetails>,
 }
+impl GetServiceLastAccessedDetailsOutput {
+    /// <p>The status of the job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatusType> {
+        self.job_status.as_ref()
+    }
+    /// <p>The type of job. Service jobs return information about when each service was last
+    /// accessed. Action jobs also include information about when tracked actions within the
+    /// service were last accessed.</p>
+    pub fn job_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AccessAdvisorUsageGranularityType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the report job was created.</p>
+    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.job_creation_date.as_ref()
+    }
+    /// <p> A <code>ServiceLastAccessed</code> object that contains details about the most recent
+    /// attempt to access the service.</p>
+    pub fn services_last_accessed(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceLastAccessed]> {
+        self.services_last_accessed.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the generated report job was completed or failed.</p>
+    /// <p>This field is null if the job is still in progress, as indicated by a job status value
+    /// of <code>IN_PROGRESS</code>.</p>
+    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.job_completion_date.as_ref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>An object that contains details about the reason the operation failed.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServiceLastAccessedDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceLastAccessedDetailsOutput");
@@ -6187,6 +7130,12 @@ pub struct GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
     pub server_certificate: std::option::Option<crate::model::ServerCertificate>,
 }
+impl GetServerCertificateOutput {
+    /// <p>A structure containing details about the server certificate.</p>
+    pub fn server_certificate(&self) -> std::option::Option<&crate::model::ServerCertificate> {
+        self.server_certificate.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServerCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServerCertificateOutput");
@@ -6246,6 +7195,26 @@ pub struct GetSamlProviderOutput {
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GetSamlProviderOutput {
+    /// <p>The XML metadata document that includes information about an identity provider.</p>
+    pub fn saml_metadata_document(&self) -> std::option::Option<&str> {
+        self.saml_metadata_document.as_deref()
+    }
+    /// <p>The date and time when the SAML provider was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The expiration date and time for the SAML provider.</p>
+    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.valid_until.as_ref()
+    }
+    /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key.
+    /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6363,6 +7332,22 @@ pub struct GetRolePolicyOutput {
     /// a YAML policy to JSON format before submitting it to IAM.</p>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl GetRolePolicyOutput {
+    /// <p>The role the policy is associated with.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy document.</p>
+    /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
+    /// a YAML policy to JSON format before submitting it to IAM.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRolePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRolePolicyOutput");
@@ -6444,6 +7429,12 @@ pub struct GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
     pub role: std::option::Option<crate::model::Role>,
 }
+impl GetRoleOutput {
+    /// <p>A structure containing details about the IAM role.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+        self.role.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoleOutput");
@@ -6490,6 +7481,12 @@ impl GetRoleOutput {
 pub struct GetPolicyVersionOutput {
     /// <p>A structure containing details about the policy version.</p>
     pub policy_version: std::option::Option<crate::model::PolicyVersion>,
+}
+impl GetPolicyVersionOutput {
+    /// <p>A structure containing details about the policy version.</p>
+    pub fn policy_version(&self) -> std::option::Option<&crate::model::PolicyVersion> {
+        self.policy_version.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPolicyVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6541,6 +7538,12 @@ impl GetPolicyVersionOutput {
 pub struct GetPolicyOutput {
     /// <p>A structure containing details about the policy.</p>
     pub policy: std::option::Option<crate::model::Policy>,
+}
+impl GetPolicyOutput {
+    /// <p>A structure containing details about the policy.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6620,6 +7623,59 @@ pub struct GetOrganizationsAccessReportOutput {
     /// <p>Contains information about the reason that the operation failed.</p>
     /// <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
+}
+impl GetOrganizationsAccessReportOutput {
+    /// <p>The status of the job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatusType> {
+        self.job_status.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the report job was created.</p>
+    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.job_creation_date.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the generated report job was completed or failed.</p>
+    /// <p>This field is null if the job is still in progress, as indicated by a job status value
+    /// of <code>IN_PROGRESS</code>.</p>
+    pub fn job_completion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.job_completion_date.as_ref()
+    }
+    /// <p>The number of services that the applicable SCPs allow account principals to
+    /// access.</p>
+    pub fn number_of_services_accessible(&self) -> std::option::Option<i32> {
+        self.number_of_services_accessible
+    }
+    /// <p>The number of services that account principals are allowed but did not attempt to
+    /// access.</p>
+    pub fn number_of_services_not_accessed(&self) -> std::option::Option<i32> {
+        self.number_of_services_not_accessed
+    }
+    /// <p>An object that contains details about the most recent attempt to access the
+    /// service.</p>
+    pub fn access_details(&self) -> std::option::Option<&[crate::model::AccessDetail]> {
+        self.access_details.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Contains information about the reason that the operation failed.</p>
+    /// <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
+    pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error_details.as_ref()
+    }
 }
 impl std::fmt::Debug for GetOrganizationsAccessReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6851,6 +7907,34 @@ pub struct GetOpenIdConnectProviderOutput {
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl GetOpenIdConnectProviderOutput {
+    /// <p>The URL that the IAM OIDC provider resource object is associated with. For more
+    /// information, see <a>CreateOpenIDConnectProvider</a>.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>A list of client IDs (also known as audiences) that are associated with the specified
+    /// IAM OIDC provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>.</p>
+    pub fn client_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.client_id_list.as_deref()
+    }
+    /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC
+    /// provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    pub fn thumbprint_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.thumbprint_list.as_deref()
+    }
+    /// <p>The date and time when the IAM OIDC provider resource object was created in the
+    /// Amazon Web Services account.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
+    /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpenIdConnectProviderOutput");
@@ -6995,6 +8079,13 @@ pub struct GetLoginProfileOutput {
     /// user.</p>
     pub login_profile: std::option::Option<crate::model::LoginProfile>,
 }
+impl GetLoginProfileOutput {
+    /// <p>A structure containing the user name and the profile creation date for the
+    /// user.</p>
+    pub fn login_profile(&self) -> std::option::Option<&crate::model::LoginProfile> {
+        self.login_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLoginProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoginProfileOutput");
@@ -7048,6 +8139,12 @@ impl GetLoginProfileOutput {
 pub struct GetInstanceProfileOutput {
     /// <p>A structure containing details about the instance profile.</p>
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
+}
+impl GetInstanceProfileOutput {
+    /// <p>A structure containing details about the instance profile.</p>
+    pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
+        self.instance_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for GetInstanceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7107,6 +8204,23 @@ pub struct GetGroupPolicyOutput {
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
     /// a YAML policy to JSON format before submitting it to IAM.</p>
     pub policy_document: std::option::Option<std::string::String>,
+}
+impl GetGroupPolicyOutput {
+    /// <p>The group the policy is associated with.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy document.</p>
+    ///
+    /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
+    /// a YAML policy to JSON format before submitting it to IAM.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7203,6 +8317,31 @@ pub struct GetGroupOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl GetGroupOutput {
+    /// <p>A structure that contains details about the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+    /// <p>A list of users in the group.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7319,6 +8458,20 @@ pub struct GetCredentialReportOutput {
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
     pub generated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetCredentialReportOutput {
+    /// <p>Contains the credential report. The report is Base64-encoded.</p>
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.content.as_ref()
+    }
+    /// <p>The format (MIME type) of the credential report.</p>
+    pub fn report_format(&self) -> std::option::Option<&crate::model::ReportFormatType> {
+        self.report_format.as_ref()
+    }
+    /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
+    pub fn generated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.generated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCredentialReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCredentialReportOutput");
@@ -7399,6 +8552,12 @@ pub struct GetContextKeysForPrincipalPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     pub context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetContextKeysForPrincipalPolicyOutput {
+    /// <p>The list of context keys that are referenced in the input policies.</p>
+    pub fn context_key_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.context_key_names.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContextKeysForPrincipalPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContextKeysForPrincipalPolicyOutput");
@@ -7455,6 +8614,12 @@ impl GetContextKeysForPrincipalPolicyOutput {
 pub struct GetContextKeysForCustomPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     pub context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetContextKeysForCustomPolicyOutput {
+    /// <p>The list of context keys that are referenced in the input policies.</p>
+    pub fn context_key_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.context_key_names.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContextKeysForCustomPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7515,6 +8680,15 @@ pub struct GetAccountSummaryOutput {
     /// IAM quotas.</p>
     pub summary_map:
         std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
+}
+impl GetAccountSummaryOutput {
+    /// <p>A set of key–value pairs containing information about IAM entity usage and
+    /// IAM quotas.</p>
+    pub fn summary_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::SummaryKeyType, i32>> {
+        self.summary_map.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7582,6 +8756,12 @@ impl GetAccountSummaryOutput {
 pub struct GetAccountPasswordPolicyOutput {
     /// <p>A structure that contains details about the account's password policy.</p>
     pub password_policy: std::option::Option<crate::model::PasswordPolicy>,
+}
+impl GetAccountPasswordPolicyOutput {
+    /// <p>A structure that contains details about the account's password policy.</p>
+    pub fn password_policy(&self) -> std::option::Option<&crate::model::PasswordPolicy> {
+        self.password_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountPasswordPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7651,6 +8831,39 @@ pub struct GetAccountAuthorizationDetailsOutput {
     /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
     /// pagination request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl GetAccountAuthorizationDetailsOutput {
+    /// <p>A list containing information about IAM users.</p>
+    pub fn user_detail_list(&self) -> std::option::Option<&[crate::model::UserDetail]> {
+        self.user_detail_list.as_deref()
+    }
+    /// <p>A list containing information about IAM groups.</p>
+    pub fn group_detail_list(&self) -> std::option::Option<&[crate::model::GroupDetail]> {
+        self.group_detail_list.as_deref()
+    }
+    /// <p>A list containing information about IAM roles.</p>
+    pub fn role_detail_list(&self) -> std::option::Option<&[crate::model::RoleDetail]> {
+        self.role_detail_list.as_deref()
+    }
+    /// <p>A list containing information about managed policies.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::ManagedPolicyDetail]> {
+        self.policies.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your
+    /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+    /// request parameter to retrieve more items. Note that IAM might return fewer than the
+    /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+    /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+    /// results.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+    /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+    /// pagination request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccountAuthorizationDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7820,6 +9033,17 @@ pub struct GetAccessKeyLastUsedOutput {
     /// <p>Contains information about the last time the access key was used.</p>
     pub access_key_last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
 }
+impl GetAccessKeyLastUsedOutput {
+    /// <p>The name of the IAM user that owns this access key.</p>
+    /// <p></p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Contains information about the last time the access key was used.</p>
+    pub fn access_key_last_used(&self) -> std::option::Option<&crate::model::AccessKeyLastUsed> {
+        self.access_key_last_used.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAccessKeyLastUsedOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessKeyLastUsedOutput");
@@ -7889,6 +9113,15 @@ pub struct GenerateServiceLastAccessedDetailsOutput {
     /// <code>GetServiceLastAccessedDetail</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl GenerateServiceLastAccessedDetailsOutput {
+    /// <p>The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The
+    /// <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must
+    /// be used by the same role within a session, or by the same user when used to call
+    /// <code>GetServiceLastAccessedDetail</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateServiceLastAccessedDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateServiceLastAccessedDetailsOutput");
@@ -7943,6 +9176,12 @@ pub struct GenerateOrganizationsAccessReportOutput {
     /// <p>The job identifier that you can use in the <a>GetOrganizationsAccessReport</a> operation.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl GenerateOrganizationsAccessReportOutput {
+    /// <p>The job identifier that you can use in the <a>GetOrganizationsAccessReport</a> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateOrganizationsAccessReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateOrganizationsAccessReportOutput");
@@ -7993,6 +9232,16 @@ pub struct GenerateCredentialReportOutput {
     pub state: std::option::Option<crate::model::ReportStateType>,
     /// <p>Information about the credential report.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl GenerateCredentialReportOutput {
+    /// <p>Information about the state of the credential report.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReportStateType> {
+        self.state.as_ref()
+    }
+    /// <p>Information about the credential report.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for GenerateCredentialReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8389,6 +9638,14 @@ pub struct DeleteServiceLinkedRoleOutput {
     /// This identifier is returned in the format
     /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
     pub deletion_task_id: std::option::Option<std::string::String>,
+}
+impl DeleteServiceLinkedRoleOutput {
+    /// <p>The deletion task identifier that you can use to check the status of the deletion.
+    /// This identifier is returned in the format
+    /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
+    pub fn deletion_task_id(&self) -> std::option::Option<&str> {
+        self.deletion_task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceLinkedRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8926,6 +10183,12 @@ pub struct CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
     pub virtual_mfa_device: std::option::Option<crate::model::VirtualMfaDevice>,
 }
+impl CreateVirtualMfaDeviceOutput {
+    /// <p>A structure containing details about the new virtual MFA device.</p>
+    pub fn virtual_mfa_device(&self) -> std::option::Option<&crate::model::VirtualMfaDevice> {
+        self.virtual_mfa_device.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualMfaDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualMfaDeviceOutput");
@@ -8977,6 +10240,12 @@ pub struct CreateUserOutput {
     /// <p>A structure with details about the new IAM user.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl CreateUserOutput {
+    /// <p>A structure with details about the new IAM user.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -9027,6 +10296,19 @@ pub struct CreateServiceSpecificCredentialOutput {
     /// cannot be recovered later. Instead, you must reset the password with <a>ResetServiceSpecificCredential</a>.</p>
     /// </important>
     pub service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
+}
+impl CreateServiceSpecificCredentialOutput {
+    /// <p>A structure that contains information about the newly created service-specific
+    /// credential.</p>
+    /// <important>
+    /// <p>This is the only time that the password for this credential set is available. It
+    /// cannot be recovered later. Instead, you must reset the password with <a>ResetServiceSpecificCredential</a>.</p>
+    /// </important>
+    pub fn service_specific_credential(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSpecificCredential> {
+        self.service_specific_credential.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateServiceSpecificCredentialOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9097,6 +10379,13 @@ pub struct CreateServiceLinkedRoleOutput {
     /// role.</p>
     pub role: std::option::Option<crate::model::Role>,
 }
+impl CreateServiceLinkedRoleOutput {
+    /// <p>A <a>Role</a> object that contains details about the newly created
+    /// role.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+        self.role.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateServiceLinkedRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceLinkedRoleOutput");
@@ -9149,6 +10438,18 @@ pub struct CreateSamlProviderOutput {
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateSamlProviderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
+    /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key.
+    /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSamlProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9227,6 +10528,12 @@ pub struct CreateRoleOutput {
     /// <p>A structure containing details about the new role.</p>
     pub role: std::option::Option<crate::model::Role>,
 }
+impl CreateRoleOutput {
+    /// <p>A structure containing details about the new role.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::Role> {
+        self.role.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoleOutput");
@@ -9273,6 +10580,12 @@ impl CreateRoleOutput {
 pub struct CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
     pub policy_version: std::option::Option<crate::model::PolicyVersion>,
+}
+impl CreatePolicyVersionOutput {
+    /// <p>A structure containing details about the new policy version.</p>
+    pub fn policy_version(&self) -> std::option::Option<&crate::model::PolicyVersion> {
+        self.policy_version.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePolicyVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9325,6 +10638,12 @@ impl CreatePolicyVersionOutput {
 pub struct CreatePolicyOutput {
     /// <p>A structure containing details about the new policy.</p>
     pub policy: std::option::Option<crate::model::Policy>,
+}
+impl CreatePolicyOutput {
+    /// <p>A structure containing details about the new policy.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9380,6 +10699,20 @@ pub struct CreateOpenIdConnectProviderOutput {
     /// tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateOpenIdConnectProviderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
+    /// created. For more information, see <a>OpenIDConnectProviderListEntry</a>.
+    /// </p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
+    /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of
+    /// tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOpenIdConnectProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9469,6 +10802,12 @@ pub struct CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
     pub login_profile: std::option::Option<crate::model::LoginProfile>,
 }
+impl CreateLoginProfileOutput {
+    /// <p>A structure containing the user name and password create date.</p>
+    pub fn login_profile(&self) -> std::option::Option<&crate::model::LoginProfile> {
+        self.login_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLoginProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoginProfileOutput");
@@ -9521,6 +10860,12 @@ pub struct CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
+impl CreateInstanceProfileOutput {
+    /// <p>A structure containing details about the new instance profile.</p>
+    pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
+        self.instance_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceProfileOutput");
@@ -9571,6 +10916,12 @@ impl CreateInstanceProfileOutput {
 pub struct CreateGroupOutput {
     /// <p>A structure containing details about the new group.</p>
     pub group: std::option::Option<crate::model::Group>,
+}
+impl CreateGroupOutput {
+    /// <p>A structure containing details about the new group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9648,6 +10999,12 @@ impl CreateAccountAliasOutput {
 pub struct CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
     pub access_key: std::option::Option<crate::model::AccessKey>,
+}
+impl CreateAccessKeyOutput {
+    /// <p>A structure with details about the access key.</p>
+    pub fn access_key(&self) -> std::option::Option<&crate::model::AccessKey> {
+        self.access_key.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAccessKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

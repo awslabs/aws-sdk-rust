@@ -102,7 +102,7 @@ impl AcceptAdministratorInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_administrator_invitation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_administrator_invitation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -263,10 +263,7 @@ impl AcceptInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -426,10 +423,7 @@ impl BatchDisableStandardsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_disable_standards(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -587,10 +581,9 @@ impl BatchEnableStandardsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_enable_standards(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_enable_standards(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -746,10 +739,7 @@ impl BatchImportFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_import_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_import_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1164,10 +1154,7 @@ impl BatchUpdateFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_update_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_update_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1336,10 +1323,7 @@ impl CreateActionTargetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_action_target(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_action_target(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1553,10 +1537,7 @@ impl CreateFindingAggregatorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_finding_aggregator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1738,10 +1719,7 @@ impl CreateInsightInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_insight(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_insight(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1897,10 +1875,7 @@ impl CreateMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2056,10 +2031,7 @@ impl DeclineInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decline_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_decline_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2669,10 +2641,7 @@ impl DeleteInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2825,10 +2794,7 @@ impl DeleteMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3016,10 +2982,7 @@ impl DescribeActionTargetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_action_targets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4127,7 +4090,7 @@ impl DisableOrganizationAdminAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_organization_admin_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4636,10 +4599,7 @@ impl DisassociateMembersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_members(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4785,7 +4745,7 @@ impl EnableImportFindingsForProductInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_import_findings_for_product(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_import_findings_for_product(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4937,7 +4897,7 @@ impl EnableOrganizationAdminAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5118,10 +5078,7 @@ impl EnableSecurityHubInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_security_hub(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_enable_security_hub(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5429,10 +5386,7 @@ impl GetEnabledStandardsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_enabled_standards(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_enabled_standards(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5796,10 +5750,7 @@ impl GetFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_findings(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6139,10 +6090,7 @@ impl GetInsightsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_insights(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_insights(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6529,10 +6477,7 @@ impl GetMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6685,10 +6630,7 @@ impl InviteMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_invite_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_invite_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7870,10 +7812,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8242,10 +8181,7 @@ impl UpdateActionTargetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_action_target(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_action_target(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8472,10 +8408,7 @@ impl UpdateFindingAggregatorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_finding_aggregator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8649,10 +8582,8 @@ impl UpdateFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_findings(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8854,10 +8785,7 @@ impl UpdateInsightInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_insight(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_insight(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9009,7 +8937,7 @@ impl UpdateOrganizationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9164,7 +9092,7 @@ impl UpdateSecurityHubConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_security_hub_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_security_hub_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9367,10 +9295,7 @@ impl UpdateStandardsControlInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_standards_control(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9444,6 +9369,21 @@ pub struct UpdateStandardsControlInput {
     /// are disabling a control, then this is required.</p>
     pub disabled_reason: std::option::Option<std::string::String>,
 }
+impl UpdateStandardsControlInput {
+    /// <p>The ARN of the security standard control to enable or disable.</p>
+    pub fn standards_control_arn(&self) -> std::option::Option<&str> {
+        self.standards_control_arn.as_deref()
+    }
+    /// <p>The updated status of the security standard control.</p>
+    pub fn control_status(&self) -> std::option::Option<&crate::model::ControlStatus> {
+        self.control_status.as_ref()
+    }
+    /// <p>A description of the reason why you are disabling a security standard control. If you
+    /// are disabling a control, then this is required.</p>
+    pub fn disabled_reason(&self) -> std::option::Option<&str> {
+        self.disabled_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStandardsControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStandardsControlInput");
@@ -9465,6 +9405,16 @@ pub struct UpdateSecurityHubConfigurationInput {
     /// </p>
     pub auto_enable_controls: bool,
 }
+impl UpdateSecurityHubConfigurationInput {
+    /// <p>Whether to automatically enable new controls when they are added to standards that are
+    /// enabled.</p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled
+    /// automatically. To not automatically enable new controls, set this to <code>false</code>.
+    /// </p>
+    pub fn auto_enable_controls(&self) -> bool {
+        self.auto_enable_controls
+    }
+}
 impl std::fmt::Debug for UpdateSecurityHubConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecurityHubConfigurationInput");
@@ -9482,6 +9432,15 @@ pub struct UpdateOrganizationConfigurationInput {
     /// automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
     pub auto_enable: bool,
+}
+impl UpdateOrganizationConfigurationInput {
+    /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
+    /// <p>By default, this is <code>false</code>, and new accounts are not added
+    /// automatically.</p>
+    /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
 }
 impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9504,6 +9463,24 @@ pub struct UpdateInsightInput {
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
     pub group_by_attribute: std::option::Option<std::string::String>,
 }
+impl UpdateInsightInput {
+    /// <p>The ARN of the insight that you want to update.</p>
+    pub fn insight_arn(&self) -> std::option::Option<&str> {
+        self.insight_arn.as_deref()
+    }
+    /// <p>The updated name for the insight.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated filters that define this insight.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
+    pub fn group_by_attribute(&self) -> std::option::Option<&str> {
+        self.group_by_attribute.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInsightInput");
@@ -9525,6 +9502,20 @@ pub struct UpdateFindingsInput {
     pub note: std::option::Option<crate::model::NoteUpdate>,
     /// <p>The updated record state for the finding.</p>
     pub record_state: std::option::Option<crate::model::RecordState>,
+}
+impl UpdateFindingsInput {
+    /// <p>A collection of attributes that specify which findings you want to update.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The updated note for the finding.</p>
+    pub fn note(&self) -> std::option::Option<&crate::model::NoteUpdate> {
+        self.note.as_ref()
+    }
+    /// <p>The updated record state for the finding.</p>
+    pub fn record_state(&self) -> std::option::Option<&crate::model::RecordState> {
+        self.record_state.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9567,6 +9558,40 @@ pub struct UpdateFindingAggregatorInput {
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateFindingAggregatorInput {
+    /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn finding_aggregator_arn(&self) -> std::option::Option<&str> {
+        self.finding_aggregator_arn.as_deref()
+    }
+    /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
+    /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
+    /// <p>The options are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn region_linking_mode(&self) -> std::option::Option<&str> {
+        self.region_linking_mode.as_deref()
+    }
+    /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFindingAggregatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFindingAggregatorInput");
@@ -9588,6 +9613,20 @@ pub struct UpdateActionTargetInput {
     /// <p>The updated description for the custom action target.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateActionTargetInput {
+    /// <p>The ARN of the custom action target to update.</p>
+    pub fn action_target_arn(&self) -> std::option::Option<&str> {
+        self.action_target_arn.as_deref()
+    }
+    /// <p>The updated name of the custom action target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated description for the custom action target.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateActionTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateActionTargetInput");
@@ -9606,6 +9645,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ARN of the resource to remove the tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9626,6 +9675,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resource to apply the tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128 characters. The tag values can be no longer than 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -9641,6 +9703,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to retrieve tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource to retrieve tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9661,6 +9729,19 @@ pub struct ListOrganizationAdminAccountsInput {
     /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
     /// the value of this parameter to the value returned from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationAdminAccountsInput {
+    /// <p>The maximum number of items to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
+    /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+    /// the value of this parameter to the value returned from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9691,6 +9772,29 @@ pub struct ListMembersInput {
     /// parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMembersInput {
+    /// <p>Specifies which member accounts to include in the response based on their relationship
+    /// status with the administrator account. The default value is <code>TRUE</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
+    /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
+    /// existing member accounts. </p>
+    pub fn only_associated(&self) -> bool {
+        self.only_associated
+    }
+    /// <p>The maximum number of items to return in the response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>ListMembers</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMembersInput");
@@ -9714,6 +9818,20 @@ pub struct ListInvitationsInput {
     /// parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInvitationsInput {
+    /// <p>The maximum number of items to return in the response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>ListInvitations</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsInput");
@@ -9731,6 +9849,16 @@ pub struct ListFindingAggregatorsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
     pub max_results: i32,
+}
+impl ListFindingAggregatorsInput {
+    /// <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFindingAggregatorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9754,6 +9882,20 @@ pub struct ListEnabledProductsForImportInput {
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
 }
+impl ListEnabledProductsForImportInput {
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEnabledProductsForImportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnabledProductsForImportInput");
@@ -9770,6 +9912,12 @@ pub struct InviteMembersInput {
     /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl InviteMembersInput {
+    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for InviteMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InviteMembersInput");
@@ -9784,6 +9932,12 @@ impl std::fmt::Debug for InviteMembersInput {
 pub struct GetMembersInput {
     /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetMembersInput {
+    /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9832,6 +9986,26 @@ pub struct GetInsightsInput {
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
 }
+impl GetInsightsInput {
+    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
+    /// <code>GetInsights</code> returns all of your custom insights. It does not return any
+    /// managed insights.</p>
+    pub fn insight_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.insight_arns.as_deref()
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>GetInsights</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetInsightsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightsInput");
@@ -9848,6 +10022,12 @@ impl std::fmt::Debug for GetInsightsInput {
 pub struct GetInsightResultsInput {
     /// <p>The ARN of the insight for which to return results.</p>
     pub insight_arn: std::option::Option<std::string::String>,
+}
+impl GetInsightResultsInput {
+    /// <p>The ARN of the insight for which to return results.</p>
+    pub fn insight_arn(&self) -> std::option::Option<&str> {
+        self.insight_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInsightResultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9879,6 +10059,33 @@ pub struct GetFindingsInput {
     /// <p>The maximum number of findings to return.</p>
     pub max_results: i32,
 }
+impl GetFindingsInput {
+    /// <p>The finding attributes used to define a condition to filter the returned
+    /// findings.</p>
+    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
+    /// 20 filter values.</p>
+    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
+    /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The finding attributes used to sort the list of returned findings.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::SortCriterion]> {
+        self.sort_criteria.as_deref()
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>GetFindings</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of findings to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingsInput");
@@ -9896,6 +10103,12 @@ impl std::fmt::Debug for GetFindingsInput {
 pub struct GetFindingAggregatorInput {
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub finding_aggregator_arn: std::option::Option<std::string::String>,
+}
+impl GetFindingAggregatorInput {
+    /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn finding_aggregator_arn(&self) -> std::option::Option<&str> {
+        self.finding_aggregator_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFindingAggregatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9919,6 +10132,24 @@ pub struct GetEnabledStandardsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: i32,
+}
+impl GetEnabledStandardsInput {
+    /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
+    pub fn standards_subscription_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.standards_subscription_arns.as_deref()
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetEnabledStandardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9957,6 +10188,22 @@ pub struct EnableSecurityHubInput {
     /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub enable_default_standards: bool,
 }
+impl EnableSecurityHubInput {
+    /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Whether to enable the security standards that Security Hub has designated as automatically
+    /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
+    /// to <code>true</code>. To not enable the automatically enabled standards, set
+    /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    pub fn enable_default_standards(&self) -> bool {
+        self.enable_default_standards
+    }
+}
 impl std::fmt::Debug for EnableSecurityHubInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableSecurityHubInput");
@@ -9974,6 +10221,13 @@ pub struct EnableOrganizationAdminAccountInput {
     /// account.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
+impl EnableOrganizationAdminAccountInput {
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
+    /// account.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableOrganizationAdminAccountInput");
@@ -9989,6 +10243,12 @@ pub struct EnableImportFindingsForProductInput {
     /// <p>The ARN of the product to enable the integration for.</p>
     pub product_arn: std::option::Option<std::string::String>,
 }
+impl EnableImportFindingsForProductInput {
+    /// <p>The ARN of the product to enable the integration for.</p>
+    pub fn product_arn(&self) -> std::option::Option<&str> {
+        self.product_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableImportFindingsForProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableImportFindingsForProductInput");
@@ -10003,6 +10263,12 @@ impl std::fmt::Debug for EnableImportFindingsForProductInput {
 pub struct DisassociateMembersInput {
     /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DisassociateMembersInput {
+    /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10052,6 +10318,12 @@ pub struct DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
+impl DisableOrganizationAdminAccountInput {
+    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableOrganizationAdminAccountInput");
@@ -10066,6 +10338,12 @@ impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
 pub struct DisableImportFindingsForProductInput {
     /// <p>The ARN of the integrated product to disable the integration for.</p>
     pub product_subscription_arn: std::option::Option<std::string::String>,
+}
+impl DisableImportFindingsForProductInput {
+    /// <p>The ARN of the integrated product to disable the integration for.</p>
+    pub fn product_subscription_arn(&self) -> std::option::Option<&str> {
+        self.product_subscription_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableImportFindingsForProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10090,6 +10368,25 @@ pub struct DescribeStandardsControlsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of security standard controls to return.</p>
     pub max_results: i32,
+}
+impl DescribeStandardsControlsInput {
+    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
+    /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+    pub fn standards_subscription_arn(&self) -> std::option::Option<&str> {
+        self.standards_subscription_arn.as_deref()
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of security standard controls to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeStandardsControlsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10117,6 +10414,20 @@ pub struct DescribeStandardsInput {
     /// <p>The maximum number of standards to return.</p>
     pub max_results: i32,
 }
+impl DescribeStandardsInput {
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>DescribeStandards</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of standards to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeStandardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStandardsInput");
@@ -10140,6 +10451,24 @@ pub struct DescribeProductsInput {
     pub max_results: i32,
     /// <p>The ARN of the integration to return.</p>
     pub product_arn: std::option::Option<std::string::String>,
+}
+impl DescribeProductsInput {
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>DescribeProducts</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The ARN of the integration to return.</p>
+    pub fn product_arn(&self) -> std::option::Option<&str> {
+        self.product_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProductsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10169,6 +10498,12 @@ pub struct DescribeHubInput {
     /// <p>The ARN of the Hub resource to retrieve.</p>
     pub hub_arn: std::option::Option<std::string::String>,
 }
+impl DescribeHubInput {
+    /// <p>The ARN of the Hub resource to retrieve.</p>
+    pub fn hub_arn(&self) -> std::option::Option<&str> {
+        self.hub_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHubInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHubInput");
@@ -10192,6 +10527,24 @@ pub struct DescribeActionTargetsInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: i32,
 }
+impl DescribeActionTargetsInput {
+    /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
+    pub fn action_target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.action_target_arns.as_deref()
+    }
+    /// <p>The token that is required for pagination. On your first call to the
+    /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
+    /// <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
+    /// parameter to the value returned from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeActionTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeActionTargetsInput");
@@ -10209,6 +10562,12 @@ pub struct DeleteMembersInput {
     /// <p>The list of account IDs for the member accounts to delete.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteMembersInput {
+    /// <p>The list of account IDs for the member accounts to delete.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMembersInput");
@@ -10223,6 +10582,12 @@ impl std::fmt::Debug for DeleteMembersInput {
 pub struct DeleteInvitationsInput {
     /// <p>The list of the account IDs that sent the invitations to delete.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteInvitationsInput {
+    /// <p>The list of the account IDs that sent the invitations to delete.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10239,6 +10604,12 @@ pub struct DeleteInsightInput {
     /// <p>The ARN of the insight to delete.</p>
     pub insight_arn: std::option::Option<std::string::String>,
 }
+impl DeleteInsightInput {
+    /// <p>The ARN of the insight to delete.</p>
+    pub fn insight_arn(&self) -> std::option::Option<&str> {
+        self.insight_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInsightInput");
@@ -10254,6 +10625,12 @@ pub struct DeleteFindingAggregatorInput {
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub finding_aggregator_arn: std::option::Option<std::string::String>,
 }
+impl DeleteFindingAggregatorInput {
+    /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn finding_aggregator_arn(&self) -> std::option::Option<&str> {
+        self.finding_aggregator_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFindingAggregatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFindingAggregatorInput");
@@ -10268,6 +10645,12 @@ impl std::fmt::Debug for DeleteFindingAggregatorInput {
 pub struct DeleteActionTargetInput {
     /// <p>The ARN of the custom action target to delete.</p>
     pub action_target_arn: std::option::Option<std::string::String>,
+}
+impl DeleteActionTargetInput {
+    /// <p>The ARN of the custom action target to delete.</p>
+    pub fn action_target_arn(&self) -> std::option::Option<&str> {
+        self.action_target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteActionTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10285,6 +10668,13 @@ pub struct DeclineInvitationsInput {
     /// Security Hub.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeclineInvitationsInput {
+    /// <p>The list of account IDs for the accounts from which to decline the invitations to
+    /// Security Hub.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DeclineInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeclineInvitationsInput");
@@ -10300,6 +10690,13 @@ pub struct CreateMembersInput {
     /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
     /// list includes the account ID and optionally the email address.</p>
     pub account_details: std::option::Option<std::vec::Vec<crate::model::AccountDetails>>,
+}
+impl CreateMembersInput {
+    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
+    /// list includes the account ID and optionally the email address.</p>
+    pub fn account_details(&self) -> std::option::Option<&[crate::model::AccountDetails]> {
+        self.account_details.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10323,6 +10720,24 @@ pub struct CreateInsightInput {
     /// grouped by resource identifier, then the insight produces a list of resource
     /// identifiers.</p>
     pub group_by_attribute: std::option::Option<std::string::String>,
+}
+impl CreateInsightInput {
+    /// <p>The name of the custom insight to create.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>One or more attributes used to filter the findings included in the insight. The insight
+    /// only includes findings that match the criteria defined in the filters.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The attribute used to group the findings for the insight. The grouping attribute
+    /// identifies the type of item that the insight applies to. For example, if an insight is
+    /// grouped by resource identifier, then the insight produces a list of resource
+    /// identifiers.</p>
+    pub fn group_by_attribute(&self) -> std::option::Option<&str> {
+        self.group_by_attribute.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10364,6 +10779,37 @@ pub struct CreateFindingAggregatorInput {
     /// </p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateFindingAggregatorInput {
+    /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
+    /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
+    /// <p>The options are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn region_linking_mode(&self) -> std::option::Option<&str> {
+        self.region_linking_mode.as_deref()
+    }
+    /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
+    /// </p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFindingAggregatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFindingAggregatorInput");
@@ -10383,6 +10829,20 @@ pub struct CreateActionTargetInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl CreateActionTargetInput {
+    /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description for the custom action target.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateActionTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10473,6 +10933,105 @@ pub struct BatchUpdateFindingsInput {
     /// <p>A list of findings that are related to the updated findings.</p>
     pub related_findings: std::option::Option<std::vec::Vec<crate::model::RelatedFinding>>,
 }
+impl BatchUpdateFindingsInput {
+    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
+    /// up to 100 findings at a time.</p>
+    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
+    /// provider.</p>
+    pub fn finding_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsSecurityFindingIdentifier]> {
+        self.finding_identifiers.as_deref()
+    }
+    /// <p>The updated note.</p>
+    pub fn note(&self) -> std::option::Option<&crate::model::NoteUpdate> {
+        self.note.as_ref()
+    }
+    /// <p>Used to update the finding severity.</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::SeverityUpdate> {
+        self.severity.as_ref()
+    }
+    /// <p>Indicates the veracity of a finding.</p>
+    /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
+    /// alarm</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
+    /// the finding doesn't pose any threat, is expected, or both</p>
+    /// </li>
+    /// </ul>
+    pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
+        self.verification_state.as_ref()
+    }
+    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
+    /// that a finding accurately identifies the behavior or issue that it was intended to
+    /// identify.</p>
+    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
+    /// confidence and 100 means 100 percent confidence.</p>
+    pub fn confidence(&self) -> i32 {
+        self.confidence
+    }
+    /// <p>The updated value for the level of importance assigned to the resources associated with
+    /// the findings.</p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
+    /// is reserved for the most critical resources. </p>
+    pub fn criticality(&self) -> i32 {
+        self.criticality
+    }
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a
+    /// finding.</p>
+    /// <p>Valid namespace values are as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Software and Configuration Checks</p>
+    /// </li>
+    /// <li>
+    /// <p>TTPs</p>
+    /// </li>
+    /// <li>
+    /// <p>Effects</p>
+    /// </li>
+    /// <li>
+    /// <p>Unusual Behaviors</p>
+    /// </li>
+    /// <li>
+    /// <p>Sensitive Data Identifications </p>
+    /// </li>
+    /// </ul>
+    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+        self.types.as_deref()
+    }
+    /// <p>A list of name/value string pairs associated with the finding. These are custom,
+    /// user-defined fields added to a finding.</p>
+    pub fn user_defined_fields(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_defined_fields.as_ref()
+    }
+    /// <p>Used to update the workflow status of a finding.</p>
+    /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
+    pub fn workflow(&self) -> std::option::Option<&crate::model::WorkflowUpdate> {
+        self.workflow.as_ref()
+    }
+    /// <p>A list of findings that are related to the updated findings.</p>
+    pub fn related_findings(&self) -> std::option::Option<&[crate::model::RelatedFinding]> {
+        self.related_findings.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateFindingsInput");
@@ -10498,6 +11057,13 @@ pub struct BatchImportFindingsInput {
     /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
 }
+impl BatchImportFindingsInput {
+    /// <p>A list of findings to import. To successfully import a finding, it must follow the
+    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::AwsSecurityFinding]> {
+        self.findings.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchImportFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchImportFindingsInput");
@@ -10513,6 +11079,14 @@ pub struct BatchEnableStandardsInput {
     /// <p>The list of standards checks to enable.</p>
     pub standards_subscription_requests:
         std::option::Option<std::vec::Vec<crate::model::StandardsSubscriptionRequest>>,
+}
+impl BatchEnableStandardsInput {
+    /// <p>The list of standards checks to enable.</p>
+    pub fn standards_subscription_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::StandardsSubscriptionRequest]> {
+        self.standards_subscription_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchEnableStandardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10531,6 +11105,12 @@ impl std::fmt::Debug for BatchEnableStandardsInput {
 pub struct BatchDisableStandardsInput {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
     pub standards_subscription_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDisableStandardsInput {
+    /// <p>The ARNs of the standards subscriptions to disable.</p>
+    pub fn standards_subscription_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.standards_subscription_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisableStandardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10552,6 +11132,16 @@ pub struct AcceptInvitationInput {
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     pub invitation_id: std::option::Option<std::string::String>,
 }
+impl AcceptInvitationInput {
+    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    pub fn master_id(&self) -> std::option::Option<&str> {
+        self.master_id.as_deref()
+    }
+    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AcceptInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptInvitationInput");
@@ -10569,6 +11159,16 @@ pub struct AcceptAdministratorInvitationInput {
     pub administrator_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     pub invitation_id: std::option::Option<std::string::String>,
+}
+impl AcceptAdministratorInvitationInput {
+    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    pub fn administrator_id(&self) -> std::option::Option<&str> {
+        self.administrator_id.as_deref()
+    }
+    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptAdministratorInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

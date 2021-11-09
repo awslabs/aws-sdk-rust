@@ -2,16 +2,17 @@
 pub fn serialize_structure_crate_input_put_lexicon_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutLexiconInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.content {
         object.key("Content").string(var_1);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_speech_synthesis_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartSpeechSynthesisTaskInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.engine {
         object.key("Engine").string(var_2.as_str());
     }
@@ -60,12 +61,13 @@ pub fn serialize_structure_crate_input_start_speech_synthesis_task_input(
     if let Some(var_17) = &input.voice_id {
         object.key("VoiceId").string(var_17.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_synthesize_speech_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SynthesizeSpeechInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.engine {
         object.key("Engine").string(var_18.as_str());
     }
@@ -105,4 +107,5 @@ pub fn serialize_structure_crate_input_synthesize_speech_input(
     if let Some(var_30) = &input.voice_id {
         object.key("VoiceId").string(var_30.as_str());
     }
+    Ok(())
 }

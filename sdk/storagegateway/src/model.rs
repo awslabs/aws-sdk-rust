@@ -11,6 +11,19 @@ pub struct StorageGatewayError {
     pub error_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StorageGatewayError {
+    /// <p>Additional information about the error.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>Human-readable text that provides detail about the error that occurred.</p>
+    pub fn error_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.error_details.as_ref()
+    }
+}
 impl std::fmt::Debug for StorageGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StorageGatewayError");
@@ -454,6 +467,16 @@ pub struct Tag {
     /// <p>Value of the tag key.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>Tag key. The key can't start with aws:.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Value of the tag key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -579,6 +602,16 @@ pub struct SmbLocalGroups {
     /// force-close files that are open and locked.</p>
     pub gateway_admins: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SmbLocalGroups {
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions.
+    /// Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+    /// <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+    /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to
+    /// force-close files that are open and locked.</p>
+    pub fn gateway_admins(&self) -> std::option::Option<&[std::string::String]> {
+        self.gateway_admins.as_deref()
+    }
+}
 impl std::fmt::Debug for SmbLocalGroups {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SmbLocalGroups");
@@ -648,6 +681,17 @@ pub struct CacheAttributes {
     ///
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     pub cache_stale_timeout_in_seconds: std::option::Option<i32>,
+}
+impl CacheAttributes {
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of
+    /// time since the last refresh after which access to the directory would cause the file
+    /// gateway to first refresh that directory's contents from the Amazon S3 bucket
+    /// or Amazon FSx file system. The TTL duration is in seconds.</p>
+    ///
+    /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
+    pub fn cache_stale_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.cache_stale_timeout_in_seconds
+    }
 }
 impl std::fmt::Debug for CacheAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -868,6 +912,29 @@ pub struct NfsFileShareDefaults {
     /// specified). The default value is <code>nfsnobody</code>.</p>
     pub owner_id: std::option::Option<i64>,
 }
+impl NfsFileShareDefaults {
+    /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the
+    /// default file mode inside the file share. The default value is <code>0666</code>.</p>
+    pub fn file_mode(&self) -> std::option::Option<&str> {
+        self.file_mode.as_deref()
+    }
+    /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents
+    /// the default access mode for all directories inside the file share. The default value is
+    /// <code>0777</code>.</p>
+    pub fn directory_mode(&self) -> std::option::Option<&str> {
+        self.directory_mode.as_deref()
+    }
+    /// <p>The default group ID for the file share (unless the files have another group ID
+    /// specified). The default value is <code>nfsnobody</code>.</p>
+    pub fn group_id(&self) -> std::option::Option<i64> {
+        self.group_id
+    }
+    /// <p>The default owner ID for files in the file share (unless the files have another owner ID
+    /// specified). The default value is <code>nfsnobody</code>.</p>
+    pub fn owner_id(&self) -> std::option::Option<i64> {
+        self.owner_id
+    }
+}
 impl std::fmt::Debug for NfsFileShareDefaults {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NfsFileShareDefaults");
@@ -1053,6 +1120,48 @@ pub struct BandwidthRateLimitInterval {
     /// per second. This field does not appear in the response if the download rate limit is not
     /// set. </p>
     pub average_download_rate_limit_in_bits_per_sec: std::option::Option<i64>,
+}
+impl BandwidthRateLimitInterval {
+    /// <p> The hour of the day to start the bandwidth rate limit interval. </p>
+    pub fn start_hour_of_day(&self) -> std::option::Option<i32> {
+        self.start_hour_of_day
+    }
+    /// <p> The minute of the hour to start the bandwidth rate limit interval. The interval begins
+    /// at the start of that minute. To begin an interval exactly at the start of the hour, use the
+    /// value <code>0</code>. </p>
+    pub fn start_minute_of_hour(&self) -> std::option::Option<i32> {
+        self.start_minute_of_hour
+    }
+    /// <p> The hour of the day to end the bandwidth rate limit interval. </p>
+    pub fn end_hour_of_day(&self) -> std::option::Option<i32> {
+        self.end_hour_of_day
+    }
+    /// <p> The minute of the hour to end the bandwidth rate limit interval. </p>
+    ///
+    /// <important>
+    /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval
+    /// at the end of an hour, use the value <code>59</code>. </p>
+    /// </important>
+    pub fn end_minute_of_hour(&self) -> std::option::Option<i32> {
+        self.end_minute_of_hour
+    }
+    /// <p> The days of the week component of the bandwidth rate limit interval, represented as
+    /// ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday. </p>
+    pub fn days_of_week(&self) -> std::option::Option<&[i32]> {
+        self.days_of_week.as_deref()
+    }
+    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits
+    /// per second. This field does not appear in the response if the upload rate limit is not set.
+    /// </p>
+    pub fn average_upload_rate_limit_in_bits_per_sec(&self) -> std::option::Option<i64> {
+        self.average_upload_rate_limit_in_bits_per_sec
+    }
+    /// <p> The average download rate limit component of the bandwidth rate limit interval, in bits
+    /// per second. This field does not appear in the response if the download rate limit is not
+    /// set. </p>
+    pub fn average_download_rate_limit_in_bits_per_sec(&self) -> std::option::Option<i64> {
+        self.average_download_rate_limit_in_bits_per_sec
+    }
 }
 impl std::fmt::Debug for BandwidthRateLimitInterval {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1252,6 +1361,46 @@ pub struct AutomaticTapeCreationRule {
     /// tapes.</p>
     pub worm: bool,
 }
+impl AutomaticTapeCreationRule {
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This
+    /// prefix makes the barcode unique.</p>
+    ///
+    /// <note>
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters
+    /// from A to Z.</p>
+    /// </note>
+    pub fn tape_barcode_prefix(&self) -> std::option::Option<&str> {
+        self.tape_barcode_prefix.as_deref()
+    }
+    /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this
+    /// pool is archived in the Amazon S3 storage class that is associated with the pool.
+    /// When you use your backup application to eject the tape, the tape is archived directly into
+    /// the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the
+    /// pool.</p>
+    ///
+    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
+    /// </p>
+    pub fn pool_id(&self) -> std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+    /// <p>The size, in bytes, of the virtual tape capacity.</p>
+    pub fn tape_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.tape_size_in_bytes
+    }
+    /// <p>The minimum number of available virtual tapes that the gateway maintains at all times.
+    /// If the number of tapes on the gateway goes below this value, the gateway creates as many
+    /// new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more
+    /// information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
+    pub fn minimum_num_tapes(&self) -> std::option::Option<i32> {
+        self.minimum_num_tapes
+    }
+    /// <p>Set to <code>true</code> to indicate that tapes are to be archived as
+    /// write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for
+    /// tapes.</p>
+    pub fn worm(&self) -> bool {
+        self.worm
+    }
+}
 impl std::fmt::Debug for AutomaticTapeCreationRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutomaticTapeCreationRule");
@@ -1419,6 +1568,53 @@ pub struct VolumeInfo {
     pub volume_size_in_bytes: i64,
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub volume_attachment_status: std::option::Option<std::string::String>,
+}
+impl VolumeInfo {
+    /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a
+    /// valid ARN:</p>
+    ///
+    /// <p>
+    /// <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+    /// </p>
+    ///
+    /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon
+    /// Resource Name (ARN), which you use as input for other operations.</p>
+    ///
+    /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part
+    /// of the gateway Amazon Resource Name (ARN), which you use as input for other
+    /// operations.</p>
+    ///
+    /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>The size of the volume in bytes.</p>
+    ///
+    /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+    pub fn volume_size_in_bytes(&self) -> i64 {
+        self.volume_size_in_bytes
+    }
+    /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
+    pub fn volume_attachment_status(&self) -> std::option::Option<&str> {
+        self.volume_attachment_status.as_deref()
+    }
 }
 impl std::fmt::Debug for VolumeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1594,6 +1790,29 @@ pub struct VolumeRecoveryPointInfo {
     /// <p>The time the recovery point was taken.</p>
     pub volume_recovery_point_time: std::option::Option<std::string::String>,
 }
+impl VolumeRecoveryPointInfo {
+    /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The size of the volume in bytes.</p>
+    pub fn volume_size_in_bytes(&self) -> i64 {
+        self.volume_size_in_bytes
+    }
+    /// <p>The size of the data stored on the volume in bytes.</p>
+    ///
+    /// <note>
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you
+    /// store data on the volume.</p>
+    /// </note>
+    pub fn volume_usage_in_bytes(&self) -> i64 {
+        self.volume_usage_in_bytes
+    }
+    /// <p>The time the recovery point was taken.</p>
+    pub fn volume_recovery_point_time(&self) -> std::option::Option<&str> {
+        self.volume_recovery_point_time.as_deref()
+    }
+}
 impl std::fmt::Debug for VolumeRecoveryPointInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeRecoveryPointInfo");
@@ -1718,6 +1937,48 @@ pub struct TapeInfo {
     /// <p>The date that the tape entered the custom tape pool with tape retention lock
     /// enabled.</p>
     pub pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TapeInfo {
+    /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+    /// <p>The barcode that identifies a specific virtual tape.</p>
+    pub fn tape_barcode(&self) -> std::option::Option<&str> {
+        self.tape_barcode.as_deref()
+    }
+    /// <p>The size, in bytes, of a virtual tape.</p>
+    pub fn tape_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.tape_size_in_bytes
+    }
+    /// <p>The status of the tape.</p>
+    pub fn tape_status(&self) -> std::option::Option<&str> {
+        self.tape_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this
+    /// pool is archived in the S3 storage class that is associated with the pool. When you use
+    /// your backup application to eject the tape, the tape is archived directly into the storage
+    /// class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    ///
+    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
+    /// </p>
+    pub fn pool_id(&self) -> std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+    /// <p>The date that the tape became subject to tape retention lock.</p>
+    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.retention_start_date.as_ref()
+    }
+    /// <p>The date that the tape entered the custom tape pool with tape retention lock
+    /// enabled.</p>
+    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.pool_entry_date.as_ref()
+    }
 }
 impl std::fmt::Debug for TapeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1899,6 +2160,42 @@ pub struct PoolInfo {
     /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or
     /// <code>DELETED</code>.</p>
     pub pool_status: std::option::Option<crate::model::PoolStatus>,
+}
+impl PoolInfo {
+    /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a list of custom tape pools for your
+    /// account and Amazon Web Services Region.</p>
+    pub fn pool_arn(&self) -> std::option::Option<&str> {
+        self.pool_arn.as_deref()
+    }
+    /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters,
+    /// except '/' and '\'.</p>
+    pub fn pool_name(&self) -> std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
+    /// <p>The storage class that is associated with the custom pool. When you use your backup
+    /// application to eject the tape, the tape is archived directly into the storage class (S3
+    /// Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::TapeStorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p>Tape retention lock type, which can be configured in two modes. When configured in
+    /// governance mode, Amazon Web Services accounts with specific IAM permissions are authorized
+    /// to remove the tape retention lock from archived virtual tapes. When configured in
+    /// compliance mode, the tape retention lock cannot be removed by any user, including the root
+    /// Amazon Web Services account.</p>
+    pub fn retention_lock_type(&self) -> std::option::Option<&crate::model::RetentionLockType> {
+        self.retention_lock_type.as_ref()
+    }
+    /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to
+    /// 100 years (36,500 days).</p>
+    pub fn retention_lock_time_in_days(&self) -> std::option::Option<i32> {
+        self.retention_lock_time_in_days
+    }
+    /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or
+    /// <code>DELETED</code>.</p>
+    pub fn pool_status(&self) -> std::option::Option<&crate::model::PoolStatus> {
+        self.pool_status.as_ref()
+    }
 }
 impl std::fmt::Debug for PoolInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2234,6 +2531,46 @@ pub struct Disk {
     /// <p>A list of values that represents attributes of a local disk.</p>
     pub disk_attribute_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Disk {
+    /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
+    pub fn disk_id(&self) -> std::option::Option<&str> {
+        self.disk_id.as_deref()
+    }
+    /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
+    pub fn disk_path(&self) -> std::option::Option<&str> {
+        self.disk_path.as_deref()
+    }
+    /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
+    pub fn disk_node(&self) -> std::option::Option<&str> {
+        self.disk_node.as_deref()
+    }
+    /// <p>A value that represents the status of a local disk.</p>
+    pub fn disk_status(&self) -> std::option::Option<&str> {
+        self.disk_status.as_deref()
+    }
+    /// <p>The local disk size in bytes.</p>
+    pub fn disk_size_in_bytes(&self) -> i64 {
+        self.disk_size_in_bytes
+    }
+    /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a
+    /// local disk is used.</p>
+    ///
+    /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code>
+    /// </p>
+    pub fn disk_allocation_type(&self) -> std::option::Option<&str> {
+        self.disk_allocation_type.as_deref()
+    }
+    /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in
+    /// the response if the local disk is not defined as an iSCSI target. The format of this field
+    /// is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
+    pub fn disk_allocation_resource(&self) -> std::option::Option<&str> {
+        self.disk_allocation_resource.as_deref()
+    }
+    /// <p>A list of values that represents attributes of a local disk.</p>
+    pub fn disk_attribute_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.disk_attribute_list.as_deref()
+    }
+}
 impl std::fmt::Debug for Disk {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Disk");
@@ -2418,6 +2755,42 @@ pub struct GatewayInfo {
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
     pub ec2_instance_region: std::option::Option<std::string::String>,
 }
+impl GatewayInfo {
+    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part
+    /// of the gateway Amazon Resource Name (ARN), which you use as input for other
+    /// operations.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The type of the gateway.</p>
+    pub fn gateway_type(&self) -> std::option::Option<&str> {
+        self.gateway_type.as_deref()
+    }
+    /// <p>The state of the gateway.</p>
+    ///
+    /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
+    /// </p>
+    pub fn gateway_operational_state(&self) -> std::option::Option<&str> {
+        self.gateway_operational_state.as_deref()
+    }
+    /// <p>The name of the gateway.</p>
+    pub fn gateway_name(&self) -> std::option::Option<&str> {
+        self.gateway_name.as_deref()
+    }
+    /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+        self.ec2_instance_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
+    pub fn ec2_instance_region(&self) -> std::option::Option<&str> {
+        self.ec2_instance_region.as_deref()
+    }
+}
 impl std::fmt::Debug for GatewayInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayInfo");
@@ -2576,6 +2949,28 @@ pub struct FileSystemAssociationSummary {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl FileSystemAssociationSummary {
+    /// <p>The ID of the file system association.</p>
+    pub fn file_system_association_id(&self) -> std::option::Option<&str> {
+        self.file_system_association_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
+    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+        self.file_system_association_arn.as_deref()
+    }
+    /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
+    /// <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
+    /// <code>UPDATING</code> | <code>ERROR</code>
+    /// </p>
+    pub fn file_system_association_status(&self) -> std::option::Option<&str> {
+        self.file_system_association_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for FileSystemAssociationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileSystemAssociationSummary");
@@ -2707,6 +3102,33 @@ pub struct FileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl FileShareInfo {
+    /// <p>The type of the file share.</p>
+    pub fn file_share_type(&self) -> std::option::Option<&crate::model::FileShareType> {
+        self.file_share_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
+    /// <p>The ID of the file share.</p>
+    pub fn file_share_id(&self) -> std::option::Option<&str> {
+        self.file_share_id.as_deref()
+    }
+    /// <p>The status of the file share.</p>
+    ///
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> |
+    /// <code>DELETING</code>
+    /// </p>
+    pub fn file_share_status(&self) -> std::option::Option<&str> {
+        self.file_share_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for FileShareInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2892,6 +3314,21 @@ pub struct AutomaticTapeCreationPolicyInfo {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl AutomaticTapeCreationPolicyInfo {
+    /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules.
+    /// This returns the rules that determine when and how to automatically create new
+    /// tapes.</p>
+    pub fn automatic_tape_creation_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutomaticTapeCreationRule]> {
+        self.automatic_tape_creation_rules.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AutomaticTapeCreationPolicyInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutomaticTapeCreationPolicyInfo");
@@ -3067,6 +3504,31 @@ pub struct VtlDevice {
     /// <p>A list of iSCSI information about a VTL device.</p>
     pub devicei_scsi_attributes: std::option::Option<crate::model::DeviceiScsiAttributes>,
 }
+impl VtlDevice {
+    /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media
+    /// changer).</p>
+    pub fn vtl_device_arn(&self) -> std::option::Option<&str> {
+        self.vtl_device_arn.as_deref()
+    }
+    /// <p>Specifies the type of device that the VTL device emulates.</p>
+    pub fn vtl_device_type(&self) -> std::option::Option<&str> {
+        self.vtl_device_type.as_deref()
+    }
+    /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+    pub fn vtl_device_vendor(&self) -> std::option::Option<&str> {
+        self.vtl_device_vendor.as_deref()
+    }
+    /// <p>Specifies the model number of device that the VTL device emulates.</p>
+    pub fn vtl_device_product_identifier(&self) -> std::option::Option<&str> {
+        self.vtl_device_product_identifier.as_deref()
+    }
+    /// <p>A list of iSCSI information about a VTL device.</p>
+    pub fn devicei_scsi_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceiScsiAttributes> {
+        self.devicei_scsi_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for VtlDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VtlDevice");
@@ -3201,6 +3663,25 @@ pub struct DeviceiScsiAttributes {
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
     pub chap_enabled: bool,
 }
+impl DeviceiScsiAttributes {
+    /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified
+    /// name(iqn) of a tape drive or media changer target.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The network interface identifier of the VTL device.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The port used to communicate with iSCSI VTL device targets.</p>
+    pub fn network_interface_port(&self) -> i32 {
+        self.network_interface_port
+    }
+    /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
+    pub fn chap_enabled(&self) -> bool {
+        self.chap_enabled
+    }
+}
 impl std::fmt::Debug for DeviceiScsiAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceiScsiAttributes");
@@ -3331,6 +3812,75 @@ pub struct Tape {
     pub retention_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the tape enters a custom tape pool.</p>
     pub pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Tape {
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+    /// <p>The barcode that identifies a specific virtual tape.</p>
+    pub fn tape_barcode(&self) -> std::option::Option<&str> {
+        self.tape_barcode.as_deref()
+    }
+    /// <p>The date the virtual tape was created.</p>
+    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.tape_created_date.as_ref()
+    }
+    /// <p>The size, in bytes, of the virtual tape capacity.</p>
+    pub fn tape_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.tape_size_in_bytes
+    }
+    /// <p>The current state of the virtual tape.</p>
+    pub fn tape_status(&self) -> std::option::Option<&str> {
+        self.tape_status.as_deref()
+    }
+    /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
+    pub fn vtl_device(&self) -> std::option::Option<&str> {
+        self.vtl_device.as_deref()
+    }
+    /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before
+    /// archiving is complete.</p>
+    ///
+    /// <p>Range: 0 (not started) to 100 (complete).</p>
+    pub fn progress(&self) -> std::option::Option<f64> {
+        self.progress
+    }
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p>
+    ///
+    /// <note>
+    /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+    /// </note>
+    pub fn tape_used_in_bytes(&self) -> std::option::Option<i64> {
+        self.tape_used_in_bytes
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+    /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are
+    /// archived in the S3 storage class that is associated with the pool. When you use your backup
+    /// application to eject the tape, the tape is archived directly into the storage class (S3
+    /// Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    ///
+    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
+    /// </p>
+    pub fn pool_id(&self) -> std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+    /// <p>If the tape is archived as write-once-read-many (WORM), this value is
+    /// <code>true</code>.</p>
+    pub fn worm(&self) -> bool {
+        self.worm
+    }
+    /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
+    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.retention_start_date.as_ref()
+    }
+    /// <p>The date that the tape enters a custom tape pool.</p>
+    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.pool_entry_date.as_ref()
+    }
 }
 impl std::fmt::Debug for Tape {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3585,6 +4135,28 @@ pub struct TapeRecoveryPointInfo {
     /// <p>The status of the virtual tapes.</p>
     pub tape_status: std::option::Option<std::string::String>,
 }
+impl TapeRecoveryPointInfo {
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+    /// <p>The time when the point-in-time view of the virtual tape was replicated for later
+    /// recovery.</p>
+    ///
+    /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended
+    /// YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+    pub fn tape_recovery_point_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.tape_recovery_point_time.as_ref()
+    }
+    /// <p>The size, in bytes, of the virtual tapes to recover.</p>
+    pub fn tape_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.tape_size_in_bytes
+    }
+    /// <p>The status of the virtual tapes.</p>
+    pub fn tape_status(&self) -> std::option::Option<&str> {
+        self.tape_status.as_deref()
+    }
+}
 impl std::fmt::Debug for TapeRecoveryPointInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TapeRecoveryPointInfo");
@@ -3726,6 +4298,80 @@ pub struct TapeArchive {
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
     /// format.</p>
     pub pool_entry_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TapeArchive {
+    /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+    /// <p>The barcode that identifies the archived virtual tape.</p>
+    pub fn tape_barcode(&self) -> std::option::Option<&str> {
+        self.tape_barcode.as_deref()
+    }
+    /// <p>The date the virtual tape was created.</p>
+    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.tape_created_date.as_ref()
+    }
+    /// <p>The size, in bytes, of the archived virtual tape.</p>
+    pub fn tape_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.tape_size_in_bytes
+    }
+    /// <p>The time that the archiving of the virtual tape was completed.</p>
+    ///
+    /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+    /// format.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being
+    /// retrieved to.</p>
+    ///
+    /// <p>The virtual tape is retrieved from the virtual tape shelf (VTS).</p>
+    pub fn retrieved_to(&self) -> std::option::Option<&str> {
+        self.retrieved_to.as_deref()
+    }
+    /// <p>The current state of the archived virtual tape.</p>
+    pub fn tape_status(&self) -> std::option::Option<&str> {
+        self.tape_status.as_deref()
+    }
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p>
+    ///
+    /// <note>
+    /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+    /// </note>
+    pub fn tape_used_in_bytes(&self) -> std::option::Option<i64> {
+        self.tape_used_in_bytes
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+    /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are
+    /// archived in the S3 storage class that is associated with the pool.</p>
+    ///
+    /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
+    /// </p>
+    pub fn pool_id(&self) -> std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+    /// <p>Set to <code>true</code> if the archived tape is stored as write-once-read-many
+    /// (WORM).</p>
+    pub fn worm(&self) -> bool {
+        self.worm
+    }
+    /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape
+    /// started being retained.</p>
+    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.retention_start_date.as_ref()
+    }
+    /// <p>The time that the tape entered the custom tape pool.</p>
+    ///
+    /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+    /// format.</p>
+    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.pool_entry_date.as_ref()
+    }
 }
 impl std::fmt::Debug for TapeArchive {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4038,6 +4684,98 @@ pub struct StorediScsiVolume {
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously
     /// used for this volume as the new target name.</p>
     pub target_name: std::option::Option<std::string::String>,
+}
+impl StorediScsiVolume {
+    /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
+    pub fn volume_status(&self) -> std::option::Option<&str> {
+        self.volume_status.as_deref()
+    }
+    /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in
+    /// the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+    /// your volumes to a different gateway</a>.</p>
+    pub fn volume_attachment_status(&self) -> std::option::Option<&str> {
+        self.volume_attachment_status.as_deref()
+    }
+    /// <p>The size of the volume in bytes.</p>
+    pub fn volume_size_in_bytes(&self) -> i64 {
+        self.volume_size_in_bytes
+    }
+    /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that
+    /// represents the percent of data transferred. This field does not appear in the response if
+    /// the stored volume is not restoring or bootstrapping.</p>
+    pub fn volume_progress(&self) -> std::option::Option<f64> {
+        self.volume_progress
+    }
+    /// <p>The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.</p>
+    pub fn volume_disk_id(&self) -> std::option::Option<&str> {
+        self.volume_disk_id.as_deref()
+    }
+    /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID
+    /// used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+    pub fn source_snapshot_id(&self) -> std::option::Option<&str> {
+        self.source_snapshot_id.as_deref()
+    }
+    /// <p>Indicates if when the stored volume was created, existing data on the underlying local
+    /// disk was preserved.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn preserved_existing_data(&self) -> bool {
+        self.preserved_existing_data
+    }
+    /// <p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI
+    /// attributes for one stored volume.</p>
+    pub fn volumei_scsi_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::VolumeiScsiAttributes> {
+        self.volumei_scsi_attributes.as_ref()
+    }
+    /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
+    /// timestamp.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on
+    /// the number of blocks that are touched, instead of the actual amount of data written. This
+    /// value can be useful for sequential write patterns but less accurate for random write
+    /// patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the
+    /// volume, which is the value that is used to calculate your bill.</p>
+    ///
+    /// <note>
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you
+    /// store data on the volume.</p>
+    /// </note>
+    pub fn volume_used_in_bytes(&self) -> std::option::Option<i64> {
+        self.volume_used_in_bytes
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+    /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a
+    /// suffix for the target ARN. For example, specifying <code>TargetName</code> as
+    /// <i>myvolume</i> results in the target ARN of
+    /// <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+    /// The target name must be unique across all volumes on a gateway.</p>
+    ///
+    /// <p>If you don't specify a value, Storage Gateway uses the value that was previously
+    /// used for this volume as the new target name.</p>
+    pub fn target_name(&self) -> std::option::Option<&str> {
+        self.target_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StorediScsiVolume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4355,6 +5093,28 @@ pub struct VolumeiScsiAttributes {
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
     pub chap_enabled: bool,
 }
+impl VolumeiScsiAttributes {
+    /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The network interface identifier.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The port used to communicate with iSCSI targets.</p>
+    pub fn network_interface_port(&self) -> i32 {
+        self.network_interface_port
+    }
+    /// <p>The logical disk number.</p>
+    pub fn lun_number(&self) -> std::option::Option<i32> {
+        self.lun_number
+    }
+    /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
+    pub fn chap_enabled(&self) -> bool {
+        self.chap_enabled
+    }
+}
 impl std::fmt::Debug for VolumeiScsiAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeiScsiAttributes");
@@ -4655,6 +5415,264 @@ pub struct SmbFileShareInfo {
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub oplocks_enabled: std::option::Option<bool>,
+}
+impl SmbFileShareInfo {
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
+    /// <p>The ID of the file share.</p>
+    pub fn file_share_id(&self) -> std::option::Option<&str> {
+        self.file_share_id.as_deref()
+    }
+    /// <p>The status of the file share.</p>
+    ///
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> |
+    /// <code>DELETING</code>
+    /// </p>
+    pub fn file_share_status(&self) -> std::option::Option<&str> {
+        self.file_share_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+    /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+    /// Optional.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn kms_encrypted(&self) -> bool {
+        self.kms_encrypted
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+    /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The file share path used by the SMB client to identify the mount point.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying
+    /// storage.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes
+    /// a resource ARN with an optional prefix concatenation. The prefix must end with a forward
+    /// slash (/).</p>
+    /// <note>
+    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias,
+    /// as shown in the following examples.</p>
+    ///
+    /// <p>Bucket ARN:</p>
+    /// <p>
+    /// <code>arn:aws:s3:::my-bucket/prefix/</code>
+    /// </p>
+    ///
+    /// <p>Access point ARN:</p>
+    /// <p>
+    /// <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+    /// </p>
+    ///
+    /// <p>If you specify an access point, the bucket policy must be configured to delegate
+    /// access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    ///
+    /// <p>Access point alias:</p>
+    /// <p>
+    /// <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code>
+    /// </p>
+    /// </note>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+    /// File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    ///
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
+    /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
+    /// </p>
+    pub fn default_storage_class(&self) -> std::option::Option<&str> {
+        self.default_storage_class.as_deref()
+    }
+    /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
+    /// that an S3 File Gateway puts objects into. The default value is
+    /// <code>private</code>.</p>
+    pub fn object_acl(&self) -> std::option::Option<&crate::model::ObjectAcl> {
+        self.object_acl.as_ref()
+    }
+    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code>
+    /// to set the write status to read-only, otherwise set to <code>false</code>.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn read_only(&self) -> std::option::Option<bool> {
+        self.read_only
+    }
+    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file
+    /// extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set
+    /// to <code>false</code>. The default value is <code>true</code>.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn guess_mime_type_enabled(&self) -> std::option::Option<bool> {
+        self.guess_mime_type_enabled
+    }
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data
+    /// download from the S3 bucket. If this value is set to <code>true</code>, the requester pays
+    /// the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays
+    /// the cost of storing data.</p>
+    ///
+    /// <note>
+    /// <p>
+    /// <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file
+    /// share, so make sure that the configuration on the file share is the same as the S3
+    /// bucket configuration.</p>
+    /// </note>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn requester_pays(&self) -> std::option::Option<bool> {
+        self.requester_pays
+    }
+    /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL)
+    /// is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that
+    /// file and directory permissions are mapped to the POSIX permission.</p>
+    ///
+    ///
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
+    /// control access to an SMB file share</a> in the <i>Storage Gateway User
+    /// Guide</i>.</p>
+    pub fn smbacl_enabled(&self) -> std::option::Option<bool> {
+        self.smbacl_enabled
+    }
+    /// <p>Indicates whether <code>AccessBasedEnumeration</code> is enabled.</p>
+    pub fn access_based_enumeration(&self) -> std::option::Option<bool> {
+        self.access_based_enumeration
+    }
+    /// <p>A list of users or groups in the Active Directory that have administrator rights to the
+    /// file share. A group must be prefixed with the @ character. Acceptable formats include:
+    /// <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
+    /// <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
+    /// <code>ActiveDirectory</code>.</p>
+    pub fn admin_user_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.admin_user_list.as_deref()
+    }
+    /// <p>A list of users or groups in the Active Directory that are allowed to access the file
+    /// share. A group must be prefixed with the @ character. Acceptable formats include:
+    /// <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
+    /// <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
+    /// <code>ActiveDirectory</code>.</p>
+    pub fn valid_user_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.valid_user_list.as_deref()
+    }
+    /// <p>A list of users or groups in the Active Directory that are not allowed to access the
+    /// file share. A group must be prefixed with the @ character. Acceptable formats include:
+    /// <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
+    /// <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
+    /// <code>ActiveDirectory</code>.</p>
+    pub fn invalid_user_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.invalid_user_list.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
+        self.audit_destination_arn.as_deref()
+    }
+    /// <p>The authentication method of the file share. The default is
+    /// <code>ActiveDirectory</code>.</p>
+    ///
+    /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code>
+    /// </p>
+    pub fn authentication(&self) -> std::option::Option<&str> {
+        self.authentication.as_deref()
+    }
+    /// <p>The case of an object name in an Amazon S3 bucket. For
+    /// <code>ClientSpecified</code>, the client determines the case sensitivity. For
+    /// <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default
+    /// value is <code>ClientSpecified</code>.</p>
+    pub fn case_sensitivity(&self) -> std::option::Option<&crate::model::CaseSensitivity> {
+        self.case_sensitivity.as_ref()
+    }
+    /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key
+    /// name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can
+    /// view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the file share. Optional.</p>
+    ///
+    /// <note>
+    /// <p>
+    /// <code>FileShareName</code> must be set if an S3 prefix name is set in
+    /// <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// </note>
+    pub fn file_share_name(&self) -> std::option::Option<&str> {
+        self.file_share_name.as_deref()
+    }
+    /// <p>Refresh cache information for the file share.</p>
+    pub fn cache_attributes(&self) -> std::option::Option<&crate::model::CacheAttributes> {
+        self.cache_attributes.as_ref()
+    }
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls
+    /// the number of seconds to wait after the last point in time a client wrote to a file before
+    /// generating an <code>ObjectUploaded</code> notification. Because clients can make many small
+    /// writes to files, it's best to set this parameter for as long as possible to avoid
+    /// generating multiple notifications for the same file in a small time period.</p>
+    ///
+    /// <note>
+    /// <p>
+    /// <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+    /// uploading to Amazon S3, only the timing of the notification.</p>
+    /// </note>
+    ///
+    /// <p>The following example sets <code>NotificationPolicy</code> on with
+    /// <code>SettlingTimeInSeconds</code> set to 60.</p>
+    ///
+    /// <p>
+    /// <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+    /// </p>
+    ///
+    /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+    ///
+    /// <p>
+    /// <code>{}</code>
+    /// </p>
+    pub fn notification_policy(&self) -> std::option::Option<&str> {
+        self.notification_policy.as_deref()
+    }
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to
+    /// Amazon S3.</p>
+    /// <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+    /// VPC access point.</p>
+    /// </note>
+    pub fn vpc_endpoint_dns_name(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_dns_name.as_deref()
+    }
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p>
+    /// <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+    /// VPC access point.</p>
+    /// </note>
+    pub fn bucket_region(&self) -> std::option::Option<&str> {
+        self.bucket_region.as_deref()
+    }
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
+    /// <note>
+    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for
+    /// workloads that involve access to files with the same name in different case.</p>
+    /// </note>
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn oplocks_enabled(&self) -> std::option::Option<bool> {
+        self.oplocks_enabled
+    }
 }
 impl std::fmt::Debug for SmbFileShareInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5598,6 +6616,233 @@ pub struct NfsFileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub audit_destination_arn: std::option::Option<std::string::String>,
 }
+impl NfsFileShareInfo {
+    /// <p>Describes Network File System (NFS) file share default values. Files and folders stored
+    /// as Amazon S3 objects in S3 buckets don't, by default, have Unix file
+    /// permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3
+    /// objects that represent files and folders are assigned these default Unix permissions. This
+    /// operation is only supported for S3 File Gateways.</p>
+    pub fn nfs_file_share_defaults(
+        &self,
+    ) -> std::option::Option<&crate::model::NfsFileShareDefaults> {
+        self.nfs_file_share_defaults.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
+    /// <p>The ID of the file share.</p>
+    pub fn file_share_id(&self) -> std::option::Option<&str> {
+        self.file_share_id.as_deref()
+    }
+    /// <p>The status of the file share.</p>
+    ///
+    /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> |
+    /// <code>DELETING</code>
+    /// </p>
+    pub fn file_share_status(&self) -> std::option::Option<&str> {
+        self.file_share_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+    /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+    /// Optional.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn kms_encrypted(&self) -> bool {
+        self.kms_encrypted
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+    /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The file share path used by the NFS client to identify the mount point.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying
+    /// storage.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes
+    /// a resource ARN with an optional prefix concatenation. The prefix must end with a forward
+    /// slash (/).</p>
+    /// <note>
+    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias,
+    /// as shown in the following examples.</p>
+    ///
+    /// <p>Bucket ARN:</p>
+    /// <p>
+    /// <code>arn:aws:s3:::my-bucket/prefix/</code>
+    /// </p>
+    ///
+    /// <p>Access point ARN:</p>
+    /// <p>
+    /// <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+    /// </p>
+    ///
+    /// <p>If you specify an access point, the bucket policy must be configured to delegate
+    /// access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    ///
+    /// <p>Access point alias:</p>
+    /// <p>
+    /// <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code>
+    /// </p>
+    /// </note>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+    /// File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+    ///
+    /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
+    /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
+    /// </p>
+    pub fn default_storage_class(&self) -> std::option::Option<&str> {
+        self.default_storage_class.as_deref()
+    }
+    /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
+    /// that an S3 File Gateway puts objects into. The default value is
+    /// <code>private</code>.</p>
+    pub fn object_acl(&self) -> std::option::Option<&crate::model::ObjectAcl> {
+        self.object_acl.as_ref()
+    }
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must
+    /// contain either valid IP addresses or valid CIDR blocks.</p>
+    pub fn client_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.client_list.as_deref()
+    }
+    /// <p>The user mapped to anonymous user. Valid options are the following:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>RootSquash</code>: Only root is mapped to anonymous user.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NoSquash</code>: No one is mapped to anonymous user.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AllSquash</code>: Everyone is mapped to anonymous user.</p>
+    /// </li>
+    /// </ul>
+    pub fn squash(&self) -> std::option::Option<&str> {
+        self.squash.as_deref()
+    }
+    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code>
+    /// to set the write status to read-only, otherwise set to <code>false</code>.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn read_only(&self) -> std::option::Option<bool> {
+        self.read_only
+    }
+    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file
+    /// extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set
+    /// to <code>false</code>. The default value is <code>true</code>.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn guess_mime_type_enabled(&self) -> std::option::Option<bool> {
+        self.guess_mime_type_enabled
+    }
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data
+    /// download from the S3 bucket. If this value is set to <code>true</code>, the requester pays
+    /// the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays
+    /// the cost of storing data.</p>
+    ///
+    /// <note>
+    /// <p>
+    /// <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file
+    /// share, so make sure that the configuration on the file share is the same as the S3
+    /// bucket configuration.</p>
+    /// </note>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn requester_pays(&self) -> std::option::Option<bool> {
+        self.requester_pays
+    }
+    /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key
+    /// name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can
+    /// view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the file share. Optional.</p>
+    ///
+    /// <note>
+    /// <p>
+    /// <code>FileShareName</code> must be set if an S3 prefix name is set in
+    /// <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// </note>
+    pub fn file_share_name(&self) -> std::option::Option<&str> {
+        self.file_share_name.as_deref()
+    }
+    /// <p>Refresh cache information for the file share.</p>
+    pub fn cache_attributes(&self) -> std::option::Option<&crate::model::CacheAttributes> {
+        self.cache_attributes.as_ref()
+    }
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls
+    /// the number of seconds to wait after the last point in time a client wrote to a file before
+    /// generating an <code>ObjectUploaded</code> notification. Because clients can make many small
+    /// writes to files, it's best to set this parameter for as long as possible to avoid
+    /// generating multiple notifications for the same file in a small time period.</p>
+    ///
+    /// <note>
+    /// <p>
+    /// <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+    /// uploading to Amazon S3, only the timing of the notification.</p>
+    /// </note>
+    ///
+    /// <p>The following example sets <code>NotificationPolicy</code> on with
+    /// <code>SettlingTimeInSeconds</code> set to 60.</p>
+    ///
+    /// <p>
+    /// <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+    /// </p>
+    ///
+    /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+    ///
+    /// <p>
+    /// <code>{}</code>
+    /// </p>
+    pub fn notification_policy(&self) -> std::option::Option<&str> {
+        self.notification_policy.as_deref()
+    }
+    /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to
+    /// Amazon S3.</p>
+    /// <note>
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+    /// VPC access point.</p>
+    /// </note>
+    pub fn vpc_endpoint_dns_name(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_dns_name.as_deref()
+    }
+    /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p>
+    /// <note>
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+    /// VPC access point.</p>
+    /// </note>
+    pub fn bucket_region(&self) -> std::option::Option<&str> {
+        self.bucket_region.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
+        self.audit_destination_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for NfsFileShareInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NfsFileShareInfo");
@@ -6332,6 +7577,25 @@ pub struct NetworkInterface {
     /// supported</i>.</p>
     pub ipv6_address: std::option::Option<std::string::String>,
 }
+impl NetworkInterface {
+    /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
+    pub fn ipv4_address(&self) -> std::option::Option<&str> {
+        self.ipv4_address.as_deref()
+    }
+    /// <p>The Media Access Control (MAC) address of the interface.</p>
+    ///
+    /// <note>
+    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// </note>
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not
+    /// supported</i>.</p>
+    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+        self.ipv6_address.as_deref()
+    }
+}
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkInterface");
@@ -6446,6 +7710,60 @@ pub struct FileSystemAssociationInfo {
     /// detailed information on file system association status.</p>
     pub file_system_association_status_details:
         std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationStatusDetail>>,
+}
+impl FileSystemAssociationInfo {
+    /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
+    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+        self.file_system_association_arn.as_deref()
+    }
+    /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For
+    /// information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the
+    /// <i>Amazon FSx API Reference</i>.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> |
+    /// <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
+    /// <code>UPDATING</code> | <code>ERROR</code>
+    /// </p>
+    pub fn file_system_association_status(&self) -> std::option::Option<&str> {
+        self.file_system_association_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
+        self.audit_destination_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key
+    /// name. Each tag is a key-value pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
+    pub fn cache_attributes(&self) -> std::option::Option<&crate::model::CacheAttributes> {
+        self.cache_attributes.as_ref()
+    }
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p>
+    /// <note>
+    /// <p>If multiple file systems are associated with this gateway, this parameter's
+    /// <code>IpAddresses</code> field is required.</p>
+    /// </note>
+    pub fn endpoint_network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointNetworkConfiguration> {
+        self.endpoint_network_configuration.as_ref()
+    }
+    /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides
+    /// detailed information on file system association status.</p>
+    pub fn file_system_association_status_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::FileSystemAssociationStatusDetail]> {
+        self.file_system_association_status_details.as_deref()
+    }
 }
 impl std::fmt::Debug for FileSystemAssociationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6686,6 +8004,12 @@ pub struct FileSystemAssociationStatusDetail {
     /// <p>The error code for a given file system association status.</p>
     pub error_code: std::option::Option<std::string::String>,
 }
+impl FileSystemAssociationStatusDetail {
+    /// <p>The error code for a given file system association status.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for FileSystemAssociationStatusDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileSystemAssociationStatusDetail");
@@ -6738,6 +8062,17 @@ pub struct EndpointNetworkConfiguration {
     /// required.</p>
     /// </note>
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl EndpointNetworkConfiguration {
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is
+    /// available.</p>
+    /// <note>
+    /// <p>If multiple file systems are associated with this gateway, this field is
+    /// required.</p>
+    /// </note>
+    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_addresses.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointNetworkConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6816,6 +8151,28 @@ pub struct ChapInfo {
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the
     /// initiator (e.g., Windows client).</p>
     pub secret_to_authenticate_target: std::option::Option<std::string::String>,
+}
+impl ChapInfo {
+    /// <p>The Amazon Resource Name (ARN) of the volume.</p>
+    ///
+    /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The secret key that the initiator (for example, the Windows client) must provide to
+    /// participate in mutual CHAP with the target.</p>
+    pub fn secret_to_authenticate_initiator(&self) -> std::option::Option<&str> {
+        self.secret_to_authenticate_initiator.as_deref()
+    }
+    /// <p>The iSCSI initiator that connects to the target.</p>
+    pub fn initiator_name(&self) -> std::option::Option<&str> {
+        self.initiator_name.as_deref()
+    }
+    /// <p>The secret key that the target must provide to participate in mutual CHAP with the
+    /// initiator (e.g., Windows client).</p>
+    pub fn secret_to_authenticate_target(&self) -> std::option::Option<&str> {
+        self.secret_to_authenticate_target.as_deref()
+    }
 }
 impl std::fmt::Debug for ChapInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6980,6 +8337,86 @@ pub struct CachediScsiVolume {
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously
     /// used for this volume as the new target name.</p>
     pub target_name: std::option::Option<std::string::String>,
+}
+impl CachediScsiVolume {
+    /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>One of the VolumeType enumeration values that describes the type of the volume.</p>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
+    pub fn volume_status(&self) -> std::option::Option<&str> {
+        self.volume_status.as_deref()
+    }
+    /// <p>A value that indicates whether a storage volume is attached to or detached from a
+    /// gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+    /// your volumes to a different gateway</a>.</p>
+    pub fn volume_attachment_status(&self) -> std::option::Option<&str> {
+        self.volume_attachment_status.as_deref()
+    }
+    /// <p>The size, in bytes, of the volume capacity.</p>
+    pub fn volume_size_in_bytes(&self) -> i64 {
+        self.volume_size_in_bytes
+    }
+    /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that
+    /// represents the percent of data transferred. This field does not appear in the response if
+    /// the cached volume is not restoring or bootstrapping.</p>
+    pub fn volume_progress(&self) -> std::option::Option<f64> {
+        self.volume_progress
+    }
+    /// <p>If the cached volume was created from a snapshot, this field contains the snapshot ID
+    /// used, e.g., snap-78e22663. Otherwise, this field is not included.</p>
+    pub fn source_snapshot_id(&self) -> std::option::Option<&str> {
+        self.source_snapshot_id.as_deref()
+    }
+    /// <p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI
+    /// attributes for one stored volume.</p>
+    pub fn volumei_scsi_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::VolumeiScsiAttributes> {
+        self.volumei_scsi_attributes.as_ref()
+    }
+    /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this
+    /// timestamp.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on
+    /// the number of blocks that are touched, instead of the actual amount of data written. This
+    /// value can be useful for sequential write patterns but less accurate for random write
+    /// patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the
+    /// volume, which is the value that is used to calculate your bill.</p>
+    ///
+    /// <note>
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you
+    /// store data on the volume.</p>
+    /// </note>
+    pub fn volume_used_in_bytes(&self) -> std::option::Option<i64> {
+        self.volume_used_in_bytes
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+    /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a
+    /// suffix for the target ARN. For example, specifying <code>TargetName</code> as
+    /// <i>myvolume</i> results in the target ARN of
+    /// <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+    /// The target name must be unique across all volumes on a gateway.</p>
+    ///
+    /// <p>If you don't specify a value, Storage Gateway uses the value that was previously
+    /// used for this volume as the new target name.</p>
+    pub fn target_name(&self) -> std::option::Option<&str> {
+        self.target_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CachediScsiVolume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

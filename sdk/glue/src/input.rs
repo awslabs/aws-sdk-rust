@@ -146,10 +146,9 @@ impl BatchCreatePartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_partition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_partition(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -324,10 +323,7 @@ impl BatchDeleteConnectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_connection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -535,10 +531,9 @@ impl BatchDeletePartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_partition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_partition(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -728,10 +723,7 @@ impl BatchDeleteTableInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_table(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_table(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -938,10 +930,7 @@ impl BatchDeleteTableVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_table_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1124,10 +1113,7 @@ impl BatchGetBlueprintsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_blueprints(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_blueprints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1288,10 +1274,7 @@ impl BatchGetCrawlersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_crawlers(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_crawlers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1454,10 +1437,7 @@ impl BatchGetDevEndpointsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_dev_endpoints(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1617,10 +1597,7 @@ impl BatchGetJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_batch_get_jobs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_batch_get_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1824,10 +1801,7 @@ impl BatchGetPartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_partition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_partition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1986,10 +1960,7 @@ impl BatchGetTriggersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_triggers(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_triggers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2160,10 +2131,7 @@ impl BatchGetWorkflowsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_workflows(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_workflows(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2336,10 +2304,7 @@ impl BatchStopJobRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_stop_job_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_stop_job_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2547,10 +2512,9 @@ impl BatchUpdatePartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_update_partition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_update_partition(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2712,10 +2676,7 @@ impl CancelMlTaskRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_ml_task_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_ml_task_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2884,7 +2845,7 @@ impl CheckSchemaVersionValidityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_check_schema_version_validity(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_check_schema_version_validity(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3091,10 +3052,7 @@ impl CreateBlueprintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_blueprint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_blueprint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3300,10 +3258,7 @@ impl CreateClassifierInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_classifier(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_classifier(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3501,10 +3456,7 @@ impl CreateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3881,10 +3833,7 @@ impl CreateCrawlerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_crawler(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_crawler(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4050,10 +3999,8 @@ impl CreateDatabaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_database(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_database(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4524,10 +4471,7 @@ impl CreateDevEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dev_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_dev_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5058,10 +5002,7 @@ impl CreateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5524,10 +5465,7 @@ impl CreateMlTransformInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_ml_transform(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_ml_transform(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5723,10 +5661,7 @@ impl CreatePartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_partition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_partition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5918,10 +5853,9 @@ impl CreatePartitionIndexInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_partition_index(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_partition_index(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6114,10 +6048,8 @@ impl CreateRegistryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_registry(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_registry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6437,10 +6369,7 @@ impl CreateSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6631,10 +6560,7 @@ impl CreateScriptInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_script(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_script(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6804,7 +6730,7 @@ impl CreateSecurityConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_security_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7012,10 +6938,7 @@ impl CreateTableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_table(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_table(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7327,10 +7250,7 @@ impl CreateTriggerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_trigger(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_trigger(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7517,10 +7437,7 @@ impl CreateUserDefinedFunctionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_defined_function(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7751,10 +7668,8 @@ impl CreateWorkflowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_workflow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_workflow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7902,10 +7817,7 @@ impl DeleteBlueprintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_blueprint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_blueprint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8053,10 +7965,7 @@ impl DeleteClassifierInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_classifier(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_classifier(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8269,7 +8178,7 @@ impl DeleteColumnStatisticsForPartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_column_statistics_for_partition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_column_statistics_for_partition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8462,7 +8371,7 @@ impl DeleteColumnStatisticsForTableInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_column_statistics_for_table(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_column_statistics_for_table(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8630,10 +8539,7 @@ impl DeleteConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8780,10 +8686,7 @@ impl DeleteCrawlerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_crawler(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_crawler(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8948,10 +8851,8 @@ impl DeleteDatabaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_database(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_database(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9104,10 +9005,7 @@ impl DeleteDevEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_dev_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_dev_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9254,10 +9152,7 @@ impl DeleteJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9405,10 +9300,7 @@ impl DeleteMlTransformInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_ml_transform(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_ml_transform(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9610,10 +9502,7 @@ impl DeletePartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_partition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_partition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9802,10 +9691,9 @@ impl DeletePartitionIndexInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_partition_index(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_partition_index(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9957,10 +9845,8 @@ impl DeleteRegistryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_registry(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_registry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10125,10 +10011,9 @@ impl DeleteResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10277,10 +10162,7 @@ impl DeleteSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10458,10 +10340,9 @@ impl DeleteSchemaVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_schema_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_schema_versions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10610,7 +10491,7 @@ impl DeleteSecurityConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_security_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10793,10 +10674,7 @@ impl DeleteTableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_table(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_table(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10991,10 +10869,7 @@ impl DeleteTableVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_table_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_table_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11141,10 +11016,7 @@ impl DeleteTriggerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trigger(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trigger(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11329,10 +11201,7 @@ impl DeleteUserDefinedFunctionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_defined_function(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11479,10 +11348,8 @@ impl DeleteWorkflowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_workflow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_workflow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11655,10 +11522,7 @@ impl GetBlueprintInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_blueprint(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_blueprint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11823,10 +11687,7 @@ impl GetBlueprintRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_blueprint_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_blueprint_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12003,10 +11864,7 @@ impl GetBlueprintRunsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_blueprint_runs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_blueprint_runs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12158,10 +12016,7 @@ impl GetCatalogImportStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_catalog_import_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12308,10 +12163,7 @@ impl GetClassifierInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_classifier(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_classifier(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12472,10 +12324,8 @@ impl GetClassifiersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_classifiers(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_classifiers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12697,7 +12547,7 @@ impl GetColumnStatisticsForPartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_column_statistics_for_partition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_column_statistics_for_partition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12899,7 +12749,7 @@ impl GetColumnStatisticsForTableInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_column_statistics_for_table(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_column_statistics_for_table(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13083,10 +12933,7 @@ impl GetConnectionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_connection(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13296,10 +13143,8 @@ impl GetConnectionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_connections(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_connections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13446,10 +13291,7 @@ impl GetCrawlerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_crawler(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_crawler(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13632,10 +13474,7 @@ impl GetCrawlerMetricsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_crawler_metrics(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_crawler_metrics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13796,10 +13635,7 @@ impl GetCrawlersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_crawlers(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_crawlers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13964,10 +13800,7 @@ impl GetDatabaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_database(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_database(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14175,10 +14008,7 @@ impl GetDatabasesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_databases(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_databases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14331,7 +14161,7 @@ impl GetDataCatalogEncryptionSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_data_catalog_encryption_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_data_catalog_encryption_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14485,10 +14315,7 @@ impl GetDataflowGraphInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_dataflow_graph(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_dataflow_graph(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14641,10 +14468,7 @@ impl GetDevEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_dev_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_dev_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14806,10 +14630,7 @@ impl GetDevEndpointsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_dev_endpoints(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_dev_endpoints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14956,10 +14777,7 @@ impl GetJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15116,10 +14934,7 @@ impl GetJobBookmarkInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_job_bookmark(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_job_bookmark(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15290,10 +15105,7 @@ impl GetJobRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_job_run(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_job_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15464,10 +15276,7 @@ impl GetJobRunsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_job_runs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_job_runs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15626,10 +15435,7 @@ impl GetJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_jobs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15809,10 +15615,7 @@ impl GetMappingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_mapping(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_mapping(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15973,10 +15776,8 @@ impl GetMlTaskRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_ml_task_run(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_ml_task_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16180,10 +15981,7 @@ impl GetMlTaskRunsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ml_task_runs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_ml_task_runs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16335,10 +16133,7 @@ impl GetMlTransformInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ml_transform(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_ml_transform(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16530,10 +16325,7 @@ impl GetMlTransformsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ml_transforms(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_ml_transforms(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16732,10 +16524,7 @@ impl GetPartitionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_partition(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_partition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16924,10 +16713,7 @@ impl GetPartitionIndexesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_partition_indexes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_partition_indexes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17377,10 +17163,7 @@ impl GetPartitionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_partitions(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_partitions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17649,10 +17432,7 @@ impl GetPlanInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_plan(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17799,10 +17579,7 @@ impl GetRegistryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_registry(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_registry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17964,10 +17741,7 @@ impl GetResourcePoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18123,10 +17897,7 @@ impl GetResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18289,10 +18060,7 @@ impl GetSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_schema(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18473,10 +18241,7 @@ impl GetSchemaByDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_schema_by_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18672,10 +18437,7 @@ impl GetSchemaVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_schema_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_schema_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18896,10 +18658,7 @@ impl GetSchemaVersionsDiffInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_schema_versions_diff(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19050,10 +18809,7 @@ impl GetSecurityConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_security_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19218,10 +18974,7 @@ impl GetSecurityConfigurationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_security_configurations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19401,10 +19154,7 @@ impl GetTableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_table(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_table(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19605,10 +19355,7 @@ impl GetTablesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_tables(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_tables(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19801,10 +19548,7 @@ impl GetTableVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_table_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_table_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20011,10 +19755,7 @@ impl GetTableVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_table_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_table_versions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20161,10 +19902,7 @@ impl GetTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20306,10 +20044,7 @@ impl GetTriggerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_trigger(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_trigger(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20487,10 +20222,7 @@ impl GetTriggersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_triggers(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_triggers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20674,10 +20406,7 @@ impl GetUserDefinedFunctionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_user_defined_function(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20887,10 +20616,7 @@ impl GetUserDefinedFunctionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_user_defined_functions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21051,10 +20777,7 @@ impl GetWorkflowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_workflow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_workflow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21228,10 +20951,7 @@ impl GetWorkflowRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_workflow_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_workflow_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21396,10 +21116,7 @@ impl GetWorkflowRunPropertiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_workflow_run_properties(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21585,10 +21302,7 @@ impl GetWorkflowRunsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_workflow_runs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_workflow_runs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21738,10 +21452,9 @@ impl ImportCatalogToGlueInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_catalog_to_glue(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_catalog_to_glue(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21931,10 +21644,8 @@ impl ListBlueprintsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_blueprints(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_blueprints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22124,10 +21835,7 @@ impl ListCrawlersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_crawlers(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_crawlers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22318,10 +22026,7 @@ impl ListDevEndpointsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_dev_endpoints(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_dev_endpoints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22509,10 +22214,7 @@ impl ListJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22730,10 +22432,7 @@ impl ListMlTransformsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_ml_transforms(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_ml_transforms(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22894,10 +22593,8 @@ impl ListRegistriesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_registries(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_registries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23073,10 +22770,7 @@ impl ListSchemasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23266,10 +22960,7 @@ impl ListSchemaVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_schema_versions(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_schema_versions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23476,10 +23167,7 @@ impl ListTriggersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_triggers(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_triggers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23640,10 +23328,7 @@ impl ListWorkflowsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_workflows(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_workflows(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23815,7 +23500,7 @@ impl PutDataCatalogEncryptionSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_data_catalog_encryption_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_data_catalog_encryption_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24058,10 +23743,7 @@ impl PutResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24259,10 +23941,7 @@ impl PutSchemaVersionMetadataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_schema_version_metadata(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24456,10 +24135,7 @@ impl PutWorkflowRunPropertiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_workflow_run_properties(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24689,7 +24365,7 @@ impl QuerySchemaVersionMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_query_schema_version_metadata(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_query_schema_version_metadata(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24873,10 +24549,7 @@ impl RegisterSchemaVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_schema_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25072,7 +24745,7 @@ impl RemoveSchemaVersionMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_schema_version_metadata(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_schema_version_metadata(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -25235,10 +24908,7 @@ impl ResetJobBookmarkInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reset_job_bookmark(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reset_job_bookmark(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25421,10 +25091,7 @@ impl ResumeWorkflowRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_resume_workflow_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_resume_workflow_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25694,10 +25361,7 @@ impl SearchTablesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_tables(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_tables(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25874,10 +25538,7 @@ impl StartBlueprintRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_blueprint_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_blueprint_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26024,10 +25685,7 @@ impl StartCrawlerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_crawler(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_crawler(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26177,10 +25835,9 @@ impl StartCrawlerScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_crawler_schedule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_crawler_schedule(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26348,10 +26005,7 @@ impl StartExportLabelsTaskRunInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_export_labels_task_run(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26533,10 +26187,7 @@ impl StartImportLabelsTaskRunInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_import_labels_task_run(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26905,10 +26556,7 @@ impl StartJobRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_job_run(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_job_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27061,10 +26709,7 @@ impl StartMlEvaluationTaskRunInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_ml_evaluation_task_run(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27233,7 +26878,7 @@ impl StartMlLabelingSetGenerationTaskRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_ml_labeling_set_generation_task_run(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_ml_labeling_set_generation_task_run(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -27381,10 +27026,7 @@ impl StartTriggerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_trigger(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_trigger(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27532,10 +27174,7 @@ impl StartWorkflowRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_workflow_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_workflow_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27682,10 +27321,7 @@ impl StopCrawlerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_crawler(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_crawler(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27835,10 +27471,7 @@ impl StopCrawlerScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_crawler_schedule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_crawler_schedule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27985,10 +27618,7 @@ impl StopTriggerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_trigger(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_trigger(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28150,10 +27780,7 @@ impl StopWorkflowRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_workflow_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_workflow_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28333,10 +27960,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28506,10 +28130,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28686,10 +28307,7 @@ impl UpdateBlueprintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_blueprint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_blueprint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28887,10 +28505,7 @@ impl UpdateClassifierInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_classifier(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_classifier(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29116,7 +28731,7 @@ impl UpdateColumnStatisticsForPartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_column_statistics_for_partition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_column_statistics_for_partition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -29322,7 +28937,7 @@ impl UpdateColumnStatisticsForTableInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_column_statistics_for_table(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_column_statistics_for_table(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -29504,10 +29119,7 @@ impl UpdateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29853,10 +29465,7 @@ impl UpdateCrawlerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_crawler(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_crawler(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30024,10 +29633,7 @@ impl UpdateCrawlerScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_crawler_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30209,10 +29815,8 @@ impl UpdateDatabaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_database(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_database(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30526,10 +30130,7 @@ impl UpdateDevEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_dev_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_dev_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30691,10 +30292,7 @@ impl UpdateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31004,10 +30602,7 @@ impl UpdateMlTransformInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_ml_transform(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_ml_transform(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31228,10 +30823,7 @@ impl UpdatePartitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_partition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_partition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31395,10 +30987,8 @@ impl UpdateRegistryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_registry(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_registry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31605,10 +31195,7 @@ impl UpdateSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31809,10 +31396,7 @@ impl UpdateTableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_table(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_table(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31976,10 +31560,7 @@ impl UpdateTriggerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_trigger(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_trigger(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32183,10 +31764,7 @@ impl UpdateUserDefinedFunctionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_defined_function(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32388,10 +31966,8 @@ impl UpdateWorkflowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_workflow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_workflow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32467,6 +32043,27 @@ pub struct UpdateWorkflowInput {
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
     pub max_concurrent_runs: std::option::Option<i32>,
 }
+impl UpdateWorkflowInput {
+    /// <p>Name of the workflow to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the workflow.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    pub fn default_run_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_run_properties.as_ref()
+    }
+    /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    pub fn max_concurrent_runs(&self) -> std::option::Option<i32> {
+        self.max_concurrent_runs
+    }
+}
 impl std::fmt::Debug for UpdateWorkflowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkflowInput");
@@ -32494,6 +32091,27 @@ pub struct UpdateUserDefinedFunctionInput {
     /// Catalog.</p>
     pub function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
 }
+impl UpdateUserDefinedFunctionInput {
+    /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
+    /// provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the function to be updated is
+    /// located.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
+    /// Catalog.</p>
+    pub fn function_input(&self) -> std::option::Option<&crate::model::UserDefinedFunctionInput> {
+        self.function_input.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserDefinedFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserDefinedFunctionInput");
@@ -32513,6 +32131,16 @@ pub struct UpdateTriggerInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The new values with which to update the trigger.</p>
     pub trigger_update: std::option::Option<crate::model::TriggerUpdate>,
+}
+impl UpdateTriggerInput {
+    /// <p>The name of the trigger to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new values with which to update the trigger.</p>
+    pub fn trigger_update(&self) -> std::option::Option<&crate::model::TriggerUpdate> {
+        self.trigger_update.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTriggerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32540,6 +32168,29 @@ pub struct UpdateTableInput {
     /// before updating it. However, if <code>skipArchive</code> is set to true,
     /// <code>UpdateTable</code> does not create the archived version.</p>
     pub skip_archive: std::option::Option<bool>,
+}
+impl UpdateTableInput {
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database in which the table resides. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>An updated <code>TableInput</code> object to define the metadata table
+    /// in the catalog.</p>
+    pub fn table_input(&self) -> std::option::Option<&crate::model::TableInput> {
+        self.table_input.as_ref()
+    }
+    /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
+    /// before updating it. However, if <code>skipArchive</code> is set to true,
+    /// <code>UpdateTable</code> does not create the archived version.</p>
+    pub fn skip_archive(&self) -> std::option::Option<bool> {
+        self.skip_archive
+    }
 }
 impl std::fmt::Debug for UpdateTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32573,6 +32224,32 @@ pub struct UpdateSchemaInput {
     /// <p>The new description for the schema.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateSchemaInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
+    pub fn schema_version_number(&self) -> std::option::Option<&crate::model::SchemaVersionNumber> {
+        self.schema_version_number.as_ref()
+    }
+    /// <p>The new compatibility setting for the schema.</p>
+    pub fn compatibility(&self) -> std::option::Option<&crate::model::Compatibility> {
+        self.compatibility.as_ref()
+    }
+    /// <p>The new description for the schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSchemaInput");
@@ -32592,6 +32269,16 @@ pub struct UpdateRegistryInput {
     pub registry_id: std::option::Option<crate::model::RegistryId>,
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateRegistryInput {
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn registry_id(&self) -> std::option::Option<&crate::model::RegistryId> {
+        self.registry_id.as_ref()
+    }
+    /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32620,6 +32307,32 @@ pub struct UpdatePartitionInput {
     ///
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
+}
+impl UpdatePartitionInput {
+    /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
+    /// the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database in which the table in question
+    /// resides.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table in which the partition to be updated is located.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>List of partition key values that define the partition to update.</p>
+    pub fn partition_value_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_value_list.as_deref()
+    }
+    /// <p>The new partition object to update the partition to.</p>
+    ///
+    /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
+    pub fn partition_input(&self) -> std::option::Option<&crate::model::PartitionInput> {
+        self.partition_input.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32678,6 +32391,70 @@ pub struct UpdateMlTransformInput {
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
     pub max_retries: std::option::Option<i32>,
 }
+impl UpdateMlTransformInput {
+    /// <p>A unique identifier that was generated when the transform was created.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The unique name that you gave the transform when you created it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the transform. The default is an empty string.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
+    /// Conditionally dependent on the transform type.</p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::TransformParameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
+    /// permissions.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
+    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+    /// page</a>. </p>
+    ///
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    pub fn max_retries(&self) -> std::option::Option<i32> {
+        self.max_retries
+    }
+}
 impl std::fmt::Debug for UpdateMlTransformInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMlTransformInput");
@@ -32704,6 +32481,16 @@ pub struct UpdateJobInput {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Specifies the values with which to update the job definition.</p>
     pub job_update: std::option::Option<crate::model::JobUpdate>,
+}
+impl UpdateJobInput {
+    /// <p>The name of the job definition to update.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Specifies the values with which to update the job definition.</p>
+    pub fn job_update(&self) -> std::option::Option<&crate::model::JobUpdate> {
+        self.job_update.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32751,6 +32538,60 @@ pub struct UpdateDevEndpointInput {
     pub add_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateDevEndpointInput {
+    /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
+    pub fn public_key(&self) -> std::option::Option<&str> {
+        self.public_key.as_deref()
+    }
+    /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
+    pub fn add_public_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.add_public_keys.as_deref()
+    }
+    /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
+    pub fn delete_public_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.delete_public_keys.as_deref()
+    }
+    /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
+    pub fn custom_libraries(
+        &self,
+    ) -> std::option::Option<&crate::model::DevEndpointCustomLibraries> {
+        self.custom_libraries.as_ref()
+    }
+    /// <p>
+    /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
+    /// needs to be updated, or <code>False</code> if otherwise.</p>
+    pub fn update_etl_libraries(&self) -> bool {
+        self.update_etl_libraries
+    }
+    /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
+    /// <code>DevEndpoint</code>.</p>
+    pub fn delete_arguments(&self) -> std::option::Option<&[std::string::String]> {
+        self.delete_arguments.as_deref()
+    }
+    /// <p>The map of arguments to add the map of arguments used to configure the
+    /// <code>DevEndpoint</code>.</p>
+    ///
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>"--enable-glue-datacatalog": ""</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn add_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.add_arguments.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDevEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDevEndpointInput");
@@ -32780,6 +32621,23 @@ pub struct UpdateDatabaseInput {
     /// of the metadata database in the catalog.</p>
     pub database_input: std::option::Option<crate::model::DatabaseInput>,
 }
+impl UpdateDatabaseInput {
+    /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
+    /// the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the database to update in the catalog. For Hive
+    /// compatibility, this is folded to lowercase.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A <code>DatabaseInput</code> object specifying the new definition
+    /// of the metadata database in the catalog.</p>
+    pub fn database_input(&self) -> std::option::Option<&crate::model::DatabaseInput> {
+        self.database_input.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDatabaseInput");
@@ -32800,6 +32658,18 @@ pub struct UpdateCrawlerScheduleInput {
     /// something every day at 12:15 UTC, you would specify:
     /// <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: std::option::Option<std::string::String>,
+}
+impl UpdateCrawlerScheduleInput {
+    /// <p>The name of the crawler whose schedule to update.</p>
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
+        self.crawler_name.as_deref()
+    }
+    /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
+    /// something every day at 12:15 UTC, you would specify:
+    /// <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCrawlerScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32851,6 +32721,72 @@ pub struct UpdateCrawlerInput {
     /// crawler.</p>
     pub crawler_security_configuration: std::option::Option<std::string::String>,
 }
+impl UpdateCrawlerInput {
+    /// <p>Name of the new crawler.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
+    /// to access customer resources.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The Glue database where results are stored, such as:
+    /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A description of the new crawler.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of targets to crawl.</p>
+    pub fn targets(&self) -> std::option::Option<&crate::model::CrawlerTargets> {
+        self.targets.as_ref()
+    }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
+    /// something every day at 12:15 UTC, you would specify:
+    /// <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>A list of custom classifiers that the user
+    /// has registered. By default, all built-in classifiers are included in a crawl,
+    /// but these custom classifiers always override the default classifiers
+    /// for a given classification.</p>
+    pub fn classifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.classifiers.as_deref()
+    }
+    /// <p>The table prefix used for catalog tables that are created.</p>
+    pub fn table_prefix(&self) -> std::option::Option<&str> {
+        self.table_prefix.as_deref()
+    }
+    /// <p>The policy for the crawler's update and deletion behavior.</p>
+    pub fn schema_change_policy(&self) -> std::option::Option<&crate::model::SchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+    /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    pub fn recrawl_policy(&self) -> std::option::Option<&crate::model::RecrawlPolicy> {
+        self.recrawl_policy.as_ref()
+    }
+    /// <p>Specifies data lineage configuration settings for the crawler.</p>
+    pub fn lineage_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LineageConfiguration> {
+        self.lineage_configuration.as_ref()
+    }
+    /// <p>Crawler configuration information. This versioned JSON string allows users
+    /// to specify aspects of a crawler's behavior.
+    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
+    /// crawler.</p>
+    pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
+        self.crawler_security_configuration.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCrawlerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCrawlerInput");
@@ -32887,6 +32823,22 @@ pub struct UpdateConnectionInput {
     /// in question.</p>
     pub connection_input: std::option::Option<crate::model::ConnectionInput>,
 }
+impl UpdateConnectionInput {
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the connection definition to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A <code>ConnectionInput</code> object that redefines the connection
+    /// in question.</p>
+    pub fn connection_input(&self) -> std::option::Option<&crate::model::ConnectionInput> {
+        self.connection_input.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionInput");
@@ -32910,6 +32862,25 @@ pub struct UpdateColumnStatisticsForTableInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of the column statistics.</p>
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
+}
+impl UpdateColumnStatisticsForTableInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of the column statistics.</p>
+    pub fn column_statistics_list(&self) -> std::option::Option<&[crate::model::ColumnStatistics]> {
+        self.column_statistics_list.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateColumnStatisticsForTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32938,6 +32909,29 @@ pub struct UpdateColumnStatisticsForPartitionInput {
     /// <p>A list of the column statistics.</p>
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
 }
+impl UpdateColumnStatisticsForPartitionInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of partition values identifying the partition.</p>
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_values.as_deref()
+    }
+    /// <p>A list of the column statistics.</p>
+    pub fn column_statistics_list(&self) -> std::option::Option<&[crate::model::ColumnStatistics]> {
+        self.column_statistics_list.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateColumnStatisticsForPartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateColumnStatisticsForPartitionInput");
@@ -32963,6 +32957,28 @@ pub struct UpdateClassifierInput {
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
     pub csv_classifier: std::option::Option<crate::model::UpdateCsvClassifierRequest>,
 }
+impl UpdateClassifierInput {
+    /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
+    pub fn grok_classifier(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateGrokClassifierRequest> {
+        self.grok_classifier.as_ref()
+    }
+    /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
+    pub fn xml_classifier(&self) -> std::option::Option<&crate::model::UpdateXmlClassifierRequest> {
+        self.xml_classifier.as_ref()
+    }
+    /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
+    pub fn json_classifier(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateJsonClassifierRequest> {
+        self.json_classifier.as_ref()
+    }
+    /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
+    pub fn csv_classifier(&self) -> std::option::Option<&crate::model::UpdateCsvClassifierRequest> {
+        self.csv_classifier.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClassifierInput");
@@ -32985,6 +33001,20 @@ pub struct UpdateBlueprintInput {
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
     pub blueprint_location: std::option::Option<std::string::String>,
 }
+impl UpdateBlueprintInput {
+    /// <p>The name of the blueprint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the blueprint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    pub fn blueprint_location(&self) -> std::option::Option<&str> {
+        self.blueprint_location.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBlueprintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBlueprintInput");
@@ -33003,6 +33033,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags to remove from this resource.</p>
     pub tags_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags to remove from this resource.</p>
+    pub fn tags_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.tags_to_remove.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33024,6 +33064,20 @@ pub struct TagResourceInput {
     pub tags_to_add:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the Glue resource to which to add the tags. For more
+    /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags to add to this resource.</p>
+    pub fn tags_to_add(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags_to_add.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -33042,6 +33096,16 @@ pub struct StopWorkflowRunInput {
     /// <p>The ID of the workflow run to stop.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl StopWorkflowRunInput {
+    /// <p>The name of the workflow to stop.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the workflow run to stop.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopWorkflowRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopWorkflowRunInput");
@@ -33058,6 +33122,12 @@ pub struct StopTriggerInput {
     /// <p>The name of the trigger to stop.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StopTriggerInput {
+    /// <p>The name of the trigger to stop.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopTriggerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTriggerInput");
@@ -33072,6 +33142,12 @@ impl std::fmt::Debug for StopTriggerInput {
 pub struct StopCrawlerScheduleInput {
     /// <p>Name of the crawler whose schedule state to set.</p>
     pub crawler_name: std::option::Option<std::string::String>,
+}
+impl StopCrawlerScheduleInput {
+    /// <p>Name of the crawler whose schedule state to set.</p>
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
+        self.crawler_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopCrawlerScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33088,6 +33164,12 @@ pub struct StopCrawlerInput {
     /// <p>Name of the crawler to stop.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StopCrawlerInput {
+    /// <p>Name of the crawler to stop.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopCrawlerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopCrawlerInput");
@@ -33103,6 +33185,12 @@ pub struct StartWorkflowRunInput {
     /// <p>The name of the workflow to start.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StartWorkflowRunInput {
+    /// <p>The name of the workflow to start.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartWorkflowRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartWorkflowRunInput");
@@ -33117,6 +33205,12 @@ impl std::fmt::Debug for StartWorkflowRunInput {
 pub struct StartTriggerInput {
     /// <p>The name of the trigger to start.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl StartTriggerInput {
+    /// <p>The name of the trigger to start.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartTriggerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33136,6 +33230,17 @@ pub struct StartMlLabelingSetGenerationTaskRunInput {
     /// set.</p>
     pub output_s3_path: std::option::Option<std::string::String>,
 }
+impl StartMlLabelingSetGenerationTaskRunInput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
+    /// set.</p>
+    pub fn output_s3_path(&self) -> std::option::Option<&str> {
+        self.output_s3_path.as_deref()
+    }
+}
 impl std::fmt::Debug for StartMlLabelingSetGenerationTaskRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMlLabelingSetGenerationTaskRunInput");
@@ -33151,6 +33256,12 @@ impl std::fmt::Debug for StartMlLabelingSetGenerationTaskRunInput {
 pub struct StartMlEvaluationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
     pub transform_id: std::option::Option<std::string::String>,
+}
+impl StartMlEvaluationTaskRunInput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartMlEvaluationTaskRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33229,6 +33340,96 @@ pub struct StartJobRunInput {
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
 }
+impl StartJobRunInput {
+    /// <p>The name of the job definition to use.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+    /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
+    /// <p>You can specify arguments here that your own job-execution script
+    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+    /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    pub fn arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.arguments.as_ref()
+    }
+    /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
+    /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
+    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+    /// pricing page</a>.</p>
+    pub fn allocated_capacity(&self) -> i32 {
+        self.allocated_capacity
+    }
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
+    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
+    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+    /// pricing page</a>.</p>
+    ///
+    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    ///
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+    /// running a Python shell job, or an Apache Spark ETL job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+    /// </li>
+    /// <li>
+    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+    /// </li>
+    /// </ul>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
+    /// run.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>Specifies configuration properties of a job run notification.</p>
+    pub fn notification_property(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationProperty> {
+        self.notification_property.as_ref()
+    }
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+}
 impl std::fmt::Debug for StartJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartJobRunInput");
@@ -33258,6 +33459,21 @@ pub struct StartImportLabelsTaskRunInput {
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub replace_all_labels: bool,
 }
+impl StartImportLabelsTaskRunInput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
+    /// labels.</p>
+    pub fn input_s3_path(&self) -> std::option::Option<&str> {
+        self.input_s3_path.as_deref()
+    }
+    /// <p>Indicates whether to overwrite your existing labels.</p>
+    pub fn replace_all_labels(&self) -> bool {
+        self.replace_all_labels
+    }
+}
 impl std::fmt::Debug for StartImportLabelsTaskRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartImportLabelsTaskRunInput");
@@ -33277,6 +33493,16 @@ pub struct StartExportLabelsTaskRunInput {
     /// <p>The Amazon S3 path where you export the labels.</p>
     pub output_s3_path: std::option::Option<std::string::String>,
 }
+impl StartExportLabelsTaskRunInput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The Amazon S3 path where you export the labels.</p>
+    pub fn output_s3_path(&self) -> std::option::Option<&str> {
+        self.output_s3_path.as_deref()
+    }
+}
 impl std::fmt::Debug for StartExportLabelsTaskRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartExportLabelsTaskRunInput");
@@ -33293,6 +33519,12 @@ pub struct StartCrawlerScheduleInput {
     /// <p>Name of the crawler to schedule.</p>
     pub crawler_name: std::option::Option<std::string::String>,
 }
+impl StartCrawlerScheduleInput {
+    /// <p>Name of the crawler to schedule.</p>
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
+        self.crawler_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartCrawlerScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartCrawlerScheduleInput");
@@ -33307,6 +33539,12 @@ impl std::fmt::Debug for StartCrawlerScheduleInput {
 pub struct StartCrawlerInput {
     /// <p>Name of the crawler to start.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl StartCrawlerInput {
+    /// <p>Name of the crawler to start.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartCrawlerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33326,6 +33564,20 @@ pub struct StartBlueprintRunInput {
     pub parameters: std::option::Option<std::string::String>,
     /// <p>Specifies the IAM role used to create the workflow.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl StartBlueprintRunInput {
+    /// <p>The name of the blueprint.</p>
+    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+        self.blueprint_name.as_deref()
+    }
+    /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
+    pub fn parameters(&self) -> std::option::Option<&str> {
+        self.parameters.as_deref()
+    }
+    /// <p>Specifies the IAM role used to create the workflow.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StartBlueprintRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33370,6 +33622,50 @@ pub struct SearchTablesInput {
     /// </ul>
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
 }
+impl SearchTablesInput {
+    /// <p>A unique identifier, consisting of <code>
+    /// <i>account_id</i>
+    /// </code>.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A continuation token, included if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
+    ///
+    /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::PropertyPredicate]> {
+        self.filters.as_deref()
+    }
+    /// <p>A string used for a text search.</p>
+    /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
+    pub fn search_text(&self) -> std::option::Option<&str> {
+        self.search_text.as_deref()
+    }
+    /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::SortCriterion]> {
+        self.sort_criteria.as_deref()
+    }
+    /// <p>The maximum number of tables to return in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
+    /// </li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_share_type(&self) -> std::option::Option<&crate::model::ResourceShareType> {
+        self.resource_share_type.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchTablesInput");
@@ -33395,6 +33691,20 @@ pub struct ResumeWorkflowRunInput {
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
     pub node_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ResumeWorkflowRunInput {
+    /// <p>The name of the workflow to resume.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the workflow run to resume.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
+    pub fn node_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.node_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ResumeWorkflowRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResumeWorkflowRunInput");
@@ -33413,6 +33723,16 @@ pub struct ResetJobBookmarkInput {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The unique run identifier associated with this job run.</p>
     pub run_id: std::option::Option<std::string::String>,
+}
+impl ResetJobBookmarkInput {
+    /// <p>The name of the job in question.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The unique run identifier associated with this job run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetJobBookmarkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33435,6 +33755,24 @@ pub struct RemoveSchemaVersionMetadataInput {
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The value of the metadata key.</p>
     pub metadata_key_value: std::option::Option<crate::model::MetadataKeyValuePair>,
+}
+impl RemoveSchemaVersionMetadataInput {
+    /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version_number(&self) -> std::option::Option<&crate::model::SchemaVersionNumber> {
+        self.schema_version_number.as_ref()
+    }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The value of the metadata key.</p>
+    pub fn metadata_key_value(&self) -> std::option::Option<&crate::model::MetadataKeyValuePair> {
+        self.metadata_key_value.as_ref()
+    }
 }
 impl std::fmt::Debug for RemoveSchemaVersionMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33464,6 +33802,24 @@ pub struct RegisterSchemaVersionInput {
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
     pub schema_definition: std::option::Option<std::string::String>,
 }
+impl RegisterSchemaVersionInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
+    pub fn schema_definition(&self) -> std::option::Option<&str> {
+        self.schema_definition.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterSchemaVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterSchemaVersionInput");
@@ -33490,6 +33846,32 @@ pub struct QuerySchemaVersionMetadataInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl QuerySchemaVersionMetadataInput {
+    /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version_number(&self) -> std::option::Option<&crate::model::SchemaVersionNumber> {
+        self.schema_version_number.as_ref()
+    }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
+    pub fn metadata_list(&self) -> std::option::Option<&[crate::model::MetadataKeyValuePair]> {
+        self.metadata_list.as_deref()
+    }
+    /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for QuerySchemaVersionMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QuerySchemaVersionMetadataInput");
@@ -33515,6 +33897,23 @@ pub struct PutWorkflowRunPropertiesInput {
     pub run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PutWorkflowRunPropertiesInput {
+    /// <p>Name of the workflow which was run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the workflow run for which the run properties should be updated.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The properties to put for the specified run.</p>
+    pub fn run_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.run_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for PutWorkflowRunPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutWorkflowRunPropertiesInput");
@@ -33537,6 +33936,24 @@ pub struct PutSchemaVersionMetadataInput {
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The metadata key's corresponding value.</p>
     pub metadata_key_value: std::option::Option<crate::model::MetadataKeyValuePair>,
+}
+impl PutSchemaVersionMetadataInput {
+    /// <p>The unique ID for the schema.</p>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version_number(&self) -> std::option::Option<&crate::model::SchemaVersionNumber> {
+        self.schema_version_number.as_ref()
+    }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The metadata key's corresponding value.</p>
+    pub fn metadata_key_value(&self) -> std::option::Option<&crate::model::MetadataKeyValuePair> {
+        self.metadata_key_value.as_ref()
+    }
 }
 impl std::fmt::Debug for PutSchemaVersionMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33580,6 +33997,44 @@ pub struct PutResourcePolicyInput {
     /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub enable_hybrid: std::option::Option<crate::model::EnableHybridValues>,
 }
+impl PutResourcePolicyInput {
+    /// <p>Contains the policy document to set, in JSON format.</p>
+    pub fn policy_in_json(&self) -> std::option::Option<&str> {
+        self.policy_in_json.as_deref()
+    }
+    /// <p>Do not use. For internal use only.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The hash value returned when the previous policy was set using
+    /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
+    /// policy. Do not use this parameter if no previous policy has been set.</p>
+    pub fn policy_hash_condition(&self) -> std::option::Option<&str> {
+        self.policy_hash_condition.as_deref()
+    }
+    /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
+    /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
+    /// null value is used, the call does not depend on the existence of a policy.</p>
+    pub fn policy_exists_condition(&self) -> std::option::Option<&crate::model::ExistCondition> {
+        self.policy_exists_condition.as_ref()
+    }
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
+    /// access to Data Catalog resources:</p>
+    /// <ul>
+    /// <li>
+    /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
+    /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+    pub fn enable_hybrid(&self) -> std::option::Option<&crate::model::EnableHybridValues> {
+        self.enable_hybrid.as_ref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyInput");
@@ -33603,6 +34058,19 @@ pub struct PutDataCatalogEncryptionSettingsInput {
     pub data_catalog_encryption_settings:
         std::option::Option<crate::model::DataCatalogEncryptionSettings>,
 }
+impl PutDataCatalogEncryptionSettingsInput {
+    /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
+    /// Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The security configuration to set.</p>
+    pub fn data_catalog_encryption_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DataCatalogEncryptionSettings> {
+        self.data_catalog_encryption_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for PutDataCatalogEncryptionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDataCatalogEncryptionSettingsInput");
@@ -33623,6 +34091,16 @@ pub struct ListWorkflowsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListWorkflowsInput {
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListWorkflowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33647,6 +34125,28 @@ pub struct ListTriggersInput {
     /// <p>Specifies to return only these tagged resources.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTriggersInput {
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
+    /// is returned. If there is no such trigger, all triggers are returned.</p>
+    pub fn dependent_job_name(&self) -> std::option::Option<&str> {
+        self.dependent_job_name.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTriggersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33678,6 +34178,28 @@ pub struct ListSchemaVersionsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSchemaVersionsInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSchemaVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemaVersionsInput");
@@ -33699,6 +34221,20 @@ pub struct ListSchemasInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSchemasInput {
+    /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn registry_id(&self) -> std::option::Option<&crate::model::RegistryId> {
+        self.registry_id.as_ref()
+    }
+    /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemasInput");
@@ -33717,6 +34253,16 @@ pub struct ListRegistriesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRegistriesInput {
+    /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRegistriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33743,6 +34289,31 @@ pub struct ListMlTransformsInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListMlTransformsInput {
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::TransformFilterCriteria> {
+        self.filter.as_ref()
+    }
+    /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::TransformSortCriteria> {
+        self.sort.as_ref()
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListMlTransformsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMlTransformsInput");
@@ -33767,6 +34338,23 @@ pub struct ListJobsInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListJobsInput {
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -33788,6 +34376,23 @@ pub struct ListDevEndpointsInput {
     /// <p>Specifies to return only these tagged resources.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListDevEndpointsInput {
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDevEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33811,6 +34416,23 @@ pub struct ListCrawlersInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListCrawlersInput {
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListCrawlersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCrawlersInput");
@@ -33833,6 +34455,23 @@ pub struct ListBlueprintsInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListBlueprintsInput {
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filters the list by an Amazon Web Services resource tag.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListBlueprintsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBlueprintsInput");
@@ -33849,6 +34488,12 @@ impl std::fmt::Debug for ListBlueprintsInput {
 pub struct ImportCatalogToGlueInput {
     /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+}
+impl ImportCatalogToGlueInput {
+    /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportCatalogToGlueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33871,6 +34516,24 @@ pub struct GetWorkflowRunsInput {
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetWorkflowRunsInput {
+    /// <p>Name of the workflow whose metadata of runs should be returned.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    pub fn include_graph(&self) -> std::option::Option<bool> {
+        self.include_graph
+    }
+    /// <p>The maximum size of the response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of workflow runs to be included in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetWorkflowRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowRunsInput");
@@ -33890,6 +34553,16 @@ pub struct GetWorkflowRunPropertiesInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub run_id: std::option::Option<std::string::String>,
+}
+impl GetWorkflowRunPropertiesInput {
+    /// <p>Name of the workflow which was run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the workflow run whose run properties should be returned.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWorkflowRunPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33911,6 +34584,20 @@ pub struct GetWorkflowRunInput {
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub include_graph: std::option::Option<bool>,
 }
+impl GetWorkflowRunInput {
+    /// <p>Name of the workflow being run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the workflow run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    pub fn include_graph(&self) -> std::option::Option<bool> {
+        self.include_graph
+    }
+}
 impl std::fmt::Debug for GetWorkflowRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowRunInput");
@@ -33929,6 +34616,16 @@ pub struct GetWorkflowInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub include_graph: std::option::Option<bool>,
+}
+impl GetWorkflowInput {
+    /// <p>The name of the workflow to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    pub fn include_graph(&self) -> std::option::Option<bool> {
+        self.include_graph
+    }
 }
 impl std::fmt::Debug for GetWorkflowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33957,6 +34654,31 @@ pub struct GetUserDefinedFunctionsInput {
     /// <p>The maximum number of functions to return in one response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetUserDefinedFunctionsInput {
+    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
+    /// provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
+    /// databases across the catalog will be returned.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>An optional function-name pattern string that filters the function
+    /// definitions returned.</p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of functions to return in one response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetUserDefinedFunctionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserDefinedFunctionsInput");
@@ -33981,6 +34703,21 @@ pub struct GetUserDefinedFunctionInput {
     /// <p>The name of the function.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
+impl GetUserDefinedFunctionInput {
+    /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
+    /// provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the function is located.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUserDefinedFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserDefinedFunctionInput");
@@ -34003,6 +34740,21 @@ pub struct GetTriggersInput {
     /// <p>The maximum size of the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetTriggersInput {
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
+    /// returned, and if there is no such trigger, all triggers are returned.</p>
+    pub fn dependent_job_name(&self) -> std::option::Option<&str> {
+        self.dependent_job_name.as_deref()
+    }
+    /// <p>The maximum size of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetTriggersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTriggersInput");
@@ -34020,6 +34772,12 @@ pub struct GetTriggerInput {
     /// <p>The name of the trigger to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetTriggerInput {
+    /// <p>The name of the trigger to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTriggerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTriggerInput");
@@ -34034,6 +34792,12 @@ impl std::fmt::Debug for GetTriggerInput {
 pub struct GetTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl GetTagsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34060,6 +34824,31 @@ pub struct GetTableVersionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of table versions to return in one response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetTableVersionsInput {
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The database in the catalog in which the table resides. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A continuation token, if this is not the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of table versions to return in one response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetTableVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34088,6 +34877,27 @@ pub struct GetTableVersionInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl GetTableVersionInput {
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The database in the catalog in which the table resides. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table. For Hive compatibility,
+    /// this name is entirely lowercase.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTableVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34118,6 +34928,31 @@ pub struct GetTablesInput {
     /// <p>The maximum number of tables to return in a single response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetTablesInput {
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The database in the catalog whose tables to list. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A regular expression pattern. If present, only those tables
+    /// whose names match the pattern are returned.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>A continuation token, included if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of tables to return in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTablesInput");
@@ -34144,6 +34979,23 @@ pub struct GetTableInput {
     /// compatibility, this name is entirely lowercase.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetTableInput {
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the database in the catalog in which the table resides.
+    /// For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table for which to retrieve the definition. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTableInput");
@@ -34163,6 +35015,16 @@ pub struct GetSecurityConfigurationsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSecurityConfigurationsInput {
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSecurityConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSecurityConfigurationsInput");
@@ -34178,6 +35040,12 @@ impl std::fmt::Debug for GetSecurityConfigurationsInput {
 pub struct GetSecurityConfigurationInput {
     /// <p>The name of the security configuration to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetSecurityConfigurationInput {
+    /// <p>The name of the security configuration to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSecurityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34207,6 +35075,36 @@ pub struct GetSchemaVersionsDiffInput {
     pub second_schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
     pub schema_diff_type: std::option::Option<crate::model::SchemaDiffType>,
+}
+impl GetSchemaVersionsDiffInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The first of the two schema versions to be compared.</p>
+    pub fn first_schema_version_number(
+        &self,
+    ) -> std::option::Option<&crate::model::SchemaVersionNumber> {
+        self.first_schema_version_number.as_ref()
+    }
+    /// <p>The second of the two schema versions to be compared.</p>
+    pub fn second_schema_version_number(
+        &self,
+    ) -> std::option::Option<&crate::model::SchemaVersionNumber> {
+        self.second_schema_version_number.as_ref()
+    }
+    /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
+    pub fn schema_diff_type(&self) -> std::option::Option<&crate::model::SchemaDiffType> {
+        self.schema_diff_type.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSchemaVersionsDiffInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34244,6 +35142,28 @@ pub struct GetSchemaVersionInput {
     /// <p>The version number of the schema.</p>
     pub schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
 }
+impl GetSchemaVersionInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version_number(&self) -> std::option::Option<&crate::model::SchemaVersionNumber> {
+        self.schema_version_number.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSchemaVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSchemaVersionInput");
@@ -34271,6 +35191,24 @@ pub struct GetSchemaByDefinitionInput {
     /// <p>The definition of the schema for which schema details are required.</p>
     pub schema_definition: std::option::Option<std::string::String>,
 }
+impl GetSchemaByDefinitionInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The definition of the schema for which schema details are required.</p>
+    pub fn schema_definition(&self) -> std::option::Option<&str> {
+        self.schema_definition.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSchemaByDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSchemaByDefinitionInput");
@@ -34295,6 +35233,20 @@ pub struct GetSchemaInput {
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
 }
+impl GetSchemaInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSchemaInput");
@@ -34313,6 +35265,15 @@ pub struct GetResourcePolicyInput {
     /// </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl GetResourcePolicyInput {
+    /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
+    /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
+    /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePolicyInput");
@@ -34330,6 +35291,16 @@ pub struct GetResourcePoliciesInput {
     /// <p>The maximum size of a list to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetResourcePoliciesInput {
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetResourcePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePoliciesInput");
@@ -34345,6 +35316,12 @@ impl std::fmt::Debug for GetResourcePoliciesInput {
 pub struct GetRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub registry_id: std::option::Option<crate::model::RegistryId>,
+}
+impl GetRegistryInput {
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn registry_id(&self) -> std::option::Option<&crate::model::RegistryId> {
+        self.registry_id.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34383,6 +35360,47 @@ pub struct GetPlanInput {
     /// </ul>
     pub additional_plan_options_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetPlanInput {
+    /// <p>The list of mappings from a source table to target tables.</p>
+    pub fn mapping(&self) -> std::option::Option<&[crate::model::MappingEntry]> {
+        self.mapping.as_deref()
+    }
+    /// <p>The source table.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::CatalogEntry> {
+        self.source.as_ref()
+    }
+    /// <p>The target tables.</p>
+    pub fn sinks(&self) -> std::option::Option<&[crate::model::CatalogEntry]> {
+        self.sinks.as_deref()
+    }
+    /// <p>The parameters for the mapping.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The programming language of the code to perform the mapping.</p>
+    pub fn language(&self) -> std::option::Option<&crate::model::Language> {
+        self.language.as_ref()
+    }
+    /// <p>A map to hold additional optional key-value parameters.</p>
+    ///
+    /// <p>Currently, these key-value pairs are supported:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
+    /// <p>
+    /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn additional_plan_options_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_plan_options_map.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34528,6 +35546,147 @@ pub struct GetPartitionsInput {
     /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
     pub exclude_column_schema: std::option::Option<bool>,
 }
+impl GetPartitionsInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
+    /// the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>An expression that filters the partitions to be returned.</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
+    /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p>
+    /// <i>Operators</i>: The following are the operators that you can use in the
+    /// <code>Expression</code> API call:</p>
+    /// <dl>
+    /// <dt>=</dt>
+    /// <dd>
+    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
+    /// true.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
+    /// <p>(a = b) is not true.</p>
+    /// </dd>
+    /// <dt>< ></dt>
+    /// <dd>
+    /// <p>Checks whether the values of two operands are equal; if the values are not equal,
+    /// then the condition becomes true.</p>
+    /// <p>Example: (a < > b) is true.</p>
+    /// </dd>
+    /// <dt>></dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is greater than the value of the right
+    /// operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a > b) is not true.</p>
+    /// </dd>
+    /// <dt><</dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is less than the value of the right
+    /// operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a < b) is true.</p>
+    /// </dd>
+    /// <dt>>=</dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is greater than or equal to the value
+    /// of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a >= b) is not true.</p>
+    /// </dd>
+    /// <dt><=</dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is less than or equal to the value of
+    /// the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a <= b) is true.</p>
+    /// </dd>
+    /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+    /// <dd>
+    /// <p>Logical operators.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>
+    /// <i>Supported Partition Key Types</i>: The following are the supported
+    /// partition keys.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>string</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>date</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>timestamp</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>int</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>bigint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>long</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>tinyint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>smallint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>decimal</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
+    /// <p>The following list shows the valid operators on each type. When you define a crawler, the
+    /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
+    /// partitions. </p>
+    ///
+    /// <p>
+    /// <i>Sample API Call</i>: </p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve
+    /// these partitions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The segment of the table's partitions to scan in this request.</p>
+    pub fn segment(&self) -> std::option::Option<&crate::model::Segment> {
+        self.segment.as_ref()
+    }
+    /// <p>The maximum number of partitions to return in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
+    pub fn exclude_column_schema(&self) -> std::option::Option<bool> {
+        self.exclude_column_schema
+    }
+}
 impl std::fmt::Debug for GetPartitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPartitionsInput");
@@ -34556,6 +35715,24 @@ pub struct GetPartitionIndexesInput {
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetPartitionIndexesInput {
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A continuation token, included if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPartitionIndexesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPartitionIndexesInput");
@@ -34581,6 +35758,25 @@ pub struct GetPartitionInput {
     /// <p>The values that define the partition.</p>
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetPartitionInput {
+    /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
+    /// the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partition resides.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partition's table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The values that define the partition.</p>
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_values.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPartitionInput");
@@ -34605,6 +35801,24 @@ pub struct GetMlTransformsInput {
     /// <p>The sorting criteria.</p>
     pub sort: std::option::Option<crate::model::TransformSortCriteria>,
 }
+impl GetMlTransformsInput {
+    /// <p>A paginated token to offset the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filter transformation criteria.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::TransformFilterCriteria> {
+        self.filter.as_ref()
+    }
+    /// <p>The sorting criteria.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::TransformSortCriteria> {
+        self.sort.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMlTransformsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMlTransformsInput");
@@ -34623,6 +35837,13 @@ pub struct GetMlTransformInput {
     /// <p>The unique identifier of the transform, generated at the time that the transform was
     /// created.</p>
     pub transform_id: std::option::Option<std::string::String>,
+}
+impl GetMlTransformInput {
+    /// <p>The unique identifier of the transform, generated at the time that the transform was
+    /// created.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMlTransformInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34647,6 +35868,28 @@ pub struct GetMlTaskRunsInput {
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
     pub sort: std::option::Option<crate::model::TaskRunSortCriteria>,
 }
+impl GetMlTaskRunsInput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>A token for pagination of the results. The default is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::TaskRunFilterCriteria> {
+        self.filter.as_ref()
+    }
+    /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::TaskRunSortCriteria> {
+        self.sort.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMlTaskRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMlTaskRunsInput");
@@ -34668,6 +35911,16 @@ pub struct GetMlTaskRunInput {
     /// <p>The unique identifier of the task run.</p>
     pub task_run_id: std::option::Option<std::string::String>,
 }
+impl GetMlTaskRunInput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The unique identifier of the task run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMlTaskRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMlTaskRunInput");
@@ -34688,6 +35941,20 @@ pub struct GetMappingInput {
     /// <p>Parameters for the mapping.</p>
     pub location: std::option::Option<crate::model::Location>,
 }
+impl GetMappingInput {
+    /// <p>Specifies the source table.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::CatalogEntry> {
+        self.source.as_ref()
+    }
+    /// <p>A list of target tables.</p>
+    pub fn sinks(&self) -> std::option::Option<&[crate::model::CatalogEntry]> {
+        self.sinks.as_deref()
+    }
+    /// <p>Parameters for the mapping.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMappingInput");
@@ -34706,6 +35973,16 @@ pub struct GetJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetJobsInput {
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34726,6 +36003,20 @@ pub struct GetJobRunsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetJobRunsInput {
+    /// <p>The name of the job definition for which to retrieve all job runs.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetJobRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34748,6 +36039,20 @@ pub struct GetJobRunInput {
     /// <p>True if a list of predecessor runs should be returned.</p>
     pub predecessors_included: bool,
 }
+impl GetJobRunInput {
+    /// <p>Name of the job definition being run.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The ID of the job run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>True if a list of predecessor runs should be returned.</p>
+    pub fn predecessors_included(&self) -> bool {
+        self.predecessors_included
+    }
+}
 impl std::fmt::Debug for GetJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobRunInput");
@@ -34767,6 +36072,16 @@ pub struct GetJobBookmarkInput {
     /// <p>The unique run identifier associated with this job run.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl GetJobBookmarkInput {
+    /// <p>The name of the job in question.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The unique run identifier associated with this job run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobBookmarkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobBookmarkInput");
@@ -34782,6 +36097,12 @@ impl std::fmt::Debug for GetJobBookmarkInput {
 pub struct GetJobInput {
     /// <p>The name of the job definition to retrieve.</p>
     pub job_name: std::option::Option<std::string::String>,
+}
+impl GetJobInput {
+    /// <p>The name of the job definition to retrieve.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34800,6 +36121,16 @@ pub struct GetDevEndpointsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDevEndpointsInput {
+    /// <p>The maximum size of information to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDevEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevEndpointsInput");
@@ -34816,6 +36147,12 @@ pub struct GetDevEndpointInput {
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
 }
+impl GetDevEndpointInput {
+    /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDevEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevEndpointInput");
@@ -34830,6 +36167,12 @@ impl std::fmt::Debug for GetDevEndpointInput {
 pub struct GetDataflowGraphInput {
     /// <p>The Python script to transform.</p>
     pub python_script: std::option::Option<std::string::String>,
+}
+impl GetDataflowGraphInput {
+    /// <p>The Python script to transform.</p>
+    pub fn python_script(&self) -> std::option::Option<&str> {
+        self.python_script.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataflowGraphInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34846,6 +36189,13 @@ pub struct GetDataCatalogEncryptionSettingsInput {
     /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
     /// provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+}
+impl GetDataCatalogEncryptionSettingsInput {
+    /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
+    /// provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataCatalogEncryptionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34878,6 +36228,34 @@ pub struct GetDatabasesInput {
     /// </ul>
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
 }
+impl GetDatabasesInput {
+    /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
+    /// provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of databases to return in one response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
+    /// </li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_share_type(&self) -> std::option::Option<&crate::model::ResourceShareType> {
+        self.resource_share_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDatabasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDatabasesInput");
@@ -34900,6 +36278,18 @@ pub struct GetDatabaseInput {
     /// should be all lowercase.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetDatabaseInput {
+    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the database to retrieve. For Hive compatibility, this
+    /// should be all lowercase.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDatabaseInput");
@@ -34917,6 +36307,16 @@ pub struct GetCrawlersInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCrawlersInput {
+    /// <p>The number of crawlers to return on each call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCrawlersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34938,6 +36338,20 @@ pub struct GetCrawlerMetricsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetCrawlerMetricsInput {
+    /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
+    pub fn crawler_name_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.crawler_name_list.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCrawlerMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCrawlerMetricsInput");
@@ -34954,6 +36368,12 @@ impl std::fmt::Debug for GetCrawlerMetricsInput {
 pub struct GetCrawlerInput {
     /// <p>The name of the crawler to retrieve metadata for.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetCrawlerInput {
+    /// <p>The name of the crawler to retrieve metadata for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCrawlerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34983,6 +36403,33 @@ pub struct GetConnectionsInput {
     /// <p>The maximum number of connections to return in one response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetConnectionsInput {
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A filter that controls which connections are returned.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::GetConnectionsFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For
+    /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
+    /// the password. Set this parameter when the caller might not have permission to use the KMS
+    /// key to decrypt the password, but it does have permission to access the rest of the connection
+    /// properties.</p>
+    pub fn hide_password(&self) -> bool {
+        self.hide_password
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of connections to return in one response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionsInput");
@@ -35011,6 +36458,25 @@ pub struct GetConnectionInput {
     /// properties.</p>
     pub hide_password: bool,
 }
+impl GetConnectionInput {
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the connection definition to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For
+    /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
+    /// the password. Set this parameter when the caller might not have permission to use the KMS
+    /// key to decrypt the password, but it does have permission to access the rest of the connection
+    /// properties.</p>
+    pub fn hide_password(&self) -> bool {
+        self.hide_password
+    }
+}
 impl std::fmt::Debug for GetConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionInput");
@@ -35034,6 +36500,25 @@ pub struct GetColumnStatisticsForTableInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of the column names.</p>
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetColumnStatisticsForTableInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of the column names.</p>
+    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.column_names.as_deref()
+    }
 }
 impl std::fmt::Debug for GetColumnStatisticsForTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35062,6 +36547,29 @@ pub struct GetColumnStatisticsForPartitionInput {
     /// <p>A list of the column names.</p>
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetColumnStatisticsForPartitionInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of partition values identifying the partition.</p>
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_values.as_deref()
+    }
+    /// <p>A list of the column names.</p>
+    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.column_names.as_deref()
+    }
+}
 impl std::fmt::Debug for GetColumnStatisticsForPartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetColumnStatisticsForPartitionInput");
@@ -35083,6 +36591,16 @@ pub struct GetClassifiersInput {
     /// <p>An optional continuation token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetClassifiersInput {
+    /// <p>The size of the list to return (optional).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional continuation token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetClassifiersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClassifiersInput");
@@ -35099,6 +36617,12 @@ pub struct GetClassifierInput {
     /// <p>Name of the classifier to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetClassifierInput {
+    /// <p>Name of the classifier to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClassifierInput");
@@ -35113,6 +36637,12 @@ impl std::fmt::Debug for GetClassifierInput {
 pub struct GetCatalogImportStatusInput {
     /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+}
+impl GetCatalogImportStatusInput {
+    /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCatalogImportStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35133,6 +36663,20 @@ pub struct GetBlueprintRunsInput {
     /// <p>The maximum size of a list to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetBlueprintRunsInput {
+    /// <p>The name of the blueprint.</p>
+    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+        self.blueprint_name.as_deref()
+    }
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetBlueprintRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlueprintRunsInput");
@@ -35151,6 +36695,16 @@ pub struct GetBlueprintRunInput {
     pub blueprint_name: std::option::Option<std::string::String>,
     /// <p>The run ID for the blueprint run you want to retrieve.</p>
     pub run_id: std::option::Option<std::string::String>,
+}
+impl GetBlueprintRunInput {
+    /// <p>The name of the blueprint.</p>
+    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+        self.blueprint_name.as_deref()
+    }
+    /// <p>The run ID for the blueprint run you want to retrieve.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBlueprintRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35172,6 +36726,20 @@ pub struct GetBlueprintInput {
     /// <p>Specifies whether or not to include the parameter specification.</p>
     pub include_parameter_spec: std::option::Option<bool>,
 }
+impl GetBlueprintInput {
+    /// <p>The name of the blueprint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    pub fn include_blueprint(&self) -> std::option::Option<bool> {
+        self.include_blueprint
+    }
+    /// <p>Specifies whether or not to include the parameter specification.</p>
+    pub fn include_parameter_spec(&self) -> std::option::Option<bool> {
+        self.include_parameter_spec
+    }
+}
 impl std::fmt::Debug for GetBlueprintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlueprintInput");
@@ -35188,6 +36756,12 @@ impl std::fmt::Debug for GetBlueprintInput {
 pub struct DeleteWorkflowInput {
     /// <p>Name of the workflow to be deleted.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteWorkflowInput {
+    /// <p>Name of the workflow to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkflowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35209,6 +36783,21 @@ pub struct DeleteUserDefinedFunctionInput {
     /// <p>The name of the function definition to be deleted.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
+impl DeleteUserDefinedFunctionInput {
+    /// <p>The ID of the Data Catalog where the function to be deleted is
+    /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the function is located.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the function definition to be deleted.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserDefinedFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserDefinedFunctionInput");
@@ -35225,6 +36814,12 @@ impl std::fmt::Debug for DeleteUserDefinedFunctionInput {
 pub struct DeleteTriggerInput {
     /// <p>The name of the trigger to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteTriggerInput {
+    /// <p>The name of the trigger to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTriggerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35249,6 +36844,27 @@ pub struct DeleteTableVersionInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl DeleteTableVersionInput {
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The database in the catalog in which the table resides. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table. For Hive compatibility,
+    /// this name is entirely lowercase.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTableVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35275,6 +36891,23 @@ pub struct DeleteTableInput {
     /// compatibility, this name is entirely lowercase.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteTableInput {
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database in which the table resides. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table to be deleted. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTableInput");
@@ -35291,6 +36924,12 @@ impl std::fmt::Debug for DeleteTableInput {
 pub struct DeleteSecurityConfigurationInput {
     /// <p>The name of the security configuration to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteSecurityConfigurationInput {
+    /// <p>The name of the security configuration to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSecurityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35317,6 +36956,24 @@ pub struct DeleteSchemaVersionsInput {
     /// </ul>
     pub versions: std::option::Option<std::string::String>,
 }
+impl DeleteSchemaVersionsInput {
+    /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>A version range may be supplied which may be of the format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>a single version number, 5</p>
+    /// </li>
+    /// <li>
+    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
+    /// </li>
+    /// </ul>
+    pub fn versions(&self) -> std::option::Option<&str> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSchemaVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSchemaVersionsInput");
@@ -35332,6 +36989,12 @@ impl std::fmt::Debug for DeleteSchemaVersionsInput {
 pub struct DeleteSchemaInput {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
+}
+impl DeleteSchemaInput {
+    /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35350,6 +37013,16 @@ pub struct DeleteResourcePolicyInput {
     /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DeleteResourcePolicyInput {
+    /// <p>The hash value returned when this policy was set.</p>
+    pub fn policy_hash_condition(&self) -> std::option::Option<&str> {
+        self.policy_hash_condition.as_deref()
+    }
+    /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
@@ -35365,6 +37038,12 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 pub struct DeleteRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub registry_id: std::option::Option<crate::model::RegistryId>,
+}
+impl DeleteRegistryInput {
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn registry_id(&self) -> std::option::Option<&crate::model::RegistryId> {
+        self.registry_id.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35386,6 +37065,24 @@ pub struct DeletePartitionIndexInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the partition index to be deleted.</p>
     pub index_name: std::option::Option<std::string::String>,
+}
+impl DeletePartitionIndexInput {
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name of the partition index to be deleted.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePartitionIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35413,6 +37110,26 @@ pub struct DeletePartitionInput {
     /// <p>The values that define the partition.</p>
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeletePartitionInput {
+    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
+    /// the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database in which the table in question
+    /// resides.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table that contains the partition to be deleted.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The values that define the partition.</p>
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePartitionInput");
@@ -35431,6 +37148,12 @@ pub struct DeleteMlTransformInput {
     /// <p>The unique identifier of the transform to delete.</p>
     pub transform_id: std::option::Option<std::string::String>,
 }
+impl DeleteMlTransformInput {
+    /// <p>The unique identifier of the transform to delete.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMlTransformInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMlTransformInput");
@@ -35446,6 +37169,12 @@ pub struct DeleteJobInput {
     /// <p>The name of the job definition to delete.</p>
     pub job_name: std::option::Option<std::string::String>,
 }
+impl DeleteJobInput {
+    /// <p>The name of the job definition to delete.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteJobInput");
@@ -35460,6 +37189,12 @@ impl std::fmt::Debug for DeleteJobInput {
 pub struct DeleteDevEndpointInput {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
+}
+impl DeleteDevEndpointInput {
+    /// <p>The name of the <code>DevEndpoint</code>.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDevEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35480,6 +37215,18 @@ pub struct DeleteDatabaseInput {
     /// lowercase.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteDatabaseInput {
+    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the database to delete. For Hive compatibility, this must be all
+    /// lowercase.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatabaseInput");
@@ -35495,6 +37242,12 @@ impl std::fmt::Debug for DeleteDatabaseInput {
 pub struct DeleteCrawlerInput {
     /// <p>The name of the crawler to remove.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteCrawlerInput {
+    /// <p>The name of the crawler to remove.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCrawlerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35513,6 +37266,17 @@ pub struct DeleteConnectionInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection to delete.</p>
     pub connection_name: std::option::Option<std::string::String>,
+}
+impl DeleteConnectionInput {
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the connection to delete.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35536,6 +37300,25 @@ pub struct DeleteColumnStatisticsForTableInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the column.</p>
     pub column_name: std::option::Option<std::string::String>,
+}
+impl DeleteColumnStatisticsForTableInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name of the column.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteColumnStatisticsForTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35564,6 +37347,29 @@ pub struct DeleteColumnStatisticsForPartitionInput {
     /// <p>Name of the column.</p>
     pub column_name: std::option::Option<std::string::String>,
 }
+impl DeleteColumnStatisticsForPartitionInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of partition values identifying the partition.</p>
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_values.as_deref()
+    }
+    /// <p>Name of the column.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteColumnStatisticsForPartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteColumnStatisticsForPartitionInput");
@@ -35583,6 +37389,12 @@ pub struct DeleteClassifierInput {
     /// <p>Name of the classifier to remove.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteClassifierInput {
+    /// <p>Name of the classifier to remove.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClassifierInput");
@@ -35597,6 +37409,12 @@ impl std::fmt::Debug for DeleteClassifierInput {
 pub struct DeleteBlueprintInput {
     /// <p>The name of the blueprint to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteBlueprintInput {
+    /// <p>The name of the blueprint to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBlueprintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35623,6 +37441,34 @@ pub struct CreateWorkflowInput {
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
     pub max_concurrent_runs: std::option::Option<i32>,
 }
+impl CreateWorkflowInput {
+    /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the workflow.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    pub fn default_run_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_run_properties.as_ref()
+    }
+    /// <p>The tags to be used with this workflow.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    pub fn max_concurrent_runs(&self) -> std::option::Option<i32> {
+        self.max_concurrent_runs
+    }
+}
 impl std::fmt::Debug for CreateWorkflowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkflowInput");
@@ -35647,6 +37493,22 @@ pub struct CreateUserDefinedFunctionInput {
     /// <p>A <code>FunctionInput</code> object that defines the function
     /// to create in the Data Catalog.</p>
     pub function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
+}
+impl CreateUserDefinedFunctionInput {
+    /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database in which to create the function.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A <code>FunctionInput</code> object that defines the function
+    /// to create in the Data Catalog.</p>
+    pub fn function_input(&self) -> std::option::Option<&crate::model::UserDefinedFunctionInput> {
+        self.function_input.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUserDefinedFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35692,6 +37554,61 @@ pub struct CreateTriggerInput {
     /// before EventBridge event trigger fires.</p>
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
+impl CreateTriggerInput {
+    /// <p>The name of the trigger.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the workflow associated with the trigger.</p>
+    pub fn workflow_name(&self) -> std::option::Option<&str> {
+        self.workflow_name.as_deref()
+    }
+    /// <p>The type of the new trigger.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TriggerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
+    /// something every day at 12:15 UTC, you would specify:
+    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>This field is required when the trigger type is SCHEDULED.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>A predicate to specify when the new trigger should fire.</p>
+    /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
+    pub fn predicate(&self) -> std::option::Option<&crate::model::Predicate> {
+        self.predicate.as_ref()
+    }
+    /// <p>The actions initiated by this trigger when it fires.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>A description of the new trigger.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
+    /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+    pub fn start_on_creation(&self) -> bool {
+        self.start_on_creation
+    }
+    /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
+    /// For more information about tags in Glue, see
+    /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+    /// before EventBridge event trigger fires.</p>
+    pub fn event_batching_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::EventBatchingCondition> {
+        self.event_batching_condition.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTriggerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTriggerInput");
@@ -35725,6 +37642,27 @@ pub struct CreateTableInput {
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
     pub partition_indexes: std::option::Option<std::vec::Vec<crate::model::PartitionIndex>>,
 }
+impl CreateTableInput {
+    /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The catalog database in which to create the new table. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The <code>TableInput</code> object that defines the metadata table
+    /// to create in the catalog.</p>
+    pub fn table_input(&self) -> std::option::Option<&crate::model::TableInput> {
+        self.table_input.as_ref()
+    }
+    /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
+    pub fn partition_indexes(&self) -> std::option::Option<&[crate::model::PartitionIndex]> {
+        self.partition_indexes.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTableInput");
@@ -35745,6 +37683,18 @@ pub struct CreateSecurityConfigurationInput {
     /// <p>The encryption configuration for the new security configuration.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
+impl CreateSecurityConfigurationInput {
+    /// <p>The name for the new security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The encryption configuration for the new security configuration.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSecurityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSecurityConfigurationInput");
@@ -35764,6 +37714,20 @@ pub struct CreateScriptInput {
     pub dag_edges: std::option::Option<std::vec::Vec<crate::model::CodeGenEdge>>,
     /// <p>The programming language of the resulting code from the DAG.</p>
     pub language: std::option::Option<crate::model::Language>,
+}
+impl CreateScriptInput {
+    /// <p>A list of the nodes in the DAG.</p>
+    pub fn dag_nodes(&self) -> std::option::Option<&[crate::model::CodeGenNode]> {
+        self.dag_nodes.as_deref()
+    }
+    /// <p>A list of the edges in the DAG.</p>
+    pub fn dag_edges(&self) -> std::option::Option<&[crate::model::CodeGenEdge]> {
+        self.dag_edges.as_deref()
+    }
+    /// <p>The programming language of the resulting code from the DAG.</p>
+    pub fn language(&self) -> std::option::Option<&crate::model::Language> {
+        self.language.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateScriptInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35830,6 +37794,74 @@ pub struct CreateSchemaInput {
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
     pub schema_definition: std::option::Option<std::string::String>,
 }
+impl CreateSchemaInput {
+    /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+    pub fn registry_id(&self) -> std::option::Option<&crate::model::RegistryId> {
+        self.registry_id.as_ref()
+    }
+    /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The compatibility mode of the schema. The possible values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
+    /// </li>
+    /// </ul>
+    pub fn compatibility(&self) -> std::option::Option<&crate::model::Compatibility> {
+        self.compatibility.as_ref()
+    }
+    /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
+    pub fn schema_definition(&self) -> std::option::Option<&str> {
+        self.schema_definition.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSchemaInput");
@@ -35856,6 +37888,23 @@ pub struct CreateRegistryInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRegistryInput {
+    /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRegistryInput");
@@ -35878,6 +37927,24 @@ pub struct CreatePartitionIndexInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
     pub partition_index: std::option::Option<crate::model::PartitionIndex>,
+}
+impl CreatePartitionIndexInput {
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>Specifies the name of a database in which you want to create a partition index.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Specifies the name of a table in which you want to create a partition index.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
+    pub fn partition_index(&self) -> std::option::Option<&crate::model::PartitionIndex> {
+        self.partition_index.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePartitionIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35904,6 +37971,26 @@ pub struct CreatePartitionInput {
     /// <p>A <code>PartitionInput</code> structure defining the partition
     /// to be created.</p>
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
+}
+impl CreatePartitionInput {
+    /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the metadata database in which the partition is
+    /// to be created.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the metadata table in which the partition is to be created.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A <code>PartitionInput</code> structure defining the partition
+    /// to be created.</p>
+    pub fn partition_input(&self) -> std::option::Option<&crate::model::PartitionInput> {
+        self.partition_input.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36015,6 +38102,131 @@ pub struct CreateMlTransformInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
+}
+impl CreateMlTransformInput {
+    /// <p>The unique name that you give the transform when you create it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the machine learning transform that is being defined. The default is an
+    /// empty string.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of Glue table definitions used by the transform.</p>
+    pub fn input_record_tables(&self) -> std::option::Option<&[crate::model::GlueTable]> {
+        self.input_record_tables.as_deref()
+    }
+    /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
+    /// dependent on the transform type.</p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::TransformParameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
+    /// </li>
+    /// </ul>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
+    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+    /// page</a>. </p>
+    ///
+    /// <p>
+    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
+    ///
+    ///
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    ///
+    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    pub fn max_retries(&self) -> std::option::Option<i32> {
+        self.max_retries
+    }
+    /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    pub fn transform_encryption(&self) -> std::option::Option<&crate::model::TransformEncryption> {
+        self.transform_encryption.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMlTransformInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36133,6 +38345,146 @@ pub struct CreateJobInput {
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
 }
+impl CreateJobInput {
+    /// <p>The name you assign to this job definition. It must be unique in your account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Description of the job being defined.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>This field is reserved for future use.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
+    /// for this job.</p>
+    pub fn execution_property(&self) -> std::option::Option<&crate::model::ExecutionProperty> {
+        self.execution_property.as_ref()
+    }
+    /// <p>The <code>JobCommand</code> that runs this job.</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::JobCommand> {
+        self.command.as_ref()
+    }
+    /// <p>The default arguments for this job.</p>
+    /// <p>You can specify arguments here that your own job-execution script
+    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+    /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    pub fn default_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_arguments.as_ref()
+    }
+    /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+    pub fn non_overridable_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.non_overridable_arguments.as_ref()
+    }
+    /// <p>The connections used for this job.</p>
+    pub fn connections(&self) -> std::option::Option<&crate::model::ConnectionsList> {
+        self.connections.as_ref()
+    }
+    /// <p>The maximum number of times to retry this job if it fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
+    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
+    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+    /// page</a>.</p>
+    pub fn allocated_capacity(&self) -> i32 {
+        self.allocated_capacity
+    }
+    /// <p>The job timeout in minutes.  This is the maximum time that a job run
+    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
+    /// status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+    /// pricing page</a>.</p>
+    ///
+    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    ///
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+    /// running a Python shell job or an Apache Spark ETL job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+    /// </li>
+    /// <li>
+    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
+    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+    /// job.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies configuration properties of a job notification.</p>
+    pub fn notification_property(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationProperty> {
+        self.notification_property.as_ref()
+    }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+    ///
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
+    /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobInput");
@@ -36239,6 +38591,117 @@ pub struct CreateDevEndpointInput {
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDevEndpointInput {
+    /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Security group IDs for the security groups to be used by the new
+    /// <code>DevEndpoint</code>.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
+    /// attribute is provided for backward compatibility because the recommended attribute to use is
+    /// public keys.</p>
+    pub fn public_key(&self) -> std::option::Option<&str> {
+        self.public_key.as_deref()
+    }
+    /// <p>A list of public keys to be used by the development endpoints for authentication. The use
+    /// of this attribute is preferred over a single public key because the public keys allow you to
+    /// have a different private key per client.</p>
+    ///
+    /// <note>
+    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
+    /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
+    /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
+    /// <code>addPublicKeys</code> attribute.</p>
+    /// </note>
+    pub fn public_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.public_keys.as_deref()
+    }
+    /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
+    /// <code>DevEndpoint</code>.</p>
+    pub fn number_of_nodes(&self) -> i32 {
+        self.number_of_nodes
+    }
+    /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
+    /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    ///
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
+    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
+    ///
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    ///
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
+    /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
+    /// comma.</p>
+    /// <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
+    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
+    /// analysis library, are not yet supported.</p>
+    /// </note>
+    pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_python_libs_s3_path.as_deref()
+    }
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
+    /// in your <code>DevEndpoint</code>.</p>
+    pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_jars_s3_path.as_deref()
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+    /// <code>DevEndpoint</code>.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    pub fn arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.arguments.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDevEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDevEndpointInput");
@@ -36270,6 +38733,17 @@ pub struct CreateDatabaseInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The metadata for the database.</p>
     pub database_input: std::option::Option<crate::model::DatabaseInput>,
+}
+impl CreateDatabaseInput {
+    /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The metadata for the database.</p>
+    pub fn database_input(&self) -> std::option::Option<&crate::model::DatabaseInput> {
+        self.database_input.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36325,6 +38799,80 @@ pub struct CreateCrawlerInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateCrawlerInput {
+    /// <p>Name of the new crawler.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
+    /// access customer resources.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The Glue database where results are written, such as:
+    /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A description of the new crawler.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of collection of targets to crawl.</p>
+    pub fn targets(&self) -> std::option::Option<&crate::model::CrawlerTargets> {
+        self.targets.as_ref()
+    }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
+    /// something every day at 12:15 UTC, you would specify:
+    /// <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>A list of custom classifiers that the user has registered. By default, all built-in
+    /// classifiers are included in a crawl, but these custom classifiers always override the default
+    /// classifiers for a given classification.</p>
+    pub fn classifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.classifiers.as_deref()
+    }
+    /// <p>The table prefix used for catalog tables that are created.</p>
+    pub fn table_prefix(&self) -> std::option::Option<&str> {
+        self.table_prefix.as_deref()
+    }
+    /// <p>The policy for the crawler's update and deletion behavior.</p>
+    pub fn schema_change_policy(&self) -> std::option::Option<&crate::model::SchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+    /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    pub fn recrawl_policy(&self) -> std::option::Option<&crate::model::RecrawlPolicy> {
+        self.recrawl_policy.as_ref()
+    }
+    /// <p>Specifies data lineage configuration settings for the crawler.</p>
+    pub fn lineage_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LineageConfiguration> {
+        self.lineage_configuration.as_ref()
+    }
+    /// <p>Crawler configuration information. This versioned JSON
+    /// string allows users to specify aspects of a crawler's behavior.
+    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
+    /// crawler.</p>
+    pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
+        self.crawler_security_configuration.as_deref()
+    }
+    /// <p>The tags to use with this crawler request. You may use tags to limit access to the
+    /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
+    /// guide.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCrawlerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCrawlerInput");
@@ -36363,6 +38911,25 @@ pub struct CreateConnectionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateConnectionInput {
+    /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A <code>ConnectionInput</code> object defining the connection
+    /// to create.</p>
+    pub fn connection_input(&self) -> std::option::Option<&crate::model::ConnectionInput> {
+        self.connection_input.as_ref()
+    }
+    /// <p>The tags you assign to the connection.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionInput");
@@ -36390,6 +38957,32 @@ pub struct CreateClassifierInput {
     /// to create.</p>
     pub csv_classifier: std::option::Option<crate::model::CreateCsvClassifierRequest>,
 }
+impl CreateClassifierInput {
+    /// <p>A <code>GrokClassifier</code> object specifying the classifier
+    /// to create.</p>
+    pub fn grok_classifier(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateGrokClassifierRequest> {
+        self.grok_classifier.as_ref()
+    }
+    /// <p>An <code>XMLClassifier</code> object specifying the classifier
+    /// to create.</p>
+    pub fn xml_classifier(&self) -> std::option::Option<&crate::model::CreateXmlClassifierRequest> {
+        self.xml_classifier.as_ref()
+    }
+    /// <p>A <code>JsonClassifier</code> object specifying the classifier
+    /// to create.</p>
+    pub fn json_classifier(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateJsonClassifierRequest> {
+        self.json_classifier.as_ref()
+    }
+    /// <p>A <code>CsvClassifier</code> object specifying the classifier
+    /// to create.</p>
+    pub fn csv_classifier(&self) -> std::option::Option<&crate::model::CreateCsvClassifierRequest> {
+        self.csv_classifier.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClassifierInput");
@@ -36415,6 +39008,27 @@ pub struct CreateBlueprintInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateBlueprintInput {
+    /// <p>The name of the blueprint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the blueprint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    pub fn blueprint_location(&self) -> std::option::Option<&str> {
+        self.blueprint_location.as_deref()
+    }
+    /// <p>The tags to be applied to this blueprint.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBlueprintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBlueprintInput");
@@ -36435,6 +39049,16 @@ pub struct CheckSchemaVersionValidityInput {
     /// <p>The definition of the schema that has to be validated.</p>
     pub schema_definition: std::option::Option<std::string::String>,
 }
+impl CheckSchemaVersionValidityInput {
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The definition of the schema that has to be validated.</p>
+    pub fn schema_definition(&self) -> std::option::Option<&str> {
+        self.schema_definition.as_deref()
+    }
+}
 impl std::fmt::Debug for CheckSchemaVersionValidityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CheckSchemaVersionValidityInput");
@@ -36452,6 +39076,16 @@ pub struct CancelMlTaskRunInput {
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the task run.</p>
     pub task_run_id: std::option::Option<std::string::String>,
+}
+impl CancelMlTaskRunInput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>A unique identifier for the task run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelMlTaskRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36477,6 +39111,28 @@ pub struct BatchUpdatePartitionInput {
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchUpdatePartitionRequestEntry>>,
 }
+impl BatchUpdatePartitionInput {
+    /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
+    /// the Amazon Web Services account ID.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the metadata database in which the partition is
+    /// to be updated.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the metadata table in which the partition is to be updated.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchUpdatePartitionRequestEntry]> {
+        self.entries.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdatePartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdatePartitionInput");
@@ -36498,6 +39154,17 @@ pub struct BatchStopJobRunInput {
     /// definition.</p>
     pub job_run_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchStopJobRunInput {
+    /// <p>The name of the job definition for which to stop job runs.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
+    /// definition.</p>
+    pub fn job_run_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_run_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchStopJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchStopJobRunInput");
@@ -36516,6 +39183,16 @@ pub struct BatchGetWorkflowsInput {
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub include_graph: std::option::Option<bool>,
 }
+impl BatchGetWorkflowsInput {
+    /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    pub fn include_graph(&self) -> std::option::Option<bool> {
+        self.include_graph
+    }
+}
 impl std::fmt::Debug for BatchGetWorkflowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetWorkflowsInput");
@@ -36531,6 +39208,12 @@ impl std::fmt::Debug for BatchGetWorkflowsInput {
 pub struct BatchGetTriggersInput {
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
     pub trigger_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetTriggersInput {
+    /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
+    pub fn trigger_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.trigger_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetTriggersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36554,6 +39237,25 @@ pub struct BatchGetPartitionInput {
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
     pub partitions_to_get: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
+impl BatchGetPartitionInput {
+    /// <p>The ID of the Data Catalog where the partitions in question reside.
+    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of partition values identifying the partitions to retrieve.</p>
+    pub fn partitions_to_get(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
+        self.partitions_to_get.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetPartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetPartitionInput");
@@ -36573,6 +39275,13 @@ pub struct BatchGetJobsInput {
     /// operation.</p>
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetJobsInput {
+    /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
+    /// operation.</p>
+    pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_names.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetJobsInput");
@@ -36589,6 +39298,13 @@ pub struct BatchGetDevEndpointsInput {
     /// <code>ListDevEndpoint</code> operation.</p>
     pub dev_endpoint_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetDevEndpointsInput {
+    /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
+    /// <code>ListDevEndpoint</code> operation.</p>
+    pub fn dev_endpoint_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.dev_endpoint_names.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetDevEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDevEndpointsInput");
@@ -36604,6 +39320,13 @@ pub struct BatchGetCrawlersInput {
     /// <p>A list of crawler names, which might be the names returned from the
     /// <code>ListCrawlers</code> operation.</p>
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetCrawlersInput {
+    /// <p>A list of crawler names, which might be the names returned from the
+    /// <code>ListCrawlers</code> operation.</p>
+    pub fn crawler_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.crawler_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetCrawlersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36623,6 +39346,20 @@ pub struct BatchGetBlueprintsInput {
     pub include_blueprint: std::option::Option<bool>,
     /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
     pub include_parameter_spec: std::option::Option<bool>,
+}
+impl BatchGetBlueprintsInput {
+    /// <p>A list of blueprint names.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    pub fn include_blueprint(&self) -> std::option::Option<bool> {
+        self.include_blueprint
+    }
+    /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
+    pub fn include_parameter_spec(&self) -> std::option::Option<bool> {
+        self.include_parameter_spec
+    }
 }
 impl std::fmt::Debug for BatchGetBlueprintsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36650,6 +39387,27 @@ pub struct BatchDeleteTableVersionInput {
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub version_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchDeleteTableVersionInput {
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The database in the catalog in which the table resides. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table. For Hive compatibility,
+    /// this name is entirely lowercase.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    pub fn version_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.version_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteTableVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteTableVersionInput");
@@ -36673,6 +39431,22 @@ pub struct BatchDeleteTableInput {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A list of the table to delete.</p>
     pub tables_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteTableInput {
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
+    /// ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database in which the tables to delete reside. For Hive
+    /// compatibility, this name is entirely lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A list of the table to delete.</p>
+    pub fn tables_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+        self.tables_to_delete.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36700,6 +39474,27 @@ pub struct BatchDeletePartitionInput {
     /// the partitions to be deleted.</p>
     pub partitions_to_delete: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
+impl BatchDeletePartitionInput {
+    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
+    /// the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database in which the table in question
+    /// resides.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table that contains the partitions to be deleted.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of <code>PartitionInput</code> structures that define
+    /// the partitions to be deleted.</p>
+    pub fn partitions_to_delete(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
+        self.partitions_to_delete.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeletePartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeletePartitionInput");
@@ -36720,6 +39515,17 @@ pub struct BatchDeleteConnectionInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of names of the connections to delete.</p>
     pub connection_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteConnectionInput {
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
+    /// account ID is used by default.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A list of names of the connections to delete.</p>
+    pub fn connection_name_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.connection_name_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36745,6 +39551,27 @@ pub struct BatchCreatePartitionInput {
     /// <p>A list of <code>PartitionInput</code> structures that define
     /// the partitions to be created.</p>
     pub partition_input_list: std::option::Option<std::vec::Vec<crate::model::PartitionInput>>,
+}
+impl BatchCreatePartitionInput {
+    /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
+    /// the Amazon Web Services account ID.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the metadata database in which the partition is
+    /// to be created.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the metadata table in which the partition is to be created.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of <code>PartitionInput</code> structures that define
+    /// the partitions to be created.</p>
+    pub fn partition_input_list(&self) -> std::option::Option<&[crate::model::PartitionInput]> {
+        self.partition_input_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreatePartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

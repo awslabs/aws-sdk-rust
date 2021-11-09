@@ -40,6 +40,20 @@ pub struct GetConnectionOutput {
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
     pub last_active_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetConnectionOutput {
+    /// <p>The time in ISO 8601 format for when the connection was established.</p>
+    pub fn connected_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.connected_at.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn identity(&self) -> std::option::Option<&crate::model::Identity> {
+        self.identity.as_ref()
+    }
+    /// <p>The time in ISO 8601 format for when the connection was last active.</p>
+    pub fn last_active_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_active_at.as_ref()
+    }
+}
 impl std::fmt::Debug for GetConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionOutput");

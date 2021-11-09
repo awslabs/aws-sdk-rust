@@ -1589,6 +1589,16 @@ pub struct ConflictException {
     /// <p>The type of the resource causing the conflict.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
+impl ConflictException {
+    /// <p>The ID of the resource causing the conflict.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource causing the conflict.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");

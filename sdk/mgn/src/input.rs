@@ -108,7 +108,7 @@ impl ChangeServerLifeCycleStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_change_server_life_cycle_state(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_change_server_life_cycle_state(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -492,7 +492,7 @@ impl CreateReplicationConfigurationTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_replication_configuration_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_replication_configuration_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -635,10 +635,7 @@ impl DeleteJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -790,7 +787,7 @@ impl DeleteReplicationConfigurationTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_replication_configuration_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_replication_configuration_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -939,10 +936,7 @@ impl DeleteSourceServerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_source_server(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_source_server(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1111,10 +1105,9 @@ impl DescribeJobLogItemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_job_log_items(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_job_log_items(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1285,10 +1278,7 @@ impl DescribeJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_jobs(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1478,7 +1468,7 @@ impl DescribeReplicationConfigurationTemplatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_replication_configuration_templates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_replication_configuration_templates(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1653,10 +1643,7 @@ impl DescribeSourceServersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_source_servers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1806,10 +1793,7 @@ impl DisconnectFromServiceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disconnect_from_service(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1957,10 +1941,7 @@ impl FinalizeCutoverInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_finalize_cutover(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_finalize_cutover(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2110,10 +2091,7 @@ impl GetLaunchConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_launch_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2262,7 +2240,7 @@ impl GetReplicationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_replication_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_replication_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2675,10 +2653,7 @@ impl MarkAsArchivedInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_mark_as_archived(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_mark_as_archived(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2826,10 +2801,9 @@ impl RetryDataReplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_retry_data_replication(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_retry_data_replication(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3011,10 +2985,7 @@ impl StartCutoverInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_cutover(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_cutover(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3194,10 +3165,7 @@ impl StartTestInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_test(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_test(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3384,10 +3352,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3573,10 +3538,7 @@ impl TerminateTargetInstancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_terminate_target_instances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3990,10 +3952,7 @@ impl UpdateLaunchConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_launch_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4400,7 +4359,7 @@ impl UpdateReplicationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_replication_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_replication_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4785,7 +4744,7 @@ impl UpdateReplicationConfigurationTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_replication_configuration_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_replication_configuration_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4888,6 +4847,82 @@ pub struct UpdateReplicationConfigurationInput {
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateReplicationConfigurationInput {
+    /// <p>Update replication configuration Source Server ID request.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Update replication configuration name request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Update replication configuration Staging Area subnet request.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Update replication configuration Replication Server instance type request.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Update replication configuration use dedicated Replication Server request.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Update replication configuration use default large Staging Disk type request.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Update replication configuration replicated disks request.</p>
+    pub fn replicated_disks(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationConfigurationReplicatedDisk]> {
+        self.replicated_disks.as_deref()
+    }
+    /// <p>Update replication configuration EBS encryption request.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Update replication configuration EBS encryption key ARN request.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Update replication configuration bandwidth throttling request.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Update replication configuration data plane routing request.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Update replication configuration create Public IP request.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Update replication configuration Staging Area Tags request.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateReplicationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationConfigurationInput");
@@ -4945,6 +4980,38 @@ pub struct UpdateLaunchConfigurationInput {
     /// <p>Update Launch configuration licensing request.</p>
     pub licensing: std::option::Option<crate::model::Licensing>,
 }
+impl UpdateLaunchConfigurationInput {
+    /// <p>Update Launch configuration by Source Server ID request.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Update Launch configuration name request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Update Launch configuration launch disposition request.</p>
+    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+        self.launch_disposition.as_ref()
+    }
+    /// <p>Update Launch configuration Target instance right sizing request.</p>
+    pub fn target_instance_type_right_sizing_method(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+        self.target_instance_type_right_sizing_method.as_ref()
+    }
+    /// <p>Update Launch configuration copy Private IP request.</p>
+    pub fn copy_private_ip(&self) -> std::option::Option<bool> {
+        self.copy_private_ip
+    }
+    /// <p>Update Launch configuration copy Tags request.</p>
+    pub fn copy_tags(&self) -> std::option::Option<bool> {
+        self.copy_tags
+    }
+    /// <p>Update Launch configuration licensing request.</p>
+    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+        self.licensing.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLaunchConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLaunchConfigurationInput");
@@ -4969,6 +5036,12 @@ pub struct RetryDataReplicationInput {
     /// <p>Retry data replication for Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
 }
+impl RetryDataReplicationInput {
+    /// <p>Retry data replication for Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RetryDataReplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryDataReplicationInput");
@@ -4983,6 +5056,12 @@ impl std::fmt::Debug for RetryDataReplicationInput {
 pub struct MarkAsArchivedInput {
     /// <p>Mark as archived by Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
+}
+impl MarkAsArchivedInput {
+    /// <p>Mark as archived by Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MarkAsArchivedInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4999,6 +5078,12 @@ pub struct GetReplicationConfigurationInput {
     /// <p>Request to get Replication Configuaration by Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
 }
+impl GetReplicationConfigurationInput {
+    /// <p>Request to get Replication Configuaration by Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReplicationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationConfigurationInput");
@@ -5013,6 +5098,12 @@ impl std::fmt::Debug for GetReplicationConfigurationInput {
 pub struct GetLaunchConfigurationInput {
     /// <p>Request to get Launch Configuration information by Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
+}
+impl GetLaunchConfigurationInput {
+    /// <p>Request to get Launch Configuration information by Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLaunchConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5029,6 +5120,12 @@ pub struct FinalizeCutoverInput {
     /// <p>Request to finalize Cutover by Soure Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
 }
+impl FinalizeCutoverInput {
+    /// <p>Request to finalize Cutover by Soure Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+}
 impl std::fmt::Debug for FinalizeCutoverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FinalizeCutoverInput");
@@ -5043,6 +5140,12 @@ impl std::fmt::Debug for FinalizeCutoverInput {
 pub struct DisconnectFromServiceInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
+}
+impl DisconnectFromServiceInput {
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisconnectFromServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5061,6 +5164,18 @@ pub struct ChangeServerLifeCycleStateInput {
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub life_cycle:
         std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycle>,
+}
+impl ChangeServerLifeCycleStateInput {
+    /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>The request to change the source server migration lifecycle state.</p>
+    pub fn life_cycle(
+        &self,
+    ) -> std::option::Option<&crate::model::ChangeServerLifeCycleStateSourceServerLifecycle> {
+        self.life_cycle.as_ref()
+    }
 }
 impl std::fmt::Debug for ChangeServerLifeCycleStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5081,6 +5196,19 @@ pub struct TerminateTargetInstancesInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TerminateTargetInstancesInput {
+    /// <p>Terminate Target instance by Source Server IDs.</p>
+    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_server_i_ds.as_deref()
+    }
+    /// <p>Terminate Target instance by Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TerminateTargetInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateTargetInstancesInput");
@@ -5100,6 +5228,19 @@ pub struct StartTestInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StartTestInput {
+    /// <p>Start Test for Source Server IDs.</p>
+    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_server_i_ds.as_deref()
+    }
+    /// <p>Start Test by Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StartTestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTestInput");
@@ -5118,6 +5259,19 @@ pub struct StartCutoverInput {
     /// <p>Start Cutover by Tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StartCutoverInput {
+    /// <p>Start Cutover by Source Server IDs.</p>
+    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_server_i_ds.as_deref()
+    }
+    /// <p>Start Cutover by Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for StartCutoverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5139,6 +5293,22 @@ pub struct DescribeSourceServersInput {
     /// <p>Request to filter Source Servers list by next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSourceServersInput {
+    /// <p>Request to filter Source Servers list.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::model::DescribeSourceServersRequestFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>Request to filter Source Servers list by maximum results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Request to filter Source Servers list by next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSourceServersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSourceServersInput");
@@ -5155,6 +5325,12 @@ impl std::fmt::Debug for DescribeSourceServersInput {
 pub struct DeleteSourceServerInput {
     /// <p>Request to delete Source Server from service by Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
+}
+impl DeleteSourceServerInput {
+    /// <p>Request to delete Source Server from service by Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSourceServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5175,6 +5351,22 @@ pub struct DescribeReplicationConfigurationTemplatesInput {
     pub max_results: i32,
     /// <p>Request to describe Replication Configuration template by next token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReplicationConfigurationTemplatesInput {
+    /// <p>Request to describe Replication Configuration template by template IDs.</p>
+    pub fn replication_configuration_template_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_configuration_template_i_ds.as_deref()
+    }
+    /// <p>Request to describe Replication Configuration template by max results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Request to describe Replication Configuration template by next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationConfigurationTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5225,6 +5417,75 @@ pub struct CreateReplicationConfigurationTemplateInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateReplicationConfigurationTemplateInput {
+    /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Request to create Public IP during Replication Settings template creation.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
+    /// <p>Request to configure tags during Replication Settings template creation.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationConfigurationTemplateInput");
@@ -5266,6 +5527,12 @@ impl std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
 pub struct DeleteReplicationConfigurationTemplateInput {
     /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
+}
+impl DeleteReplicationConfigurationTemplateInput {
+    /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.replication_configuration_template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5314,6 +5581,76 @@ pub struct UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template Staging Area Tags request.</p>
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateReplicationConfigurationTemplateInput {
+    /// <p>Update replication configuration template template ID request.</p>
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.replication_configuration_template_id.as_deref()
+    }
+    /// <p>Update replication configuration template ARN request.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Update replication configuration template Staging Area subnet ID request.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Update replication configuration template Replication Server instance type request.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Update replication configuration template use dedicated Replication Server request.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Update replication configuration template use default large Staging Disk type request.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Update replication configuration template EBS encryption request.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Update replication configuration template EBS encryption key ARN request.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Update replication configuration template bandwidth throttling request.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Update replication configuration template data plane routing request.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Update replication configuration template create Public IP request.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Update replication configuration template Staging Area Tags request.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5365,6 +5702,20 @@ pub struct DescribeJobLogItemsInput {
     /// <p>Request to describe Job log next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeJobLogItemsInput {
+    /// <p>Request to describe Job log job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Request to describe Job log item maximum results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Request to describe Job log next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobLogItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobLogItemsInput");
@@ -5386,6 +5737,20 @@ pub struct DescribeJobsInput {
     /// <p>Request to describe Job logby next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeJobsInput {
+    /// <p>Request to describe Job log filters.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::DescribeJobsRequestFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>Request to describe Job log by max results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Request to describe Job logby next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobsInput");
@@ -5403,6 +5768,12 @@ pub struct DeleteJobInput {
     /// <p>Request to delete Job from service by Job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DeleteJobInput {
+    /// <p>Request to delete Job from service by Job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteJobInput");
@@ -5419,6 +5790,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Untag resource by Keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>Untag resource by ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Untag resource by Keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5439,6 +5820,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>Tag resource by ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tag resource by Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5454,6 +5848,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>List tags for resource request by ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>List tags for resource request by ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

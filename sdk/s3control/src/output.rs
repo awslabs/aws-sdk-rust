@@ -10,6 +10,20 @@ pub struct UpdateJobStatusOutput {
     /// <p>The reason that the specified job's status was updated.</p>
     pub status_update_reason: std::option::Option<std::string::String>,
 }
+impl UpdateJobStatusOutput {
+    /// <p>The ID for the job whose status was updated.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status for the specified job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason that the specified job's status was updated.</p>
+    pub fn status_update_reason(&self) -> std::option::Option<&str> {
+        self.status_update_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateJobStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobStatusOutput");
@@ -88,6 +102,16 @@ pub struct UpdateJobPriorityOutput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The new priority assigned to the specified job.</p>
     pub priority: i32,
+}
+impl UpdateJobPriorityOutput {
+    /// <p>The ID for the job whose priority Amazon S3 updated.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The new priority assigned to the specified job.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
 }
 impl std::fmt::Debug for UpdateJobPriorityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -240,6 +264,13 @@ pub struct PutMultiRegionAccessPointPolicyOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
     /// asynchronous requests.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
+}
+impl PutMultiRegionAccessPointPolicyOutput {
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+    /// asynchronous requests.</p>
+    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+        self.request_token_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutMultiRegionAccessPointPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -510,6 +541,20 @@ pub struct ListStorageLensConfigurationsOutput {
     pub storage_lens_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
 }
+impl ListStorageLensConfigurationsOutput {
+    /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results,
+    /// you can pass this value into a subsequent request to retrieve the next page of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of S3 Storage Lens configurations.</p>
+    pub fn storage_lens_configuration_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ListStorageLensConfigurationEntry]> {
+        self.storage_lens_configuration_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStorageLensConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStorageLensConfigurationsOutput");
@@ -599,6 +644,20 @@ pub struct ListRegionalBucketsOutput {
     /// <code>NextToken</code> is obfuscated and is not a real key.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRegionalBucketsOutput {
+    /// <p></p>
+    pub fn regional_bucket_list(&self) -> std::option::Option<&[crate::model::RegionalBucket]> {
+        self.regional_bucket_list.as_deref()
+    }
+    /// <p>
+    /// <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means
+    /// there are more buckets that can be listed. The next list requests to Amazon S3
+    /// can be continued with this <code>NextToken</code>.
+    /// <code>NextToken</code> is obfuscated and is not a real key.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRegionalBucketsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRegionalBucketsOutput");
@@ -686,6 +745,20 @@ pub struct ListMultiRegionAccessPointsOutput {
     /// calls to this action to retrieve additional Multi-Region Access Points.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMultiRegionAccessPointsOutput {
+    /// <p>The list of Multi-Region Access Points associated with the user.</p>
+    pub fn access_points(
+        &self,
+    ) -> std::option::Option<&[crate::model::MultiRegionAccessPointReport]> {
+        self.access_points.as_deref()
+    }
+    /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this
+    /// action, this field contains a continuation token. You can use this token tin subsequent
+    /// calls to this action to retrieve additional Multi-Region Access Points.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMultiRegionAccessPointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMultiRegionAccessPointsOutput");
@@ -767,6 +840,17 @@ pub struct ListJobsOutput {
     /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobListDescriptor>>,
 }
+impl ListJobsOutput {
+    /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve
+    /// the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::JobListDescriptor]> {
+        self.jobs.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsOutput");
@@ -843,6 +927,20 @@ pub struct ListAccessPointsForObjectLambdaOutput {
     /// API, this field contains a continuation token that you can provide in subsequent calls to
     /// this API to retrieve additional access points.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccessPointsForObjectLambdaOutput {
+    /// <p>Returns list of Object Lambda Access Points.</p>
+    pub fn object_lambda_access_point_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectLambdaAccessPoint]> {
+        self.object_lambda_access_point_list.as_deref()
+    }
+    /// <p>If the list has more access points than can be returned in one call to this
+    /// API, this field contains a continuation token that you can provide in subsequent calls to
+    /// this API to retrieve additional access points.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccessPointsForObjectLambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -930,6 +1028,19 @@ pub struct ListAccessPointsOutput {
     /// this API to retrieve additional access points.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAccessPointsOutput {
+    /// <p>Contains identification and configuration information for one or more access points
+    /// associated with the specified bucket.</p>
+    pub fn access_point_list(&self) -> std::option::Option<&[crate::model::AccessPoint]> {
+        self.access_point_list.as_deref()
+    }
+    /// <p>If the specified bucket has more access points than can be returned in one call to this
+    /// API, this field contains a continuation token that you can provide in subsequent calls to
+    /// this API to retrieve additional access points.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccessPointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessPointsOutput");
@@ -1006,6 +1117,12 @@ pub struct GetStorageLensConfigurationTaggingOutput {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
 }
+impl GetStorageLensConfigurationTaggingOutput {
+    /// <p>The tags of S3 Storage Lens configuration requested.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::StorageLensTag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStorageLensConfigurationTaggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStorageLensConfigurationTaggingOutput");
@@ -1060,6 +1177,14 @@ impl GetStorageLensConfigurationTaggingOutput {
 pub struct GetStorageLensConfigurationOutput {
     /// <p>The S3 Storage Lens configuration requested.</p>
     pub storage_lens_configuration: std::option::Option<crate::model::StorageLensConfiguration>,
+}
+impl GetStorageLensConfigurationOutput {
+    /// <p>The S3 Storage Lens configuration requested.</p>
+    pub fn storage_lens_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageLensConfiguration> {
+        self.storage_lens_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetStorageLensConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1119,6 +1244,14 @@ pub struct GetPublicAccessBlockOutput {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+}
+impl GetPublicAccessBlockOutput {
+    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
+    pub fn public_access_block_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+        self.public_access_block_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPublicAccessBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1181,6 +1314,15 @@ pub struct GetMultiRegionAccessPointPolicyStatusOutput {
     /// </p>
     pub established: std::option::Option<crate::model::PolicyStatus>,
 }
+impl GetMultiRegionAccessPointPolicyStatusOutput {
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
+    /// <i>Amazon S3 User Guide</i>.
+    /// </p>
+    pub fn established(&self) -> std::option::Option<&crate::model::PolicyStatus> {
+        self.established.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyStatusOutput");
@@ -1238,6 +1380,14 @@ pub struct GetMultiRegionAccessPointPolicyOutput {
     /// <p>The policy associated with the specified Multi-Region Access Point.</p>
     pub policy: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
 }
+impl GetMultiRegionAccessPointPolicyOutput {
+    /// <p>The policy associated with the specified Multi-Region Access Point.</p>
+    pub fn policy(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiRegionAccessPointPolicyDocument> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMultiRegionAccessPointPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyOutput");
@@ -1289,6 +1439,12 @@ pub struct GetMultiRegionAccessPointOutput {
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
     pub access_point: std::option::Option<crate::model::MultiRegionAccessPointReport>,
 }
+impl GetMultiRegionAccessPointOutput {
+    /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
+    pub fn access_point(&self) -> std::option::Option<&crate::model::MultiRegionAccessPointReport> {
+        self.access_point.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMultiRegionAccessPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMultiRegionAccessPointOutput");
@@ -1339,6 +1495,12 @@ impl GetMultiRegionAccessPointOutput {
 pub struct GetJobTaggingOutput {
     /// <p>The set of tags associated with the S3 Batch Operations job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+}
+impl GetJobTaggingOutput {
+    /// <p>The set of tags associated with the S3 Batch Operations job.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobTaggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1394,6 +1556,12 @@ impl GetJobTaggingOutput {
 pub struct GetBucketTaggingOutput {
     /// <p>The tags set of the Outposts bucket.</p>
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+}
+impl GetBucketTaggingOutput {
+    /// <p>The tags set of the Outposts bucket.</p>
+    pub fn tag_set(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tag_set.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBucketTaggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1452,6 +1620,12 @@ pub struct GetBucketPolicyOutput {
     /// <p>The policy of the Outposts bucket.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetBucketPolicyOutput {
+    /// <p>The policy of the Outposts bucket.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBucketPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketPolicyOutput");
@@ -1499,6 +1673,12 @@ impl GetBucketPolicyOutput {
 pub struct GetBucketLifecycleConfigurationOutput {
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
+}
+impl GetBucketLifecycleConfigurationOutput {
+    /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::LifecycleRule]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBucketLifecycleConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1558,6 +1738,20 @@ pub struct GetBucketOutput {
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the Outposts bucket.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetBucketOutput {
+    /// <p>The Outposts bucket requested.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p></p>
+    pub fn public_access_block_enabled(&self) -> bool {
+        self.public_access_block_enabled
+    }
+    /// <p>The creation date of the Outposts bucket.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBucketOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1642,6 +1836,15 @@ pub struct GetAccessPointPolicyStatusForObjectLambdaOutput {
     /// </p>
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
 }
+impl GetAccessPointPolicyStatusForObjectLambdaOutput {
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
+    /// <i>Amazon S3 User Guide</i>.
+    /// </p>
+    pub fn policy_status(&self) -> std::option::Option<&crate::model::PolicyStatus> {
+        self.policy_status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointPolicyStatusForObjectLambdaOutput");
@@ -1700,6 +1903,12 @@ pub struct GetAccessPointPolicyStatusOutput {
     /// <p>Indicates the current policy status of the specified access point.</p>
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
 }
+impl GetAccessPointPolicyStatusOutput {
+    /// <p>Indicates the current policy status of the specified access point.</p>
+    pub fn policy_status(&self) -> std::option::Option<&crate::model::PolicyStatus> {
+        self.policy_status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointPolicyStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointPolicyStatusOutput");
@@ -1751,6 +1960,12 @@ pub struct GetAccessPointPolicyForObjectLambdaOutput {
     /// <p>Object Lambda Access Point resource policy document.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetAccessPointPolicyForObjectLambdaOutput {
+    /// <p>Object Lambda Access Point resource policy document.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointPolicyForObjectLambdaOutput");
@@ -1798,6 +2013,12 @@ impl GetAccessPointPolicyForObjectLambdaOutput {
 pub struct GetAccessPointPolicyOutput {
     /// <p>The access point policy associated with the specified access point.</p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl GetAccessPointPolicyOutput {
+    /// <p>The access point policy associated with the specified access point.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessPointPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1851,6 +2072,22 @@ pub struct GetAccessPointForObjectLambdaOutput {
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetAccessPointForObjectLambdaOutput {
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    pub fn public_access_block_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+        self.public_access_block_configuration.as_ref()
+    }
+    /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccessPointForObjectLambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1939,6 +2176,12 @@ pub struct GetAccessPointConfigurationForObjectLambdaOutput {
     /// <p>Object Lambda Access Point configuration document.</p>
     pub configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
 }
+impl GetAccessPointConfigurationForObjectLambdaOutput {
+    /// <p>Object Lambda Access Point configuration document.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ObjectLambdaConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPointConfigurationForObjectLambdaOutput");
@@ -2020,6 +2263,61 @@ pub struct GetAccessPointOutput {
     /// <p>The VPC endpoint for the access point.</p>
     pub endpoints:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetAccessPointOutput {
+    /// <p>The name of the specified access point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the bucket associated with the specified access point.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Indicates whether this access point allows access from the public internet. If
+    /// <code>VpcConfiguration</code> is specified for this access point, then
+    /// <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from
+    /// the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and
+    /// the access point allows access from the public internet, subject to the access point and bucket access
+    /// policies.</p>
+    /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
+    pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOrigin> {
+        self.network_origin.as_ref()
+    }
+    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p>
+    /// <note>
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+    /// </note>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
+    /// You can enable the configuration options in any combination. For more information about
+    /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub fn public_access_block_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+        self.public_access_block_configuration.as_ref()
+    }
+    /// <p>The date and time when the specified access point was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The name or alias of the access point.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The ARN of the access point.</p>
+    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+        self.access_point_arn.as_deref()
+    }
+    /// <p>The VPC endpoint for the access point.</p>
+    pub fn endpoints(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.endpoints.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccessPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2236,6 +2534,12 @@ pub struct DescribeMultiRegionAccessPointOperationOutput {
     /// <p>A container element containing the details of the asynchronous operation.</p>
     pub async_operation: std::option::Option<crate::model::AsyncOperation>,
 }
+impl DescribeMultiRegionAccessPointOperationOutput {
+    /// <p>A container element containing the details of the asynchronous operation.</p>
+    pub fn async_operation(&self) -> std::option::Option<&crate::model::AsyncOperation> {
+        self.async_operation.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMultiRegionAccessPointOperationOutput");
@@ -2287,6 +2591,12 @@ impl DescribeMultiRegionAccessPointOperationOutput {
 pub struct DescribeJobOutput {
     /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
     pub job: std::option::Option<crate::model::JobDescriptor>,
+}
+impl DescribeJobOutput {
+    /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::JobDescriptor> {
+        self.job.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2424,6 +2734,13 @@ pub struct DeleteMultiRegionAccessPointOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
     /// asynchronous requests.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
+}
+impl DeleteMultiRegionAccessPointOutput {
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+    /// asynchronous requests.</p>
+    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+        self.request_token_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMultiRegionAccessPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2750,6 +3067,13 @@ pub struct CreateMultiRegionAccessPointOutput {
     /// asynchronous requests.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
 }
+impl CreateMultiRegionAccessPointOutput {
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
+    /// asynchronous requests.</p>
+    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+        self.request_token_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMultiRegionAccessPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMultiRegionAccessPointOutput");
@@ -2804,6 +3128,13 @@ pub struct CreateJobOutput {
     /// successful <code>Create Job</code> request.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CreateJobOutput {
+    /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a
+    /// successful <code>Create Job</code> request.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobOutput");
@@ -2857,6 +3188,18 @@ pub struct CreateBucketOutput {
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket_arn: std::option::Option<std::string::String>,
+}
+impl CreateBucketOutput {
+    /// <p>The location of the bucket.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBucketOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2923,6 +3266,12 @@ pub struct CreateAccessPointForObjectLambdaOutput {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     pub object_lambda_access_point_arn: std::option::Option<std::string::String>,
 }
+impl CreateAccessPointForObjectLambdaOutput {
+    /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    pub fn object_lambda_access_point_arn(&self) -> std::option::Option<&str> {
+        self.object_lambda_access_point_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAccessPointForObjectLambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccessPointForObjectLambdaOutput");
@@ -2984,6 +3333,19 @@ pub struct CreateAccessPointOutput {
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The name or alias of the access point.</p>
     pub alias: std::option::Option<std::string::String>,
+}
+impl CreateAccessPointOutput {
+    /// <p>The ARN of the access point.</p>
+    /// <note>
+    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+    /// </note>
+    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+        self.access_point_arn.as_deref()
+    }
+    /// <p>The name or alias of the access point.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAccessPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

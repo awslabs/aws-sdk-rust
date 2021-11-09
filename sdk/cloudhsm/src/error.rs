@@ -2251,6 +2251,12 @@ pub struct InvalidRequestException {
     /// <p>Indicates if the action can be retried.</p>
     pub retryable: bool,
 }
+impl InvalidRequestException {
+    /// <p>Indicates if the action can be retried.</p>
+    pub fn retryable(&self) -> bool {
+        self.retryable
+    }
+}
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidRequestException");
@@ -2330,6 +2336,12 @@ pub struct CloudHsmServiceException {
     /// <p>Indicates if the action can be retried.</p>
     pub retryable: bool,
 }
+impl CloudHsmServiceException {
+    /// <p>Indicates if the action can be retried.</p>
+    pub fn retryable(&self) -> bool {
+        self.retryable
+    }
+}
 impl std::fmt::Debug for CloudHsmServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudHsmServiceException");
@@ -2408,6 +2420,12 @@ pub struct CloudHsmInternalException {
     pub message: std::option::Option<std::string::String>,
     /// <p>Indicates if the action can be retried.</p>
     pub retryable: bool,
+}
+impl CloudHsmInternalException {
+    /// <p>Indicates if the action can be retried.</p>
+    pub fn retryable(&self) -> bool {
+        self.retryable
+    }
 }
 impl std::fmt::Debug for CloudHsmInternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

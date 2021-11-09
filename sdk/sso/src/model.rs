@@ -10,6 +10,20 @@ pub struct AccountInfo {
     /// <p>The email address of the AWS account that is assigned to the user.</p>
     pub email_address: std::option::Option<std::string::String>,
 }
+impl AccountInfo {
+    /// <p>The identifier of the AWS account that is assigned to the user.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The display name of the AWS account that is assigned to the user.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>The email address of the AWS account that is assigned to the user.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+}
 impl std::fmt::Debug for AccountInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountInfo");
@@ -89,6 +103,16 @@ pub struct RoleInfo {
     /// <p>The identifier of the AWS account assigned to the user.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl RoleInfo {
+    /// <p>The friendly name of the role that is assigned to the user.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The identifier of the AWS account assigned to the user.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RoleInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoleInfo");
@@ -159,6 +183,28 @@ pub struct RoleCredentials {
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date on which temporary security credentials expire.</p>
     pub expiration: i64,
+}
+impl RoleCredentials {
+    /// <p>The identifier used for the temporary security credentials. For more information, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
+    /// <i>AWS IAM User Guide</i>.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
+    /// <i>AWS IAM User Guide</i>.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
+    /// <i>AWS IAM User Guide</i>.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p>The date on which temporary security credentials expire.</p>
+    pub fn expiration(&self) -> i64 {
+        self.expiration
+    }
 }
 impl std::fmt::Debug for RoleCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

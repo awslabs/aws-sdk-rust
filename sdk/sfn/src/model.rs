@@ -7,6 +7,12 @@ pub struct TracingConfiguration {
     /// <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
     pub enabled: bool,
 }
+impl TracingConfiguration {
+    /// <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for TracingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TracingConfiguration");
@@ -61,6 +67,22 @@ pub struct LoggingConfiguration {
     /// <p>An array of objects that describes where your execution history events will be logged.
     /// Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::LogDestination>>,
+}
+impl LoggingConfiguration {
+    /// <p>Defines which category of execution history events are logged.</p>
+    pub fn level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.level.as_ref()
+    }
+    /// <p>Determines whether execution data is included in your log. When set to <code>false</code>,
+    /// data is excluded.</p>
+    pub fn include_execution_data(&self) -> bool {
+        self.include_execution_data
+    }
+    /// <p>An array of objects that describes where your execution history events will be logged.
+    /// Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::LogDestination]> {
+        self.destinations.as_deref()
+    }
 }
 impl std::fmt::Debug for LoggingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -149,6 +171,14 @@ pub struct LogDestination {
     /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.</p>
     pub cloud_watch_logs_log_group: std::option::Option<crate::model::CloudWatchLogsLogGroup>,
 }
+impl LogDestination {
+    /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.</p>
+    pub fn cloud_watch_logs_log_group(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsLogGroup> {
+        self.cloud_watch_logs_log_group.as_ref()
+    }
+}
 impl std::fmt::Debug for LogDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogDestination");
@@ -208,6 +238,14 @@ pub struct CloudWatchLogsLogGroup {
     /// must end with <code>:*</code>
     /// </p>
     pub log_group_arn: std::option::Option<std::string::String>,
+}
+impl CloudWatchLogsLogGroup {
+    /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN
+    /// must end with <code>:*</code>
+    /// </p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchLogsLogGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -335,6 +373,16 @@ pub struct Tag {
     /// <p>The value of a tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of a tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of a tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -397,6 +445,16 @@ pub struct BillingDetails {
     pub billed_memory_used_in_mb: i64,
     /// <p>Billed duration of your workflow, in milliseconds.</p>
     pub billed_duration_in_milliseconds: i64,
+}
+impl BillingDetails {
+    /// <p>Billed memory consumption of your workflow, in MB.</p>
+    pub fn billed_memory_used_in_mb(&self) -> i64 {
+        self.billed_memory_used_in_mb
+    }
+    /// <p>Billed duration of your workflow, in milliseconds.</p>
+    pub fn billed_duration_in_milliseconds(&self) -> i64 {
+        self.billed_duration_in_milliseconds
+    }
 }
 impl std::fmt::Debug for BillingDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -467,6 +525,13 @@ pub struct CloudWatchEventsExecutionDataDetails {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code>
     /// for API calls. </p>
     pub included: bool,
+}
+impl CloudWatchEventsExecutionDataDetails {
+    /// <p>Indicates whether input or output was included in the response. Always <code>true</code>
+    /// for API calls. </p>
+    pub fn included(&self) -> bool {
+        self.included
+    }
 }
 impl std::fmt::Debug for CloudWatchEventsExecutionDataDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -604,6 +669,46 @@ pub struct StateMachineListItem {
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>The date the state machine is created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl StateMachineListItem {
+    /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the state machine.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StateMachineType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The date the state machine is created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for StateMachineListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -831,6 +936,54 @@ pub struct ExecutionListItem {
     pub start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If the execution already ended, the date the execution stopped.</p>
     pub stop_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ExecutionListItem {
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the execution.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date the execution started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>If the execution already ended, the date the execution stopped.</p>
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_date.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecutionListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1097,6 +1250,42 @@ pub struct ActivityListItem {
     /// <p>The date the activity is created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ActivityListItem {
+    /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
+    pub fn activity_arn(&self) -> std::option::Option<&str> {
+        self.activity_arn.as_deref()
+    }
+    /// <p>The name of the activity.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date the activity is created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for ActivityListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityListItem");
@@ -1314,6 +1503,219 @@ pub struct HistoryEvent {
     pub state_entered_event_details: std::option::Option<crate::model::StateEnteredEventDetails>,
     /// <p>Contains details about an exit from a state during an execution.</p>
     pub state_exited_event_details: std::option::Option<crate::model::StateExitedEventDetails>,
+}
+impl HistoryEvent {
+    /// <p>The date and time the event occurred.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The type of the event.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::HistoryEventType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
+    pub fn id(&self) -> i64 {
+        self.id
+    }
+    /// <p>The id of the previous event.</p>
+    pub fn previous_event_id(&self) -> i64 {
+        self.previous_event_id
+    }
+    /// <p>Contains details about an activity that failed during an execution.</p>
+    pub fn activity_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActivityFailedEventDetails> {
+        self.activity_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about an activity schedule event that failed during an execution.</p>
+    pub fn activity_schedule_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActivityScheduleFailedEventDetails> {
+        self.activity_schedule_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about an activity scheduled during an execution.</p>
+    pub fn activity_scheduled_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActivityScheduledEventDetails> {
+        self.activity_scheduled_event_details.as_ref()
+    }
+    /// <p>Contains details about the start of an activity during an execution.</p>
+    pub fn activity_started_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActivityStartedEventDetails> {
+        self.activity_started_event_details.as_ref()
+    }
+    /// <p>Contains details about an activity that successfully terminated during an
+    /// execution.</p>
+    pub fn activity_succeeded_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActivitySucceededEventDetails> {
+        self.activity_succeeded_event_details.as_ref()
+    }
+    /// <p>Contains details about an activity timeout that occurred during an execution.</p>
+    pub fn activity_timed_out_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActivityTimedOutEventDetails> {
+        self.activity_timed_out_event_details.as_ref()
+    }
+    /// <p>Contains details about the failure of a task.</p>
+    pub fn task_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskFailedEventDetails> {
+        self.task_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about a task that was scheduled.</p>
+    pub fn task_scheduled_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskScheduledEventDetails> {
+        self.task_scheduled_event_details.as_ref()
+    }
+    /// <p>Contains details about a task that failed to start.</p>
+    pub fn task_start_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskStartFailedEventDetails> {
+        self.task_start_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about a task that was started.</p>
+    pub fn task_started_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskStartedEventDetails> {
+        self.task_started_event_details.as_ref()
+    }
+    /// <p>Contains details about a task that where the submit failed.</p>
+    pub fn task_submit_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskSubmitFailedEventDetails> {
+        self.task_submit_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about a submitted task.</p>
+    pub fn task_submitted_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskSubmittedEventDetails> {
+        self.task_submitted_event_details.as_ref()
+    }
+    /// <p>Contains details about a task that succeeded.</p>
+    pub fn task_succeeded_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskSucceededEventDetails> {
+        self.task_succeeded_event_details.as_ref()
+    }
+    /// <p>Contains details about a task that timed out.</p>
+    pub fn task_timed_out_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TaskTimedOutEventDetails> {
+        self.task_timed_out_event_details.as_ref()
+    }
+    /// <p>Contains details about an execution failure event.</p>
+    pub fn execution_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionFailedEventDetails> {
+        self.execution_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about the start of the execution.</p>
+    pub fn execution_started_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionStartedEventDetails> {
+        self.execution_started_event_details.as_ref()
+    }
+    /// <p>Contains details about the successful termination of the execution.</p>
+    pub fn execution_succeeded_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionSucceededEventDetails> {
+        self.execution_succeeded_event_details.as_ref()
+    }
+    /// <p>Contains details about an abort of an execution.</p>
+    pub fn execution_aborted_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionAbortedEventDetails> {
+        self.execution_aborted_event_details.as_ref()
+    }
+    /// <p>Contains details about the execution timeout that occurred during the execution.</p>
+    pub fn execution_timed_out_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionTimedOutEventDetails> {
+        self.execution_timed_out_event_details.as_ref()
+    }
+    /// <p>Contains details about Map state that was started.</p>
+    pub fn map_state_started_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::MapStateStartedEventDetails> {
+        self.map_state_started_event_details.as_ref()
+    }
+    /// <p>Contains details about an iteration of a Map state that was started.</p>
+    pub fn map_iteration_started_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::MapIterationEventDetails> {
+        self.map_iteration_started_event_details.as_ref()
+    }
+    /// <p>Contains details about an iteration of a Map state that succeeded.</p>
+    pub fn map_iteration_succeeded_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::MapIterationEventDetails> {
+        self.map_iteration_succeeded_event_details.as_ref()
+    }
+    /// <p>Contains details about an iteration of a Map state that failed.</p>
+    pub fn map_iteration_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::MapIterationEventDetails> {
+        self.map_iteration_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about an iteration of a Map state that was aborted.</p>
+    pub fn map_iteration_aborted_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::MapIterationEventDetails> {
+        self.map_iteration_aborted_event_details.as_ref()
+    }
+    /// <p>Contains details about a lambda function that failed during an execution.</p>
+    pub fn lambda_function_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionFailedEventDetails> {
+        self.lambda_function_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about a failed lambda function schedule event that occurred during an
+    /// execution.</p>
+    pub fn lambda_function_schedule_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionScheduleFailedEventDetails> {
+        self.lambda_function_schedule_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about a lambda function scheduled during an execution.</p>
+    pub fn lambda_function_scheduled_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionScheduledEventDetails> {
+        self.lambda_function_scheduled_event_details.as_ref()
+    }
+    /// <p>Contains details about a lambda function that failed to start during an execution.</p>
+    pub fn lambda_function_start_failed_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionStartFailedEventDetails> {
+        self.lambda_function_start_failed_event_details.as_ref()
+    }
+    /// <p>Contains details about a lambda function that terminated successfully during an
+    /// execution.</p>
+    pub fn lambda_function_succeeded_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionSucceededEventDetails> {
+        self.lambda_function_succeeded_event_details.as_ref()
+    }
+    /// <p>Contains details about a lambda function timeout that occurred during an execution.</p>
+    pub fn lambda_function_timed_out_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionTimedOutEventDetails> {
+        self.lambda_function_timed_out_event_details.as_ref()
+    }
+    /// <p>Contains details about a state entered during an execution.</p>
+    pub fn state_entered_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::StateEnteredEventDetails> {
+        self.state_entered_event_details.as_ref()
+    }
+    /// <p>Contains details about an exit from a state during an execution.</p>
+    pub fn state_exited_event_details(
+        &self,
+    ) -> std::option::Option<&crate::model::StateExitedEventDetails> {
+        self.state_exited_event_details.as_ref()
+    }
 }
 impl std::fmt::Debug for HistoryEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2178,6 +2580,44 @@ pub struct StateExitedEventDetails {
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
+impl StateExitedEventDetails {
+    /// <p>The name of the state.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
+}
 impl std::fmt::Debug for StateExitedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StateExitedEventDetails");
@@ -2304,6 +2744,13 @@ pub struct HistoryEventExecutionDataDetails {
     /// <code>false</code> for API calls.</p>
     pub truncated: bool,
 }
+impl HistoryEventExecutionDataDetails {
+    /// <p>Indicates whether input or output was truncated in the response. Always
+    /// <code>false</code> for API calls.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
+}
 impl std::fmt::Debug for HistoryEventExecutionDataDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HistoryEventExecutionDataDetails");
@@ -2357,6 +2804,22 @@ pub struct StateEnteredEventDetails {
     pub input: std::option::Option<std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
     pub input_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
+}
+impl StateEnteredEventDetails {
+    /// <p>The name of the state.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Contains details about the input for an execution history event.</p>
+    pub fn input_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.input_details.as_ref()
+    }
 }
 impl std::fmt::Debug for StateEnteredEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2441,6 +2904,16 @@ pub struct LambdaFunctionTimedOutEventDetails {
     /// <p>A more detailed explanation of the cause of the timeout.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl LambdaFunctionTimedOutEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the timeout.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaFunctionTimedOutEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionTimedOutEventDetails");
@@ -2504,6 +2977,18 @@ pub struct LambdaFunctionSucceededEventDetails {
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
+}
+impl LambdaFunctionSucceededEventDetails {
+    /// <p>The JSON data output by the lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
 }
 impl std::fmt::Debug for LambdaFunctionSucceededEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2575,6 +3060,16 @@ pub struct LambdaFunctionStartFailedEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl LambdaFunctionStartFailedEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaFunctionStartFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionStartFailedEventDetails");
@@ -2641,6 +3136,26 @@ pub struct LambdaFunctionScheduledEventDetails {
     pub input_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
     /// <p>The maximum allowed duration of the lambda function.</p>
     pub timeout_in_seconds: std::option::Option<i64>,
+}
+impl LambdaFunctionScheduledEventDetails {
+    /// <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The JSON data input to the lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Contains details about input for an execution history event.</p>
+    pub fn input_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.input_details.as_ref()
+    }
+    /// <p>The maximum allowed duration of the lambda function.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
+        self.timeout_in_seconds
+    }
 }
 impl std::fmt::Debug for LambdaFunctionScheduledEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2739,6 +3254,16 @@ pub struct LambdaFunctionScheduleFailedEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl LambdaFunctionScheduleFailedEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaFunctionScheduleFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionScheduleFailedEventDetails");
@@ -2801,6 +3326,16 @@ pub struct LambdaFunctionFailedEventDetails {
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
+}
+impl LambdaFunctionFailedEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaFunctionFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2865,6 +3400,16 @@ pub struct MapIterationEventDetails {
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub index: i32,
 }
+impl MapIterationEventDetails {
+    /// <p>The name of the iteration’s parent Map state.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The index of the array belonging to the Map state iteration.</p>
+    pub fn index(&self) -> i32 {
+        self.index
+    }
+}
 impl std::fmt::Debug for MapIterationEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MapIterationEventDetails");
@@ -2926,6 +3471,12 @@ pub struct MapStateStartedEventDetails {
     /// <p>The size of the array for Map state iterations.</p>
     pub length: i32,
 }
+impl MapStateStartedEventDetails {
+    /// <p>The size of the array for Map state iterations.</p>
+    pub fn length(&self) -> i32 {
+        self.length
+    }
+}
 impl std::fmt::Debug for MapStateStartedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MapStateStartedEventDetails");
@@ -2975,6 +3526,16 @@ pub struct ExecutionTimedOutEventDetails {
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the timeout.</p>
     pub cause: std::option::Option<std::string::String>,
+}
+impl ExecutionTimedOutEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the timeout.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecutionTimedOutEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3039,6 +3600,16 @@ pub struct ExecutionAbortedEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl ExecutionAbortedEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for ExecutionAbortedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionAbortedEventDetails");
@@ -3101,6 +3672,18 @@ pub struct ExecutionSucceededEventDetails {
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
+}
+impl ExecutionSucceededEventDetails {
+    /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecutionSucceededEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3173,6 +3756,22 @@ pub struct ExecutionStartedEventDetails {
     pub input_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl ExecutionStartedEventDetails {
+    /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Contains details about the input for an execution history event.</p>
+    pub fn input_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.input_details.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecutionStartedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3257,6 +3856,16 @@ pub struct ExecutionFailedEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl ExecutionFailedEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for ExecutionFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionFailedEventDetails");
@@ -3323,6 +3932,24 @@ pub struct TaskTimedOutEventDetails {
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
+}
+impl TaskTimedOutEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
 }
 impl std::fmt::Debug for TaskTimedOutEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3420,6 +4047,27 @@ pub struct TaskSucceededEventDetails {
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
+}
+impl TaskSucceededEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The full JSON response from a resource when a task has succeeded. This response becomes
+    /// the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
 }
 impl std::fmt::Debug for TaskSucceededEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3526,6 +4174,26 @@ pub struct TaskSubmittedEventDetails {
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
+impl TaskSubmittedEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
+}
 impl std::fmt::Debug for TaskSubmittedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskSubmittedEventDetails");
@@ -3629,6 +4297,24 @@ pub struct TaskSubmitFailedEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl TaskSubmitFailedEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for TaskSubmitFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskSubmitFailedEventDetails");
@@ -3721,6 +4407,16 @@ pub struct TaskStartedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
     pub resource: std::option::Option<std::string::String>,
 }
+impl TaskStartedEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+}
 impl std::fmt::Debug for TaskStartedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskStartedEventDetails");
@@ -3790,6 +4486,24 @@ pub struct TaskStartFailedEventDetails {
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
+}
+impl TaskStartFailedEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
 }
 impl std::fmt::Debug for TaskStartFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3891,6 +4605,33 @@ pub struct TaskScheduledEventDetails {
     pub timeout_in_seconds: std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
     pub heartbeat_in_seconds: std::option::Option<i64>,
+}
+impl TaskScheduledEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The region of the scheduled task</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The JSON data passed to the resource referenced in a task state.
+    /// Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn parameters(&self) -> std::option::Option<&str> {
+        self.parameters.as_deref()
+    }
+    /// <p>The maximum allowed duration of the task.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
+        self.timeout_in_seconds
+    }
+    /// <p>The maximum allowed duration between two heartbeats for the task.</p>
+    pub fn heartbeat_in_seconds(&self) -> std::option::Option<i64> {
+        self.heartbeat_in_seconds
+    }
 }
 impl std::fmt::Debug for TaskScheduledEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4016,6 +4757,24 @@ pub struct TaskFailedEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl TaskFailedEventDetails {
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for TaskFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskFailedEventDetails");
@@ -4108,6 +4867,16 @@ pub struct ActivityTimedOutEventDetails {
     /// <p>A more detailed explanation of the cause of the timeout.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl ActivityTimedOutEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the timeout.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for ActivityTimedOutEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityTimedOutEventDetails");
@@ -4171,6 +4940,18 @@ pub struct ActivitySucceededEventDetails {
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
+}
+impl ActivitySucceededEventDetails {
+    /// <p>The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
 }
 impl std::fmt::Debug for ActivitySucceededEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4241,6 +5022,13 @@ pub struct ActivityStartedEventDetails {
     /// workers when calling <a>GetActivityTask</a>.</p>
     pub worker_name: std::option::Option<std::string::String>,
 }
+impl ActivityStartedEventDetails {
+    /// <p>The name of the worker that the task is assigned to. These names are provided by the
+    /// workers when calling <a>GetActivityTask</a>.</p>
+    pub fn worker_name(&self) -> std::option::Option<&str> {
+        self.worker_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ActivityStartedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityStartedEventDetails");
@@ -4298,6 +5086,30 @@ pub struct ActivityScheduledEventDetails {
     pub timeout_in_seconds: std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
     pub heartbeat_in_seconds: std::option::Option<i64>,
+}
+impl ActivityScheduledEventDetails {
+    /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Contains details about the input for an execution history event.</p>
+    pub fn input_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HistoryEventExecutionDataDetails> {
+        self.input_details.as_ref()
+    }
+    /// <p>The maximum allowed duration of the activity task.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
+        self.timeout_in_seconds
+    }
+    /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
+    pub fn heartbeat_in_seconds(&self) -> std::option::Option<i64> {
+        self.heartbeat_in_seconds
+    }
 }
 impl std::fmt::Debug for ActivityScheduledEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4409,6 +5221,16 @@ pub struct ActivityScheduleFailedEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl ActivityScheduleFailedEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for ActivityScheduleFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityScheduleFailedEventDetails");
@@ -4471,6 +5293,16 @@ pub struct ActivityFailedEventDetails {
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
+}
+impl ActivityFailedEventDetails {
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
 }
 impl std::fmt::Debug for ActivityFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

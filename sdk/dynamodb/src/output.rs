@@ -6,6 +6,14 @@ pub struct UpdateTimeToLiveOutput {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
     pub time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
 }
+impl UpdateTimeToLiveOutput {
+    /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
+    pub fn time_to_live_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeToLiveSpecification> {
+        self.time_to_live_specification.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTimeToLiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTimeToLiveOutput");
@@ -65,6 +73,14 @@ pub struct UpdateTableReplicaAutoScalingOutput {
     pub table_auto_scaling_description:
         std::option::Option<crate::model::TableAutoScalingDescription>,
 }
+impl UpdateTableReplicaAutoScalingOutput {
+    /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
+    pub fn table_auto_scaling_description(
+        &self,
+    ) -> std::option::Option<&crate::model::TableAutoScalingDescription> {
+        self.table_auto_scaling_description.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTableReplicaAutoScalingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTableReplicaAutoScalingOutput");
@@ -122,6 +138,12 @@ impl UpdateTableReplicaAutoScalingOutput {
 pub struct UpdateTableOutput {
     /// <p>Represents the properties of the table.</p>
     pub table_description: std::option::Option<crate::model::TableDescription>,
+}
+impl UpdateTableOutput {
+    /// <p>Represents the properties of the table.</p>
+    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+        self.table_description.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -211,6 +233,58 @@ pub struct UpdateItemOutput {
     /// </li>
     /// </ul>
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+}
+impl UpdateItemOutput {
+    /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code>
+    /// operation, as determined by the <code>ReturnValues</code> parameter.</p>
+    /// <p>The <code>Attributes</code> map is only present if <code>ReturnValues</code> was
+    /// specified as something other than <code>NONE</code> in the request. Each element
+    /// represents one attribute.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
+    /// provisioned throughput consumed, along with statistics for the table and any indexes involved
+    /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
+    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+        self.consumed_capacity.as_ref()
+    }
+    /// <p>Information about item collections, if any, that were affected by the
+    /// <code>UpdateItem</code> operation.
+    /// <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table
+    /// does not have any local secondary indexes, this information is not
+    /// returned in the response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code>
+    /// element consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item
+    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+    /// in gigabytes. This value is a two-element array
+    /// containing a lower bound and an upper bound for the
+    /// estimate. The estimate includes the size of all the
+    /// items in the table, plus the size of all attributes
+    /// projected into all of the local secondary indexes on that
+    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// </li>
+    /// </ul>
+    pub fn item_collection_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::ItemCollectionMetrics> {
+        self.item_collection_metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -380,6 +454,18 @@ pub struct UpdateGlobalTableSettingsOutput {
     pub replica_settings:
         std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
 }
+impl UpdateGlobalTableSettingsOutput {
+    /// <p>The name of the global table.</p>
+    pub fn global_table_name(&self) -> std::option::Option<&str> {
+        self.global_table_name.as_deref()
+    }
+    /// <p>The Region-specific settings for the global table.</p>
+    pub fn replica_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaSettingsDescription]> {
+        self.replica_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGlobalTableSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGlobalTableSettingsOutput");
@@ -457,6 +543,14 @@ pub struct UpdateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
+impl UpdateGlobalTableOutput {
+    /// <p>Contains the details of the global table.</p>
+    pub fn global_table_description(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalTableDescription> {
+        self.global_table_description.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGlobalTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGlobalTableOutput");
@@ -515,6 +609,22 @@ pub struct UpdateContributorInsightsOutput {
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The status of contributor insights</p>
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
+}
+impl UpdateContributorInsightsOutput {
+    /// <p>The name of the table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name of the global secondary index, if applicable.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The status of contributor insights</p>
+    pub fn contributor_insights_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
+        self.contributor_insights_status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateContributorInsightsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -600,6 +710,14 @@ pub struct UpdateContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
     pub continuous_backups_description:
         std::option::Option<crate::model::ContinuousBackupsDescription>,
+}
+impl UpdateContinuousBackupsOutput {
+    /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    pub fn continuous_backups_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousBackupsDescription> {
+        self.continuous_backups_description.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateContinuousBackupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -701,6 +819,29 @@ pub struct TransactWriteItemsOutput {
             std::vec::Vec<crate::model::ItemCollectionMetrics>,
         >,
     >,
+}
+impl TransactWriteItemsOutput {
+    /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code>
+    /// operation. The values of the list are ordered according to
+    /// the ordering of the <code>TransactItems</code> request parameter.
+    /// </p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+        self.consumed_capacity.as_deref()
+    }
+    /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each
+    /// table, information about any item collections that were affected by individual
+    /// <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code>
+    /// operations. </p>
+    pub fn item_collection_metrics(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::ItemCollectionMetrics>,
+        >,
+    > {
+        self.item_collection_metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for TransactWriteItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -823,6 +964,27 @@ pub struct TransactGetItemsOutput {
     /// object is Null, or if the requested item has no projected attributes, the corresponding
     /// <code>ItemResponse</code> object is an empty Map. </p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+}
+impl TransactGetItemsOutput {
+    /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>,
+    /// this is an array of <code>ConsumedCapacity</code> objects, one for each table
+    /// addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i>
+    /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity
+    /// units consumed by the <code>TransactGetItems</code> call in that table.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+        self.consumed_capacity.as_deref()
+    }
+    /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds
+    /// to the <code>TransactGetItem</code> object in the same position in the
+    /// <i>TransactItems</i> array. Each <code>ItemResponse</code> object
+    /// contains a Map of the name-value pairs that are the projected attributes of
+    /// the requested item.</p>
+    /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code>
+    /// object is Null, or if the requested item has no projected attributes, the corresponding
+    /// <code>ItemResponse</code> object is an empty Map. </p>
+    pub fn responses(&self) -> std::option::Option<&[crate::model::ItemResponse]> {
+        self.responses.as_deref()
+    }
 }
 impl std::fmt::Debug for TransactGetItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1154,58 @@ pub struct ScanOutput {
     /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
     /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+}
+impl ScanOutput {
+    /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    pub fn items(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, crate::model::AttributeValue>],
+    > {
+        self.items.as_deref()
+    }
+    /// <p>The number of items in the response.</p>
+    /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items
+    /// returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items
+    /// before the filter was applied.</p>
+    /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as
+    /// <code>ScannedCount</code>.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
+    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
+    /// <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
+    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
+    /// <code>Count</code>.</p>
+    pub fn scanned_count(&self) -> i32 {
+        self.scanned_count
+    }
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous
+    /// result set. Use this value to start a new operation, excluding this value in the new
+    /// request.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results
+    /// has been processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean
+    /// that there is more data in the result set. The only way to know when you have reached
+    /// the end of the result set is when <code>LastEvaluatedKey</code> is
+    /// empty.</p>
+    pub fn last_evaluated_key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.last_evaluated_key.as_ref()
+    }
+    /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total
+    /// provisioned throughput consumed, along with statistics for the table and any indexes involved
+    /// in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
+    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+        self.consumed_capacity.as_ref()
+    }
 }
 impl std::fmt::Debug for ScanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1179,6 +1393,12 @@ pub struct RestoreTableToPointInTimeOutput {
     /// <p>Represents the properties of a table.</p>
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
+impl RestoreTableToPointInTimeOutput {
+    /// <p>Represents the properties of a table.</p>
+    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+        self.table_description.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreTableToPointInTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreTableToPointInTimeOutput");
@@ -1229,6 +1449,12 @@ impl RestoreTableToPointInTimeOutput {
 pub struct RestoreTableFromBackupOutput {
     /// <p>The description of the table created from an existing backup.</p>
     pub table_description: std::option::Option<crate::model::TableDescription>,
+}
+impl RestoreTableFromBackupOutput {
+    /// <p>The description of the table created from an existing backup.</p>
+    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+        self.table_description.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreTableFromBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1309,6 +1535,53 @@ pub struct QueryOutput {
     /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
     /// Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+}
+impl QueryOutput {
+    /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    pub fn items(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, crate::model::AttributeValue>],
+    > {
+        self.items.as_deref()
+    }
+    /// <p>The number of items in the response.</p>
+    /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items
+    /// returned after the filter was applied, and <code>ScannedCount</code> is the number of
+    /// matching items before the filter was applied.</p>
+    /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
+    /// same.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
+    /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
+    /// <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the
+    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
+    /// <code>Count</code>.</p>
+    pub fn scanned_count(&self) -> i32 {
+        self.scanned_count
+    }
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+    pub fn last_evaluated_key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.last_evaluated_key.as_ref()
+    }
+    /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned
+    /// includes the total provisioned throughput consumed, along with statistics for the table
+    /// and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
+    /// returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+        self.consumed_capacity.as_ref()
+    }
 }
 impl std::fmt::Debug for QueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1522,6 +1795,56 @@ pub struct PutItemOutput {
     /// </ul>
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
+impl PutItemOutput {
+    /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if
+    /// <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element
+    /// consists of an attribute name and an attribute value.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned
+    /// includes the total provisioned throughput consumed, along with statistics for the table
+    /// and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
+    /// returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+        self.consumed_capacity.as_ref()
+    }
+    /// <p>Information about item collections, if any, that were affected by the
+    /// <code>PutItem</code> operation. <code>ItemCollectionMetrics</code>
+    /// is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local
+    /// secondary indexes, this information is not returned in the response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code>
+    /// element consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item
+    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+    /// in gigabytes. This value is a two-element array
+    /// containing a lower bound and an upper bound for the
+    /// estimate. The estimate includes the size of all the
+    /// items in the table, plus the size of all attributes
+    /// projected into all of the local secondary indexes on that
+    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// </li>
+    /// </ul>
+    pub fn item_collection_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::ItemCollectionMetrics> {
+        self.item_collection_metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for PutItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutItemOutput");
@@ -1686,6 +2009,17 @@ pub struct ListTagsOfResourceOutput {
     /// call ListTagsOfResource again, with NextToken set to this value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsOfResourceOutput {
+    /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If this value is returned, there are additional results to be displayed. To retrieve them,
+    /// call ListTagsOfResource again, with NextToken set to this value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOfResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOfResourceOutput");
@@ -1766,6 +2100,23 @@ pub struct ListTablesOutput {
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that
     /// there are no more table names to be retrieved.</p>
     pub last_evaluated_table_name: std::option::Option<std::string::String>,
+}
+impl ListTablesOutput {
+    /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
+    /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the
+    /// <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and
+    /// obtain the next page of results.</p>
+    pub fn table_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.table_names.as_deref()
+    }
+    /// <p>The name of the last table in the current page of results. Use this value as the
+    /// <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until
+    /// all the table names are returned.</p>
+    /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that
+    /// there are no more table names to be retrieved.</p>
+    pub fn last_evaluated_table_name(&self) -> std::option::Option<&str> {
+        self.last_evaluated_table_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1856,6 +2207,16 @@ pub struct ListGlobalTablesOutput {
     /// <p>Last evaluated global table name.</p>
     pub last_evaluated_global_table_name: std::option::Option<std::string::String>,
 }
+impl ListGlobalTablesOutput {
+    /// <p>List of global table names.</p>
+    pub fn global_tables(&self) -> std::option::Option<&[crate::model::GlobalTable]> {
+        self.global_tables.as_deref()
+    }
+    /// <p>Last evaluated global table name.</p>
+    pub fn last_evaluated_global_table_name(&self) -> std::option::Option<&str> {
+        self.last_evaluated_global_table_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGlobalTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGlobalTablesOutput");
@@ -1939,6 +2300,18 @@ pub struct ListExportsOutput {
     /// value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExportsOutput {
+    /// <p>A list of <code>ExportSummary</code> objects.</p>
+    pub fn export_summaries(&self) -> std::option::Option<&[crate::model::ExportSummary]> {
+        self.export_summaries.as_deref()
+    }
+    /// <p>If this value is returned, there are additional results to be displayed. To retrieve
+    /// them, call <code>ListExports</code> again, with <code>NextToken</code> set to this
+    /// value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExportsOutput");
@@ -2016,6 +2389,18 @@ pub struct ListContributorInsightsOutput {
         std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
     /// <p>A token to go to the next page if there is one.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContributorInsightsOutput {
+    /// <p>A list of ContributorInsightsSummary.</p>
+    pub fn contributor_insights_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContributorInsightsSummary]> {
+        self.contributor_insights_summaries.as_deref()
+    }
+    /// <p>A token to go to the next page if there is one.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContributorInsightsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2106,6 +2491,27 @@ pub struct ListBackupsOutput {
     /// there is more data to be returned. All results are guaranteed to have been returned if
     /// and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
     pub last_evaluated_backup_arn: std::option::Option<std::string::String>,
+}
+impl ListBackupsOutput {
+    /// <p>List of <code>BackupSummary</code> objects.</p>
+    pub fn backup_summaries(&self) -> std::option::Option<&[crate::model::BackupSummary]> {
+        self.backup_summaries.as_deref()
+    }
+    /// <p>
+    /// The ARN of the backup last evaluated when the current page of results was returned,
+    /// inclusive of the current page of results. This value may be specified as the
+    /// <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results.
+    /// </p>
+    /// <p>
+    /// If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no
+    /// more results to be retrieved.
+    /// </p>
+    /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that
+    /// there is more data to be returned. All results are guaranteed to have been returned if
+    /// and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
+    pub fn last_evaluated_backup_arn(&self) -> std::option::Option<&str> {
+        self.last_evaluated_backup_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBackupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2213,6 +2619,26 @@ pub struct GetItemOutput {
     /// Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
+impl GetItemOutput {
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
+    /// by <code>ProjectionExpression</code>.</p>
+    pub fn item(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.item.as_ref()
+    }
+    /// <p>The capacity units consumed by the <code>GetItem</code> operation. The data returned
+    /// includes the total provisioned throughput consumed, along with statistics for the table
+    /// and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
+    /// returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+        self.consumed_capacity.as_ref()
+    }
+}
 impl std::fmt::Debug for GetItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetItemOutput");
@@ -2306,6 +2732,12 @@ pub struct ExportTableToPointInTimeOutput {
     /// <p>Contains a description of the table export.</p>
     pub export_description: std::option::Option<crate::model::ExportDescription>,
 }
+impl ExportTableToPointInTimeOutput {
+    /// <p>Contains a description of the table export.</p>
+    pub fn export_description(&self) -> std::option::Option<&crate::model::ExportDescription> {
+        self.export_description.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportTableToPointInTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportTableToPointInTimeOutput");
@@ -2358,6 +2790,14 @@ pub struct ExecuteTransactionOutput {
     /// The response to a PartiQL transaction.
     /// </p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+}
+impl ExecuteTransactionOutput {
+    /// <p>
+    /// The response to a PartiQL transaction.
+    /// </p>
+    pub fn responses(&self) -> std::option::Option<&[crate::model::ItemResponse]> {
+        self.responses.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteTransactionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2427,6 +2867,24 @@ pub struct ExecuteStatementOutput {
     /// If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ExecuteStatementOutput {
+    /// <p>
+    /// If a read operation was used, this property will contain the result of the reade operation; a map of attribute names and their values. For the write operations this value will be empty.
+    /// </p>
+    pub fn items(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, crate::model::AttributeValue>],
+    > {
+        self.items.as_deref()
+    }
+    /// <p>
+    /// If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2523,6 +2981,20 @@ pub struct EnableKinesisStreamingDestinationOutput {
     /// <p>The current status of the replication.</p>
     pub destination_status: std::option::Option<crate::model::DestinationStatus>,
 }
+impl EnableKinesisStreamingDestinationOutput {
+    /// <p>The name of the table being modified.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The ARN for the specific Kinesis data stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The current status of the replication.</p>
+    pub fn destination_status(&self) -> std::option::Option<&crate::model::DestinationStatus> {
+        self.destination_status.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableKinesisStreamingDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableKinesisStreamingDestinationOutput");
@@ -2604,6 +3076,20 @@ pub struct DisableKinesisStreamingDestinationOutput {
     /// <p>The current status of the replication.</p>
     pub destination_status: std::option::Option<crate::model::DestinationStatus>,
 }
+impl DisableKinesisStreamingDestinationOutput {
+    /// <p>The name of the table being modified.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The ARN for the specific Kinesis data stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The current status of the replication.</p>
+    pub fn destination_status(&self) -> std::option::Option<&crate::model::DestinationStatus> {
+        self.destination_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DisableKinesisStreamingDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableKinesisStreamingDestinationOutput");
@@ -2681,6 +3167,14 @@ pub struct DescribeTimeToLiveOutput {
     /// <p></p>
     pub time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
 }
+impl DescribeTimeToLiveOutput {
+    /// <p></p>
+    pub fn time_to_live_description(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeToLiveDescription> {
+        self.time_to_live_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeTimeToLiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTimeToLiveOutput");
@@ -2736,6 +3230,14 @@ pub struct DescribeTableReplicaAutoScalingOutput {
     /// <p>Represents the auto scaling properties of the table.</p>
     pub table_auto_scaling_description:
         std::option::Option<crate::model::TableAutoScalingDescription>,
+}
+impl DescribeTableReplicaAutoScalingOutput {
+    /// <p>Represents the auto scaling properties of the table.</p>
+    pub fn table_auto_scaling_description(
+        &self,
+    ) -> std::option::Option<&crate::model::TableAutoScalingDescription> {
+        self.table_auto_scaling_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTableReplicaAutoScalingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2794,6 +3296,12 @@ impl DescribeTableReplicaAutoScalingOutput {
 pub struct DescribeTableOutput {
     /// <p>The properties of the table.</p>
     pub table: std::option::Option<crate::model::TableDescription>,
+}
+impl DescribeTableOutput {
+    /// <p>The properties of the table.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::TableDescription> {
+        self.table.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2855,6 +3363,30 @@ pub struct DescribeLimitsOutput {
     /// table that you are creating in this Region, including the write capacity units
     /// provisioned for its global secondary indexes (GSIs).</p>
     pub table_max_write_capacity_units: std::option::Option<i64>,
+}
+impl DescribeLimitsOutput {
+    /// <p>The maximum total read capacity units that your account allows you to provision across
+    /// all of your tables in this Region.</p>
+    pub fn account_max_read_capacity_units(&self) -> std::option::Option<i64> {
+        self.account_max_read_capacity_units
+    }
+    /// <p>The maximum total write capacity units that your account allows you to provision across
+    /// all of your tables in this Region.</p>
+    pub fn account_max_write_capacity_units(&self) -> std::option::Option<i64> {
+        self.account_max_write_capacity_units
+    }
+    /// <p>The maximum read capacity units that your account allows you to provision for a new
+    /// table that you are creating in this Region, including the read capacity units
+    /// provisioned for its global secondary indexes (GSIs).</p>
+    pub fn table_max_read_capacity_units(&self) -> std::option::Option<i64> {
+        self.table_max_read_capacity_units
+    }
+    /// <p>The maximum write capacity units that your account allows you to provision for a new
+    /// table that you are creating in this Region, including the write capacity units
+    /// provisioned for its global secondary indexes (GSIs).</p>
+    pub fn table_max_write_capacity_units(&self) -> std::option::Option<i64> {
+        self.table_max_write_capacity_units
+    }
 }
 impl std::fmt::Debug for DescribeLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2982,6 +3514,18 @@ pub struct DescribeKinesisStreamingDestinationOutput {
     pub kinesis_data_stream_destinations:
         std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
 }
+impl DescribeKinesisStreamingDestinationOutput {
+    /// <p>The name of the table being described.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The list of replica structures for the table being described.</p>
+    pub fn kinesis_data_stream_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::KinesisDataStreamDestination]> {
+        self.kinesis_data_stream_destinations.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeKinesisStreamingDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeKinesisStreamingDestinationOutput");
@@ -3062,6 +3606,18 @@ pub struct DescribeGlobalTableSettingsOutput {
     pub replica_settings:
         std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
 }
+impl DescribeGlobalTableSettingsOutput {
+    /// <p>The name of the global table.</p>
+    pub fn global_table_name(&self) -> std::option::Option<&str> {
+        self.global_table_name.as_deref()
+    }
+    /// <p>The Region-specific settings for the global table.</p>
+    pub fn replica_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaSettingsDescription]> {
+        self.replica_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGlobalTableSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGlobalTableSettingsOutput");
@@ -3139,6 +3695,14 @@ pub struct DescribeGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
+impl DescribeGlobalTableOutput {
+    /// <p>Contains the details of the global table.</p>
+    pub fn global_table_description(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalTableDescription> {
+        self.global_table_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeGlobalTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGlobalTableOutput");
@@ -3194,6 +3758,12 @@ pub struct DescribeExportOutput {
     /// <p>Represents the properties of the export.</p>
     pub export_description: std::option::Option<crate::model::ExportDescription>,
 }
+impl DescribeExportOutput {
+    /// <p>Represents the properties of the export.</p>
+    pub fn export_description(&self) -> std::option::Option<&crate::model::ExportDescription> {
+        self.export_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExportOutput");
@@ -3244,6 +3814,12 @@ impl DescribeExportOutput {
 pub struct DescribeEndpointsOutput {
     /// <p>List of endpoints.</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+}
+impl DescribeEndpointsOutput {
+    /// <p>List of endpoints.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3327,6 +3903,50 @@ pub struct DescribeContributorInsightsOutput {
     /// </li>
     /// </ul>
     pub failure_exception: std::option::Option<crate::model::FailureException>,
+}
+impl DescribeContributorInsightsOutput {
+    /// <p>The name of the table being described.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name of the global secondary index being described.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>List of names of the associated Alpine rules.</p>
+    pub fn contributor_insights_rule_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.contributor_insights_rule_list.as_deref()
+    }
+    /// <p>Current Status contributor insights.</p>
+    pub fn contributor_insights_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
+        self.contributor_insights_status.as_ref()
+    }
+    /// <p>Timestamp of the last time the status was changed.</p>
+    pub fn last_update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date_time.as_ref()
+    }
+    /// <p>Returns information about the last failure that encountered.</p>
+    /// <p>The most common exceptions for a FAILED status are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>LimitExceededException -   Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for
+    /// other tables/indexes OR disable Contributor Insights rules before retrying.</p>
+    /// </li>
+    /// <li>
+    /// <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p>
+    /// </li>
+    /// <li>
+    /// <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p>
+    /// </li>
+    /// <li>
+    /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p>
+    /// </li>
+    /// </ul>
+    pub fn failure_exception(&self) -> std::option::Option<&crate::model::FailureException> {
+        self.failure_exception.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeContributorInsightsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3506,6 +4126,14 @@ pub struct DescribeContinuousBackupsOutput {
     pub continuous_backups_description:
         std::option::Option<crate::model::ContinuousBackupsDescription>,
 }
+impl DescribeContinuousBackupsOutput {
+    /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    pub fn continuous_backups_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousBackupsDescription> {
+        self.continuous_backups_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeContinuousBackupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeContinuousBackupsOutput");
@@ -3564,6 +4192,12 @@ pub struct DescribeBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
 }
+impl DescribeBackupOutput {
+    /// <p>Contains the description of the backup created for the table.</p>
+    pub fn backup_description(&self) -> std::option::Option<&crate::model::BackupDescription> {
+        self.backup_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBackupOutput");
@@ -3614,6 +4248,12 @@ impl DescribeBackupOutput {
 pub struct DeleteTableOutput {
     /// <p>Represents the properties of a table.</p>
     pub table_description: std::option::Option<crate::model::TableDescription>,
+}
+impl DeleteTableOutput {
+    /// <p>Represents the properties of a table.</p>
+    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+        self.table_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3703,6 +4343,58 @@ pub struct DeleteItemOutput {
     /// </li>
     /// </ul>
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+}
+impl DeleteItemOutput {
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it
+    /// appeared before the <code>DeleteItem</code> operation. This map appears in the response only if
+    /// <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The capacity units consumed by the <code>DeleteItem</code> operation. The data
+    /// returned includes the total provisioned throughput consumed, along with statistics for
+    /// the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
+    /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For
+    /// more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Mode</a> in the <i>Amazon DynamoDB Developer
+    /// Guide</i>.</p>
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
+        self.consumed_capacity.as_ref()
+    }
+    /// <p>Information about item collections, if any, that were affected by the
+    /// <code>DeleteItem</code> operation.
+    /// <code>ItemCollectionMetrics</code> is only returned if the
+    /// <code>ReturnItemCollectionMetrics</code> parameter was specified. If the
+    /// table does not have any local secondary indexes, this information is not returned in the
+    /// response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code>
+    /// element consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item
+    /// collection. This is the same as the partition key value of the item itself.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
+    /// in gigabytes. This value is a two-element array
+    /// containing a lower bound and an upper bound for the
+    /// estimate. The estimate includes the size of all the
+    /// items in the table, plus the size of all attributes
+    /// projected into all of the local secondary indexes on that
+    /// table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// </li>
+    /// </ul>
+    pub fn item_collection_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::ItemCollectionMetrics> {
+        self.item_collection_metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3869,6 +4561,12 @@ pub struct DeleteBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
 }
+impl DeleteBackupOutput {
+    /// <p>Contains the description of the backup created for the table.</p>
+    pub fn backup_description(&self) -> std::option::Option<&crate::model::BackupDescription> {
+        self.backup_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackupOutput");
@@ -3920,6 +4618,12 @@ pub struct CreateTableOutput {
     /// <p>Represents the properties of the table.</p>
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
+impl CreateTableOutput {
+    /// <p>Represents the properties of the table.</p>
+    pub fn table_description(&self) -> std::option::Option<&crate::model::TableDescription> {
+        self.table_description.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTableOutput");
@@ -3970,6 +4674,14 @@ impl CreateTableOutput {
 pub struct CreateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+}
+impl CreateGlobalTableOutput {
+    /// <p>Contains the details of the global table.</p>
+    pub fn global_table_description(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalTableDescription> {
+        self.global_table_description.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGlobalTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4025,6 +4737,12 @@ impl CreateGlobalTableOutput {
 pub struct CreateBackupOutput {
     /// <p>Contains the details of the backup created for the table.</p>
     pub backup_details: std::option::Option<crate::model::BackupDetails>,
+}
+impl CreateBackupOutput {
+    /// <p>Contains the details of the backup created for the table.</p>
+    pub fn backup_details(&self) -> std::option::Option<&crate::model::BackupDetails> {
+        self.backup_details.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4154,6 +4872,98 @@ pub struct BatchWriteItemOutput {
     /// </li>
     /// </ul>
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+}
+impl BatchWriteItemOutput {
+    /// <p>A map of tables and requests against those tables that were not processed. The
+    /// <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
+    /// this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+    /// <code>RequestItems</code> in the Request Parameters section.</p>
+    /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
+    /// operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The
+    /// item to be deleted is identified by a <code>Key</code> subelement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key</code> - A map of primary key attribute values that uniquely identify the item.
+    /// Each entry in this map consists of an attribute name and an attribute value.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to
+    /// be put is identified by an <code>Item</code> subelement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Item</code> - A map of attributes and their values. Each entry in this map consists
+    /// of an attribute name and an attribute value. Attribute values must not be null; string
+    /// and binary type attributes must have lengths greater than zero; and set type
+    /// attributes must not be empty. Requests that contain empty values will be rejected with
+    /// a <code>ValidationException</code> exception.</p>
+    /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <p>If there are no unprocessed items remaining, the response contains an empty
+    /// <code>UnprocessedItems</code> map.</p>
+    pub fn unprocessed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
+    > {
+        self.unprocessed_items.as_ref()
+    }
+    /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table,
+    /// information about any item collections that were affected by individual <code>DeleteItem</code> or
+    /// <code>PutItem</code> operations.</p>
+    /// <p>Each entry consists of the following subelements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as
+    /// the partition key value of the item.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is
+    /// a two-element array containing a lower bound and an upper bound for the estimate. The
+    /// estimate includes the size of all the items in the table, plus the size of all attributes
+    /// projected into all of the local secondary indexes on the table. Use this estimate to measure whether a
+    /// local secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    /// </li>
+    /// </ul>
+    pub fn item_collection_metrics(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::ItemCollectionMetrics>,
+        >,
+    > {
+        self.item_collection_metrics.as_ref()
+    }
+    /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
+    /// <p>Each element consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CapacityUnits</code> - The total number of capacity units consumed.</p>
+    /// </li>
+    /// </ul>
+    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+        self.consumed_capacity.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchWriteItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4472,6 +5282,70 @@ pub struct BatchGetItemOutput {
     /// </ul>
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
+impl BatchGetItemOutput {
+    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table
+    /// name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    pub fn responses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<
+                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+            >,
+        >,
+    > {
+        self.responses.as_ref()
+    }
+    /// <p>A map of tables and their respective keys that were not processed with the current response.
+    /// The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can
+    /// be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+    /// <code>RequestItems</code> in the Request Parameters section.</p>
+    /// <p>Each element consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Keys</code> - An array of primary key attribute values that define specific items in the
+    /// table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ProjectionExpression</code> - One or more attributes to be
+    /// retrieved from the table or index. By default, all attributes are returned. If a
+    /// requested attribute is not found, it does not appear in the result.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>,
+    /// then a strongly consistent read is used; otherwise, an eventually consistent read is
+    /// used.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If there are no unprocessed keys remaining, the response contains an empty
+    /// <code>UnprocessedKeys</code> map.</p>
+    pub fn unprocessed_keys(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
+    > {
+        self.unprocessed_keys.as_ref()
+    }
+    /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
+    /// <p>Each element consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TableName</code> - The table that consumed the provisioned throughput.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CapacityUnits</code> - The total number of capacity units consumed.</p>
+    /// </li>
+    /// </ul>
+    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::model::ConsumedCapacity]> {
+        self.consumed_capacity.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetItemOutput");
@@ -4685,6 +5559,14 @@ pub struct BatchExecuteStatementOutput {
     /// The response to each PartiQL statement in the batch.
     /// </p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
+}
+impl BatchExecuteStatementOutput {
+    /// <p>
+    /// The response to each PartiQL statement in the batch.
+    /// </p>
+    pub fn responses(&self) -> std::option::Option<&[crate::model::BatchStatementResponse]> {
+        self.responses.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -198,10 +198,7 @@ impl AddTagsToResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -408,7 +405,7 @@ impl AssociateOpsItemRelatedItemInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_ops_item_related_item(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_ops_item_related_item(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -581,10 +578,7 @@ impl CancelCommandInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_command(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_command(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -738,7 +732,7 @@ impl CancelMaintenanceWindowExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_maintenance_window_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_maintenance_window_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1042,10 +1036,7 @@ impl CreateActivationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_activation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_activation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1589,10 +1580,7 @@ impl CreateAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_association(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_association(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1759,10 +1747,7 @@ impl CreateAssociationBatchInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_association_batch(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2204,10 +2189,8 @@ impl CreateDocumentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_document(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2597,10 +2580,7 @@ impl CreateMaintenanceWindowInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_maintenance_window(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3061,10 +3041,8 @@ impl CreateOpsItemInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_ops_item(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_ops_item(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3296,10 +3274,7 @@ impl CreateOpsMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_ops_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_ops_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3760,10 +3735,7 @@ impl CreatePatchBaselineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_patch_baseline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_patch_baseline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3974,10 +3946,7 @@ impl CreateResourceDataSyncInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_resource_data_sync(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4130,10 +4099,7 @@ impl DeleteActivationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_activation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_activation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4332,10 +4298,7 @@ impl DeleteAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_association(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_association(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4533,10 +4496,8 @@ impl DeleteDocumentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_document(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4754,10 +4715,7 @@ impl DeleteInventoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_inventory(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_inventory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4910,10 +4868,7 @@ impl DeleteMaintenanceWindowInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_maintenance_window(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5066,10 +5021,7 @@ impl DeleteOpsMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_ops_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_ops_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5217,10 +5169,7 @@ impl DeleteParameterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_parameter(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_parameter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5379,10 +5328,7 @@ impl DeleteParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_parameters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_parameters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5532,10 +5478,7 @@ impl DeletePatchBaselineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_patch_baseline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_patch_baseline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5699,10 +5642,7 @@ impl DeleteResourceDataSyncInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_resource_data_sync(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5857,10 +5797,7 @@ impl DeregisterManagedInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_managed_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6024,7 +5961,7 @@ impl DeregisterPatchBaselineForPatchGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_patch_baseline_for_patch_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_patch_baseline_for_patch_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6208,7 +6145,7 @@ impl DeregisterTargetFromMaintenanceWindowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_target_from_maintenance_window(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_target_from_maintenance_window(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6376,7 +6313,7 @@ impl DeregisterTaskFromMaintenanceWindowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_task_from_maintenance_window(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_task_from_maintenance_window(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6566,10 +6503,7 @@ impl DescribeActivationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_activations(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_activations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6767,10 +6701,7 @@ impl DescribeAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_association(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_association(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6981,7 +6912,7 @@ impl DescribeAssociationExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_association_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_association_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7208,7 +7139,7 @@ impl DescribeAssociationExecutionTargetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_association_execution_targets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_association_execution_targets(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7401,7 +7332,7 @@ impl DescribeAutomationExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_automation_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_automation_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7619,7 +7550,7 @@ impl DescribeAutomationStepExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_automation_step_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_automation_step_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8173,10 +8104,7 @@ impl DescribeAvailablePatchesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_available_patches(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8359,10 +8287,7 @@ impl DescribeDocumentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_document(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8560,10 +8485,7 @@ impl DescribeDocumentPermissionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_document_permission(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8743,7 +8665,7 @@ impl DescribeEffectiveInstanceAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_effective_instance_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_effective_instance_associations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8924,7 +8846,7 @@ impl DescribeEffectivePatchesForPatchBaselineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_effective_patches_for_patch_baseline(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_effective_patches_for_patch_baseline(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9104,7 +9026,7 @@ impl DescribeInstanceAssociationsStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_associations_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_instance_associations_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9340,7 +9262,7 @@ impl DescribeInstanceInformationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_information(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_instance_information(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9622,10 +9544,7 @@ impl DescribeInstancePatchesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_instance_patches(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9811,7 +9730,7 @@ impl DescribeInstancePatchStatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_patch_states(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_instance_patch_states(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10038,7 +9957,7 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_patch_states_for_patch_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_instance_patch_states_for_patch_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10221,10 +10140,7 @@ impl DescribeInventoryDeletionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_inventory_deletions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10448,7 +10364,7 @@ impl DescribeMaintenanceWindowExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10674,7 +10590,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_execution_task_invocations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_execution_task_invocations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10888,7 +10804,7 @@ impl DescribeMaintenanceWindowExecutionTasksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_execution_tasks(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_execution_tasks(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11084,10 +11000,7 @@ impl DescribeMaintenanceWindowsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_windows(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11328,7 +11241,7 @@ impl DescribeMaintenanceWindowScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_schedule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_schedule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11535,7 +11448,7 @@ impl DescribeMaintenanceWindowsForTargetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_windows_for_target(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_windows_for_target(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11741,7 +11654,7 @@ impl DescribeMaintenanceWindowTargetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_targets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_targets(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11947,7 +11860,7 @@ impl DescribeMaintenanceWindowTasksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_tasks(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_window_tasks(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12252,10 +12165,7 @@ impl DescribeOpsItemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_ops_items(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_ops_items(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12467,10 +12377,7 @@ impl DescribeParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_parameters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_parameters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12718,10 +12625,7 @@ impl DescribePatchBaselinesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_patch_baselines(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12947,10 +12851,7 @@ impl DescribePatchGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_patch_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_patch_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13103,10 +13004,7 @@ impl DescribePatchGroupStateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_patch_group_state(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13319,10 +13217,7 @@ impl DescribePatchPropertiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_patch_properties(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13521,10 +13416,7 @@ impl DescribeSessionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_sessions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_sessions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13694,7 +13586,7 @@ impl DisassociateOpsItemRelatedItemInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_ops_item_related_item(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_ops_item_related_item(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13854,10 +13746,7 @@ impl GetAutomationExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_automation_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14032,10 +13921,7 @@ impl GetCalendarStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_calendar_state(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_calendar_state(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14231,10 +14117,9 @@ impl GetCommandInvocationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_command_invocation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_command_invocation(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14384,10 +14269,7 @@ impl GetConnectionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_connection_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_connection_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14543,10 +14425,7 @@ impl GetDefaultPatchBaselineInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_default_patch_baseline(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14725,7 +14604,7 @@ impl GetDeployablePatchSnapshotForInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_deployable_patch_snapshot_for_instance(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_deployable_patch_snapshot_for_instance(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14923,10 +14802,7 @@ impl GetDocumentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_document(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15165,10 +15041,7 @@ impl GetInventoryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_inventory(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_inventory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15376,10 +15249,7 @@ impl GetInventorySchemaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_inventory_schema(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_inventory_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15529,10 +15399,9 @@ impl GetMaintenanceWindowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15686,7 +15555,7 @@ impl GetMaintenanceWindowExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15855,7 +15724,7 @@ impl GetMaintenanceWindowExecutionTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window_execution_task(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window_execution_task(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16040,7 +15909,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window_execution_task_invocation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window_execution_task_invocation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16210,10 +16079,7 @@ impl GetMaintenanceWindowTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_maintenance_window_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16362,10 +16228,7 @@ impl GetOpsItemInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_ops_item(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_ops_item(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16544,10 +16407,7 @@ impl GetOpsMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ops_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_ops_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16789,10 +16649,8 @@ impl GetOpsSummaryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_ops_summary(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_ops_summary(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16959,10 +16817,7 @@ impl GetParameterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_parameter(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_parameter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17154,10 +17009,7 @@ impl GetParameterHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_parameter_history(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_parameter_history(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17333,10 +17185,7 @@ impl GetParametersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_parameters(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_parameters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17599,10 +17448,9 @@ impl GetParametersByPathInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_parameters_by_path(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_parameters_by_path(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17766,10 +17614,7 @@ impl GetPatchBaselineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_patch_baseline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_patch_baseline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17935,7 +17780,7 @@ impl GetPatchBaselineForPatchGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_patch_baseline_for_patch_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_patch_baseline_for_patch_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -18150,10 +17995,7 @@ impl GetServiceSettingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_setting(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_service_setting(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18340,10 +18182,7 @@ impl LabelParameterVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_label_parameter_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18546,10 +18385,7 @@ impl ListAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_associations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_associations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18731,10 +18567,7 @@ impl ListAssociationVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_association_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18963,10 +18796,7 @@ impl ListCommandInvocationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_command_invocations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19186,10 +19016,7 @@ impl ListCommandsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_commands(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_commands(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19423,10 +19250,7 @@ impl ListComplianceItemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_compliance_items(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_compliance_items(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19619,10 +19443,7 @@ impl ListComplianceSummariesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_compliance_summaries(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19833,7 +19654,7 @@ impl ListDocumentMetadataHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_document_metadata_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_document_metadata_history(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -20066,10 +19887,7 @@ impl ListDocumentsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_documents(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_documents(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20247,10 +20065,9 @@ impl ListDocumentVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_document_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_document_versions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20461,10 +20278,9 @@ impl ListInventoryEntriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_inventory_entries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_inventory_entries(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20649,10 +20465,7 @@ impl ListOpsItemEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_ops_item_events(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_ops_item_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20858,10 +20671,7 @@ impl ListOpsItemRelatedItemsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_ops_item_related_items(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21046,10 +20856,7 @@ impl ListOpsMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_ops_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_ops_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21236,7 +21043,7 @@ impl ListResourceComplianceSummariesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resource_compliance_summaries(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_compliance_summaries(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21419,10 +21226,7 @@ impl ListResourceDataSyncInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resource_data_sync(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21587,10 +21391,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21827,10 +21630,7 @@ impl ModifyDocumentPermissionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_document_permission(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22113,10 +21913,7 @@ impl PutComplianceItemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_compliance_items(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_compliance_items(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22286,10 +22083,7 @@ impl PutInventoryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_inventory(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_inventory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22960,10 +22754,7 @@ impl PutParameterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_parameter(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_parameter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23114,7 +22905,7 @@ impl RegisterDefaultPatchBaselineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_default_patch_baseline(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_default_patch_baseline(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23278,7 +23069,7 @@ impl RegisterPatchBaselineForPatchGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_patch_baseline_for_patch_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_patch_baseline_for_patch_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23627,7 +23418,7 @@ impl RegisterTargetWithMaintenanceWindowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_target_with_maintenance_window(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_target_with_maintenance_window(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24182,7 +23973,7 @@ impl RegisterTaskWithMaintenanceWindowInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_task_with_maintenance_window(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_task_with_maintenance_window(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24415,10 +24206,7 @@ impl RemoveTagsFromResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24634,10 +24422,7 @@ impl ResetServiceSettingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reset_service_setting(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reset_service_setting(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24786,10 +24571,7 @@ impl ResumeSessionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_resume_session(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_resume_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25020,10 +24802,9 @@ impl SendAutomationSignalInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_automation_signal(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_automation_signal(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25530,10 +25311,7 @@ impl SendCommandInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_command(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_command(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25694,10 +25472,7 @@ impl StartAssociationsOnceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_associations_once(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26148,10 +25923,7 @@ impl StartAutomationExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_automation_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26553,7 +26325,7 @@ impl StartChangeRequestExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_change_request_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_change_request_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -26751,10 +26523,7 @@ impl StartSessionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_session(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26924,10 +26693,7 @@ impl StopAutomationExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_automation_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27077,10 +26843,7 @@ impl TerminateSessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_terminate_session(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_terminate_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27268,10 +27031,7 @@ impl UnlabelParameterVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_unlabel_parameter_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27817,10 +27577,7 @@ impl UpdateAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_association(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_association(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28000,10 +27757,7 @@ impl UpdateAssociationStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_association_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28265,10 +28019,8 @@ impl UpdateDocumentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_document(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28434,7 +28186,7 @@ impl UpdateDocumentDefaultVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_document_default_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_document_default_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28617,10 +28369,7 @@ impl UpdateDocumentMetadataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_document_metadata(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28958,10 +28707,7 @@ impl UpdateMaintenanceWindowInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_maintenance_window(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29203,7 +28949,7 @@ impl UpdateMaintenanceWindowTargetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_maintenance_window_target(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_maintenance_window_target(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -29775,7 +29521,7 @@ impl UpdateMaintenanceWindowTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_maintenance_window_task(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_maintenance_window_task(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -29941,10 +29687,7 @@ impl UpdateManagedInstanceRoleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_managed_instance_role(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30382,10 +30125,8 @@ impl UpdateOpsItemInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_ops_item(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_ops_item(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30588,10 +30329,7 @@ impl UpdateOpsMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_ops_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_ops_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30985,10 +30723,7 @@ impl UpdatePatchBaselineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_patch_baseline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_patch_baseline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31169,10 +30904,7 @@ impl UpdateResourceDataSyncInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_resource_data_sync(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31489,10 +31221,9 @@ impl UpdateServiceSettingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_service_setting(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_service_setting(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31639,6 +31370,92 @@ pub struct UpdateServiceSettingInput {
     /// </ul>
     pub setting_value: std::option::Option<std::string::String>,
 }
+impl UpdateServiceSettingInput {
+    /// <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
+    /// <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
+    /// The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-destination</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-group-name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/documents/console/public-sharing-permission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/default-parameter-tier</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/high-throughput-enabled</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/managed-instance/activation-tier</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn setting_id(&self) -> std::option::Option<&str> {
+        self.setting_id.as_deref()
+    }
+    /// <p>The new value to specify for the service setting. The following list specifies the available
+    /// values for each setting.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+    /// <code>Advanced</code>, <code>Intelligent-Tiering</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+    /// <code>false</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
+    /// <code>false</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or
+    /// <code>Disable</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
+    /// <code>advanced</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn setting_value(&self) -> std::option::Option<&str> {
+        self.setting_value.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceSettingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceSettingInput");
@@ -31659,6 +31476,21 @@ pub struct UpdateResourceDataSyncInput {
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>Specify information about the data sources to synchronize.</p>
     pub sync_source: std::option::Option<crate::model::ResourceDataSyncSource>,
+}
+impl UpdateResourceDataSyncInput {
+    /// <p>The name of the resource data sync you want to update.</p>
+    pub fn sync_name(&self) -> std::option::Option<&str> {
+        self.sync_name.as_deref()
+    }
+    /// <p>The type of resource data sync. The supported <code>SyncType</code> is
+    /// SyncFromSource.</p>
+    pub fn sync_type(&self) -> std::option::Option<&str> {
+        self.sync_type.as_deref()
+    }
+    /// <p>Specify information about the data sources to synchronize.</p>
+    pub fn sync_source(&self) -> std::option::Option<&crate::model::ResourceDataSyncSource> {
+        self.sync_source.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResourceDataSyncInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31732,6 +31564,91 @@ pub struct UpdatePatchBaselineInput {
     /// to null.</p>
     pub replace: std::option::Option<bool>,
 }
+impl UpdatePatchBaselineInput {
+    /// <p>The ID of the patch baseline to update.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch baseline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A set of global filters used to include patches in the baseline.</p>
+    pub fn global_filters(&self) -> std::option::Option<&crate::model::PatchFilterGroup> {
+        self.global_filters.as_ref()
+    }
+    /// <p>A set of rules used to include patches in the baseline.</p>
+    pub fn approval_rules(&self) -> std::option::Option<&crate::model::PatchRuleGroup> {
+        self.approval_rules.as_ref()
+    }
+    /// <p>A list of explicitly approved patches for the baseline.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.approved_patches.as_deref()
+    }
+    /// <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+    pub fn approved_patches_compliance_level(
+        &self,
+    ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
+        self.approved_patches_compliance_level.as_ref()
+    }
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
+    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+    /// only.</p>
+    pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
+        self.approved_patches_enable_non_security
+    }
+    /// <p>A list of explicitly rejected patches for the baseline.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.rejected_patches.as_deref()
+    }
+    /// <p>The action for Patch Manager to take on patches included in the
+    /// <code>RejectedPackages</code> list.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ALLOW_AS_DEPENDENCY</code>
+    /// </b>: A package in the
+    /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
+    /// It is considered compliant with the patch baseline, and its status is reported as
+    /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BLOCK</code>
+    /// </b>: Packages in the
+    /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
+    /// installed under any circumstances. If a package was installed before it was added to the
+    /// <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
+    /// and its status is reported as <code>InstalledRejected</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
+        self.rejected_patches_action.as_ref()
+    }
+    /// <p>A description of the patch baseline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the patches to use to update the instances, including target operating
+    /// systems and source repositories. Applies to Linux instances only.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
+        self.sources.as_deref()
+    }
+    /// <p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>
+    /// operation are also required for this API request. Optional fields that aren't specified are set
+    /// to null.</p>
+    pub fn replace(&self) -> std::option::Option<bool> {
+        self.replace
+    }
+}
 impl std::fmt::Debug for UpdatePatchBaselineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePatchBaselineInput");
@@ -31769,6 +31686,24 @@ pub struct UpdateOpsMetadataInput {
     >,
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
     pub keys_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateOpsMetadataInput {
+    /// <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
+        self.ops_metadata_arn.as_deref()
+    }
+    /// <p>Metadata to add to an OpsMetadata object.</p>
+    pub fn metadata_to_update(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
+    > {
+        self.metadata_to_update.as_ref()
+    }
+    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    pub fn keys_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys_to_delete.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateOpsMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31845,6 +31780,100 @@ pub struct UpdateOpsItemInput {
     /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub planned_end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateOpsItemInput {
+    /// <p>Update the information about the OpsItem. Provide enough information so that users reading
+    /// this OpsItem for the first time understand the issue. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem
+    /// object.</p>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem.
+    /// For example, you can specify log files, error strings, license keys, troubleshooting tips, or
+    /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
+    /// of 128 characters. The value has a maximum size of 20 KB.</p>
+    /// <important>
+    /// <p>Operational data keys <i>can't</i> begin with the following:
+    /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
+    /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
+    /// </important>
+    /// <p>You can choose to make the data searchable by other users in the account or you can restrict
+    /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
+    /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
+    /// specified data. Operational data that isn't searchable is only viewable by users who have access
+    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
+    /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
+    /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
+    /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn operational_data(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
+    > {
+        self.operational_data.as_ref()
+    }
+    /// <p>Keys that you want to remove from the OperationalData map.</p>
+    pub fn operational_data_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+        self.operational_data_to_delete.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
+    /// OpsItem is edited or changed.</p>
+    pub fn notifications(&self) -> std::option::Option<&[crate::model::OpsItemNotification]> {
+        self.notifications.as_deref()
+    }
+    /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
+    /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
+    /// statuses for the impacted resource.</p>
+    pub fn related_ops_items(&self) -> std::option::Option<&[crate::model::RelatedOpsItem]> {
+        self.related_ops_items.as_deref()
+    }
+    /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
+    /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OpsItemStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ID of the OpsItem.</p>
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
+    /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>Specify a new category for an OpsItem.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>Specify a new severity for an OpsItem.</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
+    /// <code>/aws/changerequest</code>.</p>
+    pub fn actual_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.actual_start_time.as_ref()
+    }
+    /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
+    /// <code>/aws/changerequest</code>.</p>
+    pub fn actual_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.actual_end_time.as_ref()
+    }
+    /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
+    /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn planned_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.planned_start_time.as_ref()
+    }
+    /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
+    /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.planned_end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateOpsItemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOpsItemInput");
@@ -31878,6 +31907,16 @@ pub struct UpdateManagedInstanceRoleInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The IAM role you want to assign or change.</p>
     pub iam_role: std::option::Option<std::string::String>,
+}
+impl UpdateManagedInstanceRoleInput {
+    /// <p>The ID of the managed instance where you want to update the role.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The IAM role you want to assign or change.</p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateManagedInstanceRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32026,6 +32065,176 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// </ul>
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
+impl UpdateMaintenanceWindowTaskInput {
+    /// <p>The maintenance window ID that contains the task to modify.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The task ID to modify.</p>
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
+        self.window_task_id.as_deref()
+    }
+    /// <p>The targets (either instances or tags) to modify. Instances are specified using the format
+    /// <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the
+    /// format <code> Key=tag_name,Values=tag_value</code>. </p>
+    /// <note>
+    /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
+    /// Depending on the task, targets are optional for other maintenance window task types (Automation,
+    /// Lambda, and Step Functions). For more information about running tasks
+    /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// maintenance window tasks without targets</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The task ARN to modify.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
+    /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+    /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
+    /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+    /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+    /// service-linked roles for Systems Manager</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks?
+    /// </a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The parameters to modify.</p>
+    /// <note>
+    /// <p>
+    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+    /// about how Systems Manager handles these options for the supported maintenance window task
+    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    /// <p>The map has the following format:</p>
+    /// <p>Key: string, between 1 and 255 characters</p>
+    /// <p>Value: an array of strings, each string is between 1 and 255 characters</p>
+    pub fn task_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::MaintenanceWindowTaskParameterValueExpression,
+        >,
+    > {
+        self.task_parameters.as_ref()
+    }
+    /// <p>The parameters that the task should use during execution. Populate only the fields that
+    /// match the task type. All other fields should be empty.</p>
+    /// <important>
+    /// <p>When you update a maintenance window task that has options specified in
+    /// <code>TaskInvocationParameters</code>, you must provide again all the
+    /// <code>TaskInvocationParameters</code> values that you want to retain. The values you don't
+    /// specify again are removed. For example, suppose that when you registered a Run Command task, you
+    /// specified <code>TaskInvocationParameters</code> values for <code>Comment</code>,
+    /// <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the
+    /// maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the
+    /// values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
+    /// </important>
+    pub fn task_invocation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskInvocationParameters> {
+        self.task_invocation_parameters.as_ref()
+    }
+    /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that
+    /// have the same priority are scheduled in parallel.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
+    /// is the number of targets that are allowed to run this task in parallel.</p>
+    /// <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
+    /// in the response to this command. This value doesn't affect the running of your task and can be
+    /// ignored.</p>
+    /// </note>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
+    /// number of errors that are allowed before the task stops being scheduled.</p>
+    /// <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
+    /// in the response to this command. This value doesn't affect the running of your task and can be
+    /// ignored.</p>
+    /// </note>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>The new logging location in Amazon S3 to specify.</p>
+    /// <note>
+    /// <p>
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
+    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
+    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>The new task name to specify.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new task description to specify.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also required for this API request.
+    /// Optional fields that aren't specified are set to null.</p>
+    pub fn replace(&self) -> std::option::Option<bool> {
+        self.replace
+    }
+    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
+    /// maintenance windows is reached. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
+    /// continue. The default value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCEL_TASK</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
+    /// time is reached, any task invocations that are already running continue, but no new task
+    /// invocations are started.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
+    /// task. However, there is no guarantee that the command will be terminated and the underlying
+    /// process stopped.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn cutoff_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
+        self.cutoff_behavior.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMaintenanceWindowTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowTaskInput");
@@ -32071,6 +32280,38 @@ pub struct UpdateMaintenanceWindowTargetInput {
     /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
     /// request. Optional fields that aren't specified are set to null.</p>
     pub replace: std::option::Option<bool>,
+}
+impl UpdateMaintenanceWindowTargetInput {
+    /// <p>The maintenance window ID with which to modify the target.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The target ID to modify.</p>
+    pub fn window_target_id(&self) -> std::option::Option<&str> {
+        self.window_target_id.as_deref()
+    }
+    /// <p>The targets to add or replace.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
+    /// running tasks for these targets in this maintenance window.</p>
+    pub fn owner_information(&self) -> std::option::Option<&str> {
+        self.owner_information.as_deref()
+    }
+    /// <p>A name for the update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description for the update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
+    /// request. Optional fields that aren't specified are set to null.</p>
+    pub fn replace(&self) -> std::option::Option<bool> {
+        self.replace
+    }
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32136,6 +32377,79 @@ pub struct UpdateMaintenanceWindowInput {
     /// fields that aren't specified are set to null. </p>
     pub replace: std::option::Option<bool>,
 }
+impl UpdateMaintenanceWindowInput {
+    /// <p>The ID of the maintenance window to update.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The name of the maintenance window.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description for the update request.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
+    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
+    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
+    /// Zone Database</a> on the IANA website.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
+    /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
+    /// maintenance window will no longer run.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
+    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
+    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
+    /// Zone Database</a> on the IANA website.</p>
+    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
+        self.schedule_timezone.as_deref()
+    }
+    /// <p>The number of days to wait after the date and time specified by a cron expression before
+    /// running the maintenance window.</p>
+    /// <p>For example, the following cron expression schedules a maintenance window to run the third
+    /// Tuesday of every month at 11:30 PM.</p>
+    /// <p>
+    /// <code>cron(30 23 ? * TUE#3 *)</code>
+    /// </p>
+    /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
+    /// later.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
+    /// <p>The duration of the maintenance window in hours.</p>
+    pub fn duration(&self) -> std::option::Option<i32> {
+        self.duration
+    }
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+    /// new tasks for execution.</p>
+    pub fn cutoff(&self) -> std::option::Option<i32> {
+        self.cutoff
+    }
+    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
+    /// for those targets.</p>
+    pub fn allow_unassociated_targets(&self) -> std::option::Option<bool> {
+        self.allow_unassociated_targets
+    }
+    /// <p>Whether the maintenance window is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional
+    /// fields that aren't specified are set to null. </p>
+    pub fn replace(&self) -> std::option::Option<bool> {
+        self.replace
+    }
+}
 impl std::fmt::Debug for UpdateMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowInput");
@@ -32170,6 +32484,20 @@ pub struct UpdateDocumentMetadataInput {
     /// <p>The change template review details to update.</p>
     pub document_reviews: std::option::Option<crate::model::DocumentReviews>,
 }
+impl UpdateDocumentMetadataInput {
+    /// <p>The name of the change template for which a version's metadata is to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of a change template in which to update approval metadata.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The change template review details to update.</p>
+    pub fn document_reviews(&self) -> std::option::Option<&crate::model::DocumentReviews> {
+        self.document_reviews.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDocumentMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentMetadataInput");
@@ -32188,6 +32516,16 @@ pub struct UpdateDocumentDefaultVersionInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of a custom document that you want to set as the default version.</p>
     pub document_version: std::option::Option<std::string::String>,
+}
+impl UpdateDocumentDefaultVersionInput {
+    /// <p>The name of a custom document that you want to set as the default version.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of a custom document that you want to set as the default version.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDocumentDefaultVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32226,6 +32564,47 @@ pub struct UpdateDocumentInput {
     /// <p>Specify a new target type for the document.</p>
     pub target_type: std::option::Option<std::string::String>,
 }
+impl UpdateDocumentInput {
+    /// <p>A valid JSON or YAML string.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::AttachmentsSource]> {
+        self.attachments.as_deref()
+    }
+    /// <p>The name of the SSM document that you want to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The friendly name of the SSM document that you want to update. This value can differ for
+    /// each version of the document. If you don't specify a value for this parameter in your request,
+    /// the existing value is applied to the new document version.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>An optional field specifying the version of the artifact you are updating with the document.
+    /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
+    /// can't be changed.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only
+    /// the latest version of the document. You can specify the version number of the latest version or
+    /// use the <code>$LATEST</code> variable.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML
+    /// documents. JSON is the default format.</p>
+    pub fn document_format(&self) -> std::option::Option<&crate::model::DocumentFormat> {
+        self.document_format.as_ref()
+    }
+    /// <p>Specify a new target type for the document.</p>
+    pub fn target_type(&self) -> std::option::Option<&str> {
+        self.target_type.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentInput");
@@ -32251,6 +32630,20 @@ pub struct UpdateAssociationStatusInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association status.</p>
     pub association_status: std::option::Option<crate::model::AssociationStatus>,
+}
+impl UpdateAssociationStatusInput {
+    /// <p>The name of the SSM document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The association status.</p>
+    pub fn association_status(&self) -> std::option::Option<&crate::model::AssociationStatus> {
+        self.association_status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssociationStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32362,6 +32755,143 @@ pub struct UpdateAssociationInput {
     /// accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
+impl UpdateAssociationInput {
+    /// <p>The ID of the association you want to update. </p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The parameters you want to update for the association. If you create a parameter using
+    /// Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using
+    /// <code>{{ssm:parameter-name}}</code>.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The document version you want update for the association. </p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The cron expression used to schedule the association that you want to update.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>An S3 bucket where you want to store the results of this request.</p>
+    pub fn output_location(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceAssociationOutputLocation> {
+        self.output_location.as_ref()
+    }
+    /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
+    /// information for the instance.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+    /// shared with you from another account.</p>
+    /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you
+    /// must specify the complete SSM document ARN, in the following format:</p>
+    /// <p>
+    /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
+    /// </code>
+    /// </p>
+    /// <p>For example:</p>
+    /// <p>
+    /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+    /// </p>
+    /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+    /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+    /// <code>My-Document</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The targets of the association.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The name of the association that you want to update.</p>
+    pub fn association_name(&self) -> std::option::Option<&str> {
+        self.association_name.as_deref()
+    }
+    /// <p>This parameter is provided for concurrency control purposes. You must specify the latest
+    /// association version in the service. If you want to ensure that this request succeeds, either
+    /// specify <code>$LATEST</code>, or omit this parameter.</p>
+    pub fn association_version(&self) -> std::option::Option<&str> {
+        self.association_version.as_deref()
+    }
+    /// <p>Specify the target for the association. This target is required for associations that use an
+    /// Automation runbook and target resources by using rate controls. Automation is a capability of
+    /// Amazon Web Services Systems Manager.</p>
+    pub fn automation_target_parameter_name(&self) -> std::option::Option<&str> {
+        self.automation_target_parameter_name.as_deref()
+    }
+    /// <p>The number of errors that are allowed before the system stops sending requests to run the
+    /// association on additional targets. You can specify either an absolute number of errors, for
+    /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
+    /// the system stops sending requests when the fourth error is received. If you specify 0, then the
+    /// system stops sending requests after the first error is returned. If you run an association on 50
+    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+    /// the sixth error is received.</p>
+    /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+    /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+    /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+    /// so that executions proceed one at a time.</p>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>The maximum number of targets allowed to run the association at the same time. You can
+    /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
+    /// value is 100%, which means all targets run the association at the same time.</p>
+    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+    /// association interval, the new instance will process its association within the limit specified
+    /// for <code>MaxConcurrency</code>.</p>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The severity level to assign to the association.</p>
+    pub fn compliance_severity(
+        &self,
+    ) -> std::option::Option<&crate::model::AssociationComplianceSeverity> {
+        self.compliance_severity.as_ref()
+    }
+    /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
+    /// <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association
+    /// execution to determine the compliance status. If the association execution runs successfully,
+    /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
+    /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
+    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
+    /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+    /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+    /// <a>PutComplianceItems</a> API operation.</p>
+    /// <p>By default, all associations use <code>AUTO</code> mode.</p>
+    pub fn sync_compliance(&self) -> std::option::Option<&crate::model::AssociationSyncCompliance> {
+        self.sync_compliance.as_ref()
+    }
+    /// <p>By default, when you update an association, the system runs it immediately after it is
+    /// updated and then according to the schedule you specified. Specify this option if you don't want
+    /// an association to run immediately after you update it. This parameter isn't supported for rate
+    /// expressions.</p>
+    /// <p>Also, if you specified this option when you created the association, you can reset it. To do
+    /// so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the
+    /// association from the command line. This parameter forces the association to run immediately after
+    /// updating it and according to the interval specified.</p>
+    pub fn apply_only_at_cron_interval(&self) -> bool {
+        self.apply_only_at_cron_interval
+    }
+    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
+    /// gate your associations under. The associations only run when that change calendar is open. For
+    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
+    /// Calendar</a>.</p>
+    pub fn calendar_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.calendar_names.as_deref()
+    }
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
+    /// association. Use this action to update an association in multiple Regions and multiple
+    /// accounts.</p>
+    pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
+        self.target_locations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssociationInput");
@@ -32404,6 +32934,21 @@ pub struct UnlabelParameterVersionInput {
     /// <p>One or more labels to delete from the specified parameter version.</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UnlabelParameterVersionInput {
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The specific version of the parameter which you want to delete one or more labels from. If
+    /// it isn't present, the call will fail.</p>
+    pub fn parameter_version(&self) -> std::option::Option<i64> {
+        self.parameter_version
+    }
+    /// <p>One or more labels to delete from the specified parameter version.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+}
 impl std::fmt::Debug for UnlabelParameterVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnlabelParameterVersionInput");
@@ -32420,6 +32965,12 @@ impl std::fmt::Debug for UnlabelParameterVersionInput {
 pub struct TerminateSessionInput {
     /// <p>The ID of the session to terminate.</p>
     pub session_id: std::option::Option<std::string::String>,
+}
+impl TerminateSessionInput {
+    /// <p>The ID of the session to terminate.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for TerminateSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32438,6 +32989,17 @@ pub struct StopAutomationExecutionInput {
     /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default
     /// type is Cancel.</p>
     pub r#type: std::option::Option<crate::model::StopType>,
+}
+impl StopAutomationExecutionInput {
+    /// <p>The execution ID of the Automation to stop.</p>
+    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+        self.automation_execution_id.as_deref()
+    }
+    /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default
+    /// type is Cancel.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StopType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for StopAutomationExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32462,6 +33024,26 @@ pub struct StartSessionInput {
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+}
+impl StartSessionInput {
+    /// <p>The instance to connect to for the session.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The name of the SSM document to define the parameters and plugin settings for the session.
+    /// For example, <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists before attempting to start a session.
+    /// If no document name is provided, a shell to the instance is launched by default.</p>
+    pub fn document_name(&self) -> std::option::Option<&str> {
+        self.document_name.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for StartSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32540,6 +33122,95 @@ pub struct StartChangeRequestExecutionInput {
     /// <b>Template information</b> section of the associated change template
     /// is added.</p>
     pub change_details: std::option::Option<std::string::String>,
+}
+impl StartChangeRequestExecutionInput {
+    /// <p>The date and time specified in the change request to run the Automation runbooks.</p>
+    /// <note>
+    /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
+    /// approvals for the change request have been received.</p>
+    /// </note>
+    pub fn scheduled_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_time.as_ref()
+    }
+    /// <p>The name of the change template document to run during the runbook workflow.</p>
+    pub fn document_name(&self) -> std::option::Option<&str> {
+        self.document_name.as_deref()
+    }
+    /// <p>The version of the change template document to run during the runbook workflow.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>A key-value map of parameters that match the declared parameters in the change template
+    /// document.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The name of the change request associated with the runbook workflow to be run.</p>
+    pub fn change_request_name(&self) -> std::option::Option<&str> {
+        self.change_request_name.as_deref()
+    }
+    /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces
+    /// the UUID format, and can't be reused.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Indicates whether the change request can be approved automatically without the need for
+    /// manual approvals.</p>
+    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting
+    /// <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code>
+    /// creates a change request that bypasses approver review.</p>
+    /// <note>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an
+    /// associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission
+    /// for this change request to run. If they don't, the change won't be processed until the calendar
+    /// state is again <code>OPEN</code>. </p>
+    /// </note>
+    pub fn auto_approve(&self) -> bool {
+        self.auto_approve
+    }
+    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p>
+    /// <note>
+    /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
+    /// approvals for the change request have been received.</p>
+    /// </note>
+    pub fn runbooks(&self) -> std::option::Option<&[crate::model::Runbook]> {
+        self.runbooks.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
+    /// a change request. Tags enable you to categorize a resource in different ways, such as by
+    /// purpose, owner, or environment. For example, you might want to tag a change request to identify
+    /// an environment or target Amazon Web Services Region. In this case, you could specify the following key-value
+    /// pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=Environment,Value=Production</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=Region,Value=us-east-2</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The time that the requester expects the runbook workflow related to the change request to
+    /// complete. The time is an estimate only that the requester provides for reviewers.</p>
+    pub fn scheduled_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_end_time.as_ref()
+    }
+    /// <p>User-provided details about the change. If no details are provided, content specified in the
+    /// <b>Template information</b> section of the associated change template
+    /// is added.</p>
+    pub fn change_details(&self) -> std::option::Option<&str> {
+        self.change_details.as_deref()
+    }
 }
 impl std::fmt::Debug for StartChangeRequestExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32636,6 +33307,106 @@ pub struct StartAutomationExecutionInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl StartAutomationExecutionInput {
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To
+    /// run a shared document belonging to another account, specify the document ARN. For more
+    /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
+    /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn document_name(&self) -> std::option::Option<&str> {
+        self.document_name.as_deref()
+    }
+    /// <p>The version of the Automation runbook to use for this execution.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>A key-value map of execution parameters, which match the declared parameters in the
+    /// Automation runbook.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the
+    /// UUID format, and can't be reused.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The execution mode of the automation. Valid modes include the following: Auto and
+    /// Interactive. The default mode is Auto.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ExecutionMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The name of the parameter used as the target resource for the rate-controlled execution.
+    /// Required if you specify targets.</p>
+    pub fn target_parameter_name(&self) -> std::option::Option<&str> {
+        self.target_parameter_name.as_deref()
+    }
+    /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
+    /// can't be specified together.</p>
+    pub fn target_maps(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>],
+    > {
+        self.target_maps.as_deref()
+    }
+    /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a
+    /// number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The number of errors that are allowed before the system stops running the automation on
+    /// additional targets. You can specify either an absolute number of errors, for example 10, or a
+    /// percentage of the target set, for example 10%. If you specify 3, for example, the system stops
+    /// running the automation when the fourth error is received. If you specify 0, then the system stops
+    /// running the automation on additional targets after the first error result is returned. If you run
+    /// an automation on 50 resources and set max-errors to 10%, then the system stops running the
+    /// automation on additional targets when the sixth error is received.</p>
+    /// <p>Executions that are already running an automation when max-errors is reached are allowed to
+    /// complete, but some of these executions may fail as well. If you need to ensure that there won't
+    /// be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one
+    /// at a time.</p>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the
+    /// automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple
+    /// Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
+        self.target_locations.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
+    /// an automation. Tags enable you to categorize a resource in different ways, such as by purpose,
+    /// owner, or environment. For example, you might want to tag an automation to identify an
+    /// environment or operating system. In this case, you could specify the following key-value
+    /// pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=environment,Value=test</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=OS,Value=Windows</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+    /// operation.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for StartAutomationExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAutomationExecutionInput");
@@ -32661,6 +33432,12 @@ impl std::fmt::Debug for StartAutomationExecutionInput {
 pub struct StartAssociationsOnceInput {
     /// <p>The association IDs that you want to run immediately and only one time.</p>
     pub association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StartAssociationsOnceInput {
+    /// <p>The association IDs that you want to run immediately and only one time.</p>
+    pub fn association_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.association_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for StartAssociationsOnceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32758,6 +33535,129 @@ pub struct SendCommandInput {
     /// capability of Amazon Web Services Systems Manager.</p>
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
 }
+impl SendCommandInput {
+    /// <p>The IDs of the instances where the command should run. Specifying instance IDs is most
+    /// useful when you are targeting a limited number of instances, though you can specify up to 50
+    /// IDs.</p>
+    /// <p>To target a larger number of instances, or if you prefer not to list individual instance
+    /// IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
+    /// which accepts tag key-value pairs to identify the instances to send commands to, you can a send
+    /// command to tens, hundreds, or thousands of instances at once.</p>
+    /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate
+    /// controls to send commands to a fleet</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
+    /// <p>An array of search criteria that targets instances using a <code>Key,Value</code>
+    /// combination that you specify. Specifying targets is most useful when you want to send a command
+    /// to a large number of instances at once. Using <code>Targets</code>, which accepts tag key-value
+    /// pairs to identify instances, you can send a command to tens, hundreds, or thousands of instances
+    /// at once.</p>
+    /// <p>To send a command to a smaller number of instances, you can use the <code>InstanceIds</code>
+    /// option instead.</p>
+    /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a
+    /// fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a
+    /// custom document. To run a shared document belonging to another account, specify the document
+    /// Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
+    /// SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <note>
+    /// <p>If you specify a document name or ARN that hasn't been shared with your account, you
+    /// receive an <code>InvalidDocument</code> error. </p>
+    /// </note>
+    pub fn document_name(&self) -> std::option::Option<&str> {
+        self.document_name.as_deref()
+    }
+    /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
+    /// specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then
+    /// you must escape the first two options by using a backslash. If you specify a version number, then
+    /// you don't need to use the backslash. For example:</p>
+    /// <p>--document-version "\$DEFAULT"</p>
+    /// <p>--document-version "\$LATEST"</p>
+    /// <p>--document-version "3"</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p>
+    /// <note>
+    /// <p>Sha1 hashes have been deprecated.</p>
+    /// </note>
+    pub fn document_hash(&self) -> std::option::Option<&str> {
+        self.document_hash.as_deref()
+    }
+    /// <p>Sha256 or Sha1.</p>
+    /// <note>
+    /// <p>Sha1 hashes have been deprecated.</p>
+    /// </note>
+    pub fn document_hash_type(&self) -> std::option::Option<&crate::model::DocumentHashType> {
+        self.document_hash_type.as_ref()
+    }
+    /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
+    pub fn timeout_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_seconds
+    }
+    /// <p>User-specified information about the command, such as a brief description of what the
+    /// command should do.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The required and optional parameters specified in the document being run.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+    /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
+    pub fn output_s3_region(&self) -> std::option::Option<&str> {
+        self.output_s3_region.as_deref()
+    }
+    /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
+    pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.output_s3_bucket_name.as_deref()
+    }
+    /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
+    pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.output_s3_key_prefix.as_deref()
+    }
+    /// <p>(Optional) The maximum number of instances that are allowed to run the command at the same
+    /// time. You can specify a number such as 10 or a percentage such as 10%. The default value is
+    /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+    /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The maximum number of errors allowed without the command failing. When the command fails one
+    /// more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to
+    /// additional targets. You can specify a number like 10 or a percentage like 10%. The default value
+    /// is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+    /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish
+    /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>Configurations for sending notifications.</p>
+    pub fn notification_config(&self) -> std::option::Option<&crate::model::NotificationConfig> {
+        self.notification_config.as_ref()
+    }
+    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a
+    /// capability of Amazon Web Services Systems Manager.</p>
+    pub fn cloud_watch_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchOutputConfig> {
+        self.cloud_watch_output_config.as_ref()
+    }
+}
 impl std::fmt::Debug for SendCommandInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendCommandInput");
@@ -32812,6 +33712,41 @@ pub struct SendAutomationSignalInput {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
+impl SendAutomationSignalInput {
+    /// <p>The unique identifier for an existing Automation execution that you want to send the signal
+    /// to.</p>
+    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+        self.automation_execution_id.as_deref()
+    }
+    /// <p>The type of signal to send to an Automation execution. </p>
+    pub fn signal_type(&self) -> std::option::Option<&crate::model::SignalType> {
+        self.signal_type.as_ref()
+    }
+    /// <p>The data sent with the signal. The data schema depends on the type of signal used in the
+    /// request.</p>
+    /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional
+    /// comment that you can send with the signal type. For example:</p>
+    /// <p>
+    /// <code>Comment="Looks good"</code>
+    /// </p>
+    /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of
+    /// the Automation step to start or resume as the payload. For example:</p>
+    /// <p>
+    /// <code>StepName="step1"</code>
+    /// </p>
+    /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the
+    /// payload. For example:</p>
+    /// <p>
+    /// <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
+    /// </p>
+    pub fn payload(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for SendAutomationSignalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendAutomationSignalInput");
@@ -32828,6 +33763,12 @@ impl std::fmt::Debug for SendAutomationSignalInput {
 pub struct ResumeSessionInput {
     /// <p>The ID of the disconnected session to resume.</p>
     pub session_id: std::option::Option<std::string::String>,
+}
+impl ResumeSessionInput {
+    /// <p>The ID of the disconnected session to resume.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResumeSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32877,6 +33818,45 @@ pub struct ResetServiceSettingInput {
     /// </ul>
     pub setting_id: std::option::Option<std::string::String>,
 }
+impl ResetServiceSettingInput {
+    /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of
+    /// the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-destination</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-group-name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/documents/console/public-sharing-permission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/default-parameter-tier</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/high-throughput-enabled</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/managed-instance/activation-tier</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn setting_id(&self) -> std::option::Option<&str> {
+        self.setting_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetServiceSettingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetServiceSettingInput");
@@ -32917,6 +33897,42 @@ pub struct RemoveTagsFromResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Tag keys that you want to remove from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RemoveTagsFromResourceInput {
+    /// <p>The type of resource from which you want to remove a tag.</p>
+    /// <note>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+    /// managed instances. Specify the name of the managed instance in the following format:
+    /// <code>mi-<i>ID_number</i>
+    /// </code>. For example,
+    /// <code>mi-1a2b3c4d5e6f</code>.</p>
+    /// </note>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceTypeForTagging> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the resource from which you want to remove tags. For example:</p>
+    /// <p>ManagedInstance: mi-012345abcde</p>
+    /// <p>MaintenanceWindow: mw-012345abcde</p>
+    /// <p>PatchBaseline: pb-012345abcde</p>
+    /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource
+    /// Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that
+    /// come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with
+    /// an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+    /// has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
+    /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p>For the Document and Parameter values, use the name of the resource.</p>
+    /// <note>
+    /// <p>The ManagedInstance type for this API operation is only for on-premises managed instances.
+    /// Specify the name of the managed instance in the following format: mi-ID_number. For example,
+    /// mi-1a2b3c4d5e6f.</p>
+    /// </note>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Tag keys that you want to remove from the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTagsFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33056,6 +34072,166 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// </ul>
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
+impl RegisterTaskWithMaintenanceWindowInput {
+    /// <p>The ID of the maintenance window the task should be added to.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The targets (either instances or maintenance window targets).</p>
+    /// <note>
+    /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
+    /// Depending on the task, targets are optional for other maintenance window task types (Automation,
+    /// Lambda, and Step Functions). For more information about running tasks
+    /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// maintenance window tasks without targets</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    /// <p>Specify instances using the following format: </p>
+    /// <p>
+    /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2></code>
+    /// </p>
+    /// <p>Specify maintenance window targets using the following format:</p>
+    /// <p>
+    /// <code>Key=WindowTargetIds,Values=<window-target-id-1>,<window-target-id-2></code>
+    /// </p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The ARN of the task to run.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
+    /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+    /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
+    /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+    /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+    /// service-linked roles for Systems Manager</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks?
+    /// </a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The type of task being registered.</p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
+        self.task_type.as_ref()
+    }
+    /// <p>The parameters that should be passed to the task when it is run.</p>
+    /// <note>
+    /// <p>
+    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+    /// about how Systems Manager handles these options for the supported maintenance window task
+    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    pub fn task_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::MaintenanceWindowTaskParameterValueExpression,
+        >,
+    > {
+        self.task_parameters.as_ref()
+    }
+    /// <p>The parameters that the task should use during execution. Populate only the fields that
+    /// match the task type. All other fields should be empty. </p>
+    pub fn task_invocation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskInvocationParameters> {
+        self.task_invocation_parameters.as_ref()
+    }
+    /// <p>The priority of the task in the maintenance window, the lower the number the higher the
+    /// priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the
+    /// same priority scheduled in parallel.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The maximum number of targets this task can be run for in parallel.</p>
+    /// <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
+    /// affect the running of your task.</p>
+    /// </note>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
+    /// <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
+    /// affect the running of your task.</p>
+    /// </note>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
+    /// to write instance-level logs to. </p>
+    /// <note>
+    /// <p>
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
+    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
+    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>An optional name for the task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description for the task.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>User-provided idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
+    /// maintenance windows is reached. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
+    /// continue. The default value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCEL_TASK</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
+    /// time is reached, any task invocations that are already running continue, but no new task
+    /// invocations are started.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
+    /// task. However, there is no guarantee that the command will be terminated and the underlying
+    /// process stopped.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn cutoff_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
+        self.cutoff_behavior.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterTaskWithMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterTaskWithMaintenanceWindowInput");
@@ -33153,6 +34329,91 @@ pub struct RegisterTargetWithMaintenanceWindowInput {
     /// <p>User-provided idempotency token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl RegisterTargetWithMaintenanceWindowInput {
+    /// <p>The ID of the maintenance window the target should be registered with.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The type of target being registered with the maintenance window.</p>
+    pub fn resource_type(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The targets to register with the maintenance window. In other words, the instances to run
+    /// commands on when the maintenance window runs.</p>
+    /// <note>
+    /// <p>If a single maintenance window task is registered with multiple targets, its task
+    /// invocations occur sequentially and not in parallel. If your task must run on multiple targets at
+    /// the same time, register a task for each target individually and assign each task the same
+    /// priority level.</p>
+    /// </note>
+    /// <p>You can specify targets using instance IDs, resource group names, or tags that have been
+    /// applied to instances.</p>
+    /// <p>
+    /// <b>Example 1</b>: Specify instance IDs</p>
+    /// <p>
+    /// <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+    /// </code>
+    /// </p>
+    /// <p>
+    /// <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+    /// <p>
+    /// <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+    /// </code>
+    /// </p>
+    /// <p>
+    /// <b>Example 3</b>: Use tag-keys applied to instances</p>
+    /// <p>
+    /// <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i>
+    /// </code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>Example 4</b>: Use resource group names</p>
+    /// <p>
+    /// <code>Key=resource-groups:Name,Values=<i>resource-group-name</i>
+    /// </code>
+    /// </p>
+    /// <p>
+    /// <b>Example 5</b>: Use filters for resource group types</p>
+    /// <p>
+    /// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+    /// </code>
+    /// </p>
+    /// <note>
+    /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the
+    /// following format</p>
+    /// <p>
+    /// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+    /// </code>
+    /// </p>
+    /// </note>
+    ///
+    /// <p>For more information about these examples formats, including the best use case for each one,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register
+    /// targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
+    /// running tasks for these targets in this maintenance window.</p>
+    pub fn owner_information(&self) -> std::option::Option<&str> {
+        self.owner_information.as_deref()
+    }
+    /// <p>An optional name for the target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description for the target.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>User-provided idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterTargetWithMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterTargetWithMaintenanceWindowInput");
@@ -33176,6 +34437,16 @@ pub struct RegisterPatchBaselineForPatchGroupInput {
     /// <p>The name of the patch group to be registered with the patch baseline.</p>
     pub patch_group: std::option::Option<std::string::String>,
 }
+impl RegisterPatchBaselineForPatchGroupInput {
+    /// <p>The ID of the patch baseline to register with the patch group.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch group to be registered with the patch baseline.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterPatchBaselineForPatchGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterPatchBaselineForPatchGroupInput");
@@ -33191,6 +34462,12 @@ impl std::fmt::Debug for RegisterPatchBaselineForPatchGroupInput {
 pub struct RegisterDefaultPatchBaselineInput {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
     pub baseline_id: std::option::Option<std::string::String>,
+}
+impl RegisterDefaultPatchBaselineInput {
+    /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterDefaultPatchBaselineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33422,6 +34699,247 @@ pub struct PutParameterInput {
     /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub data_type: std::option::Option<std::string::String>,
 }
+impl PutParameterInput {
+    /// <p>The fully qualified name of the parameter that you want to add to the system. The fully
+    /// qualified name includes the complete hierarchy of the parameter path and name. For parameters in
+    /// a hierarchy, you must include a leading forward slash character (/) when you create or reference
+    /// a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+    /// </p>
+    /// <p>Naming Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parameter names are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>A parameter name must be unique within an Amazon Web Services Region</p>
+    /// </li>
+    /// <li>
+    /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+    /// (case-insensitive).</p>
+    /// </li>
+    /// <li>
+    /// <p>Parameter names can include only the following symbols and letters:
+    /// <code>a-zA-Z0-9_.-</code>
+    /// </p>
+    /// <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter
+    /// names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>A parameter name can't include spaces.</p>
+    /// </li>
+    /// <li>
+    /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <note>
+    /// <p>The maximum length constraint listed below includes capacity for additional system
+    /// attributes that aren't part of the name. The maximum length for a parameter name, including the
+    /// full length of the parameter ARN, is 1011 characters. For example, the length of the following
+    /// parameter name is 65 characters, not 20 characters:</p>
+    /// <p>
+    /// <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+    /// </p>
+    /// </note>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the parameter that you want to add to the system. Optional but
+    /// recommended.</p>
+    /// <important>
+    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// </important>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The parameter value that you want to add to the system. Standard parameters have a value
+    /// limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+    /// <note>
+    /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't
+    /// include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a
+    /// parameter value.</p>
+    /// </note>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of parameter that you want to add to the system.</p>
+    /// <note>
+    /// <p>
+    /// <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
+    /// </note>
+    /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't
+    /// use other punctuation or special character to escape items in the list. If you have a parameter
+    /// value that requires a comma, then use the <code>String</code> data type.</p>
+    /// <important>
+    /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a
+    /// parameter type when creating a parameter.</p>
+    /// </important>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ParameterType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
+    /// parameter. Either the default KMS key automatically assigned to your Amazon Web Services account
+    /// or a custom key. Required for parameters that use the <code>SecureString</code>
+    /// data type.</p>
+    /// <p>If you don't specify a key ID, the system uses the default key associated with your
+    /// Amazon Web Services account.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates
+    /// <code>Key ID</code> with your default KMS key.</p>
+    /// </li>
+    /// <li>
+    /// <p>To use a custom KMS key, choose the <code>SecureString</code>
+    /// data type with the <code>Key ID</code> parameter.</p>
+    /// </li>
+    /// </ul>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
+    pub fn overwrite(&self) -> std::option::Option<bool> {
+        self.overwrite
+    }
+    /// <p>A regular expression used to validate the parameter value. For example, for String types
+    /// with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
+    pub fn allowed_pattern(&self) -> std::option::Option<&str> {
+        self.allowed_pattern.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
+    /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
+    /// Systems Manager parameter to identify the type of resource to which it applies, the environment, or the
+    /// type of configuration data referenced by the parameter. In this case, you could specify the
+    /// following key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=Resource,Value=S3bucket</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=OS,Value=Windows</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=ParameterType,Value=LicenseKey</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a>
+    /// operation.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The parameter tier to assign to a parameter.</p>
+    /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard
+    /// parameters have a content size limit of 4 KB and can't be configured to use parameter policies.
+    /// You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account.
+    /// Standard parameters are offered at no additional cost. </p>
+    /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter
+    /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an
+    /// Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
+    /// advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert
+    /// an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
+    /// parameter would result in data loss because the system would truncate the size of the parameter
+    /// from 8 KB to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly,
+    /// advanced parameters use a different form of encryption than standard parameters. </p>
+    /// <p>If you no longer need an advanced parameter, or if you no longer want to incur charges for
+    /// an advanced parameter, you must delete it and recreate it as a new standard parameter. </p>
+    /// <p>
+    /// <b>Using the Default Tier Configuration</b>
+    /// </p>
+    /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in.
+    /// Whenever you specify a tier in the request, Parameter Store creates or updates the parameter
+    /// according to that request. However, if you don't specify a tier in a request, Parameter Store
+    /// assigns the tier based on the current Parameter Store default tier configuration.</p>
+    /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you
+    /// use the advanced-parameter tier, you can specify one of the following as the default:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Advanced</b>: With this option, Parameter Store evaluates all
+    /// requests as advanced parameters. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Intelligent-Tiering</b>: With this option, Parameter Store
+    /// evaluates each request to determine if the parameter is standard or advanced. </p>
+    /// <p>If the request doesn't include any options that require an advanced parameter, the
+    /// parameter is created in the standard-parameter tier. If one or more options requiring an
+    /// advanced parameter are included in the request, Parameter Store create a parameter in the
+    /// advanced-parameter tier.</p>
+    /// <p>This approach helps control your parameter-related costs by always creating standard
+    /// parameters unless an advanced parameter is necessary. </p>
+    /// </li>
+    /// </ul>
+    /// <p>Options that require an advanced parameter include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The content size of the parameter is more than 4 KB.</p>
+    /// </li>
+    /// <li>
+    /// <p>The parameter uses a parameter policy.</p>
+    /// </li>
+    /// <li>
+    /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current
+    /// Amazon Web Services Region.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
+    /// default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::ParameterTier> {
+        self.tier.as_ref()
+    }
+    /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter
+    /// Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
+    /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy,
+    /// you specify the expiration date. You can update the expiration date and time by updating the
+    /// policy. Updating the <i>parameter</i> doesn't affect the expiration date and time.
+    /// When the expiration time is reached, Parameter Store deletes the parameter.</p>
+    /// <p>ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that
+    /// notifies you about the expiration. By using this policy, you can receive notification before or
+    /// after the expiration time is reached, in units of days or hours.</p>
+    /// <p>NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't
+    /// been modified for a specified period of time. This policy type is useful when, for example, a
+    /// secret needs to be changed within a period of time, but it hasn't been changed.</p>
+    /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
+    /// information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
+    /// policies</a>. </p>
+    pub fn policies(&self) -> std::option::Option<&str> {
+        self.policies.as_deref()
+    }
+    /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text
+    /// and Amazon Machine Image (AMI) IDs.</p>
+    /// <p>
+    /// <b>The following data type values are supported.</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>text</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>aws:ec2:image</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
+    /// Amazon Web Services Systems Manager validates the parameter value is in the required format, such as
+    /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
+    /// Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
+    /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+}
 impl std::fmt::Debug for PutParameterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutParameterInput");
@@ -33448,6 +34966,16 @@ pub struct PutInventoryInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The inventory items that you want to add or update on instances.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::InventoryItem>>,
+}
+impl PutInventoryInput {
+    /// <p>An instance ID where you want to add or update inventory items.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The inventory items that you want to add or update on instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::InventoryItem]> {
+        self.items.as_deref()
+    }
 }
 impl std::fmt::Debug for PutInventoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33494,6 +35022,55 @@ pub struct PutComplianceItemsInput {
     /// </note>
     pub upload_type: std::option::Option<crate::model::ComplianceUploadType>,
 }
+impl PutComplianceItemsInput {
+    /// <p>Specify an ID for this resource. For a managed instance, this is the instance ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported
+    /// resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Specify the compliance type. For example, specify Association (for a State Manager
+    /// association), Patch, or Custom:<code>string</code>.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for
+    /// example, <code>Command</code>), and the date/time of the execution using a datetime object that
+    /// is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    pub fn execution_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ComplianceExecutionSummary> {
+        self.execution_summary.as_ref()
+    }
+    /// <p>Information about the compliance as defined by the resource type. For example, for a patch
+    /// compliance type, <code>Items</code> includes information about the PatchSeverity, Classification,
+    /// and so on.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ComplianceItemEntry]> {
+        self.items.as_deref()
+    }
+    /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information
+    /// should be overwritten or ignored. If the content hashes match, the request to put compliance
+    /// information is ignored.</p>
+    pub fn item_content_hash(&self) -> std::option::Option<&str> {
+        self.item_content_hash.as_deref()
+    }
+    /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or
+    /// <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing
+    /// compliance information for the resource. You must provide a full list of compliance items each
+    /// time you send the request.</p>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific
+    /// association. The association must be configured with <code>SyncCompliance</code> set to
+    /// <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p>
+    /// <note>
+    /// <p>This attribute is only valid for association compliance.</p>
+    /// </note>
+    pub fn upload_type(&self) -> std::option::Option<&crate::model::ComplianceUploadType> {
+        self.upload_type.as_ref()
+    }
+}
 impl std::fmt::Debug for PutComplianceItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutComplianceItemsInput");
@@ -33529,6 +35106,34 @@ pub struct ModifyDocumentPermissionInput {
     /// the <code>Default</code> version to share.</p>
     pub shared_document_version: std::option::Option<std::string::String>,
 }
+impl ModifyDocumentPermissionInput {
+    /// <p>The name of the document that you want to share.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The permission type for the document. The permission type can be
+    /// <i>Share</i>.</p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::DocumentPermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can
+    /// either be a group of account IDs or <i>All</i>.</p>
+    pub fn account_ids_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids_to_add.as_deref()
+    }
+    /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services
+    /// user account can either be a group of account IDs or <i>All</i>. This action has a
+    /// higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add
+    /// and the same ID to remove, the system removes access to the document.</p>
+    pub fn account_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids_to_remove.as_deref()
+    }
+    /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose
+    /// the <code>Default</code> version to share.</p>
+    pub fn shared_document_version(&self) -> std::option::Option<&str> {
+        self.shared_document_version.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyDocumentPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDocumentPermissionInput");
@@ -33549,6 +35154,16 @@ pub struct ListTagsForResourceInput {
     pub resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
     /// <p>The resource ID for which you want to see a list of tags.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>Returns a list of tags for a specific resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceTypeForTagging> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The resource ID for which you want to see a list of tags.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33573,6 +35188,23 @@ pub struct ListResourceDataSyncInput {
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListResourceDataSyncInput {
+    /// <p>View a list of resource data syncs according to the sync type. Specify
+    /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
+    /// or from multiple Amazon Web Services Regions.</p>
+    pub fn sync_type(&self) -> std::option::Option<&str> {
+        self.sync_type.as_deref()
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListResourceDataSyncInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceDataSyncInput");
@@ -33595,6 +35227,21 @@ pub struct ListResourceComplianceSummariesInput {
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListResourceComplianceSummariesInput {
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ComplianceStringFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListResourceComplianceSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceComplianceSummariesInput");
@@ -33616,6 +35263,21 @@ pub struct ListOpsMetadataInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOpsMetadataInput {
+    /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::OpsMetadataFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOpsMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33642,6 +35304,26 @@ pub struct ListOpsItemRelatedItemsInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOpsItemRelatedItemsInput {
+    /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::OpsItemRelatedItemsFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOpsItemRelatedItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOpsItemRelatedItemsInput");
@@ -33664,6 +35346,21 @@ pub struct ListOpsItemEventsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOpsItemEventsInput {
+    /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::OpsItemEventFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOpsItemEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33692,6 +35389,30 @@ pub struct ListInventoryEntriesInput {
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListInventoryEntriesInput {
+    /// <p>The instance ID for which you want inventory information.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of inventory item for which you want information.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::InventoryFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListInventoryEntriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInventoryEntriesInput");
@@ -33716,6 +35437,22 @@ pub struct ListDocumentVersionsInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDocumentVersionsInput {
+    /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDocumentVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33752,6 +35489,36 @@ pub struct ListDocumentsInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDocumentsInput {
+    /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
+    pub fn document_filter_list(&self) -> std::option::Option<&[crate::model::DocumentFilter]> {
+        self.document_filter_list.as_deref()
+    }
+    /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more
+    /// specific list of results. For keys, you can specify one or more key-value pair tags that have
+    /// been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>,
+    /// <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example,
+    /// to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value
+    /// pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p>
+    /// <note>
+    /// <p>This API operation only supports filtering documents by using a single tag key and one or
+    /// more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+    /// </p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::DocumentKeyValuesFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDocumentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDocumentsInput");
@@ -33781,6 +35548,31 @@ pub struct ListDocumentMetadataHistoryInput {
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDocumentMetadataHistoryInput {
+    /// <p>The name of the change template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the change template.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The type of data for which details are being requested. Currently, the only supported value
+    /// is <code>DocumentReviews</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadataEnum> {
+        self.metadata.as_ref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDocumentMetadataHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDocumentMetadataHistoryInput");
@@ -33806,6 +35598,23 @@ pub struct ListComplianceSummariesInput {
     /// The call also returns a token that you can specify in a subsequent call to get the next set of
     /// results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListComplianceSummariesInput {
+    /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of
+    /// results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ComplianceStringFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50.
+    /// The call also returns a token that you can specify in a subsequent call to get the next set of
+    /// results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListComplianceSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33835,6 +35644,32 @@ pub struct ListComplianceItemsInput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListComplianceItemsInput {
+    /// <p>One or more compliance filters. Use a filter to return a more specific list of
+    /// results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ComplianceStringFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The ID for the resources from which to get compliance information. Currently, you can only
+    /// specify one resource ID.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
+    /// <p>The type of resource from which to get compliance information. Currently, the only supported
+    /// resource type is <code>ManagedInstance</code>.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListComplianceItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33870,6 +35705,35 @@ pub struct ListCommandsInput {
     /// </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::CommandFilter>>,
 }
+impl ListCommandsInput {
+    /// <p>(Optional) If provided, lists only the specified command.</p>
+    pub fn command_id(&self) -> std::option::Option<&str> {
+        self.command_id.as_deref()
+    }
+    /// <p>(Optional) Lists commands issued against this instance ID.</p>
+    /// <note>
+    /// <p>You can't specify an instance ID in the same command that you specify <code>Status</code> =
+    /// <code>Pending</code>. This is because the command hasn't reached the instance yet.</p>
+    /// </note>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
+    /// token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
+    /// previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::CommandFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCommandsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCommandsInput");
@@ -33903,6 +35767,36 @@ pub struct ListCommandInvocationsInput {
     /// output. The default value is <code>false</code>. </p>
     pub details: bool,
 }
+impl ListCommandInvocationsInput {
+    /// <p>(Optional) The invocations for a specific command ID.</p>
+    pub fn command_id(&self) -> std::option::Option<&str> {
+        self.command_id.as_deref()
+    }
+    /// <p>(Optional) The command execution details for a specific instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
+    /// token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
+    /// previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of
+    /// results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::CommandFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>(Optional) If set this returns the response of the command executions and any command
+    /// output. The default value is <code>false</code>. </p>
+    pub fn details(&self) -> bool {
+        self.details
+    }
+}
 impl std::fmt::Debug for ListCommandInvocationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCommandInvocationsInput");
@@ -33927,6 +35821,21 @@ pub struct ListAssociationVersionsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociationVersionsInput {
+    /// <p>The association ID for which you want to view all versions.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssociationVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33958,6 +35867,30 @@ pub struct ListAssociationsInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociationsInput {
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    /// <note>
+    /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy
+    /// associations created using the <code>InstanceID</code> attribute. Associations targeting the
+    /// instance that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
+    /// aren't returned.</p>
+    /// </note>
+    pub fn association_filter_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociationFilter]> {
+        self.association_filter_list.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociationsInput");
@@ -33979,6 +35912,21 @@ pub struct LabelParameterVersionInput {
     pub parameter_version: std::option::Option<i64>,
     /// <p>One or more labels to attach to the specified parameter version.</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl LabelParameterVersionInput {
+    /// <p>The parameter name on which you want to attach one or more labels.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The specific version of the parameter on which you want to attach one or more labels. If no
+    /// version is specified, the system attaches the label to the latest version.</p>
+    pub fn parameter_version(&self) -> std::option::Option<i64> {
+        self.parameter_version
+    }
+    /// <p>One or more labels to attach to the specified parameter version.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
 }
 impl std::fmt::Debug for LabelParameterVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34029,6 +35977,44 @@ pub struct GetServiceSettingInput {
     /// </ul>
     pub setting_id: std::option::Option<std::string::String>,
 }
+impl GetServiceSettingInput {
+    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-destination</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-group-name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/documents/console/public-sharing-permission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/default-parameter-tier</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/high-throughput-enabled</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/managed-instance/activation-tier</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn setting_id(&self) -> std::option::Option<&str> {
+        self.setting_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceSettingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceSettingInput");
@@ -34045,6 +36031,16 @@ pub struct GetPatchBaselineForPatchGroupInput {
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
+}
+impl GetPatchBaselineForPatchGroupInput {
+    /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
+    /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPatchBaselineForPatchGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34068,6 +36064,19 @@ pub struct GetPatchBaselineInput {
     /// <code>pb-0e392de35e7c563b7</code>.</p>
     /// </note>
     pub baseline_id: std::option::Option<std::string::String>,
+}
+impl GetPatchBaselineInput {
+    /// <p>The ID of the patch baseline to retrieve.</p>
+    /// <note>
+    /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon
+    /// Resource Name (ARN) of the baseline. For example, for the baseline
+    /// <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify
+    /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of
+    /// <code>pb-0e392de35e7c563b7</code>.</p>
+    /// </note>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPatchBaselineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34114,6 +36123,52 @@ pub struct GetParametersByPathInput {
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetParametersByPathInput {
+    /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is
+    /// the parameter name except the last part of the parameter. For the API call to succeeed, the last
+    /// part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of
+    /// 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
+    /// </code>
+    /// </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Retrieve all parameters within a hierarchy.</p>
+    /// <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For
+    /// example, if a user has permission to access path <code>/a</code>, then the user can also access
+    /// <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for
+    /// parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation
+    /// recursively for <code>/a</code> and view <code>/a/b</code>.</p>
+    /// </important>
+    pub fn recursive(&self) -> std::option::Option<bool> {
+        self.recursive
+    }
+    /// <p>Filters to limit the request results.</p>
+    /// <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+    /// <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for
+    /// <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>,
+    /// <code>Path</code>, and <code>Tier</code>.</p>
+    /// </note>
+    pub fn parameter_filters(&self) -> std::option::Option<&[crate::model::ParameterStringFilter]> {
+        self.parameter_filters.as_deref()
+    }
+    /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
+    pub fn with_decryption(&self) -> std::option::Option<bool> {
+        self.with_decryption
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetParametersByPathInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersByPathInput");
@@ -34138,6 +36193,19 @@ pub struct GetParametersInput {
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
     /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub with_decryption: std::option::Option<bool>,
+}
+impl GetParametersInput {
+    /// <p>Names of the parameters for which you want to query information.</p>
+    /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
+    /// version, use <code>"Name": "name:version"</code>.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
+    /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    pub fn with_decryption(&self) -> std::option::Option<bool> {
+        self.with_decryption
+    }
 }
 impl std::fmt::Debug for GetParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34164,6 +36232,27 @@ pub struct GetParameterHistoryInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetParameterHistoryInput {
+    /// <p>The name of the parameter for which you want to review history.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Return decrypted values for secure string parameters. This flag is ignored for
+    /// <code>String</code> and <code>StringList</code> parameter types.</p>
+    pub fn with_decryption(&self) -> std::option::Option<bool> {
+        self.with_decryption
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetParameterHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetParameterHistoryInput");
@@ -34186,6 +36275,19 @@ pub struct GetParameterInput {
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for
     /// <code>String</code> and <code>StringList</code> parameter types.</p>
     pub with_decryption: std::option::Option<bool>,
+}
+impl GetParameterInput {
+    /// <p>The name of the parameter you want to query.</p>
+    /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
+    /// version, use <code>"Name": "name:version"</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Return decrypted values for secure string parameters. This flag is ignored for
+    /// <code>String</code> and <code>StringList</code> parameter types.</p>
+    pub fn with_decryption(&self) -> std::option::Option<bool> {
+        self.with_decryption
+    }
 }
 impl std::fmt::Debug for GetParameterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34214,6 +36316,33 @@ pub struct GetOpsSummaryInput {
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetOpsSummaryInput {
+    /// <p>Specify the name of a resource data sync to get.</p>
+    pub fn sync_name(&self) -> std::option::Option<&str> {
+        self.sync_name.as_deref()
+    }
+    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::OpsFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
+    pub fn aggregators(&self) -> std::option::Option<&[crate::model::OpsAggregator]> {
+        self.aggregators.as_deref()
+    }
+    /// <p>The OpsData data type to return.</p>
+    pub fn result_attributes(&self) -> std::option::Option<&[crate::model::OpsResultAttribute]> {
+        self.result_attributes.as_deref()
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetOpsSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpsSummaryInput");
@@ -34239,6 +36368,21 @@ pub struct GetOpsMetadataInput {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetOpsMetadataInput {
+    /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
+    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
+        self.ops_metadata_arn.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOpsMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpsMetadataInput");
@@ -34256,6 +36400,12 @@ pub struct GetOpsItemInput {
     /// <p>The ID of the OpsItem that you want to get.</p>
     pub ops_item_id: std::option::Option<std::string::String>,
 }
+impl GetOpsItemInput {
+    /// <p>The ID of the OpsItem that you want to get.</p>
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOpsItemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpsItemInput");
@@ -34272,6 +36422,16 @@ pub struct GetMaintenanceWindowTaskInput {
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The maintenance window task ID to retrieve.</p>
     pub window_task_id: std::option::Option<std::string::String>,
+}
+impl GetMaintenanceWindowTaskInput {
+    /// <p>The maintenance window ID that includes the task to retrieve.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The maintenance window task ID to retrieve.</p>
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
+        self.window_task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMaintenanceWindowTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34293,6 +36453,20 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationInput {
     /// <p>The invocation ID to retrieve.</p>
     pub invocation_id: std::option::Option<std::string::String>,
 }
+impl GetMaintenanceWindowExecutionTaskInvocationInput {
+    /// <p>The ID of the maintenance window execution for which the task is a part.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The invocation ID to retrieve.</p>
+    pub fn invocation_id(&self) -> std::option::Option<&str> {
+        self.invocation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionTaskInvocationInput");
@@ -34313,6 +36487,17 @@ pub struct GetMaintenanceWindowExecutionTaskInput {
     /// retrieved.</p>
     pub task_id: std::option::Option<std::string::String>,
 }
+impl GetMaintenanceWindowExecutionTaskInput {
+    /// <p>The ID of the maintenance window execution that includes the task.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+    /// <p>The ID of the specific task execution in the maintenance window task that should be
+    /// retrieved.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionTaskInput");
@@ -34329,6 +36514,12 @@ pub struct GetMaintenanceWindowExecutionInput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub window_execution_id: std::option::Option<std::string::String>,
 }
+impl GetMaintenanceWindowExecutionInput {
+    /// <p>The ID of the maintenance window execution that includes the task.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMaintenanceWindowExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionInput");
@@ -34343,6 +36534,12 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionInput {
 pub struct GetMaintenanceWindowInput {
     /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
     pub window_id: std::option::Option<std::string::String>,
+}
+impl GetMaintenanceWindowInput {
+    /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34371,6 +36568,33 @@ pub struct GetInventorySchemaInput {
     pub aggregator: bool,
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
     pub sub_type: std::option::Option<bool>,
+}
+impl GetInventorySchemaInput {
+    /// <p>The type of inventory item to return.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Returns inventory schemas that support aggregation. For example, this call returns the
+    /// <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
+    /// <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code>
+    /// attributes.</p>
+    pub fn aggregator(&self) -> bool {
+        self.aggregator
+    }
+    /// <p>Returns the sub-type schema for a specified inventory type.</p>
+    pub fn sub_type(&self) -> std::option::Option<bool> {
+        self.sub_type
+    }
 }
 impl std::fmt::Debug for GetInventorySchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34404,6 +36628,33 @@ pub struct GetInventoryInput {
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetInventoryInput {
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::InventoryFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Returns counts of inventory types based on one or more expressions. For example, if you
+    /// aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
+    /// type, you can see a count of how many Windows and Linux instances exist in your inventoried
+    /// fleet.</p>
+    pub fn aggregators(&self) -> std::option::Option<&[crate::model::InventoryAggregator]> {
+        self.aggregators.as_deref()
+    }
+    /// <p>The list of inventory item types to return.</p>
+    pub fn result_attributes(&self) -> std::option::Option<&[crate::model::ResultAttribute]> {
+        self.result_attributes.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetInventoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInventoryInput");
@@ -34432,6 +36683,27 @@ pub struct GetDocumentInput {
     /// YAML. JSON is the default format.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
 }
+impl GetDocumentInput {
+    /// <p>The name of the SSM document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional field specifying the version of the artifact associated with the document. For
+    /// example, "Release 12, Update 6". This value is unique across all versions of a document and can't
+    /// be changed.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The document version for which you want information.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>Returns the document in the specified format. The document format can be either JSON or
+    /// YAML. JSON is the default format.</p>
+    pub fn document_format(&self) -> std::option::Option<&crate::model::DocumentFormat> {
+        self.document_format.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentInput");
@@ -34454,6 +36726,20 @@ pub struct GetDeployablePatchSnapshotForInstanceInput {
     /// <p>Defines the basic information about a patch baseline override.</p>
     pub baseline_override: std::option::Option<crate::model::BaselineOverride>,
 }
+impl GetDeployablePatchSnapshotForInstanceInput {
+    /// <p>The ID of the instance for which the appropriate patch snapshot should be retrieved.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>Defines the basic information about a patch baseline override.</p>
+    pub fn baseline_override(&self) -> std::option::Option<&crate::model::BaselineOverride> {
+        self.baseline_override.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDeployablePatchSnapshotForInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeployablePatchSnapshotForInstanceInput");
@@ -34471,6 +36757,12 @@ pub struct GetDefaultPatchBaselineInput {
     /// <p>Returns the default patch baseline for the specified operating system.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
 }
+impl GetDefaultPatchBaselineInput {
+    /// <p>Returns the default patch baseline for the specified operating system.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDefaultPatchBaselineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDefaultPatchBaselineInput");
@@ -34485,6 +36777,12 @@ impl std::fmt::Debug for GetDefaultPatchBaselineInput {
 pub struct GetConnectionStatusInput {
     /// <p>The instance ID.</p>
     pub target: std::option::Option<std::string::String>,
+}
+impl GetConnectionStatusInput {
+    /// <p>The instance ID.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConnectionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34516,6 +36814,31 @@ pub struct GetCommandInvocationInput {
     /// <code>CommandPlugins</code> list.</p>
     pub plugin_name: std::option::Option<std::string::String>,
 }
+impl GetCommandInvocationInput {
+    /// <p>(Required) The parent command ID of the invocation plugin.</p>
+    pub fn command_id(&self) -> std::option::Option<&str> {
+        self.command_id.as_deref()
+    }
+    /// <p>(Required) The ID of the managed instance targeted by the command. A managed instance can be
+    /// an Amazon Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for
+    /// Amazon Web Services Systems Manager.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The name of the plugin for which you want detailed results. If the document contains only
+    /// one plugin, you can omit the name and details for that plugin. If the document contains more than
+    /// one plugin, you must specify the name of the plugin for which you want to view details.</p>
+    /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM
+    /// documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
+    /// <p>To find the <code>PluginName</code>, check the document content and find the name of the
+    /// plugin. Alternatively, use <a>ListCommandInvocations</a> with the
+    /// <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the
+    /// <code>Name</code> attribute of the <code>CommandPlugin</code> object in the
+    /// <code>CommandPlugins</code> list.</p>
+    pub fn plugin_name(&self) -> std::option::Option<&str> {
+        self.plugin_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCommandInvocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommandInvocationInput");
@@ -34537,6 +36860,18 @@ pub struct GetCalendarStateInput {
     /// value or <code>AtTime</code>, the current time is used.</p>
     pub at_time: std::option::Option<std::string::String>,
 }
+impl GetCalendarStateInput {
+    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that
+    /// represent the calendar entries for which you want to get the state.</p>
+    pub fn calendar_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.calendar_names.as_deref()
+    }
+    /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a
+    /// value or <code>AtTime</code>, the current time is used.</p>
+    pub fn at_time(&self) -> std::option::Option<&str> {
+        self.at_time.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCalendarStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCalendarStateInput");
@@ -34554,6 +36889,14 @@ pub struct GetAutomationExecutionInput {
     /// returned by StartAutomationExecution when the execution of an Automation runbook is
     /// initiated.</p>
     pub automation_execution_id: std::option::Option<std::string::String>,
+}
+impl GetAutomationExecutionInput {
+    /// <p>The unique identifier for an existing automation execution to examine. The execution ID is
+    /// returned by StartAutomationExecution when the execution of an Automation runbook is
+    /// initiated.</p>
+    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+        self.automation_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAutomationExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34573,6 +36916,18 @@ pub struct DisassociateOpsItemRelatedItemInput {
     /// <p>The ID of the association for which you want to delete an association between the OpsItem
     /// and a related item.</p>
     pub association_id: std::option::Option<std::string::String>,
+}
+impl DisassociateOpsItemRelatedItemInput {
+    /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a
+    /// related item.</p>
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
+    /// <p>The ID of the association for which you want to delete an association between the OpsItem
+    /// and a related item.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateOpsItemRelatedItemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34597,6 +36952,26 @@ pub struct DescribeSessionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>One or more filters to limit the type of sessions returned by the request.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SessionFilter>>,
+}
+impl DescribeSessionsInput {
+    /// <p>The session status to retrieve a list of sessions for. For example, "Active".</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SessionState> {
+        self.state.as_ref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>One or more filters to limit the type of sessions returned by the request.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SessionFilter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSessionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34627,6 +37002,31 @@ pub struct DescribePatchPropertiesInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePatchPropertiesInput {
+    /// <p>The operating system type for which to list patches.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>The patch property for which you want to view patch details. </p>
+    pub fn property(&self) -> std::option::Option<&crate::model::PatchProperty> {
+        self.property.as_ref()
+    }
+    /// <p>Indicates whether to list patches for the Windows operating system or for applications
+    /// released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
+    pub fn patch_set(&self) -> std::option::Option<&crate::model::PatchSet> {
+        self.patch_set.as_ref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePatchPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePatchPropertiesInput");
@@ -34645,6 +37045,12 @@ impl std::fmt::Debug for DescribePatchPropertiesInput {
 pub struct DescribePatchGroupStateInput {
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
     pub patch_group: std::option::Option<std::string::String>,
+}
+impl DescribePatchGroupStateInput {
+    /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePatchGroupStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34685,6 +37091,41 @@ pub struct DescribePatchGroupsInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePatchGroupsInput {
+    /// <p>The maximum number of patch groups to return (per page).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NAME_PREFIX</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>OPERATING_SYSTEM</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::PatchOrchestratorFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePatchGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34738,6 +37179,51 @@ pub struct DescribePatchBaselinesInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePatchBaselinesInput {
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NAME_PREFIX</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AWS-</code> | <code>My-</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>OWNER</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AWS</code> | <code>Self</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>OPERATING_SYSTEM</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::PatchOrchestratorFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of patch baselines to return (per page).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePatchBaselinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePatchBaselinesInput");
@@ -34762,6 +37248,26 @@ pub struct DescribeParametersInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeParametersInput {
+    /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ParametersFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Filters to limit the request results.</p>
+    pub fn parameter_filters(&self) -> std::option::Option<&[crate::model::ParameterStringFilter]> {
+        self.parameter_filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34845,6 +37351,80 @@ pub struct DescribeOpsItemsInput {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeOpsItemsInput {
+    /// <p>One or more filters to limit the response.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key: CreatedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: LastModifiedBy</p>
+    /// <p>Operations: Contains, Equals</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: LastModifiedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: Priority</p>
+    /// <p>Operations: Equals</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: Source</p>
+    /// <p>Operations: Contains, Equals</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: Status</p>
+    /// <p>Operations: Equals</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: Title*</p>
+    /// <p>Operations: Equals,Contains</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: OperationalData**</p>
+    /// <p>Operations: Equals</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: OperationalDataKey</p>
+    /// <p>Operations: Equals</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: OperationalDataValue</p>
+    /// <p>Operations: Equals, Contains</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: OpsItemId</p>
+    /// <p>Operations: Equals</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: ResourceId</p>
+    /// <p>Operations: Contains</p>
+    /// </li>
+    /// <li>
+    /// <p>Key: AutomationId</p>
+    /// <p>Operations: Equals</p>
+    /// </li>
+    /// </ul>
+    /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than
+    /// 100 characters, they system returns an error that the filter value exceeds the length
+    /// limit.</p>
+    /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair
+    /// by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+    pub fn ops_item_filters(&self) -> std::option::Option<&[crate::model::OpsItemFilter]> {
+        self.ops_item_filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOpsItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOpsItemsInput");
@@ -34871,6 +37451,28 @@ pub struct DescribeMaintenanceWindowTasksInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowTasksInput {
+    /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter
+    /// keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and
+    /// <code>TaskType</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::MaintenanceWindowFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34900,6 +37502,28 @@ pub struct DescribeMaintenanceWindowTargetsInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMaintenanceWindowTargetsInput {
+    /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>Optional filters that can be used to narrow down the scope of the returned window targets.
+    /// The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and
+    /// <code>OwnerInformation</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::MaintenanceWindowFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMaintenanceWindowTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMaintenanceWindowTargetsInput");
@@ -34926,6 +37550,29 @@ pub struct DescribeMaintenanceWindowsForTargetInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowsForTargetInput {
+    /// <p>The instance ID or key-value pair to retrieve information about.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The type of resource you want to retrieve information about. For example,
+    /// <code>INSTANCE</code>.</p>
+    pub fn resource_type(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowsForTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34959,6 +37606,38 @@ pub struct DescribeMaintenanceWindowScheduleInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMaintenanceWindowScheduleInput {
+    /// <p>The ID of the maintenance window to retrieve information about.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The instance ID or key-value pair to retrieve information about.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The type of resource you want to retrieve information about. For example,
+    /// <code>INSTANCE</code>.</p>
+    pub fn resource_type(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Filters used to limit the range of results. For example, you can limit maintenance window
+    /// executions to only those scheduled before or after a certain date and time.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::PatchOrchestratorFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMaintenanceWindowScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMaintenanceWindowScheduleInput");
@@ -34987,6 +37666,24 @@ pub struct DescribeMaintenanceWindowsInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMaintenanceWindowsInput {
+    /// <p>Optional filters used to narrow down the scope of the returned maintenance windows.
+    /// Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example,
+    /// <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::MaintenanceWindowFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMaintenanceWindowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMaintenanceWindowsInput");
@@ -35014,6 +37711,29 @@ pub struct DescribeMaintenanceWindowExecutionTasksInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowExecutionTasksInput {
+    /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+    /// <p>Optional filters used to scope down the returned tasks. The supported filter key is
+    /// <code>STATUS</code> with the corresponding values <code>PENDING</code>,
+    /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
+    /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::MaintenanceWindowFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35045,6 +37765,33 @@ pub struct DescribeMaintenanceWindowExecutionTaskInvocationsInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
+    /// <p>The ID of the maintenance window execution the task is part of.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>Optional filters used to scope down the returned task invocations. The supported filter key
+    /// is <code>STATUS</code> with the corresponding values <code>PENDING</code>,
+    /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
+    /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::MaintenanceWindowFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTaskInvocationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35085,6 +37832,37 @@ pub struct DescribeMaintenanceWindowExecutionsInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMaintenanceWindowExecutionsInput {
+    /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key. A string between 1 and 128 characters. Supported keys include
+    /// <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are
+    /// date/time strings in a valid ISO 8601 date/time format, such as
+    /// <code>2021-11-04T05:00:00Z</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::MaintenanceWindowFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMaintenanceWindowExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMaintenanceWindowExecutionsInput");
@@ -35108,6 +37886,22 @@ pub struct DescribeInventoryDeletionsInput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeInventoryDeletionsInput {
+    /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the
+    /// <code>DeleteInventory</code> operation.</p>
+    pub fn deletion_id(&self) -> std::option::Option<&str> {
+        self.deletion_id.as_deref()
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeInventoryDeletionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35145,6 +37939,37 @@ pub struct DescribeInstancePatchStatesForPatchGroupInput {
     /// <p>The maximum number of patches to return (per page).</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeInstancePatchStatesForPatchGroupInput {
+    /// <p>The name of the patch group for which the patch state information should be
+    /// retrieved.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
+    /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key (string between 1 and 200 characters)</p>
+    /// </li>
+    /// <li>
+    /// <p>Values (array containing a single string)</p>
+    /// </li>
+    /// <li>
+    /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::InstancePatchStateFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeInstancePatchStatesForPatchGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstancePatchStatesForPatchGroupInput");
@@ -35167,6 +37992,21 @@ pub struct DescribeInstancePatchStatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of instances to return (per page).</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeInstancePatchStatesInput {
+    /// <p>The ID of the instance for which patch state information should be retrieved.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of instances to return (per page).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeInstancePatchStatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35232,6 +38072,65 @@ pub struct DescribeInstancePatchesInput {
     /// <p>The maximum number of patches to return (per page).</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeInstancePatchesInput {
+    /// <p>The ID of the instance whose patch state information should be retrieved.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Classification</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>KBId</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Severity</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>State</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> |
+    /// <code>InstalledPendingReboot</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::PatchOrchestratorFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeInstancePatchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstancePatchesInput");
@@ -35267,6 +38166,36 @@ pub struct DescribeInstanceInformationInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceInformationInput {
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the
+    /// <code>Filters</code> data type. <code>Filters</code> enables you to return instance information
+    /// by filtering based on tags applied to managed instances.</p>
+    /// <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads
+    /// to an exception error. </p>
+    /// </note>
+    pub fn instance_information_filter_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceInformationFilter]> {
+        self.instance_information_filter_list.as_deref()
+    }
+    /// <p>One or more filters. Use a filter to return a more specific list of instances. You can
+    /// filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
+    /// <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::InstanceInformationStringFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceInformationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceInformationInput");
@@ -35294,6 +38223,22 @@ pub struct DescribeInstanceAssociationsStatusInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceAssociationsStatusInput {
+    /// <p>The instance IDs for which you want association status information.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceAssociationsStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceAssociationsStatusInput");
@@ -35315,6 +38260,21 @@ pub struct DescribeEffectivePatchesForPatchBaselineInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEffectivePatchesForPatchBaselineInput {
+    /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEffectivePatchesForPatchBaselineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35338,6 +38298,22 @@ pub struct DescribeEffectiveInstanceAssociationsInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEffectiveInstanceAssociationsInput {
+    /// <p>The instance ID for which you want to view all associations.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEffectiveInstanceAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35365,6 +38341,27 @@ pub struct DescribeDocumentPermissionInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeDocumentPermissionInput {
+    /// <p>The name of the document for which you are the owner.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The permission type for the document. The permission type can be
+    /// <i>Share</i>.</p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::DocumentPermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDocumentPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDocumentPermissionInput");
@@ -35389,6 +38386,23 @@ pub struct DescribeDocumentInput {
     /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
     /// can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
+}
+impl DescribeDocumentInput {
+    /// <p>The name of the SSM document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The document version for which you want information. Can be a specific version or the
+    /// default version.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>An optional field specifying the version of the artifact associated with the document. For
+    /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
+    /// can't be changed.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35594,6 +38608,203 @@ pub struct DescribeAvailablePatchesInput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAvailablePatchesInput {
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>
+    /// <b>Windows Server</b>
+    /// </p>
+    /// <p>Supported keys for Windows Server instance patches include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PATCH_SET</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>OS</code> | <code>APPLICATION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PRODUCT</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> |
+    /// <code>MicrosoftDefenderAntivirus</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PRODUCT_FAMILY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Windows</code> | <code>Office</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MSRC_SEVERITY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CLASSIFICATION</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> |
+    /// <code>DefinitionUpdates</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PATCH_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>KB123456</code> | <code>KB4516046</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>Linux</b>
+    /// </p>
+    /// <important>
+    /// <p>When specifying filters for Linux patches, you must specify a key-pair for
+    /// <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the
+    /// following command fails:</p>
+    /// <p>
+    /// <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code>
+    /// </p>
+    /// <p>However, the following command succeeds:</p>
+    /// <p>
+    /// <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03
+    /// Key=CVE_ID,Values=CVE-2018-3615</code>
+    /// </p>
+    /// </important>
+    /// <p>Supported keys for Linux instance patches include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PRODUCT</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NAME</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>SEVERITY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code> |
+    /// <code>Low</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EPOCH</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>0</code> | <code>1</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>VERSION</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>78.6.1</code> | <code>4.10.16</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>RELEASE</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ARCH</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>i686</code> | <code>x86_64</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>REPOSITORY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Core</code> | <code>Updates</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ADVISORY_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CVE_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BUGZILLA_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>1463241</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::PatchOrchestratorFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAvailablePatchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAvailablePatchesInput");
@@ -35622,6 +38833,31 @@ pub struct DescribeAutomationStepExecutionsInput {
     /// is 'false'.</p>
     pub reverse_order: std::option::Option<bool>,
 }
+impl DescribeAutomationStepExecutionsInput {
+    /// <p>The Automation execution ID for which you want step execution descriptions.</p>
+    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+        self.automation_execution_id.as_deref()
+    }
+    /// <p>One or more filters to limit the number of step executions returned by the request.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::StepExecutionFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Indicates whether to list step executions in reverse order by start time. The default value
+    /// is 'false'.</p>
+    pub fn reverse_order(&self) -> std::option::Option<bool> {
+        self.reverse_order
+    }
+}
 impl std::fmt::Debug for DescribeAutomationStepExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAutomationStepExecutionsInput");
@@ -35646,6 +38882,22 @@ pub struct DescribeAutomationExecutionsInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAutomationExecutionsInput {
+    /// <p>Filters used to limit the scope of executions that are requested.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::AutomationExecutionFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAutomationExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35677,6 +38929,34 @@ pub struct DescribeAssociationExecutionTargetsInput {
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAssociationExecutionTargetsInput {
+    /// <p>The association ID that includes the execution for which you want to view details.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>The execution ID for which you want to view details.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p>Filters for the request. You can specify the following filters and values.</p>
+    /// <p>Status (EQUAL)</p>
+    /// <p>ResourceId (EQUAL)</p>
+    /// <p>ResourceType (EQUAL)</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociationExecutionTargetsFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssociationExecutionTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssociationExecutionTargetsInput");
@@ -35706,6 +38986,28 @@ pub struct DescribeAssociationExecutionsInput {
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAssociationExecutionsInput {
+    /// <p>The association ID for which you want to view execution history details.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>Filters for the request. You can specify the following filters and values.</p>
+    /// <p>ExecutionId (EQUAL)</p>
+    /// <p>Status (EQUAL)</p>
+    /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::AssociationExecutionFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssociationExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssociationExecutionsInput");
@@ -35733,6 +39035,27 @@ pub struct DescribeAssociationInput {
     /// for a specific association, use <a>ListAssociationVersions</a>. </p>
     pub association_version: std::option::Option<std::string::String>,
 }
+impl DescribeAssociationInput {
+    /// <p>The name of the SSM document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The association ID for which you want information.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+    /// <p>Specify the association version to retrieve. To view the latest version, either specify
+    /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all
+    /// associations for an instance, use <a>ListAssociations</a>. To get a list of versions
+    /// for a specific association, use <a>ListAssociationVersions</a>. </p>
+    pub fn association_version(&self) -> std::option::Option<&str> {
+        self.association_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssociationInput");
@@ -35756,6 +39079,21 @@ pub struct DescribeActivationsInput {
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeActivationsInput {
+    /// <p>A filter to view information about your activations.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::DescribeActivationsFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeActivationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeActivationsInput");
@@ -35774,6 +39112,16 @@ pub struct DeregisterTaskFromMaintenanceWindowInput {
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The ID of the task to remove from the maintenance window.</p>
     pub window_task_id: std::option::Option<std::string::String>,
+}
+impl DeregisterTaskFromMaintenanceWindowInput {
+    /// <p>The ID of the maintenance window the task should be removed from.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The ID of the task to remove from the maintenance window.</p>
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
+        self.window_task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterTaskFromMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35797,6 +39145,22 @@ pub struct DeregisterTargetFromMaintenanceWindowInput {
     /// window.</p>
     pub safe: std::option::Option<bool>,
 }
+impl DeregisterTargetFromMaintenanceWindowInput {
+    /// <p>The ID of the maintenance window the target should be removed from.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The ID of the target definition to remove.</p>
+    pub fn window_target_id(&self) -> std::option::Option<&str> {
+        self.window_target_id.as_deref()
+    }
+    /// <p>The system checks if the target is being referenced by a task. If the target is being
+    /// referenced, the system returns an error and doesn't deregister the target from the maintenance
+    /// window.</p>
+    pub fn safe(&self) -> std::option::Option<bool> {
+        self.safe
+    }
+}
 impl std::fmt::Debug for DeregisterTargetFromMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTargetFromMaintenanceWindowInput");
@@ -35816,6 +39180,16 @@ pub struct DeregisterPatchBaselineForPatchGroupInput {
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
     pub patch_group: std::option::Option<std::string::String>,
 }
+impl DeregisterPatchBaselineForPatchGroupInput {
+    /// <p>The ID of the patch baseline to deregister the patch group from.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterPatchBaselineForPatchGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterPatchBaselineForPatchGroupInput");
@@ -35832,6 +39206,13 @@ pub struct DeregisterManagedInstanceInput {
     /// <p>The ID assigned to the managed instance when you registered it using the activation process.
     /// </p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl DeregisterManagedInstanceInput {
+    /// <p>The ID assigned to the managed instance when you registered it using the activation process.
+    /// </p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterManagedInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35850,6 +39231,16 @@ pub struct DeleteResourceDataSyncInput {
     /// <p>Specify the type of resource data sync to delete.</p>
     pub sync_type: std::option::Option<std::string::String>,
 }
+impl DeleteResourceDataSyncInput {
+    /// <p>The name of the configuration to delete.</p>
+    pub fn sync_name(&self) -> std::option::Option<&str> {
+        self.sync_name.as_deref()
+    }
+    /// <p>Specify the type of resource data sync to delete.</p>
+    pub fn sync_type(&self) -> std::option::Option<&str> {
+        self.sync_type.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourceDataSyncInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourceDataSyncInput");
@@ -35865,6 +39256,12 @@ impl std::fmt::Debug for DeleteResourceDataSyncInput {
 pub struct DeletePatchBaselineInput {
     /// <p>The ID of the patch baseline to delete.</p>
     pub baseline_id: std::option::Option<std::string::String>,
+}
+impl DeletePatchBaselineInput {
+    /// <p>The ID of the patch baseline to delete.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePatchBaselineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35882,6 +39279,13 @@ pub struct DeleteParametersInput {
     /// seconds to create a parameter with the same name.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteParametersInput {
+    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30
+    /// seconds to create a parameter with the same name.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteParametersInput");
@@ -35896,6 +39300,12 @@ impl std::fmt::Debug for DeleteParametersInput {
 pub struct DeleteParameterInput {
     /// <p>The name of the parameter to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteParameterInput {
+    /// <p>The name of the parameter to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteParameterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35912,6 +39322,12 @@ pub struct DeleteOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
+impl DeleteOpsMetadataInput {
+    /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
+    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
+        self.ops_metadata_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteOpsMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOpsMetadataInput");
@@ -35926,6 +39342,12 @@ impl std::fmt::Debug for DeleteOpsMetadataInput {
 pub struct DeleteMaintenanceWindowInput {
     /// <p>The ID of the maintenance window to delete.</p>
     pub window_id: std::option::Option<std::string::String>,
+}
+impl DeleteMaintenanceWindowInput {
+    /// <p>The ID of the maintenance window to delete.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35959,6 +39381,37 @@ pub struct DeleteInventoryInput {
     /// <p>User-provided idempotency token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DeleteInventoryInput {
+    /// <p>The name of the custom inventory type for which you want to delete either all previously
+    /// collected data or the inventory type itself. </p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you
+    /// don't choose this option, the system only deletes existing inventory data associated with the
+    /// custom inventory type. Choose one of the following options:</p>
+    /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the
+    /// specified version, and any earlier versions. To enable this schema again, you must call the
+    /// <code>PutInventory</code> operation for a version greater than the disabled version.</p>
+    /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You
+    /// can recreate the schema later, if you want.</p>
+    pub fn schema_delete_option(
+        &self,
+    ) -> std::option::Option<&crate::model::InventorySchemaDeleteOption> {
+        self.schema_delete_option.as_ref()
+    }
+    /// <p>Use this option to view a summary of the deletion request without deleting any data or the
+    /// data type. This option is useful when you only want to understand what will be deleted. Once you
+    /// validate that the data to be deleted is what you intend to delete, you can run the same command
+    /// without specifying the <code>DryRun</code> option.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+    /// <p>User-provided idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInventoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInventoryInput");
@@ -35987,6 +39440,29 @@ pub struct DeleteDocumentInput {
     /// of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the
     /// <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     pub force: bool,
+}
+impl DeleteDocumentInput {
+    /// <p>The name of the document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the document that you want to delete. If not provided, all versions of the
+    /// document are deleted.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The version name of the document that you want to delete. If not provided, all versions of
+    /// the document are deleted.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can
+    /// delete the document. For example, you must specify a <code>Force</code> flag to delete a document
+    /// of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the
+    /// <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
 }
 impl std::fmt::Debug for DeleteDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36021,6 +39497,31 @@ pub struct DeleteAssociationInput {
     /// <p>The association ID that you want to delete.</p>
     pub association_id: std::option::Option<std::string::String>,
 }
+impl DeleteAssociationInput {
+    /// <p>The name of the SSM document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    /// <note>
+    /// <p>
+    /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+    /// use the <code>Targets</code> parameter. Requests that include the
+    /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+    /// 2.0 or later will fail. In addition, if you use the parameter
+    /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+    /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+    /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+    /// must use the <code>Targets</code> parameter.</p>
+    /// </note>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The association ID that you want to delete.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssociationInput");
@@ -36037,6 +39538,12 @@ impl std::fmt::Debug for DeleteAssociationInput {
 pub struct DeleteActivationInput {
     /// <p>The ID of the activation that you want to delete.</p>
     pub activation_id: std::option::Option<std::string::String>,
+}
+impl DeleteActivationInput {
+    /// <p>The ID of the activation that you want to delete.</p>
+    pub fn activation_id(&self) -> std::option::Option<&str> {
+        self.activation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteActivationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36065,6 +39572,33 @@ pub struct CreateResourceDataSyncInput {
     /// <p>Specify information about the data sources to synchronize. This parameter is required if the
     /// <code>SyncType</code> value is SyncFromSource.</p>
     pub sync_source: std::option::Option<crate::model::ResourceDataSyncSource>,
+}
+impl CreateResourceDataSyncInput {
+    /// <p>A name for the configuration.</p>
+    pub fn sync_name(&self) -> std::option::Option<&str> {
+        self.sync_name.as_deref()
+    }
+    /// <p>Amazon S3 configuration details for the sync. This parameter is required if the
+    /// <code>SyncType</code> value is SyncToDestination.</p>
+    pub fn s3_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceDataSyncS3Destination> {
+        self.s3_destination.as_ref()
+    }
+    /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
+    /// to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a
+    /// value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data
+    /// from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as
+    /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
+    /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
+    pub fn sync_type(&self) -> std::option::Option<&str> {
+        self.sync_type.as_deref()
+    }
+    /// <p>Specify information about the data sources to synchronize. This parameter is required if the
+    /// <code>SyncType</code> value is SyncFromSource.</p>
+    pub fn sync_source(&self) -> std::option::Option<&crate::model::ResourceDataSyncSource> {
+        self.sync_source.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateResourceDataSyncInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36161,6 +39695,115 @@ pub struct CreatePatchBaselineInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreatePatchBaselineInput {
+    /// <p>Defines the operating system the patch baseline applies to. The default value is
+    /// <code>WINDOWS</code>.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>The name of the patch baseline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A set of global filters used to include patches in the baseline.</p>
+    pub fn global_filters(&self) -> std::option::Option<&crate::model::PatchFilterGroup> {
+        self.global_filters.as_ref()
+    }
+    /// <p>A set of rules used to include patches in the baseline.</p>
+    pub fn approval_rules(&self) -> std::option::Option<&crate::model::PatchRuleGroup> {
+        self.approval_rules.as_ref()
+    }
+    /// <p>A list of explicitly approved patches for the baseline.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.approved_patches.as_deref()
+    }
+    /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
+    /// missing, this value describes the severity of the compliance violation. The default value is
+    /// <code>UNSPECIFIED</code>.</p>
+    pub fn approved_patches_compliance_level(
+        &self,
+    ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
+        self.approved_patches_compliance_level.as_ref()
+    }
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
+    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+    /// only.</p>
+    pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
+        self.approved_patches_enable_non_security
+    }
+    /// <p>A list of explicitly rejected patches for the baseline.</p>
+    /// <p>For information about accepted formats for lists of approved patches and rejected patches,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.rejected_patches.as_deref()
+    }
+    /// <p>The action for Patch Manager to take on patches included in the
+    /// <code>RejectedPackages</code> list.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ALLOW_AS_DEPENDENCY</code>
+    /// </b>: A package in the
+    /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
+    /// It is considered compliant with the patch baseline, and its status is reported as
+    /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BLOCK</code>
+    /// </b>: Packages in the
+    /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
+    /// installed under any circumstances. If a package was installed before it was added to the
+    /// Rejected patches list, it is considered non-compliant with the patch baseline, and its status
+    /// is reported as <code>InstalledRejected</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
+        self.rejected_patches_action.as_ref()
+    }
+    /// <p>A description of the patch baseline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the patches to use to update the instances, including target operating
+    /// systems and source repositories. Applies to Linux instances only.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
+        self.sources.as_deref()
+    }
+    /// <p>User-provided idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
+    /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
+    /// patch baseline to identify the severity level of patches it specifies and the operating system
+    /// family it applies to. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=PatchSeverity,Value=Critical</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=OS,Value=Windows</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+    /// operation.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePatchBaselineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePatchBaselineInput");
@@ -36215,6 +39858,40 @@ pub struct CreateOpsMetadataInput {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateOpsMetadataInput {
+    /// <p>A resource ID for a new Application Manager application.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Metadata for a new Application Manager application. </p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
+    > {
+        self.metadata.as_ref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
+    /// an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by
+    /// purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to
+    /// identify an environment or target Amazon Web Services Region. In this case, you could specify the following
+    /// key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=Environment,Value=Production</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=Region,Value=us-east-2</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOpsMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36302,6 +39979,112 @@ pub struct CreateOpsItemInput {
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
     /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub planned_end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateOpsItemInput {
+    /// <p>Information about the OpsItem. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of OpsItem to create. Currently, the only valid values are
+    /// <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    pub fn ops_item_type(&self) -> std::option::Option<&str> {
+        self.ops_item_type.as_deref()
+    }
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem.
+    /// For example, you can specify log files, error strings, license keys, troubleshooting tips, or
+    /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
+    /// of 128 characters. The value has a maximum size of 20 KB.</p>
+    /// <important>
+    /// <p>Operational data keys <i>can't</i> begin with the following:
+    /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
+    /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
+    /// </important>
+    /// <p>You can choose to make the data searchable by other users in the account or you can restrict
+    /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
+    /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
+    /// specified data. Operational data that isn't searchable is only viewable by users who have access
+    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
+    /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
+    /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
+    /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn operational_data(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
+    > {
+        self.operational_data.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
+    /// OpsItem is edited or changed.</p>
+    pub fn notifications(&self) -> std::option::Option<&[crate::model::OpsItemNotification]> {
+        self.notifications.as_deref()
+    }
+    /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
+    /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
+    /// statuses for the impacted resource.</p>
+    pub fn related_ops_items(&self) -> std::option::Option<&[crate::model::RelatedOpsItem]> {
+        self.related_ops_items.as_deref()
+    }
+    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p>
+    /// <note>
+    /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>,
+    /// and <code>amzn</code>. </p>
+    /// </note>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by
+    /// using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Tags use a key-value pair. For example:</p>
+    /// <p>
+    /// <code>Key=Department,Value=Finance</code>
+    /// </p>
+    /// <important>
+    /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the
+    /// <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation.
+    /// To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
+    /// operation.</p>
+    /// </important>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specify a category to assign to an OpsItem. </p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>Specify a severity to assign to an OpsItem.</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
+    /// <code>/aws/changerequest</code>.</p>
+    pub fn actual_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.actual_start_time.as_ref()
+    }
+    /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
+    /// <code>/aws/changerequest</code>.</p>
+    pub fn actual_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.actual_end_time.as_ref()
+    }
+    /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
+    /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn planned_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.planned_start_time.as_ref()
+    }
+    /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
+    /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.planned_end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOpsItemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36398,6 +40181,101 @@ pub struct CreateMaintenanceWindowInput {
     /// operation.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateMaintenanceWindowInput {
+    /// <p>The name of the maintenance window.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description for the maintenance window. We recommend specifying a description to
+    /// help you organize your maintenance windows. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
+    /// become active. <code>StartDate</code> allows you to delay activation of the maintenance window
+    /// until the specified future date.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
+    /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
+    /// maintenance window will no longer run.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
+    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
+    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
+    /// Zone Database</a> on the IANA website.</p>
+    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
+        self.schedule_timezone.as_deref()
+    }
+    /// <p>The number of days to wait after the date and time specified by a cron expression before
+    /// running the maintenance window.</p>
+    /// <p>For example, the following cron expression schedules a maintenance window to run on the
+    /// third Tuesday of every month at 11:30 PM.</p>
+    /// <p>
+    /// <code>cron(30 23 ? * TUE#3 *)</code>
+    /// </p>
+    /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
+    /// later.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
+    /// <p>The duration of the maintenance window in hours.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+    /// new tasks for execution.</p>
+    pub fn cutoff(&self) -> i32 {
+        self.cutoff
+    }
+    /// <p>Enables a maintenance window task to run on managed instances, even if you haven't
+    /// registered those instances as targets. If enabled, then you must specify the unregistered
+    /// instances (by instance ID) when you register a task with the maintenance window.</p>
+    /// <p>If you don't enable this option, then you must specify previously-registered targets when
+    /// you register a task with the maintenance window.</p>
+    pub fn allow_unassociated_targets(&self) -> bool {
+        self.allow_unassociated_targets
+    }
+    /// <p>User-provided idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
+    /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
+    /// maintenance window to identify the type of tasks it will run, the types of targets, and the
+    /// environment it will run in. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=TaskType,Value=AgentUpdate</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=OS,Value=Windows</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=Environment,Value=Production</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>To add tags to an existing maintenance window, use the <a>AddTagsToResource</a>
+    /// operation.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMaintenanceWindowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36522,6 +40400,124 @@ pub struct CreateDocumentInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDocumentInput {
+    /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the
+    /// contents for your new document in an external JSON or YAML file and referencing the file in a
+    /// command.</p>
+    /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A list of SSM documents required by a document. This parameter is used exclusively by
+    /// AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also
+    /// specify a required document for validation purposes. In this case, an
+    /// <code>ApplicationConfiguration</code> document requires an
+    /// <code>ApplicationConfigurationSchema</code> document for validation purposes. For more
+    /// information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the
+    /// <i>AppConfig User Guide</i>.</p>
+    pub fn requires(&self) -> std::option::Option<&[crate::model::DocumentRequires]> {
+        self.requires.as_deref()
+    }
+    /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::AttachmentsSource]> {
+        self.attachments.as_deref()
+    }
+    /// <p>A name for the SSM document.</p>
+    /// <important>
+    /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services
+    /// for use as document name prefixes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>aws-</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>amazon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>amzn</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </important>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
+    /// differ for each version of the document. You can update this value at a later time using the
+    /// <a>UpdateDocument</a> operation.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>An optional field specifying the version of the artifact you are creating with the document.
+    /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
+    /// can't be changed.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The type of document to create.</p>
+    pub fn document_type(&self) -> std::option::Option<&crate::model::DocumentType> {
+        self.document_type.as_ref()
+    }
+    /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT.
+    /// JSON is the default format.</p>
+    pub fn document_format(&self) -> std::option::Option<&crate::model::DocumentFormat> {
+        self.document_format.as_ref()
+    }
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example,
+    /// to run a document on EC2 instances, specify the following value:
+    /// <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types
+    /// of resources. If you don't specify a value, the document can't run on any resources. For a list
+    /// of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+    /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    pub fn target_type(&self) -> std::option::Option<&str> {
+        self.target_type.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
+    /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
+    /// SSM document to identify the types of targets or the environment where it will run. In this case,
+    /// you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=OS,Value=Windows</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=Environment,Value=Production</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>To add tags to an existing SSM document, use the <a>AddTagsToResource</a>
+    /// operation.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDocumentInput");
@@ -36546,6 +40542,14 @@ pub struct CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::CreateAssociationBatchRequestEntry>>,
+}
+impl CreateAssociationBatchInput {
+    /// <p>One or more associations.</p>
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateAssociationBatchRequestEntry]> {
+        self.entries.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssociationBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36661,6 +40665,147 @@ pub struct CreateAssociationInput {
     /// accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
+impl CreateAssociationInput {
+    /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
+    /// information for the instance.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+    /// shared with you from another account.</p>
+    /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you
+    /// must specify the complete SSM document ARN, in the following format:</p>
+    /// <p>
+    /// <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
+    /// </code>
+    /// </p>
+    /// <p>For example:</p>
+    /// <p>
+    /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+    /// </p>
+    /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+    /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+    /// <code>My-Document</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The document version you want to associate with the target(s). Can be a specific version or
+    /// the default version.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    /// <note>
+    /// <p>
+    /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+    /// use the <code>Targets</code> parameter. Requests that include the
+    /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+    /// 2.0 or later will fail. In addition, if you use the parameter
+    /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+    /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+    /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+    /// must use the <code>Targets</code> parameter.</p>
+    /// </note>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The parameters for the runtime configuration of the document.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The targets for the association. You can target instances by using tags, Amazon Web Services resource
+    /// groups, all instances in an Amazon Web Services account, or individual instance IDs. You can target all
+    /// instances in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+    /// <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>A cron expression when the association will be applied to the target(s).</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output
+    /// details of the request.</p>
+    pub fn output_location(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceAssociationOutputLocation> {
+        self.output_location.as_ref()
+    }
+    /// <p>Specify a descriptive name for the association.</p>
+    pub fn association_name(&self) -> std::option::Option<&str> {
+        self.association_name.as_deref()
+    }
+    /// <p>Specify the target for the association. This target is required for associations that use an
+    /// Automation runbook and target resources by using rate controls. Automation is a capability of
+    /// Amazon Web Services Systems Manager.</p>
+    pub fn automation_target_parameter_name(&self) -> std::option::Option<&str> {
+        self.automation_target_parameter_name.as_deref()
+    }
+    /// <p>The number of errors that are allowed before the system stops sending requests to run the
+    /// association on additional targets. You can specify either an absolute number of errors, for
+    /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
+    /// the system stops sending requests when the fourth error is received. If you specify 0, then the
+    /// system stops sending requests after the first error is returned. If you run an association on 50
+    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+    /// the sixth error is received.</p>
+    /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+    /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+    /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+    /// so that executions proceed one at a time.</p>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>The maximum number of targets allowed to run the association at the same time. You can
+    /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
+    /// value is 100%, which means all targets run the association at the same time.</p>
+    /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
+    /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+    /// association interval, the new instance will process its association within the limit specified
+    /// for <code>MaxConcurrency</code>.</p>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The severity level to assign to the association.</p>
+    pub fn compliance_severity(
+        &self,
+    ) -> std::option::Option<&crate::model::AssociationComplianceSeverity> {
+        self.compliance_severity.as_ref()
+    }
+    /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
+    /// <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association
+    /// execution to determine the compliance status. If the association execution runs successfully,
+    /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
+    /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
+    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
+    /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+    /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
+    /// <p>By default, all associations use <code>AUTO</code> mode.</p>
+    pub fn sync_compliance(&self) -> std::option::Option<&crate::model::AssociationSyncCompliance> {
+        self.sync_compliance.as_ref()
+    }
+    /// <p>By default, when you create a new association, the system runs it immediately after it is
+    /// created and then according to the schedule you specified. Specify this option if you don't want
+    /// an association to run immediately after you create it. This parameter isn't supported for rate
+    /// expressions.</p>
+    pub fn apply_only_at_cron_interval(&self) -> bool {
+        self.apply_only_at_cron_interval
+    }
+    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
+    /// gate your associations under. The associations only run when that change calendar is open. For
+    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
+    /// Calendar</a>.</p>
+    pub fn calendar_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.calendar_names.as_deref()
+    }
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
+    /// association. Use this action to create an association in multiple Regions and multiple
+    /// accounts.</p>
+    pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
+        self.target_locations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssociationInput");
@@ -36746,6 +40891,71 @@ pub struct CreateActivationInput {
     /// instances, see <a>RemoveTagsFromResource</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateActivationInput {
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p>
+    /// <important>
+    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// </important>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the registered, managed instance as it will appear in the Amazon Web Services Systems Manager console or
+    /// when you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
+    /// <important>
+    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// </important>
+    pub fn default_instance_name(&self) -> std::option::Option<&str> {
+        self.default_instance_name.as_deref()
+    }
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
+    /// the managed instance. This IAM role must provide AssumeRole permissions for the
+    /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
+    /// IAM service role for a hybrid environment</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>Specify the maximum number of managed instances you want to register. The default value is
+    /// <code>1</code>.</p>
+    pub fn registration_limit(&self) -> std::option::Option<i32> {
+        self.registration_limit
+    }
+    /// <p>The date by which this activation request should expire, in timestamp format, such as
+    /// "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an
+    /// expiration date, the activation code expires in 24 hours.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
+    /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
+    /// activation to identify which servers or virtual machines (VMs) in your on-premises environment
+    /// you intend to activate. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key=OS,Value=Windows</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key=Environment,Value=Production</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <important>
+    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID
+    /// and code. When you specify the activation ID and code, tags assigned to the activation are
+    /// automatically applied to the on-premises servers or VMs.</p>
+    /// </important>
+    /// <p>You can't add tags to or delete tags from an existing activation. You can tag your
+    /// on-premises servers and VMs after they connect to Systems Manager for the first time and are assigned a
+    /// managed instance ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
+    /// prefixed with "mi-". For information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed
+    /// instances, see <a>RemoveTagsFromResource</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateActivationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateActivationInput");
@@ -36766,6 +40976,12 @@ pub struct CancelMaintenanceWindowExecutionInput {
     /// <p>The ID of the maintenance window execution to stop.</p>
     pub window_execution_id: std::option::Option<std::string::String>,
 }
+impl CancelMaintenanceWindowExecutionInput {
+    /// <p>The ID of the maintenance window execution to stop.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelMaintenanceWindowExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelMaintenanceWindowExecutionInput");
@@ -36783,6 +40999,17 @@ pub struct CancelCommandInput {
     /// <p>(Optional) A list of instance IDs on which you want to cancel the command. If not provided,
     /// the command is canceled on every instance on which it was requested.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CancelCommandInput {
+    /// <p>The ID of the command you want to cancel.</p>
+    pub fn command_id(&self) -> std::option::Option<&str> {
+        self.command_id.as_deref()
+    }
+    /// <p>(Optional) A list of instance IDs on which you want to cancel the command. If not provided,
+    /// the command is canceled on every instance on which it was requested.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelCommandInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36812,6 +41039,31 @@ pub struct AssociateOpsItemRelatedItemInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
     /// OpsItem.</p>
     pub resource_uri: std::option::Option<std::string::String>,
+}
+impl AssociateOpsItemRelatedItemInput {
+    /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
+    /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter
+    /// supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+    pub fn association_type(&self) -> std::option::Option<&str> {
+        self.association_type.as_deref()
+    }
+    /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the
+    /// following types:</p>
+    /// <p>
+    /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p>
+    /// <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
+    /// OpsItem.</p>
+    pub fn resource_uri(&self) -> std::option::Option<&str> {
+        self.resource_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateOpsItemRelatedItemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36871,6 +41123,57 @@ pub struct AddTagsToResourceInput {
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToResourceInput {
+    /// <p>Specifies the type of resource you are tagging.</p>
+    /// <note>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed
+    /// instances. You must specify the name of the managed instance in the following format:
+    /// <code>mi-<i>ID_number</i>
+    /// </code>. For example,
+    /// <code>mi-1a2b3c4d5e6f</code>.</p>
+    /// </note>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceTypeForTagging> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The resource ID you want to tag.</p>
+    /// <p>Use the ID of the resource. Here are some examples:</p>
+    /// <p>
+    /// <code>MaintenanceWindow</code>: <code>mw-012345abcde</code>
+    /// </p>
+    /// <p>
+    /// <code>PatchBaseline</code>: <code>pb-012345abcde</code>
+    /// </p>
+    /// <p>
+    /// <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the
+    /// Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from
+    /// the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an
+    /// OpsMetadata object with an ARN of
+    /// <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a
+    /// <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
+    /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+    /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the
+    /// resource.</p>
+    /// <p>
+    /// <code>ManagedInstance</code>: <code>mi-012345abcde</code>
+    /// </p>
+    /// <note>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+    /// managed instances. You must specify the name of the managed instance in the following format:
+    /// <code>mi-<i>ID_number</i>
+    /// </code>. For example,
+    /// <code>mi-1a2b3c4d5e6f</code>.</p>
+    /// </note>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>One or more tags. The value parameter is required.</p>
+    /// <important>
+    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// </important>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

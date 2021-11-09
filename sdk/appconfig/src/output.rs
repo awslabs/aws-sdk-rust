@@ -49,6 +49,35 @@ pub struct UpdateEnvironmentOutput {
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
 }
+impl UpdateEnvironmentOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The environment ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The state of the environment. An environment can be in one of the following states:
+    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
+    /// <code>ROLLED_BACK</code>
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+        self.state.as_ref()
+    }
+    /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
+    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+        self.monitors.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentOutput");
@@ -198,6 +227,42 @@ pub struct UpdateDeploymentStrategyOutput {
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
+}
+impl UpdateDeploymentStrategyOutput {
+    /// <p>The deployment strategy ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the deployment strategy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the deployment strategy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn deployment_duration_in_minutes(&self) -> i32 {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+    /// <p>The percentage of targets that received a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> f32 {
+        self.growth_factor
+    }
+    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> i32 {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
+        self.replicate_to.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDeploymentStrategyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,6 +437,37 @@ pub struct UpdateConfigurationProfileOutput {
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
 }
+impl UpdateConfigurationProfileOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the configuration profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The configuration profile description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The URI location of the configuration.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
+    /// LocationUri.</p>
+    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+        self.retrieval_role_arn.as_deref()
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+        self.validators.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationProfileOutput");
@@ -518,6 +614,20 @@ pub struct UpdateApplicationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateApplicationOutput {
+    /// <p>The application ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The application name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -689,6 +799,83 @@ pub struct StopDeploymentOutput {
     pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the deployment completed. </p>
     pub completed_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl StopDeploymentOutput {
+    /// <p>The ID of the application that was deployed.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the environment that was deployed.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The ID of the deployment strategy that was deployed.</p>
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+        self.deployment_strategy_id.as_deref()
+    }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn deployment_number(&self) -> i32 {
+        self.deployment_number
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn configuration_name(&self) -> std::option::Option<&str> {
+        self.configuration_name.as_deref()
+    }
+    /// <p>Information about the source location of the configuration.</p>
+    pub fn configuration_location_uri(&self) -> std::option::Option<&str> {
+        self.configuration_location_uri.as_deref()
+    }
+    /// <p>The configuration version that was deployed.</p>
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
+        self.configuration_version.as_deref()
+    }
+    /// <p>The description of the deployment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn deployment_duration_in_minutes(&self) -> i32 {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+    /// <p>The percentage of targets to receive a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> f32 {
+        self.growth_factor
+    }
+    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> i32 {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>The state of the deployment.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+        self.state.as_ref()
+    }
+    /// <p>A list containing all events related to a deployment. The most recent events are
+    /// displayed first.</p>
+    pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
+        self.event_log.as_deref()
+    }
+    /// <p>The percentage of targets for which the deployment is available.</p>
+    pub fn percentage_complete(&self) -> f32 {
+        self.percentage_complete
+    }
+    /// <p>The time the deployment started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The time the deployment completed. </p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
 }
 impl std::fmt::Debug for StopDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1058,6 +1245,83 @@ pub struct StartDeploymentOutput {
     /// <p>The time the deployment completed. </p>
     pub completed_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StartDeploymentOutput {
+    /// <p>The ID of the application that was deployed.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the environment that was deployed.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The ID of the deployment strategy that was deployed.</p>
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+        self.deployment_strategy_id.as_deref()
+    }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn deployment_number(&self) -> i32 {
+        self.deployment_number
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn configuration_name(&self) -> std::option::Option<&str> {
+        self.configuration_name.as_deref()
+    }
+    /// <p>Information about the source location of the configuration.</p>
+    pub fn configuration_location_uri(&self) -> std::option::Option<&str> {
+        self.configuration_location_uri.as_deref()
+    }
+    /// <p>The configuration version that was deployed.</p>
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
+        self.configuration_version.as_deref()
+    }
+    /// <p>The description of the deployment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn deployment_duration_in_minutes(&self) -> i32 {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+    /// <p>The percentage of targets to receive a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> f32 {
+        self.growth_factor
+    }
+    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> i32 {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>The state of the deployment.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+        self.state.as_ref()
+    }
+    /// <p>A list containing all events related to a deployment. The most recent events are
+    /// displayed first.</p>
+    pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
+        self.event_log.as_deref()
+    }
+    /// <p>The percentage of targets for which the deployment is available.</p>
+    pub fn percentage_complete(&self) -> f32 {
+        self.percentage_complete
+    }
+    /// <p>The time the deployment started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The time the deployment completed. </p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeploymentOutput");
@@ -1392,6 +1656,17 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your
+    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1461,6 +1736,17 @@ pub struct ListHostedConfigurationVersionsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHostedConfigurationVersionsOutput {
+    /// <p>The elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::HostedConfigurationVersionSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHostedConfigurationVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1543,6 +1829,17 @@ pub struct ListEnvironmentsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEnvironmentsOutput {
+    /// <p>The elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Environment]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnvironmentsOutput");
@@ -1617,6 +1914,17 @@ pub struct ListDeploymentStrategiesOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeploymentStrategiesOutput {
+    /// <p>The elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::DeploymentStrategy]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeploymentStrategiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1693,6 +2001,17 @@ pub struct ListDeploymentsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentsOutput {
+    /// <p>The elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::DeploymentSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentsOutput");
@@ -1767,6 +2086,17 @@ pub struct ListConfigurationProfilesOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationProfilesOutput {
+    /// <p>The elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ConfigurationProfileSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1846,6 +2176,17 @@ pub struct ListApplicationsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsOutput {
+    /// <p>The elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Application]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1929,6 +2270,33 @@ pub struct GetHostedConfigurationVersionOutput {
     /// <p>A standard MIME type describing the format of the configuration content. For more
     /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl GetHostedConfigurationVersionOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The configuration version.</p>
+    pub fn version_number(&self) -> i32 {
+        self.version_number
+    }
+    /// <p>A description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The content of the configuration or the configuration data.</p>
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.content.as_ref()
+    }
+    /// <p>A standard MIME type describing the format of the configuration content. For more
+    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for GetHostedConfigurationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2063,6 +2431,35 @@ pub struct GetEnvironmentOutput {
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
+}
+impl GetEnvironmentOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The environment ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The state of the environment. An environment can be in one of the following states:
+    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
+    /// <code>ROLLED_BACK</code>
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+        self.state.as_ref()
+    }
+    /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
+    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+        self.monitors.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2213,6 +2610,42 @@ pub struct GetDeploymentStrategyOutput {
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
+}
+impl GetDeploymentStrategyOutput {
+    /// <p>The deployment strategy ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the deployment strategy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the deployment strategy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn deployment_duration_in_minutes(&self) -> i32 {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+    /// <p>The percentage of targets that received a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> f32 {
+        self.growth_factor
+    }
+    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> i32 {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
+        self.replicate_to.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentStrategyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2410,6 +2843,83 @@ pub struct GetDeploymentOutput {
     pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the deployment completed. </p>
     pub completed_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetDeploymentOutput {
+    /// <p>The ID of the application that was deployed.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ID of the environment that was deployed.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The ID of the deployment strategy that was deployed.</p>
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+        self.deployment_strategy_id.as_deref()
+    }
+    /// <p>The ID of the configuration profile that was deployed.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn deployment_number(&self) -> i32 {
+        self.deployment_number
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn configuration_name(&self) -> std::option::Option<&str> {
+        self.configuration_name.as_deref()
+    }
+    /// <p>Information about the source location of the configuration.</p>
+    pub fn configuration_location_uri(&self) -> std::option::Option<&str> {
+        self.configuration_location_uri.as_deref()
+    }
+    /// <p>The configuration version that was deployed.</p>
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
+        self.configuration_version.as_deref()
+    }
+    /// <p>The description of the deployment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn deployment_duration_in_minutes(&self) -> i32 {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+    /// <p>The percentage of targets to receive a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> f32 {
+        self.growth_factor
+    }
+    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> i32 {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>The state of the deployment.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+        self.state.as_ref()
+    }
+    /// <p>A list containing all events related to a deployment. The most recent events are
+    /// displayed first.</p>
+    pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
+        self.event_log.as_deref()
+    }
+    /// <p>The percentage of targets for which the deployment is available.</p>
+    pub fn percentage_complete(&self) -> f32 {
+        self.percentage_complete
+    }
+    /// <p>The time the deployment started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The time the deployment completed. </p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2755,6 +3265,37 @@ pub struct GetConfigurationProfileOutput {
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
 }
+impl GetConfigurationProfileOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the configuration profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The configuration profile description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The URI location of the configuration.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
+    /// LocationUri.</p>
+    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+        self.retrieval_role_arn.as_deref()
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+        self.validators.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConfigurationProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationProfileOutput");
@@ -2903,6 +3444,21 @@ pub struct GetConfigurationOutput {
     /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
+impl GetConfigurationOutput {
+    /// <p>The content of the configuration or the configuration data.</p>
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.content.as_ref()
+    }
+    /// <p>The configuration version.</p>
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
+        self.configuration_version.as_deref()
+    }
+    /// <p>A standard MIME type describing the format of the configuration content. For more
+    /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationOutput");
@@ -2985,6 +3541,20 @@ pub struct GetApplicationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl GetApplicationOutput {
+    /// <p>The application ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The application name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3221,6 +3791,33 @@ pub struct CreateHostedConfigurationVersionOutput {
     /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
+impl CreateHostedConfigurationVersionOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+        self.configuration_profile_id.as_deref()
+    }
+    /// <p>The configuration version.</p>
+    pub fn version_number(&self) -> i32 {
+        self.version_number
+    }
+    /// <p>A description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The content of the configuration or the configuration data.</p>
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.content.as_ref()
+    }
+    /// <p>A standard MIME type describing the format of the configuration content. For more
+    /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHostedConfigurationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHostedConfigurationVersionOutput");
@@ -3354,6 +3951,35 @@ pub struct CreateEnvironmentOutput {
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
+}
+impl CreateEnvironmentOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The environment ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The state of the environment. An environment can be in one of the following states:
+    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
+    /// <code>ROLLED_BACK</code>
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+        self.state.as_ref()
+    }
+    /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
+    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+        self.monitors.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3504,6 +4130,42 @@ pub struct CreateDeploymentStrategyOutput {
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
+}
+impl CreateDeploymentStrategyOutput {
+    /// <p>The deployment strategy ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the deployment strategy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the deployment strategy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Total amount of time the deployment lasted.</p>
+    pub fn deployment_duration_in_minutes(&self) -> i32 {
+        self.deployment_duration_in_minutes
+    }
+    /// <p>The algorithm used to define how percentage grew over time.</p>
+    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+        self.growth_type.as_ref()
+    }
+    /// <p>The percentage of targets that received a deployed configuration during each
+    /// interval.</p>
+    pub fn growth_factor(&self) -> f32 {
+        self.growth_factor
+    }
+    /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
+    /// complete and no longer eligible for automatic roll back.</p>
+    pub fn final_bake_time_in_minutes(&self) -> i32 {
+        self.final_bake_time_in_minutes
+    }
+    /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
+        self.replicate_to.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentStrategyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3678,6 +4340,37 @@ pub struct CreateConfigurationProfileOutput {
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
 }
+impl CreateConfigurationProfileOutput {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The configuration profile ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the configuration profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The configuration profile description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The URI location of the configuration.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
+    /// LocationUri.</p>
+    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+        self.retrieval_role_arn.as_deref()
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+        self.validators.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConfigurationProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationProfileOutput");
@@ -3824,6 +4517,20 @@ pub struct CreateApplicationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl CreateApplicationOutput {
+    /// <p>The application ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The application name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

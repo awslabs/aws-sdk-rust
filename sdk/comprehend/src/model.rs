@@ -16,6 +16,22 @@ pub struct Tag {
     /// sales department. </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The initial part of a key-value pair that forms a tag associated with a given resource.
+    /// For instance, if you want to show which resources are used by which departments, you might use
+    /// “Department” as the key portion of the pair, with multiple possible values such as “sales,”
+    /// “legal,” and “administration.” </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p> The second part of a key-value pair that forms a tag associated with a given resource.
+    /// For instance, if you want to show which resources are used by which departments, you might use
+    /// “Department” as the initial (key) portion of the pair, with a value of “sales” to indicate the
+    /// sales department. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -179,6 +195,24 @@ pub struct VpcConfig {
     /// Subnets</a>. </p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl VpcConfig {
+    /// <p>The ID number for a security group on an instance of your private VPC. Security groups on
+    /// your VPC function serve as a virtual firewall to control inbound and outbound traffic and
+    /// provides security for the resources that you’ll be accessing on the VPC. This ID number is
+    /// preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
+    /// Groups for your VPC</a>. </p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a
+    /// range of IPv4 addresses used by the VPC and is specific to a given availability zone in the
+    /// VPC’s region. This ID number is preceded by "subnet-", for instance:
+    /// "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and
+    /// Subnets</a>. </p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcConfig");
@@ -304,6 +338,44 @@ pub struct OutputDataConfig {
     /// </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl OutputDataConfig {
+    /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you
+    /// specify the Amazon S3 location where you want to write the output data. The URI must be in the
+    /// same region as the API endpoint that you are calling. The location is used as the prefix for
+    /// the actual location of the output file.</p>
+    /// <p>When the topic detection job is finished, the service creates an output file in a
+    /// directory specific to the job. The <code>S3Uri</code> field contains the location of the
+    /// output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the
+    /// ouput of the operation.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+    /// output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>KMS Key Alias: <code>"alias/ExampleAlias"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>ARN of a KMS Key Alias:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for OutputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -446,6 +518,43 @@ pub struct InputDataConfig {
     /// <p>Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
     /// Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
     pub document_reader_config: std::option::Option<crate::model::DocumentReaderConfig>,
+}
+impl InputDataConfig {
+    /// <p>The Amazon S3 URI for the input data. The URI must be in same region as the API
+    /// endpoint that you are calling. The URI can point to a single input file or it can provide the
+    /// prefix for a collection of data files. </p>
+    /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
+    /// single file, Amazon Comprehend uses that file as input. If more than one file begins with the
+    /// prefix, Amazon Comprehend uses all of them as input.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>Specifies how the text in an input file should be processed:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use
+    /// this option when you are processing large documents, such as newspaper articles or
+    /// scientific papers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate
+    /// document. Use this option when you are processing many short documents, such as text
+    /// messages.</p>
+    /// </li>
+    /// </ul>
+    pub fn input_format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.input_format.as_ref()
+    }
+    /// <p>The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob. </p>
+    /// <p>Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
+    /// Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+    pub fn document_reader_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentReaderConfig> {
+        self.document_reader_config.as_ref()
+    }
 }
 impl std::fmt::Debug for InputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -593,6 +702,41 @@ pub struct DocumentReaderConfig {
     pub document_read_mode: std::option::Option<crate::model::DocumentReadMode>,
     /// <p>Specifies how the text in an input file should be processed:</p>
     pub feature_types: std::option::Option<std::vec::Vec<crate::model::DocumentReadFeatureTypes>>,
+}
+impl DocumentReaderConfig {
+    /// <p>This enum field will start with two values which will apply to PDFs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The service calls DetectDocumentText for PDF documents per page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The service calls AnalyzeDocument for PDF documents per page.</p>
+    /// </li>
+    /// </ul>
+    pub fn document_read_action(&self) -> std::option::Option<&crate::model::DocumentReadAction> {
+        self.document_read_action.as_ref()
+    }
+    /// <p>This enum field provides two values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SERVICE_DEFAULT</code> - use service defaults for Document reading. For Digital PDF it would mean using an internal parser instead of Textract APIs</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FORCE_DOCUMENT_READ_ACTION</code> - Always use specified action for DocumentReadAction, including Digital PDF.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn document_read_mode(&self) -> std::option::Option<&crate::model::DocumentReadMode> {
+        self.document_read_mode.as_ref()
+    }
+    /// <p>Specifies how the text in an input file should be processed:</p>
+    pub fn feature_types(&self) -> std::option::Option<&[crate::model::DocumentReadFeatureTypes]> {
+        self.feature_types.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentReaderConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1065,6 +1209,22 @@ pub struct RedactionConfig {
     /// <p>A character that replaces each character in the redacted PII entity.</p>
     pub mask_character: std::option::Option<std::string::String>,
 }
+impl RedactionConfig {
+    /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for
+    /// your request.</p>
+    pub fn pii_entity_types(&self) -> std::option::Option<&[crate::model::PiiEntityType]> {
+        self.pii_entity_types.as_deref()
+    }
+    /// <p>Specifies whether the PII entity is redacted with the mask character or the entity
+    /// type.</p>
+    pub fn mask_mode(&self) -> std::option::Option<&crate::model::PiiEntitiesDetectionMaskMode> {
+        self.mask_mode.as_ref()
+    }
+    /// <p>A character that replaces each character in the redacted PII entity.</p>
+    pub fn mask_character(&self) -> std::option::Option<&str> {
+        self.mask_character.as_deref()
+    }
+}
 impl std::fmt::Debug for RedactionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedactionConfig");
@@ -1489,6 +1649,89 @@ pub struct TopicsDetectionJobProperties {
     /// VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
+impl TopicsDetectionJobProperties {
+    /// <p>The identifier assigned to the topic detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:topics-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name of the topic detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the topic detection job. If the status is <code>Failed</code>,
+    /// the reason for the failure is shown in the <code>Message</code> field.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description for the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the topic detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the topic detection job was completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input data configuration supplied when you created the topic detection
+    /// job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration supplied when you created the topic detection
+    /// job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The number of topics to detect supplied when you created the topic detection job. The
+    /// default is 10. </p>
+    pub fn number_of_topics(&self) -> std::option::Option<i32> {
+        self.number_of_topics
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+    /// Amazon Comprehend read access to your job data. </p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+}
 impl std::fmt::Debug for TopicsDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TopicsDetectionJobProperties");
@@ -1787,6 +2030,29 @@ pub struct TopicsDetectionJobFilter {
     /// oldest to newest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl TopicsDetectionJobFilter {
+    /// <p></p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of topic detection jobs based on job status. Returns only jobs with
+    /// the specified status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Only returns jobs submitted before the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Only returns jobs submitted after the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for TopicsDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TopicsDetectionJobFilter");
@@ -1944,6 +2210,88 @@ pub struct SentimentDetectionJobProperties {
     /// resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
     /// VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+}
+impl SentimentDetectionJobProperties {
+    /// <p>The identifier assigned to the sentiment detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:sentiment-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name that you assigned to the sentiment detection job</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the sentiment detection job. If the status is <code>FAILED</code>,
+    /// the <code>Messages</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the sentiment detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the sentiment detection job ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input data configuration that you supplied when you created the sentiment detection
+    /// job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the sentiment detection
+    /// job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+    /// data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for SentimentDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2244,6 +2592,29 @@ pub struct SentimentDetectionJobFilter {
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SentimentDetectionJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+    /// status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for SentimentDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SentimentDetectionJobFilter");
@@ -2389,6 +2760,76 @@ pub struct PiiEntitiesDetectionJobProperties {
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
     /// which PII entities are redacted.</p>
     pub mode: std::option::Option<crate::model::PiiEntitiesDetectionMode>,
+}
+impl PiiEntitiesDetectionJobProperties {
+    /// <p>The identifier assigned to the PII entities detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:pii-entities-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name that you assigned the PII entities detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the PII entities detection job. If the status is
+    /// <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the PII entities detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the PII entities detection job completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input properties for a PII entities detection job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the PII entities
+    /// detection job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::PiiOutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>Provides configuration parameters for PII entity redaction.</p>
+    /// <p>This parameter is required if you set the <code>Mode</code> parameter to
+    /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
+    /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+    pub fn redaction_config(&self) -> std::option::Option<&crate::model::RedactionConfig> {
+        self.redaction_config.as_ref()
+    }
+    /// <p>The language code of the input documents</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+    /// data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
+    /// which PII entities are redacted.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::PiiEntitiesDetectionMode> {
+        self.mode.as_ref()
+    }
 }
 impl std::fmt::Debug for PiiEntitiesDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2657,6 +3098,18 @@ pub struct PiiOutputDataConfig {
     /// output results from an analysis job.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl PiiOutputDataConfig {
+    /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations,
+    /// you specify the Amazon S3 location where you want to write the output data. </p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+    /// output results from an analysis job.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PiiOutputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PiiOutputDataConfig");
@@ -2732,6 +3185,29 @@ pub struct PiiEntitiesDetectionJobFilter {
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PiiEntitiesDetectionJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+    /// status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
 }
 impl std::fmt::Debug for PiiEntitiesDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2890,6 +3366,88 @@ pub struct KeyPhrasesDetectionJobProperties {
     /// resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
     /// VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+}
+impl KeyPhrasesDetectionJobProperties {
+    /// <p>The identifier assigned to the key phrases detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:key-phrases-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name that you assigned the key phrases detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the key phrases detection job. If the status is <code>FAILED</code>,
+    /// the <code>Message</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the key phrases detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the key phrases detection job completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input data configuration that you supplied when you created the key phrases detection
+    /// job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the key phrases detection
+    /// job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+    /// data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for KeyPhrasesDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3190,6 +3748,29 @@ pub struct KeyPhrasesDetectionJobFilter {
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl KeyPhrasesDetectionJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+    /// status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for KeyPhrasesDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyPhrasesDetectionJobFilter");
@@ -3329,6 +3910,68 @@ pub struct EventsDetectionJobProperties {
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The types of events that are detected by the job.</p>
     pub target_event_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl EventsDetectionJobProperties {
+    /// <p>The identifier assigned to the events detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:events-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name you assigned the events detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the events detection job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of the events detection job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the events detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the events detection job completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input data configuration that you supplied when you created the events detection
+    /// job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the events detection
+    /// job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The types of events that are detected by the job.</p>
+    pub fn target_event_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_event_types.as_deref()
+    }
 }
 impl std::fmt::Debug for EventsDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3586,6 +4229,29 @@ pub struct EventsDetectionJobFilter {
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EventsDetectionJobFilter {
+    /// <p>Filters on the name of the events detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+    /// status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for EventsDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventsDetectionJobFilter");
@@ -3699,6 +4365,28 @@ pub struct EntityRecognizerSummary {
     pub latest_version_name: std::option::Option<std::string::String>,
     /// <p> Provides the status of the latest entity recognizer version.</p>
     pub latest_version_status: std::option::Option<crate::model::ModelStatus>,
+}
+impl EntityRecognizerSummary {
+    /// <p> The name that you assigned the entity recognizer.</p>
+    pub fn recognizer_name(&self) -> std::option::Option<&str> {
+        self.recognizer_name.as_deref()
+    }
+    /// <p> The number of versions you created.</p>
+    pub fn number_of_versions(&self) -> std::option::Option<i32> {
+        self.number_of_versions
+    }
+    /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
+    pub fn latest_version_created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_version_created_at.as_ref()
+    }
+    /// <p> The version name you assigned to the latest entity recognizer version.</p>
+    pub fn latest_version_name(&self) -> std::option::Option<&str> {
+        self.latest_version_name.as_deref()
+    }
+    /// <p> Provides the status of the latest entity recognizer version.</p>
+    pub fn latest_version_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.latest_version_status.as_ref()
+    }
 }
 impl std::fmt::Debug for EntityRecognizerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3951,6 +4639,101 @@ pub struct EntityRecognizerProperties {
     pub model_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The version name you assigned to the entity recognizer.</p>
     pub version_name: std::option::Option<std::string::String>,
+}
+impl EntityRecognizerProperties {
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
+    /// <p> The language of the input documents. All documents must be in the same language. Only
+    /// English ("en") is currently supported.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>Provides the status of the entity recognizer.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A description of the status of the recognizer.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the recognizer was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the recognizer creation completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The time that training of the entity recognizer started.</p>
+    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_start_time.as_ref()
+    }
+    /// <p>The time that training of the entity recognizer was completed.</p>
+    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_end_time.as_ref()
+    }
+    /// <p>The input data properties of an entity recognizer.</p>
+    pub fn input_data_config(
+        &self,
+    ) -> std::option::Option<&crate::model::EntityRecognizerInputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p> Provides information about an entity recognizer.</p>
+    pub fn recognizer_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::EntityRecognizerMetadata> {
+        self.recognizer_metadata.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+    /// Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// trained custom models. The ModelKmsKeyId can be either of the following formats: </p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
+        self.model_kms_key_id.as_deref()
+    }
+    /// <p>The version name you assigned to the entity recognizer.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityRecognizerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4293,6 +5076,30 @@ pub struct EntityRecognizerMetadata {
         std::vec::Vec<crate::model::EntityRecognizerMetadataEntityTypesListItem>,
     >,
 }
+impl EntityRecognizerMetadata {
+    /// <p> The number of documents in the input data that were used to train the entity recognizer.
+    /// Typically this is 80 to 90 percent of the input documents.</p>
+    pub fn number_of_trained_documents(&self) -> std::option::Option<i32> {
+        self.number_of_trained_documents
+    }
+    /// <p> The number of documents in the input data that were used to test the entity recognizer.
+    /// Typically this is 10 to 20 percent of the input documents.</p>
+    pub fn number_of_test_documents(&self) -> std::option::Option<i32> {
+        self.number_of_test_documents
+    }
+    /// <p>Detailed information about the accuracy of an entity recognizer.</p>
+    pub fn evaluation_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::EntityRecognizerEvaluationMetrics> {
+        self.evaluation_metrics.as_ref()
+    }
+    /// <p>Entity types from the metadata of an entity recognizer.</p>
+    pub fn entity_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::EntityRecognizerMetadataEntityTypesListItem]> {
+        self.entity_types.as_deref()
+    }
+}
 impl std::fmt::Debug for EntityRecognizerMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerMetadata");
@@ -4417,6 +5224,24 @@ pub struct EntityRecognizerMetadataEntityTypesListItem {
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
     pub number_of_train_mentions: std::option::Option<i32>,
 }
+impl EntityRecognizerMetadataEntityTypesListItem {
+    /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on
+    /// the list of entity types. </p>
+    pub fn evaluation_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::EntityTypesEvaluationMetrics> {
+        self.evaluation_metrics.as_ref()
+    }
+    /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
+    pub fn number_of_train_mentions(&self) -> std::option::Option<i32> {
+        self.number_of_train_mentions
+    }
+}
 impl std::fmt::Debug for EntityRecognizerMetadataEntityTypesListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerMetadataEntityTypesListItem");
@@ -4513,6 +5338,26 @@ pub struct EntityTypesEvaluationMetrics {
     /// the worst score is 0. </p>
     pub f1_score: std::option::Option<f64>,
 }
+impl EntityTypesEvaluationMetrics {
+    /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the
+    /// test data. High precision means that the recognizer returned substantially more relevant
+    /// results than irrelevant ones. </p>
+    pub fn precision(&self) -> std::option::Option<f64> {
+        self.precision
+    }
+    /// <p>A measure of how complete the recognizer results are for a specific entity type in the
+    /// test data. High recall means that the recognizer returned most of the relevant results.</p>
+    pub fn recall(&self) -> std::option::Option<f64> {
+        self.recall
+    }
+    /// <p>A measure of how accurate the recognizer results are for a specific entity type in the
+    /// test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The
+    /// <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and
+    /// the worst score is 0. </p>
+    pub fn f1_score(&self) -> std::option::Option<f64> {
+        self.f1_score
+    }
+}
 impl std::fmt::Debug for EntityTypesEvaluationMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityTypesEvaluationMetrics");
@@ -4607,6 +5452,25 @@ pub struct EntityRecognizerEvaluationMetrics {
     /// the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
     /// harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
     pub f1_score: std::option::Option<f64>,
+}
+impl EntityRecognizerEvaluationMetrics {
+    /// <p>A measure of the usefulness of the recognizer results in the test data. High precision
+    /// means that the recognizer returned substantially more relevant results than irrelevant ones.
+    /// </p>
+    pub fn precision(&self) -> std::option::Option<f64> {
+        self.precision
+    }
+    /// <p>A measure of how complete the recognizer results are for the test data. High recall means
+    /// that the recognizer returned most of the relevant results.</p>
+    pub fn recall(&self) -> std::option::Option<f64> {
+        self.recall
+    }
+    /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from
+    /// the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
+    /// harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
+    pub fn f1_score(&self) -> std::option::Option<f64> {
+        self.f1_score
+    }
 }
 impl std::fmt::Debug for EntityRecognizerEvaluationMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4738,6 +5602,70 @@ pub struct EntityRecognizerInputDataConfig {
     /// <code>AUGMENTED_MANIFEST</code>.</p>
     pub augmented_manifests:
         std::option::Option<std::vec::Vec<crate::model::AugmentedManifestsListItem>>,
+}
+impl EntityRecognizerInputDataConfig {
+    /// <p>The format of your training data:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The
+    /// CSV file contains information about the custom entities that your trained model will
+    /// detect. The required format of the file depends on whether you are providing annotations
+    /// or an entity list.</p>
+    /// <p>If you use this value, you must provide your CSV file by using either the
+    /// <code>Annotations</code> or <code>EntityList</code> parameters. You must provide your
+    /// training documents by using the <code>Documents</code> parameter.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon
+    /// SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON
+    /// object that contains a training document and its labels. Each label annotates a named
+    /// entity in the training document. </p>
+    /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter
+    /// in your request.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the
+    /// default.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::EntityRecognizerDataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The entity types in the labeled training data that Amazon Comprehend uses to train the
+    /// custom entity recognizer. Any entity types that you don't specify are ignored.</p>
+    /// <p>A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity
+    /// types must not contain the following invalid characters: \n (line break), \\n (escaped line
+    /// break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
+    /// space, and , (comma). </p>
+    pub fn entity_types(&self) -> std::option::Option<&[crate::model::EntityTypesListItem]> {
+        self.entity_types.as_deref()
+    }
+    /// <p>The S3 location of the folder that contains the training documents for your custom entity
+    /// recognizer.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to
+    /// <code>COMPREHEND_CSV</code>.</p>
+    pub fn documents(&self) -> std::option::Option<&crate::model::EntityRecognizerDocuments> {
+        self.documents.as_ref()
+    }
+    /// <p>The S3 location of the CSV file that annotates your training documents.</p>
+    pub fn annotations(&self) -> std::option::Option<&crate::model::EntityRecognizerAnnotations> {
+        self.annotations.as_ref()
+    }
+    /// <p>The S3 location of the CSV file that has the entity list for your custom entity
+    /// recognizer.</p>
+    pub fn entity_list(&self) -> std::option::Option<&crate::model::EntityRecognizerEntityList> {
+        self.entity_list.as_ref()
+    }
+    /// <p>A list of augmented manifest files that provide training data for your custom model. An
+    /// augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground
+    /// Truth.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to
+    /// <code>AUGMENTED_MANIFEST</code>.</p>
+    pub fn augmented_manifests(
+        &self,
+    ) -> std::option::Option<&[crate::model::AugmentedManifestsListItem]> {
+        self.augmented_manifests.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityRecognizerInputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4989,6 +5917,54 @@ pub struct AugmentedManifestsListItem {
     /// </li>
     /// </ul>
     pub document_type: std::option::Option<crate::model::AugmentedManifestsDocumentTypeFormat>,
+}
+impl AugmentedManifestsListItem {
+    /// <p>The Amazon S3 location of the augmented manifest file.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
+    /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
+    /// <p> TEST - all of the documents in the manifest will be used for testing.</p>
+    pub fn split(&self) -> std::option::Option<&crate::model::Split> {
+        self.split.as_ref()
+    }
+    /// <p>The JSON attribute that contains the annotations for your training documents. The number
+    /// of attribute names that you specify depends on whether your augmented manifest file is the
+    /// output of a single labeling job or a chained labeling job.</p>
+    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key
+    /// that was used when the job was created in Ground Truth.</p>
+    /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key
+    /// for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from
+    /// an individual job.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
+    /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
+    pub fn annotation_data_s3_uri(&self) -> std::option::Option<&str> {
+        self.annotation_data_s3_uri.as_deref()
+    }
+    /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
+    pub fn source_documents_s3_uri(&self) -> std::option::Option<&str> {
+        self.source_documents_s3_uri.as_deref()
+    }
+    /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported.
+    /// For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+    /// </li>
+    /// </ul>
+    pub fn document_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AugmentedManifestsDocumentTypeFormat> {
+        self.document_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AugmentedManifestsListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5280,6 +6256,13 @@ pub struct EntityRecognizerEntityList {
     /// same region as the API endpoint that you are calling.</p>
     pub s3_uri: std::option::Option<std::string::String>,
 }
+impl EntityRecognizerEntityList {
+    /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the
+    /// same region as the API endpoint that you are calling.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for EntityRecognizerEntityList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerEntityList");
@@ -5333,6 +6316,18 @@ pub struct EntityRecognizerAnnotations {
     /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located.
     /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
     pub test_s3_uri: std::option::Option<std::string::String>,
+}
+impl EntityRecognizerAnnotations {
+    /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are
+    /// located. The URI must be in the same region as the API endpoint that you are calling.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located.
+    /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+    pub fn test_s3_uri(&self) -> std::option::Option<&str> {
+        self.test_s3_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityRecognizerAnnotations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5409,6 +6404,27 @@ pub struct EntityRecognizerDocuments {
     ///
     /// ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
     pub input_format: std::option::Option<crate::model::InputFormat>,
+}
+impl EntityRecognizerDocuments {
+    /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer
+    /// are located. The URI must be in the same region as the API endpoint that you are
+    /// calling.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p> Specifies the Amazon S3 location where the test documents for an entity recognizer are located.
+    /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+    pub fn test_s3_uri(&self) -> std::option::Option<&str> {
+        self.test_s3_uri.as_deref()
+    }
+    /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE.
+    ///
+    /// ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.
+    ///
+    /// ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
+    pub fn input_format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.input_format.as_ref()
+    }
 }
 impl std::fmt::Debug for EntityRecognizerDocuments {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5505,6 +6521,16 @@ pub struct EntityTypesListItem {
     /// (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t
     /// (escaped tab), space, and , (comma).</p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl EntityTypesListItem {
+    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a
+    /// custom entity recognizer.</p>
+    /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n
+    /// (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t
+    /// (escaped tab), space, and , (comma).</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityTypesListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5627,6 +6653,28 @@ pub struct EntityRecognizerFilter {
     /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EntityRecognizerFilter {
+    /// <p>The status of an entity recognizer.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The name that you assigned the entity recognizer.</p>
+    pub fn recognizer_name(&self) -> std::option::Option<&str> {
+        self.recognizer_name.as_deref()
+    }
+    /// <p>Filters the list of entities based on the time that the list was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of entities based on the time that the list was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
 }
 impl std::fmt::Debug for EntityRecognizerFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5785,6 +6833,92 @@ pub struct EntitiesDetectionJobProperties {
     /// resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
     /// VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+}
+impl EntitiesDetectionJobProperties {
+    /// <p>The identifier assigned to the entities detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:entities-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name that you assigned the entities detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the entities detection job. If the status is <code>FAILED</code>,
+    /// the <code>Message</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the entities detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the entities detection job completed</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
+    /// <p>The input data configuration that you supplied when you created the entities detection
+    /// job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the entities detection
+    /// job. </p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+    /// data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for EntitiesDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6101,6 +7235,29 @@ pub struct EntitiesDetectionJobFilter {
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EntitiesDetectionJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+    /// status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for EntitiesDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntitiesDetectionJobFilter");
@@ -6232,6 +7389,58 @@ pub struct EndpointProperties {
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
     pub desired_data_access_role_arn: std::option::Option<std::string::String>,
+}
+impl EndpointProperties {
+    /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>Specifies the status of the endpoint. Because the endpoint updates and creation are
+    /// asynchronous, so customers will need to wait for the endpoint to be <code>Ready</code> status
+    /// before making inference requests.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies a reason for failure in cases of <code>Failed</code> status.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
+    pub fn desired_model_arn(&self) -> std::option::Option<&str> {
+        self.desired_model_arn.as_deref()
+    }
+    /// <p>The desired number of inference units to be used by the model using this endpoint.
+    ///
+    /// Each inference unit represents of a throughput of 100 characters per second.</p>
+    pub fn desired_inference_units(&self) -> std::option::Option<i32> {
+        self.desired_inference_units
+    }
+    /// <p>The number of inference units currently used by the model using this endpoint.</p>
+    pub fn current_inference_units(&self) -> std::option::Option<i32> {
+        self.current_inference_units
+    }
+    /// <p>The creation date and time of the endpoint.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the endpoint was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
+    /// managed key (ModelKmsKeyId).</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
+    pub fn desired_data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.desired_data_access_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6523,6 +7732,25 @@ pub struct EndpointFilter {
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EndpointFilter {
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready,
+    /// Updating, Deleting, Failed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for EndpointFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointFilter");
@@ -6671,6 +7899,85 @@ pub struct DominantLanguageDetectionJobProperties {
     /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
     /// VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+}
+impl DominantLanguageDetectionJobProperties {
+    /// <p>The identifier assigned to the dominant language detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique,
+    /// fully qualified identifier for the job. It includes the AWS account, Region, and the job ID.
+    /// The format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:dominant-language-detection-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name that you assigned to the dominant language detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the dominant language detection job. If the status is
+    /// <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description for the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the dominant language detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the dominant language detection job completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input data configuration that you supplied when you created the dominant language
+    /// detection job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the dominant language
+    /// detection job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+    /// data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your dominant language detection job. For more information, see
+    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DominantLanguageDetectionJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6957,6 +8264,29 @@ pub struct DominantLanguageDetectionJobFilter {
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DominantLanguageDetectionJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+    /// status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for DominantLanguageDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DominantLanguageDetectionJobFilter");
@@ -7070,6 +8400,28 @@ pub struct DocumentClassifierSummary {
     pub latest_version_name: std::option::Option<std::string::String>,
     /// <p>Provides the status of the latest document classifier version.</p>
     pub latest_version_status: std::option::Option<crate::model::ModelStatus>,
+}
+impl DocumentClassifierSummary {
+    /// <p>The name that you assigned the document classifier.</p>
+    pub fn document_classifier_name(&self) -> std::option::Option<&str> {
+        self.document_classifier_name.as_deref()
+    }
+    /// <p>The number of versions you created.</p>
+    pub fn number_of_versions(&self) -> std::option::Option<i32> {
+        self.number_of_versions
+    }
+    /// <p>The time that the latest document classifier version was submitted for processing.</p>
+    pub fn latest_version_created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_version_created_at.as_ref()
+    }
+    /// <p>The version name you assigned to the latest document classifier version.</p>
+    pub fn latest_version_name(&self) -> std::option::Option<&str> {
+        self.latest_version_name.as_deref()
+    }
+    /// <p>Provides the status of the latest document classifier version.</p>
+    pub fn latest_version_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.latest_version_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DocumentClassifierSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7253,6 +8605,119 @@ pub struct DocumentClassifierProperties {
     pub model_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The version name that you assigned to the document classifier.</p>
     pub version_name: std::option::Option<std::string::String>,
+}
+impl DocumentClassifierProperties {
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
+    }
+    /// <p>The language code for the language of the documents that the classifier was trained
+    /// on.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The status of the document classifier. If the status is <code>TRAINED</code> the
+    /// classifier is ready to use. If the status is <code>FAILED</code> you can see additional
+    /// information about why the classifier wasn't trained in the <code>Message</code> field.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the status of the classifier.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the document classifier was submitted for training.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that training the document classifier completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Indicates the time when the training starts on documentation classifiers. You are billed
+    /// for the time interval between this time and the value of TrainingEndTime. </p>
+    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_start_time.as_ref()
+    }
+    /// <p>The time that training of the document classifier was completed. Indicates the time when
+    /// the training completes on documentation classifiers. You are billed for the time interval
+    /// between this time and the value of TrainingStartTime.</p>
+    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_end_time.as_ref()
+    }
+    /// <p>The input data configuration that you supplied when you created the document classifier
+    /// for training.</p>
+    pub fn input_data_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentClassifierInputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p> Provides output results configuration parameters for custom classifier jobs.</p>
+    pub fn output_data_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentClassifierOutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>Information about the document classifier, including the number of documents used for
+    /// training the classifier, the number of documents used for test the classifier, and an accuracy
+    /// rating.</p>
+    pub fn classifier_metadata(&self) -> std::option::Option<&crate::model::ClassifierMetadata> {
+        self.classifier_metadata.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+    /// Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Indicates the mode in which the specific classifier was trained. This also indicates the
+    /// format of input documents and the format of the confusion matrix. Each classifier can only be
+    /// trained in one mode and this cannot be changed once the classifier is trained.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::DocumentClassifierMode> {
+        self.mode.as_ref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
+        self.model_kms_key_id.as_deref()
+    }
+    /// <p>The version name that you assigned to the document classifier.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentClassifierProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7702,6 +9167,29 @@ pub struct ClassifierMetadata {
     /// classifier.</p>
     pub evaluation_metrics: std::option::Option<crate::model::ClassifierEvaluationMetrics>,
 }
+impl ClassifierMetadata {
+    /// <p>The number of labels in the input data. </p>
+    pub fn number_of_labels(&self) -> std::option::Option<i32> {
+        self.number_of_labels
+    }
+    /// <p>The number of documents in the input data that were used to train the classifier.
+    /// Typically this is 80 to 90 percent of the input documents.</p>
+    pub fn number_of_trained_documents(&self) -> std::option::Option<i32> {
+        self.number_of_trained_documents
+    }
+    /// <p>The number of documents in the input data that were used to test the classifier. Typically
+    /// this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
+    pub fn number_of_test_documents(&self) -> std::option::Option<i32> {
+        self.number_of_test_documents
+    }
+    /// <p> Describes the result metrics for the test data associated with an documentation
+    /// classifier.</p>
+    pub fn evaluation_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::ClassifierEvaluationMetrics> {
+        self.evaluation_metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for ClassifierMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifierMetadata");
@@ -7839,6 +9327,60 @@ pub struct ClassifierEvaluationMetrics {
     /// of wrong labels compared to the total number of labels. Scores closer to zero are
     /// better.</p>
     pub hamming_loss: std::option::Option<f64>,
+}
+impl ClassifierEvaluationMetrics {
+    /// <p>The fraction of the labels that were correct recognized. It is computed by dividing the
+    /// number of labels in the test documents that were correctly recognized by the total number of
+    /// labels in the test documents.</p>
+    pub fn accuracy(&self) -> std::option::Option<f64> {
+        self.accuracy
+    }
+    /// <p>A measure of the usefulness of the classifier results in the test data. High precision
+    /// means that the classifier returned substantially more relevant results than irrelevant
+    /// ones.</p>
+    pub fn precision(&self) -> std::option::Option<f64> {
+        self.precision
+    }
+    /// <p>A measure of how complete the classifier results are for the test data. High recall means
+    /// that the classifier returned most of the relevant results. </p>
+    pub fn recall(&self) -> std::option::Option<f64> {
+        self.recall
+    }
+    /// <p>A measure of how accurate the classifier results are for the test data. It is derived from
+    /// the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
+    /// harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
+    pub fn f1_score(&self) -> std::option::Option<f64> {
+        self.f1_score
+    }
+    /// <p>A measure of the usefulness of the recognizer results in the test data. High precision
+    /// means that the recognizer returned substantially more relevant results than irrelevant ones.
+    /// Unlike the Precision metric which comes from averaging the precision of all available labels,
+    /// this is based on the overall score of all precision scores added together.</p>
+    pub fn micro_precision(&self) -> std::option::Option<f64> {
+        self.micro_precision
+    }
+    /// <p>A measure of how complete the classifier results are for the test data. High recall means
+    /// that the classifier returned most of the relevant results. Specifically, this indicates how
+    /// many of the correct categories in the text that the model can predict. It is a percentage of
+    /// correct categories in the text that can found. Instead of averaging the recall scores of all
+    /// labels (as with Recall), micro Recall is based on the overall score of all recall scores added
+    /// together.</p>
+    pub fn micro_recall(&self) -> std::option::Option<f64> {
+        self.micro_recall
+    }
+    /// <p>A measure of how accurate the classifier results are for the test data. It is a
+    /// combination of the <code>Micro Precision</code> and <code>Micro Recall</code> values. The
+    /// <code>Micro F1Score</code> is the harmonic mean of the two scores. The highest score is 1,
+    /// and the worst score is 0.</p>
+    pub fn micro_f1_score(&self) -> std::option::Option<f64> {
+        self.micro_f1_score
+    }
+    /// <p>Indicates the fraction of labels that are incorrectly predicted. Also seen as the fraction
+    /// of wrong labels compared to the total number of labels. Scores closer to zero are
+    /// better.</p>
+    pub fn hamming_loss(&self) -> std::option::Option<f64> {
+        self.hamming_loss
+    }
 }
 impl std::fmt::Debug for ClassifierEvaluationMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8049,6 +9591,44 @@ pub struct DocumentClassifierOutputDataConfig {
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl DocumentClassifierOutputDataConfig {
+    /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom
+    /// classifier, you specify the Amazon S3 location where you want to write the confusion matrix.
+    /// The URI must be in the same region as the API endpoint that you are calling. The location is
+    /// used as the prefix for the actual location of this output file.</p>
+    /// <p>When the custom classifier job is finished, the service creates the output file in a
+    /// directory specific to the job. The <code>S3Uri</code> field contains the location of the
+    /// output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the
+    /// confusion matrix.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+    /// output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>KMS Key Alias: <code>"alias/ExampleAlias"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>ARN of a KMS Key Alias:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DocumentClassifierOutputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentClassifierOutputDataConfig");
@@ -8211,6 +9791,66 @@ pub struct DocumentClassifierInputDataConfig {
     /// <code>AUGMENTED_MANIFEST</code>.</p>
     pub augmented_manifests:
         std::option::Option<std::vec::Vec<crate::model::AugmentedManifestsListItem>>,
+}
+impl DocumentClassifierInputDataConfig {
+    /// <p>The format of your training data:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the
+    /// first column, and documents are provided in the second. If you use this value, you must
+    /// provide the <code>S3Uri</code> parameter in your request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon
+    /// SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON
+    /// object that contains a training document and its associated labels. </p>
+    /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter
+    /// in your request.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the
+    /// default.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::DocumentClassifierDataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same region as the API
+    /// endpoint that you are calling. The URI can point to a single input file or it can provide the
+    /// prefix for a collection of input files.</p>
+    /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
+    /// single file, Amazon Comprehend uses that file as input. If more than one file begins with the
+    /// prefix, Amazon Comprehend uses all of them as input.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to
+    /// <code>COMPREHEND_CSV</code>.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>The Amazon S3 URI for the input data.
+    /// The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling.
+    /// The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
+    pub fn test_s3_uri(&self) -> std::option::Option<&str> {
+        self.test_s3_uri.as_deref()
+    }
+    /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier.
+    /// The default delimiter between labels is a pipe (|). You can use a different character as a
+    /// delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the
+    /// training documents use a delimiter other than the default or the delimiter you specify, the
+    /// labels on that line will be combined to make a single unique label, such as
+    /// LABELLABELLABEL.</p>
+    pub fn label_delimiter(&self) -> std::option::Option<&str> {
+        self.label_delimiter.as_deref()
+    }
+    /// <p>A list of augmented manifest files that provide training data for your custom model. An
+    /// augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground
+    /// Truth.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to
+    /// <code>AUGMENTED_MANIFEST</code>.</p>
+    pub fn augmented_manifests(
+        &self,
+    ) -> std::option::Option<&[crate::model::AugmentedManifestsListItem]> {
+        self.augmented_manifests.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentClassifierInputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8469,6 +10109,28 @@ pub struct DocumentClassifierFilter {
     /// returned in descending order, newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DocumentClassifierFilter {
+    /// <p>Filters the list of classifiers based on status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The name that you assigned to the document classifier</p>
+    pub fn document_classifier_name(&self) -> std::option::Option<&str> {
+        self.document_classifier_name.as_deref()
+    }
+    /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
+    /// processing. Returns only classifiers submitted before the specified time. Classifiers are
+    /// returned in ascending order, oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
+    /// processing. Returns only classifiers submitted after the specified time. Classifiers are
+    /// returned in descending order, newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for DocumentClassifierFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentClassifierFilter");
@@ -8624,6 +10286,88 @@ pub struct DocumentClassificationJobProperties {
     /// resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
     /// VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+}
+impl DocumentClassificationJobProperties {
+    /// <p>The identifier assigned to the document classification job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully
+    /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+    /// format of the ARN is as follows:</p>
+    /// <p>
+    /// <code>arn:<partition>:comprehend:<region>:<account-id>:document-classification-job/<job-id></code>
+    /// </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p>
+    /// <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+    /// </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name that you assigned to the document classification job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the document classification job. If the status is
+    /// <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of the job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the document classification job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the document classification job completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
+    }
+    /// <p>The input data configuration that you supplied when you created the document
+    /// classification job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the document
+    /// classification job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+    /// resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DocumentClassificationJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8924,6 +10668,28 @@ pub struct DocumentClassificationJobFilter {
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DocumentClassificationJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list based on job status. Returns only jobs with the specified status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for DocumentClassificationJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentClassificationJobFilter");
@@ -9040,6 +10806,31 @@ pub struct SyntaxToken {
     /// the part of speech was correctly identified. For more information, see <a>how-syntax</a>.</p>
     pub part_of_speech: std::option::Option<crate::model::PartOfSpeechTag>,
 }
+impl SyntaxToken {
+    /// <p>A unique identifier for a token.</p>
+    pub fn token_id(&self) -> std::option::Option<i32> {
+        self.token_id
+    }
+    /// <p>The word that was recognized in the source text.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the
+    /// word.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the
+    /// word.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that
+    /// the part of speech was correctly identified. For more information, see <a>how-syntax</a>.</p>
+    pub fn part_of_speech(&self) -> std::option::Option<&crate::model::PartOfSpeechTag> {
+        self.part_of_speech.as_ref()
+    }
+}
 impl std::fmt::Debug for SyntaxToken {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SyntaxToken");
@@ -9153,6 +10944,17 @@ pub struct PartOfSpeechTag {
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly
     /// identified.</p>
     pub score: std::option::Option<f32>,
+}
+impl PartOfSpeechTag {
+    /// <p>Identifies the part of speech that the token represents.</p>
+    pub fn tag(&self) -> std::option::Option<&crate::model::PartOfSpeechTagType> {
+        self.tag.as_ref()
+    }
+    /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly
+    /// identified.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
 }
 impl std::fmt::Debug for PartOfSpeechTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9424,6 +11226,28 @@ pub struct SentimentScore {
     /// the <code>MIXED</code> sentiment.</p>
     pub mixed: std::option::Option<f32>,
 }
+impl SentimentScore {
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+    /// the <code>POSITIVE</code> sentiment.</p>
+    pub fn positive(&self) -> std::option::Option<f32> {
+        self.positive
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+    /// the <code>NEGATIVE</code> sentiment.</p>
+    pub fn negative(&self) -> std::option::Option<f32> {
+        self.negative
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+    /// the <code>NEUTRAL</code> sentiment.</p>
+    pub fn neutral(&self) -> std::option::Option<f32> {
+        self.neutral
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+    /// the <code>MIXED</code> sentiment.</p>
+    pub fn mixed(&self) -> std::option::Option<f32> {
+        self.mixed
+    }
+}
 impl std::fmt::Debug for SentimentScore {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SentimentScore");
@@ -9596,6 +11420,32 @@ pub struct PiiEntity {
     /// multi-byte UTF-8 character maps to a single code point.</p>
     pub end_offset: std::option::Option<i32>,
 }
+impl PiiEntity {
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+    /// detection.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The entity's type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PiiEntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A character offset in the input text that shows where the PII entity begins (the first
+    /// character is at position 0). The offset returns the position of each UTF-8 code point in the
+    /// string. A <i>code point</i> is the abstract character from a particular
+    /// graphical representation. For example, a multi-byte UTF-8 character maps to a single code
+    /// point.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>A character offset in the input text that shows where the PII entity ends. The offset
+    /// returns the position of each UTF-8 code point in the string. A <i>code point</i>
+    /// is the abstract character from a particular graphical representation. For example, a
+    /// multi-byte UTF-8 character maps to a single code point.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+}
 impl std::fmt::Debug for PiiEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PiiEntity");
@@ -9712,6 +11562,32 @@ pub struct KeyPhrase {
     /// character from a particular graphical representation. For example, a multi-byte UTF-8
     /// character maps to a single code point.</p>
     pub end_offset: std::option::Option<i32>,
+}
+impl KeyPhrase {
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+    /// detection.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The text of a key noun phrase.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>A character offset in the input text that shows where the key phrase begins (the first
+    /// character is at position 0). The offset returns the position of each UTF-8 code point in the
+    /// string. A <i>code point</i> is the abstract character from a particular
+    /// graphical representation. For example, a multi-byte UTF-8 character maps to a single code
+    /// point.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>A character offset in the input text where the key phrase ends. The offset returns the
+    /// position of each UTF-8 code point in the string. A <code>code point</code> is the abstract
+    /// character from a particular graphical representation. For example, a multi-byte UTF-8
+    /// character maps to a single code point.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
 }
 impl std::fmt::Debug for KeyPhrase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9832,6 +11708,36 @@ pub struct Entity {
     /// is the abstract character from a particular graphical representation. For example, a
     /// multi-byte UTF-8 character maps to a single code point. </p>
     pub end_offset: std::option::Option<i32>,
+}
+impl Entity {
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+    /// detection.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The entity's type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The text of the entity.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>A character offset in the input text that shows where the entity begins (the first
+    /// character is at position 0). The offset returns the position of each UTF-8 code point in the
+    /// string. A <i>code point</i> is the abstract character from a particular
+    /// graphical representation. For example, a multi-byte UTF-8 character maps to a single code
+    /// point.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>A character offset in the input text that shows where the entity ends. The offset
+    /// returns the position of each UTF-8 code point in the string. A <i>code point</i>
+    /// is the abstract character from a particular graphical representation. For example, a
+    /// multi-byte UTF-8 character maps to a single code point. </p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
 }
 impl std::fmt::Debug for Entity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10048,6 +11954,19 @@ pub struct DominantLanguage {
     /// detection.</p>
     pub score: std::option::Option<f32>,
 }
+impl DominantLanguage {
+    /// <p>The RFC 5646 language code for the dominant language. For more information about RFC
+    /// 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
+    /// Languages</a> on the <i>IETF Tools</i> web site.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+    /// detection.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+}
 impl std::fmt::Debug for DominantLanguage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DominantLanguage");
@@ -10122,6 +12041,17 @@ pub struct EntityLabel {
     /// detection.</p>
     pub score: std::option::Option<f32>,
 }
+impl EntityLabel {
+    /// <p>The name of the label.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::PiiEntityType> {
+        self.name.as_ref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+    /// detection.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+}
 impl std::fmt::Debug for EntityLabel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityLabel");
@@ -10187,6 +12117,16 @@ pub struct DocumentLabel {
     /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
     pub score: std::option::Option<f32>,
 }
+impl DocumentLabel {
+    /// <p>The name of the label.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+}
 impl std::fmt::Debug for DocumentLabel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentLabel");
@@ -10249,6 +12189,16 @@ pub struct DocumentClass {
     pub name: std::option::Option<std::string::String>,
     /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
     pub score: std::option::Option<f32>,
+}
+impl DocumentClass {
+    /// <p>The name of the class.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
 }
 impl std::fmt::Debug for DocumentClass {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10316,6 +12266,20 @@ pub struct BatchItemError {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A text description of the error.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl BatchItemError {
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn index(&self) -> std::option::Option<i32> {
+        self.index
+    }
+    /// <p>The numeric error code of the error.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>A text description of the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10397,6 +12361,16 @@ pub struct BatchDetectSyntaxItemResult {
     /// <p>The syntax tokens for the words in the document, one token for each word.</p>
     pub syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
 }
+impl BatchDetectSyntaxItemResult {
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn index(&self) -> std::option::Option<i32> {
+        self.index
+    }
+    /// <p>The syntax tokens for the words in the document, one token for each word.</p>
+    pub fn syntax_tokens(&self) -> std::option::Option<&[crate::model::SyntaxToken]> {
+        self.syntax_tokens.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDetectSyntaxItemResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectSyntaxItemResult");
@@ -10473,6 +12447,21 @@ pub struct BatchDetectSentimentItemResult {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment
     /// detection.</p>
     pub sentiment_score: std::option::Option<crate::model::SentimentScore>,
+}
+impl BatchDetectSentimentItemResult {
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn index(&self) -> std::option::Option<i32> {
+        self.index
+    }
+    /// <p>The sentiment detected in the document.</p>
+    pub fn sentiment(&self) -> std::option::Option<&crate::model::SentimentType> {
+        self.sentiment.as_ref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment
+    /// detection.</p>
+    pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
+        self.sentiment_score.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchDetectSentimentItemResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10561,6 +12550,17 @@ pub struct BatchDetectKeyPhrasesItemResult {
     /// the document.</p>
     pub key_phrases: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
 }
+impl BatchDetectKeyPhrasesItemResult {
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn index(&self) -> std::option::Option<i32> {
+        self.index
+    }
+    /// <p>One or more <a>KeyPhrase</a> objects, one for each key phrase detected in
+    /// the document.</p>
+    pub fn key_phrases(&self) -> std::option::Option<&[crate::model::KeyPhrase]> {
+        self.key_phrases.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDetectKeyPhrasesItemResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectKeyPhrasesItemResult");
@@ -10638,6 +12638,17 @@ pub struct BatchDetectEntitiesItemResult {
     /// document.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
+impl BatchDetectEntitiesItemResult {
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn index(&self) -> std::option::Option<i32> {
+        self.index
+    }
+    /// <p>One or more <a>Entity</a> objects, one for each entity detected in the
+    /// document.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDetectEntitiesItemResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectEntitiesItemResult");
@@ -10714,6 +12725,17 @@ pub struct BatchDetectDominantLanguageItemResult {
     /// <p>One or more <a>DominantLanguage</a> objects describing the dominant
     /// languages in the document.</p>
     pub languages: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,
+}
+impl BatchDetectDominantLanguageItemResult {
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn index(&self) -> std::option::Option<i32> {
+        self.index
+    }
+    /// <p>One or more <a>DominantLanguage</a> objects describing the dominant
+    /// languages in the document.</p>
+    pub fn languages(&self) -> std::option::Option<&[crate::model::DominantLanguage]> {
+        self.languages.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetectDominantLanguageItemResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

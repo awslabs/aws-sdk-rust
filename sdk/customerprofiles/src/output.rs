@@ -6,6 +6,12 @@ pub struct UpdateProfileOutput {
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: std::option::Option<std::string::String>,
 }
+impl UpdateProfileOutput {
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProfileOutput");
@@ -74,6 +80,49 @@ pub struct UpdateDomainOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateDomainOutput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The default number of days until the data within the domain expires.</p>
+    pub fn default_expiration_days(&self) -> std::option::Option<i32> {
+        self.default_expiration_days
+    }
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
+    /// of encryption key is specified. It is used to encrypt all data before it is placed in
+    /// permanent or semi-permanent storage.</p>
+    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+        self.default_encryption_key.as_deref()
+    }
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
+    /// ingesting data from third party applications.</p>
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+        self.dead_letter_queue_url.as_deref()
+    }
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
+    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
+        self.matching.as_ref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -320,6 +369,16 @@ pub struct SearchProfilesOutput {
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchProfilesOutput {
+    /// <p>The list of SearchProfiles instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Profile]> {
+        self.items.as_deref()
+    }
+    /// <p>The pagination token from the previous SearchProfiles API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchProfilesOutput");
@@ -419,6 +478,68 @@ pub struct PutProfileObjectTypeOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PutProfileObjectTypeOutput {
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>Description of the profile object type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique identifier for the object template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The number of days until the data in the object expires.</p>
+    pub fn expiration_days(&self) -> std::option::Option<i32> {
+        self.expiration_days
+    }
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this
+    /// profile object type.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
+    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
+    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
+    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
+    /// is found, then the service creates a new standard profile.</p>
+    pub fn allow_profile_creation(&self) -> bool {
+        self.allow_profile_creation
+    }
+    /// <p>A map of the name and ObjectType field.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    pub fn keys(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
+    > {
+        self.keys.as_ref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for PutProfileObjectTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +798,12 @@ pub struct PutProfileObjectOutput {
     /// <p>The unique identifier of the profile object generated by the service.</p>
     pub profile_object_unique_key: std::option::Option<std::string::String>,
 }
+impl PutProfileObjectOutput {
+    /// <p>The unique identifier of the profile object generated by the service.</p>
+    pub fn profile_object_unique_key(&self) -> std::option::Option<&str> {
+        self.profile_object_unique_key.as_deref()
+    }
+}
 impl std::fmt::Debug for PutProfileObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutProfileObjectOutput");
@@ -738,6 +865,35 @@ pub struct PutIntegrationOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PutIntegrationOutput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for PutIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -878,6 +1034,12 @@ pub struct MergeProfilesOutput {
     /// <p>A message that indicates the merge request is complete.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl MergeProfilesOutput {
+    /// <p>A message that indicates the merge request is complete.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for MergeProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeProfilesOutput");
@@ -926,6 +1088,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -991,6 +1162,16 @@ pub struct ListProfileObjectTypeTemplatesOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>>,
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProfileObjectTypeTemplatesOutput {
+    /// <p>The list of ListProfileObjectType template instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ListProfileObjectTypeTemplateItem]> {
+        self.items.as_deref()
+    }
+    /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProfileObjectTypeTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1070,6 +1251,16 @@ pub struct ListProfileObjectTypesOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProfileObjectTypesOutput {
+    /// <p>The list of ListProfileObjectTypes instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ListProfileObjectTypeItem]> {
+        self.items.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProfileObjectTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProfileObjectTypesOutput");
@@ -1143,6 +1334,16 @@ pub struct ListProfileObjectsOutput {
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProfileObjectsOutput {
+    /// <p>The list of ListProfileObject instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ListProfileObjectsItem]> {
+        self.items.as_deref()
+    }
+    /// <p>The pagination token from the previous call to ListProfileObjects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProfileObjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProfileObjectsOutput");
@@ -1214,6 +1415,16 @@ pub struct ListIntegrationsOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIntegrationsOutput {
+    /// <p>The list of ListIntegrations instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ListIntegrationItem]> {
+        self.items.as_deref()
+    }
+    /// <p>The pagination token from the previous ListIntegrations API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIntegrationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1287,6 +1498,16 @@ pub struct ListDomainsOutput {
     /// <p>The pagination token from the previous ListDomains API call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsOutput {
+    /// <p>The list of ListDomains instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ListDomainItem]> {
+        self.items.as_deref()
+    }
+    /// <p>The pagination token from the previous ListDomains API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsOutput");
@@ -1358,6 +1579,16 @@ pub struct ListAccountIntegrationsOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccountIntegrationsOutput {
+    /// <p>The list of ListAccountIntegration instances.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ListIntegrationItem]> {
+        self.items.as_deref()
+    }
+    /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccountIntegrationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1446,6 +1677,44 @@ pub struct GetProfileObjectTypeTemplateOutput {
     pub keys: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
     >,
+}
+impl GetProfileObjectTypeTemplateOutput {
+    /// <p>A unique identifier for the object template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The name of the source of the object template.</p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p>The source of the object template.</p>
+    pub fn source_object(&self) -> std::option::Option<&str> {
+        self.source_object.as_deref()
+    }
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
+    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
+    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
+    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
+    /// is found, then the service creates a new standard profile.</p>
+    pub fn allow_profile_creation(&self) -> bool {
+        self.allow_profile_creation
+    }
+    /// <p>A map of the name and ObjectType field.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    pub fn keys(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
+    > {
+        self.keys.as_ref()
+    }
 }
 impl std::fmt::Debug for GetProfileObjectTypeTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1640,6 +1909,68 @@ pub struct GetProfileObjectTypeOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetProfileObjectTypeOutput {
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The description of the profile object type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique identifier for the object template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The number of days until the data in the object expires.</p>
+    pub fn expiration_days(&self) -> std::option::Option<i32> {
+        self.expiration_days
+    }
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this
+    /// profile object type.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
+    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
+    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
+    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
+    /// is found, then the service creates a new standard profile.</p>
+    pub fn allow_profile_creation(&self) -> bool {
+        self.allow_profile_creation
+    }
+    /// <p>A map of the name and ObjectType field.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    pub fn keys(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
+    > {
+        self.keys.as_ref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetProfileObjectTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1904,6 +2235,24 @@ pub struct GetMatchesOutput {
     /// <p>The list of matched profiles for this instance.</p>
     pub matches: std::option::Option<std::vec::Vec<crate::model::MatchItem>>,
 }
+impl GetMatchesOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The timestamp this version of Match Result generated.</p>
+    pub fn match_generation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.match_generation_date.as_ref()
+    }
+    /// <p>The number of potential matches found.</p>
+    pub fn potential_matches(&self) -> std::option::Option<i32> {
+        self.potential_matches
+    }
+    /// <p>The list of matched profiles for this instance.</p>
+    pub fn matches(&self) -> std::option::Option<&[crate::model::MatchItem]> {
+        self.matches.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMatchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMatchesOutput");
@@ -2013,6 +2362,35 @@ pub struct GetIntegrationOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetIntegrationOutput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2175,6 +2553,53 @@ pub struct GetDomainOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetDomainOutput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The default number of days until the data within the domain expires.</p>
+    pub fn default_expiration_days(&self) -> std::option::Option<i32> {
+        self.default_expiration_days
+    }
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
+    /// of encryption key is specified. It is used to encrypt all data before it is placed in
+    /// permanent or semi-permanent storage.</p>
+    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+        self.default_encryption_key.as_deref()
+    }
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
+    /// ingesting data from third party applications.</p>
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+        self.dead_letter_queue_url.as_deref()
+    }
+    /// <p>Usage-specific statistics about the domain.</p>
+    pub fn stats(&self) -> std::option::Option<&crate::model::DomainStats> {
+        self.stats.as_ref()
+    }
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
+    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
+        self.matching.as_ref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2372,6 +2797,12 @@ pub struct DeleteProfileObjectTypeOutput {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DeleteProfileObjectTypeOutput {
+    /// <p>A message that indicates the delete request is done.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProfileObjectTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProfileObjectTypeOutput");
@@ -2419,6 +2850,12 @@ impl DeleteProfileObjectTypeOutput {
 pub struct DeleteProfileObjectOutput {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DeleteProfileObjectOutput {
+    /// <p>A message that indicates the delete request is done.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProfileObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2468,6 +2905,12 @@ pub struct DeleteProfileKeyOutput {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DeleteProfileKeyOutput {
+    /// <p>A message that indicates the delete request is done.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProfileKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProfileKeyOutput");
@@ -2515,6 +2958,12 @@ impl DeleteProfileKeyOutput {
 pub struct DeleteProfileOutput {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DeleteProfileOutput {
+    /// <p>A message that indicates the delete request is done.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2564,6 +3013,12 @@ pub struct DeleteIntegrationOutput {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DeleteIntegrationOutput {
+    /// <p>A message that indicates the delete request is done.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIntegrationOutput");
@@ -2612,6 +3067,12 @@ pub struct DeleteDomainOutput {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DeleteDomainOutput {
+    /// <p>A message that indicates the delete request is done.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainOutput");
@@ -2659,6 +3120,12 @@ impl DeleteDomainOutput {
 pub struct CreateProfileOutput {
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: std::option::Option<std::string::String>,
+}
+impl CreateProfileOutput {
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2728,6 +3195,49 @@ pub struct CreateDomainOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateDomainOutput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The default number of days until the data within the domain expires.</p>
+    pub fn default_expiration_days(&self) -> std::option::Option<i32> {
+        self.default_expiration_days
+    }
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
+    /// of encryption key is specified. It is used to encrypt all data before it is placed in
+    /// permanent or semi-permanent storage.</p>
+    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+        self.default_encryption_key.as_deref()
+    }
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
+    /// ingesting data from third party applications.</p>
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+        self.dead_letter_queue_url.as_deref()
+    }
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
+    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
+        self.matching.as_ref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2913,6 +3423,16 @@ pub struct AddProfileKeyOutput {
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AddProfileKeyOutput {
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>A list of key values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for AddProfileKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -6,6 +6,12 @@ pub struct UpdateVtlDeviceTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
     pub vtl_device_arn: std::option::Option<std::string::String>,
 }
+impl UpdateVtlDeviceTypeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
+    pub fn vtl_device_arn(&self) -> std::option::Option<&str> {
+        self.vtl_device_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVtlDeviceTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVtlDeviceTypeOutput");
@@ -59,6 +65,13 @@ pub struct UpdateSnapshotScheduleOutput {
     /// operation to return a list of gateway volumes.</p>
     pub volume_arn: std::option::Option<std::string::String>,
 }
+impl UpdateSnapshotScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+    /// operation to return a list of gateway volumes.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSnapshotScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSnapshotScheduleOutput");
@@ -109,6 +122,13 @@ pub struct UpdateSmbSecurityStrategyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl UpdateSmbSecurityStrategyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSmbSecurityStrategyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -161,6 +181,13 @@ pub struct UpdateSmbLocalGroupsOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl UpdateSmbLocalGroupsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSmbLocalGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSmbLocalGroupsOutput");
@@ -212,6 +239,13 @@ pub struct UpdateSmbFileShareVisibilityOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl UpdateSmbFileShareVisibilityOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSmbFileShareVisibilityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSmbFileShareVisibilityOutput");
@@ -261,6 +295,12 @@ impl UpdateSmbFileShareVisibilityOutput {
 pub struct UpdateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
+}
+impl UpdateSmbFileShareOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSmbFileShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -312,6 +352,12 @@ impl UpdateSmbFileShareOutput {
 pub struct UpdateNfsFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated file share.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
+}
+impl UpdateNfsFileShareOutput {
+    /// <p>The Amazon Resource Name (ARN) of the updated file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateNfsFileShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -366,6 +412,13 @@ pub struct UpdateMaintenanceStartTimeOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl UpdateMaintenanceStartTimeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMaintenanceStartTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceStartTimeOutput");
@@ -417,6 +470,13 @@ pub struct UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl UpdateGatewaySoftwareNowOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGatewaySoftwareNowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -471,6 +531,17 @@ pub struct UpdateGatewayInformationOutput {
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
     pub gateway_name: std::option::Option<std::string::String>,
+}
+impl UpdateGatewayInformationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The name you configured for your gateway.</p>
+    pub fn gateway_name(&self) -> std::option::Option<&str> {
+        self.gateway_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGatewayInformationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -535,6 +606,12 @@ pub struct UpdateFileSystemAssociationOutput {
     /// <p>The ARN of the updated file system association.</p>
     pub file_system_association_arn: std::option::Option<std::string::String>,
 }
+impl UpdateFileSystemAssociationOutput {
+    /// <p>The ARN of the updated file system association.</p>
+    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+        self.file_system_association_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFileSystemAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFileSystemAssociationOutput");
@@ -595,6 +672,18 @@ pub struct UpdateChapCredentialsOutput {
     /// <p>The iSCSI initiator that connects to the target. This is the same initiator name
     /// specified in the request.</p>
     pub initiator_name: std::option::Option<std::string::String>,
+}
+impl UpdateChapCredentialsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the target. This is the same target specified in the
+    /// request.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The iSCSI initiator that connects to the target. This is the same initiator name
+    /// specified in the request.</p>
+    pub fn initiator_name(&self) -> std::option::Option<&str> {
+        self.initiator_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChapCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -665,6 +754,13 @@ pub struct UpdateBandwidthRateLimitScheduleOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl UpdateBandwidthRateLimitScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBandwidthRateLimitScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBandwidthRateLimitScheduleOutput");
@@ -717,6 +813,13 @@ pub struct UpdateBandwidthRateLimitOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl UpdateBandwidthRateLimitOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBandwidthRateLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBandwidthRateLimitOutput");
@@ -767,6 +870,13 @@ pub struct UpdateAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAutomaticTapeCreationPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAutomaticTapeCreationPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -820,6 +930,13 @@ pub struct StartGatewayOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl StartGatewayOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartGatewayOutput");
@@ -870,6 +987,13 @@ pub struct StartAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl StartAvailabilityMonitorTestOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StartAvailabilityMonitorTestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,6 +1047,13 @@ pub struct ShutdownGatewayOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl ShutdownGatewayOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ShutdownGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShutdownGatewayOutput");
@@ -973,6 +1104,13 @@ pub struct SetSmbGuestPasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl SetSmbGuestPasswordOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SetSmbGuestPasswordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1025,6 +1163,13 @@ pub struct SetLocalConsolePasswordOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl SetLocalConsolePasswordOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SetLocalConsolePasswordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetLocalConsolePasswordOutput");
@@ -1076,6 +1221,13 @@ pub struct RetrieveTapeRecoveryPointOutput {
     /// retrieved.</p>
     pub tape_arn: std::option::Option<std::string::String>,
 }
+impl RetrieveTapeRecoveryPointOutput {
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery point was
+    /// retrieved.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RetrieveTapeRecoveryPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveTapeRecoveryPointOutput");
@@ -1126,6 +1278,12 @@ pub struct RetrieveTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
     pub tape_arn: std::option::Option<std::string::String>,
 }
+impl RetrieveTapeArchiveOutput {
+    /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RetrieveTapeArchiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveTapeArchiveOutput");
@@ -1174,6 +1332,13 @@ pub struct ResetCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl ResetCacheOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1225,6 +1390,12 @@ pub struct RemoveTagsFromResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource that the tags were removed from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl RemoveTagsFromResourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that the tags were removed from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsFromResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromResourceOutput");
@@ -1275,6 +1446,17 @@ pub struct RefreshCacheOutput {
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID
     /// format.</p>
     pub notification_id: std::option::Option<std::string::String>,
+}
+impl RefreshCacheOutput {
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
+    /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID
+    /// format.</p>
+    pub fn notification_id(&self) -> std::option::Option<&str> {
+        self.notification_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RefreshCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1347,6 +1529,17 @@ pub struct NotifyWhenUploadedOutput {
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID
     /// format.</p>
     pub notification_id: std::option::Option<std::string::String>,
+}
+impl NotifyWhenUploadedOutput {
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
+    /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID
+    /// format.</p>
+    pub fn notification_id(&self) -> std::option::Option<&str> {
+        self.notification_id.as_deref()
+    }
 }
 impl std::fmt::Debug for NotifyWhenUploadedOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1437,6 +1630,24 @@ pub struct ListVolumesOutput {
     /// volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an
     /// empty array "[]".</p>
     pub volume_infos: std::option::Option<std::vec::Vec<crate::model::VolumeInfo>>,
+}
+impl ListVolumesOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there
+    /// are no more volumes to list, this field does not appear in the response body.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+    /// volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an
+    /// empty array "[]".</p>
+    pub fn volume_infos(&self) -> std::option::Option<&[crate::model::VolumeInfo]> {
+        self.volume_infos.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVolumesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1533,6 +1744,19 @@ pub struct ListVolumeRecoveryPointsOutput {
     pub volume_recovery_point_infos:
         std::option::Option<std::vec::Vec<crate::model::VolumeRecoveryPointInfo>>,
 }
+impl ListVolumeRecoveryPointsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+    pub fn volume_recovery_point_infos(
+        &self,
+    ) -> std::option::Option<&[crate::model::VolumeRecoveryPointInfo]> {
+        self.volume_recovery_point_infos.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVolumeRecoveryPointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVolumeRecoveryPointsOutput");
@@ -1613,6 +1837,13 @@ pub struct ListVolumeInitiatorsOutput {
     /// gateway.</p>
     pub initiators: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListVolumeInitiatorsOutput {
+    /// <p>The host names and port numbers of all iSCSI initiators that are connected to the
+    /// gateway.</p>
+    pub fn initiators(&self) -> std::option::Option<&[std::string::String]> {
+        self.initiators.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVolumeInitiatorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVolumeInitiatorsOutput");
@@ -1690,6 +1921,20 @@ pub struct ListTapesOutput {
     /// Use the marker in your next request to continue pagination of tapes. If there are no more
     /// tapes to list, this element does not appear in the response body.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListTapesOutput {
+    /// <p>An array of <a>TapeInfo</a> objects, where each object describes a single
+    /// tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is
+    /// an empty array.</p>
+    pub fn tape_infos(&self) -> std::option::Option<&[crate::model::TapeInfo]> {
+        self.tape_infos.as_deref()
+    }
+    /// <p>A string that indicates the position at which to begin returning the next list of tapes.
+    /// Use the marker in your next request to continue pagination of tapes. If there are no more
+    /// tapes to list, this element does not appear in the response body.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTapesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1775,6 +2020,20 @@ pub struct ListTapePoolsOutput {
     /// more tape pools to list, this element does not appear in the response body. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListTapePoolsOutput {
+    /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom
+    /// tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array.
+    /// </p>
+    pub fn pool_infos(&self) -> std::option::Option<&[crate::model::PoolInfo]> {
+        self.pool_infos.as_deref()
+    }
+    /// <p>A string that indicates the position at which to begin the returned list of tape pools.
+    /// Use the marker in your next request to continue pagination of tape pools. If there are no
+    /// more tape pools to list, this element does not appear in the response body. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTapePoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTapePoolsOutput");
@@ -1857,6 +2116,21 @@ pub struct ListTagsForResourceOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>An array that contains the tags for the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which to stop returning the list of
+    /// tags.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>An array that contains the tags for the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1954,6 +2228,25 @@ pub struct ListLocalDisksOutput {
     /// </ul>
     pub disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
 }
+impl ListLocalDisksOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>A JSON object containing the following fields:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>ListLocalDisksOutput$Disks</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn disks(&self) -> std::option::Option<&[crate::model::Disk]> {
+        self.disks.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLocalDisksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLocalDisksOutput");
@@ -2045,6 +2338,17 @@ pub struct ListGatewaysOutput {
     /// there are no more gateways to list, this field does not appear in the response.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListGatewaysOutput {
+    /// <p>An array of <a>GatewayInfo</a> objects.</p>
+    pub fn gateways(&self) -> std::option::Option<&[crate::model::GatewayInfo]> {
+        self.gateways.as_deref()
+    }
+    /// <p>Use the marker in your next request to fetch the next set of gateways in the list. If
+    /// there are no more gateways to list, this field does not appear in the response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGatewaysOutput");
@@ -2125,6 +2429,26 @@ pub struct ListFileSystemAssociationsOutput {
     /// associations.</p>
     pub file_system_association_summary_list:
         std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationSummary>>,
+}
+impl ListFileSystemAssociationsOutput {
+    /// <p>If the request includes <code>Marker</code>, the response returns that value in this
+    /// field.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>If a value is present, there are more file system associations to return. In a
+    /// subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to
+    /// retrieve the next set of file system associations.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>An array of information about the Amazon FSx gateway's file system
+    /// associations.</p>
+    pub fn file_system_association_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::FileSystemAssociationSummary]> {
+        self.file_system_association_summary_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFileSystemAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2233,6 +2557,23 @@ pub struct ListFileSharesOutput {
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
     pub file_share_info_list: std::option::Option<std::vec::Vec<crate::model::FileShareInfo>>,
 }
+impl ListFileSharesOutput {
+    /// <p>If the request includes <code>Marker</code>, the response returns that value in this
+    /// field.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>If a value is present, there are more file shares to return. In a subsequent request,
+    /// use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set
+    /// of file shares.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>An array of information about the S3 File Gateway's file shares.</p>
+    pub fn file_share_info_list(&self) -> std::option::Option<&[crate::model::FileShareInfo]> {
+        self.file_share_info_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFileSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFileSharesOutput");
@@ -2328,6 +2669,16 @@ pub struct ListAutomaticTapeCreationPoliciesOutput {
     /// policies.</p>
     pub automatic_tape_creation_policy_infos:
         std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationPolicyInfo>>,
+}
+impl ListAutomaticTapeCreationPoliciesOutput {
+    /// <p>Gets a listing of information about the gateway's automatic tape creation policies,
+    /// including the automatic tape creation rules and the gateway that is using the
+    /// policies.</p>
+    pub fn automatic_tape_creation_policy_infos(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutomaticTapeCreationPolicyInfo]> {
+        self.automatic_tape_creation_policy_infos.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAutomaticTapeCreationPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2439,6 +2790,55 @@ pub struct JoinDomainOutput {
     /// </li>
     /// </ul>
     pub active_directory_status: std::option::Option<crate::model::ActiveDirectoryStatus>,
+}
+impl JoinDomainOutput {
+    /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation
+    /// failed due to an authentication error.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JOINED</code>: Indicates that the gateway has successfully joined a
+    /// domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in
+    /// progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation
+    /// failed due to a network or connectivity error.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed
+    /// because the operation didn't complete within the allotted time.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation
+    /// failed due to another type of error.</p>
+    /// </li>
+    /// </ul>
+    pub fn active_directory_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ActiveDirectoryStatus> {
+        self.active_directory_status.as_ref()
+    }
 }
 impl std::fmt::Debug for JoinDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2582,6 +2982,12 @@ pub struct DisassociateFileSystemOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
     pub file_system_association_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateFileSystemOutput {
+    /// <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
+    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+        self.file_system_association_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateFileSystemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateFileSystemOutput");
@@ -2639,6 +3045,12 @@ pub struct DisableGatewayOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl DisableGatewayOutput {
+    /// <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableGatewayOutput");
@@ -2686,6 +3098,12 @@ impl DisableGatewayOutput {
 pub struct DetachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
     pub volume_arn: std::option::Option<std::string::String>,
+}
+impl DetachVolumeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2746,6 +3164,30 @@ pub struct DescribeWorkingStorageOutput {
     /// <p>The total working storage in bytes allocated for the gateway. If no working storage is
     /// configured for the gateway, this field returns 0.</p>
     pub working_storage_allocated_in_bytes: i64,
+}
+impl DescribeWorkingStorageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>An array of the gateway's local disk IDs that are configured as working storage.
+    /// Each local disk ID is specified as a string (minimum length of 1 and maximum length of
+    /// 300). If no local disks are configured as working storage, then the DiskIds array is
+    /// empty.</p>
+    pub fn disk_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.disk_ids.as_deref()
+    }
+    /// <p>The total working storage in bytes in use by the gateway. If no working storage is
+    /// configured for the gateway, this field returns 0.</p>
+    pub fn working_storage_used_in_bytes(&self) -> i64 {
+        self.working_storage_used_in_bytes
+    }
+    /// <p>The total working storage in bytes allocated for the gateway. If no working storage is
+    /// configured for the gateway, this field returns 0.</p>
+    pub fn working_storage_allocated_in_bytes(&self) -> i64 {
+        self.working_storage_allocated_in_bytes
+    }
 }
 impl std::fmt::Debug for DescribeWorkingStorageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2880,6 +3322,25 @@ pub struct DescribeVtlDevicesOutput {
     /// appear in the response.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeVtlDevicesOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL
+    /// devices.</p>
+    pub fn vtl_devices(&self) -> std::option::Option<&[crate::model::VtlDevice]> {
+        self.vtl_devices.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which the VTL devices that were fetched
+    /// for description ended. Use the marker in your next request to fetch the next set of VTL
+    /// devices in the list. If there are no more VTL devices to describe, this field does not
+    /// appear in the response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVtlDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVtlDevicesOutput");
@@ -2982,6 +3443,28 @@ pub struct DescribeUploadBufferOutput {
     pub upload_buffer_used_in_bytes: i64,
     /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
     pub upload_buffer_allocated_in_bytes: i64,
+}
+impl DescribeUploadBufferOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>An array of the gateway's local disk IDs that are configured as working storage.
+    /// Each local disk ID is specified as a string (minimum length of 1 and maximum length of
+    /// 300). If no local disks are configured as working storage, then the DiskIds array is
+    /// empty.</p>
+    pub fn disk_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.disk_ids.as_deref()
+    }
+    /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
+    pub fn upload_buffer_used_in_bytes(&self) -> i64 {
+        self.upload_buffer_used_in_bytes
+    }
+    /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
+    pub fn upload_buffer_allocated_in_bytes(&self) -> i64 {
+        self.upload_buffer_allocated_in_bytes
+    }
 }
 impl std::fmt::Debug for DescribeUploadBufferOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3104,6 +3587,20 @@ pub struct DescribeTapesOutput {
     /// retrieved.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeTapesOutput {
+    /// <p>An array of virtual tape descriptions.</p>
+    pub fn tapes(&self) -> std::option::Option<&[crate::model::Tape]> {
+        self.tapes.as_deref()
+    }
+    /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code>
+    /// call to retrieve the next page of results.</p>
+    ///
+    /// <p>If a response does not contain a marker, then there are no more results to be
+    /// retrieved.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTapesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTapesOutput");
@@ -3192,6 +3689,28 @@ pub struct DescribeTapeRecoveryPointsOutput {
     /// points in the list. If there are no more recovery points to describe, this field does not
     /// appear in the response.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeTapeRecoveryPointsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
+    pub fn tape_recovery_point_infos(
+        &self,
+    ) -> std::option::Option<&[crate::model::TapeRecoveryPointInfo]> {
+        self.tape_recovery_point_infos.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which the virtual tape recovery points
+    /// that were listed for description ended.</p>
+    ///
+    /// <p>Use this marker in your next request to list the next set of virtual tape recovery
+    /// points in the list. If there are no more recovery points to describe, this field does not
+    /// appear in the response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTapeRecoveryPointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3299,6 +3818,22 @@ pub struct DescribeTapeArchivesOutput {
     /// of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to
     /// describe, this field does not appear in the response.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeTapeArchivesOutput {
+    /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description
+    /// includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned
+    /// includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the
+    /// tapes, progress of the description, and tape barcode.</p>
+    pub fn tape_archives(&self) -> std::option::Option<&[crate::model::TapeArchive]> {
+        self.tape_archives.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which the virtual tapes that were
+    /// fetched for description ended. Use this marker in your next request to fetch the next set
+    /// of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to
+    /// describe, this field does not appear in the response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTapeArchivesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3464,6 +3999,95 @@ pub struct DescribeStorediScsiVolumesOutput {
     /// </li>
     /// </ul>
     pub storedi_scsi_volumes: std::option::Option<std::vec::Vec<crate::model::StorediScsiVolume>>,
+}
+impl DescribeStorediScsiVolumesOutput {
+    /// <p>Describes a single unit of output from <a>DescribeStorediSCSIVolumes</a>. The
+    /// following fields are returned:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ChapEnabled</code>: Indicates whether mutual CHAP is enabled for the iSCSI
+    /// target.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LunNumber</code>: The logical disk number.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NetworkInterfaceId</code>: The network interface ID of the stored volume that
+    /// initiator use to map the stored volume as an iSCSI target.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NetworkInterfacePort</code>: The port used to communicate with iSCSI
+    /// targets.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PreservedExistingData</code>: Indicates when the stored volume was created,
+    /// existing data on the underlying local disk was preserved.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SourceSnapshotId</code>: If the stored volume was created from a snapshot, this
+    /// field contains the snapshot ID used, e.g. <code>snap-1122aabb</code>. Otherwise, this
+    /// field is not included.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>StorediSCSIVolumes</code>: An array of StorediSCSIVolume objects where each
+    /// object contains metadata about one stored volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TargetARN</code>: The Amazon Resource Name (ARN) of the volume target.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeARN</code>: The Amazon Resource Name (ARN) of the stored volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeDiskId</code>: The disk ID of the local disk that was specified in the
+    /// <a>CreateStorediSCSIVolume</a> operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeId</code>: The unique identifier of the storage volume, e.g.
+    /// <code>vol-1122AABB</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeiSCSIAttributes</code>: An <a>VolumeiSCSIAttributes</a> object
+    /// that represents a collection of iSCSI attributes for one stored volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeProgress</code>: Represents the percentage complete if the volume is
+    /// restoring or bootstrapping that represents the percent of data transferred. This
+    /// field does not appear in the response if the stored volume is not restoring or
+    /// bootstrapping.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeSizeInBytes</code>: The size of the volume in bytes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates
+    /// the state of the volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeType</code>: One of the enumeration values describing the type of the
+    /// volume. Currently, only <code>STORED</code> volumes are supported.</p>
+    /// </li>
+    /// </ul>
+    pub fn storedi_scsi_volumes(&self) -> std::option::Option<&[crate::model::StorediScsiVolume]> {
+        self.storedi_scsi_volumes.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStorediScsiVolumesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3706,6 +4330,36 @@ pub struct DescribeSnapshotScheduleOutput {
     /// view all tags using the <code>ListTagsForResource</code> API operation.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl DescribeSnapshotScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The hour of the day at which the snapshot schedule begins represented as
+    /// <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour
+    /// of the day is in the time zone of the gateway.</p>
+    pub fn start_at(&self) -> std::option::Option<i32> {
+        self.start_at
+    }
+    /// <p>The number of hours between snapshots.</p>
+    pub fn recurrence_in_hours(&self) -> std::option::Option<i32> {
+        self.recurrence_in_hours
+    }
+    /// <p>The snapshot description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A value that indicates the time zone of the gateway.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key
+    /// name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can
+    /// view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSnapshotScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSnapshotScheduleOutput");
@@ -3915,6 +4569,106 @@ pub struct DescribeSmbSettingsOutput {
     /// <p>A list of Active Directory users and groups that have special permissions for SMB file
     /// shares on the gateway.</p>
     pub smb_local_groups: std::option::Option<crate::model::SmbLocalGroups>,
+}
+impl DescribeSmbSettingsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The name of the domain that the gateway is joined to.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory
+    /// domain.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation
+    /// failed due to an authentication error.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JOINED</code>: Indicates that the gateway has successfully joined a
+    /// domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in
+    /// progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation
+    /// failed due to a network or connectivity error.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed
+    /// because the operation didn't complete within the allotted time.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation
+    /// failed due to another type of error.</p>
+    /// </li>
+    /// </ul>
+    pub fn active_directory_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ActiveDirectoryStatus> {
+        self.active_directory_status.as_ref()
+    }
+    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code>
+    /// is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
+    ///
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn smb_guest_password_set(&self) -> std::option::Option<bool> {
+        self.smb_guest_password_set
+    }
+    /// <p>The type of security strategy that was specified for file gateway.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ClientSpecified</code>: If you use this option, requests are established
+    /// based on what is negotiated by the client. This option is recommended when you want
+    /// to maximize compatibility across different clients in your environment. Only
+    /// supported for S3 File Gateways.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MandatorySigning</code>: If you use this option, file gateway only allows
+    /// connections from SMBv2 or SMBv3 clients that have signing enabled. This option works
+    /// with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MandatoryEncryption</code>: If you use this option, file gateway only allows
+    /// connections from SMBv3 clients that have encryption enabled. This option is highly
+    /// recommended for environments that handle sensitive data. This option works with SMB
+    /// clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// </li>
+    /// </ul>
+    pub fn smb_security_strategy(&self) -> std::option::Option<&crate::model::SmbSecurityStrategy> {
+        self.smb_security_strategy.as_ref()
+    }
+    /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File
+    /// Gateways. </p>
+    pub fn file_shares_visible(&self) -> std::option::Option<bool> {
+        self.file_shares_visible
+    }
+    /// <p>A list of Active Directory users and groups that have special permissions for SMB file
+    /// shares on the gateway.</p>
+    pub fn smb_local_groups(&self) -> std::option::Option<&crate::model::SmbLocalGroups> {
+        self.smb_local_groups.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSmbSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4192,6 +4946,14 @@ pub struct DescribeSmbFileSharesOutput {
     pub smb_file_share_info_list:
         std::option::Option<std::vec::Vec<crate::model::SmbFileShareInfo>>,
 }
+impl DescribeSmbFileSharesOutput {
+    /// <p>An array containing a description for each requested file share.</p>
+    pub fn smb_file_share_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SmbFileShareInfo]> {
+        self.smb_file_share_info_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSmbFileSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSmbFileSharesOutput");
@@ -4253,6 +5015,14 @@ pub struct DescribeNfsFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
     pub nfs_file_share_info_list:
         std::option::Option<std::vec::Vec<crate::model::NfsFileShareInfo>>,
+}
+impl DescribeNfsFileSharesOutput {
+    /// <p>An array containing a description for each requested file share.</p>
+    pub fn nfs_file_share_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::NfsFileShareInfo]> {
+        self.nfs_file_share_info_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNfsFileSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4362,6 +5132,42 @@ pub struct DescribeMaintenanceStartTimeOutput {
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day
     /// of week specified should be in the time zone of the gateway.</p>
     pub timezone: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceStartTimeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The hour component of the maintenance start time represented as <i>hh</i>,
+    /// where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time
+    /// zone of the gateway.</p>
+    pub fn hour_of_day(&self) -> std::option::Option<i32> {
+        self.hour_of_day
+    }
+    /// <p>The minute component of the maintenance start time represented as
+    /// <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The
+    /// minute of the hour is in the time zone of the gateway.</p>
+    pub fn minute_of_hour(&self) -> std::option::Option<i32> {
+        self.minute_of_hour
+    }
+    /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0
+    /// represents Sunday and 6 represents Saturday. The day of week is in the time zone of the
+    /// gateway.</p>
+    pub fn day_of_week(&self) -> std::option::Option<i32> {
+        self.day_of_week
+    }
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal
+    /// number from 1 to 28, where 1 represents the first day of the month and 28 represents the
+    /// last day of the month.</p>
+    pub fn day_of_month(&self) -> std::option::Option<i32> {
+        self.day_of_month
+    }
+    /// <p>A value that indicates the time zone that is set for the gateway. The start time and day
+    /// of week specified should be in the time zone of the gateway.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceStartTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4551,6 +5357,108 @@ pub struct DescribeGatewayInformationOutput {
     /// hardware specifications.</p>
     pub supported_gateway_capacities:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapacity>>,
+}
+impl DescribeGatewayInformationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part
+    /// of the gateway Amazon Resource Name (ARN), which you use as input for other
+    /// operations.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The name you configured for your gateway.</p>
+    pub fn gateway_name(&self) -> std::option::Option<&str> {
+        self.gateway_name.as_deref()
+    }
+    /// <p>A value that indicates the time zone configured for the gateway.</p>
+    pub fn gateway_timezone(&self) -> std::option::Option<&str> {
+        self.gateway_timezone.as_deref()
+    }
+    /// <p>A value that indicates the operating state of the gateway.</p>
+    pub fn gateway_state(&self) -> std::option::Option<&str> {
+        self.gateway_state.as_deref()
+    }
+    /// <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
+    /// network interfaces.</p>
+    pub fn gateway_network_interfaces(
+        &self,
+    ) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.gateway_network_interfaces.as_deref()
+    }
+    /// <p>The type of the gateway.</p>
+    pub fn gateway_type(&self) -> std::option::Option<&str> {
+        self.gateway_type.as_deref()
+    }
+    /// <p>The date on which an update to the gateway is available. This date is in the time zone
+    /// of the gateway. If the gateway is not available for an update this field is not returned in
+    /// the response.</p>
+    pub fn next_update_availability_date(&self) -> std::option::Option<&str> {
+        self.next_update_availability_date.as_deref()
+    }
+    /// <p>The date on which the last software update was applied to the gateway. If the gateway
+    /// has never been updated, this field does not return a value in the response.</p>
+    pub fn last_software_update(&self) -> std::option::Option<&str> {
+        self.last_software_update.as_deref()
+    }
+    /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+        self.ec2_instance_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
+    pub fn ec2_instance_region(&self) -> std::option::Option<&str> {
+        self.ec2_instance_region.as_deref()
+    }
+    /// <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each
+    /// tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all
+    /// tags using the <code>ListTagsForResource</code> API operation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The configuration settings for the virtual private cloud (VPC) endpoint for your
+    /// gateway.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
+    /// monitor events in the gateway.</p>
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_arn.as_deref()
+    }
+    /// <p>The type of hypervisor environment used by the host.</p>
+    pub fn host_environment(&self) -> std::option::Option<&crate::model::HostEnvironment> {
+        self.host_environment.as_ref()
+    }
+    /// <p>The type of endpoint for your gateway.</p>
+    ///
+    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+    /// </p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+    /// <p>Date after which this gateway will not receive software updates for new features.</p>
+    pub fn software_updates_end_date(&self) -> std::option::Option<&str> {
+        self.software_updates_end_date.as_deref()
+    }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug
+    /// fixes.</p>
+    pub fn deprecation_date(&self) -> std::option::Option<&str> {
+        self.deprecation_date.as_deref()
+    }
+    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    pub fn gateway_capacity(&self) -> std::option::Option<&crate::model::GatewayCapacity> {
+        self.gateway_capacity.as_ref()
+    }
+    /// <p>A list of the metadata cache sizes that the gateway can support based on its current
+    /// hardware specifications.</p>
+    pub fn supported_gateway_capacities(
+        &self,
+    ) -> std::option::Option<&[crate::model::GatewayCapacity]> {
+        self.supported_gateway_capacities.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGatewayInformationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4965,6 +5873,16 @@ pub struct DescribeFileSystemAssociationsOutput {
     pub file_system_association_info_list:
         std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationInfo>>,
 }
+impl DescribeFileSystemAssociationsOutput {
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file
+    /// system association to be described.
+    /// </p>
+    pub fn file_system_association_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::FileSystemAssociationInfo]> {
+        self.file_system_association_info_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFileSystemAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFileSystemAssociationsOutput");
@@ -5064,6 +5982,44 @@ pub struct DescribeChapCredentialsOutput {
     /// </li>
     /// </ul>
     pub chap_credentials: std::option::Option<std::vec::Vec<crate::model::ChapInfo>>,
+}
+impl DescribeChapCredentialsOutput {
+    /// <p>An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
+    /// object in the array contains CHAP credential information for one target-initiator pair. If
+    /// no CHAP credentials are set, an empty array is returned. CHAP credential information is
+    /// provided in a JSON object with the following fields:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>InitiatorName</b>: The iSCSI initiator that connects to
+    /// the target.</p>
+    ///
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>SecretToAuthenticateInitiator</b>: The secret key that
+    /// the initiator (for example, the Windows client) must provide to participate in mutual
+    /// CHAP with the target.</p>
+    ///
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>SecretToAuthenticateTarget</b>: The secret key that the
+    /// target must provide to participate in mutual CHAP with the initiator (e.g. Windows
+    /// client).</p>
+    ///
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TargetARN</b>: The Amazon Resource Name (ARN) of the
+    /// storage volume.</p>
+    ///
+    /// </li>
+    /// </ul>
+    pub fn chap_credentials(&self) -> std::option::Option<&[crate::model::ChapInfo]> {
+        self.chap_credentials.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChapCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5186,6 +6142,12 @@ pub struct DescribeCachediScsiVolumesOutput {
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
     pub cachedi_scsi_volumes: std::option::Option<std::vec::Vec<crate::model::CachediScsiVolume>>,
 }
+impl DescribeCachediScsiVolumesOutput {
+    /// <p>An array of objects where each object contains metadata about one cached volume.</p>
+    pub fn cachedi_scsi_volumes(&self) -> std::option::Option<&[crate::model::CachediScsiVolume]> {
+        self.cachedi_scsi_volumes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCachediScsiVolumesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCachediScsiVolumesOutput");
@@ -5266,6 +6228,44 @@ pub struct DescribeCacheOutput {
     /// <p>Percent of application read operations from the file shares that are not served from
     /// cache. The sample is taken at the end of the reporting period.</p>
     pub cache_miss_percentage: f64,
+}
+impl DescribeCacheOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>An array of strings that identify disks that are to be configured as working storage.
+    /// Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs
+    /// from the <a>ListLocalDisks</a> API.</p>
+    pub fn disk_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.disk_ids.as_deref()
+    }
+    /// <p>The amount of cache in bytes allocated to a gateway.</p>
+    pub fn cache_allocated_in_bytes(&self) -> i64 {
+        self.cache_allocated_in_bytes
+    }
+    /// <p>Percent use of the gateway's cache storage. This metric applies only to the
+    /// gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
+    pub fn cache_used_percentage(&self) -> f64 {
+        self.cache_used_percentage
+    }
+    /// <p>The file share's contribution to the overall percentage of the gateway's cache
+    /// that has not been persisted to Amazon Web Services. The sample is taken at the end of the
+    /// reporting period.</p>
+    pub fn cache_dirty_percentage(&self) -> f64 {
+        self.cache_dirty_percentage
+    }
+    /// <p>Percent of application read operations from the file shares that are served from cache.
+    /// The sample is taken at the end of the reporting period.</p>
+    pub fn cache_hit_percentage(&self) -> f64 {
+        self.cache_hit_percentage
+    }
+    /// <p>Percent of application read operations from the file shares that are not served from
+    /// cache. The sample is taken at the end of the reporting period.</p>
+    pub fn cache_miss_percentage(&self) -> f64 {
+        self.cache_miss_percentage
+    }
 }
 impl std::fmt::Debug for DescribeCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5422,6 +6422,19 @@ pub struct DescribeBandwidthRateLimitScheduleOutput {
     pub bandwidth_rate_limit_intervals:
         std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
 }
+impl DescribeBandwidthRateLimitScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    pub fn bandwidth_rate_limit_intervals(
+        &self,
+    ) -> std::option::Option<&[crate::model::BandwidthRateLimitInterval]> {
+        self.bandwidth_rate_limit_intervals.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBandwidthRateLimitScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBandwidthRateLimitScheduleOutput");
@@ -5507,6 +6520,23 @@ pub struct DescribeBandwidthRateLimitOutput {
     /// <p>The average download bandwidth rate limit in bits per second. This field does not appear
     /// in the response if the download rate limit is not set.</p>
     pub average_download_rate_limit_in_bits_per_sec: std::option::Option<i64>,
+}
+impl DescribeBandwidthRateLimitOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear
+    /// in the response if the upload rate limit is not set.</p>
+    pub fn average_upload_rate_limit_in_bits_per_sec(&self) -> std::option::Option<i64> {
+        self.average_upload_rate_limit_in_bits_per_sec
+    }
+    /// <p>The average download bandwidth rate limit in bits per second. This field does not appear
+    /// in the response if the download rate limit is not set.</p>
+    pub fn average_download_rate_limit_in_bits_per_sec(&self) -> std::option::Option<i64> {
+        self.average_download_rate_limit_in_bits_per_sec
+    }
 }
 impl std::fmt::Debug for DescribeBandwidthRateLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5609,6 +6639,23 @@ pub struct DescribeAvailabilityMonitorTestOutput {
     /// performed, the value of this field is null.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeAvailabilityMonitorTestOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The status of the high availability monitoring test. If a test hasn't been
+    /// performed, the value of this field is null.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AvailabilityMonitorTestStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time the high availability monitoring test was started. If a test hasn't been
+    /// performed, the value of this field is null.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAvailabilityMonitorTestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAvailabilityMonitorTestOutput");
@@ -5697,6 +6744,13 @@ pub struct DeleteVolumeOutput {
     /// ARN you provided in the request.</p>
     pub volume_arn: std::option::Option<std::string::String>,
 }
+impl DeleteVolumeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same
+    /// ARN you provided in the request.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVolumeOutput");
@@ -5747,6 +6801,12 @@ pub struct DeleteTapePoolOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
     pub pool_arn: std::option::Option<std::string::String>,
 }
+impl DeleteTapePoolOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
+    pub fn pool_arn(&self) -> std::option::Option<&str> {
+        self.pool_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTapePoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTapePoolOutput");
@@ -5795,6 +6855,13 @@ pub struct DeleteTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual
     /// tape shelf (VTS).</p>
     pub tape_arn: std::option::Option<std::string::String>,
+}
+impl DeleteTapeArchiveOutput {
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual
+    /// tape shelf (VTS).</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTapeArchiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5846,6 +6913,12 @@ pub struct DeleteTapeOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted virtual tape.</p>
     pub tape_arn: std::option::Option<std::string::String>,
 }
+impl DeleteTapeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the deleted virtual tape.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTapeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTapeOutput");
@@ -5893,6 +6966,12 @@ impl DeleteTapeOutput {
 pub struct DeleteSnapshotScheduleOutput {
     /// <p>The volume which snapshot schedule was deleted.</p>
     pub volume_arn: std::option::Option<std::string::String>,
+}
+impl DeleteSnapshotScheduleOutput {
+    /// <p>The volume which snapshot schedule was deleted.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSnapshotScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5943,6 +7022,13 @@ pub struct DeleteGatewayOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl DeleteGatewayOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGatewayOutput");
@@ -5992,6 +7078,12 @@ impl DeleteGatewayOutput {
 pub struct DeleteFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
+}
+impl DeleteFileShareOutput {
+    /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFileShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6045,6 +7137,16 @@ pub struct DeleteChapCredentialsOutput {
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
     pub initiator_name: std::option::Option<std::string::String>,
+}
+impl DeleteChapCredentialsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The iSCSI initiator that connects to the target.</p>
+    pub fn initiator_name(&self) -> std::option::Option<&str> {
+        self.initiator_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChapCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6112,6 +7214,13 @@ pub struct DeleteBandwidthRateLimitOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl DeleteBandwidthRateLimitOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBandwidthRateLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBandwidthRateLimitOutput");
@@ -6162,6 +7271,13 @@ pub struct DeleteAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAutomaticTapeCreationPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAutomaticTapeCreationPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6214,6 +7330,13 @@ pub struct CreateTapeWithBarcodeOutput {
     /// created.</p>
     pub tape_arn: std::option::Option<std::string::String>,
 }
+impl CreateTapeWithBarcodeOutput {
+    /// <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
+    /// created.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTapeWithBarcodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTapeWithBarcodeOutput");
@@ -6264,6 +7387,13 @@ pub struct CreateTapesOutput {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that
     /// were created.</p>
     pub tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateTapesOutput {
+    /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that
+    /// were created.</p>
+    pub fn tape_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.tape_ar_ns.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTapesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6326,6 +7456,14 @@ pub struct CreateTapePoolOutput {
     /// account and Amazon Web Services Region.</p>
     pub pool_arn: std::option::Option<std::string::String>,
 }
+impl CreateTapePoolOutput {
+    /// <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the
+    /// <a>ListTapePools</a> operation to return a list of tape pools for your
+    /// account and Amazon Web Services Region.</p>
+    pub fn pool_arn(&self) -> std::option::Option<&str> {
+        self.pool_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTapePoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTapePoolOutput");
@@ -6382,6 +7520,21 @@ pub struct CreateStorediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that
     /// initiators can use to connect to the target.</p>
     pub target_arn: std::option::Option<std::string::String>,
+}
+impl CreateStorediScsiVolumeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The size of the volume in bytes.</p>
+    pub fn volume_size_in_bytes(&self) -> i64 {
+        self.volume_size_in_bytes
+    }
+    /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that
+    /// initiators can use to connect to the target.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStorediScsiVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6463,6 +7616,21 @@ pub struct CreateSnapshotFromVolumeRecoveryPointOutput {
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The time the volume was created from the recovery point.</p>
     pub volume_recovery_point_time: std::option::Option<std::string::String>,
+}
+impl CreateSnapshotFromVolumeRecoveryPointOutput {
+    /// <p>The ID of the snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN for
+    /// specified VolumeARN.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The time the volume was created from the recovery point.</p>
+    pub fn volume_recovery_point_time(&self) -> std::option::Option<&str> {
+        self.volume_recovery_point_time.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSnapshotFromVolumeRecoveryPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6550,6 +7718,18 @@ pub struct CreateSnapshotOutput {
     /// creating a volume from a snapshot (<a>CreateStorediSCSIVolume</a>).</p>
     pub snapshot_id: std::option::Option<std::string::String>,
 }
+impl CreateSnapshotOutput {
+    /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as
+    /// describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or
+    /// creating a volume from a snapshot (<a>CreateStorediSCSIVolume</a>).</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSnapshotOutput");
@@ -6615,6 +7795,12 @@ pub struct CreateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
 }
+impl CreateSmbFileShareOutput {
+    /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSmbFileShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSmbFileShareOutput");
@@ -6665,6 +7851,12 @@ impl CreateSmbFileShareOutput {
 pub struct CreateNfsFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
+}
+impl CreateNfsFileShareOutput {
+    /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+        self.file_share_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNfsFileShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6719,6 +7911,17 @@ pub struct CreateCachediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that
     /// initiators can use to connect to the target.</p>
     pub target_arn: std::option::Option<std::string::String>,
+}
+impl CreateCachediScsiVolumeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that
+    /// initiators can use to connect to the target.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCachediScsiVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6784,6 +7987,13 @@ pub struct CancelRetrievalOutput {
     /// canceled.</p>
     pub tape_arn: std::option::Option<std::string::String>,
 }
+impl CancelRetrievalOutput {
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was
+    /// canceled.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelRetrievalOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelRetrievalOutput");
@@ -6834,6 +8044,13 @@ pub struct CancelArchivalOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which archiving was
     /// canceled.</p>
     pub tape_arn: std::option::Option<std::string::String>,
+}
+impl CancelArchivalOutput {
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape for which archiving was
+    /// canceled.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelArchivalOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6887,6 +8104,17 @@ pub struct AttachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for
     /// the initiator that was used to connect to the target.</p>
     pub target_arn: std::option::Option<std::string::String>,
+}
+impl AttachVolumeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for
+    /// the initiator that was used to connect to the target.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6951,6 +8179,12 @@ pub struct AssociateFileSystemOutput {
     /// <p>The ARN of the newly created file system association.</p>
     pub file_system_association_arn: std::option::Option<std::string::String>,
 }
+impl AssociateFileSystemOutput {
+    /// <p>The ARN of the newly created file system association.</p>
+    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+        self.file_system_association_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateFileSystemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateFileSystemOutput");
@@ -7009,6 +8243,13 @@ pub struct AssignTapePoolOutput {
     /// pool.</p>
     pub tape_arn: std::option::Option<std::string::String>,
 }
+impl AssignTapePoolOutput {
+    /// <p>The unique Amazon Resource Names (ARN) of the virtual tape that was added to the tape
+    /// pool.</p>
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
+        self.tape_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssignTapePoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssignTapePoolOutput");
@@ -7061,6 +8302,13 @@ pub struct AddWorkingStorageOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl AddWorkingStorageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AddWorkingStorageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddWorkingStorageOutput");
@@ -7112,6 +8360,13 @@ pub struct AddUploadBufferOutput {
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
+impl AddUploadBufferOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AddUploadBufferOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddUploadBufferOutput");
@@ -7162,6 +8417,12 @@ pub struct AddTagsToResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl AddTagsToResourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AddTagsToResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsToResourceOutput");
@@ -7210,6 +8471,13 @@ pub struct AddCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl AddCacheOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AddCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7269,6 +8537,13 @@ pub struct ActivateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
     /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl ActivateGatewayOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ActivateGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

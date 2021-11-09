@@ -2,21 +2,22 @@
 pub fn serialize_structure_crate_input_import_application_usage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportApplicationUsageInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.source_s3_location {
         let mut object_2 = object.key("sourceS3Location").start_object();
-        crate::json_ser::serialize_structure_crate_model_source_s3_location(&mut object_2, var_1);
+        crate::json_ser::serialize_structure_crate_model_source_s3_location(&mut object_2, var_1)?;
         object_2.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_report_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutReportDefinitionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.destination_s3_location {
         let mut object_4 = object.key("destinationS3Location").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_4, var_3);
+        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.format {
@@ -31,15 +32,16 @@ pub fn serialize_structure_crate_input_put_report_definition_input(
     if let Some(var_8) = &input.report_id {
         object.key("reportId").string(var_8);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_report_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateReportDefinitionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.destination_s3_location {
         let mut object_10 = object.key("destinationS3Location").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_10, var_9);
+        crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.format {
@@ -51,12 +53,13 @@ pub fn serialize_structure_crate_input_update_report_definition_input(
     if let Some(var_13) = &input.report_frequency {
         object.key("reportFrequency").string(var_13.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_source_s3_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SourceS3Location,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.bucket {
         object.key("bucket").string(var_14);
     }
@@ -66,16 +69,18 @@ pub fn serialize_structure_crate_model_source_s3_location(
     if let Some(var_16) = &input.region {
         object.key("region").string(var_16.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Location,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.bucket {
         object.key("bucket").string(var_17);
     }
     if let Some(var_18) = &input.prefix {
         object.key("prefix").string(var_18);
     }
+    Ok(())
 }

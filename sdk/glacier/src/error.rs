@@ -4337,6 +4337,16 @@ pub struct ServiceUnavailableException {
     /// <p>Returned if the service cannot complete the request.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceUnavailableException {
+    /// <p>Server</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>500 Internal Server Error</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceUnavailableException");
@@ -4432,6 +4442,16 @@ pub struct ResourceNotFoundException {
     /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
     /// exist.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    /// <p>Client</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>404 Not Found</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4531,6 +4551,16 @@ pub struct RequestTimeoutException {
     /// upload.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl RequestTimeoutException {
+    /// <p>Client</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>408 Request Timeout</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for RequestTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestTimeoutException");
@@ -4627,6 +4657,16 @@ pub struct MissingParameterValueException {
     /// <p>Returned if no authentication data is found for the request.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl MissingParameterValueException {
+    /// <p>Client.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>400 Bad Request</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for MissingParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MissingParameterValueException");
@@ -4721,6 +4761,16 @@ pub struct InvalidParameterValueException {
     /// <p>Returned if a parameter of the request is incorrectly specified.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidParameterValueException {
+    /// <p>Client</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>400 Bad Request</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidParameterValueException");
@@ -4814,6 +4864,16 @@ pub struct LimitExceededException {
     pub code: std::option::Option<std::string::String>,
     /// <p>Returned if the request results in a vault limit or tags limit being exceeded.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl LimitExceededException {
+    /// <p>Client</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>400 Bad Request</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4910,6 +4970,16 @@ pub struct PolicyEnforcedException {
     /// <p>InitiateJob request denied by current data retrieval policy.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl PolicyEnforcedException {
+    /// <p>Client</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>PolicyEnforcedException</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyEnforcedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyEnforcedException");
@@ -5005,6 +5075,16 @@ pub struct InsufficientCapacityException {
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InsufficientCapacityException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for InsufficientCapacityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

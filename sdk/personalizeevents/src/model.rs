@@ -16,6 +16,22 @@ pub struct User {
     /// For example, <code>\"Member|Frequent shopper\"</code>.</p>
     pub properties: std::option::Option<std::string::String>,
 }
+impl User {
+    /// <p>The ID associated with the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair.
+    /// For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
+    /// <p>The keys use camel case names that match the fields in the schema for the Users
+    /// dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the
+    /// 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data,
+    /// to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>).
+    /// For example, <code>\"Member|Frequent shopper\"</code>.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
+}
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
@@ -98,6 +114,21 @@ pub struct Item {
     /// 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item,
     /// separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
     pub properties: std::option::Option<std::string::String>,
+}
+impl Item {
+    /// <p>The ID associated with the item.</p>
+    pub fn item_id(&self) -> std::option::Option<&str> {
+        self.item_id.as_deref()
+    }
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair.
+    /// For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>The keys use camel case names that match the fields in the schema for the Items
+    /// dataset. In the previous example, the <code>numberOfRatings</code> matches the
+    /// 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item,
+    /// separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
 }
 impl std::fmt::Debug for Item {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -198,6 +229,54 @@ pub struct Event {
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
     pub impression: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Event {
+    /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates
+    /// a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses
+    /// the event ID to distinquish unique events. Any subsequent events after the first with the
+    /// same event ID are not used in model training.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+    /// field of your Interactions schema and depends on the types of events you are tracking.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.</p>
+    pub fn event_value(&self) -> std::option::Option<f32> {
+        self.event_value
+    }
+    /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
+    pub fn item_id(&self) -> std::option::Option<&str> {
+        self.item_id.as_deref()
+    }
+    /// <p>A string map of event-specific data that you might choose to record. For example, if a
+    /// user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>)
+    /// , you might also send the number of movie ratings made by the user.</p>
+    /// <p>Each item in the map consists of a key-value pair. For example,</p>
+    ///
+    /// <p>
+    /// <code>{"numberOfRatings": "12"}</code>
+    /// </p>
+    /// <p>The keys use camel case names that match the fields in the Interactions
+    /// schema. In the above example, the <code>numberOfRatings</code> would match the
+    /// 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
+    /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
+    pub fn sent_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.sent_at.as_ref()
+    }
+    /// <p>The ID of the recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+    pub fn impression(&self) -> std::option::Option<&[std::string::String]> {
+        self.impression.as_deref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

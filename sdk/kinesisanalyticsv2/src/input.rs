@@ -158,7 +158,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_application_cloud_watch_logging_option(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_add_application_cloud_watch_logging_option(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -343,10 +343,7 @@ impl AddApplicationInputInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_application_input(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_application_input(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -559,7 +556,7 @@ impl AddApplicationInputProcessingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_application_input_processing_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_add_application_input_processing_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -753,10 +750,9 @@ impl AddApplicationOutputInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_application_output(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_application_output(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -954,7 +950,7 @@ impl AddApplicationReferenceDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_application_reference_data_source(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_add_application_reference_data_source(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1174,7 +1170,7 @@ impl AddApplicationVpcConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_application_vpc_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_add_application_vpc_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1469,10 +1465,7 @@ impl CreateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1655,7 +1648,7 @@ impl CreateApplicationPresignedUrlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application_presigned_url(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_application_presigned_url(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1827,10 +1820,7 @@ impl CreateApplicationSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_application_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1998,10 +1988,7 @@ impl DeleteApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2222,7 +2209,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application_cloud_watch_logging_option(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_application_cloud_watch_logging_option(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2417,7 +2404,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application_input_processing_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_application_input_processing_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2618,10 +2605,7 @@ impl DeleteApplicationOutputInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_application_output(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2815,7 +2799,7 @@ impl DeleteApplicationReferenceDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application_reference_data_source(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_application_reference_data_source(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3006,10 +2990,7 @@ impl DeleteApplicationSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_application_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3222,7 +3203,7 @@ impl DeleteApplicationVpcConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application_vpc_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_application_vpc_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3388,10 +3369,7 @@ impl DescribeApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_application(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3562,7 +3540,7 @@ impl DescribeApplicationSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_application_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_application_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3731,10 +3709,7 @@ impl DescribeApplicationVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_application_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3958,10 +3933,7 @@ impl DiscoverInputSchemaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_discover_input_schema(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_discover_input_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4129,10 +4101,7 @@ impl ListApplicationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_applications(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_applications(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4316,10 +4285,7 @@ impl ListApplicationSnapshotsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_application_snapshots(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4501,10 +4467,7 @@ impl ListApplicationVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_application_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4654,10 +4617,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4827,10 +4789,7 @@ impl RollbackApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_rollback_application(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_rollback_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4998,10 +4957,7 @@ impl StartApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5188,10 +5144,7 @@ impl StopApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5361,10 +5314,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5534,10 +5484,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5821,10 +5768,7 @@ impl UpdateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6001,7 +5945,7 @@ impl UpdateApplicationMaintenanceConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application_maintenance_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_application_maintenance_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6074,6 +6018,18 @@ pub struct UpdateApplicationMaintenanceConfigurationInput {
     pub application_maintenance_configuration_update:
         std::option::Option<crate::model::ApplicationMaintenanceConfigurationUpdate>,
 }
+impl UpdateApplicationMaintenanceConfigurationInput {
+    /// <p>The name of the application for which you want to update the maintenance configuration.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Describes the application maintenance configuration update.</p>
+    pub fn application_maintenance_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationMaintenanceConfigurationUpdate> {
+        self.application_maintenance_configuration_update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationMaintenanceConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationMaintenanceConfigurationInput");
@@ -6117,6 +6073,52 @@ pub struct UpdateApplicationInput {
     /// <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
+impl UpdateApplicationInput {
+    /// <p>The name of the application to update.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The current application version ID. You must provide the
+    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
+    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
+    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>Describes application configuration updates.</p>
+    pub fn application_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationConfigurationUpdate> {
+        self.application_configuration_update.as_ref()
+    }
+    /// <p>Describes updates to the service execution role.</p>
+    pub fn service_execution_role_update(&self) -> std::option::Option<&str> {
+        self.service_execution_role_update.as_deref()
+    }
+    /// <p>Describes updates to the application's starting parameters.</p>
+    pub fn run_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::RunConfigurationUpdate> {
+        self.run_configuration_update.as_ref()
+    }
+    /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
+    /// existing CloudWatch logging options with this action. To add a new CloudWatch logging option,
+    /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+    pub fn cloud_watch_logging_option_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionUpdate]> {
+        self.cloud_watch_logging_option_updates.as_deref()
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must
+    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
+    /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+    /// <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn conditional_token(&self) -> std::option::Option<&str> {
+        self.conditional_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationInput");
@@ -6152,6 +6154,16 @@ pub struct UntagResourceInput {
     /// <p>A list of keys of tags to remove from the specified application.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of keys of tags to remove from the specified application.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6169,6 +6181,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value tags to assign to the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the application to assign the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value tags to assign to the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6199,6 +6221,27 @@ pub struct StopApplicationInput {
     /// <code>RUNNING</code> status. </p>
     pub force: std::option::Option<bool>,
 }
+impl StopApplicationInput {
+    /// <p>The name of the running application to stop.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
+    /// to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.
+    /// </p>
+    /// <note>
+    /// <p>Force-stopping your application may lead to data loss or duplication.
+    /// To prevent data loss or duplicate processing of data during application restarts,
+    /// we recommend you to take frequent snapshots of your application.</p>
+    /// </note>
+    /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
+    /// <p>The application must be in the
+    /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
+    /// <code>RUNNING</code> status. </p>
+    pub fn force(&self) -> std::option::Option<bool> {
+        self.force
+    }
+}
 impl std::fmt::Debug for StopApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopApplicationInput");
@@ -6216,6 +6259,16 @@ pub struct StartApplicationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
     pub run_configuration: std::option::Option<crate::model::RunConfiguration>,
+}
+impl StartApplicationInput {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    pub fn run_configuration(&self) -> std::option::Option<&crate::model::RunConfiguration> {
+        self.run_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for StartApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6236,6 +6289,17 @@ pub struct RollbackApplicationInput {
     /// <a>DescribeApplication</a>.</p>
     pub current_application_version_id: std::option::Option<i64>,
 }
+impl RollbackApplicationInput {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The current application version ID. You can retrieve the application version ID using
+    /// <a>DescribeApplication</a>.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+}
 impl std::fmt::Debug for RollbackApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RollbackApplicationInput");
@@ -6254,6 +6318,12 @@ impl std::fmt::Debug for RollbackApplicationInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the application for which to retrieve tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the application for which to retrieve tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6274,6 +6344,21 @@ pub struct ListApplicationVersionsInput {
     /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
     /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationVersionsInput {
+    /// <p>The name of the application for which you want to list all versions.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The maximum number of versions to list in this invocation of the operation.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6298,6 +6383,22 @@ pub struct ListApplicationSnapshotsInput {
     /// continue from. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationSnapshotsInput {
+    /// <p>The name of an existing application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The maximum number of application snapshots to list.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
+    /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
+    /// continue from. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationSnapshotsInput");
@@ -6319,6 +6420,19 @@ pub struct ListApplicationsInput {
     /// For more information about pagination, see
     /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsInput {
+    /// <p>The maximum number of applications to list.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>If a previous command returned a pagination token,
+    /// pass it into this value to retrieve the next set of results.
+    /// For more information about pagination, see
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6349,6 +6463,35 @@ pub struct DiscoverInputSchemaInput {
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
 }
+impl DiscoverInputSchemaInput {
+    /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the role that is used to access the streaming source.</p>
+    pub fn service_execution_role(&self) -> std::option::Option<&str> {
+        self.service_execution_role.as_deref()
+    }
+    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
+    /// specified streaming source discovery purposes.</p>
+    pub fn input_starting_position_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
+        self.input_starting_position_configuration.as_ref()
+    }
+    /// <p>Specify this parameter to discover a schema from data in an Amazon S3
+    /// object.</p>
+    pub fn s3_configuration(&self) -> std::option::Option<&crate::model::S3Configuration> {
+        self.s3_configuration.as_ref()
+    }
+    /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
+    /// before discovering the schema of the records.</p>
+    pub fn input_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfiguration> {
+        self.input_processing_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for DiscoverInputSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DiscoverInputSchemaInput");
@@ -6376,6 +6519,16 @@ pub struct DescribeApplicationVersionInput {
     /// <p>The ID of the application version for which you want to get the description.</p>
     pub application_version_id: std::option::Option<i64>,
 }
+impl DescribeApplicationVersionInput {
+    /// <p>The name of the application for which you want to get the version description.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The ID of the application version for which you want to get the description.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+}
 impl std::fmt::Debug for DescribeApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationVersionInput");
@@ -6395,6 +6548,17 @@ pub struct DescribeApplicationSnapshotInput {
     /// .</p>
     pub snapshot_name: std::option::Option<std::string::String>,
 }
+impl DescribeApplicationSnapshotInput {
+    /// <p>The name of an existing application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The identifier of an application snapshot. You can retrieve this value using
+    /// .</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationSnapshotInput");
@@ -6412,6 +6576,16 @@ pub struct DescribeApplicationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
     pub include_additional_details: std::option::Option<bool>,
+}
+impl DescribeApplicationInput {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    pub fn include_additional_details(&self) -> std::option::Option<bool> {
+        self.include_additional_details
+    }
 }
 impl std::fmt::Debug for DescribeApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6445,6 +6619,31 @@ pub struct DeleteApplicationVpcConfigurationInput {
     /// <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
+impl DeleteApplicationVpcConfigurationInput {
+    /// <p>The name of an existing application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The current application version ID. You must provide the
+    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
+    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
+    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The ID of the VPC configuration to delete.</p>
+    pub fn vpc_configuration_id(&self) -> std::option::Option<&str> {
+        self.vpc_configuration_id.as_deref()
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide
+    /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
+    /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn conditional_token(&self) -> std::option::Option<&str> {
+        self.conditional_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApplicationVpcConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApplicationVpcConfigurationInput");
@@ -6471,6 +6670,22 @@ pub struct DeleteApplicationSnapshotInput {
     /// using
     /// or .</p>
     pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DeleteApplicationSnapshotInput {
+    /// <p>The name of an existing application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The identifier for the snapshot delete.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
+    /// using
+    /// or .</p>
+    pub fn snapshot_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_creation_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6501,6 +6716,26 @@ pub struct DeleteApplicationReferenceDataSourceInput {
     /// You can use the <a>DescribeApplication</a> operation to
     /// get the reference ID. </p>
     pub reference_id: std::option::Option<std::string::String>,
+}
+impl DeleteApplicationReferenceDataSourceInput {
+    /// <p>The name of an existing application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The current application version.  
+    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
+    /// If the version specified
+    /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The ID of the reference data source. When you add a reference data source to your
+    /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
+    /// You can use the <a>DescribeApplication</a> operation to
+    /// get the reference ID. </p>
+    pub fn reference_id(&self) -> std::option::Option<&str> {
+        self.reference_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationReferenceDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6534,6 +6769,28 @@ pub struct DeleteApplicationOutputInput {
     /// specific <code>OutputId</code>. </p>
     pub output_id: std::option::Option<std::string::String>,
 }
+impl DeleteApplicationOutputInput {
+    /// <p>The application name.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The application version.
+    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
+    /// If the version specified is not the current version, the
+    /// <code>ConcurrentModificationException</code> is returned.
+    /// </p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the
+    /// application (either when the application is created or later) using the <a>AddApplicationOutput</a> operation has a unique ID. You need to provide the ID to
+    /// uniquely identify the output configuration that you want to delete from the application
+    /// configuration. You can use the <a>DescribeApplication</a> operation to get the
+    /// specific <code>OutputId</code>. </p>
+    pub fn output_id(&self) -> std::option::Option<&str> {
+        self.output_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApplicationOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApplicationOutputInput");
@@ -6562,6 +6819,25 @@ pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The ID of the input configuration from which to delete the input processing
     /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
     pub input_id: std::option::Option<std::string::String>,
+}
+impl DeleteApplicationInputProcessingConfigurationInput {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The application version.
+    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
+    /// If the version specified is not the current version, the
+    /// <code>ConcurrentModificationException</code> is returned.
+    /// </p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The ID of the input configuration from which to delete the input processing
+    /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6597,6 +6873,32 @@ pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     /// <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
+impl DeleteApplicationCloudWatchLoggingOptionInput {
+    /// <p>The application name.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The version ID of the application. You must provide the
+    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
+    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
+    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
+    /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
+    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logging_option_id.as_deref()
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide
+    /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
+    /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn conditional_token(&self) -> std::option::Option<&str> {
+        self.conditional_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApplicationCloudWatchLoggingOptionInput");
@@ -6623,6 +6925,16 @@ pub struct DeleteApplicationInput {
     /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
     pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeleteApplicationInput {
+    /// <p>The name of the application to delete.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApplicationInput");
@@ -6640,6 +6952,16 @@ pub struct CreateApplicationSnapshotInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An identifier for the application snapshot.</p>
     pub snapshot_name: std::option::Option<std::string::String>,
+}
+impl CreateApplicationSnapshotInput {
+    /// <p>The name of an existing application</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>An identifier for the application snapshot.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6661,6 +6983,21 @@ pub struct CreateApplicationPresignedUrlInput {
     pub url_type: std::option::Option<crate::model::UrlType>,
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
     pub session_expiration_duration_in_seconds: std::option::Option<i64>,
+}
+impl CreateApplicationPresignedUrlInput {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
+    /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+    pub fn url_type(&self) -> std::option::Option<&crate::model::UrlType> {
+        self.url_type.as_ref()
+    }
+    /// <p>The duration in seconds for which the returned URL will be valid.</p>
+    pub fn session_expiration_duration_in_seconds(&self) -> std::option::Option<i64> {
+        self.session_expiration_duration_in_seconds
+    }
 }
 impl std::fmt::Debug for CreateApplicationPresignedUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6705,6 +7042,52 @@ pub struct CreateApplicationInput {
     /// <code>INTERACTIVE</code> mode.</p>
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
+impl CreateApplicationInput {
+    /// <p>The name of your application (for example, <code>sample-app</code>).</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>A summary description of the application.</p>
+    pub fn application_description(&self) -> std::option::Option<&str> {
+        self.application_description.as_deref()
+    }
+    /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    pub fn runtime_environment(&self) -> std::option::Option<&crate::model::RuntimeEnvironment> {
+        self.runtime_environment.as_ref()
+    }
+    /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
+    /// delivery streams, Amazon S3 objects, and other external resources.</p>
+    pub fn service_execution_role(&self) -> std::option::Option<&str> {
+        self.service_execution_role.as_deref()
+    }
+    /// <p>Use this parameter to configure the application.</p>
+    pub fn application_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationConfiguration> {
+        self.application_configuration.as_ref()
+    }
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
+    /// configuration errors.
+    /// </p>
+    pub fn cloud_watch_logging_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOption]> {
+        self.cloud_watch_logging_options.as_deref()
+    }
+    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+    /// application. Note that the maximum number of application tags includes system tags. The maximum number of
+    /// user-defined application tags is 50.
+    /// For more information, see
+    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
+    /// <code>INTERACTIVE</code> mode.</p>
+    pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
+        self.application_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationInput");
@@ -6746,6 +7129,34 @@ pub struct AddApplicationVpcConfigurationInput {
     /// <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
+impl AddApplicationVpcConfigurationInput {
+    /// <p>The name of an existing application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The version of the application to which you want to add the VPC configuration. You must
+    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
+    /// can use the <a>DescribeApplication</a> operation to get the current application
+    /// version. If the version specified is not the current version, the
+    /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
+    /// use the <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>Description of the VPC to add to the application.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must
+    /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get
+    /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+    /// <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn conditional_token(&self) -> std::option::Option<&str> {
+        self.conditional_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AddApplicationVpcConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddApplicationVpcConfigurationInput");
@@ -6778,6 +7189,27 @@ pub struct AddApplicationReferenceDataSourceInput {
     /// created. </p>
     pub reference_data_source: std::option::Option<crate::model::ReferenceDataSource>,
 }
+impl AddApplicationReferenceDataSourceInput {
+    /// <p>The name of an existing application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The version of the application for which you are adding the reference data source.
+    /// You can
+    /// use the <a>DescribeApplication</a> operation to get the current application
+    /// version. If the version specified is not the current version, the
+    /// <code>ConcurrentModificationException</code> is returned.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
+    /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
+    /// in-application table that is
+    /// created. </p>
+    pub fn reference_data_source(&self) -> std::option::Option<&crate::model::ReferenceDataSource> {
+        self.reference_data_source.as_ref()
+    }
+}
 impl std::fmt::Debug for AddApplicationReferenceDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddApplicationReferenceDataSourceInput");
@@ -6807,6 +7239,26 @@ pub struct AddApplicationOutputInput {
     /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
     /// record the formation to use when writing to the destination.</p>
     pub output: std::option::Option<crate::model::Output>,
+}
+impl AddApplicationOutputInput {
+    /// <p>The name of the application to which you want to add the output configuration.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The version of the application to which you want to add the output configuration. You can
+    /// use the <a>DescribeApplication</a> operation to get the current application
+    /// version. If the version specified is not the current version, the
+    /// <code>ConcurrentModificationException</code> is returned. </p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>An array of objects, each describing one output configuration. In the output
+    /// configuration, you specify the name of an in-application stream, a destination (that is, a
+    /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
+    /// record the formation to use when writing to the destination.</p>
+    pub fn output(&self) -> std::option::Option<&crate::model::Output> {
+        self.output.as_ref()
+    }
 }
 impl std::fmt::Debug for AddApplicationOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6840,6 +7292,31 @@ pub struct AddApplicationInputProcessingConfigurationInput {
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
 }
+impl AddApplicationInputProcessingConfigurationInput {
+    /// <p>The name of the application to which you want to add the input processing
+    /// configuration.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The version of the application to which you want to add the input processing
+    /// configuration. You can use the <a>DescribeApplication</a> operation to get the
+    /// current application version. If the version specified is not the current version, the
+    /// <code>ConcurrentModificationException</code> is returned.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The ID of the input configuration to add the input processing configuration to. You
+    /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+    pub fn input_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfiguration> {
+        self.input_processing_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for AddApplicationInputProcessingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddApplicationInputProcessingConfigurationInput");
@@ -6869,6 +7346,22 @@ pub struct AddApplicationInputInput {
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The <a>Input</a> to add.</p>
     pub input: std::option::Option<crate::model::Input>,
+}
+impl AddApplicationInputInput {
+    /// <p>The name of your existing application to which you want to add the streaming
+    /// source.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The current version of your application.
+    /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>The <a>Input</a> to add.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
 }
 impl std::fmt::Debug for AddApplicationInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6903,6 +7396,34 @@ pub struct AddApplicationCloudWatchLoggingOptionInput {
     /// <code>ConditionalToken</code> parameter instead of
     /// <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
+}
+impl AddApplicationCloudWatchLoggingOptionInput {
+    /// <p>The Kinesis Data Analytics application name.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
+    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
+    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
+    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn current_application_version_id(&self) -> std::option::Option<i64> {
+        self.current_application_version_id
+    }
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    pub fn cloud_watch_logging_option(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLoggingOption> {
+        self.cloud_watch_logging_option.as_ref()
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must
+    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
+    /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+    /// <code>ConditionalToken</code> parameter instead of
+    /// <code>CurrentApplicationVersionId</code>.</p>
+    pub fn conditional_token(&self) -> std::option::Option<&str> {
+        self.conditional_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AddApplicationCloudWatchLoggingOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

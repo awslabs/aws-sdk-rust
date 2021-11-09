@@ -190,6 +190,16 @@ pub struct Tag {
     /// <p>The value in a tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key in a tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value in a tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -252,6 +262,16 @@ pub struct EndpointAttributes {
     pub device_token: std::option::Option<std::string::String>,
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub voip_device_token: std::option::Option<std::string::String>,
+}
+impl EndpointAttributes {
+    /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
+    pub fn device_token(&self) -> std::option::Option<&str> {
+        self.device_token.as_deref()
+    }
+    /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
+    pub fn voip_device_token(&self) -> std::option::Option<&str> {
+        self.voip_device_token.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -376,6 +396,14 @@ pub struct AppInstanceRetentionSettings {
     /// <p>The length of time in days to retain the messages in a channel.</p>
     pub channel_retention_settings: std::option::Option<crate::model::ChannelRetentionSettings>,
 }
+impl AppInstanceRetentionSettings {
+    /// <p>The length of time in days to retain the messages in a channel.</p>
+    pub fn channel_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ChannelRetentionSettings> {
+        self.channel_retention_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceRetentionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceRetentionSettings");
@@ -434,6 +462,12 @@ pub struct ChannelRetentionSettings {
     /// <p>The time in days to retain the messages in a channel.</p>
     pub retention_days: std::option::Option<i32>,
 }
+impl ChannelRetentionSettings {
+    /// <p>The time in days to retain the messages in a channel.</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
+}
 impl std::fmt::Debug for ChannelRetentionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelRetentionSettings");
@@ -485,6 +519,20 @@ pub struct AppInstanceUserSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
+}
+impl AppInstanceUserSummary {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The name of an <code>AppInstanceUser</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for AppInstanceUserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -573,6 +621,33 @@ pub struct AppInstanceUserEndpointSummary {
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
     /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
     pub endpoint_state: std::option::Option<crate::model::EndpointState>,
+}
+impl AppInstanceUserEndpointSummary {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AppInstanceUserEndpointType> {
+        self.r#type.as_ref()
+    }
+    /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
+        self.allow_messages.as_ref()
+    }
+    /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_state(&self) -> std::option::Option<&crate::model::EndpointState> {
+        self.endpoint_state.as_ref()
+    }
 }
 impl std::fmt::Debug for AppInstanceUserEndpointSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -722,6 +797,16 @@ pub struct EndpointState {
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
     pub status_reason: std::option::Option<crate::model::EndpointStatusReason>,
+}
+impl EndpointState {
+    /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the <code>EndpointStatus</code>.</p>
+    pub fn status_reason(&self) -> std::option::Option<&crate::model::EndpointStatusReason> {
+        self.status_reason.as_ref()
+    }
 }
 impl std::fmt::Debug for EndpointState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -904,6 +989,20 @@ pub struct AppInstanceSummary {
     /// <p>The metadata of the <code>AppInstance</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl AppInstanceSummary {
+    /// <p>The <code>AppInstance</code> ARN.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name of the <code>AppInstance</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstance</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for AppInstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceSummary");
@@ -981,6 +1080,12 @@ pub struct AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     pub admin: std::option::Option<crate::model::Identity>,
 }
+impl AppInstanceAdminSummary {
+    /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
+    pub fn admin(&self) -> std::option::Option<&crate::model::Identity> {
+        self.admin.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceAdminSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceAdminSummary");
@@ -1028,6 +1133,16 @@ pub struct Identity {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name in an Identity.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl Identity {
+    /// <p>The ARN in an Identity.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name in an Identity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for Identity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1128,6 +1243,69 @@ pub struct AppInstanceUserEndpoint {
     /// </li>
     /// </ul>
     pub endpoint_state: std::option::Option<crate::model::EndpointState>,
+}
+impl AppInstanceUserEndpoint {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AppInstanceUserEndpointType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ARN of the resource to which the endpoint belongs.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The attributes of an <code>Endpoint</code>.</p>
+    pub fn endpoint_attributes(&self) -> std::option::Option<&crate::model::EndpointAttributes> {
+        self.endpoint_attributes.as_ref()
+    }
+    /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
+        self.allow_messages.as_ref()
+    }
+    /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be
+    /// conveyed through <code>EndpointStatusReason</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input
+    /// through the <code>ResourceArn</code> field.</p>
+    /// </li>
+    /// </ul>
+    pub fn endpoint_state(&self) -> std::option::Option<&crate::model::EndpointState> {
+        self.endpoint_state.as_ref()
+    }
 }
 impl std::fmt::Debug for AppInstanceUserEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1365,6 +1543,28 @@ pub struct AppInstanceUser {
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AppInstanceUser {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUser");
@@ -1478,6 +1678,20 @@ pub struct AppInstanceAdmin {
     /// <p>The time at which an administrator was created.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AppInstanceAdmin {
+    /// <p>The <code>AppInstanceAdmin</code> data.</p>
+    pub fn admin(&self) -> std::option::Option<&crate::model::Identity> {
+        self.admin.as_ref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The time at which an administrator was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for AppInstanceAdmin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceAdmin");
@@ -1566,6 +1780,28 @@ pub struct AppInstance {
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The metadata of an <code>AppInstance</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
+}
+impl AppInstance {
+    /// <p>The ARN of the messaging instance.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name of an <code>AppInstance</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The metadata of an <code>AppInstance</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for AppInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

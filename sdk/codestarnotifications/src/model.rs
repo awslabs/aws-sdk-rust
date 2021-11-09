@@ -63,6 +63,16 @@ pub struct Target {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
     pub target_address: std::option::Option<std::string::String>,
 }
+impl Target {
+    /// <p>The target type. Can be an Amazon SNS topic.</p>
+    pub fn target_type(&self) -> std::option::Option<&str> {
+        self.target_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    pub fn target_address(&self) -> std::option::Option<&str> {
+        self.target_address.as_deref()
+    }
+}
 impl std::fmt::Debug for Target {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Target");
@@ -185,6 +195,20 @@ pub struct TargetSummary {
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The status of the target.</p>
     pub target_status: std::option::Option<crate::model::TargetStatus>,
+}
+impl TargetSummary {
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    pub fn target_address(&self) -> std::option::Option<&str> {
+        self.target_address.as_deref()
+    }
+    /// <p>The type of the target (for example, SNS).</p>
+    pub fn target_type(&self) -> std::option::Option<&str> {
+        self.target_type.as_deref()
+    }
+    /// <p>The status of the target.</p>
+    pub fn target_status(&self) -> std::option::Option<&crate::model::TargetStatus> {
+        self.target_status.as_ref()
+    }
 }
 impl std::fmt::Debug for TargetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -347,6 +371,18 @@ pub struct ListTargetsFilter {
     /// Resource Name (ARN) for a topic as the value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ListTargetsFilter {
+    /// <p>The name of the attribute you want to use to filter the returned targets.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ListTargetsFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the attribute you want to use to filter the returned targets. For example,
+    /// if you specify <i>SNS</i> for the Target type, you could specify an Amazon
+    /// Resource Name (ARN) for a topic as the value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTargetsFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTargetsFilter");
@@ -476,6 +512,16 @@ pub struct NotificationRuleSummary {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl NotificationRuleSummary {
+    /// <p>The unique ID of the notification rule.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for NotificationRuleSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationRuleSummary");
@@ -540,6 +586,17 @@ pub struct ListNotificationRulesFilter {
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i>
     /// in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ListNotificationRulesFilter {
+    /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ListNotificationRulesFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i>
+    /// in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNotificationRulesFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -676,6 +733,24 @@ pub struct EventTypeSummary {
     /// <p>The resource type of the event.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl EventTypeSummary {
+    /// <p>The system-generated ID of the event.</p>
+    pub fn event_type_id(&self) -> std::option::Option<&str> {
+        self.event_type_id.as_deref()
+    }
+    /// <p>The name of the service for which the event applies.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the event.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The resource type of the event.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for EventTypeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventTypeSummary");
@@ -775,6 +850,17 @@ pub struct ListEventTypesFilter {
     /// <p>The name of the resource type (for example, pipeline) or service name (for example,
     /// CodePipeline) that you want to filter by.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ListEventTypesFilter {
+    /// <p>The system-generated name of the filter type you want to filter by.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ListEventTypesFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The name of the resource type (for example, pipeline) or service name (for example,
+    /// CodePipeline) that you want to filter by.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventTypesFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

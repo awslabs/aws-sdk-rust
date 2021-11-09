@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>The message with more information about the validation exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The name of the field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The message with more information about the validation exception.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -145,6 +155,30 @@ pub struct MetricSource {
     /// <p>An object containing information about the Amazon Redshift database configuration.</p>
     pub redshift_source_config: std::option::Option<crate::model::RedshiftSourceConfig>,
 }
+impl MetricSource {
+    /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
+    pub fn s3_source_config(&self) -> std::option::Option<&crate::model::S3SourceConfig> {
+        self.s3_source_config.as_ref()
+    }
+    /// <p>An object containing information about the AppFlow configuration.</p>
+    pub fn app_flow_config(&self) -> std::option::Option<&crate::model::AppFlowConfig> {
+        self.app_flow_config.as_ref()
+    }
+    /// <p>An object containing information about the Amazon CloudWatch monitoring configuration.</p>
+    pub fn cloud_watch_config(&self) -> std::option::Option<&crate::model::CloudWatchConfig> {
+        self.cloud_watch_config.as_ref()
+    }
+    /// <p>An object containing information about the Amazon Relational Database Service (RDS) configuration.</p>
+    pub fn rds_source_config(&self) -> std::option::Option<&crate::model::RdsSourceConfig> {
+        self.rds_source_config.as_ref()
+    }
+    /// <p>An object containing information about the Amazon Redshift database configuration.</p>
+    pub fn redshift_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftSourceConfig> {
+        self.redshift_source_config.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricSource");
@@ -273,6 +307,40 @@ pub struct RedshiftSourceConfig {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+}
+impl RedshiftSourceConfig {
+    /// <p>A string identifying the Redshift cluster.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of the database host.</p>
+    pub fn database_host(&self) -> std::option::Option<&str> {
+        self.database_host.as_deref()
+    }
+    /// <p>The port number where the database can be accessed.</p>
+    pub fn database_port(&self) -> std::option::Option<i32> {
+        self.database_port
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
+    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+        self.secret_manager_arn.as_deref()
+    }
+    /// <p>The Redshift database name.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The table name of the Redshift database.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RedshiftSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -430,6 +498,16 @@ pub struct VpcConfiguration {
     /// <p>An array of strings containing the list of security groups.</p>
     pub security_group_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl VpcConfiguration {
+    /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
+    pub fn subnet_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_id_list.as_deref()
+    }
+    /// <p>An array of strings containing the list of security groups.</p>
+    pub fn security_group_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_id_list.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcConfiguration");
@@ -522,6 +600,40 @@ pub struct RdsSourceConfig {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+}
+impl RdsSourceConfig {
+    /// <p>A string identifying the database instance.</p>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>The host name of the database.</p>
+    pub fn database_host(&self) -> std::option::Option<&str> {
+        self.database_host.as_deref()
+    }
+    /// <p>The port number where the database can be accessed.</p>
+    pub fn database_port(&self) -> std::option::Option<i32> {
+        self.database_port
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
+    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+        self.secret_manager_arn.as_deref()
+    }
+    /// <p>The name of the RDS database.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table in the database.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RdsSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +789,12 @@ pub struct CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl CloudWatchConfig {
+    /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchConfig");
@@ -726,6 +844,16 @@ pub struct AppFlowConfig {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> name of the flow.</p>
     pub flow_name: std::option::Option<std::string::String>,
+}
+impl AppFlowConfig {
+    /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p> name of the flow.</p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AppFlowConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -793,6 +921,26 @@ pub struct S3SourceConfig {
     pub historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about a source file's formatting.</p>
     pub file_format_descriptor: std::option::Option<crate::model::FileFormatDescriptor>,
+}
+impl S3SourceConfig {
+    /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of templated paths to the source files.</p>
+    pub fn templated_path_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.templated_path_list.as_deref()
+    }
+    /// <p>A list of paths to the historical data files.</p>
+    pub fn historical_data_path_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.historical_data_path_list.as_deref()
+    }
+    /// <p>Contains information about a source file's formatting.</p>
+    pub fn file_format_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::model::FileFormatDescriptor> {
+        self.file_format_descriptor.as_ref()
+    }
 }
 impl std::fmt::Debug for S3SourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -905,6 +1053,18 @@ pub struct FileFormatDescriptor {
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
     pub json_format_descriptor: std::option::Option<crate::model::JsonFormatDescriptor>,
 }
+impl FileFormatDescriptor {
+    /// <p>Contains information about how a source CSV data file should be analyzed.</p>
+    pub fn csv_format_descriptor(&self) -> std::option::Option<&crate::model::CsvFormatDescriptor> {
+        self.csv_format_descriptor.as_ref()
+    }
+    /// <p>Contains information about how a source JSON data file should be analyzed.</p>
+    pub fn json_format_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::model::JsonFormatDescriptor> {
+        self.json_format_descriptor.as_ref()
+    }
+}
 impl std::fmt::Debug for FileFormatDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileFormatDescriptor");
@@ -973,6 +1133,16 @@ pub struct JsonFormatDescriptor {
     pub file_compression: std::option::Option<crate::model::JsonFileCompression>,
     /// <p>The character set in which the source JSON file is written.</p>
     pub charset: std::option::Option<std::string::String>,
+}
+impl JsonFormatDescriptor {
+    /// <p>The level of compression of the source CSV file.</p>
+    pub fn file_compression(&self) -> std::option::Option<&crate::model::JsonFileCompression> {
+        self.file_compression.as_ref()
+    }
+    /// <p>The character set in which the source JSON file is written.</p>
+    pub fn charset(&self) -> std::option::Option<&str> {
+        self.charset.as_deref()
+    }
 }
 impl std::fmt::Debug for JsonFormatDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1102,6 +1272,32 @@ pub struct CsvFormatDescriptor {
     pub header_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The character used as a quote character.</p>
     pub quote_symbol: std::option::Option<std::string::String>,
+}
+impl CsvFormatDescriptor {
+    /// <p>The level of compression of the source CSV file.</p>
+    pub fn file_compression(&self) -> std::option::Option<&crate::model::CsvFileCompression> {
+        self.file_compression.as_ref()
+    }
+    /// <p>The character set in which the source CSV file is written.</p>
+    pub fn charset(&self) -> std::option::Option<&str> {
+        self.charset.as_deref()
+    }
+    /// <p>Whether or not the source CSV file contains a header.</p>
+    pub fn contains_header(&self) -> std::option::Option<bool> {
+        self.contains_header
+    }
+    /// <p>The character used to delimit the source CSV file.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>A list of the source CSV file's headers, if any.</p>
+    pub fn header_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.header_list.as_deref()
+    }
+    /// <p>The character used as a quote character.</p>
+    pub fn quote_symbol(&self) -> std::option::Option<&str> {
+        self.quote_symbol.as_deref()
+    }
 }
 impl std::fmt::Debug for CsvFormatDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1348,6 +1544,16 @@ pub struct TimestampColumn {
     /// <p>The format of the timestamp column.</p>
     pub column_format: std::option::Option<std::string::String>,
 }
+impl TimestampColumn {
+    /// <p>The name of the timestamp column.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>The format of the timestamp column.</p>
+    pub fn column_format(&self) -> std::option::Option<&str> {
+        self.column_format.as_deref()
+    }
+}
 impl std::fmt::Debug for TimestampColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimestampColumn");
@@ -1415,6 +1621,20 @@ pub struct Metric {
     pub aggregation_function: std::option::Option<crate::model::AggregationFunction>,
     /// <p>The namespace for the metric.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl Metric {
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The function with which the metric is calculated.</p>
+    pub fn aggregation_function(&self) -> std::option::Option<&crate::model::AggregationFunction> {
+        self.aggregation_function.as_ref()
+    }
+    /// <p>The namespace for the metric.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for Metric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1548,6 +1768,12 @@ pub struct AnomalyDetectorConfig {
     /// <p>The frequency at which the detector analyzes its source data.</p>
     pub anomaly_detector_frequency: std::option::Option<crate::model::Frequency>,
 }
+impl AnomalyDetectorConfig {
+    /// <p>The frequency at which the detector analyzes its source data.</p>
+    pub fn anomaly_detector_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.anomaly_detector_frequency.as_ref()
+    }
+}
 impl std::fmt::Debug for AnomalyDetectorConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnomalyDetectorConfig");
@@ -1605,6 +1831,20 @@ pub struct AnomalyGroupTimeSeriesFeedback {
     pub time_series_id: std::option::Option<std::string::String>,
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub is_anomaly: std::option::Option<bool>,
+}
+impl AnomalyGroupTimeSeriesFeedback {
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>The ID of the metric.</p>
+    pub fn time_series_id(&self) -> std::option::Option<&str> {
+        self.time_series_id.as_deref()
+    }
+    /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
+    pub fn is_anomaly(&self) -> std::option::Option<bool> {
+        self.is_anomaly
+    }
 }
 impl std::fmt::Debug for AnomalyGroupTimeSeriesFeedback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1698,6 +1938,39 @@ pub struct MetricSetSummary {
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl MetricSetSummary {
+    /// <p>The ARN of the dataset.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+    /// <p>The ARN of the detector to which the dataset belongs.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The description of the dataset.</p>
+    pub fn metric_set_description(&self) -> std::option::Option<&str> {
+        self.metric_set_description.as_deref()
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn metric_set_name(&self) -> std::option::Option<&str> {
+        self.metric_set_name.as_deref()
+    }
+    /// <p>The time at which the dataset was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the dataset was last modified.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for MetricSetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1865,6 +2138,20 @@ pub struct TimeSeries {
     /// <p>The values for the metric.</p>
     pub metric_value_list: std::option::Option<std::vec::Vec<f64>>,
 }
+impl TimeSeries {
+    /// <p>The ID of the metric.</p>
+    pub fn time_series_id(&self) -> std::option::Option<&str> {
+        self.time_series_id.as_deref()
+    }
+    /// <p>The dimensions of the metric.</p>
+    pub fn dimension_list(&self) -> std::option::Option<&[crate::model::DimensionNameValue]> {
+        self.dimension_list.as_deref()
+    }
+    /// <p>The values for the metric.</p>
+    pub fn metric_value_list(&self) -> std::option::Option<&[f64]> {
+        self.metric_value_list.as_deref()
+    }
+}
 impl std::fmt::Debug for TimeSeries {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeSeries");
@@ -1966,6 +2253,16 @@ pub struct DimensionNameValue {
     /// <p>The value of the dimension.</p>
     pub dimension_value: std::option::Option<std::string::String>,
 }
+impl DimensionNameValue {
+    /// <p>The name of the dimension.</p>
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
+        self.dimension_name.as_deref()
+    }
+    /// <p>The value of the dimension.</p>
+    pub fn dimension_value(&self) -> std::option::Option<&str> {
+        self.dimension_value.as_deref()
+    }
+}
 impl std::fmt::Debug for DimensionNameValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DimensionNameValue");
@@ -2037,6 +2334,22 @@ pub struct AnomalyGroupStatistics {
     /// <p>Statistics for individual metrics within the group.</p>
     pub itemized_metric_stats_list:
         std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
+}
+impl AnomalyGroupStatistics {
+    /// <p>The start of the time range that was searched.</p>
+    pub fn evaluation_start_date(&self) -> std::option::Option<&str> {
+        self.evaluation_start_date.as_deref()
+    }
+    /// <p>The number of groups found.</p>
+    pub fn total_count(&self) -> i32 {
+        self.total_count
+    }
+    /// <p>Statistics for individual metrics within the group.</p>
+    pub fn itemized_metric_stats_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ItemizedMetricStats]> {
+        self.itemized_metric_stats_list.as_deref()
+    }
 }
 impl std::fmt::Debug for AnomalyGroupStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2133,6 +2446,16 @@ pub struct ItemizedMetricStats {
     /// <p>The number of times that the measure appears.</p>
     pub occurrence_count: i32,
 }
+impl ItemizedMetricStats {
+    /// <p>The name of the measure.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The number of times that the measure appears.</p>
+    pub fn occurrence_count(&self) -> i32 {
+        self.occurrence_count
+    }
+}
 impl std::fmt::Debug for ItemizedMetricStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ItemizedMetricStats");
@@ -2201,6 +2524,28 @@ pub struct AnomalyGroupSummary {
     pub anomaly_group_score: std::option::Option<f64>,
     /// <p>The name of the primary affected measure for the group.</p>
     pub primary_metric_name: std::option::Option<std::string::String>,
+}
+impl AnomalyGroupSummary {
+    /// <p>The start time for the group.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>The end time for the group.</p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>The severity score of the group.</p>
+    pub fn anomaly_group_score(&self) -> std::option::Option<f64> {
+        self.anomaly_group_score
+    }
+    /// <p>The name of the primary affected measure for the group.</p>
+    pub fn primary_metric_name(&self) -> std::option::Option<&str> {
+        self.primary_metric_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AnomalyGroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2320,6 +2665,39 @@ pub struct AnomalyDetectorSummary {
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AnomalyDetectorSummary {
+    /// <p>The ARN of the detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The name of the detector.</p>
+    pub fn anomaly_detector_name(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_name.as_deref()
+    }
+    /// <p>A description of the detector.</p>
+    pub fn anomaly_detector_description(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_description.as_deref()
+    }
+    /// <p>The time at which the detector was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the detector was last modified.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The status of detector.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyDetectorStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AnomalyDetectorSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2597,6 +2975,47 @@ pub struct AlertSummary {
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AlertSummary {
+    /// <p>The ARN of the alert.</p>
+    pub fn alert_arn(&self) -> std::option::Option<&str> {
+        self.alert_arn.as_deref()
+    }
+    /// <p>The ARN of the detector to which the alert is attached.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The name of the alert.</p>
+    pub fn alert_name(&self) -> std::option::Option<&str> {
+        self.alert_name.as_deref()
+    }
+    /// <p>The minimum severity for an anomaly to trigger the alert.</p>
+    pub fn alert_sensitivity_threshold(&self) -> i32 {
+        self.alert_sensitivity_threshold
+    }
+    /// <p>The type of the alert.</p>
+    pub fn alert_type(&self) -> std::option::Option<&crate::model::AlertType> {
+        self.alert_type.as_ref()
+    }
+    /// <p>The status of the alert.</p>
+    pub fn alert_status(&self) -> std::option::Option<&crate::model::AlertStatus> {
+        self.alert_status.as_ref()
+    }
+    /// <p>The time at which the alert was last modified.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The time at which the alert was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AlertSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2901,6 +3320,26 @@ pub struct SampleDataS3SourceConfig {
     /// <p>Contains information about a source file's formatting.</p>
     pub file_format_descriptor: std::option::Option<crate::model::FileFormatDescriptor>,
 }
+impl SampleDataS3SourceConfig {
+    /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An array of strings containing the list of templated paths.</p>
+    pub fn templated_path_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.templated_path_list.as_deref()
+    }
+    /// <p>An array of strings containing the historical set of data paths.</p>
+    pub fn historical_data_path_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.historical_data_path_list.as_deref()
+    }
+    /// <p>Contains information about a source file's formatting.</p>
+    pub fn file_format_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::model::FileFormatDescriptor> {
+        self.file_format_descriptor.as_ref()
+    }
+}
 impl std::fmt::Debug for SampleDataS3SourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SampleDataS3SourceConfig");
@@ -3012,6 +3451,16 @@ pub struct TimeSeriesFeedback {
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub is_anomaly: std::option::Option<bool>,
 }
+impl TimeSeriesFeedback {
+    /// <p>The ID of the metric.</p>
+    pub fn time_series_id(&self) -> std::option::Option<&str> {
+        self.time_series_id.as_deref()
+    }
+    /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
+    pub fn is_anomaly(&self) -> std::option::Option<bool> {
+        self.is_anomaly
+    }
+}
 impl std::fmt::Debug for TimeSeriesFeedback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeSeriesFeedback");
@@ -3077,6 +3526,16 @@ pub struct AnomalyGroupTimeSeries {
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the metric.</p>
     pub time_series_id: std::option::Option<std::string::String>,
+}
+impl AnomalyGroupTimeSeries {
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>The ID of the metric.</p>
+    pub fn time_series_id(&self) -> std::option::Option<&str> {
+        self.time_series_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AnomalyGroupTimeSeries {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3155,6 +3614,34 @@ pub struct AnomalyGroup {
     /// <p>A list of measures affected by the anomaly.</p>
     pub metric_level_impact_list:
         std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
+}
+impl AnomalyGroup {
+    /// <p>The start time for the group.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>The end time for the group.</p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>The severity score of the group.</p>
+    pub fn anomaly_group_score(&self) -> std::option::Option<f64> {
+        self.anomaly_group_score
+    }
+    /// <p>The name of the primary affected measure for the group.</p>
+    pub fn primary_metric_name(&self) -> std::option::Option<&str> {
+        self.primary_metric_name.as_deref()
+    }
+    /// <p>A list of measures affected by the anomaly.</p>
+    pub fn metric_level_impact_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricLevelImpact]> {
+        self.metric_level_impact_list.as_deref()
+    }
 }
 impl std::fmt::Debug for AnomalyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3292,6 +3779,20 @@ pub struct MetricLevelImpact {
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub contribution_matrix: std::option::Option<crate::model::ContributionMatrix>,
 }
+impl MetricLevelImpact {
+    /// <p>The name of the measure.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The number of anomalous metrics for the measure.</p>
+    pub fn num_time_series(&self) -> i32 {
+        self.num_time_series
+    }
+    /// <p>Details about the dimensions that contributed to the anomaly.</p>
+    pub fn contribution_matrix(&self) -> std::option::Option<&crate::model::ContributionMatrix> {
+        self.contribution_matrix.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricLevelImpact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricLevelImpact");
@@ -3370,6 +3871,14 @@ pub struct ContributionMatrix {
     pub dimension_contribution_list:
         std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
 }
+impl ContributionMatrix {
+    /// <p>A list of contributing dimensions.</p>
+    pub fn dimension_contribution_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DimensionContribution]> {
+        self.dimension_contribution_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ContributionMatrix {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContributionMatrix");
@@ -3436,6 +3945,18 @@ pub struct DimensionContribution {
     /// <p>A list of dimension values that contributed to the anomaly.</p>
     pub dimension_value_contribution_list:
         std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
+}
+impl DimensionContribution {
+    /// <p>The name of the dimension.</p>
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
+        self.dimension_name.as_deref()
+    }
+    /// <p>A list of dimension values that contributed to the anomaly.</p>
+    pub fn dimension_value_contribution_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DimensionValueContribution]> {
+        self.dimension_value_contribution_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DimensionContribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3519,6 +4040,16 @@ pub struct DimensionValueContribution {
     /// <p>The severity score of the value.</p>
     pub contribution_score: std::option::Option<f64>,
 }
+impl DimensionValueContribution {
+    /// <p>The value of the dimension.</p>
+    pub fn dimension_value(&self) -> std::option::Option<&str> {
+        self.dimension_value.as_deref()
+    }
+    /// <p>The severity score of the value.</p>
+    pub fn contribution_score(&self) -> std::option::Option<f64> {
+        self.contribution_score
+    }
+}
 impl std::fmt::Debug for DimensionValueContribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DimensionValueContribution");
@@ -3583,6 +4114,12 @@ pub struct AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
     pub anomaly_detector_frequency: std::option::Option<crate::model::Frequency>,
 }
+impl AnomalyDetectorConfigSummary {
+    /// <p>The interval at which the detector analyzes its source data.</p>
+    pub fn anomaly_detector_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.anomaly_detector_frequency.as_ref()
+    }
+}
 impl std::fmt::Debug for AnomalyDetectorConfigSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnomalyDetectorConfigSummary");
@@ -3640,6 +4177,20 @@ pub struct ExecutionStatus {
     pub status: std::option::Option<crate::model::AnomalyDetectionTaskStatus>,
     /// <p>The reason that the run failed, if applicable.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl ExecutionStatus {
+    /// <p>The run's timestamp.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
+    /// <p>The run's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyDetectionTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason that the run failed, if applicable.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecutionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3811,6 +4362,48 @@ pub struct Alert {
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the alert was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Alert {
+    /// <p>Action that will be triggered when there is an alert.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>A description of the alert.</p>
+    pub fn alert_description(&self) -> std::option::Option<&str> {
+        self.alert_description.as_deref()
+    }
+    /// <p>The ARN of the alert.</p>
+    pub fn alert_arn(&self) -> std::option::Option<&str> {
+        self.alert_arn.as_deref()
+    }
+    /// <p>The ARN of the detector to which the alert is attached.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The name of the alert.</p>
+    pub fn alert_name(&self) -> std::option::Option<&str> {
+        self.alert_name.as_deref()
+    }
+    /// <p>The minimum severity for an anomaly to trigger the alert.</p>
+    pub fn alert_sensitivity_threshold(&self) -> i32 {
+        self.alert_sensitivity_threshold
+    }
+    /// <p>The type of the alert.</p>
+    pub fn alert_type(&self) -> std::option::Option<&crate::model::AlertType> {
+        self.alert_type.as_ref()
+    }
+    /// <p>The status of the alert.</p>
+    pub fn alert_status(&self) -> std::option::Option<&crate::model::AlertStatus> {
+        self.alert_status.as_ref()
+    }
+    /// <p>The time at which the alert was last modified.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The time at which the alert was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Alert {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4000,6 +4593,16 @@ pub struct Action {
     /// <p>A configuration for an AWS Lambda channel.</p>
     pub lambda_configuration: std::option::Option<crate::model::LambdaConfiguration>,
 }
+impl Action {
+    /// <p>A configuration for an Amazon SNS channel.</p>
+    pub fn sns_configuration(&self) -> std::option::Option<&crate::model::SnsConfiguration> {
+        self.sns_configuration.as_ref()
+    }
+    /// <p>A configuration for an AWS Lambda channel.</p>
+    pub fn lambda_configuration(&self) -> std::option::Option<&crate::model::LambdaConfiguration> {
+        self.lambda_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Action");
@@ -4069,6 +4672,16 @@ pub struct LambdaConfiguration {
     /// <p>The ARN of the Lambda function.</p>
     pub lambda_arn: std::option::Option<std::string::String>,
 }
+impl LambdaConfiguration {
+    /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaConfiguration");
@@ -4132,6 +4745,16 @@ pub struct SnsConfiguration {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the target SNS topic.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
+}
+impl SnsConfiguration {
+    /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The ARN of the target SNS topic.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SnsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

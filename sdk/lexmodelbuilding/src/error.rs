@@ -5662,6 +5662,12 @@ pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+        self.retry_after_seconds.as_deref()
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -6088,6 +6094,18 @@ pub struct ResourceInUseException {
     pub example_reference: std::option::Option<crate::model::ResourceReference>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reference_type(&self) -> std::option::Option<&crate::model::ReferenceType> {
+        self.reference_type.as_ref()
+    }
+    /// <p>Describes the resource that refers to the resource that you are
+    /// attempting to delete. This object is returned as part of the
+    /// <code>ResourceInUseException</code> exception. </p>
+    pub fn example_reference(&self) -> std::option::Option<&crate::model::ResourceReference> {
+        self.example_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

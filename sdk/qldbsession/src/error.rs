@@ -338,6 +338,12 @@ pub struct InvalidSessionException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl InvalidSessionException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidSessionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidSessionException");
@@ -481,6 +487,12 @@ pub struct BadRequestException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl BadRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

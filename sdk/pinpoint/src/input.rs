@@ -21448,6 +21448,26 @@ pub struct UpdateVoiceTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     pub voice_template_request: std::option::Option<crate::model::VoiceTemplateRequest>,
 }
+impl UpdateVoiceTemplateInput {
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    pub fn create_new_version(&self) -> bool {
+        self.create_new_version
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    pub fn voice_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::VoiceTemplateRequest> {
+        self.voice_template_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVoiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVoiceTemplateInput");
@@ -21467,6 +21487,16 @@ pub struct UpdateVoiceChannelInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
     pub voice_channel_request: std::option::Option<crate::model::VoiceChannelRequest>,
+}
+impl UpdateVoiceChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the status and settings of the voice channel for an application.</p>
+    pub fn voice_channel_request(&self) -> std::option::Option<&crate::model::VoiceChannelRequest> {
+        self.voice_channel_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateVoiceChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21488,6 +21518,22 @@ pub struct UpdateTemplateActiveVersionInput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub template_type: std::option::Option<std::string::String>,
+}
+impl UpdateTemplateActiveVersionInput {
+    /// <p>Specifies which version of a message template to use as the active version of the template.</p>
+    pub fn template_active_version_request(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateActiveVersionRequest> {
+        self.template_active_version_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    pub fn template_type(&self) -> std::option::Option<&str> {
+        self.template_type.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTemplateActiveVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21515,6 +21561,24 @@ pub struct UpdateSmsTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl UpdateSmsTemplateInput {
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    pub fn create_new_version(&self) -> bool {
+        self.create_new_version
+    }
+    /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    pub fn sms_template_request(&self) -> std::option::Option<&crate::model::SmsTemplateRequest> {
+        self.sms_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSmsTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSmsTemplateInput");
@@ -21534,6 +21598,16 @@ pub struct UpdateSmsChannelInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the SMS channel for an application.</p>
     pub sms_channel_request: std::option::Option<crate::model::SmsChannelRequest>,
+}
+impl UpdateSmsChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the status and settings of the SMS channel for an application.</p>
+    pub fn sms_channel_request(&self) -> std::option::Option<&crate::model::SmsChannelRequest> {
+        self.sms_channel_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSmsChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21555,6 +21629,20 @@ pub struct UpdateSegmentInput {
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     pub write_segment_request: std::option::Option<crate::model::WriteSegmentRequest>,
 }
+impl UpdateSegmentInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    pub fn write_segment_request(&self) -> std::option::Option<&crate::model::WriteSegmentRequest> {
+        self.write_segment_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSegmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSegmentInput");
@@ -21574,6 +21662,18 @@ pub struct UpdateRecommenderConfigurationInput {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub update_recommender_configuration:
         std::option::Option<crate::model::UpdateRecommenderConfigurationShape>,
+}
+impl UpdateRecommenderConfigurationInput {
+    /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
+    /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    pub fn update_recommender_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateRecommenderConfigurationShape> {
+        self.update_recommender_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRecommenderConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21601,6 +21701,26 @@ pub struct UpdatePushTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl UpdatePushTemplateInput {
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    pub fn create_new_version(&self) -> bool {
+        self.create_new_version
+    }
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    pub fn push_notification_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::PushNotificationTemplateRequest> {
+        self.push_notification_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePushTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePushTemplateInput");
@@ -21626,6 +21746,20 @@ pub struct UpdateJourneyStateInput {
     /// <p>Changes the status of a journey.</p>
     pub journey_state_request: std::option::Option<crate::model::JourneyStateRequest>,
 }
+impl UpdateJourneyStateInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>Changes the status of a journey.</p>
+    pub fn journey_state_request(&self) -> std::option::Option<&crate::model::JourneyStateRequest> {
+        self.journey_state_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateJourneyStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJourneyStateInput");
@@ -21646,6 +21780,20 @@ pub struct UpdateJourneyInput {
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a journey.</p>
     pub write_journey_request: std::option::Option<crate::model::WriteJourneyRequest>,
+}
+impl UpdateJourneyInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>Specifies the configuration and other settings for a journey.</p>
+    pub fn write_journey_request(&self) -> std::option::Option<&crate::model::WriteJourneyRequest> {
+        self.write_journey_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateJourneyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21670,6 +21818,26 @@ pub struct UpdateInAppTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl UpdateInAppTemplateInput {
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    pub fn create_new_version(&self) -> bool {
+        self.create_new_version
+    }
+    /// <p>InApp Template Request.</p>
+    pub fn in_app_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::InAppTemplateRequest> {
+        self.in_app_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateInAppTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInAppTemplateInput");
@@ -21690,6 +21858,16 @@ pub struct UpdateGcmChannelInput {
     /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub gcm_channel_request: std::option::Option<crate::model::GcmChannelRequest>,
 }
+impl UpdateGcmChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    pub fn gcm_channel_request(&self) -> std::option::Option<&crate::model::GcmChannelRequest> {
+        self.gcm_channel_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGcmChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGcmChannelInput");
@@ -21707,6 +21885,18 @@ pub struct UpdateEndpointsBatchInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
     pub endpoint_batch_request: std::option::Option<crate::model::EndpointBatchRequest>,
+}
+impl UpdateEndpointsBatchInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
+    pub fn endpoint_batch_request(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointBatchRequest> {
+        self.endpoint_batch_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEndpointsBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21727,6 +21917,20 @@ pub struct UpdateEndpointInput {
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>Specifies the channel type and other settings for an endpoint.</p>
     pub endpoint_request: std::option::Option<crate::model::EndpointRequest>,
+}
+impl UpdateEndpointInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the endpoint.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>Specifies the channel type and other settings for an endpoint.</p>
+    pub fn endpoint_request(&self) -> std::option::Option<&crate::model::EndpointRequest> {
+        self.endpoint_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21751,6 +21955,26 @@ pub struct UpdateEmailTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl UpdateEmailTemplateInput {
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    pub fn create_new_version(&self) -> bool {
+        self.create_new_version
+    }
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    pub fn email_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailTemplateRequest> {
+        self.email_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEmailTemplateInput");
@@ -21770,6 +21994,16 @@ pub struct UpdateEmailChannelInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the email channel for an application.</p>
     pub email_channel_request: std::option::Option<crate::model::EmailChannelRequest>,
+}
+impl UpdateEmailChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the status and settings of the email channel for an application.</p>
+    pub fn email_channel_request(&self) -> std::option::Option<&crate::model::EmailChannelRequest> {
+        self.email_channel_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEmailChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21791,6 +22025,22 @@ pub struct UpdateCampaignInput {
     /// <p>Specifies the configuration and other settings for a campaign.</p>
     pub write_campaign_request: std::option::Option<crate::model::WriteCampaignRequest>,
 }
+impl UpdateCampaignInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>Specifies the configuration and other settings for a campaign.</p>
+    pub fn write_campaign_request(
+        &self,
+    ) -> std::option::Option<&crate::model::WriteCampaignRequest> {
+        self.write_campaign_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCampaignInput");
@@ -21810,6 +22060,16 @@ pub struct UpdateBaiduChannelInput {
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub baidu_channel_request: std::option::Option<crate::model::BaiduChannelRequest>,
 }
+impl UpdateBaiduChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    pub fn baidu_channel_request(&self) -> std::option::Option<&crate::model::BaiduChannelRequest> {
+        self.baidu_channel_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBaiduChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBaiduChannelInput");
@@ -21828,6 +22088,18 @@ pub struct UpdateApplicationSettingsInput {
     /// <p>Specifies the default settings for an application.</p>
     pub write_application_settings_request:
         std::option::Option<crate::model::WriteApplicationSettingsRequest>,
+}
+impl UpdateApplicationSettingsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the default settings for an application.</p>
+    pub fn write_application_settings_request(
+        &self,
+    ) -> std::option::Option<&crate::model::WriteApplicationSettingsRequest> {
+        self.write_application_settings_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21851,6 +22123,18 @@ pub struct UpdateApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl UpdateApnsVoipSandboxChannelInput {
+    /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    pub fn apns_voip_sandbox_channel_request(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipSandboxChannelRequest> {
+        self.apns_voip_sandbox_channel_request.as_ref()
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApnsVoipSandboxChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApnsVoipSandboxChannelInput");
@@ -21872,6 +22156,18 @@ pub struct UpdateApnsVoipChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl UpdateApnsVoipChannelInput {
+    /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    pub fn apns_voip_channel_request(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipChannelRequest> {
+        self.apns_voip_channel_request.as_ref()
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApnsVoipChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApnsVoipChannelInput");
@@ -21889,6 +22185,18 @@ pub struct UpdateApnsSandboxChannelInput {
     pub apns_sandbox_channel_request: std::option::Option<crate::model::ApnsSandboxChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl UpdateApnsSandboxChannelInput {
+    /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    pub fn apns_sandbox_channel_request(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsSandboxChannelRequest> {
+        self.apns_sandbox_channel_request.as_ref()
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateApnsSandboxChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21911,6 +22219,16 @@ pub struct UpdateApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl UpdateApnsChannelInput {
+    /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    pub fn apns_channel_request(&self) -> std::option::Option<&crate::model::ApnsChannelRequest> {
+        self.apns_channel_request.as_ref()
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApnsChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApnsChannelInput");
@@ -21928,6 +22246,16 @@ pub struct UpdateAdmChannelInput {
     pub adm_channel_request: std::option::Option<crate::model::AdmChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl UpdateAdmChannelInput {
+    /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    pub fn adm_channel_request(&self) -> std::option::Option<&crate::model::AdmChannelRequest> {
+        self.adm_channel_request.as_ref()
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAdmChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21947,6 +22275,16 @@ pub struct UntagResourceInput {
     /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -21965,6 +22303,16 @@ pub struct TagResourceInput {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub tags_model: std::option::Option<crate::model::TagsModel>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    pub fn tags_model(&self) -> std::option::Option<&crate::model::TagsModel> {
+        self.tags_model.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -21982,6 +22330,18 @@ pub struct SendUsersMessagesInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
     pub send_users_message_request: std::option::Option<crate::model::SendUsersMessageRequest>,
+}
+impl SendUsersMessagesInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
+    pub fn send_users_message_request(
+        &self,
+    ) -> std::option::Option<&crate::model::SendUsersMessageRequest> {
+        self.send_users_message_request.as_ref()
+    }
 }
 impl std::fmt::Debug for SendUsersMessagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22004,6 +22364,16 @@ pub struct SendMessagesInput {
     /// <p>Specifies the configuration and other settings for a message.</p>
     pub message_request: std::option::Option<crate::model::MessageRequest>,
 }
+impl SendMessagesInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the configuration and other settings for a message.</p>
+    pub fn message_request(&self) -> std::option::Option<&crate::model::MessageRequest> {
+        self.message_request.as_ref()
+    }
+}
 impl std::fmt::Debug for SendMessagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendMessagesInput");
@@ -22024,6 +22394,22 @@ pub struct RemoveAttributesInput {
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
     pub update_attributes_request: std::option::Option<crate::model::UpdateAttributesRequest>,
 }
+impl RemoveAttributesInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
+    pub fn attribute_type(&self) -> std::option::Option<&str> {
+        self.attribute_type.as_deref()
+    }
+    /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
+    pub fn update_attributes_request(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateAttributesRequest> {
+        self.update_attributes_request.as_ref()
+    }
+}
 impl std::fmt::Debug for RemoveAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveAttributesInput");
@@ -22043,6 +22429,16 @@ pub struct PutEventStreamInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
     pub write_event_stream: std::option::Option<crate::model::WriteEventStream>,
 }
+impl PutEventStreamInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
+    pub fn write_event_stream(&self) -> std::option::Option<&crate::model::WriteEventStream> {
+        self.write_event_stream.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEventStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventStreamInput");
@@ -22061,6 +22457,16 @@ pub struct PutEventsInput {
     /// <p>Specifies a batch of events to process.</p>
     pub events_request: std::option::Option<crate::model::EventsRequest>,
 }
+impl PutEventsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies a batch of events to process.</p>
+    pub fn events_request(&self) -> std::option::Option<&crate::model::EventsRequest> {
+        self.events_request.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventsInput");
@@ -22076,6 +22482,14 @@ impl std::fmt::Debug for PutEventsInput {
 pub struct PhoneNumberValidateInput {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
     pub number_validate_request: std::option::Option<crate::model::NumberValidateRequest>,
+}
+impl PhoneNumberValidateInput {
+    /// <p>Specifies a phone number to validate and retrieve information about.</p>
+    pub fn number_validate_request(
+        &self,
+    ) -> std::option::Option<&crate::model::NumberValidateRequest> {
+        self.number_validate_request.as_ref()
+    }
 }
 impl std::fmt::Debug for PhoneNumberValidateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22097,6 +22511,24 @@ pub struct ListTemplateVersionsInput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub template_type: std::option::Option<std::string::String>,
+}
+impl ListTemplateVersionsInput {
+    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    pub fn template_type(&self) -> std::option::Option<&str> {
+        self.template_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTemplateVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22122,6 +22554,24 @@ pub struct ListTemplatesInput {
     /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
     pub template_type: std::option::Option<std::string::String>,
 }
+impl ListTemplatesInput {
+    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
+    pub fn template_type(&self) -> std::option::Option<&str> {
+        self.template_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplatesInput");
@@ -22139,6 +22589,12 @@ impl std::fmt::Debug for ListTemplatesInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22159,6 +22615,20 @@ pub struct ListJourneysInput {
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl ListJourneysInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJourneysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJourneysInput");
@@ -22178,6 +22648,16 @@ pub struct GetVoiceTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetVoiceTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVoiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceTemplateInput");
@@ -22193,6 +22673,12 @@ impl std::fmt::Debug for GetVoiceTemplateInput {
 pub struct GetVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetVoiceChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVoiceChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22210,6 +22696,16 @@ pub struct GetUserEndpointsInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the user.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl GetUserEndpointsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUserEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22229,6 +22725,16 @@ pub struct GetSmsTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetSmsTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSmsTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSmsTemplateInput");
@@ -22244,6 +22750,12 @@ impl std::fmt::Debug for GetSmsTemplateInput {
 pub struct GetSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetSmsChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSmsChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22265,6 +22777,24 @@ pub struct GetSegmentVersionsInput {
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl GetSegmentVersionsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSegmentVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22288,6 +22818,20 @@ pub struct GetSegmentVersionInput {
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetSegmentVersionInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The unique version number (Version property) for the campaign version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSegmentVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSegmentVersionInput");
@@ -22308,6 +22852,20 @@ pub struct GetSegmentsInput {
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl GetSegmentsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSegmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22331,6 +22889,24 @@ pub struct GetSegmentImportJobsInput {
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl GetSegmentImportJobsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSegmentImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22356,6 +22932,24 @@ pub struct GetSegmentExportJobsInput {
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl GetSegmentExportJobsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSegmentExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSegmentExportJobsInput");
@@ -22376,6 +22970,16 @@ pub struct GetSegmentInput {
     /// <p>The unique identifier for the segment.</p>
     pub segment_id: std::option::Option<std::string::String>,
 }
+impl GetSegmentInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSegmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSegmentInput");
@@ -22394,6 +22998,16 @@ pub struct GetRecommenderConfigurationsInput {
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl GetRecommenderConfigurationsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRecommenderConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecommenderConfigurationsInput");
@@ -22409,6 +23023,12 @@ impl std::fmt::Debug for GetRecommenderConfigurationsInput {
 pub struct GetRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub recommender_id: std::option::Option<std::string::String>,
+}
+impl GetRecommenderConfigurationInput {
+    /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecommenderConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22426,6 +23046,16 @@ pub struct GetPushTemplateInput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
+}
+impl GetPushTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPushTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22448,6 +23078,24 @@ pub struct GetJourneyExecutionMetricsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
+}
+impl GetJourneyExecutionMetricsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJourneyExecutionMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22474,6 +23122,28 @@ pub struct GetJourneyExecutionActivityMetricsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
+}
+impl GetJourneyExecutionActivityMetricsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey activity.</p>
+    pub fn journey_activity_id(&self) -> std::option::Option<&str> {
+        self.journey_activity_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJourneyExecutionActivityMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22506,6 +23176,36 @@ pub struct GetJourneyDateRangeKpiInput {
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetJourneyDateRangeKpiInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn kpi_name(&self) -> std::option::Option<&str> {
+        self.kpi_name.as_deref()
+    }
+    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJourneyDateRangeKpiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJourneyDateRangeKpiInput");
@@ -22529,6 +23229,16 @@ pub struct GetJourneyInput {
     /// <p>The unique identifier for the journey.</p>
     pub journey_id: std::option::Option<std::string::String>,
 }
+impl GetJourneyInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJourneyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJourneyInput");
@@ -22547,6 +23257,16 @@ pub struct GetInAppTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetInAppTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInAppTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInAppTemplateInput");
@@ -22564,6 +23284,16 @@ pub struct GetInAppMessagesInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the endpoint.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl GetInAppMessagesInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the endpoint.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInAppMessagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22585,6 +23315,20 @@ pub struct GetImportJobsInput {
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl GetImportJobsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImportJobsInput");
@@ -22604,6 +23348,16 @@ pub struct GetImportJobInput {
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl GetImportJobInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImportJobInput");
@@ -22619,6 +23373,12 @@ impl std::fmt::Debug for GetImportJobInput {
 pub struct GetGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetGcmChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGcmChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22639,6 +23399,20 @@ pub struct GetExportJobsInput {
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl GetExportJobsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExportJobsInput");
@@ -22658,6 +23432,16 @@ pub struct GetExportJobInput {
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl GetExportJobInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExportJobInput");
@@ -22673,6 +23457,12 @@ impl std::fmt::Debug for GetExportJobInput {
 pub struct GetEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetEventStreamInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEventStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22690,6 +23480,16 @@ pub struct GetEndpointInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the endpoint.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl GetEndpointInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the endpoint.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22709,6 +23509,16 @@ pub struct GetEmailTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetEmailTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEmailTemplateInput");
@@ -22725,6 +23535,12 @@ pub struct GetEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl GetEmailChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEmailChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEmailChannelInput");
@@ -22739,6 +23555,12 @@ impl std::fmt::Debug for GetEmailChannelInput {
 pub struct GetChannelsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetChannelsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22760,6 +23582,24 @@ pub struct GetCampaignVersionsInput {
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl GetCampaignVersionsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCampaignVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22783,6 +23623,20 @@ pub struct GetCampaignVersionInput {
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetCampaignVersionInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>The unique version number (Version property) for the campaign version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCampaignVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCampaignVersionInput");
@@ -22803,6 +23657,20 @@ pub struct GetCampaignsInput {
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl GetCampaignsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCampaignsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22833,6 +23701,36 @@ pub struct GetCampaignDateRangeKpiInput {
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetCampaignDateRangeKpiInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn kpi_name(&self) -> std::option::Option<&str> {
+        self.kpi_name.as_deref()
+    }
+    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCampaignDateRangeKpiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCampaignDateRangeKpiInput");
@@ -22860,6 +23758,24 @@ pub struct GetCampaignActivitiesInput {
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl GetCampaignActivitiesInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCampaignActivitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCampaignActivitiesInput");
@@ -22880,6 +23796,16 @@ pub struct GetCampaignInput {
     /// <p>The unique identifier for the campaign.</p>
     pub campaign_id: std::option::Option<std::string::String>,
 }
+impl GetCampaignInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCampaignInput");
@@ -22895,6 +23821,12 @@ impl std::fmt::Debug for GetCampaignInput {
 pub struct GetBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetBaiduChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBaiduChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22913,6 +23845,16 @@ pub struct GetAppsInput {
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub token: std::option::Option<std::string::String>,
 }
+impl GetAppsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppsInput");
@@ -22928,6 +23870,12 @@ impl std::fmt::Debug for GetAppsInput {
 pub struct GetApplicationSettingsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetApplicationSettingsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApplicationSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22954,6 +23902,32 @@ pub struct GetApplicationDateRangeKpiInput {
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetApplicationDateRangeKpiInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn kpi_name(&self) -> std::option::Option<&str> {
+        self.kpi_name.as_deref()
+    }
+    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn page_size(&self) -> std::option::Option<&str> {
+        self.page_size.as_deref()
+    }
+    /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetApplicationDateRangeKpiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationDateRangeKpiInput");
@@ -22974,6 +23948,12 @@ pub struct GetAppInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl GetAppInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppInput");
@@ -22988,6 +23968,12 @@ impl std::fmt::Debug for GetAppInput {
 pub struct GetApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetApnsVoipSandboxChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApnsVoipSandboxChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23004,6 +23990,12 @@ pub struct GetApnsVoipChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl GetApnsVoipChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApnsVoipChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApnsVoipChannelInput");
@@ -23018,6 +24010,12 @@ impl std::fmt::Debug for GetApnsVoipChannelInput {
 pub struct GetApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetApnsSandboxChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApnsSandboxChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23034,6 +24032,12 @@ pub struct GetApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl GetApnsChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApnsChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApnsChannelInput");
@@ -23048,6 +24052,12 @@ impl std::fmt::Debug for GetApnsChannelInput {
 pub struct GetAdmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetAdmChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAdmChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23066,6 +24076,16 @@ pub struct DeleteVoiceTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl DeleteVoiceTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVoiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceTemplateInput");
@@ -23081,6 +24101,12 @@ impl std::fmt::Debug for DeleteVoiceTemplateInput {
 pub struct DeleteVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteVoiceChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVoiceChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23098,6 +24124,16 @@ pub struct DeleteUserEndpointsInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the user.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl DeleteUserEndpointsInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23117,6 +24153,16 @@ pub struct DeleteSmsTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl DeleteSmsTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSmsTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSmsTemplateInput");
@@ -23132,6 +24178,12 @@ impl std::fmt::Debug for DeleteSmsTemplateInput {
 pub struct DeleteSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteSmsChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSmsChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23150,6 +24202,16 @@ pub struct DeleteSegmentInput {
     /// <p>The unique identifier for the segment.</p>
     pub segment_id: std::option::Option<std::string::String>,
 }
+impl DeleteSegmentInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSegmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSegmentInput");
@@ -23165,6 +24227,12 @@ impl std::fmt::Debug for DeleteSegmentInput {
 pub struct DeleteRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub recommender_id: std::option::Option<std::string::String>,
+}
+impl DeleteRecommenderConfigurationInput {
+    /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRecommenderConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23182,6 +24250,16 @@ pub struct DeletePushTemplateInput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
+}
+impl DeletePushTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePushTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23201,6 +24279,16 @@ pub struct DeleteJourneyInput {
     /// <p>The unique identifier for the journey.</p>
     pub journey_id: std::option::Option<std::string::String>,
 }
+impl DeleteJourneyInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteJourneyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteJourneyInput");
@@ -23219,6 +24307,16 @@ pub struct DeleteInAppTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl DeleteInAppTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInAppTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInAppTemplateInput");
@@ -23235,6 +24333,12 @@ pub struct DeleteGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl DeleteGcmChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGcmChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGcmChannelInput");
@@ -23249,6 +24353,12 @@ impl std::fmt::Debug for DeleteGcmChannelInput {
 pub struct DeleteEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteEventStreamInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEventStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23266,6 +24376,16 @@ pub struct DeleteEndpointInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the endpoint.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl DeleteEndpointInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the endpoint.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23285,6 +24405,16 @@ pub struct DeleteEmailTemplateInput {
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
     pub version: std::option::Option<std::string::String>,
 }
+impl DeleteEmailTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEmailTemplateInput");
@@ -23300,6 +24430,12 @@ impl std::fmt::Debug for DeleteEmailTemplateInput {
 pub struct DeleteEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteEmailChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEmailChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23318,6 +24454,16 @@ pub struct DeleteCampaignInput {
     /// <p>The unique identifier for the campaign.</p>
     pub campaign_id: std::option::Option<std::string::String>,
 }
+impl DeleteCampaignInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCampaignInput");
@@ -23334,6 +24480,12 @@ pub struct DeleteBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl DeleteBaiduChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBaiduChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBaiduChannelInput");
@@ -23348,6 +24500,12 @@ impl std::fmt::Debug for DeleteBaiduChannelInput {
 pub struct DeleteAppInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteAppInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23364,6 +24522,12 @@ pub struct DeleteApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl DeleteApnsVoipSandboxChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApnsVoipSandboxChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApnsVoipSandboxChannelInput");
@@ -23378,6 +24542,12 @@ impl std::fmt::Debug for DeleteApnsVoipSandboxChannelInput {
 pub struct DeleteApnsVoipChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteApnsVoipChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApnsVoipChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23394,6 +24564,12 @@ pub struct DeleteApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl DeleteApnsSandboxChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApnsSandboxChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApnsSandboxChannelInput");
@@ -23409,6 +24585,12 @@ pub struct DeleteApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
+impl DeleteApnsChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApnsChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApnsChannelInput");
@@ -23423,6 +24605,12 @@ impl std::fmt::Debug for DeleteApnsChannelInput {
 pub struct DeleteAdmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteAdmChannelInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAdmChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23440,6 +24628,18 @@ pub struct CreateVoiceTemplateInput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     pub voice_template_request: std::option::Option<crate::model::VoiceTemplateRequest>,
+}
+impl CreateVoiceTemplateInput {
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    pub fn voice_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::VoiceTemplateRequest> {
+        self.voice_template_request.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVoiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23459,6 +24659,16 @@ pub struct CreateSmsTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
 }
+impl CreateSmsTemplateInput {
+    /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    pub fn sms_template_request(&self) -> std::option::Option<&crate::model::SmsTemplateRequest> {
+        self.sms_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSmsTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSmsTemplateInput");
@@ -23477,6 +24687,16 @@ pub struct CreateSegmentInput {
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     pub write_segment_request: std::option::Option<crate::model::WriteSegmentRequest>,
 }
+impl CreateSegmentInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    pub fn write_segment_request(&self) -> std::option::Option<&crate::model::WriteSegmentRequest> {
+        self.write_segment_request.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSegmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSegmentInput");
@@ -23493,6 +24713,14 @@ pub struct CreateRecommenderConfigurationInput {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub create_recommender_configuration:
         std::option::Option<crate::model::CreateRecommenderConfigurationShape>,
+}
+impl CreateRecommenderConfigurationInput {
+    /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    pub fn create_recommender_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateRecommenderConfigurationShape> {
+        self.create_recommender_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRecommenderConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23515,6 +24743,18 @@ pub struct CreatePushTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
 }
+impl CreatePushTemplateInput {
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    pub fn push_notification_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::PushNotificationTemplateRequest> {
+        self.push_notification_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePushTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePushTemplateInput");
@@ -23536,6 +24776,16 @@ pub struct CreateJourneyInput {
     /// <p>Specifies the configuration and other settings for a journey.</p>
     pub write_journey_request: std::option::Option<crate::model::WriteJourneyRequest>,
 }
+impl CreateJourneyInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the configuration and other settings for a journey.</p>
+    pub fn write_journey_request(&self) -> std::option::Option<&crate::model::WriteJourneyRequest> {
+        self.write_journey_request.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateJourneyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJourneyInput");
@@ -23553,6 +24803,18 @@ pub struct CreateInAppTemplateInput {
     pub in_app_template_request: std::option::Option<crate::model::InAppTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl CreateInAppTemplateInput {
+    /// <p>InApp Template Request.</p>
+    pub fn in_app_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::InAppTemplateRequest> {
+        self.in_app_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInAppTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23572,6 +24834,16 @@ pub struct CreateImportJobInput {
     /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub import_job_request: std::option::Option<crate::model::ImportJobRequest>,
 }
+impl CreateImportJobInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    pub fn import_job_request(&self) -> std::option::Option<&crate::model::ImportJobRequest> {
+        self.import_job_request.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImportJobInput");
@@ -23589,6 +24861,16 @@ pub struct CreateExportJobInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub export_job_request: std::option::Option<crate::model::ExportJobRequest>,
+}
+impl CreateExportJobInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    pub fn export_job_request(&self) -> std::option::Option<&crate::model::ExportJobRequest> {
+        self.export_job_request.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23608,6 +24890,18 @@ pub struct CreateEmailTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
 }
+impl CreateEmailTemplateInput {
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    pub fn email_template_request(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailTemplateRequest> {
+        self.email_template_request.as_ref()
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEmailTemplateInput");
@@ -23626,6 +24920,18 @@ pub struct CreateCampaignInput {
     /// <p>Specifies the configuration and other settings for a campaign.</p>
     pub write_campaign_request: std::option::Option<crate::model::WriteCampaignRequest>,
 }
+impl CreateCampaignInput {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Specifies the configuration and other settings for a campaign.</p>
+    pub fn write_campaign_request(
+        &self,
+    ) -> std::option::Option<&crate::model::WriteCampaignRequest> {
+        self.write_campaign_request.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCampaignInput");
@@ -23641,6 +24947,14 @@ impl std::fmt::Debug for CreateCampaignInput {
 pub struct CreateAppInput {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
     pub create_application_request: std::option::Option<crate::model::CreateApplicationRequest>,
+}
+impl CreateAppInput {
+    /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    pub fn create_application_request(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateApplicationRequest> {
+        self.create_application_request.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

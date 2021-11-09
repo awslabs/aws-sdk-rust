@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_application_resource_lifecycle_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ApplicationResourceLifecycleConfig,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ServiceRole");
     if let Some(var_2) = &input.service_role {
@@ -14,15 +14,16 @@ pub fn serialize_structure_crate_model_application_resource_lifecycle_config(
     if let Some(var_4) = &input.version_lifecycle_config {
         crate::query_ser::serialize_structure_crate_model_application_version_lifecycle_config(
             scope_3, var_4,
-        );
+        )?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Key");
     if let Some(var_6) = &input.key {
@@ -33,13 +34,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_8) = &input.value {
         scope_7.string(var_8);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_source_build_information(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SourceBuildInformation,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("SourceType");
     if let Some(var_10) = &input.source_type {
@@ -55,13 +57,14 @@ pub fn serialize_structure_crate_model_source_build_information(
     if let Some(var_14) = &input.source_location {
         scope_13.string(var_14);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_s3_location(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::S3Location,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("S3Bucket");
     if let Some(var_16) = &input.s3_bucket {
@@ -72,13 +75,14 @@ pub fn serialize_structure_crate_model_s3_location(
     if let Some(var_18) = &input.s3_key {
         scope_17.string(var_18);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_build_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::BuildConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("ArtifactName");
     if let Some(var_20) = &input.artifact_name {
@@ -107,13 +111,14 @@ pub fn serialize_structure_crate_model_build_configuration(
             aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_source_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SourceConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("ApplicationName");
     if let Some(var_30) = &input.application_name {
@@ -124,13 +129,14 @@ pub fn serialize_structure_crate_model_source_configuration(
     if let Some(var_32) = &input.template_name {
         scope_31.string(var_32);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_configuration_option_setting(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConfigurationOptionSetting,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("ResourceName");
     if let Some(var_34) = &input.resource_name {
@@ -151,13 +157,14 @@ pub fn serialize_structure_crate_model_configuration_option_setting(
     if let Some(var_40) = &input.value {
         scope_39.string(var_40);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_environment_tier(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::EnvironmentTier,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("Name");
     if let Some(var_42) = &input.name {
@@ -173,13 +180,14 @@ pub fn serialize_structure_crate_model_environment_tier(
     if let Some(var_46) = &input.version {
         scope_45.string(var_46);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_option_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::OptionSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_47 = writer.prefix("ResourceName");
     if let Some(var_48) = &input.resource_name {
@@ -195,13 +203,14 @@ pub fn serialize_structure_crate_model_option_specification(
     if let Some(var_52) = &input.option_name {
         scope_51.string(var_52);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_search_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SearchFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_53 = writer.prefix("Attribute");
     if let Some(var_54) = &input.attribute {
@@ -223,13 +232,14 @@ pub fn serialize_structure_crate_model_search_filter(
         }
         list_60.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_platform_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PlatformFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("Type");
     if let Some(var_63) = &input.r#type {
@@ -251,30 +261,32 @@ pub fn serialize_structure_crate_model_platform_filter(
         }
         list_69.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_application_version_lifecycle_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ApplicationVersionLifecycleConfig,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_71 = writer.prefix("MaxCountRule");
     if let Some(var_72) = &input.max_count_rule {
-        crate::query_ser::serialize_structure_crate_model_max_count_rule(scope_71, var_72);
+        crate::query_ser::serialize_structure_crate_model_max_count_rule(scope_71, var_72)?;
     }
     #[allow(unused_mut)]
     let mut scope_73 = writer.prefix("MaxAgeRule");
     if let Some(var_74) = &input.max_age_rule {
-        crate::query_ser::serialize_structure_crate_model_max_age_rule(scope_73, var_74);
+        crate::query_ser::serialize_structure_crate_model_max_age_rule(scope_73, var_74)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_max_count_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MaxCountRule,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_75 = writer.prefix("Enabled");
     if let Some(var_76) = &input.enabled {
@@ -293,13 +305,14 @@ pub fn serialize_structure_crate_model_max_count_rule(
     if let Some(var_80) = &input.delete_source_from_s3 {
         scope_79.boolean(*var_80);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_max_age_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MaxAgeRule,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_81 = writer.prefix("Enabled");
     if let Some(var_82) = &input.enabled {
@@ -318,4 +331,5 @@ pub fn serialize_structure_crate_model_max_age_rule(
     if let Some(var_86) = &input.delete_source_from_s3 {
         scope_85.boolean(*var_86);
     }
+    Ok(())
 }

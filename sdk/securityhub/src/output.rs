@@ -162,6 +162,24 @@ pub struct UpdateFindingAggregatorOutput {
     /// <p>The list of excluded Regions or included Regions.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateFindingAggregatorOutput {
+    /// <p>The ARN of the finding aggregator.</p>
+    pub fn finding_aggregator_arn(&self) -> std::option::Option<&str> {
+        self.finding_aggregator_arn.as_deref()
+    }
+    /// <p>The aggregation Region.</p>
+    pub fn finding_aggregation_region(&self) -> std::option::Option<&str> {
+        self.finding_aggregation_region.as_deref()
+    }
+    /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    pub fn region_linking_mode(&self) -> std::option::Option<&str> {
+        self.region_linking_mode.as_deref()
+    }
+    /// <p>The list of excluded Regions or included Regions.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFindingAggregatorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFindingAggregatorOutput");
@@ -361,6 +379,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -425,6 +452,16 @@ pub struct ListOrganizationAdminAccountsOutput {
     pub admin_accounts: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationAdminAccountsOutput {
+    /// <p>The list of Security Hub administrator accounts.</p>
+    pub fn admin_accounts(&self) -> std::option::Option<&[crate::model::AdminAccount]> {
+        self.admin_accounts.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOrganizationAdminAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -498,6 +535,16 @@ pub struct ListMembersOutput {
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMembersOutput {
+    /// <p>Member details returned by the operation.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+        self.members.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMembersOutput");
@@ -569,6 +616,16 @@ pub struct ListInvitationsOutput {
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInvitationsOutput {
+    /// <p>The details of the invitations returned by the operation.</p>
+    pub fn invitations(&self) -> std::option::Option<&[crate::model::Invitation]> {
+        self.invitations.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -643,6 +700,18 @@ pub struct ListFindingAggregatorsOutput {
     /// <p>This operation currently only returns a single result.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFindingAggregatorsOutput {
+    /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
+    pub fn finding_aggregators(&self) -> std::option::Option<&[crate::model::FindingAggregator]> {
+        self.finding_aggregators.as_deref()
+    }
+    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
+    /// <p>This operation currently only returns a single result.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFindingAggregatorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -724,6 +793,16 @@ pub struct ListEnabledProductsForImportOutput {
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEnabledProductsForImportOutput {
+    /// <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
+    pub fn product_subscriptions(&self) -> std::option::Option<&[std::string::String]> {
+        self.product_subscriptions.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEnabledProductsForImportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnabledProductsForImportOutput");
@@ -795,6 +874,13 @@ pub struct InviteMembersOutput {
     /// includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
+impl InviteMembersOutput {
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
+    /// includes the account ID and the email address.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for InviteMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InviteMembersOutput");
@@ -856,6 +942,17 @@ pub struct GetMembersOutput {
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
     /// includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
+}
+impl GetMembersOutput {
+    /// <p>The list of details about the Security Hub member accounts.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+        self.members.as_deref()
+    }
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
+    /// includes the account ID and the email address.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -939,6 +1036,13 @@ pub struct GetMasterAccountOutput {
     /// </p>
     pub master: std::option::Option<crate::model::Invitation>,
 }
+impl GetMasterAccountOutput {
+    /// <p>A list of details about the Security Hub administrator account for the current member account.
+    /// </p>
+    pub fn master(&self) -> std::option::Option<&crate::model::Invitation> {
+        self.master.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMasterAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMasterAccountOutput");
@@ -989,6 +1093,13 @@ pub struct GetInvitationsCountOutput {
     /// <p>The number of all membership invitations sent to this Security Hub member account, not
     /// including the currently accepted invitation.</p>
     pub invitations_count: i32,
+}
+impl GetInvitationsCountOutput {
+    /// <p>The number of all membership invitations sent to this Security Hub member account, not
+    /// including the currently accepted invitation.</p>
+    pub fn invitations_count(&self) -> i32 {
+        self.invitations_count
+    }
 }
 impl std::fmt::Debug for GetInvitationsCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1041,6 +1152,16 @@ pub struct GetInsightsOutput {
     pub insights: std::option::Option<std::vec::Vec<crate::model::Insight>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetInsightsOutput {
+    /// <p>The insights returned by the operation.</p>
+    pub fn insights(&self) -> std::option::Option<&[crate::model::Insight]> {
+        self.insights.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInsightsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1112,6 +1233,12 @@ pub struct GetInsightResultsOutput {
     /// <p>The insight results returned by the operation.</p>
     pub insight_results: std::option::Option<crate::model::InsightResults>,
 }
+impl GetInsightResultsOutput {
+    /// <p>The insight results returned by the operation.</p>
+    pub fn insight_results(&self) -> std::option::Option<&crate::model::InsightResults> {
+        self.insight_results.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInsightResultsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInsightResultsOutput");
@@ -1164,6 +1291,16 @@ pub struct GetFindingsOutput {
     pub findings: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetFindingsOutput {
+    /// <p>The findings that matched the filters specified in the request.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::AwsSecurityFinding]> {
+        self.findings.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1240,6 +1377,24 @@ pub struct GetFindingAggregatorOutput {
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>The list of excluded Regions or included Regions.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetFindingAggregatorOutput {
+    /// <p>The ARN of the finding aggregator.</p>
+    pub fn finding_aggregator_arn(&self) -> std::option::Option<&str> {
+        self.finding_aggregator_arn.as_deref()
+    }
+    /// <p>The aggregation Region.</p>
+    pub fn finding_aggregation_region(&self) -> std::option::Option<&str> {
+        self.finding_aggregation_region.as_deref()
+    }
+    /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    pub fn region_linking_mode(&self) -> std::option::Option<&str> {
+        self.region_linking_mode.as_deref()
+    }
+    /// <p>The list of excluded Regions or included Regions.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFindingAggregatorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1353,6 +1508,19 @@ pub struct GetEnabledStandardsOutput {
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetEnabledStandardsOutput {
+    /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about
+    /// the enabled standards.</p>
+    pub fn standards_subscriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::StandardsSubscription]> {
+        self.standards_subscriptions.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEnabledStandardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnabledStandardsOutput");
@@ -1428,6 +1596,12 @@ impl GetEnabledStandardsOutput {
 pub struct GetAdministratorAccountOutput {
     /// <p>Details about an invitation.</p>
     pub administrator: std::option::Option<crate::model::Invitation>,
+}
+impl GetAdministratorAccountOutput {
+    /// <p>Details about an invitation.</p>
+    pub fn administrator(&self) -> std::option::Option<&crate::model::Invitation> {
+        self.administrator.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAdministratorAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1539,6 +1713,12 @@ impl EnableOrganizationAdminAccountOutput {
 pub struct EnableImportFindingsForProductOutput {
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
     pub product_subscription_arn: std::option::Option<std::string::String>,
+}
+impl EnableImportFindingsForProductOutput {
+    /// <p>The ARN of your subscription to the product to enable integrations for.</p>
+    pub fn product_subscription_arn(&self) -> std::option::Option<&str> {
+        self.product_subscription_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableImportFindingsForProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1773,6 +1953,16 @@ pub struct DescribeStandardsControlsOutput {
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeStandardsControlsOutput {
+    /// <p>A list of security standards controls.</p>
+    pub fn controls(&self) -> std::option::Option<&[crate::model::StandardsControl]> {
+        self.controls.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStandardsControlsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStandardsControlsOutput");
@@ -1845,6 +2035,16 @@ pub struct DescribeStandardsOutput {
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeStandardsOutput {
+    /// <p>A list of available standards.</p>
+    pub fn standards(&self) -> std::option::Option<&[crate::model::Standard]> {
+        self.standards.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStandardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStandardsOutput");
@@ -1916,6 +2116,16 @@ pub struct DescribeProductsOutput {
     pub products: std::option::Option<std::vec::Vec<crate::model::Product>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeProductsOutput {
+    /// <p>A list of products, including details for each product.</p>
+    pub fn products(&self) -> std::option::Option<&[crate::model::Product]> {
+        self.products.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProductsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1991,6 +2201,19 @@ pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Whether the maximum number of allowed member accounts are already associated with the
     /// Security Hub administrator account.</p>
     pub member_account_limit_reached: bool,
+}
+impl DescribeOrganizationConfigurationOutput {
+    /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
+    /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false,
+    /// then new accounts are not added automatically.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+    /// <p>Whether the maximum number of allowed member accounts are already associated with the
+    /// Security Hub administrator account.</p>
+    pub fn member_account_limit_reached(&self) -> bool {
+        self.member_account_limit_reached
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2071,6 +2294,23 @@ pub struct DescribeHubOutput {
     /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled
     /// automatically. If set to <code>false</code>, then new controls are not enabled.</p>
     pub auto_enable_controls: bool,
+}
+impl DescribeHubOutput {
+    /// <p>The ARN of the Hub resource that was retrieved.</p>
+    pub fn hub_arn(&self) -> std::option::Option<&str> {
+        self.hub_arn.as_deref()
+    }
+    /// <p>The date and time when Security Hub was enabled in the account.</p>
+    pub fn subscribed_at(&self) -> std::option::Option<&str> {
+        self.subscribed_at.as_deref()
+    }
+    /// <p>Whether to automatically enable new controls when they are added to standards that are
+    /// enabled.</p>
+    /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled
+    /// automatically. If set to <code>false</code>, then new controls are not enabled.</p>
+    pub fn auto_enable_controls(&self) -> bool {
+        self.auto_enable_controls
+    }
 }
 impl std::fmt::Debug for DescribeHubOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2159,6 +2399,18 @@ pub struct DescribeActionTargetsOutput {
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeActionTargetsOutput {
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
+    /// <code>Description</code>, and <code>Name</code> of a custom action target available in
+    /// Security Hub.</p>
+    pub fn action_targets(&self) -> std::option::Option<&[crate::model::ActionTarget]> {
+        self.action_targets.as_deref()
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeActionTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeActionTargetsOutput");
@@ -2234,6 +2486,13 @@ pub struct DeleteMembersOutput {
     /// account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
+impl DeleteMembersOutput {
+    /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the
+    /// account ID and the email address.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMembersOutput");
@@ -2294,6 +2553,13 @@ pub struct DeleteInvitationsOutput {
     /// the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
+impl DeleteInvitationsOutput {
+    /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account,
+    /// the list includes the account ID and the email address.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInvitationsOutput");
@@ -2352,6 +2618,12 @@ impl DeleteInvitationsOutput {
 pub struct DeleteInsightOutput {
     /// <p>The ARN of the insight that was deleted.</p>
     pub insight_arn: std::option::Option<std::string::String>,
+}
+impl DeleteInsightOutput {
+    /// <p>The ARN of the insight that was deleted.</p>
+    pub fn insight_arn(&self) -> std::option::Option<&str> {
+        self.insight_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInsightOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2431,6 +2703,12 @@ pub struct DeleteActionTargetOutput {
     /// <p>The ARN of the custom action target that was deleted.</p>
     pub action_target_arn: std::option::Option<std::string::String>,
 }
+impl DeleteActionTargetOutput {
+    /// <p>The ARN of the custom action target that was deleted.</p>
+    pub fn action_target_arn(&self) -> std::option::Option<&str> {
+        self.action_target_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteActionTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteActionTargetOutput");
@@ -2482,6 +2760,13 @@ pub struct DeclineInvitationsOutput {
     /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
     /// the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
+}
+impl DeclineInvitationsOutput {
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
+    /// the account ID and the email address.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for DeclineInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2543,6 +2828,13 @@ pub struct CreateMembersOutput {
     /// the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
+impl CreateMembersOutput {
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
+    /// the account ID and the email address.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMembersOutput");
@@ -2602,6 +2894,12 @@ pub struct CreateInsightOutput {
     /// <p>The ARN of the insight created.</p>
     pub insight_arn: std::option::Option<std::string::String>,
 }
+impl CreateInsightOutput {
+    /// <p>The ARN of the insight created.</p>
+    pub fn insight_arn(&self) -> std::option::Option<&str> {
+        self.insight_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInsightOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInsightOutput");
@@ -2655,6 +2953,24 @@ pub struct CreateFindingAggregatorOutput {
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>The list of excluded Regions or included Regions.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateFindingAggregatorOutput {
+    /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and stop finding aggregation.</p>
+    pub fn finding_aggregator_arn(&self) -> std::option::Option<&str> {
+        self.finding_aggregator_arn.as_deref()
+    }
+    /// <p>The aggregation Region.</p>
+    pub fn finding_aggregation_region(&self) -> std::option::Option<&str> {
+        self.finding_aggregation_region.as_deref()
+    }
+    /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    pub fn region_linking_mode(&self) -> std::option::Option<&str> {
+        self.region_linking_mode.as_deref()
+    }
+    /// <p>The list of excluded Regions or included Regions.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFindingAggregatorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2764,6 +3080,12 @@ pub struct CreateActionTargetOutput {
     /// <p>The ARN for the custom action target.</p>
     pub action_target_arn: std::option::Option<std::string::String>,
 }
+impl CreateActionTargetOutput {
+    /// <p>The ARN for the custom action target.</p>
+    pub fn action_target_arn(&self) -> std::option::Option<&str> {
+        self.action_target_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateActionTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateActionTargetOutput");
@@ -2818,6 +3140,20 @@ pub struct BatchUpdateFindingsOutput {
     /// <p>The list of findings that were not updated.</p>
     pub unprocessed_findings:
         std::option::Option<std::vec::Vec<crate::model::BatchUpdateFindingsUnprocessedFinding>>,
+}
+impl BatchUpdateFindingsOutput {
+    /// <p>The list of findings that were updated successfully.</p>
+    pub fn processed_findings(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsSecurityFindingIdentifier]> {
+        self.processed_findings.as_deref()
+    }
+    /// <p>The list of findings that were not updated.</p>
+    pub fn unprocessed_findings(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchUpdateFindingsUnprocessedFinding]> {
+        self.unprocessed_findings.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdateFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2912,6 +3248,20 @@ pub struct BatchImportFindingsOutput {
     /// <p>The list of findings that failed to import.</p>
     pub failed_findings: std::option::Option<std::vec::Vec<crate::model::ImportFindingsError>>,
 }
+impl BatchImportFindingsOutput {
+    /// <p>The number of findings that failed to import.</p>
+    pub fn failed_count(&self) -> i32 {
+        self.failed_count
+    }
+    /// <p>The number of findings that were successfully imported.</p>
+    pub fn success_count(&self) -> i32 {
+        self.success_count
+    }
+    /// <p>The list of findings that failed to import.</p>
+    pub fn failed_findings(&self) -> std::option::Option<&[crate::model::ImportFindingsError]> {
+        self.failed_findings.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchImportFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchImportFindingsOutput");
@@ -3000,6 +3350,14 @@ pub struct BatchEnableStandardsOutput {
     pub standards_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::StandardsSubscription>>,
 }
+impl BatchEnableStandardsOutput {
+    /// <p>The details of the standards subscriptions that were enabled.</p>
+    pub fn standards_subscriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::StandardsSubscription]> {
+        self.standards_subscriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchEnableStandardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchEnableStandardsOutput");
@@ -3061,6 +3419,14 @@ pub struct BatchDisableStandardsOutput {
     /// <p>The details of the standards subscriptions that were disabled.</p>
     pub standards_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::StandardsSubscription>>,
+}
+impl BatchDisableStandardsOutput {
+    /// <p>The details of the standards subscriptions that were disabled.</p>
+    pub fn standards_subscriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::StandardsSubscription]> {
+        self.standards_subscriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisableStandardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

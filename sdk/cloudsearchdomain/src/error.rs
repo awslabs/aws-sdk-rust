@@ -287,6 +287,12 @@ pub struct DocumentServiceException {
     /// <p>The description of the errors returned by the document service.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DocumentServiceException {
+    /// <p>The return status of a document upload request, <code>error</code> or <code>success</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for DocumentServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentServiceException");

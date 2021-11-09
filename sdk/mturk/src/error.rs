@@ -4009,6 +4009,12 @@ pub struct ServiceFault {
     #[allow(missing_docs)] // documentation missing in model
     pub turk_error_code: std::option::Option<std::string::String>,
 }
+impl ServiceFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn turk_error_code(&self) -> std::option::Option<&str> {
+        self.turk_error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceFault");
@@ -4090,6 +4096,12 @@ pub struct RequestError {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub turk_error_code: std::option::Option<std::string::String>,
+}
+impl RequestError {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn turk_error_code(&self) -> std::option::Option<&str> {
+        self.turk_error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for RequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

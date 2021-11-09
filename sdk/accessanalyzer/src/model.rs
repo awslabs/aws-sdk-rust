@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>A message about the validation exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The name of the validation exception.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A message about the validation exception.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -163,6 +173,57 @@ pub struct AnalyzerSummary {
     /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
     /// organization.</p>
     pub status_reason: std::option::Option<crate::model::StatusReason>,
+}
+impl AnalyzerSummary {
+    /// <p>The ARN of the analyzer.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the analyzer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the
+    /// analyzer.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>A timestamp for the time at which the analyzer was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The resource that was most recently analyzed by the analyzer.</p>
+    pub fn last_resource_analyzed(&self) -> std::option::Option<&str> {
+        self.last_resource_analyzed.as_deref()
+    }
+    /// <p>The time at which the most recently analyzed resource was analyzed.</p>
+    pub fn last_resource_analyzed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_resource_analyzed_at.as_ref()
+    }
+    /// <p>The tags added to the analyzer.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors
+    /// supported resources and generates new findings. The analyzer is <code>Disabled</code> when
+    /// a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes
+    /// the analyzer to stop generating new findings. The status is <code>Creating</code> when the
+    /// analyzer creation is in progress and <code>Failed</code> when the analyzer creation has
+    /// failed. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnalyzerStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>statusReason</code> provides more details about the current status of the
+    /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status
+    /// is returned. For an analyzer with organization as the type, this failure can be due to an
+    /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
+    /// organization.</p>
+    pub fn status_reason(&self) -> std::option::Option<&crate::model::StatusReason> {
+        self.status_reason.as_ref()
+    }
 }
 impl std::fmt::Debug for AnalyzerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -370,6 +431,12 @@ impl AnalyzerSummary {
 pub struct StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
     pub code: std::option::Option<crate::model::ReasonCode>,
+}
+impl StatusReason {
+    /// <p>The reason code for the current status of the analyzer.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::ReasonCode> {
+        self.code.as_ref()
+    }
 }
 impl std::fmt::Debug for StatusReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -612,6 +679,19 @@ pub struct InlineArchiveRule {
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
 }
+impl InlineArchiveRule {
+    /// <p>The name of the rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The condition and values for a criterion.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
+    {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for InlineArchiveRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InlineArchiveRule");
@@ -695,6 +775,24 @@ pub struct Criterion {
     pub contains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
     pub exists: std::option::Option<bool>,
+}
+impl Criterion {
+    /// <p>An "equals" operator to match for the filter used to create the rule.</p>
+    pub fn eq(&self) -> std::option::Option<&[std::string::String]> {
+        self.eq.as_deref()
+    }
+    /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
+    pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
+        self.neq.as_deref()
+    }
+    /// <p>A "contains" operator to match for the filter used to create the rule.</p>
+    pub fn contains(&self) -> std::option::Option<&[std::string::String]> {
+        self.contains.as_deref()
+    }
+    /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    pub fn exists(&self) -> std::option::Option<bool> {
+        self.exists
+    }
 }
 impl std::fmt::Debug for Criterion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -817,6 +915,27 @@ pub struct ArchiveRuleSummary {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the archive rule was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ArchiveRuleSummary {
+    /// <p>The name of the archive rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>A filter used to define the archive rule.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
+    {
+        self.filter.as_ref()
+    }
+    /// <p>The time at which the archive rule was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the archive rule was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for ArchiveRuleSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -945,6 +1064,37 @@ pub struct ValidatePolicyFinding {
     /// <p>The list of locations in the policy document that are related to the finding. The issue
     /// code provides a summary of an issue identified by the finding.</p>
     pub locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
+}
+impl ValidatePolicyFinding {
+    /// <p>A localized message that explains the finding and provides guidance on how to address
+    /// it.</p>
+    pub fn finding_details(&self) -> std::option::Option<&str> {
+        self.finding_details.as_deref()
+    }
+    /// <p>The impact of the finding.</p>
+    /// <p>Security warnings report when the policy allows access that we consider overly
+    /// permissive.</p>
+    /// <p>Errors report when a part of the policy is not functional.</p>
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing
+    /// best practices.</p>
+    /// <p>Suggestions recommend stylistic improvements in the policy that do not impact
+    /// access.</p>
+    pub fn finding_type(&self) -> std::option::Option<&crate::model::ValidatePolicyFindingType> {
+        self.finding_type.as_ref()
+    }
+    /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
+    pub fn issue_code(&self) -> std::option::Option<&str> {
+        self.issue_code.as_deref()
+    }
+    /// <p>A link to additional documentation about the type of finding.</p>
+    pub fn learn_more_link(&self) -> std::option::Option<&str> {
+        self.learn_more_link.as_deref()
+    }
+    /// <p>The list of locations in the policy document that are related to the finding. The issue
+    /// code provides a summary of an issue identified by the finding.</p>
+    pub fn locations(&self) -> std::option::Option<&[crate::model::Location]> {
+        self.locations.as_deref()
+    }
 }
 impl std::fmt::Debug for ValidatePolicyFinding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1085,6 +1235,16 @@ pub struct Location {
     /// <p>A span in a policy.</p>
     pub span: std::option::Option<crate::model::Span>,
 }
+impl Location {
+    /// <p>A path in a policy, represented as a sequence of path elements.</p>
+    pub fn path(&self) -> std::option::Option<&[crate::model::PathElement]> {
+        self.path.as_deref()
+    }
+    /// <p>A span in a policy.</p>
+    pub fn span(&self) -> std::option::Option<&crate::model::Span> {
+        self.span.as_ref()
+    }
+}
 impl std::fmt::Debug for Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Location");
@@ -1158,6 +1318,16 @@ pub struct Span {
     /// <p>The end position of the span (exclusive).</p>
     pub end: std::option::Option<crate::model::Position>,
 }
+impl Span {
+    /// <p>The start position of the span (inclusive).</p>
+    pub fn start(&self) -> std::option::Option<&crate::model::Position> {
+        self.start.as_ref()
+    }
+    /// <p>The end position of the span (exclusive).</p>
+    pub fn end(&self) -> std::option::Option<&crate::model::Position> {
+        self.end.as_ref()
+    }
+}
 impl std::fmt::Debug for Span {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Span");
@@ -1222,6 +1392,20 @@ pub struct Position {
     pub column: std::option::Option<i32>,
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
     pub offset: std::option::Option<i32>,
+}
+impl Position {
+    /// <p>The line of the position, starting from 1.</p>
+    pub fn line(&self) -> std::option::Option<i32> {
+        self.line
+    }
+    /// <p>The column of the position, starting from 0.</p>
+    pub fn column(&self) -> std::option::Option<i32> {
+        self.column
+    }
+    /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
+    pub fn offset(&self) -> std::option::Option<i32> {
+        self.offset
+    }
 }
 impl std::fmt::Debug for Position {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1302,6 +1486,15 @@ pub enum PathElement {
     Substring(crate::model::Substring),
     /// <p>Refers to the value associated with a given key in a JSON object.</p>
     Value(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl PathElement {
     /// Tries to convert the enum instance into [`Index`](crate::model::PathElement::Index), extracting the inner [`i32`](i32).
@@ -1356,6 +1549,10 @@ impl PathElement {
     pub fn is_value(&self) -> bool {
         self.as_value().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A reference to a substring of a literal string in a JSON document.</p>
@@ -1366,6 +1563,16 @@ pub struct Substring {
     pub start: std::option::Option<i32>,
     /// <p>The length of the substring.</p>
     pub length: std::option::Option<i32>,
+}
+impl Substring {
+    /// <p>The start index of the substring, starting from 0.</p>
+    pub fn start(&self) -> std::option::Option<i32> {
+        self.start
+    }
+    /// <p>The length of the substring.</p>
+    pub fn length(&self) -> std::option::Option<i32> {
+        self.length
+    }
 }
 impl std::fmt::Debug for Substring {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1708,6 +1915,28 @@ pub struct CloudTrailDetails {
     /// included in the request, the default value is the current time.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CloudTrailDetails {
+    /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
+    pub fn trails(&self) -> std::option::Option<&[crate::model::Trail]> {
+        self.trails.as_deref()
+    }
+    /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and
+    /// service last accessed information.</p>
+    pub fn access_role(&self) -> std::option::Option<&str> {
+        self.access_role.as_deref()
+    }
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
+    /// with a timestamp before this time are not considered to generate a policy.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
+    /// a timestamp after this time are not considered to generate a policy. If this is not
+    /// included in the request, the default value is the current time.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for CloudTrailDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudTrailDetails");
@@ -1825,6 +2054,23 @@ pub struct Trail {
     /// generate a policy.</p>
     pub all_regions: std::option::Option<bool>,
 }
+impl Trail {
+    /// <p>Specifies the ARN of the trail. The format of a trail ARN is
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    pub fn cloud_trail_arn(&self) -> std::option::Option<&str> {
+        self.cloud_trail_arn.as_deref()
+    }
+    /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
+    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
+    /// generate a policy.</p>
+    pub fn all_regions(&self) -> std::option::Option<bool> {
+        self.all_regions
+    }
+}
 impl std::fmt::Debug for Trail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Trail");
@@ -1918,6 +2164,12 @@ pub struct PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub principal_arn: std::option::Option<std::string::String>,
 }
+impl PolicyGenerationDetails {
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyGenerationDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyGenerationDetails");
@@ -1979,6 +2231,31 @@ pub struct PolicyGeneration {
     pub started_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp of when the policy generation was completed.</p>
     pub completed_on: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PolicyGeneration {
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
+    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
+    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
+    /// the policy generation request.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+    /// <p>The status of the policy generation request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp of when the policy generation started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>A timestamp of when the policy generation was completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
 }
 impl std::fmt::Debug for PolicyGeneration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2189,6 +2466,74 @@ pub struct FindingSummary {
     /// <p>The sources of the finding. This indicates how the access that generated the finding is
     /// granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
+}
+impl FindingSummary {
+    /// <p>The ID of the finding.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
+    pub fn principal(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.principal.as_ref()
+    }
+    /// <p>The action in the analyzed policy statement that an external principal has permission to
+    /// use.</p>
+    pub fn action(&self) -> std::option::Option<&[std::string::String]> {
+        self.action.as_deref()
+    }
+    /// <p>The resource that the external principal has access to.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>Indicates whether the finding reports a resource that has a policy that allows public
+    /// access.</p>
+    pub fn is_public(&self) -> std::option::Option<bool> {
+        self.is_public
+    }
+    /// <p>The type of the resource that the external principal has access to.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    pub fn condition(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.condition.as_ref()
+    }
+    /// <p>The time at which the finding was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the resource-based policy that generated the finding was
+    /// analyzed.</p>
+    pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.analyzed_at.as_ref()
+    }
+    /// <p>The time at which the finding was most recently updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The status of the finding.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+        self.resource_owner_account.as_deref()
+    }
+    /// <p>The error that resulted in an Error finding.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is
+    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
+        self.sources.as_deref()
+    }
 }
 impl std::fmt::Debug for FindingSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2489,6 +2834,17 @@ pub struct FindingSource {
     /// populated for Amazon S3 bucket findings.</p>
     pub detail: std::option::Option<crate::model::FindingSourceDetail>,
 }
+impl FindingSource {
+    /// <p>Indicates the type of access that generated the finding.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FindingSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Includes details about how the access that generated the finding is granted. This is
+    /// populated for Amazon S3 bucket findings.</p>
+    pub fn detail(&self) -> std::option::Option<&crate::model::FindingSourceDetail> {
+        self.detail.as_ref()
+    }
+}
 impl std::fmt::Debug for FindingSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FindingSource");
@@ -2559,6 +2915,13 @@ pub struct FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on
     /// whether the ARN represents an access point or a multi-region access point.</p>
     pub access_point_arn: std::option::Option<std::string::String>,
+}
+impl FindingSourceDetail {
+    /// <p>The ARN of the access point that generated the finding. The ARN format depends on
+    /// whether the ARN represents an access point or a multi-region access point.</p>
+    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+        self.access_point_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for FindingSourceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2816,6 +3179,16 @@ pub struct SortCriteria {
     /// <p>The sort order, ascending or descending.</p>
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
+impl SortCriteria {
+    /// <p>The name of the attribute to sort on.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The sort order, ascending or descending.</p>
+    pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
+        self.order_by.as_ref()
+    }
+}
 impl std::fmt::Debug for SortCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SortCriteria");
@@ -2939,6 +3312,20 @@ pub struct AnalyzedResourceSummary {
     /// <p>The type of resource that was analyzed.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
+impl AnalyzedResourceSummary {
+    /// <p>The ARN of the analyzed resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+        self.resource_owner_account.as_deref()
+    }
+    /// <p>The type of resource that was analyzed.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for AnalyzedResourceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyzedResourceSummary");
@@ -3044,6 +3431,46 @@ pub struct AccessPreviewSummary {
     /// failure can be due to an internal issue with the analysis or due to an invalid proposed
     /// resource configuration.</p>
     pub status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
+}
+impl AccessPreviewSummary {
+    /// <p>The unique ID for the access preview.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the analyzer used to generate the access preview.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>The time at which the access preview was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The status of the access preview.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Creating</code> - The access preview creation is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Completed</code> - The access preview is complete and previews the findings
+    /// for external access to the resource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code> - The access preview creation has failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccessPreviewStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Provides more details about the current status of the access preview. For example, if
+    /// the creation of the access preview fails, a <code>Failed</code> status is returned. This
+    /// failure can be due to an internal issue with the analysis or due to an invalid proposed
+    /// resource configuration.</p>
+    pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
+        self.status_reason.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessPreviewSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3192,6 +3619,12 @@ impl AccessPreviewSummary {
 pub struct AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
     pub code: std::option::Option<crate::model::AccessPreviewStatusReasonCode>,
+}
+impl AccessPreviewStatusReason {
+    /// <p>The reason code for the current status of the access preview.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReasonCode> {
+        self.code.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessPreviewStatusReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3417,6 +3850,106 @@ pub struct AccessPreviewFinding {
     /// <p>The sources of the finding. This indicates how the access that generated the finding is
     /// granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
+}
+impl AccessPreviewFinding {
+    /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the
+    /// list of access preview findings and is not related to the finding ID in Access
+    /// Analyzer.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing
+    /// findings.</p>
+    pub fn existing_finding_id(&self) -> std::option::Option<&str> {
+        self.existing_finding_id.as_deref()
+    }
+    /// <p>The existing status of the finding, provided only for existing findings.</p>
+    pub fn existing_finding_status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+        self.existing_finding_status.as_ref()
+    }
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
+    pub fn principal(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.principal.as_ref()
+    }
+    /// <p>The action in the analyzed policy statement that an external principal has permission to
+    /// perform.</p>
+    pub fn action(&self) -> std::option::Option<&[std::string::String]> {
+        self.action.as_deref()
+    }
+    /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    pub fn condition(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.condition.as_ref()
+    }
+    /// <p>The resource that an external principal has access to. This is the resource associated
+    /// with the access preview.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>Indicates whether the policy that generated the finding allows public access to the
+    /// resource.</p>
+    pub fn is_public(&self) -> std::option::Option<bool> {
+        self.is_public
+    }
+    /// <p>The type of the resource that can be accessed in the finding.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The time at which the access preview finding was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Provides context on how the access preview finding compares to existing access
+    /// identified in IAM Access Analyzer.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>New</code> - The finding is for newly-introduced access.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unchanged</code> - The preview finding is an existing finding that would
+    /// remain unchanged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Changed</code> - The preview finding is an existing finding with a change in
+    /// status.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code>
+    /// and existing status <code>Active</code> indicates the existing <code>Active</code> finding
+    /// would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    pub fn change_type(&self) -> std::option::Option<&crate::model::FindingChangeType> {
+        self.change_type.as_ref()
+    }
+    /// <p>The preview status of the finding. This is what the status of the finding would be after
+    /// permissions deployment. For example, a <code>Changed</code> finding with preview status
+    /// <code>Resolved</code> and existing status <code>Active</code> indicates the existing
+    /// <code>Active</code> finding would become <code>Resolved</code> as a result of the
+    /// proposed permissions change.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
+    /// account is the account in which the resource was created.</p>
+    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+        self.resource_owner_account.as_deref()
+    }
+    /// <p>An error.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is
+    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
+        self.sources.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessPreviewFinding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3848,6 +4381,18 @@ pub struct GeneratedPolicyResult {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub generated_policies: std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
 }
+impl GeneratedPolicyResult {
+    /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the
+    /// generated policy.</p>
+    pub fn properties(&self) -> std::option::Option<&crate::model::GeneratedPolicyProperties> {
+        self.properties.as_ref()
+    }
+    /// <p>The text to use as the content for the new policy. The policy is created using the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    pub fn generated_policies(&self) -> std::option::Option<&[crate::model::GeneratedPolicy]> {
+        self.generated_policies.as_deref()
+    }
+}
 impl std::fmt::Debug for GeneratedPolicyResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GeneratedPolicyResult");
@@ -3930,6 +4475,13 @@ pub struct GeneratedPolicy {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GeneratedPolicy {
+    /// <p>The text to use as the content for the new policy. The policy is created using the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GeneratedPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GeneratedPolicy");
@@ -3985,6 +4537,24 @@ pub struct GeneratedPolicyProperties {
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
     pub cloud_trail_properties: std::option::Option<crate::model::CloudTrailProperties>,
+}
+impl GeneratedPolicyProperties {
+    /// <p>This value is set to <code>true</code> if the generated policy contains all possible
+    /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified,
+    /// and <code>false</code> otherwise.</p>
+    pub fn is_complete(&self) -> std::option::Option<bool> {
+        self.is_complete
+    }
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+    /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+    pub fn cloud_trail_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudTrailProperties> {
+        self.cloud_trail_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for GeneratedPolicyProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4077,6 +4647,24 @@ pub struct CloudTrailProperties {
     /// a timestamp after this time are not considered to generate a policy. If this is not
     /// included in the request, the default value is the current time.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CloudTrailProperties {
+    /// <p>A <code>TrailProperties</code> object that contains settings for trail
+    /// properties.</p>
+    pub fn trail_properties(&self) -> std::option::Option<&[crate::model::TrailProperties]> {
+        self.trail_properties.as_deref()
+    }
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
+    /// with a timestamp before this time are not considered to generate a policy.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
+    /// a timestamp after this time are not considered to generate a policy. If this is not
+    /// included in the request, the default value is the current time.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CloudTrailProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4183,6 +4771,23 @@ pub struct TrailProperties {
     /// generate a policy.</p>
     pub all_regions: std::option::Option<bool>,
 }
+impl TrailProperties {
+    /// <p>Specifies the ARN of the trail. The format of a trail ARN is
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    pub fn cloud_trail_arn(&self) -> std::option::Option<&str> {
+        self.cloud_trail_arn.as_deref()
+    }
+    /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
+    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
+    /// generate a policy.</p>
+    pub fn all_regions(&self) -> std::option::Option<bool> {
+        self.all_regions
+    }
+}
 impl std::fmt::Debug for TrailProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrailProperties");
@@ -4285,6 +4890,31 @@ pub struct JobDetails {
     pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The job error for the policy generation request.</p>
     pub job_error: std::option::Option<crate::model::JobError>,
+}
+impl JobDetails {
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
+    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
+    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
+    /// the policy generation request.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the job request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp of when the job was started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>A timestamp of when the job was completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The job error for the policy generation request.</p>
+    pub fn job_error(&self) -> std::option::Option<&crate::model::JobError> {
+        self.job_error.as_ref()
+    }
 }
 impl std::fmt::Debug for JobDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4400,6 +5030,17 @@ pub struct JobError {
     /// <p>Specific information about the error. For example, which service quota was exceeded or
     /// which resource was not found.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl JobError {
+    /// <p>The job error code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::JobErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>Specific information about the error. For example, which service quota was exceeded or
+    /// which resource was not found.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for JobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4562,6 +5203,73 @@ pub struct Finding {
     /// <p>The sources of the finding. This indicates how the access that generated the finding is
     /// granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
+}
+impl Finding {
+    /// <p>The ID of the finding.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The external principal that access to a resource within the zone of trust.</p>
+    pub fn principal(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.principal.as_ref()
+    }
+    /// <p>The action in the analyzed policy statement that an external principal has permission to
+    /// use.</p>
+    pub fn action(&self) -> std::option::Option<&[std::string::String]> {
+        self.action.as_deref()
+    }
+    /// <p>The resource that an external principal has access to.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>Indicates whether the policy that generated the finding allows public access to the
+    /// resource.</p>
+    pub fn is_public(&self) -> std::option::Option<bool> {
+        self.is_public
+    }
+    /// <p>The type of the resource identified in the finding.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    pub fn condition(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.condition.as_ref()
+    }
+    /// <p>The time at which the finding was generated.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the resource was analyzed.</p>
+    pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.analyzed_at.as_ref()
+    }
+    /// <p>The time at which the finding was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The current status of the finding.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+        self.resource_owner_account.as_deref()
+    }
+    /// <p>An error.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is
+    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
+        self.sources.as_deref()
+    }
 }
 impl std::fmt::Debug for Finding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4879,6 +5587,55 @@ pub struct AnalyzedResource {
     /// <p>An error message.</p>
     pub error: std::option::Option<std::string::String>,
 }
+impl AnalyzedResource {
+    /// <p>The ARN of the resource that was analyzed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The type of the resource that was analyzed.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The time at which the finding was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the resource was analyzed.</p>
+    pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.analyzed_at.as_ref()
+    }
+    /// <p>The time at which the finding was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>Indicates whether the policy that generated the finding grants public access to the
+    /// resource.</p>
+    pub fn is_public(&self) -> std::option::Option<bool> {
+        self.is_public
+    }
+    /// <p>The actions that an external principal is granted permission to use by the policy that
+    /// generated the finding.</p>
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.actions.as_deref()
+    }
+    /// <p>Indicates how the access that generated the finding is granted. This is populated for
+    /// Amazon S3 bucket findings.</p>
+    pub fn shared_via(&self) -> std::option::Option<&[std::string::String]> {
+        self.shared_via.as_deref()
+    }
+    /// <p>The current status of the finding generated from the analyzed resource.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+        self.resource_owner_account.as_deref()
+    }
+    /// <p>An error message.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+}
 impl std::fmt::Debug for AnalyzedResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyzedResource");
@@ -5129,6 +5886,54 @@ pub struct AccessPreview {
     /// invalid resource configuration.</p>
     pub status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
 }
+impl AccessPreview {
+    /// <p>The unique ID for the access preview.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the analyzer used to generate the access preview.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>A map of resource ARNs for the proposed resource configuration.</p>
+    pub fn configurations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::Configuration>,
+    > {
+        self.configurations.as_ref()
+    }
+    /// <p>The time at which the access preview was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The status of the access preview.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Creating</code> - The access preview creation is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Completed</code> - The access preview is complete. You can preview findings
+    /// for external access to the resource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code> - The access preview creation has failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccessPreviewStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Provides more details about the current status of the access preview.</p>
+    /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status
+    /// is returned. This failure can be due to an internal issue with the analysis or due to an
+    /// invalid resource configuration.</p>
+    pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
+        self.status_reason.as_ref()
+    }
+}
 impl std::fmt::Debug for AccessPreview {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessPreview");
@@ -5312,6 +6117,15 @@ pub enum Configuration {
     SecretsManagerSecret(crate::model::SecretsManagerSecretConfiguration),
     /// <p>The access control configuration is for an Amazon SQS queue. </p>
     SqsQueue(crate::model::SqsQueueConfiguration),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Configuration {
     /// Tries to convert the enum instance into [`IamRole`](crate::model::Configuration::IamRole), extracting the inner [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
@@ -5381,6 +6195,10 @@ impl Configuration {
     pub fn is_sqs_queue(&self) -> bool {
         self.as_sqs_queue().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>The proposed access control configuration for an Amazon SQS queue. You can propose a
@@ -5397,6 +6215,12 @@ impl Configuration {
 pub struct SqsQueueConfiguration {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
     pub queue_policy: std::option::Option<std::string::String>,
+}
+impl SqsQueueConfiguration {
+    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    pub fn queue_policy(&self) -> std::option::Option<&str> {
+        self.queue_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for SqsQueueConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5468,6 +6292,36 @@ pub struct S3BucketConfiguration {
     pub access_points: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
     >,
+}
+impl S3BucketConfiguration {
+    /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
+    pub fn bucket_policy(&self) -> std::option::Option<&str> {
+        self.bucket_policy.as_deref()
+    }
+    /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL
+    /// grants per bucket. If the proposed grant configuration is for an existing bucket, the
+    /// access preview uses the proposed list of grant configurations in place of the existing
+    /// grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
+    pub fn bucket_acl_grants(
+        &self,
+    ) -> std::option::Option<&[crate::model::S3BucketAclGrantConfiguration]> {
+        self.bucket_acl_grants.as_deref()
+    }
+    /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
+    pub fn bucket_public_access_block(
+        &self,
+    ) -> std::option::Option<&crate::model::S3PublicAccessBlockConfiguration> {
+        self.bucket_public_access_block.as_ref()
+    }
+    /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket.
+    /// You can propose up to 10 new access points per bucket.</p>
+    pub fn access_points(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
+    > {
+        self.access_points.as_ref()
+    }
 }
 impl std::fmt::Debug for S3BucketConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5630,6 +6484,28 @@ pub struct S3AccessPointConfiguration {
     /// origin.</p>
     pub network_origin: std::option::Option<crate::model::NetworkOriginConfiguration>,
 }
+impl S3AccessPointConfiguration {
+    /// <p>The access point or multi-region access point policy.</p>
+    pub fn access_point_policy(&self) -> std::option::Option<&str> {
+        self.access_point_policy.as_deref()
+    }
+    /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access
+    /// point or multi-region access point.</p>
+    pub fn public_access_block(
+        &self,
+    ) -> std::option::Option<&crate::model::S3PublicAccessBlockConfiguration> {
+        self.public_access_block.as_ref()
+    }
+    /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
+    /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access
+    /// points. If the access preview is for a new resource and neither is specified, the access
+    /// preview uses <code>Internet</code> for the network origin. If the access preview is for an
+    /// existing resource and neither is specified, the access preview uses the exiting network
+    /// origin.</p>
+    pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOriginConfiguration> {
+        self.network_origin.as_ref()
+    }
+}
 impl std::fmt::Debug for S3AccessPointConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3AccessPointConfiguration");
@@ -5739,6 +6615,15 @@ pub enum NetworkOriginConfiguration {
     /// configuration does not apply to multi-region access points. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
     VpcConfiguration(crate::model::VpcConfiguration),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl NetworkOriginConfiguration {
     /// Tries to convert the enum instance into [`InternetConfiguration`](crate::model::NetworkOriginConfiguration::InternetConfiguration), extracting the inner [`InternetConfiguration`](crate::model::InternetConfiguration).
@@ -5770,6 +6655,10 @@ impl NetworkOriginConfiguration {
     /// Returns true if this is a [`VpcConfiguration`](crate::model::NetworkOriginConfiguration::VpcConfiguration).
     pub fn is_vpc_configuration(&self) -> bool {
         self.as_vpc_configuration().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -5813,6 +6702,13 @@ pub struct VpcConfiguration {
     /// <p> If this field is specified, this access point will only allow connections from the
     /// specified VPC ID. </p>
     pub vpc_id: std::option::Option<std::string::String>,
+}
+impl VpcConfiguration {
+    /// <p> If this field is specified, this access point will only allow connections from the
+    /// specified VPC ID. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5872,6 +6768,17 @@ pub struct S3PublicAccessBlockConfiguration {
     pub ignore_public_acls: std::option::Option<bool>,
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
     pub restrict_public_buckets: std::option::Option<bool>,
+}
+impl S3PublicAccessBlockConfiguration {
+    /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
+    /// bucket. </p>
+    pub fn ignore_public_acls(&self) -> std::option::Option<bool> {
+        self.ignore_public_acls
+    }
+    /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
+    pub fn restrict_public_buckets(&self) -> std::option::Option<bool> {
+        self.restrict_public_buckets
+    }
 }
 impl std::fmt::Debug for S3PublicAccessBlockConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5940,6 +6847,16 @@ pub struct S3BucketAclGrantConfiguration {
     /// <p>The grantee to whom you’re assigning access rights.</p>
     pub grantee: std::option::Option<crate::model::AclGrantee>,
 }
+impl S3BucketAclGrantConfiguration {
+    /// <p>The permissions being granted.</p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::AclPermission> {
+        self.permission.as_ref()
+    }
+    /// <p>The grantee to whom you’re assigning access rights.</p>
+    pub fn grantee(&self) -> std::option::Option<&crate::model::AclGrantee> {
+        self.grantee.as_ref()
+    }
+}
 impl std::fmt::Debug for S3BucketAclGrantConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3BucketAclGrantConfiguration");
@@ -6006,6 +6923,15 @@ pub enum AclGrantee {
     Id(std::string::String),
     /// <p>Used for granting permissions to a predefined group.</p>
     Uri(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AclGrantee {
     /// Tries to convert the enum instance into [`Id`](crate::model::AclGrantee::Id), extracting the inner [`String`](std::string::String).
@@ -6033,6 +6959,10 @@ impl AclGrantee {
     /// Returns true if this is a [`Uri`](crate::model::AclGrantee::Uri).
     pub fn is_uri(&self) -> bool {
         self.as_uri().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -6123,6 +7053,16 @@ pub struct SecretsManagerSecretConfiguration {
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub secret_policy: std::option::Option<std::string::String>,
 }
+impl SecretsManagerSecretConfiguration {
+    /// <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The proposed resource policy defining who can access or manage the secret.</p>
+    pub fn secret_policy(&self) -> std::option::Option<&str> {
+        self.secret_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for SecretsManagerSecretConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecretsManagerSecretConfiguration");
@@ -6203,6 +7143,24 @@ pub struct KmsKeyConfiguration {
     /// configurations in place of the existing grants. Otherwise, the access preview uses the
     /// existing grants for the key.</p>
     pub grants: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>,
+}
+impl KmsKeyConfiguration {
+    /// <p>Resource policy configuration for the KMS key. The only valid value for the name of
+    /// the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
+    /// policy</a>.</p>
+    pub fn key_policies(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.key_policies.as_ref()
+    }
+    /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant
+    /// configuration is for an existing key, the access preview uses the proposed list of grant
+    /// configurations in place of the existing grants. Otherwise, the access preview uses the
+    /// existing grants for the key.</p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::KmsGrantConfiguration]> {
+        self.grants.as_deref()
+    }
 }
 impl std::fmt::Debug for KmsKeyConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6313,6 +7271,33 @@ pub struct KmsGrantConfiguration {
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
     /// KMS grants issued by accounts other than the owner of the key.</p>
     pub issuing_account: std::option::Option<std::string::String>,
+}
+impl KmsGrantConfiguration {
+    /// <p>A list of operations that the grant permits.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::KmsGrantOperation]> {
+        self.operations.as_deref()
+    }
+    /// <p>The principal that is given permission to perform the operations that the grant
+    /// permits.</p>
+    pub fn grantee_principal(&self) -> std::option::Option<&str> {
+        self.grantee_principal.as_deref()
+    }
+    /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
+    pub fn retiring_principal(&self) -> std::option::Option<&str> {
+        self.retiring_principal.as_deref()
+    }
+    /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operations</a> in the grant only when the operation request includes the specified
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+    /// context</a>.</p>
+    pub fn constraints(&self) -> std::option::Option<&crate::model::KmsGrantConstraints> {
+        self.constraints.as_ref()
+    }
+    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
+    /// KMS grants issued by accounts other than the owner of the key.</p>
+    pub fn issuing_account(&self) -> std::option::Option<&str> {
+        self.issuing_account.as_deref()
+    }
 }
 impl std::fmt::Debug for KmsGrantConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6458,6 +7443,28 @@ pub struct KmsGrantConstraints {
     /// constraint, although it can include additional key-value pairs.</p>
     pub encryption_context_subset:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl KmsGrantConstraints {
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operation</a> request. The grant allows the operation only when the encryption
+    /// context in the request is the same as the encryption context specified in this
+    /// constraint.</p>
+    pub fn encryption_context_equals(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.encryption_context_equals.as_ref()
+    }
+    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operation</a> request. The grant allows the cryptographic operation only when the
+    /// encryption context in the request includes the key-value pairs specified in this
+    /// constraint, although it can include additional key-value pairs.</p>
+    pub fn encryption_context_subset(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.encryption_context_subset.as_ref()
+    }
 }
 impl std::fmt::Debug for KmsGrantConstraints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6694,6 +7701,12 @@ impl AsRef<str> for KmsGrantOperation {
 pub struct IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
     pub trust_policy: std::option::Option<std::string::String>,
+}
+impl IamRoleConfiguration {
+    /// <p>The proposed trust policy for the IAM role.</p>
+    pub fn trust_policy(&self) -> std::option::Option<&str> {
+        self.trust_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for IamRoleConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

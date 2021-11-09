@@ -15,6 +15,23 @@ pub struct AgentConfigurationStatus {
     /// <p>A description of the operation performed.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl AgentConfigurationStatus {
+    /// <p>The agent/connector ID.</p>
+    pub fn agent_id(&self) -> std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>Information about the status of the <code>StartDataCollection</code> and
+    /// <code>StopDataCollection</code> operations. The system has recorded the data collection
+    /// operation. The agent/connector receives this command the next time it polls for a new command.
+    /// </p>
+    pub fn operation_succeeded(&self) -> bool {
+        self.operation_succeeded
+    }
+    /// <p>A description of the operation performed.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for AgentConfigurationStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AgentConfigurationStatus");
@@ -144,6 +161,85 @@ pub struct ImportTask {
     /// failed entries file and then imports that failed entries file. This prevents you from having
     /// to correct and update the larger original file and attempt importing it again.</p>
     pub errors_and_failed_entries_zip: std::option::Option<std::string::String>,
+}
+impl ImportTask {
+    /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are
+    /// unique within an AWS account.</p>
+    pub fn import_task_id(&self) -> std::option::Option<&str> {
+        self.import_task_id.as_deref()
+    }
+    /// <p>A unique token used to prevent the same import request from occurring more than once. If
+    /// you didn't provide a token, a token was automatically generated when the import task request
+    /// was sent.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>A descriptive name for an import task. You can use this name to filter future requests
+    /// related to this import task, such as identifying applications and servers that were included
+    /// in this import task. We recommend that you use a meaningful name for each import task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
+    pub fn import_url(&self) -> std::option::Option<&str> {
+        self.import_url.as_deref()
+    }
+    /// <p>The status of the import task. An import can have the status of
+    /// <code>IMPORT_COMPLETE</code> and still have some records fail to import from the overall
+    /// request. More information can be found in the downloadable archive defined in the
+    /// <code>errorsAndFailedEntriesZip</code> field, or in the Migration Hub management
+    /// console.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time that the import task request was made, presented in the Unix time stamp
+    /// format.</p>
+    pub fn import_request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.import_request_time.as_ref()
+    }
+    /// <p>The time that the import task request finished, presented in the Unix time stamp
+    /// format.</p>
+    pub fn import_completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.import_completion_time.as_ref()
+    }
+    /// <p>The time that the import task request was deleted, presented in the Unix time stamp
+    /// format.</p>
+    pub fn import_deleted_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.import_deleted_time.as_ref()
+    }
+    /// <p>The total number of server records in the import file that were successfully
+    /// imported.</p>
+    pub fn server_import_success(&self) -> i32 {
+        self.server_import_success
+    }
+    /// <p>The total number of server records in the import file that failed to be imported.</p>
+    pub fn server_import_failure(&self) -> i32 {
+        self.server_import_failure
+    }
+    /// <p>The total number of application records in the import file that were successfully
+    /// imported.</p>
+    pub fn application_import_success(&self) -> i32 {
+        self.application_import_success
+    }
+    /// <p>The total number of application records in the import file that failed to be
+    /// imported.</p>
+    pub fn application_import_failure(&self) -> i32 {
+        self.application_import_failure
+    }
+    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a
+    /// file of failed records. You can use these two files to quickly identify records that failed,
+    /// why they failed, and correct those records. Afterward, you can upload the corrected file to
+    /// your Amazon S3 bucket and create another import task request.</p>
+    ///
+    /// <p>This field also includes authorization information so you can confirm the authenticity of
+    /// the compressed archive before you download it.</p>
+    ///
+    /// <p>If some records failed to be imported we recommend that you correct the records in the
+    /// failed entries file and then imports that failed entries file. This prevents you from having
+    /// to correct and update the larger original file and attempt importing it again.</p>
+    pub fn errors_and_failed_entries_zip(&self) -> std::option::Option<&str> {
+        self.errors_and_failed_entries_zip.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -544,6 +640,24 @@ pub struct ExportFilter {
     /// </p>
     pub condition: std::option::Option<std::string::String>,
 }
+impl ExportFilter {
+    /// <p>A single <code>ExportFilter</code> name. Supported filters:
+    /// <code>agentId</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be
+    /// found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form
+    /// <code>o-0123456789abcdef0</code>.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>Supported condition: <code>EQUALS</code>
+    /// </p>
+    pub fn condition(&self) -> std::option::Option<&str> {
+        self.condition.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportFilter");
@@ -749,6 +863,28 @@ pub struct NeighborConnectionDetail {
     /// <p>The number of open network connections with the neighboring server.</p>
     pub connections_count: i64,
 }
+impl NeighborConnectionDetail {
+    /// <p>The ID of the server that opened the network connection.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>The ID of the server that accepted the network connection.</p>
+    pub fn destination_server_id(&self) -> std::option::Option<&str> {
+        self.destination_server_id.as_deref()
+    }
+    /// <p>The destination network port for the connection.</p>
+    pub fn destination_port(&self) -> std::option::Option<i32> {
+        self.destination_port
+    }
+    /// <p>The network protocol used for the connection.</p>
+    pub fn transport_protocol(&self) -> std::option::Option<&str> {
+        self.transport_protocol.as_deref()
+    }
+    /// <p>The number of open network connections with the neighboring server.</p>
+    pub fn connections_count(&self) -> i64 {
+        self.connections_count
+    }
+}
 impl std::fmt::Debug for NeighborConnectionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NeighborConnectionDetail");
@@ -859,6 +995,16 @@ pub struct OrderByElement {
     pub field_name: std::option::Option<std::string::String>,
     /// <p>Ordering direction.</p>
     pub sort_order: std::option::Option<crate::model::OrderString>,
+}
+impl OrderByElement {
+    /// <p>The field on which to order.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>Ordering direction.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::OrderString> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for OrderByElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1138,27 @@ pub struct Filter {
     /// either <i>DescribeConfigurations</i> or <i>ListConfigurations</i>
     /// returns attributes of matching configuration items.</p>
     pub condition: std::option::Option<std::string::String>,
+}
+impl Filter {
+    /// <p>The name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A string value on which to filter. For example, if you choose the
+    /// <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code>
+    /// for the value.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS,
+    /// CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as
+    /// though concatenated by <i>AND</i>. If you specify multiple values for a
+    /// particular filter, the system differentiates the values using <i>OR</i>. Calling
+    /// either <i>DescribeConfigurations</i> or <i>ListConfigurations</i>
+    /// returns attributes of matching configuration items.</p>
+    pub fn condition(&self) -> std::option::Option<&str> {
+        self.condition.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1165,6 +1332,36 @@ pub struct CustomerConnectorInfo {
     /// <p>Number of unknown discovery connectors.</p>
     pub unknown_connectors: i32,
 }
+impl CustomerConnectorInfo {
+    /// <p>Number of active discovery connectors.</p>
+    pub fn active_connectors(&self) -> i32 {
+        self.active_connectors
+    }
+    /// <p>Number of healthy discovery connectors.</p>
+    pub fn healthy_connectors(&self) -> i32 {
+        self.healthy_connectors
+    }
+    /// <p>Number of blacklisted discovery connectors.</p>
+    pub fn black_listed_connectors(&self) -> i32 {
+        self.black_listed_connectors
+    }
+    /// <p>Number of discovery connectors with status SHUTDOWN,</p>
+    pub fn shutdown_connectors(&self) -> i32 {
+        self.shutdown_connectors
+    }
+    /// <p>Number of unhealthy discovery connectors.</p>
+    pub fn unhealthy_connectors(&self) -> i32 {
+        self.unhealthy_connectors
+    }
+    /// <p>Total number of discovery connectors.</p>
+    pub fn total_connectors(&self) -> i32 {
+        self.total_connectors
+    }
+    /// <p>Number of unknown discovery connectors.</p>
+    pub fn unknown_connectors(&self) -> i32 {
+        self.unknown_connectors
+    }
+}
 impl std::fmt::Debug for CustomerConnectorInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomerConnectorInfo");
@@ -1302,6 +1499,36 @@ pub struct CustomerAgentInfo {
     pub total_agents: i32,
     /// <p>Number of unknown discovery agents.</p>
     pub unknown_agents: i32,
+}
+impl CustomerAgentInfo {
+    /// <p>Number of active discovery agents.</p>
+    pub fn active_agents(&self) -> i32 {
+        self.active_agents
+    }
+    /// <p>Number of healthy discovery agents</p>
+    pub fn healthy_agents(&self) -> i32 {
+        self.healthy_agents
+    }
+    /// <p>Number of blacklisted discovery agents.</p>
+    pub fn black_listed_agents(&self) -> i32 {
+        self.black_listed_agents
+    }
+    /// <p>Number of discovery agents with status SHUTDOWN.</p>
+    pub fn shutdown_agents(&self) -> i32 {
+        self.shutdown_agents
+    }
+    /// <p>Number of unhealthy discovery agents.</p>
+    pub fn unhealthy_agents(&self) -> i32 {
+        self.unhealthy_agents
+    }
+    /// <p>Total number of discovery agents.</p>
+    pub fn total_agents(&self) -> i32 {
+        self.total_agents
+    }
+    /// <p>Number of unknown discovery agents.</p>
+    pub fn unknown_agents(&self) -> i32 {
+        self.unknown_agents
+    }
 }
 impl std::fmt::Debug for CustomerAgentInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1442,6 +1669,32 @@ pub struct ConfigurationTag {
     /// (UTC).</p>
     pub time_of_creation: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ConfigurationTag {
+    /// <p>A type of IT asset to tag.</p>
+    pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationItemType> {
+        self.configuration_type.as_ref()
+    }
+    /// <p>The configuration ID for the item to tag. You can specify a list of keys and
+    /// values.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>A type of tag on which to filter. For example,
+    /// <i>serverType</i>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A value on which to filter. For example <i>key = serverType</i> and
+    /// <i>value = web server</i>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The time the configuration tag was created in Coordinated Universal Time
+    /// (UTC).</p>
+    pub fn time_of_creation(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.time_of_creation.as_ref()
+    }
+}
 impl std::fmt::Debug for ConfigurationTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationTag");
@@ -1562,6 +1815,16 @@ pub struct TagFilter {
     /// <p>Values for the tag filter.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TagFilter {
+    /// <p>A name of the tag filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Values for the tag filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for TagFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagFilter");
@@ -1639,6 +1902,17 @@ pub struct ImportTaskFilter {
     /// <p>An array of strings that you can provide to match against a specific name, status, or
     /// import task ID to filter the results for your import task queries.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ImportTaskFilter {
+    /// <p>The name, status, or import task ID for a specific import task.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ImportTaskFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>An array of strings that you can provide to match against a specific name, status, or
+    /// import task ID to filter the results for your import task queries.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportTaskFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1796,6 +2070,48 @@ pub struct ExportInfo {
     /// <code>endTime</code> was requested, this result does not appear in
     /// <code>ExportInfo</code>.</p>
     pub requested_end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ExportInfo {
+    /// <p>A unique identifier used to query an export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>The status of the data export job.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
+    /// <p>A status message provided for API callers.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is
+    /// displayed only if the export succeeded.</p>
+    pub fn configurations_download_url(&self) -> std::option::Option<&str> {
+        self.configurations_download_url.as_deref()
+    }
+    /// <p>The time that the data export was initiated.</p>
+    pub fn export_request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.export_request_time.as_ref()
+    }
+    /// <p>If true, the export of agent information exceeded the size limit for a single export
+    /// and the exported data is incomplete for the requested time range. To address this, select a
+    /// smaller time range for the export by using <code>startDate</code> and
+    /// <code>endDate</code>.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
+    /// request. If no <code>startTime</code> was requested, this result does not appear in
+    /// <code>ExportInfo</code>.</p>
+    pub fn requested_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.requested_start_time.as_ref()
+    }
+    /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no
+    /// <code>endTime</code> was requested, this result does not appear in
+    /// <code>ExportInfo</code>.</p>
+    pub fn requested_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.requested_end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2126,6 +2442,120 @@ pub struct ContinuousExportDescription {
     /// </ul>
     pub schema_storage_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ContinuousExportDescription {
+    /// <p>The unique ID assigned to this export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>Describes the status of the export. Can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>START_IN_PROGRESS - setting up resources to start continuous export.</p>
+    /// </li>
+    /// <li>
+    /// <p>START_FAILED - an error occurred setting up continuous export. To recover, call
+    /// start-continuous-export again.</p>
+    /// </li>
+    /// <li>
+    /// <p>ACTIVE - data is being exported to the customer bucket.</p>
+    /// </li>
+    /// <li>
+    /// <p>ERROR - an error occurred during export. To fix the issue, call
+    /// stop-continuous-export and start-continuous-export.</p>
+    /// </li>
+    /// <li>
+    /// <p>STOP_IN_PROGRESS - stopping the export.</p>
+    /// </li>
+    /// <li>
+    /// <p>STOP_FAILED - an error occurred stopping the export. To recover, call
+    /// stop-continuous-export again.</p>
+    /// </li>
+    /// <li>
+    /// <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported
+    /// to the customer bucket.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ContinuousExportStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Contains information about any errors that have occurred. This data type can have the
+    /// following values:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon
+    /// Athena. Contact your AWS administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up AWS Application Discovery Service</a> in the Application Discovery
+    /// Service User Guide.</p>
+    /// </li>
+    /// <li>
+    /// <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the limit for Amazon Kinesis Data
+    /// Firehose delivery streams. Reduce the number of streams or request a limit increase and
+    /// try again. For more information, see <a href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer
+    /// Guide.</p>
+    /// </li>
+    /// <li>
+    /// <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because
+    /// your IAM User is missing the AWSApplicationDiscoveryServiceFirehose role. Turn on Data
+    /// Exploration in Amazon Athena and try again. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step 3: Provide Application Discovery Service Access to Non-Administrator Users by
+    /// Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+    /// </li>
+    /// <li>
+    /// <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state
+    /// because your IAM User is missing one or more of the Kinesis data delivery
+    /// streams.</p>
+    /// </li>
+    /// <li>
+    /// <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an
+    /// internal failure. Try again later. If this problem persists, contact AWS
+    /// Support.</p>
+    /// </li>
+    /// <li>
+    /// <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the
+    /// number of Amazon S3 buckets or request a limit increase and try again. For more
+    /// information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+    /// Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+    /// Guide.</p>
+    /// </li>
+    /// <li>
+    /// <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You
+    /// must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn status_detail(&self) -> std::option::Option<&str> {
+        self.status_detail.as_deref()
+    }
+    /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The timestamp representing when the continuous export was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The timestamp that represents when this continuous export was stopped.</p>
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_time.as_ref()
+    }
+    /// <p>The type of data collector used to gather this data (currently only offered for
+    /// AGENT).</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>An object which describes how the data is stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>databaseName</code> - the name of the Glue database used to store the
+    /// schema.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_storage_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.schema_storage_config.as_ref()
+    }
 }
 impl std::fmt::Debug for ContinuousExportDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2557,6 +2987,51 @@ pub struct AgentInfo {
     /// <p>Agent's first registration timestamp in UTC.</p>
     pub registered_time: std::option::Option<std::string::String>,
 }
+impl AgentInfo {
+    /// <p>The agent or connector ID.</p>
+    pub fn agent_id(&self) -> std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>The name of the host where the agent or connector resides. The host can be a server or
+    /// virtual machine.</p>
+    pub fn host_name(&self) -> std::option::Option<&str> {
+        self.host_name.as_deref()
+    }
+    /// <p>Network details about the host where the agent or connector resides.</p>
+    pub fn agent_network_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AgentNetworkInfo]> {
+        self.agent_network_info_list.as_deref()
+    }
+    /// <p>The ID of the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+    /// <p>The agent or connector version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The health of the agent or connector.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::AgentStatus> {
+        self.health.as_ref()
+    }
+    /// <p>Time since agent or connector health was reported.</p>
+    pub fn last_health_ping_time(&self) -> std::option::Option<&str> {
+        self.last_health_ping_time.as_deref()
+    }
+    /// <p>Status of the collection process for an agent or connector.</p>
+    pub fn collection_status(&self) -> std::option::Option<&str> {
+        self.collection_status.as_deref()
+    }
+    /// <p>Type of agent.</p>
+    pub fn agent_type(&self) -> std::option::Option<&str> {
+        self.agent_type.as_deref()
+    }
+    /// <p>Agent's first registration timestamp in UTC.</p>
+    pub fn registered_time(&self) -> std::option::Option<&str> {
+        self.registered_time.as_deref()
+    }
+}
 impl std::fmt::Debug for AgentInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AgentInfo");
@@ -2826,6 +3301,16 @@ pub struct AgentNetworkInfo {
     /// <p>The MAC address for the host where the agent/connector resides.</p>
     pub mac_address: std::option::Option<std::string::String>,
 }
+impl AgentNetworkInfo {
+    /// <p>The IP address for the host where the agent/connector resides.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The MAC address for the host where the agent/connector resides.</p>
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+}
 impl std::fmt::Debug for AgentNetworkInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AgentNetworkInfo");
@@ -2888,6 +3373,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>A value for a tag key on which to filter.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The type of tag on which to filter.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A value for a tag key on which to filter.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2954,6 +3449,20 @@ pub struct BatchDeleteImportDataError {
     pub error_code: std::option::Option<crate::model::BatchDeleteImportDataErrorCode>,
     /// <p>The description of the error that occurred for a specific import task.</p>
     pub error_description: std::option::Option<std::string::String>,
+}
+impl BatchDeleteImportDataError {
+    /// <p>The unique import ID associated with the error that occurred.</p>
+    pub fn import_task_id(&self) -> std::option::Option<&str> {
+        self.import_task_id.as_deref()
+    }
+    /// <p>The type of error that occurred for a specific import task.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::BatchDeleteImportDataErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The description of the error that occurred for a specific import task.</p>
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteImportDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

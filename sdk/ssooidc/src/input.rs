@@ -189,10 +189,7 @@ impl CreateTokenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_token(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -372,10 +369,8 @@ impl RegisterClientInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_client(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_client(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -559,10 +554,7 @@ impl StartDeviceAuthorizationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_device_authorization(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -640,6 +632,24 @@ pub struct StartDeviceAuthorizationInput {
     /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
     pub start_url: std::option::Option<std::string::String>,
 }
+impl StartDeviceAuthorizationInput {
+    /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
+    /// should come from the persisted result of the <a>RegisterClient</a> API
+    /// operation.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A secret string that is generated for the client. This value should come from the
+    /// persisted result of the <a>RegisterClient</a> API operation.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
+    /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+    pub fn start_url(&self) -> std::option::Option<&str> {
+        self.start_url.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDeviceAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeviceAuthorizationInput");
@@ -661,6 +671,21 @@ pub struct RegisterClientInput {
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
     /// to restrict permissions when granting an access token.</p>
     pub scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RegisterClientInput {
+    /// <p>The friendly name of the client.</p>
+    pub fn client_name(&self) -> std::option::Option<&str> {
+        self.client_name.as_deref()
+    }
+    /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
+    pub fn client_type(&self) -> std::option::Option<&str> {
+        self.client_type.as_deref()
+    }
+    /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
+    /// to restrict permissions when granting an access token.</p>
+    pub fn scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -696,6 +721,44 @@ pub struct CreateTokenInput {
     /// <p>The location of the application that will receive the authorization code. Users authorize
     /// the service to send the request to this location.</p>
     pub redirect_uri: std::option::Option<std::string::String>,
+}
+impl CreateTokenInput {
+    /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
+    pub fn grant_type(&self) -> std::option::Option<&str> {
+        self.grant_type.as_deref()
+    }
+    /// <p>Used only when calling this API for the device code grant type. This short-term code is
+    /// used to identify this authentication attempt. This should come from an in-memory reference to
+    /// the result of the <a>StartDeviceAuthorization</a> API.</p>
+    pub fn device_code(&self) -> std::option::Option<&str> {
+        self.device_code.as_deref()
+    }
+    /// <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
+    /// restrict permissions when granting an access token.</p>
+    pub fn scope(&self) -> std::option::Option<&[std::string::String]> {
+        self.scope.as_deref()
+    }
+    /// <p>The location of the application that will receive the authorization code. Users authorize
+    /// the service to send the request to this location.</p>
+    pub fn redirect_uri(&self) -> std::option::Option<&str> {
+        self.redirect_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

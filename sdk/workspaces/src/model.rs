@@ -8,6 +8,16 @@ pub struct IpRuleItem {
     /// <p>The description.</p>
     pub rule_desc: std::option::Option<std::string::String>,
 }
+impl IpRuleItem {
+    /// <p>The IP address range, in CIDR notation.</p>
+    pub fn ip_rule(&self) -> std::option::Option<&str> {
+        self.ip_rule.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn rule_desc(&self) -> std::option::Option<&str> {
+        self.rule_desc.as_deref()
+    }
+}
 impl std::fmt::Debug for IpRuleItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IpRuleItem");
@@ -72,6 +82,16 @@ pub struct ConnectionAliasPermission {
     pub shared_account_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub allow_association: std::option::Option<bool>,
+}
+impl ConnectionAliasPermission {
+    /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+        self.shared_account_id.as_deref()
+    }
+    /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
+    pub fn allow_association(&self) -> std::option::Option<bool> {
+        self.allow_association
+    }
 }
 impl std::fmt::Debug for ConnectionAliasPermission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -143,6 +163,21 @@ pub struct FailedWorkspaceChangeRequest {
     /// <p>The text of the error message that is returned if the WorkSpace cannot be
     /// rebooted.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl FailedWorkspaceChangeRequest {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be
+    /// rebooted.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for FailedWorkspaceChangeRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -223,6 +258,12 @@ pub struct TerminateRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
 }
+impl TerminateRequest {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateRequest");
@@ -271,6 +312,12 @@ pub struct StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
 }
+impl StopRequest {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopRequest");
@@ -318,6 +365,12 @@ impl StopRequest {
 pub struct StartRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl StartRequest {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -368,6 +421,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -485,6 +548,12 @@ pub struct RebuildRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
 }
+impl RebuildRequest {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RebuildRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebuildRequest");
@@ -532,6 +601,12 @@ impl RebuildRequest {
 pub struct RebootRequest {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl RebootRequest {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RebootRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -647,6 +722,32 @@ pub struct WorkspaceProperties {
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces
     /// Bundles</a>.</p>
     pub compute_type_name: std::option::Option<crate::model::Compute>,
+}
+impl WorkspaceProperties {
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+    /// Mode</a>.</p>
+    pub fn running_mode(&self) -> std::option::Option<&crate::model::RunningMode> {
+        self.running_mode.as_ref()
+    }
+    /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
+    pub fn running_mode_auto_stop_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.running_mode_auto_stop_timeout_in_minutes
+    }
+    /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    pub fn root_volume_size_gib(&self) -> std::option::Option<i32> {
+        self.root_volume_size_gib
+    }
+    /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    pub fn user_volume_size_gib(&self) -> std::option::Option<i32> {
+        self.user_volume_size_gib
+    }
+    /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces
+    /// Bundles</a>.</p>
+    pub fn compute_type_name(&self) -> std::option::Option<&crate::model::Compute> {
+        self.compute_type_name.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -951,6 +1052,64 @@ pub struct WorkspaceCreationProperties {
     /// Maintenance</a>. </p>
     pub enable_maintenance_mode: std::option::Option<bool>,
 }
+impl WorkspaceCreationProperties {
+    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
+    ///
+    /// <note>         
+    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
+    /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
+    /// you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs,
+    /// see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the
+    /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
+    /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+    /// <i>Amazon WorkDocs Administration Guide</i>.</p>
+    ///
+    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
+    /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
+    /// </note>
+    pub fn enable_work_docs(&self) -> std::option::Option<bool> {
+        self.enable_work_docs
+    }
+    /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
+    pub fn enable_internet_access(&self) -> std::option::Option<bool> {
+        self.enable_internet_access
+    }
+    /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+    /// Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+    /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
+    /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
+    /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+    ///
+    /// <important>
+    /// <ul>
+    /// <li>
+    /// <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information,
+    /// see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+    /// Distinguished Names</a> in the Microsoft documentation.</p>
+    /// </li>
+    /// <li>
+    /// <p>The API doesn't validate whether the OU exists.</p>
+    /// </li>
+    /// </ul>
+    /// </important>
+    pub fn default_ou(&self) -> std::option::Option<&str> {
+        self.default_ou.as_deref()
+    }
+    /// <p>The identifier of your custom security group.</p>
+    pub fn custom_security_group_id(&self) -> std::option::Option<&str> {
+        self.custom_security_group_id.as_deref()
+    }
+    /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
+    pub fn user_enabled_as_local_administrator(&self) -> std::option::Option<bool> {
+        self.user_enabled_as_local_administrator
+    }
+    /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information,
+    /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+    /// Maintenance</a>. </p>
+    pub fn enable_maintenance_mode(&self) -> std::option::Option<bool> {
+        self.enable_maintenance_mode
+    }
+}
 impl std::fmt::Debug for WorkspaceCreationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceCreationProperties");
@@ -1153,6 +1312,43 @@ pub struct WorkspaceAccessProperties {
     pub device_type_zero_client: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
     pub device_type_linux: std::option::Option<crate::model::AccessPropertyValue>,
+}
+impl WorkspaceAccessProperties {
+    /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
+    pub fn device_type_windows(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_windows.as_ref()
+    }
+    /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
+    pub fn device_type_osx(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_osx.as_ref()
+    }
+    /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
+    pub fn device_type_web(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_web.as_ref()
+    }
+    /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
+    pub fn device_type_ios(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_ios.as_ref()
+    }
+    /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
+    /// to access their WorkSpaces.</p>
+    pub fn device_type_android(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_android.as_ref()
+    }
+    /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
+    pub fn device_type_chrome_os(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_chrome_os.as_ref()
+    }
+    /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
+    pub fn device_type_zero_client(
+        &self,
+    ) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_zero_client.as_ref()
+    }
+    /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+    pub fn device_type_linux(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
+        self.device_type_linux.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceAccessProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1384,6 +1580,30 @@ pub struct SelfservicePermissions {
     /// state.</p>
     pub rebuild_workspace: std::option::Option<crate::model::ReconnectEnum>,
 }
+impl SelfservicePermissions {
+    /// <p>Specifies whether users can restart their WorkSpace.</p>
+    pub fn restart_workspace(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
+        self.restart_workspace.as_ref()
+    }
+    /// <p>Specifies whether users can increase the volume size of the drives on their
+    /// WorkSpace.</p>
+    pub fn increase_volume_size(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
+        self.increase_volume_size.as_ref()
+    }
+    /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
+    pub fn change_compute_type(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
+        self.change_compute_type.as_ref()
+    }
+    /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
+    pub fn switch_running_mode(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
+        self.switch_running_mode.as_ref()
+    }
+    /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original
+    /// state.</p>
+    pub fn rebuild_workspace(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
+        self.rebuild_workspace.as_ref()
+    }
+}
 impl std::fmt::Debug for SelfservicePermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SelfservicePermissions");
@@ -1559,6 +1779,14 @@ pub struct ClientProperties {
     /// When enabled, users can choose to reconnect to their WorkSpaces without re-entering their
     /// credentials. </p>
     pub reconnect_enabled: std::option::Option<crate::model::ReconnectEnum>,
+}
+impl ClientProperties {
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client.
+    /// When enabled, users can choose to reconnect to their WorkSpaces without re-entering their
+    /// credentials. </p>
+    pub fn reconnect_enabled(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
+        self.reconnect_enabled.as_ref()
+    }
 }
 impl std::fmt::Debug for ClientProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1789,6 +2017,12 @@ pub struct Snapshot {
     /// <p>The time when the snapshot was created.</p>
     pub snapshot_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Snapshot {
+    /// <p>The time when the snapshot was created.</p>
+    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Snapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Snapshot");
@@ -1846,6 +2080,29 @@ pub struct WorkspaceConnectionStatus {
     pub connection_state_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp of the last known user connection.</p>
     pub last_known_user_connection_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl WorkspaceConnectionStatus {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace
+    /// is stopped.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>The timestamp of the connection status check.</p>
+    pub fn connection_state_check_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.connection_state_check_timestamp.as_ref()
+    }
+    /// <p>The timestamp of the last known user connection.</p>
+    pub fn last_known_user_connection_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_known_user_connection_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceConnectionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2057,6 +2314,81 @@ pub struct Workspace {
     pub workspace_properties: std::option::Option<crate::model::WorkspaceProperties>,
     /// <p>The modification states of the WorkSpace.</p>
     pub modification_states: std::option::Option<std::vec::Vec<crate::model::ModificationState>>,
+}
+impl Workspace {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The identifier of the Directory Service directory for the WorkSpace.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The user for the WorkSpace.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The IP address of the WorkSpace.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The operational state of the WorkSpace.</p>
+    ///
+    /// <note>
+    /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
+    /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
+    /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+    /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
+    /// been successfully terminated.</p>
+    /// </note>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceState> {
+        self.state.as_ref()
+    }
+    /// <p>The identifier of the bundle used to create the WorkSpace.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The identifier of the subnet for the WorkSpace.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be
+    /// created.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies.
+    /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+    /// Launch a WorkSpace</a>. </p>
+    pub fn computer_name(&self) -> std::option::Option<&str> {
+        self.computer_name.as_deref()
+    }
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    pub fn volume_encryption_key(&self) -> std::option::Option<&str> {
+        self.volume_encryption_key.as_deref()
+    }
+    /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
+    pub fn user_volume_encryption_enabled(&self) -> std::option::Option<bool> {
+        self.user_volume_encryption_enabled
+    }
+    /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
+    pub fn root_volume_encryption_enabled(&self) -> std::option::Option<bool> {
+        self.root_volume_encryption_enabled
+    }
+    /// <p>The properties of the WorkSpace.</p>
+    pub fn workspace_properties(&self) -> std::option::Option<&crate::model::WorkspaceProperties> {
+        self.workspace_properties.as_ref()
+    }
+    /// <p>The modification states of the WorkSpace.</p>
+    pub fn modification_states(&self) -> std::option::Option<&[crate::model::ModificationState]> {
+        self.modification_states.as_deref()
+    }
 }
 impl std::fmt::Debug for Workspace {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2355,6 +2687,16 @@ pub struct ModificationState {
     pub resource: std::option::Option<crate::model::ModificationResourceEnum>,
     /// <p>The modification state.</p>
     pub state: std::option::Option<crate::model::ModificationStateEnum>,
+}
+impl ModificationState {
+    /// <p>The resource.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::ModificationResourceEnum> {
+        self.resource.as_ref()
+    }
+    /// <p>The modification state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ModificationStateEnum> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for ModificationState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2694,6 +3036,58 @@ pub struct WorkspaceImage {
     /// <p>The updates (if any) that are available for the specified image.</p>
     pub updates: std::option::Option<crate::model::UpdateResult>,
 }
+impl WorkspaceImage {
+    /// <p>The identifier of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The name of the image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The operating system that the image is running. </p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>The status of the image.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceImageState> {
+        self.state.as_ref()
+    }
+    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own
+    /// License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+    /// Desktop Images</a>.</p>
+    pub fn required_tenancy(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkspaceImageRequiredTenancy> {
+        self.required_tenancy.as_ref()
+    }
+    /// <p>The error code that is returned for the image.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The text of the error message that is returned for the image.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
+    /// that the image has been shared with sees the original creation date of the image.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>The updates (if any) that are available for the specified image.</p>
+    pub fn updates(&self) -> std::option::Option<&crate::model::UpdateResult> {
+        self.updates.as_ref()
+    }
+}
 impl std::fmt::Debug for WorkspaceImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceImage");
@@ -2912,6 +3306,16 @@ pub struct UpdateResult {
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateResult {
+    /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
+    pub fn update_available(&self) -> std::option::Option<bool> {
+        self.update_available
+    }
+    /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResult");
@@ -3087,6 +3491,12 @@ pub struct OperatingSystem {
     /// <p>The operating system.</p>
     pub r#type: std::option::Option<crate::model::OperatingSystemType>,
 }
+impl OperatingSystem {
+    /// <p>The operating system.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::OperatingSystemType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for OperatingSystem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OperatingSystem");
@@ -3251,6 +3661,12 @@ pub struct ImagePermission {
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
     pub shared_account_id: std::option::Option<std::string::String>,
 }
+impl ImagePermission {
+    /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+        self.shared_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ImagePermission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImagePermission");
@@ -3342,6 +3758,88 @@ pub struct WorkspaceDirectory {
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
     pub selfservice_permissions: std::option::Option<crate::model::SelfservicePermissions>,
+}
+impl WorkspaceDirectory {
+    /// <p>The directory identifier.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The directory alias.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The name of the directory.</p>
+    pub fn directory_name(&self) -> std::option::Option<&str> {
+        self.directory_name.as_deref()
+    }
+    /// <p>The registration code for the directory. This is the code that users enter in their
+    /// Amazon WorkSpaces client application to connect to the directory.</p>
+    pub fn registration_code(&self) -> std::option::Option<&str> {
+        self.registration_code.as_deref()
+    }
+    /// <p>The identifiers of the subnets used with the directory.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The IP addresses of the DNS servers for the directory.</p>
+    pub fn dns_ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ip_addresses.as_deref()
+    }
+    /// <p>The user name for the service account.</p>
+    pub fn customer_user_name(&self) -> std::option::Option<&str> {
+        self.customer_user_name.as_deref()
+    }
+    /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make
+    /// calls to other services, such as Amazon EC2, on your behalf.</p>
+    pub fn iam_role_id(&self) -> std::option::Option<&str> {
+        self.iam_role_id.as_deref()
+    }
+    /// <p>The directory type.</p>
+    pub fn directory_type(&self) -> std::option::Option<&crate::model::WorkspaceDirectoryType> {
+        self.directory_type.as_ref()
+    }
+    /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
+    pub fn workspace_security_group_id(&self) -> std::option::Option<&str> {
+        self.workspace_security_group_id.as_deref()
+    }
+    /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is
+    /// deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory
+    /// metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered,
+    /// check for the directory ID by using
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+    /// DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
+    /// successfully deregistered.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceDirectoryState> {
+        self.state.as_ref()
+    }
+    /// <p>The default creation properties for all WorkSpaces in the directory.</p>
+    pub fn workspace_creation_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultWorkspaceCreationProperties> {
+        self.workspace_creation_properties.as_ref()
+    }
+    /// <p>The identifiers of the IP access control groups associated with the directory.</p>
+    pub fn ip_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_group_ids.as_deref()
+    }
+    /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
+    pub fn workspace_access_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkspaceAccessProperties> {
+        self.workspace_access_properties.as_ref()
+    }
+    /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License
+    /// (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+    /// Your Own Windows Desktop Images</a>.</p>
+    pub fn tenancy(&self) -> std::option::Option<&crate::model::Tenancy> {
+        self.tenancy.as_ref()
+    }
+    /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
+    pub fn selfservice_permissions(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfservicePermissions> {
+        self.selfservice_permissions.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceDirectory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3706,6 +4204,44 @@ pub struct DefaultWorkspaceCreationProperties {
     /// Maintenance</a>.</p>
     pub enable_maintenance_mode: std::option::Option<bool>,
 }
+impl DefaultWorkspaceCreationProperties {
+    /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
+    pub fn enable_work_docs(&self) -> std::option::Option<bool> {
+        self.enable_work_docs
+    }
+    /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default.
+    /// If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an
+    /// internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address
+    /// Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public
+    /// subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting
+    /// applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information,
+    /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
+    /// Configure a VPC for Amazon WorkSpaces</a>.</p>
+    pub fn enable_internet_access(&self) -> std::option::Option<bool> {
+        self.enable_internet_access
+    }
+    /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
+    pub fn default_ou(&self) -> std::option::Option<&str> {
+        self.default_ou.as_deref()
+    }
+    /// <p>The identifier of the default security group to apply to WorkSpaces when they are created.
+    /// For more information, see
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+    /// Security Groups for Your WorkSpaces</a>.</p>
+    pub fn custom_security_group_id(&self) -> std::option::Option<&str> {
+        self.custom_security_group_id.as_deref()
+    }
+    /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
+    pub fn user_enabled_as_local_administrator(&self) -> std::option::Option<bool> {
+        self.user_enabled_as_local_administrator
+    }
+    /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+    /// Maintenance</a>.</p>
+    pub fn enable_maintenance_mode(&self) -> std::option::Option<bool> {
+        self.enable_maintenance_mode
+    }
+}
 impl std::fmt::Debug for DefaultWorkspaceCreationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultWorkspaceCreationProperties");
@@ -4000,6 +4536,50 @@ pub struct WorkspaceBundle {
     /// <p>The time when the bundle was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl WorkspaceBundle {
+    /// <p>The identifier of the bundle.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The name of the bundle.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The owner of the bundle. This is the account identifier of the owner, or
+    /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The description of the bundle.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the image that was used to create the bundle.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The size of the root volume.</p>
+    pub fn root_storage(&self) -> std::option::Option<&crate::model::RootStorage> {
+        self.root_storage.as_ref()
+    }
+    /// <p>The size of the user volume.</p>
+    pub fn user_storage(&self) -> std::option::Option<&crate::model::UserStorage> {
+        self.user_storage.as_ref()
+    }
+    /// <p>The compute type of the bundle. For more information, see
+    /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type.as_ref()
+    }
+    /// <p>The last time that the bundle was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The time when the bundle was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for WorkspaceBundle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceBundle");
@@ -4184,6 +4764,12 @@ pub struct ComputeType {
     /// <p>The compute type.</p>
     pub name: std::option::Option<crate::model::Compute>,
 }
+impl ComputeType {
+    /// <p>The compute type.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::Compute> {
+        self.name.as_ref()
+    }
+}
 impl std::fmt::Debug for ComputeType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComputeType");
@@ -4229,6 +4815,12 @@ impl ComputeType {
 pub struct UserStorage {
     /// <p>The size of the user volume.</p>
     pub capacity: std::option::Option<std::string::String>,
+}
+impl UserStorage {
+    /// <p>The size of the user volume.</p>
+    pub fn capacity(&self) -> std::option::Option<&str> {
+        self.capacity.as_deref()
+    }
 }
 impl std::fmt::Debug for UserStorage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4277,6 +4869,12 @@ impl UserStorage {
 pub struct RootStorage {
     /// <p>The size of the root volume.</p>
     pub capacity: std::option::Option<std::string::String>,
+}
+impl RootStorage {
+    /// <p>The size of the root volume.</p>
+    pub fn capacity(&self) -> std::option::Option<&str> {
+        self.capacity.as_deref()
+    }
 }
 impl std::fmt::Debug for RootStorage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4331,6 +4929,24 @@ pub struct WorkspacesIpGroup {
     pub group_desc: std::option::Option<std::string::String>,
     /// <p>The rules.</p>
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
+}
+impl WorkspacesIpGroup {
+    /// <p>The identifier of the group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The description of the group.</p>
+    pub fn group_desc(&self) -> std::option::Option<&str> {
+        self.group_desc.as_deref()
+    }
+    /// <p>The rules.</p>
+    pub fn user_rules(&self) -> std::option::Option<&[crate::model::IpRuleItem]> {
+        self.user_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for WorkspacesIpGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4438,6 +5054,29 @@ pub struct ConnectionAlias {
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The association status of the connection alias.</p>
     pub associations: std::option::Option<std::vec::Vec<crate::model::ConnectionAliasAssociation>>,
+}
+impl ConnectionAlias {
+    /// <p>The connection string specified for the connection alias. The connection string must be in the form of
+    /// a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+    pub fn connection_string(&self) -> std::option::Option<&str> {
+        self.connection_string.as_deref()
+    }
+    /// <p>The identifier of the connection alias.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+    /// <p>The current state of the connection alias.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ConnectionAliasState> {
+        self.state.as_ref()
+    }
+    /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>The association status of the connection alias.</p>
+    pub fn associations(&self) -> std::option::Option<&[crate::model::ConnectionAliasAssociation]> {
+        self.associations.as_deref()
+    }
 }
 impl std::fmt::Debug for ConnectionAlias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4571,6 +5210,25 @@ pub struct ConnectionAliasAssociation {
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
     /// you're configuring your DNS routing policies.</p>
     pub connection_identifier: std::option::Option<std::string::String>,
+}
+impl ConnectionAliasAssociation {
+    /// <p>The association status of the connection alias.</p>
+    pub fn association_status(&self) -> std::option::Option<&crate::model::AssociationStatus> {
+        self.association_status.as_ref()
+    }
+    /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
+    pub fn associated_account_id(&self) -> std::option::Option<&str> {
+        self.associated_account_id.as_deref()
+    }
+    /// <p>The identifier of the directory associated with a connection alias.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
+    /// you're configuring your DNS routing policies.</p>
+    pub fn connection_identifier(&self) -> std::option::Option<&str> {
+        self.connection_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for ConnectionAliasAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4804,6 +5462,16 @@ pub struct ClientPropertiesResult {
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub client_properties: std::option::Option<crate::model::ClientProperties>,
 }
+impl ClientPropertiesResult {
+    /// <p>The resource identifier, in the form of a directory ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Information about the Amazon WorkSpaces client.</p>
+    pub fn client_properties(&self) -> std::option::Option<&crate::model::ClientProperties> {
+        self.client_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for ClientPropertiesResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClientPropertiesResult");
@@ -4882,6 +5550,38 @@ pub struct AccountModification {
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
     /// modified.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl AccountModification {
+    /// <p>The state of the modification to the configuration of BYOL.</p>
+    pub fn modification_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DedicatedTenancyModificationStateEnum> {
+        self.modification_state.as_ref()
+    }
+    /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
+    pub fn dedicated_tenancy_support(
+        &self,
+    ) -> std::option::Option<&crate::model::DedicatedTenancySupportResultEnum> {
+        self.dedicated_tenancy_support.as_ref()
+    }
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
+    /// interface used for the account.</p>
+    pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
+        self.dedicated_tenancy_management_cidr_range.as_deref()
+    }
+    /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
+    /// modified.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for AccountModification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5150,6 +5850,21 @@ pub struct FailedCreateWorkspaceRequest {
     /// created.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl FailedCreateWorkspaceRequest {
+    /// <p>Information about the WorkSpace.</p>
+    pub fn workspace_request(&self) -> std::option::Option<&crate::model::WorkspaceRequest> {
+        self.workspace_request.as_ref()
+    }
+    /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be
+    /// created.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for FailedCreateWorkspaceRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailedCreateWorkspaceRequest");
@@ -5248,6 +5963,43 @@ pub struct WorkspaceRequest {
     pub workspace_properties: std::option::Option<crate::model::WorkspaceProperties>,
     /// <p>The tags for the WorkSpace.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl WorkspaceRequest {
+    /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
+    /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
+    /// directory for the WorkSpace.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    pub fn volume_encryption_key(&self) -> std::option::Option<&str> {
+        self.volume_encryption_key.as_deref()
+    }
+    /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
+    pub fn user_volume_encryption_enabled(&self) -> std::option::Option<bool> {
+        self.user_volume_encryption_enabled
+    }
+    /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
+    pub fn root_volume_encryption_enabled(&self) -> std::option::Option<bool> {
+        self.root_volume_encryption_enabled
+    }
+    /// <p>The WorkSpace properties.</p>
+    pub fn workspace_properties(&self) -> std::option::Option<&crate::model::WorkspaceProperties> {
+        self.workspace_properties.as_ref()
+    }
+    /// <p>The tags for the WorkSpace.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for WorkspaceRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

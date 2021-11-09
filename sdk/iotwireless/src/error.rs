@@ -8380,6 +8380,16 @@ pub struct ResourceNotFoundException {
     /// <p>Type of the font found resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>Id of the not found resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Type of the font found resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -8605,6 +8615,16 @@ pub struct ConflictException {
     /// <p>Type of the resource in the conflicting operation.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ConflictException {
+    /// <p>Id of the resource in the conflicting operation.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Type of the resource in the conflicting operation.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");
@@ -8699,6 +8719,12 @@ pub struct TooManyTagsException {
     pub message: std::option::Option<std::string::String>,
     /// <p>Name of the resource that exceeds maximum number of tags allowed.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl TooManyTagsException {
+    /// <p>Name of the resource that exceeds maximum number of tags allowed.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

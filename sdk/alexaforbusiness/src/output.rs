@@ -486,6 +486,12 @@ pub struct SendAnnouncementOutput {
     /// <p>The identifier of the announcement.</p>
     pub announcement_arn: std::option::Option<std::string::String>,
 }
+impl SendAnnouncementOutput {
+    /// <p>The identifier of the announcement.</p>
+    pub fn announcement_arn(&self) -> std::option::Option<&str> {
+        self.announcement_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SendAnnouncementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendAnnouncementOutput");
@@ -540,6 +546,20 @@ pub struct SearchUsersOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of users returned.</p>
     pub total_count: std::option::Option<i32>,
+}
+impl SearchUsersOutput {
+    /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserData]> {
+        self.users.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of users returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
 }
 impl std::fmt::Debug for SearchUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -628,6 +648,20 @@ pub struct SearchSkillGroupsOutput {
     /// <p>The total number of skill groups returned.</p>
     pub total_count: std::option::Option<i32>,
 }
+impl SearchSkillGroupsOutput {
+    /// <p>The skill groups that meet the filter criteria, in sort order.</p>
+    pub fn skill_groups(&self) -> std::option::Option<&[crate::model::SkillGroupData]> {
+        self.skill_groups.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of skill groups returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
+}
 impl std::fmt::Debug for SearchSkillGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchSkillGroupsOutput");
@@ -715,6 +749,20 @@ pub struct SearchRoomsOutput {
     /// <p>The total number of rooms returned.</p>
     pub total_count: std::option::Option<i32>,
 }
+impl SearchRoomsOutput {
+    /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
+    pub fn rooms(&self) -> std::option::Option<&[crate::model::RoomData]> {
+        self.rooms.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of rooms returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
+}
 impl std::fmt::Debug for SearchRoomsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchRoomsOutput");
@@ -801,6 +849,20 @@ pub struct SearchProfilesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of room profiles returned.</p>
     pub total_count: std::option::Option<i32>,
+}
+impl SearchProfilesOutput {
+    /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
+    pub fn profiles(&self) -> std::option::Option<&[crate::model::ProfileData]> {
+        self.profiles.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of room profiles returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
 }
 impl std::fmt::Debug for SearchProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -891,6 +953,23 @@ pub struct SearchNetworkProfilesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of network profiles returned.</p>
     pub total_count: std::option::Option<i32>,
+}
+impl SearchNetworkProfilesOutput {
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It
+    /// is a list of NetworkProfileData objects. </p>
+    pub fn network_profiles(&self) -> std::option::Option<&[crate::model::NetworkProfileData]> {
+        self.network_profiles.as_deref()
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by MaxResults.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of network profiles returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
 }
 impl std::fmt::Debug for SearchNetworkProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -989,6 +1068,20 @@ pub struct SearchDevicesOutput {
     /// <p>The total number of devices returned.</p>
     pub total_count: std::option::Option<i32>,
 }
+impl SearchDevicesOutput {
+    /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceData]> {
+        self.devices.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of devices returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
+}
 impl std::fmt::Debug for SearchDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchDevicesOutput");
@@ -1075,6 +1168,20 @@ pub struct SearchContactsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of contacts returned.</p>
     pub total_count: std::option::Option<i32>,
+}
+impl SearchContactsOutput {
+    /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
+    pub fn contacts(&self) -> std::option::Option<&[crate::model::ContactData]> {
+        self.contacts.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of contacts returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
 }
 impl std::fmt::Debug for SearchContactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1163,6 +1270,21 @@ pub struct SearchAddressBooksOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of address books returned.</p>
     pub total_count: std::option::Option<i32>,
+}
+impl SearchAddressBooksOutput {
+    /// <p>The address books that meet the specified set of filter criteria, in sort
+    /// order.</p>
+    pub fn address_books(&self) -> std::option::Option<&[crate::model::AddressBookData]> {
+        self.address_books.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of address books returned.</p>
+    pub fn total_count(&self) -> std::option::Option<i32> {
+        self.total_count
+    }
 }
 impl std::fmt::Debug for SearchAddressBooksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1283,6 +1405,22 @@ pub struct ResolveRoomOutput {
     /// <p>Response to get the room profile request. Required.</p>
     pub room_skill_parameters: std::option::Option<std::vec::Vec<crate::model::RoomSkillParameter>>,
 }
+impl ResolveRoomOutput {
+    /// <p>The ARN of the room from which the skill request was invoked.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The name of the room from which the skill request was invoked.</p>
+    pub fn room_name(&self) -> std::option::Option<&str> {
+        self.room_name.as_deref()
+    }
+    /// <p>Response to get the room profile request. Required.</p>
+    pub fn room_skill_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::RoomSkillParameter]> {
+        self.room_skill_parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolveRoomOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolveRoomOutput");
@@ -1399,6 +1537,12 @@ impl RejectSkillOutput {
 pub struct RegisterAvsDeviceOutput {
     /// <p>The ARN of the device.</p>
     pub device_arn: std::option::Option<std::string::String>,
+}
+impl RegisterAvsDeviceOutput {
+    /// <p>The ARN of the device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterAvsDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1570,6 +1714,16 @@ pub struct ListTagsOutput {
     /// <p>The token returned to indicate that there is more data available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsOutput {
+    /// <p>The tags requested for the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -1641,6 +1795,18 @@ pub struct ListSmartHomeAppliancesOutput {
     pub smart_home_appliances: std::option::Option<std::vec::Vec<crate::model::SmartHomeAppliance>>,
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSmartHomeAppliancesOutput {
+    /// <p>The smart home appliances.</p>
+    pub fn smart_home_appliances(
+        &self,
+    ) -> std::option::Option<&[crate::model::SmartHomeAppliance]> {
+        self.smart_home_appliances.as_deref()
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSmartHomeAppliancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1718,6 +1884,16 @@ pub struct ListSkillsStoreSkillsByCategoryOutput {
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSkillsStoreSkillsByCategoryOutput {
+    /// <p>The skill store skills.</p>
+    pub fn skills_store_skills(&self) -> std::option::Option<&[crate::model::SkillsStoreSkill]> {
+        self.skills_store_skills.as_deref()
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSkillsStoreSkillsByCategoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSkillsStoreSkillsByCategoryOutput");
@@ -1794,6 +1970,16 @@ pub struct ListSkillsStoreCategoriesOutput {
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSkillsStoreCategoriesOutput {
+    /// <p>The list of categories.</p>
+    pub fn category_list(&self) -> std::option::Option<&[crate::model::Category]> {
+        self.category_list.as_deref()
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSkillsStoreCategoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSkillsStoreCategoriesOutput");
@@ -1865,6 +2051,16 @@ pub struct ListSkillsOutput {
     pub skill_summaries: std::option::Option<std::vec::Vec<crate::model::SkillSummary>>,
     /// <p>The token returned to indicate that there is more data available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSkillsOutput {
+    /// <p>The list of enabled skills requested. Required.</p>
+    pub fn skill_summaries(&self) -> std::option::Option<&[crate::model::SkillSummary]> {
+        self.skill_summaries.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSkillsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1938,6 +2134,16 @@ pub struct ListGatewaysOutput {
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGatewaysOutput {
+    /// <p>The gateways in the list.</p>
+    pub fn gateways(&self) -> std::option::Option<&[crate::model::GatewaySummary]> {
+        self.gateways.as_deref()
+    }
+    /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGatewaysOutput");
@@ -2009,6 +2215,16 @@ pub struct ListGatewayGroupsOutput {
     pub gateway_groups: std::option::Option<std::vec::Vec<crate::model::GatewayGroupSummary>>,
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGatewayGroupsOutput {
+    /// <p>The gateway groups in the list.</p>
+    pub fn gateway_groups(&self) -> std::option::Option<&[crate::model::GatewayGroupSummary]> {
+        self.gateway_groups.as_deref()
+    }
+    /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGatewayGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2086,6 +2302,16 @@ pub struct ListDeviceEventsOutput {
     /// <p>The token returned to indicate that there is more data available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeviceEventsOutput {
+    /// <p>The device events requested for the device ARN.</p>
+    pub fn device_events(&self) -> std::option::Option<&[crate::model::DeviceEvent]> {
+        self.device_events.as_deref()
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeviceEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceEventsOutput");
@@ -2157,6 +2383,16 @@ pub struct ListConferenceProvidersOutput {
     pub conference_providers: std::option::Option<std::vec::Vec<crate::model::ConferenceProvider>>,
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConferenceProvidersOutput {
+    /// <p>The conference providers.</p>
+    pub fn conference_providers(&self) -> std::option::Option<&[crate::model::ConferenceProvider]> {
+        self.conference_providers.as_deref()
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConferenceProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2235,6 +2471,18 @@ pub struct ListBusinessReportSchedulesOutput {
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBusinessReportSchedulesOutput {
+    /// <p>The schedule of the reports.</p>
+    pub fn business_report_schedules(
+        &self,
+    ) -> std::option::Option<&[crate::model::BusinessReportSchedule]> {
+        self.business_report_schedules.as_deref()
+    }
+    /// <p>The token used to list the remaining schedules from the previous API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBusinessReportSchedulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBusinessReportSchedulesOutput");
@@ -2309,6 +2557,12 @@ pub struct GetSkillGroupOutput {
     /// <p>The details of the skill group requested. Required.</p>
     pub skill_group: std::option::Option<crate::model::SkillGroup>,
 }
+impl GetSkillGroupOutput {
+    /// <p>The details of the skill group requested. Required.</p>
+    pub fn skill_group(&self) -> std::option::Option<&crate::model::SkillGroup> {
+        self.skill_group.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSkillGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSkillGroupOutput");
@@ -2359,6 +2613,12 @@ impl GetSkillGroupOutput {
 pub struct GetRoomSkillParameterOutput {
     /// <p>The details of the room skill parameter requested. Required.</p>
     pub room_skill_parameter: std::option::Option<crate::model::RoomSkillParameter>,
+}
+impl GetRoomSkillParameterOutput {
+    /// <p>The details of the room skill parameter requested. Required.</p>
+    pub fn room_skill_parameter(&self) -> std::option::Option<&crate::model::RoomSkillParameter> {
+        self.room_skill_parameter.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRoomSkillParameterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2411,6 +2671,12 @@ pub struct GetRoomOutput {
     /// <p>The details of the room requested.</p>
     pub room: std::option::Option<crate::model::Room>,
 }
+impl GetRoomOutput {
+    /// <p>The details of the room requested.</p>
+    pub fn room(&self) -> std::option::Option<&crate::model::Room> {
+        self.room.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRoomOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoomOutput");
@@ -2456,6 +2722,12 @@ impl GetRoomOutput {
 pub struct GetProfileOutput {
     /// <p>The details of the room profile requested. Required.</p>
     pub profile: std::option::Option<crate::model::Profile>,
+}
+impl GetProfileOutput {
+    /// <p>The details of the room profile requested. Required.</p>
+    pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
+        self.profile.as_ref()
+    }
 }
 impl std::fmt::Debug for GetProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2504,6 +2776,12 @@ impl GetProfileOutput {
 pub struct GetNetworkProfileOutput {
     /// <p>The network profile associated with a device.</p>
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
+}
+impl GetNetworkProfileOutput {
+    /// <p>The network profile associated with a device.</p>
+    pub fn network_profile(&self) -> std::option::Option<&crate::model::NetworkProfile> {
+        self.network_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for GetNetworkProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2561,6 +2839,22 @@ pub struct GetInvitationConfigurationOutput {
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
     /// invitation.</p>
     pub private_skill_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetInvitationConfigurationOutput {
+    /// <p>The name of the organization sending the enrollment invite to a user.</p>
+    pub fn organization_name(&self) -> std::option::Option<&str> {
+        self.organization_name.as_deref()
+    }
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
+    /// </p>
+    pub fn contact_email(&self) -> std::option::Option<&str> {
+        self.contact_email.as_deref()
+    }
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
+    /// invitation.</p>
+    pub fn private_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.private_skill_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInvitationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2655,6 +2949,12 @@ pub struct GetGatewayGroupOutput {
     /// <p>The details of the gateway group.</p>
     pub gateway_group: std::option::Option<crate::model::GatewayGroup>,
 }
+impl GetGatewayGroupOutput {
+    /// <p>The details of the gateway group.</p>
+    pub fn gateway_group(&self) -> std::option::Option<&crate::model::GatewayGroup> {
+        self.gateway_group.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGatewayGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGatewayGroupOutput");
@@ -2706,6 +3006,12 @@ pub struct GetGatewayOutput {
     /// <p>The details of the gateway.</p>
     pub gateway: std::option::Option<crate::model::Gateway>,
 }
+impl GetGatewayOutput {
+    /// <p>The details of the gateway.</p>
+    pub fn gateway(&self) -> std::option::Option<&crate::model::Gateway> {
+        self.gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGatewayOutput");
@@ -2753,6 +3059,12 @@ impl GetGatewayOutput {
 pub struct GetDeviceOutput {
     /// <p>The details of the device requested. Required.</p>
     pub device: std::option::Option<crate::model::Device>,
+}
+impl GetDeviceOutput {
+    /// <p>The details of the device requested. Required.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::Device> {
+        self.device.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2802,6 +3114,12 @@ pub struct GetContactOutput {
     /// <p>The details of the requested contact.</p>
     pub contact: std::option::Option<crate::model::Contact>,
 }
+impl GetContactOutput {
+    /// <p>The details of the requested contact.</p>
+    pub fn contact(&self) -> std::option::Option<&crate::model::Contact> {
+        self.contact.as_ref()
+    }
+}
 impl std::fmt::Debug for GetContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactOutput");
@@ -2849,6 +3167,12 @@ impl GetContactOutput {
 pub struct GetConferenceProviderOutput {
     /// <p>The conference provider.</p>
     pub conference_provider: std::option::Option<crate::model::ConferenceProvider>,
+}
+impl GetConferenceProviderOutput {
+    /// <p>The conference provider.</p>
+    pub fn conference_provider(&self) -> std::option::Option<&crate::model::ConferenceProvider> {
+        self.conference_provider.as_ref()
+    }
 }
 impl std::fmt::Debug for GetConferenceProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2901,6 +3225,12 @@ pub struct GetConferencePreferenceOutput {
     /// <p>The conference preference.</p>
     pub preference: std::option::Option<crate::model::ConferencePreference>,
 }
+impl GetConferencePreferenceOutput {
+    /// <p>The conference preference.</p>
+    pub fn preference(&self) -> std::option::Option<&crate::model::ConferencePreference> {
+        self.preference.as_ref()
+    }
+}
 impl std::fmt::Debug for GetConferencePreferenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConferencePreferenceOutput");
@@ -2951,6 +3281,12 @@ impl GetConferencePreferenceOutput {
 pub struct GetAddressBookOutput {
     /// <p>The details of the requested address book.</p>
     pub address_book: std::option::Option<crate::model::AddressBook>,
+}
+impl GetAddressBookOutput {
+    /// <p>The details of the requested address book.</p>
+    pub fn address_book(&self) -> std::option::Option<&crate::model::AddressBook> {
+        self.address_book.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAddressBookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3603,6 +3939,12 @@ pub struct CreateUserOutput {
     /// <p>The ARN of the newly created user in the response.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl CreateUserOutput {
+    /// <p>The ARN of the newly created user in the response.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -3650,6 +3992,12 @@ impl CreateUserOutput {
 pub struct CreateSkillGroupOutput {
     /// <p>The ARN of the newly created skill group in the response.</p>
     pub skill_group_arn: std::option::Option<std::string::String>,
+}
+impl CreateSkillGroupOutput {
+    /// <p>The ARN of the newly created skill group in the response.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSkillGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3702,6 +4050,12 @@ pub struct CreateRoomOutput {
     /// <p>The ARN of the newly created room in the response.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
+impl CreateRoomOutput {
+    /// <p>The ARN of the newly created room in the response.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRoomOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoomOutput");
@@ -3750,6 +4104,12 @@ pub struct CreateProfileOutput {
     /// <p>The ARN of the newly created room profile in the response.</p>
     pub profile_arn: std::option::Option<std::string::String>,
 }
+impl CreateProfileOutput {
+    /// <p>The ARN of the newly created room profile in the response.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProfileOutput");
@@ -3797,6 +4157,12 @@ impl CreateProfileOutput {
 pub struct CreateNetworkProfileOutput {
     /// <p>The ARN of the network profile associated with a device.</p>
     pub network_profile_arn: std::option::Option<std::string::String>,
+}
+impl CreateNetworkProfileOutput {
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNetworkProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3849,6 +4215,12 @@ pub struct CreateGatewayGroupOutput {
     /// <p>The ARN of the created gateway group.</p>
     pub gateway_group_arn: std::option::Option<std::string::String>,
 }
+impl CreateGatewayGroupOutput {
+    /// <p>The ARN of the created gateway group.</p>
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+        self.gateway_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGatewayGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGatewayGroupOutput");
@@ -3900,6 +4272,12 @@ pub struct CreateContactOutput {
     /// <p>The ARN of the newly created address book.</p>
     pub contact_arn: std::option::Option<std::string::String>,
 }
+impl CreateContactOutput {
+    /// <p>The ARN of the newly created address book.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactOutput");
@@ -3947,6 +4325,12 @@ impl CreateContactOutput {
 pub struct CreateConferenceProviderOutput {
     /// <p>The ARN of the newly-created conference provider.</p>
     pub conference_provider_arn: std::option::Option<std::string::String>,
+}
+impl CreateConferenceProviderOutput {
+    /// <p>The ARN of the newly-created conference provider.</p>
+    pub fn conference_provider_arn(&self) -> std::option::Option<&str> {
+        self.conference_provider_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConferenceProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3999,6 +4383,12 @@ pub struct CreateBusinessReportScheduleOutput {
     /// <p>The ARN of the business report schedule.</p>
     pub schedule_arn: std::option::Option<std::string::String>,
 }
+impl CreateBusinessReportScheduleOutput {
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn schedule_arn(&self) -> std::option::Option<&str> {
+        self.schedule_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBusinessReportScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBusinessReportScheduleOutput");
@@ -4046,6 +4436,12 @@ impl CreateBusinessReportScheduleOutput {
 pub struct CreateAddressBookOutput {
     /// <p>The ARN of the newly created address book.</p>
     pub address_book_arn: std::option::Option<std::string::String>,
+}
+impl CreateAddressBookOutput {
+    /// <p>The ARN of the newly created address book.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAddressBookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -128,10 +128,7 @@ impl AddTagsToCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_tags_to_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -294,10 +291,7 @@ impl DeleteCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -460,10 +454,7 @@ impl DescribeCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_certificate(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -647,10 +638,7 @@ impl ExportCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_export_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_export_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -789,10 +777,7 @@ impl GetAccountConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_account_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -944,10 +929,8 @@ impl GetCertificateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_certificate(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1172,10 +1155,7 @@ impl ImportCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1386,10 +1366,7 @@ impl ListCertificatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_certificates(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_certificates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1554,10 +1531,7 @@ impl ListTagsForCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1740,10 +1714,7 @@ impl PutAccountConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_account_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1934,10 +1905,7 @@ impl RemoveTagsFromCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2100,10 +2068,7 @@ impl RenewCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_renew_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_renew_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2485,10 +2450,7 @@ impl RequestCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_request_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_request_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2730,10 +2692,7 @@ impl ResendValidationEmailInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resend_validation_email(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2918,10 +2877,7 @@ impl UpdateCertificateOptionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_certificate_options(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2999,6 +2955,23 @@ pub struct UpdateCertificateOptionsInput {
     /// not been logged typically produce an error message in a browser. </p>
     pub options: std::option::Option<crate::model::CertificateOptions>,
 }
+impl UpdateCertificateOptionsInput {
+    /// <p>ARN of the requested certificate to update. This must be of the form:</p>
+    /// <p>
+    /// <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i>
+    /// </code>
+    /// </p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add
+    /// your certificate to a transparency log. Certificate transparency makes it possible to detect
+    /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have
+    /// not been logged typically produce an error message in a browser. </p>
+    pub fn options(&self) -> std::option::Option<&crate::model::CertificateOptions> {
+        self.options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCertificateOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCertificateOptionsInput");
@@ -3048,6 +3021,50 @@ pub struct ResendValidationEmailInput {
     /// </li>
     /// </ul>
     pub validation_domain: std::option::Option<std::string::String>,
+}
+impl ResendValidationEmailInput {
+    /// <p>String that contains the ARN of the requested certificate. The certificate ARN is
+    /// generated and returned by the <a>RequestCertificate</a> action as soon as the
+    /// request is made. By default, using this parameter causes email to be sent to all top-level
+    /// domains you specified in the certificate request. The ARN must be of the form: </p>
+    ///
+    /// <p>
+    /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be
+    /// validated.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The base validation domain that will act as the suffix of the email addresses that are
+    /// used to send the emails. This must be the same as the <code>Domain</code> value or a
+    /// superdomain of the <code>Domain</code> value. For example, if you requested a certificate for
+    /// <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the
+    /// domain registrant, technical contact, and administrative contact in WHOIS and the following
+    /// five addresses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>admin@subdomain.example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>administrator@subdomain.example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>hostmaster@subdomain.example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>postmaster@subdomain.example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>webmaster@subdomain.example.com</p>
+    /// </li>
+    /// </ul>
+    pub fn validation_domain(&self) -> std::option::Option<&str> {
+        self.validation_domain.as_deref()
+    }
 }
 impl std::fmt::Debug for ResendValidationEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3133,6 +3150,94 @@ pub struct RequestCertificateInput {
     /// <p>One or more resource tags to associate with the certificate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl RequestCertificateInput {
+    /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with
+    /// an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects
+    /// several sites in the same domain. For example, *.example.com protects www.example.com,
+    /// site.example.com, and images.example.com. </p>
+    ///
+    /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each
+    /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The method you want to use if you are requesting a public certificate to validate that you
+    /// own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+    /// email</a>. We recommend that you use DNS validation. </p>
+    pub fn validation_method(&self) -> std::option::Option<&crate::model::ValidationMethod> {
+        self.validation_method.as_ref()
+    }
+    /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM
+    /// certificate. For example, add the name www.example.net to a certificate for which the
+    /// <code>DomainName</code> field is www.example.com if users can reach your site by using
+    /// either name. The maximum number of domain names that you can add to an ACM certificate is
+    /// 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must
+    /// request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
+    ///
+    /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple
+    /// labels separated by periods. No label can be longer than 63 octets. Consider the following
+    /// examples: </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the
+    /// total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the
+    /// total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63
+    /// octets.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the
+    /// total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p>
+    /// </li>
+    /// </ul>
+    pub fn subject_alternative_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.subject_alternative_names.as_deref()
+    }
+    /// <p>Customer chosen string that can be used to distinguish between calls to
+    /// <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if
+    /// you call <code>RequestCertificate</code> multiple times with the same idempotency token within
+    /// one hour, ACM recognizes that you are requesting only one certificate and will issue only
+    /// one. If you change the idempotency token for each call, ACM recognizes that you are
+    /// requesting multiple certificates.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>The domain name that you want ACM to use to send you emails so that you can validate
+    /// domain ownership.</p>
+    pub fn domain_validation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainValidationOption]> {
+        self.domain_validation_options.as_deref()
+    }
+    /// <p>Currently, you can use this parameter to specify whether to add the certificate to a
+    /// certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS
+    /// certificates that have been mistakenly or maliciously issued. Certificates that have not been
+    /// logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::CertificateOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used
+    /// to issue the certificate. If you do not provide an ARN and you are trying to request a private
+    /// certificate, ACM will attempt to issue a public certificate. For more information about
+    /// private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+    ///
+    /// <p>
+    /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+    /// <p>One or more resource tags to associate with the certificate.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RequestCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestCertificateInput");
@@ -3160,6 +3265,17 @@ pub struct RenewCertificateInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl RenewCertificateInput {
+    /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the
+    /// form:</p>
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RenewCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RenewCertificateInput");
@@ -3183,6 +3299,23 @@ pub struct RemoveTagsFromCertificateInput {
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair that defines the tag to remove.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl RemoveTagsFromCertificateInput {
+    /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want
+    /// to remove. This must be of the form:</p>
+    ///
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    ///
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The key-value pair that defines the tag to remove.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTagsFromCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3208,6 +3341,22 @@ pub struct PutAccountConfigurationInput {
     /// a new request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl PutAccountConfigurationInput {
+    /// <p>Specifies expiration
+    /// events associated with an account.</p>
+    pub fn expiry_events(&self) -> std::option::Option<&crate::model::ExpiryEventsConfiguration> {
+        self.expiry_events.as_ref()
+    }
+    /// <p>Customer-chosen string
+    /// used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens
+    /// time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with
+    /// the same unexpired idempotency token, ACM treats it as the same request and returns the
+    /// original result. If you change the idempotency token for each call, ACM treats each call as
+    /// a new request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAccountConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountConfigurationInput");
@@ -3228,6 +3377,17 @@ pub struct ListTagsForCertificateInput {
     /// </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForCertificateInput {
+    /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags.
+    /// This must have the following form:</p>
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3255,6 +3415,30 @@ pub struct ListCertificatesInput {
     /// <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code>
     /// value in a subsequent request to retrieve additional items.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListCertificatesInput {
+    /// <p>Filter the certificate list by status value.</p>
+    pub fn certificate_statuses(&self) -> std::option::Option<&[crate::model::CertificateStatus]> {
+        self.certificate_statuses.as_deref()
+    }
+    /// <p>Filter the certificate list. For more information, see the <a>Filters</a>
+    /// structure.</p>
+    pub fn includes(&self) -> std::option::Option<&crate::model::Filters> {
+        self.includes.as_ref()
+    }
+    /// <p>Use this parameter only when paginating results and only in a subsequent request after you
+    /// receive a response with truncated results. Set it to the value of <code>NextToken</code> from
+    /// the response you just received.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Use this parameter when paginating results to specify the maximum number of items to
+    /// return in the response. If additional items exist beyond the number you specify, the
+    /// <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code>
+    /// value in a subsequent request to retrieve additional items.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3285,6 +3469,31 @@ pub struct ImportCertificateInput {
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ImportCertificateInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+    /// (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this
+    /// field. </p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The certificate to import.</p>
+    pub fn certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.certificate.as_ref()
+    }
+    /// <p>The private key that matches the public key in the certificate.</p>
+    pub fn private_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.private_key.as_ref()
+    }
+    /// <p>The PEM encoded certificate chain.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.certificate_chain.as_ref()
+    }
+    /// <p>One or more resource tags to associate with the imported certificate. </p>
+    /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportCertificateInput");
@@ -3307,6 +3516,16 @@ pub struct GetCertificateInput {
     /// </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
+}
+impl GetCertificateInput {
+    /// <p>String that contains a certificate ARN in the following format:</p>
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3344,6 +3563,24 @@ pub struct ExportCertificateInput {
     /// </p>
     pub passphrase: std::option::Option<aws_smithy_types::Blob>,
 }
+impl ExportCertificateInput {
+    /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
+    /// <p>
+    /// <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>Passphrase to associate with the encrypted exported private key. If you want to later
+    /// decrypt the private key, you must have the passphrase. You can use the following OpenSSL
+    /// command to decrypt a private key: </p>
+    /// <p>
+    /// <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
+    /// </p>
+    pub fn passphrase(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.passphrase.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportCertificateInput");
@@ -3365,6 +3602,17 @@ pub struct DescribeCertificateInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl DescribeCertificateInput {
+    /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following
+    /// form:</p>
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCertificateInput");
@@ -3384,6 +3632,17 @@ pub struct DeleteCertificateInput {
     /// </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
+}
+impl DeleteCertificateInput {
+    /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the
+    /// form:</p>
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3408,6 +3667,23 @@ pub struct AddTagsToCertificateInput {
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToCertificateInput {
+    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied.
+    /// This must be of the form:</p>
+    ///
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    ///
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

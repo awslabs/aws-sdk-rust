@@ -7,6 +7,14 @@ pub struct UpdateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
     pub traffic_policy_instance: std::option::Option<crate::model::TrafficPolicyInstance>,
 }
+impl UpdateTrafficPolicyInstanceOutput {
+    /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
+    pub fn traffic_policy_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficPolicyInstance> {
+        self.traffic_policy_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTrafficPolicyInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrafficPolicyInstanceOutput");
@@ -62,6 +70,12 @@ pub struct UpdateTrafficPolicyCommentOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
     pub traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
 }
+impl UpdateTrafficPolicyCommentOutput {
+    /// <p>A complex type that contains settings for the specified traffic policy.</p>
+    pub fn traffic_policy(&self) -> std::option::Option<&crate::model::TrafficPolicy> {
+        self.traffic_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTrafficPolicyCommentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrafficPolicyCommentOutput");
@@ -113,6 +127,12 @@ pub struct UpdateHostedZoneCommentOutput {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
     pub hosted_zone: std::option::Option<crate::model::HostedZone>,
 }
+impl UpdateHostedZoneCommentOutput {
+    /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
+    pub fn hosted_zone(&self) -> std::option::Option<&crate::model::HostedZone> {
+        self.hosted_zone.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateHostedZoneCommentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateHostedZoneCommentOutput");
@@ -163,6 +183,12 @@ impl UpdateHostedZoneCommentOutput {
 pub struct UpdateHealthCheckOutput {
     /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
     pub health_check: std::option::Option<crate::model::HealthCheck>,
+}
+impl UpdateHealthCheckOutput {
+    /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+        self.health_check.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateHealthCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -227,6 +253,35 @@ pub struct TestDnsAnswerOutput {
     pub response_code: std::option::Option<std::string::String>,
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
     pub protocol: std::option::Option<std::string::String>,
+}
+impl TestDnsAnswerOutput {
+    /// <p>The Amazon Route 53 name server used to respond to the request.</p>
+    pub fn nameserver(&self) -> std::option::Option<&str> {
+        self.nameserver.as_deref()
+    }
+    /// <p>The name of the resource record set that you submitted a request for.</p>
+    pub fn record_name(&self) -> std::option::Option<&str> {
+        self.record_name.as_deref()
+    }
+    /// <p>The type of the resource record set that you submitted a request for.</p>
+    pub fn record_type(&self) -> std::option::Option<&crate::model::RrType> {
+        self.record_type.as_ref()
+    }
+    /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
+    pub fn record_data(&self) -> std::option::Option<&[std::string::String]> {
+        self.record_data.as_deref()
+    }
+    /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that
+    /// the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error.
+    /// For a list of possible response codes, see
+    /// <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
+    pub fn response_code(&self) -> std::option::Option<&str> {
+        self.response_code.as_deref()
+    }
+    /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
+    pub fn protocol(&self) -> std::option::Option<&str> {
+        self.protocol.as_deref()
+    }
 }
 impl std::fmt::Debug for TestDnsAnswerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -365,6 +420,22 @@ pub struct ListVpcAssociationAuthorizationsOutput {
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
     pub vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
 }
+impl ListVpcAssociationAuthorizationsOutput {
+    /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id.as_deref()
+    }
+    /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated
+    /// with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
+    /// and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
+    pub fn vp_cs(&self) -> std::option::Option<&[crate::model::Vpc]> {
+        self.vp_cs.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVpcAssociationAuthorizationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVpcAssociationAuthorizationsOutput");
@@ -467,6 +538,31 @@ pub struct ListTrafficPolicyVersionsOutput {
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced
     /// the current response.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListTrafficPolicyVersionsOutput {
+    /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy
+    /// version that is associated with the specified traffic policy.</p>
+    pub fn traffic_policies(&self) -> std::option::Option<&[crate::model::TrafficPolicy]> {
+        self.traffic_policies.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of
+    /// traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code>
+    /// in the <code>marker</code> parameter.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy
+    /// that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of
+    /// <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    pub fn traffic_policy_version_marker(&self) -> std::option::Option<&str> {
+        self.traffic_policy_version_marker.as_deref()
+    }
+    /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced
+    /// the current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListTrafficPolicyVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -604,6 +700,42 @@ pub struct ListTrafficPolicyInstancesByPolicyOutput {
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced
     /// the current response.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListTrafficPolicyInstancesByPolicyOutput {
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    pub fn traffic_policy_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficPolicyInstance]> {
+        self.traffic_policy_instances.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
+    /// traffic policy instance in the next group of traffic policy instances.</p>
+    pub fn hosted_zone_id_marker(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id_marker.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance
+    /// in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    pub fn traffic_policy_instance_name_marker(&self) -> std::option::Option<&str> {
+        self.traffic_policy_instance_name_marker.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets
+    /// that are associated with the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    pub fn traffic_policy_instance_type_marker(
+        &self,
+    ) -> std::option::Option<&crate::model::RrType> {
+        self.traffic_policy_instance_type_marker.as_ref()
+    }
+    /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of
+    /// traffic policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
+    /// <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced
+    /// the current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListTrafficPolicyInstancesByPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -776,6 +908,38 @@ pub struct ListTrafficPolicyInstancesByHostedZoneOutput {
     /// that produced the current response.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListTrafficPolicyInstancesByHostedZoneOutput {
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
+    pub fn traffic_policy_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficPolicyInstance]> {
+        self.traffic_policy_instances.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy
+    /// instance in the next group of traffic policy instances.</p>
+    pub fn traffic_policy_instance_name_marker(&self) -> std::option::Option<&str> {
+        self.traffic_policy_instance_name_marker.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is true, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are
+    /// associated with the first traffic policy instance in the next group of traffic policy instances.</p>
+    pub fn traffic_policy_instance_type_marker(
+        &self,
+    ) -> std::option::Option<&crate::model::RrType> {
+        self.traffic_policy_instance_type_marker.as_ref()
+    }
+    /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the
+    /// next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying
+    /// the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
+    /// in the corresponding request parameters.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request
+    /// that produced the current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListTrafficPolicyInstancesByHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrafficPolicyInstancesByHostedZoneOutput");
@@ -935,6 +1099,44 @@ pub struct ListTrafficPolicyInstancesOutput {
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstances</code>
     /// that produced the current response.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListTrafficPolicyInstancesOutput {
+    /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements
+    /// in the request.</p>
+    pub fn traffic_policy_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficPolicyInstance]> {
+        self.traffic_policy_instances.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
+    /// traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    pub fn hosted_zone_id_marker(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id_marker.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy
+    /// instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    pub fn traffic_policy_instance_name_marker(&self) -> std::option::Option<&str> {
+        self.traffic_policy_instance_name_marker.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets
+    /// that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    pub fn traffic_policy_instance_type_marker(
+        &self,
+    ) -> std::option::Option<&crate::model::RrType> {
+        self.traffic_policy_instance_type_marker.as_ref()
+    }
+    /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more
+    /// traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the
+    /// <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
+    /// in the corresponding request parameters.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstances</code>
+    /// that produced the current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListTrafficPolicyInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1107,6 +1309,30 @@ pub struct ListTrafficPoliciesOutput {
     /// the current response.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListTrafficPoliciesOutput {
+    /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
+    pub fn traffic_policy_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrafficPolicySummary]> {
+        self.traffic_policy_summaries.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of
+    /// traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
+    /// in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy
+    /// in the next group of <code>MaxItems</code> traffic policies.</p>
+    pub fn traffic_policy_id_marker(&self) -> std::option::Option<&str> {
+        self.traffic_policy_id_marker.as_deref()
+    }
+    /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced
+    /// the current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListTrafficPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrafficPoliciesOutput");
@@ -1218,6 +1444,12 @@ pub struct ListTagsForResourcesOutput {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
     pub resource_tag_sets: std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
 }
+impl ListTagsForResourcesOutput {
+    /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
+    pub fn resource_tag_sets(&self) -> std::option::Option<&[crate::model::ResourceTagSet]> {
+        self.resource_tag_sets.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourcesOutput");
@@ -1275,6 +1507,12 @@ impl ListTagsForResourcesOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     pub resource_tag_set: std::option::Option<crate::model::ResourceTagSet>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
+    pub fn resource_tag_set(&self) -> std::option::Option<&crate::model::ResourceTagSet> {
+        self.resource_tag_set.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1339,6 +1577,33 @@ pub struct ListReusableDelegationSetsOutput {
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that
     /// produced the current response.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListReusableDelegationSetsOutput {
+    /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created
+    /// by the current Amazon Web Services account.</p>
+    pub fn delegation_sets(&self) -> std::option::Option<&[crate::model::DelegationSet]> {
+        self.delegation_sets.as_deref()
+    }
+    /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified
+    /// for the <code>marker</code> parameter in the request that produced the current response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set
+    /// that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code>
+    /// in the <code>marker</code> parameter.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that
+    /// produced the current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListReusableDelegationSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1476,6 +1741,40 @@ pub struct ListResourceRecordSetsOutput {
     pub next_record_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of records you requested.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListResourceRecordSetsOutput {
+    /// <p>Information about multiple resource record sets.</p>
+    pub fn resource_record_sets(&self) -> std::option::Option<&[crate::model::ResourceRecordSet]> {
+        self.resource_record_sets.as_deref()
+    }
+    /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a
+    /// follow-up pagination request by using the <code>NextRecordName</code> element.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If the results were truncated, the name of the next record in the list.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    pub fn next_record_name(&self) -> std::option::Option<&str> {
+        self.next_record_name.as_deref()
+    }
+    /// <p>If the results were truncated, the type of the next record in the list.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    pub fn next_record_type(&self) -> std::option::Option<&crate::model::RrType> {
+        self.next_record_type.as_ref()
+    }
+    /// <p>
+    /// <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+    /// DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+    /// <p>For information about routing policies, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
+    /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    pub fn next_record_identifier(&self) -> std::option::Option<&str> {
+        self.next_record_identifier.as_deref()
+    }
+    /// <p>The maximum number of records you requested.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListResourceRecordSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1637,6 +1936,25 @@ pub struct ListQueryLoggingConfigsOutput {
     /// <code>NextToken</code> in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListQueryLoggingConfigsOutput {
+    /// <p>An array that contains one
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element
+    /// for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
+    pub fn query_logging_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::QueryLoggingConfig]> {
+        self.query_logging_configs.as_deref()
+    }
+    /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account,
+    /// <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
+    /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
+    /// <code>NextToken</code> in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListQueryLoggingConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQueryLoggingConfigsOutput");
@@ -1729,6 +2047,21 @@ pub struct ListHostedZonesByVpcOutput {
     pub max_items: std::option::Option<i32>,
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHostedZonesByVpcOutput {
+    /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with.
+    /// Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
+    pub fn hosted_zone_summaries(&self) -> std::option::Option<&[crate::model::HostedZoneSummary]> {
+        self.hosted_zone_summaries.as_deref()
+    }
+    /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHostedZonesByVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1840,6 +2173,46 @@ pub struct ListHostedZonesByNameOutput {
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the
     /// current response.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListHostedZonesByNameOutput {
+    /// <p>A complex type that contains general information about the hosted zone.</p>
+    pub fn hosted_zones(&self) -> std::option::Option<&[crate::model::HostedZone]> {
+        self.hosted_zones.as_deref()
+    }
+    /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the
+    /// <code>dnsname</code> parameter in the request that produced the current response.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of
+    /// <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and
+    /// <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of
+    /// <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
+    /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    pub fn next_dns_name(&self) -> std::option::Option<&str> {
+        self.next_dns_name.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the
+    /// next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
+    /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    pub fn next_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.next_hosted_zone_id.as_deref()
+    }
+    /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the
+    /// current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListHostedZonesByNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2020,6 +2393,35 @@ pub struct ListHostedZonesOutput {
     /// produced the current response.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListHostedZonesOutput {
+    /// <p>A complex type that contains general information about the hosted zone.</p>
+    pub fn hosted_zones(&self) -> std::option::Option<&[crate::model::HostedZone]> {
+        self.hosted_zones.as_deref()
+    }
+    /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the
+    /// <code>marker</code> parameter in the request that produced the current response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones
+    /// by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the
+    /// <code>marker</code> parameter.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group
+    /// of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the
+    /// <code>marker</code> parameter.</p>
+    /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that
+    /// produced the current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListHostedZonesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHostedZonesOutput");
@@ -2157,6 +2559,35 @@ pub struct ListHealthChecksOutput {
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the
     /// current response.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListHealthChecksOutput {
+    /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current
+    /// Amazon Web Services account.</p>
+    pub fn health_checks(&self) -> std::option::Option<&[crate::model::HealthCheck]> {
+        self.health_checks.as_deref()
+    }
+    /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the
+    /// <code>marker</code> parameter in the previous request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of
+    /// health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the
+    /// <code>marker</code> parameter.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first health check that Amazon Route 53
+    /// returns if you submit another <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code> in
+    /// the <code>marker</code> parameter.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the
+    /// current response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListHealthChecksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2297,6 +2728,40 @@ pub struct ListGeoLocationsOutput {
     pub next_subdivision_code: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListGeoLocationsOutput {
+    /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
+    pub fn geo_location_details_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::GeoLocationDetails]> {
+        self.geo_location_details_list.as_deref()
+    }
+    /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of
+    /// <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>,
+    /// <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
+    /// <code>startsubdivisioncode</code>, as applicable.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
+    /// <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    pub fn next_continent_code(&self) -> std::option::Option<&str> {
+        self.next_continent_code.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
+    /// <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    pub fn next_country_code(&self) -> std::option::Option<&str> {
+        self.next_country_code.as_deref()
+    }
+    /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
+    /// <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    pub fn next_subdivision_code(&self) -> std::option::Option<&str> {
+        self.next_subdivision_code.as_deref()
+    }
+    /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListGeoLocationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2445,6 +2910,12 @@ pub struct GetTrafficPolicyInstanceCountOutput {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub traffic_policy_instance_count: std::option::Option<i32>,
 }
+impl GetTrafficPolicyInstanceCountOutput {
+    /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
+    pub fn traffic_policy_instance_count(&self) -> std::option::Option<i32> {
+        self.traffic_policy_instance_count
+    }
+}
 impl std::fmt::Debug for GetTrafficPolicyInstanceCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTrafficPolicyInstanceCountOutput");
@@ -2498,6 +2969,14 @@ impl GetTrafficPolicyInstanceCountOutput {
 pub struct GetTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the traffic policy instance.</p>
     pub traffic_policy_instance: std::option::Option<crate::model::TrafficPolicyInstance>,
+}
+impl GetTrafficPolicyInstanceOutput {
+    /// <p>A complex type that contains settings for the traffic policy instance.</p>
+    pub fn traffic_policy_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficPolicyInstance> {
+        self.traffic_policy_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for GetTrafficPolicyInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2554,6 +3033,12 @@ pub struct GetTrafficPolicyOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
     pub traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
 }
+impl GetTrafficPolicyOutput {
+    /// <p>A complex type that contains settings for the specified traffic policy.</p>
+    pub fn traffic_policy(&self) -> std::option::Option<&crate::model::TrafficPolicy> {
+        self.traffic_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTrafficPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTrafficPolicyOutput");
@@ -2606,6 +3091,16 @@ pub struct GetReusableDelegationSetLimitOutput {
     pub limit: std::option::Option<crate::model::ReusableDelegationSetLimit>,
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
     pub count: i64,
+}
+impl GetReusableDelegationSetLimitOutput {
+    /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
+    pub fn limit(&self) -> std::option::Option<&crate::model::ReusableDelegationSetLimit> {
+        self.limit.as_ref()
+    }
+    /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    pub fn count(&self) -> i64 {
+        self.count
+    }
 }
 impl std::fmt::Debug for GetReusableDelegationSetLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2671,6 +3166,12 @@ pub struct GetReusableDelegationSetOutput {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
 }
+impl GetReusableDelegationSetOutput {
+    /// <p>A complex type that contains information about the reusable delegation set.</p>
+    pub fn delegation_set(&self) -> std::option::Option<&crate::model::DelegationSet> {
+        self.delegation_set.as_ref()
+    }
+}
 impl std::fmt::Debug for GetReusableDelegationSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReusableDelegationSetOutput");
@@ -2722,6 +3223,13 @@ pub struct GetQueryLoggingConfigOutput {
     /// <p>A complex type that contains information about the query logging configuration that you specified in a
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
     pub query_logging_config: std::option::Option<crate::model::QueryLoggingConfig>,
+}
+impl GetQueryLoggingConfigOutput {
+    /// <p>A complex type that contains information about the query logging configuration that you specified in a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
+    pub fn query_logging_config(&self) -> std::option::Option<&crate::model::QueryLoggingConfig> {
+        self.query_logging_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetQueryLoggingConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2781,6 +3289,20 @@ pub struct GetHostedZoneLimitOutput {
     /// <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
     /// is the current number of records that you have created in the specified hosted zone.</p>
     pub count: i64,
+}
+impl GetHostedZoneLimitOutput {
+    /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of
+    /// <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create
+    /// in the specified hosted zone.</p>
+    pub fn limit(&self) -> std::option::Option<&crate::model::HostedZoneLimit> {
+        self.limit.as_ref()
+    }
+    /// <p>The current number of entities that you have created of the specified type. For example, if you specified
+    /// <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
+    /// is the current number of records that you have created in the specified hosted zone.</p>
+    pub fn count(&self) -> i64 {
+        self.count
+    }
 }
 impl std::fmt::Debug for GetHostedZoneLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2854,6 +3376,12 @@ pub struct GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub hosted_zone_count: std::option::Option<i64>,
 }
+impl GetHostedZoneCountOutput {
+    /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
+    pub fn hosted_zone_count(&self) -> std::option::Option<i64> {
+        self.hosted_zone_count
+    }
+}
 impl std::fmt::Debug for GetHostedZoneCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHostedZoneCountOutput");
@@ -2905,6 +3433,20 @@ pub struct GetHostedZoneOutput {
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
     pub vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
+}
+impl GetHostedZoneOutput {
+    /// <p>A complex type that contains general information about the specified hosted zone.</p>
+    pub fn hosted_zone(&self) -> std::option::Option<&crate::model::HostedZone> {
+        self.hosted_zone.as_ref()
+    }
+    /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
+    pub fn delegation_set(&self) -> std::option::Option<&crate::model::DelegationSet> {
+        self.delegation_set.as_ref()
+    }
+    /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
+    pub fn vp_cs(&self) -> std::option::Option<&[crate::model::Vpc]> {
+        self.vp_cs.as_deref()
+    }
 }
 impl std::fmt::Debug for GetHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2998,6 +3540,15 @@ pub struct GetHealthCheckStatusOutput {
     pub health_check_observations:
         std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
 }
+impl GetHealthCheckStatusOutput {
+    /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status
+    /// about the health check endpoint.</p>
+    pub fn health_check_observations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HealthCheckObservation]> {
+        self.health_check_observations.as_deref()
+    }
+}
 impl std::fmt::Debug for GetHealthCheckStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHealthCheckStatusOutput");
@@ -3062,6 +3613,14 @@ pub struct GetHealthCheckLastFailureReasonOutput {
     pub health_check_observations:
         std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
 }
+impl GetHealthCheckLastFailureReasonOutput {
+    /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
+    pub fn health_check_observations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HealthCheckObservation]> {
+        self.health_check_observations.as_deref()
+    }
+}
 impl std::fmt::Debug for GetHealthCheckLastFailureReasonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHealthCheckLastFailureReasonOutput");
@@ -3123,6 +3682,12 @@ pub struct GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
     pub health_check_count: std::option::Option<i64>,
 }
+impl GetHealthCheckCountOutput {
+    /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
+    pub fn health_check_count(&self) -> std::option::Option<i64> {
+        self.health_check_count
+    }
+}
 impl std::fmt::Debug for GetHealthCheckCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHealthCheckCountOutput");
@@ -3171,6 +3736,13 @@ pub struct GetHealthCheckOutput {
     /// <p>A complex type that contains information about one health check that is associated with
     /// the current Amazon Web Services account.</p>
     pub health_check: std::option::Option<crate::model::HealthCheck>,
+}
+impl GetHealthCheckOutput {
+    /// <p>A complex type that contains information about one health check that is associated with
+    /// the current Amazon Web Services account.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+        self.health_check.as_ref()
+    }
 }
 impl std::fmt::Debug for GetHealthCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3225,6 +3797,12 @@ pub struct GetGeoLocationOutput {
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
     pub geo_location_details: std::option::Option<crate::model::GeoLocationDetails>,
 }
+impl GetGeoLocationOutput {
+    /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
+    pub fn geo_location_details(&self) -> std::option::Option<&crate::model::GeoLocationDetails> {
+        self.geo_location_details.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGeoLocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGeoLocationOutput");
@@ -3277,6 +3855,16 @@ pub struct GetDnssecOutput {
     pub status: std::option::Option<crate::model::DnssecStatus>,
     /// <p>The key-signing keys (KSKs) in your account.</p>
     pub key_signing_keys: std::option::Option<std::vec::Vec<crate::model::KeySigningKey>>,
+}
+impl GetDnssecOutput {
+    /// <p>A string repesenting the status of DNSSEC.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DnssecStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The key-signing keys (KSKs) in your account.</p>
+    pub fn key_signing_keys(&self) -> std::option::Option<&[crate::model::KeySigningKey]> {
+        self.key_signing_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDnssecOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3353,6 +3941,13 @@ pub struct GetCheckerIpRangesOutput {
     /// checkers.</p>
     pub checker_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetCheckerIpRangesOutput {
+    /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health
+    /// checkers.</p>
+    pub fn checker_ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
+        self.checker_ip_ranges.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCheckerIpRangesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCheckerIpRangesOutput");
@@ -3412,6 +4007,12 @@ pub struct GetChangeOutput {
     /// <p>A complex type that contains information about the specified change batch.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
+impl GetChangeOutput {
+    /// <p>A complex type that contains information about the specified change batch.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+}
 impl std::fmt::Debug for GetChangeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChangeOutput");
@@ -3468,6 +4069,20 @@ pub struct GetAccountLimitOutput {
     /// <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
     /// is the current number of health checks that you have created using the current account.</p>
     pub count: i64,
+}
+impl GetAccountLimitOutput {
+    /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of
+    /// <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create
+    /// using the current account.</p>
+    pub fn limit(&self) -> std::option::Option<&crate::model::AccountLimit> {
+        self.limit.as_ref()
+    }
+    /// <p>The current number of entities that you have created of the specified type. For example, if you specified
+    /// <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
+    /// is the current number of health checks that you have created using the current account.</p>
+    pub fn count(&self) -> i64 {
+        self.count
+    }
 }
 impl std::fmt::Debug for GetAccountLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3539,6 +4154,13 @@ pub struct EnableHostedZoneDnssecOutput {
     /// zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
+impl EnableHostedZoneDnssecOutput {
+    /// <p>A complex type that describes change information about changes made to your hosted
+    /// zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableHostedZoneDnssecOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableHostedZoneDnssecOutput");
@@ -3592,6 +4214,12 @@ pub struct DisassociateVpcFromHostedZoneOutput {
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
+impl DisassociateVpcFromHostedZoneOutput {
+    /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateVpcFromHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateVpcFromHostedZoneOutput");
@@ -3643,6 +4271,13 @@ pub struct DisableHostedZoneDnssecOutput {
     /// <p>A complex type that describes change information about changes made to your hosted
     /// zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
+}
+impl DisableHostedZoneDnssecOutput {
+    /// <p>A complex type that describes change information about changes made to your hosted
+    /// zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DisableHostedZoneDnssecOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3848,6 +4483,13 @@ pub struct DeleteKeySigningKeyOutput {
     /// zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
+impl DeleteKeySigningKeyOutput {
+    /// <p>A complex type that describes change information about changes made to your hosted
+    /// zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteKeySigningKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteKeySigningKeyOutput");
@@ -3900,6 +4542,12 @@ impl DeleteKeySigningKeyOutput {
 pub struct DeleteHostedZoneOutput {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
+}
+impl DeleteHostedZoneOutput {
+    /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3983,6 +4631,13 @@ pub struct DeactivateKeySigningKeyOutput {
     /// zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
+impl DeactivateKeySigningKeyOutput {
+    /// <p>A complex type that describes change information about changes made to your hosted
+    /// zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+}
 impl std::fmt::Debug for DeactivateKeySigningKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeactivateKeySigningKeyOutput");
@@ -4037,6 +4692,16 @@ pub struct CreateVpcAssociationAuthorizationOutput {
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     pub vpc: std::option::Option<crate::model::Vpc>,
+}
+impl CreateVpcAssociationAuthorizationOutput {
+    /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id.as_deref()
+    }
+    /// <p>The VPC that you authorized associating with a hosted zone.</p>
+    pub fn vpc(&self) -> std::option::Option<&crate::model::Vpc> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVpcAssociationAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4104,6 +4769,16 @@ pub struct CreateTrafficPolicyVersionOutput {
     /// <p>A unique URL that represents a new traffic policy version.</p>
     pub location: std::option::Option<std::string::String>,
 }
+impl CreateTrafficPolicyVersionOutput {
+    /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
+    pub fn traffic_policy(&self) -> std::option::Option<&crate::model::TrafficPolicy> {
+        self.traffic_policy.as_ref()
+    }
+    /// <p>A unique URL that represents a new traffic policy version.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrafficPolicyVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrafficPolicyVersionOutput");
@@ -4169,6 +4844,18 @@ pub struct CreateTrafficPolicyInstanceOutput {
     pub traffic_policy_instance: std::option::Option<crate::model::TrafficPolicyInstance>,
     /// <p>A unique URL that represents a new traffic policy instance.</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl CreateTrafficPolicyInstanceOutput {
+    /// <p>A complex type that contains settings for the new traffic policy instance.</p>
+    pub fn traffic_policy_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficPolicyInstance> {
+        self.traffic_policy_instance.as_ref()
+    }
+    /// <p>A unique URL that represents a new traffic policy instance.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTrafficPolicyInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4240,6 +4927,16 @@ pub struct CreateTrafficPolicyOutput {
     /// <p>A unique URL that represents a new traffic policy.</p>
     pub location: std::option::Option<std::string::String>,
 }
+impl CreateTrafficPolicyOutput {
+    /// <p>A complex type that contains settings for the new traffic policy.</p>
+    pub fn traffic_policy(&self) -> std::option::Option<&crate::model::TrafficPolicy> {
+        self.traffic_policy.as_ref()
+    }
+    /// <p>A unique URL that represents a new traffic policy.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrafficPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrafficPolicyOutput");
@@ -4305,6 +5002,16 @@ pub struct CreateReusableDelegationSetOutput {
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
     /// <p>The unique URL representing the new reusable delegation set.</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl CreateReusableDelegationSetOutput {
+    /// <p>A complex type that contains name server information.</p>
+    pub fn delegation_set(&self) -> std::option::Option<&crate::model::DelegationSet> {
+        self.delegation_set.as_ref()
+    }
+    /// <p>The unique URL representing the new reusable delegation set.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReusableDelegationSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4372,6 +5079,17 @@ pub struct CreateQueryLoggingConfigOutput {
     pub query_logging_config: std::option::Option<crate::model::QueryLoggingConfig>,
     /// <p>The unique URL representing the new query logging configuration.</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl CreateQueryLoggingConfigOutput {
+    /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to
+    /// log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
+    pub fn query_logging_config(&self) -> std::option::Option<&crate::model::QueryLoggingConfig> {
+        self.query_logging_config.as_ref()
+    }
+    /// <p>The unique URL representing the new query logging configuration.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateQueryLoggingConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4443,6 +5161,21 @@ pub struct CreateKeySigningKeyOutput {
     pub key_signing_key: std::option::Option<crate::model::KeySigningKey>,
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl CreateKeySigningKeyOutput {
+    /// <p>A complex type that describes change information about changes made to your hosted
+    /// zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+    /// <p>The key-signing key (KSK) that the request creates.</p>
+    pub fn key_signing_key(&self) -> std::option::Option<&crate::model::KeySigningKey> {
+        self.key_signing_key.as_ref()
+    }
+    /// <p>The unique URL representing the new key-signing key (KSK).</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateKeySigningKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4533,6 +5266,28 @@ pub struct CreateHostedZoneOutput {
     pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p>The unique URL representing the new hosted zone.</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl CreateHostedZoneOutput {
+    /// <p>A complex type that contains general information about the hosted zone.</p>
+    pub fn hosted_zone(&self) -> std::option::Option<&crate::model::HostedZone> {
+        self.hosted_zone.as_ref()
+    }
+    /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+    /// <p>A complex type that describes the name servers for this hosted zone.</p>
+    pub fn delegation_set(&self) -> std::option::Option<&crate::model::DelegationSet> {
+        self.delegation_set.as_ref()
+    }
+    /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
+    pub fn vpc(&self) -> std::option::Option<&crate::model::Vpc> {
+        self.vpc.as_ref()
+    }
+    /// <p>The unique URL representing the new hosted zone.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4645,6 +5400,16 @@ pub struct CreateHealthCheckOutput {
     /// <p>The unique URL representing the new health check.</p>
     pub location: std::option::Option<std::string::String>,
 }
+impl CreateHealthCheckOutput {
+    /// <p>A complex type that contains identifying information about the health check.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+        self.health_check.as_ref()
+    }
+    /// <p>The unique URL representing the new health check.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHealthCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHealthCheckOutput");
@@ -4742,6 +5507,15 @@ pub struct ChangeResourceRecordSetsOutput {
     /// action to get detailed information about the change.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
+impl ChangeResourceRecordSetsOutput {
+    /// <p>A complex type that contains information about changes made to your hosted zone.</p>
+    /// <p>This element contains an ID that you use when performing a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+    /// action to get detailed information about the change.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+}
 impl std::fmt::Debug for ChangeResourceRecordSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangeResourceRecordSetsOutput");
@@ -4799,6 +5573,12 @@ pub struct AssociateVpcWithHostedZoneOutput {
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
+impl AssociateVpcWithHostedZoneOutput {
+    /// <p>A complex type that describes the changes made to your hosted zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateVpcWithHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateVpcWithHostedZoneOutput");
@@ -4850,6 +5630,13 @@ pub struct ActivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted
     /// zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
+}
+impl ActivateKeySigningKeyOutput {
+    /// <p>A complex type that describes change information about changes made to your hosted
+    /// zone.</p>
+    pub fn change_info(&self) -> std::option::Option<&crate::model::ChangeInfo> {
+        self.change_info.as_ref()
+    }
 }
 impl std::fmt::Debug for ActivateKeySigningKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

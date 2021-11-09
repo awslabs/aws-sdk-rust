@@ -123,10 +123,7 @@ impl AddLfTagsToResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_lf_tags_to_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -303,10 +300,7 @@ impl BatchGrantPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_grant_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -483,10 +477,7 @@ impl BatchRevokePermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_revoke_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -668,10 +659,7 @@ impl CreateLfTagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_lf_tag(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_lf_tag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -832,10 +820,7 @@ impl DeleteLfTagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_lf_tag(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_lf_tag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -985,10 +970,7 @@ impl DeregisterResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1138,10 +1120,7 @@ impl DescribeResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1291,10 +1270,9 @@ impl GetDataLakeSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_data_lake_settings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_data_lake_settings(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1481,7 +1459,7 @@ impl GetEffectivePermissionsForPathInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_effective_permissions_for_path(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_effective_permissions_for_path(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1641,10 +1619,7 @@ impl GetLfTagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_lf_tag(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_lf_tag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1816,10 +1791,7 @@ impl GetResourceLfTagsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_lf_tags(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_lf_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2044,10 +2016,7 @@ impl GrantPermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_grant_permissions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_grant_permissions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2235,10 +2204,7 @@ impl ListLfTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_lf_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_lf_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2456,10 +2422,7 @@ impl ListPermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2645,10 +2608,7 @@ impl ListResourcesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2813,10 +2773,9 @@ impl PutDataLakeSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_data_lake_settings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_data_lake_settings(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2994,10 +2953,7 @@ impl RegisterResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3183,10 +3139,7 @@ impl RemoveLfTagsFromResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_lf_tags_from_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3411,10 +3364,7 @@ impl RevokePermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_permissions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_revoke_permissions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3612,10 +3562,7 @@ impl SearchDatabasesByLfTagsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_databases_by_lf_tags(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3812,10 +3759,7 @@ impl SearchTablesByLfTagsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_tables_by_lf_tags(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4018,10 +3962,7 @@ impl UpdateLfTagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_lf_tag(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_lf_tag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4182,10 +4123,8 @@ impl UpdateResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4256,6 +4195,16 @@ pub struct UpdateResourceInput {
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl UpdateResourceInput {
+    /// <p>The new role to use for the given resource registered in AWS Lake Formation.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceInput");
@@ -4277,6 +4226,24 @@ pub struct UpdateLfTagInput {
     pub tag_values_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of tag values to add from the tag.</p>
     pub tag_values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateLfTagInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the tag for which to add or delete values.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>A list of tag values to delete from the tag.</p>
+    pub fn tag_values_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values_to_delete.as_deref()
+    }
+    /// <p>A list of tag values to add from the tag.</p>
+    pub fn tag_values_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values_to_add.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateLfTagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4302,6 +4269,24 @@ pub struct SearchTablesByLfTagsInput {
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
 }
+impl SearchTablesByLfTagsInput {
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
+    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+        self.expression.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchTablesByLfTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchTablesByLfTagsInput");
@@ -4325,6 +4310,24 @@ pub struct SearchDatabasesByLfTagsInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
+}
+impl SearchDatabasesByLfTagsInput {
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
+    pub fn expression(&self) -> std::option::Option<&[crate::model::LfTag]> {
+        self.expression.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchDatabasesByLfTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4353,6 +4356,31 @@ pub struct RevokePermissionsInput {
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
+impl RevokePermissionsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The principal to be revoked permissions on the resource.</p>
+    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+        self.principal.as_ref()
+    }
+    /// <p>The resource to which permissions are to be revoked.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+    /// and Access Control to Metadata and Data</a>.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
+    pub fn permissions_with_grant_option(
+        &self,
+    ) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions_with_grant_option.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokePermissionsInput");
@@ -4379,6 +4407,20 @@ pub struct RemoveLfTagsFromResourceInput {
     /// <p>The tags to be removed from the resource.</p>
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
+impl RemoveLfTagsFromResourceInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The resource where you want to remove a tag.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The tags to be removed from the resource.</p>
+    pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveLfTagsFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveLfTagsFromResourceInput");
@@ -4402,6 +4444,22 @@ pub struct RegisterResourceInput {
     /// <p>The identifier for the role that registers the resource.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl RegisterResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    ///
+    /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+    pub fn use_service_linked_role(&self) -> std::option::Option<bool> {
+        self.use_service_linked_role
+    }
+    /// <p>The identifier for the role that registers the resource.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterResourceInput");
@@ -4420,6 +4478,16 @@ pub struct PutDataLakeSettingsInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
     pub data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
+}
+impl PutDataLakeSettingsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+    pub fn data_lake_settings(&self) -> std::option::Option<&crate::model::DataLakeSettings> {
+        self.data_lake_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for PutDataLakeSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4440,6 +4508,20 @@ pub struct ListResourcesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourcesInput {
+    /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
+    pub fn filter_condition_list(&self) -> std::option::Option<&[crate::model::FilterCondition]> {
+        self.filter_condition_list.as_deref()
+    }
+    /// <p>The maximum number of resource results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4469,6 +4551,33 @@ pub struct ListPermissionsInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPermissionsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>Specifies a principal to filter the permissions returned.</p>
+    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+        self.principal.as_ref()
+    }
+    /// <p>Specifies a resource type to filter the permissions returned.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::DataLakeResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>A resource where you will get a list of the principal permissions.</p>
+    /// <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPermissionsInput");
@@ -4494,6 +4603,24 @@ pub struct ListLfTagsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLfTagsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>If resource share type is <code>ALL</code>, returns both in-account tags and shared tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share tags that the requester can view. If no resource share type is passed, lists tags in the given catalog ID that the requester has permission to view.</p>
+    pub fn resource_share_type(&self) -> std::option::Option<&crate::model::ResourceShareType> {
+        self.resource_share_type.as_ref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLfTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4522,6 +4649,31 @@ pub struct GrantPermissionsInput {
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
+impl GrantPermissionsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
+    /// <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
+    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+        self.principal.as_ref()
+    }
+    /// <p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
+    pub fn permissions_with_grant_option(
+        &self,
+    ) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions_with_grant_option.as_deref()
+    }
+}
 impl std::fmt::Debug for GrantPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrantPermissionsInput");
@@ -4548,6 +4700,20 @@ pub struct GetResourceLfTagsInput {
     /// <p>Indicates whether to show the assigned tags.</p>
     pub show_assigned_lf_tags: std::option::Option<bool>,
 }
+impl GetResourceLfTagsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The resource for which you want to return tags.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>Indicates whether to show the assigned tags.</p>
+    pub fn show_assigned_lf_tags(&self) -> std::option::Option<bool> {
+        self.show_assigned_lf_tags
+    }
+}
 impl std::fmt::Debug for GetResourceLfTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceLfTagsInput");
@@ -4566,6 +4732,16 @@ pub struct GetLfTagInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the tag.</p>
     pub tag_key: std::option::Option<std::string::String>,
+}
+impl GetLfTagInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLfTagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4589,6 +4765,24 @@ pub struct GetEffectivePermissionsForPathInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetEffectivePermissionsForPathInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetEffectivePermissionsForPathInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEffectivePermissionsForPathInput");
@@ -4607,6 +4801,12 @@ pub struct GetDataLakeSettingsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
 }
+impl GetDataLakeSettingsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDataLakeSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataLakeSettingsInput");
@@ -4622,6 +4822,12 @@ pub struct DescribeResourceInput {
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DescribeResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourceInput");
@@ -4636,6 +4842,12 @@ impl std::fmt::Debug for DescribeResourceInput {
 pub struct DeregisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DeregisterResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4653,6 +4865,16 @@ pub struct DeleteLfTagInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the tag to delete.</p>
     pub tag_key: std::option::Option<std::string::String>,
+}
+impl DeleteLfTagInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the tag to delete.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLfTagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4674,6 +4896,20 @@ pub struct CreateLfTagInput {
     /// <p>A list of possible values an attribute can take.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateLfTagInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>A list of possible values an attribute can take.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLfTagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLfTagInput");
@@ -4693,6 +4929,16 @@ pub struct BatchRevokePermissionsInput {
     /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
 }
+impl BatchRevokePermissionsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::BatchPermissionsRequestEntry]> {
+        self.entries.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchRevokePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchRevokePermissionsInput");
@@ -4710,6 +4956,16 @@ pub struct BatchGrantPermissionsInput {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
+}
+impl BatchGrantPermissionsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::BatchPermissionsRequestEntry]> {
+        self.entries.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGrantPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4730,6 +4986,20 @@ pub struct AddLfTagsToResourceInput {
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The tags to attach to the resource.</p>
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
+}
+impl AddLfTagsToResourceInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The resource to which to attach a tag.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The tags to attach to the resource.</p>
+    pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddLfTagsToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

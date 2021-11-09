@@ -119,10 +119,9 @@ impl CreateReplicationSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_replication_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_replication_set(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -395,10 +394,7 @@ impl CreateResponsePlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_response_plan(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_response_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -608,10 +604,7 @@ impl CreateTimelineEventInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_timeline_event(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_timeline_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -754,10 +747,9 @@ impl DeleteIncidentRecordInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_incident_record(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_incident_record(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1050,10 +1042,9 @@ impl DeleteResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1196,10 +1187,7 @@ impl DeleteResponsePlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_response_plan(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_response_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1363,10 +1351,7 @@ impl DeleteTimelineEventInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_timeline_event(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_timeline_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1814,10 +1799,7 @@ impl GetResourcePoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2370,10 +2352,7 @@ impl ListIncidentRecordsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_incident_records(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_incident_records(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2547,10 +2526,7 @@ impl ListRelatedItemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_related_items(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_related_items(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2707,10 +2683,7 @@ impl ListReplicationSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_replication_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_replication_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2867,10 +2840,7 @@ impl ListResponsePlansInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_response_plans(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_response_plans(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3300,10 +3270,7 @@ impl ListTimelineEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_timeline_events(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_timeline_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3462,10 +3429,7 @@ impl PutResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3757,10 +3721,7 @@ impl StartIncidentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_incident(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_incident(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3949,10 +3910,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4306,10 +4264,7 @@ impl UpdateDeletionProtectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_deletion_protection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4632,10 +4587,9 @@ impl UpdateIncidentRecordInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_incident_record(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_incident_record(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4817,10 +4771,7 @@ impl UpdateRelatedItemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_related_items(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_related_items(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5007,10 +4958,9 @@ impl UpdateReplicationSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_replication_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_replication_set(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5386,10 +5336,7 @@ impl UpdateResponsePlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_response_plan(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_response_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5609,10 +5556,7 @@ impl UpdateTimelineEventInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_timeline_event(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_timeline_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5694,6 +5638,35 @@ pub struct UpdateTimelineEventInput {
     /// <p>A short description of the event.</p>
     pub event_data: std::option::Option<std::string::String>,
 }
+impl UpdateTimelineEventInput {
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The ID of the event you are updating. You can find this by using
+    /// <code>ListTimelineEvents</code>.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The time that the event occurred.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>A short description of the event.</p>
+    pub fn event_data(&self) -> std::option::Option<&str> {
+        self.event_data.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTimelineEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTimelineEventInput");
@@ -5768,6 +5741,87 @@ pub struct UpdateResponsePlanInput {
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
 }
+impl UpdateResponsePlanInput {
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The long format name of the response plan. The display name can't contain
+    /// spaces.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The short format name of the incident. The title can't contain spaces.</p>
+    pub fn incident_template_title(&self) -> std::option::Option<&str> {
+        self.incident_template_title.as_deref()
+    }
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
+    /// provided by a response plan.</p>
+    /// <p class="title">
+    /// <b>Possible impacts:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>5</code> - Severe impact</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>4</code> - High impact</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>3</code> - Medium impact</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>2</code> - Low impact</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1</code> - No impact</p>
+    /// </li>
+    /// </ul>
+    pub fn incident_template_impact(&self) -> std::option::Option<i32> {
+        self.incident_template_impact
+    }
+    /// <p>A brief summary of the incident. This typically contains what has happened, what's
+    /// currently happening, and next steps.</p>
+    pub fn incident_template_summary(&self) -> std::option::Option<&str> {
+        self.incident_template_summary.as_deref()
+    }
+    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
+    /// same incident in the same account.</p>
+    pub fn incident_template_dedupe_string(&self) -> std::option::Option<&str> {
+        self.incident_template_dedupe_string.as_deref()
+    }
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
+    pub fn incident_template_notification_targets(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
+        self.incident_template_notification_targets.as_deref()
+    }
+    /// <p>The Chatbot chat channel used for collaboration during an
+    /// incident.</p>
+    /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
+    pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
+        self.chat_channel.as_ref()
+    }
+    /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
+    pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
+        self.engagements.as_ref()
+    }
+    /// <p>The actions that this response plan takes at the beginning of an incident.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResponsePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResponsePlanInput");
@@ -5804,6 +5858,21 @@ pub struct UpdateReplicationSetInput {
     /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateReplicationSetInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An action to add or delete a Region.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::UpdateReplicationSetAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateReplicationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationSetInput");
@@ -5826,6 +5895,22 @@ pub struct UpdateRelatedItemsInput {
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>Details about the item you are adding or deleting.</p>
     pub related_items_update: std::option::Option<crate::model::RelatedItemsUpdate>,
+}
+impl UpdateRelatedItemsInput {
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
+    /// are updating.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>Details about the item you are adding or deleting.</p>
+    pub fn related_items_update(&self) -> std::option::Option<&crate::model::RelatedItemsUpdate> {
+        self.related_items_update.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRelatedItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5895,6 +5980,78 @@ pub struct UpdateIncidentRecordInput {
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
+impl UpdateIncidentRecordInput {
+    /// <p>A token that ensures that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A brief description of the incident.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>A longer description of what occurred during the incident.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>Defines the impact of the incident to customers and applications. Providing an impact
+    /// overwrites the impact provided by the response plan.</p>
+    /// <p class="title">
+    /// <b>Possible impacts:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>1</code> - Critical impact, full application failure that impacts many
+    /// to all customers. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>2</code> - High impact, partial application failure with impact to many
+    /// customers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>3</code> - Medium impact, the application is providing reduced service
+    /// to customers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>4</code> - Low impact, customer aren't impacted by the problem
+    /// yet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>5</code> - No impact, customers aren't currently impacted but urgent
+    /// action is needed to avoid impact.</p>
+    /// </li>
+    /// </ul>
+    pub fn impact(&self) -> std::option::Option<i32> {
+        self.impact
+    }
+    /// <p>The status of the incident. An incident can be <code>Open</code> or
+    /// <code>Resolved</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IncidentRecordStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Chatbot chat channel where responders can collaborate.</p>
+    pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
+        self.chat_channel.as_ref()
+    }
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
+    /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
+    /// the incident.</p>
+    pub fn notification_targets(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
+        self.notification_targets.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateIncidentRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIncidentRecordInput");
@@ -5922,6 +6079,21 @@ pub struct UpdateDeletionProtectionInput {
     /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateDeletionProtectionInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+    pub fn deletion_protected(&self) -> std::option::Option<bool> {
+        self.deletion_protected
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeletionProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeletionProtectionInput");
@@ -5941,6 +6113,16 @@ pub struct UntagResourceInput {
     /// <p>The name of the tag you're removing from the response plan.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The name of the tag you're removing from the response plan.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -5959,6 +6141,19 @@ pub struct TagResourceInput {
     /// <p>A list of tags that you are adding to the response plan.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tags that you are adding to the response plan.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6021,6 +6216,67 @@ pub struct StartIncidentInput {
     /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
 }
+impl StartIncidentInput {
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
+    /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+    pub fn response_plan_arn(&self) -> std::option::Option<&str> {
+        self.response_plan_arn.as_deref()
+    }
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
+    /// the response plan. </p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
+    /// provided by a response plan.</p>
+    /// <p class="title">
+    /// <b>Possible impacts:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>1</code> - Critical impact, this typically relates to full application
+    /// failure that impacts many to all customers. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>2</code> - High impact, partial application failure with impact to many
+    /// customers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>3</code> -  Medium impact, the application is providing reduced service
+    /// to customers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
+    /// yet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>5</code> - No impact, customers aren't currently impacted but urgent
+    /// action is needed to avoid impact.</p>
+    /// </li>
+    /// </ul>
+    pub fn impact(&self) -> std::option::Option<i32> {
+        self.impact
+    }
+    /// <p>Details of what created the incident record in Incident Manager.</p>
+    pub fn trigger_details(&self) -> std::option::Option<&crate::model::TriggerDetails> {
+        self.trigger_details.as_ref()
+    }
+    /// <p>Add related items to the incident for other responders to use. Related items are AWS
+    /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    pub fn related_items(&self) -> std::option::Option<&[crate::model::RelatedItem]> {
+        self.related_items.as_deref()
+    }
+}
 impl std::fmt::Debug for StartIncidentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartIncidentInput");
@@ -6043,6 +6299,17 @@ pub struct PutResourcePolicyInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Details of the resource policy.</p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
+    /// to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Details of the resource policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6100,6 +6367,62 @@ pub struct ListTimelineEventsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTimelineEventsInput {
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter
+    /// timeline events using the following keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>eventTime</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>eventType</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Note the following when deciding how to use Filters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you don't specify a Filter, the response includes all timeline
+    /// events.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify more than one filter in a single request, the response returns
+    /// timeline events that match all filters.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify a filter with more than one value, the response returns
+    /// timeline events that match any of the values provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Sort by the specified key value pair.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::TimelineEventSort> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
+    /// field.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The maximum number of results per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTimelineEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTimelineEventsInput");
@@ -6120,6 +6443,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -6136,6 +6465,16 @@ pub struct ListResponsePlansInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResponsePlansInput {
+    /// <p>The maximum number of response plans per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResponsePlansInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6154,6 +6493,16 @@ pub struct ListReplicationSetsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReplicationSetsInput {
+    /// <p>The maximum number of results per page. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReplicationSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6175,6 +6524,21 @@ pub struct ListRelatedItemsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRelatedItemsInput {
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
+    /// items.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The maximum number of related items per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRelatedItemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6235,6 +6599,58 @@ pub struct ListIncidentRecordsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIncidentRecordsInput {
+    /// <p>Filters the list of incident records through which you are searching. You can filter
+    /// on the following keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>creationTime</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>impact</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>status</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>createdBy</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Note the following when deciding how to use Filters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you don't specify a Filter, the response includes all incident
+    /// records.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify more than one filter in a single request, the response returns
+    /// incident records that match all filters.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify a filter with more than one value, the response returns
+    /// incident records that match any of the values provided.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of results per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIncidentRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIncidentRecordsInput");
@@ -6256,6 +6672,18 @@ pub struct GetTimelineEventInput {
     /// <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
 }
+impl GetTimelineEventInput {
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The ID of the event. You can get an event's ID when you create it, or by using
+    /// <code>ListTimelineEvents</code>.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTimelineEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTimelineEventInput");
@@ -6271,6 +6699,12 @@ impl std::fmt::Debug for GetTimelineEventInput {
 pub struct GetResponsePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetResponsePlanInput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResponsePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6291,6 +6725,20 @@ pub struct GetResourcePoliciesInput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourcePoliciesInput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The maximum number of resource policies to display per page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePoliciesInput");
@@ -6308,6 +6756,12 @@ pub struct GetReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetReplicationSetInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReplicationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationSetInput");
@@ -6322,6 +6776,12 @@ impl std::fmt::Debug for GetReplicationSetInput {
 pub struct GetIncidentRecordInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetIncidentRecordInput {
+    /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIncidentRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6342,6 +6802,18 @@ pub struct DeleteTimelineEventInput {
     /// <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
 }
+impl DeleteTimelineEventInput {
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The ID of the event you are updating. You can find this by using
+    /// <code>ListTimelineEvents</code>.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTimelineEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTimelineEventInput");
@@ -6357,6 +6829,12 @@ impl std::fmt::Debug for DeleteTimelineEventInput {
 pub struct DeleteResponsePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteResponsePlanInput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResponsePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6375,6 +6853,16 @@ pub struct DeleteResourcePolicyInput {
     /// <p>The ID of the resource policy you're deleting.</p>
     pub policy_id: std::option::Option<std::string::String>,
 }
+impl DeleteResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ID of the resource policy you're deleting.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
@@ -6391,6 +6879,12 @@ pub struct DeleteReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteReplicationSetInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationSetInput");
@@ -6405,6 +6899,12 @@ impl std::fmt::Debug for DeleteReplicationSetInput {
 pub struct DeleteIncidentRecordInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteIncidentRecordInput {
+    /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteIncidentRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6432,6 +6932,32 @@ pub struct CreateTimelineEventInput {
     /// <p>A short description of the event as a valid JSON string. There is no other schema
     /// imposed.</p>
     pub event_data: std::option::Option<std::string::String>,
+}
+impl CreateTimelineEventInput {
+    /// <p>A token ensuring that the action is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
+    /// added.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The time that the event occurred.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>The type of the event. You can create timeline events of type <code>Custom
+    /// Event</code>.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>A short description of the event as a valid JSON string. There is no other schema
+    /// imposed.</p>
+    pub fn event_data(&self) -> std::option::Option<&str> {
+        self.event_data.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTimelineEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6470,6 +6996,46 @@ pub struct CreateResponsePlanInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateResponsePlanInput {
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The short format name of the response plan. Can't include spaces.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The long format of the response plan name. This field can contain spaces.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>Details used to create an incident when using this response plan.</p>
+    pub fn incident_template(&self) -> std::option::Option<&crate::model::IncidentTemplate> {
+        self.incident_template.as_ref()
+    }
+    /// <p>The Chatbot chat channel used for collaboration during an
+    /// incident.</p>
+    pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
+        self.chat_channel.as_ref()
+    }
+    /// <p>The contacts and escalation plans that the response plan engages during an
+    /// incident.</p>
+    pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
+        self.engagements.as_ref()
+    }
+    /// <p>The actions that the response plan starts at the beginning of an incident.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>A list of tags that you are adding to the response plan.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResponsePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResponsePlanInput");
@@ -6497,6 +7063,22 @@ pub struct CreateReplicationSetInput {
     /// <p>A token ensuring that the operation is called only once with the specified
     /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateReplicationSetInput {
+    /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
+    /// in your replication set.</p>
+    pub fn regions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RegionMapInputValue>,
+    > {
+        self.regions.as_ref()
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

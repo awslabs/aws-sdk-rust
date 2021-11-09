@@ -9,6 +9,17 @@ pub struct ResolveCaseOutput {
     /// processed.</p>
     pub final_case_status: std::option::Option<std::string::String>,
 }
+impl ResolveCaseOutput {
+    /// <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
+    pub fn initial_case_status(&self) -> std::option::Option<&str> {
+        self.initial_case_status.as_deref()
+    }
+    /// <p>The status of the case after the <a>ResolveCase</a> request was
+    /// processed.</p>
+    pub fn final_case_status(&self) -> std::option::Option<&str> {
+        self.final_case_status.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolveCaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolveCaseOutput");
@@ -79,6 +90,13 @@ pub struct RefreshTrustedAdvisorCheckOutput {
     /// is eligible for refresh.</p>
     pub status: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
 }
+impl RefreshTrustedAdvisorCheckOutput {
+    /// <p>The current refresh status for a check, including the amount of time until the check
+    /// is eligible for refresh.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TrustedAdvisorCheckRefreshStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for RefreshTrustedAdvisorCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTrustedAdvisorCheckOutput");
@@ -131,6 +149,12 @@ impl RefreshTrustedAdvisorCheckOutput {
 pub struct DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
+}
+impl DescribeTrustedAdvisorCheckSummariesOutput {
+    /// <p>The summary information for the requested Trusted Advisor checks.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::TrustedAdvisorCheckSummary]> {
+        self.summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrustedAdvisorCheckSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -193,6 +217,12 @@ pub struct DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
     pub checks: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
 }
+impl DescribeTrustedAdvisorChecksOutput {
+    /// <p>Information about all available Trusted Advisor checks.</p>
+    pub fn checks(&self) -> std::option::Option<&[crate::model::TrustedAdvisorCheckDescription]> {
+        self.checks.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTrustedAdvisorChecksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrustedAdvisorChecksOutput");
@@ -254,6 +284,12 @@ pub struct DescribeTrustedAdvisorCheckResultOutput {
     /// <p>The detailed results of the Trusted Advisor check.</p>
     pub result: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
 }
+impl DescribeTrustedAdvisorCheckResultOutput {
+    /// <p>The detailed results of the Trusted Advisor check.</p>
+    pub fn result(&self) -> std::option::Option<&crate::model::TrustedAdvisorCheckResult> {
+        self.result.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeTrustedAdvisorCheckResultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckResultOutput");
@@ -305,6 +341,14 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
     pub statuses:
         std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
+}
+impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
+    /// <p>The refresh status of the specified Trusted Advisor checks.</p>
+    pub fn statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrustedAdvisorCheckRefreshStatus]> {
+        self.statuses.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,6 +416,13 @@ pub struct DescribeSeverityLevelsOutput {
     /// defined by your service level agreement with AWS.</p>
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
 }
+impl DescribeSeverityLevelsOutput {
+    /// <p>The available severity levels for the support case. Available severity levels are
+    /// defined by your service level agreement with AWS.</p>
+    pub fn severity_levels(&self) -> std::option::Option<&[crate::model::SeverityLevel]> {
+        self.severity_levels.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSeverityLevelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSeverityLevelsOutput");
@@ -432,6 +483,12 @@ pub struct DescribeServicesOutput {
     /// <p>A JSON-formatted list of AWS services.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
 }
+impl DescribeServicesOutput {
+    /// <p>A JSON-formatted list of AWS services.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+        self.services.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServicesOutput");
@@ -491,6 +548,16 @@ pub struct DescribeCommunicationsOutput {
     pub communications: std::option::Option<std::vec::Vec<crate::model::Communication>>,
     /// <p>A resumption point for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeCommunicationsOutput {
+    /// <p>The communications for the case.</p>
+    pub fn communications(&self) -> std::option::Option<&[crate::model::Communication]> {
+        self.communications.as_deref()
+    }
+    /// <p>A resumption point for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCommunicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -566,6 +633,16 @@ pub struct DescribeCasesOutput {
     /// <p>A resumption point for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeCasesOutput {
+    /// <p>The details for the cases that match the request.</p>
+    pub fn cases(&self) -> std::option::Option<&[crate::model::CaseDetails]> {
+        self.cases.as_deref()
+    }
+    /// <p>A resumption point for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCasesOutput");
@@ -640,6 +717,16 @@ pub struct DescribeAttachmentOutput {
     /// <code>troubleshoot-screenshot.png</code>.</p>
     pub attachment: std::option::Option<crate::model::Attachment>,
 }
+impl DescribeAttachmentOutput {
+    /// <p>This object includes the attachment content and file name.</p>
+    /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears
+    /// as <code>blob</code>, which is represented as a base64-encoded string. The value for
+    /// <code>fileName</code> is the name of the attachment, such as
+    /// <code>troubleshoot-screenshot.png</code>.</p>
+    pub fn attachment(&self) -> std::option::Option<&crate::model::Attachment> {
+        self.attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAttachmentOutput");
@@ -702,6 +789,15 @@ pub struct CreateCaseOutput {
     /// </p>
     pub case_id: std::option::Option<std::string::String>,
 }
+impl CreateCaseOutput {
+    /// <p>The support case ID requested or returned in the call. The case ID is an
+    /// alphanumeric string in the following format:
+    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+    /// </p>
+    pub fn case_id(&self) -> std::option::Option<&str> {
+        self.case_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCaseOutput");
@@ -757,6 +853,13 @@ pub struct AddCommunicationToCaseOutput {
     /// error.</p>
     pub result: bool,
 }
+impl AddCommunicationToCaseOutput {
+    /// <p>True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
+    /// error.</p>
+    pub fn result(&self) -> bool {
+        self.result
+    }
+}
 impl std::fmt::Debug for AddCommunicationToCaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddCommunicationToCaseOutput");
@@ -811,6 +914,19 @@ pub struct AddAttachmentsToSetOutput {
     pub attachment_set_id: std::option::Option<std::string::String>,
     /// <p>The time and date when the attachment set expires.</p>
     pub expiry_time: std::option::Option<std::string::String>,
+}
+impl AddAttachmentsToSetOutput {
+    /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a
+    /// new attachment set is created, and the ID of the set is returned in the response. If an
+    /// <code>attachmentSetId</code> was specified, the attachments are added to the
+    /// specified set, if it exists.</p>
+    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+        self.attachment_set_id.as_deref()
+    }
+    /// <p>The time and date when the attachment set expires.</p>
+    pub fn expiry_time(&self) -> std::option::Option<&str> {
+        self.expiry_time.as_deref()
+    }
 }
 impl std::fmt::Debug for AddAttachmentsToSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

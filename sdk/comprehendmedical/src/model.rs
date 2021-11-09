@@ -64,6 +64,21 @@ pub struct OutputDataConfig {
     /// another.</p>
     pub s3_key: std::option::Option<std::string::String>,
 }
+impl OutputDataConfig {
+    /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you
+    /// specify the Amazon S3 location where you want to write the output data. The URI must be in the
+    /// same region as the API endpoint that you are calling. The location is used as the prefix for
+    /// the actual location of the output.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
+    /// using the job ID so that the output from one job does not overwrite the output of
+    /// another.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputDataConfig");
@@ -140,6 +155,19 @@ pub struct InputDataConfig {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub s3_key: std::option::Option<std::string::String>,
+}
+impl InputDataConfig {
+    /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same
+    /// region as the API endpoint that you are calling.</p>
+    /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of
+    /// 30 GB in the bucket.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The path to the input data files in the S3 bucket.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
 }
 impl std::fmt::Debug for InputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -239,6 +267,70 @@ pub struct ComprehendMedicalAsyncJobProperties {
     /// X.X.X. You can use this information to track the model used for a particular batch of
     /// documents.</p>
     pub model_version: std::option::Option<std::string::String>,
+}
+impl ComprehendMedicalAsyncJobProperties {
+    /// <p>The identifier assigned to the detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name that you assigned to the detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the
+    /// <code>Message</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the detection job completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The date and time that job metadata is deleted from the server. Output files in your S3
+    /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
+    /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
+    /// <code>ListPHIDetectionJobs</code> operation.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
+    /// <p>The input data configuration that you supplied when you created the detection job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that you supplied when you created the detection job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The path to the file that describes the results of a batch job.</p>
+    pub fn manifest_file_path(&self) -> std::option::Option<&str> {
+        self.manifest_file_path.as_deref()
+    }
+    /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The version of the model used to analyze the documents. The version number looks like
+    /// X.X.X. You can use this information to track the model used for a particular batch of
+    /// documents.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for ComprehendMedicalAsyncJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -593,6 +685,29 @@ pub struct ComprehendMedicalAsyncJobFilter {
     /// newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ComprehendMedicalAsyncJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+    /// status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+    /// oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+    /// newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for ComprehendMedicalAsyncJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComprehendMedicalAsyncJobFilter");
@@ -730,6 +845,58 @@ pub struct RxNormEntity {
     /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the
     /// likelihood of the match.</p>
     pub rx_norm_concepts: std::option::Option<std::vec::Vec<crate::model::RxNormConcept>>,
+}
+impl RxNormEntity {
+    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
+    /// this response rather than a global unique identifier.</p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p>The segment of input text extracted from which the entity was detected.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or
+    /// <code>BRAND_NAME</code>.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::RxNormEntityCategory> {
+        self.category.as_ref()
+    }
+    /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is
+    /// <code>MEDICATION</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RxNormEntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
+    /// entity.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The 0-based character offset in the input text that shows where the entity begins. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>The 0-based character offset in the input text that shows where the entity ends. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p>The extracted attributes that relate to the entity. The attributes recognized by
+    /// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>,
+    /// <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and
+    /// <code>STRENGTH</code>.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::RxNormAttribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p> Contextual information for the entity.</p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::RxNormTrait]> {
+        self.traits.as_deref()
+    }
+    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the
+    /// likelihood of the match.</p>
+    pub fn rx_norm_concepts(&self) -> std::option::Option<&[crate::model::RxNormConcept]> {
+        self.rx_norm_concepts.as_deref()
+    }
 }
 impl std::fmt::Debug for RxNormEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -956,6 +1123,21 @@ pub struct RxNormConcept {
     /// linked to the reported RxNorm concept.</p>
     pub score: std::option::Option<f32>,
 }
+impl RxNormConcept {
+    /// <p>The description of the RxNorm concept.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>RxNorm concept ID, also known as the RxCUI.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
+    /// linked to the reported RxNorm concept.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+}
 impl std::fmt::Debug for RxNormConcept {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RxNormConcept");
@@ -1036,6 +1218,17 @@ pub struct RxNormTrait {
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
     /// trait.</p>
     pub score: std::option::Option<f32>,
+}
+impl RxNormTrait {
+    /// <p>Provides a name or contextual description about the trait.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::RxNormTraitName> {
+        self.name.as_ref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
+    /// trait.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
 }
 impl std::fmt::Debug for RxNormTrait {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1177,6 +1370,48 @@ pub struct RxNormAttribute {
     /// <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or
     /// form of a medication.</p>
     pub traits: std::option::Option<std::vec::Vec<crate::model::RxNormTrait>>,
+}
+impl RxNormAttribute {
+    /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are
+    /// <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RxNormAttributeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly
+    /// recognized as an attribute.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is
+    /// accurately linked to an entity.</p>
+    pub fn relationship_score(&self) -> std::option::Option<f32> {
+        self.relationship_score
+    }
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
+    /// within this response rather than a global unique identifier.</p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p>The segment of input text which corresponds to the detected attribute.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait
+    /// <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or
+    /// form of a medication.</p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::RxNormTrait]> {
+        self.traits.as_deref()
+    }
 }
 impl std::fmt::Debug for RxNormAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1568,6 +1803,60 @@ pub struct Icd10CmEntity {
     /// likelihood of the match.</p>
     pub icd10_cm_concepts: std::option::Option<std::vec::Vec<crate::model::Icd10CmConcept>>,
 }
+impl Icd10CmEntity {
+    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
+    /// this response rather than a global unique identifier.</p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p>The segment of input text that is matched to the detected entity.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p> The category of the entity. InferICD10CM detects entities in the
+    /// <code>MEDICAL_CONDITION</code> category. </p>
+    pub fn category(&self) -> std::option::Option<&crate::model::Icd10CmEntityCategory> {
+        self.category.as_ref()
+    }
+    /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects
+    /// entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Icd10CmEntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the
+    /// detection.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The 0-based character offset in the input text that shows where the entity begins. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>The 0-based character offset in the input text that shows where the entity ends. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p>The detected attributes that relate to the entity. An extracted segment of the text that
+    /// is an attribute of an entity, or otherwise related to an entity, such as the nature of a
+    /// medical condition.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Icd10CmAttribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are
+    /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
+    /// <code>NEGATION.</code>
+    /// </p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::Icd10CmTrait]> {
+        self.traits.as_deref()
+    }
+    /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the
+    /// likelihood of the match.</p>
+    pub fn icd10_cm_concepts(&self) -> std::option::Option<&[crate::model::Icd10CmConcept]> {
+        self.icd10_cm_concepts.as_deref()
+    }
+}
 impl std::fmt::Debug for Icd10CmEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Icd10CmEntity");
@@ -1798,6 +2087,22 @@ pub struct Icd10CmConcept {
     /// linked to an ICD-10-CM concept.</p>
     pub score: std::option::Option<f32>,
 }
+impl Icd10CmConcept {
+    /// <p>The long description of the ICD-10-CM code in the ontology.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the
+    /// Centers for Disease Control.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
+    /// linked to an ICD-10-CM concept.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+}
 impl std::fmt::Debug for Icd10CmConcept {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Icd10CmConcept");
@@ -1880,6 +2185,17 @@ pub struct Icd10CmTrait {
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
     /// as a trait.</p>
     pub score: std::option::Option<f32>,
+}
+impl Icd10CmTrait {
+    /// <p>Provides a name or contextual description about the trait.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::Icd10CmTraitName> {
+        self.name.as_ref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
+    /// as a trait.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
 }
 impl std::fmt::Debug for Icd10CmTrait {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2039,6 +2355,57 @@ pub struct Icd10CmAttribute {
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can
     /// be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
     pub relationship_type: std::option::Option<crate::model::Icd10CmRelationshipType>,
+}
+impl Icd10CmAttribute {
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Icd10CmAttributeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is
+    /// correctly recognized as an attribute.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is
+    /// correctly related to this entity.</p>
+    pub fn relationship_score(&self) -> std::option::Option<f32> {
+        self.relationship_score
+    }
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
+    /// within this response rather than a global unique identifier.</p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p>The segment of input text which contains the detected attribute.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are
+    /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
+    /// <code>NEGATION</code>.</p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::Icd10CmTrait]> {
+        self.traits.as_deref()
+    }
+    /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::Icd10CmEntityType> {
+        self.category.as_ref()
+    }
+    /// <p>The type of relationship between the entity and attribute. Type for the relationship can
+    /// be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
+    pub fn relationship_type(&self) -> std::option::Option<&crate::model::Icd10CmRelationshipType> {
+        self.relationship_type.as_ref()
+    }
 }
 impl std::fmt::Debug for Icd10CmAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2504,6 +2871,47 @@ pub struct Entity {
     /// <p> The extracted attributes that relate to this entity.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
+impl Entity {
+    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique
+    /// within this response rather than a global unique identifier. </p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p> The 0-based character offset in the input text that shows where the entity begins. The
+    /// offset returns the UTF-8 code point in the string. </p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p> The 0-based character offset in the input text that shows where the entity ends. The
+    /// offset returns the UTF-8 code point in the string. </p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p> The segment of input text extracted as this entity.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p> The category of the entity.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.category.as_ref()
+    }
+    /// <p> Describes the specific type of entity with category of entities.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EntitySubType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Contextual information for the entity.</p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::Trait]> {
+        self.traits.as_deref()
+    }
+    /// <p> The extracted attributes that relate to this entity.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for Entity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Entity");
@@ -2711,6 +3119,55 @@ pub struct Attribute {
     /// <p> Contextual information for this attribute. </p>
     pub traits: std::option::Option<std::vec::Vec<crate::model::Trait>>,
 }
+impl Attribute {
+    /// <p> The type of attribute. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EntitySubType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
+    /// as an attribute. </p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
+    /// entity. </p>
+    pub fn relationship_score(&self) -> std::option::Option<f32> {
+        self.relationship_score
+    }
+    /// <p>The type of relationship between the entity and attribute. Type for the relationship is
+    /// <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
+    /// <code>Date_Expression</code>. </p>
+    pub fn relationship_type(&self) -> std::option::Option<&crate::model::RelationshipType> {
+        self.relationship_type.as_ref()
+    }
+    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique
+    /// within this response rather than a global unique identifier. </p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The
+    /// offset returns the UTF-8 code point in the string. </p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The
+    /// offset returns the UTF-8 code point in the string.</p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p> The segment of input text extracted as this attribute.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p> The category of attribute. </p>
+    pub fn category(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.category.as_ref()
+    }
+    /// <p> Contextual information for this attribute. </p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::Trait]> {
+        self.traits.as_deref()
+    }
+}
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Attribute");
@@ -2906,6 +3363,16 @@ pub struct Trait {
     pub name: std::option::Option<crate::model::AttributeName>,
     /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
     pub score: std::option::Option<f32>,
+}
+impl Trait {
+    /// <p> Provides a name or contextual description about the trait. </p>
+    pub fn name(&self) -> std::option::Option<&crate::model::AttributeName> {
+        self.name.as_ref()
+    }
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
 }
 impl std::fmt::Debug for Trait {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3468,6 +3935,18 @@ pub struct UnmappedAttribute {
     pub r#type: std::option::Option<crate::model::EntityType>,
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
     pub attribute: std::option::Option<crate::model::Attribute>,
+}
+impl UnmappedAttribute {
+    /// <p> The type of the attribute, could be one of the following values: "MEDICATION",
+    /// "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
+    /// "PROTECTED_HEALTH_INFORMATION". </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
+        self.attribute.as_ref()
+    }
 }
 impl std::fmt::Debug for UnmappedAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -102,6 +102,36 @@ pub struct UpdateConnectionAuthRequestParameters {
     /// use for the connection.</p>
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
+impl UpdateConnectionAuthRequestParameters {
+    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the
+    /// authorization parameters for Basic authorization.</p>
+    pub fn basic_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateConnectionBasicAuthRequestParameters> {
+        self.basic_auth_parameters.as_ref()
+    }
+    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the
+    /// authorization parameters for OAuth authorization.</p>
+    pub fn o_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateConnectionOAuthRequestParameters> {
+        self.o_auth_parameters.as_ref()
+    }
+    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the
+    /// authorization parameters for API key authorization.</p>
+    pub fn api_key_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateConnectionApiKeyAuthRequestParameters> {
+        self.api_key_auth_parameters.as_ref()
+    }
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to
+    /// use for the connection.</p>
+    pub fn invocation_http_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
+        self.invocation_http_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionAuthRequestParameters");
@@ -234,6 +264,24 @@ pub struct ConnectionHttpParameters {
     /// <p>Contains additional body string parameters for the connection.</p>
     pub body_parameters: std::option::Option<std::vec::Vec<crate::model::ConnectionBodyParameter>>,
 }
+impl ConnectionHttpParameters {
+    /// <p>Contains additional header parameters for the connection.</p>
+    pub fn header_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectionHeaderParameter]> {
+        self.header_parameters.as_deref()
+    }
+    /// <p>Contains additional query string parameters for the connection.</p>
+    pub fn query_string_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectionQueryStringParameter]> {
+        self.query_string_parameters.as_deref()
+    }
+    /// <p>Contains additional body string parameters for the connection.</p>
+    pub fn body_parameters(&self) -> std::option::Option<&[crate::model::ConnectionBodyParameter]> {
+        self.body_parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectionHttpParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionHttpParameters");
@@ -352,6 +400,20 @@ pub struct ConnectionBodyParameter {
     /// <p>Specified whether the value is secret.</p>
     pub is_value_secret: bool,
 }
+impl ConnectionBodyParameter {
+    /// <p>The key for the parameter.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value associated with the key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Specified whether the value is secret.</p>
+    pub fn is_value_secret(&self) -> bool {
+        self.is_value_secret
+    }
+}
 impl std::fmt::Debug for ConnectionBodyParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionBodyParameter");
@@ -432,6 +494,20 @@ pub struct ConnectionQueryStringParameter {
     /// <p>Specifies whether the value is secret.</p>
     pub is_value_secret: bool,
 }
+impl ConnectionQueryStringParameter {
+    /// <p>The key for a query string parameter.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value associated with the key for the query string parameter.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Specifies whether the value is secret.</p>
+    pub fn is_value_secret(&self) -> bool {
+        self.is_value_secret
+    }
+}
 impl std::fmt::Debug for ConnectionQueryStringParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionQueryStringParameter");
@@ -511,6 +587,20 @@ pub struct ConnectionHeaderParameter {
     /// <p>Specified whether the value is a secret.</p>
     pub is_value_secret: bool,
 }
+impl ConnectionHeaderParameter {
+    /// <p>The key for the parameter.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value associated with the key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Specified whether the value is a secret.</p>
+    pub fn is_value_secret(&self) -> bool {
+        self.is_value_secret
+    }
+}
 impl std::fmt::Debug for ConnectionHeaderParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionHeaderParameter");
@@ -587,6 +677,16 @@ pub struct UpdateConnectionApiKeyAuthRequestParameters {
     /// <p>The value associated with teh API key to use for authorization.</p>
     pub api_key_value: std::option::Option<std::string::String>,
 }
+impl UpdateConnectionApiKeyAuthRequestParameters {
+    /// <p>The name of the API key to use for authorization.</p>
+    pub fn api_key_name(&self) -> std::option::Option<&str> {
+        self.api_key_name.as_deref()
+    }
+    /// <p>The value associated with teh API key to use for authorization.</p>
+    pub fn api_key_value(&self) -> std::option::Option<&str> {
+        self.api_key_value.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionApiKeyAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionApiKeyAuthRequestParameters");
@@ -660,6 +760,31 @@ pub struct UpdateConnectionOAuthRequestParameters {
     pub http_method: std::option::Option<crate::model::ConnectionOAuthHttpMethod>,
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
+}
+impl UpdateConnectionOAuthRequestParameters {
+    /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the
+    /// client parameters to use for the connection when OAuth is specified as the authorization
+    /// type.</p>
+    pub fn client_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateConnectionOAuthClientRequestParameters> {
+        self.client_parameters.as_ref()
+    }
+    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
+    /// type.</p>
+    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
+        self.authorization_endpoint.as_deref()
+    }
+    /// <p>The method used to connect to the HTTP endpoint.</p>
+    pub fn http_method(&self) -> std::option::Option<&crate::model::ConnectionOAuthHttpMethod> {
+        self.http_method.as_ref()
+    }
+    /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
+    pub fn o_auth_http_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
+        self.o_auth_http_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateConnectionOAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -835,6 +960,16 @@ pub struct UpdateConnectionOAuthClientRequestParameters {
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
     pub client_secret: std::option::Option<std::string::String>,
 }
+impl UpdateConnectionOAuthClientRequestParameters {
+    /// <p>The client ID to use for OAuth authorization.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionOAuthClientRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionOAuthClientRequestParameters");
@@ -900,6 +1035,16 @@ pub struct UpdateConnectionBasicAuthRequestParameters {
     pub username: std::option::Option<std::string::String>,
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub password: std::option::Option<std::string::String>,
+}
+impl UpdateConnectionBasicAuthRequestParameters {
+    /// <p>The user name to use for Basic authorization.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password associated with the user name to use for Basic authorization.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateConnectionBasicAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1233,6 +1378,17 @@ pub struct Tag {
     /// <p>The value for the specified tag key.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A string you can use to assign a value. The combination of tag keys and values can help
+    /// you organize and categorize your resources.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value for the specified tag key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -1377,6 +1533,17 @@ pub struct ReplayDestination {
     /// <p>A list of ARNs for rules to replay events to.</p>
     pub filter_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ReplayDestination {
+    /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus
+    /// specified to create the archive.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A list of ARNs for rules to replay events to.</p>
+    pub fn filter_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.filter_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplayDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplayDestination");
@@ -1454,6 +1621,22 @@ pub struct RemoveTargetsResultEntry {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the target removal failed.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl RemoveTargetsResultEntry {
+    /// <p>The ID of the target.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The error code that indicates why the target removal failed. If the value is
+    /// <code>ConcurrentModificationException</code>, too many requests were made at the same
+    /// time.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message that explains why the target removal failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTargetsResultEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1541,6 +1724,22 @@ pub struct PutTargetsResultEntry {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the target addition failed.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl PutTargetsResultEntry {
+    /// <p>The ID of the target.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The error code that indicates why the target addition failed. If the value is
+    /// <code>ConcurrentModificationException</code>, too many requests were made at the same
+    /// time.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message that explains why the target addition failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for PutTargetsResultEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1692,6 +1891,109 @@ pub struct Target {
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use
     /// for the dead-letter queue.</p>
     pub retry_policy: std::option::Option<crate::model::RetryPolicy>,
+}
+impl Target {
+    /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is
+    /// triggered. If one rule triggers multiple targets, you can use a different IAM role for each
+    /// target.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is
+    /// passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data
+    /// Interchange Format</a>.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when
+    /// passing it to the target. You must use JSON dot notation, not bracket notation. For more
+    /// information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    pub fn input_path(&self) -> std::option::Option<&str> {
+        self.input_path.as_deref()
+    }
+    /// <p>Settings to enable you to provide custom input to a target based on certain event data.
+    /// You can extract one or more key-value pairs from the event and then use that data to send
+    /// customized input to the target.</p>
+    pub fn input_transformer(&self) -> std::option::Option<&crate::model::InputTransformer> {
+        self.input_transformer.as_ref()
+    }
+    /// <p>The custom parameter you can use to control the shard assignment, when the target is a
+    /// Kinesis data stream. If you do not include this parameter, the default is to use the
+    /// <code>eventId</code> as the partition key.</p>
+    pub fn kinesis_parameters(&self) -> std::option::Option<&crate::model::KinesisParameters> {
+        self.kinesis_parameters.as_ref()
+    }
+    /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
+    pub fn run_command_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::RunCommandParameters> {
+        self.run_command_parameters.as_ref()
+    }
+    /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is
+    /// an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+    /// Definitions </a> in the <i>Amazon EC2 Container Service Developer
+    /// Guide</i>.</p>
+    pub fn ecs_parameters(&self) -> std::option::Option<&crate::model::EcsParameters> {
+        self.ecs_parameters.as_ref()
+    }
+    /// <p>If the event target is an Batch job, this contains the job definition, job name, and
+    /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User
+    /// Guide</i>.</p>
+    pub fn batch_parameters(&self) -> std::option::Option<&crate::model::BatchParameters> {
+        self.batch_parameters.as_ref()
+    }
+    /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based
+    /// deduplication enabled.</p>
+    pub fn sqs_parameters(&self) -> std::option::Option<&crate::model::SqsParameters> {
+        self.sqs_parameters.as_ref()
+    }
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or
+    /// EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can
+    /// use this parameter to specify headers, path parameters, and query string keys/values as part
+    /// of your target invoking request. If you're using ApiDestinations, the corresponding Connection
+    /// can also have these values configured. In case of any conflicting keys, values from the
+    /// Connection take precedence.</p>
+    pub fn http_parameters(&self) -> std::option::Option<&crate::model::HttpParameters> {
+        self.http_parameters.as_ref()
+    }
+    /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
+    /// cluster.</p>
+    /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
+    /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+    pub fn redshift_data_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftDataParameters> {
+        self.redshift_data_parameters.as_ref()
+    }
+    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a
+    /// SageMaker Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to
+    /// specify parameters to start a pipeline execution based on EventBridge events.</p>
+    pub fn sage_maker_pipeline_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::SageMakerPipelineParameters> {
+        self.sage_maker_pipeline_parameters.as_ref()
+    }
+    /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue
+    /// events to.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use
+    /// for the dead-letter queue.</p>
+    pub fn retry_policy(&self) -> std::option::Option<&crate::model::RetryPolicy> {
+        self.retry_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for Target {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2047,6 +2349,18 @@ pub struct RetryPolicy {
     /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
 }
+impl RetryPolicy {
+    /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts
+    /// continue until either the maximum number of attempts is made or until the duration of the
+    /// <code>MaximumEventAgeInSeconds</code> is met.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
+    pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_event_age_in_seconds
+    }
+}
 impl std::fmt::Debug for RetryPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryPolicy");
@@ -2116,6 +2430,12 @@ pub struct DeadLetterConfig {
     /// <p>The ARN of the SQS queue specified as the target for the dead-letter queue.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeadLetterConfig {
+    /// <p>The ARN of the SQS queue specified as the target for the dead-letter queue.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeadLetterConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeadLetterConfig");
@@ -2163,6 +2483,14 @@ pub struct SageMakerPipelineParameters {
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
     pub pipeline_parameter_list:
         std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
+}
+impl SageMakerPipelineParameters {
+    /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
+    pub fn pipeline_parameter_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SageMakerPipelineParameter]> {
+        self.pipeline_parameter_list.as_deref()
+    }
 }
 impl std::fmt::Debug for SageMakerPipelineParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2227,6 +2555,16 @@ pub struct SageMakerPipelineParameter {
     pub name: std::option::Option<std::string::String>,
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl SageMakerPipelineParameter {
+    /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for SageMakerPipelineParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2302,6 +2640,35 @@ pub struct RedshiftDataParameters {
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement
     /// runs.</p>
     pub with_event: bool,
+}
+impl RedshiftDataParameters {
+    /// <p>The name or ARN of the secret that enables access to the database. Required when
+    /// authenticating using Amazon Web Services Secrets Manager.</p>
+    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+        self.secret_manager_arn.as_deref()
+    }
+    /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The database user name. Required when authenticating using temporary credentials.</p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The SQL statement text to run.</p>
+    pub fn sql(&self) -> std::option::Option<&str> {
+        self.sql.as_deref()
+    }
+    /// <p>The name of the SQL statement. You can name the SQL statement when you create it to
+    /// identify the query.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>Indicates whether to send an event back to EventBridge after the SQL statement
+    /// runs.</p>
+    pub fn with_event(&self) -> bool {
+        self.with_event
+    }
 }
 impl std::fmt::Debug for RedshiftDataParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2440,6 +2807,29 @@ pub struct HttpParameters {
     pub query_string_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl HttpParameters {
+    /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge
+    /// ApiDestination path wildcards ("*").</p>
+    pub fn path_parameter_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.path_parameter_values.as_deref()
+    }
+    /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or
+    /// EventBridge ApiDestination.</p>
+    pub fn header_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.header_parameters.as_ref()
+    }
+    /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway
+    /// REST API or EventBridge ApiDestination.</p>
+    pub fn query_string_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.query_string_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for HttpParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpParameters");
@@ -2564,6 +2954,12 @@ pub struct SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
     pub message_group_id: std::option::Option<std::string::String>,
 }
+impl SqsParameters {
+    /// <p>The FIFO message group ID to use as the target.</p>
+    pub fn message_group_id(&self) -> std::option::Option<&str> {
+        self.message_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SqsParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqsParameters");
@@ -2626,6 +3022,30 @@ pub struct BatchParameters {
     /// you specify a retry strategy here, it overrides the retry strategy defined in the job
     /// definition.</p>
     pub retry_strategy: std::option::Option<crate::model::BatchRetryStrategy>,
+}
+impl BatchParameters {
+    /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This
+    /// job definition must already exist.</p>
+    pub fn job_definition(&self) -> std::option::Option<&str> {
+        self.job_definition.as_deref()
+    }
+    /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size
+    /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
+    /// job. This parameter is used only if the target is an Batch job.</p>
+    pub fn array_properties(&self) -> std::option::Option<&crate::model::BatchArrayProperties> {
+        self.array_properties.as_ref()
+    }
+    /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry
+    /// strategy is the number of times to retry the failed job execution. Valid values are 1–10. When
+    /// you specify a retry strategy here, it overrides the retry strategy defined in the job
+    /// definition.</p>
+    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::BatchRetryStrategy> {
+        self.retry_strategy.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2737,6 +3157,12 @@ pub struct BatchRetryStrategy {
     /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
     pub attempts: i32,
 }
+impl BatchRetryStrategy {
+    /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
+    pub fn attempts(&self) -> i32 {
+        self.attempts
+    }
+}
 impl std::fmt::Debug for BatchRetryStrategy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchRetryStrategy");
@@ -2787,6 +3213,13 @@ pub struct BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2
     /// and 10,000.</p>
     pub size: i32,
+}
+impl BatchArrayProperties {
+    /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2
+    /// and 10,000.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
 }
 impl std::fmt::Debug for BatchArrayProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2894,6 +3327,99 @@ pub struct EcsParameters {
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag
     /// consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl EcsParameters {
+    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+        self.task_definition_arn.as_deref()
+    }
+    /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is
+    /// 1.</p>
+    pub fn task_count(&self) -> std::option::Option<i32> {
+        self.task_count
+    }
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify
+    /// here must match one of the launch type (compatibilities) of the target task. The
+    /// <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS
+    /// is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in
+    /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
+        self.launch_type.as_ref()
+    }
+    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This
+    /// structure specifies the VPC subnets and security groups associated with the task, and whether
+    /// a public IP address is to be used. This structure is required if <code>LaunchType</code> is
+    /// <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
+    /// tasks.</p>
+    /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
+    /// <code>awsvpc</code> network mode, the task fails.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
+    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the
+    /// platform version, such as <code>1.1.0</code>.</p>
+    /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
+    /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+    /// Versions</a> in the <i>Amazon Elastic Container Service Developer
+    /// Guide</i>.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The capacity provider strategy to use for the task.</p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+    /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is
+    /// specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    pub fn capacity_provider_strategy(
+        &self,
+    ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
+        self.capacity_provider_strategy.as_deref()
+    }
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
+    /// Guide. </p>
+    pub fn enable_ecs_managed_tags(&self) -> bool {
+        self.enable_ecs_managed_tags
+    }
+    /// <p>Whether or not to enable the execute command functionality for the containers in this
+    /// task. If true, this enables execute command functionality on all containers in the
+    /// task.</p>
+    pub fn enable_execute_command(&self) -> bool {
+        self.enable_execute_command
+    }
+    /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
+    /// constraints per task (including constraints in the task definition and those specified at
+    /// runtime).</p>
+    pub fn placement_constraints(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
+        self.placement_constraints.as_deref()
+    }
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
+    /// strategy rules per task. </p>
+    pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
+        self.placement_strategy.as_deref()
+    }
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value
+    /// is specified, the tags are not propagated. Tags can only be propagated to the task during task
+    /// creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    pub fn propagate_tags(&self) -> std::option::Option<&crate::model::PropagateTags> {
+        self.propagate_tags.as_ref()
+    }
+    /// <p>The reference ID to use for the task.</p>
+    pub fn reference_id(&self) -> std::option::Option<&str> {
+        self.reference_id.as_deref()
+    }
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag
+    /// consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for EcsParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3299,6 +3825,25 @@ pub struct PlacementStrategy {
     /// strategy, this field is not used. </p>
     pub field: std::option::Option<std::string::String>,
 }
+impl PlacementStrategy {
+    /// <p>The type of placement strategy. The random placement strategy randomly places tasks on
+    /// available candidates. The spread placement strategy spreads placement across available
+    /// candidates evenly based on the field parameter. The binpack strategy places tasks on available
+    /// candidates that have the least available amount of the resource that is specified with the
+    /// field parameter. For example, if you binpack on memory, a task is placed on the instance with
+    /// the least amount of remaining memory (but still enough to run the task). </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementStrategyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The field to apply the placement strategy against. For the spread placement strategy,
+    /// valid values are instanceId (or host, which has the same effect), or any platform or custom
+    /// attribute that is applied to a container instance, such as attribute:ecs.availability-zone.
+    /// For the binpack placement strategy, valid values are cpu and memory. For the random placement
+    /// strategy, this field is not used. </p>
+    pub fn field(&self) -> std::option::Option<&str> {
+        self.field.as_deref()
+    }
+}
 impl std::fmt::Debug for PlacementStrategy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementStrategy");
@@ -3447,6 +3992,20 @@ pub struct PlacementConstraint {
     /// </p>
     pub expression: std::option::Option<std::string::String>,
 }
+impl PlacementConstraint {
+    /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular
+    /// group is running on a different container instance. Use memberOf to restrict the selection to
+    /// a group of valid candidates. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementConstraintType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
+    /// expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide.
+    /// </p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+}
 impl std::fmt::Debug for PlacementConstraint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementConstraint");
@@ -3582,6 +4141,24 @@ pub struct CapacityProviderStrategyItem {
     /// If no value is specified, the default value of 0 is used. </p>
     pub base: i32,
 }
+impl CapacityProviderStrategyItem {
+    /// <p>The short name of the capacity provider.</p>
+    pub fn capacity_provider(&self) -> std::option::Option<&str> {
+        self.capacity_provider.as_deref()
+    }
+    /// <p>The weight value designates the relative percentage of the total number of tasks launched
+    /// that should use the specified capacity provider. The weight value is taken into consideration
+    /// after the base value, if defined, is satisfied.</p>
+    pub fn weight(&self) -> i32 {
+        self.weight
+    }
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity
+    /// provider. Only one capacity provider in a capacity provider strategy can have a base defined.
+    /// If no value is specified, the default value of 0 is used. </p>
+    pub fn base(&self) -> i32 {
+        self.base
+    }
+}
 impl std::fmt::Debug for CapacityProviderStrategyItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CapacityProviderStrategyItem");
@@ -3669,6 +4246,14 @@ pub struct NetworkConfiguration {
     /// use the <code>awsvpc</code> network mode.</p>
     pub awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
 }
+impl NetworkConfiguration {
+    /// <p>Use this structure to specify the VPC subnets and security groups for the task, and
+    /// whether a public IP address is to be used. This structure is relevant only for ECS tasks that
+    /// use the <code>awsvpc</code> network mode.</p>
+    pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::model::AwsVpcConfiguration> {
+        self.awsvpc_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for NetworkConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkConfiguration");
@@ -3734,6 +4319,25 @@ pub struct AwsVpcConfiguration {
     /// can specify <code>ENABLED</code> only when <code>LaunchType</code> in
     /// <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
+}
+impl AwsVpcConfiguration {
+    /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC.
+    /// You can specify as many as 16 subnets.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>Specifies the security groups associated with the task. These security groups must all be
+    /// in the same VPC. You can specify as many as five security groups. If you do not specify a
+    /// security group, the default security group for the VPC is used.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>Specifies whether the task's elastic network interface receives a public IP address. You
+    /// can specify <code>ENABLED</code> only when <code>LaunchType</code> in
+    /// <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+    pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
+        self.assign_public_ip.as_ref()
+    }
 }
 impl std::fmt::Debug for AwsVpcConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3956,6 +4560,13 @@ pub struct RunCommandParameters {
     /// array of InstanceIds or a tag.</p>
     pub run_command_targets: std::option::Option<std::vec::Vec<crate::model::RunCommandTarget>>,
 }
+impl RunCommandParameters {
+    /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an
+    /// array of InstanceIds or a tag.</p>
+    pub fn run_command_targets(&self) -> std::option::Option<&[crate::model::RunCommandTarget]> {
+        self.run_command_targets.as_deref()
+    }
+}
 impl std::fmt::Debug for RunCommandParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RunCommandParameters");
@@ -4027,6 +4638,21 @@ pub struct RunCommandTarget {
     /// is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code>
     /// is a list of Amazon EC2 instance IDs.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RunCommandTarget {
+    /// <p>Can be either <code>tag:</code>
+    /// <i>tag-key</i> or
+    /// <code>InstanceIds</code>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>If <code>Key</code> is <code>tag:</code>
+    /// <i>tag-key</i>, <code>Values</code>
+    /// is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code>
+    /// is a list of Amazon EC2 instance IDs.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for RunCommandTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4112,6 +4738,14 @@ pub struct KinesisParameters {
     /// information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
     /// Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     pub partition_key_path: std::option::Option<std::string::String>,
+}
+impl KinesisParameters {
+    /// <p>The JSON path to be extracted from the event and used as the partition key. For more
+    /// information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
+    /// Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+    pub fn partition_key_path(&self) -> std::option::Option<&str> {
+        self.partition_key_path.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4244,6 +4878,92 @@ pub struct InputTransformer {
     /// <code>}</code>
     /// </p>
     pub input_template: std::option::Option<std::string::String>,
+}
+impl InputTransformer {
+    /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the
+    /// template in <code>InputTemplate</code> to produce the output you want to be sent to the
+    /// target.</p>
+    /// <p>
+    /// <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON
+    /// path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket
+    /// notation.</p>
+    /// <p>The keys cannot start with "Amazon Web Services." </p>
+    pub fn input_paths_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.input_paths_map.as_ref()
+    }
+    /// <p>Input template where you specify placeholders that will be filled with the values of the
+    /// keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
+    /// <code>InputPathsMaps</code> value in brackets: <<i>value</i>> The
+    /// InputTemplate must be valid JSON.</p>
+    ///
+    /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following
+    /// restrictions apply:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The placeholder cannot be used as an object key.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and
+    /// <code>InputTemplate</code>.</p>
+    /// <p>
+    /// <code> "InputTransformer":</code>
+    /// </p>
+    /// <p>
+    /// <code>{</code>
+    /// </p>
+    /// <p>
+    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+    /// "$.detail.status"},</code>
+    /// </p>
+    /// <p>
+    /// <code>"InputTemplate": "<instance> is in state <status>"</code>
+    /// </p>
+    /// <p>
+    /// <code>}</code>
+    /// </p>
+    /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape
+    /// each quote marks with a slash, as in the following example:</p>
+    /// <p>
+    /// <code> "InputTransformer":</code>
+    /// </p>
+    /// <p>
+    /// <code>{</code>
+    /// </p>
+    /// <p>
+    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+    /// "$.detail.status"},</code>
+    /// </p>
+    /// <p>
+    /// <code>"InputTemplate": "<instance> is in state \"<status>\""</code>
+    /// </p>
+    /// <p>
+    /// <code>}</code>
+    /// </p>
+    /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as
+    /// in the following example:</p>
+    /// <p>
+    /// <code> "InputTransformer":</code>
+    /// </p>
+    /// <p>
+    /// <code>{</code>
+    /// </p>
+    /// <p>
+    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+    /// "$.detail.status"},</code>
+    /// </p>
+    /// <p>
+    /// <code>"InputTemplate": '{"myInstance": <instance>,"myStatus": "<instance> is
+    /// in state \"<status>\""}'</code>
+    /// </p>
+    /// <p>
+    /// <code>}</code>
+    /// </p>
+    pub fn input_template(&self) -> std::option::Option<&str> {
+        self.input_template.as_deref()
+    }
 }
 impl std::fmt::Debug for InputTransformer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4542,6 +5262,23 @@ pub struct Condition {
     /// organization.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Condition {
+    /// <p>Specifies the type of condition. Currently the only supported value is
+    /// <code>StringEquals</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Specifies the key for the condition. Currently the only supported key is
+    /// <code>aws:PrincipalOrgID</code>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Specifies the value for the key. Currently, this must be the ID of the
+    /// organization.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Condition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Condition");
@@ -4625,6 +5362,20 @@ pub struct PutPartnerEventsResultEntry {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the event submission failed.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl PutPartnerEventsResultEntry {
+    /// <p>The ID of the event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The error code that indicates why the event submission failed.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message that explains why the event submission failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for PutPartnerEventsResultEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4712,6 +5463,30 @@ pub struct PutPartnerEventsRequestEntry {
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
     /// and nested subobjects.</p>
     pub detail: std::option::Option<std::string::String>,
+}
+impl PutPartnerEventsRequestEntry {
+    /// <p>The date and time of the event.</p>
+    pub fn time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.time.as_ref()
+    }
+    /// <p>The event source that is generating the entry.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
+    /// concerns. Any number, including zero, may be present.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+    /// <p>A free-form string used to decide what fields to expect in the event detail.</p>
+    pub fn detail_type(&self) -> std::option::Option<&str> {
+        self.detail_type.as_deref()
+    }
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
+    /// and nested subobjects.</p>
+    pub fn detail(&self) -> std::option::Option<&str> {
+        self.detail.as_deref()
+    }
 }
 impl std::fmt::Debug for PutPartnerEventsRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4830,6 +5605,20 @@ pub struct PutEventsResultEntry {
     /// <p>The error message that explains why the event submission failed.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl PutEventsResultEntry {
+    /// <p>The ID of the event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The error code that indicates why the event submission failed.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message that explains why the event submission failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for PutEventsResultEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventsResultEntry");
@@ -4924,6 +5713,42 @@ pub struct PutEventsRequestEntry {
     /// trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
     pub trace_header: std::option::Option<std::string::String>,
+}
+impl PutEventsRequestEntry {
+    /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
+    pub fn time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.time.as_ref()
+    }
+    /// <p>The source of the event.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
+    /// concerns. Any number, including zero, may be present.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+    /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
+    pub fn detail_type(&self) -> std::option::Option<&str> {
+        self.detail_type.as_deref()
+    }
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
+    /// and nested subobjects.</p>
+    pub fn detail(&self) -> std::option::Option<&str> {
+        self.detail.as_deref()
+    }
+    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated
+    /// with this event bus are used to match the event. If you omit this, the default event bus is
+    /// used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
+    /// trace-id associated with the event.</p>
+    /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
+    pub fn trace_header(&self) -> std::option::Option<&str> {
+        self.trace_header.as_deref()
+    }
 }
 impl std::fmt::Debug for PutEventsRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5097,6 +5922,51 @@ pub struct Rule {
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
     /// event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
+}
+impl Rule {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
+    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn event_pattern(&self) -> std::option::Option<&str> {
+        self.event_pattern.as_deref()
+    }
+    /// <p>The state of the rule.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RuleState> {
+        self.state.as_ref()
+    }
+    /// <p>The description of the rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted
+    /// permission to your account through an organization instead of directly by the account ID, you
+    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+    /// structure, instead of here in this parameter.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays
+    /// the principal name of the service that created the rule.</p>
+    pub fn managed_by(&self) -> std::option::Option<&str> {
+        self.managed_by.as_deref()
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
+    /// event bus is used.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
 }
 impl std::fmt::Debug for Rule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5291,6 +6161,46 @@ pub struct Replay {
     /// <p>A time stamp for the time that the replay completed.</p>
     pub replay_end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Replay {
+    /// <p>The name of the replay.</p>
+    pub fn replay_name(&self) -> std::option::Option<&str> {
+        self.replay_name.as_deref()
+    }
+    /// <p>The ARN of the archive to replay event from.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The current state of the replay.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+        self.state.as_ref()
+    }
+    /// <p>A description of why the replay is in the current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>A time stamp for the time to start replaying events. This is determined by the time in the
+    /// event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
+    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_start_time.as_ref()
+    }
+    /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior
+    /// to the <code>EventEndTime</code> specified is replayed.</p>
+    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_end_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the last event was replayed.</p>
+    pub fn event_last_replayed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_last_replayed_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the replay started.</p>
+    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.replay_start_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the replay completed.</p>
+    pub fn replay_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.replay_end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Replay {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Replay");
@@ -5469,6 +6379,16 @@ pub struct PartnerEventSource {
     /// <p>The name of the partner event source.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl PartnerEventSource {
+    /// <p>The ARN of the partner event source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the partner event source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for PartnerEventSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PartnerEventSource");
@@ -5539,6 +6459,28 @@ pub struct PartnerEventSourceAccount {
     /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
     /// created a matching event bus, but the event source has since been deleted.</p>
     pub state: std::option::Option<crate::model::EventSourceState>,
+}
+impl PartnerEventSourceAccount {
+    /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p>The date and time the event source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
+    /// matching event bus for it.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
+    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
+    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
+    /// created a matching event bus, but the event source has since been deleted.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for PartnerEventSourceAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5719,6 +6661,36 @@ pub struct EventSource {
     /// created a matching event bus, but the event source has since been deleted.</p>
     pub state: std::option::Option<crate::model::EventSourceState>,
 }
+impl EventSource {
+    /// <p>The ARN of the event source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the partner that created the event source.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The date and time the event source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
+    /// matching event bus for it.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
+    /// <p>The name of the event source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
+    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
+    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
+    /// created a matching event bus, but the event source has since been deleted.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for EventSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventSource");
@@ -5858,6 +6830,21 @@ pub struct EventBus {
     /// events to this event bus.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl EventBus {
+    /// <p>The name of the event bus.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the event bus.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write
+    /// events to this event bus.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for EventBus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventBus");
@@ -5947,6 +6934,42 @@ pub struct Connection {
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Connection {
+    /// <p>The ARN of the connection.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The name of the connection.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the connection.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>The reason that the connection is in the connection state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The authorization type specified for the connection.</p>
+    pub fn authorization_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionAuthorizationType> {
+        self.authorization_type.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last authorized.</p>
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authorized_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Connection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6124,6 +7147,41 @@ pub struct Archive {
     /// <p>The time stamp for the time that the archive was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Archive {
+    /// <p>The name of the archive.</p>
+    pub fn archive_name(&self) -> std::option::Option<&str> {
+        self.archive_name.as_deref()
+    }
+    /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are
+    /// sent to the archive.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The current state of the archive.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+        self.state.as_ref()
+    }
+    /// <p>A description for the reason that the archive is in the current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The number of days to retain events in the archive before they are deleted.</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
+    /// <p>The size of the archive, in bytes.</p>
+    pub fn size_bytes(&self) -> i64 {
+        self.size_bytes
+    }
+    /// <p>The number of events in the archive.</p>
+    pub fn event_count(&self) -> i64 {
+        self.event_count
+    }
+    /// <p>The time stamp for the time that the archive was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Archive {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Archive");
@@ -6286,6 +7344,44 @@ pub struct ApiDestination {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ApiDestination {
+    /// <p>The ARN of the API destination.</p>
+    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+        self.api_destination_arn.as_deref()
+    }
+    /// <p>The name of the API destination.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the API destination.</p>
+    pub fn api_destination_state(&self) -> std::option::Option<&crate::model::ApiDestinationState> {
+        self.api_destination_state.as_ref()
+    }
+    /// <p>The ARN of the connection specified for the API destination.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The URL to the endpoint for the API destination.</p>
+    pub fn invocation_endpoint(&self) -> std::option::Option<&str> {
+        self.invocation_endpoint.as_deref()
+    }
+    /// <p>The method to use to connect to the HTTP endpoint.</p>
+    pub fn http_method(&self) -> std::option::Option<&crate::model::ApiDestinationHttpMethod> {
+        self.http_method.as_ref()
+    }
+    /// <p>The maximum number of invocations per second to send to the HTTP endpoint.</p>
+    pub fn invocation_rate_limit_per_second(&self) -> std::option::Option<i32> {
+        self.invocation_rate_limit_per_second
+    }
+    /// <p>A time stamp for the time that the API destination was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the API destination was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ApiDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6475,6 +7571,33 @@ pub struct ConnectionAuthResponseParameters {
     /// the HTTP endpoint.</p>
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
+impl ConnectionAuthResponseParameters {
+    /// <p>The authorization parameters for Basic authorization.</p>
+    pub fn basic_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionBasicAuthResponseParameters> {
+        self.basic_auth_parameters.as_ref()
+    }
+    /// <p>The OAuth parameters to use for authorization.</p>
+    pub fn o_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionOAuthResponseParameters> {
+        self.o_auth_parameters.as_ref()
+    }
+    /// <p>The API Key parameters to use for authorization.</p>
+    pub fn api_key_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionApiKeyAuthResponseParameters> {
+        self.api_key_auth_parameters.as_ref()
+    }
+    /// <p>Additional parameters for the connection that are passed through with every invocation to
+    /// the HTTP endpoint.</p>
+    pub fn invocation_http_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
+        self.invocation_http_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for ConnectionAuthResponseParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionAuthResponseParameters");
@@ -6597,6 +7720,13 @@ pub struct ConnectionApiKeyAuthResponseParameters {
     /// authorization.</p>
     pub api_key_name: std::option::Option<std::string::String>,
 }
+impl ConnectionApiKeyAuthResponseParameters {
+    /// <p>The name of the header to use for the <code>APIKeyValue</code> used for
+    /// authorization.</p>
+    pub fn api_key_name(&self) -> std::option::Option<&str> {
+        self.api_key_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectionApiKeyAuthResponseParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionApiKeyAuthResponseParameters");
@@ -6654,6 +7784,29 @@ pub struct ConnectionOAuthResponseParameters {
     pub http_method: std::option::Option<crate::model::ConnectionOAuthHttpMethod>,
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
+}
+impl ConnectionOAuthResponseParameters {
+    /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about
+    /// the client parameters returned when OAuth is specified as the authorization type.</p>
+    pub fn client_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionOAuthClientResponseParameters> {
+        self.client_parameters.as_ref()
+    }
+    /// <p>The URL to the HTTP endpoint that authorized the request.</p>
+    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
+        self.authorization_endpoint.as_deref()
+    }
+    /// <p>The method used to connect to the HTTP endpoint.</p>
+    pub fn http_method(&self) -> std::option::Option<&crate::model::ConnectionOAuthHttpMethod> {
+        self.http_method.as_ref()
+    }
+    /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
+    pub fn o_auth_http_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
+        self.o_auth_http_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectionOAuthResponseParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6765,6 +7918,12 @@ pub struct ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
     pub client_id: std::option::Option<std::string::String>,
 }
+impl ConnectionOAuthClientResponseParameters {
+    /// <p>The client ID associated with the response to the connection request.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectionOAuthClientResponseParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionOAuthClientResponseParameters");
@@ -6813,6 +7972,12 @@ impl ConnectionOAuthClientResponseParameters {
 pub struct ConnectionBasicAuthResponseParameters {
     /// <p>The user name to use for Basic authorization.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl ConnectionBasicAuthResponseParameters {
+    /// <p>The user name to use for Basic authorization.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for ConnectionBasicAuthResponseParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6876,6 +8041,38 @@ pub struct CreateConnectionAuthRequestParameters {
     /// target of a rule via <code>HttpParameters</code>, including query strings, the parameters
     /// added for the connection take precedence.</p>
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
+}
+impl CreateConnectionAuthRequestParameters {
+    /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic
+    /// authorization parameters to use for the connection.</p>
+    pub fn basic_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateConnectionBasicAuthRequestParameters> {
+        self.basic_auth_parameters.as_ref()
+    }
+    /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth
+    /// authorization parameters to use for the connection.</p>
+    pub fn o_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateConnectionOAuthRequestParameters> {
+        self.o_auth_parameters.as_ref()
+    }
+    /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API
+    /// key authorization parameters to use for the connection.</p>
+    pub fn api_key_auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateConnectionApiKeyAuthRequestParameters> {
+        self.api_key_auth_parameters.as_ref()
+    }
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization
+    /// parameters to use for the connection. Note that if you include additional parameters for the
+    /// target of a rule via <code>HttpParameters</code>, including query strings, the parameters
+    /// added for the connection take precedence.</p>
+    pub fn invocation_http_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
+        self.invocation_http_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7009,6 +8206,16 @@ pub struct CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The value for the API key to use for authorization.</p>
     pub api_key_value: std::option::Option<std::string::String>,
 }
+impl CreateConnectionApiKeyAuthRequestParameters {
+    /// <p>The name of the API key to use for authorization.</p>
+    pub fn api_key_name(&self) -> std::option::Option<&str> {
+        self.api_key_name.as_deref()
+    }
+    /// <p>The value for the API key to use for authorization.</p>
+    pub fn api_key_value(&self) -> std::option::Option<&str> {
+        self.api_key_value.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConnectionApiKeyAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionApiKeyAuthRequestParameters");
@@ -7082,6 +8289,31 @@ pub struct CreateConnectionOAuthRequestParameters {
     /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional
     /// parameters to use for the connection.</p>
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
+}
+impl CreateConnectionOAuthRequestParameters {
+    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the
+    /// client parameters for OAuth authorization.</p>
+    pub fn client_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateConnectionOAuthClientRequestParameters> {
+        self.client_parameters.as_ref()
+    }
+    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
+    /// type.</p>
+    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
+        self.authorization_endpoint.as_deref()
+    }
+    /// <p>The method to use for the authorization request.</p>
+    pub fn http_method(&self) -> std::option::Option<&crate::model::ConnectionOAuthHttpMethod> {
+        self.http_method.as_ref()
+    }
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional
+    /// parameters to use for the connection.</p>
+    pub fn o_auth_http_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
+        self.o_auth_http_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionOAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7199,6 +8431,17 @@ pub struct CreateConnectionOAuthClientRequestParameters {
     /// connection.</p>
     pub client_secret: std::option::Option<std::string::String>,
 }
+impl CreateConnectionOAuthClientRequestParameters {
+    /// <p>The client ID to use for OAuth authorization for the connection.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The client secret associated with the client ID to use for OAuth authorization for the
+    /// connection.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConnectionOAuthClientRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionOAuthClientRequestParameters");
@@ -7266,6 +8509,16 @@ pub struct CreateConnectionBasicAuthRequestParameters {
     pub username: std::option::Option<std::string::String>,
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub password: std::option::Option<std::string::String>,
+}
+impl CreateConnectionBasicAuthRequestParameters {
+    /// <p>The user name to use for Basic authorization.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password associated with the user name to use for Basic authorization.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionBasicAuthRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

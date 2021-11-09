@@ -310,10 +310,7 @@ impl CreateTaskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_task(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -657,7 +654,7 @@ impl DescribeDeviceEc2InstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_device_ec2_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_device_ec2_instances(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2057,10 +2054,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2309,6 +2303,13 @@ pub struct CancelTaskInput {
     /// the <code>ListTasks</code> operation.</p>
     pub task_id: std::option::Option<std::string::String>,
 }
+impl CancelTaskInput {
+    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
+    /// the <code>ListTasks</code> operation.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelTaskInput");
@@ -2327,6 +2328,20 @@ pub struct ListTasksInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTasksInput {
+    /// <p>A structure used to filter the list of tasks.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::TaskState> {
+        self.state.as_ref()
+    }
+    /// <p>The maximum number of tasks per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A pagination token to continue to the next page of tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2355,6 +2370,32 @@ pub struct CreateTaskInput {
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateTaskInput {
+    /// <p>A list of managed device IDs.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::Command> {
+        self.command.as_ref()
+    }
+    /// <p>A description of the task and its targets.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+    /// in different ways, such as by purpose, owner, or environment. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTaskInput");
@@ -2373,6 +2414,12 @@ impl std::fmt::Debug for CreateTaskInput {
 pub struct DescribeTaskInput {
     /// <p>The ID of the task to be described.</p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl DescribeTaskInput {
+    /// <p>The ID of the task to be described.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2395,6 +2442,24 @@ pub struct ListExecutionsInput {
     /// <p>A pagination token to continue to the next page of tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExecutionsInput {
+    /// <p>The ID of the task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>A structure used to filter the tasks by their current state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ExecutionState> {
+        self.state.as_ref()
+    }
+    /// <p>The maximum number of tasks to list per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A pagination token to continue to the next page of tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExecutionsInput");
@@ -2414,6 +2479,16 @@ pub struct DescribeExecutionInput {
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the managed device.</p>
     pub managed_device_id: std::option::Option<std::string::String>,
+}
+impl DescribeExecutionInput {
+    /// <p>The ID of the task that the action is describing.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The ID of the managed device.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2437,6 +2512,24 @@ pub struct ListDeviceResourcesInput {
     /// <p>A pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeviceResourcesInput {
+    /// <p>The ID of the managed device that you are listing the resources of.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
+    /// <p>A structure used to filter the results by type of resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The maximum number of resources per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeviceResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceResourcesInput");
@@ -2456,6 +2549,16 @@ pub struct DescribeDeviceEc2InstancesInput {
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>A list of instance IDs associated with the managed device.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeDeviceEc2InstancesInput {
+    /// <p>The ID of the managed device.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
+    /// <p>A list of instance IDs associated with the managed device.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceEc2InstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2477,6 +2580,20 @@ pub struct ListDevicesInput {
     /// <p>A pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDevicesInput {
+    /// <p>The ID of the job used to order the device.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The maximum number of devices to list per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesInput");
@@ -2493,6 +2610,12 @@ impl std::fmt::Debug for ListDevicesInput {
 pub struct DescribeDeviceInput {
     /// <p>The ID of the device that you are checking the information of.</p>
     pub managed_device_id: std::option::Option<std::string::String>,
+}
+impl DescribeDeviceInput {
+    /// <p>The ID of the device that you are checking the information of.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2511,6 +2634,17 @@ pub struct UntagResourceInput {
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
     /// in different ways, such as by purpose, owner, or environment.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+    /// in different ways, such as by purpose, owner, or environment.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2532,6 +2666,20 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+    /// in different ways, such as by purpose, owner, or environment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2547,6 +2695,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

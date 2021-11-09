@@ -6,6 +6,12 @@ pub struct UpdateWebAclOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     pub next_lock_token: std::option::Option<std::string::String>,
 }
+impl UpdateWebAclOutput {
+    /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+        self.next_lock_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWebAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWebAclOutput");
@@ -57,6 +63,12 @@ pub struct UpdateRuleGroupOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     pub next_lock_token: std::option::Option<std::string::String>,
 }
+impl UpdateRuleGroupOutput {
+    /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+        self.next_lock_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleGroupOutput");
@@ -107,6 +119,12 @@ impl UpdateRuleGroupOutput {
 pub struct UpdateRegexPatternSetOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     pub next_lock_token: std::option::Option<std::string::String>,
+}
+impl UpdateRegexPatternSetOutput {
+    /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+        self.next_lock_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRegexPatternSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -163,6 +181,21 @@ pub struct UpdateManagedRuleSetVersionExpiryDateOutput {
     pub expiry_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub next_lock_token: std::option::Option<std::string::String>,
+}
+impl UpdateManagedRuleSetVersionExpiryDateOutput {
+    /// <p>The version that is set to expire. </p>
+    pub fn expiring_version(&self) -> std::option::Option<&str> {
+        self.expiring_version.as_deref()
+    }
+    /// <p>The time that the version will expire. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    pub fn expiry_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiry_timestamp.as_ref()
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+        self.next_lock_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateManagedRuleSetVersionExpiryDateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -248,6 +281,12 @@ impl UpdateManagedRuleSetVersionExpiryDateOutput {
 pub struct UpdateIpSetOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     pub next_lock_token: std::option::Option<std::string::String>,
+}
+impl UpdateIpSetOutput {
+    /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+        self.next_lock_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateIpSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -390,6 +429,12 @@ pub struct PutManagedRuleSetVersionsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub next_lock_token: std::option::Option<std::string::String>,
 }
+impl PutManagedRuleSetVersionsOutput {
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+        self.next_lock_token.as_deref()
+    }
+}
 impl std::fmt::Debug for PutManagedRuleSetVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutManagedRuleSetVersionsOutput");
@@ -440,6 +485,14 @@ impl PutManagedRuleSetVersionsOutput {
 pub struct PutLoggingConfigurationOutput {
     /// <p></p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+}
+impl PutLoggingConfigurationOutput {
+    /// <p></p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -495,6 +548,18 @@ pub struct ListWebAcLsOutput {
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     pub web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
+}
+impl ListWebAcLsOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p></p>
+    pub fn web_ac_ls(&self) -> std::option::Option<&[crate::model::WebAclSummary]> {
+        self.web_ac_ls.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWebAcLsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -574,6 +639,18 @@ pub struct ListTagsForResourceOutput {
     /// <p>The collection of tagging definitions for the resource. </p>
     pub tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The collection of tagging definitions for the resource. </p>
+    pub fn tag_info_for_resource(&self) -> std::option::Option<&crate::model::TagInfoForResource> {
+        self.tag_info_for_resource.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -645,6 +722,18 @@ pub struct ListRuleGroupsOutput {
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
+}
+impl ListRuleGroupsOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p></p>
+    pub fn rule_groups(&self) -> std::option::Option<&[crate::model::RuleGroupSummary]> {
+        self.rule_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRuleGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -720,6 +809,12 @@ pub struct ListResourcesForWebAclOutput {
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListResourcesForWebAclOutput {
+    /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourcesForWebAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesForWebAclOutput");
@@ -781,6 +876,20 @@ pub struct ListRegexPatternSetsOutput {
     /// <p></p>
     pub regex_pattern_sets:
         std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
+}
+impl ListRegexPatternSetsOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p></p>
+    pub fn regex_pattern_sets(
+        &self,
+    ) -> std::option::Option<&[crate::model::RegexPatternSetSummary]> {
+        self.regex_pattern_sets.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRegexPatternSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -863,6 +972,18 @@ pub struct ListManagedRuleSetsOutput {
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Your managed rule sets. </p>
     pub managed_rule_sets: std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
+}
+impl ListManagedRuleSetsOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Your managed rule sets. </p>
+    pub fn managed_rule_sets(&self) -> std::option::Option<&[crate::model::ManagedRuleSetSummary]> {
+        self.managed_rule_sets.as_deref()
+    }
 }
 impl std::fmt::Debug for ListManagedRuleSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -947,6 +1068,20 @@ pub struct ListLoggingConfigurationsOutput {
     /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
+impl ListLoggingConfigurationsOutput {
+    /// <p></p>
+    pub fn logging_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LoggingConfiguration]> {
+        self.logging_configurations.as_deref()
+    }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLoggingConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLoggingConfigurationsOutput");
@@ -1030,6 +1165,19 @@ pub struct ListIpSetsOutput {
     /// <code>Limit</code> specification for this request.</p>
     pub ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
 }
+impl ListIpSetsOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the
+    /// <code>Limit</code> specification for this request.</p>
+    pub fn ip_sets(&self) -> std::option::Option<&[crate::model::IpSetSummary]> {
+        self.ip_sets.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIpSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIpSetsOutput");
@@ -1109,6 +1257,18 @@ pub struct ListAvailableManagedRuleGroupVersionsOutput {
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The versions that are currently available for the specified managed rule group. </p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
+}
+impl ListAvailableManagedRuleGroupVersionsOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The versions that are currently available for the specified managed rule group. </p>
+    pub fn versions(&self) -> std::option::Option<&[crate::model::ManagedRuleGroupVersion]> {
+        self.versions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAvailableManagedRuleGroupVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1190,6 +1350,20 @@ pub struct ListAvailableManagedRuleGroupsOutput {
     pub managed_rule_groups:
         std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
 }
+impl ListAvailableManagedRuleGroupsOutput {
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p></p>
+    pub fn managed_rule_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::ManagedRuleGroupSummary]> {
+        self.managed_rule_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAvailableManagedRuleGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAvailableManagedRuleGroupsOutput");
@@ -1269,6 +1443,13 @@ pub struct GetWebAclForResourceOutput {
     /// WAF returns a null web ACL.</p>
     pub web_acl: std::option::Option<crate::model::WebAcl>,
 }
+impl GetWebAclForResourceOutput {
+    /// <p>The web ACL that is associated with the resource. If there is no associated resource,
+    /// WAF returns a null web ACL.</p>
+    pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
+        self.web_acl.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWebAclForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWebAclForResourceOutput");
@@ -1321,6 +1502,17 @@ pub struct GetWebAclOutput {
     pub web_acl: std::option::Option<crate::model::WebAcl>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
+}
+impl GetWebAclOutput {
+    /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to
+    /// update this web ACL or create a new one.</p>
+    pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
+        self.web_acl.as_ref()
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn lock_token(&self) -> std::option::Option<&str> {
+        self.lock_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWebAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1396,6 +1588,28 @@ pub struct GetSampledRequestsOutput {
     /// <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
     /// Times are in Coordinated Universal Time (UTC) format.</p>
     pub time_window: std::option::Option<crate::model::TimeWindow>,
+}
+impl GetSampledRequestsOutput {
+    /// <p>A complex type that contains detailed information about each of the requests in the
+    /// sample.</p>
+    pub fn sampled_requests(&self) -> std::option::Option<&[crate::model::SampledHttpRequest]> {
+        self.sampled_requests.as_deref()
+    }
+    /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of
+    /// <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than
+    /// <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource
+    /// received during the specified time range.</p>
+    pub fn population_size(&self) -> i64 {
+        self.population_size
+    }
+    /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
+    /// <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more
+    /// than 5,000 requests during the time range that you specified in the request,
+    /// <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
+    /// Times are in Coordinated Universal Time (UTC) format.</p>
+    pub fn time_window(&self) -> std::option::Option<&crate::model::TimeWindow> {
+        self.time_window.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSampledRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1505,6 +1719,16 @@ pub struct GetRuleGroupOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
+impl GetRuleGroupOutput {
+    /// <p></p>
+    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
+        self.rule_group.as_ref()
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn lock_token(&self) -> std::option::Option<&str> {
+        self.lock_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRuleGroupOutput");
@@ -1571,6 +1795,16 @@ pub struct GetRegexPatternSetOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
+impl GetRegexPatternSetOutput {
+    /// <p></p>
+    pub fn regex_pattern_set(&self) -> std::option::Option<&crate::model::RegexPatternSet> {
+        self.regex_pattern_set.as_ref()
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn lock_token(&self) -> std::option::Option<&str> {
+        self.lock_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRegexPatternSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRegexPatternSetOutput");
@@ -1636,6 +1870,20 @@ pub struct GetRateBasedStatementManagedKeysOutput {
     pub managed_keys_ipv4: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
     /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
     pub managed_keys_ipv6: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
+}
+impl GetRateBasedStatementManagedKeysOutput {
+    /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    pub fn managed_keys_ipv4(
+        &self,
+    ) -> std::option::Option<&crate::model::RateBasedStatementManagedKeysIpSet> {
+        self.managed_keys_ipv4.as_ref()
+    }
+    /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    pub fn managed_keys_ipv6(
+        &self,
+    ) -> std::option::Option<&crate::model::RateBasedStatementManagedKeysIpSet> {
+        self.managed_keys_ipv6.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRateBasedStatementManagedKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1712,6 +1960,12 @@ pub struct GetPermissionPolicyOutput {
     /// <p>The IAM policy that is attached to the specified rule group.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetPermissionPolicyOutput {
+    /// <p>The IAM policy that is attached to the specified rule group.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPermissionPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPermissionPolicyOutput");
@@ -1761,6 +2015,16 @@ pub struct GetManagedRuleSetOutput {
     pub managed_rule_set: std::option::Option<crate::model::ManagedRuleSet>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
+}
+impl GetManagedRuleSetOutput {
+    /// <p>The managed rule set that you requested. </p>
+    pub fn managed_rule_set(&self) -> std::option::Option<&crate::model::ManagedRuleSet> {
+        self.managed_rule_set.as_ref()
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn lock_token(&self) -> std::option::Option<&str> {
+        self.lock_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetManagedRuleSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1826,6 +2090,14 @@ pub struct GetLoggingConfigurationOutput {
     /// <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
+impl GetLoggingConfigurationOutput {
+    /// <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoggingConfigurationOutput");
@@ -1878,6 +2150,16 @@ pub struct GetIpSetOutput {
     pub ip_set: std::option::Option<crate::model::IpSet>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
+}
+impl GetIpSetOutput {
+    /// <p></p>
+    pub fn ip_set(&self) -> std::option::Option<&crate::model::IpSet> {
+        self.ip_set.as_ref()
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn lock_token(&self) -> std::option::Option<&str> {
+        self.lock_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIpSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2003,6 +2285,58 @@ pub struct DescribeManagedRuleGroupOutput {
     pub available_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
     pub consumed_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
+}
+impl DescribeManagedRuleGroupOutput {
+    /// <p>The managed rule group's version. </p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
+    /// to the managed rule group. You can subscribe to the SNS topic to receive notifications when
+    /// the managed rule group is modified, such as for new versions and for version expiration.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL
+    /// capacity units (WCU) to calculate and control the operating resources that are used to run
+    /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule
+    /// type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so
+    /// users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
+    /// ACLs is 1,500. </p>
+    pub fn capacity(&self) -> i64 {
+        self.capacity
+    }
+    /// <p></p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::RuleSummary]> {
+        self.rules.as_deref()
+    }
+    /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
+    /// <ul>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
+    /// <p>
+    /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
+    /// </li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
+    /// <p>
+    /// <code><label namespace>:<label from rule></code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    pub fn label_namespace(&self) -> std::option::Option<&str> {
+        self.label_namespace.as_deref()
+    }
+    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+    pub fn available_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
+        self.available_labels.as_deref()
+    }
+    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+    pub fn consumed_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
+        self.consumed_labels.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeManagedRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2387,6 +2721,12 @@ pub struct DeleteFirewallManagerRuleGroupsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub next_web_acl_lock_token: std::option::Option<std::string::String>,
 }
+impl DeleteFirewallManagerRuleGroupsOutput {
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn next_web_acl_lock_token(&self) -> std::option::Option<&str> {
+        self.next_web_acl_lock_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFirewallManagerRuleGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFirewallManagerRuleGroupsOutput");
@@ -2437,6 +2777,12 @@ impl DeleteFirewallManagerRuleGroupsOutput {
 pub struct CreateWebAclOutput {
     /// <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p>
     pub summary: std::option::Option<crate::model::WebAclSummary>,
+}
+impl CreateWebAclOutput {
+    /// <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::WebAclSummary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateWebAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2489,6 +2835,12 @@ pub struct CreateRuleGroupOutput {
     /// <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
     pub summary: std::option::Option<crate::model::RuleGroupSummary>,
 }
+impl CreateRuleGroupOutput {
+    /// <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::RuleGroupSummary> {
+        self.summary.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRuleGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleGroupOutput");
@@ -2539,6 +2891,12 @@ impl CreateRuleGroupOutput {
 pub struct CreateRegexPatternSetOutput {
     /// <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p>
     pub summary: std::option::Option<crate::model::RegexPatternSetSummary>,
+}
+impl CreateRegexPatternSetOutput {
+    /// <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::RegexPatternSetSummary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRegexPatternSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2591,6 +2949,12 @@ pub struct CreateIpSetOutput {
     /// <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
     pub summary: std::option::Option<crate::model::IpSetSummary>,
 }
+impl CreateIpSetOutput {
+    /// <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::IpSetSummary> {
+        self.summary.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateIpSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIpSetOutput");
@@ -2641,6 +3005,12 @@ impl CreateIpSetOutput {
 pub struct CheckCapacityOutput {
     /// <p>The capacity required by the rules and scope.</p>
     pub capacity: i64,
+}
+impl CheckCapacityOutput {
+    /// <p>The capacity required by the rules and scope.</p>
+    pub fn capacity(&self) -> i64 {
+        self.capacity
+    }
 }
 impl std::fmt::Debug for CheckCapacityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

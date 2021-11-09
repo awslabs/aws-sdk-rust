@@ -2197,6 +2197,16 @@ pub struct ResourceNotFoundException {
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -2295,6 +2305,12 @@ pub struct InvalidParameterException {
     /// <p>The name of the invalid parameter.</p>
     pub parameter_name: std::option::Option<std::string::String>,
 }
+impl InvalidParameterException {
+    /// <p>The name of the invalid parameter.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidParameterException");
@@ -2378,6 +2394,16 @@ pub struct ResourcePreconditionNotMetException {
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl ResourcePreconditionNotMetException {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourcePreconditionNotMetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2479,6 +2505,16 @@ pub struct ResourceInUseException {
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl ResourceInUseException {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInUseException");
@@ -2579,6 +2615,16 @@ pub struct ResourceAlreadyExistsException {
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl ResourceAlreadyExistsException {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
@@ -2676,6 +2722,12 @@ pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl LimitExceededException {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -589,10 +589,7 @@ impl AddResourcePermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_resource_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -892,10 +889,7 @@ impl CreateCommentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_comment(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_comment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1149,10 +1143,9 @@ impl CreateCustomMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_metadata(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1350,10 +1343,7 @@ impl CreateFolderInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_folder(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_folder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1577,10 +1567,7 @@ impl CreateLabelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_labels(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_labels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1795,7 +1782,7 @@ impl CreateNotificationSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_notification_subscription(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_notification_subscription(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2072,10 +2059,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8134,7 +8118,7 @@ impl InitiateDocumentVersionUploadInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_initiate_document_version_upload(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_initiate_document_version_upload(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8817,10 +8801,8 @@ impl UpdateDocumentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_document(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9069,10 +9051,7 @@ impl UpdateDocumentVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_document_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9315,10 +9294,7 @@ impl UpdateFolderInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_folder(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_folder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9607,10 +9583,7 @@ impl UpdateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9695,6 +9668,46 @@ pub struct UpdateUserInput {
     /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
     pub grant_poweruser_privileges: std::option::Option<crate::model::BooleanEnumType>,
 }
+impl UpdateUserInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The given name of the user.</p>
+    pub fn given_name(&self) -> std::option::Option<&str> {
+        self.given_name.as_deref()
+    }
+    /// <p>The surname of the user.</p>
+    pub fn surname(&self) -> std::option::Option<&str> {
+        self.surname.as_deref()
+    }
+    /// <p>The type of the user.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The amount of storage for the user.</p>
+    pub fn storage_rule(&self) -> std::option::Option<&crate::model::StorageRuleType> {
+        self.storage_rule.as_ref()
+    }
+    /// <p>The time zone ID of the user.</p>
+    pub fn time_zone_id(&self) -> std::option::Option<&str> {
+        self.time_zone_id.as_deref()
+    }
+    /// <p>The locale of the user.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::LocaleType> {
+        self.locale.as_ref()
+    }
+    /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    pub fn grant_poweruser_privileges(
+        &self,
+    ) -> std::option::Option<&crate::model::BooleanEnumType> {
+        self.grant_poweruser_privileges.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserInput");
@@ -9730,6 +9743,29 @@ pub struct UpdateFolderInput {
     /// the API.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
+impl UpdateFolderInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The name of the folder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the parent folder.</p>
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+        self.parent_folder_id.as_deref()
+    }
+    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
+    /// the API.</p>
+    pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
+        self.resource_state.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFolderInput");
@@ -9754,6 +9790,24 @@ pub struct UpdateDocumentVersionInput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The status of the version.</p>
     pub version_status: std::option::Option<crate::model::DocumentVersionStatus>,
+}
+impl UpdateDocumentVersionInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The version ID of the document.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The status of the version.</p>
+    pub fn version_status(&self) -> std::option::Option<&crate::model::DocumentVersionStatus> {
+        self.version_status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDocumentVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9782,6 +9836,29 @@ pub struct UpdateDocumentInput {
     /// supported.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
+impl UpdateDocumentInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The name of the document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the parent folder.</p>
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+        self.parent_folder_id.as_deref()
+    }
+    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
+    /// supported.</p>
+    pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
+        self.resource_state.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentInput");
@@ -9807,6 +9884,24 @@ pub struct RemoveResourcePermissionInput {
     /// <p>The principal type of the resource.</p>
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
+impl RemoveResourcePermissionInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The principal ID of the resource.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The principal type of the resource.</p>
+    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.principal_type.as_ref()
+    }
+}
 impl std::fmt::Debug for RemoveResourcePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveResourcePermissionInput");
@@ -9826,6 +9921,16 @@ pub struct RemoveAllResourcePermissionsInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl RemoveAllResourcePermissionsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveAllResourcePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9856,6 +9961,40 @@ pub struct InitiateDocumentVersionUploadInput {
     pub document_size_in_bytes: std::option::Option<i64>,
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
+}
+impl InitiateDocumentVersionUploadInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The timestamp when the content of the document was originally created.</p>
+    pub fn content_created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.content_created_timestamp.as_ref()
+    }
+    /// <p>The timestamp when the content of the document was modified.</p>
+    pub fn content_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.content_modified_timestamp.as_ref()
+    }
+    /// <p>The content type of the document.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The size of the document, in bytes.</p>
+    pub fn document_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.document_size_in_bytes
+    }
+    /// <p>The ID of the parent folder.</p>
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+        self.parent_folder_id.as_deref()
+    }
 }
 impl std::fmt::Debug for InitiateDocumentVersionUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9891,6 +10030,29 @@ pub struct GetResourcesInput {
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl GetResourcesInput {
+    /// <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The user ID for the resource collection. This is a required field for accessing the
+    /// API operation using IAM credentials.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The collection type.</p>
+    pub fn collection_type(&self) -> std::option::Option<&crate::model::ResourceCollectionType> {
+        self.collection_type.as_ref()
+    }
+    /// <p>The maximum number of resources to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcesInput");
@@ -9919,6 +10081,29 @@ pub struct GetFolderPathInput {
     /// <p>This value is not supported.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl GetFolderPathInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The maximum number of levels in the hierarchy to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
+    /// folders.</p>
+    pub fn fields(&self) -> std::option::Option<&str> {
+        self.fields.as_deref()
+    }
+    /// <p>This value is not supported.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFolderPathInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFolderPathInput");
@@ -9941,6 +10126,20 @@ pub struct GetFolderInput {
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>Set to TRUE to include custom metadata in the response.</p>
     pub include_custom_metadata: bool,
+}
+impl GetFolderInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>Set to TRUE to include custom metadata in the response.</p>
+    pub fn include_custom_metadata(&self) -> bool {
+        self.include_custom_metadata
+    }
 }
 impl std::fmt::Debug for GetFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9967,6 +10166,29 @@ pub struct GetDocumentVersionInput {
     pub fields: std::option::Option<std::string::String>,
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     pub include_custom_metadata: bool,
+}
+impl GetDocumentVersionInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The version ID of the document.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
+    /// document.</p>
+    pub fn fields(&self) -> std::option::Option<&str> {
+        self.fields.as_deref()
+    }
+    /// <p>Set this to TRUE to include custom metadata in the response.</p>
+    pub fn include_custom_metadata(&self) -> bool {
+        self.include_custom_metadata
+    }
 }
 impl std::fmt::Debug for GetDocumentVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9996,6 +10218,29 @@ pub struct GetDocumentPathInput {
     /// <p>This value is not supported.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl GetDocumentPathInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The maximum number of levels in the hierarchy to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
+    /// the parent folders.</p>
+    pub fn fields(&self) -> std::option::Option<&str> {
+        self.fields.as_deref()
+    }
+    /// <p>This value is not supported.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDocumentPathInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentPathInput");
@@ -10019,6 +10264,20 @@ pub struct GetDocumentInput {
     /// <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
     pub include_custom_metadata: bool,
 }
+impl GetDocumentInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
+    pub fn include_custom_metadata(&self) -> bool {
+        self.include_custom_metadata
+    }
+}
 impl std::fmt::Debug for GetDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentInput");
@@ -10035,6 +10294,12 @@ impl std::fmt::Debug for GetDocumentInput {
 pub struct GetCurrentUserInput {
     /// <p>Amazon WorkDocs authentication token.</p>
     pub authentication_token: std::option::Option<std::string::String>,
+}
+impl GetCurrentUserInput {
+    /// <p>Amazon WorkDocs authentication token.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCurrentUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10071,6 +10336,50 @@ pub struct DescribeUsersInput {
     /// storage quota and utilization information.</p>
     pub fields: std::option::Option<std::string::String>,
 }
+impl DescribeUsersInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The IDs of the users.</p>
+    pub fn user_ids(&self) -> std::option::Option<&str> {
+        self.user_ids.as_deref()
+    }
+    /// <p>A query to filter users by user name.</p>
+    pub fn query(&self) -> std::option::Option<&str> {
+        self.query.as_deref()
+    }
+    /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
+    pub fn include(&self) -> std::option::Option<&crate::model::UserFilterType> {
+        self.include.as_ref()
+    }
+    /// <p>The order for the results.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::OrderType> {
+        self.order.as_ref()
+    }
+    /// <p>The sorting criteria.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::UserSortType> {
+        self.sort.as_ref()
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous
+    /// call.)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
+    /// storage quota and utilization information.</p>
+    pub fn fields(&self) -> std::option::Option<&str> {
+        self.fields.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsersInput");
@@ -10100,6 +10409,21 @@ pub struct DescribeRootFoldersInput {
     /// call.)</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeRootFoldersInput {
+    /// <p>Amazon WorkDocs authentication token.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous
+    /// call.)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRootFoldersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRootFoldersInput");
@@ -10126,6 +10450,29 @@ pub struct DescribeResourcePermissionsInput {
     /// call)</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeResourcePermissionsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ID of the principal to filter permissions by.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous
+    /// call)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeResourcePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourcePermissionsInput");
@@ -10149,6 +10496,21 @@ pub struct DescribeNotificationSubscriptionsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
+}
+impl DescribeNotificationSubscriptionsInput {
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous
+    /// call.)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for DescribeNotificationSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10175,6 +10537,29 @@ pub struct DescribeGroupsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
+}
+impl DescribeGroupsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>A query to describe groups by group name.</p>
+    pub fn search_query(&self) -> std::option::Option<&str> {
+        self.search_query.as_deref()
+    }
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous
+    /// call.)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for DescribeGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10211,6 +10596,42 @@ pub struct DescribeFolderContentsInput {
     /// documents.</p>
     pub include: std::option::Option<std::string::String>,
 }
+impl DescribeFolderContentsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The sorting criteria.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::ResourceSortType> {
+        self.sort.as_ref()
+    }
+    /// <p>The order for the contents of the folder.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::OrderType> {
+        self.order.as_ref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The marker for the next set of results. This marker was received from a previous
+    /// call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The type of items.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FolderContentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The contents to include. Specify "INITIALIZED" to include initialized
+    /// documents.</p>
+    pub fn include(&self) -> std::option::Option<&str> {
+        self.include.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFolderContentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFolderContentsInput");
@@ -10246,6 +10667,35 @@ pub struct DescribeDocumentVersionsInput {
     /// document.</p>
     pub fields: std::option::Option<std::string::String>,
 }
+impl DescribeDocumentVersionsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous
+    /// call.)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of versions to return with this call.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
+    /// versions.</p>
+    pub fn include(&self) -> std::option::Option<&str> {
+        self.include.as_deref()
+    }
+    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
+    /// document.</p>
+    pub fn fields(&self) -> std::option::Option<&str> {
+        self.fields.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDocumentVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDocumentVersionsInput");
@@ -10274,6 +10724,29 @@ pub struct DescribeCommentsInput {
     /// <p>The marker for the next set of results. This marker was received from a previous
     /// call.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeCommentsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The ID of the document version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The marker for the next set of results. This marker was received from a previous
+    /// call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCommentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10321,6 +10794,57 @@ pub struct DescribeActivitiesInput {
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeActivitiesInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The timestamp that determines the starting time of the activities. The response
+    /// includes the activities performed after the specified timestamp.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The timestamp that determines the end time of the activities. The response includes
+    /// the activities performed before the specified timestamp.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The ID of the organization. This is a mandatory parameter when using administrative
+    /// API (SigV4) requests.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>Specifies which activity types to include in the response. If this field is left
+    /// empty, all activity types are returned.</p>
+    pub fn activity_types(&self) -> std::option::Option<&str> {
+        self.activity_types.as_deref()
+    }
+    /// <p>The document or folder ID for which to describe activity types.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ID of the user who performed the action. The response includes activities
+    /// pertaining to this user. This is an optional parameter and is only applicable for
+    /// administrative API (SigV4) requests.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>Includes indirect activities. An indirect activity results from a direct activity
+    /// performed on a parent resource. For example, sharing a parent folder (the direct
+    /// activity) shares all of the subfolders and documents within the parent folder (the
+    /// indirect activity).</p>
+    pub fn include_indirect_activities(&self) -> bool {
+        self.include_indirect_activities
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeActivitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeActivitiesInput");
@@ -10351,6 +10875,17 @@ pub struct DeleteUserInput {
     /// <p>The ID of the user.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl DeleteUserInput {
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using
+    /// administrative API actions, as in accessing the API using AWS credentials.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
@@ -10368,6 +10903,16 @@ pub struct DeleteNotificationSubscriptionInput {
     pub subscription_id: std::option::Option<std::string::String>,
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl DeleteNotificationSubscriptionInput {
+    /// <p>The ID of the subscription.</p>
+    pub fn subscription_id(&self) -> std::option::Option<&str> {
+        self.subscription_id.as_deref()
+    }
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteNotificationSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10391,6 +10936,24 @@ pub struct DeleteLabelsInput {
     /// <p>Flag to request removal of all labels from the specified resource.</p>
     pub delete_all: bool,
 }
+impl DeleteLabelsInput {
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>List of labels to delete from the resource.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>Flag to request removal of all labels from the specified resource.</p>
+    pub fn delete_all(&self) -> bool {
+        self.delete_all
+    }
+}
 impl std::fmt::Debug for DeleteLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLabelsInput");
@@ -10411,6 +10974,16 @@ pub struct DeleteFolderContentsInput {
     /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
 }
+impl DeleteFolderContentsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFolderContentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFolderContentsInput");
@@ -10429,6 +11002,16 @@ pub struct DeleteFolderInput {
     /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
 }
+impl DeleteFolderInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFolderInput");
@@ -10446,6 +11029,16 @@ pub struct DeleteDocumentInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
     pub document_id: std::option::Option<std::string::String>,
+}
+impl DeleteDocumentInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10473,6 +11066,30 @@ pub struct DeleteCustomMetadataInput {
     /// resource.</p>
     pub delete_all: bool,
 }
+impl DeleteCustomMetadataInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the resource, either a document or folder.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ID of the version, if the custom metadata is being deleted from a document
+    /// version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>List of properties to remove.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+    /// <p>Flag to indicate removal of all custom metadata properties from the specified
+    /// resource.</p>
+    pub fn delete_all(&self) -> bool {
+        self.delete_all
+    }
+}
 impl std::fmt::Debug for DeleteCustomMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCustomMetadataInput");
@@ -10498,6 +11115,24 @@ pub struct DeleteCommentInput {
     /// <p>The ID of the comment.</p>
     pub comment_id: std::option::Option<std::string::String>,
 }
+impl DeleteCommentInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The ID of the document version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The ID of the comment.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCommentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCommentInput");
@@ -10517,6 +11152,16 @@ pub struct DeactivateUserInput {
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
+}
+impl DeactivateUserInput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeactivateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10550,6 +11195,44 @@ pub struct CreateUserInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
 }
+impl CreateUserInput {
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The login name of the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The email address of the user.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The given name of the user.</p>
+    pub fn given_name(&self) -> std::option::Option<&str> {
+        self.given_name.as_deref()
+    }
+    /// <p>The surname of the user.</p>
+    pub fn surname(&self) -> std::option::Option<&str> {
+        self.surname.as_deref()
+    }
+    /// <p>The password of the user.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The time zone ID of the user.</p>
+    pub fn time_zone_id(&self) -> std::option::Option<&str> {
+        self.time_zone_id.as_deref()
+    }
+    /// <p>The amount of storage for the user.</p>
+    pub fn storage_rule(&self) -> std::option::Option<&crate::model::StorageRuleType> {
+        self.storage_rule.as_ref()
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
@@ -10581,6 +11264,26 @@ pub struct CreateNotificationSubscriptionInput {
     /// <p>The notification type.</p>
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
 }
+impl CreateNotificationSubscriptionInput {
+    /// <p>The ID of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
+    /// is a URL that begins with <code>https</code>.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
+    /// messages using HTTPS POST.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::SubscriptionProtocolType> {
+        self.protocol.as_ref()
+    }
+    /// <p>The notification type.</p>
+    pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
+        self.subscription_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateNotificationSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNotificationSubscriptionInput");
@@ -10603,6 +11306,20 @@ pub struct CreateLabelsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
 }
+impl CreateLabelsInput {
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>List of labels to add to the resource.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLabelsInput");
@@ -10623,6 +11340,20 @@ pub struct CreateFolderInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
+}
+impl CreateFolderInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The name of the new folder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the parent folder.</p>
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+        self.parent_folder_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10648,6 +11379,28 @@ pub struct CreateCustomMetadataInput {
     /// <p>Custom metadata in the form of name-value pairs.</p>
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateCustomMetadataInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ID of the version, if the custom metadata is being added to a document
+    /// version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Custom metadata in the form of name-value pairs.</p>
+    pub fn custom_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCustomMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10684,6 +11437,43 @@ pub struct CreateCommentInput {
     /// the comment is created.</p>
     pub notify_collaborators: bool,
 }
+impl CreateCommentInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The ID of the document version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The ID of the parent comment.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The ID of the root comment in the thread.</p>
+    pub fn thread_id(&self) -> std::option::Option<&str> {
+        self.thread_id.as_deref()
+    }
+    /// <p>The text of the comment.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
+    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
+    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    pub fn visibility(&self) -> std::option::Option<&crate::model::CommentVisibilityType> {
+        self.visibility.as_ref()
+    }
+    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
+    /// the comment is created.</p>
+    pub fn notify_collaborators(&self) -> bool {
+        self.notify_collaborators
+    }
+}
 impl std::fmt::Debug for CreateCommentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCommentInput");
@@ -10712,6 +11502,24 @@ pub struct AddResourcePermissionsInput {
     /// <p>The notification options.</p>
     pub notification_options: std::option::Option<crate::model::NotificationOptions>,
 }
+impl AddResourcePermissionsInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The users, groups, or organization being granted permission.</p>
+    pub fn principals(&self) -> std::option::Option<&[crate::model::SharePrincipal]> {
+        self.principals.as_deref()
+    }
+    /// <p>The notification options.</p>
+    pub fn notification_options(&self) -> std::option::Option<&crate::model::NotificationOptions> {
+        self.notification_options.as_ref()
+    }
+}
 impl std::fmt::Debug for AddResourcePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddResourcePermissionsInput");
@@ -10732,6 +11540,16 @@ pub struct ActivateUserInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
 }
+impl ActivateUserInput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ActivateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivateUserInput");
@@ -10751,6 +11569,20 @@ pub struct AbortDocumentVersionUploadInput {
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The ID of the version.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl AbortDocumentVersionUploadInput {
+    /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
+        self.authentication_token.as_deref()
+    }
+    /// <p>The ID of the document.</p>
+    pub fn document_id(&self) -> std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The ID of the version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AbortDocumentVersionUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

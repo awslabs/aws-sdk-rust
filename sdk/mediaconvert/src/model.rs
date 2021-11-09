@@ -26,6 +26,52 @@ pub struct Queue {
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl Queue {
+    /// An identifier for this resource that is unique within all of AWS.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The timestamp in epoch seconds for when you created the queue.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// An optional description that you create for each queue.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The timestamp in epoch seconds for when you most recently updated the queue.
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// A name that you create for each queue. Each name must be unique within your account.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// The estimated number of jobs with a PROGRESSING status.
+    pub fn progressing_jobs_count(&self) -> i32 {
+        self.progressing_jobs_count
+    }
+    /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
+    pub fn reservation_plan(&self) -> std::option::Option<&crate::model::ReservationPlan> {
+        self.reservation_plan.as_ref()
+    }
+    /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
+    pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
+        self.status.as_ref()
+    }
+    /// The estimated number of jobs with a SUBMITTED status.
+    pub fn submitted_jobs_count(&self) -> i32 {
+        self.submitted_jobs_count
+    }
+    /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for Queue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Queue");
@@ -335,6 +381,32 @@ pub struct ReservationPlan {
     pub reserved_slots: i32,
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
     pub status: std::option::Option<crate::model::ReservationPlanStatus>,
+}
+impl ReservationPlan {
+    /// The length of the term of your reserved queue pricing plan commitment.
+    pub fn commitment(&self) -> std::option::Option<&crate::model::Commitment> {
+        self.commitment.as_ref()
+    }
+    /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expires_at.as_ref()
+    }
+    /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
+    pub fn purchased_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.purchased_at.as_ref()
+    }
+    /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
+    pub fn renewal_type(&self) -> std::option::Option<&crate::model::RenewalType> {
+        self.renewal_type.as_ref()
+    }
+    /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
+    pub fn reserved_slots(&self) -> i32 {
+        self.reserved_slots
+    }
+    /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
+    pub fn status(&self) -> std::option::Option<&crate::model::ReservationPlanStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ReservationPlan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -684,6 +756,20 @@ pub struct ReservationPlanSettings {
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. You can't decrease the number of RTS in your reserved queue. You can increase the number of RTS by extending your existing commitment with a new 12-month commitment for the larger number. The new commitment begins when you purchase the additional capacity. You can't cancel your commitment or revert to your original commitment after you increase the capacity.
     pub reserved_slots: i32,
 }
+impl ReservationPlanSettings {
+    /// The length of the term of your reserved queue pricing plan commitment.
+    pub fn commitment(&self) -> std::option::Option<&crate::model::Commitment> {
+        self.commitment.as_ref()
+    }
+    /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. When your term is auto renewed, you extend your commitment by 12 months from the auto renew date. You can cancel this commitment.
+    pub fn renewal_type(&self) -> std::option::Option<&crate::model::RenewalType> {
+        self.renewal_type.as_ref()
+    }
+    /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. You can't decrease the number of RTS in your reserved queue. You can increase the number of RTS by extending your existing commitment with a new 12-month commitment for the larger number. The new commitment begins when you purchase the additional capacity. You can't cancel your commitment or revert to your original commitment after you increase the capacity.
+    pub fn reserved_slots(&self) -> i32 {
+        self.reserved_slots
+    }
+}
 impl std::fmt::Debug for ReservationPlanSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReservationPlanSettings");
@@ -777,6 +863,40 @@ pub struct Preset {
     pub settings: std::option::Option<crate::model::PresetSettings>,
     /// A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the user.
     pub r#type: std::option::Option<crate::model::Type>,
+}
+impl Preset {
+    /// An identifier for this resource that is unique within all of AWS.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// An optional category you create to organize your presets.
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// The timestamp in epoch seconds for preset creation.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// An optional description you create for each preset.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The timestamp in epoch seconds when the preset was last updated.
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// A name you create for each preset. Each name must be unique within your account.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Settings for preset
+    pub fn settings(&self) -> std::option::Option<&crate::model::PresetSettings> {
+        self.settings.as_ref()
+    }
+    /// A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the user.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Preset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -933,6 +1053,26 @@ pub struct PresetSettings {
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
     pub video_description: std::option::Option<crate::model::VideoDescription>,
 }
+impl PresetSettings {
+    /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+    pub fn audio_descriptions(&self) -> std::option::Option<&[crate::model::AudioDescription]> {
+        self.audio_descriptions.as_deref()
+    }
+    /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
+    pub fn caption_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CaptionDescriptionPreset]> {
+        self.caption_descriptions.as_deref()
+    }
+    /// Container specific settings.
+    pub fn container_settings(&self) -> std::option::Option<&crate::model::ContainerSettings> {
+        self.container_settings.as_ref()
+    }
+    /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
+    pub fn video_description(&self) -> std::option::Option<&crate::model::VideoDescription> {
+        self.video_description.as_ref()
+    }
+}
 impl std::fmt::Debug for PresetSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PresetSettings");
@@ -1079,6 +1219,68 @@ pub struct VideoDescription {
     pub video_preprocessors: std::option::Option<crate::model::VideoPreprocessor>,
     /// Use Width (Width) to define the video resolution width, in pixels, for this output. If you don't provide a value here, the service will use the input width.
     pub width: i32,
+}
+impl VideoDescription {
+    /// This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
+    pub fn afd_signaling(&self) -> std::option::Option<&crate::model::AfdSignaling> {
+        self.afd_signaling.as_ref()
+    }
+    /// The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+    pub fn anti_alias(&self) -> std::option::Option<&crate::model::AntiAlias> {
+        self.anti_alias.as_ref()
+    }
+    /// Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    pub fn codec_settings(&self) -> std::option::Option<&crate::model::VideoCodecSettings> {
+        self.codec_settings.as_ref()
+    }
+    /// Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
+    pub fn color_metadata(&self) -> std::option::Option<&crate::model::ColorMetadata> {
+        self.color_metadata.as_ref()
+    }
+    /// Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
+    pub fn crop(&self) -> std::option::Option<&crate::model::Rectangle> {
+        self.crop.as_ref()
+    }
+    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled.
+    pub fn drop_frame_timecode(&self) -> std::option::Option<&crate::model::DropFrameTimecode> {
+        self.drop_frame_timecode.as_ref()
+    }
+    /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all  frames of this video output.
+    pub fn fixed_afd(&self) -> i32 {
+        self.fixed_afd
+    }
+    /// Use the Height (Height) setting to define the video resolution height for this output. Specify in pixels. If you don't provide a value here, the service will use the input height.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Use Selection placement (position) to define the video area in your output frame. The area outside of the rectangle that you specify here is black.
+    pub fn position(&self) -> std::option::Option<&crate::model::Rectangle> {
+        self.position.as_ref()
+    }
+    /// Use Respond to AFD (RespondToAfd) to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to (NONE). A preferred implementation of this workflow is to set RespondToAfd to (NONE) and set AfdSignaling to (AUTO). * Choose None to remove all input AFD values from this output.
+    pub fn respond_to_afd(&self) -> std::option::Option<&crate::model::RespondToAfd> {
+        self.respond_to_afd.as_ref()
+    }
+    /// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement (position) in this output.
+    pub fn scaling_behavior(&self) -> std::option::Option<&crate::model::ScalingBehavior> {
+        self.scaling_behavior.as_ref()
+    }
+    /// Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
+    pub fn sharpness(&self) -> i32 {
+        self.sharpness
+    }
+    /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
+    pub fn timecode_insertion(&self) -> std::option::Option<&crate::model::VideoTimecodeInsertion> {
+        self.timecode_insertion.as_ref()
+    }
+    /// Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default.
+    pub fn video_preprocessors(&self) -> std::option::Option<&crate::model::VideoPreprocessor> {
+        self.video_preprocessors.as_ref()
+    }
+    /// Use Width (Width) to define the video resolution width, in pixels, for this output. If you don't provide a value here, the service will use the input width.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
 }
 impl std::fmt::Debug for VideoDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1351,6 +1553,40 @@ pub struct VideoPreprocessor {
     /// Settings for burning the output timecode and specified prefix into the output.
     pub timecode_burnin: std::option::Option<crate::model::TimecodeBurnin>,
 }
+impl VideoPreprocessor {
+    /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
+    pub fn color_corrector(&self) -> std::option::Option<&crate::model::ColorCorrector> {
+        self.color_corrector.as_ref()
+    }
+    /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
+    pub fn deinterlacer(&self) -> std::option::Option<&crate::model::Deinterlacer> {
+        self.deinterlacer.as_ref()
+    }
+    /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+    pub fn dolby_vision(&self) -> std::option::Option<&crate::model::DolbyVision> {
+        self.dolby_vision.as_ref()
+    }
+    /// Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+    pub fn hdr10_plus(&self) -> std::option::Option<&crate::model::Hdr10Plus> {
+        self.hdr10_plus.as_ref()
+    }
+    /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
+    pub fn image_inserter(&self) -> std::option::Option<&crate::model::ImageInserter> {
+        self.image_inserter.as_ref()
+    }
+    /// Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default.
+    pub fn noise_reducer(&self) -> std::option::Option<&crate::model::NoiseReducer> {
+        self.noise_reducer.as_ref()
+    }
+    /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
+    pub fn partner_watermarking(&self) -> std::option::Option<&crate::model::PartnerWatermarking> {
+        self.partner_watermarking.as_ref()
+    }
+    /// Settings for burning the output timecode and specified prefix into the output.
+    pub fn timecode_burnin(&self) -> std::option::Option<&crate::model::TimecodeBurnin> {
+        self.timecode_burnin.as_ref()
+    }
+}
 impl std::fmt::Debug for VideoPreprocessor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VideoPreprocessor");
@@ -1517,6 +1753,20 @@ pub struct TimecodeBurnin {
     pub position: std::option::Option<crate::model::TimecodeBurninPosition>,
     /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     pub prefix: std::option::Option<std::string::String>,
+}
+impl TimecodeBurnin {
+    /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+    pub fn font_size(&self) -> i32 {
+        self.font_size
+    }
+    /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
+    pub fn position(&self) -> std::option::Option<&crate::model::TimecodeBurninPosition> {
+        self.position.as_ref()
+    }
+    /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for TimecodeBurnin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1689,6 +1939,14 @@ pub struct PartnerWatermarking {
     pub nexguard_file_marker_settings:
         std::option::Option<crate::model::NexGuardFileMarkerSettings>,
 }
+impl PartnerWatermarking {
+    /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
+    pub fn nexguard_file_marker_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::NexGuardFileMarkerSettings> {
+        self.nexguard_file_marker_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for PartnerWatermarking {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PartnerWatermarking");
@@ -1752,6 +2010,24 @@ pub struct NexGuardFileMarkerSettings {
     pub preset: std::option::Option<std::string::String>,
     /// Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
     pub strength: std::option::Option<crate::model::WatermarkingStrength>,
+}
+impl NexGuardFileMarkerSettings {
+    /// Use the base64 license string that Nagra provides you. Enter it directly in your JSON job specification or in the console. Required when you include Nagra NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+    pub fn license(&self) -> std::option::Option<&str> {
+        self.license.as_deref()
+    }
+    /// Specify the payload ID that you want associated with this output. Valid values vary depending on your Nagra NexGuard forensic watermarking workflow. Required when you include Nagra NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job. For PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You must generate a unique ID for each asset you watermark, and keep a record of which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep track of the relationship between output files and your IDs. For OTT Streaming, create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up two output groups. For one output group, set the value of Payload ID (payload) to 0 in every output. For the other output group, set Payload ID (payload) to 1 in every output.
+    pub fn payload(&self) -> i32 {
+        self.payload
+    }
+    /// Enter one of the watermarking preset strings that Nagra provides you. Required when you include Nagra NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+    pub fn preset(&self) -> std::option::Option<&str> {
+        self.preset.as_deref()
+    }
+    /// Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
+    pub fn strength(&self) -> std::option::Option<&crate::model::WatermarkingStrength> {
+        self.strength.as_ref()
+    }
 }
 impl std::fmt::Debug for NexGuardFileMarkerSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1918,6 +2194,30 @@ pub struct NoiseReducer {
     pub temporal_filter_settings:
         std::option::Option<crate::model::NoiseReducerTemporalFilterSettings>,
 }
+impl NoiseReducer {
+    /// Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
+    pub fn filter(&self) -> std::option::Option<&crate::model::NoiseReducerFilter> {
+        self.filter.as_ref()
+    }
+    /// Settings for a noise reducer filter
+    pub fn filter_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::NoiseReducerFilterSettings> {
+        self.filter_settings.as_ref()
+    }
+    /// Noise reducer filter settings for spatial filter.
+    pub fn spatial_filter_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::NoiseReducerSpatialFilterSettings> {
+        self.spatial_filter_settings.as_ref()
+    }
+    /// Noise reducer filter settings for temporal filter.
+    pub fn temporal_filter_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::NoiseReducerTemporalFilterSettings> {
+        self.temporal_filter_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for NoiseReducer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoiseReducer");
@@ -2031,6 +2331,26 @@ pub struct NoiseReducerTemporalFilterSettings {
     pub speed: i32,
     /// Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of complexity reduction
     pub strength: i32,
+}
+impl NoiseReducerTemporalFilterSettings {
+    /// Use Aggressive mode for content that has complex motion. Higher values produce stronger temporal filtering. This filters highly complex scenes more aggressively and creates better VQ for low bitrate outputs.
+    pub fn aggressive_mode(&self) -> i32 {
+        self.aggressive_mode
+    }
+    /// Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+    pub fn post_temporal_sharpening(
+        &self,
+    ) -> std::option::Option<&crate::model::NoiseFilterPostTemporalSharpening> {
+        self.post_temporal_sharpening.as_ref()
+    }
+    /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
+    pub fn speed(&self) -> i32 {
+        self.speed
+    }
+    /// Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of complexity reduction
+    pub fn strength(&self) -> i32 {
+        self.strength
+    }
 }
 impl std::fmt::Debug for NoiseReducerTemporalFilterSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2189,6 +2509,20 @@ pub struct NoiseReducerSpatialFilterSettings {
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     pub strength: i32,
 }
+impl NoiseReducerSpatialFilterSettings {
+    /// Specify strength of post noise reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum strength.
+    pub fn post_filter_sharpen_strength(&self) -> i32 {
+        self.post_filter_sharpen_strength
+    }
+    /// The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being the nominal value.
+    pub fn speed(&self) -> i32 {
+        self.speed
+    }
+    /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
+    pub fn strength(&self) -> i32 {
+        self.strength
+    }
+}
 impl std::fmt::Debug for NoiseReducerSpatialFilterSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoiseReducerSpatialFilterSettings");
@@ -2265,6 +2599,12 @@ impl NoiseReducerSpatialFilterSettings {
 pub struct NoiseReducerFilterSettings {
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     pub strength: i32,
+}
+impl NoiseReducerFilterSettings {
+    /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
+    pub fn strength(&self) -> i32 {
+        self.strength
+    }
 }
 impl std::fmt::Debug for NoiseReducerFilterSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2402,6 +2742,12 @@ pub struct ImageInserter {
     /// Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
     pub insertable_images: std::option::Option<std::vec::Vec<crate::model::InsertableImage>>,
 }
+impl ImageInserter {
+    /// Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
+    pub fn insertable_images(&self) -> std::option::Option<&[crate::model::InsertableImage]> {
+        self.insertable_images.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageInserter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageInserter");
@@ -2482,6 +2828,52 @@ pub struct InsertableImage {
     pub start_time: std::option::Option<std::string::String>,
     /// Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting blank.
     pub width: i32,
+}
+impl InsertableImage {
+    /// Specify the time, in milliseconds, for the image to remain on the output video. This duration includes fade-in time but not fade-out time.
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// Specify the length of time, in milliseconds, between the Start time that you specify for the image insertion and the time that the image appears at full opacity. Full opacity is the level that you specify for the opacity setting. If you don't specify a value for Fade-in, the image will appear abruptly at the overlay start time.
+    pub fn fade_in(&self) -> i32 {
+        self.fade_in
+    }
+    /// Specify the length of time, in milliseconds, between the end of the time that you have specified for the image overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a value for Fade-out, the image will disappear abruptly at the end of the inserted image duration.
+    pub fn fade_out(&self) -> i32 {
+        self.fade_out
+    }
+    /// Specify the height of the inserted image in pixels. If you specify a value that's larger than the video resolution height, the service will crop your overlaid image to fit. To use the native height of the image, keep this setting blank.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+    pub fn image_inserter_input(&self) -> std::option::Option<&str> {
+        self.image_inserter_input.as_deref()
+    }
+    /// Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for any image overlay that you specify.
+    pub fn image_x(&self) -> i32 {
+        self.image_x
+    }
+    /// Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required for any image overlay that you specify.
+    pub fn image_y(&self) -> i32 {
+        self.image_y
+    }
+    /// Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with lower values for Layer.
+    pub fn layer(&self) -> i32 {
+        self.layer
+    }
+    /// Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
+    pub fn opacity(&self) -> i32 {
+        self.opacity
+    }
+    /// Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting blank.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
 }
 impl std::fmt::Debug for InsertableImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2666,6 +3058,16 @@ pub struct Hdr10Plus {
     /// Specify the HDR10+ target display nominal peak luminance, in nits. This is the nominal maximum luminance of the target display as defined by ST 2094-40.
     pub target_monitor_nits: i32,
 }
+impl Hdr10Plus {
+    /// Specify the HDR10+ mastering display normalized peak luminance, in nits. This is the normalized actual peak luminance of the mastering display, as defined by ST 2094-40.
+    pub fn mastering_monitor_nits(&self) -> i32 {
+        self.mastering_monitor_nits
+    }
+    /// Specify the HDR10+ target display nominal peak luminance, in nits. This is the nominal maximum luminance of the target display as defined by ST 2094-40.
+    pub fn target_monitor_nits(&self) -> i32 {
+        self.target_monitor_nits
+    }
+}
 impl std::fmt::Debug for Hdr10Plus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Hdr10Plus");
@@ -2730,6 +3132,20 @@ pub struct DolbyVision {
     pub l6_mode: std::option::Option<crate::model::DolbyVisionLevel6Mode>,
     /// In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
     pub profile: std::option::Option<crate::model::DolbyVisionProfile>,
+}
+impl DolbyVision {
+    /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
+    pub fn l6_metadata(&self) -> std::option::Option<&crate::model::DolbyVisionLevel6Metadata> {
+        self.l6_metadata.as_ref()
+    }
+    /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
+    pub fn l6_mode(&self) -> std::option::Option<&crate::model::DolbyVisionLevel6Mode> {
+        self.l6_mode.as_ref()
+    }
+    /// In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+    pub fn profile(&self) -> std::option::Option<&crate::model::DolbyVisionProfile> {
+        self.profile.as_ref()
+    }
 }
 impl std::fmt::Debug for DolbyVision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2926,6 +3342,16 @@ pub struct DolbyVisionLevel6Metadata {
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
     pub max_fall: i32,
 }
+impl DolbyVisionLevel6Metadata {
+    /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
+    pub fn max_cll(&self) -> i32 {
+        self.max_cll
+    }
+    /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
+    pub fn max_fall(&self) -> i32 {
+        self.max_fall
+    }
+}
 impl std::fmt::Debug for DolbyVisionLevel6Metadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DolbyVisionLevel6Metadata");
@@ -2990,6 +3416,20 @@ pub struct Deinterlacer {
     pub control: std::option::Option<crate::model::DeinterlacerControl>,
     /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
     pub mode: std::option::Option<crate::model::DeinterlacerMode>,
+}
+impl Deinterlacer {
+    /// Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling headline at the bottom of the frame.
+    pub fn algorithm(&self) -> std::option::Option<&crate::model::DeinterlaceAlgorithm> {
+        self.algorithm.as_ref()
+    }
+    /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
+    pub fn control(&self) -> std::option::Option<&crate::model::DeinterlacerControl> {
+        self.control.as_ref()
+    }
+    /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
+    pub fn mode(&self) -> std::option::Option<&crate::model::DeinterlacerMode> {
+        self.mode.as_ref()
+    }
 }
 impl std::fmt::Debug for Deinterlacer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3263,6 +3703,40 @@ pub struct ColorCorrector {
     /// Saturation level.
     pub saturation: i32,
 }
+impl ColorCorrector {
+    /// Brightness level.
+    pub fn brightness(&self) -> i32 {
+        self.brightness
+    }
+    /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+    pub fn color_space_conversion(
+        &self,
+    ) -> std::option::Option<&crate::model::ColorSpaceConversion> {
+        self.color_space_conversion.as_ref()
+    }
+    /// Contrast level.
+    pub fn contrast(&self) -> i32 {
+        self.contrast
+    }
+    /// Use these settings when you convert to the HDR 10 color space. Specify the SMPTE ST 2086 Mastering Display Color Volume static metadata that you want signaled in the output. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. When you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10), these settings are required. You must set values for Max frame average light level (maxFrameAverageLightLevel) and Max content light level (maxContentLightLevel); these settings don't have a default value. The default values for the other HDR 10 metadata settings are defined by the P3D65 color space. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
+    pub fn hdr10_metadata(&self) -> std::option::Option<&crate::model::Hdr10Metadata> {
+        self.hdr10_metadata.as_ref()
+    }
+    /// Hue in degrees.
+    pub fn hue(&self) -> i32 {
+        self.hue
+    }
+    /// Specify the video color sample range for this output. To create a full range output, you must start with a full range YUV input and keep the default value, None (NONE). To create a limited range output from a full range input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited range, regardless of your choice here. When you create a limited range output from a full range input, MediaConvert limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs contain only values from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With this conversion, MediaConvert also changes the output metadata to note the limited range.
+    pub fn sample_range_conversion(
+        &self,
+    ) -> std::option::Option<&crate::model::SampleRangeConversion> {
+        self.sample_range_conversion.as_ref()
+    }
+    /// Saturation level.
+    pub fn saturation(&self) -> i32 {
+        self.saturation
+    }
+}
 impl std::fmt::Debug for ColorCorrector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColorCorrector");
@@ -3478,6 +3952,56 @@ pub struct Hdr10Metadata {
     pub white_point_x: i32,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub white_point_y: i32,
+}
+impl Hdr10Metadata {
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn blue_primary_x(&self) -> i32 {
+        self.blue_primary_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn blue_primary_y(&self) -> i32 {
+        self.blue_primary_y
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn green_primary_x(&self) -> i32 {
+        self.green_primary_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn green_primary_y(&self) -> i32 {
+        self.green_primary_y
+    }
+    /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.  This setting doesn't have a default value; you must specify a value that is suitable for the content.
+    pub fn max_content_light_level(&self) -> i32 {
+        self.max_content_light_level
+    }
+    /// Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
+    pub fn max_frame_average_light_level(&self) -> i32 {
+        self.max_frame_average_light_level
+    }
+    /// Nominal maximum mastering display luminance in units of of 0.0001 candelas per square meter.
+    pub fn max_luminance(&self) -> i32 {
+        self.max_luminance
+    }
+    /// Nominal minimum mastering display luminance in units of of 0.0001 candelas per square meter
+    pub fn min_luminance(&self) -> i32 {
+        self.min_luminance
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn red_primary_x(&self) -> i32 {
+        self.red_primary_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn red_primary_y(&self) -> i32 {
+        self.red_primary_y
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn white_point_x(&self) -> i32 {
+        self.white_point_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn white_point_y(&self) -> i32 {
+        self.white_point_y
+    }
 }
 impl std::fmt::Debug for Hdr10Metadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3926,6 +4450,24 @@ pub struct Rectangle {
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
     pub y: i32,
 }
+impl Rectangle {
+    /// Height of rectangle in pixels. Specify only even numbers.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Width of rectangle in pixels. Specify only even numbers.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
+    /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
+    pub fn x(&self) -> i32 {
+        self.x
+    }
+    /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
+    pub fn y(&self) -> i32 {
+        self.y
+    }
+}
 impl std::fmt::Debug for Rectangle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Rectangle");
@@ -4144,6 +4686,58 @@ pub struct VideoCodecSettings {
     pub vp9_settings: std::option::Option<crate::model::Vp9Settings>,
     /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
     pub xavc_settings: std::option::Option<crate::model::XavcSettings>,
+}
+impl VideoCodecSettings {
+    /// Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+    pub fn av1_settings(&self) -> std::option::Option<&crate::model::Av1Settings> {
+        self.av1_settings.as_ref()
+    }
+    /// Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+    pub fn avc_intra_settings(&self) -> std::option::Option<&crate::model::AvcIntraSettings> {
+        self.avc_intra_settings.as_ref()
+    }
+    /// Specifies the video codec. This must be equal to one of the enum values defined by the object  VideoCodec.
+    pub fn codec(&self) -> std::option::Option<&crate::model::VideoCodec> {
+        self.codec.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+    pub fn frame_capture_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::FrameCaptureSettings> {
+        self.frame_capture_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+    pub fn h264_settings(&self) -> std::option::Option<&crate::model::H264Settings> {
+        self.h264_settings.as_ref()
+    }
+    /// Settings for H265 codec
+    pub fn h265_settings(&self) -> std::option::Option<&crate::model::H265Settings> {
+        self.h265_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+    pub fn mpeg2_settings(&self) -> std::option::Option<&crate::model::Mpeg2Settings> {
+        self.mpeg2_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+    pub fn prores_settings(&self) -> std::option::Option<&crate::model::ProresSettings> {
+        self.prores_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+    pub fn vc3_settings(&self) -> std::option::Option<&crate::model::Vc3Settings> {
+        self.vc3_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+    pub fn vp8_settings(&self) -> std::option::Option<&crate::model::Vp8Settings> {
+        self.vp8_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+    pub fn vp9_settings(&self) -> std::option::Option<&crate::model::Vp9Settings> {
+        self.vp9_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+    pub fn xavc_settings(&self) -> std::option::Option<&crate::model::XavcSettings> {
+        self.xavc_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for VideoCodecSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4404,6 +4998,90 @@ pub struct XavcSettings {
         std::option::Option<crate::model::XavcHdIntraCbgProfileSettings>,
     /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
     pub xavc_hd_profile_settings: std::option::Option<crate::model::XavcHdProfileSettings>,
+}
+impl XavcSettings {
+    /// Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set Adaptive quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off (OFF). Related settings: The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+    pub fn adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcAdaptiveQuantization> {
+        self.adaptive_quantization.as_ref()
+    }
+    /// Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point.
+    pub fn entropy_encoding(&self) -> std::option::Option<&crate::model::XavcEntropyEncoding> {
+        self.entropy_encoding.as_ref()
+    }
+    /// If you are using the console, use the Frame rate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list. The framerates shown in the dropdown list are decimal approximations of fractions. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate that you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::XavcFramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcFramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Frame rate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
+    pub fn profile(&self) -> std::option::Option<&crate::model::XavcProfile> {
+        self.profile.as_ref()
+    }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Frame rate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    pub fn slow_pal(&self) -> std::option::Option<&crate::model::XavcSlowPal> {
+        self.slow_pal.as_ref()
+    }
+    /// Ignore this setting unless your downstream workflow requires that you specify it explicitly. Otherwise, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
+    pub fn softness(&self) -> i32 {
+        self.softness
+    }
+    /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+    pub fn spatial_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcSpatialAdaptiveQuantization> {
+        self.spatial_adaptive_quantization.as_ref()
+    }
+    /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
+    pub fn temporal_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcTemporalAdaptiveQuantization> {
+        self.temporal_adaptive_quantization.as_ref()
+    }
+    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_CBG.
+    pub fn xavc4k_intra_cbg_profile_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::Xavc4kIntraCbgProfileSettings> {
+        self.xavc4k_intra_cbg_profile_settings.as_ref()
+    }
+    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_VBR.
+    pub fn xavc4k_intra_vbr_profile_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::Xavc4kIntraVbrProfileSettings> {
+        self.xavc4k_intra_vbr_profile_settings.as_ref()
+    }
+    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+    pub fn xavc4k_profile_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::Xavc4kProfileSettings> {
+        self.xavc4k_profile_settings.as_ref()
+    }
+    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD_INTRA_CBG.
+    pub fn xavc_hd_intra_cbg_profile_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcHdIntraCbgProfileSettings> {
+        self.xavc_hd_intra_cbg_profile_settings.as_ref()
+    }
+    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+    pub fn xavc_hd_profile_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcHdProfileSettings> {
+        self.xavc_hd_profile_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for XavcSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4757,6 +5435,48 @@ pub struct XavcHdProfileSettings {
     pub slices: i32,
     /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
     pub telecine: std::option::Option<crate::model::XavcHdProfileTelecine>,
+}
+impl XavcHdProfileSettings {
+    /// Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+    pub fn bitrate_class(&self) -> std::option::Option<&crate::model::XavcHdProfileBitrateClass> {
+        self.bitrate_class.as_ref()
+    }
+    /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
+    pub fn flicker_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcFlickerAdaptiveQuantization> {
+        self.flicker_adaptive_quantization.as_ref()
+    }
+    /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the encoder from using B-frames as reference frames.
+    pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::XavcGopBReference> {
+        self.gop_b_reference.as_ref()
+    }
+    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    pub fn gop_closed_cadence(&self) -> i32 {
+        self.gop_closed_cadence
+    }
+    /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
+    pub fn hrd_buffer_size(&self) -> i32 {
+        self.hrd_buffer_size
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(&self) -> std::option::Option<&crate::model::XavcInterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcHdProfileQualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
+    pub fn slices(&self) -> i32 {
+        self.slices
+    }
+    /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
+    pub fn telecine(&self) -> std::option::Option<&crate::model::XavcHdProfileTelecine> {
+        self.telecine.as_ref()
+    }
 }
 impl std::fmt::Debug for XavcHdProfileSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5295,6 +6015,12 @@ pub struct XavcHdIntraCbgProfileSettings {
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub xavc_class: std::option::Option<crate::model::XavcHdIntraCbgProfileClass>,
 }
+impl XavcHdIntraCbgProfileSettings {
+    /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+    pub fn xavc_class(&self) -> std::option::Option<&crate::model::XavcHdIntraCbgProfileClass> {
+        self.xavc_class.as_ref()
+    }
+}
 impl std::fmt::Debug for XavcHdIntraCbgProfileSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("XavcHdIntraCbgProfileSettings");
@@ -5419,6 +6145,44 @@ pub struct Xavc4kProfileSettings {
     pub quality_tuning_level: std::option::Option<crate::model::Xavc4kProfileQualityTuningLevel>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     pub slices: i32,
+}
+impl Xavc4kProfileSettings {
+    /// Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+    pub fn bitrate_class(&self) -> std::option::Option<&crate::model::Xavc4kProfileBitrateClass> {
+        self.bitrate_class.as_ref()
+    }
+    /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
+    pub fn codec_profile(&self) -> std::option::Option<&crate::model::Xavc4kProfileCodecProfile> {
+        self.codec_profile.as_ref()
+    }
+    /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
+    pub fn flicker_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::XavcFlickerAdaptiveQuantization> {
+        self.flicker_adaptive_quantization.as_ref()
+    }
+    /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the encoder from using B-frames as reference frames.
+    pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::XavcGopBReference> {
+        self.gop_b_reference.as_ref()
+    }
+    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    pub fn gop_closed_cadence(&self) -> i32 {
+        self.gop_closed_cadence
+    }
+    /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
+    pub fn hrd_buffer_size(&self) -> i32 {
+        self.hrd_buffer_size
+    }
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::Xavc4kProfileQualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
+    pub fn slices(&self) -> i32 {
+        self.slices
+    }
 }
 impl std::fmt::Debug for Xavc4kProfileSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5762,6 +6526,12 @@ pub struct Xavc4kIntraVbrProfileSettings {
     /// Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub xavc_class: std::option::Option<crate::model::Xavc4kIntraVbrProfileClass>,
 }
+impl Xavc4kIntraVbrProfileSettings {
+    /// Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+    pub fn xavc_class(&self) -> std::option::Option<&crate::model::Xavc4kIntraVbrProfileClass> {
+        self.xavc_class.as_ref()
+    }
+}
 impl std::fmt::Debug for Xavc4kIntraVbrProfileSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Xavc4kIntraVbrProfileSettings");
@@ -5871,6 +6641,12 @@ impl AsRef<str> for Xavc4kIntraVbrProfileClass {
 pub struct Xavc4kIntraCbgProfileSettings {
     /// Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub xavc_class: std::option::Option<crate::model::Xavc4kIntraCbgProfileClass>,
+}
+impl Xavc4kIntraCbgProfileSettings {
+    /// Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+    pub fn xavc_class(&self) -> std::option::Option<&crate::model::Xavc4kIntraCbgProfileClass> {
+        self.xavc_class.as_ref()
+    }
 }
 impl std::fmt::Debug for Xavc4kIntraCbgProfileSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6493,6 +7269,64 @@ pub struct Vp9Settings {
     /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
     pub rate_control_mode: std::option::Option<crate::model::Vp9RateControlMode>,
 }
+impl Vp9Settings {
+    /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::Vp9FramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::Vp9FramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// GOP Length (keyframe interval) in frames. Must be greater than zero.
+    pub fn gop_size(&self) -> f64 {
+        self.gop_size
+    }
+    /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
+    pub fn hrd_buffer_size(&self) -> i32 {
+        self.hrd_buffer_size
+    }
+    /// Ignore this setting unless you set qualityTuningLevel to MULTI_PASS. Optional. Specify the maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. The default behavior uses twice the target bitrate as the maximum bitrate.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// Optional. Specify how the service determines the pixel aspect ratio for this output. The default behavior is to use the same pixel aspect ratio as your input video.
+    pub fn par_control(&self) -> std::option::Option<&crate::model::Vp9ParControl> {
+        self.par_control.as_ref()
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+    pub fn par_denominator(&self) -> i32 {
+        self.par_denominator
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+    pub fn par_numerator(&self) -> i32 {
+        self.par_numerator
+    }
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::Vp9QualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+    /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::Vp9RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for Vp9Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Vp9Settings");
@@ -7019,6 +7853,64 @@ pub struct Vp8Settings {
     /// With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
     pub rate_control_mode: std::option::Option<crate::model::Vp8RateControlMode>,
 }
+impl Vp8Settings {
+    /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::Vp8FramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::Vp8FramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// GOP Length (keyframe interval) in frames. Must be greater than zero.
+    pub fn gop_size(&self) -> f64 {
+        self.gop_size
+    }
+    /// Optional. Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
+    pub fn hrd_buffer_size(&self) -> i32 {
+        self.hrd_buffer_size
+    }
+    /// Ignore this setting unless you set qualityTuningLevel to MULTI_PASS. Optional. Specify the maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. The default behavior uses twice the target bitrate as the maximum bitrate.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    pub fn par_control(&self) -> std::option::Option<&crate::model::Vp8ParControl> {
+        self.par_control.as_ref()
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+    pub fn par_denominator(&self) -> i32 {
+        self.par_denominator
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+    pub fn par_numerator(&self) -> i32 {
+        self.par_numerator
+    }
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::Vp8QualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+    /// With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::Vp8RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for Vp8Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Vp8Settings");
@@ -7536,6 +8428,48 @@ pub struct Vc3Settings {
     pub telecine: std::option::Option<crate::model::Vc3Telecine>,
     /// Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
     pub vc3_class: std::option::Option<crate::model::Vc3Class>,
+}
+impl Vc3Settings {
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::Vc3FramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::Vc3FramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
+    pub fn interlace_mode(&self) -> std::option::Option<&crate::model::Vc3InterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    pub fn scan_type_conversion_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::Vc3ScanTypeConversionMode> {
+        self.scan_type_conversion_mode.as_ref()
+    }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    pub fn slow_pal(&self) -> std::option::Option<&crate::model::Vc3SlowPal> {
+        self.slow_pal.as_ref()
+    }
+    /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    pub fn telecine(&self) -> std::option::Option<&crate::model::Vc3Telecine> {
+        self.telecine.as_ref()
+    }
+    /// Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
+    pub fn vc3_class(&self) -> std::option::Option<&crate::model::Vc3Class> {
+        self.vc3_class.as_ref()
+    }
 }
 impl std::fmt::Debug for Vc3Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8135,6 +9069,64 @@ pub struct ProresSettings {
     pub slow_pal: std::option::Option<crate::model::ProresSlowPal>,
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub telecine: std::option::Option<crate::model::ProresTelecine>,
+}
+impl ProresSettings {
+    /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate (DUPLICATE_DROP).
+    pub fn chroma_sampling(&self) -> std::option::Option<&crate::model::ProresChromaSampling> {
+        self.chroma_sampling.as_ref()
+    }
+    /// Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
+    pub fn codec_profile(&self) -> std::option::Option<&crate::model::ProresCodecProfile> {
+        self.codec_profile.as_ref()
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::ProresFramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::ProresFramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(&self) -> std::option::Option<&crate::model::ProresInterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
+    /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    pub fn par_control(&self) -> std::option::Option<&crate::model::ProresParControl> {
+        self.par_control.as_ref()
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+    pub fn par_denominator(&self) -> i32 {
+        self.par_denominator
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+    pub fn par_numerator(&self) -> i32 {
+        self.par_numerator
+    }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    pub fn scan_type_conversion_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::ProresScanTypeConversionMode> {
+        self.scan_type_conversion_mode.as_ref()
+    }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    pub fn slow_pal(&self) -> std::option::Option<&crate::model::ProresSlowPal> {
+        self.slow_pal.as_ref()
+    }
+    /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    pub fn telecine(&self) -> std::option::Option<&crate::model::ProresTelecine> {
+        self.telecine.as_ref()
+    }
 }
 impl std::fmt::Debug for ProresSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8982,6 +9974,150 @@ pub struct Mpeg2Settings {
     /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
     pub temporal_adaptive_quantization:
         std::option::Option<crate::model::Mpeg2TemporalAdaptiveQuantization>,
+}
+impl Mpeg2Settings {
+    /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+    pub fn adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::Mpeg2AdaptiveQuantization> {
+        self.adaptive_quantization.as_ref()
+    }
+    /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output.
+    pub fn codec_level(&self) -> std::option::Option<&crate::model::Mpeg2CodecLevel> {
+        self.codec_level.as_ref()
+    }
+    /// Use Profile (Mpeg2CodecProfile) to set the MPEG-2 profile for the video output.
+    pub fn codec_profile(&self) -> std::option::Option<&crate::model::Mpeg2CodecProfile> {
+        self.codec_profile.as_ref()
+    }
+    /// Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+    pub fn dynamic_sub_gop(&self) -> std::option::Option<&crate::model::Mpeg2DynamicSubGop> {
+        self.dynamic_sub_gop.as_ref()
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::Mpeg2FramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::Mpeg2FramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    pub fn gop_closed_cadence(&self) -> i32 {
+        self.gop_closed_cadence
+    }
+    /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value for GOP mode control (GopSizeUnits) is Frames (FRAMES).
+    pub fn gop_size(&self) -> f64 {
+        self.gop_size
+    }
+    /// Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size in frames.
+    pub fn gop_size_units(&self) -> std::option::Option<&crate::model::Mpeg2GopSizeUnits> {
+        self.gop_size_units.as_ref()
+    }
+    /// Percentage of the buffer that should initially be filled (HRD buffer model).
+    pub fn hrd_buffer_initial_fill_percentage(&self) -> i32 {
+        self.hrd_buffer_initial_fill_percentage
+    }
+    /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
+    pub fn hrd_buffer_size(&self) -> i32 {
+        self.hrd_buffer_size
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(&self) -> std::option::Option<&crate::model::Mpeg2InterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
+    /// Use Intra DC precision (Mpeg2IntraDcPrecision) to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
+    pub fn intra_dc_precision(&self) -> std::option::Option<&crate::model::Mpeg2IntraDcPrecision> {
+        self.intra_dc_precision.as_ref()
+    }
+    /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    pub fn min_i_interval(&self) -> i32 {
+        self.min_i_interval
+    }
+    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+    pub fn number_b_frames_between_reference_frames(&self) -> i32 {
+        self.number_b_frames_between_reference_frames
+    }
+    /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    pub fn par_control(&self) -> std::option::Option<&crate::model::Mpeg2ParControl> {
+        self.par_control.as_ref()
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+    pub fn par_denominator(&self) -> i32 {
+        self.par_denominator
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+    pub fn par_numerator(&self) -> i32 {
+        self.par_numerator
+    }
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::Mpeg2QualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+    /// Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::Mpeg2RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    pub fn scan_type_conversion_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::Mpeg2ScanTypeConversionMode> {
+        self.scan_type_conversion_mode.as_ref()
+    }
+    /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
+    pub fn scene_change_detect(
+        &self,
+    ) -> std::option::Option<&crate::model::Mpeg2SceneChangeDetect> {
+        self.scene_change_detect.as_ref()
+    }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    pub fn slow_pal(&self) -> std::option::Option<&crate::model::Mpeg2SlowPal> {
+        self.slow_pal.as_ref()
+    }
+    /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, to use the AWS Elemental default matrices. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
+    pub fn softness(&self) -> i32 {
+        self.softness
+    }
+    /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+    pub fn spatial_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::Mpeg2SpatialAdaptiveQuantization> {
+        self.spatial_adaptive_quantization.as_ref()
+    }
+    /// Specify whether this output's video uses the D10 syntax. Keep the default value to  not use the syntax. Related settings: When you choose D10 (D_10) for your MXF  profile (profile), you must also set this value to to D10 (D_10).
+    pub fn syntax(&self) -> std::option::Option<&crate::model::Mpeg2Syntax> {
+        self.syntax.as_ref()
+    }
+    /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    pub fn telecine(&self) -> std::option::Option<&crate::model::Mpeg2Telecine> {
+        self.telecine.as_ref()
+    }
+    /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
+    pub fn temporal_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::Mpeg2TemporalAdaptiveQuantization> {
+        self.temporal_adaptive_quantization.as_ref()
+    }
 }
 impl std::fmt::Debug for Mpeg2Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10729,6 +11865,190 @@ pub struct H265Settings {
     /// If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
     pub write_mp4_packaging_type: std::option::Option<crate::model::H265WriteMp4PackagingType>,
 }
+impl H265Settings {
+    /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+    pub fn adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H265AdaptiveQuantization> {
+        self.adaptive_quantization.as_ref()
+    }
+    /// Enables Alternate Transfer Function SEI message for outputs using Hybrid Log Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+    pub fn alternate_transfer_function_sei(
+        &self,
+    ) -> std::option::Option<&crate::model::H265AlternateTransferFunctionSei> {
+        self.alternate_transfer_function_sei.as_ref()
+    }
+    /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// H.265 Level.
+    pub fn codec_level(&self) -> std::option::Option<&crate::model::H265CodecLevel> {
+        self.codec_level.as_ref()
+    }
+    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+    pub fn codec_profile(&self) -> std::option::Option<&crate::model::H265CodecProfile> {
+        self.codec_profile.as_ref()
+    }
+    /// Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+    pub fn dynamic_sub_gop(&self) -> std::option::Option<&crate::model::H265DynamicSubGop> {
+        self.dynamic_sub_gop.as_ref()
+    }
+    /// Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set adaptiveQuantization to a value other than Off (OFF).
+    pub fn flicker_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H265FlickerAdaptiveQuantization> {
+        self.flicker_adaptive_quantization.as_ref()
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::H265FramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::H265FramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// If enable, use reference B frames for GOP structures that have B frames > 1.
+    pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::H265GopBReference> {
+        self.gop_b_reference.as_ref()
+    }
+    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    pub fn gop_closed_cadence(&self) -> i32 {
+        self.gop_closed_cadence
+    }
+    /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+    pub fn gop_size(&self) -> f64 {
+        self.gop_size
+    }
+    /// Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+    pub fn gop_size_units(&self) -> std::option::Option<&crate::model::H265GopSizeUnits> {
+        self.gop_size_units.as_ref()
+    }
+    /// Percentage of the buffer that should initially be filled (HRD buffer model).
+    pub fn hrd_buffer_initial_fill_percentage(&self) -> i32 {
+        self.hrd_buffer_initial_fill_percentage
+    }
+    /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
+    pub fn hrd_buffer_size(&self) -> i32 {
+        self.hrd_buffer_size
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(&self) -> std::option::Option<&crate::model::H265InterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
+    /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    pub fn min_i_interval(&self) -> i32 {
+        self.min_i_interval
+    }
+    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+    pub fn number_b_frames_between_reference_frames(&self) -> i32 {
+        self.number_b_frames_between_reference_frames
+    }
+    /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
+    pub fn number_reference_frames(&self) -> i32 {
+        self.number_reference_frames
+    }
+    /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    pub fn par_control(&self) -> std::option::Option<&crate::model::H265ParControl> {
+        self.par_control.as_ref()
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+    pub fn par_denominator(&self) -> i32 {
+        self.par_denominator
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+    pub fn par_numerator(&self) -> i32 {
+        self.par_numerator
+    }
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::H265QualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
+    pub fn qvbr_settings(&self) -> std::option::Option<&crate::model::H265QvbrSettings> {
+        self.qvbr_settings.as_ref()
+    }
+    /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::H265RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+    /// Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
+    pub fn sample_adaptive_offset_filter_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::H265SampleAdaptiveOffsetFilterMode> {
+        self.sample_adaptive_offset_filter_mode.as_ref()
+    }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    pub fn scan_type_conversion_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::H265ScanTypeConversionMode> {
+        self.scan_type_conversion_mode.as_ref()
+    }
+    /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+    pub fn scene_change_detect(&self) -> std::option::Option<&crate::model::H265SceneChangeDetect> {
+        self.scene_change_detect.as_ref()
+    }
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
+    pub fn slices(&self) -> i32 {
+        self.slices
+    }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    pub fn slow_pal(&self) -> std::option::Option<&crate::model::H265SlowPal> {
+        self.slow_pal.as_ref()
+    }
+    /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+    pub fn spatial_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H265SpatialAdaptiveQuantization> {
+        self.spatial_adaptive_quantization.as_ref()
+    }
+    /// This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+    pub fn telecine(&self) -> std::option::Option<&crate::model::H265Telecine> {
+        self.telecine.as_ref()
+    }
+    /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
+    pub fn temporal_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H265TemporalAdaptiveQuantization> {
+        self.temporal_adaptive_quantization.as_ref()
+    }
+    /// Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are supported depending on GOP structure: I- and P-frames form one layer, reference B-frames can form a second layer and non-reference b-frames can form a third layer. Decoders can optionally decode only the lower temporal layers to generate a lower frame rate output. For example, given a bitstream with temporal IDs and with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the frames for full frame rate output or only the I and P frames (lowest temporal layer) for a half frame rate output.
+    pub fn temporal_ids(&self) -> std::option::Option<&crate::model::H265TemporalIds> {
+        self.temporal_ids.as_ref()
+    }
+    /// Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures.
+    pub fn tiles(&self) -> std::option::Option<&crate::model::H265Tiles> {
+        self.tiles.as_ref()
+    }
+    /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+    pub fn unregistered_sei_timecode(
+        &self,
+    ) -> std::option::Option<&crate::model::H265UnregisteredSeiTimecode> {
+        self.unregistered_sei_timecode.as_ref()
+    }
+    /// If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+    pub fn write_mp4_packaging_type(
+        &self,
+    ) -> std::option::Option<&crate::model::H265WriteMp4PackagingType> {
+        self.write_mp4_packaging_type.as_ref()
+    }
+}
 impl std::fmt::Debug for H265Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("H265Settings");
@@ -12113,6 +13433,20 @@ pub struct H265QvbrSettings {
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub qvbr_quality_level_fine_tune: f64,
 }
+impl H265QvbrSettings {
+    /// Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video part of this output to the value that you choose. That is, the total size of the video element is less than or equal to the value you set multiplied by the number of seconds of encoded output.
+    pub fn max_average_bitrate(&self) -> i32 {
+        self.max_average_bitrate
+    }
+    /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+    pub fn qvbr_quality_level(&self) -> i32 {
+        self.qvbr_quality_level
+    }
+    /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
+    pub fn qvbr_quality_level_fine_tune(&self) -> f64 {
+        self.qvbr_quality_level_fine_tune
+    }
+}
 impl std::fmt::Debug for H265QvbrSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("H265QvbrSettings");
@@ -13124,6 +14458,184 @@ pub struct H264Settings {
         std::option::Option<crate::model::H264TemporalAdaptiveQuantization>,
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub unregistered_sei_timecode: std::option::Option<crate::model::H264UnregisteredSeiTimecode>,
+}
+impl H264Settings {
+    /// Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
+    pub fn adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H264AdaptiveQuantization> {
+        self.adaptive_quantization.as_ref()
+    }
+    /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto (AUTO).
+    pub fn codec_level(&self) -> std::option::Option<&crate::model::H264CodecLevel> {
+        self.codec_level.as_ref()
+    }
+    /// H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
+    pub fn codec_profile(&self) -> std::option::Option<&crate::model::H264CodecProfile> {
+        self.codec_profile.as_ref()
+    }
+    /// Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+    pub fn dynamic_sub_gop(&self) -> std::option::Option<&crate::model::H264DynamicSubGop> {
+        self.dynamic_sub_gop.as_ref()
+    }
+    /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
+    pub fn entropy_encoding(&self) -> std::option::Option<&crate::model::H264EntropyEncoding> {
+        self.entropy_encoding.as_ref()
+    }
+    /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
+    pub fn field_encoding(&self) -> std::option::Option<&crate::model::H264FieldEncoding> {
+        self.field_encoding.as_ref()
+    }
+    /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
+    pub fn flicker_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H264FlickerAdaptiveQuantization> {
+        self.flicker_adaptive_quantization.as_ref()
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::H264FramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::H264FramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// If enable, use reference B frames for GOP structures that have B frames > 1.
+    pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::H264GopBReference> {
+        self.gop_b_reference.as_ref()
+    }
+    /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    pub fn gop_closed_cadence(&self) -> i32 {
+        self.gop_closed_cadence
+    }
+    /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+    pub fn gop_size(&self) -> f64 {
+        self.gop_size
+    }
+    /// Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+    pub fn gop_size_units(&self) -> std::option::Option<&crate::model::H264GopSizeUnits> {
+        self.gop_size_units.as_ref()
+    }
+    /// Percentage of the buffer that should initially be filled (HRD buffer model).
+    pub fn hrd_buffer_initial_fill_percentage(&self) -> i32 {
+        self.hrd_buffer_initial_fill_percentage
+    }
+    /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
+    pub fn hrd_buffer_size(&self) -> i32 {
+        self.hrd_buffer_size
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(&self) -> std::option::Option<&crate::model::H264InterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
+    /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    pub fn min_i_interval(&self) -> i32 {
+        self.min_i_interval
+    }
+    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+    pub fn number_b_frames_between_reference_frames(&self) -> i32 {
+        self.number_b_frames_between_reference_frames
+    }
+    /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
+    pub fn number_reference_frames(&self) -> i32 {
+        self.number_reference_frames
+    }
+    /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    pub fn par_control(&self) -> std::option::Option<&crate::model::H264ParControl> {
+        self.par_control.as_ref()
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+    pub fn par_denominator(&self) -> i32 {
+        self.par_denominator
+    }
+    /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+    pub fn par_numerator(&self) -> i32 {
+        self.par_numerator
+    }
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::H264QualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
+    pub fn qvbr_settings(&self) -> std::option::Option<&crate::model::H264QvbrSettings> {
+        self.qvbr_settings.as_ref()
+    }
+    /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::H264RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+    /// Places a PPS header on each encoded picture, even if repeated.
+    pub fn repeat_pps(&self) -> std::option::Option<&crate::model::H264RepeatPps> {
+        self.repeat_pps.as_ref()
+    }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    pub fn scan_type_conversion_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::H264ScanTypeConversionMode> {
+        self.scan_type_conversion_mode.as_ref()
+    }
+    /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+    pub fn scene_change_detect(&self) -> std::option::Option<&crate::model::H264SceneChangeDetect> {
+        self.scene_change_detect.as_ref()
+    }
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
+    pub fn slices(&self) -> i32 {
+        self.slices
+    }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    pub fn slow_pal(&self) -> std::option::Option<&crate::model::H264SlowPal> {
+        self.slow_pal.as_ref()
+    }
+    /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
+    pub fn softness(&self) -> i32 {
+        self.softness
+    }
+    /// Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
+    pub fn spatial_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H264SpatialAdaptiveQuantization> {
+        self.spatial_adaptive_quantization.as_ref()
+    }
+    /// Produces a bitstream compliant with SMPTE RP-2027.
+    pub fn syntax(&self) -> std::option::Option<&crate::model::H264Syntax> {
+        self.syntax.as_ref()
+    }
+    /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    pub fn telecine(&self) -> std::option::Option<&crate::model::H264Telecine> {
+        self.telecine.as_ref()
+    }
+    /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
+    pub fn temporal_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::H264TemporalAdaptiveQuantization> {
+        self.temporal_adaptive_quantization.as_ref()
+    }
+    /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+    pub fn unregistered_sei_timecode(
+        &self,
+    ) -> std::option::Option<&crate::model::H264UnregisteredSeiTimecode> {
+        self.unregistered_sei_timecode.as_ref()
+    }
 }
 impl std::fmt::Debug for H264Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14374,6 +15886,20 @@ pub struct H264QvbrSettings {
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub qvbr_quality_level_fine_tune: f64,
 }
+impl H264QvbrSettings {
+    /// Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video part of this output to the value that you choose. That is, the total size of the video element is less than or equal to the value you set multiplied by the number of seconds of encoded output.
+    pub fn max_average_bitrate(&self) -> i32 {
+        self.max_average_bitrate
+    }
+    /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+    pub fn qvbr_quality_level(&self) -> i32 {
+        self.qvbr_quality_level
+    }
+    /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
+    pub fn qvbr_quality_level_fine_tune(&self) -> f64 {
+        self.qvbr_quality_level_fine_tune
+    }
+}
 impl std::fmt::Debug for H264QvbrSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("H264QvbrSettings");
@@ -15378,6 +16904,24 @@ pub struct FrameCaptureSettings {
     /// JPEG Quality - a higher value equals higher quality.
     pub quality: i32,
 }
+impl FrameCaptureSettings {
+    /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.n.jpg where n is the 0-based sequence number of each Capture.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.NNNNNNN.jpg where N is the 0-based frame sequence number zero padded to 7 decimal places.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// Maximum number of captures (encoded jpg output files).
+    pub fn max_captures(&self) -> i32 {
+        self.max_captures
+    }
+    /// JPEG Quality - a higher value equals higher quality.
+    pub fn quality(&self) -> i32 {
+        self.quality
+    }
+}
 impl std::fmt::Debug for FrameCaptureSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FrameCaptureSettings");
@@ -15587,6 +17131,56 @@ pub struct AvcIntraSettings {
     pub slow_pal: std::option::Option<crate::model::AvcIntraSlowPal>,
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub telecine: std::option::Option<crate::model::AvcIntraTelecine>,
+}
+impl AvcIntraSettings {
+    /// Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
+    pub fn avc_intra_class(&self) -> std::option::Option<&crate::model::AvcIntraClass> {
+        self.avc_intra_class.as_ref()
+    }
+    /// Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object isn't allowed.
+    pub fn avc_intra_uhd_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AvcIntraUhdSettings> {
+        self.avc_intra_uhd_settings.as_ref()
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(
+        &self,
+    ) -> std::option::Option<&crate::model::AvcIntraFramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::AvcIntraFramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(&self) -> std::option::Option<&crate::model::AvcIntraInterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    pub fn scan_type_conversion_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::AvcIntraScanTypeConversionMode> {
+        self.scan_type_conversion_mode.as_ref()
+    }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    pub fn slow_pal(&self) -> std::option::Option<&crate::model::AvcIntraSlowPal> {
+        self.slow_pal.as_ref()
+    }
+    /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    pub fn telecine(&self) -> std::option::Option<&crate::model::AvcIntraTelecine> {
+        self.telecine.as_ref()
+    }
 }
 impl std::fmt::Debug for AvcIntraSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16140,6 +17734,14 @@ pub struct AvcIntraUhdSettings {
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass (MULTI_PASS), your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS), your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
     pub quality_tuning_level: std::option::Option<crate::model::AvcIntraUhdQualityTuningLevel>,
 }
+impl AvcIntraUhdSettings {
+    /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass (MULTI_PASS), your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS), your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+    pub fn quality_tuning_level(
+        &self,
+    ) -> std::option::Option<&crate::model::AvcIntraUhdQualityTuningLevel> {
+        self.quality_tuning_level.as_ref()
+    }
+}
 impl std::fmt::Debug for AvcIntraUhdSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvcIntraUhdSettings");
@@ -16336,6 +17938,62 @@ pub struct Av1Settings {
     /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub spatial_adaptive_quantization:
         std::option::Option<crate::model::Av1SpatialAdaptiveQuantization>,
+}
+impl Av1Settings {
+    /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
+    pub fn adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::Av1AdaptiveQuantization> {
+        self.adaptive_quantization.as_ref()
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    pub fn framerate_control(&self) -> std::option::Option<&crate::model::Av1FramerateControl> {
+        self.framerate_control.as_ref()
+    }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    pub fn framerate_conversion_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::Av1FramerateConversionAlgorithm> {
+        self.framerate_conversion_algorithm.as_ref()
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+    /// Specify the GOP length (keyframe interval) in frames. With AV1, MediaConvert doesn't support GOP length in seconds. This value must be greater than zero and preferably equal to 1 + ((numberBFrames + 1) * x), where x is an integer value.
+    pub fn gop_size(&self) -> f64 {
+        self.gop_size
+    }
+    /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
+    pub fn number_b_frames_between_reference_frames(&self) -> i32 {
+        self.number_b_frames_between_reference_frames
+    }
+    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
+    pub fn qvbr_settings(&self) -> std::option::Option<&crate::model::Av1QvbrSettings> {
+        self.qvbr_settings.as_ref()
+    }
+    /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::Av1RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+    /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
+    pub fn slices(&self) -> i32 {
+        self.slices
+    }
+    /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+    pub fn spatial_adaptive_quantization(
+        &self,
+    ) -> std::option::Option<&crate::model::Av1SpatialAdaptiveQuantization> {
+        self.spatial_adaptive_quantization.as_ref()
+    }
 }
 impl std::fmt::Debug for Av1Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16679,6 +18337,16 @@ pub struct Av1QvbrSettings {
     pub qvbr_quality_level: i32,
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub qvbr_quality_level_fine_tune: f64,
+}
+impl Av1QvbrSettings {
+    /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+    pub fn qvbr_quality_level(&self) -> i32 {
+        self.qvbr_quality_level
+    }
+    /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
+    pub fn qvbr_quality_level_fine_tune(&self) -> f64 {
+        self.qvbr_quality_level_fine_tune
+    }
 }
 impl std::fmt::Debug for Av1QvbrSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17059,6 +18727,44 @@ pub struct ContainerSettings {
     /// These settings relate to your MXF output container.
     pub mxf_settings: std::option::Option<crate::model::MxfSettings>,
 }
+impl ContainerSettings {
+    /// These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
+    pub fn cmfc_settings(&self) -> std::option::Option<&crate::model::CmfcSettings> {
+        self.cmfc_settings.as_ref()
+    }
+    /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
+    pub fn container(&self) -> std::option::Option<&crate::model::ContainerType> {
+        self.container.as_ref()
+    }
+    /// Settings for F4v container
+    pub fn f4v_settings(&self) -> std::option::Option<&crate::model::F4vSettings> {
+        self.f4v_settings.as_ref()
+    }
+    /// MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
+    pub fn m2ts_settings(&self) -> std::option::Option<&crate::model::M2tsSettings> {
+        self.m2ts_settings.as_ref()
+    }
+    /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
+    pub fn m3u8_settings(&self) -> std::option::Option<&crate::model::M3u8Settings> {
+        self.m3u8_settings.as_ref()
+    }
+    /// These settings relate to your QuickTime MOV output container.
+    pub fn mov_settings(&self) -> std::option::Option<&crate::model::MovSettings> {
+        self.mov_settings.as_ref()
+    }
+    /// These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
+    pub fn mp4_settings(&self) -> std::option::Option<&crate::model::Mp4Settings> {
+        self.mp4_settings.as_ref()
+    }
+    /// These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
+    pub fn mpd_settings(&self) -> std::option::Option<&crate::model::MpdSettings> {
+        self.mpd_settings.as_ref()
+    }
+    /// These settings relate to your MXF output container.
+    pub fn mxf_settings(&self) -> std::option::Option<&crate::model::MxfSettings> {
+        self.mxf_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for ContainerSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContainerSettings");
@@ -17242,6 +18948,22 @@ pub struct MxfSettings {
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
     pub xavc_profile_settings: std::option::Option<crate::model::MxfXavcProfileSettings>,
 }
+impl MxfSettings {
+    /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
+    pub fn afd_signaling(&self) -> std::option::Option<&crate::model::MxfAfdSignaling> {
+        self.afd_signaling.as_ref()
+    }
+    /// Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+    pub fn profile(&self) -> std::option::Option<&crate::model::MxfProfile> {
+        self.profile.as_ref()
+    }
+    /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+    pub fn xavc_profile_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MxfXavcProfileSettings> {
+        self.xavc_profile_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for MxfSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MxfSettings");
@@ -17326,6 +19048,16 @@ pub struct MxfXavcProfileSettings {
     pub duration_mode: std::option::Option<crate::model::MxfXavcDurationMode>,
     /// Specify a value for this setting only for outputs that you set up with one of these two XAVC profiles: XAVC HD Intra CBG (XAVC_HD_INTRA_CBG) or XAVC 4K Intra CBG (XAVC_4K_INTRA_CBG). Specify the amount of space in each frame that the service reserves for ancillary data, such as teletext captions. The default value for this setting is 1492 bytes per frame. This should be sufficient to prevent overflow unless you have multiple pages of teletext captions data. If you have a large amount of teletext data, specify a larger number.
     pub max_anc_data_size: i32,
+}
+impl MxfXavcProfileSettings {
+    /// To create an output that complies with the XAVC file format guidelines for interoperability, keep the default value, Drop frames for compliance (DROP_FRAMES_FOR_COMPLIANCE). To include all frames from your input in this output, keep the default setting, Allow any duration (ALLOW_ANY_DURATION). The number of frames that MediaConvert excludes when you set this to Drop frames for compliance depends on the output frame rate and duration.
+    pub fn duration_mode(&self) -> std::option::Option<&crate::model::MxfXavcDurationMode> {
+        self.duration_mode.as_ref()
+    }
+    /// Specify a value for this setting only for outputs that you set up with one of these two XAVC profiles: XAVC HD Intra CBG (XAVC_HD_INTRA_CBG) or XAVC 4K Intra CBG (XAVC_4K_INTRA_CBG). Specify the amount of space in each frame that the service reserves for ancillary data, such as teletext captions. The default value for this setting is 1492 bytes per frame. This should be sufficient to prevent overflow unless you have multiple pages of teletext captions data. If you have a large amount of teletext data, specify a larger number.
+    pub fn max_anc_data_size(&self) -> i32 {
+        self.max_anc_data_size
+    }
 }
 impl std::fmt::Debug for MxfXavcProfileSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17572,6 +19304,32 @@ pub struct MpdSettings {
     pub scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     pub scte35_source: std::option::Option<crate::model::MpdScte35Source>,
+}
+impl MpdSettings {
+    /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+    pub fn accessibility_caption_hints(
+        &self,
+    ) -> std::option::Option<&crate::model::MpdAccessibilityCaptionHints> {
+        self.accessibility_caption_hints.as_ref()
+    }
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn audio_duration(&self) -> std::option::Option<&crate::model::MpdAudioDuration> {
+        self.audio_duration.as_ref()
+    }
+    /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+    pub fn caption_container_type(
+        &self,
+    ) -> std::option::Option<&crate::model::MpdCaptionContainerType> {
+        self.caption_container_type.as_ref()
+    }
+    /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+    pub fn scte35_esam(&self) -> std::option::Option<&crate::model::MpdScte35Esam> {
+        self.scte35_esam.as_ref()
+    }
+    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
+    pub fn scte35_source(&self) -> std::option::Option<&crate::model::MpdScte35Source> {
+        self.scte35_source.as_ref()
+    }
 }
 impl std::fmt::Debug for MpdSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17984,6 +19742,32 @@ pub struct Mp4Settings {
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
     pub mp4_major_brand: std::option::Option<std::string::String>,
 }
+impl Mp4Settings {
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn audio_duration(&self) -> std::option::Option<&crate::model::CmfcAudioDuration> {
+        self.audio_duration.as_ref()
+    }
+    /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+    pub fn cslg_atom(&self) -> std::option::Option<&crate::model::Mp4CslgAtom> {
+        self.cslg_atom.as_ref()
+    }
+    /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
+    pub fn ctts_version(&self) -> i32 {
+        self.ctts_version
+    }
+    /// Inserts a free-space box immediately after the moov box.
+    pub fn free_space_box(&self) -> std::option::Option<&crate::model::Mp4FreeSpaceBox> {
+        self.free_space_box.as_ref()
+    }
+    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    pub fn moov_placement(&self) -> std::option::Option<&crate::model::Mp4MoovPlacement> {
+        self.moov_placement.as_ref()
+    }
+    /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
+    pub fn mp4_major_brand(&self) -> std::option::Option<&str> {
+        self.mp4_major_brand.as_deref()
+    }
+}
 impl std::fmt::Debug for Mp4Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Mp4Settings");
@@ -18339,6 +20123,30 @@ pub struct MovSettings {
     pub padding_control: std::option::Option<crate::model::MovPaddingControl>,
     /// Always keep the default value (SELF_CONTAINED) for this setting.
     pub reference: std::option::Option<crate::model::MovReference>,
+}
+impl MovSettings {
+    /// When enabled, include 'clap' atom if appropriate for the video output settings.
+    pub fn clap_atom(&self) -> std::option::Option<&crate::model::MovClapAtom> {
+        self.clap_atom.as_ref()
+    }
+    /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+    pub fn cslg_atom(&self) -> std::option::Option<&crate::model::MovCslgAtom> {
+        self.cslg_atom.as_ref()
+    }
+    /// When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
+    pub fn mpeg2_four_cc_control(
+        &self,
+    ) -> std::option::Option<&crate::model::MovMpeg2FourCcControl> {
+        self.mpeg2_four_cc_control.as_ref()
+    }
+    /// To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+    pub fn padding_control(&self) -> std::option::Option<&crate::model::MovPaddingControl> {
+        self.padding_control.as_ref()
+    }
+    /// Always keep the default value (SELF_CONTAINED) for this setting.
+    pub fn reference(&self) -> std::option::Option<&crate::model::MovReference> {
+        self.reference.as_ref()
+    }
 }
 impl std::fmt::Debug for MovSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18765,6 +20573,84 @@ pub struct M3u8Settings {
     pub transport_stream_id: i32,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream.
     pub video_pid: i32,
+}
+impl M3u8Settings {
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn audio_duration(&self) -> std::option::Option<&crate::model::M3u8AudioDuration> {
+        self.audio_duration.as_ref()
+    }
+    /// The number of audio frames to insert for each PES packet.
+    pub fn audio_frames_per_pes(&self) -> i32 {
+        self.audio_frames_per_pes
+    }
+    /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
+    pub fn audio_pids(&self) -> std::option::Option<&[i32]> {
+        self.audio_pids.as_deref()
+    }
+    /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+    pub fn data_pts_control(&self) -> std::option::Option<&crate::model::M3u8DataPtsControl> {
+        self.data_pts_control.as_ref()
+    }
+    /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
+    pub fn max_pcr_interval(&self) -> i32 {
+        self.max_pcr_interval
+    }
+    /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub fn nielsen_id3(&self) -> std::option::Option<&crate::model::M3u8NielsenId3> {
+        self.nielsen_id3.as_ref()
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn pat_interval(&self) -> i32 {
+        self.pat_interval
+    }
+    /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
+    pub fn pcr_control(&self) -> std::option::Option<&crate::model::M3u8PcrControl> {
+        self.pcr_control.as_ref()
+    }
+    /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID.
+    pub fn pcr_pid(&self) -> i32 {
+        self.pcr_pid
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn pmt_interval(&self) -> i32 {
+        self.pmt_interval
+    }
+    /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+    pub fn pmt_pid(&self) -> i32 {
+        self.pmt_pid
+    }
+    /// Packet Identifier (PID) of the private metadata stream in the transport stream.
+    pub fn private_metadata_pid(&self) -> i32 {
+        self.private_metadata_pid
+    }
+    /// The value of the program number field in the Program Map Table.
+    pub fn program_number(&self) -> i32 {
+        self.program_number
+    }
+    /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+    pub fn scte35_pid(&self) -> i32 {
+        self.scte35_pid
+    }
+    /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+    pub fn scte35_source(&self) -> std::option::Option<&crate::model::M3u8Scte35Source> {
+        self.scte35_source.as_ref()
+    }
+    /// Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    pub fn timed_metadata(&self) -> std::option::Option<&crate::model::TimedMetadata> {
+        self.timed_metadata.as_ref()
+    }
+    /// Packet Identifier (PID) of the timed metadata stream in the transport stream.
+    pub fn timed_metadata_pid(&self) -> i32 {
+        self.timed_metadata_pid
+    }
+    /// The value of the transport stream ID field in the Program Map Table.
+    pub fn transport_stream_id(&self) -> i32 {
+        self.transport_stream_id
+    }
+    /// Packet Identifier (PID) of the elementary video stream in the transport stream.
+    pub fn video_pid(&self) -> i32 {
+        self.video_pid
+    }
 }
 impl std::fmt::Debug for M3u8Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19475,6 +21361,164 @@ pub struct M2tsSettings {
     pub transport_stream_id: i32,
     /// Specify the packet identifier (PID) of the elementary video stream in the transport stream.
     pub video_pid: i32,
+}
+impl M2tsSettings {
+    /// Selects between the DVB and ATSC buffer models for Dolby Digital audio.
+    pub fn audio_buffer_model(&self) -> std::option::Option<&crate::model::M2tsAudioBufferModel> {
+        self.audio_buffer_model.as_ref()
+    }
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn audio_duration(&self) -> std::option::Option<&crate::model::M2tsAudioDuration> {
+        self.audio_duration.as_ref()
+    }
+    /// The number of audio frames to insert for each PES packet.
+    pub fn audio_frames_per_pes(&self) -> i32 {
+        self.audio_frames_per_pes
+    }
+    /// Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify multiple PIDs as a JSON array. Default is the range 482-492.
+    pub fn audio_pids(&self) -> std::option::Option<&[i32]> {
+        self.audio_pids.as_deref()
+    }
+    /// Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+    pub fn buffer_model(&self) -> std::option::Option<&crate::model::M2tsBufferModel> {
+        self.buffer_model.as_ref()
+    }
+    /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+    pub fn data_pts_control(&self) -> std::option::Option<&crate::model::M2tsDataPtsControl> {
+        self.data_pts_control.as_ref()
+    }
+    /// Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
+    pub fn dvb_nit_settings(&self) -> std::option::Option<&crate::model::DvbNitSettings> {
+        self.dvb_nit_settings.as_ref()
+    }
+    /// Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
+    pub fn dvb_sdt_settings(&self) -> std::option::Option<&crate::model::DvbSdtSettings> {
+        self.dvb_sdt_settings.as_ref()
+    }
+    /// Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
+    pub fn dvb_sub_pids(&self) -> std::option::Option<&[i32]> {
+        self.dvb_sub_pids.as_deref()
+    }
+    /// Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
+    pub fn dvb_tdt_settings(&self) -> std::option::Option<&crate::model::DvbTdtSettings> {
+        self.dvb_tdt_settings.as_ref()
+    }
+    /// Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
+    pub fn dvb_teletext_pid(&self) -> i32 {
+        self.dvb_teletext_pid
+    }
+    /// When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+    pub fn ebp_audio_interval(&self) -> std::option::Option<&crate::model::M2tsEbpAudioInterval> {
+        self.ebp_audio_interval.as_ref()
+    }
+    /// Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+    pub fn ebp_placement(&self) -> std::option::Option<&crate::model::M2tsEbpPlacement> {
+        self.ebp_placement.as_ref()
+    }
+    /// Controls whether to include the ES Rate field in the PES header.
+    pub fn es_rate_in_pes(&self) -> std::option::Option<&crate::model::M2tsEsRateInPes> {
+        self.es_rate_in_pes.as_ref()
+    }
+    /// Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force (FORCE).
+    pub fn force_ts_video_ebp_order(
+        &self,
+    ) -> std::option::Option<&crate::model::M2tsForceTsVideoEbpOrder> {
+        self.force_ts_video_ebp_order.as_ref()
+    }
+    /// The length, in seconds, of each fragment. Only used with EBP markers.
+    pub fn fragment_time(&self) -> f64 {
+        self.fragment_time
+    }
+    /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
+    pub fn max_pcr_interval(&self) -> i32 {
+        self.max_pcr_interval
+    }
+    /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
+    pub fn min_ebp_interval(&self) -> i32 {
+        self.min_ebp_interval
+    }
+    /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub fn nielsen_id3(&self) -> std::option::Option<&crate::model::M2tsNielsenId3> {
+        self.nielsen_id3.as_ref()
+    }
+    /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
+    pub fn null_packet_bitrate(&self) -> f64 {
+        self.null_packet_bitrate
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn pat_interval(&self) -> i32 {
+        self.pat_interval
+    }
+    /// When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
+    pub fn pcr_control(&self) -> std::option::Option<&crate::model::M2tsPcrControl> {
+        self.pcr_control.as_ref()
+    }
+    /// Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a value, the service will use the value for Video PID (VideoPid).
+    pub fn pcr_pid(&self) -> i32 {
+        self.pcr_pid
+    }
+    /// Specify the number of milliseconds between instances of the program map table (PMT) in the output transport stream.
+    pub fn pmt_interval(&self) -> i32 {
+        self.pmt_interval
+    }
+    /// Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
+    pub fn pmt_pid(&self) -> i32 {
+        self.pmt_pid
+    }
+    /// Specify the packet identifier (PID) of the private metadata stream. Default is 503.
+    pub fn private_metadata_pid(&self) -> i32 {
+        self.private_metadata_pid
+    }
+    /// Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
+    pub fn program_number(&self) -> i32 {
+        self.program_number
+    }
+    /// When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
+    pub fn rate_mode(&self) -> std::option::Option<&crate::model::M2tsRateMode> {
+        self.rate_mode.as_ref()
+    }
+    /// Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+    pub fn scte35_esam(&self) -> std::option::Option<&crate::model::M2tsScte35Esam> {
+        self.scte35_esam.as_ref()
+    }
+    /// Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
+    pub fn scte35_pid(&self) -> i32 {
+        self.scte35_pid
+    }
+    /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+    pub fn scte35_source(&self) -> std::option::Option<&crate::model::M2tsScte35Source> {
+        self.scte35_source.as_ref()
+    }
+    /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
+    pub fn segmentation_markers(
+        &self,
+    ) -> std::option::Option<&crate::model::M2tsSegmentationMarkers> {
+        self.segmentation_markers.as_ref()
+    }
+    /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
+    pub fn segmentation_style(&self) -> std::option::Option<&crate::model::M2tsSegmentationStyle> {
+        self.segmentation_style.as_ref()
+    }
+    /// Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
+    pub fn segmentation_time(&self) -> f64 {
+        self.segmentation_time
+    }
+    /// Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
+    pub fn timed_metadata_pid(&self) -> i32 {
+        self.timed_metadata_pid
+    }
+    /// Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
+    pub fn transport_stream_id(&self) -> i32 {
+        self.transport_stream_id
+    }
+    /// Specify the packet identifier (PID) of the elementary video stream in the transport stream.
+    pub fn video_pid(&self) -> i32 {
+        self.video_pid
+    }
 }
 impl std::fmt::Debug for M2tsSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20266,6 +22310,12 @@ pub struct M2tsScte35Esam {
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream generated by ESAM.
     pub scte35_esam_pid: i32,
 }
+impl M2tsScte35Esam {
+    /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream generated by ESAM.
+    pub fn scte35_esam_pid(&self) -> i32 {
+        self.scte35_esam_pid
+    }
+}
 impl std::fmt::Debug for M2tsScte35Esam {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("M2tsScte35Esam");
@@ -20699,6 +22749,12 @@ pub struct DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub tdt_interval: i32,
 }
+impl DvbTdtSettings {
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn tdt_interval(&self) -> i32 {
+        self.tdt_interval
+    }
+}
 impl std::fmt::Debug for DvbTdtSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DvbTdtSettings");
@@ -20752,6 +22808,24 @@ pub struct DvbSdtSettings {
     pub service_name: std::option::Option<std::string::String>,
     /// The service provider name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
     pub service_provider_name: std::option::Option<std::string::String>,
+}
+impl DvbSdtSettings {
+    /// Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
+    pub fn output_sdt(&self) -> std::option::Option<&crate::model::OutputSdt> {
+        self.output_sdt.as_ref()
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn sdt_interval(&self) -> i32 {
+        self.sdt_interval
+    }
+    /// The service name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// The service provider name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
+    pub fn service_provider_name(&self) -> std::option::Option<&str> {
+        self.service_provider_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DvbSdtSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20917,6 +22991,20 @@ pub struct DvbNitSettings {
     pub network_name: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub nit_interval: i32,
+}
+impl DvbNitSettings {
+    /// The numeric value placed in the Network Information Table (NIT).
+    pub fn network_id(&self) -> i32 {
+        self.network_id
+    }
+    /// The network name text placed in the network_name_descriptor inside the Network Information Table. Maximum length is 256 characters.
+    pub fn network_name(&self) -> std::option::Option<&str> {
+        self.network_name.as_deref()
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn nit_interval(&self) -> i32 {
+        self.nit_interval
+    }
 }
 impl std::fmt::Debug for DvbNitSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21212,6 +23300,12 @@ pub struct F4vSettings {
     /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
     pub moov_placement: std::option::Option<crate::model::F4vMoovPlacement>,
 }
+impl F4vSettings {
+    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    pub fn moov_placement(&self) -> std::option::Option<&crate::model::F4vMoovPlacement> {
+        self.moov_placement.as_ref()
+    }
+}
 impl std::fmt::Debug for F4vSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("F4vSettings");
@@ -21425,6 +23519,44 @@ pub struct CmfcSettings {
     pub scte35_esam: std::option::Option<crate::model::CmfcScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     pub scte35_source: std::option::Option<crate::model::CmfcScte35Source>,
+}
+impl CmfcSettings {
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn audio_duration(&self) -> std::option::Option<&crate::model::CmfcAudioDuration> {
+        self.audio_duration.as_ref()
+    }
+    /// Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output in your output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO, as the value for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it appears in your manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To associate the rendition group that this audio track belongs to with a video rendition, include the same value that you provide here for that video output's setting Audio rendition sets (audioRenditionSets).
+    pub fn audio_group_id(&self) -> std::option::Option<&str> {
+        self.audio_group_id.as_deref()
+    }
+    /// List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition groups that you include in your comma-separated list should all match values that you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior: If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio rendition group and associates it with every video variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+    pub fn audio_rendition_sets(&self) -> std::option::Option<&str> {
+        self.audio_rendition_sets.as_deref()
+    }
+    /// Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
+    pub fn audio_track_type(&self) -> std::option::Option<&crate::model::CmfcAudioTrackType> {
+        self.audio_track_type.as_ref()
+    }
+    /// Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
+    pub fn descriptive_video_service_flag(
+        &self,
+    ) -> std::option::Option<&crate::model::CmfcDescriptiveVideoServiceFlag> {
+        self.descriptive_video_service_flag.as_ref()
+    }
+    /// Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
+    pub fn i_frame_only_manifest(
+        &self,
+    ) -> std::option::Option<&crate::model::CmfcIFrameOnlyManifest> {
+        self.i_frame_only_manifest.as_ref()
+    }
+    /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+    pub fn scte35_esam(&self) -> std::option::Option<&crate::model::CmfcScte35Esam> {
+        self.scte35_esam.as_ref()
+    }
+    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
+    pub fn scte35_source(&self) -> std::option::Option<&crate::model::CmfcScte35Source> {
+        self.scte35_source.as_ref()
+    }
 }
 impl std::fmt::Debug for CmfcSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21891,6 +24023,26 @@ pub struct CaptionDescriptionPreset {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// Specify a label for this set of output captions. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
     pub language_description: std::option::Option<std::string::String>,
+}
+impl CaptionDescriptionPreset {
+    /// Specify the language for this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information when automatically selecting the font script for rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
+    pub fn custom_language_code(&self) -> std::option::Option<&str> {
+        self.custom_language_code.as_deref()
+    }
+    /// Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to one output captions track. Depending on your output captions format, one tab might correspond to a set of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
+    pub fn destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::CaptionDestinationSettings> {
+        self.destination_settings.as_ref()
+    }
+    /// Specify the language of this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font language for rendering the captions text.
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// Specify a label for this set of output captions. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
+    pub fn language_description(&self) -> std::option::Option<&str> {
+        self.language_description.as_deref()
+    }
 }
 impl std::fmt::Debug for CaptionDescriptionPreset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22843,6 +24995,66 @@ pub struct CaptionDestinationSettings {
     /// Settings related to WebVTT captions. WebVTT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to WebVTT.
     pub webvtt_destination_settings: std::option::Option<crate::model::WebvttDestinationSettings>,
 }
+impl CaptionDestinationSettings {
+    /// Burn-in is a captions delivery method, rather than a captions format. Burn-in writes the captions directly on your video frames, replacing pixels of video content with the captions. Set up burn-in captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to BURN_IN.
+    pub fn burnin_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::BurninDestinationSettings> {
+        self.burnin_destination_settings.as_ref()
+    }
+    /// Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+    pub fn destination_type(&self) -> std::option::Option<&crate::model::CaptionDestinationType> {
+        self.destination_type.as_ref()
+    }
+    /// Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to DVB_SUB.
+    pub fn dvb_sub_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DvbSubDestinationSettings> {
+        self.dvb_sub_destination_settings.as_ref()
+    }
+    /// Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to EMBEDDED, EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
+    pub fn embedded_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::EmbeddedDestinationSettings> {
+        self.embedded_destination_settings.as_ref()
+    }
+    /// Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to IMSC.
+    pub fn imsc_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ImscDestinationSettings> {
+        self.imsc_destination_settings.as_ref()
+    }
+    /// Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to SCC.
+    pub fn scc_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::SccDestinationSettings> {
+        self.scc_destination_settings.as_ref()
+    }
+    /// Settings related to SRT captions. SRT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to SRT.
+    pub fn srt_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::SrtDestinationSettings> {
+        self.srt_destination_settings.as_ref()
+    }
+    /// Settings related to teletext captions. Set up teletext captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to TELETEXT.
+    pub fn teletext_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TeletextDestinationSettings> {
+        self.teletext_destination_settings.as_ref()
+    }
+    /// Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to TTML.
+    pub fn ttml_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TtmlDestinationSettings> {
+        self.ttml_destination_settings.as_ref()
+    }
+    /// Settings related to WebVTT captions. WebVTT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to WebVTT.
+    pub fn webvtt_destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::WebvttDestinationSettings> {
+        self.webvtt_destination_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for CaptionDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CaptionDestinationSettings");
@@ -23089,6 +25301,12 @@ pub struct WebvttDestinationSettings {
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
 }
+impl WebvttDestinationSettings {
+    /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+    pub fn style_passthrough(&self) -> std::option::Option<&crate::model::WebvttStylePassthrough> {
+        self.style_passthrough.as_ref()
+    }
+}
 impl std::fmt::Debug for WebvttDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WebvttDestinationSettings");
@@ -23194,6 +25412,12 @@ impl AsRef<str> for WebvttStylePassthrough {
 pub struct TtmlDestinationSettings {
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
     pub style_passthrough: std::option::Option<crate::model::TtmlStylePassthrough>,
+}
+impl TtmlDestinationSettings {
+    /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
+    pub fn style_passthrough(&self) -> std::option::Option<&crate::model::TtmlStylePassthrough> {
+        self.style_passthrough.as_ref()
+    }
 }
 impl std::fmt::Debug for TtmlDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23302,6 +25526,16 @@ pub struct TeletextDestinationSettings {
     pub page_number: std::option::Option<std::string::String>,
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
     pub page_types: std::option::Option<std::vec::Vec<crate::model::TeletextPageType>>,
+}
+impl TeletextDestinationSettings {
+    /// Set pageNumber to the Teletext page number for the destination captions for this output. This value must be a three-digit hexadecimal string; strings ending in -FF are invalid. If you are passing through the entire set of Teletext data, do not use this field.
+    pub fn page_number(&self) -> std::option::Option<&str> {
+        self.page_number.as_deref()
+    }
+    /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+    pub fn page_types(&self) -> std::option::Option<&[crate::model::TeletextPageType]> {
+        self.page_types.as_deref()
+    }
 }
 impl std::fmt::Debug for TeletextDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23450,6 +25684,12 @@ pub struct SrtDestinationSettings {
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::SrtStylePassthrough>,
 }
+impl SrtDestinationSettings {
+    /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+    pub fn style_passthrough(&self) -> std::option::Option<&crate::model::SrtStylePassthrough> {
+        self.style_passthrough.as_ref()
+    }
+}
 impl std::fmt::Debug for SrtDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SrtDestinationSettings");
@@ -23555,6 +25795,12 @@ impl AsRef<str> for SrtStylePassthrough {
 pub struct SccDestinationSettings {
     /// Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
     pub framerate: std::option::Option<crate::model::SccDestinationFramerate>,
+}
+impl SccDestinationSettings {
+    /// Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+    pub fn framerate(&self) -> std::option::Option<&crate::model::SccDestinationFramerate> {
+        self.framerate.as_ref()
+    }
 }
 impl std::fmt::Debug for SccDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23680,6 +25926,12 @@ pub struct ImscDestinationSettings {
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
 }
+impl ImscDestinationSettings {
+    /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+    pub fn style_passthrough(&self) -> std::option::Option<&crate::model::ImscStylePassthrough> {
+        self.style_passthrough.as_ref()
+    }
+}
 impl std::fmt::Debug for ImscDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImscDestinationSettings");
@@ -23787,6 +26039,16 @@ pub struct EmbeddedDestinationSettings {
     pub destination608_channel_number: i32,
     /// Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions embedded in your output stream. Optionally, specify the 708 service number for each output captions channel. Choose a different number for each channel. To use this setting, also set Force 608 to 708 upconvert (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector settings. If you choose to upconvert but don't specify a 708 service number, MediaConvert uses the number that you specify for CC channel number (destination608ChannelNumber) for the 708 service number. For more information, see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
     pub destination708_service_number: i32,
+}
+impl EmbeddedDestinationSettings {
+    /// Ignore this setting unless your input captions are SCC format and your output captions are embedded in the video stream. Specify a CC number for each captions channel in this output. If you have two channels, choose CC numbers that aren't in the same field. For example, choose 1 and 3. For more information, see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
+    pub fn destination608_channel_number(&self) -> i32 {
+        self.destination608_channel_number
+    }
+    /// Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions embedded in your output stream. Optionally, specify the 708 service number for each output captions channel. Choose a different number for each channel. To use this setting, also set Force 608 to 708 upconvert (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector settings. If you choose to upconvert but don't specify a 708 service number, MediaConvert uses the number that you specify for CC channel number (destination608ChannelNumber) for the 708 service number. For more information, see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
+    pub fn destination708_service_number(&self) -> i32 {
+        self.destination708_service_number
+    }
 }
 impl std::fmt::Debug for EmbeddedDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23918,6 +26180,126 @@ pub struct DvbSubDestinationSettings {
     pub x_position: i32,
     /// Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output. Within your job settings, all of your DVB-Sub settings must be identical.
     pub y_position: i32,
+}
+impl DvbSubDestinationSettings {
+    /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn alignment(&self) -> std::option::Option<&crate::model::DvbSubtitleAlignment> {
+        self.alignment.as_ref()
+    }
+    /// Ignore this setting unless Style Passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
+    pub fn apply_font_color(
+        &self,
+    ) -> std::option::Option<&crate::model::DvbSubtitleApplyFontColor> {
+        self.apply_font_color.as_ref()
+    }
+    /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
+    pub fn background_color(
+        &self,
+    ) -> std::option::Option<&crate::model::DvbSubtitleBackgroundColor> {
+        self.background_color.as_ref()
+    }
+    /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn background_opacity(&self) -> i32 {
+        self.background_opacity
+    }
+    /// Specify how MediaConvert handles the display definition segment (DDS). Keep the default, None (NONE), to exclude the DDS from this set of captions. Choose No display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not include display window data. In this case, MediaConvert writes that information to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to have MediaConvert set up the display window based on the values that you specify in related job settings. For video resolutions that are 576 pixels or smaller in height, MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling (ddsHandling). In this case, it doesn't write the display window data to the PCS either. Related settings: Use the settings DDS x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify the offset between the top left corner of the display window and the top left corner of the video frame. All burn-in and DVB-Sub font settings must match.
+    pub fn dds_handling(&self) -> std::option::Option<&crate::model::DvbddsHandling> {
+        self.dds_handling.as_ref()
+    }
+    /// Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the left side of the frame and the left side of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
+    pub fn dds_x_coordinate(&self) -> i32 {
+        self.dds_x_coordinate
+    }
+    /// Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the top of the frame and the top of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
+    pub fn dds_y_coordinate(&self) -> i32 {
+        self.dds_y_coordinate
+    }
+    /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+    pub fn fallback_font(&self) -> std::option::Option<&crate::model::DvbSubSubtitleFallbackFont> {
+        self.fallback_font.as_ref()
+    }
+    /// Specify the color of the captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn font_color(&self) -> std::option::Option<&crate::model::DvbSubtitleFontColor> {
+        self.font_color.as_ref()
+    }
+    /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
+    /// Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn font_opacity(&self) -> i32 {
+        self.font_opacity
+    }
+    /// Specify the Font resolution (FontResolution) in DPI (dots per inch).
+    /// Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn font_resolution(&self) -> i32 {
+        self.font_resolution
+    }
+    /// Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn font_script(&self) -> std::option::Option<&crate::model::FontScript> {
+        self.font_script.as_ref()
+    }
+    /// Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn font_size(&self) -> i32 {
+        self.font_size
+    }
+    /// Specify the height, in pixels, of this set of DVB-Sub captions. The default value is 576 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
+    pub fn height(&self) -> i32 {
+        self.height
+    }
+    /// Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits, representing red, green, and blue, with two optional extra digits for alpha. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
+    pub fn hex_font_color(&self) -> std::option::Option<&str> {
+        self.hex_font_color.as_deref()
+    }
+    /// Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn outline_color(&self) -> std::option::Option<&crate::model::DvbSubtitleOutlineColor> {
+        self.outline_color.as_ref()
+    }
+    /// Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn outline_size(&self) -> i32 {
+        self.outline_size
+    }
+    /// Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn shadow_color(&self) -> std::option::Option<&crate::model::DvbSubtitleShadowColor> {
+        self.shadow_color.as_ref()
+    }
+    /// Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass through the shadow style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn shadow_opacity(&self) -> i32 {
+        self.shadow_opacity
+    }
+    /// Specify the horizontal offset of the shadow, relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn shadow_x_offset(&self) -> i32 {
+        self.shadow_x_offset
+    }
+    /// Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn shadow_y_offset(&self) -> i32 {
+        self.shadow_y_offset
+    }
+    /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
+    pub fn style_passthrough(
+        &self,
+    ) -> std::option::Option<&crate::model::DvbSubtitleStylePassthrough> {
+        self.style_passthrough.as_ref()
+    }
+    /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+    pub fn subtitling_type(&self) -> std::option::Option<&crate::model::DvbSubtitlingType> {
+        self.subtitling_type.as_ref()
+    }
+    /// Specify whether the Text spacing (TextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn teletext_spacing(
+        &self,
+    ) -> std::option::Option<&crate::model::DvbSubtitleTeletextSpacing> {
+        self.teletext_spacing.as_ref()
+    }
+    /// Specify the width, in pixels, of this set of DVB-Sub captions. The default value is 720 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
+    pub fn width(&self) -> i32 {
+        self.width
+    }
+    /// Specify the horizontal position (XPosition) of the captions, relative to the left side of the outputin pixels. A value of 10 would result in the captions starting 10 pixels from the left ofthe output. If no explicit x_position is provided, the horizontal caption position will bedetermined by the alignment parameter. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn x_position(&self) -> i32 {
+        self.x_position
+    }
+    /// Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn y_position(&self) -> i32 {
+        self.y_position
+    }
 }
 impl std::fmt::Debug for DvbSubDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25256,6 +27638,100 @@ pub struct BurninDestinationSettings {
     /// Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output.
     pub y_position: i32,
 }
+impl BurninDestinationSettings {
+    /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates.
+    pub fn alignment(&self) -> std::option::Option<&crate::model::BurninSubtitleAlignment> {
+        self.alignment.as_ref()
+    }
+    /// Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
+    pub fn apply_font_color(
+        &self,
+    ) -> std::option::Option<&crate::model::BurninSubtitleApplyFontColor> {
+        self.apply_font_color.as_ref()
+    }
+    /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
+    pub fn background_color(
+        &self,
+    ) -> std::option::Option<&crate::model::BurninSubtitleBackgroundColor> {
+        self.background_color.as_ref()
+    }
+    /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions.
+    pub fn background_opacity(&self) -> i32 {
+        self.background_opacity
+    }
+    /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+    pub fn fallback_font(&self) -> std::option::Option<&crate::model::BurninSubtitleFallbackFont> {
+        self.fallback_font.as_ref()
+    }
+    /// Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+    pub fn font_color(&self) -> std::option::Option<&crate::model::BurninSubtitleFontColor> {
+        self.font_color.as_ref()
+    }
+    /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
+    pub fn font_opacity(&self) -> i32 {
+        self.font_opacity
+    }
+    /// Specify the Font resolution (FontResolution) in DPI (dots per inch).
+    pub fn font_resolution(&self) -> i32 {
+        self.font_resolution
+    }
+    /// Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese.
+    pub fn font_script(&self) -> std::option::Option<&crate::model::FontScript> {
+        self.font_script.as_ref()
+    }
+    /// Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
+    pub fn font_size(&self) -> i32 {
+        self.font_size
+    }
+    /// Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits, representing red, green, and blue, with two optional extra digits for alpha. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
+    pub fn hex_font_color(&self) -> std::option::Option<&str> {
+        self.hex_font_color.as_deref()
+    }
+    /// Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present.
+    pub fn outline_color(&self) -> std::option::Option<&crate::model::BurninSubtitleOutlineColor> {
+        self.outline_color.as_ref()
+    }
+    /// Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present.
+    pub fn outline_size(&self) -> i32 {
+        self.outline_size
+    }
+    /// Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present.
+    pub fn shadow_color(&self) -> std::option::Option<&crate::model::BurninSubtitleShadowColor> {
+        self.shadow_color.as_ref()
+    }
+    /// Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass through the shadow style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output captions.
+    pub fn shadow_opacity(&self) -> i32 {
+        self.shadow_opacity
+    }
+    /// Specify the horizontal offset of the shadow, relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.
+    pub fn shadow_x_offset(&self) -> i32 {
+        self.shadow_x_offset
+    }
+    /// Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present.
+    pub fn shadow_y_offset(&self) -> i32 {
+        self.shadow_y_offset
+    }
+    /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
+    pub fn style_passthrough(
+        &self,
+    ) -> std::option::Option<&crate::model::BurnInSubtitleStylePassthrough> {
+        self.style_passthrough.as_ref()
+    }
+    /// Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
+    pub fn teletext_spacing(
+        &self,
+    ) -> std::option::Option<&crate::model::BurninSubtitleTeletextSpacing> {
+        self.teletext_spacing.as_ref()
+    }
+    /// Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is provided, the horizontal caption position will be determined by the alignment parameter.
+    pub fn x_position(&self) -> i32 {
+        self.x_position
+    }
+    /// Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output.
+    pub fn y_position(&self) -> i32 {
+        self.y_position
+    }
+}
 impl std::fmt::Debug for BurninDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BurninDestinationSettings");
@@ -26217,6 +28693,58 @@ pub struct AudioDescription {
     /// Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
     pub stream_name: std::option::Option<std::string::String>,
 }
+impl AudioDescription {
+    /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+    pub fn audio_channel_tagging_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioChannelTaggingSettings> {
+        self.audio_channel_tagging_settings.as_ref()
+    }
+    /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
+    pub fn audio_normalization_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioNormalizationSettings> {
+        self.audio_normalization_settings.as_ref()
+    }
+    /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
+    pub fn audio_source_name(&self) -> std::option::Option<&str> {
+        self.audio_source_name.as_deref()
+    }
+    /// Applies only if Follow Input Audio Type is unchecked (false). A number between 0 and 255. The following are defined in ISO-IEC 13818-1: 0 = Undefined, 1 = Clean Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary, 4-255 = Reserved.
+    pub fn audio_type(&self) -> i32 {
+        self.audio_type
+    }
+    /// When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
+    pub fn audio_type_control(&self) -> std::option::Option<&crate::model::AudioTypeControl> {
+        self.audio_type_control.as_ref()
+    }
+    /// Settings related to audio encoding. The settings in this group vary depending on the value that you choose for your audio codec.
+    pub fn codec_settings(&self) -> std::option::Option<&crate::model::AudioCodecSettings> {
+        self.codec_settings.as_ref()
+    }
+    /// Specify the language for this audio output track. The service puts this language code into your output audio track when you set Language code control (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also uses your specified custom language code when you set Language code control (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
+    pub fn custom_language_code(&self) -> std::option::Option<&str> {
+        self.custom_language_code.as_deref()
+    }
+    /// Indicates the language of the audio output track. The ISO 639 language specified in the 'Language Code' drop down will be used when 'Follow Input Language Code' is not selected or when 'Follow Input Language Code' is selected but there is no ISO 639 language code specified by the input.
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// Specify which source for language code takes precedence for this audio track. When you choose Follow input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you specify.
+    pub fn language_code_control(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioLanguageCodeControl> {
+        self.language_code_control.as_ref()
+    }
+    /// Advanced audio remixing settings.
+    pub fn remix_settings(&self) -> std::option::Option<&crate::model::RemixSettings> {
+        self.remix_settings.as_ref()
+    }
+    /// Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AudioDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioDescription");
@@ -26444,6 +28972,20 @@ pub struct RemixSettings {
     /// Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.) If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     pub channels_out: i32,
 }
+impl RemixSettings {
+    /// Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
+    pub fn channel_mapping(&self) -> std::option::Option<&crate::model::ChannelMapping> {
+        self.channel_mapping.as_ref()
+    }
+    /// Specify the number of audio channels from your input that you want to use in your output. With remixing, you might combine or split the data in these channels, so the number of channels in your final output might be different. If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
+    pub fn channels_in(&self) -> i32 {
+        self.channels_in
+    }
+    /// Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.) If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
+    pub fn channels_out(&self) -> i32 {
+        self.channels_out
+    }
+}
 impl std::fmt::Debug for RemixSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemixSettings");
@@ -26521,6 +29063,12 @@ pub struct ChannelMapping {
     /// In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
     pub output_channels: std::option::Option<std::vec::Vec<crate::model::OutputChannelMapping>>,
 }
+impl ChannelMapping {
+    /// In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
+    pub fn output_channels(&self) -> std::option::Option<&[crate::model::OutputChannelMapping]> {
+        self.output_channels.as_deref()
+    }
+}
 impl std::fmt::Debug for ChannelMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMapping");
@@ -26583,6 +29131,16 @@ pub struct OutputChannelMapping {
     pub input_channels: std::option::Option<std::vec::Vec<i32>>,
     /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
     pub input_channels_fine_tune: std::option::Option<std::vec::Vec<f64>>,
+}
+impl OutputChannelMapping {
+    /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
+    pub fn input_channels(&self) -> std::option::Option<&[i32]> {
+        self.input_channels.as_deref()
+    }
+    /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
+    pub fn input_channels_fine_tune(&self) -> std::option::Option<&[f64]> {
+        self.input_channels_fine_tune.as_deref()
+    }
 }
 impl std::fmt::Debug for OutputChannelMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26737,6 +29295,52 @@ pub struct AudioCodecSettings {
     pub vorbis_settings: std::option::Option<crate::model::VorbisSettings>,
     /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
     pub wav_settings: std::option::Option<crate::model::WavSettings>,
+}
+impl AudioCodecSettings {
+    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
+    pub fn aac_settings(&self) -> std::option::Option<&crate::model::AacSettings> {
+        self.aac_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
+    pub fn ac3_settings(&self) -> std::option::Option<&crate::model::Ac3Settings> {
+        self.ac3_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
+    pub fn aiff_settings(&self) -> std::option::Option<&crate::model::AiffSettings> {
+        self.aiff_settings.as_ref()
+    }
+    /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
+    pub fn codec(&self) -> std::option::Option<&crate::model::AudioCodec> {
+        self.codec.as_ref()
+    }
+    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+    pub fn eac3_atmos_settings(&self) -> std::option::Option<&crate::model::Eac3AtmosSettings> {
+        self.eac3_atmos_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+    pub fn eac3_settings(&self) -> std::option::Option<&crate::model::Eac3Settings> {
+        self.eac3_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+    pub fn mp2_settings(&self) -> std::option::Option<&crate::model::Mp2Settings> {
+        self.mp2_settings.as_ref()
+    }
+    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+    pub fn mp3_settings(&self) -> std::option::Option<&crate::model::Mp3Settings> {
+        self.mp3_settings.as_ref()
+    }
+    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+    pub fn opus_settings(&self) -> std::option::Option<&crate::model::OpusSettings> {
+        self.opus_settings.as_ref()
+    }
+    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+    pub fn vorbis_settings(&self) -> std::option::Option<&crate::model::VorbisSettings> {
+        self.vorbis_settings.as_ref()
+    }
+    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
+    pub fn wav_settings(&self) -> std::option::Option<&crate::model::WavSettings> {
+        self.wav_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for AudioCodecSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26952,6 +29556,24 @@ pub struct WavSettings {
     /// Sample rate in Hz.
     pub sample_rate: i32,
 }
+impl WavSettings {
+    /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
+    pub fn bit_depth(&self) -> i32 {
+        self.bit_depth
+    }
+    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    pub fn channels(&self) -> i32 {
+        self.channels
+    }
+    /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+    pub fn format(&self) -> std::option::Option<&crate::model::WavFormat> {
+        self.format.as_ref()
+    }
+    /// Sample rate in Hz.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+}
 impl std::fmt::Debug for WavSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WavSettings");
@@ -27098,6 +29720,20 @@ pub struct VorbisSettings {
     /// Optional. Specify the variable audio quality of this Vorbis output from -1 (lowest quality, ~45 kbit/s) to 10 (highest quality, ~500 kbit/s). The default value is 4 (~128 kbit/s). Values 5 and 6 are approximately 160 and 192 kbit/s, respectively.
     pub vbr_quality: i32,
 }
+impl VorbisSettings {
+    /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
+    pub fn channels(&self) -> i32 {
+        self.channels
+    }
+    /// Optional. Specify the audio sample rate in Hz. Valid values are 22050, 32000, 44100, and 48000. The default value is 48000.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+    /// Optional. Specify the variable audio quality of this Vorbis output from -1 (lowest quality, ~45 kbit/s) to 10 (highest quality, ~500 kbit/s). The default value is 4 (~128 kbit/s). Values 5 and 6 are approximately 160 and 192 kbit/s, respectively.
+    pub fn vbr_quality(&self) -> i32 {
+        self.vbr_quality
+    }
+}
 impl std::fmt::Debug for VorbisSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VorbisSettings");
@@ -27175,6 +29811,20 @@ pub struct OpusSettings {
     pub channels: i32,
     /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub sample_rate: i32,
+}
+impl OpusSettings {
+    /// Optional. Specify the average bitrate in bits per second. Valid values are multiples of 8000, from 32000 through 192000. The default value is 96000, which we recommend for quality and bandwidth.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+    pub fn channels(&self) -> i32 {
+        self.channels
+    }
+    /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
 }
 impl std::fmt::Debug for OpusSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27257,6 +29907,28 @@ pub struct Mp3Settings {
     pub sample_rate: i32,
     /// Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
     pub vbr_quality: i32,
+}
+impl Mp3Settings {
+    /// Specify the average bitrate in bits per second.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+    pub fn channels(&self) -> i32 {
+        self.channels
+    }
+    /// Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::Mp3RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+    /// Sample rate in hz.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+    /// Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
+    pub fn vbr_quality(&self) -> i32 {
+        self.vbr_quality
+    }
 }
 impl std::fmt::Debug for Mp3Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27420,6 +30092,20 @@ pub struct Mp2Settings {
     /// Sample rate in hz.
     pub sample_rate: i32,
 }
+impl Mp2Settings {
+    /// Specify the average bitrate in bits per second.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+    pub fn channels(&self) -> i32 {
+        self.channels
+    }
+    /// Sample rate in hz.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+}
 impl std::fmt::Debug for Mp2Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Mp2Settings");
@@ -27535,6 +30221,100 @@ pub struct Eac3Settings {
     pub surround_ex_mode: std::option::Option<crate::model::Eac3SurroundExMode>,
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
     pub surround_mode: std::option::Option<crate::model::Eac3SurroundMode>,
+}
+impl Eac3Settings {
+    /// If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+    pub fn attenuation_control(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3AttenuationControl> {
+        self.attenuation_control.as_ref()
+    }
+    /// Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+    pub fn bitstream_mode(&self) -> std::option::Option<&crate::model::Eac3BitstreamMode> {
+        self.bitstream_mode.as_ref()
+    }
+    /// Dolby Digital Plus coding mode. Determines number of channels.
+    pub fn coding_mode(&self) -> std::option::Option<&crate::model::Eac3CodingMode> {
+        self.coding_mode.as_ref()
+    }
+    /// Activates a DC highpass filter for all input channels.
+    pub fn dc_filter(&self) -> std::option::Option<&crate::model::Eac3DcFilter> {
+        self.dc_filter.as_ref()
+    }
+    /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
+    pub fn dialnorm(&self) -> i32 {
+        self.dialnorm
+    }
+    /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn dynamic_range_compression_line(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3DynamicRangeCompressionLine> {
+        self.dynamic_range_compression_line.as_ref()
+    }
+    /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn dynamic_range_compression_rf(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3DynamicRangeCompressionRf> {
+        self.dynamic_range_compression_rf.as_ref()
+    }
+    /// When encoding 3/2 audio, controls whether the LFE channel is enabled
+    pub fn lfe_control(&self) -> std::option::Option<&crate::model::Eac3LfeControl> {
+        self.lfe_control.as_ref()
+    }
+    /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+    pub fn lfe_filter(&self) -> std::option::Option<&crate::model::Eac3LfeFilter> {
+        self.lfe_filter.as_ref()
+    }
+    /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
+    pub fn lo_ro_center_mix_level(&self) -> f64 {
+        self.lo_ro_center_mix_level
+    }
+    /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right only surround (loRoSurroundMixLevel).
+    pub fn lo_ro_surround_mix_level(&self) -> f64 {
+        self.lo_ro_surround_mix_level
+    }
+    /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
+    pub fn lt_rt_center_mix_level(&self) -> f64 {
+        self.lt_rt_center_mix_level
+    }
+    /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+    pub fn lt_rt_surround_mix_level(&self) -> f64 {
+        self.lt_rt_surround_mix_level
+    }
+    /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+    pub fn metadata_control(&self) -> std::option::Option<&crate::model::Eac3MetadataControl> {
+        self.metadata_control.as_ref()
+    }
+    /// When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
+    pub fn passthrough_control(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3PassthroughControl> {
+        self.passthrough_control.as_ref()
+    }
+    /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
+    pub fn phase_control(&self) -> std::option::Option<&crate::model::Eac3PhaseControl> {
+        self.phase_control.as_ref()
+    }
+    /// This value is always 48000. It represents the sample rate in Hz.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+    /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+    pub fn stereo_downmix(&self) -> std::option::Option<&crate::model::Eac3StereoDownmix> {
+        self.stereo_downmix.as_ref()
+    }
+    /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
+    pub fn surround_ex_mode(&self) -> std::option::Option<&crate::model::Eac3SurroundExMode> {
+        self.surround_ex_mode.as_ref()
+    }
+    /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+    pub fn surround_mode(&self) -> std::option::Option<&crate::model::Eac3SurroundMode> {
+        self.surround_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for Eac3Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28788,6 +31568,84 @@ pub struct Eac3AtmosSettings {
     /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
     pub surround_ex_mode: std::option::Option<crate::model::Eac3AtmosSurroundExMode>,
 }
+impl Eac3AtmosSettings {
+    /// Specify the average bitrate for this output in bits per second. Valid values: 384k, 448k, 576k, 640k, 768k, 1024k Default value: 448k Note that MediaConvert supports 384k only with channel-based immersive (CBI) 7.1.4 and 5.1.4 inputs. For CBI 9.1.6 and other input types, MediaConvert automatically increases your output bitrate to 448k.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+    pub fn bitstream_mode(&self) -> std::option::Option<&crate::model::Eac3AtmosBitstreamMode> {
+        self.bitstream_mode.as_ref()
+    }
+    /// The coding mode for Dolby Digital Plus JOC (Atmos).
+    pub fn coding_mode(&self) -> std::option::Option<&crate::model::Eac3AtmosCodingMode> {
+        self.coding_mode.as_ref()
+    }
+    /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
+    pub fn dialogue_intelligence(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3AtmosDialogueIntelligence> {
+        self.dialogue_intelligence.as_ref()
+    }
+    /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+    pub fn downmix_control(&self) -> std::option::Option<&crate::model::Eac3AtmosDownmixControl> {
+        self.downmix_control.as_ref()
+    }
+    /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn dynamic_range_compression_line(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3AtmosDynamicRangeCompressionLine> {
+        self.dynamic_range_compression_line.as_ref()
+    }
+    /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn dynamic_range_compression_rf(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3AtmosDynamicRangeCompressionRf> {
+        self.dynamic_range_compression_rf.as_ref()
+    }
+    /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range compression RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic range control (DynamicRangeControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+    pub fn dynamic_range_control(
+        &self,
+    ) -> std::option::Option<&crate::model::Eac3AtmosDynamicRangeControl> {
+        self.dynamic_range_control.as_ref()
+    }
+    /// Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
+    pub fn lo_ro_center_mix_level(&self) -> f64 {
+        self.lo_ro_center_mix_level
+    }
+    /// Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
+    pub fn lo_ro_surround_mix_level(&self) -> f64 {
+        self.lo_ro_surround_mix_level
+    }
+    /// Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
+    pub fn lt_rt_center_mix_level(&self) -> f64 {
+        self.lt_rt_center_mix_level
+    }
+    /// Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
+    pub fn lt_rt_surround_mix_level(&self) -> f64 {
+        self.lt_rt_surround_mix_level
+    }
+    /// Choose how the service meters the loudness of your audio.
+    pub fn metering_mode(&self) -> std::option::Option<&crate::model::Eac3AtmosMeteringMode> {
+        self.metering_mode.as_ref()
+    }
+    /// This value is always 48000. It represents the sample rate in Hz.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+    /// Specify the percentage of audio content, from 0% to 100%, that must be speech in order for the encoder to use the measured speech loudness as the overall program loudness. Default value: 15%
+    pub fn speech_threshold(&self) -> i32 {
+        self.speech_threshold
+    }
+    /// Choose how the service does stereo downmixing. Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo downmix (StereoDownmix).
+    pub fn stereo_downmix(&self) -> std::option::Option<&crate::model::Eac3AtmosStereoDownmix> {
+        self.stereo_downmix.as_ref()
+    }
+    /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
+    pub fn surround_ex_mode(&self) -> std::option::Option<&crate::model::Eac3AtmosSurroundExMode> {
+        self.surround_ex_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for Eac3AtmosSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Eac3AtmosSettings");
@@ -29838,6 +32696,20 @@ pub struct AiffSettings {
     /// Sample rate in hz.
     pub sample_rate: i32,
 }
+impl AiffSettings {
+    /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
+    pub fn bit_depth(&self) -> i32 {
+        self.bit_depth
+    }
+    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    pub fn channels(&self) -> i32 {
+        self.channels
+    }
+    /// Sample rate in hz.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+}
 impl std::fmt::Debug for AiffSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AiffSettings");
@@ -29932,6 +32804,54 @@ pub struct Ac3Settings {
     pub metadata_control: std::option::Option<crate::model::Ac3MetadataControl>,
     /// This value is always 48000. It represents the sample rate in Hz.
     pub sample_rate: i32,
+}
+impl Ac3Settings {
+    /// Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+    pub fn bitstream_mode(&self) -> std::option::Option<&crate::model::Ac3BitstreamMode> {
+        self.bitstream_mode.as_ref()
+    }
+    /// Dolby Digital coding mode. Determines number of channels.
+    pub fn coding_mode(&self) -> std::option::Option<&crate::model::Ac3CodingMode> {
+        self.coding_mode.as_ref()
+    }
+    /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital, dialnorm will be passed through.
+    pub fn dialnorm(&self) -> i32 {
+        self.dialnorm
+    }
+    /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn dynamic_range_compression_line(
+        &self,
+    ) -> std::option::Option<&crate::model::Ac3DynamicRangeCompressionLine> {
+        self.dynamic_range_compression_line.as_ref()
+    }
+    /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
+    pub fn dynamic_range_compression_profile(
+        &self,
+    ) -> std::option::Option<&crate::model::Ac3DynamicRangeCompressionProfile> {
+        self.dynamic_range_compression_profile.as_ref()
+    }
+    /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    pub fn dynamic_range_compression_rf(
+        &self,
+    ) -> std::option::Option<&crate::model::Ac3DynamicRangeCompressionRf> {
+        self.dynamic_range_compression_rf.as_ref()
+    }
+    /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+    pub fn lfe_filter(&self) -> std::option::Option<&crate::model::Ac3LfeFilter> {
+        self.lfe_filter.as_ref()
+    }
+    /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+    pub fn metadata_control(&self) -> std::option::Option<&crate::model::Ac3MetadataControl> {
+        self.metadata_control.as_ref()
+    }
+    /// This value is always 48000. It represents the sample rate in Hz.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
 }
 impl std::fmt::Debug for Ac3Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30634,6 +33554,46 @@ pub struct AacSettings {
     /// VBR Quality Level - Only used if rate_control_mode is VBR.
     pub vbr_quality: std::option::Option<crate::model::AacVbrQuality>,
 }
+impl AacSettings {
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    pub fn audio_description_broadcaster_mix(
+        &self,
+    ) -> std::option::Option<&crate::model::AacAudioDescriptionBroadcasterMix> {
+        self.audio_description_broadcaster_mix.as_ref()
+    }
+    /// Specify the average bitrate in bits per second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set is also constrained by the values that you choose for Profile (codecProfile), Bitrate control mode (codingMode), and Sample rate (sampleRate). Default values depend on Bitrate control mode and Profile.
+    pub fn bitrate(&self) -> i32 {
+        self.bitrate
+    }
+    /// AAC Profile.
+    pub fn codec_profile(&self) -> std::option::Option<&crate::model::AacCodecProfile> {
+        self.codec_profile.as_ref()
+    }
+    /// Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
+    pub fn coding_mode(&self) -> std::option::Option<&crate::model::AacCodingMode> {
+        self.coding_mode.as_ref()
+    }
+    /// Rate Control Mode.
+    pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::AacRateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
+    /// Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
+    pub fn raw_format(&self) -> std::option::Option<&crate::model::AacRawFormat> {
+        self.raw_format.as_ref()
+    }
+    /// Sample rate in Hz. Valid values depend on rate control mode and profile.
+    pub fn sample_rate(&self) -> i32 {
+        self.sample_rate
+    }
+    /// Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
+    pub fn specification(&self) -> std::option::Option<&crate::model::AacSpecification> {
+        self.specification.as_ref()
+    }
+    /// VBR Quality Level - Only used if rate_control_mode is VBR.
+    pub fn vbr_quality(&self) -> std::option::Option<&crate::model::AacVbrQuality> {
+        self.vbr_quality.as_ref()
+    }
+}
 impl std::fmt::Debug for AacSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AacSettings");
@@ -31294,6 +34254,38 @@ pub struct AudioNormalizationSettings {
     /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
     pub target_lkfs: f64,
 }
+impl AudioNormalizationSettings {
+    /// Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
+    pub fn algorithm(&self) -> std::option::Option<&crate::model::AudioNormalizationAlgorithm> {
+        self.algorithm.as_ref()
+    }
+    /// When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
+    pub fn algorithm_control(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioNormalizationAlgorithmControl> {
+        self.algorithm_control.as_ref()
+    }
+    /// Content measuring above this level will be corrected to the target level. Content measuring below this level will not be corrected.
+    pub fn correction_gate_level(&self) -> i32 {
+        self.correction_gate_level
+    }
+    /// If set to LOG, log each output's audio track loudness to a CSV file.
+    pub fn loudness_logging(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioNormalizationLoudnessLogging> {
+        self.loudness_logging.as_ref()
+    }
+    /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
+    pub fn peak_calculation(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioNormalizationPeakCalculation> {
+        self.peak_calculation.as_ref()
+    }
+    /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+    pub fn target_lkfs(&self) -> f64 {
+        self.target_lkfs
+    }
+}
 impl std::fmt::Debug for AudioNormalizationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioNormalizationSettings");
@@ -31664,6 +34656,12 @@ pub struct AudioChannelTaggingSettings {
     /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
     pub channel_tag: std::option::Option<crate::model::AudioChannelTag>,
 }
+impl AudioChannelTaggingSettings {
+    /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
+    pub fn channel_tag(&self) -> std::option::Option<&crate::model::AudioChannelTag> {
+        self.channel_tag.as_ref()
+    }
+}
 impl std::fmt::Debug for AudioChannelTaggingSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioChannelTaggingSettings");
@@ -31848,6 +34846,64 @@ pub struct JobTemplate {
     pub status_update_interval: std::option::Option<crate::model::StatusUpdateInterval>,
     /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
     pub r#type: std::option::Option<crate::model::Type>,
+}
+impl JobTemplate {
+    /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
+    pub fn acceleration_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AccelerationSettings> {
+        self.acceleration_settings.as_ref()
+    }
+    /// An identifier for this resource that is unique within all of AWS.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// An optional category you create to organize your job templates.
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// The timestamp in epoch seconds for Job template creation.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// An optional description you create for each job template.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Optional list of hop destinations.
+    pub fn hop_destinations(&self) -> std::option::Option<&[crate::model::HopDestination]> {
+        self.hop_destinations.as_deref()
+    }
+    /// The timestamp in epoch seconds when the Job template was last updated.
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// A name you create for each job template. Each name must be unique within your account.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Relative priority on the job.
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
+    pub fn queue(&self) -> std::option::Option<&str> {
+        self.queue.as_deref()
+    }
+    /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    pub fn settings(&self) -> std::option::Option<&crate::model::JobTemplateSettings> {
+        self.settings.as_ref()
+    }
+    /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    pub fn status_update_interval(
+        &self,
+    ) -> std::option::Option<&crate::model::StatusUpdateInterval> {
+        self.status_update_interval.as_ref()
+    }
+    /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for JobTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32224,6 +35280,64 @@ pub struct JobTemplateSettings {
     /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
     pub timed_metadata_insertion: std::option::Option<crate::model::TimedMetadataInsertion>,
 }
+impl JobTemplateSettings {
+    /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
+    pub fn ad_avail_offset(&self) -> i32 {
+        self.ad_avail_offset
+    }
+    /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+    pub fn avail_blanking(&self) -> std::option::Option<&crate::model::AvailBlanking> {
+        self.avail_blanking.as_ref()
+    }
+    /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
+    pub fn esam(&self) -> std::option::Option<&crate::model::EsamSettings> {
+        self.esam.as_ref()
+    }
+    /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
+    pub fn extended_data_services(
+        &self,
+    ) -> std::option::Option<&crate::model::ExtendedDataServices> {
+        self.extended_data_services.as_ref()
+    }
+    /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
+    pub fn inputs(&self) -> std::option::Option<&[crate::model::InputTemplate]> {
+        self.inputs.as_deref()
+    }
+    /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+    pub fn kantar_watermark(&self) -> std::option::Option<&crate::model::KantarWatermarkSettings> {
+        self.kantar_watermark.as_ref()
+    }
+    /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
+    pub fn motion_image_inserter(&self) -> std::option::Option<&crate::model::MotionImageInserter> {
+        self.motion_image_inserter.as_ref()
+    }
+    /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
+    pub fn nielsen_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NielsenConfiguration> {
+        self.nielsen_configuration.as_ref()
+    }
+    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    pub fn nielsen_non_linear_watermark(
+        &self,
+    ) -> std::option::Option<&crate::model::NielsenNonLinearWatermarkSettings> {
+        self.nielsen_non_linear_watermark.as_ref()
+    }
+    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+    pub fn output_groups(&self) -> std::option::Option<&[crate::model::OutputGroup]> {
+        self.output_groups.as_deref()
+    }
+    /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
+    pub fn timecode_config(&self) -> std::option::Option<&crate::model::TimecodeConfig> {
+        self.timecode_config.as_ref()
+    }
+    /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+    pub fn timed_metadata_insertion(
+        &self,
+    ) -> std::option::Option<&crate::model::TimedMetadataInsertion> {
+        self.timed_metadata_insertion.as_ref()
+    }
+}
 impl std::fmt::Debug for JobTemplateSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobTemplateSettings");
@@ -32468,6 +35582,12 @@ pub struct TimedMetadataInsertion {
     /// Id3Insertions contains the array of Id3Insertion instances.
     pub id3_insertions: std::option::Option<std::vec::Vec<crate::model::Id3Insertion>>,
 }
+impl TimedMetadataInsertion {
+    /// Id3Insertions contains the array of Id3Insertion instances.
+    pub fn id3_insertions(&self) -> std::option::Option<&[crate::model::Id3Insertion]> {
+        self.id3_insertions.as_deref()
+    }
+}
 impl std::fmt::Debug for TimedMetadataInsertion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimedMetadataInsertion");
@@ -32526,6 +35646,16 @@ pub struct Id3Insertion {
     pub id3: std::option::Option<std::string::String>,
     /// Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
     pub timecode: std::option::Option<std::string::String>,
+}
+impl Id3Insertion {
+    /// Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+    pub fn id3(&self) -> std::option::Option<&str> {
+        self.id3.as_deref()
+    }
+    /// Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+    pub fn timecode(&self) -> std::option::Option<&str> {
+        self.timecode.as_deref()
+    }
 }
 impl std::fmt::Debug for Id3Insertion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32593,6 +35723,24 @@ pub struct TimecodeConfig {
     pub start: std::option::Option<std::string::String>,
     /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
     pub timestamp_offset: std::option::Option<std::string::String>,
+}
+impl TimecodeConfig {
+    /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the  first frame is the timecode value on the first input frame of the input.
+    pub fn anchor(&self) -> std::option::Option<&str> {
+        self.anchor.as_deref()
+    }
+    /// Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
+    pub fn source(&self) -> std::option::Option<&crate::model::TimecodeSource> {
+        self.source.as_ref()
+    }
+    /// Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+    /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+    pub fn timestamp_offset(&self) -> std::option::Option<&str> {
+        self.timestamp_offset.as_deref()
+    }
 }
 impl std::fmt::Debug for TimecodeConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32754,6 +35902,30 @@ pub struct OutputGroup {
     /// This object holds groups of encoding settings, one group of settings per output.
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
+impl OutputGroup {
+    /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
+    pub fn automated_encoding_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutomatedEncodingSettings> {
+        self.automated_encoding_settings.as_ref()
+    }
+    /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
+    pub fn custom_name(&self) -> std::option::Option<&str> {
+        self.custom_name.as_deref()
+    }
+    /// Name of the output group
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Output Group settings, including type
+    pub fn output_group_settings(&self) -> std::option::Option<&crate::model::OutputGroupSettings> {
+        self.output_group_settings.as_ref()
+    }
+    /// This object holds groups of encoding settings, one group of settings per output.
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputGroup");
@@ -32889,6 +36061,40 @@ pub struct Output {
     pub preset: std::option::Option<std::string::String>,
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
     pub video_description: std::option::Option<crate::model::VideoDescription>,
+}
+impl Output {
+    /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+    pub fn audio_descriptions(&self) -> std::option::Option<&[crate::model::AudioDescription]> {
+        self.audio_descriptions.as_deref()
+    }
+    /// (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+    pub fn caption_descriptions(&self) -> std::option::Option<&[crate::model::CaptionDescription]> {
+        self.caption_descriptions.as_deref()
+    }
+    /// Container specific settings.
+    pub fn container_settings(&self) -> std::option::Option<&crate::model::ContainerSettings> {
+        self.container_settings.as_ref()
+    }
+    /// Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
+    pub fn extension(&self) -> std::option::Option<&str> {
+        self.extension.as_deref()
+    }
+    /// Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You specify the base filename as part of your destination URI. When you create multiple outputs in the same output group, Name modifier (NameModifier) is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output group.
+    pub fn name_modifier(&self) -> std::option::Option<&str> {
+        self.name_modifier.as_deref()
+    }
+    /// Specific settings for this type of output.
+    pub fn output_settings(&self) -> std::option::Option<&crate::model::OutputSettings> {
+        self.output_settings.as_ref()
+    }
+    /// Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
+    pub fn preset(&self) -> std::option::Option<&str> {
+        self.preset.as_deref()
+    }
+    /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
+    pub fn video_description(&self) -> std::option::Option<&crate::model::VideoDescription> {
+        self.video_description.as_ref()
+    }
 }
 impl std::fmt::Debug for Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33067,6 +36273,12 @@ pub struct OutputSettings {
     /// Settings for HLS output groups
     pub hls_settings: std::option::Option<crate::model::HlsSettings>,
 }
+impl OutputSettings {
+    /// Settings for HLS output groups
+    pub fn hls_settings(&self) -> std::option::Option<&crate::model::HlsSettings> {
+        self.hls_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for OutputSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputSettings");
@@ -33130,6 +36342,42 @@ pub struct HlsSettings {
     pub i_frame_only_manifest: std::option::Option<crate::model::HlsIFrameOnlyManifest>,
     /// Use this setting to add an identifying string to the filename of each segment. The service adds this string between the name modifier and segment index number. You can use format identifiers in the string. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
     pub segment_modifier: std::option::Option<std::string::String>,
+}
+impl HlsSettings {
+    /// Specifies the group to which the audio rendition belongs.
+    pub fn audio_group_id(&self) -> std::option::Option<&str> {
+        self.audio_group_id.as_deref()
+    }
+    /// Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container. Keep the default value Automatic (AUTOMATIC) to create an audio-only file in a raw container. Regardless of the value that you specify here, if this output has video, the service will place the output into an MPEG2-TS container.
+    pub fn audio_only_container(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsAudioOnlyContainer> {
+        self.audio_only_container.as_ref()
+    }
+    /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
+    pub fn audio_rendition_sets(&self) -> std::option::Option<&str> {
+        self.audio_rendition_sets.as_deref()
+    }
+    /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
+    pub fn audio_track_type(&self) -> std::option::Option<&crate::model::HlsAudioTrackType> {
+        self.audio_track_type.as_ref()
+    }
+    /// Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
+    pub fn descriptive_video_service_flag(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsDescriptiveVideoServiceFlag> {
+        self.descriptive_video_service_flag.as_ref()
+    }
+    /// Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
+    pub fn i_frame_only_manifest(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsIFrameOnlyManifest> {
+        self.i_frame_only_manifest.as_ref()
+    }
+    /// Use this setting to add an identifying string to the filename of each segment. The service adds this string between the name modifier and segment index number. You can use format identifiers in the string. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
+    pub fn segment_modifier(&self) -> std::option::Option<&str> {
+        self.segment_modifier.as_deref()
+    }
 }
 impl std::fmt::Debug for HlsSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33530,6 +36778,30 @@ pub struct CaptionDescription {
     /// Specify a label for this set of output captions. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
     pub language_description: std::option::Option<std::string::String>,
 }
+impl CaptionDescription {
+    /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <N>", which denotes that the Nth Caption Selector will be used from each input.
+    pub fn caption_selector_name(&self) -> std::option::Option<&str> {
+        self.caption_selector_name.as_deref()
+    }
+    /// Specify the language for this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information when automatically selecting the font script for rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
+    pub fn custom_language_code(&self) -> std::option::Option<&str> {
+        self.custom_language_code.as_deref()
+    }
+    /// Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to one output captions track. Depending on your output captions format, one tab might correspond to a set of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
+    pub fn destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::CaptionDestinationSettings> {
+        self.destination_settings.as_ref()
+    }
+    /// Specify the language of this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font language for rendering the captions text.
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// Specify a label for this set of output captions. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
+    pub fn language_description(&self) -> std::option::Option<&str> {
+        self.language_description.as_deref()
+    }
+}
 impl std::fmt::Debug for CaptionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CaptionDescription");
@@ -33658,6 +36930,36 @@ pub struct OutputGroupSettings {
     pub ms_smooth_group_settings: std::option::Option<crate::model::MsSmoothGroupSettings>,
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub r#type: std::option::Option<crate::model::OutputGroupType>,
+}
+impl OutputGroupSettings {
+    /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to CMAF_GROUP_SETTINGS.
+    pub fn cmaf_group_settings(&self) -> std::option::Option<&crate::model::CmafGroupSettings> {
+        self.cmaf_group_settings.as_ref()
+    }
+    /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
+    pub fn dash_iso_group_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoGroupSettings> {
+        self.dash_iso_group_settings.as_ref()
+    }
+    /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
+    pub fn file_group_settings(&self) -> std::option::Option<&crate::model::FileGroupSettings> {
+        self.file_group_settings.as_ref()
+    }
+    /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to HLS_GROUP_SETTINGS.
+    pub fn hls_group_settings(&self) -> std::option::Option<&crate::model::HlsGroupSettings> {
+        self.hls_group_settings.as_ref()
+    }
+    /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
+    pub fn ms_smooth_group_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MsSmoothGroupSettings> {
+        self.ms_smooth_group_settings.as_ref()
+    }
+    /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
+    pub fn r#type(&self) -> std::option::Option<&crate::model::OutputGroupType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for OutputGroupSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33884,6 +37186,48 @@ pub struct MsSmoothGroupSettings {
     pub fragment_length_control: std::option::Option<crate::model::MsSmoothFragmentLengthControl>,
     /// Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
     pub manifest_encoding: std::option::Option<crate::model::MsSmoothManifestEncoding>,
+}
+impl MsSmoothGroupSettings {
+    /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
+    pub fn additional_manifests(
+        &self,
+    ) -> std::option::Option<&[crate::model::MsSmoothAdditionalManifest]> {
+        self.additional_manifests.as_deref()
+    }
+    /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
+    pub fn audio_deduplication(
+        &self,
+    ) -> std::option::Option<&crate::model::MsSmoothAudioDeduplication> {
+        self.audio_deduplication.as_ref()
+    }
+    /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn destination_settings(&self) -> std::option::Option<&crate::model::DestinationSettings> {
+        self.destination_settings.as_ref()
+    }
+    /// If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::MsSmoothEncryptionSettings> {
+        self.encryption.as_ref()
+    }
+    /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn fragment_length(&self) -> i32 {
+        self.fragment_length
+    }
+    /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn fragment_length_control(
+        &self,
+    ) -> std::option::Option<&crate::model::MsSmoothFragmentLengthControl> {
+        self.fragment_length_control.as_ref()
+    }
+    /// Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
+    pub fn manifest_encoding(
+        &self,
+    ) -> std::option::Option<&crate::model::MsSmoothManifestEncoding> {
+        self.manifest_encoding.as_ref()
+    }
 }
 impl std::fmt::Debug for MsSmoothGroupSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34170,6 +37514,12 @@ pub struct MsSmoothEncryptionSettings {
     /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl MsSmoothEncryptionSettings {
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for MsSmoothEncryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MsSmoothEncryptionSettings");
@@ -34227,6 +37577,25 @@ pub struct SpekeKeyProvider {
     pub system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub url: std::option::Option<std::string::String>,
+}
+impl SpekeKeyProvider {
+    /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See
+    /// https://dashif.org/identifiers/content_protection/ for more details.
+    pub fn system_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.system_ids.as_deref()
+    }
+    /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for SpekeKeyProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34329,6 +37698,12 @@ pub struct DestinationSettings {
     /// Settings associated with S3 destination
     pub s3_settings: std::option::Option<crate::model::S3DestinationSettings>,
 }
+impl DestinationSettings {
+    /// Settings associated with S3 destination
+    pub fn s3_settings(&self) -> std::option::Option<&crate::model::S3DestinationSettings> {
+        self.s3_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for DestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationSettings");
@@ -34381,6 +37756,16 @@ pub struct S3DestinationSettings {
     pub access_control: std::option::Option<crate::model::S3DestinationAccessControl>,
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
     pub encryption: std::option::Option<crate::model::S3EncryptionSettings>,
+}
+impl S3DestinationSettings {
+    /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
+    pub fn access_control(&self) -> std::option::Option<&crate::model::S3DestinationAccessControl> {
+        self.access_control.as_ref()
+    }
+    /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::S3EncryptionSettings> {
+        self.encryption.as_ref()
+    }
 }
 impl std::fmt::Debug for S3DestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34452,6 +37837,22 @@ pub struct S3EncryptionSettings {
     pub kms_encryption_context: std::option::Option<std::string::String>,
     /// Optionally, specify the customer master key (CMK) that you want to use to encrypt the data key that AWS uses to encrypt your output content. Enter the Amazon Resource Name (ARN) of the CMK. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). If you set Server-side encryption to AWS KMS but don't specify a CMK here, AWS uses the AWS managed CMK associated with Amazon S3.
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3EncryptionSettings {
+    /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+    pub fn encryption_type(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ServerSideEncryptionType> {
+        self.encryption_type.as_ref()
+    }
+    /// Optionally, specify the encryption context that you want to use alongside your KMS key. AWS KMS uses this encryption context as additional authenticated data (AAD) to support authenticated encryption. This value must be a base64-encoded UTF-8 string holding JSON which represents a string-string map. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption context, see: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+    pub fn kms_encryption_context(&self) -> std::option::Option<&str> {
+        self.kms_encryption_context.as_deref()
+    }
+    /// Optionally, specify the customer master key (CMK) that you want to use to encrypt the data key that AWS uses to encrypt your output content. Enter the Amazon Resource Name (ARN) of the CMK. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). If you set Server-side encryption to AWS KMS but don't specify a CMK here, AWS uses the AWS managed CMK associated with Amazon S3.
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3EncryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34587,6 +37988,12 @@ impl AsRef<str> for S3ServerSideEncryptionType {
 pub struct S3DestinationAccessControl {
     /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
     pub canned_acl: std::option::Option<crate::model::S3ObjectCannedAcl>,
+}
+impl S3DestinationAccessControl {
+    /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
+    pub fn canned_acl(&self) -> std::option::Option<&crate::model::S3ObjectCannedAcl> {
+        self.canned_acl.as_ref()
+    }
 }
 impl std::fmt::Debug for S3DestinationAccessControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34764,6 +38171,16 @@ pub struct MsSmoothAdditionalManifest {
     /// Specify the outputs that you want this additional top-level manifest to reference.
     pub selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl MsSmoothAdditionalManifest {
+    /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your Microsoft Smooth group is film-name.ismv. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.ismv.
+    pub fn manifest_name_modifier(&self) -> std::option::Option<&str> {
+        self.manifest_name_modifier.as_deref()
+    }
+    /// Specify the outputs that you want this additional top-level manifest to reference.
+    pub fn selected_outputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for MsSmoothAdditionalManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MsSmoothAdditionalManifest");
@@ -34898,6 +38315,150 @@ pub struct HlsGroupSettings {
     pub timed_metadata_id3_period: i32,
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     pub timestamp_delta_milliseconds: i32,
+}
+impl HlsGroupSettings {
+    /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
+    pub fn ad_markers(&self) -> std::option::Option<&[crate::model::HlsAdMarkers]> {
+        self.ad_markers.as_deref()
+    }
+    /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
+    pub fn additional_manifests(
+        &self,
+    ) -> std::option::Option<&[crate::model::HlsAdditionalManifest]> {
+        self.additional_manifests.as_deref()
+    }
+    /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers from your audio segments.
+    pub fn audio_only_header(&self) -> std::option::Option<&crate::model::HlsAudioOnlyHeader> {
+        self.audio_only_header.as_ref()
+    }
+    /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
+    pub fn base_url(&self) -> std::option::Option<&str> {
+        self.base_url.as_deref()
+    }
+    /// Language to be used on Caption outputs
+    pub fn caption_language_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::HlsCaptionLanguageMapping]> {
+        self.caption_language_mappings.as_deref()
+    }
+    /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
+    pub fn caption_language_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsCaptionLanguageSetting> {
+        self.caption_language_setting.as_ref()
+    }
+    /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
+    pub fn client_cache(&self) -> std::option::Option<&crate::model::HlsClientCache> {
+        self.client_cache.as_ref()
+    }
+    /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+    pub fn codec_specification(&self) -> std::option::Option<&crate::model::HlsCodecSpecification> {
+        self.codec_specification.as_ref()
+    }
+    /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn destination_settings(&self) -> std::option::Option<&crate::model::DestinationSettings> {
+        self.destination_settings.as_ref()
+    }
+    /// Indicates whether segments should be placed in subdirectories.
+    pub fn directory_structure(&self) -> std::option::Option<&crate::model::HlsDirectoryStructure> {
+        self.directory_structure.as_ref()
+    }
+    /// DRM settings.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::HlsEncryptionSettings> {
+        self.encryption.as_ref()
+    }
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    pub fn image_based_trick_play(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsImageBasedTrickPlay> {
+        self.image_based_trick_play.as_ref()
+    }
+    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    pub fn image_based_trick_play_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsImageBasedTrickPlaySettings> {
+        self.image_based_trick_play_settings.as_ref()
+    }
+    /// When set to GZIP, compresses HLS playlist.
+    pub fn manifest_compression(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsManifestCompression> {
+        self.manifest_compression.as_ref()
+    }
+    /// Indicates whether the output manifest should use floating point values for segment duration.
+    pub fn manifest_duration_format(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsManifestDurationFormat> {
+        self.manifest_duration_format.as_ref()
+    }
+    /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+    pub fn min_final_segment_length(&self) -> f64 {
+        self.min_final_segment_length
+    }
+    /// When set, Minimum Segment Size is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
+    pub fn min_segment_length(&self) -> i32 {
+        self.min_segment_length
+    }
+    /// Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
+    pub fn output_selection(&self) -> std::option::Option<&crate::model::HlsOutputSelection> {
+        self.output_selection.as_ref()
+    }
+    /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset.
+    pub fn program_date_time(&self) -> std::option::Option<&crate::model::HlsProgramDateTime> {
+        self.program_date_time.as_ref()
+    }
+    /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
+    pub fn program_date_time_period(&self) -> i32 {
+        self.program_date_time_period
+    }
+    /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
+    pub fn segment_control(&self) -> std::option::Option<&crate::model::HlsSegmentControl> {
+        self.segment_control.as_ref()
+    }
+    /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
+    pub fn segment_length(&self) -> i32 {
+        self.segment_length
+    }
+    /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn segment_length_control(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsSegmentLengthControl> {
+        self.segment_length_control.as_ref()
+    }
+    /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+    pub fn segments_per_subdirectory(&self) -> i32 {
+        self.segments_per_subdirectory
+    }
+    /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+    pub fn stream_inf_resolution(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsStreamInfResolution> {
+        self.stream_inf_resolution.as_ref()
+    }
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    pub fn target_duration_compatibility_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsTargetDurationCompatibilityMode> {
+        self.target_duration_compatibility_mode.as_ref()
+    }
+    /// Indicates ID3 frame that has the timecode.
+    pub fn timed_metadata_id3_frame(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsTimedMetadataId3Frame> {
+        self.timed_metadata_id3_frame.as_ref()
+    }
+    /// Timed Metadata interval in seconds.
+    pub fn timed_metadata_id3_period(&self) -> i32 {
+        self.timed_metadata_id3_period
+    }
+    /// Provides an extra millisecond delta offset to fine tune the timestamps.
+    pub fn timestamp_delta_milliseconds(&self) -> i32 {
+        self.timestamp_delta_milliseconds
+    }
 }
 impl std::fmt::Debug for HlsGroupSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35962,6 +39523,32 @@ pub struct HlsImageBasedTrickPlaySettings {
     /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
     pub tile_width: i32,
 }
+impl HlsImageBasedTrickPlaySettings {
+    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    pub fn interval_cadence(&self) -> std::option::Option<&crate::model::HlsIntervalCadence> {
+        self.interval_cadence.as_ref()
+    }
+    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    pub fn thumbnail_height(&self) -> i32 {
+        self.thumbnail_height
+    }
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    pub fn thumbnail_interval(&self) -> f64 {
+        self.thumbnail_interval
+    }
+    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    pub fn thumbnail_width(&self) -> i32 {
+        self.thumbnail_width
+    }
+    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    pub fn tile_height(&self) -> i32 {
+        self.tile_height
+    }
+    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    pub fn tile_width(&self) -> i32 {
+        self.tile_width
+    }
+}
 impl std::fmt::Debug for HlsImageBasedTrickPlaySettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HlsImageBasedTrickPlaySettings");
@@ -36209,6 +39796,38 @@ pub struct HlsEncryptionSettings {
     /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     pub r#type: std::option::Option<crate::model::HlsKeyProviderType>,
 }
+impl HlsEncryptionSettings {
+    /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption.
+    pub fn encryption_method(&self) -> std::option::Option<&crate::model::HlsEncryptionType> {
+        self.encryption_method.as_ref()
+    }
+    /// The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+    pub fn initialization_vector_in_manifest(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsInitializationVectorInManifest> {
+        self.initialization_vector_in_manifest.as_ref()
+    }
+    /// Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection.
+    pub fn offline_encrypted(&self) -> std::option::Option<&crate::model::HlsOfflineEncrypted> {
+        self.offline_encrypted.as_ref()
+    }
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+    /// Use these settings to set up encryption with a static key provider.
+    pub fn static_key_provider(&self) -> std::option::Option<&crate::model::StaticKeyProvider> {
+        self.static_key_provider.as_ref()
+    }
+    /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::HlsKeyProviderType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for HlsEncryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HlsEncryptionSettings");
@@ -36429,6 +40048,24 @@ pub struct StaticKeyProvider {
     pub static_key_value: std::option::Option<std::string::String>,
     /// Relates to DRM implementation. The location of the license server used for protecting content.
     pub url: std::option::Option<std::string::String>,
+}
+impl StaticKeyProvider {
+    /// Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must be 'identity' or a reverse DNS string. May be omitted to indicate an implicit value of 'identity'.
+    pub fn key_format(&self) -> std::option::Option<&str> {
+        self.key_format.as_deref()
+    }
+    /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
+    pub fn key_format_versions(&self) -> std::option::Option<&str> {
+        self.key_format_versions.as_deref()
+    }
+    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+    pub fn static_key_value(&self) -> std::option::Option<&str> {
+        self.static_key_value.as_deref()
+    }
+    /// Relates to DRM implementation. The location of the license server used for protecting content.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for StaticKeyProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36918,6 +40555,24 @@ pub struct HlsCaptionLanguageMapping {
     /// Caption language description.
     pub language_description: std::option::Option<std::string::String>,
 }
+impl HlsCaptionLanguageMapping {
+    /// Caption channel.
+    pub fn caption_channel(&self) -> i32 {
+        self.caption_channel
+    }
+    /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+    pub fn custom_language_code(&self) -> std::option::Option<&str> {
+        self.custom_language_code.as_deref()
+    }
+    /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// Caption language description.
+    pub fn language_description(&self) -> std::option::Option<&str> {
+        self.language_description.as_deref()
+    }
+}
 impl std::fmt::Debug for HlsCaptionLanguageMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HlsCaptionLanguageMapping");
@@ -37071,6 +40726,16 @@ pub struct HlsAdditionalManifest {
     /// Specify the outputs that you want this additional top-level manifest to reference.
     pub selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl HlsAdditionalManifest {
+    /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
+    pub fn manifest_name_modifier(&self) -> std::option::Option<&str> {
+        self.manifest_name_modifier.as_deref()
+    }
+    /// Specify the outputs that you want this additional top-level manifest to reference.
+    pub fn selected_outputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for HlsAdditionalManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HlsAdditionalManifest");
@@ -37201,6 +40866,16 @@ pub struct FileGroupSettings {
     /// Settings associated with the destination. Will vary based on the type of destination
     pub destination_settings: std::option::Option<crate::model::DestinationSettings>,
 }
+impl FileGroupSettings {
+    /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn destination_settings(&self) -> std::option::Option<&crate::model::DestinationSettings> {
+        self.destination_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for FileGroupSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileGroupSettings");
@@ -37303,6 +40978,94 @@ pub struct DashIsoGroupSettings {
     /// If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH manifest. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When you don't enable this setting, the service writes approximate segment durations in your DASH manifest.
     pub write_segment_timeline_in_representation:
         std::option::Option<crate::model::DashIsoWriteSegmentTimelineInRepresentation>,
+}
+impl DashIsoGroupSettings {
+    /// By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default manifest references every output in the output group. To create additional DASH manifests that reference a subset of the outputs in the output group, specify a list of them here.
+    pub fn additional_manifests(
+        &self,
+    ) -> std::option::Option<&[crate::model::DashAdditionalManifest]> {
+        self.additional_manifests.as_deref()
+    }
+    /// Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+    pub fn audio_channel_config_scheme_id_uri(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoGroupAudioChannelConfigSchemeIdUri> {
+        self.audio_channel_config_scheme_id_uri.as_ref()
+    }
+    /// A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
+    pub fn base_url(&self) -> std::option::Option<&str> {
+        self.base_url.as_deref()
+    }
+    /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn destination_settings(&self) -> std::option::Option<&crate::model::DestinationSettings> {
+        self.destination_settings.as_ref()
+    }
+    /// DRM settings.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::DashIsoEncryptionSettings> {
+        self.encryption.as_ref()
+    }
+    /// Length of fragments to generate (in seconds). Fragment length must be compatible with GOP size and Framerate. Note that fragments will end on the next keyframe after this number of seconds, so actual fragment length may be longer. When Emit Single File is checked, the fragmentation is internal to a single output file and it does not cause the creation of many output files as in other output types.
+    pub fn fragment_length(&self) -> i32 {
+        self.fragment_length
+    }
+    /// Supports HbbTV specification as indicated
+    pub fn hbbtv_compliance(&self) -> std::option::Option<&crate::model::DashIsoHbbtvCompliance> {
+        self.hbbtv_compliance.as_ref()
+    }
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    pub fn image_based_trick_play(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoImageBasedTrickPlay> {
+        self.image_based_trick_play.as_ref()
+    }
+    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    pub fn image_based_trick_play_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoImageBasedTrickPlaySettings> {
+        self.image_based_trick_play_settings.as_ref()
+    }
+    /// Minimum time of initially buffered media that is needed to ensure smooth playout.
+    pub fn min_buffer_time(&self) -> i32 {
+        self.min_buffer_time
+    }
+    /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+    pub fn min_final_segment_length(&self) -> f64 {
+        self.min_final_segment_length
+    }
+    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    pub fn mpd_profile(&self) -> std::option::Option<&crate::model::DashIsoMpdProfile> {
+        self.mpd_profile.as_ref()
+    }
+    /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
+    pub fn pts_offset_handling_for_b_frames(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoPtsOffsetHandlingForBFrames> {
+        self.pts_offset_handling_for_b_frames.as_ref()
+    }
+    /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+    pub fn segment_control(&self) -> std::option::Option<&crate::model::DashIsoSegmentControl> {
+        self.segment_control.as_ref()
+    }
+    /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
+    pub fn segment_length(&self) -> i32 {
+        self.segment_length
+    }
+    /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn segment_length_control(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoSegmentLengthControl> {
+        self.segment_length_control.as_ref()
+    }
+    /// If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH manifest. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When you don't enable this setting, the service writes approximate segment durations in your DASH manifest.
+    pub fn write_segment_timeline_in_representation(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoWriteSegmentTimelineInRepresentation> {
+        self.write_segment_timeline_in_representation.as_ref()
+    }
 }
 impl std::fmt::Debug for DashIsoGroupSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37941,6 +41704,32 @@ pub struct DashIsoImageBasedTrickPlaySettings {
     /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
     pub tile_width: i32,
 }
+impl DashIsoImageBasedTrickPlaySettings {
+    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    pub fn interval_cadence(&self) -> std::option::Option<&crate::model::DashIsoIntervalCadence> {
+        self.interval_cadence.as_ref()
+    }
+    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    pub fn thumbnail_height(&self) -> i32 {
+        self.thumbnail_height
+    }
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    pub fn thumbnail_interval(&self) -> f64 {
+        self.thumbnail_interval
+    }
+    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    pub fn thumbnail_width(&self) -> i32 {
+        self.thumbnail_width
+    }
+    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    pub fn tile_height(&self) -> i32 {
+        self.tile_height
+    }
+    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    pub fn tile_width(&self) -> i32 {
+        self.tile_width
+    }
+}
 impl std::fmt::Debug for DashIsoImageBasedTrickPlaySettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashIsoImageBasedTrickPlaySettings");
@@ -38233,6 +42022,18 @@ pub struct DashIsoEncryptionSettings {
     /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl DashIsoEncryptionSettings {
+    /// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+    pub fn playback_device_compatibility(
+        &self,
+    ) -> std::option::Option<&crate::model::DashIsoPlaybackDeviceCompatibility> {
+        self.playback_device_compatibility.as_ref()
+    }
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for DashIsoEncryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashIsoEncryptionSettings");
@@ -38427,6 +42228,16 @@ pub struct DashAdditionalManifest {
     /// Specify the outputs that you want this additional top-level manifest to reference.
     pub selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DashAdditionalManifest {
+    /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your DASH group is film-name.mpd. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.mpd.
+    pub fn manifest_name_modifier(&self) -> std::option::Option<&str> {
+        self.manifest_name_modifier.as_deref()
+    }
+    /// Specify the outputs that you want this additional top-level manifest to reference.
+    pub fn selected_outputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for DashAdditionalManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashAdditionalManifest");
@@ -38550,6 +42361,126 @@ pub struct CmafGroupSettings {
     /// When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
     pub write_segment_timeline_in_representation:
         std::option::Option<crate::model::CmafWriteSegmentTimelineInRepresentation>,
+}
+impl CmafGroupSettings {
+    /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
+    pub fn additional_manifests(
+        &self,
+    ) -> std::option::Option<&[crate::model::CmafAdditionalManifest]> {
+        self.additional_manifests.as_deref()
+    }
+    /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
+    pub fn base_url(&self) -> std::option::Option<&str> {
+        self.base_url.as_deref()
+    }
+    /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
+    pub fn client_cache(&self) -> std::option::Option<&crate::model::CmafClientCache> {
+        self.client_cache.as_ref()
+    }
+    /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+    pub fn codec_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafCodecSpecification> {
+        self.codec_specification.as_ref()
+    }
+    /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// Settings associated with the destination. Will vary based on the type of destination
+    pub fn destination_settings(&self) -> std::option::Option<&crate::model::DestinationSettings> {
+        self.destination_settings.as_ref()
+    }
+    /// DRM settings.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::CmafEncryptionSettings> {
+        self.encryption.as_ref()
+    }
+    /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control (FragmentLengthControl) to specify whether the encoder enforces this value strictly.
+    pub fn fragment_length(&self) -> i32 {
+        self.fragment_length
+    }
+    /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+    pub fn image_based_trick_play(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafImageBasedTrickPlay> {
+        self.image_based_trick_play.as_ref()
+    }
+    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    pub fn image_based_trick_play_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafImageBasedTrickPlaySettings> {
+        self.image_based_trick_play_settings.as_ref()
+    }
+    /// When set to GZIP, compresses HLS playlist.
+    pub fn manifest_compression(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafManifestCompression> {
+        self.manifest_compression.as_ref()
+    }
+    /// Indicates whether the output manifest should use floating point values for segment duration.
+    pub fn manifest_duration_format(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafManifestDurationFormat> {
+        self.manifest_duration_format.as_ref()
+    }
+    /// Minimum time of initially buffered media that is needed to ensure smooth playout.
+    pub fn min_buffer_time(&self) -> i32 {
+        self.min_buffer_time
+    }
+    /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+    pub fn min_final_segment_length(&self) -> f64 {
+        self.min_final_segment_length
+    }
+    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    pub fn mpd_profile(&self) -> std::option::Option<&crate::model::CmafMpdProfile> {
+        self.mpd_profile.as_ref()
+    }
+    /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
+    pub fn pts_offset_handling_for_b_frames(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafPtsOffsetHandlingForBFrames> {
+        self.pts_offset_handling_for_b_frames.as_ref()
+    }
+    /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+    pub fn segment_control(&self) -> std::option::Option<&crate::model::CmafSegmentControl> {
+        self.segment_control.as_ref()
+    }
+    /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (CmafSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
+    pub fn segment_length(&self) -> i32 {
+        self.segment_length
+    }
+    /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fn segment_length_control(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafSegmentLengthControl> {
+        self.segment_length_control.as_ref()
+    }
+    /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+    pub fn stream_inf_resolution(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafStreamInfResolution> {
+        self.stream_inf_resolution.as_ref()
+    }
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    pub fn target_duration_compatibility_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafTargetDurationCompatibilityMode> {
+        self.target_duration_compatibility_mode.as_ref()
+    }
+    /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
+    pub fn write_dash_manifest(&self) -> std::option::Option<&crate::model::CmafWriteDashManifest> {
+        self.write_dash_manifest.as_ref()
+    }
+    /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
+    pub fn write_hls_manifest(&self) -> std::option::Option<&crate::model::CmafWriteHlsManifest> {
+        self.write_hls_manifest.as_ref()
+    }
+    /// When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
+    pub fn write_segment_timeline_in_representation(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafWriteSegmentTimelineInRepresentation> {
+        self.write_segment_timeline_in_representation.as_ref()
+    }
 }
 impl std::fmt::Debug for CmafGroupSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39625,6 +43556,32 @@ pub struct CmafImageBasedTrickPlaySettings {
     /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
     pub tile_width: i32,
 }
+impl CmafImageBasedTrickPlaySettings {
+    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    pub fn interval_cadence(&self) -> std::option::Option<&crate::model::CmafIntervalCadence> {
+        self.interval_cadence.as_ref()
+    }
+    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    pub fn thumbnail_height(&self) -> i32 {
+        self.thumbnail_height
+    }
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    pub fn thumbnail_interval(&self) -> f64 {
+        self.thumbnail_interval
+    }
+    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    pub fn thumbnail_width(&self) -> i32 {
+        self.thumbnail_width
+    }
+    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    pub fn tile_height(&self) -> i32 {
+        self.tile_height
+    }
+    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    pub fn tile_width(&self) -> i32 {
+        self.tile_width
+    }
+}
 impl std::fmt::Debug for CmafImageBasedTrickPlaySettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CmafImageBasedTrickPlaySettings");
@@ -39870,6 +43827,34 @@ pub struct CmafEncryptionSettings {
     /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     pub r#type: std::option::Option<crate::model::CmafKeyProviderType>,
 }
+impl CmafEncryptionSettings {
+    /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+    pub fn encryption_method(&self) -> std::option::Option<&crate::model::CmafEncryptionType> {
+        self.encryption_method.as_ref()
+    }
+    /// When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
+    pub fn initialization_vector_in_manifest(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafInitializationVectorInManifest> {
+        self.initialization_vector_in_manifest.as_ref()
+    }
+    /// If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProviderCmaf> {
+        self.speke_key_provider.as_ref()
+    }
+    /// Use these settings to set up encryption with a static key provider.
+    pub fn static_key_provider(&self) -> std::option::Option<&crate::model::StaticKeyProvider> {
+        self.static_key_provider.as_ref()
+    }
+    /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CmafKeyProviderType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for CmafEncryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CmafEncryptionSettings");
@@ -40076,6 +44061,28 @@ pub struct SpekeKeyProviderCmaf {
     pub resource_id: std::option::Option<std::string::String>,
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub url: std::option::Option<std::string::String>,
+}
+impl SpekeKeyProviderCmaf {
+    /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
+    pub fn dash_signaled_system_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.dash_signaled_system_ids.as_deref()
+    }
+    /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
+    pub fn hls_signaled_system_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.hls_signaled_system_ids.as_deref()
+    }
+    /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for SpekeKeyProviderCmaf {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40421,6 +44428,16 @@ pub struct CmafAdditionalManifest {
     /// Specify the outputs that you want this additional top-level manifest to reference.
     pub selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CmafAdditionalManifest {
+    /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
+    pub fn manifest_name_modifier(&self) -> std::option::Option<&str> {
+        self.manifest_name_modifier.as_deref()
+    }
+    /// Specify the outputs that you want this additional top-level manifest to reference.
+    pub fn selected_outputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for CmafAdditionalManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CmafAdditionalManifest");
@@ -40494,6 +44511,12 @@ pub struct AutomatedEncodingSettings {
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
     pub abr_settings: std::option::Option<crate::model::AutomatedAbrSettings>,
 }
+impl AutomatedEncodingSettings {
+    /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
+    pub fn abr_settings(&self) -> std::option::Option<&crate::model::AutomatedAbrSettings> {
+        self.abr_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for AutomatedEncodingSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutomatedEncodingSettings");
@@ -40548,6 +44571,20 @@ pub struct AutomatedAbrSettings {
     pub max_renditions: i32,
     /// Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default.
     pub min_abr_bitrate: i32,
+}
+impl AutomatedAbrSettings {
+    /// Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
+    pub fn max_abr_bitrate(&self) -> i32 {
+        self.max_abr_bitrate
+    }
+    /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
+    pub fn max_renditions(&self) -> i32 {
+        self.max_renditions
+    }
+    /// Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default.
+    pub fn min_abr_bitrate(&self) -> i32 {
+        self.min_abr_bitrate
+    }
 }
 impl std::fmt::Debug for AutomatedAbrSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40645,6 +44682,58 @@ pub struct NielsenNonLinearWatermarkSettings {
     /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
     pub unique_tic_per_audio_track:
         std::option::Option<crate::model::NielsenUniqueTicPerAudioTrackType>,
+}
+impl NielsenNonLinearWatermarkSettings {
+    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+    pub fn active_watermark_process(
+        &self,
+    ) -> std::option::Option<&crate::model::NielsenActiveWatermarkProcessType> {
+        self.active_watermark_process.as_ref()
+    }
+    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it  here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+    pub fn adi_filename(&self) -> std::option::Option<&str> {
+        self.adi_filename.as_deref()
+    }
+    /// Use the asset ID that you provide to Nielsen to uniquely identify this asset. Required for all Nielsen non-linear watermarking.
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// Use the asset name that you provide to Nielsen for this asset. Required for all Nielsen non-linear watermarking.
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
+    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+    pub fn cbet_source_id(&self) -> std::option::Option<&str> {
+        self.cbet_source_id.as_deref()
+    }
+    /// Optional. If this asset uses an episode ID with Nielsen, provide it here.
+    pub fn episode_id(&self) -> std::option::Option<&str> {
+        self.episode_id.as_deref()
+    }
+    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+    pub fn metadata_destination(&self) -> std::option::Option<&str> {
+        self.metadata_destination.as_deref()
+    }
+    /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
+    pub fn source_id(&self) -> i32 {
+        self.source_id
+    }
+    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already  have non-linear Nielsen watermarks.
+    pub fn source_watermark_status(
+        &self,
+    ) -> std::option::Option<&crate::model::NielsenSourceWatermarkStatusType> {
+        self.source_watermark_status.as_ref()
+    }
+    /// Specify the endpoint for the TIC server that you have deployed and configured in the AWS Cloud. Required for all Nielsen non-linear watermarking. MediaConvert can't connect directly to a TIC server. Instead, you must use API Gateway to provide a RESTful interface between MediaConvert and a TIC server that you deploy in your AWS account. For more information on deploying a TIC server in your AWS account and the required API Gateway, contact Nielsen support.
+    pub fn tic_server_url(&self) -> std::option::Option<&str> {
+        self.tic_server_url.as_deref()
+    }
+    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+    pub fn unique_tic_per_audio_track(
+        &self,
+    ) -> std::option::Option<&crate::model::NielsenUniqueTicPerAudioTrackType> {
+        self.unique_tic_per_audio_track.as_ref()
+    }
 }
 impl std::fmt::Debug for NielsenNonLinearWatermarkSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41032,6 +45121,16 @@ pub struct NielsenConfiguration {
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
     pub distributor_id: std::option::Option<std::string::String>,
 }
+impl NielsenConfiguration {
+    /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
+    pub fn breakout_code(&self) -> i32 {
+        self.breakout_code
+    }
+    /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
+    pub fn distributor_id(&self) -> std::option::Option<&str> {
+        self.distributor_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NielsenConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NielsenConfiguration");
@@ -41105,6 +45204,32 @@ pub struct MotionImageInserter {
     pub playback: std::option::Option<crate::model::MotionImagePlayback>,
     /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
     pub start_time: std::option::Option<std::string::String>,
+}
+impl MotionImageInserter {
+    /// If your motion graphic asset is a .mov file, keep this setting unspecified. If your motion graphic asset is a series of .png files, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. Make sure that the number of images in your series matches the frame rate and your intended overlay duration. For example, if you want a 30-second overlay at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need to match the frame rate of the underlying video.
+    pub fn framerate(&self) -> std::option::Option<&crate::model::MotionImageInsertionFramerate> {
+        self.framerate.as_ref()
+    }
+    /// Specify the .mov file or series of .png files that you want to overlay on your video. For .png files, provide the file name of the first file in the series. Make sure that the names of the .png files end with sequential numbers that specify the order that they are played in. For example, overlay_000.png, overlay_001.png, overlay_002.png, and so on. The sequence must start at zero, and each image file name must have the same number of digits. Pad your initial file names with enough zeros to complete the sequence. For example, if the first image is overlay_0.png, there can be only 10 images in the sequence, with the last image being overlay_9.png. But if the first image is overlay_00.png, there can be 100 images in the sequence.
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files.
+    pub fn insertion_mode(&self) -> std::option::Option<&crate::model::MotionImageInsertionMode> {
+        self.insertion_mode.as_ref()
+    }
+    /// Use Offset to specify the placement of your motion graphic overlay on the video frame. Specify in pixels, from the upper-left corner of the frame. If you don't specify an offset, the service scales your overlay to the full size of the frame. Otherwise, the service inserts the overlay at its native resolution and scales the size up or down with any video scaling.
+    pub fn offset(&self) -> std::option::Option<&crate::model::MotionImageInsertionOffset> {
+        self.offset.as_ref()
+    }
+    /// Specify whether your motion graphic overlay repeats on a loop or plays only once.
+    pub fn playback(&self) -> std::option::Option<&crate::model::MotionImagePlayback> {
+        self.playback.as_ref()
+    }
+    /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
 }
 impl std::fmt::Debug for MotionImageInserter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41288,6 +45413,16 @@ pub struct MotionImageInsertionOffset {
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
     pub image_y: i32,
 }
+impl MotionImageInsertionOffset {
+    /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
+    pub fn image_x(&self) -> i32 {
+        self.image_x
+    }
+    /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
+    pub fn image_y(&self) -> i32 {
+        self.image_y
+    }
+}
 impl std::fmt::Debug for MotionImageInsertionOffset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MotionImageInsertionOffset");
@@ -41406,6 +45541,16 @@ pub struct MotionImageInsertionFramerate {
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
     pub framerate_numerator: i32,
 }
+impl MotionImageInsertionFramerate {
+    /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+}
 impl std::fmt::Debug for MotionImageInsertionFramerate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MotionImageInsertionFramerate");
@@ -41490,6 +45635,60 @@ pub struct KantarWatermarkSettings {
     pub metadata7: std::option::Option<std::string::String>,
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub metadata8: std::option::Option<std::string::String>,
+}
+impl KantarWatermarkSettings {
+    /// Provide an audio channel name from your Kantar audio license.
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// Specify a unique identifier for Kantar to use for this piece of content.
+    pub fn content_reference(&self) -> std::option::Option<&str> {
+        self.content_reference.as_deref()
+    }
+    /// Provide the name of the AWS Secrets Manager secret where your Kantar credentials are stored. Note that your MediaConvert service role must provide access to this secret. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/granting-permissions-for-mediaconvert-to-access-secrets-manager-secret.html. For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html, in the AWS Secrets Manager User Guide.
+    pub fn credentials_secret_name(&self) -> std::option::Option<&str> {
+        self.credentials_secret_name.as_deref()
+    }
+    /// Optional. Specify an offset, in whole seconds, from the start of your output and the beginning of the watermarking. When you don't specify an offset, Kantar defaults to zero.
+    pub fn file_offset(&self) -> f64 {
+        self.file_offset
+    }
+    /// Provide your Kantar license ID number. You should get this number from Kantar.
+    pub fn kantar_license_id(&self) -> i32 {
+        self.kantar_license_id
+    }
+    /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
+    pub fn kantar_server_url(&self) -> std::option::Option<&str> {
+        self.kantar_server_url.as_deref()
+    }
+    /// Optional. Specify the Amazon S3 bucket where you want MediaConvert to store your Kantar watermark XML logs. When you don't specify a bucket, MediaConvert doesn't save these logs. Note that your MediaConvert service role must provide access to this location. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+    pub fn log_destination(&self) -> std::option::Option<&str> {
+        self.log_destination.as_deref()
+    }
+    /// You can optionally use this field to specify the first timestamp that Kantar embeds during watermarking. Kantar suggests that you be very cautious when using this Kantar feature, and that you use it only on channels that are managed specifically for use with this feature by your Audience Measurement Operator. For more information about this feature, contact Kantar technical support.
+    pub fn metadata3(&self) -> std::option::Option<&str> {
+        self.metadata3.as_deref()
+    }
+    /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
+    pub fn metadata4(&self) -> std::option::Option<&str> {
+        self.metadata4.as_deref()
+    }
+    /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
+    pub fn metadata5(&self) -> std::option::Option<&str> {
+        self.metadata5.as_deref()
+    }
+    /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
+    pub fn metadata6(&self) -> std::option::Option<&str> {
+        self.metadata6.as_deref()
+    }
+    /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
+    pub fn metadata7(&self) -> std::option::Option<&str> {
+        self.metadata7.as_deref()
+    }
+    /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
+    pub fn metadata8(&self) -> std::option::Option<&str> {
+        self.metadata8.as_deref()
+    }
 }
 impl std::fmt::Debug for KantarWatermarkSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41744,6 +45943,88 @@ pub struct InputTemplate {
     pub timecode_start: std::option::Option<std::string::String>,
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub video_selector: std::option::Option<crate::model::VideoSelector>,
+}
+impl InputTemplate {
+    /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
+    pub fn audio_selector_groups(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AudioSelectorGroup>,
+    > {
+        self.audio_selector_groups.as_ref()
+    }
+    /// Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
+    pub fn audio_selectors(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AudioSelector>,
+    > {
+        self.audio_selectors.as_ref()
+    }
+    /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 20 captions selectors per input.
+    pub fn caption_selectors(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::CaptionSelector>,
+    > {
+        self.caption_selectors.as_ref()
+    }
+    /// Use Cropping selection (crop) to specify the video area that the service will include in the output video frame. If you specify a value here, it will override any value that you specify in the output setting Cropping selection (crop).
+    pub fn crop(&self) -> std::option::Option<&crate::model::Rectangle> {
+        self.crop.as_ref()
+    }
+    /// Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
+    pub fn deblock_filter(&self) -> std::option::Option<&crate::model::InputDeblockFilter> {
+        self.deblock_filter.as_ref()
+    }
+    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+    pub fn denoise_filter(&self) -> std::option::Option<&crate::model::InputDenoiseFilter> {
+        self.denoise_filter.as_ref()
+    }
+    /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+    pub fn filter_enable(&self) -> std::option::Option<&crate::model::InputFilterEnable> {
+        self.filter_enable.as_ref()
+    }
+    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+    pub fn filter_strength(&self) -> i32 {
+        self.filter_strength
+    }
+    /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
+    pub fn image_inserter(&self) -> std::option::Option<&crate::model::ImageInserter> {
+        self.image_inserter.as_ref()
+    }
+    /// (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
+    pub fn input_clippings(&self) -> std::option::Option<&[crate::model::InputClipping]> {
+        self.input_clippings.as_deref()
+    }
+    /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+    pub fn input_scan_type(&self) -> std::option::Option<&crate::model::InputScanType> {
+        self.input_scan_type.as_ref()
+    }
+    /// Use Selection placement (position) to define the video area in your output frame. The area outside of the rectangle that you specify here is black. If you specify a value here, it will override any value that you specify in the output setting Selection placement (position). If you specify a value here, this will override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+    pub fn position(&self) -> std::option::Option<&crate::model::Rectangle> {
+        self.position.as_ref()
+    }
+    /// Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you specify doesn't exist, the transcoding service will use this default.
+    pub fn program_number(&self) -> i32 {
+        self.program_number
+    }
+    /// Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+    pub fn psi_control(&self) -> std::option::Option<&crate::model::InputPsiControl> {
+        self.psi_control.as_ref()
+    }
+    /// Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+    pub fn timecode_source(&self) -> std::option::Option<&crate::model::InputTimecodeSource> {
+        self.timecode_source.as_ref()
+    }
+    /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start (SPECIFIEDSTART). For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+    pub fn timecode_start(&self) -> std::option::Option<&str> {
+        self.timecode_start.as_deref()
+    }
+    /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
+    pub fn video_selector(&self) -> std::option::Option<&crate::model::VideoSelector> {
+        self.video_selector.as_ref()
+    }
 }
 impl std::fmt::Debug for InputTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42101,6 +46382,40 @@ pub struct VideoSelector {
     pub rotate: std::option::Option<crate::model::InputRotate>,
     /// If the sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range. If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
     pub sample_range: std::option::Option<crate::model::InputSampleRange>,
+}
+impl VideoSelector {
+    /// Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
+    pub fn alpha_behavior(&self) -> std::option::Option<&crate::model::AlphaBehavior> {
+        self.alpha_behavior.as_ref()
+    }
+    /// If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value Follow (FOLLOW). The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
+    pub fn color_space(&self) -> std::option::Option<&crate::model::ColorSpace> {
+        self.color_space.as_ref()
+    }
+    /// There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
+    pub fn color_space_usage(&self) -> std::option::Option<&crate::model::ColorSpaceUsage> {
+        self.color_space_usage.as_ref()
+    }
+    /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage (ColorSpaceUsage). To specify whether color metadata is included in an output, set Color metadata (ColorMetadata). For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
+    pub fn hdr10_metadata(&self) -> std::option::Option<&crate::model::Hdr10Metadata> {
+        self.hdr10_metadata.as_ref()
+    }
+    /// Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
+    pub fn pid(&self) -> i32 {
+        self.pid
+    }
+    /// Selects a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported.
+    pub fn program_number(&self) -> i32 {
+        self.program_number
+    }
+    /// Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
+    pub fn rotate(&self) -> std::option::Option<&crate::model::InputRotate> {
+        self.rotate.as_ref()
+    }
+    /// If the sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range. If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
+    pub fn sample_range(&self) -> std::option::Option<&crate::model::InputSampleRange> {
+        self.sample_range.as_ref()
+    }
 }
 impl std::fmt::Debug for VideoSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42736,6 +47051,16 @@ pub struct InputClipping {
     /// Set Start timecode (StartTimecode) to the beginning of the portion of the input you are clipping. The frame corresponding to the Start timecode value is included in the clip. Start timecode or End timecode may be left blank, but not both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When choosing this value, take into account your setting for Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your clip to begin five minutes into the video, use 01:05:00:00.
     pub start_timecode: std::option::Option<std::string::String>,
 }
+impl InputClipping {
+    /// Set End timecode (EndTimecode) to the end of the portion of the input you are clipping. The frame corresponding to the End timecode value is included in the clip. Start timecode or End timecode may be left blank, but not both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When choosing this value, take into account your setting for timecode source under input settings (InputTimecodeSource). For example, if you have embedded timecodes that start at 01:00:00:00 and you want your clip to end six minutes into the video, use 01:06:00:00.
+    pub fn end_timecode(&self) -> std::option::Option<&str> {
+        self.end_timecode.as_deref()
+    }
+    /// Set Start timecode (StartTimecode) to the beginning of the portion of the input you are clipping. The frame corresponding to the Start timecode value is included in the clip. Start timecode or End timecode may be left blank, but not both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When choosing this value, take into account your setting for Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your clip to begin five minutes into the video, use 01:05:00:00.
+    pub fn start_timecode(&self) -> std::option::Option<&str> {
+        self.start_timecode.as_deref()
+    }
+}
 impl std::fmt::Debug for InputClipping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputClipping");
@@ -42973,6 +47298,20 @@ pub struct CaptionSelector {
     /// If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     pub source_settings: std::option::Option<crate::model::CaptionSourceSettings>,
 }
+impl CaptionSelector {
+    /// The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific language with pass-through captions.
+    pub fn custom_language_code(&self) -> std::option::Option<&str> {
+        self.custom_language_code.as_deref()
+    }
+    /// The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific language with pass-through captions.
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+    pub fn source_settings(&self) -> std::option::Option<&crate::model::CaptionSourceSettings> {
+        self.source_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for CaptionSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CaptionSelector");
@@ -43069,6 +47408,50 @@ pub struct CaptionSourceSettings {
     pub track_source_settings: std::option::Option<crate::model::TrackSourceSettings>,
     /// Settings specific to WebVTT sources in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique subtitle track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the specified properties, the job fails. If there is only one subtitle track in the rendition group, the settings can be left empty and the default subtitle track will be chosen. If your caption source is a sidecar file, use FileSourceSettings instead of WebvttHlsSourceSettings.
     pub webvtt_hls_source_settings: std::option::Option<crate::model::WebvttHlsSourceSettings>,
+}
+impl CaptionSourceSettings {
+    /// Settings for ancillary captions source.
+    pub fn ancillary_source_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AncillarySourceSettings> {
+        self.ancillary_source_settings.as_ref()
+    }
+    /// DVB Sub Source Settings
+    pub fn dvb_sub_source_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DvbSubSourceSettings> {
+        self.dvb_sub_source_settings.as_ref()
+    }
+    /// Settings for embedded captions Source
+    pub fn embedded_source_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::EmbeddedSourceSettings> {
+        self.embedded_source_settings.as_ref()
+    }
+    /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+    pub fn file_source_settings(&self) -> std::option::Option<&crate::model::FileSourceSettings> {
+        self.file_source_settings.as_ref()
+    }
+    /// Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
+    pub fn source_type(&self) -> std::option::Option<&crate::model::CaptionSourceType> {
+        self.source_type.as_ref()
+    }
+    /// Settings specific to Teletext caption sources, including Page number.
+    pub fn teletext_source_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::TeletextSourceSettings> {
+        self.teletext_source_settings.as_ref()
+    }
+    /// Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
+    pub fn track_source_settings(&self) -> std::option::Option<&crate::model::TrackSourceSettings> {
+        self.track_source_settings.as_ref()
+    }
+    /// Settings specific to WebVTT sources in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique subtitle track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the specified properties, the job fails. If there is only one subtitle track in the rendition group, the settings can be left empty and the default subtitle track will be chosen. If your caption source is a sidecar file, use FileSourceSettings instead of WebvttHlsSourceSettings.
+    pub fn webvtt_hls_source_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::WebvttHlsSourceSettings> {
+        self.webvtt_hls_source_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for CaptionSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -43259,6 +47642,20 @@ pub struct WebvttHlsSourceSettings {
     /// Optional. Specify media name
     pub rendition_name: std::option::Option<std::string::String>,
 }
+impl WebvttHlsSourceSettings {
+    /// Optional. Specify alternative group ID
+    pub fn rendition_group_id(&self) -> std::option::Option<&str> {
+        self.rendition_group_id.as_deref()
+    }
+    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    pub fn rendition_language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.rendition_language_code.as_ref()
+    }
+    /// Optional. Specify media name
+    pub fn rendition_name(&self) -> std::option::Option<&str> {
+        self.rendition_name.as_deref()
+    }
+}
 impl std::fmt::Debug for WebvttHlsSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WebvttHlsSourceSettings");
@@ -43342,6 +47739,12 @@ pub struct TrackSourceSettings {
     /// Use this setting to select a single captions track from a source. Track numbers correspond to the order in the captions source file. For IMF sources, track numbering is based on the order that the captions appear in the CPL. For example, use 1 to select the captions asset that is listed first in the CPL. To include more than one captions track in your job outputs, create multiple input captions selectors. Specify one track per selector.
     pub track_number: i32,
 }
+impl TrackSourceSettings {
+    /// Use this setting to select a single captions track from a source. Track numbers correspond to the order in the captions source file. For IMF sources, track numbering is based on the order that the captions appear in the CPL. For example, use 1 to select the captions asset that is listed first in the CPL. To include more than one captions track in your job outputs, create multiple input captions selectors. Specify one track per selector.
+    pub fn track_number(&self) -> i32 {
+        self.track_number
+    }
+}
 impl std::fmt::Debug for TrackSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrackSourceSettings");
@@ -43389,6 +47792,12 @@ impl TrackSourceSettings {
 pub struct TeletextSourceSettings {
     /// Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     pub page_number: std::option::Option<std::string::String>,
+}
+impl TeletextSourceSettings {
+    /// Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
+    pub fn page_number(&self) -> std::option::Option<&str> {
+        self.page_number.as_deref()
+    }
 }
 impl std::fmt::Debug for TeletextSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -43564,6 +47973,30 @@ pub struct FileSourceSettings {
     /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
     pub time_delta_units: std::option::Option<crate::model::FileSourceTimeDeltaUnits>,
 }
+impl FileSourceSettings {
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    pub fn convert608_to708(
+        &self,
+    ) -> std::option::Option<&crate::model::FileSourceConvert608To708> {
+        self.convert608_to708.as_ref()
+    }
+    /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. When you work directly in your JSON job specification, use the settings framerateNumerator and framerateDenominator. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
+    pub fn framerate(&self) -> std::option::Option<&crate::model::CaptionSourceFramerate> {
+        self.framerate.as_ref()
+    }
+    /// External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
+    pub fn source_file(&self) -> std::option::Option<&str> {
+        self.source_file.as_deref()
+    }
+    /// Optional. Use this setting when you need to adjust the sync between your sidecar captions and your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html. Enter a positive or negative number to modify the times in the captions file. For example, type 15 to add 15 seconds to all the times in the captions file. Type -5 to subtract 5 seconds from the times in the captions file. You can optionally specify your time delta in milliseconds instead of seconds. When you do so, set the related setting, Time delta units (TimeDeltaUnits) to Milliseconds (MILLISECONDS). Note that, when you specify a time delta for timecode-based caption sources, such as SCC and STL, and your time delta isn't a multiple of the input frame rate, MediaConvert snaps the captions to the nearest frame. For example, when your input video frame rate is 25 fps and you specify 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
+    pub fn time_delta(&self) -> i32 {
+        self.time_delta
+    }
+    /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
+    pub fn time_delta_units(&self) -> std::option::Option<&crate::model::FileSourceTimeDeltaUnits> {
+        self.time_delta_units.as_ref()
+    }
+}
 impl std::fmt::Debug for FileSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileSourceSettings");
@@ -43730,6 +48163,16 @@ pub struct CaptionSourceFramerate {
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
     pub framerate_numerator: i32,
 }
+impl CaptionSourceFramerate {
+    /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate numerator (framerateNumerator).
+    pub fn framerate_denominator(&self) -> i32 {
+        self.framerate_denominator
+    }
+    /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
+    pub fn framerate_numerator(&self) -> i32 {
+        self.framerate_numerator
+    }
+}
 impl std::fmt::Debug for CaptionSourceFramerate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CaptionSourceFramerate");
@@ -43851,6 +48294,26 @@ pub struct EmbeddedSourceSettings {
     pub source608_track_number: i32,
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub terminate_captions: std::option::Option<crate::model::EmbeddedTerminateCaptions>,
+}
+impl EmbeddedSourceSettings {
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    pub fn convert608_to708(&self) -> std::option::Option<&crate::model::EmbeddedConvert608To708> {
+        self.convert608_to708.as_ref()
+    }
+    /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+    pub fn source608_channel_number(&self) -> i32 {
+        self.source608_channel_number
+    }
+    /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
+    pub fn source608_track_number(&self) -> i32 {
+        self.source608_track_number
+    }
+    /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+    pub fn terminate_captions(
+        &self,
+    ) -> std::option::Option<&crate::model::EmbeddedTerminateCaptions> {
+        self.terminate_captions.as_ref()
+    }
 }
 impl std::fmt::Debug for EmbeddedSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44058,6 +48521,12 @@ pub struct DvbSubSourceSettings {
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     pub pid: i32,
 }
+impl DvbSubSourceSettings {
+    /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
+    pub fn pid(&self) -> i32 {
+        self.pid
+    }
+}
 impl std::fmt::Debug for DvbSubSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DvbSubSourceSettings");
@@ -44109,6 +48578,22 @@ pub struct AncillarySourceSettings {
     pub source_ancillary_channel_number: i32,
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub terminate_captions: std::option::Option<crate::model::AncillaryTerminateCaptions>,
+}
+impl AncillarySourceSettings {
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    pub fn convert608_to708(&self) -> std::option::Option<&crate::model::AncillaryConvert608To708> {
+        self.convert608_to708.as_ref()
+    }
+    /// Specifies the 608 channel number in the ancillary data track from which to extract captions. Unused for passthrough.
+    pub fn source_ancillary_channel_number(&self) -> i32 {
+        self.source_ancillary_channel_number
+    }
+    /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+    pub fn terminate_captions(
+        &self,
+    ) -> std::option::Option<&crate::model::AncillaryTerminateCaptions> {
+        self.terminate_captions.as_ref()
+    }
 }
 impl std::fmt::Debug for AncillarySourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44331,6 +48816,54 @@ pub struct AudioSelector {
     pub selector_type: std::option::Option<crate::model::AudioSelectorType>,
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying directly in your JSON job file, provide the track numbers in an array. For example, "tracks": [1,2,3].
     pub tracks: std::option::Option<std::vec::Vec<i32>>,
+}
+impl AudioSelector {
+    /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
+    pub fn custom_language_code(&self) -> std::option::Option<&str> {
+        self.custom_language_code.as_deref()
+    }
+    /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+    pub fn default_selection(&self) -> std::option::Option<&crate::model::AudioDefaultSelection> {
+        self.default_selection.as_ref()
+    }
+    /// Specifies audio data from an external file source.
+    pub fn external_audio_file_input(&self) -> std::option::Option<&str> {
+        self.external_audio_file_input.as_deref()
+    }
+    /// Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead.
+    pub fn hls_rendition_group_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsRenditionGroupSettings> {
+        self.hls_rendition_group_settings.as_ref()
+    }
+    /// Selects a specific language code from within an audio source.
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// Specifies a time delta in milliseconds to offset the audio from the input video.
+    pub fn offset(&self) -> i32 {
+        self.offset
+    }
+    /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
+    pub fn pids(&self) -> std::option::Option<&[i32]> {
+        self.pids.as_deref()
+    }
+    /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If you are sending a JSON file, provide the program ID, which is part of the audio metadata. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
+    pub fn program_selection(&self) -> i32 {
+        self.program_selection
+    }
+    /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
+    pub fn remix_settings(&self) -> std::option::Option<&crate::model::RemixSettings> {
+        self.remix_settings.as_ref()
+    }
+    /// Specifies the type of the audio selector.
+    pub fn selector_type(&self) -> std::option::Option<&crate::model::AudioSelectorType> {
+        self.selector_type.as_ref()
+    }
+    /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying directly in your JSON job file, provide the track numbers in an array. For example, "tracks": [1,2,3].
+    pub fn tracks(&self) -> std::option::Option<&[i32]> {
+        self.tracks.as_deref()
+    }
 }
 impl std::fmt::Debug for AudioSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44617,6 +49150,20 @@ pub struct HlsRenditionGroupSettings {
     /// Optional. Specify media name
     pub rendition_name: std::option::Option<std::string::String>,
 }
+impl HlsRenditionGroupSettings {
+    /// Optional. Specify alternative group ID
+    pub fn rendition_group_id(&self) -> std::option::Option<&str> {
+        self.rendition_group_id.as_deref()
+    }
+    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    pub fn rendition_language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.rendition_language_code.as_ref()
+    }
+    /// Optional. Specify media name
+    pub fn rendition_name(&self) -> std::option::Option<&str> {
+        self.rendition_name.as_deref()
+    }
+}
 impl std::fmt::Debug for HlsRenditionGroupSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HlsRenditionGroupSettings");
@@ -44755,6 +49302,12 @@ pub struct AudioSelectorGroup {
     /// Name of an Audio Selector within the same input to include in the group.  Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
     pub audio_selector_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AudioSelectorGroup {
+    /// Name of an Audio Selector within the same input to include in the group.  Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
+    pub fn audio_selector_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.audio_selector_names.as_deref()
+    }
+}
 impl std::fmt::Debug for AudioSelectorGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioSelectorGroup");
@@ -44813,6 +49366,18 @@ pub struct ExtendedDataServices {
     pub copy_protection_action: std::option::Option<crate::model::CopyProtectionAction>,
     /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub vchip_action: std::option::Option<crate::model::VchipAction>,
+}
+impl ExtendedDataServices {
+    /// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    pub fn copy_protection_action(
+        &self,
+    ) -> std::option::Option<&crate::model::CopyProtectionAction> {
+        self.copy_protection_action.as_ref()
+    }
+    /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    pub fn vchip_action(&self) -> std::option::Option<&crate::model::VchipAction> {
+        self.vchip_action.as_ref()
+    }
 }
 impl std::fmt::Debug for ExtendedDataServices {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44997,6 +49562,24 @@ pub struct EsamSettings {
     pub signal_processing_notification:
         std::option::Option<crate::model::EsamSignalProcessingNotification>,
 }
+impl EsamSettings {
+    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+    pub fn manifest_confirm_condition_notification(
+        &self,
+    ) -> std::option::Option<&crate::model::EsamManifestConfirmConditionNotification> {
+        self.manifest_confirm_condition_notification.as_ref()
+    }
+    /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
+    pub fn response_signal_preroll(&self) -> i32 {
+        self.response_signal_preroll
+    }
+    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
+    pub fn signal_processing_notification(
+        &self,
+    ) -> std::option::Option<&crate::model::EsamSignalProcessingNotification> {
+        self.signal_processing_notification.as_ref()
+    }
+}
 impl std::fmt::Debug for EsamSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EsamSettings");
@@ -45092,6 +49675,12 @@ pub struct EsamSignalProcessingNotification {
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
     pub scc_xml: std::option::Option<std::string::String>,
 }
+impl EsamSignalProcessingNotification {
+    /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
+    pub fn scc_xml(&self) -> std::option::Option<&str> {
+        self.scc_xml.as_deref()
+    }
+}
 impl std::fmt::Debug for EsamSignalProcessingNotification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EsamSignalProcessingNotification");
@@ -45140,6 +49729,12 @@ pub struct EsamManifestConfirmConditionNotification {
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
     pub mcc_xml: std::option::Option<std::string::String>,
 }
+impl EsamManifestConfirmConditionNotification {
+    /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
+    pub fn mcc_xml(&self) -> std::option::Option<&str> {
+        self.mcc_xml.as_deref()
+    }
+}
 impl std::fmt::Debug for EsamManifestConfirmConditionNotification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EsamManifestConfirmConditionNotification");
@@ -45187,6 +49782,12 @@ impl EsamManifestConfirmConditionNotification {
 pub struct AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     pub avail_blanking_image: std::option::Option<std::string::String>,
+}
+impl AvailBlanking {
+    /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
+    pub fn avail_blanking_image(&self) -> std::option::Option<&str> {
+        self.avail_blanking_image.as_deref()
+    }
 }
 impl std::fmt::Debug for AvailBlanking {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45242,6 +49843,20 @@ pub struct HopDestination {
     pub queue: std::option::Option<std::string::String>,
     /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 1440 minutes, inclusive.
     pub wait_minutes: i32,
+}
+impl HopDestination {
+    /// Optional. When you set up a job to use queue hopping, you can specify a different relative priority for the job in the destination queue. If you don't specify, the relative priority will remain the same as in the previous queue.
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
+    pub fn queue(&self) -> std::option::Option<&str> {
+        self.queue.as_deref()
+    }
+    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 1440 minutes, inclusive.
+    pub fn wait_minutes(&self) -> i32 {
+        self.wait_minutes
+    }
 }
 impl std::fmt::Debug for HopDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45316,6 +49931,12 @@ impl HopDestination {
 pub struct AccelerationSettings {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
     pub mode: std::option::Option<crate::model::AccelerationMode>,
+}
+impl AccelerationSettings {
+    /// Specify the conditions when the service will run your job with accelerated transcoding.
+    pub fn mode(&self) -> std::option::Option<&crate::model::AccelerationMode> {
+        self.mode.as_ref()
+    }
 }
 impl std::fmt::Debug for AccelerationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45428,6 +50049,20 @@ pub struct Policy {
     pub https_inputs: std::option::Option<crate::model::InputPolicy>,
     /// Allow or disallow jobs that specify Amazon S3 inputs.
     pub s3_inputs: std::option::Option<crate::model::InputPolicy>,
+}
+impl Policy {
+    /// Allow or disallow jobs that specify HTTP inputs.
+    pub fn http_inputs(&self) -> std::option::Option<&crate::model::InputPolicy> {
+        self.http_inputs.as_ref()
+    }
+    /// Allow or disallow jobs that specify HTTPS inputs.
+    pub fn https_inputs(&self) -> std::option::Option<&crate::model::InputPolicy> {
+        self.https_inputs.as_ref()
+    }
+    /// Allow or disallow jobs that specify Amazon S3 inputs.
+    pub fn s3_inputs(&self) -> std::option::Option<&crate::model::InputPolicy> {
+        self.s3_inputs.as_ref()
+    }
 }
 impl std::fmt::Debug for Policy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45569,6 +50204,19 @@ pub struct ResourceTags {
     /// The tags for the resource.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ResourceTags {
+    /// The Amazon Resource Name (ARN) of the resource.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The tags for the resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceTags {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45924,6 +50572,117 @@ pub struct Job {
     /// User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.
     pub user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Job {
+    /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
+    pub fn acceleration_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AccelerationSettings> {
+        self.acceleration_settings.as_ref()
+    }
+    /// Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+    pub fn acceleration_status(&self) -> std::option::Option<&crate::model::AccelerationStatus> {
+        self.acceleration_status.as_ref()
+    }
+    /// An identifier for this resource that is unique within all of AWS.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
+    pub fn billing_tags_source(&self) -> std::option::Option<&crate::model::BillingTagsSource> {
+        self.billing_tags_source.as_ref()
+    }
+    /// The time, in Unix epoch format in seconds, when the job got created.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
+    pub fn current_phase(&self) -> std::option::Option<&crate::model::JobPhase> {
+        self.current_phase.as_ref()
+    }
+    /// Error code for the job
+    pub fn error_code(&self) -> i32 {
+        self.error_code
+    }
+    /// Error message of Job
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// Optional list of hop destinations.
+    pub fn hop_destinations(&self) -> std::option::Option<&[crate::model::HopDestination]> {
+        self.hop_destinations.as_deref()
+    }
+    /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+    pub fn job_percent_complete(&self) -> i32 {
+        self.job_percent_complete
+    }
+    /// The job template that the job is created from, if it is created from a job template.
+    pub fn job_template(&self) -> std::option::Option<&str> {
+        self.job_template.as_deref()
+    }
+    /// Provides messages from the service about jobs that you have already successfully submitted.
+    pub fn messages(&self) -> std::option::Option<&crate::model::JobMessages> {
+        self.messages.as_ref()
+    }
+    /// List of output group details
+    pub fn output_group_details(&self) -> std::option::Option<&[crate::model::OutputGroupDetail]> {
+        self.output_group_details.as_deref()
+    }
+    /// Relative priority on the job.
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn queue(&self) -> std::option::Option<&str> {
+        self.queue.as_deref()
+    }
+    /// The job's queue hopping history.
+    pub fn queue_transitions(&self) -> std::option::Option<&[crate::model::QueueTransition]> {
+        self.queue_transitions.as_deref()
+    }
+    /// The number of times that the service automatically attempted to process your job after encountering an error.
+    pub fn retry_count(&self) -> i32 {
+        self.retry_count
+    }
+    /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// JobSettings contains all the transcode settings for a job.
+    pub fn settings(&self) -> std::option::Option<&crate::model::JobSettings> {
+        self.settings.as_ref()
+    }
+    /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+    pub fn simulate_reserved_queue(
+        &self,
+    ) -> std::option::Option<&crate::model::SimulateReservedQueue> {
+        self.simulate_reserved_queue.as_ref()
+    }
+    /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    pub fn status_update_interval(
+        &self,
+    ) -> std::option::Option<&crate::model::StatusUpdateInterval> {
+        self.status_update_interval.as_ref()
+    }
+    /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
+    pub fn timing(&self) -> std::option::Option<&crate::model::Timing> {
+        self.timing.as_ref()
+    }
+    /// User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.
+    pub fn user_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46376,6 +51135,20 @@ pub struct Timing {
     /// The time, in Unix epoch format, that you submitted the job.
     pub submit_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Timing {
+    /// The time, in Unix epoch format, that the transcoding job finished
+    pub fn finish_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finish_time.as_ref()
+    }
+    /// The time, in Unix epoch format, that transcoding for the job began.
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// The time, in Unix epoch format, that you submitted the job.
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Timing {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Timing");
@@ -46603,6 +51376,64 @@ pub struct JobSettings {
     pub timecode_config: std::option::Option<crate::model::TimecodeConfig>,
     /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
     pub timed_metadata_insertion: std::option::Option<crate::model::TimedMetadataInsertion>,
+}
+impl JobSettings {
+    /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
+    pub fn ad_avail_offset(&self) -> i32 {
+        self.ad_avail_offset
+    }
+    /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+    pub fn avail_blanking(&self) -> std::option::Option<&crate::model::AvailBlanking> {
+        self.avail_blanking.as_ref()
+    }
+    /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
+    pub fn esam(&self) -> std::option::Option<&crate::model::EsamSettings> {
+        self.esam.as_ref()
+    }
+    /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
+    pub fn extended_data_services(
+        &self,
+    ) -> std::option::Option<&crate::model::ExtendedDataServices> {
+        self.extended_data_services.as_ref()
+    }
+    /// Use Inputs (inputs) to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
+    pub fn inputs(&self) -> std::option::Option<&[crate::model::Input]> {
+        self.inputs.as_deref()
+    }
+    /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+    pub fn kantar_watermark(&self) -> std::option::Option<&crate::model::KantarWatermarkSettings> {
+        self.kantar_watermark.as_ref()
+    }
+    /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
+    pub fn motion_image_inserter(&self) -> std::option::Option<&crate::model::MotionImageInserter> {
+        self.motion_image_inserter.as_ref()
+    }
+    /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
+    pub fn nielsen_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NielsenConfiguration> {
+        self.nielsen_configuration.as_ref()
+    }
+    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    pub fn nielsen_non_linear_watermark(
+        &self,
+    ) -> std::option::Option<&crate::model::NielsenNonLinearWatermarkSettings> {
+        self.nielsen_non_linear_watermark.as_ref()
+    }
+    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+    pub fn output_groups(&self) -> std::option::Option<&[crate::model::OutputGroup]> {
+        self.output_groups.as_deref()
+    }
+    /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
+    pub fn timecode_config(&self) -> std::option::Option<&crate::model::TimecodeConfig> {
+        self.timecode_config.as_ref()
+    }
+    /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+    pub fn timed_metadata_insertion(
+        &self,
+    ) -> std::option::Option<&crate::model::TimedMetadataInsertion> {
+        self.timed_metadata_insertion.as_ref()
+    }
 }
 impl std::fmt::Debug for JobSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46891,6 +51722,102 @@ pub struct Input {
     pub timecode_start: std::option::Option<std::string::String>,
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub video_selector: std::option::Option<crate::model::VideoSelector>,
+}
+impl Input {
+    /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
+    pub fn audio_selector_groups(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AudioSelectorGroup>,
+    > {
+        self.audio_selector_groups.as_ref()
+    }
+    /// Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
+    pub fn audio_selectors(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AudioSelector>,
+    > {
+        self.audio_selectors.as_ref()
+    }
+    /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 20 captions selectors per input.
+    pub fn caption_selectors(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::CaptionSelector>,
+    > {
+        self.caption_selectors.as_ref()
+    }
+    /// Use Cropping selection (crop) to specify the video area that the service will include in the output video frame. If you specify a value here, it will override any value that you specify in the output setting Cropping selection (crop).
+    pub fn crop(&self) -> std::option::Option<&crate::model::Rectangle> {
+        self.crop.as_ref()
+    }
+    /// Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
+    pub fn deblock_filter(&self) -> std::option::Option<&crate::model::InputDeblockFilter> {
+        self.deblock_filter.as_ref()
+    }
+    /// Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
+    pub fn decryption_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDecryptionSettings> {
+        self.decryption_settings.as_ref()
+    }
+    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+    pub fn denoise_filter(&self) -> std::option::Option<&crate::model::InputDenoiseFilter> {
+        self.denoise_filter.as_ref()
+    }
+    /// Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
+    pub fn file_input(&self) -> std::option::Option<&str> {
+        self.file_input.as_deref()
+    }
+    /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+    pub fn filter_enable(&self) -> std::option::Option<&crate::model::InputFilterEnable> {
+        self.filter_enable.as_ref()
+    }
+    /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+    pub fn filter_strength(&self) -> i32 {
+        self.filter_strength
+    }
+    /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
+    pub fn image_inserter(&self) -> std::option::Option<&crate::model::ImageInserter> {
+        self.image_inserter.as_ref()
+    }
+    /// (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
+    pub fn input_clippings(&self) -> std::option::Option<&[crate::model::InputClipping]> {
+        self.input_clippings.as_deref()
+    }
+    /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+    pub fn input_scan_type(&self) -> std::option::Option<&crate::model::InputScanType> {
+        self.input_scan_type.as_ref()
+    }
+    /// Use Selection placement (position) to define the video area in your output frame. The area outside of the rectangle that you specify here is black. If you specify a value here, it will override any value that you specify in the output setting Selection placement (position). If you specify a value here, this will override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+    pub fn position(&self) -> std::option::Option<&crate::model::Rectangle> {
+        self.position.as_ref()
+    }
+    /// Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you specify doesn't exist, the transcoding service will use this default.
+    pub fn program_number(&self) -> i32 {
+        self.program_number
+    }
+    /// Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+    pub fn psi_control(&self) -> std::option::Option<&crate::model::InputPsiControl> {
+        self.psi_control.as_ref()
+    }
+    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+    pub fn supplemental_imps(&self) -> std::option::Option<&[std::string::String]> {
+        self.supplemental_imps.as_deref()
+    }
+    /// Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+    pub fn timecode_source(&self) -> std::option::Option<&crate::model::InputTimecodeSource> {
+        self.timecode_source.as_ref()
+    }
+    /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start (SPECIFIEDSTART). For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+    pub fn timecode_start(&self) -> std::option::Option<&str> {
+        self.timecode_start.as_deref()
+    }
+    /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
+    pub fn video_selector(&self) -> std::option::Option<&crate::model::VideoSelector> {
+        self.video_selector.as_ref()
+    }
 }
 impl std::fmt::Debug for Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47292,6 +52219,24 @@ pub struct InputDecryptionSettings {
     /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
     pub kms_key_region: std::option::Option<std::string::String>,
 }
+impl InputDecryptionSettings {
+    /// Specify the encryption mode that you used to encrypt your input files.
+    pub fn decryption_mode(&self) -> std::option::Option<&crate::model::DecryptionMode> {
+        self.decryption_mode.as_ref()
+    }
+    /// Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
+    pub fn encrypted_decryption_key(&self) -> std::option::Option<&str> {
+        self.encrypted_decryption_key.as_deref()
+    }
+    /// Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
+    pub fn initialization_vector(&self) -> std::option::Option<&str> {
+        self.initialization_vector.as_deref()
+    }
+    /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
+    pub fn kms_key_region(&self) -> std::option::Option<&str> {
+        self.kms_key_region.as_deref()
+    }
+}
 impl std::fmt::Debug for InputDecryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputDecryptionSettings");
@@ -47454,6 +52399,20 @@ pub struct QueueTransition {
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl QueueTransition {
+    /// The queue that the job was on after the transition.
+    pub fn destination_queue(&self) -> std::option::Option<&str> {
+        self.destination_queue.as_deref()
+    }
+    /// The queue that the job was on before the transition.
+    pub fn source_queue(&self) -> std::option::Option<&str> {
+        self.source_queue.as_deref()
+    }
+    /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for QueueTransition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueueTransition");
@@ -47534,6 +52493,12 @@ pub struct OutputGroupDetail {
     /// Details about the output
     pub output_details: std::option::Option<std::vec::Vec<crate::model::OutputDetail>>,
 }
+impl OutputGroupDetail {
+    /// Details about the output
+    pub fn output_details(&self) -> std::option::Option<&[crate::model::OutputDetail]> {
+        self.output_details.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputGroupDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputGroupDetail");
@@ -47592,6 +52557,16 @@ pub struct OutputDetail {
     pub duration_in_ms: i32,
     /// Contains details about the output's video stream
     pub video_details: std::option::Option<crate::model::VideoDetail>,
+}
+impl OutputDetail {
+    /// Duration in milliseconds
+    pub fn duration_in_ms(&self) -> i32 {
+        self.duration_in_ms
+    }
+    /// Contains details about the output's video stream
+    pub fn video_details(&self) -> std::option::Option<&crate::model::VideoDetail> {
+        self.video_details.as_ref()
+    }
 }
 impl std::fmt::Debug for OutputDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47659,6 +52634,16 @@ pub struct VideoDetail {
     /// Width in pixels for the output
     pub width_in_px: i32,
 }
+impl VideoDetail {
+    /// Height in pixels for the output
+    pub fn height_in_px(&self) -> i32 {
+        self.height_in_px
+    }
+    /// Width in pixels for the output
+    pub fn width_in_px(&self) -> i32 {
+        self.width_in_px
+    }
+}
 impl std::fmt::Debug for VideoDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VideoDetail");
@@ -47721,6 +52706,16 @@ pub struct JobMessages {
     pub info: std::option::Option<std::vec::Vec<std::string::String>>,
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
     pub warning: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl JobMessages {
+    /// List of messages that are informational only and don't indicate a problem with your job.
+    pub fn info(&self) -> std::option::Option<&[std::string::String]> {
+        self.info.as_deref()
+    }
+    /// List of messages that warn about conditions that might cause your job not to run or to fail.
+    pub fn warning(&self) -> std::option::Option<&[std::string::String]> {
+        self.warning.as_deref()
+    }
 }
 impl std::fmt::Debug for JobMessages {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47990,6 +52985,12 @@ impl AsRef<str> for AccelerationStatus {
 pub struct Endpoint {
     /// URL of endpoint
     pub url: std::option::Option<std::string::String>,
+}
+impl Endpoint {
+    /// URL of endpoint
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

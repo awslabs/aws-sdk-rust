@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -14,13 +14,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_4) = &input.value {
         scope_3.string(var_4);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_log_delivery_configuration_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LogDeliveryConfigurationRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("LogType");
     if let Some(var_6) = &input.log_type {
@@ -34,7 +35,7 @@ pub fn serialize_structure_crate_model_log_delivery_configuration_request(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("DestinationDetails");
     if let Some(var_10) = &input.destination_details {
-        crate::query_ser::serialize_structure_crate_model_destination_details(scope_9, var_10);
+        crate::query_ser::serialize_structure_crate_model_destination_details(scope_9, var_10)?;
     }
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("LogFormat");
@@ -46,13 +47,14 @@ pub fn serialize_structure_crate_model_log_delivery_configuration_request(
     if let Some(var_14) = &input.enabled {
         scope_13.boolean(*var_14);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_node_group_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::NodeGroupConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("NodeGroupId");
     if let Some(var_16) = &input.node_group_id {
@@ -103,13 +105,14 @@ pub fn serialize_structure_crate_model_node_group_configuration(
         }
         list_33.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_configure_shard(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConfigureShard,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_35 = writer.prefix("NodeGroupId");
     if let Some(var_36) = &input.node_group_id {
@@ -145,13 +148,14 @@ pub fn serialize_structure_crate_model_configure_shard(
         }
         list_46.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_time_range_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TimeRangeFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_48 = writer.prefix("StartTime");
     if let Some(var_49) = &input.start_time {
@@ -162,13 +166,14 @@ pub fn serialize_structure_crate_model_time_range_filter(
     if let Some(var_51) = &input.end_time {
         scope_50.instant(var_51, aws_smithy_types::instant::Format::DateTime);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Filter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_52 = writer.prefix("Name");
     if let Some(var_53) = &input.name {
@@ -185,13 +190,14 @@ pub fn serialize_structure_crate_model_filter(
         }
         list_57.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_regional_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RegionalConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_59 = writer.prefix("ReplicationGroupId");
     if let Some(var_60) = &input.replication_group_id {
@@ -211,17 +217,18 @@ pub fn serialize_structure_crate_model_regional_configuration(
             let mut entry_67 = list_66.entry();
             crate::query_ser::serialize_structure_crate_model_resharding_configuration(
                 entry_67, item_65,
-            );
+            )?;
         }
         list_66.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_parameter_name_value(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ParameterNameValue,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_68 = writer.prefix("ParameterName");
     if let Some(var_69) = &input.parameter_name {
@@ -232,13 +239,14 @@ pub fn serialize_structure_crate_model_parameter_name_value(
     if let Some(var_71) = &input.parameter_value {
         scope_70.string(var_71);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_resharding_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ReshardingConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_72 = writer.prefix("NodeGroupId");
     if let Some(var_73) = &input.node_group_id {
@@ -255,13 +263,14 @@ pub fn serialize_structure_crate_model_resharding_configuration(
         }
         list_77.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_customer_node_endpoint(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CustomerNodeEndpoint,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_79 = writer.prefix("Address");
     if let Some(var_80) = &input.address {
@@ -275,49 +284,53 @@ pub fn serialize_structure_crate_model_customer_node_endpoint(
             aws_smithy_types::Number::NegInt((*var_82).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_destination_details(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DestinationDetails,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_83 = writer.prefix("CloudWatchLogsDetails");
     if let Some(var_84) = &input.cloud_watch_logs_details {
         crate::query_ser::serialize_structure_crate_model_cloud_watch_logs_destination_details(
             scope_83, var_84,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_85 = writer.prefix("KinesisFirehoseDetails");
     if let Some(var_86) = &input.kinesis_firehose_details {
         crate::query_ser::serialize_structure_crate_model_kinesis_firehose_destination_details(
             scope_85, var_86,
-        );
+        )?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_cloud_watch_logs_destination_details(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CloudWatchLogsDestinationDetails,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_87 = writer.prefix("LogGroup");
     if let Some(var_88) = &input.log_group {
         scope_87.string(var_88);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_kinesis_firehose_destination_details(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::KinesisFirehoseDestinationDetails,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_89 = writer.prefix("DeliveryStream");
     if let Some(var_90) = &input.delivery_stream {
         scope_89.string(var_90);
     }
+    Ok(())
 }

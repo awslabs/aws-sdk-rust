@@ -8,6 +8,16 @@ pub struct ListWorkspacesOutput {
     /// Pagination token to use when requesting the next page in this list.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkspacesOutput {
+    /// The list of existing workspaces, including those undergoing creation or deletion.
+    pub fn workspaces(&self) -> std::option::Option<&[crate::model::WorkspaceSummary]> {
+        self.workspaces.as_deref()
+    }
+    /// Pagination token to use when requesting the next page in this list.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkspacesOutput");
@@ -84,6 +94,27 @@ pub struct CreateWorkspaceOutput {
     /// The tags of this workspace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateWorkspaceOutput {
+    /// The generated ID of the workspace that was just created.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The ARN of the workspace that was just created.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The status of the workspace that was just created (usually CREATING).
+    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+        self.status.as_ref()
+    }
+    /// The tags of this workspace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -252,6 +283,12 @@ pub struct DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
+impl DescribeWorkspaceOutput {
+    /// The properties of the selected workspace.
+    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+        self.workspace.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceOutput");
@@ -305,6 +342,18 @@ pub struct ListRuleGroupsNamespacesOutput {
         std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRuleGroupsNamespacesOutput {
+    /// The list of the selected rule groups namespaces.
+    pub fn rule_groups_namespaces(
+        &self,
+    ) -> std::option::Option<&[crate::model::RuleGroupsNamespaceSummary]> {
+        self.rule_groups_namespaces.as_deref()
+    }
+    /// Pagination token to use when requesting the next page in this list.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRuleGroupsNamespacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -386,6 +435,27 @@ pub struct CreateRuleGroupsNamespaceOutput {
     /// The tags of this rule groups namespace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateRuleGroupsNamespaceOutput {
+    /// The rule groups namespace name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The status of rule groups namespace.
+    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+        self.status.as_ref()
+    }
+    /// The tags of this rule groups namespace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRuleGroupsNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -531,6 +601,27 @@ pub struct PutRuleGroupsNamespaceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PutRuleGroupsNamespaceOutput {
+    /// The rule groups namespace name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The status of rule groups namespace.
+    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+        self.status.as_ref()
+    }
+    /// The tags of this rule groups namespace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for PutRuleGroupsNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRuleGroupsNamespaceOutput");
@@ -638,6 +729,14 @@ pub struct DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
     pub rule_groups_namespace: std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
 }
+impl DescribeRuleGroupsNamespaceOutput {
+    /// The selected rule groups namespace.
+    pub fn rule_groups_namespace(
+        &self,
+    ) -> std::option::Option<&crate::model::RuleGroupsNamespaceDescription> {
+        self.rule_groups_namespace.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRuleGroupsNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRuleGroupsNamespaceOutput");
@@ -692,6 +791,12 @@ impl DescribeRuleGroupsNamespaceOutput {
 pub struct CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+}
+impl CreateAlertManagerDefinitionOutput {
+    /// The status of alert manager definition.
+    pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAlertManagerDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -774,6 +879,12 @@ pub struct PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
 }
+impl PutAlertManagerDefinitionOutput {
+    /// The status of alert manager definition.
+    pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for PutAlertManagerDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAlertManagerDefinitionOutput");
@@ -825,6 +936,14 @@ pub struct DescribeAlertManagerDefinitionOutput {
     /// The properties of the selected workspace's alert manager definition.
     pub alert_manager_definition:
         std::option::Option<crate::model::AlertManagerDefinitionDescription>,
+}
+impl DescribeAlertManagerDefinitionOutput {
+    /// The properties of the selected workspace's alert manager definition.
+    pub fn alert_manager_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::AlertManagerDefinitionDescription> {
+        self.alert_manager_definition.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAlertManagerDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -941,6 +1060,15 @@ pub struct ListTagsForResourceOutput {
     /// The list of tags assigned to the resource.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// The list of tags assigned to the resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

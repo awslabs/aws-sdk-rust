@@ -6,6 +6,12 @@ pub struct UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
 }
+impl UpdateChannelReadMarkerOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelReadMarkerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelReadMarkerOutput");
@@ -57,6 +63,20 @@ pub struct UpdateChannelMessageOutput {
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The status of the message update.</p>
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+}
+impl UpdateChannelMessageOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The status of the message update.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -135,6 +155,12 @@ pub struct UpdateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
+impl UpdateChannelFlowOutput {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelFlowOutput");
@@ -185,6 +211,12 @@ impl UpdateChannelFlowOutput {
 pub struct UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
+}
+impl UpdateChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -298,6 +330,20 @@ pub struct SendChannelMessageOutput {
     /// <p>The status of the channel message.</p>
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
 }
+impl SendChannelMessageOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID string assigned to each message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The status of the channel message.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for SendChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendChannelMessageOutput");
@@ -377,6 +423,16 @@ pub struct RedactChannelMessageOutput {
     /// <p>The ID of the message being redacted.</p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl RedactChannelMessageOutput {
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RedactChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedactChannelMessageOutput");
@@ -441,6 +497,20 @@ pub struct PutChannelMembershipPreferencesOutput {
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The ARN and metadata of the member being added.</p>
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+}
+impl PutChannelMembershipPreferencesOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The details of a user.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+    /// <p>The ARN and metadata of the member being added.</p>
+    pub fn preferences(&self) -> std::option::Option<&crate::model::ChannelMembershipPreferences> {
+        self.preferences.as_ref()
+    }
 }
 impl std::fmt::Debug for PutChannelMembershipPreferencesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -519,6 +589,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -577,6 +653,19 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The token returned from previous API requests until the number of channels moderated by
     /// the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsModeratedByAppInstanceUserOutput {
+    /// <p>The moderated channels in the request.</p>
+    pub fn channels(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelModeratedByAppInstanceUserSummary]> {
+        self.channels.as_deref()
+    }
+    /// <p>The token returned from previous API requests until the number of channels moderated by
+    /// the user is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -661,6 +750,18 @@ pub struct ListChannelsAssociatedWithChannelFlowOutput {
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsAssociatedWithChannelFlowOutput {
+    /// <p>The information about each channel.</p>
+    pub fn channels(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelAssociatedWithFlowSummary]> {
+        self.channels.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsAssociatedWithChannelFlowOutput");
@@ -740,6 +841,17 @@ pub struct ListChannelsOutput {
     /// reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsOutput {
+    /// <p>The information about each channel.</p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+        self.channels.as_deref()
+    }
+    /// <p>The token returned from previous API requests until the number of channels is
+    /// reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsOutput");
@@ -817,6 +929,23 @@ pub struct ListChannelModeratorsOutput {
     /// <p>The information about and names of each moderator.</p>
     pub channel_moderators:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratorSummary>>,
+}
+impl ListChannelModeratorsOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested moderators are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The information about and names of each moderator.</p>
+    pub fn channel_moderators(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelModeratorSummary]> {
+        self.channel_moderators.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelModeratorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -911,6 +1040,20 @@ pub struct ListChannelMessagesOutput {
     /// <p>The information about, and content of, each requested message.</p>
     pub channel_messages: std::option::Option<std::vec::Vec<crate::model::ChannelMessageSummary>>,
 }
+impl ListChannelMessagesOutput {
+    /// <p>The ARN of the channel containing the requested messages.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The information about, and content of, each requested message.</p>
+    pub fn channel_messages(&self) -> std::option::Option<&[crate::model::ChannelMessageSummary]> {
+        self.channel_messages.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMessagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMessagesOutput");
@@ -1002,6 +1145,18 @@ pub struct ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelMembershipsForAppInstanceUserOutput {
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn channel_memberships(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelMembershipForAppInstanceUserSummary]> {
+        self.channel_memberships.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMembershipsForAppInstanceUserOutput");
@@ -1085,6 +1240,23 @@ pub struct ListChannelMembershipsOutput {
     /// <p>The token passed by previous API calls until all requested channel memberships are
     /// returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelMembershipsOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The information for the requested channel memberships.</p>
+    pub fn channel_memberships(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelMembershipSummary]> {
+        self.channel_memberships.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested channel memberships are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelMembershipsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1177,6 +1349,16 @@ pub struct ListChannelFlowsOutput {
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelFlowsOutput {
+    /// <p>The information about each channel flow.</p>
+    pub fn channel_flows(&self) -> std::option::Option<&[crate::model::ChannelFlowSummary]> {
+        self.channel_flows.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelFlowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelFlowsOutput");
@@ -1251,6 +1433,20 @@ pub struct ListChannelBansOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information for each requested ban.</p>
     pub channel_bans: std::option::Option<std::vec::Vec<crate::model::ChannelBanSummary>>,
+}
+impl ListChannelBansOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The information for each requested ban.</p>
+    pub fn channel_bans(&self) -> std::option::Option<&[crate::model::ChannelBanSummary]> {
+        self.channel_bans.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelBansOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1336,6 +1532,12 @@ pub struct GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
     pub endpoint: std::option::Option<crate::model::MessagingSessionEndpoint>,
 }
+impl GetMessagingSessionEndpointOutput {
+    /// <p>The endpoint returned in the response.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::MessagingSessionEndpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMessagingSessionEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMessagingSessionEndpointOutput");
@@ -1387,6 +1589,12 @@ pub struct GetChannelMessageStatusOutput {
     /// <p>The message status and details.</p>
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
 }
+impl GetChannelMessageStatusOutput {
+    /// <p>The message status and details.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetChannelMessageStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelMessageStatusOutput");
@@ -1437,6 +1645,12 @@ impl GetChannelMessageStatusOutput {
 pub struct GetChannelMessageOutput {
     /// <p>The details of and content in the message.</p>
     pub channel_message: std::option::Option<crate::model::ChannelMessage>,
+}
+impl GetChannelMessageOutput {
+    /// <p>The details of and content in the message.</p>
+    pub fn channel_message(&self) -> std::option::Option<&crate::model::ChannelMessage> {
+        self.channel_message.as_ref()
+    }
 }
 impl std::fmt::Debug for GetChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1492,6 +1706,20 @@ pub struct GetChannelMembershipPreferencesOutput {
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+}
+impl GetChannelMembershipPreferencesOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The details of a user.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+    /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
+    pub fn preferences(&self) -> std::option::Option<&crate::model::ChannelMembershipPreferences> {
+        self.preferences.as_ref()
+    }
 }
 impl std::fmt::Debug for GetChannelMembershipPreferencesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1600,6 +1828,12 @@ pub struct DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
     pub channel_moderator: std::option::Option<crate::model::ChannelModerator>,
 }
+impl DescribeChannelModeratorOutput {
+    /// <p>The details of the channel moderator.</p>
+    pub fn channel_moderator(&self) -> std::option::Option<&crate::model::ChannelModerator> {
+        self.channel_moderator.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelModeratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelModeratorOutput");
@@ -1650,6 +1884,14 @@ impl DescribeChannelModeratorOutput {
 pub struct DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
     pub channel: std::option::Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
+}
+impl DescribeChannelModeratedByAppInstanceUserOutput {
+    /// <p>The moderated channel.</p>
+    pub fn channel(
+        &self,
+    ) -> std::option::Option<&crate::model::ChannelModeratedByAppInstanceUserSummary> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelModeratedByAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1708,6 +1950,14 @@ pub struct DescribeChannelMembershipForAppInstanceUserOutput {
     pub channel_membership:
         std::option::Option<crate::model::ChannelMembershipForAppInstanceUserSummary>,
 }
+impl DescribeChannelMembershipForAppInstanceUserOutput {
+    /// <p>The channel to which a user belongs.</p>
+    pub fn channel_membership(
+        &self,
+    ) -> std::option::Option<&crate::model::ChannelMembershipForAppInstanceUserSummary> {
+        self.channel_membership.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelMembershipForAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelMembershipForAppInstanceUserOutput");
@@ -1764,6 +2014,12 @@ pub struct DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
     pub channel_membership: std::option::Option<crate::model::ChannelMembership>,
 }
+impl DescribeChannelMembershipOutput {
+    /// <p>The details of the membership.</p>
+    pub fn channel_membership(&self) -> std::option::Option<&crate::model::ChannelMembership> {
+        self.channel_membership.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelMembershipOutput");
@@ -1814,6 +2070,12 @@ impl DescribeChannelMembershipOutput {
 pub struct DescribeChannelFlowOutput {
     /// <p>The channel flow details.</p>
     pub channel_flow: std::option::Option<crate::model::ChannelFlow>,
+}
+impl DescribeChannelFlowOutput {
+    /// <p>The channel flow details.</p>
+    pub fn channel_flow(&self) -> std::option::Option<&crate::model::ChannelFlow> {
+        self.channel_flow.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1866,6 +2128,12 @@ pub struct DescribeChannelBanOutput {
     /// <p>The details of the ban.</p>
     pub channel_ban: std::option::Option<crate::model::ChannelBan>,
 }
+impl DescribeChannelBanOutput {
+    /// <p>The details of the ban.</p>
+    pub fn channel_ban(&self) -> std::option::Option<&crate::model::ChannelBan> {
+        self.channel_ban.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelBanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelBanOutput");
@@ -1916,6 +2184,12 @@ impl DescribeChannelBanOutput {
 pub struct DescribeChannelOutput {
     /// <p>The channel details.</p>
     pub channel: std::option::Option<crate::model::Channel>,
+}
+impl DescribeChannelOutput {
+    /// <p>The channel details.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2147,6 +2421,16 @@ pub struct CreateChannelModeratorOutput {
     /// <p>The ARNs of the channel and the moderator.</p>
     pub channel_moderator: std::option::Option<crate::model::Identity>,
 }
+impl CreateChannelModeratorOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARNs of the channel and the moderator.</p>
+    pub fn channel_moderator(&self) -> std::option::Option<&crate::model::Identity> {
+        self.channel_moderator.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelModeratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelModeratorOutput");
@@ -2213,6 +2497,16 @@ pub struct CreateChannelMembershipOutput {
     /// <p>The ARN and metadata of the member being added.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
+impl CreateChannelMembershipOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN and metadata of the member being added.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelMembershipOutput");
@@ -2274,6 +2568,12 @@ pub struct CreateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
+impl CreateChannelFlowOutput {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelFlowOutput");
@@ -2327,6 +2627,17 @@ pub struct CreateChannelBanOutput {
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
     /// response.</p>
     pub member: std::option::Option<crate::model::Identity>,
+}
+impl CreateChannelBanOutput {
+    /// <p>The ARN of the response to the ban request.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
+    /// response.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelBanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2391,6 +2702,12 @@ pub struct CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
 }
+impl CreateChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelOutput");
@@ -2440,6 +2757,16 @@ pub struct ChannelFlowCallbackOutput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The call back ID passed in the request.</p>
     pub callback_id: std::option::Option<std::string::String>,
+}
+impl ChannelFlowCallbackOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The call back ID passed in the request.</p>
+    pub fn callback_id(&self) -> std::option::Option<&str> {
+        self.callback_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelFlowCallbackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2504,6 +2831,21 @@ pub struct BatchCreateChannelMembershipOutput {
     /// <p>If the action fails for one or more of the memberships in the request, a list of the
     /// memberships is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
+}
+impl BatchCreateChannelMembershipOutput {
+    /// <p>The list of channel memberships in the response.</p>
+    pub fn batch_channel_memberships(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchChannelMemberships> {
+        self.batch_channel_memberships.as_ref()
+    }
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the
+    /// memberships is returned, along with error codes and error messages.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchCreateChannelMembershipError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateChannelMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

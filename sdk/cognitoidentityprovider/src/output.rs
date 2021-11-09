@@ -40,6 +40,17 @@ pub struct VerifySoftwareTokenOutput {
     /// service.</p>
     pub session: std::option::Option<std::string::String>,
 }
+impl VerifySoftwareTokenOutput {
+    /// <p>The status of the verify software token.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VerifySoftwareTokenResponseType> {
+        self.status.as_ref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifySoftwareTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifySoftwareTokenOutput");
@@ -107,6 +118,13 @@ pub struct UpdateUserPoolDomainOutput {
     /// domain to your user pool.</p>
     pub cloud_front_domain: std::option::Option<std::string::String>,
 }
+impl UpdateUserPoolDomainOutput {
+    /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom
+    /// domain to your user pool.</p>
+    pub fn cloud_front_domain(&self) -> std::option::Option<&str> {
+        self.cloud_front_domain.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserPoolDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserPoolDomainOutput");
@@ -161,6 +179,13 @@ pub struct UpdateUserPoolClientOutput {
     /// <p>The user pool client value from the response from the server when an update user pool
     /// client request is made.</p>
     pub user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
+}
+impl UpdateUserPoolClientOutput {
+    /// <p>The user pool client value from the response from the server when an update user pool
+    /// client request is made.</p>
+    pub fn user_pool_client(&self) -> std::option::Option<&crate::model::UserPoolClientType> {
+        self.user_pool_client.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateUserPoolClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -249,6 +274,15 @@ pub struct UpdateUserAttributesOutput {
     pub code_delivery_details_list:
         std::option::Option<std::vec::Vec<crate::model::CodeDeliveryDetailsType>>,
 }
+impl UpdateUserAttributesOutput {
+    /// <p>The code delivery details list from the server for the request to update user
+    /// attributes.</p>
+    pub fn code_delivery_details_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::CodeDeliveryDetailsType]> {
+        self.code_delivery_details_list.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserAttributesOutput");
@@ -315,6 +349,12 @@ pub struct UpdateResourceServerOutput {
     /// <p>The resource server.</p>
     pub resource_server: std::option::Option<crate::model::ResourceServerType>,
 }
+impl UpdateResourceServerOutput {
+    /// <p>The resource server.</p>
+    pub fn resource_server(&self) -> std::option::Option<&crate::model::ResourceServerType> {
+        self.resource_server.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceServerOutput");
@@ -366,6 +406,12 @@ pub struct UpdateIdentityProviderOutput {
     /// <p>The identity provider object.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
+impl UpdateIdentityProviderOutput {
+    /// <p>The identity provider object.</p>
+    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateIdentityProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIdentityProviderOutput");
@@ -416,6 +462,12 @@ impl UpdateIdentityProviderOutput {
 pub struct UpdateGroupOutput {
     /// <p>The group object for the group.</p>
     pub group: std::option::Option<crate::model::GroupType>,
+}
+impl UpdateGroupOutput {
+    /// <p>The group object for the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::GroupType> {
+        self.group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -584,6 +636,12 @@ pub struct StopUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
 }
+impl StopUserImportJobOutput {
+    /// <p>The job object that represents the user import job.</p>
+    pub fn user_import_job(&self) -> std::option::Option<&crate::model::UserImportJobType> {
+        self.user_import_job.as_ref()
+    }
+}
 impl std::fmt::Debug for StopUserImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopUserImportJobOutput");
@@ -635,6 +693,12 @@ impl StopUserImportJobOutput {
 pub struct StartUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
+}
+impl StartUserImportJobOutput {
+    /// <p>The job object that represents the user import job.</p>
+    pub fn user_import_job(&self) -> std::option::Option<&crate::model::UserImportJobType> {
+        self.user_import_job.as_ref()
+    }
 }
 impl std::fmt::Debug for StartUserImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -693,6 +757,25 @@ pub struct SignUpOutput {
     /// <p>The UUID of the authenticated user. This is not the same as
     /// <code>username</code>.</p>
     pub user_sub: std::option::Option<std::string::String>,
+}
+impl SignUpOutput {
+    /// <p>A response from the server indicating that a user registration has been
+    /// confirmed.</p>
+    pub fn user_confirmed(&self) -> bool {
+        self.user_confirmed
+    }
+    /// <p>The code delivery details returned by the server response to the user registration
+    /// request.</p>
+    pub fn code_delivery_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeDeliveryDetailsType> {
+        self.code_delivery_details.as_ref()
+    }
+    /// <p>The UUID of the authenticated user. This is not the same as
+    /// <code>username</code>.</p>
+    pub fn user_sub(&self) -> std::option::Option<&str> {
+        self.user_sub.as_deref()
+    }
 }
 impl std::fmt::Debug for SignUpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -830,6 +913,37 @@ pub struct SetUserPoolMfaConfigOutput {
     /// </li>
     /// </ul>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
+}
+impl SetUserPoolMfaConfigOutput {
+    /// <p>The SMS text message MFA configuration.</p>
+    pub fn sms_mfa_configuration(&self) -> std::option::Option<&crate::model::SmsMfaConfigType> {
+        self.sms_mfa_configuration.as_ref()
+    }
+    /// <p>The software token MFA configuration.</p>
+    pub fn software_token_mfa_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SoftwareTokenMfaConfigType> {
+        self.software_token_mfa_configuration.as_ref()
+    }
+    /// <p>The MFA configuration. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>OFF</code> MFA will not be used for any users.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ON</code> MFA is required for all users to sign in.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OPTIONAL</code> MFA will be required only for individual users who have
+    /// an MFA factor enabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
+        self.mfa_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for SetUserPoolMfaConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -981,6 +1095,12 @@ pub struct SetUiCustomizationOutput {
     /// <p>The UI customization information.</p>
     pub ui_customization: std::option::Option<crate::model::UiCustomizationType>,
 }
+impl SetUiCustomizationOutput {
+    /// <p>The UI customization information.</p>
+    pub fn ui_customization(&self) -> std::option::Option<&crate::model::UiCustomizationType> {
+        self.ui_customization.as_ref()
+    }
+}
 impl std::fmt::Debug for SetUiCustomizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetUiCustomizationOutput");
@@ -1031,6 +1151,12 @@ impl SetUiCustomizationOutput {
 pub struct SetRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
     pub risk_configuration: std::option::Option<crate::model::RiskConfigurationType>,
+}
+impl SetRiskConfigurationOutput {
+    /// <p>The risk configuration.</p>
+    pub fn risk_configuration(&self) -> std::option::Option<&crate::model::RiskConfigurationType> {
+        self.risk_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for SetRiskConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1123,6 +1249,33 @@ pub struct RespondToAuthChallengeOutput {
     /// <p>The result returned by the server in response to the request to respond to the
     /// authentication challenge.</p>
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
+}
+impl RespondToAuthChallengeOutput {
+    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
+        self.challenge_name.as_ref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. If the caller needs to go through another challenge, they return a session with
+    /// other challenge parameters. This session should be passed as it is to the next
+    /// <code>RespondToAuthChallenge</code> API call.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    pub fn challenge_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.challenge_parameters.as_ref()
+    }
+    /// <p>The result returned by the server in response to the request to respond to the
+    /// authentication challenge.</p>
+    pub fn authentication_result(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationResultType> {
+        self.authentication_result.as_ref()
+    }
 }
 impl std::fmt::Debug for RespondToAuthChallengeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1248,6 +1401,15 @@ pub struct ResendConfirmationCodeOutput {
     /// the confirmation code.</p>
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
 }
+impl ResendConfirmationCodeOutput {
+    /// <p>The code delivery details returned by the server in response to the request to resend
+    /// the confirmation code.</p>
+    pub fn code_delivery_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeDeliveryDetailsType> {
+        self.code_delivery_details.as_ref()
+    }
+}
 impl std::fmt::Debug for ResendConfirmationCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResendConfirmationCodeOutput");
@@ -1307,6 +1469,17 @@ pub struct ListUsersInGroupOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUsersInGroupOutput {
+    /// <p>The users returned in the request to list users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserType]> {
+        self.users.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUsersInGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1382,6 +1555,17 @@ pub struct ListUsersOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub pagination_token: std::option::Option<std::string::String>,
+}
+impl ListUsersOutput {
+    /// <p>The users returned in the request to list users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserType]> {
+        self.users.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1460,6 +1644,17 @@ pub struct ListUserPoolsOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUserPoolsOutput {
+    /// <p>The user pools from the response to list users.</p>
+    pub fn user_pools(&self) -> std::option::Option<&[crate::model::UserPoolDescriptionType]> {
+        self.user_pools.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUserPoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1541,6 +1736,19 @@ pub struct ListUserPoolClientsOutput {
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUserPoolClientsOutput {
+    /// <p>The user pool clients in the response that lists user pool clients.</p>
+    pub fn user_pool_clients(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserPoolClientDescription]> {
+        self.user_pool_clients.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUserPoolClientsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUserPoolClientsOutput");
@@ -1620,6 +1828,17 @@ pub struct ListUserImportJobsOutput {
     /// <p>An identifier that can be used to return the next set of user import jobs in the
     /// list.</p>
     pub pagination_token: std::option::Option<std::string::String>,
+}
+impl ListUserImportJobsOutput {
+    /// <p>The user import jobs.</p>
+    pub fn user_import_jobs(&self) -> std::option::Option<&[crate::model::UserImportJobType]> {
+        self.user_import_jobs.as_deref()
+    }
+    /// <p>An identifier that can be used to return the next set of user import jobs in the
+    /// list.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUserImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1701,6 +1920,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags that are assigned to the user pool.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1765,6 +1993,16 @@ pub struct ListResourceServersOutput {
     pub resource_servers: std::option::Option<std::vec::Vec<crate::model::ResourceServerType>>,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceServersOutput {
+    /// <p>The resource servers.</p>
+    pub fn resource_servers(&self) -> std::option::Option<&[crate::model::ResourceServerType]> {
+        self.resource_servers.as_deref()
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceServersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1842,6 +2080,16 @@ pub struct ListIdentityProvidersOutput {
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIdentityProvidersOutput {
+    /// <p>A list of identity provider objects.</p>
+    pub fn providers(&self) -> std::option::Option<&[crate::model::ProviderDescription]> {
+        self.providers.as_deref()
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIdentityProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIdentityProvidersOutput");
@@ -1914,6 +2162,17 @@ pub struct ListGroupsOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGroupsOutput {
+    /// <p>The group objects for the groups.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupType]> {
+        self.groups.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1988,6 +2247,16 @@ pub struct ListDevicesOutput {
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
     /// <p>The pagination token for the list device response.</p>
     pub pagination_token: std::option::Option<std::string::String>,
+}
+impl ListDevicesOutput {
+    /// <p>The devices returned in the list devices response.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceType]> {
+        self.devices.as_deref()
+    }
+    /// <p>The pagination token for the list device response.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2134,6 +2403,95 @@ pub struct InitiateAuthOutput {
     /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and
     /// <code>Session</code> are returned.</p>
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
+}
+impl InitiateAuthOutput {
+    /// <p>The name of the challenge which you are responding to with this call. This is returned
+    /// to you in the <code>AdminInitiateAuth</code> response if you need to pass another
+    /// challenge.</p>
+    /// <p>Valid values include the following. Note that all of these challenges require
+    /// <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the
+    /// parameters.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SMS_MFA</code>: Next challenge is to supply an
+    /// <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+    /// <code>PASSWORD_CLAIM_SIGNATURE</code>,
+    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after
+    /// the client-side SRP calculations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication
+    /// flow determines that the user should pass another challenge before tokens are
+    /// issued.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool
+    /// and the previous challenges were passed, this challenge is returned so that
+    /// Amazon Cognito can start tracking this device.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+    /// <code>PASSWORD_VERIFIER</code>, but for devices only.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
+    /// passwords after successful first login. This challenge should be passed with
+    /// <code>NEW_PASSWORD</code> and any other required attributes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MFA_SETUP</code>: For users who are required to setup an MFA factor
+    /// before they can sign-in. The MFA types enabled for the user pool will be listed
+    /// in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p>
+    /// <p> To setup software token MFA, use the session returned here from
+    /// <code>InitiateAuth</code> as an input to
+    /// <code>AssociateSoftwareToken</code>, and use the session returned by
+    /// <code>VerifySoftwareToken</code> as an input to
+    /// <code>RespondToAuthChallenge</code> with challenge name
+    /// <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will
+    /// need help from an administrator to add a phone number to their account and then
+    /// call <code>InitiateAuth</code> again to restart sign-in.</p>
+    /// </li>
+    /// </ul>
+    pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
+        self.challenge_name.as_ref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. If the caller needs to go through another challenge, they return a session with
+    /// other challenge parameters. This session should be passed as it is to the next
+    /// <code>RespondToAuthChallenge</code> API call.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+    /// <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code>
+    /// response if you need to pass another challenge. The responses in this parameter should
+    /// be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
+    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
+    /// applicable).</p>
+    pub fn challenge_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.challenge_parameters.as_ref()
+    }
+    /// <p>The result of the authentication response. This is only returned if the caller does
+    /// not need to pass another challenge. If the caller does need to pass another challenge
+    /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and
+    /// <code>Session</code> are returned.</p>
+    pub fn authentication_result(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationResultType> {
+        self.authentication_result.as_ref()
+    }
 }
 impl std::fmt::Debug for InitiateAuthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2431,6 +2789,37 @@ pub struct GetUserPoolMfaConfigOutput {
     /// </ul>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
 }
+impl GetUserPoolMfaConfigOutput {
+    /// <p>The SMS text message multi-factor (MFA) configuration.</p>
+    pub fn sms_mfa_configuration(&self) -> std::option::Option<&crate::model::SmsMfaConfigType> {
+        self.sms_mfa_configuration.as_ref()
+    }
+    /// <p>The software token multi-factor (MFA) configuration.</p>
+    pub fn software_token_mfa_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SoftwareTokenMfaConfigType> {
+        self.software_token_mfa_configuration.as_ref()
+    }
+    /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>OFF</code> MFA will not be used for any users.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ON</code> MFA is required for all users to sign in.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OPTIONAL</code> MFA will be required only for individual users who have
+    /// an MFA factor enabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
+        self.mfa_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUserPoolMfaConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserPoolMfaConfigOutput");
@@ -2553,6 +2942,15 @@ pub struct GetUserAttributeVerificationCodeOutput {
     /// user attribute verification code.</p>
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
 }
+impl GetUserAttributeVerificationCodeOutput {
+    /// <p>The code delivery details returned by the server in response to the request to get the
+    /// user attribute verification code.</p>
+    pub fn code_delivery_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeDeliveryDetailsType> {
+        self.code_delivery_details.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUserAttributeVerificationCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserAttributeVerificationCodeOutput");
@@ -2625,6 +3023,35 @@ pub struct GetUserOutput {
     /// <p>The MFA options that are enabled for the user. The possible values in this list are
     /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetUserOutput {
+    /// <p>The user name of the user you wish to retrieve from the get user request.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+    /// attribute name.</p>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>
+    /// <i>This response parameter is no longer supported.</i> It provides
+    /// information only about SMS MFA configurations. It doesn't provide information about TOTP
+    /// software token MFA configurations. To look up information about either type of MFA
+    /// configuration, use UserMFASettingList instead.</p>
+    pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
+        self.mfa_options.as_deref()
+    }
+    /// <p>The user's preferred MFA setting.</p>
+    pub fn preferred_mfa_setting(&self) -> std::option::Option<&str> {
+        self.preferred_mfa_setting.as_deref()
+    }
+    /// <p>The MFA options that are enabled for the user. The possible values in this list are
+    /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    pub fn user_mfa_setting_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_mfa_setting_list.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2770,6 +3197,12 @@ pub struct GetUiCustomizationOutput {
     /// <p>The UI customization information.</p>
     pub ui_customization: std::option::Option<crate::model::UiCustomizationType>,
 }
+impl GetUiCustomizationOutput {
+    /// <p>The UI customization information.</p>
+    pub fn ui_customization(&self) -> std::option::Option<&crate::model::UiCustomizationType> {
+        self.ui_customization.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUiCustomizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUiCustomizationOutput");
@@ -2821,6 +3254,12 @@ pub struct GetSigningCertificateOutput {
     /// <p>The signing certificate.</p>
     pub certificate: std::option::Option<std::string::String>,
 }
+impl GetSigningCertificateOutput {
+    /// <p>The signing certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSigningCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSigningCertificateOutput");
@@ -2868,6 +3307,12 @@ impl GetSigningCertificateOutput {
 pub struct GetIdentityProviderByIdentifierOutput {
     /// <p>The identity provider object.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
+}
+impl GetIdentityProviderByIdentifierOutput {
+    /// <p>The identity provider object.</p>
+    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIdentityProviderByIdentifierOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2920,6 +3365,12 @@ pub struct GetGroupOutput {
     /// <p>The group object for the group.</p>
     pub group: std::option::Option<crate::model::GroupType>,
 }
+impl GetGroupOutput {
+    /// <p>The group object for the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::GroupType> {
+        self.group.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupOutput");
@@ -2965,6 +3416,12 @@ impl GetGroupOutput {
 pub struct GetDeviceOutput {
     /// <p>The device.</p>
     pub device: std::option::Option<crate::model::DeviceType>,
+}
+impl GetDeviceOutput {
+    /// <p>The device.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::DeviceType> {
+        self.device.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3016,6 +3473,16 @@ pub struct GetCsvHeaderOutput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The header information for the .csv file for the user import job.</p>
     pub csv_header: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetCsvHeaderOutput {
+    /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The header information for the .csv file for the user import job.</p>
+    pub fn csv_header(&self) -> std::option::Option<&[std::string::String]> {
+        self.csv_header.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCsvHeaderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3088,6 +3555,15 @@ pub struct ForgotPasswordOutput {
     /// <p>The code delivery details returned by the server in response to the request to reset a
     /// password.</p>
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
+}
+impl ForgotPasswordOutput {
+    /// <p>The code delivery details returned by the server in response to the request to reset a
+    /// password.</p>
+    pub fn code_delivery_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeDeliveryDetailsType> {
+        self.code_delivery_details.as_ref()
+    }
 }
 impl std::fmt::Debug for ForgotPasswordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3176,6 +3652,12 @@ pub struct DescribeUserPoolDomainOutput {
     /// <p>A domain description object containing information about the domain.</p>
     pub domain_description: std::option::Option<crate::model::DomainDescriptionType>,
 }
+impl DescribeUserPoolDomainOutput {
+    /// <p>A domain description object containing information about the domain.</p>
+    pub fn domain_description(&self) -> std::option::Option<&crate::model::DomainDescriptionType> {
+        self.domain_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeUserPoolDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserPoolDomainOutput");
@@ -3228,6 +3710,12 @@ pub struct DescribeUserPoolClientOutput {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
     pub user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
 }
+impl DescribeUserPoolClientOutput {
+    /// <p>The user pool client from a server response to describe the user pool client.</p>
+    pub fn user_pool_client(&self) -> std::option::Option<&crate::model::UserPoolClientType> {
+        self.user_pool_client.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeUserPoolClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserPoolClientOutput");
@@ -3278,6 +3766,12 @@ impl DescribeUserPoolClientOutput {
 pub struct DescribeUserPoolOutput {
     /// <p>The container of metadata returned by the server to describe the pool.</p>
     pub user_pool: std::option::Option<crate::model::UserPoolType>,
+}
+impl DescribeUserPoolOutput {
+    /// <p>The container of metadata returned by the server to describe the pool.</p>
+    pub fn user_pool(&self) -> std::option::Option<&crate::model::UserPoolType> {
+        self.user_pool.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeUserPoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3331,6 +3825,12 @@ pub struct DescribeUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
 }
+impl DescribeUserImportJobOutput {
+    /// <p>The job object that represents the user import job.</p>
+    pub fn user_import_job(&self) -> std::option::Option<&crate::model::UserImportJobType> {
+        self.user_import_job.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeUserImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserImportJobOutput");
@@ -3381,6 +3881,12 @@ impl DescribeUserImportJobOutput {
 pub struct DescribeRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
     pub risk_configuration: std::option::Option<crate::model::RiskConfigurationType>,
+}
+impl DescribeRiskConfigurationOutput {
+    /// <p>The risk configuration.</p>
+    pub fn risk_configuration(&self) -> std::option::Option<&crate::model::RiskConfigurationType> {
+        self.risk_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeRiskConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3433,6 +3939,12 @@ pub struct DescribeResourceServerOutput {
     /// <p>The resource server.</p>
     pub resource_server: std::option::Option<crate::model::ResourceServerType>,
 }
+impl DescribeResourceServerOutput {
+    /// <p>The resource server.</p>
+    pub fn resource_server(&self) -> std::option::Option<&crate::model::ResourceServerType> {
+        self.resource_server.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeResourceServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourceServerOutput");
@@ -3483,6 +3995,12 @@ impl DescribeResourceServerOutput {
 pub struct DescribeIdentityProviderOutput {
     /// <p>The identity provider that was deleted.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
+}
+impl DescribeIdentityProviderOutput {
+    /// <p>The identity provider that was deleted.</p>
+    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3776,6 +4294,13 @@ pub struct CreateUserPoolDomainOutput {
     /// with your Domain Name Service (DNS) provider.</p>
     pub cloud_front_domain: std::option::Option<std::string::String>,
 }
+impl CreateUserPoolDomainOutput {
+    /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up
+    /// with your Domain Name Service (DNS) provider.</p>
+    pub fn cloud_front_domain(&self) -> std::option::Option<&str> {
+        self.cloud_front_domain.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserPoolDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserPoolDomainOutput");
@@ -3829,6 +4354,12 @@ pub struct CreateUserPoolClientOutput {
     /// <p>The user pool client that was just created.</p>
     pub user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
 }
+impl CreateUserPoolClientOutput {
+    /// <p>The user pool client that was just created.</p>
+    pub fn user_pool_client(&self) -> std::option::Option<&crate::model::UserPoolClientType> {
+        self.user_pool_client.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserPoolClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserPoolClientOutput");
@@ -3879,6 +4410,12 @@ impl CreateUserPoolClientOutput {
 pub struct CreateUserPoolOutput {
     /// <p>A container for the user pool details.</p>
     pub user_pool: std::option::Option<crate::model::UserPoolType>,
+}
+impl CreateUserPoolOutput {
+    /// <p>A container for the user pool details.</p>
+    pub fn user_pool(&self) -> std::option::Option<&crate::model::UserPoolType> {
+        self.user_pool.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUserPoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3932,6 +4469,12 @@ pub struct CreateUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
 }
+impl CreateUserImportJobOutput {
+    /// <p>The job object that represents the user import job.</p>
+    pub fn user_import_job(&self) -> std::option::Option<&crate::model::UserImportJobType> {
+        self.user_import_job.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserImportJobOutput");
@@ -3982,6 +4525,12 @@ impl CreateUserImportJobOutput {
 pub struct CreateResourceServerOutput {
     /// <p>The newly created resource server.</p>
     pub resource_server: std::option::Option<crate::model::ResourceServerType>,
+}
+impl CreateResourceServerOutput {
+    /// <p>The newly created resource server.</p>
+    pub fn resource_server(&self) -> std::option::Option<&crate::model::ResourceServerType> {
+        self.resource_server.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateResourceServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4034,6 +4583,12 @@ pub struct CreateIdentityProviderOutput {
     /// <p>The newly created identity provider object.</p>
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
+impl CreateIdentityProviderOutput {
+    /// <p>The newly created identity provider object.</p>
+    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateIdentityProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIdentityProviderOutput");
@@ -4084,6 +4639,12 @@ impl CreateIdentityProviderOutput {
 pub struct CreateGroupOutput {
     /// <p>The group object for the group.</p>
     pub group: std::option::Option<crate::model::GroupType>,
+}
+impl CreateGroupOutput {
+    /// <p>The group object for the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::GroupType> {
+        self.group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4193,6 +4754,13 @@ pub struct ConfirmDeviceOutput {
     /// response.</p>
     pub user_confirmation_necessary: bool,
 }
+impl ConfirmDeviceOutput {
+    /// <p>Indicates whether the user confirmation is necessary to confirm the device
+    /// response.</p>
+    pub fn user_confirmation_necessary(&self) -> bool {
+        self.user_confirmation_necessary
+    }
+}
 impl std::fmt::Debug for ConfirmDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmDeviceOutput");
@@ -4279,6 +4847,18 @@ pub struct AssociateSoftwareTokenOutput {
     /// <p>The session which should be passed both ways in challenge-response calls to the
     /// service. This allows authentication of the user as part of the MFA setup process.</p>
     pub session: std::option::Option<std::string::String>,
+}
+impl AssociateSoftwareTokenOutput {
+    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a
+    /// one time code.</p>
+    pub fn secret_code(&self) -> std::option::Option<&str> {
+        self.secret_code.as_deref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. This allows authentication of the user as part of the MFA setup process.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateSoftwareTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4567,6 +5147,32 @@ pub struct AdminRespondToAuthChallengeOutput {
     /// <p>The result returned by the server in response to the authentication request.</p>
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
 }
+impl AdminRespondToAuthChallengeOutput {
+    /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
+        self.challenge_name.as_ref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. If the caller needs to go through another challenge, they return a session with
+    /// other challenge parameters. This session should be passed as it is to the next
+    /// <code>RespondToAuthChallenge</code> API call.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    pub fn challenge_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.challenge_parameters.as_ref()
+    }
+    /// <p>The result returned by the server in response to the authentication request.</p>
+    pub fn authentication_result(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationResultType> {
+        self.authentication_result.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminRespondToAuthChallengeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminRespondToAuthChallengeOutput");
@@ -4752,6 +5358,18 @@ pub struct AdminListUserAuthEventsOutput {
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl AdminListUserAuthEventsOutput {
+    /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>,
+    /// <code>CreationDate</code>, <code>EventRisk</code>, and
+    /// <code>EventResponse</code>.</p>
+    pub fn auth_events(&self) -> std::option::Option<&[crate::model::AuthEventType]> {
+        self.auth_events.as_deref()
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminListUserAuthEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminListUserAuthEventsOutput");
@@ -4829,6 +5447,17 @@ pub struct AdminListGroupsForUserOutput {
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl AdminListGroupsForUserOutput {
+    /// <p>The groups that the user belongs to.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupType]> {
+        self.groups.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminListGroupsForUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminListGroupsForUserOutput");
@@ -4902,6 +5531,16 @@ pub struct AdminListDevicesOutput {
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
     /// <p>The pagination token.</p>
     pub pagination_token: std::option::Option<std::string::String>,
+}
+impl AdminListDevicesOutput {
+    /// <p>The devices in the list of devices response.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceType]> {
+        self.devices.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5101,6 +5740,118 @@ pub struct AdminInitiateAuthOutput {
     /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and
     /// <code>Session</code> are returned.</p>
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
+}
+impl AdminInitiateAuthOutput {
+    /// <p>The name of the challenge which you are responding to with this call. This is returned
+    /// to you in the <code>AdminInitiateAuth</code> response if you need to pass another
+    /// challenge.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one
+    /// of the MFA methods set up are presented with an <code>MFA_SETUP</code>
+    /// challenge. The user must set up at least one MFA type to continue to
+    /// authenticate.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are
+    /// <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code>
+    /// for TOTP software token MFA.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SMS_MFA</code>: Next challenge is to supply an
+    /// <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+    /// <code>PASSWORD_CLAIM_SIGNATURE</code>,
+    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after
+    /// the client-side SRP calculations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication
+    /// flow determines that the user should pass another challenge before tokens are
+    /// issued.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool
+    /// and the previous challenges were passed, this challenge is returned so that
+    /// Amazon Cognito can start tracking this device.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+    /// <code>PASSWORD_VERIFIER</code>, but for devices only.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate
+    /// with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client
+    /// must be enabled to use this flow.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
+    /// passwords after successful first login. This challenge should be passed with
+    /// <code>NEW_PASSWORD</code> and any other required attributes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MFA_SETUP</code>: For users who are required to setup an MFA factor
+    /// before they can sign-in. The MFA types enabled for the user pool will be listed
+    /// in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p>
+    /// <p> To setup software token MFA, use the session returned here from
+    /// <code>InitiateAuth</code> as an input to
+    /// <code>AssociateSoftwareToken</code>, and use the session returned by
+    /// <code>VerifySoftwareToken</code> as an input to
+    /// <code>RespondToAuthChallenge</code> with challenge name
+    /// <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will
+    /// need help from an administrator to add a phone number to their account and then
+    /// call <code>InitiateAuth</code> again to restart sign-in.</p>
+    /// </li>
+    /// </ul>
+    pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
+        self.challenge_name.as_ref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code>
+    /// API call determines that the caller needs to go through another challenge, they return a
+    /// session with other challenge parameters. This session should be passed as it is to the
+    /// next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+    /// <p>The challenge parameters. These are returned to you in the
+    /// <code>AdminInitiateAuth</code> response if you need to pass another challenge. The
+    /// responses in this parameter should be used to compute inputs to the next call
+    /// (<code>AdminRespondToAuthChallenge</code>).</p>
+    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
+    /// applicable).</p>
+    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
+    /// username, not an alias (such as email address or phone number), even if you specified an
+    /// alias in your call to <code>AdminInitiateAuth</code>. This is because, in the
+    /// <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
+    /// <code>USERNAME</code> attribute cannot be an alias.</p>
+    pub fn challenge_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.challenge_parameters.as_ref()
+    }
+    /// <p>The result of the authentication response. This is only returned if the caller does
+    /// not need to pass another challenge. If the caller does need to pass another challenge
+    /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and
+    /// <code>Session</code> are returned.</p>
+    pub fn authentication_result(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationResultType> {
+        self.authentication_result.as_ref()
+    }
 }
 impl std::fmt::Debug for AdminInitiateAuthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5442,6 +6193,75 @@ pub struct AdminGetUserOutput {
     /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AdminGetUserOutput {
+    /// <p>The user name of the user about whom you are receiving information.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>An array of name-value pairs representing user attributes.</p>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>The date the user was created.</p>
+    pub fn user_create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.user_create_date.as_ref()
+    }
+    /// <p>The date the user was last modified.</p>
+    pub fn user_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.user_last_modified_date.as_ref()
+    }
+    /// <p>Indicates that the status is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The user status. Can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>UNCONFIRMED - User has been created but not confirmed.</p>
+    /// </li>
+    /// <li>
+    /// <p>CONFIRMED - User has been confirmed.</p>
+    /// </li>
+    /// <li>
+    /// <p>ARCHIVED - User is no longer active.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+    /// </li>
+    /// <li>
+    /// <p>UNKNOWN - User status is not known.</p>
+    /// </li>
+    /// <li>
+    /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset
+    /// his or her password before he or she can sign in.</p>
+    /// </li>
+    /// <li>
+    /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a
+    /// temporary password, but on first sign-in, the user must change his or her
+    /// password to a new value before doing anything else. </p>
+    /// </li>
+    /// </ul>
+    pub fn user_status(&self) -> std::option::Option<&crate::model::UserStatusType> {
+        self.user_status.as_ref()
+    }
+    /// <p>
+    /// <i>This response parameter is no longer supported.</i> It provides
+    /// information only about SMS MFA configurations. It doesn't provide information about TOTP
+    /// software token MFA configurations. To look up information about either type of MFA
+    /// configuration, use UserMFASettingList instead.</p>
+    pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
+        self.mfa_options.as_deref()
+    }
+    /// <p>The user's preferred MFA setting.</p>
+    pub fn preferred_mfa_setting(&self) -> std::option::Option<&str> {
+        self.preferred_mfa_setting.as_deref()
+    }
+    /// <p>The MFA options that are enabled for the user. The possible values in this list are
+    /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    pub fn user_mfa_setting_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_mfa_setting_list.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminGetUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminGetUserOutput");
@@ -5695,6 +6515,12 @@ pub struct AdminGetDeviceOutput {
     /// <p>The device.</p>
     pub device: std::option::Option<crate::model::DeviceType>,
 }
+impl AdminGetDeviceOutput {
+    /// <p>The device.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::DeviceType> {
+        self.device.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminGetDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminGetDeviceOutput");
@@ -5925,6 +6751,12 @@ impl AdminDeleteUserOutput {
 pub struct AdminCreateUserOutput {
     /// <p>The newly created user.</p>
     pub user: std::option::Option<crate::model::UserType>,
+}
+impl AdminCreateUserOutput {
+    /// <p>The newly created user.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user.as_ref()
+    }
 }
 impl std::fmt::Debug for AdminCreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -6,6 +6,12 @@ pub struct OrganizationConfiguration {
     /// <p>Enables Organizations integration.</p>
     pub enable_integration: bool,
 }
+impl OrganizationConfiguration {
+    /// <p>Enables Organizations integration.</p>
+    pub fn enable_integration(&self) -> bool {
+        self.enable_integration
+    }
+}
 impl std::fmt::Debug for OrganizationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationConfiguration");
@@ -55,6 +61,16 @@ pub struct LicenseSpecification {
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub ami_association_scope: std::option::Option<std::string::String>,
+}
+impl LicenseSpecification {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+    /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
+    pub fn ami_association_scope(&self) -> std::option::Option<&str> {
+        self.ami_association_scope.as_deref()
+    }
 }
 impl std::fmt::Debug for LicenseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -125,6 +141,17 @@ pub struct ReportFrequency {
     pub value: std::option::Option<i32>,
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
     pub period: std::option::Option<crate::model::ReportFrequencyType>,
+}
+impl ReportFrequency {
+    /// <p>Number of times within the frequency period that a report is generated.  
+    /// The only supported value is <code>1</code>.</p>
+    pub fn value(&self) -> std::option::Option<i32> {
+        self.value
+    }
+    /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
+    pub fn period(&self) -> std::option::Option<&crate::model::ReportFrequencyType> {
+        self.period.as_ref()
+    }
 }
 impl std::fmt::Debug for ReportFrequency {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -250,6 +277,12 @@ impl AsRef<str> for ReportFrequencyType {
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ReportContext {
+    /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
+    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_configuration_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for ReportContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -441,6 +474,87 @@ pub struct ProductInformation {
     /// </ul>
     pub product_information_filter_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
+}
+impl ProductInformation {
+    /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
+    /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
+    /// <p>The following filters and are supported when the resource type
+    /// is <code>SSM_MANAGED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Application Name</code> - The name of the application.
+    /// Logical operator is <code>EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Application Publisher</code> - The publisher of the application.
+    /// Logical operator is <code>EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Application Version</code> - The version of the application.
+    /// Logical operator is <code>EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Platform Name</code> - The name of the platform.
+    /// Logical operator is <code>EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Platform Type</code> - The platform type.
+    /// Logical operator is <code>EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.  The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery.
+    /// Logical operator is <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>License Included</code> - The type of license included.
+    /// Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>.
+    /// Possible values are: <code>sql-server-enterprise</code> |
+    /// <code>sql-server-standard</code> |
+    /// <code>sql-server-web</code> |  
+    /// <code>windows-server-datacenter</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The following filters and logical operators are supported when the resource type
+    /// is <code>RDS</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Engine Edition</code> - The edition of the database engine.
+    /// Logical operator is <code>EQUALS</code>.
+    /// Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>License Pack</code> - The license pack.
+    /// Logical operator is <code>EQUALS</code>.
+    /// Possible values are: <code>data guard</code> |
+    /// <code>diagnostic pack sqlt</code> |
+    /// <code>tuning pack sqlt</code> |
+    /// <code>ols</code> |
+    /// <code>olap</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn product_information_filter_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductInformationFilter]> {
+        self.product_information_filter_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ProductInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -664,6 +778,20 @@ pub struct ProductInformationFilter {
     /// <p>Logical operator.</p>
     pub product_information_filter_comparator: std::option::Option<std::string::String>,
 }
+impl ProductInformationFilter {
+    /// <p>Filter name.</p>
+    pub fn product_information_filter_name(&self) -> std::option::Option<&str> {
+        self.product_information_filter_name.as_deref()
+    }
+    /// <p>Filter value.</p>
+    pub fn product_information_filter_value(&self) -> std::option::Option<&[std::string::String]> {
+        self.product_information_filter_value.as_deref()
+    }
+    /// <p>Logical operator.</p>
+    pub fn product_information_filter_comparator(&self) -> std::option::Option<&str> {
+        self.product_information_filter_comparator.as_deref()
+    }
+}
 impl std::fmt::Debug for ProductInformationFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProductInformationFilter");
@@ -829,6 +957,16 @@ pub struct Tag {
     /// <p>Tag value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>Tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Tag value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -992,6 +1130,32 @@ pub struct LicenseConfigurationUsage {
     pub association_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Number of licenses consumed by the resource.</p>
     pub consumed_licenses: std::option::Option<i64>,
+}
+impl LicenseConfigurationUsage {
+    /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Status of the resource.</p>
+    pub fn resource_status(&self) -> std::option::Option<&str> {
+        self.resource_status.as_deref()
+    }
+    /// <p>ID of the account that owns the resource.</p>
+    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+        self.resource_owner_id.as_deref()
+    }
+    /// <p>Time when the license configuration was initially associated with the resource.</p>
+    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.association_time.as_ref()
+    }
+    /// <p>Number of licenses consumed by the resource.</p>
+    pub fn consumed_licenses(&self) -> std::option::Option<i64> {
+        self.consumed_licenses
+    }
 }
 impl std::fmt::Debug for LicenseConfigurationUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1195,6 +1359,16 @@ pub struct Filter {
     /// <p>Filter values. Filter values are case-sensitive.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Filter {
+    /// <p>Name of the filter. Filter names are case-sensitive.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Filter values. Filter values are case-sensitive.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -1276,6 +1450,36 @@ pub struct TokenData {
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl TokenData {
+    /// <p>Token ID.</p>
+    pub fn token_id(&self) -> std::option::Option<&str> {
+        self.token_id.as_deref()
+    }
+    /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
+    pub fn token_type(&self) -> std::option::Option<&str> {
+        self.token_type.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>Token expiration time, in ISO8601-UTC format.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&str> {
+        self.expiration_time.as_deref()
+    }
+    /// <p>Data specified by the caller.</p>
+    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+        self.token_properties.as_deref()
+    }
+    /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
+    pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.role_arns.as_deref()
+    }
+    /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for TokenData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1434,6 +1638,32 @@ pub struct ResourceInventory {
     /// <p>ID of the account that owns the resource.</p>
     pub resource_owning_account_id: std::option::Option<std::string::String>,
 }
+impl ResourceInventory {
+    /// <p>ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Platform of the resource.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>Platform version of the resource in the inventory.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>ID of the account that owns the resource.</p>
+    pub fn resource_owning_account_id(&self) -> std::option::Option<&str> {
+        self.resource_owning_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInventory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInventory");
@@ -1562,6 +1792,20 @@ pub struct InventoryFilter {
     pub condition: std::option::Option<crate::model::InventoryFilterCondition>,
     /// <p>Value of the filter.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl InventoryFilter {
+    /// <p>Name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Condition of the filter.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::InventoryFilterCondition> {
+        self.condition.as_ref()
+    }
+    /// <p>Value of the filter.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for InventoryFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1730,6 +1974,70 @@ pub struct GrantedLicense {
     pub version: std::option::Option<std::string::String>,
     /// <p>Granted license received metadata.</p>
     pub received_metadata: std::option::Option<crate::model::ReceivedMetadata>,
+}
+impl GrantedLicense {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>License name.</p>
+    pub fn license_name(&self) -> std::option::Option<&str> {
+        self.license_name.as_deref()
+    }
+    /// <p>Product name.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>Product SKU.</p>
+    pub fn product_sku(&self) -> std::option::Option<&str> {
+        self.product_sku.as_deref()
+    }
+    /// <p>Granted license issuer.</p>
+    pub fn issuer(&self) -> std::option::Option<&crate::model::IssuerDetails> {
+        self.issuer.as_ref()
+    }
+    /// <p>Home Region of the granted license.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>Granted license status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
+    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+        self.validity.as_ref()
+    }
+    /// <p>Granted license beneficiary.</p>
+    pub fn beneficiary(&self) -> std::option::Option<&str> {
+        self.beneficiary.as_deref()
+    }
+    /// <p>License entitlements.</p>
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// <p>Configuration for consumption of the license.</p>
+    pub fn consumption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+        self.consumption_configuration.as_ref()
+    }
+    /// <p>Granted license metadata.</p>
+    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+        self.license_metadata.as_deref()
+    }
+    /// <p>Creation time of the granted license.</p>
+    pub fn create_time(&self) -> std::option::Option<&str> {
+        self.create_time.as_deref()
+    }
+    /// <p>Version of the granted license.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Granted license received metadata.</p>
+    pub fn received_metadata(&self) -> std::option::Option<&crate::model::ReceivedMetadata> {
+        self.received_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for GrantedLicense {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2002,6 +2310,20 @@ pub struct ReceivedMetadata {
     /// <p>Allowed operations.</p>
     pub allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
 }
+impl ReceivedMetadata {
+    /// <p>Received status.</p>
+    pub fn received_status(&self) -> std::option::Option<&crate::model::ReceivedStatus> {
+        self.received_status.as_ref()
+    }
+    /// <p>Received status reason.</p>
+    pub fn received_status_reason(&self) -> std::option::Option<&str> {
+        self.received_status_reason.as_deref()
+    }
+    /// <p>Allowed operations.</p>
+    pub fn allowed_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+        self.allowed_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for ReceivedMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReceivedMetadata");
@@ -2268,6 +2590,16 @@ pub struct Metadata {
     /// <p>The value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Metadata {
+    /// <p>The key name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Metadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Metadata");
@@ -2332,6 +2664,22 @@ pub struct ConsumptionConfiguration {
     pub provisional_configuration: std::option::Option<crate::model::ProvisionalConfiguration>,
     /// <p>Details about a borrow configuration.</p>
     pub borrow_configuration: std::option::Option<crate::model::BorrowConfiguration>,
+}
+impl ConsumptionConfiguration {
+    /// <p>Renewal frequency.</p>
+    pub fn renew_type(&self) -> std::option::Option<&crate::model::RenewType> {
+        self.renew_type.as_ref()
+    }
+    /// <p>Details about a provisional configuration.</p>
+    pub fn provisional_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionalConfiguration> {
+        self.provisional_configuration.as_ref()
+    }
+    /// <p>Details about a borrow configuration.</p>
+    pub fn borrow_configuration(&self) -> std::option::Option<&crate::model::BorrowConfiguration> {
+        self.borrow_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ConsumptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2422,6 +2770,16 @@ pub struct BorrowConfiguration {
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
     pub max_time_to_live_in_minutes: std::option::Option<i32>,
 }
+impl BorrowConfiguration {
+    /// <p>Indicates whether early check-ins are allowed.</p>
+    pub fn allow_early_check_in(&self) -> std::option::Option<bool> {
+        self.allow_early_check_in
+    }
+    /// <p>Maximum time for the borrow configuration, in minutes.</p>
+    pub fn max_time_to_live_in_minutes(&self) -> std::option::Option<i32> {
+        self.max_time_to_live_in_minutes
+    }
+}
 impl std::fmt::Debug for BorrowConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BorrowConfiguration");
@@ -2485,6 +2843,12 @@ impl BorrowConfiguration {
 pub struct ProvisionalConfiguration {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
     pub max_time_to_live_in_minutes: std::option::Option<i32>,
+}
+impl ProvisionalConfiguration {
+    /// <p>Maximum time for the provisional configuration, in minutes.</p>
+    pub fn max_time_to_live_in_minutes(&self) -> std::option::Option<i32> {
+        self.max_time_to_live_in_minutes
+    }
 }
 impl std::fmt::Debug for ProvisionalConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2605,6 +2969,32 @@ pub struct Entitlement {
     pub unit: std::option::Option<crate::model::EntitlementUnit>,
     /// <p>Indicates whether check-ins are allowed.</p>
     pub allow_check_in: std::option::Option<bool>,
+}
+impl Entitlement {
+    /// <p>Entitlement name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Entitlement resource. Use only if the unit is None.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Maximum entitlement count. Use if the unit is not None.</p>
+    pub fn max_count(&self) -> std::option::Option<i64> {
+        self.max_count
+    }
+    /// <p>Indicates whether overages are allowed.</p>
+    pub fn overage(&self) -> std::option::Option<bool> {
+        self.overage
+    }
+    /// <p>Entitlement unit.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>Indicates whether check-ins are allowed.</p>
+    pub fn allow_check_in(&self) -> std::option::Option<bool> {
+        self.allow_check_in
+    }
 }
 impl std::fmt::Debug for Entitlement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2907,6 +3297,16 @@ pub struct DatetimeRange {
     /// <p>End of the time range.</p>
     pub end: std::option::Option<std::string::String>,
 }
+impl DatetimeRange {
+    /// <p>Start of the time range.</p>
+    pub fn begin(&self) -> std::option::Option<&str> {
+        self.begin.as_deref()
+    }
+    /// <p>End of the time range.</p>
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+}
 impl std::fmt::Debug for DatetimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatetimeRange");
@@ -3056,6 +3456,21 @@ pub struct IssuerDetails {
     /// <p>Issuer key fingerprint.</p>
     pub key_fingerprint: std::option::Option<std::string::String>,
 }
+impl IssuerDetails {
+    /// <p>Issuer name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
+    /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    pub fn sign_key(&self) -> std::option::Option<&str> {
+        self.sign_key.as_deref()
+    }
+    /// <p>Issuer key fingerprint.</p>
+    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
+        self.key_fingerprint.as_deref()
+    }
+}
 impl std::fmt::Debug for IssuerDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IssuerDetails");
@@ -3152,6 +3567,48 @@ pub struct Grant {
     pub version: std::option::Option<std::string::String>,
     /// <p>Granted operations.</p>
     pub granted_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
+}
+impl Grant {
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant name.</p>
+    pub fn grant_name(&self) -> std::option::Option<&str> {
+        self.grant_name.as_deref()
+    }
+    /// <p>Parent ARN.</p>
+    pub fn parent_arn(&self) -> std::option::Option<&str> {
+        self.parent_arn.as_deref()
+    }
+    /// <p>License ARN.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>The grantee principal ARN.</p>
+    pub fn grantee_principal_arn(&self) -> std::option::Option<&str> {
+        self.grantee_principal_arn.as_deref()
+    }
+    /// <p>Home Region of the grant.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>Grant status.</p>
+    pub fn grant_status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+        self.grant_status.as_ref()
+    }
+    /// <p>Grant status reason.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Grant version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Granted operations.</p>
+    pub fn granted_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+        self.granted_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for Grant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3365,6 +3822,66 @@ pub struct License {
     pub create_time: std::option::Option<std::string::String>,
     /// <p>License version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl License {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>License name.</p>
+    pub fn license_name(&self) -> std::option::Option<&str> {
+        self.license_name.as_deref()
+    }
+    /// <p>Product name.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>Product SKU.</p>
+    pub fn product_sku(&self) -> std::option::Option<&str> {
+        self.product_sku.as_deref()
+    }
+    /// <p>License issuer.</p>
+    pub fn issuer(&self) -> std::option::Option<&crate::model::IssuerDetails> {
+        self.issuer.as_ref()
+    }
+    /// <p>Home Region of the license.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>License status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+        self.validity.as_ref()
+    }
+    /// <p>License beneficiary.</p>
+    pub fn beneficiary(&self) -> std::option::Option<&str> {
+        self.beneficiary.as_deref()
+    }
+    /// <p>License entitlements.</p>
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// <p>Configuration for consumption of the license.</p>
+    pub fn consumption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+        self.consumption_configuration.as_ref()
+    }
+    /// <p>License metadata.</p>
+    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+        self.license_metadata.as_deref()
+    }
+    /// <p>License creation time.</p>
+    pub fn create_time(&self) -> std::option::Option<&str> {
+        self.create_time.as_deref()
+    }
+    /// <p>License version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for License {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3641,6 +4158,60 @@ pub struct ReportGenerator {
     /// <p>Tags associated with the report generator.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ReportGenerator {
+    /// <p>Name of the report generator.</p>
+    pub fn report_generator_name(&self) -> std::option::Option<&str> {
+        self.report_generator_name.as_deref()
+    }
+    /// <p>Type of reports that are generated.</p>
+    pub fn report_type(&self) -> std::option::Option<&[crate::model::ReportType]> {
+        self.report_type.as_deref()
+    }
+    /// <p>License configuration type for this generator.</p>
+    pub fn report_context(&self) -> std::option::Option<&crate::model::ReportContext> {
+        self.report_context.as_ref()
+    }
+    /// <p>Details about how frequently reports are generated.</p>
+    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+        self.report_frequency.as_ref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the report generator.</p>
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+        self.license_manager_report_generator_arn.as_deref()
+    }
+    /// <p>Status of the last report generation attempt.</p>
+    pub fn last_run_status(&self) -> std::option::Option<&str> {
+        self.last_run_status.as_deref()
+    }
+    /// <p>Failure message for the last report generation attempt.</p>
+    pub fn last_run_failure_reason(&self) -> std::option::Option<&str> {
+        self.last_run_failure_reason.as_deref()
+    }
+    /// <p>Time the last report was generated at.</p>
+    pub fn last_report_generation_time(&self) -> std::option::Option<&str> {
+        self.last_report_generation_time.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID used to create the report generator.</p>
+    pub fn report_creator_account(&self) -> std::option::Option<&str> {
+        self.report_creator_account.as_deref()
+    }
+    /// <p>Description of the report generator.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Details of the S3 bucket that report generator reports are published to.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+    /// <p>Time the report was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&str> {
+        self.create_time.as_deref()
+    }
+    /// <p>Tags associated with the report generator.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ReportGenerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportGenerator");
@@ -3904,6 +4475,16 @@ pub struct S3Location {
     /// <p>Prefix of the S3 bucket reports are published to.</p>
     pub key_prefix: std::option::Option<std::string::String>,
 }
+impl S3Location {
+    /// <p>Name of the S3 bucket reports are published to.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Prefix of the S3 bucket reports are published to.</p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Location");
@@ -3981,6 +4562,49 @@ pub struct LicenseConversionTask {
     pub license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the conversion task was completed.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl LicenseConversionTask {
+    /// <p>The ID of the license type conversion task.</p>
+    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+        self.license_conversion_task_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type
+    /// conversion task.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Information about the license type this conversion task converted from.</p>
+    pub fn source_license_context(
+        &self,
+    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+        self.source_license_context.as_ref()
+    }
+    /// <p>Information about the license type this conversion task converted to.</p>
+    pub fn destination_license_context(
+        &self,
+    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+        self.destination_license_context.as_ref()
+    }
+    /// <p>The status of the conversion task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseConversionTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message for the conversion task.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The time the conversion task was started at.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time the usage operation value of the resource was changed.</p>
+    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.license_conversion_time.as_ref()
+    }
+    /// <p>The time the conversion task was completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for LicenseConversionTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4235,6 +4859,14 @@ pub struct LicenseConversionContext {
     /// </p>
     pub usage_operation: std::option::Option<std::string::String>,
 }
+impl LicenseConversionContext {
+    /// <p>The Usage operation value that corresponds to the license type you are converting your resource from.  For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform
+    /// </a>
+    /// </p>
+    pub fn usage_operation(&self) -> std::option::Option<&str> {
+        self.usage_operation.as_deref()
+    }
+}
 impl std::fmt::Debug for LicenseConversionContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseConversionContext");
@@ -4327,6 +4959,80 @@ pub struct LicenseConfiguration {
     /// <p>Automated discovery information.</p>
     pub automated_discovery_information:
         std::option::Option<crate::model::AutomatedDiscoveryInformation>,
+}
+impl LicenseConfiguration {
+    /// <p>Unique ID of the license configuration.</p>
+    pub fn license_configuration_id(&self) -> std::option::Option<&str> {
+        self.license_configuration_id.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+    /// <p>Name of the license configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Description of the license configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Dimension to use to track the license inventory.</p>
+    pub fn license_counting_type(&self) -> std::option::Option<&crate::model::LicenseCountingType> {
+        self.license_counting_type.as_ref()
+    }
+    /// <p>License rules.</p>
+    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_rules.as_deref()
+    }
+    /// <p>Number of licenses managed by the license configuration.</p>
+    pub fn license_count(&self) -> std::option::Option<i64> {
+        self.license_count
+    }
+    /// <p>Number of available licenses as a hard limit.</p>
+    pub fn license_count_hard_limit(&self) -> std::option::Option<bool> {
+        self.license_count_hard_limit
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn disassociate_when_not_found(&self) -> std::option::Option<bool> {
+        self.disassociate_when_not_found
+    }
+    /// <p>Number of licenses consumed. </p>
+    pub fn consumed_licenses(&self) -> std::option::Option<i64> {
+        self.consumed_licenses
+    }
+    /// <p>Status of the license configuration.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Account ID of the license configuration's owner.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>Summaries for licenses consumed by various resources.</p>
+    pub fn consumed_license_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConsumedLicenseSummary]> {
+        self.consumed_license_summary_list.as_deref()
+    }
+    /// <p>Summaries for managed resources.</p>
+    pub fn managed_resource_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ManagedResourceSummary]> {
+        self.managed_resource_summary_list.as_deref()
+    }
+    /// <p>Product information.</p>
+    pub fn product_information_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+        self.product_information_list.as_deref()
+    }
+    /// <p>Automated discovery information.</p>
+    pub fn automated_discovery_information(
+        &self,
+    ) -> std::option::Option<&crate::model::AutomatedDiscoveryInformation> {
+        self.automated_discovery_information.as_ref()
+    }
 }
 impl std::fmt::Debug for LicenseConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4650,6 +5356,12 @@ pub struct AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
     pub last_run_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AutomatedDiscoveryInformation {
+    /// <p>Time that automated discovery last ran.</p>
+    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_run_time.as_ref()
+    }
+}
 impl std::fmt::Debug for AutomatedDiscoveryInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutomatedDiscoveryInformation");
@@ -4702,6 +5414,16 @@ pub struct ManagedResourceSummary {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Number of resources associated with licenses.</p>
     pub association_count: std::option::Option<i64>,
+}
+impl ManagedResourceSummary {
+    /// <p>Type of resource associated with a license.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Number of resources associated with licenses.</p>
+    pub fn association_count(&self) -> std::option::Option<i64> {
+        self.association_count
+    }
 }
 impl std::fmt::Debug for ManagedResourceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4768,6 +5490,16 @@ pub struct ConsumedLicenseSummary {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Number of licenses consumed by the resource.</p>
     pub consumed_licenses: std::option::Option<i64>,
+}
+impl ConsumedLicenseSummary {
+    /// <p>Resource type of the resource consuming a license.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Number of licenses consumed by the resource.</p>
+    pub fn consumed_licenses(&self) -> std::option::Option<i64> {
+        self.consumed_licenses
+    }
 }
 impl std::fmt::Debug for ConsumedLicenseSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4909,6 +5641,40 @@ pub struct LicenseOperationFailure {
     pub operation_requested_by: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
     pub metadata_list: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
+}
+impl LicenseOperationFailure {
+    /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Failure time.</p>
+    pub fn failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.failure_time.as_ref()
+    }
+    /// <p>Name of the operation.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+    /// <p>ID of the Amazon Web Services account that owns the resource.</p>
+    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+        self.resource_owner_id.as_deref()
+    }
+    /// <p>The requester is "License Manager Automated Discovery".</p>
+    pub fn operation_requested_by(&self) -> std::option::Option<&str> {
+        self.operation_requested_by.as_deref()
+    }
+    /// <p>Reserved.</p>
+    pub fn metadata_list(&self) -> std::option::Option<&[crate::model::Metadata]> {
+        self.metadata_list.as_deref()
+    }
 }
 impl std::fmt::Debug for LicenseOperationFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5084,6 +5850,28 @@ pub struct LicenseConfigurationAssociation {
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub ami_association_scope: std::option::Option<std::string::String>,
 }
+impl LicenseConfigurationAssociation {
+    /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Type of server resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
+    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+        self.resource_owner_id.as_deref()
+    }
+    /// <p>Time when the license configuration was associated with the resource.</p>
+    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.association_time.as_ref()
+    }
+    /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
+    pub fn ami_association_scope(&self) -> std::option::Option<&str> {
+        self.ami_association_scope.as_deref()
+    }
+}
 impl std::fmt::Debug for LicenseConfigurationAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseConfigurationAssociation");
@@ -5196,6 +5984,12 @@ pub struct LicenseUsage {
     /// <p>License entitlement usages.</p>
     pub entitlement_usages: std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
 }
+impl LicenseUsage {
+    /// <p>License entitlement usages.</p>
+    pub fn entitlement_usages(&self) -> std::option::Option<&[crate::model::EntitlementUsage]> {
+        self.entitlement_usages.as_deref()
+    }
+}
 impl std::fmt::Debug for LicenseUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseUsage");
@@ -5262,6 +6056,24 @@ pub struct EntitlementUsage {
     pub max_count: std::option::Option<std::string::String>,
     /// <p>Entitlement usage unit.</p>
     pub unit: std::option::Option<crate::model::EntitlementDataUnit>,
+}
+impl EntitlementUsage {
+    /// <p>Entitlement usage name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Resource usage consumed.</p>
+    pub fn consumed_value(&self) -> std::option::Option<&str> {
+        self.consumed_value.as_deref()
+    }
+    /// <p>Maximum entitlement usage count.</p>
+    pub fn max_count(&self) -> std::option::Option<&str> {
+        self.max_count.as_deref()
+    }
+    /// <p>Entitlement usage unit.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementDataUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for EntitlementUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5648,6 +6460,17 @@ pub struct Issuer {
     /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub sign_key: std::option::Option<std::string::String>,
 }
+impl Issuer {
+    /// <p>Issuer name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
+    /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    pub fn sign_key(&self) -> std::option::Option<&str> {
+        self.sign_key.as_deref()
+    }
+}
 impl std::fmt::Debug for Issuer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Issuer");
@@ -5714,6 +6537,20 @@ pub struct EntitlementData {
     pub value: std::option::Option<std::string::String>,
     /// <p>Entitlement data unit.</p>
     pub unit: std::option::Option<crate::model::EntitlementDataUnit>,
+}
+impl EntitlementData {
+    /// <p>Entitlement data name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Entitlement data value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Entitlement data unit.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementDataUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for EntitlementData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

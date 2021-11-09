@@ -12,6 +12,18 @@ pub struct Tag {
     /// it can't be null.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key for the tag. Keys are not case-sensitive and must be
+    /// unique.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value associated with a key. The value may be an empty string but
+    /// it can't be null.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -407,6 +419,14 @@ pub struct SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub regex_configuration: std::option::Option<crate::model::SlotTypeRegexConfiguration>,
 }
+impl SlotTypeConfiguration {
+    /// <p>A regular expression used to validate the value of a slot.</p>
+    pub fn regex_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotTypeRegexConfiguration> {
+        self.regex_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for SlotTypeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotTypeConfiguration");
@@ -486,6 +506,36 @@ pub struct SlotTypeRegexConfiguration {
     /// </li>
     /// </ul>
     pub pattern: std::option::Option<std::string::String>,
+}
+impl SlotTypeRegexConfiguration {
+    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>Use a standard regular expression. Amazon Lex supports the following
+    /// characters in the regular expression:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A-Z, a-z</p>
+    /// </li>
+    /// <li>
+    /// <p>0-9</p>
+    /// </li>
+    /// <li>
+    /// <p>Unicode characters ("\ u<Unicode>")</p>
+    /// </li>
+    /// </ul>
+    /// <p>Represent Unicode characters with four digits, for example
+    /// "\u0041" or "\u005A".</p>
+    /// <p>The following regular expression operators are not supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p>
+    /// </li>
+    /// <li>
+    /// <p>Wild card (.)</p>
+    /// </li>
+    /// </ul>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
 }
 impl std::fmt::Debug for SlotTypeRegexConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -655,6 +705,16 @@ pub struct EnumerationValue {
     /// <p>Additional values related to the slot type value.</p>
     pub synonyms: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl EnumerationValue {
+    /// <p>The value of the slot type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Additional values related to the slot type value.</p>
+    pub fn synonyms(&self) -> std::option::Option<&[std::string::String]> {
+        self.synonyms.as_deref()
+    }
+}
 impl std::fmt::Debug for EnumerationValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnumerationValue");
@@ -734,6 +794,25 @@ pub struct OutputContext {
     /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
     /// request and the corresponding response from Amazon Lex.</p>
     pub turns_to_live: std::option::Option<i32>,
+}
+impl OutputContext {
+    /// <p>The name of the context.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The number of seconds that the context should be active after it is
+    /// first sent in a <code>PostContent</code> or <code>PostText</code>
+    /// response. You can set the value between 5 and 86,400 seconds (24
+    /// hours).</p>
+    pub fn time_to_live_in_seconds(&self) -> std::option::Option<i32> {
+        self.time_to_live_in_seconds
+    }
+    /// <p>The number of conversation turns that the context should be active. A
+    /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
+    /// request and the corresponding response from Amazon Lex.</p>
+    pub fn turns_to_live(&self) -> std::option::Option<i32> {
+        self.turns_to_live
+    }
 }
 impl std::fmt::Debug for OutputContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -820,6 +899,12 @@ pub struct InputContext {
     /// <p>The name of the context.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl InputContext {
+    /// <p>The name of the context.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for InputContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputContext");
@@ -885,6 +970,32 @@ pub struct KendraConfiguration {
     /// Region as the Amazon Lex bot. If the role does not exist, you get an exception
     /// when you call the <code>PutIntent</code> operation.</p>
     pub role: std::option::Option<std::string::String>,
+}
+impl KendraConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you
+    /// want the AMAZON.KendraSearchIntent intent to search. The index must be in
+    /// the same account and Region as the Amazon Lex bot. If the Amazon Kendra index
+    /// does not exist, you get an exception when you call the
+    /// <code>PutIntent</code> operation.</p>
+    pub fn kendra_index(&self) -> std::option::Option<&str> {
+        self.kendra_index.as_deref()
+    }
+    /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the
+    /// response from the query. The filter is in the format defined by Amazon
+    /// Kendra. For more information, see <a href="http://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering
+    /// queries</a>.</p>
+    /// <p>You can override this filter string with a new filter string at
+    /// runtime.</p>
+    pub fn query_filter_string(&self) -> std::option::Option<&str> {
+        self.query_filter_string.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
+    /// search the Amazon Kendra index. The role must be in the same account and
+    /// Region as the Amazon Lex bot. If the role does not exist, you get an exception
+    /// when you call the <code>PutIntent</code> operation.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
 }
 impl std::fmt::Debug for KendraConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1015,6 +1126,19 @@ pub struct FulfillmentActivity {
     /// intent. </p>
     pub code_hook: std::option::Option<crate::model::CodeHook>,
 }
+impl FulfillmentActivity {
+    /// <p> How the intent should be fulfilled, either by running a Lambda
+    /// function or by returning the slot data to the client application.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FulfillmentActivityType> {
+        self.r#type.as_ref()
+    }
+    /// <p> A description of the Lambda function that is run to fulfill the
+    /// intent. </p>
+    pub fn code_hook(&self) -> std::option::Option<&crate::model::CodeHook> {
+        self.code_hook.as_ref()
+    }
+}
 impl std::fmt::Debug for FulfillmentActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FulfillmentActivity");
@@ -1088,6 +1212,17 @@ pub struct CodeHook {
     /// <p>The version of the request-response that you want Amazon Lex to use to
     /// invoke your Lambda function. For more information, see <a>using-lambda</a>.</p>
     pub message_version: std::option::Option<std::string::String>,
+}
+impl CodeHook {
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The version of the request-response that you want Amazon Lex to use to
+    /// invoke your Lambda function. For more information, see <a>using-lambda</a>.</p>
+    pub fn message_version(&self) -> std::option::Option<&str> {
+        self.message_version.as_deref()
+    }
 }
 impl std::fmt::Debug for CodeHook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1215,6 +1350,18 @@ pub struct Statement {
     /// placeholders in the response card. </p>
     pub response_card: std::option::Option<std::string::String>,
 }
+impl Statement {
+    /// <p>A collection of message objects.</p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+        self.messages.as_deref()
+    }
+    /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response.
+    /// It substitutes all of the session attributes and slot values for
+    /// placeholders in the response card. </p>
+    pub fn response_card(&self) -> std::option::Option<&str> {
+        self.response_card.as_deref()
+    }
+}
 impl std::fmt::Debug for Statement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Statement");
@@ -1298,6 +1445,22 @@ pub struct Message {
     /// is assigned to a message, Amazon Lex returns one message from each group in the
     /// response.</p>
     pub group_number: std::option::Option<i32>,
+}
+impl Message {
+    /// <p>The content type of the message string.</p>
+    pub fn content_type(&self) -> std::option::Option<&crate::model::ContentType> {
+        self.content_type.as_ref()
+    }
+    /// <p>The text of the message.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>Identifies the message group that the message belongs to. When a group
+    /// is assigned to a message, Amazon Lex returns one message from each group in the
+    /// response.</p>
+    pub fn group_number(&self) -> std::option::Option<i32> {
+        self.group_number
+    }
 }
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1446,6 +1609,18 @@ pub struct FollowUpPrompt {
     /// acknowledge that the intent was canceled. </p>
     pub rejection_statement: std::option::Option<crate::model::Statement>,
 }
+impl FollowUpPrompt {
+    /// <p>Prompts for information from the user. </p>
+    pub fn prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+        self.prompt.as_ref()
+    }
+    /// <p>If the user answers "no" to the question defined in the
+    /// <code>prompt</code> field, Amazon Lex responds with this statement to
+    /// acknowledge that the intent was canceled. </p>
+    pub fn rejection_statement(&self) -> std::option::Option<&crate::model::Statement> {
+        self.rejection_statement.as_ref()
+    }
+}
 impl std::fmt::Debug for FollowUpPrompt {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FollowUpPrompt");
@@ -1525,6 +1700,25 @@ pub struct Prompt {
     /// and slot values for placeholders in the response card. For more
     /// information, see <a>ex-resp-card</a>. </p>
     pub response_card: std::option::Option<std::string::String>,
+}
+impl Prompt {
+    /// <p>An array of objects, each of which provides a message string and
+    /// its type. You can specify the message string in plain text or in Speech
+    /// Synthesis Markup Language (SSML).</p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+        self.messages.as_deref()
+    }
+    /// <p>The number of times to prompt the user for information.</p>
+    pub fn max_attempts(&self) -> std::option::Option<i32> {
+        self.max_attempts
+    }
+    /// <p>A response card. Amazon Lex uses this prompt at runtime, in the
+    /// <code>PostText</code> API response. It substitutes session attributes
+    /// and slot values for placeholders in the response card. For more
+    /// information, see <a>ex-resp-card</a>. </p>
+    pub fn response_card(&self) -> std::option::Option<&str> {
+        self.response_card.as_deref()
+    }
 }
 impl std::fmt::Debug for Prompt {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1659,6 +1853,70 @@ pub struct Slot {
     /// Amazon Lex hasn't determined a value for a slot. You can specify default values
     /// from context variables, session attributes, and defined values.</p>
     pub default_value_spec: std::option::Option<crate::model::SlotDefaultValueSpec>,
+}
+impl Slot {
+    /// <p>The name of the slot.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the slot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether the slot is required or optional. </p>
+    pub fn slot_constraint(&self) -> std::option::Option<&crate::model::SlotConstraint> {
+        self.slot_constraint.as_ref()
+    }
+    /// <p>The type of the slot, either a custom slot type that you defined or
+    /// one of the built-in slot types.</p>
+    pub fn slot_type(&self) -> std::option::Option<&str> {
+        self.slot_type.as_deref()
+    }
+    /// <p>The version of the slot type.</p>
+    pub fn slot_type_version(&self) -> std::option::Option<&str> {
+        self.slot_type_version.as_deref()
+    }
+    /// <p>The prompt that Amazon Lex uses to elicit the slot value from the
+    /// user.</p>
+    pub fn value_elicitation_prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+        self.value_elicitation_prompt.as_ref()
+    }
+    /// <p> Directs Amazon Lex the order in which to elicit this slot value from
+    /// the user. For example, if the intent has two slots with priorities 1 and
+    /// 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
+    /// <p>If multiple slots share the same priority, the order in which Amazon Lex
+    /// elicits values is arbitrary.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p> If you know a specific pattern with which users might respond to
+    /// an Amazon Lex request for a slot value, you can provide those utterances to
+    /// improve accuracy. This is optional. In most cases, Amazon Lex is capable of
+    /// understanding user utterances. </p>
+    pub fn sample_utterances(&self) -> std::option::Option<&[std::string::String]> {
+        self.sample_utterances.as_deref()
+    }
+    /// <p> A set of possible responses for the slot type used by text-based
+    /// clients. A user chooses an option from the response card, instead of using
+    /// text to reply. </p>
+    pub fn response_card(&self) -> std::option::Option<&str> {
+        self.response_card.as_deref()
+    }
+    /// <p>Determines whether a slot is obfuscated in conversation logs and
+    /// stored utterances. When you obfuscate a slot, the value is replaced by the
+    /// slot name in curly braces ({}). For example, if the slot name is
+    /// "full_name", obfuscated values are replaced with "{full_name}". For more
+    /// information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+    /// </p>
+    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
+        self.obfuscation_setting.as_ref()
+    }
+    /// <p>A list of default values for the slot. Default values are used when
+    /// Amazon Lex hasn't determined a value for a slot. You can specify default values
+    /// from context variables, session attributes, and defined values.</p>
+    pub fn default_value_spec(&self) -> std::option::Option<&crate::model::SlotDefaultValueSpec> {
+        self.default_value_spec.as_ref()
+    }
 }
 impl std::fmt::Debug for Slot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1908,6 +2166,18 @@ pub struct SlotDefaultValueSpec {
     /// available, else it uses the fixed value.</p>
     pub default_value_list: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
 }
+impl SlotDefaultValueSpec {
+    /// <p>The default values for a slot. You can specify more than one default.
+    /// For example, you can specify a default value to use from a matching
+    /// context variable, a session attribute, or a fixed value.</p>
+    /// <p>The default value chosen is selected based on the order that you
+    /// specify them in the list. For example, if you specify a context variable
+    /// and a fixed value in that order, Amazon Lex uses the context variable if it is
+    /// available, else it uses the fixed value.</p>
+    pub fn default_value_list(&self) -> std::option::Option<&[crate::model::SlotDefaultValue]> {
+        self.default_value_list.as_deref()
+    }
+}
 impl std::fmt::Debug for SlotDefaultValueSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotDefaultValueSpec");
@@ -1997,6 +2267,29 @@ pub struct SlotDefaultValue {
     /// </li>
     /// </ul>
     pub default_value: std::option::Option<std::string::String>,
+}
+impl SlotDefaultValue {
+    /// <p>The default value for the slot. You can specify one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>#context-name.slot-name</code> - The slot value "slot-name"
+    /// in the context "context-name."</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>{attribute}</code> - The slot value of the session attribute
+    /// "attribute."</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>'value'</code> - The discrete value "value."</p>
+    /// </li>
+    /// </ul>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
 }
 impl std::fmt::Debug for SlotDefaultValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2197,6 +2490,18 @@ pub struct ConversationLogsResponse {
     /// to CloudWatch Logs or an S3 bucket.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
+impl ConversationLogsResponse {
+    /// <p>The settings for your conversation logs. You can log text, audio, or
+    /// both.</p>
+    pub fn log_settings(&self) -> std::option::Option<&[crate::model::LogSettingsResponse]> {
+        self.log_settings.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs
+    /// to CloudWatch Logs or an S3 bucket.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ConversationLogsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConversationLogsResponse");
@@ -2284,6 +2589,33 @@ pub struct LogSettingsResponse {
     /// is the prefix of the log stream name within the log group that you
     /// specified. </p>
     pub resource_prefix: std::option::Option<std::string::String>,
+}
+impl LogSettingsResponse {
+    /// <p>The type of logging that is enabled.</p>
+    pub fn log_type(&self) -> std::option::Option<&crate::model::LogType> {
+        self.log_type.as_ref()
+    }
+    /// <p>The destination where logs are delivered.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the key used to encrypt audio logs
+    /// in an S3 bucket.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3
+    /// bucket where the logs are delivered.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The resource prefix is the first part of the S3 object key within the
+    /// S3 bucket that you specified to contain audio logs. For CloudWatch Logs it
+    /// is the prefix of the log stream name within the log group that you
+    /// specified. </p>
+    pub fn resource_prefix(&self) -> std::option::Option<&str> {
+        self.resource_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for LogSettingsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2519,6 +2851,22 @@ pub struct ConversationLogsRequest {
     /// IAM Role and Policy for Conversation Logs</a>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
+impl ConversationLogsRequest {
+    /// <p>The settings for your conversation logs. You can log the conversation
+    /// text, conversation audio, or both.</p>
+    pub fn log_settings(&self) -> std::option::Option<&[crate::model::LogSettingsRequest]> {
+        self.log_settings.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write
+    /// to your CloudWatch Logs for text logs and your S3 bucket for audio logs.
+    /// If audio encryption is enabled, this role also provides access permission
+    /// for the AWS KMS key used for encrypting audio logs. For more information,
+    /// see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an
+    /// IAM Role and Policy for Conversation Logs</a>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ConversationLogsRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConversationLogsRequest");
@@ -2614,6 +2962,30 @@ pub struct LogSettingsRequest {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3
     /// bucket where the logs should be delivered.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl LogSettingsRequest {
+    /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch
+    /// Logs log group. Audio logs are delivered to an S3 bucket.</p>
+    pub fn log_type(&self) -> std::option::Option<&crate::model::LogType> {
+        self.log_type.as_ref()
+    }
+    /// <p>Where the logs will be delivered. Text logs are delivered to a
+    /// CloudWatch Logs log group. Audio logs are delivered to an S3
+    /// bucket.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for
+    /// encrypting audio logs delivered to an S3 bucket. The key does not apply to
+    /// CloudWatch Logs and is optional for S3 buckets.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3
+    /// bucket where the logs should be delivered.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for LogSettingsRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2792,6 +3164,16 @@ pub struct Intent {
     /// <p>The version of the intent.</p>
     pub intent_version: std::option::Option<std::string::String>,
 }
+impl Intent {
+    /// <p>The name of the intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>The version of the intent.</p>
+    pub fn intent_version(&self) -> std::option::Option<&str> {
+        self.intent_version.as_deref()
+    }
+}
 impl std::fmt::Debug for Intent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Intent");
@@ -2917,6 +3299,18 @@ pub struct UtteranceList {
     /// number of object is 100.</p>
     pub utterances: std::option::Option<std::vec::Vec<crate::model::UtteranceData>>,
 }
+impl UtteranceList {
+    /// <p>The version of the bot that processed the list.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>One or more <a>UtteranceData</a> objects that contain
+    /// information about the utterances that have been made to a bot. The maximum
+    /// number of object is 100.</p>
+    pub fn utterances(&self) -> std::option::Option<&[crate::model::UtteranceData]> {
+        self.utterances.as_deref()
+    }
+}
 impl std::fmt::Debug for UtteranceList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UtteranceList");
@@ -3000,6 +3394,29 @@ pub struct UtteranceData {
     pub first_uttered_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the utterance was last recorded.</p>
     pub last_uttered_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UtteranceData {
+    /// <p>The text that was entered by the user or the text representation of
+    /// an audio clip.</p>
+    pub fn utterance_string(&self) -> std::option::Option<&str> {
+        self.utterance_string.as_deref()
+    }
+    /// <p>The number of times that the utterance was processed.</p>
+    pub fn count(&self) -> std::option::Option<i32> {
+        self.count
+    }
+    /// <p>The total number of individuals that used the utterance.</p>
+    pub fn distinct_users(&self) -> std::option::Option<i32> {
+        self.distinct_users
+    }
+    /// <p>The date that the utterance was first recorded.</p>
+    pub fn first_uttered_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.first_uttered_date.as_ref()
+    }
+    /// <p>The date that the utterance was last recorded.</p>
+    pub fn last_uttered_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_uttered_date.as_ref()
+    }
 }
 impl std::fmt::Debug for UtteranceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3176,6 +3593,29 @@ pub struct SlotTypeMetadata {
     /// <p>The version of the slot type.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl SlotTypeMetadata {
+    /// <p>The name of the slot type.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the slot type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date that the slot type was updated. When you create a
+    /// resource, the creation date and last updated date are the same. </p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>The date that the slot type was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The version of the slot type.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for SlotTypeMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotTypeMetadata");
@@ -3301,6 +3741,46 @@ pub struct MigrationSummary {
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
     pub migration_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MigrationSummary {
+    /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    pub fn migration_id(&self) -> std::option::Option<&str> {
+        self.migration_id.as_deref()
+    }
+    /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub fn v1_bot_name(&self) -> std::option::Option<&str> {
+        self.v1_bot_name.as_deref()
+    }
+    /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub fn v1_bot_version(&self) -> std::option::Option<&str> {
+        self.v1_bot_version.as_deref()
+    }
+    /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub fn v1_bot_locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.v1_bot_locale.as_ref()
+    }
+    /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
+    pub fn v2_bot_id(&self) -> std::option::Option<&str> {
+        self.v2_bot_id.as_deref()
+    }
+    /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    pub fn v2_bot_role(&self) -> std::option::Option<&str> {
+        self.v2_bot_role.as_deref()
+    }
+    /// <p>The status of the operation. When the status is <code>COMPLETE</code>
+    /// the bot is available in Amazon Lex V2. There may be alerts and warnings that
+    /// need to be resolved to complete the migration.</p>
+    pub fn migration_status(&self) -> std::option::Option<&crate::model::MigrationStatus> {
+        self.migration_status.as_ref()
+    }
+    /// <p>The strategy used to conduct the migration.</p>
+    pub fn migration_strategy(&self) -> std::option::Option<&crate::model::MigrationStrategy> {
+        self.migration_strategy.as_ref()
+    }
+    /// <p>The date and time that the migration started.</p>
+    pub fn migration_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.migration_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for MigrationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3664,6 +4144,38 @@ pub struct MigrationAlert {
     /// the alert.</p>
     pub reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl MigrationAlert {
+    /// <p>The type of alert. There are two kinds of alerts:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code> - There was an issue with the migration that
+    /// can't be resolved. The migration stops.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>WARN</code> - There was an issue with the migration that
+    /// requires manual changes to the new Amazon Lex V2 bot. The migration
+    /// continues.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::MigrationAlertType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A message that describes why the alert was issued.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Additional details about the alert.</p>
+    pub fn details(&self) -> std::option::Option<&[std::string::String]> {
+        self.details.as_deref()
+    }
+    /// <p>A link to the Amazon Lex documentation that describes how to resolve
+    /// the alert.</p>
+    pub fn reference_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+        self.reference_ur_ls.as_deref()
+    }
+}
 impl std::fmt::Debug for MigrationAlert {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MigrationAlert");
@@ -3863,6 +4375,29 @@ pub struct IntentMetadata {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of the intent.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl IntentMetadata {
+    /// <p>The name of the intent.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the intent.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date that the intent was updated. When you create an intent,
+    /// the creation date and last updated date are the same.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>The date that the intent was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The version of the intent.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for IntentMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4090,6 +4625,18 @@ pub struct BuiltinSlotTypeMetadata {
     /// <p>A list of target locales for the slot. </p>
     pub supported_locales: std::option::Option<std::vec::Vec<crate::model::Locale>>,
 }
+impl BuiltinSlotTypeMetadata {
+    /// <p>A unique identifier for the built-in slot type. To find the
+    /// signature for a slot type, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills
+    /// Kit</i>.</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
+    /// <p>A list of target locales for the slot. </p>
+    pub fn supported_locales(&self) -> std::option::Option<&[crate::model::Locale]> {
+        self.supported_locales.as_deref()
+    }
+}
 impl std::fmt::Debug for BuiltinSlotTypeMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BuiltinSlotTypeMetadata");
@@ -4169,6 +4716,19 @@ pub struct BuiltinIntentMetadata {
     /// supports.</p>
     pub supported_locales: std::option::Option<std::vec::Vec<crate::model::Locale>>,
 }
+impl BuiltinIntentMetadata {
+    /// <p>A unique identifier for the built-in intent. To find the signature
+    /// for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
+    /// Kit</i>.</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
+    /// <p>A list of identifiers for the locales that the intent
+    /// supports.</p>
+    pub fn supported_locales(&self) -> std::option::Option<&[crate::model::Locale]> {
+        self.supported_locales.as_deref()
+    }
+}
 impl std::fmt::Debug for BuiltinIntentMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BuiltinIntentMetadata");
@@ -4246,6 +4806,12 @@ pub struct BuiltinIntentSlot {
     /// <p>A list of the slots defined for the intent.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl BuiltinIntentSlot {
+    /// <p>A list of the slots defined for the intent.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for BuiltinIntentSlot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BuiltinIntentSlot");
@@ -4303,6 +4869,34 @@ pub struct BotMetadata {
     /// <p>The version of the bot. For a new bot, the version is always
     /// <code>$LATEST</code>.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl BotMetadata {
+    /// <p>The name of the bot. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the bot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the bot.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The date that the bot was updated. When you create a bot, the
+    /// creation date and last updated date are the same. </p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>The date that the bot was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The version of the bot. For a new bot, the version is always
+    /// <code>$LATEST</code>.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for BotMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4474,6 +5068,77 @@ pub struct BotChannelAssociation {
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the
     /// reason that it failed to create the association.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl BotChannelAssociation {
+    /// <p>The name of the association between the bot and the channel.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A text description of the association you are creating. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
+    /// this association is being made. </p>
+    pub fn bot_alias(&self) -> std::option::Option<&str> {
+        self.bot_alias.as_deref()
+    }
+    /// <p>The name of the Amazon Lex bot to which this association is being made. </p>
+    /// <note>
+    /// <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+    /// and Twilio.</p>
+    ///
+    /// </note>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The date that the association between the Amazon Lex bot and the channel
+    /// was created. </p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>Specifies the type of association by indicating the type of channel
+    /// being established between the Amazon Lex bot and the external messaging
+    /// platform.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Provides information necessary to communicate with the messaging
+    /// platform. </p>
+    pub fn bot_configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.bot_configuration.as_ref()
+    }
+    /// <p>The status of the bot channel. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code> - The channel has been created and is
+    /// ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code> - Channel creation is in
+    /// progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - There was an error creating the channel.
+    /// For information about the reason for the failure, see the
+    /// <code>failureReason</code> field.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the
+    /// reason that it failed to create the association.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for BotChannelAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4851,6 +5516,44 @@ pub struct BotAliasMetadata {
     /// alias.</p>
     pub conversation_logs: std::option::Option<crate::model::ConversationLogsResponse>,
 }
+impl BotAliasMetadata {
+    /// <p>The name of the bot alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the bot alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The version of the Amazon Lex bot to which the alias points.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The name of the bot to which the alias points.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The date that the bot alias was updated. When you create a
+    /// resource, the creation date and last updated date are the same.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>The date that the bot alias was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>Checksum of the bot alias.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>Settings that determine how Amazon Lex uses conversation logs for the
+    /// alias.</p>
+    pub fn conversation_logs(
+        &self,
+    ) -> std::option::Option<&crate::model::ConversationLogsResponse> {
+        self.conversation_logs.as_ref()
+    }
+}
 impl std::fmt::Debug for BotAliasMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BotAliasMetadata");
@@ -5008,6 +5711,18 @@ pub struct ResourceReference {
     /// <p>The version of the resource that is using the resource that you are
     /// trying to delete.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl ResourceReference {
+    /// <p>The name of the resource that is using the resource that you are
+    /// trying to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the resource that is using the resource that you are
+    /// trying to delete.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_list_realtime_contact_analysis_segments_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRealtimeContactAnalysisSegmentsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.contact_id {
         object.key("ContactId").string(var_1);
     }
@@ -18,4 +18,5 @@ pub fn serialize_structure_crate_input_list_realtime_contact_analysis_segments_i
     if let Some(var_3) = &input.next_token {
         object.key("NextToken").string(var_3);
     }
+    Ok(())
 }

@@ -127,7 +127,7 @@ impl BatchCheckLayerAvailabilityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_check_layer_availability(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_check_layer_availability(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -320,10 +320,7 @@ impl BatchDeleteImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_image(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -527,10 +524,7 @@ impl CompleteLayerUploadInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_complete_layer_upload(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_complete_layer_upload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -731,10 +725,7 @@ impl CreateRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_repository(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_repository(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -913,10 +904,7 @@ impl DeleteRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_repository(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_repository(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1087,10 +1075,7 @@ impl DeleteRepositoryPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_repository_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1327,10 +1312,8 @@ impl DescribeImagesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_images(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_images(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1547,10 +1530,7 @@ impl DescribeImageTagsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_image_tags(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_image_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1740,10 +1720,7 @@ impl DescribeRegistriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_registries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_registries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1976,10 +1953,7 @@ impl DescribeRepositoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_repositories(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_repositories(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2117,10 +2091,7 @@ impl GetAuthorizationTokenInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_authorization_token(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2250,10 +2221,7 @@ impl GetRegistryCatalogDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_registry_catalog_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2415,10 +2383,7 @@ impl GetRepositoryCatalogDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_repository_catalog_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2585,10 +2550,7 @@ impl GetRepositoryPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_repository_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_repository_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2755,10 +2717,7 @@ impl InitiateLayerUploadInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_initiate_layer_upload(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_initiate_layer_upload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2910,10 +2869,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3137,10 +3095,7 @@ impl PutImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3300,10 +3255,7 @@ impl PutRegistryCatalogDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_registry_catalog_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3490,10 +3442,7 @@ impl PutRepositoryCatalogDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_repository_catalog_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3692,10 +3641,7 @@ impl SetRepositoryPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_repository_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_repository_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3869,10 +3815,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4044,10 +3987,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4267,10 +4207,7 @@ impl UploadLayerPartInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_upload_layer_part(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_upload_layer_part(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4351,6 +4288,34 @@ pub struct UploadLayerPartInput {
     /// <p>The base64-encoded layer part payload.</p>
     pub layer_part_blob: std::option::Option<aws_smithy_types::Blob>,
 }
+impl UploadLayerPartInput {
+    /// <p>The AWS account ID associated with the registry to which you are uploading layer parts.
+    /// If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to which you are uploading layer parts.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
+    /// associate with the layer part upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
+    pub fn part_first_byte(&self) -> std::option::Option<i64> {
+        self.part_first_byte
+    }
+    /// <p>The position of the last byte of the layer part within the overall image layer.</p>
+    pub fn part_last_byte(&self) -> std::option::Option<i64> {
+        self.part_last_byte
+    }
+    /// <p>The base64-encoded layer part payload.</p>
+    pub fn layer_part_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.layer_part_blob.as_ref()
+    }
+}
 impl std::fmt::Debug for UploadLayerPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadLayerPartInput");
@@ -4374,6 +4339,17 @@ pub struct UntagResourceInput {
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
+    /// resource is an Amazon ECR Public repository.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4393,6 +4369,18 @@ pub struct TagResourceInput {
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
     /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
+    /// supported resource is an Amazon ECR Public repository.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
+    /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4421,6 +4409,29 @@ pub struct SetRepositoryPolicyInput {
     /// repository lock outs.</p>
     pub force: bool,
 }
+impl SetRepositoryPolicyInput {
+    /// <p>The AWS account ID associated with the registry that contains the repository.
+    /// If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to receive the policy.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON repository policy text to apply to the repository. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
+    /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+    /// <p>If the policy you are attempting to set on a repository policy would prevent you from
+    /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
+    /// repository lock outs.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+}
 impl std::fmt::Debug for SetRepositoryPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetRepositoryPolicyInput");
@@ -4445,6 +4456,22 @@ pub struct PutRepositoryCatalogDataInput {
     /// the Amazon ECR Public Gallery.</p>
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogDataInput>,
 }
+impl PutRepositoryCatalogDataInput {
+    /// <p>The AWS account ID associated with the public registry the repository is in.
+    /// If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to create or update the catalog data for.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An object containing the catalog data for a repository. This data is publicly visible in
+    /// the Amazon ECR Public Gallery.</p>
+    pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogDataInput> {
+        self.catalog_data.as_ref()
+    }
+}
 impl std::fmt::Debug for PutRepositoryCatalogDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRepositoryCatalogDataInput");
@@ -4466,6 +4493,17 @@ pub struct PutRegistryCatalogDataInput {
     /// verified accounts.</p>
     /// </note>
     pub display_name: std::option::Option<std::string::String>,
+}
+impl PutRegistryCatalogDataInput {
+    /// <p>The display name for a public registry. The display name is shown as the repository
+    /// author in the Amazon ECR Public Gallery.</p>
+    /// <note>
+    /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for
+    /// verified accounts.</p>
+    /// </note>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRegistryCatalogDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4496,6 +4534,36 @@ pub struct PutImageInput {
     /// <p>The image digest of the image manifest corresponding to the image.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
+impl PutImageInput {
+    /// <p>The AWS account ID associated with the public registry that contains the repository in
+    /// which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository in which to put the image.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The image manifest corresponding to the image to be uploaded.</p>
+    pub fn image_manifest(&self) -> std::option::Option<&str> {
+        self.image_manifest.as_deref()
+    }
+    /// <p>The media type of the image manifest. If you push an image manifest that does not
+    /// contain the <code>mediaType</code> field, you must specify the
+    /// <code>imageManifestMediaType</code> in the request.</p>
+    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+        self.image_manifest_media_type.as_deref()
+    }
+    /// <p>The tag to associate with the image. This parameter is required for images that use the
+    /// Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    pub fn image_tag(&self) -> std::option::Option<&str> {
+        self.image_tag.as_deref()
+    }
+    /// <p>The image digest of the image manifest corresponding to the image.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+}
 impl std::fmt::Debug for PutImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutImageInput");
@@ -4517,6 +4585,13 @@ pub struct ListTagsForResourceInput {
     /// supported resource is an Amazon ECR Public repository.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+    /// supported resource is an Amazon ECR Public repository.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -4534,6 +4609,17 @@ pub struct InitiateLayerUploadInput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which you intend to upload layers.</p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl InitiateLayerUploadInput {
+    /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
+    /// If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to which you intend to upload layers.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InitiateLayerUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4554,6 +4640,17 @@ pub struct GetRepositoryPolicyInput {
     /// <p>The name of the repository with the policy to retrieve.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
+impl GetRepositoryPolicyInput {
+    /// <p>The AWS account ID associated with the public registry that contains the repository.
+    /// If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository with the policy to retrieve.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRepositoryPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRepositoryPolicyInput");
@@ -4572,6 +4669,17 @@ pub struct GetRepositoryCatalogDataInput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to retrieve the catalog metadata for.</p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl GetRepositoryCatalogDataInput {
+    /// <p>The AWS account ID associated with the registry that contains the repositories to be
+    /// described. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to retrieve the catalog metadata for.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRepositoryCatalogDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4636,6 +4744,43 @@ pub struct DescribeRepositoriesInput {
     /// <code>repositoryNames</code>.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeRepositoriesInput {
+    /// <p>The AWS account ID associated with the registry that contains the repositories to be
+    /// described. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories
+    /// in a registry are described.</p>
+    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_names.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value. This value is
+    /// <code>null</code> when there are no more results to return. This option cannot be used
+    /// when you specify repositories with <code>repositoryNames</code>.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
+    /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
+    /// returns <code>maxResults</code> results in a single page along with a
+    /// <code>nextToken</code> response element. The remaining results of the initial request
+    /// can be seen by sending another <code>DescribeRepositories</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and
+    /// 1000. If this parameter is not used, then <code>DescribeRepositories</code>
+    /// returns up to 100 results and a <code>nextToken</code> value, if
+    /// applicable. This option cannot be used when you specify repositories with
+    /// <code>repositoryNames</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeRepositoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRepositoriesInput");
@@ -4669,6 +4814,30 @@ pub struct DescribeRegistriesInput {
     /// is not used, then <code>DescribeRegistries</code> returns up to 100
     /// results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeRegistriesInput {
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value. This value is
+    /// <code>null</code> when there are no more results to return.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in
+    /// paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 1000. If this parameter
+    /// is not used, then <code>DescribeRegistries</code> returns up to 100
+    /// results and a <code>nextToken</code> value, if applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeRegistriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4705,6 +4874,38 @@ pub struct DescribeImageTagsInput {
     /// results and a <code>nextToken</code> value, if applicable. This option cannot be used when
     /// you specify images with <code>imageIds</code>.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeImageTagsInput {
+    /// <p>The AWS account ID associated with the public registry that contains the repository in
+    /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository that contains the image tag details to describe.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value. This value is
+    /// <code>null</code> when there are no more results to return. This option cannot be used
+    /// when you specify images with <code>imageIds</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in
+    /// paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>DescribeImageTags</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 1000. If this parameter
+    /// is not used, then <code>DescribeImageTags</code> returns up to 100
+    /// results and a <code>nextToken</code> value, if applicable. This option cannot be used when
+    /// you specify images with <code>imageIds</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeImageTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4746,6 +4947,42 @@ pub struct DescribeImagesInput {
     /// images with <code>imageIds</code>.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeImagesInput {
+    /// <p>The AWS account ID associated with the public registry that contains the repository in
+    /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository that contains the images to describe.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The list of image IDs for the requested repository.</p>
+    pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
+        self.image_ids.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value. This value is
+    /// <code>null</code> when there are no more results to return. This option cannot be used
+    /// when you specify images with <code>imageIds</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
+    /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>DescribeImages</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 1000. If this parameter is not
+    /// used, then <code>DescribeImages</code> returns up to 100 results and a
+    /// <code>nextToken</code> value, if applicable. This option cannot be used when you specify
+    /// images with <code>imageIds</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImagesInput");
@@ -4769,6 +5006,18 @@ pub struct DeleteRepositoryPolicyInput {
     /// delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
+impl DeleteRepositoryPolicyInput {
+    /// <p>The AWS account ID associated with the public registry that contains the repository
+    /// policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository that is associated with the repository policy to
+    /// delete.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRepositoryPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryPolicyInput");
@@ -4789,6 +5038,21 @@ pub struct DeleteRepositoryInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p> If a repository contains images, forces the deletion.</p>
     pub force: bool,
+}
+impl DeleteRepositoryInput {
+    /// <p>The AWS account ID associated with the public registry that contains the repository to
+    /// delete. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to delete.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p> If a repository contains images, forces the deletion.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
 }
 impl std::fmt::Debug for DeleteRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4817,6 +5081,26 @@ pub struct CreateRepositoryInput {
     /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateRepositoryInput {
+    /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery.
+    /// The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it
+    /// can be prepended with a namespace to group the repository into a category (such as
+    /// <code>project-a/nginx-web-app</code>).</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The details about the repository that are publicly visible in the
+    /// Amazon ECR Public Gallery.</p>
+    pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogDataInput> {
+        self.catalog_data.as_ref()
+    }
+    /// <p>The metadata that you apply to the repository to help you categorize and organize them.
+    /// Each tag consists of a key and an optional value, both of which you define.
+    /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRepositoryInput");
@@ -4843,6 +5127,27 @@ pub struct CompleteLayerUploadInput {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CompleteLayerUploadInput {
+    /// <p>The AWS account ID associated with the registry to which to upload layers.
+    /// If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository in a public registry to associate with the image
+    /// layer.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
+    /// associate with the image layer.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn layer_digests(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_digests.as_deref()
+    }
+}
 impl std::fmt::Debug for CompleteLayerUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompleteLayerUploadInput");
@@ -4868,6 +5173,23 @@ pub struct BatchDeleteImageInput {
     /// <code>imageDigest=digest</code>.</p>
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
 }
+impl BatchDeleteImageInput {
+    /// <p>The AWS account ID associated with the registry that contains the image to delete.
+    /// If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository in a public registry that contains the image to delete.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>A list of image ID references that correspond to images to delete. The format of the
+    /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
+    /// <code>imageDigest=digest</code>.</p>
+    pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
+        self.image_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteImageInput");
@@ -4889,6 +5211,21 @@ pub struct BatchCheckLayerAvailabilityInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The digests of the image layers to check.</p>
     pub layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchCheckLayerAvailabilityInput {
+    /// <p>The AWS account ID associated with the public registry that contains the image layers to
+    /// check. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository that is associated with the image layers to check.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The digests of the image layers to check.</p>
+    pub fn layer_digests(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_digests.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCheckLayerAvailabilityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

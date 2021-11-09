@@ -937,6 +937,12 @@ pub struct StartTaskContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
     pub contact_id: std::option::Option<std::string::String>,
 }
+impl StartTaskContactOutput {
+    /// <p>The identifier of this contact within the Amazon Connect instance.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartTaskContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTaskContactOutput");
@@ -985,6 +991,12 @@ pub struct StartOutboundVoiceContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
     pub contact_id: std::option::Option<std::string::String>,
 }
+impl StartOutboundVoiceContactOutput {
+    /// <p>The identifier of this contact within the Amazon Connect instance.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartOutboundVoiceContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartOutboundVoiceContactOutput");
@@ -1032,6 +1044,12 @@ impl StartOutboundVoiceContactOutput {
 pub struct StartContactStreamingOutput {
     /// <p>The identifier of the streaming configuration enabled. </p>
     pub streaming_id: std::option::Option<std::string::String>,
+}
+impl StartContactStreamingOutput {
+    /// <p>The identifier of the streaming configuration enabled. </p>
+    pub fn streaming_id(&self) -> std::option::Option<&str> {
+        self.streaming_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartContactStreamingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1116,6 +1134,22 @@ pub struct StartChatContactOutput {
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
     /// participant.</p>
     pub participant_token: std::option::Option<std::string::String>,
+}
+impl StartChatContactOutput {
+    /// <p>The identifier of this contact within the Amazon Connect instance. </p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
+    /// throughout the chat lifecycle.</p>
+    pub fn participant_id(&self) -> std::option::Option<&str> {
+        self.participant_id.as_deref()
+    }
+    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
+    /// participant.</p>
+    pub fn participant_token(&self) -> std::option::Option<&str> {
+        self.participant_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StartChatContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1233,6 +1267,16 @@ pub struct ListUsersOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUsersOutput {
+    /// <p>Information about the users.</p>
+    pub fn user_summary_list(&self) -> std::option::Option<&[crate::model::UserSummary]> {
+        self.user_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersOutput");
@@ -1305,6 +1349,18 @@ pub struct ListUserHierarchyGroupsOutput {
         std::option::Option<std::vec::Vec<crate::model::HierarchyGroupSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUserHierarchyGroupsOutput {
+    /// <p>Information about the hierarchy groups.</p>
+    pub fn user_hierarchy_group_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::HierarchyGroupSummary]> {
+        self.user_hierarchy_group_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUserHierarchyGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1385,6 +1441,16 @@ pub struct ListUseCasesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUseCasesOutput {
+    /// <p>The use cases.</p>
+    pub fn use_case_summary_list(&self) -> std::option::Option<&[crate::model::UseCase]> {
+        self.use_case_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUseCasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUseCasesOutput");
@@ -1456,6 +1522,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Information about the tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1521,6 +1596,18 @@ pub struct ListSecurityProfilesOutput {
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSecurityProfilesOutput {
+    /// <p>Information about the security profiles.</p>
+    pub fn security_profile_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecurityProfileSummary]> {
+        self.security_profile_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSecurityProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1601,6 +1688,16 @@ pub struct ListSecurityKeysOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSecurityKeysOutput {
+    /// <p>The security keys.</p>
+    pub fn security_keys(&self) -> std::option::Option<&[crate::model::SecurityKey]> {
+        self.security_keys.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSecurityKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecurityKeysOutput");
@@ -1673,6 +1770,18 @@ pub struct ListRoutingProfilesOutput {
         std::option::Option<std::vec::Vec<crate::model::RoutingProfileSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRoutingProfilesOutput {
+    /// <p>Information about the routing profiles.</p>
+    pub fn routing_profile_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::RoutingProfileSummary]> {
+        self.routing_profile_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoutingProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1753,6 +1862,18 @@ pub struct ListRoutingProfileQueuesOutput {
     /// <p>Information about the routing profiles.</p>
     pub routing_profile_queue_config_summary_list:
         std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfigSummary>>,
+}
+impl ListRoutingProfileQueuesOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the routing profiles.</p>
+    pub fn routing_profile_queue_config_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::RoutingProfileQueueConfigSummary]> {
+        self.routing_profile_queue_config_summary_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoutingProfileQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1839,6 +1960,18 @@ pub struct ListQuickConnectsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListQuickConnectsOutput {
+    /// <p>Information about the quick connects.</p>
+    pub fn quick_connect_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::QuickConnectSummary]> {
+        self.quick_connect_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListQuickConnectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQuickConnectsOutput");
@@ -1918,6 +2051,16 @@ pub struct ListQueuesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListQueuesOutput {
+    /// <p>Information about the queues.</p>
+    pub fn queue_summary_list(&self) -> std::option::Option<&[crate::model::QueueSummary]> {
+        self.queue_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQueuesOutput");
@@ -1991,6 +2134,18 @@ pub struct ListQueueQuickConnectsOutput {
     /// <p>Information about the quick connects.</p>
     pub quick_connect_summary_list:
         std::option::Option<std::vec::Vec<crate::model::QuickConnectSummary>>,
+}
+impl ListQueueQuickConnectsOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the quick connects.</p>
+    pub fn quick_connect_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::QuickConnectSummary]> {
+        self.quick_connect_summary_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListQueueQuickConnectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2071,6 +2226,16 @@ pub struct ListPromptsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPromptsOutput {
+    /// <p>Information about the prompts.</p>
+    pub fn prompt_summary_list(&self) -> std::option::Option<&[crate::model::PromptSummary]> {
+        self.prompt_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPromptsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPromptsOutput");
@@ -2148,6 +2313,18 @@ pub struct ListPhoneNumbersOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPhoneNumbersOutput {
+    /// <p>Information about the phone numbers.</p>
+    pub fn phone_number_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PhoneNumberSummary]> {
+        self.phone_number_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPhoneNumbersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhoneNumbersOutput");
@@ -2224,6 +2401,16 @@ pub struct ListLexBotsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLexBotsOutput {
+    /// <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+    pub fn lex_bots(&self) -> std::option::Option<&[crate::model::LexBot]> {
+        self.lex_bots.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLexBotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLexBotsOutput");
@@ -2295,6 +2482,16 @@ pub struct ListLambdaFunctionsOutput {
     pub lambda_functions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLambdaFunctionsOutput {
+    /// <p>The Lambdafunction ARNs associated with the specified instance.</p>
+    pub fn lambda_functions(&self) -> std::option::Option<&[std::string::String]> {
+        self.lambda_functions.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLambdaFunctionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2368,6 +2565,18 @@ pub struct ListIntegrationAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::IntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIntegrationAssociationsOutput {
+    /// <p>The associations.</p>
+    pub fn integration_association_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::IntegrationAssociationSummary]> {
+        self.integration_association_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIntegrationAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2450,6 +2659,16 @@ pub struct ListInstanceStorageConfigsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInstanceStorageConfigsOutput {
+    /// <p>A valid storage type.</p>
+    pub fn storage_configs(&self) -> std::option::Option<&[crate::model::InstanceStorageConfig]> {
+        self.storage_configs.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstanceStorageConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceStorageConfigsOutput");
@@ -2525,6 +2744,16 @@ pub struct ListInstancesOutput {
     pub instance_summary_list: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInstancesOutput {
+    /// <p>Information about the instances.</p>
+    pub fn instance_summary_list(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
+        self.instance_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2602,6 +2831,16 @@ pub struct ListInstanceAttributesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInstanceAttributesOutput {
+    /// <p>The attribute types.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstanceAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceAttributesOutput");
@@ -2674,6 +2913,18 @@ pub struct ListHoursOfOperationsOutput {
         std::option::Option<std::vec::Vec<crate::model::HoursOfOperationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHoursOfOperationsOutput {
+    /// <p>Information about the hours of operation.</p>
+    pub fn hours_of_operation_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::HoursOfOperationSummary]> {
+        self.hours_of_operation_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHoursOfOperationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2755,6 +3006,18 @@ pub struct ListContactFlowsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListContactFlowsOutput {
+    /// <p>Information about the contact flows.</p>
+    pub fn contact_flow_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContactFlowSummary]> {
+        self.contact_flow_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListContactFlowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContactFlowsOutput");
@@ -2832,6 +3095,17 @@ pub struct ListBotsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBotsOutput {
+    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
+    /// instance.</p>
+    pub fn lex_bots(&self) -> std::option::Option<&[crate::model::LexBotConfig]> {
+        self.lex_bots.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBotsOutput");
@@ -2906,6 +3180,16 @@ pub struct ListApprovedOriginsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApprovedOriginsOutput {
+    /// <p>The approved origins.</p>
+    pub fn origins(&self) -> std::option::Option<&[std::string::String]> {
+        self.origins.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApprovedOriginsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApprovedOriginsOutput");
@@ -2978,6 +3262,18 @@ pub struct ListAgentStatusesOutput {
     /// <p>A summary of agent statuses.</p>
     pub agent_status_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AgentStatusSummary>>,
+}
+impl ListAgentStatusesOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A summary of agent statuses.</p>
+    pub fn agent_status_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AgentStatusSummary]> {
+        self.agent_status_summary_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAgentStatusesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3057,6 +3353,19 @@ pub struct GetMetricDataOutput {
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::HistoricalMetricResult>>,
+}
+impl GetMetricDataOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
+    /// the token must use the same request parameters as the request that generated the token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the historical metrics.</p>
+    /// <p>If no grouping is specified, a summary of metric data is returned.</p>
+    pub fn metric_results(&self) -> std::option::Option<&[crate::model::HistoricalMetricResult]> {
+        self.metric_results.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3138,6 +3447,12 @@ pub struct GetFederationTokenOutput {
     /// <p>The credentials to use for federation.</p>
     pub credentials: std::option::Option<crate::model::Credentials>,
 }
+impl GetFederationTokenOutput {
+    /// <p>The credentials to use for federation.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFederationTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFederationTokenOutput");
@@ -3194,6 +3509,22 @@ pub struct GetCurrentMetricDataOutput {
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::CurrentMetricResult>>,
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     pub data_snapshot_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetCurrentMetricDataOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
+    /// the token must use the same request parameters as the request that generated the token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the real-time metrics.</p>
+    pub fn metric_results(&self) -> std::option::Option<&[crate::model::CurrentMetricResult]> {
+        self.metric_results.as_deref()
+    }
+    /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
+    pub fn data_snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.data_snapshot_time.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCurrentMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3289,6 +3620,15 @@ pub struct GetContactAttributesOutput {
     /// <p>Information about the attributes.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetContactAttributesOutput {
+    /// <p>Information about the attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetContactAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3595,6 +3935,12 @@ pub struct DescribeUserHierarchyStructureOutput {
     /// <p>Information about the hierarchy structure.</p>
     pub hierarchy_structure: std::option::Option<crate::model::HierarchyStructure>,
 }
+impl DescribeUserHierarchyStructureOutput {
+    /// <p>Information about the hierarchy structure.</p>
+    pub fn hierarchy_structure(&self) -> std::option::Option<&crate::model::HierarchyStructure> {
+        self.hierarchy_structure.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeUserHierarchyStructureOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserHierarchyStructureOutput");
@@ -3645,6 +3991,12 @@ impl DescribeUserHierarchyStructureOutput {
 pub struct DescribeUserHierarchyGroupOutput {
     /// <p>Information about the hierarchy group.</p>
     pub hierarchy_group: std::option::Option<crate::model::HierarchyGroup>,
+}
+impl DescribeUserHierarchyGroupOutput {
+    /// <p>Information about the hierarchy group.</p>
+    pub fn hierarchy_group(&self) -> std::option::Option<&crate::model::HierarchyGroup> {
+        self.hierarchy_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeUserHierarchyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3697,6 +4049,12 @@ pub struct DescribeUserOutput {
     /// <p>Information about the user account and configuration settings.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl DescribeUserOutput {
+    /// <p>Information about the user account and configuration settings.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserOutput");
@@ -3742,6 +4100,12 @@ impl DescribeUserOutput {
 pub struct DescribeRoutingProfileOutput {
     /// <p>The routing profile.</p>
     pub routing_profile: std::option::Option<crate::model::RoutingProfile>,
+}
+impl DescribeRoutingProfileOutput {
+    /// <p>The routing profile.</p>
+    pub fn routing_profile(&self) -> std::option::Option<&crate::model::RoutingProfile> {
+        self.routing_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeRoutingProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3794,6 +4158,12 @@ pub struct DescribeQuickConnectOutput {
     /// <p>Information about the quick connect.</p>
     pub quick_connect: std::option::Option<crate::model::QuickConnect>,
 }
+impl DescribeQuickConnectOutput {
+    /// <p>Information about the quick connect.</p>
+    pub fn quick_connect(&self) -> std::option::Option<&crate::model::QuickConnect> {
+        self.quick_connect.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeQuickConnectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeQuickConnectOutput");
@@ -3845,6 +4215,12 @@ pub struct DescribeQueueOutput {
     /// <p>The name of the queue.</p>
     pub queue: std::option::Option<crate::model::Queue>,
 }
+impl DescribeQueueOutput {
+    /// <p>The name of the queue.</p>
+    pub fn queue(&self) -> std::option::Option<&crate::model::Queue> {
+        self.queue.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeQueueOutput");
@@ -3890,6 +4266,12 @@ impl DescribeQueueOutput {
 pub struct DescribeInstanceStorageConfigOutput {
     /// <p>A valid storage type.</p>
     pub storage_config: std::option::Option<crate::model::InstanceStorageConfig>,
+}
+impl DescribeInstanceStorageConfigOutput {
+    /// <p>A valid storage type.</p>
+    pub fn storage_config(&self) -> std::option::Option<&crate::model::InstanceStorageConfig> {
+        self.storage_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceStorageConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3943,6 +4325,14 @@ pub struct DescribeInstanceAttributeOutput {
     /// type
     /// of attribute.</p>
     pub attribute: std::option::Option<crate::model::Attribute>,
+}
+impl DescribeInstanceAttributeOutput {
+    /// <p>The
+    /// type
+    /// of attribute.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
+        self.attribute.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3999,6 +4389,12 @@ pub struct DescribeInstanceOutput {
     /// <p>The name of the instance.</p>
     pub instance: std::option::Option<crate::model::Instance>,
 }
+impl DescribeInstanceOutput {
+    /// <p>The name of the instance.</p>
+    pub fn instance(&self) -> std::option::Option<&crate::model::Instance> {
+        self.instance.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceOutput");
@@ -4046,6 +4442,12 @@ impl DescribeInstanceOutput {
 pub struct DescribeHoursOfOperationOutput {
     /// <p>The hours of operation.</p>
     pub hours_of_operation: std::option::Option<crate::model::HoursOfOperation>,
+}
+impl DescribeHoursOfOperationOutput {
+    /// <p>The hours of operation.</p>
+    pub fn hours_of_operation(&self) -> std::option::Option<&crate::model::HoursOfOperation> {
+        self.hours_of_operation.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeHoursOfOperationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4098,6 +4500,12 @@ pub struct DescribeContactFlowOutput {
     /// <p>Information about the contact flow.</p>
     pub contact_flow: std::option::Option<crate::model::ContactFlow>,
 }
+impl DescribeContactFlowOutput {
+    /// <p>Information about the contact flow.</p>
+    pub fn contact_flow(&self) -> std::option::Option<&crate::model::ContactFlow> {
+        self.contact_flow.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeContactFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeContactFlowOutput");
@@ -4148,6 +4556,12 @@ impl DescribeContactFlowOutput {
 pub struct DescribeAgentStatusOutput {
     /// <p>The agent status.</p>
     pub agent_status: std::option::Option<crate::model::AgentStatus>,
+}
+impl DescribeAgentStatusOutput {
+    /// <p>The agent status.</p>
+    pub fn agent_status(&self) -> std::option::Option<&crate::model::AgentStatus> {
+        self.agent_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAgentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4412,6 +4826,16 @@ pub struct CreateUserHierarchyGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
     pub hierarchy_group_arn: std::option::Option<std::string::String>,
 }
+impl CreateUserHierarchyGroupOutput {
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    pub fn hierarchy_group_arn(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserHierarchyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserHierarchyGroupOutput");
@@ -4481,6 +4905,16 @@ pub struct CreateUserOutput {
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl CreateUserOutput {
+    /// <p>The identifier of the user account.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -4544,6 +4978,16 @@ pub struct CreateUseCaseOutput {
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
     pub use_case_arn: std::option::Option<std::string::String>,
 }
+impl CreateUseCaseOutput {
+    /// <p>The identifier of the use case.</p>
+    pub fn use_case_id(&self) -> std::option::Option<&str> {
+        self.use_case_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the use case.</p>
+    pub fn use_case_arn(&self) -> std::option::Option<&str> {
+        self.use_case_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUseCaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUseCaseOutput");
@@ -4606,6 +5050,16 @@ pub struct CreateRoutingProfileOutput {
     pub routing_profile_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
     pub routing_profile_id: std::option::Option<std::string::String>,
+}
+impl CreateRoutingProfileOutput {
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn routing_profile_arn(&self) -> std::option::Option<&str> {
+        self.routing_profile_arn.as_deref()
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRoutingProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4676,6 +5130,16 @@ pub struct CreateQuickConnectOutput {
     /// <p>The identifier for the quick connect. </p>
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
+impl CreateQuickConnectOutput {
+    /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
+    pub fn quick_connect_arn(&self) -> std::option::Option<&str> {
+        self.quick_connect_arn.as_deref()
+    }
+    /// <p>The identifier for the quick connect. </p>
+    pub fn quick_connect_id(&self) -> std::option::Option<&str> {
+        self.quick_connect_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateQuickConnectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQuickConnectOutput");
@@ -4745,6 +5209,16 @@ pub struct CreateQueueOutput {
     /// <p>The identifier for the queue.</p>
     pub queue_id: std::option::Option<std::string::String>,
 }
+impl CreateQueueOutput {
+    /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    pub fn queue_arn(&self) -> std::option::Option<&str> {
+        self.queue_arn.as_deref()
+    }
+    /// <p>The identifier for the queue.</p>
+    pub fn queue_id(&self) -> std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQueueOutput");
@@ -4807,6 +5281,16 @@ pub struct CreateIntegrationAssociationOutput {
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
     pub integration_association_arn: std::option::Option<std::string::String>,
+}
+impl CreateIntegrationAssociationOutput {
+    /// <p>The identifier for the integration association.</p>
+    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+        self.integration_association_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the association.</p>
+    pub fn integration_association_arn(&self) -> std::option::Option<&str> {
+        self.integration_association_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateIntegrationAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4886,6 +5370,16 @@ pub struct CreateInstanceOutput {
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl CreateInstanceOutput {
+    /// <p>The identifier for the instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceOutput");
@@ -4948,6 +5442,16 @@ pub struct CreateHoursOfOperationOutput {
     pub hours_of_operation_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
     pub hours_of_operation_arn: std::option::Option<std::string::String>,
+}
+impl CreateHoursOfOperationOutput {
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+    pub fn hours_of_operation_arn(&self) -> std::option::Option<&str> {
+        self.hours_of_operation_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateHoursOfOperationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5018,6 +5522,16 @@ pub struct CreateContactFlowOutput {
     /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
     pub contact_flow_arn: std::option::Option<std::string::String>,
 }
+impl CreateContactFlowOutput {
+    /// <p>The identifier of the contact flow.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    pub fn contact_flow_arn(&self) -> std::option::Option<&str> {
+        self.contact_flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContactFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactFlowOutput");
@@ -5087,6 +5601,16 @@ pub struct CreateAgentStatusOutput {
     /// <p>The identifier of the agent status.</p>
     pub agent_status_id: std::option::Option<std::string::String>,
 }
+impl CreateAgentStatusOutput {
+    /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    pub fn agent_status_arn(&self) -> std::option::Option<&str> {
+        self.agent_status_arn.as_deref()
+    }
+    /// <p>The identifier of the agent status.</p>
+    pub fn agent_status_id(&self) -> std::option::Option<&str> {
+        self.agent_status_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAgentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAgentStatusOutput");
@@ -5153,6 +5677,12 @@ impl CreateAgentStatusOutput {
 pub struct AssociateSecurityKeyOutput {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub association_id: std::option::Option<std::string::String>,
+}
+impl AssociateSecurityKeyOutput {
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateSecurityKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5324,6 +5854,12 @@ impl AssociateLambdaFunctionOutput {
 pub struct AssociateInstanceStorageConfigOutput {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub association_id: std::option::Option<std::string::String>,
+}
+impl AssociateInstanceStorageConfigOutput {
+    /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateInstanceStorageConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,16 @@ pub struct UpdateSecurityOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
+impl UpdateSecurityOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSecurityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecurityOutput");
@@ -73,6 +83,16 @@ pub struct UpdateMonitoringOutput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
+}
+impl UpdateMonitoringOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMonitoringOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -140,6 +160,16 @@ pub struct UpdateConfigurationOutput {
     /// <p>Latest revision of the configuration.</p>
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
 }
+impl UpdateConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationOutput");
@@ -205,6 +235,16 @@ pub struct UpdateClusterKafkaVersionOutput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
+}
+impl UpdateClusterKafkaVersionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateClusterKafkaVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -272,6 +312,16 @@ pub struct UpdateClusterConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
+impl UpdateClusterConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterConfigurationOutput");
@@ -337,6 +387,16 @@ pub struct UpdateBrokerTypeOutput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
+}
+impl UpdateBrokerTypeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBrokerTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -404,6 +464,16 @@ pub struct UpdateBrokerStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
+impl UpdateBrokerStorageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBrokerStorageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBrokerStorageOutput");
@@ -469,6 +539,16 @@ pub struct UpdateBrokerCountOutput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
+}
+impl UpdateBrokerCountOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBrokerCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -596,6 +676,16 @@ pub struct RebootBrokerOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
+impl RebootBrokerOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RebootBrokerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootBrokerOutput");
@@ -661,6 +751,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The key-value pair for the resource tag.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -725,6 +824,16 @@ pub struct ListScramSecretsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of scram secrets associated with the cluster.</p>
     pub secret_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListScramSecretsOutput {
+    /// <p>Paginated results marker.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of scram secrets associated with the cluster.</p>
+    pub fn secret_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.secret_arn_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListScramSecretsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -798,6 +907,17 @@ pub struct ListNodesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List containing a NodeInfo object.</p>
     pub node_info_list: std::option::Option<std::vec::Vec<crate::model::NodeInfo>>,
+}
+impl ListNodesOutput {
+    /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response.
+    /// To get another batch of nodes, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List containing a NodeInfo object.</p>
+    pub fn node_info_list(&self) -> std::option::Option<&[crate::model::NodeInfo]> {
+        self.node_info_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNodesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -873,6 +993,16 @@ pub struct ListKafkaVersionsOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListKafkaVersionsOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn kafka_versions(&self) -> std::option::Option<&[crate::model::KafkaVersion]> {
+        self.kafka_versions.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListKafkaVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListKafkaVersionsOutput");
@@ -944,6 +1074,17 @@ pub struct ListConfigurationsOutput {
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response.
     /// To get another batch of configurations, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationsOutput {
+    /// <p>An array of MSK configurations.</p>
+    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+        self.configurations.as_deref()
+    }
+    /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response.
+    /// To get another batch of configurations, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1019,6 +1160,16 @@ pub struct ListConfigurationRevisionsOutput {
     /// <p>List of ConfigurationRevision objects.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
 }
+impl ListConfigurationRevisionsOutput {
+    /// <p>Paginated results marker.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of ConfigurationRevision objects.</p>
+    pub fn revisions(&self) -> std::option::Option<&[crate::model::ConfigurationRevision]> {
+        self.revisions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationRevisionsOutput");
@@ -1092,6 +1243,17 @@ pub struct ListClustersOutput {
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
     /// To get another batch of clusters, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClustersOutput {
+    /// <p>Information on each of the MSK clusters in the response.</p>
+    pub fn cluster_info_list(&self) -> std::option::Option<&[crate::model::ClusterInfo]> {
+        self.cluster_info_list.as_deref()
+    }
+    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
+    /// To get another batch of clusters, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1167,6 +1329,18 @@ pub struct ListClusterOperationsOutput {
         std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClusterOperationsOutput {
+    /// <p>An array of cluster operation information objects.</p>
+    pub fn cluster_operation_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterOperationInfo]> {
+        self.cluster_operation_info_list.as_deref()
+    }
+    /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClusterOperationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1246,6 +1420,14 @@ pub struct GetCompatibleKafkaVersionsOutput {
     pub compatible_kafka_versions:
         std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
 }
+impl GetCompatibleKafkaVersionsOutput {
+    /// <p>A list of CompatibleKafkaVersion objects.</p>
+    pub fn compatible_kafka_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CompatibleKafkaVersion]> {
+        self.compatible_kafka_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCompatibleKafkaVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCompatibleKafkaVersionsOutput");
@@ -1312,6 +1494,24 @@ pub struct GetBootstrapBrokersOutput {
     pub bootstrap_broker_string_sasl_scram: std::option::Option<std::string::String>,
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
     pub bootstrap_broker_string_sasl_iam: std::option::Option<std::string::String>,
+}
+impl GetBootstrapBrokersOutput {
+    /// <p>A string containing one or more hostname:port pairs.</p>
+    pub fn bootstrap_broker_string(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string.as_deref()
+    }
+    /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
+    pub fn bootstrap_broker_string_tls(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_tls.as_deref()
+    }
+    /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
+    pub fn bootstrap_broker_string_sasl_scram(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_sasl_scram.as_deref()
+    }
+    /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+    pub fn bootstrap_broker_string_sasl_iam(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_sasl_iam.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBootstrapBrokersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1439,6 +1639,29 @@ pub struct DescribeConfigurationRevisionOutput {
     /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
+impl DescribeConfigurationRevisionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The revision number.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
+    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.server_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationRevisionOutput");
@@ -1558,6 +1781,36 @@ pub struct DescribeConfigurationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub state: std::option::Option<crate::model::ConfigurationState>,
+}
+impl DescribeConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    pub fn kafka_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.kafka_versions.as_deref()
+    }
+    /// <p>Latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1703,6 +1956,14 @@ pub struct DescribeClusterOperationOutput {
     /// <p>Cluster operation information</p>
     pub cluster_operation_info: std::option::Option<crate::model::ClusterOperationInfo>,
 }
+impl DescribeClusterOperationOutput {
+    /// <p>Cluster operation information</p>
+    pub fn cluster_operation_info(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterOperationInfo> {
+        self.cluster_operation_info.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterOperationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterOperationOutput");
@@ -1753,6 +2014,12 @@ impl DescribeClusterOperationOutput {
 pub struct DescribeClusterOutput {
     /// <p>The cluster information.</p>
     pub cluster_info: std::option::Option<crate::model::ClusterInfo>,
+}
+impl DescribeClusterOutput {
+    /// <p>The cluster information.</p>
+    pub fn cluster_info(&self) -> std::option::Option<&crate::model::ClusterInfo> {
+        self.cluster_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1806,6 +2073,16 @@ pub struct DeleteConfigurationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub state: std::option::Option<crate::model::ConfigurationState>,
+}
+impl DeleteConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1872,6 +2149,16 @@ pub struct DeleteClusterOutput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub state: std::option::Option<crate::model::ClusterState>,
+}
+impl DeleteClusterOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,6 +2228,28 @@ pub struct CreateConfigurationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub state: std::option::Option<crate::model::ConfigurationState>,
+}
+impl CreateConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2055,6 +2364,20 @@ pub struct CreateClusterOutput {
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub state: std::option::Option<crate::model::ClusterState>,
 }
+impl CreateClusterOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The name of the MSK cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterOutput");
@@ -2132,6 +2455,18 @@ pub struct BatchDisassociateScramSecretOutput {
     pub unprocessed_scram_secrets:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
 }
+impl BatchDisassociateScramSecretOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>List of errors when disassociating secrets to cluster.</p>
+    pub fn unprocessed_scram_secrets(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnprocessedScramSecret]> {
+        self.unprocessed_scram_secrets.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisassociateScramSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisassociateScramSecretOutput");
@@ -2208,6 +2543,18 @@ pub struct BatchAssociateScramSecretOutput {
     /// <p>List of errors when associating secrets to cluster.</p>
     pub unprocessed_scram_secrets:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
+}
+impl BatchAssociateScramSecretOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>List of errors when associating secrets to cluster.</p>
+    pub fn unprocessed_scram_secrets(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnprocessedScramSecret]> {
+        self.unprocessed_scram_secrets.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateScramSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

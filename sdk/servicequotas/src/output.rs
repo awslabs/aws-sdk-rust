@@ -66,6 +66,14 @@ pub struct RequestServiceQuotaIncreaseOutput {
     /// <p>Information about the quota increase request.</p>
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
 }
+impl RequestServiceQuotaIncreaseOutput {
+    /// <p>Information about the quota increase request.</p>
+    pub fn requested_quota(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestedServiceQuotaChange> {
+        self.requested_quota.as_ref()
+    }
+}
 impl std::fmt::Debug for RequestServiceQuotaIncreaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestServiceQuotaIncreaseOutput");
@@ -117,6 +125,14 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// <p>Information about the quota increase request.</p>
     pub service_quota_increase_request_in_template:
         std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+}
+impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
+    /// <p>Information about the quota increase request.</p>
+    pub fn service_quota_increase_request_in_template(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceQuotaIncreaseRequestInTemplate> {
+        self.service_quota_increase_request_in_template.as_ref()
+    }
 }
 impl std::fmt::Debug for PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -178,6 +194,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A complex data type that contains zero or more tag elements.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A complex data type that contains zero or more tag elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -235,6 +257,17 @@ pub struct ListServicesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the services.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>,
+}
+impl ListServicesOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are
+    /// no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the services.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::ServiceInfo]> {
+        self.services.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -311,6 +344,17 @@ pub struct ListServiceQuotasOutput {
     /// <p>Information about the quotas.</p>
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
 }
+impl ListServiceQuotasOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are
+    /// no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the quotas.</p>
+    pub fn quotas(&self) -> std::option::Option<&[crate::model::ServiceQuota]> {
+        self.quotas.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServiceQuotasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServiceQuotasOutput");
@@ -386,6 +430,20 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are
     /// no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
+    /// <p>Information about the quota increase requests.</p>
+    pub fn service_quota_increase_request_in_template_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceQuotaIncreaseRequestInTemplate]> {
+        self.service_quota_increase_request_in_template_list
+            .as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are
+    /// no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServiceQuotaIncreaseRequestsInTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -476,6 +534,19 @@ pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
+impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are
+    /// no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the quota increase requests.</p>
+    pub fn requested_quotas(
+        &self,
+    ) -> std::option::Option<&[crate::model::RequestedServiceQuotaChange]> {
+        self.requested_quotas.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryByQuotaOutput");
@@ -558,6 +629,19 @@ pub struct ListRequestedServiceQuotaChangeHistoryOutput {
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
+impl ListRequestedServiceQuotaChangeHistoryOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are
+    /// no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the quota increase requests.</p>
+    pub fn requested_quotas(
+        &self,
+    ) -> std::option::Option<&[crate::model::RequestedServiceQuotaChange]> {
+        self.requested_quotas.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryOutput");
@@ -637,6 +721,17 @@ pub struct ListAwsDefaultServiceQuotasOutput {
     /// <p>Information about the quotas.</p>
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
 }
+impl ListAwsDefaultServiceQuotasOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are
+    /// no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the quotas.</p>
+    pub fn quotas(&self) -> std::option::Option<&[crate::model::ServiceQuota]> {
+        self.quotas.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAwsDefaultServiceQuotasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAwsDefaultServiceQuotasOutput");
@@ -710,6 +805,14 @@ pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput {
     pub service_quota_increase_request_in_template:
         std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
 }
+impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
+    /// <p>Information about the quota increase request.</p>
+    pub fn service_quota_increase_request_in_template(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceQuotaIncreaseRequestInTemplate> {
+        self.service_quota_increase_request_in_template.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServiceQuotaIncreaseRequestFromTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceQuotaIncreaseRequestFromTemplateOutput");
@@ -770,6 +873,12 @@ pub struct GetServiceQuotaOutput {
     /// <p>Information about the quota.</p>
     pub quota: std::option::Option<crate::model::ServiceQuota>,
 }
+impl GetServiceQuotaOutput {
+    /// <p>Information about the quota.</p>
+    pub fn quota(&self) -> std::option::Option<&crate::model::ServiceQuota> {
+        self.quota.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServiceQuotaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceQuotaOutput");
@@ -815,6 +924,14 @@ impl GetServiceQuotaOutput {
 pub struct GetRequestedServiceQuotaChangeOutput {
     /// <p>Information about the quota increase request.</p>
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
+}
+impl GetRequestedServiceQuotaChangeOutput {
+    /// <p>Information about the quota increase request.</p>
+    pub fn requested_quota(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestedServiceQuotaChange> {
+        self.requested_quota.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRequestedServiceQuotaChangeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -867,6 +984,12 @@ pub struct GetAwsDefaultServiceQuotaOutput {
     /// <p>Information about the quota.</p>
     pub quota: std::option::Option<crate::model::ServiceQuota>,
 }
+impl GetAwsDefaultServiceQuotaOutput {
+    /// <p>Information about the quota.</p>
+    pub fn quota(&self) -> std::option::Option<&crate::model::ServiceQuota> {
+        self.quota.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAwsDefaultServiceQuotaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAwsDefaultServiceQuotaOutput");
@@ -915,6 +1038,16 @@ pub struct GetAssociationForServiceQuotaTemplateOutput {
     /// organization.</p>
     pub service_quota_template_association_status:
         std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
+}
+impl GetAssociationForServiceQuotaTemplateOutput {
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase
+    /// requests in the template are automatically applied to new accounts in your
+    /// organization.</p>
+    pub fn service_quota_template_association_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceQuotaTemplateAssociationStatus> {
+        self.service_quota_template_association_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAssociationForServiceQuotaTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

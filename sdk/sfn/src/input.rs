@@ -166,10 +166,8 @@ impl CreateActivityInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_activity(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_activity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -477,10 +475,7 @@ impl CreateStateMachineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_state_machine(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_state_machine(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -629,10 +624,8 @@ impl DeleteActivityInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_activity(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_activity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -785,10 +778,7 @@ impl DeleteStateMachineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_state_machine(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_state_machine(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -938,10 +928,7 @@ impl DescribeActivityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_activity(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_activity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1094,10 +1081,7 @@ impl DescribeExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_execution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1250,10 +1234,9 @@ impl DescribeStateMachineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_state_machine(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_state_machine(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1407,7 +1390,7 @@ impl DescribeStateMachineForExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_state_machine_for_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_state_machine_for_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1574,10 +1557,7 @@ impl GetActivityTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_activity_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_activity_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1786,10 +1766,7 @@ impl GetExecutionHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_execution_history(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_execution_history(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1956,10 +1933,8 @@ impl ListActivitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_activities(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_activities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2158,10 +2133,8 @@ impl ListExecutionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_executions(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_executions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2329,10 +2302,7 @@ impl ListStateMachinesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_state_machines(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_state_machines(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2482,10 +2452,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2663,10 +2632,7 @@ impl SendTaskFailureInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_task_failure(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_task_failure(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2820,10 +2786,7 @@ impl SendTaskHeartbeatInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_task_heartbeat(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_task_heartbeat(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2989,10 +2952,7 @@ impl SendTaskSuccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_task_success(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_task_success(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3246,10 +3206,8 @@ impl StartExecutionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_execution(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3456,27 +3414,15 @@ impl StartSyncExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_sync_execution(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_sync_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("sync-");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("sync-")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3646,10 +3592,7 @@ impl StopExecutionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_execution(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3821,10 +3764,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3994,10 +3934,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4206,10 +4143,7 @@ impl UpdateStateMachineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_state_machine(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_state_machine(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4287,6 +4221,33 @@ pub struct UpdateStateMachineInput {
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
 }
+impl UpdateStateMachineInput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
+    /// options.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    pub fn tracing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TracingConfiguration> {
+        self.tracing_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStateMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStateMachineInput");
@@ -4308,6 +4269,16 @@ pub struct UntagResourceInput {
     /// <p>The list of tags to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tags to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4326,6 +4297,17 @@ pub struct TagResourceInput {
     /// <p>The list of tags to add to a resource.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tags to add to a resource.</p>
+    /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4346,6 +4328,20 @@ pub struct StopExecutionInput {
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
+}
+impl StopExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
 }
 impl std::fmt::Debug for StopExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4378,6 +4374,33 @@ pub struct StartSyncExecutionInput {
     pub input: std::option::Option<std::string::String>,
     /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub trace_header: std::option::Option<std::string::String>,
+}
+impl StartSyncExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the execution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The string that contains the JSON input data for the execution, for example:</p>
+    /// <p>
+    /// <code>"input": "{\"first_name\" : \"test\"}"</code>
+    /// </p>
+    /// <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for
+    /// example: <code>"input": "{}"</code>
+    /// </p>
+    /// </note>
+    /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    pub fn trace_header(&self) -> std::option::Option<&str> {
+        self.trace_header.as_deref()
+    }
 }
 impl std::fmt::Debug for StartSyncExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4436,6 +4459,57 @@ pub struct StartExecutionInput {
     /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub trace_header: std::option::Option<std::string::String>,
 }
+impl StartExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
+    /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+    /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The string that contains the JSON input data for the execution, for example:</p>
+    /// <p>
+    /// <code>"input": "{\"first_name\" : \"test\"}"</code>
+    /// </p>
+    /// <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for
+    /// example: <code>"input": "{}"</code>
+    /// </p>
+    /// </note>
+    /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    pub fn trace_header(&self) -> std::option::Option<&str> {
+        self.trace_header.as_deref()
+    }
+}
 impl std::fmt::Debug for StartExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartExecutionInput");
@@ -4458,6 +4532,18 @@ pub struct SendTaskSuccessInput {
     /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub output: std::option::Option<std::string::String>,
 }
+impl SendTaskSuccessInput {
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
+    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
+    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+}
 impl std::fmt::Debug for SendTaskSuccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendTaskSuccessInput");
@@ -4475,6 +4561,14 @@ pub struct SendTaskHeartbeatInput {
     /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
     /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
     pub task_token: std::option::Option<std::string::String>,
+}
+impl SendTaskHeartbeatInput {
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
+    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
+    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SendTaskHeartbeatInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4497,6 +4591,22 @@ pub struct SendTaskFailureInput {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: std::option::Option<std::string::String>,
 }
+impl SendTaskFailureInput {
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
+    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
+    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+}
 impl std::fmt::Debug for SendTaskFailureInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendTaskFailureInput");
@@ -4513,6 +4623,12 @@ impl std::fmt::Debug for SendTaskFailureInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4533,6 +4649,19 @@ pub struct ListStateMachinesInput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStateMachinesInput {
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
+    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStateMachinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4560,6 +4689,28 @@ pub struct ListExecutionsInput {
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExecutionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>If specified, only list the executions whose current execution status matches the given
+    /// filter.</p>
+    pub fn status_filter(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.status_filter.as_ref()
+    }
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
+    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExecutionsInput");
@@ -4582,6 +4733,19 @@ pub struct ListActivitiesInput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListActivitiesInput {
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
+    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListActivitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4611,6 +4775,32 @@ pub struct GetExecutionHistoryInput {
     /// The default is <code>true</code>.</p>
     pub include_execution_data: std::option::Option<bool>,
 }
+impl GetExecutionHistoryInput {
+    /// <p>The Amazon Resource Name (ARN) of the execution.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
+    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can select whether execution data (input or output of a history event) is returned.
+    /// The default is <code>true</code>.</p>
+    pub fn include_execution_data(&self) -> std::option::Option<bool> {
+        self.include_execution_data
+    }
+}
 impl std::fmt::Debug for GetExecutionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExecutionHistoryInput");
@@ -4634,6 +4824,18 @@ pub struct GetActivityTaskInput {
     /// assigned to. This name is used when it is logged in the execution history.</p>
     pub worker_name: std::option::Option<std::string::String>,
 }
+impl GetActivityTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
+    /// using <a>CreateActivity</a>.)</p>
+    pub fn activity_arn(&self) -> std::option::Option<&str> {
+        self.activity_arn.as_deref()
+    }
+    /// <p>You can provide an arbitrary name in order to identify the worker that the task is
+    /// assigned to. This name is used when it is logged in the execution history.</p>
+    pub fn worker_name(&self) -> std::option::Option<&str> {
+        self.worker_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetActivityTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActivityTaskInput");
@@ -4650,6 +4852,12 @@ pub struct DescribeStateMachineForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     pub execution_arn: std::option::Option<std::string::String>,
 }
+impl DescribeStateMachineForExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStateMachineForExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStateMachineForExecutionInput");
@@ -4664,6 +4872,12 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionInput {
 pub struct DescribeStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
     pub state_machine_arn: std::option::Option<std::string::String>,
+}
+impl DescribeStateMachineInput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStateMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4680,6 +4894,12 @@ pub struct DescribeExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     pub execution_arn: std::option::Option<std::string::String>,
 }
+impl DescribeExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExecutionInput");
@@ -4694,6 +4914,12 @@ impl std::fmt::Debug for DescribeExecutionInput {
 pub struct DescribeActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
     pub activity_arn: std::option::Option<std::string::String>,
+}
+impl DescribeActivityInput {
+    /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
+    pub fn activity_arn(&self) -> std::option::Option<&str> {
+        self.activity_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeActivityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4710,6 +4936,12 @@ pub struct DeleteStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     pub state_machine_arn: std::option::Option<std::string::String>,
 }
+impl DeleteStateMachineInput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStateMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStateMachineInput");
@@ -4724,6 +4956,12 @@ impl std::fmt::Debug for DeleteStateMachineInput {
 pub struct DeleteActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
     pub activity_arn: std::option::Option<std::string::String>,
+}
+impl DeleteActivityInput {
+    /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
+    pub fn activity_arn(&self) -> std::option::Option<&str> {
+        self.activity_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteActivityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4786,6 +5024,74 @@ pub struct CreateStateMachineInput {
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
 }
+impl CreateStateMachineInput {
+    /// <p>The name of the state machine. </p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Determines whether a Standard or Express state machine is created. The default is
+    /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
+    /// has been created.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StateMachineType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Defines what execution history events are logged and where they are logged.</p>
+    /// <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see
+    /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+    /// Levels</a> in the AWS Step Functions User Guide.</p>
+    /// </note>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>Tags to be added when creating a state machine.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+    /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+    /// Tags</a>.</p>
+    /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    pub fn tracing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TracingConfiguration> {
+        self.tracing_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStateMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStateMachineInput");
@@ -4837,6 +5143,45 @@ pub struct CreateActivityInput {
     /// Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateActivityInput {
+    /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
+    /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+    /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The list of tags to add to a resource.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+    /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+    /// Tags</a>.</p>
+    /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateActivityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

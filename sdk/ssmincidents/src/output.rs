@@ -246,6 +246,12 @@ pub struct StartIncidentOutput {
     /// <p>The ARN of the newly created incident record.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
 }
+impl StartIncidentOutput {
+    /// <p>The ARN of the newly created incident record.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartIncidentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartIncidentOutput");
@@ -297,6 +303,12 @@ pub struct PutResourcePolicyOutput {
     /// <p>The ID of the resource policy.</p>
     pub policy_id: std::option::Option<std::string::String>,
 }
+impl PutResourcePolicyOutput {
+    /// <p>The ID of the resource policy.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyOutput");
@@ -346,6 +358,16 @@ pub struct ListTimelineEventsOutput {
     pub event_summaries: std::option::Option<std::vec::Vec<crate::model::EventSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTimelineEventsOutput {
+    /// <p>Details about each event that occurred during the incident.</p>
+    pub fn event_summaries(&self) -> std::option::Option<&[crate::model::EventSummary]> {
+        self.event_summaries.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTimelineEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -418,6 +440,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags for the response plan.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -483,6 +514,18 @@ pub struct ListResponsePlansOutput {
         std::option::Option<std::vec::Vec<crate::model::ResponsePlanSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResponsePlansOutput {
+    /// <p>Details of each response plan.</p>
+    pub fn response_plan_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResponsePlanSummary]> {
+        self.response_plan_summaries.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResponsePlansOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -560,6 +603,16 @@ pub struct ListReplicationSetsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListReplicationSetsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
+    pub fn replication_set_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.replication_set_arns.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReplicationSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReplicationSetsOutput");
@@ -631,6 +684,16 @@ pub struct ListRelatedItemsOutput {
     pub related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRelatedItemsOutput {
+    /// <p>Details about each related item.</p>
+    pub fn related_items(&self) -> std::option::Option<&[crate::model::RelatedItem]> {
+        self.related_items.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRelatedItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -704,6 +767,18 @@ pub struct ListIncidentRecordsOutput {
         std::option::Option<std::vec::Vec<crate::model::IncidentRecordSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIncidentRecordsOutput {
+    /// <p>The details of each listed incident record.</p>
+    pub fn incident_record_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::IncidentRecordSummary]> {
+        self.incident_record_summaries.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIncidentRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -779,6 +854,12 @@ pub struct GetTimelineEventOutput {
     /// <p>Details about the timeline event.</p>
     pub event: std::option::Option<crate::model::TimelineEvent>,
 }
+impl GetTimelineEventOutput {
+    /// <p>Details about the timeline event.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::TimelineEvent> {
+        self.event.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTimelineEventOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTimelineEventOutput");
@@ -841,6 +922,38 @@ pub struct GetResponsePlanOutput {
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
+}
+impl GetResponsePlanOutput {
+    /// <p>The ARN of the response plan.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The short format name of the response plan. The name can't contain spaces.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The long format name of the response plan. Can contain spaces.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>Details used to create the incident when using this response plan.</p>
+    pub fn incident_template(&self) -> std::option::Option<&crate::model::IncidentTemplate> {
+        self.incident_template.as_ref()
+    }
+    /// <p>The Chatbot chat channel used for collaboration during an
+    /// incident.</p>
+    pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
+        self.chat_channel.as_ref()
+    }
+    /// <p>The contacts and escalation plans that the response plan engages during an
+    /// incident.</p>
+    pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
+        self.engagements.as_ref()
+    }
+    /// <p>The actions that this response plan takes at the beginning of the incident.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResponsePlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1105,16 @@ pub struct GetResourcePoliciesOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourcePoliciesOutput {
+    /// <p>Details about the resource policy attached to the response plan.</p>
+    pub fn resource_policies(&self) -> std::option::Option<&[crate::model::ResourcePolicy]> {
+        self.resource_policies.as_deref()
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePoliciesOutput");
@@ -1063,6 +1186,12 @@ pub struct GetReplicationSetOutput {
     /// <p>Details of the replication set.</p>
     pub replication_set: std::option::Option<crate::model::ReplicationSet>,
 }
+impl GetReplicationSetOutput {
+    /// <p>Details of the replication set.</p>
+    pub fn replication_set(&self) -> std::option::Option<&crate::model::ReplicationSet> {
+        self.replication_set.as_ref()
+    }
+}
 impl std::fmt::Debug for GetReplicationSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationSetOutput");
@@ -1113,6 +1242,12 @@ impl GetReplicationSetOutput {
 pub struct GetIncidentRecordOutput {
     /// <p>Details the structure of the incident record.</p>
     pub incident_record: std::option::Option<crate::model::IncidentRecord>,
+}
+impl GetIncidentRecordOutput {
+    /// <p>Details the structure of the incident record.</p>
+    pub fn incident_record(&self) -> std::option::Option<&crate::model::IncidentRecord> {
+        self.incident_record.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIncidentRecordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1317,6 +1452,16 @@ pub struct CreateTimelineEventOutput {
     /// <p>The ID of the event for easy reference later. </p>
     pub event_id: std::option::Option<std::string::String>,
 }
+impl CreateTimelineEventOutput {
+    /// <p>The ARN of the incident record that you added the event to.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The ID of the event for easy reference later. </p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTimelineEventOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTimelineEventOutput");
@@ -1381,6 +1526,12 @@ pub struct CreateResponsePlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl CreateResponsePlanOutput {
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResponsePlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResponsePlanOutput");
@@ -1426,6 +1577,12 @@ impl CreateResponsePlanOutput {
 pub struct CreateReplicationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication set. </p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl CreateReplicationSetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the replication set. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

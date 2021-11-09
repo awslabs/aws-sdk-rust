@@ -17772,6 +17772,16 @@ pub struct ResourceDataSyncNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceDataSyncNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn sync_name(&self) -> std::option::Option<&str> {
+        self.sync_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn sync_type(&self) -> std::option::Option<&str> {
+        self.sync_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceDataSyncNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDataSyncNotFoundException");
@@ -18387,6 +18397,20 @@ pub struct OpsItemLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl OpsItemLimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit_type(&self) -> std::option::Option<&str> {
+        self.limit_type.as_deref()
+    }
+}
 impl std::fmt::Debug for OpsItemLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpsItemLimitExceededException");
@@ -18501,6 +18525,12 @@ pub struct OpsItemInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl OpsItemInvalidParameterException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn parameter_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.parameter_names.as_deref()
+    }
+}
 impl std::fmt::Debug for OpsItemInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpsItemInvalidParameterException");
@@ -18587,6 +18617,12 @@ pub struct OpsItemAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub ops_item_id: std::option::Option<std::string::String>,
+}
+impl OpsItemAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
 }
 impl std::fmt::Debug for OpsItemAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22399,6 +22435,12 @@ pub struct UnsupportedInventoryItemContextException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl UnsupportedInventoryItemContextException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UnsupportedInventoryItemContextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsupportedInventoryItemContextException");
@@ -22606,6 +22648,12 @@ pub struct ItemSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ItemSizeLimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ItemSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ItemSizeLimitExceededException");
@@ -22684,6 +22732,12 @@ pub struct ItemContentMismatchException {
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ItemContentMismatchException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ItemContentMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22827,6 +22881,12 @@ pub struct InvalidItemContentException {
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidItemContentException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidItemContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25173,6 +25233,12 @@ pub struct ResourceDataSyncAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceDataSyncAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn sync_name(&self) -> std::option::Option<&str> {
+        self.sync_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceDataSyncAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDataSyncAlreadyExistsException");
@@ -25574,6 +25640,16 @@ pub struct OpsItemRelatedItemAlreadyExistsException {
     pub resource_uri: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub ops_item_id: std::option::Option<std::string::String>,
+}
+impl OpsItemRelatedItemAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_uri(&self) -> std::option::Option<&str> {
+        self.resource_uri.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
 }
 impl std::fmt::Debug for OpsItemRelatedItemAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

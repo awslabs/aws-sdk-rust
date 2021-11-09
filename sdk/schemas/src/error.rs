@@ -4354,6 +4354,12 @@ pub struct ServiceUnavailableException {
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceUnavailableException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceUnavailableException");
@@ -4432,6 +4438,12 @@ pub struct NotFoundException {
     pub code: std::option::Option<std::string::String>,
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl NotFoundException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4512,6 +4524,12 @@ pub struct InternalServerErrorException {
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InternalServerErrorException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerErrorException");
@@ -4590,6 +4608,12 @@ pub struct ForbiddenException {
     pub code: std::option::Option<std::string::String>,
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ForbiddenException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4670,6 +4694,12 @@ pub struct BadRequestException {
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl BadRequestException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BadRequestException");
@@ -4748,6 +4778,12 @@ pub struct UnauthorizedException {
     pub code: std::option::Option<std::string::String>,
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl UnauthorizedException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4828,6 +4864,12 @@ pub struct PreconditionFailedException {
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl PreconditionFailedException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for PreconditionFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreconditionFailedException");
@@ -4906,6 +4948,12 @@ pub struct TooManyRequestsException {
     pub code: std::option::Option<std::string::String>,
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl TooManyRequestsException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4986,6 +5034,12 @@ pub struct GoneException {
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl GoneException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for GoneException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GoneException");
@@ -5064,6 +5118,12 @@ pub struct ConflictException {
     pub code: std::option::Option<std::string::String>,
     /// <p>The message string of the error output.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

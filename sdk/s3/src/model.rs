@@ -376,6 +376,16 @@ pub struct CopyPartResult {
     /// <p>Date and time at which the object was uploaded.</p>
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CopyPartResult {
+    /// <p>Entity tag of the object.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>Date and time at which the object was uploaded.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+}
 impl std::fmt::Debug for CopyPartResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyPartResult");
@@ -501,6 +511,15 @@ pub enum SelectObjectContentEventStream {
     Records(crate::model::RecordsEvent),
     /// <p>The Stats Event.</p>
     Stats(crate::model::StatsEvent),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl SelectObjectContentEventStream {
     /// Tries to convert the enum instance into [`Cont`](crate::model::SelectObjectContentEventStream::Cont), extracting the inner [`ContinuationEvent`](crate::model::ContinuationEvent).
@@ -567,6 +586,10 @@ impl SelectObjectContentEventStream {
     /// Returns true if this is a [`Stats`](crate::model::SelectObjectContentEventStream::Stats).
     pub fn is_stats(&self) -> bool {
         self.as_stats().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -639,6 +662,12 @@ pub struct ProgressEvent {
     /// <p>The Progress event details.</p>
     pub details: std::option::Option<crate::model::Progress>,
 }
+impl ProgressEvent {
+    /// <p>The Progress event details.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::Progress> {
+        self.details.as_ref()
+    }
+}
 impl std::fmt::Debug for ProgressEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProgressEvent");
@@ -690,6 +719,20 @@ pub struct Progress {
     pub bytes_processed: i64,
     /// <p>The current number of bytes of records payload data returned.</p>
     pub bytes_returned: i64,
+}
+impl Progress {
+    /// <p>The current number of object bytes scanned.</p>
+    pub fn bytes_scanned(&self) -> i64 {
+        self.bytes_scanned
+    }
+    /// <p>The current number of uncompressed object bytes processed.</p>
+    pub fn bytes_processed(&self) -> i64 {
+        self.bytes_processed
+    }
+    /// <p>The current number of bytes of records payload data returned.</p>
+    pub fn bytes_returned(&self) -> i64 {
+        self.bytes_returned
+    }
 }
 impl std::fmt::Debug for Progress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -765,6 +808,12 @@ pub struct StatsEvent {
     /// <p>The Stats event details.</p>
     pub details: std::option::Option<crate::model::Stats>,
 }
+impl StatsEvent {
+    /// <p>The Stats event details.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::Stats> {
+        self.details.as_ref()
+    }
+}
 impl std::fmt::Debug for StatsEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatsEvent");
@@ -816,6 +865,20 @@ pub struct Stats {
     pub bytes_processed: i64,
     /// <p>The total number of bytes of records payload data returned.</p>
     pub bytes_returned: i64,
+}
+impl Stats {
+    /// <p>The total number of object bytes scanned.</p>
+    pub fn bytes_scanned(&self) -> i64 {
+        self.bytes_scanned
+    }
+    /// <p>The total number of uncompressed object bytes processed.</p>
+    pub fn bytes_processed(&self) -> i64 {
+        self.bytes_processed
+    }
+    /// <p>The total number of bytes of records payload data returned.</p>
+    pub fn bytes_returned(&self) -> i64 {
+        self.bytes_returned
+    }
 }
 impl std::fmt::Debug for Stats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -891,6 +954,12 @@ pub struct RecordsEvent {
     /// <p>The byte array of partial, one or more result records.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
+impl RecordsEvent {
+    /// <p>The byte array of partial, one or more result records.</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for RecordsEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordsEvent");
@@ -952,6 +1021,25 @@ pub struct ScanRange {
     /// <code><scanrange><end>50</end></scanrange></code> means scan the
     /// last 50 bytes.</p>
     pub end: i64,
+}
+impl ScanRange {
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values:
+    /// non-negative integers. The default value is 0. If only start is supplied, it means scan
+    /// from that point to the end of the file.For example;
+    /// <code><scanrange><start>50</start></scanrange></code> means scan
+    /// from byte 50 until the end of the file.</p>
+    pub fn start(&self) -> i64 {
+        self.start
+    }
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values:
+    /// non-negative integers. The default value is one less than the size of the object being
+    /// queried. If only the End parameter is supplied, it is interpreted to mean scan the last N
+    /// bytes of the file. For example,
+    /// <code><scanrange><end>50</end></scanrange></code> means scan the
+    /// last 50 bytes.</p>
+    pub fn end(&self) -> i64 {
+        self.end
+    }
 }
 impl std::fmt::Debug for ScanRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1034,6 +1122,16 @@ pub struct OutputSerialization {
     /// <p>Specifies JSON as request's output serialization format.</p>
     pub json: std::option::Option<crate::model::JsonOutput>,
 }
+impl OutputSerialization {
+    /// <p>Describes the serialization of CSV-encoded Select results.</p>
+    pub fn csv(&self) -> std::option::Option<&crate::model::CsvOutput> {
+        self.csv.as_ref()
+    }
+    /// <p>Specifies JSON as request's output serialization format.</p>
+    pub fn json(&self) -> std::option::Option<&crate::model::JsonOutput> {
+        self.json.as_ref()
+    }
+}
 impl std::fmt::Debug for OutputSerialization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputSerialization");
@@ -1095,6 +1193,13 @@ pub struct JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified,
     /// Amazon S3 uses a newline character ('\n').</p>
     pub record_delimiter: std::option::Option<std::string::String>,
+}
+impl JsonOutput {
+    /// <p>The value used to separate individual records in the output. If no value is specified,
+    /// Amazon S3 uses a newline character ('\n').</p>
+    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+        self.record_delimiter.as_deref()
+    }
 }
 impl std::fmt::Debug for JsonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1172,6 +1277,43 @@ pub struct CsvOutput {
     /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
     /// as follows: <code>" a , b "</code>.</p>
     pub quote_character: std::option::Option<std::string::String>,
+}
+impl CsvOutput {
+    /// <p>Indicates whether to use quotation marks around output fields. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
+    /// </li>
+    /// </ul>
+    pub fn quote_fields(&self) -> std::option::Option<&crate::model::QuoteFields> {
+        self.quote_fields.as_ref()
+    }
+    /// <p>The single character used for escaping the quote character inside an already escaped
+    /// value.</p>
+    pub fn quote_escape_character(&self) -> std::option::Option<&str> {
+        self.quote_escape_character.as_deref()
+    }
+    /// <p>A single character used to separate individual records in the output. Instead of the
+    /// default value, you can specify an arbitrary delimiter.</p>
+    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+        self.record_delimiter.as_deref()
+    }
+    /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
+    /// delimiter.</p>
+    pub fn field_delimiter(&self) -> std::option::Option<&str> {
+        self.field_delimiter.as_deref()
+    }
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For
+    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
+    /// as follows: <code>" a , b "</code>.</p>
+    pub fn quote_character(&self) -> std::option::Option<&str> {
+        self.quote_character.as_deref()
+    }
 }
 impl std::fmt::Debug for CsvOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1380,6 +1522,25 @@ pub struct InputSerialization {
     /// <p>Specifies Parquet as object's input serialization format.</p>
     pub parquet: std::option::Option<crate::model::ParquetInput>,
 }
+impl InputSerialization {
+    /// <p>Describes the serialization of a CSV-encoded object.</p>
+    pub fn csv(&self) -> std::option::Option<&crate::model::CsvInput> {
+        self.csv.as_ref()
+    }
+    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
+    /// NONE.</p>
+    pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
+        self.compression_type.as_ref()
+    }
+    /// <p>Specifies JSON as object's input serialization format.</p>
+    pub fn json(&self) -> std::option::Option<&crate::model::JsonInput> {
+        self.json.as_ref()
+    }
+    /// <p>Specifies Parquet as object's input serialization format.</p>
+    pub fn parquet(&self) -> std::option::Option<&crate::model::ParquetInput> {
+        self.parquet.as_ref()
+    }
+}
 impl std::fmt::Debug for InputSerialization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputSerialization");
@@ -1504,6 +1665,12 @@ impl ParquetInput {
 pub struct JsonInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
     pub r#type: std::option::Option<crate::model::JsonType>,
+}
+impl JsonInput {
+    /// <p>The type of JSON. Valid values: Document, Lines.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::JsonType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for JsonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1710,6 +1877,67 @@ pub struct CsvInput {
     /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
     /// performance.</p>
     pub allow_quoted_record_delimiter: bool,
+}
+impl CsvInput {
+    /// <p>Describes the first line of input. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>: First line is not a header.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IGNORE</code>: First line is a header, but you can't use the header values
+    /// to indicate the column in an expression. You can use column position (such as _1, _2,
+    /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Use</code>: First line is a header, and you can use the header value to
+    /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
+    /// </li>
+    /// </ul>
+    pub fn file_header_info(&self) -> std::option::Option<&crate::model::FileHeaderInfo> {
+        self.file_header_info.as_ref()
+    }
+    /// <p>A single character used to indicate that a row should be ignored when the character is
+    /// present at the start of that row. You can specify any character to indicate a comment
+    /// line.</p>
+    pub fn comments(&self) -> std::option::Option<&str> {
+        self.comments.as_deref()
+    }
+    /// <p>A single character used for escaping the quotation mark character inside an already
+    /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+    pub fn quote_escape_character(&self) -> std::option::Option<&str> {
+        self.quote_escape_character.as_deref()
+    }
+    /// <p>A single character used to separate individual records in the input. Instead of the
+    /// default value, you can specify an arbitrary delimiter.</p>
+    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+        self.record_delimiter.as_deref()
+    }
+    /// <p>A single character used to separate individual fields in a record. You can specify an
+    /// arbitrary delimiter.</p>
+    pub fn field_delimiter(&self) -> std::option::Option<&str> {
+        self.field_delimiter.as_deref()
+    }
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For
+    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
+    /// as follows: <code>" a , b "</code>.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: <code>"</code>
+    /// </p>
+    /// <p>Ancestors: <code>CSV</code>
+    /// </p>
+    pub fn quote_character(&self) -> std::option::Option<&str> {
+        self.quote_character.as_deref()
+    }
+    /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
+    /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
+    /// performance.</p>
+    pub fn allow_quoted_record_delimiter(&self) -> bool {
+        self.allow_quoted_record_delimiter
+    }
 }
 impl std::fmt::Debug for CsvInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1983,6 +2211,13 @@ pub struct RequestProgress {
     /// FALSE. Default value: FALSE.</p>
     pub enabled: bool,
 }
+impl RequestProgress {
+    /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE,
+    /// FALSE. Default value: FALSE.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for RequestProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestProgress");
@@ -2099,6 +2334,42 @@ pub struct RestoreRequest {
     pub select_parameters: std::option::Option<crate::model::SelectParameters>,
     /// <p>Describes the location where the restore job's output is stored.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
+}
+impl RestoreRequest {
+    /// <p>Lifetime of the active copy in days. Do not use with restores that specify
+    /// <code>OutputLocation</code>.</p>
+    /// <p>The Days element is required for regular restores, and must not be provided for select
+    /// requests.</p>
+    pub fn days(&self) -> i32 {
+        self.days
+    }
+    /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that
+    /// specify <code>OutputLocation</code>.</p>
+    pub fn glacier_job_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::GlacierJobParameters> {
+        self.glacier_job_parameters.as_ref()
+    }
+    /// <p>Type of restore request.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RestoreRequestType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Retrieval tier at which the restore will be processed.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
+    }
+    /// <p>The optional description for the job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Describes the parameters for Select job types.</p>
+    pub fn select_parameters(&self) -> std::option::Option<&crate::model::SelectParameters> {
+        self.select_parameters.as_ref()
+    }
+    /// <p>Describes the location where the restore job's output is stored.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2246,6 +2517,12 @@ pub struct OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the restore request.</p>
     pub s3: std::option::Option<crate::model::S3Location>,
 }
+impl OutputLocation {
+    /// <p>Describes an S3 location that will receive the results of the restore request.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for OutputLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputLocation");
@@ -2305,6 +2582,40 @@ pub struct S3Location {
     pub user_metadata: std::option::Option<std::vec::Vec<crate::model::MetadataEntry>>,
     /// <p>The class of storage used to store the restore results.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
+}
+impl S3Location {
+    /// <p>The name of the bucket where the restore results will be placed.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix that is prepended to the restore results for this request.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>Contains the type of server-side encryption used.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.encryption.as_ref()
+    }
+    /// <p>The canned ACL to apply to the restore results.</p>
+    pub fn canned_acl(&self) -> std::option::Option<&crate::model::ObjectCannedAcl> {
+        self.canned_acl.as_ref()
+    }
+    /// <p>A list of grants that control access to the staged results.</p>
+    pub fn access_control_list(&self) -> std::option::Option<&[crate::model::Grant]> {
+        self.access_control_list.as_deref()
+    }
+    /// <p>The tag-set that is applied to the restore results.</p>
+    pub fn tagging(&self) -> std::option::Option<&crate::model::Tagging> {
+        self.tagging.as_ref()
+    }
+    /// <p>A list of metadata to store with the restore results in S3.</p>
+    pub fn user_metadata(&self) -> std::option::Option<&[crate::model::MetadataEntry]> {
+        self.user_metadata.as_deref()
+    }
+    /// <p>The class of storage used to store the restore results.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2474,6 +2785,16 @@ pub struct MetadataEntry {
     /// <p>Value of the Object.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl MetadataEntry {
+    /// <p>Name of the Object.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Value of the Object.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for MetadataEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetadataEntry");
@@ -2535,6 +2856,12 @@ pub struct Tagging {
     /// <p>A collection for a set of tags</p>
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl Tagging {
+    /// <p>A collection for a set of tags</p>
+    pub fn tag_set(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_set.as_deref()
+    }
+}
 impl std::fmt::Debug for Tagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tagging");
@@ -2593,6 +2920,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>Value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>Name of the object key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2656,6 +2993,16 @@ pub struct Grant {
     pub grantee: std::option::Option<crate::model::Grantee>,
     /// <p>Specifies the permission given to the grantee.</p>
     pub permission: std::option::Option<crate::model::Permission>,
+}
+impl Grant {
+    /// <p>The person being granted permissions.</p>
+    pub fn grantee(&self) -> std::option::Option<&crate::model::Grantee> {
+        self.grantee.as_ref()
+    }
+    /// <p>Specifies the permission given to the grantee.</p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.permission.as_ref()
+    }
 }
 impl std::fmt::Debug for Grant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2825,6 +3172,58 @@ pub struct Grantee {
     pub uri: std::option::Option<std::string::String>,
     /// <p>Type of grantee</p>
     pub r#type: std::option::Option<crate::model::Type>,
+}
+impl Grantee {
+    /// <p>Screen name of the grantee.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>Email address of the grantee.</p>
+    /// <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <ul>
+    /// <li>
+    /// <p>US East (N. Virginia)</p>
+    /// </li>
+    /// <li>
+    /// <p>US West (N. California)</p>
+    /// </li>
+    /// <li>
+    /// <p> US West (Oregon)</p>
+    /// </li>
+    /// <li>
+    /// <p> Asia Pacific (Singapore)</p>
+    /// </li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney)</p>
+    /// </li>
+    /// <li>
+    /// <p>Asia Pacific (Tokyo)</p>
+    /// </li>
+    /// <li>
+    /// <p>Europe (Ireland)</p>
+    /// </li>
+    /// <li>
+    /// <p>South America (São Paulo)</p>
+    /// </li>
+    /// </ul>
+    /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
+    /// </note>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The canonical user ID of the grantee.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>URI of the grantee group.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>Type of grantee</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Grantee {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3140,6 +3539,25 @@ pub struct Encryption {
     /// specify the encryption context for the restore results.</p>
     pub kms_context: std::option::Option<std::string::String>,
 }
+impl Encryption {
+    /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example,
+    /// AES256, aws:kms).</p>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::ServerSideEncryption> {
+        self.encryption_type.as_ref()
+    }
+    /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
+    /// the symmetric customer managed key to use for encryption of job results. Amazon S3 only
+    /// supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
+    /// specify the encryption context for the restore results.</p>
+    pub fn kms_context(&self) -> std::option::Option<&str> {
+        self.kms_context.as_deref()
+    }
+}
 impl std::fmt::Debug for Encryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Encryption");
@@ -3232,6 +3650,24 @@ pub struct SelectParameters {
     pub expression: std::option::Option<std::string::String>,
     /// <p>Describes how the results of the Select job are serialized.</p>
     pub output_serialization: std::option::Option<crate::model::OutputSerialization>,
+}
+impl SelectParameters {
+    /// <p>Describes the serialization format of the object.</p>
+    pub fn input_serialization(&self) -> std::option::Option<&crate::model::InputSerialization> {
+        self.input_serialization.as_ref()
+    }
+    /// <p>The type of the provided expression (for example, SQL).</p>
+    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+        self.expression_type.as_ref()
+    }
+    /// <p>The expression that is used to query the object.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>Describes how the results of the Select job are serialized.</p>
+    pub fn output_serialization(&self) -> std::option::Option<&crate::model::OutputSerialization> {
+        self.output_serialization.as_ref()
+    }
 }
 impl std::fmt::Debug for SelectParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3439,6 +3875,12 @@ pub struct GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub tier: std::option::Option<crate::model::Tier>,
 }
+impl GlacierJobParameters {
+    /// <p>Retrieval tier at which the restore will be processed.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
+    }
+}
 impl std::fmt::Debug for GlacierJobParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlacierJobParameters");
@@ -3520,6 +3962,52 @@ pub struct PublicAccessBlockConfiguration {
     /// public and cross-account access within any public bucket policy, including non-public
     /// delegation to specific accounts, is blocked.</p>
     pub restrict_public_buckets: bool,
+}
+impl PublicAccessBlockConfiguration {
+    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket
+    /// and objects in this bucket. Setting this element to <code>TRUE</code> causes the following
+    /// behavior:</p>
+    /// <ul>
+    /// <li>
+    /// <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is
+    /// public.</p>
+    /// </li>
+    /// <li>
+    /// <p>PUT Object calls fail if the request includes a public ACL.</p>
+    /// </li>
+    /// <li>
+    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
+    pub fn block_public_acls(&self) -> bool {
+        self.block_public_acls
+    }
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
+    /// bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on
+    /// this bucket and objects in this bucket.</p>
+    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
+    /// prevent new public ACLs from being set.</p>
+    pub fn ignore_public_acls(&self) -> bool {
+        self.ignore_public_acls
+    }
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this
+    /// element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the
+    /// specified bucket policy allows public access. </p>
+    /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
+    pub fn block_public_policy(&self) -> bool {
+        self.block_public_policy
+    }
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
+    /// this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service
+    /// principals and authorized users within this account if the bucket has a public
+    /// policy.</p>
+    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
+    /// public and cross-account access within any public bucket policy, including non-public
+    /// delegation to specific accounts, is blocked.</p>
+    pub fn restrict_public_buckets(&self) -> bool {
+        self.restrict_public_buckets
+    }
 }
 impl std::fmt::Debug for PublicAccessBlockConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3666,6 +4154,16 @@ pub struct ObjectLockRetention {
     /// <p>The date on which this Object Lock Retention will expire.</p>
     pub retain_until_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ObjectLockRetention {
+    /// <p>Indicates the Retention mode for the specified object.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ObjectLockRetentionMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The date on which this Object Lock Retention will expire.</p>
+    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.retain_until_date.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectLockRetention {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectLockRetention");
@@ -3795,6 +4293,21 @@ pub struct ObjectLockConfiguration {
     /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub rule: std::option::Option<crate::model::ObjectLockRule>,
 }
+impl ObjectLockConfiguration {
+    /// <p>Indicates whether this bucket has an Object Lock configuration enabled.
+    /// Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code>
+    /// to a bucket. </p>
+    pub fn object_lock_enabled(&self) -> std::option::Option<&crate::model::ObjectLockEnabled> {
+        self.object_lock_enabled.as_ref()
+    }
+    /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply
+    /// <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period.
+    /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
+    /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::ObjectLockRule> {
+        self.rule.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectLockConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectLockConfiguration");
@@ -3875,6 +4388,15 @@ pub struct ObjectLockRule {
     /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub default_retention: std::option::Option<crate::model::DefaultRetention>,
 }
+impl ObjectLockRule {
+    /// <p>The default Object Lock retention mode and period that you want to apply to new objects
+    /// placed in the specified bucket. Bucket settings require both a mode and a period.
+    /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
+    /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    pub fn default_retention(&self) -> std::option::Option<&crate::model::DefaultRetention> {
+        self.default_retention.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectLockRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectLockRule");
@@ -3952,6 +4474,23 @@ pub struct DefaultRetention {
     /// <p>The number of years that you want to specify for the default retention period. Must be
     /// used with <code>Mode</code>.</p>
     pub years: i32,
+}
+impl DefaultRetention {
+    /// <p>The default Object Lock retention mode you want to apply to new objects placed in the
+    /// specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ObjectLockRetentionMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The number of days that you want to specify for the default retention period. Must be
+    /// used with <code>Mode</code>.</p>
+    pub fn days(&self) -> i32 {
+        self.days
+    }
+    /// <p>The number of years that you want to specify for the default retention period. Must be
+    /// used with <code>Mode</code>.</p>
+    pub fn years(&self) -> i32 {
+        self.years
+    }
 }
 impl std::fmt::Debug for DefaultRetention {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4087,6 +4626,12 @@ pub struct ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a Legal Hold in place.</p>
     pub status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
 }
+impl ObjectLockLegalHold {
+    /// <p>Indicates whether the specified object has a Legal Hold in place.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectLockLegalHold {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectLockLegalHold");
@@ -4139,6 +4684,16 @@ pub struct AccessControlPolicy {
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>Container for the bucket owner's display name and ID.</p>
     pub owner: std::option::Option<crate::model::Owner>,
+}
+impl AccessControlPolicy {
+    /// <p>A list of grants.</p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
+        self.grants.as_deref()
+    }
+    /// <p>Container for the bucket owner's display name and ID.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+        self.owner.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessControlPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4212,6 +4767,16 @@ pub struct Owner {
     /// <p>Container for the ID of the owner.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl Owner {
+    /// <p>Container for the display name of the owner.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>Container for the ID of the owner.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for Owner {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Owner");
@@ -4281,6 +4846,29 @@ pub struct WebsiteConfiguration {
     pub redirect_all_requests_to: std::option::Option<crate::model::RedirectAllRequestsTo>,
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     pub routing_rules: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
+}
+impl WebsiteConfiguration {
+    /// <p>The name of the error document for the website.</p>
+    pub fn error_document(&self) -> std::option::Option<&crate::model::ErrorDocument> {
+        self.error_document.as_ref()
+    }
+    /// <p>The name of the index document for the website.</p>
+    pub fn index_document(&self) -> std::option::Option<&crate::model::IndexDocument> {
+        self.index_document.as_ref()
+    }
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p>
+    /// <important>
+    /// <p>If you specify this property, you can't specify any other property.</p>
+    /// </important>
+    pub fn redirect_all_requests_to(
+        &self,
+    ) -> std::option::Option<&crate::model::RedirectAllRequestsTo> {
+        self.redirect_all_requests_to.as_ref()
+    }
+    /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
+    pub fn routing_rules(&self) -> std::option::Option<&[crate::model::RoutingRule]> {
+        self.routing_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for WebsiteConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4406,6 +4994,21 @@ pub struct RoutingRule {
     /// different error code to return.</p>
     pub redirect: std::option::Option<crate::model::Redirect>,
 }
+impl RoutingRule {
+    /// <p>A container for describing a condition that must be met for the specified redirect to
+    /// apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect
+    /// to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect
+    /// request to another host where you might process the error.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+        self.condition.as_ref()
+    }
+    /// <p>Container for redirect information. You can redirect requests to another host, to
+    /// another page, or with another protocol. In the event of an error, you can specify a
+    /// different error code to return.</p>
+    pub fn redirect(&self) -> std::option::Option<&crate::model::Redirect> {
+        self.redirect.as_ref()
+    }
+}
 impl std::fmt::Debug for RoutingRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoutingRule");
@@ -4507,6 +5110,47 @@ pub struct Redirect {
     /// XML related object key constraints</a>.</p>
     /// </important>
     pub replace_key_with: std::option::Option<std::string::String>,
+}
+impl Redirect {
+    /// <p>The host name to use in the redirect request.</p>
+    pub fn host_name(&self) -> std::option::Option<&str> {
+        self.host_name.as_deref()
+    }
+    /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is
+    /// present.</p>
+    pub fn http_redirect_code(&self) -> std::option::Option<&str> {
+        self.http_redirect_code.as_deref()
+    }
+    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
+    /// the original request.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The object key prefix to use in the redirect request. For example, to redirect requests
+    /// for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to
+    /// <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code>
+    /// set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to
+    /// <code>/documents</code>. Not required if one of the siblings is present. Can be present
+    /// only if <code>ReplaceKeyWith</code> is not provided.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn replace_key_prefix_with(&self) -> std::option::Option<&str> {
+        self.replace_key_prefix_with.as_deref()
+    }
+    /// <p>The specific object key to use in the redirect request. For example, redirect request to
+    /// <code>error.html</code>. Not required if one of the siblings is present. Can be present
+    /// only if <code>ReplaceKeyPrefixWith</code> is not provided.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn replace_key_with(&self) -> std::option::Option<&str> {
+        self.replace_key_with.as_deref()
+    }
 }
 impl std::fmt::Debug for Redirect {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4731,6 +5375,32 @@ pub struct Condition {
     /// </important>
     pub key_prefix_equals: std::option::Option<std::string::String>,
 }
+impl Condition {
+    /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error
+    /// code equals this value, then the specified redirect is applied. Required when parent
+    /// element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not
+    /// specified. If both are specified, then both must be true for the redirect to be
+    /// applied.</p>
+    pub fn http_error_code_returned_equals(&self) -> std::option::Option<&str> {
+        self.http_error_code_returned_equals.as_deref()
+    }
+    /// <p>The object key name prefix when the redirect is applied. For example, to redirect
+    /// requests for <code>ExamplePage.html</code>, the key prefix will be
+    /// <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
+    /// <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all
+    /// objects in the <code>docs/</code> folder. Required when the parent element
+    /// <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code>
+    /// is not specified. If both conditions are specified, both must be true for the redirect to
+    /// be applied.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn key_prefix_equals(&self) -> std::option::Option<&str> {
+        self.key_prefix_equals.as_deref()
+    }
+}
 impl std::fmt::Debug for Condition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Condition");
@@ -4840,6 +5510,17 @@ pub struct RedirectAllRequestsTo {
     /// the original request.</p>
     pub protocol: std::option::Option<crate::model::Protocol>,
 }
+impl RedirectAllRequestsTo {
+    /// <p>Name of the host where requests are redirected.</p>
+    pub fn host_name(&self) -> std::option::Option<&str> {
+        self.host_name.as_deref()
+    }
+    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
+    /// the original request.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+}
 impl std::fmt::Debug for RedirectAllRequestsTo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedirectAllRequestsTo");
@@ -4911,6 +5592,20 @@ pub struct IndexDocument {
     /// </important>
     pub suffix: std::option::Option<std::string::String>,
 }
+impl IndexDocument {
+    /// <p>A suffix that is appended to a request that is for a directory on the website endpoint
+    /// (for example,if the suffix is index.html and you make a request to samplebucket/images/ the
+    /// data that is returned will be for the object with the key name images/index.html) The
+    /// suffix must not be empty and must not include a slash character.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn suffix(&self) -> std::option::Option<&str> {
+        self.suffix.as_deref()
+    }
+}
 impl std::fmt::Debug for IndexDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IndexDocument");
@@ -4980,6 +5675,17 @@ pub struct ErrorDocument {
     /// </important>
     pub key: std::option::Option<std::string::String>,
 }
+impl ErrorDocument {
+    /// <p>The object key name to use when a 4XX class error occurs.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorDocument");
@@ -5040,6 +5746,18 @@ pub struct VersioningConfiguration {
     pub mfa_delete: std::option::Option<crate::model::MfaDelete>,
     /// <p>The versioning state of the bucket.</p>
     pub status: std::option::Option<crate::model::BucketVersioningStatus>,
+}
+impl VersioningConfiguration {
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
+    /// element is only returned if the bucket has been configured with MFA delete. If the bucket
+    /// has never been so configured, this element is not returned.</p>
+    pub fn mfa_delete(&self) -> std::option::Option<&crate::model::MfaDelete> {
+        self.mfa_delete.as_ref()
+    }
+    /// <p>The versioning state of the bucket.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::BucketVersioningStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for VersioningConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5222,6 +5940,12 @@ pub struct RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
     pub payer: std::option::Option<crate::model::Payer>,
 }
+impl RequestPaymentConfiguration {
+    /// <p>Specifies who pays for the download and request fees.</p>
+    pub fn payer(&self) -> std::option::Option<&crate::model::Payer> {
+        self.payer.as_ref()
+    }
+}
 impl std::fmt::Debug for RequestPaymentConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestPaymentConfiguration");
@@ -5328,6 +6052,19 @@ pub struct ReplicationConfiguration {
     /// <p>A container for one or more replication rules. A replication configuration must have at
     /// least one rule and can contain a maximum of 1,000 rules. </p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
+}
+impl ReplicationConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+    /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
+    /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>A container for one or more replication rules. A replication configuration must have at
+    /// least one rule and can contain a maximum of 1,000 rules. </p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ReplicationRule]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for ReplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5451,6 +6188,81 @@ pub struct ReplicationRule {
     /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
     /// </note>
     pub delete_marker_replication: std::option::Option<crate::model::DeleteMarkerReplication>,
+}
+impl ReplicationRule {
+    /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The priority indicates which rule has precedence whenever two or more replication rules
+    /// conflict. Amazon S3 will attempt to replicate objects according to all replication rules.
+    /// However, if there are two or more rules with the same destination bucket, then objects will
+    /// be replicated according to the rule with the highest priority. The higher the number, the
+    /// higher the priority. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>An object key name prefix that identifies the object or objects to which the rule
+    /// applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket,
+    /// specify an empty string. </p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>A filter that identifies the subset of objects to which the replication rule applies. A
+    /// <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or
+    /// an <code>And</code> child element.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ReplicationRuleFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Specifies whether the rule is enabled.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReplicationRuleStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A container that describes additional filters for identifying the source objects that
+    /// you want to replicate. You can choose to enable or disable the replication of these
+    /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
+    /// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
+    /// Service (SSE-KMS).</p>
+    pub fn source_selection_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceSelectionCriteria> {
+        self.source_selection_criteria.as_ref()
+    }
+    /// <p></p>
+    pub fn existing_object_replication(
+        &self,
+    ) -> std::option::Option<&crate::model::ExistingObjectReplication> {
+        self.existing_object_replication.as_ref()
+    }
+    /// <p>A container for information about the replication destination and its configurations
+    /// including enabling the S3 Replication Time Control (S3 RTC).</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code>
+    /// in your replication configuration, you must also include a
+    /// <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a
+    /// <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
+    /// <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating
+    /// delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
+    /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule
+    /// Configuration</a>. </p>
+    /// <note>
+    /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles
+    /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
+    /// </note>
+    pub fn delete_marker_replication(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteMarkerReplication> {
+        self.delete_marker_replication.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicationRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5713,6 +6525,15 @@ pub struct DeleteMarkerReplication {
     /// </note>
     pub status: std::option::Option<crate::model::DeleteMarkerReplicationStatus>,
 }
+impl DeleteMarkerReplication {
+    /// <p>Indicates whether to replicate delete markers.</p>
+    /// <note>
+    /// <p>Indicates whether to replicate delete markers.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&crate::model::DeleteMarkerReplicationStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteMarkerReplication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMarkerReplication");
@@ -5852,6 +6673,55 @@ pub struct Destination {
     /// <p> A container specifying replication metrics-related settings enabling replication
     /// metrics and events. </p>
     pub metrics: std::option::Option<crate::model::Metrics>,
+}
+impl Destination {
+    /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
+    /// change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying
+    /// the <code>AccessControlTranslation</code> property, this is the account ID of the
+    /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
+    /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced
+    /// redundancy. By default, Amazon S3 uses the storage class of the source object to create the
+    /// object replica. </p>
+    /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket
+    /// replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p>Specify this only in a cross-account scenario (where source and destination bucket
+    /// owners are not the same), and you want to change replica ownership to the Amazon Web Services account that
+    /// owns the destination bucket. If this is not specified in the replication configuration, the
+    /// replicas are owned by same Amazon Web Services account that owns the source object.</p>
+    pub fn access_control_translation(
+        &self,
+    ) -> std::option::Option<&crate::model::AccessControlTranslation> {
+        self.access_control_translation.as_ref()
+    }
+    /// <p>A container that provides information about encryption. If
+    /// <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time
+    /// when all objects and operations on objects must be replicated. Must be specified together
+    /// with a <code>Metrics</code> block. </p>
+    pub fn replication_time(&self) -> std::option::Option<&crate::model::ReplicationTime> {
+        self.replication_time.as_ref()
+    }
+    /// <p> A container specifying replication metrics-related settings enabling replication
+    /// metrics and events. </p>
+    pub fn metrics(&self) -> std::option::Option<&crate::model::Metrics> {
+        self.metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6036,6 +6906,17 @@ pub struct Metrics {
     /// <code>s3:Replication:OperationMissedThreshold</code> event. </p>
     pub event_threshold: std::option::Option<crate::model::ReplicationTimeValue>,
 }
+impl Metrics {
+    /// <p> Specifies whether the replication metrics are enabled. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MetricsStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A container specifying the time threshold for emitting the
+    /// <code>s3:Replication:OperationMissedThreshold</code> event. </p>
+    pub fn event_threshold(&self) -> std::option::Option<&crate::model::ReplicationTimeValue> {
+        self.event_threshold.as_ref()
+    }
+}
 impl std::fmt::Debug for Metrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Metrics");
@@ -6106,6 +6987,13 @@ pub struct ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
     pub minutes: i32,
+}
+impl ReplicationTimeValue {
+    /// <p> Contains an integer specifying time in minutes. </p>
+    /// <p> Valid value: 15</p>
+    pub fn minutes(&self) -> i32 {
+        self.minutes
+    }
 }
 impl std::fmt::Debug for ReplicationTimeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6216,6 +7104,17 @@ pub struct ReplicationTime {
     /// <p> A container specifying the time by which replication should be complete for all objects
     /// and operations on objects. </p>
     pub time: std::option::Option<crate::model::ReplicationTimeValue>,
+}
+impl ReplicationTime {
+    /// <p> Specifies whether the replication time is enabled. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReplicationTimeStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A container specifying the time by which replication should be complete for all objects
+    /// and operations on objects. </p>
+    pub fn time(&self) -> std::option::Option<&crate::model::ReplicationTimeValue> {
+        self.time.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicationTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6346,6 +7245,16 @@ pub struct EncryptionConfiguration {
     /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub replica_kms_key_id: std::option::Option<std::string::String>,
 }
+impl EncryptionConfiguration {
+    /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key
+    /// stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses
+    /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
+    /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    pub fn replica_kms_key_id(&self) -> std::option::Option<&str> {
+        self.replica_kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionConfiguration");
@@ -6405,6 +7314,13 @@ pub struct AccessControlTranslation {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket
     /// replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub owner: std::option::Option<crate::model::OwnerOverride>,
+}
+impl AccessControlTranslation {
+    /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket
+    /// replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::OwnerOverride> {
+        self.owner.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessControlTranslation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6509,6 +7425,12 @@ impl AsRef<str> for OwnerOverride {
 pub struct ExistingObjectReplication {
     /// <p></p>
     pub status: std::option::Option<crate::model::ExistingObjectReplicationStatus>,
+}
+impl ExistingObjectReplication {
+    /// <p></p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExistingObjectReplicationStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ExistingObjectReplication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6632,6 +7554,30 @@ pub struct SourceSelectionCriteria {
     /// </note>
     pub replica_modifications: std::option::Option<crate::model::ReplicaModifications>,
 }
+impl SourceSelectionCriteria {
+    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services
+    /// KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration,
+    /// this element is required. </p>
+    pub fn sse_kms_encrypted_objects(
+        &self,
+    ) -> std::option::Option<&crate::model::SseKmsEncryptedObjects> {
+        self.sse_kms_encrypted_objects.as_ref()
+    }
+    /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't
+    /// replicate replica modifications by default. In the latest version of replication
+    /// configuration (when <code>Filter</code> is specified), you can specify this element and set
+    /// the status to <code>Enabled</code> to replicate modifications on replicas. </p>
+    /// <note>
+    /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the
+    /// replication configuration is the earlier version, V1. In the earlier version, this
+    /// element is not allowed</p>
+    /// </note>
+    pub fn replica_modifications(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicaModifications> {
+        self.replica_modifications.as_ref()
+    }
+}
 impl std::fmt::Debug for SourceSelectionCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceSelectionCriteria");
@@ -6730,6 +7676,12 @@ impl SourceSelectionCriteria {
 pub struct ReplicaModifications {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
     pub status: std::option::Option<crate::model::ReplicaModificationsStatus>,
+}
+impl ReplicaModifications {
+    /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReplicaModificationsStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicaModifications {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6838,6 +7790,13 @@ pub struct SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
     /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     pub status: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
+}
+impl SseKmsEncryptedObjects {
+    /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
+    /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SseKmsEncryptedObjectsStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for SseKmsEncryptedObjects {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7026,6 +7985,15 @@ pub enum ReplicationRuleFilter {
     /// <p>A container for specifying a tag key and value. </p>
     /// <p>The rule applies only to objects that have the tag in their tag set.</p>
     Tag(crate::model::Tag),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ReplicationRuleFilter {
     /// Tries to convert the enum instance into [`And`](crate::model::ReplicationRuleFilter::And), extracting the inner [`ReplicationRuleAndOperator`](crate::model::ReplicationRuleAndOperator).
@@ -7067,6 +8035,10 @@ impl ReplicationRuleFilter {
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A container for specifying rule filters. The filters determine the subset of objects to
@@ -7090,6 +8062,17 @@ pub struct ReplicationRuleAndOperator {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>An array of tags containing key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ReplicationRuleAndOperator {
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule
+    /// applies.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>An array of tags containing key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ReplicationRuleAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7163,6 +8146,12 @@ pub struct OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::OwnershipControlsRule>>,
 }
+impl OwnershipControls {
+    /// <p>The container element for an ownership control rule.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::OwnershipControlsRule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for OwnershipControls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OwnershipControls");
@@ -7222,6 +8211,17 @@ pub struct OwnershipControlsRule {
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
     /// the <code>bucket-owner-full-control</code> canned ACL.</p>
     pub object_ownership: std::option::Option<crate::model::ObjectOwnership>,
+}
+impl OwnershipControlsRule {
+    /// <p>The container element for object ownership for a bucket's ownership controls.</p>
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
+    /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
+    /// ACL.</p>
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
+    /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+    pub fn object_ownership(&self) -> std::option::Option<&crate::model::ObjectOwnership> {
+        self.object_ownership.as_ref()
+    }
 }
 impl std::fmt::Debug for OwnershipControlsRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7352,6 +8352,25 @@ pub struct NotificationConfiguration {
     /// them.</p>
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
+}
+impl NotificationConfiguration {
+    /// <p>The topic to which notifications are sent and the events for which notifications are
+    /// generated.</p>
+    pub fn topic_configurations(&self) -> std::option::Option<&[crate::model::TopicConfiguration]> {
+        self.topic_configurations.as_deref()
+    }
+    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
+    /// to publish messages.</p>
+    pub fn queue_configurations(&self) -> std::option::Option<&[crate::model::QueueConfiguration]> {
+        self.queue_configurations.as_deref()
+    }
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke
+    /// them.</p>
+    pub fn lambda_function_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LambdaFunctionConfiguration]> {
+        self.lambda_function_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for NotificationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7487,6 +8506,30 @@ pub struct LambdaFunctionConfiguration {
     /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
+impl LambdaFunctionConfiguration {
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you
+    /// don't provide one, Amazon S3 will assign an ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the
+    /// specified event type occurs.</p>
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+        self.lambda_function_arn.as_deref()
+    }
+    /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+    /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for LambdaFunctionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionConfiguration");
@@ -7603,6 +8646,12 @@ pub struct NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
     pub key: std::option::Option<crate::model::S3KeyFilter>,
 }
+impl NotificationConfigurationFilter {
+    /// <p>A container for object key name prefix and suffix filtering rules.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::S3KeyFilter> {
+        self.key.as_ref()
+    }
+}
 impl std::fmt::Debug for NotificationConfigurationFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationConfigurationFilter");
@@ -7649,6 +8698,13 @@ pub struct S3KeyFilter {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter
     /// rule.</p>
     pub filter_rules: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+}
+impl S3KeyFilter {
+    /// <p>A list of containers for the key-value pair that defines the criteria for the filter
+    /// rule.</p>
+    pub fn filter_rules(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.filter_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for S3KeyFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7714,6 +8770,19 @@ pub struct FilterRule {
     pub name: std::option::Option<crate::model::FilterRuleName>,
     /// <p>The value that the filter searches for in object key names.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl FilterRule {
+    /// <p>The object key name prefix or suffix identifying one or more objects to which the
+    /// filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and
+    /// suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a>
+    /// in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::FilterRuleName> {
+        self.name.as_ref()
+    }
+    /// <p>The value that the filter searches for in object key names.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for FilterRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7900,6 +8969,28 @@ pub struct QueueConfiguration {
     /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
+impl QueueConfiguration {
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you
+    /// don't provide one, Amazon S3 will assign an ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message
+    /// when it detects events of the specified type.</p>
+    pub fn queue_arn(&self) -> std::option::Option<&str> {
+        self.queue_arn.as_deref()
+    }
+    /// <p>A collection of bucket events for which to send notifications</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for QueueConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueueConfiguration");
@@ -8020,6 +9111,30 @@ pub struct TopicConfiguration {
     /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
+impl TopicConfiguration {
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you
+    /// don't provide one, Amazon S3 will assign an ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message
+    /// when it detects events of the specified type.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+    /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for TopicConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TopicConfiguration");
@@ -8139,6 +9254,18 @@ pub struct MetricsConfiguration {
     /// (MetricsAndOperator).</p>
     pub filter: std::option::Option<crate::model::MetricsFilter>,
 }
+impl MetricsConfiguration {
+    /// <p>The ID used to identify the metrics configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
+    /// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
+    /// (MetricsAndOperator).</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::MetricsFilter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricsConfiguration");
@@ -8216,6 +9343,15 @@ pub enum MetricsFilter {
     Prefix(std::string::String),
     /// <p>The tag used when evaluating a metrics filter.</p>
     Tag(crate::model::Tag),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl MetricsFilter {
     /// Tries to convert the enum instance into [`AccessPointArn`](crate::model::MetricsFilter::AccessPointArn), extracting the inner [`String`](std::string::String).
@@ -8270,6 +9406,10 @@ impl MetricsFilter {
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
@@ -8284,6 +9424,20 @@ pub struct MetricsAndOperator {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The access point ARN used when evaluating an AND predicate.</p>
     pub access_point_arn: std::option::Option<std::string::String>,
+}
+impl MetricsAndOperator {
+    /// <p>The prefix used when evaluating an AND predicate.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The list of tags used when evaluating an AND predicate.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The access point ARN used when evaluating an AND predicate.</p>
+    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+        self.access_point_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricsAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8373,6 +9527,14 @@ pub struct BucketLoggingStatus {
     /// <i>Amazon S3 API Reference</i>.</p>
     pub logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
 }
+impl BucketLoggingStatus {
+    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
+    /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
+    /// <i>Amazon S3 API Reference</i>.</p>
+    pub fn logging_enabled(&self) -> std::option::Option<&crate::model::LoggingEnabled> {
+        self.logging_enabled.as_ref()
+    }
+}
 impl std::fmt::Debug for BucketLoggingStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketLoggingStatus");
@@ -8439,6 +9601,26 @@ pub struct LoggingEnabled {
     /// single bucket, you can use a prefix to distinguish which log files came from which
     /// bucket.</p>
     pub target_prefix: std::option::Option<std::string::String>,
+}
+impl LoggingEnabled {
+    /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your
+    /// logs delivered to any bucket that you own, including the same bucket that is being logged.
+    /// You can also configure multiple buckets to deliver their logs to the same target bucket. In
+    /// this case, you should choose a different <code>TargetPrefix</code> for each source bucket
+    /// so that the delivered log files can be distinguished by key.</p>
+    pub fn target_bucket(&self) -> std::option::Option<&str> {
+        self.target_bucket.as_deref()
+    }
+    /// <p>Container for granting information.</p>
+    pub fn target_grants(&self) -> std::option::Option<&[crate::model::TargetGrant]> {
+        self.target_grants.as_deref()
+    }
+    /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a
+    /// single bucket, you can use a prefix to distinguish which log files came from which
+    /// bucket.</p>
+    pub fn target_prefix(&self) -> std::option::Option<&str> {
+        self.target_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for LoggingEnabled {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8542,6 +9724,16 @@ pub struct TargetGrant {
     pub grantee: std::option::Option<crate::model::Grantee>,
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
     pub permission: std::option::Option<crate::model::BucketLogsPermission>,
+}
+impl TargetGrant {
+    /// <p>Container for the person being granted permissions.</p>
+    pub fn grantee(&self) -> std::option::Option<&crate::model::Grantee> {
+        self.grantee.as_ref()
+    }
+    /// <p>Logging permissions assigned to the grantee for the bucket.</p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::BucketLogsPermission> {
+        self.permission.as_ref()
+    }
 }
 impl std::fmt::Debug for TargetGrant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8668,6 +9860,12 @@ pub struct BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
 }
+impl BucketLifecycleConfiguration {
+    /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::LifecycleRule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for BucketLifecycleConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketLifecycleConfiguration");
@@ -8762,6 +9960,71 @@ pub struct LifecycleRule {
     /// <i>Amazon S3 User Guide</i>.</p>
     pub abort_incomplete_multipart_upload:
         std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
+}
+impl LifecycleRule {
+    /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and,
+    /// whether the object has a delete marker.</p>
+    pub fn expiration(&self) -> std::option::Option<&crate::model::LifecycleExpiration> {
+        self.expiration.as_ref()
+    }
+    /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is
+    /// no longer used; use <code>Filter</code> instead.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A
+    /// <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or
+    /// <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code>
+    /// does not containt a <code>Prefix</code> element.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::LifecycleRuleFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not
+    /// currently being applied.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExpirationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
+    pub fn transitions(&self) -> std::option::Option<&[crate::model::Transition]> {
+        self.transitions.as_deref()
+    }
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent
+    /// objects transition to a specific storage class. If your bucket is versioning-enabled (or
+    /// versioning is suspended), you can set this action to request that Amazon S3 transition
+    /// noncurrent object versions to a specific storage class at a set period in the object's
+    /// lifetime. </p>
+    pub fn noncurrent_version_transitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::NoncurrentVersionTransition]> {
+        self.noncurrent_version_transitions.as_deref()
+    }
+    /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently
+    /// deletes the noncurrent object versions. You set this lifecycle configuration action on a
+    /// bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent
+    /// object versions at a specific period in the object's lifetime.</p>
+    pub fn noncurrent_version_expiration(
+        &self,
+    ) -> std::option::Option<&crate::model::NoncurrentVersionExpiration> {
+        self.noncurrent_version_expiration.as_ref()
+    }
+    /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will
+    /// wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
+    /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn abort_incomplete_multipart_upload(
+        &self,
+    ) -> std::option::Option<&crate::model::AbortIncompleteMultipartUpload> {
+        self.abort_incomplete_multipart_upload.as_ref()
+    }
 }
 impl std::fmt::Debug for LifecycleRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9015,6 +10278,13 @@ pub struct AbortIncompleteMultipartUpload {
     /// upload.</p>
     pub days_after_initiation: i32,
 }
+impl AbortIncompleteMultipartUpload {
+    /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart
+    /// upload.</p>
+    pub fn days_after_initiation(&self) -> i32 {
+        self.days_after_initiation
+    }
+}
 impl std::fmt::Debug for AbortIncompleteMultipartUpload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AbortIncompleteMultipartUpload");
@@ -9069,6 +10339,14 @@ pub struct NoncurrentVersionExpiration {
     /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
     /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub noncurrent_days: i32,
+}
+impl NoncurrentVersionExpiration {
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
+    /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
+    /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn noncurrent_days(&self) -> i32 {
+        self.noncurrent_days
+    }
 }
 impl std::fmt::Debug for NoncurrentVersionExpiration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9133,6 +10411,19 @@ pub struct NoncurrentVersionTransition {
     pub noncurrent_days: i32,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
+}
+impl NoncurrentVersionTransition {
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
+    /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
+    /// Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn noncurrent_days(&self) -> i32 {
+        self.noncurrent_days
+    }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
+        self.storage_class.as_ref()
+    }
 }
 impl std::fmt::Debug for NoncurrentVersionTransition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9285,6 +10576,22 @@ pub struct Transition {
     /// <p>The storage class to which you want the object to transition.</p>
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
 }
+impl Transition {
+    /// <p>Indicates when objects are transitioned to the specified storage class. The date value
+    /// must be in ISO 8601 format. The time is always midnight UTC.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>Indicates the number of days after creation when objects are transitioned to the
+    /// specified storage class. The value must be a positive integer.</p>
+    pub fn days(&self) -> i32 {
+        self.days
+    }
+    /// <p>The storage class to which you want the object to transition.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
+        self.storage_class.as_ref()
+    }
+}
 impl std::fmt::Debug for Transition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Transition");
@@ -9433,6 +10740,15 @@ pub enum LifecycleRuleFilter {
     Prefix(std::string::String),
     /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
     Tag(crate::model::Tag),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl LifecycleRuleFilter {
     /// Tries to convert the enum instance into [`And`](crate::model::LifecycleRuleFilter::And), extracting the inner [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
@@ -9474,6 +10790,10 @@ impl LifecycleRuleFilter {
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more
@@ -9487,6 +10807,17 @@ pub struct LifecycleRuleAndOperator {
     /// <p>All of these tags must exist in the object's tag set in order for the rule to
     /// apply.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl LifecycleRuleAndOperator {
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>All of these tags must exist in the object's tag set in order for the rule to
+    /// apply.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for LifecycleRuleAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9567,6 +10898,24 @@ pub struct LifecycleExpiration {
     /// to true, the delete marker will be expired; if set to false the policy takes no action.
     /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub expired_object_delete_marker: bool,
+}
+impl LifecycleExpiration {
+    /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
+    /// Format.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
+    /// must be a non-zero positive integer.</p>
+    pub fn days(&self) -> i32 {
+        self.days
+    }
+    /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
+    /// to true, the delete marker will be expired; if set to false the policy takes no action.
+    /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+    pub fn expired_object_delete_marker(&self) -> bool {
+        self.expired_object_delete_marker
+    }
 }
 impl std::fmt::Debug for LifecycleExpiration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9677,6 +11026,45 @@ pub struct InventoryConfiguration {
     pub optional_fields: std::option::Option<std::vec::Vec<crate::model::InventoryOptionalField>>,
     /// <p>Specifies the schedule for generating inventory results.</p>
     pub schedule: std::option::Option<crate::model::InventorySchedule>,
+}
+impl InventoryConfiguration {
+    /// <p>Contains information about where to publish the inventory results.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::InventoryDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an
+    /// inventory list is generated. If set to <code>False</code>, no inventory list is
+    /// generated.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+    /// <p>Specifies an inventory filter. The inventory only includes objects that meet the
+    /// filter's criteria.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::InventoryFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The ID used to identify the inventory configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list
+    /// includes all the object versions, which adds the version-related fields
+    /// <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the
+    /// list. If set to <code>Current</code>, the list does not contain these version-related
+    /// fields.</p>
+    pub fn included_object_versions(
+        &self,
+    ) -> std::option::Option<&crate::model::InventoryIncludedObjectVersions> {
+        self.included_object_versions.as_ref()
+    }
+    /// <p>Contains the optional fields that are included in the inventory results.</p>
+    pub fn optional_fields(&self) -> std::option::Option<&[crate::model::InventoryOptionalField]> {
+        self.optional_fields.as_deref()
+    }
+    /// <p>Specifies the schedule for generating inventory results.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::InventorySchedule> {
+        self.schedule.as_ref()
+    }
 }
 impl std::fmt::Debug for InventoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9846,6 +11234,12 @@ impl InventoryConfiguration {
 pub struct InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
     pub frequency: std::option::Option<crate::model::InventoryFrequency>,
+}
+impl InventorySchedule {
+    /// <p>Specifies how frequently inventory results are produced.</p>
+    pub fn frequency(&self) -> std::option::Option<&crate::model::InventoryFrequency> {
+        self.frequency.as_ref()
+    }
 }
 impl std::fmt::Debug for InventorySchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10117,6 +11511,12 @@ pub struct InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     pub prefix: std::option::Option<std::string::String>,
 }
+impl InventoryFilter {
+    /// <p>The prefix that an object must have to be included in the inventory results.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for InventoryFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InventoryFilter");
@@ -10165,6 +11565,15 @@ pub struct InventoryDestination {
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional)
     /// where inventory results are published.</p>
     pub s3_bucket_destination: std::option::Option<crate::model::InventoryS3BucketDestination>,
+}
+impl InventoryDestination {
+    /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional)
+    /// where inventory results are published.</p>
+    pub fn s3_bucket_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::InventoryS3BucketDestination> {
+        self.s3_bucket_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for InventoryDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10238,6 +11647,35 @@ pub struct InventoryS3BucketDestination {
     /// <p>Contains the type of server-side encryption used to encrypt the inventory
     /// results.</p>
     pub encryption: std::option::Option<crate::model::InventoryEncryption>,
+}
+impl InventoryS3BucketDestination {
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
+    /// owner is not validated before exporting data. </p>
+    /// <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help
+    /// prevent problems if the destination bucket ownership changes. </p>
+    /// </note>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be
+    /// published.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Specifies the output format of the inventory results.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::InventoryFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The prefix that is prepended to all inventory results.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>Contains the type of server-side encryption used to encrypt the inventory
+    /// results.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::InventoryEncryption> {
+        self.encryption.as_ref()
+    }
 }
 impl std::fmt::Debug for InventoryS3BucketDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10362,6 +11800,16 @@ pub struct InventoryEncryption {
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
     pub ssekms: std::option::Option<crate::model::Ssekms>,
 }
+impl InventoryEncryption {
+    /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
+    pub fn sses3(&self) -> std::option::Option<&crate::model::Sses3> {
+        self.sses3.as_ref()
+    }
+    /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
+    pub fn ssekms(&self) -> std::option::Option<&crate::model::Ssekms> {
+        self.ssekms.as_ref()
+    }
+}
 impl std::fmt::Debug for InventoryEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InventoryEncryption");
@@ -10423,6 +11871,13 @@ pub struct Ssekms {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
     /// to use for encrypting inventory reports.</p>
     pub key_id: std::option::Option<std::string::String>,
+}
+impl Ssekms {
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
+    /// to use for encrypting inventory reports.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Ssekms {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10572,6 +12027,25 @@ pub struct IntelligentTieringConfiguration {
     /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
     pub tierings: std::option::Option<std::vec::Vec<crate::model::Tiering>>,
 }
+impl IntelligentTieringConfiguration {
+    /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies a bucket filter. The configuration only includes objects that meet the
+    /// filter's criteria.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::IntelligentTieringFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Specifies the status of the configuration.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IntelligentTieringStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
+    pub fn tierings(&self) -> std::option::Option<&[crate::model::Tiering]> {
+        self.tierings.as_deref()
+    }
+}
 impl std::fmt::Debug for IntelligentTieringConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntelligentTieringConfiguration");
@@ -10684,6 +12158,21 @@ pub struct Tiering {
     /// automatically optimizing frequently and infrequently accessed objects</a> for a list
     /// of access tiers in the S3 Intelligent-Tiering storage class.</p>
     pub access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
+}
+impl Tiering {
+    /// <p>The number of consecutive days of no access after which an object will be eligible to be
+    /// transitioned to the corresponding tier. The minimum number of days specified for
+    /// Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least
+    /// 180 days. The maximum can be up to 2 years (730 days).</p>
+    pub fn days(&self) -> i32 {
+        self.days
+    }
+    /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for
+    /// automatically optimizing frequently and infrequently accessed objects</a> for a list
+    /// of access tiers in the S3 Intelligent-Tiering storage class.</p>
+    pub fn access_tier(&self) -> std::option::Option<&crate::model::IntelligentTieringAccessTier> {
+        self.access_tier.as_ref()
+    }
 }
 impl std::fmt::Debug for Tiering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10882,6 +12371,28 @@ pub struct IntelligentTieringFilter {
     /// predicates in order for the filter to apply.</p>
     pub and: std::option::Option<crate::model::IntelligentTieringAndOperator>,
 }
+impl IntelligentTieringFilter {
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule
+    /// applies.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>A container of a key value name pair.</p>
+    pub fn tag(&self) -> std::option::Option<&crate::model::Tag> {
+        self.tag.as_ref()
+    }
+    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
+    /// The operator must have at least two predicates, and an object must match all of the
+    /// predicates in order for the filter to apply.</p>
+    pub fn and(&self) -> std::option::Option<&crate::model::IntelligentTieringAndOperator> {
+        self.and.as_ref()
+    }
+}
 impl std::fmt::Debug for IntelligentTieringFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntelligentTieringFilter");
@@ -10980,6 +12491,18 @@ pub struct IntelligentTieringAndOperator {
     /// apply.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl IntelligentTieringAndOperator {
+    /// <p>An object key name prefix that identifies the subset of objects to which the
+    /// configuration applies.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>All of these tags must exist in the object's tag set in order for the configuration to
+    /// apply.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for IntelligentTieringAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntelligentTieringAndOperator");
@@ -11055,6 +12578,13 @@ pub struct ServerSideEncryptionConfiguration {
     /// rule.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ServerSideEncryptionRule>>,
 }
+impl ServerSideEncryptionConfiguration {
+    /// <p>Container for information about a particular server-side encryption configuration
+    /// rule.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ServerSideEncryptionRule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerSideEncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerSideEncryptionConfiguration");
@@ -11118,6 +12648,21 @@ pub struct ServerSideEncryptionRule {
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket_key_enabled: bool,
+}
+impl ServerSideEncryptionRule {
+    /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a
+    /// PUT Object request doesn't specify any server-side encryption, this default encryption will
+    /// be applied.</p>
+    pub fn apply_server_side_encryption_by_default(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionByDefault> {
+        self.apply_server_side_encryption_by_default.as_ref()
+    }
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn bucket_key_enabled(&self) -> bool {
+        self.bucket_key_enabled
+    }
 }
 impl std::fmt::Debug for ServerSideEncryptionRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11225,6 +12770,40 @@ pub struct ServerSideEncryptionByDefault {
     /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// </important>
     pub kms_master_key_id: std::option::Option<std::string::String>,
+}
+impl ServerSideEncryptionByDefault {
+    /// <p>Server-side encryption algorithm to use for the default encryption.</p>
+    pub fn sse_algorithm(&self) -> std::option::Option<&crate::model::ServerSideEncryption> {
+        self.sse_algorithm.as_ref()
+    }
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default
+    /// encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to
+    /// <code>aws:kms</code>.</p>
+    /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you
+    /// are using encryption with cross-account operations, you must use a fully qualified KMS key ARN.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
+    /// <p>
+    /// <b>For example:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Key ARN:
+    /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <important>
+    /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// </important>
+    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+        self.kms_master_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ServerSideEncryptionByDefault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11344,6 +12923,13 @@ pub struct CorsConfiguration {
     /// up to 100 rules to the configuration.</p>
     pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
+impl CorsConfiguration {
+    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
+    /// up to 100 rules to the configuration.</p>
+    pub fn cors_rules(&self) -> std::option::Option<&[crate::model::CorsRule]> {
+        self.cors_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for CorsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CorsConfiguration");
@@ -11418,6 +13004,38 @@ pub struct CorsRule {
     /// <p>The time in seconds that your browser is to cache the preflight response for the
     /// specified resource.</p>
     pub max_age_seconds: i32,
+}
+impl CorsRule {
+    /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header.
+    /// These headers are allowed in a preflight OPTIONS request. In response to any preflight
+    /// OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
+    pub fn allowed_headers(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_headers.as_deref()
+    }
+    /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>,
+    /// <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
+    pub fn allowed_methods(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_methods.as_deref()
+    }
+    /// <p>One or more origins you want customers to be able to access the bucket from.</p>
+    pub fn allowed_origins(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_origins.as_deref()
+    }
+    /// <p>One or more headers in the response that you want customers to be able to access from
+    /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
+    /// object).</p>
+    pub fn expose_headers(&self) -> std::option::Option<&[std::string::String]> {
+        self.expose_headers.as_deref()
+    }
+    /// <p>The time in seconds that your browser is to cache the preflight response for the
+    /// specified resource.</p>
+    pub fn max_age_seconds(&self) -> i32 {
+        self.max_age_seconds
+    }
 }
 impl std::fmt::Debug for CorsRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11587,6 +13205,25 @@ pub struct AnalyticsConfiguration {
     /// the tradeoffs between different storage classes. </p>
     pub storage_class_analysis: std::option::Option<crate::model::StorageClassAnalysis>,
 }
+impl AnalyticsConfiguration {
+    /// <p>The ID that identifies the analytics configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly
+    /// one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided,
+    /// all objects will be considered in any analysis.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::AnalyticsFilter> {
+        self.filter.as_ref()
+    }
+    /// <p> Contains data related to access patterns to be collected and made available to analyze
+    /// the tradeoffs between different storage classes. </p>
+    pub fn storage_class_analysis(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageClassAnalysis> {
+        self.storage_class_analysis.as_ref()
+    }
+}
 impl std::fmt::Debug for AnalyticsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyticsConfiguration");
@@ -11675,6 +13312,15 @@ pub struct StorageClassAnalysis {
     /// exported.</p>
     pub data_export: std::option::Option<crate::model::StorageClassAnalysisDataExport>,
 }
+impl StorageClassAnalysis {
+    /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be
+    /// exported.</p>
+    pub fn data_export(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageClassAnalysisDataExport> {
+        self.data_export.as_ref()
+    }
+}
 impl std::fmt::Debug for StorageClassAnalysis {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StorageClassAnalysis");
@@ -11731,6 +13377,19 @@ pub struct StorageClassAnalysisDataExport {
     pub output_schema_version: std::option::Option<crate::model::StorageClassAnalysisSchemaVersion>,
     /// <p>The place to store the data for an analysis.</p>
     pub destination: std::option::Option<crate::model::AnalyticsExportDestination>,
+}
+impl StorageClassAnalysisDataExport {
+    /// <p>The version of the output schema to use when exporting data. Must be
+    /// <code>V_1</code>.</p>
+    pub fn output_schema_version(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageClassAnalysisSchemaVersion> {
+        self.output_schema_version.as_ref()
+    }
+    /// <p>The place to store the data for an analysis.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::AnalyticsExportDestination> {
+        self.destination.as_ref()
+    }
 }
 impl std::fmt::Debug for StorageClassAnalysisDataExport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11805,6 +13464,14 @@ pub struct AnalyticsExportDestination {
     /// <p>A destination signifying output to an S3 bucket.</p>
     pub s3_bucket_destination: std::option::Option<crate::model::AnalyticsS3BucketDestination>,
 }
+impl AnalyticsExportDestination {
+    /// <p>A destination signifying output to an S3 bucket.</p>
+    pub fn s3_bucket_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::AnalyticsS3BucketDestination> {
+        self.s3_bucket_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for AnalyticsExportDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalyticsExportDestination");
@@ -11870,6 +13537,29 @@ pub struct AnalyticsS3BucketDestination {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl AnalyticsS3BucketDestination {
+    /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::AnalyticsS3ExportFileFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
+    /// owner is not validated before exporting data.</p>
+    /// <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help
+    /// prevent problems if the destination bucket ownership changes. </p>
+    /// </note>
+    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+        self.bucket_account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for AnalyticsS3BucketDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12082,6 +13772,15 @@ pub enum AnalyticsFilter {
     Prefix(std::string::String),
     /// <p>The tag to use when evaluating an analytics filter.</p>
     Tag(crate::model::Tag),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AnalyticsFilter {
     /// Tries to convert the enum instance into [`And`](crate::model::AnalyticsFilter::And), extracting the inner [`AnalyticsAndOperator`](crate::model::AnalyticsAndOperator).
@@ -12123,6 +13822,10 @@ impl AnalyticsFilter {
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
@@ -12136,6 +13839,17 @@ pub struct AnalyticsAndOperator {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The list of tags to use when evaluating an AND predicate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AnalyticsAndOperator {
+    /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have
+    /// to be included in the metrics results.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The list of tags to use when evaluating an AND predicate.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AnalyticsAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12279,6 +13993,12 @@ pub struct AccelerateConfiguration {
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
     pub status: std::option::Option<crate::model::BucketAccelerateStatus>,
 }
+impl AccelerateConfiguration {
+    /// <p>Specifies the transfer acceleration status of the bucket.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::BucketAccelerateStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AccelerateConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccelerateConfiguration");
@@ -12388,6 +14108,17 @@ pub struct Initiator {
     /// <p>Name of the Principal.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl Initiator {
+    /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal
+    /// is an IAM User, it provides a user ARN value.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Name of the Principal.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Initiator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Initiator");
@@ -12457,6 +14188,25 @@ pub struct Part {
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the uploaded part data.</p>
     pub size: i64,
+}
+impl Part {
+    /// <p>Part number identifying the part. This is a positive integer between 1 and
+    /// 10,000.</p>
+    pub fn part_number(&self) -> i32 {
+        self.part_number
+    }
+    /// <p>Date and time at which the part was uploaded.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>Entity tag returned when the part was uploaded.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>Size in bytes of the uploaded part data.</p>
+    pub fn size(&self) -> i64 {
+        self.size
+    }
 }
 impl std::fmt::Debug for Part {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12608,6 +14358,12 @@ pub struct CommonPrefix {
     /// <p>Container for the specified common prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
 }
+impl CommonPrefix {
+    /// <p>Container for the specified common prefix.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for CommonPrefix {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CommonPrefix");
@@ -12664,6 +14420,29 @@ pub struct DeleteMarkerEntry {
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DeleteMarkerEntry {
+    /// <p>The account that created the delete marker.></p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+        self.owner.as_ref()
+    }
+    /// <p>The object key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Version ID of an object.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
+    /// object.</p>
+    pub fn is_latest(&self) -> bool {
+        self.is_latest
+    }
+    /// <p>Date and time the object was last modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteMarkerEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12784,6 +14563,41 @@ pub struct ObjectVersion {
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the owner of the object.</p>
     pub owner: std::option::Option<crate::model::Owner>,
+}
+impl ObjectVersion {
+    /// <p>The entity tag is an MD5 hash of that version of the object.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>Size in bytes of the object.</p>
+    pub fn size(&self) -> i64 {
+        self.size
+    }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::ObjectVersionStorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p>The object key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Version ID of an object.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
+    /// object.</p>
+    pub fn is_latest(&self) -> bool {
+        self.is_latest
+    }
+    /// <p>Date and time the object was last modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>Specifies the owner of the object.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+        self.owner.as_ref()
+    }
 }
 impl std::fmt::Debug for ObjectVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13012,6 +14826,52 @@ pub struct Object {
     pub storage_class: std::option::Option<crate::model::ObjectStorageClass>,
     /// <p>The owner of the object</p>
     pub owner: std::option::Option<crate::model::Owner>,
+}
+impl Object {
+    /// <p>The name that you assign to an object. You use the object key to retrieve the
+    /// object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Creation date of the object.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
+    /// of an object, not its metadata. The ETag may or may not be an MD5 digest of the object
+    /// data. Whether or not it is depends on how the object was created and how it is encrypted as
+    /// described below:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
+    /// Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
+    /// an MD5 digest of their object data.</p>
+    /// </li>
+    /// <li>
+    /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
+    /// Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
+    /// not an MD5 digest of their object data.</p>
+    /// </li>
+    /// <li>
+    /// <p>If an object is created by either the Multipart Upload or Part Copy operation, the
+    /// ETag is not an MD5 digest, regardless of the method of encryption.</p>
+    /// </li>
+    /// </ul>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>Size in bytes of the object</p>
+    pub fn size(&self) -> i64 {
+        self.size
+    }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::ObjectStorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p>The owner of the object</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+        self.owner.as_ref()
+    }
 }
 impl std::fmt::Debug for Object {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13270,6 +15130,32 @@ pub struct MultipartUpload {
     /// <p>Identifies who initiated the multipart upload.</p>
     pub initiator: std::option::Option<crate::model::Initiator>,
 }
+impl MultipartUpload {
+    /// <p>Upload ID that identifies the multipart upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>Key of the object for which the multipart upload was initiated.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Date and time at which the multipart upload was initiated.</p>
+    pub fn initiated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.initiated.as_ref()
+    }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p>Specifies the owner of the object that is part of the multipart upload. </p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+        self.owner.as_ref()
+    }
+    /// <p>Identifies who initiated the multipart upload.</p>
+    pub fn initiator(&self) -> std::option::Option<&crate::model::Initiator> {
+        self.initiator.as_ref()
+    }
+}
 impl std::fmt::Debug for MultipartUpload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MultipartUpload");
@@ -13394,6 +15280,16 @@ pub struct Bucket {
     pub name: std::option::Option<std::string::String>,
     /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Bucket {
+    /// <p>The name of the bucket.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for Bucket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13569,6 +15465,13 @@ pub struct PolicyStatus {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is
     /// public. <code>FALSE</code> indicates that the bucket is not public.</p>
     pub is_public: bool,
+}
+impl PolicyStatus {
+    /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is
+    /// public. <code>FALSE</code> indicates that the bucket is not public.</p>
+    pub fn is_public(&self) -> bool {
+        self.is_public
+    }
 }
 impl std::fmt::Debug for PolicyStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15665,6 +17568,1891 @@ pub struct Error {
     /// Sophisticated programs with more exhaustive error handling and proper internationalization
     /// are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl Error {
+    /// <p>The error key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The version ID of the error.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to
+    /// be read and understood by programs that detect and handle errors by type. </p>
+    /// <p class="title">
+    /// <b>Amazon S3 error codes</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> AccessDenied </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Access Denied</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> AccountProblem</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> There is a problem with your Amazon Web Services account
+    /// that prevents the action from completing successfully. Contact Amazon Web Services Support
+    /// for further assistance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> AllAccessDisabled</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> All access to this Amazon S3 resource has been
+    /// disabled. Contact Amazon Web Services Support for further assistance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The email address you provided is
+    /// associated with more than one account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> AuthorizationHeaderMalformed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The authorization header you provided is
+    /// invalid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> BadDigest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The Content-MD5 you specified did not
+    /// match what we received.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> BucketAlreadyExists</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The requested bucket name is not
+    /// available. The bucket namespace is shared by all users of the system. Please
+    /// select a different name and try again.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 409 Conflict</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> BucketAlreadyOwnedByYou</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The bucket you tried to create already
+    /// exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in
+    /// the North Virginia Region. For legacy compatibility, if you re-create an
+    /// existing bucket that you already own in the North Virginia Region, Amazon S3 returns
+    /// 200 OK and resets the bucket access control lists (ACLs).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> 409 Conflict (in all Regions except the North
+    /// Virginia Region) </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> BucketNotEmpty</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The bucket you tried to delete is not
+    /// empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 409 Conflict</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> CredentialsNotSupported</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> This request does not support
+    /// credentials.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> CrossLocationLoggingProhibited</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Cross-location logging not allowed.
+    /// Buckets in one geographic location cannot log information to a bucket in
+    /// another location.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> EntityTooSmall</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your proposed upload is smaller than the
+    /// minimum allowed object size.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> EntityTooLarge</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your proposed upload exceeds the maximum
+    /// allowed object size.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> ExpiredToken</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The provided token has expired.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> IllegalVersioningConfigurationException </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Indicates that the versioning
+    /// configuration specified in the request is invalid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> IncompleteBody</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> You did not provide the number of bytes
+    /// specified by the Content-Length HTTP header</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> POST requires exactly one file upload per
+    /// request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InlineDataTooLarge</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Inline data exceeds the maximum allowed
+    /// size.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InternalError</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> We encountered an internal error. Please
+    /// try again.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 500 Internal Server Error</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Server</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidAccessKeyId</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The Amazon Web Services access key ID you provided does
+    /// not exist in our records.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidAddressingHeader</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> You must specify the Anonymous
+    /// role.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> N/A</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidArgument</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Invalid Argument</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidBucketName</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The specified bucket is not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidBucketState</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The request is not valid with the current
+    /// state of the bucket.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 409 Conflict</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidDigest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The Content-MD5 you specified is not
+    /// valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidEncryptionAlgorithmError</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The encryption request you specified is
+    /// not valid. The valid value is AES256.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidLocationConstraint</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The specified location constraint is not
+    /// valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a
+    /// Region for Your Buckets</a>. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidObjectState</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The action is not valid for the current
+    /// state of the object.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidPart</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> One or more of the specified parts could
+    /// not be found. The part might not have been uploaded, or the specified entity
+    /// tag might not have matched the part's entity tag.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidPartOrder</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The list of parts was not in ascending
+    /// order. Parts list must be specified in order by part number.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidPayer</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> All access to this object has been
+    /// disabled. Please contact Amazon Web Services Support for further assistance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidPolicyDocument</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The content of the form does not meet the
+    /// conditions specified in the policy document.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRange</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The requested range cannot be
+    /// satisfied.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 416 Requested Range Not
+    /// Satisfiable</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> SOAP requests must be made over an HTTPS
+    /// connection.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
+    /// supported for buckets with non-DNS compliant names.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
+    /// supported for buckets with periods (.) in their names.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only
+    /// supports virtual style requests.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Amazon S3 Transfer Accelerate is not configured
+    /// on this bucket.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on
+    /// this bucket.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
+    /// supported on this bucket. Contact Amazon Web Services Support for more information.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+    /// enabled on this bucket. Contact Amazon Web Services Support for more information.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> N/A</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidSecurity</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The provided security credentials are not
+    /// valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidSOAPRequest</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The SOAP request body is invalid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidStorageClass</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The storage class you specified is not
+    /// valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidTargetBucketForLogging</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The target bucket for logging does not
+    /// exist, is not owned by you, or does not have the appropriate grants for the
+    /// log-delivery group. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidToken</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The provided token is malformed or
+    /// otherwise invalid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> InvalidURI</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Couldn't parse the specified URI.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> KeyTooLongError</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your key is too long.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MalformedACLError</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The XML you provided was not well-formed
+    /// or did not validate against our published schema.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MalformedPOSTRequest </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The body of your POST request is not
+    /// well-formed multipart/form-data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MalformedXML</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> This happens when the user sends malformed
+    /// XML (XML that doesn't conform to the published XSD) for the configuration. The
+    /// error message is, "The XML you provided was not well-formed or did not validate
+    /// against our published schema." </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MaxMessageLengthExceeded</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your request was too big.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MaxPostPreDataLengthExceededError</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your POST request fields preceding the
+    /// upload file were too large.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MetadataTooLarge</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your metadata headers exceed the maximum
+    /// allowed metadata size.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MethodNotAllowed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The specified method is not allowed
+    /// against this resource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 405 Method Not Allowed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MissingAttachment</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> A SOAP attachment was expected, but none
+    /// were found.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> N/A</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MissingContentLength</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> You must provide the Content-Length HTTP
+    /// header.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 411 Length Required</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MissingRequestBodyError</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> This happens when the user sends an empty
+    /// XML document as a request. The error message is, "Request body is empty."
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MissingSecurityElement</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The SOAP 1.1 request is missing a security
+    /// element.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> MissingSecurityHeader</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your request is missing a required
+    /// header.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NoLoggingStatusForKey</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> There is no such thing as a logging status
+    /// subresource for a key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NoSuchBucket</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The specified bucket does not
+    /// exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 404 Not Found</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NoSuchBucketPolicy</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The specified bucket does not have a
+    /// bucket policy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 404 Not Found</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NoSuchKey</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The specified key does not exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 404 Not Found</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NoSuchLifecycleConfiguration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The lifecycle configuration does not
+    /// exist. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 404 Not Found</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NoSuchUpload</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The specified multipart upload does not
+    /// exist. The upload ID might be invalid, or the multipart upload might have been
+    /// aborted or completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 404 Not Found</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NoSuchVersion </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Indicates that the version ID specified in
+    /// the request does not match an existing version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 404 Not Found</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NotImplemented</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> A header you provided implies
+    /// functionality that is not implemented.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 501 Not Implemented</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Server</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> NotSignedUp</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your account is not signed up for the Amazon S3
+    /// service. You must sign up before you can use Amazon S3. You can sign up at the
+    /// following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> OperationAborted</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> A conflicting conditional action is
+    /// currently in progress against this resource. Try again.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 409 Conflict</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> PermanentRedirect</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The bucket you are attempting to access
+    /// must be addressed using the specified endpoint. Send all future requests to
+    /// this endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 301 Moved Permanently</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> PreconditionFailed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> At least one of the preconditions you
+    /// specified did not hold.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 412 Precondition Failed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> Redirect</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Temporary redirect.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> RestoreAlreadyInProgress</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Object restore is already in
+    /// progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 409 Conflict</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> RequestIsNotMultiPartContent</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Bucket POST must be of the enclosure-type
+    /// multipart/form-data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> RequestTimeout</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Your socket connection to the server was
+    /// not read from or written to within the timeout period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> RequestTimeTooSkewed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The difference between the request time
+    /// and the server's time is too large.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> RequestTorrentOfBucketError</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Requesting the torrent file of a bucket is
+    /// not permitted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> SignatureDoesNotMatch</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The request signature we calculated does
+    /// not match the signature you provided. Check your Amazon Web Services secret access key and
+    /// signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a>
+    /// for details.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> ServiceUnavailable</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Reduce your request rate.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 503 Service Unavailable</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Server</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> SlowDown</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> Reduce your request rate.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 503 Slow Down</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Server</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> TemporaryRedirect</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> You are being redirected to the bucket
+    /// while DNS updates.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> TokenRefreshRequired</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The provided token must be
+    /// refreshed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> TooManyBuckets</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> You have attempted to create more buckets
+    /// than allowed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> UnexpectedContent</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> This request does not support
+    /// content.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> UnresolvableGrantByEmailAddress</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The email address you provided does not
+    /// match any account on record.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Code:</i> UserKeyMustBeSpecified</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Description:</i> The bucket POST must contain the specified
+    /// field name. If it is specified, check the order of the fields.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SOAP Fault Code Prefix:</i> Client</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <p></p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The error message contains a generic description of the error condition in English. It
+    /// is intended for a human audience. Simple programs display the message directly to the end
+    /// user if they encounter an error condition they don't know how or don't care to handle.
+    /// Sophisticated programs with more exhaustive error handling and proper internationalization
+    /// are more likely to ignore the error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19497,6 +23285,28 @@ pub struct DeletedObject {
     /// the object version deleted.</p>
     pub delete_marker_version_id: std::option::Option<std::string::String>,
 }
+impl DeletedObject {
+    /// <p>The name of the deleted object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The version ID of the deleted object.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
+    /// not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or
+    /// not (false) a delete marker was created.</p>
+    pub fn delete_marker(&self) -> bool {
+        self.delete_marker
+    }
+    /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you
+    /// delete a specific object version, the value returned by this header is the version ID of
+    /// the object version deleted.</p>
+    pub fn delete_marker_version_id(&self) -> std::option::Option<&str> {
+        self.delete_marker_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletedObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletedObject");
@@ -19598,6 +23408,17 @@ pub struct Delete {
     /// its value to true.</p>
     pub quiet: bool,
 }
+impl Delete {
+    /// <p>The objects to delete.</p>
+    pub fn objects(&self) -> std::option::Option<&[crate::model::ObjectIdentifier]> {
+        self.objects.as_deref()
+    }
+    /// <p>Element to enable quiet mode for the request. When you add this element, you must set
+    /// its value to true.</p>
+    pub fn quiet(&self) -> bool {
+        self.quiet
+    }
+}
 impl std::fmt::Debug for Delete {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Delete");
@@ -19677,6 +23498,21 @@ pub struct ObjectIdentifier {
     /// <p>VersionId for the specific version of the object to delete.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
+impl ObjectIdentifier {
+    /// <p>Key name of the object.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>VersionId for the specific version of the object to delete.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ObjectIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectIdentifier");
@@ -19749,6 +23585,15 @@ pub struct CreateBucketConfiguration {
     /// the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
 }
+impl CreateBucketConfiguration {
+    /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region,
+    /// the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
+    pub fn location_constraint(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketLocationConstraint> {
+        self.location_constraint.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBucketConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBucketConfiguration");
@@ -19806,6 +23651,16 @@ pub struct CopyObjectResult {
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CopyObjectResult {
+    /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>Creation date of the object.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyObjectResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19981,6 +23836,12 @@ pub struct CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
     pub parts: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
 }
+impl CompletedMultipartUpload {
+    /// <p>Array of CompletedPart data types.</p>
+    pub fn parts(&self) -> std::option::Option<&[crate::model::CompletedPart]> {
+        self.parts.as_deref()
+    }
+}
 impl std::fmt::Debug for CompletedMultipartUpload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompletedMultipartUpload");
@@ -20038,6 +23899,17 @@ pub struct CompletedPart {
     /// <p>Part number that identifies the part. This is a positive integer between 1 and
     /// 10,000.</p>
     pub part_number: i32,
+}
+impl CompletedPart {
+    /// <p>Entity tag returned when the part was uploaded.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>Part number that identifies the part. This is a positive integer between 1 and
+    /// 10,000.</p>
+    pub fn part_number(&self) -> i32 {
+        self.part_number
+    }
 }
 impl std::fmt::Debug for CompletedPart {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

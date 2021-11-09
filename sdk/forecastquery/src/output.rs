@@ -6,6 +6,12 @@ pub struct QueryForecastOutput {
     /// <p>The forecast.</p>
     pub forecast: std::option::Option<crate::model::Forecast>,
 }
+impl QueryForecastOutput {
+    /// <p>The forecast.</p>
+    pub fn forecast(&self) -> std::option::Option<&crate::model::Forecast> {
+        self.forecast.as_ref()
+    }
+}
 impl std::fmt::Debug for QueryForecastOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryForecastOutput");

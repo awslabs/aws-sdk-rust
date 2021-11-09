@@ -11,7 +11,7 @@ pub fn ser_payload_create_cache_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_input_cache_policy_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_input_cache_policy_config(&payload)?
     ))
 }
 
@@ -27,7 +27,7 @@ pub fn ser_payload_create_cloud_front_origin_access_identity_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(&payload)?
     ))
 }
 
@@ -43,7 +43,7 @@ pub fn ser_payload_create_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_input_distribution_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_input_distribution_config(&payload)?
     ))
 }
 
@@ -59,7 +59,7 @@ pub fn ser_payload_create_distribution_with_tags_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_with_tags_input_distribution_config_with_tags(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_with_tags_input_distribution_config_with_tags(&payload)?
     ))
 }
 
@@ -75,7 +75,7 @@ pub fn ser_payload_create_field_level_encryption_config_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_config_input_field_level_encryption_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_config_input_field_level_encryption_config(&payload)?
     ))
 }
 
@@ -91,13 +91,13 @@ pub fn ser_payload_create_field_level_encryption_profile_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_profile_input_field_level_encryption_profile_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_encryption_profile_input_field_level_encryption_profile_config(&payload)?
     ))
 }
 
 pub fn serialize_operation_crate_operation_create_function(
     input: &crate::input::CreateFunctionInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -105,7 +105,7 @@ pub fn serialize_operation_crate_operation_create_function(
         let mut root = writer
             .start_el("CreateFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_create_function_input(&&input, root)
+        crate::xml_ser::serialize_structure_crate_input_create_function_input(&&input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -122,7 +122,7 @@ pub fn ser_payload_create_invalidation_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_invalidation_input_invalidation_batch(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_invalidation_input_invalidation_batch(&payload)?
     ))
 }
 
@@ -138,7 +138,7 @@ pub fn ser_payload_create_key_group_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_key_group_input_key_group_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_key_group_input_key_group_config(&payload)?
     ))
 }
 
@@ -154,7 +154,7 @@ pub fn ser_payload_create_monitoring_subscription_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_monitoring_subscription_input_monitoring_subscription(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_monitoring_subscription_input_monitoring_subscription(&payload)?
     ))
 }
 
@@ -170,7 +170,7 @@ pub fn ser_payload_create_origin_request_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_origin_request_policy_input_origin_request_policy_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_origin_request_policy_input_origin_request_policy_config(&payload)?
     ))
 }
 
@@ -186,13 +186,13 @@ pub fn ser_payload_create_public_key_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_public_key_input_public_key_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_public_key_input_public_key_config(&payload)?
     ))
 }
 
 pub fn serialize_operation_crate_operation_create_realtime_log_config(
     input: &crate::input::CreateRealtimeLogConfigInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -202,7 +202,7 @@ pub fn serialize_operation_crate_operation_create_realtime_log_config(
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_input_create_realtime_log_config_input(
             &&input, root,
-        )
+        )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -219,7 +219,7 @@ pub fn ser_payload_create_response_headers_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_response_headers_policy_input_response_headers_policy_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_response_headers_policy_input_response_headers_policy_config(&payload)?
     ))
 }
 
@@ -235,7 +235,7 @@ pub fn ser_payload_create_streaming_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_input_streaming_distribution_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_input_streaming_distribution_config(&payload)?
     ))
 }
 
@@ -251,13 +251,13 @@ pub fn ser_payload_create_streaming_distribution_with_tags_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_with_tags_input_streaming_distribution_config_with_tags(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_distribution_with_tags_input_streaming_distribution_config_with_tags(&payload)?
     ))
 }
 
 pub fn serialize_operation_crate_operation_delete_realtime_log_config(
     input: &crate::input::DeleteRealtimeLogConfigInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -267,14 +267,14 @@ pub fn serialize_operation_crate_operation_delete_realtime_log_config(
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_input_delete_realtime_log_config_input(
             &&input, root,
-        )
+        )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
 pub fn serialize_operation_crate_operation_get_realtime_log_config(
     input: &crate::input::GetRealtimeLogConfigInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -282,14 +282,16 @@ pub fn serialize_operation_crate_operation_get_realtime_log_config(
         let mut root = writer
             .start_el("GetRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_get_realtime_log_config_input(&&input, root)
+        crate::xml_ser::serialize_structure_crate_input_get_realtime_log_config_input(
+            &&input, root,
+        )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
 pub fn serialize_operation_crate_operation_list_distributions_by_realtime_log_config(
     input: &crate::input::ListDistributionsByRealtimeLogConfigInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -297,7 +299,7 @@ pub fn serialize_operation_crate_operation_list_distributions_by_realtime_log_co
         let mut root = writer
             .start_el("ListDistributionsByRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_list_distributions_by_realtime_log_config_input(&&input, root)
+        crate::xml_ser::serialize_structure_crate_input_list_distributions_by_realtime_log_config_input(&&input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -314,13 +316,13 @@ pub fn ser_payload_tag_resource_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_tag_resource_input_tags(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_tag_resource_input_tags(&payload)?
     ))
 }
 
 pub fn serialize_operation_crate_operation_test_function(
     input: &crate::input::TestFunctionInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -328,7 +330,7 @@ pub fn serialize_operation_crate_operation_test_function(
         let mut root = writer
             .start_el("TestFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_test_function_input(&&input, root)
+        crate::xml_ser::serialize_structure_crate_input_test_function_input(&&input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -345,7 +347,7 @@ pub fn ser_payload_untag_resource_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_untag_resource_input_tag_keys(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_untag_resource_input_tag_keys(&payload)?
     ))
 }
 
@@ -361,7 +363,7 @@ pub fn ser_payload_update_cache_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_input_cache_policy_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_input_cache_policy_config(&payload)?
     ))
 }
 
@@ -377,7 +379,7 @@ pub fn ser_payload_update_cloud_front_origin_access_identity_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_origin_access_identity_input_cloud_front_origin_access_identity_config(&payload)?
     ))
 }
 
@@ -393,7 +395,7 @@ pub fn ser_payload_update_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_distribution_input_distribution_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_distribution_input_distribution_config(&payload)?
     ))
 }
 
@@ -409,7 +411,7 @@ pub fn ser_payload_update_field_level_encryption_config_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_config_input_field_level_encryption_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_config_input_field_level_encryption_config(&payload)?
     ))
 }
 
@@ -425,13 +427,13 @@ pub fn ser_payload_update_field_level_encryption_profile_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_profile_input_field_level_encryption_profile_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_encryption_profile_input_field_level_encryption_profile_config(&payload)?
     ))
 }
 
 pub fn serialize_operation_crate_operation_update_function(
     input: &crate::input::UpdateFunctionInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -439,7 +441,7 @@ pub fn serialize_operation_crate_operation_update_function(
         let mut root = writer
             .start_el("UpdateFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::xml_ser::serialize_structure_crate_input_update_function_input(&&input, root)
+        crate::xml_ser::serialize_structure_crate_input_update_function_input(&&input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -456,7 +458,7 @@ pub fn ser_payload_update_key_group_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_key_group_input_key_group_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_key_group_input_key_group_config(&payload)?
     ))
 }
 
@@ -472,7 +474,7 @@ pub fn ser_payload_update_origin_request_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_origin_request_policy_input_origin_request_policy_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_origin_request_policy_input_origin_request_policy_config(&payload)?
     ))
 }
 
@@ -488,13 +490,13 @@ pub fn ser_payload_update_public_key_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_public_key_input_public_key_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_public_key_input_public_key_config(&payload)?
     ))
 }
 
 pub fn serialize_operation_crate_operation_update_realtime_log_config(
     input: &crate::input::UpdateRealtimeLogConfigInput,
-) -> Result<aws_smithy_http::body::SdkBody, std::string::String> {
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -504,7 +506,7 @@ pub fn serialize_operation_crate_operation_update_realtime_log_config(
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::xml_ser::serialize_structure_crate_input_update_realtime_log_config_input(
             &&input, root,
-        )
+        )?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -521,7 +523,7 @@ pub fn ser_payload_update_response_headers_policy_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_response_headers_policy_input_response_headers_policy_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_response_headers_policy_input_response_headers_policy_config(&payload)?
     ))
 }
 
@@ -537,7 +539,7 @@ pub fn ser_payload_update_streaming_distribution_input(
         }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_streaming_distribution_input_streaming_distribution_config(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_streaming_distribution_input_streaming_distribution_config(&payload)?
     ))
 }
 

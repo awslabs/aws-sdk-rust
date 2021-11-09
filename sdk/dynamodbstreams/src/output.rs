@@ -13,6 +13,21 @@ pub struct ListStreamsOutput {
     /// result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
     pub last_evaluated_stream_arn: std::option::Option<std::string::String>,
 }
+impl ListStreamsOutput {
+    /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
+    pub fn streams(&self) -> std::option::Option<&[crate::model::Stream]> {
+        self.streams.as_deref()
+    }
+    /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+    /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been
+    /// processed and there is no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there
+    /// is more data in the result set. The only way to know when you have reached the end of the
+    /// result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
+    pub fn last_evaluated_stream_arn(&self) -> std::option::Option<&str> {
+        self.last_evaluated_stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamsOutput");
@@ -96,6 +111,12 @@ pub struct GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     pub shard_iterator: std::option::Option<std::string::String>,
 }
+impl GetShardIteratorOutput {
+    /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
+    pub fn shard_iterator(&self) -> std::option::Option<&str> {
+        self.shard_iterator.as_deref()
+    }
+}
 impl std::fmt::Debug for GetShardIteratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetShardIteratorOutput");
@@ -150,6 +171,18 @@ pub struct GetRecordsOutput {
     /// set to <code>null</code>, the shard has been closed and the requested iterator will not return
     /// any more data.</p>
     pub next_shard_iterator: std::option::Option<std::string::String>,
+}
+impl GetRecordsOutput {
+    /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
+    pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
+        self.records.as_deref()
+    }
+    /// <p>The next position in the shard from which to start sequentially reading stream records. If
+    /// set to <code>null</code>, the shard has been closed and the requested iterator will not return
+    /// any more data.</p>
+    pub fn next_shard_iterator(&self) -> std::option::Option<&str> {
+        self.next_shard_iterator.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -227,6 +260,12 @@ impl GetRecordsOutput {
 pub struct DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     pub stream_description: std::option::Option<crate::model::StreamDescription>,
+}
+impl DescribeStreamOutput {
+    /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
+    pub fn stream_description(&self) -> std::option::Option<&crate::model::StreamDescription> {
+        self.stream_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

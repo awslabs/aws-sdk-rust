@@ -122,10 +122,7 @@ impl AssociateDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_domain(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -306,7 +303,7 @@ impl AssociateWebsiteAuthorizationProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_website_authorization_provider(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_website_authorization_provider(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -479,7 +476,7 @@ impl AssociateWebsiteCertificateAuthorityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_website_certificate_authority(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_website_certificate_authority(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -682,10 +679,7 @@ impl CreateFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -829,10 +823,7 @@ impl DeleteFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -978,7 +969,7 @@ impl DescribeAuditStreamConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_audit_stream_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_audit_stream_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1127,7 +1118,7 @@ impl DescribeCompanyNetworkConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_company_network_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_company_network_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1284,10 +1275,8 @@ impl DescribeDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1434,7 +1423,7 @@ impl DescribeDevicePolicyConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_device_policy_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_device_policy_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1591,10 +1580,8 @@ impl DescribeDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1741,10 +1728,7 @@ impl DescribeFleetMetadataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_metadata(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1892,7 +1876,7 @@ impl DescribeIdentityProviderConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_identity_provider_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_identity_provider_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2056,7 +2040,7 @@ impl DescribeWebsiteCertificateAuthorityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_website_certificate_authority(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_website_certificate_authority(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2214,10 +2198,7 @@ impl DisassociateDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_domain(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2382,7 +2363,7 @@ impl DisassociateWebsiteAuthorizationProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_website_authorization_provider(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_website_authorization_provider(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2546,7 +2527,7 @@ impl DisassociateWebsiteCertificateAuthorityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_website_certificate_authority(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_website_certificate_authority(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2717,10 +2698,7 @@ impl ListDevicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2890,10 +2868,7 @@ impl ListDomainsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3051,10 +3026,7 @@ impl ListFleetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3372,7 +3344,7 @@ impl ListWebsiteAuthorizationProvidersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_website_authorization_providers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_website_authorization_providers(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3546,7 +3518,7 @@ impl ListWebsiteCertificateAuthoritiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_website_certificate_authorities(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_website_certificate_authorities(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3704,10 +3676,7 @@ impl RestoreDomainAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_domain_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_restore_domain_access(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3864,10 +3833,7 @@ impl RevokeDomainAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_domain_access(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_revoke_domain_access(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4023,10 +3989,7 @@ impl SignOutUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_sign_out_user(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_sign_out_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4215,10 +4178,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4556,7 +4516,7 @@ impl UpdateAuditStreamConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_audit_stream_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_audit_stream_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4758,7 +4718,7 @@ impl UpdateCompanyNetworkConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_company_network_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_company_network_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4920,7 +4880,7 @@ impl UpdateDevicePolicyConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_device_policy_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_device_policy_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5090,10 +5050,9 @@ impl UpdateDomainMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_metadata(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5267,10 +5226,7 @@ impl UpdateFleetMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_fleet_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_fleet_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5453,7 +5409,7 @@ impl UpdateIdentityProviderConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_identity_provider_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_identity_provider_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5528,6 +5484,23 @@ pub struct UpdateIdentityProviderConfigurationInput {
     /// IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub identity_provider_saml_metadata: std::option::Option<std::string::String>,
 }
+impl UpdateIdentityProviderConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The type of identity provider.</p>
+    pub fn identity_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider_type.as_ref()
+    }
+    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
+    /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+    pub fn identity_provider_saml_metadata(&self) -> std::option::Option<&str> {
+        self.identity_provider_saml_metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateIdentityProviderConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIdentityProviderConfigurationInput");
@@ -5553,6 +5526,21 @@ pub struct UpdateFleetMetadataInput {
     /// AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: std::option::Option<bool>,
 }
+impl UpdateFleetMetadataInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The option to optimize for better performance by routing traffic through the closest
+    /// AWS Region to users, which may be outside of your home Region.</p>
+    pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
+        self.optimize_for_end_user_location
+    }
+}
 impl std::fmt::Debug for UpdateFleetMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFleetMetadataInput");
@@ -5577,6 +5565,20 @@ pub struct UpdateDomainMetadataInput {
     /// <p>The name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl UpdateDomainMetadataInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainMetadataInput");
@@ -5595,6 +5597,16 @@ pub struct UpdateDevicePolicyConfigurationInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub device_ca_certificate: std::option::Option<std::string::String>,
+}
+impl UpdateDevicePolicyConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    pub fn device_ca_certificate(&self) -> std::option::Option<&str> {
+        self.device_ca_certificate.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDevicePolicyConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5618,6 +5630,24 @@ pub struct UpdateCompanyNetworkConfigurationInput {
     /// <p>The security groups associated with access to the provided subnets.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateCompanyNetworkConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The VPC with connectivity to associated websites.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups associated with access to the provided subnets.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCompanyNetworkConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCompanyNetworkConfigurationInput");
@@ -5638,6 +5668,16 @@ pub struct UpdateAuditStreamConfigurationInput {
     /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
     pub audit_stream_arn: std::option::Option<std::string::String>,
 }
+impl UpdateAuditStreamConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
+    pub fn audit_stream_arn(&self) -> std::option::Option<&str> {
+        self.audit_stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAuditStreamConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAuditStreamConfigurationInput");
@@ -5655,6 +5695,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tag keys to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5675,6 +5725,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5692,6 +5755,16 @@ pub struct SignOutUserInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the user.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl SignOutUserInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The name of the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for SignOutUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5711,6 +5784,16 @@ pub struct RevokeDomainAccessInput {
     /// <p>The name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl RevokeDomainAccessInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokeDomainAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeDomainAccessInput");
@@ -5728,6 +5811,16 @@ pub struct RestoreDomainAccessInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl RestoreDomainAccessInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreDomainAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5750,6 +5843,21 @@ pub struct ListWebsiteCertificateAuthoritiesInput {
     /// this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWebsiteCertificateAuthoritiesInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWebsiteCertificateAuthoritiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWebsiteCertificateAuthoritiesInput");
@@ -5771,6 +5879,20 @@ pub struct ListWebsiteAuthorizationProvidersInput {
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListWebsiteAuthorizationProvidersInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListWebsiteAuthorizationProvidersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWebsiteAuthorizationProvidersInput");
@@ -5787,6 +5909,12 @@ impl std::fmt::Debug for ListWebsiteAuthorizationProvidersInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5805,6 +5933,17 @@ pub struct ListFleetsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFleetsInput {
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFleetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5826,6 +5965,21 @@ pub struct ListDomainsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDomainsInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5849,6 +6003,21 @@ pub struct ListDevicesInput {
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDevicesInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesInput");
@@ -5868,6 +6037,16 @@ pub struct DisassociateWebsiteCertificateAuthorityInput {
     /// <p>A unique identifier for the CA.</p>
     pub website_ca_id: std::option::Option<std::string::String>,
 }
+impl DisassociateWebsiteCertificateAuthorityInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A unique identifier for the CA.</p>
+    pub fn website_ca_id(&self) -> std::option::Option<&str> {
+        self.website_ca_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateWebsiteCertificateAuthorityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateWebsiteCertificateAuthorityInput");
@@ -5885,6 +6064,16 @@ pub struct DisassociateWebsiteAuthorizationProviderInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the authorization provider.</p>
     pub authorization_provider_id: std::option::Option<std::string::String>,
+}
+impl DisassociateWebsiteAuthorizationProviderInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A unique identifier for the authorization provider.</p>
+    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+        self.authorization_provider_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateWebsiteAuthorizationProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5904,6 +6093,16 @@ pub struct DisassociateDomainInput {
     /// <p>The name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DisassociateDomainInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateDomainInput");
@@ -5922,6 +6121,16 @@ pub struct DescribeWebsiteCertificateAuthorityInput {
     /// <p>A unique identifier for the certificate authority.</p>
     pub website_ca_id: std::option::Option<std::string::String>,
 }
+impl DescribeWebsiteCertificateAuthorityInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A unique identifier for the certificate authority.</p>
+    pub fn website_ca_id(&self) -> std::option::Option<&str> {
+        self.website_ca_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWebsiteCertificateAuthorityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWebsiteCertificateAuthorityInput");
@@ -5938,6 +6147,12 @@ pub struct DescribeIdentityProviderConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
 }
+impl DescribeIdentityProviderConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeIdentityProviderConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdentityProviderConfigurationInput");
@@ -5952,6 +6167,12 @@ impl std::fmt::Debug for DescribeIdentityProviderConfigurationInput {
 pub struct DescribeFleetMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
+}
+impl DescribeFleetMetadataInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5970,6 +6191,16 @@ pub struct DescribeDomainInput {
     /// <p>The name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DescribeDomainInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainInput");
@@ -5985,6 +6216,12 @@ impl std::fmt::Debug for DescribeDomainInput {
 pub struct DescribeDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
+}
+impl DescribeDevicePolicyConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDevicePolicyConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6003,6 +6240,16 @@ pub struct DescribeDeviceInput {
     /// <p>A unique identifier for a registered user's device.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl DescribeDeviceInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A unique identifier for a registered user's device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceInput");
@@ -6019,6 +6266,12 @@ pub struct DescribeCompanyNetworkConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
 }
+impl DescribeCompanyNetworkConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCompanyNetworkConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCompanyNetworkConfigurationInput");
@@ -6034,6 +6287,12 @@ pub struct DescribeAuditStreamConfigurationInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAuditStreamConfigurationInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAuditStreamConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAuditStreamConfigurationInput");
@@ -6048,6 +6307,12 @@ impl std::fmt::Debug for DescribeAuditStreamConfigurationInput {
 pub struct DeleteFleetInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
+}
+impl DeleteFleetInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6071,6 +6336,28 @@ pub struct CreateFleetInput {
     /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateFleetInput {
+    /// <p>A unique name for the fleet.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The fleet name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The option to optimize for better performance by routing traffic through the closest
+    /// AWS Region to users, which may be outside of your home Region.</p>
+    pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
+        self.optimize_for_end_user_location
+    }
+    /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6097,6 +6384,20 @@ pub struct AssociateWebsiteCertificateAuthorityInput {
     /// <p>The certificate name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl AssociateWebsiteCertificateAuthorityInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The root certificate of the CA.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The certificate name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateWebsiteCertificateAuthorityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateWebsiteCertificateAuthorityInput");
@@ -6118,6 +6419,23 @@ pub struct AssociateWebsiteAuthorizationProviderInput {
     /// <p>The domain name of the authorization provider. This applies only to SAML-based
     /// authorization providers.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl AssociateWebsiteAuthorizationProviderInput {
+    /// <p>The ARN of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The authorization provider type.</p>
+    pub fn authorization_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthorizationProviderType> {
+        self.authorization_provider_type.as_ref()
+    }
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based
+    /// authorization providers.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateWebsiteAuthorizationProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6144,6 +6462,24 @@ pub struct AssociateDomainInput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub acm_certificate_arn: std::option::Option<std::string::String>,
+}
+impl AssociateDomainInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The fully qualified domain name (FQDN).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    pub fn acm_certificate_arn(&self) -> std::option::Option<&str> {
+        self.acm_certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

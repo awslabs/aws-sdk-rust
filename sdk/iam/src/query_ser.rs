@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -14,13 +14,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_4) = &input.value {
         scope_3.string(var_4);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_context_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ContextEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("ContextKeyName");
     if let Some(var_6) = &input.context_key_name {
@@ -42,4 +43,5 @@ pub fn serialize_structure_crate_model_context_entry(
     if let Some(var_13) = &input.context_key_type {
         scope_12.string(var_13.as_str());
     }
+    Ok(())
 }

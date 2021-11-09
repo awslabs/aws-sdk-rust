@@ -8,6 +8,16 @@ pub struct ValidationWarning {
     /// <p>A description of the validation warning.</p>
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ValidationWarning {
+    /// <p>The identifier of the object that contains the validation warning.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A description of the validation warning.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationWarning {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationWarning");
@@ -79,6 +89,16 @@ pub struct ValidationError {
     pub id: std::option::Option<std::string::String>,
     /// <p>A description of the validation error.</p>
     pub errors: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ValidationError {
+    /// <p>The identifier of the object that contains the validation error.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A description of the validation error.</p>
+    pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for ValidationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -152,6 +172,16 @@ pub struct ParameterValue {
     /// <p>The field value, expressed as a String.</p>
     pub string_value: std::option::Option<std::string::String>,
 }
+impl ParameterValue {
+    /// <p>The ID of the parameter value.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The field value, expressed as a String.</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+}
 impl std::fmt::Debug for ParameterValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParameterValue");
@@ -214,6 +244,16 @@ pub struct ParameterObject {
     pub id: std::option::Option<std::string::String>,
     /// <p>The attributes of the parameter object.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::ParameterAttribute>>,
+}
+impl ParameterObject {
+    /// <p>The ID of the parameter object. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The attributes of the parameter object.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::ParameterAttribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for ParameterObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -287,6 +327,16 @@ pub struct ParameterAttribute {
     /// <p>The field value, expressed as a String.</p>
     pub string_value: std::option::Option<std::string::String>,
 }
+impl ParameterAttribute {
+    /// <p>The field identifier.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The field value, expressed as a String.</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+}
 impl std::fmt::Debug for ParameterAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParameterAttribute");
@@ -351,6 +401,20 @@ pub struct PipelineObject {
     pub name: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that define the properties of the object.</p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+}
+impl PipelineObject {
+    /// <p>The ID of the object.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the object.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Key-value pairs that define the properties of the object.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.fields.as_deref()
+    }
 }
 impl std::fmt::Debug for PipelineObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -438,6 +502,20 @@ pub struct Field {
     pub string_value: std::option::Option<std::string::String>,
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub ref_value: std::option::Option<std::string::String>,
+}
+impl Field {
+    /// <p>The field identifier.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The field value, expressed as a String.</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+    /// <p>The field value, expressed as the identifier of another object.</p>
+    pub fn ref_value(&self) -> std::option::Option<&str> {
+        self.ref_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Field {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -572,6 +650,12 @@ pub struct Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
     pub selectors: std::option::Option<std::vec::Vec<crate::model::Selector>>,
 }
+impl Query {
+    /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
+    pub fn selectors(&self) -> std::option::Option<&[crate::model::Selector]> {
+        self.selectors.as_deref()
+    }
+}
 impl std::fmt::Debug for Query {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Query");
@@ -630,6 +714,16 @@ pub struct Selector {
     pub field_name: std::option::Option<std::string::String>,
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
     pub operator: std::option::Option<crate::model::Operator>,
+}
+impl Selector {
+    /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for Selector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -721,6 +815,44 @@ pub struct Operator {
     pub r#type: std::option::Option<crate::model::OperatorType>,
     /// <p>The value that the actual field value will be compared with.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Operator {
+    /// <p>
+    /// The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below.  
+    /// </p>
+    /// <p>
+    /// The comparison operators EQ and REF_EQ act on the following fields:
+    /// </p>
+    /// <ul>
+    /// <li>name</li>
+    /// <li>@sphere</li>
+    /// <li>parent</li>
+    /// <li>@componentParent</li>
+    /// <li>@instanceParent</li>
+    /// <li>@status</li>
+    /// <li>@scheduledStartTime</li>
+    /// <li>@scheduledEndTime</li>
+    /// <li>@actualStartTime</li>
+    /// <li>@actualEndTime</li>
+    /// </ul>
+    ///
+    /// <p>
+    /// The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:
+    /// </p>
+    /// <ul>
+    /// <li>@scheduledStartTime</li>
+    /// <li>@scheduledEndTime</li>
+    /// <li>@actualStartTime</li>
+    /// <li>@actualEndTime</li>
+    /// </ul>
+    /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::OperatorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The value that the actual field value will be compared with.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Operator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,6 +1055,28 @@ pub struct TaskObject {
         std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
     >,
 }
+impl TaskObject {
+    /// <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The ID of the pipeline that provided the task.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
+    pub fn attempt_id(&self) -> std::option::Option<&str> {
+        self.attempt_id.as_deref()
+    }
+    /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    pub fn objects(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
+    > {
+        self.objects.as_ref()
+    }
+}
 impl std::fmt::Debug for TaskObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskObject");
@@ -1031,6 +1185,16 @@ pub struct InstanceIdentity {
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     pub signature: std::option::Option<std::string::String>,
 }
+impl InstanceIdentity {
+    /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
+    /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceIdentity");
@@ -1093,6 +1257,16 @@ pub struct PipelineIdName {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the pipeline.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl PipelineIdName {
+    /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for PipelineIdName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1163,6 +1337,29 @@ pub struct PipelineDescription {
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines.
     /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl PipelineDescription {
+    /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.fields.as_deref()
+    }
+    /// <p>Description of the pipeline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines.
+    /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for PipelineDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1288,6 +1485,18 @@ pub struct Tag {
     /// <p>The optional value portion of a tag defined by a user.    
     /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key name of a tag defined by a user.  
+    /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional value portion of a tag defined by a user.    
+    /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

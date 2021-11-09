@@ -182,10 +182,7 @@ impl CreateDataIntegrationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_data_integration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -420,10 +417,7 @@ impl CreateEventIntegrationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_event_integration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2070,10 +2064,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2441,10 +2432,7 @@ impl UpdateDataIntegrationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_data_integration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2619,10 +2607,7 @@ impl UpdateEventIntegrationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_event_integration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2693,6 +2678,16 @@ pub struct UpdateEventIntegrationInput {
     /// <p>The description of the event inegration.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateEventIntegrationInput {
+    /// <p>The name of the event integration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the event inegration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEventIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEventIntegrationInput");
@@ -2713,6 +2708,20 @@ pub struct UpdateDataIntegrationInput {
     /// <p>A description of the DataIntegration.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateDataIntegrationInput {
+    /// <p>A unique identifier for the DataIntegration.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the DataIntegration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDataIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataIntegrationInput");
@@ -2731,6 +2740,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2751,6 +2770,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2766,6 +2798,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2784,6 +2822,17 @@ pub struct ListEventIntegrationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEventIntegrationsInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEventIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2806,6 +2855,21 @@ pub struct ListEventIntegrationAssociationsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEventIntegrationAssociationsInput {
+    /// <p>The name of the event integration. </p>
+    pub fn event_integration_name(&self) -> std::option::Option<&str> {
+        self.event_integration_name.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEventIntegrationAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventIntegrationAssociationsInput");
@@ -2825,6 +2889,17 @@ pub struct ListDataIntegrationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDataIntegrationsInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDataIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2847,6 +2922,21 @@ pub struct ListDataIntegrationAssociationsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDataIntegrationAssociationsInput {
+    /// <p>A unique identifier for the DataIntegration.</p>
+    pub fn data_integration_identifier(&self) -> std::option::Option<&str> {
+        self.data_integration_identifier.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDataIntegrationAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataIntegrationAssociationsInput");
@@ -2867,6 +2957,12 @@ pub struct GetEventIntegrationInput {
     /// <p>The name of the event integration. </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetEventIntegrationInput {
+    /// <p>The name of the event integration. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEventIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventIntegrationInput");
@@ -2881,6 +2977,12 @@ impl std::fmt::Debug for GetEventIntegrationInput {
 pub struct GetDataIntegrationInput {
     /// <p>A unique identifier.</p>
     pub identifier: std::option::Option<std::string::String>,
+}
+impl GetDataIntegrationInput {
+    /// <p>A unique identifier.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2897,6 +2999,12 @@ pub struct DeleteEventIntegrationInput {
     /// <p>The name of the event integration.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteEventIntegrationInput {
+    /// <p>The name of the event integration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventIntegrationInput");
@@ -2911,6 +3019,12 @@ impl std::fmt::Debug for DeleteEventIntegrationInput {
 pub struct DeleteDataIntegrationInput {
     /// <p>A unique identifier for the DataIntegration.</p>
     pub data_integration_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteDataIntegrationInput {
+    /// <p>A unique identifier for the DataIntegration.</p>
+    pub fn data_integration_identifier(&self) -> std::option::Option<&str> {
+        self.data_integration_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2941,6 +3055,36 @@ pub struct CreateEventIntegrationInput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateEventIntegrationInput {
+    /// <p>The name of the event integration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the event integration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The event filter.</p>
+    pub fn event_filter(&self) -> std::option::Option<&crate::model::EventFilter> {
+        self.event_filter.as_ref()
+    }
+    /// <p>The EventBridge bus.</p>
+    pub fn event_bridge_bus(&self) -> std::option::Option<&str> {
+        self.event_bridge_bus.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEventIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2975,6 +3119,40 @@ pub struct CreateDataIntegrationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateDataIntegrationInput {
+    /// <p>The name of the DataIntegration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the DataIntegration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The KMS key for the DataIntegration.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn source_uri(&self) -> std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
+    /// <p>The name of the data and how often it should be pulled from the source.</p>
+    pub fn schedule_config(&self) -> std::option::Option<&crate::model::ScheduleConfiguration> {
+        self.schedule_config.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDataIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

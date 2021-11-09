@@ -2,16 +2,17 @@
 pub fn serialize_structure_crate_input_associate_member_account_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateMemberAccountInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.member_account_id {
         object.key("memberAccountId").string(var_1);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_associate_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateS3ResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.member_account_id {
         object.key("memberAccountId").string(var_2);
     }
@@ -23,27 +24,29 @@ pub fn serialize_structure_crate_input_associate_s3_resources_input(
                 crate::json_ser::serialize_structure_crate_model_s3_resource_classification(
                     &mut object_6,
                     item_5,
-                );
+                )?;
                 object_6.finish();
             }
         }
         array_4.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_member_account_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateMemberAccountInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.member_account_id {
         object.key("memberAccountId").string(var_7);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateS3ResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.member_account_id {
         object.key("memberAccountId").string(var_8);
     }
@@ -55,18 +58,19 @@ pub fn serialize_structure_crate_input_disassociate_s3_resources_input(
                 crate::json_ser::serialize_structure_crate_model_s3_resource(
                     &mut object_12,
                     item_11,
-                );
+                )?;
                 object_12.finish();
             }
         }
         array_10.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_member_accounts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMemberAccountsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.next_token {
         object.key("nextToken").string(var_13);
     }
@@ -76,12 +80,13 @@ pub fn serialize_structure_crate_input_list_member_accounts_input(
             aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListS3ResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.member_account_id {
         object.key("memberAccountId").string(var_15);
     }
@@ -94,12 +99,13 @@ pub fn serialize_structure_crate_input_list_s3_resources_input(
             aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateS3ResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.member_account_id {
         object.key("memberAccountId").string(var_18);
     }
@@ -111,18 +117,19 @@ pub fn serialize_structure_crate_input_update_s3_resources_input(
                 crate::json_ser::serialize_structure_crate_model_s3_resource_classification_update(
                     &mut object_22,
                     item_21,
-                );
+                )?;
                 object_22.finish();
             }
         }
         array_20.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_resource_classification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3ResourceClassification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.bucket_name {
         object.key("bucketName").string(var_23);
     }
@@ -134,27 +141,29 @@ pub fn serialize_structure_crate_model_s3_resource_classification(
         crate::json_ser::serialize_structure_crate_model_classification_type(
             &mut object_26,
             var_25,
-        );
+        )?;
         object_26.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_resource(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Resource,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.bucket_name {
         object.key("bucketName").string(var_27);
     }
     if let Some(var_28) = &input.prefix {
         object.key("prefix").string(var_28);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_resource_classification_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3ResourceClassificationUpdate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.bucket_name {
         object.key("bucketName").string(var_29);
     }
@@ -166,31 +175,34 @@ pub fn serialize_structure_crate_model_s3_resource_classification_update(
         crate::json_ser::serialize_structure_crate_model_classification_type_update(
             &mut object_32,
             var_31,
-        );
+        )?;
         object_32.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_classification_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClassificationType,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.one_time {
         object.key("oneTime").string(var_33.as_str());
     }
     if let Some(var_34) = &input.continuous {
         object.key("continuous").string(var_34.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_classification_type_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClassificationTypeUpdate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.one_time {
         object.key("oneTime").string(var_35.as_str());
     }
     if let Some(var_36) = &input.continuous {
         object.key("continuous").string(var_36.as_str());
     }
+    Ok(())
 }

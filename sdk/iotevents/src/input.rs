@@ -230,10 +230,7 @@ impl CreateAlarmModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_alarm_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_alarm_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -485,10 +482,7 @@ impl CreateDetectorModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_detector_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_detector_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -683,10 +677,7 @@ impl CreateInputInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_input(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_input(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2983,10 +2974,7 @@ impl ListInputRoutingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_input_routings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_input_routings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3431,10 +3419,7 @@ impl PutLoggingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_logging_options(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_logging_options(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3587,7 +3572,7 @@ impl StartDetectorModelAnalysisInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_detector_model_analysis(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_detector_model_analysis(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3763,10 +3748,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4200,10 +4182,7 @@ impl UpdateAlarmModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_alarm_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_alarm_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4434,10 +4413,7 @@ impl UpdateDetectorModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_detector_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_detector_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4627,10 +4603,7 @@ impl UpdateInputInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_input(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_input(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4703,6 +4676,20 @@ pub struct UpdateInputInput {
     /// <p>The definition of the input.</p>
     pub input_definition: std::option::Option<crate::model::InputDefinition>,
 }
+impl UpdateInputInput {
+    /// <p>The name of the input you want to update.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>A brief description of the input.</p>
+    pub fn input_description(&self) -> std::option::Option<&str> {
+        self.input_description.as_deref()
+    }
+    /// <p>The definition of the input.</p>
+    pub fn input_definition(&self) -> std::option::Option<&crate::model::InputDefinition> {
+        self.input_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInputInput");
@@ -4728,6 +4715,31 @@ pub struct UpdateDetectorModelInput {
     /// <p>Information about the order in which events are evaluated and how actions are executed.
     /// </p>
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
+}
+impl UpdateDetectorModelInput {
+    /// <p>The name of the detector model that is updated.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>Information that defines how a detector operates.</p>
+    pub fn detector_model_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectorModelDefinition> {
+        self.detector_model_definition.as_ref()
+    }
+    /// <p>A brief description of the detector model.</p>
+    pub fn detector_model_description(&self) -> std::option::Option<&str> {
+        self.detector_model_description.as_deref()
+    }
+    /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Information about the order in which events are evaluated and how actions are executed.
+    /// </p>
+    pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
+        self.evaluation_method.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDetectorModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4765,6 +4777,40 @@ pub struct UpdateAlarmModelInput {
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
 }
+impl UpdateAlarmModelInput {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The description of the alarm model.</p>
+    pub fn alarm_model_description(&self) -> std::option::Option<&str> {
+        self.alarm_model_description.as_deref()
+    }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    pub fn severity(&self) -> std::option::Option<i32> {
+        self.severity
+    }
+    /// <p>Defines when your alarm is invoked.</p>
+    pub fn alarm_rule(&self) -> std::option::Option<&crate::model::AlarmRule> {
+        self.alarm_rule.as_ref()
+    }
+    /// <p>Contains information about one or more notification actions.</p>
+    pub fn alarm_notification(&self) -> std::option::Option<&crate::model::AlarmNotification> {
+        self.alarm_notification.as_ref()
+    }
+    /// <p>Contains information about one or more alarm actions.</p>
+    pub fn alarm_event_actions(&self) -> std::option::Option<&crate::model::AlarmEventActions> {
+        self.alarm_event_actions.as_ref()
+    }
+    /// <p>Contains the configuration information of alarm state changes.</p>
+    pub fn alarm_capabilities(&self) -> std::option::Option<&crate::model::AlarmCapabilities> {
+        self.alarm_capabilities.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAlarmModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAlarmModelInput");
@@ -4789,6 +4835,16 @@ pub struct UntagResourceInput {
     /// <p>A list of the keys of the tags to be removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the keys of the tags to be removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4807,6 +4863,16 @@ pub struct TagResourceInput {
     /// <p>The new or modified tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The new or modified tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4823,6 +4889,14 @@ pub struct StartDetectorModelAnalysisInput {
     /// <p>Information that defines how a detector operates.</p>
     pub detector_model_definition: std::option::Option<crate::model::DetectorModelDefinition>,
 }
+impl StartDetectorModelAnalysisInput {
+    /// <p>Information that defines how a detector operates.</p>
+    pub fn detector_model_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectorModelDefinition> {
+        self.detector_model_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDetectorModelAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDetectorModelAnalysisInput");
@@ -4838,6 +4912,12 @@ pub struct PutLoggingOptionsInput {
     /// <p>The new values of the AWS IoT Events logging options.</p>
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
+impl PutLoggingOptionsInput {
+    /// <p>The new values of the AWS IoT Events logging options.</p>
+    pub fn logging_options(&self) -> std::option::Option<&crate::model::LoggingOptions> {
+        self.logging_options.as_ref()
+    }
+}
 impl std::fmt::Debug for PutLoggingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLoggingOptionsInput");
@@ -4852,6 +4932,12 @@ impl std::fmt::Debug for PutLoggingOptionsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4869,6 +4955,16 @@ pub struct ListInputsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListInputsInput {
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListInputsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4896,6 +4992,26 @@ pub struct ListInputRoutingsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInputRoutingsInput {
+    /// <p>
+    /// The identifer of the routed input.
+    /// </p>
+    pub fn input_identifier(&self) -> std::option::Option<&crate::model::InputIdentifier> {
+        self.input_identifier.as_ref()
+    }
+    /// <p>
+    /// The maximum number of results to be returned per request.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// The token that you can use to return the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInputRoutingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInputRoutingsInput");
@@ -4917,6 +5033,20 @@ pub struct ListDetectorModelVersionsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDetectorModelVersionsInput {
+    /// <p>The name of the detector model whose versions are returned.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDetectorModelVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectorModelVersionsInput");
@@ -4935,6 +5065,16 @@ pub struct ListDetectorModelsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDetectorModelsInput {
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDetectorModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4956,6 +5096,20 @@ pub struct ListAlarmModelVersionsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAlarmModelVersionsInput {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAlarmModelVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlarmModelVersionsInput");
@@ -4974,6 +5128,16 @@ pub struct ListAlarmModelsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAlarmModelsInput {
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAlarmModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4994,6 +5158,20 @@ pub struct GetDetectorModelAnalysisResultsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetDetectorModelAnalysisResultsInput {
+    /// <p>The ID of the analysis result that you want to retrieve.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetDetectorModelAnalysisResultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5023,6 +5201,12 @@ pub struct DescribeInputInput {
     /// <p>The name of the input.</p>
     pub input_name: std::option::Option<std::string::String>,
 }
+impl DescribeInputInput {
+    /// <p>The name of the input.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInputInput");
@@ -5037,6 +5221,12 @@ impl std::fmt::Debug for DescribeInputInput {
 pub struct DescribeDetectorModelAnalysisInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
     pub analysis_id: std::option::Option<std::string::String>,
+}
+impl DescribeDetectorModelAnalysisInput {
+    /// <p>The ID of the analysis result that you want to retrieve.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDetectorModelAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5054,6 +5244,16 @@ pub struct DescribeDetectorModelInput {
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the detector model.</p>
     pub detector_model_version: std::option::Option<std::string::String>,
+}
+impl DescribeDetectorModelInput {
+    /// <p>The name of the detector model.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The version of the detector model.</p>
+    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+        self.detector_model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDetectorModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5073,6 +5273,16 @@ pub struct DescribeAlarmModelInput {
     /// <p>The version of the alarm model.</p>
     pub alarm_model_version: std::option::Option<std::string::String>,
 }
+impl DescribeAlarmModelInput {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+        self.alarm_model_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAlarmModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlarmModelInput");
@@ -5089,6 +5299,12 @@ pub struct DeleteInputInput {
     /// <p>The name of the input to delete.</p>
     pub input_name: std::option::Option<std::string::String>,
 }
+impl DeleteInputInput {
+    /// <p>The name of the input to delete.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInputInput");
@@ -5104,6 +5320,12 @@ pub struct DeleteDetectorModelInput {
     /// <p>The name of the detector model to be deleted.</p>
     pub detector_model_name: std::option::Option<std::string::String>,
 }
+impl DeleteDetectorModelInput {
+    /// <p>The name of the detector model to be deleted.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDetectorModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDetectorModelInput");
@@ -5118,6 +5340,12 @@ impl std::fmt::Debug for DeleteDetectorModelInput {
 pub struct DeleteAlarmModelInput {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
+}
+impl DeleteAlarmModelInput {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAlarmModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5139,6 +5367,24 @@ pub struct CreateInputInput {
     pub input_definition: std::option::Option<crate::model::InputDefinition>,
     /// <p>Metadata that can be used to manage the input.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateInputInput {
+    /// <p>The name you want to give to the input.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>A brief description of the input.</p>
+    pub fn input_description(&self) -> std::option::Option<&str> {
+        self.input_description.as_deref()
+    }
+    /// <p>The definition of the input.</p>
+    pub fn input_definition(&self) -> std::option::Option<&crate::model::InputDefinition> {
+        self.input_definition.as_ref()
+    }
+    /// <p>Metadata that can be used to manage the input.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5174,6 +5420,43 @@ pub struct CreateDetectorModelInput {
     /// <p>Information about the order in which events are evaluated and how actions are executed.
     /// </p>
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
+}
+impl CreateDetectorModelInput {
+    /// <p>The name of the detector model.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>Information that defines how the detectors operate.</p>
+    pub fn detector_model_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectorModelDefinition> {
+        self.detector_model_definition.as_ref()
+    }
+    /// <p>A brief description of the detector model.</p>
+    pub fn detector_model_description(&self) -> std::option::Option<&str> {
+        self.detector_model_description.as_deref()
+    }
+    /// <p>The input attribute key used to identify a device or system to create a detector (an
+    /// instance of the detector model) and then to route each input received to the appropriate
+    /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
+    /// input to specify the attribute-value pair that is used to identify the device associated with
+    /// the input.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Metadata that can be used to manage the detector model.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Information about the order in which events are evaluated and how actions are executed.
+    /// </p>
+    pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
+        self.evaluation_method.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDetectorModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5222,6 +5505,54 @@ pub struct CreateAlarmModelInput {
     pub alarm_event_actions: std::option::Option<crate::model::AlarmEventActions>,
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
+}
+impl CreateAlarmModelInput {
+    /// <p>A unique name that helps you identify the alarm model. You can't change this name after
+    /// you create the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>A description that tells you what the alarm model detects.</p>
+    pub fn alarm_model_description(&self) -> std::option::Option<&str> {
+        self.alarm_model_description.as_deref()
+    }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
+    /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
+    /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>You can create up to 50 tags for one alarm model.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An input attribute used as a key to create an alarm.
+    /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
+    /// associated with this key to the alarm.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    pub fn severity(&self) -> std::option::Option<i32> {
+        self.severity
+    }
+    /// <p>Defines when your alarm is invoked.</p>
+    pub fn alarm_rule(&self) -> std::option::Option<&crate::model::AlarmRule> {
+        self.alarm_rule.as_ref()
+    }
+    /// <p>Contains information about one or more notification actions.</p>
+    pub fn alarm_notification(&self) -> std::option::Option<&crate::model::AlarmNotification> {
+        self.alarm_notification.as_ref()
+    }
+    /// <p>Contains information about one or more alarm actions.</p>
+    pub fn alarm_event_actions(&self) -> std::option::Option<&crate::model::AlarmEventActions> {
+        self.alarm_event_actions.as_ref()
+    }
+    /// <p>Contains the configuration information of alarm state changes.</p>
+    pub fn alarm_capabilities(&self) -> std::option::Option<&crate::model::AlarmCapabilities> {
+        self.alarm_capabilities.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAlarmModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -13526,6 +13526,20 @@ pub struct WafInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl WafInvalidParameterException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn field(&self) -> std::option::Option<&crate::model::ParameterExceptionField> {
+        self.field.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn parameter(&self) -> std::option::Option<&str> {
+        self.parameter.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(&self) -> std::option::Option<&crate::model::ParameterExceptionReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for WafInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WafInvalidParameterException");
@@ -14661,6 +14675,16 @@ pub struct WafEntityMigrationException {
     pub migration_error_type: std::option::Option<crate::model::MigrationErrorType>,
     #[allow(missing_docs)] // documentation missing in model
     pub migration_error_reason: std::option::Option<std::string::String>,
+}
+impl WafEntityMigrationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn migration_error_type(&self) -> std::option::Option<&crate::model::MigrationErrorType> {
+        self.migration_error_type.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn migration_error_reason(&self) -> std::option::Option<&str> {
+        self.migration_error_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for WafEntityMigrationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

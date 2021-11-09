@@ -310,10 +310,7 @@ impl BatchDeleteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_batch_delete(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_batch_delete(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -487,10 +484,7 @@ impl BatchStartInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_batch_start(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_batch_start(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -662,10 +656,7 @@ impl BatchStopInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_batch_stop(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_batch_stop(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -858,10 +849,7 @@ impl BatchUpdateScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_update_schedule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_update_schedule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1158,10 +1146,7 @@ impl ClaimDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_claim_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_claim_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1513,10 +1498,7 @@ impl CreateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1876,10 +1858,7 @@ impl CreateInputInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_input(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_input(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2069,10 +2048,7 @@ impl CreateInputSecurityGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_input_security_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2299,10 +2275,7 @@ impl CreateMultiplexInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_multiplex(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_multiplex(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2517,10 +2490,7 @@ impl CreateMultiplexProgramInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_multiplex_program(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2731,10 +2701,7 @@ impl CreatePartnerInputInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_partner_input(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_partner_input(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2927,10 +2894,7 @@ impl CreateTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8022,10 +7986,7 @@ impl PurchaseOfferingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8997,10 +8958,7 @@ impl TransferInputDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_transfer_input_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_transfer_input_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9292,10 +9250,7 @@ impl UpdateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9497,10 +9452,7 @@ impl UpdateChannelClassInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_channel_class(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_channel_class(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9806,10 +9758,7 @@ impl UpdateInputInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_input(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_input(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10027,10 +9976,7 @@ impl UpdateInputDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_input_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_input_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10255,10 +10201,7 @@ impl UpdateInputSecurityGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_input_security_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10450,10 +10393,7 @@ impl UpdateMultiplexInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_multiplex(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_multiplex(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10667,10 +10607,7 @@ impl UpdateMultiplexProgramInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_multiplex_program(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10850,10 +10787,7 @@ impl UpdateReservationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_reservation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_reservation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10924,6 +10858,16 @@ pub struct UpdateReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: std::option::Option<std::string::String>,
 }
+impl UpdateReservationInput {
+    /// Name of the reservation
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
+        self.reservation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReservationInput");
@@ -10943,6 +10887,22 @@ pub struct UpdateMultiplexProgramInput {
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The name of the program to update.
     pub program_name: std::option::Option<std::string::String>,
+}
+impl UpdateMultiplexProgramInput {
+    /// The ID of the multiplex of the program to update.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+    /// The new settings for a multiplex program.
+    pub fn multiplex_program_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiplexProgramSettings> {
+        self.multiplex_program_settings.as_ref()
+    }
+    /// The name of the program to update.
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMultiplexProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10968,6 +10928,20 @@ pub struct UpdateMultiplexInput {
     /// Name of the multiplex.
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateMultiplexInput {
+    /// ID of the multiplex to update.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+    /// The new settings for a multiplex.
+    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+        self.multiplex_settings.as_ref()
+    }
+    /// Name of the multiplex.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMultiplexInput");
@@ -10989,6 +10963,23 @@ pub struct UpdateInputSecurityGroupInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
+}
+impl UpdateInputSecurityGroupInput {
+    /// The id of the Input Security Group to update.
+    pub fn input_security_group_id(&self) -> std::option::Option<&str> {
+        self.input_security_group_id.as_deref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// List of IPv4 CIDR addresses to whitelist
+    pub fn whitelist_rules(&self) -> std::option::Option<&[crate::model::InputWhitelistRuleCidr]> {
+        self.whitelist_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateInputSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11012,6 +11003,28 @@ pub struct UpdateInputDeviceInput {
     pub name: std::option::Option<std::string::String>,
     /// The settings that you want to apply to the UHD input device.
     pub uhd_device_settings: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
+}
+impl UpdateInputDeviceInput {
+    /// The settings that you want to apply to the HD input device.
+    pub fn hd_device_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceConfigurableSettings> {
+        self.hd_device_settings.as_ref()
+    }
+    /// The unique ID of the input device. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
+    /// The name that you assigned to this input device (not the unique ID).
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The settings that you want to apply to the UHD input device.
+    pub fn uhd_device_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceConfigurableSettings> {
+        self.uhd_device_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateInputDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11050,6 +11063,46 @@ pub struct UpdateInputInput {
     /// Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub sources: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
 }
+impl UpdateInputInput {
+    /// Destination settings for PUSH type inputs.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::InputDestinationRequest]> {
+        self.destinations.as_deref()
+    }
+    /// Settings for the devices.
+    pub fn input_devices(&self) -> std::option::Option<&[crate::model::InputDeviceRequest]> {
+        self.input_devices.as_deref()
+    }
+    /// Unique ID of the input.
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// A list of security groups referenced by IDs to attach to the input.
+    pub fn input_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.input_security_groups.as_deref()
+    }
+    /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
+    /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
+    /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    pub fn media_connect_flows(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaConnectFlowRequest]> {
+        self.media_connect_flows.as_deref()
+    }
+    /// Name of the input.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// The source URLs for a PULL-type input. Every PULL type input needs
+    /// exactly two source URLs for redundancy.
+    /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+    pub fn sources(&self) -> std::option::Option<&[crate::model::InputSourceRequest]> {
+        self.sources.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInputInput");
@@ -11075,6 +11128,20 @@ pub struct UpdateChannelClassInput {
     pub channel_id: std::option::Option<std::string::String>,
     /// A list of output destinations for this channel.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+}
+impl UpdateChannelClassInput {
+    /// The channel class that you wish to update this channel to use.
+    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+        self.channel_class.as_ref()
+    }
+    /// Channel Id of the channel whose class should be updated.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// A list of output destinations for this channel.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+        self.destinations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelClassInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11109,6 +11176,46 @@ pub struct UpdateChannelInput {
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateChannelInput {
+    /// Specification of CDI inputs for this channel
+    pub fn cdi_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+        self.cdi_input_specification.as_ref()
+    }
+    /// channel ID
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// A list of output destinations for this channel.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The encoder settings for this channel.
+    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+        self.encoder_settings.as_ref()
+    }
+    /// Placeholder documentation for __listOfInputAttachment
+    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+        self.input_attachments.as_deref()
+    }
+    /// Specification of network and file inputs for this channel
+    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+        self.input_specification.as_ref()
+    }
+    /// The log level to write to CloudWatch Logs.
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// The name of the channel.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
@@ -11138,6 +11245,24 @@ pub struct TransferInputDeviceInput {
     /// An optional message for the recipient. Maximum 280 characters.
     pub transfer_message: std::option::Option<std::string::String>,
 }
+impl TransferInputDeviceInput {
+    /// The unique ID of this input device. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
+    /// The AWS account ID (12 digits) for the recipient of the device transfer.
+    pub fn target_customer_id(&self) -> std::option::Option<&str> {
+        self.target_customer_id.as_deref()
+    }
+    /// The target AWS region to transfer the device.
+    pub fn target_region(&self) -> std::option::Option<&str> {
+        self.target_region.as_deref()
+    }
+    /// An optional message for the recipient. Maximum 280 characters.
+    pub fn transfer_message(&self) -> std::option::Option<&str> {
+        self.transfer_message.as_deref()
+    }
+}
 impl std::fmt::Debug for TransferInputDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransferInputDeviceInput");
@@ -11156,6 +11281,12 @@ pub struct StopMultiplexInput {
     /// The ID of the multiplex.
     pub multiplex_id: std::option::Option<std::string::String>,
 }
+impl StopMultiplexInput {
+    /// The ID of the multiplex.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopMultiplexInput");
@@ -11170,6 +11301,12 @@ impl std::fmt::Debug for StopMultiplexInput {
 pub struct StopChannelInput {
     /// A request to stop a running channel
     pub channel_id: std::option::Option<std::string::String>,
+}
+impl StopChannelInput {
+    /// A request to stop a running channel
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11186,6 +11323,12 @@ pub struct StartMultiplexInput {
     /// The ID of the multiplex.
     pub multiplex_id: std::option::Option<std::string::String>,
 }
+impl StartMultiplexInput {
+    /// The ID of the multiplex.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMultiplexInput");
@@ -11201,6 +11344,12 @@ pub struct StartChannelInput {
     /// A request to start a channel
     pub channel_id: std::option::Option<std::string::String>,
 }
+impl StartChannelInput {
+    /// A request to start a channel
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartChannelInput");
@@ -11215,6 +11364,12 @@ impl std::fmt::Debug for StartChannelInput {
 pub struct RejectInputDeviceTransferInput {
     /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
     pub input_device_id: std::option::Option<std::string::String>,
+}
+impl RejectInputDeviceTransferInput {
+    /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectInputDeviceTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11242,6 +11397,35 @@ pub struct PurchaseOfferingInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PurchaseOfferingInput {
+    /// Number of resources
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// Name for the new reservation
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Offering to purchase, e.g. '87654321'
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+    /// A collection of key-value pairs
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for PurchaseOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseOfferingInput");
@@ -11261,6 +11445,12 @@ impl std::fmt::Debug for PurchaseOfferingInput {
 pub struct ListTagsForResourceInput {
     /// Placeholder documentation for __string
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// Placeholder documentation for __string
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11294,6 +11484,48 @@ pub struct ListReservationsInput {
     pub special_feature: std::option::Option<std::string::String>,
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
     pub video_quality: std::option::Option<std::string::String>,
+}
+impl ListReservationsInput {
+    /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    pub fn channel_class(&self) -> std::option::Option<&str> {
+        self.channel_class.as_deref()
+    }
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    pub fn codec(&self) -> std::option::Option<&str> {
+        self.codec.as_deref()
+    }
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    pub fn maximum_bitrate(&self) -> std::option::Option<&str> {
+        self.maximum_bitrate.as_deref()
+    }
+    /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    pub fn maximum_framerate(&self) -> std::option::Option<&str> {
+        self.maximum_framerate.as_deref()
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    pub fn resolution(&self) -> std::option::Option<&str> {
+        self.resolution.as_deref()
+    }
+    /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    pub fn special_feature(&self) -> std::option::Option<&str> {
+        self.special_feature.as_deref()
+    }
+    /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    pub fn video_quality(&self) -> std::option::Option<&str> {
+        self.video_quality.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReservationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11341,6 +11573,56 @@ pub struct ListOfferingsInput {
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
     pub video_quality: std::option::Option<std::string::String>,
 }
+impl ListOfferingsInput {
+    /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    pub fn channel_class(&self) -> std::option::Option<&str> {
+        self.channel_class.as_deref()
+    }
+    /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
+    pub fn channel_configuration(&self) -> std::option::Option<&str> {
+        self.channel_configuration.as_deref()
+    }
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    pub fn codec(&self) -> std::option::Option<&str> {
+        self.codec.as_deref()
+    }
+    /// Filter by offering duration, e.g. '12'
+    pub fn duration(&self) -> std::option::Option<&str> {
+        self.duration.as_deref()
+    }
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    pub fn maximum_bitrate(&self) -> std::option::Option<&str> {
+        self.maximum_bitrate.as_deref()
+    }
+    /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    pub fn maximum_framerate(&self) -> std::option::Option<&str> {
+        self.maximum_framerate.as_deref()
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    pub fn resolution(&self) -> std::option::Option<&str> {
+        self.resolution.as_deref()
+    }
+    /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    pub fn special_feature(&self) -> std::option::Option<&str> {
+        self.special_feature.as_deref()
+    }
+    /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    pub fn video_quality(&self) -> std::option::Option<&str> {
+        self.video_quality.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingsInput");
@@ -11371,6 +11653,20 @@ pub struct ListMultiplexProgramsInput {
     /// The token to retrieve the next page of results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMultiplexProgramsInput {
+    /// The maximum number of items to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// The ID of the multiplex that the programs belong to.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+    /// The token to retrieve the next page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMultiplexProgramsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMultiplexProgramsInput");
@@ -11390,6 +11686,16 @@ pub struct ListMultiplexesInput {
     /// The token to retrieve the next page of results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMultiplexesInput {
+    /// The maximum number of items to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// The token to retrieve the next page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMultiplexesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMultiplexesInput");
@@ -11408,6 +11714,16 @@ pub struct ListInputSecurityGroupsInput {
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInputSecurityGroupsInput {
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInputSecurityGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInputSecurityGroupsInput");
@@ -11425,6 +11741,16 @@ pub struct ListInputsInput {
     pub max_results: i32,
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInputsInput {
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInputsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11446,6 +11772,20 @@ pub struct ListInputDeviceTransfersInput {
     /// Placeholder documentation for __string
     pub transfer_type: std::option::Option<std::string::String>,
 }
+impl ListInputDeviceTransfersInput {
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Placeholder documentation for __string
+    pub fn transfer_type(&self) -> std::option::Option<&str> {
+        self.transfer_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInputDeviceTransfersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInputDeviceTransfersInput");
@@ -11465,6 +11805,16 @@ pub struct ListInputDevicesInput {
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInputDevicesInput {
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInputDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInputDevicesInput");
@@ -11482,6 +11832,16 @@ pub struct ListChannelsInput {
     pub max_results: i32,
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsInput {
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11503,6 +11863,20 @@ pub struct DescribeScheduleInput {
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeScheduleInput {
+    /// Id of the channel whose schedule is being updated.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// Placeholder documentation for MaxResults
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScheduleInput");
@@ -11520,6 +11894,12 @@ pub struct DescribeReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: std::option::Option<std::string::String>,
 }
+impl DescribeReservationInput {
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
+        self.reservation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservationInput");
@@ -11534,6 +11914,12 @@ impl std::fmt::Debug for DescribeReservationInput {
 pub struct DescribeOfferingInput {
     /// Unique offering ID, e.g. '87654321'
     pub offering_id: std::option::Option<std::string::String>,
+}
+impl DescribeOfferingInput {
+    /// Unique offering ID, e.g. '87654321'
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11552,6 +11938,16 @@ pub struct DescribeMultiplexProgramInput {
     /// The name of the program.
     pub program_name: std::option::Option<std::string::String>,
 }
+impl DescribeMultiplexProgramInput {
+    /// The ID of the multiplex that the program belongs to.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+    /// The name of the program.
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMultiplexProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMultiplexProgramInput");
@@ -11568,6 +11964,12 @@ pub struct DescribeMultiplexInput {
     /// The ID of the multiplex.
     pub multiplex_id: std::option::Option<std::string::String>,
 }
+impl DescribeMultiplexInput {
+    /// The ID of the multiplex.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMultiplexInput");
@@ -11582,6 +11984,12 @@ impl std::fmt::Debug for DescribeMultiplexInput {
 pub struct DescribeInputSecurityGroupInput {
     /// The id of the Input Security Group to describe
     pub input_security_group_id: std::option::Option<std::string::String>,
+}
+impl DescribeInputSecurityGroupInput {
+    /// The id of the Input Security Group to describe
+    pub fn input_security_group_id(&self) -> std::option::Option<&str> {
+        self.input_security_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInputSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11600,6 +12008,16 @@ pub struct DescribeInputDeviceThumbnailInput {
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
     pub accept: std::option::Option<crate::model::AcceptHeader>,
 }
+impl DescribeInputDeviceThumbnailInput {
+    /// The unique ID of this input device. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
+    /// The HTTP Accept header. Indicates the requested type for the thumbnail.
+    pub fn accept(&self) -> std::option::Option<&crate::model::AcceptHeader> {
+        self.accept.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInputDeviceThumbnailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInputDeviceThumbnailInput");
@@ -11616,6 +12034,12 @@ pub struct DescribeInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub input_device_id: std::option::Option<std::string::String>,
 }
+impl DescribeInputDeviceInput {
+    /// The unique ID of this input device. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInputDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInputDeviceInput");
@@ -11631,6 +12055,12 @@ pub struct DescribeInputInput {
     /// Unique ID of the input
     pub input_id: std::option::Option<std::string::String>,
 }
+impl DescribeInputInput {
+    /// Unique ID of the input
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInputInput");
@@ -11645,6 +12075,12 @@ impl std::fmt::Debug for DescribeInputInput {
 pub struct DescribeChannelInput {
     /// channel ID
     pub channel_id: std::option::Option<std::string::String>,
+}
+impl DescribeChannelInput {
+    /// channel ID
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11663,6 +12099,16 @@ pub struct DeleteTagsInput {
     /// An array of tag keys to delete
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteTagsInput {
+    /// Placeholder documentation for __string
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// An array of tag keys to delete
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsInput");
@@ -11679,6 +12125,12 @@ pub struct DeleteScheduleInput {
     /// Id of the channel whose schedule is being deleted.
     pub channel_id: std::option::Option<std::string::String>,
 }
+impl DeleteScheduleInput {
+    /// Id of the channel whose schedule is being deleted.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteScheduleInput");
@@ -11693,6 +12145,12 @@ impl std::fmt::Debug for DeleteScheduleInput {
 pub struct DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: std::option::Option<std::string::String>,
+}
+impl DeleteReservationInput {
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
+        self.reservation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11711,6 +12169,16 @@ pub struct DeleteMultiplexProgramInput {
     /// The multiplex program name.
     pub program_name: std::option::Option<std::string::String>,
 }
+impl DeleteMultiplexProgramInput {
+    /// The ID of the multiplex that the program belongs to.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+    /// The multiplex program name.
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMultiplexProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMultiplexProgramInput");
@@ -11727,6 +12195,12 @@ pub struct DeleteMultiplexInput {
     /// The ID of the multiplex.
     pub multiplex_id: std::option::Option<std::string::String>,
 }
+impl DeleteMultiplexInput {
+    /// The ID of the multiplex.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMultiplexInput");
@@ -11741,6 +12215,12 @@ impl std::fmt::Debug for DeleteMultiplexInput {
 pub struct DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
     pub input_security_group_id: std::option::Option<std::string::String>,
+}
+impl DeleteInputSecurityGroupInput {
+    /// The Input Security Group to delete
+    pub fn input_security_group_id(&self) -> std::option::Option<&str> {
+        self.input_security_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInputSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11757,6 +12237,12 @@ pub struct DeleteInputInput {
     /// Unique ID of the input
     pub input_id: std::option::Option<std::string::String>,
 }
+impl DeleteInputInput {
+    /// Unique ID of the input
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInputInput");
@@ -11771,6 +12257,12 @@ impl std::fmt::Debug for DeleteInputInput {
 pub struct DeleteChannelInput {
     /// Unique ID of the channel.
     pub channel_id: std::option::Option<std::string::String>,
+}
+impl DeleteChannelInput {
+    /// Unique ID of the channel.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11789,6 +12281,19 @@ pub struct CreateTagsInput {
     /// Placeholder documentation for Tags
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateTagsInput {
+    /// Placeholder documentation for __string
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// Placeholder documentation for Tags
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11811,6 +12316,24 @@ pub struct CreatePartnerInputInput {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreatePartnerInputInput {
+    /// Unique ID of the input.
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// Unique identifier of the request to ensure the request is handled
+    /// exactly once in case of retries.
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePartnerInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11835,6 +12358,27 @@ pub struct CreateMultiplexProgramInput {
     /// Unique request ID. This prevents retries from creating multiple
     /// resources.
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CreateMultiplexProgramInput {
+    /// ID of the multiplex where the program is to be created.
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+        self.multiplex_id.as_deref()
+    }
+    /// The settings for this multiplex program.
+    pub fn multiplex_program_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiplexProgramSettings> {
+        self.multiplex_program_settings.as_ref()
+    }
+    /// Name of multiplex program.
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+    /// Unique request ID. This prevents retries from creating multiple
+    /// resources.
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMultiplexProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11867,6 +12411,32 @@ pub struct CreateMultiplexInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateMultiplexInput {
+    /// A list of availability zones for the multiplex. You must specify exactly two.
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// Configuration for a multiplex event.
+    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+        self.multiplex_settings.as_ref()
+    }
+    /// Name of multiplex.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Unique request ID. This prevents retries from creating multiple
+    /// resources.
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMultiplexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMultiplexInput");
@@ -11888,6 +12458,19 @@ pub struct CreateInputSecurityGroupInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
+}
+impl CreateInputSecurityGroupInput {
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// List of IPv4 CIDR addresses to whitelist
+    pub fn whitelist_rules(&self) -> std::option::Option<&[crate::model::InputWhitelistRuleCidr]> {
+        self.whitelist_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInputSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11934,6 +12517,65 @@ pub struct CreateInputInput {
     /// This property requires setting the roleArn property on Input creation.
     /// Not compatible with the inputSecurityGroups property.
     pub vpc: std::option::Option<crate::model::InputVpcRequest>,
+}
+impl CreateInputInput {
+    /// Destination settings for PUSH type inputs.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::InputDestinationRequest]> {
+        self.destinations.as_deref()
+    }
+    /// Settings for the devices.
+    pub fn input_devices(&self) -> std::option::Option<&[crate::model::InputDeviceSettings]> {
+        self.input_devices.as_deref()
+    }
+    /// A list of security groups referenced by IDs to attach to the input.
+    pub fn input_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.input_security_groups.as_deref()
+    }
+    /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
+    /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
+    /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    pub fn media_connect_flows(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaConnectFlowRequest]> {
+        self.media_connect_flows.as_deref()
+    }
+    /// Name of the input.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Unique identifier of the request to ensure the request is handled
+    /// exactly once in case of retries.
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// The source URLs for a PULL-type input. Every PULL type input needs
+    /// exactly two source URLs for redundancy.
+    /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+    pub fn sources(&self) -> std::option::Option<&[crate::model::InputSourceRequest]> {
+        self.sources.as_deref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// The different types of inputs that AWS Elemental MediaLive supports.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InputType> {
+        self.r#type.as_ref()
+    }
+    /// Settings for a private VPC Input.
+    /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
+    /// This property requires setting the roleArn property on Input creation.
+    /// Not compatible with the inputSecurityGroups property.
+    pub fn vpc(&self) -> std::option::Option<&crate::model::InputVpcRequest> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateInputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11986,6 +12628,66 @@ pub struct CreateChannelInput {
     /// Settings for the VPC outputs
     pub vpc: std::option::Option<crate::model::VpcOutputSettings>,
 }
+impl CreateChannelInput {
+    /// Specification of CDI inputs for this channel
+    pub fn cdi_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+        self.cdi_input_specification.as_ref()
+    }
+    /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+        self.channel_class.as_ref()
+    }
+    /// Placeholder documentation for __listOfOutputDestination
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// Encoder Settings
+    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+        self.encoder_settings.as_ref()
+    }
+    /// List of input attachments for channel.
+    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+        self.input_attachments.as_deref()
+    }
+    /// Specification of network and file inputs for this channel
+    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+        self.input_specification.as_ref()
+    }
+    /// The log level to write to CloudWatch Logs.
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// Name of channel.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Unique request ID to be specified. This is needed to prevent retries from
+    /// creating multiple resources.
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// Deprecated field that's only usable by whitelisted customers.
+    pub fn reserved(&self) -> std::option::Option<&str> {
+        self.reserved.as_deref()
+    }
+    /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Settings for the VPC outputs
+    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettings> {
+        self.vpc.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelInput");
@@ -12013,6 +12715,12 @@ pub struct ClaimDeviceInput {
     /// The id of the device you want to claim.
     pub id: std::option::Option<std::string::String>,
 }
+impl ClaimDeviceInput {
+    /// The id of the device you want to claim.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for ClaimDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClaimDeviceInput");
@@ -12027,6 +12735,12 @@ impl std::fmt::Debug for ClaimDeviceInput {
 pub struct CancelInputDeviceTransferInput {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     pub input_device_id: std::option::Option<std::string::String>,
+}
+impl CancelInputDeviceTransferInput {
+    /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelInputDeviceTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12047,6 +12761,20 @@ pub struct BatchUpdateScheduleInput {
     /// Schedule actions to delete from the schedule.
     pub deletes: std::option::Option<crate::model::BatchScheduleActionDeleteRequest>,
 }
+impl BatchUpdateScheduleInput {
+    /// Id of the channel whose schedule is being updated.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// Schedule actions to create in the schedule.
+    pub fn creates(&self) -> std::option::Option<&crate::model::BatchScheduleActionCreateRequest> {
+        self.creates.as_ref()
+    }
+    /// Schedule actions to delete from the schedule.
+    pub fn deletes(&self) -> std::option::Option<&crate::model::BatchScheduleActionDeleteRequest> {
+        self.deletes.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateScheduleInput");
@@ -12066,6 +12794,16 @@ pub struct BatchStopInput {
     /// List of multiplex IDs
     pub multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchStopInput {
+    /// List of channel IDs
+    pub fn channel_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.channel_ids.as_deref()
+    }
+    /// List of multiplex IDs
+    pub fn multiplex_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.multiplex_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchStopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchStopInput");
@@ -12083,6 +12821,16 @@ pub struct BatchStartInput {
     pub channel_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// List of multiplex IDs
     pub multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchStartInput {
+    /// List of channel IDs
+    pub fn channel_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.channel_ids.as_deref()
+    }
+    /// List of multiplex IDs
+    pub fn multiplex_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.multiplex_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchStartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12106,6 +12854,24 @@ pub struct BatchDeleteInput {
     /// List of multiplex IDs
     pub multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchDeleteInput {
+    /// List of channel IDs
+    pub fn channel_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.channel_ids.as_deref()
+    }
+    /// List of input IDs
+    pub fn input_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.input_ids.as_deref()
+    }
+    /// List of input security group IDs
+    pub fn input_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.input_security_group_ids.as_deref()
+    }
+    /// List of multiplex IDs
+    pub fn multiplex_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.multiplex_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteInput");
@@ -12123,6 +12889,12 @@ impl std::fmt::Debug for BatchDeleteInput {
 pub struct AcceptInputDeviceTransferInput {
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
     pub input_device_id: std::option::Option<std::string::String>,
+}
+impl AcceptInputDeviceTransferInput {
+    /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptInputDeviceTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,16 @@ pub struct UpdatePartnerStatusOutput {
     /// <p>The name of the partner that is authorized to send data.</p>
     pub partner_name: std::option::Option<std::string::String>,
 }
+impl UpdatePartnerStatusOutput {
+    /// <p>The name of the database that receives data from the partner.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner that is authorized to send data.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePartnerStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePartnerStatusOutput");
@@ -72,6 +82,12 @@ pub struct RotateEncryptionKeyOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl RotateEncryptionKeyOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RotateEncryptionKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotateEncryptionKeyOutput");
@@ -119,6 +135,12 @@ impl RotateEncryptionKeyOutput {
 pub struct RevokeSnapshotAccessOutput {
     /// <p>Describes a snapshot.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
+}
+impl RevokeSnapshotAccessOutput {
+    /// <p>Describes a snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for RevokeSnapshotAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -183,6 +205,44 @@ pub struct RevokeEndpointAccessOutput {
     pub allowed_vp_cs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub endpoint_count: i32,
+}
+impl RevokeEndpointAccessOutput {
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn grantor(&self) -> std::option::Option<&str> {
+        self.grantor.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    pub fn grantee(&self) -> std::option::Option<&str> {
+        self.grantee.as_deref()
+    }
+    /// <p>The cluster identifier.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The time (UTC) when the authorization was created.</p>
+    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.authorize_time.as_ref()
+    }
+    /// <p>The status of the cluster.</p>
+    pub fn cluster_status(&self) -> std::option::Option<&str> {
+        self.cluster_status.as_deref()
+    }
+    /// <p>The status of the authorization action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    pub fn allowed_all_vp_cs(&self) -> bool {
+        self.allowed_all_vp_cs
+    }
+    /// <p>The VPCs allowed access to the cluster.</p>
+    pub fn allowed_vp_cs(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_vp_cs.as_deref()
+    }
+    /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    pub fn endpoint_count(&self) -> i32 {
+        self.endpoint_count
+    }
 }
 impl std::fmt::Debug for RevokeEndpointAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -357,6 +417,14 @@ pub struct RevokeClusterSecurityGroupIngressOutput {
     /// <p>Describes a security group.</p>
     pub cluster_security_group: std::option::Option<crate::model::ClusterSecurityGroup>,
 }
+impl RevokeClusterSecurityGroupIngressOutput {
+    /// <p>Describes a security group.</p>
+    pub fn cluster_security_group(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterSecurityGroup> {
+        self.cluster_security_group.as_ref()
+    }
+}
 impl std::fmt::Debug for RevokeClusterSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeClusterSecurityGroupIngressOutput");
@@ -408,6 +476,12 @@ pub struct ResumeClusterOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl ResumeClusterOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ResumeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResumeClusterOutput");
@@ -456,6 +530,13 @@ pub struct RestoreTableFromClusterSnapshotOutput {
     /// <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a>
     /// operation.</p>
     pub table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
+}
+impl RestoreTableFromClusterSnapshotOutput {
+    /// <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a>
+    /// operation.</p>
+    pub fn table_restore_status(&self) -> std::option::Option<&crate::model::TableRestoreStatus> {
+        self.table_restore_status.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreTableFromClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -510,6 +591,12 @@ pub struct RestoreFromClusterSnapshotOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl RestoreFromClusterSnapshotOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreFromClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreFromClusterSnapshotOutput");
@@ -557,6 +644,12 @@ impl RestoreFromClusterSnapshotOutput {
 pub struct ResizeClusterOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl ResizeClusterOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for ResizeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -609,6 +702,18 @@ pub struct ResetClusterParameterGroupOutput {
     /// group name-value pair, then the change could be pending a reboot of an associated
     /// cluster.</p>
     pub parameter_group_status: std::option::Option<std::string::String>,
+}
+impl ResetClusterParameterGroupOutput {
+    /// <p>The name of the cluster parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The status of the parameter group. For example, if you made a change to a parameter
+    /// group name-value pair, then the change could be pending a reboot of an associated
+    /// cluster.</p>
+    pub fn parameter_group_status(&self) -> std::option::Option<&str> {
+        self.parameter_group_status.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -687,6 +792,26 @@ pub struct RejectDataShareOutput {
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl RejectDataShareOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
+        self.producer_arn.as_deref()
+    }
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub fn allow_publicly_accessible_consumers(&self) -> bool {
+        self.allow_publicly_accessible_consumers
+    }
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub fn data_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
+        self.data_share_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectDataShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -799,6 +924,12 @@ pub struct RebootClusterOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl RebootClusterOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RebootClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootClusterOutput");
@@ -847,6 +978,13 @@ pub struct PurchaseReservedNodeOfferingOutput {
     /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
     /// offerings. </p>
     pub reserved_node: std::option::Option<crate::model::ReservedNode>,
+}
+impl PurchaseReservedNodeOfferingOutput {
+    /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
+    /// offerings. </p>
+    pub fn reserved_node(&self) -> std::option::Option<&crate::model::ReservedNode> {
+        self.reserved_node.as_ref()
+    }
 }
 impl std::fmt::Debug for PurchaseReservedNodeOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -900,6 +1038,12 @@ impl PurchaseReservedNodeOfferingOutput {
 pub struct PauseClusterOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl PauseClusterOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for PauseClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -976,6 +1120,54 @@ pub struct ModifyUsageLimitOutput {
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ModifyUsageLimitOutput {
+    /// <p>The identifier of the usage limit.</p>
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+        self.usage_limit_id.as_deref()
+    }
+    /// <p>The identifier of the cluster with a usage limit.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Redshift feature to which the limit applies.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::UsageLimitFeatureType> {
+        self.feature_type.as_ref()
+    }
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    pub fn limit_type(&self) -> std::option::Option<&crate::model::UsageLimitLimitType> {
+        self.limit_type.as_ref()
+    }
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    pub fn amount(&self) -> i64 {
+        self.amount
+    }
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    pub fn period(&self) -> std::option::Option<&crate::model::UsageLimitPeriod> {
+        self.period.as_ref()
+    }
+    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>log</b> - To log an event in a system table. The default is log.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
+    /// </li>
+    /// </ul>
+    pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
+        self.breach_action.as_ref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyUsageLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1185,6 +1377,38 @@ pub struct ModifySnapshotScheduleOutput {
     pub associated_clusters:
         std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
 }
+impl ModifySnapshotScheduleOutput {
+    /// <p>A list of ScheduleDefinitions.</p>
+    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
+        self.schedule_definitions.as_deref()
+    }
+    /// <p>A unique identifier for the schedule.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+    /// <p>The description of the schedule.</p>
+    pub fn schedule_description(&self) -> std::option::Option<&str> {
+        self.schedule_description.as_deref()
+    }
+    /// <p>An optional set of tags describing the schedule.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p></p>
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.next_invocations.as_deref()
+    }
+    /// <p>The number of clusters associated with the schedule.</p>
+    pub fn associated_cluster_count(&self) -> std::option::Option<i32> {
+        self.associated_cluster_count
+    }
+    /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    pub fn associated_clusters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterAssociatedToSchedule]> {
+        self.associated_clusters.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifySnapshotScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifySnapshotScheduleOutput");
@@ -1357,6 +1581,12 @@ pub struct ModifySnapshotCopyRetentionPeriodOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl ModifySnapshotCopyRetentionPeriodOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifySnapshotCopyRetentionPeriodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifySnapshotCopyRetentionPeriodOutput");
@@ -1435,6 +1665,58 @@ pub struct ModifyScheduledActionOutput {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ModifyScheduledActionOutput {
+    /// <p>The name of the scheduled action. </p>
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+        self.scheduled_action_name.as_deref()
+    }
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
+        self.target_action.as_ref()
+    }
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
+    /// Schedule invocations must be separated by at least one hour.</p>
+    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
+    /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
+    /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The IAM role to assume to run the scheduled action.
+    /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
+    /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
+    ///
+    /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// </p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>The description of the scheduled action. </p>
+    pub fn scheduled_action_description(&self) -> std::option::Option<&str> {
+        self.scheduled_action_description.as_deref()
+    }
+    /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ScheduledActionState> {
+        self.state.as_ref()
+    }
+    /// <p>List of times when the scheduled action will run. </p>
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.next_invocations.as_deref()
+    }
+    /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyScheduledActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1649,6 +1931,12 @@ pub struct ModifyEventSubscriptionOutput {
     /// <p>Describes event subscriptions.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
+impl ModifyEventSubscriptionOutput {
+    /// <p>Describes event subscriptions.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyEventSubscriptionOutput");
@@ -1718,6 +2006,50 @@ pub struct ModifyEndpointAccessOutput {
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+}
+impl ModifyEndpointAccessOutput {
+    /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>The status of the endpoint.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The name of the endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The time (UTC) that the endpoint was created.</p>
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.endpoint_create_time.as_ref()
+    }
+    /// <p>The port number on which the cluster accepts incoming connections.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The security groups associated with the endpoint.</p>
+    pub fn vpc_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+        self.vpc_security_groups.as_deref()
+    }
+    /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyEndpointAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1918,6 +2250,12 @@ pub struct ModifyClusterSubnetGroupOutput {
     /// <p>Describes a subnet group.</p>
     pub cluster_subnet_group: std::option::Option<crate::model::ClusterSubnetGroup>,
 }
+impl ModifyClusterSubnetGroupOutput {
+    /// <p>Describes a subnet group.</p>
+    pub fn cluster_subnet_group(&self) -> std::option::Option<&crate::model::ClusterSubnetGroup> {
+        self.cluster_subnet_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyClusterSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterSubnetGroupOutput");
@@ -1999,6 +2337,12 @@ pub struct ModifyClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl ModifyClusterSnapshotOutput {
+    /// <p>Describes a snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterSnapshotOutput");
@@ -2050,6 +2394,18 @@ pub struct ModifyClusterParameterGroupOutput {
     /// group name-value pair, then the change could be pending a reboot of an associated
     /// cluster.</p>
     pub parameter_group_status: std::option::Option<std::string::String>,
+}
+impl ModifyClusterParameterGroupOutput {
+    /// <p>The name of the cluster parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The status of the parameter group. For example, if you made a change to a parameter
+    /// group name-value pair, then the change could be pending a reboot of an associated
+    /// cluster.</p>
+    pub fn parameter_group_status(&self) -> std::option::Option<&str> {
+        self.parameter_group_status.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2122,6 +2478,12 @@ pub struct ModifyClusterMaintenanceOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl ModifyClusterMaintenanceOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyClusterMaintenanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterMaintenanceOutput");
@@ -2169,6 +2531,12 @@ impl ModifyClusterMaintenanceOutput {
 pub struct ModifyClusterIamRolesOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl ModifyClusterIamRolesOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyClusterIamRolesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2218,6 +2586,12 @@ pub struct ModifyClusterDbRevisionOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl ModifyClusterDbRevisionOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyClusterDbRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterDbRevisionOutput");
@@ -2265,6 +2639,12 @@ impl ModifyClusterDbRevisionOutput {
 pub struct ModifyClusterOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl ModifyClusterOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2315,6 +2695,16 @@ pub struct ModifyAuthenticationProfileOutput {
     pub authentication_profile_name: std::option::Option<std::string::String>,
     /// <p>The updated content of the authentication profile in JSON format.</p>
     pub authentication_profile_content: std::option::Option<std::string::String>,
+}
+impl ModifyAuthenticationProfileOutput {
+    /// <p>The name of the authentication profile that was replaced.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
+    /// <p>The updated content of the authentication profile in JSON format.</p>
+    pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
+        self.authentication_profile_content.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyAuthenticationProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2395,6 +2785,12 @@ pub struct ModifyAquaConfigurationOutput {
     /// <p>The updated AQUA configuration of the cluster. </p>
     pub aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
 }
+impl ModifyAquaConfigurationOutput {
+    /// <p>The updated AQUA configuration of the cluster. </p>
+    pub fn aqua_configuration(&self) -> std::option::Option<&crate::model::AquaConfiguration> {
+        self.aqua_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyAquaConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyAquaConfigurationOutput");
@@ -2453,6 +2849,23 @@ pub struct GetReservedNodeExchangeOfferingsOutput {
     /// <p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>
     pub reserved_node_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
+}
+impl GetReservedNodeExchangeOfferingsOutput {
+    /// <p>An optional parameter that specifies the starting point for returning a set of
+    /// response records. When the results of a <code>GetReservedNodeExchangeOfferings</code>
+    /// request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the
+    /// marker field of the response. You can retrieve the next set of response records by
+    /// providing the returned marker value in the marker parameter and retrying the request.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>
+    pub fn reserved_node_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedNodeOffering]> {
+        self.reserved_node_offerings.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReservedNodeExchangeOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2549,6 +2962,26 @@ pub struct GetClusterCredentialsOutput {
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
     pub expiration: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetClusterCredentialsOutput {
+    /// <p>A database user name that is authorized to log on to the database
+    /// <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+    /// DbUser exists in the database, the new user name has the same database privileges as the
+    /// the user named in DbUser. By default, the user is added to PUBLIC. If the
+    /// <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
+    /// listed groups for any sessions created using these credentials.</p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code>
+    /// to log on to the database <code>DbName</code>. </p>
+    pub fn db_password(&self) -> std::option::Option<&str> {
+        self.db_password.as_deref()
+    }
+    /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetClusterCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClusterCredentialsOutput");
@@ -2638,6 +3071,12 @@ pub struct EnableSnapshotCopyOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl EnableSnapshotCopyOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableSnapshotCopyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableSnapshotCopyOutput");
@@ -2696,6 +3135,33 @@ pub struct EnableLoggingOutput {
     pub last_failure_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
+}
+impl EnableLoggingOutput {
+    /// <p>
+    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    pub fn logging_enabled(&self) -> bool {
+        self.logging_enabled
+    }
+    /// <p>The name of the S3 bucket where the log files are stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix applied to the log file names.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>The last time that logs were delivered.</p>
+    pub fn last_successful_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_successful_delivery_time.as_ref()
+    }
+    /// <p>The last time when logs failed to be delivered.</p>
+    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_failure_time.as_ref()
+    }
+    /// <p>The message indicating that logs failed to be delivered.</p>
+    pub fn last_failure_message(&self) -> std::option::Option<&str> {
+        self.last_failure_message.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableLoggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2834,6 +3300,26 @@ pub struct DisassociateDataShareConsumerOutput {
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
 }
+impl DisassociateDataShareConsumerOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
+        self.producer_arn.as_deref()
+    }
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub fn allow_publicly_accessible_consumers(&self) -> bool {
+        self.allow_publicly_accessible_consumers
+    }
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub fn data_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
+        self.data_share_associations.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateDataShareConsumerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateDataShareConsumerOutput");
@@ -2945,6 +3431,12 @@ pub struct DisableSnapshotCopyOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl DisableSnapshotCopyOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DisableSnapshotCopyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableSnapshotCopyOutput");
@@ -3003,6 +3495,33 @@ pub struct DisableLoggingOutput {
     pub last_failure_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
+}
+impl DisableLoggingOutput {
+    /// <p>
+    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    pub fn logging_enabled(&self) -> bool {
+        self.logging_enabled
+    }
+    /// <p>The name of the S3 bucket where the log files are stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix applied to the log file names.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>The last time that logs were delivered.</p>
+    pub fn last_successful_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_successful_delivery_time.as_ref()
+    }
+    /// <p>The last time when logs failed to be delivered.</p>
+    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_failure_time.as_ref()
+    }
+    /// <p>The message indicating that logs failed to be delivered.</p>
+    pub fn last_failure_message(&self) -> std::option::Option<&str> {
+        self.last_failure_message.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableLoggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3141,6 +3660,21 @@ pub struct DescribeUsageLimitsOutput {
     /// records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeUsageLimitsOutput {
+    /// <p>Contains the output from the <a>DescribeUsageLimits</a>
+    /// action. </p>
+    pub fn usage_limits(&self) -> std::option::Option<&[crate::model::UsageLimit]> {
+        self.usage_limits.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUsageLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsageLimitsOutput");
@@ -3227,6 +3761,20 @@ pub struct DescribeTagsOutput {
     /// records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeTagsOutput {
+    /// <p>A list of tags with their associated resources.</p>
+    pub fn tagged_resources(&self) -> std::option::Option<&[crate::model::TaggedResource]> {
+        self.tagged_resources.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsOutput");
@@ -3309,6 +3857,18 @@ pub struct DescribeTableRestoreStatusOutput {
     /// <p>A pagination token that can be used in a subsequent <a>DescribeTableRestoreStatus</a> request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeTableRestoreStatusOutput {
+    /// <p>A list of status details for one or more table restore requests.</p>
+    pub fn table_restore_status_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::TableRestoreStatus]> {
+        self.table_restore_status_details.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent <a>DescribeTableRestoreStatus</a> request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTableRestoreStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTableRestoreStatusOutput");
@@ -3387,6 +3947,16 @@ pub struct DescribeStorageOutput {
     pub total_backup_size_in_mega_bytes: f64,
     /// <p>The total amount of storage currently provisioned.</p>
     pub total_provisioned_storage_in_mega_bytes: f64,
+}
+impl DescribeStorageOutput {
+    /// <p>The total amount of storage currently used for snapshots.</p>
+    pub fn total_backup_size_in_mega_bytes(&self) -> f64 {
+        self.total_backup_size_in_mega_bytes
+    }
+    /// <p>The total amount of storage currently provisioned.</p>
+    pub fn total_provisioned_storage_in_mega_bytes(&self) -> f64 {
+        self.total_provisioned_storage_in_mega_bytes
+    }
 }
 impl std::fmt::Debug for DescribeStorageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3470,6 +4040,20 @@ pub struct DescribeSnapshotSchedulesOutput {
     /// and retrying the command. If the <code>marker</code> field is empty, all response
     /// records have been retrieved for the request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeSnapshotSchedulesOutput {
+    /// <p>A list of SnapshotSchedules.</p>
+    pub fn snapshot_schedules(&self) -> std::option::Option<&[crate::model::SnapshotSchedule]> {
+        self.snapshot_schedules.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>marker</code> parameter
+    /// and retrying the command. If the <code>marker</code> field is empty, all response
+    /// records have been retrieved for the request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSnapshotSchedulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3560,6 +4144,22 @@ pub struct DescribeSnapshotCopyGrantsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
     pub snapshot_copy_grants: std::option::Option<std::vec::Vec<crate::model::SnapshotCopyGrant>>,
+}
+impl DescribeSnapshotCopyGrantsOutput {
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
+    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
+    pub fn snapshot_copy_grants(&self) -> std::option::Option<&[crate::model::SnapshotCopyGrant]> {
+        self.snapshot_copy_grants.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSnapshotCopyGrantsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3653,6 +4253,21 @@ pub struct DescribeScheduledActionsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>List of retrieved scheduled actions. </p>
     pub scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
+}
+impl DescribeScheduledActionsOutput {
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeScheduledActions</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>List of retrieved scheduled actions. </p>
+    pub fn scheduled_actions(&self) -> std::option::Option<&[crate::model::ScheduledAction]> {
+        self.scheduled_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduledActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3792,6 +4407,97 @@ pub struct DescribeResizeOutput {
     pub target_encryption_type: std::option::Option<std::string::String>,
     /// <p>The percent of data transferred from source cluster to target cluster.</p>
     pub data_transfer_progress_percent: std::option::Option<f64>,
+}
+impl DescribeResizeOutput {
+    /// <p>The node type that the cluster will have after the resize operation is
+    /// complete.</p>
+    pub fn target_node_type(&self) -> std::option::Option<&str> {
+        self.target_node_type.as_deref()
+    }
+    /// <p>The number of nodes that the cluster will have after the resize operation is
+    /// complete.</p>
+    pub fn target_number_of_nodes(&self) -> std::option::Option<i32> {
+        self.target_number_of_nodes
+    }
+    /// <p>The cluster type after the resize operation is complete.</p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
+    /// </p>
+    pub fn target_cluster_type(&self) -> std::option::Option<&str> {
+        self.target_cluster_type.as_deref()
+    }
+    /// <p>The status of the resize operation.</p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
+    /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The names of tables that have been completely imported .</p>
+    /// <p>Valid Values: List of table names.</p>
+    pub fn import_tables_completed(&self) -> std::option::Option<&[std::string::String]> {
+        self.import_tables_completed.as_deref()
+    }
+    /// <p>The names of tables that are being currently imported.</p>
+    /// <p>Valid Values: List of table names.</p>
+    pub fn import_tables_in_progress(&self) -> std::option::Option<&[std::string::String]> {
+        self.import_tables_in_progress.as_deref()
+    }
+    /// <p>The names of tables that have not been yet imported.</p>
+    /// <p>Valid Values: List of table names</p>
+    pub fn import_tables_not_started(&self) -> std::option::Option<&[std::string::String]> {
+        self.import_tables_not_started.as_deref()
+    }
+    /// <p>The average rate of the resize operation over the last few minutes, measured in
+    /// megabytes per second. After the resize operation completes, this value shows the average
+    /// rate of the entire resize operation.</p>
+    pub fn avg_resize_rate_in_mega_bytes_per_second(&self) -> std::option::Option<f64> {
+        self.avg_resize_rate_in_mega_bytes_per_second
+    }
+    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
+    /// operation began.</p>
+    pub fn total_resize_data_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.total_resize_data_in_mega_bytes
+    }
+    /// <p>While the resize operation is in progress, this value shows the current amount of
+    /// data, in megabytes, that has been processed so far. When the resize operation is
+    /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
+    /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
+    /// before resize).</p>
+    pub fn progress_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.progress_in_mega_bytes
+    }
+    /// <p>The amount of seconds that have elapsed since the resize operation began. After the
+    /// resize operation completes, this value shows the total actual time, in seconds, for the
+    /// resize operation.</p>
+    pub fn elapsed_time_in_seconds(&self) -> std::option::Option<i64> {
+        self.elapsed_time_in_seconds
+    }
+    /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
+    /// This value is calculated based on the average resize rate and the estimated amount of
+    /// data remaining to be processed. Once the resize operation is complete, this value will
+    /// be 0.</p>
+    pub fn estimated_time_to_completion_in_seconds(&self) -> std::option::Option<i64> {
+        self.estimated_time_to_completion_in_seconds
+    }
+    /// <p>An enum with possible values of <code>ClassicResize</code> and
+    /// <code>ElasticResize</code>. These values describe the type of resize operation being
+    /// performed. </p>
+    pub fn resize_type(&self) -> std::option::Option<&str> {
+        self.resize_type.as_deref()
+    }
+    /// <p>An optional string to provide additional details about the resize action.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The type of encryption for the cluster after the resize is complete.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
+    pub fn target_encryption_type(&self) -> std::option::Option<&str> {
+        self.target_encryption_type.as_deref()
+    }
+    /// <p>The percent of data transferred from source cluster to target cluster.</p>
+    pub fn data_transfer_progress_percent(&self) -> std::option::Option<f64> {
+        self.data_transfer_progress_percent
+    }
 }
 impl std::fmt::Debug for DescribeResizeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4156,6 +4862,20 @@ pub struct DescribeReservedNodesOutput {
     /// <p>The list of <code>ReservedNode</code> objects.</p>
     pub reserved_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedNode>>,
 }
+impl DescribeReservedNodesOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The list of <code>ReservedNode</code> objects.</p>
+    pub fn reserved_nodes(&self) -> std::option::Option<&[crate::model::ReservedNode]> {
+        self.reserved_nodes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedNodesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedNodesOutput");
@@ -4241,6 +4961,22 @@ pub struct DescribeReservedNodeOfferingsOutput {
     pub reserved_node_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
 }
+impl DescribeReservedNodeOfferingsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
+    pub fn reserved_node_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedNodeOffering]> {
+        self.reserved_node_offerings.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedNodeOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedNodeOfferingsOutput");
@@ -4324,6 +5060,14 @@ pub struct DescribePartnersOutput {
     pub partner_integration_info_list:
         std::option::Option<std::vec::Vec<crate::model::PartnerIntegrationInfo>>,
 }
+impl DescribePartnersOutput {
+    /// <p>A list of partner integrations.</p>
+    pub fn partner_integration_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PartnerIntegrationInfo]> {
+        self.partner_integration_info_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePartnersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePartnersOutput");
@@ -4396,6 +5140,23 @@ pub struct DescribeOrderableClusterOptionsOutput {
     /// and retrying the command. If the <code>Marker</code> field is empty, all response
     /// records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeOrderableClusterOptionsOutput {
+    /// <p>An <code>OrderableClusterOption</code> structure containing information about
+    /// orderable options for the cluster.</p>
+    pub fn orderable_cluster_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrderableClusterOption]> {
+        self.orderable_cluster_options.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrderableClusterOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4487,6 +5248,22 @@ pub struct DescribeNodeConfigurationOptionsOutput {
     /// and retrying the command. If the <code>Marker</code> field is empty, all response
     /// records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeNodeConfigurationOptionsOutput {
+    /// <p>A list of valid node configurations.</p>
+    pub fn node_configuration_option_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::NodeConfigurationOption]> {
+        self.node_configuration_option_list.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNodeConfigurationOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4583,6 +5360,33 @@ pub struct DescribeLoggingStatusOutput {
     pub last_failure_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
+}
+impl DescribeLoggingStatusOutput {
+    /// <p>
+    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    pub fn logging_enabled(&self) -> bool {
+        self.logging_enabled
+    }
+    /// <p>The name of the S3 bucket where the log files are stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix applied to the log file names.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>The last time that logs were delivered.</p>
+    pub fn last_successful_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_successful_delivery_time.as_ref()
+    }
+    /// <p>The last time when logs failed to be delivered.</p>
+    pub fn last_failure_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_failure_time.as_ref()
+    }
+    /// <p>The message indicating that logs failed to be delivered.</p>
+    pub fn last_failure_message(&self) -> std::option::Option<&str> {
+        self.last_failure_message.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoggingStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4720,6 +5524,20 @@ pub struct DescribeHsmConfigurationsOutput {
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
     pub hsm_configurations: std::option::Option<std::vec::Vec<crate::model::HsmConfiguration>>,
 }
+impl DescribeHsmConfigurationsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <code>HsmConfiguration</code> objects.</p>
+    pub fn hsm_configurations(&self) -> std::option::Option<&[crate::model::HsmConfiguration]> {
+        self.hsm_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHsmConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHsmConfigurationsOutput");
@@ -4809,6 +5627,23 @@ pub struct DescribeHsmClientCertificatesOutput {
     /// clusters to store and retrieve database encryption keys in an HSM.</p>
     pub hsm_client_certificates:
         std::option::Option<std::vec::Vec<crate::model::HsmClientCertificate>>,
+}
+impl DescribeHsmClientCertificatesOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift
+    /// clusters to store and retrieve database encryption keys in an HSM.</p>
+    pub fn hsm_client_certificates(
+        &self,
+    ) -> std::option::Option<&[crate::model::HsmClientCertificate]> {
+        self.hsm_client_certificates.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHsmClientCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4901,6 +5736,22 @@ pub struct DescribeEventSubscriptionsOutput {
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
+impl DescribeEventSubscriptionsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of event subscriptions.</p>
+    pub fn event_subscriptions_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventSubscription]> {
+        self.event_subscriptions_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventSubscriptionsOutput");
@@ -4989,6 +5840,20 @@ pub struct DescribeEventsOutput {
     /// <p>A list of <code>Event</code> instances. </p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl DescribeEventsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <code>Event</code> instances. </p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -5068,6 +5933,14 @@ pub struct DescribeEventCategoriesOutput {
     pub event_categories_map_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
+impl DescribeEventCategoriesOutput {
+    /// <p>A list of event categories descriptions.</p>
+    pub fn event_categories_map_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventCategoriesMap]> {
+        self.event_categories_map_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventCategoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventCategoriesOutput");
@@ -5134,6 +6007,21 @@ pub struct DescribeEndpointAuthorizationOutput {
     /// response includes only records beyond the marker, up to the value specified by the
     /// <code>MaxRecords</code> parameter.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointAuthorizationOutput {
+    /// <p>The authorizations to an endpoint.</p>
+    pub fn endpoint_authorization_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointAuthorization]> {
+        self.endpoint_authorization_list.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to the value specified by the
+    /// <code>MaxRecords</code> parameter.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5223,6 +6111,19 @@ pub struct DescribeEndpointAccessOutput {
     /// <code>MaxRecords</code> parameter.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEndpointAccessOutput {
+    /// <p>The list of endpoints with access to the cluster.</p>
+    pub fn endpoint_access_list(&self) -> std::option::Option<&[crate::model::EndpointAccess]> {
+        self.endpoint_access_list.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeEndpointAccess</code> request. If this parameter is specified, the
+    /// response includes only records beyond the marker, up to the value specified by the
+    /// <code>MaxRecords</code> parameter.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointAccessOutput");
@@ -5303,6 +6204,14 @@ pub struct DescribeDefaultClusterParametersOutput {
     /// <p>Describes the default cluster parameters for a parameter group family.</p>
     pub default_cluster_parameters: std::option::Option<crate::model::DefaultClusterParameters>,
 }
+impl DescribeDefaultClusterParametersOutput {
+    /// <p>Describes the default cluster parameters for a parameter group family.</p>
+    pub fn default_cluster_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultClusterParameters> {
+        self.default_cluster_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDefaultClusterParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDefaultClusterParametersOutput");
@@ -5367,6 +6276,21 @@ pub struct DescribeDataSharesForProducerOutput {
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDataSharesForProducerOutput {
+    /// <p>Shows the results of datashares available for producers.</p>
+    pub fn data_shares(&self) -> std::option::Option<&[crate::model::DataShare]> {
+        self.data_shares.as_deref()
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataSharesForProducerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5455,6 +6379,21 @@ pub struct DescribeDataSharesForConsumerOutput {
     /// retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDataSharesForConsumerOutput {
+    /// <p>Shows the results of datashares available for consumers.</p>
+    pub fn data_shares(&self) -> std::option::Option<&[crate::model::DataShare]> {
+        self.data_shares.as_deref()
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataSharesForConsumerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSharesForConsumerOutput");
@@ -5537,6 +6476,16 @@ pub struct DescribeDataSharesOutput {
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDataSharesOutput {
+    /// <p>The results returned from describing datashares.</p>
+    pub fn data_shares(&self) -> std::option::Option<&[crate::model::DataShare]> {
+        self.data_shares.as_deref()
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSharesOutput");
@@ -5613,6 +6562,20 @@ pub struct DescribeClusterVersionsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Version</code> elements. </p>
     pub cluster_versions: std::option::Option<std::vec::Vec<crate::model::ClusterVersion>>,
+}
+impl DescribeClusterVersionsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <code>Version</code> elements. </p>
+    pub fn cluster_versions(&self) -> std::option::Option<&[crate::model::ClusterVersion]> {
+        self.cluster_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5697,6 +6660,19 @@ pub struct DescribeClusterTracksOutput {
     /// next set of response records by providing the returned marker value in the
     /// <code>Marker</code> parameter and retrying the request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeClusterTracksOutput {
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code>
+    /// operation. </p>
+    pub fn maintenance_tracks(&self) -> std::option::Option<&[crate::model::MaintenanceTrack]> {
+        self.maintenance_tracks.as_deref()
+    }
+    /// <p>The starting point to return a set of response tracklist records. You can retrieve the
+    /// next set of response records by providing the returned marker value in the
+    /// <code>Marker</code> parameter and retrying the request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterTracksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5784,6 +6760,22 @@ pub struct DescribeClusterSubnetGroupsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
     pub cluster_subnet_groups: std::option::Option<std::vec::Vec<crate::model::ClusterSubnetGroup>>,
+}
+impl DescribeClusterSubnetGroupsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
+    pub fn cluster_subnet_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterSubnetGroup]> {
+        self.cluster_subnet_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterSubnetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5874,6 +6866,20 @@ pub struct DescribeClusterSnapshotsOutput {
     /// <p>A list of <a>Snapshot</a> instances. </p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
+impl DescribeClusterSnapshotsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <a>Snapshot</a> instances. </p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.snapshots.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterSnapshotsOutput");
@@ -5958,6 +6964,22 @@ pub struct DescribeClusterSecurityGroupsOutput {
     /// <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
     pub cluster_security_groups:
         std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroup>>,
+}
+impl DescribeClusterSecurityGroupsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
+    pub fn cluster_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterSecurityGroup]> {
+        self.cluster_security_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterSecurityGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6048,6 +7070,21 @@ pub struct DescribeClustersOutput {
     /// </p>
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
+impl DescribeClustersOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster.
+    /// </p>
+    pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.clusters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClustersOutput");
@@ -6136,6 +7173,21 @@ pub struct DescribeClusterParametersOutput {
     /// records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeClusterParametersOutput {
+    /// <p>A list of <a>Parameter</a> instances. Each instance lists the parameters
+    /// of one cluster parameter group. </p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterParametersOutput");
@@ -6223,6 +7275,21 @@ pub struct DescribeClusterParameterGroupsOutput {
     /// <p>A list of <a>ClusterParameterGroup</a> instances. Each instance
     /// describes one cluster parameter group. </p>
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroup>>,
+}
+impl DescribeClusterParameterGroupsOutput {
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <a>ClusterParameterGroup</a> instances. Each instance
+    /// describes one cluster parameter group. </p>
+    pub fn parameter_groups(&self) -> std::option::Option<&[crate::model::ClusterParameterGroup]> {
+        self.parameter_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterParameterGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6313,6 +7380,19 @@ pub struct DescribeClusterDbRevisionsOutput {
     /// <p>A list of revisions.</p>
     pub cluster_db_revisions: std::option::Option<std::vec::Vec<crate::model::ClusterDbRevision>>,
 }
+impl DescribeClusterDbRevisionsOutput {
+    /// <p>A string representing the starting point for the next set of revisions. If a value is
+    /// returned in a response, you can retrieve the next set of revisions by providing the
+    /// value in the <code>marker</code> parameter and retrying the command. If the
+    /// <code>marker</code> field is empty, all revisions have already been returned.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of revisions.</p>
+    pub fn cluster_db_revisions(&self) -> std::option::Option<&[crate::model::ClusterDbRevision]> {
+        self.cluster_db_revisions.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterDbRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterDbRevisionsOutput");
@@ -6394,6 +7474,14 @@ pub struct DescribeAuthenticationProfilesOutput {
     pub authentication_profiles:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProfile>>,
 }
+impl DescribeAuthenticationProfilesOutput {
+    /// <p>The list of authentication profiles.</p>
+    pub fn authentication_profiles(
+        &self,
+    ) -> std::option::Option<&[crate::model::AuthenticationProfile]> {
+        self.authentication_profiles.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAuthenticationProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAuthenticationProfilesOutput");
@@ -6454,6 +7542,12 @@ impl DescribeAuthenticationProfilesOutput {
 pub struct DescribeAccountAttributesOutput {
     /// <p>A list of attributes assigned to an account.</p>
     pub account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
+}
+impl DescribeAccountAttributesOutput {
+    /// <p>A list of attributes assigned to an account.</p>
+    pub fn account_attributes(&self) -> std::option::Option<&[crate::model::AccountAttribute]> {
+        self.account_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6668,6 +7762,16 @@ pub struct DeletePartnerOutput {
     /// <p>The name of the partner that is authorized to send data.</p>
     pub partner_name: std::option::Option<std::string::String>,
 }
+impl DeletePartnerOutput {
+    /// <p>The name of the database that receives data from the partner.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner that is authorized to send data.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePartnerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePartnerOutput");
@@ -6840,6 +7944,50 @@ pub struct DeleteEndpointAccessOutput {
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+}
+impl DeleteEndpointAccessOutput {
+    /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>The status of the endpoint.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The name of the endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The time (UTC) that the endpoint was created.</p>
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.endpoint_create_time.as_ref()
+    }
+    /// <p>The port number on which the cluster accepts incoming connections.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The security groups associated with the endpoint.</p>
+    pub fn vpc_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+        self.vpc_security_groups.as_deref()
+    }
+    /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7070,6 +8218,12 @@ pub struct DeleteClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl DeleteClusterSnapshotOutput {
+    /// <p>Describes a snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterSnapshotOutput");
@@ -7178,6 +8332,12 @@ pub struct DeleteClusterOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl DeleteClusterOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterOutput");
@@ -7225,6 +8385,12 @@ impl DeleteClusterOutput {
 pub struct DeleteAuthenticationProfileOutput {
     /// <p>The name of the authentication profile that was deleted.</p>
     pub authentication_profile_name: std::option::Option<std::string::String>,
+}
+impl DeleteAuthenticationProfileOutput {
+    /// <p>The name of the authentication profile that was deleted.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAuthenticationProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7289,6 +8455,26 @@ pub struct DeauthorizeDataShareOutput {
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl DeauthorizeDataShareOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
+        self.producer_arn.as_deref()
+    }
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub fn allow_publicly_accessible_consumers(&self) -> bool {
+        self.allow_publicly_accessible_consumers
+    }
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub fn data_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
+        self.data_share_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeauthorizeDataShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7428,6 +8614,54 @@ pub struct CreateUsageLimitOutput {
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateUsageLimitOutput {
+    /// <p>The identifier of the usage limit.</p>
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+        self.usage_limit_id.as_deref()
+    }
+    /// <p>The identifier of the cluster with a usage limit.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Redshift feature to which the limit applies.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::UsageLimitFeatureType> {
+        self.feature_type.as_ref()
+    }
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    pub fn limit_type(&self) -> std::option::Option<&crate::model::UsageLimitLimitType> {
+        self.limit_type.as_ref()
+    }
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    pub fn amount(&self) -> i64 {
+        self.amount
+    }
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    pub fn period(&self) -> std::option::Option<&crate::model::UsageLimitPeriod> {
+        self.period.as_ref()
+    }
+    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>log</b> - To log an event in a system table. The default is log.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
+    /// </li>
+    /// </ul>
+    pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
+        self.breach_action.as_ref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUsageLimitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7667,6 +8901,38 @@ pub struct CreateSnapshotScheduleOutput {
     pub associated_clusters:
         std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
 }
+impl CreateSnapshotScheduleOutput {
+    /// <p>A list of ScheduleDefinitions.</p>
+    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
+        self.schedule_definitions.as_deref()
+    }
+    /// <p>A unique identifier for the schedule.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+    /// <p>The description of the schedule.</p>
+    pub fn schedule_description(&self) -> std::option::Option<&str> {
+        self.schedule_description.as_deref()
+    }
+    /// <p>An optional set of tags describing the schedule.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p></p>
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.next_invocations.as_deref()
+    }
+    /// <p>The number of clusters associated with the schedule.</p>
+    pub fn associated_cluster_count(&self) -> std::option::Option<i32> {
+        self.associated_cluster_count
+    }
+    /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    pub fn associated_clusters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterAssociatedToSchedule]> {
+        self.associated_clusters.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSnapshotScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSnapshotScheduleOutput");
@@ -7846,6 +9112,19 @@ pub struct CreateSnapshotCopyGrantOutput {
     /// </p>
     pub snapshot_copy_grant: std::option::Option<crate::model::SnapshotCopyGrant>,
 }
+impl CreateSnapshotCopyGrantOutput {
+    /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
+    /// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
+    /// region.</p>
+    /// <p>
+    /// For more information about managing snapshot copy grants, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// </p>
+    pub fn snapshot_copy_grant(&self) -> std::option::Option<&crate::model::SnapshotCopyGrant> {
+        self.snapshot_copy_grant.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSnapshotCopyGrantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSnapshotCopyGrantOutput");
@@ -7941,6 +9220,58 @@ pub struct CreateScheduledActionOutput {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateScheduledActionOutput {
+    /// <p>The name of the scheduled action. </p>
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+        self.scheduled_action_name.as_deref()
+    }
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
+        self.target_action.as_ref()
+    }
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
+    /// Schedule invocations must be separated by at least one hour.</p>
+    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
+    /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
+    /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The IAM role to assume to run the scheduled action.
+    /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
+    /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
+    ///
+    /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// </p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>The description of the scheduled action. </p>
+    pub fn scheduled_action_description(&self) -> std::option::Option<&str> {
+        self.scheduled_action_description.as_deref()
+    }
+    /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ScheduledActionState> {
+        self.state.as_ref()
+    }
+    /// <p>List of times when the scheduled action will run. </p>
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.next_invocations.as_deref()
+    }
+    /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateScheduledActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8157,6 +9488,14 @@ pub struct CreateHsmConfigurationOutput {
     /// store database encryption keys.</p>
     pub hsm_configuration: std::option::Option<crate::model::HsmConfiguration>,
 }
+impl CreateHsmConfigurationOutput {
+    /// <p>Returns information about an HSM configuration, which is an object that describes
+    /// to Amazon Redshift clusters the information they require to connect to an HSM where they can
+    /// store database encryption keys.</p>
+    pub fn hsm_configuration(&self) -> std::option::Option<&crate::model::HsmConfiguration> {
+        self.hsm_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateHsmConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHsmConfigurationOutput");
@@ -8214,6 +9553,16 @@ pub struct CreateHsmClientCertificateOutput {
     /// files.</p>
     pub hsm_client_certificate: std::option::Option<crate::model::HsmClientCertificate>,
 }
+impl CreateHsmClientCertificateOutput {
+    /// <p>Returns information about an HSM client certificate. The certificate is stored in a
+    /// secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data
+    /// files.</p>
+    pub fn hsm_client_certificate(
+        &self,
+    ) -> std::option::Option<&crate::model::HsmClientCertificate> {
+        self.hsm_client_certificate.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateHsmClientCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHsmClientCertificateOutput");
@@ -8268,6 +9617,12 @@ impl CreateHsmClientCertificateOutput {
 pub struct CreateEventSubscriptionOutput {
     /// <p>Describes event subscriptions.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl CreateEventSubscriptionOutput {
+    /// <p>Describes event subscriptions.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8338,6 +9693,50 @@ pub struct CreateEndpointAccessOutput {
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+}
+impl CreateEndpointAccessOutput {
+    /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>The status of the endpoint.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The name of the endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The time (UTC) that the endpoint was created.</p>
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.endpoint_create_time.as_ref()
+    }
+    /// <p>The port number on which the cluster accepts incoming connections.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The security groups associated with the endpoint.</p>
+    pub fn vpc_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+        self.vpc_security_groups.as_deref()
+    }
+    /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8538,6 +9937,12 @@ pub struct CreateClusterSubnetGroupOutput {
     /// <p>Describes a subnet group.</p>
     pub cluster_subnet_group: std::option::Option<crate::model::ClusterSubnetGroup>,
 }
+impl CreateClusterSubnetGroupOutput {
+    /// <p>Describes a subnet group.</p>
+    pub fn cluster_subnet_group(&self) -> std::option::Option<&crate::model::ClusterSubnetGroup> {
+        self.cluster_subnet_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterSubnetGroupOutput");
@@ -8589,6 +9994,12 @@ pub struct CreateClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl CreateClusterSnapshotOutput {
+    /// <p>Describes a snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterSnapshotOutput");
@@ -8636,6 +10047,14 @@ impl CreateClusterSnapshotOutput {
 pub struct CreateClusterSecurityGroupOutput {
     /// <p>Describes a security group.</p>
     pub cluster_security_group: std::option::Option<crate::model::ClusterSecurityGroup>,
+}
+impl CreateClusterSecurityGroupOutput {
+    /// <p>Describes a security group.</p>
+    pub fn cluster_security_group(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterSecurityGroup> {
+        self.cluster_security_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterSecurityGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8687,6 +10106,14 @@ impl CreateClusterSecurityGroupOutput {
 pub struct CreateClusterParameterGroupOutput {
     /// <p>Describes a parameter group.</p>
     pub cluster_parameter_group: std::option::Option<crate::model::ClusterParameterGroup>,
+}
+impl CreateClusterParameterGroupOutput {
+    /// <p>Describes a parameter group.</p>
+    pub fn cluster_parameter_group(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterParameterGroup> {
+        self.cluster_parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8743,6 +10170,12 @@ pub struct CreateClusterOutput {
     /// <p>Describes a cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl CreateClusterOutput {
+    /// <p>Describes a cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterOutput");
@@ -8792,6 +10225,16 @@ pub struct CreateAuthenticationProfileOutput {
     pub authentication_profile_name: std::option::Option<std::string::String>,
     /// <p>The content of the authentication profile in JSON format.</p>
     pub authentication_profile_content: std::option::Option<std::string::String>,
+}
+impl CreateAuthenticationProfileOutput {
+    /// <p>The name of the authentication profile that was created.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
+    /// <p>The content of the authentication profile in JSON format.</p>
+    pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
+        self.authentication_profile_content.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAuthenticationProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8871,6 +10314,12 @@ impl CreateAuthenticationProfileOutput {
 pub struct CopyClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
+}
+impl CopyClusterSnapshotOutput {
+    /// <p>Describes a snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8974,6 +10423,97 @@ pub struct CancelResizeOutput {
     pub target_encryption_type: std::option::Option<std::string::String>,
     /// <p>The percent of data transferred from source cluster to target cluster.</p>
     pub data_transfer_progress_percent: std::option::Option<f64>,
+}
+impl CancelResizeOutput {
+    /// <p>The node type that the cluster will have after the resize operation is
+    /// complete.</p>
+    pub fn target_node_type(&self) -> std::option::Option<&str> {
+        self.target_node_type.as_deref()
+    }
+    /// <p>The number of nodes that the cluster will have after the resize operation is
+    /// complete.</p>
+    pub fn target_number_of_nodes(&self) -> std::option::Option<i32> {
+        self.target_number_of_nodes
+    }
+    /// <p>The cluster type after the resize operation is complete.</p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
+    /// </p>
+    pub fn target_cluster_type(&self) -> std::option::Option<&str> {
+        self.target_cluster_type.as_deref()
+    }
+    /// <p>The status of the resize operation.</p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
+    /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The names of tables that have been completely imported .</p>
+    /// <p>Valid Values: List of table names.</p>
+    pub fn import_tables_completed(&self) -> std::option::Option<&[std::string::String]> {
+        self.import_tables_completed.as_deref()
+    }
+    /// <p>The names of tables that are being currently imported.</p>
+    /// <p>Valid Values: List of table names.</p>
+    pub fn import_tables_in_progress(&self) -> std::option::Option<&[std::string::String]> {
+        self.import_tables_in_progress.as_deref()
+    }
+    /// <p>The names of tables that have not been yet imported.</p>
+    /// <p>Valid Values: List of table names</p>
+    pub fn import_tables_not_started(&self) -> std::option::Option<&[std::string::String]> {
+        self.import_tables_not_started.as_deref()
+    }
+    /// <p>The average rate of the resize operation over the last few minutes, measured in
+    /// megabytes per second. After the resize operation completes, this value shows the average
+    /// rate of the entire resize operation.</p>
+    pub fn avg_resize_rate_in_mega_bytes_per_second(&self) -> std::option::Option<f64> {
+        self.avg_resize_rate_in_mega_bytes_per_second
+    }
+    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
+    /// operation began.</p>
+    pub fn total_resize_data_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.total_resize_data_in_mega_bytes
+    }
+    /// <p>While the resize operation is in progress, this value shows the current amount of
+    /// data, in megabytes, that has been processed so far. When the resize operation is
+    /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
+    /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
+    /// before resize).</p>
+    pub fn progress_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.progress_in_mega_bytes
+    }
+    /// <p>The amount of seconds that have elapsed since the resize operation began. After the
+    /// resize operation completes, this value shows the total actual time, in seconds, for the
+    /// resize operation.</p>
+    pub fn elapsed_time_in_seconds(&self) -> std::option::Option<i64> {
+        self.elapsed_time_in_seconds
+    }
+    /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
+    /// This value is calculated based on the average resize rate and the estimated amount of
+    /// data remaining to be processed. Once the resize operation is complete, this value will
+    /// be 0.</p>
+    pub fn estimated_time_to_completion_in_seconds(&self) -> std::option::Option<i64> {
+        self.estimated_time_to_completion_in_seconds
+    }
+    /// <p>An enum with possible values of <code>ClassicResize</code> and
+    /// <code>ElasticResize</code>. These values describe the type of resize operation being
+    /// performed. </p>
+    pub fn resize_type(&self) -> std::option::Option<&str> {
+        self.resize_type.as_deref()
+    }
+    /// <p>An optional string to provide additional details about the resize action.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The type of encryption for the cluster after the resize is complete.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
+    pub fn target_encryption_type(&self) -> std::option::Option<&str> {
+        self.target_encryption_type.as_deref()
+    }
+    /// <p>The percent of data transferred from source cluster to target cluster.</p>
+    pub fn data_transfer_progress_percent(&self) -> std::option::Option<f64> {
+        self.data_transfer_progress_percent
+    }
 }
 impl std::fmt::Debug for CancelResizeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9334,6 +10874,16 @@ pub struct BatchModifyClusterSnapshotsOutput {
     /// <p>A list of any errors returned.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::SnapshotErrorMessage>>,
 }
+impl BatchModifyClusterSnapshotsOutput {
+    /// <p>A list of the snapshots that were modified.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+    /// <p>A list of any errors returned.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::SnapshotErrorMessage]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchModifyClusterSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchModifyClusterSnapshotsOutput");
@@ -9415,6 +10965,16 @@ pub struct BatchDeleteClusterSnapshotsOutput {
     /// <p>A list of any errors returned.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::SnapshotErrorMessage>>,
 }
+impl BatchDeleteClusterSnapshotsOutput {
+    /// <p>A list of the snapshot identifiers that were deleted. </p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+    /// <p>A list of any errors returned.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::SnapshotErrorMessage]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteClusterSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteClusterSnapshotsOutput");
@@ -9494,6 +11054,12 @@ pub struct AuthorizeSnapshotAccessOutput {
     /// <p>Describes a snapshot.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl AuthorizeSnapshotAccessOutput {
+    /// <p>Describes a snapshot.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for AuthorizeSnapshotAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeSnapshotAccessOutput");
@@ -9557,6 +11123,44 @@ pub struct AuthorizeEndpointAccessOutput {
     pub allowed_vp_cs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub endpoint_count: i32,
+}
+impl AuthorizeEndpointAccessOutput {
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn grantor(&self) -> std::option::Option<&str> {
+        self.grantor.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    pub fn grantee(&self) -> std::option::Option<&str> {
+        self.grantee.as_deref()
+    }
+    /// <p>The cluster identifier.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The time (UTC) when the authorization was created.</p>
+    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.authorize_time.as_ref()
+    }
+    /// <p>The status of the cluster.</p>
+    pub fn cluster_status(&self) -> std::option::Option<&str> {
+        self.cluster_status.as_deref()
+    }
+    /// <p>The status of the authorization action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    pub fn allowed_all_vp_cs(&self) -> bool {
+        self.allowed_all_vp_cs
+    }
+    /// <p>The VPCs allowed access to the cluster.</p>
+    pub fn allowed_vp_cs(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_vp_cs.as_deref()
+    }
+    /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    pub fn endpoint_count(&self) -> i32 {
+        self.endpoint_count
+    }
 }
 impl std::fmt::Debug for AuthorizeEndpointAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9738,6 +11342,26 @@ pub struct AuthorizeDataShareOutput {
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
 }
+impl AuthorizeDataShareOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
+        self.producer_arn.as_deref()
+    }
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub fn allow_publicly_accessible_consumers(&self) -> bool {
+        self.allow_publicly_accessible_consumers
+    }
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub fn data_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
+        self.data_share_associations.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthorizeDataShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeDataShareOutput");
@@ -9849,6 +11473,14 @@ pub struct AuthorizeClusterSecurityGroupIngressOutput {
     /// <p>Describes a security group.</p>
     pub cluster_security_group: std::option::Option<crate::model::ClusterSecurityGroup>,
 }
+impl AuthorizeClusterSecurityGroupIngressOutput {
+    /// <p>Describes a security group.</p>
+    pub fn cluster_security_group(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterSecurityGroup> {
+        self.cluster_security_group.as_ref()
+    }
+}
 impl std::fmt::Debug for AuthorizeClusterSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeClusterSecurityGroupIngressOutput");
@@ -9906,6 +11538,26 @@ pub struct AssociateDataShareConsumerOutput {
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl AssociateDataShareConsumerOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
+        self.producer_arn.as_deref()
+    }
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub fn allow_publicly_accessible_consumers(&self) -> bool {
+        self.allow_publicly_accessible_consumers
+    }
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub fn data_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
+        self.data_share_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateDataShareConsumerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10020,6 +11672,16 @@ pub struct AddPartnerOutput {
     /// <p>The name of the partner that is authorized to send data.</p>
     pub partner_name: std::option::Option<std::string::String>,
 }
+impl AddPartnerOutput {
+    /// <p>The name of the database that receives data from the partner.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner that is authorized to send data.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AddPartnerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddPartnerOutput");
@@ -10083,6 +11745,12 @@ impl AddPartnerOutput {
 pub struct AcceptReservedNodeExchangeOutput {
     /// <p></p>
     pub exchanged_reserved_node: std::option::Option<crate::model::ReservedNode>,
+}
+impl AcceptReservedNodeExchangeOutput {
+    /// <p></p>
+    pub fn exchanged_reserved_node(&self) -> std::option::Option<&crate::model::ReservedNode> {
+        self.exchanged_reserved_node.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptReservedNodeExchangeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

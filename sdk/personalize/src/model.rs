@@ -10,6 +10,18 @@ pub struct CampaignConfig {
     pub item_exploration_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CampaignConfig {
+    /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and
+    /// <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when
+    /// recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
+    pub fn item_exploration_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.item_exploration_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CampaignConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CampaignConfig");
@@ -95,6 +107,34 @@ pub struct SolutionVersionSummary {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If a solution version fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl SolutionVersionSummary {
+    /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>The status of the solution version.</p>
+    /// <p>A solution version can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If a solution version fails, the reason behind the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for SolutionVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -238,6 +278,37 @@ pub struct SolutionSummary {
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SolutionSummary {
+    /// <p>The name of the solution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the solution.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+    /// <p>The status of the solution.</p>
+    /// <p>A solution can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the solution was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for SolutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SolutionSummary");
@@ -369,6 +440,24 @@ pub struct DatasetSchemaSummary {
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DatasetSchemaSummary {
+    /// <p>The name of the schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the schema was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the schema was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetSchemaSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetSchemaSummary");
@@ -470,6 +559,28 @@ pub struct RecipeSummary {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RecipeSummary {
+    /// <p>The name of the recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
+    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+        self.recipe_arn.as_deref()
+    }
+    /// <p>The status of the recipe.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the recipe was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for RecipeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -640,6 +751,36 @@ pub struct FilterSummary {
     /// <p>The status of the filter.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl FilterSummary {
+    /// <p>The name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the filter.</p>
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
+        self.filter_arn.as_deref()
+    }
+    /// <p>The time at which the filter was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The time at which the filter was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The ARN of the dataset group to which the filter belongs.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>If the filter failed, the reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The status of the filter.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for FilterSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FilterSummary");
@@ -795,6 +936,37 @@ pub struct EventTrackerSummary {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EventTrackerSummary {
+    /// <p>The name of the event tracker.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event tracker.</p>
+    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+        self.event_tracker_arn.as_deref()
+    }
+    /// <p>The status of the event tracker.</p>
+    /// <p>An event tracker can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the event tracker was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for EventTrackerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -956,6 +1128,55 @@ pub struct DatasetSummary {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DatasetSummary {
+    /// <p>The name of the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The dataset type. One of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Interactions</p>
+    /// </li>
+    /// <li>
+    /// <p>Items</p>
+    /// </li>
+    /// <li>
+    /// <p>Users</p>
+    /// </li>
+    /// <li>
+    /// <p>Event-Interactions</p>
+    /// </li>
+    /// </ul>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>The status of the dataset.</p>
+    /// <p>A dataset can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1139,6 +1360,38 @@ pub struct DatasetImportJobSummary {
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl DatasetImportJobSummary {
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
+    /// <p>The name of the dataset import job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The status of the dataset import job.</p>
+    /// <p>A dataset import job can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If a dataset import job fails, the reason behind the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for DatasetImportJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetImportJobSummary");
@@ -1295,6 +1548,41 @@ pub struct DatasetGroupSummary {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If creating a dataset group fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl DatasetGroupSummary {
+    /// <p>The name of the dataset group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The status of the dataset group.</p>
+    /// <p>A dataset group can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset group was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If creating a dataset group fails, the reason behind the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetGroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1456,6 +1744,38 @@ pub struct DatasetExportJobSummary {
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl DatasetExportJobSummary {
+    /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    pub fn dataset_export_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_export_job_arn.as_deref()
+    }
+    /// <p>The name of the dataset export job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The status of the dataset export job.</p>
+    /// <p>A dataset export job can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If a dataset export job fails, the reason behind the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for DatasetExportJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetExportJobSummary");
@@ -1612,6 +1932,41 @@ pub struct CampaignSummary {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl CampaignSummary {
+    /// <p>The name of the campaign.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+        self.campaign_arn.as_deref()
+    }
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the campaign was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If a campaign fails, the reason behind the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for CampaignSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1779,6 +2134,50 @@ pub struct BatchInferenceJobSummary {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The ARN of the solution version used by the batch inference job.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
+}
+impl BatchInferenceJobSummary {
+    /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
+    pub fn batch_inference_job_arn(&self) -> std::option::Option<&str> {
+        self.batch_inference_job_arn.as_deref()
+    }
+    /// <p>The name of the batch inference job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The status of the batch inference job. The status is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>PENDING</p>
+    /// </li>
+    /// <li>
+    /// <p>IN PROGRESS</p>
+    /// </li>
+    /// <li>
+    /// <p>ACTIVE</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The time at which the batch inference job was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The time at which the batch inference job was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If the batch inference job failed, the reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The ARN of the solution version used by the batch inference job.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchInferenceJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2018,6 +2417,110 @@ pub struct SolutionVersion {
     /// Unix
     /// time) that the solution was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl SolutionVersion {
+    /// <p>The ARN of the solution version.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>The ARN of the solution.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is
+    /// <code>false</code>.</p>
+    pub fn perform_hpo(&self) -> bool {
+        self.perform_hpo
+    }
+    /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution
+    /// configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
+    pub fn perform_auto_ml(&self) -> bool {
+        self.perform_auto_ml
+    }
+    /// <p>The ARN of the recipe used in the solution.</p>
+    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+        self.recipe_arn.as_deref()
+    }
+    /// <p>The event type (for example, 'click' or 'like') that is used for training the
+    /// model.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>Describes the configuration properties for the solution.</p>
+    pub fn solution_config(&self) -> std::option::Option<&crate::model::SolutionConfig> {
+        self.solution_config.as_ref()
+    }
+    /// <p>The time used to train the model. You are billed for the time it takes to train a model.
+    /// This field is visible only after Amazon Personalize successfully trains a model.</p>
+    pub fn training_hours(&self) -> std::option::Option<f64> {
+        self.training_hours
+    }
+    /// <p>The scope of training to be performed when creating the solution version. The
+    /// <code>FULL</code> option trains the solution version based on the entirety of the input
+    /// solution's training data, while the <code>UPDATE</code> option processes only the data that
+    /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
+    /// incrementally update your solution version instead of creating an entirely new one.</p>
+    /// <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
+    /// version created from the input solution using the <code>FULL</code> option and the input
+    /// solution was trained with the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+    /// recipe or the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// </important>
+    pub fn training_mode(&self) -> std::option::Option<&crate::model::TrainingMode> {
+        self.training_mode.as_ref()
+    }
+    /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the
+    /// best performing model.</p>
+    pub fn tuned_hpo_params(&self) -> std::option::Option<&crate::model::TunedHpoParams> {
+        self.tuned_hpo_params.as_ref()
+    }
+    /// <p>The status of the solution version.</p>
+    /// <p>A solution version can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p>
+    /// </li>
+    /// <li>
+    /// <p>ACTIVE</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE STOPPING</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE STOPPED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If training a solution version fails, the reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The date and
+    /// time
+    /// (in Unix time) that this version of the solution was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in
+    /// Unix
+    /// time) that the solution was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for SolutionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2359,6 +2862,15 @@ pub struct TunedHpoParams {
     pub algorithm_hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TunedHpoParams {
+    /// <p>A list of the hyperparameter values of the best performing model.</p>
+    pub fn algorithm_hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.algorithm_hyper_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for TunedHpoParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TunedHpoParams");
@@ -2496,6 +3008,43 @@ pub struct SolutionConfig {
     /// <p>Describes the additional objective for the solution, such as maximizing streaming
     /// minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub optimization_objective: std::option::Option<crate::model::OptimizationObjective>,
+}
+impl SolutionConfig {
+    /// <p>Only events with a value greater than or equal to this threshold are
+    /// used for training a model.</p>
+    pub fn event_value_threshold(&self) -> std::option::Option<&str> {
+        self.event_value_threshold.as_deref()
+    }
+    /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
+    pub fn hpo_config(&self) -> std::option::Option<&crate::model::HpoConfig> {
+        self.hpo_config.as_ref()
+    }
+    /// <p>Lists the hyperparameter names and ranges.</p>
+    pub fn algorithm_hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.algorithm_hyper_parameters.as_ref()
+    }
+    /// <p>Lists the feature transformation parameters.</p>
+    pub fn feature_transformation_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.feature_transformation_parameters.as_ref()
+    }
+    /// <p>The <a>AutoMLConfig</a> object containing a list of recipes to search
+    /// when AutoML is performed.</p>
+    pub fn auto_ml_config(&self) -> std::option::Option<&crate::model::AutoMlConfig> {
+        self.auto_ml_config.as_ref()
+    }
+    /// <p>Describes the additional objective for the solution, such as maximizing streaming
+    /// minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
+    pub fn optimization_objective(
+        &self,
+    ) -> std::option::Option<&crate::model::OptimizationObjective> {
+        self.optimization_objective.as_ref()
+    }
 }
 impl std::fmt::Debug for SolutionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2674,6 +3223,18 @@ pub struct OptimizationObjective {
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
     pub objective_sensitivity: std::option::Option<crate::model::ObjectiveSensitivity>,
 }
+impl OptimizationObjective {
+    /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
+    pub fn item_attribute(&self) -> std::option::Option<&str> {
+        self.item_attribute.as_deref()
+    }
+    /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
+    pub fn objective_sensitivity(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectiveSensitivity> {
+        self.objective_sensitivity.as_ref()
+    }
+}
 impl std::fmt::Debug for OptimizationObjective {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OptimizationObjective");
@@ -2809,6 +3370,16 @@ pub struct AutoMlConfig {
     /// <p>The list of candidate recipes.</p>
     pub recipe_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AutoMlConfig {
+    /// <p>The metric to optimize.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The list of candidate recipes.</p>
+    pub fn recipe_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.recipe_list.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoMlConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoMlConfig");
@@ -2886,6 +3457,26 @@ pub struct HpoConfig {
     pub hpo_resource_config: std::option::Option<crate::model::HpoResourceConfig>,
     /// <p>The hyperparameters and their allowable ranges.</p>
     pub algorithm_hyper_parameter_ranges: std::option::Option<crate::model::HyperParameterRanges>,
+}
+impl HpoConfig {
+    /// <p>The metric to optimize during HPO.</p>
+    /// <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
+    /// at this time.</p>
+    /// </note>
+    pub fn hpo_objective(&self) -> std::option::Option<&crate::model::HpoObjective> {
+        self.hpo_objective.as_ref()
+    }
+    /// <p>Describes the resource configuration for HPO.</p>
+    pub fn hpo_resource_config(&self) -> std::option::Option<&crate::model::HpoResourceConfig> {
+        self.hpo_resource_config.as_ref()
+    }
+    /// <p>The hyperparameters and their allowable ranges.</p>
+    pub fn algorithm_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterRanges> {
+        self.algorithm_hyper_parameter_ranges.as_ref()
+    }
 }
 impl std::fmt::Debug for HpoConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2992,6 +3583,26 @@ pub struct HyperParameterRanges {
     /// <p>The categorical hyperparameters and their ranges.</p>
     pub categorical_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>,
+}
+impl HyperParameterRanges {
+    /// <p>The integer-valued hyperparameters and their ranges.</p>
+    pub fn integer_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::IntegerHyperParameterRange]> {
+        self.integer_hyper_parameter_ranges.as_deref()
+    }
+    /// <p>The continuous hyperparameters and their ranges.</p>
+    pub fn continuous_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContinuousHyperParameterRange]> {
+        self.continuous_hyper_parameter_ranges.as_deref()
+    }
+    /// <p>The categorical hyperparameters and their ranges.</p>
+    pub fn categorical_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::CategoricalHyperParameterRange]> {
+        self.categorical_hyper_parameter_ranges.as_deref()
+    }
 }
 impl std::fmt::Debug for HyperParameterRanges {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3117,6 +3728,16 @@ pub struct CategoricalHyperParameterRange {
     /// <p>A list of the categories for the hyperparameter.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CategoricalHyperParameterRange {
+    /// <p>The name of the hyperparameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the categories for the hyperparameter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for CategoricalHyperParameterRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CategoricalHyperParameterRange");
@@ -3190,6 +3811,20 @@ pub struct ContinuousHyperParameterRange {
     pub min_value: f64,
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub max_value: f64,
+}
+impl ContinuousHyperParameterRange {
+    /// <p>The name of the hyperparameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The minimum allowable value for the hyperparameter.</p>
+    pub fn min_value(&self) -> f64 {
+        self.min_value
+    }
+    /// <p>The maximum allowable value for the hyperparameter.</p>
+    pub fn max_value(&self) -> f64 {
+        self.max_value
+    }
 }
 impl std::fmt::Debug for ContinuousHyperParameterRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3268,6 +3903,20 @@ pub struct IntegerHyperParameterRange {
     pub min_value: i32,
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub max_value: i32,
+}
+impl IntegerHyperParameterRange {
+    /// <p>The name of the hyperparameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The minimum allowable value for the hyperparameter.</p>
+    pub fn min_value(&self) -> i32 {
+        self.min_value
+    }
+    /// <p>The maximum allowable value for the hyperparameter.</p>
+    pub fn max_value(&self) -> i32 {
+        self.max_value
+    }
 }
 impl std::fmt::Debug for IntegerHyperParameterRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3354,6 +4003,26 @@ pub struct HpoResourceConfig {
     /// The maximum value for <code>maxParallelTrainingJobs</code> is
     /// <code>10</code>.</p>
     pub max_parallel_training_jobs: std::option::Option<std::string::String>,
+}
+impl HpoResourceConfig {
+    /// <p>The maximum number of training
+    /// jobs when you create a
+    /// solution
+    /// version.
+    /// The maximum value for <code>maxNumberOfTrainingJobs</code> is
+    /// <code>40</code>.</p>
+    pub fn max_number_of_training_jobs(&self) -> std::option::Option<&str> {
+        self.max_number_of_training_jobs.as_deref()
+    }
+    /// <p>The maximum number of parallel training
+    /// jobs when you create a
+    /// solution
+    /// version.
+    /// The maximum value for <code>maxParallelTrainingJobs</code> is
+    /// <code>10</code>.</p>
+    pub fn max_parallel_training_jobs(&self) -> std::option::Option<&str> {
+        self.max_parallel_training_jobs.as_deref()
+    }
 }
 impl std::fmt::Debug for HpoResourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3458,6 +4127,20 @@ pub struct HpoObjective {
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>A regular expression for finding the metric in the training job logs.</p>
     pub metric_regex: std::option::Option<std::string::String>,
+}
+impl HpoObjective {
+    /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>A regular expression for finding the metric in the training job logs.</p>
+    pub fn metric_regex(&self) -> std::option::Option<&str> {
+        self.metric_regex.as_deref()
+    }
 }
 impl std::fmt::Debug for HpoObjective {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3571,6 +4254,76 @@ pub struct Solution {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
     pub latest_solution_version: std::option::Option<crate::model::SolutionVersionSummary>,
+}
+impl Solution {
+    /// <p>The name of the solution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the solution.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The
+    /// default is <code>false</code>.</p>
+    pub fn perform_hpo(&self) -> bool {
+        self.perform_hpo
+    }
+    /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from
+    /// the list specified in the solution configuration (<code>recipeArn</code> must not be specified).
+    /// When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
+    pub fn perform_auto_ml(&self) -> bool {
+        self.perform_auto_ml
+    }
+    /// <p>The ARN of the recipe used to create the solution.</p>
+    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+        self.recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The event type (for example, 'click' or 'like') that is used for training the model.
+    /// If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with
+    /// equal weight regardless of type.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>Describes the configuration properties for the solution.</p>
+    pub fn solution_config(&self) -> std::option::Option<&crate::model::SolutionConfig> {
+        self.solution_config.as_ref()
+    }
+    /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
+    pub fn auto_ml_result(&self) -> std::option::Option<&crate::model::AutoMlResult> {
+        self.auto_ml_result.as_ref()
+    }
+    /// <p>The status of the solution.</p>
+    /// <p>A solution can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The creation date and time (in Unix time) of the solution.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
+    pub fn latest_solution_version(
+        &self,
+    ) -> std::option::Option<&crate::model::SolutionVersionSummary> {
+        self.latest_solution_version.as_ref()
+    }
 }
 impl std::fmt::Debug for Solution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3828,6 +4581,12 @@ pub struct AutoMlResult {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     pub best_recipe_arn: std::option::Option<std::string::String>,
 }
+impl AutoMlResult {
+    /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
+    pub fn best_recipe_arn(&self) -> std::option::Option<&str> {
+        self.best_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoMlResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoMlResult");
@@ -3887,6 +4646,28 @@ pub struct DatasetSchema {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DatasetSchema {
+    /// <p>The name of the schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The schema.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the schema was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the schema was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4023,6 +4804,56 @@ pub struct Recipe {
     pub recipe_type: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Recipe {
+    /// <p>The name of the recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
+    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+        self.recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train
+    /// the model.</p>
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+        self.algorithm_arn.as_deref()
+    }
+    /// <p>The ARN of the FeatureTransformation object.</p>
+    pub fn feature_transformation_arn(&self) -> std::option::Option<&str> {
+        self.feature_transformation_arn.as_deref()
+    }
+    /// <p>The status of the recipe.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The description of the recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time (in Unix format) that the recipe was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>One of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>PERSONALIZED_RANKING</p>
+    /// </li>
+    /// <li>
+    /// <p>RELATED_ITEMS</p>
+    /// </li>
+    /// <li>
+    /// <p>USER_PERSONALIZATION</p>
+    /// </li>
+    /// </ul>
+    pub fn recipe_type(&self) -> std::option::Option<&str> {
+        self.recipe_type.as_deref()
+    }
+    /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Recipe {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4232,6 +5063,42 @@ pub struct Filter {
     /// <p>The status of the filter.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl Filter {
+    /// <p>The name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the filter.</p>
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
+        self.filter_arn.as_deref()
+    }
+    /// <p>The time at which the filter was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The time at which the filter was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The ARN of the dataset group to which the filter belongs.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>If the filter failed, the reason for its failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Specifies the type of item interactions to filter out of recommendation results. The
+    /// filter expression must follow specific format rules. For information about filter expression structure and syntax, see
+    /// <a>filter-expressions</a>.</p>
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
+        self.filter_expression.as_deref()
+    }
+    /// <p>The status of the filter.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -4407,6 +5274,41 @@ pub struct FeatureTransformation {
     /// </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
+}
+impl FeatureTransformation {
+    /// <p>The name of the feature transformation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
+    pub fn feature_transformation_arn(&self) -> std::option::Option<&str> {
+        self.feature_transformation_arn.as_deref()
+    }
+    /// <p>Provides the default parameters for feature transformation.</p>
+    pub fn default_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_parameters.as_ref()
+    }
+    /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The status of the feature transformation.</p>
+    /// <p>A feature transformation can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for FeatureTransformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4585,6 +5487,50 @@ pub struct EventTracker {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EventTracker {
+    /// <p>The name of the event tracker.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the event tracker.</p>
+    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+        self.event_tracker_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services account that owns the event tracker.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID of the event tracker. Include this ID in requests to the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+    pub fn tracking_id(&self) -> std::option::Option<&str> {
+        self.tracking_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The status of the event tracker.</p>
+    /// <p>An event tracker can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time (in Unix format) that the event tracker was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for EventTracker {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4787,6 +5733,51 @@ pub struct DatasetImportJob {
     /// <p>If a dataset import job fails, provides the reason why.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl DatasetImportJob {
+    /// <p>The name of the import job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The ARN of the dataset import job.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The Amazon S3 bucket that contains the training data to import.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+    /// source.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The status of the dataset import job.</p>
+    /// <p>A dataset import job can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) the dataset was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If a dataset import job fails, provides the reason why.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for DatasetImportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetImportJob");
@@ -4972,6 +5963,16 @@ pub struct DataSource {
     /// </p>
     pub data_location: std::option::Option<std::string::String>,
 }
+impl DataSource {
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is
+    /// stored. For example: </p>
+    /// <p>
+    /// <code>s3://bucket-name/folder-name/</code>
+    /// </p>
+    pub fn data_location(&self) -> std::option::Option<&str> {
+        self.data_location.as_deref()
+    }
+}
 impl std::fmt::Debug for DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataSource");
@@ -5058,6 +6059,49 @@ pub struct DatasetGroup {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If creating a dataset group fails, provides the reason why.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl DatasetGroup {
+    /// <p>The name of the dataset group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The current status of the dataset group.</p>
+    /// <p>A dataset group can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The creation date and time (in Unix time) of the dataset group.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The last update date and time (in Unix time) of the dataset group.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If creating a dataset group fails, provides the reason why.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5264,6 +6308,61 @@ pub struct DatasetExportJob {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If a dataset export job fails, provides the reason why.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl DatasetExportJob {
+    /// <p>The name of the export job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    pub fn dataset_export_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_export_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job,
+    /// <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
+    /// for both types. The default value is <code>PUT</code>.
+    /// </p>
+    pub fn ingestion_mode(&self) -> std::option::Option<&crate::model::IngestionMode> {
+        self.ingestion_mode.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
+    /// output Amazon S3 bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The status of the dataset export job.</p>
+    /// <p>A dataset export job can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The path to the Amazon S3 bucket where the job's output is stored.  For example:</p>
+    /// <p>
+    /// <code>s3://bucket-name/folder-name/</code>
+    /// </p>
+    pub fn job_output(&self) -> std::option::Option<&crate::model::DatasetExportJobOutput> {
+        self.job_output.as_ref()
+    }
+    /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>If a dataset export job fails, provides the reason why.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetExportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5474,6 +6573,12 @@ pub struct DatasetExportJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
+impl DatasetExportJobOutput {
+    /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+        self.s3_data_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetExportJobOutput");
@@ -5527,6 +6632,17 @@ pub struct S3DataConfig {
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to
     /// encrypt or decrypt the input and output files of a batch inference job.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3DataConfig {
+    /// <p>The file path of the Amazon S3 bucket.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to
+    /// encrypt or decrypt the input and output files of a batch inference job.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3DataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5683,6 +6799,60 @@ pub struct Dataset {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp that shows when the dataset was updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Dataset {
+    /// <p>The name of the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>One of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Interactions</p>
+    /// </li>
+    /// <li>
+    /// <p>Items</p>
+    /// </li>
+    /// <li>
+    /// <p>Users</p>
+    /// </li>
+    /// </ul>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>The ARN of the associated schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The status of the dataset.</p>
+    /// <p>A dataset can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The creation date and time (in Unix time) of the dataset.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A time stamp that shows when the dataset was updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Dataset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5900,6 +7070,60 @@ pub struct Campaign {
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the
     /// <a>DescribeCampaign</a> API.</p>
     pub latest_campaign_update: std::option::Option<crate::model::CampaignUpdateSummary>,
+}
+impl Campaign {
+    /// <p>The name of the campaign.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+        self.campaign_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
+    pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
+        self.min_provisioned_tps
+    }
+    /// <p>The configuration details of a campaign.</p>
+    pub fn campaign_config(&self) -> std::option::Option<&crate::model::CampaignConfig> {
+        self.campaign_config.as_ref()
+    }
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If a campaign fails, the reason behind the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The date and time (in Unix format) that the campaign was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the
+    /// <a>DescribeCampaign</a> API.</p>
+    pub fn latest_campaign_update(
+        &self,
+    ) -> std::option::Option<&crate::model::CampaignUpdateSummary> {
+        self.latest_campaign_update.as_ref()
+    }
 }
 impl std::fmt::Debug for Campaign {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6130,6 +7354,46 @@ pub struct CampaignUpdateSummary {
     /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CampaignUpdateSummary {
+    /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
+    /// Amazon Personalize will support.</p>
+    pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
+        self.min_provisioned_tps
+    }
+    /// <p>The configuration details of a campaign.</p>
+    pub fn campaign_config(&self) -> std::option::Option<&crate::model::CampaignConfig> {
+        self.campaign_config.as_ref()
+    }
+    /// <p>The status of the campaign update.</p>
+    /// <p>A campaign update can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If a campaign update fails, the reason behind the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the campaign update was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for CampaignUpdateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CampaignUpdateSummary");
@@ -6331,6 +7595,79 @@ pub struct BatchInferenceJob {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the batch inference job was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BatchInferenceJob {
+    /// <p>The name of the batch inference job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
+    pub fn batch_inference_job_arn(&self) -> std::option::Option<&str> {
+        self.batch_inference_job_arn.as_deref()
+    }
+    /// <p>The ARN of the filter used on the batch inference job.</p>
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
+        self.filter_arn.as_deref()
+    }
+    /// <p>If the batch inference job failed, the reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference job
+    /// was created.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>The number of recommendations generated by the batch inference job. This number includes
+    /// the error messages generated for failed input records.</p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p>The Amazon S3 path that leads to the input data used to generate the batch inference
+    /// job.</p>
+    pub fn job_input(&self) -> std::option::Option<&crate::model::BatchInferenceJobInput> {
+        self.job_input.as_ref()
+    }
+    /// <p>The Amazon S3 bucket that contains the output data generated by the batch inference job.</p>
+    pub fn job_output(&self) -> std::option::Option<&crate::model::BatchInferenceJobOutput> {
+        self.job_output.as_ref()
+    }
+    /// <p>A string to string map of the configuration details of a batch inference job.</p>
+    pub fn batch_inference_job_config(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchInferenceJobConfig> {
+        self.batch_inference_job_config.as_ref()
+    }
+    /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The status of the batch inference job. The status is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>PENDING</p>
+    /// </li>
+    /// <li>
+    /// <p>IN PROGRESS</p>
+    /// </li>
+    /// <li>
+    /// <p>ACTIVE</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The time at which the batch inference job was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The time at which the batch inference job was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchInferenceJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6605,6 +7942,18 @@ pub struct BatchInferenceJobConfig {
     pub item_exploration_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl BatchInferenceJobConfig {
+    /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and
+    /// <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when
+    /// recommending items.
+    /// See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
+    pub fn item_exploration_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.item_exploration_config.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchInferenceJobConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchInferenceJobConfig");
@@ -6676,6 +8025,12 @@ pub struct BatchInferenceJobOutput {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
+impl BatchInferenceJobOutput {
+    /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
+    pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+        self.s3_data_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchInferenceJobOutput");
@@ -6727,6 +8082,13 @@ pub struct BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the
     /// same region as the API endpoint you are calling.</p>
     pub s3_data_source: std::option::Option<crate::model::S3DataConfig>,
+}
+impl BatchInferenceJobInput {
+    /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the
+    /// same region as the API endpoint you are calling.</p>
+    pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+        self.s3_data_source.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6803,6 +8165,58 @@ pub struct Algorithm {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Algorithm {
+    /// <p>The name of the algorithm.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+        self.algorithm_arn.as_deref()
+    }
+    /// <p>The URI of the Docker container for the algorithm image.</p>
+    pub fn algorithm_image(&self) -> std::option::Option<&crate::model::AlgorithmImage> {
+        self.algorithm_image.as_ref()
+    }
+    /// <p>Specifies the default hyperparameters.</p>
+    pub fn default_hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_hyper_parameters.as_ref()
+    }
+    /// <p>Specifies the default hyperparameters, their ranges, and whether they
+    /// are tunable. A tunable hyperparameter can
+    /// have its value determined during hyperparameter optimization (HPO).</p>
+    pub fn default_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultHyperParameterRanges> {
+        self.default_hyper_parameter_ranges.as_ref()
+    }
+    /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
+    pub fn default_resource_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_resource_config.as_ref()
+    }
+    /// <p>The training input mode.</p>
+    pub fn training_input_mode(&self) -> std::option::Option<&str> {
+        self.training_input_mode.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The date and time (in Unix time) that the algorithm was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Algorithm {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7040,6 +8454,26 @@ pub struct DefaultHyperParameterRanges {
     pub categorical_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>,
 }
+impl DefaultHyperParameterRanges {
+    /// <p>The integer-valued hyperparameters and their default ranges.</p>
+    pub fn integer_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::DefaultIntegerHyperParameterRange]> {
+        self.integer_hyper_parameter_ranges.as_deref()
+    }
+    /// <p>The continuous hyperparameters and their default ranges.</p>
+    pub fn continuous_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::DefaultContinuousHyperParameterRange]> {
+        self.continuous_hyper_parameter_ranges.as_deref()
+    }
+    /// <p>The categorical hyperparameters and their default ranges.</p>
+    pub fn categorical_hyper_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::DefaultCategoricalHyperParameterRange]> {
+        self.categorical_hyper_parameter_ranges.as_deref()
+    }
+}
 impl std::fmt::Debug for DefaultHyperParameterRanges {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultHyperParameterRanges");
@@ -7174,6 +8608,20 @@ pub struct DefaultCategoricalHyperParameterRange {
     /// <p>Whether the hyperparameter is tunable.</p>
     pub is_tunable: bool,
 }
+impl DefaultCategoricalHyperParameterRange {
+    /// <p>The name of the hyperparameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the categories for the hyperparameter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>Whether the hyperparameter is tunable.</p>
+    pub fn is_tunable(&self) -> bool {
+        self.is_tunable
+    }
+}
 impl std::fmt::Debug for DefaultCategoricalHyperParameterRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultCategoricalHyperParameterRange");
@@ -7264,6 +8712,24 @@ pub struct DefaultContinuousHyperParameterRange {
     pub max_value: f64,
     /// <p>Whether the hyperparameter is tunable.</p>
     pub is_tunable: bool,
+}
+impl DefaultContinuousHyperParameterRange {
+    /// <p>The name of the hyperparameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The minimum allowable value for the hyperparameter.</p>
+    pub fn min_value(&self) -> f64 {
+        self.min_value
+    }
+    /// <p>The maximum allowable value for the hyperparameter.</p>
+    pub fn max_value(&self) -> f64 {
+        self.max_value
+    }
+    /// <p>Whether the hyperparameter is tunable.</p>
+    pub fn is_tunable(&self) -> bool {
+        self.is_tunable
+    }
 }
 impl std::fmt::Debug for DefaultContinuousHyperParameterRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7360,6 +8826,24 @@ pub struct DefaultIntegerHyperParameterRange {
     /// <p>Indicates whether the hyperparameter is tunable.</p>
     pub is_tunable: bool,
 }
+impl DefaultIntegerHyperParameterRange {
+    /// <p>The name of the hyperparameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The minimum allowable value for the hyperparameter.</p>
+    pub fn min_value(&self) -> i32 {
+        self.min_value
+    }
+    /// <p>The maximum allowable value for the hyperparameter.</p>
+    pub fn max_value(&self) -> i32 {
+        self.max_value
+    }
+    /// <p>Indicates whether the hyperparameter is tunable.</p>
+    pub fn is_tunable(&self) -> bool {
+        self.is_tunable
+    }
+}
 impl std::fmt::Debug for DefaultIntegerHyperParameterRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultIntegerHyperParameterRange");
@@ -7448,6 +8932,16 @@ pub struct AlgorithmImage {
     pub name: std::option::Option<std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub docker_uri: std::option::Option<std::string::String>,
+}
+impl AlgorithmImage {
+    /// <p>The name of the algorithm image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The URI of the Docker container for the algorithm image.</p>
+    pub fn docker_uri(&self) -> std::option::Option<&str> {
+        self.docker_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for AlgorithmImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

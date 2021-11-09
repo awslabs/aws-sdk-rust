@@ -43,6 +43,73 @@ pub struct UpdateTrailOutput {
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub is_organization_trail: std::option::Option<bool>,
 }
+impl UpdateTrailOutput {
+    /// <p>Specifies the name of the trail.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+    /// for log file delivery.
+    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.</p>
+    pub fn sns_topic_name(&self) -> std::option::Option<&str> {
+        self.sns_topic_name.as_deref()
+    }
+    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
+    /// when log files are delivered. The following is the format of a topic ARN.</p>
+    /// <p>
+    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
+    /// </p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    pub fn include_global_service_events(&self) -> std::option::Option<bool> {
+        self.include_global_service_events
+    }
+    /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
+        self.is_multi_region_trail
+    }
+    /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>Specifies whether log file integrity validation is enabled.</p>
+    pub fn log_file_validation_enabled(&self) -> std::option::Option<bool> {
+        self.log_file_validation_enabled
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs are delivered.</p>
+    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_log_group_arn.as_deref()
+    }
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    ///
+    /// <p>
+    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies whether the trail is an organization trail.</p>
+    pub fn is_organization_trail(&self) -> std::option::Option<bool> {
+        self.is_organization_trail
+    }
+}
 impl std::fmt::Debug for UpdateTrailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrailOutput");
@@ -398,6 +465,16 @@ pub struct PutInsightSelectorsOutput {
     /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
 }
+impl PutInsightSelectorsOutput {
+    /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+    pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
+        self.insight_selectors.as_deref()
+    }
+}
 impl std::fmt::Debug for PutInsightSelectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutInsightSelectorsOutput");
@@ -479,6 +556,25 @@ pub struct PutEventSelectorsOutput {
     /// <p>Specifies the advanced event selectors configured for your trail.</p>
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+}
+impl PutEventSelectorsOutput {
+    /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>Specifies the event selectors configured for your trail.</p>
+    pub fn event_selectors(&self) -> std::option::Option<&[crate::model::EventSelector]> {
+        self.event_selectors.as_deref()
+    }
+    /// <p>Specifies the advanced event selectors configured for your trail.</p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
 }
 impl std::fmt::Debug for PutEventSelectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -587,6 +683,19 @@ pub struct LookupEventsOutput {
     /// NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl LookupEventsOutput {
+    /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
+    /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
+    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
+    /// NextToken should include those same parameters.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for LookupEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LookupEventsOutput");
@@ -668,6 +777,19 @@ pub struct ListTrailsOutput {
     /// NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTrailsOutput {
+    /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
+    pub fn trails(&self) -> std::option::Option<&[crate::model::TrailInfo]> {
+        self.trails.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
+    /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
+    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
+    /// NextToken should include those same parameters.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTrailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrailsOutput");
@@ -746,6 +868,16 @@ pub struct ListTagsOutput {
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsOutput {
+    /// <p>A list of resource tags.</p>
+    pub fn resource_tag_list(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+        self.resource_tag_list.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -820,6 +952,19 @@ pub struct ListPublicKeysOutput {
     pub public_key_list: std::option::Option<std::vec::Vec<crate::model::PublicKey>>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPublicKeysOutput {
+    /// <p>Contains an array of PublicKey objects.</p>
+    /// <note>
+    /// <p>The returned public keys may have validity time ranges that overlap.</p>
+    /// </note>
+    pub fn public_key_list(&self) -> std::option::Option<&[crate::model::PublicKey]> {
+        self.public_key_list.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPublicKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -946,6 +1091,96 @@ pub struct GetTrailStatusOutput {
     pub time_logging_started: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
     pub time_logging_stopped: std::option::Option<std::string::String>,
+}
+impl GetTrailStatusOutput {
+    /// <p>Whether the CloudTrail trail is currently logging Amazon Web Services API calls.</p>
+    pub fn is_logging(&self) -> std::option::Option<bool> {
+        self.is_logging
+    }
+    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files
+    /// to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+    /// Responses</a> in the Amazon S3 API Reference. </p>
+    /// <note>
+    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
+    /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
+    /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
+    /// CloudTrail can again write to the bucket.</p>
+    /// </note>
+    pub fn latest_delivery_error(&self) -> std::option::Option<&str> {
+        self.latest_delivery_error.as_deref()
+    }
+    /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a
+    /// notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
+    /// </p>
+    pub fn latest_notification_error(&self) -> std::option::Option<&str> {
+        self.latest_notification_error.as_deref()
+    }
+    /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
+    pub fn latest_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_delivery_time.as_ref()
+    }
+    /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
+    pub fn latest_notification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_notification_time.as_ref()
+    }
+    /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
+    pub fn start_logging_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_logging_time.as_ref()
+    }
+    /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
+    pub fn stop_logging_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_logging_time.as_ref()
+    }
+    /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
+    pub fn latest_cloud_watch_logs_delivery_error(&self) -> std::option::Option<&str> {
+        self.latest_cloud_watch_logs_delivery_error.as_deref()
+    }
+    /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
+    pub fn latest_cloud_watch_logs_delivery_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_cloud_watch_logs_delivery_time.as_ref()
+    }
+    /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
+    pub fn latest_digest_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_digest_delivery_time.as_ref()
+    }
+    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
+    /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+    /// Responses</a> in the Amazon S3 API Reference. </p>
+    /// <note>
+    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
+    /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
+    /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
+    /// CloudTrail can again write to the bucket.</p>
+    /// </note>
+    pub fn latest_digest_delivery_error(&self) -> std::option::Option<&str> {
+        self.latest_digest_delivery_error.as_deref()
+    }
+    /// <p>This field is no longer in use.</p>
+    pub fn latest_delivery_attempt_time(&self) -> std::option::Option<&str> {
+        self.latest_delivery_attempt_time.as_deref()
+    }
+    /// <p>This field is no longer in use.</p>
+    pub fn latest_notification_attempt_time(&self) -> std::option::Option<&str> {
+        self.latest_notification_attempt_time.as_deref()
+    }
+    /// <p>This field is no longer in use.</p>
+    pub fn latest_notification_attempt_succeeded(&self) -> std::option::Option<&str> {
+        self.latest_notification_attempt_succeeded.as_deref()
+    }
+    /// <p>This field is no longer in use.</p>
+    pub fn latest_delivery_attempt_succeeded(&self) -> std::option::Option<&str> {
+        self.latest_delivery_attempt_succeeded.as_deref()
+    }
+    /// <p>This field is no longer in use.</p>
+    pub fn time_logging_started(&self) -> std::option::Option<&str> {
+        self.time_logging_started.as_deref()
+    }
+    /// <p>This field is no longer in use.</p>
+    pub fn time_logging_stopped(&self) -> std::option::Option<&str> {
+        self.time_logging_stopped.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTrailStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1333,6 +1568,12 @@ pub struct GetTrailOutput {
     /// <p>The settings for a trail.</p>
     pub trail: std::option::Option<crate::model::Trail>,
 }
+impl GetTrailOutput {
+    /// <p>The settings for a trail.</p>
+    pub fn trail(&self) -> std::option::Option<&crate::model::Trail> {
+        self.trail.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTrailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTrailOutput");
@@ -1380,6 +1621,16 @@ pub struct GetInsightSelectorsOutput {
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
+}
+impl GetInsightSelectorsOutput {
+    /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+    pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
+        self.insight_selectors.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInsightSelectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1461,6 +1712,24 @@ pub struct GetEventSelectorsOutput {
     /// </p>
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+}
+impl GetEventSelectorsOutput {
+    /// <p>The specified trail ARN that has the event selectors.</p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>The event selectors that are configured for the trail.</p>
+    pub fn event_selectors(&self) -> std::option::Option<&[crate::model::EventSelector]> {
+        self.event_selectors.as_deref()
+    }
+    /// <p>
+    /// The advanced event selectors that are configured for the trail.
+    /// </p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEventSelectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1563,6 +1832,14 @@ pub struct DescribeTrailsOutput {
     /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
     /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     pub trail_list: std::option::Option<std::vec::Vec<crate::model::Trail>>,
+}
+impl DescribeTrailsOutput {
+    /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
+    /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
+    /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
+    pub fn trail_list(&self) -> std::option::Option<&[crate::model::Trail]> {
+        self.trail_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1690,6 +1967,72 @@ pub struct CreateTrailOutput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub is_organization_trail: std::option::Option<bool>,
+}
+impl CreateTrailOutput {
+    /// <p>Specifies the name of the trail.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    pub fn sns_topic_name(&self) -> std::option::Option<&str> {
+        self.sns_topic_name.as_deref()
+    }
+    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
+    /// <p>
+    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
+    /// </p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    pub fn include_global_service_events(&self) -> std::option::Option<bool> {
+        self.include_global_service_events
+    }
+    /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
+        self.is_multi_region_trail
+    }
+    /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN
+    /// is:</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>Specifies whether log file integrity validation is enabled.</p>
+    pub fn log_file_validation_enabled(&self) -> std::option::Option<bool> {
+        self.log_file_validation_enabled
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>
+    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_log_group_arn.as_deref()
+    }
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
+    /// The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>
+    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies whether the trail is an organization trail.</p>
+    pub fn is_organization_trail(&self) -> std::option::Option<bool> {
+        self.is_organization_trail
+    }
 }
 impl std::fmt::Debug for CreateTrailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

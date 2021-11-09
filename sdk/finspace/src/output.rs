@@ -6,6 +6,12 @@ pub struct UpdateEnvironmentOutput {
     /// <p>Returns the FinSpace environment object.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
+impl UpdateEnvironmentOutput {
+    /// <p>Returns the FinSpace environment object.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentOutput");
@@ -118,6 +124,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of all tags for a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -183,6 +198,17 @@ pub struct ListEnvironmentsOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEnvironmentsOutput {
+    /// <p>A list of all of your FinSpace environments.</p>
+    pub fn environments(&self) -> std::option::Option<&[crate::model::Environment]> {
+        self.environments.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -255,6 +281,12 @@ impl ListEnvironmentsOutput {
 pub struct GetEnvironmentOutput {
     /// <p>The name of the FinSpace environment.</p>
     pub environment: std::option::Option<crate::model::Environment>,
+}
+impl GetEnvironmentOutput {
+    /// <p>The name of the FinSpace environment.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -340,6 +372,20 @@ pub struct CreateEnvironmentOutput {
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
     pub environment_url: std::option::Option<std::string::String>,
+}
+impl CreateEnvironmentOutput {
+    /// <p>The unique identifier for FinSpace environment that you created.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
+    pub fn environment_arn(&self) -> std::option::Option<&str> {
+        self.environment_arn.as_deref()
+    }
+    /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
+    pub fn environment_url(&self) -> std::option::Option<&str> {
+        self.environment_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

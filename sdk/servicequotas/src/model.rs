@@ -12,6 +12,20 @@ pub struct Tag {
     /// . : / = + @.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A string that contains a tag key. The string length should be between 1 and 128
+    /// characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . :
+    /// / = + @.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A string that contains an optional tag value. The string length should be between 0 and
+    /// 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ -
+    /// . : / = + @.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -107,6 +121,65 @@ pub struct RequestedServiceQuotaChange {
     pub global_quota: bool,
     /// <p>The unit of measurement.</p>
     pub unit: std::option::Option<std::string::String>,
+}
+impl RequestedServiceQuotaChange {
+    /// <p>The unique identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The case ID.</p>
+    pub fn case_id(&self) -> std::option::Option<&str> {
+        self.case_id.as_deref()
+    }
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The service name.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The quota name.</p>
+    pub fn quota_name(&self) -> std::option::Option<&str> {
+        self.quota_name.as_deref()
+    }
+    /// <p>The new, increased value for the quota.</p>
+    pub fn desired_value(&self) -> std::option::Option<f64> {
+        self.desired_value
+    }
+    /// <p>The state of the quota increase request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RequestStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the quota increase request was received and the case ID was
+    /// created.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The date and time of the most recent change.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The IAM identity of the requester.</p>
+    pub fn requester(&self) -> std::option::Option<&str> {
+        self.requester.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the quota.</p>
+    pub fn quota_arn(&self) -> std::option::Option<&str> {
+        self.quota_arn.as_deref()
+    }
+    /// <p>Indicates whether the quota is global.</p>
+    pub fn global_quota(&self) -> bool {
+        self.global_quota
+    }
+    /// <p>The unit of measurement.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
 }
 impl std::fmt::Debug for RequestedServiceQuotaChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -423,6 +496,40 @@ pub struct ServiceQuotaIncreaseRequestInTemplate {
     /// <p>Indicates whether the quota is global.</p>
     pub global_quota: bool,
 }
+impl ServiceQuotaIncreaseRequestInTemplate {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The service name.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The quota name.</p>
+    pub fn quota_name(&self) -> std::option::Option<&str> {
+        self.quota_name.as_deref()
+    }
+    /// <p>The new, increased value of the quota.</p>
+    pub fn desired_value(&self) -> std::option::Option<f64> {
+        self.desired_value
+    }
+    /// <p>The AWS Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The unit of measurement.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>Indicates whether the quota is global.</p>
+    pub fn global_quota(&self) -> bool {
+        self.global_quota
+    }
+}
 impl std::fmt::Debug for ServiceQuotaIncreaseRequestInTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceQuotaIncreaseRequestInTemplate");
@@ -564,6 +671,16 @@ pub struct ServiceInfo {
     /// <p>The service name.</p>
     pub service_name: std::option::Option<std::string::String>,
 }
+impl ServiceInfo {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The service name.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceInfo");
@@ -646,6 +763,56 @@ pub struct ServiceQuota {
     pub period: std::option::Option<crate::model::QuotaPeriod>,
     /// <p>The error code and error reason.</p>
     pub error_reason: std::option::Option<crate::model::ErrorReason>,
+}
+impl ServiceQuota {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The service name.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the quota.</p>
+    pub fn quota_arn(&self) -> std::option::Option<&str> {
+        self.quota_arn.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The quota name.</p>
+    pub fn quota_name(&self) -> std::option::Option<&str> {
+        self.quota_name.as_deref()
+    }
+    /// <p>The quota value.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+    /// <p>The unit of measurement.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>Indicates whether the quota value can be increased.</p>
+    pub fn adjustable(&self) -> bool {
+        self.adjustable
+    }
+    /// <p>Indicates whether the quota is global.</p>
+    pub fn global_quota(&self) -> bool {
+        self.global_quota
+    }
+    /// <p>Information about the measurement.</p>
+    pub fn usage_metric(&self) -> std::option::Option<&crate::model::MetricInfo> {
+        self.usage_metric.as_ref()
+    }
+    /// <p>The period of time.</p>
+    pub fn period(&self) -> std::option::Option<&crate::model::QuotaPeriod> {
+        self.period.as_ref()
+    }
+    /// <p>The error code and error reason.</p>
+    pub fn error_reason(&self) -> std::option::Option<&crate::model::ErrorReason> {
+        self.error_reason.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceQuota {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -868,6 +1035,38 @@ pub struct ErrorReason {
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl ErrorReason {
+    /// <p>Service Quotas returns the following error values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required
+    /// permissions to complete the action. To resolve the error, you must have permission to
+    /// access the service or quota.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+    /// Quotas.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+    /// Quotas.</p>
+    /// </li>
+    /// </ul>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorReason");
@@ -1049,6 +1248,16 @@ pub struct QuotaPeriod {
     /// <p>The time unit.</p>
     pub period_unit: std::option::Option<crate::model::PeriodUnit>,
 }
+impl QuotaPeriod {
+    /// <p>The value.</p>
+    pub fn period_value(&self) -> std::option::Option<i32> {
+        self.period_value
+    }
+    /// <p>The time unit.</p>
+    pub fn period_unit(&self) -> std::option::Option<&crate::model::PeriodUnit> {
+        self.period_unit.as_ref()
+    }
+}
 impl std::fmt::Debug for QuotaPeriod {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QuotaPeriod");
@@ -1203,6 +1412,28 @@ pub struct MetricInfo {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
     pub metric_statistic_recommendation: std::option::Option<std::string::String>,
+}
+impl MetricInfo {
+    /// <p>The namespace of the metric.</p>
+    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+        self.metric_namespace.as_deref()
+    }
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The metric dimension. This is a name/value pair that is part of the identity of a
+    /// metric.</p>
+    pub fn metric_dimensions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metric_dimensions.as_ref()
+    }
+    /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
+    pub fn metric_statistic_recommendation(&self) -> std::option::Option<&str> {
+        self.metric_statistic_recommendation.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

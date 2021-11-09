@@ -116,7 +116,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_domain_transfer_from_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_domain_transfer_from_another_aws_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -270,7 +270,7 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_domain_transfer_to_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_domain_transfer_to_another_aws_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -487,10 +487,7 @@ impl CheckDomainAvailabilityInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_check_domain_availability(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -693,10 +690,7 @@ impl CheckDomainTransferabilityInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_check_domain_transferability(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -867,10 +861,9 @@ impl DeleteTagsForDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_tags_for_domain(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_tags_for_domain(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1022,10 +1015,7 @@ impl DisableDomainAutoRenewInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_domain_auto_renew(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1178,10 +1168,7 @@ impl DisableDomainTransferLockInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_domain_transfer_lock(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1333,10 +1320,7 @@ impl EnableDomainAutoRenewInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_domain_auto_renew(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1489,10 +1473,7 @@ impl EnableDomainTransferLockInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_domain_transfer_lock(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1643,7 +1624,7 @@ impl GetContactReachabilityStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_contact_reachability_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_contact_reachability_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1794,10 +1775,7 @@ impl GetDomainDetailInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_domain_detail(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_domain_detail(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2021,10 +1999,9 @@ impl GetDomainSuggestionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_domain_suggestions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_domain_suggestions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2176,10 +2153,7 @@ impl GetOperationDetailInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_operation_detail(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_operation_detail(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2352,10 +2326,7 @@ impl ListDomainsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2541,10 +2512,8 @@ impl ListOperationsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_operations(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_operations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2694,10 +2663,7 @@ impl ListTagsForDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_domain(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3073,10 +3039,8 @@ impl RegisterDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3236,7 +3200,7 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_domain_transfer_from_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reject_domain_transfer_from_another_aws_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3419,10 +3383,7 @@ impl RenewDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_renew_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_renew_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3573,7 +3534,7 @@ impl ResendContactReachabilityEmailInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_resend_contact_reachability_email(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_resend_contact_reachability_email(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3726,10 +3687,7 @@ impl RetrieveDomainAuthCodeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_retrieve_domain_auth_code(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4114,10 +4072,8 @@ impl TransferDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_transfer_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_transfer_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4280,7 +4236,7 @@ impl TransferDomainToAnotherAwsAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_transfer_domain_to_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_transfer_domain_to_another_aws_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4476,10 +4432,7 @@ impl UpdateDomainContactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_contact(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4684,7 +4637,7 @@ impl UpdateDomainContactPrivacyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_contact_privacy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_contact_privacy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4871,10 +4824,7 @@ impl UpdateDomainNameserversInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_domain_nameservers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5047,10 +4997,9 @@ impl UpdateTagsForDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_tags_for_domain(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_tags_for_domain(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5253,10 +5202,7 @@ impl ViewBillingInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_view_billing(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_view_billing(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5340,6 +5286,33 @@ pub struct ViewBillingInput {
     /// <p>Default: 20</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ViewBillingInput {
+    /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
+    /// in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start.as_ref()
+    }
+    /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
+    /// in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn end(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end.as_ref()
+    }
+    /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
+    /// that are associated with the current AWS account during the specified period is greater than the value that
+    /// you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records.
+    /// Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes
+    /// the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
+    /// </p>
+    /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The number of billing records to be returned.</p>
+    /// <p>Default: 20</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ViewBillingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ViewBillingInput");
@@ -5360,6 +5333,17 @@ pub struct UpdateTagsForDomainInput {
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
     /// that already exists, the corresponding value will be replaced.</p>
     pub tags_to_update: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UpdateTagsForDomainInput {
+    /// <p>The domain for which you want to add or update tags.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
+    /// that already exists, the corresponding value will be replaced.</p>
+    pub fn tags_to_update(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_to_update.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTagsForDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5383,6 +5367,20 @@ pub struct UpdateDomainNameserversInput {
     pub fi_auth_key: std::option::Option<std::string::String>,
     /// <p>A list of new name servers for the domain.</p>
     pub nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
+}
+impl UpdateDomainNameserversInput {
+    /// <p>The name of the domain that you want to change name servers for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The authorization key for .fi domains</p>
+    pub fn fi_auth_key(&self) -> std::option::Option<&str> {
+        self.fi_auth_key.as_deref()
+    }
+    /// <p>A list of new name servers for the domain.</p>
+    pub fn nameservers(&self) -> std::option::Option<&[crate::model::Nameserver]> {
+        self.nameservers.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainNameserversInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5416,6 +5414,33 @@ pub struct UpdateDomainContactPrivacyInput {
     /// WHOIS queries return the information that you entered for the technical contact.</p>
     pub tech_privacy: std::option::Option<bool>,
 }
+impl UpdateDomainContactPrivacyInput {
+    /// <p>The name of the domain that you want to update the privacy setting for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the admin contact.</p>
+    pub fn admin_privacy(&self) -> std::option::Option<bool> {
+        self.admin_privacy
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    pub fn registrant_privacy(&self) -> std::option::Option<bool> {
+        self.registrant_privacy
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the technical contact.</p>
+    pub fn tech_privacy(&self) -> std::option::Option<bool> {
+        self.tech_privacy
+    }
+}
 impl std::fmt::Debug for UpdateDomainContactPrivacyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainContactPrivacyInput");
@@ -5440,6 +5465,24 @@ pub struct UpdateDomainContactInput {
     /// <p>Provides detailed contact information.</p>
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
 }
+impl UpdateDomainContactInput {
+    /// <p>The name of the domain that you want to update contact information for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn admin_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.admin_contact.as_ref()
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn registrant_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.registrant_contact.as_ref()
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn tech_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.tech_contact.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainContactInput");
@@ -5459,6 +5502,16 @@ pub struct TransferDomainToAnotherAwsAccountInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl TransferDomainToAnotherAwsAccountInput {
+    /// <p>The name of the domain that you want to transfer from the current AWS account to another account.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for TransferDomainToAnotherAwsAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5535,6 +5588,93 @@ pub struct TransferDomainInput {
     /// </p>
     pub privacy_protect_tech_contact: std::option::Option<bool>,
 }
+impl TransferDomainInput {
+    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+    /// For a list of supported TLDs, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Letters a through z. Domain names are not case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Numbers 0 through 9.</p>
+    /// </li>
+    /// <li>
+    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+    /// </li>
+    /// <li>
+    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn idn_lang_code(&self) -> std::option::Option<&str> {
+        self.idn_lang_code.as_deref()
+    }
+    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+    /// The maximum period depends on the top-level domain.</p>
+    /// <p>Default: 1</p>
+    pub fn duration_in_years(&self) -> std::option::Option<i32> {
+        self.duration_in_years
+    }
+    /// <p>Contains details for the host and glue IP addresses.</p>
+    pub fn nameservers(&self) -> std::option::Option<&[crate::model::Nameserver]> {
+        self.nameservers.as_deref()
+    }
+    /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
+    pub fn auth_code(&self) -> std::option::Option<&str> {
+        self.auth_code.as_deref()
+    }
+    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
+    /// after the account is charged.</p>
+    /// <p>Default: true</p>
+    pub fn auto_renew(&self) -> std::option::Option<bool> {
+        self.auto_renew
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn admin_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.admin_contact.as_ref()
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn registrant_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.registrant_contact.as_ref()
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn tech_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.tech_contact.as_ref()
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn privacy_protect_admin_contact(&self) -> std::option::Option<bool> {
+        self.privacy_protect_admin_contact
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn privacy_protect_registrant_contact(&self) -> std::option::Option<bool> {
+        self.privacy_protect_registrant_contact
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn privacy_protect_tech_contact(&self) -> std::option::Option<bool> {
+        self.privacy_protect_tech_contact
+    }
+}
 impl std::fmt::Debug for TransferDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransferDomainInput");
@@ -5571,6 +5711,12 @@ pub struct RetrieveDomainAuthCodeInput {
     /// <p>The name of the domain that you want to get an authorization code for.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl RetrieveDomainAuthCodeInput {
+    /// <p>The name of the domain that you want to get an authorization code for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RetrieveDomainAuthCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveDomainAuthCodeInput");
@@ -5585,6 +5731,12 @@ impl std::fmt::Debug for RetrieveDomainAuthCodeInput {
 pub struct ResendContactReachabilityEmailInput {
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl ResendContactReachabilityEmailInput {
+    /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResendContactReachabilityEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5609,6 +5761,24 @@ pub struct RenewDomainInput {
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     pub current_expiry_year: i32,
 }
+impl RenewDomainInput {
+    /// <p>The name of the domain that you want to renew.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain.
+    /// For the range of valid values for your domain, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>Default: 1</p>
+    pub fn duration_in_years(&self) -> std::option::Option<i32> {
+        self.duration_in_years
+    }
+    /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
+    pub fn current_expiry_year(&self) -> i32 {
+        self.current_expiry_year
+    }
+}
 impl std::fmt::Debug for RenewDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RenewDomainInput");
@@ -5628,6 +5798,15 @@ pub struct RejectDomainTransferFromAnotherAwsAccountInput {
     /// request.
     /// </p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl RejectDomainTransferFromAnotherAwsAccountInput {
+    /// <p>The name of the domain that was specified when another AWS account submitted a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
+    /// request.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectDomainTransferFromAnotherAwsAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5711,6 +5890,97 @@ pub struct RegisterDomainInput {
     /// </p>
     pub privacy_protect_tech_contact: std::option::Option<bool>,
 }
+impl RegisterDomainInput {
+    /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+    /// For a list of supported TLDs, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Letters a through z. Domain names are not case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Numbers 0 through 9.</p>
+    /// </li>
+    /// <li>
+    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+    /// </li>
+    /// <li>
+    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
+    /// internationalized domain names, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
+    /// For more information, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn idn_lang_code(&self) -> std::option::Option<&str> {
+        self.idn_lang_code.as_deref()
+    }
+    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+    /// The maximum period depends on the top-level domain. For the range of valid values for your domain, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>Default: 1</p>
+    pub fn duration_in_years(&self) -> std::option::Option<i32> {
+        self.duration_in_years
+    }
+    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
+    /// Autorenewal only takes effect after the account is charged.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn auto_renew(&self) -> std::option::Option<bool> {
+        self.auto_renew
+    }
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    pub fn admin_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.admin_contact.as_ref()
+    }
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    pub fn registrant_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.registrant_contact.as_ref()
+    }
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    pub fn tech_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
+        self.tech_contact.as_ref()
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn privacy_protect_admin_contact(&self) -> std::option::Option<bool> {
+        self.privacy_protect_admin_contact
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn privacy_protect_registrant_contact(&self) -> std::option::Option<bool> {
+        self.privacy_protect_registrant_contact
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+    /// WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn privacy_protect_tech_contact(&self) -> std::option::Option<bool> {
+        self.privacy_protect_tech_contact
+    }
+}
 impl std::fmt::Debug for RegisterDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterDomainInput");
@@ -5744,6 +6014,12 @@ pub struct ListTagsForDomainInput {
     /// <p>The domain for which you want to get a list of tags.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl ListTagsForDomainInput {
+    /// <p>The domain for which you want to get a list of tags.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForDomainInput");
@@ -5767,6 +6043,25 @@ pub struct ListOperationsInput {
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListOperationsInput {
+    /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
+    /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn submitted_since(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_since.as_ref()
+    }
+    /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
+    /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
+    /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
+    /// and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Number of domains to be returned.</p>
+    /// <p>Default: 20</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListOperationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5793,6 +6088,22 @@ pub struct ListDomainsInput {
     /// <p>Default: 20</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListDomainsInput {
+    /// <p>For an initial request for a list of domains, omit this element. If the number of domains
+    /// that are associated with the current AWS account is greater than the value that you specified for
+    /// <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of
+    /// <code>NextPageMarker</code> from the previous response, and submit another request that includes the
+    /// value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    /// <p>Constraints: The marker must match the value specified in the previous request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Number of domains to be returned.</p>
+    /// <p>Default: 20</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsInput");
@@ -5811,6 +6122,13 @@ pub struct GetOperationDetailInput {
     /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
     /// in the response to the original request.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl GetOperationDetailInput {
+    /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
+    /// in the response to the original request.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOperationDetailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5856,6 +6174,45 @@ pub struct GetDomainSuggestionsInput {
     /// for each suggestion.</p>
     pub only_available: std::option::Option<bool>,
 }
+impl GetDomainSuggestionsInput {
+    /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com,
+    /// must be a TLD that Route 53 supports. For a list of supported TLDs, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Letters a through z. Domain names are not case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Numbers 0 through 9.</p>
+    /// </li>
+    /// <li>
+    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+    /// </li>
+    /// <li>
+    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use
+    /// supports internationalized domain names, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    pub fn suggestion_count(&self) -> i32 {
+        self.suggestion_count
+    }
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available.
+    /// If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're
+    /// available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
+    /// for each suggestion.</p>
+    pub fn only_available(&self) -> std::option::Option<bool> {
+        self.only_available
+    }
+}
 impl std::fmt::Debug for GetDomainSuggestionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainSuggestionsInput");
@@ -5873,6 +6230,12 @@ pub struct GetDomainDetailInput {
     /// <p>The name of the domain that you want to get detailed information about.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl GetDomainDetailInput {
+    /// <p>The name of the domain that you want to get detailed information about.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainDetailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainDetailInput");
@@ -5887,6 +6250,12 @@ impl std::fmt::Debug for GetDomainDetailInput {
 pub struct GetContactReachabilityStatusInput {
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetContactReachabilityStatusInput {
+    /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContactReachabilityStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5903,6 +6272,12 @@ pub struct EnableDomainTransferLockInput {
     /// <p>The name of the domain that you want to set the transfer lock for.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl EnableDomainTransferLockInput {
+    /// <p>The name of the domain that you want to set the transfer lock for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableDomainTransferLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableDomainTransferLockInput");
@@ -5917,6 +6292,12 @@ impl std::fmt::Debug for EnableDomainTransferLockInput {
 pub struct EnableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl EnableDomainAutoRenewInput {
+    /// <p>The name of the domain that you want to enable automatic renewal for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableDomainAutoRenewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5933,6 +6314,12 @@ pub struct DisableDomainTransferLockInput {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DisableDomainTransferLockInput {
+    /// <p>The name of the domain that you want to remove the transfer lock for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableDomainTransferLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableDomainTransferLockInput");
@@ -5947,6 +6334,12 @@ impl std::fmt::Debug for DisableDomainTransferLockInput {
 pub struct DisableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to disable automatic renewal for.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DisableDomainAutoRenewInput {
+    /// <p>The name of the domain that you want to disable automatic renewal for.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableDomainAutoRenewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5964,6 +6357,16 @@ pub struct DeleteTagsForDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to delete.</p>
     pub tags_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteTagsForDomainInput {
+    /// <p>The domain for which you want to delete one or more tags.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A list of tag keys to delete.</p>
+    pub fn tags_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+        self.tags_to_delete.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTagsForDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6001,6 +6404,35 @@ pub struct CheckDomainTransferabilityInput {
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
     /// the code that you got from the current registrar for the domain.</p>
     pub auth_code: std::option::Option<std::string::String>,
+}
+impl CheckDomainTransferabilityInput {
+    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+    /// For a list of supported TLDs, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Letters a through z. Domain names are not case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Numbers 0 through 9.</p>
+    /// </li>
+    /// <li>
+    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+    /// </li>
+    /// <li>
+    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
+    /// the code that you got from the current registrar for the domain.</p>
+    pub fn auth_code(&self) -> std::option::Option<&str> {
+        self.auth_code.as_deref()
+    }
 }
 impl std::fmt::Debug for CheckDomainTransferabilityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6044,6 +6476,40 @@ pub struct CheckDomainAvailabilityInput {
     /// <p>Reserved for future use.</p>
     pub idn_lang_code: std::option::Option<std::string::String>,
 }
+impl CheckDomainAvailabilityInput {
+    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+    /// For a list of supported TLDs, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Letters a through z. Domain names are not case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Numbers 0 through 9.</p>
+    /// </li>
+    /// <li>
+    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+    /// </li>
+    /// <li>
+    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
+    /// internationalized domain names, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
+    /// For more information, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn idn_lang_code(&self) -> std::option::Option<&str> {
+        self.idn_lang_code.as_deref()
+    }
+}
 impl std::fmt::Debug for CheckDomainAvailabilityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CheckDomainAvailabilityInput");
@@ -6059,6 +6525,12 @@ impl std::fmt::Debug for CheckDomainAvailabilityInput {
 pub struct CancelDomainTransferToAnotherAwsAccountInput {
     /// <p>The name of the domain for which you want to cancel the transfer to another AWS account.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl CancelDomainTransferToAnotherAwsAccountInput {
+    /// <p>The name of the domain for which you want to cancel the transfer to another AWS account.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelDomainTransferToAnotherAwsAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6082,6 +6554,22 @@ pub struct AcceptDomainTransferFromAnotherAwsAccountInput {
     /// request.
     /// </p>
     pub password: std::option::Option<std::string::String>,
+}
+impl AcceptDomainTransferFromAnotherAwsAccountInput {
+    /// <p>The name of the domain that was specified when another AWS account submitted a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
+    /// request.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The password that was returned by the
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
+    /// request.
+    /// </p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

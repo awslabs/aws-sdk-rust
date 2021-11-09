@@ -12,6 +12,24 @@ pub struct UploadLayerPartOutput {
     /// <p>The integer value of the last byte received in the request.</p>
     pub last_byte_received: std::option::Option<i64>,
 }
+impl UploadLayerPartOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The upload ID associated with the request.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The integer value of the last byte received in the request.</p>
+    pub fn last_byte_received(&self) -> std::option::Option<i64> {
+        self.last_byte_received
+    }
+}
 impl std::fmt::Debug for UploadLayerPartOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadLayerPartOutput");
@@ -168,6 +186,24 @@ pub struct StartLifecyclePolicyPreviewOutput {
     /// <p>The status of the lifecycle policy preview request.</p>
     pub status: std::option::Option<crate::model::LifecyclePolicyPreviewStatus>,
 }
+impl StartLifecyclePolicyPreviewOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON repository policy text.</p>
+    pub fn lifecycle_policy_text(&self) -> std::option::Option<&str> {
+        self.lifecycle_policy_text.as_deref()
+    }
+    /// <p>The status of the lifecycle policy preview request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LifecyclePolicyPreviewStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartLifecyclePolicyPreviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartLifecyclePolicyPreviewOutput");
@@ -270,6 +306,24 @@ pub struct StartImageScanOutput {
     /// <p>The current state of the scan.</p>
     pub image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
 }
+impl StartImageScanOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
+        self.image_id.as_ref()
+    }
+    /// <p>The current state of the scan.</p>
+    pub fn image_scan_status(&self) -> std::option::Option<&crate::model::ImageScanStatus> {
+        self.image_scan_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartImageScanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartImageScanOutput");
@@ -370,6 +424,20 @@ pub struct SetRepositoryPolicyOutput {
     /// <p>The JSON repository policy text applied to the repository.</p>
     pub policy_text: std::option::Option<std::string::String>,
 }
+impl SetRepositoryPolicyOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON repository policy text applied to the repository.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+}
 impl std::fmt::Debug for SetRepositoryPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetRepositoryPolicyOutput");
@@ -447,6 +515,14 @@ pub struct PutReplicationConfigurationOutput {
     /// <p>The contents of the replication configuration for the registry.</p>
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
 }
+impl PutReplicationConfigurationOutput {
+    /// <p>The contents of the replication configuration for the registry.</p>
+    pub fn replication_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfiguration> {
+        self.replication_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutReplicationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutReplicationConfigurationOutput");
@@ -503,6 +579,16 @@ pub struct PutRegistryPolicyOutput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The JSON policy text for your registry.</p>
     pub policy_text: std::option::Option<std::string::String>,
+}
+impl PutRegistryPolicyOutput {
+    /// <p>The registry ID.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The JSON policy text for your registry.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRegistryPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -568,6 +654,20 @@ pub struct PutLifecyclePolicyOutput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text.</p>
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
+}
+impl PutLifecyclePolicyOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON repository policy text.</p>
+    pub fn lifecycle_policy_text(&self) -> std::option::Option<&str> {
+        self.lifecycle_policy_text.as_deref()
+    }
 }
 impl std::fmt::Debug for PutLifecyclePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -653,6 +753,20 @@ pub struct PutImageTagMutabilityOutput {
     /// <p>The image tag mutability setting for the repository.</p>
     pub image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
 }
+impl PutImageTagMutabilityOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The image tag mutability setting for the repository.</p>
+    pub fn image_tag_mutability(&self) -> std::option::Option<&crate::model::ImageTagMutability> {
+        self.image_tag_mutability.as_ref()
+    }
+}
 impl std::fmt::Debug for PutImageTagMutabilityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutImageTagMutabilityOutput");
@@ -736,6 +850,22 @@ pub struct PutImageScanningConfigurationOutput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The image scanning configuration setting for the repository.</p>
     pub image_scanning_configuration: std::option::Option<crate::model::ImageScanningConfiguration>,
+}
+impl PutImageScanningConfigurationOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The image scanning configuration setting for the repository.</p>
+    pub fn image_scanning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageScanningConfiguration> {
+        self.image_scanning_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutImageScanningConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -824,6 +954,12 @@ pub struct PutImageOutput {
     /// <p>Details of the image uploaded.</p>
     pub image: std::option::Option<crate::model::Image>,
 }
+impl PutImageOutput {
+    /// <p>Details of the image uploaded.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+}
 impl std::fmt::Debug for PutImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutImageOutput");
@@ -869,6 +1005,12 @@ impl PutImageOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -930,6 +1072,20 @@ pub struct ListImagesOutput {
     /// results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImagesOutput {
+    /// <p>The list of image IDs for the requested repository.</p>
+    pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
+        self.image_ids.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListImages</code>
+    /// request. When the results of a <code>ListImages</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1012,6 +1168,17 @@ pub struct InitiateLayerUploadOutput {
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
     pub part_size: std::option::Option<i64>,
 }
+impl InitiateLayerUploadOutput {
+    /// <p>The upload ID for the layer upload. This parameter is passed to further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a>
+    /// operations.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
+    pub fn part_size(&self) -> std::option::Option<i64> {
+        self.part_size
+    }
+}
 impl std::fmt::Debug for InitiateLayerUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateLayerUploadOutput");
@@ -1078,6 +1245,20 @@ pub struct GetRepositoryPolicyOutput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text associated with the repository.</p>
     pub policy_text: std::option::Option<std::string::String>,
+}
+impl GetRepositoryPolicyOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON repository policy text associated with the repository.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRepositoryPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1158,6 +1339,16 @@ pub struct GetRegistryPolicyOutput {
     /// <p>The JSON text of the permissions policy for a registry.</p>
     pub policy_text: std::option::Option<std::string::String>,
 }
+impl GetRegistryPolicyOutput {
+    /// <p>The ID of the registry.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The JSON text of the permissions policy for a registry.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRegistryPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRegistryPolicyOutput");
@@ -1235,6 +1426,42 @@ pub struct GetLifecyclePolicyPreviewOutput {
         std::option::Option<std::vec::Vec<crate::model::LifecyclePolicyPreviewResult>>,
     /// <p>The list of images that is returned as a result of the action.</p>
     pub summary: std::option::Option<crate::model::LifecyclePolicyPreviewSummary>,
+}
+impl GetLifecyclePolicyPreviewOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON lifecycle policy text.</p>
+    pub fn lifecycle_policy_text(&self) -> std::option::Option<&str> {
+        self.lifecycle_policy_text.as_deref()
+    }
+    /// <p>The status of the lifecycle policy preview request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LifecyclePolicyPreviewStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>GetLifecyclePolicyPreview</code> request. When the results of a
+    /// <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this
+    /// value can be used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The results of the lifecycle policy preview request.</p>
+    pub fn preview_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::LifecyclePolicyPreviewResult]> {
+        self.preview_results.as_deref()
+    }
+    /// <p>The list of images that is returned as a result of the action.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::LifecyclePolicyPreviewSummary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLifecyclePolicyPreviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1401,6 +1628,24 @@ pub struct GetLifecyclePolicyOutput {
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
     pub last_evaluated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetLifecyclePolicyOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON lifecycle policy text.</p>
+    pub fn lifecycle_policy_text(&self) -> std::option::Option<&str> {
+        self.lifecycle_policy_text.as_deref()
+    }
+    /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
+    pub fn last_evaluated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_evaluated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLifecyclePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLifecyclePolicyOutput");
@@ -1499,6 +1744,16 @@ pub struct GetDownloadUrlForLayerOutput {
     /// <p>The digest of the image layer to download.</p>
     pub layer_digest: std::option::Option<std::string::String>,
 }
+impl GetDownloadUrlForLayerOutput {
+    /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
+    pub fn download_url(&self) -> std::option::Option<&str> {
+        self.download_url.as_deref()
+    }
+    /// <p>The digest of the image layer to download.</p>
+    pub fn layer_digest(&self) -> std::option::Option<&str> {
+        self.layer_digest.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDownloadUrlForLayerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDownloadUrlForLayerOutput");
@@ -1560,6 +1815,13 @@ pub struct GetAuthorizationTokenOutput {
     /// <p>A list of authorization token data objects that correspond to the
     /// <code>registryIds</code> values in the request.</p>
     pub authorization_data: std::option::Option<std::vec::Vec<crate::model::AuthorizationData>>,
+}
+impl GetAuthorizationTokenOutput {
+    /// <p>A list of authorization token data objects that correspond to the
+    /// <code>registryIds</code> values in the request.</p>
+    pub fn authorization_data(&self) -> std::option::Option<&[crate::model::AuthorizationData]> {
+        self.authorization_data.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAuthorizationTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1629,6 +1891,20 @@ pub struct DescribeRepositoriesOutput {
     /// can be used to retrieve the next page of results. This value is <code>null</code> when
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeRepositoriesOutput {
+    /// <p>A list of repository objects corresponding to valid repositories.</p>
+    pub fn repositories(&self) -> std::option::Option<&[crate::model::Repository]> {
+        self.repositories.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>DescribeRepositories</code> request. When the results of a
+    /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value
+    /// can be used to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRepositoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1709,6 +1985,18 @@ pub struct DescribeRegistryOutput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The replication configuration for the registry.</p>
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
+}
+impl DescribeRegistryOutput {
+    /// <p>The ID of the registry.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The replication configuration for the registry.</p>
+    pub fn replication_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfiguration> {
+        self.replication_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1791,6 +2079,36 @@ pub struct DescribeImageScanFindingsOutput {
     /// value can be used to retrieve the next page of results. This value is null when there
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeImageScanFindingsOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
+        self.image_id.as_ref()
+    }
+    /// <p>The current state of the scan.</p>
+    pub fn image_scan_status(&self) -> std::option::Option<&crate::model::ImageScanStatus> {
+        self.image_scan_status.as_ref()
+    }
+    /// <p>The information contained in the image scan findings.</p>
+    pub fn image_scan_findings(&self) -> std::option::Option<&crate::model::ImageScanFindings> {
+        self.image_scan_findings.as_ref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>DescribeImageScanFindings</code> request. When the results of a
+    /// <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this
+    /// value can be used to retrieve the next page of results. This value is null when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeImageScanFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1932,6 +2250,21 @@ pub struct DescribeImagesOutput {
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeImagesOutput {
+    /// <p>A list of <a>ImageDetail</a> objects that contain data about the
+    /// image.</p>
+    pub fn image_details(&self) -> std::option::Option<&[crate::model::ImageDetail]> {
+        self.image_details.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code>
+    /// request. When the results of a <code>DescribeImages</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImagesOutput");
@@ -2016,6 +2349,22 @@ pub struct DescribeImageReplicationStatusOutput {
     /// <p>The replication status details for the images in the specified repository.</p>
     pub replication_statuses:
         std::option::Option<std::vec::Vec<crate::model::ImageReplicationStatus>>,
+}
+impl DescribeImageReplicationStatusOutput {
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
+        self.image_id.as_ref()
+    }
+    /// <p>The replication status details for the images in the specified repository.</p>
+    pub fn replication_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::ImageReplicationStatus]> {
+        self.replication_statuses.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeImageReplicationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2114,6 +2463,20 @@ pub struct DeleteRepositoryPolicyOutput {
     /// <p>The JSON repository policy that was deleted from the repository.</p>
     pub policy_text: std::option::Option<std::string::String>,
 }
+impl DeleteRepositoryPolicyOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON repository policy that was deleted from the repository.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRepositoryPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryPolicyOutput");
@@ -2191,6 +2554,12 @@ pub struct DeleteRepositoryOutput {
     /// <p>The repository that was deleted.</p>
     pub repository: std::option::Option<crate::model::Repository>,
 }
+impl DeleteRepositoryOutput {
+    /// <p>The repository that was deleted.</p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
+        self.repository.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryOutput");
@@ -2243,6 +2612,16 @@ pub struct DeleteRegistryPolicyOutput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The contents of the registry permissions policy that was deleted.</p>
     pub policy_text: std::option::Option<std::string::String>,
+}
+impl DeleteRegistryPolicyOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The contents of the registry permissions policy that was deleted.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRegistryPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2310,6 +2689,24 @@ pub struct DeleteLifecyclePolicyOutput {
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
     pub last_evaluated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DeleteLifecyclePolicyOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON lifecycle policy text.</p>
+    pub fn lifecycle_policy_text(&self) -> std::option::Option<&str> {
+        self.lifecycle_policy_text.as_deref()
+    }
+    /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
+    pub fn last_evaluated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_evaluated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteLifecyclePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2407,6 +2804,12 @@ pub struct CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
     pub repository: std::option::Option<crate::model::Repository>,
 }
+impl CreateRepositoryOutput {
+    /// <p>The repository that was created.</p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
+        self.repository.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRepositoryOutput");
@@ -2463,6 +2866,24 @@ pub struct CompleteLayerUploadOutput {
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub layer_digest: std::option::Option<std::string::String>,
+}
+impl CompleteLayerUploadOutput {
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The upload ID associated with the layer.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn layer_digest(&self) -> std::option::Option<&str> {
+        self.layer_digest.as_deref()
+    }
 }
 impl std::fmt::Debug for CompleteLayerUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2556,6 +2977,16 @@ pub struct BatchGetImageOutput {
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::ImageFailure>>,
 }
+impl BatchGetImageOutput {
+    /// <p>A list of image objects corresponding to the image references in the request.</p>
+    pub fn images(&self) -> std::option::Option<&[crate::model::Image]> {
+        self.images.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::ImageFailure]> {
+        self.failures.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetImageOutput");
@@ -2636,6 +3067,16 @@ pub struct BatchDeleteImageOutput {
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::ImageFailure>>,
+}
+impl BatchDeleteImageOutput {
+    /// <p>The image IDs of the deleted images.</p>
+    pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
+        self.image_ids.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::ImageFailure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2718,6 +3159,17 @@ pub struct BatchCheckLayerAvailabilityOutput {
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::LayerFailure>>,
+}
+impl BatchCheckLayerAvailabilityOutput {
+    /// <p>A list of image layer objects corresponding to the image layer references in the
+    /// request.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+        self.layers.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::LayerFailure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCheckLayerAvailabilityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

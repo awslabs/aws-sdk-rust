@@ -119,10 +119,7 @@ impl CreateHomeRegionControlInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_home_region_control(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -331,7 +328,7 @@ impl DescribeHomeRegionControlsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_home_region_controls(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_home_region_controls(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -467,10 +464,8 @@ impl GetHomeRegionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_home_region(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_home_region(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -555,6 +550,33 @@ pub struct DescribeHomeRegionControlsInput {
     /// <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeHomeRegionControlsInput {
+    /// <p>The <code>ControlID</code> is a unique identifier string of your
+    /// <code>HomeRegionControl</code> object.</p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p>The name of the home region you'd like to view.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>The target parameter specifies the identifier to which the home region is applied, which
+    /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
+    /// <code>ACCOUNT</code>.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::Target> {
+        self.target.as_ref()
+    }
+    /// <p>The maximum number of filtering results to display per page. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
+    /// To retrieve the next page of results, make the call again using the returned token in
+    /// <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHomeRegionControlsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHomeRegionControlsInput");
@@ -579,6 +601,22 @@ pub struct CreateHomeRegionControlInput {
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
+}
+impl CreateHomeRegionControlInput {
+    /// <p>The name of the home region of the calling account.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>The account for which this command sets up a home region control. The <code>Target</code>
+    /// is always of type <code>ACCOUNT</code>.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::Target> {
+        self.target.as_ref()
+    }
+    /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for CreateHomeRegionControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -21,6 +21,35 @@ pub struct SshPublicKey {
     /// format</a>, when the SSH public key was uploaded.</p>
     pub upload_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SshPublicKey {
+    /// <p>The name of the IAM user associated with the SSH public key.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier for the SSH public key.</p>
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_id.as_deref()
+    }
+    /// <p>The MD5 message digest of the SSH public key.</p>
+    pub fn fingerprint(&self) -> std::option::Option<&str> {
+        self.fingerprint.as_deref()
+    }
+    /// <p>The SSH public key.</p>
+    pub fn ssh_public_key_body(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_body.as_deref()
+    }
+    /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
+    /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
+    /// cannot be used.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the SSH public key was uploaded.</p>
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.upload_date.as_ref()
+    }
+}
 impl std::fmt::Debug for SshPublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SshPublicKey");
@@ -215,6 +244,29 @@ pub struct SigningCertificate {
     /// <p>The date when the signing certificate was uploaded.</p>
     pub upload_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SigningCertificate {
+    /// <p>The name of the user the signing certificate is associated with.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID for the signing certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The contents of the signing certificate.</p>
+    pub fn certificate_body(&self) -> std::option::Option<&str> {
+        self.certificate_body.as_deref()
+    }
+    /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid
+    /// for API calls, while <code>Inactive</code> means it is not.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date when the signing certificate was uploaded.</p>
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.upload_date.as_ref()
+    }
+}
 impl std::fmt::Debug for SigningCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SigningCertificate");
@@ -341,6 +393,27 @@ pub struct Tag {
     /// </note>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key name that can be used to look up or retrieve the associated value. For example,
+    /// <code>Department</code> or <code>Cost Center</code> are common choices.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value associated with this tag. For example, tags with a key name of
+    /// <code>Department</code> could have values such as <code>Human Resources</code>,
+    /// <code>Accounting</code>, and <code>Support</code>. Tags with a key name of <code>Cost
+    /// Center</code> might have values that consist of the number associated with the different
+    /// cost centers in your company. Typically, many resources have tags with the same key name but
+    /// with different values.</p>
+    /// <note>
+    /// <p>Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to
+    /// store an array, you can store comma-separated values in the string. However, you must
+    /// interpret the value in your code.</p>
+    /// </note>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -440,6 +513,36 @@ pub struct ServerCertificateMetadata {
     pub upload_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date on which the certificate is set to expire.</p>
     pub expiration: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ServerCertificateMetadata {
+    /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The name that identifies the server certificate.</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+    /// <p> The stable and unique string identifying the server certificate. For more information
+    /// about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn server_certificate_id(&self) -> std::option::Option<&str> {
+        self.server_certificate_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information
+    /// about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date when the server certificate was uploaded.</p>
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.upload_date.as_ref()
+    }
+    /// <p>The date on which the certificate is set to expire.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration.as_ref()
+    }
 }
 impl std::fmt::Debug for ServerCertificateMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -611,6 +714,71 @@ pub struct Role {
     /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User
     /// Guide</i>.</p>
     pub role_last_used: std::option::Option<crate::model::RoleLastUsed>,
+}
+impl Role {
+    /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The friendly name that identifies the role.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p> The stable and unique string identifying the role. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn role_id(&self) -> std::option::Option<&str> {
+        self.role_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and
+    /// how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i> guide. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the role was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The policy that grants an entity permission to assume the role.</p>
+    pub fn assume_role_policy_document(&self) -> std::option::Option<&str> {
+        self.assume_role_policy_document.as_deref()
+    }
+    /// <p>A description of the role that you provide.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The maximum session duration (in seconds) for the specified role. Anyone who uses the
+    /// CLI, or API to assume the role can specify the duration using the optional
+    /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI
+    /// parameter.</p>
+    pub fn max_session_duration(&self) -> std::option::Option<i32> {
+        self.max_session_duration
+    }
+    /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+    /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// identities </a> in the <i>IAM User Guide</i>.</p>
+    pub fn permissions_boundary(
+        &self,
+    ) -> std::option::Option<&crate::model::AttachedPermissionsBoundary> {
+        self.permissions_boundary.as_ref()
+    }
+    /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Contains information about the last time that an IAM role was used. This includes the
+    /// date and time and the Region in which the role was last used. Activity is only reported for
+    /// the trailing 400 days. This period can be shorter if your Region began supporting these
+    /// features within the last year. The role might have been used more than 400 days ago. For
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User
+    /// Guide</i>.</p>
+    pub fn role_last_used(&self) -> std::option::Option<&crate::model::RoleLastUsed> {
+        self.role_last_used.as_ref()
+    }
 }
 impl std::fmt::Debug for Role {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -867,6 +1035,19 @@ pub struct RoleLastUsed {
     /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
     pub region: std::option::Option<std::string::String>,
 }
+impl RoleLastUsed {
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a> that the role was last used.</p>
+    /// <p>This field is null if the role has not been used within the IAM tracking period. For
+    /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
+    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_used_date.as_ref()
+    }
+    /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+}
 impl std::fmt::Debug for RoleLastUsed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoleLastUsed");
@@ -945,6 +1126,20 @@ pub struct AttachedPermissionsBoundary {
         std::option::Option<crate::model::PermissionsBoundaryAttachmentType>,
     /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
     pub permissions_boundary_arn: std::option::Option<std::string::String>,
+}
+impl AttachedPermissionsBoundary {
+    /// <p> The permissions boundary usage type that indicates what type of IAM resource is used
+    /// as the permissions boundary for an entity. This data type can only have a value of
+    /// <code>Policy</code>.</p>
+    pub fn permissions_boundary_type(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionsBoundaryAttachmentType> {
+        self.permissions_boundary_type.as_ref()
+    }
+    /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
+    pub fn permissions_boundary_arn(&self) -> std::option::Option<&str> {
+        self.permissions_boundary_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachedPermissionsBoundary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1121,6 +1316,80 @@ pub struct EvaluationResult {
     /// EvalActionName on each resource.</p>
     pub resource_specific_results:
         std::option::Option<std::vec::Vec<crate::model::ResourceSpecificResult>>,
+}
+impl EvaluationResult {
+    /// <p>The name of the API operation tested on the indicated resource.</p>
+    pub fn eval_action_name(&self) -> std::option::Option<&str> {
+        self.eval_action_name.as_deref()
+    }
+    /// <p>The ARN of the resource that the indicated API operation was tested on.</p>
+    pub fn eval_resource_name(&self) -> std::option::Option<&str> {
+        self.eval_resource_name.as_deref()
+    }
+    /// <p>The result of the simulation.</p>
+    pub fn eval_decision(
+        &self,
+    ) -> std::option::Option<&crate::model::PolicyEvaluationDecisionType> {
+        self.eval_decision.as_ref()
+    }
+    /// <p>A list of the statements in the input policies that determine the result for this
+    /// scenario. Remember that even if multiple statements allow the operation on the resource, if
+    /// only one statement denies that operation, then the explicit deny overrides any allow. In
+    /// addition, the deny statement is the only entry included in the result.</p>
+    pub fn matched_statements(&self) -> std::option::Option<&[crate::model::Statement]> {
+        self.matched_statements.as_deref()
+    }
+    /// <p>A list of context keys that are required by the included input policies but that were
+    /// not provided by one of the input parameters. This list is used when the resource in a
+    /// simulation is "*", either explicitly, or when the <code>ResourceArns</code> parameter
+    /// blank. If you include a list of resources, then any missing context values are instead
+    /// included under the <code>ResourceSpecificResults</code> section. To discover the context
+    /// keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.</p>
+    pub fn missing_context_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.missing_context_values.as_deref()
+    }
+    /// <p>A structure that details how Organizations and its service control policies affect the results of
+    /// the simulation. Only applies if the simulated user's account is part of an
+    /// organization.</p>
+    pub fn organizations_decision_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationsDecisionDetail> {
+        self.organizations_decision_detail.as_ref()
+    }
+    /// <p>Contains information about the effect that a permissions boundary has on a policy
+    /// simulation when the boundary is applied to an IAM entity.</p>
+    pub fn permissions_boundary_decision_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionsBoundaryDecisionDetail> {
+        self.permissions_boundary_decision_detail.as_ref()
+    }
+    /// <p>Additional details about the results of the cross-account evaluation decision. This
+    /// parameter is populated for only cross-account simulations. It contains a brief summary of
+    /// how each policy type contributes to the final evaluation decision.</p>
+    /// <p>If the simulation evaluates policies within the same account and includes a resource
+    /// ARN, then the parameter is present but the response is empty. If the simulation evaluates
+    /// policies within the same account and specifies all resources (<code>*</code>), then the
+    /// parameter is not returned.</p>
+    /// <p>When you make a cross-account request, Amazon Web Services evaluates the request in the trusting
+    /// account and the trusted account. The request is allowed only if both evaluations return
+    /// <code>true</code>. For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies within a single account</a>.</p>
+    /// <p>If an Organizations SCP included in the evaluation denies access, the simulation ends. In
+    /// this case, policy evaluation does not proceed any further and this parameter is not
+    /// returned.</p>
+    pub fn eval_decision_details(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PolicyEvaluationDecisionType>,
+    > {
+        self.eval_decision_details.as_ref()
+    }
+    /// <p>The individual results of the simulation of the API operation specified in
+    /// EvalActionName on each resource.</p>
+    pub fn resource_specific_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceSpecificResult]> {
+        self.resource_specific_results.as_deref()
+    }
 }
 impl std::fmt::Debug for EvaluationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1436,6 +1705,55 @@ pub struct ResourceSpecificResult {
     pub permissions_boundary_decision_detail:
         std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
 }
+impl ResourceSpecificResult {
+    /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
+    pub fn eval_resource_name(&self) -> std::option::Option<&str> {
+        self.eval_resource_name.as_deref()
+    }
+    /// <p>The result of the simulation of the simulated API operation on the resource specified in
+    /// <code>EvalResourceName</code>.</p>
+    pub fn eval_resource_decision(
+        &self,
+    ) -> std::option::Option<&crate::model::PolicyEvaluationDecisionType> {
+        self.eval_resource_decision.as_ref()
+    }
+    /// <p>A list of the statements in the input policies that determine the result for this part
+    /// of the simulation. Remember that even if multiple statements allow the operation on the
+    /// resource, if <i>any</i> statement denies that operation, then the explicit
+    /// deny overrides any allow. In addition, the deny statement is the only entry included in the
+    /// result.</p>
+    pub fn matched_statements(&self) -> std::option::Option<&[crate::model::Statement]> {
+        self.matched_statements.as_deref()
+    }
+    /// <p>A list of context keys that are required by the included input policies but that were
+    /// not provided by one of the input parameters. This list is used when a list of ARNs is
+    /// included in the <code>ResourceArns</code> parameter instead of "*". If you do not specify
+    /// individual resources, by setting <code>ResourceArns</code> to "*" or by not including the
+    /// <code>ResourceArns</code> parameter, then any missing context values are instead
+    /// included under the <code>EvaluationResults</code> section. To discover the context keys
+    /// used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+    /// <a>GetContextKeysForPrincipalPolicy</a>.</p>
+    pub fn missing_context_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.missing_context_values.as_deref()
+    }
+    /// <p>Additional details about the results of the evaluation decision on a single resource.
+    /// This parameter is returned only for cross-account simulations. This parameter explains how
+    /// each policy type contributes to the resource-specific evaluation decision.</p>
+    pub fn eval_decision_details(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PolicyEvaluationDecisionType>,
+    > {
+        self.eval_decision_details.as_ref()
+    }
+    /// <p>Contains information about the effect that a permissions boundary has on a policy
+    /// simulation when that boundary is applied to an IAM entity.</p>
+    pub fn permissions_boundary_decision_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionsBoundaryDecisionDetail> {
+        self.permissions_boundary_decision_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceSpecificResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceSpecificResult");
@@ -1648,6 +1966,19 @@ pub struct PermissionsBoundaryDecisionDetail {
     /// these cases, the action is not allowed, regardless of the identity-based policy.</p>
     pub allowed_by_permissions_boundary: bool,
 }
+impl PermissionsBoundaryDecisionDetail {
+    /// <p>Specifies whether an action is allowed by a permissions boundary that is applied to an
+    /// IAM entity (user or role). A value of <code>true</code> means that the permissions
+    /// boundary does not deny the action. This means that the policy includes an
+    /// <code>Allow</code> statement that matches the request. In this case, if an
+    /// identity-based policy also allows the action, the request is allowed. A value of
+    /// <code>false</code> means that either the requested action is not allowed (implicitly
+    /// denied) or that the action is explicitly denied by the permissions boundary. In both of
+    /// these cases, the action is not allowed, regardless of the identity-based policy.</p>
+    pub fn allowed_by_permissions_boundary(&self) -> bool {
+        self.allowed_by_permissions_boundary
+    }
+}
 impl std::fmt::Debug for PermissionsBoundaryDecisionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PermissionsBoundaryDecisionDetail");
@@ -1788,6 +2119,25 @@ pub struct Statement {
     /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
     pub end_position: std::option::Option<crate::model::Position>,
 }
+impl Statement {
+    /// <p>The identifier of the policy that was provided as an input.</p>
+    pub fn source_policy_id(&self) -> std::option::Option<&str> {
+        self.source_policy_id.as_deref()
+    }
+    /// <p>The type of the policy.</p>
+    pub fn source_policy_type(&self) -> std::option::Option<&crate::model::PolicySourceType> {
+        self.source_policy_type.as_ref()
+    }
+    /// <p>The row and column of the beginning of the <code>Statement</code> in an IAM
+    /// policy.</p>
+    pub fn start_position(&self) -> std::option::Option<&crate::model::Position> {
+        self.start_position.as_ref()
+    }
+    /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
+    pub fn end_position(&self) -> std::option::Option<&crate::model::Position> {
+        self.end_position.as_ref()
+    }
+}
 impl std::fmt::Debug for Statement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Statement");
@@ -1894,6 +2244,16 @@ pub struct Position {
     pub line: i32,
     /// <p>The column in the line containing the specified position in the document.</p>
     pub column: i32,
+}
+impl Position {
+    /// <p>The line containing the specified position in the document.</p>
+    pub fn line(&self) -> i32 {
+        self.line
+    }
+    /// <p>The column in the line containing the specified position in the document.</p>
+    pub fn column(&self) -> i32 {
+        self.column
+    }
 }
 impl std::fmt::Debug for Position {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2040,6 +2400,13 @@ pub struct OrganizationsDecisionDetail {
     /// policies that impact the simulated user's account.</p>
     pub allowed_by_organizations: bool,
 }
+impl OrganizationsDecisionDetail {
+    /// <p>Specifies whether the simulated operation is allowed by the Organizations service control
+    /// policies that impact the simulated user's account.</p>
+    pub fn allowed_by_organizations(&self) -> bool {
+        self.allowed_by_organizations
+    }
+}
 impl std::fmt::Debug for OrganizationsDecisionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationsDecisionDetail");
@@ -2101,6 +2468,24 @@ pub struct ContextEntry {
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code>
     /// parameter.</p>
     pub context_key_type: std::option::Option<crate::model::ContextKeyTypeEnum>,
+}
+impl ContextEntry {
+    /// <p>The full name of a condition context key, including the service prefix. For example,
+    /// <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
+    pub fn context_key_name(&self) -> std::option::Option<&str> {
+        self.context_key_name.as_deref()
+    }
+    /// <p>The value (or values, if the condition context key supports multiple values) to provide
+    /// to the simulation when the key is referenced by a <code>Condition</code> element in an
+    /// input policy.</p>
+    pub fn context_key_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.context_key_values.as_deref()
+    }
+    /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code>
+    /// parameter.</p>
+    pub fn context_key_type(&self) -> std::option::Option<&crate::model::ContextKeyTypeEnum> {
+        self.context_key_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ContextEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2379,6 +2764,41 @@ pub struct ServiceSpecificCredential {
     /// valid for API calls, while <code>Inactive</code> means it is not.</p>
     pub status: std::option::Option<crate::model::StatusType>,
 }
+impl ServiceSpecificCredential {
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the service-specific credential were created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The name of the service associated with the service-specific credential.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The generated user name for the service-specific credential. This value is generated by
+    /// combining the IAM user's name combined with the ID number of the Amazon Web Services account, as in
+    /// <code>jane-at-123456789012</code>, for example. This value cannot be configured by the
+    /// user.</p>
+    pub fn service_user_name(&self) -> std::option::Option<&str> {
+        self.service_user_name.as_deref()
+    }
+    /// <p>The generated password for the service-specific credential.</p>
+    pub fn service_password(&self) -> std::option::Option<&str> {
+        self.service_password.as_deref()
+    }
+    /// <p>The unique identifier for the service-specific credential.</p>
+    pub fn service_specific_credential_id(&self) -> std::option::Option<&str> {
+        self.service_specific_credential_id.as_deref()
+    }
+    /// <p>The name of the IAM user associated with the service-specific credential.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The status of the service-specific credential. <code>Active</code> means that the key is
+    /// valid for API calls, while <code>Inactive</code> means it is not.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceSpecificCredential {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceSpecificCredential");
@@ -2548,6 +2968,38 @@ pub struct VirtualMfaDevice {
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl VirtualMfaDevice {
+    /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
+    pub fn base32_string_seed(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.base32_string_seed.as_ref()
+    }
+    /// <p> A QR code PNG image that encodes
+    /// <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+    /// where <code>$virtualMFADeviceName</code> is one of the create call arguments.
+    /// <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise),
+    /// and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code>
+    /// value is base64-encoded. </p>
+    pub fn qr_code_png(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.qr_code_png.as_ref()
+    }
+    /// <p>The IAM user associated with this virtual MFA device.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+    /// <p>The date and time on which the virtual MFA device was enabled.</p>
+    pub fn enable_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enable_date.as_ref()
+    }
+    /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualMfaDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2754,6 +3206,70 @@ pub struct User {
     /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl User {
+    /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The friendly name identifying the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the user. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs
+    /// and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the user was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For
+    /// a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+    /// reports</a> topic in the <i>IAM User Guide</i>. If a password is
+    /// used more than once in a five-minute span, only the first use is returned in this field. If
+    /// the field is null (no value), then it indicates that they never signed in with a password.
+    /// This can be because:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user never had a password.</p>
+    /// </li>
+    /// <li>
+    /// <p>A password exists but has not been used since IAM started tracking this
+    /// information on October 20, 2014.</p>
+    /// </li>
+    /// </ul>
+    /// <p>A null value does not mean that the user <i>never</i> had a password.
+    /// Also, if the user does not currently have a password but had one in the past, then this
+    /// field contains the date and time the most recent password was used.</p>
+    /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
+    pub fn password_last_used(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.password_last_used.as_ref()
+    }
+    /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// identities </a> in the <i>IAM User Guide</i>.</p>
+    pub fn permissions_boundary(
+        &self,
+    ) -> std::option::Option<&crate::model::AttachedPermissionsBoundary> {
+        self.permissions_boundary.as_ref()
+    }
+    /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3043,6 +3559,27 @@ pub struct SshPublicKeyMetadata {
     /// format</a>, when the SSH public key was uploaded.</p>
     pub upload_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SshPublicKeyMetadata {
+    /// <p>The name of the IAM user associated with the SSH public key.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier for the SSH public key.</p>
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_id.as_deref()
+    }
+    /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
+    /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
+    /// cannot be used.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the SSH public key was uploaded.</p>
+    pub fn upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.upload_date.as_ref()
+    }
+}
 impl std::fmt::Debug for SshPublicKeyMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SshPublicKeyMetadata");
@@ -3153,6 +3690,34 @@ pub struct ServiceSpecificCredentialMetadata {
     pub service_specific_credential_id: std::option::Option<std::string::String>,
     /// <p>The name of the service associated with the service-specific credential.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl ServiceSpecificCredentialMetadata {
+    /// <p>The name of the IAM user associated with the service-specific credential.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The status of the service-specific credential. <code>Active</code> means that the key is
+    /// valid for API calls, while <code>Inactive</code> means it is not.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The generated user name for the service-specific credential.</p>
+    pub fn service_user_name(&self) -> std::option::Option<&str> {
+        self.service_user_name.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the service-specific credential were created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The unique identifier for the service-specific credential.</p>
+    pub fn service_specific_credential_id(&self) -> std::option::Option<&str> {
+        self.service_specific_credential_id.as_deref()
+    }
+    /// <p>The name of the service associated with the service-specific credential.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceSpecificCredentialMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3290,6 +3855,20 @@ pub struct SamlProviderListEntry {
     /// <p>The date and time when the SAML provider was created.</p>
     pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SamlProviderListEntry {
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The expiration date and time for the SAML provider.</p>
+    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.valid_until.as_ref()
+    }
+    /// <p>The date and time when the SAML provider was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+}
 impl std::fmt::Debug for SamlProviderListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SamlProviderListEntry");
@@ -3387,6 +3966,33 @@ pub struct PolicyVersion {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy version was created.</p>
     pub create_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PolicyVersion {
+    /// <p>The policy document.</p>
+    /// <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in
+    /// the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
+    /// <p>The policy document returned in this structure is URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL decoding
+    /// method to convert the policy back to plain JSON text. For example, if you use Java, you can
+    /// use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in
+    /// the Java SDK. Other languages and SDKs provide similar functionality.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
+    /// <p>The identifier for the policy version.</p>
+    /// <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a
+    /// policy is created, the first policy version is <code>v1</code>. </p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Specifies whether the policy version is set as the policy's default version.</p>
+    pub fn is_default_version(&self) -> bool {
+        self.is_default_version
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the policy version was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
 }
 impl std::fmt::Debug for PolicyVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3507,6 +4113,23 @@ pub struct ListPoliciesGrantingServiceAccessEntry {
     /// policy.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicyGrantingServiceAccess>>,
 }
+impl ListPoliciesGrantingServiceAccessEntry {
+    /// <p>The namespace of the service that was accessed.</p>
+    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+    /// <i>Service Authorization Reference</i>. Choose the name of the service to
+    /// view details for that service. In the first paragraph, find the service prefix. For
+    /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn service_namespace(&self) -> std::option::Option<&str> {
+        self.service_namespace.as_deref()
+    }
+    /// <p>The <code>PoliciesGrantingServiceAccess</code> object that contains details about the
+    /// policy.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::PolicyGrantingServiceAccess]> {
+        self.policies.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPoliciesGrantingServiceAccessEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoliciesGrantingServiceAccessEntry");
@@ -3618,6 +4241,39 @@ pub struct PolicyGrantingServiceAccess {
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub entity_name: std::option::Option<std::string::String>,
+}
+impl PolicyGrantingServiceAccess {
+    /// <p>The policy name.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+    /// policies and inline policies</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.policy_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The type of entity (user or role) that used the policy to access the service to which
+    /// the inline policy is attached.</p>
+    /// <p>This field is null for managed policies. For more information about these policy types,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn entity_type(&self) -> std::option::Option<&crate::model::PolicyOwnerEntityType> {
+        self.entity_type.as_ref()
+    }
+    /// <p>The name of the entity (user or role) to which the inline policy is attached.</p>
+    /// <p>This field is null for managed policies. For more information about these policy types,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn entity_name(&self) -> std::option::Option<&str> {
+        self.entity_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyGrantingServiceAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3903,6 +4559,73 @@ pub struct Policy {
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Policy {
+    /// <p>The friendly name (not ARN) identifying the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the policy.</p>
+    /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The path to the policy.</p>
+    /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The identifier for the version of the policy that is set as the default version.</p>
+    pub fn default_version_id(&self) -> std::option::Option<&str> {
+        self.default_version_id.as_deref()
+    }
+    /// <p>The number of entities (users, groups, and roles) that the policy is attached to.</p>
+    pub fn attachment_count(&self) -> std::option::Option<i32> {
+        self.attachment_count
+    }
+    /// <p>The number of entities (users and roles) for which the policy is used to set the
+    /// permissions boundary. </p>
+    /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// identities </a> in the <i>IAM User Guide</i>.</p>
+    pub fn permissions_boundary_usage_count(&self) -> std::option::Option<i32> {
+        self.permissions_boundary_usage_count
+    }
+    /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
+    pub fn is_attachable(&self) -> bool {
+        self.is_attachable
+    }
+    /// <p>A friendly description of the policy.</p>
+    /// <p>This element is included in the response to the <a>GetPolicy</a> operation.
+    /// It is not included in the response to the <a>ListPolicies</a> operation. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the policy was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the policy was last updated.</p>
+    /// <p>When a policy has only one version, this field contains the date and time when the
+    /// policy was created. When a policy has more than one version, this field contains the date
+    /// and time when the most recent policy version was created.</p>
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date.as_ref()
+    }
+    /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for Policy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4272,6 +4995,14 @@ pub struct OpenIdConnectProviderListEntry {
     /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl OpenIdConnectProviderListEntry {
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for OpenIdConnectProviderListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenIdConnectProviderListEntry");
@@ -4328,6 +5059,21 @@ pub struct MfaDevice {
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The date when the MFA device was enabled for the user.</p>
     pub enable_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MfaDevice {
+    /// <p>The user with whom the MFA device is associated.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the
+    /// serial number is the device ARN.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>The date when the MFA device was enabled for the user.</p>
+    pub fn enable_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.enable_date.as_ref()
+    }
 }
 impl std::fmt::Debug for MfaDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4450,6 +5196,41 @@ pub struct InstanceProfile {
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl InstanceProfile {
+    /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The name identifying the instance profile.</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p> The stable and unique string identifying the instance profile. For more information
+    /// about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn instance_profile_id(&self) -> std::option::Option<&str> {
+        self.instance_profile_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information
+    /// about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date when the instance profile was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The role associated with the instance profile.</p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.roles.as_deref()
+    }
+    /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for InstanceProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4646,6 +5427,34 @@ pub struct Group {
     /// format</a>, when the group was created.</p>
     pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Group {
+    /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The friendly name that identifies the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p> The stable and unique string identifying the group. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs
+    /// and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the group was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+}
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Group");
@@ -4768,6 +5577,18 @@ pub struct PolicyRole {
     /// identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub role_id: std::option::Option<std::string::String>,
 }
+impl PolicyRole {
+    /// <p>The name (friendly name, not ARN) identifying the role.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the role. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn role_id(&self) -> std::option::Option<&str> {
+        self.role_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyRole {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyRole");
@@ -4840,6 +5661,18 @@ pub struct PolicyUser {
     /// identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl PolicyUser {
+    /// <p>The name (friendly name, not ARN) identifying the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the user. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyUser");
@@ -4911,6 +5744,18 @@ pub struct PolicyGroup {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
     /// identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub group_id: std::option::Option<std::string::String>,
+}
+impl PolicyGroup {
+    /// <p>The name (friendly name, not ARN) identifying the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the group. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5058,6 +5903,18 @@ pub struct AttachedPolicy {
     /// the <i>Amazon Web Services General Reference</i>. </p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
+impl AttachedPolicy {
+    /// <p>The friendly name of the attached policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachedPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachedPolicy");
@@ -5131,6 +5988,25 @@ pub struct AccessKeyMetadata {
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date when the access key was created.</p>
     pub create_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AccessKeyMetadata {
+    /// <p>The name of the IAM user that the key is associated with.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID for this access key.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The status of the access key. <code>Active</code> means that the key is valid for API
+    /// calls; <code>Inactive</code> means it is not.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date when the access key was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessKeyMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5290,6 +6166,21 @@ pub struct DeletionTaskFailureReasonType {
     /// used.</p>
     pub role_usage_list: std::option::Option<std::vec::Vec<crate::model::RoleUsageType>>,
 }
+impl DeletionTaskFailureReasonType {
+    /// <p>A short description of the reason that the service-linked role deletion failed.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>A list of objects that contains details about the service-linked role deletion failure,
+    /// if that information is returned by the service. If the service-linked role has active
+    /// sessions or if any resources that were used by the role have not been deleted from the
+    /// linked service, the role can't be deleted. This parameter includes a list of the resources
+    /// that are associated with the role and the Region in which the resources are being
+    /// used.</p>
+    pub fn role_usage_list(&self) -> std::option::Option<&[crate::model::RoleUsageType]> {
+        self.role_usage_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletionTaskFailureReasonType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletionTaskFailureReasonType");
@@ -5373,6 +6264,16 @@ pub struct RoleUsageType {
     pub region: std::option::Option<std::string::String>,
     /// <p>The name of the resource that is using the service-linked role.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RoleUsageType {
+    /// <p>The name of the Region where the service-linked role is being used.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The name of the resource that is using the service-linked role.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for RoleUsageType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5510,6 +6411,16 @@ pub struct ErrorDetails {
     /// <p>The error code associated with the operation failure.</p>
     pub code: std::option::Option<std::string::String>,
 }
+impl ErrorDetails {
+    /// <p>Detailed information about the reason that the operation failed.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The error code associated with the operation failure.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorDetails");
@@ -5579,6 +6490,21 @@ pub struct EntityDetails {
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_authenticated: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EntityDetails {
+    /// <p>The <code>EntityInfo</code> object that contains details about the entity (user or
+    /// role).</p>
+    pub fn entity_info(&self) -> std::option::Option<&crate::model::EntityInfo> {
+        self.entity_info.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does
+    /// not report unauthenticated requests.</p>
+    /// <p>This field is null if no IAM entities attempted to access the service within the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn last_authenticated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authenticated.as_ref()
+    }
 }
 impl std::fmt::Debug for EntityDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5668,6 +6594,31 @@ pub struct EntityInfo {
     /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
     /// identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub path: std::option::Option<std::string::String>,
+}
+impl EntityInfo {
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the entity (user or role).</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of entity (user or role).</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyOwnerEntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The identifier of the entity (user or role).</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5873,6 +6824,61 @@ pub struct ServiceLastAccessed {
     /// <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
     pub tracked_actions_last_accessed:
         std::option::Option<std::vec::Vec<crate::model::TrackedActionLastAccessed>>,
+}
+impl ServiceLastAccessed {
+    /// <p>The name of the service in which access was attempted.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when an authenticated entity most recently attempted to access the
+    /// service. Amazon Web Services does not report unauthenticated requests.</p>
+    /// <p>This field is null if no IAM entities attempted to access the service within the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn last_authenticated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authenticated.as_ref()
+    }
+    /// <p>The namespace of the service in which access was attempted.</p>
+    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+    /// <i>Service Authorization Reference</i>. Choose the name of the service to
+    /// view details for that service. In the first paragraph, find the service prefix. For
+    /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn service_namespace(&self) -> std::option::Option<&str> {
+        self.service_namespace.as_deref()
+    }
+    /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the
+    /// service. Amazon Web Services does not report unauthenticated requests.</p>
+    /// <p>This field is null if no IAM entities attempted to access the service within the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn last_authenticated_entity(&self) -> std::option::Option<&str> {
+        self.last_authenticated_entity.as_deref()
+    }
+    /// <p>The Region from which the authenticated entity (user or role) last attempted to access
+    /// the service. Amazon Web Services does not report unauthenticated requests.</p>
+    /// <p>This field is null if no IAM entities attempted to access the service within the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn last_authenticated_region(&self) -> std::option::Option<&str> {
+        self.last_authenticated_region.as_deref()
+    }
+    /// <p>The total number of authenticated principals (root user, IAM users, or IAM roles)
+    /// that have attempted to access the service.</p>
+    /// <p>This field is null if no principals attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn total_authenticated_entities(&self) -> std::option::Option<i32> {
+        self.total_authenticated_entities
+    }
+    /// <p>An object that contains details about the most recent attempt to access a tracked action
+    /// within the service.</p>
+    /// <p>This field is null if there no tracked actions or if the principal did not use the
+    /// tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>. This field is also null if the report was generated at the
+    /// service level and not the action level. For more information, see the
+    /// <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+    pub fn tracked_actions_last_accessed(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrackedActionLastAccessed]> {
+        self.tracked_actions_last_accessed.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceLastAccessed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6094,6 +7100,34 @@ pub struct TrackedActionLastAccessed {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_accessed_region: std::option::Option<std::string::String>,
 }
+impl TrackedActionLastAccessed {
+    /// <p>The name of the tracked action to which access was attempted. Tracked actions are
+    /// actions that report activity to IAM.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn last_accessed_entity(&self) -> std::option::Option<&str> {
+        self.last_accessed_entity.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when an authenticated entity most recently attempted to access the
+    /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
+    /// <p>This field is null if no IAM entities attempted to access the service within the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn last_accessed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_accessed_time.as_ref()
+    }
+    /// <p>The Region from which the authenticated entity (user or role) last attempted to access
+    /// the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
+    /// <p>This field is null if no IAM entities attempted to access the service within the
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn last_accessed_region(&self) -> std::option::Option<&str> {
+        self.last_accessed_region.as_deref()
+    }
+}
 impl std::fmt::Debug for TrackedActionLastAccessed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrackedActionLastAccessed");
@@ -6274,6 +7308,28 @@ pub struct ServerCertificate {
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ServerCertificate {
+    /// <p>The meta information of the server certificate, such as its name, path, ID, and
+    /// ARN.</p>
+    pub fn server_certificate_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerCertificateMetadata> {
+        self.server_certificate_metadata.as_ref()
+    }
+    /// <p>The contents of the public key certificate.</p>
+    pub fn certificate_body(&self) -> std::option::Option<&str> {
+        self.certificate_body.as_deref()
+    }
+    /// <p>The contents of the public key certificate chain.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerCertificate");
@@ -6419,6 +7475,49 @@ pub struct AccessDetail {
     /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM
     /// roles) that attempted to access the service in the reporting period.</p>
     pub total_authenticated_entities: std::option::Option<i32>,
+}
+impl AccessDetail {
+    /// <p>The name of the service in which access was attempted.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The namespace of the service in which access was attempted.</p>
+    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+    /// <i>Service Authorization Reference</i>. Choose the name of the service to
+    /// view details for that service. In the first paragraph, find the service prefix. For
+    /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn service_namespace(&self) -> std::option::Option<&str> {
+        self.service_namespace.as_deref()
+    }
+    /// <p>The Region where the last service access attempt occurred.</p>
+    /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
+    /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an
+    /// authenticated principal last attempted to access the service. Amazon Web Services does not report
+    /// unauthenticated requests.</p>
+    /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the
+    /// reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn entity_path(&self) -> std::option::Option<&str> {
+        self.entity_path.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when an authenticated principal most recently attempted to access the
+    /// service. Amazon Web Services does not report unauthenticated requests.</p>
+    /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
+    /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    pub fn last_authenticated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authenticated_time.as_ref()
+    }
+    /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM
+    /// roles) that attempted to access the service in the reporting period.</p>
+    pub fn total_authenticated_entities(&self) -> std::option::Option<i32> {
+        self.total_authenticated_entities
+    }
 }
 impl std::fmt::Debug for AccessDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6648,6 +7747,20 @@ pub struct LoginProfile {
     pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub password_reset_required: bool,
+}
+impl LoginProfile {
+    /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The date when the password for the user was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
+    pub fn password_reset_required(&self) -> bool {
+        self.password_reset_required
+    }
 }
 impl std::fmt::Debug for LoginProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6983,6 +8096,53 @@ pub struct PasswordPolicy {
     /// password has expired.</p>
     pub hard_expiry: std::option::Option<bool>,
 }
+impl PasswordPolicy {
+    /// <p>Minimum length to require for IAM user passwords.</p>
+    pub fn minimum_password_length(&self) -> std::option::Option<i32> {
+        self.minimum_password_length
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
+    /// <p>! @ # $ % ^ & * ( ) _ + - = [ ] { } | '</p>
+    pub fn require_symbols(&self) -> bool {
+        self.require_symbols
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
+    pub fn require_numbers(&self) -> bool {
+        self.require_numbers
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).</p>
+    pub fn require_uppercase_characters(&self) -> bool {
+        self.require_uppercase_characters
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
+    pub fn require_lowercase_characters(&self) -> bool {
+        self.require_lowercase_characters
+    }
+    /// <p>Specifies whether IAM users are allowed to change their own password.</p>
+    pub fn allow_users_to_change_password(&self) -> bool {
+        self.allow_users_to_change_password
+    }
+    /// <p>Indicates whether passwords in the account expire. Returns true if
+    /// <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
+    /// MaxPasswordAge is 0 or not present.</p>
+    pub fn expire_passwords(&self) -> bool {
+        self.expire_passwords
+    }
+    /// <p>The number of days that an IAM user password is valid.</p>
+    pub fn max_password_age(&self) -> std::option::Option<i32> {
+        self.max_password_age
+    }
+    /// <p>Specifies the number of previous passwords that IAM users are prevented from
+    /// reusing.</p>
+    pub fn password_reuse_prevention(&self) -> std::option::Option<i32> {
+        self.password_reuse_prevention
+    }
+    /// <p>Specifies whether IAM users are prevented from setting a new password after their
+    /// password has expired.</p>
+    pub fn hard_expiry(&self) -> std::option::Option<bool> {
+        self.hard_expiry
+    }
+}
 impl std::fmt::Debug for PasswordPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PasswordPolicy");
@@ -7222,6 +8382,74 @@ pub struct ManagedPolicyDetail {
     pub update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list containing information about the versions of the policy.</p>
     pub policy_version_list: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
+}
+impl ManagedPolicyDetail {
+    /// <p>The friendly name (not ARN) identifying the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the policy.</p>
+    /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The path to the policy.</p>
+    /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The identifier for the version of the policy that is set as the default (operative)
+    /// version.</p>
+    /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+    /// policies</a> in the <i>IAM User Guide</i>. </p>
+    pub fn default_version_id(&self) -> std::option::Option<&str> {
+        self.default_version_id.as_deref()
+    }
+    /// <p>The number of principal entities (users, groups, and roles) that the policy is attached
+    /// to.</p>
+    pub fn attachment_count(&self) -> std::option::Option<i32> {
+        self.attachment_count
+    }
+    /// <p>The number of entities (users and roles) for which the policy is used as the permissions
+    /// boundary. </p>
+    /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// identities </a> in the <i>IAM User Guide</i>.</p>
+    pub fn permissions_boundary_usage_count(&self) -> std::option::Option<i32> {
+        self.permissions_boundary_usage_count
+    }
+    /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
+    pub fn is_attachable(&self) -> bool {
+        self.is_attachable
+    }
+    /// <p>A friendly description of the policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the policy was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the policy was last updated.</p>
+    /// <p>When a policy has only one version, this field contains the date and time when the
+    /// policy was created. When a policy has more than one version, this field contains the date
+    /// and time when the most recent policy version was created.</p>
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date.as_ref()
+    }
+    /// <p>A list containing information about the versions of the policy.</p>
+    pub fn policy_version_list(&self) -> std::option::Option<&[crate::model::PolicyVersion]> {
+        self.policy_version_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ManagedPolicyDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7517,6 +8745,76 @@ pub struct RoleDetail {
     /// Guide</i>.</p>
     pub role_last_used: std::option::Option<crate::model::RoleLastUsed>,
 }
+impl RoleDetail {
+    /// <p>The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The friendly name that identifies the role.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the role. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn role_id(&self) -> std::option::Option<&str> {
+        self.role_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the role was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The trust policy that grants permission to assume the role.</p>
+    pub fn assume_role_policy_document(&self) -> std::option::Option<&str> {
+        self.assume_role_policy_document.as_deref()
+    }
+    /// <p>A list of instance profiles that contain this role.</p>
+    pub fn instance_profile_list(&self) -> std::option::Option<&[crate::model::InstanceProfile]> {
+        self.instance_profile_list.as_deref()
+    }
+    /// <p>A list of inline policies embedded in the role. These policies are the role's access
+    /// (permissions) policies.</p>
+    pub fn role_policy_list(&self) -> std::option::Option<&[crate::model::PolicyDetail]> {
+        self.role_policy_list.as_deref()
+    }
+    /// <p>A list of managed policies attached to the role. These policies are the role's access
+    /// (permissions) policies.</p>
+    pub fn attached_managed_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+        self.attached_managed_policies.as_deref()
+    }
+    /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+    /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// identities </a> in the <i>IAM User Guide</i>.</p>
+    pub fn permissions_boundary(
+        &self,
+    ) -> std::option::Option<&crate::model::AttachedPermissionsBoundary> {
+        self.permissions_boundary.as_ref()
+    }
+    /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Contains information about the last time that an IAM role was used. This includes the
+    /// date and time and the Region in which the role was last used. Activity is only reported for
+    /// the trailing 400 days. This period can be shorter if your Region began supporting these
+    /// features within the last year. The role might have been used more than 400 days ago. For
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User
+    /// Guide</i>.</p>
+    pub fn role_last_used(&self) -> std::option::Option<&crate::model::RoleLastUsed> {
+        self.role_last_used.as_ref()
+    }
+}
 impl std::fmt::Debug for RoleDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoleDetail");
@@ -7809,6 +9107,16 @@ pub struct PolicyDetail {
     /// <p>The policy document.</p>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl PolicyDetail {
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy document.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyDetail");
@@ -7891,6 +9199,44 @@ pub struct GroupDetail {
     pub group_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of the managed policies attached to the group.</p>
     pub attached_managed_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+}
+impl GroupDetail {
+    /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The friendly name that identifies the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the group. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the group was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>A list of the inline policies embedded in the group.</p>
+    pub fn group_policy_list(&self) -> std::option::Option<&[crate::model::PolicyDetail]> {
+        self.group_policy_list.as_deref()
+    }
+    /// <p>A list of the managed policies attached to the group.</p>
+    pub fn attached_managed_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+        self.attached_managed_policies.as_deref()
+    }
 }
 impl std::fmt::Debug for GroupDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8084,6 +9430,61 @@ pub struct UserDetail {
     /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UserDetail {
+    /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The friendly name identifying the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The stable and unique string identifying the user. For more information about IDs, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the user was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>A list of the inline policies embedded in the user.</p>
+    pub fn user_policy_list(&self) -> std::option::Option<&[crate::model::PolicyDetail]> {
+        self.user_policy_list.as_deref()
+    }
+    /// <p>A list of IAM groups that the user is in.</p>
+    pub fn group_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.group_list.as_deref()
+    }
+    /// <p>A list of the managed policies attached to the user.</p>
+    pub fn attached_managed_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttachedPolicy]> {
+        self.attached_managed_policies.as_deref()
+    }
+    /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+    /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// identities </a> in the <i>IAM User Guide</i>.</p>
+    pub fn permissions_boundary(
+        &self,
+    ) -> std::option::Option<&crate::model::AttachedPermissionsBoundary> {
+        self.permissions_boundary.as_ref()
+    }
+    /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UserDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8366,6 +9767,62 @@ pub struct AccessKeyLastUsed {
     /// General Reference.</p>
     pub region: std::option::Option<std::string::String>,
 }
+impl AccessKeyLastUsed {
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+    /// format</a>, when the access key was most recently used. This field is null in the
+    /// following situations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user does not have an access key.</p>
+    /// </li>
+    /// <li>
+    /// <p>An access key exists but has not been used since IAM began tracking this
+    /// information.</p>
+    /// </li>
+    /// <li>
+    /// <p>There is no sign-in data associated with the user.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_used_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_used_date.as_ref()
+    }
+    /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value
+    /// of this field is "N/A" in the following situations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user does not have an access key.</p>
+    /// </li>
+    /// <li>
+    /// <p>An access key exists but has not been used since IAM started tracking this
+    /// information.</p>
+    /// </li>
+    /// <li>
+    /// <p>There is no sign-in data associated with the user.</p>
+    /// </li>
+    /// </ul>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is
+    /// "N/A" in the following situations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user does not have an access key.</p>
+    /// </li>
+    /// <li>
+    /// <p>An access key exists but has not been used since IAM began tracking this
+    /// information.</p>
+    /// </li>
+    /// <li>
+    /// <p>There is no sign-in data associated with the user.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
+    /// General Reference.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessKeyLastUsed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessKeyLastUsed");
@@ -8601,6 +10058,29 @@ pub struct AccessKey {
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The date when the access key was created.</p>
     pub create_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AccessKey {
+    /// <p>The name of the IAM user that the access key is associated with.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID for this access key.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The status of the access key. <code>Active</code> means that the key is valid for API
+    /// calls, while <code>Inactive</code> means it is not. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The secret key used to sign requests.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>The date when the access key was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

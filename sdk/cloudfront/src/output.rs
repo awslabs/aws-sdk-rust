@@ -9,6 +9,19 @@ pub struct UpdateStreamingDistributionOutput {
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl UpdateStreamingDistributionOutput {
+    /// <p>The streaming distribution's information.</p>
+    pub fn streaming_distribution(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistribution> {
+        self.streaming_distribution.as_ref()
+    }
+    /// <p>The current version of the configuration. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStreamingDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStreamingDistributionOutput");
@@ -80,6 +93,18 @@ pub struct UpdateResponseHeadersPolicyOutput {
     /// <p>The current version of the response headers policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl UpdateResponseHeadersPolicyOutput {
+    /// <p>A response headers policy.</p>
+    pub fn response_headers_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicy> {
+        self.response_headers_policy.as_ref()
+    }
+    /// <p>The current version of the response headers policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResponseHeadersPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResponseHeadersPolicyOutput");
@@ -148,6 +173,12 @@ pub struct UpdateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     pub realtime_log_config: std::option::Option<crate::model::RealtimeLogConfig>,
 }
+impl UpdateRealtimeLogConfigOutput {
+    /// <p>A real-time log configuration.</p>
+    pub fn realtime_log_config(&self) -> std::option::Option<&crate::model::RealtimeLogConfig> {
+        self.realtime_log_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRealtimeLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRealtimeLogConfigOutput");
@@ -200,6 +231,16 @@ pub struct UpdatePublicKeyOutput {
     pub public_key: std::option::Option<crate::model::PublicKey>,
     /// <p>The identifier of the current version of the public key.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdatePublicKeyOutput {
+    /// <p>The public key.</p>
+    pub fn public_key(&self) -> std::option::Option<&crate::model::PublicKey> {
+        self.public_key.as_ref()
+    }
+    /// <p>The identifier of the current version of the public key.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -267,6 +308,16 @@ pub struct UpdateOriginRequestPolicyOutput {
     /// <p>The current version of the origin request policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl UpdateOriginRequestPolicyOutput {
+    /// <p>An origin request policy.</p>
+    pub fn origin_request_policy(&self) -> std::option::Option<&crate::model::OriginRequestPolicy> {
+        self.origin_request_policy.as_ref()
+    }
+    /// <p>The current version of the origin request policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateOriginRequestPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOriginRequestPolicyOutput");
@@ -333,6 +384,16 @@ pub struct UpdateKeyGroupOutput {
     /// <p>The identifier for this version of the key group.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl UpdateKeyGroupOutput {
+    /// <p>The key group that was just updated.</p>
+    pub fn key_group(&self) -> std::option::Option<&crate::model::KeyGroup> {
+        self.key_group.as_ref()
+    }
+    /// <p>The identifier for this version of the key group.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateKeyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateKeyGroupOutput");
@@ -395,6 +456,16 @@ pub struct UpdateFunctionOutput {
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateFunctionOutput {
+    /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    pub fn function_summary(&self) -> std::option::Option<&crate::model::FunctionSummary> {
+        self.function_summary.as_ref()
+    }
+    /// <p>The version identifier for the current version of the CloudFront function.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -462,6 +533,18 @@ pub struct UpdateFieldLevelEncryptionProfileOutput {
         std::option::Option<crate::model::FieldLevelEncryptionProfile>,
     /// <p>The result of the field-level encryption profile request. </p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateFieldLevelEncryptionProfileOutput {
+    /// <p>Return the results of updating the profile.</p>
+    pub fn field_level_encryption_profile(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfile> {
+        self.field_level_encryption_profile.as_ref()
+    }
+    /// <p>The result of the field-level encryption profile request. </p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFieldLevelEncryptionProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -537,6 +620,19 @@ pub struct UpdateFieldLevelEncryptionConfigOutput {
     /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl UpdateFieldLevelEncryptionConfigOutput {
+    /// <p>Return the results of updating the configuration.</p>
+    pub fn field_level_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryption> {
+        self.field_level_encryption.as_ref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when updating the configuration.
+    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFieldLevelEncryptionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionConfigOutput");
@@ -605,6 +701,17 @@ pub struct UpdateDistributionOutput {
     /// <p>The current version of the configuration. For example:
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateDistributionOutput {
+    /// <p>The distribution's information.</p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>The current version of the configuration. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -675,6 +782,19 @@ pub struct UpdateCloudFrontOriginAccessIdentityOutput {
     /// <p>The current version of the configuration. For example:
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateCloudFrontOriginAccessIdentityOutput {
+    /// <p>The origin access identity's information.</p>
+    pub fn cloud_front_origin_access_identity(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentity> {
+        self.cloud_front_origin_access_identity.as_ref()
+    }
+    /// <p>The current version of the configuration. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -750,6 +870,16 @@ pub struct UpdateCachePolicyOutput {
     pub cache_policy: std::option::Option<crate::model::CachePolicy>,
     /// <p>The current version of the cache policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateCachePolicyOutput {
+    /// <p>A cache policy.</p>
+    pub fn cache_policy(&self) -> std::option::Option<&crate::model::CachePolicy> {
+        self.cache_policy.as_ref()
+    }
+    /// <p>The current version of the cache policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCachePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -846,6 +976,13 @@ pub struct TestFunctionOutput {
     /// object.</p>
     pub test_result: std::option::Option<crate::model::TestResult>,
 }
+impl TestFunctionOutput {
+    /// <p>An object that represents the result of running the function with the provided event
+    /// object.</p>
+    pub fn test_result(&self) -> std::option::Option<&crate::model::TestResult> {
+        self.test_result.as_ref()
+    }
+}
 impl std::fmt::Debug for TestFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestFunctionOutput");
@@ -929,6 +1066,12 @@ pub struct PublishFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
 }
+impl PublishFunctionOutput {
+    /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    pub fn function_summary(&self) -> std::option::Option<&crate::model::FunctionSummary> {
+        self.function_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for PublishFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishFunctionOutput");
@@ -980,6 +1123,12 @@ pub struct ListTagsForResourceOutput {
     /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub tags: std::option::Option<crate::model::Tags>,
 }
+impl ListTagsForResourceOutput {
+    /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn tags(&self) -> std::option::Option<&crate::model::Tags> {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1025,6 +1174,14 @@ impl ListTagsForResourceOutput {
 pub struct ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type. </p>
     pub streaming_distribution_list: std::option::Option<crate::model::StreamingDistributionList>,
+}
+impl ListStreamingDistributionsOutput {
+    /// <p>The <code>StreamingDistributionList</code> type. </p>
+    pub fn streaming_distribution_list(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistributionList> {
+        self.streaming_distribution_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListStreamingDistributionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1084,6 +1241,14 @@ pub struct ListResponseHeadersPoliciesOutput {
     /// <p>A list of response headers policies.</p>
     pub response_headers_policy_list: std::option::Option<crate::model::ResponseHeadersPolicyList>,
 }
+impl ListResponseHeadersPoliciesOutput {
+    /// <p>A list of response headers policies.</p>
+    pub fn response_headers_policy_list(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicyList> {
+        self.response_headers_policy_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListResponseHeadersPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResponseHeadersPoliciesOutput");
@@ -1142,6 +1307,12 @@ pub struct ListRealtimeLogConfigsOutput {
     /// <p>A list of real-time log configurations.</p>
     pub realtime_log_configs: std::option::Option<crate::model::RealtimeLogConfigs>,
 }
+impl ListRealtimeLogConfigsOutput {
+    /// <p>A list of real-time log configurations.</p>
+    pub fn realtime_log_configs(&self) -> std::option::Option<&crate::model::RealtimeLogConfigs> {
+        self.realtime_log_configs.as_ref()
+    }
+}
 impl std::fmt::Debug for ListRealtimeLogConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRealtimeLogConfigsOutput");
@@ -1193,6 +1364,12 @@ pub struct ListPublicKeysOutput {
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
     pub public_key_list: std::option::Option<crate::model::PublicKeyList>,
 }
+impl ListPublicKeysOutput {
+    /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
+    pub fn public_key_list(&self) -> std::option::Option<&crate::model::PublicKeyList> {
+        self.public_key_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListPublicKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPublicKeysOutput");
@@ -1243,6 +1420,14 @@ impl ListPublicKeysOutput {
 pub struct ListOriginRequestPoliciesOutput {
     /// <p>A list of origin request policies.</p>
     pub origin_request_policy_list: std::option::Option<crate::model::OriginRequestPolicyList>,
+}
+impl ListOriginRequestPoliciesOutput {
+    /// <p>A list of origin request policies.</p>
+    pub fn origin_request_policy_list(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginRequestPolicyList> {
+        self.origin_request_policy_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListOriginRequestPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1302,6 +1487,12 @@ pub struct ListKeyGroupsOutput {
     /// <p>A list of key groups.</p>
     pub key_group_list: std::option::Option<crate::model::KeyGroupList>,
 }
+impl ListKeyGroupsOutput {
+    /// <p>A list of key groups.</p>
+    pub fn key_group_list(&self) -> std::option::Option<&crate::model::KeyGroupList> {
+        self.key_group_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListKeyGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListKeyGroupsOutput");
@@ -1352,6 +1543,12 @@ impl ListKeyGroupsOutput {
 pub struct ListInvalidationsOutput {
     /// <p>Information about invalidation batches. </p>
     pub invalidation_list: std::option::Option<crate::model::InvalidationList>,
+}
+impl ListInvalidationsOutput {
+    /// <p>Information about invalidation batches. </p>
+    pub fn invalidation_list(&self) -> std::option::Option<&crate::model::InvalidationList> {
+        self.invalidation_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListInvalidationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1404,6 +1601,12 @@ pub struct ListFunctionsOutput {
     /// <p>A list of CloudFront functions.</p>
     pub function_list: std::option::Option<crate::model::FunctionList>,
 }
+impl ListFunctionsOutput {
+    /// <p>A list of CloudFront functions.</p>
+    pub fn function_list(&self) -> std::option::Option<&crate::model::FunctionList> {
+        self.function_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListFunctionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFunctionsOutput");
@@ -1455,6 +1658,14 @@ pub struct ListFieldLevelEncryptionProfilesOutput {
     /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
     pub field_level_encryption_profile_list:
         std::option::Option<crate::model::FieldLevelEncryptionProfileList>,
+}
+impl ListFieldLevelEncryptionProfilesOutput {
+    /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
+    pub fn field_level_encryption_profile_list(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfileList> {
+        self.field_level_encryption_profile_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListFieldLevelEncryptionProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1513,6 +1724,14 @@ impl ListFieldLevelEncryptionProfilesOutput {
 pub struct ListFieldLevelEncryptionConfigsOutput {
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
     pub field_level_encryption_list: std::option::Option<crate::model::FieldLevelEncryptionList>,
+}
+impl ListFieldLevelEncryptionConfigsOutput {
+    /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
+    pub fn field_level_encryption_list(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionList> {
+        self.field_level_encryption_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListFieldLevelEncryptionConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1573,6 +1792,12 @@ pub struct ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type. </p>
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
+impl ListDistributionsByWebAclIdOutput {
+    /// <p>The <code>DistributionList</code> type. </p>
+    pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
+        self.distribution_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsByWebAclIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsByWebAclIdOutput");
@@ -1623,6 +1848,12 @@ impl ListDistributionsByWebAclIdOutput {
 pub struct ListDistributionsByResponseHeadersPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
+}
+impl ListDistributionsByResponseHeadersPolicyIdOutput {
+    /// <p>A list of distribution IDs.</p>
+    pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
+        self.distribution_id_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1676,6 +1907,12 @@ pub struct ListDistributionsByRealtimeLogConfigOutput {
     /// <p>A distribution list.</p>
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
+impl ListDistributionsByRealtimeLogConfigOutput {
+    /// <p>A distribution list.</p>
+    pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
+        self.distribution_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsByRealtimeLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsByRealtimeLogConfigOutput");
@@ -1726,6 +1963,12 @@ impl ListDistributionsByRealtimeLogConfigOutput {
 pub struct ListDistributionsByOriginRequestPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
+}
+impl ListDistributionsByOriginRequestPolicyIdOutput {
+    /// <p>A list of distribution IDs.</p>
+    pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
+        self.distribution_id_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDistributionsByOriginRequestPolicyIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1779,6 +2022,12 @@ pub struct ListDistributionsByKeyGroupOutput {
     /// <p>A list of distribution IDs.</p>
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
 }
+impl ListDistributionsByKeyGroupOutput {
+    /// <p>A list of distribution IDs.</p>
+    pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
+        self.distribution_id_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsByKeyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsByKeyGroupOutput");
@@ -1829,6 +2078,12 @@ impl ListDistributionsByKeyGroupOutput {
 pub struct ListDistributionsByCachePolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
+}
+impl ListDistributionsByCachePolicyIdOutput {
+    /// <p>A list of distribution IDs.</p>
+    pub fn distribution_id_list(&self) -> std::option::Option<&crate::model::DistributionIdList> {
+        self.distribution_id_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDistributionsByCachePolicyIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1881,6 +2136,12 @@ pub struct ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type. </p>
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
+impl ListDistributionsOutput {
+    /// <p>The <code>DistributionList</code> type. </p>
+    pub fn distribution_list(&self) -> std::option::Option<&crate::model::DistributionList> {
+        self.distribution_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsOutput");
@@ -1931,6 +2192,14 @@ impl ListDistributionsOutput {
 pub struct ListConflictingAliasesOutput {
     /// <p>A list of conflicting aliases.</p>
     pub conflicting_aliases_list: std::option::Option<crate::model::ConflictingAliasesList>,
+}
+impl ListConflictingAliasesOutput {
+    /// <p>A list of conflicting aliases.</p>
+    pub fn conflicting_aliases_list(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictingAliasesList> {
+        self.conflicting_aliases_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListConflictingAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1987,6 +2256,14 @@ pub struct ListCloudFrontOriginAccessIdentitiesOutput {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
     pub cloud_front_origin_access_identity_list:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityList>,
+}
+impl ListCloudFrontOriginAccessIdentitiesOutput {
+    /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+    pub fn cloud_front_origin_access_identity_list(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityList> {
+        self.cloud_front_origin_access_identity_list.as_ref()
+    }
 }
 impl std::fmt::Debug for ListCloudFrontOriginAccessIdentitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2047,6 +2324,12 @@ pub struct ListCachePoliciesOutput {
     /// <p>A list of cache policies.</p>
     pub cache_policy_list: std::option::Option<crate::model::CachePolicyList>,
 }
+impl ListCachePoliciesOutput {
+    /// <p>A list of cache policies.</p>
+    pub fn cache_policy_list(&self) -> std::option::Option<&crate::model::CachePolicyList> {
+        self.cache_policy_list.as_ref()
+    }
+}
 impl std::fmt::Debug for ListCachePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCachePoliciesOutput");
@@ -2101,6 +2384,19 @@ pub struct GetStreamingDistributionConfigOutput {
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
     /// </p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetStreamingDistributionConfigOutput {
+    /// <p>The streaming distribution's configuration information.</p>
+    pub fn streaming_distribution_config(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistributionConfig> {
+        self.streaming_distribution_config.as_ref()
+    }
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+    /// </p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStreamingDistributionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2178,6 +2474,19 @@ pub struct GetStreamingDistributionOutput {
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetStreamingDistributionOutput {
+    /// <p>The streaming distribution's information.</p>
+    pub fn streaming_distribution(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistribution> {
+        self.streaming_distribution.as_ref()
+    }
+    /// <p>The current version of the streaming distribution's information. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStreamingDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStreamingDistributionOutput");
@@ -2249,6 +2558,18 @@ pub struct GetResponseHeadersPolicyConfigOutput {
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetResponseHeadersPolicyConfigOutput {
+    /// <p>Contains a response headers policy.</p>
+    pub fn response_headers_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicyConfig> {
+        self.response_headers_policy_config.as_ref()
+    }
+    /// <p>The version identifier for the current version of the response headers policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResponseHeadersPolicyConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2323,6 +2644,18 @@ pub struct GetResponseHeadersPolicyOutput {
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetResponseHeadersPolicyOutput {
+    /// <p>Contains a response headers policy.</p>
+    pub fn response_headers_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicy> {
+        self.response_headers_policy.as_ref()
+    }
+    /// <p>The version identifier for the current version of the response headers policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResponseHeadersPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResponseHeadersPolicyOutput");
@@ -2391,6 +2724,12 @@ pub struct GetRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     pub realtime_log_config: std::option::Option<crate::model::RealtimeLogConfig>,
 }
+impl GetRealtimeLogConfigOutput {
+    /// <p>A real-time log configuration.</p>
+    pub fn realtime_log_config(&self) -> std::option::Option<&crate::model::RealtimeLogConfig> {
+        self.realtime_log_config.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRealtimeLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRealtimeLogConfigOutput");
@@ -2443,6 +2782,16 @@ pub struct GetPublicKeyConfigOutput {
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     /// <p>The identifier for this version of the public key configuration.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetPublicKeyConfigOutput {
+    /// <p>A public key configuration.</p>
+    pub fn public_key_config(&self) -> std::option::Option<&crate::model::PublicKeyConfig> {
+        self.public_key_config.as_ref()
+    }
+    /// <p>The identifier for this version of the public key configuration.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPublicKeyConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2510,6 +2859,16 @@ pub struct GetPublicKeyOutput {
     /// <p>The identifier for this version of the public key.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetPublicKeyOutput {
+    /// <p>The public key.</p>
+    pub fn public_key(&self) -> std::option::Option<&crate::model::PublicKey> {
+        self.public_key.as_ref()
+    }
+    /// <p>The identifier for this version of the public key.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPublicKeyOutput");
@@ -2575,6 +2934,18 @@ pub struct GetOriginRequestPolicyConfigOutput {
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
     /// <p>The current version of the origin request policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetOriginRequestPolicyConfigOutput {
+    /// <p>The origin request policy configuration.</p>
+    pub fn origin_request_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginRequestPolicyConfig> {
+        self.origin_request_policy_config.as_ref()
+    }
+    /// <p>The current version of the origin request policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOriginRequestPolicyConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2649,6 +3020,16 @@ pub struct GetOriginRequestPolicyOutput {
     /// <p>The current version of the origin request policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetOriginRequestPolicyOutput {
+    /// <p>The origin request policy.</p>
+    pub fn origin_request_policy(&self) -> std::option::Option<&crate::model::OriginRequestPolicy> {
+        self.origin_request_policy.as_ref()
+    }
+    /// <p>The current version of the origin request policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOriginRequestPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOriginRequestPolicyOutput");
@@ -2714,6 +3095,15 @@ pub struct GetMonitoringSubscriptionOutput {
     /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
+impl GetMonitoringSubscriptionOutput {
+    /// <p>A monitoring subscription. This structure contains information about whether additional
+    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    pub fn monitoring_subscription(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringSubscription> {
+        self.monitoring_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMonitoringSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMonitoringSubscriptionOutput");
@@ -2772,6 +3162,16 @@ pub struct GetKeyGroupConfigOutput {
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     /// <p>The identifier for this version of the key group.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetKeyGroupConfigOutput {
+    /// <p>The key group configuration.</p>
+    pub fn key_group_config(&self) -> std::option::Option<&crate::model::KeyGroupConfig> {
+        self.key_group_config.as_ref()
+    }
+    /// <p>The identifier for this version of the key group.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetKeyGroupConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2839,6 +3239,16 @@ pub struct GetKeyGroupOutput {
     /// <p>The identifier for this version of the key group.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetKeyGroupOutput {
+    /// <p>The key group.</p>
+    pub fn key_group(&self) -> std::option::Option<&crate::model::KeyGroup> {
+        self.key_group.as_ref()
+    }
+    /// <p>The identifier for this version of the key group.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetKeyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyGroupOutput");
@@ -2900,6 +3310,12 @@ pub struct GetInvalidationOutput {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
     pub invalidation: std::option::Option<crate::model::Invalidation>,
 }
+impl GetInvalidationOutput {
+    /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
+    pub fn invalidation(&self) -> std::option::Option<&crate::model::Invalidation> {
+        self.invalidation.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInvalidationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInvalidationOutput");
@@ -2954,6 +3370,20 @@ pub struct GetFunctionOutput {
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The content type (media type) of the response.</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl GetFunctionOutput {
+    /// <p>The function code of a CloudFront function.</p>
+    pub fn function_code(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.function_code.as_ref()
+    }
+    /// <p>The version identifier for the current version of the CloudFront function.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>The content type (media type) of the response.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3035,6 +3465,18 @@ pub struct GetFieldLevelEncryptionProfileConfigOutput {
     /// <p>The current version of the field-level encryption profile configuration result. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetFieldLevelEncryptionProfileConfigOutput {
+    /// <p>Return the field-level encryption profile configuration information.</p>
+    pub fn field_level_encryption_profile_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfileConfig> {
+        self.field_level_encryption_profile_config.as_ref()
+    }
+    /// <p>The current version of the field-level encryption profile configuration result. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFieldLevelEncryptionProfileConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFieldLevelEncryptionProfileConfigOutput");
@@ -3108,6 +3550,18 @@ pub struct GetFieldLevelEncryptionProfileOutput {
         std::option::Option<crate::model::FieldLevelEncryptionProfile>,
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetFieldLevelEncryptionProfileOutput {
+    /// <p>Return the field-level encryption profile information.</p>
+    pub fn field_level_encryption_profile(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfile> {
+        self.field_level_encryption_profile.as_ref()
+    }
+    /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFieldLevelEncryptionProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3183,6 +3637,18 @@ pub struct GetFieldLevelEncryptionConfigOutput {
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetFieldLevelEncryptionConfigOutput {
+    /// <p>Return the field-level encryption configuration information.</p>
+    pub fn field_level_encryption_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionConfig> {
+        self.field_level_encryption_config.as_ref()
+    }
+    /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFieldLevelEncryptionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFieldLevelEncryptionConfigOutput");
@@ -3256,6 +3722,18 @@ pub struct GetFieldLevelEncryptionOutput {
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetFieldLevelEncryptionOutput {
+    /// <p>Return the field-level encryption configuration information.</p>
+    pub fn field_level_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryption> {
+        self.field_level_encryption.as_ref()
+    }
+    /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFieldLevelEncryptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFieldLevelEncryptionOutput");
@@ -3322,6 +3800,17 @@ pub struct GetDistributionConfigOutput {
     /// <p>The current version of the configuration. For example:
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetDistributionConfigOutput {
+    /// <p>The distribution's configuration information.</p>
+    pub fn distribution_config(&self) -> std::option::Option<&crate::model::DistributionConfig> {
+        self.distribution_config.as_ref()
+    }
+    /// <p>The current version of the configuration. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDistributionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3392,6 +3881,17 @@ pub struct GetDistributionOutput {
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetDistributionOutput {
+    /// <p>The distribution's information.</p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>The current version of the distribution's information. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDistributionOutput");
@@ -3461,6 +3961,19 @@ pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The current version of the configuration. For example:
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetCloudFrontOriginAccessIdentityConfigOutput {
+    /// <p>The origin access identity's configuration information. </p>
+    pub fn cloud_front_origin_access_identity_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityConfig> {
+        self.cloud_front_origin_access_identity_config.as_ref()
+    }
+    /// <p>The current version of the configuration. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3541,6 +4054,19 @@ pub struct GetCloudFrontOriginAccessIdentityOutput {
     /// <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetCloudFrontOriginAccessIdentityOutput {
+    /// <p>The origin access identity's information.</p>
+    pub fn cloud_front_origin_access_identity(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentity> {
+        self.cloud_front_origin_access_identity.as_ref()
+    }
+    /// <p>The current version of the origin access identity's information. For example:
+    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCloudFrontOriginAccessIdentityOutput");
@@ -3616,6 +4142,16 @@ pub struct GetCachePolicyConfigOutput {
     /// <p>The current version of the cache policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetCachePolicyConfigOutput {
+    /// <p>The cache policy configuration.</p>
+    pub fn cache_policy_config(&self) -> std::option::Option<&crate::model::CachePolicyConfig> {
+        self.cache_policy_config.as_ref()
+    }
+    /// <p>The current version of the cache policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCachePolicyConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCachePolicyConfigOutput");
@@ -3682,6 +4218,16 @@ pub struct GetCachePolicyOutput {
     /// <p>The current version of the cache policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl GetCachePolicyOutput {
+    /// <p>The cache policy.</p>
+    pub fn cache_policy(&self) -> std::option::Option<&crate::model::CachePolicy> {
+        self.cache_policy.as_ref()
+    }
+    /// <p>The current version of the cache policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCachePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCachePolicyOutput");
@@ -3747,6 +4293,16 @@ pub struct DescribeFunctionOutput {
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl DescribeFunctionOutput {
+    /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    pub fn function_summary(&self) -> std::option::Option<&crate::model::FunctionSummary> {
+        self.function_summary.as_ref()
+    }
+    /// <p>The version identifier for the current version of the CloudFront function.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4206,6 +4762,22 @@ pub struct CreateStreamingDistributionWithTagsOutput {
     /// <p>The current version of the distribution created.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl CreateStreamingDistributionWithTagsOutput {
+    /// <p>The streaming distribution's information. </p>
+    pub fn streaming_distribution(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistribution> {
+        self.streaming_distribution.as_ref()
+    }
+    /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the distribution created.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStreamingDistributionWithTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingDistributionWithTagsOutput");
@@ -4289,6 +4861,22 @@ pub struct CreateStreamingDistributionOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the streaming distribution created.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateStreamingDistributionOutput {
+    /// <p>The streaming distribution's information.</p>
+    pub fn streaming_distribution(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistribution> {
+        self.streaming_distribution.as_ref()
+    }
+    /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the streaming distribution created.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStreamingDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4374,6 +4962,22 @@ pub struct CreateResponseHeadersPolicyOutput {
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl CreateResponseHeadersPolicyOutput {
+    /// <p>Contains a response headers policy.</p>
+    pub fn response_headers_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicy> {
+        self.response_headers_policy.as_ref()
+    }
+    /// <p>The URL of the response headers policy.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The version identifier for the current version of the response headers policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResponseHeadersPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResponseHeadersPolicyOutput");
@@ -4455,6 +5059,12 @@ pub struct CreateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     pub realtime_log_config: std::option::Option<crate::model::RealtimeLogConfig>,
 }
+impl CreateRealtimeLogConfigOutput {
+    /// <p>A real-time log configuration.</p>
+    pub fn realtime_log_config(&self) -> std::option::Option<&crate::model::RealtimeLogConfig> {
+        self.realtime_log_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRealtimeLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRealtimeLogConfigOutput");
@@ -4509,6 +5119,20 @@ pub struct CreatePublicKeyOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The identifier for this version of the public key.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreatePublicKeyOutput {
+    /// <p>The public key.</p>
+    pub fn public_key(&self) -> std::option::Option<&crate::model::PublicKey> {
+        self.public_key.as_ref()
+    }
+    /// <p>The URL of the public key.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The identifier for this version of the public key.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4591,6 +5215,20 @@ pub struct CreateOriginRequestPolicyOutput {
     /// <p>The current version of the origin request policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl CreateOriginRequestPolicyOutput {
+    /// <p>An origin request policy.</p>
+    pub fn origin_request_policy(&self) -> std::option::Option<&crate::model::OriginRequestPolicy> {
+        self.origin_request_policy.as_ref()
+    }
+    /// <p>The fully qualified URI of the origin request policy just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the origin request policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateOriginRequestPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOriginRequestPolicyOutput");
@@ -4669,6 +5307,15 @@ pub struct CreateMonitoringSubscriptionOutput {
     /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
+impl CreateMonitoringSubscriptionOutput {
+    /// <p>A monitoring subscription. This structure contains information about whether additional
+    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    pub fn monitoring_subscription(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringSubscription> {
+        self.monitoring_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMonitoringSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMonitoringSubscriptionOutput");
@@ -4729,6 +5376,20 @@ pub struct CreateKeyGroupOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The identifier for this version of the key group.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateKeyGroupOutput {
+    /// <p>The key group that was just created.</p>
+    pub fn key_group(&self) -> std::option::Option<&crate::model::KeyGroup> {
+        self.key_group.as_ref()
+    }
+    /// <p>The URL of the key group.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The identifier for this version of the key group.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateKeyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4807,6 +5468,17 @@ pub struct CreateInvalidationOutput {
     /// <p>The invalidation's information.</p>
     pub invalidation: std::option::Option<crate::model::Invalidation>,
 }
+impl CreateInvalidationOutput {
+    /// <p>The fully qualified URI of the distribution and invalidation batch request, including
+    /// the <code>Invalidation ID</code>.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The invalidation's information.</p>
+    pub fn invalidation(&self) -> std::option::Option<&crate::model::Invalidation> {
+        self.invalidation.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInvalidationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInvalidationOutput");
@@ -4877,6 +5549,21 @@ pub struct CreateFunctionOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateFunctionOutput {
+    /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    pub fn function_summary(&self) -> std::option::Option<&crate::model::FunctionSummary> {
+        self.function_summary.as_ref()
+    }
+    /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront
+    /// API.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The version identifier for the current version of the CloudFront function.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4961,6 +5648,22 @@ pub struct CreateFieldLevelEncryptionProfileOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateFieldLevelEncryptionProfileOutput {
+    /// <p>Returned when you create a new field-level encryption profile.</p>
+    pub fn field_level_encryption_profile(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfile> {
+        self.field_level_encryption_profile.as_ref()
+    }
+    /// <p>The fully qualified URI of the new profile resource just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFieldLevelEncryptionProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5050,6 +5753,22 @@ pub struct CreateFieldLevelEncryptionConfigOutput {
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl CreateFieldLevelEncryptionConfigOutput {
+    /// <p>Returned when you create a new field-level encryption configuration.</p>
+    pub fn field_level_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryption> {
+        self.field_level_encryption.as_ref()
+    }
+    /// <p>The fully qualified URI of the new configuration resource just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFieldLevelEncryptionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFieldLevelEncryptionConfigOutput");
@@ -5130,6 +5849,20 @@ pub struct CreateDistributionWithTagsOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the distribution created.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateDistributionWithTagsOutput {
+    /// <p>The distribution's information. </p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>The fully qualified URI of the new distribution resource just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the distribution created.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDistributionWithTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5212,6 +5945,20 @@ pub struct CreateDistributionOutput {
     /// <p>The current version of the distribution created.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
+impl CreateDistributionOutput {
+    /// <p>The distribution's information.</p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>The fully qualified URI of the new distribution resource just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the distribution created.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDistributionOutput");
@@ -5293,6 +6040,22 @@ pub struct CreateCloudFrontOriginAccessIdentityOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the origin access identity created.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateCloudFrontOriginAccessIdentityOutput {
+    /// <p>The origin access identity's information.</p>
+    pub fn cloud_front_origin_access_identity(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentity> {
+        self.cloud_front_origin_access_identity.as_ref()
+    }
+    /// <p>The fully qualified URI of the new origin access identity just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the origin access identity created.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCloudFrontOriginAccessIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5381,6 +6144,20 @@ pub struct CreateCachePolicyOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the cache policy.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateCachePolicyOutput {
+    /// <p>A cache policy.</p>
+    pub fn cache_policy(&self) -> std::option::Option<&crate::model::CachePolicy> {
+        self.cache_policy.as_ref()
+    }
+    /// <p>The fully qualified URI of the cache policy just created.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The current version of the cache policy.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCachePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -11,6 +11,19 @@ pub struct ListMeshesOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMeshesOutput {
+    /// <p>The list of existing service meshes.</p>
+    pub fn meshes(&self) -> std::option::Option<&[crate::model::MeshRef]> {
+        self.meshes.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request.
+    /// When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can
+    /// use this value to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMeshesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMeshesOutput");
@@ -87,6 +100,12 @@ pub struct CreateMeshOutput {
     /// <p>The full description of your service mesh following the create call.</p>
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
+impl CreateMeshOutput {
+    /// <p>The full description of your service mesh following the create call.</p>
+    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+        self.mesh.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMeshOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeshOutput");
@@ -132,6 +151,12 @@ impl CreateMeshOutput {
 pub struct DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
     pub mesh: std::option::Option<crate::model::MeshData>,
+}
+impl DeleteMeshOutput {
+    /// <p>The service mesh that was deleted.</p>
+    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+        self.mesh.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteMeshOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -179,6 +204,12 @@ pub struct UpdateMeshOutput {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
+impl UpdateMeshOutput {
+    /// <p>An object that represents a service mesh returned by a describe operation.</p>
+    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+        self.mesh.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMeshOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMeshOutput");
@@ -224,6 +255,12 @@ impl UpdateMeshOutput {
 pub struct DescribeMeshOutput {
     /// <p>The full description of your service mesh.</p>
     pub mesh: std::option::Option<crate::model::MeshData>,
+}
+impl DescribeMeshOutput {
+    /// <p>The full description of your service mesh.</p>
+    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+        self.mesh.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeMeshOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -275,6 +312,19 @@ pub struct ListVirtualServicesOutput {
     /// <code>limit</code>, you can use this value to retrieve the next page of results. This
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVirtualServicesOutput {
+    /// <p>The list of existing virtual services for the specified service mesh.</p>
+    pub fn virtual_services(&self) -> std::option::Option<&[crate::model::VirtualServiceRef]> {
+        self.virtual_services.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code>
+    /// request. When the results of a <code>ListVirtualServices</code> request exceed
+    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVirtualServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -356,6 +406,12 @@ pub struct CreateVirtualServiceOutput {
     /// <p>The full description of your virtual service following the create call.</p>
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
+impl CreateVirtualServiceOutput {
+    /// <p>The full description of your virtual service following the create call.</p>
+    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+        self.virtual_service.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualServiceOutput");
@@ -406,6 +462,12 @@ impl CreateVirtualServiceOutput {
 pub struct DeleteVirtualServiceOutput {
     /// <p>The virtual service that was deleted.</p>
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+}
+impl DeleteVirtualServiceOutput {
+    /// <p>The virtual service that was deleted.</p>
+    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+        self.virtual_service.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -458,6 +520,12 @@ pub struct UpdateVirtualServiceOutput {
     /// <p>A full description of the virtual service that was updated.</p>
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
+impl UpdateVirtualServiceOutput {
+    /// <p>A full description of the virtual service that was updated.</p>
+    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+        self.virtual_service.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualServiceOutput");
@@ -508,6 +576,12 @@ impl UpdateVirtualServiceOutput {
 pub struct DescribeVirtualServiceOutput {
     /// <p>The full description of your virtual service.</p>
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+}
+impl DescribeVirtualServiceOutput {
+    /// <p>The full description of your virtual service.</p>
+    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+        self.virtual_service.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -564,6 +638,19 @@ pub struct ListVirtualRoutersOutput {
     /// <code>limit</code>, you can use this value to retrieve the next page of results. This
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVirtualRoutersOutput {
+    /// <p>The list of existing virtual routers for the specified service mesh.</p>
+    pub fn virtual_routers(&self) -> std::option::Option<&[crate::model::VirtualRouterRef]> {
+        self.virtual_routers.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>
+    /// request. When the results of a <code>ListVirtualRouters</code> request exceed
+    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVirtualRoutersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -642,6 +729,12 @@ pub struct CreateVirtualRouterOutput {
     /// <p>The full description of your virtual router following the create call.</p>
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
+impl CreateVirtualRouterOutput {
+    /// <p>The full description of your virtual router following the create call.</p>
+    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+        self.virtual_router.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualRouterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualRouterOutput");
@@ -692,6 +785,12 @@ impl CreateVirtualRouterOutput {
 pub struct DeleteVirtualRouterOutput {
     /// <p>The virtual router that was deleted.</p>
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+}
+impl DeleteVirtualRouterOutput {
+    /// <p>The virtual router that was deleted.</p>
+    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+        self.virtual_router.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualRouterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -744,6 +843,12 @@ pub struct UpdateVirtualRouterOutput {
     /// <p>A full description of the virtual router that was updated.</p>
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
+impl UpdateVirtualRouterOutput {
+    /// <p>A full description of the virtual router that was updated.</p>
+    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+        self.virtual_router.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualRouterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualRouterOutput");
@@ -794,6 +899,12 @@ impl UpdateVirtualRouterOutput {
 pub struct DescribeVirtualRouterOutput {
     /// <p>The full description of your virtual router.</p>
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+}
+impl DescribeVirtualRouterOutput {
+    /// <p>The full description of your virtual router.</p>
+    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+        self.virtual_router.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualRouterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -850,6 +961,19 @@ pub struct ListRoutesOutput {
     /// use this value to retrieve the next page of results. This value is <code>null</code> when
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRoutesOutput {
+    /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
+    pub fn routes(&self) -> std::option::Option<&[crate::model::RouteRef]> {
+        self.routes.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request.
+    /// When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can
+    /// use this value to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -927,6 +1051,12 @@ pub struct CreateRouteOutput {
     /// <p>The full description of your mesh following the create call.</p>
     pub route: std::option::Option<crate::model::RouteData>,
 }
+impl CreateRouteOutput {
+    /// <p>The full description of your mesh following the create call.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+        self.route.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteOutput");
@@ -972,6 +1102,12 @@ impl CreateRouteOutput {
 pub struct DeleteRouteOutput {
     /// <p>The route that was deleted.</p>
     pub route: std::option::Option<crate::model::RouteData>,
+}
+impl DeleteRouteOutput {
+    /// <p>The route that was deleted.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+        self.route.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1019,6 +1155,12 @@ pub struct UpdateRouteOutput {
     /// <p>A full description of the route that was updated.</p>
     pub route: std::option::Option<crate::model::RouteData>,
 }
+impl UpdateRouteOutput {
+    /// <p>A full description of the route that was updated.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+        self.route.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRouteOutput");
@@ -1064,6 +1206,12 @@ impl UpdateRouteOutput {
 pub struct DescribeRouteOutput {
     /// <p>The full description of your route.</p>
     pub route: std::option::Option<crate::model::RouteData>,
+}
+impl DescribeRouteOutput {
+    /// <p>The full description of your route.</p>
+    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+        self.route.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1115,6 +1263,19 @@ pub struct ListVirtualNodesOutput {
     /// <code>limit</code>, you can use this value to retrieve the next page of results. This
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVirtualNodesOutput {
+    /// <p>The list of existing virtual nodes for the specified service mesh.</p>
+    pub fn virtual_nodes(&self) -> std::option::Option<&[crate::model::VirtualNodeRef]> {
+        self.virtual_nodes.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>
+    /// request. When the results of a <code>ListVirtualNodes</code> request exceed
+    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVirtualNodesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1192,6 +1353,12 @@ pub struct CreateVirtualNodeOutput {
     /// <p>The full description of your virtual node following the create call.</p>
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
+impl CreateVirtualNodeOutput {
+    /// <p>The full description of your virtual node following the create call.</p>
+    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+        self.virtual_node.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualNodeOutput");
@@ -1242,6 +1409,12 @@ impl CreateVirtualNodeOutput {
 pub struct DeleteVirtualNodeOutput {
     /// <p>The virtual node that was deleted.</p>
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+}
+impl DeleteVirtualNodeOutput {
+    /// <p>The virtual node that was deleted.</p>
+    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+        self.virtual_node.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1294,6 +1467,12 @@ pub struct UpdateVirtualNodeOutput {
     /// <p>A full description of the virtual node that was updated.</p>
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
+impl UpdateVirtualNodeOutput {
+    /// <p>A full description of the virtual node that was updated.</p>
+    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+        self.virtual_node.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualNodeOutput");
@@ -1344,6 +1523,12 @@ impl UpdateVirtualNodeOutput {
 pub struct DescribeVirtualNodeOutput {
     /// <p>The full description of your virtual node.</p>
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+}
+impl DescribeVirtualNodeOutput {
+    /// <p>The full description of your virtual node.</p>
+    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+        self.virtual_node.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualNodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1400,6 +1585,19 @@ pub struct ListVirtualGatewaysOutput {
     /// <code>limit</code>, you can use this value to retrieve the next page of results. This
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVirtualGatewaysOutput {
+    /// <p>The list of existing virtual gateways for the specified service mesh.</p>
+    pub fn virtual_gateways(&self) -> std::option::Option<&[crate::model::VirtualGatewayRef]> {
+        self.virtual_gateways.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code>
+    /// request. When the results of a <code>ListVirtualGateways</code> request exceed
+    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVirtualGatewaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1481,6 +1679,12 @@ pub struct CreateVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway following the create call.</p>
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
+impl CreateVirtualGatewayOutput {
+    /// <p>The full description of your virtual gateway following the create call.</p>
+    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+        self.virtual_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualGatewayOutput");
@@ -1531,6 +1735,12 @@ impl CreateVirtualGatewayOutput {
 pub struct DeleteVirtualGatewayOutput {
     /// <p>The virtual gateway that was deleted.</p>
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+}
+impl DeleteVirtualGatewayOutput {
+    /// <p>The virtual gateway that was deleted.</p>
+    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+        self.virtual_gateway.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1583,6 +1793,12 @@ pub struct UpdateVirtualGatewayOutput {
     /// <p>A full description of the virtual gateway that was updated.</p>
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
+impl UpdateVirtualGatewayOutput {
+    /// <p>A full description of the virtual gateway that was updated.</p>
+    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+        self.virtual_gateway.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualGatewayOutput");
@@ -1633,6 +1849,12 @@ impl UpdateVirtualGatewayOutput {
 pub struct DescribeVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway.</p>
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+}
+impl DescribeVirtualGatewayOutput {
+    /// <p>The full description of your virtual gateway.</p>
+    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+        self.virtual_gateway.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1690,6 +1912,20 @@ pub struct ListGatewayRoutesOutput {
     /// <code>limit</code>, you can use this value to retrieve the next page of results. This
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGatewayRoutesOutput {
+    /// <p>The list of existing gateway routes for the specified service mesh and virtual
+    /// gateway.</p>
+    pub fn gateway_routes(&self) -> std::option::Option<&[crate::model::GatewayRouteRef]> {
+        self.gateway_routes.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code>
+    /// request. When the results of a <code>ListGatewayRoutes</code> request exceed
+    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGatewayRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1770,6 +2006,12 @@ pub struct CreateGatewayRouteOutput {
     /// <p>The full description of your gateway route following the create call.</p>
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
+impl CreateGatewayRouteOutput {
+    /// <p>The full description of your gateway route following the create call.</p>
+    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+        self.gateway_route.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGatewayRouteOutput");
@@ -1820,6 +2062,12 @@ impl CreateGatewayRouteOutput {
 pub struct DeleteGatewayRouteOutput {
     /// <p>The gateway route that was deleted.</p>
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+}
+impl DeleteGatewayRouteOutput {
+    /// <p>The gateway route that was deleted.</p>
+    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+        self.gateway_route.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1872,6 +2120,12 @@ pub struct UpdateGatewayRouteOutput {
     /// <p>A full description of the gateway route that was updated.</p>
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
+impl UpdateGatewayRouteOutput {
+    /// <p>A full description of the gateway route that was updated.</p>
+    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+        self.gateway_route.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayRouteOutput");
@@ -1922,6 +2176,12 @@ impl UpdateGatewayRouteOutput {
 pub struct DescribeGatewayRouteOutput {
     /// <p>The full description of your gateway route.</p>
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+}
+impl DescribeGatewayRouteOutput {
+    /// <p>The full description of your gateway route.</p>
+    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+        self.gateway_route.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeGatewayRouteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2038,6 +2298,19 @@ pub struct ListTagsForResourceOutput {
     /// <code>limit</code>, you can use this value to retrieve the next page of results. This
     /// value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code>
+    /// request. When the results of a <code>ListTagsForResource</code> request exceed
+    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
+    /// value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

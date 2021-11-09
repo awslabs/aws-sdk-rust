@@ -66,6 +66,12 @@ pub struct UnsubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl UnsubscribeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UnsubscribeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsubscribeOutput");
@@ -112,6 +118,15 @@ pub struct TagResourceOutput {
     /// <p>The list of tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceOutput {
+    /// <p>The list of tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -176,6 +191,12 @@ pub struct SubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl SubscribeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SubscribeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribeOutput");
@@ -224,6 +245,17 @@ pub struct ListTargetsOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTargetsOutput {
+    /// <p>The list of notification rule targets. </p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::TargetSummary]> {
+        self.targets.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -298,6 +330,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with the notification rule.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -363,6 +404,18 @@ pub struct ListNotificationRulesOutput {
     /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
     pub notification_rules:
         std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
+}
+impl ListNotificationRulesOutput {
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+    pub fn notification_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationRuleSummary]> {
+        self.notification_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNotificationRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -440,6 +493,17 @@ pub struct ListEventTypesOutput {
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventTypesOutput {
+    /// <p>Information about each event, including service name, resource type, event ID, and event
+    /// name.</p>
+    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventTypeSummary]> {
+        self.event_types.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -538,6 +602,60 @@ pub struct DescribeNotificationRuleOutput {
     /// <p>The tags associated with the notification rule.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeNotificationRuleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the notification rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the event types associated with the notification rule.</p>
+    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventTypeSummary]> {
+        self.event_types.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification
+    /// rule.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>A list of the SNS topics associated with the notification rule.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::TargetSummary]> {
+        self.targets.as_deref()
+    }
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the
+    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
+    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
+        self.detail_type.as_ref()
+    }
+    /// <p>The name or email alias of the person who created the notification rule.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off
+    /// (not sending notifications).</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NotificationRuleStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time the notification rule was created, in timestamp format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The date and time the notification rule was most recently updated, in timestamp
+    /// format.</p>
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_timestamp.as_ref()
+    }
+    /// <p>The tags associated with the notification rule.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeNotificationRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -804,6 +922,12 @@ pub struct DeleteNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteNotificationRuleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNotificationRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNotificationRuleOutput");
@@ -849,6 +973,12 @@ impl DeleteNotificationRuleOutput {
 pub struct CreateNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl CreateNotificationRuleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNotificationRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

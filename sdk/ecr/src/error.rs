@@ -4934,6 +4934,12 @@ pub struct KmsException {
     /// <p>The error code returned by KMS.</p>
     pub kms_error: std::option::Option<std::string::String>,
 }
+impl KmsException {
+    /// <p>The error code returned by KMS.</p>
+    pub fn kms_error(&self) -> std::option::Option<&str> {
+        self.kms_error.as_deref()
+    }
+}
 impl std::fmt::Debug for KmsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KmsException");
@@ -5085,6 +5091,25 @@ pub struct InvalidLayerPartException {
     pub last_valid_byte_received: std::option::Option<i64>,
     /// <p>The error message associated with the exception.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidLayerPartException {
+    /// <p>The registry ID associated with the exception.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The repository name associated with the exception.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The upload ID associated with the exception.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The last valid byte received from the layer part upload that is associated with the
+    /// exception.</p>
+    pub fn last_valid_byte_received(&self) -> std::option::Option<i64> {
+        self.last_valid_byte_received
+    }
 }
 impl std::fmt::Debug for InvalidLayerPartException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

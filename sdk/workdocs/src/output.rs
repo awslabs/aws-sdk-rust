@@ -6,6 +6,12 @@ pub struct UpdateUserOutput {
     /// <p>The user information.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl UpdateUserOutput {
+    /// <p>The user information.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserOutput");
@@ -204,6 +210,16 @@ pub struct InitiateDocumentVersionUploadOutput {
     /// <p>The upload metadata.</p>
     pub upload_metadata: std::option::Option<crate::model::UploadMetadata>,
 }
+impl InitiateDocumentVersionUploadOutput {
+    /// <p>The document metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The upload metadata.</p>
+    pub fn upload_metadata(&self) -> std::option::Option<&crate::model::UploadMetadata> {
+        self.upload_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for InitiateDocumentVersionUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateDocumentVersionUploadOutput");
@@ -274,6 +290,20 @@ pub struct GetResourcesOutput {
     pub documents: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl GetResourcesOutput {
+    /// <p>The folders in the specified folder.</p>
+    pub fn folders(&self) -> std::option::Option<&[crate::model::FolderMetadata]> {
+        self.folders.as_deref()
+    }
+    /// <p>The documents in the specified collection.</p>
+    pub fn documents(&self) -> std::option::Option<&[crate::model::DocumentMetadata]> {
+        self.documents.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -367,6 +397,12 @@ pub struct GetFolderPathOutput {
     /// <p>The path information.</p>
     pub path: std::option::Option<crate::model::ResourcePath>,
 }
+impl GetFolderPathOutput {
+    /// <p>The path information.</p>
+    pub fn path(&self) -> std::option::Option<&crate::model::ResourcePath> {
+        self.path.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFolderPathOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFolderPathOutput");
@@ -415,6 +451,19 @@ pub struct GetFolderOutput {
     /// <p>The custom metadata on the folder.</p>
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetFolderOutput {
+    /// <p>The metadata of the folder.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::FolderMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The custom metadata on the folder.</p>
+    pub fn custom_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -500,6 +549,19 @@ pub struct GetDocumentVersionOutput {
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetDocumentVersionOutput {
+    /// <p>The version metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentVersionMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The custom metadata on the document version.</p>
+    pub fn custom_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDocumentVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentVersionOutput");
@@ -581,6 +643,12 @@ pub struct GetDocumentPathOutput {
     /// <p>The path information.</p>
     pub path: std::option::Option<crate::model::ResourcePath>,
 }
+impl GetDocumentPathOutput {
+    /// <p>The path information.</p>
+    pub fn path(&self) -> std::option::Option<&crate::model::ResourcePath> {
+        self.path.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDocumentPathOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentPathOutput");
@@ -629,6 +697,19 @@ pub struct GetDocumentOutput {
     /// <p>The custom metadata on the document.</p>
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetDocumentOutput {
+    /// <p>The metadata details of the document.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The custom metadata on the document.</p>
+    pub fn custom_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,6 +792,12 @@ pub struct GetCurrentUserOutput {
     /// <p>Metadata of the user.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl GetCurrentUserOutput {
+    /// <p>Metadata of the user.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCurrentUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCurrentUserOutput");
@@ -761,6 +848,21 @@ pub struct DescribeUsersOutput {
     /// <p>The marker to use when requesting the next set of results. If there are no
     /// additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeUsersOutput {
+    /// <p>The users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p>The total number of users included in the results.</p>
+    pub fn total_number_of_users(&self) -> std::option::Option<i64> {
+        self.total_number_of_users
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no
+    /// additional results, the string is empty.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -849,6 +951,16 @@ pub struct DescribeRootFoldersOutput {
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeRootFoldersOutput {
+    /// <p>The user's special folders.</p>
+    pub fn folders(&self) -> std::option::Option<&[crate::model::FolderMetadata]> {
+        self.folders.as_deref()
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRootFoldersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRootFoldersOutput");
@@ -921,6 +1033,17 @@ pub struct DescribeResourcePermissionsOutput {
     /// <p>The marker to use when requesting the next set of results. If there are no
     /// additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeResourcePermissionsOutput {
+    /// <p>The principals.</p>
+    pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
+        self.principals.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no
+    /// additional results, the string is empty.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeResourcePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -997,6 +1120,17 @@ pub struct DescribeNotificationSubscriptionsOutput {
     /// additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeNotificationSubscriptionsOutput {
+    /// <p>The subscriptions.</p>
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+        self.subscriptions.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no
+    /// additional results, the string is empty.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNotificationSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNotificationSubscriptionsOutput");
@@ -1071,6 +1205,17 @@ pub struct DescribeGroupsOutput {
     /// <p>The marker to use when requesting the next set of results. If there are no additional
     /// results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeGroupsOutput {
+    /// <p>The list of groups.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupMetadata]> {
+        self.groups.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no additional
+    /// results, the string is empty.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1148,6 +1293,21 @@ pub struct DescribeFolderContentsOutput {
     /// <p>The marker to use when requesting the next set of results. If there are no
     /// additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeFolderContentsOutput {
+    /// <p>The subfolders in the specified folder.</p>
+    pub fn folders(&self) -> std::option::Option<&[crate::model::FolderMetadata]> {
+        self.folders.as_deref()
+    }
+    /// <p>The documents in the specified folder.</p>
+    pub fn documents(&self) -> std::option::Option<&[crate::model::DocumentMetadata]> {
+        self.documents.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no
+    /// additional results, the string is empty.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFolderContentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1247,6 +1407,19 @@ pub struct DescribeDocumentVersionsOutput {
     /// additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDocumentVersionsOutput {
+    /// <p>The document versions.</p>
+    pub fn document_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DocumentVersionMetadata]> {
+        self.document_versions.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no
+    /// additional results, the string is empty.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDocumentVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDocumentVersionsOutput");
@@ -1326,6 +1499,17 @@ pub struct DescribeCommentsOutput {
     /// call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeCommentsOutput {
+    /// <p>The list of comments for the specified document version.</p>
+    pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
+        self.comments.as_deref()
+    }
+    /// <p>The marker for the next set of results. This marker was received from a previous
+    /// call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCommentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCommentsOutput");
@@ -1399,6 +1583,16 @@ pub struct DescribeActivitiesOutput {
     pub user_activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeActivitiesOutput {
+    /// <p>The list of activities for the specified user and time period.</p>
+    pub fn user_activities(&self) -> std::option::Option<&[crate::model::Activity]> {
+        self.user_activities.as_deref()
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeActivitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1740,6 +1934,12 @@ pub struct CreateUserOutput {
     /// <p>The user information.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl CreateUserOutput {
+    /// <p>The user information.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -1785,6 +1985,12 @@ impl CreateUserOutput {
 pub struct CreateNotificationSubscriptionOutput {
     /// <p>The subscription.</p>
     pub subscription: std::option::Option<crate::model::Subscription>,
+}
+impl CreateNotificationSubscriptionOutput {
+    /// <p>The subscription.</p>
+    pub fn subscription(&self) -> std::option::Option<&crate::model::Subscription> {
+        self.subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNotificationSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1867,6 +2073,12 @@ pub struct CreateFolderOutput {
     /// <p>The metadata of the folder.</p>
     pub metadata: std::option::Option<crate::model::FolderMetadata>,
 }
+impl CreateFolderOutput {
+    /// <p>The metadata of the folder.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::FolderMetadata> {
+        self.metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFolderOutput");
@@ -1948,6 +2160,12 @@ pub struct CreateCommentOutput {
     /// <p>The comment that has been created.</p>
     pub comment: std::option::Option<crate::model::Comment>,
 }
+impl CreateCommentOutput {
+    /// <p>The comment that has been created.</p>
+    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+        self.comment.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCommentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCommentOutput");
@@ -1995,6 +2213,12 @@ impl CreateCommentOutput {
 pub struct AddResourcePermissionsOutput {
     /// <p>The share results.</p>
     pub share_results: std::option::Option<std::vec::Vec<crate::model::ShareResult>>,
+}
+impl AddResourcePermissionsOutput {
+    /// <p>The share results.</p>
+    pub fn share_results(&self) -> std::option::Option<&[crate::model::ShareResult]> {
+        self.share_results.as_deref()
+    }
 }
 impl std::fmt::Debug for AddResourcePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2052,6 +2276,12 @@ impl AddResourcePermissionsOutput {
 pub struct ActivateUserOutput {
     /// <p>The user information.</p>
     pub user: std::option::Option<crate::model::User>,
+}
+impl ActivateUserOutput {
+    /// <p>The user information.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
 }
 impl std::fmt::Debug for ActivateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

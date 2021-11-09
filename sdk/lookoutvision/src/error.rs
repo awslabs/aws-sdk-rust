@@ -2802,6 +2802,20 @@ pub struct ThrottlingException {
     /// <p>The period of time, in seconds, before the operation can be retried. </p>
     pub retry_after_seconds: i32,
 }
+impl ThrottlingException {
+    /// <p>The quota code. </p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The service code. </p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The period of time, in seconds, before the operation can be retried. </p>
+    pub fn retry_after_seconds(&self) -> i32 {
+        self.retry_after_seconds
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");
@@ -2909,6 +2923,16 @@ pub struct ResourceNotFoundException {
     /// <p>The type of the resource.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
+impl ResourceNotFoundException {
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -3004,6 +3028,12 @@ pub struct InternalServerException {
     /// <p>The period of time, in seconds, before the operation can be retried.</p>
     pub retry_after_seconds: i32,
 }
+impl InternalServerException {
+    /// <p>The period of time, in seconds, before the operation can be retried.</p>
+    pub fn retry_after_seconds(&self) -> i32 {
+        self.retry_after_seconds
+    }
+}
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerException");
@@ -3084,6 +3114,16 @@ pub struct ConflictException {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the resource.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
+}
+impl ConflictException {
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3250,6 +3290,24 @@ pub struct ServiceQuotaExceededException {
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The service code. </p>
     pub service_code: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The quota code. </p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The service code. </p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

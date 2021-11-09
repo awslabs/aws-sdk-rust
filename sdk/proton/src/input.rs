@@ -87,7 +87,7 @@ impl AcceptEnvironmentAccountConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_environment_account_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_environment_account_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -242,7 +242,7 @@ impl CancelEnvironmentDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_environment_deployment(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_environment_deployment(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -409,7 +409,7 @@ impl CancelServiceInstanceDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_service_instance_deployment(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_service_instance_deployment(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -561,7 +561,7 @@ impl CancelServicePipelineDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_service_pipeline_deployment(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_service_pipeline_deployment(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -847,10 +847,7 @@ impl CreateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1054,7 +1051,7 @@ impl CreateEnvironmentAccountConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment_account_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_environment_account_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1283,10 +1280,7 @@ impl CreateEnvironmentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_environment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1524,7 +1518,7 @@ impl CreateEnvironmentTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_environment_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1822,10 +1816,7 @@ impl CreateServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2058,10 +2049,7 @@ impl CreateServiceTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_service_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2326,7 +2314,7 @@ impl CreateServiceTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_service_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_service_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2475,10 +2463,7 @@ impl DeleteEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2627,7 +2612,7 @@ impl DeleteEnvironmentAccountConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment_account_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_environment_account_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2779,10 +2764,7 @@ impl DeleteEnvironmentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_environment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2966,7 +2948,7 @@ impl DeleteEnvironmentTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_environment_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3114,10 +3096,7 @@ impl DeleteServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3267,10 +3246,7 @@ impl DeleteServiceTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_service_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3454,7 +3430,7 @@ impl DeleteServiceTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_service_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_service_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3591,10 +3567,7 @@ impl GetAccountSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_account_settings(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_account_settings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3733,10 +3706,8 @@ impl GetEnvironmentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_environment(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3885,7 +3856,7 @@ impl GetEnvironmentAccountConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_environment_account_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_environment_account_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4036,10 +4007,7 @@ impl GetEnvironmentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_environment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4223,7 +4191,7 @@ impl GetEnvironmentTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_environment_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_environment_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4371,10 +4339,7 @@ impl GetServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4536,10 +4501,7 @@ impl GetServiceInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_instance(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_service_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4687,10 +4649,7 @@ impl GetServiceTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_template(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_service_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4876,10 +4835,7 @@ impl GetServiceTemplateVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_service_template_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5107,7 +5063,7 @@ impl ListEnvironmentAccountConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_environment_account_connections(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_environment_account_connections(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5297,10 +5253,7 @@ impl ListEnvironmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_environments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_environments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5467,10 +5420,7 @@ impl ListEnvironmentTemplatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_environment_templates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5669,7 +5619,7 @@ impl ListEnvironmentTemplateVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_environment_template_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_environment_template_versions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5846,10 +5796,9 @@ impl ListServiceInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_service_instances(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6012,10 +5961,7 @@ impl ListServicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_services(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_services(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6179,10 +6125,9 @@ impl ListServiceTemplatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_templates(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_service_templates(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6381,7 +6326,7 @@ impl ListServiceTemplateVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_template_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_service_template_versions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6558,10 +6503,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6710,7 +6654,7 @@ impl RejectEnvironmentAccountConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_environment_account_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reject_environment_account_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6881,10 +6825,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7054,10 +6995,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7212,10 +7150,7 @@ impl UpdateAccountSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_account_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7545,10 +7480,7 @@ impl UpdateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7711,7 +7643,7 @@ impl UpdateEnvironmentAccountConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment_account_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_environment_account_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7889,10 +7821,7 @@ impl UpdateEnvironmentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_environment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8103,7 +8032,7 @@ impl UpdateEnvironmentTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_environment_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8283,10 +8212,7 @@ impl UpdateServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8583,10 +8509,7 @@ impl UpdateServiceInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_service_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8871,10 +8794,7 @@ impl UpdateServicePipelineInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_service_pipeline(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9050,10 +8970,7 @@ impl UpdateServiceTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_service_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9291,7 +9208,7 @@ impl UpdateServiceTemplateVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_service_template_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_service_template_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9370,6 +9287,27 @@ pub struct ListServiceTemplateVersionsInput {
     /// <code>majorVersion</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
 }
+impl ListServiceTemplateVersionsInput {
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after
+    /// the list of major or minor versions that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of major or minor versions of a service template to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>To view a list of minor of versions under a major version of a service template, include <code>majorVersion</code>.</p>
+    /// <p>To view a list of major versions of a service template, <i>exclude</i>
+    /// <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServiceTemplateVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServiceTemplateVersionsInput");
@@ -9404,6 +9342,41 @@ pub struct CreateServiceTemplateVersionInput {
     /// <p>Create tags for a new version of a service template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateServiceTemplateVersionInput {
+    /// <p>When included, if two identicial requests are made with the same client token, AWS Proton returns the service template version that the
+    /// first request created.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>A description of the new version of a service template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>To create a new minor version of the service template, include a <code>majorVersion</code>.</p>
+    /// <p>To create a new major and minor version of the service template, <i>exclude</i>
+    /// <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::TemplateVersionSourceInput> {
+        self.source.as_ref()
+    }
+    /// <p>An array of compatible environment template objects for the new version of a service template.</p>
+    pub fn compatible_environment_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::CompatibleEnvironmentTemplateInput]> {
+        self.compatible_environment_templates.as_deref()
+    }
+    /// <p>Create tags for a new version of a service template.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceTemplateVersionInput");
@@ -9431,6 +9404,20 @@ pub struct DeleteServiceTemplateVersionInput {
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The service template minor version to delete.</p>
     pub minor_version: std::option::Option<std::string::String>,
+}
+impl DeleteServiceTemplateVersionInput {
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The service template major version to delete.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>The service template minor version to delete.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9460,6 +9447,34 @@ pub struct UpdateServiceTemplateVersionInput {
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
 }
+impl UpdateServiceTemplateVersionInput {
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>To update a major version of a service template, include <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>A description of a service template version to update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the service template minor version to update.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
+    pub fn compatible_environment_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::CompatibleEnvironmentTemplateInput]> {
+        self.compatible_environment_templates.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceTemplateVersionInput");
@@ -9487,6 +9502,20 @@ pub struct GetServiceTemplateVersionInput {
     /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
     pub minor_version: std::option::Option<std::string::String>,
 }
+impl GetServiceTemplateVersionInput {
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>To view service template major version detail data, include <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceTemplateVersionInput");
@@ -9506,6 +9535,17 @@ pub struct ListServiceTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service templates to list.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListServiceTemplatesInput {
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
+    /// previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of service templates to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServiceTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9536,6 +9576,35 @@ pub struct CreateServiceTemplateInput {
     /// <p>Create tags for your service template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateServiceTemplateInput {
+    /// <p>The name of the service template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the service template as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the service template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A customer provided encryption key that's used to encrypt data.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>AWS Proton includes a service pipeline for your service by default. When included, this parameter indicates that an AWS Proton service
+    /// pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed.
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template
+    /// bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
+    pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.pipeline_provisioning.as_ref()
+    }
+    /// <p>Create tags for your service template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceTemplateInput");
@@ -9556,6 +9625,12 @@ pub struct DeleteServiceTemplateInput {
     /// <p>The name of the service template to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteServiceTemplateInput {
+    /// <p>The name of the service template to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteServiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceTemplateInput");
@@ -9575,6 +9650,20 @@ pub struct UpdateServiceTemplateInput {
     /// <p>A description of the service template update.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateServiceTemplateInput {
+    /// <p>The name of the service template to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the service template to update as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the service template update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceTemplateInput");
@@ -9591,6 +9680,12 @@ impl std::fmt::Debug for UpdateServiceTemplateInput {
 pub struct GetServiceTemplateInput {
     /// <p>The name of the service template that you want to get detail data for.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetServiceTemplateInput {
+    /// <p>The name of the service template that you want to get detail data for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServiceTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9609,6 +9704,17 @@ pub struct ListServicesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of services to list.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListServicesInput {
+    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
+    /// requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of services to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9652,6 +9758,56 @@ pub struct CreateServiceInput {
     /// <p>Create tags for your service. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateServiceInput {
+    /// <p>The service name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the AWS Proton service.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the service template that's used to create the service.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the major version of the service template that was used to create the service.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of the service template that was used to create the service.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
+    /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more
+    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the
+    /// <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>AWS Proton User Guide</i>.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the
+    /// <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with AWS Proton</a> in the <i>AWS Proton
+    /// User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
+    /// a service pipeline.</p>
+    pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
+        self.repository_connection_arn.as_deref()
+    }
+    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i>
+    /// include a service pipeline.</p>
+    pub fn repository_id(&self) -> std::option::Option<&str> {
+        self.repository_id.as_deref()
+    }
+    /// <p>The name of the code repository branch that holds the code that's deployed in AWS Proton. <i>Don't</i> include this
+    /// parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p>Create tags for your service. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceInput");
@@ -9676,6 +9832,12 @@ pub struct DeleteServiceInput {
     /// <p>The name of the service to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteServiceInput {
+    /// <p>The name of the service to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceInput");
@@ -9698,6 +9860,23 @@ pub struct UpdateServiceInput {
     /// Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">AWS Proton User Guide</a>.</p>
     pub spec: std::option::Option<std::string::String>,
 }
+impl UpdateServiceInput {
+    /// <p>The name of the service to edit.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The edited service description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the
+    /// list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
+    /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">AWS Proton Administrator
+    /// Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">AWS Proton User Guide</a>.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceInput");
@@ -9714,6 +9893,12 @@ impl std::fmt::Debug for UpdateServiceInput {
 pub struct GetServiceInput {
     /// <p>The name of the service that you want to get the detail data for.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetServiceInput {
+    /// <p>The name of the service that you want to get the detail data for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9776,6 +9961,66 @@ pub struct UpdateServicePipelineInput {
     /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
     pub template_minor_version: std::option::Option<std::string::String>,
 }
+impl UpdateServicePipelineInput {
+    /// <p>The name of the service to that the pipeline is associated with.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The spec for the service pipeline to update.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+    /// <p>The deployment type.</p>
+    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
+    /// mode.</p>
+    /// <dl>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>NONE</code>
+    /// </p>
+    /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>CURRENT_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are
+    /// updated. <i>Don’t</i> include minor or major version parameters when you use this
+    /// <code>deployment-type</code>.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>MINOR_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the
+    /// current major version in use, by default. You can also specify a different minor version of the current major version in
+    /// use.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>MAJOR_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version
+    /// of the current template, by default. You can also specify a different major version that is higher than the major version in
+    /// use and a minor version (optional).</p>
+    /// </dd>
+    /// </dl>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServicePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServicePipelineInput");
@@ -9799,6 +10044,21 @@ pub struct ListServiceInstancesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service instances to list.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListServiceInstancesInput {
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
+    /// previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of service instances to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServiceInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9865,6 +10125,70 @@ pub struct UpdateServiceInstanceInput {
     /// <p>The minor version of the service template to update.</p>
     pub template_minor_version: std::option::Option<std::string::String>,
 }
+impl UpdateServiceInstanceInput {
+    /// <p>The name of the service instance to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The deployment type.</p>
+    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
+    /// mode.</p>
+    /// <dl>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>NONE</code>
+    /// </p>
+    /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>CURRENT_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are
+    /// updated. <i>Don’t</i> include minor or major version parameters when you use this
+    /// <code>deployment-type</code>.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>MINOR_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the
+    /// current major version in use, by default. You can also specify a different minor version of the current major version in
+    /// use.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>MAJOR_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version
+    /// of the current template, by default. You can also specify a different major version that is higher than the major version in
+    /// use and a minor version (optional).</p>
+    /// </dd>
+    /// </dl>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>The formatted specification that defines the service instance update.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+    /// <p>The major version of the service template to update.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The minor version of the service template to update.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceInstanceInput");
@@ -9886,6 +10210,16 @@ pub struct GetServiceInstanceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl GetServiceInstanceInput {
+    /// <p>The name of a service instance that you want to get the detail data for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServiceInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9911,6 +10245,27 @@ pub struct ListEnvironmentTemplateVersionsInput {
     /// <p>To view a list of major versions of an environment template, <i>exclude</i>
     /// <code>majorVersion</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
+}
+impl ListEnvironmentTemplateVersionsInput {
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template,
+    /// after the list of major or minor versions that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of major or minor versions of an environment template to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>To view a list of minor of versions under a major version of an environment template, include <code>majorVersion</code>.</p>
+    /// <p>To view a list of major versions of an environment template, <i>exclude</i>
+    /// <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentTemplateVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9943,6 +10298,35 @@ pub struct CreateEnvironmentTemplateVersionInput {
     /// <p>Create tags for a new version of an environment template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateEnvironmentTemplateVersionInput {
+    /// <p>When included, if two identicial requests are made with the same client token, AWS Proton returns the environment template version that
+    /// the first request created.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>A description of the new version of an environment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>To create a new minor version of the environment template, include a <code>majorVersion</code>.</p>
+    /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
+    /// <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::TemplateVersionSourceInput> {
+        self.source.as_ref()
+    }
+    /// <p>Create tags for a new version of an environment template.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentTemplateVersionInput");
@@ -9966,6 +10350,20 @@ pub struct DeleteEnvironmentTemplateVersionInput {
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The environment template minor version to delete.</p>
     pub minor_version: std::option::Option<std::string::String>,
+}
+impl DeleteEnvironmentTemplateVersionInput {
+    /// <p>The name of the environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The environment template major version to delete.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>The environment template minor version to delete.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9992,6 +10390,28 @@ pub struct UpdateEnvironmentTemplateVersionInput {
     /// <p>The status of the environment template minor version to update.</p>
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
 }
+impl UpdateEnvironmentTemplateVersionInput {
+    /// <p>The name of the environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>To update a major version of an environment template, include <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>A description of environment template version to update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the environment template minor version to update.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentTemplateVersionInput");
@@ -10015,6 +10435,20 @@ pub struct GetEnvironmentTemplateVersionInput {
     /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
     pub minor_version: std::option::Option<std::string::String>,
 }
+impl GetEnvironmentTemplateVersionInput {
+    /// <p>The name of the environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>To view environment template major version detail data, include <code>majorVersion</code>.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEnvironmentTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentTemplateVersionInput");
@@ -10034,6 +10468,17 @@ pub struct ListEnvironmentTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment templates to list.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEnvironmentTemplatesInput {
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
+    /// templates that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of environment templates to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEnvironmentTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10061,6 +10506,32 @@ pub struct CreateEnvironmentTemplateInput {
     /// <p>Create tags for your environment template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateEnvironmentTemplateInput {
+    /// <p>The name of the environment template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The environment template name as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the environment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.provisioning.as_ref()
+    }
+    /// <p>Create tags for your environment template. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentTemplateInput");
@@ -10081,6 +10552,12 @@ pub struct DeleteEnvironmentTemplateInput {
     /// <p>The name of the environment template to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteEnvironmentTemplateInput {
+    /// <p>The name of the environment template to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEnvironmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEnvironmentTemplateInput");
@@ -10100,6 +10577,20 @@ pub struct UpdateEnvironmentTemplateInput {
     /// <p>A description of the environment template update.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateEnvironmentTemplateInput {
+    /// <p>The name of the environment template to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the environment template to update as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the environment template update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentTemplateInput");
@@ -10116,6 +10607,12 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateInput {
 pub struct GetEnvironmentTemplateInput {
     /// <p>The name of the environment template that you want to get the detail data for.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetEnvironmentTemplateInput {
+    /// <p>The name of the environment template that you want to get the detail data for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEnvironmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10137,6 +10634,23 @@ pub struct ListEnvironmentsInput {
     /// <p>An array of the versions of the environment template.</p>
     pub environment_templates:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateFilter>>,
+}
+impl ListEnvironmentsInput {
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was
+    /// previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of environments to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of the versions of the environment template.</p>
+    pub fn environment_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentTemplateFilter]> {
+        self.environment_templates.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10177,6 +10691,50 @@ pub struct CreateEnvironmentInput {
     /// <p>Create tags for your environment. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateEnvironmentInput {
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>AWS Proton Administrator
+    /// Guide</i>.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the major version of the environment template.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of the environment template.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>A description of the environment that's being created and deployed.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more
+    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the
+    /// <i>AWS Proton Administrator Guide</i>.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your behalf. You
+    /// must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value.</p>
+    pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
+        self.proton_service_role_arn.as_deref()
+    }
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
+    /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+    /// parameter and value. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
+    pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
+        self.environment_account_connection_id.as_deref()
+    }
+    /// <p>Create tags for your environment. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentInput");
@@ -10202,6 +10760,12 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 pub struct DeleteEnvironmentInput {
     /// <p>The name of the environment to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteEnvironmentInput {
+    /// <p>The name of the environment to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10271,6 +10835,79 @@ pub struct UpdateEnvironmentInput {
     /// environment account connection was created in and is associated with the current environment.</p>
     pub environment_account_connection_id: std::option::Option<std::string::String>,
 }
+impl UpdateEnvironmentInput {
+    /// <p>The name of the environment to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the environment update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The formatted specification that defines the update.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+    /// <p>The ID of the major version of the environment to update.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of the environment to update.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make API calls to other services your
+    /// behalf.</p>
+    pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
+        self.proton_service_role_arn.as_deref()
+    }
+    /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the
+    /// mode.</p>
+    /// <dl>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>NONE</code>
+    /// </p>
+    /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>CURRENT_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are
+    /// updated. <i>Don’t</i> include minor or major version parameters when you use this
+    /// <code>deployment-type</code>.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>MINOR_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current
+    /// major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// </dd>
+    /// <dt/>
+    /// <dd>
+    /// <p>
+    /// <code>MAJOR_VERSION</code>
+    /// </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of
+    /// the current template, by default. You can also specify a different major version that is higher than the major version in use
+    /// and a minor version (optional).</p>
+    /// </dd>
+    /// </dl>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>The ID of the environment account connection.</p>
+    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current
+    /// environment account connection was created in and is associated with the current environment.</p>
+    pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
+        self.environment_account_connection_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
@@ -10296,6 +10933,12 @@ pub struct GetEnvironmentInput {
     /// <p>The name of the environment that you want to get the detail data for.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetEnvironmentInput {
+    /// <p>The name of the environment that you want to get the detail data for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentInput");
@@ -10311,6 +10954,12 @@ pub struct RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl RejectEnvironmentAccountConnectionInput {
+    /// <p>The ID of the environment account connection to reject.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectEnvironmentAccountConnectionInput");
@@ -10325,6 +10974,12 @@ impl std::fmt::Debug for RejectEnvironmentAccountConnectionInput {
 pub struct AcceptEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl AcceptEnvironmentAccountConnectionInput {
+    /// <p>The ID of the environment account connection.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10351,6 +11006,33 @@ pub struct ListEnvironmentAccountConnectionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment account connections to list.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEnvironmentAccountConnectionsInput {
+    /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
+    pub fn requested_by(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentAccountConnectionRequesterAccountType> {
+        self.requested_by.as_ref()
+    }
+    /// <p>The environment name that's associated with each listed environment account connection.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The status details for each listed environment account connection.</p>
+    pub fn statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentAccountConnectionStatus]> {
+        self.statuses.as_deref()
+    }
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the
+    /// list of environment account connections that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of environment account connections to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEnvironmentAccountConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10381,6 +11063,28 @@ pub struct CreateEnvironmentAccountConnectionInput {
     /// <p>The name of the AWS Proton environment that's created in the associated management account.</p>
     pub environment_name: std::option::Option<std::string::String>,
 }
+impl CreateEnvironmentAccountConnectionInput {
+    /// <p>When included, if two identicial requests are made with the same client token, AWS Proton returns the environment account connection that
+    /// the first request created.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the AWS Proton
+    /// environment in this account. If the management account accepts the environment account connection, AWS Proton can use the associated IAM
+    /// role to provision environment infrastructure resources in the associated environment account.</p>
+    pub fn management_account_id(&self) -> std::option::Option<&str> {
+        self.management_account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. AWS Proton uses this role to provision
+    /// infrastructure resources in the associated environment account.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the AWS Proton environment that's created in the associated management account.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentAccountConnectionInput");
@@ -10399,6 +11103,12 @@ pub struct DeleteEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteEnvironmentAccountConnectionInput {
+    /// <p>The ID of the environment account connection to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEnvironmentAccountConnectionInput");
@@ -10416,6 +11126,16 @@ pub struct UpdateEnvironmentAccountConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that is associated with the environment account connection to update.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateEnvironmentAccountConnectionInput {
+    /// <p>The ID of the environment account connection to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that is associated with the environment account connection to update.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentAccountConnectionInput");
@@ -10432,6 +11152,12 @@ pub struct GetEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetEnvironmentAccountConnectionInput {
+    /// <p>The ID of the environment account connection.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentAccountConnectionInput");
@@ -10446,6 +11172,12 @@ impl std::fmt::Debug for GetEnvironmentAccountConnectionInput {
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS Proton pipeline service role.</p>
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAccountSettingsInput {
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton pipeline service role.</p>
+    pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_service_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAccountSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10475,6 +11207,16 @@ pub struct UntagResourceInput {
     /// <p>An array of tag keys indicating the resource tags to be removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that the tag is to be removed from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An array of tag keys indicating the resource tags to be removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -10492,6 +11234,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of resource tags to apply to a resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that the resource tag is applied to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An array of resource tags to apply to a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10514,6 +11266,21 @@ pub struct ListTagsForResourceInput {
     /// <p>The maximum number of tags to list.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was
+    /// previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of tags to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -10530,6 +11297,12 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct CancelServicePipelineDeploymentInput {
     /// <p>The name of the service with the service pipeline deployment to cancel.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl CancelServicePipelineDeploymentInput {
+    /// <p>The name of the service with the service pipeline deployment to cancel.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelServicePipelineDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10548,6 +11321,16 @@ pub struct CancelServiceInstanceDeploymentInput {
     /// <p>The name of the service with the service instance deployment to cancel.</p>
     pub service_name: std::option::Option<std::string::String>,
 }
+impl CancelServiceInstanceDeploymentInput {
+    /// <p>The name of the service instance with the deployment to cancel.</p>
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+        self.service_instance_name.as_deref()
+    }
+    /// <p>The name of the service with the service instance deployment to cancel.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelServiceInstanceDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelServiceInstanceDeploymentInput");
@@ -10563,6 +11346,12 @@ impl std::fmt::Debug for CancelServiceInstanceDeploymentInput {
 pub struct CancelEnvironmentDeploymentInput {
     /// <p>The name of the environment with the deployment to cancel.</p>
     pub environment_name: std::option::Option<std::string::String>,
+}
+impl CancelEnvironmentDeploymentInput {
+    /// <p>The name of the environment with the deployment to cancel.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelEnvironmentDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>Description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The field name for which validation failed.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Description of the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -150,6 +160,38 @@ pub struct WorkloadShare {
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
+}
+impl WorkloadShare {
+    /// <p>The ID associated with the workload share.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+    /// <p>An AWS account ID.</p>
+    pub fn shared_by(&self) -> std::option::Option<&str> {
+        self.shared_by.as_deref()
+    }
+    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    pub fn shared_with(&self) -> std::option::Option<&str> {
+        self.shared_with.as_deref()
+    }
+    /// <p>Permission granted on a workload share.</p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>The status of a workload share.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// are ignored when checking for uniqueness.</p>
+    pub fn workload_name(&self) -> std::option::Option<&str> {
+        self.workload_name.as_deref()
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
 }
 impl std::fmt::Debug for WorkloadShare {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -600,6 +642,254 @@ pub struct Workload {
     /// <p>The tags associated with the workload.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Workload {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The ARN for the workload.</p>
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
+        self.workload_arn.as_deref()
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// are ignored when checking for uniqueness.</p>
+    pub fn workload_name(&self) -> std::option::Option<&str> {
+        self.workload_name.as_deref()
+    }
+    /// <p>The description for the workload.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The environment for the workload.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::WorkloadEnvironment> {
+        self.environment.as_ref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The list of AWS account IDs associated with the workload.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The list of AWS Regions associated with the workload, for example,
+    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.aws_regions.as_deref()
+    }
+    /// <p> The list of non-AWS Regions associated with the workload.</p>
+    pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.non_aws_regions.as_deref()
+    }
+    /// <p>The URL of the architectural design for the workload.</p>
+    pub fn architectural_design(&self) -> std::option::Option<&str> {
+        self.architectural_design.as_deref()
+    }
+    /// <p>The review owner of the workload. The name, email address, or identifier for the
+    /// primary group or individual that owns the workload review process.</p>
+    pub fn review_owner(&self) -> std::option::Option<&str> {
+        self.review_owner.as_deref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn review_restriction_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.review_restriction_date.as_ref()
+    }
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
+    /// owner</i> field is required.</p>
+    /// <p>If a <b>Review owner</b> is not added to the workload within
+    /// 60 days of acknowledgement, access to the workload is restricted until an owner is
+    /// added.</p>
+    pub fn is_review_owner_update_acknowledged(&self) -> bool {
+        self.is_review_owner_update_acknowledged
+    }
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>  
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Agriculture</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Automobile</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Defense</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Design and Engineering</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Digital Advertising</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Education</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Environmental Protection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Financial Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Gaming</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>General Public Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Healthcare</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Hospitality</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InfoTech</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Justice and Public Safety</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Life Sciences</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Manufacturing</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Media & Entertainment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Mining & Resources</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Oil & Gas</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Power & Utilities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Professional Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Real Estate & Construction</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Retail & Wholesale</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Social Protection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Telecommunications</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Travel, Transportation & Logistics</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Other</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn industry_type(&self) -> std::option::Option<&str> {
+        self.industry_type.as_deref()
+    }
+    /// <p>The industry for the workload.</p>
+    pub fn industry(&self) -> std::option::Option<&str> {
+        self.industry.as_deref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>The improvement status for a workload.</p>
+    pub fn improvement_status(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkloadImprovementStatus> {
+        self.improvement_status.as_ref()
+    }
+    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    pub fn risk_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
+        self.risk_counts.as_ref()
+    }
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
+        self.pillar_priorities.as_deref()
+    }
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
+        self.lenses.as_deref()
+    }
+    /// <p>An AWS account ID.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+        self.share_invitation_id.as_deref()
+    }
+    /// <p>The tags associated with the workload.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Workload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1533,6 +1823,16 @@ pub struct ShareInvitation {
     /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
 }
+impl ShareInvitation {
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+        self.share_invitation_id.as_deref()
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ShareInvitation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareInvitation");
@@ -1669,6 +1969,49 @@ pub struct LensReview {
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl LensReview {
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The version of the lens.</p>
+    pub fn lens_version(&self) -> std::option::Option<&str> {
+        self.lens_version.as_deref()
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn lens_name(&self) -> std::option::Option<&str> {
+        self.lens_name.as_deref()
+    }
+    /// <p>The status of the lens.</p>
+    pub fn lens_status(&self) -> std::option::Option<&crate::model::LensStatus> {
+        self.lens_status.as_ref()
+    }
+    /// <p>List of pillar review summaries of lens review in a workload.</p>
+    pub fn pillar_review_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::PillarReviewSummary]> {
+        self.pillar_review_summaries.as_deref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    pub fn risk_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
+        self.risk_counts.as_ref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for LensReview {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1860,6 +2203,27 @@ pub struct PillarReviewSummary {
     /// <p>A map from risk names to the count of how questions have that rating.</p>
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
 }
+impl PillarReviewSummary {
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The name of the pillar.</p>
+    pub fn pillar_name(&self) -> std::option::Option<&str> {
+        self.pillar_name.as_deref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    pub fn risk_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
+        self.risk_counts.as_ref()
+    }
+}
 impl std::fmt::Debug for PillarReviewSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PillarReviewSummary");
@@ -2044,6 +2408,63 @@ pub struct Answer {
     pub notes: std::option::Option<std::string::String>,
     /// <p>The reason why the question is not applicable to your workload.</p>
     pub reason: std::option::Option<crate::model::AnswerReason>,
+}
+impl Answer {
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The title of the question.</p>
+    pub fn question_title(&self) -> std::option::Option<&str> {
+        self.question_title.as_deref()
+    }
+    /// <p>The description of the question.</p>
+    pub fn question_description(&self) -> std::option::Option<&str> {
+        self.question_description.as_deref()
+    }
+    /// <p>The improvement plan URL for a question.</p>
+    /// <p>This value is only available if the question has been answered.</p>
+    pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
+        self.improvement_plan_url.as_deref()
+    }
+    /// <p>The helpful resource URL for a question.</p>
+    pub fn helpful_resource_url(&self) -> std::option::Option<&str> {
+        self.helpful_resource_url.as_deref()
+    }
+    /// <p>List of choices available for a question.</p>
+    pub fn choices(&self) -> std::option::Option<&[crate::model::Choice]> {
+        self.choices.as_deref()
+    }
+    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn selected_choices(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_choices.as_deref()
+    }
+    /// <p>A list of selected choices to a question in your workload.</p>
+    pub fn choice_answers(&self) -> std::option::Option<&[crate::model::ChoiceAnswer]> {
+        self.choice_answers.as_deref()
+    }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn is_applicable(&self) -> bool {
+        self.is_applicable
+    }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn risk(&self) -> std::option::Option<&crate::model::Risk> {
+        self.risk.as_ref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>The reason why the question is not applicable to your workload.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::AnswerReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for Answer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2376,6 +2797,24 @@ pub struct ChoiceAnswer {
     /// <p>The notes associated with a choice.</p>
     pub notes: std::option::Option<std::string::String>,
 }
+impl ChoiceAnswer {
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
+    }
+    /// <p>The status of a choice.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChoiceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ChoiceReason> {
+        self.reason.as_ref()
+    }
+    /// <p>The notes associated with a choice.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+}
 impl std::fmt::Debug for ChoiceAnswer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChoiceAnswer");
@@ -2605,6 +3044,20 @@ pub struct Choice {
     /// <p>The description of a choice.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl Choice {
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
+    }
+    /// <p>The title of a choice.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The description of a choice.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for Choice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Choice");
@@ -2682,6 +3135,20 @@ pub struct ChoiceUpdate {
     pub reason: std::option::Option<crate::model::ChoiceReason>,
     /// <p>The notes associated with a choice.</p>
     pub notes: std::option::Option<std::string::String>,
+}
+impl ChoiceUpdate {
+    /// <p>The status of a choice.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChoiceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ChoiceReason> {
+        self.reason.as_ref()
+    }
+    /// <p>The notes associated with a choice.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
 }
 impl std::fmt::Debug for ChoiceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2768,6 +3235,24 @@ pub struct WorkloadShareSummary {
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The status of a workload share.</p>
     pub status: std::option::Option<crate::model::ShareStatus>,
+}
+impl WorkloadShareSummary {
+    /// <p>The ID associated with the workload share.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    pub fn shared_with(&self) -> std::option::Option<&str> {
+        self.shared_with.as_deref()
+    }
+    /// <p>Permission granted on a workload share.</p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>The status of a workload share.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkloadShareSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2874,6 +3359,46 @@ pub struct WorkloadSummary {
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     /// <p>The improvement status for a workload.</p>
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
+}
+impl WorkloadSummary {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The ARN for the workload.</p>
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
+        self.workload_arn.as_deref()
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// are ignored when checking for uniqueness.</p>
+    pub fn workload_name(&self) -> std::option::Option<&str> {
+        self.workload_name.as_deref()
+    }
+    /// <p>An AWS account ID.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
+        self.lenses.as_deref()
+    }
+    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    pub fn risk_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
+        self.risk_counts.as_ref()
+    }
+    /// <p>The improvement status for a workload.</p>
+    pub fn improvement_status(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkloadImprovementStatus> {
+        self.improvement_status.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkloadSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3061,6 +3586,34 @@ pub struct ShareInvitationSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
 }
+impl ShareInvitationSummary {
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+        self.share_invitation_id.as_deref()
+    }
+    /// <p>An AWS account ID.</p>
+    pub fn shared_by(&self) -> std::option::Option<&str> {
+        self.shared_by.as_deref()
+    }
+    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    pub fn shared_with(&self) -> std::option::Option<&str> {
+        self.shared_with.as_deref()
+    }
+    /// <p>Permission granted on a workload share.</p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// are ignored when checking for uniqueness.</p>
+    pub fn workload_name(&self) -> std::option::Option<&str> {
+        self.workload_name.as_deref()
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ShareInvitationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareInvitationSummary");
@@ -3189,6 +3742,16 @@ pub struct NotificationSummary {
     /// <p>Summary of lens upgrade.</p>
     pub lens_upgrade_summary: std::option::Option<crate::model::LensUpgradeSummary>,
 }
+impl NotificationSummary {
+    /// <p>The type of notification.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NotificationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Summary of lens upgrade.</p>
+    pub fn lens_upgrade_summary(&self) -> std::option::Option<&crate::model::LensUpgradeSummary> {
+        self.lens_upgrade_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for NotificationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationSummary");
@@ -3266,6 +3829,31 @@ pub struct LensUpgradeSummary {
     pub current_lens_version: std::option::Option<std::string::String>,
     /// <p>The latest version of the lens.</p>
     pub latest_lens_version: std::option::Option<std::string::String>,
+}
+impl LensUpgradeSummary {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// are ignored when checking for uniqueness.</p>
+    pub fn workload_name(&self) -> std::option::Option<&str> {
+        self.workload_name.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The current version of the lens.</p>
+    pub fn current_lens_version(&self) -> std::option::Option<&str> {
+        self.current_lens_version.as_deref()
+    }
+    /// <p>The latest version of the lens.</p>
+    pub fn latest_lens_version(&self) -> std::option::Option<&str> {
+        self.latest_lens_version.as_deref()
+    }
 }
 impl std::fmt::Debug for LensUpgradeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3445,6 +4033,26 @@ pub struct MilestoneSummary {
     /// <p>A workload summary return object.</p>
     pub workload_summary: std::option::Option<crate::model::WorkloadSummary>,
 }
+impl MilestoneSummary {
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The name of the milestone in a workload.</p>
+    /// <p>Milestone names must be unique within a workload.</p>
+    pub fn milestone_name(&self) -> std::option::Option<&str> {
+        self.milestone_name.as_deref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn recorded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.recorded_at.as_ref()
+    }
+    /// <p>A workload summary return object.</p>
+    pub fn workload_summary(&self) -> std::option::Option<&crate::model::WorkloadSummary> {
+        self.workload_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for MilestoneSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MilestoneSummary");
@@ -3555,6 +4163,35 @@ pub struct LensReviewSummary {
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
+}
+impl LensReviewSummary {
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The version of the lens.</p>
+    pub fn lens_version(&self) -> std::option::Option<&str> {
+        self.lens_version.as_deref()
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn lens_name(&self) -> std::option::Option<&str> {
+        self.lens_name.as_deref()
+    }
+    /// <p>The status of the lens.</p>
+    pub fn lens_status(&self) -> std::option::Option<&crate::model::LensStatus> {
+        self.lens_status.as_ref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>A map from risk names to the count of how questions have that rating.</p>
+    pub fn risk_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
+        self.risk_counts.as_ref()
+    }
 }
 impl std::fmt::Debug for LensReviewSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3697,6 +4334,30 @@ pub struct ImprovementSummary {
     /// <p>This value is only available if the question has been answered.</p>
     pub improvement_plan_url: std::option::Option<std::string::String>,
 }
+impl ImprovementSummary {
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The title of the question.</p>
+    pub fn question_title(&self) -> std::option::Option<&str> {
+        self.question_title.as_deref()
+    }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn risk(&self) -> std::option::Option<&crate::model::Risk> {
+        self.risk.as_ref()
+    }
+    /// <p>The improvement plan URL for a question.</p>
+    /// <p>This value is only available if the question has been answered.</p>
+    pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
+        self.improvement_plan_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ImprovementSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImprovementSummary");
@@ -3814,6 +4475,25 @@ pub struct LensSummary {
     /// <p>The description of the lens.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl LensSummary {
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The version of the lens.</p>
+    pub fn lens_version(&self) -> std::option::Option<&str> {
+        self.lens_version.as_deref()
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn lens_name(&self) -> std::option::Option<&str> {
+        self.lens_name.as_deref()
+    }
+    /// <p>The description of the lens.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for LensSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LensSummary");
@@ -3921,6 +4601,48 @@ pub struct AnswerSummary {
     pub risk: std::option::Option<crate::model::Risk>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub reason: std::option::Option<crate::model::AnswerReason>,
+}
+impl AnswerSummary {
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The title of the question.</p>
+    pub fn question_title(&self) -> std::option::Option<&str> {
+        self.question_title.as_deref()
+    }
+    /// <p>List of choices available for a question.</p>
+    pub fn choices(&self) -> std::option::Option<&[crate::model::Choice]> {
+        self.choices.as_deref()
+    }
+    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn selected_choices(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_choices.as_deref()
+    }
+    /// <p>A list of selected choices to a question in your workload.</p>
+    pub fn choice_answer_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChoiceAnswerSummary]> {
+        self.choice_answer_summaries.as_deref()
+    }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn is_applicable(&self) -> bool {
+        self.is_applicable
+    }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn risk(&self) -> std::option::Option<&crate::model::Risk> {
+        self.risk.as_ref()
+    }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::AnswerReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for AnswerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4119,6 +4841,20 @@ pub struct ChoiceAnswerSummary {
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub reason: std::option::Option<crate::model::ChoiceReason>,
 }
+impl ChoiceAnswerSummary {
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
+    }
+    /// <p>The status of a choice.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChoiceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ChoiceReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for ChoiceAnswerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChoiceAnswerSummary");
@@ -4206,6 +4942,26 @@ pub struct Milestone {
     pub recorded_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A workload return object.</p>
     pub workload: std::option::Option<crate::model::Workload>,
+}
+impl Milestone {
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The name of the milestone in a workload.</p>
+    /// <p>Milestone names must be unique within a workload.</p>
+    pub fn milestone_name(&self) -> std::option::Option<&str> {
+        self.milestone_name.as_deref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn recorded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.recorded_at.as_ref()
+    }
+    /// <p>A workload return object.</p>
+    pub fn workload(&self) -> std::option::Option<&crate::model::Workload> {
+        self.workload.as_ref()
+    }
 }
 impl std::fmt::Debug for Milestone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4304,6 +5060,12 @@ pub struct VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
     pub pillar_differences: std::option::Option<std::vec::Vec<crate::model::PillarDifference>>,
 }
+impl VersionDifferences {
+    /// <p>The differences between the base and latest versions of the lens.</p>
+    pub fn pillar_differences(&self) -> std::option::Option<&[crate::model::PillarDifference]> {
+        self.pillar_differences.as_deref()
+    }
+}
 impl std::fmt::Debug for VersionDifferences {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VersionDifferences");
@@ -4369,6 +5131,21 @@ pub struct PillarDifference {
     pub difference_status: std::option::Option<crate::model::DifferenceStatus>,
     /// <p>List of question differences.</p>
     pub question_differences: std::option::Option<std::vec::Vec<crate::model::QuestionDifference>>,
+}
+impl PillarDifference {
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>Indicates the type of change to the pillar.</p>
+    pub fn difference_status(&self) -> std::option::Option<&crate::model::DifferenceStatus> {
+        self.difference_status.as_ref()
+    }
+    /// <p>List of question differences.</p>
+    pub fn question_differences(&self) -> std::option::Option<&[crate::model::QuestionDifference]> {
+        self.question_differences.as_deref()
+    }
 }
 impl std::fmt::Debug for PillarDifference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4465,6 +5242,20 @@ pub struct QuestionDifference {
     pub question_title: std::option::Option<std::string::String>,
     /// <p>Indicates the type of change to the question.</p>
     pub difference_status: std::option::Option<crate::model::DifferenceStatus>,
+}
+impl QuestionDifference {
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The title of the question.</p>
+    pub fn question_title(&self) -> std::option::Option<&str> {
+        self.question_title.as_deref()
+    }
+    /// <p>Indicates the type of change to the question.</p>
+    pub fn difference_status(&self) -> std::option::Option<&crate::model::DifferenceStatus> {
+        self.difference_status.as_ref()
+    }
 }
 impl std::fmt::Debug for QuestionDifference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4608,6 +5399,18 @@ pub struct LensReviewReport {
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     pub base64_string: std::option::Option<std::string::String>,
+}
+impl LensReviewReport {
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The Base64-encoded string representation of a lens review report.</p>
+    /// <p>This data can be used to create a PDF file.</p>
+    pub fn base64_string(&self) -> std::option::Option<&str> {
+        self.base64_string.as_deref()
+    }
 }
 impl std::fmt::Debug for LensReviewReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

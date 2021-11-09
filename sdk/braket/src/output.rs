@@ -8,6 +8,16 @@ pub struct SearchQuantumTasksOutput {
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchQuantumTasksOutput {
+    /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
+    pub fn quantum_tasks(&self) -> std::option::Option<&[crate::model::QuantumTaskSummary]> {
+        self.quantum_tasks.as_deref()
+    }
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchQuantumTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchQuantumTasksOutput");
@@ -79,6 +89,12 @@ pub struct CreateQuantumTaskOutput {
     /// <p>The ARN of the task created by the request.</p>
     pub quantum_task_arn: std::option::Option<std::string::String>,
 }
+impl CreateQuantumTaskOutput {
+    /// <p>The ARN of the task created by the request.</p>
+    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
+        self.quantum_task_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateQuantumTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQuantumTaskOutput");
@@ -131,6 +147,16 @@ pub struct CancelQuantumTaskOutput {
     pub quantum_task_arn: std::option::Option<std::string::String>,
     /// <p>The status of the cancellation request.</p>
     pub cancellation_status: std::option::Option<crate::model::CancellationStatus>,
+}
+impl CancelQuantumTaskOutput {
+    /// <p>The ARN of the task.</p>
+    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
+        self.quantum_task_arn.as_deref()
+    }
+    /// <p>The status of the cancellation request.</p>
+    pub fn cancellation_status(&self) -> std::option::Option<&crate::model::CancellationStatus> {
+        self.cancellation_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelQuantumTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -219,6 +245,55 @@ pub struct GetQuantumTaskOutput {
     /// <p>The tags that belong to this task.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetQuantumTaskOutput {
+    /// <p>The ARN of the task.</p>
+    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
+        self.quantum_task_arn.as_deref()
+    }
+    /// <p>The status of the task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QuantumTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason that a task failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The ARN of the device the task was run on.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The parameters for the device on which the task ran.</p>
+    pub fn device_parameters(&self) -> std::option::Option<&str> {
+        self.device_parameters.as_deref()
+    }
+    /// <p>The number of shots used in the task.</p>
+    pub fn shots(&self) -> std::option::Option<i64> {
+        self.shots
+    }
+    /// <p>The S3 bucket where task results are stored.</p>
+    pub fn output_s3_bucket(&self) -> std::option::Option<&str> {
+        self.output_s3_bucket.as_deref()
+    }
+    /// <p>The folder in the S3 bucket where task results are stored.</p>
+    pub fn output_s3_directory(&self) -> std::option::Option<&str> {
+        self.output_s3_directory.as_deref()
+    }
+    /// <p>The time at which the task was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the task ended.</p>
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.ended_at.as_ref()
+    }
+    /// <p>The tags that belong to this task.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetQuantumTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -441,6 +516,16 @@ pub struct SearchDevicesOutput {
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchDevicesOutput {
+    /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceSummary]> {
+        self.devices.as_deref()
+    }
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchDevicesOutput");
@@ -520,6 +605,32 @@ pub struct GetDeviceOutput {
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>Details about the capabilities of the device.</p>
     pub device_capabilities: std::option::Option<std::string::String>,
+}
+impl GetDeviceOutput {
+    /// <p>The ARN of the device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The name of the device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The name of the partner company for the device.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The type of the device.</p>
+    pub fn device_type(&self) -> std::option::Option<&crate::model::DeviceType> {
+        self.device_type.as_ref()
+    }
+    /// <p>The status of the device.</p>
+    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.device_status.as_ref()
+    }
+    /// <p>Details about the capabilities of the device.</p>
+    pub fn device_capabilities(&self) -> std::option::Option<&str> {
+        self.device_capabilities.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -706,6 +817,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>Displays the key, value pairs of tags associated with this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>Displays the key, value pairs of tags associated with this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

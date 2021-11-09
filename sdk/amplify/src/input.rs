@@ -380,10 +380,7 @@ impl CreateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -587,10 +584,7 @@ impl CreateBackendEnvironmentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_backend_environment(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1004,10 +998,7 @@ impl CreateBranchInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_branch(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_branch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1235,10 +1226,7 @@ impl CreateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1493,10 +1481,7 @@ impl CreateDomainAssociationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_domain_association(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1680,10 +1665,7 @@ impl CreateWebhookInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2924,10 +2906,7 @@ impl GenerateAccessLogsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_access_logs(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_generate_access_logs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5858,10 +5837,7 @@ impl StartDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6139,10 +6115,7 @@ impl StartJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6530,10 +6503,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7148,10 +7118,7 @@ impl UpdateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7554,10 +7521,7 @@ impl UpdateBranchInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_branch(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_branch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7832,10 +7796,7 @@ impl UpdateDomainAssociationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_domain_association(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8019,10 +7980,7 @@ impl UpdateWebhookInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8095,6 +8053,20 @@ pub struct UpdateWebhookInput {
     /// <p> The description for a webhook. </p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateWebhookInput {
+    /// <p> The unique ID for a webhook. </p>
+    pub fn webhook_id(&self) -> std::option::Option<&str> {
+        self.webhook_id.as_deref()
+    }
+    /// <p> The name for a branch that is part of an Amplify app. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The description for a webhook. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWebhookInput");
@@ -8122,6 +8094,33 @@ pub struct UpdateDomainAssociationInput {
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
     /// Resource Name (ARN) for automatically creating subdomains. </p>
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
+}
+impl UpdateDomainAssociationInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name of the domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> Enables the automated creation of subdomains for branches. </p>
+    pub fn enable_auto_sub_domain(&self) -> std::option::Option<bool> {
+        self.enable_auto_sub_domain
+    }
+    /// <p> Describes the settings for the subdomain. </p>
+    pub fn sub_domain_settings(&self) -> std::option::Option<&[crate::model::SubDomainSetting]> {
+        self.sub_domain_settings.as_deref()
+    }
+    /// <p> Sets the branch patterns for automatic subdomain creation. </p>
+    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_sub_domain_creation_patterns.as_deref()
+    }
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
+    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
+        self.auto_sub_domain_iam_role.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8180,6 +8179,81 @@ pub struct UpdateBranchInput {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
     /// app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
+}
+impl UpdateBranchInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The description for the branch. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The framework for the branch. </p>
+    pub fn framework(&self) -> std::option::Option<&str> {
+        self.framework.as_deref()
+    }
+    /// <p> Describes the current stage for the branch. </p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::Stage> {
+        self.stage.as_ref()
+    }
+    /// <p> Enables notifications for the branch. </p>
+    pub fn enable_notification(&self) -> std::option::Option<bool> {
+        self.enable_notification
+    }
+    /// <p> Enables auto building for the branch. </p>
+    pub fn enable_auto_build(&self) -> std::option::Option<bool> {
+        self.enable_auto_build
+    }
+    /// <p> The environment variables for the branch. </p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p> The basic authorization credentials for the branch. </p>
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+        self.basic_auth_credentials.as_deref()
+    }
+    /// <p> Enables basic authorization for the branch. </p>
+    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+        self.enable_basic_auth
+    }
+    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
+        self.enable_performance_mode
+    }
+    /// <p> The build specification (build spec) for the branch. </p>
+    pub fn build_spec(&self) -> std::option::Option<&str> {
+        self.build_spec.as_deref()
+    }
+    /// <p> The content Time to Live (TTL) for the website in seconds. </p>
+    pub fn ttl(&self) -> std::option::Option<&str> {
+        self.ttl.as_deref()
+    }
+    /// <p> The display name for a branch. This is used as the default domain prefix. </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p> Enables pull request previews for this branch. </p>
+    pub fn enable_pull_request_preview(&self) -> std::option::Option<bool> {
+        self.enable_pull_request_preview
+    }
+    /// <p> The Amplify environment name for the pull request. </p>
+    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
+        self.pull_request_environment_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+    /// app. </p>
+    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
+        self.backend_environment_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8260,6 +8334,94 @@ pub struct UpdateAppInput {
     /// </p>
     pub access_token: std::option::Option<std::string::String>,
 }
+impl UpdateAppInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for an Amplify app. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description for an Amplify app. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The platform for an Amplify app. </p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
+    pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_service_role_arn.as_deref()
+    }
+    /// <p> The environment variables for an Amplify app. </p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p> Enables branch auto-building for an Amplify app. </p>
+    pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
+        self.enable_branch_auto_build
+    }
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
+    /// from your Git repository. </p>
+    pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
+        self.enable_branch_auto_deletion
+    }
+    /// <p> Enables basic authorization for an Amplify app. </p>
+    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+        self.enable_basic_auth
+    }
+    /// <p> The basic authorization credentials for an Amplify app. </p>
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+        self.basic_auth_credentials.as_deref()
+    }
+    /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
+    pub fn custom_rules(&self) -> std::option::Option<&[crate::model::CustomRule]> {
+        self.custom_rules.as_deref()
+    }
+    /// <p> The build specification (build spec) for an Amplify app. </p>
+    pub fn build_spec(&self) -> std::option::Option<&str> {
+        self.build_spec.as_deref()
+    }
+    /// <p>The custom HTTP headers for an Amplify app.</p>
+    pub fn custom_headers(&self) -> std::option::Option<&str> {
+        self.custom_headers.as_deref()
+    }
+    /// <p> Enables automated branch creation for an Amplify app. </p>
+    pub fn enable_auto_branch_creation(&self) -> std::option::Option<bool> {
+        self.enable_auto_branch_creation
+    }
+    /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
+    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_branch_creation_patterns.as_deref()
+    }
+    /// <p> The automated branch creation configuration for an Amplify app. </p>
+    pub fn auto_branch_creation_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoBranchCreationConfig> {
+        self.auto_branch_creation_config.as_ref()
+    }
+    /// <p> The name of the repository for an Amplify app </p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
+    /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
+    /// </p>
+    pub fn oauth_token(&self) -> std::option::Option<&str> {
+        self.oauth_token.as_deref()
+    }
+    /// <p> The personal access token for a third-party source control system for an Amplify app.
+    /// The token is used to create webhook and a read-only deploy key. The token is not stored.
+    /// </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInput");
@@ -8307,6 +8469,16 @@ pub struct UntagResourceInput {
     /// <p> The tag keys to use to untag a resource. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> The tag keys to use to untag a resource. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -8325,6 +8497,19 @@ pub struct TagResourceInput {
     /// <p> The tags used to tag the resource. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> The tags used to tag the resource. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8345,6 +8530,20 @@ pub struct StopJobInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The unique id for the job. </p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopJobInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch, for the job. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The unique id for the job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8382,6 +8581,45 @@ pub struct StartJobInput {
     /// <p> The commit date and time for the job. </p>
     pub commit_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StartJobInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The branch name for the job. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The unique ID for an existing job. This is required if the value of
+    /// <code>jobType</code> is <code>RETRY</code>. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
+    /// with the latest change from the specified branch. This value is available only for apps
+    /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
+    /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
+    /// required. </p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p> A descriptive reason for starting this job. </p>
+    pub fn job_reason(&self) -> std::option::Option<&str> {
+        self.job_reason.as_deref()
+    }
+    /// <p> The commit ID from a third-party repository provider for the job. </p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p> The commit message from a third-party repository provider for the job. </p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p> The commit date and time for the job. </p>
+    pub fn commit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.commit_time.as_ref()
+    }
+}
 impl std::fmt::Debug for StartJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartJobInput");
@@ -8412,6 +8650,26 @@ pub struct StartDeploymentInput {
     /// downloads a single .zip file. </p>
     pub source_url: std::option::Option<std::string::String>,
 }
+impl StartDeploymentInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch, for the job. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The job ID for this deployment, generated by the create deployment request. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p> The source URL for this deployment, used when calling start deployment without create
+    /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
+    /// downloads a single .zip file. </p>
+    pub fn source_url(&self) -> std::option::Option<&str> {
+        self.source_url.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeploymentInput");
@@ -8436,6 +8694,22 @@ pub struct ListWebhooksInput {
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
 }
+impl ListWebhooksInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> A pagination token. Set to null to start listing webhooks from the start. If
+    /// non-null,the pagination token is returned in a result. Pass its value in here to list
+    /// more webhooks. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListWebhooksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWebhooksInput");
@@ -8452,6 +8726,12 @@ impl std::fmt::Debug for ListWebhooksInput {
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8475,6 +8755,26 @@ pub struct ListJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
+}
+impl ListJobsInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for a branch. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
+    /// pagination token is returned in a result, pass its value in here to list more steps.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8500,6 +8800,22 @@ pub struct ListDomainAssociationsInput {
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
 }
+impl ListDomainAssociationsInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
+    /// pagination token is returned in a result. Pass its value in here to list more projects.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDomainAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainAssociationsInput");
@@ -8522,6 +8838,22 @@ pub struct ListBranchesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
+}
+impl ListBranchesInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> A pagination token. Set to null to start listing branches from the start. If a
+    /// non-null pagination token is returned in a result, pass its value in here to list more
+    /// branches. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListBranchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8547,6 +8879,26 @@ pub struct ListBackendEnvironmentsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
+}
+impl ListBackendEnvironmentsInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name of the backend environment </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p> A pagination token. Set to null to start listing backend environments from the start.
+    /// If a non-null pagination token is returned in a result, pass its value in here to list
+    /// more backend environments. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListBackendEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8576,6 +8928,30 @@ pub struct ListArtifactsInput {
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
 }
+impl ListArtifactsInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name of a branch that is part of an Amplify app. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The unique ID for a job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
+    /// pagination token is returned in a result, pass its value in here to list more artifacts.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListArtifactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListArtifactsInput");
@@ -8598,6 +8974,17 @@ pub struct ListAppsInput {
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
 }
+impl ListAppsInput {
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
+    /// its value in another request to retrieve more entries. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAppsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppsInput");
@@ -8613,6 +9000,12 @@ impl std::fmt::Debug for ListAppsInput {
 pub struct GetWebhookInput {
     /// <p> The unique ID for a webhook. </p>
     pub webhook_id: std::option::Option<std::string::String>,
+}
+impl GetWebhookInput {
+    /// <p> The unique ID for a webhook. </p>
+    pub fn webhook_id(&self) -> std::option::Option<&str> {
+        self.webhook_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8633,6 +9026,20 @@ pub struct GetJobInput {
     /// <p> The unique ID for the job. </p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl GetJobInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The branch name for the job. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The unique ID for the job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobInput");
@@ -8652,6 +9059,16 @@ pub struct GetDomainAssociationInput {
     /// <p> The name of the domain. </p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl GetDomainAssociationInput {
+    /// <p> The unique id for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name of the domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainAssociationInput");
@@ -8669,6 +9086,16 @@ pub struct GetBranchInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name for the branch. </p>
     pub branch_name: std::option::Option<std::string::String>,
+}
+impl GetBranchInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8688,6 +9115,16 @@ pub struct GetBackendEnvironmentInput {
     /// <p> The name for the backend environment. </p>
     pub environment_name: std::option::Option<std::string::String>,
 }
+impl GetBackendEnvironmentInput {
+    /// <p> The unique id for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the backend environment. </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBackendEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBackendEnvironmentInput");
@@ -8704,6 +9141,12 @@ pub struct GetArtifactUrlInput {
     /// <p> The unique ID for an artifact. </p>
     pub artifact_id: std::option::Option<std::string::String>,
 }
+impl GetArtifactUrlInput {
+    /// <p> The unique ID for an artifact. </p>
+    pub fn artifact_id(&self) -> std::option::Option<&str> {
+        self.artifact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetArtifactUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetArtifactUrlInput");
@@ -8718,6 +9161,12 @@ impl std::fmt::Debug for GetArtifactUrlInput {
 pub struct GetAppInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl GetAppInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8742,6 +9191,26 @@ pub struct GenerateAccessLogsInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl GenerateAccessLogsInput {
+    /// <p> The time at which the logs should start. The time range specified is inclusive of the
+    /// start time. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p> The time at which the logs should end. The time range specified is inclusive of the
+    /// end time. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p> The name of the domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateAccessLogsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateAccessLogsInput");
@@ -8759,6 +9228,12 @@ impl std::fmt::Debug for GenerateAccessLogsInput {
 pub struct DeleteWebhookInput {
     /// <p> The unique ID for a webhook. </p>
     pub webhook_id: std::option::Option<std::string::String>,
+}
+impl DeleteWebhookInput {
+    /// <p> The unique ID for a webhook. </p>
+    pub fn webhook_id(&self) -> std::option::Option<&str> {
+        self.webhook_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8779,6 +9254,20 @@ pub struct DeleteJobInput {
     /// <p> The unique ID for the job. </p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DeleteJobInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch, for the job. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The unique ID for the job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteJobInput");
@@ -8798,6 +9287,16 @@ pub struct DeleteDomainAssociationInput {
     /// <p> The name of the domain. </p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DeleteDomainAssociationInput {
+    /// <p> The unique id for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name of the domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainAssociationInput");
@@ -8815,6 +9314,16 @@ pub struct DeleteBranchInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name for the branch. </p>
     pub branch_name: std::option::Option<std::string::String>,
+}
+impl DeleteBranchInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8834,6 +9343,16 @@ pub struct DeleteBackendEnvironmentInput {
     /// <p> The name of a backend environment of an Amplify app. </p>
     pub environment_name: std::option::Option<std::string::String>,
 }
+impl DeleteBackendEnvironmentInput {
+    /// <p> The unique ID of an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name of a backend environment of an Amplify app. </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBackendEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackendEnvironmentInput");
@@ -8849,6 +9368,12 @@ impl std::fmt::Debug for DeleteBackendEnvironmentInput {
 pub struct DeleteAppInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl DeleteAppInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8868,6 +9393,20 @@ pub struct CreateWebhookInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The description for a webhook. </p>
     pub description: std::option::Option<std::string::String>,
+}
+impl CreateWebhookInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for a branch that is part of an Amplify app. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The description for a webhook. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8896,6 +9435,33 @@ pub struct CreateDomainAssociationInput {
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
     /// Resource Name (ARN) for automatically creating subdomains. </p>
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
+}
+impl CreateDomainAssociationInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The domain name for the domain association. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> Enables the automated creation of subdomains for branches. </p>
+    pub fn enable_auto_sub_domain(&self) -> std::option::Option<bool> {
+        self.enable_auto_sub_domain
+    }
+    /// <p> The setting for the subdomain. </p>
+    pub fn sub_domain_settings(&self) -> std::option::Option<&[crate::model::SubDomainSetting]> {
+        self.sub_domain_settings.as_deref()
+    }
+    /// <p> Sets the branch patterns for automatic subdomain creation. </p>
+    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_sub_domain_creation_patterns.as_deref()
+    }
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
+    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
+        self.auto_sub_domain_iam_role.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDomainAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8927,6 +9493,26 @@ pub struct CreateDeploymentInput {
     /// the zipped files. </p>
     pub file_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateDeploymentInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch, for the job. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> An optional file map that contains the file name as the key and the file content md5
+    /// hash as the value. If this argument is provided, the service will generate a unique
+    /// upload URL per file. Otherwise, the service will only generate a single upload URL for
+    /// the zipped files. </p>
+    pub fn file_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.file_map.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8983,6 +9569,88 @@ pub struct CreateBranchInput {
     /// app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
 }
+impl CreateBranchInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the branch. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The description for the branch. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> Describes the current stage for the branch. </p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::Stage> {
+        self.stage.as_ref()
+    }
+    /// <p> The framework for the branch. </p>
+    pub fn framework(&self) -> std::option::Option<&str> {
+        self.framework.as_deref()
+    }
+    /// <p> Enables notifications for the branch. </p>
+    pub fn enable_notification(&self) -> std::option::Option<bool> {
+        self.enable_notification
+    }
+    /// <p> Enables auto building for the branch. </p>
+    pub fn enable_auto_build(&self) -> std::option::Option<bool> {
+        self.enable_auto_build
+    }
+    /// <p> The environment variables for the branch. </p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p> The basic authorization credentials for the branch. </p>
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+        self.basic_auth_credentials.as_deref()
+    }
+    /// <p> Enables basic authorization for the branch. </p>
+    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+        self.enable_basic_auth
+    }
+    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
+        self.enable_performance_mode
+    }
+    /// <p> The tag for the branch. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> The build specification (build spec) for the branch. </p>
+    pub fn build_spec(&self) -> std::option::Option<&str> {
+        self.build_spec.as_deref()
+    }
+    /// <p> The content Time To Live (TTL) for the website in seconds. </p>
+    pub fn ttl(&self) -> std::option::Option<&str> {
+        self.ttl.as_deref()
+    }
+    /// <p> The display name for a branch. This is used as the default domain prefix. </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p> Enables pull request previews for this branch. </p>
+    pub fn enable_pull_request_preview(&self) -> std::option::Option<bool> {
+        self.enable_pull_request_preview
+    }
+    /// <p> The Amplify environment name for the pull request. </p>
+    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
+        self.pull_request_environment_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+    /// app. </p>
+    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
+        self.backend_environment_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBranchInput");
@@ -9026,6 +9694,24 @@ pub struct CreateBackendEnvironmentInput {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p> The name of deployment artifacts. </p>
     pub deployment_artifacts: std::option::Option<std::string::String>,
+}
+impl CreateBackendEnvironmentInput {
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The name for the backend environment. </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p> The AWS CloudFormation stack name of a backend environment. </p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p> The name of deployment artifacts. </p>
+    pub fn deployment_artifacts(&self) -> std::option::Option<&str> {
+        self.deployment_artifacts.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBackendEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9088,6 +9774,98 @@ pub struct CreateAppInput {
     pub auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The automated branch creation configuration for an Amplify app. </p>
     pub auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
+}
+impl CreateAppInput {
+    /// <p> The name for an Amplify app. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description for an Amplify app. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The repository for an Amplify app. </p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p> The platform or framework for an Amplify app. </p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
+    pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_service_role_arn.as_deref()
+    }
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
+    /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
+    /// stored. </p>
+    pub fn oauth_token(&self) -> std::option::Option<&str> {
+        self.oauth_token.as_deref()
+    }
+    /// <p> The personal access token for a third-party source control system for an Amplify app.
+    /// The personal access token is used to create a webhook and a read-only deploy key. The
+    /// token is not stored. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The environment variables map for an Amplify app. </p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p> Enables the auto building of branches for an Amplify app. </p>
+    pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
+        self.enable_branch_auto_build
+    }
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
+    /// from your Git repository. </p>
+    pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
+        self.enable_branch_auto_deletion
+    }
+    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
+    /// are part of this app. </p>
+    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+        self.enable_basic_auth
+    }
+    /// <p> The credentials for basic authorization for an Amplify app. </p>
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+        self.basic_auth_credentials.as_deref()
+    }
+    /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
+    pub fn custom_rules(&self) -> std::option::Option<&[crate::model::CustomRule]> {
+        self.custom_rules.as_deref()
+    }
+    /// <p> The tag for an Amplify app. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> The build specification (build spec) for an Amplify app. </p>
+    pub fn build_spec(&self) -> std::option::Option<&str> {
+        self.build_spec.as_deref()
+    }
+    /// <p>The custom HTTP headers for an Amplify app.</p>
+    pub fn custom_headers(&self) -> std::option::Option<&str> {
+        self.custom_headers.as_deref()
+    }
+    /// <p> Enables automated branch creation for an Amplify app. </p>
+    pub fn enable_auto_branch_creation(&self) -> std::option::Option<bool> {
+        self.enable_auto_branch_creation
+    }
+    /// <p> The automated branch creation glob patterns for an Amplify app. </p>
+    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_branch_creation_patterns.as_deref()
+    }
+    /// <p> The automated branch creation configuration for an Amplify app. </p>
+    pub fn auto_branch_creation_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoBranchCreationConfig> {
+        self.auto_branch_creation_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -841,6 +841,12 @@ pub struct StatementTimeoutException {
     /// <p>The database connection ID that executed the SQL statement.</p>
     pub db_connection_id: i64,
 }
+impl StatementTimeoutException {
+    /// <p>The database connection ID that executed the SQL statement.</p>
+    pub fn db_connection_id(&self) -> i64 {
+        self.db_connection_id
+    }
+}
 impl std::fmt::Debug for StatementTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatementTimeoutException");

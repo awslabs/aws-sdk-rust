@@ -3913,6 +3913,12 @@ pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -4256,6 +4262,20 @@ pub struct PayloadTooLargeException {
     pub limit: f32,
     #[allow(missing_docs)] // documentation missing in model
     pub size: f32,
+}
+impl PayloadTooLargeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn measure(&self) -> std::option::Option<&crate::model::BytesMeasure> {
+        self.measure.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> f32 {
+        self.limit
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn size(&self) -> f32 {
+        self.size
+    }
 }
 impl std::fmt::Debug for PayloadTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

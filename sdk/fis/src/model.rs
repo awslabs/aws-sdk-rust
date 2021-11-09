@@ -28,6 +28,57 @@ pub struct ExperimentTemplate {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ExperimentTemplate {
+    /// <p>The ID of the experiment template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description for the experiment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The targets for the experiment.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>,
+    > {
+        self.targets.as_ref()
+    }
+    /// <p>The actions for the experiment.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>,
+    > {
+        self.actions.as_ref()
+    }
+    /// <p>The stop conditions for the experiment.</p>
+    pub fn stop_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExperimentTemplateStopCondition]> {
+        self.stop_conditions.as_deref()
+    }
+    /// <p>The time the experiment template was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the experiment template was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The tags for the experiment template.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ExperimentTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTemplate");
@@ -260,6 +311,16 @@ pub struct ExperimentTemplateStopCondition {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ExperimentTemplateStopCondition {
+    /// <p>The source for the stop condition.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentTemplateStopCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTemplateStopCondition");
@@ -330,6 +391,34 @@ pub struct ExperimentTemplateAction {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts.</p>
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ExperimentTemplateAction {
+    /// <p>The ID of the action.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>A description for the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The parameters for the action.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The targets for the action.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.targets.as_ref()
+    }
+    /// <p>The name of the action that must be completed before the current action starts.</p>
+    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+        self.start_after.as_deref()
+    }
 }
 impl std::fmt::Debug for ExperimentTemplateAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -483,6 +572,31 @@ pub struct ExperimentTemplateTarget {
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub selection_mode: std::option::Option<std::string::String>,
 }
+impl ExperimentTemplateTarget {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The tags for the target resources.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ExperimentTemplateTargetFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    pub fn selection_mode(&self) -> std::option::Option<&str> {
+        self.selection_mode.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentTemplateTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTemplateTarget");
@@ -630,6 +744,16 @@ pub struct ExperimentTemplateTargetFilter {
     /// <p>The attribute values for the filter.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ExperimentTemplateTargetFilter {
+    /// <p>The attribute path for the filter.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The attribute values for the filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentTemplateTargetFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTemplateTargetFilter");
@@ -709,6 +833,34 @@ pub struct UpdateExperimentTemplateActionInputItem {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateExperimentTemplateActionInputItem {
+    /// <p>The ID of the action.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>A description for the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The parameters for the action, if applicable.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The targets for the action.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.targets.as_ref()
+    }
+    /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
+    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+        self.start_after.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateExperimentTemplateActionInputItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -863,6 +1015,33 @@ pub struct UpdateExperimentTemplateTargetInput {
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub selection_mode: std::option::Option<std::string::String>,
 }
+impl UpdateExperimentTemplateTargetInput {
+    /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The tags for the target resources.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExperimentTemplateTargetInputFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    pub fn selection_mode(&self) -> std::option::Option<&str> {
+        self.selection_mode.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateExperimentTemplateTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateExperimentTemplateTargetInput");
@@ -1012,6 +1191,16 @@ pub struct ExperimentTemplateTargetInputFilter {
     /// <p>The attribute values for the filter.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ExperimentTemplateTargetInputFilter {
+    /// <p>The attribute path for the filter.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The attribute values for the filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentTemplateTargetInputFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTemplateTargetInputFilter");
@@ -1085,6 +1274,18 @@ pub struct UpdateExperimentTemplateStopConditionInput {
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl UpdateExperimentTemplateStopConditionInput {
+    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
+    /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
+    /// condition.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateExperimentTemplateStopConditionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1175,6 +1376,63 @@ pub struct Experiment {
     /// <p>The tags for the experiment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Experiment {
+    /// <p>The ID of the experiment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn experiment_template_id(&self) -> std::option::Option<&str> {
+        self.experiment_template_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The state of the experiment.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ExperimentState> {
+        self.state.as_ref()
+    }
+    /// <p>The targets for the experiment.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>,
+    > {
+        self.targets.as_ref()
+    }
+    /// <p>The actions for the experiment.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ExperimentAction>,
+    > {
+        self.actions.as_ref()
+    }
+    /// <p>The stop conditions for the experiment.</p>
+    pub fn stop_conditions(&self) -> std::option::Option<&[crate::model::ExperimentStopCondition]> {
+        self.stop_conditions.as_deref()
+    }
+    /// <p>The time the experiment was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that the experiment was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time that the experiment ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The tags for the experiment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Experiment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1435,6 +1693,16 @@ pub struct ExperimentStopCondition {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ExperimentStopCondition {
+    /// <p>The source for the stop condition.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentStopCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentStopCondition");
@@ -1507,6 +1775,38 @@ pub struct ExperimentAction {
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state of the action.</p>
     pub state: std::option::Option<crate::model::ExperimentActionState>,
+}
+impl ExperimentAction {
+    /// <p>The ID of the action.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>The description for the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The parameters for the action.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The targets for the action.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.targets.as_ref()
+    }
+    /// <p>The name of the action that must be completed before this action starts.</p>
+    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+        self.start_after.as_deref()
+    }
+    /// <p>The state of the action.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ExperimentActionState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for ExperimentAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1669,6 +1969,16 @@ pub struct ExperimentActionState {
     /// <p>The reason for the state.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl ExperimentActionState {
+    /// <p>The state of the action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExperimentActionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the state.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentActionState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentActionState");
@@ -1830,6 +2140,31 @@ pub struct ExperimentTarget {
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub selection_mode: std::option::Option<std::string::String>,
 }
+impl ExperimentTarget {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The tags for the target resources.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ExperimentTargetFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    pub fn selection_mode(&self) -> std::option::Option<&str> {
+        self.selection_mode.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTarget");
@@ -1974,6 +2309,16 @@ pub struct ExperimentTargetFilter {
     /// <p>The attribute values for the filter.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ExperimentTargetFilter {
+    /// <p>The attribute path for the filter.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The attribute values for the filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for ExperimentTargetFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTargetFilter");
@@ -2045,6 +2390,16 @@ pub struct ExperimentState {
     pub status: std::option::Option<crate::model::ExperimentStatus>,
     /// <p>The reason for the state.</p>
     pub reason: std::option::Option<std::string::String>,
+}
+impl ExperimentState {
+    /// <p>The state of the experiment.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExperimentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the state.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ExperimentState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2202,6 +2557,31 @@ pub struct ExperimentTemplateSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ExperimentTemplateSummary {
+    /// <p>The ID of the experiment template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description of the experiment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time that the experiment template was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that the experiment template was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The tags for the experiment template.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ExperimentTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExperimentTemplateSummary");
@@ -2333,6 +2713,31 @@ pub struct ExperimentSummary {
     /// <p>The tags for the experiment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ExperimentSummary {
+    /// <p>The ID of the experiment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn experiment_template_id(&self) -> std::option::Option<&str> {
+        self.experiment_template_id.as_deref()
+    }
+    /// <p>The state of the experiment.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ExperimentState> {
+        self.state.as_ref()
+    }
+    /// <p>The time that the experiment was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The tags for the experiment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ExperimentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2469,6 +2874,31 @@ pub struct ActionSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ActionSummary {
+    /// <p>The ID of the action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description for the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The targets for the action.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
+    > {
+        self.targets.as_ref()
+    }
+    /// <p>The tags for the action.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ActionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionSummary");
@@ -2590,6 +3020,12 @@ pub struct ActionTarget {
     /// <p>The resource type of the target.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ActionTarget {
+    /// <p>The resource type of the target.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionTarget");
@@ -2654,6 +3090,39 @@ pub struct Action {
     /// <p>The tags for the action.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Action {
+    /// <p>The ID of the action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description for the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The action parameters, if applicable.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ActionParameter>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The supported targets for the action.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
+    > {
+        self.targets.as_ref()
+    }
+    /// <p>The tags for the action.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2808,6 +3277,16 @@ pub struct ActionParameter {
     /// <p>Indicates whether the parameter is required.</p>
     pub required: std::option::Option<bool>,
 }
+impl ActionParameter {
+    /// <p>The parameter description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the parameter is required.</p>
+    pub fn required(&self) -> std::option::Option<bool> {
+        self.required
+    }
+}
 impl std::fmt::Debug for ActionParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionParameter");
@@ -2878,6 +3357,34 @@ pub struct CreateExperimentTemplateActionInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateExperimentTemplateActionInput {
+    /// <p>The ID of the action.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>A description for the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The parameters for the action, if applicable.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The targets for the action.</p>
+    pub fn targets(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.targets.as_ref()
+    }
+    /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
+    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+        self.start_after.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentTemplateActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3045,6 +3552,46 @@ pub struct CreateExperimentTemplateTargetInput {
     /// </li>
     /// </ul>
     pub selection_mode: std::option::Option<std::string::String>,
+}
+impl CreateExperimentTemplateTargetInput {
+    /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The tags for the target resources.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExperimentTemplateTargetInputFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
+    /// <ul>
+    /// <li>
+    /// <p>ALL - Run the action on all identified targets. This is the default.</p>
+    /// </li>
+    /// <li>
+    /// <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random.
+    /// For example, COUNT(1) selects one of the targets.</p>
+    /// </li>
+    /// <li>
+    /// <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets
+    /// at random. For example, PERCENT(25) selects 25% of the targets.</p>
+    /// </li>
+    /// </ul>
+    pub fn selection_mode(&self) -> std::option::Option<&str> {
+        self.selection_mode.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentTemplateTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3223,6 +3770,19 @@ pub struct CreateExperimentTemplateStopConditionInput {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is
     /// a CloudWatch alarm.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl CreateExperimentTemplateStopConditionInput {
+    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
+    /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
+    /// condition.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is
+    /// a CloudWatch alarm.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentTemplateStopConditionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

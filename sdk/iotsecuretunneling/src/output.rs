@@ -76,6 +76,28 @@ pub struct OpenTunnelOutput {
     /// Tunneling.</p>
     pub destination_access_token: std::option::Option<std::string::String>,
 }
+impl OpenTunnelOutput {
+    /// <p>A unique alpha-numeric tunnel ID.</p>
+    pub fn tunnel_id(&self) -> std::option::Option<&str> {
+        self.tunnel_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is
+    /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
+    /// </p>
+    pub fn tunnel_arn(&self) -> std::option::Option<&str> {
+        self.tunnel_arn.as_deref()
+    }
+    /// <p>The access token the source local proxy uses to connect to AWS IoT Secure
+    /// Tunneling.</p>
+    pub fn source_access_token(&self) -> std::option::Option<&str> {
+        self.source_access_token.as_deref()
+    }
+    /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure
+    /// Tunneling.</p>
+    pub fn destination_access_token(&self) -> std::option::Option<&str> {
+        self.destination_access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for OpenTunnelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenTunnelOutput");
@@ -182,6 +204,16 @@ pub struct ListTunnelsOutput {
     /// <p>A token to used to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTunnelsOutput {
+    /// <p>A short description of the tunnels in an AWS account.</p>
+    pub fn tunnel_summaries(&self) -> std::option::Option<&[crate::model::TunnelSummary]> {
+        self.tunnel_summaries.as_deref()
+    }
+    /// <p>A token to used to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTunnelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTunnelsOutput");
@@ -253,6 +285,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags for the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -307,6 +345,12 @@ impl ListTagsForResourceOutput {
 pub struct DescribeTunnelOutput {
     /// <p>The tunnel being described.</p>
     pub tunnel: std::option::Option<crate::model::Tunnel>,
+}
+impl DescribeTunnelOutput {
+    /// <p>The tunnel being described.</p>
+    pub fn tunnel(&self) -> std::option::Option<&crate::model::Tunnel> {
+        self.tunnel.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTunnelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -14,6 +14,28 @@ pub struct SuiteDefinitionConfiguration {
     /// <p>Gets device permission arn.</p>
     pub device_permission_role_arn: std::option::Option<std::string::String>,
 }
+impl SuiteDefinitionConfiguration {
+    /// <p>Gets Suite Definition Configuration name.</p>
+    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+        self.suite_definition_name.as_deref()
+    }
+    /// <p>Gets the devices configured.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceUnderTest]> {
+        self.devices.as_deref()
+    }
+    /// <p>Gets the tests intended for qualification in a suite.</p>
+    pub fn intended_for_qualification(&self) -> bool {
+        self.intended_for_qualification
+    }
+    /// <p>Gets test suite root group.</p>
+    pub fn root_group(&self) -> std::option::Option<&str> {
+        self.root_group.as_deref()
+    }
+    /// <p>Gets device permission arn.</p>
+    pub fn device_permission_role_arn(&self) -> std::option::Option<&str> {
+        self.device_permission_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SuiteDefinitionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuiteDefinitionConfiguration");
@@ -137,6 +159,16 @@ pub struct DeviceUnderTest {
     /// <p>Lists devices certificate arn</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl DeviceUnderTest {
+    /// <p>Lists devices thing arn</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>Lists devices certificate arn</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeviceUnderTest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceUnderTest");
@@ -202,6 +234,16 @@ pub struct SuiteRunConfiguration {
     pub primary_device: std::option::Option<crate::model::DeviceUnderTest>,
     /// <p>Gets test case list.</p>
     pub selected_test_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SuiteRunConfiguration {
+    /// <p>Gets the primary device for suite run.</p>
+    pub fn primary_device(&self) -> std::option::Option<&crate::model::DeviceUnderTest> {
+        self.primary_device.as_ref()
+    }
+    /// <p>Gets test case list.</p>
+    pub fn selected_test_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_test_list.as_deref()
+    }
 }
 impl std::fmt::Debug for SuiteRunConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -293,6 +335,48 @@ pub struct SuiteRunInformation {
     pub passed: i32,
     /// <p>Number of test cases that failed in the suite run.</p>
     pub failed: i32,
+}
+impl SuiteRunInformation {
+    /// <p>Suite definition Id of the suite run.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite definition version of the suite run.</p>
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+        self.suite_definition_version.as_deref()
+    }
+    /// <p>Suite definition name of the suite run.</p>
+    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+        self.suite_definition_name.as_deref()
+    }
+    /// <p>Suite run Id of the suite run.</p>
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
+        self.suite_run_id.as_deref()
+    }
+    /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Date (in Unix epoch time) when the suite run was started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>Date (in Unix epoch time) when the suite run ended.</p>
+    pub fn end_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_at.as_ref()
+    }
+    /// <p>Status of the suite run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SuiteRunStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Number of test cases that passed in the suite run.</p>
+    pub fn passed(&self) -> i32 {
+        self.passed
+    }
+    /// <p>Number of test cases that failed in the suite run.</p>
+    pub fn failed(&self) -> i32 {
+        self.failed
+    }
 }
 impl std::fmt::Debug for SuiteRunInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -578,6 +662,28 @@ pub struct SuiteDefinitionInformation {
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SuiteDefinitionInformation {
+    /// <p>Suite definition Id of the test suite.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite name of the test suite.</p>
+    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+        self.suite_definition_name.as_deref()
+    }
+    /// <p>Specifies the devices under test for the test suite.</p>
+    pub fn default_devices(&self) -> std::option::Option<&[crate::model::DeviceUnderTest]> {
+        self.default_devices.as_deref()
+    }
+    /// <p>Specifies if the test suite is intended for qualification.</p>
+    pub fn intended_for_qualification(&self) -> bool {
+        self.intended_for_qualification
+    }
+    /// <p>Date (in Unix epoch time) when the test suite was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for SuiteDefinitionInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuiteDefinitionInformation");
@@ -700,6 +806,12 @@ pub struct TestResult {
     /// <p>Show each group of test results.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
 }
+impl TestResult {
+    /// <p>Show each group of test results.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupResult]> {
+        self.groups.as_deref()
+    }
+}
 impl std::fmt::Debug for TestResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestResult");
@@ -760,6 +872,20 @@ pub struct GroupResult {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>Tests under Group Result.</p>
     pub tests: std::option::Option<std::vec::Vec<crate::model::TestCaseRun>>,
+}
+impl GroupResult {
+    /// <p>Group result Id.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>Group Result Name.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>Tests under Group Result.</p>
+    pub fn tests(&self) -> std::option::Option<&[crate::model::TestCaseRun]> {
+        self.tests.as_deref()
+    }
 }
 impl std::fmt::Debug for GroupResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -859,6 +985,44 @@ pub struct TestCaseRun {
     pub warnings: std::option::Option<std::string::String>,
     /// <p>Provides test case run failure result.</p>
     pub failure: std::option::Option<std::string::String>,
+}
+impl TestCaseRun {
+    /// <p>Provides test case run Id.</p>
+    pub fn test_case_run_id(&self) -> std::option::Option<&str> {
+        self.test_case_run_id.as_deref()
+    }
+    /// <p>Provides test case run definition Id.</p>
+    pub fn test_case_definition_id(&self) -> std::option::Option<&str> {
+        self.test_case_definition_id.as_deref()
+    }
+    /// <p>Provides test case run definition Name.</p>
+    pub fn test_case_definition_name(&self) -> std::option::Option<&str> {
+        self.test_case_definition_name.as_deref()
+    }
+    /// <p>Provides test case run status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Provides test case run start time.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Provides test case run end time.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Provides test case run log Url.</p>
+    pub fn log_url(&self) -> std::option::Option<&str> {
+        self.log_url.as_deref()
+    }
+    /// <p>Provides test case run warnings.</p>
+    pub fn warnings(&self) -> std::option::Option<&str> {
+        self.warnings.as_deref()
+    }
+    /// <p>Provides test case run failure result.</p>
+    pub fn failure(&self) -> std::option::Option<&str> {
+        self.failure.as_deref()
+    }
 }
 impl std::fmt::Debug for TestCaseRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

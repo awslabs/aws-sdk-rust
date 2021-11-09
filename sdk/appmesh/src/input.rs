@@ -235,10 +235,7 @@ impl CreateGatewayRouteInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_gateway_route(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_gateway_route(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -438,10 +435,7 @@ impl CreateMeshInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_mesh(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_mesh(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -729,10 +723,7 @@ impl CreateRouteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_route(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_route(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -994,10 +985,9 @@ impl CreateVirtualGatewayInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_virtual_gateway(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_virtual_gateway(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1259,10 +1249,7 @@ impl CreateVirtualNodeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_virtual_node(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_virtual_node(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1524,10 +1511,7 @@ impl CreateVirtualRouterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_virtual_router(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_virtual_router(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1789,10 +1773,9 @@ impl CreateVirtualServiceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_virtual_service(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_virtual_service(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6616,10 +6599,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6794,10 +6774,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7070,10 +7047,7 @@ impl UpdateGatewayRouteInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_gateway_route(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_gateway_route(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7262,10 +7236,7 @@ impl UpdateMeshInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_mesh(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_mesh(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7538,10 +7509,7 @@ impl UpdateRouteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_route(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_route(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7792,10 +7760,9 @@ impl UpdateVirtualGatewayInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_virtual_gateway(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_virtual_gateway(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8044,10 +8011,7 @@ impl UpdateVirtualNodeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_virtual_node(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_virtual_node(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8296,10 +8260,7 @@ impl UpdateVirtualRouterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_virtual_router(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_virtual_router(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8550,10 +8511,9 @@ impl UpdateVirtualServiceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_virtual_service(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_virtual_service(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8638,6 +8598,30 @@ pub struct ListMeshesInput {
     /// <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListMeshesInput {
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
+    /// exceeded the value of that parameter. Pagination continues from the end of the previous
+    /// results that returned the <code>nextToken</code> value.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
+    /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
+    /// results in a single page along with a <code>nextToken</code> response element. You can see
+    /// the remaining results of the initial request by sending another <code>ListMeshes</code>
+    /// request with the returned <code>nextToken</code> value. This value can be between
+    /// 1 and 100. If you don't use this parameter,
+    /// <code>ListMeshes</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListMeshesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMeshesInput");
@@ -8664,6 +8648,28 @@ pub struct CreateMeshInput {
     /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateMeshInput {
+    /// <p>The name to use for the service mesh.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The service mesh specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::MeshSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
+    /// and organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMeshInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeshInput");
@@ -8681,6 +8687,12 @@ impl std::fmt::Debug for CreateMeshInput {
 pub struct DeleteMeshInput {
     /// <p>The name of the service mesh to delete.</p>
     pub mesh_name: std::option::Option<std::string::String>,
+}
+impl DeleteMeshInput {
+    /// <p>The name of the service mesh to delete.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMeshInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8702,6 +8714,21 @@ pub struct UpdateMeshInput {
     /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateMeshInput {
+    /// <p>The name of the service mesh to update.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The service mesh specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::MeshSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMeshInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMeshInput");
@@ -8721,6 +8748,17 @@ pub struct DescribeMeshInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DescribeMeshInput {
+    /// <p>The name of the service mesh to describe.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMeshInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8754,6 +8792,35 @@ pub struct ListVirtualServicesInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl ListVirtualServicesInput {
+    /// <p>The name of the service mesh to list virtual services in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
+    /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
+    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+    /// element. You can see the remaining results of the initial request by sending another
+    /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If you don't use this
+    /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
+    /// a <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVirtualServicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8789,6 +8856,38 @@ pub struct CreateVirtualServiceInput {
     /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl CreateVirtualServiceInput {
+    /// <p>The name to use for the virtual service.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
+    /// <p>The name of the service mesh to create the virtual service in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The virtual service specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualServiceSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Optional metadata that you can apply to the virtual service to assist with
+    /// categorization and organization. Each tag consists of a key and an optional value, both of
+    /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+    /// the account that you specify must share the mesh with your account before you can create
+    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualServiceInput");
@@ -8813,6 +8912,21 @@ pub struct DeleteVirtualServiceInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DeleteVirtualServiceInput {
+    /// <p>The name of the virtual service to delete.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
+    /// <p>The name of the service mesh to delete the virtual service in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8842,6 +8956,31 @@ pub struct UpdateVirtualServiceInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl UpdateVirtualServiceInput {
+    /// <p>The name of the virtual service to update.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the virtual service resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The new virtual service specification to apply. This overwrites the existing
+    /// data.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualServiceSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualServiceInput");
@@ -8865,6 +9004,21 @@ pub struct DescribeVirtualServiceInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DescribeVirtualServiceInput {
+    /// <p>The name of the virtual service to describe.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the virtual service resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8900,6 +9054,35 @@ pub struct ListVirtualRoutersInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl ListVirtualRoutersInput {
+    /// <p>The name of the service mesh to list virtual routers in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
+    /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
+    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+    /// element. You can see the remaining results of the initial request by sending another
+    /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If you don't use this
+    /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
+    /// a <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVirtualRoutersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualRoutersInput");
@@ -8934,6 +9117,38 @@ pub struct CreateVirtualRouterInput {
     /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl CreateVirtualRouterInput {
+    /// <p>The name to use for the virtual router.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The name of the service mesh to create the virtual router in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The virtual router specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualRouterSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
+    /// and organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+    /// the account that you specify must share the mesh with your account before you can create
+    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualRouterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualRouterInput");
@@ -8958,6 +9173,21 @@ pub struct DeleteVirtualRouterInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DeleteVirtualRouterInput {
+    /// <p>The name of the virtual router to delete.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The name of the service mesh to delete the virtual router in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualRouterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8986,6 +9216,30 @@ pub struct UpdateVirtualRouterInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl UpdateVirtualRouterInput {
+    /// <p>The name of the virtual router to update.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the virtual router resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualRouterSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualRouterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualRouterInput");
@@ -9009,6 +9263,21 @@ pub struct DescribeVirtualRouterInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DescribeVirtualRouterInput {
+    /// <p>The name of the virtual router to describe.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the virtual router resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualRouterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9045,6 +9314,39 @@ pub struct ListRoutesInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl ListRoutesInput {
+    /// <p>The name of the service mesh to list routes in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual router to list routes in.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
+    /// exceeded the value of that parameter. Pagination continues from the end of the previous
+    /// results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
+    /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
+    /// results in a single page along with a <code>nextToken</code> response element. You can see
+    /// the remaining results of the initial request by sending another <code>ListRoutes</code>
+    /// request with the returned <code>nextToken</code> value. This value can be between
+    /// 1 and 100. If you don't use this parameter,
+    /// <code>ListRoutes</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoutesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9084,6 +9386,43 @@ pub struct CreateRouteInput {
     /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl CreateRouteInput {
+    /// <p>The name to use for the route.</p>
+    pub fn route_name(&self) -> std::option::Option<&str> {
+        self.route_name.as_deref()
+    }
+    /// <p>The name of the service mesh to create the route in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual router in which to create the route. If the virtual router is in
+    /// a shared mesh, then you must be the owner of the virtual router resource.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The route specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::RouteSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Optional metadata that you can apply to the route to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you define.
+    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+    /// the account that you specify must share the mesh with your account before you can create
+    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteInput");
@@ -9111,6 +9450,25 @@ pub struct DeleteRouteInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DeleteRouteInput {
+    /// <p>The name of the route to delete.</p>
+    pub fn route_name(&self) -> std::option::Option<&str> {
+        self.route_name.as_deref()
+    }
+    /// <p>The name of the service mesh to delete the route in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual router to delete the route in.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9142,6 +9500,34 @@ pub struct UpdateRouteInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl UpdateRouteInput {
+    /// <p>The name of the route to update.</p>
+    pub fn route_name(&self) -> std::option::Option<&str> {
+        self.route_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the route resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual router that the route is associated with.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The new route specification to apply. This overwrites the existing data.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::RouteSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRouteInput");
@@ -9168,6 +9554,25 @@ pub struct DescribeRouteInput {
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router that the route is associated with.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
+}
+impl DescribeRouteInput {
+    /// <p>The name of the route to describe.</p>
+    pub fn route_name(&self) -> std::option::Option<&str> {
+        self.route_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the route resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The name of the virtual router that the route is associated with.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9204,6 +9609,35 @@ pub struct ListVirtualNodesInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl ListVirtualNodesInput {
+    /// <p>The name of the service mesh to list virtual nodes in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
+    /// exceeded the value of that parameter. Pagination continues from the end of the previous
+    /// results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
+    /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
+    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+    /// element. You can see the remaining results of the initial request by sending another
+    /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If you don't use this
+    /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVirtualNodesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualNodesInput");
@@ -9238,6 +9672,38 @@ pub struct CreateVirtualNodeInput {
     /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl CreateVirtualNodeInput {
+    /// <p>The name to use for the virtual node.</p>
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+        self.virtual_node_name.as_deref()
+    }
+    /// <p>The name of the service mesh to create the virtual node in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The virtual node specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualNodeSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
+    /// and organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+    /// the account that you specify must share the mesh with your account before you can create
+    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualNodeInput");
@@ -9262,6 +9728,21 @@ pub struct DeleteVirtualNodeInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DeleteVirtualNodeInput {
+    /// <p>The name of the virtual node to delete.</p>
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+        self.virtual_node_name.as_deref()
+    }
+    /// <p>The name of the service mesh to delete the virtual node in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9290,6 +9771,30 @@ pub struct UpdateVirtualNodeInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl UpdateVirtualNodeInput {
+    /// <p>The name of the virtual node to update.</p>
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+        self.virtual_node_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the virtual node resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualNodeSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualNodeInput");
@@ -9313,6 +9818,21 @@ pub struct DescribeVirtualNodeInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DescribeVirtualNodeInput {
+    /// <p>The name of the virtual node to describe.</p>
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+        self.virtual_node_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the virtual node resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9348,6 +9868,35 @@ pub struct ListVirtualGatewaysInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl ListVirtualGatewaysInput {
+    /// <p>The name of the service mesh to list virtual gateways in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
+    /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
+    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+    /// element. You can see the remaining results of the initial request by sending another
+    /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If you don't use this
+    /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
+    /// a <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVirtualGatewaysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualGatewaysInput");
@@ -9382,6 +9931,38 @@ pub struct CreateVirtualGatewayInput {
     /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl CreateVirtualGatewayInput {
+    /// <p>The name to use for the virtual gateway.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The name of the service mesh to create the virtual gateway in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The virtual gateway specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualGatewaySpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Optional metadata that you can apply to the virtual gateway to assist with
+    /// categorization and organization. Each tag consists of a key and an optional value, both of
+    /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+    /// the account that you specify must share the mesh with your account before you can create
+    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateVirtualGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVirtualGatewayInput");
@@ -9406,6 +9987,21 @@ pub struct DeleteVirtualGatewayInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DeleteVirtualGatewayInput {
+    /// <p>The name of the virtual gateway to delete.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The name of the service mesh to delete the virtual gateway from.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9435,6 +10031,31 @@ pub struct UpdateVirtualGatewayInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl UpdateVirtualGatewayInput {
+    /// <p>The name of the virtual gateway to update.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the virtual gateway resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The new virtual gateway specification to apply. This overwrites the existing
+    /// data.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualGatewaySpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVirtualGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualGatewayInput");
@@ -9458,6 +10079,21 @@ pub struct DescribeVirtualGatewayInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DescribeVirtualGatewayInput {
+    /// <p>The name of the virtual gateway to describe.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the gateway route resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVirtualGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9494,6 +10130,39 @@ pub struct ListGatewayRoutesInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl ListGatewayRoutesInput {
+    /// <p>The name of the service mesh to list gateway routes in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual gateway to list gateway routes in.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
+    /// exceeded the value of that parameter. Pagination continues from the end of the previous
+    /// results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
+    /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
+    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+    /// element. You can see the remaining results of the initial request by sending another
+    /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If you don't use this
+    /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGatewayRoutesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9534,6 +10203,44 @@ pub struct CreateGatewayRouteInput {
     /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl CreateGatewayRouteInput {
+    /// <p>The name to use for the gateway route.</p>
+    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+        self.gateway_route_name.as_deref()
+    }
+    /// <p>The name of the service mesh to create the gateway route in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
+    /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
+    /// resource.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The gateway route specification to apply.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::GatewayRouteSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
+    /// and organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+    /// the account that you specify must share the mesh with your account before you can create
+    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGatewayRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGatewayRouteInput");
@@ -9561,6 +10268,25 @@ pub struct DeleteGatewayRouteInput {
     /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
+}
+impl DeleteGatewayRouteInput {
+    /// <p>The name of the gateway route to delete.</p>
+    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+        self.gateway_route_name.as_deref()
+    }
+    /// <p>The name of the service mesh to delete the gateway route from.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual gateway to delete the route from.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGatewayRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9592,6 +10318,34 @@ pub struct UpdateGatewayRouteInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl UpdateGatewayRouteInput {
+    /// <p>The name of the gateway route to update.</p>
+    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+        self.gateway_route_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the gateway route resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::GatewayRouteSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGatewayRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayRouteInput");
@@ -9619,6 +10373,25 @@ pub struct DescribeGatewayRouteInput {
     /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
+impl DescribeGatewayRouteInput {
+    /// <p>The name of the gateway route to describe.</p>
+    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+        self.gateway_route_name.as_deref()
+    }
+    /// <p>The name of the service mesh that the gateway route resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGatewayRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGatewayRouteInput");
@@ -9639,6 +10412,16 @@ pub struct UntagResourceInput {
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -9658,6 +10441,18 @@ pub struct TagResourceInput {
     /// Tag keys can have a maximum character length of 128 characters, and tag values can have
     /// a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
+    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
+    /// a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9688,6 +10483,30 @@ pub struct ListTagsForResourceInput {
     /// this parameter, <code>ListTagsForResource</code> returns up to 100
     /// results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
+    /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
+    /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
+    /// response element. You can see the remaining results of the initial request by sending
+    /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 100. If you don't use
+    /// this parameter, <code>ListTagsForResource</code> returns up to 100
+    /// results and a <code>nextToken</code> value if applicable.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -25,6 +25,37 @@ pub struct Entitlement {
     /// to renew their contract will still have entitlements with an expiration date.</p>
     pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Entitlement {
+    /// <p>The product code for which the given entitlement applies. Product codes are provided by
+    /// AWS Marketplace when the product listing is created.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+    /// <p>The dimension for which the given entitlement applies. Dimensions represent categories of
+    /// capacity in a product and are specified when the product is listed in AWS
+    /// Marketplace.</p>
+    pub fn dimension(&self) -> std::option::Option<&str> {
+        self.dimension.as_deref()
+    }
+    /// <p>The customer identifier is a handle to each unique customer in an application. Customer
+    /// identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering
+    /// Service.</p>
+    pub fn customer_identifier(&self) -> std::option::Option<&str> {
+        self.customer_identifier.as_deref()
+    }
+    /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to
+    /// for the product.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::EntitlementValue> {
+        self.value.as_ref()
+    }
+    /// <p>The expiration date represents the minimum date through which this entitlement is
+    /// expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date
+    /// is the date at which the customer will renew or cancel their contract. Customers who are opting
+    /// to renew their contract will still have entitlements with an expiration date.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+}
 impl std::fmt::Debug for Entitlement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Entitlement");
@@ -162,6 +193,15 @@ pub enum EntitlementValue {
     /// <p>The StringValue field will be populated with a string value when the entitlement is a
     /// string type. Otherwise, the field will not be set.</p>
     StringValue(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl EntitlementValue {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::model::EntitlementValue::BooleanValue), extracting the inner [`bool`](bool).
@@ -215,6 +255,10 @@ impl EntitlementValue {
     /// Returns true if this is a [`StringValue`](crate::model::EntitlementValue::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 

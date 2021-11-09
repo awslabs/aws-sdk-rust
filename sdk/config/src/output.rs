@@ -98,6 +98,16 @@ pub struct StartRemediationExecutionOutput {
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
     pub failed_items: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
+impl StartRemediationExecutionOutput {
+    /// <p>Returns a failure message. For example, the resource is already compliant.</p>
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
+    /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
+    pub fn failed_items(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
+        self.failed_items.as_deref()
+    }
+}
 impl std::fmt::Debug for StartRemediationExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartRemediationExecutionOutput");
@@ -235,6 +245,20 @@ pub struct SelectResourceConfigOutput {
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SelectResourceConfigOutput {
+    /// <p>Returns the results for the SQL query.</p>
+    pub fn results(&self) -> std::option::Option<&[std::string::String]> {
+        self.results.as_deref()
+    }
+    /// <p>Returns the <code>QueryInfo</code> object.</p>
+    pub fn query_info(&self) -> std::option::Option<&crate::model::QueryInfo> {
+        self.query_info.as_ref()
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SelectResourceConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SelectResourceConfigOutput");
@@ -325,6 +349,20 @@ pub struct SelectAggregateResourceConfigOutput {
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SelectAggregateResourceConfigOutput {
+    /// <p>Returns the results for the SQL query.</p>
+    pub fn results(&self) -> std::option::Option<&[std::string::String]> {
+        self.results.as_deref()
+    }
+    /// <p>Details about the query.</p>
+    pub fn query_info(&self) -> std::option::Option<&crate::model::QueryInfo> {
+        self.query_info.as_ref()
+    }
+    /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SelectAggregateResourceConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SelectAggregateResourceConfigOutput");
@@ -412,6 +450,13 @@ pub struct PutStoredQueryOutput {
     /// For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub query_arn: std::option::Option<std::string::String>,
 }
+impl PutStoredQueryOutput {
+    /// <p>Amazon Resource Name (ARN) of the query.
+    /// For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    pub fn query_arn(&self) -> std::option::Option<&str> {
+        self.query_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutStoredQueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutStoredQueryOutput");
@@ -461,6 +506,14 @@ impl PutStoredQueryOutput {
 pub struct PutRetentionConfigurationOutput {
     /// <p>Returns a retention configuration object.</p>
     pub retention_configuration: std::option::Option<crate::model::RetentionConfiguration>,
+}
+impl PutRetentionConfigurationOutput {
+    /// <p>Returns a retention configuration object.</p>
+    pub fn retention_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RetentionConfiguration> {
+        self.retention_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutRetentionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -548,6 +601,14 @@ pub struct PutRemediationExceptionsOutput {
     pub failed_batches:
         std::option::Option<std::vec::Vec<crate::model::FailedRemediationExceptionBatch>>,
 }
+impl PutRemediationExceptionsOutput {
+    /// <p>Returns a list of failed remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
+    pub fn failed_batches(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedRemediationExceptionBatch]> {
+        self.failed_batches.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRemediationExceptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRemediationExceptionsOutput");
@@ -611,6 +672,12 @@ pub struct PutRemediationConfigurationsOutput {
     /// <p>Returns a list of failed remediation batch objects.</p>
     pub failed_batches: std::option::Option<std::vec::Vec<crate::model::FailedRemediationBatch>>,
 }
+impl PutRemediationConfigurationsOutput {
+    /// <p>Returns a list of failed remediation batch objects.</p>
+    pub fn failed_batches(&self) -> std::option::Option<&[crate::model::FailedRemediationBatch]> {
+        self.failed_batches.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRemediationConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRemediationConfigurationsOutput");
@@ -672,6 +739,12 @@ pub struct PutOrganizationConformancePackOutput {
     /// <p>ARN of the organization conformance pack.</p>
     pub organization_conformance_pack_arn: std::option::Option<std::string::String>,
 }
+impl PutOrganizationConformancePackOutput {
+    /// <p>ARN of the organization conformance pack.</p>
+    pub fn organization_conformance_pack_arn(&self) -> std::option::Option<&str> {
+        self.organization_conformance_pack_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutOrganizationConformancePackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutOrganizationConformancePackOutput");
@@ -728,6 +801,12 @@ impl PutOrganizationConformancePackOutput {
 pub struct PutOrganizationConfigRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
     pub organization_config_rule_arn: std::option::Option<std::string::String>,
+}
+impl PutOrganizationConfigRuleOutput {
+    /// <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+    pub fn organization_config_rule_arn(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutOrganizationConfigRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -816,6 +895,13 @@ pub struct PutEvaluationsOutput {
     /// <p>Requests that failed because of a client or server
     /// error.</p>
     pub failed_evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
+}
+impl PutEvaluationsOutput {
+    /// <p>Requests that failed because of a client or server
+    /// error.</p>
+    pub fn failed_evaluations(&self) -> std::option::Option<&[crate::model::Evaluation]> {
+        self.failed_evaluations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutEvaluationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -906,6 +992,12 @@ pub struct PutConformancePackOutput {
     /// <p>ARN of the conformance pack.</p>
     pub conformance_pack_arn: std::option::Option<std::string::String>,
 }
+impl PutConformancePackOutput {
+    /// <p>ARN of the conformance pack.</p>
+    pub fn conformance_pack_arn(&self) -> std::option::Option<&str> {
+        self.conformance_pack_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutConformancePackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConformancePackOutput");
@@ -986,6 +1078,14 @@ impl PutConfigurationRecorderOutput {
 pub struct PutConfigurationAggregatorOutput {
     /// <p>Returns a ConfigurationAggregator object.</p>
     pub configuration_aggregator: std::option::Option<crate::model::ConfigurationAggregator>,
+}
+impl PutConfigurationAggregatorOutput {
+    /// <p>Returns a ConfigurationAggregator object.</p>
+    pub fn configuration_aggregator(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationAggregator> {
+        self.configuration_aggregator.as_ref()
+    }
 }
 impl std::fmt::Debug for PutConfigurationAggregatorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1074,6 +1174,16 @@ pub struct PutAggregationAuthorizationOutput {
     /// </p>
     pub aggregation_authorization: std::option::Option<crate::model::AggregationAuthorization>,
 }
+impl PutAggregationAuthorizationOutput {
+    /// <p>Returns an AggregationAuthorization object.
+    ///
+    /// </p>
+    pub fn aggregation_authorization(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregationAuthorization> {
+        self.aggregation_authorization.as_ref()
+    }
+}
 impl std::fmt::Debug for PutAggregationAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAggregationAuthorizationOutput");
@@ -1134,6 +1244,16 @@ pub struct ListTagsForResourceOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1209,6 +1329,20 @@ pub struct ListStoredQueriesOutput {
     /// To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter.
     /// If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStoredQueriesOutput {
+    /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
+    pub fn stored_query_metadata(
+        &self,
+    ) -> std::option::Option<&[crate::model::StoredQueryMetadata]> {
+        self.stored_query_metadata.as_deref()
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token.
+    /// To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter.
+    /// If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStoredQueriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1292,6 +1426,18 @@ pub struct ListDiscoveredResourcesOutput {
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDiscoveredResourcesOutput {
+    /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
+    /// custom resource name.</p>
+    pub fn resource_identifiers(&self) -> std::option::Option<&[crate::model::ResourceIdentifier]> {
+        self.resource_identifiers.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDiscoveredResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDiscoveredResourcesOutput");
@@ -1373,6 +1519,18 @@ pub struct ListAggregateDiscoveredResourcesOutput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAggregateDiscoveredResourcesOutput {
+    /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
+    pub fn resource_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateResourceIdentifier]> {
+        self.resource_identifiers.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAggregateDiscoveredResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAggregateDiscoveredResourcesOutput");
@@ -1447,6 +1605,12 @@ pub struct GetStoredQueryOutput {
     /// <p>Returns a <code>StoredQuery</code> object.</p>
     pub stored_query: std::option::Option<crate::model::StoredQuery>,
 }
+impl GetStoredQueryOutput {
+    /// <p>Returns a <code>StoredQuery</code> object.</p>
+    pub fn stored_query(&self) -> std::option::Option<&crate::model::StoredQuery> {
+        self.stored_query.as_ref()
+    }
+}
 impl std::fmt::Debug for GetStoredQueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStoredQueryOutput");
@@ -1502,6 +1666,18 @@ pub struct GetResourceConfigHistoryOutput {
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetResourceConfigHistoryOutput {
+    /// <p>A list that contains the configuration history of one or more
+    /// resources.</p>
+    pub fn configuration_items(&self) -> std::option::Option<&[crate::model::ConfigurationItem]> {
+        self.configuration_items.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceConfigHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1583,6 +1759,19 @@ pub struct GetOrganizationConformancePackDetailedStatusOutput {
         std::option::Option<std::vec::Vec<crate::model::OrganizationConformancePackDetailedStatus>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetOrganizationConformancePackDetailedStatusOutput {
+    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    pub fn organization_conformance_pack_detailed_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConformancePackDetailedStatus]> {
+        self.organization_conformance_pack_detailed_statuses
+            .as_deref()
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOrganizationConformancePackDetailedStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1670,6 +1859,18 @@ pub struct GetOrganizationConfigRuleDetailedStatusOutput {
         std::option::Option<std::vec::Vec<crate::model::MemberAccountStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetOrganizationConfigRuleDetailedStatusOutput {
+    /// <p>A list of <code>MemberAccountStatus</code> objects.</p>
+    pub fn organization_config_rule_detailed_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::MemberAccountStatus]> {
+        self.organization_config_rule_detailed_status.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOrganizationConfigRuleDetailedStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1784,6 +1985,49 @@ pub struct GetDiscoveredResourceCountsOutput {
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetDiscoveredResourceCountsOutput {
+    /// <p>The total number of resources that Config is recording in
+    /// the region for your account. If you specify resource types in the
+    /// request, Config returns only the total number of resources for
+    /// those resource types.</p>
+    ///
+    ///
+    /// <p class="title">
+    /// <b>Example</b>
+    /// </p>
+    /// <ol>
+    /// <li>
+    /// <p>Config is recording three resource types in the US
+    /// East (Ohio) Region for your account: 25 EC2 instances, 20
+    /// IAM users, and 15 S3 buckets, for a total of 60
+    /// resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>You make a call to the
+    /// <code>GetDiscoveredResourceCounts</code> action and
+    /// specify the resource type,
+    /// <code>"AWS::EC2::Instances"</code>, in the
+    /// request.</p>
+    /// </li>
+    /// <li>
+    /// <p>Config returns 25 for
+    /// <code>totalDiscoveredResources</code>.</p>
+    /// </li>
+    /// </ol>
+    pub fn total_discovered_resources(&self) -> i64 {
+        self.total_discovered_resources
+    }
+    /// <p>The list of <code>ResourceCount</code> objects. Each object is
+    /// listed in descending order by the number of resources.</p>
+    pub fn resource_counts(&self) -> std::option::Option<&[crate::model::ResourceCount]> {
+        self.resource_counts.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDiscoveredResourceCountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1932,6 +2176,18 @@ pub struct GetConformancePackComplianceSummaryOutput {
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetConformancePackComplianceSummaryOutput {
+    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    pub fn conformance_pack_compliance_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackComplianceSummary]> {
+        self.conformance_pack_compliance_summary_list.as_deref()
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConformancePackComplianceSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConformancePackComplianceSummaryOutput");
@@ -2018,6 +2274,22 @@ pub struct GetConformancePackComplianceDetailsOutput {
         std::option::Option<std::vec::Vec<crate::model::ConformancePackEvaluationResult>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetConformancePackComplianceDetailsOutput {
+    /// <p>Name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>Returns a list of <code>ConformancePackEvaluationResult</code> objects.</p>
+    pub fn conformance_pack_rule_evaluation_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackEvaluationResult]> {
+        self.conformance_pack_rule_evaluation_results.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConformancePackComplianceDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2121,6 +2393,17 @@ pub struct GetComplianceSummaryByResourceTypeOutput {
     pub compliance_summaries_by_resource_type:
         std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryByResourceType>>,
 }
+impl GetComplianceSummaryByResourceTypeOutput {
+    /// <p>The number of resources that are compliant and the number that
+    /// are noncompliant. If one or more resource types were provided with
+    /// the request, the numbers are returned for each resource type. The
+    /// maximum number returned is 100.</p>
+    pub fn compliance_summaries_by_resource_type(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComplianceSummaryByResourceType]> {
+        self.compliance_summaries_by_resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComplianceSummaryByResourceTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComplianceSummaryByResourceTypeOutput");
@@ -2197,6 +2480,14 @@ pub struct GetComplianceSummaryByConfigRuleOutput {
     /// each.</p>
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
 }
+impl GetComplianceSummaryByConfigRuleOutput {
+    /// <p>The number of Config rules that are compliant and the
+    /// number that are noncompliant, up to a maximum of 25 for
+    /// each.</p>
+    pub fn compliance_summary(&self) -> std::option::Option<&crate::model::ComplianceSummary> {
+        self.compliance_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for GetComplianceSummaryByConfigRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComplianceSummaryByConfigRuleOutput");
@@ -2254,6 +2545,17 @@ pub struct GetComplianceDetailsByResourceOutput {
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetComplianceDetailsByResourceOutput {
+    /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
+    pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
+        self.evaluation_results.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetComplianceDetailsByResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2335,6 +2637,18 @@ pub struct GetComplianceDetailsByConfigRuleOutput {
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetComplianceDetailsByConfigRuleOutput {
+    /// <p>Indicates whether the Amazon Web Services resource complies with the specified
+    /// Config rule.</p>
+    pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
+        self.evaluation_results.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComplianceDetailsByConfigRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComplianceDetailsByConfigRuleOutput");
@@ -2413,6 +2727,12 @@ pub struct GetAggregateResourceConfigOutput {
     /// <p>Returns a <code>ConfigurationItem</code> object.</p>
     pub configuration_item: std::option::Option<crate::model::ConfigurationItem>,
 }
+impl GetAggregateResourceConfigOutput {
+    /// <p>Returns a <code>ConfigurationItem</code> object.</p>
+    pub fn configuration_item(&self) -> std::option::Option<&crate::model::ConfigurationItem> {
+        self.configuration_item.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAggregateResourceConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAggregateResourceConfigOutput");
@@ -2470,6 +2790,26 @@ pub struct GetAggregateDiscoveredResourceCountsOutput {
         std::option::Option<std::vec::Vec<crate::model::GroupedResourceCount>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetAggregateDiscoveredResourceCountsOutput {
+    /// <p>The total number of resources that are present in an aggregator with the filters that you provide.</p>
+    pub fn total_discovered_resources(&self) -> i64 {
+        self.total_discovered_resources
+    }
+    /// <p>The key passed into the request object. If <code>GroupByKey</code> is not provided, the result will be empty.</p>
+    pub fn group_by_key(&self) -> std::option::Option<&str> {
+        self.group_by_key.as_deref()
+    }
+    /// <p>Returns a list of GroupedResourceCount objects.</p>
+    pub fn grouped_resource_counts(
+        &self,
+    ) -> std::option::Option<&[crate::model::GroupedResourceCount]> {
+        self.grouped_resource_counts.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAggregateDiscoveredResourceCountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2579,6 +2919,23 @@ pub struct GetAggregateConformancePackComplianceSummaryOutput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetAggregateConformancePackComplianceSummaryOutput {
+    /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
+    pub fn aggregate_conformance_pack_compliance_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateConformancePackComplianceSummary]> {
+        self.aggregate_conformance_pack_compliance_summaries
+            .as_deref()
+    }
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    pub fn group_by_key(&self) -> std::option::Option<&str> {
+        self.group_by_key.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAggregateConformancePackComplianceSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAggregateConformancePackComplianceSummaryOutput");
@@ -2682,6 +3039,23 @@ pub struct GetAggregateConfigRuleComplianceSummaryOutput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetAggregateConfigRuleComplianceSummaryOutput {
+    /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    pub fn group_by_key(&self) -> std::option::Option<&str> {
+        self.group_by_key.as_deref()
+    }
+    /// <p>Returns a list of AggregateComplianceCounts object.</p>
+    pub fn aggregate_compliance_counts(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateComplianceCount]> {
+        self.aggregate_compliance_counts.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAggregateConfigRuleComplianceSummaryOutput");
@@ -2779,6 +3153,19 @@ pub struct GetAggregateComplianceDetailsByConfigRuleOutput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetAggregateComplianceDetailsByConfigRuleOutput {
+    /// <p>Returns an AggregateEvaluationResults object.</p>
+    pub fn aggregate_evaluation_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateEvaluationResult]> {
+        self.aggregate_evaluation_results.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAggregateComplianceDetailsByConfigRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAggregateComplianceDetailsByConfigRuleOutput");
@@ -2864,6 +3251,20 @@ pub struct DescribeRetentionConfigurationsOutput {
     /// response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeRetentionConfigurationsOutput {
+    /// <p>Returns a retention configuration object.</p>
+    pub fn retention_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RetentionConfiguration]> {
+        self.retention_configurations.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page
+    /// that you use to get the next page of results in a paginated
+    /// response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRetentionConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRetentionConfigurationsOutput");
@@ -2945,6 +3346,18 @@ pub struct DescribeRemediationExecutionStatusOutput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeRemediationExecutionStatusOutput {
+    /// <p>Returns a list of remediation execution statuses objects.</p>
+    pub fn remediation_execution_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationExecutionStatus]> {
+        self.remediation_execution_statuses.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRemediationExecutionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRemediationExecutionStatusOutput");
@@ -3025,6 +3438,18 @@ pub struct DescribeRemediationExceptionsOutput {
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeRemediationExceptionsOutput {
+    /// <p>Returns a list of remediation exception objects.</p>
+    pub fn remediation_exceptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationException]> {
+        self.remediation_exceptions.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRemediationExceptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRemediationExceptionsOutput");
@@ -3100,6 +3525,14 @@ pub struct DescribeRemediationConfigurationsOutput {
     pub remediation_configurations:
         std::option::Option<std::vec::Vec<crate::model::RemediationConfiguration>>,
 }
+impl DescribeRemediationConfigurationsOutput {
+    /// <p>Returns a remediation configuration object.</p>
+    pub fn remediation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationConfiguration]> {
+        self.remediation_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRemediationConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRemediationConfigurationsOutput");
@@ -3167,6 +3600,19 @@ pub struct DescribePendingAggregationRequestsOutput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePendingAggregationRequestsOutput {
+    /// <p>Returns a PendingAggregationRequests object.</p>
+    pub fn pending_aggregation_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::PendingAggregationRequest]> {
+        self.pending_aggregation_requests.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePendingAggregationRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3249,6 +3695,18 @@ pub struct DescribeOrganizationConformancePackStatusesOutput {
         std::option::Option<std::vec::Vec<crate::model::OrganizationConformancePackStatus>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationConformancePackStatusesOutput {
+    /// <p>A list of <code>OrganizationConformancePackStatus</code> objects. </p>
+    pub fn organization_conformance_pack_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConformancePackStatus]> {
+        self.organization_conformance_pack_statuses.as_deref()
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationConformancePackStatusesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3336,6 +3794,19 @@ pub struct DescribeOrganizationConformancePacksOutput {
     /// paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeOrganizationConformancePacksOutput {
+    /// <p>Returns a list of OrganizationConformancePacks objects.</p>
+    pub fn organization_conformance_packs(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConformancePack]> {
+        self.organization_conformance_packs.as_deref()
+    }
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
+    /// paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrganizationConformancePacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrganizationConformancePacksOutput");
@@ -3418,6 +3889,18 @@ pub struct DescribeOrganizationConfigRuleStatusesOutput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeOrganizationConfigRuleStatusesOutput {
+    /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
+    pub fn organization_config_rule_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConfigRuleStatus]> {
+        self.organization_config_rule_statuses.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrganizationConfigRuleStatusesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrganizationConfigRuleStatusesOutput");
@@ -3498,6 +3981,18 @@ pub struct DescribeOrganizationConfigRulesOutput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeOrganizationConfigRulesOutput {
+    /// <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
+    pub fn organization_config_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConfigRule]> {
+        self.organization_config_rules.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrganizationConfigRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrganizationConfigRulesOutput");
@@ -3574,6 +4069,15 @@ pub struct DescribeDeliveryChannelStatusOutput {
     pub delivery_channels_status:
         std::option::Option<std::vec::Vec<crate::model::DeliveryChannelStatus>>,
 }
+impl DescribeDeliveryChannelStatusOutput {
+    /// <p>A list that contains the status of a specified delivery
+    /// channel.</p>
+    pub fn delivery_channels_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeliveryChannelStatus]> {
+        self.delivery_channels_status.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeliveryChannelStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeliveryChannelStatusOutput");
@@ -3638,6 +4142,13 @@ pub struct DescribeDeliveryChannelsOutput {
     /// <p>A list that contains the descriptions of the specified delivery
     /// channel.</p>
     pub delivery_channels: std::option::Option<std::vec::Vec<crate::model::DeliveryChannel>>,
+}
+impl DescribeDeliveryChannelsOutput {
+    /// <p>A list that contains the descriptions of the specified delivery
+    /// channel.</p>
+    pub fn delivery_channels(&self) -> std::option::Option<&[crate::model::DeliveryChannel]> {
+        self.delivery_channels.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeliveryChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3704,6 +4215,18 @@ pub struct DescribeConformancePackStatusOutput {
         std::option::Option<std::vec::Vec<crate::model::ConformancePackStatusDetail>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConformancePackStatusOutput {
+    /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
+    pub fn conformance_pack_status_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackStatusDetail]> {
+        self.conformance_pack_status_details.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConformancePackStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3785,6 +4308,18 @@ pub struct DescribeConformancePacksOutput {
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConformancePacksOutput {
+    /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
+    pub fn conformance_pack_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackDetail]> {
+        self.conformance_pack_details.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConformancePacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConformancePacksOutput");
@@ -3863,6 +4398,22 @@ pub struct DescribeConformancePackComplianceOutput {
         std::option::Option<std::vec::Vec<crate::model::ConformancePackRuleCompliance>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConformancePackComplianceOutput {
+    /// <p>Name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
+    pub fn conformance_pack_rule_compliance_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackRuleCompliance]> {
+        self.conformance_pack_rule_compliance_list.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConformancePackComplianceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3962,6 +4513,15 @@ pub struct DescribeConfigurationRecorderStatusOutput {
     pub configuration_recorders_status:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorderStatus>>,
 }
+impl DescribeConfigurationRecorderStatusOutput {
+    /// <p>A list that contains status of the specified
+    /// recorders.</p>
+    pub fn configuration_recorders_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationRecorderStatus]> {
+        self.configuration_recorders_status.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationRecorderStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationRecorderStatusOutput");
@@ -4030,6 +4590,15 @@ pub struct DescribeConfigurationRecordersOutput {
     pub configuration_recorders:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorder>>,
 }
+impl DescribeConfigurationRecordersOutput {
+    /// <p>A list that contains the descriptions of the specified
+    /// configuration recorders.</p>
+    pub fn configuration_recorders(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationRecorder]> {
+        self.configuration_recorders.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationRecordersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationRecordersOutput");
@@ -4097,6 +4666,20 @@ pub struct DescribeConfigurationAggregatorSourcesStatusOutput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConfigurationAggregatorSourcesStatusOutput {
+    /// <p>Returns an AggregatedSourceStatus object.
+    /// </p>
+    pub fn aggregated_source_status_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregatedSourceStatus]> {
+        self.aggregated_source_status_list.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationAggregatorSourcesStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4184,6 +4767,19 @@ pub struct DescribeConfigurationAggregatorsOutput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConfigurationAggregatorsOutput {
+    /// <p>Returns a ConfigurationAggregators object.</p>
+    pub fn configuration_aggregators(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationAggregator]> {
+        self.configuration_aggregators.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationAggregatorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationAggregatorsOutput");
@@ -4263,6 +4859,17 @@ pub struct DescribeConfigRulesOutput {
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConfigRulesOutput {
+    /// <p>The details about your Config rules.</p>
+    pub fn config_rules(&self) -> std::option::Option<&[crate::model::ConfigRule]> {
+        self.config_rules.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigRulesOutput");
@@ -4338,6 +4945,19 @@ pub struct DescribeConfigRuleEvaluationStatusOutput {
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConfigRuleEvaluationStatusOutput {
+    /// <p>Status information about your Config managed rules.</p>
+    pub fn config_rules_evaluation_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigRuleEvaluationStatus]> {
+        self.config_rules_evaluation_status.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4423,6 +5043,20 @@ pub struct DescribeComplianceByResourceOutput {
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeComplianceByResourceOutput {
+    /// <p>Indicates whether the specified Amazon Web Services resource complies with all
+    /// of the Config rules that evaluate it.</p>
+    pub fn compliance_by_resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComplianceByResource]> {
+        self.compliance_by_resources.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComplianceByResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComplianceByResourceOutput");
@@ -4505,6 +5139,20 @@ pub struct DescribeComplianceByConfigRuleOutput {
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeComplianceByConfigRuleOutput {
+    /// <p>Indicates whether each of the specified Config rules is
+    /// compliant.</p>
+    pub fn compliance_by_config_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComplianceByConfigRule]> {
+        self.compliance_by_config_rules.as_deref()
+    }
+    /// <p>The string that you use in a subsequent request to get the next
+    /// page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeComplianceByConfigRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4592,6 +5240,20 @@ pub struct DescribeAggregationAuthorizationsOutput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAggregationAuthorizationsOutput {
+    /// <p>Returns a list of authorizations granted to various aggregator
+    /// accounts and regions.</p>
+    pub fn aggregation_authorizations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregationAuthorization]> {
+        self.aggregation_authorizations.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAggregationAuthorizationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAggregationAuthorizationsOutput");
@@ -4675,6 +5337,18 @@ pub struct DescribeAggregateComplianceByConformancePacksOutput {
         std::option::Option<std::vec::Vec<crate::model::AggregateComplianceByConformancePack>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAggregateComplianceByConformancePacksOutput {
+    /// <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
+    pub fn aggregate_compliance_by_conformance_packs(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateComplianceByConformancePack]> {
+        self.aggregate_compliance_by_conformance_packs.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAggregateComplianceByConformancePacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4764,6 +5438,20 @@ pub struct DescribeAggregateComplianceByConfigRulesOutput {
     /// to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAggregateComplianceByConfigRulesOutput {
+    /// <p>Returns a list of AggregateComplianceByConfigRule
+    /// object.</p>
+    pub fn aggregate_compliance_by_config_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateComplianceByConfigRule]> {
+        self.aggregate_compliance_by_config_rules.as_deref()
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use
+    /// to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAggregateComplianceByConfigRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAggregateComplianceByConfigRulesOutput");
@@ -4850,6 +5538,12 @@ impl DescribeAggregateComplianceByConfigRulesOutput {
 pub struct DeliverConfigSnapshotOutput {
     /// <p>The ID of the snapshot that is being created.</p>
     pub config_snapshot_id: std::option::Option<std::string::String>,
+}
+impl DeliverConfigSnapshotOutput {
+    /// <p>The ID of the snapshot that is being created.</p>
+    pub fn config_snapshot_id(&self) -> std::option::Option<&str> {
+        self.config_snapshot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeliverConfigSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4992,6 +5686,14 @@ pub struct DeleteRemediationExceptionsOutput {
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
     pub failed_batches:
         std::option::Option<std::vec::Vec<crate::model::FailedDeleteRemediationExceptionsBatch>>,
+}
+impl DeleteRemediationExceptionsOutput {
+    /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
+    pub fn failed_batches(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedDeleteRemediationExceptionsBatch]> {
+        self.failed_batches.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRemediationExceptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5398,6 +6100,25 @@ pub struct BatchGetResourceConfigOutput {
     /// empty unprocessedResourceKeys list. </p>
     pub unprocessed_resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
+impl BatchGetResourceConfigOutput {
+    /// <p>A list that contains the current configuration of one or more
+    /// resources.</p>
+    pub fn base_configuration_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::BaseConfigurationItem]> {
+        self.base_configuration_items.as_deref()
+    }
+    /// <p>A list of resource keys that were not processed with the
+    /// current response. The unprocessesResourceKeys value is in the same
+    /// form as ResourceKeys, so the value can be directly provided to a
+    /// subsequent BatchGetResourceConfig operation.
+    ///
+    /// If there are no unprocessed resource keys, the response contains an
+    /// empty unprocessedResourceKeys list. </p>
+    pub fn unprocessed_resource_keys(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
+        self.unprocessed_resource_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetResourceConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetResourceConfigOutput");
@@ -5502,6 +6223,20 @@ pub struct BatchGetAggregateResourceConfigOutput {
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
     pub unprocessed_resource_identifiers:
         std::option::Option<std::vec::Vec<crate::model::AggregateResourceIdentifier>>,
+}
+impl BatchGetAggregateResourceConfigOutput {
+    /// <p>A list that contains the current configuration of one or more resources.</p>
+    pub fn base_configuration_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::BaseConfigurationItem]> {
+        self.base_configuration_items.as_deref()
+    }
+    /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
+    pub fn unprocessed_resource_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregateResourceIdentifier]> {
+        self.unprocessed_resource_identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetAggregateResourceConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

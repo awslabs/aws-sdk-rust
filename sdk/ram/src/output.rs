@@ -8,6 +8,16 @@ pub struct UpdateResourceShareOutput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateResourceShareOutput {
+    /// <p>Information about the resource share.</p>
+    pub fn resource_share(&self) -> std::option::Option<&crate::model::ResourceShare> {
+        self.resource_share.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceShareOutput");
@@ -134,6 +144,18 @@ pub struct RejectResourceShareInvitationOutput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl RejectResourceShareInvitationOutput {
+    /// <p>Information about the invitation.</p>
+    pub fn resource_share_invitation(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceShareInvitation> {
+        self.resource_share_invitation.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectResourceShareInvitationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectResourceShareInvitationOutput");
@@ -202,6 +224,12 @@ pub struct PromoteResourceShareCreatedFromPolicyOutput {
     /// <p>Indicates whether the request succeeded.</p>
     pub return_value: std::option::Option<bool>,
 }
+impl PromoteResourceShareCreatedFromPolicyOutput {
+    /// <p>Indicates whether the request succeeded.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
 impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PromoteResourceShareCreatedFromPolicyOutput");
@@ -252,6 +280,18 @@ pub struct ListResourceTypesOutput {
         std::option::Option<std::vec::Vec<crate::model::ServiceNameAndResourceType>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceTypesOutput {
+    /// <p>The shareable resource types supported by RAM.</p>
+    pub fn resource_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceNameAndResourceType]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -330,6 +370,18 @@ pub struct ListResourceSharePermissionsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListResourceSharePermissionsOutput {
+    /// <p>The permissions associated with the resource share.</p>
+    pub fn permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceSharePermissionSummary]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourceSharePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceSharePermissionsOutput");
@@ -406,6 +458,16 @@ pub struct ListResourcesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListResourcesOutput {
+    /// <p>Information about the resources.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesOutput");
@@ -477,6 +539,16 @@ pub struct ListPrincipalsOutput {
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPrincipalsOutput {
+    /// <p>The principals.</p>
+    pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
+        self.principals.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPrincipalsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -550,6 +622,18 @@ pub struct ListPermissionsOutput {
         std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPermissionsOutput {
+    /// <p>Information about the permissions.</p>
+    pub fn permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceSharePermissionSummary]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -627,6 +711,16 @@ pub struct ListPendingInvitationResourcesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPendingInvitationResourcesOutput {
+    /// <p>Information about the resources included the resource share.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPendingInvitationResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPendingInvitationResourcesOutput");
@@ -698,6 +792,16 @@ pub struct GetResourceSharesOutput {
     pub resource_shares: std::option::Option<std::vec::Vec<crate::model::ResourceShare>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetResourceSharesOutput {
+    /// <p>Information about the resource shares.</p>
+    pub fn resource_shares(&self) -> std::option::Option<&[crate::model::ResourceShare]> {
+        self.resource_shares.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -771,6 +875,18 @@ pub struct GetResourceShareInvitationsOutput {
         std::option::Option<std::vec::Vec<crate::model::ResourceShareInvitation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetResourceShareInvitationsOutput {
+    /// <p>Information about the invitations.</p>
+    pub fn resource_share_invitations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceShareInvitation]> {
+        self.resource_share_invitations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceShareInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -852,6 +968,18 @@ pub struct GetResourceShareAssociationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourceShareAssociationsOutput {
+    /// <p>Information about the associations.</p>
+    pub fn resource_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
+        self.resource_share_associations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceShareAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceShareAssociationsOutput");
@@ -931,6 +1059,16 @@ pub struct GetResourcePoliciesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourcePoliciesOutput {
+    /// <p>A key policy document, in JSON format.</p>
+    pub fn policies(&self) -> std::option::Option<&[std::string::String]> {
+        self.policies.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePoliciesOutput");
@@ -1001,6 +1139,12 @@ pub struct GetPermissionOutput {
     /// <p>Information about the permission.</p>
     pub permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
 }
+impl GetPermissionOutput {
+    /// <p>Information about the permission.</p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::ResourceSharePermissionDetail> {
+        self.permission.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPermissionOutput");
@@ -1052,6 +1196,12 @@ pub struct EnableSharingWithAwsOrganizationOutput {
     /// <p>Indicates whether the request succeeded.</p>
     pub return_value: std::option::Option<bool>,
 }
+impl EnableSharingWithAwsOrganizationOutput {
+    /// <p>Indicates whether the request succeeded.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
 impl std::fmt::Debug for EnableSharingWithAwsOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableSharingWithAwsOrganizationOutput");
@@ -1101,6 +1251,16 @@ pub struct DisassociateResourceSharePermissionOutput {
     pub return_value: std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DisassociateResourceSharePermissionOutput {
+    /// <p>Indicates whether the request succeeded.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateResourceSharePermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1165,6 +1325,18 @@ pub struct DisassociateResourceShareOutput {
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DisassociateResourceShareOutput {
+    /// <p>Information about the associations.</p>
+    pub fn resource_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
+        self.resource_share_associations.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateResourceShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1245,6 +1417,16 @@ pub struct DeleteResourceShareOutput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DeleteResourceShareOutput {
+    /// <p>Indicates whether the request succeeded.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourceShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourceShareOutput");
@@ -1307,6 +1489,16 @@ pub struct CreateResourceShareOutput {
     pub resource_share: std::option::Option<crate::model::ResourceShare>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateResourceShareOutput {
+    /// <p>Information about the resource share.</p>
+    pub fn resource_share(&self) -> std::option::Option<&crate::model::ResourceShare> {
+        self.resource_share.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateResourceShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1374,6 +1566,16 @@ pub struct AssociateResourceSharePermissionOutput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl AssociateResourceSharePermissionOutput {
+    /// <p>Indicates whether the request succeeded.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateResourceSharePermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateResourceSharePermissionOutput");
@@ -1437,6 +1639,18 @@ pub struct AssociateResourceShareOutput {
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl AssociateResourceShareOutput {
+    /// <p>Information about the associations.</p>
+    pub fn resource_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
+        self.resource_share_associations.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateResourceShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1516,6 +1730,18 @@ pub struct AcceptResourceShareInvitationOutput {
     pub resource_share_invitation: std::option::Option<crate::model::ResourceShareInvitation>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl AcceptResourceShareInvitationOutput {
+    /// <p>Information about the invitation.</p>
+    pub fn resource_share_invitation(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceShareInvitation> {
+        self.resource_share_invitation.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptResourceShareInvitationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

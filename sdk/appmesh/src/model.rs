@@ -20,6 +20,38 @@ pub struct MeshRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl MeshRef {
+    /// <p>The name of the service mesh.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) of the service mesh.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for MeshRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeshRef");
@@ -165,6 +197,24 @@ pub struct MeshData {
     /// <p>The status of the service mesh.</p>
     pub status: std::option::Option<crate::model::MeshStatus>,
 }
+impl MeshData {
+    /// <p>The name of the service mesh.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The associated specification for the service mesh.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::MeshSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>The associated metadata for the service mesh.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The status of the service mesh.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MeshStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for MeshData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeshData");
@@ -254,6 +304,12 @@ impl MeshData {
 pub struct MeshStatus {
     /// <p>The current mesh status.</p>
     pub status: std::option::Option<crate::model::MeshStatusCode>,
+}
+impl MeshStatus {
+    /// <p>The current mesh status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MeshStatusCode> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for MeshStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -378,6 +434,38 @@ pub struct ResourceMetadata {
     /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
     /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
+}
+impl ResourceMetadata {
+    /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The unique identifier for the resource.</p>
+    pub fn uid(&self) -> std::option::Option<&str> {
+        self.uid.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -518,6 +606,12 @@ pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
     pub egress_filter: std::option::Option<crate::model::EgressFilter>,
 }
+impl MeshSpec {
+    /// <p>The egress filter rules for the service mesh.</p>
+    pub fn egress_filter(&self) -> std::option::Option<&crate::model::EgressFilter> {
+        self.egress_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for MeshSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeshSpec");
@@ -572,6 +666,16 @@ pub struct EgressFilter {
     /// type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
     /// service mesh.</p>
     pub r#type: std::option::Option<crate::model::EgressFilterType>,
+}
+impl EgressFilter {
+    /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows
+    /// egress only from virtual nodes to other defined resources in the service mesh (and any
+    /// traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter
+    /// type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
+    /// service mesh.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EgressFilterType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for EgressFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -694,6 +798,18 @@ pub struct TagRef {
     /// descriptor within a tag category (key).</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl TagRef {
+    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
+    /// that acts like a category for more specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a
+    /// descriptor within a tag category (key).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for TagRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagRef");
@@ -774,6 +890,42 @@ pub struct VirtualServiceRef {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl VirtualServiceRef {
+    /// <p>The name of the service mesh that the virtual service resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual service.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualServiceRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -938,6 +1090,28 @@ pub struct VirtualServiceData {
     /// <p>The current status of the virtual service.</p>
     pub status: std::option::Option<crate::model::VirtualServiceStatus>,
 }
+impl VirtualServiceData {
+    /// <p>The name of the service mesh that the virtual service resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual service.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
+    /// <p>The specifications of the virtual service.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualServiceSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>An object that represents metadata for a resource.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The current status of the virtual service.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualServiceStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualServiceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualServiceData");
@@ -1050,6 +1224,12 @@ pub struct VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
     pub status: std::option::Option<crate::model::VirtualServiceStatusCode>,
 }
+impl VirtualServiceStatus {
+    /// <p>The current status of the virtual service.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualServiceStatusCode> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualServiceStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualServiceStatus");
@@ -1161,6 +1341,13 @@ pub struct VirtualServiceSpec {
     /// a single virtual node or virtual router.</p>
     pub provider: std::option::Option<crate::model::VirtualServiceProvider>,
 }
+impl VirtualServiceSpec {
+    /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify
+    /// a single virtual node or virtual router.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::VirtualServiceProvider> {
+        self.provider.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualServiceSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualServiceSpec");
@@ -1215,6 +1402,15 @@ pub enum VirtualServiceProvider {
     VirtualNode(crate::model::VirtualNodeServiceProvider),
     /// <p>The virtual router associated with a virtual service.</p>
     VirtualRouter(crate::model::VirtualRouterServiceProvider),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualServiceProvider {
     /// Tries to convert the enum instance into [`VirtualNode`](crate::model::VirtualServiceProvider::VirtualNode), extracting the inner [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
@@ -1247,6 +1443,10 @@ impl VirtualServiceProvider {
     pub fn is_virtual_router(&self) -> bool {
         self.as_virtual_router().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a virtual node service provider.</p>
@@ -1255,6 +1455,12 @@ impl VirtualServiceProvider {
 pub struct VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
+}
+impl VirtualRouterServiceProvider {
+    /// <p>The name of the virtual router that is acting as a service provider.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualRouterServiceProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1306,6 +1512,12 @@ impl VirtualRouterServiceProvider {
 pub struct VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     pub virtual_node_name: std::option::Option<std::string::String>,
+}
+impl VirtualNodeServiceProvider {
+    /// <p>The name of the virtual node that is acting as a service provider.</p>
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+        self.virtual_node_name.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualNodeServiceProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1373,6 +1585,42 @@ pub struct VirtualRouterRef {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl VirtualRouterRef {
+    /// <p>The name of the service mesh that the virtual router resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual router.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualRouterRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1537,6 +1785,28 @@ pub struct VirtualRouterData {
     /// <p>The current status of the virtual router.</p>
     pub status: std::option::Option<crate::model::VirtualRouterStatus>,
 }
+impl VirtualRouterData {
+    /// <p>The name of the service mesh that the virtual router resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual router.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The specifications of the virtual router.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualRouterSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>The associated metadata for the virtual router.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The current status of the virtual router.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualRouterStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualRouterData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualRouterData");
@@ -1649,6 +1919,12 @@ pub struct VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
     pub status: std::option::Option<crate::model::VirtualRouterStatusCode>,
 }
+impl VirtualRouterStatus {
+    /// <p>The current status of the virtual router.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualRouterStatusCode> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualRouterStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualRouterStatus");
@@ -1760,6 +2036,13 @@ pub struct VirtualRouterSpec {
     /// can specify one listener.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
 }
+impl VirtualRouterSpec {
+    /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You
+    /// can specify one listener.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::VirtualRouterListener]> {
+        self.listeners.as_deref()
+    }
+}
 impl std::fmt::Debug for VirtualRouterSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualRouterSpec");
@@ -1820,6 +2103,12 @@ pub struct VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
     pub port_mapping: std::option::Option<crate::model::PortMapping>,
 }
+impl VirtualRouterListener {
+    /// <p>An object that represents a port mapping.</p>
+    pub fn port_mapping(&self) -> std::option::Option<&crate::model::PortMapping> {
+        self.port_mapping.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualRouterListener {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualRouterListener");
@@ -1872,6 +2161,16 @@ pub struct PortMapping {
     pub port: i32,
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub protocol: std::option::Option<crate::model::PortProtocol>,
+}
+impl PortMapping {
+    /// <p>The port used for the port mapping.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The protocol used for the port mapping. Specify one protocol.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::PortProtocol> {
+        self.protocol.as_ref()
+    }
 }
 impl std::fmt::Debug for PortMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2017,6 +2316,46 @@ pub struct RouteRef {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RouteRef {
+    /// <p>The name of the service mesh that the route resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The virtual router that the route is associated with.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The name of the route.</p>
+    pub fn route_name(&self) -> std::option::Option<&str> {
+        self.route_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) for the route.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for RouteRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2196,6 +2535,32 @@ pub struct RouteData {
     /// <p>The status of the route.</p>
     pub status: std::option::Option<crate::model::RouteStatus>,
 }
+impl RouteData {
+    /// <p>The name of the service mesh that the route resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The virtual router that the route is associated with.</p>
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+        self.virtual_router_name.as_deref()
+    }
+    /// <p>The name of the route.</p>
+    pub fn route_name(&self) -> std::option::Option<&str> {
+        self.route_name.as_deref()
+    }
+    /// <p>The specifications of the route.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::RouteSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>The associated metadata for the route.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The status of the route.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RouteStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for RouteData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteData");
@@ -2314,6 +2679,12 @@ impl RouteData {
 pub struct RouteStatus {
     /// <p>The current status for the route.</p>
     pub status: std::option::Option<crate::model::RouteStatusCode>,
+}
+impl RouteStatus {
+    /// <p>The current status for the route.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RouteStatusCode> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for RouteStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2434,6 +2805,29 @@ pub struct RouteSpec {
     /// <p>An object that represents the specification of a gRPC route.</p>
     pub grpc_route: std::option::Option<crate::model::GrpcRoute>,
 }
+impl RouteSpec {
+    /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is
+    /// the highest priority.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>An object that represents the specification of an HTTP route.</p>
+    pub fn http_route(&self) -> std::option::Option<&crate::model::HttpRoute> {
+        self.http_route.as_ref()
+    }
+    /// <p>An object that represents the specification of a TCP route.</p>
+    pub fn tcp_route(&self) -> std::option::Option<&crate::model::TcpRoute> {
+        self.tcp_route.as_ref()
+    }
+    /// <p>An object that represents the specification of an HTTP/2 route.</p>
+    pub fn http2_route(&self) -> std::option::Option<&crate::model::HttpRoute> {
+        self.http2_route.as_ref()
+    }
+    /// <p>An object that represents the specification of a gRPC route.</p>
+    pub fn grpc_route(&self) -> std::option::Option<&crate::model::GrpcRoute> {
+        self.grpc_route.as_ref()
+    }
+}
 impl std::fmt::Debug for RouteSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteSpec");
@@ -2551,6 +2945,24 @@ pub struct GrpcRoute {
     /// <p>An object that represents types of timeouts. </p>
     pub timeout: std::option::Option<crate::model::GrpcTimeout>,
 }
+impl GrpcRoute {
+    /// <p>An object that represents the action to take if a match is determined.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::GrpcRouteAction> {
+        self.action.as_ref()
+    }
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcRouteMatch> {
+        self.r#match.as_ref()
+    }
+    /// <p>An object that represents a retry policy.</p>
+    pub fn retry_policy(&self) -> std::option::Option<&crate::model::GrpcRetryPolicy> {
+        self.retry_policy.as_ref()
+    }
+    /// <p>An object that represents types of timeouts. </p>
+    pub fn timeout(&self) -> std::option::Option<&crate::model::GrpcTimeout> {
+        self.timeout.as_ref()
+    }
+}
 impl std::fmt::Debug for GrpcRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcRoute");
@@ -2654,6 +3066,18 @@ pub struct GrpcTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub idle: std::option::Option<crate::model::Duration>,
 }
+impl GrpcTimeout {
+    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
+    /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
+    /// seconds for the source and destination virtual node and the route.</p>
+    pub fn per_request(&self) -> std::option::Option<&crate::model::Duration> {
+        self.per_request.as_ref()
+    }
+    /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
+        self.idle.as_ref()
+    }
+}
 impl std::fmt::Debug for GrpcTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcTimeout");
@@ -2723,6 +3147,16 @@ pub struct Duration {
     pub value: std::option::Option<i64>,
     /// <p>A unit of time.</p>
     pub unit: std::option::Option<crate::model::DurationUnit>,
+}
+impl Duration {
+    /// <p>A number of time units.</p>
+    pub fn value(&self) -> std::option::Option<i64> {
+        self.value
+    }
+    /// <p>A unit of time.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::DurationUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for Duration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2870,6 +3304,49 @@ pub struct GrpcRetryPolicy {
     pub tcp_retry_events: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
     /// <p>Specify at least one of the valid values.</p>
     pub grpc_retry_events: std::option::Option<std::vec::Vec<crate::model::GrpcRetryPolicyEvent>>,
+}
+impl GrpcRetryPolicy {
+    /// <p>The timeout for each retry attempt.</p>
+    pub fn per_retry_timeout(&self) -> std::option::Option<&crate::model::Duration> {
+        self.per_retry_timeout.as_ref()
+    }
+    /// <p>The maximum number of retry attempts.</p>
+    pub fn max_retries(&self) -> std::option::Option<i64> {
+        self.max_retries
+    }
+    /// <p>Specify at least one of the following values.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>server-error</b> – HTTP status codes 500, 501,
+    /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>gateway-error</b> – HTTP status codes 502,
+    /// 503, and 504</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>client-error</b> – HTTP status code 409</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>stream-error</b> – Retry on refused
+    /// stream</p>
+    /// </li>
+    /// </ul>
+    pub fn http_retry_events(&self) -> std::option::Option<&[std::string::String]> {
+        self.http_retry_events.as_deref()
+    }
+    /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
+    pub fn tcp_retry_events(&self) -> std::option::Option<&[crate::model::TcpRetryPolicyEvent]> {
+        self.tcp_retry_events.as_deref()
+    }
+    /// <p>Specify at least one of the valid values.</p>
+    pub fn grpc_retry_events(&self) -> std::option::Option<&[crate::model::GrpcRetryPolicyEvent]> {
+        self.grpc_retry_events.as_deref()
+    }
 }
 impl std::fmt::Debug for GrpcRetryPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3180,6 +3657,21 @@ pub struct GrpcRouteMatch {
     /// <p>An object that represents the data to match from the request.</p>
     pub metadata: std::option::Option<std::vec::Vec<crate::model::GrpcRouteMetadata>>,
 }
+impl GrpcRouteMatch {
+    /// <p>The fully qualified domain name for the service to match from the request.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The method name to match from the request. If you specify a name, you must also specify
+    /// a <code>serviceName</code>.</p>
+    pub fn method_name(&self) -> std::option::Option<&str> {
+        self.method_name.as_deref()
+    }
+    /// <p>An object that represents the data to match from the request.</p>
+    pub fn metadata(&self) -> std::option::Option<&[crate::model::GrpcRouteMetadata]> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for GrpcRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcRouteMatch");
@@ -3269,6 +3761,20 @@ pub struct GrpcRouteMetadata {
     /// <p>An object that represents the data to match from the request.</p>
     pub r#match: std::option::Option<crate::model::GrpcRouteMetadataMatchMethod>,
 }
+impl GrpcRouteMetadata {
+    /// <p>The name of the route.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    pub fn invert(&self) -> std::option::Option<bool> {
+        self.invert
+    }
+    /// <p>An object that represents the data to match from the request.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcRouteMetadataMatchMethod> {
+        self.r#match.as_ref()
+    }
+}
 impl std::fmt::Debug for GrpcRouteMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcRouteMetadata");
@@ -3353,6 +3859,15 @@ pub enum GrpcRouteMetadataMatchMethod {
     Regex(std::string::String),
     /// <p>The value sent by the client must end with the specified characters.</p>
     Suffix(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::model::GrpcRouteMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
@@ -3420,6 +3935,10 @@ impl GrpcRouteMetadataMatchMethod {
     pub fn is_suffix(&self) -> bool {
         self.as_suffix().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>
@@ -3430,6 +3949,16 @@ pub struct MatchRange {
     pub start: std::option::Option<i64>,
     /// <p>The end of the range.</p>
     pub end: std::option::Option<i64>,
+}
+impl MatchRange {
+    /// <p>The start of the range.</p>
+    pub fn start(&self) -> std::option::Option<i64> {
+        self.start
+    }
+    /// <p>The end of the range.</p>
+    pub fn end(&self) -> std::option::Option<i64> {
+        self.end
+    }
 }
 impl std::fmt::Debug for MatchRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3491,6 +4020,12 @@ impl MatchRange {
 pub struct GrpcRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
+}
+impl GrpcRouteAction {
+    /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
+    pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
+        self.weighted_targets.as_deref()
+    }
 }
 impl std::fmt::Debug for GrpcRouteAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3554,6 +4089,16 @@ pub struct WeightedTarget {
     pub virtual_node: std::option::Option<std::string::String>,
     /// <p>The relative weight of the weighted target.</p>
     pub weight: i32,
+}
+impl WeightedTarget {
+    /// <p>The virtual node to associate with the weighted target.</p>
+    pub fn virtual_node(&self) -> std::option::Option<&str> {
+        self.virtual_node.as_deref()
+    }
+    /// <p>The relative weight of the weighted target.</p>
+    pub fn weight(&self) -> i32 {
+        self.weight
+    }
 }
 impl std::fmt::Debug for WeightedTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3621,6 +4166,24 @@ pub struct HttpRoute {
     pub retry_policy: std::option::Option<crate::model::HttpRetryPolicy>,
     /// <p>An object that represents types of timeouts. </p>
     pub timeout: std::option::Option<crate::model::HttpTimeout>,
+}
+impl HttpRoute {
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::HttpRouteMatch> {
+        self.r#match.as_ref()
+    }
+    /// <p>An object that represents the action to take if a match is determined.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::HttpRouteAction> {
+        self.action.as_ref()
+    }
+    /// <p>An object that represents a retry policy.</p>
+    pub fn retry_policy(&self) -> std::option::Option<&crate::model::HttpRetryPolicy> {
+        self.retry_policy.as_ref()
+    }
+    /// <p>An object that represents types of timeouts. </p>
+    pub fn timeout(&self) -> std::option::Option<&crate::model::HttpTimeout> {
+        self.timeout.as_ref()
+    }
 }
 impl std::fmt::Debug for HttpRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3725,6 +4288,18 @@ pub struct HttpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub idle: std::option::Option<crate::model::Duration>,
 }
+impl HttpTimeout {
+    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
+    /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
+    /// seconds for the source and destination virtual node and the route.</p>
+    pub fn per_request(&self) -> std::option::Option<&crate::model::Duration> {
+        self.per_request.as_ref()
+    }
+    /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
+        self.idle.as_ref()
+    }
+}
 impl std::fmt::Debug for HttpTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpTimeout");
@@ -3821,6 +4396,45 @@ pub struct HttpRetryPolicy {
     pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
     pub tcp_retry_events: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
+}
+impl HttpRetryPolicy {
+    /// <p>The timeout for each retry attempt.</p>
+    pub fn per_retry_timeout(&self) -> std::option::Option<&crate::model::Duration> {
+        self.per_retry_timeout.as_ref()
+    }
+    /// <p>The maximum number of retry attempts.</p>
+    pub fn max_retries(&self) -> std::option::Option<i64> {
+        self.max_retries
+    }
+    /// <p>Specify at least one of the following values.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>server-error</b> – HTTP status codes 500, 501,
+    /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>gateway-error</b> – HTTP status codes 502,
+    /// 503, and 504</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>client-error</b> – HTTP status code 409</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>stream-error</b> – Retry on refused
+    /// stream</p>
+    /// </li>
+    /// </ul>
+    pub fn http_retry_events(&self) -> std::option::Option<&[std::string::String]> {
+        self.http_retry_events.as_deref()
+    }
+    /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
+    pub fn tcp_retry_events(&self) -> std::option::Option<&[crate::model::TcpRetryPolicyEvent]> {
+        self.tcp_retry_events.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpRetryPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3976,6 +4590,12 @@ pub struct HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
 }
+impl HttpRouteAction {
+    /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
+    pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
+        self.weighted_targets.as_deref()
+    }
+}
 impl std::fmt::Debug for HttpRouteAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpRouteAction");
@@ -4050,6 +4670,38 @@ pub struct HttpRouteMatch {
     pub scheme: std::option::Option<crate::model::HttpScheme>,
     /// <p>The client request headers to match on.</p>
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
+}
+impl HttpRouteMatch {
+    /// <p>Specifies the path to match requests with. This parameter must always start with
+    /// <code>/</code>, which by itself matches all requests to the virtual service name. You
+    /// can also match for path-based routing of requests. For example, if your virtual service
+    /// name is <code>my-service.local</code> and you want the route to match requests to
+    /// <code>my-service.local/metrics</code>, your prefix should be
+    /// <code>/metrics</code>.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The client request path to match on.</p>
+    pub fn path(&self) -> std::option::Option<&crate::model::HttpPathMatch> {
+        self.path.as_ref()
+    }
+    /// <p>The client request query parameters to match on.</p>
+    pub fn query_parameters(&self) -> std::option::Option<&[crate::model::HttpQueryParameter]> {
+        self.query_parameters.as_deref()
+    }
+    /// <p>The client request method to match on. Specify only one.</p>
+    pub fn method(&self) -> std::option::Option<&crate::model::HttpMethod> {
+        self.method.as_ref()
+    }
+    /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2
+    /// routes.</p>
+    pub fn scheme(&self) -> std::option::Option<&crate::model::HttpScheme> {
+        self.scheme.as_ref()
+    }
+    /// <p>The client request headers to match on.</p>
+    pub fn headers(&self) -> std::option::Option<&[crate::model::HttpRouteHeader]> {
+        self.headers.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4202,6 +4854,20 @@ pub struct HttpRouteHeader {
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
     pub r#match: std::option::Option<crate::model::HeaderMatchMethod>,
 }
+impl HttpRouteHeader {
+    /// <p>A name for the HTTP header in the client request that will be matched on.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    pub fn invert(&self) -> std::option::Option<bool> {
+        self.invert
+    }
+    /// <p>The <code>HeaderMatchMethod</code> object.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::HeaderMatchMethod> {
+        self.r#match.as_ref()
+    }
+}
 impl std::fmt::Debug for HttpRouteHeader {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpRouteHeader");
@@ -4287,6 +4953,15 @@ pub enum HeaderMatchMethod {
     Regex(std::string::String),
     /// <p>The value sent by the client must end with the specified characters.</p>
     Suffix(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::model::HeaderMatchMethod::Exact), extracting the inner [`String`](std::string::String).
@@ -4353,6 +5028,10 @@ impl HeaderMatchMethod {
     /// Returns true if this is a [`Suffix`](crate::model::HeaderMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
         self.as_suffix().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -4505,6 +5184,16 @@ pub struct HttpQueryParameter {
     /// <p>The query parameter to match on.</p>
     pub r#match: std::option::Option<crate::model::QueryParameterMatch>,
 }
+impl HttpQueryParameter {
+    /// <p>A name for the query parameter that will be matched on.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The query parameter to match on.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::QueryParameterMatch> {
+        self.r#match.as_ref()
+    }
+}
 impl std::fmt::Debug for HttpQueryParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpQueryParameter");
@@ -4569,6 +5258,12 @@ pub struct QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
     pub exact: std::option::Option<std::string::String>,
 }
+impl QueryParameterMatch {
+    /// <p>The exact query parameter to match on.</p>
+    pub fn exact(&self) -> std::option::Option<&str> {
+        self.exact.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryParameterMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryParameterMatch");
@@ -4616,6 +5311,16 @@ pub struct HttpPathMatch {
     pub exact: std::option::Option<std::string::String>,
     /// <p>The regex used to match the path.</p>
     pub regex: std::option::Option<std::string::String>,
+}
+impl HttpPathMatch {
+    /// <p>The exact path to match on.</p>
+    pub fn exact(&self) -> std::option::Option<&str> {
+        self.exact.as_deref()
+    }
+    /// <p>The regex used to match the path.</p>
+    pub fn regex(&self) -> std::option::Option<&str> {
+        self.regex.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpPathMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4679,6 +5384,16 @@ pub struct TcpRoute {
     pub action: std::option::Option<crate::model::TcpRouteAction>,
     /// <p>An object that represents types of timeouts. </p>
     pub timeout: std::option::Option<crate::model::TcpTimeout>,
+}
+impl TcpRoute {
+    /// <p>The action to take if a match is determined.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::TcpRouteAction> {
+        self.action.as_ref()
+    }
+    /// <p>An object that represents types of timeouts. </p>
+    pub fn timeout(&self) -> std::option::Option<&crate::model::TcpTimeout> {
+        self.timeout.as_ref()
+    }
 }
 impl std::fmt::Debug for TcpRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4744,6 +5459,12 @@ pub struct TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub idle: std::option::Option<crate::model::Duration>,
 }
+impl TcpTimeout {
+    /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
+        self.idle.as_ref()
+    }
+}
 impl std::fmt::Debug for TcpTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TcpTimeout");
@@ -4789,6 +5510,12 @@ impl TcpTimeout {
 pub struct TcpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
+}
+impl TcpRouteAction {
+    /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
+    pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
+        self.weighted_targets.as_deref()
+    }
 }
 impl std::fmt::Debug for TcpRouteAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4863,6 +5590,42 @@ pub struct VirtualNodeRef {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl VirtualNodeRef {
+    /// <p>The name of the service mesh that the virtual node resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual node.</p>
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+        self.virtual_node_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) for the virtual node.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualNodeRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5027,6 +5790,28 @@ pub struct VirtualNodeData {
     /// <p>The current status for the virtual node.</p>
     pub status: std::option::Option<crate::model::VirtualNodeStatus>,
 }
+impl VirtualNodeData {
+    /// <p>The name of the service mesh that the virtual node resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual node.</p>
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+        self.virtual_node_name.as_deref()
+    }
+    /// <p>The specifications of the virtual node.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualNodeSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>The associated metadata for the virtual node.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The current status for the virtual node.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualNodeStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualNodeData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualNodeData");
@@ -5138,6 +5923,12 @@ impl VirtualNodeData {
 pub struct VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
     pub status: std::option::Option<crate::model::VirtualNodeStatusCode>,
+}
+impl VirtualNodeStatus {
+    /// <p>The current status of the virtual node.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualNodeStatusCode> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualNodeStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5259,6 +6050,31 @@ pub struct VirtualNodeSpec {
     pub backend_defaults: std::option::Option<crate::model::BackendDefaults>,
     /// <p>The inbound and outbound access logging information for the virtual node.</p>
     pub logging: std::option::Option<crate::model::Logging>,
+}
+impl VirtualNodeSpec {
+    /// <p>The service discovery information for the virtual node. If your virtual node does not
+    /// expect ingress traffic, you can omit this parameter. If you specify a
+    /// <code>listener</code>, then you must specify service discovery information.</p>
+    pub fn service_discovery(&self) -> std::option::Option<&crate::model::ServiceDiscovery> {
+        self.service_discovery.as_ref()
+    }
+    /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can
+    /// specify one listener.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+        self.listeners.as_deref()
+    }
+    /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
+    pub fn backends(&self) -> std::option::Option<&[crate::model::Backend]> {
+        self.backends.as_deref()
+    }
+    /// <p>A reference to an object that represents the defaults for backends.</p>
+    pub fn backend_defaults(&self) -> std::option::Option<&crate::model::BackendDefaults> {
+        self.backend_defaults.as_ref()
+    }
+    /// <p>The inbound and outbound access logging information for the virtual node.</p>
+    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+        self.logging.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualNodeSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5390,6 +6206,12 @@ pub struct Logging {
     /// <p>The access log configuration for a virtual node.</p>
     pub access_log: std::option::Option<crate::model::AccessLog>,
 }
+impl Logging {
+    /// <p>The access log configuration for a virtual node.</p>
+    pub fn access_log(&self) -> std::option::Option<&crate::model::AccessLog> {
+        self.access_log.as_ref()
+    }
+}
 impl std::fmt::Debug for Logging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Logging");
@@ -5440,6 +6262,15 @@ impl Logging {
 pub enum AccessLog {
     /// <p>The file object to send virtual node access logs to.</p>
     File(crate::model::FileAccessLog),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AccessLog {
     #[allow(irrefutable_let_patterns)]
@@ -5455,6 +6286,10 @@ impl AccessLog {
     /// Returns true if this is a [`File`](crate::model::AccessLog::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -5472,6 +6307,20 @@ pub struct FileAccessLog {
     /// Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
     pub path: std::option::Option<std::string::String>,
+}
+impl FileAccessLog {
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
+    /// access logs to standard out and configure your Envoy container to use a log driver, such as
+    /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
+    /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
+    /// the files to disk.</p>
+    /// <note>
+    /// <p>The Envoy process must have write permissions to the path that you specify here.
+    /// Otherwise, Envoy fails to bootstrap properly.</p>
+    /// </note>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
 }
 impl std::fmt::Debug for FileAccessLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5535,6 +6384,12 @@ pub struct BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     pub client_policy: std::option::Option<crate::model::ClientPolicy>,
 }
+impl BackendDefaults {
+    /// <p>A reference to an object that represents a client policy.</p>
+    pub fn client_policy(&self) -> std::option::Option<&crate::model::ClientPolicy> {
+        self.client_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for BackendDefaults {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackendDefaults");
@@ -5585,6 +6440,12 @@ impl BackendDefaults {
 pub struct ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub tls: std::option::Option<crate::model::ClientPolicyTls>,
+}
+impl ClientPolicy {
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
+    pub fn tls(&self) -> std::option::Option<&crate::model::ClientPolicyTls> {
+        self.tls.as_ref()
+    }
 }
 impl std::fmt::Debug for ClientPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5640,6 +6501,24 @@ pub struct ClientPolicyTls {
     pub certificate: std::option::Option<crate::model::ClientTlsCertificate>,
     /// <p>A reference to an object that represents a TLS validation context.</p>
     pub validation: std::option::Option<crate::model::TlsValidationContext>,
+}
+impl ClientPolicyTls {
+    /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
+    pub fn enforce(&self) -> std::option::Option<bool> {
+        self.enforce
+    }
+    /// <p>One or more ports that the policy is enforced for.</p>
+    pub fn ports(&self) -> std::option::Option<&[i32]> {
+        self.ports.as_deref()
+    }
+    /// <p>A reference to an object that represents a client's TLS certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::ClientTlsCertificate> {
+        self.certificate.as_ref()
+    }
+    /// <p>A reference to an object that represents a TLS validation context.</p>
+    pub fn validation(&self) -> std::option::Option<&crate::model::TlsValidationContext> {
+        self.validation.as_ref()
+    }
 }
 impl std::fmt::Debug for ClientPolicyTls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5744,6 +6623,19 @@ pub struct TlsValidationContext {
     /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
+impl TlsValidationContext {
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+    /// certificate.</p>
+    pub fn trust(&self) -> std::option::Option<&crate::model::TlsValidationContextTrust> {
+        self.trust.as_ref()
+    }
+    /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
+    pub fn subject_alternative_names(
+        &self,
+    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+        self.subject_alternative_names.as_ref()
+    }
+}
 impl std::fmt::Debug for TlsValidationContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TlsValidationContext");
@@ -5818,6 +6710,12 @@ pub struct SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
     pub r#match: std::option::Option<crate::model::SubjectAlternativeNameMatchers>,
 }
+impl SubjectAlternativeNames {
+    /// <p>An object that represents the criteria for determining a SANs match.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::SubjectAlternativeNameMatchers> {
+        self.r#match.as_ref()
+    }
+}
 impl std::fmt::Debug for SubjectAlternativeNames {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubjectAlternativeNames");
@@ -5869,6 +6767,12 @@ impl SubjectAlternativeNames {
 pub struct SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
     pub exact: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SubjectAlternativeNameMatchers {
+    /// <p>The values sent must match the specified values exactly.</p>
+    pub fn exact(&self) -> std::option::Option<&[std::string::String]> {
+        self.exact.as_deref()
+    }
 }
 impl std::fmt::Debug for SubjectAlternativeNameMatchers {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5930,6 +6834,15 @@ pub enum TlsValidationContextTrust {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service validation
     /// context trust.</p>
     Sds(crate::model::TlsValidationContextSdsTrust),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl TlsValidationContextTrust {
     /// Tries to convert the enum instance into [`Acm`](crate::model::TlsValidationContextTrust::Acm), extracting the inner [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
@@ -5977,6 +6890,10 @@ impl TlsValidationContextTrust {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust. The
@@ -5989,6 +6906,13 @@ pub struct TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret
     /// Discovery Service validation context trust.</p>
     pub secret_name: std::option::Option<std::string::String>,
+}
+impl TlsValidationContextSdsTrust {
+    /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret
+    /// Discovery Service validation context trust.</p>
+    pub fn secret_name(&self) -> std::option::Option<&str> {
+        self.secret_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TlsValidationContextSdsTrust {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6040,6 +6964,13 @@ pub struct TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
     /// node that the proxy is running on.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
+}
+impl TlsValidationContextFileTrust {
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
+    /// node that the proxy is running on.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
 }
 impl std::fmt::Debug for TlsValidationContextFileTrust {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6094,6 +7025,12 @@ impl TlsValidationContextFileTrust {
 pub struct TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     pub certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl TlsValidationContextAcmTrust {
+    /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+    pub fn certificate_authority_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_authority_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for TlsValidationContextAcmTrust {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6160,6 +7097,15 @@ pub enum ClientTlsCertificate {
     /// <p>A reference to an object that represents a client's TLS Secret Discovery Service
     /// certificate.</p>
     Sds(crate::model::ListenerTlsSdsCertificate),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ClientTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::model::ClientTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
@@ -6188,6 +7134,10 @@ impl ClientTlsCertificate {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents the listener's Secret Discovery Service certificate. The proxy
@@ -6200,6 +7150,14 @@ pub struct ListenerTlsSdsCertificate {
     /// Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
     /// certificate chain.</p>
     pub secret_name: std::option::Option<std::string::String>,
+}
+impl ListenerTlsSdsCertificate {
+    /// <p>A reference to an object that represents the name of the secret requested from the
+    /// Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
+    /// certificate chain.</p>
+    pub fn secret_name(&self) -> std::option::Option<&str> {
+        self.secret_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListenerTlsSdsCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6256,6 +7214,17 @@ pub struct ListenerTlsFileCertificate {
     /// <p>The private key for a certificate stored on the file system of the virtual node that the
     /// proxy is running on.</p>
     pub private_key: std::option::Option<std::string::String>,
+}
+impl ListenerTlsFileCertificate {
+    /// <p>The certificate chain for the certificate.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>The private key for a certificate stored on the file system of the virtual node that the
+    /// proxy is running on.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
 }
 impl std::fmt::Debug for ListenerTlsFileCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6323,6 +7292,15 @@ impl ListenerTlsFileCertificate {
 pub enum Backend {
     /// <p>Specifies a virtual service to use as a backend.  </p>
     VirtualService(crate::model::VirtualServiceBackend),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Backend {
     #[allow(irrefutable_let_patterns)]
@@ -6341,6 +7319,10 @@ impl Backend {
     pub fn is_virtual_service(&self) -> bool {
         self.as_virtual_service().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a virtual service backend for a virtual node.</p>
@@ -6351,6 +7333,16 @@ pub struct VirtualServiceBackend {
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub client_policy: std::option::Option<crate::model::ClientPolicy>,
+}
+impl VirtualServiceBackend {
+    /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
+    /// <p>A reference to an object that represents the client policy for a backend.</p>
+    pub fn client_policy(&self) -> std::option::Option<&crate::model::ClientPolicy> {
+        self.client_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualServiceBackend {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6428,6 +7420,32 @@ pub struct Listener {
     pub outlier_detection: std::option::Option<crate::model::OutlierDetection>,
     /// <p>The connection pool information for the listener.</p>
     pub connection_pool: std::option::Option<crate::model::VirtualNodeConnectionPool>,
+}
+impl Listener {
+    /// <p>The port mapping information for the listener.</p>
+    pub fn port_mapping(&self) -> std::option::Option<&crate::model::PortMapping> {
+        self.port_mapping.as_ref()
+    }
+    /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
+    pub fn tls(&self) -> std::option::Option<&crate::model::ListenerTls> {
+        self.tls.as_ref()
+    }
+    /// <p>The health check information for the listener.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheckPolicy> {
+        self.health_check.as_ref()
+    }
+    /// <p>An object that represents timeouts for different protocols.</p>
+    pub fn timeout(&self) -> std::option::Option<&crate::model::ListenerTimeout> {
+        self.timeout.as_ref()
+    }
+    /// <p>The outlier detection information for the listener.</p>
+    pub fn outlier_detection(&self) -> std::option::Option<&crate::model::OutlierDetection> {
+        self.outlier_detection.as_ref()
+    }
+    /// <p>The connection pool information for the listener.</p>
+    pub fn connection_pool(&self) -> std::option::Option<&crate::model::VirtualNodeConnectionPool> {
+        self.connection_pool.as_ref()
+    }
 }
 impl std::fmt::Debug for Listener {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6567,6 +7585,15 @@ pub enum VirtualNodeConnectionPool {
     Http2(crate::model::VirtualNodeHttp2ConnectionPool),
     /// <p>An object that represents a type of connection pool.</p>
     Tcp(crate::model::VirtualNodeTcpConnectionPool),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualNodeConnectionPool {
     /// Tries to convert the enum instance into [`Grpc`](crate::model::VirtualNodeConnectionPool::Grpc), extracting the inner [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
@@ -6629,6 +7656,10 @@ impl VirtualNodeConnectionPool {
     pub fn is_tcp(&self) -> bool {
         self.as_tcp().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a type of connection pool.</p>
@@ -6638,6 +7669,13 @@ pub struct VirtualNodeGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
     /// upstream cluster.</p>
     pub max_requests: i32,
+}
+impl VirtualNodeGrpcConnectionPool {
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
+    /// upstream cluster.</p>
+    pub fn max_requests(&self) -> i32 {
+        self.max_requests
+    }
 }
 impl std::fmt::Debug for VirtualNodeGrpcConnectionPool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6689,6 +7727,13 @@ pub struct VirtualNodeHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
     /// upstream cluster.</p>
     pub max_requests: i32,
+}
+impl VirtualNodeHttp2ConnectionPool {
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
+    /// upstream cluster.</p>
+    pub fn max_requests(&self) -> i32 {
+        self.max_requests
+    }
 }
 impl std::fmt::Debug for VirtualNodeHttp2ConnectionPool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6743,6 +7788,18 @@ pub struct VirtualNodeHttpConnectionPool {
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
     /// upstream cluster.</p>
     pub max_pending_requests: std::option::Option<i32>,
+}
+impl VirtualNodeHttpConnectionPool {
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
+    /// hosts in upstream cluster.</p>
+    pub fn max_connections(&self) -> i32 {
+        self.max_connections
+    }
+    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
+    /// upstream cluster.</p>
+    pub fn max_pending_requests(&self) -> std::option::Option<i32> {
+        self.max_pending_requests
+    }
 }
 impl std::fmt::Debug for VirtualNodeHttpConnectionPool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6810,6 +7867,13 @@ pub struct VirtualNodeTcpConnectionPool {
     /// hosts in upstream cluster.</p>
     pub max_connections: i32,
 }
+impl VirtualNodeTcpConnectionPool {
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
+    /// hosts in upstream cluster.</p>
+    pub fn max_connections(&self) -> i32 {
+        self.max_connections
+    }
+}
 impl std::fmt::Debug for VirtualNodeTcpConnectionPool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualNodeTcpConnectionPool");
@@ -6866,6 +7930,25 @@ pub struct OutlierDetection {
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be
     /// ejected. Will eject at least one host regardless of the value.</p>
     pub max_ejection_percent: std::option::Option<i32>,
+}
+impl OutlierDetection {
+    /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
+    pub fn max_server_errors(&self) -> std::option::Option<i64> {
+        self.max_server_errors
+    }
+    /// <p>The time interval between ejection sweep analysis.</p>
+    pub fn interval(&self) -> std::option::Option<&crate::model::Duration> {
+        self.interval.as_ref()
+    }
+    /// <p>The base amount of time for which a host is ejected.</p>
+    pub fn base_ejection_duration(&self) -> std::option::Option<&crate::model::Duration> {
+        self.base_ejection_duration.as_ref()
+    }
+    /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be
+    /// ejected. Will eject at least one host regardless of the value.</p>
+    pub fn max_ejection_percent(&self) -> std::option::Option<i32> {
+        self.max_ejection_percent
+    }
 }
 impl std::fmt::Debug for OutlierDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6964,6 +8047,15 @@ pub enum ListenerTimeout {
     Http2(crate::model::HttpTimeout),
     /// <p>An object that represents types of timeouts. </p>
     Tcp(crate::model::TcpTimeout),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ListenerTimeout {
     /// Tries to convert the enum instance into [`Grpc`](crate::model::ListenerTimeout::Grpc), extracting the inner [`GrpcTimeout`](crate::model::GrpcTimeout).
@@ -7018,6 +8110,10 @@ impl ListenerTimeout {
     pub fn is_tcp(&self) -> bool {
         self.as_tcp().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents the health check policy for a virtual node's listener.</p>
@@ -7045,6 +8141,43 @@ pub struct HealthCheckPolicy {
     /// <p>The number of consecutive failed health checks that must occur before declaring a
     /// virtual node unhealthy. </p>
     pub unhealthy_threshold: i32,
+}
+impl HealthCheckPolicy {
+    /// <p>The amount of time to wait when receiving a response from the health check, in
+    /// milliseconds.</p>
+    pub fn timeout_millis(&self) -> std::option::Option<i64> {
+        self.timeout_millis
+    }
+    /// <p>The time period in milliseconds between each health check execution.</p>
+    pub fn interval_millis(&self) -> std::option::Option<i64> {
+        self.interval_millis
+    }
+    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
+    /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
+    /// Checking Protocol</a>.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::PortProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The destination port for the health check request. This port must match the port defined
+    /// in the <a>PortMapping</a> for the listener.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The destination path for the health check request. This value is only used if the
+    /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The number of consecutive successful health checks that must occur before declaring
+    /// listener healthy.</p>
+    pub fn healthy_threshold(&self) -> i32 {
+        self.healthy_threshold
+    }
+    /// <p>The number of consecutive failed health checks that must occur before declaring a
+    /// virtual node unhealthy. </p>
+    pub fn unhealthy_threshold(&self) -> i32 {
+        self.unhealthy_threshold
+    }
 }
 impl std::fmt::Debug for HealthCheckPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7210,6 +8343,37 @@ pub struct ListenerTls {
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
     pub validation: std::option::Option<crate::model::ListenerTlsValidationContext>,
 }
+impl ListenerTls {
+    /// <p>Specify one of the following modes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b/>STRICT – Listener only accepts connections with TLS
+    /// enabled. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b/>PERMISSIVE – Listener accepts connections with or
+    /// without TLS enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b/>DISABLED – Listener only accepts connections without
+    /// TLS. </p>
+    /// </li>
+    /// </ul>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ListenerTlsMode> {
+        self.mode.as_ref()
+    }
+    /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::ListenerTlsCertificate> {
+        self.certificate.as_ref()
+    }
+    /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
+    pub fn validation(&self) -> std::option::Option<&crate::model::ListenerTlsValidationContext> {
+        self.validation.as_ref()
+    }
+}
 impl std::fmt::Debug for ListenerTls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListenerTls");
@@ -7331,6 +8495,20 @@ pub struct ListenerTlsValidationContext {
     /// context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
+impl ListenerTlsValidationContext {
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+    /// certificate.</p>
+    pub fn trust(&self) -> std::option::Option<&crate::model::ListenerTlsValidationContextTrust> {
+        self.trust.as_ref()
+    }
+    /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation
+    /// context.</p>
+    pub fn subject_alternative_names(
+        &self,
+    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+        self.subject_alternative_names.as_ref()
+    }
+}
 impl std::fmt::Debug for ListenerTlsValidationContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListenerTlsValidationContext");
@@ -7408,6 +8586,15 @@ pub enum ListenerTlsValidationContextTrust {
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) Secret Discovery Service
     /// validation context trust.</p>
     Sds(crate::model::TlsValidationContextSdsTrust),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ListenerTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`File`](crate::model::ListenerTlsValidationContextTrust::File), extracting the inner [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
@@ -7440,6 +8627,10 @@ impl ListenerTlsValidationContextTrust {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) certificate.</p>
@@ -7453,6 +8644,15 @@ pub enum ListenerTlsCertificate {
     /// <p>A reference to an object that represents a listener's Secret Discovery Service
     /// certificate.</p>
     Sds(crate::model::ListenerTlsSdsCertificate),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ListenerTlsCertificate {
     /// Tries to convert the enum instance into [`Acm`](crate::model::ListenerTlsCertificate::Acm), extracting the inner [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
@@ -7494,6 +8694,10 @@ impl ListenerTlsCertificate {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents an AWS Certicate Manager (ACM) certificate.</p>
@@ -7502,6 +8706,12 @@ impl ListenerTlsCertificate {
 pub struct ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
+}
+impl ListenerTlsAcmCertificate {
+    /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListenerTlsAcmCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7614,6 +8824,15 @@ pub enum ServiceDiscovery {
     AwsCloudMap(crate::model::AwsCloudMapServiceDiscovery),
     /// <p>Specifies the DNS information for the virtual node.</p>
     Dns(crate::model::DnsServiceDiscovery),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ServiceDiscovery {
     /// Tries to convert the enum instance into [`AwsCloudMap`](crate::model::ServiceDiscovery::AwsCloudMap), extracting the inner [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
@@ -7644,6 +8863,10 @@ impl ServiceDiscovery {
     pub fn is_dns(&self) -> bool {
         self.as_dns().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents the Cloud Map service discovery information for your virtual
@@ -7662,6 +8885,22 @@ pub struct AwsCloudMapServiceDiscovery {
     /// by any custom attribute that you specified when you registered the instance. Only instances
     /// that match all of the specified key/value pairs will be returned.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
+}
+impl AwsCloudMapServiceDiscovery {
+    /// <p>The name of the Cloud Map namespace to use.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
+    /// <p>The name of the Cloud Map service to use.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>A string map that contains attributes with values that you can use to filter instances
+    /// by any custom attribute that you specified when you registered the instance. Only instances
+    /// that match all of the specified key/value pairs will be returned.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AwsCloudMapInstanceAttribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsCloudMapServiceDiscovery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7765,6 +9004,18 @@ pub struct AwsCloudMapInstanceAttribute {
     /// instance that contains the specified key and value is returned.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl AwsCloudMapInstanceAttribute {
+    /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service
+    /// instance that contains the specified key and value is returned.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service
+    /// instance that contains the specified key and value is returned.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for AwsCloudMapInstanceAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsCloudMapInstanceAttribute");
@@ -7832,6 +9083,16 @@ pub struct DnsServiceDiscovery {
     pub hostname: std::option::Option<std::string::String>,
     /// <p>Specifies the DNS response type for the virtual node.</p>
     pub response_type: std::option::Option<crate::model::DnsResponseType>,
+}
+impl DnsServiceDiscovery {
+    /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>Specifies the DNS response type for the virtual node.</p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::DnsResponseType> {
+        self.response_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DnsServiceDiscovery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7967,6 +9228,42 @@ pub struct VirtualGatewayRef {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl VirtualGatewayRef {
+    /// <p>The name of the service mesh that the resource resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8131,6 +9428,28 @@ pub struct VirtualGatewayData {
     /// <p>The current status of the virtual gateway.</p>
     pub status: std::option::Option<crate::model::VirtualGatewayStatus>,
 }
+impl VirtualGatewayData {
+    /// <p>The name of the service mesh that the virtual gateway resides in.</p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the virtual gateway.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The specifications of the virtual gateway.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualGatewaySpec> {
+        self.spec.as_ref()
+    }
+    /// <p>An object that represents metadata for a resource.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The current status of the virtual gateway.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualGatewayStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualGatewayData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewayData");
@@ -8242,6 +9561,12 @@ impl VirtualGatewayData {
 pub struct VirtualGatewayStatus {
     /// <p>The current status.</p>
     pub status: std::option::Option<crate::model::VirtualGatewayStatusCode>,
+}
+impl VirtualGatewayStatus {
+    /// <p>The current status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VirtualGatewayStatusCode> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8358,6 +9683,23 @@ pub struct VirtualGatewaySpec {
     /// <p>An object that represents logging information.</p>
     pub logging: std::option::Option<crate::model::VirtualGatewayLogging>,
 }
+impl VirtualGatewaySpec {
+    /// <p>A reference to an object that represents the defaults for backends.</p>
+    pub fn backend_defaults(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayBackendDefaults> {
+        self.backend_defaults.as_ref()
+    }
+    /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You
+    /// can specify one listener.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::VirtualGatewayListener]> {
+        self.listeners.as_deref()
+    }
+    /// <p>An object that represents logging information.</p>
+    pub fn logging(&self) -> std::option::Option<&crate::model::VirtualGatewayLogging> {
+        self.logging.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualGatewaySpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewaySpec");
@@ -8454,6 +9796,12 @@ pub struct VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
     pub access_log: std::option::Option<crate::model::VirtualGatewayAccessLog>,
 }
+impl VirtualGatewayLogging {
+    /// <p>The access log configuration.</p>
+    pub fn access_log(&self) -> std::option::Option<&crate::model::VirtualGatewayAccessLog> {
+        self.access_log.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualGatewayLogging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewayLogging");
@@ -8504,6 +9852,15 @@ impl VirtualGatewayLogging {
 pub enum VirtualGatewayAccessLog {
     /// <p>The file object to send virtual gateway access logs to.</p>
     File(crate::model::VirtualGatewayFileAccessLog),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualGatewayAccessLog {
     #[allow(irrefutable_let_patterns)]
@@ -8522,6 +9879,10 @@ impl VirtualGatewayAccessLog {
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents an access log file.</p>
@@ -8534,6 +9895,16 @@ pub struct VirtualGatewayFileAccessLog {
     /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
     /// the files to disk.</p>
     pub path: std::option::Option<std::string::String>,
+}
+impl VirtualGatewayFileAccessLog {
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
+    /// access logs to standard out and configure your Envoy container to use a log driver, such as
+    /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
+    /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
+    /// the files to disk.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayFileAccessLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8594,6 +9965,28 @@ pub struct VirtualGatewayListener {
     pub tls: std::option::Option<crate::model::VirtualGatewayListenerTls>,
     /// <p>The connection pool information for the virtual gateway listener.</p>
     pub connection_pool: std::option::Option<crate::model::VirtualGatewayConnectionPool>,
+}
+impl VirtualGatewayListener {
+    /// <p>The health check information for the listener.</p>
+    pub fn health_check(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayHealthCheckPolicy> {
+        self.health_check.as_ref()
+    }
+    /// <p>The port mapping information for the listener.</p>
+    pub fn port_mapping(&self) -> std::option::Option<&crate::model::VirtualGatewayPortMapping> {
+        self.port_mapping.as_ref()
+    }
+    /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
+    pub fn tls(&self) -> std::option::Option<&crate::model::VirtualGatewayListenerTls> {
+        self.tls.as_ref()
+    }
+    /// <p>The connection pool information for the virtual gateway listener.</p>
+    pub fn connection_pool(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayConnectionPool> {
+        self.connection_pool.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayListener {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8707,6 +10100,15 @@ pub enum VirtualGatewayConnectionPool {
     Http(crate::model::VirtualGatewayHttpConnectionPool),
     /// <p>An object that represents a type of connection pool.</p>
     Http2(crate::model::VirtualGatewayHttp2ConnectionPool),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualGatewayConnectionPool {
     /// Tries to convert the enum instance into [`Grpc`](crate::model::VirtualGatewayConnectionPool::Grpc), extracting the inner [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
@@ -8754,6 +10156,10 @@ impl VirtualGatewayConnectionPool {
     pub fn is_http2(&self) -> bool {
         self.as_http2().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a type of connection pool.</p>
@@ -8763,6 +10169,13 @@ pub struct VirtualGatewayGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
     /// upstream cluster.</p>
     pub max_requests: i32,
+}
+impl VirtualGatewayGrpcConnectionPool {
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
+    /// upstream cluster.</p>
+    pub fn max_requests(&self) -> i32 {
+        self.max_requests
+    }
 }
 impl std::fmt::Debug for VirtualGatewayGrpcConnectionPool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8814,6 +10227,13 @@ pub struct VirtualGatewayHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
     /// upstream cluster.</p>
     pub max_requests: i32,
+}
+impl VirtualGatewayHttp2ConnectionPool {
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
+    /// upstream cluster.</p>
+    pub fn max_requests(&self) -> i32 {
+        self.max_requests
+    }
 }
 impl std::fmt::Debug for VirtualGatewayHttp2ConnectionPool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8868,6 +10288,18 @@ pub struct VirtualGatewayHttpConnectionPool {
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
     /// upstream cluster.</p>
     pub max_pending_requests: std::option::Option<i32>,
+}
+impl VirtualGatewayHttpConnectionPool {
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
+    /// hosts in upstream cluster.</p>
+    pub fn max_connections(&self) -> i32 {
+        self.max_connections
+    }
+    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
+    /// upstream cluster.</p>
+    pub fn max_pending_requests(&self) -> std::option::Option<i32> {
+        self.max_pending_requests
+    }
 }
 impl std::fmt::Debug for VirtualGatewayHttpConnectionPool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8955,6 +10387,42 @@ pub struct VirtualGatewayListenerTls {
     pub validation: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>,
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
     pub certificate: std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>,
+}
+impl VirtualGatewayListenerTls {
+    /// <p>Specify one of the following modes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b/>STRICT – Listener only accepts connections with TLS
+    /// enabled. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b/>PERMISSIVE – Listener accepts connections with or
+    /// without TLS enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b/>DISABLED – Listener only accepts connections without
+    /// TLS. </p>
+    /// </li>
+    /// </ul>
+    pub fn mode(&self) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsMode> {
+        self.mode.as_ref()
+    }
+    /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
+    /// context.</p>
+    pub fn validation(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsValidationContext> {
+        self.validation.as_ref()
+    }
+    /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
+    pub fn certificate(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsCertificate> {
+        self.certificate.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayListenerTls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9087,6 +10555,15 @@ pub enum VirtualGatewayListenerTlsCertificate {
     /// <p>A reference to an object that represents a virtual gateway's listener's Secret Discovery
     /// Service certificate.</p>
     Sds(crate::model::VirtualGatewayListenerTlsSdsCertificate),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualGatewayListenerTlsCertificate {
     /// Tries to convert the enum instance into [`Acm`](crate::model::VirtualGatewayListenerTlsCertificate::Acm), extracting the inner [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
@@ -9134,6 +10611,10 @@ impl VirtualGatewayListenerTlsCertificate {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents the virtual gateway's listener's Secret Discovery Service
@@ -9147,6 +10628,14 @@ pub struct VirtualGatewayListenerTlsSdsCertificate {
     /// the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
     /// certificate chain.</p>
     pub secret_name: std::option::Option<std::string::String>,
+}
+impl VirtualGatewayListenerTlsSdsCertificate {
+    /// <p>A reference to an object that represents the name of the secret secret requested from
+    /// the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
+    /// certificate chain.</p>
+    pub fn secret_name(&self) -> std::option::Option<&str> {
+        self.secret_name.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayListenerTlsSdsCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9203,6 +10692,17 @@ pub struct VirtualGatewayListenerTlsFileCertificate {
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that
     /// the proxy is running on.</p>
     pub private_key: std::option::Option<std::string::String>,
+}
+impl VirtualGatewayListenerTlsFileCertificate {
+    /// <p>The certificate chain for the certificate.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>The private key for a certificate stored on the file system of the mesh endpoint that
+    /// the proxy is running on.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayListenerTlsFileCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9270,6 +10770,12 @@ pub struct VirtualGatewayListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl VirtualGatewayListenerTlsAcmCertificate {
+    /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for VirtualGatewayListenerTlsAcmCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewayListenerTlsAcmCertificate");
@@ -9325,6 +10831,22 @@ pub struct VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS)
     /// validation context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
+}
+impl VirtualGatewayListenerTlsValidationContext {
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+    /// certificate.</p>
+    pub fn trust(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsValidationContextTrust> {
+        self.trust.as_ref()
+    }
+    /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS)
+    /// validation context.</p>
+    pub fn subject_alternative_names(
+        &self,
+    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+        self.subject_alternative_names.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayListenerTlsValidationContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9410,6 +10932,15 @@ pub enum VirtualGatewayListenerTlsValidationContextTrust {
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret
     /// Discovery Service validation context trust.</p>
     Sds(crate::model::VirtualGatewayTlsValidationContextSdsTrust),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualGatewayListenerTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
@@ -9443,6 +10974,10 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service
@@ -9454,6 +10989,13 @@ pub struct VirtualGatewayTlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's
     /// Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub secret_name: std::option::Option<std::string::String>,
+}
+impl VirtualGatewayTlsValidationContextSdsTrust {
+    /// <p>A reference to an object that represents the name of the secret for a virtual gateway's
+    /// Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+    pub fn secret_name(&self) -> std::option::Option<&str> {
+        self.secret_name.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayTlsValidationContextSdsTrust {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9505,6 +11047,13 @@ pub struct VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
     /// node that the proxy is running on.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
+}
+impl VirtualGatewayTlsValidationContextFileTrust {
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
+    /// node that the proxy is running on.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayTlsValidationContextFileTrust {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9619,6 +11168,16 @@ pub struct VirtualGatewayPortMapping {
     pub port: i32,
     /// <p>The protocol used for the port mapping.</p>
     pub protocol: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
+}
+impl VirtualGatewayPortMapping {
+    /// <p>The port used for the port mapping. Specify one protocol.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The protocol used for the port mapping.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::VirtualGatewayPortProtocol> {
+        self.protocol.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayPortMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9763,6 +11322,43 @@ pub struct VirtualGatewayHealthCheckPolicy {
     /// virtual gateway unhealthy.</p>
     pub unhealthy_threshold: i32,
 }
+impl VirtualGatewayHealthCheckPolicy {
+    /// <p>The amount of time to wait when receiving a response from the health check, in
+    /// milliseconds.</p>
+    pub fn timeout_millis(&self) -> std::option::Option<i64> {
+        self.timeout_millis
+    }
+    /// <p>The time period in milliseconds between each health check execution.</p>
+    pub fn interval_millis(&self) -> std::option::Option<i64> {
+        self.interval_millis
+    }
+    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
+    /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
+    /// Checking Protocol</a>.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::VirtualGatewayPortProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The destination port for the health check request. This port must match the port defined
+    /// in the <a>PortMapping</a> for the listener.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The destination path for the health check request. This value is only used if the
+    /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The number of consecutive successful health checks that must occur before declaring the
+    /// listener healthy.</p>
+    pub fn healthy_threshold(&self) -> i32 {
+        self.healthy_threshold
+    }
+    /// <p>The number of consecutive failed health checks that must occur before declaring a
+    /// virtual gateway unhealthy.</p>
+    pub fn unhealthy_threshold(&self) -> i32 {
+        self.unhealthy_threshold
+    }
+}
 impl std::fmt::Debug for VirtualGatewayHealthCheckPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewayHealthCheckPolicy");
@@ -9906,6 +11502,12 @@ pub struct VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     pub client_policy: std::option::Option<crate::model::VirtualGatewayClientPolicy>,
 }
+impl VirtualGatewayBackendDefaults {
+    /// <p>A reference to an object that represents a client policy.</p>
+    pub fn client_policy(&self) -> std::option::Option<&crate::model::VirtualGatewayClientPolicy> {
+        self.client_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualGatewayBackendDefaults {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewayBackendDefaults");
@@ -9956,6 +11558,12 @@ impl VirtualGatewayBackendDefaults {
 pub struct VirtualGatewayClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub tls: std::option::Option<crate::model::VirtualGatewayClientPolicyTls>,
+}
+impl VirtualGatewayClientPolicy {
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
+    pub fn tls(&self) -> std::option::Option<&crate::model::VirtualGatewayClientPolicyTls> {
+        self.tls.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayClientPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10013,6 +11621,30 @@ pub struct VirtualGatewayClientPolicyTls {
     pub certificate: std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>,
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
     pub validation: std::option::Option<crate::model::VirtualGatewayTlsValidationContext>,
+}
+impl VirtualGatewayClientPolicyTls {
+    /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't
+    /// specified.</p>
+    pub fn enforce(&self) -> std::option::Option<bool> {
+        self.enforce
+    }
+    /// <p>One or more ports that the policy is enforced for.</p>
+    pub fn ports(&self) -> std::option::Option<&[i32]> {
+        self.ports.as_deref()
+    }
+    /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
+    /// certificate.</p>
+    pub fn certificate(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayClientTlsCertificate> {
+        self.certificate.as_ref()
+    }
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
+    pub fn validation(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayTlsValidationContext> {
+        self.validation.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayClientPolicyTls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10129,6 +11761,22 @@ pub struct VirtualGatewayTlsValidationContext {
     /// Transport Layer Security (TLS) validation context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
+impl VirtualGatewayTlsValidationContext {
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
+    /// certificate.</p>
+    pub fn trust(
+        &self,
+    ) -> std::option::Option<&crate::model::VirtualGatewayTlsValidationContextTrust> {
+        self.trust.as_ref()
+    }
+    /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's
+    /// Transport Layer Security (TLS) validation context.</p>
+    pub fn subject_alternative_names(
+        &self,
+    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+        self.subject_alternative_names.as_ref()
+    }
+}
 impl std::fmt::Debug for VirtualGatewayTlsValidationContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContext");
@@ -10213,6 +11861,15 @@ pub enum VirtualGatewayTlsValidationContextTrust {
     /// <p>A reference to an object that represents a virtual gateway's Transport Layer Security (TLS) Secret Discovery
     /// Service validation context trust.</p>
     Sds(crate::model::VirtualGatewayTlsValidationContextSdsTrust),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualGatewayTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`Acm`](crate::model::VirtualGatewayTlsValidationContextTrust::Acm), extracting the inner [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
@@ -10261,6 +11918,10 @@ impl VirtualGatewayTlsValidationContextTrust {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager
@@ -10270,6 +11931,12 @@ impl VirtualGatewayTlsValidationContextTrust {
 pub struct VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     pub certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VirtualGatewayTlsValidationContextAcmTrust {
+    /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+    pub fn certificate_authority_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_authority_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayTlsValidationContextAcmTrust {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10337,6 +12004,15 @@ pub enum VirtualGatewayClientTlsCertificate {
     /// <p>A reference to an object that represents a virtual gateway's client's Secret Discovery
     /// Service certificate.</p>
     Sds(crate::model::VirtualGatewayListenerTlsSdsCertificate),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl VirtualGatewayClientTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayClientTlsCertificate::File), extracting the inner [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
@@ -10369,6 +12045,10 @@ impl VirtualGatewayClientTlsCertificate {
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that represents a gateway route returned by a list operation.</p>
@@ -10395,6 +12075,46 @@ pub struct GatewayRouteRef {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GatewayRouteRef {
+    /// <p>The name of the service mesh that the resource resides in. </p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the gateway route.</p>
+    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+        self.gateway_route_name.as_deref()
+    }
+    /// <p>The virtual gateway that the gateway route is associated with.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+        self.mesh_owner.as_deref()
+    }
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
+    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for GatewayRouteRef {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10577,6 +12297,32 @@ pub struct GatewayRouteData {
     /// <p>The status of the gateway route.</p>
     pub status: std::option::Option<crate::model::GatewayRouteStatus>,
 }
+impl GatewayRouteData {
+    /// <p>The name of the service mesh that the resource resides in. </p>
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
+        self.mesh_name.as_deref()
+    }
+    /// <p>The name of the gateway route.</p>
+    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+        self.gateway_route_name.as_deref()
+    }
+    /// <p>The virtual gateway that the gateway route is associated with.</p>
+    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
+    }
+    /// <p>The specifications of the gateway route.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::GatewayRouteSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>An object that represents metadata for a resource.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+        self.metadata.as_ref()
+    }
+    /// <p>The status of the gateway route.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GatewayRouteStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for GatewayRouteData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayRouteData");
@@ -10705,6 +12451,12 @@ pub struct GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
     pub status: std::option::Option<crate::model::GatewayRouteStatusCode>,
 }
+impl GatewayRouteStatus {
+    /// <p>The current status for the gateway route.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GatewayRouteStatusCode> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for GatewayRouteStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayRouteStatus");
@@ -10822,6 +12574,24 @@ pub struct GatewayRouteSpec {
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
     pub grpc_route: std::option::Option<crate::model::GrpcGatewayRoute>,
 }
+impl GatewayRouteSpec {
+    /// <p>The ordering of the gateway routes spec.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>An object that represents the specification of an HTTP gateway route.</p>
+    pub fn http_route(&self) -> std::option::Option<&crate::model::HttpGatewayRoute> {
+        self.http_route.as_ref()
+    }
+    /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
+    pub fn http2_route(&self) -> std::option::Option<&crate::model::HttpGatewayRoute> {
+        self.http2_route.as_ref()
+    }
+    /// <p>An object that represents the specification of a gRPC gateway route.</p>
+    pub fn grpc_route(&self) -> std::option::Option<&crate::model::GrpcGatewayRoute> {
+        self.grpc_route.as_ref()
+    }
+}
 impl std::fmt::Debug for GatewayRouteSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayRouteSpec");
@@ -10920,6 +12690,16 @@ pub struct GrpcGatewayRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub action: std::option::Option<crate::model::GrpcGatewayRouteAction>,
 }
+impl GrpcGatewayRoute {
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteMatch> {
+        self.r#match.as_ref()
+    }
+    /// <p>An object that represents the action to take if a match is determined.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteAction> {
+        self.action.as_ref()
+    }
+}
 impl std::fmt::Debug for GrpcGatewayRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcGatewayRoute");
@@ -10989,6 +12769,16 @@ pub struct GrpcGatewayRouteAction {
     /// <p>The gateway route action to rewrite.</p>
     pub rewrite: std::option::Option<crate::model::GrpcGatewayRouteRewrite>,
 }
+impl GrpcGatewayRouteAction {
+    /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::GatewayRouteTarget> {
+        self.target.as_ref()
+    }
+    /// <p>The gateway route action to rewrite.</p>
+    pub fn rewrite(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteRewrite> {
+        self.rewrite.as_ref()
+    }
+}
 impl std::fmt::Debug for GrpcGatewayRouteAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcGatewayRouteAction");
@@ -11056,6 +12846,12 @@ pub struct GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
 }
+impl GrpcGatewayRouteRewrite {
+    /// <p>The host name of the gateway route to rewrite.</p>
+    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameRewrite> {
+        self.hostname.as_ref()
+    }
+}
 impl std::fmt::Debug for GrpcGatewayRouteRewrite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcGatewayRouteRewrite");
@@ -11106,6 +12902,14 @@ impl GrpcGatewayRouteRewrite {
 pub struct GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
     pub default_target_hostname: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
+}
+impl GatewayRouteHostnameRewrite {
+    /// <p>The default target host name to write to.</p>
+    pub fn default_target_hostname(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultGatewayRouteRewrite> {
+        self.default_target_hostname.as_ref()
+    }
 }
 impl std::fmt::Debug for GatewayRouteHostnameRewrite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11217,6 +13021,14 @@ pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
     pub virtual_service: std::option::Option<crate::model::GatewayRouteVirtualService>,
 }
+impl GatewayRouteTarget {
+    /// <p>An object that represents a virtual service gateway route target.</p>
+    pub fn virtual_service(
+        &self,
+    ) -> std::option::Option<&crate::model::GatewayRouteVirtualService> {
+        self.virtual_service.as_ref()
+    }
+}
 impl std::fmt::Debug for GatewayRouteTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayRouteTarget");
@@ -11267,6 +13079,12 @@ impl GatewayRouteTarget {
 pub struct GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
     pub virtual_service_name: std::option::Option<std::string::String>,
+}
+impl GatewayRouteVirtualService {
+    /// <p>The name of the virtual service that traffic is routed to.</p>
+    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GatewayRouteVirtualService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11322,6 +13140,20 @@ pub struct GrpcGatewayRouteMatch {
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
     /// <p>The gateway route metadata to be matched on.</p>
     pub metadata: std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
+}
+impl GrpcGatewayRouteMatch {
+    /// <p>The fully qualified domain name for the service to match from the request.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The gateway route host name to be matched on.</p>
+    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameMatch> {
+        self.hostname.as_ref()
+    }
+    /// <p>The gateway route metadata to be matched on.</p>
+    pub fn metadata(&self) -> std::option::Option<&[crate::model::GrpcGatewayRouteMetadata]> {
+        self.metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for GrpcGatewayRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11417,6 +13249,20 @@ pub struct GrpcGatewayRouteMetadata {
     /// <p>The criteria for determining a metadata match.</p>
     pub r#match: std::option::Option<crate::model::GrpcMetadataMatchMethod>,
 }
+impl GrpcGatewayRouteMetadata {
+    /// <p>A name for the gateway route metadata.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    pub fn invert(&self) -> std::option::Option<bool> {
+        self.invert
+    }
+    /// <p>The criteria for determining a metadata match.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcMetadataMatchMethod> {
+        self.r#match.as_ref()
+    }
+}
 impl std::fmt::Debug for GrpcGatewayRouteMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrpcGatewayRouteMetadata");
@@ -11501,6 +13347,15 @@ pub enum GrpcMetadataMatchMethod {
     Regex(std::string::String),
     /// <p>The specified ending characters of the method header to match on.</p>
     Suffix(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl GrpcMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::model::GrpcMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
@@ -11568,6 +13423,10 @@ impl GrpcMetadataMatchMethod {
     pub fn is_suffix(&self) -> bool {
         self.as_suffix().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object representing the gateway route host name to match.</p>
@@ -11578,6 +13437,16 @@ pub struct GatewayRouteHostnameMatch {
     pub exact: std::option::Option<std::string::String>,
     /// <p>The specified ending characters of the host name to match on.</p>
     pub suffix: std::option::Option<std::string::String>,
+}
+impl GatewayRouteHostnameMatch {
+    /// <p>The exact host name to match on.</p>
+    pub fn exact(&self) -> std::option::Option<&str> {
+        self.exact.as_deref()
+    }
+    /// <p>The specified ending characters of the host name to match on.</p>
+    pub fn suffix(&self) -> std::option::Option<&str> {
+        self.suffix.as_deref()
+    }
 }
 impl std::fmt::Debug for GatewayRouteHostnameMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11641,6 +13510,16 @@ pub struct HttpGatewayRoute {
     pub r#match: std::option::Option<crate::model::HttpGatewayRouteMatch>,
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub action: std::option::Option<crate::model::HttpGatewayRouteAction>,
+}
+impl HttpGatewayRoute {
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::HttpGatewayRouteMatch> {
+        self.r#match.as_ref()
+    }
+    /// <p>An object that represents the action to take if a match is determined.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::HttpGatewayRouteAction> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for HttpGatewayRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11710,6 +13589,16 @@ pub struct HttpGatewayRouteAction {
     pub target: std::option::Option<crate::model::GatewayRouteTarget>,
     /// <p>The gateway route action to rewrite.</p>
     pub rewrite: std::option::Option<crate::model::HttpGatewayRouteRewrite>,
+}
+impl HttpGatewayRouteAction {
+    /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::GatewayRouteTarget> {
+        self.target.as_ref()
+    }
+    /// <p>The gateway route action to rewrite.</p>
+    pub fn rewrite(&self) -> std::option::Option<&crate::model::HttpGatewayRouteRewrite> {
+        self.rewrite.as_ref()
+    }
 }
 impl std::fmt::Debug for HttpGatewayRouteAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11781,6 +13670,20 @@ pub struct HttpGatewayRouteRewrite {
     pub path: std::option::Option<crate::model::HttpGatewayRoutePathRewrite>,
     /// <p>The host name to rewrite.</p>
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
+}
+impl HttpGatewayRouteRewrite {
+    /// <p>The specified beginning characters to rewrite.</p>
+    pub fn prefix(&self) -> std::option::Option<&crate::model::HttpGatewayRoutePrefixRewrite> {
+        self.prefix.as_ref()
+    }
+    /// <p>The path to rewrite.</p>
+    pub fn path(&self) -> std::option::Option<&crate::model::HttpGatewayRoutePathRewrite> {
+        self.path.as_ref()
+    }
+    /// <p>The host name to rewrite.</p>
+    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameRewrite> {
+        self.hostname.as_ref()
+    }
 }
 impl std::fmt::Debug for HttpGatewayRouteRewrite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11865,6 +13768,12 @@ pub struct HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
     pub exact: std::option::Option<std::string::String>,
 }
+impl HttpGatewayRoutePathRewrite {
+    /// <p>The exact path to rewrite.</p>
+    pub fn exact(&self) -> std::option::Option<&str> {
+        self.exact.as_deref()
+    }
+}
 impl std::fmt::Debug for HttpGatewayRoutePathRewrite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpGatewayRoutePathRewrite");
@@ -11912,6 +13821,16 @@ pub struct HttpGatewayRoutePrefixRewrite {
     pub default_prefix: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl HttpGatewayRoutePrefixRewrite {
+    /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
+    pub fn default_prefix(&self) -> std::option::Option<&crate::model::DefaultGatewayRouteRewrite> {
+        self.default_prefix.as_ref()
+    }
+    /// <p>The value used to replace the incoming route prefix when rewritten.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpGatewayRoutePrefixRewrite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11991,6 +13910,37 @@ pub struct HttpGatewayRouteMatch {
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
     /// <p>The client request headers to match on.</p>
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
+}
+impl HttpGatewayRouteMatch {
+    /// <p>Specifies the path to match requests with. This parameter must always start with
+    /// <code>/</code>, which by itself matches all requests to the virtual service name. You
+    /// can also match for path-based routing of requests. For example, if your virtual service
+    /// name is <code>my-service.local</code> and you want the route to match requests to
+    /// <code>my-service.local/metrics</code>, your prefix should be
+    /// <code>/metrics</code>.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The path to match on.</p>
+    pub fn path(&self) -> std::option::Option<&crate::model::HttpPathMatch> {
+        self.path.as_ref()
+    }
+    /// <p>The query parameter to match on.</p>
+    pub fn query_parameters(&self) -> std::option::Option<&[crate::model::HttpQueryParameter]> {
+        self.query_parameters.as_deref()
+    }
+    /// <p>The method to match on.</p>
+    pub fn method(&self) -> std::option::Option<&crate::model::HttpMethod> {
+        self.method.as_ref()
+    }
+    /// <p>The host name to match on.</p>
+    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameMatch> {
+        self.hostname.as_ref()
+    }
+    /// <p>The client request headers to match on.</p>
+    pub fn headers(&self) -> std::option::Option<&[crate::model::HttpGatewayRouteHeader]> {
+        self.headers.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpGatewayRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12145,6 +14095,21 @@ pub struct HttpGatewayRouteHeader {
     /// <p>An object that represents the method and value to match with the header value sent in a
     /// request. Specify one match method.</p>
     pub r#match: std::option::Option<crate::model::HeaderMatchMethod>,
+}
+impl HttpGatewayRouteHeader {
+    /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    pub fn invert(&self) -> std::option::Option<bool> {
+        self.invert
+    }
+    /// <p>An object that represents the method and value to match with the header value sent in a
+    /// request. Specify one match method.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::HeaderMatchMethod> {
+        self.r#match.as_ref()
+    }
 }
 impl std::fmt::Debug for HttpGatewayRouteHeader {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

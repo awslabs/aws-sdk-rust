@@ -606,6 +606,12 @@ pub struct RegisterVolumeOutput {
     /// <p>The volume ID.</p>
     pub volume_id: std::option::Option<std::string::String>,
 }
+impl RegisterVolumeOutput {
+    /// <p>The volume ID.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterVolumeOutput");
@@ -684,6 +690,12 @@ pub struct RegisterInstanceOutput {
     /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl RegisterInstanceOutput {
+    /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterInstanceOutput");
@@ -732,6 +744,12 @@ pub struct RegisterElasticIpOutput {
     /// <p>The Elastic IP address.</p>
     pub elastic_ip: std::option::Option<std::string::String>,
 }
+impl RegisterElasticIpOutput {
+    /// <p>The Elastic IP address.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterElasticIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterElasticIpOutput");
@@ -779,6 +797,12 @@ impl RegisterElasticIpOutput {
 pub struct RegisterEcsClusterOutput {
     /// <p>The cluster's ARN.</p>
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
+}
+impl RegisterEcsClusterOutput {
+    /// <p>The cluster's ARN.</p>
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+        self.ecs_cluster_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterEcsClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -868,6 +892,23 @@ pub struct ListTagsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsOutput {
+    /// <p>A set of key-value pairs that contain tag keys and tag values that are attached to a stack or layer.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
+    /// you can assign to the request object's <code>NextToken</code> parameter to get the next set of results.
+    /// If the previous paginated request returned all of the remaining results,
+    /// this parameter is set to <code>null</code>.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -955,6 +996,13 @@ pub struct GrantAccessOutput {
     /// instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     pub temporary_credential: std::option::Option<crate::model::TemporaryCredential>,
 }
+impl GrantAccessOutput {
+    /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the
+    /// instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+    pub fn temporary_credential(&self) -> std::option::Option<&crate::model::TemporaryCredential> {
+        self.temporary_credential.as_ref()
+    }
+}
 impl std::fmt::Debug for GrantAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrantAccessOutput");
@@ -1009,6 +1057,16 @@ pub struct GetHostnameSuggestionOutput {
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>The generated host name.</p>
     pub hostname: std::option::Option<std::string::String>,
+}
+impl GetHostnameSuggestionOutput {
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+    /// <p>The generated host name.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
 }
 impl std::fmt::Debug for GetHostnameSuggestionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1131,6 +1189,12 @@ pub struct DescribeVolumesOutput {
     /// <p>An array of volume IDs.</p>
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
 }
+impl DescribeVolumesOutput {
+    /// <p>An array of volume IDs.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVolumesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVolumesOutput");
@@ -1187,6 +1251,12 @@ impl DescribeVolumesOutput {
 pub struct DescribeUserProfilesOutput {
     /// <p>A <code>Users</code> object that describes the specified users.</p>
     pub user_profiles: std::option::Option<std::vec::Vec<crate::model::UserProfile>>,
+}
+impl DescribeUserProfilesOutput {
+    /// <p>A <code>Users</code> object that describes the specified users.</p>
+    pub fn user_profiles(&self) -> std::option::Option<&[crate::model::UserProfile]> {
+        self.user_profiles.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1246,6 +1316,15 @@ pub struct DescribeTimeBasedAutoScalingOutput {
     /// configuration for the specified instances.</p>
     pub time_based_auto_scaling_configurations:
         std::option::Option<std::vec::Vec<crate::model::TimeBasedAutoScalingConfiguration>>,
+}
+impl DescribeTimeBasedAutoScalingOutput {
+    /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
+    /// configuration for the specified instances.</p>
+    pub fn time_based_auto_scaling_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TimeBasedAutoScalingConfiguration]> {
+        self.time_based_auto_scaling_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTimeBasedAutoScalingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1317,6 +1396,12 @@ pub struct DescribeStackSummaryOutput {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
     pub stack_summary: std::option::Option<crate::model::StackSummary>,
 }
+impl DescribeStackSummaryOutput {
+    /// <p>A <code>StackSummary</code> object that contains the results.</p>
+    pub fn stack_summary(&self) -> std::option::Option<&crate::model::StackSummary> {
+        self.stack_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStackSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackSummaryOutput");
@@ -1367,6 +1452,12 @@ impl DescribeStackSummaryOutput {
 pub struct DescribeStacksOutput {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     pub stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
+}
+impl DescribeStacksOutput {
+    /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
+    pub fn stacks(&self) -> std::option::Option<&[crate::model::Stack]> {
+        self.stacks.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1427,6 +1518,19 @@ pub struct DescribeStackProvisioningParametersOutput {
     /// <p>An embedded object that contains the provisioning parameters.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeStackProvisioningParametersOutput {
+    /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    pub fn agent_installer_url(&self) -> std::option::Option<&str> {
+        self.agent_installer_url.as_deref()
+    }
+    /// <p>An embedded object that contains the provisioning parameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStackProvisioningParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1509,6 +1613,12 @@ pub struct DescribeServiceErrorsOutput {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     pub service_errors: std::option::Option<std::vec::Vec<crate::model::ServiceError>>,
 }
+impl DescribeServiceErrorsOutput {
+    /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
+    pub fn service_errors(&self) -> std::option::Option<&[crate::model::ServiceError]> {
+        self.service_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceErrorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceErrorsOutput");
@@ -1565,6 +1675,12 @@ impl DescribeServiceErrorsOutput {
 pub struct DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     pub rds_db_instances: std::option::Option<std::vec::Vec<crate::model::RdsDbInstance>>,
+}
+impl DescribeRdsDbInstancesOutput {
+    /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
+    pub fn rds_db_instances(&self) -> std::option::Option<&[crate::model::RdsDbInstance]> {
+        self.rds_db_instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRdsDbInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1623,6 +1739,12 @@ impl DescribeRdsDbInstancesOutput {
 pub struct DescribeRaidArraysOutput {
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     pub raid_arrays: std::option::Option<std::vec::Vec<crate::model::RaidArray>>,
+}
+impl DescribeRaidArraysOutput {
+    /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
+    pub fn raid_arrays(&self) -> std::option::Option<&[crate::model::RaidArray]> {
+        self.raid_arrays.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRaidArraysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1694,6 +1816,26 @@ pub struct DescribePermissionsOutput {
     /// </li>
     /// </ul>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
+}
+impl DescribePermissionsOutput {
+    /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the request object contains only a stack ID, the array contains a
+    /// <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the request object contains only an IAM ARN, the array contains a
+    /// <code>Permission</code> object with permissions for each of the user's stack IDs.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single
+    /// <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p>
+    /// </li>
+    /// </ul>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1780,6 +1922,12 @@ pub struct DescribeOperatingSystemsOutput {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
     pub operating_systems: std::option::Option<std::vec::Vec<crate::model::OperatingSystem>>,
 }
+impl DescribeOperatingSystemsOutput {
+    /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
+    pub fn operating_systems(&self) -> std::option::Option<&[crate::model::OperatingSystem]> {
+        self.operating_systems.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOperatingSystemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOperatingSystemsOutput");
@@ -1841,6 +1989,12 @@ pub struct DescribeMyUserProfileOutput {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     pub user_profile: std::option::Option<crate::model::SelfUserProfile>,
 }
+impl DescribeMyUserProfileOutput {
+    /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
+    pub fn user_profile(&self) -> std::option::Option<&crate::model::SelfUserProfile> {
+        self.user_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeMyUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMyUserProfileOutput");
@@ -1893,6 +2047,15 @@ pub struct DescribeLoadBasedAutoScalingOutput {
     /// configuration.</p>
     pub load_based_auto_scaling_configurations:
         std::option::Option<std::vec::Vec<crate::model::LoadBasedAutoScalingConfiguration>>,
+}
+impl DescribeLoadBasedAutoScalingOutput {
+    /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's
+    /// configuration.</p>
+    pub fn load_based_auto_scaling_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LoadBasedAutoScalingConfiguration]> {
+        self.load_based_auto_scaling_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoadBasedAutoScalingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1964,6 +2127,12 @@ pub struct DescribeLayersOutput {
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
 }
+impl DescribeLayersOutput {
+    /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+        self.layers.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLayersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLayersOutput");
@@ -2020,6 +2189,12 @@ impl DescribeLayersOutput {
 pub struct DescribeInstancesOutput {
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+}
+impl DescribeInstancesOutput {
+    /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2079,6 +2254,15 @@ pub struct DescribeElasticLoadBalancersOutput {
     /// instances.</p>
     pub elastic_load_balancers:
         std::option::Option<std::vec::Vec<crate::model::ElasticLoadBalancer>>,
+}
+impl DescribeElasticLoadBalancersOutput {
+    /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
+    /// instances.</p>
+    pub fn elastic_load_balancers(
+        &self,
+    ) -> std::option::Option<&[crate::model::ElasticLoadBalancer]> {
+        self.elastic_load_balancers.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeElasticLoadBalancersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2143,6 +2327,12 @@ pub struct DescribeElasticIpsOutput {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     pub elastic_ips: std::option::Option<std::vec::Vec<crate::model::ElasticIp>>,
 }
+impl DescribeElasticIpsOutput {
+    /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
+    pub fn elastic_ips(&self) -> std::option::Option<&[crate::model::ElasticIp]> {
+        self.elastic_ips.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeElasticIpsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticIpsOutput");
@@ -2204,6 +2394,19 @@ pub struct DescribeEcsClustersOutput {
     /// If the previous paginated request returned all of the remaining results,
     /// this parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEcsClustersOutput {
+    /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
+    pub fn ecs_clusters(&self) -> std::option::Option<&[crate::model::EcsCluster]> {
+        self.ecs_clusters.as_deref()
+    }
+    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
+    /// you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results.
+    /// If the previous paginated request returned all of the remaining results,
+    /// this parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEcsClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2281,6 +2484,12 @@ pub struct DescribeDeploymentsOutput {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     pub deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
 }
+impl DescribeDeploymentsOutput {
+    /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
+    pub fn deployments(&self) -> std::option::Option<&[crate::model::Deployment]> {
+        self.deployments.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeploymentsOutput");
@@ -2337,6 +2546,12 @@ impl DescribeDeploymentsOutput {
 pub struct DescribeCommandsOutput {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     pub commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
+}
+impl DescribeCommandsOutput {
+    /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
+    pub fn commands(&self) -> std::option::Option<&[crate::model::Command]> {
+        self.commands.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCommandsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2395,6 +2610,12 @@ pub struct DescribeAppsOutput {
     /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     pub apps: std::option::Option<std::vec::Vec<crate::model::App>>,
 }
+impl DescribeAppsOutput {
+    /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
+    pub fn apps(&self) -> std::option::Option<&[crate::model::App]> {
+        self.apps.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAppsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppsOutput");
@@ -2449,6 +2670,12 @@ impl DescribeAppsOutput {
 pub struct DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
     pub agent_versions: std::option::Option<std::vec::Vec<crate::model::AgentVersion>>,
+}
+impl DescribeAgentVersionsOutput {
+    /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    pub fn agent_versions(&self) -> std::option::Option<&[crate::model::AgentVersion]> {
+        self.agent_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAgentVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2807,6 +3034,12 @@ pub struct CreateUserProfileOutput {
     /// <p>The user's IAM ARN.</p>
     pub iam_user_arn: std::option::Option<std::string::String>,
 }
+impl CreateUserProfileOutput {
+    /// <p>The user's IAM ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserProfileOutput");
@@ -2855,6 +3088,13 @@ pub struct CreateStackOutput {
     /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing
     /// actions such as <code>DescribeStacks</code>.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl CreateStackOutput {
+    /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing
+    /// actions such as <code>DescribeStacks</code>.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2906,6 +3146,12 @@ pub struct CreateLayerOutput {
     /// <p>The layer ID.</p>
     pub layer_id: std::option::Option<std::string::String>,
 }
+impl CreateLayerOutput {
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLayerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLayerOutput");
@@ -2954,6 +3200,12 @@ pub struct CreateInstanceOutput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl CreateInstanceOutput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceOutput");
@@ -3001,6 +3253,12 @@ impl CreateInstanceOutput {
 pub struct CreateDeploymentOutput {
     /// <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
+}
+impl CreateDeploymentOutput {
+    /// <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3053,6 +3311,12 @@ pub struct CreateAppOutput {
     /// <p>The app ID.</p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl CreateAppOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppOutput");
@@ -3100,6 +3364,12 @@ impl CreateAppOutput {
 pub struct CloneStackOutput {
     /// <p>The cloned stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl CloneStackOutput {
+    /// <p>The cloned stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CloneStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -17,6 +17,35 @@ pub struct UpdatePackagingGroupOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdatePackagingGroupOutput {
+    /// The ARN of the PackagingGroup.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The fully qualified domain name for Assets in the PackagingGroup.
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of the PackagingGroup.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePackagingGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePackagingGroupOutput");
@@ -214,6 +243,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -278,6 +316,16 @@ pub struct ListPackagingGroupsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// A list of MediaPackage VOD PackagingGroup resources.
     pub packaging_groups: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>,
+}
+impl ListPackagingGroupsOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of MediaPackage VOD PackagingGroup resources.
+    pub fn packaging_groups(&self) -> std::option::Option<&[crate::model::PackagingGroup]> {
+        self.packaging_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagingGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -352,6 +400,18 @@ pub struct ListPackagingConfigurationsOutput {
     /// A list of MediaPackage VOD PackagingConfiguration resources.
     pub packaging_configurations:
         std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
+}
+impl ListPackagingConfigurationsOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of MediaPackage VOD PackagingConfiguration resources.
+    pub fn packaging_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::PackagingConfiguration]> {
+        self.packaging_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagingConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -428,6 +488,16 @@ pub struct ListAssetsOutput {
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetShallow>>,
     /// A token that can be used to resume pagination from the end of the collection.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssetsOutput {
+    /// A list of MediaPackage VOD Asset resources.
+    pub fn assets(&self) -> std::option::Option<&[crate::model::AssetShallow]> {
+        self.assets.as_deref()
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -509,6 +579,35 @@ pub struct DescribePackagingGroupOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribePackagingGroupOutput {
+    /// The ARN of the PackagingGroup.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The fully qualified domain name for Assets in the PackagingGroup.
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of the PackagingGroup.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePackagingGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -660,6 +759,43 @@ pub struct DescribePackagingConfigurationOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribePackagingConfigurationOutput {
+    /// The ARN of the PackagingConfiguration.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A CMAF packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the PackagingConfiguration.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// The ID of a PackagingGroup.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePackagingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -848,6 +984,47 @@ pub struct DescribeAssetOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeAssetOutput {
+    /// The ARN of the Asset.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time the Asset was initially submitted for Ingest.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The list of egress endpoints available for the Asset.
+    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::EgressEndpoint]> {
+        self.egress_endpoints.as_deref()
+    }
+    /// The unique identifier for the Asset.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the PackagingGroup for the Asset.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// The resource ID to include in SPEKE key requests.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// ARN of the source object in S3.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// The IAM role_arn used to access the source S3 bucket.
+    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+        self.source_role_arn.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAssetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1135,6 +1312,35 @@ pub struct CreatePackagingGroupOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreatePackagingGroupOutput {
+    /// The ARN of the PackagingGroup.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The fully qualified domain name for Assets in the PackagingGroup.
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of the PackagingGroup.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePackagingGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePackagingGroupOutput");
@@ -1285,6 +1491,43 @@ pub struct CreatePackagingConfigurationOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreatePackagingConfigurationOutput {
+    /// The ARN of the PackagingConfiguration.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A CMAF packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the PackagingConfiguration.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// The ID of a PackagingGroup.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackagingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,6 +1716,47 @@ pub struct CreateAssetOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateAssetOutput {
+    /// The ARN of the Asset.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time the Asset was initially submitted for Ingest.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The list of egress endpoints available for the Asset.
+    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::EgressEndpoint]> {
+        self.egress_endpoints.as_deref()
+    }
+    /// The unique identifier for the Asset.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the PackagingGroup for the Asset.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// The resource ID to include in SPEKE key requests.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// ARN of the source object in S3.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// The IAM role_arn used to access the source S3 bucket.
+    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+        self.source_role_arn.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1669,6 +1953,35 @@ pub struct ConfigureLogsOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ConfigureLogsOutput {
+    /// The ARN of the PackagingGroup.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The fully qualified domain name for Assets in the PackagingGroup.
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of the PackagingGroup.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigureLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

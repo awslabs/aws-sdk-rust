@@ -13,6 +13,20 @@ pub struct ResolveCustomerOutput {
     /// code.</p>
     pub product_code: std::option::Option<std::string::String>,
 }
+impl ResolveCustomerOutput {
+    /// <p>The CustomerIdentifier is used to identify an individual customer in your
+    /// application. Calls to BatchMeterUsage require CustomerIdentifiers for each
+    /// UsageRecord.</p>
+    pub fn customer_identifier(&self) -> std::option::Option<&str> {
+        self.customer_identifier.as_deref()
+    }
+    /// <p>The product code is returned to confirm that the buyer is registering for your
+    /// product. Subsequent BatchMeterUsage calls should be made using this product
+    /// code.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolveCustomerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolveCustomerOutput");
@@ -87,6 +101,16 @@ pub struct RegisterUsageOutput {
     /// <p>JWT Token</p>
     pub signature: std::option::Option<std::string::String>,
 }
+impl RegisterUsageOutput {
+    /// <p>(Optional) Only included when public key version has expired</p>
+    pub fn public_key_rotation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.public_key_rotation_timestamp.as_ref()
+    }
+    /// <p>JWT Token</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterUsageOutput");
@@ -154,6 +178,12 @@ pub struct MeterUsageOutput {
     /// <p>Metering record id.</p>
     pub metering_record_id: std::option::Option<std::string::String>,
 }
+impl MeterUsageOutput {
+    /// <p>Metering record id.</p>
+    pub fn metering_record_id(&self) -> std::option::Option<&str> {
+        self.metering_record_id.as_deref()
+    }
+}
 impl std::fmt::Debug for MeterUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeterUsageOutput");
@@ -210,6 +240,19 @@ pub struct BatchMeterUsageOutput {
     /// list of UsageRecords. You can retry the failed request by making another BatchMeterUsage
     /// call with this list as input in the BatchMeterUsageRequest.</p>
     pub unprocessed_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
+}
+impl BatchMeterUsageOutput {
+    /// <p>Contains all UsageRecords processed by BatchMeterUsage. These records were either
+    /// honored by AWS Marketplace Metering Service or were invalid.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::UsageRecordResult]> {
+        self.results.as_deref()
+    }
+    /// <p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a
+    /// list of UsageRecords. You can retry the failed request by making another BatchMeterUsage
+    /// call with this list as input in the BatchMeterUsageRequest.</p>
+    pub fn unprocessed_records(&self) -> std::option::Option<&[crate::model::UsageRecord]> {
+        self.unprocessed_records.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchMeterUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

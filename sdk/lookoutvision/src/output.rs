@@ -6,6 +6,12 @@ pub struct UpdateDatasetEntriesOutput {
     /// <p>The status of the dataset update.</p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
 }
+impl UpdateDatasetEntriesOutput {
+    /// <p>The status of the dataset update.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDatasetEntriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDatasetEntriesOutput");
@@ -117,6 +123,12 @@ pub struct StopModelOutput {
     /// <p>The status of the model.</p>
     pub status: std::option::Option<crate::model::ModelHostingStatus>,
 }
+impl StopModelOutput {
+    /// <p>The status of the model.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelHostingStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopModelOutput");
@@ -168,6 +180,12 @@ pub struct StartModelOutput {
     /// <p>The current running status of the model.</p>
     pub status: std::option::Option<crate::model::ModelHostingStatus>,
 }
+impl StartModelOutput {
+    /// <p>The current running status of the model.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelHostingStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartModelOutput");
@@ -218,6 +236,12 @@ impl StartModelOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A map of tag keys and values attached to the specified model.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A map of tag keys and values attached to the specified model.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -276,6 +300,17 @@ pub struct ListProjectsOutput {
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
     /// that you can use in the subsequent request to retrieve the next set of projects.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProjectsOutput {
+    /// <p>A list of projects in your AWS account.</p>
+    pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectMetadata]> {
+        self.projects.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
+    /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -352,6 +387,17 @@ pub struct ListModelsOutput {
     /// that you can use in the subsequent request to retrieve the next set of models. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListModelsOutput {
+    /// <p>A list of model versions in the specified project. </p>
+    pub fn models(&self) -> std::option::Option<&[crate::model::ModelMetadata]> {
+        self.models.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
+    /// that you can use in the subsequent request to retrieve the next set of models. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelsOutput");
@@ -427,6 +473,17 @@ pub struct ListDatasetEntriesOutput {
     /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatasetEntriesOutput {
+    /// <p>A list of the entries (JSON Lines) within the dataset.</p>
+    pub fn dataset_entries(&self) -> std::option::Option<&[std::string::String]> {
+        self.dataset_entries.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
+    /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetEntriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetEntriesOutput");
@@ -499,6 +556,12 @@ pub struct DetectAnomaliesOutput {
     /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
     pub detect_anomaly_result: std::option::Option<crate::model::DetectAnomalyResult>,
 }
+impl DetectAnomaliesOutput {
+    /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
+    pub fn detect_anomaly_result(&self) -> std::option::Option<&crate::model::DetectAnomalyResult> {
+        self.detect_anomaly_result.as_ref()
+    }
+}
 impl std::fmt::Debug for DetectAnomaliesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectAnomaliesOutput");
@@ -549,6 +612,12 @@ impl DetectAnomaliesOutput {
 pub struct DescribeProjectOutput {
     /// <p>The description of the project.</p>
     pub project_description: std::option::Option<crate::model::ProjectDescription>,
+}
+impl DescribeProjectOutput {
+    /// <p>The description of the project.</p>
+    pub fn project_description(&self) -> std::option::Option<&crate::model::ProjectDescription> {
+        self.project_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -601,6 +670,12 @@ pub struct DescribeModelOutput {
     /// <p>Contains the description of the model.</p>
     pub model_description: std::option::Option<crate::model::ModelDescription>,
 }
+impl DescribeModelOutput {
+    /// <p>Contains the description of the model.</p>
+    pub fn model_description(&self) -> std::option::Option<&crate::model::ModelDescription> {
+        self.model_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelOutput");
@@ -651,6 +726,12 @@ impl DescribeModelOutput {
 pub struct DescribeDatasetOutput {
     /// <p>The description of the requested dataset. </p>
     pub dataset_description: std::option::Option<crate::model::DatasetDescription>,
+}
+impl DescribeDatasetOutput {
+    /// <p>The description of the requested dataset. </p>
+    pub fn dataset_description(&self) -> std::option::Option<&crate::model::DatasetDescription> {
+        self.dataset_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -703,6 +784,12 @@ pub struct DeleteProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
     pub project_arn: std::option::Option<std::string::String>,
 }
+impl DeleteProjectOutput {
+    /// <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectOutput");
@@ -750,6 +837,12 @@ impl DeleteProjectOutput {
 pub struct DeleteModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the model that was deleted.</p>
     pub model_arn: std::option::Option<std::string::String>,
+}
+impl DeleteModelOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model that was deleted.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -829,6 +922,12 @@ pub struct CreateProjectOutput {
     /// <p>Information about the project.</p>
     pub project_metadata: std::option::Option<crate::model::ProjectMetadata>,
 }
+impl CreateProjectOutput {
+    /// <p>Information about the project.</p>
+    pub fn project_metadata(&self) -> std::option::Option<&crate::model::ProjectMetadata> {
+        self.project_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectOutput");
@@ -880,6 +979,12 @@ pub struct CreateModelOutput {
     /// <p>The response from a call to <code>CreateModel</code>.</p>
     pub model_metadata: std::option::Option<crate::model::ModelMetadata>,
 }
+impl CreateModelOutput {
+    /// <p>The response from a call to <code>CreateModel</code>.</p>
+    pub fn model_metadata(&self) -> std::option::Option<&crate::model::ModelMetadata> {
+        self.model_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelOutput");
@@ -930,6 +1035,12 @@ impl CreateModelOutput {
 pub struct CreateDatasetOutput {
     /// <p>Information about the dataset.</p>
     pub dataset_metadata: std::option::Option<crate::model::DatasetMetadata>,
+}
+impl CreateDatasetOutput {
+    /// <p>Information about the dataset.</p>
+    pub fn dataset_metadata(&self) -> std::option::Option<&crate::model::DatasetMetadata> {
+        self.dataset_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

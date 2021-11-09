@@ -166,10 +166,7 @@ impl AcceptEulasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_accept_eulas(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_accept_eulas(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -524,10 +521,7 @@ impl CreateLaunchProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_launch_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_launch_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -802,10 +796,9 @@ impl CreateStreamingImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_streaming_image(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_streaming_image(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1103,10 +1096,7 @@ impl CreateStreamingSessionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_streaming_session(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1355,7 +1345,7 @@ impl CreateStreamingSessionStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_streaming_session_stream(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_streaming_session_stream(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1641,10 +1631,7 @@ impl CreateStudioInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2027,10 +2014,7 @@ impl CreateStudioComponentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_studio_component(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7843,10 +7827,7 @@ impl PutLaunchProfileMembersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_launch_profile_members(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8090,10 +8071,7 @@ impl PutStudioMembersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_studio_members(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_studio_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8927,10 +8905,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9443,10 +9418,7 @@ impl UpdateLaunchProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_launch_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_launch_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9724,10 +9696,7 @@ impl UpdateLaunchProfileMemberInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_launch_profile_member(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9990,10 +9959,9 @@ impl UpdateStreamingImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_streaming_image(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_streaming_image(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10246,10 +10214,7 @@ impl UpdateStudioInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10632,10 +10597,7 @@ impl UpdateStudioComponentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_studio_component(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10708,6 +10670,18 @@ pub struct StartStudioSsoConfigurationRepairInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl StartStudioSsoConfigurationRepairInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartStudioSsoConfigurationRepairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartStudioSsoConfigurationRepairInput");
@@ -10732,6 +10706,26 @@ pub struct PutStudioMembersInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl PutStudioMembersInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The ID of the identity store.</p>
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+        self.identity_store_id.as_deref()
+    }
+    /// <p>A list of members.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::NewStudioMember]> {
+        self.members.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutStudioMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutStudioMembersInput");
@@ -10754,6 +10748,20 @@ pub struct ListStudioMembersInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl ListStudioMembersInput {
+    /// <p>The max number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStudioMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStudioMembersInput");
@@ -10772,6 +10780,16 @@ pub struct GetStudioMemberInput {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl GetStudioMemberInput {
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStudioMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10795,6 +10813,22 @@ pub struct DeleteStudioMemberInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl DeleteStudioMemberInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStudioMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStudioMemberInput");
@@ -10811,6 +10845,12 @@ impl std::fmt::Debug for DeleteStudioMemberInput {
 pub struct ListStudiosInput {
     /// <p>The token to request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStudiosInput {
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStudiosInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10847,6 +10887,47 @@ pub struct CreateStudioInput {
     /// portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
+impl CreateStudioInput {
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub fn admin_role_arn(&self) -> std::option::Option<&str> {
+        self.admin_role_arn.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A friendly name for the studio.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The studio encryption configuration.</p>
+    pub fn studio_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioEncryptionConfiguration> {
+        self.studio_encryption_configuration.as_ref()
+    }
+    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
+    /// by Nimble Studio users.</p>
+    pub fn studio_name(&self) -> std::option::Option<&str> {
+        self.studio_name.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub fn user_role_arn(&self) -> std::option::Option<&str> {
+        self.user_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioInput");
@@ -10874,6 +10955,18 @@ pub struct DeleteStudioInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl DeleteStudioInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10903,6 +10996,32 @@ pub struct UpdateStudioInput {
     /// portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateStudioInput {
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub fn admin_role_arn(&self) -> std::option::Option<&str> {
+        self.admin_role_arn.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A friendly name for the studio.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub fn user_role_arn(&self) -> std::option::Option<&str> {
+        self.user_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioInput");
@@ -10921,6 +11040,12 @@ impl std::fmt::Debug for UpdateStudioInput {
 pub struct GetStudioInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl GetStudioInput {
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStudioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10944,6 +11069,28 @@ pub struct ListStudioComponentsInput {
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>Filters the request to studio components that are of one of the given types.</p>
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListStudioComponentsInput {
+    /// <p>The max number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    pub fn states(&self) -> std::option::Option<&[std::string::String]> {
+        self.states.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>Filters the request to studio components that are of one of the given types.</p>
+    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+        self.types.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStudioComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10990,6 +11137,64 @@ pub struct CreateStudioComponentInput {
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
 }
+impl CreateStudioComponentInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The configuration of the studio component, based on component type.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioComponentConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The EC2 security groups that control access to the studio component.</p>
+    pub fn ec2_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ec2_security_group_ids.as_deref()
+    }
+    /// <p>Initialization scripts for studio components.</p>
+    pub fn initialization_scripts(
+        &self,
+    ) -> std::option::Option<&[crate::model::StudioComponentInitializationScript]> {
+        self.initialization_scripts.as_deref()
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Parameters for the studio component scripts.</p>
+    pub fn script_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScriptParameterKeyValue]> {
+        self.script_parameters.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The specific subtype of a studio component.</p>
+    pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
+        self.subtype.as_ref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of the studio component.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStudioComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioComponentInput");
@@ -11020,6 +11225,22 @@ pub struct DeleteStudioComponentInput {
     pub studio_component_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl DeleteStudioComponentInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The studio component ID.</p>
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+        self.studio_component_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStudioComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11062,6 +11283,60 @@ pub struct UpdateStudioComponentInput {
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
 }
+impl UpdateStudioComponentInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The configuration of the studio component, based on component type.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioComponentConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The EC2 security groups that control access to the studio component.</p>
+    pub fn ec2_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ec2_security_group_ids.as_deref()
+    }
+    /// <p>Initialization scripts for studio components.</p>
+    pub fn initialization_scripts(
+        &self,
+    ) -> std::option::Option<&[crate::model::StudioComponentInitializationScript]> {
+        self.initialization_scripts.as_deref()
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Parameters for the studio component scripts.</p>
+    pub fn script_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScriptParameterKeyValue]> {
+        self.script_parameters.as_deref()
+    }
+    /// <p>The studio component ID.</p>
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+        self.studio_component_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The specific subtype of a studio component.</p>
+    pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
+        self.subtype.as_ref()
+    }
+    /// <p>The type of the studio component.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStudioComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioComponentInput");
@@ -11089,6 +11364,16 @@ pub struct GetStudioComponentInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl GetStudioComponentInput {
+    /// <p>The studio component ID.</p>
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+        self.studio_component_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStudioComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStudioComponentInput");
@@ -11110,6 +11395,22 @@ pub struct StopStreamingSessionInput {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl StopStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The studioId for the StopStreamingSessionRequest.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopStreamingSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11134,6 +11435,22 @@ pub struct StartStreamingSessionInput {
     /// <p>The studio ID for the StartStreamingSessionRequest.</p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl StartStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The studio ID for the StartStreamingSessionRequest.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartStreamingSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartStreamingSessionInput");
@@ -11154,6 +11471,20 @@ pub struct GetStreamingSessionStreamInput {
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl GetStreamingSessionStreamInput {
+    /// <p>The streaming session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The streaming session stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStreamingSessionStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11180,6 +11511,26 @@ pub struct CreateStreamingSessionStreamInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl CreateStreamingSessionStreamInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The expiration time in seconds.</p>
+    pub fn expiration_in_seconds(&self) -> i32 {
+        self.expiration_in_seconds
+    }
+    /// <p>The streaming session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStreamingSessionStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingSessionStreamInput");
@@ -11205,6 +11556,28 @@ pub struct ListStreamingSessionsInput {
     pub session_ids: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl ListStreamingSessionsInput {
+    /// <p>Filters the request to streaming sessions created by the given user.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters the request to streaming session owned by the given user</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>Filters the request to only the provided session IDs.</p>
+    pub fn session_ids(&self) -> std::option::Option<&str> {
+        self.session_ids.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStreamingSessionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11241,6 +11614,42 @@ pub struct CreateStreamingSessionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The EC2 Instance type used for the streaming session.</p>
+    pub fn ec2_instance_type(&self) -> std::option::Option<&crate::model::StreamingInstanceType> {
+        self.ec2_instance_type.as_ref()
+    }
+    /// <p>The launch profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>The ID of the streaming image.</p>
+    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
+        self.streaming_image_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStreamingSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingSessionInput");
@@ -11268,6 +11677,22 @@ pub struct DeleteStreamingSessionInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl DeleteStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The streaming session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStreamingSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStreamingSessionInput");
@@ -11286,6 +11711,16 @@ pub struct GetStreamingSessionInput {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl GetStreamingSessionInput {
+    /// <p>The streaming session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStreamingSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11306,6 +11741,20 @@ pub struct ListStreamingImagesInput {
     pub owner: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl ListStreamingImagesInput {
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filter this request to streaming images with the given owner</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStreamingImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11338,6 +11787,38 @@ pub struct CreateStreamingImageInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateStreamingImageInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A human-readable description of the streaming image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
+    pub fn ec2_image_id(&self) -> std::option::Option<&str> {
+        self.ec2_image_id.as_deref()
+    }
+    /// <p>A friendly name for a streaming image resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStreamingImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingImageInput");
@@ -11363,6 +11844,22 @@ pub struct DeleteStreamingImageInput {
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl DeleteStreamingImageInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The streaming image ID.</p>
+    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
+        self.streaming_image_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStreamingImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11391,6 +11888,30 @@ pub struct UpdateStreamingImageInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl UpdateStreamingImageInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name for the streaming image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The streaming image ID.</p>
+    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
+        self.streaming_image_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStreamingImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStreamingImageInput");
@@ -11411,6 +11932,16 @@ pub struct GetStreamingImageInput {
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl GetStreamingImageInput {
+    /// <p>The streaming image ID.</p>
+    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
+        self.streaming_image_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStreamingImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11437,6 +11968,30 @@ pub struct UpdateLaunchProfileMemberInput {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl UpdateLaunchProfileMemberInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The persona.</p>
+    pub fn persona(&self) -> std::option::Option<&crate::model::LaunchProfilePersona> {
+        self.persona.as_ref()
+    }
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateLaunchProfileMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11467,6 +12022,30 @@ pub struct PutLaunchProfileMembersInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl PutLaunchProfileMembersInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The ID of the identity store.</p>
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+        self.identity_store_id.as_deref()
+    }
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>A list of members.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::NewLaunchProfileMember]> {
+        self.members.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutLaunchProfileMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLaunchProfileMembersInput");
@@ -11492,6 +12071,24 @@ pub struct ListLaunchProfileMembersInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl ListLaunchProfileMembersInput {
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The max number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLaunchProfileMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLaunchProfileMembersInput");
@@ -11513,6 +12110,20 @@ pub struct GetLaunchProfileMemberInput {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl GetLaunchProfileMemberInput {
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLaunchProfileMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11539,6 +12150,28 @@ pub struct GetLaunchProfileInitializationInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl GetLaunchProfileInitializationInput {
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The launch profile protocol versions supported by the client.</p>
+    pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.launch_profile_protocol_versions.as_deref()
+    }
+    /// <p>The launch purpose.</p>
+    pub fn launch_purpose(&self) -> std::option::Option<&str> {
+        self.launch_purpose.as_deref()
+    }
+    /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLaunchProfileInitializationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLaunchProfileInitializationInput");
@@ -11563,6 +12196,16 @@ pub struct GetLaunchProfileDetailsInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl GetLaunchProfileDetailsInput {
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLaunchProfileDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLaunchProfileDetailsInput");
@@ -11586,6 +12229,26 @@ pub struct DeleteLaunchProfileMemberInput {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl DeleteLaunchProfileMemberInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLaunchProfileMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11612,6 +12275,28 @@ pub struct ListLaunchProfilesInput {
     pub states: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl ListLaunchProfilesInput {
+    /// <p>The max number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>Filter this request to launch profiles in any of the given states.</p>
+    pub fn states(&self) -> std::option::Option<&[std::string::String]> {
+        self.states.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLaunchProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11655,6 +12340,55 @@ pub struct CreateLaunchProfileInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateLaunchProfileInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
+    /// These subnets must support the specified instance types. </p>
+    pub fn ec2_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ec2_subnet_ids.as_deref()
+    }
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid
+    /// version is "2021-03-31".</p>
+    pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.launch_profile_protocol_versions.as_deref()
+    }
+    /// <p>The name for the launch profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A configuration for a streaming session.</p>
+    pub fn stream_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamConfigurationCreate> {
+        self.stream_configuration.as_ref()
+    }
+    /// <p>Unique identifiers for a collection of studio components that can be used with this
+    /// launch profile.</p>
+    pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.studio_component_ids.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLaunchProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLaunchProfileInput");
@@ -11686,6 +12420,22 @@ pub struct DeleteLaunchProfileInput {
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl DeleteLaunchProfileInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLaunchProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11722,6 +12472,46 @@ pub struct UpdateLaunchProfileInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl UpdateLaunchProfileInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid
+    /// version is "2021-03-31".</p>
+    pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.launch_profile_protocol_versions.as_deref()
+    }
+    /// <p>The name for the launch profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A configuration for a streaming session.</p>
+    pub fn stream_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamConfigurationCreate> {
+        self.stream_configuration.as_ref()
+    }
+    /// <p>Unique identifiers for a collection of studio components that can be used with this
+    /// launch profile.</p>
+    pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.studio_component_ids.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateLaunchProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLaunchProfileInput");
@@ -11749,6 +12539,16 @@ pub struct GetLaunchProfileInput {
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl GetLaunchProfileInput {
+    /// <p>The Launch Profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLaunchProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLaunchProfileInput");
@@ -11767,6 +12567,16 @@ pub struct ListEulasInput {
     /// <p>The token to request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEulasInput {
+    /// <p>The list of EULA IDs that should be returned</p>
+    pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.eula_ids.as_deref()
+    }
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEulasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEulasInput");
@@ -11782,6 +12592,12 @@ impl std::fmt::Debug for ListEulasInput {
 pub struct GetEulaInput {
     /// <p>The EULA ID.</p>
     pub eula_id: std::option::Option<std::string::String>,
+}
+impl GetEulaInput {
+    /// <p>The EULA ID.</p>
+    pub fn eula_id(&self) -> std::option::Option<&str> {
+        self.eula_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEulaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11801,6 +12617,20 @@ pub struct ListEulaAcceptancesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
+}
+impl ListEulaAcceptancesInput {
+    /// <p>The list of EULA IDs that have been previously accepted.</p>
+    pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.eula_ids.as_deref()
+    }
+    /// <p>The token to request the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The studio ID. </p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEulaAcceptancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11825,6 +12655,22 @@ pub struct AcceptEulasInput {
     /// <p>A collection of EULA IDs.</p>
     pub studio_id: std::option::Option<std::string::String>,
 }
+impl AcceptEulasInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The EULA ID.</p>
+    pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.eula_ids.as_deref()
+    }
+    /// <p>A collection of EULA IDs.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AcceptEulasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptEulasInput");
@@ -11843,6 +12689,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11864,6 +12720,20 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -11879,6 +12749,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

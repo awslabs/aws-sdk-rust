@@ -2,21 +2,22 @@
 pub fn serialize_structure_crate_input_change_server_life_cycle_state_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ChangeServerLifeCycleStateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.life_cycle {
         let mut object_2 = object.key("lifeCycle").start_object();
-        crate::json_ser::serialize_structure_crate_model_change_server_life_cycle_state_source_server_lifecycle(&mut object_2, var_1);
+        crate::json_ser::serialize_structure_crate_model_change_server_life_cycle_state_source_server_lifecycle(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.source_server_id {
         object.key("sourceServerID").string(var_3);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_replication_configuration_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateReplicationConfigurationTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.associate_default_security_group {
         object.key("associateDefaultSecurityGroup").boolean(*var_4);
     }
@@ -81,41 +82,45 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
     if let Some(var_23) = &input.use_dedicated_replication_server {
         object.key("useDedicatedReplicationServer").boolean(*var_23);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteJobInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.job_id {
         object.key("jobID").string(var_24);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_replication_configuration_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteReplicationConfigurationTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.replication_configuration_template_id {
         object
             .key("replicationConfigurationTemplateID")
             .string(var_25);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_source_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteSourceServerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.source_server_id {
         object.key("sourceServerID").string(var_26);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_job_log_items_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeJobLogItemsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.job_id {
         object.key("jobID").string(var_27);
     }
@@ -128,18 +133,19 @@ pub fn serialize_structure_crate_input_describe_job_log_items_input(
     if let Some(var_28) = &input.next_token {
         object.key("nextToken").string(var_28);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeJobsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.filters {
         let mut object_30 = object.key("filters").start_object();
         crate::json_ser::serialize_structure_crate_model_describe_jobs_request_filters(
             &mut object_30,
             var_29,
-        );
+        )?;
         object_30.finish();
     }
     if input.max_results != 0 {
@@ -151,12 +157,13 @@ pub fn serialize_structure_crate_input_describe_jobs_input(
     if let Some(var_31) = &input.next_token {
         object.key("nextToken").string(var_31);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_replication_configuration_templates_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeReplicationConfigurationTemplatesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if input.max_results != 0 {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -177,18 +184,19 @@ pub fn serialize_structure_crate_input_describe_replication_configuration_templa
         }
         array_34.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_source_servers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSourceServersInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.filters {
         let mut object_37 = object.key("filters").start_object();
         crate::json_ser::serialize_structure_crate_model_describe_source_servers_request_filters(
             &mut object_37,
             var_36,
-        );
+        )?;
         object_37.finish();
     }
     if input.max_results != 0 {
@@ -200,66 +208,73 @@ pub fn serialize_structure_crate_input_describe_source_servers_input(
     if let Some(var_38) = &input.next_token {
         object.key("nextToken").string(var_38);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disconnect_from_service_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisconnectFromServiceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.source_server_id {
         object.key("sourceServerID").string(var_39);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_finalize_cutover_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::FinalizeCutoverInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.source_server_id {
         object.key("sourceServerID").string(var_40);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_launch_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLaunchConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.source_server_id {
         object.key("sourceServerID").string(var_41);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_replication_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetReplicationConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.source_server_id {
         object.key("sourceServerID").string(var_42);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_mark_as_archived_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MarkAsArchivedInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.source_server_id {
         object.key("sourceServerID").string(var_43);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_retry_data_replication_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RetryDataReplicationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.source_server_id {
         object.key("sourceServerID").string(var_44);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_cutover_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartCutoverInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.source_server_i_ds {
         let mut array_46 = object.key("sourceServerIDs").start_array();
         for item_47 in var_45 {
@@ -278,12 +293,13 @@ pub fn serialize_structure_crate_input_start_cutover_input(
         }
         object_49.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_test_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartTestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.source_server_i_ds {
         let mut array_53 = object.key("sourceServerIDs").start_array();
         for item_54 in var_52 {
@@ -302,12 +318,13 @@ pub fn serialize_structure_crate_input_start_test_input(
         }
         object_56.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.tags {
         let mut object_60 = object.key("tags").start_object();
         for (key_61, value_62) in var_59 {
@@ -317,12 +334,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_60.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_terminate_target_instances_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TerminateTargetInstancesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.source_server_i_ds {
         let mut array_64 = object.key("sourceServerIDs").start_array();
         for item_65 in var_63 {
@@ -341,12 +359,13 @@ pub fn serialize_structure_crate_input_terminate_target_instances_input(
         }
         object_67.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_launch_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLaunchConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.copy_private_ip {
         object.key("copyPrivateIp").boolean(*var_70);
     }
@@ -358,7 +377,7 @@ pub fn serialize_structure_crate_input_update_launch_configuration_input(
     }
     if let Some(var_73) = &input.licensing {
         let mut object_74 = object.key("licensing").start_object();
-        crate::json_ser::serialize_structure_crate_model_licensing(&mut object_74, var_73);
+        crate::json_ser::serialize_structure_crate_model_licensing(&mut object_74, var_73)?;
         object_74.finish();
     }
     if let Some(var_75) = &input.name {
@@ -372,12 +391,13 @@ pub fn serialize_structure_crate_input_update_launch_configuration_input(
             .key("targetInstanceTypeRightSizingMethod")
             .string(var_77.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_replication_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateReplicationConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.associate_default_security_group {
         object.key("associateDefaultSecurityGroup").boolean(*var_78);
     }
@@ -412,7 +432,7 @@ pub fn serialize_structure_crate_input_update_replication_configuration_input(
         for item_87 in var_85 {
             {
                 let mut object_88 = array_86.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_replication_configuration_replicated_disk(&mut object_88, item_87);
+                crate::json_ser::serialize_structure_crate_model_replication_configuration_replicated_disk(&mut object_88, item_87)?;
                 object_88.finish();
             }
         }
@@ -450,12 +470,13 @@ pub fn serialize_structure_crate_input_update_replication_configuration_input(
     if let Some(var_99) = &input.use_dedicated_replication_server {
         object.key("useDedicatedReplicationServer").boolean(*var_99);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_replication_configuration_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateReplicationConfigurationTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_100) = &input.arn {
         object.key("arn").string(var_100);
     }
@@ -523,21 +544,23 @@ pub fn serialize_structure_crate_input_update_replication_configuration_template
             .key("useDedicatedReplicationServer")
             .boolean(*var_117);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_change_server_life_cycle_state_source_server_lifecycle(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChangeServerLifeCycleStateSourceServerLifecycle,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.state {
         object.key("state").string(var_118.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_describe_jobs_request_filters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DescribeJobsRequestFilters,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_119) = &input.job_i_ds {
         let mut array_120 = object.key("jobIDs").start_array();
         for item_121 in var_119 {
@@ -553,12 +576,13 @@ pub fn serialize_structure_crate_model_describe_jobs_request_filters(
     if let Some(var_123) = &input.to_date {
         object.key("toDate").string(var_123);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_describe_source_servers_request_filters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DescribeSourceServersRequestFilters,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_124) = &input.source_server_i_ds {
         let mut array_125 = object.key("sourceServerIDs").start_array();
         for item_126 in var_124 {
@@ -571,21 +595,23 @@ pub fn serialize_structure_crate_model_describe_source_servers_request_filters(
     if let Some(var_127) = &input.is_archived {
         object.key("isArchived").boolean(*var_127);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_licensing(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Licensing,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_128) = &input.os_byol {
         object.key("osByol").boolean(*var_128);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_replication_configuration_replicated_disk(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ReplicationConfigurationReplicatedDisk,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_129) = &input.device_name {
         object.key("deviceName").string(var_129);
     }
@@ -601,4 +627,5 @@ pub fn serialize_structure_crate_model_replication_configuration_replicated_disk
             aws_smithy_types::Number::NegInt((input.iops).into()),
         );
     }
+    Ok(())
 }

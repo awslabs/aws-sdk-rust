@@ -276,6 +276,12 @@ pub struct StartDataSourceSyncJobOutput {
     /// <p>Identifies a particular synchronization job.</p>
     pub execution_id: std::option::Option<std::string::String>,
 }
+impl StartDataSourceSyncJobOutput {
+    /// <p>Identifies a particular synchronization job.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDataSourceSyncJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDataSourceSyncJobOutput");
@@ -334,6 +340,29 @@ pub struct QueryOutput {
     /// retrieve up to 100 items. For example, if the search found 192 items,
     /// you can only retrieve the first 100 of the items.</p>
     pub total_number_of_results: std::option::Option<i32>,
+}
+impl QueryOutput {
+    /// <p>The unique identifier for the search. You use <code>QueryId</code>
+    /// to identify the search when using the feedback API.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>The results of the search.</p>
+    pub fn result_items(&self) -> std::option::Option<&[crate::model::QueryResultItem]> {
+        self.result_items.as_deref()
+    }
+    /// <p>Contains the facet results. A <code>FacetResult</code> contains the
+    /// counts for each attribute key that was specified in the
+    /// <code>Facets</code> input parameter.</p>
+    pub fn facet_results(&self) -> std::option::Option<&[crate::model::FacetResult]> {
+        self.facet_results.as_deref()
+    }
+    /// <p>The total number of items found by the search; however, you can only
+    /// retrieve up to 100 items. For example, if the search found 192 items,
+    /// you can only retrieve the first 100 of the items.</p>
+    pub fn total_number_of_results(&self) -> std::option::Option<i32> {
+        self.total_number_of_results
+    }
 }
 impl std::fmt::Debug for QueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -485,6 +514,21 @@ pub struct ListThesauriOutput {
     /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
     pub thesaurus_summary_items: std::option::Option<std::vec::Vec<crate::model::ThesaurusSummary>>,
 }
+impl ListThesauriOutput {
+    /// <p>If the response is truncated, Amazon Kendra returns this
+    /// token that you can use in the subsequent request to
+    /// retrieve the next set of thesauri.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
+    pub fn thesaurus_summary_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::ThesaurusSummary]> {
+        self.thesaurus_summary_items.as_deref()
+    }
+}
 impl std::fmt::Debug for ListThesauriOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThesauriOutput");
@@ -565,6 +609,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tags associated with the index, FAQ, or data source.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags associated with the index, FAQ, or data source.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -629,6 +679,25 @@ pub struct ListQuerySuggestionsBlockListsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use
     /// in the subsequent request to retrieve the next set of block lists.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListQuerySuggestionsBlockListsOutput {
+    /// <p>Summary items for a block list.</p>
+    /// <p>This includes summary items on the block list ID, block list name, when the
+    /// block list was created, when the block list was last updated, and the count
+    /// of block words/phrases in the block list.</p>
+    /// <p>For information on the current quota limits for block lists, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+    /// for Amazon Kendra</a>.</p>
+    pub fn block_list_summary_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::QuerySuggestionsBlockListSummary]> {
+        self.block_list_summary_items.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use
+    /// in the subsequent request to retrieve the next set of block lists.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListQuerySuggestionsBlockListsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -725,6 +794,20 @@ pub struct ListIndicesOutput {
     /// indexes.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIndicesOutput {
+    /// <p>An array of summary information for one or more indexes.</p>
+    pub fn index_configuration_summary_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::IndexConfigurationSummary]> {
+        self.index_configuration_summary_items.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you
+    /// can use in the subsequent request to retrieve the next set of
+    /// indexes.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIndicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIndicesOutput");
@@ -815,6 +898,23 @@ pub struct ListGroupsOlderThanOrderingIdOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupsOlderThanOrderingIdOutput {
+    /// <p>
+    /// Summary information for list of groups that are mapped to users before a
+    /// given ordering or timestamp identifier.
+    /// </p>
+    pub fn groups_summaries(&self) -> std::option::Option<&[crate::model::GroupSummary]> {
+        self.groups_summaries.as_deref()
+    }
+    /// <p>
+    /// If the response is truncated, Amazon Kendra returns this token that you can use
+    /// in the subsequent request to retrieve the next set of groups that are
+    /// mapped to users before a given ordering or timestamp identifier.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupsOlderThanOrderingIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsOlderThanOrderingIdOutput");
@@ -902,6 +1002,17 @@ pub struct ListFaqsOutput {
     /// <p>information about the FAQs associated with the specified index.</p>
     pub faq_summary_items: std::option::Option<std::vec::Vec<crate::model::FaqSummary>>,
 }
+impl ListFaqsOutput {
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use
+    /// in the subsequent request to retrieve the next set of FAQs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>information about the FAQs associated with the specified index.</p>
+    pub fn faq_summary_items(&self) -> std::option::Option<&[crate::model::FaqSummary]> {
+        self.faq_summary_items.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFaqsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFaqsOutput");
@@ -976,6 +1087,17 @@ pub struct ListDataSourceSyncJobsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you
     /// can use in the subsequent request to retrieve the next set of jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDataSourceSyncJobsOutput {
+    /// <p>A history of synchronization jobs for the data source.</p>
+    pub fn history(&self) -> std::option::Option<&[crate::model::DataSourceSyncJob]> {
+        self.history.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you
+    /// can use in the subsequent request to retrieve the next set of jobs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDataSourceSyncJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1053,6 +1175,18 @@ pub struct ListDataSourcesOutput {
     /// sources. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDataSourcesOutput {
+    /// <p>An array of summary information for one or more data sources.</p>
+    pub fn summary_items(&self) -> std::option::Option<&[crate::model::DataSourceSummary]> {
+        self.summary_items.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you
+    /// can use in the subsequent request to retrieve the next set of data
+    /// sources. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDataSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSourcesOutput");
@@ -1129,6 +1263,16 @@ pub struct GetQuerySuggestionsOutput {
     pub query_suggestions_id: std::option::Option<std::string::String>,
     /// <p>A list of query suggestions for an index.</p>
     pub suggestions: std::option::Option<std::vec::Vec<crate::model::Suggestion>>,
+}
+impl GetQuerySuggestionsOutput {
+    /// <p>The unique identifier for a list of query suggestions for an index.</p>
+    pub fn query_suggestions_id(&self) -> std::option::Option<&str> {
+        self.query_suggestions_id.as_deref()
+    }
+    /// <p>A list of query suggestions for an index.</p>
+    pub fn suggestions(&self) -> std::option::Option<&[crate::model::Suggestion]> {
+        self.suggestions.as_deref()
+    }
 }
 impl std::fmt::Debug for GetQuerySuggestionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1242,6 +1386,76 @@ pub struct DescribeThesaurusOutput {
     pub term_count: std::option::Option<i64>,
     /// <p>The number of synonym rules in the thesaurus file.</p>
     pub synonym_rule_count: std::option::Option<i64>,
+}
+impl DescribeThesaurusOutput {
+    /// <p>The identifier of the thesaurus.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The thesaurus name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The thesaurus description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>,
+    /// queries are able to use the thesaurus. If the <code>Status</code> field value
+    /// is <code>FAILED</code>, the <code>ErrorMessage</code> field provides
+    /// more information.
+    /// </p>
+    /// <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means
+    /// that Amazon Kendra could not ingest the new thesaurus file. The old
+    /// thesaurus file is still active.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ThesaurusStatus> {
+        self.status.as_ref()
+    }
+    /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the
+    /// <code>ErrorMessage</code> field provides more information.
+    /// </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The Unix datetime that the thesaurus was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+    /// to access thesaurus file specified in <code>SourceS3Path</code>.
+    /// </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Information required to find a specific file in an Amazon S3
+    /// bucket.</p>
+    pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.source_s3_path.as_ref()
+    }
+    /// <p>The size of the thesaurus file in bytes.</p>
+    pub fn file_size_bytes(&self) -> std::option::Option<i64> {
+        self.file_size_bytes
+    }
+    /// <p>The number of unique terms in the thesaurus file. For example, the
+    /// synonyms <code>a,b,c</code> and <code>a=>d</code>, the term
+    /// count would be 4.
+    /// </p>
+    pub fn term_count(&self) -> std::option::Option<i64> {
+        self.term_count
+    }
+    /// <p>The number of synonym rules in the thesaurus file.</p>
+    pub fn synonym_rule_count(&self) -> std::option::Option<i64> {
+        self.synonym_rule_count
+    }
 }
 impl std::fmt::Debug for DescribeThesaurusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1529,6 +1743,63 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     /// and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
     pub total_suggestions_count: std::option::Option<i32>,
 }
+impl DescribeQuerySuggestionsConfigOutput {
+    /// <p>Shows whether query suggestions are currently in
+    /// <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
+    /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code>
+    /// turns off query suggestions for your users. You can change the mode using
+    /// the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
+    /// operation.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
+        self.mode.as_ref()
+    }
+    /// <p>Shows whether the status of query suggestions settings is currently
+    /// Active or Updating.</p>
+    /// <p>Active means the current settings apply and Updating means your
+    /// changed settings are in the process of applying.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QuerySuggestionsStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Shows how recent your queries are in your query log time
+    /// window (in days).</p>
+    pub fn query_log_look_back_window_in_days(&self) -> std::option::Option<i32> {
+        self.query_log_look_back_window_in_days
+    }
+    /// <p>Shows whether Amazon Kendra uses all queries or only uses queries that
+    /// include user information to generate query suggestions.</p>
+    pub fn include_queries_without_user_information(&self) -> std::option::Option<bool> {
+        self.include_queries_without_user_information
+    }
+    /// <p>Shows the minimum number of unique users who must search a query in
+    /// order for the query to be eligible to suggest to your users.</p>
+    pub fn minimum_number_of_querying_users(&self) -> std::option::Option<i32> {
+        self.minimum_number_of_querying_users
+    }
+    /// <p>Shows the minimum number of times a query must be searched in order for
+    /// the query to be eligible to suggest to your users.</p>
+    pub fn minimum_query_count(&self) -> std::option::Option<i32> {
+        self.minimum_query_count
+    }
+    /// <p>Shows the date-time query suggestions for an index was last updated.</p>
+    pub fn last_suggestions_build_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_suggestions_build_time.as_ref()
+    }
+    /// <p>Shows the date-time query suggestions for an index was last cleared.</p>
+    /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based
+    /// on new queries added to the query log from the time you cleared suggestions.
+    /// Amazon Kendra only considers re-occurences of a query from the time you cleared
+    /// suggestions. </p>
+    pub fn last_clear_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_clear_time.as_ref()
+    }
+    /// <p>Shows the current total count of query suggestions for an index.</p>
+    /// <p>This count can change when you update your query suggestions settings,
+    /// if you filter out certain queries from suggestions using a block list,
+    /// and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
+    pub fn total_suggestions_count(&self) -> std::option::Option<i32> {
+        self.total_suggestions_count
+    }
+}
 impl std::fmt::Debug for DescribeQuerySuggestionsConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeQuerySuggestionsConfigOutput");
@@ -1782,6 +2053,67 @@ pub struct DescribeQuerySuggestionsBlockListOutput {
     /// give STS (Security Token Service) assume role permissions to
     /// Amazon Kendra.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl DescribeQuerySuggestionsBlockListOutput {
+    /// <p>Shows the identifier of the index for the block list.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>Shows the unique identifier of the block list.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Shows the name of the block list.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Shows the description for the block list.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Shows whether the current status of the block list is
+    /// <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QuerySuggestionsBlockListStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Shows the error message with details when there are issues in
+    /// processing the block list.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Shows the date-time a block list for query suggestions was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
+    /// <p>Each block word or phrase should be on a separate line in a text file.</p>
+    /// <p>For information on the current quota limits for block lists, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+    /// for Amazon Kendra</a>.</p>
+    pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.source_s3_path.as_ref()
+    }
+    /// <p>Shows the current number of valid, non-empty words or phrases in
+    /// the block list text file.</p>
+    pub fn item_count(&self) -> std::option::Option<i32> {
+        self.item_count
+    }
+    /// <p>Shows the current size of the block list text file in S3.</p>
+    pub fn file_size_bytes(&self) -> std::option::Option<i64> {
+        self.file_size_bytes
+    }
+    /// <p>Shows the current IAM (Identity and Access Management) role used by
+    /// Amazon Kendra to access the block list text file in S3.</p>
+    /// <p>The role needs S3 read permissions to your file in S3 and needs to
+    /// give STS (Security Token Service) assume role permissions to
+    /// Amazon Kendra.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeQuerySuggestionsBlockListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2045,6 +2377,53 @@ pub struct DescribePrincipalMappingOutput {
     pub group_ordering_id_summaries:
         std::option::Option<std::vec::Vec<crate::model::GroupOrderingIdSummary>>,
 }
+impl DescribePrincipalMappingOutput {
+    /// <p>Shows the identifier of the index to see information on the
+    /// processing of <code>PUT</code> and <code>DELETE</code> actions
+    /// for mapping users to their groups.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>Shows the identifier of the data source to see information on
+    /// the processing of <code>PUT</code> and <code>DELETE</code> actions
+    /// for mapping users to their groups.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>Shows the identifier of the group to see information on the
+    /// processing of <code>PUT</code> and <code>DELETE</code> actions
+    /// for mapping users to their groups.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>Shows the following information on the processing of <code>PUT</code> and
+    /// <code>DELETE</code> actions for mapping users to their groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Status – the status can be either
+    /// <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+    /// <code>DELETED</code>, or <code>FAILED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Last updated – the last date-time an action was updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>Received – the last date-time an action was received or submitted.</p>
+    /// </li>
+    /// <li>
+    /// <p>Ordering ID – the latest action that should process and apply
+    /// after other actions.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failure reason – the reason an action could not be processed.</p>
+    /// </li>
+    /// </ul>
+    pub fn group_ordering_id_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::GroupOrderingIdSummary]> {
+        self.group_ordering_id_summaries.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePrincipalMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePrincipalMappingOutput");
@@ -2254,6 +2633,96 @@ pub struct DescribeIndexOutput {
     /// levels of groups and users from an AWS Single Sign-On identity source.</p>
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
+}
+impl DescribeIndexOutput {
+    /// <p>The name of the index.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the index.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Kendra edition used for the index. You decide the edition
+    /// when you create the index.</p>
+    pub fn edition(&self) -> std::option::Option<&crate::model::IndexEdition> {
+        self.edition.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
+    /// permission to write to your Amazon Cloudwatch logs.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The identifier of the KMScustomer master key (CMK) used to
+    /// encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+    /// <p>The current status of the index. When the value is
+    /// <code>ACTIVE</code>, the index is ready for use. If the
+    /// <code>Status</code> field value is <code>FAILED</code>, the
+    /// <code>ErrorMessage</code> field contains a message that explains
+    /// why.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IndexStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The description of the index.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Unix datetime that the index was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix datetime that the index was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>Configuration settings for any metadata applied to the documents in
+    /// the index.</p>
+    pub fn document_metadata_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DocumentMetadataConfiguration]> {
+        self.document_metadata_configurations.as_deref()
+    }
+    /// <p>Provides information about the number of FAQ questions and answers and
+    /// the number of text documents indexed.</p>
+    pub fn index_statistics(&self) -> std::option::Option<&crate::model::IndexStatistics> {
+        self.index_statistics.as_ref()
+    }
+    /// <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+    /// <code>ErrorMessage</code> field contains a message that explains
+    /// why.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>For Enterprise edition indexes, you can choose to use additional
+    /// capacity to meet the needs of your application. This contains the capacity
+    /// units used for the index. A 0 for the query capacity or the storage
+    /// capacity indicates that the index is using the default capacity for the
+    /// index.</p>
+    pub fn capacity_units(&self) -> std::option::Option<&crate::model::CapacityUnitsConfiguration> {
+        self.capacity_units.as_ref()
+    }
+    /// <p>The user token configuration for the Amazon Kendra index.</p>
+    pub fn user_token_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserTokenConfiguration]> {
+        self.user_token_configurations.as_deref()
+    }
+    /// <p>The user context policy for the Amazon Kendra index.</p>
+    pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
+        self.user_context_policy.as_ref()
+    }
+    /// <p>Shows whether you have enabled the configuration for fetching access
+    /// levels of groups and users from an AWS Single Sign-On identity source.</p>
+    pub fn user_group_resolution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
+        self.user_group_resolution_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2630,6 +3099,64 @@ pub struct DescribeFaqOutput {
     /// documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
 }
+impl DescribeFaqOutput {
+    /// <p>The identifier of the FAQ.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index that contains the FAQ.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The name that you gave the FAQ when it was created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the FAQ that you provided when it was created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that the FAQ was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time that the FAQ was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>Information required to find a specific file in an Amazon S3
+    /// bucket.</p>
+    pub fn s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.s3_path.as_ref()
+    }
+    /// <p>The status of the FAQ. It is ready to use when the status is
+    /// <code>ACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FaqStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket
+    /// containing the input files for the FAQ.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code>
+    /// field contains the reason why the FAQ failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The file format used by the input files for the FAQ.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::FaqFileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>The code for a language. This shows a supported language
+    /// for the FAQ document. English is supported by default.  
+    /// For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFaqOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFaqOutput");
@@ -2887,6 +3414,72 @@ pub struct DescribeDataSourceOutput {
     /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
     /// documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
+}
+impl DescribeDataSourceOutput {
+    /// <p>The identifier of the data source.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index that contains the data source.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The name that you gave the data source when it was created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the data source.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Information that describes where the data source is located and how
+    /// the data source is configured. The specific information in the description
+    /// depends on the data source provider.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The Unix timestamp of when the data source was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix timestamp of when the data source was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The description of the data source.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the data source. When the status is
+    /// <code>ACTIVE</code> the data source is ready to use. When the status is
+    /// <code>FAILED</code>, the <code>ErrorMessage</code> field contains the
+    /// reason that the data source failed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The schedule that Amazon Kendra will update the data source.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that enables the data
+    /// source to access its resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the
+    /// <code>ErrorMessage</code> field contains a description of the error that
+    /// caused the data source to fail.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The code for a language. This shows a supported language for all
+    /// documents in the data source. English is supported by
+    /// default. For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3318,6 +3911,13 @@ pub struct CreateThesaurusOutput {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl CreateThesaurusOutput {
+    /// <p>The unique identifier of the thesaurus.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateThesaurusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateThesaurusOutput");
@@ -3366,6 +3966,12 @@ pub struct CreateQuerySuggestionsBlockListOutput {
     /// <p>The unique identifier of the created block list.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl CreateQuerySuggestionsBlockListOutput {
+    /// <p>The unique identifier of the created block list.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateQuerySuggestionsBlockListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQuerySuggestionsBlockListOutput");
@@ -3412,6 +4018,13 @@ pub struct CreateIndexOutput {
     /// <p>The unique identifier of the index. Use this identifier when you query
     /// an index, set up a data source, or index a document.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl CreateIndexOutput {
+    /// <p>The unique identifier of the index. Use this identifier when you query
+    /// an index, set up a data source, or index a document.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3461,6 +4074,12 @@ pub struct CreateFaqOutput {
     /// <p>The unique identifier of the FAQ.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl CreateFaqOutput {
+    /// <p>The unique identifier of the FAQ.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFaqOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFaqOutput");
@@ -3506,6 +4125,12 @@ impl CreateFaqOutput {
 pub struct CreateDataSourceOutput {
     /// <p>A unique identifier for the data source.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl CreateDataSourceOutput {
+    /// <p>A unique identifier for the data source.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3590,6 +4215,21 @@ pub struct BatchPutDocumentOutput {
     /// </p>
     pub failed_documents:
         std::option::Option<std::vec::Vec<crate::model::BatchPutDocumentResponseFailedDocument>>,
+}
+impl BatchPutDocumentOutput {
+    /// <p>A list of documents that were not added to the index because the
+    /// document failed a validation check. Each document contains an error
+    /// message that indicates why the document couldn't be added to the
+    /// index.</p>
+    /// <p>If there was an error adding a document to an index the error is
+    /// reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+    /// Amazon Kendra with Amazon CloudWatch Logs</a>
+    /// </p>
+    pub fn failed_documents(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchPutDocumentResponseFailedDocument]> {
+        self.failed_documents.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3676,6 +4316,23 @@ pub struct BatchGetDocumentStatusOutput {
     /// indexing, or failed indexing. If a document failed indexing, the
     /// status provides the reason why.</p>
     pub document_status_list: std::option::Option<std::vec::Vec<crate::model::Status>>,
+}
+impl BatchGetDocumentStatusOutput {
+    /// <p>A list of documents that Amazon Kendra couldn't get the status for. The
+    /// list includes the ID of the document and the reason that the status
+    /// couldn't be found.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetDocumentStatusResponseError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The status of documents. The status indicates if the document is
+    /// waiting to be indexed, is in the process of indexing, has completed
+    /// indexing, or failed indexing. If a document failed indexing, the
+    /// status provides the reason why.</p>
+    pub fn document_status_list(&self) -> std::option::Option<&[crate::model::Status]> {
+        self.document_status_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetDocumentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3774,6 +4431,16 @@ pub struct BatchDeleteDocumentOutput {
     /// be removed from the index.</p>
     pub failed_documents:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDocumentResponseFailedDocument>>,
+}
+impl BatchDeleteDocumentOutput {
+    /// <p>A list of documents that could not be removed from the index. Each
+    /// entry contains an error message that indicates why the document couldn't
+    /// be removed from the index.</p>
+    pub fn failed_documents(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDeleteDocumentResponseFailedDocument]> {
+        self.failed_documents.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

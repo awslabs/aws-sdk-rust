@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_copy_backup_to_region_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CopyBackupToRegionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.destination_region {
         object.key("DestinationRegion").string(var_1);
     }
@@ -14,24 +14,25 @@ pub fn serialize_structure_crate_input_copy_backup_to_region_input(
         for item_5 in var_3 {
             {
                 let mut object_6 = array_4.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_6, item_5);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
         array_4.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_cluster_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateClusterInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.backup_retention_policy {
         let mut object_8 = object.key("BackupRetentionPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_backup_retention_policy(
             &mut object_8,
             var_7,
-        );
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.hsm_type {
@@ -54,18 +55,19 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         for item_16 in var_14 {
             {
                 let mut object_17 = array_15.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_17, item_16);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
         array_15.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_hsm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateHsmInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.cluster_id {
         object.key("ClusterId").string(var_18);
     }
@@ -75,30 +77,33 @@ pub fn serialize_structure_crate_input_create_hsm_input(
     if let Some(var_20) = &input.ip_address {
         object.key("IpAddress").string(var_20);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_backup_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBackupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.backup_id {
         object.key("BackupId").string(var_21);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_cluster_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteClusterInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.cluster_id {
         object.key("ClusterId").string(var_22);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_hsm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteHsmInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.cluster_id {
         object.key("ClusterId").string(var_23);
     }
@@ -111,12 +116,13 @@ pub fn serialize_structure_crate_input_delete_hsm_input(
     if let Some(var_26) = &input.eni_ip {
         object.key("EniIp").string(var_26);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_backups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeBackupsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.next_token {
         object.key("NextToken").string(var_27);
     }
@@ -144,12 +150,13 @@ pub fn serialize_structure_crate_input_describe_backups_input(
     if let Some(var_35) = &input.sort_ascending {
         object.key("SortAscending").boolean(*var_35);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_clusters_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeClustersInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.filters {
         let mut object_37 = object.key("Filters").start_object();
         for (key_38, value_39) in var_36 {
@@ -174,12 +181,13 @@ pub fn serialize_structure_crate_input_describe_clusters_input(
             aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_initialize_cluster_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::InitializeClusterInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.cluster_id {
         object.key("ClusterId").string(var_44);
     }
@@ -189,12 +197,13 @@ pub fn serialize_structure_crate_input_initialize_cluster_input(
     if let Some(var_46) = &input.trust_anchor {
         object.key("TrustAnchor").string(var_46);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.resource_id {
         object.key("ResourceId").string(var_47);
     }
@@ -207,50 +216,54 @@ pub fn serialize_structure_crate_input_list_tags_input(
             aws_smithy_types::Number::NegInt((*var_49).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_modify_backup_attributes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ModifyBackupAttributesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.backup_id {
         object.key("BackupId").string(var_50);
     }
     if let Some(var_51) = &input.never_expires {
         object.key("NeverExpires").boolean(*var_51);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_modify_cluster_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ModifyClusterInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.backup_retention_policy {
         let mut object_53 = object.key("BackupRetentionPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_backup_retention_policy(
             &mut object_53,
             var_52,
-        );
+        )?;
         object_53.finish();
     }
     if let Some(var_54) = &input.cluster_id {
         object.key("ClusterId").string(var_54);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_restore_backup_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RestoreBackupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.backup_id {
         object.key("BackupId").string(var_55);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.resource_id {
         object.key("ResourceId").string(var_56);
     }
@@ -259,18 +272,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_59 in var_57 {
             {
                 let mut object_60 = array_58.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59)?;
                 object_60.finish();
             }
         }
         array_58.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.resource_id {
         object.key("ResourceId").string(var_61);
     }
@@ -283,28 +297,31 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_63.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.key {
         object.key("Key").string(var_65);
     }
     if let Some(var_66) = &input.value {
         object.key("Value").string(var_66);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_backup_retention_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackupRetentionPolicy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.r#type {
         object.key("Type").string(var_67.as_str());
     }
     if let Some(var_68) = &input.value {
         object.key("Value").string(var_68);
     }
+    Ok(())
 }

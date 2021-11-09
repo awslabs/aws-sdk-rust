@@ -8,6 +8,16 @@ pub struct ValidationErrorsEntry {
     /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl ValidationErrorsEntry {
+    /// <p>Checks the name of the policy.</p>
+    pub fn check_name(&self) -> std::option::Option<&str> {
+        self.check_name.as_deref()
+    }
+    /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationErrorsEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationErrorsEntry");
@@ -73,6 +83,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The string value associated with the key of the tag.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key identifier, or name, of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The string value associated with the key of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -140,6 +160,17 @@ pub struct RotationRulesType {
     /// and influenced by a variety of factors that help distribute load.</p>
     pub automatically_after_days: std::option::Option<i64>,
 }
+impl RotationRulesType {
+    /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
+    /// <p>Secrets Manager schedules the next rotation when the previous
+    /// one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the
+    /// actual date of the last rotation. The service chooses the hour within that 24-hour date window
+    /// randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour
+    /// and influenced by a variety of factors that help distribute load.</p>
+    pub fn automatically_after_days(&self) -> std::option::Option<i64> {
+        self.automatically_after_days
+    }
+}
 impl std::fmt::Debug for RotationRulesType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotationRulesType");
@@ -206,6 +237,29 @@ pub struct ReplicationStatusType {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date that you last accessed the secret in the Region. </p>
     pub last_accessed_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ReplicationStatusType {
+    /// <p>The Region where replication occurs.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+    /// <p>Status message such as "<i>Secret with this name already exists in this
+    /// region</i>".</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The date that you last accessed the secret in the Region. </p>
+    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_accessed_date.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicationStatusType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -376,6 +430,16 @@ pub struct ReplicaRegionType {
     /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl ReplicaRegionType {
+    /// <p>Describes a single instance of Region objects.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplicaRegionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaRegionType");
@@ -446,6 +510,30 @@ pub struct SecretVersionsListEntry {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The KMS keys used to encrypt the secret version.</p>
     pub kms_key_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SecretVersionsListEntry {
+    /// <p>The unique version identifier of this version of the secret.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>An array of staging labels that are currently associated with this version of the
+    /// secret.</p>
+    pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
+        self.version_stages.as_deref()
+    }
+    /// <p>The date that this version of the secret was last accessed. Note that the resolution of
+    /// this field is at the date level and does not include the time.</p>
+    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_accessed_date.as_ref()
+    }
+    /// <p>The date and time this version of the secret was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The KMS keys used to encrypt the secret version.</p>
+    pub fn kms_key_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.kms_key_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for SecretVersionsListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -627,6 +715,95 @@ pub struct SecretListEntry {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Region where Secrets Manager originated the secret.</p>
     pub primary_region: std::option::Option<std::string::String>,
+}
+impl SecretListEntry {
+    /// <p>The Amazon Resource Name (ARN) of the secret.</p>
+    /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
+    /// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
+    /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
+    /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
+    /// <code>prod</code>. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The user-provided description of the secret.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to encrypt the
+    /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the
+    /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with
+    /// the default KMS CMK, the key named <code>awssecretsmanager</code>, for this account.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
+    pub fn rotation_enabled(&self) -> std::option::Option<bool> {
+        self.rotation_enabled
+    }
+    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
+    /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
+    pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
+        self.rotation_lambda_arn.as_deref()
+    }
+    /// <p>A structure that defines the rotation configuration for the secret.</p>
+    pub fn rotation_rules(&self) -> std::option::Option<&crate::model::RotationRulesType> {
+        self.rotation_rules.as_ref()
+    }
+    /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
+    pub fn last_rotated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_rotated_date.as_ref()
+    }
+    /// <p>The last date and time that this secret was modified in any way.</p>
+    pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_changed_date.as_ref()
+    }
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
+    /// date and therefore shows only the date, not the time.</p>
+    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_accessed_date.as_ref()
+    }
+    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
+    /// secret can be recovered until the number of days in the recovery window has passed, as
+    /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
+    pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deleted_date.as_ref()
+    }
+    /// <p>The list of user-defined tags associated with the secret. To add tags to a
+    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and
+    /// the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep
+    /// track of the different versions during the rotation process.</p>
+    /// <note>
+    /// <p>A version that does not have any <code>SecretVersionStage</code> is considered
+    /// deprecated and subject to deletion. Such versions are not included in this list.</p>
+    /// </note>
+    pub fn secret_versions_to_stages(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.secret_versions_to_stages.as_ref()
+    }
+    /// <p>Returns the name of the service that created the secret.</p>
+    pub fn owning_service(&self) -> std::option::Option<&str> {
+        self.owning_service.as_deref()
+    }
+    /// <p>The date and time when a secret was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The Region where Secrets Manager originated the secret.</p>
+    pub fn primary_region(&self) -> std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
 }
 impl std::fmt::Debug for SecretListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1019,6 +1196,17 @@ pub struct Filter {
     /// <p>Filters your list of secrets by a specific value.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Filter {
+    /// <p>Filters your list of secrets by a specific key.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::FilterNameStringType> {
+        self.key.as_ref()
+    }
+    /// <p>Filters your list of secrets by a specific value.</p>
+    /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

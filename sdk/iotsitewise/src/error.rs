@@ -8795,6 +8795,16 @@ pub struct ConflictingOperationException {
     /// <p>The ARN of the resource that conflicts with this operation.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ConflictingOperationException {
+    /// <p>The ID of the resource that conflicts with this operation.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ARN of the resource that conflicts with this operation.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ConflictingOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictingOperationException");
@@ -8956,6 +8966,16 @@ pub struct ResourceAlreadyExistsException {
     /// <p>The ARN of the resource that already exists.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ResourceAlreadyExistsException {
+    /// <p>The ID of the resource that already exists.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ARN of the resource that already exists.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
@@ -9113,6 +9133,12 @@ pub struct TooManyTagsException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the resource with too many tags.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl TooManyTagsException {
+    /// <p>The name of the resource with too many tags.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

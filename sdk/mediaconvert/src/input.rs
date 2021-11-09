@@ -81,10 +81,7 @@ impl AssociateCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -579,10 +576,7 @@ impl CreateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -869,10 +863,7 @@ impl CreateJobTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_job_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_job_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1084,10 +1075,7 @@ impl CreatePresetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_preset(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_preset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1318,10 +1306,7 @@ impl CreateQueueInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_queue(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_queue(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2045,10 +2030,7 @@ impl DescribeEndpointsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_endpoints(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_endpoints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3954,10 +3936,7 @@ impl PutPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4128,10 +4107,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4311,10 +4287,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4590,10 +4563,7 @@ impl UpdateJobTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_job_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_job_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4792,10 +4762,7 @@ impl UpdatePresetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_preset(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_preset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4998,10 +4965,7 @@ impl UpdateQueueInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_queue(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_queue(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5076,6 +5040,26 @@ pub struct UpdateQueueInput {
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub status: std::option::Option<crate::model::QueueStatus>,
 }
+impl UpdateQueueInput {
+    /// The new description for the queue, if you are changing it.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The name of the queue that you are modifying.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
+    pub fn reservation_plan_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationPlanSettings> {
+        self.reservation_plan_settings.as_ref()
+    }
+    /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
+    pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateQueueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQueueInput");
@@ -5099,6 +5083,24 @@ pub struct UpdatePresetInput {
     pub name: std::option::Option<std::string::String>,
     /// Settings for preset
     pub settings: std::option::Option<crate::model::PresetSettings>,
+}
+impl UpdatePresetInput {
+    /// The new category for the preset, if you are changing it.
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// The new description for the preset, if you are changing it.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The name of the preset you are modifying.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Settings for preset
+    pub fn settings(&self) -> std::option::Option<&crate::model::PresetSettings> {
+        self.settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePresetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5134,6 +5136,48 @@ pub struct UpdateJobTemplateInput {
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub status_update_interval: std::option::Option<crate::model::StatusUpdateInterval>,
 }
+impl UpdateJobTemplateInput {
+    /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    pub fn acceleration_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AccelerationSettings> {
+        self.acceleration_settings.as_ref()
+    }
+    /// The new category for the job template, if you are changing it.
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// The new description for the job template, if you are changing it.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Optional list of hop destinations.
+    pub fn hop_destinations(&self) -> std::option::Option<&[crate::model::HopDestination]> {
+        self.hop_destinations.as_deref()
+    }
+    /// The name of the job template you are modifying
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// The new queue for the job template, if you are changing it.
+    pub fn queue(&self) -> std::option::Option<&str> {
+        self.queue.as_deref()
+    }
+    /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    pub fn settings(&self) -> std::option::Option<&crate::model::JobTemplateSettings> {
+        self.settings.as_ref()
+    }
+    /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    pub fn status_update_interval(
+        &self,
+    ) -> std::option::Option<&crate::model::StatusUpdateInterval> {
+        self.status_update_interval.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateJobTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobTemplateInput");
@@ -5159,6 +5203,16 @@ pub struct UntagResourceInput {
     /// The keys of the tags that you want to remove from the resource.
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The keys of the tags that you want to remove from the resource.
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -5178,6 +5232,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5194,6 +5261,12 @@ pub struct PutPolicyInput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub policy: std::option::Option<crate::model::Policy>,
 }
+impl PutPolicyInput {
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPolicyInput");
@@ -5208,6 +5281,12 @@ impl std::fmt::Debug for PutPolicyInput {
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name.
     pub arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5229,6 +5308,24 @@ pub struct ListQueuesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub order: std::option::Option<crate::model::Order>,
+}
+impl ListQueuesInput {
+    /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+    pub fn list_by(&self) -> std::option::Option<&crate::model::QueueListBy> {
+        self.list_by.as_ref()
+    }
+    /// Optional. Number of queues, up to twenty, that will be returned at one time.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Use this string, provided with the response to a previous request, to request the next batch of queues.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+        self.order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListQueuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5255,6 +5352,28 @@ pub struct ListPresetsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub order: std::option::Option<crate::model::Order>,
+}
+impl ListPresetsInput {
+    /// Optionally, specify a preset category to limit responses to only presets from that category.
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    pub fn list_by(&self) -> std::option::Option<&crate::model::PresetListBy> {
+        self.list_by.as_ref()
+    }
+    /// Optional. Number of presets, up to twenty, that will be returned at one time
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Use this string, provided with the response to a previous request, to request the next batch of presets.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+        self.order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListPresetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5283,6 +5402,28 @@ pub struct ListJobTemplatesInput {
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub order: std::option::Option<crate::model::Order>,
 }
+impl ListJobTemplatesInput {
+    /// Optionally, specify a job template category to limit responses to only job templates from that category.
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    pub fn list_by(&self) -> std::option::Option<&crate::model::JobTemplateListBy> {
+        self.list_by.as_ref()
+    }
+    /// Optional. Number of job templates, up to twenty, that will be returned at one time.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListJobTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobTemplatesInput");
@@ -5310,6 +5451,28 @@ pub struct ListJobsInput {
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     pub status: std::option::Option<crate::model::JobStatus>,
 }
+impl ListJobsInput {
+    /// Optional. Number of jobs, up to twenty, that will be returned at one time.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+        self.order.as_ref()
+    }
+    /// Optional. Provide a queue name to get back only jobs from that queue.
+    pub fn queue(&self) -> std::option::Option<&str> {
+        self.queue.as_deref()
+    }
+    /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -5329,6 +5492,12 @@ pub struct GetQueueInput {
     /// The name of the queue that you want information about.
     pub name: std::option::Option<std::string::String>,
 }
+impl GetQueueInput {
+    /// The name of the queue that you want information about.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetQueueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetQueueInput");
@@ -5343,6 +5512,12 @@ impl std::fmt::Debug for GetQueueInput {
 pub struct GetPresetInput {
     /// The name of the preset.
     pub name: std::option::Option<std::string::String>,
+}
+impl GetPresetInput {
+    /// The name of the preset.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPresetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5370,6 +5545,12 @@ pub struct GetJobTemplateInput {
     /// The name of the job template.
     pub name: std::option::Option<std::string::String>,
 }
+impl GetJobTemplateInput {
+    /// The name of the job template.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobTemplateInput");
@@ -5385,6 +5566,12 @@ pub struct GetJobInput {
     /// the job ID of the job.
     pub id: std::option::Option<std::string::String>,
 }
+impl GetJobInput {
+    /// the job ID of the job.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobInput");
@@ -5399,6 +5586,12 @@ impl std::fmt::Debug for GetJobInput {
 pub struct DisassociateCertificateInput {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     pub arn: std::option::Option<std::string::String>,
+}
+impl DisassociateCertificateInput {
+    /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5419,6 +5612,20 @@ pub struct DescribeEndpointsInput {
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEndpointsInput {
+    /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
+    pub fn mode(&self) -> std::option::Option<&crate::model::DescribeEndpointsMode> {
+        self.mode.as_ref()
+    }
+    /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointsInput");
@@ -5436,6 +5643,12 @@ pub struct DeleteQueueInput {
     /// The name of the queue that you want to delete.
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteQueueInput {
+    /// The name of the queue that you want to delete.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteQueueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteQueueInput");
@@ -5450,6 +5663,12 @@ impl std::fmt::Debug for DeleteQueueInput {
 pub struct DeletePresetInput {
     /// The name of the preset to be deleted.
     pub name: std::option::Option<std::string::String>,
+}
+impl DeletePresetInput {
+    /// The name of the preset to be deleted.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePresetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5477,6 +5696,12 @@ pub struct DeleteJobTemplateInput {
     /// The name of the job template to be deleted.
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteJobTemplateInput {
+    /// The name of the job template to be deleted.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteJobTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteJobTemplateInput");
@@ -5502,6 +5727,37 @@ pub struct CreateQueueInput {
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateQueueInput {
+    /// Optional. A description of the queue that you are creating.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The name of the queue that you are creating.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
+    pub fn reservation_plan_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationPlanSettings> {
+        self.reservation_plan_settings.as_ref()
+    }
+    /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
+    pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
+        self.status.as_ref()
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateQueueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5531,6 +5787,31 @@ pub struct CreatePresetInput {
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreatePresetInput {
+    /// Optional. A category for the preset you are creating.
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// Optional. A description of the preset you are creating.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The name of the preset you are creating.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Settings for preset
+    pub fn settings(&self) -> std::option::Option<&crate::model::PresetSettings> {
+        self.settings.as_ref()
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePresetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5569,6 +5850,55 @@ pub struct CreateJobTemplateInput {
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateJobTemplateInput {
+    /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    pub fn acceleration_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AccelerationSettings> {
+        self.acceleration_settings.as_ref()
+    }
+    /// Optional. A category for the job template you are creating
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// Optional. A description of the job template you are creating.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+    pub fn hop_destinations(&self) -> std::option::Option<&[crate::model::HopDestination]> {
+        self.hop_destinations.as_deref()
+    }
+    /// The name of the job template you are creating.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
+    pub fn queue(&self) -> std::option::Option<&str> {
+        self.queue.as_deref()
+    }
+    /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    pub fn settings(&self) -> std::option::Option<&crate::model::JobTemplateSettings> {
+        self.settings.as_ref()
+    }
+    /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    pub fn status_update_interval(
+        &self,
+    ) -> std::option::Option<&crate::model::StatusUpdateInterval> {
+        self.status_update_interval.as_ref()
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5620,6 +5950,72 @@ pub struct CreateJobInput {
     pub user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateJobInput {
+    /// Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    pub fn acceleration_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AccelerationSettings> {
+        self.acceleration_settings.as_ref()
+    }
+    /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    pub fn billing_tags_source(&self) -> std::option::Option<&crate::model::BillingTagsSource> {
+        self.billing_tags_source.as_ref()
+    }
+    /// Optional. Idempotency token for CreateJob operation.
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+    pub fn hop_destinations(&self) -> std::option::Option<&[crate::model::HopDestination]> {
+        self.hop_destinations.as_deref()
+    }
+    /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
+    pub fn job_template(&self) -> std::option::Option<&str> {
+        self.job_template.as_deref()
+    }
+    /// Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+    pub fn queue(&self) -> std::option::Option<&str> {
+        self.queue.as_deref()
+    }
+    /// Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// JobSettings contains all the transcode settings for a job.
+    pub fn settings(&self) -> std::option::Option<&crate::model::JobSettings> {
+        self.settings.as_ref()
+    }
+    /// Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+    pub fn simulate_reserved_queue(
+        &self,
+    ) -> std::option::Option<&crate::model::SimulateReservedQueue> {
+        self.simulate_reserved_queue.as_ref()
+    }
+    /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    pub fn status_update_interval(
+        &self,
+    ) -> std::option::Option<&crate::model::StatusUpdateInterval> {
+        self.status_update_interval.as_ref()
+    }
+    /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.  Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.  Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
+    pub fn user_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobInput");
@@ -5647,6 +6043,12 @@ pub struct CancelJobInput {
     /// The Job ID of the job to be cancelled.
     pub id: std::option::Option<std::string::String>,
 }
+impl CancelJobInput {
+    /// The Job ID of the job to be cancelled.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelJobInput");
@@ -5661,6 +6063,12 @@ impl std::fmt::Debug for CancelJobInput {
 pub struct AssociateCertificateInput {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
     pub arn: std::option::Option<std::string::String>,
+}
+impl AssociateCertificateInput {
+    /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

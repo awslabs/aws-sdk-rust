@@ -11965,6 +11965,12 @@ pub struct InvalidChangeBatch {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidChangeBatch {
+    /// <p></p>
+    pub fn messages(&self) -> std::option::Option<&[std::string::String]> {
+        self.messages.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidChangeBatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidChangeBatch");

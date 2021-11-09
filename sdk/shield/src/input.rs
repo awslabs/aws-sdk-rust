@@ -90,10 +90,7 @@ impl AssociateDrtLogBucketInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_drt_log_bucket(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -245,10 +242,7 @@ impl AssociateDrtRoleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_drt_role(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_drt_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -416,10 +410,9 @@ impl AssociateHealthCheckInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_health_check(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_health_check(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -592,7 +585,7 @@ impl AssociateProactiveEngagementDetailsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_proactive_engagement_details(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_proactive_engagement_details(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -842,10 +835,7 @@ impl CreateProtectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_protection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_protection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1111,10 +1101,7 @@ impl CreateProtectionGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_protection_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1250,10 +1237,7 @@ impl CreateSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_subscription(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_subscription(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1400,10 +1384,7 @@ impl DeleteProtectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_protection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_protection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1558,10 +1539,7 @@ impl DeleteProtectionGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_protection_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1697,10 +1675,7 @@ impl DeleteSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_subscription(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_subscription(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1841,10 +1816,8 @@ impl DescribeAttackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_attack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_attack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1983,10 +1956,7 @@ impl DescribeAttackStatisticsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_attack_statistics(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2114,10 +2084,7 @@ impl DescribeDrtAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_drt_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_drt_access(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2246,7 +2213,7 @@ impl DescribeEmergencyContactSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_emergency_contact_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_emergency_contact_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2408,10 +2375,7 @@ impl DescribeProtectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_protection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_protection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2567,10 +2531,7 @@ impl DescribeProtectionGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_protection_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2706,10 +2667,7 @@ impl DescribeSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_subscription(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_subscription(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2840,10 +2798,7 @@ impl DisableProactiveEngagementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_proactive_engagement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2988,10 +2943,7 @@ impl DisassociateDrtLogBucketInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_drt_log_bucket(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3127,10 +3079,7 @@ impl DisassociateDrtRoleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_drt_role(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_drt_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3293,10 +3242,7 @@ impl DisassociateHealthCheckInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_health_check(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3435,10 +3381,7 @@ impl EnableProactiveEngagementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_proactive_engagement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3566,10 +3509,9 @@ impl GetSubscriptionStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_subscription_state(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_subscription_state(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3776,10 +3718,7 @@ impl ListAttacksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_attacks(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_attacks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3945,10 +3884,9 @@ impl ListProtectionGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_protection_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_protection_groups(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4114,10 +4052,7 @@ impl ListProtectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_protections(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_protections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4299,7 +4234,7 @@ impl ListResourcesInProtectionGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resources_in_protection_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resources_in_protection_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4450,10 +4385,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4623,10 +4557,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4796,10 +4727,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4965,7 +4893,7 @@ impl UpdateEmergencyContactSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_emergency_contact_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_emergency_contact_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5211,10 +5139,7 @@ impl UpdateProtectionGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_protection_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5367,10 +5292,7 @@ impl UpdateSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_subscription(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_subscription(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5439,6 +5361,12 @@ pub struct UpdateSubscriptionInput {
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
     pub auto_renew: std::option::Option<crate::model::AutoRenew>,
 }
+impl UpdateSubscriptionInput {
+    /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    pub fn auto_renew(&self) -> std::option::Option<&crate::model::AutoRenew> {
+        self.auto_renew.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubscriptionInput");
@@ -5474,6 +5402,40 @@ pub struct UpdateProtectionGroupInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateProtectionGroupInput {
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+        self.protection_group_id.as_deref()
+    }
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
+    /// </li>
+    /// <li>
+    /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
+    /// </li>
+    /// <li>
+    /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
+    /// </li>
+    /// </ul>
+    pub fn aggregation(&self) -> std::option::Option<&crate::model::ProtectionGroupAggregation> {
+        self.aggregation.as_ref()
+    }
+    /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+    pub fn pattern(&self) -> std::option::Option<&crate::model::ProtectionGroupPattern> {
+        self.pattern.as_ref()
+    }
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
+    /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ProtectedResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    pub fn members(&self) -> std::option::Option<&[std::string::String]> {
+        self.members.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProtectionGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProtectionGroupInput");
@@ -5494,6 +5456,13 @@ pub struct UpdateEmergencyContactSettingsInput {
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
 }
+impl UpdateEmergencyContactSettingsInput {
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
+    /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
+    pub fn emergency_contact_list(&self) -> std::option::Option<&[crate::model::EmergencyContact]> {
+        self.emergency_contact_list.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEmergencyContactSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEmergencyContactSettingsInput");
@@ -5510,6 +5479,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key for each tag that you want to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key for each tag that you want to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5529,6 +5508,16 @@ pub struct TagResourceInput {
     /// <p>The tags that you want to modify or add to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags that you want to modify or add to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5544,6 +5533,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5566,6 +5561,22 @@ pub struct ListResourcesInProtectionGroupInput {
     /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListResourcesInProtectionGroupInput {
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+        self.protection_group_id.as_deref()
+    }
+    /// <p>The next token value from a previous call to <code>ListResourcesInProtectionGroup</code>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of resource ARN objects to return. If you leave this blank,
+    /// Shield Advanced returns the first 20 results.</p>
+    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListResourcesInProtectionGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesInProtectionGroupInput");
@@ -5587,6 +5598,18 @@ pub struct ListProtectionsInput {
     /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListProtectionsInput {
+    /// <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of <a>Protection</a> objects to return. If you leave this blank,
+    /// Shield Advanced returns the first 20 results.</p>
+    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListProtectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProtectionsInput");
@@ -5606,6 +5629,18 @@ pub struct ListProtectionGroupsInput {
     /// Shield Advanced returns the first 20 results.</p>
     /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProtectionGroupsInput {
+    /// <p>The next token value from a previous call to <code>ListProtectionGroups</code>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of <a>ProtectionGroup</a> objects to return. If you leave this blank,
+    /// Shield Advanced returns the first 20 results.</p>
+    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProtectionGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5633,6 +5668,31 @@ pub struct ListAttacksInput {
     /// Shield Advanced returns the first 20 results.</p>
     /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAttacksInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left
+    /// blank, all applicable resources for this account will be included.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+    pub fn start_time(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+    pub fn end_time(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.end_time.as_ref()
+    }
+    /// <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave this blank,
+    /// Shield Advanced returns the first 20 results.</p>
+    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAttacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5677,6 +5737,16 @@ pub struct DisassociateHealthCheckInput {
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
     pub health_check_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateHealthCheckInput {
+    /// <p>The unique identifier (ID) for the <a>Protection</a> object to remove the health check association from. </p>
+    pub fn protection_id(&self) -> std::option::Option<&str> {
+        self.protection_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
+    pub fn health_check_arn(&self) -> std::option::Option<&str> {
+        self.health_check_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateHealthCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateHealthCheckInput");
@@ -5703,6 +5773,12 @@ impl std::fmt::Debug for DisassociateDrtRoleInput {
 pub struct DisassociateDrtLogBucketInput {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
     pub log_bucket: std::option::Option<std::string::String>,
+}
+impl DisassociateDrtLogBucketInput {
+    /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    pub fn log_bucket(&self) -> std::option::Option<&str> {
+        self.log_bucket.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateDrtLogBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5741,6 +5817,12 @@ pub struct DescribeProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub protection_group_id: std::option::Option<std::string::String>,
 }
+impl DescribeProtectionGroupInput {
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+        self.protection_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProtectionGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProtectionGroupInput");
@@ -5759,6 +5841,18 @@ pub struct DescribeProtectionInput {
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
     /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DescribeProtectionInput {
+    /// <p>The unique identifier (ID) for the <a>Protection</a> object that is
+    /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    pub fn protection_id(&self) -> std::option::Option<&str> {
+        self.protection_id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
+    /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5809,6 +5903,12 @@ pub struct DescribeAttackInput {
     /// <p>The unique identifier (ID) for the attack that to be described.</p>
     pub attack_id: std::option::Option<std::string::String>,
 }
+impl DescribeAttackInput {
+    /// <p>The unique identifier (ID) for the attack that to be described.</p>
+    pub fn attack_id(&self) -> std::option::Option<&str> {
+        self.attack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAttackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAttackInput");
@@ -5835,6 +5935,12 @@ pub struct DeleteProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub protection_group_id: std::option::Option<std::string::String>,
 }
+impl DeleteProtectionGroupInput {
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+        self.protection_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProtectionGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProtectionGroupInput");
@@ -5850,6 +5956,13 @@ pub struct DeleteProtectionInput {
     /// <p>The unique identifier (ID) for the <a>Protection</a> object to be
     /// deleted.</p>
     pub protection_id: std::option::Option<std::string::String>,
+}
+impl DeleteProtectionInput {
+    /// <p>The unique identifier (ID) for the <a>Protection</a> object to be
+    /// deleted.</p>
+    pub fn protection_id(&self) -> std::option::Option<&str> {
+        self.protection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5898,6 +6011,44 @@ pub struct CreateProtectionGroupInput {
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more tag key-value pairs for the protection group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateProtectionGroupInput {
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+        self.protection_group_id.as_deref()
+    }
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
+    /// </li>
+    /// <li>
+    /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
+    /// </li>
+    /// <li>
+    /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p>
+    /// </li>
+    /// </ul>
+    pub fn aggregation(&self) -> std::option::Option<&crate::model::ProtectionGroupAggregation> {
+        self.aggregation.as_ref()
+    }
+    /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
+    pub fn pattern(&self) -> std::option::Option<&crate::model::ProtectionGroupPattern> {
+        self.pattern.as_ref()
+    }
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group.
+    /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ProtectedResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    pub fn members(&self) -> std::option::Option<&[std::string::String]> {
+        self.members.as_deref()
+    }
+    /// <p>One or more tag key-value pairs for the protection group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProtectionGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5956,6 +6107,53 @@ pub struct CreateProtectionInput {
     /// <p>One or more tag key-value pairs for the <a>Protection</a> object that is created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateProtectionInput {
+    /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tag key-value pairs for the <a>Protection</a> object that is created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProtectionInput");
@@ -5977,6 +6175,16 @@ pub struct AssociateProactiveEngagementDetailsInput {
     /// </note>
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
 }
+impl AssociateProactiveEngagementDetailsInput {
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
+    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p>
+    /// <note>
+    /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.  </p>
+    /// </note>
+    pub fn emergency_contact_list(&self) -> std::option::Option<&[crate::model::EmergencyContact]> {
+        self.emergency_contact_list.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateProactiveEngagementDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateProactiveEngagementDetailsInput");
@@ -5993,6 +6201,16 @@ pub struct AssociateHealthCheckInput {
     pub protection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
     pub health_check_arn: std::option::Option<std::string::String>,
+}
+impl AssociateHealthCheckInput {
+    /// <p>The unique identifier (ID) for the <a>Protection</a> object to add the health check association to. </p>
+    pub fn protection_id(&self) -> std::option::Option<&str> {
+        self.protection_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
+    pub fn health_check_arn(&self) -> std::option::Option<&str> {
+        self.health_check_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateHealthCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6011,6 +6229,13 @@ pub struct AssociateDrtRoleInput {
     /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role.  For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl AssociateDrtRoleInput {
+    /// <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>
+    /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role.  For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateDrtRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateDrtRoleInput");
@@ -6025,6 +6250,12 @@ impl std::fmt::Debug for AssociateDrtRoleInput {
 pub struct AssociateDrtLogBucketInput {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
     pub log_bucket: std::option::Option<std::string::String>,
+}
+impl AssociateDrtLogBucketInput {
+    /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    pub fn log_bucket(&self) -> std::option::Option<&str> {
+        self.log_bucket.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateDrtLogBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

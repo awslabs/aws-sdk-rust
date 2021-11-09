@@ -8,6 +8,16 @@ pub struct UpdateAppInstanceUserEndpointOutput {
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
 }
+impl UpdateAppInstanceUserEndpointOutput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointOutput");
@@ -72,6 +82,12 @@ pub struct UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
+impl UpdateAppInstanceUserOutput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserOutput");
@@ -122,6 +138,12 @@ impl UpdateAppInstanceUserOutput {
 pub struct UpdateAppInstanceOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAppInstanceOutput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAppInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -236,6 +258,16 @@ pub struct RegisterAppInstanceUserEndpointOutput {
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
 }
+impl RegisterAppInstanceUserEndpointOutput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterAppInstanceUserEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterAppInstanceUserEndpointOutput");
@@ -302,6 +334,18 @@ pub struct PutAppInstanceRetentionSettingsOutput {
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The time at which the API deletes data.</p>
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PutAppInstanceRetentionSettingsOutput {
+    /// <p>The time in days to retain data. Data type: number.</p>
+    pub fn app_instance_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceRetentionSettings> {
+        self.app_instance_retention_settings.as_ref()
+    }
+    /// <p>The time at which the API deletes data.</p>
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.initiate_deletion_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for PutAppInstanceRetentionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -380,6 +424,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -439,6 +489,22 @@ pub struct ListAppInstanceUsersOutput {
         std::option::Option<std::vec::Vec<crate::model::AppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstanceUsersOutput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_users(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceUserSummary]> {
+        self.app_instance_users.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstanceUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -533,6 +599,18 @@ pub struct ListAppInstanceUserEndpointsOutput {
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppInstanceUserEndpointsOutput {
+    /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn app_instance_user_endpoints(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceUserEndpointSummary]> {
+        self.app_instance_user_endpoints.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsOutput");
@@ -613,6 +691,17 @@ pub struct ListAppInstancesOutput {
     /// <code>AppInstance</code>s is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppInstancesOutput {
+    /// <p>The information for each <code>AppInstance</code>.</p>
+    pub fn app_instances(&self) -> std::option::Option<&[crate::model::AppInstanceSummary]> {
+        self.app_instances.as_deref()
+    }
+    /// <p>The token passed by previous API requests until the maximum number of
+    /// <code>AppInstance</code>s is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstancesOutput");
@@ -691,6 +780,23 @@ pub struct ListAppInstanceAdminsOutput {
     /// <p>The token returned from previous API requests until the number of administrators is
     /// reached.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstanceAdminsOutput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The information for each administrator.</p>
+    pub fn app_instance_admins(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceAdminSummary]> {
+        self.app_instance_admins.as_deref()
+    }
+    /// <p>The token returned from previous API requests until the number of administrators is
+    /// reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstanceAdminsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -788,6 +894,19 @@ pub struct GetAppInstanceRetentionSettingsOutput {
     /// Seconds.</p>
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetAppInstanceRetentionSettingsOutput {
+    /// <p>The retention settings for the <code>AppInstance</code>.</p>
+    pub fn app_instance_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceRetentionSettings> {
+        self.app_instance_retention_settings.as_ref()
+    }
+    /// <p>The timestamp representing the time at which the specified items are retained, in Epoch
+    /// Seconds.</p>
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.initiate_deletion_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAppInstanceRetentionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppInstanceRetentionSettingsOutput");
@@ -868,6 +987,15 @@ pub struct DescribeAppInstanceUserEndpointOutput {
     /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
     pub app_instance_user_endpoint: std::option::Option<crate::model::AppInstanceUserEndpoint>,
 }
+impl DescribeAppInstanceUserEndpointOutput {
+    /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
+    /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+    pub fn app_instance_user_endpoint(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceUserEndpoint> {
+        self.app_instance_user_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAppInstanceUserEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInstanceUserEndpointOutput");
@@ -928,6 +1056,12 @@ pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
 }
+impl DescribeAppInstanceUserOutput {
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user(&self) -> std::option::Option<&crate::model::AppInstanceUser> {
+        self.app_instance_user.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInstanceUserOutput");
@@ -980,6 +1114,14 @@ pub struct DescribeAppInstanceAdminOutput {
     /// <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps
     /// use epoch milliseconds.</p>
     pub app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
+}
+impl DescribeAppInstanceAdminOutput {
+    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
+    /// <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps
+    /// use epoch milliseconds.</p>
+    pub fn app_instance_admin(&self) -> std::option::Option<&crate::model::AppInstanceAdmin> {
+        self.app_instance_admin.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceAdminOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1036,6 +1178,13 @@ pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the
     /// <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     pub app_instance: std::option::Option<crate::model::AppInstance>,
+}
+impl DescribeAppInstanceOutput {
+    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the
+    /// <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+    pub fn app_instance(&self) -> std::option::Option<&crate::model::AppInstance> {
+        self.app_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1210,6 +1359,12 @@ pub struct CreateAppInstanceUserOutput {
     /// <p>The user's ARN.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
+impl CreateAppInstanceUserOutput {
+    /// <p>The user's ARN.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceUserOutput");
@@ -1262,6 +1417,16 @@ pub struct CreateAppInstanceAdminOutput {
     pub app_instance_admin: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl CreateAppInstanceAdminOutput {
+    /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    pub fn app_instance_admin(&self) -> std::option::Option<&crate::model::Identity> {
+        self.app_instance_admin.as_ref()
+    }
+    /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInstanceAdminOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1329,6 +1494,12 @@ impl CreateAppInstanceAdminOutput {
 pub struct CreateAppInstanceOutput {
     /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl CreateAppInstanceOutput {
+    /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

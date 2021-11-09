@@ -189,6 +189,17 @@ pub struct ListTagsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsOutput {
+    /// <p>The tags associated with your private CA.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -264,6 +275,18 @@ pub struct ListPermissionsOutput {
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPermissionsOutput {
+    /// <p>Summary information about each permission assigned by the specified private CA,
+    /// including the action enabled, the policy provided, and the time of creation.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -342,6 +365,19 @@ pub struct ListCertificateAuthoritiesOutput {
     /// <p>When the list is truncated, this value is present and should be used for the
     /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCertificateAuthoritiesOutput {
+    /// <p>Summary information about each certificate authority you have created.</p>
+    pub fn certificate_authorities(
+        &self,
+    ) -> std::option::Option<&[crate::model::CertificateAuthority]> {
+        self.certificate_authorities.as_deref()
+    }
+    /// <p>When the list is truncated, this value is present and should be used for the
+    /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCertificateAuthoritiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -423,6 +459,17 @@ pub struct IssueCertificateOutput {
     /// </code>
     /// </p>
     pub certificate_arn: std::option::Option<std::string::String>,
+}
+impl IssueCertificateOutput {
+    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial
+    /// number. This is of the form:</p>
+    /// <p>
+    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
+    /// </code>
+    /// </p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for IssueCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -515,6 +562,12 @@ pub struct GetPolicyOutput {
     /// <p>The policy attached to the private CA as a JSON document.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetPolicyOutput {
+    /// <p>The policy attached to the private CA as a JSON document.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPolicyOutput");
@@ -563,6 +616,13 @@ pub struct GetCertificateAuthorityCsrOutput {
     /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
     /// certificate.</p>
     pub csr: std::option::Option<std::string::String>,
+}
+impl GetCertificateAuthorityCsrOutput {
+    /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
+    /// certificate.</p>
+    pub fn csr(&self) -> std::option::Option<&str> {
+        self.csr.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCertificateAuthorityCsrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -616,6 +676,19 @@ pub struct GetCertificateAuthorityCertificateOutput {
     /// chain does not include your private CA certificate. If this is a root CA, the value will
     /// be null.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
+}
+impl GetCertificateAuthorityCertificateOutput {
+    /// <p>Base64-encoded certificate authority (CA) certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>Base64-encoded certificate chain that includes any intermediate certificates and
+    /// chains up to root certificate that you used to sign your private CA certificate. The
+    /// chain does not include your private CA certificate. If this is a root CA, the value will
+    /// be null.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCertificateAuthorityCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -691,6 +764,18 @@ pub struct GetCertificateOutput {
     /// that you used to sign your private CA certificate. </p>
     pub certificate_chain: std::option::Option<std::string::String>,
 }
+impl GetCertificateOutput {
+    /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code>
+    /// parameter.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate
+    /// that you used to sign your private CA certificate. </p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCertificateOutput");
@@ -765,6 +850,25 @@ pub struct DescribeCertificateAuthorityAuditReportOutput {
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>The date and time at which the report was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeCertificateAuthorityAuditReportOutput {
+    /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
+    pub fn audit_report_status(&self) -> std::option::Option<&crate::model::AuditReportStatus> {
+        self.audit_report_status.as_ref()
+    }
+    /// <p>Name of the S3 bucket that contains the report.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>S3 <b>key</b> that uniquely identifies the report file in
+    /// your S3 bucket.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+    /// <p>The date and time at which the report was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCertificateAuthorityAuditReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -864,6 +968,15 @@ pub struct DescribeCertificateAuthorityOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private
     /// CA.</p>
     pub certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
+}
+impl DescribeCertificateAuthorityOutput {
+    /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private
+    /// CA.</p>
+    pub fn certificate_authority(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateAuthority> {
+        self.certificate_authority.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCertificateAuthorityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1041,6 +1154,17 @@ pub struct CreateCertificateAuthorityAuditReportOutput {
     /// your S3 bucket.</p>
     pub s3_key: std::option::Option<std::string::String>,
 }
+impl CreateCertificateAuthorityAuditReportOutput {
+    /// <p>An alphanumeric string that contains a report identifier.</p>
+    pub fn audit_report_id(&self) -> std::option::Option<&str> {
+        self.audit_report_id.as_deref()
+    }
+    /// <p>The <b>key</b> that uniquely identifies the report file in
+    /// your S3 bucket.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCertificateAuthorityAuditReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCertificateAuthorityAuditReportOutput");
@@ -1111,6 +1235,17 @@ pub struct CreateCertificateAuthorityOutput {
     /// </code>.
     /// </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
+}
+impl CreateCertificateAuthorityOutput {
+    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This
+    /// is of the form: </p>
+    /// <p>
+    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+    /// </code>.
+    /// </p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCertificateAuthorityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

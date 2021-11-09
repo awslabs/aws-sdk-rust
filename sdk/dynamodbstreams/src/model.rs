@@ -25,6 +25,35 @@ pub struct Stream {
     /// </ul>
     pub stream_label: std::option::Option<std::string::String>,
 }
+impl Stream {
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The DynamoDB table with which the stream is associated.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
+    /// possible that a stream from another table might have the same timestamp. However, the
+    /// combination of the following three elements is guaranteed to be unique:</p>
+    /// <ul>
+    /// <li>
+    /// <p>the AWS customer ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>the table name</p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>StreamLabel</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn stream_label(&self) -> std::option::Option<&str> {
+        self.stream_label.as_deref()
+    }
+}
 impl std::fmt::Debug for Stream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Stream");
@@ -236,6 +265,63 @@ pub struct Record {
     /// </ul>
     pub user_identity: std::option::Option<crate::model::Identity>,
 }
+impl Record {
+    /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The type of data modification that was performed on the DynamoDB table:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INSERT</code> - a new item was added to the table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REMOVE</code> - the item was deleted from the table</p>
+    /// </li>
+    /// </ul>
+    pub fn event_name(&self) -> std::option::Option<&crate::model::OperationType> {
+        self.event_name.as_ref()
+    }
+    /// <p>The version number of the stream record format.  This number is updated whenever the structure of <code>Record</code> is modified.</p>
+    /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular
+    /// value, as this number is subject to change at any time. In general, <code>eventVersion</code> will
+    /// only increase as the low-level DynamoDB Streams API evolves.</p>
+    pub fn event_version(&self) -> std::option::Option<&str> {
+        self.event_version.as_deref()
+    }
+    /// <p>The AWS service from which the stream record originated.  For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    pub fn event_source(&self) -> std::option::Option<&str> {
+        self.event_source.as_deref()
+    }
+    /// <p>The region in which the <code>GetRecords</code> request was received.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
+    pub fn dynamodb(&self) -> std::option::Option<&crate::model::StreamRecord> {
+        self.dynamodb.as_ref()
+    }
+    /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Records[].userIdentity.type</p>
+    /// <p>"Service"</p>
+    /// </li>
+    /// <li>
+    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>"dynamodb.amazonaws.com"</p>
+    /// </li>
+    /// </ul>
+    pub fn user_identity(&self) -> std::option::Option<&crate::model::Identity> {
+        self.user_identity.as_ref()
+    }
+}
 impl std::fmt::Debug for Record {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Record");
@@ -431,6 +517,17 @@ pub struct Identity {
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
     pub r#type: std::option::Option<std::string::String>,
 }
+impl Identity {
+    /// <p>A unique identifier for the entity that made the call. For Time To Live, the
+    /// principalId is "dynamodb.amazonaws.com".</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for Identity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Identity");
@@ -529,6 +626,68 @@ pub struct StreamRecord {
     /// </li>
     /// </ul>
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
+}
+impl StreamRecord {
+    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn approximate_creation_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.approximate_creation_date_time.as_ref()
+    }
+    /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
+    pub fn keys(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.keys.as_ref()
+    }
+    /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
+    pub fn new_image(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.new_image.as_ref()
+    }
+    /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
+    pub fn old_image(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.old_image.as_ref()
+    }
+    /// <p>The sequence number of the stream record.</p>
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
+        self.sequence_number.as_deref()
+    }
+    /// <p>The size of the stream record, in bytes.</p>
+    pub fn size_bytes(&self) -> std::option::Option<i64> {
+        self.size_bytes
+    }
+    /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p>
+    /// </li>
+    /// </ul>
+    pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
+        self.stream_view_type.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -870,6 +1029,15 @@ pub enum AttributeValue {
     /// <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code>
     /// </p>
     Ss(std::vec::Vec<std::string::String>),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AttributeValue {
     /// Tries to convert the enum instance into [`B`](crate::model::AttributeValue::B), extracting the inner [`Blob`](aws_smithy_types::Blob).
@@ -1006,6 +1174,10 @@ impl AttributeValue {
     /// Returns true if this is a [`Ss`](crate::model::AttributeValue::Ss).
     pub fn is_ss(&self) -> bool {
         self.as_ss().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -1146,6 +1318,100 @@ pub struct StreamDescription {
     /// more data in the result set. The only way to know when you have reached the end of the result
     /// set is when <code>LastEvaluatedShardId</code> is empty.</p>
     pub last_evaluated_shard_id: std::option::Option<std::string::String>,
+}
+impl StreamDescription {
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
+    /// possible that a stream from another table might have the same timestamp. However, the
+    /// combination of the following three elements is guaranteed to be unique:</p>
+    /// <ul>
+    /// <li>
+    /// <p>the AWS customer ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>the table name</p>
+    /// </li>
+    /// <li>
+    /// <p>the <code>StreamLabel</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn stream_label(&self) -> std::option::Option<&str> {
+        self.stream_label.as_deref()
+    }
+    /// <p>Indicates the current status of the stream:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - the stream is enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - the stream is disabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+        self.stream_status.as_ref()
+    }
+    /// <p>Indicates the format of the records within this stream:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p>
+    /// </li>
+    /// </ul>
+    pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
+        self.stream_view_type.as_ref()
+    }
+    /// <p>The date and time when the request to create this stream was issued.</p>
+    pub fn creation_request_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_request_date_time.as_ref()
+    }
+    /// <p>The DynamoDB table with which the stream is associated.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>The shards that comprise the stream.</p>
+    pub fn shards(&self) -> std::option::Option<&[crate::model::Shard]> {
+        self.shards.as_deref()
+    }
+    /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+    /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been
+    /// processed and there is currently no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is
+    /// more data in the result set. The only way to know when you have reached the end of the result
+    /// set is when <code>LastEvaluatedShardId</code> is empty.</p>
+    pub fn last_evaluated_shard_id(&self) -> std::option::Option<&str> {
+        self.last_evaluated_shard_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StreamDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1448,6 +1714,20 @@ pub struct Shard {
     /// <p>The shard ID of the current shard's parent.</p>
     pub parent_shard_id: std::option::Option<std::string::String>,
 }
+impl Shard {
+    /// <p>The system-generated identifier for this shard.</p>
+    pub fn shard_id(&self) -> std::option::Option<&str> {
+        self.shard_id.as_deref()
+    }
+    /// <p>The range of possible sequence numbers for the shard.</p>
+    pub fn sequence_number_range(&self) -> std::option::Option<&crate::model::SequenceNumberRange> {
+        self.sequence_number_range.as_ref()
+    }
+    /// <p>The shard ID of the current shard's parent.</p>
+    pub fn parent_shard_id(&self) -> std::option::Option<&str> {
+        self.parent_shard_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Shard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Shard");
@@ -1529,6 +1809,16 @@ pub struct SequenceNumberRange {
     pub starting_sequence_number: std::option::Option<std::string::String>,
     /// <p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
     pub ending_sequence_number: std::option::Option<std::string::String>,
+}
+impl SequenceNumberRange {
+    /// <p>The first sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
+    pub fn starting_sequence_number(&self) -> std::option::Option<&str> {
+        self.starting_sequence_number.as_deref()
+    }
+    /// <p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
+    pub fn ending_sequence_number(&self) -> std::option::Option<&str> {
+        self.ending_sequence_number.as_deref()
+    }
 }
 impl std::fmt::Debug for SequenceNumberRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1628,6 +1918,36 @@ pub struct KeySchemaElement {
     /// by the sort key value.</p>
     /// </note>
     pub key_type: std::option::Option<crate::model::KeyType>,
+}
+impl KeySchemaElement {
+    /// <p>The name of a key attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The role that this key attribute will assume:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash
+    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
+    /// an internal hash function to evenly distribute data items across partitions, based
+    /// on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range
+    /// attribute</i>. The term "range attribute" derives from the way DynamoDB
+    /// stores items with the same partition key physically close together, in sorted order
+    /// by the sort key value.</p>
+    /// </note>
+    pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
+        self.key_type.as_ref()
+    }
 }
 impl std::fmt::Debug for KeySchemaElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

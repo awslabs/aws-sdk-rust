@@ -20,6 +20,22 @@ pub struct DatasetChanges {
     /// </p>
     pub ground_truth: std::option::Option<aws_smithy_types::Blob>,
 }
+impl DatasetChanges {
+    /// <p>A Base64-encoded binary data object
+    /// containing one or JSON lines that either update the dataset or are additions to the dataset.  You change a dataset by calling <a>UpdateDatasetEntries</a>.
+    /// If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you.
+    ///
+    /// </p>
+    ///
+    ///
+    /// <p>For example JSON lines,
+    /// see Image-Level labels in manifest files and
+    /// and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+    /// </p>
+    pub fn ground_truth(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.ground_truth.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetChanges {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetChanges");
@@ -189,6 +205,17 @@ pub struct StartTextDetectionFilters {
     /// of the screen.</p>
     pub regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
 }
+impl StartTextDetectionFilters {
+    /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
+    pub fn word_filter(&self) -> std::option::Option<&crate::model::DetectionFilter> {
+        self.word_filter.as_ref()
+    }
+    /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region
+    /// of the screen.</p>
+    pub fn regions_of_interest(&self) -> std::option::Option<&[crate::model::RegionOfInterest]> {
+        self.regions_of_interest.as_deref()
+    }
+}
 impl std::fmt::Debug for StartTextDetectionFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTextDetectionFilters");
@@ -272,6 +299,12 @@ pub struct RegionOfInterest {
     /// <p>The box representing a region of interest on screen.</p>
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
 }
+impl RegionOfInterest {
+    /// <p>The box representing a region of interest on screen.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+}
 impl std::fmt::Debug for RegionOfInterest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegionOfInterest");
@@ -345,6 +378,24 @@ pub struct BoundingBox {
     pub left: std::option::Option<f32>,
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
     pub top: std::option::Option<f32>,
+}
+impl BoundingBox {
+    /// <p>Width of the bounding box as a ratio of the overall image width.</p>
+    pub fn width(&self) -> std::option::Option<f32> {
+        self.width
+    }
+    /// <p>Height of the bounding box as a ratio of the overall image height.</p>
+    pub fn height(&self) -> std::option::Option<f32> {
+        self.height
+    }
+    /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
+    pub fn left(&self) -> std::option::Option<f32> {
+        self.left
+    }
+    /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
+    pub fn top(&self) -> std::option::Option<f32> {
+        self.top
+    }
 }
 impl std::fmt::Debug for BoundingBox {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -441,6 +492,24 @@ pub struct DetectionFilter {
     /// this value will be excluded from the result. Value is relative to the video frame width.</p>
     pub min_bounding_box_width: std::option::Option<f32>,
 }
+impl DetectionFilter {
+    /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded
+    /// from the result. Values should be between 50 and 100 as Text in Video will not return any result below
+    /// 50.</p>
+    pub fn min_confidence(&self) -> std::option::Option<f32> {
+        self.min_confidence
+    }
+    /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than
+    /// this value will be excluded from the result. Value is relative to the video frame height.</p>
+    pub fn min_bounding_box_height(&self) -> std::option::Option<f32> {
+        self.min_bounding_box_height
+    }
+    /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than
+    /// this value will be excluded from the result. Value is relative to the video frame width.</p>
+    pub fn min_bounding_box_width(&self) -> std::option::Option<f32> {
+        self.min_bounding_box_width
+    }
+}
 impl std::fmt::Debug for DetectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectionFilter");
@@ -527,6 +596,16 @@ pub struct NotificationChannel {
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl NotificationChannel {
+    /// <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for NotificationChannel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationChannel");
@@ -592,6 +671,12 @@ pub struct Video {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
+impl Video {
+    /// <p>The Amazon S3 bucket name and file name for the video.</p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+}
 impl std::fmt::Debug for Video {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Video");
@@ -649,6 +734,20 @@ pub struct S3Object {
     pub name: std::option::Option<std::string::String>,
     /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
     pub version: std::option::Option<std::string::String>,
+}
+impl S3Object {
+    /// <p>Name of the S3 bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>S3 object key name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Object {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -783,6 +882,18 @@ pub struct StartSegmentDetectionFilters {
     /// <p>Filters that are specific to shot detections.</p>
     pub shot_filter: std::option::Option<crate::model::StartShotDetectionFilter>,
 }
+impl StartSegmentDetectionFilters {
+    /// <p>Filters that are specific to technical cues.</p>
+    pub fn technical_cue_filter(
+        &self,
+    ) -> std::option::Option<&crate::model::StartTechnicalCueDetectionFilter> {
+        self.technical_cue_filter.as_ref()
+    }
+    /// <p>Filters that are specific to shot detections.</p>
+    pub fn shot_filter(&self) -> std::option::Option<&crate::model::StartShotDetectionFilter> {
+        self.shot_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for StartSegmentDetectionFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSegmentDetectionFilters");
@@ -860,6 +971,17 @@ pub struct StartShotDetectionFilter {
     /// segments with confidence values greater than or equal to 50 percent.</p>
     pub min_segment_confidence: std::option::Option<f32>,
 }
+impl StartShotDetectionFilter {
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence
+    /// represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence.
+    /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any segments with a confidence level
+    /// lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns
+    /// segments with confidence values greater than or equal to 50 percent.</p>
+    pub fn min_segment_confidence(&self) -> std::option::Option<f32> {
+        self.min_segment_confidence
+    }
+}
 impl std::fmt::Debug for StartShotDetectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartShotDetectionFilter");
@@ -928,6 +1050,24 @@ pub struct StartTechnicalCueDetectionFilter {
     /// Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.
     /// </p>
     pub black_frame: std::option::Option<crate::model::BlackFrame>,
+}
+impl StartTechnicalCueDetectionFilter {
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence
+    /// represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence.
+    /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any segments with a confidence level
+    /// lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns
+    /// segments with confidence values greater than or equal to 50 percent.</p>
+    pub fn min_segment_confidence(&self) -> std::option::Option<f32> {
+        self.min_segment_confidence
+    }
+    /// <p>
+    /// A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame.
+    /// Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.
+    /// </p>
+    pub fn black_frame(&self) -> std::option::Option<&crate::model::BlackFrame> {
+        self.black_frame.as_ref()
+    }
 }
 impl std::fmt::Debug for StartTechnicalCueDetectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1027,6 +1167,28 @@ pub struct BlackFrame {
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code>
     /// set. You can reduce this value to allow more noise on the black frame.</p>
     pub min_coverage_percentage: std::option::Option<f32>,
+}
+impl BlackFrame {
+    /// <p>
+    /// A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video,
+    /// luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel
+    /// value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range.
+    /// </p>
+    /// <p>For example, for a full range video with BlackPixelThreshold = 0.1,  max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
+    /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video.
+    /// You can lower this threshold to be more strict on black levels.</p>
+    pub fn max_pixel_threshold(&self) -> std::option::Option<f32> {
+        self.max_pixel_threshold
+    }
+    /// <p>
+    /// The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered
+    /// a black frame. Luminance is calculated using the BT.709 matrix.
+    /// </p>
+    /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code>
+    /// set. You can reduce this value to allow more noise on the black frame.</p>
+    pub fn min_coverage_percentage(&self) -> std::option::Option<f32> {
+        self.min_coverage_percentage
+    }
 }
 impl std::fmt::Debug for BlackFrame {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1172,6 +1334,17 @@ pub struct FaceMatch {
     /// image, and external image ID that you assigned.</p>
     pub face: std::option::Option<crate::model::Face>,
 }
+impl FaceMatch {
+    /// <p>Confidence in the match of this face with the input face.</p>
+    pub fn similarity(&self) -> std::option::Option<f32> {
+        self.similarity
+    }
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source
+    /// image, and external image ID that you assigned.</p>
+    pub fn face(&self) -> std::option::Option<&crate::model::Face> {
+        self.face.as_ref()
+    }
+}
 impl std::fmt::Debug for FaceMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FaceMatch");
@@ -1244,6 +1417,29 @@ pub struct Face {
     /// <p>Confidence level that the bounding box contains a face (and not a different object such
     /// as a tree).</p>
     pub confidence: std::option::Option<f32>,
+}
+impl Face {
+    /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
+    pub fn face_id(&self) -> std::option::Option<&str> {
+        self.face_id.as_deref()
+    }
+    /// <p>Bounding box of the face.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>Identifier that you assign to all the faces in the input image.</p>
+    pub fn external_image_id(&self) -> std::option::Option<&str> {
+        self.external_image_id.as_deref()
+    }
+    /// <p>Confidence level that the bounding box contains a face (and not a different object such
+    /// as a tree).</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for Face {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1444,6 +1640,16 @@ pub struct Image {
     /// <p>Identifies an S3 object as the image source.</p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
+impl Image {
+    /// <p>Blob of image bytes up to 5 MBs.</p>
+    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.bytes.as_ref()
+    }
+    /// <p>Identifies an S3 object as the image source.</p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+}
 impl std::fmt::Debug for Image {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Image");
@@ -1584,6 +1790,40 @@ pub struct ComparedFace {
     /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination.
     /// </p>
     pub smile: std::option::Option<crate::model::Smile>,
+}
+impl ComparedFace {
+    /// <p>Bounding box of the face.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>Level of confidence that what the bounding box contains is a face.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>An array of facial landmarks.</p>
+    pub fn landmarks(&self) -> std::option::Option<&[crate::model::Landmark]> {
+        self.landmarks.as_deref()
+    }
+    /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+    pub fn pose(&self) -> std::option::Option<&crate::model::Pose> {
+        self.pose.as_ref()
+    }
+    /// <p>Identifies face image brightness and sharpness. </p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::ImageQuality> {
+        self.quality.as_ref()
+    }
+    /// <p> The emotions that appear to be expressed on the face,
+    /// and the confidence level in the determination. Valid values include "Happy", "Sad",
+    /// "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".
+    /// </p>
+    pub fn emotions(&self) -> std::option::Option<&[crate::model::Emotion]> {
+        self.emotions.as_deref()
+    }
+    /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination.
+    /// </p>
+    pub fn smile(&self) -> std::option::Option<&crate::model::Smile> {
+        self.smile.as_ref()
+    }
 }
 impl std::fmt::Debug for ComparedFace {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1746,6 +1986,16 @@ pub struct Smile {
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
 }
+impl Smile {
+    /// <p>Boolean value that indicates whether the face is smiling or not.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
 impl std::fmt::Debug for Smile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Smile");
@@ -1811,6 +2061,16 @@ pub struct Emotion {
     pub r#type: std::option::Option<crate::model::EmotionName>,
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl Emotion {
+    /// <p>Type of emotion detected.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EmotionName> {
+        self.r#type.as_ref()
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for Emotion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1970,6 +2230,18 @@ pub struct ImageQuality {
     /// (inclusive). A higher value indicates a sharper face image.</p>
     pub sharpness: std::option::Option<f32>,
 }
+impl ImageQuality {
+    /// <p>Value representing brightness of the face. The service returns a value between 0 and
+    /// 100 (inclusive). A higher value indicates a brighter face image.</p>
+    pub fn brightness(&self) -> std::option::Option<f32> {
+        self.brightness
+    }
+    /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100
+    /// (inclusive). A higher value indicates a sharper face image.</p>
+    pub fn sharpness(&self) -> std::option::Option<f32> {
+        self.sharpness
+    }
+}
 impl std::fmt::Debug for ImageQuality {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageQuality");
@@ -2038,6 +2310,20 @@ pub struct Pose {
     pub yaw: std::option::Option<f32>,
     /// <p>Value representing the face rotation on the pitch axis.</p>
     pub pitch: std::option::Option<f32>,
+}
+impl Pose {
+    /// <p>Value representing the face rotation on the roll axis.</p>
+    pub fn roll(&self) -> std::option::Option<f32> {
+        self.roll
+    }
+    /// <p>Value representing the face rotation on the yaw axis.</p>
+    pub fn yaw(&self) -> std::option::Option<f32> {
+        self.yaw
+    }
+    /// <p>Value representing the face rotation on the pitch axis.</p>
+    pub fn pitch(&self) -> std::option::Option<f32> {
+        self.pitch
+    }
 }
 impl std::fmt::Debug for Pose {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2120,6 +2406,24 @@ pub struct Landmark {
     /// The y-coordinate is measured from the top of the image.  
     /// For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
     pub y: std::option::Option<f32>,
+}
+impl Landmark {
+    /// <p>Type of landmark.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LandmarkType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image.
+    /// The x-coordinate is measured from the left-side of the image.
+    /// For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+    pub fn x(&self) -> std::option::Option<f32> {
+        self.x
+    }
+    /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image.
+    /// The y-coordinate is measured from the top of the image.  
+    /// For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
+    pub fn y(&self) -> std::option::Option<f32> {
+        self.y
+    }
 }
 impl std::fmt::Debug for Landmark {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2414,6 +2718,35 @@ pub struct Celebrity {
     /// <p>The known gender identity for the celebrity that matches the provided ID.</p>
     pub known_gender: std::option::Option<crate::model::KnownGender>,
 }
+impl Celebrity {
+    /// <p>An array of URLs pointing to additional information about the celebrity. If there is no
+    /// additional information about the celebrity, this list is empty.</p>
+    pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
+        self.urls.as_deref()
+    }
+    /// <p>The name of the celebrity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique identifier for the celebrity. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Provides information about the celebrity's face, such as its location on the
+    /// image.</p>
+    pub fn face(&self) -> std::option::Option<&crate::model::ComparedFace> {
+        self.face.as_ref()
+    }
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the
+    /// celebrity.</p>
+    pub fn match_confidence(&self) -> std::option::Option<f32> {
+        self.match_confidence
+    }
+    /// <p>The known gender identity for the celebrity that matches the provided ID.</p>
+    pub fn known_gender(&self) -> std::option::Option<&crate::model::KnownGender> {
+        self.known_gender.as_ref()
+    }
+}
 impl std::fmt::Debug for Celebrity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Celebrity");
@@ -2545,6 +2878,12 @@ pub struct KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     pub r#type: std::option::Option<crate::model::KnownGenderType>,
 }
+impl KnownGender {
+    /// <p>A string value of the KnownGender info about the Celebrity.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::KnownGenderType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for KnownGender {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KnownGender");
@@ -2655,6 +2994,16 @@ pub struct StreamProcessor {
     pub name: std::option::Option<std::string::String>,
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
     pub status: std::option::Option<crate::model::StreamProcessorStatus>,
+}
+impl StreamProcessor {
+    /// <p>Name of the Amazon Rekognition stream processor. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Current status of the Amazon Rekognition stream processor.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StreamProcessorStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamProcessor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2795,6 +3144,20 @@ pub struct DatasetLabelDescription {
     /// </p>
     pub label_stats: std::option::Option<crate::model::DatasetLabelStats>,
 }
+impl DatasetLabelDescription {
+    /// <p>
+    /// The name of the label.
+    /// </p>
+    pub fn label_name(&self) -> std::option::Option<&str> {
+        self.label_name.as_deref()
+    }
+    /// <p>
+    /// Statistics about the label.
+    /// </p>
+    pub fn label_stats(&self) -> std::option::Option<&crate::model::DatasetLabelStats> {
+        self.label_stats.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetLabelDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetLabelDescription");
@@ -2874,6 +3237,20 @@ pub struct DatasetLabelStats {
     /// The total number of images that have the label assigned to a bounding box.
     /// </p>
     pub bounding_box_count: std::option::Option<i32>,
+}
+impl DatasetLabelStats {
+    /// <p>
+    /// The total number of images that use the label.
+    /// </p>
+    pub fn entry_count(&self) -> std::option::Option<i32> {
+        self.entry_count
+    }
+    /// <p>
+    /// The total number of images that have the label assigned to a bounding box.
+    /// </p>
+    pub fn bounding_box_count(&self) -> std::option::Option<i32> {
+        self.bounding_box_count
+    }
 }
 impl std::fmt::Debug for DatasetLabelStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2970,6 +3347,40 @@ pub struct UnindexedFace {
     /// structure that contains attributes of a face that
     /// <code>IndexFaces</code>detected, but didn't index. </p>
     pub face_detail: std::option::Option<crate::model::FaceDetail>,
+}
+impl UnindexedFace {
+    /// <p>An array of reasons that specify why a face wasn't indexed. </p>
+    /// <ul>
+    /// <li>
+    /// <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned
+    /// too far away from the camera.</p>
+    /// </li>
+    /// <li>
+    /// <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the
+    /// <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>LOW_BRIGHTNESS - The image is too dark.</p>
+    /// </li>
+    /// <li>
+    /// <p>LOW_SHARPNESS - The image is too blurry.</p>
+    /// </li>
+    /// <li>
+    /// <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p>
+    /// </li>
+    /// <li>
+    /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p>
+    /// </li>
+    /// </ul>
+    pub fn reasons(&self) -> std::option::Option<&[crate::model::Reason]> {
+        self.reasons.as_deref()
+    }
+    /// <p>The
+    /// structure that contains attributes of a face that
+    /// <code>IndexFaces</code>detected, but didn't index. </p>
+    pub fn face_detail(&self) -> std::option::Option<&crate::model::FaceDetail> {
+        self.face_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for UnindexedFace {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3154,6 +3565,81 @@ pub struct FaceDetail {
     /// <p>Confidence level that the bounding box contains a face (and not a different object such
     /// as a tree). Default attribute.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl FaceDetail {
+    /// <p>Bounding box of the face. Default attribute.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated
+    /// age and High represents the highest estimated age.</p>
+    pub fn age_range(&self) -> std::option::Option<&crate::model::AgeRange> {
+        self.age_range.as_ref()
+    }
+    /// <p>Indicates whether or not the face is smiling, and the confidence level in the
+    /// determination.</p>
+    pub fn smile(&self) -> std::option::Option<&crate::model::Smile> {
+        self.smile.as_ref()
+    }
+    /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in
+    /// the determination.</p>
+    pub fn eyeglasses(&self) -> std::option::Option<&crate::model::Eyeglasses> {
+        self.eyeglasses.as_ref()
+    }
+    /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in
+    /// the determination.</p>
+    pub fn sunglasses(&self) -> std::option::Option<&crate::model::Sunglasses> {
+        self.sunglasses.as_ref()
+    }
+    /// <p>The predicted gender of a detected face.
+    /// </p>
+    pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
+        self.gender.as_ref()
+    }
+    /// <p>Indicates whether or not the face has a beard, and the confidence level in the
+    /// determination.</p>
+    pub fn beard(&self) -> std::option::Option<&crate::model::Beard> {
+        self.beard.as_ref()
+    }
+    /// <p>Indicates whether or not the face has a mustache, and the confidence level in the
+    /// determination.</p>
+    pub fn mustache(&self) -> std::option::Option<&crate::model::Mustache> {
+        self.mustache.as_ref()
+    }
+    /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the
+    /// determination.</p>
+    pub fn eyes_open(&self) -> std::option::Option<&crate::model::EyeOpen> {
+        self.eyes_open.as_ref()
+    }
+    /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the
+    /// determination.</p>
+    pub fn mouth_open(&self) -> std::option::Option<&crate::model::MouthOpen> {
+        self.mouth_open.as_ref()
+    }
+    /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination.
+    /// The API is only making a determination of the physical appearance of a person's face. It is not a determination
+    /// of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have
+    /// a sad face might not be sad emotionally.</p>
+    pub fn emotions(&self) -> std::option::Option<&[crate::model::Emotion]> {
+        self.emotions.as_deref()
+    }
+    /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
+    pub fn landmarks(&self) -> std::option::Option<&[crate::model::Landmark]> {
+        self.landmarks.as_deref()
+    }
+    /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
+    pub fn pose(&self) -> std::option::Option<&crate::model::Pose> {
+        self.pose.as_ref()
+    }
+    /// <p>Identifies image brightness and sharpness. Default attribute.</p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::ImageQuality> {
+        self.quality.as_ref()
+    }
+    /// <p>Confidence level that the bounding box contains a face (and not a different object such
+    /// as a tree). Default attribute.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for FaceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3447,6 +3933,16 @@ pub struct MouthOpen {
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
 }
+impl MouthOpen {
+    /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
 impl std::fmt::Debug for MouthOpen {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MouthOpen");
@@ -3510,6 +4006,16 @@ pub struct EyeOpen {
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl EyeOpen {
+    /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for EyeOpen {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3575,6 +4081,16 @@ pub struct Mustache {
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
 }
+impl Mustache {
+    /// <p>Boolean value that indicates whether the face has mustache or not.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
 impl std::fmt::Debug for Mustache {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Mustache");
@@ -3638,6 +4154,16 @@ pub struct Beard {
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl Beard {
+    /// <p>Boolean value that indicates whether the face has beard or not.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for Beard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3713,6 +4239,16 @@ pub struct Gender {
     pub value: std::option::Option<crate::model::GenderType>,
     /// <p>Level of confidence in the prediction.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl Gender {
+    /// <p>The predicted gender of the face.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::GenderType> {
+        self.value.as_ref()
+    }
+    /// <p>Level of confidence in the prediction.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for Gender {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3833,6 +4369,16 @@ pub struct Sunglasses {
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
 }
+impl Sunglasses {
+    /// <p>Boolean value that indicates whether the face is wearing sunglasses or not.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
 impl std::fmt::Debug for Sunglasses {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Sunglasses");
@@ -3896,6 +4442,16 @@ pub struct Eyeglasses {
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl Eyeglasses {
+    /// <p>Boolean value that indicates whether the face is wearing eye glasses or not.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for Eyeglasses {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3962,6 +4518,16 @@ pub struct AgeRange {
     pub low: std::option::Option<i32>,
     /// <p>The highest estimated age.</p>
     pub high: std::option::Option<i32>,
+}
+impl AgeRange {
+    /// <p>The lowest estimated age.</p>
+    pub fn low(&self) -> std::option::Option<i32> {
+        self.low
+    }
+    /// <p>The highest estimated age.</p>
+    pub fn high(&self) -> std::option::Option<i32> {
+        self.high
+    }
 }
 impl std::fmt::Debug for AgeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4111,6 +4677,17 @@ pub struct FaceRecord {
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
     pub face_detail: std::option::Option<crate::model::FaceDetail>,
 }
+impl FaceRecord {
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input
+    /// image, and external image ID that you assigned. </p>
+    pub fn face(&self) -> std::option::Option<&crate::model::Face> {
+        self.face.as_ref()
+    }
+    /// <p>Structure containing attributes of the face that the algorithm detected.</p>
+    pub fn face_detail(&self) -> std::option::Option<&crate::model::FaceDetail> {
+        self.face_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for FaceRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FaceRecord");
@@ -4235,6 +4812,16 @@ pub struct TextDetectionResult {
     /// <p>Details about text detected in a video.</p>
     pub text_detection: std::option::Option<crate::model::TextDetection>,
 }
+impl TextDetectionResult {
+    /// <p>The time, in milliseconds from the start of the video, that the text was detected.</p>
+    pub fn timestamp(&self) -> i64 {
+        self.timestamp
+    }
+    /// <p>Details about text detected in a video.</p>
+    pub fn text_detection(&self) -> std::option::Option<&crate::model::TextDetection> {
+        self.text_detection.as_ref()
+    }
+}
 impl std::fmt::Debug for TextDetectionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TextDetectionResult");
@@ -4322,6 +4909,38 @@ pub struct TextDetection {
     /// bounding box surrounding the text and a finer grain polygon for more accurate spatial
     /// information.</p>
     pub geometry: std::option::Option<crate::model::Geometry>,
+}
+impl TextDetection {
+    /// <p>The word or line of text recognized by Amazon Rekognition. </p>
+    pub fn detected_text(&self) -> std::option::Option<&str> {
+        self.detected_text.as_deref()
+    }
+    /// <p>The type of text that was detected.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TextTypes> {
+        self.r#type.as_ref()
+    }
+    /// <p>The identifier for the detected text. The identifier is only unique for a single call
+    /// to <code>DetectText</code>. </p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>.
+    /// If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is
+    /// <code>Null</code>. </p>
+    pub fn parent_id(&self) -> std::option::Option<i32> {
+        self.parent_id
+    }
+    /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy
+    /// of the geometry points around the detected text.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>The location of the detected text on the image. Includes an axis aligned coarse
+    /// bounding box surrounding the text and a finer grain polygon for more accurate spatial
+    /// information.</p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
+        self.geometry.as_ref()
+    }
 }
 impl std::fmt::Debug for TextDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4455,6 +5074,17 @@ pub struct Geometry {
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
     pub polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
 }
+impl Geometry {
+    /// <p>An axis-aligned coarse representation of the detected item's location on the
+    /// image.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
+    pub fn polygon(&self) -> std::option::Option<&[crate::model::Point]> {
+        self.polygon.as_deref()
+    }
+}
 impl std::fmt::Debug for Geometry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Geometry");
@@ -4538,6 +5168,16 @@ pub struct Point {
     pub x: std::option::Option<f32>,
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
     pub y: std::option::Option<f32>,
+}
+impl Point {
+    /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+    pub fn x(&self) -> std::option::Option<f32> {
+        self.x
+    }
+    /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+    pub fn y(&self) -> std::option::Option<f32> {
+        self.y
+    }
 }
 impl std::fmt::Debug for Point {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4669,6 +5309,38 @@ pub struct VideoMetadata {
     /// A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255).
     /// </p>
     pub color_range: std::option::Option<crate::model::VideoColorRange>,
+}
+impl VideoMetadata {
+    /// <p>Type of compression used in the analyzed video. </p>
+    pub fn codec(&self) -> std::option::Option<&str> {
+        self.codec.as_deref()
+    }
+    /// <p>Length of the video in milliseconds.</p>
+    pub fn duration_millis(&self) -> std::option::Option<i64> {
+        self.duration_millis
+    }
+    /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
+    /// <p>Number of frames per second in the video.</p>
+    pub fn frame_rate(&self) -> std::option::Option<f32> {
+        self.frame_rate
+    }
+    /// <p>Vertical pixel dimension of the video.</p>
+    pub fn frame_height(&self) -> std::option::Option<i64> {
+        self.frame_height
+    }
+    /// <p>Horizontal pixel dimension of the video.</p>
+    pub fn frame_width(&self) -> std::option::Option<i64> {
+        self.frame_width
+    }
+    /// <p>
+    /// A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255).
+    /// </p>
+    pub fn color_range(&self) -> std::option::Option<&crate::model::VideoColorRange> {
+        self.color_range.as_ref()
+    }
 }
 impl std::fmt::Debug for VideoMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4920,6 +5592,16 @@ pub struct SegmentTypeInfo {
     /// <p>The version of the model used to detect segments.</p>
     pub model_version: std::option::Option<std::string::String>,
 }
+impl SegmentTypeInfo {
+    /// <p>The type of a segment (technical cue or shot detection).</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SegmentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The version of the model used to detect segments.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+}
 impl std::fmt::Debug for SegmentTypeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentTypeInfo");
@@ -5021,6 +5703,69 @@ pub struct SegmentDetection {
     /// The duration of a video segment, expressed in frames.
     /// </p>
     pub duration_frames: std::option::Option<i64>,
+}
+impl SegmentDetection {
+    /// <p>The type of the  segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SegmentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The start time of the detected segment in milliseconds from the start of the video. This value
+    /// is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of
+    /// 100 millis.</p>
+    pub fn start_timestamp_millis(&self) -> i64 {
+        self.start_timestamp_millis
+    }
+    /// <p>The end time of the detected segment, in milliseconds, from the start of the video.
+    /// This value is rounded down.</p>
+    pub fn end_timestamp_millis(&self) -> i64 {
+        self.end_timestamp_millis
+    }
+    /// <p>The duration of the detected segment in milliseconds. </p>
+    pub fn duration_millis(&self) -> std::option::Option<i64> {
+        self.duration_millis
+    }
+    /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment.
+    /// <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format
+    /// (and <i>;fr</i> for drop frame-rates). </p>
+    pub fn start_timecode_smpte(&self) -> std::option::Option<&str> {
+        self.start_timecode_smpte.as_deref()
+    }
+    /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment.
+    /// <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format
+    /// (and <i>;fr</i> for drop frame-rates).</p>
+    pub fn end_timecode_smpte(&self) -> std::option::Option<&str> {
+        self.end_timecode_smpte.as_deref()
+    }
+    /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
+    pub fn duration_smpte(&self) -> std::option::Option<&str> {
+        self.duration_smpte.as_deref()
+    }
+    /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
+    pub fn technical_cue_segment(&self) -> std::option::Option<&crate::model::TechnicalCueSegment> {
+        self.technical_cue_segment.as_ref()
+    }
+    /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
+    pub fn shot_segment(&self) -> std::option::Option<&crate::model::ShotSegment> {
+        self.shot_segment.as_ref()
+    }
+    /// <p>
+    /// The frame number of the start of a video segment, using a frame index that starts with 0.
+    /// </p>
+    pub fn start_frame_number(&self) -> std::option::Option<i64> {
+        self.start_frame_number
+    }
+    /// <p>
+    /// The frame number at the end of a video segment, using a frame index that starts with 0.
+    /// </p>
+    pub fn end_frame_number(&self) -> std::option::Option<i64> {
+        self.end_frame_number
+    }
+    /// <p>
+    /// The duration of a video segment, expressed in frames.
+    /// </p>
+    pub fn duration_frames(&self) -> std::option::Option<i64> {
+        self.duration_frames
+    }
 }
 impl std::fmt::Debug for SegmentDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5257,6 +6002,16 @@ pub struct ShotSegment {
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub confidence: std::option::Option<f32>,
 }
+impl ShotSegment {
+    /// <p>An Identifier for a shot detection segment detected in a video. </p>
+    pub fn index(&self) -> std::option::Option<i64> {
+        self.index
+    }
+    /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
 impl std::fmt::Debug for ShotSegment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShotSegment");
@@ -5319,6 +6074,16 @@ pub struct TechnicalCueSegment {
     pub r#type: std::option::Option<crate::model::TechnicalCueType>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl TechnicalCueSegment {
+    /// <p>The type of the technical cue.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TechnicalCueType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for TechnicalCueSegment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5474,6 +6239,24 @@ pub struct AudioMetadata {
     /// <p>The number of audio channels in the segment.</p>
     pub number_of_channels: std::option::Option<i64>,
 }
+impl AudioMetadata {
+    /// <p>The audio codec used to encode or decode the audio stream. </p>
+    pub fn codec(&self) -> std::option::Option<&str> {
+        self.codec.as_deref()
+    }
+    /// <p>The duration of the audio stream in milliseconds.</p>
+    pub fn duration_millis(&self) -> std::option::Option<i64> {
+        self.duration_millis
+    }
+    /// <p>The sample rate for the audio stream.</p>
+    pub fn sample_rate(&self) -> std::option::Option<i64> {
+        self.sample_rate
+    }
+    /// <p>The number of audio channels in the segment.</p>
+    pub fn number_of_channels(&self) -> std::option::Option<i64> {
+        self.number_of_channels
+    }
+}
 impl std::fmt::Debug for AudioMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioMetadata");
@@ -5567,6 +6350,16 @@ pub struct PersonDetection {
     /// <p>Details about a person whose path was tracked in a video.</p>
     pub person: std::option::Option<crate::model::PersonDetail>,
 }
+impl PersonDetection {
+    /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>
+    pub fn timestamp(&self) -> i64 {
+        self.timestamp
+    }
+    /// <p>Details about a person whose path was tracked in a video.</p>
+    pub fn person(&self) -> std::option::Option<&crate::model::PersonDetail> {
+        self.person.as_ref()
+    }
+}
 impl std::fmt::Debug for PersonDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PersonDetection");
@@ -5634,6 +6427,20 @@ pub struct PersonDetail {
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Face details for the detected person.</p>
     pub face: std::option::Option<crate::model::FaceDetail>,
+}
+impl PersonDetail {
+    /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
+    pub fn index(&self) -> i64 {
+        self.index
+    }
+    /// <p>Bounding box around the detected person.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>Face details for the detected person.</p>
+    pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
+        self.face.as_ref()
+    }
 }
 impl std::fmt::Debug for PersonDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5769,6 +6576,16 @@ pub struct LabelDetection {
     /// <p>Details about the detected label.</p>
     pub label: std::option::Option<crate::model::Label>,
 }
+impl LabelDetection {
+    /// <p>Time, in milliseconds from the start of the video, that the label was detected.</p>
+    pub fn timestamp(&self) -> i64 {
+        self.timestamp
+    }
+    /// <p>Details about the detected label.</p>
+    pub fn label(&self) -> std::option::Option<&crate::model::Label> {
+        self.label.as_ref()
+    }
+}
 impl std::fmt::Debug for LabelDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelDetection");
@@ -5839,6 +6656,25 @@ pub struct Label {
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
     pub parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
+}
+impl Label {
+    /// <p>The name (label) of the object or scene.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Level of confidence.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.
+    /// Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+    /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
+    pub fn parents(&self) -> std::option::Option<&[crate::model::Parent]> {
+        self.parents.as_deref()
+    }
 }
 impl std::fmt::Debug for Label {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5947,6 +6783,12 @@ pub struct Parent {
     /// <p>The name of the parent label.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl Parent {
+    /// <p>The name of the parent label.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for Parent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Parent");
@@ -5995,6 +6837,16 @@ pub struct Instance {
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl Instance {
+    /// <p>The position of the label instance on the image.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6121,6 +6973,20 @@ pub struct PersonMatch {
     pub person: std::option::Option<crate::model::PersonDetail>,
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
+}
+impl PersonMatch {
+    /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
+    pub fn timestamp(&self) -> i64 {
+        self.timestamp
+    }
+    /// <p>Information about the matched person.</p>
+    pub fn person(&self) -> std::option::Option<&crate::model::PersonDetail> {
+        self.person.as_ref()
+    }
+    /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
+    pub fn face_matches(&self) -> std::option::Option<&[crate::model::FaceMatch]> {
+        self.face_matches.as_deref()
+    }
 }
 impl std::fmt::Debug for PersonMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6265,6 +7131,16 @@ pub struct FaceDetection {
     /// <p>The face properties for the detected face.</p>
     pub face: std::option::Option<crate::model::FaceDetail>,
 }
+impl FaceDetection {
+    /// <p>Time, in milliseconds from the start of the video, that the face was detected.</p>
+    pub fn timestamp(&self) -> i64 {
+        self.timestamp
+    }
+    /// <p>The face properties for the detected face.</p>
+    pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
+        self.face.as_ref()
+    }
+}
 impl std::fmt::Debug for FaceDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FaceDetection");
@@ -6327,6 +7203,16 @@ pub struct ContentModerationDetection {
     pub timestamp: i64,
     /// <p>The content moderation label detected by in the stored video.</p>
     pub moderation_label: std::option::Option<crate::model::ModerationLabel>,
+}
+impl ContentModerationDetection {
+    /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
+    pub fn timestamp(&self) -> i64 {
+        self.timestamp
+    }
+    /// <p>The content moderation label detected by in the stored video.</p>
+    pub fn moderation_label(&self) -> std::option::Option<&crate::model::ModerationLabel> {
+        self.moderation_label.as_ref()
+    }
 }
 impl std::fmt::Debug for ContentModerationDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6402,6 +7288,25 @@ pub struct ModerationLabel {
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent
     /// label <code>""</code>.</p>
     pub parent_name: std::option::Option<std::string::String>,
+}
+impl ModerationLabel {
+    /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly
+    /// identified.</p>
+    /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to
+    /// <code>DetectModerationLabels</code>, the operation returns labels with a confidence value
+    /// greater than or equal to 50 percent.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>The label name for the type of unsafe content detected in the image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent
+    /// label <code>""</code>.</p>
+    pub fn parent_name(&self) -> std::option::Option<&str> {
+        self.parent_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ModerationLabel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6545,6 +7450,16 @@ pub struct CelebrityRecognition {
     /// <p>Information about a recognized celebrity.</p>
     pub celebrity: std::option::Option<crate::model::CelebrityDetail>,
 }
+impl CelebrityRecognition {
+    /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized.</p>
+    pub fn timestamp(&self) -> i64 {
+        self.timestamp
+    }
+    /// <p>Information about a recognized celebrity.</p>
+    pub fn celebrity(&self) -> std::option::Option<&crate::model::CelebrityDetail> {
+        self.celebrity.as_ref()
+    }
+}
 impl std::fmt::Debug for CelebrityRecognition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CelebrityRecognition");
@@ -6620,6 +7535,36 @@ pub struct CelebrityDetail {
     pub face: std::option::Option<crate::model::FaceDetail>,
     /// <p>Retrieves the known gender for the celebrity.</p>
     pub known_gender: std::option::Option<crate::model::KnownGender>,
+}
+impl CelebrityDetail {
+    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
+        self.urls.as_deref()
+    }
+    /// <p>The name of the celebrity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the celebrity. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>Bounding box around the body of a celebrity.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>Face details for the recognized celebrity.</p>
+    pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
+        self.face.as_ref()
+    }
+    /// <p>Retrieves the known gender for the celebrity.</p>
+    pub fn known_gender(&self) -> std::option::Option<&crate::model::KnownGender> {
+        self.known_gender.as_ref()
+    }
 }
 impl std::fmt::Debug for CelebrityDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6821,6 +7766,13 @@ pub struct DistributeDataset {
     /// </p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DistributeDataset {
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DistributeDataset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DistributeDataset");
@@ -6874,6 +7826,17 @@ pub struct DetectTextFilters {
     /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region
     /// of the image.</p>
     pub regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
+}
+impl DetectTextFilters {
+    /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
+    pub fn word_filter(&self) -> std::option::Option<&crate::model::DetectionFilter> {
+        self.word_filter.as_ref()
+    }
+    /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region
+    /// of the image.</p>
+    pub fn regions_of_interest(&self) -> std::option::Option<&[crate::model::RegionOfInterest]> {
+        self.regions_of_interest.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectTextFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6976,6 +7939,24 @@ pub struct ProtectiveEquipmentSummary {
     /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.
     /// </p>
     pub persons_indeterminate: std::option::Option<std::vec::Vec<i32>>,
+}
+impl ProtectiveEquipmentSummary {
+    /// <p>An array of IDs for persons who are wearing detected personal protective equipment.
+    /// </p>
+    pub fn persons_with_required_equipment(&self) -> std::option::Option<&[i32]> {
+        self.persons_with_required_equipment.as_deref()
+    }
+    /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of
+    /// the detected personal protective equipment.
+    /// </p>
+    pub fn persons_without_required_equipment(&self) -> std::option::Option<&[i32]> {
+        self.persons_without_required_equipment.as_deref()
+    }
+    /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.
+    /// </p>
+    pub fn persons_indeterminate(&self) -> std::option::Option<&[i32]> {
+        self.persons_indeterminate.as_deref()
+    }
 }
 impl std::fmt::Debug for ProtectiveEquipmentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7101,6 +8082,25 @@ pub struct ProtectiveEquipmentPerson {
     /// <code>DetectProtectiveEquipment</code>.</p>
     pub id: std::option::Option<i32>,
 }
+impl ProtectiveEquipmentPerson {
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
+    pub fn body_parts(&self) -> std::option::Option<&[crate::model::ProtectiveEquipmentBodyPart]> {
+        self.body_parts.as_deref()
+    }
+    /// <p>A bounding box around the detected person.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>The identifier for the detected person. The identifier is only unique for a single call to
+    /// <code>DetectProtectiveEquipment</code>.</p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+}
 impl std::fmt::Debug for ProtectiveEquipmentPerson {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectiveEquipmentPerson");
@@ -7213,6 +8213,21 @@ pub struct ProtectiveEquipmentBodyPart {
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
     pub equipment_detections: std::option::Option<std::vec::Vec<crate::model::EquipmentDetection>>,
 }
+impl ProtectiveEquipmentBodyPart {
+    /// <p>The detected body part.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::BodyPart> {
+        self.name.as_ref()
+    }
+    /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part.
+    /// </p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
+    pub fn equipment_detections(&self) -> std::option::Option<&[crate::model::EquipmentDetection]> {
+        self.equipment_detections.as_deref()
+    }
+}
 impl std::fmt::Debug for ProtectiveEquipmentBodyPart {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectiveEquipmentBodyPart");
@@ -7309,6 +8324,24 @@ pub struct EquipmentDetection {
     pub r#type: std::option::Option<crate::model::ProtectiveEquipmentType>,
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub covers_body_part: std::option::Option<crate::model::CoversBodyPart>,
+}
+impl EquipmentDetection {
+    /// <p>A bounding box surrounding the item of detected PPE.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>The type of detected PPE.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ProtectiveEquipmentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Information about the body part covered by the detected PPE.</p>
+    pub fn covers_body_part(&self) -> std::option::Option<&crate::model::CoversBodyPart> {
+        self.covers_body_part.as_ref()
+    }
 }
 impl std::fmt::Debug for EquipmentDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7408,6 +8441,16 @@ pub struct CoversBodyPart {
     pub confidence: std::option::Option<f32>,
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
     pub value: bool,
+}
+impl CoversBodyPart {
+    /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
+    pub fn value(&self) -> bool {
+        self.value
+    }
 }
 impl std::fmt::Debug for CoversBodyPart {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7612,6 +8655,29 @@ pub struct ProtectiveEquipmentSummarizationAttributes {
     pub required_equipment_types:
         std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>,
 }
+impl ProtectiveEquipmentSummarizationAttributes {
+    /// <p>The minimum confidence level for which you want summary information.
+    /// The confidence level applies to person detection, body part detection, equipment detection, and body part coverage.
+    /// Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a
+    /// default value.</p>
+    /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code>
+    /// returns predictions only where the detection confidence is between 50% - 100%.  
+    /// If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
+    /// <p>
+    /// </p>
+    pub fn min_confidence(&self) -> std::option::Option<f32> {
+        self.min_confidence
+    }
+    /// <p>An array of personal protective equipment types for which you want summary information.
+    /// If a person is detected wearing a required requipment type, the person's ID is added to the
+    /// <code>PersonsWithRequiredEquipment</code> array field returned in <a>ProtectiveEquipmentSummary</a>
+    /// by <code>DetectProtectiveEquipment</code>.  </p>
+    pub fn required_equipment_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProtectiveEquipmentType]> {
+        self.required_equipment_types.as_deref()
+    }
+}
 impl std::fmt::Debug for ProtectiveEquipmentSummarizationAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectiveEquipmentSummarizationAttributes");
@@ -7714,6 +8780,22 @@ pub struct HumanLoopActivationOutput {
     /// human review.</p>
     pub human_loop_activation_conditions_evaluation_results:
         std::option::Option<std::string::String>,
+}
+impl HumanLoopActivationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
+    pub fn human_loop_arn(&self) -> std::option::Option<&str> {
+        self.human_loop_arn.as_deref()
+    }
+    /// <p>Shows if and why human review was needed.</p>
+    pub fn human_loop_activation_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.human_loop_activation_reasons.as_deref()
+    }
+    /// <p>Shows the result of condition evaluations, including those conditions which activated a
+    /// human review.</p>
+    pub fn human_loop_activation_conditions_evaluation_results(&self) -> std::option::Option<&str> {
+        self.human_loop_activation_conditions_evaluation_results
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopActivationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7828,6 +8910,22 @@ pub struct HumanLoopConfig {
     /// <p>Sets attributes of the input data.</p>
     pub data_attributes: std::option::Option<crate::model::HumanLoopDataAttributes>,
 }
+impl HumanLoopConfig {
+    /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+    /// Operation. </p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
+    /// <p>Sets attributes of the input data.</p>
+    pub fn data_attributes(&self) -> std::option::Option<&crate::model::HumanLoopDataAttributes> {
+        self.data_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for HumanLoopConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HumanLoopConfig");
@@ -7915,6 +9013,12 @@ impl HumanLoopConfig {
 pub struct HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information.</p>
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
+}
+impl HumanLoopDataAttributes {
+    /// <p>Sets whether the input image is free of personally identifiable information.</p>
+    pub fn content_classifiers(&self) -> std::option::Option<&[crate::model::ContentClassifier]> {
+        self.content_classifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopDataAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8046,6 +9150,23 @@ pub struct CustomLabel {
     /// for more accurate spatial information.</p>
     pub geometry: std::option::Option<crate::model::Geometry>,
 }
+impl CustomLabel {
+    /// <p>The name of the custom label.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The confidence that the model has in the detection of the custom label. The
+    /// range is 0-100. A higher value indicates a higher confidence.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>The location of the detected object on the image that corresponds to the custom label.
+    /// Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon
+    /// for more accurate spatial information.</p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
+        self.geometry.as_ref()
+    }
+}
 impl std::fmt::Debug for CustomLabel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomLabel");
@@ -8126,6 +9247,12 @@ pub struct StreamProcessorSettings {
     /// <p>Face search settings to use on a streaming video. </p>
     pub face_search: std::option::Option<crate::model::FaceSearchSettings>,
 }
+impl StreamProcessorSettings {
+    /// <p>Face search settings to use on a streaming video. </p>
+    pub fn face_search(&self) -> std::option::Option<&crate::model::FaceSearchSettings> {
+        self.face_search.as_ref()
+    }
+}
 impl std::fmt::Debug for StreamProcessorSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamProcessorSettings");
@@ -8180,6 +9307,17 @@ pub struct FaceSearchSettings {
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80.
     /// 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
     pub face_match_threshold: std::option::Option<f32>,
+}
+impl FaceSearchSettings {
+    /// <p>The ID of a collection that contains faces that you want to search for.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80.
+    /// 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
+    pub fn face_match_threshold(&self) -> std::option::Option<f32> {
+        self.face_match_threshold
+    }
 }
 impl std::fmt::Debug for FaceSearchSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8248,6 +9386,12 @@ pub struct StreamProcessorOutput {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
     pub kinesis_data_stream: std::option::Option<crate::model::KinesisDataStream>,
 }
+impl StreamProcessorOutput {
+    /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
+    pub fn kinesis_data_stream(&self) -> std::option::Option<&crate::model::KinesisDataStream> {
+        self.kinesis_data_stream.as_ref()
+    }
+}
 impl std::fmt::Debug for StreamProcessorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamProcessorOutput");
@@ -8300,6 +9444,12 @@ pub struct KinesisDataStream {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl KinesisDataStream {
+    /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisDataStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisDataStream");
@@ -8345,6 +9495,12 @@ impl KinesisDataStream {
 pub struct StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
     pub kinesis_video_stream: std::option::Option<crate::model::KinesisVideoStream>,
+}
+impl StreamProcessorInput {
+    /// <p>The Kinesis video stream input stream for the source streaming video.</p>
+    pub fn kinesis_video_stream(&self) -> std::option::Option<&crate::model::KinesisVideoStream> {
+        self.kinesis_video_stream.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamProcessorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8397,6 +9553,12 @@ impl StreamProcessorInput {
 pub struct KinesisVideoStream {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl KinesisVideoStream {
+    /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisVideoStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8470,6 +9632,63 @@ pub struct ProjectVersionDescription {
     pub manifest_summary: std::option::Option<crate::model::GroundTruthManifest>,
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl ProjectVersionDescription {
+    /// <p>The Amazon Resource Name (ARN) of the model version. </p>
+    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+        self.project_version_arn.as_deref()
+    }
+    /// <p>The Unix datetime for the date and time that training started.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The minimum number of inference units used by the model. For more information,
+    /// see <a>StartProjectVersion</a>.</p>
+    pub fn min_inference_units(&self) -> std::option::Option<i32> {
+        self.min_inference_units
+    }
+    /// <p>The current status of the model version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProjectVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A descriptive message for an error or warning that occurred.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The duration, in seconds, that you were billed for a successful training of the model version.
+    /// This value is only returned if the model version has been successfully trained.</p>
+    pub fn billable_training_time_in_seconds(&self) -> std::option::Option<i64> {
+        self.billable_training_time_in_seconds
+    }
+    /// <p>The Unix date and time that training of the model ended.</p>
+    pub fn training_end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_end_timestamp.as_ref()
+    }
+    /// <p>The location where training results are saved.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>Contains information about the training results.</p>
+    pub fn training_data_result(&self) -> std::option::Option<&crate::model::TrainingDataResult> {
+        self.training_data_result.as_ref()
+    }
+    /// <p>Contains information about the testing results.</p>
+    pub fn testing_data_result(&self) -> std::option::Option<&crate::model::TestingDataResult> {
+        self.testing_data_result.as_ref()
+    }
+    /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
+    pub fn evaluation_result(&self) -> std::option::Option<&crate::model::EvaluationResult> {
+        self.evaluation_result.as_ref()
+    }
+    /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training
+    /// and test datasets.</p>
+    pub fn manifest_summary(&self) -> std::option::Option<&crate::model::GroundTruthManifest> {
+        self.manifest_summary.as_ref()
+    }
+    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectVersionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8724,6 +9943,18 @@ pub struct GroundTruthManifest {
     /// Developer Guide. </p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
+impl GroundTruthManifest {
+    /// <p>Provides the S3 bucket name and object name.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
+    /// Amazon Rekognition operations.</p>
+    ///
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to
+    /// access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition
+    /// Developer Guide. </p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+}
 impl std::fmt::Debug for GroundTruthManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroundTruthManifest");
@@ -8789,6 +10020,20 @@ pub struct EvaluationResult {
     pub f1_score: std::option::Option<f32>,
     /// <p>The S3 bucket that contains the training summary.</p>
     pub summary: std::option::Option<crate::model::Summary>,
+}
+impl EvaluationResult {
+    /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision
+    /// and recall performance of the model as a single value. A higher value indicates better precision
+    /// and recall performance. A lower score indicates that precision, recall, or both are performing poorly.
+    ///
+    /// </p>
+    pub fn f1_score(&self) -> std::option::Option<f32> {
+        self.f1_score
+    }
+    /// <p>The S3 bucket that contains the training summary.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::Summary> {
+        self.summary.as_ref()
+    }
 }
 impl std::fmt::Debug for EvaluationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8869,6 +10114,18 @@ pub struct Summary {
     /// Developer Guide. </p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
+impl Summary {
+    /// <p>Provides the S3 bucket name and object name.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
+    /// Amazon Rekognition operations.</p>
+    ///
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to
+    /// access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition
+    /// Developer Guide. </p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+}
 impl std::fmt::Debug for Summary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Summary");
@@ -8933,6 +10190,21 @@ pub struct TestingDataResult {
     pub output: std::option::Option<crate::model::TestingData>,
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
     pub validation: std::option::Option<crate::model::ValidationData>,
+}
+impl TestingDataResult {
+    /// <p>The testing dataset that was supplied for training.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::TestingData> {
+        self.input.as_ref()
+    }
+    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to
+    /// file formatting and other issues. </p>
+    pub fn output(&self) -> std::option::Option<&crate::model::TestingData> {
+        self.output.as_ref()
+    }
+    /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
+    pub fn validation(&self) -> std::option::Option<&crate::model::ValidationData> {
+        self.validation.as_ref()
+    }
 }
 impl std::fmt::Debug for TestingDataResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9023,6 +10295,12 @@ pub struct ValidationData {
     /// <p>The assets that comprise the validation data. </p>
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
 }
+impl ValidationData {
+    /// <p>The assets that comprise the validation data. </p>
+    pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
+        self.assets.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationData");
@@ -9083,6 +10361,13 @@ pub struct Asset {
     /// </p>
     pub ground_truth_manifest: std::option::Option<crate::model::GroundTruthManifest>,
 }
+impl Asset {
+    /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.
+    /// </p>
+    pub fn ground_truth_manifest(&self) -> std::option::Option<&crate::model::GroundTruthManifest> {
+        self.ground_truth_manifest.as_ref()
+    }
+}
 impl std::fmt::Debug for Asset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Asset");
@@ -9139,6 +10424,17 @@ pub struct TestingData {
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job.
     /// After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
     pub auto_create: bool,
+}
+impl TestingData {
+    /// <p>The assets used for testing.</p>
+    pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
+        self.assets.as_deref()
+    }
+    /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job.
+    /// After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
+    pub fn auto_create(&self) -> bool {
+        self.auto_create
+    }
 }
 impl std::fmt::Debug for TestingData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9215,6 +10511,20 @@ pub struct TrainingDataResult {
     pub output: std::option::Option<crate::model::TrainingData>,
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
     pub validation: std::option::Option<crate::model::ValidationData>,
+}
+impl TrainingDataResult {
+    /// <p>The training assets that you supplied for training.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::TrainingData> {
+        self.input.as_ref()
+    }
+    /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
+    pub fn output(&self) -> std::option::Option<&crate::model::TrainingData> {
+        self.output.as_ref()
+    }
+    /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
+    pub fn validation(&self) -> std::option::Option<&crate::model::ValidationData> {
+        self.validation.as_ref()
+    }
 }
 impl std::fmt::Debug for TrainingDataResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9296,6 +10606,12 @@ pub struct TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
 }
+impl TrainingData {
+    /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
+        self.assets.as_deref()
+    }
+}
 impl std::fmt::Debug for TrainingData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrainingData");
@@ -9354,6 +10670,16 @@ pub struct OutputConfig {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix applied to the training output files. </p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
+}
+impl OutputConfig {
+    /// <p>The S3 bucket where training output is placed.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The prefix applied to the training output files. </p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for OutputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9426,6 +10752,26 @@ pub struct ProjectDescription {
     /// Information about the training and test datasets in the project.
     /// </p>
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetMetadata>>,
+}
+impl ProjectDescription {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The Unix timestamp for the date and time that the project was created.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The current status of the project.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProjectStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// Information about the training and test datasets in the project.
+    /// </p>
+    pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetMetadata]> {
+        self.datasets.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9559,6 +10905,48 @@ pub struct DatasetMetadata {
     /// API call that failed.
     /// </p>
     pub status_message_code: std::option::Option<crate::model::DatasetStatusMessageCode>,
+}
+impl DatasetMetadata {
+    /// <p>
+    /// The Unix timestamp for the date and time that the dataset was created.
+    /// </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>
+    /// The type of the dataset.
+    /// </p>
+    pub fn dataset_type(&self) -> std::option::Option<&crate::model::DatasetType> {
+        self.dataset_type.as_ref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (ARN) for the dataset.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>
+    /// The status for the dataset.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// The status message for the dataset.
+    /// </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>
+    /// The status message code for the dataset operation. If a service error occurs, try the
+    /// API call again later. If a client error occurs, check the input parameters to the dataset
+    /// API call that failed.
+    /// </p>
+    pub fn status_message_code(
+        &self,
+    ) -> std::option::Option<&crate::model::DatasetStatusMessageCode> {
+        self.status_message_code.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10003,6 +11391,48 @@ pub struct DatasetDescription {
     /// </p>
     pub dataset_stats: std::option::Option<crate::model::DatasetStats>,
 }
+impl DatasetDescription {
+    /// <p>
+    /// The Unix timestamp for the time and date that the dataset was created.
+    /// </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>
+    /// The Unix timestamp for the date and time that the dataset was last updated.
+    /// </p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>
+    /// The status of the dataset.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// The status message for the dataset.
+    /// </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>
+    /// The status message code for the dataset operation. If a service error occurs, try the
+    /// API call again later. If a client error occurs, check the input parameters to the dataset
+    /// API call that failed.
+    /// </p>
+    pub fn status_message_code(
+        &self,
+    ) -> std::option::Option<&crate::model::DatasetStatusMessageCode> {
+        self.status_message_code.as_ref()
+    }
+    /// <p>
+    /// The status message code for the dataset.
+    /// </p>
+    pub fn dataset_stats(&self) -> std::option::Option<&crate::model::DatasetStats> {
+        self.dataset_stats.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetDescription");
@@ -10182,6 +11612,32 @@ pub struct DatasetStats {
     /// </p>
     pub error_entries: std::option::Option<i32>,
 }
+impl DatasetStats {
+    /// <p>
+    /// The total number of images in the dataset that have labels.
+    /// </p>
+    pub fn labeled_entries(&self) -> std::option::Option<i32> {
+        self.labeled_entries
+    }
+    /// <p>
+    /// The total number of images in the dataset.
+    /// </p>
+    pub fn total_entries(&self) -> std::option::Option<i32> {
+        self.total_entries
+    }
+    /// <p>
+    /// The total number of labels declared in the dataset.
+    /// </p>
+    pub fn total_labels(&self) -> std::option::Option<i32> {
+        self.total_labels
+    }
+    /// <p>
+    /// The total number of entries that contain at least one error.
+    /// </p>
+    pub fn error_entries(&self) -> std::option::Option<i32> {
+        self.error_entries
+    }
+}
 impl std::fmt::Debug for DatasetStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetStats");
@@ -10299,6 +11755,19 @@ pub struct DatasetSource {
     /// </p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
+impl DatasetSource {
+    /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.
+    /// </p>
+    pub fn ground_truth_manifest(&self) -> std::option::Option<&crate::model::GroundTruthManifest> {
+        self.ground_truth_manifest.as_ref()
+    }
+    /// <p>
+    /// The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DatasetSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetSource");
@@ -10375,6 +11844,17 @@ pub struct CompareFacesMatch {
     /// contains a face).</p>
     pub face: std::option::Option<crate::model::ComparedFace>,
 }
+impl CompareFacesMatch {
+    /// <p>Level of confidence that the faces match.</p>
+    pub fn similarity(&self) -> std::option::Option<f32> {
+        self.similarity
+    }
+    /// <p>Provides face metadata (bounding box and confidence that the bounding box actually
+    /// contains a face).</p>
+    pub fn face(&self) -> std::option::Option<&crate::model::ComparedFace> {
+        self.face.as_ref()
+    }
+}
 impl std::fmt::Debug for CompareFacesMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompareFacesMatch");
@@ -10442,6 +11922,16 @@ pub struct ComparedSourceImageFace {
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Confidence level that the selected bounding box contains a face.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl ComparedSourceImageFace {
+    /// <p>Bounding box of the face.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>Confidence level that the selected bounding box contains a face.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for ComparedSourceImageFace {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

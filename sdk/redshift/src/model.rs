@@ -342,6 +342,397 @@ pub struct Cluster {
     /// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
     pub aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
 }
+impl Cluster {
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The node type for the nodes in the cluster.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p> The current state of the cluster. Possible values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>available</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available, prep-for-resize</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available, resize-cleanup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>cancelling-resize</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>creating</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>final-snapshot</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>hardware-failure</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>incompatible-hsm</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>incompatible-network</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>incompatible-parameters</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>incompatible-restore</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>modifying</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>paused</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rebooting</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>renaming</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>resizing</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rotating-keys</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>storage-full</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>updating-hsm</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_status(&self) -> std::option::Option<&str> {
+        self.cluster_status.as_deref()
+    }
+    /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Available - The cluster is available for queries. </p>
+    /// </li>
+    /// <li>
+    /// <p>Unavailable - The cluster is not available for queries.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p>
+    /// </li>
+    /// <li>
+    /// <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed - The cluster failed and is not available for queries.</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_availability_status(&self) -> std::option::Option<&str> {
+        self.cluster_availability_status.as_deref()
+    }
+    /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
+    pub fn modify_status(&self) -> std::option::Option<&str> {
+        self.modify_status.as_deref()
+    }
+    /// <p>The admin user name for the cluster. This name is used to connect to the database
+    /// that is specified in the <b>DBName</b> parameter. </p>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>The name of the initial database that was created when the cluster was created.
+    /// This same name is returned for the life of the cluster. If an initial database was not
+    /// specified, a database named <code>dev</code>dev was created by default. </p>
+    pub fn db_name(&self) -> std::option::Option<&str> {
+        self.db_name.as_deref()
+    }
+    /// <p>The connection endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+    /// <p>The date and time that the cluster was created.</p>
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.cluster_create_time.as_ref()
+    }
+    /// <p>The number of days that automatic cluster snapshots are retained.</p>
+    pub fn automated_snapshot_retention_period(&self) -> i32 {
+        self.automated_snapshot_retention_period
+    }
+    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the
+    /// snapshot is retained indefinitely. This setting doesn't change the retention period
+    /// of existing snapshots.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn manual_snapshot_retention_period(&self) -> i32 {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>A list of cluster security group that are associated with the cluster. Each
+    /// security group is represented by an element that contains
+    /// <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code>
+    /// subelements. </p>
+    /// <p>Cluster security groups are used when the cluster is not created in an Amazon
+    /// Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups,
+    /// which are listed by the <b>VpcSecurityGroups</b> parameter.
+    /// </p>
+    pub fn cluster_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterSecurityGroupMembership]> {
+        self.cluster_security_groups.as_deref()
+    }
+    /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are
+    /// associated with the cluster. This parameter is returned only if the cluster is in a
+    /// VPC.</p>
+    pub fn vpc_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+        self.vpc_security_groups.as_deref()
+    }
+    /// <p>The list of cluster parameter groups that are associated with this cluster. Each
+    /// parameter group in the list is returned with its status.</p>
+    pub fn cluster_parameter_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterParameterGroupStatus]> {
+        self.cluster_parameter_groups.as_deref()
+    }
+    /// <p>The name of the subnet group that is associated with the cluster. This parameter is
+    /// valid only when the cluster is in a VPC.</p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
+    /// <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The name of the Availability Zone in which the cluster is located.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system
+    /// maintenance can occur.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>A value that, if present, indicates that changes to the cluster are pending.
+    /// Specific pending changes are identified by subelements.</p>
+    pub fn pending_modified_values(
+        &self,
+    ) -> std::option::Option<&crate::model::PendingModifiedValues> {
+        self.pending_modified_values.as_ref()
+    }
+    /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades
+    /// will be applied automatically to the cluster during the maintenance window. </p>
+    pub fn allow_version_upgrade(&self) -> bool {
+        self.allow_version_upgrade
+    }
+    /// <p>The number of compute nodes in the cluster.</p>
+    pub fn number_of_nodes(&self) -> i32 {
+        self.number_of_nodes
+    }
+    /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be
+    /// accessed from a public network.</p>
+    pub fn publicly_accessible(&self) -> bool {
+        self.publicly_accessible
+    }
+    /// <p>A boolean value that, if <code>true</code>, indicates that data in the cluster is
+    /// encrypted at rest.</p>
+    pub fn encrypted(&self) -> bool {
+        self.encrypted
+    }
+    /// <p>A value that describes the status of a cluster restore action. This parameter
+    /// returns null if the cluster was not created by restoring a snapshot.</p>
+    pub fn restore_status(&self) -> std::option::Option<&crate::model::RestoreStatus> {
+        self.restore_status.as_ref()
+    }
+    /// <p></p>
+    pub fn data_transfer_progress(
+        &self,
+    ) -> std::option::Option<&crate::model::DataTransferProgress> {
+        self.data_transfer_progress.as_ref()
+    }
+    /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any
+    /// hardware security module (HSM) settings changes specified in a modify cluster
+    /// command.</p>
+    /// <p>Values: active, applying</p>
+    pub fn hsm_status(&self) -> std::option::Option<&crate::model::HsmStatus> {
+        self.hsm_status.as_ref()
+    }
+    /// <p>A value that returns the destination region and retention period that are
+    /// configured for cross-region snapshot copy.</p>
+    pub fn cluster_snapshot_copy_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterSnapshotCopyStatus> {
+        self.cluster_snapshot_copy_status.as_ref()
+    }
+    /// <p>The public key for the cluster.</p>
+    pub fn cluster_public_key(&self) -> std::option::Option<&str> {
+        self.cluster_public_key.as_deref()
+    }
+    /// <p>The nodes in the cluster.</p>
+    pub fn cluster_nodes(&self) -> std::option::Option<&[crate::model::ClusterNode]> {
+        self.cluster_nodes.as_deref()
+    }
+    /// <p>The status of the elastic IP (EIP) address.</p>
+    pub fn elastic_ip_status(&self) -> std::option::Option<&crate::model::ElasticIpStatus> {
+        self.elastic_ip_status.as_ref()
+    }
+    /// <p>The specific revision number of the database in the cluster.</p>
+    pub fn cluster_revision_number(&self) -> std::option::Option<&str> {
+        self.cluster_revision_number.as_deref()
+    }
+    /// <p>The list of tags for the cluster.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Key Management Service (KMS) key ID of the encryption key used to
+    /// encrypt data in the cluster.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
+    /// enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a
+    /// VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in
+    /// the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn enhanced_vpc_routing(&self) -> bool {
+        self.enhanced_vpc_routing
+    }
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+    /// cluster to access other Amazon Web Services services.</p>
+    pub fn iam_roles(&self) -> std::option::Option<&[crate::model::ClusterIamRole]> {
+        self.iam_roles.as_deref()
+    }
+    /// <p>Cluster operations that are waiting to be started.</p>
+    pub fn pending_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.pending_actions.as_deref()
+    }
+    /// <p>The name of the maintenance track for the cluster.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>The number of nodes that you can resize the cluster to with the elastic resize method.
+    /// </p>
+    pub fn elastic_resize_number_of_node_options(&self) -> std::option::Option<&str> {
+        self.elastic_resize_number_of_node_options.as_deref()
+    }
+    /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+    pub fn deferred_maintenance_windows(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeferredMaintenanceWindow]> {
+        self.deferred_maintenance_windows.as_deref()
+    }
+    /// <p>A unique identifier for the cluster snapshot schedule.</p>
+    pub fn snapshot_schedule_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_schedule_identifier.as_deref()
+    }
+    /// <p>The current state of the cluster snapshot schedule.</p>
+    pub fn snapshot_schedule_state(&self) -> std::option::Option<&crate::model::ScheduleState> {
+        self.snapshot_schedule_state.as_ref()
+    }
+    /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
+    pub fn expected_next_snapshot_schedule_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expected_next_snapshot_schedule_time.as_ref()
+    }
+    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled.  Possible values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>OnTrack - The next snapshot is expected to be taken on time. </p>
+    /// </li>
+    /// <li>
+    /// <p>Pending - The next snapshot is pending to be taken. </p>
+    /// </li>
+    /// </ul>
+    pub fn expected_next_snapshot_schedule_time_status(&self) -> std::option::Option<&str> {
+        self.expected_next_snapshot_schedule_time_status.as_deref()
+    }
+    /// <p>The date and time in UTC when system maintenance can begin.</p>
+    pub fn next_maintenance_window_start_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.next_maintenance_window_start_time.as_ref()
+    }
+    /// <p>Returns the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AllowCancelResize: a boolean value indicating if the resize operation can be
+    /// cancelled.</p>
+    /// </li>
+    /// <li>
+    /// <p>ResizeType: Returns ClassicResize</p>
+    /// </li>
+    /// </ul>
+    pub fn resize_info(&self) -> std::option::Option<&crate::model::ResizeInfo> {
+        self.resize_info.as_ref()
+    }
+    /// <p>Describes the status of the Availability Zone relocation operation.</p>
+    pub fn availability_zone_relocation_status(&self) -> std::option::Option<&str> {
+        self.availability_zone_relocation_status.as_deref()
+    }
+    /// <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_namespace_arn(&self) -> std::option::Option<&str> {
+        self.cluster_namespace_arn.as_deref()
+    }
+    /// <p>The total storage capacity of the cluster in megabytes. </p>
+    pub fn total_storage_capacity_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.total_storage_capacity_in_mega_bytes
+    }
+    /// <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+    pub fn aqua_configuration(&self) -> std::option::Option<&crate::model::AquaConfiguration> {
+        self.aqua_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Cluster");
@@ -1656,6 +2047,40 @@ pub struct AquaConfiguration {
     /// </ul>
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
 }
+impl AquaConfiguration {
+    /// <p>The value indicates the status of AQUA on the cluster. Possible values include the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>enabled - AQUA is enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>disabled - AQUA is not enabled. </p>
+    /// </li>
+    /// <li>
+    /// <p>applying - AQUA status is being applied. </p>
+    /// </li>
+    /// </ul>
+    pub fn aqua_status(&self) -> std::option::Option<&crate::model::AquaStatus> {
+        self.aqua_status.as_ref()
+    }
+    /// <p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
+    /// </li>
+    /// <li>
+    /// <p>disabled - Don't use AQUA. </p>
+    /// </li>
+    /// <li>
+    /// <p>auto - Amazon Redshift determines whether to use AQUA.</p>
+    /// </li>
+    /// </ul>
+    pub fn aqua_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
+        self.aqua_configuration_status.as_ref()
+    }
+}
 impl std::fmt::Debug for AquaConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AquaConfiguration");
@@ -1891,6 +2316,16 @@ pub struct ResizeInfo {
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
     pub allow_cancel_resize: bool,
 }
+impl ResizeInfo {
+    /// <p>Returns the value <code>ClassicResize</code>.</p>
+    pub fn resize_type(&self) -> std::option::Option<&str> {
+        self.resize_type.as_deref()
+    }
+    /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
+    pub fn allow_cancel_resize(&self) -> bool {
+        self.allow_cancel_resize
+    }
+}
 impl std::fmt::Debug for ResizeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResizeInfo");
@@ -2015,6 +2450,20 @@ pub struct DeferredMaintenanceWindow {
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
     pub defer_maintenance_end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeferredMaintenanceWindow {
+    /// <p>A unique identifier for the maintenance window.</p>
+    pub fn defer_maintenance_identifier(&self) -> std::option::Option<&str> {
+        self.defer_maintenance_identifier.as_deref()
+    }
+    /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
+    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.defer_maintenance_start_time.as_ref()
+    }
+    /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
+    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.defer_maintenance_end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DeferredMaintenanceWindow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeferredMaintenanceWindow");
@@ -2132,6 +2581,35 @@ pub struct ClusterIamRole {
     /// </ul>
     pub apply_status: std::option::Option<std::string::String>,
 }
+impl ClusterIamRole {
+    /// <p>The Amazon Resource Name (ARN) of the IAM role, for example,
+    /// <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>A value that describes the status of the IAM role's association with an Amazon
+    /// Redshift cluster.</p>
+    /// <p>The following are possible statuses and descriptions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>in-sync</code>: The role is available for use by the cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>adding</code>: The role is in the process of being associated with the
+    /// cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>removing</code>: The role is in the process of being disassociated with
+    /// the cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn apply_status(&self) -> std::option::Option<&str> {
+        self.apply_status.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterIamRole {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterIamRole");
@@ -2233,6 +2711,16 @@ pub struct Tag {
     /// <p>The value for the resource tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key, or name, for the resource tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value for the resource tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -2295,6 +2783,16 @@ pub struct ElasticIpStatus {
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The status of the elastic IP (EIP) address.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl ElasticIpStatus {
+    /// <p>The elastic IP (EIP) address for the cluster.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>The status of the elastic IP (EIP) address.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for ElasticIpStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2360,6 +2858,20 @@ pub struct ClusterNode {
     pub private_ip_address: std::option::Option<std::string::String>,
     /// <p>The public IP address of a node within a cluster.</p>
     pub public_ip_address: std::option::Option<std::string::String>,
+}
+impl ClusterNode {
+    /// <p>Whether the node is a leader node or a compute node.</p>
+    pub fn node_role(&self) -> std::option::Option<&str> {
+        self.node_role.as_deref()
+    }
+    /// <p>The private IP address of a node within a cluster.</p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
+    /// <p>The public IP address of a node within a cluster.</p>
+    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+        self.public_ip_address.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterNode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2452,6 +2964,29 @@ pub struct ClusterSnapshotCopyStatus {
     pub manual_snapshot_retention_period: i32,
     /// <p>The name of the snapshot copy grant.</p>
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
+}
+impl ClusterSnapshotCopyStatus {
+    /// <p>The destination region that snapshots are automatically copied to when cross-region
+    /// snapshot copy is enabled.</p>
+    pub fn destination_region(&self) -> std::option::Option<&str> {
+        self.destination_region.as_deref()
+    }
+    /// <p>The number of days that automated snapshots are retained in the destination region
+    /// after they are copied from a source region.</p>
+    pub fn retention_period(&self) -> i64 {
+        self.retention_period
+    }
+    /// <p>The number of days that automated snapshots are retained in the destination region
+    /// after they are copied from a source region. If the value is -1, the manual snapshot is
+    /// retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn manual_snapshot_retention_period(&self) -> i32 {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>The name of the snapshot copy grant.</p>
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+        self.snapshot_copy_grant_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterSnapshotCopyStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2572,6 +3107,24 @@ pub struct HsmStatus {
     /// <p>Values: active, applying</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl HsmStatus {
+    /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
+    /// retrieve the data encryption keys stored in an HSM.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+    /// <p>Specifies the name of the HSM configuration that contains the information the
+    /// Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
+    /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings
+    /// changes specified in a modify cluster command.</p>
+    /// <p>Values: active, applying</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for HsmStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HsmStatus");
@@ -2683,6 +3236,33 @@ pub struct DataTransferProgress {
     pub estimated_time_to_completion_in_seconds: std::option::Option<i64>,
     /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
     pub elapsed_time_in_seconds: std::option::Option<i64>,
+}
+impl DataTransferProgress {
+    /// <p>Describes the status of the cluster. While the transfer is in progress the status is
+    /// <code>transferringdata</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Describes the data transfer rate in MB's per second.</p>
+    pub fn current_rate_in_mega_bytes_per_second(&self) -> std::option::Option<f64> {
+        self.current_rate_in_mega_bytes_per_second
+    }
+    /// <p>Describes the total amount of data to be transfered in megabytes.</p>
+    pub fn total_data_in_mega_bytes(&self) -> i64 {
+        self.total_data_in_mega_bytes
+    }
+    /// <p>Describes the total amount of data that has been transfered in MB's.</p>
+    pub fn data_transferred_in_mega_bytes(&self) -> i64 {
+        self.data_transferred_in_mega_bytes
+    }
+    /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
+    pub fn estimated_time_to_completion_in_seconds(&self) -> std::option::Option<i64> {
+        self.estimated_time_to_completion_in_seconds
+    }
+    /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
+    pub fn elapsed_time_in_seconds(&self) -> std::option::Option<i64> {
+        self.elapsed_time_in_seconds
+    }
 }
 impl std::fmt::Debug for DataTransferProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2839,6 +3419,41 @@ pub struct RestoreStatus {
     /// a completed restore.
     /// This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub estimated_time_to_completion_in_seconds: i64,
+}
+impl RestoreStatus {
+    /// <p>The status of the restore action. Returns starting, restoring, completed, or
+    /// failed.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The number of megabytes per second being transferred from the backup storage.
+    /// Returns the average rate for a completed backup.
+    /// This field is only updated when you restore to DC2 and DS2 node types. </p>
+    pub fn current_restore_rate_in_mega_bytes_per_second(&self) -> f64 {
+        self.current_restore_rate_in_mega_bytes_per_second
+    }
+    /// <p>The size of the set of snapshot data used to restore the cluster.
+    /// This field is only updated when you restore to DC2 and DS2 node types. </p>
+    pub fn snapshot_size_in_mega_bytes(&self) -> i64 {
+        self.snapshot_size_in_mega_bytes
+    }
+    /// <p>The number of megabytes that have been transferred from snapshot storage.
+    /// This field is only updated when you restore to DC2 and DS2 node types. </p>
+    pub fn progress_in_mega_bytes(&self) -> i64 {
+        self.progress_in_mega_bytes
+    }
+    /// <p>The amount of time an in-progress restore has been running, or the amount of time
+    /// it took a completed restore to finish.
+    /// This field is only updated when you restore to DC2 and DS2 node types. </p>
+    pub fn elapsed_time_in_seconds(&self) -> i64 {
+        self.elapsed_time_in_seconds
+    }
+    /// <p>The estimate of the time remaining before the restore will complete. Returns 0 for
+    /// a completed restore.
+    /// This field is only updated when you restore to DC2 and DS2 node types. </p>
+    pub fn estimated_time_to_completion_in_seconds(&self) -> i64 {
+        self.estimated_time_to_completion_in_seconds
+    }
 }
 impl std::fmt::Debug for RestoreStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3019,6 +3634,61 @@ pub struct PendingModifiedValues {
     pub maintenance_track_name: std::option::Option<std::string::String>,
     /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
     pub encryption_type: std::option::Option<std::string::String>,
+}
+impl PendingModifiedValues {
+    /// <p>The pending or in-progress change of the admin user password for the
+    /// cluster.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>The pending or in-progress change of the cluster's node type.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The pending or in-progress change of the number of nodes in the cluster.</p>
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+        self.number_of_nodes
+    }
+    /// <p>The pending or in-progress change of the cluster type.</p>
+    pub fn cluster_type(&self) -> std::option::Option<&str> {
+        self.cluster_type.as_deref()
+    }
+    /// <p>The pending or in-progress change of the service version.</p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>The pending or in-progress change of the automated snapshot retention
+    /// period.</p>
+    pub fn automated_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.automated_snapshot_retention_period
+    }
+    /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The pending or in-progress change of the ability to connect to the cluster from the
+    /// public network.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
+    /// enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a
+    /// VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in
+    /// the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn enhanced_vpc_routing(&self) -> std::option::Option<bool> {
+        self.enhanced_vpc_routing
+    }
+    /// <p>The name of the maintenance track that the cluster will change to during the next
+    /// maintenance window.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
+    pub fn encryption_type(&self) -> std::option::Option<&str> {
+        self.encryption_type.as_deref()
+    }
 }
 impl std::fmt::Debug for PendingModifiedValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3246,6 +3916,26 @@ pub struct ClusterParameterGroupStatus {
     pub cluster_parameter_status_list:
         std::option::Option<std::vec::Vec<crate::model::ClusterParameterStatus>>,
 }
+impl ClusterParameterGroupStatus {
+    /// <p>The name of the cluster parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The status of parameter updates.</p>
+    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+        self.parameter_apply_status.as_deref()
+    }
+    /// <p>The list of parameter statuses.</p>
+    /// <p>
+    /// For more information about parameters and parameter groups, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    pub fn cluster_parameter_status_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterParameterStatus]> {
+        self.cluster_parameter_status_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterParameterGroupStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterParameterGroupStatus");
@@ -3394,6 +4084,61 @@ pub struct ClusterParameterStatus {
     /// <p>The error that prevented the parameter from being applied to the
     /// database.</p>
     pub parameter_apply_error_description: std::option::Option<std::string::String>,
+}
+impl ClusterParameterStatus {
+    /// <p>The name of the parameter.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>The status of the parameter that indicates whether the parameter is in sync with
+    /// the database, waiting for a cluster reboot, or encountered an error when being
+    /// applied.</p>
+    /// <p>The following are possible statuses and descriptions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>in-sync</code>: The parameter value is in sync with the
+    /// database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending-reboot</code>: The parameter value will be applied after the
+    /// cluster reboots.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>applying</code>: The parameter value is being applied to the
+    /// database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>invalid-parameter</code>: Cannot apply the parameter value because it has
+    /// an invalid value or syntax.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>apply-deferred</code>: The parameter contains static property changes. The
+    /// changes are deferred until the cluster reboots.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+    /// will be applied after the cluster reboots.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unknown-error</code>: Cannot apply the parameter change right now. The
+    /// change will be applied after the cluster reboots.</p>
+    /// </li>
+    /// </ul>
+    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+        self.parameter_apply_status.as_deref()
+    }
+    /// <p>The error that prevented the parameter from being applied to the
+    /// database.</p>
+    pub fn parameter_apply_error_description(&self) -> std::option::Option<&str> {
+        self.parameter_apply_error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterParameterStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3568,6 +4313,16 @@ pub struct VpcSecurityGroupMembership {
     /// <p>The status of the VPC security group.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl VpcSecurityGroupMembership {
+    /// <p>The identifier of the VPC security group.</p>
+    pub fn vpc_security_group_id(&self) -> std::option::Option<&str> {
+        self.vpc_security_group_id.as_deref()
+    }
+    /// <p>The status of the VPC security group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcSecurityGroupMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcSecurityGroupMembership");
@@ -3633,6 +4388,16 @@ pub struct ClusterSecurityGroupMembership {
     pub cluster_security_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the cluster security group.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl ClusterSecurityGroupMembership {
+    /// <p>The name of the cluster security group.</p>
+    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_name.as_deref()
+    }
+    /// <p>The status of the cluster security group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterSecurityGroupMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3707,6 +4472,20 @@ pub struct Endpoint {
     pub port: i32,
     /// <p>Describes a connection endpoint.</p>
     pub vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
+}
+impl Endpoint {
+    /// <p>The DNS address of the Cluster.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The port that the database engine is listening on.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Describes a connection endpoint.</p>
+    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
+        self.vpc_endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3794,6 +4573,20 @@ pub struct VpcEndpoint {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+}
+impl VpcEndpoint {
+    /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The VPC identifier that the endpoint is associated. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3890,6 +4683,24 @@ pub struct NetworkInterface {
     pub private_ip_address: std::option::Option<std::string::String>,
     /// <p>The Availability Zone. </p>
     pub availability_zone: std::option::Option<std::string::String>,
+}
+impl NetworkInterface {
+    /// <p>The network interface identifier. </p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The subnet identifier. </p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The IPv4 address of the network interface within the subnet. </p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
+    /// <p>The Availability Zone. </p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
 }
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4092,6 +4903,185 @@ pub struct Snapshot {
     pub manual_snapshot_remaining_days: std::option::Option<i32>,
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
     pub snapshot_retention_start_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Snapshot {
+    /// <p>The snapshot identifier that is provided in the request.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The identifier of the cluster for which the snapshot was taken.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a
+    /// copy of the cluster data as of this exact time.</p>
+    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_create_time.as_ref()
+    }
+    /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns status as "creating". </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>DescribeClusterSnapshots</a> returns status as "creating",
+    /// "available", "final snapshot", or "failed".</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>DeleteClusterSnapshot</a> returns status as "deleted".</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The port that the cluster is listening on.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The Availability Zone in which the cluster was created.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The time (UTC) when the cluster was originally created.</p>
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.cluster_create_time.as_ref()
+    }
+    /// <p>The admin user name for the cluster.</p>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
+    pub fn engine_full_version(&self) -> std::option::Option<&str> {
+        self.engine_full_version.as_deref()
+    }
+    /// <p>The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a>
+    /// and <a>CopyClusterSnapshot</a> are of type "manual". </p>
+    pub fn snapshot_type(&self) -> std::option::Option<&str> {
+        self.snapshot_type.as_deref()
+    }
+    /// <p>The node type of the nodes in the cluster.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The number of nodes in the cluster.</p>
+    pub fn number_of_nodes(&self) -> i32 {
+        self.number_of_nodes
+    }
+    /// <p>The name of the database that was created when the cluster was created.</p>
+    pub fn db_name(&self) -> std::option::Option<&str> {
+        self.db_name.as_deref()
+    }
+    /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC.
+    /// Otherwise, this field is not in the output.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
+    pub fn encrypted(&self) -> bool {
+        self.encrypted
+    }
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to
+    /// encrypt data in the cluster from which the snapshot was taken.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys
+    /// of the source cluster. <code>true</code> indicates that the data is encrypted using HSM
+    /// keys.</p>
+    pub fn encrypted_with_hsm(&self) -> bool {
+        self.encrypted_with_hsm
+    }
+    /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns
+    /// <code>null</code> if no accounts are authorized. Visible only to the snapshot owner.
+    /// </p>
+    pub fn accounts_with_restore_access(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountWithRestoreAccess]> {
+        self.accounts_with_restore_access.as_deref()
+    }
+    /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot.
+    /// For automatic snapshots, the owner of the cluster. The owner can perform all snapshot
+    /// actions, such as sharing a manual snapshot.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>The size of the complete set of backup data that would be used to restore the
+    /// cluster.</p>
+    pub fn total_backup_size_in_mega_bytes(&self) -> f64 {
+        self.total_backup_size_in_mega_bytes
+    }
+    /// <p>The size of the incremental backup.</p>
+    pub fn actual_incremental_backup_size_in_mega_bytes(&self) -> f64 {
+        self.actual_incremental_backup_size_in_mega_bytes
+    }
+    /// <p>The number of megabytes that have been transferred to the snapshot
+    /// backup.</p>
+    pub fn backup_progress_in_mega_bytes(&self) -> f64 {
+        self.backup_progress_in_mega_bytes
+    }
+    /// <p>The number of megabytes per second being transferred to the snapshot backup.
+    /// Returns <code>0</code> for a completed backup. </p>
+    pub fn current_backup_rate_in_mega_bytes_per_second(&self) -> f64 {
+        self.current_backup_rate_in_mega_bytes_per_second
+    }
+    /// <p>The estimate of the time remaining before the snapshot backup will complete.
+    /// Returns <code>0</code> for a completed backup. </p>
+    pub fn estimated_seconds_to_completion(&self) -> i64 {
+        self.estimated_seconds_to_completion
+    }
+    /// <p>The amount of time an in-progress snapshot backup has been running, or the amount
+    /// of time it took a completed backup to finish.</p>
+    pub fn elapsed_time_in_seconds(&self) -> i64 {
+        self.elapsed_time_in_seconds
+    }
+    /// <p>The source region from which the snapshot was copied.</p>
+    pub fn source_region(&self) -> std::option::Option<&str> {
+        self.source_region.as_deref()
+    }
+    /// <p>The list of tags for the cluster snapshot.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The list of node types that this cluster snapshot is able to restore
+    /// into.</p>
+    pub fn restorable_node_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.restorable_node_types.as_deref()
+    }
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
+    /// enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a
+    /// VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in
+    /// the Amazon Redshift Cluster Management Guide.</p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>Default: false</p>
+    pub fn enhanced_vpc_routing(&self) -> bool {
+        self.enhanced_vpc_routing
+    }
+    /// <p>The name of the maintenance track for the snapshot.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
+    /// snapshot is retained indefinitely. </p>
+    ///
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_retention_period
+    }
+    /// <p>The number of days until a manual snapshot will pass its retention period.</p>
+    pub fn manual_snapshot_remaining_days(&self) -> std::option::Option<i32> {
+        self.manual_snapshot_remaining_days
+    }
+    /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
+    pub fn snapshot_retention_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_retention_start_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Snapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4780,6 +5770,18 @@ pub struct AccountWithRestoreAccess {
     /// snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
     pub account_alias: std::option::Option<std::string::String>,
 }
+impl AccountWithRestoreAccess {
+    /// <p>The identifier of an Amazon Web Services account authorized to restore a
+    /// snapshot.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a
+    /// snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
+    pub fn account_alias(&self) -> std::option::Option<&str> {
+        self.account_alias.as_deref()
+    }
+}
 impl std::fmt::Debug for AccountWithRestoreAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountWithRestoreAccess");
@@ -4913,6 +5915,31 @@ pub struct ClusterSecurityGroup {
     pub ip_ranges: std::option::Option<std::vec::Vec<crate::model::IpRange>>,
     /// <p>The list of tags for the cluster security group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ClusterSecurityGroup {
+    /// <p>The name of the cluster security group to which the operation was
+    /// applied.</p>
+    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_name.as_deref()
+    }
+    /// <p>A description of the security group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of EC2 security groups that are permitted to access clusters associated with
+    /// this cluster security group.</p>
+    pub fn ec2_security_groups(&self) -> std::option::Option<&[crate::model::Ec2SecurityGroup]> {
+        self.ec2_security_groups.as_deref()
+    }
+    /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated
+    /// with this cluster security group.</p>
+    pub fn ip_ranges(&self) -> std::option::Option<&[crate::model::IpRange]> {
+        self.ip_ranges.as_deref()
+    }
+    /// <p>The list of tags for the cluster security group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterSecurityGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5064,6 +6091,20 @@ pub struct IpRange {
     /// <p>The list of tags for the IP range.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl IpRange {
+    /// <p>The status of the IP range, for example, "authorized".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
+    pub fn cidrip(&self) -> std::option::Option<&str> {
+        self.cidrip.as_deref()
+    }
+    /// <p>The list of tags for the IP range.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for IpRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IpRange");
@@ -5153,6 +6194,25 @@ pub struct Ec2SecurityGroup {
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
     /// <p>The list of tags for the EC2 security group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Ec2SecurityGroup {
+    /// <p>The status of the EC2 security group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The name of the EC2 Security Group.</p>
+    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_name.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the
+    /// <code>EC2SecurityGroupName</code> field. </p>
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_owner_id.as_deref()
+    }
+    /// <p>The list of tags for the EC2 security group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for Ec2SecurityGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5297,6 +6357,71 @@ pub struct TableRestoreStatus {
     pub target_schema_name: std::option::Option<std::string::String>,
     /// <p>The name of the table to create as a result of the table restore request.</p>
     pub new_table_name: std::option::Option<std::string::String>,
+}
+impl TableRestoreStatus {
+    /// <p>The unique identifier for the table restore request.</p>
+    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
+        self.table_restore_request_id.as_deref()
+    }
+    /// <p>A value that describes the current state of the table restore request.</p>
+    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
+    /// <code>PENDING</code>, <code>IN_PROGRESS</code>
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TableRestoreStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>A description of the status of the table restore request. Status values include
+    /// <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
+    /// <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the table restore request was made, in Universal Coordinated Time
+    /// (UTC).</p>
+    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.request_time.as_ref()
+    }
+    /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
+    pub fn progress_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.progress_in_mega_bytes
+    }
+    /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
+    pub fn total_data_in_mega_bytes(&self) -> std::option::Option<i64> {
+        self.total_data_in_mega_bytes
+    }
+    /// <p>The identifier of the Amazon Redshift cluster that the table is being restored
+    /// to.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The identifier of the snapshot that the table is being restored from.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The name of the source database that contains the table being restored.</p>
+    pub fn source_database_name(&self) -> std::option::Option<&str> {
+        self.source_database_name.as_deref()
+    }
+    /// <p>The name of the source schema that contains the table being restored.</p>
+    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+        self.source_schema_name.as_deref()
+    }
+    /// <p>The name of the source table being restored.</p>
+    pub fn source_table_name(&self) -> std::option::Option<&str> {
+        self.source_table_name.as_deref()
+    }
+    /// <p>The name of the database to restore the table to.</p>
+    pub fn target_database_name(&self) -> std::option::Option<&str> {
+        self.target_database_name.as_deref()
+    }
+    /// <p>The name of the schema to restore the table to.</p>
+    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+        self.target_schema_name.as_deref()
+    }
+    /// <p>The name of the table to create as a result of the table restore request.</p>
+    pub fn new_table_name(&self) -> std::option::Option<&str> {
+        self.new_table_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TableRestoreStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5652,6 +6777,51 @@ pub struct Parameter {
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: std::option::Option<std::string::String>,
 }
+impl Parameter {
+    /// <p>The name of the parameter.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>,
+    /// then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
+    /// <p>A description of the parameter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The source of the parameter value, such as "engine-default" or "user".</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The data type of the parameter.</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+    /// <p>The valid range of values for the parameter.</p>
+    pub fn allowed_values(&self) -> std::option::Option<&str> {
+        self.allowed_values.as_deref()
+    }
+    /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be
+    /// applied dynamically, while other properties require that any associated clusters be
+    /// rebooted for the configuration changes to be applied.
+    /// For more information about parameters and parameter groups, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    pub fn apply_type(&self) -> std::option::Option<&crate::model::ParameterApplyType> {
+        self.apply_type.as_ref()
+    }
+    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security
+    /// or operational implications that prevent them from being changed. </p>
+    pub fn is_modifiable(&self) -> bool {
+        self.is_modifiable
+    }
+    /// <p>The earliest engine version to which the parameter can apply.</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
+}
 impl std::fmt::Debug for Parameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Parameter");
@@ -5896,6 +7066,25 @@ pub struct DataShareAssociation {
     /// <p>The status change data of the datashare that is associated.</p>
     pub status_change_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DataShareAssociation {
+    /// <p>The name of the consumer accounts that have an association with a producer
+    /// datashare.</p>
+    pub fn consumer_identifier(&self) -> std::option::Option<&str> {
+        self.consumer_identifier.as_deref()
+    }
+    /// <p>The status of the datashare that is associated.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataShareStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The creation date of the datashare that is associated.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The status change data of the datashare that is associated.</p>
+    pub fn status_change_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.status_change_date.as_ref()
+    }
+}
 impl std::fmt::Debug for DataShareAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataShareAssociation");
@@ -6122,6 +7311,85 @@ pub struct ReservedNode {
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
     /// <p></p>
     pub reserved_node_offering_type: std::option::Option<crate::model::ReservedNodeOfferingType>,
+}
+impl ReservedNode {
+    /// <p>The unique identifier for the reservation.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>The identifier for the reserved node offering.</p>
+    pub fn reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_offering_id.as_deref()
+    }
+    /// <p>The node type of the reserved node.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The time the reservation started. You purchase a reserved node offering for a
+    /// duration. This is the start time of that duration.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The duration of the node reservation in seconds.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
+    pub fn fixed_price(&self) -> f64 {
+        self.fixed_price
+    }
+    /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
+    pub fn usage_price(&self) -> f64 {
+        self.usage_price
+    }
+    /// <p>The currency code for the reserved cluster.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>The number of reserved compute nodes.</p>
+    pub fn node_count(&self) -> i32 {
+        self.node_count
+    }
+    /// <p>The state of the reserved compute node.</p>
+    /// <p>Possible Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>pending-payment-This reserved node has recently been purchased, and the
+    /// sale has been approved, but payment has not yet been confirmed.</p>
+    /// </li>
+    /// <li>
+    /// <p>active-This reserved node is owned by the caller and is available for
+    /// use.</p>
+    /// </li>
+    /// <li>
+    /// <p>payment-failed-Payment failed for the purchase attempt.</p>
+    /// </li>
+    /// <li>
+    /// <p>retired-The reserved node is no longer available. </p>
+    /// </li>
+    /// <li>
+    /// <p>exchanging-The owner is exchanging the reserved node for another reserved
+    /// node.</p>
+    /// </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The anticipated utilization of the reserved node, as defined in the reserved node
+    /// offering.</p>
+    pub fn offering_type(&self) -> std::option::Option<&str> {
+        self.offering_type.as_deref()
+    }
+    /// <p>The recurring charges for the reserved node.</p>
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+        self.recurring_charges.as_deref()
+    }
+    /// <p></p>
+    pub fn reserved_node_offering_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservedNodeOfferingType> {
+        self.reserved_node_offering_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ReservedNode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6469,6 +7737,17 @@ pub struct RecurringCharge {
     /// <p>The frequency at which the recurring charge amount is applied.</p>
     pub recurring_charge_frequency: std::option::Option<std::string::String>,
 }
+impl RecurringCharge {
+    /// <p>The amount charged per the period of time specified by the recurring charge
+    /// frequency.</p>
+    pub fn recurring_charge_amount(&self) -> f64 {
+        self.recurring_charge_amount
+    }
+    /// <p>The frequency at which the recurring charge amount is applied.</p>
+    pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
+        self.recurring_charge_frequency.as_deref()
+    }
+}
 impl std::fmt::Debug for RecurringCharge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecurringCharge");
@@ -6768,6 +8047,16 @@ pub struct ClusterAssociatedToSchedule {
     /// <p></p>
     pub schedule_association_state: std::option::Option<crate::model::ScheduleState>,
 }
+impl ClusterAssociatedToSchedule {
+    /// <p></p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p></p>
+    pub fn schedule_association_state(&self) -> std::option::Option<&crate::model::ScheduleState> {
+        self.schedule_association_state.as_ref()
+    }
+}
 impl std::fmt::Debug for ClusterAssociatedToSchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterAssociatedToSchedule");
@@ -6897,6 +8186,20 @@ pub struct ScheduledActionType {
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
     pub resume_cluster: std::option::Option<crate::model::ResumeClusterMessage>,
 }
+impl ScheduledActionType {
+    /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
+    pub fn resize_cluster(&self) -> std::option::Option<&crate::model::ResizeClusterMessage> {
+        self.resize_cluster.as_ref()
+    }
+    /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
+    pub fn pause_cluster(&self) -> std::option::Option<&crate::model::PauseClusterMessage> {
+        self.pause_cluster.as_ref()
+    }
+    /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
+    pub fn resume_cluster(&self) -> std::option::Option<&crate::model::ResumeClusterMessage> {
+        self.resume_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ScheduledActionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduledActionType");
@@ -6980,6 +8283,12 @@ pub struct ResumeClusterMessage {
     /// <p>The identifier of the cluster to be resumed.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
+impl ResumeClusterMessage {
+    /// <p>The identifier of the cluster to be resumed.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for ResumeClusterMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResumeClusterMessage");
@@ -7030,6 +8339,12 @@ impl ResumeClusterMessage {
 pub struct PauseClusterMessage {
     /// <p>The identifier of the cluster to be paused.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
+}
+impl PauseClusterMessage {
+    /// <p>The identifier of the cluster to be paused.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for PauseClusterMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7091,6 +8406,30 @@ pub struct ResizeClusterMessage {
     /// process. If you don't provide this parameter or set the value to
     /// <code>false</code>, the resize type is elastic. </p>
     pub classic: std::option::Option<bool>,
+}
+impl ResizeClusterMessage {
+    /// <p>The unique identifier for the cluster to resize.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The new cluster type for the specified cluster.</p>
+    pub fn cluster_type(&self) -> std::option::Option<&str> {
+        self.cluster_type.as_deref()
+    }
+    /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+        self.number_of_nodes
+    }
+    /// <p>A boolean value indicating whether the resize operation is using the classic resize
+    /// process. If you don't provide this parameter or set the value to
+    /// <code>false</code>, the resize type is elastic. </p>
+    pub fn classic(&self) -> std::option::Option<bool> {
+        self.classic
+    }
 }
 impl std::fmt::Debug for ResizeClusterMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7241,6 +8580,75 @@ pub struct EventSubscription {
     pub enabled: bool,
     /// <p>The list of tags for the event subscription.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl EventSubscription {
+    /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification
+    /// subscription.</p>
+    pub fn customer_aws_id(&self) -> std::option::Option<&str> {
+        self.customer_aws_id.as_deref()
+    }
+    /// <p>The name of the Amazon Redshift event notification subscription.</p>
+    pub fn cust_subscription_id(&self) -> std::option::Option<&str> {
+        self.cust_subscription_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event
+    /// notification subscription.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The status of the Amazon Redshift event notification subscription.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can be one of the following: active | no-permission |
+    /// topic-not-exist</p>
+    /// </li>
+    /// <li>
+    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has
+    /// permission to post to the Amazon SNS topic. The status "topic-not-exist"
+    /// indicates that the topic was deleted after the subscription was
+    /// created.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time the Amazon Redshift event notification subscription was
+    /// created.</p>
+    pub fn subscription_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.subscription_creation_time.as_ref()
+    }
+    /// <p>The source type of the events returned by the Amazon Redshift event notification, such as
+    /// cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>A list of the sources that publish events to the Amazon Redshift event notification
+    /// subscription.</p>
+    pub fn source_ids_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_ids_list.as_deref()
+    }
+    /// <p>The list of Amazon Redshift event categories specified in the event notification
+    /// subscription.</p>
+    /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
+    pub fn event_categories_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories_list.as_deref()
+    }
+    /// <p>The event severity specified in the Amazon Redshift event notification
+    /// subscription.</p>
+    /// <p>Values: ERROR, INFO</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>A boolean value indicating whether the subscription is enabled; <code>true</code>
+    /// indicates that the subscription is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The list of tags for the event subscription.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for EventSubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7519,6 +8927,33 @@ pub struct ClusterSubnetGroup {
     /// <p>The list of tags for the cluster subnet group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ClusterSubnetGroup {
+    /// <p>The name of the cluster subnet group.</p>
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cluster_subnet_group_name.as_deref()
+    }
+    /// <p>The description of the cluster subnet group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The VPC ID of the cluster subnet group.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>,
+    /// <code>Incomplete</code> and <code>Invalid</code>. </p>
+    pub fn subnet_group_status(&self) -> std::option::Option<&str> {
+        self.subnet_group_status.as_deref()
+    }
+    /// <p>A list of the VPC <a>Subnet</a> elements. </p>
+    pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The list of tags for the cluster subnet group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterSubnetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterSubnetGroup");
@@ -7662,6 +9097,20 @@ pub struct Subnet {
     /// <p>The status of the subnet.</p>
     pub subnet_status: std::option::Option<std::string::String>,
 }
+impl Subnet {
+    /// <p>The identifier of the subnet.</p>
+    pub fn subnet_identifier(&self) -> std::option::Option<&str> {
+        self.subnet_identifier.as_deref()
+    }
+    /// <p></p>
+    pub fn subnet_availability_zone(&self) -> std::option::Option<&crate::model::AvailabilityZone> {
+        self.subnet_availability_zone.as_ref()
+    }
+    /// <p>The status of the subnet.</p>
+    pub fn subnet_status(&self) -> std::option::Option<&str> {
+        self.subnet_status.as_deref()
+    }
+}
 impl std::fmt::Debug for Subnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subnet");
@@ -7747,6 +9196,16 @@ pub struct AvailabilityZone {
     /// <p></p>
     pub supported_platforms: std::option::Option<std::vec::Vec<crate::model::SupportedPlatform>>,
 }
+impl AvailabilityZone {
+    /// <p>The name of the availability zone.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p></p>
+    pub fn supported_platforms(&self) -> std::option::Option<&[crate::model::SupportedPlatform]> {
+        self.supported_platforms.as_deref()
+    }
+}
 impl std::fmt::Debug for AvailabilityZone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityZone");
@@ -7821,6 +9280,12 @@ pub struct SupportedPlatform {
     /// <p></p>
     pub name: std::option::Option<std::string::String>,
 }
+impl SupportedPlatform {
+    /// <p></p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for SupportedPlatform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SupportedPlatform");
@@ -7887,6 +9352,51 @@ pub struct ReservedNodeOffering {
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
     /// <p></p>
     pub reserved_node_offering_type: std::option::Option<crate::model::ReservedNodeOfferingType>,
+}
+impl ReservedNodeOffering {
+    /// <p>The offering identifier.</p>
+    pub fn reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_offering_id.as_deref()
+    }
+    /// <p>The node type offered by the reserved node offering.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The duration, in seconds, for which the offering will reserve the node.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The upfront fixed charge you will pay to purchase the specific reserved node
+    /// offering.</p>
+    pub fn fixed_price(&self) -> f64 {
+        self.fixed_price
+    }
+    /// <p>The rate you are charged for each hour the cluster that is using the offering is
+    /// running.</p>
+    pub fn usage_price(&self) -> f64 {
+        self.usage_price
+    }
+    /// <p>The currency code for the compute nodes offering.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>The anticipated utilization of the reserved node, as defined in the reserved node
+    /// offering.</p>
+    pub fn offering_type(&self) -> std::option::Option<&str> {
+        self.offering_type.as_deref()
+    }
+    /// <p>The charge to your account regardless of whether you are creating any clusters
+    /// using the node offering. Recurring charges are only in effect for heavy-utilization
+    /// reserved nodes.</p>
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+        self.recurring_charges.as_deref()
+    }
+    /// <p></p>
+    pub fn reserved_node_offering_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservedNodeOfferingType> {
+        self.reserved_node_offering_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ReservedNodeOffering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8109,6 +9619,54 @@ pub struct UsageLimit {
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UsageLimit {
+    /// <p>The identifier of the usage limit.</p>
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+        self.usage_limit_id.as_deref()
+    }
+    /// <p>The identifier of the cluster with a usage limit.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Redshift feature to which the limit applies.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::UsageLimitFeatureType> {
+        self.feature_type.as_ref()
+    }
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    pub fn limit_type(&self) -> std::option::Option<&crate::model::UsageLimitLimitType> {
+        self.limit_type.as_ref()
+    }
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    pub fn amount(&self) -> i64 {
+        self.amount
+    }
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    pub fn period(&self) -> std::option::Option<&crate::model::UsageLimitPeriod> {
+        self.period.as_ref()
+    }
+    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>log</b> - To log an event in a system table. The default is log.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
+    /// </li>
+    /// </ul>
+    pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
+        self.breach_action.as_ref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UsageLimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8341,6 +9899,53 @@ pub struct TaggedResource {
     /// Amazon Redshift Cluster Management Guide. </p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl TaggedResource {
+    /// <p>The tag for the resource.</p>
+    pub fn tag(&self) -> std::option::Option<&crate::model::Tag> {
+        self.tag.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example:
+    /// <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Cluster</p>
+    /// </li>
+    /// <li>
+    /// <p>CIDR/IP</p>
+    /// </li>
+    /// <li>
+    /// <p>EC2 security group</p>
+    /// </li>
+    /// <li>
+    /// <p>Snapshot</p>
+    /// </li>
+    /// <li>
+    /// <p>Cluster security group</p>
+    /// </li>
+    /// <li>
+    /// <p>Subnet group</p>
+    /// </li>
+    /// <li>
+    /// <p>HSM connection</p>
+    /// </li>
+    /// <li>
+    /// <p>HSM certificate</p>
+    /// </li>
+    /// <li>
+    /// <p>Parameter group</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the
+    /// Amazon Redshift Cluster Management Guide. </p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for TaggedResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaggedResource");
@@ -8500,6 +10105,38 @@ pub struct SnapshotSchedule {
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
     pub associated_clusters:
         std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
+}
+impl SnapshotSchedule {
+    /// <p>A list of ScheduleDefinitions.</p>
+    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
+        self.schedule_definitions.as_deref()
+    }
+    /// <p>A unique identifier for the schedule.</p>
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+        self.schedule_identifier.as_deref()
+    }
+    /// <p>The description of the schedule.</p>
+    pub fn schedule_description(&self) -> std::option::Option<&str> {
+        self.schedule_description.as_deref()
+    }
+    /// <p>An optional set of tags describing the schedule.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p></p>
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.next_invocations.as_deref()
+    }
+    /// <p>The number of clusters associated with the schedule.</p>
+    pub fn associated_cluster_count(&self) -> std::option::Option<i32> {
+        self.associated_cluster_count
+    }
+    /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    pub fn associated_clusters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClusterAssociatedToSchedule]> {
+        self.associated_clusters.as_deref()
+    }
 }
 impl std::fmt::Debug for SnapshotSchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8685,6 +10322,21 @@ pub struct SnapshotCopyGrant {
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl SnapshotCopyGrant {
+    /// <p>The name of the snapshot copy grant.</p>
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+        self.snapshot_copy_grant_name.as_deref()
+    }
+    /// <p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which
+    /// Amazon Redshift is granted permission.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for SnapshotCopyGrant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnapshotCopyGrant");
@@ -8803,6 +10455,58 @@ pub struct ScheduledAction {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ScheduledAction {
+    /// <p>The name of the scheduled action. </p>
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+        self.scheduled_action_name.as_deref()
+    }
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
+        self.target_action.as_ref()
+    }
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
+    /// Schedule invocations must be separated by at least one hour.</p>
+    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
+    /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
+    /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The IAM role to assume to run the scheduled action.
+    /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
+    /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
+    ///
+    /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
+    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// </p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>The description of the scheduled action. </p>
+    pub fn scheduled_action_description(&self) -> std::option::Option<&str> {
+        self.scheduled_action_description.as_deref()
+    }
+    /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ScheduledActionState> {
+        self.state.as_ref()
+    }
+    /// <p>List of times when the scheduled action will run. </p>
+    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.next_invocations.as_deref()
+    }
+    /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ScheduledAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9019,6 +10723,16 @@ pub struct ScheduledActionFilter {
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ScheduledActionFilter {
+    /// <p>The type of element to filter. </p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ScheduledActionFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for ScheduledActionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduledActionFilter");
@@ -9216,6 +10930,32 @@ pub struct PartnerIntegrationInfo {
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PartnerIntegrationInfo {
+    /// <p>The name of the database that receives data from a partner.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the partner.</p>
+    pub fn partner_name(&self) -> std::option::Option<&str> {
+        self.partner_name.as_deref()
+    }
+    /// <p>The partner integration status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PartnerIntegrationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message provided by the partner.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The date (UTC) that the partner integration was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for PartnerIntegrationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PartnerIntegrationInfo");
@@ -9350,6 +11090,24 @@ pub struct OrderableClusterOption {
     /// <p>A list of availability zones for the orderable cluster.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
 }
+impl OrderableClusterOption {
+    /// <p>The version of the orderable cluster.</p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>The cluster type, for example <code>multi-node</code>. </p>
+    pub fn cluster_type(&self) -> std::option::Option<&str> {
+        self.cluster_type.as_deref()
+    }
+    /// <p>The node type for the orderable cluster.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>A list of availability zones for the orderable cluster.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+        self.availability_zones.as_deref()
+    }
+}
 impl std::fmt::Debug for OrderableClusterOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrderableClusterOption");
@@ -9458,6 +11216,24 @@ pub struct NodeConfigurationOption {
     pub estimated_disk_utilization_percent: std::option::Option<f64>,
     /// <p>The category of the node configuration recommendation.</p>
     pub mode: std::option::Option<crate::model::Mode>,
+}
+impl NodeConfigurationOption {
+    /// <p>The node type, such as, "ds2.8xlarge".</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The number of nodes.</p>
+    pub fn number_of_nodes(&self) -> i32 {
+        self.number_of_nodes
+    }
+    /// <p>The estimated disk utilizaton percentage.</p>
+    pub fn estimated_disk_utilization_percent(&self) -> std::option::Option<f64> {
+        self.estimated_disk_utilization_percent
+    }
+    /// <p>The category of the node configuration recommendation.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
+        self.mode.as_ref()
+    }
 }
 impl std::fmt::Debug for NodeConfigurationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9617,6 +11393,27 @@ pub struct NodeConfigurationOptionsFilter {
     /// If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100.
     /// For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl NodeConfigurationOptionsFilter {
+    /// <p>The name of the element to filter.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::NodeConfigurationOptionsFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The filter operator.
+    /// If filter Name is NodeType only the 'in' operator is supported.
+    /// Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'.
+    /// Provide two values to evaluate for 'between'.
+    /// Provide a list of values for 'in'.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::OperatorType> {
+        self.operator.as_ref()
+    }
+    /// <p>List of values. Compare Name using Operator to Values.
+    /// If filter Name is NumberOfNodes, then values can range from 0 to 200.
+    /// If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100.
+    /// For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for NodeConfigurationOptionsFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9938,6 +11735,29 @@ pub struct HsmConfiguration {
     /// <p>The list of tags for the HSM configuration.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl HsmConfiguration {
+    /// <p>The name of the Amazon Redshift HSM configuration.</p>
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_configuration_identifier.as_deref()
+    }
+    /// <p>A text description of the HSM configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    pub fn hsm_ip_address(&self) -> std::option::Option<&str> {
+        self.hsm_ip_address.as_deref()
+    }
+    /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their
+    /// database encryption keys.</p>
+    pub fn hsm_partition_name(&self) -> std::option::Option<&str> {
+        self.hsm_partition_name.as_deref()
+    }
+    /// <p>The list of tags for the HSM configuration.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for HsmConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HsmConfiguration");
@@ -10071,6 +11891,21 @@ pub struct HsmClientCertificate {
     /// <p>The list of tags for the HSM client certificate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl HsmClientCertificate {
+    /// <p>The identifier of the HSM client certificate.</p>
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_identifier.as_deref()
+    }
+    /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must
+    /// register the public key in the HSM.</p>
+    pub fn hsm_client_certificate_public_key(&self) -> std::option::Option<&str> {
+        self.hsm_client_certificate_public_key.as_deref()
+    }
+    /// <p>The list of tags for the HSM client certificate.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for HsmClientCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HsmClientCertificate");
@@ -10187,6 +12022,38 @@ pub struct Event {
     pub date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The identifier of the event.</p>
     pub event_id: std::option::Option<std::string::String>,
+}
+impl Event {
+    /// <p>The identifier for the source of the event.</p>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+    /// <p>The source type for this event.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The text of this event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>A list of the event categories.</p>
+    /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>The severity of the event.</p>
+    /// <p>Values: ERROR, INFO</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>The date and time of the event.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>The identifier of the event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10409,6 +12276,17 @@ pub struct EventCategoriesMap {
     /// <p>The events in the event category.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::EventInfoMap>>,
 }
+impl EventCategoriesMap {
+    /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories
+    /// belong to.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>The events in the event category.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::EventInfoMap]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for EventCategoriesMap {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventCategoriesMap");
@@ -10487,6 +12365,25 @@ pub struct EventInfoMap {
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     pub severity: std::option::Option<std::string::String>,
+}
+impl EventInfoMap {
+    /// <p>The identifier of an Amazon Redshift event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The category of an Amazon Redshift event.</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>The description of an Amazon Redshift event.</p>
+    pub fn event_description(&self) -> std::option::Option<&str> {
+        self.event_description.as_deref()
+    }
+    /// <p>The severity of the event.</p>
+    /// <p>Values: ERROR, INFO</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
 }
 impl std::fmt::Debug for EventInfoMap {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10604,6 +12501,44 @@ pub struct EndpointAuthorization {
     pub allowed_vp_cs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub endpoint_count: i32,
+}
+impl EndpointAuthorization {
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn grantor(&self) -> std::option::Option<&str> {
+        self.grantor.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    pub fn grantee(&self) -> std::option::Option<&str> {
+        self.grantee.as_deref()
+    }
+    /// <p>The cluster identifier.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The time (UTC) when the authorization was created.</p>
+    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.authorize_time.as_ref()
+    }
+    /// <p>The status of the cluster.</p>
+    pub fn cluster_status(&self) -> std::option::Option<&str> {
+        self.cluster_status.as_deref()
+    }
+    /// <p>The status of the authorization action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    pub fn allowed_all_vp_cs(&self) -> bool {
+        self.allowed_all_vp_cs
+    }
+    /// <p>The VPCs allowed access to the cluster.</p>
+    pub fn allowed_vp_cs(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_vp_cs.as_deref()
+    }
+    /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    pub fn endpoint_count(&self) -> i32 {
+        self.endpoint_count
+    }
 }
 impl std::fmt::Debug for EndpointAuthorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10796,6 +12731,50 @@ pub struct EndpointAccess {
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+}
+impl EndpointAccess {
+    /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>The status of the endpoint.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The name of the endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The time (UTC) that the endpoint was created.</p>
+    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.endpoint_create_time.as_ref()
+    }
+    /// <p>The port number on which the cluster accepts incoming connections.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The security groups associated with the endpoint.</p>
+    pub fn vpc_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+        self.vpc_security_groups.as_deref()
+    }
+    /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
 }
 impl std::fmt::Debug for EndpointAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11005,6 +12984,25 @@ pub struct DefaultClusterParameters {
     /// <p>The list of cluster default parameters.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
+impl DefaultClusterParameters {
+    /// <p>The name of the cluster parameter group family to which the engine default
+    /// parameters apply.</p>
+    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+        self.parameter_group_family.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a
+    /// subsequent request. If a value is returned in a response, you can retrieve the next set
+    /// of records by providing this returned marker value in the <code>Marker</code> parameter
+    /// and retrying the command. If the <code>Marker</code> field is empty, all response
+    /// records have been retrieved for the request. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The list of cluster default parameters.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for DefaultClusterParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultClusterParameters");
@@ -11107,6 +13105,26 @@ pub struct DataShare {
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl DataShare {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
+        self.producer_arn.as_deref()
+    }
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub fn allow_publicly_accessible_consumers(&self) -> bool {
+        self.allow_publicly_accessible_consumers
+    }
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub fn data_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
+        self.data_share_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for DataShare {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11352,6 +13370,20 @@ pub struct ClusterVersion {
     /// <p>The description of the cluster version.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl ClusterVersion {
+    /// <p>The version number used by the cluster.</p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>The name of the cluster parameter group family for the cluster.</p>
+    pub fn cluster_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.cluster_parameter_group_family.as_deref()
+    }
+    /// <p>The description of the cluster version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterVersion");
@@ -11447,6 +13479,22 @@ pub struct MaintenanceTrack {
     /// <p>An array of <a>UpdateTarget</a> objects to update with the maintenance
     /// track. </p>
     pub update_targets: std::option::Option<std::vec::Vec<crate::model::UpdateTarget>>,
+}
+impl MaintenanceTrack {
+    /// <p>The name of the maintenance track. Possible values are <code>current</code> and
+    /// <code>trailing</code>.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>The version number for the cluster release.</p>
+    pub fn database_version(&self) -> std::option::Option<&str> {
+        self.database_version.as_deref()
+    }
+    /// <p>An array of <a>UpdateTarget</a> objects to update with the maintenance
+    /// track. </p>
+    pub fn update_targets(&self) -> std::option::Option<&[crate::model::UpdateTarget]> {
+        self.update_targets.as_deref()
+    }
 }
 impl std::fmt::Debug for MaintenanceTrack {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11545,6 +13593,20 @@ pub struct UpdateTarget {
     /// <p>A list of operations supported by the maintenance track.</p>
     pub supported_operations: std::option::Option<std::vec::Vec<crate::model::SupportedOperation>>,
 }
+impl UpdateTarget {
+    /// <p>The name of the new maintenance track.</p>
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+        self.maintenance_track_name.as_deref()
+    }
+    /// <p>The cluster version for the new maintenance track.</p>
+    pub fn database_version(&self) -> std::option::Option<&str> {
+        self.database_version.as_deref()
+    }
+    /// <p>A list of operations supported by the maintenance track.</p>
+    pub fn supported_operations(&self) -> std::option::Option<&[crate::model::SupportedOperation]> {
+        self.supported_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTarget");
@@ -11638,6 +13700,12 @@ pub struct SupportedOperation {
     /// <p>A list of the supported operations.</p>
     pub operation_name: std::option::Option<std::string::String>,
 }
+impl SupportedOperation {
+    /// <p>A list of the supported operations.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SupportedOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SupportedOperation");
@@ -11690,6 +13758,16 @@ pub struct SnapshotSortingEntity {
     pub attribute: std::option::Option<crate::model::SnapshotAttributeToSortBy>,
     /// <p>The order for listing the attributes.</p>
     pub sort_order: std::option::Option<crate::model::SortByOrder>,
+}
+impl SnapshotSortingEntity {
+    /// <p>The category for sorting the snapshots.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::SnapshotAttributeToSortBy> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order for listing the attributes.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortByOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for SnapshotSortingEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11879,6 +13957,25 @@ pub struct ClusterParameterGroup {
     /// <p>The list of tags for the cluster parameter group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ClusterParameterGroup {
+    /// <p>The name of the cluster parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The name of the cluster parameter group family that this cluster parameter group is
+    /// compatible with.</p>
+    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+        self.parameter_group_family.as_deref()
+    }
+    /// <p>The description of the parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The list of tags for the cluster parameter group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterParameterGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterParameterGroup");
@@ -11989,6 +14086,27 @@ pub struct ClusterDbRevision {
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the
     /// database revision that a cluster can be updated to.</p>
     pub revision_targets: std::option::Option<std::vec::Vec<crate::model::RevisionTarget>>,
+}
+impl ClusterDbRevision {
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>A string representing the current cluster version.</p>
+    pub fn current_database_revision(&self) -> std::option::Option<&str> {
+        self.current_database_revision.as_deref()
+    }
+    /// <p>The date on which the database revision was released.</p>
+    pub fn database_revision_release_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.database_revision_release_date.as_ref()
+    }
+    /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the
+    /// database revision that a cluster can be updated to.</p>
+    pub fn revision_targets(&self) -> std::option::Option<&[crate::model::RevisionTarget]> {
+        self.revision_targets.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterDbRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12107,6 +14225,24 @@ pub struct RevisionTarget {
     /// <p>The date on which the database revision was released.</p>
     pub database_revision_release_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl RevisionTarget {
+    /// <p>A unique string that identifies the version to update the cluster to. You can use this
+    /// value in <a>ModifyClusterDbRevision</a>.</p>
+    pub fn database_revision(&self) -> std::option::Option<&str> {
+        self.database_revision.as_deref()
+    }
+    /// <p>A string that describes the changes and features that will be applied to the cluster
+    /// when it is updated to the corresponding <a>ClusterDbRevision</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date on which the database revision was released.</p>
+    pub fn database_revision_release_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.database_revision_release_date.as_ref()
+    }
+}
 impl std::fmt::Debug for RevisionTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevisionTarget");
@@ -12197,6 +14333,17 @@ pub struct AuthenticationProfile {
     /// The maximum length of the JSON string is determined by a quota for your account.</p>
     pub authentication_profile_content: std::option::Option<std::string::String>,
 }
+impl AuthenticationProfile {
+    /// <p>The name of the authentication profile.</p>
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+        self.authentication_profile_name.as_deref()
+    }
+    /// <p>The content of the authentication profile in JSON format.
+    /// The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
+        self.authentication_profile_content.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthenticationProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationProfile");
@@ -12280,6 +14427,16 @@ pub struct AccountAttribute {
     /// <p>A list of attribute values.</p>
     pub attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeValueTarget>>,
 }
+impl AccountAttribute {
+    /// <p>The name of the attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>A list of attribute values.</p>
+    pub fn attribute_values(&self) -> std::option::Option<&[crate::model::AttributeValueTarget]> {
+        self.attribute_values.as_deref()
+    }
+}
 impl std::fmt::Debug for AccountAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountAttribute");
@@ -12357,6 +14514,12 @@ pub struct AttributeValueTarget {
     /// <p>The value of the attribute.</p>
     pub attribute_value: std::option::Option<std::string::String>,
 }
+impl AttributeValueTarget {
+    /// <p>The value of the attribute.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
+}
 impl std::fmt::Debug for AttributeValueTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeValueTarget");
@@ -12413,6 +14576,24 @@ pub struct SnapshotErrorMessage {
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>The text message describing the error.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl SnapshotErrorMessage {
+    /// <p>A unique identifier for the snapshot returning the error.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>A unique identifier for the cluster.</p>
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_cluster_identifier.as_deref()
+    }
+    /// <p>The failure code for the error.</p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>The text message describing the error.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for SnapshotErrorMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12523,6 +14704,22 @@ pub struct DeleteClusterSnapshotMessage {
     /// specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteClusterSnapshotMessage {
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+    /// <p>Constraints: Must be the name of an existing snapshot that is in the
+    /// <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+    /// state.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter
+    /// is required if your IAM user has a policy containing a snapshot resource element that
+    /// specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints: Must be the name of valid cluster.</p>
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterSnapshotMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

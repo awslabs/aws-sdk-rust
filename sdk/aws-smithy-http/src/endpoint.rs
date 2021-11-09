@@ -3,9 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use http::uri::{Authority, InvalidUri, Uri};
 use std::borrow::Cow;
 use std::str::FromStr;
+
+use http::uri::{Authority, Uri};
+
+use crate::operation::BuildError;
 
 /// API Endpoint
 ///
@@ -22,10 +25,16 @@ pub struct Endpoint {
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct EndpointPrefix(String);
 impl EndpointPrefix {
-    pub fn new(prefix: impl Into<String>) -> Result<Self, InvalidUri> {
+    pub fn new(prefix: impl Into<String>) -> Result<Self, BuildError> {
         let prefix = prefix.into();
-        let _ = Authority::from_str(&prefix)?;
-        Ok(EndpointPrefix(prefix))
+        match Authority::from_str(&prefix) {
+            Ok(_) => Ok(EndpointPrefix(prefix)),
+            Err(err) => Err(BuildError::InvalidUri {
+                uri: prefix,
+                err,
+                message: "invalid prefix".into(),
+            }),
+        }
     }
 
     pub fn as_str(&self) -> &str {
@@ -109,8 +118,9 @@ impl Endpoint {
 
 #[cfg(test)]
 mod test {
-    use crate::endpoint::{Endpoint, EndpointPrefix};
     use http::Uri;
+
+    use crate::endpoint::{Endpoint, EndpointPrefix};
 
     #[test]
     fn prefix_endpoint() {

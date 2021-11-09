@@ -6,6 +6,12 @@ pub struct WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
+impl WithdrawByoipCidrOutput {
+    /// <p>Information about the address pool.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
+}
 impl std::fmt::Debug for WithdrawByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WithdrawByoipCidrOutput");
@@ -57,6 +63,12 @@ pub struct UpdateListenerOutput {
     /// <p>Information for the updated listener.</p>
     pub listener: std::option::Option<crate::model::Listener>,
 }
+impl UpdateListenerOutput {
+    /// <p>Information for the updated listener.</p>
+    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+        self.listener.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateListenerOutput");
@@ -104,6 +116,12 @@ impl UpdateListenerOutput {
 pub struct UpdateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was updated.</p>
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+}
+impl UpdateEndpointGroupOutput {
+    /// <p>The information about the endpoint group that was updated.</p>
+    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::EndpointGroup> {
+        self.endpoint_group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -156,6 +174,12 @@ pub struct UpdateCustomRoutingListenerOutput {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
+impl UpdateCustomRoutingListenerOutput {
+    /// <p>Information for the updated listener for a custom routing accelerator.</p>
+    pub fn listener(&self) -> std::option::Option<&crate::model::CustomRoutingListener> {
+        self.listener.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCustomRoutingListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomRoutingListenerOutput");
@@ -207,6 +231,14 @@ pub struct UpdateCustomRoutingAcceleratorAttributesOutput {
     /// <p>Updated custom routing accelerator.</p>
     pub accelerator_attributes:
         std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+}
+impl UpdateCustomRoutingAcceleratorAttributesOutput {
+    /// <p>Updated custom routing accelerator.</p>
+    pub fn accelerator_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomRoutingAcceleratorAttributes> {
+        self.accelerator_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCustomRoutingAcceleratorAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -264,6 +296,12 @@ pub struct UpdateCustomRoutingAcceleratorOutput {
     /// <p>Information about the updated custom routing accelerator.</p>
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
+impl UpdateCustomRoutingAcceleratorOutput {
+    /// <p>Information about the updated custom routing accelerator.</p>
+    pub fn accelerator(&self) -> std::option::Option<&crate::model::CustomRoutingAccelerator> {
+        self.accelerator.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCustomRoutingAcceleratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomRoutingAcceleratorOutput");
@@ -314,6 +352,14 @@ impl UpdateCustomRoutingAcceleratorOutput {
 pub struct UpdateAcceleratorAttributesOutput {
     /// <p>Updated attributes for the accelerator.</p>
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
+}
+impl UpdateAcceleratorAttributesOutput {
+    /// <p>Updated attributes for the accelerator.</p>
+    pub fn accelerator_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::AcceleratorAttributes> {
+        self.accelerator_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAcceleratorAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -368,6 +414,12 @@ impl UpdateAcceleratorAttributesOutput {
 pub struct UpdateAcceleratorOutput {
     /// <p>Information about the updated accelerator.</p>
     pub accelerator: std::option::Option<crate::model::Accelerator>,
+}
+impl UpdateAcceleratorOutput {
+    /// <p>Information about the updated accelerator.</p>
+    pub fn accelerator(&self) -> std::option::Option<&crate::model::Accelerator> {
+        self.accelerator.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAcceleratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -510,6 +562,12 @@ pub struct ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
+impl ProvisionByoipCidrOutput {
+    /// <p>Information about the address range.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisionByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionByoipCidrOutput");
@@ -560,6 +618,12 @@ impl ProvisionByoipCidrOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>Root level tag for the Tags parameters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>Root level tag for the Tags parameters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -617,6 +681,16 @@ pub struct ListListenersOutput {
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListListenersOutput {
+    /// <p>The list of listeners for an accelerator.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+        self.listeners.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListListenersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -690,6 +764,16 @@ pub struct ListEndpointGroupsOutput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEndpointGroupsOutput {
+    /// <p>The list of the endpoint groups associated with a listener.</p>
+    pub fn endpoint_groups(&self) -> std::option::Option<&[crate::model::EndpointGroup]> {
+        self.endpoint_groups.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEndpointGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointGroupsOutput");
@@ -762,6 +846,18 @@ pub struct ListCustomRoutingPortMappingsByDestinationOutput {
         std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomRoutingPortMappingsByDestinationOutput {
+    /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
+    pub fn destination_port_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationPortMapping]> {
+        self.destination_port_mappings.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomRoutingPortMappingsByDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -840,6 +936,16 @@ pub struct ListCustomRoutingPortMappingsOutput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCustomRoutingPortMappingsOutput {
+    /// <p>The port mappings for a custom routing accelerator.</p>
+    pub fn port_mappings(&self) -> std::option::Option<&[crate::model::PortMapping]> {
+        self.port_mappings.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCustomRoutingPortMappingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomRoutingPortMappingsOutput");
@@ -911,6 +1017,16 @@ pub struct ListCustomRoutingListenersOutput {
     pub listeners: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomRoutingListenersOutput {
+    /// <p>The list of listeners for a custom routing accelerator.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::CustomRoutingListener]> {
+        self.listeners.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomRoutingListenersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -985,6 +1101,18 @@ pub struct ListCustomRoutingEndpointGroupsOutput {
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomRoutingEndpointGroupsOutput {
+    /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
+    pub fn endpoint_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomRoutingEndpointGroup]> {
+        self.endpoint_groups.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomRoutingEndpointGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1062,6 +1190,16 @@ pub struct ListCustomRoutingAcceleratorsOutput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCustomRoutingAcceleratorsOutput {
+    /// <p>The list of custom routing accelerators for a customer account.</p>
+    pub fn accelerators(&self) -> std::option::Option<&[crate::model::CustomRoutingAccelerator]> {
+        self.accelerators.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCustomRoutingAcceleratorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomRoutingAcceleratorsOutput");
@@ -1138,6 +1276,16 @@ pub struct ListByoipCidrsOutput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListByoipCidrsOutput {
+    /// <p>Information about your address ranges.</p>
+    pub fn byoip_cidrs(&self) -> std::option::Option<&[crate::model::ByoipCidr]> {
+        self.byoip_cidrs.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListByoipCidrsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListByoipCidrsOutput");
@@ -1210,6 +1358,16 @@ pub struct ListAcceleratorsOutput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAcceleratorsOutput {
+    /// <p>The list of accelerators for a customer account.</p>
+    pub fn accelerators(&self) -> std::option::Option<&[crate::model::Accelerator]> {
+        self.accelerators.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAcceleratorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAcceleratorsOutput");
@@ -1280,6 +1438,12 @@ pub struct DescribeListenerOutput {
     /// <p>The description of a listener.</p>
     pub listener: std::option::Option<crate::model::Listener>,
 }
+impl DescribeListenerOutput {
+    /// <p>The description of a listener.</p>
+    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+        self.listener.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeListenerOutput");
@@ -1327,6 +1491,12 @@ impl DescribeListenerOutput {
 pub struct DescribeEndpointGroupOutput {
     /// <p>The description of an endpoint group.</p>
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+}
+impl DescribeEndpointGroupOutput {
+    /// <p>The description of an endpoint group.</p>
+    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::EndpointGroup> {
+        self.endpoint_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1379,6 +1549,12 @@ pub struct DescribeCustomRoutingListenerOutput {
     /// <p>The description of a listener for a custom routing accelerator.</p>
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
+impl DescribeCustomRoutingListenerOutput {
+    /// <p>The description of a listener for a custom routing accelerator.</p>
+    pub fn listener(&self) -> std::option::Option<&crate::model::CustomRoutingListener> {
+        self.listener.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCustomRoutingListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomRoutingListenerOutput");
@@ -1429,6 +1605,12 @@ impl DescribeCustomRoutingListenerOutput {
 pub struct DescribeCustomRoutingEndpointGroupOutput {
     /// <p>The description of an endpoint group for a custom routing accelerator.</p>
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
+}
+impl DescribeCustomRoutingEndpointGroupOutput {
+    /// <p>The description of an endpoint group for a custom routing accelerator.</p>
+    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::CustomRoutingEndpointGroup> {
+        self.endpoint_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCustomRoutingEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1481,6 +1663,14 @@ pub struct DescribeCustomRoutingAcceleratorAttributesOutput {
     /// <p>The attributes of the custom routing accelerator.</p>
     pub accelerator_attributes:
         std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+}
+impl DescribeCustomRoutingAcceleratorAttributesOutput {
+    /// <p>The attributes of the custom routing accelerator.</p>
+    pub fn accelerator_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomRoutingAcceleratorAttributes> {
+        self.accelerator_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCustomRoutingAcceleratorAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1538,6 +1728,12 @@ pub struct DescribeCustomRoutingAcceleratorOutput {
     /// <p>The description of the custom routing accelerator.</p>
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
+impl DescribeCustomRoutingAcceleratorOutput {
+    /// <p>The description of the custom routing accelerator.</p>
+    pub fn accelerator(&self) -> std::option::Option<&crate::model::CustomRoutingAccelerator> {
+        self.accelerator.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCustomRoutingAcceleratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomRoutingAcceleratorOutput");
@@ -1588,6 +1784,14 @@ impl DescribeCustomRoutingAcceleratorOutput {
 pub struct DescribeAcceleratorAttributesOutput {
     /// <p>The attributes of the accelerator.</p>
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
+}
+impl DescribeAcceleratorAttributesOutput {
+    /// <p>The attributes of the accelerator.</p>
+    pub fn accelerator_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::AcceleratorAttributes> {
+        self.accelerator_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAcceleratorAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1643,6 +1847,12 @@ pub struct DescribeAcceleratorOutput {
     /// <p>The description of the accelerator.</p>
     pub accelerator: std::option::Option<crate::model::Accelerator>,
 }
+impl DescribeAcceleratorOutput {
+    /// <p>The description of the accelerator.</p>
+    pub fn accelerator(&self) -> std::option::Option<&crate::model::Accelerator> {
+        self.accelerator.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAcceleratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAcceleratorOutput");
@@ -1693,6 +1903,12 @@ impl DescribeAcceleratorOutput {
 pub struct DeprovisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+}
+impl DeprovisionByoipCidrOutput {
+    /// <p>Information about the address range.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
 }
 impl std::fmt::Debug for DeprovisionByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1955,6 +2171,12 @@ pub struct CreateListenerOutput {
     /// <p>The listener that you've created.</p>
     pub listener: std::option::Option<crate::model::Listener>,
 }
+impl CreateListenerOutput {
+    /// <p>The listener that you've created.</p>
+    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+        self.listener.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateListenerOutput");
@@ -2002,6 +2224,12 @@ impl CreateListenerOutput {
 pub struct CreateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was created.</p>
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+}
+impl CreateEndpointGroupOutput {
+    /// <p>The information about the endpoint group that was created.</p>
+    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::EndpointGroup> {
+        self.endpoint_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2054,6 +2282,12 @@ pub struct CreateCustomRoutingListenerOutput {
     /// <p>The listener that you've created for a custom routing accelerator.</p>
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
+impl CreateCustomRoutingListenerOutput {
+    /// <p>The listener that you've created for a custom routing accelerator.</p>
+    pub fn listener(&self) -> std::option::Option<&crate::model::CustomRoutingListener> {
+        self.listener.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCustomRoutingListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomRoutingListenerOutput");
@@ -2104,6 +2338,12 @@ impl CreateCustomRoutingListenerOutput {
 pub struct CreateCustomRoutingEndpointGroupOutput {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
+}
+impl CreateCustomRoutingEndpointGroupOutput {
+    /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
+    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::CustomRoutingEndpointGroup> {
+        self.endpoint_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCustomRoutingEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2156,6 +2396,12 @@ pub struct CreateCustomRoutingAcceleratorOutput {
     /// <p>The accelerator that is created.</p>
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
+impl CreateCustomRoutingAcceleratorOutput {
+    /// <p>The accelerator that is created.</p>
+    pub fn accelerator(&self) -> std::option::Option<&crate::model::CustomRoutingAccelerator> {
+        self.accelerator.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCustomRoutingAcceleratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomRoutingAcceleratorOutput");
@@ -2206,6 +2452,12 @@ impl CreateCustomRoutingAcceleratorOutput {
 pub struct CreateAcceleratorOutput {
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
     pub accelerator: std::option::Option<crate::model::Accelerator>,
+}
+impl CreateAcceleratorOutput {
+    /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
+    pub fn accelerator(&self) -> std::option::Option<&crate::model::Accelerator> {
+        self.accelerator.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAcceleratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2288,6 +2540,12 @@ pub struct AdvertiseByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
+impl AdvertiseByoipCidrOutput {
+    /// <p>Information about the address range.</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
+}
 impl std::fmt::Debug for AdvertiseByoipCidrOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdvertiseByoipCidrOutput");
@@ -2341,6 +2599,18 @@ pub struct AddCustomRoutingEndpointsOutput {
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl AddCustomRoutingEndpointsOutput {
+    /// <p>The endpoint objects added to the custom routing accelerator.</p>
+    pub fn endpoint_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomRoutingEndpointDescription]> {
+        self.endpoint_descriptions.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AddCustomRoutingEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

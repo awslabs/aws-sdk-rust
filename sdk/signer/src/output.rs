@@ -68,6 +68,16 @@ pub struct StartSigningJobOutput {
     /// <p>The AWS account ID of the signing job owner.</p>
     pub job_owner: std::option::Option<std::string::String>,
 }
+impl StartSigningJobOutput {
+    /// <p>The ID of your signing job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The AWS account ID of the signing job owner.</p>
+    pub fn job_owner(&self) -> std::option::Option<&str> {
+        self.job_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for StartSigningJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSigningJobOutput");
@@ -189,6 +199,12 @@ pub struct RemoveProfilePermissionOutput {
     /// <p>An identifier for the current revision of the profile permissions.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl RemoveProfilePermissionOutput {
+    /// <p>An identifier for the current revision of the profile permissions.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveProfilePermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveProfilePermissionOutput");
@@ -240,6 +256,20 @@ pub struct PutSigningProfileOutput {
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The signing profile ARN, including the profile version.</p>
     pub profile_version_arn: std::option::Option<std::string::String>,
+}
+impl PutSigningProfileOutput {
+    /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the signing profile being created.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
+    /// <p>The signing profile ARN, including the profile version.</p>
+    pub fn profile_version_arn(&self) -> std::option::Option<&str> {
+        self.profile_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutSigningProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -322,6 +352,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags associated with the signing profile.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -388,6 +427,18 @@ pub struct ListSigningProfilesOutput {
     pub profiles: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSigningProfilesOutput {
+    /// <p>A list of profiles that are available in the AWS account. This includes profiles with
+    /// the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set
+    /// to <code>true</code>.</p>
+    pub fn profiles(&self) -> std::option::Option<&[crate::model::SigningProfile]> {
+        self.profiles.as_deref()
+    }
+    /// <p>Value for specifying the next set of paginated results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSigningProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -465,6 +516,16 @@ pub struct ListSigningPlatformsOutput {
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSigningPlatformsOutput {
+    /// <p>A list of all platforms that match the request parameters.</p>
+    pub fn platforms(&self) -> std::option::Option<&[crate::model::SigningPlatform]> {
+        self.platforms.as_deref()
+    }
+    /// <p>Value for specifying the next set of paginated results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSigningPlatformsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSigningPlatformsOutput");
@@ -536,6 +597,16 @@ pub struct ListSigningJobsOutput {
     pub jobs: std::option::Option<std::vec::Vec<crate::model::SigningJob>>,
     /// <p>String for specifying the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSigningJobsOutput {
+    /// <p>A list of your signing jobs.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::SigningJob]> {
+        self.jobs.as_deref()
+    }
+    /// <p>String for specifying the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSigningJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -612,6 +683,24 @@ pub struct ListProfilePermissionsOutput {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>String for specifying the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProfilePermissionsOutput {
+    /// <p>The identifier for the current revision of profile permissions.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
+    pub fn policy_size_bytes(&self) -> i32 {
+        self.policy_size_bytes
+    }
+    /// <p>List of permissions associated with the Signing Profile.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>String for specifying the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProfilePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -739,6 +828,77 @@ pub struct GetSigningProfileOutput {
     /// <p>A list of tags associated with the signing profile.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetSigningProfileOutput {
+    /// <p>The name of the target signing profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The current version of the signing profile.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
+    /// <p>The signing profile ARN, including the profile version.</p>
+    pub fn profile_version_arn(&self) -> std::option::Option<&str> {
+        self.profile_version_arn.as_deref()
+    }
+    /// <p>Revocation information for a signing profile.</p>
+    pub fn revocation_record(
+        &self,
+    ) -> std::option::Option<&crate::model::SigningProfileRevocationRecord> {
+        self.revocation_record.as_ref()
+    }
+    /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
+    pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
+        self.signing_material.as_ref()
+    }
+    /// <p>The ID of the platform that is used by the target signing profile.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>A human-readable name for the signing platform associated with the signing
+    /// profile.</p>
+    pub fn platform_display_name(&self) -> std::option::Option<&str> {
+        self.platform_display_name.as_deref()
+    }
+    /// <p>The validity period for a signing job.</p>
+    pub fn signature_validity_period(
+        &self,
+    ) -> std::option::Option<&crate::model::SignatureValidityPeriod> {
+        self.signature_validity_period.as_ref()
+    }
+    /// <p>A list of overrides applied by the target signing profile for signing
+    /// operations.</p>
+    pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
+        self.overrides.as_ref()
+    }
+    /// <p>A map of key-value pairs for signing operations that is attached to the target signing
+    /// profile.</p>
+    pub fn signing_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.signing_parameters.as_ref()
+    }
+    /// <p>The status of the target signing profile.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SigningProfileStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Reason for the status of the target signing profile.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A list of tags associated with the signing profile.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSigningProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1050,6 +1210,48 @@ pub struct GetSigningPlatformOutput {
     /// revoked.</p>
     pub revocation_supported: bool,
 }
+impl GetSigningPlatformOutput {
+    /// <p>The ID of the target signing platform.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>The display name of the target signing platform.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A list of partner entities that use the target signing platform.</p>
+    pub fn partner(&self) -> std::option::Option<&str> {
+        self.partner.as_deref()
+    }
+    /// <p>The validation template that is used by the target signing platform.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The category type of the target signing platform.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::Category> {
+        self.category.as_ref()
+    }
+    /// <p>A list of configurations applied to the target platform at signing.</p>
+    pub fn signing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SigningConfiguration> {
+        self.signing_configuration.as_ref()
+    }
+    /// <p>The format of the target platform's signing image.</p>
+    pub fn signing_image_format(&self) -> std::option::Option<&crate::model::SigningImageFormat> {
+        self.signing_image_format.as_ref()
+    }
+    /// <p>The maximum size (in MB) of the payload that can be signed by the target
+    /// platform.</p>
+    pub fn max_size_in_mb(&self) -> i32 {
+        self.max_size_in_mb
+    }
+    /// <p>A flag indicating whether signatures generated for the signing platform can be
+    /// revoked.</p>
+    pub fn revocation_supported(&self) -> bool {
+        self.revocation_supported
+    }
+}
 impl std::fmt::Debug for GetSigningPlatformOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSigningPlatformOutput");
@@ -1251,6 +1453,92 @@ pub struct DescribeSigningJobOutput {
     pub job_owner: std::option::Option<std::string::String>,
     /// <p>The IAM entity that initiated the signing job.</p>
     pub job_invoker: std::option::Option<std::string::String>,
+}
+impl DescribeSigningJobOutput {
+    /// <p>The ID of the signing job on output.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The object that contains the name of your S3 bucket or your raw code.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
+    pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
+        self.signing_material.as_ref()
+    }
+    /// <p>The microcontroller platform to which your signed code image will be
+    /// distributed.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>A human-readable name for the signing platform associated with the signing job.</p>
+    pub fn platform_display_name(&self) -> std::option::Option<&str> {
+        self.platform_display_name.as_deref()
+    }
+    /// <p>The name of the profile that initiated the signing operation.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The version of the signing profile used to initiate the signing job.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
+    /// <p>A list of any overrides that were applied to the signing operation.</p>
+    pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
+        self.overrides.as_ref()
+    }
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any
+    /// information that you specified for use in your signing job. </p>
+    pub fn signing_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.signing_parameters.as_ref()
+    }
+    /// <p>Date and time that the signing job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Date and time that the signing job was completed.</p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
+    /// <p>Thr expiration timestamp for the signature generated by the signing job.</p>
+    pub fn signature_expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.signature_expires_at.as_ref()
+    }
+    /// <p>The IAM principal that requested the signing job.</p>
+    pub fn requested_by(&self) -> std::option::Option<&str> {
+        self.requested_by.as_deref()
+    }
+    /// <p>Status of the signing job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SigningStatus> {
+        self.status.as_ref()
+    }
+    /// <p>String value that contains the status reason.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>A revocation record if the signature generated by the signing job has been revoked.
+    /// Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+    pub fn revocation_record(
+        &self,
+    ) -> std::option::Option<&crate::model::SigningJobRevocationRecord> {
+        self.revocation_record.as_ref()
+    }
+    /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
+    pub fn signed_object(&self) -> std::option::Option<&crate::model::SignedObject> {
+        self.signed_object.as_ref()
+    }
+    /// <p>The AWS account ID of the job owner.</p>
+    pub fn job_owner(&self) -> std::option::Option<&str> {
+        self.job_owner.as_deref()
+    }
+    /// <p>The IAM entity that initiated the signing job.</p>
+    pub fn job_invoker(&self) -> std::option::Option<&str> {
+        self.job_invoker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSigningJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1622,6 +1910,12 @@ impl CancelSigningProfileOutput {
 pub struct AddProfilePermissionOutput {
     /// <p>A unique identifier for the current profile revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl AddProfilePermissionOutput {
+    /// <p>A unique identifier for the current profile revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddProfilePermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

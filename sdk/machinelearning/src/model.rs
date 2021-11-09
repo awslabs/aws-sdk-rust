@@ -43,6 +43,32 @@ pub struct Prediction {
         std::collections::HashMap<crate::model::DetailsAttributes, std::string::String>,
     >,
 }
+impl Prediction {
+    /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code>
+    /// <code>MLModel</code>.</p>
+    pub fn predicted_label(&self) -> std::option::Option<&str> {
+        self.predicted_label.as_deref()
+    }
+    /// <p>The prediction value for <code>REGRESSION</code>
+    /// <code>MLModel</code>.</p>
+    pub fn predicted_value(&self) -> std::option::Option<f32> {
+        self.predicted_value
+    }
+    /// <p>Provides the raw classification score corresponding to each label.</p>
+    pub fn predicted_scores(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f32>> {
+        self.predicted_scores.as_ref()
+    }
+    /// <p>Provides any additional details regarding the prediction.</p>
+    pub fn details(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::DetailsAttributes, std::string::String>,
+    > {
+        self.details.as_ref()
+    }
+}
 impl std::fmt::Debug for Prediction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Prediction");
@@ -313,6 +339,40 @@ pub struct RealtimeEndpointInfo {
     /// </li>
     /// </ul>
     pub endpoint_status: std::option::Option<crate::model::RealtimeEndpointStatus>,
+}
+impl RealtimeEndpointInfo {
+    /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
+    pub fn peak_requests_per_second(&self) -> i32 {
+        self.peak_requests_per_second
+    }
+    /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
+    /// <p>
+    /// <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p> The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>  - Endpoint does not exist or was previously deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>READY</code> - Endpoint is ready to be used for real-time predictions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - Updating/creating the endpoint. </p>
+    /// </li>
+    /// </ul>
+    pub fn endpoint_status(&self) -> std::option::Option<&crate::model::RealtimeEndpointStatus> {
+        self.endpoint_status.as_ref()
+    }
 }
 impl std::fmt::Debug for RealtimeEndpointInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -612,6 +672,15 @@ pub struct PerformanceMetrics {
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PerformanceMetrics {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+}
 impl std::fmt::Debug for PerformanceMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PerformanceMetrics");
@@ -686,6 +755,33 @@ pub struct RdsMetadata {
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
     pub data_pipeline_id: std::option::Option<std::string::String>,
+}
+impl RdsMetadata {
+    /// <p>The database details required to connect to an Amazon RDS.</p>
+    pub fn database(&self) -> std::option::Option<&crate::model::RdsDatabase> {
+        self.database.as_ref()
+    }
+    /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance.
+    /// The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
+    pub fn database_user_name(&self) -> std::option::Option<&str> {
+        self.database_user_name.as_deref()
+    }
+    /// <p>The SQL query that is supplied during <a>CreateDataSourceFromRDS</a>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
+    pub fn select_sql_query(&self) -> std::option::Option<&str> {
+        self.select_sql_query.as_deref()
+    }
+    /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    pub fn resource_role(&self) -> std::option::Option<&str> {
+        self.resource_role.as_deref()
+    }
+    /// <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
+    pub fn data_pipeline_id(&self) -> std::option::Option<&str> {
+        self.data_pipeline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RdsMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -819,6 +915,16 @@ pub struct RdsDatabase {
     /// <p>The name of a database hosted on an RDS DB instance.</p>
     pub database_name: std::option::Option<std::string::String>,
 }
+impl RdsDatabase {
+    /// <p>The ID of an RDS DB instance.</p>
+    pub fn instance_identifier(&self) -> std::option::Option<&str> {
+        self.instance_identifier.as_deref()
+    }
+    /// <p>The name of a database hosted on an RDS DB instance.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RdsDatabase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RdsDatabase");
@@ -890,6 +996,21 @@ pub struct RedshiftMetadata {
     pub database_user_name: std::option::Option<std::string::String>,
     /// <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
     pub select_sql_query: std::option::Option<std::string::String>,
+}
+impl RedshiftMetadata {
+    /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
+    pub fn redshift_database(&self) -> std::option::Option<&crate::model::RedshiftDatabase> {
+        self.redshift_database.as_ref()
+    }
+    /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster.
+    /// The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
+    pub fn database_user_name(&self) -> std::option::Option<&str> {
+        self.database_user_name.as_deref()
+    }
+    /// <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
+    pub fn select_sql_query(&self) -> std::option::Option<&str> {
+        self.select_sql_query.as_deref()
+    }
 }
 impl std::fmt::Debug for RedshiftMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -978,6 +1099,16 @@ pub struct RedshiftDatabase {
     /// <p>The ID of an Amazon Redshift cluster.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
+impl RedshiftDatabase {
+    /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The ID of an Amazon Redshift cluster.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for RedshiftDatabase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDatabase");
@@ -1046,6 +1177,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>An optional string, typically used to describe or define the tag. Valid characters include Unicode letters, digits, white space, _, ., /, =, +, -, %, and @.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>A unique identifier for the tag. Valid characters include Unicode letters, digits, white space, _, ., /, =, +, -, %, and @.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>An optional string, typically used to describe or define the tag. Valid characters include Unicode letters, digits, white space, _, ., /, =, +, -, %, and @.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1299,6 +1440,180 @@ pub struct MlModel {
     pub finished_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp represented in epoch time.</p>
     pub started_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MlModel {
+    /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The ID of the training <code>DataSource</code>. The <code>CreateMLModel</code> operation uses the <code>TrainingDataSourceId</code>.</p>
+    pub fn training_data_source_id(&self) -> std::option::Option<&str> {
+        self.training_data_source_id.as_deref()
+    }
+    /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>  - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INPROGRESS</code>  - The creation process is underway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to
+    /// completion. The model isn't usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code>  - The creation process completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't
+    /// usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn size_in_bytes(&self) -> std::option::Option<i64> {
+        self.size_in_bytes
+    }
+    /// <p>The current endpoint of the <code>MLModel</code>.</p>
+    pub fn endpoint_info(&self) -> std::option::Option<&crate::model::RealtimeEndpointInfo> {
+        self.endpoint_info.as_ref()
+    }
+    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
+    /// a map of key-value pairs.</p>
+    /// <p>The following is the current set of training parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
+    /// input data, the size of the model might affect its performance.</p>
+    /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
+    /// observations to build the <code>MLModel</code>. The value is an integer that
+    /// ranges from <code>1</code> to <code>10000</code>. The default value is
+    /// <code>10</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data
+    /// improves a model's ability to find the optimal solution for a variety of data
+    /// types. The valid values are <code>auto</code> and <code>none</code>. The default
+    /// value is <code>none</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm, which controls
+    /// overfitting the data by penalizing large coefficients. This parameter tends to
+    /// drive coefficients to zero, resulting in sparse feature set. If you use this
+    /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
+    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+    /// The default is to not use L1 normalization. This parameter can't be used when
+    /// <code>L2</code> is specified. Use this parameter sparingly.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm, which controls
+    /// overfitting the data by penalizing large coefficients. This tends to drive
+    /// coefficients to small, nonzero values. If you use this parameter, start by
+    /// specifying a small value, such as <code>1.0E-08</code>.</p>
+    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+    /// The default is to not use L2 normalization. This parameter can't be used when
+    /// <code>L1</code> is specified. Use this parameter sparingly.</p>
+    /// </li>
+    /// </ul>
+    pub fn training_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.training_parameters.as_ref()
+    }
+    /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+        self.input_data_location_s3.as_deref()
+    }
+    /// <p>The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the loss function. </p>
+    /// </li>
+    /// </ul>
+    pub fn algorithm(&self) -> std::option::Option<&crate::model::Algorithm> {
+        self.algorithm.as_ref()
+    }
+    /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a
+    /// house be listed at?"</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BINARY</code> - Produces one of two possible results. For example, "Is this a
+    /// child-friendly web site?".</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MULTICLASS</code> - Produces one of several possible results. For example, "Is
+    /// this a HIGH-, LOW-, or MEDIUM-risk trade?".</p>
+    /// </li>
+    /// </ul>
+    pub fn ml_model_type(&self) -> std::option::Option<&crate::model::MlModelType> {
+        self.ml_model_type.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn score_threshold(&self) -> std::option::Option<f32> {
+        self.score_threshold
+    }
+    /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
+    pub fn score_threshold_last_updated_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.score_threshold_last_updated_at.as_ref()
+    }
+    /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
 }
 impl std::fmt::Debug for MlModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2110,6 +2425,102 @@ pub struct Evaluation {
     /// <p>A timestamp represented in epoch time.</p>
     pub started_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Evaluation {
+    /// <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
+    /// <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.</p>
+    pub fn evaluation_data_source_id(&self) -> std::option::Option<&str> {
+        self.evaluation_data_source_id.as_deref()
+    }
+    /// <p>The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.</p>
+    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+        self.input_data_location_s3.as_deref()
+    }
+    /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the evaluation. This element can have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INPROGRESS</code> - The evaluation is underway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - The evaluation process completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Measurements of how well the <code>MLModel</code> performed, using observations referenced
+    /// by the <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p>
+    /// </li>
+    /// <li>
+    /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p>
+    /// </li>
+    /// <li>
+    /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
+    /// </p>
+    pub fn performance_metrics(&self) -> std::option::Option<&crate::model::PerformanceMetrics> {
+        self.performance_metrics.as_ref()
+    }
+    /// <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+}
 impl std::fmt::Debug for Evaluation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Evaluation");
@@ -2608,6 +3019,101 @@ pub struct DataSource {
     pub finished_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp represented in epoch time.</p>
     pub started_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DataSource {
+    /// <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The location and name of the data in Amazon Simple Storage Service (Amazon S3) that is used by a <code>DataSource</code>.</p>
+    pub fn data_location_s3(&self) -> std::option::Option<&str> {
+        self.data_location_s3.as_deref()
+    }
+    /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code>
+    /// was created.</p>
+    pub fn data_rearrangement(&self) -> std::option::Option<&str> {
+        self.data_rearrangement.as_deref()
+    }
+    /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to the
+    /// <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The total number of observations contained in the data files that the <code>DataSource</code> references.</p>
+    pub fn data_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.data_size_in_bytes
+    }
+    /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
+    pub fn number_of_files(&self) -> std::option::Option<i64> {
+        self.number_of_files
+    }
+    /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values: </p>
+    /// <ul>
+    /// <li>
+    /// <p>PENDING  - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>INPROGRESS - The creation process is underway.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPLETED - The creation process completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETED  - The <code>DataSource</code> is marked as deleted. It is not usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description of the most recent details about creating the <code>DataSource</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
+    pub fn redshift_metadata(&self) -> std::option::Option<&crate::model::RedshiftMetadata> {
+        self.redshift_metadata.as_ref()
+    }
+    /// <p>The datasource details that are specific to Amazon RDS.</p>
+    pub fn rds_metadata(&self) -> std::option::Option<&crate::model::RdsMetadata> {
+        self.rds_metadata.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>
+    /// The parameter is <code>true</code> if statistics need to be generated from the observation data.
+    /// </p>
+    pub fn compute_statistics(&self) -> bool {
+        self.compute_statistics
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3113,6 +3619,96 @@ pub struct BatchPrediction {
     pub total_record_count: std::option::Option<i64>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub invalid_record_count: std::option::Option<i64>,
+}
+impl BatchPrediction {
+    /// <p>The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code>
+    /// in the request.
+    /// </p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
+    /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
+    pub fn batch_prediction_data_source_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_data_source_id.as_deref()
+    }
+    /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+        self.input_data_location_s3.as_deref()
+    }
+    /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+        self.created_by_iam_user.as_deref()
+    }
+    /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a batch of observations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INPROGRESS</code> - The process is underway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - The batch prediction process completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EntityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+    pub fn output_uri(&self) -> std::option::Option<&str> {
+        self.output_uri.as_deref()
+    }
+    /// <p>A description of the most recent details about processing the batch prediction request.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn compute_time(&self) -> std::option::Option<i64> {
+        self.compute_time
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn total_record_count(&self) -> std::option::Option<i64> {
+        self.total_record_count
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn invalid_record_count(&self) -> std::option::Option<i64> {
+        self.invalid_record_count
+    }
 }
 impl std::fmt::Debug for BatchPrediction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3667,6 +4263,127 @@ pub struct S3DataSpec {
     /// <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
     pub data_schema_location_s3: std::option::Option<std::string::String>,
 }
+impl S3DataSpec {
+    /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or
+    /// an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
+    pub fn data_location_s3(&self) -> std::option::Option<&str> {
+        self.data_location_s3.as_deref()
+    }
+    /// <p>A JSON string that represents the splitting and rearrangement
+    /// processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
+    /// parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
+    ///
+    /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>percentBegin</code>
+    /// </b>
+    /// </p>
+    /// <p>Use <code>percentBegin</code> to indicate the beginning of the range of the data used to
+    /// create the Datasource.
+    /// If you do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML includes
+    /// all of the data when creating the datasource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>percentEnd</code>
+    /// </b>
+    /// </p>
+    /// <p>Use <code>percentEnd</code> to indicate the end of the range of the data used to create the
+    /// Datasource. If you do not
+    /// include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+    /// includes all of the data when creating the datasource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>complement</code>
+    /// </b>
+    /// </p>
+    /// <p>The <code>complement</code> parameter instructs Amazon ML to use the data that is
+    /// not included in the range of <code>percentBegin</code> to <code>percentEnd</code> to create a
+    /// datasource. The <code>complement</code> parameter is useful if you need to create
+    /// complementary datasources for training and evaluation.
+    /// To create a complementary datasource, use the same
+    /// values for <code>percentBegin</code> and <code>percentEnd</code>, along with the
+    /// <code>complement</code> parameter.</p>
+    ///
+    /// <p>For example, the following two datasources do not share any data, and can be used to train and evaluate a model. The first datasource has 25 percent of the data, and the second one has 75 percent of the data.</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>strategy</code>
+    /// </b>
+    /// </p>
+    /// <p>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.</p>
+    /// <p>The default value for the <code>strategy</code> parameter
+    /// is <code>sequential</code>, meaning that Amazon ML takes all of the data records between the <code>percentBegin</code>
+    /// and <code>percentEnd</code> parameters for the datasource, in the order that the records appear in the input data.</p>
+    ///
+    /// <p>The following two <code>DataRearrangement</code> lines are examples of sequentially ordered
+    /// training and evaluation datasources:</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential"}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential", "complement":"true"}}</code>
+    /// </p>
+    ///
+    /// <p>To randomly split the input data into the proportions indicated by the percentBegin and percentEnd
+    /// parameters, set the <code>strategy</code> parameter to
+    /// <code>random</code> and provide a string that is used as the seed value for the random data splitting (for
+    /// example, you can use the S3 path to your data as the random seed string).
+    /// If you choose the random split strategy,
+    /// Amazon ML assigns each row of data a pseudo-random number between 0 and 100, and then selects the rows that have an assigned
+    /// number between <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned
+    /// using both the input seed string value and the byte offset as a seed, so changing the data results in a
+    /// different split. Any existing ordering is preserved.
+    /// The random splitting strategy ensures that variables in the training and evaluation data are distributed similarly.
+    /// It is useful in the cases where the input data may have an implicit sort order, which would otherwise result in
+    /// training and evaluation datasources containing non-similar data records.</p>
+    /// <p>The following two <code>DataRearrangement</code> lines are examples of non-sequentially ordered
+    /// training and evaluation datasources:</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn data_rearrangement(&self) -> std::option::Option<&str> {
+        self.data_rearrangement.as_deref()
+    }
+    /// <p> A JSON string that represents the schema for an Amazon S3
+    /// <code>DataSource</code>. The <code>DataSchema</code>
+    /// defines the structure of the observation data in the data file(s)
+    /// referenced in the <code>DataSource</code>.</p>
+    /// <p>You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
+    /// <p>Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code>
+    /// and <code>excludedVariableNames</code> have an array of key-value pairs
+    /// for their value. Use the following format to define your <code>DataSchema</code>.</p>
+    /// <p>{ "version": "1.0",</p>
+    /// <p>"recordAnnotationFieldName": "F1",</p>
+    /// <p>"recordWeightFieldName": "F2",</p>
+    /// <p>"targetFieldName": "F3",</p>
+    /// <p>"dataFormat": "CSV",</p>
+    /// <p>"dataFileContainsHeader": true,</p>
+    /// <p>"attributes": [</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    pub fn data_schema(&self) -> std::option::Option<&str> {
+        self.data_schema.as_deref()
+    }
+    /// <p>Describes the schema location in Amazon S3. You must provide either the
+    /// <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
+    pub fn data_schema_location_s3(&self) -> std::option::Option<&str> {
+        self.data_schema_location_s3.as_deref()
+    }
+}
 impl std::fmt::Debug for S3DataSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3DataSpec");
@@ -4083,6 +4800,140 @@ pub struct RedshiftDataSpec {
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
     pub data_schema_uri: std::option::Option<std::string::String>,
 }
+impl RedshiftDataSpec {
+    /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
+    pub fn database_information(&self) -> std::option::Option<&crate::model::RedshiftDatabase> {
+        self.database_information.as_ref()
+    }
+    /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
+    pub fn select_sql_query(&self) -> std::option::Option<&str> {
+        self.select_sql_query.as_deref()
+    }
+    /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
+    pub fn database_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftDatabaseCredentials> {
+        self.database_credentials.as_ref()
+    }
+    /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
+    pub fn s3_staging_location(&self) -> std::option::Option<&str> {
+        self.s3_staging_location.as_deref()
+    }
+    /// <p>A JSON string that represents the splitting and rearrangement
+    /// processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
+    /// parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
+    ///
+    /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>percentBegin</code>
+    /// </b>
+    /// </p>
+    /// <p>Use <code>percentBegin</code> to indicate the beginning of the range of the data used to
+    /// create the Datasource.
+    /// If you do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML includes
+    /// all of the data when creating the datasource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>percentEnd</code>
+    /// </b>
+    /// </p>
+    /// <p>Use <code>percentEnd</code> to indicate the end of the range of the data used to create the
+    /// Datasource. If you do not
+    /// include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+    /// includes all of the data when creating the datasource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>complement</code>
+    /// </b>
+    /// </p>
+    /// <p>The <code>complement</code> parameter instructs Amazon ML to use the data that is
+    /// not included in the range of <code>percentBegin</code> to <code>percentEnd</code> to create a
+    /// datasource. The <code>complement</code> parameter is useful if you need to create
+    /// complementary datasources for training and evaluation.
+    /// To create a complementary datasource, use the same
+    /// values for <code>percentBegin</code> and <code>percentEnd</code>, along with the
+    /// <code>complement</code> parameter.</p>
+    ///
+    /// <p>For example, the following two datasources do not share any data, and can be used to train and evaluate a model. The first datasource has 25 percent of the data, and the second one has 75 percent of the data.</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>strategy</code>
+    /// </b>
+    /// </p>
+    /// <p>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.</p>
+    /// <p>The default value for the <code>strategy</code> parameter
+    /// is <code>sequential</code>, meaning that Amazon ML takes all of the data records between the <code>percentBegin</code>
+    /// and <code>percentEnd</code> parameters for the datasource, in the order that the records appear in the input data.</p>
+    ///
+    /// <p>The following two <code>DataRearrangement</code> lines are examples of sequentially ordered
+    /// training and evaluation datasources:</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential"}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential", "complement":"true"}}</code>
+    /// </p>
+    ///
+    /// <p>To randomly split the input data into the proportions indicated by the percentBegin and percentEnd
+    /// parameters, set the <code>strategy</code> parameter to
+    /// <code>random</code> and provide a string that is used as the seed value for the random data splitting (for
+    /// example, you can use the S3 path to your data as the random seed string).
+    /// If you choose the random split strategy,
+    /// Amazon ML assigns each row of data a pseudo-random number between 0 and 100, and then selects the rows that have an assigned
+    /// number between <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned
+    /// using both the input seed string value and the byte offset as a seed, so changing the data results in a
+    /// different split. Any existing ordering is preserved.
+    /// The random splitting strategy ensures that variables in the training and evaluation data are distributed similarly.
+    /// It is useful in the cases where the input data may have an implicit sort order, which would otherwise result in
+    /// training and evaluation datasources containing non-similar data records.</p>
+    /// <p>The following two <code>DataRearrangement</code> lines are examples of non-sequentially ordered
+    /// training and evaluation datasources:</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn data_rearrangement(&self) -> std::option::Option<&str> {
+        self.data_rearrangement.as_deref()
+    }
+    /// <p>A JSON string that represents the schema for an Amazon Redshift
+    /// <code>DataSource</code>. The <code>DataSchema</code>
+    /// defines the structure of the observation data in the data file(s)
+    /// referenced in the <code>DataSource</code>.</p>
+    /// <p>A <code>DataSchema</code> is not required if you specify a
+    /// <code>DataSchemaUri</code>.</p>
+    /// <p>Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code>
+    /// and <code>excludedVariableNames</code> have an array of key-value pairs
+    /// for their value. Use the following format to define your <code>DataSchema</code>.</p>
+    /// <p>{ "version": "1.0",</p>
+    /// <p>"recordAnnotationFieldName": "F1",</p>
+    /// <p>"recordWeightFieldName": "F2",</p>
+    /// <p>"targetFieldName": "F3",</p>
+    /// <p>"dataFormat": "CSV",</p>
+    /// <p>"dataFileContainsHeader": true,</p>
+    /// <p>"attributes": [</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    pub fn data_schema(&self) -> std::option::Option<&str> {
+        self.data_schema.as_deref()
+    }
+    /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
+    pub fn data_schema_uri(&self) -> std::option::Option<&str> {
+        self.data_schema_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for RedshiftDataSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDataSpec");
@@ -4439,6 +5290,18 @@ pub struct RedshiftDatabaseCredentials {
     /// The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub password: std::option::Option<std::string::String>,
 }
+impl RedshiftDatabaseCredentials {
+    /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster.
+    /// The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster.
+    /// The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
 impl std::fmt::Debug for RedshiftDatabaseCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDatabaseCredentials");
@@ -4626,6 +5489,157 @@ pub struct RdsDataSpec {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The security group IDs to be used to access a VPC-based RDS DB instance. Ensure that there are appropriate ingress rules set up to allow access to the RDS DB instance. This attribute is used by Data Pipeline to carry out the copy operation from Amazon RDS to an Amazon S3 task.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RdsDataSpec {
+    /// <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code> of an Amazon RDS database.</p>
+    pub fn database_information(&self) -> std::option::Option<&crate::model::RdsDatabase> {
+        self.database_information.as_ref()
+    }
+    /// <p>The query that is used to retrieve the observation data for the <code>DataSource</code>.</p>
+    pub fn select_sql_query(&self) -> std::option::Option<&str> {
+        self.select_sql_query.as_deref()
+    }
+    /// <p>The AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon RDS database.</p>
+    pub fn database_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::RdsDatabaseCredentials> {
+        self.database_credentials.as_ref()
+    }
+    /// <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+    pub fn s3_staging_location(&self) -> std::option::Option<&str> {
+        self.s3_staging_location.as_deref()
+    }
+    /// <p>A JSON string that represents the splitting and rearrangement
+    /// processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
+    /// parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
+    ///
+    /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>percentBegin</code>
+    /// </b>
+    /// </p>
+    /// <p>Use <code>percentBegin</code> to indicate the beginning of the range of the data used to
+    /// create the Datasource.
+    /// If you do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML includes
+    /// all of the data when creating the datasource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>percentEnd</code>
+    /// </b>
+    /// </p>
+    /// <p>Use <code>percentEnd</code> to indicate the end of the range of the data used to create the
+    /// Datasource. If you do not
+    /// include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+    /// includes all of the data when creating the datasource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>complement</code>
+    /// </b>
+    /// </p>
+    /// <p>The <code>complement</code> parameter instructs Amazon ML to use the data that is
+    /// not included in the range of <code>percentBegin</code> to <code>percentEnd</code> to create a
+    /// datasource. The <code>complement</code> parameter is useful if you need to create
+    /// complementary datasources for training and evaluation.
+    /// To create a complementary datasource, use the same
+    /// values for <code>percentBegin</code> and <code>percentEnd</code>, along with the
+    /// <code>complement</code> parameter.</p>
+    ///
+    /// <p>For example, the following two datasources do not share any data, and can be used to train and evaluate a model. The first datasource has 25 percent of the data, and the second one has 75 percent of the data.</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>strategy</code>
+    /// </b>
+    /// </p>
+    /// <p>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.</p>
+    /// <p>The default value for the <code>strategy</code> parameter
+    /// is <code>sequential</code>, meaning that Amazon ML takes all of the data records between the <code>percentBegin</code>
+    /// and <code>percentEnd</code> parameters for the datasource, in the order that the records appear in the input data.</p>
+    ///
+    /// <p>The following two <code>DataRearrangement</code> lines are examples of sequentially ordered
+    /// training and evaluation datasources:</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential"}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential", "complement":"true"}}</code>
+    /// </p>
+    ///
+    /// <p>To randomly split the input data into the proportions indicated by the percentBegin and percentEnd
+    /// parameters, set the <code>strategy</code> parameter to
+    /// <code>random</code> and provide a string that is used as the seed value for the random data splitting (for
+    /// example, you can use the S3 path to your data as the random seed string).
+    /// If you choose the random split strategy,
+    /// Amazon ML assigns each row of data a pseudo-random number between 0 and 100, and then selects the rows that have an assigned
+    /// number between <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned
+    /// using both the input seed string value and the byte offset as a seed, so changing the data results in a
+    /// different split. Any existing ordering is preserved.
+    /// The random splitting strategy ensures that variables in the training and evaluation data are distributed similarly.
+    /// It is useful in the cases where the input data may have an implicit sort order, which would otherwise result in
+    /// training and evaluation datasources containing non-similar data records.</p>
+    /// <p>The following two <code>DataRearrangement</code> lines are examples of non-sequentially ordered
+    /// training and evaluation datasources:</p>
+    /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+    /// </p>
+    /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn data_rearrangement(&self) -> std::option::Option<&str> {
+        self.data_rearrangement.as_deref()
+    }
+    /// <p>A JSON string that represents the schema for an Amazon RDS
+    /// <code>DataSource</code>. The <code>DataSchema</code>
+    /// defines the structure of the observation data in the data file(s)
+    /// referenced in the <code>DataSource</code>.</p>
+    /// <p>A <code>DataSchema</code> is not required if you specify a
+    /// <code>DataSchemaUri</code>
+    /// </p>
+    /// <p>Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code>
+    /// and <code>excludedVariableNames</code> have an array of key-value pairs
+    /// for their value. Use the following format to define your <code>DataSchema</code>.</p>
+    /// <p>{ "version": "1.0",</p>
+    /// <p>"recordAnnotationFieldName": "F1",</p>
+    /// <p>"recordWeightFieldName": "F2",</p>
+    /// <p>"targetFieldName": "F3",</p>
+    /// <p>"dataFormat": "CSV",</p>
+    /// <p>"dataFileContainsHeader": true,</p>
+    /// <p>"attributes": [</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    pub fn data_schema(&self) -> std::option::Option<&str> {
+        self.data_schema.as_deref()
+    }
+    /// <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+    pub fn data_schema_uri(&self) -> std::option::Option<&str> {
+        self.data_schema_uri.as_deref()
+    }
+    /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    pub fn resource_role(&self) -> std::option::Option<&str> {
+        self.resource_role.as_deref()
+    }
+    /// <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The subnet ID to be used to access a VPC-based RDS DB instance. This attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to Amazon S3.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The security group IDs to be used to access a VPC-based RDS DB instance. Ensure that there are appropriate ingress rules set up to allow access to the RDS DB instance. This attribute is used by Data Pipeline to carry out the copy operation from Amazon RDS to an Amazon S3 task.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for RdsDataSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5044,6 +6058,18 @@ pub struct RdsDatabaseCredentials {
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance.
     /// The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
     pub password: std::option::Option<std::string::String>,
+}
+impl RdsDatabaseCredentials {
+    /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance.
+    /// The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance.
+    /// The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for RdsDatabaseCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

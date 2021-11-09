@@ -203,7 +203,7 @@ impl AssociateFirewallRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_firewall_rule_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_firewall_rule_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -375,7 +375,7 @@ impl AssociateResolverEndpointIpAddressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_resolver_endpoint_ip_address(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_resolver_endpoint_ip_address(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -553,7 +553,7 @@ impl AssociateResolverQueryLogConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_resolver_query_log_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_resolver_query_log_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -735,10 +735,7 @@ impl AssociateResolverRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_resolver_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -934,10 +931,7 @@ impl CreateFirewallDomainListInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_firewall_domain_list(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1297,10 +1291,7 @@ impl CreateFirewallRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_firewall_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1496,10 +1487,7 @@ impl CreateFirewallRuleGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_firewall_rule_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1776,10 +1764,7 @@ impl CreateResolverEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_resolver_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2046,7 +2031,7 @@ impl CreateResolverQueryLogConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resolver_query_log_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_resolver_query_log_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2322,10 +2307,7 @@ impl CreateResolverRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resolver_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_resolver_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2481,10 +2463,7 @@ impl DeleteFirewallDomainListInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_firewall_domain_list(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2652,10 +2631,7 @@ impl DeleteFirewallRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2811,10 +2787,7 @@ impl DeleteFirewallRuleGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_firewall_rule_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2969,10 +2942,7 @@ impl DeleteResolverEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_resolver_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3129,7 +3099,7 @@ impl DeleteResolverQueryLogConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resolver_query_log_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_resolver_query_log_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3283,10 +3253,7 @@ impl DeleteResolverRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resolver_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resolver_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3443,7 +3410,7 @@ impl DisassociateFirewallRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_firewall_rule_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_firewall_rule_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3614,7 +3581,7 @@ impl DisassociateResolverEndpointIpAddressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_endpoint_ip_address(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_endpoint_ip_address(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3784,7 +3751,7 @@ impl DisassociateResolverQueryLogConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_query_log_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_query_log_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3953,10 +3920,7 @@ impl DisassociateResolverRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4106,10 +4070,7 @@ impl GetFirewallConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_firewall_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4264,10 +4225,7 @@ impl GetFirewallDomainListInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_firewall_domain_list(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4422,10 +4380,7 @@ impl GetFirewallRuleGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4582,7 +4537,7 @@ impl GetFirewallRuleGroupAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4732,7 +4687,7 @@ impl GetFirewallRuleGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4883,10 +4838,7 @@ impl GetResolverConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resolver_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5039,10 +4991,7 @@ impl GetResolverDnssecConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resolver_dnssec_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5195,10 +5144,7 @@ impl GetResolverEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resolver_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5355,7 +5301,7 @@ impl GetResolverQueryLogConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5516,7 +5462,7 @@ impl GetResolverQueryLogConfigAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5666,7 +5612,7 @@ impl GetResolverQueryLogConfigPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5820,10 +5766,7 @@ impl GetResolverRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5980,7 +5923,7 @@ impl GetResolverRuleAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6131,10 +6074,7 @@ impl GetResolverRulePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6325,10 +6265,7 @@ impl ImportFirewallDomainsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_firewall_domains(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6504,10 +6441,7 @@ impl ListFirewallConfigsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_firewall_configs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_configs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6686,10 +6620,7 @@ impl ListFirewallDomainListsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_firewall_domain_lists(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6880,10 +6811,7 @@ impl ListFirewallDomainsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_firewall_domains(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7122,7 +7050,7 @@ impl ListFirewallRuleGroupAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_group_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_group_associations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7301,10 +7229,7 @@ impl ListFirewallRuleGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7553,10 +7478,7 @@ impl ListFirewallRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_firewall_rules(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7730,10 +7652,7 @@ impl ListResolverConfigsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resolver_configs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_configs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7931,10 +7850,7 @@ impl ListResolverDnssecConfigsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resolver_dnssec_configs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8120,7 +8036,7 @@ impl ListResolverEndpointIpAddressesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoint_ip_addresses(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoint_ip_addresses(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8320,10 +8236,7 @@ impl ListResolverEndpointsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoints(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8707,7 +8620,7 @@ impl ListResolverQueryLogConfigAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_config_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_config_associations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9101,7 +9014,7 @@ impl ListResolverQueryLogConfigsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_configs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_configs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9300,7 +9213,7 @@ impl ListResolverRuleAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resolver_rule_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_rule_associations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9498,10 +9411,7 @@ impl ListResolverRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resolver_rules(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9681,10 +9591,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9850,7 +9759,7 @@ impl PutFirewallRuleGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_firewall_rule_group_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_firewall_rule_group_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10074,7 +9983,7 @@ impl PutResolverQueryLogConfigPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resolver_query_log_config_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_resolver_query_log_config_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10304,10 +10213,7 @@ impl PutResolverRulePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_resolver_rule_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10543,10 +10449,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10782,10 +10685,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10972,10 +10872,9 @@ impl UpdateFirewallConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_config(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11224,10 +11123,7 @@ impl UpdateFirewallDomainsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_domains(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11555,10 +11451,7 @@ impl UpdateFirewallRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11767,7 +11660,7 @@ impl UpdateFirewallRuleGroupAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule_group_association(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule_group_association(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11951,10 +11844,9 @@ impl UpdateResolverConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_resolver_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_resolver_config(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12122,7 +12014,7 @@ impl UpdateResolverDnssecConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_resolver_dnssec_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_resolver_dnssec_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12290,10 +12182,7 @@ impl UpdateResolverEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_resolver_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12461,10 +12350,7 @@ impl UpdateResolverRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_resolver_rule(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_resolver_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12535,6 +12421,16 @@ pub struct UpdateResolverRuleInput {
     /// <p>The new settings for the Resolver rule.</p>
     pub config: std::option::Option<crate::model::ResolverRuleConfig>,
 }
+impl UpdateResolverRuleInput {
+    /// <p>The ID of the Resolver rule that you want to update.</p>
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
+        self.resolver_rule_id.as_deref()
+    }
+    /// <p>The new settings for the Resolver rule.</p>
+    pub fn config(&self) -> std::option::Option<&crate::model::ResolverRuleConfig> {
+        self.config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResolverRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResolverRuleInput");
@@ -12552,6 +12448,16 @@ pub struct UpdateResolverEndpointInput {
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateResolverEndpointInput {
+    /// <p>The ID of the Resolver endpoint that you want to update.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+    /// <p>The name of the Resolver endpoint that you want to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateResolverEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12571,6 +12477,17 @@ pub struct UpdateResolverDnssecConfigInput {
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code>
     /// or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
     pub validation: std::option::Option<crate::model::Validation>,
+}
+impl UpdateResolverDnssecConfigInput {
+    /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code>
+    /// or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
+    pub fn validation(&self) -> std::option::Option<&crate::model::Validation> {
+        self.validation.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResolverDnssecConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12596,6 +12513,25 @@ pub struct UpdateResolverConfigInput {
     /// </note>
     /// <p></p>
     pub autodefined_reverse_flag: std::option::Option<crate::model::AutodefinedReverseFlag>,
+}
+impl UpdateResolverConfigInput {
+    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS
+    /// lookups. This is enabled by default. Disabling this option will also affect EC2-Classic
+    /// instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+    /// <i>Amazon EC2 guide</i>.</p>
+    /// <note>
+    /// <p>It can take some time for the status change to be completed.</p>
+    /// </note>
+    /// <p></p>
+    pub fn autodefined_reverse_flag(
+        &self,
+    ) -> std::option::Option<&crate::model::AutodefinedReverseFlag> {
+        self.autodefined_reverse_flag.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResolverConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12623,6 +12559,31 @@ pub struct UpdateFirewallRuleGroupAssociationInput {
     pub mutation_protection: std::option::Option<crate::model::MutationProtectionStatus>,
     /// <p>The name of the rule group association.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateFirewallRuleGroupAssociationInput {
+    /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+    pub fn firewall_rule_group_association_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_association_id.as_deref()
+    }
+    /// <p>The setting that determines the processing order of the rule group among the rule
+    /// groups that you associate with the specified VPC. DNS Firewall filters VPC traffic
+    /// starting from the rule group with the lowest numeric priority setting. </p>
+    /// <p>You must specify a unique priority for each rule group that you associate with a single VPC.
+    /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You
+    /// can change the priority setting for a rule group association after you create it.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
+    pub fn mutation_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::MutationProtectionStatus> {
+        self.mutation_protection.as_ref()
+    }
+    /// <p>The name of the rule group association.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallRuleGroupAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12693,6 +12654,78 @@ pub struct UpdateFirewallRuleInput {
     /// <p>The name of the rule.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateFirewallRuleInput {
+    /// <p>The unique identifier of the firewall rule group for the rule. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>The ID of the domain list to use in the rule.  </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
+    /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+    /// <p>You must specify a unique priority for each rule in a rule group.
+    /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
+    /// can change the priority setting for the rules in a rule group at any time.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW</code> - Permit the request to go through.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
+    /// </li>
+    /// </ul>
+    pub fn block_response(&self) -> std::option::Option<&crate::model::BlockResponse> {
+        self.block_response.as_ref()
+    }
+    /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn block_override_domain(&self) -> std::option::Option<&str> {
+        self.block_override_domain.as_deref()
+    }
+    /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn block_override_dns_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BlockOverrideDnsType> {
+        self.block_override_dns_type.as_ref()
+    }
+    /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn block_override_ttl(&self) -> std::option::Option<i32> {
+        self.block_override_ttl
+    }
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFirewallRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallRuleInput");
@@ -12749,6 +12782,49 @@ pub struct UpdateFirewallDomainsInput {
     /// </ul>
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateFirewallDomainsInput {
+    /// <p>The ID of the domain list whose domains you want to update. </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p>
+    /// </li>
+    /// </ul>
+    pub fn operation(&self) -> std::option::Option<&crate::model::FirewallDomainUpdateOperation> {
+        self.operation.as_ref()
+    }
+    /// <p>A list of domains to use in the update operation.</p>
+    /// <p>Each domain specification in your domain list must satisfy the following
+    /// requirements: </p>
+    /// <ul>
+    /// <li>
+    /// <p>It can optionally start with <code>*</code> (asterisk).</p>
+    /// </li>
+    /// <li>
+    /// <p>With the exception of the optional starting asterisk, it must only contain
+    /// the following characters: <code>A-Z</code>, <code>a-z</code>,
+    /// <code>0-9</code>, <code>-</code> (hyphen).</p>
+    /// </li>
+    /// <li>
+    /// <p>It must be from 1-255 characters in length. </p>
+    /// </li>
+    /// </ul>
+    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.domains.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFirewallDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallDomainsInput");
@@ -12778,6 +12854,27 @@ pub struct UpdateFirewallConfigInput {
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
     pub firewall_fail_open: std::option::Option<crate::model::FirewallFailOpenStatus>,
+}
+impl UpdateFirewallConfigInput {
+    /// <p>The ID of the VPC that the configuration is for.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
+    /// <ul>
+    /// <li>
+    /// <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability.
+    /// DNS Firewall blocks queries that it is unable to evaluate properly. </p>
+    /// </li>
+    /// <li>
+    /// <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it
+    /// is unable to properly evaluate them. </p>
+    /// </li>
+    /// </ul>
+    /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
+    pub fn firewall_fail_open(&self) -> std::option::Option<&crate::model::FirewallFailOpenStatus> {
+        self.firewall_fail_open.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12830,6 +12927,49 @@ pub struct UntagResourceInput {
     /// <p>The tags that you want to remove to the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable
+    /// <code>Get</code> or <code>List</code> command: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags that you want to remove to the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -12881,6 +13021,49 @@ pub struct TagResourceInput {
     /// <p>The tags that you want to add to the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable
+    /// <code>Get</code> or <code>List</code> command: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags that you want to add to the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -12930,6 +13113,47 @@ pub struct PutResolverRulePolicyInput {
     /// that you specified in <code>Arn</code>.</p>
     pub resolver_rule_policy: std::option::Option<std::string::String>,
 }
+impl PutResolverRulePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account
+    /// to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:GetResolverRule</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:AssociateResolverRule</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:DisassociateResolverRule</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:ListResolverRules</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:ListResolverRuleAssociations</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN
+    /// that you specified in <code>Arn</code>.</p>
+    pub fn resolver_rule_policy(&self) -> std::option::Option<&str> {
+        self.resolver_rule_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResolverRulePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResolverRulePolicyInput");
@@ -12975,6 +13199,43 @@ pub struct PutResolverQueryLogConfigPolicyInput {
     /// with the account that you specified in <code>Arn</code>. </p>
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
 }
+impl PutResolverQueryLogConfigPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account
+    /// and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section
+    /// of the statement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:AssociateResolverQueryLogConfig</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:DisassociateResolverQueryLogConfig</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>route53resolver:ListResolverQueryLogConfigs</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share
+    /// with the account that you specified in <code>Arn</code>. </p>
+    pub fn resolver_query_log_config_policy(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResolverQueryLogConfigPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResolverQueryLogConfigPolicyInput");
@@ -12995,6 +13256,16 @@ pub struct PutFirewallRuleGroupPolicyInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
+}
+impl PutFirewallRuleGroupPolicyInput {
+    /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
+    pub fn firewall_rule_group_policy(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutFirewallRuleGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13021,6 +13292,23 @@ pub struct ListTagsForResourceInput {
     /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request
     /// to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that you want to list tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request.
+    /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>
+    /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request
+    /// to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13050,6 +13338,27 @@ pub struct ListResolverRulesInput {
     /// </note>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListResolverRulesInput {
+    /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request.
+    /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
+    /// <p>If you have more than <code>MaxResults</code> Resolver rules, you can submit another <code>ListResolverRules</code> request
+    /// to get the next group of Resolver rules. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated with the same Resolver endpoint.</p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResolverRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverRulesInput");
@@ -13077,6 +13386,27 @@ pub struct ListResolverRuleAssociationsInput {
     /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListResolverRuleAssociationsInput {
+    /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request.
+    /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first <code>ListResolverRuleAssociation</code> request, omit this value.</p>
+    /// <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request
+    /// to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolverRuleAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13194,6 +13524,119 @@ pub struct ListResolverQueryLogConfigsInput {
     /// </note>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl ListResolverQueryLogConfigsInput {
+    /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request.
+    /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>,
+    /// you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of
+    /// <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional specification to return a subset of query logging configurations.</p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The element that you want Resolver to sort query logging configurations by. </p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
+    /// </note>
+    ///
+    /// <p>Valid values include the following elements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Arn</code>: The ARN of the query logging configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DestinationArn</code>: The location that logs are sent to</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Id</code>: The ID of the configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code>: The name of the configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by
+    /// another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code>: Resolver is creating the query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code>: The query logging configuration was successfully created.
+    /// Resolver is logging queries that originate in the specified VPC.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code>: Resolver is deleting this query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration.
+    /// Here are two common causes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn sort_by(&self) -> std::option::Option<&str> {
+        self.sort_by.as_deref()
+    }
+    /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging configurations to be listed in,
+    /// <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
+    /// </note>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListResolverQueryLogConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverQueryLogConfigsInput");
@@ -13307,6 +13750,114 @@ pub struct ListResolverQueryLogConfigAssociationsInput {
     /// </note>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl ListResolverQueryLogConfigAssociationsInput {
+    /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request.
+    /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first <code>ListResolverQueryLogConfigAssociations</code> request, omit this value.</p>
+    /// <p>If there are more than <code>MaxResults</code> query logging associations that match the values that you specify for <code>Filters</code>,
+    /// you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of
+    /// <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional specification to return a subset of query logging associations.</p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The element that you want Resolver to sort query logging associations by. </p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
+    /// </note>
+    ///
+    /// <p>Valid values include the following elements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreationTime</code>: The ID of the query logging association.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Error</code>: If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code>
+    /// indicates the cause: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>Status</code> is a value other than <code>FAILED</code>, <code>ERROR</code> is null.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Id</code>: The ID of the query logging association</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResolverQueryLogConfigId</code>: The ID of the query logging configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceId</code>: The ID of the VPC that is associated with the query logging configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration
+    /// was successfully created. Resolver is logging queries that originate in the specified VPC.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code>: Resolver is deleting this query logging association.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.
+    /// Here are two common causes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn sort_by(&self) -> std::option::Option<&str> {
+        self.sort_by.as_deref()
+    }
+    /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging associations to be listed in,
+    /// <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
+    /// </note>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListResolverQueryLogConfigAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverQueryLogConfigAssociationsInput");
@@ -13337,6 +13888,27 @@ pub struct ListResolverEndpointsInput {
     /// </note>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListResolverEndpointsInput {
+    /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request.
+    /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
+    /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request
+    /// to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p>
+    /// <note>
+    /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter,
+    /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResolverEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverEndpointsInput");
@@ -13361,6 +13933,24 @@ pub struct ListResolverEndpointIpAddressesInput {
     /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of
     /// <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResolverEndpointIpAddressesInput {
+    /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+    /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request.
+    /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
+    /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
+    /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of
+    /// <code>NextToken</code> from the previous response. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolverEndpointIpAddressesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13389,6 +13979,26 @@ pub struct ListResolverDnssecConfigsInput {
     /// <p>An optional specification to return a subset of objects.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListResolverDnssecConfigsInput {
+    /// <p>
+    /// <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return.
+    /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
+    /// to get the second and subsequent pages of results.</p>
+    /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
+    /// for <code>NextToken</code> in the request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional specification to return a subset of objects.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResolverDnssecConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolverDnssecConfigsInput");
@@ -13413,6 +14023,22 @@ pub struct ListResolverConfigsInput {
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
     /// specify that value for <code>NextToken</code> in the request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResolverConfigsInput {
+    /// <p>The maximum number of Resolver configurations that you want to return in the response to
+    /// a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>,
+    /// up to 100 Resolver configurations are returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use
+    /// <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
+    /// specify that value for <code>NextToken</code> in the request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolverConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13462,6 +14088,52 @@ pub struct ListFirewallRulesInput {
     /// batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFirewallRulesInput {
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>Optional additional filter for the rules to retrieve.</p>
+    /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall
+    /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>Optional additional filter for the rules to retrieve.</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW</code> - Permit the request to go through.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more
+    /// objects are available, in the response, Resolver provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects
+    /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
+    /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
+    /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallRulesInput");
@@ -13489,6 +14161,23 @@ pub struct ListFirewallRuleGroupsInput {
     /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
     /// batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFirewallRuleGroupsInput {
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more
+    /// objects are available, in the response, Resolver provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects
+    /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
+    /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
+    /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFirewallRuleGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13527,6 +14216,43 @@ pub struct ListFirewallRuleGroupAssociationsInput {
     /// batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFirewallRuleGroupAssociationsInput {
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations
+    /// for. Leave this blank to retrieve associations for any rule group. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>The unique identifier of the VPC that you want to retrieve the associations
+    /// for. Leave this blank to retrieve associations for any VPC. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The setting that determines the processing order of the rule group among the rule
+    /// groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting
+    /// from the rule group with the lowest numeric priority setting. </p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FirewallRuleGroupAssociationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more
+    /// objects are available, in the response, Resolver provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects
+    /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
+    /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
+    /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallRuleGroupAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallRuleGroupAssociationsInput");
@@ -13558,6 +14284,27 @@ pub struct ListFirewallDomainsInput {
     /// batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFirewallDomainsInput {
+    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more
+    /// objects are available, in the response, Resolver provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects
+    /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
+    /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
+    /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallDomainsInput");
@@ -13584,6 +14331,23 @@ pub struct ListFirewallDomainListsInput {
     /// batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFirewallDomainListsInput {
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more
+    /// objects are available, in the response, Resolver provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects
+    /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
+    /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
+    /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallDomainListsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallDomainListsInput");
@@ -13609,6 +14373,23 @@ pub struct ListFirewallConfigsInput {
     /// batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFirewallConfigsInput {
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more
+    /// objects are available, in the response, Resolver provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects
+    /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
+    /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
+    /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFirewallConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallConfigsInput");
@@ -13632,6 +14413,23 @@ pub struct ImportFirewallDomainsInput {
     /// as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
     pub domain_file_url: std::option::Option<std::string::String>,
 }
+impl ImportFirewallDomainsInput {
+    /// <p>The ID of the domain list that you want to modify with the import operation.</p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::FirewallDomainImportOperation> {
+        self.operation.as_ref()
+    }
+    /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service
+    /// (Amazon S3) that contains the list of domains to import.</p>
+    /// <p>The file must be in an S3 bucket that's in the same Region
+    /// as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
+    pub fn domain_file_url(&self) -> std::option::Option<&str> {
+        self.domain_file_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportFirewallDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportFirewallDomainsInput");
@@ -13649,6 +14447,12 @@ pub struct GetResolverRulePolicyInput {
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetResolverRulePolicyInput {
+    /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResolverRulePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverRulePolicyInput");
@@ -13663,6 +14467,12 @@ impl std::fmt::Debug for GetResolverRulePolicyInput {
 pub struct GetResolverRuleAssociationInput {
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
     pub resolver_rule_association_id: std::option::Option<std::string::String>,
+}
+impl GetResolverRuleAssociationInput {
+    /// <p>The ID of the Resolver rule association that you want to get information about.</p>
+    pub fn resolver_rule_association_id(&self) -> std::option::Option<&str> {
+        self.resolver_rule_association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResolverRuleAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13682,6 +14492,12 @@ pub struct GetResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to get information about.</p>
     pub resolver_rule_id: std::option::Option<std::string::String>,
 }
+impl GetResolverRuleInput {
+    /// <p>The ID of the Resolver rule that you want to get information about.</p>
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
+        self.resolver_rule_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResolverRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverRuleInput");
@@ -13697,6 +14513,12 @@ pub struct GetResolverQueryLogConfigPolicyInput {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetResolverQueryLogConfigPolicyInput {
+    /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResolverQueryLogConfigPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverQueryLogConfigPolicyInput");
@@ -13711,6 +14533,12 @@ impl std::fmt::Debug for GetResolverQueryLogConfigPolicyInput {
 pub struct GetResolverQueryLogConfigAssociationInput {
     /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
     pub resolver_query_log_config_association_id: std::option::Option<std::string::String>,
+}
+impl GetResolverQueryLogConfigAssociationInput {
+    /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
+    pub fn resolver_query_log_config_association_id(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResolverQueryLogConfigAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13730,6 +14558,12 @@ pub struct GetResolverQueryLogConfigInput {
     /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
     pub resolver_query_log_config_id: std::option::Option<std::string::String>,
 }
+impl GetResolverQueryLogConfigInput {
+    /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
+    pub fn resolver_query_log_config_id(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResolverQueryLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverQueryLogConfigInput");
@@ -13748,6 +14582,12 @@ pub struct GetResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
 }
+impl GetResolverEndpointInput {
+    /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResolverEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverEndpointInput");
@@ -13762,6 +14602,12 @@ impl std::fmt::Debug for GetResolverEndpointInput {
 pub struct GetResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl GetResolverDnssecConfigInput {
+    /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResolverDnssecConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13778,6 +14624,12 @@ pub struct GetResolverConfigInput {
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl GetResolverConfigInput {
+    /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResolverConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverConfigInput");
@@ -13793,6 +14645,12 @@ pub struct GetFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetFirewallRuleGroupPolicyInput {
+    /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFirewallRuleGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFirewallRuleGroupPolicyInput");
@@ -13807,6 +14665,12 @@ impl std::fmt::Debug for GetFirewallRuleGroupPolicyInput {
 pub struct GetFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
     pub firewall_rule_group_association_id: std::option::Option<std::string::String>,
+}
+impl GetFirewallRuleGroupAssociationInput {
+    /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+    pub fn firewall_rule_group_association_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFirewallRuleGroupAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13826,6 +14690,12 @@ pub struct GetFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group. </p>
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
 }
+impl GetFirewallRuleGroupInput {
+    /// <p>The unique identifier of the firewall rule group. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFirewallRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFirewallRuleGroupInput");
@@ -13841,6 +14711,12 @@ pub struct GetFirewallDomainListInput {
     /// <p>The ID of the domain list.  </p>
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
 }
+impl GetFirewallDomainListInput {
+    /// <p>The ID of the domain list.  </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFirewallDomainListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFirewallDomainListInput");
@@ -13855,6 +14731,12 @@ impl std::fmt::Debug for GetFirewallDomainListInput {
 pub struct GetFirewallConfigInput {
     /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl GetFirewallConfigInput {
+    /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFirewallConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13873,6 +14755,16 @@ pub struct DisassociateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
     pub resolver_rule_id: std::option::Option<std::string::String>,
 }
+impl DisassociateResolverRuleInput {
+    /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
+        self.resolver_rule_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateResolverRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateResolverRuleInput");
@@ -13890,6 +14782,16 @@ pub struct DisassociateResolverQueryLogConfigInput {
     pub resolver_query_log_config_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl DisassociateResolverQueryLogConfigInput {
+    /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
+    pub fn resolver_query_log_config_id(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_id.as_deref()
+    }
+    /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateResolverQueryLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13912,6 +14814,16 @@ pub struct DisassociateResolverEndpointIpAddressInput {
     /// <p>The IPv4 address that you want to remove from a Resolver endpoint.</p>
     pub ip_address: std::option::Option<crate::model::IpAddressUpdate>,
 }
+impl DisassociateResolverEndpointIpAddressInput {
+    /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+    /// <p>The IPv4 address that you want to remove from a Resolver endpoint.</p>
+    pub fn ip_address(&self) -> std::option::Option<&crate::model::IpAddressUpdate> {
+        self.ip_address.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateResolverEndpointIpAddressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateResolverEndpointIpAddressInput");
@@ -13927,6 +14839,12 @@ impl std::fmt::Debug for DisassociateResolverEndpointIpAddressInput {
 pub struct DisassociateFirewallRuleGroupInput {
     /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
     pub firewall_rule_group_association_id: std::option::Option<std::string::String>,
+}
+impl DisassociateFirewallRuleGroupInput {
+    /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+    pub fn firewall_rule_group_association_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateFirewallRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13946,6 +14864,12 @@ pub struct DeleteResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
     pub resolver_rule_id: std::option::Option<std::string::String>,
 }
+impl DeleteResolverRuleInput {
+    /// <p>The ID of the Resolver rule that you want to delete.</p>
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
+        self.resolver_rule_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResolverRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResolverRuleInput");
@@ -13960,6 +14884,12 @@ impl std::fmt::Debug for DeleteResolverRuleInput {
 pub struct DeleteResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to delete.</p>
     pub resolver_query_log_config_id: std::option::Option<std::string::String>,
+}
+impl DeleteResolverQueryLogConfigInput {
+    /// <p>The ID of the query logging configuration that you want to delete.</p>
+    pub fn resolver_query_log_config_id(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResolverQueryLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13979,6 +14909,12 @@ pub struct DeleteResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
 }
+impl DeleteResolverEndpointInput {
+    /// <p>The ID of the Resolver endpoint that you want to delete.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResolverEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResolverEndpointInput");
@@ -13993,6 +14929,12 @@ impl std::fmt::Debug for DeleteResolverEndpointInput {
 pub struct DeleteFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
+}
+impl DeleteFirewallRuleGroupInput {
+    /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFirewallRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14011,6 +14953,16 @@ pub struct DeleteFirewallRuleInput {
     /// <p>The ID of the domain list that's used in the rule.  </p>
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
 }
+impl DeleteFirewallRuleInput {
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>The ID of the domain list that's used in the rule.  </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFirewallRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFirewallRuleInput");
@@ -14026,6 +14978,12 @@ impl std::fmt::Debug for DeleteFirewallRuleInput {
 pub struct DeleteFirewallDomainListInput {
     /// <p>The ID of the domain list that you want to delete. </p>
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
+}
+impl DeleteFirewallDomainListInput {
+    /// <p>The ID of the domain list that you want to delete. </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFirewallDomainListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14066,6 +15024,49 @@ pub struct CreateResolverRuleInput {
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateResolverRuleInput {
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried
+    /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
+    /// any unique string, for example, a date/time stamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for
+    /// a subdomain of that domain, specify <code>SYSTEM</code>.</p>
+    /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code>
+    /// for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify
+    /// <code>SYSTEM</code> for <code>RuleType</code>.</p>
+    /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
+    pub fn rule_type(&self) -> std::option::Option<&crate::model::RuleTypeOption> {
+        self.rule_type.as_ref()
+    }
+    /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches
+    /// multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains
+    /// the most specific domain name (www.example.com).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP addresses with a space.</p>
+    /// <p>
+    /// <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+    pub fn target_ips(&self) -> std::option::Option<&[crate::model::TargetAddress]> {
+        self.target_ips.as_deref()
+    }
+    /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify
+    /// in <code>TargetIps</code>.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateResolverRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14125,6 +15126,55 @@ pub struct CreateResolverQueryLogConfigInput {
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateResolverQueryLogConfigInput {
+    /// <p>The name that you want to give the query logging configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group,
+    /// or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>S3 bucket</b>: </p>
+    /// <p>
+    /// <code>arn:aws:s3:::examplebucket</code>
+    /// </p>
+    /// <p>You can optionally append a file prefix to the end of the ARN.</p>
+    /// <p>
+    /// <code>arn:aws:s3:::examplebucket/development/</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CloudWatch Logs log group</b>: </p>
+    /// <p>
+    /// <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Kinesis Data Firehose delivery stream</b>:</p>
+    /// <p>
+    /// <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried
+    /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
+    /// any unique string, for example, a date/time stamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResolverQueryLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResolverQueryLogConfigInput");
@@ -14169,6 +15219,48 @@ pub struct CreateResolverEndpointInput {
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateResolverEndpointInput {
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried
+    /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
+    /// any unique string, for example, a date/time stamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify
+    /// must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints).
+    /// Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port
+    /// that you're using for DNS queries on your network.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>Specify the applicable value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p>
+    /// </li>
+    /// </ul>
+    pub fn direction(&self) -> std::option::Option<&crate::model::ResolverEndpointDirection> {
+        self.direction.as_ref()
+    }
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
+    /// DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
+    pub fn ip_addresses(&self) -> std::option::Option<&[crate::model::IpAddressRequest]> {
+        self.ip_addresses.as_deref()
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResolverEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResolverEndpointInput");
@@ -14194,6 +15286,22 @@ pub struct CreateFirewallRuleGroupInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the rule group. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateFirewallRuleGroupInput {
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed
+    /// requests without the risk of running the operation twice. This can be any unique string,
+    /// for example, a timestamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>A name that lets you identify the rule group, to manage and use it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the rule group. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFirewallRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14269,6 +15377,89 @@ pub struct CreateFirewallRuleInput {
     /// <p>A name that lets you identify the rule in the rule group.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateFirewallRuleInput {
+    /// <p>A unique string that identifies the request and that allows you to retry failed requests
+    /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
+    /// any unique string, for example, a date/time stamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The unique identifier of the firewall rule group where you want to create the rule. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>The ID of the domain list that you want to use in the rule. </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
+    /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+    /// <p>You must specify a unique priority for each rule in a rule group.
+    /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
+    /// can change the priority setting for the rules in a rule group at any time.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW</code> - Permit the request to go through.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The way that you want DNS Firewall to block the request, used with the rule action
+    /// setting <code>BLOCK</code>. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
+    /// </li>
+    /// </ul>
+    /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
+    pub fn block_response(&self) -> std::option::Option<&crate::model::BlockResponse> {
+        self.block_response.as_ref()
+    }
+    /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
+    pub fn block_override_domain(&self) -> std::option::Option<&str> {
+        self.block_override_domain.as_deref()
+    }
+    /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
+    pub fn block_override_dns_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BlockOverrideDnsType> {
+        self.block_override_dns_type.as_ref()
+    }
+    /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
+    pub fn block_override_ttl(&self) -> std::option::Option<i32> {
+        self.block_override_ttl
+    }
+    /// <p>A name that lets you identify the rule in the rule group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFirewallRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFirewallRuleInput");
@@ -14299,6 +15490,22 @@ pub struct CreateFirewallDomainListInput {
     /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateFirewallDomainListInput {
+    /// <p>A unique string that identifies the request and that allows you to retry failed requests
+    /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
+    /// any unique string, for example, a date/time stamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>A name that lets you identify the domain list to manage and use it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFirewallDomainListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFirewallDomainListInput");
@@ -14320,6 +15527,21 @@ pub struct AssociateResolverRuleInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
     pub vpc_id: std::option::Option<std::string::String>,
+}
+impl AssociateResolverRuleInput {
+    /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
+        self.resolver_rule_id.as_deref()
+    }
+    /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateResolverRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14344,6 +15566,20 @@ pub struct AssociateResolverQueryLogConfigInput {
     /// </note>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl AssociateResolverQueryLogConfigInput {
+    /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
+    pub fn resolver_query_log_config_id(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_id.as_deref()
+    }
+    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p>
+    ///
+    /// <note>
+    /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
+    /// </note>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateResolverQueryLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateResolverQueryLogConfigInput");
@@ -14365,6 +15601,17 @@ pub struct AssociateResolverEndpointIpAddressInput {
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
     /// Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
     pub ip_address: std::option::Option<crate::model::IpAddressUpdate>,
+}
+impl AssociateResolverEndpointIpAddressInput {
+    /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+    /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
+    /// Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
+    pub fn ip_address(&self) -> std::option::Option<&crate::model::IpAddressUpdate> {
+        self.ip_address.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateResolverEndpointIpAddressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14402,6 +15649,47 @@ pub struct AssociateFirewallRuleGroupInput {
     pub mutation_protection: std::option::Option<crate::model::MutationProtectionStatus>,
     /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AssociateFirewallRuleGroupInput {
+    /// <p>A unique string that identifies the request and that allows failed requests to be
+    /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
+    /// can be any unique string, for example, a date/time stamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The unique identifier of the firewall rule group. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The setting that determines the processing order of the rule group among the rule
+    /// groups that you associate with the specified VPC. DNS Firewall filters VPC traffic
+    /// starting from the rule group with the lowest numeric priority setting. </p>
+    /// <p>You must specify a unique priority for each rule group that you associate with a single VPC.
+    /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You
+    /// can change the priority setting for a rule group association after you create it.</p>
+    /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>A name that lets you identify the association, to manage and use it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.
+    /// When you create the association, the default setting is <code>DISABLED</code>. </p>
+    pub fn mutation_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::MutationProtectionStatus> {
+        self.mutation_protection.as_ref()
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateFirewallRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

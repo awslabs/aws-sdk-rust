@@ -10,6 +10,17 @@ pub struct TimeToLiveSpecification {
     /// table.</p>
     pub attribute_name: std::option::Option<std::string::String>,
 }
+impl TimeToLiveSpecification {
+    /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The name of the TTL attribute used to store the expiration time for items in the
+    /// table.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TimeToLiveSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeToLiveSpecification");
@@ -97,6 +108,38 @@ pub struct TableAutoScalingDescription {
     pub table_status: std::option::Option<crate::model::TableStatus>,
     /// <p>Represents replicas of the global table.</p>
     pub replicas: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingDescription>>,
+}
+impl TableAutoScalingDescription {
+    /// <p>The name of the table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The current state of the table:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The table is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The table is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The table is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The table is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn table_status(&self) -> std::option::Option<&crate::model::TableStatus> {
+        self.table_status.as_ref()
+    }
+    /// <p>Represents replicas of the global table.</p>
+    pub fn replicas(&self) -> std::option::Option<&[crate::model::ReplicaAutoScalingDescription]> {
+        self.replicas.as_deref()
+    }
 }
 impl std::fmt::Debug for TableAutoScalingDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -255,6 +298,57 @@ pub struct ReplicaAutoScalingDescription {
     /// </li>
     /// </ul>
     pub replica_status: std::option::Option<crate::model::ReplicaStatus>,
+}
+impl ReplicaAutoScalingDescription {
+    /// <p>The Region where the replica exists.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>Replica-specific global secondary index auto scaling settings.</p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription]>
+    {
+        self.global_secondary_indexes.as_deref()
+    }
+    /// <p>Represents the auto scaling settings for a global table or global secondary
+    /// index.</p>
+    pub fn replica_provisioned_read_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.replica_provisioned_read_capacity_auto_scaling_settings
+            .as_ref()
+    }
+    /// <p>Represents the auto scaling settings for a global table or global secondary
+    /// index.</p>
+    pub fn replica_provisioned_write_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.replica_provisioned_write_capacity_auto_scaling_settings
+            .as_ref()
+    }
+    /// <p>The current state of the replica:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The replica is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The replica is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The replica is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The replica is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn replica_status(&self) -> std::option::Option<&crate::model::ReplicaStatus> {
+        self.replica_status.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicaAutoScalingDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -534,6 +628,30 @@ pub struct AutoScalingSettingsDescription {
     pub scaling_policies:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingPolicyDescription>>,
 }
+impl AutoScalingSettingsDescription {
+    /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+    pub fn minimum_units(&self) -> std::option::Option<i64> {
+        self.minimum_units
+    }
+    /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+    pub fn maximum_units(&self) -> std::option::Option<i64> {
+        self.maximum_units
+    }
+    /// <p>Disabled auto scaling for this global table or global secondary index.</p>
+    pub fn auto_scaling_disabled(&self) -> std::option::Option<bool> {
+        self.auto_scaling_disabled
+    }
+    /// <p>Role ARN used for configuring the auto scaling policy.</p>
+    pub fn auto_scaling_role_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_role_arn.as_deref()
+    }
+    /// <p>Information about the scaling policies.</p>
+    pub fn scaling_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoScalingPolicyDescription]> {
+        self.scaling_policies.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoScalingSettingsDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingSettingsDescription");
@@ -654,6 +772,20 @@ pub struct AutoScalingPolicyDescription {
         crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription,
     >,
 }
+impl AutoScalingPolicyDescription {
+    /// <p>The name of the scaling policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>Represents a target tracking scaling policy configuration.</p>
+    pub fn target_tracking_scaling_policy_configuration(
+        &self,
+    ) -> std::option::Option<
+        &crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription,
+    > {
+        self.target_tracking_scaling_policy_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for AutoScalingPolicyDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingPolicyDescription");
@@ -746,6 +878,36 @@ pub struct AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
     pub scale_out_cooldown: std::option::Option<i32>,
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
     pub target_value: std::option::Option<f64>,
+}
+impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
+    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
+    /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
+    /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
+    /// The default value is false.</p>
+    pub fn disable_scale_in(&self) -> std::option::Option<bool> {
+        self.disable_scale_in
+    }
+    /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
+    /// in activity can start. The cooldown period is used to block subsequent scale in requests
+    /// until it has expired. You should scale in conservatively to protect your application's
+    /// availability. However, if another alarm triggers a scale out policy during the cooldown
+    /// period after a scale-in, application auto scaling scales out your scalable target
+    /// immediately. </p>
+    pub fn scale_in_cooldown(&self) -> std::option::Option<i32> {
+        self.scale_in_cooldown
+    }
+    /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
+    /// activity can start. While the cooldown period is in effect, the capacity that has been added
+    /// by the previous scale out event that initiated the cooldown is calculated as part of the
+    /// desired capacity for the next scale out. You should continuously (but not excessively)
+    /// scale out.</p>
+    pub fn scale_out_cooldown(&self) -> std::option::Option<i32> {
+        self.scale_out_cooldown
+    }
+    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+    pub fn target_value(&self) -> std::option::Option<f64> {
+        self.target_value
+    }
 }
 impl std::fmt::Debug for AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -890,6 +1052,50 @@ pub struct ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// index.</p>
     pub provisioned_write_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
+}
+impl ReplicaGlobalSecondaryIndexAutoScalingDescription {
+    /// <p>The name of the global secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The current state of the replica global secondary index:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The index is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The index is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The index is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The index is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn index_status(&self) -> std::option::Option<&crate::model::IndexStatus> {
+        self.index_status.as_ref()
+    }
+    /// <p>Represents the auto scaling settings for a global table or global secondary
+    /// index.</p>
+    pub fn provisioned_read_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.provisioned_read_capacity_auto_scaling_settings
+            .as_ref()
+    }
+    /// <p>Represents the auto scaling settings for a global table or global secondary
+    /// index.</p>
+    pub fn provisioned_write_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.provisioned_write_capacity_auto_scaling_settings
+            .as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicaGlobalSecondaryIndexAutoScalingDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1199,6 +1405,27 @@ pub struct ReplicaAutoScalingUpdate {
     pub replica_provisioned_read_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
+impl ReplicaAutoScalingUpdate {
+    /// <p>The Region where the replica exists.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>Represents the auto scaling settings of global secondary indexes that will
+    /// be modified.</p>
+    pub fn replica_global_secondary_index_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate]> {
+        self.replica_global_secondary_index_updates.as_deref()
+    }
+    /// <p>Represents the auto scaling settings to be modified for a global table or global
+    /// secondary index.</p>
+    pub fn replica_provisioned_read_capacity_auto_scaling_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
+        self.replica_provisioned_read_capacity_auto_scaling_update
+            .as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicaAutoScalingUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaAutoScalingUpdate");
@@ -1318,6 +1545,30 @@ pub struct AutoScalingSettingsUpdate {
     /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
     pub scaling_policy_update: std::option::Option<crate::model::AutoScalingPolicyUpdate>,
 }
+impl AutoScalingSettingsUpdate {
+    /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
+    pub fn minimum_units(&self) -> std::option::Option<i64> {
+        self.minimum_units
+    }
+    /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
+    pub fn maximum_units(&self) -> std::option::Option<i64> {
+        self.maximum_units
+    }
+    /// <p>Disabled auto scaling for this global table or global secondary index.</p>
+    pub fn auto_scaling_disabled(&self) -> std::option::Option<bool> {
+        self.auto_scaling_disabled
+    }
+    /// <p>Role ARN used for configuring auto scaling policy.</p>
+    pub fn auto_scaling_role_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_role_arn.as_deref()
+    }
+    /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
+    pub fn scaling_policy_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingPolicyUpdate> {
+        self.scaling_policy_update.as_ref()
+    }
+}
 impl std::fmt::Debug for AutoScalingSettingsUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingSettingsUpdate");
@@ -1432,6 +1683,19 @@ pub struct AutoScalingPolicyUpdate {
         crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
     >,
 }
+impl AutoScalingPolicyUpdate {
+    /// <p>The name of the scaling policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>Represents a target tracking scaling policy configuration.</p>
+    pub fn target_tracking_scaling_policy_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate>
+    {
+        self.target_tracking_scaling_policy_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for AutoScalingPolicyUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingPolicyUpdate");
@@ -1524,6 +1788,36 @@ pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     pub scale_out_cooldown: std::option::Option<i32>,
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
     pub target_value: std::option::Option<f64>,
+}
+impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
+    /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true,
+    /// scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
+    /// Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource.
+    /// The default value is false.</p>
+    pub fn disable_scale_in(&self) -> std::option::Option<bool> {
+        self.disable_scale_in
+    }
+    /// <p>The amount of time, in seconds, after a scale in activity completes before another scale
+    /// in activity can start. The cooldown period is used to block subsequent scale in requests
+    /// until it has expired. You should scale in conservatively to protect your application's
+    /// availability. However, if another alarm triggers a scale out policy during the cooldown
+    /// period after a scale-in, application auto scaling scales out your scalable target
+    /// immediately. </p>
+    pub fn scale_in_cooldown(&self) -> std::option::Option<i32> {
+        self.scale_in_cooldown
+    }
+    /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out
+    /// activity can start. While the cooldown period is in effect, the capacity that has been added
+    /// by the previous scale out event that initiated the cooldown is calculated as part of the
+    /// desired capacity for the next scale out. You should continuously (but not excessively)
+    /// scale out.</p>
+    pub fn scale_out_cooldown(&self) -> std::option::Option<i32> {
+        self.scale_out_cooldown
+    }
+    /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+    pub fn target_value(&self) -> std::option::Option<f64> {
+        self.target_value
+    }
 }
 impl std::fmt::Debug for AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1646,6 +1940,19 @@ pub struct ReplicaGlobalSecondaryIndexAutoScalingUpdate {
     pub provisioned_read_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
+impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
+    /// <p>The name of the global secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Represents the auto scaling settings to be modified for a global table or global
+    /// secondary index.</p>
+    pub fn provisioned_read_capacity_auto_scaling_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
+        self.provisioned_read_capacity_auto_scaling_update.as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicaGlobalSecondaryIndexAutoScalingUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexAutoScalingUpdate");
@@ -1724,6 +2031,19 @@ pub struct GlobalSecondaryIndexAutoScalingUpdate {
     /// secondary index.</p>
     pub provisioned_write_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
+}
+impl GlobalSecondaryIndexAutoScalingUpdate {
+    /// <p>The name of the global secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Represents the auto scaling settings to be modified for a global table or global
+    /// secondary index.</p>
+    pub fn provisioned_write_capacity_auto_scaling_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
+        self.provisioned_write_capacity_auto_scaling_update.as_ref()
+    }
 }
 impl std::fmt::Debug for GlobalSecondaryIndexAutoScalingUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2105,6 +2425,364 @@ pub struct TableDescription {
     pub sse_description: std::option::Option<crate::model::SseDescription>,
     /// <p>Contains information about the table archive.</p>
     pub archival_summary: std::option::Option<crate::model::ArchivalSummary>,
+}
+impl TableDescription {
+    /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute
+    /// in the table and index key schema.</p>
+    /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AttributeName</code> - The name of the attribute.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AttributeType</code> - The data type for the attribute.</p>
+    /// </li>
+    /// </ul>
+    pub fn attribute_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeDefinition]> {
+        self.attribute_definitions.as_deref()
+    }
+    /// <p>The name of the table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AttributeName</code> - The name of the attribute.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KeyType</code> - The role of the attribute:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> -  partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    ///
+    /// </li>
+    /// </ul>
+    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the
+    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>The current state of the table:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The table is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The table is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The table is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The table is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS
+    /// key used to encrypt the table in inaccessible. Table operations
+    /// may fail due to failure to use the AWS KMS key. DynamoDB will
+    /// initiate the table archival process when a table's AWS KMS key
+    /// remains inaccessible for more than seven days.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ARCHIVING</code> - The table is being archived. Operations
+    /// are not allowed until archival is complete.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ARCHIVED</code> - The table has been archived. See the
+    /// ArchivalReason for more information.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn table_status(&self) -> std::option::Option<&crate::model::TableStatus> {
+        self.table_status.as_ref()
+    }
+    /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughputDescription> {
+        self.provisioned_throughput.as_ref()
+    }
+    /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    pub fn table_size_bytes(&self) -> i64 {
+        self.table_size_bytes
+    }
+    /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    pub fn item_count(&self) -> i64 {
+        self.item_count
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
+    pub fn table_arn(&self) -> std::option::Option<&str> {
+        self.table_arn.as_deref()
+    }
+    /// <p>Unique identifier for the table for which the backup was created. </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>Contains the details for the read/write capacity mode.</p>
+    pub fn billing_mode_summary(&self) -> std::option::Option<&crate::model::BillingModeSummary> {
+        self.billing_mode_summary.as_ref()
+    }
+    /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>IndexName</code> - The name of the local secondary index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
+    /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
+    /// with the same partition key as the table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Projection</code> - Specifies
+    /// attributes that are copied (projected) from the table into the index. These are in
+    /// addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. Each
+    /// attribute specification is composed of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ProjectionType</code> - One
+    /// of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+    /// index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INCLUDE</code> - Only the specified table attributes are projected
+    /// into the index. The list of projected attributes is in
+    /// <code>NonKeyAttributes</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code> - All of the table attributes are projected into the
+    /// index.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
+    /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates
+    /// this value approximately every six hours. Recent changes might not be reflected in this
+    /// value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value
+    /// approximately every six hours. Recent changes might not be reflected in this value.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
+    /// returned.</p>
+    pub fn local_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::LocalSecondaryIndexDescription]> {
+        self.local_secondary_indexes.as_deref()
+    }
+    /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Backfilling</code> - If true, then the index is currently in the backfilling
+    /// phase. Backfilling occurs only when a new global secondary index is added to the
+    /// table. It is the process by which DynamoDB populates the new index with data from the
+    /// table. (This attribute does not appear for indexes that were created during a
+    /// <code>CreateTable</code> operation.) </p>
+    /// <p> You can delete an index that is being created during the <code>Backfilling</code>
+    /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
+    /// is true. You can't delete the index that is being created when
+    /// <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false.
+    /// (This attribute does not appear for indexes that were created during a
+    /// <code>CreateTable</code> operation.)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IndexName</code> - The name of the global secondary index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IndexSizeBytes</code> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six
+    /// hours. Recent changes might not be reflected in this value.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IndexStatus</code> - The current status of the global secondary index:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The index is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The index is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The index is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The index is ready for use.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ItemCount</code> - The number of items in the global secondary index. DynamoDB updates this value approximately every six
+    /// hours. Recent changes might not be reflected in this value.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KeySchema</code> - Specifies the complete index key schema. The attribute names in the
+    /// key schema must be between 1 and 255 characters (inclusive). The key schema must begin
+    /// with the same partition key as the table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Projection</code> - Specifies
+    /// attributes that are copied (projected) from the table into the index. These are in
+    /// addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. Each
+    /// attribute specification is composed of:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ProjectionType</code> - One
+    /// of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+    /// index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code> - All of the table attributes are projected into the
+    /// index.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
+    /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index,
+    /// consisting of read and write capacity units, along with data about increases and
+    /// decreases. </p>
+    /// </li>
+    /// </ul>
+    /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be
+    /// returned.</p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::GlobalSecondaryIndexDescription]> {
+        self.global_secondary_indexes.as_deref()
+    }
+    /// <p>The current DynamoDB Streams configuration for the table.</p>
+    pub fn stream_specification(&self) -> std::option::Option<&crate::model::StreamSpecification> {
+        self.stream_specification.as_ref()
+    }
+    /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
+    ///
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS customer ID</p>
+    /// </li>
+    /// <li>
+    /// <p>Table name</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>StreamLabel</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn latest_stream_label(&self) -> std::option::Option<&str> {
+        self.latest_stream_label.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
+    pub fn latest_stream_arn(&self) -> std::option::Option<&str> {
+        self.latest_stream_arn.as_deref()
+    }
+    /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across AWS Regions.</p>
+    pub fn global_table_version(&self) -> std::option::Option<&str> {
+        self.global_table_version.as_deref()
+    }
+    /// <p>Represents replicas of the table.</p>
+    pub fn replicas(&self) -> std::option::Option<&[crate::model::ReplicaDescription]> {
+        self.replicas.as_deref()
+    }
+    /// <p>Contains details for the restore.</p>
+    pub fn restore_summary(&self) -> std::option::Option<&crate::model::RestoreSummary> {
+        self.restore_summary.as_ref()
+    }
+    /// <p>The description of the server-side encryption status on the specified table.</p>
+    pub fn sse_description(&self) -> std::option::Option<&crate::model::SseDescription> {
+        self.sse_description.as_ref()
+    }
+    /// <p>Contains information about the table archive.</p>
+    pub fn archival_summary(&self) -> std::option::Option<&crate::model::ArchivalSummary> {
+        self.archival_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for TableDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3057,6 +3735,35 @@ pub struct ArchivalSummary {
     /// table.</p>
     pub archival_backup_arn: std::option::Option<std::string::String>,
 }
+impl ArchivalSummary {
+    /// <p>The date and time when table archival was initiated by DynamoDB,
+    /// in UNIX epoch time format.</p>
+    pub fn archival_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.archival_date_time.as_ref()
+    }
+    /// <p>The reason DynamoDB archived the table. Currently, the only
+    /// possible value is:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
+    /// table was archived due to the table's AWS KMS key being inaccessible
+    /// for more than seven days. An On-Demand backup was created at the archival
+    /// time.</p>
+    /// </li>
+    /// </ul>
+    pub fn archival_reason(&self) -> std::option::Option<&str> {
+        self.archival_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the backup the table was archived
+    /// to, when applicable in the archival reason. If you wish to restore this
+    /// backup to the same table name, you will need to delete the original
+    /// table.</p>
+    pub fn archival_backup_arn(&self) -> std::option::Option<&str> {
+        self.archival_backup_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ArchivalSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArchivalSummary");
@@ -3197,6 +3904,48 @@ pub struct SseDescription {
     /// archival process when table's AWS KMS key remains inaccessible for more than seven days
     /// from this date.</p>
     pub inaccessible_encryption_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl SseDescription {
+    /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Server-side encryption is enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - Server-side encryption is being updated.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::SseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Server-side encryption type. The only supported value is:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
+    /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
+    /// apply).</p>
+    /// </li>
+    /// </ul>
+    pub fn sse_type(&self) -> std::option::Option<&crate::model::SseType> {
+        self.sse_type.as_ref()
+    }
+    /// <p>The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
+    pub fn kms_master_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_master_key_arn.as_deref()
+    }
+    /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
+    /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
+    /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the table
+    /// archival process when table's AWS KMS key remains inaccessible for more than seven days
+    /// from this date.</p>
+    pub fn inaccessible_encryption_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.inaccessible_encryption_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for SseDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3470,6 +4219,24 @@ pub struct RestoreSummary {
     /// <p>Indicates if a restore is in progress or not.</p>
     pub restore_in_progress: std::option::Option<bool>,
 }
+impl RestoreSummary {
+    /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
+    pub fn source_backup_arn(&self) -> std::option::Option<&str> {
+        self.source_backup_arn.as_deref()
+    }
+    /// <p>The ARN of the source table of the backup that is being restored.</p>
+    pub fn source_table_arn(&self) -> std::option::Option<&str> {
+        self.source_table_arn.as_deref()
+    }
+    /// <p>Point in time or source backup time.</p>
+    pub fn restore_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.restore_date_time.as_ref()
+    }
+    /// <p>Indicates if a restore is in progress or not.</p>
+    pub fn restore_in_progress(&self) -> std::option::Option<bool> {
+        self.restore_in_progress
+    }
+}
 impl std::fmt::Debug for RestoreSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreSummary");
@@ -3616,6 +4383,81 @@ pub struct ReplicaDescription {
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexDescription>>,
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
     pub replica_inaccessible_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ReplicaDescription {
+    /// <p>The name of the Region.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>The current state of the replica:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The replica is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The replica is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The replica is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The replica is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.</p>
+    /// <note>
+    /// <p>If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+    /// </note>
+    /// </li>
+    /// <li>      
+    /// <p>
+    /// <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to encrypt the table is inaccessible.</p>
+    /// <note>
+    /// <p>If the AWS KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
+    /// </note>
+    /// </li>
+    /// </ul>
+    pub fn replica_status(&self) -> std::option::Option<&crate::model::ReplicaStatus> {
+        self.replica_status.as_ref()
+    }
+    /// <p>Detailed information about the replica status.</p>
+    pub fn replica_status_description(&self) -> std::option::Option<&str> {
+        self.replica_status_description.as_deref()
+    }
+    /// <p>Specifies the progress of a Create, Update, or Delete action on the replica
+    /// as a percentage.</p>
+    pub fn replica_status_percent_progress(&self) -> std::option::Option<&str> {
+        self.replica_status_percent_progress.as_deref()
+    }
+    /// <p>The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
+    /// encryption.</p>
+    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+        self.kms_master_key_id.as_deref()
+    }
+    /// <p>Replica-specific provisioned throughput. If not described, uses the source table's
+    /// provisioned throughput settings.</p>
+    pub fn provisioned_throughput_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
+        self.provisioned_throughput_override.as_ref()
+    }
+    /// <p>Replica-specific global secondary index settings.</p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexDescription]> {
+        self.global_secondary_indexes.as_deref()
+    }
+    /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
+    pub fn replica_inaccessible_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.replica_inaccessible_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicaDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3882,6 +4724,18 @@ pub struct ReplicaGlobalSecondaryIndexDescription {
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
 }
+impl ReplicaGlobalSecondaryIndexDescription {
+    /// <p>The name of the global secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>If not described, uses the source table GSI's read capacity settings.</p>
+    pub fn provisioned_throughput_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
+        self.provisioned_throughput_override.as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicaGlobalSecondaryIndexDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexDescription");
@@ -3954,6 +4808,13 @@ pub struct ProvisionedThroughputOverride {
     /// <p>Replica-specific read capacity units. If not specified, uses the source table's
     /// read capacity settings.</p>
     pub read_capacity_units: std::option::Option<i64>,
+}
+impl ProvisionedThroughputOverride {
+    /// <p>Replica-specific read capacity units. If not specified, uses the source table's
+    /// read capacity settings.</p>
+    pub fn read_capacity_units(&self) -> std::option::Option<i64> {
+        self.read_capacity_units
+    }
 }
 impl std::fmt::Debug for ProvisionedThroughputOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4030,6 +4891,40 @@ pub struct StreamSpecification {
     /// </li>
     /// </ul>
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
+}
+impl StreamSpecification {
+    /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
+    pub fn stream_enabled(&self) -> std::option::Option<bool> {
+        self.stream_enabled
+    }
+    /// <p>
+    /// When an item in the table is modified, <code>StreamViewType</code>
+    /// determines what information is written to the stream for this table. Valid values for
+    /// <code>StreamViewType</code> are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written
+    /// to the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is
+    /// written to the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are
+    /// written to the stream.</p>
+    /// </li>
+    /// </ul>
+    pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
+        self.stream_view_type.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4270,6 +5165,95 @@ pub struct GlobalSecondaryIndexDescription {
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     pub index_arn: std::option::Option<std::string::String>,
+}
+impl GlobalSecondaryIndexDescription {
+    /// <p>The name of the global secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Represents attributes that are copied (projected) from the table into the global
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
+    pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
+        self.projection.as_ref()
+    }
+    /// <p>The current state of the global secondary index:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The index is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The index is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The index is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The index is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn index_status(&self) -> std::option::Option<&crate::model::IndexStatus> {
+        self.index_status.as_ref()
+    }
+    /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from
+    /// the table and determining whether they can be added to the index. (Not all items will qualify:  For example, a partition key
+    /// cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed,
+    /// the backfilling operation is complete and <code>Backfilling</code> is false.</p>
+    /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase
+    /// when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You
+    /// can't delete the index that is being created when <code>IndexStatus</code> is set to
+    /// CREATING and <code>Backfilling</code> is false. </p>
+    /// <note>
+    /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
+    /// </note>
+    pub fn backfilling(&self) -> std::option::Option<bool> {
+        self.backfilling
+    }
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughputDescription> {
+        self.provisioned_throughput.as_ref()
+    }
+    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    pub fn index_size_bytes(&self) -> i64 {
+        self.index_size_bytes
+    }
+    /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    pub fn item_count(&self) -> i64 {
+        self.item_count
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    pub fn index_arn(&self) -> std::option::Option<&str> {
+        self.index_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GlobalSecondaryIndexDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4556,6 +5540,33 @@ pub struct ProvisionedThroughputDescription {
     /// <code>ThrottlingException</code>.</p>
     pub write_capacity_units: std::option::Option<i64>,
 }
+impl ProvisionedThroughputDescription {
+    /// <p>The date and time of the last provisioned throughput increase for this table.</p>
+    pub fn last_increase_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_increase_date_time.as_ref()
+    }
+    /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
+    pub fn last_decrease_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_decrease_date_time.as_ref()
+    }
+    /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day.
+    /// For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn number_of_decreases_today(&self) -> std::option::Option<i64> {
+        self.number_of_decreases_today
+    }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly
+    /// consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100
+    /// eventually consistent <code>ReadCapacityUnits</code> per second.</p>
+    pub fn read_capacity_units(&self) -> std::option::Option<i64> {
+        self.read_capacity_units
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>.</p>
+    pub fn write_capacity_units(&self) -> std::option::Option<i64> {
+        self.write_capacity_units
+    }
+}
 impl std::fmt::Debug for ProvisionedThroughputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedThroughputDescription");
@@ -4691,6 +5702,34 @@ pub struct Projection {
     /// must not exceed 20. If you project the same attribute into two
     /// different indexes, this counts as two distinct attributes when determining the total.</p>
     pub non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Projection {
+    /// <p>The set of attributes that are projected into the index:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+    /// index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code> - All of the table attributes are projected into the index.</p>
+    /// </li>
+    /// </ul>
+    pub fn projection_type(&self) -> std::option::Option<&crate::model::ProjectionType> {
+        self.projection_type.as_ref()
+    }
+    /// <p>Represents the non-key attribute names which will be projected into the index.</p>
+    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
+    /// must not exceed 20. If you project the same attribute into two
+    /// different indexes, this counts as two distinct attributes when determining the total.</p>
+    pub fn non_key_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.non_key_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for Projection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4886,6 +5925,34 @@ pub struct KeySchemaElement {
     /// </note>
     pub key_type: std::option::Option<crate::model::KeyType>,
 }
+impl KeySchemaElement {
+    /// <p>The name of a key attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The role that this key attribute will assume:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
+        self.key_type.as_ref()
+    }
+}
 impl std::fmt::Debug for KeySchemaElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeySchemaElement");
@@ -5071,6 +6138,52 @@ pub struct LocalSecondaryIndexDescription {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     pub index_arn: std::option::Option<std::string::String>,
 }
+impl LocalSecondaryIndexDescription {
+    /// <p>Represents the name of the local secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Represents attributes that are copied (projected) from the table into the global
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
+    pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
+        self.projection.as_ref()
+    }
+    /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    pub fn index_size_bytes(&self) -> i64 {
+        self.index_size_bytes
+    }
+    /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
+    pub fn item_count(&self) -> i64 {
+        self.item_count
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
+    pub fn index_arn(&self) -> std::option::Option<&str> {
+        self.index_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LocalSecondaryIndexDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LocalSecondaryIndexDescription");
@@ -5249,6 +6362,29 @@ pub struct BillingModeSummary {
     /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
     pub last_update_to_pay_per_request_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BillingModeSummary {
+    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
+        self.billing_mode.as_ref()
+    }
+    /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
+    pub fn last_update_to_pay_per_request_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_to_pay_per_request_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for BillingModeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BillingModeSummary");
@@ -5416,6 +6552,30 @@ pub struct AttributeDefinition {
     /// </li>
     /// </ul>
     pub attribute_type: std::option::Option<crate::model::ScalarAttributeType>,
+}
+impl AttributeDefinition {
+    /// <p>A name for the attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The data type for the attribute, where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>S</code> - the attribute is of type String</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>N</code> - the attribute is of type Number</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>B</code> - the attribute is of type Binary</p>
+    /// </li>
+    /// </ul>
+    pub fn attribute_type(&self) -> std::option::Option<&crate::model::ScalarAttributeType> {
+        self.attribute_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AttributeDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5591,6 +6751,20 @@ pub struct ReplicationGroupUpdate {
     /// <p>The parameters required for deleting a replica for the table.</p>
     pub delete: std::option::Option<crate::model::DeleteReplicationGroupMemberAction>,
 }
+impl ReplicationGroupUpdate {
+    /// <p>The parameters required for creating a replica for the table.</p>
+    pub fn create(&self) -> std::option::Option<&crate::model::CreateReplicationGroupMemberAction> {
+        self.create.as_ref()
+    }
+    /// <p>The parameters required for updating a replica for the table.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::UpdateReplicationGroupMemberAction> {
+        self.update.as_ref()
+    }
+    /// <p>The parameters required for deleting a replica for the table.</p>
+    pub fn delete(&self) -> std::option::Option<&crate::model::DeleteReplicationGroupMemberAction> {
+        self.delete.as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicationGroupUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationGroupUpdate");
@@ -5674,6 +6848,12 @@ pub struct DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
     pub region_name: std::option::Option<std::string::String>,
 }
+impl DeleteReplicationGroupMemberAction {
+    /// <p>The Region where the replica exists.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationGroupMemberAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationGroupMemberAction");
@@ -5733,6 +6913,32 @@ pub struct UpdateReplicationGroupMemberAction {
     /// <p>Replica-specific global secondary index settings.</p>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
+}
+impl UpdateReplicationGroupMemberAction {
+    /// <p>The Region where the replica exists.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>The AWS KMS customer master key (CMK) of the replica that should be used for AWS KMS encryption.
+    /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+    /// ARN. Note that you should only provide this parameter if the key is different from
+    /// the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+        self.kms_master_key_id.as_deref()
+    }
+    /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's
+    /// provisioned throughput settings.</p>
+    pub fn provisioned_throughput_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
+        self.provisioned_throughput_override.as_ref()
+    }
+    /// <p>Replica-specific global secondary index settings.</p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndex]> {
+        self.global_secondary_indexes.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateReplicationGroupMemberAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5859,6 +7065,19 @@ pub struct ReplicaGlobalSecondaryIndex {
     pub provisioned_throughput_override:
         std::option::Option<crate::model::ProvisionedThroughputOverride>,
 }
+impl ReplicaGlobalSecondaryIndex {
+    /// <p>The name of the global secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the
+    /// source table GSI's read capacity settings.</p>
+    pub fn provisioned_throughput_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
+        self.provisioned_throughput_override.as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicaGlobalSecondaryIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndex");
@@ -5943,6 +7162,32 @@ pub struct CreateReplicationGroupMemberAction {
     /// <p>Replica-specific global secondary index settings.</p>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
+}
+impl CreateReplicationGroupMemberAction {
+    /// <p>The Region where the new replica will be created.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS encryption
+    /// in the new replica. To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+    /// alias name, or alias ARN. Note that you should only provide this parameter if the
+    /// key is different from the default DynamoDB KMS master key alias/aws/dynamodb.</p>
+    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+        self.kms_master_key_id.as_deref()
+    }
+    /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's
+    /// provisioned throughput settings.</p>
+    pub fn provisioned_throughput_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughputOverride> {
+        self.provisioned_throughput_override.as_ref()
+    }
+    /// <p>Replica-specific global secondary index settings.</p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndex]> {
+        self.global_secondary_indexes.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationGroupMemberAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6081,6 +7326,33 @@ pub struct SseSpecification {
     /// that you should only provide this parameter if the key is different from the default
     /// DynamoDB customer master key alias/aws/dynamodb.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
+}
+impl SseSpecification {
+    /// <p>Indicates whether server-side encryption is done using an AWS managed CMK or an AWS owned CMK. If enabled (true),
+    /// server-side encryption type is set to <code>KMS</code> and an AWS managed CMK is used (AWS KMS charges apply). If disabled (false) or not specified, server-side
+    /// encryption is set to AWS owned CMK.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>Server-side encryption type. The only supported value is:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
+    /// key is stored in your account and is managed by AWS KMS (AWS KMS charges
+    /// apply).</p>
+    /// </li>
+    /// </ul>
+    pub fn sse_type(&self) -> std::option::Option<&crate::model::SseType> {
+        self.sse_type.as_ref()
+    }
+    /// <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To
+    /// specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note
+    /// that you should only provide this parameter if the key is different from the default
+    /// DynamoDB customer master key alias/aws/dynamodb.</p>
+    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+        self.kms_master_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6227,6 +7499,47 @@ pub struct GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index to be removed.</p>
     pub delete: std::option::Option<crate::model::DeleteGlobalSecondaryIndexAction>,
 }
+impl GlobalSecondaryIndexUpdate {
+    /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::UpdateGlobalSecondaryIndexAction> {
+        self.update.as_ref()
+    }
+    /// <p>The parameters required for creating a global secondary index on an existing table:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>IndexName </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KeySchema </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AttributeDefinitions </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Projection </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ProvisionedThroughput </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn create(&self) -> std::option::Option<&crate::model::CreateGlobalSecondaryIndexAction> {
+        self.create.as_ref()
+    }
+    /// <p>The name of an existing global secondary index to be removed.</p>
+    pub fn delete(&self) -> std::option::Option<&crate::model::DeleteGlobalSecondaryIndexAction> {
+        self.delete.as_ref()
+    }
+}
 impl std::fmt::Debug for GlobalSecondaryIndexUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlobalSecondaryIndexUpdate");
@@ -6364,6 +7677,12 @@ pub struct DeleteGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be deleted.</p>
     pub index_name: std::option::Option<std::string::String>,
 }
+impl DeleteGlobalSecondaryIndexAction {
+    /// <p>The name of the global secondary index to be deleted.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGlobalSecondaryIndexAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGlobalSecondaryIndexAction");
@@ -6420,6 +7739,29 @@ pub struct CreateGlobalSecondaryIndexAction {
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
+}
+impl CreateGlobalSecondaryIndexAction {
+    /// <p>The name of the global secondary index to be created.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The key schema for the global secondary index.</p>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Represents attributes that are copied (projected) from the table into an index. These
+    /// are in addition to the primary key attributes and index key attributes, which are
+    /// automatically projected.</p>
+    pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
+        self.projection.as_ref()
+    }
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGlobalSecondaryIndexAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6542,6 +7884,22 @@ pub struct ProvisionedThroughput {
     /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
     pub write_capacity_units: std::option::Option<i64>,
 }
+impl ProvisionedThroughput {
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
+    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+    pub fn read_capacity_units(&self) -> std::option::Option<i64> {
+        self.read_capacity_units
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
+    /// <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
+    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</p>
+    pub fn write_capacity_units(&self) -> std::option::Option<i64> {
+        self.write_capacity_units
+    }
+}
 impl std::fmt::Debug for ProvisionedThroughput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedThroughput");
@@ -6618,6 +7976,19 @@ pub struct UpdateGlobalSecondaryIndexAction {
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
+impl UpdateGlobalSecondaryIndexAction {
+    /// <p>The name of the global secondary index to be updated.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGlobalSecondaryIndexAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGlobalSecondaryIndexAction");
@@ -6693,6 +8064,21 @@ pub struct ItemCollectionMetrics {
     /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
     pub size_estimate_range_gb: std::option::Option<std::vec::Vec<f64>>,
+}
+impl ItemCollectionMetrics {
+    /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
+    pub fn item_collection_key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.item_collection_key.as_ref()
+    }
+    /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
+    /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+    pub fn size_estimate_range_gb(&self) -> std::option::Option<&[f64]> {
+        self.size_estimate_range_gb.as_deref()
+    }
 }
 impl std::fmt::Debug for ItemCollectionMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6835,6 +8221,15 @@ pub enum AttributeValue {
     /// <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code>
     /// </p>
     Ss(std::vec::Vec<std::string::String>),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AttributeValue {
     /// Tries to convert the enum instance into [`B`](crate::model::AttributeValue::B), extracting the inner [`Blob`](aws_smithy_types::Blob).
@@ -6972,6 +8367,10 @@ impl AttributeValue {
     pub fn is_ss(&self) -> bool {
         self.as_ss().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>The capacity units consumed by an operation. The data returned includes the total
@@ -6998,6 +8397,42 @@ pub struct ConsumedCapacity {
     /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
     pub global_secondary_indexes:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Capacity>>,
+}
+impl ConsumedCapacity {
+    /// <p>The name of the table that was affected by the operation.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The total number of capacity units consumed by the operation.</p>
+    pub fn capacity_units(&self) -> std::option::Option<f64> {
+        self.capacity_units
+    }
+    /// <p>The total number of read capacity units consumed by the operation.</p>
+    pub fn read_capacity_units(&self) -> std::option::Option<f64> {
+        self.read_capacity_units
+    }
+    /// <p>The total number of write capacity units consumed by the operation.</p>
+    pub fn write_capacity_units(&self) -> std::option::Option<f64> {
+        self.write_capacity_units
+    }
+    /// <p>The amount of throughput consumed on the table affected by the operation.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::Capacity> {
+        self.table.as_ref()
+    }
+    /// <p>The amount of throughput consumed on each local index affected by the operation.</p>
+    pub fn local_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Capacity>>
+    {
+        self.local_secondary_indexes.as_ref()
+    }
+    /// <p>The amount of throughput consumed on each global index affected by the operation.</p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Capacity>>
+    {
+        self.global_secondary_indexes.as_ref()
+    }
 }
 impl std::fmt::Debug for ConsumedCapacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7162,6 +8597,20 @@ pub struct Capacity {
     pub write_capacity_units: std::option::Option<f64>,
     /// <p>The total number of capacity units consumed on a table or an index.</p>
     pub capacity_units: std::option::Option<f64>,
+}
+impl Capacity {
+    /// <p>The total number of read capacity units consumed on a table or an index.</p>
+    pub fn read_capacity_units(&self) -> std::option::Option<f64> {
+        self.read_capacity_units
+    }
+    /// <p>The total number of write capacity units consumed on a table or an index.</p>
+    pub fn write_capacity_units(&self) -> std::option::Option<f64> {
+        self.write_capacity_units
+    }
+    /// <p>The total number of capacity units consumed on a table or an index.</p>
+    pub fn capacity_units(&self) -> std::option::Option<f64> {
+        self.capacity_units
+    }
 }
 impl std::fmt::Debug for Capacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7700,6 +9149,208 @@ pub struct ExpectedAttributeValue {
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub attribute_value_list: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
+}
+impl ExpectedAttributeValue {
+    /// <p>Represents the data for the expected attribute.</p>
+    /// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
+    /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.value.as_ref()
+    }
+    /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value
+    /// already exists in the table. If it is found, then the operation succeeds. If it is not
+    /// found, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does
+    /// not exist in the table. If in fact the value does not exist, then the assumption
+    /// is valid and the operation succeeds. If the value is found, despite the assumption that it
+    /// does not exist, the operation fails with a <code>ConditionCheckFailedException</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default setting for <code>Exists</code> is <code>true</code>. If you supply a <code>Value</code> all
+    /// by itself, DynamoDB assumes the attribute exists: You don't have to set <code>Exists</code> to
+    /// <code>true</code>, because it is implied.</p>
+    /// <p>DynamoDB returns a <code>ValidationException</code> if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check. (You expect a
+    /// value to exist, but don't specify what that value is.)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot
+    /// expect an attribute to have a value, while also expecting it not to exist.)</p>
+    /// </li>
+    /// </ul>
+    pub fn exists(&self) -> std::option::Option<bool> {
+        self.exists
+    }
+    /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals,
+    /// greater than, less than, etc.</p>
+    /// <p>The following comparison operators are available:</p>
+    /// <p>
+    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+    /// </p>
+    /// <p>The following are descriptions of each comparison operator.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
+    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LE</code> : Less than or equal. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LT</code> : Less than. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GE</code> : Greater than or equal. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GT</code> : Greater than. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <note>
+    /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <note>
+    /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
+    /// the operator checks for a substring match. If the target attribute of the comparison is
+    /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
+    /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+    /// operator evaluates to true if it finds an exact match with any member of the set.</p>
+    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
+    /// a set.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
+    /// the operator checks for the absence of a substring match. If the target attribute of the
+    /// comparison is Binary, then the operator checks for the absence of a subsequence of the
+    /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
+    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
+    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
+    /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
+    /// Binary (not a Number or a set type).</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN</code> : Checks for matching elements in a list.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
+    /// elements of type String, Number, or Binary. These attributes are compared against an
+    /// existing attribute of an item. If any elements of the input are equal to the item
+    /// attribute, the expression evaluates to true.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
+    /// to the second value. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
+    /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
+    /// target value is greater than, or equal to, the first element and less than, or equal to,
+    /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
+    /// the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
+    /// list depends on the <code>ComparisonOperator</code> being used.</p>
+    /// <p>For type Number, value comparisons are numeric.</p>
+    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
+    /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
+    /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
+    /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn attribute_value_list(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
+        self.attribute_value_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ExpectedAttributeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8388,6 +10039,105 @@ pub struct AttributeValueUpdate {
     /// </ul>
     pub action: std::option::Option<crate::model::AttributeAction>,
 }
+impl AttributeValueUpdate {
+    /// <p>Represents the data for an attribute.</p>
+    /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.value.as_ref()
+    }
+    /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>,
+    /// and <code>ADD</code>. The behavior depends on whether the specified primary key already exists
+    /// in the table.</p>
+    ///
+    /// <p>
+    /// <b>If an item with the specified <i>Key</i> is found in the table:</b>
+    /// </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PUT</code> - Adds the specified attribute to the item. If the attribute already
+    /// exists, it is replaced by the new value. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE</code> - If no value is specified, the attribute and its value are removed
+    /// from the item. The data type of the specified value must match the existing value's data
+    /// type.</p>
+    /// <p>If a <i>set</i> of values is specified, then those values are subtracted from the old
+    /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and the
+    /// <code>DELETE</code> action specified <code>[a,c]</code>, then the final attribute value would
+    /// be <code>[b]</code>. Specifying an empty set is an error.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADD</code> - If the attribute does not already exist, then the attribute and its
+    /// values are added to the item. If the attribute does exist, then the behavior of
+    /// <code>ADD</code> depends on the data type of the attribute:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then the
+    /// <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a
+    /// negative number, then it is subtracted from the existing attribute.</p>
+    /// <note>
+    /// <p> If you use <code>ADD</code> to increment or decrement a number value for an item
+    /// that doesn't exist before the update, DynamoDB uses 0 as the initial value.</p>
+    /// <p>In addition, if you use <code>ADD</code> to update an existing item, and intend to
+    /// increment or decrement an attribute value which does not yet exist, DynamoDB uses
+    /// <code>0</code> as the initial value. For example, suppose that the item you want
+    /// to update does not yet have an attribute named <i>itemcount</i>, but you decide to
+    /// <code>ADD</code> the number <code>3</code> to this attribute anyway, even though
+    /// it currently does not exist. DynamoDB will create the <i>itemcount</i> attribute, set
+    /// its initial value to <code>0</code>, and finally add <code>3</code> to it. The
+    /// result will be a new <i>itemcount</i> attribute in the item, with a value of
+    /// <code>3</code>.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>If the existing data type is a set, and if the <code>Value</code> is also a set, then the
+    /// <code>Value</code> is added to the existing set. (This is a <i>set</i> operation, not
+    /// mathematical addition.) For example, if the attribute value was the set
+    /// <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+    /// the final attribute value would be <code>[1,2,3]</code>. An error occurs if an Add
+    /// action is specified for a set attribute and the attribute type specified does not
+    /// match the existing set type. </p>
+    /// <p>Both sets must have the same primitive data type. For example, if the existing data
+    /// type is a set of strings, the <code>Value</code> must also be a set of strings. The same
+    /// holds true for number sets and binary sets.</p>
+    /// </li>
+    /// </ul>
+    /// <p>This action is only valid for an existing attribute whose data type is number or is a
+    /// set. Do not use <code>ADD</code> for any other data types.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>If no item with the specified <i>Key</i> is found:</b>
+    /// </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds
+    /// the attribute. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE</code> - Nothing happens; there is no attribute to delete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set
+    /// of numbers) for the attribute value. The only data types allowed are number and number
+    /// set; no other data types can be specified.</p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::AttributeAction> {
+        self.action.as_ref()
+    }
+}
 impl std::fmt::Debug for AttributeValueUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeValueUpdate");
@@ -8733,6 +10483,73 @@ pub struct ReplicaSettingsDescription {
         std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsDescription>,
     >,
 }
+impl ReplicaSettingsDescription {
+    /// <p>The Region name of the replica.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>The current state of the Region:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The Region is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The Region is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The Region is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The Region is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn replica_status(&self) -> std::option::Option<&crate::model::ReplicaStatus> {
+        self.replica_status.as_ref()
+    }
+    /// <p>The read/write capacity mode of the replica.</p>
+    pub fn replica_billing_mode_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::BillingModeSummary> {
+        self.replica_billing_mode_summary.as_ref()
+    }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
+    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// </p>
+    pub fn replica_provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
+        self.replica_provisioned_read_capacity_units
+    }
+    /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
+    pub fn replica_provisioned_read_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.replica_provisioned_read_capacity_auto_scaling_settings
+            .as_ref()
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
+    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn replica_provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
+        self.replica_provisioned_write_capacity_units
+    }
+    /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
+    pub fn replica_provisioned_write_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.replica_provisioned_write_capacity_auto_scaling_settings
+            .as_ref()
+    }
+    /// <p>Replica global secondary index settings for the global table.</p>
+    pub fn replica_global_secondary_index_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexSettingsDescription]> {
+        self.replica_global_secondary_index_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplicaSettingsDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaSettingsDescription");
@@ -9021,6 +10838,58 @@ pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     pub provisioned_write_capacity_auto_scaling_settings:
         std::option::Option<crate::model::AutoScalingSettingsDescription>,
 }
+impl ReplicaGlobalSecondaryIndexSettingsDescription {
+    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>
+    /// The current status of the global secondary index:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The global secondary index is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The global secondary index is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The global secondary index is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The global secondary index is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn index_status(&self) -> std::option::Option<&crate::model::IndexStatus> {
+        self.index_status.as_ref()
+    }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    pub fn provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
+        self.provisioned_read_capacity_units
+    }
+    /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
+    pub fn provisioned_read_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.provisioned_read_capacity_auto_scaling_settings
+            .as_ref()
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    pub fn provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
+        self.provisioned_write_capacity_units
+    }
+    /// <p>Auto scaling settings for a global secondary index replica's write capacity
+    /// units.</p>
+    pub fn provisioned_write_capacity_auto_scaling_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsDescription> {
+        self.provisioned_write_capacity_auto_scaling_settings
+            .as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicaGlobalSecondaryIndexSettingsDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexSettingsDescription");
@@ -9222,6 +11091,33 @@ pub struct ReplicaSettingsUpdate {
     pub replica_global_secondary_index_settings_update:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate>>,
 }
+impl ReplicaSettingsUpdate {
+    /// <p>The Region of the replica to be added.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write
+    /// Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// </p>
+    pub fn replica_provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
+        self.replica_provisioned_read_capacity_units
+    }
+    /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
+    pub fn replica_provisioned_read_capacity_auto_scaling_settings_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
+        self.replica_provisioned_read_capacity_auto_scaling_settings_update
+            .as_ref()
+    }
+    /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+    pub fn replica_global_secondary_index_settings_update(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate]> {
+        self.replica_global_secondary_index_settings_update
+            .as_deref()
+    }
+}
 impl std::fmt::Debug for ReplicaSettingsUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaSettingsUpdate");
@@ -9361,6 +11257,24 @@ pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
     pub provisioned_read_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
 }
+impl ReplicaGlobalSecondaryIndexSettingsUpdate {
+    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    pub fn provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
+        self.provisioned_read_capacity_units
+    }
+    /// <p>Auto scaling settings for managing a global secondary index replica's read capacity
+    /// units.</p>
+    pub fn provisioned_read_capacity_auto_scaling_settings_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
+        self.provisioned_read_capacity_auto_scaling_settings_update
+            .as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicaGlobalSecondaryIndexSettingsUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaGlobalSecondaryIndexSettingsUpdate");
@@ -9460,6 +11374,25 @@ pub struct GlobalTableGlobalSecondaryIndexSettingsUpdate {
     /// units.</p>
     pub provisioned_write_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
+}
+impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
+    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+    /// </p>
+    pub fn provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
+        self.provisioned_write_capacity_units
+    }
+    /// <p>Auto scaling settings for managing a global secondary index's write capacity
+    /// units.</p>
+    pub fn provisioned_write_capacity_auto_scaling_settings_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
+        self.provisioned_write_capacity_auto_scaling_settings_update
+            .as_ref()
+    }
 }
 impl std::fmt::Debug for GlobalTableGlobalSecondaryIndexSettingsUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9581,6 +11514,46 @@ pub struct GlobalTableDescription {
     pub global_table_status: std::option::Option<crate::model::GlobalTableStatus>,
     /// <p>The global table name.</p>
     pub global_table_name: std::option::Option<std::string::String>,
+}
+impl GlobalTableDescription {
+    /// <p>The Regions where the global table has replicas.</p>
+    pub fn replication_group(&self) -> std::option::Option<&[crate::model::ReplicaDescription]> {
+        self.replication_group.as_deref()
+    }
+    /// <p>The unique identifier of the global table.</p>
+    pub fn global_table_arn(&self) -> std::option::Option<&str> {
+        self.global_table_arn.as_deref()
+    }
+    /// <p>The creation time of the global table.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The current state of the global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The global table is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The global table is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The global table is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The global table is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_table_status(&self) -> std::option::Option<&crate::model::GlobalTableStatus> {
+        self.global_table_status.as_ref()
+    }
+    /// <p>The global table name.</p>
+    pub fn global_table_name(&self) -> std::option::Option<&str> {
+        self.global_table_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GlobalTableDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9819,6 +11792,16 @@ pub struct ReplicaUpdate {
     /// <p>The name of the existing replica to be removed.</p>
     pub delete: std::option::Option<crate::model::DeleteReplicaAction>,
 }
+impl ReplicaUpdate {
+    /// <p>The parameters required for creating a replica on an existing global table.</p>
+    pub fn create(&self) -> std::option::Option<&crate::model::CreateReplicaAction> {
+        self.create.as_ref()
+    }
+    /// <p>The name of the existing replica to be removed.</p>
+    pub fn delete(&self) -> std::option::Option<&crate::model::DeleteReplicaAction> {
+        self.delete.as_ref()
+    }
+}
 impl std::fmt::Debug for ReplicaUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicaUpdate");
@@ -9886,6 +11869,12 @@ pub struct DeleteReplicaAction {
     /// <p>The Region of the replica to be removed.</p>
     pub region_name: std::option::Option<std::string::String>,
 }
+impl DeleteReplicaAction {
+    /// <p>The Region of the replica to be removed.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicaAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicaAction");
@@ -9933,6 +11922,12 @@ impl DeleteReplicaAction {
 pub struct CreateReplicaAction {
     /// <p>The Region of the replica to be added.</p>
     pub region_name: std::option::Option<std::string::String>,
+}
+impl CreateReplicaAction {
+    /// <p>The Region of the replica to be added.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReplicaAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10109,6 +12104,22 @@ pub struct ContinuousBackupsDescription {
     pub point_in_time_recovery_description:
         std::option::Option<crate::model::PointInTimeRecoveryDescription>,
 }
+impl ContinuousBackupsDescription {
+    /// <p>
+    /// <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED,
+    /// DISABLED</p>
+    pub fn continuous_backups_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousBackupsStatus> {
+        self.continuous_backups_status.as_ref()
+    }
+    /// <p>The description of the point in time recovery settings applied to the table.</p>
+    pub fn point_in_time_recovery_description(
+        &self,
+    ) -> std::option::Option<&crate::model::PointInTimeRecoveryDescription> {
+        self.point_in_time_recovery_description.as_ref()
+    }
+}
 impl std::fmt::Debug for ContinuousBackupsDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContinuousBackupsDescription");
@@ -10211,6 +12222,39 @@ pub struct PointInTimeRecoveryDescription {
     /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
     /// </p>
     pub latest_restorable_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PointInTimeRecoveryDescription {
+    /// <p>The current state of point in time recovery:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLING</code> - Point in time recovery is being enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Point in time recovery is enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - Point in time recovery is disabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn point_in_time_recovery_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PointInTimeRecoveryStatus> {
+        self.point_in_time_recovery_status.as_ref()
+    }
+    /// <p>Specifies the earliest point in time you can restore your table to. You can restore your
+    /// table to any point in time during the last 35 days. </p>
+    pub fn earliest_restorable_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.earliest_restorable_date_time.as_ref()
+    }
+    /// <p>
+    /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
+    /// </p>
+    pub fn latest_restorable_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_restorable_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for PointInTimeRecoveryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10452,6 +12496,12 @@ pub struct PointInTimeRecoverySpecification {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub point_in_time_recovery_enabled: std::option::Option<bool>,
 }
+impl PointInTimeRecoverySpecification {
+    /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
+    pub fn point_in_time_recovery_enabled(&self) -> std::option::Option<bool> {
+        self.point_in_time_recovery_enabled
+    }
+}
 impl std::fmt::Debug for PointInTimeRecoverySpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PointInTimeRecoverySpecification");
@@ -10515,6 +12565,24 @@ pub struct CancellationReason {
     pub code: std::option::Option<std::string::String>,
     /// <p>Cancellation reason message description.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl CancellationReason {
+    /// <p>Item in the request which caused the transaction to get cancelled.</p>
+    pub fn item(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.item.as_ref()
+    }
+    /// <p>Status code for the result of the cancelled transaction.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Cancellation reason message description.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for CancellationReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10612,6 +12680,24 @@ pub struct TransactWriteItem {
     pub delete: std::option::Option<crate::model::Delete>,
     /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
     pub update: std::option::Option<crate::model::Update>,
+}
+impl TransactWriteItem {
+    /// <p>A request to perform a check item operation.</p>
+    pub fn condition_check(&self) -> std::option::Option<&crate::model::ConditionCheck> {
+        self.condition_check.as_ref()
+    }
+    /// <p>A request to perform a <code>PutItem</code> operation.</p>
+    pub fn put(&self) -> std::option::Option<&crate::model::Put> {
+        self.put.as_ref()
+    }
+    /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
+    pub fn delete(&self) -> std::option::Option<&crate::model::Delete> {
+        self.delete.as_ref()
+    }
+    /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
 }
 impl std::fmt::Debug for TransactWriteItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10726,6 +12812,55 @@ pub struct Update {
     /// values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
+}
+impl Update {
+    /// <p>The primary key of the item to be updated. Each element consists of
+    /// an attribute name and a value for that attribute.</p>
+    pub fn key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.key.as_ref()
+    }
+    /// <p>An expression that defines one or more attributes to be updated,
+    /// the action to be performed on them, and new value(s) for them.</p>
+    pub fn update_expression(&self) -> std::option::Option<&str> {
+        self.update_expression.as_deref()
+    }
+    /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A condition that must be satisfied in order for a conditional update to
+    /// succeed.</p>
+    pub fn condition_expression(&self) -> std::option::Option<&str> {
+        self.condition_expression.as_deref()
+    }
+    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    pub fn expression_attribute_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.expression_attribute_names.as_ref()
+    }
+    /// <p>One or more values that can be substituted in an expression.</p>
+    pub fn expression_attribute_values(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.expression_attribute_values.as_ref()
+    }
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
+    /// get the item attributes if the <code>Update</code> condition fails.
+    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
+    /// values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+    pub fn return_values_on_condition_check_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
+        self.return_values_on_condition_check_failure.as_ref()
+    }
 }
 impl std::fmt::Debug for Update {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11014,6 +13149,49 @@ pub struct Delete {
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
+impl Delete {
+    /// <p>The primary key of the item to be deleted. Each element consists of an
+    /// attribute name and a value for that attribute.</p>
+    pub fn key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.key.as_ref()
+    }
+    /// <p>Name of the table in which the item to be deleted resides.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
+    pub fn condition_expression(&self) -> std::option::Option<&str> {
+        self.condition_expression.as_deref()
+    }
+    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    pub fn expression_attribute_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.expression_attribute_names.as_ref()
+    }
+    /// <p>One or more values that can be substituted in an expression.</p>
+    pub fn expression_attribute_values(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.expression_attribute_values.as_ref()
+    }
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
+    /// get the item attributes if the <code>Delete</code> condition fails.
+    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
+    /// values are: NONE and ALL_OLD.</p>
+    pub fn return_values_on_condition_check_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
+        self.return_values_on_condition_check_failure.as_ref()
+    }
+}
 impl std::fmt::Debug for Delete {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Delete");
@@ -11228,6 +13406,52 @@ pub struct Put {
     /// values are: NONE and ALL_OLD.</p>
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
+}
+impl Put {
+    /// <p>A map of attribute name to attribute values, representing the primary key
+    /// of the item to be written by <code>PutItem</code>. All of the table's primary key
+    /// attributes must be specified, and their data types must match those of the table's
+    /// key schema. If any attributes are present in the item that are part of an index
+    /// key schema for the table, their types must match the index key schema. </p>
+    pub fn item(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.item.as_ref()
+    }
+    /// <p>Name of the table in which to write the item.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    pub fn condition_expression(&self) -> std::option::Option<&str> {
+        self.condition_expression.as_deref()
+    }
+    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    pub fn expression_attribute_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.expression_attribute_names.as_ref()
+    }
+    /// <p>One or more values that can be substituted in an expression.</p>
+    pub fn expression_attribute_values(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.expression_attribute_values.as_ref()
+    }
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
+    /// get the item attributes if the <code>Put</code> condition fails.
+    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
+    /// values are: NONE and ALL_OLD.</p>
+    pub fn return_values_on_condition_check_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
+        self.return_values_on_condition_check_failure.as_ref()
+    }
 }
 impl std::fmt::Debug for Put {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11448,6 +13672,49 @@ pub struct ConditionCheck {
     pub return_values_on_condition_check_failure:
         std::option::Option<crate::model::ReturnValuesOnConditionCheckFailure>,
 }
+impl ConditionCheck {
+    /// <p>The primary key of the item to be checked. Each element consists of an
+    /// attribute name and a value for that attribute.</p>
+    pub fn key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.key.as_ref()
+    }
+    /// <p>Name of the table for the check item request.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    pub fn condition_expression(&self) -> std::option::Option<&str> {
+        self.condition_expression.as_deref()
+    }
+    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    pub fn expression_attribute_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.expression_attribute_names.as_ref()
+    }
+    /// <p>One or more values that can be substituted in an expression.</p>
+    pub fn expression_attribute_values(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.expression_attribute_values.as_ref()
+    }
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to
+    /// get the item attributes if the <code>ConditionCheck</code> condition fails.
+    /// For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
+    /// values are: NONE and ALL_OLD.</p>
+    pub fn return_values_on_condition_check_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::ReturnValuesOnConditionCheckFailure> {
+        self.return_values_on_condition_check_failure.as_ref()
+    }
+}
 impl std::fmt::Debug for ConditionCheck {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionCheck");
@@ -11642,6 +13909,16 @@ pub struct ItemResponse {
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
 }
+impl ItemResponse {
+    /// <p>Map of attribute data consisting of the data type and attribute value.</p>
+    pub fn item(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.item.as_ref()
+    }
+}
 impl std::fmt::Debug for ItemResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ItemResponse");
@@ -11706,6 +13983,14 @@ pub struct TransactGetItem {
     /// with the name of the table that contains the item, and optionally
     /// the specific attributes of the item to retrieve.</p>
     pub get: std::option::Option<crate::model::Get>,
+}
+impl TransactGetItem {
+    /// <p>Contains the primary key that identifies the item to get, together
+    /// with the name of the table that contains the item, and optionally
+    /// the specific attributes of the item to retrieve.</p>
+    pub fn get(&self) -> std::option::Option<&crate::model::Get> {
+        self.get.as_ref()
+    }
 }
 impl std::fmt::Debug for TransactGetItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11772,6 +14057,37 @@ pub struct Get {
     /// ProjectionExpression parameter.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Get {
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects that
+    /// specifies the primary key of the item to retrieve.</p>
+    pub fn key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.key.as_ref()
+    }
+    /// <p>The name of the table from which to retrieve the specified item.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A string that identifies one or more attributes of the specified item
+    /// to retrieve from the table.  The attributes in the expression must be
+    /// separated by commas. If no attribute names are specified, then all
+    /// attributes of the specified item are returned. If any of the requested
+    /// attributes are not found, they do not appear in the result.</p>
+    pub fn projection_expression(&self) -> std::option::Option<&str> {
+        self.projection_expression.as_deref()
+    }
+    /// <p>One or more substitution tokens for attribute names in the
+    /// ProjectionExpression parameter.</p>
+    pub fn expression_attribute_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.expression_attribute_names.as_ref()
+    }
 }
 impl std::fmt::Debug for Get {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11923,6 +14239,18 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to
+    /// one tag with the same key. If you try to add an existing tag (same key), the existing
+    /// tag value will be updated to the new value. </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12160,6 +14488,169 @@ pub struct Condition {
     /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a>
     /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
+}
+impl Condition {
+    /// <p>One or more values to evaluate against the supplied attribute. The number of values in the
+    /// list depends on the <code>ComparisonOperator</code> being used.</p>
+    /// <p>For type Number, value comparisons are numeric.</p>
+    /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character
+    /// code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code>
+    /// is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+    /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
+    pub fn attribute_value_list(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
+        self.attribute_value_list.as_deref()
+    }
+    /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
+    /// <p>The following comparison operators are available:</p>
+    /// <p>
+    /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+    /// </p>
+    /// <p>The following are descriptions of each comparison operator.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including lists and maps.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including lists and maps.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
+    /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <code>AttributeValue</code> of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LE</code> : Less than or equal. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LT</code> : Less than. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GE</code> : Greater than or equal. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GT</code> : Greater than. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code> element of a different
+    /// type than the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <note>
+    /// <p>This operator tests for the existence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for all data types, including lists and maps.</p>
+    /// <note>
+    /// <p>This operator tests for the nonexistence of an attribute, not its data type.  If the data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>, the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code> comparison operator.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then
+    /// the operator checks for a substring match. If the target attribute of the comparison is
+    /// of type Binary, then the operator looks for a subsequence of the target that matches the input.
+    /// If the target attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the
+    /// operator evaluates to true if it finds an exact match with any member of the set.</p>
+    /// <p>CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value in
+    /// a set.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> element of type String,
+    /// Number, or Binary (not a set type). If the target attribute of the comparison is a String, then
+    /// the operator checks for the absence of a substring match. If the target attribute of the
+    /// comparison is Binary, then the operator checks for the absence of a subsequence of the
+    /// target that matches the input. If the target attribute of the comparison is a set ("<code>SS</code>",
+    /// "<code>NS</code>", or "<code>BS</code>"), then the operator evaluates to true if it <i>does not</i> find an exact match with any member of the set.</p>
+    /// <p>NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>", "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BEGINS_WITH</code> : Checks for a prefix. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain only one <code>AttributeValue</code> of type String or
+    /// Binary (not a Number or a set type). The target attribute of the comparison must be of type String or
+    /// Binary (not a Number or a set type).</p>
+    /// <p></p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN</code> : Checks for matching elements in a list.</p>
+    /// <p>
+    /// <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
+    /// elements of type String, Number, or Binary. These attributes are compared against an
+    /// existing attribute of an item. If any elements of the input are equal to the item
+    /// attribute, the expression evaluates to true.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal
+    /// to the second value. </p>
+    /// <p>
+    /// <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same
+    /// type, either String, Number, or Binary (not a set type). A target attribute matches if the
+    /// target value is greater than, or equal to, the first element and less than, or equal to,
+    /// the second element. If an item contains an <code>AttributeValue</code> element of a different type than
+    /// the one provided in the request, the value does not match. For example,
+    /// <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
+    /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see
+    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a>
+    /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
 }
 impl std::fmt::Debug for Condition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12636,6 +15127,40 @@ pub struct LocalSecondaryIndex {
     /// attributes, which are automatically projected. </p>
     pub projection: std::option::Option<crate::model::Projection>,
 }
+impl LocalSecondaryIndex {
+    /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Represents attributes that are copied (projected) from the table into the local
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
+    pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
+        self.projection.as_ref()
+    }
+}
 impl std::fmt::Debug for LocalSecondaryIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LocalSecondaryIndex");
@@ -12789,6 +15314,47 @@ pub struct GlobalSecondaryIndex {
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
+impl GlobalSecondaryIndex {
+    /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Represents attributes that are copied (projected) from the table into the global
+    /// secondary index. These are in addition to the primary key attributes and index key
+    /// attributes, which are automatically projected. </p>
+    pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
+        self.projection.as_ref()
+    }
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
+}
 impl std::fmt::Debug for GlobalSecondaryIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlobalSecondaryIndex");
@@ -12938,6 +15504,16 @@ pub struct GlobalTable {
     /// <p>The Regions where the global table has replicas.</p>
     pub replication_group: std::option::Option<std::vec::Vec<crate::model::Replica>>,
 }
+impl GlobalTable {
+    /// <p>The global table name.</p>
+    pub fn global_table_name(&self) -> std::option::Option<&str> {
+        self.global_table_name.as_deref()
+    }
+    /// <p>The Regions where the global table has replicas.</p>
+    pub fn replication_group(&self) -> std::option::Option<&[crate::model::Replica]> {
+        self.replication_group.as_deref()
+    }
+}
 impl std::fmt::Debug for GlobalTable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlobalTable");
@@ -13011,6 +15587,12 @@ pub struct Replica {
     /// <p>The Region where the replica needs to be created.</p>
     pub region_name: std::option::Option<std::string::String>,
 }
+impl Replica {
+    /// <p>The Region where the replica needs to be created.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Replica {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Replica");
@@ -13060,6 +15642,16 @@ pub struct ExportSummary {
     pub export_arn: std::option::Option<std::string::String>,
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub export_status: std::option::Option<crate::model::ExportStatus>,
+}
+impl ExportSummary {
+    /// <p>The Amazon Resource Name (ARN) of the export.</p>
+    pub fn export_arn(&self) -> std::option::Option<&str> {
+        self.export_arn.as_deref()
+    }
+    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13188,6 +15780,22 @@ pub struct ContributorInsightsSummary {
     /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
 }
+impl ContributorInsightsSummary {
+    /// <p>Name of the table associated with the summary.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Name of the index associated with the summary, if any.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
+    pub fn contributor_insights_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ContributorInsightsStatus> {
+        self.contributor_insights_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ContributorInsightsSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContributorInsightsSummary");
@@ -13308,6 +15916,67 @@ pub struct BackupSummary {
     pub backup_type: std::option::Option<crate::model::BackupType>,
     /// <p>Size of the backup in bytes.</p>
     pub backup_size_bytes: std::option::Option<i64>,
+}
+impl BackupSummary {
+    /// <p>Name of the table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Unique identifier for the table.</p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>ARN associated with the table.</p>
+    pub fn table_arn(&self) -> std::option::Option<&str> {
+        self.table_arn.as_deref()
+    }
+    /// <p>ARN associated with the backup.</p>
+    pub fn backup_arn(&self) -> std::option::Option<&str> {
+        self.backup_arn.as_deref()
+    }
+    /// <p>Name of the specified backup.</p>
+    pub fn backup_name(&self) -> std::option::Option<&str> {
+        self.backup_name.as_deref()
+    }
+    /// <p>Time at which the backup was created.</p>
+    pub fn backup_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.backup_creation_date_time.as_ref()
+    }
+    /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This
+    /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its
+    /// creation.</p>
+    pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.backup_expiry_date_time.as_ref()
+    }
+    /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
+    pub fn backup_status(&self) -> std::option::Option<&crate::model::BackupStatus> {
+        self.backup_status.as_ref()
+    }
+    /// <p>BackupType:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
+    /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
+    /// table to the state it was in just before the point of deletion.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+    /// </li>
+    /// </ul>
+    pub fn backup_type(&self) -> std::option::Option<&crate::model::BackupType> {
+        self.backup_type.as_ref()
+    }
+    /// <p>Size of the backup in bytes.</p>
+    pub fn backup_size_bytes(&self) -> std::option::Option<i64> {
+        self.backup_size_bytes
+    }
 }
 impl std::fmt::Debug for BackupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13756,6 +16425,100 @@ pub struct ExportDescription {
     pub billed_size_bytes: std::option::Option<i64>,
     /// <p>The number of items exported.</p>
     pub item_count: std::option::Option<i64>,
+}
+impl ExportDescription {
+    /// <p>The Amazon Resource Name (ARN) of the table export.</p>
+    pub fn export_arn(&self) -> std::option::Option<&str> {
+        self.export_arn.as_deref()
+    }
+    /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
+    /// <p>The time at which the export task began.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time at which the export task completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The name of the manifest file for the export task.</p>
+    pub fn export_manifest(&self) -> std::option::Option<&str> {
+        self.export_manifest.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the table that was exported.</p>
+    pub fn table_arn(&self) -> std::option::Option<&str> {
+        self.table_arn.as_deref()
+    }
+    /// <p>Unique ID of the table that was exported.</p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>Point in time from which table data was exported.</p>
+    pub fn export_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.export_time.as_ref()
+    }
+    /// <p>The client token that was provided for the export task. A client token makes calls to
+    /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
+    /// identical calls have the same effect as one single call.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket containing the export.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The ID of the AWS account that owns the bucket containing the export.</p>
+    pub fn s3_bucket_owner(&self) -> std::option::Option<&str> {
+        self.s3_bucket_owner.as_deref()
+    }
+    /// <p>The Amazon S3 bucket prefix used as the file name and path of the exported
+    /// snapshot.</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
+    /// <p>Type of encryption used on the bucket where export data is stored. Valid values
+    /// for <code>S3SseAlgorithm</code> are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
+    /// </li>
+    /// </ul>
+    pub fn s3_sse_algorithm(&self) -> std::option::Option<&crate::model::S3SseAlgorithm> {
+        self.s3_sse_algorithm.as_ref()
+    }
+    /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data is
+    /// stored (if applicable).</p>
+    pub fn s3_sse_kms_key_id(&self) -> std::option::Option<&str> {
+        self.s3_sse_kms_key_id.as_deref()
+    }
+    /// <p>Status code for the result of the failed export.</p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>Export failure reason description.</p>
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
+    /// <p>The format of the exported data. Valid values for <code>ExportFormat</code> are
+    /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    pub fn export_format(&self) -> std::option::Option<&crate::model::ExportFormat> {
+        self.export_format.as_ref()
+    }
+    /// <p>The billable size of the table export.</p>
+    pub fn billed_size_bytes(&self) -> std::option::Option<i64> {
+        self.billed_size_bytes
+    }
+    /// <p>The number of items exported.</p>
+    pub fn item_count(&self) -> std::option::Option<i64> {
+        self.item_count
+    }
 }
 impl std::fmt::Debug for ExportDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14219,6 +16982,20 @@ pub struct ParameterizedStatement {
     /// </p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
 }
+impl ParameterizedStatement {
+    /// <p>
+    /// A PartiQL statment that uses parameters.
+    /// </p>
+    pub fn statement(&self) -> std::option::Option<&str> {
+        self.statement.as_deref()
+    }
+    /// <p>
+    /// The parameter values.
+    /// </p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ParameterizedStatement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParameterizedStatement");
@@ -14372,6 +17149,16 @@ pub struct TimeToLiveDescription {
     /// <p> The name of the TTL attribute for items in the table.</p>
     pub attribute_name: std::option::Option<std::string::String>,
 }
+impl TimeToLiveDescription {
+    /// <p> The TTL status for the table.</p>
+    pub fn time_to_live_status(&self) -> std::option::Option<&crate::model::TimeToLiveStatus> {
+        self.time_to_live_status.as_ref()
+    }
+    /// <p> The name of the TTL attribute for items in the table.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TimeToLiveDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeToLiveDescription");
@@ -14506,6 +17293,20 @@ pub struct KinesisDataStreamDestination {
     /// <p>The human-readable string that corresponds to the replica status.</p>
     pub destination_status_description: std::option::Option<std::string::String>,
 }
+impl KinesisDataStreamDestination {
+    /// <p>The ARN for a specific Kinesis data stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The current status of replication.</p>
+    pub fn destination_status(&self) -> std::option::Option<&crate::model::DestinationStatus> {
+        self.destination_status.as_ref()
+    }
+    /// <p>The human-readable string that corresponds to the replica status.</p>
+    pub fn destination_status_description(&self) -> std::option::Option<&str> {
+        self.destination_status_description.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisDataStreamDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisDataStreamDestination");
@@ -14594,6 +17395,16 @@ pub struct Endpoint {
     /// <p>Endpoint cache time to live (TTL) value.</p>
     pub cache_period_in_minutes: i64,
 }
+impl Endpoint {
+    /// <p>IP address of the endpoint.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>Endpoint cache time to live (TTL) value.</p>
+    pub fn cache_period_in_minutes(&self) -> i64 {
+        self.cache_period_in_minutes
+    }
+}
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Endpoint");
@@ -14656,6 +17467,16 @@ pub struct FailureException {
     pub exception_name: std::option::Option<std::string::String>,
     /// <p>Description of the failure.</p>
     pub exception_description: std::option::Option<std::string::String>,
+}
+impl FailureException {
+    /// <p>Exception name.</p>
+    pub fn exception_name(&self) -> std::option::Option<&str> {
+        self.exception_name.as_deref()
+    }
+    /// <p>Description of the failure.</p>
+    pub fn exception_description(&self) -> std::option::Option<&str> {
+        self.exception_description.as_deref()
+    }
 }
 impl std::fmt::Debug for FailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14727,6 +17548,22 @@ pub struct BackupDescription {
     pub source_table_details: std::option::Option<crate::model::SourceTableDetails>,
     /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
     pub source_table_feature_details: std::option::Option<crate::model::SourceTableFeatureDetails>,
+}
+impl BackupDescription {
+    /// <p>Contains the details of the backup created for the table. </p>
+    pub fn backup_details(&self) -> std::option::Option<&crate::model::BackupDetails> {
+        self.backup_details.as_ref()
+    }
+    /// <p>Contains the details of the table when the backup was created. </p>
+    pub fn source_table_details(&self) -> std::option::Option<&crate::model::SourceTableDetails> {
+        self.source_table_details.as_ref()
+    }
+    /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.</p>
+    pub fn source_table_feature_details(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceTableFeatureDetails> {
+        self.source_table_feature_details.as_ref()
+    }
 }
 impl std::fmt::Debug for BackupDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14829,6 +17666,36 @@ pub struct SourceTableFeatureDetails {
     pub time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
     /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
     pub sse_description: std::option::Option<crate::model::SseDescription>,
+}
+impl SourceTableFeatureDetails {
+    /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
+    pub fn local_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::LocalSecondaryIndexInfo]> {
+        self.local_secondary_indexes.as_deref()
+    }
+    /// <p>Represents the GSI properties for the table when the backup was created. It includes the
+    /// IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at
+    /// the time of backup. </p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::GlobalSecondaryIndexInfo]> {
+        self.global_secondary_indexes.as_deref()
+    }
+    /// <p>Stream settings on the table when the backup was created.</p>
+    pub fn stream_description(&self) -> std::option::Option<&crate::model::StreamSpecification> {
+        self.stream_description.as_ref()
+    }
+    /// <p>Time to Live settings on the table when the backup was created.</p>
+    pub fn time_to_live_description(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeToLiveDescription> {
+        self.time_to_live_description.as_ref()
+    }
+    /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
+    pub fn sse_description(&self) -> std::option::Option<&crate::model::SseDescription> {
+        self.sse_description.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceTableFeatureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15001,6 +17868,47 @@ pub struct GlobalSecondaryIndexInfo {
     /// <p>Represents the provisioned throughput settings for the specified global secondary index. </p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
 }
+impl GlobalSecondaryIndexInfo {
+    /// <p>The name of the global secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Represents attributes that are copied (projected) from the table into
+    /// the global secondary index. These are in addition to the primary
+    /// key attributes and index key attributes, which are automatically
+    /// projected. </p>
+    pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
+        self.projection.as_ref()
+    }
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index. </p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
+}
 impl std::fmt::Debug for GlobalSecondaryIndexInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlobalSecondaryIndexInfo");
@@ -15171,6 +18079,38 @@ pub struct LocalSecondaryIndexInfo {
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub projection: std::option::Option<crate::model::Projection>,
 }
+impl LocalSecondaryIndexInfo {
+    /// <p>Represents the name of the local secondary index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The complete key schema for a local secondary index, which consists of one or more pairs of attribute names and key types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HASH</code> - partition key</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RANGE</code> - sort key</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>.  The
+    /// term "hash attribute" derives from DynamoDB's usage of an internal hash function to
+    /// evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+    /// The term "range attribute" derives from the way DynamoDB stores items with the same
+    /// partition key physically close together, in sorted order by the sort key value.</p>
+    /// </note>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    pub fn projection(&self) -> std::option::Option<&crate::model::Projection> {
+        self.projection.as_ref()
+    }
+}
 impl std::fmt::Debug for LocalSecondaryIndexInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LocalSecondaryIndexInfo");
@@ -15319,6 +18259,57 @@ pub struct SourceTableDetails {
     /// </li>
     /// </ul>
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
+}
+impl SourceTableDetails {
+    /// <p>The name of the table for which the backup was created. </p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Unique identifier for the table for which the backup was created. </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>ARN of the table for which backup was created. </p>
+    pub fn table_arn(&self) -> std::option::Option<&str> {
+        self.table_arn.as_deref()
+    }
+    /// <p>Size of the table in bytes. Note that this is an approximate value.</p>
+    pub fn table_size_bytes(&self) -> i64 {
+        self.table_size_bytes
+    }
+    /// <p>Schema of the table. </p>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p>Time when the source table was created. </p>
+    pub fn table_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.table_creation_date_time.as_ref()
+    }
+    /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
+    /// <p>Number of items in the table. Note that this is an approximate value. </p>
+    pub fn item_count(&self) -> std::option::Option<i64> {
+        self.item_count
+    }
+    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
+        self.billing_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceTableDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15545,6 +18536,54 @@ pub struct BackupDetails {
     /// on-demand backup expires automatically 35 days after its creation.</p>
     pub backup_expiry_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BackupDetails {
+    /// <p>ARN associated with the backup.</p>
+    pub fn backup_arn(&self) -> std::option::Option<&str> {
+        self.backup_arn.as_deref()
+    }
+    /// <p>Name of the requested backup.</p>
+    pub fn backup_name(&self) -> std::option::Option<&str> {
+        self.backup_name.as_deref()
+    }
+    /// <p>Size of the backup in bytes.</p>
+    pub fn backup_size_bytes(&self) -> std::option::Option<i64> {
+        self.backup_size_bytes
+    }
+    /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
+    pub fn backup_status(&self) -> std::option::Option<&crate::model::BackupStatus> {
+        self.backup_status.as_ref()
+    }
+    /// <p>BackupType:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>USER</code> - You create and manage these using the on-demand backup feature.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically
+    /// created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted
+    /// table to the state it was in just before the point of deletion.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.</p>
+    /// </li>
+    /// </ul>
+    pub fn backup_type(&self) -> std::option::Option<&crate::model::BackupType> {
+        self.backup_type.as_ref()
+    }
+    /// <p>Time at which the backup was created. This is the request time of the backup. </p>
+    pub fn backup_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.backup_creation_date_time.as_ref()
+    }
+    /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
+    /// on-demand backup expires automatically 35 days after its creation.</p>
+    pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.backup_expiry_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for BackupDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupDetails");
@@ -15724,6 +18763,16 @@ pub struct WriteRequest {
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
     pub delete_request: std::option::Option<crate::model::DeleteRequest>,
 }
+impl WriteRequest {
+    /// <p>A request to perform a <code>PutItem</code> operation.</p>
+    pub fn put_request(&self) -> std::option::Option<&crate::model::PutRequest> {
+        self.put_request.as_ref()
+    }
+    /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
+    pub fn delete_request(&self) -> std::option::Option<&crate::model::DeleteRequest> {
+        self.delete_request.as_ref()
+    }
+}
 impl std::fmt::Debug for WriteRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WriteRequest");
@@ -15793,6 +18842,16 @@ pub struct DeleteRequest {
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
 }
+impl DeleteRequest {
+    /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
+    pub fn key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.key.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRequest");
@@ -15861,6 +18920,20 @@ pub struct PutRequest {
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
+}
+impl PutRequest {
+    /// <p>A map of attribute name to attribute values, representing the primary key of an item to
+    /// be processed by <code>PutItem</code>. All of the table's primary key attributes must be
+    /// specified, and their data types must match those of the table's key schema. If any
+    /// attributes are present in the item that are part of an index key schema for the table,
+    /// their types must match the index key schema.</p>
+    pub fn item(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.item.as_ref()
+    }
 }
 impl std::fmt::Debug for PutRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15991,6 +19064,80 @@ pub struct KeysAndAttributes {
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl KeysAndAttributes {
+    /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
+    pub fn keys(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<std::string::String, crate::model::AttributeValue>],
+    > {
+        self.keys.as_deref()
+    }
+    /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn attributes_to_get(&self) -> std::option::Option<&[std::string::String]> {
+        self.attributes_to_get.as_deref()
+    }
+    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent
+    /// read is used; otherwise, an eventually consistent read is used.</p>
+    pub fn consistent_read(&self) -> std::option::Option<bool> {
+        self.consistent_read
+    }
+    /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars,
+    /// sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by
+    /// commas.</p>
+    /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn projection_expression(&self) -> std::option::Option<&str> {
+        self.projection_expression.as_deref()
+    }
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+    /// </li>
+    /// <li>
+    /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+    /// </li>
+    /// <li>
+    /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Percentile</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>{"#P":"Percentile"}</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>You could then use this substitution in an expression, as in this example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>#P = :val</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+    /// </note>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn expression_attribute_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.expression_attribute_names.as_ref()
+    }
 }
 impl std::fmt::Debug for KeysAndAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16250,6 +19397,30 @@ pub struct BatchStatementResponse {
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
 }
+impl BatchStatementResponse {
+    /// <p>
+    /// The error associated with a failed PartiQL batch statement.
+    /// </p>
+    pub fn error(&self) -> std::option::Option<&crate::model::BatchStatementError> {
+        self.error.as_ref()
+    }
+    /// <p>
+    /// The table name associated with a failed PartiQL batch statement.
+    /// </p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>
+    /// A DynamoDB item associated with a BatchStatementResponse
+    /// </p>
+    pub fn item(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.item.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchStatementResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchStatementResponse");
@@ -16363,6 +19534,20 @@ pub struct BatchStatementError {
     /// The error message associated with the PartiQL batch resposne.
     /// </p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BatchStatementError {
+    /// <p>
+    /// The error code associated with the failed PartiQL batch statement.
+    /// </p>
+    pub fn code(&self) -> std::option::Option<&crate::model::BatchStatementErrorCodeEnum> {
+        self.code.as_ref()
+    }
+    /// <p>
+    /// The error message associated with the PartiQL batch resposne.
+    /// </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16558,6 +19743,26 @@ pub struct BatchStatementRequest {
     /// The read consistency of the PartiQL batch request.
     /// </p>
     pub consistent_read: std::option::Option<bool>,
+}
+impl BatchStatementRequest {
+    /// <p>
+    /// A valid PartiQL statement.
+    /// </p>
+    pub fn statement(&self) -> std::option::Option<&str> {
+        self.statement.as_deref()
+    }
+    /// <p>
+    /// The parameters associated with a PartiQL statement in the batch request.
+    /// </p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
+        self.parameters.as_deref()
+    }
+    /// <p>
+    /// The read consistency of the PartiQL batch request.
+    /// </p>
+    pub fn consistent_read(&self) -> std::option::Option<bool> {
+        self.consistent_read
+    }
 }
 impl std::fmt::Debug for BatchStatementRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

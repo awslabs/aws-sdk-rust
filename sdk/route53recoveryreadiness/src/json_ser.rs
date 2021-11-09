@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_cell_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateCellInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.cell_name {
         object.key("cellName").string(var_1);
     }
@@ -24,21 +24,23 @@ pub fn serialize_structure_crate_input_create_cell_input(
         }
         object_6.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_cross_account_authorization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateCrossAccountAuthorizationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.cross_account_authorization {
         object.key("crossAccountAuthorization").string(var_9);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_readiness_check_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateReadinessCheckInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.readiness_check_name {
         object.key("readinessCheckName").string(var_10);
     }
@@ -54,12 +56,13 @@ pub fn serialize_structure_crate_input_create_readiness_check_input(
         }
         object_13.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_recovery_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRecoveryGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.cells {
         let mut array_17 = object.key("cells").start_array();
         for item_18 in var_16 {
@@ -81,12 +84,13 @@ pub fn serialize_structure_crate_input_create_recovery_group_input(
         }
         object_21.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_resource_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateResourceSetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.resource_set_name {
         object.key("resourceSetName").string(var_24);
     }
@@ -98,7 +102,7 @@ pub fn serialize_structure_crate_input_create_resource_set_input(
         for item_28 in var_26 {
             {
                 let mut object_29 = array_27.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_resource(&mut object_29, item_28);
+                crate::json_ser::serialize_structure_crate_model_resource(&mut object_29, item_28)?;
                 object_29.finish();
             }
         }
@@ -113,12 +117,13 @@ pub fn serialize_structure_crate_input_create_resource_set_input(
         }
         object_31.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.tags {
         let mut object_35 = object.key("tags").start_object();
         for (key_36, value_37) in var_34 {
@@ -128,12 +133,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_35.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_cell_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCellInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.cells {
         let mut array_39 = object.key("cells").start_array();
         for item_40 in var_38 {
@@ -143,21 +149,23 @@ pub fn serialize_structure_crate_input_update_cell_input(
         }
         array_39.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_readiness_check_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateReadinessCheckInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.resource_set_name {
         object.key("resourceSetName").string(var_41);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_recovery_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRecoveryGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.cells {
         let mut array_43 = object.key("cells").start_array();
         for item_44 in var_42 {
@@ -167,12 +175,13 @@ pub fn serialize_structure_crate_input_update_recovery_group_input(
         }
         array_43.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_resource_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResourceSetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.resource_set_type {
         object.key("resourceSetType").string(var_45);
     }
@@ -181,18 +190,19 @@ pub fn serialize_structure_crate_input_update_resource_set_input(
         for item_48 in var_46 {
             {
                 let mut object_49 = array_47.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_resource(&mut object_49, item_48);
+                crate::json_ser::serialize_structure_crate_model_resource(&mut object_49, item_48)?;
                 object_49.finish();
             }
         }
         array_47.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_resource(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Resource,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.component_id {
         object.key("componentId").string(var_50);
     }
@@ -201,7 +211,7 @@ pub fn serialize_structure_crate_model_resource(
         crate::json_ser::serialize_structure_crate_model_dns_target_resource(
             &mut object_52,
             var_51,
-        );
+        )?;
         object_52.finish();
     }
     if let Some(var_53) = &input.readiness_scopes {
@@ -216,12 +226,13 @@ pub fn serialize_structure_crate_model_resource(
     if let Some(var_56) = &input.resource_arn {
         object.key("resourceArn").string(var_56);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_dns_target_resource(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DnsTargetResource,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.domain_name {
         object.key("domainName").string(var_57);
     }
@@ -236,18 +247,19 @@ pub fn serialize_structure_crate_model_dns_target_resource(
     }
     if let Some(var_61) = &input.target_resource {
         let mut object_62 = object.key("targetResource").start_object();
-        crate::json_ser::serialize_structure_crate_model_target_resource(&mut object_62, var_61);
+        crate::json_ser::serialize_structure_crate_model_target_resource(&mut object_62, var_61)?;
         object_62.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_target_resource(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TargetResource,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.nlb_resource {
         let mut object_64 = object.key("nLBResource").start_object();
-        crate::json_ser::serialize_structure_crate_model_nlb_resource(&mut object_64, var_63);
+        crate::json_ser::serialize_structure_crate_model_nlb_resource(&mut object_64, var_63)?;
         object_64.finish();
     }
     if let Some(var_65) = &input.r53_resource {
@@ -255,28 +267,31 @@ pub fn serialize_structure_crate_model_target_resource(
         crate::json_ser::serialize_structure_crate_model_r53_resource_record(
             &mut object_66,
             var_65,
-        );
+        )?;
         object_66.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_nlb_resource(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NlbResource,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.arn {
         object.key("arn").string(var_67);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_r53_resource_record(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::R53ResourceRecord,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.domain_name {
         object.key("domainName").string(var_68);
     }
     if let Some(var_69) = &input.record_set_id {
         object.key("recordSetId").string(var_69);
     }
+    Ok(())
 }

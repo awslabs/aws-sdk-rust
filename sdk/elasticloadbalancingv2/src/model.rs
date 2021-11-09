@@ -71,6 +71,29 @@ pub struct AvailabilityZone {
     pub load_balancer_addresses:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerAddress>>,
 }
+impl AvailabilityZone {
+    /// <p>The name of the Availability Zone.</p>
+    pub fn zone_name(&self) -> std::option::Option<&str> {
+        self.zone_name.as_deref()
+    }
+    /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can
+    /// specify one Elastic IP address per Availability Zone when you create an internal-facing load
+    /// balancer. For internal load balancers, you can specify a private IP address from the IPv4
+    /// range of the subnet.</p>
+    pub fn load_balancer_addresses(
+        &self,
+    ) -> std::option::Option<&[crate::model::LoadBalancerAddress]> {
+        self.load_balancer_addresses.as_deref()
+    }
+}
 impl std::fmt::Debug for AvailabilityZone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityZone");
@@ -184,6 +207,25 @@ pub struct LoadBalancerAddress {
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub i_pv6_address: std::option::Option<std::string::String>,
 }
+impl LoadBalancerAddress {
+    /// <p>The static IP address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+    /// internal-facing load balancer.</p>
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
+        self.allocation_id.as_deref()
+    }
+    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    pub fn private_i_pv4_address(&self) -> std::option::Option<&str> {
+        self.private_i_pv4_address.as_deref()
+    }
+    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    pub fn i_pv6_address(&self) -> std::option::Option<&str> {
+        self.i_pv6_address.as_deref()
+    }
+}
 impl std::fmt::Debug for LoadBalancerAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoadBalancerAddress");
@@ -288,6 +330,25 @@ pub struct SubnetMapping {
     pub private_i_pv4_address: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub i_pv6_address: std::option::Option<std::string::String>,
+}
+impl SubnetMapping {
+    /// <p>The ID of the subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+    /// internet-facing load balancer.</p>
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
+        self.allocation_id.as_deref()
+    }
+    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    pub fn private_i_pv4_address(&self) -> std::option::Option<&str> {
+        self.private_i_pv4_address.as_deref()
+    }
+    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    pub fn i_pv6_address(&self) -> std::option::Option<&str> {
+        self.i_pv6_address.as_deref()
+    }
 }
 impl std::fmt::Debug for SubnetMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -399,6 +460,33 @@ pub struct Rule {
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>Indicates whether this is the default rule.</p>
     pub is_default: bool,
+}
+impl Rule {
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>The priority.</p>
+    pub fn priority(&self) -> std::option::Option<&str> {
+        self.priority.as_deref()
+    }
+    /// <p>The conditions. Each rule can include zero or one of the following conditions:
+    /// <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+    /// <code>source-ip</code>, and zero or more of the following conditions:
+    /// <code>http-header</code> and <code>query-string</code>.</p>
+    pub fn conditions(&self) -> std::option::Option<&[crate::model::RuleCondition]> {
+        self.conditions.as_deref()
+    }
+    /// <p>The actions. Each rule must include exactly one of the following types of actions:
+    /// <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be
+    /// the last action to be performed.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>Indicates whether this is the default rule.</p>
+    pub fn is_default(&self) -> bool {
+        self.is_default
+    }
 }
 impl std::fmt::Debug for Rule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -557,6 +645,58 @@ pub struct Action {
     /// <code>ForwardConfig</code> and it must be the same target group specified in
     /// <code>TargetGroupArn</code>.</p>
     pub forward_config: std::option::Option<crate::model::ForwardActionConfig>,
+}
+impl Action {
+    /// <p>The type of action.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ActionTypeEnum> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
+    /// <code>forward</code> and you want to route to a single target group. To route to one or more
+    /// target groups, use <code>ForwardConfig</code> instead.</p>
+    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+        self.target_group_arn.as_deref()
+    }
+    /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID
+    /// Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
+    pub fn authenticate_oidc_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticateOidcActionConfig> {
+        self.authenticate_oidc_config.as_ref()
+    }
+    /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only
+    /// when <code>Type</code> is <code>authenticate-cognito</code>.</p>
+    pub fn authenticate_cognito_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticateCognitoActionConfig> {
+        self.authenticate_cognito_config.as_ref()
+    }
+    /// <p>The order for the action. This value is required for rules with multiple actions. The
+    /// action with the lowest value for order is performed first.</p>
+    pub fn order(&self) -> std::option::Option<i32> {
+        self.order
+    }
+    /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when
+    /// <code>Type</code> is <code>redirect</code>.</p>
+    pub fn redirect_config(&self) -> std::option::Option<&crate::model::RedirectActionConfig> {
+        self.redirect_config.as_ref()
+    }
+    /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP
+    /// response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
+    pub fn fixed_response_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FixedResponseActionConfig> {
+        self.fixed_response_config.as_ref()
+    }
+    /// <p>Information for creating an action that distributes requests among one or more target
+    /// groups. For Network Load Balancers, you can specify a single target group. Specify only when
+    /// <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code>
+    /// and <code>TargetGroupArn</code>, you can specify only one target group using
+    /// <code>ForwardConfig</code> and it must be the same target group specified in
+    /// <code>TargetGroupArn</code>.</p>
+    pub fn forward_config(&self) -> std::option::Option<&crate::model::ForwardActionConfig> {
+        self.forward_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -761,6 +901,19 @@ pub struct ForwardActionConfig {
     pub target_group_stickiness_config:
         std::option::Option<crate::model::TargetGroupStickinessConfig>,
 }
+impl ForwardActionConfig {
+    /// <p>One or more target groups. For Network Load Balancers, you can specify a single target
+    /// group.</p>
+    pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroupTuple]> {
+        self.target_groups.as_deref()
+    }
+    /// <p>The target group stickiness for the rule.</p>
+    pub fn target_group_stickiness_config(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetGroupStickinessConfig> {
+        self.target_group_stickiness_config.as_ref()
+    }
+}
 impl std::fmt::Debug for ForwardActionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ForwardActionConfig");
@@ -847,6 +1000,17 @@ pub struct TargetGroupStickinessConfig {
     /// same target group. The range is 1-604800 seconds (7 days).</p>
     pub duration_seconds: std::option::Option<i32>,
 }
+impl TargetGroupStickinessConfig {
+    /// <p>Indicates whether target group stickiness is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The time period, in seconds, during which requests from a client should be routed to the
+    /// same target group. The range is 1-604800 seconds (7 days).</p>
+    pub fn duration_seconds(&self) -> std::option::Option<i32> {
+        self.duration_seconds
+    }
+}
 impl std::fmt::Debug for TargetGroupStickinessConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TargetGroupStickinessConfig");
@@ -912,6 +1076,16 @@ pub struct TargetGroupTuple {
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The weight. The range is 0 to 999.</p>
     pub weight: std::option::Option<i32>,
+}
+impl TargetGroupTuple {
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+        self.target_group_arn.as_deref()
+    }
+    /// <p>The weight. The range is 0 to 999.</p>
+    pub fn weight(&self) -> std::option::Option<i32> {
+        self.weight
+    }
 }
 impl std::fmt::Debug for TargetGroupTuple {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -982,6 +1156,22 @@ pub struct FixedResponseActionConfig {
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript |
     /// application/json</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl FixedResponseActionConfig {
+    /// <p>The message.</p>
+    pub fn message_body(&self) -> std::option::Option<&str> {
+        self.message_body.as_deref()
+    }
+    /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>The content type.</p>
+    /// <p>Valid Values: text/plain | text/css | text/html | application/javascript |
+    /// application/json</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for FixedResponseActionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1099,6 +1289,38 @@ pub struct RedirectActionConfig {
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP
     /// 302).</p>
     pub status_code: std::option::Option<crate::model::RedirectActionStatusCodeEnum>,
+}
+impl RedirectActionConfig {
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP,
+    /// HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    pub fn protocol(&self) -> std::option::Option<&str> {
+        self.protocol.as_deref()
+    }
+    /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
+    pub fn port(&self) -> std::option::Option<&str> {
+        self.port.as_deref()
+    }
+    /// <p>The hostname. This component is not percent-encoded. The hostname can contain
+    /// #{host}.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded.
+    /// The path can contain #{host}, #{path}, and #{port}.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include
+    /// the leading "?", as it is automatically added. You can specify any of the reserved
+    /// keywords.</p>
+    pub fn query(&self) -> std::option::Option<&str> {
+        self.query.as_deref()
+    }
+    /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP
+    /// 302).</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::RedirectActionStatusCodeEnum> {
+        self.status_code.as_ref()
+    }
 }
 impl std::fmt::Debug for RedirectActionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1317,6 +1539,63 @@ pub struct AuthenticateCognitoActionConfig {
     /// </ul>
     pub on_unauthenticated_request:
         std::option::Option<crate::model::AuthenticateCognitoActionConditionalBehaviorEnum>,
+}
+impl AuthenticateCognitoActionConfig {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
+    pub fn user_pool_arn(&self) -> std::option::Option<&str> {
+        self.user_pool_arn.as_deref()
+    }
+    /// <p>The ID of the Amazon Cognito user pool client.</p>
+    pub fn user_pool_client_id(&self) -> std::option::Option<&str> {
+        self.user_pool_client_id.as_deref()
+    }
+    /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
+    pub fn user_pool_domain(&self) -> std::option::Option<&str> {
+        self.user_pool_domain.as_deref()
+    }
+    /// <p>The name of the cookie used to maintain session information. The default is
+    /// AWSELBAuthSessionCookie.</p>
+    pub fn session_cookie_name(&self) -> std::option::Option<&str> {
+        self.session_cookie_name.as_deref()
+    }
+    /// <p>The set of user claims to be requested from the IdP. The default is
+    /// <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
+    /// the documentation for your IdP.</p>
+    pub fn scope(&self) -> std::option::Option<&str> {
+        self.scope.as_deref()
+    }
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
+    /// seconds (7 days).</p>
+    pub fn session_timeout(&self) -> std::option::Option<i64> {
+        self.session_timeout
+    }
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
+    /// endpoint.</p>
+    pub fn authentication_request_extra_params(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.authentication_request_extra_params.as_ref()
+    }
+    /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
+    /// </li>
+    /// <li>
+    /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
+    /// </li>
+    /// <li>
+    /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
+    /// the default value.</p>
+    /// </li>
+    /// </ul>
+    pub fn on_unauthenticated_request(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticateCognitoActionConditionalBehaviorEnum> {
+        self.on_unauthenticated_request.as_ref()
+    }
 }
 impl std::fmt::Debug for AuthenticateCognitoActionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1645,6 +1924,86 @@ pub struct AuthenticateOidcActionConfig {
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are
     /// creating a rule, you can omit this parameter or set it to false.</p>
     pub use_existing_client_secret: std::option::Option<bool>,
+}
+impl AuthenticateOidcActionConfig {
+    /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS
+    /// protocol, the domain, and the path.</p>
+    pub fn issuer(&self) -> std::option::Option<&str> {
+        self.issuer.as_deref()
+    }
+    /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS
+    /// protocol, the domain, and the path.</p>
+    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
+        self.authorization_endpoint.as_deref()
+    }
+    /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the
+    /// domain, and the path.</p>
+    pub fn token_endpoint(&self) -> std::option::Option<&str> {
+        self.token_endpoint.as_deref()
+    }
+    /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol,
+    /// the domain, and the path.</p>
+    pub fn user_info_endpoint(&self) -> std::option::Option<&str> {
+        self.user_info_endpoint.as_deref()
+    }
+    /// <p>The OAuth 2.0 client identifier.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you
+    /// are modifying a rule, you can omit this parameter if you set
+    /// <code>UseExistingClientSecret</code> to true.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p>The name of the cookie used to maintain session information. The default is
+    /// AWSELBAuthSessionCookie.</p>
+    pub fn session_cookie_name(&self) -> std::option::Option<&str> {
+        self.session_cookie_name.as_deref()
+    }
+    /// <p>The set of user claims to be requested from the IdP. The default is
+    /// <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
+    /// the documentation for your IdP.</p>
+    pub fn scope(&self) -> std::option::Option<&str> {
+        self.scope.as_deref()
+    }
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
+    /// seconds (7 days).</p>
+    pub fn session_timeout(&self) -> std::option::Option<i64> {
+        self.session_timeout
+    }
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
+    /// endpoint.</p>
+    pub fn authentication_request_extra_params(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.authentication_request_extra_params.as_ref()
+    }
+    /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
+    /// </li>
+    /// <li>
+    /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
+    /// </li>
+    /// <li>
+    /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
+    /// the default value.</p>
+    /// </li>
+    /// </ul>
+    pub fn on_unauthenticated_request(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticateOidcActionConditionalBehaviorEnum> {
+        self.on_unauthenticated_request.as_ref()
+    }
+    /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are
+    /// creating a rule, you can omit this parameter or set it to false.</p>
+    pub fn use_existing_client_secret(&self) -> std::option::Option<bool> {
+        self.use_existing_client_secret
+    }
 }
 impl std::fmt::Debug for AuthenticateOidcActionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2165,6 +2524,129 @@ pub struct RuleCondition {
     /// <code>source-ip</code>.</p>
     pub source_ip_config: std::option::Option<crate::model::SourceIpConditionConfig>,
 }
+impl RuleCondition {
+    /// <p>The field in the HTTP request. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>http-header</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>http-request-method</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>host-header</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>path-pattern</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>query-string</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>source-ip</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn field(&self) -> std::option::Option<&str> {
+        self.field.as_deref()
+    }
+    /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or
+    /// <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path
+    /// patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
+    /// <p>If <code>Field</code> is <code>host-header</code> and you are not using
+    /// <code>HostHeaderConfig</code>, you can specify a single host name (for example,
+    /// my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128
+    /// characters in length, and can contain any of the following characters.</p>
+    /// <ul>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p>
+    /// </li>
+    /// <li>
+    /// <p>- .</p>
+    /// </li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p>
+    /// </li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using
+    /// <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*)
+    /// in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in
+    /// length, and can contain any of the following characters.</p>
+    /// <ul>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p>
+    /// </li>
+    /// <li>
+    /// <p>_ - . $ / ~ " ' @ : +</p>
+    /// </li>
+    /// <li>
+    /// <p>& (using &amp;)</p>
+    /// </li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p>
+    /// </li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p>
+    /// </li>
+    /// </ul>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>Information for a host header condition. Specify only when <code>Field</code> is
+    /// <code>host-header</code>.</p>
+    pub fn host_header_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HostHeaderConditionConfig> {
+        self.host_header_config.as_ref()
+    }
+    /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is
+    /// <code>path-pattern</code>.</p>
+    pub fn path_pattern_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PathPatternConditionConfig> {
+        self.path_pattern_config.as_ref()
+    }
+    /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is
+    /// <code>http-header</code>.</p>
+    pub fn http_header_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HttpHeaderConditionConfig> {
+        self.http_header_config.as_ref()
+    }
+    /// <p>Information for a query string condition. Specify only when <code>Field</code> is
+    /// <code>query-string</code>.</p>
+    pub fn query_string_config(
+        &self,
+    ) -> std::option::Option<&crate::model::QueryStringConditionConfig> {
+        self.query_string_config.as_ref()
+    }
+    /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is
+    /// <code>http-request-method</code>.</p>
+    pub fn http_request_method_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HttpRequestMethodConditionConfig> {
+        self.http_request_method_config.as_ref()
+    }
+    /// <p>Information for a source IP condition. Specify only when <code>Field</code> is
+    /// <code>source-ip</code>.</p>
+    pub fn source_ip_config(&self) -> std::option::Option<&crate::model::SourceIpConditionConfig> {
+        self.source_ip_config.as_ref()
+    }
+}
 impl std::fmt::Debug for RuleCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleCondition");
@@ -2518,6 +3000,17 @@ pub struct SourceIpConditionConfig {
     /// <a>HttpHeaderConditionConfig</a>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SourceIpConditionConfig {
+    /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
+    /// Wildcards are not supported.</p>
+    /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of
+    /// the request matches one of the CIDR blocks. This condition is not satisfied by the addresses
+    /// in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use
+    /// <a>HttpHeaderConditionConfig</a>.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for SourceIpConditionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceIpConditionConfig");
@@ -2592,6 +3085,17 @@ pub struct HttpRequestMethodConditionConfig {
     /// the HTTP request method. We recommend that you route GET and HEAD requests in the same way,
     /// because the response to a HEAD request may be cached.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl HttpRequestMethodConditionConfig {
+    /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters
+    /// are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not
+    /// supported; therefore, the method name must be an exact match.</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
+    /// the HTTP request method. We recommend that you route GET and HEAD requests in the same way,
+    /// because the response to a HEAD request may be cached.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpRequestMethodConditionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2670,6 +3174,18 @@ pub struct QueryStringConditionConfig {
     /// them is found in the query string.</p>
     pub values: std::option::Option<std::vec::Vec<crate::model::QueryStringKeyValuePair>>,
 }
+impl QueryStringConditionConfig {
+    /// <p>One or more key/value pairs or values to find in the query string. The maximum size of
+    /// each string is 128 characters. The comparison is case insensitive. The following wildcard
+    /// characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+    /// character). To search for a literal '*' or '?' character in a query string, you must escape
+    /// these characters in <code>Values</code> using a '\' character.</p>
+    /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of
+    /// them is found in the query string.</p>
+    pub fn values(&self) -> std::option::Option<&[crate::model::QueryStringKeyValuePair]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryStringConditionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryStringConditionConfig");
@@ -2741,6 +3257,16 @@ pub struct QueryStringKeyValuePair {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl QueryStringKeyValuePair {
+    /// <p>The key. You can omit the key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for QueryStringKeyValuePair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2817,6 +3343,27 @@ pub struct HttpHeaderConditionConfig {
     /// the value of the HTTP header. To require that all of the strings are a match, create one
     /// condition per string.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl HttpHeaderConditionConfig {
+    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is
+    /// case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not
+    /// supported.</p>
+    /// <p>You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to specify a host header condition.</p>
+    pub fn http_header_name(&self) -> std::option::Option<&str> {
+        self.http_header_name.as_deref()
+    }
+    /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of
+    /// each string is 128 characters. The comparison strings are case insensitive. The following
+    /// wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+    /// character).</p>
+    /// <p>If the same header appears multiple times in the request, we search them in order until a
+    /// match is found.</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
+    /// the value of the HTTP header. To require that all of the strings are a match, create one
+    /// condition per string.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for HttpHeaderConditionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2918,6 +3465,17 @@ pub struct PathPatternConditionConfig {
     /// string. To compare against the query string, use <a>QueryStringConditionConfig</a>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PathPatternConditionConfig {
+    /// <p>One or more path patterns to compare against the request URL. The maximum size of each
+    /// string is 128 characters. The comparison is case sensitive. The following wildcard characters
+    /// are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the
+    /// request URL. The path pattern is compared only to the path of the URL, not to its query
+    /// string. To compare against the query string, use <a>QueryStringConditionConfig</a>.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for PathPatternConditionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PathPatternConditionConfig");
@@ -2989,6 +3547,16 @@ pub struct HostHeaderConditionConfig {
     /// the host name.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl HostHeaderConditionConfig {
+    /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is
+    /// case insensitive. The following wildcard characters are supported: * (matches 0 or more
+    /// characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
+    /// the host name.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for HostHeaderConditionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HostHeaderConditionConfig");
@@ -3056,6 +3624,16 @@ pub struct RulePriorityPair {
     /// <p>The rule priority.</p>
     pub priority: std::option::Option<i32>,
 }
+impl RulePriorityPair {
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>The rule priority.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+}
 impl std::fmt::Debug for RulePriorityPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RulePriorityPair");
@@ -3120,6 +3698,18 @@ pub struct Certificate {
     /// specifying a certificate as an input. This value is not included in the output when describing
     /// a listener, but is included when describing listener certificates.</p>
     pub is_default: std::option::Option<bool>,
+}
+impl Certificate {
+    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>Indicates whether the certificate is the default certificate. Do not set this value when
+    /// specifying a certificate as an input. This value is not included in the output when describing
+    /// a listener, but is included when describing listener certificates.</p>
+    pub fn is_default(&self) -> std::option::Option<bool> {
+        self.is_default
+    }
 }
 impl std::fmt::Debug for Certificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3210,6 +3800,38 @@ pub struct TargetDescription {
     /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only
     /// supported value is <code>all</code>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
+}
+impl TargetDescription {
+    /// <p>The ID of the target. If the target type of the target group is <code>instance</code>,
+    /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the
+    /// target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type
+    /// is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the
+    /// supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load
+    /// Balancer must have at least one listener whose port matches the target group port. Not used if
+    /// the target is a Lambda function.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives
+    /// traffic from the load balancer nodes in the specified Availability Zone or from all enabled
+    /// Availability Zones for the load balancer.</p>
+    /// <p>This parameter is not supported if the target type of the target group is
+    /// <code>instance</code> or <code>alb</code>.</p>
+    /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the
+    /// target group, the Availability Zone is automatically detected and this parameter is optional.
+    /// If the IP address is outside the VPC, this parameter is required.</p>
+    /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP
+    /// address is outside the VPC for the target group, the only supported value is
+    /// <code>all</code>.</p>
+    /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only
+    /// supported value is <code>all</code>.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
 }
 impl std::fmt::Debug for TargetDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3433,6 +4055,124 @@ pub struct TargetGroupAttribute {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl TargetGroupAttribute {
+    /// <p>The name of the attribute.</p>
+    ///
+    /// <p>The following attribute is supported by all load balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds,
+    /// for Elastic Load Balancing to wait before changing the state of a deregistering target
+    /// from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
+    /// default value is 300 seconds. If the target is a Lambda function, this attribute is not
+    /// supported.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attributes are supported by both Application Load Balancers and Network Load
+    /// Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The
+    /// value is <code>true</code> or <code>false</code>. The default is
+    /// <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stickiness.type</code> - The type of sticky sessions. The possible values are
+    /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or
+    /// <code>source_ip</code> for Network Load Balancers.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attributes are supported only if the load balancer is an Application Load
+    /// Balancer and the target is an instance or an IP address:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines
+    /// how the load balancer selects targets when routing requests. The value is
+    /// <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is
+    /// <code>round_robin</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a
+    /// newly registered target receives an increasing share of the traffic to the target group.
+    /// After this time period ends, the target receives its full share of traffic. The range is
+    /// 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+    /// application-based cookie. Names that start with the following prefixes are not allowed:
+    /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved
+    /// for use by the load balancer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
+    /// during which requests from a client should be routed to the same target. After this time
+    /// period expires, the application-based cookie is considered stale. The range is 1 second to
+    /// 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds,
+    /// during which requests from a client should be routed to the same target. After this time
+    /// period expires, the load balancer-generated cookie is considered stale. The range is 1
+    /// second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attribute is supported only if the load balancer is an Application Load
+    /// Balancer and the target is a Lambda function:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and
+    /// response headers that are exchanged between the load balancer and the Lambda function
+    /// include arrays of values or strings. The value is <code>true</code> or <code>false</code>.
+    /// The default is <code>false</code>. If the value is <code>false</code> and the request
+    /// contains a duplicate header field name or query parameter key, the load balancer uses the
+    /// last value sent by the client.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attributes are supported only by Network Load Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
+    /// the load balancer terminates connections at the end of the deregistration timeout. The
+    /// value is <code>true</code> or <code>false</code>. The default is
+    /// <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is
+    /// enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if
+    /// the target group type is IP address and the target group protocol is TCP or TLS.
+    /// Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and
+    /// TCP_UDP target groups.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is
+    /// enabled. The value is <code>true</code> or <code>false</code>. The default is
+    /// <code>false</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for TargetGroupAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3759,6 +4499,97 @@ pub struct TargetGroup {
     /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
     /// the IP address type defaults to <code>ipv4</code>.</p>
     pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
+}
+impl TargetGroup {
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+        self.target_group_arn.as_deref()
+    }
+    /// <p>The name of the target group.</p>
+    pub fn target_group_name(&self) -> std::option::Option<&str> {
+        self.target_group_name.as_deref()
+    }
+    /// <p>The protocol to use for routing traffic to the targets.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+        self.protocol.as_ref()
+    }
+    /// <p>The port on which the targets are listening. Not used if the target is a Lambda
+    /// function.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The ID of the VPC for the targets.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP
+    /// protocols are not supported for health checks.</p>
+    pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+        self.health_check_protocol.as_ref()
+    }
+    /// <p>The port to use to connect with the target.</p>
+    pub fn health_check_port(&self) -> std::option::Option<&str> {
+        self.health_check_port.as_deref()
+    }
+    /// <p>Indicates whether health checks are enabled.</p>
+    pub fn health_check_enabled(&self) -> std::option::Option<bool> {
+        self.health_check_enabled
+    }
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual
+    /// target.</p>
+    pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
+        self.health_check_interval_seconds
+    }
+    /// <p>The amount of time, in seconds, during which no response means a failed health
+    /// check.</p>
+    pub fn health_check_timeout_seconds(&self) -> std::option::Option<i32> {
+        self.health_check_timeout_seconds
+    }
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy
+    /// target healthy.</p>
+    pub fn healthy_threshold_count(&self) -> std::option::Option<i32> {
+        self.healthy_threshold_count
+    }
+    /// <p>The number of consecutive health check failures required before considering the target
+    /// unhealthy.</p>
+    pub fn unhealthy_threshold_count(&self) -> std::option::Option<i32> {
+        self.unhealthy_threshold_count
+    }
+    /// <p>The destination for health checks on the targets.</p>
+    pub fn health_check_path(&self) -> std::option::Option<&str> {
+        self.health_check_path.as_deref()
+    }
+    /// <p>The HTTP or gRPC codes to use when checking for a successful response from a
+    /// target.</p>
+    pub fn matcher(&self) -> std::option::Option<&crate::model::Matcher> {
+        self.matcher.as_ref()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target
+    /// group.</p>
+    pub fn load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.load_balancer_arns.as_deref()
+    }
+    /// <p>The type of target that you must specify when registering targets with this target group.
+    /// The possible values are <code>instance</code> (register targets by instance ID),
+    /// <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single
+    /// Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer
+    /// as a target).</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetTypeEnum> {
+        self.target_type.as_ref()
+    }
+    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
+    /// <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    pub fn protocol_version(&self) -> std::option::Option<&str> {
+        self.protocol_version.as_deref()
+    }
+    /// <p>The type of IP address used for this target group. The possible values are
+    /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
+    /// the IP address type defaults to <code>ipv4</code>.</p>
+    pub fn ip_address_type(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetGroupIpAddressTypeEnum> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl std::fmt::Debug for TargetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4234,6 +5065,22 @@ pub struct Matcher {
     /// "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
     pub grpc_code: std::option::Option<std::string::String>,
 }
+impl Matcher {
+    /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the
+    /// default value is 200. You can specify multiple values (for example, "200,202") or a range of
+    /// values (for example, "200-299").</p>
+    /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
+    /// <p>Note that when using shorthand syntax, some values such as commas need to be
+    /// escaped.</p>
+    pub fn http_code(&self) -> std::option::Option<&str> {
+        self.http_code.as_deref()
+    }
+    /// <p>You can specify values between 0 and 99. You can specify multiple values (for example,
+    /// "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
+    pub fn grpc_code(&self) -> std::option::Option<&str> {
+        self.grpc_code.as_deref()
+    }
+}
 impl std::fmt::Debug for Matcher {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Matcher");
@@ -4481,6 +5328,114 @@ pub struct LoadBalancerAttribute {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl LoadBalancerAttribute {
+    /// <p>The name of the attribute.</p>
+    ///
+    /// <p>The following attribute is supported by all load balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>deletion_protection.enabled</code> - Indicates whether deletion protection is
+    /// enabled. The value is <code>true</code> or <code>false</code>. The default is
+    /// <code>false</code>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attributes are supported by both Application Load Balancers and Network Load
+    /// Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The
+    /// value is <code>true</code> or <code>false</code>. The default is
+    /// <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
+    /// This attribute is required if access logs are enabled. The bucket must exist in the same
+    /// region as the load balancer and have a bucket policy that grants Elastic Load Balancing
+    /// permissions to write to the bucket.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
+    /// access logs.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attributes are supported by only Application Load Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
+    /// valid range is 1-4000 seconds. The default is 60 seconds.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer
+    /// handles requests that might pose a security risk to your application. The possible values
+    /// are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default
+    /// is <code>defensive</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP
+    /// headers with invalid header fields are removed by the load balancer (<code>true</code>) or
+    /// routed to targets (<code>false</code>). The default is <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
+    /// whether the two headers (<code>x-amzn-tls-version</code> and
+    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
+    /// TLS version and cipher suite, are added to the client request before sending it to the
+    /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
+    /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
+    /// has information about the cipher suite negotiated with the client. Both headers are in
+    /// OpenSSL format. The possible values for the attribute are <code>true</code> and
+    /// <code>false</code>. The default is <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
+    /// <code>X-Forwarded-For</code> header should preserve the source port that the client used
+    /// to connect to the load balancer. The possible values are <code>true</code> and
+    /// <code>false</code>. The default is <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
+    /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
+    /// Elastic Load Balancing requires that message header names contain only alphanumeric
+    /// characters and hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
+    /// balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The
+    /// default is <code>false</code>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attribute is supported by Network Load Balancers and Gateway Load
+    /// Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
+    /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
+    /// The default is <code>false</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for LoadBalancerAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4755,6 +5710,42 @@ pub struct Listener {
     /// policy.</p>
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Listener {
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+        self.load_balancer_arn.as_deref()
+    }
+    /// <p>The port on which the load balancer is listening.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The protocol for connections from clients to the load balancer.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+        self.protocol.as_ref()
+    }
+    /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+        self.certificates.as_deref()
+    }
+    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are
+    /// supported.</p>
+    pub fn ssl_policy(&self) -> std::option::Option<&str> {
+        self.ssl_policy.as_deref()
+    }
+    /// <p>The default actions for the listener.</p>
+    pub fn default_actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.default_actions.as_deref()
+    }
+    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+    /// policy.</p>
+    pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
+        self.alpn_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for Listener {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Listener");
@@ -4934,6 +5925,20 @@ pub struct TargetHealthDescription {
     pub health_check_port: std::option::Option<std::string::String>,
     /// <p>The health information for the target.</p>
     pub target_health: std::option::Option<crate::model::TargetHealth>,
+}
+impl TargetHealthDescription {
+    /// <p>The description of the target.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::TargetDescription> {
+        self.target.as_ref()
+    }
+    /// <p>The port to use to connect with the target.</p>
+    pub fn health_check_port(&self) -> std::option::Option<&str> {
+        self.health_check_port.as_deref()
+    }
+    /// <p>The health information for the target.</p>
+    pub fn target_health(&self) -> std::option::Option<&crate::model::TargetHealth> {
+        self.target_health.as_ref()
+    }
 }
 impl std::fmt::Debug for TargetHealthDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5115,6 +6120,114 @@ pub struct TargetHealth {
     /// <p>A description of the target health that provides additional details. If the state is
     /// <code>healthy</code>, a description is not provided.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl TargetHealth {
+    /// <p>The state of the target.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::TargetHealthStateEnum> {
+        self.state.as_ref()
+    }
+    /// <p>The reason code.</p>
+    ///
+    /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
+    ///
+    /// <p>If the target state is <code>initial</code>, the reason code can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered
+    /// with the load balancer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the
+    /// minimum number of health checks required to determine its health status.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
+    /// expected HTTP code. Applies only to Application Load Balancers and Gateway Load
+    /// Balancers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Target.Timeout</code> - The health check requests timed out. Applies only to
+    /// Application Load Balancers and Gateway Load Balancers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Target.FailedHealthChecks</code> - The load balancer received an error while
+    /// establishing a connection to the target or the target response was malformed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Elb.InternalError</code> - The health checks failed due to an internal error.
+    /// Applies only to Application Load Balancers.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If the target state is <code>unused</code>, the reason code can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Target.NotRegistered</code> - The target is not registered with the target
+    /// group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Target.NotInUse</code> - The target group is not used by any load balancer or
+    /// the target is in an Availability Zone that is not enabled for its load balancer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Target.InvalidState</code> - The target is in the stopped or terminated
+    /// state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
+    /// balancer.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If the target state is <code>draining</code>, the reason code can be the following
+    /// value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Target.DeregistrationInProgress</code> - The target is in the process of being
+    /// deregistered and the deregistration delay period has not expired.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If the target state is <code>unavailable</code>, the reason code can be the following
+    /// value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
+    /// group. Applies only to Application Load Balancers.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Elb.InternalError</code> - Target health is unavailable due to an internal
+    /// error. Applies only to Network Load Balancers.</p>
+    /// </li>
+    /// </ul>
+    pub fn reason(&self) -> std::option::Option<&crate::model::TargetHealthReasonEnum> {
+        self.reason.as_ref()
+    }
+    /// <p>A description of the target health that provides additional details. If the state is
+    /// <code>healthy</code>, a description is not provided.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for TargetHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5572,6 +6685,16 @@ pub struct TagDescription {
     /// <p>Information about the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagDescription {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Information about the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagDescription");
@@ -5644,6 +6767,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -5712,6 +6845,26 @@ pub struct SslPolicy {
     /// The supported load balancers.
     /// </p>
     pub supported_load_balancer_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SslPolicy {
+    /// <p>The protocols.</p>
+    pub fn ssl_protocols(&self) -> std::option::Option<&[std::string::String]> {
+        self.ssl_protocols.as_deref()
+    }
+    /// <p>The ciphers.</p>
+    pub fn ciphers(&self) -> std::option::Option<&[crate::model::Cipher]> {
+        self.ciphers.as_deref()
+    }
+    /// <p>The name of the policy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The supported load balancers.
+    /// </p>
+    pub fn supported_load_balancer_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_load_balancer_types.as_deref()
+    }
 }
 impl std::fmt::Debug for SslPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5839,6 +6992,16 @@ pub struct Cipher {
     pub name: std::option::Option<std::string::String>,
     /// <p>The priority of the cipher.</p>
     pub priority: i32,
+}
+impl Cipher {
+    /// <p>The name of the cipher.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The priority of the cipher.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
 }
 impl std::fmt::Debug for Cipher {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5992,6 +7155,69 @@ pub struct LoadBalancer {
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
+}
+impl LoadBalancer {
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+        self.load_balancer_arn.as_deref()
+    }
+    /// <p>The public DNS name of the load balancer.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
+    pub fn canonical_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.canonical_hosted_zone_id.as_deref()
+    }
+    /// <p>The date and time the load balancer was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
+    /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
+    /// Therefore, Internet-facing load balancers can route requests from clients over the
+    /// internet.</p>
+    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
+    /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
+    /// Therefore, internal load balancers can route requests only from clients with access to the VPC
+    /// for the load balancer.</p>
+    pub fn scheme(&self) -> std::option::Option<&crate::model::LoadBalancerSchemeEnum> {
+        self.scheme.as_ref()
+    }
+    /// <p>The ID of the VPC for the load balancer.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The state of the load balancer.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LoadBalancerState> {
+        self.state.as_ref()
+    }
+    /// <p>The type of load balancer.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LoadBalancerTypeEnum> {
+        self.r#type.as_ref()
+    }
+    /// <p>The subnets for the load balancer.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The IDs of the security groups for the load balancer.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
+    /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
+    /// addresses).</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
+    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
+        self.customer_owned_ipv4_pool.as_deref()
+    }
 }
 impl std::fmt::Debug for LoadBalancer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6270,6 +7496,20 @@ pub struct LoadBalancerState {
     /// <p>A description of the state.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl LoadBalancerState {
+    /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After
+    /// the load balancer is fully set up and ready to route traffic, its state is
+    /// <code>active</code>. If load balancer is routing traffic but does not have the resources it
+    /// needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be
+    /// set up, its state is <code>failed</code>.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::LoadBalancerStateEnum> {
+        self.code.as_ref()
+    }
+    /// <p>A description of the state.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for LoadBalancerState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoadBalancerState");
@@ -6518,6 +7758,72 @@ pub struct Limit {
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum value of the limit.</p>
     pub max: std::option::Option<std::string::String>,
+}
+impl Limit {
+    /// <p>The name of the limit. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>application-load-balancers</p>
+    /// </li>
+    /// <li>
+    /// <p>condition-values-per-alb-rule</p>
+    /// </li>
+    /// <li>
+    /// <p>condition-wildcards-per-alb-rule</p>
+    /// </li>
+    /// <li>
+    /// <p>gateway-load-balancers</p>
+    /// </li>
+    /// <li>
+    /// <p>gateway-load-balancers-per-vpc</p>
+    /// </li>
+    /// <li>
+    /// <p>geneve-target-groups</p>
+    /// </li>
+    /// <li>
+    /// <p>listeners-per-application-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>listeners-per-network-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>network-load-balancers</p>
+    /// </li>
+    /// <li>
+    /// <p>rules-per-application-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>target-groups</p>
+    /// </li>
+    /// <li>
+    /// <p>target-groups-per-action-on-application-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>target-groups-per-action-on-network-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>target-groups-per-application-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>targets-per-application-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>targets-per-availability-zone-per-network-load-balancer</p>
+    /// </li>
+    /// <li>
+    /// <p>targets-per-network-load-balancer</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The maximum value of the limit.</p>
+    pub fn max(&self) -> std::option::Option<&str> {
+        self.max.as_deref()
+    }
 }
 impl std::fmt::Debug for Limit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

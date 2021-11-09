@@ -280,10 +280,8 @@ impl CreateDataSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_data_set(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_data_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -440,10 +438,7 @@ impl CreateEventActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_event_action(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_event_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -600,10 +595,7 @@ impl CreateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -806,10 +798,8 @@ impl CreateRevisionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_revision(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_revision(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3733,10 +3723,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4145,10 +4132,7 @@ impl UpdateAssetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_asset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_asset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4332,10 +4316,8 @@ impl UpdateDataSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_data_set(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_data_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4515,10 +4497,7 @@ impl UpdateEventActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_event_action(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_event_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4734,10 +4713,8 @@ impl UpdateRevisionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_revision(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_revision(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4812,6 +4789,24 @@ pub struct UpdateRevisionInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl UpdateRevisionInput {
+    /// <p>An optional comment about the revision.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    pub fn finalized(&self) -> bool {
+        self.finalized
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRevisionInput");
@@ -4832,6 +4827,16 @@ pub struct UpdateEventActionInput {
     /// <p>The unique identifier for the event action.</p>
     pub event_action_id: std::option::Option<std::string::String>,
 }
+impl UpdateEventActionInput {
+    /// <p>What occurs after a certain event.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn event_action_id(&self) -> std::option::Option<&str> {
+        self.event_action_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEventActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEventActionInput");
@@ -4851,6 +4856,20 @@ pub struct UpdateDataSetInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateDataSetInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The description for the data set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the data set.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4875,6 +4894,24 @@ pub struct UpdateAssetInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl UpdateAssetInput {
+    /// <p>The unique identifier for an asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssetInput");
@@ -4895,6 +4932,16 @@ pub struct UntagResourceInput {
     /// The key tags.
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// The key tags.
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4914,6 +4961,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// A label that consists of a customer-defined key and an optional value.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4930,6 +4990,12 @@ pub struct StartJobInput {
     /// <p>The unique identifier for a job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StartJobInput {
+    /// <p>The unique identifier for a job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartJobInput");
@@ -4944,6 +5010,12 @@ impl std::fmt::Debug for StartJobInput {
 pub struct ListTagsForResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4965,6 +5037,24 @@ pub struct ListRevisionAssetsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl ListRevisionAssetsInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRevisionAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4990,6 +5080,24 @@ pub struct ListJobsInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl ListJobsInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -5012,6 +5120,20 @@ pub struct ListEventActionsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEventActionsInput {
+    /// <p>The unique identifier for the event source.</p>
+    pub fn event_source_id(&self) -> std::option::Option<&str> {
+        self.event_source_id.as_deref()
+    }
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEventActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventActionsInput");
@@ -5032,6 +5154,20 @@ pub struct ListDataSetsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub origin: std::option::Option<std::string::String>,
+}
+impl ListDataSetsInput {
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn origin(&self) -> std::option::Option<&str> {
+        self.origin.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDataSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5054,6 +5190,20 @@ pub struct ListDataSetRevisionsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDataSetRevisionsInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDataSetRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSetRevisionsInput");
@@ -5073,6 +5223,16 @@ pub struct GetRevisionInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl GetRevisionInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRevisionInput");
@@ -5089,6 +5249,12 @@ pub struct GetJobInput {
     /// <p>The unique identifier for a job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl GetJobInput {
+    /// <p>The unique identifier for a job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobInput");
@@ -5104,6 +5270,12 @@ pub struct GetEventActionInput {
     /// <p>The unique identifier for the event action.</p>
     pub event_action_id: std::option::Option<std::string::String>,
 }
+impl GetEventActionInput {
+    /// <p>The unique identifier for the event action.</p>
+    pub fn event_action_id(&self) -> std::option::Option<&str> {
+        self.event_action_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEventActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventActionInput");
@@ -5118,6 +5290,12 @@ impl std::fmt::Debug for GetEventActionInput {
 pub struct GetDataSetInput {
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: std::option::Option<std::string::String>,
+}
+impl GetDataSetInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5138,6 +5316,20 @@ pub struct GetAssetInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl GetAssetInput {
+    /// <p>The unique identifier for an asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssetInput");
@@ -5157,6 +5349,16 @@ pub struct DeleteRevisionInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl DeleteRevisionInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRevisionInput");
@@ -5173,6 +5375,12 @@ pub struct DeleteEventActionInput {
     /// <p>The unique identifier for the event action.</p>
     pub event_action_id: std::option::Option<std::string::String>,
 }
+impl DeleteEventActionInput {
+    /// <p>The unique identifier for the event action.</p>
+    pub fn event_action_id(&self) -> std::option::Option<&str> {
+        self.event_action_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventActionInput");
@@ -5187,6 +5395,12 @@ impl std::fmt::Debug for DeleteEventActionInput {
 pub struct DeleteDataSetInput {
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: std::option::Option<std::string::String>,
+}
+impl DeleteDataSetInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5206,6 +5420,20 @@ pub struct DeleteAssetInput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl DeleteAssetInput {
+    /// <p>The unique identifier for an asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5229,6 +5457,23 @@ pub struct CreateRevisionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRevisionInput {
+    /// <p>An optional comment about the revision.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRevisionInput");
@@ -5248,6 +5493,16 @@ pub struct CreateJobInput {
     /// <p>The type of job to be created.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl CreateJobInput {
+    /// <p>The details for the CreateJob request.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::RequestDetails> {
+        self.details.as_ref()
+    }
+    /// <p>The type of job to be created.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobInput");
@@ -5265,6 +5520,16 @@ pub struct CreateEventActionInput {
     pub action: std::option::Option<crate::model::Action>,
     /// <p>What occurs to start an action.</p>
     pub event: std::option::Option<crate::model::Event>,
+}
+impl CreateEventActionInput {
+    /// <p>What occurs after a certain event.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEventActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5289,6 +5554,27 @@ pub struct CreateDataSetInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDataSetInput {
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the data set.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSetInput");
@@ -5306,6 +5592,12 @@ impl std::fmt::Debug for CreateDataSetInput {
 pub struct CancelJobInput {
     /// <p>The unique identifier for a job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl CancelJobInput {
+    /// <p>The unique identifier for a job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

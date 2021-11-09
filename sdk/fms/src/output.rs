@@ -68,6 +68,16 @@ pub struct PutProtocolsListOutput {
     /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
     pub protocols_list_arn: std::option::Option<std::string::String>,
 }
+impl PutProtocolsListOutput {
+    /// <p>The details of the Firewall Manager protocols list.</p>
+    pub fn protocols_list(&self) -> std::option::Option<&crate::model::ProtocolsListData> {
+        self.protocols_list.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
+    pub fn protocols_list_arn(&self) -> std::option::Option<&str> {
+        self.protocols_list_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutProtocolsListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutProtocolsListOutput");
@@ -136,6 +146,16 @@ pub struct PutPolicyOutput {
     pub policy: std::option::Option<crate::model::Policy>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     pub policy_arn: std::option::Option<std::string::String>,
+}
+impl PutPolicyOutput {
+    /// <p>The details of the Firewall Manager policy.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -230,6 +250,16 @@ pub struct PutAppsListOutput {
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     pub apps_list_arn: std::option::Option<std::string::String>,
 }
+impl PutAppsListOutput {
+    /// <p>The details of the Firewall Manager applications list.</p>
+    pub fn apps_list(&self) -> std::option::Option<&crate::model::AppsListData> {
+        self.apps_list.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    pub fn apps_list_arn(&self) -> std::option::Option<&str> {
+        self.apps_list_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAppsListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAppsListOutput");
@@ -297,6 +327,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the resource.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with the resource.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -356,6 +392,19 @@ pub struct ListProtocolsListsOutput {
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
     /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProtocolsListsOutput {
+    /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
+    pub fn protocols_lists(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProtocolsListDataSummary]> {
+        self.protocols_lists.as_deref()
+    }
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
+    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProtocolsListsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -438,6 +487,20 @@ pub struct ListPoliciesOutput {
     /// <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the
     /// response in the <code>NextToken</code> value in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPoliciesOutput {
+    /// <p>An array of <code>PolicySummary</code> objects.</p>
+    pub fn policy_list(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
+        self.policy_list.as_deref()
+    }
+    /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for
+    /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
+    /// value. To list more <code>PolicySummary</code> objects, submit another
+    /// <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the
+    /// response in the <code>NextToken</code> value in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -522,6 +585,20 @@ pub struct ListMemberAccountsOutput {
     /// the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
     /// next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMemberAccountsOutput {
+    /// <p>An array of account IDs.</p>
+    pub fn member_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.member_accounts.as_deref()
+    }
+    /// <p>If you have more member account IDs than the number that you specified for
+    /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
+    /// value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify
+    /// the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
+    /// next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMemberAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -608,6 +685,23 @@ pub struct ListComplianceStatusOutput {
     /// <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
     /// next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListComplianceStatusOutput {
+    /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
+    pub fn policy_compliance_status_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PolicyComplianceStatus]> {
+        self.policy_compliance_status_list.as_deref()
+    }
+    /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you
+    /// specified for <code>MaxResults</code> in the request, the response includes a
+    /// <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects,
+    /// submit another <code>ListComplianceStatus</code> request, and specify the
+    /// <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
+    /// next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListComplianceStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -699,6 +793,17 @@ pub struct ListAppsListsOutput {
     /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppsListsOutput {
+    /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
+    pub fn apps_lists(&self) -> std::option::Option<&[crate::model::AppsListDataSummary]> {
+        self.apps_lists.as_deref()
+    }
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
+    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppsListsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppsListsOutput");
@@ -772,6 +877,12 @@ pub struct GetViolationDetailsOutput {
     /// <p>Violation detail for a resource.</p>
     pub violation_detail: std::option::Option<crate::model::ViolationDetail>,
 }
+impl GetViolationDetailsOutput {
+    /// <p>Violation detail for a resource.</p>
+    pub fn violation_detail(&self) -> std::option::Option<&crate::model::ViolationDetail> {
+        self.violation_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for GetViolationDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetViolationDetailsOutput");
@@ -824,6 +935,16 @@ pub struct GetProtocolsListOutput {
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     pub protocols_list_arn: std::option::Option<std::string::String>,
+}
+impl GetProtocolsListOutput {
+    /// <p>Information about the specified Firewall Manager protocols list.</p>
+    pub fn protocols_list(&self) -> std::option::Option<&crate::model::ProtocolsListData> {
+        self.protocols_list.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
+    pub fn protocols_list_arn(&self) -> std::option::Option<&str> {
+        self.protocols_list_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProtocolsListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,6 +1044,50 @@ pub struct GetProtectionStatusOutput {
     /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
     /// <code>NextToken</code> using your own processes. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetProtectionStatusOutput {
+    /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+    /// <p>The service type that is protected by the policy. Currently, this is always
+    /// <code>SHIELD_ADVANCED</code>.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::SecurityServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>Details about the attack, including the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Attack type</p>
+    /// </li>
+    /// <li>
+    /// <p>Account ID</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN of the resource attacked</p>
+    /// </li>
+    /// <li>
+    /// <p>Start time of the attack</p>
+    /// </li>
+    /// <li>
+    /// <p>End time of the attack (ongoing attacks will not have an end time)</p>
+    /// </li>
+    /// </ul>
+    /// <p>The details are in JSON format. </p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request,
+    /// the response includes a <code>NextToken</code> value. To list more objects, submit another
+    /// <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the
+    /// <code>NextToken</code> value in the next request.</p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
+    /// make subsequent request calls automatically on your behalf. However, this feature is not
+    /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
+    /// <code>NextToken</code> using your own processes. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProtectionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1071,6 +1236,16 @@ pub struct GetPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
+impl GetPolicyOutput {
+    /// <p>Information about the specified Firewall Manager policy.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPolicyOutput");
@@ -1133,6 +1308,16 @@ pub struct GetNotificationChannelOutput {
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
     pub sns_role_name: std::option::Option<std::string::String>,
+}
+impl GetNotificationChannelOutput {
+    /// <p>The SNS topic that records Firewall Manager activity. </p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
+    pub fn sns_role_name(&self) -> std::option::Option<&str> {
+        self.sns_role_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetNotificationChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1202,6 +1387,15 @@ pub struct GetComplianceDetailOutput {
     /// <code>GetComplianceDetail</code> request.</p>
     pub policy_compliance_detail: std::option::Option<crate::model::PolicyComplianceDetail>,
 }
+impl GetComplianceDetailOutput {
+    /// <p>Information about the resources and the policy that you specified in the
+    /// <code>GetComplianceDetail</code> request.</p>
+    pub fn policy_compliance_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::PolicyComplianceDetail> {
+        self.policy_compliance_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for GetComplianceDetailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComplianceDetailOutput");
@@ -1260,6 +1454,16 @@ pub struct GetAppsListOutput {
     pub apps_list: std::option::Option<crate::model::AppsListData>,
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     pub apps_list_arn: std::option::Option<std::string::String>,
+}
+impl GetAppsListOutput {
+    /// <p>Information about the specified Firewall Manager applications list.</p>
+    pub fn apps_list(&self) -> std::option::Option<&crate::model::AppsListData> {
+        self.apps_list.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    pub fn apps_list_arn(&self) -> std::option::Option<&str> {
+        self.apps_list_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppsListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1330,6 +1534,17 @@ pub struct GetAdminAccountOutput {
     /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
     /// administrator.</p>
     pub role_status: std::option::Option<crate::model::AccountRoleStatus>,
+}
+impl GetAdminAccountOutput {
+    /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
+    pub fn admin_account(&self) -> std::option::Option<&str> {
+        self.admin_account.as_deref()
+    }
+    /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
+    /// administrator.</p>
+    pub fn role_status(&self) -> std::option::Option<&crate::model::AccountRoleStatus> {
+        self.role_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAdminAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

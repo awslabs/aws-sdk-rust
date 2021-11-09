@@ -97,6 +97,34 @@ pub struct Task {
         std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
     >,
 }
+impl Task {
+    /// <p> The source fields to which a particular task is applied. </p>
+    pub fn source_fields(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_fields.as_deref()
+    }
+    /// <p> The operation to be performed on the provided source fields. </p>
+    pub fn connector_operator(&self) -> std::option::Option<&crate::model::ConnectorOperator> {
+        self.connector_operator.as_ref()
+    }
+    /// <p> A field in a destination connector, or a field value against which Amazon AppFlow
+    /// validates a source field. </p>
+    pub fn destination_field(&self) -> std::option::Option<&str> {
+        self.destination_field.as_deref()
+    }
+    /// <p> Specifies the particular task implementation that Amazon AppFlow performs. </p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::TaskType> {
+        self.task_type.as_ref()
+    }
+    /// <p> A map used to store task-related information. The execution service looks for particular
+    /// information based on the <code>TaskType</code>. </p>
+    pub fn task_properties(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
+    > {
+        self.task_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for Task {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Task");
@@ -474,6 +502,70 @@ pub struct ConnectorOperator {
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorOperator>,
     /// <p> The operation to be performed on the provided SAPOData source fields. </p>
     pub sapo_data: std::option::Option<crate::model::SapoDataConnectorOperator>,
+}
+impl ConnectorOperator {
+    /// <p> The operation to be performed on the provided Amplitude source fields. </p>
+    pub fn amplitude(&self) -> std::option::Option<&crate::model::AmplitudeConnectorOperator> {
+        self.amplitude.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Datadog source fields. </p>
+    pub fn datadog(&self) -> std::option::Option<&crate::model::DatadogConnectorOperator> {
+        self.datadog.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Dynatrace source fields. </p>
+    pub fn dynatrace(&self) -> std::option::Option<&crate::model::DynatraceConnectorOperator> {
+        self.dynatrace.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Google Analytics source fields. </p>
+    pub fn google_analytics(
+        &self,
+    ) -> std::option::Option<&crate::model::GoogleAnalyticsConnectorOperator> {
+        self.google_analytics.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Infor Nexus source fields. </p>
+    pub fn infor_nexus(&self) -> std::option::Option<&crate::model::InforNexusConnectorOperator> {
+        self.infor_nexus.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Marketo source fields. </p>
+    pub fn marketo(&self) -> std::option::Option<&crate::model::MarketoConnectorOperator> {
+        self.marketo.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Amazon S3 source fields. </p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3ConnectorOperator> {
+        self.s3.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Salesforce source fields. </p>
+    pub fn salesforce(&self) -> std::option::Option<&crate::model::SalesforceConnectorOperator> {
+        self.salesforce.as_ref()
+    }
+    /// <p> The operation to be performed on the provided ServiceNow source fields. </p>
+    pub fn service_now(&self) -> std::option::Option<&crate::model::ServiceNowConnectorOperator> {
+        self.service_now.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Singular source fields. </p>
+    pub fn singular(&self) -> std::option::Option<&crate::model::SingularConnectorOperator> {
+        self.singular.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Slack source fields. </p>
+    pub fn slack(&self) -> std::option::Option<&crate::model::SlackConnectorOperator> {
+        self.slack.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Trend Micro source fields. </p>
+    pub fn trendmicro(&self) -> std::option::Option<&crate::model::TrendmicroConnectorOperator> {
+        self.trendmicro.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Veeva source fields. </p>
+    pub fn veeva(&self) -> std::option::Option<&crate::model::VeevaConnectorOperator> {
+        self.veeva.as_ref()
+    }
+    /// <p> The operation to be performed on the provided Zendesk source fields. </p>
+    pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskConnectorOperator> {
+        self.zendesk.as_ref()
+    }
+    /// <p> The operation to be performed on the provided SAPOData source fields. </p>
+    pub fn sapo_data(&self) -> std::option::Option<&crate::model::SapoDataConnectorOperator> {
+        self.sapo_data.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectorOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2621,6 +2713,23 @@ pub struct DestinationFlowConfig {
     pub destination_connector_properties:
         std::option::Option<crate::model::DestinationConnectorProperties>,
 }
+impl DestinationFlowConfig {
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p> The name of the connector profile. This name must be unique for each connector profile in
+    /// the Amazon Web Services account. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p> This stores the information that is required to query a particular connector. </p>
+    pub fn destination_connector_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationConnectorProperties> {
+        self.destination_connector_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DestinationFlowConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationFlowConfig");
@@ -2730,6 +2839,56 @@ pub struct DestinationConnectorProperties {
     pub customer_profiles: std::option::Option<crate::model::CustomerProfilesDestinationProperties>,
     /// <p>The properties required to query Zendesk.</p>
     pub zendesk: std::option::Option<crate::model::ZendeskDestinationProperties>,
+}
+impl DestinationConnectorProperties {
+    /// <p> The properties required to query Amazon Redshift. </p>
+    pub fn redshift(&self) -> std::option::Option<&crate::model::RedshiftDestinationProperties> {
+        self.redshift.as_ref()
+    }
+    /// <p> The properties required to query Amazon S3. </p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3DestinationProperties> {
+        self.s3.as_ref()
+    }
+    /// <p> The properties required to query Salesforce. </p>
+    pub fn salesforce(
+        &self,
+    ) -> std::option::Option<&crate::model::SalesforceDestinationProperties> {
+        self.salesforce.as_ref()
+    }
+    /// <p> The properties required to query Snowflake. </p>
+    pub fn snowflake(&self) -> std::option::Option<&crate::model::SnowflakeDestinationProperties> {
+        self.snowflake.as_ref()
+    }
+    /// <p> The properties required to query Amazon EventBridge. </p>
+    pub fn event_bridge(
+        &self,
+    ) -> std::option::Option<&crate::model::EventBridgeDestinationProperties> {
+        self.event_bridge.as_ref()
+    }
+    /// <p> The properties required to query Amazon Lookout for Metrics. </p>
+    pub fn lookout_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::LookoutMetricsDestinationProperties> {
+        self.lookout_metrics.as_ref()
+    }
+    /// <p> The properties required to query Upsolver. </p>
+    pub fn upsolver(&self) -> std::option::Option<&crate::model::UpsolverDestinationProperties> {
+        self.upsolver.as_ref()
+    }
+    /// <p> The properties required to query Amazon Honeycode. </p>
+    pub fn honeycode(&self) -> std::option::Option<&crate::model::HoneycodeDestinationProperties> {
+        self.honeycode.as_ref()
+    }
+    /// <p> The properties required to query Amazon Connect Customer Profiles. </p>
+    pub fn customer_profiles(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerProfilesDestinationProperties> {
+        self.customer_profiles.as_ref()
+    }
+    /// <p>The properties required to query Zendesk.</p>
+    pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskDestinationProperties> {
+        self.zendesk.as_ref()
+    }
 }
 impl std::fmt::Debug for DestinationConnectorProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2950,6 +3109,30 @@ pub struct ZendeskDestinationProperties {
     /// provided, this defaults to the <code>INSERT</code> operation. </p>
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
 }
+impl ZendeskDestinationProperties {
+    /// <p>The object specified in the Zendesk flow destination.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> A list of field names that can be used as an ID field when performing a write operation.
+    /// </p>
+    pub fn id_field_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.id_field_names.as_deref()
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
+    /// destination. For example, this setting would determine if the flow should fail after one
+    /// insertion error, or continue and attempt to insert every record regardless of the initial
+    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
+    /// </p>
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
+        self.error_handling_config.as_ref()
+    }
+    /// <p> The possible write operations in the destination connector. When this value is not
+    /// provided, this defaults to the <code>INSERT</code> operation. </p>
+    pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
+        self.write_operation_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ZendeskDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZendeskDestinationProperties");
@@ -3133,6 +3316,21 @@ pub struct ErrorHandlingConfig {
     /// <p> Specifies the name of the Amazon S3 bucket. </p>
     pub bucket_name: std::option::Option<std::string::String>,
 }
+impl ErrorHandlingConfig {
+    /// <p> Specifies if the flow should fail after the first instance of a failure when attempting
+    /// to place data in the destination. </p>
+    pub fn fail_on_first_destination_error(&self) -> bool {
+        self.fail_on_first_destination_error
+    }
+    /// <p> Specifies the Amazon S3 bucket prefix. </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> Specifies the name of the Amazon S3 bucket. </p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorHandlingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorHandlingConfig");
@@ -3223,6 +3421,16 @@ pub struct CustomerProfilesDestinationProperties {
     /// <p> The object specified in the Amazon Connect Customer Profiles flow destination. </p>
     pub object_type_name: std::option::Option<std::string::String>,
 }
+impl CustomerProfilesDestinationProperties {
+    /// <p> The unique name of the Amazon Connect Customer Profiles domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> The object specified in the Amazon Connect Customer Profiles flow destination. </p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomerProfilesDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomerProfilesDestinationProperties");
@@ -3292,6 +3500,20 @@ pub struct HoneycodeDestinationProperties {
     /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
     /// </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
+}
+impl HoneycodeDestinationProperties {
+    /// <p> The object specified in the Amazon Honeycode flow destination. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
+    /// destination. For example, this setting would determine if the flow should fail after one
+    /// insertion error, or continue and attempt to insert every record regardless of the initial
+    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
+    /// </p>
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
+        self.error_handling_config.as_ref()
+    }
 }
 impl std::fmt::Debug for HoneycodeDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3371,6 +3593,25 @@ pub struct UpsolverDestinationProperties {
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow
     /// destination. </p>
     pub s3_output_format_config: std::option::Option<crate::model::UpsolverS3OutputFormatConfig>,
+}
+impl UpsolverDestinationProperties {
+    /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.
+    /// </p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow
+    /// places the files. </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow
+    /// destination. </p>
+    pub fn s3_output_format_config(
+        &self,
+    ) -> std::option::Option<&crate::model::UpsolverS3OutputFormatConfig> {
+        self.s3_output_format_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpsolverDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3470,6 +3711,23 @@ pub struct UpsolverS3OutputFormatConfig {
     /// data. </p>
     pub aggregation_config: std::option::Option<crate::model::AggregationConfig>,
 }
+impl UpsolverS3OutputFormatConfig {
+    /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket.
+    /// </p>
+    pub fn file_type(&self) -> std::option::Option<&crate::model::FileType> {
+        self.file_type.as_ref()
+    }
+    /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can
+    /// name your destination folders according to the flow frequency and date. </p>
+    pub fn prefix_config(&self) -> std::option::Option<&crate::model::PrefixConfig> {
+        self.prefix_config.as_ref()
+    }
+    /// <p> The aggregation settings that you can use to customize the output format of your flow
+    /// data. </p>
+    pub fn aggregation_config(&self) -> std::option::Option<&crate::model::AggregationConfig> {
+        self.aggregation_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpsolverS3OutputFormatConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpsolverS3OutputFormatConfig");
@@ -3557,6 +3815,13 @@ pub struct AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave
     /// them unaggregated. </p>
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
+}
+impl AggregationConfig {
+    /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave
+    /// them unaggregated. </p>
+    pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
+        self.aggregation_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AggregationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3669,6 +3934,17 @@ pub struct PrefixConfig {
     pub prefix_type: std::option::Option<crate::model::PrefixType>,
     /// <p> Determines the level of granularity that's included in the prefix. </p>
     pub prefix_format: std::option::Option<crate::model::PrefixFormat>,
+}
+impl PrefixConfig {
+    /// <p> Determines the format of the prefix, and whether it applies to the file name, file path,
+    /// or both. </p>
+    pub fn prefix_type(&self) -> std::option::Option<&crate::model::PrefixType> {
+        self.prefix_type.as_ref()
+    }
+    /// <p> Determines the level of granularity that's included in the prefix. </p>
+    pub fn prefix_format(&self) -> std::option::Option<&crate::model::PrefixFormat> {
+        self.prefix_format.as_ref()
+    }
 }
 impl std::fmt::Debug for PrefixConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3962,6 +4238,20 @@ pub struct EventBridgeDestinationProperties {
     /// </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
+impl EventBridgeDestinationProperties {
+    /// <p> The object specified in the Amazon EventBridge flow destination. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
+    /// destination. For example, this setting would determine if the flow should fail after one
+    /// insertion error, or continue and attempt to insert every record regardless of the initial
+    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
+    /// </p>
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
+        self.error_handling_config.as_ref()
+    }
+}
 impl std::fmt::Debug for EventBridgeDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventBridgeDestinationProperties");
@@ -4044,6 +4334,29 @@ pub struct SnowflakeDestinationProperties {
     /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
     /// </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
+}
+impl SnowflakeDestinationProperties {
+    /// <p> The object specified in the Snowflake flow destination. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake. </p>
+    pub fn intermediate_bucket_name(&self) -> std::option::Option<&str> {
+        self.intermediate_bucket_name.as_deref()
+    }
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
+    /// </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
+    /// Snowflake destination. For example, this setting would determine if the flow should fail after
+    /// one insertion error, or continue and attempt to insert every record regardless of the initial
+    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
+    /// </p>
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
+        self.error_handling_config.as_ref()
+    }
 }
 impl std::fmt::Debug for SnowflakeDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4162,6 +4475,30 @@ pub struct SalesforceDestinationProperties {
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value
     /// is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
+}
+impl SalesforceDestinationProperties {
+    /// <p> The object specified in the Salesforce flow destination. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation
+    /// such as update or delete. </p>
+    pub fn id_field_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.id_field_names.as_deref()
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
+    /// Salesforce destination. For example, this setting would determine if the flow should fail
+    /// after one insertion error, or continue and attempt to insert every record regardless of the
+    /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
+    /// details. </p>
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
+        self.error_handling_config.as_ref()
+    }
+    /// <p> This specifies the type of write operation to be performed in Salesforce. When the value
+    /// is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
+    pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
+        self.write_operation_type.as_ref()
+    }
 }
 impl std::fmt::Debug for SalesforceDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4283,6 +4620,24 @@ pub struct S3DestinationProperties {
     /// when Amazon S3 is used as the destination. </p>
     pub s3_output_format_config: std::option::Option<crate::model::S3OutputFormatConfig>,
 }
+impl S3DestinationProperties {
+    /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
+    /// </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> The configuration that determines how Amazon AppFlow should format the flow output data
+    /// when Amazon S3 is used as the destination. </p>
+    pub fn s3_output_format_config(
+        &self,
+    ) -> std::option::Option<&crate::model::S3OutputFormatConfig> {
+        self.s3_output_format_config.as_ref()
+    }
+}
 impl std::fmt::Debug for S3DestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3DestinationProperties");
@@ -4376,6 +4731,22 @@ pub struct S3OutputFormatConfig {
     /// <p> The aggregation settings that you can use to customize the output format of your flow
     /// data. </p>
     pub aggregation_config: std::option::Option<crate::model::AggregationConfig>,
+}
+impl S3OutputFormatConfig {
+    /// <p> Indicates the file type that Amazon AppFlow places in the Amazon S3 bucket. </p>
+    pub fn file_type(&self) -> std::option::Option<&crate::model::FileType> {
+        self.file_type.as_ref()
+    }
+    /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3
+    /// bucket. You can name folders according to the flow frequency and date. </p>
+    pub fn prefix_config(&self) -> std::option::Option<&crate::model::PrefixConfig> {
+        self.prefix_config.as_ref()
+    }
+    /// <p> The aggregation settings that you can use to customize the output format of your flow
+    /// data. </p>
+    pub fn aggregation_config(&self) -> std::option::Option<&crate::model::AggregationConfig> {
+        self.aggregation_config.as_ref()
+    }
 }
 impl std::fmt::Debug for S3OutputFormatConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4473,6 +4844,30 @@ pub struct RedshiftDestinationProperties {
     /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
     /// details. </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
+}
+impl RedshiftDestinationProperties {
+    /// <p> The object specified in the Amazon Redshift flow destination. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift.
+    /// </p>
+    pub fn intermediate_bucket_name(&self) -> std::option::Option<&str> {
+        self.intermediate_bucket_name.as_deref()
+    }
+    /// <p> The object key for the bucket in which Amazon AppFlow places the destination files.
+    /// </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
+    /// Amazon Redshift destination. For example, this setting would determine if the flow should fail
+    /// after one insertion error, or continue and attempt to insert every record regardless of the
+    /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
+    /// details. </p>
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
+        self.error_handling_config.as_ref()
+    }
 }
 impl std::fmt::Debug for RedshiftDestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4751,6 +5146,32 @@ pub struct SourceFlowConfig {
     /// incremental data pull. </p>
     pub incremental_pull_config: std::option::Option<crate::model::IncrementalPullConfig>,
 }
+impl SourceFlowConfig {
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p> The name of the connector profile. This name must be unique for each connector profile in
+    /// the Amazon Web Services account. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p> Specifies the information that is required to query a particular source connector.
+    /// </p>
+    pub fn source_connector_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceConnectorProperties> {
+        self.source_connector_properties.as_ref()
+    }
+    /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration
+    /// is provided, the fields specified in the configuration are used when querying for the
+    /// incremental data pull. </p>
+    pub fn incremental_pull_config(
+        &self,
+    ) -> std::option::Option<&crate::model::IncrementalPullConfig> {
+        self.incremental_pull_config.as_ref()
+    }
+}
 impl std::fmt::Debug for SourceFlowConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceFlowConfig");
@@ -4871,6 +5292,13 @@ pub struct IncrementalPullConfig {
     /// importing incremental records from the source. </p>
     pub datetime_type_field_name: std::option::Option<std::string::String>,
 }
+impl IncrementalPullConfig {
+    /// <p> A field that specifies the date time or timestamp field as the criteria to use when
+    /// importing incremental records from the source. </p>
+    pub fn datetime_type_field_name(&self) -> std::option::Option<&str> {
+        self.datetime_type_field_name.as_deref()
+    }
+}
 impl std::fmt::Debug for IncrementalPullConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncrementalPullConfig");
@@ -4951,6 +5379,70 @@ pub struct SourceConnectorProperties {
     pub zendesk: std::option::Option<crate::model::ZendeskSourceProperties>,
     /// <p> The properties that are applied when using SAPOData as a flow source. </p>
     pub sapo_data: std::option::Option<crate::model::SapoDataSourceProperties>,
+}
+impl SourceConnectorProperties {
+    /// <p> Specifies the information that is required for querying Amplitude. </p>
+    pub fn amplitude(&self) -> std::option::Option<&crate::model::AmplitudeSourceProperties> {
+        self.amplitude.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Datadog. </p>
+    pub fn datadog(&self) -> std::option::Option<&crate::model::DatadogSourceProperties> {
+        self.datadog.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Dynatrace. </p>
+    pub fn dynatrace(&self) -> std::option::Option<&crate::model::DynatraceSourceProperties> {
+        self.dynatrace.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Google Analytics. </p>
+    pub fn google_analytics(
+        &self,
+    ) -> std::option::Option<&crate::model::GoogleAnalyticsSourceProperties> {
+        self.google_analytics.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Infor Nexus. </p>
+    pub fn infor_nexus(&self) -> std::option::Option<&crate::model::InforNexusSourceProperties> {
+        self.infor_nexus.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Marketo. </p>
+    pub fn marketo(&self) -> std::option::Option<&crate::model::MarketoSourceProperties> {
+        self.marketo.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Amazon S3. </p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3SourceProperties> {
+        self.s3.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Salesforce. </p>
+    pub fn salesforce(&self) -> std::option::Option<&crate::model::SalesforceSourceProperties> {
+        self.salesforce.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying ServiceNow. </p>
+    pub fn service_now(&self) -> std::option::Option<&crate::model::ServiceNowSourceProperties> {
+        self.service_now.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Singular. </p>
+    pub fn singular(&self) -> std::option::Option<&crate::model::SingularSourceProperties> {
+        self.singular.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Slack. </p>
+    pub fn slack(&self) -> std::option::Option<&crate::model::SlackSourceProperties> {
+        self.slack.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Trend Micro. </p>
+    pub fn trendmicro(&self) -> std::option::Option<&crate::model::TrendmicroSourceProperties> {
+        self.trendmicro.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Veeva. </p>
+    pub fn veeva(&self) -> std::option::Option<&crate::model::VeevaSourceProperties> {
+        self.veeva.as_ref()
+    }
+    /// <p> Specifies the information that is required for querying Zendesk. </p>
+    pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskSourceProperties> {
+        self.zendesk.as_ref()
+    }
+    /// <p> The properties that are applied when using SAPOData as a flow source. </p>
+    pub fn sapo_data(&self) -> std::option::Option<&crate::model::SapoDataSourceProperties> {
+        self.sapo_data.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceConnectorProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5231,6 +5723,12 @@ pub struct SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
     pub object_path: std::option::Option<std::string::String>,
 }
+impl SapoDataSourceProperties {
+    /// <p> The object path specified in the SAPOData flow source. </p>
+    pub fn object_path(&self) -> std::option::Option<&str> {
+        self.object_path.as_deref()
+    }
+}
 impl std::fmt::Debug for SapoDataSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SapoDataSourceProperties");
@@ -5278,6 +5776,12 @@ impl SapoDataSourceProperties {
 pub struct ZendeskSourceProperties {
     /// <p> The object specified in the Zendesk flow source. </p>
     pub object: std::option::Option<std::string::String>,
+}
+impl ZendeskSourceProperties {
+    /// <p> The object specified in the Zendesk flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
 }
 impl std::fmt::Debug for ZendeskSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5334,6 +5838,28 @@ pub struct VeevaSourceProperties {
     pub include_renditions: bool,
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub include_all_versions: bool,
+}
+impl VeevaSourceProperties {
+    /// <p> The object specified in the Veeva flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p>The document type specified in the Veeva document extract flow.</p>
+    pub fn document_type(&self) -> std::option::Option<&str> {
+        self.document_type.as_deref()
+    }
+    /// <p>Boolean value to include source files in Veeva document extract flow.</p>
+    pub fn include_source_files(&self) -> bool {
+        self.include_source_files
+    }
+    /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+    pub fn include_renditions(&self) -> bool {
+        self.include_renditions
+    }
+    /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
+    pub fn include_all_versions(&self) -> bool {
+        self.include_all_versions
+    }
 }
 impl std::fmt::Debug for VeevaSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5438,6 +5964,12 @@ pub struct TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
     pub object: std::option::Option<std::string::String>,
 }
+impl TrendmicroSourceProperties {
+    /// <p> The object specified in the Trend Micro flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for TrendmicroSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrendmicroSourceProperties");
@@ -5485,6 +6017,12 @@ impl TrendmicroSourceProperties {
 pub struct SlackSourceProperties {
     /// <p> The object specified in the Slack flow source. </p>
     pub object: std::option::Option<std::string::String>,
+}
+impl SlackSourceProperties {
+    /// <p> The object specified in the Slack flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
 }
 impl std::fmt::Debug for SlackSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5534,6 +6072,12 @@ pub struct SingularSourceProperties {
     /// <p> The object specified in the Singular flow source. </p>
     pub object: std::option::Option<std::string::String>,
 }
+impl SingularSourceProperties {
+    /// <p> The object specified in the Singular flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for SingularSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SingularSourceProperties");
@@ -5581,6 +6125,12 @@ impl SingularSourceProperties {
 pub struct ServiceNowSourceProperties {
     /// <p> The object specified in the ServiceNow flow source. </p>
     pub object: std::option::Option<std::string::String>,
+}
+impl ServiceNowSourceProperties {
+    /// <p> The object specified in the ServiceNow flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceNowSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5634,6 +6184,21 @@ pub struct SalesforceSourceProperties {
     pub enable_dynamic_field_update: bool,
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
     pub include_deleted_records: bool,
+}
+impl SalesforceSourceProperties {
+    /// <p> The object specified in the Salesforce flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
+    /// objects while running a flow. </p>
+    pub fn enable_dynamic_field_update(&self) -> bool {
+        self.enable_dynamic_field_update
+    }
+    /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
+    pub fn include_deleted_records(&self) -> bool {
+        self.include_deleted_records
+    }
 }
 impl std::fmt::Debug for SalesforceSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5718,6 +6283,22 @@ pub struct S3SourceProperties {
     /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
     pub s3_input_format_config: std::option::Option<crate::model::S3InputFormatConfig>,
 }
+impl S3SourceProperties {
+    /// <p> The Amazon S3 bucket name where the source files are stored. </p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
+    pub fn s3_input_format_config(
+        &self,
+    ) -> std::option::Option<&crate::model::S3InputFormatConfig> {
+        self.s3_input_format_config.as_ref()
+    }
+}
 impl std::fmt::Debug for S3SourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3SourceProperties");
@@ -5797,6 +6378,12 @@ impl S3SourceProperties {
 pub struct S3InputFormatConfig {
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
     pub s3_input_file_type: std::option::Option<crate::model::S3InputFileType>,
+}
+impl S3InputFormatConfig {
+    /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
+    pub fn s3_input_file_type(&self) -> std::option::Option<&crate::model::S3InputFileType> {
+        self.s3_input_file_type.as_ref()
+    }
 }
 impl std::fmt::Debug for S3InputFormatConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5904,6 +6491,12 @@ pub struct MarketoSourceProperties {
     /// <p> The object specified in the Marketo flow source. </p>
     pub object: std::option::Option<std::string::String>,
 }
+impl MarketoSourceProperties {
+    /// <p> The object specified in the Marketo flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for MarketoSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MarketoSourceProperties");
@@ -5951,6 +6544,12 @@ impl MarketoSourceProperties {
 pub struct InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
     pub object: std::option::Option<std::string::String>,
+}
+impl InforNexusSourceProperties {
+    /// <p> The object specified in the Infor Nexus flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
 }
 impl std::fmt::Debug for InforNexusSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6000,6 +6599,12 @@ pub struct GoogleAnalyticsSourceProperties {
     /// <p> The object specified in the Google Analytics flow source. </p>
     pub object: std::option::Option<std::string::String>,
 }
+impl GoogleAnalyticsSourceProperties {
+    /// <p> The object specified in the Google Analytics flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for GoogleAnalyticsSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GoogleAnalyticsSourceProperties");
@@ -6047,6 +6652,12 @@ impl GoogleAnalyticsSourceProperties {
 pub struct DynatraceSourceProperties {
     /// <p> The object specified in the Dynatrace flow source. </p>
     pub object: std::option::Option<std::string::String>,
+}
+impl DynatraceSourceProperties {
+    /// <p> The object specified in the Dynatrace flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
 }
 impl std::fmt::Debug for DynatraceSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6096,6 +6707,12 @@ pub struct DatadogSourceProperties {
     /// <p> The object specified in the Datadog flow source. </p>
     pub object: std::option::Option<std::string::String>,
 }
+impl DatadogSourceProperties {
+    /// <p> The object specified in the Datadog flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for DatadogSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatadogSourceProperties");
@@ -6143,6 +6760,12 @@ impl DatadogSourceProperties {
 pub struct AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
     pub object: std::option::Option<std::string::String>,
+}
+impl AmplitudeSourceProperties {
+    /// <p> The object specified in the Amplitude flow source. </p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
 }
 impl std::fmt::Debug for AmplitudeSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6196,6 +6819,18 @@ pub struct TriggerConfig {
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
     /// Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
     pub trigger_properties: std::option::Option<crate::model::TriggerProperties>,
+}
+impl TriggerConfig {
+    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
+    /// <code>Scheduled</code>, or <code>Event</code>. </p>
+    pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
+        self.trigger_type.as_ref()
+    }
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
+    /// Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+    pub fn trigger_properties(&self) -> std::option::Option<&crate::model::TriggerProperties> {
+        self.trigger_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for TriggerConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6270,6 +6905,13 @@ pub struct TriggerProperties {
     /// </p>
     pub scheduled: std::option::Option<crate::model::ScheduledTriggerProperties>,
 }
+impl TriggerProperties {
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
+    /// </p>
+    pub fn scheduled(&self) -> std::option::Option<&crate::model::ScheduledTriggerProperties> {
+        self.scheduled.as_ref()
+    }
+}
 impl std::fmt::Debug for TriggerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TriggerProperties");
@@ -6340,6 +6982,41 @@ pub struct ScheduledTriggerProperties {
     /// <p> Specifies the date range for the records to import from the connector in the first flow
     /// run. </p>
     pub first_execution_from: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ScheduledTriggerProperties {
+    /// <p> The scheduling expression that determines the rate at which the schedule will run, for
+    /// example <code>rate(5minutes)</code>. </p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data
+    /// transfer for each flow run. </p>
+    pub fn data_pull_mode(&self) -> std::option::Option<&crate::model::DataPullMode> {
+        self.data_pull_mode.as_ref()
+    }
+    /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
+    pub fn schedule_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.schedule_start_time.as_ref()
+    }
+    /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
+    pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.schedule_end_time.as_ref()
+    }
+    /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered
+    /// flow, such as <code>America/New_York</code>. </p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered
+    /// flow. </p>
+    pub fn schedule_offset(&self) -> std::option::Option<i64> {
+        self.schedule_offset
+    }
+    /// <p> Specifies the date range for the records to import from the connector in the first flow
+    /// run. </p>
+    pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.first_execution_from.as_ref()
+    }
 }
 impl std::fmt::Debug for ScheduledTriggerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6610,6 +7287,20 @@ pub struct ConnectorProfileConfig {
     pub connector_profile_credentials:
         std::option::Option<crate::model::ConnectorProfileCredentials>,
 }
+impl ConnectorProfileConfig {
+    /// <p> The connector-specific properties of the profile configuration. </p>
+    pub fn connector_profile_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProfileProperties> {
+        self.connector_profile_properties.as_ref()
+    }
+    /// <p> The connector-specific credentials required by each connector. </p>
+    pub fn connector_profile_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProfileCredentials> {
+        self.connector_profile_credentials.as_ref()
+    }
+}
 impl std::fmt::Debug for ConnectorProfileConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorProfileConfig");
@@ -6723,6 +7414,106 @@ pub struct ConnectorProfileCredentials {
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorProfileCredentials>,
     /// <p> The connector-specific profile credentials required when using SAPOData. </p>
     pub sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileCredentials>,
+}
+impl ConnectorProfileCredentials {
+    /// <p> The connector-specific credentials required when using Amplitude. </p>
+    pub fn amplitude(
+        &self,
+    ) -> std::option::Option<&crate::model::AmplitudeConnectorProfileCredentials> {
+        self.amplitude.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Datadog. </p>
+    pub fn datadog(
+        &self,
+    ) -> std::option::Option<&crate::model::DatadogConnectorProfileCredentials> {
+        self.datadog.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Dynatrace. </p>
+    pub fn dynatrace(
+        &self,
+    ) -> std::option::Option<&crate::model::DynatraceConnectorProfileCredentials> {
+        self.dynatrace.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Google Analytics. </p>
+    pub fn google_analytics(
+        &self,
+    ) -> std::option::Option<&crate::model::GoogleAnalyticsConnectorProfileCredentials> {
+        self.google_analytics.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
+    pub fn honeycode(
+        &self,
+    ) -> std::option::Option<&crate::model::HoneycodeConnectorProfileCredentials> {
+        self.honeycode.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Infor Nexus. </p>
+    pub fn infor_nexus(
+        &self,
+    ) -> std::option::Option<&crate::model::InforNexusConnectorProfileCredentials> {
+        self.infor_nexus.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Marketo. </p>
+    pub fn marketo(
+        &self,
+    ) -> std::option::Option<&crate::model::MarketoConnectorProfileCredentials> {
+        self.marketo.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Amazon Redshift. </p>
+    pub fn redshift(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftConnectorProfileCredentials> {
+        self.redshift.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Salesforce. </p>
+    pub fn salesforce(
+        &self,
+    ) -> std::option::Option<&crate::model::SalesforceConnectorProfileCredentials> {
+        self.salesforce.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using ServiceNow. </p>
+    pub fn service_now(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceNowConnectorProfileCredentials> {
+        self.service_now.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Singular. </p>
+    pub fn singular(
+        &self,
+    ) -> std::option::Option<&crate::model::SingularConnectorProfileCredentials> {
+        self.singular.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Slack. </p>
+    pub fn slack(&self) -> std::option::Option<&crate::model::SlackConnectorProfileCredentials> {
+        self.slack.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Snowflake. </p>
+    pub fn snowflake(
+        &self,
+    ) -> std::option::Option<&crate::model::SnowflakeConnectorProfileCredentials> {
+        self.snowflake.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Trend Micro. </p>
+    pub fn trendmicro(
+        &self,
+    ) -> std::option::Option<&crate::model::TrendmicroConnectorProfileCredentials> {
+        self.trendmicro.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Veeva. </p>
+    pub fn veeva(&self) -> std::option::Option<&crate::model::VeevaConnectorProfileCredentials> {
+        self.veeva.as_ref()
+    }
+    /// <p> The connector-specific credentials required when using Zendesk. </p>
+    pub fn zendesk(
+        &self,
+    ) -> std::option::Option<&crate::model::ZendeskConnectorProfileCredentials> {
+        self.zendesk.as_ref()
+    }
+    /// <p> The connector-specific profile credentials required when using SAPOData. </p>
+    pub fn sapo_data(
+        &self,
+    ) -> std::option::Option<&crate::model::SapoDataConnectorProfileCredentials> {
+        self.sapo_data.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7079,6 +7870,18 @@ pub struct SapoDataConnectorProfileCredentials {
     /// <p> The SAPOData OAuth type authentication credentials. </p>
     pub o_auth_credentials: std::option::Option<crate::model::OAuthCredentials>,
 }
+impl SapoDataConnectorProfileCredentials {
+    /// <p> The SAPOData basic authentication credentials. </p>
+    pub fn basic_auth_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::BasicAuthCredentials> {
+        self.basic_auth_credentials.as_ref()
+    }
+    /// <p> The SAPOData OAuth type authentication credentials. </p>
+    pub fn o_auth_credentials(&self) -> std::option::Option<&crate::model::OAuthCredentials> {
+        self.o_auth_credentials.as_ref()
+    }
+}
 impl std::fmt::Debug for SapoDataConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SapoDataConnectorProfileCredentials");
@@ -7155,6 +7958,30 @@ pub struct OAuthCredentials {
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
     /// </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+}
+impl OAuthCredentials {
+    /// <p> The identifier for the desired client. </p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
+    /// </p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p> The access token used to access protected SAPOData resources. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The refresh token used to refresh expired access token. </p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+    /// </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
 }
 impl std::fmt::Debug for OAuthCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7274,6 +8101,18 @@ pub struct ConnectorOAuthRequest {
     /// been granted. </p>
     pub redirect_uri: std::option::Option<std::string::String>,
 }
+impl ConnectorOAuthRequest {
+    /// <p> The code provided by the connector when it has been authenticated via the connected app.
+    /// </p>
+    pub fn auth_code(&self) -> std::option::Option<&str> {
+        self.auth_code.as_deref()
+    }
+    /// <p> The URL to which the authentication server redirects the browser after authorization has
+    /// been granted. </p>
+    pub fn redirect_uri(&self) -> std::option::Option<&str> {
+        self.redirect_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectorOAuthRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorOAuthRequest");
@@ -7340,6 +8179,16 @@ pub struct BasicAuthCredentials {
     pub username: std::option::Option<std::string::String>,
     /// <p> The password to use to connect to a resource.</p>
     pub password: std::option::Option<std::string::String>,
+}
+impl BasicAuthCredentials {
+    /// <p> The username to use to connect to a resource. </p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p> The password to use to connect to a resource.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for BasicAuthCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7409,6 +8258,26 @@ pub struct ZendeskConnectorProfileCredentials {
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
     /// </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+}
+impl ZendeskConnectorProfileCredentials {
+    /// <p> The identifier for the desired client. </p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
+    /// </p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p> The credentials used to access protected Zendesk resources. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+    /// </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
 }
 impl std::fmt::Debug for ZendeskConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7509,6 +8378,16 @@ pub struct VeevaConnectorProfileCredentials {
     /// <p> The password that corresponds to the user name. </p>
     pub password: std::option::Option<std::string::String>,
 }
+impl VeevaConnectorProfileCredentials {
+    /// <p> The name of the user. </p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p> The password that corresponds to the user name. </p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
 impl std::fmt::Debug for VeevaConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VeevaConnectorProfileCredentials");
@@ -7570,6 +8449,12 @@ pub struct TrendmicroConnectorProfileCredentials {
     /// <p> The Secret Access Key portion of the credentials. </p>
     pub api_secret_key: std::option::Option<std::string::String>,
 }
+impl TrendmicroConnectorProfileCredentials {
+    /// <p> The Secret Access Key portion of the credentials. </p>
+    pub fn api_secret_key(&self) -> std::option::Option<&str> {
+        self.api_secret_key.as_deref()
+    }
+}
 impl std::fmt::Debug for TrendmicroConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrendmicroConnectorProfileCredentials");
@@ -7622,6 +8507,16 @@ pub struct SnowflakeConnectorProfileCredentials {
     pub username: std::option::Option<std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
     pub password: std::option::Option<std::string::String>,
+}
+impl SnowflakeConnectorProfileCredentials {
+    /// <p> The name of the user. </p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p> The password that corresponds to the user name. </p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for SnowflakeConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7691,6 +8586,26 @@ pub struct SlackConnectorProfileCredentials {
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
     /// </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+}
+impl SlackConnectorProfileCredentials {
+    /// <p> The identifier for the client. </p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
+    /// </p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p> The credentials used to access protected Slack resources. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+    /// </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
 }
 impl std::fmt::Debug for SlackConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7790,6 +8705,13 @@ pub struct SingularConnectorProfileCredentials {
     /// program to your API. </p>
     pub api_key: std::option::Option<std::string::String>,
 }
+impl SingularConnectorProfileCredentials {
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
+    /// program to your API. </p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+}
 impl std::fmt::Debug for SingularConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SingularConnectorProfileCredentials");
@@ -7841,6 +8763,16 @@ pub struct ServiceNowConnectorProfileCredentials {
     pub username: std::option::Option<std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
     pub password: std::option::Option<std::string::String>,
+}
+impl ServiceNowConnectorProfileCredentials {
+    /// <p> The name of the user. </p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p> The password that corresponds to the user name. </p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceNowConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7910,6 +8842,26 @@ pub struct SalesforceConnectorProfileCredentials {
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected
     /// app. </p>
     pub client_credentials_arn: std::option::Option<std::string::String>,
+}
+impl SalesforceConnectorProfileCredentials {
+    /// <p> The credentials used to access protected Salesforce resources. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The credentials used to acquire new access tokens. </p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+    /// </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
+    /// <p> The secret manager ARN, which contains the client ID and client secret of the connected
+    /// app. </p>
+    pub fn client_credentials_arn(&self) -> std::option::Option<&str> {
+        self.client_credentials_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SalesforceConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8013,6 +8965,16 @@ pub struct RedshiftConnectorProfileCredentials {
     /// <p> The password that corresponds to the user name. </p>
     pub password: std::option::Option<std::string::String>,
 }
+impl RedshiftConnectorProfileCredentials {
+    /// <p> The name of the user. </p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p> The password that corresponds to the user name. </p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
 impl std::fmt::Debug for RedshiftConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftConnectorProfileCredentials");
@@ -8081,6 +9043,26 @@ pub struct MarketoConnectorProfileCredentials {
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
     /// </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+}
+impl MarketoConnectorProfileCredentials {
+    /// <p> The identifier for the desired client. </p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
+    /// </p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p> The credentials used to access protected Marketo resources. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+    /// </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
 }
 impl std::fmt::Debug for MarketoConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8185,6 +9167,24 @@ pub struct InforNexusConnectorProfileCredentials {
     /// <p> The encryption keys used to encrypt data. </p>
     pub datakey: std::option::Option<std::string::String>,
 }
+impl InforNexusConnectorProfileCredentials {
+    /// <p> The Access Key portion of the credentials. </p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p> The identifier for the user. </p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p> The secret key used to sign requests. </p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p> The encryption keys used to encrypt data. </p>
+    pub fn datakey(&self) -> std::option::Option<&str> {
+        self.datakey.as_deref()
+    }
+}
 impl std::fmt::Debug for InforNexusConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InforNexusConnectorProfileCredentials");
@@ -8283,6 +9283,21 @@ pub struct HoneycodeConnectorProfileCredentials {
     /// Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
+impl HoneycodeConnectorProfileCredentials {
+    /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The credentials used to acquire new access tokens. </p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
+    /// Google Analytics, Marketo, Zendesk, and Slack. </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
+}
 impl std::fmt::Debug for HoneycodeConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HoneycodeConnectorProfileCredentials");
@@ -8375,6 +9390,31 @@ pub struct GoogleAnalyticsConnectorProfileCredentials {
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
     /// </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+}
+impl GoogleAnalyticsConnectorProfileCredentials {
+    /// <p> The identifier for the desired client. </p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
+    /// </p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p> The credentials used to access protected Google Analytics resources. </p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2
+    /// access tokens, and is not required for OAuth1 access tokens. </p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
+    /// </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
 }
 impl std::fmt::Debug for GoogleAnalyticsConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8491,6 +9531,12 @@ pub struct DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
     pub api_token: std::option::Option<std::string::String>,
 }
+impl DynatraceConnectorProfileCredentials {
+    /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
+    pub fn api_token(&self) -> std::option::Option<&str> {
+        self.api_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DynatraceConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DynatraceConnectorProfileCredentials");
@@ -8543,6 +9589,19 @@ pub struct DatadogConnectorProfileCredentials {
     /// programmatic API. Application keys are associated with the user account that created them. The
     /// application key is used to log all requests made to the API. </p>
     pub application_key: std::option::Option<std::string::String>,
+}
+impl DatadogConnectorProfileCredentials {
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
+    /// program to your API. </p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s
+    /// programmatic API. Application keys are associated with the user account that created them. The
+    /// application key is used to log all requests made to the API. </p>
+    pub fn application_key(&self) -> std::option::Option<&str> {
+        self.application_key.as_deref()
+    }
 }
 impl std::fmt::Debug for DatadogConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8616,6 +9675,17 @@ pub struct AmplitudeConnectorProfileCredentials {
     pub api_key: std::option::Option<std::string::String>,
     /// <p> The Secret Access Key portion of the credentials. </p>
     pub secret_key: std::option::Option<std::string::String>,
+}
+impl AmplitudeConnectorProfileCredentials {
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
+    /// program to your API. </p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p> The Secret Access Key portion of the credentials. </p>
+    pub fn secret_key(&self) -> std::option::Option<&str> {
+        self.secret_key.as_deref()
+    }
 }
 impl std::fmt::Debug for AmplitudeConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8712,6 +9782,100 @@ pub struct ConnectorProfileProperties {
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorProfileProperties>,
     /// <p> The connector-specific profile properties required when using SAPOData. </p>
     pub sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileProperties>,
+}
+impl ConnectorProfileProperties {
+    /// <p> The connector-specific properties required by Amplitude. </p>
+    pub fn amplitude(
+        &self,
+    ) -> std::option::Option<&crate::model::AmplitudeConnectorProfileProperties> {
+        self.amplitude.as_ref()
+    }
+    /// <p> The connector-specific properties required by Datadog. </p>
+    pub fn datadog(&self) -> std::option::Option<&crate::model::DatadogConnectorProfileProperties> {
+        self.datadog.as_ref()
+    }
+    /// <p> The connector-specific properties required by Dynatrace. </p>
+    pub fn dynatrace(
+        &self,
+    ) -> std::option::Option<&crate::model::DynatraceConnectorProfileProperties> {
+        self.dynatrace.as_ref()
+    }
+    /// <p> The connector-specific properties required Google Analytics. </p>
+    pub fn google_analytics(
+        &self,
+    ) -> std::option::Option<&crate::model::GoogleAnalyticsConnectorProfileProperties> {
+        self.google_analytics.as_ref()
+    }
+    /// <p> The connector-specific properties required by Amazon Honeycode. </p>
+    pub fn honeycode(
+        &self,
+    ) -> std::option::Option<&crate::model::HoneycodeConnectorProfileProperties> {
+        self.honeycode.as_ref()
+    }
+    /// <p> The connector-specific properties required by Infor Nexus. </p>
+    pub fn infor_nexus(
+        &self,
+    ) -> std::option::Option<&crate::model::InforNexusConnectorProfileProperties> {
+        self.infor_nexus.as_ref()
+    }
+    /// <p> The connector-specific properties required by Marketo. </p>
+    pub fn marketo(&self) -> std::option::Option<&crate::model::MarketoConnectorProfileProperties> {
+        self.marketo.as_ref()
+    }
+    /// <p> The connector-specific properties required by Amazon Redshift. </p>
+    pub fn redshift(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftConnectorProfileProperties> {
+        self.redshift.as_ref()
+    }
+    /// <p> The connector-specific properties required by Salesforce. </p>
+    pub fn salesforce(
+        &self,
+    ) -> std::option::Option<&crate::model::SalesforceConnectorProfileProperties> {
+        self.salesforce.as_ref()
+    }
+    /// <p> The connector-specific properties required by serviceNow. </p>
+    pub fn service_now(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceNowConnectorProfileProperties> {
+        self.service_now.as_ref()
+    }
+    /// <p> The connector-specific properties required by Singular. </p>
+    pub fn singular(
+        &self,
+    ) -> std::option::Option<&crate::model::SingularConnectorProfileProperties> {
+        self.singular.as_ref()
+    }
+    /// <p> The connector-specific properties required by Slack. </p>
+    pub fn slack(&self) -> std::option::Option<&crate::model::SlackConnectorProfileProperties> {
+        self.slack.as_ref()
+    }
+    /// <p> The connector-specific properties required by Snowflake. </p>
+    pub fn snowflake(
+        &self,
+    ) -> std::option::Option<&crate::model::SnowflakeConnectorProfileProperties> {
+        self.snowflake.as_ref()
+    }
+    /// <p> The connector-specific properties required by Trend Micro. </p>
+    pub fn trendmicro(
+        &self,
+    ) -> std::option::Option<&crate::model::TrendmicroConnectorProfileProperties> {
+        self.trendmicro.as_ref()
+    }
+    /// <p> The connector-specific properties required by Veeva. </p>
+    pub fn veeva(&self) -> std::option::Option<&crate::model::VeevaConnectorProfileProperties> {
+        self.veeva.as_ref()
+    }
+    /// <p> The connector-specific properties required by Zendesk. </p>
+    pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskConnectorProfileProperties> {
+        self.zendesk.as_ref()
+    }
+    /// <p> The connector-specific profile properties required when using SAPOData. </p>
+    pub fn sapo_data(
+        &self,
+    ) -> std::option::Option<&crate::model::SapoDataConnectorProfileProperties> {
+        self.sapo_data.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9071,6 +10235,36 @@ pub struct SapoDataConnectorProfileProperties {
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
     pub o_auth_properties: std::option::Option<crate::model::OAuthProperties>,
 }
+impl SapoDataConnectorProfileProperties {
+    /// <p> The location of the SAPOData resource. </p>
+    pub fn application_host_url(&self) -> std::option::Option<&str> {
+        self.application_host_url.as_deref()
+    }
+    /// <p> The application path to catalog service. </p>
+    pub fn application_service_path(&self) -> std::option::Option<&str> {
+        self.application_service_path.as_deref()
+    }
+    /// <p> The port number of the SAPOData instance. </p>
+    pub fn port_number(&self) -> std::option::Option<i32> {
+        self.port_number
+    }
+    /// <p> The client number for the client creating the connection. </p>
+    pub fn client_number(&self) -> std::option::Option<&str> {
+        self.client_number.as_deref()
+    }
+    /// <p> The logon language of SAPOData instance. </p>
+    pub fn logon_language(&self) -> std::option::Option<&str> {
+        self.logon_language.as_deref()
+    }
+    /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
+    pub fn private_link_service_name(&self) -> std::option::Option<&str> {
+        self.private_link_service_name.as_deref()
+    }
+    /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
+    pub fn o_auth_properties(&self) -> std::option::Option<&crate::model::OAuthProperties> {
+        self.o_auth_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for SapoDataConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SapoDataConnectorProfileProperties");
@@ -9221,6 +10415,22 @@ pub struct OAuthProperties {
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl OAuthProperties {
+    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired
+    /// access token using refresh token.</p>
+    pub fn token_url(&self) -> std::option::Option<&str> {
+        self.token_url.as_deref()
+    }
+    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type
+    /// authentication. </p>
+    pub fn auth_code_url(&self) -> std::option::Option<&str> {
+        self.auth_code_url.as_deref()
+    }
+    /// <p> The OAuth scopes required for OAuth type authentication. </p>
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.o_auth_scopes.as_deref()
+    }
+}
 impl std::fmt::Debug for OAuthProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OAuthProperties");
@@ -9311,6 +10521,12 @@ pub struct ZendeskConnectorProfileProperties {
     /// <p> The location of the Zendesk resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
 }
+impl ZendeskConnectorProfileProperties {
+    /// <p> The location of the Zendesk resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ZendeskConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZendeskConnectorProfileProperties");
@@ -9358,6 +10574,12 @@ impl ZendeskConnectorProfileProperties {
 pub struct VeevaConnectorProfileProperties {
     /// <p> The location of the Veeva resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
+}
+impl VeevaConnectorProfileProperties {
+    /// <p> The location of the Veeva resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
 }
 impl std::fmt::Debug for VeevaConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9450,6 +10672,38 @@ pub struct SnowflakeConnectorProfileProperties {
     pub account_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services Region of the Snowflake account. </p>
     pub region: std::option::Option<std::string::String>,
+}
+impl SnowflakeConnectorProfileProperties {
+    /// <p> The name of the Snowflake warehouse. </p>
+    pub fn warehouse(&self) -> std::option::Option<&str> {
+        self.warehouse.as_deref()
+    }
+    /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in
+    /// the Snowflake account. This is written in the following format: < Database><
+    /// Schema><Stage Name>. </p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+    /// <p> The name of the Amazon S3 bucket associated with Snowflake. </p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p> The bucket path that refers to the Amazon S3 bucket associated with Snowflake. </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> The Snowflake Private Link service name to be used for private data transfers. </p>
+    pub fn private_link_service_name(&self) -> std::option::Option<&str> {
+        self.private_link_service_name.as_deref()
+    }
+    /// <p> The name of the account. </p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p> The Amazon Web Services Region of the Snowflake account. </p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
 }
 impl std::fmt::Debug for SnowflakeConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9587,6 +10841,12 @@ pub struct SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
 }
+impl SlackConnectorProfileProperties {
+    /// <p> The location of the Slack resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
+}
 impl std::fmt::Debug for SlackConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlackConnectorProfileProperties");
@@ -9665,6 +10925,12 @@ pub struct ServiceNowConnectorProfileProperties {
     /// <p> The location of the ServiceNow resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
 }
+impl ServiceNowConnectorProfileProperties {
+    /// <p> The location of the ServiceNow resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceNowConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceNowConnectorProfileProperties");
@@ -9715,6 +10981,17 @@ pub struct SalesforceConnectorProfileProperties {
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment.
     /// </p>
     pub is_sandbox_environment: bool,
+}
+impl SalesforceConnectorProfileProperties {
+    /// <p> The location of the Salesforce resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
+    /// <p> Indicates whether the connector profile applies to a sandbox or production environment.
+    /// </p>
+    pub fn is_sandbox_environment(&self) -> bool {
+        self.is_sandbox_environment
+    }
 }
 impl std::fmt::Debug for SalesforceConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9785,6 +11062,25 @@ pub struct RedshiftConnectorProfileProperties {
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl RedshiftConnectorProfileProperties {
+    /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
+    pub fn database_url(&self) -> std::option::Option<&str> {
+        self.database_url.as_deref()
+    }
+    /// <p> A name for the associated Amazon S3 bucket. </p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
+    /// </p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RedshiftConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9878,6 +11174,12 @@ pub struct MarketoConnectorProfileProperties {
     /// <p> The location of the Marketo resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
 }
+impl MarketoConnectorProfileProperties {
+    /// <p> The location of the Marketo resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
+}
 impl std::fmt::Debug for MarketoConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MarketoConnectorProfileProperties");
@@ -9925,6 +11227,12 @@ impl MarketoConnectorProfileProperties {
 pub struct InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
+}
+impl InforNexusConnectorProfileProperties {
+    /// <p> The location of the Infor Nexus resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
 }
 impl std::fmt::Debug for InforNexusConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10034,6 +11342,12 @@ pub struct DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
 }
+impl DynatraceConnectorProfileProperties {
+    /// <p> The location of the Dynatrace resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
+}
 impl std::fmt::Debug for DynatraceConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DynatraceConnectorProfileProperties");
@@ -10081,6 +11395,12 @@ impl DynatraceConnectorProfileProperties {
 pub struct DatadogConnectorProfileProperties {
     /// <p> The location of the Datadog resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
+}
+impl DatadogConnectorProfileProperties {
+    /// <p> The location of the Datadog resource. </p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
 }
 impl std::fmt::Debug for DatadogConnectorProfileProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10244,6 +11564,69 @@ pub struct FlowDefinition {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Describes the details of the most recent flow run. </p>
     pub last_run_execution_details: std::option::Option<crate::model::ExecutionDetails>,
+}
+impl FlowDefinition {
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// <p> A user-entered description of the flow. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+        self.flow_status.as_ref()
+    }
+    /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on.
+    /// </p>
+    pub fn source_connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.source_connector_type.as_ref()
+    }
+    /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and
+    /// so on. </p>
+    pub fn destination_connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.destination_connector_type.as_ref()
+    }
+    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
+    /// <code>Scheduled</code>, or <code>Event</code>. </p>
+    pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
+        self.trigger_type.as_ref()
+    }
+    /// <p> Specifies when the flow was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> Specifies when the flow was last updated. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The ARN of the user who created the flow. </p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p> Specifies the account user name that most recently updated the flow. </p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> Describes the details of the most recent flow run. </p>
+    pub fn last_run_execution_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionDetails> {
+        self.last_run_execution_details.as_ref()
+    }
 }
 impl std::fmt::Debug for FlowDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10509,6 +11892,22 @@ pub struct ExecutionDetails {
     /// <p> Specifies the status of the most recent flow run. </p>
     pub most_recent_execution_status: std::option::Option<crate::model::ExecutionStatus>,
 }
+impl ExecutionDetails {
+    /// <p> Describes the details of the most recent flow run. </p>
+    pub fn most_recent_execution_message(&self) -> std::option::Option<&str> {
+        self.most_recent_execution_message.as_deref()
+    }
+    /// <p> Specifies the time of the most recent flow run. </p>
+    pub fn most_recent_execution_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.most_recent_execution_time.as_ref()
+    }
+    /// <p> Specifies the status of the most recent flow run. </p>
+    pub fn most_recent_execution_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.most_recent_execution_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecutionDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionDetails");
@@ -10676,6 +12075,24 @@ pub struct ConnectorEntity {
     /// fashion. </p>
     pub has_nested_entities: bool,
 }
+impl ConnectorEntity {
+    /// <p> The name of the connector entity. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The label applied to the connector entity. </p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p> Specifies whether the connector entity is a parent or a category and has more entities
+    /// nested underneath it. If another call is made with <code>entitiesPath =
+    /// "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested
+    /// entities underneath it. This provides a way to retrieve all supported entities in a recursive
+    /// fashion. </p>
+    pub fn has_nested_entities(&self) -> bool {
+        self.has_nested_entities
+    }
+}
 impl std::fmt::Debug for ConnectorEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorEntity");
@@ -10772,6 +12189,39 @@ pub struct ExecutionRecord {
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
     /// run. </p>
     pub data_pull_end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ExecutionRecord {
+    /// <p> Specifies the identifier of the given flow run. </p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p> Specifies the flow run status and whether it is in progress, has completed successfully,
+    /// or has failed. </p>
+    pub fn execution_status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.execution_status.as_ref()
+    }
+    /// <p> Describes the result of the given flow run. </p>
+    pub fn execution_result(&self) -> std::option::Option<&crate::model::ExecutionResult> {
+        self.execution_result.as_ref()
+    }
+    /// <p> Specifies the start time of the flow run. </p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p> Specifies the time of the most recent update. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The timestamp that determines the first new or updated record to be transferred in the
+    /// flow run. </p>
+    pub fn data_pull_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.data_pull_start_time.as_ref()
+    }
+    /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
+    /// run. </p>
+    pub fn data_pull_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.data_pull_end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecutionRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10929,6 +12379,24 @@ pub struct ExecutionResult {
     /// <p> The number of records processed in the flow run. </p>
     pub records_processed: std::option::Option<i64>,
 }
+impl ExecutionResult {
+    /// <p> Provides any error message information related to the flow run. </p>
+    pub fn error_info(&self) -> std::option::Option<&crate::model::ErrorInfo> {
+        self.error_info.as_ref()
+    }
+    /// <p> The total number of bytes processed by the flow run. </p>
+    pub fn bytes_processed(&self) -> std::option::Option<i64> {
+        self.bytes_processed
+    }
+    /// <p> The total number of bytes written as a result of the flow run. </p>
+    pub fn bytes_written(&self) -> std::option::Option<i64> {
+        self.bytes_written
+    }
+    /// <p> The number of records processed in the flow run. </p>
+    pub fn records_processed(&self) -> std::option::Option<i64> {
+        self.records_processed
+    }
+}
 impl std::fmt::Debug for ExecutionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionResult");
@@ -11022,6 +12490,16 @@ pub struct ErrorInfo {
     /// <p> Specifies the error message that appears if a flow fails. </p>
     pub execution_message: std::option::Option<std::string::String>,
 }
+impl ErrorInfo {
+    /// <p> Specifies the failure count for the attempted flow. </p>
+    pub fn put_failures_count(&self) -> std::option::Option<i64> {
+        self.put_failures_count
+    }
+    /// <p> Specifies the error message that appears if a flow fails. </p>
+    pub fn execution_message(&self) -> std::option::Option<&str> {
+        self.execution_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorInfo");
@@ -11102,6 +12580,45 @@ pub struct ConnectorConfiguration {
     /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>,
     /// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
     pub connector_metadata: std::option::Option<crate::model::ConnectorMetadata>,
+}
+impl ConnectorConfiguration {
+    /// <p> Specifies whether the connector can be used as a source. </p>
+    pub fn can_use_as_source(&self) -> bool {
+        self.can_use_as_source
+    }
+    /// <p> Specifies whether the connector can be used as a destination. </p>
+    pub fn can_use_as_destination(&self) -> bool {
+        self.can_use_as_destination
+    }
+    /// <p> Lists the connectors that are available for use as destinations. </p>
+    pub fn supported_destination_connectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectorType]> {
+        self.supported_destination_connectors.as_deref()
+    }
+    /// <p> Specifies the supported flow frequency for that connector. </p>
+    pub fn supported_scheduling_frequencies(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScheduleFrequencyType]> {
+        self.supported_scheduling_frequencies.as_deref()
+    }
+    /// <p> Specifies if PrivateLink is enabled for that connector. </p>
+    pub fn is_private_link_enabled(&self) -> bool {
+        self.is_private_link_enabled
+    }
+    /// <p> Specifies if a PrivateLink endpoint URL is required. </p>
+    pub fn is_private_link_endpoint_url_required(&self) -> bool {
+        self.is_private_link_endpoint_url_required
+    }
+    /// <p> Specifies the supported trigger types for the flow. </p>
+    pub fn supported_trigger_types(&self) -> std::option::Option<&[crate::model::TriggerType]> {
+        self.supported_trigger_types.as_deref()
+    }
+    /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>,
+    /// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
+    pub fn connector_metadata(&self) -> std::option::Option<&crate::model::ConnectorMetadata> {
+        self.connector_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectorConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11340,6 +12857,94 @@ pub struct ConnectorMetadata {
     pub honeycode: std::option::Option<crate::model::HoneycodeMetadata>,
     /// <p> The connector metadata specific to SAPOData. </p>
     pub sapo_data: std::option::Option<crate::model::SapoDataMetadata>,
+}
+impl ConnectorMetadata {
+    /// <p> The connector metadata specific to Amplitude. </p>
+    pub fn amplitude(&self) -> std::option::Option<&crate::model::AmplitudeMetadata> {
+        self.amplitude.as_ref()
+    }
+    /// <p> The connector metadata specific to Datadog. </p>
+    pub fn datadog(&self) -> std::option::Option<&crate::model::DatadogMetadata> {
+        self.datadog.as_ref()
+    }
+    /// <p> The connector metadata specific to Dynatrace. </p>
+    pub fn dynatrace(&self) -> std::option::Option<&crate::model::DynatraceMetadata> {
+        self.dynatrace.as_ref()
+    }
+    /// <p> The connector metadata specific to Google Analytics. </p>
+    pub fn google_analytics(&self) -> std::option::Option<&crate::model::GoogleAnalyticsMetadata> {
+        self.google_analytics.as_ref()
+    }
+    /// <p> The connector metadata specific to Infor Nexus. </p>
+    pub fn infor_nexus(&self) -> std::option::Option<&crate::model::InforNexusMetadata> {
+        self.infor_nexus.as_ref()
+    }
+    /// <p> The connector metadata specific to Marketo. </p>
+    pub fn marketo(&self) -> std::option::Option<&crate::model::MarketoMetadata> {
+        self.marketo.as_ref()
+    }
+    /// <p> The connector metadata specific to Amazon Redshift. </p>
+    pub fn redshift(&self) -> std::option::Option<&crate::model::RedshiftMetadata> {
+        self.redshift.as_ref()
+    }
+    /// <p> The connector metadata specific to Amazon S3. </p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Metadata> {
+        self.s3.as_ref()
+    }
+    /// <p> The connector metadata specific to Salesforce. </p>
+    pub fn salesforce(&self) -> std::option::Option<&crate::model::SalesforceMetadata> {
+        self.salesforce.as_ref()
+    }
+    /// <p> The connector metadata specific to ServiceNow. </p>
+    pub fn service_now(&self) -> std::option::Option<&crate::model::ServiceNowMetadata> {
+        self.service_now.as_ref()
+    }
+    /// <p> The connector metadata specific to Singular. </p>
+    pub fn singular(&self) -> std::option::Option<&crate::model::SingularMetadata> {
+        self.singular.as_ref()
+    }
+    /// <p> The connector metadata specific to Slack. </p>
+    pub fn slack(&self) -> std::option::Option<&crate::model::SlackMetadata> {
+        self.slack.as_ref()
+    }
+    /// <p> The connector metadata specific to Snowflake. </p>
+    pub fn snowflake(&self) -> std::option::Option<&crate::model::SnowflakeMetadata> {
+        self.snowflake.as_ref()
+    }
+    /// <p> The connector metadata specific to Trend Micro. </p>
+    pub fn trendmicro(&self) -> std::option::Option<&crate::model::TrendmicroMetadata> {
+        self.trendmicro.as_ref()
+    }
+    /// <p> The connector metadata specific to Veeva. </p>
+    pub fn veeva(&self) -> std::option::Option<&crate::model::VeevaMetadata> {
+        self.veeva.as_ref()
+    }
+    /// <p> The connector metadata specific to Zendesk. </p>
+    pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskMetadata> {
+        self.zendesk.as_ref()
+    }
+    /// <p> The connector metadata specific to Amazon EventBridge. </p>
+    pub fn event_bridge(&self) -> std::option::Option<&crate::model::EventBridgeMetadata> {
+        self.event_bridge.as_ref()
+    }
+    /// <p> The connector metadata specific to Upsolver. </p>
+    pub fn upsolver(&self) -> std::option::Option<&crate::model::UpsolverMetadata> {
+        self.upsolver.as_ref()
+    }
+    /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+    pub fn customer_profiles(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerProfilesMetadata> {
+        self.customer_profiles.as_ref()
+    }
+    /// <p> The connector metadata specific to Amazon Honeycode. </p>
+    pub fn honeycode(&self) -> std::option::Option<&crate::model::HoneycodeMetadata> {
+        self.honeycode.as_ref()
+    }
+    /// <p> The connector metadata specific to SAPOData. </p>
+    pub fn sapo_data(&self) -> std::option::Option<&crate::model::SapoDataMetadata> {
+        self.sapo_data.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectorMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11739,6 +13344,12 @@ pub struct HoneycodeMetadata {
     /// <p> The desired authorization scope for the Amazon Honeycode account. </p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl HoneycodeMetadata {
+    /// <p> The desired authorization scope for the Amazon Honeycode account. </p>
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.o_auth_scopes.as_deref()
+    }
+}
 impl std::fmt::Debug for HoneycodeMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HoneycodeMetadata");
@@ -11886,6 +13497,12 @@ pub struct ZendeskMetadata {
     /// <p> The desired authorization scope for the Zendesk account. </p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ZendeskMetadata {
+    /// <p> The desired authorization scope for the Zendesk account. </p>
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.o_auth_scopes.as_deref()
+    }
+}
 impl std::fmt::Debug for ZendeskMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZendeskMetadata");
@@ -12003,6 +13620,12 @@ pub struct SnowflakeMetadata {
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
     pub supported_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SnowflakeMetadata {
+    /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
+    pub fn supported_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_regions.as_deref()
+    }
+}
 impl std::fmt::Debug for SnowflakeMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnowflakeMetadata");
@@ -12059,6 +13682,12 @@ impl SnowflakeMetadata {
 pub struct SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SlackMetadata {
+    /// <p> The desired authorization scope for the Slack account. </p>
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.o_auth_scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for SlackMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12176,6 +13805,12 @@ impl ServiceNowMetadata {
 pub struct SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SalesforceMetadata {
+    /// <p> The desired authorization scope for the Salesforce account. </p>
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.o_auth_scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for SalesforceMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12353,6 +13988,12 @@ impl InforNexusMetadata {
 pub struct GoogleAnalyticsMetadata {
     /// <p> The desired authorization scope for the Google Analytics account. </p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GoogleAnalyticsMetadata {
+    /// <p> The desired authorization scope for the Google Analytics account. </p>
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.o_auth_scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for GoogleAnalyticsMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12594,6 +14235,49 @@ pub struct ConnectorProfile {
     pub private_connection_provisioning_state:
         std::option::Option<crate::model::PrivateConnectionProvisioningState>,
 }
+impl ConnectorProfile {
+    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    pub fn connector_profile_arn(&self) -> std::option::Option<&str> {
+        self.connector_profile_arn.as_deref()
+    }
+    /// <p> The name of the connector profile. The name is unique for each
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p> Indicates the connection mode and if it is public or private. </p>
+    pub fn connection_mode(&self) -> std::option::Option<&crate::model::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the connector profile credentials. </p>
+    pub fn credentials_arn(&self) -> std::option::Option<&str> {
+        self.credentials_arn.as_deref()
+    }
+    /// <p> The connector-specific properties of the profile configuration. </p>
+    pub fn connector_profile_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProfileProperties> {
+        self.connector_profile_properties.as_ref()
+    }
+    /// <p> Specifies when the connector profile was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> Specifies when the connector profile was last updated. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> Specifies the private connection provisioning state. </p>
+    pub fn private_connection_provisioning_state(
+        &self,
+    ) -> std::option::Option<&crate::model::PrivateConnectionProvisioningState> {
+        self.private_connection_provisioning_state.as_ref()
+    }
+}
 impl std::fmt::Debug for ConnectorProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorProfile");
@@ -12792,6 +14476,24 @@ pub struct PrivateConnectionProvisioningState {
     pub failure_message: std::option::Option<std::string::String>,
     /// <p> Specifies the private connection provisioning failure cause. </p>
     pub failure_cause: std::option::Option<crate::model::PrivateConnectionProvisioningFailureCause>,
+}
+impl PrivateConnectionProvisioningState {
+    /// <p> Specifies the private connection provisioning status. </p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::PrivateConnectionProvisioningStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Specifies the private connection provisioning failure reason. </p>
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
+    /// <p> Specifies the private connection provisioning failure cause. </p>
+    pub fn failure_cause(
+        &self,
+    ) -> std::option::Option<&crate::model::PrivateConnectionProvisioningFailureCause> {
+        self.failure_cause.as_ref()
+    }
 }
 impl std::fmt::Debug for PrivateConnectionProvisioningState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13031,6 +14733,39 @@ pub struct ConnectorEntityField {
     /// </p>
     pub destination_properties: std::option::Option<crate::model::DestinationFieldProperties>,
 }
+impl ConnectorEntityField {
+    /// <p> The unique identifier of the connector field. </p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p> The label applied to a connector entity field. </p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p> Contains details regarding the supported <code>FieldType</code>, including the
+    /// corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+    pub fn supported_field_type_details(
+        &self,
+    ) -> std::option::Option<&crate::model::SupportedFieldTypeDetails> {
+        self.supported_field_type_details.as_ref()
+    }
+    /// <p> A description of the connector entity field. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The properties that can be applied to a field when the connector is being used as a
+    /// source. </p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceFieldProperties> {
+        self.source_properties.as_ref()
+    }
+    /// <p> The properties applied to a field when the connector is being used as a destination.
+    /// </p>
+    pub fn destination_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationFieldProperties> {
+        self.destination_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for ConnectorEntityField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorEntityField");
@@ -13184,6 +14919,34 @@ pub struct DestinationFieldProperties {
     pub supported_write_operations:
         std::option::Option<std::vec::Vec<crate::model::WriteOperationType>>,
 }
+impl DestinationFieldProperties {
+    /// <p> Specifies if the destination field can be created by the current user. </p>
+    pub fn is_creatable(&self) -> bool {
+        self.is_creatable
+    }
+    /// <p> Specifies if the destination field can have a null value. </p>
+    pub fn is_nullable(&self) -> bool {
+        self.is_nullable
+    }
+    /// <p> Specifies if the flow run can either insert new rows in the destination field if they do
+    /// not already exist, or update them if they do. </p>
+    pub fn is_upsertable(&self) -> bool {
+        self.is_upsertable
+    }
+    /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
+    /// <code>UPSERT</code> write operation. </p>
+    pub fn is_updatable(&self) -> bool {
+        self.is_updatable
+    }
+    /// <p> A list of supported write operations. For each write operation listed, this field can be
+    /// used in <code>idFieldNames</code> when that write operation is present as a destination
+    /// option. </p>
+    pub fn supported_write_operations(
+        &self,
+    ) -> std::option::Option<&[crate::model::WriteOperationType]> {
+        self.supported_write_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DestinationFieldProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationFieldProperties");
@@ -13311,6 +15074,16 @@ pub struct SourceFieldProperties {
     /// <p> Indicates if the field can be queried. </p>
     pub is_queryable: bool,
 }
+impl SourceFieldProperties {
+    /// <p> Indicates whether the field can be returned in a search result. </p>
+    pub fn is_retrievable(&self) -> bool {
+        self.is_retrievable
+    }
+    /// <p> Indicates if the field can be queried. </p>
+    pub fn is_queryable(&self) -> bool {
+        self.is_queryable
+    }
+}
 impl std::fmt::Debug for SourceFieldProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceFieldProperties");
@@ -13374,6 +15147,13 @@ pub struct SupportedFieldTypeDetails {
     /// different version, v2 will be introduced. </p>
     pub v1: std::option::Option<crate::model::FieldTypeDetails>,
 }
+impl SupportedFieldTypeDetails {
+    /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a
+    /// different version, v2 will be introduced. </p>
+    pub fn v1(&self) -> std::option::Option<&crate::model::FieldTypeDetails> {
+        self.v1.as_ref()
+    }
+}
 impl std::fmt::Debug for SupportedFieldTypeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SupportedFieldTypeDetails");
@@ -13430,6 +15210,21 @@ pub struct FieldTypeDetails {
     /// <p> The list of values that a field can contain. For example, a Boolean
     /// <code>fieldType</code> can have two values: "true" and "false". </p>
     pub supported_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FieldTypeDetails {
+    /// <p> The type of field, such as string, integer, date, and so on. </p>
+    pub fn field_type(&self) -> std::option::Option<&str> {
+        self.field_type.as_deref()
+    }
+    /// <p> The list of operators supported by a field. </p>
+    pub fn filter_operators(&self) -> std::option::Option<&[crate::model::Operator]> {
+        self.filter_operators.as_deref()
+    }
+    /// <p> The list of values that a field can contain. For example, a Boolean
+    /// <code>fieldType</code> can have two values: "true" and "false". </p>
+    pub fn supported_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_values.as_deref()
+    }
 }
 impl std::fmt::Debug for FieldTypeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

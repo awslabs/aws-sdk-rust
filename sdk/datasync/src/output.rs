@@ -247,6 +247,13 @@ pub struct StartTaskExecutionOutput {
     /// started.</p>
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
+impl StartTaskExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the specific task execution that was
+    /// started.</p>
+    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+        self.task_execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartTaskExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTaskExecutionOutput");
@@ -302,6 +309,17 @@ pub struct ListTasksOutput {
     /// <p>An opaque string that indicates the position at which to begin returning the next list
     /// of tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTasksOutput {
+    /// <p>A list of all the tasks that are returned.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::TaskListEntry]> {
+        self.tasks.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which to begin returning the next list
+    /// of tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -377,6 +395,17 @@ pub struct ListTaskExecutionsOutput {
     /// <p>An opaque string that indicates the position at which to begin returning the next list
     /// of executed tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTaskExecutionsOutput {
+    /// <p>A list of executed tasks.</p>
+    pub fn task_executions(&self) -> std::option::Option<&[crate::model::TaskExecutionListEntry]> {
+        self.task_executions.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which to begin returning the next list
+    /// of executed tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTaskExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -457,6 +486,17 @@ pub struct ListTagsForResourceOutput {
     /// of resource tags.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Array of resource tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which to begin returning the next list
+    /// of resource tags.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -532,6 +572,17 @@ pub struct ListLocationsOutput {
     /// of locations.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLocationsOutput {
+    /// <p>An array that contains a list of locations.</p>
+    pub fn locations(&self) -> std::option::Option<&[crate::model::LocationListEntry]> {
+        self.locations.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which to begin returning the next list
+    /// of locations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLocationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLocationsOutput");
@@ -606,6 +657,17 @@ pub struct ListAgentsOutput {
     /// <p>An opaque string that indicates the position at which to begin returning the next list
     /// of agents.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAgentsOutput {
+    /// <p>A list of agents in your account.</p>
+    pub fn agents(&self) -> std::option::Option<&[crate::model::AgentListEntry]> {
+        self.agents.as_deref()
+    }
+    /// <p>An opaque string that indicates the position at which to begin returning the next list
+    /// of agents.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAgentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -742,6 +804,98 @@ pub struct DescribeTaskExecutionOutput {
     pub bytes_transferred: i64,
     /// <p>The result of the task execution.</p>
     pub result: std::option::Option<crate::model::TaskExecutionResultDetail>,
+}
+impl DescribeTaskExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the task execution that was described.
+    /// <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task
+    /// that was executed. </p>
+    /// <p>For example, a <code>TaskExecution</code> value with the ARN
+    /// <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+    /// executed the task with the ARN
+    /// <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
+    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+        self.task_execution_arn.as_deref()
+    }
+    /// <p>The status of the task execution. </p>
+    ///
+    ///
+    /// <p>For detailed information about task execution statuses, see Understanding
+    /// Task Statuses in the <i>DataSync User Guide.</i>
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Represents the options that are available to control the behavior of a
+    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+    /// operation. Behavior includes preserving metadata such as user
+    /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
+    /// data integrity verification, and so on.</p>
+    /// <p>A task has a set of default options associated with it. If you don't specify an option
+    /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
+    /// the default value is used. You can override the
+    /// defaults options on each task execution by specifying an overriding <code>Options</code> value
+    /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+        self.options.as_ref()
+    }
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should
+    /// contain a single filter string that consists of the patterns to exclude. The patterns are
+    /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
+    /// </p>
+    /// <p>
+    /// </p>
+    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.excludes.as_deref()
+    }
+    /// <p>A list of filter rules that determines which files to include when running a task. The
+    /// list should contain a single filter string that consists of the patterns to include. The
+    /// patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
+    /// </p>
+    /// <p>
+    /// </p>
+    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.includes.as_deref()
+    }
+    /// <p>The time that the task execution was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The expected number of files that is to be transferred over the network. This value is
+    /// calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the
+    /// expected number of files to be transferred. It's calculated based on comparing the
+    /// content of the source and destination locations and finding the delta that needs to be
+    /// transferred. </p>
+    pub fn estimated_files_to_transfer(&self) -> i64 {
+        self.estimated_files_to_transfer
+    }
+    /// <p>The estimated physical number of bytes that is to be transferred over the
+    /// network.</p>
+    pub fn estimated_bytes_to_transfer(&self) -> i64 {
+        self.estimated_bytes_to_transfer
+    }
+    /// <p>The actual number of files that was transferred over the network. This value is
+    /// calculated and updated on an ongoing basis during the TRANSFERRING phase. It's updated
+    /// periodically when each file is read from the source and sent over the network. </p>
+    /// <p>If failures occur during a transfer, this value can be less than
+    /// <code>EstimatedFilesToTransfer</code>. This value can also be greater than
+    /// <code>EstimatedFilesTransferred</code> in some cases. This element is
+    /// implementation-specific for some location types, so don't use it as an indicator for a correct
+    /// file number or to monitor your task execution.</p>
+    pub fn files_transferred(&self) -> i64 {
+        self.files_transferred
+    }
+    /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
+    pub fn bytes_written(&self) -> i64 {
+        self.bytes_written
+    }
+    /// <p>The physical number of bytes transferred over the network.</p>
+    pub fn bytes_transferred(&self) -> i64 {
+        self.bytes_transferred
+    }
+    /// <p>The result of the task execution.</p>
+    pub fn result(&self) -> std::option::Option<&crate::model::TaskExecutionResultDetail> {
+        self.result.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTaskExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1109,6 +1263,100 @@ pub struct DescribeTaskOutput {
     /// patterns are delimited by "|" (that is, a pipe). For example:
     /// <code>"/folder1|/folder2</code>"</p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+}
+impl DescribeTaskOutput {
+    /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The status of the task that was described.</p>
+    ///
+    ///
+    /// <p>For detailed information about task execution statuses, see Understanding
+    /// Task Statuses in the <i>DataSync User Guide</i>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The name of the task that was described.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task execution that is syncing files.</p>
+    pub fn current_task_execution_arn(&self) -> std::option::Option<&str> {
+        self.current_task_execution_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    pub fn source_location_arn(&self) -> std::option::Option<&str> {
+        self.source_location_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    pub fn destination_location_arn(&self) -> std::option::Option<&str> {
+        self.destination_location_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to
+    /// monitor and log events in the task.</p>
+    ///
+    ///
+    /// <p>For more information on these groups, see Working with Log Groups and Log
+    /// Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface) that was
+    /// created for your subnet.</p>
+    pub fn source_network_interface_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_network_interface_arns.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network Interface) that
+    /// was created for your subnet.</p>
+    pub fn destination_network_interface_arns(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.destination_network_interface_arns.as_deref()
+    }
+    /// <p>The set of configuration options that control the behavior of a single execution of the
+    /// task that occurs when you call <code>StartTaskExecution</code>. You can configure these
+    /// options to preserve metadata such as user ID (UID) and group (GID), file permissions, data
+    /// integrity verification, and so on.</p>
+    /// <p>For each individual task execution, you can override these options by specifying the
+    /// overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+        self.options.as_ref()
+    }
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should
+    /// contain a single filter string that consists of the patterns to exclude. The patterns are
+    /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
+    /// </p>
+    /// <p>
+    /// </p>
+    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.excludes.as_deref()
+    }
+    /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::TaskSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>Errors that DataSync encountered during execution of the task. You can use this
+    /// error code to help troubleshoot issues.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>Detailed description of an error that was encountered during the task execution. You
+    /// can use this information to help troubleshoot issues. </p>
+    pub fn error_detail(&self) -> std::option::Option<&str> {
+        self.error_detail.as_deref()
+    }
+    /// <p>The time that the task was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A list of filter rules that determines which files to include when running a task. The
+    /// pattern should contain a single filter string that consists of the patterns to include. The
+    /// patterns are delimited by "|" (that is, a pipe). For example:
+    /// <code>"/folder1|/folder2</code>"</p>
+    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.includes.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1490,6 +1738,38 @@ pub struct DescribeLocationSmbOutput {
     /// <p>The time that the SMB location was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeLocationSmbOutput {
+    /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The URL of the source SMB location that was described.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is
+    /// created.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The user who can mount the share, has the permissions to access files and folders in the
+    /// SMB share.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::SmbMountOptions> {
+        self.mount_options.as_ref()
+    }
+    /// <p>The time that the SMB location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeLocationSmbOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationSmbOutput");
@@ -1653,6 +1933,41 @@ pub struct DescribeLocationS3Output {
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the Amazon S3 bucket location was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeLocationS3Output {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The URL of the Amazon S3 location that was described.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The Amazon S3 storage class that you chose to store your files in when this location is
+    /// used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage
+    /// classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when
+    /// working with S3 storage classes in DataSync</a>.</p>
+    pub fn s3_storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
+        self.s3_storage_class.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
+    /// that is used to access an Amazon S3 bucket.</p>
+    ///
+    /// <p>For detailed information about using such a role, see Creating a Location for
+    /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
+        self.s3_config.as_ref()
+    }
+    /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2
+    /// agents deployed on your Outpost. For more information about launching a DataSync agent on an
+    /// Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The time that the Amazon S3 bucket location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeLocationS3Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1818,6 +2133,44 @@ pub struct DescribeLocationObjectStorageOutput {
     /// <p>The time that the self-managed object storage server agent was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeLocationObjectStorageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The URL of the source self-managed object storage server location that was described.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>Optional. The access key is used if credentials are required to access the self-managed
+    /// object storage server. If your object storage requires a user name and password to
+    /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
+    /// and password, respectively.</p>
+    pub fn access_key(&self) -> std::option::Option<&str> {
+        self.access_key.as_deref()
+    }
+    /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
+    /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).</p>
+    pub fn server_port(&self) -> std::option::Option<i32> {
+        self.server_port
+    }
+    /// <p>The protocol that the object storage server uses to communicate.
+    /// Valid values are HTTP or HTTPS.</p>
+    pub fn server_protocol(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
+        self.server_protocol.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the agents associated with the
+    /// self-managed object storage server location.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The time that the self-managed object storage server agent was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeLocationObjectStorageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationObjectStorageOutput");
@@ -1980,6 +2333,29 @@ pub struct DescribeLocationNfsOutput {
     /// <p>The time that the NFS location was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeLocationNfsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The URL of the source NFS location that was described.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS)
+    /// location.</p>
+    pub fn on_prem_config(&self) -> std::option::Option<&crate::model::OnPremConfig> {
+        self.on_prem_config.as_ref()
+    }
+    /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
+        self.mount_options.as_ref()
+    }
+    /// <p>The time that the NFS location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeLocationNfsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationNfsOutput");
@@ -2103,6 +2479,35 @@ pub struct DescribeLocationFsxWindowsOutput {
     pub user: std::option::Option<std::string::String>,
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
     pub domain: std::option::Option<std::string::String>,
+}
+impl DescribeLocationFsxWindowsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was
+    /// described.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The URL of the FSx for Windows File Server location that was described.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx
+    /// for Windows File Server file system.</p>
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_arns.as_deref()
+    }
+    /// <p>The time that the FSx for Windows File Server location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The user who has the permissions to access files and folders in the FSx for Windows File
+    /// Server file system.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocationFsxWindowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2244,6 +2649,27 @@ pub struct DescribeLocationEfsOutput {
     /// <p>The time that the EFS location was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeLocationEfsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the EFS location that was described.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The URL of the EFS location that was described.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The subnet and the security group that DataSync uses to access target EFS file system.
+    /// The subnet must have at least one mount target for that file system. The security group that
+    /// you provide needs to be able to communicate with the security group on the mount target in the
+    /// subnet specified. </p>
+    pub fn ec2_config(&self) -> std::option::Option<&crate::model::Ec2Config> {
+        self.ec2_config.as_ref()
+    }
+    /// <p>The time that the EFS location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeLocationEfsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationEfsOutput");
@@ -2359,6 +2785,41 @@ pub struct DescribeAgentOutput {
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
     pub private_link_config: std::option::Option<crate::model::PrivateLinkConfig>,
+}
+impl DescribeAgentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the agent.</p>
+    pub fn agent_arn(&self) -> std::option::Option<&str> {
+        self.agent_arn.as_deref()
+    }
+    /// <p>The name of the agent.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly
+    /// and is available to use. The Running status is the normal running status for an agent. If the
+    /// status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When
+    /// the issue that caused the unhealthy state is resolved, the agent returns to ONLINE
+    /// status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AgentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time that the agent last connected to DataSync.</p>
+    pub fn last_connection_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_connection_time.as_ref()
+    }
+    /// <p>The time that the agent was activated (that is, created in your account).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint,
+    /// the agent is not accessible over the public internet. </p>
+    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    pub fn private_link_config(&self) -> std::option::Option<&crate::model::PrivateLinkConfig> {
+        self.private_link_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAgentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2598,6 +3059,12 @@ pub struct CreateTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub task_arn: std::option::Option<std::string::String>,
 }
+impl CreateTaskOutput {
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTaskOutput");
@@ -2646,6 +3113,13 @@ pub struct CreateLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is
     /// created.</p>
     pub location_arn: std::option::Option<std::string::String>,
+}
+impl CreateLocationSmbOutput {
+    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is
+    /// created.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLocationSmbOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2698,6 +3172,13 @@ pub struct CreateLocationS3Output {
     /// created.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
+impl CreateLocationS3Output {
+    /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is
+    /// created.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLocationS3Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationS3Output");
@@ -2748,6 +3229,13 @@ pub struct CreateLocationObjectStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the agents associated with the
     /// self-managed object storage server location.</p>
     pub location_arn: std::option::Option<std::string::String>,
+}
+impl CreateLocationObjectStorageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the agents associated with the
+    /// self-managed object storage server location.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLocationObjectStorageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2800,6 +3288,13 @@ pub struct CreateLocationNfsOutput {
     /// created.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
+impl CreateLocationNfsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
+    /// created.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLocationNfsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationNfsOutput");
@@ -2850,6 +3345,13 @@ pub struct CreateLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location
     /// that is created.</p>
     pub location_arn: std::option::Option<std::string::String>,
+}
+impl CreateLocationFsxWindowsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location
+    /// that is created.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLocationFsxWindowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2902,6 +3404,13 @@ pub struct CreateLocationEfsOutput {
     /// created.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
+impl CreateLocationEfsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that is
+    /// created.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLocationEfsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationEfsOutput");
@@ -2952,6 +3461,13 @@ pub struct CreateAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation
     /// to return a list of agents for your account and Amazon Web Services Region.</p>
     pub agent_arn: std::option::Option<std::string::String>,
+}
+impl CreateAgentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation
+    /// to return a list of agents for your account and Amazon Web Services Region.</p>
+    pub fn agent_arn(&self) -> std::option::Option<&str> {
+        self.agent_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAgentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

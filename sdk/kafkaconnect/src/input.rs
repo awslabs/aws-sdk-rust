@@ -276,10 +276,7 @@ impl CreateConnectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connector(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_connector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -466,10 +463,7 @@ impl CreateCustomPluginInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_plugin(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_plugin(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -644,10 +638,7 @@ impl CreateWorkerConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_worker_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1990,10 +1981,7 @@ impl UpdateConnectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_connector(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_connector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2066,6 +2054,20 @@ pub struct UpdateConnectorInput {
     /// <p>The current version of the connector that you want to update.</p>
     pub current_version: std::option::Option<std::string::String>,
 }
+impl UpdateConnectorInput {
+    /// <p>The target capacity.</p>
+    pub fn capacity(&self) -> std::option::Option<&crate::model::CapacityUpdate> {
+        self.capacity.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
+    pub fn connector_arn(&self) -> std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
+    /// <p>The current version of the connector that you want to update.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectorInput");
@@ -2085,6 +2087,16 @@ pub struct ListWorkerConfigurationsInput {
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkerConfigurationsInput {
+    /// <p>The maximum number of worker configurations to list in one response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkerConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkerConfigurationsInput");
@@ -2102,6 +2114,16 @@ pub struct ListCustomPluginsInput {
     pub max_results: i32,
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomPluginsInput {
+    /// <p>The maximum number of custom plugins to list in one response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomPluginsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2123,6 +2145,20 @@ pub struct ListConnectorsInput {
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConnectorsInput {
+    /// <p>The name prefix that you want to use to search for and list connectors.</p>
+    pub fn connector_name_prefix(&self) -> std::option::Option<&str> {
+        self.connector_name_prefix.as_deref()
+    }
+    /// <p>The maximum number of connectors to list in one response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorsInput");
@@ -2140,6 +2176,12 @@ pub struct DescribeWorkerConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
+impl DescribeWorkerConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
+    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
+        self.worker_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkerConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkerConfigurationInput");
@@ -2155,6 +2197,12 @@ pub struct DescribeCustomPluginInput {
     /// <p>Returns information about a custom plugin.</p>
     pub custom_plugin_arn: std::option::Option<std::string::String>,
 }
+impl DescribeCustomPluginInput {
+    /// <p>Returns information about a custom plugin.</p>
+    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCustomPluginInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomPluginInput");
@@ -2169,6 +2217,12 @@ impl std::fmt::Debug for DescribeCustomPluginInput {
 pub struct DescribeConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
     pub connector_arn: std::option::Option<std::string::String>,
+}
+impl DescribeConnectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
+    pub fn connector_arn(&self) -> std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2186,6 +2240,16 @@ pub struct DeleteConnectorInput {
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the connector that you want to delete.</p>
     pub current_version: std::option::Option<std::string::String>,
+}
+impl DeleteConnectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
+    pub fn connector_arn(&self) -> std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
+    /// <p>The current version of the connector that you want to delete.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2206,6 +2270,20 @@ pub struct CreateWorkerConfigurationInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub properties_file_content: std::option::Option<std::string::String>,
+}
+impl CreateWorkerConfigurationInput {
+    /// <p>A summary description of the worker configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the worker configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
+    pub fn properties_file_content(&self) -> std::option::Option<&str> {
+        self.properties_file_content.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkerConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2229,6 +2307,24 @@ pub struct CreateCustomPluginInput {
     pub location: std::option::Option<crate::model::CustomPluginLocation>,
     /// <p>The name of the custom plugin.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateCustomPluginInput {
+    /// <p>The type of the plugin file.</p>
+    pub fn content_type(&self) -> std::option::Option<&crate::model::CustomPluginContentType> {
+        self.content_type.as_ref()
+    }
+    /// <p>A summary description of the custom plugin.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the location of a custom plugin.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::CustomPluginLocation> {
+        self.location.as_ref()
+    }
+    /// <p>The name of the custom plugin.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCustomPluginInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2272,6 +2368,63 @@ pub struct CreateConnectorInput {
     pub service_execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies which worker configuration to use with the connector.</p>
     pub worker_configuration: std::option::Option<crate::model::WorkerConfiguration>,
+}
+impl CreateConnectorInput {
+    /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
+    pub fn capacity(&self) -> std::option::Option<&crate::model::Capacity> {
+        self.capacity.as_ref()
+    }
+    /// <p>A map of keys to values that represent the configuration for the connector.</p>
+    pub fn connector_configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.connector_configuration.as_ref()
+    }
+    /// <p>A summary description of the connector.</p>
+    pub fn connector_description(&self) -> std::option::Option<&str> {
+        self.connector_description.as_deref()
+    }
+    /// <p>The name of the connector.</p>
+    pub fn connector_name(&self) -> std::option::Option<&str> {
+        self.connector_name.as_deref()
+    }
+    /// <p>Specifies which Apache Kafka cluster to connect to.</p>
+    pub fn kafka_cluster(&self) -> std::option::Option<&crate::model::KafkaCluster> {
+        self.kafka_cluster.as_ref()
+    }
+    /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    pub fn kafka_cluster_client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterClientAuthentication> {
+        self.kafka_cluster_client_authentication.as_ref()
+    }
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn kafka_cluster_encryption_in_transit(
+        &self,
+    ) -> std::option::Option<&crate::model::KafkaClusterEncryptionInTransit> {
+        self.kafka_cluster_encryption_in_transit.as_ref()
+    }
+    /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    pub fn kafka_connect_version(&self) -> std::option::Option<&str> {
+        self.kafka_connect_version.as_deref()
+    }
+    /// <p>Details about log delivery.</p>
+    pub fn log_delivery(&self) -> std::option::Option<&crate::model::LogDelivery> {
+        self.log_delivery.as_ref()
+    }
+    /// <p>Specifies which plugins to use for the connector.</p>
+    pub fn plugins(&self) -> std::option::Option<&[crate::model::Plugin]> {
+        self.plugins.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
+    pub fn service_execution_role_arn(&self) -> std::option::Option<&str> {
+        self.service_execution_role_arn.as_deref()
+    }
+    /// <p>Specifies which worker configuration to use with the connector.</p>
+    pub fn worker_configuration(&self) -> std::option::Option<&crate::model::WorkerConfiguration> {
+        self.worker_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_change_message_visibility_batch_request_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ChangeMessageVisibilityBatchRequestEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
     if let Some(var_2) = &input.id {
@@ -22,13 +22,14 @@ pub fn serialize_structure_crate_model_change_message_visibility_batch_request_e
             aws_smithy_types::Number::NegInt((input.visibility_timeout).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_delete_message_batch_request_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DeleteMessageBatchRequestEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("Id");
     if let Some(var_7) = &input.id {
@@ -39,13 +40,14 @@ pub fn serialize_structure_crate_model_delete_message_batch_request_entry(
     if let Some(var_9) = &input.receipt_handle {
         scope_8.string(var_9);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_message_attribute_value(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MessageAttributeValue,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("StringValue");
     if let Some(var_11) = &input.string_value {
@@ -83,13 +85,14 @@ pub fn serialize_structure_crate_model_message_attribute_value(
     if let Some(var_25) = &input.data_type {
         scope_24.string(var_25);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_message_system_attribute_value(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MessageSystemAttributeValue,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("StringValue");
     if let Some(var_27) = &input.string_value {
@@ -127,13 +130,14 @@ pub fn serialize_structure_crate_model_message_system_attribute_value(
     if let Some(var_41) = &input.data_type {
         scope_40.string(var_41);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_send_message_batch_request_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SendMessageBatchRequestEntry,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_42 = writer.prefix("Id");
     if let Some(var_43) = &input.id {
@@ -162,7 +166,7 @@ pub fn serialize_structure_crate_model_send_message_batch_request_entry(
             {
                 crate::query_ser::serialize_structure_crate_model_message_attribute_value(
                     entry_52, value_51,
-                );
+                )?;
             }
         }
         map_49.finish();
@@ -177,7 +181,7 @@ pub fn serialize_structure_crate_model_send_message_batch_request_entry(
             {
                 crate::query_ser::serialize_structure_crate_model_message_system_attribute_value(
                     entry_58, value_57,
-                );
+                )?;
             }
         }
         map_55.finish();
@@ -192,4 +196,5 @@ pub fn serialize_structure_crate_model_send_message_batch_request_entry(
     if let Some(var_62) = &input.message_group_id {
         scope_61.string(var_62);
     }
+    Ok(())
 }

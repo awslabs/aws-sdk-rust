@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_send_command_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendCommandInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.session_token {
         object.key("SessionToken").string(var_1);
     }
@@ -11,7 +11,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         crate::json_ser::serialize_structure_crate_model_start_session_request(
             &mut object_3,
             var_2,
-        );
+        )?;
         object_3.finish();
     }
     if let Some(var_4) = &input.start_transaction {
@@ -19,12 +19,12 @@ pub fn serialize_structure_crate_input_send_command_input(
         crate::json_ser::serialize_structure_crate_model_start_transaction_request(
             &mut object_5,
             var_4,
-        );
+        )?;
         object_5.finish();
     }
     if let Some(var_6) = &input.end_session {
         let mut object_7 = object.key("EndSession").start_object();
-        crate::json_ser::serialize_structure_crate_model_end_session_request(&mut object_7, var_6);
+        crate::json_ser::serialize_structure_crate_model_end_session_request(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.commit_transaction {
@@ -32,7 +32,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         crate::json_ser::serialize_structure_crate_model_commit_transaction_request(
             &mut object_9,
             var_8,
-        );
+        )?;
         object_9.finish();
     }
     if let Some(var_10) = &input.abort_transaction {
@@ -40,7 +40,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         crate::json_ser::serialize_structure_crate_model_abort_transaction_request(
             &mut object_11,
             var_10,
-        );
+        )?;
         object_11.finish();
     }
     if let Some(var_12) = &input.execute_statement {
@@ -48,43 +48,50 @@ pub fn serialize_structure_crate_input_send_command_input(
         crate::json_ser::serialize_structure_crate_model_execute_statement_request(
             &mut object_13,
             var_12,
-        );
+        )?;
         object_13.finish();
     }
     if let Some(var_14) = &input.fetch_page {
         let mut object_15 = object.key("FetchPage").start_object();
-        crate::json_ser::serialize_structure_crate_model_fetch_page_request(&mut object_15, var_14);
+        crate::json_ser::serialize_structure_crate_model_fetch_page_request(
+            &mut object_15,
+            var_14,
+        )?;
         object_15.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_start_session_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartSessionRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.ledger_name {
         object.key("LedgerName").string(var_16);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_start_transaction_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartTransactionRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     let (_, _) = (object, input);
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_end_session_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EndSessionRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     let (_, _) = (object, input);
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_commit_transaction_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CommitTransactionRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.transaction_id {
         object.key("TransactionId").string(var_17);
     }
@@ -93,19 +100,21 @@ pub fn serialize_structure_crate_model_commit_transaction_request(
             .key("CommitDigest")
             .string_unchecked(&aws_smithy_types::base64::encode(var_18));
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_abort_transaction_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AbortTransactionRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     let (_, _) = (object, input);
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_execute_statement_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExecuteStatementRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.transaction_id {
         object.key("TransactionId").string(var_19);
     }
@@ -120,30 +129,32 @@ pub fn serialize_structure_crate_model_execute_statement_request(
                 crate::json_ser::serialize_structure_crate_model_value_holder(
                     &mut object_24,
                     item_23,
-                );
+                )?;
                 object_24.finish();
             }
         }
         array_22.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_fetch_page_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FetchPageRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.transaction_id {
         object.key("TransactionId").string(var_25);
     }
     if let Some(var_26) = &input.next_page_token {
         object.key("NextPageToken").string(var_26);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_value_holder(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ValueHolder,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.ion_binary {
         object
             .key("IonBinary")
@@ -152,4 +163,5 @@ pub fn serialize_structure_crate_model_value_holder(
     if let Some(var_28) = &input.ion_text {
         object.key("IonText").string(var_28);
     }
+    Ok(())
 }

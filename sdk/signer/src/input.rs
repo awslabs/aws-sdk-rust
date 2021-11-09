@@ -168,10 +168,9 @@ impl AddProfilePermissionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_profile_permission(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_profile_permission(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2145,10 +2144,7 @@ impl PutSigningProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_signing_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_signing_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2532,10 +2528,7 @@ impl RevokeSignatureInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_signature(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_revoke_signature(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2746,10 +2739,9 @@ impl RevokeSigningProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_signing_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_revoke_signing_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2960,10 +2952,7 @@ impl StartSigningJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_signing_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_signing_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3152,10 +3141,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3403,6 +3389,16 @@ pub struct UntagResourceInput {
     /// <p>A list of tag keys to be removed from the signing profile.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag keys to be removed from the signing profile.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -3421,6 +3417,19 @@ pub struct TagResourceInput {
     /// <p>One or more tags to be associated with the signing profile.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags to be associated with the signing profile.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3449,6 +3458,31 @@ pub struct StartSigningJobInput {
     /// <p>The AWS account ID of the signing profile owner.</p>
     pub profile_owner: std::option::Option<std::string::String>,
 }
+impl StartSigningJobInput {
+    /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
+    /// code.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>The S3 bucket in which to save your signed object. The destination contains the name
+    /// of your bucket and an optional prefix.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>The name of the signing profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>String that identifies the signing request. All calls after the first that use this
+    /// token return the same response as the first call.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The AWS account ID of the signing profile owner.</p>
+    pub fn profile_owner(&self) -> std::option::Option<&str> {
+        self.profile_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for StartSigningJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSigningJobInput");
@@ -3476,6 +3510,26 @@ pub struct RevokeSigningProfileInput {
     /// trusted.</p>
     pub effective_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl RevokeSigningProfileInput {
+    /// <p>The name of the signing profile to be revoked.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The version of the signing profile to be revoked.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
+    /// <p>The reason for revoking a signing profile.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>A timestamp for when revocation of a Signing Profile should become effective.
+    /// Signatures generated using the signing profile after this timestamp are not
+    /// trusted.</p>
+    pub fn effective_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.effective_time.as_ref()
+    }
+}
 impl std::fmt::Debug for RevokeSigningProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeSigningProfileInput");
@@ -3498,6 +3552,20 @@ pub struct RevokeSignatureInput {
     /// <p>The reason for revoking the signing job.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl RevokeSignatureInput {
+    /// <p>ID of the signing job to be revoked.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>AWS account ID of the job owner.</p>
+    pub fn job_owner(&self) -> std::option::Option<&str> {
+        self.job_owner.as_deref()
+    }
+    /// <p>The reason for revoking the signing job.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokeSignatureInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeSignatureInput");
@@ -3518,6 +3586,20 @@ pub struct RemoveProfilePermissionInput {
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub statement_id: std::option::Option<std::string::String>,
+}
+impl RemoveProfilePermissionInput {
+    /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>An identifier for the current revision of the signing profile permissions.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>A unique identifier for the cross-account permissions statement.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveProfilePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3555,6 +3637,49 @@ pub struct PutSigningProfileInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PutSigningProfileInput {
+    /// <p>The name of the signing profile to be created.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
+    /// profile.</p>
+    pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
+        self.signing_material.as_ref()
+    }
+    /// <p>The default validity period override for any signature generated using this signing
+    /// profile. If unspecified, the default is 135 months.</p>
+    pub fn signature_validity_period(
+        &self,
+    ) -> std::option::Option<&crate::model::SignatureValidityPeriod> {
+        self.signature_validity_period.as_ref()
+    }
+    /// <p>The ID of the signing platform to be created.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>A subfield of <code>platform</code>. This specifies any different configuration
+    /// options that you want to apply to the chosen platform (such as a different
+    /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+    pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
+        self.overrides.as_ref()
+    }
+    /// <p>Map of key-value pairs for signing. These can include any information that you want to
+    /// use during signing.</p>
+    pub fn signing_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.signing_parameters.as_ref()
+    }
+    /// <p>Tags to be associated with the signing profile that is being created.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for PutSigningProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSigningProfileInput");
@@ -3575,6 +3700,12 @@ impl std::fmt::Debug for PutSigningProfileInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3604,6 +3735,33 @@ pub struct ListSigningProfilesInput {
     /// list.</p>
     pub statuses: std::option::Option<std::vec::Vec<crate::model::SigningProfileStatus>>,
 }
+impl ListSigningProfilesInput {
+    /// <p>Designates whether to include profiles with the status of
+    /// <code>CANCELED</code>.</p>
+    pub fn include_canceled(&self) -> bool {
+        self.include_canceled
+    }
+    /// <p>The maximum number of profiles to be returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a
+    /// response with truncated results, use this parameter in a subsequent request. Set it to
+    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters results to return only signing jobs initiated for a specified signing
+    /// platform.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>Filters results to return only signing jobs with statuses in the specified
+    /// list.</p>
+    pub fn statuses(&self) -> std::option::Option<&[crate::model::SigningProfileStatus]> {
+        self.statuses.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSigningProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSigningProfilesInput");
@@ -3632,6 +3790,30 @@ pub struct ListSigningPlatformsInput {
     /// response with truncated results, use this parameter in a subsequent request. Set it to
     /// the value of <code>nextToken</code> from the response that you just received.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSigningPlatformsInput {
+    /// <p>The category type of a signing platform.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>Any partner entities connected to a signing platform.</p>
+    pub fn partner(&self) -> std::option::Option<&str> {
+        self.partner.as_deref()
+    }
+    /// <p>The validation template that is used by the target signing platform.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The maximum number of results to be returned by this operation.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a
+    /// response with truncated results, use this parameter in a subsequent request. Set it to
+    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSigningPlatformsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3678,6 +3860,54 @@ pub struct ListSigningJobsInput {
     /// entity.</p>
     pub job_invoker: std::option::Option<std::string::String>,
 }
+impl ListSigningJobsInput {
+    /// <p>A status value with which to filter your results.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SigningStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ID of microcontroller platform that you specified for the distribution of your
+    /// code image.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>The IAM principal that requested the signing job.</p>
+    pub fn requested_by(&self) -> std::option::Option<&str> {
+        self.requested_by.as_deref()
+    }
+    /// <p>Specifies the maximum number of items to return in the response. Use this parameter
+    /// when paginating results. If additional items exist beyond the number you specify, the
+    /// <code>nextToken</code> element is set in the response. Use the
+    /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>String for specifying the next set of paginated results to return. After you receive a
+    /// response with truncated results, use this parameter in a subsequent request. Set it to
+    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters results to return only signing jobs with revoked signatures.</p>
+    pub fn is_revoked(&self) -> bool {
+        self.is_revoked
+    }
+    /// <p>Filters results to return only signing jobs with signatures expiring before a
+    /// specified timestamp.</p>
+    pub fn signature_expires_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.signature_expires_before.as_ref()
+    }
+    /// <p>Filters results to return only signing jobs with signatures expiring after a specified
+    /// timestamp.</p>
+    pub fn signature_expires_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.signature_expires_after.as_ref()
+    }
+    /// <p>Filters results to return only signing jobs initiated by a specified IAM
+    /// entity.</p>
+    pub fn job_invoker(&self) -> std::option::Option<&str> {
+        self.job_invoker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSigningJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSigningJobsInput");
@@ -3703,6 +3933,16 @@ pub struct ListProfilePermissionsInput {
     /// <p>String for specifying the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProfilePermissionsInput {
+    /// <p>Name of the signing profile containing the cross-account permissions.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>String for specifying the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProfilePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProfilePermissionsInput");
@@ -3721,6 +3961,16 @@ pub struct GetSigningProfileInput {
     /// <p>The AWS account ID of the profile owner.</p>
     pub profile_owner: std::option::Option<std::string::String>,
 }
+impl GetSigningProfileInput {
+    /// <p>The name of the target signing profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The AWS account ID of the profile owner.</p>
+    pub fn profile_owner(&self) -> std::option::Option<&str> {
+        self.profile_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSigningProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSigningProfileInput");
@@ -3737,6 +3987,12 @@ pub struct GetSigningPlatformInput {
     /// <p>The ID of the target signing platform.</p>
     pub platform_id: std::option::Option<std::string::String>,
 }
+impl GetSigningPlatformInput {
+    /// <p>The ID of the target signing platform.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSigningPlatformInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSigningPlatformInput");
@@ -3752,6 +4008,12 @@ pub struct DescribeSigningJobInput {
     /// <p>The ID of the signing job on input.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeSigningJobInput {
+    /// <p>The ID of the signing job on input.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSigningJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSigningJobInput");
@@ -3766,6 +4028,12 @@ impl std::fmt::Debug for DescribeSigningJobInput {
 pub struct CancelSigningProfileInput {
     /// <p>The name of the signing profile to be canceled.</p>
     pub profile_name: std::option::Option<std::string::String>,
+}
+impl CancelSigningProfileInput {
+    /// <p>The name of the signing profile to be canceled.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelSigningProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3792,6 +4060,33 @@ pub struct AddProfilePermissionInput {
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub statement_id: std::option::Option<std::string::String>,
+}
+impl AddProfilePermissionInput {
+    /// <p>The human-readable name of the signing profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The version of the signing profile.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
+    /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
+    /// another AWS account ID.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>A unique identifier for the current profile revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>A unique identifier for the cross-account permission statement.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddProfilePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

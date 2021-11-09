@@ -10,6 +10,18 @@ pub struct VaultNotificationConfig {
     /// specified Amazon SNS topic.</p>
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl VaultNotificationConfig {
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name
+    /// (ARN).</p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
+    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the
+    /// specified Amazon SNS topic.</p>
+    pub fn events(&self) -> std::option::Option<&[std::string::String]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for VaultNotificationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VaultNotificationConfig");
@@ -84,6 +96,12 @@ pub struct VaultAccessPolicy {
     /// <p>The vault access policy.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl VaultAccessPolicy {
+    /// <p>The vault access policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for VaultAccessPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VaultAccessPolicy");
@@ -132,6 +150,13 @@ pub struct DataRetrievalPolicy {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule,
     /// which contains a Strategy field and optionally a BytesPerHour field.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::DataRetrievalRule>>,
+}
+impl DataRetrievalPolicy {
+    /// <p>The policy rule. Although this is a list type, currently there must be only one rule,
+    /// which contains a Strategy field and optionally a BytesPerHour field.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::DataRetrievalRule]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for DataRetrievalPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -195,6 +220,20 @@ pub struct DataRetrievalRule {
     /// <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is
     /// not set to <code>BytesPerHour</code> and you set this field.</p>
     pub bytes_per_hour: std::option::Option<i64>,
+}
+impl DataRetrievalRule {
+    /// <p>The type of data retrieval policy to set.</p>
+    /// <p>Valid values: BytesPerHour|FreeTier|None</p>
+    pub fn strategy(&self) -> std::option::Option<&str> {
+        self.strategy.as_deref()
+    }
+    /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
+    /// <p>This field is required only if the value of the Strategy field is
+    /// <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is
+    /// not set to <code>BytesPerHour</code> and you set this field.</p>
+    pub fn bytes_per_hour(&self) -> std::option::Option<i64> {
+        self.bytes_per_hour
+    }
 }
 impl std::fmt::Debug for DataRetrievalRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -282,6 +321,40 @@ pub struct DescribeVaultOutput {
     /// This field will return null if an inventory has not yet run on the vault, for example if
     /// you just created the vault.</p>
     pub size_in_bytes: i64,
+}
+impl DescribeVaultOutput {
+    /// <p>The Amazon Resource Name (ARN) of the vault.</p>
+    pub fn vault_arn(&self) -> std::option::Option<&str> {
+        self.vault_arn.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value
+    /// should be a string in the ISO 8601 date format, for example
+    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
+    /// vault inventory.  This value should be a string in the ISO 8601 date format, for example
+    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    pub fn last_inventory_date(&self) -> std::option::Option<&str> {
+        self.last_inventory_date.as_deref()
+    }
+    /// <p>The number of archives in the vault as of the last inventory date. This field will
+    /// return <code>null</code> if an inventory has not yet run on the vault, for example if you
+    /// just created the vault.</p>
+    pub fn number_of_archives(&self) -> i64 {
+        self.number_of_archives
+    }
+    /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date.
+    /// This field will return null if an inventory has not yet run on the vault, for example if
+    /// you just created the vault.</p>
+    pub fn size_in_bytes(&self) -> i64 {
+        self.size_in_bytes
+    }
 }
 impl std::fmt::Debug for DescribeVaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -422,6 +495,20 @@ pub struct ProvisionedCapacityDescription {
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
     pub expiration_date: std::option::Option<std::string::String>,
 }
+impl ProvisionedCapacityDescription {
+    /// <p>The ID that identifies the provisioned capacity unit.</p>
+    pub fn capacity_id(&self) -> std::option::Option<&str> {
+        self.capacity_id.as_deref()
+    }
+    /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
+    pub fn expiration_date(&self) -> std::option::Option<&str> {
+        self.expiration_date.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisionedCapacityDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedCapacityDescription");
@@ -502,6 +589,17 @@ pub struct PartListElement {
     /// never <code>null</code>.</p>
     pub sha256_tree_hash: std::option::Option<std::string::String>,
 }
+impl PartListElement {
+    /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
+    pub fn range_in_bytes(&self) -> std::option::Option<&str> {
+        self.range_in_bytes.as_deref()
+    }
+    /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is
+    /// never <code>null</code>.</p>
+    pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
+        self.sha256_tree_hash.as_deref()
+    }
+}
 impl std::fmt::Debug for PartListElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PartListElement");
@@ -581,6 +679,31 @@ pub struct UploadListElement {
     pub part_size_in_bytes: i64,
     /// <p>The UTC time at which the multipart upload was initiated.</p>
     pub creation_date: std::option::Option<std::string::String>,
+}
+impl UploadListElement {
+    /// <p>The ID of a multipart upload.</p>
+    pub fn multipart_upload_id(&self) -> std::option::Option<&str> {
+        self.multipart_upload_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
+    pub fn vault_arn(&self) -> std::option::Option<&str> {
+        self.vault_arn.as_deref()
+    }
+    /// <p>The description of the archive that was specified in the Initiate Multipart Upload
+    /// request.</p>
+    pub fn archive_description(&self) -> std::option::Option<&str> {
+        self.archive_description.as_deref()
+    }
+    /// <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is
+    /// the size of all the parts in the upload except the last part, which may be smaller than
+    /// this size.</p>
+    pub fn part_size_in_bytes(&self) -> i64 {
+        self.part_size_in_bytes
+    }
+    /// <p>The UTC time at which the multipart upload was initiated.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
 }
 impl std::fmt::Debug for UploadListElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -784,6 +907,141 @@ pub struct GlacierJobDescription {
     pub select_parameters: std::option::Option<crate::model::SelectParameters>,
     /// <p>Contains the location where the data from the select job is stored.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
+}
+impl GlacierJobDescription {
+    /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The job description provided when initiating the job.</p>
+    pub fn job_description(&self) -> std::option::Option<&str> {
+        self.job_description.as_deref()
+    }
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>,
+    /// <code>InventoryRetrieval</code>, or
+    /// <code>Select</code>. </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ActionCode> {
+        self.action.as_ref()
+    }
+    /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this
+    /// field is null.</p>
+    pub fn archive_id(&self) -> std::option::Option<&str> {
+        self.archive_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was
+    /// requested.</p>
+    pub fn vault_arn(&self) -> std::option::Option<&str> {
+        self.vault_arn.as_deref()
+    }
+    /// <p>The UTC date when the job was created. This value is a string representation of ISO
+    /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The job status. When a job is completed, you get the job's output using Get Job
+    /// Output (GET output).</p>
+    pub fn completed(&self) -> bool {
+        self.completed
+    }
+    /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
+    /// <code>Failed</code>, and indicates the status of the job.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>A friendly message that describes the job status.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>For an archive retrieval job, this value is the size in bytes of the archive being
+    /// requested for download. For an inventory retrieval or select job, this value is
+    /// null.</p>
+    pub fn archive_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.archive_size_in_bytes
+    }
+    /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory
+    /// requested for download. For an archive retrieval or select job, this value is
+    /// null.</p>
+    pub fn inventory_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.inventory_size_in_bytes
+    }
+    /// <p>An Amazon SNS topic that receives notification.</p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
+    /// <p>The UTC time that the job request completed. While the job is in progress, the
+    /// value is null.</p>
+    pub fn completion_date(&self) -> std::option::Option<&str> {
+        self.completion_date.as_deref()
+    }
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise,
+    /// this value is null.</p>
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash
+    /// aligned range, then this field returns a value.</p>
+    /// <p>If the whole archive is retrieved, this value is the same as the
+    /// ArchiveSHA256TreeHash value.</p>
+    /// <p>This field is null for the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Archive retrieval jobs that specify a range that is not tree-hash
+    /// aligned</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>Archival jobs that specify a range that is equal to the whole archive, when
+    /// the job status is <code>InProgress</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>Inventory jobs</p>
+    /// </li>
+    /// <li>
+    /// <p>Select jobs</p>
+    /// </li>
+    /// </ul>
+    pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
+        self.sha256_tree_hash.as_deref()
+    }
+    /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
+    /// retrieval or select jobs, this field is null.</p>
+    pub fn archive_sha256_tree_hash(&self) -> std::option::Option<&str> {
+        self.archive_sha256_tree_hash.as_deref()
+    }
+    /// <p>The retrieved byte range for archive retrieval jobs in the form
+    /// <i>StartByteValue</i>-<i>EndByteValue</i>. If no range
+    /// was specified in the archive retrieval, then the whole archive is retrieved. In this
+    /// case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i>
+    /// equals the size of the archive minus 1. For inventory retrieval or select jobs, this
+    /// field is null. </p>
+    pub fn retrieval_byte_range(&self) -> std::option::Option<&str> {
+        self.retrieval_byte_range.as_deref()
+    }
+    /// <p>The tier to use for a select or an archive retrieval. Valid values are
+    /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+    /// <code>Standard</code> is the default.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
+    /// <p>Parameters used for range inventory retrieval.</p>
+    pub fn inventory_retrieval_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::InventoryRetrievalJobDescription> {
+        self.inventory_retrieval_parameters.as_ref()
+    }
+    /// <p>Contains the job output location.</p>
+    pub fn job_output_path(&self) -> std::option::Option<&str> {
+        self.job_output_path.as_deref()
+    }
+    /// <p>Contains the parameters used for a select.</p>
+    pub fn select_parameters(&self) -> std::option::Option<&crate::model::SelectParameters> {
+        self.select_parameters.as_ref()
+    }
+    /// <p>Contains the location where the data from the select job is stored.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
 }
 impl std::fmt::Debug for GlacierJobDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1230,6 +1488,12 @@ pub struct OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the job request.</p>
     pub s3: std::option::Option<crate::model::S3Location>,
 }
+impl OutputLocation {
+    /// <p>Describes an S3 location that will receive the results of the job request.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for OutputLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputLocation");
@@ -1291,6 +1555,46 @@ pub struct S3Location {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The storage class used to store the job results.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
+}
+impl S3Location {
+    /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix that is prepended to the results for this request.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.encryption.as_ref()
+    }
+    /// <p>The canned access control list (ACL) to apply to the job results.</p>
+    pub fn canned_acl(&self) -> std::option::Option<&crate::model::CannedAcl> {
+        self.canned_acl.as_ref()
+    }
+    /// <p>A list of grants that control access to the staged results.</p>
+    pub fn access_control_list(&self) -> std::option::Option<&[crate::model::Grant]> {
+        self.access_control_list.as_deref()
+    }
+    /// <p>The tag-set that is applied to the job results.</p>
+    pub fn tagging(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tagging.as_ref()
+    }
+    /// <p>A map of metadata to store with the job results in Amazon S3.</p>
+    pub fn user_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_metadata.as_ref()
+    }
+    /// <p>The storage class used to store the job results.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1544,6 +1848,16 @@ pub struct Grant {
     /// <p>Specifies the permission given to the grantee. </p>
     pub permission: std::option::Option<crate::model::Permission>,
 }
+impl Grant {
+    /// <p>The grantee.</p>
+    pub fn grantee(&self) -> std::option::Option<&crate::model::Grantee> {
+        self.grantee.as_ref()
+    }
+    /// <p>Specifies the permission given to the grantee. </p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.permission.as_ref()
+    }
+}
 impl std::fmt::Debug for Grant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Grant");
@@ -1682,6 +1996,28 @@ pub struct Grantee {
     pub id: std::option::Option<std::string::String>,
     /// <p>Email address of the grantee.</p>
     pub email_address: std::option::Option<std::string::String>,
+}
+impl Grantee {
+    /// <p>Type of grantee</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>Screen name of the grantee.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>URI of the grantee group.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The canonical user ID of the grantee.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Email address of the grantee.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
 }
 impl std::fmt::Debug for Grantee {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1936,6 +2272,24 @@ pub struct Encryption {
     /// specify the encryption context for the job results.</p>
     pub kms_context: std::option::Option<std::string::String>,
 }
+impl Encryption {
+    /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for
+    /// example <code>AES256</code> or <code>aws:kms</code>.</p>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.encryption_type.as_ref()
+    }
+    /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an
+    /// object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or
+    /// Signature Version 4. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to
+    /// specify the encryption context for the job results.</p>
+    pub fn kms_context(&self) -> std::option::Option<&str> {
+        self.kms_context.as_deref()
+    }
+}
 impl std::fmt::Debug for Encryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Encryption");
@@ -2082,6 +2436,24 @@ pub struct SelectParameters {
     /// <p>Describes how the results of the select job are serialized.</p>
     pub output_serialization: std::option::Option<crate::model::OutputSerialization>,
 }
+impl SelectParameters {
+    /// <p>Describes the serialization format of the object.</p>
+    pub fn input_serialization(&self) -> std::option::Option<&crate::model::InputSerialization> {
+        self.input_serialization.as_ref()
+    }
+    /// <p>The type of the provided expression, for example <code>SQL</code>.</p>
+    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+        self.expression_type.as_ref()
+    }
+    /// <p>The expression that is used to select the object.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>Describes how the results of the select job are serialized.</p>
+    pub fn output_serialization(&self) -> std::option::Option<&crate::model::OutputSerialization> {
+        self.output_serialization.as_ref()
+    }
+}
 impl std::fmt::Debug for SelectParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SelectParameters");
@@ -2178,6 +2550,12 @@ pub struct OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
     pub csv: std::option::Option<crate::model::CsvOutput>,
 }
+impl OutputSerialization {
+    /// <p>Describes the serialization of CSV-encoded query results.</p>
+    pub fn csv(&self) -> std::option::Option<&crate::model::CsvOutput> {
+        self.csv.as_ref()
+    }
+}
 impl std::fmt::Debug for OutputSerialization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputSerialization");
@@ -2235,6 +2613,31 @@ pub struct CsvOutput {
     /// <p>A value used as an escape character where the field delimiter is part of the
     /// value.</p>
     pub quote_character: std::option::Option<std::string::String>,
+}
+impl CsvOutput {
+    /// <p>A value that indicates whether all output fields should be contained within quotation
+    /// marks.</p>
+    pub fn quote_fields(&self) -> std::option::Option<&crate::model::QuoteFields> {
+        self.quote_fields.as_ref()
+    }
+    /// <p>A single character used for escaping the quotation-mark character inside an already
+    /// escaped value.</p>
+    pub fn quote_escape_character(&self) -> std::option::Option<&str> {
+        self.quote_escape_character.as_deref()
+    }
+    /// <p>A value used to separate individual records from each other.</p>
+    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+        self.record_delimiter.as_deref()
+    }
+    /// <p>A value used to separate individual fields from each other within a record.</p>
+    pub fn field_delimiter(&self) -> std::option::Option<&str> {
+        self.field_delimiter.as_deref()
+    }
+    /// <p>A value used as an escape character where the field delimiter is part of the
+    /// value.</p>
+    pub fn quote_character(&self) -> std::option::Option<&str> {
+        self.quote_character.as_deref()
+    }
 }
 impl std::fmt::Debug for CsvOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2463,6 +2866,12 @@ pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     pub csv: std::option::Option<crate::model::CsvInput>,
 }
+impl InputSerialization {
+    /// <p>Describes the serialization of a CSV-encoded object.</p>
+    pub fn csv(&self) -> std::option::Option<&crate::model::CsvInput> {
+        self.csv.as_ref()
+    }
+}
 impl std::fmt::Debug for InputSerialization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputSerialization");
@@ -2522,6 +2931,36 @@ pub struct CsvInput {
     /// <p>A value used as an escape character where the field delimiter is part of the
     /// value.</p>
     pub quote_character: std::option::Option<std::string::String>,
+}
+impl CsvInput {
+    /// <p>Describes the first line of input. Valid values are <code>None</code>,
+    /// <code>Ignore</code>, and <code>Use</code>.</p>
+    pub fn file_header_info(&self) -> std::option::Option<&crate::model::FileHeaderInfo> {
+        self.file_header_info.as_ref()
+    }
+    /// <p>A single character used to indicate that a row should be ignored when the character is
+    /// present at the start of that row.</p>
+    pub fn comments(&self) -> std::option::Option<&str> {
+        self.comments.as_deref()
+    }
+    /// <p>A single character used for escaping the quotation-mark character inside an already
+    /// escaped value.</p>
+    pub fn quote_escape_character(&self) -> std::option::Option<&str> {
+        self.quote_escape_character.as_deref()
+    }
+    /// <p>A value used to separate individual records from each other.</p>
+    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+        self.record_delimiter.as_deref()
+    }
+    /// <p>A value used to separate individual fields from each other within a record.</p>
+    pub fn field_delimiter(&self) -> std::option::Option<&str> {
+        self.field_delimiter.as_deref()
+    }
+    /// <p>A value used as an escape character where the field delimiter is part of the
+    /// value.</p>
+    pub fn quote_character(&self) -> std::option::Option<&str> {
+        self.quote_character.as_deref()
+    }
 }
 impl std::fmt::Debug for CsvInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2735,6 +3174,38 @@ pub struct InventoryRetrievalJobDescription {
     /// no more inventory items, this value is <code>null</code>. For more information, see
     /// <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl InventoryRetrievalJobDescription {
+    /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault
+    /// inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
+    /// <p>The start of the date range in Universal Coordinated Time (UTC) for vault inventory
+    /// retrieval that includes archives created on or after this date. This value should be a
+    /// string in the ISO 8601 date format, for example
+    /// <code>2013-03-20T17:03:43Z</code>.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The end of the date range in UTC for vault inventory retrieval that includes
+    /// archives created before this date. This value should be a string in the ISO 8601 date
+    /// format, for example <code>2013-03-20T17:03:43Z</code>.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The maximum number of inventory items returned per vault inventory retrieval
+    /// request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
+    pub fn limit(&self) -> std::option::Option<&str> {
+        self.limit.as_deref()
+    }
+    /// <p>An opaque string that represents where to continue pagination of the vault
+    /// inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are
+    /// no more inventory items, this value is <code>null</code>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for InventoryRetrievalJobDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2974,6 +3445,12 @@ pub struct VaultLockPolicy {
     /// <p>The vault lock policy.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl VaultLockPolicy {
+    /// <p>The vault lock policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for VaultLockPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VaultLockPolicy");
@@ -3062,6 +3539,72 @@ pub struct JobParameters {
     pub select_parameters: std::option::Option<crate::model::SelectParameters>,
     /// <p>Contains information about the location where the select job results are stored.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
+}
+impl JobParameters {
+    /// <p>When initiating a job to retrieve a vault inventory, you can optionally add this
+    /// parameter to your request to specify the output format. If you are initiating an inventory
+    /// job and do not specify a Format field, JSON is the default format. Valid values are "CSV"
+    /// and "JSON".</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
+    /// <p>The job type. You can initiate a job to perform a select query on an archive,
+    /// retrieve an archive, or get an inventory of a vault.
+    /// Valid values are "select", "archive-retrieval" and "inventory-retrieval".</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The ID of the archive that you want to retrieve. This field is required only if
+    /// <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code>.
+    /// An error occurs if you specify this
+    /// request parameter for an inventory retrieval job request. </p>
+    pub fn archive_id(&self) -> std::option::Option<&str> {
+        self.archive_id.as_deref()
+    }
+    /// <p>The optional description for the job. The description must be less than or equal to
+    /// 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically,
+    /// ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is
+    /// completed and the output is ready for you to download. The specified topic publishes the
+    /// notification to its subscribers. The SNS topic must exist.</p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
+    /// <p>The byte range to retrieve for an archive retrieval. in the form
+    /// "<i>StartByteValue</i>-<i>EndByteValue</i>" If not
+    /// specified, the whole archive is retrieved. If specified, the byte range must be megabyte
+    /// (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible
+    /// by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the
+    /// end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange
+    /// is not megabyte aligned, this operation returns a 400 response. </p>
+    /// <p>An error occurs if you specify this field for an inventory retrieval job
+    /// request.</p>
+    pub fn retrieval_byte_range(&self) -> std::option::Option<&str> {
+        self.retrieval_byte_range.as_deref()
+    }
+    /// <p>The tier to use for a select or an archive retrieval job. Valid values are
+    /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+    /// <code>Standard</code> is the default.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
+    /// <p>Input parameters used for range inventory retrieval.</p>
+    pub fn inventory_retrieval_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::InventoryRetrievalJobInput> {
+        self.inventory_retrieval_parameters.as_ref()
+    }
+    /// <p>Contains the parameters that define a job.</p>
+    pub fn select_parameters(&self) -> std::option::Option<&crate::model::SelectParameters> {
+        self.select_parameters.as_ref()
+    }
+    /// <p>Contains information about the location where the select job results are stored.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
 }
 impl std::fmt::Debug for JobParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3304,6 +3847,32 @@ pub struct InventoryRetrievalJobInput {
     /// request to obtain additional inventory items. If there are no more inventory items, this
     /// value is <code>null</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl InventoryRetrievalJobInput {
+    /// <p>The start of the date range in UTC for vault inventory retrieval that includes
+    /// archives created on or after this date. This value should be a string in the ISO 8601 date
+    /// format, for example <code>2013-03-20T17:03:43Z</code>.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives
+    /// created before this date. This value should be a string in the ISO 8601 date format, for
+    /// example <code>2013-03-20T17:03:43Z</code>.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>Specifies the maximum number of inventory items returned per vault inventory
+    /// retrieval request. Valid values are greater than or equal to 1.</p>
+    pub fn limit(&self) -> std::option::Option<&str> {
+        self.limit.as_deref()
+    }
+    /// <p>An opaque string that represents where to continue pagination of the vault inventory
+    /// retrieval results. You use the marker in a new <b>InitiateJob</b>
+    /// request to obtain additional inventory items. If there are no more inventory items, this
+    /// value is <code>null</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for InventoryRetrievalJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

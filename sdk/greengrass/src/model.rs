@@ -8,6 +8,16 @@ pub struct ErrorDetail {
     /// A detailed error message.
     pub detailed_error_message: std::option::Option<std::string::String>,
 }
+impl ErrorDetail {
+    /// A detailed error code.
+    pub fn detailed_error_code(&self) -> std::option::Option<&str> {
+        self.detailed_error_code.as_deref()
+    }
+    /// A detailed error message.
+    pub fn detailed_error_message(&self) -> std::option::Option<&str> {
+        self.detailed_error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorDetail");
@@ -74,6 +84,12 @@ impl ErrorDetail {
 pub struct TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
     pub telemetry: std::option::Option<crate::model::Telemetry>,
+}
+impl TelemetryConfigurationUpdate {
+    /// Configure telemetry to be on or off.
+    pub fn telemetry(&self) -> std::option::Option<&crate::model::Telemetry> {
+        self.telemetry.as_ref()
+    }
 }
 impl std::fmt::Debug for TelemetryConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -187,6 +203,24 @@ pub struct ConnectivityInfo {
     /// The port of the Greengrass core. Usually 8883.
     pub port_number: i32,
 }
+impl ConnectivityInfo {
+    /// The endpoint for the Greengrass core. Can be an IP address or DNS.
+    pub fn host_address(&self) -> std::option::Option<&str> {
+        self.host_address.as_deref()
+    }
+    /// The ID of the connectivity information.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Metadata for this endpoint.
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// The port of the Greengrass core. Usually 8883.
+    pub fn port_number(&self) -> i32 {
+        self.port_number
+    }
+}
 impl std::fmt::Debug for ConnectivityInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectivityInfo");
@@ -279,6 +313,24 @@ pub struct VersionInformation {
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
+}
+impl VersionInformation {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for VersionInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -384,6 +436,43 @@ pub struct DefinitionInformation {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DefinitionInformation {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DefinitionInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -565,6 +654,36 @@ pub struct GroupInformation {
     /// The name of the group.
     pub name: std::option::Option<std::string::String>,
 }
+impl GroupInformation {
+    /// The ARN of the group.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the group was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the group.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the group was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the group.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the group.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the group.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupInformation");
@@ -705,6 +824,16 @@ pub struct GroupCertificateAuthorityProperties {
     /// The ID of the certificate authority for the group.
     pub group_certificate_authority_id: std::option::Option<std::string::String>,
 }
+impl GroupCertificateAuthorityProperties {
+    /// The ARN of the certificate authority for the group.
+    pub fn group_certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.group_certificate_authority_arn.as_deref()
+    }
+    /// The ID of the certificate authority for the group.
+    pub fn group_certificate_authority_id(&self) -> std::option::Option<&str> {
+        self.group_certificate_authority_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupCertificateAuthorityProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupCertificateAuthorityProperties");
@@ -791,6 +920,28 @@ pub struct Deployment {
     pub deployment_type: std::option::Option<crate::model::DeploymentType>,
     /// The ARN of the group for this deployment.
     pub group_arn: std::option::Option<std::string::String>,
+}
+impl Deployment {
+    /// The time, in milliseconds since the epoch, when the deployment was created.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The ARN of the deployment.
+    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+        self.deployment_arn.as_deref()
+    }
+    /// The ID of the deployment.
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// The type of the deployment.
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// The ARN of the group for this deployment.
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Deployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -973,6 +1124,20 @@ pub struct BulkDeployment {
     /// The time, in ISO format, when the deployment was created.
     pub created_at: std::option::Option<std::string::String>,
 }
+impl BulkDeployment {
+    /// The ARN of the bulk deployment.
+    pub fn bulk_deployment_arn(&self) -> std::option::Option<&str> {
+        self.bulk_deployment_arn.as_deref()
+    }
+    /// The ID of the bulk deployment.
+    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+        self.bulk_deployment_id.as_deref()
+    }
+    /// The time, in ISO format, when the deployment was created.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+}
 impl std::fmt::Debug for BulkDeployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BulkDeployment");
@@ -1066,6 +1231,40 @@ pub struct BulkDeploymentResult {
     pub error_message: std::option::Option<std::string::String>,
     /// The ARN of the Greengrass group.
     pub group_arn: std::option::Option<std::string::String>,
+}
+impl BulkDeploymentResult {
+    /// The time, in ISO format, when the deployment was created.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The ARN of the group deployment.
+    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+        self.deployment_arn.as_deref()
+    }
+    /// The ID of the group deployment.
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
+    pub fn deployment_status(&self) -> std::option::Option<&str> {
+        self.deployment_status.as_deref()
+    }
+    /// The type of the deployment.
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// Details about the error.
+    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+        self.error_details.as_deref()
+    }
+    /// The error message for a failed deployment
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// The ARN of the Greengrass group.
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for BulkDeploymentResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1230,6 +1429,14 @@ pub struct RuntimeConfiguration {
     /// Configuration for telemetry service.
     pub telemetry_configuration: std::option::Option<crate::model::TelemetryConfiguration>,
 }
+impl RuntimeConfiguration {
+    /// Configuration for telemetry service.
+    pub fn telemetry_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TelemetryConfiguration> {
+        self.telemetry_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for RuntimeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuntimeConfiguration");
@@ -1286,6 +1493,18 @@ pub struct TelemetryConfiguration {
     pub configuration_sync_status: std::option::Option<crate::model::ConfigurationSyncStatus>,
     /// Configure telemetry to be on or off.
     pub telemetry: std::option::Option<crate::model::Telemetry>,
+}
+impl TelemetryConfiguration {
+    /// Synchronization status of the device reported configuration with the desired configuration.
+    pub fn configuration_sync_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationSyncStatus> {
+        self.configuration_sync_status.as_ref()
+    }
+    /// Configure telemetry to be on or off.
+    pub fn telemetry(&self) -> std::option::Option<&crate::model::Telemetry> {
+        self.telemetry.as_ref()
+    }
 }
 impl std::fmt::Debug for TelemetryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1413,6 +1632,12 @@ pub struct SubscriptionDefinitionVersion {
     /// A list of subscriptions.
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
 }
+impl SubscriptionDefinitionVersion {
+    /// A list of subscriptions.
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+        self.subscriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for SubscriptionDefinitionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscriptionDefinitionVersion");
@@ -1475,6 +1700,24 @@ pub struct Subscription {
     pub subject: std::option::Option<std::string::String>,
     /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
     pub target: std::option::Option<std::string::String>,
+}
+impl Subscription {
+    /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// The MQTT topic used to route the message.
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
 }
 impl std::fmt::Debug for Subscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1563,6 +1806,12 @@ pub struct ResourceDefinitionVersion {
     /// A list of resources.
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
+impl ResourceDefinitionVersion {
+    /// A list of resources.
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceDefinitionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDefinitionVersion");
@@ -1623,6 +1872,22 @@ pub struct Resource {
     pub name: std::option::Option<std::string::String>,
     /// A container of data for all resource types.
     pub resource_data_container: std::option::Option<crate::model::ResourceDataContainer>,
+}
+impl Resource {
+    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// A container of data for all resource types.
+    pub fn resource_data_container(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceDataContainer> {
+        self.resource_data_container.as_ref()
+    }
 }
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1715,6 +1980,39 @@ pub struct ResourceDataContainer {
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     pub secrets_manager_secret_resource_data:
         std::option::Option<crate::model::SecretsManagerSecretResourceData>,
+}
+impl ResourceDataContainer {
+    /// Attributes that define the local device resource.
+    pub fn local_device_resource_data(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalDeviceResourceData> {
+        self.local_device_resource_data.as_ref()
+    }
+    /// Attributes that define the local volume resource.
+    pub fn local_volume_resource_data(
+        &self,
+    ) -> std::option::Option<&crate::model::LocalVolumeResourceData> {
+        self.local_volume_resource_data.as_ref()
+    }
+    /// Attributes that define an Amazon S3 machine learning resource.
+    pub fn s3_machine_learning_model_resource_data(
+        &self,
+    ) -> std::option::Option<&crate::model::S3MachineLearningModelResourceData> {
+        self.s3_machine_learning_model_resource_data.as_ref()
+    }
+    /// Attributes that define an Amazon SageMaker machine learning resource.
+    pub fn sage_maker_machine_learning_model_resource_data(
+        &self,
+    ) -> std::option::Option<&crate::model::SageMakerMachineLearningModelResourceData> {
+        self.sage_maker_machine_learning_model_resource_data
+            .as_ref()
+    }
+    /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+    pub fn secrets_manager_secret_resource_data(
+        &self,
+    ) -> std::option::Option<&crate::model::SecretsManagerSecretResourceData> {
+        self.secrets_manager_secret_resource_data.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceDataContainer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1871,6 +2169,18 @@ pub struct SecretsManagerSecretResourceData {
     pub additional_staging_labels_to_download:
         std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SecretsManagerSecretResourceData {
+    /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
+    pub fn additional_staging_labels_to_download(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.additional_staging_labels_to_download.as_deref()
+    }
+}
 impl std::fmt::Debug for SecretsManagerSecretResourceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecretsManagerSecretResourceData");
@@ -1953,6 +2263,22 @@ pub struct SageMakerMachineLearningModelResourceData {
     pub owner_setting: std::option::Option<crate::model::ResourceDownloadOwnerSetting>,
     /// The ARN of the Amazon SageMaker training job that represents the source model.
     pub sage_maker_job_arn: std::option::Option<std::string::String>,
+}
+impl SageMakerMachineLearningModelResourceData {
+    /// The absolute local path of the resource inside the Lambda environment.
+    pub fn destination_path(&self) -> std::option::Option<&str> {
+        self.destination_path.as_deref()
+    }
+    /// The owner setting for downloaded machine learning resources.
+    pub fn owner_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceDownloadOwnerSetting> {
+        self.owner_setting.as_ref()
+    }
+    /// The ARN of the Amazon SageMaker training job that represents the source model.
+    pub fn sage_maker_job_arn(&self) -> std::option::Option<&str> {
+        self.sage_maker_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SageMakerMachineLearningModelResourceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2038,6 +2364,16 @@ pub struct ResourceDownloadOwnerSetting {
     pub group_owner: std::option::Option<std::string::String>,
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
     pub group_permission: std::option::Option<crate::model::Permission>,
+}
+impl ResourceDownloadOwnerSetting {
+    /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
+    pub fn group_owner(&self) -> std::option::Option<&str> {
+        self.group_owner.as_deref()
+    }
+    /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
+    pub fn group_permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.group_permission.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceDownloadOwnerSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2162,6 +2498,22 @@ pub struct S3MachineLearningModelResourceData {
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
     pub s3_uri: std::option::Option<std::string::String>,
 }
+impl S3MachineLearningModelResourceData {
+    /// The absolute local path of the resource inside the Lambda environment.
+    pub fn destination_path(&self) -> std::option::Option<&str> {
+        self.destination_path.as_deref()
+    }
+    /// The owner setting for downloaded machine learning resources.
+    pub fn owner_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceDownloadOwnerSetting> {
+        self.owner_setting.as_ref()
+    }
+    /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for S3MachineLearningModelResourceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3MachineLearningModelResourceData");
@@ -2246,6 +2598,20 @@ pub struct LocalVolumeResourceData {
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
     pub source_path: std::option::Option<std::string::String>,
 }
+impl LocalVolumeResourceData {
+    /// The absolute local path of the resource inside the Lambda environment.
+    pub fn destination_path(&self) -> std::option::Option<&str> {
+        self.destination_path.as_deref()
+    }
+    /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
+    pub fn group_owner_setting(&self) -> std::option::Option<&crate::model::GroupOwnerSetting> {
+        self.group_owner_setting.as_ref()
+    }
+    /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
+    pub fn source_path(&self) -> std::option::Option<&str> {
+        self.source_path.as_deref()
+    }
+}
 impl std::fmt::Debug for LocalVolumeResourceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LocalVolumeResourceData");
@@ -2328,6 +2694,16 @@ pub struct GroupOwnerSetting {
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
     pub group_owner: std::option::Option<std::string::String>,
 }
+impl GroupOwnerSetting {
+    /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+    pub fn auto_add_group_owner(&self) -> bool {
+        self.auto_add_group_owner
+    }
+    /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
+    pub fn group_owner(&self) -> std::option::Option<&str> {
+        self.group_owner.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupOwnerSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupOwnerSetting");
@@ -2390,6 +2766,16 @@ pub struct LocalDeviceResourceData {
     pub group_owner_setting: std::option::Option<crate::model::GroupOwnerSetting>,
     /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
     pub source_path: std::option::Option<std::string::String>,
+}
+impl LocalDeviceResourceData {
+    /// Group/owner related settings for local resources.
+    pub fn group_owner_setting(&self) -> std::option::Option<&crate::model::GroupOwnerSetting> {
+        self.group_owner_setting.as_ref()
+    }
+    /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
+    pub fn source_path(&self) -> std::option::Option<&str> {
+        self.source_path.as_deref()
+    }
 }
 impl std::fmt::Debug for LocalDeviceResourceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2455,6 +2841,12 @@ pub struct LoggerDefinitionVersion {
     /// A list of loggers.
     pub loggers: std::option::Option<std::vec::Vec<crate::model::Logger>>,
 }
+impl LoggerDefinitionVersion {
+    /// A list of loggers.
+    pub fn loggers(&self) -> std::option::Option<&[crate::model::Logger]> {
+        self.loggers.as_deref()
+    }
+}
 impl std::fmt::Debug for LoggerDefinitionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoggerDefinitionVersion");
@@ -2519,6 +2911,28 @@ pub struct Logger {
     pub space: i32,
     /// The type of log output which will be used.
     pub r#type: std::option::Option<crate::model::LoggerType>,
+}
+impl Logger {
+    /// The component that will be subject to logging.
+    pub fn component(&self) -> std::option::Option<&crate::model::LoggerComponent> {
+        self.component.as_ref()
+    }
+    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The level of the logs.
+    pub fn level(&self) -> std::option::Option<&crate::model::LoggerLevel> {
+        self.level.as_ref()
+    }
+    /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
+    pub fn space(&self) -> i32 {
+        self.space
+    }
+    /// The type of log output which will be used.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LoggerType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Logger {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2812,6 +3226,36 @@ pub struct GroupVersion {
     /// The ARN of the subscription definition version for this group.
     pub subscription_definition_version_arn: std::option::Option<std::string::String>,
 }
+impl GroupVersion {
+    /// The ARN of the connector definition version for this group.
+    pub fn connector_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.connector_definition_version_arn.as_deref()
+    }
+    /// The ARN of the core definition version for this group.
+    pub fn core_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.core_definition_version_arn.as_deref()
+    }
+    /// The ARN of the device definition version for this group.
+    pub fn device_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.device_definition_version_arn.as_deref()
+    }
+    /// The ARN of the function definition version for this group.
+    pub fn function_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.function_definition_version_arn.as_deref()
+    }
+    /// The ARN of the logger definition version for this group.
+    pub fn logger_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.logger_definition_version_arn.as_deref()
+    }
+    /// The ARN of the resource definition version for this group.
+    pub fn resource_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.resource_definition_version_arn.as_deref()
+    }
+    /// The ARN of the subscription definition version for this group.
+    pub fn subscription_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.subscription_definition_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupVersion");
@@ -3003,6 +3447,16 @@ pub struct FunctionDefinitionVersion {
     /// A list of Lambda functions in this function definition version.
     pub functions: std::option::Option<std::vec::Vec<crate::model::Function>>,
 }
+impl FunctionDefinitionVersion {
+    /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
+    pub fn default_config(&self) -> std::option::Option<&crate::model::FunctionDefaultConfig> {
+        self.default_config.as_ref()
+    }
+    /// A list of Lambda functions in this function definition version.
+    pub fn functions(&self) -> std::option::Option<&[crate::model::Function]> {
+        self.functions.as_deref()
+    }
+}
 impl std::fmt::Debug for FunctionDefinitionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FunctionDefinitionVersion");
@@ -3079,6 +3533,22 @@ pub struct Function {
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub id: std::option::Option<std::string::String>,
+}
+impl Function {
+    /// The ARN of the Lambda function.
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// The configuration of the Lambda function.
+    pub fn function_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FunctionConfiguration> {
+        self.function_configuration.as_ref()
+    }
+    /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for Function {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3171,6 +3641,38 @@ pub struct FunctionConfiguration {
     pub pinned: bool,
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
     pub timeout: i32,
+}
+impl FunctionConfiguration {
+    /// The expected encoding type of the input payload for the function. The default is ''json''.
+    pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
+        self.encoding_type.as_ref()
+    }
+    /// The environment configuration of the function.
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&crate::model::FunctionConfigurationEnvironment> {
+        self.environment.as_ref()
+    }
+    /// The execution arguments.
+    pub fn exec_args(&self) -> std::option::Option<&str> {
+        self.exec_args.as_deref()
+    }
+    /// The name of the function executable.
+    pub fn executable(&self) -> std::option::Option<&str> {
+        self.executable.as_deref()
+    }
+    /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
+    pub fn memory_size(&self) -> i32 {
+        self.memory_size
+    }
+    /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
+    pub fn pinned(&self) -> bool {
+        self.pinned
+    }
+    /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
+    pub fn timeout(&self) -> i32 {
+        self.timeout
+    }
 }
 impl std::fmt::Debug for FunctionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3315,6 +3817,29 @@ pub struct FunctionConfigurationEnvironment {
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl FunctionConfigurationEnvironment {
+    /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
+    pub fn access_sysfs(&self) -> bool {
+        self.access_sysfs
+    }
+    /// Configuration related to executing the Lambda function
+    pub fn execution(&self) -> std::option::Option<&crate::model::FunctionExecutionConfig> {
+        self.execution.as_ref()
+    }
+    /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
+    pub fn resource_access_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceAccessPolicy]> {
+        self.resource_access_policies.as_deref()
+    }
+    /// Environment variables for the Lambda function's configuration.
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.variables.as_ref()
+    }
+}
 impl std::fmt::Debug for FunctionConfigurationEnvironment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FunctionConfigurationEnvironment");
@@ -3437,6 +3962,16 @@ pub struct ResourceAccessPolicy {
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl ResourceAccessPolicy {
+    /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
+    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.permission.as_ref()
+    }
+    /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceAccessPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceAccessPolicy");
@@ -3502,6 +4037,16 @@ pub struct FunctionExecutionConfig {
     pub isolation_mode: std::option::Option<crate::model::FunctionIsolationMode>,
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
     pub run_as: std::option::Option<crate::model::FunctionRunAsConfig>,
+}
+impl FunctionExecutionConfig {
+    /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
+    pub fn isolation_mode(&self) -> std::option::Option<&crate::model::FunctionIsolationMode> {
+        self.isolation_mode.as_ref()
+    }
+    /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
+    pub fn run_as(&self) -> std::option::Option<&crate::model::FunctionRunAsConfig> {
+        self.run_as.as_ref()
+    }
 }
 impl std::fmt::Debug for FunctionExecutionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3571,6 +4116,16 @@ pub struct FunctionRunAsConfig {
     pub gid: i32,
     /// The user ID whose permissions are used to run a Lambda function.
     pub uid: i32,
+}
+impl FunctionRunAsConfig {
+    /// The group ID whose permissions are used to run a Lambda function.
+    pub fn gid(&self) -> i32 {
+        self.gid
+    }
+    /// The user ID whose permissions are used to run a Lambda function.
+    pub fn uid(&self) -> i32 {
+        self.uid
+    }
 }
 impl std::fmt::Debug for FunctionRunAsConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3743,6 +4298,12 @@ pub struct FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
     pub execution: std::option::Option<crate::model::FunctionDefaultExecutionConfig>,
 }
+impl FunctionDefaultConfig {
+    /// Configuration information that specifies how a Lambda function runs.
+    pub fn execution(&self) -> std::option::Option<&crate::model::FunctionDefaultExecutionConfig> {
+        self.execution.as_ref()
+    }
+}
 impl std::fmt::Debug for FunctionDefaultConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FunctionDefaultConfig");
@@ -3795,6 +4356,16 @@ pub struct FunctionDefaultExecutionConfig {
     pub isolation_mode: std::option::Option<crate::model::FunctionIsolationMode>,
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
     pub run_as: std::option::Option<crate::model::FunctionRunAsConfig>,
+}
+impl FunctionDefaultExecutionConfig {
+    /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
+    pub fn isolation_mode(&self) -> std::option::Option<&crate::model::FunctionIsolationMode> {
+        self.isolation_mode.as_ref()
+    }
+    /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
+    pub fn run_as(&self) -> std::option::Option<&crate::model::FunctionRunAsConfig> {
+        self.run_as.as_ref()
+    }
 }
 impl std::fmt::Debug for FunctionDefaultExecutionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3863,6 +4434,12 @@ pub struct DeviceDefinitionVersion {
     /// A list of devices in the definition version.
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
 }
+impl DeviceDefinitionVersion {
+    /// A list of devices in the definition version.
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
+}
 impl std::fmt::Debug for DeviceDefinitionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceDefinitionVersion");
@@ -3925,6 +4502,24 @@ pub struct Device {
     pub sync_shadow: bool,
     /// The thing ARN of the device.
     pub thing_arn: std::option::Option<std::string::String>,
+}
+impl Device {
+    /// The ARN of the certificate associated with the device.
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// If true, the device's local shadow will be automatically synced with the cloud.
+    pub fn sync_shadow(&self) -> bool {
+        self.sync_shadow
+    }
+    /// The thing ARN of the device.
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4016,6 +4611,12 @@ pub struct CoreDefinitionVersion {
     /// A list of cores in the core definition version.
     pub cores: std::option::Option<std::vec::Vec<crate::model::Core>>,
 }
+impl CoreDefinitionVersion {
+    /// A list of cores in the core definition version.
+    pub fn cores(&self) -> std::option::Option<&[crate::model::Core]> {
+        self.cores.as_deref()
+    }
+}
 impl std::fmt::Debug for CoreDefinitionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CoreDefinitionVersion");
@@ -4076,6 +4677,24 @@ pub struct Core {
     pub sync_shadow: bool,
     /// The ARN of the thing which is the core.
     pub thing_arn: std::option::Option<std::string::String>,
+}
+impl Core {
+    /// The ARN of the certificate associated with the core.
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// If true, the core's local shadow is automatically synced with the cloud.
+    pub fn sync_shadow(&self) -> bool {
+        self.sync_shadow
+    }
+    /// The ARN of the thing which is the core.
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Core {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4167,6 +4786,12 @@ pub struct ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     pub connectors: std::option::Option<std::vec::Vec<crate::model::Connector>>,
 }
+impl ConnectorDefinitionVersion {
+    /// A list of references to connectors in this version, with their corresponding configuration settings.
+    pub fn connectors(&self) -> std::option::Option<&[crate::model::Connector]> {
+        self.connectors.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectorDefinitionVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorDefinitionVersion");
@@ -4228,6 +4853,23 @@ pub struct Connector {
     /// The parameters or configuration that the connector uses.
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Connector {
+    /// The ARN of the connector.
+    pub fn connector_arn(&self) -> std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
+    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The parameters or configuration that the connector uses.
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for Connector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4404,6 +5046,20 @@ pub struct BulkDeploymentMetrics {
     pub records_processed: i32,
     /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
     pub retry_attempts: i32,
+}
+impl BulkDeploymentMetrics {
+    /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
+    pub fn invalid_input_records(&self) -> i32 {
+        self.invalid_input_records
+    }
+    /// The total number of group records from the input file that have been processed so far, or attempted.
+    pub fn records_processed(&self) -> i32 {
+        self.records_processed
+    }
+    /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
+    pub fn retry_attempts(&self) -> i32 {
+        self.retry_attempts
+    }
 }
 impl std::fmt::Debug for BulkDeploymentMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

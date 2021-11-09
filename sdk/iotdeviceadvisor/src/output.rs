@@ -16,6 +16,32 @@ pub struct UpdateSuiteDefinitionOutput {
     /// <p>Timestamp of when the test suite was updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateSuiteDefinitionOutput {
+    /// <p>Suite definition Id of the updated test suite.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Amazon Resource name of the updated test suite.</p>
+    pub fn suite_definition_arn(&self) -> std::option::Option<&str> {
+        self.suite_definition_arn.as_deref()
+    }
+    /// <p>Suite definition name of the updated test suite.</p>
+    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+        self.suite_definition_name.as_deref()
+    }
+    /// <p>Suite definition version of the updated test suite.</p>
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+        self.suite_definition_version.as_deref()
+    }
+    /// <p>Timestamp of when the test suite was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Timestamp of when the test suite was updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSuiteDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSuiteDefinitionOutput");
@@ -241,6 +267,20 @@ pub struct StartSuiteRunOutput {
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StartSuiteRunOutput {
+    /// <p>Suite Run Id of the started suite run.</p>
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
+        self.suite_run_id.as_deref()
+    }
+    /// <p>Amazon resource name of the started suite run.</p>
+    pub fn suite_run_arn(&self) -> std::option::Option<&str> {
+        self.suite_run_arn.as_deref()
+    }
+    /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for StartSuiteRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSuiteRunOutput");
@@ -322,6 +362,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags attached to the IoT Device Advisor resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -386,6 +435,16 @@ pub struct ListSuiteRunsOutput {
     pub suite_runs_list: std::option::Option<std::vec::Vec<crate::model::SuiteRunInformation>>,
     /// <p>A token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSuiteRunsOutput {
+    /// <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
+    pub fn suite_runs_list(&self) -> std::option::Option<&[crate::model::SuiteRunInformation]> {
+        self.suite_runs_list.as_deref()
+    }
+    /// <p>A token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSuiteRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -464,6 +523,18 @@ pub struct ListSuiteDefinitionsOutput {
     /// <p>A token used to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSuiteDefinitionsOutput {
+    /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
+    pub fn suite_definition_information_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SuiteDefinitionInformation]> {
+        self.suite_definition_information_list.as_deref()
+    }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSuiteDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSuiteDefinitionsOutput");
@@ -540,6 +611,12 @@ impl ListSuiteDefinitionsOutput {
 pub struct GetSuiteRunReportOutput {
     /// <p>Download URL of the qualification report.</p>
     pub qualification_report_download_url: std::option::Option<std::string::String>,
+}
+impl GetSuiteRunReportOutput {
+    /// <p>Download URL of the qualification report.</p>
+    pub fn qualification_report_download_url(&self) -> std::option::Option<&str> {
+        self.qualification_report_download_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSuiteRunReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -618,6 +695,57 @@ pub struct GetSuiteRunOutput {
     /// <p>The tags attached to the suite run.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetSuiteRunOutput {
+    /// <p>Suite definition Id for the test suite run.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite definition version for the test suite run.</p>
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+        self.suite_definition_version.as_deref()
+    }
+    /// <p>Suite run Id for the test suite run.</p>
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
+        self.suite_run_id.as_deref()
+    }
+    /// <p>The ARN of the suite run.</p>
+    pub fn suite_run_arn(&self) -> std::option::Option<&str> {
+        self.suite_run_arn.as_deref()
+    }
+    /// <p>Suite run configuration for the test suite run.</p>
+    pub fn suite_run_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SuiteRunConfiguration> {
+        self.suite_run_configuration.as_ref()
+    }
+    /// <p>Test results for the test suite run.</p>
+    pub fn test_result(&self) -> std::option::Option<&crate::model::TestResult> {
+        self.test_result.as_ref()
+    }
+    /// <p>Date (in Unix epoch time) when the test suite run was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Date (in Unix epoch time) when the test suite run ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Status for the test suite run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SuiteRunStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Error reason for any test suite run failure.</p>
+    pub fn error_reason(&self) -> std::option::Option<&str> {
+        self.error_reason.as_deref()
+    }
+    /// <p>The tags attached to the suite run.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSuiteRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -858,6 +986,45 @@ pub struct GetSuiteDefinitionOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetSuiteDefinitionOutput {
+    /// <p>Suite definition Id of the suite definition.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>The ARN of the suite definition.</p>
+    pub fn suite_definition_arn(&self) -> std::option::Option<&str> {
+        self.suite_definition_arn.as_deref()
+    }
+    /// <p>Suite definition version of the suite definition.</p>
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+        self.suite_definition_version.as_deref()
+    }
+    /// <p>Latest suite definition version of the suite definition.</p>
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// <p>Suite configuration of the suite definition.</p>
+    pub fn suite_definition_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SuiteDefinitionConfiguration> {
+        self.suite_definition_configuration.as_ref()
+    }
+    /// <p>Date (in Unix epoch time) when the suite definition was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>Tags attached to the suite definition.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSuiteDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSuiteDefinitionOutput");
@@ -1077,6 +1244,24 @@ pub struct CreateSuiteDefinitionOutput {
     pub suite_definition_name: std::option::Option<std::string::String>,
     /// <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateSuiteDefinitionOutput {
+    /// <p>Creates a Device Advisor test suite with suite UUID.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+    pub fn suite_definition_arn(&self) -> std::option::Option<&str> {
+        self.suite_definition_arn.as_deref()
+    }
+    /// <p>Creates a Device Advisor test suite with suite definition name.</p>
+    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+        self.suite_definition_name.as_deref()
+    }
+    /// <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSuiteDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

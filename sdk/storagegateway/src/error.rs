@@ -9842,6 +9842,13 @@ pub struct InvalidGatewayRequestException {
     /// error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
+impl InvalidGatewayRequestException {
+    /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
+    /// error.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for InvalidGatewayRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidGatewayRequestException");
@@ -9928,6 +9935,13 @@ pub struct InternalServerError {
     /// of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
+impl InternalServerError {
+    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
+    /// of the error.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerError");
@@ -10013,6 +10027,13 @@ pub struct ServiceUnavailableError {
     /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
     /// of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
+}
+impl ServiceUnavailableError {
+    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
+    /// of the error.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceUnavailableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

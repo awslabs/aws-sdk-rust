@@ -26,6 +26,52 @@ pub struct SavingsPlanOffering {
     /// <p>The properties.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
 }
+impl SavingsPlanOffering {
+    /// <p>The ID of the offering.</p>
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// <p>The product type.</p>
+    pub fn product_types(&self) -> std::option::Option<&[crate::model::SavingsPlanProductType]> {
+        self.product_types.as_deref()
+    }
+    /// <p>The plan type.</p>
+    pub fn plan_type(&self) -> std::option::Option<&crate::model::SavingsPlanType> {
+        self.plan_type.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The payment option.</p>
+    pub fn payment_option(&self) -> std::option::Option<&crate::model::SavingsPlanPaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The duration, in seconds.</p>
+    pub fn duration_seconds(&self) -> i64 {
+        self.duration_seconds
+    }
+    /// <p>The currency.</p>
+    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+        self.currency.as_ref()
+    }
+    /// <p>The service.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn usage_type(&self) -> std::option::Option<&str> {
+        self.usage_type.as_deref()
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The properties.</p>
+    pub fn properties(&self) -> std::option::Option<&[crate::model::SavingsPlanOfferingProperty]> {
+        self.properties.as_deref()
+    }
+}
 impl std::fmt::Debug for SavingsPlanOffering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlanOffering");
@@ -240,6 +286,16 @@ pub struct SavingsPlanOfferingProperty {
     pub name: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
     /// <p>The property value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl SavingsPlanOfferingProperty {
+    /// <p>The property name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanOfferingPropertyKey> {
+        self.name.as_ref()
+    }
+    /// <p>The property value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlanOfferingProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -598,6 +654,16 @@ pub struct SavingsPlanOfferingFilterElement {
     /// <p>The filter values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SavingsPlanOfferingFilterElement {
+    /// <p>The filter name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanOfferingFilterAttribute> {
+        self.name.as_ref()
+    }
+    /// <p>The filter values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for SavingsPlanOfferingFilterElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlanOfferingFilterElement");
@@ -740,6 +806,44 @@ pub struct SavingsPlanOfferingRate {
     /// <p>The properties.</p>
     pub properties:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
+}
+impl SavingsPlanOfferingRate {
+    /// <p>The Savings Plan offering.</p>
+    pub fn savings_plan_offering(
+        &self,
+    ) -> std::option::Option<&crate::model::ParentSavingsPlanOffering> {
+        self.savings_plan_offering.as_ref()
+    }
+    /// <p>The Savings Plan rate.</p>
+    pub fn rate(&self) -> std::option::Option<&str> {
+        self.rate.as_deref()
+    }
+    /// <p>The unit.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::SavingsPlanRateUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::SavingsPlanProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The service.</p>
+    pub fn service_code(&self) -> std::option::Option<&crate::model::SavingsPlanRateServiceCode> {
+        self.service_code.as_ref()
+    }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn usage_type(&self) -> std::option::Option<&str> {
+        self.usage_type.as_deref()
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The properties.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlanOfferingRateProperty]> {
+        self.properties.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlanOfferingRate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -912,6 +1016,16 @@ pub struct SavingsPlanOfferingRateProperty {
     pub name: std::option::Option<std::string::String>,
     /// <p>The property value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl SavingsPlanOfferingRateProperty {
+    /// <p>The property name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The property value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlanOfferingRateProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1116,6 +1230,32 @@ pub struct ParentSavingsPlanOffering {
     /// <p>The description.</p>
     pub plan_description: std::option::Option<std::string::String>,
 }
+impl ParentSavingsPlanOffering {
+    /// <p>The ID of the offering.</p>
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// <p>The payment option.</p>
+    pub fn payment_option(&self) -> std::option::Option<&crate::model::SavingsPlanPaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The plan type.</p>
+    pub fn plan_type(&self) -> std::option::Option<&crate::model::SavingsPlanType> {
+        self.plan_type.as_ref()
+    }
+    /// <p>The duration, in seconds.</p>
+    pub fn duration_seconds(&self) -> i64 {
+        self.duration_seconds
+    }
+    /// <p>The currency.</p>
+    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+        self.currency.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn plan_description(&self) -> std::option::Option<&str> {
+        self.plan_description.as_deref()
+    }
+}
 impl std::fmt::Debug for ParentSavingsPlanOffering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParentSavingsPlanOffering");
@@ -1242,6 +1382,16 @@ pub struct SavingsPlanOfferingRateFilterElement {
     pub name: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
     /// <p>The filter values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SavingsPlanOfferingRateFilterElement {
+    /// <p>The filter name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanRateFilterAttribute> {
+        self.name.as_ref()
+    }
+    /// <p>The filter values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlanOfferingRateFilterElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1428,6 +1578,83 @@ pub struct SavingsPlan {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SavingsPlan {
+    /// <p>The ID of the offering.</p>
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// <p>The ID of the Savings Plan.</p>
+    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+        self.savings_plan_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
+    pub fn savings_plan_arn(&self) -> std::option::Option<&str> {
+        self.savings_plan_arn.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The start time.</p>
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+    /// <p>The end time.</p>
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+    /// <p>The state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SavingsPlanState> {
+        self.state.as_ref()
+    }
+    /// <p>The AWS Region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The EC2 instance family.</p>
+    pub fn ec2_instance_family(&self) -> std::option::Option<&str> {
+        self.ec2_instance_family.as_deref()
+    }
+    /// <p>The plan type.</p>
+    pub fn savings_plan_type(&self) -> std::option::Option<&crate::model::SavingsPlanType> {
+        self.savings_plan_type.as_ref()
+    }
+    /// <p>The payment option.</p>
+    pub fn payment_option(&self) -> std::option::Option<&crate::model::SavingsPlanPaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The product types.</p>
+    pub fn product_types(&self) -> std::option::Option<&[crate::model::SavingsPlanProductType]> {
+        self.product_types.as_deref()
+    }
+    /// <p>The currency.</p>
+    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+        self.currency.as_ref()
+    }
+    /// <p>The hourly commitment, in USD.</p>
+    pub fn commitment(&self) -> std::option::Option<&str> {
+        self.commitment.as_deref()
+    }
+    /// <p>The up-front payment amount.</p>
+    pub fn upfront_payment_amount(&self) -> std::option::Option<&str> {
+        self.upfront_payment_amount.as_deref()
+    }
+    /// <p>The recurring payment amount.</p>
+    pub fn recurring_payment_amount(&self) -> std::option::Option<&str> {
+        self.recurring_payment_amount.as_deref()
+    }
+    /// <p>The duration of the term, in seconds.</p>
+    pub fn term_duration_in_seconds(&self) -> i64 {
+        self.term_duration_in_seconds
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for SavingsPlan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1835,6 +2062,16 @@ pub struct SavingsPlanFilter {
     /// <p>The filter value.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SavingsPlanFilter {
+    /// <p>The filter name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlansFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The filter value.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for SavingsPlanFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlanFilter");
@@ -2015,6 +2252,40 @@ pub struct SavingsPlanRate {
     /// <p>The properties.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
 }
+impl SavingsPlanRate {
+    /// <p>The rate.</p>
+    pub fn rate(&self) -> std::option::Option<&str> {
+        self.rate.as_deref()
+    }
+    /// <p>The currency.</p>
+    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+        self.currency.as_ref()
+    }
+    /// <p>The unit.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::SavingsPlanRateUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::SavingsPlanProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The service.</p>
+    pub fn service_code(&self) -> std::option::Option<&crate::model::SavingsPlanRateServiceCode> {
+        self.service_code.as_ref()
+    }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn usage_type(&self) -> std::option::Option<&str> {
+        self.usage_type.as_deref()
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The properties.</p>
+    pub fn properties(&self) -> std::option::Option<&[crate::model::SavingsPlanRateProperty]> {
+        self.properties.as_deref()
+    }
+}
 impl std::fmt::Debug for SavingsPlanRate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlanRate");
@@ -2181,6 +2452,16 @@ pub struct SavingsPlanRateProperty {
     /// <p>The property value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl SavingsPlanRateProperty {
+    /// <p>The property name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanRatePropertyKey> {
+        self.name.as_ref()
+    }
+    /// <p>The property value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for SavingsPlanRateProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlanRateProperty");
@@ -2319,6 +2600,16 @@ pub struct SavingsPlanRateFilter {
     pub name: std::option::Option<crate::model::SavingsPlanRateFilterName>,
     /// <p>The filter values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SavingsPlanRateFilter {
+    /// <p>The filter name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanRateFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The filter values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlanRateFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

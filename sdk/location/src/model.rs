@@ -9,6 +9,16 @@ pub struct ValidationExceptionField {
     /// <p>A message with the reason for the validation exception error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The field name where the invalid entry was detected.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A message with the reason for the validation exception error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -112,6 +122,21 @@ pub struct ListDevicePositionsResponseEntry {
     /// <p>The last known device position. Empty if no positions currently stored.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
 }
+impl ListDevicePositionsResponseEntry {
+    /// <p>The ID of the device for this position.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.sample_time.as_ref()
+    }
+    /// <p>The last known device position. Empty if no positions currently stored.</p>
+    pub fn position(&self) -> std::option::Option<&[f64]> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicePositionsResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicePositionsResponseEntry");
@@ -204,6 +229,26 @@ pub struct DevicePosition {
     pub received_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last known device position.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
+}
+impl DevicePosition {
+    /// <p>The device whose position you retrieved.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.sample_time.as_ref()
+    }
+    /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.received_time.as_ref()
+    }
+    /// <p>The last known device position.</p>
+    pub fn position(&self) -> std::option::Option<&[f64]> {
+        self.position.as_deref()
+    }
 }
 impl std::fmt::Debug for DevicePosition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -314,6 +359,22 @@ pub struct BatchUpdateDevicePositionError {
     /// message.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
+impl BatchUpdateDevicePositionError {
+    /// <p>The device associated with the failed location update.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.sample_time.as_ref()
+    }
+    /// <p>Contains details related to the error code such as the error code and error
+    /// message.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateDevicePositionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateDevicePositionError");
@@ -399,6 +460,16 @@ pub struct BatchItemError {
     pub code: std::option::Option<crate::model::BatchItemErrorCode>,
     /// <p>A message with the reason for the batch request error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BatchItemError {
+    /// <p>The error code associated with the batch request error.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::BatchItemErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>A message with the reason for the batch request error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -509,6 +580,23 @@ pub struct DevicePositionUpdate {
     /// <code>[X or longitude, Y or latitude]</code>.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
 }
+impl DevicePositionUpdate {
+    /// <p>The device associated to the position update.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.sample_time.as_ref()
+    }
+    /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+    /// <code>[X or longitude, Y or latitude]</code>.</p>
+    pub fn position(&self) -> std::option::Option<&[f64]> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for DevicePositionUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DevicePositionUpdate");
@@ -600,6 +688,16 @@ pub struct BatchGetDevicePositionError {
     /// <p>Contains details related to the error code.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
+impl BatchGetDevicePositionError {
+    /// <p>The ID of the device that didn't return a position.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>Contains details related to the error code.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchGetDevicePositionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDevicePositionError");
@@ -665,6 +763,16 @@ pub struct BatchDeleteDevicePositionHistoryError {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>Contains the batch request error details associated with the request.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
+}
+impl BatchDeleteDevicePositionHistoryError {
+    /// <p>The ID of the device for this position.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>Contains the batch request error details associated with the request.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteDevicePositionHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -742,6 +850,35 @@ pub struct ListTrackersResponseEntry {
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListTrackersResponseEntry {
+    /// <p>The name of the tracker resource.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>The description for the tracker resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The pricing plan for the specified tracker resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>The specified data provider for the tracker resource.</p>
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+        self.pricing_plan_data_source.as_deref()
+    }
+    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTrackersResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1129,73 @@ pub struct CalculateRouteSummary {
     pub duration_seconds: std::option::Option<f64>,
     /// <p>The unit of measurement for the distance.</p>
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
+}
+impl CalculateRouteSummary {
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when
+    /// displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the
+    /// lower southwest corner. </p>
+    /// </li>
+    /// <li>
+    /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the
+    /// lower southwest corner. </p>
+    /// </li>
+    /// </ul>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
+    /// upper northeast corner. </p>
+    /// </li>
+    /// <li>
+    /// <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the
+    /// upper northeast corner. </p>
+    /// </li>
+    /// </ul>
+    pub fn route_b_box(&self) -> std::option::Option<&[f64]> {
+        self.route_b_box.as_deref()
+    }
+    /// <p>The data provider of traffic and road network data used to calculate the route.
+    /// Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Esri</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Here</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>The total distance covered by the route. The sum of the distance travelled between
+    /// every stop on the route.</p>
+    /// <note>
+    /// <p>If Esri is the data source for the route calculator, the route distance can’t
+    /// be greater than 400 km. If the route exceeds 400 km, the response is a
+    /// <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
+    }
+    /// <p>The total travel time for the route measured in seconds. The sum of the travel time
+    /// between every stop on the
+    /// route.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<f64> {
+        self.duration_seconds
+    }
+    /// <p>The unit of measurement for the distance.</p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
 }
 impl std::fmt::Debug for CalculateRouteSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1276,6 +1480,51 @@ pub struct Leg {
     /// position, end position, travel distance, travel duration, and geometry offset.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
 }
+impl Leg {
+    /// <p>The starting position of the leg. Follows the format
+    /// <code>[longitude,latitude]</code>.</p>
+    /// <note>
+    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub fn start_position(&self) -> std::option::Option<&[f64]> {
+        self.start_position.as_deref()
+    }
+    /// <p>The terminating position of the leg. Follows the format
+    /// <code>[longitude,latitude]</code>.</p>
+    /// <note>
+    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub fn end_position(&self) -> std::option::Option<&[f64]> {
+        self.end_position.as_deref()
+    }
+    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code>
+    /// along a calculated route. </p>
+    /// <ul>
+    /// <li>
+    /// <p>The default measurement is <code>Kilometers</code> unless the request
+    /// specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
+    }
+    /// <p>The estimated travel time between the leg's <code>StartPosition</code> and
+    /// <code>EndPosition</code>. The travel mode and departure time that you specify in the
+    /// request determines the calculated time.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<f64> {
+        self.duration_seconds
+    }
+    /// <p>Contains the calculated route's path as a linestring geometry.</p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::LegGeometry> {
+        self.geometry.as_ref()
+    }
+    /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides
+    /// instructions for how to move to the next step in the leg such as the step's start
+    /// position, end position, travel distance, travel duration, and geometry offset.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::Step]> {
+        self.steps.as_deref()
+    }
+}
 impl std::fmt::Debug for Leg {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Leg");
@@ -1472,6 +1721,37 @@ pub struct Step {
     /// <code>True</code>. </p>
     pub geometry_offset: std::option::Option<i32>,
 }
+impl Step {
+    /// <p>The starting position of a step. If the position is the first step in the leg, this
+    /// position is the same as the start position of the leg.</p>
+    pub fn start_position(&self) -> std::option::Option<&[f64]> {
+        self.start_position.as_deref()
+    }
+    /// <p>The end position of a step. If the position the last step in the leg, this position is
+    /// the same as the end position of the leg.</p>
+    pub fn end_position(&self) -> std::option::Option<&[f64]> {
+        self.end_position.as_deref()
+    }
+    /// <p>The travel distance between the step's <code>StartPosition</code> and
+    /// <code>EndPosition</code>.</p>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
+    }
+    /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to
+    /// the <code>EndPosition</code>. . The travel mode and departure time that you specify in
+    /// the request determines the calculated time.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<f64> {
+        self.duration_seconds
+    }
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line
+    /// string geometry. For example, the index of the first step in a leg geometry is
+    /// <code>0</code>. </p>
+    /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to
+    /// <code>True</code>. </p>
+    pub fn geometry_offset(&self) -> std::option::Option<i32> {
+        self.geometry_offset
+    }
+}
 impl std::fmt::Debug for Step {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Step");
@@ -1615,6 +1895,21 @@ pub struct LegGeometry {
     /// </ul>
     pub line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
 }
+impl LegGeometry {
+    /// <p>An ordered list of positions used to plot a route on a map. </p>
+    /// <p>The first position is closest to the start position for the leg, and the last position
+    /// is the closest to the end position for the leg.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115,
+    /// 49.285]]</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn line_string(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+        self.line_string.as_deref()
+    }
+}
 impl std::fmt::Debug for LegGeometry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LegGeometry");
@@ -1707,6 +2002,35 @@ pub struct CalculateRouteTruckModeOptions {
     /// <p>Specifies the truck's weight specifications including total weight and unit of
     /// measurement. Used to avoid roads that can't support the truck's weight.</p>
     pub weight: std::option::Option<crate::model::TruckWeight>,
+}
+impl CalculateRouteTruckModeOptions {
+    /// <p>Avoids ferries when calculating routes.</p>
+    /// <p>Default Value: <code>false</code>
+    /// </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code>
+    /// </p>
+    pub fn avoid_ferries(&self) -> std::option::Option<bool> {
+        self.avoid_ferries
+    }
+    /// <p>Avoids ferries when calculating routes.</p>
+    /// <p>Default Value: <code>false</code>
+    /// </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code>
+    /// </p>
+    pub fn avoid_tolls(&self) -> std::option::Option<bool> {
+        self.avoid_tolls
+    }
+    /// <p>Specifies the truck's dimension specifications including length, height, width, and
+    /// unit of measurement. Used to avoid roads that can't support the truck's
+    /// dimensions.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::TruckDimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>Specifies the truck's weight specifications including total weight and unit of
+    /// measurement. Used to avoid roads that can't support the truck's weight.</p>
+    pub fn weight(&self) -> std::option::Option<&crate::model::TruckWeight> {
+        self.weight.as_ref()
+    }
 }
 impl std::fmt::Debug for CalculateRouteTruckModeOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1830,6 +2154,23 @@ pub struct TruckWeight {
     /// <p>Default Value: <code>Kilograms</code>
     /// </p>
     pub unit: std::option::Option<crate::model::VehicleWeightUnit>,
+}
+impl TruckWeight {
+    /// <p>The total weight of the truck. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>3500</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn total(&self) -> std::option::Option<f64> {
+        self.total
+    }
+    /// <p>The unit of measurement to use for the truck weight.</p>
+    /// <p>Default Value: <code>Kilograms</code>
+    /// </p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::VehicleWeightUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for TruckWeight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1964,6 +2305,41 @@ pub struct TruckDimensions {
     /// <p>Default Value: <code>Meters</code>
     /// </p>
     pub unit: std::option::Option<crate::model::DimensionUnit>,
+}
+impl TruckDimensions {
+    /// <p>The length of the truck.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>15.5</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn length(&self) -> std::option::Option<f64> {
+        self.length
+    }
+    /// <p>The height of the truck.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>4.5</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn height(&self) -> std::option::Option<f64> {
+        self.height
+    }
+    /// <p>The width of the truck.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>4.5</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn width(&self) -> std::option::Option<f64> {
+        self.width
+    }
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p>Default Value: <code>Meters</code>
+    /// </p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::DimensionUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for TruckDimensions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2128,6 +2504,24 @@ pub struct CalculateRouteCarModeOptions {
     /// </p>
     pub avoid_tolls: std::option::Option<bool>,
 }
+impl CalculateRouteCarModeOptions {
+    /// <p>Avoids ferries when calculating routes.</p>
+    /// <p>Default Value: <code>false</code>
+    /// </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code>
+    /// </p>
+    pub fn avoid_ferries(&self) -> std::option::Option<bool> {
+        self.avoid_ferries
+    }
+    /// <p>Avoids tolls when calculating routes.</p>
+    /// <p>Default Value: <code>false</code>
+    /// </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code>
+    /// </p>
+    pub fn avoid_tolls(&self) -> std::option::Option<bool> {
+        self.avoid_tolls
+    }
+}
 impl std::fmt::Debug for CalculateRouteCarModeOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateRouteCarModeOptions");
@@ -2274,6 +2668,61 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// </li>
     /// </ul>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListRouteCalculatorsResponseEntry {
+    /// <p>The name of the route calculator resource.</p>
+    pub fn calculator_name(&self) -> std::option::Option<&str> {
+        self.calculator_name.as_deref()
+    }
+    /// <p>The optional description of the route calculator resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The data provider of traffic and road network data. Indicates one of the available
+    /// providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Esri</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Here</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>The pricing plan for the specified route calculator resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ListRouteCalculatorsResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2459,6 +2908,12 @@ pub struct SearchForTextResult {
     /// <p>Contains details about the relevant point of interest.</p>
     pub place: std::option::Option<crate::model::Place>,
 }
+impl SearchForTextResult {
+    /// <p>Contains details about the relevant point of interest.</p>
+    pub fn place(&self) -> std::option::Option<&crate::model::Place> {
+        self.place.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchForTextResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchForTextResult");
@@ -2530,6 +2985,55 @@ pub struct Place {
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the
     /// address for the purpose of identifying a location. </p>
     pub postal_code: std::option::Option<std::string::String>,
+}
+impl Place {
+    /// <p>The full name and address of the point of interest such as a city,
+    /// region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>Places uses a point geometry to specify a location or a Place.</p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::PlaceGeometry> {
+        self.geometry.as_ref()
+    }
+    /// <p>The numerical portion of an address, such as a building number. </p>
+    pub fn address_number(&self) -> std::option::Option<&str> {
+        self.address_number.as_deref()
+    }
+    /// <p>The name for a street or a road to identify a location. For example, <code>Main
+    /// Street</code>.</p>
+    pub fn street(&self) -> std::option::Option<&str> {
+        self.street.as_deref()
+    }
+    /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
+    pub fn neighborhood(&self) -> std::option::Option<&str> {
+        self.neighborhood.as_deref()
+    }
+    /// <p>A name for a local area, such as a city or town name. For example,
+    /// <code>Toronto</code>.</p>
+    pub fn municipality(&self) -> std::option::Option<&str> {
+        self.municipality.as_deref()
+    }
+    /// <p>A country, or an area that's part of a larger region .  For example, <code>Metro
+    /// Vancouver</code>.</p>
+    pub fn sub_region(&self) -> std::option::Option<&str> {
+        self.sub_region.as_deref()
+    }
+    /// <p>A name for an area or geographical division, such as a province or state name. For
+    /// example, <code>British Columbia</code>.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+    /// country/region code. For example, <code>CAN</code>.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the
+    /// address for the purpose of identifying a location. </p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
 }
 impl std::fmt::Debug for Place {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2727,6 +3231,23 @@ pub struct PlaceGeometry {
     /// </ul>
     pub point: std::option::Option<std::vec::Vec<f64>>,
 }
+impl PlaceGeometry {
+    /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
+    /// coordinates:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>x</i> — Specifies the x coordinate or longitude. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>y</i> — Specifies the y coordinate or latitude. </p>
+    /// </li>
+    /// </ul>
+    pub fn point(&self) -> std::option::Option<&[f64]> {
+        self.point.as_deref()
+    }
+}
 impl std::fmt::Debug for PlaceGeometry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlaceGeometry");
@@ -2825,6 +3346,49 @@ pub struct SearchPlaceIndexForTextSummary {
     /// </ul>
     /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
+}
+impl SearchPlaceIndexForTextSummary {
+    /// <p>The address, name, city or region to be used in the geocoding request. In free-form text
+    /// format. For example, <code>Vancouver</code>.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Contains the coordinates for the bias position entered in the geocoding request.</p>
+    pub fn bias_position(&self) -> std::option::Option<&[f64]> {
+        self.bias_position.as_deref()
+    }
+    /// <p>Contains the coordinates for the optional bounding box coordinated entered in the
+    /// geocoding request.</p>
+    pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
+        self.filter_b_box.as_deref()
+    }
+    /// <p>Contains the country filter entered in the geocoding request.</p>
+    pub fn filter_countries(&self) -> std::option::Option<&[std::string::String]> {
+        self.filter_countries.as_deref()
+    }
+    /// <p>Contains the maximum number of results indicated for the request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A bounding box that contains the search results within the specified area indicated by
+    /// <code>FilterBBox</code>. A subset of bounding box specified using
+    /// <code>FilterBBox</code>.</p>
+    pub fn result_b_box(&self) -> std::option::Option<&[f64]> {
+        self.result_b_box.as_deref()
+    }
+    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Esri</p>
+    /// </li>
+    /// <li>
+    /// <p>HERE</p>
+    /// </li>
+    /// </ul>
+    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3006,6 +3570,12 @@ pub struct SearchForPositionResult {
     /// <p>Contains details about the relevant point of interest.</p>
     pub place: std::option::Option<crate::model::Place>,
 }
+impl SearchForPositionResult {
+    /// <p>Contains details about the relevant point of interest.</p>
+    pub fn place(&self) -> std::option::Option<&crate::model::Place> {
+        self.place.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchForPositionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchForPositionResult");
@@ -3066,6 +3636,31 @@ pub struct SearchPlaceIndexForPositionSummary {
     /// </ul>
     /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
+}
+impl SearchPlaceIndexForPositionSummary {
+    /// <p>The position given in the reverse geocoding request.</p>
+    pub fn position(&self) -> std::option::Option<&[f64]> {
+        self.position.as_deref()
+    }
+    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>Default value: <code>50</code>
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Esri</p>
+    /// </li>
+    /// <li>
+    /// <p>HERE</p>
+    /// </li>
+    /// </ul>
+    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3194,6 +3789,48 @@ pub struct ListPlaceIndexesResponseEntry {
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListPlaceIndexesResponseEntry {
+    /// <p>The name of the place index resource.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>The optional description for the place index resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Esri</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Here</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>The pricing plan for the specified place index resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
+    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
+    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ListPlaceIndexesResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3379,6 +4016,25 @@ pub struct DataSourceConfiguration {
     /// </p>
     pub intended_use: std::option::Option<crate::model::IntendedUse>,
 }
+impl DataSourceConfiguration {
+    /// <p>Specifies how the results of an operation will be stored by the caller. </p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SingleUse</code> specifies that the results won't be stored. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default value:  <code>SingleUse</code>
+    /// </p>
+    pub fn intended_use(&self) -> std::option::Option<&crate::model::IntendedUse> {
+        self.intended_use.as_ref()
+    }
+}
 impl std::fmt::Debug for DataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceConfiguration");
@@ -3499,6 +4155,35 @@ pub struct ListMapsResponseEntry {
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListMapsResponseEntry {
+    /// <p>The name of the associated map resource.</p>
+    pub fn map_name(&self) -> std::option::Option<&str> {
+        self.map_name.as_deref()
+    }
+    /// <p>The description for the map resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the data provider for the associated map tiles.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>The pricing plan for the specified map resource.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ListMapsResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3683,6 +4368,67 @@ pub struct MapConfiguration {
     /// </ul>
     pub style: std::option::Option<std::string::String>,
 }
+impl MapConfiguration {
+    /// <p>Specifies the map style selected from an available data provider.</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A
+    /// vector basemap with a dark gray, neutral background with minimal colors, labels,
+    /// and features that's designed to draw attention to your thematic content. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap
+    /// that provides one meter or better satellite and aerial imagery in many parts of
+    /// the world and lower resolution satellite imagery worldwide. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style,
+    /// which provides a detailed vector basemap with a light gray, neutral background
+    /// style with minimal colors, labels, and features that's designed to draw
+    /// attention to your thematic content. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriTopographic</code> – The Esri Light map style, which provides
+    /// a detailed vector basemap with a classic Esri map style.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriStreets</code> – The Esri World Streets map style, which
+    /// provides a detailed vector basemap for the world symbolized with a classic Esri
+    /// street map style. The vector tile layer is similar in content and style to the
+    /// World Street Map raster map.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
+    /// provides a detailed basemap for the world symbolized with a custom navigation
+    /// map style that's designed for use during the day in mobile devices.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+    /// Technologies map styles</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast
+    /// detailed base map of the world that blends 3D and 2D rendering.</p>
+    /// <note>
+    /// <p>When using HERE as your data provider, and selecting the Style
+    /// <code>VectorHereBerlin</code>, you may not use HERE Technologies maps
+    /// for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+    /// for Amazon Location Service.</p>
+    /// </note>
+    /// </li>
+    /// </ul>
+    pub fn style(&self) -> std::option::Option<&str> {
+        self.style.as_deref()
+    }
+}
 impl std::fmt::Debug for MapConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MapConfiguration");
@@ -3850,6 +4596,19 @@ pub struct GeofenceGeometry {
     /// where the left side is the polygon's interior.</p>
     pub polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
 }
+impl GeofenceGeometry {
+    /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices,
+    /// where the first and last vertex are the same to form a closed boundary. Each vertex is a
+    /// 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
+    /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent
+    /// linear rings may be inner or outer rings to describe holes and islands. Outer rings must
+    /// list their vertices in counter-clockwise order around the ring's center, where the left
+    /// side is the polygon's exterior. Inner rings must list their vertices in clockwise order,
+    /// where the left side is the polygon's interior.</p>
+    pub fn polygon(&self) -> std::option::Option<&[std::vec::Vec<std::vec::Vec<f64>>]> {
+        self.polygon.as_deref()
+    }
+}
 impl std::fmt::Debug for GeofenceGeometry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GeofenceGeometry");
@@ -3957,6 +4716,57 @@ pub struct ListGeofenceResponseEntry {
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListGeofenceResponseEntry {
+    /// <p>The geofence identifier.</p>
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
+        self.geofence_id.as_deref()
+    }
+    /// <p>Contains the geofence geometry details describing a polygon.</p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
+        self.geometry.as_ref()
+    }
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following
+    /// states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> — The geofence has been indexed by the system. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> — The geofence is being processed by the system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> — The geofence failed to be indexed by the system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> — The geofence has been deleted from the system
+    /// index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> — The geofence is being deleted from the system
+    /// index.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ListGeofenceResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4128,6 +4938,16 @@ pub struct BatchPutGeofenceError {
     /// <p>Contains details associated to the batch error.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
+impl BatchPutGeofenceError {
+    /// <p>The geofence associated with the error message.</p>
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
+        self.geofence_id.as_deref()
+    }
+    /// <p>Contains details associated to the batch error.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchPutGeofenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutGeofenceError");
@@ -4200,6 +5020,24 @@ pub struct BatchPutGeofenceSuccess {
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BatchPutGeofenceSuccess {
+    /// <p>The geofence successfully stored in a geofence collection.</p>
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
+        self.geofence_id.as_deref()
+    }
+    /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchPutGeofenceSuccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4294,6 +5132,19 @@ pub struct BatchPutGeofenceRequestEntry {
     /// </note>
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
 }
+impl BatchPutGeofenceRequestEntry {
+    /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
+        self.geofence_id.as_deref()
+    }
+    /// <p>Contains the polygon details to specify the position of the geofence.</p>
+    /// <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// </note>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
+        self.geometry.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchPutGeofenceRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutGeofenceRequestEntry");
@@ -4370,6 +5221,22 @@ pub struct BatchEvaluateGeofencesError {
     pub sample_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Contains details associated to the batch error.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
+}
+impl BatchEvaluateGeofencesError {
+    /// <p>The device associated with the position evaluation error.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.sample_time.as_ref()
+    }
+    /// <p>Contains details associated to the batch error.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchEvaluateGeofencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4458,6 +5325,16 @@ pub struct BatchDeleteGeofenceError {
     /// <p>Contains details associated to the batch error.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
+impl BatchDeleteGeofenceError {
+    /// <p>The geofence associated with the error message.</p>
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
+        self.geofence_id.as_deref()
+    }
+    /// <p>Contains details associated to the batch error.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteGeofenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteGeofenceError");
@@ -4537,6 +5414,38 @@ pub struct ListGeofenceCollectionsResponseEntry {
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListGeofenceCollectionsResponseEntry {
+    /// <p>The name of the geofence collection.</p>
+    pub fn collection_name(&self) -> std::option::Option<&str> {
+        self.collection_name.as_deref()
+    }
+    /// <p>The description for the geofence collection</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The pricing plan for the specified geofence collection.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+    /// page</a>.</p>
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pricing_plan.as_ref()
+    }
+    /// <p>The specified data provider for the geofence collection.</p>
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+        self.pricing_plan_data_source.as_deref()
+    }
+    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+    /// </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ListGeofenceCollectionsResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

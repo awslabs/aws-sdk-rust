@@ -14,6 +14,28 @@ pub struct UserDefinedFunctionInput {
     /// <p>The resource URIs for the function.</p>
     pub resource_uris: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
 }
+impl UserDefinedFunctionInput {
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The Java class that contains the function code.</p>
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    /// <p>The owner of the function.</p>
+    pub fn owner_name(&self) -> std::option::Option<&str> {
+        self.owner_name.as_deref()
+    }
+    /// <p>The owner type.</p>
+    pub fn owner_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.owner_type.as_ref()
+    }
+    /// <p>The resource URIs for the function.</p>
+    pub fn resource_uris(&self) -> std::option::Option<&[crate::model::ResourceUri]> {
+        self.resource_uris.as_deref()
+    }
+}
 impl std::fmt::Debug for UserDefinedFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserDefinedFunctionInput");
@@ -130,6 +152,16 @@ pub struct ResourceUri {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The URI for accessing the resource.</p>
     pub uri: std::option::Option<std::string::String>,
+}
+impl ResourceUri {
+    /// <p>The type of the resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The URI for accessing the resource.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceUri {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -335,6 +367,54 @@ pub struct Trigger {
     /// before EventBridge event trigger fires.</p>
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
+impl Trigger {
+    /// <p>The name of the trigger.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the workflow associated with the trigger.</p>
+    pub fn workflow_name(&self) -> std::option::Option<&str> {
+        self.workflow_name.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of trigger that this is.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TriggerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The current state of the trigger.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::TriggerState> {
+        self.state.as_ref()
+    }
+    /// <p>A description of this trigger.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+    /// Schedules for Jobs and Crawlers</a>. For example, to run
+    /// something every day at 12:15 UTC, you would specify:
+    /// <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The actions initiated by this trigger.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>The predicate of this trigger, which defines when it will fire.</p>
+    pub fn predicate(&self) -> std::option::Option<&crate::model::Predicate> {
+        self.predicate.as_ref()
+    }
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+    /// before EventBridge event trigger fires.</p>
+    pub fn event_batching_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::EventBatchingCondition> {
+        self.event_batching_condition.as_ref()
+    }
+}
 impl std::fmt::Debug for Trigger {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Trigger");
@@ -533,6 +613,16 @@ pub struct EventBatchingCondition {
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub batch_window: std::option::Option<i32>,
 }
+impl EventBatchingCondition {
+    /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
+    pub fn batch_size(&self) -> i32 {
+        self.batch_size
+    }
+    /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
+    pub fn batch_window(&self) -> std::option::Option<i32> {
+        self.batch_window
+    }
+}
 impl std::fmt::Debug for EventBatchingCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventBatchingCondition");
@@ -596,6 +686,17 @@ pub struct Predicate {
     pub logical: std::option::Option<crate::model::Logical>,
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
     pub conditions: std::option::Option<std::vec::Vec<crate::model::Condition>>,
+}
+impl Predicate {
+    /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then
+    /// this field is required.</p>
+    pub fn logical(&self) -> std::option::Option<&crate::model::Logical> {
+        self.logical.as_ref()
+    }
+    /// <p>A list of the conditions that determine when the trigger will fire.</p>
+    pub fn conditions(&self) -> std::option::Option<&[crate::model::Condition]> {
+        self.conditions.as_deref()
+    }
 }
 impl std::fmt::Debug for Predicate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +778,29 @@ pub struct Condition {
     pub crawler_name: std::option::Option<std::string::String>,
     /// <p>The state of the crawler to which this condition applies.</p>
     pub crawl_state: std::option::Option<crate::model::CrawlState>,
+}
+impl Condition {
+    /// <p>A logical operator.</p>
+    pub fn logical_operator(&self) -> std::option::Option<&crate::model::LogicalOperator> {
+        self.logical_operator.as_ref()
+    }
+    /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which
+    /// this trigger waits.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::JobRunState> {
+        self.state.as_ref()
+    }
+    /// <p>The name of the crawler to which this condition applies.</p>
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
+        self.crawler_name.as_deref()
+    }
+    /// <p>The state of the crawler to which this condition applies.</p>
+    pub fn crawl_state(&self) -> std::option::Option<&crate::model::CrawlState> {
+        self.crawl_state.as_ref()
+    }
 }
 impl std::fmt::Debug for Condition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1060,6 +1184,44 @@ pub struct Action {
     /// <p>The name of the crawler to be used with this action.</p>
     pub crawler_name: std::option::Option<std::string::String>,
 }
+impl Action {
+    /// <p>The name of a job to be run.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
+    /// <p>You can specify arguments here that your own job-execution script
+    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+    /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    pub fn arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.arguments.as_ref()
+    }
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
+    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
+    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+    /// action.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>Specifies configuration properties of a job run notification.</p>
+    pub fn notification_property(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationProperty> {
+        self.notification_property.as_ref()
+    }
+    /// <p>The name of the crawler to be used with this action.</p>
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
+        self.crawler_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Action");
@@ -1210,6 +1372,13 @@ pub struct NotificationProperty {
     /// <p>After a job run starts, the number of minutes to wait before
     /// sending a job run delay notification.</p>
     pub notify_delay_after: std::option::Option<i32>,
+}
+impl NotificationProperty {
+    /// <p>After a job run starts, the number of minutes to wait before
+    /// sending a job run delay notification.</p>
+    pub fn notify_delay_after(&self) -> std::option::Option<i32> {
+        self.notify_delay_after
+    }
 }
 impl std::fmt::Debug for NotificationProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1427,6 +1596,38 @@ pub struct TriggerUpdate {
     /// before EventBridge event trigger fires.</p>
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
+impl TriggerUpdate {
+    /// <p>Reserved for future use.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of this trigger.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+    /// Schedules for Jobs and Crawlers</a>. For example, to run
+    /// something every day at 12:15 UTC, you would specify:
+    /// <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The actions initiated by this trigger.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>The predicate of this trigger, which defines when it will fire.</p>
+    pub fn predicate(&self) -> std::option::Option<&crate::model::Predicate> {
+        self.predicate.as_ref()
+    }
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+    /// before EventBridge event trigger fires.</p>
+    pub fn event_batching_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::EventBatchingCondition> {
+        self.event_batching_condition.as_ref()
+    }
+}
 impl std::fmt::Debug for TriggerUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TriggerUpdate");
@@ -1600,6 +1801,72 @@ pub struct TableInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     pub target_table: std::option::Option<crate::model::TableIdentifier>,
+}
+impl TableInput {
+    /// <p>The table name. For Hive compatibility, this is folded to
+    /// lowercase when it is stored.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the table.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The table owner.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The last time that the table was accessed.</p>
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_access_time.as_ref()
+    }
+    /// <p>The last time that column statistics were computed for this table.</p>
+    pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_analyzed_time.as_ref()
+    }
+    /// <p>The retention time for this table.</p>
+    pub fn retention(&self) -> i32 {
+        self.retention
+    }
+    /// <p>A storage descriptor containing information about the physical storage
+    /// of this table.</p>
+    pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
+        self.storage_descriptor.as_ref()
+    }
+    /// <p>A list of columns by which the table is partitioned. Only primitive
+    /// types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any
+    /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
+    /// an empty list. For example:</p>
+    /// <p>
+    /// <code>"PartitionKeys": []</code>
+    /// </p>
+    pub fn partition_keys(&self) -> std::option::Option<&[crate::model::Column]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    pub fn view_original_text(&self) -> std::option::Option<&str> {
+        self.view_original_text.as_deref()
+    }
+    /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    pub fn view_expanded_text(&self) -> std::option::Option<&str> {
+        self.view_expanded_text.as_deref()
+    }
+    /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    pub fn table_type(&self) -> std::option::Option<&str> {
+        self.table_type.as_deref()
+    }
+    /// <p>These key-value pairs define properties associated with the table.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
+    pub fn target_table(&self) -> std::option::Option<&crate::model::TableIdentifier> {
+        self.target_table.as_ref()
+    }
 }
 impl std::fmt::Debug for TableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1871,6 +2138,20 @@ pub struct TableIdentifier {
     /// <p>The name of the target table.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl TableIdentifier {
+    /// <p>The ID of the Data Catalog in which the table resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database that contains the target table.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the target table.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for TableIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TableIdentifier");
@@ -1954,6 +2235,27 @@ pub struct Column {
     /// <p>These key-value pairs define properties associated with the column.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Column {
+    /// <p>The name of the <code>Column</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the <code>Column</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>A free-form text comment.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>These key-value pairs define properties associated with the column.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for Column {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2094,6 +2396,74 @@ pub struct StorageDescriptor {
     ///
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
     pub schema_reference: std::option::Option<crate::model::SchemaReference>,
+}
+impl StorageDescriptor {
+    /// <p>A list of the <code>Columns</code> in the table.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::Column]> {
+        self.columns.as_deref()
+    }
+    /// <p>The physical location of the table. By default, this takes the form of the warehouse
+    /// location, followed by the database location in the warehouse, followed by the table
+    /// name.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The input format: <code>SequenceFileInputFormat</code> (binary),
+    /// or <code>TextInputFormat</code>, or a custom format.</p>
+    pub fn input_format(&self) -> std::option::Option<&str> {
+        self.input_format.as_deref()
+    }
+    /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary),
+    /// or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+    pub fn output_format(&self) -> std::option::Option<&str> {
+        self.output_format.as_deref()
+    }
+    /// <p>
+    /// <code>True</code> if the data in the table is compressed, or <code>False</code> if
+    /// not.</p>
+    pub fn compressed(&self) -> bool {
+        self.compressed
+    }
+    /// <p>Must be specified if the table contains any dimension columns.</p>
+    pub fn number_of_buckets(&self) -> i32 {
+        self.number_of_buckets
+    }
+    /// <p>The serialization/deserialization (SerDe) information.</p>
+    pub fn serde_info(&self) -> std::option::Option<&crate::model::SerDeInfo> {
+        self.serde_info.as_ref()
+    }
+    /// <p>A list of reducer grouping columns, clustering columns, and
+    /// bucketing columns in the table.</p>
+    pub fn bucket_columns(&self) -> std::option::Option<&[std::string::String]> {
+        self.bucket_columns.as_deref()
+    }
+    /// <p>A list specifying the sort order of each bucket in the table.</p>
+    pub fn sort_columns(&self) -> std::option::Option<&[crate::model::Order]> {
+        self.sort_columns.as_deref()
+    }
+    /// <p>The user-supplied properties in key-value form.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The information about values that appear frequently in a column (skewed values).</p>
+    pub fn skewed_info(&self) -> std::option::Option<&crate::model::SkewedInfo> {
+        self.skewed_info.as_ref()
+    }
+    /// <p>
+    /// <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if
+    /// not.</p>
+    pub fn stored_as_sub_directories(&self) -> bool {
+        self.stored_as_sub_directories
+    }
+    /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
+    ///
+    /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
+    pub fn schema_reference(&self) -> std::option::Option<&crate::model::SchemaReference> {
+        self.schema_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for StorageDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2381,6 +2751,20 @@ pub struct SchemaReference {
     /// <p>The version number of the schema.</p>
     pub schema_version_number: std::option::Option<i64>,
 }
+impl SchemaReference {
+    /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
+    pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
+        self.schema_id.as_ref()
+    }
+    /// <p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version_number(&self) -> std::option::Option<i64> {
+        self.schema_version_number
+    }
+}
 impl std::fmt::Debug for SchemaReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SchemaReference");
@@ -2461,6 +2845,20 @@ pub struct SchemaId {
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema registry that contains the schema.</p>
     pub registry_name: std::option::Option<std::string::String>,
+}
+impl SchemaId {
+    /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The name of the schema registry that contains the schema.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SchemaId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2545,6 +2943,24 @@ pub struct SkewedInfo {
     /// <p>A mapping of skewed values to the columns that contain them.</p>
     pub skewed_column_value_location_maps:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SkewedInfo {
+    /// <p>A list of names of columns that contain skewed values.</p>
+    pub fn skewed_column_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.skewed_column_names.as_deref()
+    }
+    /// <p>A list of values that appear so frequently as to be considered
+    /// skewed.</p>
+    pub fn skewed_column_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.skewed_column_values.as_deref()
+    }
+    /// <p>A mapping of skewed values to the columns that contain them.</p>
+    pub fn skewed_column_value_location_maps(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.skewed_column_value_location_maps.as_ref()
+    }
 }
 impl std::fmt::Debug for SkewedInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2663,6 +3079,17 @@ pub struct Order {
     /// (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub sort_order: i32,
 }
+impl Order {
+    /// <p>The name of the column.</p>
+    pub fn column(&self) -> std::option::Option<&str> {
+        self.column.as_deref()
+    }
+    /// <p>Indicates that the column is sorted in ascending order
+    /// (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+    pub fn sort_order(&self) -> i32 {
+        self.sort_order
+    }
+}
 impl std::fmt::Debug for Order {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Order");
@@ -2732,6 +3159,24 @@ pub struct SerDeInfo {
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SerDeInfo {
+    /// <p>Name of the SerDe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Usually the class that implements the SerDe. An example is
+    /// <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+    pub fn serialization_library(&self) -> std::option::Option<&str> {
+        self.serialization_library.as_deref()
+    }
+    /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for SerDeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2919,6 +3364,16 @@ pub struct SchemaVersionNumber {
     /// <p>The version number of the schema.</p>
     pub version_number: i64,
 }
+impl SchemaVersionNumber {
+    /// <p>The latest version available for the schema.</p>
+    pub fn latest_version(&self) -> bool {
+        self.latest_version
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+}
 impl std::fmt::Debug for SchemaVersionNumber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SchemaVersionNumber");
@@ -2981,6 +3436,16 @@ pub struct RegistryId {
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub registry_arn: std::option::Option<std::string::String>,
+}
+impl RegistryId {
+    /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided. </p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RegistryId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3057,6 +3522,34 @@ pub struct PartitionInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PartitionInput {
+    /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
+    ///
+    /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The last time at which the partition was accessed.</p>
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_access_time.as_ref()
+    }
+    /// <p>Provides information about the physical
+    /// location where the partition is stored.</p>
+    pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
+        self.storage_descriptor.as_ref()
+    }
+    /// <p>These key-value pairs define partition parameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The last time at which column statistics were computed for this partition.</p>
+    pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_analyzed_time.as_ref()
+    }
 }
 impl std::fmt::Debug for PartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3262,6 +3755,19 @@ pub struct TransformParameters {
     /// <p>The parameters for the find matches algorithm.</p>
     pub find_matches_parameters: std::option::Option<crate::model::FindMatchesParameters>,
 }
+impl TransformParameters {
+    /// <p>The type of machine learning transform.</p>
+    /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
+    pub fn transform_type(&self) -> std::option::Option<&crate::model::TransformType> {
+        self.transform_type.as_ref()
+    }
+    /// <p>The parameters for the find matches algorithm.</p>
+    pub fn find_matches_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::FindMatchesParameters> {
+        self.find_matches_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for TransformParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransformParameters");
@@ -3358,6 +3864,42 @@ pub struct FindMatchesParameters {
     /// <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p>
     /// <p>Note that setting this value to true may increase the conflation execution time.</p>
     pub enforce_provided_labels: std::option::Option<bool>,
+}
+impl FindMatchesParameters {
+    /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
+    pub fn primary_key_column_name(&self) -> std::option::Option<&str> {
+        self.primary_key_column_name.as_deref()
+    }
+    /// <p>The value selected when tuning your transform for a balance between precision and recall.
+    /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
+    /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
+    /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
+    ///
+    /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
+    ///
+    /// <p>The recall metric indicates that for an actual match, how often your model predicts the
+    /// match.</p>
+    pub fn precision_recall_tradeoff(&self) -> std::option::Option<f64> {
+        self.precision_recall_tradeoff
+    }
+    /// <p>The value that is selected when tuning your transform for a balance between accuracy and
+    /// cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0
+    /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
+    /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
+    /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
+    ///
+    /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
+    ///
+    /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
+    /// transform.</p>
+    pub fn accuracy_cost_tradeoff(&self) -> std::option::Option<f64> {
+        self.accuracy_cost_tradeoff
+    }
+    /// <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p>
+    /// <p>Note that setting this value to true may increase the conflation execution time.</p>
+    pub fn enforce_provided_labels(&self) -> std::option::Option<bool> {
+        self.enforce_provided_labels
+    }
 }
 impl std::fmt::Debug for FindMatchesParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3619,6 +4161,133 @@ pub struct JobUpdate {
     ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
+}
+impl JobUpdate {
+    /// <p>Description of the job being defined.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>This field is reserved for future use.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job
+    /// (required).</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
+    /// for this job.</p>
+    pub fn execution_property(&self) -> std::option::Option<&crate::model::ExecutionProperty> {
+        self.execution_property.as_ref()
+    }
+    /// <p>The <code>JobCommand</code> that runs this job (required).</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::JobCommand> {
+        self.command.as_ref()
+    }
+    /// <p>The default arguments for this job.</p>
+    /// <p>You can specify arguments here that your own job-execution script
+    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+    /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    pub fn default_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_arguments.as_ref()
+    }
+    /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+    pub fn non_overridable_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.non_overridable_arguments.as_ref()
+    }
+    /// <p>The connections used for this job.</p>
+    pub fn connections(&self) -> std::option::Option<&crate::model::ConnectionsList> {
+        self.connections.as_ref()
+    }
+    /// <p>The maximum number of times to retry this job if it fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
+    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
+    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+    /// page</a>.</p>
+    pub fn allocated_capacity(&self) -> i32 {
+        self.allocated_capacity
+    }
+    /// <p>The job timeout in minutes.  This is the maximum time that a job run
+    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
+    /// status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    ///
+    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
+    ///
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+    /// running a Python shell job or an Apache Spark ETL job:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+    /// </li>
+    /// <li>
+    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
+    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+    /// </li>
+    /// </ul>    
+    /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+    /// job.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>Specifies the configuration properties of a job notification.</p>
+    pub fn notification_property(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationProperty> {
+        self.notification_property.as_ref()
+    }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+    ///
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
 }
 impl std::fmt::Debug for JobUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4023,6 +4692,12 @@ pub struct ConnectionsList {
     /// <p>A list of connections used by the job.</p>
     pub connections: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ConnectionsList {
+    /// <p>A list of connections used by the job.</p>
+    pub fn connections(&self) -> std::option::Option<&[std::string::String]> {
+        self.connections.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectionsList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionsList");
@@ -4086,6 +4761,23 @@ pub struct JobCommand {
     pub script_location: std::option::Option<std::string::String>,
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
     pub python_version: std::option::Option<std::string::String>,
+}
+impl JobCommand {
+    /// <p>The name of the job command. For an Apache Spark ETL job, this must be
+    /// <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>.
+    /// For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a
+    /// job.</p>
+    pub fn script_location(&self) -> std::option::Option<&str> {
+        self.script_location.as_deref()
+    }
+    /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
+    pub fn python_version(&self) -> std::option::Option<&str> {
+        self.python_version.as_deref()
+    }
 }
 impl std::fmt::Debug for JobCommand {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4175,6 +4867,14 @@ pub struct ExecutionProperty {
     /// The maximum value you can specify is controlled by a service limit.</p>
     pub max_concurrent_runs: i32,
 }
+impl ExecutionProperty {
+    /// <p>The maximum number of concurrent runs allowed for the job.
+    /// The default is 1. An error is returned when this threshold is reached.
+    /// The maximum value you can specify is controlled by a service limit.</p>
+    pub fn max_concurrent_runs(&self) -> i32 {
+        self.max_concurrent_runs
+    }
+}
 impl std::fmt::Debug for ExecutionProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionProperty");
@@ -4239,6 +4939,27 @@ pub struct DevEndpointCustomLibraries {
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
+}
+impl DevEndpointCustomLibraries {
+    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3)
+    /// bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be
+    /// complete paths separated by a comma.</p>
+    /// <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
+    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
+    /// analysis library, are not currently supported.</p>
+    /// </note>
+    pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_python_libs_s3_path.as_deref()
+    }
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
+    /// in your <code>DevEndpoint</code>.</p>
+    /// <note>
+    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
+    /// </note>
+    pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_jars_s3_path.as_deref()
+    }
 }
 impl std::fmt::Debug for DevEndpointCustomLibraries {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4343,6 +5064,40 @@ pub struct DatabaseInput {
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     pub target_database: std::option::Option<crate::model::DatabaseIdentifier>,
+}
+impl DatabaseInput {
+    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
+    /// stored.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the database.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The location of the database (for example, an HDFS path). </p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>These key-value pairs define parameters and properties
+    /// of the database.</p>
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>Creates a set of default permissions on the table for principals. </p>
+    pub fn create_table_default_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrincipalPermissions]> {
+        self.create_table_default_permissions.as_deref()
+    }
+    /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
+    pub fn target_database(&self) -> std::option::Option<&crate::model::DatabaseIdentifier> {
+        self.target_database.as_ref()
+    }
 }
 impl std::fmt::Debug for DatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4501,6 +5256,16 @@ pub struct DatabaseIdentifier {
     /// <p>The name of the catalog database.</p>
     pub database_name: std::option::Option<std::string::String>,
 }
+impl DatabaseIdentifier {
+    /// <p>The ID of the Data Catalog in which the database resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the catalog database.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DatabaseIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatabaseIdentifier");
@@ -4566,6 +5331,16 @@ pub struct PrincipalPermissions {
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The permissions that are granted to the principal.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
+}
+impl PrincipalPermissions {
+    /// <p>The principal who is granted permissions.</p>
+    pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
+        self.principal.as_ref()
+    }
+    /// <p>The permissions that are granted to the principal.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+        self.permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for PrincipalPermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4733,6 +5508,12 @@ pub struct DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
     pub data_lake_principal_identifier: std::option::Option<std::string::String>,
 }
+impl DataLakePrincipal {
+    /// <p>An identifier for the Lake Formation principal.</p>
+    pub fn data_lake_principal_identifier(&self) -> std::option::Option<&str> {
+        self.data_lake_principal_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DataLakePrincipal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataLakePrincipal");
@@ -4798,6 +5579,23 @@ pub struct LineageConfiguration {
     /// </li>
     /// </ul>
     pub crawler_lineage_settings: std::option::Option<crate::model::CrawlerLineageSettings>,
+}
+impl LineageConfiguration {
+    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>ENABLE: enables data lineage for the crawler</p>
+    /// </li>
+    /// <li>
+    /// <p>DISABLE: disables data lineage for the crawler</p>
+    /// </li>
+    /// </ul>
+    pub fn crawler_lineage_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::CrawlerLineageSettings> {
+        self.crawler_lineage_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for LineageConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4933,6 +5731,18 @@ pub struct RecrawlPolicy {
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     pub recrawl_behavior: std::option::Option<crate::model::RecrawlBehavior>,
 }
+impl RecrawlPolicy {
+    /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
+    ///
+    /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
+    ///
+    /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
+    ///
+    /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
+    pub fn recrawl_behavior(&self) -> std::option::Option<&crate::model::RecrawlBehavior> {
+        self.recrawl_behavior.as_ref()
+    }
+}
 impl std::fmt::Debug for RecrawlPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecrawlPolicy");
@@ -5060,6 +5870,16 @@ pub struct SchemaChangePolicy {
     pub update_behavior: std::option::Option<crate::model::UpdateBehavior>,
     /// <p>The deletion behavior when the crawler finds a deleted object.</p>
     pub delete_behavior: std::option::Option<crate::model::DeleteBehavior>,
+}
+impl SchemaChangePolicy {
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateBehavior> {
+        self.update_behavior.as_ref()
+    }
+    /// <p>The deletion behavior when the crawler finds a deleted object.</p>
+    pub fn delete_behavior(&self) -> std::option::Option<&crate::model::DeleteBehavior> {
+        self.delete_behavior.as_ref()
+    }
 }
 impl std::fmt::Debug for SchemaChangePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5250,6 +6070,28 @@ pub struct CrawlerTargets {
     /// <p>Specifies Glue Data Catalog targets.</p>
     pub catalog_targets: std::option::Option<std::vec::Vec<crate::model::CatalogTarget>>,
 }
+impl CrawlerTargets {
+    /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
+    pub fn s3_targets(&self) -> std::option::Option<&[crate::model::S3Target]> {
+        self.s3_targets.as_deref()
+    }
+    /// <p>Specifies JDBC targets.</p>
+    pub fn jdbc_targets(&self) -> std::option::Option<&[crate::model::JdbcTarget]> {
+        self.jdbc_targets.as_deref()
+    }
+    /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+    pub fn mongo_db_targets(&self) -> std::option::Option<&[crate::model::MongoDbTarget]> {
+        self.mongo_db_targets.as_deref()
+    }
+    /// <p>Specifies Amazon DynamoDB targets.</p>
+    pub fn dynamo_db_targets(&self) -> std::option::Option<&[crate::model::DynamoDbTarget]> {
+        self.dynamo_db_targets.as_deref()
+    }
+    /// <p>Specifies Glue Data Catalog targets.</p>
+    pub fn catalog_targets(&self) -> std::option::Option<&[crate::model::CatalogTarget]> {
+        self.catalog_targets.as_deref()
+    }
+}
 impl std::fmt::Debug for CrawlerTargets {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CrawlerTargets");
@@ -5399,6 +6241,16 @@ pub struct CatalogTarget {
     /// <p>A list of the tables to be synchronized.</p>
     pub tables: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CatalogTarget {
+    /// <p>The name of the database to be synchronized.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A list of the tables to be synchronized.</p>
+    pub fn tables(&self) -> std::option::Option<&[std::string::String]> {
+        self.tables.as_deref()
+    }
+}
 impl std::fmt::Debug for CatalogTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CatalogTarget");
@@ -5479,6 +6331,24 @@ pub struct DynamoDbTarget {
     ///
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
     pub scan_rate: std::option::Option<f64>,
+}
+impl DynamoDbTarget {
+    /// <p>The name of the DynamoDB table to crawl.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+    ///
+    /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
+    pub fn scan_all(&self) -> std::option::Option<bool> {
+        self.scan_all
+    }
+    /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
+    ///
+    /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
+    pub fn scan_rate(&self) -> std::option::Option<f64> {
+        self.scan_rate
+    }
 }
 impl std::fmt::Debug for DynamoDbTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5568,6 +6438,22 @@ pub struct MongoDbTarget {
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub scan_all: std::option::Option<bool>,
 }
+impl MongoDbTarget {
+    /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+    ///
+    /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
+    pub fn scan_all(&self) -> std::option::Option<bool> {
+        self.scan_all
+    }
+}
 impl std::fmt::Debug for MongoDbTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MongoDbTarget");
@@ -5653,6 +6539,21 @@ pub struct JdbcTarget {
     /// <p>A list of glob patterns used to exclude from the crawl.
     /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl JdbcTarget {
+    /// <p>The name of the connection to use to connect to the JDBC target.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The path of the JDBC target.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>A list of glob patterns used to exclude from the crawl.
+    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusions.as_deref()
+    }
 }
 impl std::fmt::Debug for JdbcTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5752,6 +6653,33 @@ pub struct S3Target {
     pub event_queue_arn: std::option::Option<std::string::String>,
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
     pub dlq_event_queue_arn: std::option::Option<std::string::String>,
+}
+impl S3Target {
+    /// <p>The path to the Amazon S3 target.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>A list of glob patterns used to exclude from the crawl.
+    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusions.as_deref()
+    }
+    /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>
+    pub fn sample_size(&self) -> std::option::Option<i32> {
+        self.sample_size
+    }
+    /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+    pub fn event_queue_arn(&self) -> std::option::Option<&str> {
+        self.event_queue_arn.as_deref()
+    }
+    /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+    pub fn dlq_event_queue_arn(&self) -> std::option::Option<&str> {
+        self.dlq_event_queue_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Target {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5926,6 +6854,66 @@ pub struct ConnectionInput {
     /// <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub physical_connection_requirements:
         std::option::Option<crate::model::PhysicalConnectionRequirements>,
+}
+impl ConnectionInput {
+    /// <p>The name of the connection.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the connection.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the connection. Currently, these types are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p>
+    /// </li>
+    /// </ul>
+    /// <p>SFTP is not supported.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>A list of criteria that can be used in selecting this connection.</p>
+    pub fn match_criteria(&self) -> std::option::Option<&[std::string::String]> {
+        self.match_criteria.as_deref()
+    }
+    /// <p>These key-value pairs define parameters for the connection.</p>
+    pub fn connection_properties(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ConnectionPropertyKey, std::string::String>,
+    > {
+        self.connection_properties.as_ref()
+    }
+    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
+    /// <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    pub fn physical_connection_requirements(
+        &self,
+    ) -> std::option::Option<&crate::model::PhysicalConnectionRequirements> {
+        self.physical_connection_requirements.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6140,6 +7128,22 @@ pub struct PhysicalConnectionRequirements {
     /// implies the Availability Zone to be used. Currently the field must be populated, but it will
     /// be deprecated in the future.</p>
     pub availability_zone: std::option::Option<std::string::String>,
+}
+impl PhysicalConnectionRequirements {
+    /// <p>The subnet ID used by the connection.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The security group ID list used by the connection.</p>
+    pub fn security_group_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_id_list.as_deref()
+    }
+    /// <p>The connection's Availability Zone. This field is redundant because the specified subnet
+    /// implies the Availability Zone to be used. Currently the field must be populated, but it will
+    /// be deprecated in the future.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
 }
 impl std::fmt::Debug for PhysicalConnectionRequirements {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6530,6 +7534,16 @@ pub struct ColumnStatisticsError {
     /// <p>An error message with the reason for the failure of an operation.</p>
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
+impl ColumnStatisticsError {
+    /// <p>The <code>ColumnStatistics</code> of the column.</p>
+    pub fn column_statistics(&self) -> std::option::Option<&crate::model::ColumnStatistics> {
+        self.column_statistics.as_ref()
+    }
+    /// <p>An error message with the reason for the failure of an operation.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for ColumnStatisticsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnStatisticsError");
@@ -6595,6 +7609,16 @@ pub struct ErrorDetail {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A message describing the error.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl ErrorDetail {
+    /// <p>The code associated with this error.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>A message describing the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6665,6 +7689,24 @@ pub struct ColumnStatistics {
     pub analyzed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
     pub statistics_data: std::option::Option<crate::model::ColumnStatisticsData>,
+}
+impl ColumnStatistics {
+    /// <p>Name of column which statistics belong to.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>The data type of the column.</p>
+    pub fn column_type(&self) -> std::option::Option<&str> {
+        self.column_type.as_deref()
+    }
+    /// <p>The timestamp of when column statistics were generated.</p>
+    pub fn analyzed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.analyzed_time.as_ref()
+    }
+    /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
+    pub fn statistics_data(&self) -> std::option::Option<&crate::model::ColumnStatisticsData> {
+        self.statistics_data.as_ref()
+    }
 }
 impl std::fmt::Debug for ColumnStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6777,6 +7819,54 @@ pub struct ColumnStatisticsData {
     /// <p>Binary column statistics data.</p>
     pub binary_column_statistics_data:
         std::option::Option<crate::model::BinaryColumnStatisticsData>,
+}
+impl ColumnStatisticsData {
+    /// <p>The type of column statistics data.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ColumnStatisticsType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Boolean column statistics data.</p>
+    pub fn boolean_column_statistics_data(
+        &self,
+    ) -> std::option::Option<&crate::model::BooleanColumnStatisticsData> {
+        self.boolean_column_statistics_data.as_ref()
+    }
+    /// <p>Date column statistics data.</p>
+    pub fn date_column_statistics_data(
+        &self,
+    ) -> std::option::Option<&crate::model::DateColumnStatisticsData> {
+        self.date_column_statistics_data.as_ref()
+    }
+    /// <p>Decimal column statistics data.</p>
+    pub fn decimal_column_statistics_data(
+        &self,
+    ) -> std::option::Option<&crate::model::DecimalColumnStatisticsData> {
+        self.decimal_column_statistics_data.as_ref()
+    }
+    /// <p>Double column statistics data.</p>
+    pub fn double_column_statistics_data(
+        &self,
+    ) -> std::option::Option<&crate::model::DoubleColumnStatisticsData> {
+        self.double_column_statistics_data.as_ref()
+    }
+    /// <p>Long column statistics data.</p>
+    pub fn long_column_statistics_data(
+        &self,
+    ) -> std::option::Option<&crate::model::LongColumnStatisticsData> {
+        self.long_column_statistics_data.as_ref()
+    }
+    /// <p>String column statistics data.</p>
+    pub fn string_column_statistics_data(
+        &self,
+    ) -> std::option::Option<&crate::model::StringColumnStatisticsData> {
+        self.string_column_statistics_data.as_ref()
+    }
+    /// <p>Binary column statistics data.</p>
+    pub fn binary_column_statistics_data(
+        &self,
+    ) -> std::option::Option<&crate::model::BinaryColumnStatisticsData> {
+        self.binary_column_statistics_data.as_ref()
+    }
 }
 impl std::fmt::Debug for ColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6994,6 +8084,20 @@ pub struct BinaryColumnStatisticsData {
     /// <p>The number of null values in the column.</p>
     pub number_of_nulls: i64,
 }
+impl BinaryColumnStatisticsData {
+    /// <p>The size of the longest bit sequence in the column.</p>
+    pub fn maximum_length(&self) -> i64 {
+        self.maximum_length
+    }
+    /// <p>The average bit sequence length in the column.</p>
+    pub fn average_length(&self) -> f64 {
+        self.average_length
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn number_of_nulls(&self) -> i64 {
+        self.number_of_nulls
+    }
+}
 impl std::fmt::Debug for BinaryColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BinaryColumnStatisticsData");
@@ -7073,6 +8177,24 @@ pub struct StringColumnStatisticsData {
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
     pub number_of_distinct_values: i64,
+}
+impl StringColumnStatisticsData {
+    /// <p>The size of the longest string in the column.</p>
+    pub fn maximum_length(&self) -> i64 {
+        self.maximum_length
+    }
+    /// <p>The average string length in the column.</p>
+    pub fn average_length(&self) -> f64 {
+        self.average_length
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn number_of_nulls(&self) -> i64 {
+        self.number_of_nulls
+    }
+    /// <p>The number of distinct values in a column.</p>
+    pub fn number_of_distinct_values(&self) -> i64 {
+        self.number_of_distinct_values
+    }
 }
 impl std::fmt::Debug for StringColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7167,6 +8289,24 @@ pub struct LongColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub number_of_distinct_values: i64,
 }
+impl LongColumnStatisticsData {
+    /// <p>The lowest value in the column.</p>
+    pub fn minimum_value(&self) -> i64 {
+        self.minimum_value
+    }
+    /// <p>The highest value in the column.</p>
+    pub fn maximum_value(&self) -> i64 {
+        self.maximum_value
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn number_of_nulls(&self) -> i64 {
+        self.number_of_nulls
+    }
+    /// <p>The number of distinct values in a column.</p>
+    pub fn number_of_distinct_values(&self) -> i64 {
+        self.number_of_distinct_values
+    }
+}
 impl std::fmt::Debug for LongColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LongColumnStatisticsData");
@@ -7260,6 +8400,24 @@ pub struct DoubleColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub number_of_distinct_values: i64,
 }
+impl DoubleColumnStatisticsData {
+    /// <p>The lowest value in the column.</p>
+    pub fn minimum_value(&self) -> f64 {
+        self.minimum_value
+    }
+    /// <p>The highest value in the column.</p>
+    pub fn maximum_value(&self) -> f64 {
+        self.maximum_value
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn number_of_nulls(&self) -> i64 {
+        self.number_of_nulls
+    }
+    /// <p>The number of distinct values in a column.</p>
+    pub fn number_of_distinct_values(&self) -> i64 {
+        self.number_of_distinct_values
+    }
+}
 impl std::fmt::Debug for DoubleColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DoubleColumnStatisticsData");
@@ -7352,6 +8510,24 @@ pub struct DecimalColumnStatisticsData {
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
     pub number_of_distinct_values: i64,
+}
+impl DecimalColumnStatisticsData {
+    /// <p>The lowest value in the column.</p>
+    pub fn minimum_value(&self) -> std::option::Option<&crate::model::DecimalNumber> {
+        self.minimum_value.as_ref()
+    }
+    /// <p>The highest value in the column.</p>
+    pub fn maximum_value(&self) -> std::option::Option<&crate::model::DecimalNumber> {
+        self.maximum_value.as_ref()
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn number_of_nulls(&self) -> i64 {
+        self.number_of_nulls
+    }
+    /// <p>The number of distinct values in a column.</p>
+    pub fn number_of_distinct_values(&self) -> i64 {
+        self.number_of_distinct_values
+    }
 }
 impl std::fmt::Debug for DecimalColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7449,6 +8625,17 @@ pub struct DecimalNumber {
     /// unscaled value.</p>
     pub scale: i32,
 }
+impl DecimalNumber {
+    /// <p>The unscaled numeric value.</p>
+    pub fn unscaled_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.unscaled_value.as_ref()
+    }
+    /// <p>The scale that determines where the decimal point falls in the
+    /// unscaled value.</p>
+    pub fn scale(&self) -> i32 {
+        self.scale
+    }
+}
 impl std::fmt::Debug for DecimalNumber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DecimalNumber");
@@ -7520,6 +8707,24 @@ pub struct DateColumnStatisticsData {
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
     pub number_of_distinct_values: i64,
+}
+impl DateColumnStatisticsData {
+    /// <p>The lowest value in the column.</p>
+    pub fn minimum_value(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.minimum_value.as_ref()
+    }
+    /// <p>The highest value in the column.</p>
+    pub fn maximum_value(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.maximum_value.as_ref()
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn number_of_nulls(&self) -> i64 {
+        self.number_of_nulls
+    }
+    /// <p>The number of distinct values in a column.</p>
+    pub fn number_of_distinct_values(&self) -> i64 {
+        self.number_of_distinct_values
+    }
 }
 impl std::fmt::Debug for DateColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7617,6 +8822,20 @@ pub struct BooleanColumnStatisticsData {
     pub number_of_falses: i64,
     /// <p>The number of null values in the column.</p>
     pub number_of_nulls: i64,
+}
+impl BooleanColumnStatisticsData {
+    /// <p>The number of true values in the column.</p>
+    pub fn number_of_trues(&self) -> i64 {
+        self.number_of_trues
+    }
+    /// <p>The number of false values in the column.</p>
+    pub fn number_of_falses(&self) -> i64 {
+        self.number_of_falses
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn number_of_nulls(&self) -> i64 {
+        self.number_of_nulls
+    }
 }
 impl std::fmt::Debug for BooleanColumnStatisticsData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7781,6 +9000,37 @@ pub struct UpdateCsvClassifierRequest {
     pub disable_value_trimming: std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
     pub allow_single_column: std::option::Option<bool>,
+}
+impl UpdateCsvClassifierRequest {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A custom symbol to denote what separates each column entry in the row.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>A custom symbol to denote what combines content into a single column value. It must be
+    /// different from the column delimiter.</p>
+    pub fn quote_symbol(&self) -> std::option::Option<&str> {
+        self.quote_symbol.as_deref()
+    }
+    /// <p>Indicates whether the CSV file contains a header.</p>
+    pub fn contains_header(&self) -> std::option::Option<&crate::model::CsvHeaderOption> {
+        self.contains_header.as_ref()
+    }
+    /// <p>A list of strings representing column names.</p>
+    pub fn header(&self) -> std::option::Option<&[std::string::String]> {
+        self.header.as_deref()
+    }
+    /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
+    pub fn disable_value_trimming(&self) -> std::option::Option<bool> {
+        self.disable_value_trimming
+    }
+    /// <p>Enables the processing of files that contain only one column.</p>
+    pub fn allow_single_column(&self) -> std::option::Option<bool> {
+        self.allow_single_column
+    }
 }
 impl std::fmt::Debug for UpdateCsvClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7984,6 +9234,17 @@ pub struct UpdateJsonClassifierRequest {
     /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub json_path: std::option::Option<std::string::String>,
 }
+impl UpdateJsonClassifierRequest {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
+    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    pub fn json_path(&self) -> std::option::Option<&str> {
+        self.json_path.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateJsonClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJsonClassifierRequest");
@@ -8054,6 +9315,24 @@ pub struct UpdateXmlClassifierRequest {
     /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
     /// <code><row item_a="A" item_b="B" /></code> is not).</p>
     pub row_tag: std::option::Option<std::string::String>,
+}
+impl UpdateXmlClassifierRequest {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An identifier of the data format that the classifier matches.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>The XML tag designating the element that contains each record in an XML document being
+    /// parsed. This cannot identify a self-closing element (closed by <code>/></code>). An empty
+    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
+    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
+    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    pub fn row_tag(&self) -> std::option::Option<&str> {
+        self.row_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateXmlClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8147,6 +9426,25 @@ pub struct UpdateGrokClassifierRequest {
     pub grok_pattern: std::option::Option<std::string::String>,
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub custom_patterns: std::option::Option<std::string::String>,
+}
+impl UpdateGrokClassifierRequest {
+    /// <p>The name of the <code>GrokClassifier</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
+    /// Amazon CloudWatch Logs, and so on.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>The grok pattern used by this classifier.</p>
+    pub fn grok_pattern(&self) -> std::option::Option<&str> {
+        self.grok_pattern.as_deref()
+    }
+    /// <p>Optional custom grok patterns used by this classifier.</p>
+    pub fn custom_patterns(&self) -> std::option::Option<&str> {
+        self.custom_patterns.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGrokClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8290,6 +9588,98 @@ pub struct Table {
     pub target_table: std::option::Option<crate::model::TableIdentifier>,
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+}
+impl Table {
+    /// <p>The table name. For Hive compatibility, this must be entirely
+    /// lowercase.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database where the table metadata resides.
+    /// For Hive compatibility, this must be all lowercase.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A description of the table.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The owner of the table.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The time when the table definition was created in the Data Catalog.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The last time that the table was updated.</p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+    /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
+    /// be reliable.</p>
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_access_time.as_ref()
+    }
+    /// <p>The last time that column statistics were computed for this table.</p>
+    pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_analyzed_time.as_ref()
+    }
+    /// <p>The retention time for this table.</p>
+    pub fn retention(&self) -> i32 {
+        self.retention
+    }
+    /// <p>A storage descriptor containing information about the physical storage
+    /// of this table.</p>
+    pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
+        self.storage_descriptor.as_ref()
+    }
+    /// <p>A list of columns by which the table is partitioned. Only primitive
+    /// types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any
+    /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
+    /// an empty list. For example:</p>
+    /// <p>
+    /// <code>"PartitionKeys": []</code>
+    /// </p>
+    pub fn partition_keys(&self) -> std::option::Option<&[crate::model::Column]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    pub fn view_original_text(&self) -> std::option::Option<&str> {
+        self.view_original_text.as_deref()
+    }
+    /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    pub fn view_expanded_text(&self) -> std::option::Option<&str> {
+        self.view_expanded_text.as_deref()
+    }
+    /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    pub fn table_type(&self) -> std::option::Option<&str> {
+        self.table_type.as_deref()
+    }
+    /// <p>These key-value pairs define properties associated with the table.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The person or entity who created the table.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>Indicates whether the table has been registered with Lake Formation.</p>
+    pub fn is_registered_with_lake_formation(&self) -> bool {
+        self.is_registered_with_lake_formation
+    }
+    /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
+    pub fn target_table(&self) -> std::option::Option<&crate::model::TableIdentifier> {
+        self.target_table.as_ref()
+    }
+    /// <p>The ID of the Data Catalog in which the table resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Table {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8713,6 +10103,16 @@ pub struct SortCriterion {
     /// <p>An ascending or descending sort.</p>
     pub sort: std::option::Option<crate::model::Sort>,
 }
+impl SortCriterion {
+    /// <p>The name of the field on which to sort.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>An ascending or descending sort.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
+        self.sort.as_ref()
+    }
+}
 impl std::fmt::Debug for SortCriterion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SortCriterion");
@@ -8832,6 +10232,20 @@ pub struct PropertyPredicate {
     pub value: std::option::Option<std::string::String>,
     /// <p>The comparator used to compare this property to others.</p>
     pub comparator: std::option::Option<crate::model::Comparator>,
+}
+impl PropertyPredicate {
+    /// <p>The key of the property.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the property.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The comparator used to compare this property to others.</p>
+    pub fn comparator(&self) -> std::option::Option<&crate::model::Comparator> {
+        self.comparator.as_ref()
+    }
 }
 impl std::fmt::Debug for PropertyPredicate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8995,6 +10409,36 @@ pub struct JobBookmarkEntry {
     /// <p>The bookmark itself.</p>
     pub job_bookmark: std::option::Option<std::string::String>,
 }
+impl JobBookmarkEntry {
+    /// <p>The name of the job in question.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The version of the job.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
+    /// <p>The run ID number.</p>
+    pub fn run(&self) -> i32 {
+        self.run
+    }
+    /// <p>The attempt ID number.</p>
+    pub fn attempt(&self) -> i32 {
+        self.attempt
+    }
+    /// <p>The unique run identifier associated with the previous job run.</p>
+    pub fn previous_run_id(&self) -> std::option::Option<&str> {
+        self.previous_run_id.as_deref()
+    }
+    /// <p>The run ID number.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The bookmark itself.</p>
+    pub fn job_bookmark(&self) -> std::option::Option<&str> {
+        self.job_bookmark.as_deref()
+    }
+}
 impl std::fmt::Debug for JobBookmarkEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobBookmarkEntry");
@@ -9125,6 +10569,16 @@ pub struct MetadataKeyValuePair {
     pub metadata_key: std::option::Option<std::string::String>,
     /// <p>A metadata key’s corresponding value.</p>
     pub metadata_value: std::option::Option<std::string::String>,
+}
+impl MetadataKeyValuePair {
+    /// <p>A metadata key.</p>
+    pub fn metadata_key(&self) -> std::option::Option<&str> {
+        self.metadata_key.as_deref()
+    }
+    /// <p>A metadata key’s corresponding value.</p>
+    pub fn metadata_value(&self) -> std::option::Option<&str> {
+        self.metadata_value.as_deref()
+    }
 }
 impl std::fmt::Debug for MetadataKeyValuePair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9258,6 +10712,22 @@ pub struct MetadataInfo {
     pub other_metadata_value_list:
         std::option::Option<std::vec::Vec<crate::model::OtherMetadataValueListItem>>,
 }
+impl MetadataInfo {
+    /// <p>The metadata key’s corresponding value.</p>
+    pub fn metadata_value(&self) -> std::option::Option<&str> {
+        self.metadata_value.as_deref()
+    }
+    /// <p>The time at which the entry was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>Other metadata belonging to the same metadata key.</p>
+    pub fn other_metadata_value_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::OtherMetadataValueListItem]> {
+        self.other_metadata_value_list.as_deref()
+    }
+}
 impl std::fmt::Debug for MetadataInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetadataInfo");
@@ -9349,6 +10819,16 @@ pub struct OtherMetadataValueListItem {
     pub metadata_value: std::option::Option<std::string::String>,
     /// <p>The time at which the entry was created.</p>
     pub created_time: std::option::Option<std::string::String>,
+}
+impl OtherMetadataValueListItem {
+    /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
+    pub fn metadata_value(&self) -> std::option::Option<&str> {
+        self.metadata_value.as_deref()
+    }
+    /// <p>The time at which the entry was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
 }
 impl std::fmt::Debug for OtherMetadataValueListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9535,6 +11015,22 @@ pub struct DataCatalogEncryptionSettings {
     pub connection_password_encryption:
         std::option::Option<crate::model::ConnectionPasswordEncryption>,
 }
+impl DataCatalogEncryptionSettings {
+    /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
+    pub fn encryption_at_rest(&self) -> std::option::Option<&crate::model::EncryptionAtRest> {
+        self.encryption_at_rest.as_ref()
+    }
+    /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided
+    /// key to encrypt the password as part of <code>CreateConnection</code> or
+    /// <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in
+    /// the connection properties. You can enable catalog encryption or only password
+    /// encryption.</p>
+    pub fn connection_password_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionPasswordEncryption> {
+        self.connection_password_encryption.as_ref()
+    }
+}
 impl std::fmt::Debug for DataCatalogEncryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataCatalogEncryptionSettings");
@@ -9636,6 +11132,22 @@ pub struct ConnectionPasswordEncryption {
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     pub aws_kms_key_id: std::option::Option<std::string::String>,
 }
+impl ConnectionPasswordEncryption {
+    /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
+    pub fn return_connection_password_encrypted(&self) -> bool {
+        self.return_connection_password_encrypted
+    }
+    /// <p>An KMS key that is used to encrypt the connection password. </p>
+    ///
+    /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
+    /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
+    /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
+    ///
+    /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
+    pub fn aws_kms_key_id(&self) -> std::option::Option<&str> {
+        self.aws_kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectionPasswordEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionPasswordEncryption");
@@ -9721,6 +11233,18 @@ pub struct EncryptionAtRest {
     pub catalog_encryption_mode: std::option::Option<crate::model::CatalogEncryptionMode>,
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
     pub sse_aws_kms_key_id: std::option::Option<std::string::String>,
+}
+impl EncryptionAtRest {
+    /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
+    pub fn catalog_encryption_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogEncryptionMode> {
+        self.catalog_encryption_mode.as_ref()
+    }
+    /// <p>The ID of the KMS key to use for encryption at rest.</p>
+    pub fn sse_aws_kms_key_id(&self) -> std::option::Option<&str> {
+        self.sse_aws_kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EncryptionAtRest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9856,6 +11380,28 @@ pub struct SchemaVersionListItem {
     /// <p>The date and time the schema version was created.</p>
     pub created_time: std::option::Option<std::string::String>,
 }
+impl SchemaVersionListItem {
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The unique identifier of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The status of the schema version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SchemaVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time the schema version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+}
 impl std::fmt::Debug for SchemaVersionListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SchemaVersionListItem");
@@ -9973,6 +11519,36 @@ pub struct SchemaListItem {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The date and time that a schema was updated.</p>
     pub updated_time: std::option::Option<std::string::String>,
+}
+impl SchemaListItem {
+    /// <p>the name of the registry where the schema resides.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>A description for the schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the schema.</p>
+    pub fn schema_status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
+        self.schema_status.as_ref()
+    }
+    /// <p>The date and time that a schema was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The date and time that a schema was updated.</p>
+    pub fn updated_time(&self) -> std::option::Option<&str> {
+        self.updated_time.as_deref()
+    }
 }
 impl std::fmt::Debug for SchemaListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10175,6 +11751,32 @@ pub struct RegistryListItem {
     /// <p>The date the registry was updated.</p>
     pub updated_time: std::option::Option<std::string::String>,
 }
+impl RegistryListItem {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>A description of the registry.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the registry.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RegistryStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The data the registry was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The date the registry was updated.</p>
+    pub fn updated_time(&self) -> std::option::Option<&str> {
+        self.updated_time.as_deref()
+    }
+}
 impl std::fmt::Debug for RegistryListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegistryListItem");
@@ -10352,6 +11954,18 @@ pub struct TransformSortCriteria {
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine
     /// learning transform.</p>
     pub sort_direction: std::option::Option<crate::model::SortDirectionType>,
+}
+impl TransformSortCriteria {
+    /// <p>The column to be used in the sorting criteria that are associated with the machine
+    /// learning transform.</p>
+    pub fn column(&self) -> std::option::Option<&crate::model::TransformSortColumnType> {
+        self.column.as_ref()
+    }
+    /// <p>The sort direction to be used in the sorting criteria that are associated with the machine
+    /// learning transform.</p>
+    pub fn sort_direction(&self) -> std::option::Option<&crate::model::SortDirectionType> {
+        self.sort_direction.as_ref()
+    }
 }
 impl std::fmt::Debug for TransformSortCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10572,6 +12186,48 @@ pub struct TransformFilterCriteria {
     /// such as an integer or string. Has an upper bound of 100 columns.</p>
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
 }
+impl TransformFilterCriteria {
+    /// <p>A unique transform name that is used to filter the machine learning transforms.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of machine learning transform that is used to filter the machine learning
+    /// transforms.</p>
+    pub fn transform_type(&self) -> std::option::Option<&crate::model::TransformType> {
+        self.transform_type.as_ref()
+    }
+    /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TransformStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The time and date before which the transforms were created.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The time and date after which the transforms were created.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>Filter on transforms last modified before this date.</p>
+    pub fn last_modified_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_before.as_ref()
+    }
+    /// <p>Filter on transforms last modified after this date.</p>
+    pub fn last_modified_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_after.as_ref()
+    }
+    /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
+    /// object is an array of key-value pairs representing the schema this transform accepts, where
+    /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
+    /// such as an integer or string. Has an upper bound of 100 columns.</p>
+    pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
+        self.schema.as_deref()
+    }
+}
 impl std::fmt::Debug for TransformFilterCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransformFilterCriteria");
@@ -10762,6 +12418,16 @@ pub struct SchemaColumn {
     /// <p>The type of data in the column.</p>
     pub data_type: std::option::Option<std::string::String>,
 }
+impl SchemaColumn {
+    /// <p>The name of the column.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of data in the column.</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+}
 impl std::fmt::Debug for SchemaColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SchemaColumn");
@@ -10904,6 +12570,58 @@ pub struct WorkflowRun {
     /// <p>The batch condition that started the workflow run.</p>
     pub starting_event_batch_condition:
         std::option::Option<crate::model::StartingEventBatchCondition>,
+}
+impl WorkflowRun {
+    /// <p>Name of the workflow that was run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of this workflow run.</p>
+    pub fn workflow_run_id(&self) -> std::option::Option<&str> {
+        self.workflow_run_id.as_deref()
+    }
+    /// <p>The ID of the previous workflow run.</p>
+    pub fn previous_run_id(&self) -> std::option::Option<&str> {
+        self.previous_run_id.as_deref()
+    }
+    /// <p>The workflow run properties which were set during the run.</p>
+    pub fn workflow_run_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.workflow_run_properties.as_ref()
+    }
+    /// <p>The date and time when the workflow run was started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>The date and time when the workflow run completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The status of the workflow run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::WorkflowRunStatus> {
+        self.status.as_ref()
+    }
+    /// <p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The statistics of the run.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::WorkflowRunStatistics> {
+        self.statistics.as_ref()
+    }
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
+    /// connections between them as edges.</p>
+    pub fn graph(&self) -> std::option::Option<&crate::model::WorkflowGraph> {
+        self.graph.as_ref()
+    }
+    /// <p>The batch condition that started the workflow run.</p>
+    pub fn starting_event_batch_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::StartingEventBatchCondition> {
+        self.starting_event_batch_condition.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkflowRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11140,6 +12858,16 @@ pub struct StartingEventBatchCondition {
     /// <p>Duration of the batch window in seconds.</p>
     pub batch_window: std::option::Option<i32>,
 }
+impl StartingEventBatchCondition {
+    /// <p>Number of events in the batch.</p>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>Duration of the batch window in seconds.</p>
+    pub fn batch_window(&self) -> std::option::Option<i32> {
+        self.batch_window
+    }
+}
 impl std::fmt::Debug for StartingEventBatchCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartingEventBatchCondition");
@@ -11203,6 +12931,16 @@ pub struct WorkflowGraph {
     pub nodes: std::option::Option<std::vec::Vec<crate::model::Node>>,
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
     pub edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
+}
+impl WorkflowGraph {
+    /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
+    pub fn nodes(&self) -> std::option::Option<&[crate::model::Node]> {
+        self.nodes.as_deref()
+    }
+    /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
+    pub fn edges(&self) -> std::option::Option<&[crate::model::Edge]> {
+        self.edges.as_deref()
+    }
 }
 impl std::fmt::Debug for WorkflowGraph {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11286,6 +13024,16 @@ pub struct Edge {
     /// <p>The unique of the node within the workflow where the edge ends.</p>
     pub destination_id: std::option::Option<std::string::String>,
 }
+impl Edge {
+    /// <p>The unique of the node within the workflow where the edge starts.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The unique of the node within the workflow where the edge ends.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Edge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Edge");
@@ -11359,6 +13107,32 @@ pub struct Node {
     pub job_details: std::option::Option<crate::model::JobNodeDetails>,
     /// <p>Details of the crawler when the node represents a crawler.</p>
     pub crawler_details: std::option::Option<crate::model::CrawlerNodeDetails>,
+}
+impl Node {
+    /// <p>The type of Glue component represented by the node.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NodeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the Glue component represented by the node.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique Id assigned to the node within the workflow.</p>
+    pub fn unique_id(&self) -> std::option::Option<&str> {
+        self.unique_id.as_deref()
+    }
+    /// <p>Details of the Trigger when the node represents a Trigger.</p>
+    pub fn trigger_details(&self) -> std::option::Option<&crate::model::TriggerNodeDetails> {
+        self.trigger_details.as_ref()
+    }
+    /// <p>Details of the Job when the node represents a Job.</p>
+    pub fn job_details(&self) -> std::option::Option<&crate::model::JobNodeDetails> {
+        self.job_details.as_ref()
+    }
+    /// <p>Details of the crawler when the node represents a crawler.</p>
+    pub fn crawler_details(&self) -> std::option::Option<&crate::model::CrawlerNodeDetails> {
+        self.crawler_details.as_ref()
+    }
 }
 impl std::fmt::Debug for Node {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11482,6 +13256,12 @@ pub struct CrawlerNodeDetails {
     /// <p>A list of crawls represented by the crawl node.</p>
     pub crawls: std::option::Option<std::vec::Vec<crate::model::Crawl>>,
 }
+impl CrawlerNodeDetails {
+    /// <p>A list of crawls represented by the crawl node.</p>
+    pub fn crawls(&self) -> std::option::Option<&[crate::model::Crawl]> {
+        self.crawls.as_deref()
+    }
+}
 impl std::fmt::Debug for CrawlerNodeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CrawlerNodeDetails");
@@ -11548,6 +13328,32 @@ pub struct Crawl {
     pub log_group: std::option::Option<std::string::String>,
     /// <p>The log stream associated with the crawl.</p>
     pub log_stream: std::option::Option<std::string::String>,
+}
+impl Crawl {
+    /// <p>The state of the crawler.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CrawlState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time on which the crawl started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>The date and time on which the crawl completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The error message associated with the crawl.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The log group associated with the crawl.</p>
+    pub fn log_group(&self) -> std::option::Option<&str> {
+        self.log_group.as_deref()
+    }
+    /// <p>The log stream associated with the crawl.</p>
+    pub fn log_stream(&self) -> std::option::Option<&str> {
+        self.log_stream.as_deref()
+    }
 }
 impl std::fmt::Debug for Crawl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11670,6 +13476,12 @@ impl Crawl {
 pub struct JobNodeDetails {
     /// <p>The information for the job runs represented by the job node.</p>
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
+}
+impl JobNodeDetails {
+    /// <p>The information for the job runs represented by the job node.</p>
+    pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRun]> {
+        self.job_runs.as_deref()
+    }
 }
 impl std::fmt::Debug for JobNodeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11823,6 +13635,154 @@ pub struct JobRun {
     ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
+}
+impl JobRun {
+    /// <p>The ID of this job run.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The number of the attempt to run this job.</p>
+    pub fn attempt(&self) -> i32 {
+        self.attempt
+    }
+    /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified
+    /// in the <code>StartJobRun</code> action.</p>
+    pub fn previous_run_id(&self) -> std::option::Option<&str> {
+        self.previous_run_id.as_deref()
+    }
+    /// <p>The name of the trigger that started this job run.</p>
+    pub fn trigger_name(&self) -> std::option::Option<&str> {
+        self.trigger_name.as_deref()
+    }
+    /// <p>The name of the job definition being used in this run.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The date and time at which this job run was started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>The last time that this job run was modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>The date and time that this job run completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The current state of the job run. For more information about the statuses of jobs that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job Run Statuses</a>.</p>
+    pub fn job_run_state(&self) -> std::option::Option<&crate::model::JobRunState> {
+        self.job_run_state.as_ref()
+    }
+    /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
+    /// <p>You can specify arguments here that your own job-execution script
+    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+    /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    pub fn arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.arguments.as_ref()
+    }
+    /// <p>An error message associated with this job run.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>A list of predecessors to this job run.</p>
+    pub fn predecessor_runs(&self) -> std::option::Option<&[crate::model::Predecessor]> {
+        self.predecessor_runs.as_deref()
+    }
+    /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
+    /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
+    /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
+    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+    /// pricing page</a>.</p>
+    pub fn allocated_capacity(&self) -> i32 {
+        self.allocated_capacity
+    }
+    /// <p>The amount of time (in seconds) that the job run consumed resources.</p>
+    pub fn execution_time(&self) -> i32 {
+        self.execution_time
+    }
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
+    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
+    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+    /// pricing page</a>.</p>
+    ///
+    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    ///
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+    /// running a Python shell job or an Apache Spark ETL job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+    /// </li>
+    /// <li>
+    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+    /// </li>
+    /// </ul>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
+    /// run.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon
+    /// CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the
+    /// default encryption is <code>NONE</code>. If you add a role name and
+    /// <code>SecurityConfiguration</code> name (in other words,
+    /// <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security
+    /// configuration is used to encrypt the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>Specifies configuration properties of a job run notification.</p>
+    pub fn notification_property(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationProperty> {
+        self.notification_property.as_ref()
+    }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+    ///
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
+    /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
 }
 impl std::fmt::Debug for JobRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12310,6 +14270,16 @@ pub struct Predecessor {
     /// <p>The job-run ID of the predecessor job run.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl Predecessor {
+    /// <p>The name of the job definition used by the predecessor job run.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job-run ID of the predecessor job run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Predecessor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Predecessor");
@@ -12370,6 +14340,12 @@ impl Predecessor {
 pub struct TriggerNodeDetails {
     /// <p>The information of the trigger represented by the trigger node.</p>
     pub trigger: std::option::Option<crate::model::Trigger>,
+}
+impl TriggerNodeDetails {
+    /// <p>The information of the trigger represented by the trigger node.</p>
+    pub fn trigger(&self) -> std::option::Option<&crate::model::Trigger> {
+        self.trigger.as_ref()
+    }
 }
 impl std::fmt::Debug for TriggerNodeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12487,6 +14463,32 @@ pub struct WorkflowRunStatistics {
     pub succeeded_actions: i32,
     /// <p>Total number Actions in running state.</p>
     pub running_actions: i32,
+}
+impl WorkflowRunStatistics {
+    /// <p>Total number of Actions in the workflow run.</p>
+    pub fn total_actions(&self) -> i32 {
+        self.total_actions
+    }
+    /// <p>Total number of Actions that timed out.</p>
+    pub fn timeout_actions(&self) -> i32 {
+        self.timeout_actions
+    }
+    /// <p>Total number of Actions that have failed.</p>
+    pub fn failed_actions(&self) -> i32 {
+        self.failed_actions
+    }
+    /// <p>Total number of Actions that have stopped.</p>
+    pub fn stopped_actions(&self) -> i32 {
+        self.stopped_actions
+    }
+    /// <p>Total number of Actions that have succeeded.</p>
+    pub fn succeeded_actions(&self) -> i32 {
+        self.succeeded_actions
+    }
+    /// <p>Total number Actions in running state.</p>
+    pub fn running_actions(&self) -> i32 {
+        self.running_actions
+    }
 }
 impl std::fmt::Debug for WorkflowRunStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12690,6 +14692,50 @@ pub struct Workflow {
     /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
     pub blueprint_details: std::option::Option<crate::model::BlueprintDetails>,
 }
+impl Workflow {
+    /// <p>The name of the workflow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the workflow.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A collection of properties to be used as part of each execution of the workflow.
+    /// The run properties are made available to each job in the workflow. A job can modify
+    /// the properties for the next jobs in the flow.</p>
+    pub fn default_run_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_run_properties.as_ref()
+    }
+    /// <p>The date and time when the workflow was created.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_on.as_ref()
+    }
+    /// <p>The date and time when the workflow was last modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>The information about the last execution of the workflow.</p>
+    pub fn last_run(&self) -> std::option::Option<&crate::model::WorkflowRun> {
+        self.last_run.as_ref()
+    }
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
+    /// connections between them as edges.</p>
+    pub fn graph(&self) -> std::option::Option<&crate::model::WorkflowGraph> {
+        self.graph.as_ref()
+    }
+    /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    pub fn max_concurrent_runs(&self) -> std::option::Option<i32> {
+        self.max_concurrent_runs
+    }
+    /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
+    pub fn blueprint_details(&self) -> std::option::Option<&crate::model::BlueprintDetails> {
+        self.blueprint_details.as_ref()
+    }
+}
 impl std::fmt::Debug for Workflow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Workflow");
@@ -12882,6 +14928,16 @@ pub struct BlueprintDetails {
     /// <p>The run ID for this blueprint.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl BlueprintDetails {
+    /// <p>The name of the blueprint.</p>
+    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+        self.blueprint_name.as_deref()
+    }
+    /// <p>The run ID for this blueprint.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BlueprintDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BlueprintDetails");
@@ -12960,6 +15016,40 @@ pub struct UserDefinedFunction {
     pub resource_uris: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+}
+impl UserDefinedFunction {
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The name of the catalog database that contains the function.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The Java class that contains the function code.</p>
+    pub fn class_name(&self) -> std::option::Option<&str> {
+        self.class_name.as_deref()
+    }
+    /// <p>The owner of the function.</p>
+    pub fn owner_name(&self) -> std::option::Option<&str> {
+        self.owner_name.as_deref()
+    }
+    /// <p>The owner type.</p>
+    pub fn owner_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.owner_type.as_ref()
+    }
+    /// <p>The time at which the function was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The resource URIs for the function.</p>
+    pub fn resource_uris(&self) -> std::option::Option<&[crate::model::ResourceUri]> {
+        self.resource_uris.as_deref()
+    }
+    /// <p>The ID of the Data Catalog in which the function resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UserDefinedFunction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13123,6 +15213,16 @@ pub struct TableVersion {
     /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
+impl TableVersion {
+    /// <p>The table in question.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::Table> {
+        self.table.as_ref()
+    }
+    /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for TableVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TableVersion");
@@ -13187,6 +15287,22 @@ pub struct SecurityConfiguration {
     pub created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The encryption configuration associated with this security configuration.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+}
+impl SecurityConfiguration {
+    /// <p>The name of the security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time at which this security configuration was created.</p>
+    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time_stamp.as_ref()
+    }
+    /// <p>The encryption configuration associated with this security configuration.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for SecurityConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13275,6 +15391,24 @@ pub struct EncryptionConfiguration {
     pub cloud_watch_encryption: std::option::Option<crate::model::CloudWatchEncryption>,
     /// <p>The encryption configuration for job bookmarks.</p>
     pub job_bookmarks_encryption: std::option::Option<crate::model::JobBookmarksEncryption>,
+}
+impl EncryptionConfiguration {
+    /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
+    pub fn s3_encryption(&self) -> std::option::Option<&[crate::model::S3Encryption]> {
+        self.s3_encryption.as_deref()
+    }
+    /// <p>The encryption configuration for Amazon CloudWatch.</p>
+    pub fn cloud_watch_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchEncryption> {
+        self.cloud_watch_encryption.as_ref()
+    }
+    /// <p>The encryption configuration for job bookmarks.</p>
+    pub fn job_bookmarks_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::JobBookmarksEncryption> {
+        self.job_bookmarks_encryption.as_ref()
+    }
 }
 impl std::fmt::Debug for EncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13371,6 +15505,18 @@ pub struct JobBookmarksEncryption {
         std::option::Option<crate::model::JobBookmarksEncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl JobBookmarksEncryption {
+    /// <p>The encryption mode to use for job bookmarks data.</p>
+    pub fn job_bookmarks_encryption_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::JobBookmarksEncryptionMode> {
+        self.job_bookmarks_encryption_mode.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for JobBookmarksEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13500,6 +15646,18 @@ pub struct CloudWatchEncryption {
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
+impl CloudWatchEncryption {
+    /// <p>The encryption mode to use for CloudWatch data.</p>
+    pub fn cloud_watch_encryption_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchEncryptionMode> {
+        self.cloud_watch_encryption_mode.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchEncryption");
@@ -13627,6 +15785,16 @@ pub struct S3Encryption {
     pub s3_encryption_mode: std::option::Option<crate::model::S3EncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3Encryption {
+    /// <p>The encryption mode to use for Amazon S3 data.</p>
+    pub fn s3_encryption_mode(&self) -> std::option::Option<&crate::model::S3EncryptionMode> {
+        self.s3_encryption_mode.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Encryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13863,6 +16031,24 @@ pub struct GluePolicy {
     /// <p>The date and time at which the policy was last updated.</p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GluePolicy {
+    /// <p>Contains the requested policy document, in JSON format.</p>
+    pub fn policy_in_json(&self) -> std::option::Option<&str> {
+        self.policy_in_json.as_deref()
+    }
+    /// <p>Contains the hash value associated with this policy.</p>
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
+        self.policy_hash.as_deref()
+    }
+    /// <p>The date and time at which the policy was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The date and time at which the policy was last updated.</p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GluePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GluePolicy");
@@ -14018,6 +16204,20 @@ pub struct Location {
     /// <p>An Amazon DynamoDB table location.</p>
     pub dynamo_db: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
 }
+impl Location {
+    /// <p>A JDBC location.</p>
+    pub fn jdbc(&self) -> std::option::Option<&[crate::model::CodeGenNodeArg]> {
+        self.jdbc.as_deref()
+    }
+    /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
+    pub fn s3(&self) -> std::option::Option<&[crate::model::CodeGenNodeArg]> {
+        self.s3.as_deref()
+    }
+    /// <p>An Amazon DynamoDB table location.</p>
+    pub fn dynamo_db(&self) -> std::option::Option<&[crate::model::CodeGenNodeArg]> {
+        self.dynamo_db.as_deref()
+    }
+}
 impl std::fmt::Debug for Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Location");
@@ -14123,6 +16323,20 @@ pub struct CodeGenNodeArg {
     /// <p>True if the value is used as a parameter.</p>
     pub param: bool,
 }
+impl CodeGenNodeArg {
+    /// <p>The name of the argument or property.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the argument or property.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>True if the value is used as a parameter.</p>
+    pub fn param(&self) -> bool {
+        self.param
+    }
+}
 impl std::fmt::Debug for CodeGenNodeArg {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeGenNodeArg");
@@ -14199,6 +16413,16 @@ pub struct CatalogEntry {
     /// <p>The name of the table in question.</p>
     pub table_name: std::option::Option<std::string::String>,
 }
+impl CatalogEntry {
+    /// <p>The database in which the table metadata resides.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table in question.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CatalogEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CatalogEntry");
@@ -14272,6 +16496,32 @@ pub struct MappingEntry {
     pub target_path: std::option::Option<std::string::String>,
     /// <p>The target type.</p>
     pub target_type: std::option::Option<std::string::String>,
+}
+impl MappingEntry {
+    /// <p>The name of the source table.</p>
+    pub fn source_table(&self) -> std::option::Option<&str> {
+        self.source_table.as_deref()
+    }
+    /// <p>The source path.</p>
+    pub fn source_path(&self) -> std::option::Option<&str> {
+        self.source_path.as_deref()
+    }
+    /// <p>The source type.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>The target table.</p>
+    pub fn target_table(&self) -> std::option::Option<&str> {
+        self.target_table.as_deref()
+    }
+    /// <p>The target path.</p>
+    pub fn target_path(&self) -> std::option::Option<&str> {
+        self.target_path.as_deref()
+    }
+    /// <p>The target type.</p>
+    pub fn target_type(&self) -> std::option::Option<&str> {
+        self.target_type.as_deref()
+    }
 }
 impl std::fmt::Debug for MappingEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14404,6 +16654,49 @@ pub struct Partition {
     pub last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+}
+impl Partition {
+    /// <p>The values of the partition.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The name of the catalog database in which to create the partition.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the database table in which to create the partition.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The time at which the partition was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time at which the partition was accessed.</p>
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_access_time.as_ref()
+    }
+    /// <p>Provides information about the physical
+    /// location where the partition is stored.</p>
+    pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
+        self.storage_descriptor.as_ref()
+    }
+    /// <p>These key-value pairs define partition parameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The last time at which column statistics were computed for this
+    /// partition.</p>
+    pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_analyzed_time.as_ref()
+    }
+    /// <p>The ID of the Data Catalog in which the partition resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Partition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14606,6 +16899,17 @@ pub struct Segment {
     /// <p>The total number of segments.</p>
     pub total_segments: i32,
 }
+impl Segment {
+    /// <p>The zero-based index number of the segment. For example, if the total number of segments
+    /// is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+    pub fn segment_number(&self) -> i32 {
+        self.segment_number
+    }
+    /// <p>The total number of segments.</p>
+    pub fn total_segments(&self) -> i32 {
+        self.total_segments
+    }
+}
 impl std::fmt::Debug for Segment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Segment");
@@ -14690,6 +16994,40 @@ pub struct PartitionIndexDescriptor {
     pub index_status: std::option::Option<crate::model::PartitionIndexStatus>,
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
     pub backfill_errors: std::option::Option<std::vec::Vec<crate::model::BackfillError>>,
+}
+impl PartitionIndexDescriptor {
+    /// <p>The name of the partition index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
+    /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
+    pub fn keys(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.keys.as_deref()
+    }
+    /// <p>The status of the partition index. </p>
+    ///
+    /// <p>The possible statuses are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>ACTIVE: The index creation succeeds.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED: The index creation fails. </p>
+    /// </li>
+    /// <li>
+    /// <p>DELETING: The index is deleted from the list of indexes.</p>
+    /// </li>
+    /// </ul>
+    pub fn index_status(&self) -> std::option::Option<&crate::model::PartitionIndexStatus> {
+        self.index_status.as_ref()
+    }
+    /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
+    pub fn backfill_errors(&self) -> std::option::Option<&[crate::model::BackfillError]> {
+        self.backfill_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for PartitionIndexDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14853,6 +17191,16 @@ pub struct BackfillError {
     /// <p>A list of a limited number of partitions in the response.</p>
     pub partitions: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
+impl BackfillError {
+    /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::BackfillErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>A list of a limited number of partitions in the response.</p>
+    pub fn partitions(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
+        self.partitions.as_deref()
+    }
+}
 impl std::fmt::Debug for BackfillError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackfillError");
@@ -14925,6 +17273,12 @@ impl BackfillError {
 pub struct PartitionValueList {
     /// <p>The list of values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PartitionValueList {
+    /// <p>The list of values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for PartitionValueList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15125,6 +17479,16 @@ pub struct KeySchemaElement {
     /// <p>The type of a partition key.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
+impl KeySchemaElement {
+    /// <p>The name of a partition key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of a partition key.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for KeySchemaElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeySchemaElement");
@@ -15291,6 +17655,154 @@ pub struct MlTransform {
     pub max_retries: std::option::Option<i32>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
+}
+impl MlTransform {
+    /// <p>The unique transform ID that is generated for the machine learning transform. The ID is
+    /// guaranteed to be unique and does not change.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique
+    /// and can be changed at any time.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A user-defined, long-form description text for the machine learning transform.
+    /// Descriptions are not guaranteed to be unique and can be changed at any time.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the machine learning transform.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TransformStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp. The time and date that this machine learning transform was created.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_on.as_ref()
+    }
+    /// <p>A timestamp. The last point in time when this machine learning transform was modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>A list of Glue table definitions used by the transform.</p>
+    pub fn input_record_tables(&self) -> std::option::Option<&[crate::model::GlueTable]> {
+        self.input_record_tables.as_deref()
+    }
+    /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the
+    /// behavior of the machine learning transform by specifying what data it learns from and your
+    /// preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::TransformParameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>An <code>EvaluationMetrics</code> object. Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
+    pub fn evaluation_metrics(&self) -> std::option::Option<&crate::model::EvaluationMetrics> {
+        self.evaluation_metrics.as_ref()
+    }
+    /// <p>A count identifier for the labeling files generated by Glue for this transform. As you create a better transform, you can iteratively download, label, and upload the labeling file.</p>
+    pub fn label_count(&self) -> i32 {
+        self.label_count
+    }
+    /// <p>A map of key-value pairs representing the columns and data types that this transform can
+    /// run against. Has an upper bound of 100 columns.</p>
+    pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
+        self.schema.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
+    /// </li>
+    /// </ul>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
+    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+    /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
+    /// page</a>. </p>
+    ///
+    /// <p>
+    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
+    ///
+    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout in minutes of the machine learning transform.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine
+    /// learning transform fails.</p>
+    pub fn max_retries(&self) -> std::option::Option<i32> {
+        self.max_retries
+    }
+    /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    pub fn transform_encryption(&self) -> std::option::Option<&crate::model::TransformEncryption> {
+        self.transform_encryption.as_ref()
+    }
 }
 impl std::fmt::Debug for MlTransform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15757,6 +18269,18 @@ pub struct TransformEncryption {
     /// <p>The name of the security configuration.</p>
     pub task_run_security_configuration_name: std::option::Option<std::string::String>,
 }
+impl TransformEncryption {
+    /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
+    pub fn ml_user_data_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::MlUserDataEncryption> {
+        self.ml_user_data_encryption.as_ref()
+    }
+    /// <p>The name of the security configuration.</p>
+    pub fn task_run_security_configuration_name(&self) -> std::option::Option<&str> {
+        self.task_run_security_configuration_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TransformEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransformEncryption");
@@ -15844,6 +18368,27 @@ pub struct MlUserDataEncryption {
         std::option::Option<crate::model::MlUserDataEncryptionModeString>,
     /// <p>The ID for the customer-provided KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl MlUserDataEncryption {
+    /// <p>The encryption mode applied to user data. Valid values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>DISABLED: encryption is disabled</p>
+    /// </li>
+    /// <li>
+    /// <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn ml_user_data_encryption_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::MlUserDataEncryptionModeString> {
+        self.ml_user_data_encryption_mode.as_ref()
+    }
+    /// <p>The ID for the customer-provided KMS key.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MlUserDataEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15991,6 +18536,16 @@ pub struct EvaluationMetrics {
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub find_matches_metrics: std::option::Option<crate::model::FindMatchesMetrics>,
 }
+impl EvaluationMetrics {
+    /// <p>The type of machine learning transform.</p>
+    pub fn transform_type(&self) -> std::option::Option<&crate::model::TransformType> {
+        self.transform_type.as_ref()
+    }
+    /// <p>The evaluation metrics for the find matches algorithm.</p>
+    pub fn find_matches_metrics(&self) -> std::option::Option<&crate::model::FindMatchesMetrics> {
+        self.find_matches_metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for EvaluationMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluationMetrics");
@@ -16079,6 +18634,41 @@ pub struct FindMatchesMetrics {
     pub confusion_matrix: std::option::Option<crate::model::ConfusionMatrix>,
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
     pub column_importances: std::option::Option<std::vec::Vec<crate::model::ColumnImportance>>,
+}
+impl FindMatchesMetrics {
+    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall
+    /// quality of the transform, that is independent of the choice made for precision vs. recall.
+    /// Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+    /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+    pub fn area_under_pr_curve(&self) -> std::option::Option<f64> {
+        self.area_under_pr_curve
+    }
+    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
+    /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+    pub fn precision(&self) -> std::option::Option<f64> {
+        self.precision
+    }
+    /// <p>The recall metric indicates that for an actual match, how often your transform predicts
+    /// the match. Specifically, it measures how well the transform finds true positives from the
+    /// total records in the source data.</p>
+    /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+    pub fn recall(&self) -> std::option::Option<f64> {
+        self.recall
+    }
+    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
+    /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
+    pub fn f1(&self) -> std::option::Option<f64> {
+        self.f1
+    }
+    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
+    /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
+    pub fn confusion_matrix(&self) -> std::option::Option<&crate::model::ConfusionMatrix> {
+        self.confusion_matrix.as_ref()
+    }
+    /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
+    pub fn column_importances(&self) -> std::option::Option<&[crate::model::ColumnImportance]> {
+        self.column_importances.as_deref()
+    }
 }
 impl std::fmt::Debug for FindMatchesMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16231,6 +18821,16 @@ pub struct ColumnImportance {
     /// <p>The column importance score for the column, as a decimal.</p>
     pub importance: std::option::Option<f64>,
 }
+impl ColumnImportance {
+    /// <p>The name of a column.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>The column importance score for the column, as a decimal.</p>
+    pub fn importance(&self) -> std::option::Option<f64> {
+        self.importance
+    }
+}
 impl std::fmt::Debug for ColumnImportance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnImportance");
@@ -16301,6 +18901,26 @@ pub struct ConfusionMatrix {
     pub num_true_negatives: std::option::Option<i64>,
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
     pub num_false_negatives: std::option::Option<i64>,
+}
+impl ConfusionMatrix {
+    /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
+    pub fn num_true_positives(&self) -> std::option::Option<i64> {
+        self.num_true_positives
+    }
+    /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match,
+    /// in the confusion matrix for your transform.</p>
+    pub fn num_false_positives(&self) -> std::option::Option<i64> {
+        self.num_false_positives
+    }
+    /// <p>The number of nonmatches in the data that the transform correctly rejected, in the
+    /// confusion matrix for your transform.</p>
+    pub fn num_true_negatives(&self) -> std::option::Option<i64> {
+        self.num_true_negatives
+    }
+    /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
+    pub fn num_false_negatives(&self) -> std::option::Option<i64> {
+        self.num_false_negatives
+    }
 }
 impl std::fmt::Debug for ConfusionMatrix {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16398,6 +19018,24 @@ pub struct GlueTable {
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection to the Glue Data Catalog.</p>
     pub connection_name: std::option::Option<std::string::String>,
+}
+impl GlueTable {
+    /// <p>A database name in the Glue Data Catalog.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A table name in the Glue Data Catalog.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A unique identifier for the Glue Data Catalog.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The name of the connection to the Glue Data Catalog.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GlueTable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16509,6 +19147,48 @@ pub struct TaskRun {
     pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
     pub execution_time: i32,
+}
+impl TaskRun {
+    /// <p>The unique identifier for the transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The unique identifier for this task run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
+    /// <p>The current status of the requested task run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The names of the log group for secure logging, associated with this task run.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>Specifies configuration properties associated with this task run.</p>
+    pub fn properties(&self) -> std::option::Option<&crate::model::TaskRunProperties> {
+        self.properties.as_ref()
+    }
+    /// <p>The list of error strings associated with this task run.</p>
+    pub fn error_string(&self) -> std::option::Option<&str> {
+        self.error_string.as_deref()
+    }
+    /// <p>The date and time that this task run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>The last point in time that the requested task run was updated.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>The last point in time that the requested task run was completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
+    pub fn execution_time(&self) -> i32 {
+        self.execution_time
+    }
 }
 impl std::fmt::Debug for TaskRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16705,6 +19385,36 @@ pub struct TaskRunProperties {
     pub find_matches_task_run_properties:
         std::option::Option<crate::model::FindMatchesTaskRunProperties>,
 }
+impl TaskRunProperties {
+    /// <p>The type of task run.</p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::TaskType> {
+        self.task_type.as_ref()
+    }
+    /// <p>The configuration properties for an importing labels task run.</p>
+    pub fn import_labels_task_run_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportLabelsTaskRunProperties> {
+        self.import_labels_task_run_properties.as_ref()
+    }
+    /// <p>The configuration properties for an exporting labels task run.</p>
+    pub fn export_labels_task_run_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportLabelsTaskRunProperties> {
+        self.export_labels_task_run_properties.as_ref()
+    }
+    /// <p>The configuration properties for a labeling set generation task run.</p>
+    pub fn labeling_set_generation_task_run_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelingSetGenerationTaskRunProperties> {
+        self.labeling_set_generation_task_run_properties.as_ref()
+    }
+    /// <p>The configuration properties for a find matches task run.</p>
+    pub fn find_matches_task_run_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::FindMatchesTaskRunProperties> {
+        self.find_matches_task_run_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for TaskRunProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskRunProperties");
@@ -16850,6 +19560,20 @@ pub struct FindMatchesTaskRunProperties {
     /// <p>The job run ID for the Find Matches task run.</p>
     pub job_run_id: std::option::Option<std::string::String>,
 }
+impl FindMatchesTaskRunProperties {
+    /// <p>The job ID for the Find Matches task run.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name assigned to the job for the Find Matches task run.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job run ID for the Find Matches task run.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for FindMatchesTaskRunProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FindMatchesTaskRunProperties");
@@ -16925,6 +19649,13 @@ pub struct LabelingSetGenerationTaskRunProperties {
     /// set.</p>
     pub output_s3_path: std::option::Option<std::string::String>,
 }
+impl LabelingSetGenerationTaskRunProperties {
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling
+    /// set.</p>
+    pub fn output_s3_path(&self) -> std::option::Option<&str> {
+        self.output_s3_path.as_deref()
+    }
+}
 impl std::fmt::Debug for LabelingSetGenerationTaskRunProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelingSetGenerationTaskRunProperties");
@@ -16978,6 +19709,13 @@ pub struct ExportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
     /// labels.</p>
     pub output_s3_path: std::option::Option<std::string::String>,
+}
+impl ExportLabelsTaskRunProperties {
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
+    /// labels.</p>
+    pub fn output_s3_path(&self) -> std::option::Option<&str> {
+        self.output_s3_path.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportLabelsTaskRunProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17034,6 +19772,17 @@ pub struct ImportLabelsTaskRunProperties {
     pub input_s3_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub replace: bool,
+}
+impl ImportLabelsTaskRunProperties {
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the
+    /// labels.</p>
+    pub fn input_s3_path(&self) -> std::option::Option<&str> {
+        self.input_s3_path.as_deref()
+    }
+    /// <p>Indicates whether to overwrite your existing labels.</p>
+    pub fn replace(&self) -> bool {
+        self.replace
+    }
 }
 impl std::fmt::Debug for ImportLabelsTaskRunProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17262,6 +20011,18 @@ pub struct TaskRunSortCriteria {
     /// transform.</p>
     pub sort_direction: std::option::Option<crate::model::SortDirectionType>,
 }
+impl TaskRunSortCriteria {
+    /// <p>The column to be used to sort the list of task runs for the machine learning
+    /// transform.</p>
+    pub fn column(&self) -> std::option::Option<&crate::model::TaskRunSortColumnType> {
+        self.column.as_ref()
+    }
+    /// <p>The sort direction to be used to sort the list of task runs for the machine learning
+    /// transform.</p>
+    pub fn sort_direction(&self) -> std::option::Option<&crate::model::SortDirectionType> {
+        self.sort_direction.as_ref()
+    }
+}
 impl std::fmt::Debug for TaskRunSortCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskRunSortCriteria");
@@ -17398,6 +20159,24 @@ pub struct TaskRunFilterCriteria {
     pub started_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filter on task runs started after this date.</p>
     pub started_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TaskRunFilterCriteria {
+    /// <p>The type of task run.</p>
+    pub fn task_run_type(&self) -> std::option::Option<&crate::model::TaskType> {
+        self.task_run_type.as_ref()
+    }
+    /// <p>The current status of the task run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>Filter on task runs started before this date.</p>
+    pub fn started_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_before.as_ref()
+    }
+    /// <p>Filter on task runs started after this date.</p>
+    pub fn started_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_after.as_ref()
+    }
 }
 impl std::fmt::Debug for TaskRunFilterCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17590,6 +20369,149 @@ pub struct Job {
     ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
+}
+impl Job {
+    /// <p>The name you assign to this job definition.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>This field is reserved for future use.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The time and date that this job definition was created.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_on.as_ref()
+    }
+    /// <p>The last point in time when this job definition was modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
+    /// for this job.</p>
+    pub fn execution_property(&self) -> std::option::Option<&crate::model::ExecutionProperty> {
+        self.execution_property.as_ref()
+    }
+    /// <p>The <code>JobCommand</code> that runs this job.</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::JobCommand> {
+        self.command.as_ref()
+    }
+    /// <p>The default arguments for this job, specified as name-value pairs.</p>
+    /// <p>You can specify arguments here that your own job-execution script
+    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+    /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    pub fn default_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_arguments.as_ref()
+    }
+    /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+    pub fn non_overridable_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.non_overridable_arguments.as_ref()
+    }
+    /// <p>The connections used for this job.</p>
+    pub fn connections(&self) -> std::option::Option<&crate::model::ConnectionsList> {
+        self.connections.as_ref()
+    }
+    /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
+    /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
+    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
+    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+    /// page</a>.</p>
+    /// <p></p>
+    pub fn allocated_capacity(&self) -> i32 {
+        self.allocated_capacity
+    }
+    /// <p>The job timeout in minutes.  This is the maximum time that a job run
+    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
+    /// status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+    /// pricing page</a>.</p>
+    ///
+    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    ///
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+    /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
+    /// job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+    /// </li>
+    /// <li>
+    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
+    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+    /// job.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>Specifies configuration properties of a job notification.</p>
+    pub fn notification_property(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationProperty> {
+        self.notification_property.as_ref()
+    }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+    ///
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
+    /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18157,6 +21079,172 @@ pub struct DevEndpoint {
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DevEndpoint {
+    /// <p>The name of the <code>DevEndpoint</code>.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used in this
+    /// <code>DevEndpoint</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
+    pub fn yarn_endpoint_address(&self) -> std::option::Option<&str> {
+        self.yarn_endpoint_address.as_deref()
+    }
+    /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the
+    /// <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is
+    /// present only when you create the <code>DevEndpoint</code> within your VPC.</p>
+    pub fn private_address(&self) -> std::option::Option<&str> {
+        self.private_address.as_deref()
+    }
+    /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+    pub fn zeppelin_remote_spark_interpreter_port(&self) -> i32 {
+        self.zeppelin_remote_spark_interpreter_port
+    }
+    /// <p>The public IP address used by this <code>DevEndpoint</code>. The
+    /// <code>PublicAddress</code> field is present only when you create a non-virtual private cloud
+    /// (VPC) <code>DevEndpoint</code>.</p>
+    pub fn public_address(&self) -> std::option::Option<&str> {
+        self.public_address.as_deref()
+    }
+    /// <p>The current status of this <code>DevEndpoint</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
+    /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    ///
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
+    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
+    ///
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    ///
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this
+    /// <code>DevEndpoint</code>.</p>
+    pub fn number_of_nodes(&self) -> i32 {
+        self.number_of_nodes
+    }
+    /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
+    /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
+    /// comma.</p>
+    ///
+    /// <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
+    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
+    /// analysis library, are not currently supported.</p>
+    /// </note>
+    pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_python_libs_s3_path.as_deref()
+    }
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
+    /// in your <code>DevEndpoint</code>.</p>
+    /// <note>
+    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
+    /// </note>
+    pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_jars_s3_path.as_deref()
+    }
+    /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The status of the last update.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&str> {
+        self.last_update_status.as_deref()
+    }
+    /// <p>The point in time at which this DevEndpoint was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_timestamp.as_ref()
+    }
+    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
+    /// attribute is provided for backward compatibility because the recommended attribute to use is
+    /// public keys.</p>
+    pub fn public_key(&self) -> std::option::Option<&str> {
+        self.public_key.as_deref()
+    }
+    /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
+    /// Using this attribute is preferred over a single public key because the public keys allow you
+    /// to have a different private key per client.</p>
+    /// <note>
+    /// <p>If you previously created an endpoint with a public key, you must remove that key to be
+    /// able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation
+    /// with the public key content in the <code>deletePublicKeys</code> attribute, and the list of
+    /// new keys in the <code>addPublicKeys</code> attribute.</p>
+    /// </note>
+    pub fn public_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.public_keys.as_deref()
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+    /// <code>DevEndpoint</code>.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>"--enable-glue-datacatalog": ""</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.arguments.as_ref()
+    }
 }
 impl std::fmt::Debug for DevEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18726,6 +21814,20 @@ pub struct CodeGenEdge {
     /// <p>The target of the edge.</p>
     pub target_parameter: std::option::Option<std::string::String>,
 }
+impl CodeGenEdge {
+    /// <p>The ID of the node at which the edge starts.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The ID of the node at which the edge ends.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The target of the edge.</p>
+    pub fn target_parameter(&self) -> std::option::Option<&str> {
+        self.target_parameter.as_deref()
+    }
+}
 impl std::fmt::Debug for CodeGenEdge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeGenEdge");
@@ -18808,6 +21910,24 @@ pub struct CodeGenNode {
     pub args: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
     /// <p>The line number of the node.</p>
     pub line_number: i32,
+}
+impl CodeGenNode {
+    /// <p>A node identifier that is unique within the node's graph.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of node that this is.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>Properties of the node, in the form of name-value pairs.</p>
+    pub fn args(&self) -> std::option::Option<&[crate::model::CodeGenNodeArg]> {
+        self.args.as_deref()
+    }
+    /// <p>The line number of the node.</p>
+    pub fn line_number(&self) -> i32 {
+        self.line_number
+    }
 }
 impl std::fmt::Debug for CodeGenNode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18923,6 +22043,47 @@ pub struct Database {
     pub target_database: std::option::Option<crate::model::DatabaseIdentifier>,
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+}
+impl Database {
+    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
+    /// stored.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the database.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The location of the database (for example, an HDFS path).</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>These key-value pairs define parameters and properties
+    /// of the database.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The time at which the metadata database was created in the catalog.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>Creates a set of default permissions on the table for principals. </p>
+    pub fn create_table_default_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrincipalPermissions]> {
+        self.create_table_default_permissions.as_deref()
+    }
+    /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
+    pub fn target_database(&self) -> std::option::Option<&crate::model::DatabaseIdentifier> {
+        self.target_database.as_ref()
+    }
+    /// <p>The ID of the Data Catalog in which the database resides.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Database {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19150,6 +22311,93 @@ pub struct Crawler {
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
     /// crawler.</p>
     pub crawler_security_configuration: std::option::Option<std::string::String>,
+}
+impl Crawler {
+    /// <p>The name of the crawler.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources,
+    /// such as Amazon Simple Storage Service (Amazon S3) data.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>A collection of targets to crawl.</p>
+    pub fn targets(&self) -> std::option::Option<&crate::model::CrawlerTargets> {
+        self.targets.as_ref()
+    }
+    /// <p>The name of the database in which the crawler's output is stored.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A description of the crawler.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated
+    /// with the crawler.</p>
+    pub fn classifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.classifiers.as_deref()
+    }
+    /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    pub fn recrawl_policy(&self) -> std::option::Option<&crate::model::RecrawlPolicy> {
+        self.recrawl_policy.as_ref()
+    }
+    /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
+    pub fn schema_change_policy(&self) -> std::option::Option<&crate::model::SchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+    /// <p>A configuration that specifies whether data lineage is enabled for the crawler.</p>
+    pub fn lineage_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LineageConfiguration> {
+        self.lineage_configuration.as_ref()
+    }
+    /// <p>Indicates whether the crawler is running, or whether a run is pending.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CrawlerState> {
+        self.state.as_ref()
+    }
+    /// <p>The prefix added to the names of tables that are created.</p>
+    pub fn table_prefix(&self) -> std::option::Option<&str> {
+        self.table_prefix.as_deref()
+    }
+    /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>If the crawler is running, contains the total time elapsed since the last crawl
+    /// began.</p>
+    pub fn crawl_elapsed_time(&self) -> i64 {
+        self.crawl_elapsed_time
+    }
+    /// <p>The time that the crawler was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that the crawler was last updated.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The status of the last crawl, and potentially error information if
+    /// an error occurred.</p>
+    pub fn last_crawl(&self) -> std::option::Option<&crate::model::LastCrawlInfo> {
+        self.last_crawl.as_ref()
+    }
+    /// <p>The version of the crawler.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify
+    /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude
+    /// Patterns</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
+    /// crawler.</p>
+    pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
+        self.crawler_security_configuration.as_deref()
+    }
 }
 impl std::fmt::Debug for Crawler {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19502,6 +22750,32 @@ pub struct LastCrawlInfo {
     /// <p>The time at which the crawl started.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl LastCrawlInfo {
+    /// <p>Status of the last crawl.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LastCrawlStatus> {
+        self.status.as_ref()
+    }
+    /// <p>If an error occurred, the error information about the last crawl.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The log group for the last crawl.</p>
+    pub fn log_group(&self) -> std::option::Option<&str> {
+        self.log_group.as_deref()
+    }
+    /// <p>The log stream for the last crawl.</p>
+    pub fn log_stream(&self) -> std::option::Option<&str> {
+        self.log_stream.as_deref()
+    }
+    /// <p>The prefix for a message about this crawl.</p>
+    pub fn message_prefix(&self) -> std::option::Option<&str> {
+        self.message_prefix.as_deref()
+    }
+    /// <p>The time at which the crawl started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for LastCrawlInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LastCrawlInfo");
@@ -19689,6 +22963,18 @@ pub struct Schedule {
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The state of the schedule.</p>
     pub state: std::option::Option<crate::model::ScheduleState>,
+}
+impl Schedule {
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
+    /// something every day at 12:15 UTC, you would specify:
+    /// <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>The state of the schedule.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ScheduleState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for Schedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19892,6 +23178,40 @@ pub struct CrawlerMetrics {
     pub tables_updated: i32,
     /// <p>The number of tables deleted by this crawler.</p>
     pub tables_deleted: i32,
+}
+impl CrawlerMetrics {
+    /// <p>The name of the crawler.</p>
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
+        self.crawler_name.as_deref()
+    }
+    /// <p>The estimated time left to complete a running crawl.</p>
+    pub fn time_left_seconds(&self) -> f64 {
+        self.time_left_seconds
+    }
+    /// <p>True if the crawler is still estimating how long it will take to complete this run.</p>
+    pub fn still_estimating(&self) -> bool {
+        self.still_estimating
+    }
+    /// <p>The duration of the crawler's most recent run, in seconds.</p>
+    pub fn last_runtime_seconds(&self) -> f64 {
+        self.last_runtime_seconds
+    }
+    /// <p>The median duration of this crawler's runs, in seconds.</p>
+    pub fn median_runtime_seconds(&self) -> f64 {
+        self.median_runtime_seconds
+    }
+    /// <p>The number of tables created by this crawler.</p>
+    pub fn tables_created(&self) -> i32 {
+        self.tables_created
+    }
+    /// <p>The number of tables updated by this crawler.</p>
+    pub fn tables_updated(&self) -> i32 {
+        self.tables_updated
+    }
+    /// <p>The number of tables deleted by this crawler.</p>
+    pub fn tables_deleted(&self) -> i32 {
+        self.tables_deleted
+    }
 }
 impl std::fmt::Debug for CrawlerMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20182,6 +23502,182 @@ pub struct Connection {
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user, group, or role that last updated this connection definition.</p>
     pub last_updated_by: std::option::Option<std::string::String>,
+}
+impl Connection {
+    /// <p>The name of the connection definition.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the connection.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the connection. Currently, SFTP is not supported.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>A list of criteria that can be used in selecting this connection.</p>
+    pub fn match_criteria(&self) -> std::option::Option<&[std::string::String]> {
+        self.match_criteria.as_deref()
+    }
+    /// <p>These key-value pairs define parameters for the connection:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HOST</code> - The host URI: either the
+    /// fully qualified domain name (FQDN) or the IPv4 address of
+    /// the database host.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PORT</code> - The port number, between
+    /// 1024 and 65535, of the port on which the database host is
+    /// listening for database connections.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_NAME</code> -  The name under which
+    /// to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PASSWORD</code> - A password,
+    /// if one is used, for the user name.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the
+    /// JAR file that contains the JDBC driver to use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONFIG_FILES</code> - (Reserved for future use.)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INSTANCE_ID</code> - The instance ID to use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure
+    /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the
+    /// client. The default is false.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>
+    /// </li>
+    /// </ul>
+    pub fn connection_properties(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ConnectionPropertyKey, std::string::String>,
+    > {
+        self.connection_properties.as_ref()
+    }
+    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
+    /// <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    pub fn physical_connection_requirements(
+        &self,
+    ) -> std::option::Option<&crate::model::PhysicalConnectionRequirements> {
+        self.physical_connection_requirements.as_ref()
+    }
+    /// <p>The time that this connection definition was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time that this connection definition was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The user, group, or role that last updated this connection definition.</p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
 }
 impl std::fmt::Debug for Connection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20651,6 +24147,17 @@ pub struct GetConnectionsFilter {
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
 }
+impl GetConnectionsFilter {
+    /// <p>A criteria string that must match the criteria recorded in the
+    /// connection definition for that connection definition to be returned.</p>
+    pub fn match_criteria(&self) -> std::option::Option<&[std::string::String]> {
+        self.match_criteria.as_deref()
+    }
+    /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetConnectionsFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionsFilter");
@@ -20728,6 +24235,16 @@ pub struct ColumnError {
     /// <p>An error message with the reason for the failure of an operation.</p>
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
+impl ColumnError {
+    /// <p>The name of the column that failed.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>An error message with the reason for the failure of an operation.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for ColumnError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnError");
@@ -20801,6 +24318,24 @@ pub struct Classifier {
     pub json_classifier: std::option::Option<crate::model::JsonClassifier>,
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub csv_classifier: std::option::Option<crate::model::CsvClassifier>,
+}
+impl Classifier {
+    /// <p>A classifier that uses <code>grok</code>.</p>
+    pub fn grok_classifier(&self) -> std::option::Option<&crate::model::GrokClassifier> {
+        self.grok_classifier.as_ref()
+    }
+    /// <p>A classifier for XML content.</p>
+    pub fn xml_classifier(&self) -> std::option::Option<&crate::model::XmlClassifier> {
+        self.xml_classifier.as_ref()
+    }
+    /// <p>A classifier for JSON content.</p>
+    pub fn json_classifier(&self) -> std::option::Option<&crate::model::JsonClassifier> {
+        self.json_classifier.as_ref()
+    }
+    /// <p>A classifier for comma-separated values (CSV).</p>
+    pub fn csv_classifier(&self) -> std::option::Option<&crate::model::CsvClassifier> {
+        self.csv_classifier.as_ref()
+    }
 }
 impl std::fmt::Debug for Classifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20920,6 +24455,50 @@ pub struct CsvClassifier {
     pub disable_value_trimming: std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
     pub allow_single_column: std::option::Option<bool>,
+}
+impl CsvClassifier {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time that this classifier was registered.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that this classifier was last updated.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The version of this classifier.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>A custom symbol to denote what separates each column entry in the row.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>A custom symbol to denote what combines content into a single column value. It must be
+    /// different from the column delimiter.</p>
+    pub fn quote_symbol(&self) -> std::option::Option<&str> {
+        self.quote_symbol.as_deref()
+    }
+    /// <p>Indicates whether the CSV file contains a header.</p>
+    pub fn contains_header(&self) -> std::option::Option<&crate::model::CsvHeaderOption> {
+        self.contains_header.as_ref()
+    }
+    /// <p>A list of strings representing column names.</p>
+    pub fn header(&self) -> std::option::Option<&[std::string::String]> {
+        self.header.as_deref()
+    }
+    /// <p>Specifies not to trim values before identifying the type of column values. The default
+    /// value is <code>true</code>.</p>
+    pub fn disable_value_trimming(&self) -> std::option::Option<bool> {
+        self.disable_value_trimming
+    }
+    /// <p>Enables the processing of files that contain only one column.</p>
+    pub fn allow_single_column(&self) -> std::option::Option<bool> {
+        self.allow_single_column
+    }
 }
 impl std::fmt::Debug for CsvClassifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21117,6 +24696,29 @@ pub struct JsonClassifier {
     /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub json_path: std::option::Option<std::string::String>,
 }
+impl JsonClassifier {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time that this classifier was registered.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that this classifier was last updated.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The version of this classifier.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
+    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    pub fn json_path(&self) -> std::option::Option<&str> {
+        self.json_path.as_deref()
+    }
+}
 impl std::fmt::Debug for JsonClassifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JsonClassifier");
@@ -21238,6 +24840,36 @@ pub struct XmlClassifier {
     /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
     /// <code><row item_a="A" item_b="B" /></code> is not).</p>
     pub row_tag: std::option::Option<std::string::String>,
+}
+impl XmlClassifier {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An identifier of the data format that the classifier matches.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>The time that this classifier was registered.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that this classifier was last updated.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The version of this classifier.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The XML tag designating the element that contains each record in an XML document being
+    /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
+    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
+    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
+    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    pub fn row_tag(&self) -> std::option::Option<&str> {
+        self.row_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for XmlClassifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21383,6 +25015,39 @@ pub struct GrokClassifier {
     /// <p>Optional custom grok patterns defined by this classifier.
     /// For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
     pub custom_patterns: std::option::Option<std::string::String>,
+}
+impl GrokClassifier {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and
+    /// so on.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>The time that this classifier was registered.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that this classifier was last updated.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The version of this classifier.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The grok pattern applied to a data store by this classifier.
+    /// For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    pub fn grok_pattern(&self) -> std::option::Option<&str> {
+        self.grok_pattern.as_deref()
+    }
+    /// <p>Optional custom grok patterns defined by this classifier.
+    /// For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    pub fn custom_patterns(&self) -> std::option::Option<&str> {
+        self.custom_patterns.as_deref()
+    }
 }
 impl std::fmt::Debug for GrokClassifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21533,6 +25198,21 @@ pub struct CatalogImportStatus {
     /// <p>The name of the person who initiated the migration.</p>
     pub imported_by: std::option::Option<std::string::String>,
 }
+impl CatalogImportStatus {
+    /// <p>
+    /// <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    pub fn import_completed(&self) -> bool {
+        self.import_completed
+    }
+    /// <p>The time that the migration was started.</p>
+    pub fn import_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.import_time.as_ref()
+    }
+    /// <p>The name of the person who initiated the migration.</p>
+    pub fn imported_by(&self) -> std::option::Option<&str> {
+        self.imported_by.as_deref()
+    }
+}
 impl std::fmt::Debug for CatalogImportStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CatalogImportStatus");
@@ -21644,6 +25324,63 @@ pub struct BlueprintRun {
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl BlueprintRun {
+    /// <p>The name of the blueprint.</p>
+    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+        self.blueprint_name.as_deref()
+    }
+    /// <p>The run ID for this blueprint run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
+    pub fn workflow_name(&self) -> std::option::Option<&str> {
+        self.workflow_name.as_deref()
+    }
+    /// <p>The state of the blueprint run. Possible values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Running — The blueprint run is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>Succeeded — The blueprint run completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed — The blueprint run failed and rollback is complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
+    /// </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::BlueprintRunState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time that the blueprint run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>The date and time that the blueprint run completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>Indicates any errors that are seen while running the blueprint.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
+    pub fn rollback_error_message(&self) -> std::option::Option<&str> {
+        self.rollback_error_message.as_deref()
+    }
+    /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
+    pub fn parameters(&self) -> std::option::Option<&str> {
+        self.parameters.as_deref()
+    }
+    /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for BlueprintRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21957,6 +25694,65 @@ pub struct Blueprint {
     /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
     pub last_active_definition: std::option::Option<crate::model::LastActiveDefinition>,
 }
+impl Blueprint {
+    /// <p>The name of the blueprint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the blueprint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time the blueprint was registered.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_on.as_ref()
+    }
+    /// <p>The date and time the blueprint was last modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
+    pub fn parameter_spec(&self) -> std::option::Option<&str> {
+        self.parameter_spec.as_deref()
+    }
+    /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
+    pub fn blueprint_location(&self) -> std::option::Option<&str> {
+        self.blueprint_location.as_deref()
+    }
+    /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
+    pub fn blueprint_service_location(&self) -> std::option::Option<&str> {
+        self.blueprint_service_location.as_deref()
+    }
+    /// <p>The status of the blueprint registration.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Creating — The blueprint registration is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>Active — The blueprint has been successfully registered.</p>
+    /// </li>
+    /// <li>
+    /// <p>Updating — An update to the blueprint registration is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed — The blueprint registration failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::BlueprintStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
+    pub fn last_active_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::LastActiveDefinition> {
+        self.last_active_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for Blueprint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Blueprint");
@@ -22187,6 +25983,28 @@ pub struct LastActiveDefinition {
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
     pub blueprint_service_location: std::option::Option<std::string::String>,
 }
+impl LastActiveDefinition {
+    /// <p>The description of the blueprint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time the blueprint was last modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>A JSON string specifying the parameters for the blueprint.</p>
+    pub fn parameter_spec(&self) -> std::option::Option<&str> {
+        self.parameter_spec.as_deref()
+    }
+    /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
+    pub fn blueprint_location(&self) -> std::option::Option<&str> {
+        self.blueprint_location.as_deref()
+    }
+    /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
+    pub fn blueprint_service_location(&self) -> std::option::Option<&str> {
+        self.blueprint_service_location.as_deref()
+    }
+}
 impl std::fmt::Debug for LastActiveDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LastActiveDefinition");
@@ -22367,6 +26185,16 @@ pub struct SchemaVersionErrorItem {
     /// <p>The details of the error for the schema version.</p>
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
+impl SchemaVersionErrorItem {
+    /// <p>The version number of the schema.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The details of the error for the schema version.</p>
+    pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error_details.as_ref()
+    }
+}
 impl std::fmt::Debug for SchemaVersionErrorItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SchemaVersionErrorItem");
@@ -22433,6 +26261,16 @@ pub struct ErrorDetails {
     /// <p>The error message for an error.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl ErrorDetails {
+    /// <p>The error code for an error.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message for an error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorDetails");
@@ -22498,6 +26336,16 @@ pub struct PartitionIndex {
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the partition index.</p>
     pub index_name: std::option::Option<std::string::String>,
+}
+impl PartitionIndex {
+    /// <p>The keys for the partition index.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+    /// <p>The name of the partition index.</p>
+    pub fn index_name(&self) -> std::option::Option<&str> {
+        self.index_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PartitionIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22580,6 +26428,36 @@ pub struct CreateCsvClassifierRequest {
     pub disable_value_trimming: std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
     pub allow_single_column: std::option::Option<bool>,
+}
+impl CreateCsvClassifierRequest {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A custom symbol to denote what separates each column entry in the row.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>A custom symbol to denote what combines content into a single column value. Must be different from the column delimiter.</p>
+    pub fn quote_symbol(&self) -> std::option::Option<&str> {
+        self.quote_symbol.as_deref()
+    }
+    /// <p>Indicates whether the CSV file contains a header.</p>
+    pub fn contains_header(&self) -> std::option::Option<&crate::model::CsvHeaderOption> {
+        self.contains_header.as_ref()
+    }
+    /// <p>A list of strings representing column names.</p>
+    pub fn header(&self) -> std::option::Option<&[std::string::String]> {
+        self.header.as_deref()
+    }
+    /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
+    pub fn disable_value_trimming(&self) -> std::option::Option<bool> {
+        self.disable_value_trimming
+    }
+    /// <p>Enables the processing of files that contain only one column.</p>
+    pub fn allow_single_column(&self) -> std::option::Option<bool> {
+        self.allow_single_column
+    }
 }
 impl std::fmt::Debug for CreateCsvClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22722,6 +26600,17 @@ pub struct CreateJsonClassifierRequest {
     /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub json_path: std::option::Option<std::string::String>,
 }
+impl CreateJsonClassifierRequest {
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
+    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    pub fn json_path(&self) -> std::option::Option<&str> {
+        self.json_path.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateJsonClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJsonClassifierRequest");
@@ -22792,6 +26681,24 @@ pub struct CreateXmlClassifierRequest {
     /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
     /// <code><row item_a="A" item_b="B" /></code> is not).</p>
     pub row_tag: std::option::Option<std::string::String>,
+}
+impl CreateXmlClassifierRequest {
+    /// <p>An identifier of the data format that the classifier matches.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>The name of the classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The XML tag designating the element that contains each record in an XML document being
+    /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
+    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
+    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
+    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    pub fn row_tag(&self) -> std::option::Option<&str> {
+        self.row_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateXmlClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22885,6 +26792,25 @@ pub struct CreateGrokClassifierRequest {
     pub grok_pattern: std::option::Option<std::string::String>,
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub custom_patterns: std::option::Option<std::string::String>,
+}
+impl CreateGrokClassifierRequest {
+    /// <p>An identifier of the data format that the classifier matches,
+    /// such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>The name of the new classifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The grok pattern used by this classifier.</p>
+    pub fn grok_pattern(&self) -> std::option::Option<&str> {
+        self.grok_pattern.as_deref()
+    }
+    /// <p>Optional custom grok patterns used by this classifier.</p>
+    pub fn custom_patterns(&self) -> std::option::Option<&str> {
+        self.custom_patterns.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGrokClassifierRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22983,6 +26909,16 @@ pub struct BatchUpdatePartitionFailureEntry {
     /// <p>The details about the batch update partition error.</p>
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
 }
+impl BatchUpdatePartitionFailureEntry {
+    /// <p>A list of values defining the partitions.</p>
+    pub fn partition_value_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_value_list.as_deref()
+    }
+    /// <p>The details about the batch update partition error.</p>
+    pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchUpdatePartitionFailureEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdatePartitionFailureEntry");
@@ -23057,6 +26993,16 @@ pub struct BatchUpdatePartitionRequestEntry {
     pub partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The structure used to update a partition.</p>
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
+}
+impl BatchUpdatePartitionRequestEntry {
+    /// <p>A list of values defining the partitions.</p>
+    pub fn partition_value_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_value_list.as_deref()
+    }
+    /// <p>The structure used to update a partition.</p>
+    pub fn partition_input(&self) -> std::option::Option<&crate::model::PartitionInput> {
+        self.partition_input.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchUpdatePartitionRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23135,6 +27081,20 @@ pub struct BatchStopJobRunError {
     pub job_run_id: std::option::Option<std::string::String>,
     /// <p>Specifies details about the error that was encountered.</p>
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
+}
+impl BatchStopJobRunError {
+    /// <p>The name of the job definition that is used in the job run in question.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The <code>JobRunId</code> of the job run in question.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+    /// <p>Specifies details about the error that was encountered.</p>
+    pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchStopJobRunError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23215,6 +27175,16 @@ pub struct BatchStopJobRunSuccessfulSubmission {
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
     pub job_run_id: std::option::Option<std::string::String>,
 }
+impl BatchStopJobRunSuccessfulSubmission {
+    /// <p>The name of the job definition used in the job run that was stopped.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchStopJobRunSuccessfulSubmission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchStopJobRunSuccessfulSubmission");
@@ -23279,6 +27249,20 @@ pub struct TableVersionError {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The details about the error.</p>
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
+}
+impl TableVersionError {
+    /// <p>The name of the table in question.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The details about the error.</p>
+    pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for TableVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23359,6 +27343,16 @@ pub struct TableError {
     /// <p>The details about the error.</p>
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
 }
+impl TableError {
+    /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The details about the error.</p>
+    pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for TableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TableError");
@@ -23424,6 +27418,16 @@ pub struct PartitionError {
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The details about the partition error.</p>
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
+}
+impl PartitionError {
+    /// <p>The values that define the partition.</p>
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_values.as_deref()
+    }
+    /// <p>The details about the partition error.</p>
+    pub fn error_detail(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for PartitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

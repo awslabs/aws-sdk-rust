@@ -111,10 +111,7 @@ impl AddTagsToResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -334,7 +331,7 @@ impl ApplyPendingMaintenanceActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_apply_pending_maintenance_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_apply_pending_maintenance_action(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -492,7 +489,7 @@ impl CancelReplicationTaskAssessmentRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_replication_task_assessment_run(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_replication_task_assessment_run(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1323,10 +1320,8 @@ impl CreateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1614,10 +1609,7 @@ impl CreateEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2111,10 +2103,7 @@ impl CreateReplicationInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_replication_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2341,7 +2330,7 @@ impl CreateReplicationSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_replication_subnet_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_replication_subnet_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2781,10 +2770,7 @@ impl CreateReplicationTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_replication_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2937,10 +2923,7 @@ impl DeleteCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3105,10 +3088,7 @@ impl DeleteConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3257,10 +3237,8 @@ impl DeleteEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3416,10 +3394,7 @@ impl DeleteEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3575,10 +3550,7 @@ impl DeleteReplicationInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_replication_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3735,7 +3707,7 @@ impl DeleteReplicationSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_replication_subnet_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_replication_subnet_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3891,10 +3863,7 @@ impl DeleteReplicationTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_replication_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4051,7 +4020,7 @@ impl DeleteReplicationTaskAssessmentRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_replication_task_assessment_run(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_replication_task_assessment_run(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4191,10 +4160,7 @@ impl DescribeAccountAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4437,7 +4403,7 @@ impl DescribeApplicableIndividualAssessmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_applicable_individual_assessments(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_applicable_individual_assessments(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4631,10 +4597,7 @@ impl DescribeCertificatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_certificates(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_certificates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4831,10 +4794,7 @@ impl DescribeConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_connections(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_connections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5031,10 +4991,7 @@ impl DescribeEndpointsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_endpoints(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_endpoints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5217,10 +5174,7 @@ impl DescribeEndpointSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5419,10 +5373,7 @@ impl DescribeEndpointTypesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_types(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5598,10 +5549,7 @@ impl DescribeEventCategoriesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_event_categories(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5890,10 +5838,8 @@ impl DescribeEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6106,10 +6052,7 @@ impl DescribeEventSubscriptionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_event_subscriptions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6285,7 +6228,7 @@ impl DescribeOrderableReplicationInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_orderable_replication_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_orderable_replication_instances(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6497,7 +6440,7 @@ impl DescribePendingMaintenanceActionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_pending_maintenance_actions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_pending_maintenance_actions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6649,7 +6592,7 @@ impl DescribeRefreshSchemasStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_refresh_schemas_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_refresh_schemas_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6850,7 +6793,7 @@ impl DescribeReplicationInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_replication_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_replication_instances(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7042,7 +6985,7 @@ impl DescribeReplicationInstanceTaskLogsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_replication_instance_task_logs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_replication_instance_task_logs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7241,7 +7184,7 @@ impl DescribeReplicationSubnetGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_replication_subnet_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_replication_subnet_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7439,7 +7382,7 @@ impl DescribeReplicationTaskAssessmentResultsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_assessment_results(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_assessment_results(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7639,7 +7582,7 @@ impl DescribeReplicationTaskAssessmentRunsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_assessment_runs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_assessment_runs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7843,7 +7786,7 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_individual_assessments(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_individual_assessments(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8063,10 +8006,7 @@ impl DescribeReplicationTasksInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_tasks(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8252,10 +8192,7 @@ impl DescribeSchemasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_schemas(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_schemas(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8474,10 +8411,7 @@ impl DescribeTableStatisticsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_table_statistics(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8689,10 +8623,7 @@ impl ImportCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8873,10 +8804,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9688,10 +9618,8 @@ impl ModifyEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_modify_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9915,10 +9843,7 @@ impl ModifyEventSubscriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_event_subscription(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10301,10 +10226,7 @@ impl ModifyReplicationInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_replication_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10500,7 +10422,7 @@ impl ModifyReplicationSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_replication_subnet_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_replication_subnet_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10856,10 +10778,7 @@ impl ModifyReplicationTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_replication_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11030,10 +10949,7 @@ impl MoveReplicationTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_move_replication_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_move_replication_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11223,10 +11139,7 @@ impl RebootReplicationInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reboot_replication_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11390,10 +11303,8 @@ impl RefreshSchemasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_refresh_schemas(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_refresh_schemas(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11590,10 +11501,7 @@ impl ReloadTablesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reload_tables(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reload_tables(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11766,10 +11674,7 @@ impl RemoveTagsFromResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12026,10 +11931,9 @@ impl StartReplicationTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_replication_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_replication_task(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12183,7 +12087,7 @@ impl StartReplicationTaskAssessmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_replication_task_assessment(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_replication_task_assessment(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12552,7 +12456,7 @@ impl StartReplicationTaskAssessmentRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_replication_task_assessment_run(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_replication_task_assessment_run(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12706,10 +12610,7 @@ impl StopReplicationTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_replication_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_replication_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12873,10 +12774,8 @@ impl TestConnectionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_test_connection(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_test_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12947,6 +12846,16 @@ pub struct TestConnectionInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl TestConnectionInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for TestConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestConnectionInput");
@@ -12962,6 +12871,12 @@ impl std::fmt::Debug for TestConnectionInput {
 pub struct StopReplicationTaskInput {
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
     pub replication_task_arn: std::option::Option<std::string::String>,
+}
+impl StopReplicationTaskInput {
+    /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopReplicationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13035,6 +12950,85 @@ pub struct StartReplicationTaskAssessmentRunInput {
     /// </note>
     pub exclude: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl StartReplicationTaskAssessmentRunInput {
+    /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
+    /// assessment run that you want to start.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
+    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
+    /// run.</p>
+    pub fn result_location_bucket(&self) -> std::option::Option<&str> {
+        self.result_location_bucket.as_deref()
+    }
+    /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
+    /// run.</p>
+    pub fn result_location_folder(&self) -> std::option::Option<&str> {
+        self.result_location_folder.as_deref()
+    }
+    /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
+    /// you don't specify this request parameter, DMS stores the assessment run results
+    /// without encryption. You can specify one of the options following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>"SSE_S3"</code> – The server-side encryption provided as a default by
+    /// Amazon S3.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
+    /// This encryption can use either a custom KMS encryption key that you specify or the
+    /// default KMS encryption key that DMS provides.</p>
+    /// </li>
+    /// </ul>
+    pub fn result_encryption_mode(&self) -> std::option::Option<&str> {
+        self.result_encryption_mode.as_deref()
+    }
+    /// <p>ARN of a custom KMS encryption key that you specify when you set
+    /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+    pub fn result_kms_key_arn(&self) -> std::option::Option<&str> {
+        self.result_kms_key_arn.as_deref()
+    }
+    /// <p>Unique name to identify the assessment run.</p>
+    pub fn assessment_run_name(&self) -> std::option::Option<&str> {
+        self.assessment_run_name.as_deref()
+    }
+    /// <p>Space-separated list of names for specific individual assessments that you want to
+    /// include. These names come from the default list of individual assessments that DMS
+    /// supports for the associated migration task. This task is specified by
+    /// <code>ReplicationTaskArn</code>.</p>
+    /// <note>
+    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
+    /// <code>Exclude</code> in the API operation. </p>
+    /// <p>To identify the names of the default individual assessments that DMS
+    /// supports for the associated migration task, run the
+    /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
+    /// <code>ReplicationTaskArn</code> request parameter.</p>
+    /// </note>
+    pub fn include_only(&self) -> std::option::Option<&[std::string::String]> {
+        self.include_only.as_deref()
+    }
+    /// <p>Space-separated list of names for specific individual assessments that you want to
+    /// exclude. These names come from the default list of individual assessments that DMS
+    /// supports for the associated migration task. This task is specified by
+    /// <code>ReplicationTaskArn</code>.</p>
+    /// <note>
+    /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
+    /// <code>IncludeOnly</code> in the API operation.</p>
+    /// <p>To identify the names of the default individual assessments that DMS
+    /// supports for the associated migration task, run the
+    /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
+    /// <code>ReplicationTaskArn</code> request parameter.</p>
+    /// </note>
+    pub fn exclude(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclude.as_deref()
+    }
+}
 impl std::fmt::Debug for StartReplicationTaskAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartReplicationTaskAssessmentRunInput");
@@ -13057,6 +13051,12 @@ impl std::fmt::Debug for StartReplicationTaskAssessmentRunInput {
 pub struct StartReplicationTaskAssessmentInput {
     /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
     pub replication_task_arn: std::option::Option<std::string::String>,
+}
+impl StartReplicationTaskAssessmentInput {
+    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StartReplicationTaskAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13102,6 +13102,50 @@ pub struct StartReplicationTaskInput {
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
     pub cdc_stop_position: std::option::Option<std::string::String>,
 }
+impl StartReplicationTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p>A type of replication task.</p>
+    pub fn start_replication_task_type(
+        &self,
+    ) -> std::option::Option<&crate::model::StartReplicationTaskTypeValue> {
+        self.start_replication_task_type.as_ref()
+    }
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
+    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
+    /// Specifying both values results in an error.</p>
+    /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.cdc_start_time.as_ref()
+    }
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
+    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
+    /// Specifying both values results in an error.</p>
+    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
+    /// <p>Checkpoint Example: --cdc-start-position
+    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+    /// <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical
+    /// replication slot should already be created and associated with the source endpoint. You
+    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
+    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
+    /// for DMS</a>.</p>
+    /// </note>
+    pub fn cdc_start_position(&self) -> std::option::Option<&str> {
+        self.cdc_start_position.as_deref()
+    }
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
+    /// either server time or commit time.</p>
+    /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
+        self.cdc_stop_position.as_deref()
+    }
+}
 impl std::fmt::Debug for StartReplicationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartReplicationTaskInput");
@@ -13125,6 +13169,16 @@ pub struct RemoveTagsFromResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key (name) of the tag to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RemoveTagsFromResourceInput {
+    /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key (name) of the tag to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTagsFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13150,6 +13204,24 @@ pub struct ReloadTablesInput {
     /// <p>Default value is data-reload.</p>
     pub reload_option: std::option::Option<crate::model::ReloadOptionValue>,
 }
+impl ReloadTablesInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p>The name and schema of the table to be reloaded. </p>
+    pub fn tables_to_reload(&self) -> std::option::Option<&[crate::model::TableToReload]> {
+        self.tables_to_reload.as_deref()
+    }
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
+    /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the table.
+    /// This option applies only when validation is enabled for the task. </p>
+    /// <p>Valid values: data-reload, validate-only</p>
+    /// <p>Default value is data-reload.</p>
+    pub fn reload_option(&self) -> std::option::Option<&crate::model::ReloadOptionValue> {
+        self.reload_option.as_ref()
+    }
+}
 impl std::fmt::Debug for ReloadTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReloadTablesInput");
@@ -13168,6 +13240,16 @@ pub struct RefreshSchemasInput {
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
+}
+impl RefreshSchemasInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RefreshSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13194,6 +13276,25 @@ pub struct RebootReplicationInstanceInput {
     /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
     pub force_planned_failover: std::option::Option<bool>,
 }
+impl RebootReplicationInstanceInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
+    /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
+    /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    pub fn force_failover(&self) -> std::option::Option<bool> {
+        self.force_failover
+    }
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
+    /// where resources are released and cleaned up prior to conducting the failover.
+    /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
+    /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    pub fn force_planned_failover(&self) -> std::option::Option<bool> {
+        self.force_planned_failover
+    }
+}
 impl std::fmt::Debug for RebootReplicationInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootReplicationInstanceInput");
@@ -13212,6 +13313,16 @@ pub struct MoveReplicationTaskInput {
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
     pub target_replication_instance_arn: std::option::Option<std::string::String>,
+}
+impl MoveReplicationTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p>The ARN of the replication instance where you want to move the task to.</p>
+    pub fn target_replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.target_replication_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for MoveReplicationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13288,6 +13399,84 @@ pub struct ModifyReplicationTaskInput {
     /// </p>
     pub task_data: std::option::Option<std::string::String>,
 }
+impl ModifyReplicationTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p>The replication task identifier.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn replication_task_identifier(&self) -> std::option::Option<&str> {
+        self.replication_task_identifier.as_deref()
+    }
+    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
+    /// </p>
+    pub fn migration_type(&self) -> std::option::Option<&crate::model::MigrationTypeValue> {
+        self.migration_type.as_ref()
+    }
+    /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
+    /// table mappings. Precede the path with <code>file://</code>.  For example,
+    /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
+    /// provide the JSON as the parameter value.
+    /// </p>
+    pub fn table_mappings(&self) -> std::option::Option<&str> {
+        self.table_mappings.as_deref()
+    }
+    /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
+    pub fn replication_task_settings(&self) -> std::option::Option<&str> {
+        self.replication_task_settings.as_deref()
+    }
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
+    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
+    /// Specifying both values results in an error.</p>
+    /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.cdc_start_time.as_ref()
+    }
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
+    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
+    /// Specifying both values results in an error.</p>
+    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
+    /// <p>Checkpoint Example: --cdc-start-position
+    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+    /// <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical
+    /// replication slot should already be created and associated with the source endpoint. You
+    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
+    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
+    /// for DMS</a>.</p>
+    /// </note>
+    pub fn cdc_start_position(&self) -> std::option::Option<&str> {
+        self.cdc_start_position.as_deref()
+    }
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
+    /// either server time or commit time.</p>
+    /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
+        self.cdc_stop_position.as_deref()
+    }
+    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
+    /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn task_data(&self) -> std::option::Option<&str> {
+        self.task_data.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyReplicationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyReplicationTaskInput");
@@ -13317,6 +13506,20 @@ pub struct ModifyReplicationSubnetGroupInput {
     pub replication_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>A list of subnet IDs.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ModifyReplicationSubnetGroupInput {
+    /// <p>The name of the replication instance subnet group.</p>
+    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
+        self.replication_subnet_group_identifier.as_deref()
+    }
+    /// <p>A description for the replication instance subnet group.</p>
+    pub fn replication_subnet_group_description(&self) -> std::option::Option<&str> {
+        self.replication_subnet_group_description.as_deref()
+    }
+    /// <p>A list of subnet IDs.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyReplicationSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13401,6 +13604,92 @@ pub struct ModifyReplicationInstanceInput {
     /// string.</p>
     pub replication_instance_identifier: std::option::Option<std::string::String>,
 }
+impl ModifyReplicationInstanceInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p>The amount of storage (in gigabytes) to be allocated for the replication
+    /// instance.</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>Indicates whether the changes should be applied immediately or during the next
+    /// maintenance window.</p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified
+    /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see
+    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+    /// Selecting the right DMS replication instance for your migration</a>.
+    /// </p>
+    pub fn replication_instance_class(&self) -> std::option::Option<&str> {
+        self.replication_instance_class.as_deref()
+    }
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
+    /// security group must work with the VPC containing the replication instance. </p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
+    /// result in an outage. Changing this parameter does not result in an outage, except in the
+    /// following situation, and the change is asynchronously applied as soon as possible. If
+    /// moving this window to the current time, there must be at least 30 minutes between the
+    /// current time and end of the window to ensure pending changes are applied.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
+    /// <p>Constraints: Must be at least 30 minutes</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
+    /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
+    /// <code>true</code>. </p>
+    pub fn multi_az(&self) -> std::option::Option<bool> {
+        self.multi_az
+    }
+    /// <p>The engine version number of the replication instance.</p>
+    /// <p>When modifying a major engine version of an instance, also set
+    /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
+    /// result in an outage, and the change is asynchronously applied as soon as possible.</p>
+    /// <p>This parameter must be set to <code>true</code> when specifying a value for the
+    /// <code>EngineVersion</code> parameter that is a different major version than the
+    /// replication instance's current version.</p>
+    pub fn allow_major_version_upgrade(&self) -> bool {
+        self.allow_major_version_upgrade
+    }
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the
+    /// replication instance during the maintenance window. Changing this parameter doesn't result
+    /// in an outage, except in the case described following. The change is asynchronously applied
+    /// as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p>
+    /// </li>
+    /// <li>
+    /// <p>A newer minor version is available. </p>
+    /// </li>
+    /// <li>
+    /// <p>DMS has enabled automatic patching for the given engine version. </p>
+    /// </li>
+    /// </ul>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The replication instance identifier. This parameter is stored as a lowercase
+    /// string.</p>
+    pub fn replication_instance_identifier(&self) -> std::option::Option<&str> {
+        self.replication_instance_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyReplicationInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyReplicationInstanceInput");
@@ -13452,6 +13741,32 @@ pub struct ModifyEventSubscriptionInput {
     /// <p> A Boolean value; set to <b>true</b> to activate the
     /// subscription. </p>
     pub enabled: std::option::Option<bool>,
+}
+impl ModifyEventSubscriptionInput {
+    /// <p>The name of the DMS event notification subscription to be modified.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
+    /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
+    /// <p>Valid values: replication-instance | replication-task</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the
+    /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p> A Boolean value; set to <b>true</b> to activate the
+    /// subscription. </p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for ModifyEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13638,6 +13953,245 @@ pub struct ModifyEndpointInput {
     /// are replaced with the exact settings that you specify. </p>
     pub exact_settings: std::option::Option<bool>,
 }
+impl ModifyEndpointInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
+    /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
+    /// consecutive hyphens.</p>
+    pub fn endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.endpoint_identifier.as_deref()
+    }
+    /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+    pub fn endpoint_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationEndpointTypeValue> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
+    /// include
+    /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+    /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
+    /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+    /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+    /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    pub fn engine_name(&self) -> std::option::Option<&str> {
+        self.engine_name.as_deref()
+    }
+    /// <p>The user name to be used to login to the endpoint database.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password to be used to login to the endpoint database.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The name of the server where the endpoint database resides.</p>
+    pub fn server_name(&self) -> std::option::Option<&str> {
+        self.server_name.as_deref()
+    }
+    /// <p>The port used by the endpoint database.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
+    /// empty string ("") as an argument.</p>
+    pub fn extra_connection_attributes(&self) -> std::option::Option<&str> {
+        self.extra_connection_attributes.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
+    pub fn ssl_mode(&self) -> std::option::Option<&crate::model::DmsSslModeValue> {
+        self.ssl_mode.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
+    /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>The external table definition.</p>
+    pub fn external_table_definition(&self) -> std::option::Option<&str> {
+        self.external_table_definition.as_deref()
+    }
+    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
+    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
+    /// Data to DynamoDB</a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn dynamo_db_settings(&self) -> std::option::Option<&crate::model::DynamoDbSettings> {
+        self.dynamo_db_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
+    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+    /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn s3_settings(&self) -> std::option::Option<&crate::model::S3Settings> {
+        self.s3_settings.as_ref()
+    }
+    /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// </li>
+    /// <li>
+    /// <p>BucketName - The name of the S3 bucket to use.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
+    /// ,BucketName=string</code>
+    /// </p>
+    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
+    /// "BucketName": "string"} </code>
+    /// </p>
+    pub fn dms_transfer_settings(&self) -> std::option::Option<&crate::model::DmsTransferSettings> {
+        self.dms_transfer_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
+    /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
+    /// when using MongoDB as a source for Database Migration Service</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn mongo_db_settings(&self) -> std::option::Option<&crate::model::MongoDbSettings> {
+        self.mongo_db_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
+    /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
+    /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn kinesis_settings(&self) -> std::option::Option<&crate::model::KinesisSettings> {
+        self.kinesis_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
+    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
+    /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn kafka_settings(&self) -> std::option::Option<&crate::model::KafkaSettings> {
+        self.kafka_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+    /// the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn elasticsearch_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchSettings> {
+        self.elasticsearch_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
+    /// in the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn neptune_settings(&self) -> std::option::Option<&crate::model::NeptuneSettings> {
+        self.neptune_settings.as_ref()
+    }
+    /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
+    pub fn redshift_settings(&self) -> std::option::Option<&crate::model::RedshiftSettings> {
+        self.redshift_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
+    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+    /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
+    /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn postgre_sql_settings(&self) -> std::option::Option<&crate::model::PostgreSqlSettings> {
+        self.postgre_sql_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
+    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
+    /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
+    /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn my_sql_settings(&self) -> std::option::Option<&crate::model::MySqlSettings> {
+        self.my_sql_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
+    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
+    /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
+    /// Extra connection attributes when using Oracle as a target for DMS</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn oracle_settings(&self) -> std::option::Option<&crate::model::OracleSettings> {
+        self.oracle_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
+    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
+    /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
+    /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
+    /// User Guide.</i>
+    /// </p>
+    pub fn sybase_settings(&self) -> std::option::Option<&crate::model::SybaseSettings> {
+        self.sybase_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
+    /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+    /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
+    /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn microsoft_sql_server_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MicrosoftSqlServerSettings> {
+        self.microsoft_sql_server_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
+    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
+    /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
+    /// User Guide.</i>
+    /// </p>
+    pub fn ibm_db2_settings(&self) -> std::option::Option<&crate::model::IbmDb2Settings> {
+        self.ibm_db2_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
+    /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
+    /// </a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn doc_db_settings(&self) -> std::option::Option<&crate::model::DocDbSettings> {
+        self.doc_db_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the Redis target endpoint.</p>
+    pub fn redis_settings(&self) -> std::option::Option<&crate::model::RedisSettings> {
+        self.redis_settings.as_ref()
+    }
+    /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
+    /// existing endpoint settings with the exact settings that you specify in this call. If this
+    /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+    /// <ul>
+    /// <li>
+    /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
+    /// same names.</p>
+    /// </li>
+    /// <li>
+    /// <p>It creates new endpoint settings that you specify in the call, for settings with different
+    /// names. </p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
+    /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
+    /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
+    /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+    /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
+    /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
+    /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
+    /// are replaced with the exact settings that you specify. </p>
+    pub fn exact_settings(&self) -> std::option::Option<bool> {
+        self.exact_settings
+    }
+}
 impl std::fmt::Debug for ModifyEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyEndpointInput");
@@ -13697,6 +14251,21 @@ pub struct ListTagsForResourceInput {
     /// each listed tag is created. </p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
+    /// list tags for. This returns a list of keys (names of tags) created for the resource and
+    /// their associated tag values.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
+    /// returns a list of keys (tag names) and their associated tag values. It also returns each
+    /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
+    /// each listed tag is created. </p>
+    pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arn_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -13722,6 +14291,28 @@ pub struct ImportCertificateInput {
     pub certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The tags associated with the certificate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ImportCertificateInput {
+    /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
+    /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+    /// contain two consecutive hyphens.</p>
+    pub fn certificate_identifier(&self) -> std::option::Option<&str> {
+        self.certificate_identifier.as_deref()
+    }
+    /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
+    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+        self.certificate_pem.as_deref()
+    }
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
+    /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+    /// </p>
+    pub fn certificate_wallet(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.certificate_wallet.as_ref()
+    }
+    /// <p>The tags associated with the certificate.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13756,6 +14347,33 @@ pub struct DescribeTableStatisticsInput {
     /// specified filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl DescribeTableStatisticsInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 500.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Filters applied to table statistics.</p>
+    /// <p>Valid filter names: schema-name | table-name | table-state</p>
+    /// <p>A combination of filters creates an AND condition where each record matches all
+    /// specified filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTableStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTableStatisticsInput");
@@ -13783,6 +14401,26 @@ pub struct DescribeSchemasInput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeSchemasInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13817,6 +14455,34 @@ pub struct DescribeReplicationTasksInput {
     /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
     pub without_settings: std::option::Option<bool>,
 }
+impl DescribeReplicationTasksInput {
+    /// <p>Filters applied to replication tasks.</p>
+    /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
+    /// endpoint-arn | replication-instance-arn</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>An option to set to avoid returning information about settings. Use this to reduce
+    /// overhead when setting information is too large. To use this option, choose
+    /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+    pub fn without_settings(&self) -> std::option::Option<bool> {
+        self.without_settings
+    }
+}
 impl std::fmt::Debug for DescribeReplicationTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationTasksInput");
@@ -13847,6 +14513,28 @@ pub struct DescribeReplicationTaskIndividualAssessmentsInput {
     /// by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeReplicationTaskIndividualAssessmentsInput {
+    /// <p>Filters applied to the individual assessments described in the form of key-value
+    /// pairs.</p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
+    /// <code>replication-task-arn</code>, <code>status</code>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
+    /// the response so that the remaining results can be retrieved.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationTaskIndividualAssessmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationTaskIndividualAssessmentsInput");
@@ -13874,6 +14562,27 @@ pub struct DescribeReplicationTaskAssessmentRunsInput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeReplicationTaskAssessmentRunsInput {
+    /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
+    /// <code>replication-instance-arn</code>, <code>status</code>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
+    /// the response so that the remaining results can be retrieved.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationTaskAssessmentRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13904,6 +14613,28 @@ pub struct DescribeReplicationTaskAssessmentResultsInput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeReplicationTaskAssessmentResultsInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
+    /// parameter is specified, the API returns only one result and ignore the values of the
+    /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationTaskAssessmentResultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationTaskAssessmentResultsInput");
@@ -13932,6 +14663,27 @@ pub struct DescribeReplicationSubnetGroupsInput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeReplicationSubnetGroupsInput {
+    /// <p>Filters applied to replication subnet groups.</p>
+    /// <p>Valid filter names: replication-subnet-group-id</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationSubnetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationSubnetGroupsInput");
@@ -13958,6 +14710,26 @@ pub struct DescribeReplicationInstanceTaskLogsInput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeReplicationInstanceTaskLogsInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationInstanceTaskLogsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13988,6 +14760,28 @@ pub struct DescribeReplicationInstancesInput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeReplicationInstancesInput {
+    /// <p>Filters applied to replication instances.</p>
+    /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
+    /// replication-instance-class | engine-version</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationInstancesInput");
@@ -14004,6 +14798,12 @@ impl std::fmt::Debug for DescribeReplicationInstancesInput {
 pub struct DescribeRefreshSchemasStatusInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
+}
+impl DescribeRefreshSchemasStatusInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRefreshSchemasStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14032,6 +14832,30 @@ pub struct DescribePendingMaintenanceActionsInput {
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
 }
+impl DescribePendingMaintenanceActionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p></p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+}
 impl std::fmt::Debug for DescribePendingMaintenanceActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePendingMaintenanceActionsInput");
@@ -14057,6 +14881,22 @@ pub struct DescribeOrderableReplicationInstancesInput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeOrderableReplicationInstancesInput {
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrderableReplicationInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14085,6 +14925,30 @@ pub struct DescribeEventSubscriptionsInput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeEventSubscriptionsInput {
+    /// <p>The name of the DMS event subscription to be described.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p>Filters applied to event subscriptions.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14127,6 +14991,51 @@ pub struct DescribeEventsInput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEventsInput {
+    /// <p> The identifier of an event source.</p>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+    /// <p>The type of DMS resource that generates events.</p>
+    /// <p>Valid values: replication-instance | replication-task</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The start time for the events to be listed.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time for the events to be listed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The duration of the events to be listed.</p>
+    pub fn duration(&self) -> std::option::Option<i32> {
+        self.duration
+    }
+    /// <p>A list of event categories for the source type that you've chosen.</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>Filters applied to events.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsInput");
@@ -14152,6 +15061,17 @@ pub struct DescribeEventCategoriesInput {
     pub source_type: std::option::Option<std::string::String>,
     /// <p>Filters applied to the event categories.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl DescribeEventCategoriesInput {
+    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>Valid values: replication-instance | replication-task</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>Filters applied to the event categories.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventCategoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14180,6 +15100,27 @@ pub struct DescribeEndpointTypesInput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEndpointTypesInput {
+    /// <p>Filters applied to the endpoint types.</p>
+    /// <p>Valid filter names: engine-name | endpoint-type</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointTypesInput");
@@ -14203,6 +15144,23 @@ pub struct DescribeEndpointSettingsInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
     /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointSettingsInput {
+    /// <p>The databse engine used for your source or target endpoint.</p>
+    pub fn engine_name(&self) -> std::option::Option<&str> {
+        self.engine_name.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
+    /// so that the remaining results can be retrieved.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
+    /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14232,6 +15190,27 @@ pub struct DescribeEndpointsInput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEndpointsInput {
+    /// <p>Filters applied to the endpoints.</p>
+    /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointsInput");
@@ -14260,6 +15239,27 @@ pub struct DescribeConnectionsInput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeConnectionsInput {
+    /// <p>The filters applied to the connection.</p>
+    /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectionsInput");
@@ -14285,6 +15285,25 @@ pub struct DescribeCertificatesInput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeCertificatesInput {
+    /// <p>Filters applied to the certificates described in the form of key-value pairs.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p> The maximum number of records to include in the response. If more records exist than
+    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
+    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 10</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14321,6 +15340,42 @@ pub struct DescribeApplicableIndividualAssessmentsInput {
     /// by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeApplicableIndividualAssessmentsInput {
+    /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
+    /// the default list of individual assessments.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p>ARN of a replication instance on which you want to base the default list of individual
+    /// assessments.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
+    pub fn source_engine_name(&self) -> std::option::Option<&str> {
+        self.source_engine_name.as_deref()
+    }
+    /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
+    pub fn target_engine_name(&self) -> std::option::Option<&str> {
+        self.target_engine_name.as_deref()
+    }
+    /// <p>Name of the migration type that each provided individual assessment must support.</p>
+    pub fn migration_type(&self) -> std::option::Option<&crate::model::MigrationTypeValue> {
+        self.migration_type.as_ref()
+    }
+    /// <p>Maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
+    /// the response so that the remaining results can be retrieved.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>Optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicableIndividualAssessmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicableIndividualAssessmentsInput");
@@ -14353,6 +15408,12 @@ pub struct DeleteReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
     pub replication_task_assessment_run_arn: std::option::Option<std::string::String>,
 }
+impl DeleteReplicationTaskAssessmentRunInput {
+    /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
+    pub fn replication_task_assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_assessment_run_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationTaskAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationTaskAssessmentRunInput");
@@ -14371,6 +15432,12 @@ pub struct DeleteReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
     pub replication_task_arn: std::option::Option<std::string::String>,
 }
+impl DeleteReplicationTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationTaskInput");
@@ -14385,6 +15452,12 @@ impl std::fmt::Debug for DeleteReplicationTaskInput {
 pub struct DeleteReplicationSubnetGroupInput {
     /// <p>The subnet group name of the replication instance.</p>
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteReplicationSubnetGroupInput {
+    /// <p>The subnet group name of the replication instance.</p>
+    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
+        self.replication_subnet_group_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReplicationSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14404,6 +15477,12 @@ pub struct DeleteReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
 }
+impl DeleteReplicationInstanceInput {
+    /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationInstanceInput");
@@ -14419,6 +15498,12 @@ pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be deleted.</p>
     pub subscription_name: std::option::Option<std::string::String>,
 }
+impl DeleteEventSubscriptionInput {
+    /// <p>The name of the DMS event notification subscription to be deleted.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventSubscriptionInput");
@@ -14433,6 +15518,12 @@ impl std::fmt::Debug for DeleteEventSubscriptionInput {
 pub struct DeleteEndpointInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
+}
+impl DeleteEndpointInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14451,6 +15542,16 @@ pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
 }
+impl DeleteConnectionInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConnectionInput");
@@ -14466,6 +15567,12 @@ impl std::fmt::Debug for DeleteConnectionInput {
 pub struct DeleteCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
+}
+impl DeleteCertificateInput {
+    /// <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14555,6 +15662,109 @@ pub struct CreateReplicationTaskInput {
     /// value for the end of <code>EndpointArn</code>.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
 }
+impl CreateReplicationTaskInput {
+    /// <p>An identifier for the replication task.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn replication_task_identifier(&self) -> std::option::Option<&str> {
+        self.replication_task_identifier.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
+    pub fn source_endpoint_arn(&self) -> std::option::Option<&str> {
+        self.source_endpoint_arn.as_deref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
+    pub fn target_endpoint_arn(&self) -> std::option::Option<&str> {
+        self.target_endpoint_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
+    /// </p>
+    pub fn migration_type(&self) -> std::option::Option<&crate::model::MigrationTypeValue> {
+        self.migration_type.as_ref()
+    }
+    /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
+    /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn table_mappings(&self) -> std::option::Option<&str> {
+        self.table_mappings.as_deref()
+    }
+    /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
+    /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn replication_task_settings(&self) -> std::option::Option<&str> {
+        self.replication_task_settings.as_deref()
+    }
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
+    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
+    /// Specifying both values results in an error.</p>
+    /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+    pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.cdc_start_time.as_ref()
+    }
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
+    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
+    /// Specifying both values results in an error.</p>
+    /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
+    /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
+    /// <p>Checkpoint Example: --cdc-start-position
+    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+    /// <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical
+    /// replication slot should already be created and associated with the source endpoint. You
+    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
+    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
+    /// for DMS</a>.</p>
+    /// </note>
+    pub fn cdc_start_position(&self) -> std::option::Option<&str> {
+        self.cdc_start_position.as_deref()
+    }
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
+    /// either server time or commit time.</p>
+    /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
+        self.cdc_stop_position.as_deref()
+    }
+    /// <p>One or more tags to be assigned to the replication task.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
+    /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn task_data(&self) -> std::option::Option<&str> {
+        self.task_data.as_deref()
+    }
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
+    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
+    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
+    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
+    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+    /// value might result in the <code>EndpointArn</code> value
+    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
+    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
+    /// value for the end of <code>EndpointArn</code>.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationTaskInput");
@@ -14595,6 +15805,29 @@ pub struct CreateReplicationSubnetGroupInput {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more tags to be assigned to the subnet group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateReplicationSubnetGroupInput {
+    /// <p>The name for the replication subnet group. This value is stored as a lowercase
+    /// string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
+    /// underscores, or hyphens. Must not be "default".</p>
+    /// <p>Example: <code>mySubnetgroup</code>
+    /// </p>
+    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
+        self.replication_subnet_group_identifier.as_deref()
+    }
+    /// <p>The description for the subnet group.</p>
+    pub fn replication_subnet_group_description(&self) -> std::option::Option<&str> {
+        self.replication_subnet_group_description.as_deref()
+    }
+    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>One or more tags to be assigned to the subnet group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14709,6 +15942,129 @@ pub struct CreateReplicationInstanceInput {
     /// value for the end of <code>EndpointArn</code>.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
 }
+impl CreateReplicationInstanceInput {
+    /// <p>The replication instance identifier. This parameter is stored as a lowercase
+    /// string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>myrepinstance</code>
+    /// </p>
+    pub fn replication_instance_identifier(&self) -> std::option::Option<&str> {
+        self.replication_instance_identifier.as_deref()
+    }
+    /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
+    /// instance.</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified
+    /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see
+    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+    /// Selecting the right DMS replication instance for your migration</a>.
+    /// </p>
+    pub fn replication_instance_class(&self) -> std::option::Option<&str> {
+        self.replication_instance_class.as_deref()
+    }
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
+    /// security group must work with the VPC containing the replication instance. </p>
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_security_group_ids.as_deref()
+    }
+    /// <p>The Availability Zone where the replication instance will be created. The default
+    /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
+    /// example: <code>us-east-1d</code>
+    /// </p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>A subnet group to associate with the replication instance.</p>
+    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
+        self.replication_subnet_group_identifier.as_deref()
+    }
+    /// <p>The weekly time range during which system maintenance can occur, in Universal
+    /// Coordinated Time (UTC).</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+    /// </p>
+    /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region,
+    /// occurring on a random day of the week.</p>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p>Constraints: Minimum 30-minute window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
+    /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
+    /// <code>true</code>. </p>
+    pub fn multi_az(&self) -> std::option::Option<bool> {
+        self.multi_az
+    }
+    /// <p>The engine version number of the replication instance.</p>
+    /// <p>If an engine version number is not specified when a replication
+    /// instance is created, the default is the latest engine version available.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
+    /// replication instance during the maintenance window. This parameter defaults to
+    /// <code>true</code>.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>One or more tags to be assigned to the replication instance.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An KMS key identifier that is used to encrypt the data on the replication
+    /// instance.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
+    /// DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+    /// different default encryption key for each Amazon Web Services Region.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p> Specifies the accessibility options for the replication instance. A value of
+    /// <code>true</code> represents an instance with a public IP address. A value of
+    /// <code>false</code> represents an instance with a private IP address. The default value
+    /// is <code>true</code>. </p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>A list of custom DNS name servers supported for the replication instance to access your
+    /// on-premise source or target database. This list overrides the default name servers
+    /// supported by the replication instance. You can specify a comma-separated list of internet
+    /// addresses for up to four on-premise DNS name servers. For example:
+    /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
+    /// </p>
+    pub fn dns_name_servers(&self) -> std::option::Option<&str> {
+        self.dns_name_servers.as_deref()
+    }
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
+    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
+    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
+    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
+    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+    /// value might result in the <code>EndpointArn</code> value
+    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
+    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
+    /// value for the end of <code>EndpointArn</code>.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationInstanceInput");
@@ -14779,6 +16135,51 @@ pub struct CreateEventSubscriptionInput {
     pub enabled: std::option::Option<bool>,
     /// <p>One or more tags to be assigned to the event subscription.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateEventSubscriptionInput {
+    /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
+    /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p> The type of DMS resource that generates the events. For example, if you want to be
+    /// notified of events generated by a replication instance, you set this parameter to
+    /// <code>replication-instance</code>. If this value isn't specified, all events are
+    /// returned. </p>
+    /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
+    /// </p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>A list of event categories for a source type that you want to subscribe to. For more
+    /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+    /// Notifications</a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>A list of identifiers for which DMS provides notification events.</p>
+    /// <p>If you don't specify a value, notifications are provided for all sources.</p>
+    /// <p>If you specify multiple values, they must be of the same type. For example, if you
+    /// specify a database instance ID, then all of the other values must be database instance
+    /// IDs.</p>
+    pub fn source_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_ids.as_deref()
+    }
+    /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
+    /// <code>false</code> to create the subscription but not activate it. </p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>One or more tags to be assigned to the event subscription.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEventSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14966,6 +16367,246 @@ pub struct CreateEndpointInput {
     /// <p>Settings in JSON format for the target Redis endpoint.</p>
     pub redis_settings: std::option::Option<crate::model::RedisSettings>,
 }
+impl CreateEndpointInput {
+    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
+    /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
+    /// consecutive hyphens.</p>
+    pub fn endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.endpoint_identifier.as_deref()
+    }
+    /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+    pub fn endpoint_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationEndpointTypeValue> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>The type of engine for the endpoint. Valid values, depending on the
+    /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
+    /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+    /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+    /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+    /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+    /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    pub fn engine_name(&self) -> std::option::Option<&str> {
+        self.engine_name.as_deref()
+    }
+    /// <p>The user name to be used to log in to the endpoint database.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password to be used to log in to the endpoint database.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The name of the server where the endpoint database resides.</p>
+    pub fn server_name(&self) -> std::option::Option<&str> {
+        self.server_name.as_deref()
+    }
+    /// <p>The port used by the endpoint database.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Additional attributes associated with the connection. Each attribute is specified as a
+    /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
+    /// semicolon (;) with no additional white space. For information on the attributes available
+    /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
+    /// DMS Endpoints</a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn extra_connection_attributes(&self) -> std::option::Option<&str> {
+        self.extra_connection_attributes.as_deref()
+    }
+    /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
+    /// DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+    /// different default encryption key for each Amazon Web Services Region.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>One or more tags to be assigned to the endpoint.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
+    /// </p>
+    pub fn ssl_mode(&self) -> std::option::Option<&crate::model::DmsSslModeValue> {
+        self.ssl_mode.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
+    /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>The external table definition. </p>
+    pub fn external_table_definition(&self) -> std::option::Option<&str> {
+        self.external_table_definition.as_deref()
+    }
+    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
+    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
+    /// Data to DynamoDB</a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn dynamo_db_settings(&self) -> std::option::Option<&crate::model::DynamoDbSettings> {
+        self.dynamo_db_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
+    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+    /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn s3_settings(&self) -> std::option::Option<&crate::model::S3Settings> {
+        self.s3_settings.as_ref()
+    }
+    /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
+    /// <p>Possible settings include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
+    /// The role must allow the <code>iam:PassRole</code> action.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Shorthand syntax for these settings is as follows:
+    /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
+    /// </p>
+    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
+    /// "string", "BucketName": "string", } </code>
+    /// </p>
+    pub fn dms_transfer_settings(&self) -> std::option::Option<&crate::model::DmsTransferSettings> {
+        self.dms_transfer_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
+    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
+    /// when using MongoDB as a source for Database Migration Service</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn mongo_db_settings(&self) -> std::option::Option<&crate::model::MongoDbSettings> {
+        self.mongo_db_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
+    /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
+    /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn kinesis_settings(&self) -> std::option::Option<&crate::model::KinesisSettings> {
+        self.kinesis_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
+    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
+    /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
+    /// Guide.</i>
+    /// </p>
+    pub fn kafka_settings(&self) -> std::option::Option<&crate::model::KafkaSettings> {
+        self.kafka_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+    /// the <i>Database Migration Service User Guide</i>.</p>
+    pub fn elasticsearch_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchSettings> {
+        self.elasticsearch_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
+    /// For more information
+    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
+    /// in the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn neptune_settings(&self) -> std::option::Option<&crate::model::NeptuneSettings> {
+        self.neptune_settings.as_ref()
+    }
+    /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
+    pub fn redshift_settings(&self) -> std::option::Option<&crate::model::RedshiftSettings> {
+        self.redshift_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
+    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+    /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
+    /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn postgre_sql_settings(&self) -> std::option::Option<&crate::model::PostgreSqlSettings> {
+        self.postgre_sql_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
+    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
+    /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
+    /// the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn my_sql_settings(&self) -> std::option::Option<&crate::model::MySqlSettings> {
+        self.my_sql_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
+    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
+    /// when using Oracle as a source for DMS</a> and
+    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
+    /// Extra connection attributes when using Oracle as a target for DMS</a>
+    /// in the <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn oracle_settings(&self) -> std::option::Option<&crate::model::OracleSettings> {
+        self.oracle_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
+    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
+    /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
+    /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
+    /// User Guide.</i>
+    /// </p>
+    pub fn sybase_settings(&self) -> std::option::Option<&crate::model::SybaseSettings> {
+        self.sybase_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
+    /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+    /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
+    /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn microsoft_sql_server_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MicrosoftSqlServerSettings> {
+        self.microsoft_sql_server_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
+    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
+    /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
+    /// User Guide.</i>
+    /// </p>
+    pub fn ibm_db2_settings(&self) -> std::option::Option<&crate::model::IbmDb2Settings> {
+        self.ibm_db2_settings.as_ref()
+    }
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
+    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
+    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
+    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
+    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+    /// value might result in the <code>EndpointArn</code> value
+    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
+    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
+    /// value for the end of <code>EndpointArn</code>.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>Provides information that defines a DocumentDB endpoint.</p>
+    pub fn doc_db_settings(&self) -> std::option::Option<&crate::model::DocDbSettings> {
+        self.doc_db_settings.as_ref()
+    }
+    /// <p>Settings in JSON format for the target Redis endpoint.</p>
+    pub fn redis_settings(&self) -> std::option::Option<&crate::model::RedisSettings> {
+        self.redis_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEndpointInput");
@@ -15019,6 +16660,12 @@ pub struct CancelReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
     pub replication_task_assessment_run_arn: std::option::Option<std::string::String>,
 }
+impl CancelReplicationTaskAssessmentRunInput {
+    /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
+    pub fn replication_task_assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_assessment_run_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelReplicationTaskAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelReplicationTaskAssessmentRunInput");
@@ -15062,6 +16709,41 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// </ul>
     pub opt_in_type: std::option::Option<std::string::String>,
 }
+impl ApplyPendingMaintenanceActionInput {
+    /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
+    /// action applies to.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p>The pending maintenance action to apply to this resource.</p>
+    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
+    /// </p>
+    pub fn apply_action(&self) -> std::option::Option<&str> {
+        self.apply_action.as_deref()
+    }
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
+    /// opt-in request of type <code>immediate</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>immediate</code> - Apply the maintenance action immediately.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>next-maintenance</code> - Apply the maintenance action during the next
+    /// maintenance window for the resource.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
+    /// requests.</p>
+    /// </li>
+    /// </ul>
+    pub fn opt_in_type(&self) -> std::option::Option<&str> {
+        self.opt_in_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplyPendingMaintenanceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplyPendingMaintenanceActionInput");
@@ -15081,6 +16763,17 @@ pub struct AddTagsToResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToResourceInput {
+    /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
+    /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags to be assigned to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

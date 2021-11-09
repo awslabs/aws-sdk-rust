@@ -13,6 +13,18 @@ pub struct Tag {
     /// a descriptor within a tag category (key).</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
+    /// that acts like a category for more specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as
+    /// a descriptor within a tag category (key).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -143,6 +155,16 @@ pub struct ImageScanStatus {
     /// <p>The description of the image scan status.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl ImageScanStatus {
+    /// <p>The current state of an image scan.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ScanStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The description of the image scan status.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageScanStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageScanStatus");
@@ -265,6 +287,16 @@ pub struct ImageIdentifier {
     /// <p>The tag used for the image.</p>
     pub image_tag: std::option::Option<std::string::String>,
 }
+impl ImageIdentifier {
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The tag used for the image.</p>
+    pub fn image_tag(&self) -> std::option::Option<&str> {
+        self.image_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageIdentifier");
@@ -327,6 +359,13 @@ pub struct ReplicationConfiguration {
     /// for a replication configuration.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
 }
+impl ReplicationConfiguration {
+    /// <p>An array of objects representing the replication destinations and repository filters
+    /// for a replication configuration.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ReplicationRule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationConfiguration");
@@ -388,6 +427,18 @@ pub struct ReplicationRule {
     /// repository filter for a replication rule provides a method for controlling which
     /// repositories in a private registry are replicated.</p>
     pub repository_filters: std::option::Option<std::vec::Vec<crate::model::RepositoryFilter>>,
+}
+impl ReplicationRule {
+    /// <p>An array of objects representing the destination for a replication rule.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::ReplicationDestination]> {
+        self.destinations.as_deref()
+    }
+    /// <p>An array of objects representing the filters for a replication rule. Specifying a
+    /// repository filter for a replication rule provides a method for controlling which
+    /// repositories in a private registry are replicated.</p>
+    pub fn repository_filters(&self) -> std::option::Option<&[crate::model::RepositoryFilter]> {
+        self.repository_filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ReplicationRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -488,6 +539,20 @@ pub struct RepositoryFilter {
     /// which is a repository name prefix specified with the <code>filter</code>
     /// parameter.</p>
     pub filter_type: std::option::Option<crate::model::RepositoryFilterType>,
+}
+impl RepositoryFilter {
+    /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is
+    /// specified, this value is required and should be the repository name prefix to configure
+    /// replication for.</p>
+    pub fn filter(&self) -> std::option::Option<&str> {
+        self.filter.as_deref()
+    }
+    /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>,
+    /// which is a repository name prefix specified with the <code>filter</code>
+    /// parameter.</p>
+    pub fn filter_type(&self) -> std::option::Option<&crate::model::RepositoryFilterType> {
+        self.filter_type.as_ref()
+    }
 }
 impl std::fmt::Debug for RepositoryFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -615,6 +680,17 @@ pub struct ReplicationDestination {
     /// cross-Region replication within your own registry, specify your own account ID.</p>
     pub registry_id: std::option::Option<std::string::String>,
 }
+impl ReplicationDestination {
+    /// <p>The Region to replicate to.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring
+    /// cross-Region replication within your own registry, specify your own account ID.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplicationDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationDestination");
@@ -736,6 +812,15 @@ pub struct ImageScanningConfiguration {
     /// not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
     pub scan_on_push: bool,
 }
+impl ImageScanningConfiguration {
+    /// <p>The setting that determines whether images are scanned after being pushed to a
+    /// repository. If set to <code>true</code>, images will be scanned after being pushed. If
+    /// this parameter is not specified, it will default to <code>false</code> and images will
+    /// not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
+    pub fn scan_on_push(&self) -> bool {
+        self.scan_on_push
+    }
+}
 impl std::fmt::Debug for ImageScanningConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageScanningConfiguration");
@@ -797,6 +882,28 @@ pub struct Image {
     pub image_manifest: std::option::Option<std::string::String>,
     /// <p>The manifest media type of the image.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
+}
+impl Image {
+    /// <p>The Amazon Web Services account ID associated with the registry containing the image.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository associated with the image.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An object containing the image tag and image digest associated with an image.</p>
+    pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
+        self.image_id.as_ref()
+    }
+    /// <p>The image manifest associated with the image.</p>
+    pub fn image_manifest(&self) -> std::option::Option<&str> {
+        self.image_manifest.as_deref()
+    }
+    /// <p>The manifest media type of the image.</p>
+    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+        self.image_manifest_media_type.as_deref()
+    }
 }
 impl std::fmt::Debug for Image {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -912,6 +1019,14 @@ pub struct ListImagesFilter {
     /// <code>UNTAGGED</code>.</p>
     pub tag_status: std::option::Option<crate::model::TagStatus>,
 }
+impl ListImagesFilter {
+    /// <p>The tag status with which to filter your <a>ListImages</a> results. You can
+    /// filter results based on whether they are <code>TAGGED</code> or
+    /// <code>UNTAGGED</code>.</p>
+    pub fn tag_status(&self) -> std::option::Option<&crate::model::TagStatus> {
+        self.tag_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ListImagesFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImagesFilter");
@@ -1026,6 +1141,12 @@ pub struct LifecyclePolicyPreviewSummary {
     /// <p>The number of expiring images.</p>
     pub expiring_image_total_count: std::option::Option<i32>,
 }
+impl LifecyclePolicyPreviewSummary {
+    /// <p>The number of expiring images.</p>
+    pub fn expiring_image_total_count(&self) -> std::option::Option<i32> {
+        self.expiring_image_total_count
+    }
+}
 impl std::fmt::Debug for LifecyclePolicyPreviewSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecyclePolicyPreviewSummary");
@@ -1085,6 +1206,29 @@ pub struct LifecyclePolicyPreviewResult {
     pub action: std::option::Option<crate::model::LifecyclePolicyRuleAction>,
     /// <p>The priority of the applied rule.</p>
     pub applied_rule_priority: std::option::Option<i32>,
+}
+impl LifecyclePolicyPreviewResult {
+    /// <p>The list of tags associated with this image.</p>
+    pub fn image_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.image_tags.as_deref()
+    }
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current
+    /// image was pushed to the repository.</p>
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.image_pushed_at.as_ref()
+    }
+    /// <p>The type of action to be taken.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::LifecyclePolicyRuleAction> {
+        self.action.as_ref()
+    }
+    /// <p>The priority of the applied rule.</p>
+    pub fn applied_rule_priority(&self) -> std::option::Option<i32> {
+        self.applied_rule_priority
+    }
 }
 impl std::fmt::Debug for LifecyclePolicyPreviewResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1203,6 +1347,12 @@ pub struct LifecyclePolicyRuleAction {
     /// <p>The type of action to be taken.</p>
     pub r#type: std::option::Option<crate::model::ImageActionType>,
 }
+impl LifecyclePolicyRuleAction {
+    /// <p>The type of action to be taken.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageActionType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for LifecyclePolicyRuleAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecyclePolicyRuleAction");
@@ -1305,6 +1455,12 @@ pub struct LifecyclePolicyPreviewFilter {
     /// <p>The tag status of the image.</p>
     pub tag_status: std::option::Option<crate::model::TagStatus>,
 }
+impl LifecyclePolicyPreviewFilter {
+    /// <p>The tag status of the image.</p>
+    pub fn tag_status(&self) -> std::option::Option<&crate::model::TagStatus> {
+        self.tag_status.as_ref()
+    }
+}
 impl std::fmt::Debug for LifecyclePolicyPreviewFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecyclePolicyPreviewFilter");
@@ -1366,6 +1522,27 @@ pub struct AuthorizationData {
     /// <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
     /// <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
     pub proxy_endpoint: std::option::Option<std::string::String>,
+}
+impl AuthorizationData {
+    /// <p>A base64-encoded string that contains authorization data for the specified Amazon ECR
+    /// registry. When the string is decoded, it is presented in the format
+    /// <code>user:password</code> for private registry authentication using <code>docker
+    /// login</code>.</p>
+    pub fn authorization_token(&self) -> std::option::Option<&str> {
+        self.authorization_token.as_deref()
+    }
+    /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
+    /// Authorization tokens are valid for 12 hours.</p>
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expires_at.as_ref()
+    }
+    /// <p>The registry URL to use for this authorization token in a <code>docker login</code>
+    /// command. The Amazon ECR registry URL format is
+    /// <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
+    /// <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
+    pub fn proxy_endpoint(&self) -> std::option::Option<&str> {
+        self.proxy_endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthorizationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1481,6 +1658,48 @@ pub struct Repository {
     /// <p>The encryption configuration for the repository. This determines how the contents of
     /// your repository are encrypted at rest.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+}
+impl Repository {
+    /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
+    /// repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name.
+    /// For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+    pub fn repository_arn(&self) -> std::option::Option<&str> {
+        self.repository_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The URI for the repository. You can use this URI for container image <code>push</code>
+    /// and <code>pull</code> operations.</p>
+    pub fn repository_uri(&self) -> std::option::Option<&str> {
+        self.repository_uri.as_deref()
+    }
+    /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The tag mutability setting for the repository.</p>
+    pub fn image_tag_mutability(&self) -> std::option::Option<&crate::model::ImageTagMutability> {
+        self.image_tag_mutability.as_ref()
+    }
+    /// <p>The image scanning configuration for a repository.</p>
+    pub fn image_scanning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageScanningConfiguration> {
+        self.image_scanning_configuration.as_ref()
+    }
+    /// <p>The encryption configuration for the repository. This determines how the contents of
+    /// your repository are encrypted at rest.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Repository {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1687,6 +1906,31 @@ pub struct EncryptionConfiguration {
     /// Amazon Web Services managed KMS key for Amazon ECR will be used.</p>
     pub kms_key: std::option::Option<std::string::String>,
 }
+impl EncryptionConfiguration {
+    /// <p>The encryption type to use.</p>
+    /// <p>If you use the <code>KMS</code> encryption type, the contents of the repository will
+    /// be encrypted using server-side encryption with Key Management Service key stored in KMS. When you
+    /// use KMS to encrypt your data, you can either use the default Amazon Web Services managed KMS key
+    /// for Amazon ECR, or specify your own KMS key, which you already created. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side
+    /// encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the
+    /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+    /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
+    /// with Amazon S3-managed encryption keys which encrypts the images in the repository using an
+    /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using
+    /// server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the
+    /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.encryption_type.as_ref()
+    }
+    /// <p>If you use the <code>KMS</code> encryption type, specify the KMS key to use for
+    /// encryption. The alias, key ID, or full ARN of the KMS key can be specified. The key
+    /// must exist in the same Region as the repository. If no key is specified, the default
+    /// Amazon Web Services managed KMS key for Amazon ECR will be used.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+}
 impl std::fmt::Debug for EncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionConfiguration");
@@ -1842,6 +2086,28 @@ pub struct ImageScanFindings {
     /// <p>The image vulnerability counts, sorted by severity.</p>
     pub finding_severity_counts:
         std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
+}
+impl ImageScanFindings {
+    /// <p>The time of the last completed image scan.</p>
+    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.image_scan_completed_at.as_ref()
+    }
+    /// <p>The time when the vulnerability data was last scanned.</p>
+    pub fn vulnerability_source_updated_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.vulnerability_source_updated_at.as_ref()
+    }
+    /// <p>The findings from the image scan.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::ImageScanFinding]> {
+        self.findings.as_deref()
+    }
+    /// <p>The image vulnerability counts, sorted by severity.</p>
+    pub fn finding_severity_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::FindingSeverity, i32>> {
+        self.finding_severity_counts.as_ref()
+    }
 }
 impl std::fmt::Debug for ImageScanFindings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2050,6 +2316,28 @@ pub struct ImageScanFinding {
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
+impl ImageScanFinding {
+    /// <p>The name associated with the finding, usually a CVE number.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the finding.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A link containing additional details about the security vulnerability.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The finding severity.</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::FindingSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>A collection of attributes of the host from which the finding is generated.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageScanFinding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageScanFinding");
@@ -2164,6 +2452,16 @@ pub struct Attribute {
     /// <p>The value assigned to the attribute key.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Attribute {
+    /// <p>The attribute key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value assigned to the attribute key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Attribute");
@@ -2252,6 +2550,59 @@ pub struct ImageDetail {
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
     pub artifact_media_type: std::option::Option<std::string::String>,
+}
+impl ImageDetail {
+    /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to which this image belongs.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The list of tags associated with this image.</p>
+    pub fn image_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.image_tags.as_deref()
+    }
+    /// <p>The size, in bytes, of the image in the repository.</p>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the
+    /// list.</p>
+    /// <note>
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers
+    /// before pushing them to a V2 Docker registry. The output of the <code>docker
+    /// images</code> command shows the uncompressed image size, so it may return a
+    /// larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
+    /// </note>
+    pub fn image_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.image_size_in_bytes
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current
+    /// image was pushed to the repository. </p>
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.image_pushed_at.as_ref()
+    }
+    /// <p>The current state of the scan.</p>
+    pub fn image_scan_status(&self) -> std::option::Option<&crate::model::ImageScanStatus> {
+        self.image_scan_status.as_ref()
+    }
+    /// <p>A summary of the last completed image scan.</p>
+    pub fn image_scan_findings_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageScanFindingsSummary> {
+        self.image_scan_findings_summary.as_ref()
+    }
+    /// <p>The media type of the image manifest.</p>
+    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+        self.image_manifest_media_type.as_deref()
+    }
+    /// <p>The artifact media type of the image.</p>
+    pub fn artifact_media_type(&self) -> std::option::Option<&str> {
+        self.artifact_media_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2475,6 +2826,24 @@ pub struct ImageScanFindingsSummary {
     pub finding_severity_counts:
         std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
 }
+impl ImageScanFindingsSummary {
+    /// <p>The time of the last completed image scan.</p>
+    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.image_scan_completed_at.as_ref()
+    }
+    /// <p>The time when the vulnerability data was last scanned.</p>
+    pub fn vulnerability_source_updated_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.vulnerability_source_updated_at.as_ref()
+    }
+    /// <p>The image vulnerability counts, sorted by severity.</p>
+    pub fn finding_severity_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::FindingSeverity, i32>> {
+        self.finding_severity_counts.as_ref()
+    }
+}
 impl std::fmt::Debug for ImageScanFindingsSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageScanFindingsSummary");
@@ -2577,6 +2946,14 @@ pub struct DescribeImagesFilter {
     /// <code>UNTAGGED</code>.</p>
     pub tag_status: std::option::Option<crate::model::TagStatus>,
 }
+impl DescribeImagesFilter {
+    /// <p>The tag status with which to filter your <a>DescribeImages</a> results. You
+    /// can filter results based on whether they are <code>TAGGED</code> or
+    /// <code>UNTAGGED</code>.</p>
+    pub fn tag_status(&self) -> std::option::Option<&crate::model::TagStatus> {
+        self.tag_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeImagesFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImagesFilter");
@@ -2637,6 +3014,24 @@ pub struct ImageReplicationStatus {
     pub status: std::option::Option<crate::model::ReplicationStatus>,
     /// <p>The failure code for a replication that has failed.</p>
     pub failure_code: std::option::Option<std::string::String>,
+}
+impl ImageReplicationStatus {
+    /// <p>The destination Region for the image replication.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The AWS account ID associated with the registry to which the image belongs.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The image replication status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The failure code for a replication that has failed.</p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageReplicationStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2790,6 +3185,20 @@ pub struct ImageFailure {
     pub failure_code: std::option::Option<crate::model::ImageFailureCode>,
     /// <p>The reason for the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl ImageFailure {
+    /// <p>The image ID associated with the failure.</p>
+    pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
+        self.image_id.as_ref()
+    }
+    /// <p>The code associated with the failure.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::ImageFailureCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2961,6 +3370,20 @@ pub struct LayerFailure {
     /// <p>The reason for the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl LayerFailure {
+    /// <p>The layer digest associated with the failure.</p>
+    pub fn layer_digest(&self) -> std::option::Option<&str> {
+        self.layer_digest.as_deref()
+    }
+    /// <p>The failure code associated with the failure.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::LayerFailureCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for LayerFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LayerFailure");
@@ -3103,6 +3526,26 @@ pub struct Layer {
     /// <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
     /// <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
     pub media_type: std::option::Option<std::string::String>,
+}
+impl Layer {
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn layer_digest(&self) -> std::option::Option<&str> {
+        self.layer_digest.as_deref()
+    }
+    /// <p>The availability status of the image layer.</p>
+    pub fn layer_availability(&self) -> std::option::Option<&crate::model::LayerAvailability> {
+        self.layer_availability.as_ref()
+    }
+    /// <p>The size, in bytes, of the image layer.</p>
+    pub fn layer_size(&self) -> std::option::Option<i64> {
+        self.layer_size
+    }
+    /// <p>The media type of the layer, such as
+    /// <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+    /// <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+    pub fn media_type(&self) -> std::option::Option<&str> {
+        self.media_type.as_deref()
+    }
 }
 impl std::fmt::Debug for Layer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

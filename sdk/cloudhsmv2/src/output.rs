@@ -66,6 +66,12 @@ pub struct RestoreBackupOutput {
     /// <p>Information on the <code>Backup</code> object created.</p>
     pub backup: std::option::Option<crate::model::Backup>,
 }
+impl RestoreBackupOutput {
+    /// <p>Information on the <code>Backup</code> object created.</p>
+    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+        self.backup.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreBackupOutput");
@@ -113,6 +119,12 @@ impl RestoreBackupOutput {
 pub struct ModifyClusterOutput {
     /// <p>Contains information about an AWS CloudHSM cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl ModifyClusterOutput {
+    /// <p>Contains information about an AWS CloudHSM cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -166,6 +178,17 @@ pub struct ModifyBackupAttributesOutput {
     /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is
     /// pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
     pub backup: std::option::Option<crate::model::Backup>,
+}
+impl ModifyBackupAttributesOutput {
+    /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects
+    /// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and
+    /// <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region
+    /// additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
+    /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is
+    /// pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+        self.backup.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyBackupAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -227,6 +250,17 @@ pub struct ListTagsOutput {
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use
     /// this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsOutput {
+    /// <p>A list of tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+    /// <p>An opaque string that indicates that the response contains only a subset of tags. Use
+    /// this value in a subsequent <code>ListTags</code> request to get more tags.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -302,6 +336,16 @@ pub struct InitializeClusterOutput {
     /// <p>A description of the cluster's state.</p>
     pub state_message: std::option::Option<std::string::String>,
 }
+impl InitializeClusterOutput {
+    /// <p>The cluster's state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.state.as_ref()
+    }
+    /// <p>A description of the cluster's state.</p>
+    pub fn state_message(&self) -> std::option::Option<&str> {
+        self.state_message.as_deref()
+    }
+}
 impl std::fmt::Debug for InitializeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitializeClusterOutput");
@@ -369,6 +413,18 @@ pub struct DescribeClustersOutput {
     /// Use this value in a subsequent <code>DescribeClusters</code> request to get more
     /// clusters.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeClustersOutput {
+    /// <p>A list of clusters.</p>
+    pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.clusters.as_deref()
+    }
+    /// <p>An opaque string that indicates that the response contains only a subset of clusters.
+    /// Use this value in a subsequent <code>DescribeClusters</code> request to get more
+    /// clusters.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,6 +504,18 @@ pub struct DescribeBackupsOutput {
     /// backups.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBackupsOutput {
+    /// <p>A list of backups.</p>
+    pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
+        self.backups.as_deref()
+    }
+    /// <p>An opaque string that indicates that the response contains only a subset of backups.
+    /// Use this value in a subsequent <code>DescribeBackups</code> request to get more
+    /// backups.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBackupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBackupsOutput");
@@ -522,6 +590,12 @@ pub struct DeleteHsmOutput {
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
     pub hsm_id: std::option::Option<std::string::String>,
 }
+impl DeleteHsmOutput {
+    /// <p>The identifier (ID) of the HSM that was deleted.</p>
+    pub fn hsm_id(&self) -> std::option::Option<&str> {
+        self.hsm_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteHsmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteHsmOutput");
@@ -569,6 +643,12 @@ impl DeleteHsmOutput {
 pub struct DeleteClusterOutput {
     /// <p>Information about the cluster that was deleted.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl DeleteClusterOutput {
+    /// <p>Information about the cluster that was deleted.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -618,6 +698,12 @@ pub struct DeleteBackupOutput {
     /// <p>Information on the <code>Backup</code> object deleted.</p>
     pub backup: std::option::Option<crate::model::Backup>,
 }
+impl DeleteBackupOutput {
+    /// <p>Information on the <code>Backup</code> object deleted.</p>
+    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+        self.backup.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackupOutput");
@@ -666,6 +752,12 @@ pub struct CreateHsmOutput {
     /// <p>Information about the HSM that was created.</p>
     pub hsm: std::option::Option<crate::model::Hsm>,
 }
+impl CreateHsmOutput {
+    /// <p>Information about the HSM that was created.</p>
+    pub fn hsm(&self) -> std::option::Option<&crate::model::Hsm> {
+        self.hsm.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateHsmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHsmOutput");
@@ -711,6 +803,12 @@ impl CreateHsmOutput {
 pub struct CreateClusterOutput {
     /// <p>Information about the cluster that was created.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl CreateClusterOutput {
+    /// <p>Information about the cluster that was created.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -764,6 +862,17 @@ pub struct CopyBackupToRegionOutput {
     /// the <a>DescribeBackups</a> operation on the backup that will be copied to the
     /// destination region.</p>
     pub destination_backup: std::option::Option<crate::model::DestinationBackup>,
+}
+impl CopyBackupToRegionOutput {
+    /// <p>Information on the backup that will be copied to the destination region, including
+    /// CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the
+    /// destination backup will be the same as that of the source backup.</p>
+    /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use
+    /// the <a>DescribeBackups</a> operation on the backup that will be copied to the
+    /// destination region.</p>
+    pub fn destination_backup(&self) -> std::option::Option<&crate::model::DestinationBackup> {
+        self.destination_backup.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyBackupToRegionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

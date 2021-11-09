@@ -122,6 +122,32 @@ pub struct Item {
     /// <p>The length of the item in bytes.</p>
     pub content_length: std::option::Option<i64>,
 }
+impl Item {
+    /// <p>The name of the item.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The item type (folder or object).</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ETag that represents a unique instance of the item.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>The date and time that the item was last modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The content type of the item.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The length of the item in bytes.</p>
+    pub fn content_length(&self) -> std::option::Option<i64> {
+        self.content_length
+    }
+}
 impl std::fmt::Debug for Item {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Item");

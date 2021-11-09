@@ -10,6 +10,16 @@ pub struct Tag {
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -73,6 +83,16 @@ pub struct ResourceKey {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl ResourceKey {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -735,6 +755,12 @@ pub struct QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
     pub select_fields: std::option::Option<std::vec::Vec<crate::model::FieldInfo>>,
 }
+impl QueryInfo {
+    /// <p>Returns a <code>FieldInfo</code> object.</p>
+    pub fn select_fields(&self) -> std::option::Option<&[crate::model::FieldInfo]> {
+        self.select_fields.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryInfo");
@@ -791,6 +817,12 @@ impl QueryInfo {
 pub struct FieldInfo {
     /// <p>Name of the field.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl FieldInfo {
+    /// <p>Name of the field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for FieldInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -852,6 +884,35 @@ pub struct StoredQuery {
     /// AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code>
     /// </p>
     pub expression: std::option::Option<std::string::String>,
+}
+impl StoredQuery {
+    /// <p>The ID of the query.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    pub fn query_arn(&self) -> std::option::Option<&str> {
+        self.query_arn.as_deref()
+    }
+    /// <p>The name of the query.</p>
+    pub fn query_name(&self) -> std::option::Option<&str> {
+        self.query_name.as_deref()
+    }
+    /// <p>A unique description for the query.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The expression of the query. For example, <code>SELECT
+    /// resourceId,
+    /// resourceType,
+    /// supplementaryConfiguration.BucketVersioningConfiguration.status
+    /// WHERE
+    /// resourceType = 'AWS::S3::Bucket'
+    /// AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code>
+    /// </p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
 }
 impl std::fmt::Debug for StoredQuery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -972,6 +1033,19 @@ pub struct RetentionConfiguration {
     /// </note>
     pub retention_period_in_days: i32,
 }
+impl RetentionConfiguration {
+    /// <p>The name of the retention configuration object.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Number of days Config stores your historical information.</p>
+    /// <note>
+    /// <p>Currently, only applicable to the configuration item history.</p>
+    /// </note>
+    pub fn retention_period_in_days(&self) -> i32 {
+        self.retention_period_in_days
+    }
+}
 impl std::fmt::Debug for RetentionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetentionConfiguration");
@@ -1040,6 +1114,16 @@ pub struct FailedRemediationExceptionBatch {
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>Returns remediation exception resource key object of the failed items.</p>
     pub failed_items: std::option::Option<std::vec::Vec<crate::model::RemediationException>>,
+}
+impl FailedRemediationExceptionBatch {
+    /// <p>Returns a failure message. For example, the auto-remediation has failed.</p>
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
+    /// <p>Returns remediation exception resource key object of the failed items.</p>
+    pub fn failed_items(&self) -> std::option::Option<&[crate::model::RemediationException]> {
+        self.failed_items.as_deref()
+    }
 }
 impl std::fmt::Debug for FailedRemediationExceptionBatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1125,6 +1209,28 @@ pub struct RemediationException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The time when the remediation exception will be deleted.</p>
     pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RemediationException {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The type of a resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>An explanation of an remediation exception.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time when the remediation exception will be deleted.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
 }
 impl std::fmt::Debug for RemediationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1237,6 +1343,16 @@ pub struct RemediationExceptionResourceKey {
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl RemediationExceptionResourceKey {
+    /// <p>The type of a resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemediationExceptionResourceKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemediationExceptionResourceKey");
@@ -1302,6 +1418,16 @@ pub struct FailedRemediationBatch {
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>Returns remediation configurations of the failed items.</p>
     pub failed_items: std::option::Option<std::vec::Vec<crate::model::RemediationConfiguration>>,
+}
+impl FailedRemediationBatch {
+    /// <p>Returns a failure message. For example, the resource is already compliant.</p>
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
+    /// <p>Returns remediation configurations of the failed items.</p>
+    pub fn failed_items(&self) -> std::option::Option<&[crate::model::RemediationConfiguration]> {
+        self.failed_items.as_deref()
+    }
 }
 impl std::fmt::Debug for FailedRemediationBatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1412,6 +1538,69 @@ pub struct RemediationConfiguration {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Name of the service that owns the service linked rule, if applicable.</p>
     pub created_by_service: std::option::Option<std::string::String>,
+}
+impl RemediationConfiguration {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::RemediationTargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>Target ID is the name of the public document.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>Version of the target. For example, version of the SSM document.</p>
+    /// <note>
+    /// <p>If you make backward incompatible changes to the SSM document,
+    /// you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
+    /// </note>
+    pub fn target_version(&self) -> std::option::Option<&str> {
+        self.target_version.as_deref()
+    }
+    /// <p>An object of the RemediationParameterValue.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RemediationParameterValue>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The type of a resource. </p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The remediation is triggered automatically.</p>
+    pub fn automatic(&self) -> bool {
+        self.automatic
+    }
+    /// <p>An ExecutionControls object.</p>
+    pub fn execution_controls(&self) -> std::option::Option<&crate::model::ExecutionControls> {
+        self.execution_controls.as_ref()
+    }
+    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
+    /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds,
+    ///
+    /// Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
+    pub fn maximum_automatic_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_automatic_attempts
+    }
+    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+    /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5,
+    /// Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+    pub fn retry_attempt_seconds(&self) -> std::option::Option<i64> {
+        self.retry_attempt_seconds
+    }
+    /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Name of the service that owns the service linked rule, if applicable.</p>
+    pub fn created_by_service(&self) -> std::option::Option<&str> {
+        self.created_by_service.as_deref()
+    }
 }
 impl std::fmt::Debug for RemediationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1663,6 +1852,12 @@ pub struct ExecutionControls {
     /// <p>A SsmControls object.</p>
     pub ssm_controls: std::option::Option<crate::model::SsmControls>,
 }
+impl ExecutionControls {
+    /// <p>A SsmControls object.</p>
+    pub fn ssm_controls(&self) -> std::option::Option<&crate::model::SsmControls> {
+        self.ssm_controls.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecutionControls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionControls");
@@ -1717,6 +1912,18 @@ pub struct SsmControls {
     /// You can specify a percentage of errors, for example 10%. If you do not specifiy a percentage, the default is 50%.
     /// For example, if you set the ErrorPercentage to 40% for 10 non-compliant resources, then SSM stops running the automations when the fifth error is received. </p>
     pub error_percentage: std::option::Option<i32>,
+}
+impl SsmControls {
+    /// <p>The maximum percentage of remediation actions allowed to run in parallel on the non-compliant resources for that specific rule. You can specify a percentage, such as 10%. The default value is 10. </p>
+    pub fn concurrent_execution_rate_percentage(&self) -> std::option::Option<i32> {
+        self.concurrent_execution_rate_percentage
+    }
+    /// <p>The percentage of errors that are allowed before SSM stops running automations on non-compliant resources for that specific rule.
+    /// You can specify a percentage of errors, for example 10%. If you do not specifiy a percentage, the default is 50%.
+    /// For example, if you set the ErrorPercentage to 40% for 10 non-compliant resources, then SSM stops running the automations when the fifth error is received. </p>
+    pub fn error_percentage(&self) -> std::option::Option<i32> {
+        self.error_percentage
+    }
 }
 impl std::fmt::Debug for SsmControls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1791,6 +1998,16 @@ pub struct RemediationParameterValue {
     /// <p>The value is static and does not change at run-time.</p>
     pub static_value: std::option::Option<crate::model::StaticValue>,
 }
+impl RemediationParameterValue {
+    /// <p>The value is dynamic and changes at run-time.</p>
+    pub fn resource_value(&self) -> std::option::Option<&crate::model::ResourceValue> {
+        self.resource_value.as_ref()
+    }
+    /// <p>The value is static and does not change at run-time.</p>
+    pub fn static_value(&self) -> std::option::Option<&crate::model::StaticValue> {
+        self.static_value.as_ref()
+    }
+}
 impl std::fmt::Debug for RemediationParameterValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemediationParameterValue");
@@ -1858,6 +2075,12 @@ pub struct StaticValue {
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl StaticValue {
+    /// <p>A list of values. For example, the ARN of the assumed role. </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for StaticValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StaticValue");
@@ -1914,6 +2137,12 @@ impl StaticValue {
 pub struct ResourceValue {
     /// <p>The value is a resource ID.</p>
     pub value: std::option::Option<crate::model::ResourceValueType>,
+}
+impl ResourceValue {
+    /// <p>The value is a resource ID.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::ResourceValueType> {
+        self.value.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2069,6 +2298,16 @@ pub struct ConformancePackInputParameter {
     /// <p>Another part of the key-value pair. </p>
     pub parameter_value: std::option::Option<std::string::String>,
 }
+impl ConformancePackInputParameter {
+    /// <p>One part of a key-value pair.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>Another part of the key-value pair. </p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
+}
 impl std::fmt::Debug for ConformancePackInputParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConformancePackInputParameter");
@@ -2177,6 +2416,71 @@ pub struct OrganizationCustomRuleMetadata {
     /// <p>The optional part of a key-value pair that make up a tag.
     /// A value acts as a descriptor within a tag category (key). </p>
     pub tag_value_scope: std::option::Option<std::string::String>,
+}
+impl OrganizationCustomRuleMetadata {
+    /// <p>The description that you provide for organization config rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The lambda function ARN.</p>
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+        self.lambda_function_arn.as_deref()
+    }
+    /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item.
+    /// Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency specified for <code>MaximumExecutionFrequency</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn organization_config_rule_trigger_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConfigRuleTriggerType]> {
+        self.organization_config_rule_trigger_types.as_deref()
+    }
+    /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+    pub fn input_parameters(&self) -> std::option::Option<&str> {
+        self.input_parameters.as_deref()
+    }
+    /// <p>The maximum frequency with which Config runs evaluations for a rule.
+    /// Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+    /// <note>
+    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+    /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
+    /// </note>
+    pub fn maximum_execution_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
+        self.maximum_execution_frequency.as_ref()
+    }
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_types_scope(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types_scope.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_id_scope(&self) -> std::option::Option<&str> {
+        self.resource_id_scope.as_deref()
+    }
+    /// <p>One part of a key-value pair that make up a tag.
+    /// A key is a general label that acts like a category for more specific tag values. </p>
+    pub fn tag_key_scope(&self) -> std::option::Option<&str> {
+        self.tag_key_scope.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag.
+    /// A value acts as a descriptor within a tag category (key). </p>
+    pub fn tag_value_scope(&self) -> std::option::Option<&str> {
+        self.tag_value_scope.as_deref()
+    }
 }
 impl std::fmt::Debug for OrganizationCustomRuleMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2597,6 +2901,50 @@ pub struct OrganizationManagedRuleMetadata {
     /// A value acts as a descriptor within a tag category (key).</p>
     pub tag_value_scope: std::option::Option<std::string::String>,
 }
+impl OrganizationManagedRuleMetadata {
+    /// <p>The description that you provide for organization config rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>For organization config managed rules, a predefined identifier from a
+    /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
+    /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
+    pub fn rule_identifier(&self) -> std::option::Option<&str> {
+        self.rule_identifier.as_deref()
+    }
+    /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+    pub fn input_parameters(&self) -> std::option::Option<&str> {
+        self.input_parameters.as_deref()
+    }
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p>
+    /// <note>
+    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+    /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
+    /// </note>
+    pub fn maximum_execution_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
+        self.maximum_execution_frequency.as_ref()
+    }
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_types_scope(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types_scope.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_id_scope(&self) -> std::option::Option<&str> {
+        self.resource_id_scope.as_deref()
+    }
+    /// <p>One part of a key-value pair that make up a tag.
+    /// A key is a general label that acts like a category for more specific tag values. </p>
+    pub fn tag_key_scope(&self) -> std::option::Option<&str> {
+        self.tag_key_scope.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag.
+    /// A value acts as a descriptor within a tag category (key).</p>
+    pub fn tag_value_scope(&self) -> std::option::Option<&str> {
+        self.tag_value_scope.as_deref()
+    }
+}
 impl std::fmt::Debug for OrganizationManagedRuleMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationManagedRuleMetadata");
@@ -2793,6 +3141,28 @@ pub struct ExternalEvaluation {
     pub annotation: std::option::Option<std::string::String>,
     /// <p>The time when the compliance was recorded. </p>
     pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ExternalEvaluation {
+    /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
+    pub fn compliance_resource_type(&self) -> std::option::Option<&str> {
+        self.compliance_resource_type.as_deref()
+    }
+    /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
+    pub fn compliance_resource_id(&self) -> std::option::Option<&str> {
+        self.compliance_resource_id.as_deref()
+    }
+    /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
+    pub fn annotation(&self) -> std::option::Option<&str> {
+        self.annotation.as_deref()
+    }
+    /// <p>The time when the compliance was recorded. </p>
+    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.ordering_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ExternalEvaluation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2999,6 +3369,44 @@ pub struct Evaluation {
     /// example, every 24 hours).</p>
     pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Evaluation {
+    /// <p>The type of Amazon Web Services resource that was evaluated.</p>
+    pub fn compliance_resource_type(&self) -> std::option::Option<&str> {
+        self.compliance_resource_type.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn compliance_resource_id(&self) -> std::option::Option<&str> {
+        self.compliance_resource_id.as_deref()
+    }
+    /// <p>Indicates whether the Amazon Web Services resource complies with the Config
+    /// rule that it was evaluated against.</p>
+    /// <p>For the <code>Evaluation</code> data type, Config supports
+    /// only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+    /// <code>NOT_APPLICABLE</code> values. Config does not support
+    /// the <code>INSUFFICIENT_DATA</code> value for this data
+    /// type.</p>
+    /// <p>Similarly, Config does not accept
+    /// <code>INSUFFICIENT_DATA</code> as the value for
+    /// <code>ComplianceType</code> from a <code>PutEvaluations</code>
+    /// request. For example, an Lambda function for a custom Config
+    /// rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>Supplementary information about how the evaluation determined
+    /// the compliance.</p>
+    pub fn annotation(&self) -> std::option::Option<&str> {
+        self.annotation.as_deref()
+    }
+    /// <p>The time of the event in Config that triggered the
+    /// evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation.
+    /// For periodic evaluations, the time indicates when Config
+    /// triggered the evaluation at the frequency that you specified (for
+    /// example, every 24 hours).</p>
+    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.ordering_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for Evaluation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Evaluation");
@@ -3171,6 +3579,51 @@ pub struct DeliveryChannel {
     /// snapshots to the Amazon S3 bucket.</p>
     pub config_snapshot_delivery_properties:
         std::option::Option<crate::model::ConfigSnapshotDeliveryProperties>,
+}
+impl DeliveryChannel {
+    /// <p>The name of the delivery channel. By default, Config
+    /// assigns the name "default" when creating the delivery channel. To
+    /// change the delivery channel name, you must use the
+    /// DeleteDeliveryChannel action to delete your current delivery
+    /// channel, and then you must use the PutDeliveryChannel command to
+    /// create a delivery channel that has the desired name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket to which Config delivers
+    /// configuration snapshots and configuration history files.</p>
+    /// <p>If you specify a bucket that belongs to another Amazon Web Services account,
+    /// that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config
+    /// Developer Guide.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The prefix for the specified Amazon S3 bucket.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key) used to encrypt objects delivered by Config.
+    /// Must belong to the same Region as the destination S3 bucket.</p>
+    pub fn s3_kms_key_arn(&self) -> std::option::Option<&str> {
+        self.s3_kms_key_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+    /// Config sends notifications about configuration
+    /// changes.</p>
+    /// <p>If you choose a topic from another account, the topic must have
+    /// policies that grant access permissions to Config. For more
+    /// information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config
+    /// Developer Guide.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The options for how often Config delivers configuration
+    /// snapshots to the Amazon S3 bucket.</p>
+    pub fn config_snapshot_delivery_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigSnapshotDeliveryProperties> {
+        self.config_snapshot_delivery_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DeliveryChannel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3403,6 +3856,15 @@ pub struct ConfigSnapshotDeliveryProperties {
     /// snapshots.</p>
     pub delivery_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
 }
+impl ConfigSnapshotDeliveryProperties {
+    /// <p>The frequency with which Config delivers configuration
+    /// snapshots.</p>
+    pub fn delivery_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
+        self.delivery_frequency.as_ref()
+    }
+}
 impl std::fmt::Debug for ConfigSnapshotDeliveryProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigSnapshotDeliveryProperties");
@@ -3467,6 +3929,24 @@ pub struct ConfigurationRecorder {
     /// <p>Specifies the types of Amazon Web Services resources for which Config
     /// records configuration changes.</p>
     pub recording_group: std::option::Option<crate::model::RecordingGroup>,
+}
+impl ConfigurationRecorder {
+    /// <p>The name of the recorder. By default, Config automatically
+    /// assigns the name "default" when creating the configuration recorder.
+    /// You cannot change the assigned name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the
+    /// Amazon Web Services resources associated with the account.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Specifies the types of Amazon Web Services resources for which Config
+    /// records configuration changes.</p>
+    pub fn recording_group(&self) -> std::option::Option<&crate::model::RecordingGroup> {
+        self.recording_group.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigurationRecorder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3616,6 +4096,51 @@ pub struct RecordingGroup {
     /// <b>resourceType Value</b> column in
     /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceType>>,
+}
+impl RecordingGroup {
+    /// <p>Specifies whether Config records configuration changes for
+    /// every supported type of regional resource.</p>
+    /// <p>If you set this option to <code>true</code>, when Config
+    /// adds support for a new type of regional resource, it starts
+    /// recording resources of that type automatically.</p>
+    /// <p>If you set this option to <code>true</code>, you cannot
+    /// enumerate a list of <code>resourceTypes</code>.</p>
+    pub fn all_supported(&self) -> bool {
+        self.all_supported
+    }
+    /// <p>Specifies whether Config includes all supported types of
+    /// global resources (for example, IAM resources) with the resources
+    /// that it records.</p>
+    /// <p>Before you can set this option to <code>true</code>, you must
+    /// set the <code>allSupported</code> option to
+    /// <code>true</code>.</p>
+    /// <p>If you set this option to <code>true</code>, when Config
+    /// adds support for a new type of global resource, it starts recording
+    /// resources of that type automatically.</p>
+    /// <p>The configuration details for any global resource are the same
+    /// in all regions. To prevent duplicate configuration items, you should
+    /// consider customizing Config in only one region to record global
+    /// resources.</p>
+    pub fn include_global_resource_types(&self) -> bool {
+        self.include_global_resource_types
+    }
+    /// <p>A comma-separated list that specifies the types of Amazon Web Services
+    /// resources for which Config records configuration changes (for
+    /// example, <code>AWS::EC2::Instance</code> or
+    /// <code>AWS::CloudTrail::Trail</code>).</p>
+    /// <p>To record all configuration changes, you must
+    /// set the <code>allSupported</code> option to
+    /// <code>true</code>.</p>
+    /// <p>If you set this option to <code>false</code>, when Config
+    /// adds support for a new type of resource, it will not record
+    /// resources of that type unless you manually add that type to your
+    /// recording group.</p>
+    /// <p>For a list of valid <code>resourceTypes</code> values, see the
+    /// <b>resourceType Value</b> column in
+    /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[crate::model::ResourceType]> {
+        self.resource_types.as_deref()
+    }
 }
 impl std::fmt::Debug for RecordingGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3788,6 +4313,43 @@ pub struct ConfigurationAggregator {
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub created_by: std::option::Option<std::string::String>,
+}
+impl ConfigurationAggregator {
+    /// <p>The name of the aggregator.</p>
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
+    pub fn configuration_aggregator_arn(&self) -> std::option::Option<&str> {
+        self.configuration_aggregator_arn.as_deref()
+    }
+    /// <p>Provides a list of source accounts and regions to be
+    /// aggregated.</p>
+    pub fn account_aggregation_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountAggregationSource]> {
+        self.account_aggregation_sources.as_deref()
+    }
+    /// <p>Provides an organization and list of regions to be
+    /// aggregated.</p>
+    pub fn organization_aggregation_source(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationAggregationSource> {
+        self.organization_aggregation_source.as_ref()
+    }
+    /// <p>The time stamp when the configuration aggregator was
+    /// created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time of the last update.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Amazon Web Services service that created the configuration aggregator.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigurationAggregator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3978,6 +4540,22 @@ pub struct OrganizationAggregationSource {
     /// regions.</p>
     pub all_aws_regions: bool,
 }
+impl OrganizationAggregationSource {
+    /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+    /// associated with the aggregator account.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The source regions being aggregated.</p>
+    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.aws_regions.as_deref()
+    }
+    /// <p>If true, aggregate existing Config regions and future
+    /// regions.</p>
+    pub fn all_aws_regions(&self) -> bool {
+        self.all_aws_regions
+    }
+}
 impl std::fmt::Debug for OrganizationAggregationSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationAggregationSource");
@@ -4070,6 +4648,22 @@ pub struct AccountAggregationSource {
     pub all_aws_regions: bool,
     /// <p>The source regions being aggregated.</p>
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AccountAggregationSource {
+    /// <p>The 12-digit account ID of the account being aggregated.
+    /// </p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>If true, aggregate existing Config regions and future
+    /// regions.</p>
+    pub fn all_aws_regions(&self) -> bool {
+        self.all_aws_regions
+    }
+    /// <p>The source regions being aggregated.</p>
+    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.aws_regions.as_deref()
+    }
 }
 impl std::fmt::Debug for AccountAggregationSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4259,6 +4853,110 @@ pub struct ConfigRule {
     /// rule.</p>
     /// </note>
     pub created_by: std::option::Option<std::string::String>,
+}
+impl ConfigRule {
+    /// <p>The name that you assign to the Config rule. The name is
+    /// required if you are adding a new rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Config
+    /// rule.</p>
+    pub fn config_rule_arn(&self) -> std::option::Option<&str> {
+        self.config_rule_arn.as_deref()
+    }
+    /// <p>The ID of the Config rule.</p>
+    pub fn config_rule_id(&self) -> std::option::Option<&str> {
+        self.config_rule_id.as_deref()
+    }
+    /// <p>The description that you provide for the Config
+    /// rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Defines which resources can trigger an evaluation for the rule.
+    /// The scope can include one or more resource types, a combination of
+    /// one resource type and one resource ID, or a combination of a tag key
+    /// and value. Specify a scope to constrain the resources that can
+    /// trigger an evaluation for the rule. If you do not specify a scope,
+    /// evaluations are triggered when any resource in the recording group
+    /// changes.</p>
+    /// <note>
+    /// <p>The scope can be empty. </p>
+    /// </note>
+    pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
+        self.scope.as_ref()
+    }
+    /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier,
+    /// and the notifications that cause the function to evaluate your Amazon Web Services
+    /// resources.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>A string, in JSON format, that is passed to the Config rule
+    /// Lambda function.</p>
+    pub fn input_parameters(&self) -> std::option::Option<&str> {
+        self.input_parameters.as_deref()
+    }
+    /// <p>The maximum frequency with which Config runs evaluations
+    /// for a rule. You can specify a value for
+    /// <code>MaximumExecutionFrequency</code> when:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You are using an Config managed rule that is triggered at
+    /// a periodic frequency.</p>
+    /// </li>
+    /// <li>
+    /// <p>Your custom rule is triggered when Config delivers
+    /// the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    ///
+    /// <note>
+    /// <p>By default, rules with a periodic trigger are evaluated
+    /// every 24 hours. To change the frequency, specify a valid value
+    /// for the <code>MaximumExecutionFrequency</code>
+    /// parameter.</p>
+    /// </note>
+    pub fn maximum_execution_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
+        self.maximum_execution_frequency.as_ref()
+    }
+    /// <p>Indicates whether the Config rule is active or is currently
+    /// being deleted by Config. It can also indicate the evaluation
+    /// status for the Config rule.</p>
+    ///
+    /// <p>Config sets the state of the rule to
+    /// <code>EVALUATING</code> temporarily after you use the
+    /// <code>StartConfigRulesEvaluation</code> request to evaluate your
+    /// resources against the Config rule.</p>
+    ///
+    /// <p>Config sets the state of the rule to
+    /// <code>DELETING_RESULTS</code> temporarily after you use the
+    /// <code>DeleteEvaluationResults</code> request to delete the
+    /// current evaluation results for the Config rule.</p>
+    ///
+    /// <p>Config temporarily sets the state of a rule to
+    /// <code>DELETING</code> after you use the
+    /// <code>DeleteConfigRule</code> request to delete the rule. After
+    /// Config deletes the rule, the rule and all of its evaluations are
+    /// erased and are no longer available.</p>
+    pub fn config_rule_state(&self) -> std::option::Option<&crate::model::ConfigRuleState> {
+        self.config_rule_state.as_ref()
+    }
+    /// <p>Service principal name of the service that created the
+    /// rule.</p>
+    /// <note>
+    /// <p>The field is populated only if the service linked rule is
+    /// created by a service. The field is empty if you create your own
+    /// rule.</p>
+    /// </note>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4644,6 +5342,25 @@ pub struct Source {
     /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
     pub source_details: std::option::Option<std::vec::Vec<crate::model::SourceDetail>>,
 }
+impl Source {
+    /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+        self.owner.as_ref()
+    }
+    /// <p>For Config managed rules, a predefined identifier from a
+    /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
+    /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
+    /// <p>For custom rules, the identifier is the Amazon Resource Name
+    /// (ARN) of the rule's Lambda function, such as
+    /// <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+    /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
+    pub fn source_details(&self) -> std::option::Option<&[crate::model::SourceDetail]> {
+        self.source_details.as_deref()
+    }
+}
 impl std::fmt::Debug for Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Source");
@@ -4806,6 +5523,81 @@ pub struct SourceDetail {
     /// is the frequency of this rule. </p>
     /// </note>
     pub maximum_execution_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
+}
+impl SourceDetail {
+    /// <p>The source of the event, such as an Amazon Web Services service, that triggers
+    /// Config to evaluate your Amazon Web Services resources.</p>
+    pub fn event_source(&self) -> std::option::Option<&crate::model::EventSource> {
+        self.event_source.as_ref()
+    }
+    /// <p>The type of notification that triggers Config to run an
+    /// evaluation for a rule. You can specify the following notification
+    /// types:</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ConfigurationItemChangeNotification</code> - Triggers
+    /// an evaluation when Config delivers a configuration item
+    /// as a result of a resource change.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OversizedConfigurationItemChangeNotification</code>
+    /// - Triggers an evaluation when Config delivers an
+    /// oversized configuration item. Config may generate this
+    /// notification type when a resource changes and the
+    /// notification exceeds the maximum size allowed by Amazon
+    /// SNS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ScheduledNotification</code> - Triggers a
+    /// periodic evaluation at the frequency specified for
+    /// <code>MaximumExecutionFrequency</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ConfigurationSnapshotDeliveryCompleted</code> -
+    /// Triggers a periodic evaluation when Config delivers a
+    /// configuration snapshot.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If you want your custom rule to be triggered by configuration
+    /// changes, specify two SourceDetail objects, one for
+    /// <code>ConfigurationItemChangeNotification</code> and one for
+    /// <code>OversizedConfigurationItemChangeNotification</code>.</p>
+    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+        self.message_type.as_ref()
+    }
+    /// <p>The frequency at which you want Config to run evaluations
+    /// for a custom rule with a periodic trigger. If you specify a value
+    /// for <code>MaximumExecutionFrequency</code>, then
+    /// <code>MessageType</code> must use the
+    /// <code>ScheduledNotification</code> value.</p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// <note>
+    /// <p>By default, rules with a periodic trigger are evaluated
+    /// every 24 hours. To change the frequency, specify a valid value
+    /// for the <code>MaximumExecutionFrequency</code>
+    /// parameter.</p>
+    /// <p>Based on the valid value you choose, Config runs
+    /// evaluations once for each valid value. For example, if you
+    /// choose <code>Three_Hours</code>, Config runs evaluations
+    /// once every three hours. In this case, <code>Three_Hours</code>
+    /// is the frequency of this rule. </p>
+    /// </note>
+    pub fn maximum_execution_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
+        self.maximum_execution_frequency.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5223,6 +6015,34 @@ pub struct Scope {
     /// <code>ComplianceResourceTypes</code>.</p>
     pub compliance_resource_id: std::option::Option<std::string::String>,
 }
+impl Scope {
+    /// <p>The resource types of only those Amazon Web Services resources that you want to
+    /// trigger an evaluation for the rule. You can only specify one type if
+    /// you also specify a resource ID for
+    /// <code>ComplianceResourceId</code>.</p>
+    pub fn compliance_resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.compliance_resource_types.as_deref()
+    }
+    /// <p>The tag key that is applied to only those Amazon Web Services resources that
+    /// you want to trigger an evaluation for the rule.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The tag value applied to only those Amazon Web Services resources that you want
+    /// to trigger an evaluation for the rule. If you specify a value for
+    /// <code>TagValue</code>, you must also specify a value for
+    /// <code>TagKey</code>.</p>
+    pub fn tag_value(&self) -> std::option::Option<&str> {
+        self.tag_value.as_deref()
+    }
+    /// <p>The ID of the only Amazon Web Services resource that you want to trigger an
+    /// evaluation for the rule. If you specify a resource ID, you must
+    /// specify one resource type for
+    /// <code>ComplianceResourceTypes</code>.</p>
+    pub fn compliance_resource_id(&self) -> std::option::Option<&str> {
+        self.compliance_resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Scope {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Scope");
@@ -5353,6 +6173,27 @@ pub struct AggregationAuthorization {
     /// created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AggregationAuthorization {
+    /// <p>The Amazon Resource Name (ARN) of the aggregation
+    /// object.</p>
+    pub fn aggregation_authorization_arn(&self) -> std::option::Option<&str> {
+        self.aggregation_authorization_arn.as_deref()
+    }
+    /// <p>The 12-digit account ID of the account authorized to aggregate
+    /// data.</p>
+    pub fn authorized_account_id(&self) -> std::option::Option<&str> {
+        self.authorized_account_id.as_deref()
+    }
+    /// <p>The region authorized to collect aggregated data.</p>
+    pub fn authorized_aws_region(&self) -> std::option::Option<&str> {
+        self.authorized_aws_region.as_deref()
+    }
+    /// <p>The time stamp when the aggregation authorization was
+    /// created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for AggregationAuthorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregationAuthorization");
@@ -5470,6 +6311,24 @@ pub struct StoredQueryMetadata {
     /// <p>A unique description for the query.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl StoredQueryMetadata {
+    /// <p>The ID of the query. </p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    pub fn query_arn(&self) -> std::option::Option<&str> {
+        self.query_arn.as_deref()
+    }
+    /// <p>The name of the query.</p>
+    pub fn query_name(&self) -> std::option::Option<&str> {
+        self.query_name.as_deref()
+    }
+    /// <p>A unique description for the query.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for StoredQueryMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StoredQueryMetadata");
@@ -5564,6 +6423,25 @@ pub struct ResourceIdentifier {
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The time that the resource was deleted.</p>
     pub resource_deletion_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ResourceIdentifier {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the resource (for example,
+    /// <code>sg-xxxxxx</code>).</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The custom name of the resource (if available).</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The time that the resource was deleted.</p>
+    pub fn resource_deletion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.resource_deletion_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5670,6 +6548,28 @@ pub struct AggregateResourceIdentifier {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The name of the Amazon Web Services resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl AggregateResourceIdentifier {
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn source_account_id(&self) -> std::option::Option<&str> {
+        self.source_account_id.as_deref()
+    }
+    /// <p>The source region where data is aggregated.</p>
+    pub fn source_region(&self) -> std::option::Option<&str> {
+        self.source_region.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the Amazon Web Services resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The name of the Amazon Web Services resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AggregateResourceIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5788,6 +6688,24 @@ pub struct ResourceFilters {
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The source region.</p>
     pub region: std::option::Option<std::string::String>,
+}
+impl ResourceFilters {
+    /// <p>The 12-digit source account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The source region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5953,6 +6871,128 @@ pub struct ConfigurationItem {
     /// <code>configuration</code> parameter.</p>
     pub supplementary_configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ConfigurationItem {
+    /// <p>The version number of the resource configuration.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The 12-digit Amazon Web Services account ID associated with the
+    /// resource.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The time when the configuration recording was
+    /// initiated.</p>
+    pub fn configuration_item_capture_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.configuration_item_capture_time.as_ref()
+    }
+    /// <p>The configuration item status. The valid values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>OK – The resource configuration has been updated</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceDiscovered – The resource was newly discovered</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceDeleted – The resource was deleted</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The CIs do not incur any cost.</p>
+    /// </note>
+    pub fn configuration_item_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationItemStatus> {
+        self.configuration_item_status.as_ref()
+    }
+    /// <p>An identifier that indicates the ordering of the configuration
+    /// items of a resource.</p>
+    pub fn configuration_state_id(&self) -> std::option::Option<&str> {
+        self.configuration_state_id.as_deref()
+    }
+    /// <p>Unique MD5 hash that represents the configuration item's
+    /// state.</p>
+    /// <p>You can use MD5 hash to compare the states of two or more
+    /// configuration items that are associated with the same
+    /// resource.</p>
+    pub fn configuration_item_md5_hash(&self) -> std::option::Option<&str> {
+        self.configuration_item_md5_hash.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) associated with the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the resource (for example,
+    /// <code>sg-xxxxxx</code>).</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The custom name of the resource, if available.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The region where the resource resides.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The Availability Zone associated with the resource.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The time stamp when the resource was created.</p>
+    pub fn resource_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.resource_creation_time.as_ref()
+    }
+    /// <p>A mapping of key value tags associated with the
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A list of CloudTrail event IDs.</p>
+    /// <p>A populated field indicates that the current configuration was
+    /// initiated by the events recorded in the CloudTrail log. For more
+    /// information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
+    /// <p>An empty field indicates that the current configuration was not
+    /// initiated by any event. As of Version 1.3, the relatedEvents field is empty.
+    /// You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
+    pub fn related_events(&self) -> std::option::Option<&[std::string::String]> {
+        self.related_events.as_deref()
+    }
+    /// <p>A list of related Amazon Web Services resources.</p>
+    pub fn relationships(&self) -> std::option::Option<&[crate::model::Relationship]> {
+        self.relationships.as_deref()
+    }
+    /// <p>The description of the resource configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>Configuration attributes that Config returns for certain
+    /// resource types to supplement the information returned for the
+    /// <code>configuration</code> parameter.</p>
+    pub fn supplementary_configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.supplementary_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigurationItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6403,6 +7443,26 @@ pub struct Relationship {
     /// <p>The type of relationship with the related resource.</p>
     pub relationship_name: std::option::Option<std::string::String>,
 }
+impl Relationship {
+    /// <p>The resource type of the related resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the related resource (for example,
+    /// <code>sg-xxxxxx</code>).</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The custom name of the related resource, if
+    /// available.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The type of relationship with the related resource.</p>
+    pub fn relationship_name(&self) -> std::option::Option<&str> {
+        self.relationship_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Relationship {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Relationship");
@@ -6687,6 +7747,77 @@ pub struct OrganizationConformancePackDetailedStatus {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last status update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl OrganizationConformancePackDetailedStatus {
+    /// <p>The 12-digit account ID of a member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of conformance pack deployed in the member account.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>Indicates deployment status for conformance pack in a member account.
+    /// When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account.
+    /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
+    /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+    /// </p>
+    /// <p> Config sets the state of the conformance pack to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> when conformance pack is being created in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> when conformance pack creation has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_SUCCESSFUL</code> when conformance pack has been deleted in the member account. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::OrganizationResourceDetailedStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An error code that is returned when conformance pack creation or
+    /// deletion failed in the member account. </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>An error message indicating that conformance pack account creation or deletion
+    /// has failed due to an error in the member account. </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The timestamp of the last status update.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for OrganizationConformancePackDetailedStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7041,6 +8172,59 @@ pub struct OrganizationResourceDetailedStatusFilters {
     /// </ul>
     pub status: std::option::Option<crate::model::OrganizationResourceDetailedStatus>,
 }
+impl OrganizationResourceDetailedStatusFilters {
+    /// <p>The 12-digit account ID of the member account within an organization.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Indicates deployment status for conformance pack in a member account.
+    /// When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account.
+    /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
+    /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+    /// </p>
+    /// <p> Config sets the state of the conformance pack to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> when conformance pack is being created in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> when conformance pack creation has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_SUCCESSFUL</code> when conformance pack has been deleted in the member account. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::OrganizationResourceDetailedStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for OrganizationResourceDetailedStatusFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationResourceDetailedStatusFilters");
@@ -7243,6 +8427,77 @@ pub struct MemberAccountStatus {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last status update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MemberAccountStatus {
+    /// <p>The 12-digit account ID of a member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of config rule deployed in the member account.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>Indicates deployment status for config rule in the member account.
+    /// When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account.
+    /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
+    /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+    /// </p>
+    /// <p> Config sets the state of the rule to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p>
+    /// </li>
+    /// </ul>
+    pub fn member_account_rule_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MemberAccountRuleStatus> {
+        self.member_account_rule_status.as_ref()
+    }
+    /// <p>An error code that is returned when config rule creation or deletion failed in the member account.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The timestamp of the last status update.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for MemberAccountStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7600,6 +8855,61 @@ pub struct StatusDetailFilters {
     /// </ul>
     pub member_account_rule_status: std::option::Option<crate::model::MemberAccountRuleStatus>,
 }
+impl StatusDetailFilters {
+    /// <p>The 12-digit account ID of the member account within an organization.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Indicates deployment status for config rule in the member account.
+    /// When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account.
+    /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
+    /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+    /// </p>
+    /// <p>Config sets the state of the rule to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p>
+    /// </li>
+    /// </ul>
+    pub fn member_account_rule_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MemberAccountRuleStatus> {
+        self.member_account_rule_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StatusDetailFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatusDetailFilters");
@@ -7761,6 +9071,17 @@ pub struct ResourceCount {
     /// <p>The number of resources.</p>
     pub count: i64,
 }
+impl ResourceCount {
+    /// <p>The resource type (for example,
+    /// <code>"AWS::EC2::Instance"</code>).</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The number of resources.</p>
+    pub fn count(&self) -> i64 {
+        self.count
+    }
+}
 impl std::fmt::Debug for ResourceCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceCount");
@@ -7829,6 +9150,18 @@ pub struct ConformancePackComplianceSummary {
     /// <p>The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.</p>
     pub conformance_pack_compliance_status:
         std::option::Option<crate::model::ConformancePackComplianceType>,
+}
+impl ConformancePackComplianceSummary {
+    /// <p>The name of the conformance pack name.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.</p>
+    pub fn conformance_pack_compliance_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
+        self.conformance_pack_compliance_status.as_ref()
+    }
 }
 impl std::fmt::Debug for ConformancePackComplianceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7971,6 +9304,32 @@ pub struct ConformancePackEvaluationResult {
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
     pub annotation: std::option::Option<std::string::String>,
 }
+impl ConformancePackEvaluationResult {
+    /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>Uniquely identifies an evaluation result.</p>
+    pub fn evaluation_result_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::EvaluationResultIdentifier> {
+        self.evaluation_result_identifier.as_ref()
+    }
+    /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
+    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.config_rule_invoked_time.as_ref()
+    }
+    /// <p>The time when Config recorded the evaluation result. </p>
+    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.result_recorded_time.as_ref()
+    }
+    /// <p>Supplementary information about how the evaluation determined the compliance. </p>
+    pub fn annotation(&self) -> std::option::Option<&str> {
+        self.annotation.as_deref()
+    }
+}
 impl std::fmt::Debug for ConformancePackEvaluationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConformancePackEvaluationResult");
@@ -8100,6 +9459,22 @@ pub struct EvaluationResultIdentifier {
     /// event triggered the evaluation.</p>
     pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EvaluationResultIdentifier {
+    /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
+    /// and provides the type and ID of the evaluated resource.</p>
+    pub fn evaluation_result_qualifier(
+        &self,
+    ) -> std::option::Option<&crate::model::EvaluationResultQualifier> {
+        self.evaluation_result_qualifier.as_ref()
+    }
+    /// <p>The time of the event that triggered the evaluation of your Amazon Web Services
+    /// resources. The time can indicate when Config delivered a
+    /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
+    /// event triggered the evaluation.</p>
+    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.ordering_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for EvaluationResultIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluationResultIdentifier");
@@ -8188,6 +9563,21 @@ pub struct EvaluationResultQualifier {
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl EvaluationResultQualifier {
+    /// <p>The name of the Config rule that was used in the
+    /// evaluation.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The type of Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the evaluated Amazon Web Services resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EvaluationResultQualifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8280,6 +9670,30 @@ pub struct ConformancePackEvaluationFilters {
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ConformancePackEvaluationFilters {
+    /// <p>Filters the results by Config rule names.</p>
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.config_rule_names.as_deref()
+    }
+    /// <p>Filters the results by compliance.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Filters the results by resource IDs.</p>
+    /// <note>
+    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
+    /// </note>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ConformancePackEvaluationFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8409,6 +9823,17 @@ pub struct ComplianceSummaryByResourceType {
     /// up to a maximum of 100 for each.</p>
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
 }
+impl ComplianceSummaryByResourceType {
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The number of Amazon Web Services resources that are compliant or noncompliant,
+    /// up to a maximum of 100 for each.</p>
+    pub fn compliance_summary(&self) -> std::option::Option<&crate::model::ComplianceSummary> {
+        self.compliance_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for ComplianceSummaryByResourceType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComplianceSummaryByResourceType");
@@ -8487,6 +9912,29 @@ pub struct ComplianceSummary {
     /// <p>The time that Config created the compliance
     /// summary.</p>
     pub compliance_summary_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ComplianceSummary {
+    /// <p>The number of Config rules or Amazon Web Services resources that are
+    /// compliant, up to a maximum of 25 for rules and 100 for
+    /// resources.</p>
+    pub fn compliant_resource_count(
+        &self,
+    ) -> std::option::Option<&crate::model::ComplianceContributorCount> {
+        self.compliant_resource_count.as_ref()
+    }
+    /// <p>The number of Config rules or Amazon Web Services resources that are
+    /// noncompliant, up to a maximum of 25 for rules and 100 for
+    /// resources.</p>
+    pub fn non_compliant_resource_count(
+        &self,
+    ) -> std::option::Option<&crate::model::ComplianceContributorCount> {
+        self.non_compliant_resource_count.as_ref()
+    }
+    /// <p>The time that Config created the compliance
+    /// summary.</p>
+    pub fn compliance_summary_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.compliance_summary_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ComplianceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8600,6 +10048,17 @@ pub struct ComplianceContributorCount {
     /// <p>Indicates whether the maximum count is reached.</p>
     pub cap_exceeded: bool,
 }
+impl ComplianceContributorCount {
+    /// <p>The number of Amazon Web Services resources or Config rules responsible for
+    /// the current compliance of the item.</p>
+    pub fn capped_count(&self) -> i32 {
+        self.capped_count
+    }
+    /// <p>Indicates whether the maximum count is reached.</p>
+    pub fn cap_exceeded(&self) -> bool {
+        self.cap_exceeded
+    }
+}
 impl std::fmt::Debug for ComplianceContributorCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComplianceContributorCount");
@@ -8684,6 +10143,44 @@ pub struct EvaluationResult {
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being
     /// evaluated, and the event that triggered the evaluation.</p>
     pub result_token: std::option::Option<std::string::String>,
+}
+impl EvaluationResult {
+    /// <p>Uniquely identifies the evaluation result.</p>
+    pub fn evaluation_result_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::EvaluationResultIdentifier> {
+        self.evaluation_result_identifier.as_ref()
+    }
+    /// <p>Indicates whether the Amazon Web Services resource complies with the Config
+    /// rule that evaluated it.</p>
+    /// <p>For the <code>EvaluationResult</code> data type, Config
+    /// supports only the <code>COMPLIANT</code>,
+    /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values.
+    /// Config does not support the <code>INSUFFICIENT_DATA</code> value
+    /// for the <code>EvaluationResult</code> data type.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>The time when Config recorded the evaluation
+    /// result.</p>
+    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.result_recorded_time.as_ref()
+    }
+    /// <p>The time when the Config rule evaluated the Amazon Web Services
+    /// resource.</p>
+    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.config_rule_invoked_time.as_ref()
+    }
+    /// <p>Supplementary information about how the evaluation determined
+    /// the compliance.</p>
+    pub fn annotation(&self) -> std::option::Option<&str> {
+        self.annotation.as_deref()
+    }
+    /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being
+    /// evaluated, and the event that triggered the evaluation.</p>
+    pub fn result_token(&self) -> std::option::Option<&str> {
+        self.result_token.as_deref()
+    }
 }
 impl std::fmt::Debug for EvaluationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8839,6 +10336,16 @@ pub struct GroupedResourceCount {
     /// <p>The number of resources in the group.</p>
     pub resource_count: i64,
 }
+impl GroupedResourceCount {
+    /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The number of resources in the group.</p>
+    pub fn resource_count(&self) -> i64 {
+        self.resource_count
+    }
+}
 impl std::fmt::Debug for GroupedResourceCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupedResourceCount");
@@ -8963,6 +10470,20 @@ pub struct ResourceCountFilters {
     /// <p>The region where the account is located.</p>
     pub region: std::option::Option<std::string::String>,
 }
+impl ResourceCountFilters {
+    /// <p>The type of the Amazon Web Services resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The 12-digit ID of the account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The region where the account is located.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceCountFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceCountFilters");
@@ -9043,6 +10564,18 @@ pub struct AggregateConformancePackComplianceSummary {
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub group_name: std::option::Option<std::string::String>,
 }
+impl AggregateConformancePackComplianceSummary {
+    /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
+    pub fn compliance_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregateConformancePackComplianceCount> {
+        self.compliance_summary.as_ref()
+    }
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AggregateConformancePackComplianceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregateConformancePackComplianceSummary");
@@ -9112,6 +10645,16 @@ pub struct AggregateConformancePackComplianceCount {
     pub compliant_conformance_pack_count: i32,
     /// <p>Number of noncompliant conformance packs.</p>
     pub non_compliant_conformance_pack_count: i32,
+}
+impl AggregateConformancePackComplianceCount {
+    /// <p>Number of compliant conformance packs.</p>
+    pub fn compliant_conformance_pack_count(&self) -> i32 {
+        self.compliant_conformance_pack_count
+    }
+    /// <p>Number of noncompliant conformance packs.</p>
+    pub fn non_compliant_conformance_pack_count(&self) -> i32 {
+        self.non_compliant_conformance_pack_count
+    }
 }
 impl std::fmt::Debug for AggregateConformancePackComplianceCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9247,6 +10790,16 @@ pub struct AggregateConformancePackComplianceSummaryFilters {
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
+impl AggregateConformancePackComplianceSummaryFilters {
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for AggregateConformancePackComplianceSummaryFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregateConformancePackComplianceSummaryFilters");
@@ -9313,6 +10866,18 @@ pub struct AggregateComplianceCount {
     /// <p>The number of compliant and noncompliant Config
     /// rules.</p>
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
+}
+impl AggregateComplianceCount {
+    /// <p>The 12-digit account ID or region based on the GroupByKey
+    /// value.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The number of compliant and noncompliant Config
+    /// rules.</p>
+    pub fn compliance_summary(&self) -> std::option::Option<&crate::model::ComplianceSummary> {
+        self.compliance_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for AggregateComplianceCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9440,6 +11005,16 @@ pub struct ConfigRuleComplianceSummaryFilters {
     /// <p>The source region where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
+impl ConfigRuleComplianceSummaryFilters {
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source region where the data is aggregated.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfigRuleComplianceSummaryFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigRuleComplianceSummaryFilters");
@@ -9522,6 +11097,45 @@ pub struct AggregateEvaluationResult {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
+}
+impl AggregateEvaluationResult {
+    /// <p>Uniquely identifies the evaluation result.</p>
+    pub fn evaluation_result_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::EvaluationResultIdentifier> {
+        self.evaluation_result_identifier.as_ref()
+    }
+    /// <p>The resource compliance status.</p>
+    /// <p>For the <code>AggregationEvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code> and
+    /// <code>NON_COMPLIANT</code>. Config does not support the
+    /// <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
+    /// value.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>The time when Config recorded the aggregate evaluation
+    /// result.</p>
+    pub fn result_recorded_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.result_recorded_time.as_ref()
+    }
+    /// <p>The time when the Config rule evaluated the Amazon Web Services
+    /// resource.</p>
+    pub fn config_rule_invoked_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.config_rule_invoked_time.as_ref()
+    }
+    /// <p>Supplementary information about how the agrregate evaluation
+    /// determined the compliance.</p>
+    pub fn annotation(&self) -> std::option::Option<&str> {
+        self.annotation.as_deref()
+    }
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source region from where the data is aggregated.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
 }
 impl std::fmt::Debug for AggregateEvaluationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9691,6 +11305,29 @@ pub struct RemediationExecutionStatus {
     /// <p>The time when the remediation execution was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl RemediationExecutionStatus {
+    /// <p>The details that identify a resource within Config, including
+    /// the resource type and resource ID.</p>
+    pub fn resource_key(&self) -> std::option::Option<&crate::model::ResourceKey> {
+        self.resource_key.as_ref()
+    }
+    /// <p>ENUM of the values.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RemediationExecutionState> {
+        self.state.as_ref()
+    }
+    /// <p>Details of every step.</p>
+    pub fn step_details(&self) -> std::option::Option<&[crate::model::RemediationExecutionStep]> {
+        self.step_details.as_deref()
+    }
+    /// <p>Start time when the remediation was executed.</p>
+    pub fn invocation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.invocation_time.as_ref()
+    }
+    /// <p>The time when the remediation execution was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for RemediationExecutionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemediationExecutionStatus");
@@ -9825,6 +11462,28 @@ pub struct RemediationExecutionStep {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the step stopped.</p>
     pub stop_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RemediationExecutionStep {
+    /// <p>The details of the step.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The valid status of the step.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RemediationExecutionStepState> {
+        self.state.as_ref()
+    }
+    /// <p>An error message if the step was interrupted during execution.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The time when the step started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time when the step stopped.</p>
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_time.as_ref()
+    }
 }
 impl std::fmt::Debug for RemediationExecutionStep {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10065,6 +11724,17 @@ pub struct PendingAggregationRequest {
     /// <p>The region requesting to aggregate data. </p>
     pub requester_aws_region: std::option::Option<std::string::String>,
 }
+impl PendingAggregationRequest {
+    /// <p>The 12-digit account ID of the account requesting to aggregate
+    /// data.</p>
+    pub fn requester_account_id(&self) -> std::option::Option<&str> {
+        self.requester_account_id.as_deref()
+    }
+    /// <p>The region requesting to aggregate data. </p>
+    pub fn requester_aws_region(&self) -> std::option::Option<&str> {
+        self.requester_aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for PendingAggregationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PendingAggregationRequest");
@@ -10189,6 +11859,76 @@ pub struct OrganizationConformancePackStatus {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl OrganizationConformancePackStatus {
+    /// <p>The name that you assign to organization conformance pack.</p>
+    pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.organization_conformance_pack_name.as_deref()
+    }
+    /// <p>Indicates deployment status of an organization conformance pack.
+    /// When master account calls PutOrganizationConformancePack for the first time,
+    /// conformance pack status is created in all the member accounts.
+    /// When master account calls PutOrganizationConformancePack for the second time,
+    /// conformance pack status is updated in all the member accounts.
+    /// Additionally, conformance pack status is updated when one or more member accounts join or leave an
+    /// organization.   
+    /// Conformance pack status is deleted when the master account deletes
+    /// OrganizationConformancePack in all the member accounts and disables service
+    /// access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Config sets the state of the conformance pack to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::OrganizationResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The timestamp of the last update.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for OrganizationConformancePackStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10516,6 +12256,44 @@ pub struct OrganizationConformancePack {
     /// <p>Last time when organization conformation pack was updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl OrganizationConformancePack {
+    /// <p>The name you assign to an organization conformance pack.</p>
+    pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.organization_conformance_pack_name.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
+    pub fn organization_conformance_pack_arn(&self) -> std::option::Option<&str> {
+        self.organization_conformance_pack_arn.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.  </p>
+    /// <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
+        self.delivery_s3_bucket.as_deref()
+    }
+    /// <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+    /// <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.delivery_s3_key_prefix.as_deref()
+    }
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    pub fn conformance_pack_input_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackInputParameter]> {
+        self.conformance_pack_input_parameters.as_deref()
+    }
+    /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
+    pub fn excluded_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_accounts.as_deref()
+    }
+    /// <p>Last time when organization conformation pack was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for OrganizationConformancePack {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationConformancePack");
@@ -10755,6 +12533,72 @@ pub struct OrganizationConfigRuleStatus {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl OrganizationConfigRuleStatus {
+    /// <p>The name that you assign to organization config rule.</p>
+    pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_name.as_deref()
+    }
+    /// <p>Indicates deployment status of an organization config rule.
+    /// When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts.
+    /// When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization.   
+    /// Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Config sets the state of the rule to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member accounts. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within that organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within that organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member accounts.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member accounts.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within that organization.</p>
+    /// </li>
+    /// </ul>
+    pub fn organization_rule_status(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationRuleStatus> {
+        self.organization_rule_status.as_ref()
+    }
+    /// <p>An error code that is returned when organization config rule creation or deletion has failed.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The timestamp of the last update.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for OrganizationConfigRuleStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11067,6 +12911,36 @@ pub struct OrganizationConfigRule {
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl OrganizationConfigRule {
+    /// <p>The name that you assign to organization config rule.</p>
+    pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_name.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of organization config rule.</p>
+    pub fn organization_config_rule_arn(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_arn.as_deref()
+    }
+    /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
+    pub fn organization_managed_rule_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationManagedRuleMetadata> {
+        self.organization_managed_rule_metadata.as_ref()
+    }
+    /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
+    pub fn organization_custom_rule_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationCustomRuleMetadata> {
+        self.organization_custom_rule_metadata.as_ref()
+    }
+    /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
+    pub fn excluded_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_accounts.as_deref()
+    }
+    /// <p>The timestamp of the last update.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for OrganizationConfigRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationConfigRule");
@@ -11242,6 +13116,34 @@ pub struct DeliveryChannelStatus {
     /// topic.</p>
     pub config_stream_delivery_info: std::option::Option<crate::model::ConfigStreamDeliveryInfo>,
 }
+impl DeliveryChannelStatus {
+    /// <p>The name of the delivery channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list containing the status of the delivery of the snapshot to
+    /// the specified Amazon S3 bucket.</p>
+    pub fn config_snapshot_delivery_info(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigExportDeliveryInfo> {
+        self.config_snapshot_delivery_info.as_ref()
+    }
+    /// <p>A list that contains the status of the delivery of the
+    /// configuration history to the specified Amazon S3 bucket.</p>
+    pub fn config_history_delivery_info(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigExportDeliveryInfo> {
+        self.config_history_delivery_info.as_ref()
+    }
+    /// <p>A list containing the status of the delivery of the
+    /// configuration stream notification to the specified Amazon SNS
+    /// topic.</p>
+    pub fn config_stream_delivery_info(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigStreamDeliveryInfo> {
+        self.config_stream_delivery_info.as_ref()
+    }
+}
 impl std::fmt::Debug for DeliveryChannelStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeliveryChannelStatus");
@@ -11377,6 +13279,28 @@ pub struct ConfigStreamDeliveryInfo {
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time from the last status change.</p>
     pub last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ConfigStreamDeliveryInfo {
+    /// <p>Status of the last attempted delivery.</p>
+    /// <p>
+    /// <b>Note</b> Providing an SNS topic on a
+    /// <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS
+    /// delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
+    pub fn last_status(&self) -> std::option::Option<&crate::model::DeliveryStatus> {
+        self.last_status.as_ref()
+    }
+    /// <p>The error code from the last attempted delivery.</p>
+    pub fn last_error_code(&self) -> std::option::Option<&str> {
+        self.last_error_code.as_deref()
+    }
+    /// <p>The error message from the last attempted delivery.</p>
+    pub fn last_error_message(&self) -> std::option::Option<&str> {
+        self.last_error_message.as_deref()
+    }
+    /// <p>The time from the last status change.</p>
+    pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_status_change_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigStreamDeliveryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11557,6 +13481,32 @@ pub struct ConfigExportDeliveryInfo {
     /// <p>The time that the next delivery occurs.</p>
     pub next_delivery_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ConfigExportDeliveryInfo {
+    /// <p>Status of the last attempted delivery.</p>
+    pub fn last_status(&self) -> std::option::Option<&crate::model::DeliveryStatus> {
+        self.last_status.as_ref()
+    }
+    /// <p>The error code from the last attempted delivery.</p>
+    pub fn last_error_code(&self) -> std::option::Option<&str> {
+        self.last_error_code.as_deref()
+    }
+    /// <p>The error message from the last attempted delivery.</p>
+    pub fn last_error_message(&self) -> std::option::Option<&str> {
+        self.last_error_message.as_deref()
+    }
+    /// <p>The time of the last attempted delivery.</p>
+    pub fn last_attempt_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_attempt_time.as_ref()
+    }
+    /// <p>The time of the last successful delivery.</p>
+    pub fn last_successful_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_successful_time.as_ref()
+    }
+    /// <p>The time that the next delivery occurs.</p>
+    pub fn next_delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.next_delivery_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ConfigExportDeliveryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigExportDeliveryInfo");
@@ -11719,6 +13669,60 @@ pub struct ConformancePackStatusDetail {
     pub last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Last time when conformation pack creation and update was successful.</p>
     pub last_update_completed_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ConformancePackStatusDetail {
+    /// <p>Name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>ID of the conformance pack.</p>
+    pub fn conformance_pack_id(&self) -> std::option::Option<&str> {
+        self.conformance_pack_id.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of comformance pack.</p>
+    pub fn conformance_pack_arn(&self) -> std::option::Option<&str> {
+        self.conformance_pack_arn.as_deref()
+    }
+    /// <p>Indicates deployment status of conformance pack.</p>
+    /// <p>Config sets the state of the conformance pack to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE_FAILED when a conformance pack creation failed in your account.</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p>
+    /// </li>
+    /// </ul>
+    pub fn conformance_pack_state(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackState> {
+        self.conformance_pack_state.as_ref()
+    }
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
+    pub fn stack_arn(&self) -> std::option::Option<&str> {
+        self.stack_arn.as_deref()
+    }
+    /// <p>The reason of conformance pack creation failure.</p>
+    pub fn conformance_pack_status_reason(&self) -> std::option::Option<&str> {
+        self.conformance_pack_status_reason.as_deref()
+    }
+    /// <p>Last time when conformation pack creation and update was requested.</p>
+    pub fn last_update_requested_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_requested_time.as_ref()
+    }
+    /// <p>Last time when conformation pack creation and update was successful.</p>
+    pub fn last_update_completed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_completed_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ConformancePackStatusDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12022,6 +14026,48 @@ pub struct ConformancePackDetail {
     /// <p>Amazon Web Services service that created the conformance pack.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
+impl ConformancePackDetail {
+    /// <p>Name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the conformance pack.</p>
+    pub fn conformance_pack_arn(&self) -> std::option::Option<&str> {
+        self.conformance_pack_arn.as_deref()
+    }
+    /// <p>ID of the conformance pack.</p>
+    pub fn conformance_pack_id(&self) -> std::option::Option<&str> {
+        self.conformance_pack_id.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p>
+    /// <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
+        self.delivery_s3_bucket.as_deref()
+    }
+    /// <p>The prefix for the Amazon S3 bucket.</p>
+    /// <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.delivery_s3_key_prefix.as_deref()
+    }
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    pub fn conformance_pack_input_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackInputParameter]> {
+        self.conformance_pack_input_parameters.as_deref()
+    }
+    /// <p>Last time when conformation pack update was requested. </p>
+    pub fn last_update_requested_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_requested_time.as_ref()
+    }
+    /// <p>Amazon Web Services service that created the conformance pack.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+}
 impl std::fmt::Debug for ConformancePackDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConformancePackDetail");
@@ -12216,6 +14262,24 @@ pub struct ConformancePackRuleCompliance {
     /// A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
     pub controls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ConformancePackRuleCompliance {
+    /// <p>Name of the config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>Compliance of the Config rule.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+    /// A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
+    pub fn controls(&self) -> std::option::Option<&[std::string::String]> {
+        self.controls.as_deref()
+    }
+}
 impl std::fmt::Debug for ConformancePackRuleCompliance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConformancePackRuleCompliance");
@@ -12316,6 +14380,19 @@ pub struct ConformancePackComplianceFilters {
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub compliance_type: std::option::Option<crate::model::ConformancePackComplianceType>,
 }
+impl ConformancePackComplianceFilters {
+    /// <p>Filters the results by Config rule names.</p>
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.config_rule_names.as_deref()
+    }
+    /// <p>Filters the results by compliance.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
+        self.compliance_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ConformancePackComplianceFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConformancePackComplianceFilters");
@@ -12410,6 +14487,42 @@ pub struct ConfigurationRecorderStatus {
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time when the status was last changed.</p>
     pub last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ConfigurationRecorderStatus {
+    /// <p>The name of the configuration recorder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time the recorder was last started.</p>
+    pub fn last_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_start_time.as_ref()
+    }
+    /// <p>The time the recorder was last stopped.</p>
+    pub fn last_stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_stop_time.as_ref()
+    }
+    /// <p>Specifies whether or not the recorder is currently
+    /// recording.</p>
+    pub fn recording(&self) -> bool {
+        self.recording
+    }
+    /// <p>The last (previous) status of the recorder.</p>
+    pub fn last_status(&self) -> std::option::Option<&crate::model::RecorderStatus> {
+        self.last_status.as_ref()
+    }
+    /// <p>The error code indicating that the recording failed.</p>
+    pub fn last_error_code(&self) -> std::option::Option<&str> {
+        self.last_error_code.as_deref()
+    }
+    /// <p>The message indicating that the recording failed due to an
+    /// error.</p>
+    pub fn last_error_message(&self) -> std::option::Option<&str> {
+        self.last_error_message.as_deref()
+    }
+    /// <p>The time when the status was last changed.</p>
+    pub fn last_status_change_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_status_change_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigurationRecorderStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12659,6 +14772,54 @@ pub struct AggregatedSourceStatus {
     /// <p>The message indicating that the source account aggregation
     /// failed due to an error.</p>
     pub last_error_message: std::option::Option<std::string::String>,
+}
+impl AggregatedSourceStatus {
+    /// <p>The source account ID or an organization.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The source account or an organization.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::AggregatedSourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The region authorized to collect aggregated data.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>Filters the last updated status type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving
+    /// data.</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was
+    /// successfully moved.</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most
+    /// recent.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_update_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregatedSourceStatusType> {
+        self.last_update_status.as_ref()
+    }
+    /// <p>The time of the last update.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The error code that Config returned when the source account
+    /// aggregation last failed.</p>
+    pub fn last_error_code(&self) -> std::option::Option<&str> {
+        self.last_error_code.as_deref()
+    }
+    /// <p>The message indicating that the source account aggregation
+    /// failed due to an error.</p>
+    pub fn last_error_message(&self) -> std::option::Option<&str> {
+        self.last_error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for AggregatedSourceStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12997,6 +15158,80 @@ pub struct ConfigRuleEvaluationStatus {
     /// </ul>
     pub first_evaluation_started: bool,
 }
+impl ConfigRuleEvaluationStatus {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Config
+    /// rule.</p>
+    pub fn config_rule_arn(&self) -> std::option::Option<&str> {
+        self.config_rule_arn.as_deref()
+    }
+    /// <p>The ID of the Config rule.</p>
+    pub fn config_rule_id(&self) -> std::option::Option<&str> {
+        self.config_rule_id.as_deref()
+    }
+    /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
+    pub fn last_successful_invocation_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_successful_invocation_time.as_ref()
+    }
+    /// <p>The time that Config last failed to invoke the Config
+    /// rule to evaluate your Amazon Web Services resources.</p>
+    pub fn last_failed_invocation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_failed_invocation_time.as_ref()
+    }
+    /// <p>The time that Config last successfully evaluated your Amazon Web Services
+    /// resources against the rule.</p>
+    pub fn last_successful_evaluation_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_successful_evaluation_time.as_ref()
+    }
+    /// <p>The time that Config last failed to evaluate your Amazon Web Services
+    /// resources against the rule.</p>
+    pub fn last_failed_evaluation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_failed_evaluation_time.as_ref()
+    }
+    /// <p>The time that you first activated the Config
+    /// rule.</p>
+    pub fn first_activated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.first_activated_time.as_ref()
+    }
+    /// <p>The time that you last turned off the Config rule.</p>
+    pub fn last_deactivated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deactivated_time.as_ref()
+    }
+    /// <p>The error code that Config returned when the rule last
+    /// failed.</p>
+    pub fn last_error_code(&self) -> std::option::Option<&str> {
+        self.last_error_code.as_deref()
+    }
+    /// <p>The error message that Config returned when the rule last
+    /// failed.</p>
+    pub fn last_error_message(&self) -> std::option::Option<&str> {
+        self.last_error_message.as_deref()
+    }
+    /// <p>Indicates whether Config has evaluated your resources
+    /// against the rule at least once.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>true</code> - Config has evaluated your Amazon Web Services
+    /// resources against the rule at least once.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>false</code> - Config has not once finished
+    /// evaluating your Amazon Web Services resources against the rule.</p>
+    /// </li>
+    /// </ul>
+    pub fn first_evaluation_started(&self) -> bool {
+        self.first_evaluation_started
+    }
+}
 impl std::fmt::Debug for ConfigRuleEvaluationStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigRuleEvaluationStatus");
@@ -13281,6 +15516,20 @@ pub struct ComplianceByResource {
     /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
     pub compliance: std::option::Option<crate::model::Compliance>,
 }
+impl ComplianceByResource {
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
+    pub fn compliance(&self) -> std::option::Option<&crate::model::Compliance> {
+        self.compliance.as_ref()
+    }
+}
 impl std::fmt::Debug for ComplianceByResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComplianceByResource");
@@ -13379,6 +15628,33 @@ pub struct Compliance {
     /// result of <code>NON_COMPLIANT</code>, up to a maximum
     /// number.</p>
     pub compliance_contributor_count: std::option::Option<crate::model::ComplianceContributorCount>,
+}
+impl Compliance {
+    /// <p>Indicates whether an Amazon Web Services resource or Config rule is
+    /// compliant.</p>
+    /// <p>A resource is compliant if it complies with all of the Config rules that evaluate it. A resource is noncompliant if it does
+    /// not comply with one or more of these rules.</p>
+    /// <p>A rule is compliant if all of the resources that the rule
+    /// evaluates comply with it. A rule is noncompliant if any of these
+    /// resources do not comply.</p>
+    /// <p>Config returns the <code>INSUFFICIENT_DATA</code> value
+    /// when no evaluation results are available for the Amazon Web Services resource or Config rule.</p>
+    /// <p>For the <code>Compliance</code> data type, Config supports
+    /// only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+    /// <code>INSUFFICIENT_DATA</code> values. Config does not
+    /// support the <code>NOT_APPLICABLE</code> value for the
+    /// <code>Compliance</code> data type.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>The number of Amazon Web Services resources or Config rules that cause a
+    /// result of <code>NON_COMPLIANT</code>, up to a maximum
+    /// number.</p>
+    pub fn compliance_contributor_count(
+        &self,
+    ) -> std::option::Option<&crate::model::ComplianceContributorCount> {
+        self.compliance_contributor_count.as_ref()
+    }
 }
 impl std::fmt::Debug for Compliance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13489,6 +15765,16 @@ pub struct ComplianceByConfigRule {
     /// <p>Indicates whether the Config rule is compliant.</p>
     pub compliance: std::option::Option<crate::model::Compliance>,
 }
+impl ComplianceByConfigRule {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>Indicates whether the Config rule is compliant.</p>
+    pub fn compliance(&self) -> std::option::Option<&crate::model::Compliance> {
+        self.compliance.as_ref()
+    }
+}
 impl std::fmt::Debug for ComplianceByConfigRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComplianceByConfigRule");
@@ -13564,6 +15850,26 @@ pub struct AggregateComplianceByConformancePack {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
+}
+impl AggregateComplianceByConformancePack {
+    /// <p>The name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>The compliance status of the conformance pack.</p>
+    pub fn compliance(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregateConformancePackCompliance> {
+        self.compliance.as_ref()
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
 }
 impl std::fmt::Debug for AggregateComplianceByConformancePack {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13673,6 +15979,26 @@ pub struct AggregateConformancePackCompliance {
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub total_rule_count: i32,
 }
+impl AggregateConformancePackCompliance {
+    /// <p>The compliance status of the conformance pack.</p>
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>The number of compliant Config Rules.</p>
+    pub fn compliant_rule_count(&self) -> i32 {
+        self.compliant_rule_count
+    }
+    /// <p>The number of noncompliant Config Rules.</p>
+    pub fn non_compliant_rule_count(&self) -> i32 {
+        self.non_compliant_rule_count
+    }
+    /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
+    pub fn total_rule_count(&self) -> i32 {
+        self.total_rule_count
+    }
+}
 impl std::fmt::Debug for AggregateConformancePackCompliance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregateConformancePackCompliance");
@@ -13772,6 +16098,26 @@ pub struct AggregateConformancePackComplianceFilters {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
+}
+impl AggregateConformancePackComplianceFilters {
+    /// <p>The name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>The compliance status of the conformance pack.</p>
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
 }
 impl std::fmt::Debug for AggregateConformancePackComplianceFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13881,6 +16227,26 @@ pub struct AggregateComplianceByConfigRule {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
+}
+impl AggregateComplianceByConfigRule {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>Indicates whether an Amazon Web Services resource or Config rule is
+    /// compliant and provides the number of contributors that affect the
+    /// compliance.</p>
+    pub fn compliance(&self) -> std::option::Option<&crate::model::Compliance> {
+        self.compliance.as_ref()
+    }
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source region from where the data is aggregated.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
 }
 impl std::fmt::Debug for AggregateComplianceByConfigRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13992,6 +16358,30 @@ pub struct ConfigRuleComplianceFilters {
     /// </p>
     pub aws_region: std::option::Option<std::string::String>,
 }
+impl ConfigRuleComplianceFilters {
+    /// <p>The name of the Config rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+    /// <p>The rule compliance status.</p>
+    /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and
+    /// <code>NON_COMPLIANT</code>. Config does not support the
+    /// <code>NOT_APPLICABLE</code> and the
+    /// <code>INSUFFICIENT_DATA</code> values.</p>
+    pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
+        self.compliance_type.as_ref()
+    }
+    /// <p>The 12-digit account ID of the source account.
+    /// </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The source region where the data is aggregated.
+    /// </p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfigRuleComplianceFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigRuleComplianceFilters");
@@ -14099,6 +16489,18 @@ pub struct FailedDeleteRemediationExceptionsBatch {
     /// <p>Returns remediation exception resource key object of the failed items.</p>
     pub failed_items:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
+}
+impl FailedDeleteRemediationExceptionsBatch {
+    /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
+    /// <p>Returns remediation exception resource key object of the failed items.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemediationExceptionResourceKey]> {
+        self.failed_items.as_deref()
+    }
 }
 impl std::fmt::Debug for FailedDeleteRemediationExceptionsBatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14229,6 +16631,95 @@ pub struct BaseConfigurationItem {
     /// configuration parameter.</p>
     pub supplementary_configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl BaseConfigurationItem {
+    /// <p>The version number of the resource configuration.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The time when the configuration recording was initiated.</p>
+    pub fn configuration_item_capture_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.configuration_item_capture_time.as_ref()
+    }
+    /// <p>The configuration item status. The valid values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>OK – The resource configuration has been updated</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceDiscovered – The resource was newly discovered</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceDeleted – The resource was deleted</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The CIs do not incur any cost.</p>
+    /// </note>
+    pub fn configuration_item_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationItemStatus> {
+        self.configuration_item_status.as_ref()
+    }
+    /// <p>An identifier that indicates the ordering of the configuration
+    /// items of a resource.</p>
+    pub fn configuration_state_id(&self) -> std::option::Option<&str> {
+        self.configuration_state_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The custom name of the resource, if available.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The region where the resource resides.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The Availability Zone associated with the resource.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The time stamp when the resource was created.</p>
+    pub fn resource_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.resource_creation_time.as_ref()
+    }
+    /// <p>The description of the resource configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>Configuration attributes that Config returns for certain
+    /// resource types to supplement the information returned for the
+    /// configuration parameter.</p>
+    pub fn supplementary_configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.supplementary_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for BaseConfigurationItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

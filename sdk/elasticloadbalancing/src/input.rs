@@ -110,10 +110,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -281,7 +278,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_apply_security_groups_to_load_balancer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_apply_security_groups_to_load_balancer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -452,7 +449,7 @@ impl AttachLoadBalancerToSubnetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_to_subnets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_to_subnets(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -616,10 +613,9 @@ impl ConfigureHealthCheckInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_configure_health_check(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_configure_health_check(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -792,7 +788,7 @@ impl CreateAppCookieStickinessPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_app_cookie_stickiness_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_app_cookie_stickiness_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -966,7 +962,7 @@ impl CreateLbCookieStickinessPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_lb_cookie_stickiness_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_lb_cookie_stickiness_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1258,10 +1254,7 @@ impl CreateLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1431,7 +1424,7 @@ impl CreateLoadBalancerListenersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_listeners(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_listeners(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1637,10 +1630,7 @@ impl CreateLoadBalancerPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1788,10 +1778,7 @@ impl DeleteLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1961,7 +1948,7 @@ impl DeleteLoadBalancerListenersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_listeners(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_listeners(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2125,10 +2112,7 @@ impl DeleteLoadBalancerPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2299,7 +2283,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_instances_from_load_balancer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_instances_from_load_balancer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2459,10 +2443,7 @@ impl DescribeAccountLimitsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2633,10 +2614,7 @@ impl DescribeInstanceHealthInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_instance_health(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2785,7 +2763,7 @@ impl DescribeLoadBalancerAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2956,7 +2934,7 @@ impl DescribeLoadBalancerPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policies(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policies(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3112,7 +3090,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policy_types(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policy_types(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3293,10 +3271,7 @@ impl DescribeLoadBalancersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3449,10 +3424,7 @@ impl DescribeTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3622,7 +3594,7 @@ impl DetachLoadBalancerFromSubnetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_from_subnets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_from_subnets(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3794,7 +3766,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_availability_zones_for_load_balancer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_availability_zones_for_load_balancer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3966,7 +3938,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_availability_zones_for_load_balancer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_availability_zones_for_load_balancer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4135,7 +4107,7 @@ impl ModifyLoadBalancerAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_load_balancer_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_load_balancer_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4306,7 +4278,7 @@ impl RegisterInstancesWithLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_instances_with_load_balancer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_instances_with_load_balancer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4481,10 +4453,7 @@ impl RemoveTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4661,7 +4630,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_listener_ssl_certificate(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_listener_ssl_certificate(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4845,7 +4814,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_for_backend_server(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_for_backend_server(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5028,7 +4997,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_of_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_of_listener(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5102,6 +5071,20 @@ pub struct SetLoadBalancerPoliciesOfListenerInput {
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SetLoadBalancerPoliciesOfListenerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The external port of the load balancer.</p>
+    pub fn load_balancer_port(&self) -> i32 {
+        self.load_balancer_port
+    }
+    /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+}
 impl std::fmt::Debug for SetLoadBalancerPoliciesOfListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetLoadBalancerPoliciesOfListenerInput");
@@ -5122,6 +5105,20 @@ pub struct SetLoadBalancerPoliciesForBackendServerInput {
     pub instance_port: std::option::Option<i32>,
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SetLoadBalancerPoliciesForBackendServerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The port number associated with the EC2 instance.</p>
+    pub fn instance_port(&self) -> std::option::Option<i32> {
+        self.instance_port
+    }
+    /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
 }
 impl std::fmt::Debug for SetLoadBalancerPoliciesForBackendServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5144,6 +5141,20 @@ pub struct SetLoadBalancerListenerSslCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     pub ssl_certificate_id: std::option::Option<std::string::String>,
 }
+impl SetLoadBalancerListenerSslCertificateInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The port that uses the specified SSL certificate.</p>
+    pub fn load_balancer_port(&self) -> i32 {
+        self.load_balancer_port
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
+    pub fn ssl_certificate_id(&self) -> std::option::Option<&str> {
+        self.ssl_certificate_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SetLoadBalancerListenerSslCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetLoadBalancerListenerSslCertificateInput");
@@ -5163,6 +5174,16 @@ pub struct RemoveTagsInput {
     /// <p>The list of tag keys to remove.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>,
 }
+impl RemoveTagsInput {
+    /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.load_balancer_names.as_deref()
+    }
+    /// <p>The list of tag keys to remove.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagKeyOnly]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsInput");
@@ -5180,6 +5201,16 @@ pub struct RegisterInstancesWithLoadBalancerInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+}
+impl RegisterInstancesWithLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The IDs of the instances.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterInstancesWithLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5199,6 +5230,18 @@ pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The attributes for the load balancer.</p>
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
 }
+impl ModifyLoadBalancerAttributesInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The attributes for the load balancer.</p>
+    pub fn load_balancer_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::LoadBalancerAttributes> {
+        self.load_balancer_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyLoadBalancerAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyLoadBalancerAttributesInput");
@@ -5216,6 +5259,16 @@ pub struct EnableAvailabilityZonesForLoadBalancerInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl EnableAvailabilityZonesForLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5235,6 +5288,16 @@ pub struct DisableAvailabilityZonesForLoadBalancerInput {
     /// <p>The Availability Zones.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DisableAvailabilityZonesForLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The Availability Zones.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableAvailabilityZonesForLoadBalancerInput");
@@ -5253,6 +5316,16 @@ pub struct DetachLoadBalancerFromSubnetsInput {
     /// <p>The IDs of the subnets.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DetachLoadBalancerFromSubnetsInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The IDs of the subnets.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachLoadBalancerFromSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachLoadBalancerFromSubnetsInput");
@@ -5268,6 +5341,12 @@ impl std::fmt::Debug for DetachLoadBalancerFromSubnetsInput {
 pub struct DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeTagsInput {
+    /// <p>The names of the load balancers.</p>
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.load_balancer_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5288,6 +5367,20 @@ pub struct DescribeLoadBalancersInput {
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     pub page_size: std::option::Option<i32>,
 }
+impl DescribeLoadBalancersInput {
+    /// <p>The names of the load balancers.</p>
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.load_balancer_names.as_deref()
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancersInput");
@@ -5304,6 +5397,12 @@ impl std::fmt::Debug for DescribeLoadBalancersInput {
 pub struct DescribeLoadBalancerPolicyTypesInput {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
     pub policy_type_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeLoadBalancerPolicyTypesInput {
+    /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    pub fn policy_type_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_type_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoadBalancerPolicyTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5322,6 +5421,16 @@ pub struct DescribeLoadBalancerPoliciesInput {
     /// <p>The names of the policies.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeLoadBalancerPoliciesInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The names of the policies.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancerPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerPoliciesInput");
@@ -5337,6 +5446,12 @@ impl std::fmt::Debug for DescribeLoadBalancerPoliciesInput {
 pub struct DescribeLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
+}
+impl DescribeLoadBalancerAttributesInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoadBalancerAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5354,6 +5469,16 @@ pub struct DescribeInstanceHealthInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+}
+impl DescribeInstanceHealthInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The IDs of the instances.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceHealthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5373,6 +5498,16 @@ pub struct DescribeAccountLimitsInput {
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
 }
+impl DescribeAccountLimitsInput {
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for DescribeAccountLimitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
@@ -5390,6 +5525,16 @@ pub struct DeregisterInstancesFromLoadBalancerInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+}
+impl DeregisterInstancesFromLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The IDs of the instances.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterInstancesFromLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5409,6 +5554,16 @@ pub struct DeleteLoadBalancerPolicyInput {
     /// <p>The name of the policy.</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
+impl DeleteLoadBalancerPolicyInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLoadBalancerPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerPolicyInput");
@@ -5427,6 +5582,16 @@ pub struct DeleteLoadBalancerListenersInput {
     /// <p>The client port numbers of the listeners.</p>
     pub load_balancer_ports: std::option::Option<std::vec::Vec<i32>>,
 }
+impl DeleteLoadBalancerListenersInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The client port numbers of the listeners.</p>
+    pub fn load_balancer_ports(&self) -> std::option::Option<&[i32]> {
+        self.load_balancer_ports.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLoadBalancerListenersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerListenersInput");
@@ -5442,6 +5607,12 @@ impl std::fmt::Debug for DeleteLoadBalancerListenersInput {
 pub struct DeleteLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
+}
+impl DeleteLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5465,6 +5636,25 @@ pub struct CreateLoadBalancerPolicyInput {
     /// <p>The policy attributes.</p>
     pub policy_attributes: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
 }
+impl CreateLoadBalancerPolicyInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The name of the base policy type.
+    /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
+    pub fn policy_type_name(&self) -> std::option::Option<&str> {
+        self.policy_type_name.as_deref()
+    }
+    /// <p>The policy attributes.</p>
+    pub fn policy_attributes(&self) -> std::option::Option<&[crate::model::PolicyAttribute]> {
+        self.policy_attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLoadBalancerPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerPolicyInput");
@@ -5484,6 +5674,16 @@ pub struct CreateLoadBalancerListenersInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The listeners.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
+}
+impl CreateLoadBalancerListenersInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The listeners.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+        self.listeners.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLoadBalancerListenersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5526,6 +5726,49 @@ pub struct CreateLoadBalancerInput {
     /// in the <i>Classic Load Balancers Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The listeners.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
+    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+        self.listeners.as_deref()
+    }
+    /// <p>One or more Availability Zones from the same region as the load balancer.</p>
+    /// <p>You must specify at least one Availability Zone.</p>
+    /// <p>You can add more Availability Zones after you create the load balancer using
+    /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
+    /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The IDs of the security groups to assign to the load balancer.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
+    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses.
+    /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
+    /// in the <i>Elastic Load Balancing User Guide</i>.</p>
+    /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
+    pub fn scheme(&self) -> std::option::Option<&str> {
+        self.scheme.as_deref()
+    }
+    /// <p>A list of tags to assign to the load balancer.</p>
+    /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
+    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerInput");
@@ -5551,6 +5794,20 @@ pub struct CreateLbCookieStickinessPolicyInput {
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
     pub cookie_expiration_period: std::option::Option<i64>,
 }
+impl CreateLbCookieStickinessPolicyInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
+    pub fn cookie_expiration_period(&self) -> std::option::Option<i64> {
+        self.cookie_expiration_period
+    }
+}
 impl std::fmt::Debug for CreateLbCookieStickinessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLbCookieStickinessPolicyInput");
@@ -5572,6 +5829,20 @@ pub struct CreateAppCookieStickinessPolicyInput {
     /// <p>The name of the application cookie used for stickiness.</p>
     pub cookie_name: std::option::Option<std::string::String>,
 }
+impl CreateAppCookieStickinessPolicyInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The name of the application cookie used for stickiness.</p>
+    pub fn cookie_name(&self) -> std::option::Option<&str> {
+        self.cookie_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppCookieStickinessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppCookieStickinessPolicyInput");
@@ -5591,6 +5862,16 @@ pub struct ConfigureHealthCheckInput {
     /// <p>The configuration information.</p>
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
+impl ConfigureHealthCheckInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The configuration information.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+        self.health_check.as_ref()
+    }
+}
 impl std::fmt::Debug for ConfigureHealthCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigureHealthCheckInput");
@@ -5608,6 +5889,16 @@ pub struct AttachLoadBalancerToSubnetsInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AttachLoadBalancerToSubnetsInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachLoadBalancerToSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5627,6 +5918,16 @@ pub struct ApplySecurityGroupsToLoadBalancerInput {
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ApplySecurityGroupsToLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplySecurityGroupsToLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplySecurityGroupsToLoadBalancerInput");
@@ -5644,6 +5945,16 @@ pub struct AddTagsInput {
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsInput {
+    /// <p>The name of the load balancer. You can specify one load balancer only.</p>
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.load_balancer_names.as_deref()
+    }
+    /// <p>The tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

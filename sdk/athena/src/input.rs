@@ -97,10 +97,7 @@ impl BatchGetNamedQueryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_named_query(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_named_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -261,10 +258,7 @@ impl BatchGetQueryExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_query_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -633,10 +627,7 @@ impl CreateDataCatalogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_data_catalog(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_data_catalog(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -870,10 +861,7 @@ impl CreateNamedQueryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_named_query(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_named_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1068,10 +1056,7 @@ impl CreatePreparedStatementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_prepared_statement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1281,10 +1266,7 @@ impl CreateWorkGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_work_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_work_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1432,10 +1414,7 @@ impl DeleteDataCatalogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_data_catalog(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_catalog(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1591,10 +1570,7 @@ impl DeleteNamedQueryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_named_query(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_named_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1762,10 +1738,7 @@ impl DeletePreparedStatementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_prepared_statement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1929,10 +1902,7 @@ impl DeleteWorkGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_work_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_work_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2096,10 +2066,7 @@ impl GetDatabaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_database(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_database(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2247,10 +2214,7 @@ impl GetDataCatalogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_data_catalog(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_data_catalog(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2404,10 +2368,8 @@ impl GetNamedQueryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_named_query(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_named_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2572,10 +2534,9 @@ impl GetPreparedStatementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_prepared_statement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_prepared_statement(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2728,10 +2689,7 @@ impl GetQueryExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_query_execution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_query_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2912,10 +2870,7 @@ impl GetQueryResultsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_query_results(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_query_results(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3094,10 +3049,7 @@ impl GetTableMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_table_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_table_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3246,10 +3198,7 @@ impl GetWorkGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_work_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_work_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3426,10 +3375,7 @@ impl ListDatabasesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_databases(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_databases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3595,10 +3541,7 @@ impl ListDataCatalogsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_data_catalogs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_data_catalogs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3764,10 +3707,7 @@ impl ListEngineVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_engine_versions(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_engine_versions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3949,10 +3889,7 @@ impl ListNamedQueriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_named_queries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_named_queries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4132,10 +4069,7 @@ impl ListPreparedStatementsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_prepared_statements(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4317,10 +4251,7 @@ impl ListQueryExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_query_executions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_query_executions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4527,10 +4458,7 @@ impl ListTableMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_table_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_table_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4710,10 +4638,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4879,10 +4806,7 @@ impl ListWorkGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_work_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_work_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5120,10 +5044,7 @@ impl StartQueryExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_query_execution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_query_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5279,10 +5200,7 @@ impl StopQueryExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_query_execution(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_query_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5454,10 +5372,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5629,10 +5544,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5922,10 +5834,7 @@ impl UpdateDataCatalogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_data_catalog(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_data_catalog(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6120,10 +6029,7 @@ impl UpdatePreparedStatementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_prepared_statement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6319,10 +6225,7 @@ impl UpdateWorkGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_work_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_work_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6397,6 +6300,26 @@ pub struct UpdateWorkGroupInput {
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
     pub state: std::option::Option<crate::model::WorkGroupState>,
 }
+impl UpdateWorkGroupInput {
+    /// <p>The specified workgroup that will be updated.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The workgroup description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+    pub fn configuration_updates(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkGroupConfigurationUpdates> {
+        self.configuration_updates.as_ref()
+    }
+    /// <p>The workgroup state that will be updated for the given workgroup.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::WorkGroupState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkGroupInput");
@@ -6420,6 +6343,24 @@ pub struct UpdatePreparedStatementInput {
     pub query_statement: std::option::Option<std::string::String>,
     /// <p>The description of the prepared statement.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdatePreparedStatementInput {
+    /// <p>The name of the prepared statement.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The workgroup for the prepared statement.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The query string for the prepared statement.</p>
+    pub fn query_statement(&self) -> std::option::Option<&str> {
+        self.query_statement.as_deref()
+    }
+    /// <p>The description of the prepared statement.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePreparedStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6488,6 +6429,69 @@ pub struct UpdateDataCatalogInput {
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateDataCatalogInput {
+    /// <p>The name of the data catalog to update. The catalog name must be unique for the
+    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
+    /// sign, or hyphen characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
+    /// federated catalog, <code>HIVE</code> for an external hive metastore, or
+    /// <code>GLUE</code> for an Glue Data Catalog.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
+        self.r#type.as_ref()
+    }
+    /// <p>New or modified text that describes the data catalog.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the Lambda function or functions to use for updating the data
+    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
+    /// <code>metadata-function</code> parameter is required. <code>The
+    /// sdk-version</code> parameter is optional and defaults to the currently
+    /// supported version.</p>
+    /// <p>
+    /// <code>metadata-function=<i>lambda_arn</i>,
+    /// sdk-version=<i>version_number</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
+    /// of required parameters, but not both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata
+    /// and another for reading the actual data, use the following syntax. Both
+    /// parameters are required.</p>
+    /// <p>
+    /// <code>metadata-function=<i>lambda_arn</i>,
+    /// record-function=<i>lambda_arn</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p> If you have a composite Lambda function that processes
+    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p>
+    /// <code>function=<i>lambda_arn</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDataCatalogInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataCatalogInput");
@@ -6509,6 +6513,17 @@ pub struct UntagResourceInput {
     /// specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
+    /// specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6528,6 +6543,17 @@ pub struct TagResourceInput {
     /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
+    /// which tags are to be added.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -6543,6 +6569,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopQueryExecutionInput {
     /// <p>The unique ID of the query execution to stop.</p>
     pub query_execution_id: std::option::Option<std::string::String>,
+}
+impl StopQueryExecutionInput {
+    /// <p>The unique ID of the query execution to stop.</p>
+    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+        self.query_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopQueryExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6579,6 +6611,42 @@ pub struct StartQueryExecutionInput {
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
+impl StartQueryExecutionInput {
+    /// <p>The SQL query statements to be executed.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is
+    /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
+    /// received, the same response is returned and another query is not created. If a parameter
+    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
+    /// <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
+    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
+    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
+    /// this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The database within which the query executes.</p>
+    pub fn query_execution_context(
+        &self,
+    ) -> std::option::Option<&crate::model::QueryExecutionContext> {
+        self.query_execution_context.as_ref()
+    }
+    /// <p>Specifies information about where and how to save the results of the query execution.
+    /// If the query runs in a workgroup, then workgroup's settings may override query settings.
+    /// This affects the query results location. The workgroup settings override is specified in
+    /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    pub fn result_configuration(&self) -> std::option::Option<&crate::model::ResultConfiguration> {
+        self.result_configuration.as_ref()
+    }
+    /// <p>The name of the workgroup in which the query is being started.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
 impl std::fmt::Debug for StartQueryExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartQueryExecutionInput");
@@ -6602,6 +6670,18 @@ pub struct ListWorkGroupsInput {
     /// <p>The maximum number of workgroups to return in this request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListWorkGroupsInput {
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of workgroups to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListWorkGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkGroupsInput");
@@ -6624,6 +6704,23 @@ pub struct ListTagsForResourceInput {
     /// <p>The maximum number of results to be returned per request that lists the tags for the
     /// resource.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListTagsForResourceInput {
+    /// <p>Lists the tags for the resource with the specified ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results for
+    /// this request, where the request lists the tags for the resource with the specified
+    /// ARN.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request that lists the tags for the
+    /// resource.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6653,6 +6750,31 @@ pub struct ListTableMetadataInput {
     /// <p>Specifies the maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTableMetadataInput {
+    /// <p>The name of the data catalog for which table metadata should be returned.</p>
+    pub fn catalog_name(&self) -> std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
+    /// <p>The name of the database for which table metadata should be returned.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
+    /// metadata for all tables are listed.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the NextToken from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTableMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTableMetadataInput");
@@ -6680,6 +6802,24 @@ pub struct ListQueryExecutionsInput {
     /// workgroup is returned.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
+impl ListQueryExecutionsInput {
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of query executions to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
+    /// specified, a list of available query execution IDs for the queries in the primary
+    /// workgroup is returned.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
 impl std::fmt::Debug for ListQueryExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQueryExecutionsInput");
@@ -6702,6 +6842,22 @@ pub struct ListPreparedStatementsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPreparedStatementsInput {
+    /// <p>The workgroup to list the prepared statements for.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPreparedStatementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6728,6 +6884,24 @@ pub struct ListNamedQueriesInput {
     /// returned.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
+impl ListNamedQueriesInput {
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of queries to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the workgroup from which the named queries are being returned. If a
+    /// workgroup is not specified, the saved queries for the primary workgroup are
+    /// returned.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNamedQueriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNamedQueriesInput");
@@ -6749,6 +6923,18 @@ pub struct ListEngineVersionsInput {
     /// <p>The maximum number of engine versions to return in this request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEngineVersionsInput {
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of engine versions to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEngineVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEngineVersionsInput");
@@ -6768,6 +6954,18 @@ pub struct ListDataCatalogsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of data catalogs to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDataCatalogsInput {
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the NextToken from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the maximum number of data catalogs to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDataCatalogsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6791,6 +6989,22 @@ pub struct ListDatabasesInput {
     /// <p>Specifies the maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDatabasesInput {
+    /// <p>The name of the data catalog that contains the databases to return.</p>
+    pub fn catalog_name(&self) -> std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatabasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatabasesInput");
@@ -6807,6 +7021,12 @@ impl std::fmt::Debug for ListDatabasesInput {
 pub struct GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
     pub work_group: std::option::Option<std::string::String>,
+}
+impl GetWorkGroupInput {
+    /// <p>The name of the workgroup.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWorkGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6827,6 +7047,21 @@ pub struct GetTableMetadataInput {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table for which metadata is returned.</p>
     pub table_name: std::option::Option<std::string::String>,
+}
+impl GetTableMetadataInput {
+    /// <p>The name of the data catalog that contains the database and table metadata to
+    /// return.</p>
+    pub fn catalog_name(&self) -> std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
+    /// <p>The name of the database that contains the table metadata to return.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the table for which metadata is returned.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTableMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6851,6 +7086,22 @@ pub struct GetQueryResultsInput {
     /// <p>The maximum number of results (rows) to return in this request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetQueryResultsInput {
+    /// <p>The unique ID of the query execution.</p>
+    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+        self.query_execution_id.as_deref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue
+    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results (rows) to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetQueryResultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetQueryResultsInput");
@@ -6867,6 +7118,12 @@ impl std::fmt::Debug for GetQueryResultsInput {
 pub struct GetQueryExecutionInput {
     /// <p>The unique ID of the query execution.</p>
     pub query_execution_id: std::option::Option<std::string::String>,
+}
+impl GetQueryExecutionInput {
+    /// <p>The unique ID of the query execution.</p>
+    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+        self.query_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetQueryExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6885,6 +7142,16 @@ pub struct GetPreparedStatementInput {
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
+impl GetPreparedStatementInput {
+    /// <p>The name of the prepared statement to retrieve.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The workgroup to which the statement to be retrieved belongs.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPreparedStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPreparedStatementInput");
@@ -6902,6 +7169,13 @@ pub struct GetNamedQueryInput {
     /// IDs.</p>
     pub named_query_id: std::option::Option<std::string::String>,
 }
+impl GetNamedQueryInput {
+    /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
+    /// IDs.</p>
+    pub fn named_query_id(&self) -> std::option::Option<&str> {
+        self.named_query_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNamedQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNamedQueryInput");
@@ -6916,6 +7190,12 @@ impl std::fmt::Debug for GetNamedQueryInput {
 pub struct GetDataCatalogInput {
     /// <p>The name of the data catalog to return.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetDataCatalogInput {
+    /// <p>The name of the data catalog to return.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataCatalogInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6933,6 +7213,16 @@ pub struct GetDatabaseInput {
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database to return.</p>
     pub database_name: std::option::Option<std::string::String>,
+}
+impl GetDatabaseInput {
+    /// <p>The name of the data catalog that contains the database to return.</p>
+    pub fn catalog_name(&self) -> std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
+    /// <p>The name of the database to return.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6953,6 +7243,17 @@ pub struct DeleteWorkGroupInput {
     /// named queries or query executions.</p>
     pub recursive_delete_option: std::option::Option<bool>,
 }
+impl DeleteWorkGroupInput {
+    /// <p>The unique name of the workgroup to delete.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
+    /// named queries or query executions.</p>
+    pub fn recursive_delete_option(&self) -> std::option::Option<bool> {
+        self.recursive_delete_option
+    }
+}
 impl std::fmt::Debug for DeleteWorkGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkGroupInput");
@@ -6971,6 +7272,16 @@ pub struct DeletePreparedStatementInput {
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
+impl DeletePreparedStatementInput {
+    /// <p>The name of the prepared statement to delete.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The workgroup to which the statement to be deleted belongs.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePreparedStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePreparedStatementInput");
@@ -6987,6 +7298,12 @@ pub struct DeleteNamedQueryInput {
     /// <p>The unique ID of the query to delete.</p>
     pub named_query_id: std::option::Option<std::string::String>,
 }
+impl DeleteNamedQueryInput {
+    /// <p>The unique ID of the query to delete.</p>
+    pub fn named_query_id(&self) -> std::option::Option<&str> {
+        self.named_query_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNamedQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNamedQueryInput");
@@ -7001,6 +7318,12 @@ impl std::fmt::Debug for DeleteNamedQueryInput {
 pub struct DeleteDataCatalogInput {
     /// <p>The name of the data catalog to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteDataCatalogInput {
+    /// <p>The name of the data catalog to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataCatalogInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7029,6 +7352,30 @@ pub struct CreateWorkGroupInput {
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateWorkGroupInput {
+    /// <p>The workgroup name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The configuration for the workgroup, which includes the location in Amazon S3
+    /// where query results are stored, the encryption configuration, if any, used for
+    /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
+    /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
+    /// specified, and whether workgroup's settings (specified with
+    /// <code>EnforceWorkGroupConfiguration</code>) in the
+    /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::WorkGroupConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The workgroup description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkGroupInput");
@@ -7052,6 +7399,24 @@ pub struct CreatePreparedStatementInput {
     pub query_statement: std::option::Option<std::string::String>,
     /// <p>The description of the prepared statement.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl CreatePreparedStatementInput {
+    /// <p>The name of the prepared statement.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The name of the workgroup to which the prepared statement belongs.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The query string for the prepared statement.</p>
+    pub fn query_statement(&self) -> std::option::Option<&str> {
+        self.query_statement.as_deref()
+    }
+    /// <p>The description of the prepared statement.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePreparedStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7089,6 +7454,41 @@ pub struct CreateNamedQueryInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup in which the named query is being created.</p>
     pub work_group: std::option::Option<std::string::String>,
+}
+impl CreateNamedQueryInput {
+    /// <p>The query name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The query description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The database to which the query belongs.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The contents of the query with all query statements.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is
+    /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
+    /// received, the same response is returned and another query is not created. If a parameter
+    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
+    /// <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
+    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
+    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
+    /// this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The name of the workgroup in which the named query is being created.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNamedQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7190,6 +7590,102 @@ pub struct CreateDataCatalogInput {
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDataCatalogInput {
+    /// <p>The name of the data catalog to create. The catalog name must be unique for the
+    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
+    /// sign, or hyphen characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
+    /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
+    /// Glue Data Catalog.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A description of the data catalog to be created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the Lambda function or functions to use for creating the data
+    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
+    /// <code>metadata-function</code> parameter is required. <code>The
+    /// sdk-version</code> parameter is optional and defaults to the currently
+    /// supported version.</p>
+    /// <p>
+    /// <code>metadata-function=<i>lambda_arn</i>,
+    /// sdk-version=<i>version_number</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
+    /// of required parameters, but not both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata
+    /// and another for reading the actual data, use the following syntax. Both
+    /// parameters are required.</p>
+    /// <p>
+    /// <code>metadata-function=<i>lambda_arn</i>,
+    /// record-function=<i>lambda_arn</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p> If you have a composite Lambda function that processes
+    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p>
+    /// <code>function=<i>lambda_arn</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
+    /// <code>
+    /// <i>catalog_id</i>
+    /// </code> is the account ID of the
+    /// Amazon Web Services account to which the Glue Data Catalog
+    /// belongs.</p>
+    /// <p>
+    /// <code>catalog-id=<i>catalog_id</i>
+    /// </code>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>GLUE</code> data catalog type also applies to the default
+    /// <code>AwsDataCatalog</code> that already exists in your account, of
+    /// which you can have only one and cannot modify.</p>
+    /// </li>
+    /// <li>
+    /// <p>Queries that specify a Glue Data Catalog other than the default
+    /// <code>AwsDataCatalog</code> must be run on Athena engine
+    /// version 2.</p>
+    /// </li>
+    /// <li>
+    /// <p>In Regions where Athena engine version 2 is not available,
+    /// creating new Glue data catalogs results in an
+    /// <code>INVALID_INPUT</code> error.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDataCatalogInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataCatalogInput");
@@ -7209,6 +7705,12 @@ pub struct BatchGetQueryExecutionInput {
     /// <p>An array of query execution IDs.</p>
     pub query_execution_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetQueryExecutionInput {
+    /// <p>An array of query execution IDs.</p>
+    pub fn query_execution_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.query_execution_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetQueryExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetQueryExecutionInput");
@@ -7223,6 +7725,12 @@ impl std::fmt::Debug for BatchGetQueryExecutionInput {
 pub struct BatchGetNamedQueryInput {
     /// <p>An array of query IDs.</p>
     pub named_query_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetNamedQueryInput {
+    /// <p>An array of query IDs.</p>
+    pub fn named_query_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.named_query_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetNamedQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

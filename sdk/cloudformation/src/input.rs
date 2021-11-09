@@ -278,10 +278,7 @@ impl ActivateTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_activate_type(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_activate_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -440,7 +437,7 @@ impl BatchDescribeTypeConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_describe_type_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_describe_type_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -609,10 +606,7 @@ impl CancelUpdateStackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_update_stack(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_update_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -901,10 +895,7 @@ impl ContinueUpdateRollbackInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_continue_update_rollback(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1620,10 +1611,7 @@ impl CreateChangeSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_change_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_change_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2390,10 +2378,7 @@ impl CreateStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2769,10 +2754,9 @@ impl CreateStackInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_stack_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_stack_instances(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3456,10 +3440,7 @@ impl CreateStackSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_stack_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_stack_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3644,10 +3625,8 @@ impl DeactivateTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_deactivate_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_deactivate_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3811,10 +3790,7 @@ impl DeleteChangeSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_change_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_change_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4052,10 +4028,7 @@ impl DeleteStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4380,10 +4353,9 @@ impl DeleteStackInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_stack_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_stack_instances(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4575,10 +4547,7 @@ impl DeleteStackSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_stack_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_stack_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4774,10 +4743,8 @@ impl DeregisterTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_deregister_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_deregister_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4924,10 +4891,7 @@ impl DescribeAccountLimitsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5105,10 +5069,7 @@ impl DescribeChangeSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_change_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_change_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5259,10 +5220,7 @@ impl DescribePublisherInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_publisher(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_publisher(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5417,7 +5375,7 @@ impl DescribeStackDriftDetectionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_drift_detection_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_drift_detection_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5597,10 +5555,7 @@ impl DescribeStackEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_events(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5824,10 +5779,7 @@ impl DescribeStackInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6013,10 +5965,7 @@ impl DescribeStackResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6261,7 +6210,7 @@ impl DescribeStackResourceDriftsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_resource_drifts(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_resource_drifts(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6483,10 +6432,7 @@ impl DescribeStackResourcesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_resources(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6664,10 +6610,8 @@ impl DescribeStacksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6857,10 +6801,7 @@ impl DescribeStackSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7065,10 +7006,7 @@ impl DescribeStackSetOperationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_set_operation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7299,10 +7237,7 @@ impl DescribeTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_type(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7461,10 +7396,7 @@ impl DescribeTypeRegistrationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_type_registration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7630,10 +7562,7 @@ impl DetectStackDriftInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_stack_drift(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detect_stack_drift(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7796,10 +7725,7 @@ impl DetectStackResourceDriftInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_stack_resource_drift(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8031,10 +7957,9 @@ impl DetectStackSetDriftInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_stack_set_drift(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detect_stack_set_drift(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8233,10 +8158,9 @@ impl EstimateTemplateCostInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_estimate_template_cost(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_estimate_template_cost(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8439,10 +8363,7 @@ impl ExecuteChangeSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_change_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_execute_change_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8589,10 +8510,7 @@ impl GetStackPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_stack_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_stack_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8802,10 +8720,7 @@ impl GetTemplateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_template(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9070,10 +8985,7 @@ impl GetTemplateSummaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_template_summary(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_template_summary(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9316,10 +9228,7 @@ impl ImportStacksToStackSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_stacks_to_stack_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9480,10 +9389,7 @@ impl ListChangeSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9629,10 +9535,7 @@ impl ListExportsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_exports(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_exports(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9792,10 +9695,7 @@ impl ListImportsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_imports(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_imports(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10076,10 +9976,7 @@ impl ListStackInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stack_instances(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_stack_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10260,10 +10157,7 @@ impl ListStackResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stack_resources(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_stack_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10433,10 +10327,7 @@ impl ListStacksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_stacks(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_stacks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10681,7 +10572,7 @@ impl ListStackSetOperationResultsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stack_set_operation_results(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_stack_set_operation_results(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10916,10 +10807,7 @@ impl ListStackSetOperationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_stack_set_operations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11150,10 +11038,8 @@ impl ListStackSetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_stack_sets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_stack_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11395,10 +11281,7 @@ impl ListTypeRegistrationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_type_registrations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11762,10 +11645,7 @@ impl ListTypesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_types(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12043,10 +11923,7 @@ impl ListTypeVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_type_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_type_versions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12266,10 +12143,7 @@ impl PublishTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_publish_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_publish_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12506,10 +12380,7 @@ impl RecordHandlerProgressInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_record_handler_progress(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12681,10 +12552,7 @@ impl RegisterPublisherInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_publisher(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_publisher(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13054,10 +12922,7 @@ impl RegisterTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_type(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_register_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13228,10 +13093,7 @@ impl RollbackStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_rollback_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_rollback_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13418,10 +13280,7 @@ impl SetStackPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_stack_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_stack_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13649,10 +13508,9 @@ impl SetTypeConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_type_configuration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_type_configuration(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13853,10 +13711,7 @@ impl SetTypeDefaultVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_type_default_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14054,10 +13909,8 @@ impl SignalResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_signal_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_signal_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14263,10 +14116,7 @@ impl StopStackSetOperationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_stack_set_operation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14514,10 +14364,7 @@ impl TestTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_test_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_test_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15282,10 +15129,7 @@ impl UpdateStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15687,10 +15531,9 @@ impl UpdateStackInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_stack_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_stack_instances(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16569,10 +16412,7 @@ impl UpdateStackSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_stack_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_stack_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16735,7 +16575,7 @@ impl UpdateTerminationProtectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_termination_protection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_termination_protection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16914,10 +16754,7 @@ impl ValidateTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_validate_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_validate_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16997,6 +16834,25 @@ pub struct ValidateTemplateInput {
     /// both are passed, only <code>TemplateBody</code> is used.</p>
     pub template_url: std::option::Option<std::string::String>,
 }
+impl ValidateTemplateInput {
+    /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+    /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+    /// both are passed, only <code>TemplateBody</code> is used.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>Location of file containing the template body. The URL must point to a template (max
+    /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
+    /// For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+    /// both are passed, only <code>TemplateBody</code> is used.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateTemplateInput");
@@ -17015,6 +16871,17 @@ pub struct UpdateTerminationProtectionInput {
     /// <p>The name or unique ID of the stack for which you want to set termination
     /// protection.</p>
     pub stack_name: std::option::Option<std::string::String>,
+}
+impl UpdateTerminationProtectionInput {
+    /// <p>Whether to enable termination protection on the specified stack.</p>
+    pub fn enable_termination_protection(&self) -> std::option::Option<bool> {
+        self.enable_termination_protection
+    }
+    /// <p>The name or unique ID of the stack for which you want to set termination
+    /// protection.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTerminationProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17296,6 +17163,309 @@ pub struct UpdateStackSetInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl UpdateStackSetInput {
+    /// <p>The name or unique ID of the stack set that you want to update.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>A brief description of updates that you are making.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
+    /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
+    /// <code>UsePreviousTemplate</code> to true.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The location of the file that contains the template body. The URL must point to a
+    /// template (maximum size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems
+    /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
+    /// <code>UsePreviousTemplate</code> to true. </p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+    /// <p>Use the existing template that's associated with the stack set that you're
+    /// updating.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
+    /// <code>UsePreviousTemplate</code> to true. </p>
+    pub fn use_previous_template(&self) -> std::option::Option<bool> {
+        self.use_previous_template
+    }
+    /// <p>A list of input parameters for the stack set template. </p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+    /// capabilities in order for CloudFormation to update the stack set and its associated stack
+    /// instances.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+    /// </p>
+    /// <p>Some stack templates might include resources that can affect permissions in
+    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
+    /// specifying one of these capabilities.</p>
+    /// <p>The following IAM resources require you to specify either the
+    /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+    /// capability.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have IAM resources, you can specify either capability. </p>
+    /// </li>
+    /// <li>
+    /// <p>If you have IAM resources with custom names, you <i>must</i>
+    /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+    /// <code>InsufficientCapabilities</code> error.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If your stack template contains these resources, we recommend that you review
+    /// all permissions associated with them and edit their permissions if
+    /// necessary.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+    /// AWS::IAM::AccessKey</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+    /// AWS::IAM::Group</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+    /// AWS::IAM::Policy</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+    /// AWS::IAM::Role</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+    /// AWS::IAM::User</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+    /// Resources in CloudFormation Templates</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_AUTO_EXPAND</code>
+    /// </p>
+    /// <p>Some templates reference macros. If your stack set template references one or more
+    /// macros, you must update the stack set directly from the processed template, without
+    /// first reviewing the resulting changes in a change set. To update the stack set
+    /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+    /// Perform Custom Processing on Templates</a>.</p>
+    /// <important>
+    /// <p>Stack sets with service-managed permissions do not currently support the use of
+    /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+    /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+    /// for a stack set with service-managed permissions, if you reference a macro in your
+    /// template the stack set operation will fail.</p>
+    /// </important>
+    /// </li>
+    /// </ul>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
+    /// CloudFormation also propagates these tags to supported resources that are created in
+    /// the stacks. You can specify a maximum number of 50 tags.</p>
+    /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
+    /// currently associated with this stack set. This means:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you don't specify this parameter, CloudFormation doesn't modify the
+    /// stack's tags. </p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify <i>any</i> tags using this parameter, you must
+    /// specify <i>all</i> the tags that you want associated with this stack
+    /// set, even tags you've specifed before (for example, when creating the stack set or
+    /// during a previous update of the stack set.). Any tags that you don't include in the
+    /// updated list of tags are removed from the stack set, and therefore from the stacks
+    /// and resources as well. </p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify an empty value, CloudFormation removes all currently
+    /// associated tags.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action,
+    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
+    /// you omit tags that are currently associated with the stack set from the list of tags you
+    /// specify, CloudFormation assumes that you want to remove those tags from the stack set,
+    /// and checks to see if you have permission to untag resources. If you don't have the
+    /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
+    /// <code>access denied</code> error, and the stack set is not updated.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
+        self.operation_preferences.as_ref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control
+    /// which users or groups can manage specific stack sets within the same administrator account.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+    /// Permissions for Stack Set Operations</a> in the
+    /// <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a customized administrator role when you created the stack set, you
+    /// must specify a customized administrator role, even if it is the same customized
+    /// administrator role used with this stack set previously.</p>
+    pub fn administration_role_arn(&self) -> std::option::Option<&str> {
+        self.administration_role_arn.as_deref()
+    }
+    /// <p>The name of the IAM execution role to use to update the stack set. If you do not specify
+    /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+    /// for the stack set operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which
+    /// stack resources users and groups can include in their stack sets. </p>
+    /// <p> If you specify a customized execution role, CloudFormation uses that role to update the stack.
+    /// If you do not specify a customized execution role, CloudFormation performs the update using the role
+    /// previously associated with the stack set, so long as you have permissions to perform
+    /// operations on the stack set.</p>
+    pub fn execution_role_name(&self) -> std::option::Option<&str> {
+        self.execution_role_name.as_deref()
+    }
+    /// <p>[Service-managed permissions] The Organizations accounts in which to update
+    /// associated stack instances.</p>
+    /// <p>To update all the stack instances associated with this stack set, do not specify
+    /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+    /// <p>If the stack set update includes changes to the template (that is, if
+    /// <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the
+    /// <code>Parameters</code>, CloudFormation marks all stack instances with a status
+    /// of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+    /// and Regions. If the stack set update does not include changes to the template or
+    /// parameters, CloudFormation updates the stack instances in the specified accounts
+    /// and Regions, while leaving all other stack instances with their existing stack instance
+    /// status.</p>
+    pub fn deployment_targets(&self) -> std::option::Option<&crate::model::DeploymentTargets> {
+        self.deployment_targets.as_ref()
+    }
+    /// <p>Describes how the IAM roles required for stack set operations are created. You cannot
+    /// modify <code>PermissionModel</code> if there are stack instances associated with your stack
+    /// set.</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+    /// execution roles required to deploy to target accounts. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+    /// Self-Managed Stack Set Permissions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+    /// IAM roles required to deploy to accounts managed by Organizations. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn permission_model(&self) -> std::option::Option<&crate::model::PermissionModels> {
+        self.permission_model.as_ref()
+    }
+    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
+    /// Organizations accounts that are added to a target organization or organizational
+    /// unit (OU).</p>
+    /// <p>If you specify <code>AutoDeployment</code>, do not specify
+    /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+    pub fn auto_deployment(&self) -> std::option::Option<&crate::model::AutoDeployment> {
+        self.auto_deployment.as_ref()
+    }
+    /// <p>The unique ID for this stack set operation. </p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that
+    /// CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that
+    /// CloudFormation successfully received them.</p>
+    /// <p>If you don't specify an operation ID, CloudFormation generates one
+    /// automatically.</p>
+    /// <p>Repeating this stack set operation with a new operation ID retries all stack
+    /// instances whose status is <code>OUTDATED</code>. </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>[Self-managed permissions] The accounts in which to update associated stack instances.
+    /// If you specify accounts, you must also specify the Regions in which to update stack set
+    /// instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this stack set,
+    /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the stack set update includes changes to the template (that is, if the
+    /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
+    /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
+    /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+    /// and Regions. If the stack set update does not include changes to the template or
+    /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
+    /// leaving all other stack instances with their existing stack instance status. </p>
+    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.accounts.as_deref()
+    }
+    /// <p>The Regions in which to update associated stack instances. If you specify Regions, you
+    /// must also specify accounts in which to update stack set instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this stack set,
+    /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the stack set update includes changes to the template (that is, if the
+    /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
+    /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
+    /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+    /// and Regions. If the stack set update does not include changes to the template or
+    /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
+    /// leaving all other stack instances with their existing stack instance status. </p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStackSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStackSetInput");
@@ -17406,6 +17576,107 @@ pub struct UpdateStackInstancesInput {
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
+}
+impl UpdateStackInstancesInput {
+    /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values
+    /// for stack instances. The overridden parameter values will be applied to all stack instances
+    /// in the specified accounts and Regions.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.accounts.as_deref()
+    }
+    /// <p>[Service-managed permissions] The Organizations accounts for which you want to
+    /// update parameter values for stack instances. If your update targets OUs, the overridden
+    /// parameter values only apply to the accounts that are currently in the target OUs and their
+    /// child OUs. Accounts added to the target OUs and their child OUs in the future won't use the
+    /// overridden values.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
+    pub fn deployment_targets(&self) -> std::option::Option<&crate::model::DeploymentTargets> {
+        self.deployment_targets.as_ref()
+    }
+    /// <p>The names of one or more Regions in which you want to update parameter values for
+    /// stack instances. The overridden parameter values will be applied to all stack instances in
+    /// the specified accounts and Regions.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p> A list of input parameters whose values you want to update for the specified stack
+    /// instances. </p>
+    /// <p>Any overridden parameter values will be applied to all stack instances in the
+    /// specified accounts and Regions. When specifying parameters and their values, be aware of
+    /// how CloudFormation sets parameter values during stack instance update
+    /// operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To override the current value for a parameter, include the parameter and
+    /// specify its value.</p>
+    /// </li>
+    /// <li>
+    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
+    /// <code>true</code>. (You cannot specify both a value and set
+    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+    /// </li>
+    /// <li>
+    /// <p>To set an overridden parameter back to the value specified in the stack set,
+    /// specify a parameter list but do not include the parameter in the list.</p>
+    /// </li>
+    /// <li>
+    /// <p>To leave all parameters set to their present values, do not specify this
+    /// property at all.</p>
+    /// </li>
+    /// </ul>
+    /// <p>During stack set updates, any parameter values overridden for a stack instance are
+    /// not updated, but retain their overridden value.</p>
+    /// <p>You can only override the parameter <i>values</i> that are specified in
+    /// the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to
+    /// update the stack set template. If you add a parameter to a template, before you can
+    /// override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and
+    /// parameter value specified in the stack set. Once a stack instance has been updated with the
+    /// new parameter, you can then override the parameter value using
+    /// <code>UpdateStackInstances</code>.</p>
+    pub fn parameter_overrides(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameter_overrides.as_deref()
+    }
+    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
+        self.operation_preferences.as_ref()
+    }
+    /// <p>The unique identifier for this stack set operation. </p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that
+    /// CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that
+    /// CloudFormation successfully received them.</p>
+    /// <p>If you don't specify an operation ID, the SDK generates one automatically.
+    /// </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateStackInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17639,6 +17910,256 @@ pub struct UpdateStackInput {
     /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl UpdateStackInput {
+    /// <p>The name or unique stack ID of the stack to update.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+    /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.)</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+    /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>Location of file containing the template body. The URL must point to a template that
+    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+    /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+    /// <p>Reuse the existing template that is associated with the stack that you are
+    /// updating.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+    /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
+    pub fn use_previous_template(&self) -> std::option::Option<bool> {
+        self.use_previous_template
+    }
+    /// <p>Structure containing the temporary overriding stack policy body. You can specify
+    /// either the <code>StackPolicyDuringUpdateBody</code> or the
+    /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
+    /// <p>If you want to update protected resources, specify a temporary overriding stack
+    /// policy during this update. If you do not specify a stack policy, the current policy that is
+    /// associated with the stack will be used.</p>
+    pub fn stack_policy_during_update_body(&self) -> std::option::Option<&str> {
+        self.stack_policy_during_update_body.as_deref()
+    }
+    /// <p>Location of a file containing the temporary overriding stack policy. The URL must
+    /// point to a policy (max size: 16KB) located in an S3 bucket in
+    /// the same Region as the stack. You can specify either the
+    /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
+    /// parameter, but not both.</p>
+    /// <p>If you want to update protected resources, specify a temporary overriding stack
+    /// policy during this update. If you do not specify a stack policy, the current policy that is
+    /// associated with the stack will be used.</p>
+    pub fn stack_policy_during_update_url(&self) -> std::option::Option<&str> {
+        self.stack_policy_during_update_url.as_deref()
+    }
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+    /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+    /// type.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+    /// capabilities in order for CloudFormation to update the stack.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+    /// </p>
+    /// <p>Some stack templates might include resources that can affect permissions in
+    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+    /// of these capabilities.</p>
+    /// <p>The following IAM resources require you to specify either the
+    /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+    /// capability.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have IAM resources, you can specify either capability.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you have IAM resources with custom names, you <i>must</i>
+    /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+    /// <code>InsufficientCapabilities</code> error.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If your stack template contains these resources, we recommend that you review
+    /// all permissions associated with them and edit their permissions if
+    /// necessary.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+    /// AWS::IAM::AccessKey</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+    /// AWS::IAM::Group</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+    /// AWS::IAM::Policy</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+    /// AWS::IAM::Role</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+    /// AWS::IAM::User</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+    /// Resources in CloudFormation Templates</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_AUTO_EXPAND</code>
+    /// </p>
+    /// <p>Some template contain macros. Macros perform custom processing on templates; this
+    /// can include simple actions like find-and-replace operations, all the way to extensive
+    /// transformations of entire templates. Because of this, users typically create a change
+    /// set from the processed template, so that they can review the changes resulting from
+    /// the macros before actually updating the stack. If your stack template contains one or
+    /// more macros, and you choose to update a stack directly from the processed template,
+    /// without first reviewing the resulting changes in a change set, you must acknowledge
+    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+    /// <p>If you want to update a stack from a stack template that contains macros
+    /// <i>and</i> nested stacks, you must update the stack directly from
+    /// the template using this capability.</p>
+    /// <important>
+    /// <p>You should only update stacks directly from a stack template that contains
+    /// macros if you know what processing the macro performs.</p>
+    /// <p>Each macro relies on an underlying Lambda service function for processing stack
+    /// templates. Be aware that the Lambda function owner can update the function
+    /// operation without CloudFormation being notified.</p>
+    /// </important>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+    /// CloudFormation Macros to Perform Custom Processing on
+    /// Templates</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The template resource types that you have permissions to work with for this update
+    /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <code>Custom::MyCustomInstance</code>.</p>
+    /// <p>If the list of resource types doesn't include a resource that you're updating, the
+    /// stack update fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+    /// that CloudFormation assumes to update the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
+    /// future operations on the stack. As long as users have permission to operate on the stack,
+    /// CloudFormation uses this role even if the users don't have permission to pass it.
+    /// Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+    /// associated with the stack. If no role is available, CloudFormation uses a temporary
+    /// session that is generated from your user credentials.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+    /// updating operations, and for the specified monitoring period afterwards.</p>
+    pub fn rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RollbackConfiguration> {
+        self.rollback_configuration.as_ref()
+    }
+    /// <p>Structure containing a new stack policy body. You can specify either the
+    /// <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
+    /// both.</p>
+    /// <p>You might update the stack policy, for example, in order to protect a new resource
+    /// that you created during a stack update. If you do not specify a stack policy, the current
+    /// policy that is associated with the stack is unchanged.</p>
+    pub fn stack_policy_body(&self) -> std::option::Option<&str> {
+        self.stack_policy_body.as_deref()
+    }
+    /// <p>Location of a file containing the updated stack policy. The URL must point to a
+    /// policy (max size: 16KB) located in an S3 bucket in the same
+    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    /// <p>You might update the stack policy, for example, in order to protect a new resource
+    /// that you created during a stack update. If you do not specify a stack policy, the current
+    /// policy that is associated with the stack is unchanged.</p>
+    pub fn stack_policy_url(&self) -> std::option::Option<&str> {
+        self.stack_policy_url.as_deref()
+    }
+    /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+    /// CloudFormation associates with the stack. Specify an empty list to remove all notification
+    /// topics.</p>
+    pub fn notification_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_ar_ns.as_deref()
+    }
+    /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+    /// these tags to supported resources in the stack. You can specify a maximum number of 50
+    /// tags.</p>
+    /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's
+    /// tags. If you specify an empty value, CloudFormation removes all associated
+    /// tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Preserve the state of previously provisioned resources when an operation fails.</p>
+    /// <p>Default: <code>False</code>
+    /// </p>
+    pub fn disable_rollback(&self) -> std::option::Option<bool> {
+        self.disable_rollback
+    }
+    /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
+    /// ensure that CloudFormation successfully received them.</p>
+    /// <p>All events triggered by a given stack operation are assigned the same client request
+    /// token, which you can use to track operations. For example, if you execute a
+    /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
+    /// <code>StackEvents</code> generated by that operation will have
+    /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+    /// <p>In the console, stack operations display the client request token on the Events tab.
+    /// Stack operations that are initiated from the console use the token format
+    /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
+    /// stack operation . For example, if you create a stack using the console, each stack event
+    /// would be assigned the same token in the following format:
+    /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStackInput");
@@ -17710,6 +18231,54 @@ pub struct TestTypeInput {
     /// Access Management User Guide</i>.</p>
     pub log_delivery_bucket: std::option::Option<std::string::String>,
 }
+impl TestTypeInput {
+    /// <p>The Amazon Resource Number (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of the extension to test.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThirdPartyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension to test.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The version of the extension to test.</p>
+    /// <p>You can specify the version id with either <code>Arn</code>, or with
+    /// <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>If you do not specify a version, CloudFormation uses the default version of the
+    /// extension in this account and region for testing.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
+    /// <p>CloudFormation delivers the logs by the time contract testing has completed and the
+    /// extension has been assigned a test type status of <code>PASSED</code> or
+    /// <code>FAILED</code>.</p>
+    /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3
+    /// bucket. Specifically, the user needs the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>GetObject</p>
+    /// </li>
+    /// <li>
+    /// <p>PutObject</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and
+    /// Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and
+    /// Access Management User Guide</i>.</p>
+    pub fn log_delivery_bucket(&self) -> std::option::Option<&str> {
+        self.log_delivery_bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for TestTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestTypeInput");
@@ -17749,6 +18318,36 @@ pub struct StopStackSetOperationInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl StopStackSetOperationInput {
+    /// <p>The name or unique ID of the stack set that you want to stop the operation
+    /// for.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>The ID of the stack operation. </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for StopStackSetOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopStackSetOperationInput");
@@ -17777,6 +18376,30 @@ pub struct SignalResourceInput {
     /// <p>The status of the signal, which is either success or failure. A failure signal causes
     /// CloudFormation to immediately fail the stack creation or update.</p>
     pub status: std::option::Option<crate::model::ResourceSignalStatus>,
+}
+impl SignalResourceInput {
+    /// <p>The stack name or unique stack ID that includes the resource that you want to
+    /// signal.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of
+    /// the resource that given in the template.</p>
+    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+        self.logical_resource_id.as_deref()
+    }
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
+    /// groups, specify the instance ID that you are signaling as the unique ID. If you send
+    /// multiple signals to a single resource (such as signaling a wait condition), each signal
+    /// requires a different unique ID.</p>
+    pub fn unique_id(&self) -> std::option::Option<&str> {
+        self.unique_id.as_deref()
+    }
+    /// <p>The status of the signal, which is either success or failure. A failure signal causes
+    /// CloudFormation to immediately fail the stack creation or update.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceSignalStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for SignalResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17810,6 +18433,33 @@ pub struct SetTypeDefaultVersionInput {
     /// the Amazon Resource Name (ARN) assigned to the extension version when it is
     /// registered.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl SetTypeDefaultVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+    /// information.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The kind of extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+    /// registered.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SetTypeDefaultVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17850,6 +18500,41 @@ pub struct SetTypeConfigurationInput {
     /// <code>TypeName</code>.</p>
     pub r#type: std::option::Option<crate::model::ThirdPartyType>,
 }
+impl SetTypeConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
+    /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the
+    /// configuration for an extension, but not for a specific extension version.</p>
+    pub fn type_arn(&self) -> std::option::Option<&str> {
+        self.type_arn.as_deref()
+    }
+    /// <p>The configuration data for the extension, in this account and region. </p>
+    /// <p>The configuration data must be formatted as JSON, and validate against the schema
+    /// returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the
+    /// <i>CloudFormation CLI User Guide</i>.</p>
+    pub fn configuration(&self) -> std::option::Option<&str> {
+        self.configuration.as_deref()
+    }
+    /// <p>An alias by which to refer to this extension configuration data.</p>
+    /// <p>Conditional: Specifying a configuration alias is required when setting a configuration
+    /// for a resource type extension.</p>
+    pub fn configuration_alias(&self) -> std::option::Option<&str> {
+        self.configuration_alias.as_deref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+    /// <code>TypeName</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The type of extension.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+    /// <code>TypeName</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThirdPartyType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for SetTypeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetTypeConfigurationInput");
@@ -17879,6 +18564,26 @@ pub struct SetStackPolicyInput {
     /// <code>StackPolicyURL</code> parameter, but not both.</p>
     pub stack_policy_url: std::option::Option<std::string::String>,
 }
+impl SetStackPolicyInput {
+    /// <p>The name or unique stack ID that you want to associate a policy with.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
+    /// to Stack Resources</a> in the CloudFormation User Guide. You can specify either
+    /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
+    /// both.</p>
+    pub fn stack_policy_body(&self) -> std::option::Option<&str> {
+        self.stack_policy_body.as_deref()
+    }
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy
+    /// (maximum size: 16 KB) located in an S3 bucket in the same
+    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    pub fn stack_policy_url(&self) -> std::option::Option<&str> {
+        self.stack_policy_url.as_deref()
+    }
+}
 impl std::fmt::Debug for SetStackPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetStackPolicyInput");
@@ -17899,6 +18604,20 @@ pub struct RollbackStackInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl RollbackStackInput {
+    /// <p>The name that is associated with the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for RollbackStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18004,6 +18723,109 @@ pub struct RegisterTypeInput {
     /// is submitted multiple times. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl RegisterTypeInput {
+    /// <p>The kind of extension.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension being registered.</p>
+    /// <p>We recommend that extension names adhere to the following patterns: </p>
+    /// <ul>
+    /// <li>
+    /// <p>For resource types,
+    /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For modules,
+    /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <note>
+    /// <p>The following organization namespaces are reserved and cannot be used in your
+    /// extension names:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Alexa</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AMZN</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Amazon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Custom</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Dev</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>A url to the S3 bucket containing the extension project package that contains the
+    /// neccessary files for the extension you want to register.</p>
+    /// <p>For information on generating a schema handler package for the extension you want to
+    /// register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
+    /// in the <i>CloudFormation CLI User Guide</i>.</p>
+    /// <note>
+    /// <p>The user registering the extension must be able to access the package in the S3
+    /// bucket. That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the
+    /// schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+    /// for Amazon S3</a> in the <i>Identity and Access Management User
+    /// Guide</i>.</p>
+    /// </note>
+    pub fn schema_handler_package(&self) -> std::option::Option<&str> {
+        self.schema_handler_package.as_deref()
+    }
+    /// <p>Specifies logging configuration information for an extension.</p>
+    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+        self.logging_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+    /// when invoking the extension.</p>
+    /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust
+    /// relationship with the CloudFormation service principle
+    /// (<code>resources.cloudformation.amazonaws.com</code>). For more information on adding
+    /// trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User
+    /// Guide</i>.</p>
+    /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create
+    /// an <i>
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+    /// execution role</a>
+    /// </i> that includes the necessary permissions to call
+    /// those Amazon Web Services APIs, and provision that execution role in your account. When
+    /// CloudFormation needs to invoke the resource type handler, CloudFormation assumes this
+    /// execution role to create a temporary session token, which it then passes to the resource
+    /// type handler, thereby supplying your resource type with the appropriate credentials.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>A unique identifier that acts as an idempotency key for this registration request.
+    /// Specifying a client request token prevents CloudFormation from generating more
+    /// than one version of an extension from the same registeration request, even if the request
+    /// is submitted multiple times. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterTypeInput");
@@ -18031,6 +18853,22 @@ pub struct RegisterPublisherInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation
     /// extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub connection_arn: std::option::Option<std::string::String>,
+}
+impl RegisterPublisherInput {
+    /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry.
+    /// You must accept the terms and conditions in order to register to publish public extensions
+    /// to the CloudFormation registry.</p>
+    /// <p>The default is <code>false</code>.</p>
+    pub fn accept_terms_and_conditions(&self) -> std::option::Option<bool> {
+        self.accept_terms_and_conditions
+    }
+    /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon
+    /// Resource Name (ARN) for your connection to that account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation
+    /// extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterPublisherInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18062,6 +18900,36 @@ pub struct RecordHandlerProgressInput {
     pub resource_model: std::option::Option<std::string::String>,
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl RecordHandlerProgressInput {
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn bearer_token(&self) -> std::option::Option<&str> {
+        self.bearer_token.as_deref()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn operation_status(&self) -> std::option::Option<&crate::model::OperationStatus> {
+        self.operation_status.as_ref()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn current_operation_status(&self) -> std::option::Option<&crate::model::OperationStatus> {
+        self.current_operation_status.as_ref()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::HandlerErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn resource_model(&self) -> std::option::Option<&str> {
+        self.resource_model.as_deref()
+    }
+    /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for RecordHandlerProgressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18106,6 +18974,41 @@ pub struct PublishTypeInput {
     /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
     /// regardless of the value you specify.</p>
     pub public_version_number: std::option::Option<std::string::String>,
+}
+impl PublishTypeInput {
+    /// <p>The type of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThirdPartyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The version number to assign to this version of the extension.</p>
+    /// <p>Use the following format, and adhere to semantic versioning when assigning a version
+    /// number to your extension: </p>
+    /// <p>
+    /// <code>MAJOR.MINOR.PATCH</code>
+    /// </p>
+    /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning
+    /// 2.0.0</a>.</p>
+    /// <p>If you do not specify a version number, CloudFormation increments the version number by
+    /// one minor version release.</p>
+    /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
+    /// regardless of the value you specify.</p>
+    pub fn public_version_number(&self) -> std::option::Option<&str> {
+        self.public_version_number.as_deref()
+    }
 }
 impl std::fmt::Debug for PublishTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18166,6 +19069,66 @@ pub struct ListTypeVersionsInput {
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions published by Amazon are not assigned a publisher ID.</p>
     pub publisher_id: std::option::Option<std::string::String>,
+}
+impl ListTypeVersionsInput {
+    /// <p>The kind of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension for which you want version summary information.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+    /// information.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call this action again and assign that token to the request object's
+    /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+    /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The deprecation status of the extension versions that you want to get summary
+    /// information about.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility
+    /// scope.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEPRECATED</code>: The extension version has been deregistered and can no
+    /// longer be used in CloudFormation operations. </p>
+    /// </li>
+    /// </ul>
+    /// <p>The default is <code>LIVE</code>.</p>
+    pub fn deprecated_status(&self) -> std::option::Option<&crate::model::DeprecatedStatus> {
+        self.deprecated_status.as_ref()
+    }
+    /// <p>The publisher ID of the extension publisher.</p>
+    /// <p>Extensions published by Amazon are not assigned a publisher ID.</p>
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
+        self.publisher_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTypeVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18269,6 +19232,105 @@ pub struct ListTypesInput {
     /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTypesInput {
+    /// <p>The scope at which the extensions are visible and usable in CloudFormation
+    /// operations.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PRIVATE</code>: Extensions that are visible and usable within this account
+    /// and region. This includes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Private extensions you have registered in this account and region.</p>
+    /// </li>
+    /// <li>
+    /// <p>Public extensions that you have activated in this account and region.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PUBLIC</code>: Extensions that are publicly visible and available to be
+    /// activated within any Amazon account. This includes extensions from Amazon, as well as
+    /// third-party publishers.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default is <code>PRIVATE</code>.</p>
+    pub fn visibility(&self) -> std::option::Option<&crate::model::Visibility> {
+        self.visibility.as_ref()
+    }
+    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the
+    /// provisioning type during registration, based on the types of handlers in the schema handler
+    /// package submitted.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to
+    /// process updates to the type during stack update operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+    /// the type cannot be updated and must instead be replaced during stack update
+    /// operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
+    /// and delete handlers, and therefore cannot actually be provisioned.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
+    pub fn provisioning_type(&self) -> std::option::Option<&crate::model::ProvisioningType> {
+        self.provisioning_type.as_ref()
+    }
+    /// <p>The deprecation status of the extension that you want to get summary information
+    /// about.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LIVE</code>: The extension is registered for use in CloudFormation
+    /// operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
+    /// used in CloudFormation operations. </p>
+    /// </li>
+    /// </ul>
+    pub fn deprecated_status(&self) -> std::option::Option<&crate::model::DeprecatedStatus> {
+        self.deprecated_status.as_ref()
+    }
+    /// <p>The type of extension.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Filter criteria to use in determining which extensions to return.</p>
+    /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
+    /// value when returning the list of types.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::TypeFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call this action again and assign that token to the request object's
+    /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+    /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTypesInput");
@@ -18313,6 +19375,48 @@ pub struct ListTypeRegistrationsInput {
     /// <code>NextToken</code> parameter. If there are no remaining results, the previous
     /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTypeRegistrationsInput {
+    /// <p>The kind of extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn type_arn(&self) -> std::option::Option<&str> {
+        self.type_arn.as_deref()
+    }
+    /// <p>The current status of the extension registration request.</p>
+    /// <p>The default is <code>IN_PROGRESS</code>.</p>
+    pub fn registration_status_filter(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistrationStatus> {
+        self.registration_status_filter.as_ref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call this action again and assign that token to the request object's
+    /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+    /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTypeRegistrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18367,6 +19471,48 @@ pub struct ListStackSetsInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl ListStackSetsInput {
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListStackSets</code> again and assign that token to the
+    /// request object's <code>NextToken</code> parameter. If there are no remaining results, the
+    /// previous response object's <code>NextToken</code> parameter is set to
+    /// <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The status of the stack sets that you want to get summary information
+    /// about.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StackSetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the management account or as a delegated administrator in a member
+    /// account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for ListStackSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStackSetsInput");
@@ -18414,6 +19560,48 @@ pub struct ListStackSetOperationsInput {
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
+}
+impl ListStackSetOperationsInput {
+    /// <p>The name or unique ID of the stack set that you want to get operation summaries
+    /// for.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListStackSetOperations</code> again and assign that token
+    /// to the request object's <code>NextToken</code> parameter. If there are no remaining
+    /// results, the previous response object's <code>NextToken</code> parameter is set to
+    /// <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
 }
 impl std::fmt::Debug for ListStackSetOperationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18465,6 +19653,52 @@ pub struct ListStackSetOperationResultsInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl ListStackSetOperationResultsInput {
+    /// <p>The name or unique ID of the stack set that you want to get operation results
+    /// for.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>The ID of the stack set operation.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>If the previous request didn't return all of the remaining results, the response
+    /// object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set
+    /// of results, call <code>ListStackSetOperationResults</code> again and assign that token to
+    /// the request object's <code>NextToken</code> parameter. If there are no remaining results,
+    /// the previous response object's <code>NextToken</code> parameter is set to
+    /// <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for ListStackSetOperationResultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStackSetOperationResultsInput");
@@ -18487,6 +19721,18 @@ pub struct ListStacksInput {
     /// stacks with the specified status codes. For a complete list of stack status codes, see the
     /// <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
     pub stack_status_filter: std::option::Option<std::vec::Vec<crate::model::StackStatus>>,
+}
+impl ListStacksInput {
+    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only
+    /// stacks with the specified status codes. For a complete list of stack status codes, see the
+    /// <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
+    pub fn stack_status_filter(&self) -> std::option::Option<&[crate::model::StackStatus]> {
+        self.stack_status_filter.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18517,6 +19763,28 @@ pub struct ListStackResourcesInput {
     /// <p>A string that identifies the next page of stack resources that you want to
     /// retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStackResourcesInput {
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not
+    /// always interchangeable:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A string that identifies the next page of stack resources that you want to
+    /// retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStackResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18569,6 +19837,59 @@ pub struct ListStackInstancesInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl ListStackInstancesInput {
+    /// <p>The name or unique ID of the stack set that you want to list stack instances
+    /// for.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>If the previous request didn't return all of the remaining results, the response's
+    /// <code>NextToken</code> parameter value is set to a token. To retrieve the next set of
+    /// results, call <code>ListStackInstances</code> again and assign that token to the request
+    /// object's <code>NextToken</code> parameter. If there are no remaining results, the previous
+    /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The status that stack instances are filtered by.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::StackInstanceFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
+    pub fn stack_instance_account(&self) -> std::option::Option<&str> {
+        self.stack_instance_account.as_deref()
+    }
+    /// <p>The name of the Region where you want to list stack instances. </p>
+    pub fn stack_instance_region(&self) -> std::option::Option<&str> {
+        self.stack_instance_region.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for ListStackInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStackInstancesInput");
@@ -18594,6 +19915,18 @@ pub struct ListImportsInput {
     /// the next page of stacks that are importing the specified exported output value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImportsInput {
+    /// <p>The name of the exported output value. CloudFormation returns the stack names
+    /// that are importing this value.</p>
+    pub fn export_name(&self) -> std::option::Option<&str> {
+        self.export_name.as_deref()
+    }
+    /// <p>A string (provided by the <a>ListImports</a> response output) that identifies
+    /// the next page of stacks that are importing the specified exported output value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImportsInput");
@@ -18610,6 +19943,13 @@ pub struct ListExportsInput {
     /// <p>A string (provided by the <a>ListExports</a> response output) that
     /// identifies the next page of exported output values that you asked to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExportsInput {
+    /// <p>A string (provided by the <a>ListExports</a> response output) that
+    /// identifies the next page of exported output values that you asked to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18629,6 +19969,18 @@ pub struct ListChangeSetsInput {
     /// <p>A string (provided by the <a>ListChangeSets</a> response output) that
     /// identifies the next page of change sets that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChangeSetsInput {
+    /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list
+    /// change sets.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A string (provided by the <a>ListChangeSets</a> response output) that
+    /// identifies the next page of change sets that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChangeSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18666,6 +20018,43 @@ pub struct ImportStacksToStackSetInput {
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
+}
+impl ImportStacksToStackSetInput {
+    /// <p>The name of the stack set. The name must be unique in the Region where you create your
+    /// stack set.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
+    /// stack set at a time.</p>
+    pub fn stack_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_ids.as_deref()
+    }
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set
+    /// operation. </p>
+    /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
+        self.operation_preferences.as_ref()
+    }
+    /// <p>A unique, user defined, identifier for the stack set operation.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportStacksToStackSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18727,6 +20116,61 @@ pub struct GetTemplateSummaryInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl GetTemplateSummaryInput {
+    /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+    /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+    /// <code>TemplateURL</code>.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>Location of file containing the template body. The URL must point to a template (max
+    /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
+    /// For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+    /// <code>TemplateURL</code>.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+    /// <p>The name or the stack ID that is associated with the stack, which are not always
+    /// interchangeable. For running stacks, you can specify either the stack's name or its unique
+    /// stack ID. For deleted stack, you must specify the unique stack ID.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+    /// <code>TemplateURL</code>.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name or unique ID of the stack set from which the stack was created.</p>
+    /// <p>Conditional: You must specify only one of the following parameters:
+    /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+    /// <code>TemplateURL</code>.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTemplateSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTemplateSummaryInput");
@@ -18768,6 +20212,38 @@ pub struct GetTemplateInput {
     /// specifies <code>Processed</code>.</p>
     pub template_stage: std::option::Option<crate::model::TemplateStage>,
 }
+impl GetTemplateInput {
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not
+    /// always interchangeable:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation
+    /// returns the associated template. If you specify a name, you must also specify the
+    /// <code>StackName</code>.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify
+    /// <code>Original</code>. To get the template after CloudFormation has processed
+    /// all transforms, specify <code>Processed</code>.</p>
+    /// <p>If the template doesn't include transforms, <code>Original</code> and
+    /// <code>Processed</code> return the same template. By default, CloudFormation
+    /// specifies <code>Processed</code>.</p>
+    pub fn template_stage(&self) -> std::option::Option<&crate::model::TemplateStage> {
+        self.template_stage.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTemplateInput");
@@ -18785,6 +20261,13 @@ pub struct GetStackPolicyInput {
     /// <p>The name or unique stack ID that is associated with the stack whose policy you want
     /// to get.</p>
     pub stack_name: std::option::Option<std::string::String>,
+}
+impl GetStackPolicyInput {
+    /// <p>The name or unique stack ID that is associated with the stack whose policy you want
+    /// to get.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStackPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18814,6 +20297,32 @@ pub struct ExecuteChangeSetInput {
     /// <p>Default: <code>True</code>
     /// </p>
     pub disable_rollback: std::option::Option<bool>,
+}
+impl ExecuteChangeSetInput {
+    /// <p>The name or ARN of the change set that you want use to update the specified
+    /// stack.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) that is
+    /// associated with the change set you want to execute.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
+    /// token if you plan to retry requests so that CloudFormation knows that you're not
+    /// attempting to execute a change set to update a stack with the same name. You might retry
+    /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully
+    /// received them.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Preserves the state of previously provisioned resources when an operation fails.</p>
+    /// <p>Default: <code>True</code>
+    /// </p>
+    pub fn disable_rollback(&self) -> std::option::Option<bool> {
+        self.disable_rollback
+    }
 }
 impl std::fmt::Debug for ExecuteChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18845,6 +20354,29 @@ pub struct EstimateTemplateCostInput {
     pub template_url: std::option::Option<std::string::String>,
     /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+}
+impl EstimateTemplateCostInput {
+    /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+    /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.)</p>
+    /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+    /// both are passed, only <code>TemplateBody</code> is used.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>Location of file containing the template body. The URL must point to a template that
+    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+    /// both are passed, only <code>TemplateBody</code> is used.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for EstimateTemplateCostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18888,6 +20420,45 @@ pub struct DetectStackSetDriftInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl DetectStackSetDriftInput {
+    /// <p>The name of the stack set on which to perform the drift detection operation.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set
+    /// operation. </p>
+    /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
+        self.operation_preferences.as_ref()
+    }
+    /// <p>
+    /// <i>The ID of the stack set operation.</i>
+    /// </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for DetectStackSetDriftInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectStackSetDriftInput");
@@ -18908,6 +20479,16 @@ pub struct DetectStackResourceDriftInput {
     /// <p>The logical name of the resource for which to return drift information.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
 }
+impl DetectStackResourceDriftInput {
+    /// <p>The name of the stack to which the resource belongs.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The logical name of the resource for which to return drift information.</p>
+    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+        self.logical_resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectStackResourceDriftInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectStackResourceDriftInput");
@@ -18925,6 +20506,16 @@ pub struct DetectStackDriftInput {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The logical names of any resources you want to use as filters.</p>
     pub logical_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DetectStackDriftInput {
+    /// <p>The name of the stack for which you want to detect drift.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The logical names of any resources you want to use as filters.</p>
+    pub fn logical_resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.logical_resource_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectStackDriftInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18945,6 +20536,16 @@ pub struct DescribeTypeRegistrationInput {
     /// <a>RegisterType</a>
     /// </code>.</p>
     pub registration_token: std::option::Option<std::string::String>,
+}
+impl DescribeTypeRegistrationInput {
+    /// <p>The identifier for this registration request.</p>
+    /// <p>This registration token is generated by CloudFormation when you initiate a
+    /// registration request using <code>
+    /// <a>RegisterType</a>
+    /// </code>.</p>
+    pub fn registration_token(&self) -> std::option::Option<&str> {
+        self.registration_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTypeRegistrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18982,6 +20583,44 @@ pub struct DescribeTypeInput {
     pub publisher_id: std::option::Option<std::string::String>,
     /// <p>The version number of a public third-party extension.</p>
     pub public_version_number: std::option::Option<std::string::String>,
+}
+impl DescribeTypeInput {
+    /// <p>The kind of extension. </p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+    /// registered.</p>
+    /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
+    /// about that specific extension version. Otherwise, it returns information about the default
+    /// extension version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The publisher ID of the extension publisher.</p>
+    /// <p>Extensions provided by Amazon are not assigned a publisher ID.</p>
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
+        self.publisher_id.as_deref()
+    }
+    /// <p>The version number of a public third-party extension.</p>
+    pub fn public_version_number(&self) -> std::option::Option<&str> {
+        self.public_version_number.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19022,6 +20661,35 @@ pub struct DescribeStackSetOperationInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl DescribeStackSetOperationInput {
+    /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>The unique ID of the stack set operation. </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStackSetOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackSetOperationInput");
@@ -19056,6 +20724,31 @@ pub struct DescribeStackSetInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl DescribeStackSetInput {
+    /// <p>The name or unique ID of the stack set whose description you want.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStackSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackSetInput");
@@ -19084,6 +20777,27 @@ pub struct DescribeStacksInput {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStacksInput {
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not
+    /// always interchangeable:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19126,6 +20840,42 @@ pub struct DescribeStackResourcesInput {
     /// must specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
     pub physical_resource_id: std::option::Option<std::string::String>,
+}
+impl DescribeStackResourcesInput {
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not
+    /// always interchangeable:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    /// <p>Required: Conditional. If you do not specify <code>StackName</code>, you must specify
+    /// <code>PhysicalResourceId</code>.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The logical name of the resource as specified in the template.</p>
+    /// <p>Default: There is no default value.</p>
+    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+        self.logical_resource_id.as_deref()
+    }
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a
+    /// resource supported by CloudFormation.</p>
+    /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
+    /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
+    /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
+    /// the instance belongs to and what other resources are part of the stack.</p>
+    /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
+    /// must specify <code>StackName</code>.</p>
+    /// <p>Default: There is no default value.</p>
+    pub fn physical_resource_id(&self) -> std::option::Option<&str> {
+        self.physical_resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStackResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19176,6 +20926,51 @@ pub struct DescribeStackResourceDriftsInput {
     /// set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeStackResourceDriftsInput {
+    /// <p>The name of the stack for which you want drift information.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The resource drift status values to use as filters for the resource drift results
+    /// returned.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code>: The resource differs from its expected template
+    /// configuration in that the resource has been deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODIFIED</code>: One or more resource properties differ from their
+    /// expected template values.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
+    /// template configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
+    /// </li>
+    /// </ul>
+    pub fn stack_resource_drift_status_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::StackResourceDriftStatus]> {
+        self.stack_resource_drift_status_filters.as_deref()
+    }
+    /// <p>A string that identifies the next page of stack resource drift results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeStackResourceDriftsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackResourceDriftsInput");
@@ -19210,6 +21005,28 @@ pub struct DescribeStackResourceInput {
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
+}
+impl DescribeStackResourceInput {
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not
+    /// always interchangeable:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The logical name of the resource as specified in the template.</p>
+    /// <p>Default: There is no default value.</p>
+    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+        self.logical_resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStackResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19249,6 +21066,40 @@ pub struct DescribeStackInstanceInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl DescribeStackInstanceInput {
+    /// <p>The name or the unique stack ID of the stack set that you want to get stack instance
+    /// information for.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
+    pub fn stack_instance_account(&self) -> std::option::Option<&str> {
+        self.stack_instance_account.as_deref()
+    }
+    /// <p>The name of a Region that's associated with this stack instance.</p>
+    pub fn stack_instance_region(&self) -> std::option::Option<&str> {
+        self.stack_instance_region.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStackInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackInstanceInput");
@@ -19280,6 +21131,27 @@ pub struct DescribeStackEventsInput {
     /// <p>A string that identifies the next page of events that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeStackEventsInput {
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not
+    /// always interchangeable:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A string that identifies the next page of events that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStackEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackEventsInput");
@@ -19299,6 +21171,15 @@ pub struct DescribeStackDriftDetectionStatusInput {
     /// long, may vary.</p>
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
 }
+impl DescribeStackDriftDetectionStatusInput {
+    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+    /// run. However, the number of drift results CloudFormation retains for any given stack, and for how
+    /// long, may vary.</p>
+    pub fn stack_drift_detection_id(&self) -> std::option::Option<&str> {
+        self.stack_drift_detection_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStackDriftDetectionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackDriftDetectionStatusInput");
@@ -19316,6 +21197,15 @@ pub struct DescribePublisherInput {
     /// publisher, <code>DescribePublisher</code> returns information about your own publisher
     /// account.</p>
     pub publisher_id: std::option::Option<std::string::String>,
+}
+impl DescribePublisherInput {
+    /// <p>The ID of the extension publisher.</p>
+    /// <p>If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+    /// publisher, <code>DescribePublisher</code> returns information about your own publisher
+    /// account.</p>
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
+        self.publisher_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePublisherInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19339,6 +21229,23 @@ pub struct DescribeChangeSetInput {
     /// identifies the next page of information that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeChangeSetInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
+    /// describe.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the
+    /// change set you want to describe.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A string (provided by the <a>DescribeChangeSet</a> response output) that
+    /// identifies the next page of information that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChangeSetInput");
@@ -19355,6 +21262,12 @@ impl std::fmt::Debug for DescribeChangeSetInput {
 pub struct DescribeAccountLimitsInput {
     /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAccountLimitsInput {
+    /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountLimitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19384,6 +21297,32 @@ pub struct DeregisterTypeInput {
     /// the Amazon Resource Name (ARN) assigned to the extension version when it is
     /// registered.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl DeregisterTypeInput {
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The kind of extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+    /// registered.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19420,6 +21359,32 @@ pub struct DeleteStackSetInput {
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
+}
+impl DeleteStackSetInput {
+    /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
+    /// value by running <a>ListStackSets</a>.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteStackSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19482,6 +21447,73 @@ pub struct DeleteStackInstancesInput {
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
+impl DeleteStackInstancesInput {
+    /// <p>The name or unique ID of the stack set that you want to delete stack instances
+    /// for.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.accounts.as_deref()
+    }
+    /// <p>[Service-managed permissions] The Organizations accounts from which to delete
+    /// stack instances.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
+    pub fn deployment_targets(&self) -> std::option::Option<&crate::model::DeploymentTargets> {
+        self.deployment_targets.as_ref()
+    }
+    /// <p>The Regions where you want to delete stack set instances.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
+        self.operation_preferences.as_ref()
+    }
+    /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
+    /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
+    /// stack set.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn retain_stacks(&self) -> bool {
+        self.retain_stacks
+    }
+    /// <p>The unique identifier for this stack set operation.</p>
+    /// <p>If you don't specify an operation ID, the SDK generates one
+    /// automatically.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that
+    /// CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You can retry stack set operation requests to ensure that
+    /// CloudFormation successfully received them.</p>
+    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+    /// whose status is <code>OUTDATED</code>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteStackInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStackInstancesInput");
@@ -19533,6 +21565,47 @@ pub struct DeleteStackInput {
     /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl DeleteStackInput {
+    /// <p>The name or the unique stack ID that is associated with the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
+    /// that are associated with the resources you want to retain. During deletion,
+    /// CloudFormation deletes the stack but does not delete the retained resources.</p>
+    /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
+    /// S3 bucket, but you want to delete the stack.</p>
+    pub fn retain_resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.retain_resources.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+    /// that CloudFormation assumes to delete the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+    /// associated with the stack. If no role is available, CloudFormation uses a temporary
+    /// session that is generated from your user credentials.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
+    /// ensure that CloudFormation successfully received them.</p>
+    /// <p>All events triggered by a given stack operation are assigned the same client request
+    /// token, which you can use to track operations. For example, if you execute a
+    /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
+    /// <code>StackEvents</code> generated by that operation will have
+    /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+    /// <p>In the console, stack operations display the client request token on the Events tab.
+    /// Stack operations that are initiated from the console use the token format
+    /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
+    /// stack operation . For example, if you create a stack using the console, each stack event
+    /// would be assigned the same token in the following format:
+    /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStackInput");
@@ -19554,6 +21627,18 @@ pub struct DeleteChangeSetInput {
     /// <p>If you specified the name of a change set to delete, specify the stack name or ID
     /// (ARN) that is associated with it.</p>
     pub stack_name: std::option::Option<std::string::String>,
+}
+impl DeleteChangeSetInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
+    /// delete.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>If you specified the name of a change set to delete, specify the stack name or ID
+    /// (ARN) that is associated with it.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19581,6 +21666,27 @@ pub struct DeactivateTypeInput {
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
     /// <code>Type</code>.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeactivateTypeInput {
+    /// <p>The type name of the extension, in this account and region. If you specified a type name
+    /// alias when enabling the extension, use the type name alias.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The extension type.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThirdPartyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeactivateTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19791,6 +21897,230 @@ pub struct CreateStackSetInput {
     /// automatically.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CreateStackSetInput {
+    /// <p>The name to associate with the stack set. The name must be unique in the Region where
+    /// you create your stack set.</p>
+    /// <note>
+    /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and
+    /// hyphens. It must start with an alphabetic character and can't be longer than 128
+    /// characters.</p>
+    /// </note>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>A description of the stack set. You can use the description to identify the stack
+    /// set's purpose or other important information.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
+    /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
+    /// but not both.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The location of the file that contains the template body. The URL must point to a
+    /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
+    /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
+    /// but not both.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+    /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Number
+    /// (ARN) of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The input parameters for the stack set template.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>In some cases, you must explicitly acknowledge that your stack set template contains
+    /// certain capabilities in order for CloudFormation to create the stack set and related stack
+    /// instances.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+    /// </p>
+    /// <p>Some stack templates might include resources that can affect permissions in
+    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
+    /// one of these capabilities.</p>
+    /// <p>The following IAM resources require you to specify either the
+    /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+    /// capability.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have IAM resources, you can specify either capability.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you have IAM resources with custom names, you <i>must</i>
+    /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+    /// <code>InsufficientCapabilities</code> error.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If your stack template contains these resources, we recommend that you review
+    /// all permissions associated with them and edit their permissions if
+    /// necessary.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+    /// AWS::IAM::AccessKey</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+    /// AWS::IAM::Group</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+    /// AWS::IAM::Policy</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+    /// AWS::IAM::Role</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+    /// AWS::IAM::User</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+    /// Resources in CloudFormation Templates</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_AUTO_EXPAND</code>
+    /// </p>
+    /// <p>Some templates reference macros. If your stack set template references one or more
+    /// macros, you must create the stack set directly from the processed template, without
+    /// first reviewing the resulting changes in a change set. To create the stack set
+    /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+    /// Perform Custom Processing on Templates</a>.</p>
+    /// <important>
+    /// <p>Stack sets with service-managed permissions do not currently support the use of
+    /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+    /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+    /// for a stack set with service-managed permissions, if you reference a macro in your
+    /// template the stack set operation will fail.</p>
+    /// </important>
+    /// </li>
+    /// </ul>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
+    /// CloudFormation also propagates these tags to supported resources that are created in
+    /// the stacks. A maximum number of 50 tags can be specified.</p>
+    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
+    /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+    /// denied</code> error, and the stack set is not created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control
+    /// which users or groups can manage specific stack sets within the same administrator account.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+    /// Granting Permissions for Stack Set Operations</a> in the
+    /// <i>CloudFormation User Guide</i>.</p>
+    pub fn administration_role_arn(&self) -> std::option::Option<&str> {
+        self.administration_role_arn.as_deref()
+    }
+    /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify
+    /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+    /// for the stack set operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which
+    /// stack resources users and groups can include in their stack sets.
+    ///
+    /// </p>
+    pub fn execution_role_name(&self) -> std::option::Option<&str> {
+        self.execution_role_name.as_deref()
+    }
+    /// <p>Describes how the IAM roles required for stack set operations are created. By default,
+    /// <code>SELF-MANAGED</code> is specified.</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+    /// execution roles required to deploy to target accounts. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+    /// Self-Managed Stack Set Permissions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+    /// IAM roles required to deploy to accounts managed by Organizations. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn permission_model(&self) -> std::option::Option<&crate::model::PermissionModels> {
+        self.permission_model.as_ref()
+    }
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that
+    /// are added to the target organization or organizational unit (OU). Specify only if
+    /// <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
+    pub fn auto_deployment(&self) -> std::option::Option<&crate::model::AutoDeployment> {
+        self.auto_deployment.as_ref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create a stack set with service-managed permissions while signed in to the
+    /// management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To create a stack set with service-managed permissions while signed in to a
+    /// delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated admin in the
+    /// management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Stack sets with service-managed permissions are created in the management account,
+    /// including stack sets that are created by delegated administrators.</p>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
+    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
+    /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
+    /// requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>If you don't specify an operation ID, the SDK generates one
+    /// automatically.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStackSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStackSetInput");
@@ -19884,6 +22214,94 @@ pub struct CreateStackInstancesInput {
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
+}
+impl CreateStackInstancesInput {
+    /// <p>The name or unique ID of the stack set that you want to create stack instances
+    /// from.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the
+    /// specified Region(s) for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.accounts.as_deref()
+    }
+    /// <p>[Service-managed permissions] The Organizations accounts for which to create
+    /// stack instances in the specified Regions.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
+    pub fn deployment_targets(&self) -> std::option::Option<&crate::model::DeploymentTargets> {
+        self.deployment_targets.as_ref()
+    }
+    /// <p>The names of one or more Regions where you want to create stack instances using the
+    /// specified Amazon Web Services accounts.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p>A list of stack set parameters whose values you want to override in the selected
+    /// stack instances.</p>
+    /// <p>Any overridden parameter values will be applied to all stack instances in the
+    /// specified accounts and Regions. When specifying parameters and their values, be aware of
+    /// how CloudFormation sets parameter values during stack instance operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To override the current value for a parameter, include the parameter and
+    /// specify its value.</p>
+    /// </li>
+    /// <li>
+    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
+    /// <code>true</code>. (You cannot specify both a value and set
+    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+    /// </li>
+    /// <li>
+    /// <p>To set an overridden parameter back to the value specified in the stack set,
+    /// specify a parameter list but do not include the parameter in the list.</p>
+    /// </li>
+    /// <li>
+    /// <p>To leave all parameters set to their present values, do not specify this
+    /// property at all.</p>
+    /// </li>
+    /// </ul>
+    /// <p>During stack set updates, any parameter values overridden for a stack instance are
+    /// not updated, but retain their overridden value.</p>
+    /// <p>You can only override the parameter <i>values</i> that are specified in
+    /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
+    pub fn parameter_overrides(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameter_overrides.as_deref()
+    }
+    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
+        self.operation_preferences.as_ref()
+    }
+    /// <p>The unique identifier for this stack set operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that
+    /// CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that
+    /// CloudFormation successfully received them.</p>
+    /// <p>If you don't specify an operation ID, the SDK generates one
+    /// automatically.</p>
+    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+    /// whose status is <code>OUTDATED</code>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
+        self.call_as.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStackInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20120,6 +22538,259 @@ pub struct CreateStackInput {
     /// nested stack.</p>
     pub enable_termination_protection: std::option::Option<bool>,
 }
+impl CreateStackInput {
+    /// <p>The name that is associated with the stack. The name must be unique in the Region in
+    /// which you are creating the stack.</p>
+    /// <note>
+    /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens.
+    /// It must start with an alphabetical character and cannot be longer than 128
+    /// characters.</p>
+    /// </note>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+    /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
+    /// <code>TemplateURL</code> parameter, but not both.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>Location of file containing the template body. The URL must point to a template (max
+    /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
+    /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
+    /// <code>TemplateURL</code> parameter, but not both.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+    /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+    /// type.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
+    /// You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
+    /// both.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn disable_rollback(&self) -> std::option::Option<bool> {
+        self.disable_rollback
+    }
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+    /// updating operations, and for the specified monitoring period afterwards.</p>
+    pub fn rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RollbackConfiguration> {
+        self.rollback_configuration.as_ref()
+    }
+    /// <p>The amount of time that can pass before the stack status becomes CREATE_FAILED; if
+    /// <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will
+    /// be rolled back.</p>
+    pub fn timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.timeout_in_minutes
+    }
+    /// <p>The Simple Notification Service (SNS) topic ARNs to publish stack related events. You
+    /// can find your SNS topic ARNs using the SNS console or your Command Line Interface
+    /// (CLI).</p>
+    pub fn notification_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_ar_ns.as_deref()
+    }
+    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+    /// capabilities in order for CloudFormation to create the stack.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+    /// </p>
+    /// <p>Some stack templates might include resources that can affect permissions in
+    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+    /// of these capabilities.</p>
+    /// <p>The following IAM resources require you to specify either the
+    /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+    /// capability.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have IAM resources, you can specify either capability.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you have IAM resources with custom names, you <i>must</i>
+    /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+    /// <code>InsufficientCapabilities</code> error.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If your stack template contains these resources, we recommend that you review
+    /// all permissions associated with them and edit their permissions if
+    /// necessary.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+    /// AWS::IAM::AccessKey</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+    /// AWS::IAM::Group</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+    /// AWS::IAM::Policy</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+    /// AWS::IAM::Role</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+    /// AWS::IAM::User</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+    /// Resources in CloudFormation Templates</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_AUTO_EXPAND</code>
+    /// </p>
+    /// <p>Some template contain macros. Macros perform custom processing on templates; this
+    /// can include simple actions like find-and-replace operations, all the way to extensive
+    /// transformations of entire templates. Because of this, users typically create a change
+    /// set from the processed template, so that they can review the changes resulting from
+    /// the macros before actually creating the stack. If your stack template contains one or
+    /// more macros, and you choose to create a stack directly from the processed template,
+    /// without first reviewing the resulting changes in a change set, you must acknowledge
+    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+    /// <p>If you want to create a stack from a stack template that contains macros
+    /// <i>and</i> nested stacks, you must create the stack directly from
+    /// the template using this capability.</p>
+    /// <important>
+    /// <p>You should only create stacks directly from a stack template that contains
+    /// macros if you know what processing the macro performs.</p>
+    /// <p>Each macro relies on an underlying Lambda service function for processing stack
+    /// templates. Be aware that the Lambda function owner can update the function
+    /// operation without CloudFormation being notified.</p>
+    /// </important>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+    /// CloudFormation Macros to Perform Custom Processing on
+    /// Templates</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The template resource types that you have permissions to work with for this create
+    /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
+    /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
+    /// <code>Custom::*</code> (for all custom resources),
+    /// <code>Custom::<i>logical_ID</i>
+    /// </code> (for a specific custom resource),
+    /// <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+    /// particular Amazon Web Services service), and
+    /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
+    /// </code> (for a specific Amazon Web Services resource).</p>
+    /// <p>If the list of resource types doesn't include a resource that you're creating, the
+    /// stack creation fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+    /// that CloudFormation assumes to create the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
+    /// future operations on the stack. As long as users have permission to operate on the stack,
+    /// CloudFormation uses this role even if the users don't have permission to pass it.
+    /// Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+    /// associated with the stack. If no role is available, CloudFormation uses a temporary
+    /// session that is generated from your user credentials.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Determines what action will be taken if stack creation fails. This must be one of:
+    /// DO_NOTHING, ROLLBACK, or DELETE. You can specify either <code>OnFailure</code> or
+    /// <code>DisableRollback</code>, but not both.</p>
+    /// <p>Default: <code>ROLLBACK</code>
+    /// </p>
+    pub fn on_failure(&self) -> std::option::Option<&crate::model::OnFailure> {
+        self.on_failure.as_ref()
+    }
+    /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
+    /// to Stack Resources</a> in the <i>CloudFormation User Guide</i>.
+    /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+    /// parameter, but not both.</p>
+    pub fn stack_policy_body(&self) -> std::option::Option<&str> {
+        self.stack_policy_body.as_deref()
+    }
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy
+    /// (maximum size: 16 KB) located in an S3 bucket in the same
+    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    pub fn stack_policy_url(&self) -> std::option::Option<&str> {
+        self.stack_policy_url.as_deref()
+    }
+    /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+    /// these tags to the resources created in the stack. A maximum number of 50 tags can be
+    /// specified.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
+    /// ensure that CloudFormation successfully received them.</p>
+    /// <p>All events triggered by a given stack operation are assigned the same client request
+    /// token, which you can use to track operations. For example, if you execute a
+    /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
+    /// <code>StackEvents</code> generated by that operation will have
+    /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+    /// <p>In the console, stack operations display the client request token on the Events tab.
+    /// Stack operations that are initiated from the console use the token format
+    /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
+    /// stack operation . For example, if you create a stack using the console, each stack event
+    /// would be assigned the same token in the following format:
+    /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Whether to enable termination protection on the specified stack. If a user attempts to
+    /// delete a stack with termination protection enabled, the operation fails and the stack
+    /// remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
+    /// Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is
+    /// disabled on stacks by default.</p>
+    /// <p>For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
+    /// termination protection is set on the root stack and cannot be changed directly on the
+    /// nested stack.</p>
+    pub fn enable_termination_protection(&self) -> std::option::Option<bool> {
+        self.enable_termination_protection
+    }
+}
 impl std::fmt::Debug for CreateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStackInput");
@@ -20339,6 +23010,231 @@ pub struct CreateChangeSetInput {
     /// set, specify <code>True</code>.</p>
     pub include_nested_stacks: std::option::Option<bool>,
 }
+impl CreateChangeSetInput {
+    /// <p>The name or the unique ID of the stack for which you are creating a change set.
+    /// CloudFormation generates the change set by comparing this stack's information with the
+    /// information that you submit, such as a modified template or different parameter input
+    /// values.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A structure that contains the body of the revised template, with a minimum length of
+    /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by
+    /// comparing this template with the template of the stack that you specified.</p>
+    /// <p>Conditional: You must specify only <code>TemplateBody</code> or
+    /// <code>TemplateURL</code>.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The location of the file that contains the revised template. The URL must point to a
+    /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
+    /// document. CloudFormation generates the change set by comparing this template with the
+    /// stack that you specified.</p>
+    /// <p>Conditional: You must specify only <code>TemplateBody</code> or
+    /// <code>TemplateURL</code>.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+    /// <p>Whether to reuse the template that is associated with the stack to create the change
+    /// set.</p>
+    pub fn use_previous_template(&self) -> std::option::Option<bool> {
+        self.use_previous_template
+    }
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+    /// change set. For more information, see the <a>Parameter</a> data type.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+    /// capabilities in order for CloudFormation to create the stack.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+    /// </p>
+    /// <p>Some stack templates might include resources that can affect permissions in
+    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+    /// of these capabilities.</p>
+    /// <p>The following IAM resources require you to specify either the
+    /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+    /// capability.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you have IAM resources, you can specify either
+    /// capability.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you have IAM resources with custom names, you
+    /// <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+    /// <code>InsufficientCapabilities</code> error.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If your stack template contains these resources, we recommend that you review
+    /// all permissions associated with them and edit their permissions if
+    /// necessary.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+    /// AWS::IAM::AccessKey</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+    /// AWS::IAM::Group</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+    /// AWS::IAM::Policy</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+    /// AWS::IAM::Role</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+    /// AWS::IAM::User</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+    /// Resources in CloudFormation Templates</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CAPABILITY_AUTO_EXPAND</code>
+    /// </p>
+    /// <p>Some template contain macros. Macros perform custom processing on templates; this
+    /// can include simple actions like find-and-replace operations, all the way to extensive
+    /// transformations of entire templates. Because of this, users typically create a change
+    /// set from the processed template, so that they can review the changes resulting from
+    /// the macros before actually creating the stack. If your stack template contains one or
+    /// more macros, and you choose to create a stack directly from the processed template,
+    /// without first reviewing the resulting changes in a change set, you must acknowledge
+    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+    /// <note>
+    /// <p>This capacity does not apply to creating change sets, and specifying it when
+    /// creating change sets has no effect.</p>
+    /// <p>If you want to create a stack from a stack template that contains macros
+    /// <i>and</i> nested stacks, you must create or update the stack
+    /// directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.</p>
+    /// </note>
+    /// <p>For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+    /// Perform Custom Processing on Templates</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The template resource types that you have permissions to work with if you execute
+    /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <code>Custom::MyCustomInstance</code>.</p>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating,
+    /// the stack update fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for condition keys in
+    /// IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a> in the CloudFormation User
+    /// Guide.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+    /// that CloudFormation assumes when executing the change set. CloudFormation uses the
+    /// role's credentials to make calls on your behalf. CloudFormation uses this role for all
+    /// future operations on the stack. As long as users have permission to operate on the stack,
+    /// CloudFormation uses this role even if the users don't have permission to pass it.
+    /// Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+    /// associated with the stack. If no role is available, CloudFormation uses a temporary
+    /// session that is generated from your user credentials.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+    /// updating operations, and for the specified monitoring period afterwards.</p>
+    pub fn rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RollbackConfiguration> {
+        self.rollback_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS)
+    /// topics that CloudFormation associates with the stack. To remove all associated
+    /// notification topics, specify an empty list.</p>
+    pub fn notification_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_ar_ns.as_deref()
+    }
+    /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+    /// these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the change set. The name must be unique among all change sets that are
+    /// associated with the specified stack.</p>
+    /// <p>A change set name can contain only alphanumeric, case sensitive characters and
+    /// hyphens. It must start with an alphabetic character and cannot exceed 128
+    /// characters.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
+    /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// to create another change set with the same name. You might retry
+    /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
+    /// received them.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A description to help you identify this change set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of change set operation. To create a change set for a new stack, specify
+    /// <code>CREATE</code>. To create a change set for an existing stack, specify
+    /// <code>UPDATE</code>. To create a change set for an import operation, specify
+    /// <code>IMPORT</code>.</p>
+    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a
+    /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+    /// <code>REVIEW_IN_PROGRESS</code>
+    /// </a> state until you execute the change
+    /// set.</p>
+    /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
+    /// <code>UPDATE</code> type to create a change set for a new stack or the
+    /// <code>CREATE</code> type to create a change set for an existing stack.</p>
+    pub fn change_set_type(&self) -> std::option::Option<&crate::model::ChangeSetType> {
+        self.change_set_type.as_ref()
+    }
+    /// <p>The resources to import into your stack.</p>
+    pub fn resources_to_import(&self) -> std::option::Option<&[crate::model::ResourceToImport]> {
+        self.resources_to_import.as_deref()
+    }
+    /// <p>Creates a change set for the all nested stacks specified in the template. The default
+    /// behavior of this action is set to <code>False</code>. To include nested sets in a change
+    /// set, specify <code>True</code>.</p>
+    pub fn include_nested_stacks(&self) -> std::option::Option<bool> {
+        self.include_nested_stacks
+    }
+}
 impl std::fmt::Debug for CreateChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChangeSetInput");
@@ -20423,6 +23319,71 @@ pub struct ContinueUpdateRollbackInput {
     /// successfully received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl ContinueUpdateRollbackInput {
+    /// <p>The name or the unique ID of the stack that you want to continue rolling
+    /// back.</p>
+    /// <note>
+    /// <p>Don't specify the name of a nested stack (a stack that was created by using the
+    /// <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the
+    /// parent stack (the stack that contains the <code>AWS::CloudFormation::Stack</code>
+    /// resource).</p>
+    /// </note>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+    /// that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
+    /// future operations on the stack. As long as users have permission to operate on the stack,
+    /// CloudFormation uses this role even if the users don't have permission to pass it.
+    /// Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+    /// associated with the stack. If no role is available, CloudFormation uses a temporary
+    /// session that is generated from your user credentials.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of the logical IDs of the resources that CloudFormation skips during the
+    /// continue update rollback operation. You can specify only resources that are in the
+    /// <code>UPDATE_FAILED</code> state because a rollback failed. You can't specify resources
+    /// that are in the <code>UPDATE_FAILED</code> state for other reasons, for example, because an
+    /// update was cancelled. To check why a resource update failed, use the <a>DescribeStackResources</a> action, and view the resource status reason. </p>
+    /// <important>
+    /// <p>Specify this property to skip rolling back resources that CloudFormation
+    /// can't successfully roll back. We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"> troubleshoot</a> resources before skipping them. CloudFormation sets
+    /// the status of the specified resources to <code>UPDATE_COMPLETE</code> and continues to
+    /// roll back the stack. After the rollback is complete, the state of the skipped resources
+    /// will be inconsistent with the state of the resources in the stack template. Before
+    /// performing another stack update, you must update the stack or resources to be consistent
+    /// with each other. If you don't, subsequent stack updates might fail, and the stack will
+    /// become unrecoverable.</p>
+    /// </important>
+    /// <p>Specify the minimum number of resources required to successfully roll back your stack.
+    /// For example, a failed resource update might cause dependent resources to fail. In this
+    /// case, it might not be necessary to skip the dependent resources.</p>
+    /// <p>To skip resources that are part of nested stacks, use the following format:
+    /// <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of
+    /// a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the
+    /// <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one
+    /// of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+    /// <code>DELETE_FAILED</code>.</p>
+    /// <note>
+    /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the
+    /// parent stack. For an example of a continue update rollback operation with nested stacks,
+    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
+    /// </note>
+    pub fn resources_to_skip(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources_to_skip.as_deref()
+    }
+    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
+    /// this token if you plan to retry requests so that CloudFormationknows that you're not
+    /// attempting to continue the rollback to a stack with the same name. You might retry
+    /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
+    /// successfully received them.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ContinueUpdateRollbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContinueUpdateRollbackInput");
@@ -20447,6 +23408,20 @@ pub struct CancelUpdateStackInput {
     /// received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CancelUpdateStackInput {
+    /// <p>The name or the unique stack ID that is associated with the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
+    /// token if you plan to retry requests so that CloudFormation knows that you're not
+    /// attempting to cancel an update on a stack with the same name. You might retry
+    /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully
+    /// received them.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelUpdateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelUpdateStackInput");
@@ -20463,6 +23438,14 @@ pub struct BatchDescribeTypeConfigurationsInput {
     /// <p>The list of identifiers for the desired extension configurations.</p>
     pub type_configuration_identifiers:
         std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
+}
+impl BatchDescribeTypeConfigurationsInput {
+    /// <p>The list of identifiers for the desired extension configurations.</p>
+    pub fn type_configuration_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypeConfigurationIdentifier]> {
+        self.type_configuration_identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDescribeTypeConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20534,6 +23517,83 @@ pub struct ActivateTypeInput {
     /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not
     /// both.</p>
     pub major_version: std::option::Option<i64>,
+}
+impl ActivateTypeInput {
+    /// <p>The extension type.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThirdPartyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the public extension.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
+    pub fn public_type_arn(&self) -> std::option::Option<&str> {
+        self.public_type_arn.as_deref()
+    }
+    /// <p>The ID of the extension publisher.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
+        self.publisher_id.as_deref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>An alias to assign to the public extension, in this account and region. If you specify
+    /// an alias for the extension, CloudFormation treats the alias as the extension type name
+    /// within this account and region. You must use the alias to refer to the extension in your
+    /// templates, API calls, and CloudFormation console.</p>
+    /// <p>An extension alias must be unique within a given account and region. You can activate
+    /// the same public resource multiple times in the same account and region, using different
+    /// type name aliases.</p>
+    pub fn type_name_alias(&self) -> std::option::Option<&str> {
+        self.type_name_alias.as_deref()
+    }
+    /// <p>Whether to automatically update the extension in this account and region when a new
+    /// <i>minor</i> version is published by the extension publisher. Major
+    /// versions released by the publisher must be manually updated.</p>
+    /// <p>The default is <code>true</code>.</p>
+    pub fn auto_update(&self) -> std::option::Option<bool> {
+        self.auto_update
+    }
+    /// <p>Contains logging configuration information for an extension.</p>
+    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+        self.logging_config.as_ref()
+    }
+    /// <p>The name of the IAM execution role to use to activate the extension.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>Manually updates a previously-activated type to a new major or minor version, if
+    /// available. You can also use this parameter to update the value of
+    /// <code>AutoUpdate</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MAJOR</code>: CloudFormation updates the extension to the newest major
+    /// version, if one is available.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MINOR</code>: CloudFormation updates the extension to the newest minor
+    /// version, if one is available.</p>
+    /// </li>
+    /// </ul>
+    pub fn version_bump(&self) -> std::option::Option<&crate::model::VersionBump> {
+        self.version_bump.as_ref()
+    }
+    /// <p>The major version of this extension you want to activate, if multiple major versions are
+    /// available. The default is the latest major version. CloudFormation uses the latest
+    /// available <i>minor</i> version of the major version selected.</p>
+    /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not
+    /// both.</p>
+    pub fn major_version(&self) -> std::option::Option<i64> {
+        self.major_version
+    }
 }
 impl std::fmt::Debug for ActivateTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

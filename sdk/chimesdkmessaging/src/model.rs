@@ -135,6 +135,16 @@ pub struct ChannelMessageStatusStructure {
     /// <p>Contains more details about the messasge status.</p>
     pub detail: std::option::Option<std::string::String>,
 }
+impl ChannelMessageStatusStructure {
+    /// <p>The message status value.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::ChannelMessageStatus> {
+        self.value.as_ref()
+    }
+    /// <p>Contains more details about the messasge status.</p>
+    pub fn detail(&self) -> std::option::Option<&str> {
+        self.detail.as_deref()
+    }
+}
 impl std::fmt::Debug for ChannelMessageStatusStructure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMessageStatusStructure");
@@ -270,6 +280,27 @@ pub struct Processor {
     /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
     /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
     pub fallback_action: std::option::Option<crate::model::FallbackAction>,
+}
+impl Processor {
+    /// <p>The name of the channel flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The information about the type of processor and its identifier.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ProcessorConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence.
+    /// At this point, we support only 1 processor within a flow.</p>
+    pub fn execution_order(&self) -> std::option::Option<i32> {
+        self.execution_order
+    }
+    /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
+    /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
+    /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
+    pub fn fallback_action(&self) -> std::option::Option<&crate::model::FallbackAction> {
+        self.fallback_action.as_ref()
+    }
 }
 impl std::fmt::Debug for Processor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -425,6 +456,12 @@ pub struct ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
     pub lambda: std::option::Option<crate::model::LambdaConfiguration>,
 }
+impl ProcessorConfiguration {
+    /// <p>Indicates that the processor is of type Lambda.</p>
+    pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaConfiguration> {
+        self.lambda.as_ref()
+    }
+}
 impl std::fmt::Debug for ProcessorConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProcessorConfiguration");
@@ -477,6 +514,16 @@ pub struct LambdaConfiguration {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Controls how the Lambda function is invoked.</p>
     pub invocation_type: std::option::Option<crate::model::InvocationType>,
+}
+impl LambdaConfiguration {
+    /// <p>The ARN of the Lambda message processing function.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Controls how the Lambda function is invoked.</p>
+    pub fn invocation_type(&self) -> std::option::Option<&crate::model::InvocationType> {
+        self.invocation_type.as_ref()
+    }
 }
 impl std::fmt::Debug for LambdaConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -650,6 +697,16 @@ pub struct Tag {
     /// <p>The value in a tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key in a tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value in a tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -710,6 +767,12 @@ impl Tag {
 pub struct MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl MessageAttributeValue {
+    /// <p>The strings in a message attribute value.</p>
+    pub fn string_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.string_values.as_deref()
+    }
 }
 impl std::fmt::Debug for MessageAttributeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -773,6 +836,22 @@ pub struct PushNotificationConfiguration {
     /// <code>DEFAULT</code>: Normal mobile push notification.
     /// <code>VOIP</code>: VOIP mobile push notification.</p>
     pub r#type: std::option::Option<crate::model::PushNotificationType>,
+}
+impl PushNotificationConfiguration {
+    /// <p>The title of the push notification.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The body of the push notification.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>Enum value that indicates the type of the push notification for a message.
+    /// <code>DEFAULT</code>: Normal mobile push notification.
+    /// <code>VOIP</code>: VOIP mobile push notification.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PushNotificationType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for PushNotificationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1020,6 +1099,14 @@ pub struct ChannelMembershipPreferences {
     /// <p>The push notification configuration of a message.</p>
     pub push_notifications: std::option::Option<crate::model::PushNotificationPreferences>,
 }
+impl ChannelMembershipPreferences {
+    /// <p>The push notification configuration of a message.</p>
+    pub fn push_notifications(
+        &self,
+    ) -> std::option::Option<&crate::model::PushNotificationPreferences> {
+        self.push_notifications.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelMembershipPreferences {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMembershipPreferences");
@@ -1078,6 +1165,18 @@ pub struct PushNotificationPreferences {
     pub allow_notifications: std::option::Option<crate::model::AllowNotifications>,
     /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
     pub filter_rule: std::option::Option<std::string::String>,
+}
+impl PushNotificationPreferences {
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
+    /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
+    /// </p>
+    pub fn allow_notifications(&self) -> std::option::Option<&crate::model::AllowNotifications> {
+        self.allow_notifications.as_ref()
+    }
+    /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
+    pub fn filter_rule(&self) -> std::option::Option<&str> {
+        self.filter_rule.as_deref()
+    }
 }
 impl std::fmt::Debug for PushNotificationPreferences {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1208,6 +1307,16 @@ pub struct Identity {
     /// <p>The name in an Identity.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl Identity {
+    /// <p>The ARN in an Identity.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name in an Identity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for Identity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Identity");
@@ -1269,6 +1378,12 @@ pub struct ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
 }
+impl ChannelModeratedByAppInstanceUserSummary {
+    /// <p>Summary of the details of a <code>Channel</code>.</p>
+    pub fn channel_summary(&self) -> std::option::Option<&crate::model::ChannelSummary> {
+        self.channel_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelModeratedByAppInstanceUserSummary");
@@ -1329,6 +1444,32 @@ pub struct ChannelSummary {
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the last message in a channel was sent.</p>
     pub last_message_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ChannelSummary {
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The mode of the channel.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The privacy setting of the channel.</p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The metadata of the channel.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The time at which the last message in a channel was sent.</p>
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1512,6 +1653,28 @@ pub struct ChannelAssociatedWithFlowSummary {
     /// <p>The channel's metadata.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl ChannelAssociatedWithFlowSummary {
+    /// <p>The name of the channel flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The mode of the channel.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The channel's privacy setting.</p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The channel's metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for ChannelAssociatedWithFlowSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelAssociatedWithFlowSummary");
@@ -1615,6 +1778,12 @@ pub struct ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
     pub moderator: std::option::Option<crate::model::Identity>,
 }
+impl ChannelModeratorSummary {
+    /// <p>The data for a moderator.</p>
+    pub fn moderator(&self) -> std::option::Option<&crate::model::Identity> {
+        self.moderator.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelModeratorSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelModeratorSummary");
@@ -1685,6 +1854,57 @@ pub struct ChannelMessageSummary {
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
+}
+impl ChannelMessageSummary {
+    /// <p>The ID of the message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The content of the message.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The metadata of the message.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The type of message.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMessageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time at which the message summary was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was last edited.</p>
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_edited_timestamp.as_ref()
+    }
+    /// <p>The message sender.</p>
+    pub fn sender(&self) -> std::option::Option<&crate::model::Identity> {
+        self.sender.as_ref()
+    }
+    /// <p>Indicates whether a message was redacted.</p>
+    pub fn redacted(&self) -> bool {
+        self.redacted
+    }
+    /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the
+    /// processing stage.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
+        self.status.as_ref()
+    }
+    /// <p>The message attribues listed in a the summary of a channel message.</p>
+    pub fn message_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    > {
+        self.message_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelMessageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1956,6 +2176,18 @@ pub struct ChannelMembershipForAppInstanceUserSummary {
     pub app_instance_user_membership_summary:
         std::option::Option<crate::model::AppInstanceUserMembershipSummary>,
 }
+impl ChannelMembershipForAppInstanceUserSummary {
+    /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
+    pub fn channel_summary(&self) -> std::option::Option<&crate::model::ChannelSummary> {
+        self.channel_summary.as_ref()
+    }
+    /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
+    pub fn app_instance_user_membership_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceUserMembershipSummary> {
+        self.app_instance_user_membership_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelMembershipForAppInstanceUserSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMembershipForAppInstanceUserSummary");
@@ -2031,6 +2263,16 @@ pub struct AppInstanceUserMembershipSummary {
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The time at which a message was last read.</p>
     pub read_marker_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AppInstanceUserMembershipSummary {
+    /// <p>The type of <code>ChannelMembership</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time at which a message was last read.</p>
+    pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.read_marker_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for AppInstanceUserMembershipSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2154,6 +2396,12 @@ pub struct ChannelMembershipSummary {
     /// <p>A member's summary data.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
+impl ChannelMembershipSummary {
+    /// <p>A member's summary data.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelMembershipSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMembershipSummary");
@@ -2205,6 +2453,20 @@ pub struct ChannelFlowSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
     pub processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
+}
+impl ChannelFlowSummary {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the processor Lambda functions.</p>
+    pub fn processors(&self) -> std::option::Option<&[crate::model::Processor]> {
+        self.processors.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelFlowSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2292,6 +2554,12 @@ pub struct ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
+impl ChannelBanSummary {
+    /// <p>The member being banned from a channel.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelBanSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelBanSummary");
@@ -2339,6 +2607,12 @@ impl ChannelBanSummary {
 pub struct MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl MessagingSessionEndpoint {
+    /// <p>The endpoint to which you establish a websocket connection.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for MessagingSessionEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2411,6 +2685,64 @@ pub struct ChannelMessage {
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
+}
+impl ChannelMessage {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of a message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The message content.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The message metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The message type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMessageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time at which the message was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was edited.</p>
+    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_edited_timestamp.as_ref()
+    }
+    /// <p>The time at which a message was updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The message sender.</p>
+    pub fn sender(&self) -> std::option::Option<&crate::model::Identity> {
+        self.sender.as_ref()
+    }
+    /// <p>Hides the content of a message.</p>
+    pub fn redacted(&self) -> bool {
+        self.redacted
+    }
+    /// <p>The persistence setting for a channel message.</p>
+    pub fn persistence(&self) -> std::option::Option<&crate::model::ChannelMessagePersistenceType> {
+        self.persistence.as_ref()
+    }
+    /// <p>The status of the channel message.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
+        self.status.as_ref()
+    }
+    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    pub fn message_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    > {
+        self.message_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2657,6 +2989,24 @@ pub struct ChannelModerator {
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
 }
+impl ChannelModerator {
+    /// <p>The moderator's data.</p>
+    pub fn moderator(&self) -> std::option::Option<&crate::model::Identity> {
+        self.moderator.as_ref()
+    }
+    /// <p>The ARN of the moderator's channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The time at which the moderator was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.created_by.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelModerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelModerator");
@@ -2759,6 +3109,32 @@ pub struct ChannelMembership {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which a channel membership was last updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ChannelMembership {
+    /// <p>The identifier of the member who invited another member.</p>
+    pub fn invited_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.invited_by.as_ref()
+    }
+    /// <p>The membership type set for the channel member.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The data of the channel member.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+    /// <p>The ARN of the member's channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The time at which the channel membership was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a channel membership was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2893,6 +3269,28 @@ pub struct ChannelFlow {
     /// <p>The time at which a channel flow was updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ChannelFlow {
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
+    /// <p>Information about the processor Lambda functions.</p>
+    pub fn processors(&self) -> std::option::Option<&[crate::model::Processor]> {
+        self.processors.as_deref()
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time at which the channel flow was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a channel flow was updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelFlow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelFlow");
@@ -3017,6 +3415,24 @@ pub struct ChannelBan {
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
     pub created_by: std::option::Option<crate::model::Identity>,
 }
+impl ChannelBan {
+    /// <p>The member being banned from the channel.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+    /// <p>The ARN of the channel from which a member is being banned.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The time at which the ban was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.created_by.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelBan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelBan");
@@ -3127,6 +3543,48 @@ pub struct Channel {
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ARN of the channel flow.</p>
     pub channel_flow_arn: std::option::Option<std::string::String>,
+}
+impl Channel {
+    /// <p>The name of a channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of a channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The mode of the channel.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The channel's privacy setting.</p>
+    pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
+        self.privacy.as_ref()
+    }
+    /// <p>The channel's metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
+    pub fn created_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.created_by.as_ref()
+    }
+    /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time at which a member sent the last message in the channel.</p>
+    pub fn last_message_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_timestamp.as_ref()
+    }
+    /// <p>The time at which a channel was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+        self.channel_flow_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3315,6 +3773,20 @@ pub struct ChannelMessageCallback {
     /// <p>The message metadata.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl ChannelMessageCallback {
+    /// <p>The message ID.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The message content.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The message metadata.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for ChannelMessageCallback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMessageCallback");
@@ -3392,6 +3864,20 @@ pub struct BatchCreateChannelMembershipError {
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl BatchCreateChannelMembershipError {
+    /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateChannelMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3479,6 +3965,24 @@ pub struct BatchChannelMemberships {
     pub members: std::option::Option<std::vec::Vec<crate::model::Identity>>,
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub channel_arn: std::option::Option<std::string::String>,
+}
+impl BatchChannelMemberships {
+    /// <p>The identifier of the member who invited another member.</p>
+    pub fn invited_by(&self) -> std::option::Option<&crate::model::Identity> {
+        self.invited_by.as_ref()
+    }
+    /// <p>The membership types set for the channel users.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The users successfully added to the request.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Identity]> {
+        self.members.as_deref()
+    }
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchChannelMemberships {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

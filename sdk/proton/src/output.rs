@@ -10,6 +10,19 @@ pub struct ListServiceTemplateVersionsOutput {
     pub template_versions:
         std::option::Option<std::vec::Vec<crate::model::ServiceTemplateVersionSummary>>,
 }
+impl ListServiceTemplateVersionsOutput {
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after
+    /// the list of major or minor versions that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of major or minor versions of a service template with detail data.</p>
+    pub fn template_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceTemplateVersionSummary]> {
+        self.template_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServiceTemplateVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServiceTemplateVersionsOutput");
@@ -86,6 +99,14 @@ pub struct CreateServiceTemplateVersionOutput {
     /// <p>The service template version summary of detail data that's returned by AWS Proton.</p>
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
 }
+impl CreateServiceTemplateVersionOutput {
+    /// <p>The service template version summary of detail data that's returned by AWS Proton.</p>
+    pub fn service_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceTemplateVersion> {
+        self.service_template_version.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateServiceTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceTemplateVersionOutput");
@@ -140,6 +161,14 @@ impl CreateServiceTemplateVersionOutput {
 pub struct DeleteServiceTemplateVersionOutput {
     /// <p>The service template version detail data that's returned by AWS Proton.</p>
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
+}
+impl DeleteServiceTemplateVersionOutput {
+    /// <p>The service template version detail data that's returned by AWS Proton.</p>
+    pub fn service_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceTemplateVersion> {
+        self.service_template_version.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -196,6 +225,14 @@ pub struct UpdateServiceTemplateVersionOutput {
     /// <p>The service template version detail data that's returned by AWS Proton.</p>
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
 }
+impl UpdateServiceTemplateVersionOutput {
+    /// <p>The service template version detail data that's returned by AWS Proton.</p>
+    pub fn service_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceTemplateVersion> {
+        self.service_template_version.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceTemplateVersionOutput");
@@ -250,6 +287,14 @@ impl UpdateServiceTemplateVersionOutput {
 pub struct GetServiceTemplateVersionOutput {
     /// <p>The service template version detail data that's returned by AWS Proton.</p>
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
+}
+impl GetServiceTemplateVersionOutput {
+    /// <p>The service template version detail data that's returned by AWS Proton.</p>
+    pub fn service_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceTemplateVersion> {
+        self.service_template_version.as_ref()
+    }
 }
 impl std::fmt::Debug for GetServiceTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -308,6 +353,17 @@ pub struct ListServiceTemplatesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service templates with detail data.</p>
     pub templates: std::option::Option<std::vec::Vec<crate::model::ServiceTemplateSummary>>,
+}
+impl ListServiceTemplatesOutput {
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of
+    /// service templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of service templates with detail data.</p>
+    pub fn templates(&self) -> std::option::Option<&[crate::model::ServiceTemplateSummary]> {
+        self.templates.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServiceTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -382,6 +438,12 @@ pub struct CreateServiceTemplateOutput {
     /// <p>The service template detail data that's returned by AWS Proton.</p>
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
 }
+impl CreateServiceTemplateOutput {
+    /// <p>The service template detail data that's returned by AWS Proton.</p>
+    pub fn service_template(&self) -> std::option::Option<&crate::model::ServiceTemplate> {
+        self.service_template.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateServiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceTemplateOutput");
@@ -432,6 +494,12 @@ impl CreateServiceTemplateOutput {
 pub struct DeleteServiceTemplateOutput {
     /// <p>The service template detail data that's returned by AWS Proton.</p>
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
+}
+impl DeleteServiceTemplateOutput {
+    /// <p>The service template detail data that's returned by AWS Proton.</p>
+    pub fn service_template(&self) -> std::option::Option<&crate::model::ServiceTemplate> {
+        self.service_template.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -484,6 +552,12 @@ pub struct UpdateServiceTemplateOutput {
     /// <p>The service template detail data that's returned by AWS Proton.</p>
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
 }
+impl UpdateServiceTemplateOutput {
+    /// <p>The service template detail data that's returned by AWS Proton.</p>
+    pub fn service_template(&self) -> std::option::Option<&crate::model::ServiceTemplate> {
+        self.service_template.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceTemplateOutput");
@@ -534,6 +608,12 @@ impl UpdateServiceTemplateOutput {
 pub struct GetServiceTemplateOutput {
     /// <p>The service template detail data that's returned by AWS Proton.</p>
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
+}
+impl GetServiceTemplateOutput {
+    /// <p>The service template detail data that's returned by AWS Proton.</p>
+    pub fn service_template(&self) -> std::option::Option<&crate::model::ServiceTemplate> {
+        self.service_template.as_ref()
+    }
 }
 impl std::fmt::Debug for GetServiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -587,6 +667,16 @@ pub struct ListServicesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of services with summaries of detail data.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
+}
+impl ListServicesOutput {
+    /// <p>A token to indicate the location of the next service in the array of services, after the current requested list of services.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of services with summaries of detail data.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::ServiceSummary]> {
+        self.services.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -658,6 +748,12 @@ pub struct CreateServiceOutput {
     /// <p>The service detail data that's returned by AWS Proton.</p>
     pub service: std::option::Option<crate::model::Service>,
 }
+impl CreateServiceOutput {
+    /// <p>The service detail data that's returned by AWS Proton.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceOutput");
@@ -705,6 +801,12 @@ impl CreateServiceOutput {
 pub struct DeleteServiceOutput {
     /// <p>The service detail data that's returned by AWS Proton.</p>
     pub service: std::option::Option<crate::model::Service>,
+}
+impl DeleteServiceOutput {
+    /// <p>The service detail data that's returned by AWS Proton.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -754,6 +856,12 @@ pub struct UpdateServiceOutput {
     /// <p>The service detail data that's returned by AWS Proton.</p>
     pub service: std::option::Option<crate::model::Service>,
 }
+impl UpdateServiceOutput {
+    /// <p>The service detail data that's returned by AWS Proton.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceOutput");
@@ -802,6 +910,12 @@ pub struct GetServiceOutput {
     /// <p>The service detail data that's returned by AWS Proton.</p>
     pub service: std::option::Option<crate::model::Service>,
 }
+impl GetServiceOutput {
+    /// <p>The service detail data that's returned by AWS Proton.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceOutput");
@@ -849,6 +963,12 @@ impl GetServiceOutput {
 pub struct UpdateServicePipelineOutput {
     /// <p>The pipeline details returned by AWS Proton.</p>
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
+}
+impl UpdateServicePipelineOutput {
+    /// <p>The pipeline details returned by AWS Proton.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::ServicePipeline> {
+        self.pipeline.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateServicePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -903,6 +1023,19 @@ pub struct ListServiceInstancesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service instances with summaries of detail data.</p>
     pub service_instances: std::option::Option<std::vec::Vec<crate::model::ServiceInstanceSummary>>,
+}
+impl ListServiceInstancesOutput {
+    /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of
+    /// service instances.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of service instances with summaries of detail data.</p>
+    pub fn service_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceInstanceSummary]> {
+        self.service_instances.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServiceInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -980,6 +1113,12 @@ pub struct UpdateServiceInstanceOutput {
     /// <p>The service instance summary data returned by AWS Proton.</p>
     pub service_instance: std::option::Option<crate::model::ServiceInstance>,
 }
+impl UpdateServiceInstanceOutput {
+    /// <p>The service instance summary data returned by AWS Proton.</p>
+    pub fn service_instance(&self) -> std::option::Option<&crate::model::ServiceInstance> {
+        self.service_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceInstanceOutput");
@@ -1030,6 +1169,12 @@ impl UpdateServiceInstanceOutput {
 pub struct GetServiceInstanceOutput {
     /// <p>The service instance detail data that's returned by AWS Proton.</p>
     pub service_instance: std::option::Option<crate::model::ServiceInstance>,
+}
+impl GetServiceInstanceOutput {
+    /// <p>The service instance detail data that's returned by AWS Proton.</p>
+    pub fn service_instance(&self) -> std::option::Option<&crate::model::ServiceInstance> {
+        self.service_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for GetServiceInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1085,6 +1230,19 @@ pub struct ListEnvironmentTemplateVersionsOutput {
     /// <p>An array of major or minor versions of an environment template detail data.</p>
     pub template_versions:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateVersionSummary>>,
+}
+impl ListEnvironmentTemplateVersionsOutput {
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template,
+    /// after the list of major or minor versions that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of major or minor versions of an environment template detail data.</p>
+    pub fn template_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentTemplateVersionSummary]> {
+        self.template_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentTemplateVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1164,6 +1322,14 @@ pub struct CreateEnvironmentTemplateVersionOutput {
     /// <p>The environment template detail data that's returned by AWS Proton.</p>
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
 }
+impl CreateEnvironmentTemplateVersionOutput {
+    /// <p>The environment template detail data that's returned by AWS Proton.</p>
+    pub fn environment_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentTemplateVersion> {
+        self.environment_template_version.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentTemplateVersionOutput");
@@ -1221,6 +1387,14 @@ impl CreateEnvironmentTemplateVersionOutput {
 pub struct DeleteEnvironmentTemplateVersionOutput {
     /// <p>The environment template version detail data that's returned by AWS Proton.</p>
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
+}
+impl DeleteEnvironmentTemplateVersionOutput {
+    /// <p>The environment template version detail data that's returned by AWS Proton.</p>
+    pub fn environment_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentTemplateVersion> {
+        self.environment_template_version.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1280,6 +1454,14 @@ pub struct UpdateEnvironmentTemplateVersionOutput {
     /// <p>The environment template version detail data that's returned by AWS Proton.</p>
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
 }
+impl UpdateEnvironmentTemplateVersionOutput {
+    /// <p>The environment template version detail data that's returned by AWS Proton.</p>
+    pub fn environment_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentTemplateVersion> {
+        self.environment_template_version.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentTemplateVersionOutput");
@@ -1337,6 +1519,14 @@ impl UpdateEnvironmentTemplateVersionOutput {
 pub struct GetEnvironmentTemplateVersionOutput {
     /// <p>The environment template version detail data that's returned by AWS Proton.</p>
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
+}
+impl GetEnvironmentTemplateVersionOutput {
+    /// <p>The environment template version detail data that's returned by AWS Proton.</p>
+    pub fn environment_template_version(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentTemplateVersion> {
+        self.environment_template_version.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEnvironmentTemplateVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1398,6 +1588,17 @@ pub struct ListEnvironmentTemplatesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment templates with detail data.</p>
     pub templates: std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateSummary>>,
+}
+impl ListEnvironmentTemplatesOutput {
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested
+    /// list of environment templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of environment templates with detail data.</p>
+    pub fn templates(&self) -> std::option::Option<&[crate::model::EnvironmentTemplateSummary]> {
+        self.templates.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1475,6 +1676,12 @@ pub struct CreateEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by AWS Proton.</p>
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
 }
+impl CreateEnvironmentTemplateOutput {
+    /// <p>The environment template detail data that's returned by AWS Proton.</p>
+    pub fn environment_template(&self) -> std::option::Option<&crate::model::EnvironmentTemplate> {
+        self.environment_template.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentTemplateOutput");
@@ -1525,6 +1732,12 @@ impl CreateEnvironmentTemplateOutput {
 pub struct DeleteEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by AWS Proton.</p>
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
+}
+impl DeleteEnvironmentTemplateOutput {
+    /// <p>The environment template detail data that's returned by AWS Proton.</p>
+    pub fn environment_template(&self) -> std::option::Option<&crate::model::EnvironmentTemplate> {
+        self.environment_template.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1577,6 +1790,12 @@ pub struct UpdateEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by AWS Proton.</p>
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
 }
+impl UpdateEnvironmentTemplateOutput {
+    /// <p>The environment template detail data that's returned by AWS Proton.</p>
+    pub fn environment_template(&self) -> std::option::Option<&crate::model::EnvironmentTemplate> {
+        self.environment_template.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentTemplateOutput");
@@ -1627,6 +1846,12 @@ impl UpdateEnvironmentTemplateOutput {
 pub struct GetEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by AWS Proton.</p>
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
+}
+impl GetEnvironmentTemplateOutput {
+    /// <p>The environment template detail data that's returned by AWS Proton.</p>
+    pub fn environment_template(&self) -> std::option::Option<&crate::model::EnvironmentTemplate> {
+        self.environment_template.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEnvironmentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1681,6 +1906,17 @@ pub struct ListEnvironmentsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment detail data summaries.</p>
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
+}
+impl ListEnvironmentsOutput {
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of
+    /// environments.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of environment detail data summaries.</p>
+    pub fn environments(&self) -> std::option::Option<&[crate::model::EnvironmentSummary]> {
+        self.environments.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1755,6 +1991,12 @@ pub struct CreateEnvironmentOutput {
     /// <p>The environment detail data that's returned by AWS Proton.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
+impl CreateEnvironmentOutput {
+    /// <p>The environment detail data that's returned by AWS Proton.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentOutput");
@@ -1805,6 +2047,12 @@ impl CreateEnvironmentOutput {
 pub struct DeleteEnvironmentOutput {
     /// <p>The environment detail data that's returned by AWS Proton.</p>
     pub environment: std::option::Option<crate::model::Environment>,
+}
+impl DeleteEnvironmentOutput {
+    /// <p>The environment detail data that's returned by AWS Proton.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1857,6 +2105,12 @@ pub struct UpdateEnvironmentOutput {
     /// <p>The environment detail data that's returned by AWS Proton.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
+impl UpdateEnvironmentOutput {
+    /// <p>The environment detail data that's returned by AWS Proton.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentOutput");
@@ -1907,6 +2161,12 @@ impl UpdateEnvironmentOutput {
 pub struct GetEnvironmentOutput {
     /// <p>The environment detail data that's returned by AWS Proton.</p>
     pub environment: std::option::Option<crate::model::Environment>,
+}
+impl GetEnvironmentOutput {
+    /// <p>The environment detail data that's returned by AWS Proton.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1959,6 +2219,14 @@ pub struct RejectEnvironmentAccountConnectionOutput {
     /// <p>The environment connection account detail data that's returned by AWS Proton.</p>
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
+}
+impl RejectEnvironmentAccountConnectionOutput {
+    /// <p>The environment connection account detail data that's returned by AWS Proton.</p>
+    pub fn environment_account_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentAccountConnection> {
+        self.environment_account_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for RejectEnvironmentAccountConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2018,6 +2286,14 @@ pub struct AcceptEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection data that's returned by AWS Proton.</p>
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
+}
+impl AcceptEnvironmentAccountConnectionOutput {
+    /// <p>The environment account connection data that's returned by AWS Proton.</p>
+    pub fn environment_account_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentAccountConnection> {
+        self.environment_account_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptEnvironmentAccountConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2080,6 +2356,19 @@ pub struct ListEnvironmentAccountConnectionsOutput {
     /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the
     /// current requested list of environment account connections.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEnvironmentAccountConnectionsOutput {
+    /// <p>An array of environment account connections with details that's returned by AWS Proton. </p>
+    pub fn environment_account_connections(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentAccountConnectionSummary]> {
+        self.environment_account_connections.as_deref()
+    }
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the
+    /// current requested list of environment account connections.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentAccountConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2163,6 +2452,14 @@ pub struct CreateEnvironmentAccountConnectionOutput {
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
+impl CreateEnvironmentAccountConnectionOutput {
+    /// <p>The environment account connection detail data that's returned by AWS Proton.</p>
+    pub fn environment_account_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentAccountConnection> {
+        self.environment_account_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentAccountConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentAccountConnectionOutput");
@@ -2221,6 +2518,14 @@ pub struct DeleteEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection detail data that's returned by AWS Proton.</p>
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
+}
+impl DeleteEnvironmentAccountConnectionOutput {
+    /// <p>The environment account connection detail data that's returned by AWS Proton.</p>
+    pub fn environment_account_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentAccountConnection> {
+        self.environment_account_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentAccountConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2281,6 +2586,14 @@ pub struct UpdateEnvironmentAccountConnectionOutput {
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
+impl UpdateEnvironmentAccountConnectionOutput {
+    /// <p>The environment account connection detail data that's returned by AWS Proton.</p>
+    pub fn environment_account_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentAccountConnection> {
+        self.environment_account_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentAccountConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentAccountConnectionOutput");
@@ -2340,6 +2653,14 @@ pub struct GetEnvironmentAccountConnectionOutput {
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
+impl GetEnvironmentAccountConnectionOutput {
+    /// <p>The environment account connection detail data that's returned by AWS Proton.</p>
+    pub fn environment_account_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentAccountConnection> {
+        self.environment_account_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEnvironmentAccountConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentAccountConnectionOutput");
@@ -2398,6 +2719,12 @@ pub struct UpdateAccountSettingsOutput {
     /// <p>The AWS Proton pipeline service role detail data that's returned by AWS Proton.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
 }
+impl UpdateAccountSettingsOutput {
+    /// <p>The AWS Proton pipeline service role detail data that's returned by AWS Proton.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountSettingsOutput");
@@ -2448,6 +2775,12 @@ impl UpdateAccountSettingsOutput {
 pub struct GetAccountSettingsOutput {
     /// <p>The AWS Proton pipeline service role detail data that's returned by AWS Proton.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
+}
+impl GetAccountSettingsOutput {
+    /// <p>The AWS Proton pipeline service role detail data that's returned by AWS Proton.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2563,6 +2896,17 @@ pub struct ListTagsForResourceOutput {
     /// tags.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>An array of resource tags with detail data.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource
+    /// tags.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -2635,6 +2979,12 @@ pub struct CancelServicePipelineDeploymentOutput {
     /// <p>The service pipeline detail data that's returned by AWS Proton.</p>
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
 }
+impl CancelServicePipelineDeploymentOutput {
+    /// <p>The service pipeline detail data that's returned by AWS Proton.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::ServicePipeline> {
+        self.pipeline.as_ref()
+    }
+}
 impl std::fmt::Debug for CancelServicePipelineDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelServicePipelineDeploymentOutput");
@@ -2686,6 +3036,12 @@ pub struct CancelServiceInstanceDeploymentOutput {
     /// <p>The service instance summary data that's returned by AWS Proton.</p>
     pub service_instance: std::option::Option<crate::model::ServiceInstance>,
 }
+impl CancelServiceInstanceDeploymentOutput {
+    /// <p>The service instance summary data that's returned by AWS Proton.</p>
+    pub fn service_instance(&self) -> std::option::Option<&crate::model::ServiceInstance> {
+        self.service_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for CancelServiceInstanceDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelServiceInstanceDeploymentOutput");
@@ -2736,6 +3092,12 @@ impl CancelServiceInstanceDeploymentOutput {
 pub struct CancelEnvironmentDeploymentOutput {
     /// <p>The environment summary data that's returned by AWS Proton.</p>
     pub environment: std::option::Option<crate::model::Environment>,
+}
+impl CancelEnvironmentDeploymentOutput {
+    /// <p>The environment summary data that's returned by AWS Proton.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelEnvironmentDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

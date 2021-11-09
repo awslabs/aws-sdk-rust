@@ -97,6 +97,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Information about the tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -160,6 +169,12 @@ pub struct GetLifecyclePolicyOutput {
     /// <p>Detailed information about the lifecycle policy.</p>
     pub policy: std::option::Option<crate::model::LifecyclePolicy>,
 }
+impl GetLifecyclePolicyOutput {
+    /// <p>Detailed information about the lifecycle policy.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::LifecyclePolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLifecyclePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLifecyclePolicyOutput");
@@ -210,6 +225,12 @@ impl GetLifecyclePolicyOutput {
 pub struct GetLifecyclePoliciesOutput {
     /// <p>Summary information about the lifecycle policies.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicySummary>>,
+}
+impl GetLifecyclePoliciesOutput {
+    /// <p>Summary information about the lifecycle policies.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::LifecyclePolicySummary]> {
+        self.policies.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLifecyclePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -298,6 +319,12 @@ impl DeleteLifecyclePolicyOutput {
 pub struct CreateLifecyclePolicyOutput {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: std::option::Option<std::string::String>,
+}
+impl CreateLifecyclePolicyOutput {
+    /// <p>The identifier of the lifecycle policy.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLifecyclePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

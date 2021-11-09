@@ -2,16 +2,17 @@
 pub fn serialize_structure_crate_input_associate_device_with_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateDeviceWithPlacementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.device_id {
         object.key("deviceId").string(var_1);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePlacementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.attributes {
         let mut object_3 = object.key("attributes").start_object();
         for (key_4, value_5) in var_2 {
@@ -24,18 +25,19 @@ pub fn serialize_structure_crate_input_create_placement_input(
     if let Some(var_6) = &input.placement_name {
         object.key("placementName").string(var_6);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_project_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateProjectInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.description {
         object.key("description").string(var_7);
     }
     if let Some(var_8) = &input.placement_template {
         let mut object_9 = object.key("placementTemplate").start_object();
-        crate::json_ser::serialize_structure_crate_model_placement_template(&mut object_9, var_8);
+        crate::json_ser::serialize_structure_crate_model_placement_template(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.project_name {
@@ -50,12 +52,13 @@ pub fn serialize_structure_crate_input_create_project_input(
         }
         object_12.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.tags {
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
@@ -65,12 +68,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_16.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePlacementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.attributes {
         let mut object_20 = object.key("attributes").start_object();
         for (key_21, value_22) in var_19 {
@@ -80,26 +84,31 @@ pub fn serialize_structure_crate_input_update_placement_input(
         }
         object_20.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_project_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateProjectInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.description {
         object.key("description").string(var_23);
     }
     if let Some(var_24) = &input.placement_template {
         let mut object_25 = object.key("placementTemplate").start_object();
-        crate::json_ser::serialize_structure_crate_model_placement_template(&mut object_25, var_24);
+        crate::json_ser::serialize_structure_crate_model_placement_template(
+            &mut object_25,
+            var_24,
+        )?;
         object_25.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_placement_template(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PlacementTemplate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.default_attributes {
         let mut object_27 = object.key("defaultAttributes").start_object();
         for (key_28, value_29) in var_26 {
@@ -117,18 +126,19 @@ pub fn serialize_structure_crate_model_placement_template(
                 crate::json_ser::serialize_structure_crate_model_device_template(
                     &mut object_34,
                     value_33,
-                );
+                )?;
                 object_34.finish();
             }
         }
         object_31.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_device_template(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeviceTemplate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.device_type {
         object.key("deviceType").string(var_35);
     }
@@ -141,4 +151,5 @@ pub fn serialize_structure_crate_model_device_template(
         }
         object_37.finish();
     }
+    Ok(())
 }

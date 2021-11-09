@@ -14,6 +14,24 @@ pub struct VerifyOutput {
     /// <p>The signing algorithm that was used to verify the signature.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
 }
+impl VerifyOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>A Boolean value that indicates whether the signature was verified. A value of
+    /// <code>True</code> indicates that the <code>Signature</code> was produced by signing the
+    /// <code>Message</code> with the specified <code>KeyID</code> and
+    /// <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code>
+    /// operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
+    pub fn signature_valid(&self) -> bool {
+        self.signature_valid
+    }
+    /// <p>The signing algorithm that was used to verify the signature.</p>
+    pub fn signing_algorithm(&self) -> std::option::Option<&crate::model::SigningAlgorithmSpec> {
+        self.signing_algorithm.as_ref()
+    }
+}
 impl std::fmt::Debug for VerifyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyOutput");
@@ -298,6 +316,35 @@ pub struct SignOutput {
     /// <p>The signing algorithm that was used to sign the message.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
 }
+impl SignOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The cryptographic signature that was generated for the message. </p>
+    /// <ul>
+    /// <li>
+    /// <p>When used with the supported RSA signing algorithms, the encoding of this value is
+    /// defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC
+    /// 8017</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
+    /// <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as
+    /// defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>.
+    /// This is the most commonly used signature format and is appropriate for most uses.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn signature(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.signature.as_ref()
+    }
+    /// <p>The signing algorithm that was used to sign the message.</p>
+    pub fn signing_algorithm(&self) -> std::option::Option<&crate::model::SigningAlgorithmSpec> {
+        self.signing_algorithm.as_ref()
+    }
+}
 impl std::fmt::Debug for SignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SignOutput");
@@ -418,6 +465,32 @@ pub struct ScheduleKeyDeletionOutput {
     /// the last of its replica keys is deleted. Otherwise, the waiting period begins
     /// immediately.</p>
     pub pending_window_in_days: std::option::Option<i32>,
+}
+impl ScheduleKeyDeletionOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The date and time after which KMS deletes the KMS key.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
+    /// appear. The deletion date for the primary key isn't known until its last replica key is
+    /// deleted.</p>
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deletion_date.as_ref()
+    }
+    /// <p>The current status of the KMS key.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
+    /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn key_state(&self) -> std::option::Option<&crate::model::KeyState> {
+        self.key_state.as_ref()
+    }
+    /// <p>The waiting period before the KMS key is deleted. </p>
+    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
+    /// the last of its replica keys is deleted. Otherwise, the waiting period begins
+    /// immediately.</p>
+    pub fn pending_window_in_days(&self) -> std::option::Option<i32> {
+        self.pending_window_in_days
+    }
 }
 impl std::fmt::Debug for ScheduleKeyDeletionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -593,6 +666,24 @@ pub struct ReplicateKeyOutput {
     /// pairs.</p>
     pub replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ReplicateKeyOutput {
+    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also
+    /// includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
+    pub fn replica_key_metadata(&self) -> std::option::Option<&crate::model::KeyMetadata> {
+        self.replica_key_metadata.as_ref()
+    }
+    /// <p>The key policy of the new replica key. The value is a key policy document in JSON
+    /// format.</p>
+    pub fn replica_policy(&self) -> std::option::Option<&str> {
+        self.replica_policy.as_deref()
+    }
+    /// <p>The tags on the new replica key. The value is a list of tag key and tag value
+    /// pairs.</p>
+    pub fn replica_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.replica_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplicateKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicateKeyOutput");
@@ -699,6 +790,33 @@ pub struct ReEncryptOutput {
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
     pub destination_encryption_algorithm:
         std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+}
+impl ReEncryptOutput {
+    /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.ciphertext_blob.as_ref()
+    }
+    /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
+    pub fn source_key_id(&self) -> std::option::Option<&str> {
+        self.source_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was
+    /// reencrypted.</p>
+    pub fn source_encryption_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAlgorithmSpec> {
+        self.source_encryption_algorithm.as_ref()
+    }
+    /// <p>The encryption algorithm that was used to reencrypt the data.</p>
+    pub fn destination_encryption_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAlgorithmSpec> {
+        self.destination_encryption_algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for ReEncryptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -866,6 +984,24 @@ pub struct ListRetirableGrantsOutput {
     /// subsequent request.</p>
     pub truncated: bool,
 }
+impl ListRetirableGrantsOutput {
+    /// <p>A list of grants.</p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::GrantListEntry]> {
+        self.grants.as_deref()
+    }
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the
+    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items in the list. When this
+    /// value is true, the list in this response is truncated. To get more items, pass the value of
+    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
+    /// subsequent request.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
+}
 impl std::fmt::Debug for ListRetirableGrantsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRetirableGrantsOutput");
@@ -968,6 +1104,28 @@ pub struct ListResourceTagsOutput {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     pub truncated: bool,
+}
+impl ListResourceTagsOutput {
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
+    /// <note>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the
+    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>Do not assume or infer any information from this value.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items in the list. When this
+    /// value is true, the list in this response is truncated. To get more items, pass the value of
+    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
+    /// subsequent request.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
 }
 impl std::fmt::Debug for ListResourceTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1076,6 +1234,24 @@ pub struct ListKeysOutput {
     /// subsequent request.</p>
     pub truncated: bool,
 }
+impl ListKeysOutput {
+    /// <p>A list of KMS keys.</p>
+    pub fn keys(&self) -> std::option::Option<&[crate::model::KeyListEntry]> {
+        self.keys.as_deref()
+    }
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the
+    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items in the list. When this
+    /// value is true, the list in this response is truncated. To get more items, pass the value of
+    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
+    /// subsequent request.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
+}
 impl std::fmt::Debug for ListKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListKeysOutput");
@@ -1174,6 +1350,24 @@ pub struct ListKeyPoliciesOutput {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     pub truncated: bool,
+}
+impl ListKeyPoliciesOutput {
+    /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the
+    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items in the list. When this
+    /// value is true, the list in this response is truncated. To get more items, pass the value of
+    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
+    /// subsequent request.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
 }
 impl std::fmt::Debug for ListKeyPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1274,6 +1468,24 @@ pub struct ListGrantsOutput {
     /// subsequent request.</p>
     pub truncated: bool,
 }
+impl ListGrantsOutput {
+    /// <p>A list of grants.</p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::GrantListEntry]> {
+        self.grants.as_deref()
+    }
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the
+    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items in the list. When this
+    /// value is true, the list in this response is truncated. To get more items, pass the value of
+    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
+    /// subsequent request.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
+}
 impl std::fmt::Debug for ListGrantsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGrantsOutput");
@@ -1372,6 +1584,24 @@ pub struct ListAliasesOutput {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     pub truncated: bool,
+}
+impl ListAliasesOutput {
+    /// <p>A list of aliases.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::AliasListEntry]> {
+        self.aliases.as_deref()
+    }
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the
+    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items in the list. When this
+    /// value is true, the list in this response is truncated. To get more items, pass the value of
+    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
+    /// subsequent request.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
 }
 impl std::fmt::Debug for ListAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1523,6 +1753,57 @@ pub struct GetPublicKeyOutput {
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
     /// is <code>SIGN_VERIFY</code>.</p>
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+}
+impl GetPublicKeyOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was
+    /// downloaded.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The exported public key. </p>
+    /// <p>The value is a DER-encoded X.509 public key, also known as
+    /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p></p>
+    pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.public_key.as_ref()
+    }
+    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code>
+    /// response.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
+    /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
+    /// avoid breaking changes, KMS will support both fields.</p>
+    pub fn customer_master_key_spec(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
+        self.customer_master_key_spec.as_ref()
+    }
+    /// <p>The type of the of the public key that was downloaded.</p>
+    pub fn key_spec(&self) -> std::option::Option<&crate::model::KeySpec> {
+        self.key_spec.as_ref()
+    }
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or
+    /// <code>SIGN_VERIFY</code>. </p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
+    /// encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsageType> {
+        self.key_usage.as_ref()
+    }
+    /// <p>The encryption algorithms that KMS supports for this key. </p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an
+    /// unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
+    /// is <code>ENCRYPT_DECRYPT</code>.</p>
+    pub fn encryption_algorithms(
+        &self,
+    ) -> std::option::Option<&[crate::model::EncryptionAlgorithmSpec]> {
+        self.encryption_algorithms.as_deref()
+    }
+    /// <p>The signing algorithms that KMS supports for this key.</p>
+    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
+    /// is <code>SIGN_VERIFY</code>.</p>
+    pub fn signing_algorithms(&self) -> std::option::Option<&[crate::model::SigningAlgorithmSpec]> {
+        self.signing_algorithms.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1733,6 +2014,28 @@ pub struct GetParametersForImportOutput {
     /// another <code>GetParametersForImport</code> request to get new ones.</p>
     pub parameters_valid_to: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetParametersForImportOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
+    /// request.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
+    /// request.</p>
+    pub fn import_token(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.import_token.as_ref()
+    }
+    /// <p>The public key to use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.</p>
+    pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.public_key.as_ref()
+    }
+    /// <p>The time at which the import token and public key are no longer valid. After this time,
+    /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
+    /// another <code>GetParametersForImport</code> request to get new ones.</p>
+    pub fn parameters_valid_to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.parameters_valid_to.as_ref()
+    }
+}
 impl std::fmt::Debug for GetParametersForImportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersForImportOutput");
@@ -1837,6 +2140,12 @@ pub struct GetKeyRotationStatusOutput {
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
     pub key_rotation_enabled: bool,
 }
+impl GetKeyRotationStatusOutput {
+    /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
+    pub fn key_rotation_enabled(&self) -> bool {
+        self.key_rotation_enabled
+    }
+}
 impl std::fmt::Debug for GetKeyRotationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyRotationStatusOutput");
@@ -1885,6 +2194,12 @@ pub struct GetKeyPolicyOutput {
     /// <p>A key policy document in JSON format.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetKeyPolicyOutput {
+    /// <p>A key policy document in JSON format.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetKeyPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyPolicyOutput");
@@ -1932,6 +2247,12 @@ impl GetKeyPolicyOutput {
 pub struct GenerateRandomOutput {
     /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub plaintext: std::option::Option<aws_smithy_types::Blob>,
+}
+impl GenerateRandomOutput {
+    /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn plaintext(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.plaintext.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateRandomOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1982,6 +2303,16 @@ pub struct GenerateDataKeyWithoutPlaintextOutput {
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub key_id: std::option::Option<std::string::String>,
+}
+impl GenerateDataKeyWithoutPlaintextOutput {
+    /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.ciphertext_blob.as_ref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2052,6 +2383,24 @@ pub struct GenerateDataKeyPairWithoutPlaintextOutput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+}
+impl GenerateDataKeyPairWithoutPlaintextOutput {
+    /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn private_key_ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.private_key_ciphertext_blob.as_ref()
+    }
+    /// <p>The public key (in plaintext).</p>
+    pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.public_key.as_ref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The type of data key pair that was generated.</p>
+    pub fn key_pair_spec(&self) -> std::option::Option<&crate::model::DataKeyPairSpec> {
+        self.key_pair_spec.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2159,6 +2508,28 @@ pub struct GenerateDataKeyPairOutput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+}
+impl GenerateDataKeyPairOutput {
+    /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn private_key_ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.private_key_ciphertext_blob.as_ref()
+    }
+    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn private_key_plaintext(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.private_key_plaintext.as_ref()
+    }
+    /// <p>The public key (in plaintext).</p>
+    pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.public_key.as_ref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The type of data key pair that was generated.</p>
+    pub fn key_pair_spec(&self) -> std::option::Option<&crate::model::DataKeyPairSpec> {
+        self.key_pair_spec.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateDataKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2280,6 +2651,21 @@ pub struct GenerateDataKeyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
+impl GenerateDataKeyOutput {
+    /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.ciphertext_blob.as_ref()
+    }
+    /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
+    /// KMS. Then, remove it from memory as soon as possible.</p>
+    pub fn plaintext(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.plaintext.as_ref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateDataKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateDataKeyOutput");
@@ -2362,6 +2748,22 @@ pub struct EncryptOutput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+}
+impl EncryptOutput {
+    /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.ciphertext_blob.as_ref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+    pub fn encryption_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAlgorithmSpec> {
+        self.encryption_algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for EncryptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2596,6 +2998,12 @@ pub struct DescribeKeyOutput {
     /// <p>Metadata associated with the key.</p>
     pub key_metadata: std::option::Option<crate::model::KeyMetadata>,
 }
+impl DescribeKeyOutput {
+    /// <p>Metadata associated with the key.</p>
+    pub fn key_metadata(&self) -> std::option::Option<&crate::model::KeyMetadata> {
+        self.key_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeKeyOutput");
@@ -2655,6 +3063,26 @@ pub struct DescribeCustomKeyStoresOutput {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     pub truncated: bool,
+}
+impl DescribeCustomKeyStoresOutput {
+    /// <p>Contains metadata about each custom key store.</p>
+    pub fn custom_key_stores(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomKeyStoresListEntry]> {
+        self.custom_key_stores.as_deref()
+    }
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the
+    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items in the list. When this
+    /// value is true, the list in this response is truncated. To get more items, pass the value of
+    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
+    /// subsequent request.</p>
+    pub fn truncated(&self) -> bool {
+        self.truncated
+    }
 }
 impl std::fmt::Debug for DescribeCustomKeyStoresOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2845,6 +3273,22 @@ pub struct DecryptOutput {
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
 }
+impl DecryptOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn plaintext(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.plaintext.as_ref()
+    }
+    /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
+    pub fn encryption_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAlgorithmSpec> {
+        self.encryption_algorithm.as_ref()
+    }
+}
 impl std::fmt::Debug for DecryptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DecryptOutput");
@@ -2925,6 +3369,12 @@ pub struct CreateKeyOutput {
     /// <p>Metadata associated with the KMS key.</p>
     pub key_metadata: std::option::Option<crate::model::KeyMetadata>,
 }
+impl CreateKeyOutput {
+    /// <p>Metadata associated with the KMS key.</p>
+    pub fn key_metadata(&self) -> std::option::Option<&crate::model::KeyMetadata> {
+        self.key_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateKeyOutput");
@@ -2980,6 +3430,19 @@ pub struct CreateGrantOutput {
     /// <p>The unique identifier for the grant.</p>
     /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
     pub grant_id: std::option::Option<std::string::String>,
+}
+impl CreateGrantOutput {
+    /// <p>The grant token.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
+    pub fn grant_token(&self) -> std::option::Option<&str> {
+        self.grant_token.as_deref()
+    }
+    /// <p>The unique identifier for the grant.</p>
+    /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
+    pub fn grant_id(&self) -> std::option::Option<&str> {
+        self.grant_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGrantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3047,6 +3510,12 @@ impl CreateGrantOutput {
 pub struct CreateCustomKeyStoreOutput {
     /// <p>A unique identifier for the new custom key store.</p>
     pub custom_key_store_id: std::option::Option<std::string::String>,
+}
+impl CreateCustomKeyStoreOutput {
+    /// <p>A unique identifier for the new custom key store.</p>
+    pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
+        self.custom_key_store_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCustomKeyStoreOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3158,6 +3627,12 @@ impl ConnectCustomKeyStoreOutput {
 pub struct CancelKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
     pub key_id: std::option::Option<std::string::String>,
+}
+impl CancelKeyDeletionOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelKeyDeletionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

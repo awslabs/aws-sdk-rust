@@ -17,6 +17,35 @@ pub struct Site {
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub site_arn: std::option::Option<std::string::String>,
 }
+impl Site {
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The ID of the AWS account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the site.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the site.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The site tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    pub fn site_arn(&self) -> std::option::Option<&str> {
+        self.site_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Site {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Site");
@@ -169,6 +198,57 @@ pub struct Outpost {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub site_arn: std::option::Option<std::string::String>,
+}
+impl Outpost {
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>The AWS account ID of the Outpost owner.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The name of the Outpost.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the Outpost.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The life cycle status.</p>
+    pub fn life_cycle_status(&self) -> std::option::Option<&str> {
+        self.life_cycle_status.as_deref()
+    }
+    /// <p>The Availability Zone.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
+    /// <p>The Outpost tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    pub fn site_arn(&self) -> std::option::Option<&str> {
+        self.site_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Outpost {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -378,6 +458,12 @@ pub struct InstanceTypeItem {
     /// <p>The instance type.</p>
     pub instance_type: std::option::Option<std::string::String>,
 }
+impl InstanceTypeItem {
+    /// <p>The instance type.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceTypeItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceTypeItem");
@@ -493,6 +579,38 @@ pub struct Order {
     pub order_submission_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The fulfillment date of the order.</p>
     pub order_fulfilled_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Order {
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>The ID of the order.</p>
+    pub fn order_id(&self) -> std::option::Option<&str> {
+        self.order_id.as_deref()
+    }
+    /// <p>The status of the order</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OrderStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The line items for the order</p>
+    pub fn line_items(&self) -> std::option::Option<&[crate::model::LineItem]> {
+        self.line_items.as_deref()
+    }
+    /// <p>The payment option for the order.</p>
+    pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The submission date for the order.</p>
+    pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.order_submission_date.as_ref()
+    }
+    /// <p>The fulfillment date of the order.</p>
+    pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.order_fulfilled_date.as_ref()
+    }
 }
 impl std::fmt::Debug for Order {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -708,6 +826,26 @@ pub struct LineItem {
     pub quantity: i32,
     /// <p>The status of the line item.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl LineItem {
+    /// <p>
+    /// The ID of the catalog item.
+    /// </p>
+    pub fn catalog_item_id(&self) -> std::option::Option<&str> {
+        self.catalog_item_id.as_deref()
+    }
+    /// <p>The ID of the line item.</p>
+    pub fn line_item_id(&self) -> std::option::Option<&str> {
+        self.line_item_id.as_deref()
+    }
+    /// <p>The quantity of the line item.</p>
+    pub fn quantity(&self) -> i32 {
+        self.quantity
+    }
+    /// <p>The status of the line item.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for LineItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -933,6 +1071,16 @@ pub struct LineItemRequest {
     pub catalog_item_id: std::option::Option<std::string::String>,
     /// <p>The quantity of a line item request.</p>
     pub quantity: i32,
+}
+impl LineItemRequest {
+    /// <p>The ID of the catalog item.</p>
+    pub fn catalog_item_id(&self) -> std::option::Option<&str> {
+        self.catalog_item_id.as_deref()
+    }
+    /// <p>The quantity of a line item request.</p>
+    pub fn quantity(&self) -> i32 {
+        self.quantity
+    }
 }
 impl std::fmt::Debug for LineItemRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -126,10 +126,7 @@ impl AssociateWebAclInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_web_acl(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_web_acl(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -293,10 +290,7 @@ impl CreateByteMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_byte_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_byte_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -458,10 +452,7 @@ impl CreateGeoMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_geo_match_set(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_geo_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -622,10 +613,7 @@ impl CreateIpSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_ip_set(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_ip_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -870,10 +858,9 @@ impl CreateRateBasedRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_rate_based_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_rate_based_rule(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1037,10 +1024,9 @@ impl CreateRegexMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_regex_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_regex_match_set(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1206,10 +1192,7 @@ impl CreateRegexPatternSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_regex_pattern_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1407,10 +1390,7 @@ impl CreateRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1609,10 +1589,7 @@ impl CreateRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1779,10 +1756,7 @@ impl CreateSizeConstraintSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_size_constraint_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1947,7 +1921,7 @@ impl CreateSqlInjectionMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_sql_injection_match_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_sql_injection_match_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2163,10 +2137,7 @@ impl CreateWebAclInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_web_acl(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_web_acl(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2374,7 +2345,7 @@ impl CreateWebAclMigrationStackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_web_acl_migration_stack(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_web_acl_migration_stack(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2539,10 +2510,7 @@ impl CreateXssMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_xss_match_set(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_xss_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2709,10 +2677,7 @@ impl DeleteByteMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_byte_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_byte_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2879,10 +2844,7 @@ impl DeleteGeoMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_geo_match_set(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_geo_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3045,10 +3007,7 @@ impl DeleteIpSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_ip_set(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_ip_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3201,10 +3160,7 @@ impl DeleteLoggingConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_logging_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3358,10 +3314,7 @@ impl DeletePermissionPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_permission_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3527,10 +3480,9 @@ impl DeleteRateBasedRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_rate_based_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_rate_based_rule(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3697,10 +3649,9 @@ impl DeleteRegexMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_regex_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_regex_match_set(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3869,10 +3820,7 @@ impl DeleteRegexPatternSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_regex_pattern_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4035,10 +3983,7 @@ impl DeleteRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4205,10 +4150,7 @@ impl DeleteRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4378,10 +4320,7 @@ impl DeleteSizeConstraintSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_size_constraint_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4549,7 +4488,7 @@ impl DeleteSqlInjectionMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_sql_injection_match_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_sql_injection_match_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4713,10 +4652,7 @@ impl DeleteWebAclInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_web_acl(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_web_acl(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4883,10 +4819,7 @@ impl DeleteXssMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_xss_match_set(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_xss_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5062,10 +4995,7 @@ impl DisassociateWebAclInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_web_acl(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_web_acl(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5220,10 +5150,7 @@ impl GetByteMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_byte_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_byte_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5359,10 +5286,7 @@ impl GetChangeTokenInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_change_token(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_change_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5506,10 +5430,7 @@ impl GetChangeTokenStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_change_token_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5664,10 +5585,7 @@ impl GetGeoMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_geo_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_geo_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5816,10 +5734,7 @@ impl GetIpSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_ip_set(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_ip_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5970,10 +5885,7 @@ impl GetLoggingConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_logging_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6123,10 +6035,7 @@ impl GetPermissionPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_permission_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_permission_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6278,10 +6187,7 @@ impl GetRateBasedRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_rate_based_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_rate_based_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6446,7 +6352,7 @@ impl GetRateBasedRuleManagedKeysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_rate_based_rule_managed_keys(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_rate_based_rule_managed_keys(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6602,10 +6508,7 @@ impl GetRegexMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_regex_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_regex_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6760,10 +6663,7 @@ impl GetRegexPatternSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_regex_pattern_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_regex_pattern_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6912,10 +6812,7 @@ impl GetRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7067,10 +6964,7 @@ impl GetRuleGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_rule_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7289,10 +7183,7 @@ impl GetSampledRequestsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sampled_requests(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_sampled_requests(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7449,10 +7340,7 @@ impl GetSizeConstraintSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_size_constraint_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7610,10 +7498,7 @@ impl GetSqlInjectionMatchSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_sql_injection_match_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7762,10 +7647,7 @@ impl GetWebAclInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_web_acl(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_web_acl(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7941,10 +7823,7 @@ impl GetWebAclForResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_web_acl_for_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8099,10 +7978,7 @@ impl GetXssMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_xss_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_xss_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8288,7 +8164,7 @@ impl ListActivatedRulesInRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_activated_rules_in_rule_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_activated_rules_in_rule_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8461,10 +8337,7 @@ impl ListByteMatchSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_byte_match_sets(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_byte_match_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8636,10 +8509,7 @@ impl ListGeoMatchSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_geo_match_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_geo_match_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8810,10 +8680,7 @@ impl ListIpSetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_ip_sets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_ip_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8984,10 +8851,7 @@ impl ListLoggingConfigurationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_logging_configurations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9165,10 +9029,7 @@ impl ListRateBasedRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_rate_based_rules(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_rate_based_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9340,10 +9201,7 @@ impl ListRegexMatchSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_regex_match_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_regex_match_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9517,10 +9375,7 @@ impl ListRegexPatternSetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_regex_pattern_sets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9687,10 +9542,7 @@ impl ListResourcesForWebAclInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resources_for_web_acl(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9858,10 +9710,7 @@ impl ListRuleGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10028,10 +9877,7 @@ impl ListRulesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_rules(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10201,10 +10047,7 @@ impl ListSizeConstraintSetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_size_constraint_sets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10377,7 +10220,7 @@ impl ListSqlInjectionMatchSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_sql_injection_match_sets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_sql_injection_match_sets(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10553,10 +10396,7 @@ impl ListSubscribedRuleGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_subscribed_rule_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10730,10 +10570,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10904,10 +10743,7 @@ impl ListWebAcLsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_web_ac_ls(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_web_ac_ls(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11079,10 +10915,7 @@ impl ListXssMatchSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_xss_match_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_xss_match_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11252,10 +11085,7 @@ impl PutLoggingConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_logging_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11417,10 +11247,7 @@ impl PutPermissionPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_permission_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_permission_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11590,10 +11417,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11763,10 +11587,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11992,10 +11813,7 @@ impl UpdateByteMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_byte_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_byte_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12211,10 +12029,7 @@ impl UpdateGeoMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_geo_match_set(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_geo_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12426,10 +12241,7 @@ impl UpdateIpSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_ip_set(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_ip_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12634,10 +12446,9 @@ impl UpdateRateBasedRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_rate_based_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_rate_based_rule(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12827,10 +12638,9 @@ impl UpdateRegexMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_regex_match_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_regex_match_set(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13020,10 +12830,7 @@ impl UpdateRegexPatternSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_regex_pattern_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13243,10 +13050,7 @@ impl UpdateRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13442,10 +13246,7 @@ impl UpdateRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13675,10 +13476,7 @@ impl UpdateSizeConstraintSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_size_constraint_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13907,7 +13705,7 @@ impl UpdateSqlInjectionMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_sql_injection_match_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_sql_injection_match_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14159,10 +13957,7 @@ impl UpdateWebAclInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_web_acl(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_web_acl(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14390,10 +14185,7 @@ impl UpdateXssMatchSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_xss_match_set(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_xss_match_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14487,6 +14279,41 @@ pub struct UpdateXssMatchSetInput {
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::XssMatchSetUpdate>>,
 }
+impl UpdateXssMatchSetInput {
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update.
+    /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
+        self.xss_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or
+    /// delete from an
+    /// <a>XssMatchSet</a>. For more information, see the applicable data
+    /// types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::XssMatchSetUpdate]> {
+        self.updates.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateXssMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateXssMatchSetInput");
@@ -14537,6 +14364,51 @@ pub struct UpdateWebAclInput {
     /// action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
     pub default_action: std::option::Option<crate::model::WafAction>,
 }
+impl UpdateWebAclInput {
+    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
+    /// <a>ListWebACLs</a>.</p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of updates to make to the <a>WebACL</a>.</p>    
+    /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a
+    /// <a>WebACL</a>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>ActivatedRule</a>: Contains <code>Action</code>,
+    /// <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and
+    /// <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
+    /// updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this
+    /// case,
+    /// you do not use <code>ActivatedRule|Action</code>. For all other update requests,
+    /// <code>ActivatedRule|Action</code> is used instead of
+    /// <code>ActivatedRule|OverrideAction</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>WafAction</a>: Contains <code>Type</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::WebAclUpdate]> {
+        self.updates.as_deref()
+    }
+    /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
+    /// action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+    pub fn default_action(&self) -> std::option::Option<&crate::model::WafAction> {
+        self.default_action.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWebAclInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWebAclInput");
@@ -14577,6 +14449,39 @@ pub struct UpdateSqlInjectionMatchSetInput {
     /// </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetUpdate>>,
+}
+impl UpdateSqlInjectionMatchSetInput {
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update.
+    /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
+        self.sql_injection_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a
+    /// <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::SqlInjectionMatchSetUpdate]> {
+        self.updates.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSqlInjectionMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14622,6 +14527,40 @@ pub struct UpdateSizeConstraintSetInput {
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetUpdate>>,
 }
+impl UpdateSizeConstraintSetInput {
+    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code>
+    /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
+        self.size_constraint_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <a>SizeConstraintSet</a>.
+    /// For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>,
+    /// and <code>Size</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::SizeConstraintSetUpdate]> {
+        self.updates.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSizeConstraintSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSizeConstraintSetInput");
@@ -14647,6 +14586,25 @@ pub struct UpdateRuleGroupInput {
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleGroupUpdate>>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl UpdateRuleGroupInput {
+    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
+    /// <a>ListRuleGroups</a>.</p>
+    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+        self.rule_group_id.as_deref()
+    }
+    /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a
+    /// <a>RuleGroup</a>.</p>
+    /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
+    /// <p>
+    /// <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.  For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::RuleGroupUpdate]> {
+        self.updates.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14688,6 +14646,39 @@ pub struct UpdateRuleInput {
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleUpdate>>,
 }
+impl UpdateRuleInput {
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by
+    /// <code>CreateRule</code> and by <a>ListRules</a>.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a
+    /// <a>Rule</a>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::RuleUpdate]> {
+        self.updates.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleInput");
@@ -14709,6 +14700,21 @@ pub struct UpdateRegexPatternSetInput {
     pub updates: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetUpdate>>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl UpdateRegexPatternSetInput {
+    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
+    /// <a>ListRegexPatternSets</a>.</p>
+    pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
+        self.regex_pattern_set_id.as_deref()
+    }
+    /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::RegexPatternSetUpdate]> {
+        self.updates.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRegexPatternSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14732,6 +14738,22 @@ pub struct UpdateRegexMatchSetInput {
     pub updates: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetUpdate>>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl UpdateRegexMatchSetInput {
+    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
+    /// <a>ListRegexMatchSets</a>.</p>
+    pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
+        self.regex_match_set_id.as_deref()
+    }
+    /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
+    /// For more information, see <a>RegexMatchTuple</a>.</p>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::RegexMatchSetUpdate]> {
+        self.updates.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRegexMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14760,6 +14782,29 @@ pub struct UpdateRateBasedRuleInput {
     /// predicates specified in the rule are also met,
     /// AWS WAF triggers the action that is specified for this rule.</p>
     pub rate_limit: i64,
+}
+impl UpdateRateBasedRuleInput {
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update.
+    /// <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <a>ListRateBasedRules</a>.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
+    /// from a <a>RateBasedRule</a>. </p>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::RuleUpdate]> {
+        self.updates.as_deref()
+    }
+    /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a
+    /// five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other
+    /// predicates specified in the rule are also met,
+    /// AWS WAF triggers the action that is specified for this rule.</p>
+    pub fn rate_limit(&self) -> i64 {
+        self.rate_limit
+    }
 }
 impl std::fmt::Debug for UpdateRateBasedRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14798,6 +14843,35 @@ pub struct UpdateIpSetInput {
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub updates: std::option::Option<std::vec::Vec<crate::model::IpSetUpdate>>,
 }
+impl UpdateIpSetInput {
+    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
+    /// <a>ListIPSets</a>.</p>
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+        self.ip_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
+    /// For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::IpSetUpdate]> {
+        self.updates.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIpSetInput");
@@ -14833,6 +14907,35 @@ pub struct UpdateGeoMatchSetInput {
     /// </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetUpdate>>,
+}
+impl UpdateGeoMatchSetInput {
+    /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
+    /// <a>ListGeoMatchSets</a>.</p>
+    pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
+        self.geo_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <a>GeoMatchSet</a>.
+    /// For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>GeoMatchSetUpdate</a>: Contains <code>Action</code> and <code>GeoMatchConstraint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>GeoMatchConstraint</a>: Contains <code>Type</code> and <code>Value</code>
+    /// </p>
+    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p>      
+    /// </li>
+    /// </ul>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::GeoMatchSetUpdate]> {
+        self.updates.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGeoMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14875,6 +14978,40 @@ pub struct UpdateByteMatchSetInput {
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetUpdate>>,
 }
+impl UpdateByteMatchSetInput {
+    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
+    /// <a>ListByteMatchSets</a>.</p>
+    pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
+        self.byte_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>.
+    /// For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>,
+    /// and <code>TextTransformation</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn updates(&self) -> std::option::Option<&[crate::model::ByteMatchSetUpdate]> {
+        self.updates.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateByteMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateByteMatchSetInput");
@@ -14894,6 +15031,16 @@ pub struct UntagResourceInput {
     /// <p></p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p></p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p></p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -14912,6 +15059,16 @@ pub struct TagResourceInput {
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p></p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -14929,6 +15086,16 @@ pub struct PutPermissionPolicyInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The policy to attach to the specified RuleGroup.</p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl PutPermissionPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The policy to attach to the specified RuleGroup.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutPermissionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14953,6 +15120,21 @@ pub struct PutLoggingConfigurationInput {
     /// </note>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
+impl PutLoggingConfigurationInput {
+    /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
+    /// information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL
+    /// to monitor.</p>
+    /// <note>
+    /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of
+    /// the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
+    /// or <code>METHOD</code>.</p>
+    /// </note>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLoggingConfigurationInput");
@@ -14974,6 +15156,21 @@ pub struct ListXssMatchSetsInput {
     /// <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
     /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
+}
+impl ListXssMatchSetsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <a>XssMatchSet</a> objects than the value of
+    /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
+    /// <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the
+    /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListXssMatchSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14998,6 +15195,21 @@ pub struct ListWebAcLsInput {
     /// <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
     pub limit: i32,
 }
+impl ListWebAcLsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify
+    /// for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
+    /// <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListWebAcLsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWebAcLsInput");
@@ -15017,6 +15229,20 @@ pub struct ListTagsForResourceInput {
     pub limit: i32,
     /// <p></p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p></p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p></p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p></p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15042,6 +15268,21 @@ pub struct ListSubscribedRuleGroupsInput {
     /// <code>NextMarker</code> value that you can use to get another batch of objects.</p>
     pub limit: i32,
 }
+impl ListSubscribedRuleGroupsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups.
+    /// For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of subscribed rule groups.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more
+    /// objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListSubscribedRuleGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSubscribedRuleGroupsInput");
@@ -15065,6 +15306,21 @@ pub struct ListSqlInjectionMatchSetsInput {
     /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
 }
+impl ListSqlInjectionMatchSetsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the value of
+    /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
+    /// <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the
+    /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListSqlInjectionMatchSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSqlInjectionMatchSetsInput");
@@ -15086,6 +15342,20 @@ pub struct ListSizeConstraintSetsInput {
     /// <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
     /// <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
     pub limit: i32,
+}
+impl ListSizeConstraintSetsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>.
+    /// For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code>       from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListSizeConstraintSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15109,6 +15379,20 @@ pub struct ListRulesInput {
     /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
 }
+impl ListRulesInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>.
+    /// For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>Rules</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more       <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRulesInput");
@@ -15130,6 +15414,19 @@ pub struct ListRuleGroupsInput {
     /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
     pub limit: i32,
 }
+impl ListRuleGroupsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>.
+    /// For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListRuleGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRuleGroupsInput");
@@ -15147,6 +15444,16 @@ pub struct ListResourcesForWebAclInput {
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
+}
+impl ListResourcesForWebAclInput {
+    /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+    /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ListResourcesForWebAclInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15171,6 +15478,21 @@ pub struct ListRegexPatternSetsInput {
     /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
     pub limit: i32,
 }
+impl ListRegexPatternSetsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects.
+    /// For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListRegexPatternSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRegexPatternSetsInput");
@@ -15193,6 +15515,21 @@ pub struct ListRegexMatchSetsInput {
     /// <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
     /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
     pub limit: i32,
+}
+impl ListRegexMatchSetsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
+    /// For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListRegexMatchSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15220,6 +15557,24 @@ pub struct ListRateBasedRulesInput {
     /// use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
 }
+impl ListRateBasedRulesInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code>
+    /// than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the
+    /// response that allows you to list another group of <code>Rules</code>. For the second and
+    /// subsequent <code>ListRateBasedRules</code> requests, specify the value of
+    /// <code>NextMarker</code> from the previous response to get information about another
+    /// batch of <code>Rules</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this
+    /// request. If you have more <code>Rules</code> than the number that you specify for
+    /// <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can
+    /// use to get another batch of <code>Rules</code>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListRateBasedRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRateBasedRulesInput");
@@ -15240,6 +15595,19 @@ pub struct ListLoggingConfigurationsInput {
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
     pub limit: i32,
+}
+impl ListLoggingConfigurationsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>.
+    /// For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListLoggingConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15264,6 +15632,21 @@ pub struct ListIpSetsInput {
     /// <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
     pub limit: i32,
 }
+impl ListIpSetsInput {
+    /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
+    /// list another group of <code>IPSets</code>. For the second and subsequent
+    /// <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the
+    /// previous response to get information about another batch of <code>IPSets</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListIpSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIpSetsInput");
@@ -15287,6 +15670,21 @@ pub struct ListGeoMatchSetsInput {
     /// <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
     pub limit: i32,
 }
+impl ListGeoMatchSetsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects.
+    /// For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListGeoMatchSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGeoMatchSetsInput");
@@ -15309,6 +15707,21 @@ pub struct ListByteMatchSetsInput {
     /// <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
     /// <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
     pub limit: i32,
+}
+impl ListByteMatchSetsInput {
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
+    /// For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
+    /// <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListByteMatchSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15334,6 +15747,24 @@ pub struct ListActivatedRulesInRuleGroupInput {
     /// <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
     pub limit: i32,
 }
+impl ListActivatedRulesInRuleGroupInput {
+    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list of <a>ActivatedRule</a> objects.</p>
+    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+        self.rule_group_id.as_deref()
+    }
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>,
+    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>.
+    /// For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code>
+    /// from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a
+    /// <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListActivatedRulesInRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActivatedRulesInRuleGroupInput");
@@ -15351,6 +15782,13 @@ pub struct GetXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
     /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
     pub xss_match_set_id: std::option::Option<std::string::String>,
+}
+impl GetXssMatchSetInput {
+    /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
+    /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
+        self.xss_match_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetXssMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15380,6 +15818,25 @@ pub struct GetWebAclForResourceInput {
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl GetWebAclForResourceInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource for which to get the web ACL, either an application load balancer or Amazon API Gateway stage.</p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWebAclForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWebAclForResourceInput");
@@ -15396,6 +15853,13 @@ pub struct GetWebAclInput {
     /// <a>ListWebACLs</a>.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
 }
+impl GetWebAclInput {
+    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
+    /// <a>ListWebACLs</a>.</p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWebAclInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWebAclInput");
@@ -15411,6 +15875,13 @@ pub struct GetSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
     /// is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
+}
+impl GetSqlInjectionMatchSetInput {
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
+    /// is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
+        self.sql_injection_match_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSqlInjectionMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15430,6 +15901,13 @@ pub struct GetSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
     /// <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
     pub size_constraint_set_id: std::option::Option<std::string::String>,
+}
+impl GetSizeConstraintSetInput {
+    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
+    /// <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
+        self.size_constraint_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSizeConstraintSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15467,6 +15945,39 @@ pub struct GetSampledRequestsInput {
     /// returns information about all of them. </p>
     pub max_items: i64,
 }
+impl GetSampledRequestsInput {
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+    /// <p>
+    /// <code>RuleId</code> is one of three values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
+    /// didn't match any of the rules in the specified <code>WebACL</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
+    /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special  
+    /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    pub fn time_window(&self) -> std::option::Option<&crate::model::TimeWindow> {
+        self.time_window.as_ref()
+    }
+    /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received
+    /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
+    /// returns information about all of them. </p>
+    pub fn max_items(&self) -> i64 {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for GetSampledRequestsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSampledRequestsInput");
@@ -15486,6 +15997,13 @@ pub struct GetRuleGroupInput {
     /// <a>ListRuleGroups</a>.</p>
     pub rule_group_id: std::option::Option<std::string::String>,
 }
+impl GetRuleGroupInput {
+    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
+    /// <a>ListRuleGroups</a>.</p>
+    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+        self.rule_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRuleGroupInput");
@@ -15501,6 +16019,13 @@ pub struct GetRuleInput {
     /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
     /// <a>ListRules</a>.</p>
     pub rule_id: std::option::Option<std::string::String>,
+}
+impl GetRuleInput {
+    /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
+    /// <a>ListRules</a>.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15518,6 +16043,13 @@ pub struct GetRegexPatternSetInput {
     /// <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
 }
+impl GetRegexPatternSetInput {
+    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to get. <code>RegexPatternSetId</code> is returned by
+    /// <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
+    pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
+        self.regex_pattern_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRegexPatternSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRegexPatternSetInput");
@@ -15533,6 +16065,13 @@ pub struct GetRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
     /// <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
     pub regex_match_set_id: std::option::Option<std::string::String>,
+}
+impl GetRegexMatchSetInput {
+    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
+    /// <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
+    pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
+        self.regex_match_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRegexMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15552,6 +16091,17 @@ pub struct GetRateBasedRuleManagedKeysInput {
     /// <p>A null value and not currently used. Do not include this in your request.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
+impl GetRateBasedRuleManagedKeysInput {
+    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to
+    /// get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>A null value and not currently used. Do not include this in your request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRateBasedRuleManagedKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRateBasedRuleManagedKeysInput");
@@ -15569,6 +16119,13 @@ pub struct GetRateBasedRuleInput {
     /// <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
     pub rule_id: std::option::Option<std::string::String>,
 }
+impl GetRateBasedRuleInput {
+    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
+    /// <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRateBasedRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRateBasedRuleInput");
@@ -15584,6 +16141,12 @@ pub struct GetPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl GetPermissionPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPermissionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPermissionPolicyInput");
@@ -15598,6 +16161,12 @@ impl std::fmt::Debug for GetPermissionPolicyInput {
 pub struct GetLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl GetLoggingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15615,6 +16184,13 @@ pub struct GetIpSetInput {
     /// <a>ListIPSets</a>.</p>
     pub ip_set_id: std::option::Option<std::string::String>,
 }
+impl GetIpSetInput {
+    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
+    /// <a>ListIPSets</a>.</p>
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+        self.ip_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIpSetInput");
@@ -15631,6 +16207,13 @@ pub struct GetGeoMatchSetInput {
     /// <a>ListGeoMatchSets</a>.</p>
     pub geo_match_set_id: std::option::Option<std::string::String>,
 }
+impl GetGeoMatchSetInput {
+    /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
+    /// <a>ListGeoMatchSets</a>.</p>
+    pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
+        self.geo_match_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGeoMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGeoMatchSetInput");
@@ -15645,6 +16228,12 @@ impl std::fmt::Debug for GetGeoMatchSetInput {
 pub struct GetChangeTokenStatusInput {
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl GetChangeTokenStatusInput {
+    /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetChangeTokenStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15672,6 +16261,13 @@ pub struct GetByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
     /// <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
     pub byte_match_set_id: std::option::Option<std::string::String>,
+}
+impl GetByteMatchSetInput {
+    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
+    /// <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
+    pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
+        self.byte_match_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetByteMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15701,6 +16297,25 @@ pub struct DisassociateWebAclInput {
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateWebAclInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateWebAclInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateWebAclInput");
@@ -15718,6 +16333,17 @@ pub struct DeleteXssMatchSetInput {
     pub xss_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl DeleteXssMatchSetInput {
+    /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete.
+    /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
+        self.xss_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteXssMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15738,6 +16364,17 @@ pub struct DeleteWebAclInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl DeleteWebAclInput {
+    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
+    /// <a>ListWebACLs</a>.</p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWebAclInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWebAclInput");
@@ -15756,6 +16393,17 @@ pub struct DeleteSqlInjectionMatchSetInput {
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl DeleteSqlInjectionMatchSetInput {
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete.
+    /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
+        self.sql_injection_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSqlInjectionMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15779,6 +16427,17 @@ pub struct DeleteSizeConstraintSetInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl DeleteSizeConstraintSetInput {
+    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code>
+    /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
+        self.size_constraint_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSizeConstraintSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSizeConstraintSetInput");
@@ -15797,6 +16456,17 @@ pub struct DeleteRuleGroupInput {
     pub rule_group_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl DeleteRuleGroupInput {
+    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
+    /// <a>ListRuleGroups</a>.</p>
+    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+        self.rule_group_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15817,6 +16487,17 @@ pub struct DeleteRuleInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl DeleteRuleInput {
+    /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by
+    /// <a>ListRules</a>.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRuleInput");
@@ -15836,6 +16517,17 @@ pub struct DeleteRegexPatternSetInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl DeleteRegexPatternSetInput {
+    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
+    /// <a>ListRegexPatternSets</a>.</p>
+    pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
+        self.regex_pattern_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRegexPatternSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRegexPatternSetInput");
@@ -15854,6 +16546,17 @@ pub struct DeleteRegexMatchSetInput {
     pub regex_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl DeleteRegexMatchSetInput {
+    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
+    /// <a>ListRegexMatchSets</a>.</p>
+    pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
+        self.regex_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRegexMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15875,6 +16578,18 @@ pub struct DeleteRateBasedRuleInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl DeleteRateBasedRuleInput {
+    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to
+    /// delete. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
+    /// <a>ListRateBasedRules</a>.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRateBasedRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRateBasedRuleInput");
@@ -15892,6 +16607,13 @@ pub struct DeletePermissionPolicyInput {
     /// <p>The user making the request must be the owner of the RuleGroup.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DeletePermissionPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>
+    /// <p>The user making the request must be the owner of the RuleGroup.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePermissionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePermissionPolicyInput");
@@ -15906,6 +16628,12 @@ impl std::fmt::Debug for DeletePermissionPolicyInput {
 pub struct DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DeleteLoggingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15924,6 +16652,17 @@ pub struct DeleteIpSetInput {
     pub ip_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl DeleteIpSetInput {
+    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
+    /// <a>ListIPSets</a>.</p>
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+        self.ip_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15944,6 +16683,17 @@ pub struct DeleteGeoMatchSetInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl DeleteGeoMatchSetInput {
+    /// <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
+    /// <a>ListGeoMatchSets</a>.</p>
+    pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
+        self.geo_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGeoMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGeoMatchSetInput");
@@ -15963,6 +16713,17 @@ pub struct DeleteByteMatchSetInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl DeleteByteMatchSetInput {
+    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
+    /// <a>ListByteMatchSets</a>.</p>
+    pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
+        self.byte_match_set_id.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteByteMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteByteMatchSetInput");
@@ -15981,6 +16742,17 @@ pub struct CreateXssMatchSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl CreateXssMatchSetInput {
+    /// <p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code>
+    /// after you create the <code>XssMatchSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateXssMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16017,6 +16789,35 @@ pub struct CreateWebAclMigrationStackInput {
     /// entities, it stops the process and throws an exception. </p>
     pub ignore_unsupported_type: std::option::Option<bool>,
 }
+impl CreateWebAclMigrationStackInput {
+    /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be
+    /// configured as follows for the migration:  </p>
+    /// <ul>
+    /// <li>
+    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p>
+    /// </li>
+    /// <li>
+    /// <p>The bucket policies must permit the migration process to write data. For listings of the
+    /// bucket policies, see the Examples section. </p>
+    /// </li>
+    /// </ul>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration.
+    /// Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported
+    /// entities, it stops the process and throws an exception. </p>
+    pub fn ignore_unsupported_type(&self) -> std::option::Option<bool> {
+        self.ignore_unsupported_type
+    }
+}
 impl std::fmt::Debug for CreateWebAclMigrationStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWebAclMigrationStackInput");
@@ -16045,6 +16846,31 @@ pub struct CreateWebAclInput {
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateWebAclInput {
+    /// <p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the
+    /// <code>WebACL</code>.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The action that you want  AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code>
+    /// objects that are associated with the <code>WebACL</code>.</p>
+    pub fn default_action(&self) -> std::option::Option<&crate::model::WafAction> {
+        self.default_action.as_ref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWebAclInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWebAclInput");
@@ -16067,6 +16893,17 @@ pub struct CreateSqlInjectionMatchSetInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl CreateSqlInjectionMatchSetInput {
+    /// <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code>
+    /// after you create the <code>SqlInjectionMatchSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSqlInjectionMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSqlInjectionMatchSetInput");
@@ -16085,6 +16922,17 @@ pub struct CreateSizeConstraintSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl CreateSizeConstraintSetInput {
+    /// <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a
+    /// <code>SizeConstraintSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSizeConstraintSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16109,6 +16957,26 @@ pub struct CreateRuleGroupInput {
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateRuleGroupInput {
+    /// <p>A friendly name or description of the <a>RuleGroup</a>. You can't change <code>Name</code> after you create a
+    /// <code>RuleGroup</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16136,6 +17004,26 @@ pub struct CreateRuleInput {
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateRuleInput {
+    /// <p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
+    /// <code>Rule</code>.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleInput");
@@ -16157,6 +17045,17 @@ pub struct CreateRegexPatternSetInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl CreateRegexPatternSetInput {
+    /// <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code> after you create a
+    /// <code>RegexPatternSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRegexPatternSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRegexPatternSetInput");
@@ -16175,6 +17074,17 @@ pub struct CreateRegexMatchSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl CreateRegexMatchSetInput {
+    /// <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code> after you create a
+    /// <code>RegexMatchSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRegexMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16215,6 +17125,45 @@ pub struct CreateRateBasedRuleInput {
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateRateBasedRuleInput {
+    /// <p>A friendly name or description of the <a>RateBasedRule</a>. You can't
+    /// change the name of a <code>RateBasedRule</code> after you create it.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>.
+    /// The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
+    /// <code>RateBasedRule</code>.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single
+    /// source and thus subject to rate monitoring. The only valid value for <code>RateKey</code>
+    /// is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP
+    /// address are subject to the <code>RateLimit</code> that is specified in
+    /// the <code>RateBasedRule</code>.</p>
+    pub fn rate_key(&self) -> std::option::Option<&crate::model::RateKey> {
+        self.rate_key.as_ref()
+    }
+    /// <p>The maximum number of requests, which have an identical value in the field that is
+    /// specified by <code>RateKey</code>, allowed in a five-minute period. If the number of
+    /// requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule
+    /// are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    pub fn rate_limit(&self) -> i64 {
+        self.rate_limit
+    }
+    /// <p>The <code>ChangeToken</code> that you used to submit the
+    /// <code>CreateRateBasedRule</code> request. You can also use this value to query the
+    /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRateBasedRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRateBasedRuleInput");
@@ -16237,6 +17186,16 @@ pub struct CreateIpSetInput {
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
+impl CreateIpSetInput {
+    /// <p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIpSetInput");
@@ -16254,6 +17213,16 @@ pub struct CreateGeoMatchSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl CreateGeoMatchSetInput {
+    /// <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGeoMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16273,6 +17242,17 @@ pub struct CreateByteMatchSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
     pub change_token: std::option::Option<std::string::String>,
+}
+impl CreateByteMatchSetInput {
+    /// <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a
+    /// <code>ByteMatchSet</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    pub fn change_token(&self) -> std::option::Option<&str> {
+        self.change_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateByteMatchSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16304,6 +17284,29 @@ pub struct AssociateWebAclInput {
     /// </li>
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl AssociateWebAclInput {
+    /// <p>A unique identifier (ID) for the web ACL. </p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage.  </p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+    /// </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateWebAclInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

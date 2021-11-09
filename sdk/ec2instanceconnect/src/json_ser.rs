@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_send_serial_console_ssh_public_key_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendSerialConsoleSshPublicKeyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.instance_id {
         object.key("InstanceId").string(var_1);
     }
@@ -15,12 +15,13 @@ pub fn serialize_structure_crate_input_send_serial_console_ssh_public_key_input(
     if let Some(var_2) = &input.ssh_public_key {
         object.key("SSHPublicKey").string(var_2);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_send_ssh_public_key_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendSshPublicKeyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.instance_id {
         object.key("InstanceId").string(var_3);
     }
@@ -33,4 +34,5 @@ pub fn serialize_structure_crate_input_send_ssh_public_key_input(
     if let Some(var_6) = &input.availability_zone {
         object.key("AvailabilityZone").string(var_6);
     }
+    Ok(())
 }

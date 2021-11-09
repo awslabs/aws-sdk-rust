@@ -93,7 +93,7 @@ impl DescribeEntitiesDetectionV2JobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_entities_detection_v2_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_entities_detection_v2_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -247,7 +247,7 @@ impl DescribeIcd10CmInferenceJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_icd10_cm_inference_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_icd10_cm_inference_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -403,10 +403,7 @@ impl DescribePhiDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_phi_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -559,7 +556,7 @@ impl DescribeRxNormInferenceJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_rx_norm_inference_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_rx_norm_inference_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -709,10 +706,8 @@ impl DetectEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_entities(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_detect_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -862,10 +857,7 @@ impl DetectEntitiesV2Input {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_entities_v2(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detect_entities_v2(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1012,10 +1004,7 @@ impl DetectPhiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_phi(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detect_phi(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1162,10 +1151,7 @@ impl InferIcd10CmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_infer_icd10_cm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_infer_icd10_cm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1314,10 +1300,7 @@ impl InferRxNormInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_infer_rx_norm(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_infer_rx_norm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1497,7 +1480,7 @@ impl ListEntitiesDetectionV2JobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_entities_detection_v2_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_entities_detection_v2_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1680,10 +1663,7 @@ impl ListIcd10CmInferenceJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_icd10_cm_inference_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1864,10 +1844,7 @@ impl ListPhiDetectionJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_phi_detection_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2049,10 +2026,7 @@ impl ListRxNormInferenceJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_rx_norm_inference_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2299,7 +2273,7 @@ impl StartEntitiesDetectionV2JobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_entities_detection_v2_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_entities_detection_v2_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2549,10 +2523,7 @@ impl StartIcd10CmInferenceJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_icd10_cm_inference_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2800,10 +2771,7 @@ impl StartPhiDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_phi_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3052,10 +3020,7 @@ impl StartRxNormInferenceJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_rx_norm_inference_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3206,7 +3171,7 @@ impl StopEntitiesDetectionV2JobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_entities_detection_v2_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_entities_detection_v2_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3360,10 +3325,7 @@ impl StopIcd10CmInferenceJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_icd10_cm_inference_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3513,10 +3475,9 @@ impl StopPhiDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_phi_detection_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_phi_detection_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3668,10 +3629,7 @@ impl StopRxNormInferenceJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_rx_norm_inference_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3740,6 +3698,12 @@ pub struct StopRxNormInferenceJobInput {
     /// <p>The identifier of the job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopRxNormInferenceJobInput {
+    /// <p>The identifier of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopRxNormInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopRxNormInferenceJobInput");
@@ -3754,6 +3718,12 @@ impl std::fmt::Debug for StopRxNormInferenceJobInput {
 pub struct StopPhiDetectionJobInput {
     /// <p>The identifier of the PHI detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopPhiDetectionJobInput {
+    /// <p>The identifier of the PHI detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopPhiDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3770,6 +3740,12 @@ pub struct StopIcd10CmInferenceJobInput {
     /// <p>The identifier of the job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopIcd10CmInferenceJobInput {
+    /// <p>The identifier of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopIcd10CmInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopIcd10CmInferenceJobInput");
@@ -3784,6 +3760,12 @@ impl std::fmt::Debug for StopIcd10CmInferenceJobInput {
 pub struct StopEntitiesDetectionV2JobInput {
     /// <p>The identifier of the medical entities job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopEntitiesDetectionV2JobInput {
+    /// <p>The identifier of the medical entities job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopEntitiesDetectionV2JobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3814,6 +3796,39 @@ pub struct StartRxNormInferenceJobInput {
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl StartRxNormInferenceJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
+    /// generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
+    /// key, the files are written in plain text.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
 }
 impl std::fmt::Debug for StartRxNormInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3851,6 +3866,39 @@ pub struct StartPhiDetectionJobInput {
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
+impl StartPhiDetectionJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
+    /// generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
+    /// key, the files are written in plain text.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for StartPhiDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPhiDetectionJobInput");
@@ -3886,6 +3934,39 @@ pub struct StartIcd10CmInferenceJobInput {
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl StartIcd10CmInferenceJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
+    /// generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
+    /// key, the files are written in plain text.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
 }
 impl std::fmt::Debug for StartIcd10CmInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3923,6 +4004,39 @@ pub struct StartEntitiesDetectionV2JobInput {
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
+impl StartEntitiesDetectionV2JobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
+    /// generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
+    /// key, the files are written in plain text.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The language of the input documents. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for StartEntitiesDetectionV2JobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartEntitiesDetectionV2JobInput");
@@ -3949,6 +4063,21 @@ pub struct ListRxNormInferenceJobsInput {
     /// <p>Identifies the next page of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListRxNormInferenceJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
+    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListRxNormInferenceJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRxNormInferenceJobsInput");
@@ -3970,6 +4099,21 @@ pub struct ListPhiDetectionJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPhiDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
+    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPhiDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3993,6 +4137,21 @@ pub struct ListIcd10CmInferenceJobsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListIcd10CmInferenceJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
+    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListIcd10CmInferenceJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIcd10CmInferenceJobsInput");
@@ -4015,6 +4174,21 @@ pub struct ListEntitiesDetectionV2JobsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEntitiesDetectionV2JobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
+    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEntitiesDetectionV2JobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntitiesDetectionV2JobsInput");
@@ -4033,6 +4207,13 @@ pub struct InferRxNormInput {
     /// characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
+impl InferRxNormInput {
+    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
+    /// characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
 impl std::fmt::Debug for InferRxNormInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InferRxNormInput");
@@ -4048,6 +4229,13 @@ pub struct InferIcd10CmInput {
     /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
     /// characters.</p>
     pub text: std::option::Option<std::string::String>,
+}
+impl InferIcd10CmInput {
+    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
+    /// characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
 }
 impl std::fmt::Debug for InferIcd10CmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4065,6 +4253,13 @@ pub struct DetectPhiInput {
     /// string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
+impl DetectPhiInput {
+    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
+    /// string must contain fewer than 20,000 bytes of characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectPhiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectPhiInput");
@@ -4080,6 +4275,13 @@ pub struct DetectEntitiesV2Input {
     /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
     /// must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
+}
+impl DetectEntitiesV2Input {
+    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
+    /// must contain fewer than 20,000 bytes of characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectEntitiesV2Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4097,6 +4299,13 @@ pub struct DetectEntitiesInput {
     /// string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
+impl DetectEntitiesInput {
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
+    /// string must contain fewer than 20,000 bytes of characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectEntitiesInput");
@@ -4112,6 +4321,13 @@ pub struct DescribeRxNormInferenceJobInput {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
     /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeRxNormInferenceJobInput {
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
+    /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRxNormInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4129,6 +4345,13 @@ pub struct DescribePhiDetectionJobInput {
     /// operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribePhiDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
+    /// operation returns this identifier in its response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePhiDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePhiDetectionJobInput");
@@ -4144,6 +4367,13 @@ pub struct DescribeIcd10CmInferenceJobInput {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
     /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeIcd10CmInferenceJobInput {
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
+    /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIcd10CmInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4161,6 +4391,14 @@ pub struct DescribeEntitiesDetectionV2JobInput {
     /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeEntitiesDetectionV2JobInput {
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
+    /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEntitiesDetectionV2JobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

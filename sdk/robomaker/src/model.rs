@@ -8,6 +8,16 @@ pub struct TemplateLocation {
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub s3_key: std::option::Option<std::string::String>,
 }
+impl TemplateLocation {
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The list of S3 keys identifying the data source files.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+}
 impl std::fmt::Debug for TemplateLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateLocation");
@@ -70,6 +80,12 @@ pub struct Environment {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     pub uri: std::option::Option<std::string::String>,
 }
+impl Environment {
+    /// <p>The Docker image URI for either your robot or simulation applications.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+}
 impl std::fmt::Debug for Environment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Environment");
@@ -117,6 +133,16 @@ pub struct RenderingEngine {
     pub name: std::option::Option<crate::model::RenderingEngineType>,
     /// <p>The version of the rendering engine.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl RenderingEngine {
+    /// <p>The name of the rendering engine.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::RenderingEngineType> {
+        self.name.as_ref()
+    }
+    /// <p>The version of the rendering engine.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for RenderingEngine {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -234,6 +260,16 @@ pub struct RobotSoftwareSuite {
     pub name: std::option::Option<crate::model::RobotSoftwareSuiteType>,
     /// <p>The version of the robot software suite (ROS distribution).</p>
     pub version: std::option::Option<crate::model::RobotSoftwareSuiteVersionType>,
+}
+impl RobotSoftwareSuite {
+    /// <p>The name of the robot software suite (ROS distribution).</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::RobotSoftwareSuiteType> {
+        self.name.as_ref()
+    }
+    /// <p>The version of the robot software suite (ROS distribution).</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::RobotSoftwareSuiteVersionType> {
+        self.version.as_ref()
+    }
 }
 impl std::fmt::Debug for RobotSoftwareSuite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -426,6 +462,16 @@ pub struct SimulationSoftwareSuite {
     /// <p>The version of the simulation software suite.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl SimulationSoftwareSuite {
+    /// <p>The name of the simulation software suite.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SimulationSoftwareSuiteType> {
+        self.name.as_ref()
+    }
+    /// <p>The version of the simulation software suite.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for SimulationSoftwareSuite {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimulationSoftwareSuite");
@@ -554,6 +600,24 @@ pub struct Source {
     pub etag: std::option::Option<std::string::String>,
     /// <p>The taget processor architecture for the application.</p>
     pub architecture: std::option::Option<crate::model::Architecture>,
+}
+impl Source {
+    /// <p>The s3 bucket name.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The s3 object key.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+    /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
+    pub fn etag(&self) -> std::option::Option<&str> {
+        self.etag.as_deref()
+    }
+    /// <p>The taget processor architecture for the application.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
 }
 impl std::fmt::Debug for Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -707,6 +771,20 @@ pub struct SourceConfig {
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>The target processor architecture for the application.</p>
     pub architecture: std::option::Option<crate::model::Architecture>,
+}
+impl SourceConfig {
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The s3 object key.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+    /// <p>The target processor architecture for the application.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -969,6 +1047,20 @@ pub struct DeploymentApplicationConfig {
     /// <p>The launch configuration.</p>
     pub launch_config: std::option::Option<crate::model::DeploymentLaunchConfig>,
 }
+impl DeploymentApplicationConfig {
+    /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The version of the application.</p>
+    pub fn application_version(&self) -> std::option::Option<&str> {
+        self.application_version.as_deref()
+    }
+    /// <p>The launch configuration.</p>
+    pub fn launch_config(&self) -> std::option::Option<&crate::model::DeploymentLaunchConfig> {
+        self.launch_config.as_ref()
+    }
+}
 impl std::fmt::Debug for DeploymentApplicationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentApplicationConfig");
@@ -1060,6 +1152,34 @@ pub struct DeploymentLaunchConfig {
     /// application</p>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DeploymentLaunchConfig {
+    /// <p>The package name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The deployment pre-launch file. This file will be executed prior to the launch
+    /// file.</p>
+    pub fn pre_launch_file(&self) -> std::option::Option<&str> {
+        self.pre_launch_file.as_deref()
+    }
+    /// <p>The launch file name.</p>
+    pub fn launch_file(&self) -> std::option::Option<&str> {
+        self.launch_file.as_deref()
+    }
+    /// <p>The deployment post-launch file. This file will be executed after the launch
+    /// file.</p>
+    pub fn post_launch_file(&self) -> std::option::Option<&str> {
+        self.post_launch_file.as_deref()
+    }
+    /// <p>An array of key/value pairs specifying environment variables for the robot
+    /// application</p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentLaunchConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1197,6 +1317,25 @@ pub struct DeploymentConfig {
     /// <p>The download condition file.</p>
     pub download_condition_file: std::option::Option<crate::model::S3Object>,
 }
+impl DeploymentConfig {
+    /// <p>The percentage of robots receiving the deployment at the same time.</p>
+    pub fn concurrent_deployment_percentage(&self) -> std::option::Option<i32> {
+        self.concurrent_deployment_percentage
+    }
+    /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
+    pub fn failure_threshold_percentage(&self) -> std::option::Option<i32> {
+        self.failure_threshold_percentage
+    }
+    /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete.
+    /// Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+    pub fn robot_deployment_timeout_in_seconds(&self) -> std::option::Option<i64> {
+        self.robot_deployment_timeout_in_seconds
+    }
+    /// <p>The download condition file.</p>
+    pub fn download_condition_file(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.download_condition_file.as_ref()
+    }
+}
 impl std::fmt::Debug for DeploymentConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentConfig");
@@ -1307,6 +1446,20 @@ pub struct S3Object {
     pub key: std::option::Option<std::string::String>,
     /// <p>The etag of the object.</p>
     pub etag: std::option::Option<std::string::String>,
+}
+impl S3Object {
+    /// <p>The bucket containing the object.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The key of the object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The etag of the object.</p>
+    pub fn etag(&self) -> std::option::Option<&str> {
+        self.etag.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Object {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1474,6 +1627,41 @@ pub struct SimulationJobSummary {
     pub data_source_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The compute type for the simulation job summary.</p>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
+}
+impl SimulationJobSummary {
+    /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
+    /// updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The name of the simulation job.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the simulation job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A list of simulation job simulation application names.</p>
+    pub fn simulation_application_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.simulation_application_names.as_deref()
+    }
+    /// <p>A list of simulation job robot application names.</p>
+    pub fn robot_application_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.robot_application_names.as_deref()
+    }
+    /// <p>The names of the data sources.</p>
+    pub fn data_source_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_source_names.as_deref()
+    }
+    /// <p>The compute type for the simulation job summary.</p>
+    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type.as_ref()
+    }
 }
 impl std::fmt::Debug for SimulationJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1860,6 +2048,86 @@ pub struct SimulationJobRequest {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl SimulationJobRequest {
+    /// <p>The output location.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
+    /// <p>The logging configuration.</p>
+    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+        self.logging_config.as_ref()
+    }
+    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
+    /// seconds) or less.</p>
+    pub fn max_job_duration_in_seconds(&self) -> i64 {
+        self.max_job_duration_in_seconds
+    }
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
+    /// specified in its associated policies on your behalf. This is how credentials are passed in
+    /// to your simulation job. </p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>The failure behavior the simulation job.</p>
+    /// <dl>
+    /// <dt>Continue</dt>
+    /// <dd>
+    /// <p>Leaves the host running for its maximum timeout duration after a
+    /// <code>4XX</code> error code.</p>
+    /// </dd>
+    /// <dt>Fail</dt>
+    /// <dd>
+    /// <p>Stop the simulation job and terminate the instance.</p>
+    /// </dd>
+    /// </dl>
+    pub fn failure_behavior(&self) -> std::option::Option<&crate::model::FailureBehavior> {
+        self.failure_behavior.as_ref()
+    }
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default
+    /// applications include Gazebo, rqt, rviz and terminal access. </p>
+    pub fn use_default_applications(&self) -> std::option::Option<bool> {
+        self.use_default_applications
+    }
+    /// <p>The robot applications to use in the simulation job.</p>
+    pub fn robot_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::RobotApplicationConfig]> {
+        self.robot_applications.as_deref()
+    }
+    /// <p>The simulation applications to use in the simulation job.</p>
+    pub fn simulation_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
+        self.simulation_applications.as_deref()
+    }
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
+    /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
+    /// <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all
+    /// <code>DataSourceConfig</code> objects. </p>
+    /// </note>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSourceConfig]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
+    /// identifying the list of security group IDs and subnet IDs. These must belong to the same
+    /// VPC. You must provide at least one security group and two subnet IDs.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Compute information for the simulation job</p>
+    pub fn compute(&self) -> std::option::Option<&crate::model::Compute> {
+        self.compute.as_ref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job
+    /// request.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for SimulationJobRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimulationJobRequest");
@@ -2172,6 +2440,24 @@ pub struct Compute {
     /// allocated to the SimulationJob.</p>
     pub gpu_unit_limit: std::option::Option<i32>,
 }
+impl Compute {
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
+    /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
+    /// only billed for the SU utilization you consume up to the maximum value provided. The
+    /// default is 15. </p>
+    pub fn simulation_unit_limit(&self) -> std::option::Option<i32> {
+        self.simulation_unit_limit
+    }
+    /// <p>Compute type information for the simulation job.</p>
+    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type.as_ref()
+    }
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+    /// allocated to the SimulationJob.</p>
+    pub fn gpu_unit_limit(&self) -> std::option::Option<i32> {
+        self.gpu_unit_limit
+    }
+}
 impl std::fmt::Debug for Compute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Compute");
@@ -2262,6 +2548,20 @@ pub struct VpcConfig {
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub assign_public_ip: bool,
+}
+impl VpcConfig {
+    /// <p>A list of one or more subnet IDs in your VPC.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>A list of one or more security groups IDs in your VPC.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>A boolean indicating whether to assign a public IP address.</p>
+    pub fn assign_public_ip(&self) -> bool {
+        self.assign_public_ip
+    }
 }
 impl std::fmt::Debug for VpcConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2373,6 +2673,39 @@ pub struct DataSourceConfig {
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
     /// provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub destination: std::option::Option<std::string::String>,
+}
+impl DataSourceConfig {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The S3 bucket where the data files are located.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The list of S3 keys identifying the data source files.</p>
+    pub fn s3_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.s3_keys.as_deref()
+    }
+    /// <p>The data type for the data source that you're using for your container image or
+    /// simulation job. You can use this field to specify whether your data source is an Archive,
+    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
+    /// you must provide an Amazon S3 object key to your archive. The object key must point to
+    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
+    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
+    /// source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
+    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2586,6 +2919,46 @@ pub struct SimulationApplicationConfig {
     /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub use_default_tools: std::option::Option<bool>,
 }
+impl SimulationApplicationConfig {
+    /// <p>The application information for the simulation application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The version of the simulation application.</p>
+    pub fn application_version(&self) -> std::option::Option<&str> {
+        self.application_version.as_deref()
+    }
+    /// <p>The launch configuration for the simulation application.</p>
+    pub fn launch_config(&self) -> std::option::Option<&crate::model::LaunchConfig> {
+        self.launch_config.as_ref()
+    }
+    /// <p>Information about upload configurations for the simulation application.</p>
+    pub fn upload_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UploadConfiguration]> {
+        self.upload_configurations.as_deref()
+    }
+    /// <p>A list of world configurations.</p>
+    pub fn world_configs(&self) -> std::option::Option<&[crate::model::WorldConfig]> {
+        self.world_configs.as_deref()
+    }
+    /// <p>A Boolean indicating whether to use default upload configurations. By default,
+    /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
+    /// terminates and all ROS topics will be recorded.</p>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+    pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
+        self.use_default_upload_configurations
+    }
+    /// <p>Information about tools configured for the simulation application.</p>
+    pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
+        self.tools.as_deref()
+    }
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default
+    /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    pub fn use_default_tools(&self) -> std::option::Option<bool> {
+        self.use_default_tools
+    }
+}
 impl std::fmt::Debug for SimulationApplicationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimulationApplicationConfig");
@@ -2790,6 +3163,34 @@ pub struct Tool {
     /// default is <code>RESTART</code>. </p>
     pub exit_behavior: std::option::Option<crate::model::ExitBehavior>,
 }
+impl Tool {
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If
+    /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
+    /// the tool as it is running in the simulation. It must have a graphical user interface. The
+    /// default is <code>False</code>. </p>
+    pub fn stream_ui(&self) -> std::option::Option<bool> {
+        self.stream_ui
+    }
+    /// <p>The name of the tool.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
+    pub fn command(&self) -> std::option::Option<&str> {
+        self.command.as_deref()
+    }
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
+    /// is <code>False</code>. </p>
+    pub fn stream_output_to_cloud_watch(&self) -> std::option::Option<bool> {
+        self.stream_output_to_cloud_watch
+    }
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
+    /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The
+    /// default is <code>RESTART</code>. </p>
+    pub fn exit_behavior(&self) -> std::option::Option<&crate::model::ExitBehavior> {
+        self.exit_behavior.as_ref()
+    }
+}
 impl std::fmt::Debug for Tool {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tool");
@@ -2966,6 +3367,12 @@ pub struct WorldConfig {
     /// <p>The world generated by Simulation WorldForge.</p>
     pub world: std::option::Option<std::string::String>,
 }
+impl WorldConfig {
+    /// <p>The world generated by Simulation WorldForge.</p>
+    pub fn world(&self) -> std::option::Option<&str> {
+        self.world.as_deref()
+    }
+}
 impl std::fmt::Debug for WorldConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorldConfig");
@@ -3039,6 +3446,43 @@ pub struct UploadConfiguration {
     /// </dd>
     /// </dl>
     pub upload_behavior: std::option::Option<crate::model::UploadBehavior>,
+}
+impl UploadConfiguration {
+    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the
+    /// simulation output location to determine the final path. </p>
+    /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your
+    /// upload configuration name is <code>robot-test</code>, your files will be uploaded to
+    /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are
+    /// accepted, with the addition of <code>**</code> as a <i>super asterisk</i>.
+    /// For example, specifying <code>/var/log/**.log</code> causes all .log files in the
+    /// <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Specifies when to upload the files:</p>
+    /// <dl>
+    /// <dt>UPLOAD_ON_TERMINATE</dt>
+    /// <dd>
+    /// <p>Matching files are uploaded once the simulation enters the
+    /// <code>TERMINATING</code> state. Matching files are not uploaded until all of
+    /// your code (including tools) have stopped. </p>
+    /// <p>If there is a problem uploading a file, the upload is retried. If problems
+    /// persist, no further upload attempts will be made.</p>
+    /// </dd>
+    /// <dt>UPLOAD_ROLLING_AUTO_REMOVE</dt>
+    /// <dd>
+    /// <p>Matching files are uploaded as they are created. They are deleted after they
+    /// are uploaded. The specified path is checked every 5 seconds. A final check is made
+    /// when all of your code (including tools) have stopped. </p>
+    /// </dd>
+    /// </dl>
+    pub fn upload_behavior(&self) -> std::option::Option<&crate::model::UploadBehavior> {
+        self.upload_behavior.as_ref()
+    }
 }
 impl std::fmt::Debug for UploadConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3233,6 +3677,41 @@ pub struct LaunchConfig {
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl LaunchConfig {
+    /// <p>The package name.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The launch file name.</p>
+    pub fn launch_file(&self) -> std::option::Option<&str> {
+        self.launch_file.as_deref()
+    }
+    /// <p>The environment variables for the application launch.</p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p>The port forwarding configuration.</p>
+    pub fn port_forwarding_config(
+        &self,
+    ) -> std::option::Option<&crate::model::PortForwardingConfig> {
+        self.port_forwarding_config.as_ref()
+    }
+    /// <p>Boolean indicating whether a streaming session will be configured for the application.
+    /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
+    /// your application as it is running in the simulation. You must configure and launch the
+    /// component. It must have a graphical user interface. </p>
+    pub fn stream_ui(&self) -> bool {
+        self.stream_ui
+    }
+    /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+}
 impl std::fmt::Debug for LaunchConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchConfig");
@@ -3383,6 +3862,12 @@ pub struct PortForwardingConfig {
     /// <p>The port mappings for the configuration.</p>
     pub port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
 }
+impl PortForwardingConfig {
+    /// <p>The port mappings for the configuration.</p>
+    pub fn port_mappings(&self) -> std::option::Option<&[crate::model::PortMapping]> {
+        self.port_mappings.as_deref()
+    }
+}
 impl std::fmt::Debug for PortForwardingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PortForwardingConfig");
@@ -3444,6 +3929,21 @@ pub struct PortMapping {
     pub application_port: i32,
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub enable_on_public_ip: bool,
+}
+impl PortMapping {
+    /// <p>The port number on the simulation job instance to use as a remote connection point.
+    /// </p>
+    pub fn job_port(&self) -> i32 {
+        self.job_port
+    }
+    /// <p>The port number on the application.</p>
+    pub fn application_port(&self) -> i32 {
+        self.application_port
+    }
+    /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
+    pub fn enable_on_public_ip(&self) -> bool {
+        self.enable_on_public_ip
+    }
 }
 impl std::fmt::Debug for PortMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3537,6 +4037,42 @@ pub struct RobotApplicationConfig {
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools
     /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub use_default_tools: std::option::Option<bool>,
+}
+impl RobotApplicationConfig {
+    /// <p>The application information for the robot application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The version of the robot application.</p>
+    pub fn application_version(&self) -> std::option::Option<&str> {
+        self.application_version.as_deref()
+    }
+    /// <p>The launch configuration for the robot application.</p>
+    pub fn launch_config(&self) -> std::option::Option<&crate::model::LaunchConfig> {
+        self.launch_config.as_ref()
+    }
+    /// <p>The upload configurations for the robot application.</p>
+    pub fn upload_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UploadConfiguration]> {
+        self.upload_configurations.as_deref()
+    }
+    /// <p>A Boolean indicating whether to use default upload configurations. By default,
+    /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
+    /// terminates and all ROS topics will be recorded.</p>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+    pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
+        self.use_default_upload_configurations
+    }
+    /// <p>Information about tools configured for the robot application.</p>
+    pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
+        self.tools.as_deref()
+    }
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools
+    /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    pub fn use_default_tools(&self) -> std::option::Option<bool> {
+        self.use_default_tools
+    }
 }
 impl std::fmt::Debug for RobotApplicationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3761,6 +4297,12 @@ pub struct LoggingConfig {
     /// <p>A boolean indicating whether to record all ROS topics.</p>
     pub record_all_ros_topics: std::option::Option<bool>,
 }
+impl LoggingConfig {
+    /// <p>A boolean indicating whether to record all ROS topics.</p>
+    pub fn record_all_ros_topics(&self) -> std::option::Option<bool> {
+        self.record_all_ros_topics
+    }
+}
 impl std::fmt::Debug for LoggingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoggingConfig");
@@ -3810,6 +4352,16 @@ pub struct OutputLocation {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
     pub s3_prefix: std::option::Option<std::string::String>,
+}
+impl OutputLocation {
+    /// <p>The S3 bucket for output.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for OutputLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3877,6 +4429,24 @@ pub struct FailedCreateSimulationJobRequest {
     pub failure_code: std::option::Option<crate::model::SimulationJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
     pub failed_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl FailedCreateSimulationJobRequest {
+    /// <p>The simulation job request.</p>
+    pub fn request(&self) -> std::option::Option<&crate::model::SimulationJobRequest> {
+        self.request.as_ref()
+    }
+    /// <p>The failure reason of the simulation job request.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The failure code.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::SimulationJobErrorCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
+    pub fn failed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.failed_at.as_ref()
+    }
 }
 impl std::fmt::Debug for FailedCreateSimulationJobRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4284,6 +4854,27 @@ pub struct BatchPolicy {
     /// <code>Terminating</code>. All other states are terminal states. </p>
     pub max_concurrency: std::option::Option<i32>,
 }
+impl BatchPolicy {
+    /// <p>The amount of time, in seconds, to wait for the batch to complete.
+    ///
+    /// </p>
+    /// <p>If a batch times out, and there are pending requests that were failing due to an
+    /// internal failure (like <code>InternalServiceError</code>), they will be moved to the failed
+    /// list and the batch status will be <code>Failed</code>. If the pending requests were failing
+    /// for any other reason, the failed pending requests will be moved to the failed list and the
+    /// batch status will be <code>TimedOut</code>. </p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
+        self.timeout_in_seconds
+    }
+    /// <p>The number of active simulation jobs create as part of the batch that can be in an
+    /// active state at the same time. </p>
+    /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>,
+    /// <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and
+    /// <code>Terminating</code>. All other states are terminal states. </p>
+    pub fn max_concurrency(&self) -> std::option::Option<i32> {
+        self.max_concurrency
+    }
+}
 impl std::fmt::Debug for BatchPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPolicy");
@@ -4468,6 +5059,28 @@ pub struct TemplateSummary {
     /// <p>The version of the template that you're using.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl TemplateSummary {
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the template was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The name of the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the template that you're using.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for TemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateSummary");
@@ -4580,6 +5193,24 @@ pub struct WorldSummary {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub template: std::option::Option<std::string::String>,
 }
+impl WorldSummary {
+    /// <p>The Amazon Resource Name (ARN) of the world.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
+    pub fn generation_job(&self) -> std::option::Option<&str> {
+        self.generation_job.as_deref()
+    }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+}
 impl std::fmt::Debug for WorldSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorldSummary");
@@ -4674,6 +5305,16 @@ pub struct Filter {
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Filter {
+    /// <p>The name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4788,6 +5429,68 @@ pub struct WorldGenerationJobSummary {
     pub succeeded_world_count: i32,
     /// <p>The number of worlds that failed.</p>
     pub failed_world_count: i32,
+}
+impl WorldGenerationJobSummary {
+    /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world generator job was
+    /// created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The status of the world generator job:</p>
+    /// <dl>
+    /// <dt>Pending</dt>
+    /// <dd>
+    /// <p>The world generator job request is pending.</p>
+    /// </dd>
+    /// <dt>Running</dt>
+    /// <dd>
+    /// <p>The world generator job is running. </p>
+    /// </dd>
+    /// <dt>Completed</dt>
+    /// <dd>
+    /// <p>The world generator job completed. </p>
+    /// </dd>
+    /// <dt>Failed</dt>
+    /// <dd>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more
+    /// information. </p>
+    /// </dd>
+    /// <dt>PartialFailed</dt>
+    /// <dd>
+    /// <p>Some worlds did not generate.</p>
+    /// </dd>
+    /// <dt>Canceled</dt>
+    /// <dd>
+    /// <p>The world generator job was cancelled.</p>
+    /// </dd>
+    /// <dt>Canceling</dt>
+    /// <dd>
+    /// <p>The world generator job is being cancelled.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&crate::model::WorldGenerationJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Information about the world count.</p>
+    pub fn world_count(&self) -> std::option::Option<&crate::model::WorldCount> {
+        self.world_count.as_ref()
+    }
+    /// <p>The number of worlds that were generated.</p>
+    pub fn succeeded_world_count(&self) -> i32 {
+        self.succeeded_world_count
+    }
+    /// <p>The number of worlds that failed.</p>
+    pub fn failed_world_count(&self) -> i32 {
+        self.failed_world_count
+    }
 }
 impl std::fmt::Debug for WorldGenerationJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4996,6 +5699,16 @@ pub struct WorldCount {
     /// <p>The number of unique interiors per floorplan.</p>
     pub interior_count_per_floorplan: std::option::Option<i32>,
 }
+impl WorldCount {
+    /// <p>The number of unique floorplans.</p>
+    pub fn floorplan_count(&self) -> std::option::Option<i32> {
+        self.floorplan_count
+    }
+    /// <p>The number of unique interiors per floorplan.</p>
+    pub fn interior_count_per_floorplan(&self) -> std::option::Option<i32> {
+        self.interior_count_per_floorplan
+    }
+}
 impl std::fmt::Debug for WorldCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorldCount");
@@ -5175,6 +5888,51 @@ pub struct WorldExportJobSummary {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of worlds.</p>
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl WorldExportJobSummary {
+    /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the world export job.</p>
+    /// <dl>
+    /// <dt>Pending</dt>
+    /// <dd>
+    /// <p>The world export job request is pending.</p>
+    /// </dd>
+    /// <dt>Running</dt>
+    /// <dd>
+    /// <p>The world export job is running. </p>
+    /// </dd>
+    /// <dt>Completed</dt>
+    /// <dd>
+    /// <p>The world export job completed. </p>
+    /// </dd>
+    /// <dt>Failed</dt>
+    /// <dd>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information.
+    /// </p>
+    /// </dd>
+    /// <dt>Canceled</dt>
+    /// <dd>
+    /// <p>The world export job was cancelled.</p>
+    /// </dd>
+    /// <dt>Canceling</dt>
+    /// <dd>
+    /// <p>The world export job is being cancelled.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&crate::model::WorldExportJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>A list of worlds.</p>
+    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
+        self.worlds.as_deref()
+    }
 }
 impl std::fmt::Debug for WorldExportJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5473,6 +6231,87 @@ pub struct SimulationJobBatchSummary {
     /// <p>The number of created simulation job requests.</p>
     pub created_request_count: i32,
 }
+impl SimulationJobBatchSummary {
+    /// <p>The Amazon Resource Name (ARN) of the batch.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
+    /// updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
+    /// created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The status of the simulation job batch.</p>
+    /// <dl>
+    /// <dt>Pending</dt>
+    /// <dd>
+    /// <p>The simulation job batch request is pending.</p>
+    /// </dd>
+    /// <dt>InProgress</dt>
+    /// <dd>
+    /// <p>The simulation job batch is in progress. </p>
+    /// </dd>
+    /// <dt>Failed</dt>
+    /// <dd>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not
+    /// be completed due to an internal failure (like <code>InternalServiceError</code>).
+    /// See <code>failureCode</code> and <code>failureReason</code> for more
+    /// information.</p>
+    /// </dd>
+    /// <dt>Completed</dt>
+    /// <dd>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no
+    /// pending simulation job requests in the batch and none of the failed simulation job
+    /// requests are due to <code>InternalServiceError</code> and (2) when all created
+    /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
+    /// or <code>Failed</code>). </p>
+    /// </dd>
+    /// <dt>Canceled</dt>
+    /// <dd>
+    /// <p>The simulation batch job was cancelled.</p>
+    /// </dd>
+    /// <dt>Canceling</dt>
+    /// <dd>
+    /// <p>The simulation batch job is being cancelled.</p>
+    /// </dd>
+    /// <dt>Completing</dt>
+    /// <dd>
+    /// <p>The simulation batch job is completing.</p>
+    /// </dd>
+    /// <dt>TimingOut</dt>
+    /// <dd>
+    /// <p>The simulation job batch is timing out.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to
+    /// an internal failure (like <code>InternalServiceError</code>), the batch status
+    /// will be <code>Failed</code>. If there are no such failing request, the batch
+    /// status will be <code>TimedOut</code>. </p>
+    /// </dd>
+    /// <dt>TimedOut</dt>
+    /// <dd>
+    /// <p>The simulation batch job timed out.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobBatchStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The number of failed simulation job requests.</p>
+    pub fn failed_request_count(&self) -> i32 {
+        self.failed_request_count
+    }
+    /// <p>The number of pending simulation job requests.</p>
+    pub fn pending_request_count(&self) -> i32 {
+        self.pending_request_count
+    }
+    /// <p>The number of created simulation job requests.</p>
+    pub fn created_request_count(&self) -> i32 {
+        self.created_request_count
+    }
+}
 impl std::fmt::Debug for SimulationJobBatchSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimulationJobBatchSummary");
@@ -5721,6 +6560,35 @@ pub struct SimulationApplicationSummary {
     /// <p>Information about a simulation software suite.</p>
     pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
 }
+impl SimulationApplicationSummary {
+    /// <p>The name of the simulation application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the simulation application.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
+    /// updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>Information about a robot software suite (ROS distribution).</p>
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+        self.robot_software_suite.as_ref()
+    }
+    /// <p>Information about a simulation software suite.</p>
+    pub fn simulation_software_suite(
+        &self,
+    ) -> std::option::Option<&crate::model::SimulationSoftwareSuite> {
+        self.simulation_software_suite.as_ref()
+    }
+}
 impl std::fmt::Debug for SimulationApplicationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimulationApplicationSummary");
@@ -5864,6 +6732,44 @@ pub struct Robot {
     pub last_deployment_job: std::option::Option<std::string::String>,
     /// <p>The time of the last deployment.</p>
     pub last_deployment_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Robot {
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the robot.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The status of the robot.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RobotStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Greengrass group associated with the robot.</p>
+    pub fn green_grass_group_id(&self) -> std::option::Option<&str> {
+        self.green_grass_group_id.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The architecture of the robot.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+    pub fn last_deployment_job(&self) -> std::option::Option<&str> {
+        self.last_deployment_job.as_deref()
+    }
+    /// <p>The time of the last deployment.</p>
+    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Robot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6124,6 +7030,29 @@ pub struct RobotApplicationSummary {
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
 }
+impl RobotApplicationSummary {
+    /// <p>The name of the robot application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the robot application.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last
+    /// updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>Information about a robot software suite (ROS distribution).</p>
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+        self.robot_software_suite.as_ref()
+    }
+}
 impl std::fmt::Debug for RobotApplicationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RobotApplicationSummary");
@@ -6241,6 +7170,32 @@ pub struct Fleet {
     pub last_deployment_job: std::option::Option<std::string::String>,
     /// <p>The time of the last deployment.</p>
     pub last_deployment_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Fleet {
+    /// <p>The name of the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The status of the last fleet deployment.</p>
+    pub fn last_deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.last_deployment_status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+    pub fn last_deployment_job(&self) -> std::option::Option<&str> {
+        self.last_deployment_job.as_deref()
+    }
+    /// <p>The time of the last deployment.</p>
+    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Fleet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6381,6 +7336,42 @@ pub struct DeploymentJob {
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DeploymentJob {
+    /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet(&self) -> std::option::Option<&str> {
+        self.fleet.as_deref()
+    }
+    /// <p>The status of the deployment job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The deployment application configuration.</p>
+    pub fn deployment_application_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeploymentApplicationConfig]> {
+        self.deployment_application_configs.as_deref()
+    }
+    /// <p>The deployment configuration.</p>
+    pub fn deployment_config(&self) -> std::option::Option<&crate::model::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
+    /// <p>A short description of the reason why the deployment job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The deployment job failure code.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::DeploymentJobErrorCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6556,6 +7547,20 @@ pub struct FinishedWorldsSummary {
     /// <p>Information about worlds that failed.</p>
     pub failure_summary: std::option::Option<crate::model::FailureSummary>,
 }
+impl FinishedWorldsSummary {
+    /// <p>The total number of finished worlds.</p>
+    pub fn finished_count(&self) -> i32 {
+        self.finished_count
+    }
+    /// <p>A list of worlds that succeeded.</p>
+    pub fn succeeded_worlds(&self) -> std::option::Option<&[std::string::String]> {
+        self.succeeded_worlds.as_deref()
+    }
+    /// <p>Information about worlds that failed.</p>
+    pub fn failure_summary(&self) -> std::option::Option<&crate::model::FailureSummary> {
+        self.failure_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for FinishedWorldsSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FinishedWorldsSummary");
@@ -6643,6 +7648,16 @@ pub struct FailureSummary {
     pub total_failure_count: i32,
     /// <p>The worlds that failed.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::WorldFailure>>,
+}
+impl FailureSummary {
+    /// <p>The total number of failures.</p>
+    pub fn total_failure_count(&self) -> i32 {
+        self.total_failure_count
+    }
+    /// <p>The worlds that failed.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::WorldFailure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for FailureSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6741,6 +7756,44 @@ pub struct WorldFailure {
     pub sample_failure_reason: std::option::Option<std::string::String>,
     /// <p>The number of failed worlds.</p>
     pub failure_count: i32,
+}
+impl WorldFailure {
+    /// <p>The failure code of the world export job if it failed:</p>
+    /// <dl>
+    /// <dt>InternalServiceError</dt>
+    /// <dd>
+    /// <p>Internal service error.</p>
+    /// </dd>
+    /// <dt>LimitExceeded</dt>
+    /// <dd>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of
+    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// </dd>
+    /// <dt>ResourceNotFound</dt>
+    /// <dd>
+    /// <p>The specified resource could not be found. </p>
+    /// </dd>
+    /// <dt>RequestThrottled</dt>
+    /// <dd>
+    /// <p>The request was throttled.</p>
+    /// </dd>
+    /// <dt>InvalidInput</dt>
+    /// <dd>
+    /// <p>An input parameter in the request is not valid.</p>
+    /// </dd>
+    /// </dl>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::WorldGenerationJobErrorCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as
+    /// the <code>sampleFailureReason</code>. </p>
+    pub fn sample_failure_reason(&self) -> std::option::Option<&str> {
+        self.sample_failure_reason.as_deref()
+    }
+    /// <p>The number of failed worlds.</p>
+    pub fn failure_count(&self) -> i32 {
+        self.failure_count
+    }
 }
 impl std::fmt::Debug for WorldFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7034,6 +8087,24 @@ pub struct ComputeResponse {
     /// allocated to the SimulationJob.</p>
     pub gpu_unit_limit: std::option::Option<i32>,
 }
+impl ComputeResponse {
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
+    /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
+    /// only billed for the SU utilization you consume up to the maximum value provided. The
+    /// default is 15. </p>
+    pub fn simulation_unit_limit(&self) -> std::option::Option<i32> {
+        self.simulation_unit_limit
+    }
+    /// <p>Compute type response information for the simulation job.</p>
+    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type.as_ref()
+    }
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+    /// allocated to the SimulationJob.</p>
+    pub fn gpu_unit_limit(&self) -> std::option::Option<i32> {
+        self.gpu_unit_limit
+    }
+}
 impl std::fmt::Debug for ComputeResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComputeResponse");
@@ -7123,6 +8194,20 @@ pub struct NetworkInterface {
     /// <p>The IPv4 public address of the network interface.</p>
     pub public_ip_address: std::option::Option<std::string::String>,
 }
+impl NetworkInterface {
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The IPv4 address of the network interface within the subnet.</p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
+    /// <p>The IPv4 public address of the network interface.</p>
+    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+        self.public_ip_address.as_deref()
+    }
+}
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkInterface");
@@ -7211,6 +8296,24 @@ pub struct VpcConfigResponse {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A boolean indicating if a public IP was assigned.</p>
     pub assign_public_ip: bool,
+}
+impl VpcConfigResponse {
+    /// <p>A list of subnet IDs associated with the simulation job.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>A list of security group IDs associated with the simulation job.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The VPC ID associated with your simulation job.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A boolean indicating if a public IP was assigned.</p>
+    pub fn assign_public_ip(&self) -> bool {
+        self.assign_public_ip
+    }
 }
 impl std::fmt::Debug for VpcConfigResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7335,6 +8438,39 @@ pub struct DataSource {
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
     /// provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub destination: std::option::Option<std::string::String>,
+}
+impl DataSource {
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The S3 bucket where the data files are located.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The list of S3 keys identifying the data source files.</p>
+    pub fn s3_keys(&self) -> std::option::Option<&[crate::model::S3KeyOutput]> {
+        self.s3_keys.as_deref()
+    }
+    /// <p>The data type for the data source that you're using for your container image or
+    /// simulation job. You can use this field to specify whether your data source is an Archive,
+    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
+    /// you must provide an Amazon S3 object key to your archive. The object key must point to
+    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
+    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
+    /// source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
+    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
 }
 impl std::fmt::Debug for DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7472,6 +8608,16 @@ pub struct S3KeyOutput {
     /// <p>The etag for the object.</p>
     pub etag: std::option::Option<std::string::String>,
 }
+impl S3KeyOutput {
+    /// <p>The S3 key.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+    /// <p>The etag for the object.</p>
+    pub fn etag(&self) -> std::option::Option<&str> {
+        self.etag.as_deref()
+    }
+}
 impl std::fmt::Debug for S3KeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3KeyOutput");
@@ -7544,6 +8690,36 @@ pub struct RobotDeployment {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The robot deployment failure code.</p>
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
+}
+impl RobotDeployment {
+    /// <p>The robot deployment Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
+    pub fn deployment_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deployment_start_time.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
+    pub fn deployment_finish_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deployment_finish_time.as_ref()
+    }
+    /// <p>The status of the robot deployment.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RobotStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Information about how the deployment is progressing.</p>
+    pub fn progress_detail(&self) -> std::option::Option<&crate::model::ProgressDetail> {
+        self.progress_detail.as_ref()
+    }
+    /// <p>A short description of the reason why the robot deployment failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The robot deployment failure code.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::DeploymentJobErrorCode> {
+        self.failure_code.as_ref()
+    }
 }
 impl std::fmt::Debug for RobotDeployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7721,6 +8897,54 @@ pub struct ProgressDetail {
     pub estimated_time_remaining_seconds: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     pub target_resource: std::option::Option<std::string::String>,
+}
+impl ProgressDetail {
+    /// <p>The current progress status.</p>
+    /// <dl>
+    /// <dt>Validating</dt>
+    /// <dd>
+    /// <p>Validating the deployment.</p>
+    /// </dd>
+    /// <dt>DownloadingExtracting</dt>
+    /// <dd>
+    /// <p>Downloading and extracting the bundle on the robot.</p>
+    /// </dd>
+    /// <dt>ExecutingPreLaunch</dt>
+    /// <dd>
+    /// <p>Executing pre-launch script(s) if provided.</p>
+    /// </dd>
+    /// <dt>Launching</dt>
+    /// <dd>
+    /// <p>Launching the robot application.</p>
+    /// </dd>
+    /// <dt>ExecutingPostLaunch</dt>
+    /// <dd>
+    /// <p>Executing post-launch script(s) if provided.</p>
+    /// </dd>
+    /// <dt>Finished</dt>
+    /// <dd>
+    /// <p>Deployment is complete.</p>
+    /// </dd>
+    /// </dl>
+    pub fn current_progress(&self) -> std::option::Option<&crate::model::RobotDeploymentStep> {
+        self.current_progress.as_ref()
+    }
+    /// <p>Precentage of the step that is done. This currently only applies to the
+    /// <code>Downloading/Extracting</code> step of the deployment. It is empty for other
+    /// steps.</p>
+    pub fn percent_done(&self) -> std::option::Option<f32> {
+        self.percent_done
+    }
+    /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies
+    /// to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other
+    /// steps.</p>
+    pub fn estimated_time_remaining_seconds(&self) -> std::option::Option<i32> {
+        self.estimated_time_remaining_seconds
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    pub fn target_resource(&self) -> std::option::Option<&str> {
+        self.target_resource.as_deref()
+    }
 }
 impl std::fmt::Debug for ProgressDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8023,6 +9247,116 @@ pub struct SimulationJob {
     pub network_interface: std::option::Option<crate::model::NetworkInterface>,
     /// <p>Compute information for the simulation job</p>
     pub compute: std::option::Option<crate::model::ComputeResponse>,
+}
+impl SimulationJob {
+    /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the simulation job.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Status of the simulation job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
+    /// started.</p>
+    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_started_at.as_ref()
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
+    /// updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The failure behavior the simulation job.</p>
+    /// <dl>
+    /// <dt>Continue</dt>
+    /// <dd>
+    /// <p>Leaves the host running for its maximum timeout duration after a
+    /// <code>4XX</code> error code.</p>
+    /// </dd>
+    /// <dt>Fail</dt>
+    /// <dd>
+    /// <p>Stop the simulation job and terminate the instance.</p>
+    /// </dd>
+    /// </dl>
+    pub fn failure_behavior(&self) -> std::option::Option<&crate::model::FailureBehavior> {
+        self.failure_behavior.as_ref()
+    }
+    /// <p>The failure code of the simulation job if it failed.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::SimulationJobErrorCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The reason why the simulation job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>A unique identifier for this <code>SimulationJob</code> request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Location for output files generated by the simulation job.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
+    /// <p>The logging configuration.</p>
+    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+        self.logging_config.as_ref()
+    }
+    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
+    /// seconds) or less.</p>
+    pub fn max_job_duration_in_seconds(&self) -> i64 {
+        self.max_job_duration_in_seconds
+    }
+    /// <p>The simulation job execution duration in milliseconds.</p>
+    pub fn simulation_time_millis(&self) -> i64 {
+        self.simulation_time_millis
+    }
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
+    /// in its associated policies on your behalf. This is how credentials are passed in to your
+    /// simulation job. </p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>A list of robot applications.</p>
+    pub fn robot_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::RobotApplicationConfig]> {
+        self.robot_applications.as_deref()
+    }
+    /// <p>A list of simulation applications.</p>
+    pub fn simulation_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
+        self.simulation_applications.as_deref()
+    }
+    /// <p>The data sources for the simulation job.</p>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation
+    /// job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>VPC configuration information.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Information about a network interface.</p>
+    pub fn network_interface(&self) -> std::option::Option<&crate::model::NetworkInterface> {
+        self.network_interface.as_ref()
+    }
+    /// <p>Compute information for the simulation job</p>
+    pub fn compute(&self) -> std::option::Option<&crate::model::ComputeResponse> {
+        self.compute.as_ref()
+    }
 }
 impl std::fmt::Debug for SimulationJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

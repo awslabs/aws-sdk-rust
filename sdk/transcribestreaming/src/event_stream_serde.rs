@@ -23,24 +23,21 @@ impl aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller {
             aws_smithy_eventstream::frame::HeaderValue::String("event".into()),
         ));
         let payload = match input {
-            Self::Input::AudioEvent(inner) => {
-                headers.push(aws_smithy_eventstream::frame::Header::new(
-                    ":event-type",
-                    aws_smithy_eventstream::frame::HeaderValue::String("AudioEvent".into()),
-                ));
-                headers.push(aws_smithy_eventstream::frame::Header::new(
-                    ":content-type",
-                    aws_smithy_eventstream::frame::HeaderValue::String(
-                        "application/octet-stream".into(),
-                    ),
-                ));
+            Self::Input::AudioEvent(inner) =>  {
+                headers.push(aws_smithy_eventstream::frame::Header::new(":event-type", aws_smithy_eventstream::frame::HeaderValue::String("AudioEvent".into())));
+                headers.push(aws_smithy_eventstream::frame::Header::new(":content-type", aws_smithy_eventstream::frame::HeaderValue::String("application/octet-stream".into())));
                 if let Some(inner_payload) = inner.audio_chunk {
                     inner_payload.into_inner()
-                } else {
+                }
+                 else  {
                     Vec::new()
                 }
             }
-        };
+            Self::Input::Unknown => return Err(
+                                            aws_smithy_eventstream::error::Error::Marshalling("Cannot serialize `AudioStream::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())
+                                        )
+        }
+        ;
         Ok(aws_smithy_eventstream::frame::Message::new_from_parts(
             headers, payload,
         ))
@@ -82,11 +79,9 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                         crate::model::MedicalTranscriptResultStream::TranscriptEvent(parsed),
                     ))
                 }
-                smithy_type => {
-                    return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
-                        format!("unrecognized :event-type: {}", smithy_type),
-                    ));
-                }
+                _unknown_variant => Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    crate::model::MedicalTranscriptResultStream::Unknown,
+                )),
             },
             "exception" => {
                 let generic =
@@ -213,10 +208,10 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStream
                             crate::model::TranscriptResultStream::TranscriptEvent(parsed),
                         ))
                     }
-                    smithy_type => {
-                        return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
-                            format!("unrecognized :event-type: {}", smithy_type),
-                        ));
+                    _unknown_variant => {
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                            crate::model::TranscriptResultStream::Unknown,
+                        ))
                     }
                 }
             }

@@ -9822,6 +9822,12 @@ pub struct TagOperationException {
     #[allow(missing_docs)] // documentation missing in model
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl TagOperationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TagOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagOperationException");
@@ -9905,6 +9911,12 @@ pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl TooManyTagsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyTagsException");
@@ -9987,6 +9999,12 @@ pub struct TagPolicyException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl TagPolicyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TagPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

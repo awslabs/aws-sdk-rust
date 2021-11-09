@@ -134,10 +134,7 @@ impl DeleteAlternateContactInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_alternate_contact(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -331,10 +328,7 @@ impl GetAlternateContactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_alternate_contact(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_alternate_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -579,10 +573,7 @@ impl PutAlternateContactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_alternate_contact(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_alternate_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -678,6 +669,51 @@ pub struct PutAlternateContactInput {
     /// the account whose contacts you wish to retrieve or modify.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl PutAlternateContactInput {
+    /// <p>Specifies a name for the alternate contact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies a title for the alternate contact.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>Specifies an email address for the alternate contact. </p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>Specifies a phone number for the alternate contact.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>Specifies which alternate contact you want to create or update.</p>
+    pub fn alternate_contact_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AlternateContactType> {
+        self.alternate_contact_type.as_ref()
+    }
+    /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
+    /// you want to access or modify with this operation.</p>
+    /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
+    /// identity used to call the operation.</p>
+    /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
+    /// the specified account ID must be a member account in the same organization. The
+    /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
+    /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
+    /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
+    /// assigned.</p>
+    /// <note>
+    /// <p>The management account can't specify its own <code>AccountId</code>; it must call
+    /// the operation in standalone context by not including the <code>AccountId</code>
+    /// parameter.</p>
+    /// </note>
+    /// <p>To call this operation on an account that is not a member of an organization, then
+    /// don't specify this parameter, and call the operation using an identity belonging to
+    /// the account whose contacts you wish to retrieve or modify.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAlternateContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAlternateContactInput");
@@ -717,6 +753,35 @@ pub struct DeleteAlternateContactInput {
     /// the account whose contacts you wish to retrieve or modify.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl DeleteAlternateContactInput {
+    /// <p>Specifies which of the alternate contacts to delete. </p>
+    pub fn alternate_contact_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AlternateContactType> {
+        self.alternate_contact_type.as_ref()
+    }
+    /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
+    /// you want to access or modify with this operation.</p>
+    /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
+    /// identity used to call the operation.</p>
+    /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
+    /// the specified account ID must be a member account in the same organization. The
+    /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
+    /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
+    /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
+    /// assigned.</p>
+    /// <note>
+    /// <p>The management account can't specify its own <code>AccountId</code>; it must call
+    /// the operation in standalone context by not including the <code>AccountId</code>
+    /// parameter.</p>
+    /// </note>
+    /// <p>To call this operation on an account that is not a member of an organization, then
+    /// don't specify this parameter, and call the operation using an identity belonging to
+    /// the account whose contacts you wish to retrieve or modify.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAlternateContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAlternateContactInput");
@@ -751,6 +816,35 @@ pub struct GetAlternateContactInput {
     /// don't specify this parameter, and call the operation using an identity belonging to
     /// the account whose contacts you wish to retrieve or modify.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl GetAlternateContactInput {
+    /// <p>Specifies which alternate contact you want to retrieve.</p>
+    pub fn alternate_contact_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AlternateContactType> {
+        self.alternate_contact_type.as_ref()
+    }
+    /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
+    /// you want to access or modify with this operation.</p>
+    /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
+    /// identity used to call the operation.</p>
+    /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
+    /// the specified account ID must be a member account in the same organization. The
+    /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
+    /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
+    /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
+    /// assigned.</p>
+    /// <note>
+    /// <p>The management account can't specify its own <code>AccountId</code>; it must call
+    /// the operation in standalone context by not including the <code>AccountId</code>
+    /// parameter.</p>
+    /// </note>
+    /// <p>To call this operation on an account that is not a member of an organization, then
+    /// don't specify this parameter, and call the operation using an identity belonging to
+    /// the account whose contacts you wish to retrieve or modify.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAlternateContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

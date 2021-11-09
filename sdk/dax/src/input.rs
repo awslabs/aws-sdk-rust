@@ -487,10 +487,7 @@ impl CreateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -657,10 +654,9 @@ impl CreateParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_parameter_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_parameter_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -846,10 +842,7 @@ impl CreateSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_subnet_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_subnet_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1056,10 +1049,7 @@ impl DecreaseReplicationFactorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_decrease_replication_factor(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1208,10 +1198,7 @@ impl DeleteClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1364,10 +1351,9 @@ impl DeleteParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_parameter_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_parameter_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1520,10 +1506,7 @@ impl DeleteSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_subnet_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_subnet_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1718,10 +1701,7 @@ impl DescribeClustersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_clusters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_clusters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1898,10 +1878,7 @@ impl DescribeDefaultParametersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_default_parameters(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2151,10 +2128,8 @@ impl DescribeEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2352,10 +2327,7 @@ impl DescribeParameterGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_parameter_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2558,10 +2530,7 @@ impl DescribeParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_parameters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_parameters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2756,10 +2725,9 @@ impl DescribeSubnetGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_subnet_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_subnet_groups(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2949,10 +2917,7 @@ impl IncreaseReplicationFactorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_increase_replication_factor(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3118,10 +3083,7 @@ impl ListTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3277,10 +3239,7 @@ impl RebootNodeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_node(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_node(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3453,10 +3412,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3629,10 +3585,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3887,10 +3840,7 @@ impl UpdateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4078,10 +4028,9 @@ impl UpdateParameterGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_parameter_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_parameter_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4267,10 +4216,7 @@ impl UpdateSubnetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_subnet_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_subnet_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4343,6 +4289,20 @@ pub struct UpdateSubnetGroupInput {
     /// <p>A list of subnet IDs in the subnet group.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateSubnetGroupInput {
+    /// <p>The name of the subnet group.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>A description of the subnet group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of subnet IDs in the subnet group.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubnetGroupInput");
@@ -4366,6 +4326,23 @@ pub struct UpdateParameterGroupInput {
     /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
     pub parameter_name_values: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
+}
+impl UpdateParameterGroupInput {
+    /// <p>The name of the parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>An array of name-value pairs for the parameters in the group. Each element in the
+    /// array represents a single parameter.</p>
+    /// <note>
+    /// <p>
+    /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+    /// </note>
+    pub fn parameter_name_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParameterNameValue]> {
+        self.parameter_name_values.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4400,6 +4377,41 @@ pub struct UpdateClusterInput {
     /// specified, DAX assigns the default VPC security group to each node.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateClusterInput {
+    /// <p>The name of the DAX cluster to be modified.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>A description of the changes being made to the cluster.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A range of time when maintenance of DAX cluster software will be performed. For
+    /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
+    /// 30 minutes, and is performed automatically within the maintenance window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+    pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
+        self.notification_topic_arn.as_deref()
+    }
+    /// <p>The current state of the topic. A value of “active” means that notifications will
+    /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
+    /// topic.</p>
+    pub fn notification_topic_status(&self) -> std::option::Option<&str> {
+        self.notification_topic_status.as_deref()
+    }
+    /// <p>The name of a parameter group for this cluster.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not
+    /// specified, DAX assigns the default VPC security group to each node.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterInput");
@@ -4426,6 +4438,16 @@ pub struct UntagResourceInput {
     /// <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The name of the DAX resource from which the tags should be removed.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4444,6 +4466,16 @@ pub struct TagResourceInput {
     /// <p>The tags to be assigned to the DAX resource. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The name of the DAX resource to which tags should be added.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The tags to be assigned to the DAX resource. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4461,6 +4493,16 @@ pub struct RebootNodeInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The system-assigned ID of the node to be rebooted.</p>
     pub node_id: std::option::Option<std::string::String>,
+}
+impl RebootNodeInput {
+    /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The system-assigned ID of the node to be rebooted.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RebootNodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4481,6 +4523,18 @@ pub struct ListTagsInput {
     /// results from this action. If this parameter is specified, the response includes only
     /// results beyond the token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsInput {
+    /// <p>The name of the DAX resource to which the tags belong.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4503,6 +4557,22 @@ pub struct IncreaseReplicationFactorInput {
     /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
     /// to distribute the nodes across multiple AZs.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl IncreaseReplicationFactorInput {
+    /// <p>The name of the DAX cluster that will receive additional nodes.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The new number of nodes for the DAX cluster.</p>
+    pub fn new_replication_factor(&self) -> i32 {
+        self.new_replication_factor
+    }
+    /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
+    /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
+    /// to distribute the nodes across multiple AZs.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
 }
 impl std::fmt::Debug for IncreaseReplicationFactorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4530,6 +4600,26 @@ pub struct DescribeSubnetGroupsInput {
     /// results beyond the token, up to the value specified by
     /// <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSubnetGroupsInput {
+    /// <p>The name of the subnet group.</p>
+    pub fn subnet_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_group_names.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist
+    /// than the specified <code>MaxResults</code> value, a token is included in the response so
+    /// that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by
+    /// <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSubnetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4561,6 +4651,31 @@ pub struct DescribeParametersInput {
     /// <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeParametersInput {
+    /// <p>The name of the parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>How the parameter is defined. For example, <code>system</code> denotes a
+    /// system-defined parameter.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist
+    /// than the specified <code>MaxResults</code> value, a token is included in the response so
+    /// that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by
+    /// <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeParametersInput");
@@ -4588,6 +4703,26 @@ pub struct DescribeParameterGroupsInput {
     /// results beyond the token, up to the value specified by
     /// <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeParameterGroupsInput {
+    /// <p>The names of the parameter groups.</p>
+    pub fn parameter_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.parameter_group_names.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist
+    /// than the specified <code>MaxResults</code> value, a token is included in the response so
+    /// that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by
+    /// <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeParameterGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4628,6 +4763,46 @@ pub struct DescribeEventsInput {
     /// <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEventsInput {
+    /// <p>The identifier of the event source for which events will be returned. If not
+    /// specified, then all sources are included in the response.</p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p>The event source to retrieve events for. If no value is specified, all events are
+    /// returned.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
+    /// format.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
+    /// format.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The number of minutes' worth of events to retrieve.</p>
+    pub fn duration(&self) -> std::option::Option<i32> {
+        self.duration
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist
+    /// than the specified <code>MaxResults</code> value, a token is included in the response so
+    /// that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by
+    /// <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsInput");
@@ -4657,6 +4832,22 @@ pub struct DescribeDefaultParametersInput {
     /// <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeDefaultParametersInput {
+    /// <p>The maximum number of results to include in the response. If more results exist
+    /// than the specified <code>MaxResults</code> value, a token is included in the response so
+    /// that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by
+    /// <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDefaultParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDefaultParametersInput");
@@ -4683,6 +4874,26 @@ pub struct DescribeClustersInput {
     /// <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeClustersInput {
+    /// <p>The names of the DAX clusters being described.</p>
+    pub fn cluster_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.cluster_names.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist
+    /// than the specified <code>MaxResults</code> value, a token is included in the response so
+    /// that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by
+    /// <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClustersInput");
@@ -4700,6 +4911,12 @@ pub struct DeleteSubnetGroupInput {
     /// <p>The name of the subnet group to delete.</p>
     pub subnet_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteSubnetGroupInput {
+    /// <p>The name of the subnet group to delete.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSubnetGroupInput");
@@ -4715,6 +4932,12 @@ pub struct DeleteParameterGroupInput {
     /// <p>The name of the parameter group to delete.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteParameterGroupInput {
+    /// <p>The name of the parameter group to delete.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteParameterGroupInput");
@@ -4729,6 +4952,12 @@ impl std::fmt::Debug for DeleteParameterGroupInput {
 pub struct DeleteClusterInput {
     /// <p>The name of the cluster to be deleted.</p>
     pub cluster_name: std::option::Option<std::string::String>,
+}
+impl DeleteClusterInput {
+    /// <p>The name of the cluster to be deleted.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4750,6 +4979,24 @@ pub struct DecreaseReplicationFactorInput {
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
     pub node_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DecreaseReplicationFactorInput {
+    /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The new number of nodes for the DAX cluster.</p>
+    pub fn new_replication_factor(&self) -> i32 {
+        self.new_replication_factor
+    }
+    /// <p>The Availability Zone(s) from which to remove nodes.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
+    pub fn node_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.node_ids_to_remove.as_deref()
+    }
 }
 impl std::fmt::Debug for DecreaseReplicationFactorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4773,6 +5020,20 @@ pub struct CreateSubnetGroupInput {
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateSubnetGroupInput {
+    /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>A description for the subnet group</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of VPC subnet IDs for the subnet group.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSubnetGroupInput");
@@ -4792,6 +5053,17 @@ pub struct CreateParameterGroupInput {
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A description of the parameter group.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl CreateParameterGroupInput {
+    /// <p>The name of the parameter group to apply to all of the clusters in this replication
+    /// group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>A description of the parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4931,6 +5203,162 @@ pub struct CreateClusterInput {
     /// </ul>
     pub cluster_endpoint_encryption_type:
         std::option::Option<crate::model::ClusterEndpointEncryptionType>,
+}
+impl CreateClusterInput {
+    /// <p>The cluster identifier. This parameter is stored as a lowercase
+    /// string.</p>
+    /// <p>
+    /// <b>Constraints:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A name must contain from 1 to 20 alphanumeric characters or
+    /// hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>A name cannot end with a hyphen or contain two consecutive
+    /// hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The compute and memory capacity of the nodes in the cluster.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>A description of the cluster.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
+    /// create a single-node cluster, without any read replicas. For additional fault tolerance,
+    /// you can create a multiple node cluster with one or more read replicas. To do this, set
+    /// <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas).
+    /// <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p>
+    /// <note>
+    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// </note>
+    pub fn replication_factor(&self) -> i32 {
+        self.replication_factor
+    }
+    /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
+    /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter.
+    /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The name of the subnet group to be used for the replication group.</p>
+    /// <important>
+    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
+    /// that you specify in a subnet group must exist in the same VPC.</p>
+    /// </important>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the
+    /// security group ID is system-generated.)</p>
+    /// <p>If this parameter is not specified, DAX assigns the default VPC security group to
+    /// each node.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
+    /// performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock
+    /// UTC). The minimum maintenance window is a 60 minute period. Valid values for
+    /// <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sun</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>tue</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>wed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>thu</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>fri</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sat</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code>
+    /// </p>
+    /// <note>
+    /// <p>If you don't specify a preferred maintenance window when you create or modify a
+    /// cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day
+    /// of the week.</p>
+    /// </note>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
+    /// be sent.</p>
+    /// <note>
+    /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
+    /// </note>
+    pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
+        self.notification_topic_arn.as_deref()
+    }
+    /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
+    /// will assume this role and use the role's permissions to access DynamoDB on your
+    /// behalf.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The parameter group to be associated with the DAX cluster.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>A set of tags to associate with the DAX cluster.  </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
+    pub fn sse_specification(&self) -> std::option::Option<&crate::model::SseSpecification> {
+        self.sse_specification.as_ref()
+    }
+    /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> for no encryption</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TLS</code> for Transport Layer Security</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_endpoint_encryption_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterEndpointEncryptionType> {
+        self.cluster_endpoint_encryption_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

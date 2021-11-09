@@ -102,7 +102,7 @@ impl BatchDetectDominantLanguageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_detect_dominant_language(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_detect_dominant_language(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -283,10 +283,7 @@ impl BatchDetectEntitiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_detect_entities(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_detect_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -468,10 +465,7 @@ impl BatchDetectKeyPhrasesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_detect_key_phrases(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -651,10 +645,9 @@ impl BatchDetectSentimentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_detect_sentiment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_detect_sentiment(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -836,10 +829,7 @@ impl BatchDetectSyntaxInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_detect_syntax(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_detect_syntax(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1001,10 +991,7 @@ impl ClassifyDocumentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_classify_document(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_classify_document(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1171,10 +1158,7 @@ impl ContainsPiiEntitiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_contains_pii_entities(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_contains_pii_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1591,10 +1575,7 @@ impl CreateDocumentClassifierInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_document_classifier(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1844,10 +1825,8 @@ impl CreateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2227,10 +2206,7 @@ impl CreateEntityRecognizerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_entity_recognizer(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2386,10 +2362,7 @@ impl DeleteDocumentClassifierInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_document_classifier(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2538,10 +2511,8 @@ impl DeleteEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2696,10 +2667,7 @@ impl DeleteEntityRecognizerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_entity_recognizer(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2852,7 +2820,7 @@ impl DescribeDocumentClassificationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_document_classification_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_document_classification_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3011,10 +2979,7 @@ impl DescribeDocumentClassifierInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_document_classifier(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3168,7 +3133,7 @@ impl DescribeDominantLanguageDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_dominant_language_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_dominant_language_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3319,10 +3284,7 @@ impl DescribeEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3475,7 +3437,7 @@ impl DescribeEntitiesDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_entities_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_entities_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3632,10 +3594,7 @@ impl DescribeEntityRecognizerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_entity_recognizer(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3786,7 +3745,7 @@ impl DescribeEventsDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_events_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_events_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3940,7 +3899,7 @@ impl DescribeKeyPhrasesDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_key_phrases_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_key_phrases_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4094,7 +4053,7 @@ impl DescribePiiEntitiesDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_pii_entities_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_pii_entities_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4248,7 +4207,7 @@ impl DescribeSentimentDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_sentiment_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_sentiment_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4400,7 +4359,7 @@ impl DescribeTopicsDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_topics_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_topics_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4553,10 +4512,7 @@ impl DetectDominantLanguageInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_dominant_language(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4750,10 +4706,8 @@ impl DetectEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_entities(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_detect_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4922,10 +4876,7 @@ impl DetectKeyPhrasesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_key_phrases(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detect_key_phrases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5092,10 +5043,7 @@ impl DetectPiiEntitiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_pii_entities(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detect_pii_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5264,10 +5212,7 @@ impl DetectSentimentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_sentiment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detect_sentiment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5437,10 +5382,7 @@ impl DetectSyntaxInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_syntax(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detect_syntax(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5620,7 +5562,7 @@ impl ListDocumentClassificationJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_document_classification_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_document_classification_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5803,10 +5745,7 @@ impl ListDocumentClassifiersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_document_classifiers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5969,7 +5908,7 @@ impl ListDocumentClassifierSummariesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_document_classifier_summaries(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_document_classifier_summaries(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6150,7 +6089,7 @@ impl ListDominantLanguageDetectionJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_dominant_language_detection_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_dominant_language_detection_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6331,10 +6270,7 @@ impl ListEndpointsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6516,10 +6452,7 @@ impl ListEntitiesDetectionJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_entities_detection_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6702,10 +6635,7 @@ impl ListEntityRecognizersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_entity_recognizers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6868,7 +6798,7 @@ impl ListEntityRecognizerSummariesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_entity_recognizer_summaries(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_entity_recognizer_summaries(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7051,10 +6981,7 @@ impl ListEventsDetectionJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_events_detection_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7234,7 +7161,7 @@ impl ListKeyPhrasesDetectionJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_key_phrases_detection_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_key_phrases_detection_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7415,7 +7342,7 @@ impl ListPiiEntitiesDetectionJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_pii_entities_detection_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_pii_entities_detection_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7596,7 +7523,7 @@ impl ListSentimentDetectionJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_sentiment_detection_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_sentiment_detection_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7749,10 +7676,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7934,10 +7860,7 @@ impl ListTopicsDetectionJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_topics_detection_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8259,7 +8182,7 @@ impl StartDocumentClassificationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_document_classification_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_document_classification_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8563,7 +8486,7 @@ impl StartDominantLanguageDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_dominant_language_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_dominant_language_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8909,10 +8832,7 @@ impl StartEntitiesDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_entities_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9193,10 +9113,7 @@ impl StartEventsDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_events_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9518,7 +9435,7 @@ impl StartKeyPhrasesDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_key_phrases_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_key_phrases_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9815,7 +9732,7 @@ impl StartPiiEntitiesDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_pii_entities_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_pii_entities_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10136,7 +10053,7 @@ impl StartSentimentDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_sentiment_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_sentiment_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10458,10 +10375,7 @@ impl StartTopicsDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_topics_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10612,7 +10526,7 @@ impl StopDominantLanguageDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_dominant_language_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_dominant_language_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10766,10 +10680,7 @@ impl StopEntitiesDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_entities_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10921,10 +10832,7 @@ impl StopEventsDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_events_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11075,7 +10983,7 @@ impl StopKeyPhrasesDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_key_phrases_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_key_phrases_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11227,7 +11135,7 @@ impl StopPiiEntitiesDetectionJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_pii_entities_detection_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_pii_entities_detection_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11381,10 +11289,7 @@ impl StopSentimentDetectionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_sentiment_detection_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11540,7 +11445,7 @@ impl StopTrainingDocumentClassifierInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_training_document_classifier(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_training_document_classifier(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11697,7 +11602,7 @@ impl StopTrainingEntityRecognizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_training_entity_recognizer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_training_entity_recognizer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11872,10 +11777,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12053,10 +11955,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12254,10 +12153,8 @@ impl UpdateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12334,6 +12231,26 @@ pub struct UpdateEndpointInput {
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
     pub desired_data_access_role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateEndpointInput {
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
+    pub fn desired_model_arn(&self) -> std::option::Option<&str> {
+        self.desired_model_arn.as_deref()
+    }
+    /// <p> The desired number of inference units to be used by the model using this endpoint.
+    ///
+    /// Each inference unit represents of a throughput of 100 characters per second.</p>
+    pub fn desired_inference_units(&self) -> std::option::Option<i32> {
+        self.desired_inference_units
+    }
+    /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
+    pub fn desired_data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.desired_data_access_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEndpointInput");
@@ -12361,6 +12278,20 @@ pub struct UntagResourceInput {
     /// </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you
+    /// want to remove the tags. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource.
+    /// For example, a tag with "Sales" as the key might be added to a resource to indicate its use by
+    /// the sales department. Keys must be unique and cannot be duplicated for a particular resource.
+    /// </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -12381,6 +12312,18 @@ pub struct TagResourceInput {
     /// of 50 tags (both existing and pending) associated with a specific resource. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want
+    /// to associate the tags. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
+    /// of 50 tags (both existing and pending) associated with a specific resource. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -12398,6 +12341,13 @@ pub struct StopTrainingEntityRecognizerInput {
     /// trained.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
 }
+impl StopTrainingEntityRecognizerInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being
+    /// trained.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StopTrainingEntityRecognizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTrainingEntityRecognizerInput");
@@ -12414,6 +12364,13 @@ pub struct StopTrainingDocumentClassifierInput {
     /// trained.</p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
+impl StopTrainingDocumentClassifierInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being
+    /// trained.</p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StopTrainingDocumentClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTrainingDocumentClassifierInput");
@@ -12428,6 +12385,12 @@ impl std::fmt::Debug for StopTrainingDocumentClassifierInput {
 pub struct StopSentimentDetectionJobInput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopSentimentDetectionJobInput {
+    /// <p>The identifier of the sentiment detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopSentimentDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12444,6 +12407,12 @@ pub struct StopPiiEntitiesDetectionJobInput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopPiiEntitiesDetectionJobInput {
+    /// <p>The identifier of the PII entities detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopPiiEntitiesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopPiiEntitiesDetectionJobInput");
@@ -12458,6 +12427,12 @@ impl std::fmt::Debug for StopPiiEntitiesDetectionJobInput {
 pub struct StopKeyPhrasesDetectionJobInput {
     /// <p>The identifier of the key phrases detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopKeyPhrasesDetectionJobInput {
+    /// <p>The identifier of the key phrases detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopKeyPhrasesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12474,6 +12449,12 @@ pub struct StopEventsDetectionJobInput {
     /// <p>The identifier of the events detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopEventsDetectionJobInput {
+    /// <p>The identifier of the events detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopEventsDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopEventsDetectionJobInput");
@@ -12489,6 +12470,12 @@ pub struct StopEntitiesDetectionJobInput {
     /// <p>The identifier of the entities detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopEntitiesDetectionJobInput {
+    /// <p>The identifier of the entities detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopEntitiesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopEntitiesDetectionJobInput");
@@ -12503,6 +12490,12 @@ impl std::fmt::Debug for StopEntitiesDetectionJobInput {
 pub struct StopDominantLanguageDetectionJobInput {
     /// <p>The identifier of the dominant language detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopDominantLanguageDetectionJobInput {
+    /// <p>The identifier of the dominant language detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopDominantLanguageDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12555,6 +12548,65 @@ pub struct StartTopicsDetectionJobInput {
     /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
     /// might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StartTopicsDetectionJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files. The output is a compressed archive with two
+    /// files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
+    /// <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+    /// that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The number of topics to detect.</p>
+    pub fn number_of_topics(&self) -> std::option::Option<i32> {
+        self.number_of_topics
+    }
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
+    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
+    /// might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for StartTopicsDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12615,6 +12667,64 @@ pub struct StartSentimentDetectionJobInput {
     /// key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl StartSentimentDetectionJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files. </p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
+    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
+    /// key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for StartSentimentDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSentimentDetectionJobInput");
@@ -12661,6 +12771,52 @@ pub struct StartPiiEntitiesDetectionJobInput {
     /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
     /// key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StartPiiEntitiesDetectionJobInput {
+    /// <p>The input properties for a PII entities detection job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
+    /// which PII entities are redacted.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::PiiEntitiesDetectionMode> {
+        self.mode.as_ref()
+    }
+    /// <p>Provides configuration parameters for PII entity redaction.</p>
+    /// <p>This parameter is required if you set the <code>Mode</code> parameter to
+    /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
+    /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+    pub fn redaction_config(&self) -> std::option::Option<&crate::model::RedactionConfig> {
+        self.redaction_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The language of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
+    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
+    /// key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for StartPiiEntitiesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12722,6 +12878,65 @@ pub struct StartKeyPhrasesDetectionJobInput {
     /// key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl StartKeyPhrasesDetectionJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your key phrases detection job. For more information, see
+    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
+    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
+    /// key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for StartKeyPhrasesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartKeyPhrasesDetectionJobInput");
@@ -12762,6 +12977,44 @@ pub struct StartEventsDetectionJobInput {
     /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
     /// might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StartEventsDetectionJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the events detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The types of events to detect in the input documents.</p>
+    pub fn target_event_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_event_types.as_deref()
+    }
+    /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
+    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
+    /// might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for StartEventsDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12827,6 +13080,72 @@ pub struct StartEntitiesDetectionJobInput {
     /// might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl StartEntitiesDetectionJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used
+    /// by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a
+    /// custom entity recognition job.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
+    /// <p>The language of the input documents. All documents must be in the same language. You can
+    /// specify any of the languages supported by Amazon Comprehend. If custom entities recognition is
+    /// used, this parameter is ignored and the language used for training the model is used
+    /// instead.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
+    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
+    /// might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for StartEntitiesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartEntitiesDetectionJobInput");
@@ -12883,6 +13202,59 @@ pub struct StartDominantLanguageDetectionJobInput {
     /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
     /// the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StartDominantLanguageDetectionJobInput {
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>An identifier for the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your dominant language detection job. For more information,
+    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
+    /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
+    /// the key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDominantLanguageDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12943,6 +13315,65 @@ pub struct StartDocumentClassificationJobInput {
     /// key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl StartDocumentClassificationJobInput {
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the
+    /// job.</p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
+    }
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your document classification job. For more information, see
+    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
+    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
+    /// key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDocumentClassificationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDocumentClassificationJobInput");
@@ -12971,6 +13402,21 @@ pub struct ListTopicsDetectionJobsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTopicsDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the
+    /// date and time that they were submitted. You can set only one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::TopicsDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTopicsDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTopicsDetectionJobsInput");
@@ -12988,6 +13434,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
     /// </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13008,6 +13461,21 @@ pub struct ListSentimentDetectionJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListSentimentDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
+    /// and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::SentimentDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListSentimentDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13031,6 +13499,21 @@ pub struct ListPiiEntitiesDetectionJobsInput {
     /// <p>The maximum number of results to return in each page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPiiEntitiesDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
+    /// and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::PiiEntitiesDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPiiEntitiesDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPiiEntitiesDetectionJobsInput");
@@ -13052,6 +13535,21 @@ pub struct ListKeyPhrasesDetectionJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListKeyPhrasesDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
+    /// and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::KeyPhrasesDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListKeyPhrasesDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13075,6 +13573,21 @@ pub struct ListEventsDetectionJobsInput {
     /// <p>The maximum number of results to return in each page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEventsDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
+    /// and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EventsDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEventsDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventsDetectionJobsInput");
@@ -13093,6 +13606,16 @@ pub struct ListEntityRecognizerSummariesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return on each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEntityRecognizerSummariesInput {
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEntityRecognizerSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13116,6 +13639,22 @@ pub struct ListEntityRecognizersInput {
     /// <p> The maximum number of results to return on each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEntityRecognizersInput {
+    /// <p>Filters the list of entities returned. You can filter on <code>Status</code>,
+    /// <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter
+    /// at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EntityRecognizerFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of results to return on each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEntityRecognizersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntityRecognizersInput");
@@ -13137,6 +13676,21 @@ pub struct ListEntitiesDetectionJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEntitiesDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
+    /// and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EntitiesDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEntitiesDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13161,6 +13715,22 @@ pub struct ListEndpointsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEndpointsInput {
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model,
+    /// status, or the date and time that they were created. You can only set one filter at a time.
+    /// </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EndpointFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointsInput");
@@ -13183,6 +13753,21 @@ pub struct ListDominantLanguageDetectionJobsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDominantLanguageDetectionJobsInput {
+    /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the
+    /// date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::DominantLanguageDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDominantLanguageDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDominantLanguageDetectionJobsInput");
@@ -13201,6 +13786,16 @@ pub struct ListDocumentClassifierSummariesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return on each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDocumentClassifierSummariesInput {
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return on each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDocumentClassifierSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13222,6 +13817,21 @@ pub struct ListDocumentClassifiersInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDocumentClassifiersInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
+    /// and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::DocumentClassifierFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDocumentClassifiersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13245,6 +13855,21 @@ pub struct ListDocumentClassificationJobsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDocumentClassificationJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the
+    /// date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::DocumentClassificationJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDocumentClassificationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDocumentClassificationJobsInput");
@@ -13267,6 +13892,19 @@ pub struct DetectSyntaxInput {
     /// Italian ("it"), or Portuguese ("pt").</p>
     pub language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
 }
+impl DetectSyntaxInput {
+    /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
+    /// characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The language code of the input documents. You can specify any of the following languages
+    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
+    /// Italian ("it"), or Portuguese ("pt").</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::SyntaxLanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for DetectSyntaxInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSyntaxInput");
@@ -13287,6 +13925,18 @@ pub struct DetectSentimentInput {
     /// supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
+impl DetectSentimentInput {
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for DetectSentimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSentimentInput");
@@ -13305,6 +13955,17 @@ pub struct DetectPiiEntitiesInput {
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl DetectPiiEntitiesInput {
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The language of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectPiiEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13325,6 +13986,18 @@ pub struct DetectKeyPhrasesInput {
     /// <p>The language of the input documents. You can specify any of the primary languages
     /// supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl DetectKeyPhrasesInput {
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectKeyPhrasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13355,6 +14028,29 @@ pub struct DetectEntitiesInput {
     /// it ignores any language code that you provide in your request.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl DetectEntitiesInput {
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon
+    /// Comprehend uses the language of your custom model, and it ignores any language code that you
+    /// specify here.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity
+    /// recognition model. Provide an endpoint if you want to detect entities by using your own custom
+    /// model instead of the default model that is used by Amazon Comprehend.</p>
+    /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and
+    /// it ignores any language code that you provide in your request.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectEntitiesInput");
@@ -13373,6 +14069,13 @@ pub struct DetectDominantLanguageInput {
     /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
+impl DetectDominantLanguageInput {
+    /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain
+    /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectDominantLanguageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDominantLanguageInput");
@@ -13387,6 +14090,12 @@ impl std::fmt::Debug for DetectDominantLanguageInput {
 pub struct DescribeTopicsDetectionJobInput {
     /// <p>The identifier assigned by the user to the detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeTopicsDetectionJobInput {
+    /// <p>The identifier assigned by the user to the detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTopicsDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13404,6 +14113,13 @@ pub struct DescribeSentimentDetectionJobInput {
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeSentimentDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSentimentDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSentimentDetectionJobInput");
@@ -13419,6 +14135,13 @@ pub struct DescribePiiEntitiesDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribePiiEntitiesDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePiiEntitiesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13436,6 +14159,13 @@ pub struct DescribeKeyPhrasesDetectionJobInput {
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeKeyPhrasesDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeKeyPhrasesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeKeyPhrasesDetectionJobInput");
@@ -13451,6 +14181,12 @@ pub struct DescribeEventsDetectionJobInput {
     /// <p>The identifier of the events detection job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeEventsDetectionJobInput {
+    /// <p>The identifier of the events detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsDetectionJobInput");
@@ -13465,6 +14201,12 @@ impl std::fmt::Debug for DescribeEventsDetectionJobInput {
 pub struct DescribeEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
+}
+impl DescribeEntityRecognizerInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEntityRecognizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13482,6 +14224,13 @@ pub struct DescribeEntitiesDetectionJobInput {
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeEntitiesDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEntitiesDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEntitiesDetectionJobInput");
@@ -13496,6 +14245,12 @@ impl std::fmt::Debug for DescribeEntitiesDetectionJobInput {
 pub struct DescribeEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointInput {
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13513,6 +14268,13 @@ pub struct DescribeDominantLanguageDetectionJobInput {
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeDominantLanguageDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDominantLanguageDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDominantLanguageDetectionJobInput");
@@ -13528,6 +14290,13 @@ pub struct DescribeDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
     /// response.</p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
+}
+impl DescribeDocumentClassifierInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
+    /// response.</p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDocumentClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13545,6 +14314,13 @@ pub struct DescribeDocumentClassificationJobInput {
     /// response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeDocumentClassificationJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
+    /// response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDocumentClassificationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDocumentClassificationJobInput");
@@ -13559,6 +14335,12 @@ impl std::fmt::Debug for DescribeDocumentClassificationJobInput {
 pub struct DeleteEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
+}
+impl DeleteEntityRecognizerInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+        self.entity_recognizer_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEntityRecognizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13575,6 +14357,12 @@ pub struct DeleteEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl DeleteEndpointInput {
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEndpointInput");
@@ -13589,6 +14377,12 @@ impl std::fmt::Debug for DeleteEndpointInput {
 pub struct DeleteDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
+}
+impl DeleteDocumentClassifierInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+        self.document_classifier_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDocumentClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13663,6 +14457,90 @@ pub struct CreateEntityRecognizerInput {
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
 }
+impl CreateEntityRecognizerInput {
+    /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256
+    /// characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name
+    /// must be unique in the account/region.</p>
+    pub fn recognizer_name(&self) -> std::option::Option<&str> {
+        self.recognizer_name.as_deref()
+    }
+    /// <p>The version name given to the newly created recognizer.
+    /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
+    /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+    /// Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair
+    /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
+    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies the format and location of the input data. The S3 bucket containing the input
+    /// data must be located in the same region as the entity recognizer being created. </p>
+    pub fn input_data_config(
+        &self,
+    ) -> std::option::Option<&crate::model::EntityRecognizerInputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p> You can specify any of the following languages supported by Amazon Comprehend: English
+    /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt").
+    /// All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your custom entity recognizer. For more information, see
+    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// trained custom models. The ModelKmsKeyId can be either of the following formats</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
+        self.model_kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEntityRecognizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEntityRecognizerInput");
@@ -13706,6 +14584,42 @@ pub struct CreateEndpointInput {
     /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
     /// managed key (ModelKmsKeyId).</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
+}
+impl CreateEndpointInput {
+    /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for
+    /// all subsequent requests to this resource. </p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be
+    /// attached.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p> The desired number of inference units to be used by the model using this endpoint.
+    ///
+    /// Each inference unit represents of a throughput of 100 characters per second.</p>
+    pub fn desired_inference_units(&self) -> std::option::Option<i32> {
+        self.desired_inference_units
+    }
+    /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint
+    /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
+    /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
+    /// endpoint to indicate its use by the sales department. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
+    /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
+    /// managed key (ModelKmsKeyId).</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13790,6 +14704,101 @@ pub struct CreateDocumentClassifierInput {
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
 }
+impl CreateDocumentClassifierInput {
+    /// <p>The name of the document classifier.</p>
+    pub fn document_classifier_name(&self) -> std::option::Option<&str> {
+        self.document_classifier_name.as_deref()
+    }
+    /// <p>The version name given to the newly created classifier.
+    /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
+    /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+    /// Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>Tags to be associated with the document classifier being created. A tag is a key-value
+    /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
+    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies the format and location of the input data for the job.</p>
+    pub fn input_data_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentClassifierInputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Enables the addition of output results configuration parameters for custom classifier
+    /// jobs.</p>
+    pub fn output_data_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentClassifierOutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
+    /// Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the following languages
+    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
+    /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+    /// the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained
+    /// in multi-class mode, which identifies one and only one class for each document, or multi-label
+    /// mode, which identifies one or more labels for each document. In multi-label mode, multiple
+    /// labels for an individual document are separated by a delimiter. The default delimiter between
+    /// labels is a pipe (|).</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::DocumentClassifierMode> {
+        self.mode.as_ref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+    /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN) of a KMS Key:
+    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
+        self.model_kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDocumentClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDocumentClassifierInput");
@@ -13819,6 +14828,17 @@ pub struct ContainsPiiEntitiesInput {
     /// <p>The language of the input documents.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
+impl ContainsPiiEntitiesInput {
+    /// <p>Creates a new document classification request to analyze a single document in real-time,
+    /// returning personally identifiable information (PII) entity labels.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The language of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for ContainsPiiEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContainsPiiEntitiesInput");
@@ -13836,6 +14856,16 @@ pub struct ClassifyDocumentInput {
     pub text: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
+}
+impl ClassifyDocumentInput {
+    /// <p>The document text to be analyzed.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ClassifyDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13859,6 +14889,20 @@ pub struct BatchDetectSyntaxInput {
     /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
 }
+impl BatchDetectSyntaxInput {
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
+    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.text_list.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the following languages
+    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
+    /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::SyntaxLanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDetectSyntaxInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectSyntaxInput");
@@ -13879,6 +14923,19 @@ pub struct BatchDetectSentimentInput {
     /// <p>The language of the input documents. You can specify any of the primary languages
     /// supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl BatchDetectSentimentInput {
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
+    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.text_list.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchDetectSentimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13901,6 +14958,19 @@ pub struct BatchDetectKeyPhrasesInput {
     /// supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
+impl BatchDetectKeyPhrasesInput {
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
+    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.text_list.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDetectKeyPhrasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectKeyPhrasesInput");
@@ -13922,6 +14992,19 @@ pub struct BatchDetectEntitiesInput {
     /// supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
+impl BatchDetectEntitiesInput {
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
+    /// documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
+    /// characters.</p>
+    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.text_list.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages
+    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDetectEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectEntitiesInput");
@@ -13939,6 +15022,14 @@ pub struct BatchDetectDominantLanguageInput {
     /// documents. Each document should contain at least 20 characters and must contain fewer than
     /// 5,000 bytes of UTF-8 encoded characters.</p>
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDetectDominantLanguageInput {
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
+    /// documents. Each document should contain at least 20 characters and must contain fewer than
+    /// 5,000 bytes of UTF-8 encoded characters.</p>
+    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.text_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetectDominantLanguageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

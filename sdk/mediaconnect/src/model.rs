@@ -29,6 +29,58 @@ pub struct Source {
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub whitelist_cidr: std::option::Option<std::string::String>,
 }
+impl Source {
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+        self.data_transfer_subscriber_fee_percent
+    }
+    /// The type of encryption that is used on the content ingested from this source.
+    pub fn decryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.decryption.as_ref()
+    }
+    /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// The IP address that the flow will be listening on for incoming content.
+    pub fn ingest_ip(&self) -> std::option::Option<&str> {
+        self.ingest_ip.as_deref()
+    }
+    /// The port that the flow will be listening on for incoming content.
+    pub fn ingest_port(&self) -> i32 {
+        self.ingest_port
+    }
+    /// The media streams that are associated with the source, and the parameters for those associations.
+    pub fn media_stream_source_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamSourceConfiguration]> {
+        self.media_stream_source_configurations.as_deref()
+    }
+    /// The name of the source.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The ARN of the source.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// Attributes related to the transport stream that are used in the source.
+    pub fn transport(&self) -> std::option::Option<&crate::model::Transport> {
+        self.transport.as_ref()
+    }
+    /// The name of the VPC interface that is used for this source.
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+        self.vpc_interface_name.as_deref()
+    }
+    /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
+        self.whitelist_cidr.as_deref()
+    }
+}
 impl std::fmt::Debug for Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Source");
@@ -274,6 +326,44 @@ pub struct Transport {
     pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     pub stream_id: std::option::Option<std::string::String>,
+}
+impl Transport {
+    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn cidr_allow_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.cidr_allow_list.as_deref()
+    }
+    /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    pub fn max_latency(&self) -> i32 {
+        self.max_latency
+    }
+    /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    pub fn max_sync_buffer(&self) -> i32 {
+        self.max_sync_buffer
+    }
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub fn min_latency(&self) -> i32 {
+        self.min_latency
+    }
+    /// The protocol that is used by the source or output.
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// The remote ID for the Zixi-pull stream.
+    pub fn remote_id(&self) -> std::option::Option<&str> {
+        self.remote_id.as_deref()
+    }
+    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    pub fn smoothing_latency(&self) -> i32 {
+        self.smoothing_latency
+    }
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Transport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -528,6 +618,20 @@ pub struct MediaStreamSourceConfiguration {
     /// The name of the media stream.
     pub media_stream_name: std::option::Option<std::string::String>,
 }
+impl MediaStreamSourceConfiguration {
+    /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+        self.encoding_name.as_ref()
+    }
+    /// The transport parameters that are associated with an incoming media stream.
+    pub fn input_configurations(&self) -> std::option::Option<&[crate::model::InputConfiguration]> {
+        self.input_configurations.as_deref()
+    }
+    /// The name of the media stream.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
+}
 impl std::fmt::Debug for MediaStreamSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MediaStreamSourceConfiguration");
@@ -625,6 +729,20 @@ pub struct InputConfiguration {
     /// The VPC interface where the media stream comes in from.
     pub interface: std::option::Option<crate::model::Interface>,
 }
+impl InputConfiguration {
+    /// The IP address that the flow listens on for incoming content for a media stream.
+    pub fn input_ip(&self) -> std::option::Option<&str> {
+        self.input_ip.as_deref()
+    }
+    /// The port that the flow listens on for an incoming media stream.
+    pub fn input_port(&self) -> i32 {
+        self.input_port
+    }
+    /// The VPC interface where the media stream comes in from.
+    pub fn interface(&self) -> std::option::Option<&crate::model::Interface> {
+        self.interface.as_ref()
+    }
+}
 impl std::fmt::Debug for InputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputConfiguration");
@@ -701,6 +819,12 @@ impl InputConfiguration {
 pub struct Interface {
     /// The name of the VPC interface.
     pub name: std::option::Option<std::string::String>,
+}
+impl Interface {
+    /// The name of the VPC interface.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for Interface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -826,6 +950,44 @@ pub struct Encryption {
     pub secret_arn: std::option::Option<std::string::String>,
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub url: std::option::Option<std::string::String>,
+}
+impl Encryption {
+    /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
+    pub fn algorithm(&self) -> std::option::Option<&crate::model::Algorithm> {
+        self.algorithm.as_ref()
+    }
+    /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
+        self.key_type.as_ref()
+    }
+    /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for Encryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1114,6 +1276,22 @@ pub struct MediaStreamSourceConfigurationRequest {
     /// The name of the media stream.
     pub media_stream_name: std::option::Option<std::string::String>,
 }
+impl MediaStreamSourceConfigurationRequest {
+    /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+        self.encoding_name.as_ref()
+    }
+    /// The transport parameters that you want to associate with the media stream.
+    pub fn input_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::InputConfigurationRequest]> {
+        self.input_configurations.as_deref()
+    }
+    /// The name of the media stream.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
+}
 impl std::fmt::Debug for MediaStreamSourceConfigurationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MediaStreamSourceConfigurationRequest");
@@ -1209,6 +1387,16 @@ pub struct InputConfigurationRequest {
     /// The VPC interface that you want to use for the incoming media stream.
     pub interface: std::option::Option<crate::model::InterfaceRequest>,
 }
+impl InputConfigurationRequest {
+    /// The port that you want the flow to listen on for an incoming media stream.
+    pub fn input_port(&self) -> i32 {
+        self.input_port
+    }
+    /// The VPC interface that you want to use for the incoming media stream.
+    pub fn interface(&self) -> std::option::Option<&crate::model::InterfaceRequest> {
+        self.interface.as_ref()
+    }
+}
 impl std::fmt::Debug for InputConfigurationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputConfigurationRequest");
@@ -1273,6 +1461,12 @@ pub struct InterfaceRequest {
     /// The name of the VPC interface.
     pub name: std::option::Option<std::string::String>,
 }
+impl InterfaceRequest {
+    /// The name of the VPC interface.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for InterfaceRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InterfaceRequest");
@@ -1334,6 +1528,44 @@ pub struct UpdateEncryption {
     pub secret_arn: std::option::Option<std::string::String>,
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
     pub url: std::option::Option<std::string::String>,
+}
+impl UpdateEncryption {
+    /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
+    pub fn algorithm(&self) -> std::option::Option<&crate::model::Algorithm> {
+        self.algorithm.as_ref()
+    }
+    /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
+        self.key_type.as_ref()
+    }
+    /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1523,6 +1755,64 @@ pub struct Output {
     pub transport: std::option::Option<crate::model::Transport>,
     /// The name of the VPC interface attachment to use for this output.
     pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
+}
+impl Output {
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+        self.data_transfer_subscriber_fee_percent
+    }
+    /// A description of the output.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The address where you want to send the output.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.encryption.as_ref()
+    }
+    /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+    pub fn listener_address(&self) -> std::option::Option<&str> {
+        self.listener_address.as_deref()
+    }
+    /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
+    pub fn media_live_input_arn(&self) -> std::option::Option<&str> {
+        self.media_live_input_arn.as_deref()
+    }
+    /// The configuration for each media stream that is associated with the output.
+    pub fn media_stream_output_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamOutputConfiguration]> {
+        self.media_stream_output_configurations.as_deref()
+    }
+    /// The name of the output. This value must be unique within the current flow.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The ARN of the output.
+    pub fn output_arn(&self) -> std::option::Option<&str> {
+        self.output_arn.as_deref()
+    }
+    /// The port to use when content is distributed to this output.
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// Attributes related to the transport stream that are used in the output.
+    pub fn transport(&self) -> std::option::Option<&crate::model::Transport> {
+        self.transport.as_ref()
+    }
+    /// The name of the VPC interface attachment to use for this output.
+    pub fn vpc_interface_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
+        self.vpc_interface_attachment.as_ref()
+    }
 }
 impl std::fmt::Debug for Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1774,6 +2064,12 @@ pub struct VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this output.
     pub vpc_interface_name: std::option::Option<std::string::String>,
 }
+impl VpcInterfaceAttachment {
+    /// The name of the VPC interface to use for this output.
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+        self.vpc_interface_name.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcInterfaceAttachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcInterfaceAttachment");
@@ -1831,6 +2127,26 @@ pub struct MediaStreamOutputConfiguration {
     pub encoding_parameters: std::option::Option<crate::model::EncodingParameters>,
     /// The name of the media stream.
     pub media_stream_name: std::option::Option<std::string::String>,
+}
+impl MediaStreamOutputConfiguration {
+    /// The transport parameters that are associated with each outbound media stream.
+    pub fn destination_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationConfiguration]> {
+        self.destination_configurations.as_deref()
+    }
+    /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+        self.encoding_name.as_ref()
+    }
+    /// Encoding parameters
+    pub fn encoding_parameters(&self) -> std::option::Option<&crate::model::EncodingParameters> {
+        self.encoding_parameters.as_ref()
+    }
+    /// The name of the media stream.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
 }
 impl std::fmt::Debug for MediaStreamOutputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1945,6 +2261,16 @@ pub struct EncodingParameters {
     pub compression_factor: f64,
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
     pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
+}
+impl EncodingParameters {
+    /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+    pub fn compression_factor(&self) -> f64 {
+        self.compression_factor
+    }
+    /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
+    pub fn encoder_profile(&self) -> std::option::Option<&crate::model::EncoderProfile> {
+        self.encoder_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for EncodingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2071,6 +2397,24 @@ pub struct DestinationConfiguration {
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
     pub outbound_ip: std::option::Option<std::string::String>,
 }
+impl DestinationConfiguration {
+    /// The IP address where contents of the media stream will be sent.
+    pub fn destination_ip(&self) -> std::option::Option<&str> {
+        self.destination_ip.as_deref()
+    }
+    /// The port to use when the content of the media stream is distributed to the output.
+    pub fn destination_port(&self) -> i32 {
+        self.destination_port
+    }
+    /// The VPC interface that is used for the media stream associated with the output.
+    pub fn interface(&self) -> std::option::Option<&crate::model::Interface> {
+        self.interface.as_ref()
+    }
+    /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
+    pub fn outbound_ip(&self) -> std::option::Option<&str> {
+        self.outbound_ip.as_deref()
+    }
+}
 impl std::fmt::Debug for DestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationConfiguration");
@@ -2170,6 +2514,28 @@ pub struct MediaStreamOutputConfigurationRequest {
     pub encoding_parameters: std::option::Option<crate::model::EncodingParametersRequest>,
     /// The name of the media stream that is associated with the output.
     pub media_stream_name: std::option::Option<std::string::String>,
+}
+impl MediaStreamOutputConfigurationRequest {
+    /// The transport parameters that you want to associate with the media stream.
+    pub fn destination_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationConfigurationRequest]> {
+        self.destination_configurations.as_deref()
+    }
+    /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+        self.encoding_name.as_ref()
+    }
+    /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+    pub fn encoding_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::EncodingParametersRequest> {
+        self.encoding_parameters.as_ref()
+    }
+    /// The name of the media stream that is associated with the output.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
 }
 impl std::fmt::Debug for MediaStreamOutputConfigurationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2291,6 +2657,16 @@ pub struct EncodingParametersRequest {
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
     pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
 }
+impl EncodingParametersRequest {
+    /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+    pub fn compression_factor(&self) -> f64 {
+        self.compression_factor
+    }
+    /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
+    pub fn encoder_profile(&self) -> std::option::Option<&crate::model::EncoderProfile> {
+        self.encoder_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for EncodingParametersRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncodingParametersRequest");
@@ -2358,6 +2734,20 @@ pub struct DestinationConfigurationRequest {
     pub destination_port: i32,
     /// The VPC interface that you want to use for the media stream associated with the output.
     pub interface: std::option::Option<crate::model::InterfaceRequest>,
+}
+impl DestinationConfigurationRequest {
+    /// The IP address where you want MediaConnect to send contents of the media stream.
+    pub fn destination_ip(&self) -> std::option::Option<&str> {
+        self.destination_ip.as_deref()
+    }
+    /// The port that you want MediaConnect to use when it distributes the media stream to the output.
+    pub fn destination_port(&self) -> i32 {
+        self.destination_port
+    }
+    /// The VPC interface that you want to use for the media stream associated with the output.
+    pub fn interface(&self) -> std::option::Option<&crate::model::InterfaceRequest> {
+        self.interface.as_ref()
+    }
 }
 impl std::fmt::Debug for DestinationConfigurationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2452,6 +2842,40 @@ pub struct MediaStream {
     pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
     /// The resolution of the video.
     pub video_format: std::option::Option<std::string::String>,
+}
+impl MediaStream {
+    /// Attributes that are related to the media stream.
+    pub fn attributes(&self) -> std::option::Option<&crate::model::MediaStreamAttributes> {
+        self.attributes.as_ref()
+    }
+    /// The sample rate for the stream. This value is measured in Hz.
+    pub fn clock_rate(&self) -> i32 {
+        self.clock_rate
+    }
+    /// A description that can help you quickly identify what your media stream is used for.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
+    pub fn fmt(&self) -> i32 {
+        self.fmt
+    }
+    /// A unique identifier for the media stream.
+    pub fn media_stream_id(&self) -> i32 {
+        self.media_stream_id
+    }
+    /// A name that helps you distinguish one media stream from another.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
+    /// The type of media stream.
+    pub fn media_stream_type(&self) -> std::option::Option<&crate::model::MediaStreamType> {
+        self.media_stream_type.as_ref()
+    }
+    /// The resolution of the video.
+    pub fn video_format(&self) -> std::option::Option<&str> {
+        self.video_format.as_deref()
+    }
 }
 impl std::fmt::Debug for MediaStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2662,6 +3086,16 @@ pub struct MediaStreamAttributes {
     /// The audio language, in a format that is recognized by the receiver.
     pub lang: std::option::Option<std::string::String>,
 }
+impl MediaStreamAttributes {
+    /// A set of parameters that define the media stream.
+    pub fn fmtp(&self) -> std::option::Option<&crate::model::Fmtp> {
+        self.fmtp.as_ref()
+    }
+    /// The audio language, in a format that is recognized by the receiver.
+    pub fn lang(&self) -> std::option::Option<&str> {
+        self.lang.as_deref()
+    }
+}
 impl std::fmt::Debug for MediaStreamAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MediaStreamAttributes");
@@ -2734,6 +3168,36 @@ pub struct Fmtp {
     pub scan_mode: std::option::Option<crate::model::ScanMode>,
     /// The transfer characteristic system (TCS) that is used in the video.
     pub tcs: std::option::Option<crate::model::Tcs>,
+}
+impl Fmtp {
+    /// The format of the audio channel.
+    pub fn channel_order(&self) -> std::option::Option<&str> {
+        self.channel_order.as_deref()
+    }
+    /// The format that is used for the representation of color.
+    pub fn colorimetry(&self) -> std::option::Option<&crate::model::Colorimetry> {
+        self.colorimetry.as_ref()
+    }
+    /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+    pub fn exact_framerate(&self) -> std::option::Option<&str> {
+        self.exact_framerate.as_deref()
+    }
+    /// The pixel aspect ratio (PAR) of the video.
+    pub fn par(&self) -> std::option::Option<&str> {
+        self.par.as_deref()
+    }
+    /// The encoding range of the video.
+    pub fn range(&self) -> std::option::Option<&crate::model::Range> {
+        self.range.as_ref()
+    }
+    /// The type of compression that was used to smooth the video’s appearance
+    pub fn scan_mode(&self) -> std::option::Option<&crate::model::ScanMode> {
+        self.scan_mode.as_ref()
+    }
+    /// The transfer characteristic system (TCS) that is used in the video.
+    pub fn tcs(&self) -> std::option::Option<&crate::model::Tcs> {
+        self.tcs.as_ref()
+    }
 }
 impl std::fmt::Debug for Fmtp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3160,6 +3624,16 @@ pub struct MediaStreamAttributesRequest {
     /// The audio language, in a format that is recognized by the receiver.
     pub lang: std::option::Option<std::string::String>,
 }
+impl MediaStreamAttributesRequest {
+    /// The settings that you want to use to define the media stream.
+    pub fn fmtp(&self) -> std::option::Option<&crate::model::FmtpRequest> {
+        self.fmtp.as_ref()
+    }
+    /// The audio language, in a format that is recognized by the receiver.
+    pub fn lang(&self) -> std::option::Option<&str> {
+        self.lang.as_deref()
+    }
+}
 impl std::fmt::Debug for MediaStreamAttributesRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MediaStreamAttributesRequest");
@@ -3232,6 +3706,36 @@ pub struct FmtpRequest {
     pub scan_mode: std::option::Option<crate::model::ScanMode>,
     /// The transfer characteristic system (TCS) that is used in the video.
     pub tcs: std::option::Option<crate::model::Tcs>,
+}
+impl FmtpRequest {
+    /// The format of the audio channel.
+    pub fn channel_order(&self) -> std::option::Option<&str> {
+        self.channel_order.as_deref()
+    }
+    /// The format that is used for the representation of color.
+    pub fn colorimetry(&self) -> std::option::Option<&crate::model::Colorimetry> {
+        self.colorimetry.as_ref()
+    }
+    /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+    pub fn exact_framerate(&self) -> std::option::Option<&str> {
+        self.exact_framerate.as_deref()
+    }
+    /// The pixel aspect ratio (PAR) of the video.
+    pub fn par(&self) -> std::option::Option<&str> {
+        self.par.as_deref()
+    }
+    /// The encoding range of the video.
+    pub fn range(&self) -> std::option::Option<&crate::model::Range> {
+        self.range.as_ref()
+    }
+    /// The type of compression that was used to smooth the video’s appearance.
+    pub fn scan_mode(&self) -> std::option::Option<&crate::model::ScanMode> {
+        self.scan_mode.as_ref()
+    }
+    /// The transfer characteristic system (TCS) that is used in the video.
+    pub fn tcs(&self) -> std::option::Option<&crate::model::Tcs> {
+        self.tcs.as_ref()
+    }
 }
 impl std::fmt::Debug for FmtpRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3379,6 +3883,36 @@ pub struct Entitlement {
     pub name: std::option::Option<std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Entitlement {
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+        self.data_transfer_subscriber_fee_percent
+    }
+    /// A description of the entitlement.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The type of encryption that will be used on the output that is associated with this entitlement.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.encryption.as_ref()
+    }
+    /// The ARN of the entitlement.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// An indication of whether the entitlement is enabled.
+    pub fn entitlement_status(&self) -> std::option::Option<&crate::model::EntitlementStatus> {
+        self.entitlement_status.as_ref()
+    }
+    /// The name of the entitlement.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
+    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+        self.subscribers.as_deref()
+    }
 }
 impl std::fmt::Debug for Entitlement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3610,6 +4144,60 @@ pub struct Flow {
     pub status: std::option::Option<crate::model::Status>,
     /// The VPC Interfaces for this flow.
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
+}
+impl Flow {
+    /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The IP address from which video will be sent to output destinations.
+    pub fn egress_ip(&self) -> std::option::Option<&str> {
+        self.egress_ip.as_deref()
+    }
+    /// The entitlements in this flow.
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
+    pub fn media_streams(&self) -> std::option::Option<&[crate::model::MediaStream]> {
+        self.media_streams.as_deref()
+    }
+    /// The name of the flow.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The outputs in this flow.
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+    /// The settings for the source of the flow.
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// The settings for source failover
+    pub fn source_failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
+        self.source_failover_config.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn sources(&self) -> std::option::Option<&[crate::model::Source]> {
+        self.sources.as_deref()
+    }
+    /// The current status of the flow.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// The VPC Interfaces for this flow.
+    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterface]> {
+        self.vpc_interfaces.as_deref()
+    }
 }
 impl std::fmt::Debug for Flow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3874,6 +4462,34 @@ pub struct VpcInterface {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Subnet must be in the AZ of the Flow
     pub subnet_id: std::option::Option<std::string::String>,
+}
+impl VpcInterface {
+    /// Immutable and has to be a unique against other VpcInterfaces in this Flow
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// IDs of the network interfaces created in customer's account by MediaConnect.
+    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.network_interface_ids.as_deref()
+    }
+    /// The type of network interface.
+    pub fn network_interface_type(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInterfaceType> {
+        self.network_interface_type.as_ref()
+    }
+    /// Role Arn MediaConnect can assumes to create ENIs in customer's account
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// Security Group IDs to be used on ENI.
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// Subnet must be in the AZ of the Flow
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4147,6 +4763,24 @@ pub struct FailoverConfig {
     #[allow(missing_docs)] // documentation missing in model
     pub state: std::option::Option<crate::model::State>,
 }
+impl FailoverConfig {
+    /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+    pub fn failover_mode(&self) -> std::option::Option<&crate::model::FailoverMode> {
+        self.failover_mode.as_ref()
+    }
+    /// Search window time to look for dash-7 packets
+    pub fn recovery_window(&self) -> i32 {
+        self.recovery_window
+    }
+    /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    pub fn source_priority(&self) -> std::option::Option<&crate::model::SourcePriority> {
+        self.source_priority.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for FailoverConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailoverConfig");
@@ -4295,6 +4929,12 @@ pub struct SourcePriority {
     /// The name of the source you choose as the primary source for this flow.
     pub primary_source: std::option::Option<std::string::String>,
 }
+impl SourcePriority {
+    /// The name of the source you choose as the primary source for this flow.
+    pub fn primary_source(&self) -> std::option::Option<&str> {
+        self.primary_source.as_deref()
+    }
+}
 impl std::fmt::Debug for SourcePriority {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourcePriority");
@@ -4406,6 +5046,24 @@ pub struct UpdateFailoverConfig {
     pub source_priority: std::option::Option<crate::model::SourcePriority>,
     #[allow(missing_docs)] // documentation missing in model
     pub state: std::option::Option<crate::model::State>,
+}
+impl UpdateFailoverConfig {
+    /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+    pub fn failover_mode(&self) -> std::option::Option<&crate::model::FailoverMode> {
+        self.failover_mode.as_ref()
+    }
+    /// Recovery window time to look for dash-7 packets
+    pub fn recovery_window(&self) -> i32 {
+        self.recovery_window
+    }
+    /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    pub fn source_priority(&self) -> std::option::Option<&crate::model::SourcePriority> {
+        self.source_priority.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFailoverConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4523,6 +5181,62 @@ pub struct Reservation {
     pub resource_specification: std::option::Option<crate::model::ResourceSpecification>,
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
     pub start: std::option::Option<std::string::String>,
+}
+impl Reservation {
+    /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
+    pub fn duration_units(&self) -> std::option::Option<&crate::model::DurationUnits> {
+        self.duration_units.as_ref()
+    }
+    /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+    pub fn offering_arn(&self) -> std::option::Option<&str> {
+        self.offering_arn.as_deref()
+    }
+    /// A description of the offering. MediaConnect defines this value in the offering.
+    pub fn offering_description(&self) -> std::option::Option<&str> {
+        self.offering_description.as_deref()
+    }
+    /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
+    pub fn price_per_unit(&self) -> std::option::Option<&str> {
+        self.price_per_unit.as_deref()
+    }
+    /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
+    pub fn price_units(&self) -> std::option::Option<&crate::model::PriceUnits> {
+        self.price_units.as_ref()
+    }
+    /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
+    pub fn reservation_arn(&self) -> std::option::Option<&str> {
+        self.reservation_arn.as_deref()
+    }
+    /// The name that you assigned to the reservation when you purchased the offering.
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
+        self.reservation_name.as_deref()
+    }
+    /// The status of your reservation.
+    pub fn reservation_state(&self) -> std::option::Option<&crate::model::ReservationState> {
+        self.reservation_state.as_ref()
+    }
+    /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
 }
 impl std::fmt::Debug for Reservation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4759,6 +5473,16 @@ pub struct ResourceSpecification {
     pub reserved_bitrate: i32,
     /// The type of resource and the unit that is being billed for.
     pub resource_type: std::option::Option<crate::model::ResourceType>,
+}
+impl ResourceSpecification {
+    /// The amount of outbound bandwidth that is discounted in the offering.
+    pub fn reserved_bitrate(&self) -> i32 {
+        self.reserved_bitrate
+    }
+    /// The type of resource and the unit that is being billed for.
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5054,6 +5778,42 @@ pub struct Offering {
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
     pub resource_specification: std::option::Option<crate::model::ResourceSpecification>,
 }
+impl Offering {
+    /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// The length of time that your reservation would be active.
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// The unit of measurement for the duration of the offering.
+    pub fn duration_units(&self) -> std::option::Option<&crate::model::DurationUnits> {
+        self.duration_units.as_ref()
+    }
+    /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+    pub fn offering_arn(&self) -> std::option::Option<&str> {
+        self.offering_arn.as_deref()
+    }
+    /// A description of the offering.
+    pub fn offering_description(&self) -> std::option::Option<&str> {
+        self.offering_description.as_deref()
+    }
+    /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
+    pub fn price_per_unit(&self) -> std::option::Option<&str> {
+        self.price_per_unit.as_deref()
+    }
+    /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
+    pub fn price_units(&self) -> std::option::Option<&crate::model::PriceUnits> {
+        self.price_units.as_ref()
+    }
+    /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+}
 impl std::fmt::Debug for Offering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Offering");
@@ -5223,6 +5983,32 @@ pub struct ListedFlow {
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// The current status of the flow.
     pub status: std::option::Option<crate::model::Status>,
+}
+impl ListedFlow {
+    /// The Availability Zone that the flow was created in.
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// A description of the flow.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The ARN of the flow.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The name of the flow.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// The current status of the flow.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ListedFlow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5402,6 +6188,20 @@ pub struct ListedEntitlement {
     /// The name of the entitlement.
     pub entitlement_name: std::option::Option<std::string::String>,
 }
+impl ListedEntitlement {
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+        self.data_transfer_subscriber_fee_percent
+    }
+    /// The ARN of the entitlement.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// The name of the entitlement.
+    pub fn entitlement_name(&self) -> std::option::Option<&str> {
+        self.entitlement_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListedEntitlement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListedEntitlement");
@@ -5499,6 +6299,32 @@ pub struct GrantEntitlementRequest {
     pub name: std::option::Option<std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
     pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GrantEntitlementRequest {
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+        self.data_transfer_subscriber_fee_percent
+    }
+    /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The type of encryption that will be used on the output that is associated with this entitlement.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.encryption.as_ref()
+    }
+    /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+    pub fn entitlement_status(&self) -> std::option::Option<&crate::model::EntitlementStatus> {
+        self.entitlement_status.as_ref()
+    }
+    /// The name of the entitlement. This value must be unique within the current flow.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
+    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+        self.subscribers.as_deref()
+    }
 }
 impl std::fmt::Debug for GrantEntitlementRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5636,6 +6462,12 @@ pub struct Messages {
     /// A list of errors that might have been generated from processes on this flow.
     pub errors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Messages {
+    /// A list of errors that might have been generated from processes on this flow.
+    pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for Messages {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Messages");
@@ -5700,6 +6532,30 @@ pub struct VpcInterfaceRequest {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Subnet must be in the AZ of the Flow
     pub subnet_id: std::option::Option<std::string::String>,
+}
+impl VpcInterfaceRequest {
+    /// The name of the VPC Interface. This value must be unique within the current flow.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
+    pub fn network_interface_type(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInterfaceType> {
+        self.network_interface_type.as_ref()
+    }
+    /// Role Arn MediaConnect can assumes to create ENIs in customer's account
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// Security Group IDs to be used on ENI.
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// Subnet must be in the AZ of the Flow
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcInterfaceRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5839,6 +6695,66 @@ pub struct SetSourceRequest {
     pub vpc_interface_name: std::option::Option<std::string::String>,
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub whitelist_cidr: std::option::Option<std::string::String>,
+}
+impl SetSourceRequest {
+    /// The type of encryption that is used on the content ingested from this source.
+    pub fn decryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.decryption.as_ref()
+    }
+    /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// The port that the flow will be listening on for incoming content.
+    pub fn ingest_port(&self) -> i32 {
+        self.ingest_port
+    }
+    /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    pub fn max_latency(&self) -> i32 {
+        self.max_latency
+    }
+    /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    pub fn max_sync_buffer(&self) -> i32 {
+        self.max_sync_buffer
+    }
+    /// The media streams that are associated with the source, and the parameters for those associations.
+    pub fn media_stream_source_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamSourceConfigurationRequest]> {
+        self.media_stream_source_configurations.as_deref()
+    }
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub fn min_latency(&self) -> i32 {
+        self.min_latency
+    }
+    /// The name of the source.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The protocol that is used by the source.
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// The name of the VPC interface to use for this source.
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+        self.vpc_interface_name.as_deref()
+    }
+    /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
+        self.whitelist_cidr.as_deref()
+    }
 }
 impl std::fmt::Debug for SetSourceRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6114,6 +7030,68 @@ pub struct AddOutputRequest {
     /// The name of the VPC interface attachment to use for this output.
     pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
 }
+impl AddOutputRequest {
+    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn cidr_allow_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.cidr_allow_list.as_deref()
+    }
+    /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The IP address from which video will be sent to output destinations.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+        self.encryption.as_ref()
+    }
+    /// The maximum latency in milliseconds for Zixi-based streams.
+    pub fn max_latency(&self) -> i32 {
+        self.max_latency
+    }
+    /// The media streams that are associated with the output, and the parameters for those associations.
+    pub fn media_stream_output_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamOutputConfigurationRequest]> {
+        self.media_stream_output_configurations.as_deref()
+    }
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub fn min_latency(&self) -> i32 {
+        self.min_latency
+    }
+    /// The name of the output. This value must be unique within the current flow.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The port to use when content is distributed to this output.
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// The protocol to use for the output.
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// The remote ID for the Zixi-pull output stream.
+    pub fn remote_id(&self) -> std::option::Option<&str> {
+        self.remote_id.as_deref()
+    }
+    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    pub fn smoothing_latency(&self) -> i32 {
+        self.smoothing_latency
+    }
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// The name of the VPC interface attachment to use for this output.
+    pub fn vpc_interface_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
+        self.vpc_interface_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for AddOutputRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddOutputRequest");
@@ -6379,6 +7357,36 @@ pub struct AddMediaStreamRequest {
     pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
     /// The resolution of the video.
     pub video_format: std::option::Option<std::string::String>,
+}
+impl AddMediaStreamRequest {
+    /// The attributes that you want to assign to the new media stream.
+    pub fn attributes(&self) -> std::option::Option<&crate::model::MediaStreamAttributesRequest> {
+        self.attributes.as_ref()
+    }
+    /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    pub fn clock_rate(&self) -> i32 {
+        self.clock_rate
+    }
+    /// A description that can help you quickly identify what your media stream is used for.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// A unique identifier for the media stream.
+    pub fn media_stream_id(&self) -> i32 {
+        self.media_stream_id
+    }
+    /// A name that helps you distinguish one media stream from another.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
+    /// The type of media stream.
+    pub fn media_stream_type(&self) -> std::option::Option<&crate::model::MediaStreamType> {
+        self.media_stream_type.as_ref()
+    }
+    /// The resolution of the video.
+    pub fn video_format(&self) -> std::option::Option<&str> {
+        self.video_format.as_deref()
+    }
 }
 impl std::fmt::Debug for AddMediaStreamRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

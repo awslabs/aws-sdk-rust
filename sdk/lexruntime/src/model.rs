@@ -158,6 +158,25 @@ pub struct ActiveContext {
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ActiveContext {
+    /// <p>The name of the context.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The length of time or number of turns that a context remains
+    /// active.</p>
+    pub fn time_to_live(&self) -> std::option::Option<&crate::model::ActiveContextTimeToLive> {
+        self.time_to_live.as_ref()
+    }
+    /// <p>State variables for the current context. You can use these values as
+    /// default values for slots in subsequent events.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for ActiveContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActiveContext");
@@ -263,6 +282,21 @@ pub struct ActiveContextTimeToLive {
     /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
     /// request and the corresponding response from Amazon Lex.</p>
     pub turns_to_live: std::option::Option<i32>,
+}
+impl ActiveContextTimeToLive {
+    /// <p>The number of seconds that the context should be active after it is
+    /// first sent in a <code>PostContent</code> or <code>PostText</code>
+    /// response. You can set the value between 5 and 86,400 seconds (24
+    /// hours).</p>
+    pub fn time_to_live_in_seconds(&self) -> std::option::Option<i32> {
+        self.time_to_live_in_seconds
+    }
+    /// <p>The number of conversation turns that the context should be active. A
+    /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
+    /// request and the corresponding response from Amazon Lex.</p>
+    pub fn turns_to_live(&self) -> std::option::Option<i32> {
+        self.turns_to_live
+    }
 }
 impl std::fmt::Debug for ActiveContextTimeToLive {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -420,6 +454,109 @@ pub struct IntentSummary {
     /// <p>The next slot to elicit from the user. If there is not slot to elicit,
     /// the field is blank.</p>
     pub slot_to_elicit: std::option::Option<std::string::String>,
+}
+impl IntentSummary {
+    /// <p>The name of the intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>A user-defined label that identifies a particular intent. You can use
+    /// this label to return to a previous intent. </p>
+    /// <p>Use the <code>checkpointLabelFilter</code> parameter of the
+    /// <code>GetSessionRequest</code> operation to filter the intents returned
+    /// by the operation to those with only the specified label.</p>
+    pub fn checkpoint_label(&self) -> std::option::Option<&str> {
+        self.checkpoint_label.as_deref()
+    }
+    /// <p>Map of the slots that have been gathered and their values. </p>
+    pub fn slots(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.slots.as_ref()
+    }
+    /// <p>The status of the intent after the user responds to the confirmation
+    /// prompt. If the user confirms the intent, Amazon Lex sets this field to
+    /// <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this
+    /// value to <code>Denied</code>. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Confirmed</code> - The user has responded "Yes" to the
+    /// confirmation prompt, confirming that the intent is complete and that
+    /// it is ready to be fulfilled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Denied</code> - The user has responded "No" to the
+    /// confirmation prompt.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>None</code> - The user has never been prompted for
+    /// confirmation; or, the user was prompted but did not confirm or deny
+    /// the prompt.</p>
+    /// </li>
+    /// </ul>
+    pub fn confirmation_status(&self) -> std::option::Option<&crate::model::ConfirmationStatus> {
+        self.confirmation_status.as_ref()
+    }
+    /// <p>The next action that the bot should take in its interaction with the
+    /// user. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ConfirmIntent</code> - The next action is asking the user if
+    /// the intent is complete and ready to be fulfilled. This is a yes/no
+    /// question such as "Place the order?"</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Close</code> - Indicates that the there will not be a
+    /// response from the user. For example, the statement "Your order has
+    /// been placed" does not require a response.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ElicitIntent</code> - The next action is to determine the
+    /// intent that the user wants to fulfill.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ElicitSlot</code> - The next action is to elicit a slot
+    /// value from the user.</p>
+    /// </li>
+    /// </ul>
+    pub fn dialog_action_type(&self) -> std::option::Option<&crate::model::DialogActionType> {
+        self.dialog_action_type.as_ref()
+    }
+    /// <p>The fulfillment state of the intent. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code> - The Lambda function associated with the
+    /// intent failed to fulfill the intent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
+    /// function associated with the intent. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ReadyForFulfillment</code> - All of the information
+    /// necessary for the intent is present and the intent ready to be
+    /// fulfilled by the client application.</p>
+    /// </li>
+    /// </ul>
+    pub fn fulfillment_state(&self) -> std::option::Option<&crate::model::FulfillmentState> {
+        self.fulfillment_state.as_ref()
+    }
+    /// <p>The next slot to elicit from the user. If there is not slot to elicit,
+    /// the field is blank.</p>
+    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+        self.slot_to_elicit.as_deref()
+    }
 }
 impl std::fmt::Debug for IntentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -998,6 +1135,110 @@ pub struct DialogAction {
     /// </ul>
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
 }
+impl DialogAction {
+    /// <p>The next action that the bot should take in its interaction with the
+    /// user. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ConfirmIntent</code> - The next action is asking the user if
+    /// the intent is complete and ready to be fulfilled. This is a yes/no
+    /// question such as "Place the order?"</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Close</code> - Indicates that the there will not be a
+    /// response from the user. For example, the statement "Your order has
+    /// been placed" does not require a response.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Delegate</code> - The next action is determined by
+    /// Amazon Lex.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ElicitIntent</code> - The next action is to determine the
+    /// intent that the user wants to fulfill.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ElicitSlot</code> - The next action is to elicit a slot
+    /// value from the user.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DialogActionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>Map of the slots that have been gathered and their values. </p>
+    pub fn slots(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.slots.as_ref()
+    }
+    /// <p>The name of the slot that should be elicited from the user.</p>
+    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+        self.slot_to_elicit.as_deref()
+    }
+    /// <p>The fulfillment state of the intent. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code> - The Lambda function associated with the
+    /// intent failed to fulfill the intent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
+    /// function associated with the intent. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ReadyForFulfillment</code> - All of the information
+    /// necessary for the intent is present and the intent ready to be
+    /// fulfilled by the client application.</p>
+    /// </li>
+    /// </ul>
+    pub fn fulfillment_state(&self) -> std::option::Option<&crate::model::FulfillmentState> {
+        self.fulfillment_state.as_ref()
+    }
+    /// <p>The message that should be shown to the user. If you don't specify a
+    /// message, Amazon Lex will use the message configured for the intent.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PlainText</code> - The message contains plain UTF-8
+    /// text.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CustomPayload</code> - The message is a custom format for
+    /// the client.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SSML</code> - The message contains text formatted for voice
+    /// output.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Composite</code> - The message contains an escaped JSON
+    /// object containing one or more messages. For more information, see
+    /// <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p>
+    /// </li>
+    /// </ul>
+    pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormatType> {
+        self.message_format.as_ref()
+    }
+}
 impl std::fmt::Debug for DialogAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DialogAction");
@@ -1303,6 +1544,20 @@ pub struct ResponseCard {
     /// <p>An array of attachment objects representing options.</p>
     pub generic_attachments: std::option::Option<std::vec::Vec<crate::model::GenericAttachment>>,
 }
+impl ResponseCard {
+    /// <p>The version of the response card format.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The content type of the response.</p>
+    pub fn content_type(&self) -> std::option::Option<&crate::model::ContentType> {
+        self.content_type.as_ref()
+    }
+    /// <p>An array of attachment objects representing options.</p>
+    pub fn generic_attachments(&self) -> std::option::Option<&[crate::model::GenericAttachment]> {
+        self.generic_attachments.as_deref()
+    }
+}
 impl std::fmt::Debug for ResponseCard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResponseCard");
@@ -1401,6 +1656,28 @@ pub struct GenericAttachment {
     pub image_url: std::option::Option<std::string::String>,
     /// <p>The list of options to show to the user.</p>
     pub buttons: std::option::Option<std::vec::Vec<crate::model::Button>>,
+}
+impl GenericAttachment {
+    /// <p>The title of the option.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The subtitle shown below the title.</p>
+    pub fn sub_title(&self) -> std::option::Option<&str> {
+        self.sub_title.as_deref()
+    }
+    /// <p>The URL of an attachment to the response card.</p>
+    pub fn attachment_link_url(&self) -> std::option::Option<&str> {
+        self.attachment_link_url.as_deref()
+    }
+    /// <p>The URL of an image that is displayed to the user.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The list of options to show to the user.</p>
+    pub fn buttons(&self) -> std::option::Option<&[crate::model::Button]> {
+        self.buttons.as_deref()
+    }
 }
 impl std::fmt::Debug for GenericAttachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1518,6 +1795,18 @@ pub struct Button {
     /// example, consider button text "NYC." When the user chooses the button, the
     /// value sent can be "New York City."</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Button {
+    /// <p>Text that is visible to the user on the button.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The value sent to Amazon Lex when a user chooses the button. For
+    /// example, consider button text "NYC." When the user chooses the button, the
+    /// value sent can be "New York City."</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Button {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1641,6 +1930,17 @@ pub struct SentimentResponse {
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
     pub sentiment_score: std::option::Option<std::string::String>,
 }
+impl SentimentResponse {
+    /// <p>The inferred sentiment that Amazon Comprehend has the highest
+    /// confidence in.</p>
+    pub fn sentiment_label(&self) -> std::option::Option<&str> {
+        self.sentiment_label.as_deref()
+    }
+    /// <p>The likelihood that the sentiment was correctly inferred.</p>
+    pub fn sentiment_score(&self) -> std::option::Option<&str> {
+        self.sentiment_score.as_deref()
+    }
+}
 impl std::fmt::Debug for SentimentResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SentimentResponse");
@@ -1718,6 +2018,25 @@ pub struct PredictedIntent {
     /// <p>The slot and slot values associated with the predicted intent.</p>
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PredictedIntent {
+    /// <p>The name of the intent that Amazon Lex suggests satisfies the user's
+    /// intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's
+    /// intent.</p>
+    pub fn nlu_intent_confidence(&self) -> std::option::Option<&crate::model::IntentConfidence> {
+        self.nlu_intent_confidence.as_ref()
+    }
+    /// <p>The slot and slot values associated with the predicted intent.</p>
+    pub fn slots(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.slots.as_ref()
+    }
 }
 impl std::fmt::Debug for PredictedIntent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1819,6 +2138,14 @@ pub struct IntentConfidence {
     /// the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate
     /// higher confidence.</p>
     pub score: f64,
+}
+impl IntentConfidence {
+    /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies
+    /// the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate
+    /// higher confidence.</p>
+    pub fn score(&self) -> f64 {
+        self.score
+    }
 }
 impl std::fmt::Debug for IntentConfidence {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

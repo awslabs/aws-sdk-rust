@@ -8,6 +8,16 @@ pub struct Tag {
     /// <p>The optional value portion of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The required key portion of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional value portion of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -85,6 +95,24 @@ pub struct MessageAttributeValue {
     /// <p>Binary type attributes can store any binary data, for example, compressed data,
     /// encrypted data, or images.</p>
     pub binary_value: std::option::Option<aws_smithy_types::Blob>,
+}
+impl MessageAttributeValue {
+    /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
+    /// Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
+    /// Attribute Data Types</a>.</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+    /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
+    /// Characters</a>.</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+    /// <p>Binary type attributes can store any binary data, for example, compressed data,
+    /// encrypted data, or images.</p>
+    pub fn binary_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.binary_value.as_ref()
+    }
 }
 impl std::fmt::Debug for MessageAttributeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -172,6 +200,12 @@ pub struct Topic {
     /// <p>The topic's ARN.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl Topic {
+    /// <p>The topic's ARN.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Topic {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Topic");
@@ -227,6 +261,28 @@ pub struct Subscription {
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The ARN of the subscription's topic.</p>
     pub topic_arn: std::option::Option<std::string::String>,
+}
+impl Subscription {
+    /// <p>The subscription's ARN.</p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
+    /// <p>The subscription's owner.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The subscription's protocol.</p>
+    pub fn protocol(&self) -> std::option::Option<&str> {
+        self.protocol.as_deref()
+    }
+    /// <p>The subscription's endpoint (format depends on the protocol).</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The ARN of the subscription's topic.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Subscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -340,6 +396,18 @@ pub struct SmsSandboxPhoneNumber {
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The destination phone number's verification status.</p>
     pub status: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
+}
+impl SmsSandboxPhoneNumber {
+    /// <p>The destination phone number.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The destination phone number's verification status.</p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::SmsSandboxPhoneNumberVerificationStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for SmsSandboxPhoneNumber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -470,6 +538,19 @@ pub struct PlatformApplication {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PlatformApplication {
+    /// <p>PlatformApplicationArn for platform application object.</p>
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
+        self.platform_application_arn.as_deref()
+    }
+    /// <p>Attributes for platform application object.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for PlatformApplication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlatformApplication");
@@ -560,6 +641,32 @@ pub struct PhoneNumberInformation {
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p>The capabilities of each phone number.</p>
     pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+}
+impl PhoneNumberInformation {
+    /// <p>The date and time when the phone number was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The phone number.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The status of the phone number.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
+    pub fn iso2_country_code(&self) -> std::option::Option<&str> {
+        self.iso2_country_code.as_deref()
+    }
+    /// <p>The list of supported routes.</p>
+    pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
+        self.route_type.as_ref()
+    }
+    /// <p>The capabilities of each phone number.</p>
+    pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
+        self.number_capabilities.as_deref()
+    }
 }
 impl std::fmt::Debug for PhoneNumberInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -819,6 +926,19 @@ pub struct Endpoint {
     /// <p>Attributes for endpoint.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Endpoint {
+    /// <p>EndpointArn for mobile app and device.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>Attributes for endpoint.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

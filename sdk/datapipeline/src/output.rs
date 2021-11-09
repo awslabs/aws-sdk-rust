@@ -10,6 +10,20 @@ pub struct ValidatePipelineDefinitionOutput {
     /// <p>Indicates whether there were validation errors.</p>
     pub errored: bool,
 }
+impl ValidatePipelineDefinitionOutput {
+    /// <p>Any validation errors that were found.</p>
+    pub fn validation_errors(&self) -> std::option::Option<&[crate::model::ValidationError]> {
+        self.validation_errors.as_deref()
+    }
+    /// <p>Any validation warnings that were found.</p>
+    pub fn validation_warnings(&self) -> std::option::Option<&[crate::model::ValidationWarning]> {
+        self.validation_warnings.as_deref()
+    }
+    /// <p>Indicates whether there were validation errors.</p>
+    pub fn errored(&self) -> bool {
+        self.errored
+    }
+}
 impl std::fmt::Debug for ValidatePipelineDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidatePipelineDefinitionOutput");
@@ -170,6 +184,12 @@ pub struct ReportTaskRunnerHeartbeatOutput {
     /// <p>Indicates whether the calling task runner should terminate.</p>
     pub terminate: bool,
 }
+impl ReportTaskRunnerHeartbeatOutput {
+    /// <p>Indicates whether the calling task runner should terminate.</p>
+    pub fn terminate(&self) -> bool {
+        self.terminate
+    }
+}
 impl std::fmt::Debug for ReportTaskRunnerHeartbeatOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportTaskRunnerHeartbeatOutput");
@@ -217,6 +237,12 @@ impl ReportTaskRunnerHeartbeatOutput {
 pub struct ReportTaskProgressOutput {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
     pub canceled: bool,
+}
+impl ReportTaskProgressOutput {
+    /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+    pub fn canceled(&self) -> bool {
+        self.canceled
+    }
 }
 impl std::fmt::Debug for ReportTaskProgressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -300,6 +326,21 @@ pub struct QueryObjectsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub has_more_results: bool,
+}
+impl QueryObjectsOutput {
+    /// <p>The identifiers that match the query selectors.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code>
+    /// again with this marker value. If the value is null, there are no more results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
+    pub fn has_more_results(&self) -> bool {
+        self.has_more_results
+    }
 }
 impl std::fmt::Debug for QueryObjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -390,6 +431,21 @@ pub struct PutPipelineDefinitionOutput {
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be
     /// activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub errored: bool,
+}
+impl PutPipelineDefinitionOutput {
+    /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
+    pub fn validation_errors(&self) -> std::option::Option<&[crate::model::ValidationError]> {
+        self.validation_errors.as_deref()
+    }
+    /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
+    pub fn validation_warnings(&self) -> std::option::Option<&[crate::model::ValidationWarning]> {
+        self.validation_warnings.as_deref()
+    }
+    /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be
+    /// activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+    pub fn errored(&self) -> bool {
+        self.errored
+    }
 }
 impl std::fmt::Debug for PutPipelineDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -495,6 +551,14 @@ pub struct PollForTaskOutput {
     /// and <a>SetTaskStatus</a>.</p>
     pub task_object: std::option::Option<crate::model::TaskObject>,
 }
+impl PollForTaskOutput {
+    /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>,
+    /// which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
+    /// and <a>SetTaskStatus</a>.</p>
+    pub fn task_object(&self) -> std::option::Option<&crate::model::TaskObject> {
+        self.task_object.as_ref()
+    }
+}
 impl std::fmt::Debug for PollForTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PollForTaskOutput");
@@ -555,6 +619,22 @@ pub struct ListPipelinesOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub has_more_results: bool,
+}
+impl ListPipelinesOutput {
+    /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
+    /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
+    pub fn pipeline_id_list(&self) -> std::option::Option<&[crate::model::PipelineIdName]> {
+        self.pipeline_id_list.as_deref()
+    }
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code>
+    /// again with this marker value. If the value is null, there are no more results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
+    pub fn has_more_results(&self) -> bool {
+        self.has_more_results
+    }
 }
 impl std::fmt::Debug for ListPipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -647,6 +727,20 @@ pub struct GetPipelineDefinitionOutput {
     pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
     /// <p>The parameter values used in the pipeline definition.</p>
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+}
+impl GetPipelineDefinitionOutput {
+    /// <p>The objects defined in the pipeline.</p>
+    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
+        self.pipeline_objects.as_deref()
+    }
+    /// <p>The parameter objects used in the pipeline definition.</p>
+    pub fn parameter_objects(&self) -> std::option::Option<&[crate::model::ParameterObject]> {
+        self.parameter_objects.as_deref()
+    }
+    /// <p>The parameter values used in the pipeline definition.</p>
+    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
+        self.parameter_values.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPipelineDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -755,6 +849,12 @@ pub struct EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
     pub evaluated_expression: std::option::Option<std::string::String>,
 }
+impl EvaluateExpressionOutput {
+    /// <p>The evaluated expression.</p>
+    pub fn evaluated_expression(&self) -> std::option::Option<&str> {
+        self.evaluated_expression.as_deref()
+    }
+}
 impl std::fmt::Debug for EvaluateExpressionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluateExpressionOutput");
@@ -806,6 +906,14 @@ pub struct DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
     pub pipeline_description_list:
         std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
+}
+impl DescribePipelinesOutput {
+    /// <p>An array of descriptions for the specified pipelines.</p>
+    pub fn pipeline_description_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PipelineDescription]> {
+        self.pipeline_description_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -872,6 +980,21 @@ pub struct DescribeObjectsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results to return.</p>
     pub has_more_results: bool,
+}
+impl DescribeObjectsOutput {
+    /// <p>An array of object definitions.</p>
+    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
+        self.pipeline_objects.as_deref()
+    }
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code>
+    /// again with this marker value. If the value is null, there are no more results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Indicates whether there are more results to return.</p>
+    pub fn has_more_results(&self) -> bool {
+        self.has_more_results
+    }
 }
 impl std::fmt::Debug for DescribeObjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1018,6 +1141,12 @@ impl DeactivatePipelineOutput {
 pub struct CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
     pub pipeline_id: std::option::Option<std::string::String>,
+}
+impl CreatePipelineOutput {
+    /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

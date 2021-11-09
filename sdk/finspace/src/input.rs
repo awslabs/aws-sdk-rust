@@ -186,10 +186,7 @@ impl CreateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -993,10 +990,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1417,10 +1411,7 @@ impl UpdateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1507,6 +1498,40 @@ pub struct UpdateEnvironmentInput {
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub federation_parameters: std::option::Option<crate::model::FederationParameters>,
 }
+impl UpdateEnvironmentInput {
+    /// <p>The identifier of the FinSpace environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Authentication mode for the environment.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
+    /// </li>
+    /// </ul>
+    pub fn federation_mode(&self) -> std::option::Option<&crate::model::FederationMode> {
+        self.federation_mode.as_ref()
+    }
+    /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    pub fn federation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::FederationParameters> {
+        self.federation_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
@@ -1529,6 +1554,17 @@ pub struct UntagResourceInput {
     /// <p>The tag keys (names) of one or more tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
+    /// parameter is an Amazon Resource Name (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys (names) of one or more tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -1548,6 +1584,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags to be assigned to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -1563,6 +1612,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1583,6 +1638,18 @@ pub struct ListEnvironmentsInput {
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: i32,
 }
+impl ListEnvironmentsInput {
+    /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
+    /// request was truncated. To get the next set of pages, pass in the nextToken value from the
+    /// response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnvironmentsInput");
@@ -1599,6 +1666,12 @@ pub struct GetEnvironmentInput {
     /// <p>The identifier of the FinSpace environment.</p>
     pub environment_id: std::option::Option<std::string::String>,
 }
+impl GetEnvironmentInput {
+    /// <p>The identifier of the FinSpace environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentInput");
@@ -1613,6 +1686,12 @@ impl std::fmt::Debug for GetEnvironmentInput {
 pub struct DeleteEnvironmentInput {
     /// <p>The identifier for the FinSpace environment.</p>
     pub environment_id: std::option::Option<std::string::String>,
+}
+impl DeleteEnvironmentInput {
+    /// <p>The identifier for the FinSpace environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1649,6 +1728,47 @@ pub struct CreateEnvironmentInput {
     pub federation_mode: std::option::Option<crate::model::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub federation_parameters: std::option::Option<crate::model::FederationParameters>,
+}
+impl CreateEnvironmentInput {
+    /// <p>The name of the FinSpace environment to be created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the FinSpace environment to be created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Add tags to your FinSpace environment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Authentication mode for the environment.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
+    /// </li>
+    /// </ul>
+    pub fn federation_mode(&self) -> std::option::Option<&crate::model::FederationMode> {
+        self.federation_mode.as_ref()
+    }
+    /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    pub fn federation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::FederationParameters> {
+        self.federation_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

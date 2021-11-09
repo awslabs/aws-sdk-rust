@@ -176,10 +176,7 @@ impl CreateSavingsPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_savings_plan(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_savings_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -330,10 +327,7 @@ impl DeleteQueuedSavingsPlanInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_queued_savings_plan(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -531,10 +525,7 @@ impl DescribeSavingsPlanRatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_savings_plan_rates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -777,10 +768,9 @@ impl DescribeSavingsPlansInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1129,7 +1119,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offering_rates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offering_rates(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1522,7 +1512,7 @@ impl DescribeSavingsPlansOfferingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offerings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offerings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1668,10 +1658,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1844,10 +1833,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2012,10 +1998,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2086,6 +2069,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2105,6 +2098,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2120,6 +2126,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2160,6 +2172,65 @@ pub struct DescribeSavingsPlansOfferingsInput {
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
     /// call with the returned token value.</p>
     pub max_results: i32,
+}
+impl DescribeSavingsPlansOfferingsInput {
+    /// <p>The IDs of the offerings.</p>
+    pub fn offering_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.offering_ids.as_deref()
+    }
+    /// <p>The payment options.</p>
+    pub fn payment_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlanPaymentOption]> {
+        self.payment_options.as_deref()
+    }
+    /// <p>The product type.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::SavingsPlanProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>The plan type.</p>
+    pub fn plan_types(&self) -> std::option::Option<&[crate::model::SavingsPlanType]> {
+        self.plan_types.as_deref()
+    }
+    /// <p>The durations, in seconds.</p>
+    pub fn durations(&self) -> std::option::Option<&[i64]> {
+        self.durations.as_deref()
+    }
+    /// <p>The currencies.</p>
+    pub fn currencies(&self) -> std::option::Option<&[crate::model::CurrencyCode]> {
+        self.currencies.as_deref()
+    }
+    /// <p>The descriptions.</p>
+    pub fn descriptions(&self) -> std::option::Option<&[std::string::String]> {
+        self.descriptions.as_deref()
+    }
+    /// <p>The services.</p>
+    pub fn service_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_codes.as_deref()
+    }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn usage_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.usage_types.as_deref()
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn operations(&self) -> std::option::Option<&[std::string::String]> {
+        self.operations.as_deref()
+    }
+    /// <p>The filters.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlanOfferingFilterElement]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+    /// call with the returned token value.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeSavingsPlansOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2209,6 +2280,55 @@ pub struct DescribeSavingsPlansOfferingRatesInput {
     /// call with the returned token value.</p>
     pub max_results: i32,
 }
+impl DescribeSavingsPlansOfferingRatesInput {
+    /// <p>The IDs of the offerings.</p>
+    pub fn savings_plan_offering_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.savings_plan_offering_ids.as_deref()
+    }
+    /// <p>The payment options.</p>
+    pub fn savings_plan_payment_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlanPaymentOption]> {
+        self.savings_plan_payment_options.as_deref()
+    }
+    /// <p>The plan types.</p>
+    pub fn savings_plan_types(&self) -> std::option::Option<&[crate::model::SavingsPlanType]> {
+        self.savings_plan_types.as_deref()
+    }
+    /// <p>The AWS products.</p>
+    pub fn products(&self) -> std::option::Option<&[crate::model::SavingsPlanProductType]> {
+        self.products.as_deref()
+    }
+    /// <p>The services.</p>
+    pub fn service_codes(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlanRateServiceCode]> {
+        self.service_codes.as_deref()
+    }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn usage_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.usage_types.as_deref()
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn operations(&self) -> std::option::Option<&[std::string::String]> {
+        self.operations.as_deref()
+    }
+    /// <p>The filters.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlanOfferingRateFilterElement]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+    /// call with the returned token value.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeSavingsPlansOfferingRatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSavingsPlansOfferingRatesInput");
@@ -2247,6 +2367,33 @@ pub struct DescribeSavingsPlansInput {
     /// <p>The filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanFilter>>,
 }
+impl DescribeSavingsPlansInput {
+    /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
+    pub fn savings_plan_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.savings_plan_arns.as_deref()
+    }
+    /// <p>The IDs of the Savings Plans.</p>
+    pub fn savings_plan_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.savings_plan_ids.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+    /// call with the returned token value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The states.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::SavingsPlanState]> {
+        self.states.as_deref()
+    }
+    /// <p>The filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SavingsPlanFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSavingsPlansInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSavingsPlansInput");
@@ -2274,6 +2421,25 @@ pub struct DescribeSavingsPlanRatesInput {
     /// call with the returned token value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeSavingsPlanRatesInput {
+    /// <p>The ID of the Savings Plan.</p>
+    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+        self.savings_plan_id.as_deref()
+    }
+    /// <p>The filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SavingsPlanRateFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+    /// call with the returned token value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeSavingsPlanRatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSavingsPlanRatesInput");
@@ -2291,6 +2457,12 @@ impl std::fmt::Debug for DescribeSavingsPlanRatesInput {
 pub struct DeleteQueuedSavingsPlanInput {
     /// <p>The ID of the Savings Plan.</p>
     pub savings_plan_id: std::option::Option<std::string::String>,
+}
+impl DeleteQueuedSavingsPlanInput {
+    /// <p>The ID of the Savings Plan.</p>
+    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+        self.savings_plan_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteQueuedSavingsPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2319,6 +2491,37 @@ pub struct CreateSavingsPlanInput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSavingsPlanInput {
+    /// <p>The ID of the offering.</p>
+    pub fn savings_plan_offering_id(&self) -> std::option::Option<&str> {
+        self.savings_plan_offering_id.as_deref()
+    }
+    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
+    /// than three digits after the decimal point.</p>
+    pub fn commitment(&self) -> std::option::Option<&str> {
+        self.commitment.as_deref()
+    }
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
+    /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    pub fn upfront_payment_amount(&self) -> std::option::Option<&str> {
+        self.upfront_payment_amount.as_deref()
+    }
+    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    pub fn purchase_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.purchase_time.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSavingsPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -107,10 +107,7 @@ impl AbortEnvironmentUpdateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_abort_environment_update(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -286,7 +283,7 @@ impl ApplyEnvironmentManagedActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_apply_environment_managed_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_apply_environment_managed_action(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -453,7 +450,7 @@ impl AssociateEnvironmentOperationsRoleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_environment_operations_role(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_environment_operations_role(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -599,10 +596,9 @@ impl CheckDnsAvailabilityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_check_dns_availability(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_check_dns_availability(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -795,10 +791,7 @@ impl ComposeEnvironmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_compose_environments(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_compose_environments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1004,10 +997,7 @@ impl CreateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1337,10 +1327,7 @@ impl CreateApplicationVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_application_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1689,7 +1676,7 @@ impl CreateConfigurationTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2127,10 +2114,7 @@ impl CreateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2375,10 +2359,7 @@ impl CreatePlatformVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_platform_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2511,10 +2492,7 @@ impl CreateStorageLocationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_storage_location(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2668,10 +2646,7 @@ impl DeleteApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2853,10 +2828,7 @@ impl DeleteApplicationVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_application_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3020,7 +2992,7 @@ impl DeleteConfigurationTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3185,7 +3157,7 @@ impl DeleteEnvironmentConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_environment_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3333,10 +3305,7 @@ impl DeletePlatformVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_platform_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3470,10 +3439,7 @@ impl DescribeAccountAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3621,10 +3587,7 @@ impl DescribeApplicationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_applications(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_applications(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3830,7 +3793,7 @@ impl DescribeApplicationVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_application_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_application_versions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4066,7 +4029,7 @@ impl DescribeConfigurationOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4262,7 +4225,7 @@ impl DescribeConfigurationSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_configuration_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4462,10 +4425,7 @@ impl DescribeEnvironmentHealthInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_environment_health(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4654,7 +4614,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_environment_managed_action_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_environment_managed_action_history(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4834,7 +4794,7 @@ impl DescribeEnvironmentManagedActionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_environment_managed_actions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_environment_managed_actions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5011,7 +4971,7 @@ impl DescribeEnvironmentResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_environment_resources(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_environment_resources(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5298,10 +5258,7 @@ impl DescribeEnvironmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_environments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_environments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5623,10 +5580,8 @@ impl DescribeEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5833,10 +5788,7 @@ impl DescribeInstancesHealthInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_instances_health(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5984,10 +5936,7 @@ impl DescribePlatformVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_platform_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6137,7 +6086,7 @@ impl DisassociateEnvironmentOperationsRoleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_environment_operations_role(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_environment_operations_role(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6270,7 +6219,7 @@ impl ListAvailableSolutionStacksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_available_solution_stacks(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_available_solution_stacks(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6585,10 +6534,9 @@ impl ListPlatformBranchesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_platform_branches(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_platform_branches(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6776,10 +6724,9 @@ impl ListPlatformVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_platform_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_platform_versions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6926,10 +6873,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7104,10 +7050,7 @@ impl RebuildEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_rebuild_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_rebuild_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7307,10 +7250,7 @@ impl RequestEnvironmentInfoInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_request_environment_info(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7485,10 +7425,7 @@ impl RestartAppServerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restart_app_server(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_restart_app_server(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7687,10 +7624,7 @@ impl RetrieveEnvironmentInfoInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_retrieve_environment_info(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7918,10 +7852,7 @@ impl SwapEnvironmentCnamEsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_swap_environment_cnam_es(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8160,10 +8091,7 @@ impl TerminateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_terminate_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_terminate_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8331,10 +8259,7 @@ impl UpdateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8502,7 +8427,7 @@ impl UpdateApplicationResourceLifecycleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application_resource_lifecycle(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_application_resource_lifecycle(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8689,10 +8614,7 @@ impl UpdateApplicationVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_application_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8936,7 +8858,7 @@ impl UpdateConfigurationTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9307,10 +9229,7 @@ impl UpdateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9511,10 +9430,7 @@ impl UpdateTagsForResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_tags_for_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9724,7 +9640,7 @@ impl ValidateConfigurationSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_validate_configuration_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_validate_configuration_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9804,6 +9720,29 @@ pub struct ValidateConfigurationSettingsInput {
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
+impl ValidateConfigurationSettingsInput {
+    /// <p>The name of the application that the configuration template or environment belongs
+    /// to.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the configuration template to validate the settings against.</p>
+    /// <p>Condition: You cannot specify both this and an environment name.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The name of the environment to validate the settings against.</p>
+    /// <p>Condition: You cannot specify both this and a configuration template name.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>A list of the options and desired values to evaluate.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateConfigurationSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateConfigurationSettingsInput");
@@ -9831,6 +9770,26 @@ pub struct UpdateTagsForResourceInput {
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>,
     /// <code>TagsToRemove</code>.</p>
     pub tags_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
+    /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is
+    /// updated.</p>
+    /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>,
+    /// <code>TagsToRemove</code>.</p>
+    pub fn tags_to_add(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_to_add.as_deref()
+    }
+    /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
+    /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>,
+    /// <code>TagsToRemove</code>.</p>
+    pub fn tags_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.tags_to_remove.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9895,6 +9854,81 @@ pub struct UpdateEnvironmentInput {
     /// set for this environment.</p>
     pub options_to_remove: std::option::Option<std::vec::Vec<crate::model::OptionSpecification>>,
 }
+impl UpdateEnvironmentInput {
+    /// <p>The name of the application with which the environment is associated.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The ID of the environment to update.</p>
+    /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an
+    /// <code>InvalidParameterValue</code> error.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment to update. If no environment with this name exists, AWS
+    /// Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of the group to which the target environment belongs. Specify a group name
+    /// only if the environment's name is specified in an environment manifest and not with the
+    /// environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
+    /// (env.yaml)</a> for details.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this
+    /// environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>This specifies the tier to use to update the environment.</p>
+    /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic
+    /// Beanstalk returns <code>InvalidParameterValue</code> error. </p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::EnvironmentTier> {
+        self.tier.as_ref()
+    }
+    /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application
+    /// version to the environment. If no such application version is found, returns an
+    /// <code>InvalidParameterValue</code> error. </p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration
+    /// template to the environment. If no such configuration template is found, AWS Elastic Beanstalk
+    /// returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>This specifies the platform version that the environment will run after the environment
+    /// is updated.</p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the platform, if used.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the
+    /// running environment and sets the specified configuration options to the requested
+    /// value.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+    /// <p>A list of custom user-defined configuration options to remove from the configuration
+    /// set for this environment.</p>
+    pub fn options_to_remove(&self) -> std::option::Option<&[crate::model::OptionSpecification]> {
+        self.options_to_remove.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
@@ -9939,6 +9973,39 @@ pub struct UpdateConfigurationTemplateInput {
     /// </p>
     pub options_to_remove: std::option::Option<std::vec::Vec<crate::model::OptionSpecification>>,
 }
+impl UpdateConfigurationTemplateInput {
+    /// <p>The name of the application associated with the configuration template to
+    /// update.</p>
+    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code>
+    /// returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the configuration template to update.</p>
+    /// <p> If no configuration template is found with this name,
+    /// <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code>
+    /// error. </p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>A new description for the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of configuration option settings to update with the new specified option
+    /// value.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+    /// <p>A list of configuration options to remove from the configuration set.</p>
+    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options.
+    /// </p>
+    pub fn options_to_remove(&self) -> std::option::Option<&[crate::model::OptionSpecification]> {
+        self.options_to_remove.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationTemplateInput");
@@ -9966,6 +10033,24 @@ pub struct UpdateApplicationVersionInput {
     /// <p>A new description for this version.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateApplicationVersionInput {
+    /// <p>The name of the application associated with this version.</p>
+    /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an
+    /// <code>InvalidParameterValue</code> error.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the version to update.</p>
+    /// <p>If no application version is found with this label, <code>UpdateApplication</code>
+    /// returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p>A new description for this version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationVersionInput");
@@ -9985,6 +10070,18 @@ pub struct UpdateApplicationResourceLifecycleInput {
     /// <p>The lifecycle configuration.</p>
     pub resource_lifecycle_config:
         std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
+}
+impl UpdateApplicationResourceLifecycleInput {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The lifecycle configuration.</p>
+    pub fn resource_lifecycle_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationResourceLifecycleConfig> {
+        self.resource_lifecycle_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationResourceLifecycleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10007,6 +10104,20 @@ pub struct UpdateApplicationInput {
     /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the
     /// description.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateApplicationInput {
+    /// <p>The name of the application to update. If no such application is found,
+    /// <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.
+    /// </p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>A new description for the application.</p>
+    /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the
+    /// description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10056,6 +10167,50 @@ pub struct TerminateEnvironmentInput {
     /// dependent on it.</p>
     pub force_terminate: std::option::Option<bool>,
 }
+impl TerminateEnvironmentInput {
+    /// <p>The ID of the environment to terminate.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment to terminate.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>Indicates whether the associated AWS resources should shut down when the environment is
+    /// terminated:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>true</code>: The specified environment as well as the associated AWS resources, such
+    /// as Auto Scaling group and LoadBalancer, are terminated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>false</code>: AWS Elastic Beanstalk resource management is removed from the
+    /// environment, but the AWS resources continue to operate.</p>
+    /// </li>
+    /// </ul>
+    /// <p> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a>
+    /// </p>
+    /// <p> Default: <code>true</code>
+    /// </p>
+    /// <p> Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn terminate_resources(&self) -> std::option::Option<bool> {
+        self.terminate_resources
+    }
+    /// <p>Terminates the target environment even if another environment in the same group is
+    /// dependent on it.</p>
+    pub fn force_terminate(&self) -> std::option::Option<bool> {
+        self.force_terminate
+    }
+}
 impl std::fmt::Debug for TerminateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateEnvironmentInput");
@@ -10095,6 +10250,39 @@ pub struct SwapEnvironmentCnamEsInput {
     /// </p>
     pub destination_environment_name: std::option::Option<std::string::String>,
 }
+impl SwapEnvironmentCnamEsInput {
+    /// <p>The ID of the source environment.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+    /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+    /// <code>SourceEnvironmentId</code>, you must specify the
+    /// <code>DestinationEnvironmentId</code>. </p>
+    pub fn source_environment_id(&self) -> std::option::Option<&str> {
+        self.source_environment_id.as_deref()
+    }
+    /// <p>The name of the source environment.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+    /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+    /// <code>SourceEnvironmentName</code>, you must specify the
+    /// <code>DestinationEnvironmentName</code>. </p>
+    pub fn source_environment_name(&self) -> std::option::Option<&str> {
+        self.source_environment_name.as_deref()
+    }
+    /// <p>The ID of the destination environment.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+    /// <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+    /// <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
+    pub fn destination_environment_id(&self) -> std::option::Option<&str> {
+        self.destination_environment_id.as_deref()
+    }
+    /// <p>The name of the destination environment.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
+    /// <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
+    /// <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
+    /// </p>
+    pub fn destination_environment_name(&self) -> std::option::Option<&str> {
+        self.destination_environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SwapEnvironmentCnamEsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SwapEnvironmentCnamEsInput");
@@ -10132,6 +10320,29 @@ pub struct RetrieveEnvironmentInfoInput {
     /// <p>The type of information to retrieve.</p>
     pub info_type: std::option::Option<crate::model::EnvironmentInfoType>,
 }
+impl RetrieveEnvironmentInfoInput {
+    /// <p>The ID of the data's environment.</p>
+    /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code>
+    /// error.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+    /// error.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the data's environment.</p>
+    /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The type of information to retrieve.</p>
+    pub fn info_type(&self) -> std::option::Option<&crate::model::EnvironmentInfoType> {
+        self.info_type.as_ref()
+    }
+}
 impl std::fmt::Debug for RetrieveEnvironmentInfoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveEnvironmentInfoInput");
@@ -10156,6 +10367,22 @@ pub struct RestartAppServerInput {
     /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
     /// </p>
     pub environment_name: std::option::Option<std::string::String>,
+}
+impl RestartAppServerInput {
+    /// <p>The ID of the environment to restart the server for.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment to restart the server for.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RestartAppServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10188,6 +10415,30 @@ pub struct RequestEnvironmentInfoInput {
     /// <p>The type of information to request.</p>
     pub info_type: std::option::Option<crate::model::EnvironmentInfoType>,
 }
+impl RequestEnvironmentInfoInput {
+    /// <p>The ID of the environment of the requested data.</p>
+    /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+    /// <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment of the requested data.</p>
+    /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+    /// <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The type of information to request.</p>
+    pub fn info_type(&self) -> std::option::Option<&crate::model::EnvironmentInfoType> {
+        self.info_type.as_ref()
+    }
+}
 impl std::fmt::Debug for RequestEnvironmentInfoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestEnvironmentInfoInput");
@@ -10213,6 +10464,22 @@ pub struct RebuildEnvironmentInput {
     /// </p>
     pub environment_name: std::option::Option<std::string::String>,
 }
+impl RebuildEnvironmentInput {
+    /// <p>The ID of the environment to rebuild.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment to rebuild.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RebuildEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebuildEnvironmentInput");
@@ -10229,6 +10496,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
+    /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10253,6 +10527,25 @@ pub struct ListPlatformVersionsInput {
     /// initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlatformVersionsInput {
+    /// <p>Criteria for restricting the resulting list of platform versions. The filter is
+    /// interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code>
+    /// terms.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::PlatformFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of platform version values returned in one call.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the
+    /// next response page. All other parameter values must be identical to the ones specified in the
+    /// initial request.</p>
+    /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPlatformVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10347,6 +10640,92 @@ pub struct ListPlatformBranchesInput {
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPlatformBranchesInput {
+    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated
+    /// as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
+    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code>
+    /// terms. Most operators take a single value. The <code>in</code> and <code>not_in</code>
+    /// operators can take multiple values.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Attribute = BranchName</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code>
+    /// | <code>ends_with</code> | <code>contains</code> | <code>in</code> |
+    /// <code>not_in</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Attribute = LifecycleState</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> |
+    /// <code>not_in</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Values</code>: <code>beta</code> | <code>supported</code> |
+    /// <code>deprecated</code> | <code>retired</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Attribute = PlatformName</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code>
+    /// | <code>ends_with</code> | <code>contains</code> | <code>in</code> |
+    /// <code>not_in</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Attribute = TierType</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Operator</code>: <code>=</code> | <code>!=</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
+    /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10
+    /// items.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SearchFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of platform branch values returned in one call.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the
+    /// next response page. All other parameter values must be identical to the ones specified in the
+    /// initial request.</p>
+    /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPlatformBranchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPlatformBranchesInput");
@@ -10375,6 +10754,12 @@ pub struct DisassociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
     pub environment_name: std::option::Option<std::string::String>,
 }
+impl DisassociateEnvironmentOperationsRoleInput {
+    /// <p>The name of the environment from which to disassociate the operations role.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateEnvironmentOperationsRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateEnvironmentOperationsRoleInput");
@@ -10389,6 +10774,12 @@ impl std::fmt::Debug for DisassociateEnvironmentOperationsRoleInput {
 pub struct DescribePlatformVersionInput {
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: std::option::Option<std::string::String>,
+}
+impl DescribePlatformVersionInput {
+    /// <p>The ARN of the platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePlatformVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10412,6 +10803,28 @@ pub struct DescribeInstancesHealthInput {
     pub attribute_names: std::option::Option<std::vec::Vec<crate::model::InstancesHealthAttribute>>,
     /// <p>Specify the pagination token returned by a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstancesHealthInput {
+    /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to
+    /// <code>All</code>. If no attribute names are specified, returns a list of
+    /// instances.</p>
+    pub fn attribute_names(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstancesHealthAttribute]> {
+        self.attribute_names.as_deref()
+    }
+    /// <p>Specify the pagination token returned by a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstancesHealthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10463,6 +10876,67 @@ pub struct DescribeEventsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>Pagination token. If specified, the events return the next batch of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEventsInput {
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
+    /// those associated with this application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+    /// associated with this application version.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+    /// are associated with this environment configuration.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+    /// associated with this environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+    /// associated with this environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the
+    /// returned descriptions to those associated with this custom platform version.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only
+    /// those associated with this request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>If specified, limits the events returned from this call to include only those with the
+    /// specified severity or higher.</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::EventSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+    /// occur on or after this time.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+    /// occur up to, but not including, the <code>EndTime</code>. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Specifies the maximum number of events that can be returned, beginning with the most
+    /// recent event.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>Pagination token. If specified, the events return the next batch of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10519,6 +10993,55 @@ pub struct DescribeEnvironmentsInput {
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEnvironmentsInput {
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
+    /// those that are associated with this application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
+    /// those that are associated with this application version.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
+    /// those that have the specified IDs.</p>
+    pub fn environment_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.environment_ids.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
+    /// those that have the specified names.</p>
+    pub fn environment_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.environment_names.as_deref()
+    }
+    /// <p>Indicates whether to include deleted environments:</p>
+    /// <p>
+    /// <code>true</code>: Environments that have been deleted after
+    /// <code>IncludedDeletedBackTo</code> are displayed.</p>
+    /// <p>
+    /// <code>false</code>: Do not include deleted environments.</p>
+    pub fn include_deleted(&self) -> std::option::Option<bool> {
+        self.include_deleted
+    }
+    /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then
+    /// environments deleted after this date are displayed. </p>
+    pub fn included_deleted_back_to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.included_deleted_back_to.as_ref()
+    }
+    /// <p>For a paginated request. Specify a maximum number of environments to include in
+    /// each response.</p>
+    /// <p>If no <code>MaxRecords</code> is specified, all available environments are
+    /// retrieved in a single response.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other
+    /// parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEnvironmentsInput");
@@ -10549,6 +11072,22 @@ pub struct DescribeEnvironmentResourcesInput {
     /// </p>
     pub environment_name: std::option::Option<std::string::String>,
 }
+impl DescribeEnvironmentResourcesInput {
+    /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the environment to retrieve AWS resource usage data.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+    /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+    /// </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEnvironmentResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEnvironmentResourcesInput");
@@ -10568,6 +11107,20 @@ pub struct DescribeEnvironmentManagedActionsInput {
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>To show only actions with a particular status, specify a status.</p>
     pub status: std::option::Option<crate::model::ActionStatus>,
+}
+impl DescribeEnvironmentManagedActionsInput {
+    /// <p>The name of the target environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>To show only actions with a particular status, specify a status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentManagedActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10591,6 +11144,24 @@ pub struct DescribeEnvironmentManagedActionHistoryInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for a single request.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl DescribeEnvironmentManagedActionHistoryInput {
+    /// <p>The environment ID of the target environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The name of the target environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The pagination token returned by a previous request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for a single request.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentManagedActionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10618,6 +11189,26 @@ pub struct DescribeEnvironmentHealthInput {
     /// environment.</p>
     pub attribute_names:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentHealthAttribute>>,
+}
+impl DescribeEnvironmentHealthInput {
+    /// <p>Specify the environment by name.</p>
+    /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>Specify the environment by ID.</p>
+    /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>Specify the response elements to return. To retrieve all attributes, set to
+    /// <code>All</code>. If no attribute names are specified, returns the name of the
+    /// environment.</p>
+    pub fn attribute_names(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentHealthAttribute]> {
+        self.attribute_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentHealthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10649,6 +11240,28 @@ pub struct DescribeConfigurationSettingsInput {
     /// <code>MissingRequiredParameter</code> error. </p>
     pub environment_name: std::option::Option<std::string::String>,
 }
+impl DescribeConfigurationSettingsInput {
+    /// <p>The application for the environment or configuration template.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the configuration template to describe.</p>
+    /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not
+    /// both. If you specify both, AWS Elastic Beanstalk returns an
+    /// <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic
+    /// Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The name of the environment to describe.</p>
+    /// <p> Condition: You must specify either this or a TemplateName, but not both. If you
+    /// specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+    /// If you do not specify either, AWS Elastic Beanstalk returns
+    /// <code>MissingRequiredParameter</code> error. </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationSettingsInput");
@@ -10679,6 +11292,36 @@ pub struct DescribeConfigurationOptionsInput {
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
     pub options: std::option::Option<std::vec::Vec<crate::model::OptionSpecification>>,
+}
+impl DescribeConfigurationOptionsInput {
+    /// <p>The name of the application associated with the configuration template or environment.
+    /// Only needed if you want to describe the configuration options associated with either the
+    /// configuration template or environment.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the configuration template whose configuration options you want to
+    /// describe.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The name of the environment whose configuration options you want to describe.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of the solution stack whose configuration options you want to
+    /// describe.</p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The ARN of the custom platform.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>If specified, restricts the descriptions to only the specified options.</p>
+    pub fn options(&self) -> std::option::Option<&[crate::model::OptionSpecification]> {
+        self.options.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10712,6 +11355,30 @@ pub struct DescribeApplicationVersionsInput {
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeApplicationVersionsInput {
+    /// <p>Specify an application name to show only application versions for that
+    /// application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Specify a version label to show a specific application version.</p>
+    pub fn version_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.version_labels.as_deref()
+    }
+    /// <p>For a paginated request. Specify a maximum number of application versions to include in
+    /// each response.</p>
+    /// <p>If no <code>MaxRecords</code> is specified, all available application versions are
+    /// retrieved in a single response.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other
+    /// parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeApplicationVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeApplicationVersionsInput");
@@ -10730,6 +11397,13 @@ pub struct DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
     /// those with the specified names.</p>
     pub application_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeApplicationsInput {
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
+    /// those with the specified names.</p>
+    pub fn application_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.application_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10757,6 +11431,12 @@ pub struct DeletePlatformVersionInput {
     /// <p>The ARN of the version of the custom platform.</p>
     pub platform_arn: std::option::Option<std::string::String>,
 }
+impl DeletePlatformVersionInput {
+    /// <p>The ARN of the version of the custom platform.</p>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePlatformVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePlatformVersionInput");
@@ -10773,6 +11453,16 @@ pub struct DeleteEnvironmentConfigurationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment to delete the draft configuration from.</p>
     pub environment_name: std::option::Option<std::string::String>,
+}
+impl DeleteEnvironmentConfigurationInput {
+    /// <p>The name of the application the environment is associated with.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the environment to delete the draft configuration from.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10791,6 +11481,16 @@ pub struct DeleteConfigurationTemplateInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template to delete.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl DeleteConfigurationTemplateInput {
+    /// <p>The name of the application to delete the configuration template from.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the configuration template to delete.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10814,6 +11514,22 @@ pub struct DeleteApplicationVersionInput {
     /// bundle remains in Amazon S3.</p>
     pub delete_source_bundle: std::option::Option<bool>,
 }
+impl DeleteApplicationVersionInput {
+    /// <p>The name of the application to which the version belongs.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The label of the version to delete.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket.
+    /// Otherwise, the application version is deleted only from Elastic Beanstalk and the source
+    /// bundle remains in Amazon S3.</p>
+    pub fn delete_source_bundle(&self) -> std::option::Option<bool> {
+        self.delete_source_bundle
+    }
+}
 impl std::fmt::Debug for DeleteApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApplicationVersionInput");
@@ -10833,6 +11549,17 @@ pub struct DeleteApplicationInput {
     /// <p>When set to true, running environments will be terminated before deleting the
     /// application.</p>
     pub terminate_env_by_force: std::option::Option<bool>,
+}
+impl DeleteApplicationInput {
+    /// <p>The name of the application to delete.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>When set to true, running environments will be terminated before deleting the
+    /// application.</p>
+    pub fn terminate_env_by_force(&self) -> std::option::Option<bool> {
+        self.terminate_env_by_force
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10873,6 +11600,36 @@ pub struct CreatePlatformVersionInput {
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using
     /// the platform version don't inherit the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreatePlatformVersionInput {
+    /// <p>The name of your custom platform.</p>
+    pub fn platform_name(&self) -> std::option::Option<&str> {
+        self.platform_name.as_deref()
+    }
+    /// <p>The number, such as 1.0.2, for the new platform version.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>The location of the platform definition archive in Amazon S3.</p>
+    pub fn platform_definition_bundle(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.platform_definition_bundle.as_ref()
+    }
+    /// <p>The name of the builder environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The configuration option settings to apply to the builder environment.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+    /// <p>Specifies the tags applied to the new platform version.</p>
+    /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using
+    /// the platform version don't inherit the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePlatformVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10964,6 +11721,106 @@ pub struct CreateEnvironmentInput {
     /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
 }
+impl CreateEnvironmentInput {
+    /// <p>The name of the application that is associated with this environment.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>A unique name for the environment.</p>
+    /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only
+    /// letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique
+    /// within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an
+    /// <code>InvalidParameterValue</code> error. </p>
+    /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of
+    /// the CNAME, and therefore part of the visible URL for your application.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of the group to which the target environment belongs. Specify a group name
+    /// only if the environment's name is specified in an environment manifest and not with the
+    /// environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
+    /// (env.yaml)</a> for details.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>Your description for this environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in
+    /// your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by
+    /// appending a random alphanumeric string to the environment name.</p>
+    pub fn cname_prefix(&self) -> std::option::Option<&str> {
+        self.cname_prefix.as_deref()
+    }
+    /// <p>Specifies the tier to use in creating this environment. The environment tier that you
+    /// choose determines whether Elastic Beanstalk provisions resources to support a web application that handles
+    /// HTTP(S) requests or a web application that handles background-processing tasks.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::EnvironmentTier> {
+        self.tier.as_ref()
+    }
+    /// <p>Specifies the tags applied to resources in the environment.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the application version to deploy.</p>
+    /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p>
+    /// <note>
+    /// <p>If you specify <code>TemplateName</code>, then don't specify
+    /// <code>SolutionStackName</code>.</p>
+    /// </note>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If
+    /// specified, Elastic Beanstalk sets the configuration values to the default values associated with the
+    /// specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk
+    /// Platforms</i> guide.</p>
+    /// <note>
+    /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+    /// <code>TemplateName</code>.</p>
+    /// </note>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For
+    /// more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the
+    /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <note>
+    ///
+    /// <p>If you specify <code>PlatformArn</code>, don't specify
+    /// <code>SolutionStackName</code>.</p>
+    /// </note>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the
+    /// requested value in the configuration set for the new environment. These override the values
+    /// obtained from the solution stack or the configuration template.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+    /// <p>A list of custom user-defined configuration options to remove from the configuration
+    /// set for this new environment.</p>
+    pub fn options_to_remove(&self) -> std::option::Option<&[crate::model::OptionSpecification]> {
+        self.options_to_remove.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
+    /// operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream
+    /// services during this call and during subsequent calls acting on this environment. To specify
+    /// an operations role, you must have the <code>iam:PassRole</code> permission for the role. For
+    /// more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+    /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    pub fn operations_role(&self) -> std::option::Option<&str> {
+        self.operations_role.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentInput");
@@ -11044,6 +11901,81 @@ pub struct CreateConfigurationTemplateInput {
     /// <p>Specifies the tags applied to the configuration template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateConfigurationTemplateInput {
+    /// <p>The name of the Elastic Beanstalk application to associate with this configuration
+    /// template.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the configuration template.</p>
+    /// <p>Constraint: This name must be unique per application.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For
+    /// example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack
+    /// specifies the operating system, runtime, and application server for a configuration template.
+    /// It also determines the set of configuration options as well as the possible and default
+    /// values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in the
+    /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>You must specify <code>SolutionStackName</code> if you don't specify
+    /// <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+    /// <code>SourceConfiguration</code>.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+    /// <code>ListAvailableSolutionStacks</code>
+    /// </a> API to obtain a list of available
+    /// solution stacks.</p>
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+        self.solution_stack_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
+    /// Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <note>
+    ///
+    /// <p>If you specify <code>PlatformArn</code>, then don't specify
+    /// <code>SolutionStackName</code>.</p>
+    /// </note>
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
+        self.platform_arn.as_deref()
+    }
+    /// <p>An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the configuration values from the specified
+    /// configuration template to create a new configuration.</p>
+    /// <p>Values specified in <code>OptionSettings</code> override any values obtained from the
+    /// <code>SourceConfiguration</code>.</p>
+    /// <p>You must specify <code>SourceConfiguration</code> if you don't specify
+    /// <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+    /// <code>SolutionStackName</code>.</p>
+    /// <p>Constraint: If both solution stack name and source configuration are specified, the
+    /// solution stack of the source configuration template must match the specified solution stack
+    /// name.</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>The ID of an environment whose settings you want to use to create the configuration
+    /// template. You must specify <code>EnvironmentId</code> if you don't specify
+    /// <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+    /// <code>SourceConfiguration</code>.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>An optional description for this configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these
+    /// values override the values obtained from the solution stack or the source configuration
+    /// template. For a complete list of Elastic Beanstalk configuration options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
+    /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    pub fn option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+        self.option_settings.as_deref()
+    }
+    /// <p>Specifies the tags applied to the configuration template.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationTemplateInput");
@@ -11112,6 +12044,75 @@ pub struct CreateApplicationVersionInput {
     /// application version don't inherit the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateApplicationVersionInput {
+    /// <p> The name of the application. If no application is found with this name, and
+    /// <code>AutoCreateApplication</code> is <code>false</code>, returns an
+    /// <code>InvalidParameterValue</code> error. </p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>A label identifying this version.</p>
+    /// <p>Constraint: Must be unique per application. If an application version already exists
+    /// with this label for the specified application, AWS Elastic Beanstalk returns an
+    /// <code>InvalidParameterValue</code> error. </p>
+    pub fn version_label(&self) -> std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
+    /// <p>A description of this application version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the
+    /// application version.</p>
+    pub fn source_build_information(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceBuildInformation> {
+        self.source_build_information.as_ref()
+    }
+    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this
+    /// version.</p>
+    /// <note>
+    /// <p>The Amazon S3 bucket must be in the same region as the
+    /// environment.</p>
+    /// </note>
+    /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+    /// <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+    /// <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample
+    /// application.</p>
+    pub fn source_bundle(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.source_bundle.as_ref()
+    }
+    /// <p>Settings for an AWS CodeBuild build.</p>
+    pub fn build_configuration(&self) -> std::option::Option<&crate::model::BuildConfiguration> {
+        self.build_configuration.as_ref()
+    }
+    /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't
+    /// already exist.</p>
+    pub fn auto_create_application(&self) -> std::option::Option<bool> {
+        self.auto_create_application
+    }
+    /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and
+    /// configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in
+    /// the source bundle. Validating configuration files can identify issues prior to deploying the
+    /// application version to an environment.</p>
+    /// <p>You must turn processing on for application versions that you create using AWS
+    /// CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3,
+    /// processing is optional.</p>
+    /// <note>
+    /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It
+    /// doesn't validate your application's configuration files, like proxy server or Docker
+    /// configuration.</p>
+    /// </note>
+    pub fn process(&self) -> std::option::Option<bool> {
+        self.process
+    }
+    /// <p>Specifies the tags applied to the application version.</p>
+    /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the
+    /// application version don't inherit the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationVersionInput");
@@ -11145,6 +12146,29 @@ pub struct CreateApplicationInput {
     /// application don't inherit the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateApplicationInput {
+    /// <p>The name of the application. Must be unique within your account.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Your description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies an application resource lifecycle configuration to prevent your application
+    /// from accumulating too many versions.</p>
+    pub fn resource_lifecycle_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationResourceLifecycleConfig> {
+        self.resource_lifecycle_config.as_ref()
+    }
+    /// <p>Specifies the tags applied to the application.</p>
+    /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the
+    /// application don't inherit the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationInput");
@@ -11173,6 +12197,26 @@ pub struct ComposeEnvironmentsInput {
     /// optionally can specify environment links to create.</p>
     pub version_labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ComposeEnvironmentsInput {
+    /// <p>The name of the application to which the specified source bundles belong.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The name of the group to which the target environments belong. Specify a group name
+    /// only if the environment name defined in each target environment's manifest ends with a +
+    /// (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
+    /// (env.yaml)</a> for details.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>A list of version labels, specifying one or more application source bundles that belong
+    /// to the target application. Each source bundle must include an environment manifest that
+    /// specifies the name of the environment and the name of the solution stack to use, and
+    /// optionally can specify environment links to create.</p>
+    pub fn version_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.version_labels.as_deref()
+    }
+}
 impl std::fmt::Debug for ComposeEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComposeEnvironmentsInput");
@@ -11189,6 +12233,12 @@ impl std::fmt::Debug for ComposeEnvironmentsInput {
 pub struct CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
     pub cname_prefix: std::option::Option<std::string::String>,
+}
+impl CheckDnsAvailabilityInput {
+    /// <p>The prefix used when this CNAME is reserved.</p>
+    pub fn cname_prefix(&self) -> std::option::Option<&str> {
+        self.cname_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for CheckDnsAvailabilityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11207,6 +12257,17 @@ pub struct AssociateEnvironmentOperationsRoleInput {
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
     /// operations role.</p>
     pub operations_role: std::option::Option<std::string::String>,
+}
+impl AssociateEnvironmentOperationsRoleInput {
+    /// <p>The name of the environment to which to set the operations role.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
+    /// operations role.</p>
+    pub fn operations_role(&self) -> std::option::Option<&str> {
+        self.operations_role.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateEnvironmentOperationsRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11228,6 +12289,20 @@ pub struct ApplyEnvironmentManagedActionInput {
     /// <p>The action ID of the scheduled managed action to execute.</p>
     pub action_id: std::option::Option<std::string::String>,
 }
+impl ApplyEnvironmentManagedActionInput {
+    /// <p>The name of the target environment.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The action ID of the scheduled managed action to execute.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplyEnvironmentManagedActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplyEnvironmentManagedActionInput");
@@ -11248,6 +12323,18 @@ pub struct AbortEnvironmentUpdateInput {
     /// <p>This specifies the name of the environment with the in-progress update that you want to
     /// cancel.</p>
     pub environment_name: std::option::Option<std::string::String>,
+}
+impl AbortEnvironmentUpdateInput {
+    /// <p>This specifies the ID of the environment with the in-progress update that you want to
+    /// cancel.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>This specifies the name of the environment with the in-progress update that you want to
+    /// cancel.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AbortEnvironmentUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

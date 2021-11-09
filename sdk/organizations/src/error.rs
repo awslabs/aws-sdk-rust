@@ -18791,6 +18791,12 @@ pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl TooManyRequestsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequestsException");
@@ -19233,6 +19239,12 @@ pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     pub reason: std::option::Option<crate::model::InvalidInputExceptionReason>,
 }
+impl InvalidInputException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(&self) -> std::option::Option<&crate::model::InvalidInputExceptionReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidInputException");
@@ -19545,6 +19557,12 @@ pub struct ConstraintViolationException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub reason: std::option::Option<crate::model::ConstraintViolationExceptionReason>,
+}
+impl ConstraintViolationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(&self) -> std::option::Option<&crate::model::ConstraintViolationExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for ConstraintViolationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20663,6 +20681,14 @@ pub struct HandshakeConstraintViolationException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub reason: std::option::Option<crate::model::HandshakeConstraintViolationExceptionReason>,
+}
+impl HandshakeConstraintViolationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(
+        &self,
+    ) -> std::option::Option<&crate::model::HandshakeConstraintViolationExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for HandshakeConstraintViolationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21871,6 +21897,14 @@ pub struct AccessDeniedForDependencyException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub reason: std::option::Option<crate::model::AccessDeniedForDependencyExceptionReason>,
+}
+impl AccessDeniedForDependencyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(
+        &self,
+    ) -> std::option::Option<&crate::model::AccessDeniedForDependencyExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessDeniedForDependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

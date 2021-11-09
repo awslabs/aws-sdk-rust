@@ -9,6 +9,17 @@ pub struct FeatureValue {
     /// String, Integral, or Fractional. This value represents all three types as a string.</p>
     pub value_as_string: std::option::Option<std::string::String>,
 }
+impl FeatureValue {
+    /// <p>The name of a feature that a feature value corresponds to.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+    /// <p>The value associated with a feature, in string format. Note that features types can be
+    /// String, Integral, or Fractional. This value represents all three types as a string.</p>
+    pub fn value_as_string(&self) -> std::option::Option<&str> {
+        self.value_as_string.as_deref()
+    }
+}
 impl std::fmt::Debug for FeatureValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FeatureValue");
@@ -79,6 +90,23 @@ pub struct BatchGetRecordIdentifier {
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
     /// the Features are returned.</p>
     pub feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetRecordIdentifier {
+    /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The value for a list of record identifiers in string format.</p>
+    pub fn record_identifiers_value_as_string(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.record_identifiers_value_as_string.as_deref()
+    }
+    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
+    /// the Features are returned.</p>
+    pub fn feature_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.feature_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetRecordIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -191,6 +219,25 @@ pub struct BatchGetRecordError {
     /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl BatchGetRecordError {
+    /// <p>The name of the feature group that the record belongs to.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing
+    /// an error when attempting to be retrieved.</p>
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
+        self.record_identifier_value_as_string.as_deref()
+    }
+    /// <p>The error code of an error that has occured when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"> Errors</a>.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetRecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetRecordError");
@@ -298,6 +345,20 @@ pub struct BatchGetRecordResultDetail {
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
     /// <p>The <code>Record</code> retrieved.</p>
     pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+}
+impl BatchGetRecordResultDetail {
+    /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The value of the record identifer in string format.</p>
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
+        self.record_identifier_value_as_string.as_deref()
+    }
+    /// <p>The <code>Record</code> retrieved.</p>
+    pub fn record(&self) -> std::option::Option<&[crate::model::FeatureValue]> {
+        self.record.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetRecordResultDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

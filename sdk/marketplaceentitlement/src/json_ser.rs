@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_get_entitlements_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetEntitlementsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.product_code {
         object.key("ProductCode").string(var_1);
     }
@@ -30,4 +30,5 @@ pub fn serialize_structure_crate_input_get_entitlements_input(
             aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    Ok(())
 }

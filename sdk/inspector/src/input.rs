@@ -121,10 +121,7 @@ impl AddAttributesToFindingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_attributes_to_findings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -300,10 +297,7 @@ impl CreateAssessmentTargetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_assessment_target(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -548,10 +542,7 @@ impl CreateAssessmentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_assessment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -709,10 +700,7 @@ impl CreateExclusionsPreviewInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_exclusions_preview(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -879,10 +867,7 @@ impl CreateResourceGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_resource_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1035,10 +1020,7 @@ impl DeleteAssessmentRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1193,10 +1175,7 @@ impl DeleteAssessmentTargetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_assessment_target(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1352,10 +1331,7 @@ impl DeleteAssessmentTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_assessment_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1516,10 +1492,7 @@ impl DescribeAssessmentRunsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_assessment_runs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1681,10 +1654,7 @@ impl DescribeAssessmentTargetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_assessment_targets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1844,7 +1814,7 @@ impl DescribeAssessmentTemplatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_assessment_templates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_assessment_templates(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1982,7 +1952,7 @@ impl DescribeCrossAccountAccessRoleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cross_account_access_role(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cross_account_access_role(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2148,10 +2118,7 @@ impl DescribeExclusionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_exclusions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_exclusions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2324,10 +2291,7 @@ impl DescribeFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2488,10 +2452,7 @@ impl DescribeResourceGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_resource_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2664,10 +2625,7 @@ impl DescribeRulesPackagesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_rules_packages(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2858,10 +2816,7 @@ impl GetAssessmentReportInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_assessment_report(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_assessment_report(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3077,10 +3032,9 @@ impl GetExclusionsPreviewInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_exclusions_preview(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_exclusions_preview(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3235,10 +3189,9 @@ impl GetTelemetryMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_telemetry_metadata(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_telemetry_metadata(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3448,10 +3401,7 @@ impl ListAssessmentRunAgentsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_assessment_run_agents(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3670,10 +3620,7 @@ impl ListAssessmentRunsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_assessment_runs(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_assessment_runs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3870,10 +3817,7 @@ impl ListAssessmentTargetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_assessment_targets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4094,10 +4038,7 @@ impl ListAssessmentTemplatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_assessment_templates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4285,10 +4226,7 @@ impl ListEventSubscriptionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_event_subscriptions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4474,10 +4412,8 @@ impl ListExclusionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_exclusions(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_exclusions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4694,10 +4630,7 @@ impl ListFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4869,10 +4802,7 @@ impl ListRulesPackagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_rules_packages(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_rules_packages(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5022,10 +4952,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5211,10 +5140,7 @@ impl PreviewAgentsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_preview_agents(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_preview_agents(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5367,7 +5293,7 @@ impl RegisterCrossAccountAccessRoleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_cross_account_access_role(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_cross_account_access_role(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5551,7 +5477,7 @@ impl RemoveAttributesFromFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_attributes_from_findings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_attributes_from_findings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5725,10 +5651,7 @@ impl SetTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_tags_for_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5900,10 +5823,7 @@ impl StartAssessmentRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_assessment_run(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_assessment_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6077,10 +5997,7 @@ impl StopAssessmentRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_assessment_run(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_assessment_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6259,10 +6176,7 @@ impl SubscribeToEventInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_subscribe_to_event(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_subscribe_to_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6441,10 +6355,9 @@ impl UnsubscribeFromEventInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_unsubscribe_from_event(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_unsubscribe_from_event(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6631,10 +6544,7 @@ impl UpdateAssessmentTargetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_assessment_target(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6708,6 +6618,21 @@ pub struct UpdateAssessmentTargetInput {
     /// associate with the assessment target.</p>
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
+impl UpdateAssessmentTargetInput {
+    /// <p>The ARN of the assessment target that you want to update.</p>
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
+        self.assessment_target_arn.as_deref()
+    }
+    /// <p>The name of the assessment target that you want to update.</p>
+    pub fn assessment_target_name(&self) -> std::option::Option<&str> {
+        self.assessment_target_name.as_deref()
+    }
+    /// <p>The ARN of the resource group that is used to specify the new resource group to
+    /// associate with the assessment target.</p>
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+        self.resource_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssessmentTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentTargetInput");
@@ -6729,6 +6654,21 @@ pub struct UnsubscribeFromEventInput {
     pub event: std::option::Option<crate::model::InspectorEvent>,
     /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
     pub topic_arn: std::option::Option<std::string::String>,
+}
+impl UnsubscribeFromEventInput {
+    /// <p>The ARN of the assessment template that is used during the event for which you want
+    /// to stop receiving SNS notifications.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The event for which you want to stop receiving SNS notifications.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
+        self.event.as_ref()
+    }
+    /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UnsubscribeFromEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6752,6 +6692,21 @@ pub struct SubscribeToEventInput {
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl SubscribeToEventInput {
+    /// <p>The ARN of the assessment template that is used during the event for which you want
+    /// to receive SNS notifications.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The event for which you want to receive SNS notifications.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
+        self.event.as_ref()
+    }
+    /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SubscribeToEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribeToEventInput");
@@ -6774,6 +6729,19 @@ pub struct StopAssessmentRunInput {
     /// assessment run immediately, after which no findings are generated.</p>
     pub stop_action: std::option::Option<crate::model::StopAction>,
 }
+impl StopAssessmentRunInput {
+    /// <p>The ARN of the assessment run that you want to stop.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+    /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
+    /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
+    /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
+    /// assessment run immediately, after which no findings are generated.</p>
+    pub fn stop_action(&self) -> std::option::Option<&crate::model::StopAction> {
+        self.stop_action.as_ref()
+    }
+}
 impl std::fmt::Debug for StopAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopAssessmentRunInput");
@@ -6794,6 +6762,18 @@ pub struct StartAssessmentRunInput {
     /// assessment template whose ARN is used to start the assessment run.</p>
     pub assessment_run_name: std::option::Option<std::string::String>,
 }
+impl StartAssessmentRunInput {
+    /// <p>The ARN of the assessment template of the assessment run that you want to
+    /// start.</p>
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+        self.assessment_template_arn.as_deref()
+    }
+    /// <p>You can specify the name for the assessment run. The name must be unique for the
+    /// assessment template whose ARN is used to start the assessment run.</p>
+    pub fn assessment_run_name(&self) -> std::option::Option<&str> {
+        self.assessment_run_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAssessmentRunInput");
@@ -6812,6 +6792,17 @@ pub struct SetTagsForResourceInput {
     /// <p>A collection of key and value pairs that you want to set to the assessment
     /// template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl SetTagsForResourceInput {
+    /// <p>The ARN of the assessment template that you want to set tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A collection of key and value pairs that you want to set to the assessment
+    /// template.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for SetTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6832,6 +6823,17 @@ pub struct RemoveAttributesFromFindingsInput {
     /// findings.</p>
     pub attribute_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveAttributesFromFindingsInput {
+    /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
+    pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_arns.as_deref()
+    }
+    /// <p>The array of attribute keys that you want to remove from specified
+    /// findings.</p>
+    pub fn attribute_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveAttributesFromFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveAttributesFromFindingsInput");
@@ -6848,6 +6850,13 @@ pub struct RegisterCrossAccountAccessRoleInput {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
     /// perform security assessments. </p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl RegisterCrossAccountAccessRoleInput {
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
+    /// perform security assessments. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterCrossAccountAccessRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6873,6 +6882,25 @@ pub struct PreviewAgentsInput {
     /// response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl PreviewAgentsInput {
+    /// <p>The ARN of the assessment target whose agents you want to preview.</p>
+    pub fn preview_agents_arn(&self) -> std::option::Option<&str> {
+        self.preview_agents_arn.as_deref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>PreviewAgents</b> action.
+    /// Subsequent calls to the action fill <b>nextToken</b> in the
+    /// request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for PreviewAgentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreviewAgentsInput");
@@ -6889,6 +6917,12 @@ impl std::fmt::Debug for PreviewAgentsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6911,6 +6945,21 @@ pub struct ListRulesPackagesInput {
     /// <p>You can use this parameter to indicate the maximum number of items you want in the
     /// response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListRulesPackagesInput {
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>ListRulesPackages</b>
+    /// action. Subsequent calls to the action fill <b>nextToken</b> in
+    /// the request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRulesPackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6944,6 +6993,34 @@ pub struct ListFindingsInput {
     /// response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFindingsInput {
+    /// <p>The ARNs of the assessment runs that generate the findings that you want to
+    /// list.</p>
+    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_run_arns.as_deref()
+    }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's
+    /// response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When
+    /// multiple values are specified for a filter attribute, any of the values can
+    /// match.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::FindingFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>ListFindings</b> action.
+    /// Subsequent calls to the action fill <b>nextToken</b> in the
+    /// request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsInput");
@@ -6971,6 +7048,25 @@ pub struct ListExclusionsInput {
     /// response. The default value is 100. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListExclusionsInput {
+    /// <p>The ARN of the assessment run that generated the exclusions that you want to
+    /// list.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
+    /// action fill nextToken in the request with the value of nextToken from the previous response
+    /// to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 100. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListExclusionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExclusionsInput");
@@ -6997,6 +7093,26 @@ pub struct ListEventSubscriptionsInput {
     /// <p>You can use this parameter to indicate the maximum number of items you want in the
     /// response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEventSubscriptionsInput {
+    /// <p>The ARN of the assessment template for which you want to list the existing event
+    /// subscriptions.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>ListEventSubscriptions</b>
+    /// action. Subsequent calls to the action fill <b>nextToken</b> in
+    /// the request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEventSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7031,6 +7147,34 @@ pub struct ListAssessmentTemplatesInput {
     /// response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssessmentTemplatesInput {
+    /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you
+    /// want to list.</p>
+    pub fn assessment_target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_target_arns.as_deref()
+    }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's
+    /// response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When
+    /// multiple values are specified for a filter attribute, any of the values can
+    /// match.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentTemplateFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>ListAssessmentTemplates</b>
+    /// action. Subsequent calls to the action fill <b>nextToken</b> in
+    /// the request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssessmentTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentTemplatesInput");
@@ -7061,6 +7205,29 @@ pub struct ListAssessmentTargetsInput {
     /// <p>You can use this parameter to indicate the maximum number of items you want in the
     /// response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAssessmentTargetsInput {
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's
+    /// response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When
+    /// multiple values are specified for a filter attribute, any of the values can
+    /// match.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentTargetFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>ListAssessmentTargets</b>
+    /// action. Subsequent calls to the action fill <b>nextToken</b> in
+    /// the request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAssessmentTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7095,6 +7262,34 @@ pub struct ListAssessmentRunsInput {
     /// the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssessmentRunsInput {
+    /// <p>The ARNs that specify the assessment templates whose assessment runs you want to
+    /// list.</p>
+    pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_template_arns.as_deref()
+    }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's
+    /// response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When
+    /// multiple values are specified for a filter attribute, any of the values can
+    /// match.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentRunFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>ListAssessmentRuns</b>
+    /// action. Subsequent calls to the action fill <b>nextToken</b> in
+    /// the request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in
+    /// the response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssessmentRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentRunsInput");
@@ -7128,6 +7323,33 @@ pub struct ListAssessmentRunAgentsInput {
     /// the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssessmentRunAgentsInput {
+    /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's
+    /// response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When
+    /// multiple values are specified for a filter attribute, any of the values can
+    /// match.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::AgentFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the <b>ListAssessmentRunAgents</b>
+    /// action. Subsequent calls to the action fill <b>nextToken</b> in
+    /// the request with the value of <b>NextToken</b> from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in
+    /// the response. The default value is 10. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssessmentRunAgentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentRunAgentsInput");
@@ -7146,6 +7368,13 @@ pub struct GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
     /// to obtain.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
+}
+impl GetTelemetryMetadataInput {
+    /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
+    /// to obtain.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTelemetryMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7176,6 +7405,34 @@ pub struct GetExclusionsPreviewInput {
     /// recommendation.</p>
     pub locale: std::option::Option<crate::model::Locale>,
 }
+impl GetExclusionsPreviewInput {
+    /// <p>The ARN that specifies the assessment template for which the exclusions preview was
+    /// requested.</p>
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+        self.assessment_template_arn.as_deref()
+    }
+    /// <p>The unique identifier associated of the exclusions preview.</p>
+    pub fn preview_token(&self) -> std::option::Option<&str> {
+        self.preview_token.as_deref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter
+    /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
+    /// the action fill nextToken in the request with the value of nextToken from the previous
+    /// response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 100. The maximum value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The locale into which you want to translate the exclusion's title, description, and
+    /// recommendation.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+}
 impl std::fmt::Debug for GetExclusionsPreviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExclusionsPreviewInput");
@@ -7203,6 +7460,24 @@ pub struct GetAssessmentReportInput {
     /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
     pub report_type: std::option::Option<crate::model::ReportType>,
 }
+impl GetAssessmentReportInput {
+    /// <p>The ARN that specifies the assessment run for which you want to generate a
+    /// report.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+    /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
+    /// generate.</p>
+    pub fn report_file_format(&self) -> std::option::Option<&crate::model::ReportFileFormat> {
+        self.report_file_format.as_ref()
+    }
+    /// <p>Specifies the type of the assessment report that you want to generate. There are two
+    /// types of assessment reports: a finding report and a full report. For more information, see
+    /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    pub fn report_type(&self) -> std::option::Option<&crate::model::ReportType> {
+        self.report_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAssessmentReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssessmentReportInput");
@@ -7222,6 +7497,16 @@ pub struct DescribeRulesPackagesInput {
     /// <p>The locale that you want to translate a rules package description into.</p>
     pub locale: std::option::Option<crate::model::Locale>,
 }
+impl DescribeRulesPackagesInput {
+    /// <p>The ARN that specifies the rules package that you want to describe.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
+    /// <p>The locale that you want to translate a rules package description into.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRulesPackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRulesPackagesInput");
@@ -7237,6 +7522,12 @@ impl std::fmt::Debug for DescribeRulesPackagesInput {
 pub struct DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
     pub resource_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeResourceGroupsInput {
+    /// <p>The ARN that specifies the resource group that you want to describe.</p>
+    pub fn resource_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_group_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeResourceGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7256,6 +7547,17 @@ pub struct DescribeFindingsInput {
     /// and the short description that identifies the finding.</p>
     pub locale: std::option::Option<crate::model::Locale>,
 }
+impl DescribeFindingsInput {
+    /// <p>The ARN that specifies the finding that you want to describe.</p>
+    pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_arns.as_deref()
+    }
+    /// <p>The locale into which you want to translate a finding description, recommendation,
+    /// and the short description that identifies the finding.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFindingsInput");
@@ -7274,6 +7576,17 @@ pub struct DescribeExclusionsInput {
     /// <p>The locale into which you want to translate the exclusion's title, description, and
     /// recommendation.</p>
     pub locale: std::option::Option<crate::model::Locale>,
+}
+impl DescribeExclusionsInput {
+    /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
+    pub fn exclusion_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_arns.as_deref()
+    }
+    /// <p>The locale into which you want to translate the exclusion's title, description, and
+    /// recommendation.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeExclusionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7302,6 +7615,12 @@ pub struct DescribeAssessmentTemplatesInput {
     #[allow(missing_docs)] // documentation missing in model
     pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeAssessmentTemplatesInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_template_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssessmentTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssessmentTemplatesInput");
@@ -7316,6 +7635,12 @@ impl std::fmt::Debug for DescribeAssessmentTemplatesInput {
 pub struct DescribeAssessmentTargetsInput {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
     pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeAssessmentTargetsInput {
+    /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
+    pub fn assessment_target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_target_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAssessmentTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7332,6 +7657,12 @@ pub struct DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeAssessmentRunsInput {
+    /// <p>The ARN that specifies the assessment run that you want to describe.</p>
+    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_run_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssessmentRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssessmentRunsInput");
@@ -7346,6 +7677,12 @@ impl std::fmt::Debug for DescribeAssessmentRunsInput {
 pub struct DeleteAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
     pub assessment_template_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAssessmentTemplateInput {
+    /// <p>The ARN that specifies the assessment template that you want to delete.</p>
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+        self.assessment_template_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAssessmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7362,6 +7699,12 @@ pub struct DeleteAssessmentTargetInput {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
     pub assessment_target_arn: std::option::Option<std::string::String>,
 }
+impl DeleteAssessmentTargetInput {
+    /// <p>The ARN that specifies the assessment target that you want to delete.</p>
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
+        self.assessment_target_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssessmentTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssessmentTargetInput");
@@ -7376,6 +7719,12 @@ impl std::fmt::Debug for DeleteAssessmentTargetInput {
 pub struct DeleteAssessmentRunInput {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAssessmentRunInput {
+    /// <p>The ARN that specifies the assessment run that you want to delete.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7394,6 +7743,14 @@ pub struct CreateResourceGroupInput {
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
     pub resource_group_tags: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
 }
+impl CreateResourceGroupInput {
+    /// <p>A collection of keys and an array of possible values,
+    /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    pub fn resource_group_tags(&self) -> std::option::Option<&[crate::model::ResourceGroupTag]> {
+        self.resource_group_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourceGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceGroupInput");
@@ -7409,6 +7766,13 @@ pub struct CreateExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which you want to create an
     /// exclusions preview.</p>
     pub assessment_template_arn: std::option::Option<std::string::String>,
+}
+impl CreateExclusionsPreviewInput {
+    /// <p>The ARN that specifies the assessment template for which you want to create an
+    /// exclusions preview.</p>
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+        self.assessment_template_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExclusionsPreviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7441,6 +7805,36 @@ pub struct CreateAssessmentTemplateInput {
     /// unique.</p>
     pub user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
+impl CreateAssessmentTemplateInput {
+    /// <p>The ARN that specifies the assessment target for which you want to create the
+    /// assessment template.</p>
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
+        self.assessment_target_arn.as_deref()
+    }
+    /// <p>The user-defined name that identifies the assessment template that you want to
+    /// create. You can create several assessment templates for an assessment target. The names of
+    /// the assessment templates that correspond to a particular assessment target must be
+    /// unique.</p>
+    pub fn assessment_template_name(&self) -> std::option::Option<&str> {
+        self.assessment_template_name.as_deref()
+    }
+    /// <p>The duration of the assessment run in seconds.</p>
+    pub fn duration_in_seconds(&self) -> i32 {
+        self.duration_in_seconds
+    }
+    /// <p>The ARNs that specify the rules packages that you want to attach to the assessment
+    /// template.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
+    /// <p>The user-defined attributes that are assigned to every finding that is generated by
+    /// the assessment run that uses this assessment template. An attribute is a key and value pair
+    /// (an <a>Attribute</a> object). Within an assessment template, each key must be
+    /// unique.</p>
+    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.user_attributes_for_findings.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAssessmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentTemplateInput");
@@ -7468,6 +7862,19 @@ pub struct CreateAssessmentTargetInput {
     /// and region are included in the assessment target.</p>
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
+impl CreateAssessmentTargetInput {
+    /// <p>The user-defined name that identifies the assessment target that you want to create.
+    /// The name must be unique within the AWS account.</p>
+    pub fn assessment_target_name(&self) -> std::option::Option<&str> {
+        self.assessment_target_name.as_deref()
+    }
+    /// <p>The ARN that specifies the resource group that is used to create the assessment
+    /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+    /// and region are included in the assessment target.</p>
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+        self.resource_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAssessmentTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentTargetInput");
@@ -7485,6 +7892,16 @@ pub struct AddAttributesToFindingsInput {
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of attributes that you want to assign to specified findings.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+}
+impl AddAttributesToFindingsInput {
+    /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
+    pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_arns.as_deref()
+    }
+    /// <p>The array of attributes that you want to assign to specified findings.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for AddAttributesToFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

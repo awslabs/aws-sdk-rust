@@ -148,10 +148,7 @@ impl CloneBackendInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_clone_backend(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_clone_backend(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -352,10 +349,7 @@ impl CreateBackendInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_backend(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_backend(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -561,10 +555,7 @@ impl CreateBackendApiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_api(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -774,10 +765,7 @@ impl CreateBackendAuthInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_auth(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_auth(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -953,10 +941,7 @@ impl CreateBackendConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1511,10 +1496,7 @@ impl DeleteBackendApiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_backend_api(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_backend_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1725,10 +1707,7 @@ impl DeleteBackendAuthInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_backend_auth(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_backend_auth(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2121,10 +2100,7 @@ impl GenerateBackendApiModelsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_generate_backend_api_models(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2299,10 +2275,7 @@ impl GetBackendInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_backend(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_backend(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2527,10 +2500,8 @@ impl GetBackendApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_backend_api(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_backend_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2741,10 +2712,9 @@ impl GetBackendApiModelsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_api_models(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_backend_api_models(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2955,10 +2925,7 @@ impl GetBackendAuthInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_auth(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_backend_auth(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3596,10 +3563,7 @@ impl ImportBackendAuthInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_backend_auth(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_backend_auth(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3855,10 +3819,7 @@ impl ListBackendJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_backend_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_backend_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4031,10 +3992,7 @@ impl RemoveAllBackendsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_all_backends(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_remove_all_backends(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4407,10 +4365,7 @@ impl UpdateBackendApiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_api(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4640,10 +4595,7 @@ impl UpdateBackendAuthInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_auth(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_auth(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4819,10 +4771,7 @@ impl UpdateBackendConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5070,10 +5019,7 @@ impl UpdateBackendJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5150,6 +5096,28 @@ pub struct UpdateBackendJobInput {
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl UpdateBackendJobInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>Filters the list of response objects to include only those with the specified status.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBackendJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBackendJobInput");
@@ -5170,6 +5138,16 @@ pub struct UpdateBackendConfigInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     pub login_auth_config: std::option::Option<crate::model::LoginAuthConfigReqObj>,
+}
+impl UpdateBackendConfigInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
+    pub fn login_auth_config(&self) -> std::option::Option<&crate::model::LoginAuthConfigReqObj> {
+        self.login_auth_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateBackendConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5192,6 +5170,26 @@ pub struct UpdateBackendAuthInput {
     pub resource_config: std::option::Option<crate::model::UpdateBackendAuthResourceConfig>,
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl UpdateBackendAuthInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The resource configuration for this request object.</p>
+    pub fn resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateBackendAuthResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBackendAuthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5217,6 +5215,24 @@ pub struct UpdateBackendApiInput {
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl UpdateBackendApiInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::BackendApiResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBackendApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBackendApiInput");
@@ -5235,6 +5251,12 @@ pub struct RemoveBackendConfigInput {
     /// <p>The app ID.</p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl RemoveBackendConfigInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveBackendConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveBackendConfigInput");
@@ -5251,6 +5273,16 @@ pub struct RemoveAllBackendsInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
     pub clean_amplify_app: bool,
+}
+impl RemoveAllBackendsInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
+    pub fn clean_amplify_app(&self) -> bool {
+        self.clean_amplify_app
+    }
 }
 impl std::fmt::Debug for RemoveAllBackendsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5279,6 +5311,36 @@ pub struct ListBackendJobsInput {
     pub operation: std::option::Option<std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl ListBackendJobsInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The maximum number of results that you want in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>Filters the list of response objects to include only those with the specified status.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBackendJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5311,6 +5373,32 @@ pub struct ImportBackendAuthInput {
     /// <p>The ID of the Amazon Cognito web client.</p>
     pub web_client_id: std::option::Option<std::string::String>,
 }
+impl ImportBackendAuthInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID of the Amazon Cognito identity pool.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Cognito native client.</p>
+    pub fn native_client_id(&self) -> std::option::Option<&str> {
+        self.native_client_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Cognito user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Cognito web client.</p>
+    pub fn web_client_id(&self) -> std::option::Option<&str> {
+        self.web_client_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportBackendAuthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportBackendAuthInput");
@@ -5333,6 +5421,16 @@ pub struct GetTokenInput {
     /// <p>The session ID.</p>
     pub session_id: std::option::Option<std::string::String>,
 }
+impl GetTokenInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTokenInput");
@@ -5352,6 +5450,20 @@ pub struct GetBackendJobInput {
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl GetBackendJobInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBackendJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5374,6 +5486,20 @@ pub struct GetBackendAuthInput {
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl GetBackendAuthInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBackendAuthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBackendAuthInput");
@@ -5394,6 +5520,20 @@ pub struct GetBackendApiModelsInput {
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl GetBackendApiModelsInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBackendApiModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5418,6 +5558,24 @@ pub struct GetBackendApiInput {
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl GetBackendApiInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::BackendApiResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBackendApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBackendApiInput");
@@ -5437,6 +5595,16 @@ pub struct GetBackendInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
     pub backend_environment_name: std::option::Option<std::string::String>,
+}
+impl GetBackendInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBackendInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5458,6 +5626,20 @@ pub struct GenerateBackendApiModelsInput {
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl GenerateBackendApiModelsInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateBackendApiModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateBackendApiModelsInput");
@@ -5476,6 +5658,16 @@ pub struct DeleteTokenInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The session ID.</p>
     pub session_id: std::option::Option<std::string::String>,
+}
+impl DeleteTokenInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5496,6 +5688,20 @@ pub struct DeleteBackendAuthInput {
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl DeleteBackendAuthInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBackendAuthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5520,6 +5726,24 @@ pub struct DeleteBackendApiInput {
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl DeleteBackendApiInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::BackendApiResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBackendApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackendApiInput");
@@ -5540,6 +5764,16 @@ pub struct DeleteBackendInput {
     /// <p>The name of the backend environment.</p>
     pub backend_environment_name: std::option::Option<std::string::String>,
 }
+impl DeleteBackendInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBackendInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackendInput");
@@ -5555,6 +5789,12 @@ impl std::fmt::Debug for DeleteBackendInput {
 pub struct CreateTokenInput {
     /// <p>The app ID.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl CreateTokenInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5572,6 +5812,16 @@ pub struct CreateBackendConfigInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The app ID for the backend manager.</p>
     pub backend_manager_app_id: std::option::Option<std::string::String>,
+}
+impl CreateBackendConfigInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The app ID for the backend manager.</p>
+    pub fn backend_manager_app_id(&self) -> std::option::Option<&str> {
+        self.backend_manager_app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBackendConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5594,6 +5844,26 @@ pub struct CreateBackendAuthInput {
     pub resource_config: std::option::Option<crate::model::CreateBackendAuthResourceConfig>,
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl CreateBackendAuthInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The resource configuration for this request object.</p>
+    pub fn resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateBackendAuthResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBackendAuthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5618,6 +5888,24 @@ pub struct CreateBackendApiInput {
     pub resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl CreateBackendApiInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The resource configuration for this request.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::BackendApiResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBackendApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5645,6 +5933,28 @@ pub struct CreateBackendInput {
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl CreateBackendInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the app.</p>
+    pub fn app_name(&self) -> std::option::Option<&str> {
+        self.app_name.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The resource configuration for the create backend request.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBackendInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBackendInput");
@@ -5667,6 +5977,20 @@ pub struct CloneBackendInput {
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the destination backend environment to be created.</p>
     pub target_environment_name: std::option::Option<std::string::String>,
+}
+impl CloneBackendInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The name of the destination backend environment to be created.</p>
+    pub fn target_environment_name(&self) -> std::option::Option<&str> {
+        self.target_environment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CloneBackendInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

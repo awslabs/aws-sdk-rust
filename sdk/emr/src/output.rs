@@ -126,6 +126,12 @@ pub struct StartNotebookExecutionOutput {
     /// <p>The unique identifier of the notebook execution.</p>
     pub notebook_execution_id: std::option::Option<std::string::String>,
 }
+impl StartNotebookExecutionOutput {
+    /// <p>The unique identifier of the notebook execution.</p>
+    pub fn notebook_execution_id(&self) -> std::option::Option<&str> {
+        self.notebook_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartNotebookExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartNotebookExecutionOutput");
@@ -238,6 +244,16 @@ pub struct RunJobFlowOutput {
     pub job_flow_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
+}
+impl RunJobFlowOutput {
+    /// <p>A unique identifier for the job flow.</p>
+    pub fn job_flow_id(&self) -> std::option::Option<&str> {
+        self.job_flow_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RunJobFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -517,6 +533,27 @@ pub struct PutAutoScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
 }
+impl PutAutoScalingPolicyOutput {
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
+    /// is applied is within this cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+        self.instance_group_id.as_deref()
+    }
+    /// <p>The automatic scaling policy definition.</p>
+    pub fn auto_scaling_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingPolicyDescription> {
+        self.auto_scaling_policy.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAutoScalingPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAutoScalingPolicyOutput");
@@ -676,6 +713,12 @@ pub struct ModifyClusterOutput {
     /// <p>The number of steps that can be executed concurrently.</p>
     pub step_concurrency_level: std::option::Option<i32>,
 }
+impl ModifyClusterOutput {
+    /// <p>The number of steps that can be executed concurrently.</p>
+    pub fn step_concurrency_level(&self) -> std::option::Option<i32> {
+        self.step_concurrency_level
+    }
+}
 impl std::fmt::Debug for ModifyClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterOutput");
@@ -726,6 +769,17 @@ pub struct ListStudioSessionMappingsOutput {
     pub session_mappings: std::option::Option<std::vec::Vec<crate::model::SessionMappingSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListStudioSessionMappingsOutput {
+    /// <p>A list of session mapping summary objects. Each object includes session mapping details
+    /// such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
+    pub fn session_mappings(&self) -> std::option::Option<&[crate::model::SessionMappingSummary]> {
+        self.session_mappings.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStudioSessionMappingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -805,6 +859,16 @@ pub struct ListStudiosOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListStudiosOutput {
+    /// <p>The list of Studio summary objects.</p>
+    pub fn studios(&self) -> std::option::Option<&[crate::model::StudioSummary]> {
+        self.studios.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStudiosOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStudiosOutput");
@@ -877,6 +941,16 @@ pub struct ListStepsOutput {
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepSummary>>,
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListStepsOutput {
+    /// <p>The filtered list of steps for the cluster.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::StepSummary]> {
+        self.steps.as_deref()
+    }
+    /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStepsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -952,6 +1026,20 @@ pub struct ListSecurityConfigurationsOutput {
     /// marker in the next ListSecurityConfiguration call to retrieve the next page of results, if
     /// required.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListSecurityConfigurationsOutput {
+    /// <p>The creation date and time, and name, of each security configuration.</p>
+    pub fn security_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecurityConfigurationSummary]> {
+        self.security_configurations.as_deref()
+    }
+    /// <p>A pagination token that indicates the next set of results to retrieve. Include the
+    /// marker in the next ListSecurityConfiguration call to retrieve the next page of results, if
+    /// required.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSecurityConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1033,6 +1121,16 @@ pub struct ListReleaseLabelsOutput {
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListReleaseLabelsOutput {
+    /// <p>The returned release labels.</p>
+    pub fn release_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.release_labels.as_deref()
+    }
+    /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReleaseLabelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReleaseLabelsOutput");
@@ -1106,6 +1204,19 @@ pub struct ListNotebookExecutionsOutput {
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
     /// determine the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListNotebookExecutionsOutput {
+    /// <p>A list of notebook executions.</p>
+    pub fn notebook_executions(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotebookExecutionSummary]> {
+        self.notebook_executions.as_deref()
+    }
+    /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
+    /// determine the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNotebookExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1185,6 +1296,16 @@ pub struct ListInstancesOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListInstancesOutput {
+    /// <p>The list of instances for the cluster and given filters.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstancesOutput");
@@ -1257,6 +1378,16 @@ pub struct ListInstanceGroupsOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListInstanceGroupsOutput {
+    /// <p>The list of instance groups for the cluster and given filters.</p>
+    pub fn instance_groups(&self) -> std::option::Option<&[crate::model::InstanceGroup]> {
+        self.instance_groups.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstanceGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceGroupsOutput");
@@ -1328,6 +1459,16 @@ pub struct ListInstanceFleetsOutput {
     pub instance_fleets: std::option::Option<std::vec::Vec<crate::model::InstanceFleet>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListInstanceFleetsOutput {
+    /// <p>The list of instance fleets for the cluster and given filters.</p>
+    pub fn instance_fleets(&self) -> std::option::Option<&[crate::model::InstanceFleet]> {
+        self.instance_fleets.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstanceFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1402,6 +1543,16 @@ pub struct ListClustersOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListClustersOutput {
+    /// <p>The list of clusters for the account based on the given filters.</p>
+    pub fn clusters(&self) -> std::option::Option<&[crate::model::ClusterSummary]> {
+        self.clusters.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClustersOutput");
@@ -1474,6 +1625,16 @@ pub struct ListBootstrapActionsOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListBootstrapActionsOutput {
+    /// <p>The bootstrap actions associated with the cluster.</p>
+    pub fn bootstrap_actions(&self) -> std::option::Option<&[crate::model::Command]> {
+        self.bootstrap_actions.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBootstrapActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBootstrapActionsOutput");
@@ -1545,6 +1706,13 @@ pub struct GetStudioSessionMappingOutput {
     /// session policy ARN and creation time.</p>
     pub session_mapping: std::option::Option<crate::model::SessionMappingDetail>,
 }
+impl GetStudioSessionMappingOutput {
+    /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including
+    /// session policy ARN and creation time.</p>
+    pub fn session_mapping(&self) -> std::option::Option<&crate::model::SessionMappingDetail> {
+        self.session_mapping.as_ref()
+    }
+}
 impl std::fmt::Debug for GetStudioSessionMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStudioSessionMappingOutput");
@@ -1597,6 +1765,14 @@ impl GetStudioSessionMappingOutput {
 pub struct GetManagedScalingPolicyOutput {
     /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
     pub managed_scaling_policy: std::option::Option<crate::model::ManagedScalingPolicy>,
+}
+impl GetManagedScalingPolicyOutput {
+    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    pub fn managed_scaling_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedScalingPolicy> {
+        self.managed_scaling_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for GetManagedScalingPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1670,6 +1846,38 @@ pub struct GetBlockPublicAccessConfigurationOutput {
     /// updated, Amazon EMR updates this metadata.</p>
     pub block_public_access_configuration_metadata:
         std::option::Option<crate::model::BlockPublicAccessConfigurationMetadata>,
+}
+impl GetBlockPublicAccessConfigurationOutput {
+    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
+    /// clusters created in your account for the current Region. The configuration specifies
+    /// whether block public access is enabled. If block public access is enabled, security groups
+    /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
+    /// ::/0 on a port, unless the port is specified as an exception using
+    /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
+    /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
+    /// and public access is allowed on this port. You can change this by updating the block public
+    /// access configuration to remove the exception.</p>
+    /// <note>
+    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
+    /// access is disabled by default in that Region. To use this feature, you must manually
+    /// enable and configure it. For accounts that did not create an EMR cluster in a Region
+    /// before this date, block public access is enabled by default in that Region.</p>
+    /// </note>
+    pub fn block_public_access_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BlockPublicAccessConfiguration> {
+        self.block_public_access_configuration.as_ref()
+    }
+    /// <p>Properties that describe the Amazon Web Services principal that created the
+    /// <code>BlockPublicAccessConfiguration</code> using the
+    /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
+    /// the configuration was created. Each time a configuration for block public access is
+    /// updated, Amazon EMR updates this metadata.</p>
+    pub fn block_public_access_configuration_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::BlockPublicAccessConfigurationMetadata> {
+        self.block_public_access_configuration_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBlockPublicAccessConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1789,6 +1997,14 @@ pub struct GetAutoTerminationPolicyOutput {
     /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
     pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
 }
+impl GetAutoTerminationPolicyOutput {
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    pub fn auto_termination_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoTerminationPolicy> {
+        self.auto_termination_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAutoTerminationPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAutoTerminationPolicyOutput");
@@ -1844,6 +2060,12 @@ pub struct DescribeStudioOutput {
     /// <p>The Amazon EMR Studio details.</p>
     pub studio: std::option::Option<crate::model::Studio>,
 }
+impl DescribeStudioOutput {
+    /// <p>The Amazon EMR Studio details.</p>
+    pub fn studio(&self) -> std::option::Option<&crate::model::Studio> {
+        self.studio.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStudioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStudioOutput");
@@ -1891,6 +2113,12 @@ impl DescribeStudioOutput {
 pub struct DescribeStepOutput {
     /// <p>The step details for the requested step identifier.</p>
     pub step: std::option::Option<crate::model::Step>,
+}
+impl DescribeStepOutput {
+    /// <p>The step details for the requested step identifier.</p>
+    pub fn step(&self) -> std::option::Option<&crate::model::Step> {
+        self.step.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStepOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,6 +2169,20 @@ pub struct DescribeSecurityConfigurationOutput {
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeSecurityConfigurationOutput {
+    /// <p>The name of the security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The security configuration details in JSON format.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>The date and time the security configuration was created</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSecurityConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2025,6 +2267,20 @@ pub struct DescribeReleaseLabelOutput {
     pub applications: std::option::Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReleaseLabelOutput {
+    /// <p>The target release label described in the response.</p>
+    pub fn release_label(&self) -> std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
+    /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::SimplifiedApplication]> {
+        self.applications.as_deref()
+    }
+    /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReleaseLabelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2116,6 +2372,12 @@ pub struct DescribeNotebookExecutionOutput {
     /// <p>Properties of the notebook execution.</p>
     pub notebook_execution: std::option::Option<crate::model::NotebookExecution>,
 }
+impl DescribeNotebookExecutionOutput {
+    /// <p>Properties of the notebook execution.</p>
+    pub fn notebook_execution(&self) -> std::option::Option<&crate::model::NotebookExecution> {
+        self.notebook_execution.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeNotebookExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNotebookExecutionOutput");
@@ -2166,6 +2428,12 @@ impl DescribeNotebookExecutionOutput {
 pub struct DescribeJobFlowsOutput {
     /// <p>A list of job flows matching the parameters supplied.</p>
     pub job_flows: std::option::Option<std::vec::Vec<crate::model::JobFlowDetail>>,
+}
+impl DescribeJobFlowsOutput {
+    /// <p>A list of job flows matching the parameters supplied.</p>
+    pub fn job_flows(&self) -> std::option::Option<&[crate::model::JobFlowDetail]> {
+        self.job_flows.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobFlowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2223,6 +2491,12 @@ impl DescribeJobFlowsOutput {
 pub struct DescribeClusterOutput {
     /// <p>This output contains the details for the requested cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl DescribeClusterOutput {
+    /// <p>This output contains the details for the requested cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2394,6 +2668,16 @@ pub struct CreateStudioOutput {
     /// <p>The unique Studio access URL.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl CreateStudioOutput {
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The unique Studio access URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStudioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioOutput");
@@ -2456,6 +2740,16 @@ pub struct CreateSecurityConfigurationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateSecurityConfigurationOutput {
+    /// <p>The name of the security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date and time the security configuration was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSecurityConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2521,6 +2815,13 @@ pub struct CancelStepsOutput {
     /// <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
     /// requests for each <code>StepID</code> specified.</p>
     pub cancel_steps_info_list: std::option::Option<std::vec::Vec<crate::model::CancelStepsInfo>>,
+}
+impl CancelStepsOutput {
+    /// <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
+    /// requests for each <code>StepID</code> specified.</p>
+    pub fn cancel_steps_info_list(&self) -> std::option::Option<&[crate::model::CancelStepsInfo]> {
+        self.cancel_steps_info_list.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelStepsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2615,6 +2916,12 @@ pub struct AddJobFlowStepsOutput {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
     pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AddJobFlowStepsOutput {
+    /// <p>The identifiers of the list of steps added to the job flow.</p>
+    pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.step_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for AddJobFlowStepsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddJobFlowStepsOutput");
@@ -2675,6 +2982,20 @@ pub struct AddInstanceGroupsOutput {
     pub instance_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name of the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
+}
+impl AddInstanceGroupsOutput {
+    /// <p>The job flow ID in which the instance groups are added.</p>
+    pub fn job_flow_id(&self) -> std::option::Option<&str> {
+        self.job_flow_id.as_deref()
+    }
+    /// <p>Instance group IDs of the newly created instance groups.</p>
+    pub fn instance_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_group_ids.as_deref()
+    }
+    /// <p>The Amazon Resource Name of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AddInstanceGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2762,6 +3083,20 @@ pub struct AddInstanceFleetOutput {
     pub instance_fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
+}
+impl AddInstanceFleetOutput {
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The unique identifier of the instance fleet.</p>
+    pub fn instance_fleet_id(&self) -> std::option::Option<&str> {
+        self.instance_fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AddInstanceFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

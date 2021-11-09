@@ -35,6 +35,33 @@ pub struct InstanceMetadataOptions {
     /// destination.</p>
     pub http_put_response_hop_limit: std::option::Option<i32>,
 }
+impl InstanceMetadataOptions {
+    /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests.
+    /// The values affect the response as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>required</b> – When you retrieve the
+    /// IAM role credentials, version 2.0 credentials are returned in all cases.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>optional</b> – You can include a signed token header
+    /// in your request to retrieve instance metadata, or you can leave it out. If you
+    /// include it, version 2.0 credentials are returned for the IAM role. Otherwise,
+    /// version 1.0 credentials are returned.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default setting is <b>optional</b>.</p>
+    pub fn http_tokens(&self) -> std::option::Option<&str> {
+        self.http_tokens.as_deref()
+    }
+    /// <p>Limit the number of hops that an instance metadata request can traverse to reach its
+    /// destination.</p>
+    pub fn http_put_response_hop_limit(&self) -> std::option::Option<i32> {
+        self.http_put_response_hop_limit
+    }
+}
 impl std::fmt::Debug for InstanceMetadataOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceMetadataOptions");
@@ -133,6 +160,12 @@ pub struct Logging {
     /// <p>The Amazon S3 logging configuration.</p>
     pub s3_logs: std::option::Option<crate::model::S3Logs>,
 }
+impl Logging {
+    /// <p>The Amazon S3 logging configuration.</p>
+    pub fn s3_logs(&self) -> std::option::Option<&crate::model::S3Logs> {
+        self.s3_logs.as_ref()
+    }
+}
 impl std::fmt::Debug for Logging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Logging");
@@ -182,6 +215,16 @@ pub struct S3Logs {
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 path in which to store the logs.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
+}
+impl S3Logs {
+    /// <p>The Amazon S3 bucket in which to store the logs.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The Amazon S3 path in which to store the logs.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Logs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -322,6 +365,35 @@ pub struct Schedule {
     /// Reference</i>.</p>
     pub pipeline_execution_start_condition:
         std::option::Option<crate::model::PipelineExecutionStartCondition>,
+}
+impl Schedule {
+    /// <p>The cron expression determines how often EC2 Image Builder evaluates your
+    /// <code>pipelineExecutionStartCondition</code>.</p>
+    /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron
+    /// expressions in EC2 Image Builder</a>.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC",
+    /// "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA
+    /// timezone format</a>. If not specified this defaults to UTC.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>The condition configures when the pipeline should trigger a new image build. When the
+    /// <code>pipelineExecutionStartCondition</code> is set to
+    /// <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version
+    /// filters on the base image or components in your image recipe, EC2 Image Builder will build a
+    /// new image only when there are new versions of the image or components in your recipe that
+    /// match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it
+    /// will build a new image every time the CRON expression matches the current time. For semantic
+    /// version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API
+    /// Reference</i>.</p>
+    pub fn pipeline_execution_start_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::PipelineExecutionStartCondition> {
+        self.pipeline_execution_start_condition.as_ref()
+    }
 }
 impl std::fmt::Debug for Schedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -500,6 +572,16 @@ pub struct ImageTestsConfiguration {
     /// <p>The maximum time in minutes that tests are permitted to run.</p>
     pub timeout_minutes: std::option::Option<i32>,
 }
+impl ImageTestsConfiguration {
+    /// <p>Defines if tests should be executed when building this image.</p>
+    pub fn image_tests_enabled(&self) -> std::option::Option<bool> {
+        self.image_tests_enabled
+    }
+    /// <p>The maximum time in minutes that tests are permitted to run.</p>
+    pub fn timeout_minutes(&self) -> std::option::Option<i32> {
+        self.timeout_minutes
+    }
+}
 impl std::fmt::Debug for ImageTestsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageTestsConfiguration");
@@ -574,6 +656,37 @@ pub struct Distribution {
     /// for specified accounts.</p>
     pub launch_template_configurations:
         std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
+}
+impl Distribution {
+    /// <p>The target Region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
+    pub fn ami_distribution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AmiDistributionConfiguration> {
+        self.ami_distribution_configuration.as_ref()
+    }
+    /// <p>Container distribution settings for encryption, licensing, and sharing
+    /// in a specific Region.</p>
+    pub fn container_distribution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ContainerDistributionConfiguration> {
+        self.container_distribution_configuration.as_ref()
+    }
+    /// <p>The License Manager Configuration to associate with the AMI in the specified
+    /// Region.</p>
+    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_configuration_arns.as_deref()
+    }
+    /// <p>A group of launchTemplateConfiguration settings that apply to image distribution
+    /// for specified accounts.</p>
+    pub fn launch_template_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LaunchTemplateConfiguration]> {
+        self.launch_template_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for Distribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -734,6 +847,20 @@ pub struct LaunchTemplateConfiguration {
     /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
     pub set_default_version: bool,
 }
+impl LaunchTemplateConfiguration {
+    /// <p>Identifies the Amazon EC2 launch template to use.</p>
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+        self.launch_template_id.as_deref()
+    }
+    /// <p>The account ID that this configuration applies to.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    pub fn set_default_version(&self) -> bool {
+        self.set_default_version
+    }
+}
 impl std::fmt::Debug for LaunchTemplateConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchTemplateConfiguration");
@@ -814,6 +941,22 @@ pub struct ContainerDistributionConfiguration {
     pub container_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The destination repository for the container distribution configuration.</p>
     pub target_repository: std::option::Option<crate::model::TargetContainerRepository>,
+}
+impl ContainerDistributionConfiguration {
+    /// <p>The description of the container distribution configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Tags that are attached to the container distribution configuration.</p>
+    pub fn container_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.container_tags.as_deref()
+    }
+    /// <p>The destination repository for the container distribution configuration.</p>
+    pub fn target_repository(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetContainerRepository> {
+        self.target_repository.as_ref()
+    }
 }
 impl std::fmt::Debug for ContainerDistributionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -902,6 +1045,16 @@ pub struct TargetContainerRepository {
     pub service: std::option::Option<crate::model::ContainerRepositoryService>,
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl TargetContainerRepository {
+    /// <p>Specifies the service in which this image was registered.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::ContainerRepositoryService> {
+        self.service.as_ref()
+    }
+    /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TargetContainerRepository {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1032,6 +1185,38 @@ pub struct AmiDistributionConfiguration {
     /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch
     /// instances.</p>
     pub launch_permission: std::option::Option<crate::model::LaunchPermissionConfiguration>,
+}
+impl AmiDistributionConfiguration {
+    /// <p>The name of the output AMI.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of an account to which you want to distribute an image.</p>
+    pub fn target_account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_account_ids.as_deref()
+    }
+    /// <p>The tags to apply to AMIs distributed to this Region.</p>
+    pub fn ami_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.ami_tags.as_ref()
+    }
+    /// <p>The KMS key identifier used to encrypt the distributed image.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch
+    /// instances.</p>
+    pub fn launch_permission(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchPermissionConfiguration> {
+        self.launch_permission.as_ref()
+    }
 }
 impl std::fmt::Debug for AmiDistributionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1187,6 +1372,16 @@ pub struct LaunchPermissionConfiguration {
     /// <p>The name of the group.</p>
     pub user_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl LaunchPermissionConfiguration {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn user_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for LaunchPermissionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchPermissionConfiguration");
@@ -1283,6 +1478,50 @@ pub struct InfrastructureConfigurationSummary {
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub instance_profile_name: std::option::Option<std::string::String>,
+}
+impl InfrastructureConfigurationSummary {
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the infrastructure configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the infrastructure configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date on which the infrastructure configuration was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The date on which the infrastructure configuration was last updated.</p>
+    pub fn date_updated(&self) -> std::option::Option<&str> {
+        self.date_updated.as_deref()
+    }
+    /// <p>The tags attached to the image created by Image Builder.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The tags of the infrastructure configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The instance types of the infrastructure configuration.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The instance profile of the infrastructure configuration.</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InfrastructureConfigurationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1486,6 +1725,16 @@ pub struct Filter {
     /// <p>The filter values. Filter values are case-sensitive.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Filter {
+    /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The filter values. Filter values are case-sensitive.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -1603,6 +1852,74 @@ pub struct ImageVersion {
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
     pub date_created: std::option::Option<std::string::String>,
+}
+impl ImageVersion {
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of this specific version of an Image Builder image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies whether this image is an AMI or a container image.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number to the fourth node.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+    /// to specify the most recent versions or nodes when selecting the base image or components for your
+    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+    /// wildcards.</p>
+    /// </note>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or
+    /// Microsoft Windows Server 2019.</p>
+    pub fn os_version(&self) -> std::option::Option<&str> {
+        self.os_version.as_deref()
+    }
+    /// <p>The owner of the image version.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The date on which this specific version of the Image Builder image was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1993,6 +2310,39 @@ pub struct ImageRecipeSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ImageRecipeSummary {
+    /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the image recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The platform of the image recipe.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The owner of the image recipe.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The base image of the image recipe.</p>
+    pub fn parent_image(&self) -> std::option::Option<&str> {
+        self.parent_image.as_deref()
+    }
+    /// <p>The date on which this image recipe was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The tags of the image recipe.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ImageRecipeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageRecipeSummary");
@@ -2173,6 +2523,86 @@ pub struct ImagePipeline {
     /// <p>The tags of this image pipeline.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ImagePipeline {
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the image pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the image pipeline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The platform of the image pipeline.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p> Collects additional information about the image being created, including the operating
+    /// system (OS) version and package list. This information is used to enhance the overall
+    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
+        self.enhanced_image_metadata_enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image
+    /// pipeline.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this
+    /// image pipeline.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this
+    /// image pipeline.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
+    /// <p>The image tests configuration of the image pipeline.</p>
+    pub fn image_tests_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+        self.image_tests_configuration.as_ref()
+    }
+    /// <p>The schedule of the image pipeline.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The status of the image pipeline.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PipelineStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date on which this image pipeline was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The date on which this image pipeline was last updated.</p>
+    pub fn date_updated(&self) -> std::option::Option<&str> {
+        self.date_updated.as_deref()
+    }
+    /// <p>The date on which this image pipeline was last run.</p>
+    pub fn date_last_run(&self) -> std::option::Option<&str> {
+        self.date_last_run.as_deref()
+    }
+    /// <p>The date on which this image pipeline will next be run.</p>
+    pub fn date_next_run(&self) -> std::option::Option<&str> {
+        self.date_next_run.as_deref()
+    }
+    /// <p>The tags of this image pipeline.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ImagePipeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2525,6 +2955,56 @@ pub struct ImageSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ImageSummary {
+    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies whether this is an AMI or container image.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The version of the image.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The platform of the image.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or
+    /// Microsoft Windows Server 2019.</p>
+    pub fn os_version(&self) -> std::option::Option<&str> {
+        self.os_version.as_deref()
+    }
+    /// <p>The state of the image.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+        self.state.as_ref()
+    }
+    /// <p>The owner of the image.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The date on which this image was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The output resources produced when creating this image.</p>
+    pub fn output_resources(&self) -> std::option::Option<&crate::model::OutputResources> {
+        self.output_resources.as_ref()
+    }
+    /// <p>The tags of the image.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ImageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageSummary");
@@ -2727,6 +3207,16 @@ pub struct OutputResources {
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
 }
+impl OutputResources {
+    /// <p>The Amazon EC2 AMIs created by this image.</p>
+    pub fn amis(&self) -> std::option::Option<&[crate::model::Ami]> {
+        self.amis.as_deref()
+    }
+    /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
+        self.containers.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputResources {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputResources");
@@ -2808,6 +3298,16 @@ pub struct Container {
     /// <p>A list of URIs for containers created in the context Region.</p>
     pub image_uris: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Container {
+    /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>A list of URIs for containers created in the context Region.</p>
+    pub fn image_uris(&self) -> std::option::Option<&[std::string::String]> {
+        self.image_uris.as_deref()
+    }
+}
 impl std::fmt::Debug for Container {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Container");
@@ -2887,6 +3387,32 @@ pub struct Ami {
     pub state: std::option::Option<crate::model::ImageState>,
     /// <p>The account ID of the owner of the AMI.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl Ami {
+    /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The AMI ID of the Amazon EC2 AMI.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The name of the Amazon EC2 AMI.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> Image state shows the image status and the reason for that status.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+        self.state.as_ref()
+    }
+    /// <p>The account ID of the owner of the AMI.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Ami {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3002,6 +3528,16 @@ pub struct ImageState {
     pub status: std::option::Option<crate::model::ImageStatus>,
     /// <p>The reason for the image's status.</p>
     pub reason: std::option::Option<std::string::String>,
+}
+impl ImageState {
+    /// <p>The status of the image.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ImageStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the image's status.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3169,6 +3705,16 @@ pub struct ImagePackage {
     /// <p>The version of the package as reported to the operating system package manager.</p>
     pub package_version: std::option::Option<std::string::String>,
 }
+impl ImagePackage {
+    /// <p>The name of the package as reported to the operating system package manager.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>The version of the package as reported to the operating system package manager.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+}
 impl std::fmt::Debug for ImagePackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImagePackage");
@@ -3245,6 +3791,39 @@ pub struct DistributionConfigurationSummary {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of Regions where the container image is distributed to.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DistributionConfigurationSummary {
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the distribution configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date on which the distribution configuration was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The date on which the distribution configuration was updated.</p>
+    pub fn date_updated(&self) -> std::option::Option<&str> {
+        self.date_updated.as_deref()
+    }
+    /// <p>The tags associated with the distribution configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A list of Regions where the container image is distributed to.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
 }
 impl std::fmt::Debug for DistributionConfigurationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3412,6 +3991,43 @@ pub struct ContainerRecipeSummary {
     /// <p>Tags that are attached to the container recipe.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ContainerRecipeSummary {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the type of container, such as "Docker".</p>
+    pub fn container_type(&self) -> std::option::Option<&crate::model::ContainerType> {
+        self.container_type.as_ref()
+    }
+    /// <p>The name of the container recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The system platform for the container, such as Windows or Linux.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The owner of the container recipe.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The base image for the container recipe.</p>
+    pub fn parent_image(&self) -> std::option::Option<&str> {
+        self.parent_image.as_deref()
+    }
+    /// <p>The date when this container recipe was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>Tags that are attached to the container recipe.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ContainerRecipeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3674,6 +4290,80 @@ pub struct ComponentVersion {
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date that the component was created.</p>
     pub date_created: std::option::Option<std::string::String>,
+}
+impl ComponentVersion {
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The semantic version of the component.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number to the fourth node.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+    /// to specify the most recent versions or nodes when selecting the base image or components for your
+    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+    /// wildcards.</p>
+    /// </note>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The description of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The platform of the component.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>he operating system (OS) version supported by the component. If the OS information is
+    /// available, a prefix match is performed against the base image OS version during image recipe
+    /// creation.</p>
+    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_os_versions.as_deref()
+    }
+    /// <p>The type of the component denotes whether the component is used to build the image or only
+    /// to test it.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The owner of the component.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The date that the component was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3989,6 +4679,62 @@ pub struct ComponentSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ComponentSummary {
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The platform of the component.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The operating system (OS) version supported by the component. If the OS information is
+    /// available, a prefix match is performed against the base image OS version during image recipe
+    /// creation.</p>
+    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_os_versions.as_deref()
+    }
+    /// <p>Describes the current status of the component.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ComponentState> {
+        self.state.as_ref()
+    }
+    /// <p>The type of the component denotes whether the component is used to build the image or only
+    /// to test it.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The owner of the component.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The description of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The change description of the component.</p>
+    pub fn change_description(&self) -> std::option::Option<&str> {
+        self.change_description.as_deref()
+    }
+    /// <p>The date that the component was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The tags associated with the component.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ComponentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentSummary");
@@ -4221,6 +4967,16 @@ pub struct ComponentState {
     /// <p>Describes how or why the component changed state.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl ComponentState {
+    /// <p>The current state of the component.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ComponentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Describes how or why the component changed state.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for ComponentState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentState");
@@ -4419,6 +5175,81 @@ pub struct InfrastructureConfiguration {
     /// <p>The tags of the infrastructure configuration.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl InfrastructureConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the infrastructure configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the infrastructure configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The instance types of the infrastructure configuration.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The instance profile of the infrastructure configuration.</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>The security group IDs of the infrastructure configuration.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The subnet ID of the infrastructure configuration.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The logging configuration of the infrastructure configuration.</p>
+    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+        self.logging.as_ref()
+    }
+    /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
+    pub fn key_pair(&self) -> std::option::Option<&str> {
+        self.key_pair.as_deref()
+    }
+    /// <p>The terminate instance on failure configuration of the infrastructure
+    /// configuration.</p>
+    pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
+        self.terminate_instance_on_failure
+    }
+    /// <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The date on which the infrastructure configuration was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The date on which the infrastructure configuration was last updated.</p>
+    pub fn date_updated(&self) -> std::option::Option<&str> {
+        self.date_updated.as_deref()
+    }
+    /// <p>The tags attached to the resource created by Image Builder.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The instance metadata option settings for the infrastructure configuration.</p>
+    pub fn instance_metadata_options(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
+        self.instance_metadata_options.as_ref()
+    }
+    /// <p>The tags of the infrastructure configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for InfrastructureConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4769,6 +5600,75 @@ pub struct ImageRecipe {
     pub additional_instance_configuration:
         std::option::Option<crate::model::AdditionalInstanceConfiguration>,
 }
+impl ImageRecipe {
+    /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies which type of image is created by the recipe - an AMI or a
+    /// container image.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the image recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the image recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The platform of the image recipe.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The owner of the image recipe.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The version of the image recipe.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The components of the image recipe.</p>
+    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+        self.components.as_deref()
+    }
+    /// <p>The base image of the image recipe.</p>
+    pub fn parent_image(&self) -> std::option::Option<&str> {
+        self.parent_image.as_deref()
+    }
+    /// <p>The block device mappings to apply when creating images from this recipe.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+    /// <p>The date on which this image recipe was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The tags of the image recipe.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The working directory to be used during build and test workflows.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to
+    /// build and test your image configuration. Instance configuration adds a layer
+    /// of control over those instances. You can define settings and add scripts to
+    /// run when an instance is launched from your AMI.</p>
+    pub fn additional_instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AdditionalInstanceConfiguration> {
+        self.additional_instance_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ImageRecipe {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageRecipe");
@@ -5062,6 +5962,23 @@ pub struct AdditionalInstanceConfiguration {
     /// </note>
     pub user_data_override: std::option::Option<std::string::String>,
 }
+impl AdditionalInstanceConfiguration {
+    /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
+    pub fn systems_manager_agent(&self) -> std::option::Option<&crate::model::SystemsManagerAgent> {
+        self.systems_manager_agent.as_ref()
+    }
+    /// <p>Use this property to provide commands or a command script to run when you launch
+    /// your build instance.</p>
+    /// <note>
+    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure
+    /// that Systems Manager is installed on your Linux build instance. If you override the user data,
+    /// make sure that you add commands to install Systems Manager, if it is not pre-installed on your
+    /// base image.</p>
+    /// </note>
+    pub fn user_data_override(&self) -> std::option::Option<&str> {
+        self.user_data_override.as_deref()
+    }
+}
 impl std::fmt::Debug for AdditionalInstanceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdditionalInstanceConfiguration");
@@ -5146,6 +6063,15 @@ pub struct SystemsManagerAgent {
     /// value is false.</p>
     pub uninstall_after_build: std::option::Option<bool>,
 }
+impl SystemsManagerAgent {
+    /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating
+    /// the new AMI. If this is set to true, then the agent is removed from the final image. If it's
+    /// set to false, then the agent is left in, so that it is included in the new AMI. The default
+    /// value is false.</p>
+    pub fn uninstall_after_build(&self) -> std::option::Option<bool> {
+        self.uninstall_after_build
+    }
+}
 impl std::fmt::Debug for SystemsManagerAgent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SystemsManagerAgent");
@@ -5205,6 +6131,24 @@ pub struct InstanceBlockDeviceMapping {
     pub virtual_name: std::option::Option<std::string::String>,
     /// <p>Use to remove a mapping from the base image.</p>
     pub no_device: std::option::Option<std::string::String>,
+}
+impl InstanceBlockDeviceMapping {
+    /// <p>The device to which these mappings apply.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    pub fn ebs(&self) -> std::option::Option<&crate::model::EbsInstanceBlockDeviceSpecification> {
+        self.ebs.as_ref()
+    }
+    /// <p>Use to manage instance ephemeral devices.</p>
+    pub fn virtual_name(&self) -> std::option::Option<&str> {
+        self.virtual_name.as_deref()
+    }
+    /// <p>Use to remove a mapping from the base image.</p>
+    pub fn no_device(&self) -> std::option::Option<&str> {
+        self.no_device.as_deref()
+    }
 }
 impl std::fmt::Debug for InstanceBlockDeviceMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5311,6 +6255,42 @@ pub struct EbsInstanceBlockDeviceSpecification {
     /// <b>For GP3 volumes only</b> –
     /// The throughput in MiB/s that the volume supports. </p>
     pub throughput: std::option::Option<i32>,
+}
+impl EbsInstanceBlockDeviceSpecification {
+    /// <p>Use to configure device encryption.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>Use to configure delete on termination of the associated device.</p>
+    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+        self.delete_on_termination
+    }
+    /// <p>Use to configure device IOPS.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>Use to configure the KMS key to use when encrypting the device.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The snapshot that defines the device contents.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>Use to override the device's volume size.</p>
+    pub fn volume_size(&self) -> std::option::Option<i32> {
+        self.volume_size
+    }
+    /// <p>Use to override the device's volume type.</p>
+    pub fn volume_type(&self) -> std::option::Option<&crate::model::EbsVolumeType> {
+        self.volume_type.as_ref()
+    }
+    /// <p>
+    /// <b>For GP3 volumes only</b> –
+    /// The throughput in MiB/s that the volume supports. </p>
+    pub fn throughput(&self) -> std::option::Option<i32> {
+        self.throughput
+    }
 }
 impl std::fmt::Debug for EbsInstanceBlockDeviceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5535,6 +6515,16 @@ pub struct ComponentConfiguration {
     /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
 }
+impl ComponentConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn component_arn(&self) -> std::option::Option<&str> {
+        self.component_arn.as_deref()
+    }
+    /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::ComponentParameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ComponentConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentConfiguration");
@@ -5609,6 +6599,16 @@ pub struct ComponentParameter {
     pub name: std::option::Option<std::string::String>,
     /// <p>Sets the value for the named component parameter.</p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ComponentParameter {
+    /// <p>The name of the component parameter to set.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Sets the value for the named component parameter.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5753,6 +6753,125 @@ pub struct Image {
     /// <p>The tags of the image.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Image {
+    /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies whether this is an AMI or container image.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The semantic version of the image.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number to the fourth node.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+    /// to specify the most recent versions or nodes when selecting the base image or components for your
+    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+    /// wildcards.</p>
+    /// </note>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The platform of the image.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p> Collects additional information about the image being created, including the operating
+    /// system (OS) version and package list. This information is used to enhance the overall
+    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
+        self.enhanced_image_metadata_enabled
+    }
+    /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or
+    /// Microsoft Windows Server 2019.</p>
+    pub fn os_version(&self) -> std::option::Option<&str> {
+        self.os_version.as_deref()
+    }
+    /// <p>The state of the image.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+        self.state.as_ref()
+    }
+    /// <p>The image recipe used when creating the image.</p>
+    pub fn image_recipe(&self) -> std::option::Option<&crate::model::ImageRecipe> {
+        self.image_recipe.as_ref()
+    }
+    /// <p>The recipe that is used to create an Image Builder container image.</p>
+    pub fn container_recipe(&self) -> std::option::Option<&crate::model::ContainerRecipe> {
+        self.container_recipe.as_ref()
+    }
+    /// <p>The name of the image pipeline that created this image.</p>
+    pub fn source_pipeline_name(&self) -> std::option::Option<&str> {
+        self.source_pipeline_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
+    pub fn source_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.source_pipeline_arn.as_deref()
+    }
+    /// <p>The infrastructure used when creating this image.</p>
+    pub fn infrastructure_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InfrastructureConfiguration> {
+        self.infrastructure_configuration.as_ref()
+    }
+    /// <p>The distribution configuration used when creating this image.</p>
+    pub fn distribution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DistributionConfiguration> {
+        self.distribution_configuration.as_ref()
+    }
+    /// <p>The image tests configuration used when creating this image.</p>
+    pub fn image_tests_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+        self.image_tests_configuration.as_ref()
+    }
+    /// <p>The date on which this image was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The output resources produced when creating this image.</p>
+    pub fn output_resources(&self) -> std::option::Option<&crate::model::OutputResources> {
+        self.output_resources.as_ref()
+    }
+    /// <p>The tags of the image.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Image {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6176,6 +7295,44 @@ pub struct DistributionConfiguration {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl DistributionConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the distribution configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The distribution objects that apply Region-specific
+    /// settings for the deployment of the image to targeted Regions.</p>
+    pub fn distributions(&self) -> std::option::Option<&[crate::model::Distribution]> {
+        self.distributions.as_deref()
+    }
+    /// <p>The maximum duration in minutes for this distribution configuration.</p>
+    pub fn timeout_minutes(&self) -> std::option::Option<i32> {
+        self.timeout_minutes
+    }
+    /// <p>The date on which this distribution configuration was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The date on which this distribution configuration was last updated.</p>
+    pub fn date_updated(&self) -> std::option::Option<&str> {
+        self.date_updated.as_deref()
+    }
+    /// <p>The tags of the distribution configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for DistributionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DistributionConfiguration");
@@ -6408,6 +7565,116 @@ pub struct ContainerRecipe {
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>The destination repository for the container image.</p>
     pub target_repository: std::option::Option<crate::model::TargetContainerRepository>,
+}
+impl ContainerRecipe {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the type of container, such as Docker.</p>
+    pub fn container_type(&self) -> std::option::Option<&crate::model::ContainerType> {
+        self.container_type.as_ref()
+    }
+    /// <p>The name of the container recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the container recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The system platform for the container, such as Windows or Linux.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The owner of the container recipe.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The semantic version of the container recipe.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number to the fourth node.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+    /// to specify the most recent versions or nodes when selecting the base image or components for your
+    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+    /// wildcards.</p>
+    /// </note>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Components for build and test that are included in the container recipe.</p>
+    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+        self.components.as_deref()
+    }
+    /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
+    pub fn instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceConfiguration> {
+        self.instance_configuration.as_ref()
+    }
+    /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
+    pub fn dockerfile_template_data(&self) -> std::option::Option<&str> {
+        self.dockerfile_template_data.as_deref()
+    }
+    /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A flag that indicates if the target container is encrypted.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The base image for the container recipe.</p>
+    pub fn parent_image(&self) -> std::option::Option<&str> {
+        self.parent_image.as_deref()
+    }
+    /// <p>The date when this container recipe was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>Tags that are attached to the container recipe.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The working directory for use during build and test workflows.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>The destination repository for the container image.</p>
+    pub fn target_repository(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetContainerRepository> {
+        self.target_repository.as_ref()
+    }
 }
 impl std::fmt::Debug for ContainerRecipe {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6784,6 +8051,19 @@ pub struct InstanceConfiguration {
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
 }
+impl InstanceConfiguration {
+    /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified,
+    /// Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceConfiguration");
@@ -6894,6 +8174,79 @@ pub struct Component {
     /// <p>The tags associated with the component.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Component {
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The description of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The change description of the component.</p>
+    pub fn change_description(&self) -> std::option::Option<&str> {
+        self.change_description.as_deref()
+    }
+    /// <p>The type of the component denotes whether the component is used to build the image or only
+    /// to test it.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The platform of the component.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The operating system (OS) version supported by the component. If the OS information is
+    /// available, a prefix match is performed against the base image OS version during image recipe
+    /// creation.</p>
+    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_os_versions.as_deref()
+    }
+    /// <p>Describes the current status of the component. This is used for
+    /// components that are no longer active.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ComponentState> {
+        self.state.as_ref()
+    }
+    /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::ComponentParameterDetail]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The owner of the component.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The data of the component.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>The KMS key identifier used to encrypt the component.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The encryption status of the component.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The date that the component was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&str> {
+        self.date_created.as_deref()
+    }
+    /// <p>The tags associated with the component.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Component {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7196,6 +8549,24 @@ pub struct ComponentParameterDetail {
     pub default_value: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes this parameter.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl ComponentParameterDetail {
+    /// <p>The name of this input parameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The default value of this parameter if no input is provided.</p>
+    pub fn default_value(&self) -> std::option::Option<&[std::string::String]> {
+        self.default_value.as_deref()
+    }
+    /// <p>Describes this parameter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentParameterDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

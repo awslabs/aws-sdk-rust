@@ -11,6 +11,23 @@ pub struct MetricFilterMatchRecord {
     pub extracted_values:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl MetricFilterMatchRecord {
+    /// <p>The event number.</p>
+    pub fn event_number(&self) -> i64 {
+        self.event_number
+    }
+    /// <p>The raw event data.</p>
+    pub fn event_message(&self) -> std::option::Option<&str> {
+        self.event_message.as_deref()
+    }
+    /// <p>The values extracted from the event data by the filter.</p>
+    pub fn extracted_values(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.extracted_values.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricFilterMatchRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricFilterMatchRecord");
@@ -107,6 +124,16 @@ pub struct QueryCompileError {
     /// <p>Reserved.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl QueryCompileError {
+    /// <p>Reserved.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::QueryCompileErrorLocation> {
+        self.location.as_ref()
+    }
+    /// <p>Reserved.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryCompileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryCompileError");
@@ -172,6 +199,16 @@ pub struct QueryCompileErrorLocation {
     pub start_char_offset: std::option::Option<i32>,
     /// <p>Reserved.</p>
     pub end_char_offset: std::option::Option<i32>,
+}
+impl QueryCompileErrorLocation {
+    /// <p>Reserved.</p>
+    pub fn start_char_offset(&self) -> std::option::Option<i32> {
+        self.start_char_offset
+    }
+    /// <p>Reserved.</p>
+    pub fn end_char_offset(&self) -> std::option::Option<i32> {
+        self.end_char_offset
+    }
 }
 impl std::fmt::Debug for QueryCompileErrorLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -295,6 +332,21 @@ pub struct ResourcePolicy {
     /// milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub last_updated_time: std::option::Option<i64>,
 }
+impl ResourcePolicy {
+    /// <p>The name of the resource policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The details of the policy.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>Timestamp showing when this policy was last updated, expressed as the number of
+    /// milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<i64> {
+        self.last_updated_time
+    }
+}
 impl std::fmt::Debug for ResourcePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourcePolicy");
@@ -404,6 +456,54 @@ pub struct MetricTransformation {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
     pub unit: std::option::Option<crate::model::StandardUnit>,
+}
+impl MetricTransformation {
+    /// <p>The name of the CloudWatch metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics
+    /// that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
+    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+        self.metric_namespace.as_deref()
+    }
+    /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
+    pub fn metric_value(&self) -> std::option::Option<&str> {
+        self.metric_value.as_deref()
+    }
+    /// <p>(Optional) The value to emit when a filter pattern does not match a log event.
+    /// This value can be null.</p>
+    pub fn default_value(&self) -> std::option::Option<f64> {
+        self.default_value
+    }
+    /// <p>The fields to use as dimensions for the metric. One metric filter can include
+    /// as many as three dimensions.</p>
+    /// <important>
+    /// <p>Metrics extracted from log events are charged as custom metrics.
+    /// To prevent unexpected high charges, do not specify high-cardinality fields such as
+    /// <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value
+    /// found for
+    /// a dimension is treated as a separate metric and accrues charges as a separate custom metric.
+    /// </p>
+    /// <p>To help prevent accidental high charges, Amazon disables a metric filter
+    /// if it generates 1000 different name/value pairs for the dimensions that you
+    /// have specified within a certain amount of time.</p>
+    /// <p>You can also set up a billing alarm to alert you if your charges are higher than
+    /// expected. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+    /// Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
+    /// </p>
+    /// </important>
+    pub fn dimensions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.dimensions.as_ref()
+    }
+    /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for MetricTransformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -763,6 +863,20 @@ pub struct RejectedLogEventsInfo {
     /// <p>The expired log events.</p>
     pub expired_log_event_end_index: std::option::Option<i32>,
 }
+impl RejectedLogEventsInfo {
+    /// <p>The log events that are too new.</p>
+    pub fn too_new_log_event_start_index(&self) -> std::option::Option<i32> {
+        self.too_new_log_event_start_index
+    }
+    /// <p>The log events that are too old.</p>
+    pub fn too_old_log_event_end_index(&self) -> std::option::Option<i32> {
+        self.too_old_log_event_end_index
+    }
+    /// <p>The expired log events.</p>
+    pub fn expired_log_event_end_index(&self) -> std::option::Option<i32> {
+        self.expired_log_event_end_index
+    }
+}
 impl std::fmt::Debug for RejectedLogEventsInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectedLogEventsInfo");
@@ -853,6 +967,17 @@ pub struct InputLogEvent {
     /// <p>The raw event message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InputLogEvent {
+    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC.</p>
+    pub fn timestamp(&self) -> std::option::Option<i64> {
+        self.timestamp
+    }
+    /// <p>The raw event message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for InputLogEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputLogEvent");
@@ -928,6 +1053,35 @@ pub struct Destination {
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan
     /// 1, 1970 00:00:00 UTC.</p>
     pub creation_time: std::option::Option<i64>,
+}
+impl Destination {
+    /// <p>The name of the destination.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are
+    /// delivered (for example, a Kinesis stream).</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>A role for impersonation, used when delivering log events to the target.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters
+    /// against this destination.</p>
+    pub fn access_policy(&self) -> std::option::Option<&str> {
+        self.access_policy.as_deref()
+    }
+    /// <p>The ARN of this destination.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan
+    /// 1, 1970 00:00:00 UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<i64> {
+        self.creation_time
+    }
 }
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1142,6 +1296,20 @@ pub struct QueryStatistics {
     /// <p>The total number of bytes in the log events scanned during the query.</p>
     pub bytes_scanned: f64,
 }
+impl QueryStatistics {
+    /// <p>The number of log events that matched the query string.</p>
+    pub fn records_matched(&self) -> f64 {
+        self.records_matched
+    }
+    /// <p>The total number of log events scanned during the query.</p>
+    pub fn records_scanned(&self) -> f64 {
+        self.records_scanned
+    }
+    /// <p>The total number of bytes in the log events scanned during the query.</p>
+    pub fn bytes_scanned(&self) -> f64 {
+        self.bytes_scanned
+    }
+}
 impl std::fmt::Debug for QueryStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryStatistics");
@@ -1221,6 +1389,16 @@ pub struct ResultField {
     /// <p>The value of this field.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ResultField {
+    /// <p>The log event field.</p>
+    pub fn field(&self) -> std::option::Option<&str> {
+        self.field.as_deref()
+    }
+    /// <p>The value of this field.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ResultField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultField");
@@ -1284,6 +1462,16 @@ pub struct LogGroupField {
     pub name: std::option::Option<std::string::String>,
     /// <p>The percentage of log events queried that contained the field.</p>
     pub percent: i32,
+}
+impl LogGroupField {
+    /// <p>The name of a log field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The percentage of log events queried that contained the field.</p>
+    pub fn percent(&self) -> i32 {
+        self.percent
+    }
 }
 impl std::fmt::Debug for LogGroupField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1351,6 +1539,22 @@ pub struct OutputLogEvent {
     /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1,
     /// 1970 00:00:00 UTC.</p>
     pub ingestion_time: std::option::Option<i64>,
+}
+impl OutputLogEvent {
+    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC.</p>
+    pub fn timestamp(&self) -> std::option::Option<i64> {
+        self.timestamp
+    }
+    /// <p>The data contained in the log event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1,
+    /// 1970 00:00:00 UTC.</p>
+    pub fn ingestion_time(&self) -> std::option::Option<i64> {
+        self.ingestion_time
+    }
 }
 impl std::fmt::Debug for OutputLogEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1432,6 +1636,16 @@ pub struct SearchedLogStream {
     /// <p>Indicates whether all the events in this log stream were searched.</p>
     pub searched_completely: std::option::Option<bool>,
 }
+impl SearchedLogStream {
+    /// <p>The name of the log stream.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>Indicates whether all the events in this log stream were searched.</p>
+    pub fn searched_completely(&self) -> std::option::Option<bool> {
+        self.searched_completely
+    }
+}
 impl std::fmt::Debug for SearchedLogStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchedLogStream");
@@ -1505,6 +1719,30 @@ pub struct FilteredLogEvent {
     pub ingestion_time: std::option::Option<i64>,
     /// <p>The ID of the event.</p>
     pub event_id: std::option::Option<std::string::String>,
+}
+impl FilteredLogEvent {
+    /// <p>The name of the log stream to which this event belongs.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC.</p>
+    pub fn timestamp(&self) -> std::option::Option<i64> {
+        self.timestamp
+    }
+    /// <p>The data contained in the log event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1,
+    /// 1970 00:00:00 UTC.</p>
+    pub fn ingestion_time(&self) -> std::option::Option<i64> {
+        self.ingestion_time
+    }
+    /// <p>The ID of the event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
 }
 impl std::fmt::Debug for FilteredLogEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1628,6 +1866,40 @@ pub struct SubscriptionFilter {
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds
     /// after Jan 1, 1970 00:00:00 UTC.</p>
     pub creation_time: std::option::Option<i64>,
+}
+impl SubscriptionFilter {
+    /// <p>The name of the subscription filter.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
+    /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
+    /// use the filter pattern to specify what to look for in the log event message.</p>
+    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+        self.filter_pattern.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p></p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The method used to distribute log data to the destination, which can be either
+    /// random or grouped by log stream.</p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>The creation time of the subscription filter, expressed as the number of milliseconds
+    /// after Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<i64> {
+        self.creation_time
+    }
 }
 impl std::fmt::Debug for SubscriptionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1784,6 +2056,29 @@ pub struct QueryDefinition {
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
     pub log_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl QueryDefinition {
+    /// <p>The unique ID of the query definition.</p>
+    pub fn query_definition_id(&self) -> std::option::Option<&str> {
+        self.query_definition_id.as_deref()
+    }
+    /// <p>The name of the query definition.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The query string to use for this definition.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The date that the query definition was most recently modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<i64> {
+        self.last_modified
+    }
+    /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
+    pub fn log_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_group_names.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryDefinition");
@@ -1907,6 +2202,29 @@ pub struct QueryInfo {
     /// <p>The name of the log group scanned by this query.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl QueryInfo {
+    /// <p>The unique ID number of this query.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>The query string used in this query.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The status of this query. Possible values are <code>Cancelled</code>,
+    /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time that this query was created.</p>
+    pub fn create_time(&self) -> std::option::Option<i64> {
+        self.create_time
+    }
+    /// <p>The name of the log group scanned by this query.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryInfo");
@@ -2024,6 +2342,33 @@ pub struct MetricFilter {
     pub creation_time: std::option::Option<i64>,
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
+}
+impl MetricFilter {
+    /// <p>The name of the metric filter.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
+    /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
+    /// use the filter pattern to specify what to look for in the log event message.</p>
+    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+        self.filter_pattern.as_deref()
+    }
+    /// <p>The metric transformations.</p>
+    pub fn metric_transformations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricTransformation]> {
+        self.metric_transformations.as_deref()
+    }
+    /// <p>The creation time of the metric filter, expressed as the number of milliseconds after
+    /// Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<i64> {
+        self.creation_time
+    }
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2175,6 +2520,51 @@ pub struct LogStream {
     /// deprecated for log streams, and is always reported as zero. This change applies only to log
     /// streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     pub stored_bytes: std::option::Option<i64>,
+}
+impl LogStream {
+    /// <p>The name of the log stream.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>The creation time of the stream, expressed as the number of milliseconds after Jan 1,
+    /// 1970 00:00:00 UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<i64> {
+        self.creation_time
+    }
+    /// <p>The time of the first event, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC.</p>
+    pub fn first_event_timestamp(&self) -> std::option::Option<i64> {
+        self.first_event_timestamp
+    }
+    /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number
+    /// is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The
+    /// <code>lastEventTime</code> value updates on an eventual consistency basis. It typically
+    /// updates in less than an hour from ingestion, but in rare situations might take
+    /// longer.</p>
+    pub fn last_event_timestamp(&self) -> std::option::Option<i64> {
+        self.last_event_timestamp
+    }
+    /// <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+    /// UTC.</p>
+    pub fn last_ingestion_time(&self) -> std::option::Option<i64> {
+        self.last_ingestion_time
+    }
+    /// <p>The sequence token.</p>
+    pub fn upload_sequence_token(&self) -> std::option::Option<&str> {
+        self.upload_sequence_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The number of bytes stored.</p>
+    /// <p>
+    /// <b>Important:</b> On June 17, 2019, this parameter was
+    /// deprecated for log streams, and is always reported as zero. This change applies only to log
+    /// streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    pub fn stored_bytes(&self) -> std::option::Option<i64> {
+        self.stored_bytes
+    }
 }
 impl std::fmt::Debug for LogStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2415,6 +2805,41 @@ pub struct LogGroup {
     /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl LogGroup {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan
+    /// 1, 1970 00:00:00 UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<i64> {
+        self.creation_time
+    }
+    /// <p>The number of days to retain the log events in the specified log group.
+    /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+    /// <p>To set a log group to never have log events expire, use
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
+    /// </p>
+    pub fn retention_in_days(&self) -> std::option::Option<i32> {
+        self.retention_in_days
+    }
+    /// <p>The number of metric filters.</p>
+    pub fn metric_filter_count(&self) -> std::option::Option<i32> {
+        self.metric_filter_count
+    }
+    /// <p>The Amazon Resource Name (ARN) of the log group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The number of bytes stored.</p>
+    pub fn stored_bytes(&self) -> std::option::Option<i64> {
+        self.stored_bytes
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for LogGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogGroup");
@@ -2571,6 +2996,46 @@ pub struct ExportTask {
     pub status: std::option::Option<crate::model::ExportTaskStatus>,
     /// <p>Execution information about the export task.</p>
     pub execution_info: std::option::Option<crate::model::ExportTaskExecutionInfo>,
+}
+impl ExportTask {
+    /// <p>The ID of the export task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The name of the export task.</p>
+    pub fn task_name(&self) -> std::option::Option<&str> {
+        self.task_name.as_deref()
+    }
+    /// <p>The name of the log group from which logs data was exported.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+    /// Events with a timestamp before this time are not exported.</p>
+    pub fn from(&self) -> std::option::Option<i64> {
+        self.from
+    }
+    /// <p>The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+    /// Events with a timestamp later than this time are not exported.</p>
+    pub fn to(&self) -> std::option::Option<i64> {
+        self.to
+    }
+    /// <p>The name of the S3 bucket to which the log data was exported.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
+    pub fn destination_prefix(&self) -> std::option::Option<&str> {
+        self.destination_prefix.as_deref()
+    }
+    /// <p>The status of the export task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExportTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Execution information about the export task.</p>
+    pub fn execution_info(&self) -> std::option::Option<&crate::model::ExportTaskExecutionInfo> {
+        self.execution_info.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2744,6 +3209,18 @@ pub struct ExportTaskExecutionInfo {
     /// Jan 1, 1970 00:00:00 UTC.</p>
     pub completion_time: std::option::Option<i64>,
 }
+impl ExportTaskExecutionInfo {
+    /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan
+    /// 1, 1970 00:00:00 UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<i64> {
+        self.creation_time
+    }
+    /// <p>The completion time of the export task, expressed as the number of milliseconds after
+    /// Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn completion_time(&self) -> std::option::Option<i64> {
+        self.completion_time
+    }
+}
 impl std::fmt::Debug for ExportTaskExecutionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportTaskExecutionInfo");
@@ -2810,6 +3287,16 @@ pub struct ExportTaskStatus {
     pub code: std::option::Option<crate::model::ExportTaskStatusCode>,
     /// <p>The status message related to the status code.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ExportTaskStatus {
+    /// <p>The status code of the export task.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::ExportTaskStatusCode> {
+        self.code.as_ref()
+    }
+    /// <p>The status message related to the status code.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportTaskStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

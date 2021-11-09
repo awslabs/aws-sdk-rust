@@ -8,6 +8,16 @@ pub struct DefinitionDocument {
     /// <p>The GraphQL text that defines the entity.</p>
     pub text: std::option::Option<std::string::String>,
 }
+impl DefinitionDocument {
+    /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
+    pub fn language(&self) -> std::option::Option<&crate::model::DefinitionLanguage> {
+        self.language.as_ref()
+    }
+    /// <p>The GraphQL text that defines the entity.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
 impl std::fmt::Debug for DefinitionDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefinitionDocument");
@@ -129,6 +139,24 @@ pub struct SystemTemplateSummary {
     /// <p>The date when the system was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SystemTemplateSummary {
+    /// <p>The ID of the system.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the system.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The revision number of the system.</p>
+    pub fn revision_number(&self) -> std::option::Option<i64> {
+        self.revision_number
+    }
+    /// <p>The date when the system was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for SystemTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SystemTemplateSummary");
@@ -224,6 +252,24 @@ pub struct FlowTemplateSummary {
     pub revision_number: std::option::Option<i64>,
     /// <p>The date when the workflow was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl FlowTemplateSummary {
+    /// <p>The ID of the workflow.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the workflow.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The revision number of the workflow.</p>
+    pub fn revision_number(&self) -> std::option::Option<i64> {
+        self.revision_number
+    }
+    /// <p>The date when the workflow was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for FlowTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -332,6 +378,46 @@ pub struct SystemInstanceSummary {
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
     pub greengrass_group_version_id: std::option::Option<std::string::String>,
+}
+impl SystemInstanceSummary {
+    /// <p>The ID of the system instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the system instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the system instance.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SystemInstanceDeploymentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The target of the system instance.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
+        self.target.as_ref()
+    }
+    /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
+    pub fn greengrass_group_name(&self) -> std::option::Option<&str> {
+        self.greengrass_group_name.as_deref()
+    }
+    /// <p>The date when the system instance was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>
+    ///
+    /// The date and time when the system instance was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
+    pub fn greengrass_group_id(&self) -> std::option::Option<&str> {
+        self.greengrass_group_id.as_deref()
+    }
+    /// <p>The version of the Greengrass group where the system instance is deployed.</p>
+    pub fn greengrass_group_version_id(&self) -> std::option::Option<&str> {
+        self.greengrass_group_version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SystemInstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -661,6 +747,16 @@ pub struct Tag {
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -724,6 +820,16 @@ pub struct Thing {
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
 }
+impl Thing {
+    /// <p>The ARN of the thing.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>The name of the thing.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Thing {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Thing");
@@ -786,6 +892,16 @@ pub struct SystemTemplateFilter {
     pub name: std::option::Option<crate::model::SystemTemplateFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SystemTemplateFilter {
+    /// <p>The name of the system search filter field.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SystemTemplateFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for SystemTemplateFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -914,6 +1030,16 @@ pub struct SystemInstanceFilter {
     pub name: std::option::Option<crate::model::SystemInstanceFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SystemInstanceFilter {
+    /// <p>The name of the search filter field.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SystemInstanceFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for SystemInstanceFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1049,6 +1175,16 @@ pub struct FlowTemplateFilter {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl FlowTemplateFilter {
+    /// <p>The name of the search filter field.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::FlowTemplateFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for FlowTemplateFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FlowTemplateFilter");
@@ -1182,6 +1318,32 @@ pub struct FlowExecutionSummary {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the flow execution summary was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl FlowExecutionSummary {
+    /// <p>The ID of the flow execution.</p>
+    pub fn flow_execution_id(&self) -> std::option::Option<&str> {
+        self.flow_execution_id.as_deref()
+    }
+    /// <p>The current status of the flow execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FlowExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ID of the system instance that contains the flow.</p>
+    pub fn system_instance_id(&self) -> std::option::Option<&str> {
+        self.system_instance_id.as_deref()
+    }
+    /// <p>The ID of the flow.</p>
+    pub fn flow_template_id(&self) -> std::option::Option<&str> {
+        self.flow_template_id.as_deref()
+    }
+    /// <p>The date and time when the flow execution summary was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time when the flow execution summary was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for FlowExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1384,6 +1546,28 @@ pub struct EntityDescription {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The definition document of the entity.</p>
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
+}
+impl EntityDescription {
+    /// <p>The entity ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The entity ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The entity type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time at which the entity was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The definition document of the entity.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
 }
 impl std::fmt::Debug for EntityDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1594,6 +1778,17 @@ pub struct EntityFilter {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl EntityFilter {
+    /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
+    /// you can filter on the ID of a property that is used in a state.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::EntityFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for EntityFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityFilter");
@@ -1742,6 +1937,24 @@ pub struct FlowExecutionMessage {
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A string containing information about the flow event.</p>
     pub payload: std::option::Option<std::string::String>,
+}
+impl FlowExecutionMessage {
+    /// <p>The unique identifier of the message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The type of flow event .</p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::FlowExecutionEventType> {
+        self.event_type.as_ref()
+    }
+    /// <p>The date and time when the message was last updated.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>A string containing information about the flow event.</p>
+    pub fn payload(&self) -> std::option::Option<&str> {
+        self.payload.as_deref()
+    }
 }
 impl std::fmt::Debug for FlowExecutionMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2032,6 +2245,20 @@ pub struct SystemTemplateDescription {
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
     pub validated_namespace_version: std::option::Option<i64>,
 }
+impl SystemTemplateDescription {
+    /// <p>An object that contains summary information about a system.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::SystemTemplateSummary> {
+        self.summary.as_ref()
+    }
+    /// <p>The definition document of a system.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
+    pub fn validated_namespace_version(&self) -> std::option::Option<i64> {
+        self.validated_namespace_version
+    }
+}
 impl std::fmt::Debug for SystemTemplateDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SystemTemplateDescription");
@@ -2129,6 +2356,42 @@ pub struct SystemInstanceDescription {
     /// cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other
     /// AWS services that the flow uses.</p>
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
+}
+impl SystemInstanceDescription {
+    /// <p>An object that contains summary information about a system instance.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::SystemInstanceSummary> {
+        self.summary.as_ref()
+    }
+    /// <p>A document that defines an entity. </p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
+    pub fn metrics_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricsConfiguration> {
+        self.metrics_configuration.as_ref()
+    }
+    /// <p>The version of the user's namespace against which the system instance was validated.</p>
+    pub fn validated_namespace_version(&self) -> std::option::Option<i64> {
+        self.validated_namespace_version
+    }
+    /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
+    pub fn validated_dependency_revisions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DependencyRevision]> {
+        self.validated_dependency_revisions.as_deref()
+    }
+    /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a
+    /// cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other
+    /// AWS services that the flow uses.</p>
+    pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
+        self.flow_actions_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SystemInstanceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2296,6 +2559,16 @@ pub struct DependencyRevision {
     /// <p>The revision number of the workflow or system.</p>
     pub revision_number: std::option::Option<i64>,
 }
+impl DependencyRevision {
+    /// <p>The ID of the workflow or system.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The revision number of the workflow or system.</p>
+    pub fn revision_number(&self) -> std::option::Option<i64> {
+        self.revision_number
+    }
+}
 impl std::fmt::Debug for DependencyRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DependencyRevision");
@@ -2358,6 +2631,16 @@ pub struct MetricsConfiguration {
     pub cloud_metric_enabled: bool,
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
     pub metric_rule_role_arn: std::option::Option<std::string::String>,
+}
+impl MetricsConfiguration {
+    /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
+    pub fn cloud_metric_enabled(&self) -> bool {
+        self.cloud_metric_enabled
+    }
+    /// <p>The ARN of the role that is used to collect cloud metrics.</p>
+    pub fn metric_rule_role_arn(&self) -> std::option::Option<&str> {
+        self.metric_rule_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2536,6 +2819,20 @@ pub struct FlowTemplateDescription {
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
     pub validated_namespace_version: std::option::Option<i64>,
+}
+impl FlowTemplateDescription {
+    /// <p>An object that contains summary information about a workflow.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::FlowTemplateSummary> {
+        self.summary.as_ref()
+    }
+    /// <p>A workflow's definition document.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
+    pub fn validated_namespace_version(&self) -> std::option::Option<i64> {
+        self.validated_namespace_version
+    }
 }
 impl std::fmt::Debug for FlowTemplateDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

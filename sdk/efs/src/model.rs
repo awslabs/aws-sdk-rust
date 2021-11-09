@@ -9,6 +9,16 @@ pub struct Tag {
     /// <p>The value of the tag key.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -194,6 +204,27 @@ pub struct FileSystemSize {
     /// <p>The latest known metered size (in bytes) of data stored in the Standard storage
     /// class.</p>
     pub value_in_standard: std::option::Option<i64>,
+}
+impl FileSystemSize {
+    /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
+    pub fn value(&self) -> i64 {
+        self.value
+    }
+    /// <p>The time at which the size of data, returned in the <code>Value</code> field, was
+    /// determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access
+    /// storage class.</p>
+    pub fn value_in_ia(&self) -> std::option::Option<i64> {
+        self.value_in_ia
+    }
+    /// <p>The latest known metered size (in bytes) of data stored in the Standard storage
+    /// class.</p>
+    pub fn value_in_standard(&self) -> std::option::Option<i64> {
+        self.value_in_standard
+    }
 }
 impl std::fmt::Debug for FileSystemSize {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -385,6 +416,23 @@ pub struct LifecyclePolicy {
     /// events.</p>
     pub transition_to_primary_storage_class:
         std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
+}
+impl LifecyclePolicy {
+    /// <p>
+    /// Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata
+    /// operations such as listing the contents of a directory don't count as file access
+    /// events.</p>
+    pub fn transition_to_ia(&self) -> std::option::Option<&crate::model::TransitionToIaRules> {
+        self.transition_to_ia.as_ref()
+    }
+    /// <p>Describes when to transition a file from IA storage to primary storage. Metadata
+    /// operations such as listing the contents of a directory don't count as file access
+    /// events.</p>
+    pub fn transition_to_primary_storage_class(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitionToPrimaryStorageClassRules> {
+        self.transition_to_primary_storage_class.as_ref()
+    }
 }
 impl std::fmt::Debug for LifecyclePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -621,6 +669,38 @@ pub struct BackupPolicy {
     /// </ul>
     pub status: std::option::Option<crate::model::Status>,
 }
+impl BackupPolicy {
+    /// <p>Describes the status of the file system's backup policy.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ENABLED</code>
+    /// </b> - EFS is automatically backing up the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ENABLING</code>
+    /// </b> - EFS is turning on automatic backups for the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DISABLED</code>
+    /// </b> - automatic back ups are turned off for the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DISABLING</code>
+    /// </b> - EFS is turning off automatic backups for the file system.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for BackupPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupPolicy");
@@ -785,6 +865,16 @@ pub struct ResourceIdPreference {
     pub resource_id_type: std::option::Option<crate::model::ResourceIdType>,
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+}
+impl ResourceIdPreference {
+    /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
+    pub fn resource_id_type(&self) -> std::option::Option<&crate::model::ResourceIdType> {
+        self.resource_id_type.as_ref()
+    }
+    /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceIdPreference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -990,6 +1080,52 @@ pub struct MountTargetDescription {
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
     pub vpc_id: std::option::Option<std::string::String>,
+}
+impl MountTargetDescription {
+    /// <p>Amazon Web Services account ID that owns the resource.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>System-assigned mount target ID.</p>
+    pub fn mount_target_id(&self) -> std::option::Option<&str> {
+        self.mount_target_id.as_deref()
+    }
+    /// <p>The ID of the file system for which the mount target is intended.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The ID of the mount target's subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>Lifecycle state of the mount target.</p>
+    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+        self.life_cycle_state.as_ref()
+    }
+    /// <p>Address at which the file system can be mounted by using the mount target.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The ID of the network interface that Amazon EFS created when it created the mount
+    /// target.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in.
+    /// For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
+    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
+    /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are
+    /// independently mapped to names for each Amazon Web Services account. For example, the Availability Zone
+    /// <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
+    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+        self.availability_zone_name.as_deref()
+    }
+    /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MountTargetDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1239,6 +1375,102 @@ pub struct FileSystemDescription {
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
     /// objects.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl FileSystemDescription {
+    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM
+    /// user, the parent account to which the user belongs is the owner.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The opaque string specified in the request.</p>
+    pub fn creation_token(&self) -> std::option::Option<&str> {
+        self.creation_token.as_deref()
+    }
+    /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+    /// <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+    /// </code>.
+    /// Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+    /// </p>
+    pub fn file_system_arn(&self) -> std::option::Option<&str> {
+        self.file_system_arn.as_deref()
+    }
+    /// <p>The time that the file system was created, in seconds (since
+    /// 1970-01-01T00:00:00Z).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The lifecycle phase of the file system.</p>
+    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+        self.life_cycle_state.as_ref()
+    }
+    /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
+    /// information, see <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns
+    /// the value in this field. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.</p>
+    pub fn number_of_mount_targets(&self) -> i32 {
+        self.number_of_mount_targets
+    }
+    /// <p>The latest known metered size (in bytes) of data stored in the file system, in its
+    /// <code>Value</code> field, and the time at which that size was determined in its
+    /// <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of
+    /// seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+    /// the size of a consistent snapshot of the file system, but it is eventually consistent when
+    /// there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual
+    /// size only if the file system is not modified for a period longer than a couple of hours.
+    /// Otherwise, the value is not the exact size that the file system was at any point in time.
+    /// </p>
+    pub fn size_in_bytes(&self) -> std::option::Option<&crate::model::FileSystemSize> {
+        self.size_in_bytes.as_ref()
+    }
+    /// <p>The performance mode of the file system.</p>
+    pub fn performance_mode(&self) -> std::option::Option<&crate::model::PerformanceMode> {
+        self.performance_mode.as_ref()
+    }
+    /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The ID of an Key Management Service customer master key (CMK) that was
+    /// used to protect the encrypted file system.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Displays the file system's throughput mode. For more information, see
+    /// <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a>
+    /// in the <i>Amazon EFS User Guide</i>.
+    /// </p>
+    pub fn throughput_mode(&self) -> std::option::Option<&crate::model::ThroughputMode> {
+        self.throughput_mode.as_ref()
+    }
+    /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for
+    /// file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    pub fn provisioned_throughput_in_mibps(&self) -> std::option::Option<f64> {
+        self.provisioned_throughput_in_mibps
+    }
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only
+    /// for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a>
+    /// in the <i>Amazon EFS User Guide</i>.</p>
+    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+        self.availability_zone_name.as_deref()
+    }
+    /// <p>The unique and consistent identifier of the Availability Zone in which the file system's
+    /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID
+    /// for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
+    /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
+    /// objects.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for FileSystemDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1612,6 +1844,49 @@ pub struct AccessPointDescription {
     /// <p>Identifies the lifecycle phase of the access point.</p>
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
 }
+impl AccessPointDescription {
+    /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The ID of the access point, assigned by Amazon EFS.</p>
+    pub fn access_point_id(&self) -> std::option::Option<&str> {
+        self.access_point_id.as_deref()
+    }
+    /// <p>The  unique Amazon Resource Name (ARN) associated with the access point.</p>
+    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+        self.access_point_arn.as_deref()
+    }
+    /// <p>The ID of the EFS file system that the access point applies to.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by
+    /// NFS clients using the access point.</p>
+    pub fn posix_user(&self) -> std::option::Option<&crate::model::PosixUser> {
+        self.posix_user.as_ref()
+    }
+    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    pub fn root_directory(&self) -> std::option::Option<&crate::model::RootDirectory> {
+        self.root_directory.as_ref()
+    }
+    /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>Identifies the lifecycle phase of the access point.</p>
+    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+        self.life_cycle_state.as_ref()
+    }
+}
 impl std::fmt::Debug for AccessPointDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessPointDescription");
@@ -1821,6 +2096,26 @@ pub struct RootDirectory {
     /// </important>
     pub creation_info: std::option::Option<crate::model::CreationInfo>,
 }
+impl RootDirectory {
+    /// <p>Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system.
+    /// A path can have up to four subdirectories.  
+    /// If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>.
+    /// If the <code>RootDirectory</code> > <code>Path</code> specified does not exist,
+    /// EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point.
+    /// When specifying the <code>CreationInfo</code>, you must provide values for all properties.
+    /// </p>
+    /// <important>
+    /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> > <code>Path</code> does not exist,
+    /// attempts to mount the file system using the access point will fail.</p>
+    /// </important>
+    pub fn creation_info(&self) -> std::option::Option<&crate::model::CreationInfo> {
+        self.creation_info.as_ref()
+    }
+}
 impl std::fmt::Debug for RootDirectory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RootDirectory");
@@ -1920,6 +2215,20 @@ pub struct CreationInfo {
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
     pub permissions: std::option::Option<std::string::String>,
 }
+impl CreationInfo {
+    /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    pub fn owner_uid(&self) -> std::option::Option<i64> {
+        self.owner_uid
+    }
+    /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    pub fn owner_gid(&self) -> std::option::Option<i64> {
+        self.owner_gid
+    }
+    /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
+    pub fn permissions(&self) -> std::option::Option<&str> {
+        self.permissions.as_deref()
+    }
+}
 impl std::fmt::Debug for CreationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreationInfo");
@@ -1998,6 +2307,20 @@ pub struct PosixUser {
     pub gid: std::option::Option<i64>,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
     pub secondary_gids: std::option::Option<std::vec::Vec<i64>>,
+}
+impl PosixUser {
+    /// <p>The POSIX user ID used for all file system operations using this access point.</p>
+    pub fn uid(&self) -> std::option::Option<i64> {
+        self.uid
+    }
+    /// <p>The POSIX group ID used for all file system operations using this access point.</p>
+    pub fn gid(&self) -> std::option::Option<i64> {
+        self.gid
+    }
+    /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
+    pub fn secondary_gids(&self) -> std::option::Option<&[i64]> {
+        self.secondary_gids.as_deref()
+    }
 }
 impl std::fmt::Debug for PosixUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

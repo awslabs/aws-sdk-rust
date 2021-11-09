@@ -30,6 +30,60 @@ pub struct UpdateApplicationOutput {
     /// <p>Version information about the application.</p>
     pub version: std::option::Option<crate::model::Version>,
 }
+impl UpdateApplicationOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    pub fn home_page_url(&self) -> std::option::Option<&str> {
+        self.home_page_url.as_deref()
+    }
+    /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
+    pub fn is_verified_author(&self) -> bool {
+        self.is_verified_author
+    }
+    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    pub fn license_url(&self) -> std::option::Option<&str> {
+        self.license_url.as_deref()
+    }
+    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    pub fn readme_url(&self) -> std::option::Option<&str> {
+        self.readme_url.as_deref()
+    }
+    /// <p>A valid identifier from https://spdx.org/licenses/.</p>
+    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+        self.spdx_license_id.as_deref()
+    }
+    /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
+    pub fn verified_author_url(&self) -> std::option::Option<&str> {
+        self.verified_author_url.as_deref()
+    }
+    /// <p>Version information about the application.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::Version> {
+        self.version.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationOutput");
@@ -288,6 +342,12 @@ pub struct PutApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
 }
+impl PutApplicationPolicyOutput {
+    /// <p>An array of policy statements applied to the application.</p>
+    pub fn statements(&self) -> std::option::Option<&[crate::model::ApplicationPolicyStatement]> {
+        self.statements.as_deref()
+    }
+}
 impl std::fmt::Debug for PutApplicationPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutApplicationPolicyOutput");
@@ -350,6 +410,16 @@ pub struct ListApplicationVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of version summaries for the application.</p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionSummary>>,
+}
+impl ListApplicationVersionsOutput {
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of version summaries for the application.</p>
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionSummary]> {
+        self.versions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -422,6 +492,16 @@ pub struct ListApplicationsOutput {
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsOutput {
+    /// <p>An array of application summaries.</p>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+        self.applications.as_deref()
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -496,6 +576,18 @@ pub struct ListApplicationDependenciesOutput {
         std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationDependenciesOutput {
+    /// <p>An array of application summaries nested in the application.</p>
+    pub fn dependencies(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationDependencySummary]> {
+        self.dependencies.as_deref()
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationDependenciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -587,6 +679,41 @@ pub struct GetCloudFormationTemplateOutput {
     /// <p>A link to the template that can be used to deploy the application using
     /// AWS CloudFormation.</p>
     pub template_url: std::option::Option<std::string::String>,
+}
+impl GetCloudFormationTemplateOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time this template expires. Templates
+    /// expire 1 hour after creation.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&str> {
+        self.expiration_time.as_deref()
+    }
+    /// <p>The semantic version of the application:</p><p>
+    /// <a href="https://semver.org/">https://semver.org/</a>
+    /// </p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>A link to the template that can be used to deploy the application using
+    /// AWS CloudFormation.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCloudFormationTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -736,6 +863,12 @@ pub struct GetApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
 }
+impl GetApplicationPolicyOutput {
+    /// <p>An array of policy statements applied to the application.</p>
+    pub fn statements(&self) -> std::option::Option<&[crate::model::ApplicationPolicyStatement]> {
+        self.statements.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApplicationPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationPolicyOutput");
@@ -820,6 +953,60 @@ pub struct GetApplicationOutput {
     pub verified_author_url: std::option::Option<std::string::String>,
     /// <p>Version information about the application.</p>
     pub version: std::option::Option<crate::model::Version>,
+}
+impl GetApplicationOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    pub fn home_page_url(&self) -> std::option::Option<&str> {
+        self.home_page_url.as_deref()
+    }
+    /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
+    pub fn is_verified_author(&self) -> bool {
+        self.is_verified_author
+    }
+    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    pub fn license_url(&self) -> std::option::Option<&str> {
+        self.license_url.as_deref()
+    }
+    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    pub fn readme_url(&self) -> std::option::Option<&str> {
+        self.readme_url.as_deref()
+    }
+    /// <p>A valid identifier from https://spdx.org/licenses/.</p>
+    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+        self.spdx_license_id.as_deref()
+    }
+    /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
+    pub fn verified_author_url(&self) -> std::option::Option<&str> {
+        self.verified_author_url.as_deref()
+    }
+    /// <p>Version information about the application.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::Version> {
+        self.version.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1096,6 +1283,41 @@ pub struct CreateCloudFormationTemplateOutput {
     /// AWS CloudFormation.</p>
     pub template_url: std::option::Option<std::string::String>,
 }
+impl CreateCloudFormationTemplateOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time this template expires. Templates
+    /// expire 1 hour after creation.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&str> {
+        self.expiration_time.as_deref()
+    }
+    /// <p>The semantic version of the application:</p><p>
+    /// <a href="https://semver.org/">https://semver.org/</a>
+    /// </p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>A link to the template that can be used to deploy the application using
+    /// AWS CloudFormation.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCloudFormationTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCloudFormationTemplateOutput");
@@ -1252,6 +1474,26 @@ pub struct CreateCloudFormationChangeSetOutput {
     /// <p>The unique ID of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl CreateCloudFormationChangeSetOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints: Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
+    /// <p>The semantic version of the application:</p><p>
+    /// <a href="https://semver.org/">https://semver.org/</a>
+    /// </p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>The unique ID of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCloudFormationChangeSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCloudFormationChangeSetOutput");
@@ -1393,6 +1635,71 @@ pub struct CreateApplicationVersionOutput {
     pub source_code_url: std::option::Option<std::string::String>,
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub template_url: std::option::Option<std::string::String>,
+}
+impl CreateApplicationVersionOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>An array of parameter types supported by the application.</p>
+    pub fn parameter_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParameterDefinition]> {
+        self.parameter_definitions.as_deref()
+    }
+    /// <p>A list of values that you must specify before you can deploy certain applications.
+    /// Some applications might include resources that can affect permissions in your AWS
+    /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
+    /// For those applications, you must explicitly acknowledge their capabilities by
+    /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
+    /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
+    /// CAPABILITY_NAMED_IAM:
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
+    /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
+    /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
+    /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
+    /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
+    /// all permissions associated with the application before deploying. If you don't specify
+    /// this parameter for an application that requires capabilities, the call will fail.</p>
+    pub fn required_capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.required_capabilities.as_deref()
+    }
+    /// <p>Whether all of the AWS resources contained in this application are supported in the region
+    /// in which it is being retrieved.</p>
+    pub fn resources_supported(&self) -> bool {
+        self.resources_supported
+    }
+    /// <p>The semantic version of the application:</p><p>
+    /// <a href="https://semver.org/">https://semver.org/</a>
+    /// </p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+    pub fn source_code_archive_url(&self) -> std::option::Option<&str> {
+        self.source_code_archive_url.as_deref()
+    }
+    /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    pub fn source_code_url(&self) -> std::option::Option<&str> {
+        self.source_code_url.as_deref()
+    }
+    /// <p>A link to the packaged AWS SAM template of your application.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1657,6 +1964,60 @@ pub struct CreateApplicationOutput {
     pub verified_author_url: std::option::Option<std::string::String>,
     /// <p>Version information about the application.</p>
     pub version: std::option::Option<crate::model::Version>,
+}
+impl CreateApplicationOutput {
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    pub fn home_page_url(&self) -> std::option::Option<&str> {
+        self.home_page_url.as_deref()
+    }
+    /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
+    pub fn is_verified_author(&self) -> bool {
+        self.is_verified_author
+    }
+    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    pub fn license_url(&self) -> std::option::Option<&str> {
+        self.license_url.as_deref()
+    }
+    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    pub fn readme_url(&self) -> std::option::Option<&str> {
+        self.readme_url.as_deref()
+    }
+    /// <p>A valid identifier from https://spdx.org/licenses/.</p>
+    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+        self.spdx_license_id.as_deref()
+    }
+    /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
+    pub fn verified_author_url(&self) -> std::option::Option<&str> {
+        self.verified_author_url.as_deref()
+    }
+    /// <p>Version information about the application.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::Version> {
+        self.version.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

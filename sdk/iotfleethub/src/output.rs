@@ -97,6 +97,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The list of tags assigned to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -161,6 +170,18 @@ pub struct ListApplicationsOutput {
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>A token used to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsOutput {
+    /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
+    pub fn application_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+        self.application_summaries.as_deref()
+    }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -258,6 +279,59 @@ pub struct DescribeApplicationOutput {
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeApplicationOutput {
+    /// <p>The unique Id of the web application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ARN of the web application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The name of the web application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>An optional description of the web application.</p>
+    pub fn application_description(&self) -> std::option::Option<&str> {
+        self.application_description.as_deref()
+    }
+    /// <p>The URL of the web application.</p>
+    pub fn application_url(&self) -> std::option::Option<&str> {
+        self.application_url.as_deref()
+    }
+    /// <p>The current state of the web application.</p>
+    pub fn application_state(&self) -> std::option::Option<&crate::model::ApplicationState> {
+        self.application_state.as_ref()
+    }
+    /// <p>The date (in Unix epoch time) when the application was created.</p>
+    pub fn application_creation_date(&self) -> i64 {
+        self.application_creation_date
+    }
+    /// <p>The date (in Unix epoch time) when the application was last updated.</p>
+    pub fn application_last_update_date(&self) -> i64 {
+        self.application_last_update_date
+    }
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
+    pub fn sso_client_id(&self) -> std::option::Option<&str> {
+        self.sso_client_id.as_deref()
+    }
+    /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -525,6 +599,16 @@ pub struct CreateApplicationOutput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the web application.</p>
     pub application_arn: std::option::Option<std::string::String>,
+}
+impl CreateApplicationOutput {
+    /// <p>The unique Id of the web application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The ARN of the web application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -528,7 +528,7 @@ impl StartNextPendingJobExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_next_pending_job_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_next_pending_job_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -852,10 +852,7 @@ impl UpdateJobExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_job_execution(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_job_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -954,6 +951,60 @@ pub struct UpdateJobExecutionInput {
     /// <p>Optional. A number that identifies a particular job execution on a particular device.</p>
     pub execution_number: std::option::Option<i64>,
 }
+impl UpdateJobExecutionInput {
+    /// <p>The unique identifier assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the thing associated with the device.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
+    /// on every update.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not
+    /// specified, the statusDetails are unchanged.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.status_details.as_ref()
+    }
+    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
+    /// execution status is not set to a terminal state before this timer expires, or before the
+    /// timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to
+    /// <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution
+    /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
+    /// this timeout has no effect on that job execution timeout which may have been specified when
+    /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    pub fn step_timeout_in_minutes(&self) -> std::option::Option<i64> {
+        self.step_timeout_in_minutes
+    }
+    /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
+    /// version is incremented. If the version of the job execution stored in Jobs does not match, the update is
+    /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
+    /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
+    /// the job execution status data.)</p>
+    pub fn expected_version(&self) -> std::option::Option<i64> {
+        self.expected_version
+    }
+    /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
+    /// false.</p>
+    pub fn include_job_execution_state(&self) -> std::option::Option<bool> {
+        self.include_job_execution_state
+    }
+    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    pub fn include_job_document(&self) -> std::option::Option<bool> {
+        self.include_job_document
+    }
+    /// <p>Optional. A number that identifies a particular job execution on a particular device.</p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
+}
 impl std::fmt::Debug for UpdateJobExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobExecutionInput");
@@ -992,6 +1043,30 @@ pub struct StartNextPendingJobExecutionInput {
     /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub step_timeout_in_minutes: std::option::Option<i64>,
 }
+impl StartNextPendingJobExecutionInput {
+    /// <p>The name of the thing associated with the device.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the
+    /// statusDetails are unchanged.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.status_details.as_ref()
+    }
+    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
+    /// execution status is not set to a terminal state before this timer expires, or before the
+    /// timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to
+    /// <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
+    /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
+    /// this timeout has no effect on that job execution timeout which may have been specified when
+    /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    pub fn step_timeout_in_minutes(&self) -> std::option::Option<i64> {
+        self.step_timeout_in_minutes
+    }
+}
 impl std::fmt::Debug for StartNextPendingJobExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartNextPendingJobExecutionInput");
@@ -1008,6 +1083,12 @@ impl std::fmt::Debug for StartNextPendingJobExecutionInput {
 pub struct GetPendingJobExecutionsInput {
     /// <p>The name of the thing that is executing the job.</p>
     pub thing_name: std::option::Option<std::string::String>,
+}
+impl GetPendingJobExecutionsInput {
+    /// <p>The name of the thing that is executing the job.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPendingJobExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1030,6 +1111,25 @@ pub struct DescribeJobExecutionInput {
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
     /// the latest job execution is returned.</p>
     pub execution_number: std::option::Option<i64>,
+}
+impl DescribeJobExecutionInput {
+    /// <p>The unique identifier assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The thing name associated with the device the job execution is running on.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    pub fn include_job_document(&self) -> std::option::Option<bool> {
+        self.include_job_document
+    }
+    /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
+    /// the latest job execution is returned.</p>
+    pub fn execution_number(&self) -> std::option::Option<i64> {
+        self.execution_number
+    }
 }
 impl std::fmt::Debug for DescribeJobExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

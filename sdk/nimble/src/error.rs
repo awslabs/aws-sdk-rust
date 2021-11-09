@@ -8011,6 +8011,19 @@ pub struct ValidationException {
     /// <p>A human-readable description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationException {
+    /// <p>A more specific error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The exception context.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -8122,6 +8135,19 @@ pub struct ThrottlingException {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A human-readable description of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ThrottlingException {
+    /// <p>A more specific error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The exception context.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
 }
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8241,6 +8267,19 @@ pub struct ServiceQuotaExceededException {
     /// <p>A human-readable description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceQuotaExceededException {
+    /// <p>A more specific error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The exception context.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceQuotaExceededException");
@@ -8353,6 +8392,19 @@ pub struct ResourceNotFoundException {
     /// <p>A human-readable description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>A more specific error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The exception context.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -8464,6 +8516,19 @@ pub struct InternalServerErrorException {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A human-readable description of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InternalServerErrorException {
+    /// <p>A more specific error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The exception context.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
 }
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8581,6 +8646,19 @@ pub struct ConflictException {
     /// <p>A human-readable description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ConflictException {
+    /// <p>A more specific error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The exception context.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");
@@ -8693,6 +8771,19 @@ pub struct AccessDeniedException {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A human-readable description of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    /// <p>A more specific error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The exception context.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

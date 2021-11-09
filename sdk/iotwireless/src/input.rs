@@ -127,7 +127,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_aws_account_with_partner_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_aws_account_with_partner_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -302,7 +302,7 @@ impl AssociateWirelessDeviceWithThingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_device_with_thing(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_device_with_thing(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -481,7 +481,7 @@ impl AssociateWirelessGatewayWithCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_gateway_with_certificate(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_gateway_with_certificate(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -656,7 +656,7 @@ impl AssociateWirelessGatewayWithThingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_gateway_with_thing(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_wireless_gateway_with_thing(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -892,10 +892,7 @@ impl CreateDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_destination(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_destination(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1094,10 +1091,7 @@ impl CreateDeviceProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_device_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_device_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1296,10 +1290,9 @@ impl CreateServiceProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_service_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_service_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1540,10 +1533,9 @@ impl CreateWirelessDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_wireless_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_wireless_device(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1756,10 +1748,7 @@ impl CreateWirelessGatewayInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_wireless_gateway(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1941,10 +1930,7 @@ impl CreateWirelessGatewayTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_wireless_gateway_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2158,7 +2144,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_wireless_gateway_task_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_wireless_gateway_task_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7658,10 +7644,9 @@ impl PutResourceLogLevelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_log_level(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_log_level(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8163,10 +8148,7 @@ impl SendDataToWirelessDeviceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_data_to_wireless_device(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8341,10 +8323,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8867,10 +8846,7 @@ impl UpdateDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_destination(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_destination(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9069,7 +9045,7 @@ impl UpdateLogLevelsByResourceTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_log_levels_by_resource_types(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_log_levels_by_resource_types(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9278,10 +9254,9 @@ impl UpdatePartnerAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_partner_account(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_partner_account(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9495,10 +9470,9 @@ impl UpdateWirelessDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_wireless_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_wireless_device(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9730,10 +9704,7 @@ impl UpdateWirelessGatewayInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_wireless_gateway(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9810,6 +9781,28 @@ pub struct UpdateWirelessGatewayInput {
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
     pub net_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateWirelessGatewayInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The new name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A new description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
+    pub fn join_eui_filters(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.join_eui_filters.as_deref()
+    }
+    /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
+    pub fn net_id_filters(&self) -> std::option::Option<&[std::string::String]> {
+        self.net_id_filters.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWirelessGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWirelessGatewayInput");
@@ -9837,6 +9830,28 @@ pub struct UpdateWirelessDeviceInput {
     /// <p>The updated wireless device's configuration.</p>
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateDevice>,
 }
+impl UpdateWirelessDeviceInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the new destination for the device.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>The new name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A new description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated wireless device's configuration.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanUpdateDevice> {
+        self.lo_ra_wan.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWirelessDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWirelessDeviceInput");
@@ -9860,6 +9875,20 @@ pub struct UpdatePartnerAccountInput {
     /// <p>The partner type.</p>
     pub partner_type: std::option::Option<crate::model::PartnerType>,
 }
+impl UpdatePartnerAccountInput {
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkUpdateAccount> {
+        self.sidewalk.as_ref()
+    }
+    /// <p>The ID of the partner account to update.</p>
+    pub fn partner_account_id(&self) -> std::option::Option<&str> {
+        self.partner_account_id.as_deref()
+    }
+    /// <p>The partner type.</p>
+    pub fn partner_type(&self) -> std::option::Option<&crate::model::PartnerType> {
+        self.partner_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePartnerAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePartnerAccountInput");
@@ -9882,6 +9911,24 @@ pub struct UpdateLogLevelsByResourceTypesInput {
     /// <p>The list of wireless gateway log options.</p>
     pub wireless_gateway_log_options:
         std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
+}
+impl UpdateLogLevelsByResourceTypesInput {
+    /// <p>The log level for a log message.</p>
+    pub fn default_log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.default_log_level.as_ref()
+    }
+    /// <p>The list of wireless device log options.</p>
+    pub fn wireless_device_log_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::WirelessDeviceLogOption]> {
+        self.wireless_device_log_options.as_deref()
+    }
+    /// <p>The list of wireless gateway log options.</p>
+    pub fn wireless_gateway_log_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::WirelessGatewayLogOption]> {
+        self.wireless_gateway_log_options.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateLogLevelsByResourceTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9914,6 +9961,28 @@ pub struct UpdateDestinationInput {
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateDestinationInput {
+    /// <p>The new name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+        self.expression_type.as_ref()
+    }
+    /// <p>The new rule name or topic rule to send messages to.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>A new description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDestinationInput");
@@ -9935,6 +10004,16 @@ pub struct UntagResourceInput {
     /// <p>A list of the keys of the tags to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource to remove tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the keys of the tags to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -9950,6 +10029,12 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TestWirelessDeviceInput {
     /// <p>The ID of the wireless device to test.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl TestWirelessDeviceInput {
+    /// <p>The ID of the wireless device to test.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for TestWirelessDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9967,6 +10052,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the resource to add tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9990,6 +10085,24 @@ pub struct SendDataToWirelessDeviceInput {
     /// <p>Metadata about the message request.</p>
     pub wireless_metadata: std::option::Option<crate::model::WirelessMetadata>,
 }
+impl SendDataToWirelessDeviceInput {
+    /// <p>The ID of the wireless device to receive the data.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    pub fn transmit_mode(&self) -> std::option::Option<i32> {
+        self.transmit_mode
+    }
+    /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    pub fn payload_data(&self) -> std::option::Option<&str> {
+        self.payload_data.as_deref()
+    }
+    /// <p>Metadata about the message request.</p>
+    pub fn wireless_metadata(&self) -> std::option::Option<&crate::model::WirelessMetadata> {
+        self.wireless_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for SendDataToWirelessDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendDataToWirelessDeviceInput");
@@ -10010,6 +10123,17 @@ pub struct ResetResourceLogLevelInput {
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl ResetResourceLogLevelInput {
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
+    /// it is the wireless gateway ID.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetResourceLogLevelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10043,6 +10167,21 @@ pub struct PutResourceLogLevelInput {
     /// <p>The log level for a log message.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
+impl PutResourceLogLevelInput {
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
+    /// it is the wireless gateway ID.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The log level for a log message.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+}
 impl std::fmt::Debug for PutResourceLogLevelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourceLogLevelInput");
@@ -10064,6 +10203,22 @@ pub struct ListWirelessGatewayTaskDefinitionsInput {
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
     pub task_definition_type: std::option::Option<crate::model::WirelessGatewayTaskDefinitionType>,
 }
+impl ListWirelessGatewayTaskDefinitionsInput {
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
+    pub fn task_definition_type(
+        &self,
+    ) -> std::option::Option<&crate::model::WirelessGatewayTaskDefinitionType> {
+        self.task_definition_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ListWirelessGatewayTaskDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWirelessGatewayTaskDefinitionsInput");
@@ -10082,6 +10237,16 @@ pub struct ListWirelessGatewaysInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: i32,
+}
+impl ListWirelessGatewaysInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListWirelessGatewaysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10109,6 +10274,32 @@ pub struct ListWirelessDevicesInput {
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
     pub wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
 }
+impl ListWirelessDevicesInput {
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>A filter to list only the wireless devices that use this device profile.</p>
+    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+        self.device_profile_id.as_deref()
+    }
+    /// <p>A filter to list only the wireless devices that use this service profile.</p>
+    pub fn service_profile_id(&self) -> std::option::Option<&str> {
+        self.service_profile_id.as_deref()
+    }
+    /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
+    pub fn wireless_device_type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+        self.wireless_device_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ListWirelessDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWirelessDevicesInput");
@@ -10129,6 +10320,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to list tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource for which you want to list tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -10145,6 +10342,16 @@ pub struct ListServiceProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: i32,
+}
+impl ListServiceProfilesInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServiceProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10164,6 +10371,16 @@ pub struct ListPartnerAccountsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: i32,
 }
+impl ListPartnerAccountsInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPartnerAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPartnerAccountsInput");
@@ -10181,6 +10398,16 @@ pub struct ListDeviceProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: i32,
+}
+impl ListDeviceProfilesInput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDeviceProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10200,6 +10427,16 @@ pub struct ListDestinationsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDestinationsInput {
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDestinationsInput");
@@ -10216,6 +10453,12 @@ pub struct GetWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to get.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetWirelessGatewayTaskDefinitionInput {
+    /// <p>The ID of the resource to get.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessGatewayTaskDefinitionInput");
@@ -10230,6 +10473,12 @@ impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionInput {
 pub struct GetWirelessGatewayTaskInput {
     /// <p>The ID of the resource to get.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetWirelessGatewayTaskInput {
+    /// <p>The ID of the resource to get.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWirelessGatewayTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10246,6 +10495,12 @@ pub struct GetWirelessGatewayStatisticsInput {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
     pub wireless_gateway_id: std::option::Option<std::string::String>,
 }
+impl GetWirelessGatewayStatisticsInput {
+    /// <p>The ID of the wireless gateway for which to get the data.</p>
+    pub fn wireless_gateway_id(&self) -> std::option::Option<&str> {
+        self.wireless_gateway_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWirelessGatewayStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessGatewayStatisticsInput");
@@ -10261,6 +10516,12 @@ pub struct GetWirelessGatewayFirmwareInformationInput {
     /// <p>The ID of the resource to get.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetWirelessGatewayFirmwareInformationInput {
+    /// <p>The ID of the resource to get.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessGatewayFirmwareInformationInput");
@@ -10275,6 +10536,12 @@ impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationInput {
 pub struct GetWirelessGatewayCertificateInput {
     /// <p>The ID of the resource to get.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetWirelessGatewayCertificateInput {
+    /// <p>The ID of the resource to get.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWirelessGatewayCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10293,6 +10560,16 @@ pub struct GetWirelessGatewayInput {
     /// <p>The type of identifier used in <code>identifier</code>.</p>
     pub identifier_type: std::option::Option<crate::model::WirelessGatewayIdType>,
 }
+impl GetWirelessGatewayInput {
+    /// <p>The identifier of the wireless gateway to get.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The type of identifier used in <code>identifier</code>.</p>
+    pub fn identifier_type(&self) -> std::option::Option<&crate::model::WirelessGatewayIdType> {
+        self.identifier_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWirelessGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessGatewayInput");
@@ -10308,6 +10585,12 @@ impl std::fmt::Debug for GetWirelessGatewayInput {
 pub struct GetWirelessDeviceStatisticsInput {
     /// <p>The ID of the wireless device for which to get the data.</p>
     pub wireless_device_id: std::option::Option<std::string::String>,
+}
+impl GetWirelessDeviceStatisticsInput {
+    /// <p>The ID of the wireless device for which to get the data.</p>
+    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+        self.wireless_device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWirelessDeviceStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10326,6 +10609,16 @@ pub struct GetWirelessDeviceInput {
     /// <p>The type of identifier used in <code>identifier</code>.</p>
     pub identifier_type: std::option::Option<crate::model::WirelessDeviceIdType>,
 }
+impl GetWirelessDeviceInput {
+    /// <p>The identifier of the wireless device to get.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The type of identifier used in <code>identifier</code>.</p>
+    pub fn identifier_type(&self) -> std::option::Option<&crate::model::WirelessDeviceIdType> {
+        self.identifier_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWirelessDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWirelessDeviceInput");
@@ -10342,6 +10635,12 @@ pub struct GetServiceProfileInput {
     /// <p>The ID of the resource to get.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetServiceProfileInput {
+    /// <p>The ID of the resource to get.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceProfileInput");
@@ -10356,6 +10655,12 @@ impl std::fmt::Debug for GetServiceProfileInput {
 pub struct GetServiceEndpointInput {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
     pub service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
+}
+impl GetServiceEndpointInput {
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::WirelessGatewayServiceType> {
+        self.service_type.as_ref()
+    }
 }
 impl std::fmt::Debug for GetServiceEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10375,6 +10680,17 @@ pub struct GetResourceLogLevelInput {
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl GetResourceLogLevelInput {
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
+    /// it is the wireless gateway ID.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceLogLevelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceLogLevelInput");
@@ -10392,6 +10708,16 @@ pub struct GetPartnerAccountInput {
     pub partner_account_id: std::option::Option<std::string::String>,
     /// <p>The partner type.</p>
     pub partner_type: std::option::Option<crate::model::PartnerType>,
+}
+impl GetPartnerAccountInput {
+    /// <p>The partner account ID to disassociate from the AWS account.</p>
+    pub fn partner_account_id(&self) -> std::option::Option<&str> {
+        self.partner_account_id.as_deref()
+    }
+    /// <p>The partner type.</p>
+    pub fn partner_type(&self) -> std::option::Option<&crate::model::PartnerType> {
+        self.partner_type.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPartnerAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10420,6 +10746,12 @@ pub struct GetDeviceProfileInput {
     /// <p>The ID of the resource to get.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetDeviceProfileInput {
+    /// <p>The ID of the resource to get.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceProfileInput");
@@ -10434,6 +10766,12 @@ impl std::fmt::Debug for GetDeviceProfileInput {
 pub struct GetDestinationInput {
     /// <p>The name of the resource to get.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetDestinationInput {
+    /// <p>The name of the resource to get.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10450,6 +10788,12 @@ pub struct DisassociateWirelessGatewayFromThingInput {
     /// <p>The ID of the resource to update.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DisassociateWirelessGatewayFromThingInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateWirelessGatewayFromThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateWirelessGatewayFromThingInput");
@@ -10465,6 +10809,12 @@ pub struct DisassociateWirelessGatewayFromCertificateInput {
     /// <p>The ID of the resource to update.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DisassociateWirelessGatewayFromCertificateInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateWirelessGatewayFromCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateWirelessGatewayFromCertificateInput");
@@ -10479,6 +10829,12 @@ impl std::fmt::Debug for DisassociateWirelessGatewayFromCertificateInput {
 pub struct DisassociateWirelessDeviceFromThingInput {
     /// <p>The ID of the resource to update.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DisassociateWirelessDeviceFromThingInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateWirelessDeviceFromThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10497,6 +10853,16 @@ pub struct DisassociateAwsAccountFromPartnerAccountInput {
     /// <p>The partner type.</p>
     pub partner_type: std::option::Option<crate::model::PartnerType>,
 }
+impl DisassociateAwsAccountFromPartnerAccountInput {
+    /// <p>The partner account ID to disassociate from the AWS account.</p>
+    pub fn partner_account_id(&self) -> std::option::Option<&str> {
+        self.partner_account_id.as_deref()
+    }
+    /// <p>The partner type.</p>
+    pub fn partner_type(&self) -> std::option::Option<&crate::model::PartnerType> {
+        self.partner_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateAwsAccountFromPartnerAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateAwsAccountFromPartnerAccountInput");
@@ -10513,6 +10879,12 @@ pub struct DeleteWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteWirelessGatewayTaskDefinitionInput {
+    /// <p>The ID of the resource to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWirelessGatewayTaskDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWirelessGatewayTaskDefinitionInput");
@@ -10527,6 +10899,12 @@ impl std::fmt::Debug for DeleteWirelessGatewayTaskDefinitionInput {
 pub struct DeleteWirelessGatewayTaskInput {
     /// <p>The ID of the resource to delete.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteWirelessGatewayTaskInput {
+    /// <p>The ID of the resource to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWirelessGatewayTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10543,6 +10921,12 @@ pub struct DeleteWirelessGatewayInput {
     /// <p>The ID of the resource to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteWirelessGatewayInput {
+    /// <p>The ID of the resource to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWirelessGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWirelessGatewayInput");
@@ -10557,6 +10941,12 @@ impl std::fmt::Debug for DeleteWirelessGatewayInput {
 pub struct DeleteWirelessDeviceInput {
     /// <p>The ID of the resource to delete.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteWirelessDeviceInput {
+    /// <p>The ID of the resource to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWirelessDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10573,6 +10963,12 @@ pub struct DeleteServiceProfileInput {
     /// <p>The ID of the resource to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteServiceProfileInput {
+    /// <p>The ID of the resource to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteServiceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceProfileInput");
@@ -10588,6 +10984,12 @@ pub struct DeleteDeviceProfileInput {
     /// <p>The ID of the resource to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteDeviceProfileInput {
+    /// <p>The ID of the resource to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceProfileInput");
@@ -10602,6 +11004,12 @@ impl std::fmt::Debug for DeleteDeviceProfileInput {
 pub struct DeleteDestinationInput {
     /// <p>The name of the resource to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteDestinationInput {
+    /// <p>The name of the resource to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10626,6 +11034,28 @@ pub struct CreateWirelessGatewayTaskDefinitionInput {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateWirelessGatewayTaskDefinitionInput {
+    /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
+    pub fn auto_create_tasks(&self) -> bool {
+        self.auto_create_tasks
+    }
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the gateways to update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::UpdateWirelessGatewayTaskCreate> {
+        self.update.as_ref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWirelessGatewayTaskDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWirelessGatewayTaskDefinitionInput");
@@ -10646,6 +11076,16 @@ pub struct CreateWirelessGatewayTaskInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
     pub wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
+}
+impl CreateWirelessGatewayTaskInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    pub fn wireless_gateway_task_definition_id(&self) -> std::option::Option<&str> {
+        self.wireless_gateway_task_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWirelessGatewayTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10673,6 +11113,28 @@ pub struct CreateWirelessGatewayInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreateWirelessGatewayInput {
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The gateway configuration information to use to create the wireless gateway.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGateway> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWirelessGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10705,6 +11167,36 @@ pub struct CreateWirelessDeviceInput {
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateWirelessDeviceInput {
+    /// <p>The wireless device type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the destination to assign to the new wireless device.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The device configuration information to use to create the wireless device.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDevice> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWirelessDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWirelessDeviceInput");
@@ -10732,6 +11224,24 @@ pub struct CreateServiceProfileInput {
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CreateServiceProfileInput {
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The service profile information to use to create the service profile.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanServiceProfile> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceProfileInput");
@@ -10755,6 +11265,24 @@ pub struct CreateDeviceProfileInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreateDeviceProfileInput {
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The device profile information to use to create the device profile.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDeviceProfile> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeviceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10786,6 +11314,36 @@ pub struct CreateDestinationInput {
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CreateDestinationInput {
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+        self.expression_type.as_ref()
+    }
+    /// <p>The rule name or topic rule to send messages to.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDestinationInput");
@@ -10809,6 +11367,16 @@ pub struct AssociateWirelessGatewayWithThingInput {
     /// <p>The ARN of the thing to associate with the wireless gateway.</p>
     pub thing_arn: std::option::Option<std::string::String>,
 }
+impl AssociateWirelessGatewayWithThingInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the thing to associate with the wireless gateway.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateWirelessGatewayWithThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateWirelessGatewayWithThingInput");
@@ -10827,6 +11395,16 @@ pub struct AssociateWirelessGatewayWithCertificateInput {
     /// <p>The ID of the certificate to associate with the wireless gateway.</p>
     pub iot_certificate_id: std::option::Option<std::string::String>,
 }
+impl AssociateWirelessGatewayWithCertificateInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the certificate to associate with the wireless gateway.</p>
+    pub fn iot_certificate_id(&self) -> std::option::Option<&str> {
+        self.iot_certificate_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateWirelessGatewayWithCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateWirelessGatewayWithCertificateInput");
@@ -10844,6 +11422,16 @@ pub struct AssociateWirelessDeviceWithThingInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing to associate with the wireless device.</p>
     pub thing_arn: std::option::Option<std::string::String>,
+}
+impl AssociateWirelessDeviceWithThingInput {
+    /// <p>The ID of the resource to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the thing to associate with the wireless device.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateWirelessDeviceWithThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10864,6 +11452,20 @@ pub struct AssociateAwsAccountWithPartnerAccountInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AssociateAwsAccountWithPartnerAccountInput {
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkAccountInfo> {
+        self.sidewalk.as_ref()
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateAwsAccountWithPartnerAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

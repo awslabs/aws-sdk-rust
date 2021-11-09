@@ -8,6 +8,16 @@ pub struct StartAttachmentUploadOutput {
     /// <p>Fields to be used while uploading the attachment.</p>
     pub upload_metadata: std::option::Option<crate::model::UploadMetadata>,
 }
+impl StartAttachmentUploadOutput {
+    /// <p>A unique identifier for the attachment.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>Fields to be used while uploading the attachment.</p>
+    pub fn upload_metadata(&self) -> std::option::Option<&crate::model::UploadMetadata> {
+        self.upload_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for StartAttachmentUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAttachmentUploadOutput");
@@ -78,6 +88,18 @@ pub struct SendMessageOutput {
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
     /// 2019-11-08T02:41:28.172Z.</p>
     pub absolute_time: std::option::Option<std::string::String>,
+}
+impl SendMessageOutput {
+    /// <p>The ID of the message.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The time when the message was sent.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+    /// 2019-11-08T02:41:28.172Z.</p>
+    pub fn absolute_time(&self) -> std::option::Option<&str> {
+        self.absolute_time.as_deref()
+    }
 }
 impl std::fmt::Debug for SendMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -151,6 +173,18 @@ pub struct SendEventOutput {
     /// 2019-11-08T02:41:28.172Z.</p>
     pub absolute_time: std::option::Option<std::string::String>,
 }
+impl SendEventOutput {
+    /// <p>The ID of the response.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The time when the event was sent.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+    /// 2019-11-08T02:41:28.172Z.</p>
+    pub fn absolute_time(&self) -> std::option::Option<&str> {
+        self.absolute_time.as_deref()
+    }
+}
 impl std::fmt::Debug for SendEventOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEventOutput");
@@ -223,6 +257,21 @@ pub struct GetTranscriptOutput {
     /// <p>The pagination token. Use the value returned previously in the next subsequent request
     /// to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTranscriptOutput {
+    /// <p>The initial contact ID for the contact. </p>
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+        self.initial_contact_id.as_deref()
+    }
+    /// <p>The list of messages in the session.</p>
+    pub fn transcript(&self) -> std::option::Option<&[crate::model::Item]> {
+        self.transcript.as_deref()
+    }
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request
+    /// to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTranscriptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -314,6 +363,17 @@ pub struct GetAttachmentOutput {
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub url_expiry: std::option::Option<std::string::String>,
+}
+impl GetAttachmentOutput {
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn url_expiry(&self) -> std::option::Option<&str> {
+        self.url_expiry.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAttachmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -410,6 +470,19 @@ pub struct CreateParticipantConnectionOutput {
     /// <p>Creates the participant's connection credentials. The authentication token associated
     /// with the participant's connection.</p>
     pub connection_credentials: std::option::Option<crate::model::ConnectionCredentials>,
+}
+impl CreateParticipantConnectionOutput {
+    /// <p>Creates the participant's websocket connection.</p>
+    pub fn websocket(&self) -> std::option::Option<&crate::model::Websocket> {
+        self.websocket.as_ref()
+    }
+    /// <p>Creates the participant's connection credentials. The authentication token associated
+    /// with the participant's connection.</p>
+    pub fn connection_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionCredentials> {
+        self.connection_credentials.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateParticipantConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

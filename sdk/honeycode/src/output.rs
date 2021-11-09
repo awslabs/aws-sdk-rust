@@ -13,6 +13,21 @@ pub struct StartTableDataImportJobOutput {
     /// </p>
     pub job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
 }
+impl StartTableDataImportJobOutput {
+    /// <p>
+    /// The id that is assigned to this import job. Future requests to find out the status of this import job
+    /// need to send this id in the appropriate parameter in the request.
+    /// </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>
+    /// The status of the import job immediately after submitting the request.
+    /// </p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::TableDataImportJobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartTableDataImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTableDataImportJobOutput");
@@ -103,6 +118,35 @@ pub struct QueryTableRowsOutput {
     /// keeps increasing with every update and the increments are not sequential.
     /// </p>
     pub workbook_cursor: i64,
+}
+impl QueryTableRowsOutput {
+    /// <p>
+    /// The list of columns in the table whose row data is returned in the result.
+    /// </p>
+    pub fn column_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.column_ids.as_deref()
+    }
+    /// <p>
+    /// The list of rows in the table that match the query filter.
+    /// </p>
+    pub fn rows(&self) -> std::option::Option<&[crate::model::TableRow]> {
+        self.rows.as_deref()
+    }
+    /// <p>
+    /// Provides the pagination token to load the next page if there are more results matching the request. If a
+    /// pagination token is not present in the response, it means that all data matching the request has been
+    /// loaded.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor
+    /// keeps increasing with every update and the increments are not sequential.
+    /// </p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
 }
 impl std::fmt::Debug for QueryTableRowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -244,6 +288,29 @@ pub struct ListTablesOutput {
     /// </p>
     pub workbook_cursor: i64,
 }
+impl ListTablesOutput {
+    /// <p>
+    /// The list of tables in the workbook.
+    /// </p>
+    pub fn tables(&self) -> std::option::Option<&[crate::model::Table]> {
+        self.tables.as_deref()
+    }
+    /// <p>
+    /// Provides the pagination token to load the next page if there are more results matching the request. If a
+    /// pagination token is not present in the response, it means that all data matching the request has been
+    /// loaded.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor
+    /// keeps increasing with every update and the increments are not sequential.
+    /// </p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+}
 impl std::fmt::Debug for ListTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTablesOutput");
@@ -366,6 +433,42 @@ pub struct ListTableRowsOutput {
     /// keeps increasing with every update and the increments are not sequential.
     /// </p>
     pub workbook_cursor: i64,
+}
+impl ListTableRowsOutput {
+    /// <p>
+    /// The list of columns in the table whose row data is returned in the result.
+    /// </p>
+    pub fn column_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.column_ids.as_deref()
+    }
+    /// <p>
+    /// The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100
+    /// rows.
+    /// </p>
+    pub fn rows(&self) -> std::option::Option<&[crate::model::TableRow]> {
+        self.rows.as_deref()
+    }
+    /// <p>
+    /// The list of row ids included in the request that were not found in the table.
+    /// </p>
+    pub fn row_ids_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.row_ids_not_found.as_deref()
+    }
+    /// <p>
+    /// Provides the pagination token to load the next page if there are more results matching the request. If a
+    /// pagination token is not present in the response, it means that all data matching the request has been
+    /// loaded.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor
+    /// keeps increasing with every update and the increments are not sequential.
+    /// </p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
 }
 impl std::fmt::Debug for ListTableRowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -535,6 +638,29 @@ pub struct ListTableColumnsOutput {
     /// </p>
     pub workbook_cursor: i64,
 }
+impl ListTableColumnsOutput {
+    /// <p>
+    /// The list of columns in the table.
+    /// </p>
+    pub fn table_columns(&self) -> std::option::Option<&[crate::model::TableColumn]> {
+        self.table_columns.as_deref()
+    }
+    /// <p>
+    /// Provides the pagination token to load the next page if there are more results matching the request. If a
+    /// pagination token is not present in the response, it means that all data matching the request has been
+    /// loaded.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor
+    /// keeps increasing with every update and the increments are not sequential.
+    /// </p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+}
 impl std::fmt::Debug for ListTableColumnsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTableColumnsOutput");
@@ -636,6 +762,12 @@ pub struct InvokeScreenAutomationOutput {
     /// <p>The updated workbook cursor after performing the automation action.</p>
     pub workbook_cursor: i64,
 }
+impl InvokeScreenAutomationOutput {
+    /// <p>The updated workbook cursor after performing the automation action.</p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+}
 impl std::fmt::Debug for InvokeScreenAutomationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeScreenAutomationOutput");
@@ -695,6 +827,29 @@ pub struct GetScreenDataOutput {
     /// pagination token is not present in the response, it means that all data matching the query has been loaded.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetScreenDataOutput {
+    /// <p>A map of all the rows on the screen keyed by block name.</p>
+    pub fn results(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::ResultSet>>
+    {
+        self.results.as_ref()
+    }
+    /// <p>
+    /// Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor
+    /// keeps increasing with every update and the increments are not sequential.
+    /// </p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+    /// <p>
+    /// Provides the pagination token to load the next page if there are more results matching the request. If a
+    /// pagination token is not present in the response, it means that all data matching the query has been loaded.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetScreenDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -809,6 +964,26 @@ pub struct DescribeTableDataImportJobOutput {
     /// </p>
     pub job_metadata: std::option::Option<crate::model::TableDataImportJobMetadata>,
 }
+impl DescribeTableDataImportJobOutput {
+    /// <p>
+    /// The current status of the import job.
+    /// </p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::TableDataImportJobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>
+    /// A message providing more details about the current status of the import job.
+    /// </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>
+    /// The metadata about the job that was submitted for import.
+    /// </p>
+    pub fn job_metadata(&self) -> std::option::Option<&crate::model::TableDataImportJobMetadata> {
+        self.job_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeTableDataImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTableDataImportJobOutput");
@@ -914,6 +1089,32 @@ pub struct BatchUpsertTableRowsOutput {
     /// why that item could not be updated or appended.
     /// </p>
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+}
+impl BatchUpsertTableRowsOutput {
+    /// <p>
+    /// A map with the batch item id as the key and the result of the upsert operation as the value. The
+    /// result of the upsert operation specifies whether existing rows were updated or a new row was appended, along
+    /// with the list of row ids that were affected.
+    /// </p>
+    pub fn rows(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>,
+    > {
+        self.rows.as_ref()
+    }
+    /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+    /// <p>
+    /// The list of batch items in the request that could not be updated or appended in the table. Each element in
+    /// this list contains one item from the request that could not be updated in the table along with the reason
+    /// why that item could not be updated or appended.
+    /// </p>
+    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+        self.failed_batch_items.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpsertTableRowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1041,6 +1242,20 @@ pub struct BatchUpdateTableRowsOutput {
     /// </p>
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
 }
+impl BatchUpdateTableRowsOutput {
+    /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+    /// <p>
+    /// The list of batch items in the request that could not be updated in the table. Each element in this list
+    /// contains one item from the request that could not be updated in the table along with the reason why
+    /// that item could not be updated.
+    /// </p>
+    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+        self.failed_batch_items.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateTableRowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateTableRowsOutput");
@@ -1128,6 +1343,20 @@ pub struct BatchDeleteTableRowsOutput {
     /// be deleted.
     /// </p>
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+}
+impl BatchDeleteTableRowsOutput {
+    /// <p>The updated workbook cursor after deleting the rows from the table.</p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+    /// <p>
+    /// The list of row ids in the request that could not be deleted from the table. Each element in this list
+    /// contains one row id from the request that could not be deleted along with the reason why that item could not
+    /// be deleted.
+    /// </p>
+    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+        self.failed_batch_items.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteTableRowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1219,6 +1448,27 @@ pub struct BatchCreateTableRowsOutput {
     /// that item could not be added.
     /// </p>
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+}
+impl BatchCreateTableRowsOutput {
+    /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
+    pub fn workbook_cursor(&self) -> i64 {
+        self.workbook_cursor
+    }
+    /// <p>The map of batch item id to the row id that was created for that item.</p>
+    pub fn created_rows(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.created_rows.as_ref()
+    }
+    /// <p>
+    /// The list of batch items in the request that could not be added to the table. Each element in this list
+    /// contains one item from the request that could not be added to the table along with the reason why
+    /// that item could not be added.
+    /// </p>
+    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+        self.failed_batch_items.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateTableRowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

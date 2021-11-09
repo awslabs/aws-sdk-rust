@@ -17,6 +17,35 @@ pub struct EventIntegration {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl EventIntegration {
+    /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
+    pub fn event_integration_arn(&self) -> std::option::Option<&str> {
+        self.event_integration_arn.as_deref()
+    }
+    /// <p>The name of the event integration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The event integration description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The event integration filter.</p>
+    pub fn event_filter(&self) -> std::option::Option<&crate::model::EventFilter> {
+        self.event_filter.as_ref()
+    }
+    /// <p>The Amazon EventBridge bus for the event integration.</p>
+    pub fn event_bridge_bus(&self) -> std::option::Option<&str> {
+        self.event_bridge_bus.as_deref()
+    }
+    /// <p>The tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for EventIntegration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventIntegration");
@@ -156,6 +185,12 @@ pub struct EventFilter {
     /// <p>The source of the events.</p>
     pub source: std::option::Option<std::string::String>,
 }
+impl EventFilter {
+    /// <p>The source of the events.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+}
 impl std::fmt::Debug for EventFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventFilter");
@@ -214,6 +249,35 @@ pub struct EventIntegrationAssociation {
     /// <p>The metadata associated with the client.</p>
     pub client_association_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl EventIntegrationAssociation {
+    /// <p>The Amazon Resource Name (ARN) for the event integration association.</p>
+    pub fn event_integration_association_arn(&self) -> std::option::Option<&str> {
+        self.event_integration_association_arn.as_deref()
+    }
+    /// <p>The identifier for the event integration association.</p>
+    pub fn event_integration_association_id(&self) -> std::option::Option<&str> {
+        self.event_integration_association_id.as_deref()
+    }
+    /// <p>The name of the event integration.</p>
+    pub fn event_integration_name(&self) -> std::option::Option<&str> {
+        self.event_integration_name.as_deref()
+    }
+    /// <p>The identifier for the client that is associated with the event integration.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The name of the EventBridge rule.</p>
+    pub fn event_bridge_rule_name(&self) -> std::option::Option<&str> {
+        self.event_bridge_rule_name.as_deref()
+    }
+    /// <p>The metadata associated with the client.</p>
+    pub fn client_association_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_association_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for EventIntegrationAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -376,6 +440,20 @@ pub struct DataIntegrationSummary {
     /// <p>The URI of the data source.</p>
     pub source_uri: std::option::Option<std::string::String>,
 }
+impl DataIntegrationSummary {
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn source_uri(&self) -> std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for DataIntegrationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataIntegrationSummary");
@@ -454,6 +532,21 @@ pub struct DataIntegrationAssociationSummary {
     /// <p>The identifier for teh client that is associated with the DataIntegration
     /// association.</p>
     pub client_id: std::option::Option<std::string::String>,
+}
+impl DataIntegrationAssociationSummary {
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
+    pub fn data_integration_association_arn(&self) -> std::option::Option<&str> {
+        self.data_integration_association_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN)of the DataIntegration.</p>
+    pub fn data_integration_arn(&self) -> std::option::Option<&str> {
+        self.data_integration_arn.as_deref()
+    }
+    /// <p>The identifier for teh client that is associated with the DataIntegration
+    /// association.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DataIntegrationAssociationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -546,6 +639,20 @@ pub struct ScheduleConfiguration {
     pub object: std::option::Option<std::string::String>,
     /// <p>How often the data should be pulled from data source.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
+}
+impl ScheduleConfiguration {
+    /// <p>The start date for objects to import in the first flow run.</p>
+    pub fn first_execution_from(&self) -> std::option::Option<&str> {
+        self.first_execution_from.as_deref()
+    }
+    /// <p>The name of the object to pull from the data source.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p>How often the data should be pulled from data source.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
 }
 impl std::fmt::Debug for ScheduleConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

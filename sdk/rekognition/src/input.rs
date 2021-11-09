@@ -172,10 +172,7 @@ impl CompareFacesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_compare_faces(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_compare_faces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -361,10 +358,7 @@ impl CreateCollectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_collection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_collection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -563,10 +557,7 @@ impl CreateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -715,10 +706,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1030,10 +1018,9 @@ impl CreateProjectVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_project_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_project_version(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1283,10 +1270,7 @@ impl CreateStreamProcessorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_stream_processor(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1439,10 +1423,7 @@ impl DeleteCollectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_collection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_collection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1595,10 +1576,7 @@ impl DeleteDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1771,10 +1749,7 @@ impl DeleteFacesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_faces(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_faces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1923,10 +1898,7 @@ impl DeleteProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2079,10 +2051,9 @@ impl DeleteProjectVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_project_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_project_version(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2232,10 +2203,7 @@ impl DeleteStreamProcessorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_stream_processor(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2388,10 +2356,7 @@ impl DescribeCollectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_collection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_collection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2545,10 +2510,7 @@ impl DescribeDatasetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2741,10 +2703,7 @@ impl DescribeProjectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_projects(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_projects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2956,10 +2915,7 @@ impl DescribeProjectVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_project_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3110,10 +3066,7 @@ impl DescribeStreamProcessorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stream_processor(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3362,10 +3315,7 @@ impl DetectCustomLabelsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_custom_labels(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_detect_custom_labels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3557,10 +3507,7 @@ impl DetectFacesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_faces(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detect_faces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3751,10 +3698,7 @@ impl DetectLabelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_labels(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detect_labels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3951,10 +3895,7 @@ impl DetectModerationLabelsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_moderation_labels(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4128,10 +4069,7 @@ impl DetectProtectiveEquipmentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_protective_equipment(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4303,10 +4241,7 @@ impl DetectTextInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_text(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detect_text(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4472,10 +4407,7 @@ impl DistributeDatasetEntriesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_distribute_dataset_entries(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4625,10 +4557,7 @@ impl GetCelebrityInfoInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_celebrity_info(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_celebrity_info(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4830,10 +4759,7 @@ impl GetCelebrityRecognitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_celebrity_recognition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5040,10 +4966,9 @@ impl GetContentModerationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_content_moderation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_content_moderation(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5223,10 +5148,7 @@ impl GetFaceDetectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_face_detection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_face_detection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5422,10 +5344,8 @@ impl GetFaceSearchInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_face_search(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_face_search(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5630,10 +5550,7 @@ impl GetLabelDetectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_label_detection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_label_detection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5836,10 +5753,7 @@ impl GetPersonTrackingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_person_tracking(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_person_tracking(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6017,10 +5931,7 @@ impl GetSegmentDetectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_segment_detection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_segment_detection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6198,10 +6109,7 @@ impl GetTextDetectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_text_detection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_text_detection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6501,10 +6409,7 @@ impl IndexFacesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_index_faces(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_index_faces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6666,10 +6571,7 @@ impl ListCollectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_collections(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_collections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6933,10 +6835,7 @@ impl ListDatasetEntriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_dataset_entries(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_dataset_entries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7122,10 +7021,7 @@ impl ListDatasetLabelsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_dataset_labels(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_dataset_labels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7303,10 +7199,7 @@ impl ListFacesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_faces(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_faces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7468,10 +7361,9 @@ impl ListStreamProcessorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stream_processors(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_stream_processors(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7625,10 +7517,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7784,10 +7675,7 @@ impl RecognizeCelebritiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_recognize_celebrities(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_recognize_celebrities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7983,10 +7871,7 @@ impl SearchFacesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_faces(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_faces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8230,10 +8115,7 @@ impl SearchFacesByImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_faces_by_image(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_faces_by_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8438,10 +8320,7 @@ impl StartCelebrityRecognitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_celebrity_recognition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8665,10 +8544,7 @@ impl StartContentModerationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_content_moderation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8893,10 +8769,7 @@ impl StartFaceDetectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_face_detection(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_face_detection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9123,10 +8996,7 @@ impl StartFaceSearchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_face_search(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_face_search(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9350,10 +9220,7 @@ impl StartLabelDetectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_label_detection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_label_detection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9555,10 +9422,7 @@ impl StartPersonTrackingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_person_tracking(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_person_tracking(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9731,10 +9595,7 @@ impl StartProjectVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_project_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_project_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9974,10 +9835,7 @@ impl StartSegmentDetectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_segment_detection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10125,10 +9983,9 @@ impl StartStreamProcessorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_stream_processor(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_stream_processor(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10347,10 +10204,7 @@ impl StartTextDetectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_text_detection(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_text_detection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10505,10 +10359,7 @@ impl StopProjectVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_project_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_project_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10656,10 +10507,7 @@ impl StopStreamProcessorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_stream_processor(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_stream_processor(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10845,10 +10693,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11026,10 +10871,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11202,10 +11044,9 @@ impl UpdateDatasetEntriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_dataset_entries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_dataset_entries(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11280,6 +11121,20 @@ pub struct UpdateDatasetEntriesInput {
     /// </p>
     pub changes: std::option::Option<crate::model::DatasetChanges>,
 }
+impl UpdateDatasetEntriesInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the dataset that you want to update.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>
+    /// The changes that you want to make to the dataset.
+    /// </p>
+    pub fn changes(&self) -> std::option::Option<&crate::model::DatasetChanges> {
+        self.changes.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDatasetEntriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDatasetEntriesInput");
@@ -11301,6 +11156,20 @@ pub struct UntagResourceInput {
     /// A list of the tags that you want to remove.
     /// </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>
+    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// A list of the tags that you want to remove.
+    /// </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11325,6 +11194,23 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>
+    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// The key-value tags to assign to the resource.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -11341,6 +11227,12 @@ pub struct StopStreamProcessorInput {
     /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StopStreamProcessorInput {
+    /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopStreamProcessorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopStreamProcessorInput");
@@ -11356,6 +11248,13 @@ pub struct StopProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
     pub project_version_arn: std::option::Option<std::string::String>,
+}
+impl StopProjectVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+        self.project_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopProjectVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11386,6 +11285,34 @@ pub struct StartTextDetectionInput {
     /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
     pub filters: std::option::Option<crate::model::StartTextDetectionFilters>,
 }
+impl StartTextDetectionInput {
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
+    /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
+    /// requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job
+    /// from being accidentaly started more than once.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
+    /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
+    /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
+    /// and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
+    /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::StartTextDetectionFilters> {
+        self.filters.as_ref()
+    }
+}
 impl std::fmt::Debug for StartTextDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTextDetectionInput");
@@ -11404,6 +11331,12 @@ impl std::fmt::Debug for StartTextDetectionInput {
 pub struct StartStreamProcessorInput {
     /// <p>The name of the stream processor to start processing.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl StartStreamProcessorInput {
+    /// <p>The name of the stream processor to start processing.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartStreamProcessorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11435,6 +11368,37 @@ pub struct StartSegmentDetectionInput {
     /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
     pub segment_types: std::option::Option<std::vec::Vec<crate::model::SegmentType>>,
 }
+impl StartSegmentDetectionInput {
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
+    /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+    /// <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use
+    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
+    /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
+    /// <p>Filters for technical cue or shot detection.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::StartSegmentDetectionFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
+    pub fn segment_types(&self) -> std::option::Option<&[crate::model::SegmentType]> {
+        self.segment_types.as_deref()
+    }
+}
 impl std::fmt::Debug for StartSegmentDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSegmentDetectionInput");
@@ -11460,6 +11424,20 @@ pub struct StartProjectVersionInput {
     /// of inference units that you use.
     /// </p>
     pub min_inference_units: std::option::Option<i32>,
+}
+impl StartProjectVersionInput {
+    /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
+    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+        self.project_version_arn.as_deref()
+    }
+    /// <p>The minimum number of inference units to use. A single
+    /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
+    /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
+    /// of inference units that you use.
+    /// </p>
+    pub fn min_inference_units(&self) -> std::option::Option<i32> {
+        self.min_inference_units
+    }
 }
 impl std::fmt::Debug for StartProjectVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11487,6 +11465,29 @@ pub struct StartPersonTrackingInput {
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
     /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
+}
+impl StartPersonTrackingInput {
+    /// <p>The video in which you want to detect people. The video must be stored
+    /// in an Amazon S3 bucket.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+    /// <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
+    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
+    /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for StartPersonTrackingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11524,6 +11525,38 @@ pub struct StartLabelDetectionInput {
     /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
+impl StartLabelDetectionInput {
+    /// <p>The video in which you want to detect labels. The video must be stored
+    /// in an Amazon S3 bucket.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+    /// <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use
+    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence
+    /// represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence.
+    /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any labels with a confidence level
+    /// lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence
+    /// values greater than or equal to 50 percent.</p>
+    pub fn min_confidence(&self) -> std::option::Option<f32> {
+        self.min_confidence
+    }
+    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
+    /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for StartLabelDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartLabelDetectionInput");
@@ -11556,6 +11589,36 @@ pub struct StartFaceSearchInput {
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
     /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
+}
+impl StartFaceSearchInput {
+    /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+    /// <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use
+    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
+    /// The default value is 80%.</p>
+    pub fn face_match_threshold(&self) -> std::option::Option<f32> {
+        self.face_match_threshold
+    }
+    /// <p>ID of the collection that contains the faces you want to search for.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for StartFaceSearchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11594,6 +11657,37 @@ pub struct StartFaceDetectionInput {
     /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
+impl StartFaceDetectionInput {
+    /// <p>The video in which you want to detect faces. The video must be stored
+    /// in an Amazon S3 bucket.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+    /// <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use
+    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
+    /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>The face attributes you want returned.</p>
+    /// <p>
+    /// <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
+    /// <p>
+    /// <code>ALL</code> - All facial attributes are returned.</p>
+    pub fn face_attributes(&self) -> std::option::Option<&crate::model::FaceAttributes> {
+        self.face_attributes.as_ref()
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for StartFaceDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFaceDetectionInput");
@@ -11630,6 +11724,37 @@ pub struct StartContentModerationInput {
     /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
+impl StartContentModerationInput {
+    /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
+    /// in an Amazon S3 bucket.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence
+    /// represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.
+    /// 100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level
+    /// lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>
+    /// returns labels with confidence values greater than or equal to 50 percent.</p>
+    pub fn min_confidence(&self) -> std::option::Option<f32> {
+        self.min_confidence
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+    /// <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use
+    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+    /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for StartContentModerationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartContentModerationInput");
@@ -11659,6 +11784,29 @@ pub struct StartCelebrityRecognitionInput {
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
     /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
+}
+impl StartCelebrityRecognitionInput {
+    /// <p>The video in which you want to recognize celebrities. The video must be stored
+    /// in an Amazon S3 bucket.</p>
+    pub fn video(&self) -> std::option::Option<&crate::model::Video> {
+        self.video.as_ref()
+    }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+    /// <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use
+    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+    /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
+        self.notification_channel.as_ref()
+    }
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for StartCelebrityRecognitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11706,6 +11854,48 @@ pub struct SearchFacesByImageInput {
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
+impl SearchFacesByImageInput {
+    /// <p>ID of the collection to search.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>The input image as base64-encoded bytes or an S3 object.
+    /// If you use the AWS CLI to call Amazon Rekognition operations,
+    /// passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
+    /// with the highest confidence in the match.</p>
+    pub fn max_faces(&self) -> std::option::Option<i32> {
+        self.max_faces
+    }
+    /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
+    /// don't return any matches where confidence in matches is less than 70%.
+    /// The default value is 80%.</p>
+    pub fn face_match_threshold(&self) -> std::option::Option<f32> {
+        self.face_match_threshold
+    }
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
+    /// Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition
+    /// chooses the quality bar.  If you specify <code>LOW</code>,
+    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+    /// don’t meet the chosen quality bar.  
+    ///
+    /// The quality bar is based on a variety of common use cases. Low-quality
+    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
+    /// as a face, a face that's too blurry, or a face with a
+    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
+    /// filtering is performed.  The default value is <code>NONE</code>.
+    /// </p>
+    /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    pub fn quality_filter(&self) -> std::option::Option<&crate::model::QualityFilter> {
+        self.quality_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchFacesByImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFacesByImageInput");
@@ -11735,6 +11925,28 @@ pub struct SearchFacesInput {
     /// </p>
     pub face_match_threshold: std::option::Option<f32>,
 }
+impl SearchFacesInput {
+    /// <p>ID of the collection the face belongs to.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>ID of a face to find matches for in the collection.</p>
+    pub fn face_id(&self) -> std::option::Option<&str> {
+        self.face_id.as_deref()
+    }
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
+    /// with the highest confidence in the match.</p>
+    pub fn max_faces(&self) -> std::option::Option<i32> {
+        self.max_faces
+    }
+    /// <p>Optional value specifying the minimum confidence in the face match to return. For
+    /// example, don't return any matches where confidence in matches is less than 70%.
+    /// The default value is 80%.
+    /// </p>
+    pub fn face_match_threshold(&self) -> std::option::Option<f32> {
+        self.face_match_threshold
+    }
+}
 impl std::fmt::Debug for SearchFacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFacesInput");
@@ -11757,6 +11969,16 @@ pub struct RecognizeCelebritiesInput {
     /// Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
 }
+impl RecognizeCelebritiesInput {
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+    /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to
+    /// base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see
+    /// Images in the Amazon Rekognition developer guide.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+}
 impl std::fmt::Debug for RecognizeCelebritiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecognizeCelebritiesInput");
@@ -11773,6 +11995,14 @@ pub struct ListTagsForResourceInput {
     /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
     /// </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>
+    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11791,6 +12021,17 @@ pub struct ListStreamProcessorsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListStreamProcessorsInput {
+    /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
+    /// returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListStreamProcessorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11813,6 +12054,22 @@ pub struct ListFacesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of faces to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFacesInput {
+    /// <p>ID of the collection from which to list the faces.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Rekognition returns a pagination token in the response. You can use this pagination token to
+    /// retrieve the next set of faces.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of faces to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11840,6 +12097,26 @@ pub struct ListDatasetLabelsInput {
     /// If you specify a value greater than 100, a ValidationException
     /// error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDatasetLabelsInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the dataset that you want to use.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDatasetLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11885,6 +12162,51 @@ pub struct ListDatasetEntriesInput {
     /// error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDatasetEntriesInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) for the dataset that you want to use.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
+    /// </p>
+    pub fn contains_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.contains_labels.as_deref()
+    }
+    /// <p>
+    /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
+    /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
+    /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
+    /// images.
+    /// </p>
+    pub fn labeled(&self) -> std::option::Option<bool> {
+        self.labeled
+    }
+    /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
+    /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
+    /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+    pub fn source_ref_contains(&self) -> std::option::Option<&str> {
+        self.source_ref_contains.as_deref()
+    }
+    /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
+    /// </p>
+    pub fn has_errors(&self) -> std::option::Option<bool> {
+        self.has_errors
+    }
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatasetEntriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetEntriesInput");
@@ -11907,6 +12229,16 @@ pub struct ListCollectionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of collection IDs to return. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListCollectionsInput {
+    /// <p>Pagination token from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of collection IDs to return. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListCollectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11970,6 +12302,68 @@ pub struct IndexFacesInput {
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
+impl IndexFacesInput {
+    /// <p>The ID of an existing collection to which you want to add the faces that are detected
+    /// in the input images.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+    /// Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>The ID you want to assign to all the faces detected in the image.</p>
+    pub fn external_image_id(&self) -> std::option::Option<&str> {
+        self.external_image_id.as_deref()
+    }
+    /// <p>An array of facial attributes that you want to be returned. This can be the default
+    /// list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>
+    /// or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
+    /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
+    /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+    /// facial attributes are returned, but the operation takes longer to complete.</p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
+    /// operator to determine which attributes to return (in this case, all attributes). </p>
+    pub fn detection_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.detection_attributes.as_deref()
+    }
+    /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
+    /// than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an
+    /// image, even if you specify a larger value for <code>MaxFaces</code>.</p>
+    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the
+    /// faces with the lowest quality are filtered out first. If there are still more faces than the
+    /// value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out
+    /// (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information
+    /// about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+    /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face
+    /// bounding box size to the smallest size, in descending order.</p>
+    /// <p>
+    /// <code>MaxFaces</code> can be used with a collection associated with any version of
+    /// the face model.</p>
+    pub fn max_faces(&self) -> std::option::Option<i32> {
+        self.max_faces
+    }
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
+    /// Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
+    /// If you specify <code>LOW</code>,
+    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+    /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
+    ///
+    /// The quality bar is based on a variety of common use cases. Low-quality
+    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
+    /// as a face, a face that's too blurry, or a face with a
+    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
+    /// filtering is performed.
+    /// </p>
+    /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    pub fn quality_filter(&self) -> std::option::Option<&crate::model::QualityFilter> {
+        self.quality_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for IndexFacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IndexFacesInput");
@@ -11996,6 +12390,22 @@ pub struct GetTextDetectionInput {
     /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetTextDetectionInput {
+    /// <p>Job identifier for the text detection operation for which you want results returned.
+    /// You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
+    /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTextDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTextDetectionInput");
@@ -12018,6 +12428,22 @@ pub struct GetSegmentDetectionInput {
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
     /// request to retrieve the next set of text.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetSegmentDetectionInput {
+    /// <p>Job identifier for the text detection operation for which you want results returned.
+    /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+    /// request to retrieve the next set of text.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSegmentDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12048,6 +12474,31 @@ pub struct GetPersonTrackingInput {
     /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
     /// The default sort is by <code>TIMESTAMP</code>.</p>
     pub sort_by: std::option::Option<crate::model::PersonTrackingSortBy>,
+}
+impl GetPersonTrackingInput {
+    /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
+    /// </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+    /// The default value is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
+    /// token in the response. You can use this pagination token to retrieve the next set of persons. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements
+    /// by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons.
+    /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
+    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::PersonTrackingSortBy> {
+        self.sort_by.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPersonTrackingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12081,6 +12532,32 @@ pub struct GetLabelDetectionInput {
     /// The default sort is by <code>TIMESTAMP</code>.</p>
     pub sort_by: std::option::Option<crate::model::LabelDetectionSortBy>,
 }
+impl GetLabelDetectionInput {
+    /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
+    /// an initial call to <code>StartlabelDetection</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+    /// The default value is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
+    /// token in the response. You can use this pagination token to retrieve the next set of labels. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Sort to use for elements in the <code>Labels</code> array.
+    /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
+    /// Use <code>NAME</code> to alphabetically group elements for a label together.
+    /// Within each label group, the array element are sorted by detection confidence.
+    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::LabelDetectionSortBy> {
+        self.sort_by.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLabelDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLabelDetectionInput");
@@ -12109,6 +12586,28 @@ pub struct GetFaceSearchInput {
     /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
     pub sort_by: std::option::Option<crate::model::FaceSearchSortBy>,
 }
+impl GetFaceSearchInput {
+    /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+    /// The default value is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
+    /// token in the response. You can use this pagination token to retrieve the next set of search results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
+    /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::FaceSearchSortBy> {
+        self.sort_by.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFaceSearchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFaceSearchInput");
@@ -12133,6 +12632,23 @@ pub struct GetFaceDetectionInput {
     /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
     /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetFaceDetectionInput {
+    /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+    /// The default value is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
+    /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFaceDetectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12166,6 +12682,33 @@ pub struct GetContentModerationInput {
     /// The default sort is by <code>TIMESTAMP</code>.</p>
     pub sort_by: std::option::Option<crate::model::ContentModerationSortBy>,
 }
+impl GetContentModerationInput {
+    /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
+    /// a subsequent call to <code>GetContentModeration</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+    /// The default value is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of content moderation labels.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
+    /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
+    /// Use <code>NAME</code> to alphabetically group elements for a label together.
+    /// Within each label group, the array element are sorted by detection confidence.
+    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ContentModerationSortBy> {
+        self.sort_by.as_ref()
+    }
+}
 impl std::fmt::Debug for GetContentModerationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContentModerationInput");
@@ -12195,6 +12738,29 @@ pub struct GetCelebrityRecognitionInput {
     /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
     pub sort_by: std::option::Option<crate::model::CelebrityRecognitionSortBy>,
 }
+impl GetCelebrityRecognitionInput {
+    /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
+    /// a call to <code>StartCelebrityRecognition</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+    /// The default value is 1000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
+    /// token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
+    /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::CelebrityRecognitionSortBy> {
+        self.sort_by.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCelebrityRecognitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCelebrityRecognitionInput");
@@ -12214,6 +12780,13 @@ pub struct GetCelebrityInfoInput {
     /// which recognizes celebrities in an image. </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetCelebrityInfoInput {
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
+    /// which recognizes celebrities in an image. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCelebrityInfoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCelebrityInfoInput");
@@ -12230,6 +12803,14 @@ pub struct DistributeDatasetEntriesInput {
     /// the same project. The test dataset must be empty.
     /// </p>
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
+}
+impl DistributeDatasetEntriesInput {
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
+    /// the same project. The test dataset must be empty.
+    /// </p>
+    pub fn datasets(&self) -> std::option::Option<&[crate::model::DistributeDataset]> {
+        self.datasets.as_deref()
+    }
 }
 impl std::fmt::Debug for DistributeDatasetEntriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12252,6 +12833,20 @@ pub struct DetectTextInput {
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
     pub filters: std::option::Option<crate::model::DetectTextFilters>,
 }
+impl DetectTextInput {
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
+    /// to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::DetectTextFilters> {
+        self.filters.as_ref()
+    }
+}
 impl std::fmt::Debug for DetectTextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectTextInput");
@@ -12271,6 +12866,19 @@ pub struct DetectProtectiveEquipmentInput {
     /// <p>An array of PPE types that you want to summarize.</p>
     pub summarization_attributes:
         std::option::Option<crate::model::ProtectiveEquipmentSummarizationAttributes>,
+}
+impl DetectProtectiveEquipmentInput {
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
+    /// reference an image stored in an Amazon S3 bucket. </p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>An array of PPE types that you want to summarize.</p>
+    pub fn summarization_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::ProtectiveEquipmentSummarizationAttributes> {
+        self.summarization_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectProtectiveEquipmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12300,6 +12908,29 @@ pub struct DetectModerationLabelsInput {
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
     /// the image will be sent to.</p>
     pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
+}
+impl DetectModerationLabelsInput {
+    /// <p>The input image as base64-encoded bytes or an S3 object.
+    /// If you use the AWS CLI to call Amazon Rekognition operations,
+    /// passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
+    /// return any labels with a confidence level lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with
+    /// confidence values greater than or equal to 50 percent.</p>
+    pub fn min_confidence(&self) -> std::option::Option<f32> {
+        self.min_confidence
+    }
+    /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
+    /// the image will be sent to.</p>
+    pub fn human_loop_config(&self) -> std::option::Option<&crate::model::HumanLoopConfig> {
+        self.human_loop_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectModerationLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12331,6 +12962,29 @@ pub struct DetectLabelsInput {
     /// confidence values greater than or equal to 55 percent.</p>
     pub min_confidence: std::option::Option<f32>,
 }
+impl DetectLabelsInput {
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+    /// Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do
+    /// not need to be base64-encoded.</p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>Maximum number of labels you want the service to return in the response. The service
+    /// returns the specified number of highest confidence labels. </p>
+    pub fn max_labels(&self) -> std::option::Option<i32> {
+        self.max_labels
+    }
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
+    /// return any labels with confidence lower than this specified value.</p>
+    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a
+    /// confidence values greater than or equal to 55 percent.</p>
+    pub fn min_confidence(&self) -> std::option::Option<f32> {
+        self.min_confidence
+    }
+}
 impl std::fmt::Debug for DetectLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectLabelsInput");
@@ -12360,6 +13014,27 @@ pub struct DetectFacesInput {
     /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
     /// operator to determine which attributes to return (in this case, all attributes). </p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+}
+impl DetectFacesInput {
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+    /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>An array of facial attributes you want to be returned. This can be the default list of
+    /// attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if
+    /// you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
+    /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
+    /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+    /// facial attributes are returned, but the operation takes longer to complete.</p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
+    /// operator to determine which attributes to return (in this case, all attributes). </p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectFacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12413,6 +13088,54 @@ pub struct DetectCustomLabelsInput {
     /// returns labels based on the assumed threshold of each label.</p>
     pub min_confidence: std::option::Option<f32>,
 }
+impl DetectCustomLabelsInput {
+    /// <p>The ARN of the model version that you want to use.</p>
+    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+        self.project_version_arn.as_deref()
+    }
+    /// <p>Provides the input image either as bytes or an S3 object.</p>
+    /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
+    /// property. For example, you would use the <code>Bytes</code> property to pass an image loaded
+    /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
+    /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
+    /// call Amazon Rekognition API operations. </p>
+    ///
+    /// <p>For more information, see Analyzing an Image Loaded from a Local File System
+    /// in the Amazon Rekognition Developer Guide.</p>
+    /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
+    /// <code>S3Object</code> property. Images stored in an S3 bucket do not need to be
+    /// base64-encoded.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
+    /// Amazon Rekognition operations.</p>
+    /// <p>If you use the
+    /// AWS
+    /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
+    /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
+    /// call the operation using the S3Object property.</p>
+    ///
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
+    /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
+    /// </p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>Maximum number of results you want the service to return in the response.
+    /// The service returns the specified number of highest confidence labels ranked from highest confidence
+    /// to lowest.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specifies the minimum confidence level for the labels to return.
+    /// <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than
+    /// this specified value. If you specify a
+    /// value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
+    /// threshold applied to each label.
+    /// If you don't specify a value for <code>MinConfidence</code>,  <code>DetectCustomLabels</code>
+    /// returns labels based on the assumed threshold of each label.</p>
+    pub fn min_confidence(&self) -> std::option::Option<f32> {
+        self.min_confidence
+    }
+}
 impl std::fmt::Debug for DetectCustomLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectCustomLabelsInput");
@@ -12430,6 +13153,12 @@ impl std::fmt::Debug for DetectCustomLabelsInput {
 pub struct DescribeStreamProcessorInput {
     /// <p>Name of the stream processor for which you want information.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeStreamProcessorInput {
+    /// <p>Name of the stream processor for which you want information.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStreamProcessorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12459,6 +13188,31 @@ pub struct DescribeProjectVersionsInput {
     /// error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeProjectVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
+    /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
+    /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
+    /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
+    pub fn version_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.version_names.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
+    /// You can use this pagination token to retrieve the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call.
+    /// The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeProjectVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectVersionsInput");
@@ -12486,6 +13240,25 @@ pub struct DescribeProjectsInput {
     /// the response includes descriptions for all the projects in your AWS account.</p>
     pub project_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeProjectsInput {
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
+    /// the response includes descriptions for all the projects in your AWS account.</p>
+    pub fn project_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.project_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectsInput");
@@ -12505,6 +13278,14 @@ pub struct DescribeDatasetInput {
     /// </p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
+impl DescribeDatasetInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetInput");
@@ -12519,6 +13300,12 @@ impl std::fmt::Debug for DescribeDatasetInput {
 pub struct DescribeCollectionInput {
     /// <p>The ID of the collection to describe.</p>
     pub collection_id: std::option::Option<std::string::String>,
+}
+impl DescribeCollectionInput {
+    /// <p>The ID of the collection to describe.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12535,6 +13322,12 @@ pub struct DeleteStreamProcessorInput {
     /// <p>The name of the stream processor you want to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteStreamProcessorInput {
+    /// <p>The name of the stream processor you want to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStreamProcessorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStreamProcessorInput");
@@ -12550,6 +13343,12 @@ pub struct DeleteProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     pub project_version_arn: std::option::Option<std::string::String>,
 }
+impl DeleteProjectVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+        self.project_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProjectVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectVersionInput");
@@ -12564,6 +13363,12 @@ impl std::fmt::Debug for DeleteProjectVersionInput {
 pub struct DeleteProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
     pub project_arn: std::option::Option<std::string::String>,
+}
+impl DeleteProjectInput {
+    /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12581,6 +13386,16 @@ pub struct DeleteFacesInput {
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>An array of face IDs to delete.</p>
     pub face_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteFacesInput {
+    /// <p>Collection from which to remove the specific faces.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>An array of face IDs to delete.</p>
+    pub fn face_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.face_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12600,6 +13415,14 @@ pub struct DeleteDatasetInput {
     /// </p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetInput {
+    /// <p>
+    /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetInput");
@@ -12614,6 +13437,12 @@ impl std::fmt::Debug for DeleteDatasetInput {
 pub struct DeleteCollectionInput {
     /// <p>ID of the collection to delete.</p>
     pub collection_id: std::option::Option<std::string::String>,
+}
+impl DeleteCollectionInput {
+    /// <p>ID of the collection to delete.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12646,6 +13475,41 @@ pub struct CreateStreamProcessorInput {
     /// </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateStreamProcessorInput {
+    /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::StreamProcessorInput> {
+        self.input.as_ref()
+    }
+    /// <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
+    pub fn output(&self) -> std::option::Option<&crate::model::StreamProcessorOutput> {
+        self.output.as_ref()
+    }
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to
+    /// manage the stream processor. For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
+    /// <code>Name</code> is idempotent.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
+    /// attributes to detect.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::StreamProcessorSettings> {
+        self.settings.as_ref()
+    }
+    /// <p>ARN of the IAM role that allows access to the stream processor.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>
+    /// A set of tags (key-value pairs) that you want to attach to the stream processor.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStreamProcessorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12712,6 +13576,71 @@ pub struct CreateProjectVersionInput {
     /// using a key that AWS owns and manages.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl CreateProjectVersionInput {
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project that
+    /// manages the model that you want to train.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>A name for the version of the model. This value must be unique.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The Amazon S3 bucket location to store the results of training.
+    /// The S3 bucket can be in any AWS account as long as the caller has
+    /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>Specifies an external manifest that the services uses to train the model.
+    /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
+    /// The project must not have any associated datasets.
+    /// </p>
+    pub fn training_data(&self) -> std::option::Option<&crate::model::TrainingData> {
+        self.training_data.as_ref()
+    }
+    /// <p>Specifies an external manifest that the service uses to test the model.
+    /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
+    /// The project must not have any associated datasets.</p>
+    pub fn testing_data(&self) -> std::option::Option<&crate::model::TestingData> {
+        self.testing_data.as_ref()
+    }
+    /// <p>
+    /// A set of tags (key-value pairs) that you want to attach to the model.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
+    /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
+    /// an alias for your KMS key, or an alias ARN.
+    /// The key is used to encrypt training and test images copied into the service for model training.
+    /// Your source images are unaffected. The key is also used to encrypt training results
+    /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+    /// <ul>
+    /// <li>
+    /// <p>kms:CreateGrant</p>
+    /// </li>
+    /// <li>
+    /// <p>kms:DescribeKey</p>
+    /// </li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p>
+    /// </li>
+    /// <li>
+    /// <p>kms:Decrypt</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
+    /// using a key that AWS owns and manages.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProjectVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectVersionInput");
@@ -12732,6 +13661,12 @@ impl std::fmt::Debug for CreateProjectVersionInput {
 pub struct CreateProjectInput {
     /// <p>The name of the project to create.</p>
     pub project_name: std::option::Option<std::string::String>,
+}
+impl CreateProjectInput {
+    /// <p>The name of the project to create.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12762,6 +13697,30 @@ pub struct CreateDatasetInput {
     /// </p>
     pub project_arn: std::option::Option<std::string::String>,
 }
+impl CreateDatasetInput {
+    /// <p>
+    /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
+    /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
+    /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
+    ///
+    /// </p>
+    pub fn dataset_source(&self) -> std::option::Option<&crate::model::DatasetSource> {
+        self.dataset_source.as_ref()
+    }
+    /// <p>
+    /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
+    /// to create a test dataset.
+    /// </p>
+    pub fn dataset_type(&self) -> std::option::Option<&crate::model::DatasetType> {
+        self.dataset_type.as_ref()
+    }
+    /// <p>
+    /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
+    /// </p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetInput");
@@ -12783,6 +13742,21 @@ pub struct CreateCollectionInput {
     /// </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateCollectionInput {
+    /// <p>ID for the collection that you are creating.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>
+    /// A set of tags (key-value pairs) that you want to attach to the collection.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12828,6 +13802,47 @@ pub struct CompareFacesInput {
     /// </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
+}
+impl CompareFacesInput {
+    /// <p>The input image as base64-encoded bytes or an S3 object.
+    /// If you use the AWS CLI to call Amazon Rekognition operations,
+    /// passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn source_image(&self) -> std::option::Option<&crate::model::Image> {
+        self.source_image.as_ref()
+    }
+    /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
+    /// call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
+    /// </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+    /// passed using the <code>Bytes</code> field.
+    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn target_image(&self) -> std::option::Option<&crate::model::Image> {
+        self.target_image.as_ref()
+    }
+    /// <p>The minimum level of confidence in the face matches that a match must meet to be
+    /// included in the <code>FaceMatches</code> array.</p>
+    pub fn similarity_threshold(&self) -> std::option::Option<f32> {
+        self.similarity_threshold
+    }
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
+    /// Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
+    /// If you specify <code>LOW</code>,
+    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+    /// don’t meet the chosen quality bar.
+    ///
+    /// The quality bar is based on a variety of common use cases. Low-quality
+    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
+    /// as a face, a face that's too blurry, or a face with a
+    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
+    /// filtering is performed. The default value is <code>NONE</code>.
+    /// </p>
+    /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    pub fn quality_filter(&self) -> std::option::Option<&crate::model::QualityFilter> {
+        self.quality_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for CompareFacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

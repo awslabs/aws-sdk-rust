@@ -6,6 +6,12 @@ pub struct UpdateStackOutput {
     /// <p>Information about the stack.</p>
     pub stack: std::option::Option<crate::model::Stack>,
 }
+impl UpdateStackOutput {
+    /// <p>Information about the stack.</p>
+    pub fn stack(&self) -> std::option::Option<&crate::model::Stack> {
+        self.stack.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStackOutput");
@@ -82,6 +88,12 @@ pub struct UpdateFleetOutput {
     /// <p>Information about the fleet.</p>
     pub fleet: std::option::Option<crate::model::Fleet>,
 }
+impl UpdateFleetOutput {
+    /// <p>Information about the fleet.</p>
+    pub fn fleet(&self) -> std::option::Option<&crate::model::Fleet> {
+        self.fleet.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFleetOutput");
@@ -127,6 +139,12 @@ impl UpdateFleetOutput {
 pub struct UpdateDirectoryConfigOutput {
     /// <p>Information about the Directory Config object.</p>
     pub directory_config: std::option::Option<crate::model::DirectoryConfig>,
+}
+impl UpdateDirectoryConfigOutput {
+    /// <p>Information about the Directory Config object.</p>
+    pub fn directory_config(&self) -> std::option::Option<&crate::model::DirectoryConfig> {
+        self.directory_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDirectoryConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -239,6 +257,12 @@ pub struct StopImageBuilderOutput {
     /// <p>Information about the image builder.</p>
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
 }
+impl StopImageBuilderOutput {
+    /// <p>Information about the image builder.</p>
+    pub fn image_builder(&self) -> std::option::Option<&crate::model::ImageBuilder> {
+        self.image_builder.as_ref()
+    }
+}
 impl std::fmt::Debug for StopImageBuilderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopImageBuilderOutput");
@@ -319,6 +343,12 @@ impl StopFleetOutput {
 pub struct StartImageBuilderOutput {
     /// <p>Information about the image builder.</p>
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
+}
+impl StartImageBuilderOutput {
+    /// <p>Information about the image builder.</p>
+    pub fn image_builder(&self) -> std::option::Option<&crate::model::ImageBuilder> {
+        self.image_builder.as_ref()
+    }
 }
 impl std::fmt::Debug for StartImageBuilderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -402,6 +432,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The information about the tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -466,6 +505,16 @@ pub struct ListAssociatedStacksOutput {
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociatedStacksOutput {
+    /// <p>The name of the stack.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssociatedStacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -538,6 +587,16 @@ pub struct ListAssociatedFleetsOutput {
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociatedFleetsOutput {
+    /// <p>The name of the fleet.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssociatedFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -732,6 +791,18 @@ pub struct DescribeUserStackAssociationsOutput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeUserStackAssociationsOutput {
+    /// <p>The UserStackAssociation objects.</p>
+    pub fn user_stack_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserStackAssociation]> {
+        self.user_stack_associations.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserStackAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserStackAssociationsOutput");
@@ -808,6 +879,16 @@ pub struct DescribeUsersOutput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeUsersOutput {
+    /// <p>Information about users in the user pool.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsersOutput");
@@ -880,6 +961,18 @@ pub struct DescribeUsageReportSubscriptionsOutput {
         std::option::Option<std::vec::Vec<crate::model::UsageReportSubscription>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeUsageReportSubscriptionsOutput {
+    /// <p>Information about the usage report subscription.</p>
+    pub fn usage_report_subscriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::UsageReportSubscription]> {
+        self.usage_report_subscriptions.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUsageReportSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -960,6 +1053,16 @@ pub struct DescribeStacksOutput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeStacksOutput {
+    /// <p>Information about the stacks.</p>
+    pub fn stacks(&self) -> std::option::Option<&[crate::model::Stack]> {
+        self.stacks.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStacksOutput");
@@ -1032,6 +1135,16 @@ pub struct DescribeSessionsOutput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSessionsOutput {
+    /// <p>Information about the streaming sessions.</p>
+    pub fn sessions(&self) -> std::option::Option<&[crate::model::Session]> {
+        self.sessions.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSessionsOutput");
@@ -1103,6 +1216,16 @@ pub struct DescribeImagesOutput {
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeImagesOutput {
+    /// <p>Information about the images.</p>
+    pub fn images(&self) -> std::option::Option<&[crate::model::Image]> {
+        self.images.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1178,6 +1301,22 @@ pub struct DescribeImagePermissionsOutput {
         std::option::Option<std::vec::Vec<crate::model::SharedImagePermissions>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeImagePermissionsOutput {
+    /// <p>The name of the private image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The permissions for a private image that you own. </p>
+    pub fn shared_image_permissions_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::SharedImagePermissions]> {
+        self.shared_image_permissions_list.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeImagePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1271,6 +1410,16 @@ pub struct DescribeImageBuildersOutput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeImageBuildersOutput {
+    /// <p>Information about the image builders.</p>
+    pub fn image_builders(&self) -> std::option::Option<&[crate::model::ImageBuilder]> {
+        self.image_builders.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImageBuildersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImageBuildersOutput");
@@ -1343,6 +1492,16 @@ pub struct DescribeFleetsOutput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFleetsOutput {
+    /// <p>Information about the fleets.</p>
+    pub fn fleets(&self) -> std::option::Option<&[crate::model::Fleet]> {
+        self.fleets.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFleetsOutput");
@@ -1414,6 +1573,16 @@ pub struct DescribeDirectoryConfigsOutput {
     pub directory_configs: std::option::Option<std::vec::Vec<crate::model::DirectoryConfig>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDirectoryConfigsOutput {
+    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
+    pub fn directory_configs(&self) -> std::option::Option<&[crate::model::DirectoryConfig]> {
+        self.directory_configs.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDirectoryConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1609,6 +1778,12 @@ pub struct DeleteImageBuilderOutput {
     /// <p>Information about the image builder.</p>
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
 }
+impl DeleteImageBuilderOutput {
+    /// <p>Information about the image builder.</p>
+    pub fn image_builder(&self) -> std::option::Option<&crate::model::ImageBuilder> {
+        self.image_builder.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteImageBuilderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageBuilderOutput");
@@ -1659,6 +1834,12 @@ impl DeleteImageBuilderOutput {
 pub struct DeleteImageOutput {
     /// <p>Information about the image.</p>
     pub image: std::option::Option<crate::model::Image>,
+}
+impl DeleteImageOutput {
+    /// <p>Information about the image.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1804,6 +1985,22 @@ pub struct CreateUsageReportSubscriptionOutput {
     /// <p>The schedule for generating usage reports.</p>
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
 }
+impl CreateUsageReportSubscriptionOutput {
+    /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+    ///
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
+    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
+    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
+    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
+    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The schedule for generating usage reports.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::UsageReportSchedule> {
+        self.schedule.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUsageReportSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUsageReportSubscriptionOutput");
@@ -1885,6 +2082,16 @@ pub struct CreateUpdatedImageOutput {
     /// <p>Indicates whether a new image can be created.</p>
     pub can_update_image: bool,
 }
+impl CreateUpdatedImageOutput {
+    /// <p>Describes an image.</p>
+    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+        self.image.as_ref()
+    }
+    /// <p>Indicates whether a new image can be created.</p>
+    pub fn can_update_image(&self) -> bool {
+        self.can_update_image
+    }
+}
 impl std::fmt::Debug for CreateUpdatedImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUpdatedImageOutput");
@@ -1947,6 +2154,16 @@ pub struct CreateStreamingUrlOutput {
     pub streaming_url: std::option::Option<std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
     pub expires: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateStreamingUrlOutput {
+    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    pub fn streaming_url(&self) -> std::option::Option<&str> {
+        self.streaming_url.as_deref()
+    }
+    /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expires.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStreamingUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2015,6 +2232,12 @@ pub struct CreateStackOutput {
     /// <p>Information about the stack.</p>
     pub stack: std::option::Option<crate::model::Stack>,
 }
+impl CreateStackOutput {
+    /// <p>Information about the stack.</p>
+    pub fn stack(&self) -> std::option::Option<&crate::model::Stack> {
+        self.stack.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStackOutput");
@@ -2062,6 +2285,16 @@ pub struct CreateImageBuilderStreamingUrlOutput {
     pub streaming_url: std::option::Option<std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
     pub expires: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateImageBuilderStreamingUrlOutput {
+    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    pub fn streaming_url(&self) -> std::option::Option<&str> {
+        self.streaming_url.as_deref()
+    }
+    /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expires.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateImageBuilderStreamingUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2130,6 +2363,12 @@ pub struct CreateImageBuilderOutput {
     /// <p>Information about the image builder.</p>
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
 }
+impl CreateImageBuilderOutput {
+    /// <p>Information about the image builder.</p>
+    pub fn image_builder(&self) -> std::option::Option<&crate::model::ImageBuilder> {
+        self.image_builder.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateImageBuilderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageBuilderOutput");
@@ -2181,6 +2420,12 @@ pub struct CreateFleetOutput {
     /// <p>Information about the fleet.</p>
     pub fleet: std::option::Option<crate::model::Fleet>,
 }
+impl CreateFleetOutput {
+    /// <p>Information about the fleet.</p>
+    pub fn fleet(&self) -> std::option::Option<&crate::model::Fleet> {
+        self.fleet.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFleetOutput");
@@ -2226,6 +2471,12 @@ impl CreateFleetOutput {
 pub struct CreateDirectoryConfigOutput {
     /// <p>Information about the directory configuration.</p>
     pub directory_config: std::option::Option<crate::model::DirectoryConfig>,
+}
+impl CreateDirectoryConfigOutput {
+    /// <p>Information about the directory configuration.</p>
+    pub fn directory_config(&self) -> std::option::Option<&crate::model::DirectoryConfig> {
+        self.directory_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDirectoryConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2278,6 +2529,12 @@ pub struct CopyImageOutput {
     /// <p>The name of the destination image.</p>
     pub destination_image_name: std::option::Option<std::string::String>,
 }
+impl CopyImageOutput {
+    /// <p>The name of the destination image.</p>
+    pub fn destination_image_name(&self) -> std::option::Option<&str> {
+        self.destination_image_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyImageOutput");
@@ -2328,6 +2585,12 @@ impl CopyImageOutput {
 pub struct BatchDisassociateUserStackOutput {
     /// <p>The list of UserStackAssociationError objects.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
+}
+impl BatchDisassociateUserStackOutput {
+    /// <p>The list of UserStackAssociationError objects.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::UserStackAssociationError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisassociateUserStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2386,6 +2649,12 @@ impl BatchDisassociateUserStackOutput {
 pub struct BatchAssociateUserStackOutput {
     /// <p>The list of UserStackAssociationError objects.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
+}
+impl BatchAssociateUserStackOutput {
+    /// <p>The list of UserStackAssociationError objects.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::UserStackAssociationError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateUserStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

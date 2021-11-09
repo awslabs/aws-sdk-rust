@@ -6,6 +6,12 @@ pub struct UpdateReservationOutput {
     /// Reserved resources available to use
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
+impl UpdateReservationOutput {
+    /// Reserved resources available to use
+    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+        self.reservation.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReservationOutput");
@@ -56,6 +62,12 @@ impl UpdateReservationOutput {
 pub struct UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
     pub multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
+}
+impl UpdateMultiplexProgramOutput {
+    /// The updated multiplex program.
+    pub fn multiplex_program(&self) -> std::option::Option<&crate::model::MultiplexProgram> {
+        self.multiplex_program.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMultiplexProgramOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +120,12 @@ pub struct UpdateMultiplexOutput {
     /// The updated multiplex.
     pub multiplex: std::option::Option<crate::model::Multiplex>,
 }
+impl UpdateMultiplexOutput {
+    /// The updated multiplex.
+    pub fn multiplex(&self) -> std::option::Option<&crate::model::Multiplex> {
+        self.multiplex.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMultiplexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMultiplexOutput");
@@ -158,6 +176,12 @@ impl UpdateMultiplexOutput {
 pub struct UpdateInputSecurityGroupOutput {
     /// An Input Security Group
     pub security_group: std::option::Option<crate::model::InputSecurityGroup>,
+}
+impl UpdateInputSecurityGroupOutput {
+    /// An Input Security Group
+    pub fn security_group(&self) -> std::option::Option<&crate::model::InputSecurityGroup> {
+        self.security_group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateInputSecurityGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -231,6 +255,64 @@ pub struct UpdateInputDeviceOutput {
     pub r#type: std::option::Option<crate::model::InputDeviceType>,
     /// Settings that describe an input device that is type UHD.
     pub uhd_device_settings: std::option::Option<crate::model::InputDeviceUhdSettings>,
+}
+impl UpdateInputDeviceOutput {
+    /// The unique ARN of the input device.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The state of the connection between the input device and AWS.
+    pub fn connection_state(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    pub fn device_settings_sync_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceSettingsSyncState> {
+        self.device_settings_sync_state.as_ref()
+    }
+    /// The status of software on the input device.
+    pub fn device_update_status(&self) -> std::option::Option<&crate::model::DeviceUpdateStatus> {
+        self.device_update_status.as_ref()
+    }
+    /// Settings that describe an input device that is type HD.
+    pub fn hd_device_settings(&self) -> std::option::Option<&crate::model::InputDeviceHdSettings> {
+        self.hd_device_settings.as_ref()
+    }
+    /// The unique ID of the input device.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The network MAC address of the input device.
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+    /// A name that you specify for the input device.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The network settings for the input device.
+    pub fn network_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceNetworkSettings> {
+        self.network_settings.as_ref()
+    }
+    /// The unique serial number of the input device.
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// The type of the input device.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InputDeviceType> {
+        self.r#type.as_ref()
+    }
+    /// Settings that describe an input device that is type UHD.
+    pub fn uhd_device_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceUhdSettings> {
+        self.uhd_device_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateInputDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -454,6 +536,12 @@ pub struct UpdateInputOutput {
     /// Placeholder documentation for Input
     pub input: std::option::Option<crate::model::Input>,
 }
+impl UpdateInputOutput {
+    /// Placeholder documentation for Input
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInputOutput");
@@ -499,6 +587,12 @@ impl UpdateInputOutput {
 pub struct UpdateChannelClassOutput {
     /// Placeholder documentation for Channel
     pub channel: std::option::Option<crate::model::Channel>,
+}
+impl UpdateChannelClassOutput {
+    /// Placeholder documentation for Channel
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelClassOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -547,6 +641,12 @@ impl UpdateChannelClassOutput {
 pub struct UpdateChannelOutput {
     /// Placeholder documentation for Channel
     pub channel: std::option::Option<crate::model::Channel>,
+}
+impl UpdateChannelOutput {
+    /// Placeholder documentation for Channel
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -644,6 +744,51 @@ pub struct StopMultiplexOutput {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StopMultiplexOutput {
+    /// The unique arn of the multiplex.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A list of availability zones for the multiplex.
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// A list of the multiplex output destinations.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The unique id of the multiplex.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configuration for a multiplex event.
+    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+        self.multiplex_settings.as_ref()
+    }
+    /// The name of the multiplex.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The number of programs in the multiplex.
+    pub fn program_count(&self) -> i32 {
+        self.program_count
+    }
+    /// The current state of the multiplex.
+    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for StopMultiplexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -889,6 +1034,83 @@ pub struct StopChannelOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
+}
+impl StopChannelOutput {
+    /// The unique arn of the channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Specification of CDI inputs for this channel
+    pub fn cdi_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+        self.cdi_input_specification.as_ref()
+    }
+    /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+        self.channel_class.as_ref()
+    }
+    /// A list of destinations of the channel. For UDP outputs, there is one
+    /// destination per output. For other types (HLS, for example), there is
+    /// one destination per packager.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The endpoints where outgoing connections initiate from
+    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+        self.egress_endpoints.as_deref()
+    }
+    /// Encoder Settings
+    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+        self.encoder_settings.as_ref()
+    }
+    /// The unique id of the channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// List of input attachments for channel.
+    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+        self.input_attachments.as_deref()
+    }
+    /// Specification of network and file inputs for this channel
+    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+        self.input_specification.as_ref()
+    }
+    /// The log level being written to CloudWatch Logs.
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// The name of the channel. (user-mutable)
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Runtime details for the pipelines of a running channel.
+    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+        self.pipeline_details.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// Placeholder documentation for ChannelState
+    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Settings for VPC output
+    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for StopChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1251,6 +1473,51 @@ pub struct StartMultiplexOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StartMultiplexOutput {
+    /// The unique arn of the multiplex.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A list of availability zones for the multiplex.
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// A list of the multiplex output destinations.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The unique id of the multiplex.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configuration for a multiplex event.
+    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+        self.multiplex_settings.as_ref()
+    }
+    /// The name of the multiplex.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The number of programs in the multiplex.
+    pub fn program_count(&self) -> i32 {
+        self.program_count
+    }
+    /// The current state of the multiplex.
+    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StartMultiplexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMultiplexOutput");
@@ -1495,6 +1762,83 @@ pub struct StartChannelOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
+}
+impl StartChannelOutput {
+    /// The unique arn of the channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Specification of CDI inputs for this channel
+    pub fn cdi_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+        self.cdi_input_specification.as_ref()
+    }
+    /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+        self.channel_class.as_ref()
+    }
+    /// A list of destinations of the channel. For UDP outputs, there is one
+    /// destination per output. For other types (HLS, for example), there is
+    /// one destination per packager.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The endpoints where outgoing connections initiate from
+    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+        self.egress_endpoints.as_deref()
+    }
+    /// Encoder Settings
+    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+        self.encoder_settings.as_ref()
+    }
+    /// The unique id of the channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// List of input attachments for channel.
+    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+        self.input_attachments.as_deref()
+    }
+    /// Specification of network and file inputs for this channel
+    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+        self.input_specification.as_ref()
+    }
+    /// The log level being written to CloudWatch Logs.
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// The name of the channel. (user-mutable)
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Runtime details for the pipelines of a running channel.
+    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+        self.pipeline_details.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// Placeholder documentation for ChannelState
+    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Settings for VPC output
+    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for StartChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1868,6 +2212,12 @@ pub struct PurchaseOfferingOutput {
     /// Reserved resources available to use
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
+impl PurchaseOfferingOutput {
+    /// Reserved resources available to use
+    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+        self.reservation.as_ref()
+    }
+}
 impl std::fmt::Debug for PurchaseOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseOfferingOutput");
@@ -1919,6 +2269,15 @@ pub struct ListTagsForResourceOutput {
     /// Placeholder documentation for Tags
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// Placeholder documentation for Tags
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1984,6 +2343,16 @@ pub struct ListReservationsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// List of reservations
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
+}
+impl ListReservationsOutput {
+    /// Token to retrieve the next page of results
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// List of reservations
+    pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
+        self.reservations.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReservationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2057,6 +2426,16 @@ pub struct ListOfferingsOutput {
     /// List of offerings
     pub offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
 }
+impl ListOfferingsOutput {
+    /// Token to retrieve the next page of results
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// List of offerings
+    pub fn offerings(&self) -> std::option::Option<&[crate::model::Offering]> {
+        self.offerings.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingsOutput");
@@ -2129,6 +2508,18 @@ pub struct ListMultiplexProgramsOutput {
         std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
     /// Token for the next ListMultiplexProgram request.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMultiplexProgramsOutput {
+    /// List of multiplex programs.
+    pub fn multiplex_programs(
+        &self,
+    ) -> std::option::Option<&[crate::model::MultiplexProgramSummary]> {
+        self.multiplex_programs.as_deref()
+    }
+    /// Token for the next ListMultiplexProgram request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMultiplexProgramsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2206,6 +2597,16 @@ pub struct ListMultiplexesOutput {
     /// Token for the next ListMultiplexes request.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMultiplexesOutput {
+    /// List of multiplexes.
+    pub fn multiplexes(&self) -> std::option::Option<&[crate::model::MultiplexSummary]> {
+        self.multiplexes.as_deref()
+    }
+    /// Token for the next ListMultiplexes request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMultiplexesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMultiplexesOutput");
@@ -2277,6 +2678,18 @@ pub struct ListInputSecurityGroupsOutput {
     pub input_security_groups: std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInputSecurityGroupsOutput {
+    /// List of input security groups
+    pub fn input_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::InputSecurityGroup]> {
+        self.input_security_groups.as_deref()
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInputSecurityGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2354,6 +2767,16 @@ pub struct ListInputsOutput {
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInputsOutput {
+    /// Placeholder documentation for __listOfInput
+    pub fn inputs(&self) -> std::option::Option<&[crate::model::Input]> {
+        self.inputs.as_deref()
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInputsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInputsOutput");
@@ -2426,6 +2849,18 @@ pub struct ListInputDeviceTransfersOutput {
         std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
     /// A token to get additional list results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInputDeviceTransfersOutput {
+    /// The list of devices that you are transferring or are being transferred to you.
+    pub fn input_device_transfers(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransferringInputDeviceSummary]> {
+        self.input_device_transfers.as_deref()
+    }
+    /// A token to get additional list results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInputDeviceTransfersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2503,6 +2938,16 @@ pub struct ListInputDevicesOutput {
     /// A token to get additional list results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInputDevicesOutput {
+    /// The list of input devices.
+    pub fn input_devices(&self) -> std::option::Option<&[crate::model::InputDeviceSummary]> {
+        self.input_devices.as_deref()
+    }
+    /// A token to get additional list results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInputDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInputDevicesOutput");
@@ -2576,6 +3021,16 @@ pub struct ListChannelsOutput {
     /// Placeholder documentation for __string
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsOutput {
+    /// Placeholder documentation for __listOfChannelSummary
+    pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+        self.channels.as_deref()
+    }
+    /// Placeholder documentation for __string
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsOutput");
@@ -2647,6 +3102,16 @@ pub struct DescribeScheduleOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// The list of actions in the schedule.
     pub schedule_actions: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
+}
+impl DescribeScheduleOutput {
+    /// The next token; for use in pagination.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The list of actions in the schedule.
+    pub fn schedule_actions(&self) -> std::option::Option<&[crate::model::ScheduleAction]> {
+        self.schedule_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2753,6 +3218,85 @@ pub struct DescribeReservationOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub usage_price: f64,
+}
+impl DescribeReservationOutput {
+    /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Number of reserved resources
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// Lease duration, e.g. '12'
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// Units for duration, e.g. 'MONTHS'
+    pub fn duration_units(&self) -> std::option::Option<&crate::model::OfferingDurationUnits> {
+        self.duration_units.as_ref()
+    }
+    /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+    /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    pub fn fixed_price(&self) -> f64 {
+        self.fixed_price
+    }
+    /// User specified reservation name
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    pub fn offering_description(&self) -> std::option::Option<&str> {
+        self.offering_description.as_deref()
+    }
+    /// Unique offering ID, e.g. '87654321'
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// Offering type, e.g. 'NO_UPFRONT'
+    pub fn offering_type(&self) -> std::option::Option<&crate::model::OfferingType> {
+        self.offering_type.as_ref()
+    }
+    /// AWS region, e.g. 'us-west-2'
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
+        self.reservation_id.as_deref()
+    }
+    /// Resource configuration details
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+    /// Current state of reservation, e.g. 'ACTIVE'
+    pub fn state(&self) -> std::option::Option<&crate::model::ReservationState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    pub fn usage_price(&self) -> f64 {
+        self.usage_price
+    }
 }
 impl std::fmt::Debug for DescribeReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3085,6 +3629,54 @@ pub struct DescribeOfferingOutput {
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub usage_price: f64,
 }
+impl DescribeOfferingOutput {
+    /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// Lease duration, e.g. '12'
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// Units for duration, e.g. 'MONTHS'
+    pub fn duration_units(&self) -> std::option::Option<&crate::model::OfferingDurationUnits> {
+        self.duration_units.as_ref()
+    }
+    /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    pub fn fixed_price(&self) -> f64 {
+        self.fixed_price
+    }
+    /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    pub fn offering_description(&self) -> std::option::Option<&str> {
+        self.offering_description.as_deref()
+    }
+    /// Unique offering ID, e.g. '87654321'
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// Offering type, e.g. 'NO_UPFRONT'
+    pub fn offering_type(&self) -> std::option::Option<&crate::model::OfferingType> {
+        self.offering_type.as_ref()
+    }
+    /// AWS region, e.g. 'us-west-2'
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// Resource configuration details
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    pub fn usage_price(&self) -> f64 {
+        self.usage_price
+    }
+}
 impl std::fmt::Debug for DescribeOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOfferingOutput");
@@ -3292,6 +3884,34 @@ pub struct DescribeMultiplexProgramOutput {
     /// The name of the multiplex program.
     pub program_name: std::option::Option<std::string::String>,
 }
+impl DescribeMultiplexProgramOutput {
+    /// The MediaLive channel associated with the program.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// The settings for this multiplex program.
+    pub fn multiplex_program_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiplexProgramSettings> {
+        self.multiplex_program_settings.as_ref()
+    }
+    /// The packet identifier map for this multiplex program.
+    pub fn packet_identifiers_map(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiplexProgramPacketIdentifiersMap> {
+        self.packet_identifiers_map.as_ref()
+    }
+    /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    pub fn pipeline_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::MultiplexProgramPipelineDetail]> {
+        self.pipeline_details.as_deref()
+    }
+    /// The name of the multiplex program.
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMultiplexProgramOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMultiplexProgramOutput");
@@ -3440,6 +4060,51 @@ pub struct DescribeMultiplexOutput {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeMultiplexOutput {
+    /// The unique arn of the multiplex.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A list of availability zones for the multiplex.
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// A list of the multiplex output destinations.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The unique id of the multiplex.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configuration for a multiplex event.
+    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+        self.multiplex_settings.as_ref()
+    }
+    /// The name of the multiplex.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The number of programs in the multiplex.
+    pub fn program_count(&self) -> i32 {
+        self.program_count
+    }
+    /// The current state of the multiplex.
+    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeMultiplexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3662,6 +4327,35 @@ pub struct DescribeInputSecurityGroupOutput {
     /// Whitelist rules and their sync status
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
 }
+impl DescribeInputSecurityGroupOutput {
+    /// Unique ARN of Input Security Group
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The Id of the Input Security Group
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The list of inputs currently using this Input Security Group.
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// The current state of the Input Security Group.
+    pub fn state(&self) -> std::option::Option<&crate::model::InputSecurityGroupState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Whitelist rules and their sync status
+    pub fn whitelist_rules(&self) -> std::option::Option<&[crate::model::InputWhitelistRule]> {
+        self.whitelist_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInputSecurityGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInputSecurityGroupOutput");
@@ -3824,6 +4518,28 @@ pub struct DescribeInputDeviceThumbnailOutput {
     /// The date and time the thumbnail was last updated at the device.
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeInputDeviceThumbnailOutput {
+    /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.body
+    }
+    /// Specifies the media type of the thumbnail.
+    pub fn content_type(&self) -> std::option::Option<&crate::model::ContentType> {
+        self.content_type.as_ref()
+    }
+    /// The length of the content.
+    pub fn content_length(&self) -> i64 {
+        self.content_length
+    }
+    /// The unique, cacheable version of this thumbnail.
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// The date and time the thumbnail was last updated at the device.
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInputDeviceThumbnailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInputDeviceThumbnailOutput");
@@ -3954,6 +4670,64 @@ pub struct DescribeInputDeviceOutput {
     pub r#type: std::option::Option<crate::model::InputDeviceType>,
     /// Settings that describe an input device that is type UHD.
     pub uhd_device_settings: std::option::Option<crate::model::InputDeviceUhdSettings>,
+}
+impl DescribeInputDeviceOutput {
+    /// The unique ARN of the input device.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The state of the connection between the input device and AWS.
+    pub fn connection_state(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    pub fn device_settings_sync_state(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceSettingsSyncState> {
+        self.device_settings_sync_state.as_ref()
+    }
+    /// The status of software on the input device.
+    pub fn device_update_status(&self) -> std::option::Option<&crate::model::DeviceUpdateStatus> {
+        self.device_update_status.as_ref()
+    }
+    /// Settings that describe an input device that is type HD.
+    pub fn hd_device_settings(&self) -> std::option::Option<&crate::model::InputDeviceHdSettings> {
+        self.hd_device_settings.as_ref()
+    }
+    /// The unique ID of the input device.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The network MAC address of the input device.
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+    /// A name that you specify for the input device.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The network settings for the input device.
+    pub fn network_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceNetworkSettings> {
+        self.network_settings.as_ref()
+    }
+    /// The unique serial number of the input device.
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// The type of the input device.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InputDeviceType> {
+        self.r#type.as_ref()
+    }
+    /// Settings that describe an input device that is type UHD.
+    pub fn uhd_device_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::InputDeviceUhdSettings> {
+        self.uhd_device_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInputDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4209,6 +4983,77 @@ pub struct DescribeInputOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
     pub r#type: std::option::Option<crate::model::InputType>,
+}
+impl DescribeInputOutput {
+    /// The Unique ARN of the input (generated, immutable).
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
+    pub fn attached_channels(&self) -> std::option::Option<&[std::string::String]> {
+        self.attached_channels.as_deref()
+    }
+    /// A list of the destinations of the input (PUSH-type).
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::InputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The generated ID of the input (unique for user account, immutable).
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
+    /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    pub fn input_class(&self) -> std::option::Option<&crate::model::InputClass> {
+        self.input_class.as_ref()
+    }
+    /// Settings for the input devices.
+    pub fn input_devices(&self) -> std::option::Option<&[crate::model::InputDeviceSettings]> {
+        self.input_devices.as_deref()
+    }
+    /// A list of IDs for all Inputs which are partners of this one.
+    pub fn input_partner_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.input_partner_ids.as_deref()
+    }
+    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
+    /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    pub fn input_source_type(&self) -> std::option::Option<&crate::model::InputSourceType> {
+        self.input_source_type.as_ref()
+    }
+    /// A list of MediaConnect Flows for this input.
+    pub fn media_connect_flows(&self) -> std::option::Option<&[crate::model::MediaConnectFlow]> {
+        self.media_connect_flows.as_deref()
+    }
+    /// The user-assigned name (This is a mutable value).
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// A list of IDs for all the Input Security Groups attached to the input.
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// A list of the sources of the input (PULL-type).
+    pub fn sources(&self) -> std::option::Option<&[crate::model::InputSource]> {
+        self.sources.as_deref()
+    }
+    /// Placeholder documentation for InputState
+    pub fn state(&self) -> std::option::Option<&crate::model::InputState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// The different types of inputs that AWS Elemental MediaLive supports.
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InputType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4585,6 +5430,83 @@ pub struct DescribeChannelOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
+}
+impl DescribeChannelOutput {
+    /// The unique arn of the channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Specification of CDI inputs for this channel
+    pub fn cdi_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+        self.cdi_input_specification.as_ref()
+    }
+    /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+        self.channel_class.as_ref()
+    }
+    /// A list of destinations of the channel. For UDP outputs, there is one
+    /// destination per output. For other types (HLS, for example), there is
+    /// one destination per packager.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The endpoints where outgoing connections initiate from
+    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+        self.egress_endpoints.as_deref()
+    }
+    /// Encoder Settings
+    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+        self.encoder_settings.as_ref()
+    }
+    /// The unique id of the channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// List of input attachments for channel.
+    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+        self.input_attachments.as_deref()
+    }
+    /// Specification of network and file inputs for this channel
+    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+        self.input_specification.as_ref()
+    }
+    /// The log level being written to CloudWatch Logs.
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// The name of the channel. (user-mutable)
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Runtime details for the pipelines of a running channel.
+    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+        self.pipeline_details.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// Placeholder documentation for ChannelState
+    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Settings for VPC output
+    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5023,6 +5945,85 @@ pub struct DeleteReservationOutput {
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub usage_price: f64,
 }
+impl DeleteReservationOutput {
+    /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Number of reserved resources
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// Lease duration, e.g. '12'
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// Units for duration, e.g. 'MONTHS'
+    pub fn duration_units(&self) -> std::option::Option<&crate::model::OfferingDurationUnits> {
+        self.duration_units.as_ref()
+    }
+    /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+    /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    pub fn fixed_price(&self) -> f64 {
+        self.fixed_price
+    }
+    /// User specified reservation name
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    pub fn offering_description(&self) -> std::option::Option<&str> {
+        self.offering_description.as_deref()
+    }
+    /// Unique offering ID, e.g. '87654321'
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
+    /// Offering type, e.g. 'NO_UPFRONT'
+    pub fn offering_type(&self) -> std::option::Option<&crate::model::OfferingType> {
+        self.offering_type.as_ref()
+    }
+    /// AWS region, e.g. 'us-west-2'
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
+        self.reservation_id.as_deref()
+    }
+    /// Resource configuration details
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+    /// Current state of reservation, e.g. 'ACTIVE'
+    pub fn state(&self) -> std::option::Option<&crate::model::ReservationState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    pub fn usage_price(&self) -> f64 {
+        self.usage_price
+    }
+}
 impl std::fmt::Debug for DeleteReservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReservationOutput");
@@ -5344,6 +6345,34 @@ pub struct DeleteMultiplexProgramOutput {
     /// The name of the multiplex program.
     pub program_name: std::option::Option<std::string::String>,
 }
+impl DeleteMultiplexProgramOutput {
+    /// The MediaLive channel associated with the program.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// The settings for this multiplex program.
+    pub fn multiplex_program_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiplexProgramSettings> {
+        self.multiplex_program_settings.as_ref()
+    }
+    /// The packet identifier map for this multiplex program.
+    pub fn packet_identifiers_map(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiplexProgramPacketIdentifiersMap> {
+        self.packet_identifiers_map.as_ref()
+    }
+    /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    pub fn pipeline_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::MultiplexProgramPipelineDetail]> {
+        self.pipeline_details.as_deref()
+    }
+    /// The name of the multiplex program.
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMultiplexProgramOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMultiplexProgramOutput");
@@ -5492,6 +6521,51 @@ pub struct DeleteMultiplexOutput {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DeleteMultiplexOutput {
+    /// The unique arn of the multiplex.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A list of availability zones for the multiplex.
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// A list of the multiplex output destinations.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The unique id of the multiplex.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configuration for a multiplex event.
+    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+        self.multiplex_settings.as_ref()
+    }
+    /// The name of the multiplex.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The number of programs in the multiplex.
+    pub fn program_count(&self) -> i32 {
+        self.program_count
+    }
+    /// The current state of the multiplex.
+    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteMultiplexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5797,6 +6871,83 @@ pub struct DeleteChannelOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
+}
+impl DeleteChannelOutput {
+    /// The unique arn of the channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// Specification of CDI inputs for this channel
+    pub fn cdi_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+        self.cdi_input_specification.as_ref()
+    }
+    /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+        self.channel_class.as_ref()
+    }
+    /// A list of destinations of the channel. For UDP outputs, there is one
+    /// destination per output. For other types (HLS, for example), there is
+    /// one destination per packager.
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+        self.destinations.as_deref()
+    }
+    /// The endpoints where outgoing connections initiate from
+    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+        self.egress_endpoints.as_deref()
+    }
+    /// Encoder Settings
+    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+        self.encoder_settings.as_ref()
+    }
+    /// The unique id of the channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// List of input attachments for channel.
+    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+        self.input_attachments.as_deref()
+    }
+    /// Specification of network and file inputs for this channel
+    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+        self.input_specification.as_ref()
+    }
+    /// The log level being written to CloudWatch Logs.
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// The name of the channel. (user-mutable)
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Runtime details for the pipelines of a running channel.
+    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+        self.pipeline_details.as_deref()
+    }
+    /// The number of currently healthy pipelines.
+    pub fn pipelines_running_count(&self) -> i32 {
+        self.pipelines_running_count
+    }
+    /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// Placeholder documentation for ChannelState
+    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.state.as_ref()
+    }
+    /// A collection of key-value pairs.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Settings for VPC output
+    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+        self.vpc.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6170,6 +7321,12 @@ pub struct CreatePartnerInputOutput {
     /// Placeholder documentation for Input
     pub input: std::option::Option<crate::model::Input>,
 }
+impl CreatePartnerInputOutput {
+    /// Placeholder documentation for Input
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePartnerInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePartnerInputOutput");
@@ -6215,6 +7372,12 @@ impl CreatePartnerInputOutput {
 pub struct CreateMultiplexProgramOutput {
     /// The newly created multiplex program.
     pub multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
+}
+impl CreateMultiplexProgramOutput {
+    /// The newly created multiplex program.
+    pub fn multiplex_program(&self) -> std::option::Option<&crate::model::MultiplexProgram> {
+        self.multiplex_program.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMultiplexProgramOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6267,6 +7430,12 @@ pub struct CreateMultiplexOutput {
     /// The newly created multiplex.
     pub multiplex: std::option::Option<crate::model::Multiplex>,
 }
+impl CreateMultiplexOutput {
+    /// The newly created multiplex.
+    pub fn multiplex(&self) -> std::option::Option<&crate::model::Multiplex> {
+        self.multiplex.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMultiplexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMultiplexOutput");
@@ -6317,6 +7486,12 @@ impl CreateMultiplexOutput {
 pub struct CreateInputSecurityGroupOutput {
     /// An Input Security Group
     pub security_group: std::option::Option<crate::model::InputSecurityGroup>,
+}
+impl CreateInputSecurityGroupOutput {
+    /// An Input Security Group
+    pub fn security_group(&self) -> std::option::Option<&crate::model::InputSecurityGroup> {
+        self.security_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateInputSecurityGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6369,6 +7544,12 @@ pub struct CreateInputOutput {
     /// Placeholder documentation for Input
     pub input: std::option::Option<crate::model::Input>,
 }
+impl CreateInputOutput {
+    /// Placeholder documentation for Input
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInputOutput");
@@ -6414,6 +7595,12 @@ impl CreateInputOutput {
 pub struct CreateChannelOutput {
     /// Placeholder documentation for Channel
     pub channel: std::option::Option<crate::model::Channel>,
+}
+impl CreateChannelOutput {
+    /// Placeholder documentation for Channel
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6525,6 +7712,16 @@ pub struct BatchUpdateScheduleOutput {
     /// Schedule actions deleted from the schedule.
     pub deletes: std::option::Option<crate::model::BatchScheduleActionDeleteResult>,
 }
+impl BatchUpdateScheduleOutput {
+    /// Schedule actions created in the schedule.
+    pub fn creates(&self) -> std::option::Option<&crate::model::BatchScheduleActionCreateResult> {
+        self.creates.as_ref()
+    }
+    /// Schedule actions deleted from the schedule.
+    pub fn deletes(&self) -> std::option::Option<&crate::model::BatchScheduleActionDeleteResult> {
+        self.deletes.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateScheduleOutput");
@@ -6593,6 +7790,16 @@ pub struct BatchStopOutput {
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
     /// List of successful operations
     pub successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
+}
+impl BatchStopOutput {
+    /// List of failed operations
+    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchFailedResultModel]> {
+        self.failed.as_deref()
+    }
+    /// List of successful operations
+    pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
+        self.successful.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchStopOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6679,6 +7886,16 @@ pub struct BatchStartOutput {
     /// List of successful operations
     pub successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
 }
+impl BatchStartOutput {
+    /// List of failed operations
+    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchFailedResultModel]> {
+        self.failed.as_deref()
+    }
+    /// List of successful operations
+    pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
+        self.successful.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchStartOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchStartOutput");
@@ -6763,6 +7980,16 @@ pub struct BatchDeleteOutput {
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
     /// List of successful operations
     pub successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
+}
+impl BatchDeleteOutput {
+    /// List of failed operations
+    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchFailedResultModel]> {
+        self.failed.as_deref()
+    }
+    /// List of successful operations
+    pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
+        self.successful.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

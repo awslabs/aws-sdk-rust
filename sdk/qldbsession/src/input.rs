@@ -205,10 +205,7 @@ impl SendCommandInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_command(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_command(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -295,6 +292,47 @@ pub struct SendCommandInput {
     pub execute_statement: std::option::Option<crate::model::ExecuteStatementRequest>,
     /// <p>Command to fetch a page.</p>
     pub fetch_page: std::option::Option<crate::model::FetchPageRequest>,
+}
+impl SendCommandInput {
+    /// <p>Specifies the session token for the current command. A session token is constant
+    /// throughout the life of the session.</p>
+    /// <p>To obtain a session token, run the <code>StartSession</code> command. This
+    /// <code>SessionToken</code> is required for every subsequent command that is issued during
+    /// the current session.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p>Command to start a new session. A session token is obtained as part of the
+    /// response.</p>
+    pub fn start_session(&self) -> std::option::Option<&crate::model::StartSessionRequest> {
+        self.start_session.as_ref()
+    }
+    /// <p>Command to start a new transaction.</p>
+    pub fn start_transaction(&self) -> std::option::Option<&crate::model::StartTransactionRequest> {
+        self.start_transaction.as_ref()
+    }
+    /// <p>Command to end the current session.</p>
+    pub fn end_session(&self) -> std::option::Option<&crate::model::EndSessionRequest> {
+        self.end_session.as_ref()
+    }
+    /// <p>Command to commit the specified transaction.</p>
+    pub fn commit_transaction(
+        &self,
+    ) -> std::option::Option<&crate::model::CommitTransactionRequest> {
+        self.commit_transaction.as_ref()
+    }
+    /// <p>Command to abort the current transaction.</p>
+    pub fn abort_transaction(&self) -> std::option::Option<&crate::model::AbortTransactionRequest> {
+        self.abort_transaction.as_ref()
+    }
+    /// <p>Command to execute a statement in the specified transaction.</p>
+    pub fn execute_statement(&self) -> std::option::Option<&crate::model::ExecuteStatementRequest> {
+        self.execute_statement.as_ref()
+    }
+    /// <p>Command to fetch a page.</p>
+    pub fn fetch_page(&self) -> std::option::Option<&crate::model::FetchPageRequest> {
+        self.fetch_page.as_ref()
+    }
 }
 impl std::fmt::Debug for SendCommandInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

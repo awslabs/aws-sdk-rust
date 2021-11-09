@@ -10,6 +10,20 @@ pub struct GetWorkingLocationOutput {
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
 }
+impl GetWorkingLocationOutput {
+    /// <p>Returns the Amazon S3 URI for the working location.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>Returns the Amazon S3 Path for the working location.</p>
+    pub fn s3_path(&self) -> std::option::Option<&str> {
+        self.s3_path.as_deref()
+    }
+    /// <p>Returns the Amazon S3 bucket name for the working location.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWorkingLocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkingLocationOutput");
@@ -86,6 +100,16 @@ pub struct GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the duration in which the credentials will remain valid.</p>
     pub duration_in_minutes: i64,
 }
+impl GetProgrammaticAccessCredentialsOutput {
+    /// <p>Returns the programmatic credentials.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>Returns the duration in which the credentials will remain valid.</p>
+    pub fn duration_in_minutes(&self) -> i64 {
+        self.duration_in_minutes
+    }
+}
 impl std::fmt::Debug for GetProgrammaticAccessCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProgrammaticAccessCredentialsOutput");
@@ -149,6 +173,12 @@ impl GetProgrammaticAccessCredentialsOutput {
 pub struct CreateChangesetOutput {
     /// <p>Returns the changeset details.</p>
     pub changeset: std::option::Option<crate::model::ChangesetInfo>,
+}
+impl CreateChangesetOutput {
+    /// <p>Returns the changeset details.</p>
+    pub fn changeset(&self) -> std::option::Option<&crate::model::ChangesetInfo> {
+        self.changeset.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChangesetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

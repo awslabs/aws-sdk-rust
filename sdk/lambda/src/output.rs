@@ -35,6 +35,49 @@ pub struct UpdateFunctionEventInvokeConfigOutput {
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
+impl UpdateFunctionEventInvokeConfigOutput {
+    /// <p>The date and time that the configuration was last updated.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The maximum number of times to retry when the function returns an error.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_event_age_in_seconds
+    }
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title">
+    /// <b>Destinations</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Queue</b> - The ARN of an SQS queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Topic</b> - The ARN of an SNS topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFunctionEventInvokeConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionEventInvokeConfigOutput");
@@ -254,6 +297,144 @@ pub struct UpdateFunctionConfigurationOutput {
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
     /// valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl UpdateFunctionConfigurationOutput {
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The runtime environment for the Lambda function.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The function's execution role.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The function that Lambda calls to begin executing your function.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+    /// <p>The size of the function's deployment package, in bytes.</p>
+    pub fn code_size(&self) -> i64 {
+        self.code_size
+    }
+    /// <p>The function's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The amount of memory available to the function at runtime. </p>
+    pub fn memory_size(&self) -> std::option::Option<i32> {
+        self.memory_size
+    }
+    /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn last_modified(&self) -> std::option::Option<&str> {
+        self.last_modified.as_deref()
+    }
+    /// <p>The SHA256 hash of the function's deployment package.</p>
+    pub fn code_sha256(&self) -> std::option::Option<&str> {
+        self.code_sha256.as_deref()
+    }
+    /// <p>The version of the Lambda function.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The function's networking configuration.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The function's dead letter queue.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+        self.environment.as_ref()
+    }
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+    /// configured a customer managed CMK.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The function's X-Ray tracing configuration.</p>
+    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+        self.tracing_config.as_ref()
+    }
+    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    pub fn master_arn(&self) -> std::option::Option<&str> {
+        self.master_arn.as_deref()
+    }
+    /// <p>The latest updated revision of the function or alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+    /// layers</a>.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+        self.layers.as_deref()
+    }
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+    /// invoking it.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The reason for the function's current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+    /// modify the function.</p>
+    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+        self.state_reason_code.as_ref()
+    }
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+    /// after function creation completes.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+        self.last_update_status.as_ref()
+    }
+    /// <p>The reason for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+        self.last_update_status_reason.as_deref()
+    }
+    /// <p>The reason code for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason_code(
+        &self,
+    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+        self.last_update_status_reason_code.as_ref()
+    }
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+        self.file_system_configs.as_deref()
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+        self.image_config_response.as_ref()
+    }
+    /// <p>The ARN of the signing profile version.</p>
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+        self.signing_profile_version_arn.as_deref()
+    }
+    /// <p>The ARN of the signing job.</p>
+    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+        self.signing_job_arn.as_deref()
+    }
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -873,6 +1054,144 @@ pub struct UpdateFunctionCodeOutput {
     /// valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
+impl UpdateFunctionCodeOutput {
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The runtime environment for the Lambda function.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The function's execution role.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The function that Lambda calls to begin executing your function.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+    /// <p>The size of the function's deployment package, in bytes.</p>
+    pub fn code_size(&self) -> i64 {
+        self.code_size
+    }
+    /// <p>The function's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The amount of memory available to the function at runtime. </p>
+    pub fn memory_size(&self) -> std::option::Option<i32> {
+        self.memory_size
+    }
+    /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn last_modified(&self) -> std::option::Option<&str> {
+        self.last_modified.as_deref()
+    }
+    /// <p>The SHA256 hash of the function's deployment package.</p>
+    pub fn code_sha256(&self) -> std::option::Option<&str> {
+        self.code_sha256.as_deref()
+    }
+    /// <p>The version of the Lambda function.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The function's networking configuration.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The function's dead letter queue.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+        self.environment.as_ref()
+    }
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+    /// configured a customer managed CMK.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The function's X-Ray tracing configuration.</p>
+    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+        self.tracing_config.as_ref()
+    }
+    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    pub fn master_arn(&self) -> std::option::Option<&str> {
+        self.master_arn.as_deref()
+    }
+    /// <p>The latest updated revision of the function or alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+    /// layers</a>.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+        self.layers.as_deref()
+    }
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+    /// invoking it.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The reason for the function's current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+    /// modify the function.</p>
+    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+        self.state_reason_code.as_ref()
+    }
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+    /// after function creation completes.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+        self.last_update_status.as_ref()
+    }
+    /// <p>The reason for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+        self.last_update_status_reason.as_deref()
+    }
+    /// <p>The reason code for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason_code(
+        &self,
+    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+        self.last_update_status_reason_code.as_ref()
+    }
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+        self.file_system_configs.as_deref()
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+        self.image_config_response.as_ref()
+    }
+    /// <p>The ARN of the signing profile version.</p>
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+        self.signing_profile_version_arn.as_deref()
+    }
+    /// <p>The ARN of the signing job.</p>
+    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+        self.signing_job_arn.as_deref()
+    }
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.architectures.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFunctionCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionCodeOutput");
@@ -1476,6 +1795,112 @@ pub struct UpdateEventSourceMappingOutput {
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
+impl UpdateEventSourceMappingOutput {
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
+    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+        self.starting_position.as_ref()
+    }
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+    /// reading.</p>
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.starting_position_timestamp.as_ref()
+    }
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_batching_window_in_seconds
+    }
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    pub fn parallelization_factor(&self) -> std::option::Option<i32> {
+        self.parallelization_factor
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The result of the last Lambda invocation of your function.</p>
+    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+        self.last_processing_result.as_deref()
+    }
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+        self.state_transition_reason.as_deref()
+    }
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>The name of the Kafka topic.</p>
+    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+        self.topics.as_deref()
+    }
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+        self.queues.as_deref()
+    }
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    pub fn source_access_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+        self.source_access_configurations.as_deref()
+    }
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
+    pub fn self_managed_event_source(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+        self.self_managed_event_source.as_ref()
+    }
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_record_age_in_seconds
+    }
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
+        self.bisect_batch_on_function_error
+    }
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.tumbling_window_in_seconds
+    }
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    pub fn function_response_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+        self.function_response_types.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEventSourceMappingOutput");
@@ -1916,6 +2341,12 @@ pub struct UpdateCodeSigningConfigOutput {
     /// <p>The code signing configuration</p>
     pub code_signing_config: std::option::Option<crate::model::CodeSigningConfig>,
 }
+impl UpdateCodeSigningConfigOutput {
+    /// <p>The code signing configuration</p>
+    pub fn code_signing_config(&self) -> std::option::Option<&crate::model::CodeSigningConfig> {
+        self.code_signing_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCodeSigningConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCodeSigningConfigOutput");
@@ -1977,6 +2408,33 @@ pub struct UpdateAliasOutput {
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl UpdateAliasOutput {
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
+    pub fn alias_arn(&self) -> std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>The name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>A description of the alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+    /// configuration</a> of the alias.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+        self.routing_config.as_ref()
+    }
+    /// <p>A unique identifier that changes when you update the alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2229,6 +2687,32 @@ pub struct PutProvisionedConcurrencyConfigOutput {
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     pub last_modified: std::option::Option<std::string::String>,
 }
+impl PutProvisionedConcurrencyConfigOutput {
+    /// <p>The amount of provisioned concurrency requested.</p>
+    pub fn requested_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.requested_provisioned_concurrent_executions
+    }
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub fn available_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.available_provisioned_concurrent_executions
+    }
+    /// <p>The amount of provisioned concurrency allocated.</p>
+    pub fn allocated_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.allocated_provisioned_concurrent_executions
+    }
+    /// <p>The status of the allocation process.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedConcurrencyStatusEnum> {
+        self.status.as_ref()
+    }
+    /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
+    pub fn last_modified(&self) -> std::option::Option<&str> {
+        self.last_modified.as_deref()
+    }
+}
 impl std::fmt::Debug for PutProvisionedConcurrencyConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutProvisionedConcurrencyConfigOutput");
@@ -2401,6 +2885,49 @@ pub struct PutFunctionEventInvokeConfigOutput {
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
+impl PutFunctionEventInvokeConfigOutput {
+    /// <p>The date and time that the configuration was last updated.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The maximum number of times to retry when the function returns an error.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_event_age_in_seconds
+    }
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title">
+    /// <b>Destinations</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Queue</b> - The ARN of an SQS queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Topic</b> - The ARN of an SNS topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+}
 impl std::fmt::Debug for PutFunctionEventInvokeConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutFunctionEventInvokeConfigOutput");
@@ -2552,6 +3079,12 @@ pub struct PutFunctionConcurrencyOutput {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
+impl PutFunctionConcurrencyOutput {
+    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
+    pub fn reserved_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.reserved_concurrent_executions
+    }
+}
 impl std::fmt::Debug for PutFunctionConcurrencyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutFunctionConcurrencyOutput");
@@ -2626,6 +3159,35 @@ pub struct PutFunctionCodeSigningConfigOutput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
+}
+impl PutFunctionCodeSigningConfigOutput {
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PutFunctionCodeSigningConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2800,6 +3362,144 @@ pub struct PublishVersionOutput {
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
     /// valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl PublishVersionOutput {
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The runtime environment for the Lambda function.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The function's execution role.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The function that Lambda calls to begin executing your function.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+    /// <p>The size of the function's deployment package, in bytes.</p>
+    pub fn code_size(&self) -> i64 {
+        self.code_size
+    }
+    /// <p>The function's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The amount of memory available to the function at runtime. </p>
+    pub fn memory_size(&self) -> std::option::Option<i32> {
+        self.memory_size
+    }
+    /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn last_modified(&self) -> std::option::Option<&str> {
+        self.last_modified.as_deref()
+    }
+    /// <p>The SHA256 hash of the function's deployment package.</p>
+    pub fn code_sha256(&self) -> std::option::Option<&str> {
+        self.code_sha256.as_deref()
+    }
+    /// <p>The version of the Lambda function.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The function's networking configuration.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The function's dead letter queue.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+        self.environment.as_ref()
+    }
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+    /// configured a customer managed CMK.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The function's X-Ray tracing configuration.</p>
+    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+        self.tracing_config.as_ref()
+    }
+    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    pub fn master_arn(&self) -> std::option::Option<&str> {
+        self.master_arn.as_deref()
+    }
+    /// <p>The latest updated revision of the function or alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+    /// layers</a>.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+        self.layers.as_deref()
+    }
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+    /// invoking it.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The reason for the function's current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+    /// modify the function.</p>
+    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+        self.state_reason_code.as_ref()
+    }
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+    /// after function creation completes.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+        self.last_update_status.as_ref()
+    }
+    /// <p>The reason for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+        self.last_update_status_reason.as_deref()
+    }
+    /// <p>The reason code for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason_code(
+        &self,
+    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+        self.last_update_status_reason_code.as_ref()
+    }
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+        self.file_system_configs.as_deref()
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+        self.image_config_response.as_ref()
+    }
+    /// <p>The ARN of the signing profile version.</p>
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+        self.signing_profile_version_arn.as_deref()
+    }
+    /// <p>The ARN of the signing job.</p>
+    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+        self.signing_job_arn.as_deref()
+    }
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for PublishVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3367,6 +4067,45 @@ pub struct PublishLayerVersionOutput {
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
+impl PublishLayerVersionOutput {
+    /// <p>Details about the layer version.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentOutput> {
+        self.content.as_ref()
+    }
+    /// <p>The ARN of the layer.</p>
+    pub fn layer_arn(&self) -> std::option::Option<&str> {
+        self.layer_arn.as_deref()
+    }
+    /// <p>The ARN of the layer version.</p>
+    pub fn layer_version_arn(&self) -> std::option::Option<&str> {
+        self.layer_version_arn.as_deref()
+    }
+    /// <p>The description of the version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn created_date(&self) -> std::option::Option<&str> {
+        self.created_date.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The layer's compatible runtimes.</p>
+    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+        self.compatible_runtimes.as_deref()
+    }
+    /// <p>The layer's software license.</p>
+    pub fn license_info(&self) -> std::option::Option<&str> {
+        self.license_info.as_deref()
+    }
+    /// <p>A list of compatible  
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.compatible_architectures.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishLayerVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishLayerVersionOutput");
@@ -3551,6 +4290,16 @@ pub struct ListVersionsByFunctionOutput {
     /// <p>A list of Lambda function versions.</p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
 }
+impl ListVersionsByFunctionOutput {
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A list of Lambda function versions.</p>
+    pub fn versions(&self) -> std::option::Option<&[crate::model::FunctionConfiguration]> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVersionsByFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVersionsByFunctionOutput");
@@ -3623,6 +4372,15 @@ pub struct ListTagsOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsOutput {
+    /// <p>The function's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -3688,6 +4446,18 @@ pub struct ListProvisionedConcurrencyConfigsOutput {
         std::option::Option<std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl ListProvisionedConcurrencyConfigsOutput {
+    /// <p>A list of provisioned concurrency configurations.</p>
+    pub fn provisioned_concurrency_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisionedConcurrencyConfigListItem]> {
+        self.provisioned_concurrency_configs.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProvisionedConcurrencyConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3770,6 +4540,16 @@ pub struct ListLayerVersionsOutput {
     /// <p>A list of versions.</p>
     pub layer_versions: std::option::Option<std::vec::Vec<crate::model::LayerVersionsListItem>>,
 }
+impl ListLayerVersionsOutput {
+    /// <p>A pagination token returned when the response doesn't contain all versions.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A list of versions.</p>
+    pub fn layer_versions(&self) -> std::option::Option<&[crate::model::LayerVersionsListItem]> {
+        self.layer_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLayerVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLayerVersionsOutput");
@@ -3846,6 +4626,16 @@ pub struct ListLayersOutput {
     /// <p>A list of function layers.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::LayersListItem>>,
 }
+impl ListLayersOutput {
+    /// <p>A pagination token returned when the response doesn't contain all layers.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A list of function layers.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::LayersListItem]> {
+        self.layers.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLayersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLayersOutput");
@@ -3918,6 +4708,16 @@ pub struct ListFunctionsByCodeSigningConfigOutput {
     /// <p>The function ARNs. </p>
     pub function_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListFunctionsByCodeSigningConfigOutput {
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The function ARNs. </p>
+    pub fn function_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.function_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFunctionsByCodeSigningConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFunctionsByCodeSigningConfigOutput");
@@ -3989,6 +4789,16 @@ pub struct ListFunctionsOutput {
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A list of Lambda functions.</p>
     pub functions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
+}
+impl ListFunctionsOutput {
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A list of Lambda functions.</p>
+    pub fn functions(&self) -> std::option::Option<&[crate::model::FunctionConfiguration]> {
+        self.functions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFunctionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4063,6 +4873,18 @@ pub struct ListFunctionEventInvokeConfigsOutput {
         std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl ListFunctionEventInvokeConfigsOutput {
+    /// <p>A list of configurations.</p>
+    pub fn function_event_invoke_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::FunctionEventInvokeConfig]> {
+        self.function_event_invoke_configs.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFunctionEventInvokeConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4144,6 +4966,18 @@ pub struct ListEventSourceMappingsOutput {
     pub event_source_mappings:
         std::option::Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>,
 }
+impl ListEventSourceMappingsOutput {
+    /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A list of event source mappings.</p>
+    pub fn event_source_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventSourceMappingConfiguration]> {
+        self.event_source_mappings.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEventSourceMappingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventSourceMappingsOutput");
@@ -4222,6 +5056,16 @@ pub struct ListCodeSigningConfigsOutput {
     /// <p>The code signing configurations</p>
     pub code_signing_configs: std::option::Option<std::vec::Vec<crate::model::CodeSigningConfig>>,
 }
+impl ListCodeSigningConfigsOutput {
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The code signing configurations</p>
+    pub fn code_signing_configs(&self) -> std::option::Option<&[crate::model::CodeSigningConfig]> {
+        self.code_signing_configs.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCodeSigningConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCodeSigningConfigsOutput");
@@ -4298,6 +5142,16 @@ pub struct ListAliasesOutput {
     /// <p>A list of aliases.</p>
     pub aliases: std::option::Option<std::vec::Vec<crate::model::AliasConfiguration>>,
 }
+impl ListAliasesOutput {
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>A list of aliases.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::AliasConfiguration]> {
+        self.aliases.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAliasesOutput");
@@ -4368,6 +5222,12 @@ pub struct InvokeAsyncOutput {
     /// <p>The status code.</p>
     pub status: i32,
 }
+impl InvokeAsyncOutput {
+    /// <p>The status code.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for InvokeAsyncOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeAsyncOutput");
@@ -4427,6 +5287,32 @@ pub struct InvokeOutput {
     /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which
     /// version the alias resolved to.</p>
     pub executed_version: std::option::Option<std::string::String>,
+}
+impl InvokeOutput {
+    /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+    /// invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For
+    /// the <code>DryRun</code> invocation type, the status code is 204.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+    /// <p>If present, indicates that an error occurred during function execution. Details about the error are included
+    /// in the response payload.</p>
+    pub fn function_error(&self) -> std::option::Option<&str> {
+        self.function_error.as_deref()
+    }
+    /// <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+    pub fn log_result(&self) -> std::option::Option<&str> {
+        self.log_result.as_deref()
+    }
+    /// <p>The response from the function, or an error object.</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
+    /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which
+    /// version the alias resolved to.</p>
+    pub fn executed_version(&self) -> std::option::Option<&str> {
+        self.executed_version.as_deref()
+    }
 }
 impl std::fmt::Debug for InvokeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4551,6 +5437,32 @@ pub struct GetProvisionedConcurrencyConfigOutput {
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     pub last_modified: std::option::Option<std::string::String>,
+}
+impl GetProvisionedConcurrencyConfigOutput {
+    /// <p>The amount of provisioned concurrency requested.</p>
+    pub fn requested_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.requested_provisioned_concurrent_executions
+    }
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub fn available_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.available_provisioned_concurrent_executions
+    }
+    /// <p>The amount of provisioned concurrency allocated.</p>
+    pub fn allocated_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.allocated_provisioned_concurrent_executions
+    }
+    /// <p>The status of the allocation process.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedConcurrencyStatusEnum> {
+        self.status.as_ref()
+    }
+    /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
+    pub fn last_modified(&self) -> std::option::Option<&str> {
+        self.last_modified.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProvisionedConcurrencyConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4697,6 +5609,16 @@ pub struct GetPolicyOutput {
     /// <p>A unique identifier for the current revision of the policy.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl GetPolicyOutput {
+    /// <p>The resource-based policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>A unique identifier for the current revision of the policy.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPolicyOutput");
@@ -4759,6 +5681,16 @@ pub struct GetLayerVersionPolicyOutput {
     pub policy: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the current revision of the policy.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl GetLayerVersionPolicyOutput {
+    /// <p>The policy document.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>A unique identifier for the current revision of the policy.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLayerVersionPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4837,6 +5769,45 @@ pub struct GetLayerVersionByArnOutput {
     /// <p>A list of compatible  
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl GetLayerVersionByArnOutput {
+    /// <p>Details about the layer version.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentOutput> {
+        self.content.as_ref()
+    }
+    /// <p>The ARN of the layer.</p>
+    pub fn layer_arn(&self) -> std::option::Option<&str> {
+        self.layer_arn.as_deref()
+    }
+    /// <p>The ARN of the layer version.</p>
+    pub fn layer_version_arn(&self) -> std::option::Option<&str> {
+        self.layer_version_arn.as_deref()
+    }
+    /// <p>The description of the version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn created_date(&self) -> std::option::Option<&str> {
+        self.created_date.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The layer's compatible runtimes.</p>
+    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+        self.compatible_runtimes.as_deref()
+    }
+    /// <p>The layer's software license.</p>
+    pub fn license_info(&self) -> std::option::Option<&str> {
+        self.license_info.as_deref()
+    }
+    /// <p>A list of compatible  
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.compatible_architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLayerVersionByArnOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5036,6 +6007,45 @@ pub struct GetLayerVersionOutput {
     /// <p>A list of compatible  
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl GetLayerVersionOutput {
+    /// <p>Details about the layer version.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentOutput> {
+        self.content.as_ref()
+    }
+    /// <p>The ARN of the layer.</p>
+    pub fn layer_arn(&self) -> std::option::Option<&str> {
+        self.layer_arn.as_deref()
+    }
+    /// <p>The ARN of the layer version.</p>
+    pub fn layer_version_arn(&self) -> std::option::Option<&str> {
+        self.layer_version_arn.as_deref()
+    }
+    /// <p>The description of the version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn created_date(&self) -> std::option::Option<&str> {
+        self.created_date.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The layer's compatible runtimes.</p>
+    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+        self.compatible_runtimes.as_deref()
+    }
+    /// <p>The layer's software license.</p>
+    pub fn license_info(&self) -> std::option::Option<&str> {
+        self.license_info.as_deref()
+    }
+    /// <p>A list of compatible  
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.compatible_architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLayerVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5247,6 +6257,49 @@ pub struct GetFunctionEventInvokeConfigOutput {
     /// </li>
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
+}
+impl GetFunctionEventInvokeConfigOutput {
+    /// <p>The date and time that the configuration was last updated.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The maximum number of times to retry when the function returns an error.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_event_age_in_seconds
+    }
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title">
+    /// <b>Destinations</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Queue</b> - The ARN of an SQS queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Topic</b> - The ARN of an SNS topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFunctionEventInvokeConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5467,6 +6520,144 @@ pub struct GetFunctionConfigurationOutput {
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
     /// valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl GetFunctionConfigurationOutput {
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The runtime environment for the Lambda function.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The function's execution role.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The function that Lambda calls to begin executing your function.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+    /// <p>The size of the function's deployment package, in bytes.</p>
+    pub fn code_size(&self) -> i64 {
+        self.code_size
+    }
+    /// <p>The function's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The amount of memory available to the function at runtime. </p>
+    pub fn memory_size(&self) -> std::option::Option<i32> {
+        self.memory_size
+    }
+    /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn last_modified(&self) -> std::option::Option<&str> {
+        self.last_modified.as_deref()
+    }
+    /// <p>The SHA256 hash of the function's deployment package.</p>
+    pub fn code_sha256(&self) -> std::option::Option<&str> {
+        self.code_sha256.as_deref()
+    }
+    /// <p>The version of the Lambda function.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The function's networking configuration.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The function's dead letter queue.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+        self.environment.as_ref()
+    }
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+    /// configured a customer managed CMK.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The function's X-Ray tracing configuration.</p>
+    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+        self.tracing_config.as_ref()
+    }
+    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    pub fn master_arn(&self) -> std::option::Option<&str> {
+        self.master_arn.as_deref()
+    }
+    /// <p>The latest updated revision of the function or alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+    /// layers</a>.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+        self.layers.as_deref()
+    }
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+    /// invoking it.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The reason for the function's current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+    /// modify the function.</p>
+    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+        self.state_reason_code.as_ref()
+    }
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+    /// after function creation completes.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+        self.last_update_status.as_ref()
+    }
+    /// <p>The reason for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+        self.last_update_status_reason.as_deref()
+    }
+    /// <p>The reason code for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason_code(
+        &self,
+    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+        self.last_update_status_reason_code.as_ref()
+    }
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+        self.file_system_configs.as_deref()
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+        self.image_config_response.as_ref()
+    }
+    /// <p>The ARN of the signing profile version.</p>
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+        self.signing_profile_version_arn.as_deref()
+    }
+    /// <p>The ARN of the signing job.</p>
+    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+        self.signing_job_arn.as_deref()
+    }
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFunctionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6017,6 +7208,12 @@ pub struct GetFunctionConcurrencyOutput {
     /// <p>The number of simultaneous executions that are reserved for the function.</p>
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
+impl GetFunctionConcurrencyOutput {
+    /// <p>The number of simultaneous executions that are reserved for the function.</p>
+    pub fn reserved_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.reserved_concurrent_executions
+    }
+}
 impl std::fmt::Debug for GetFunctionConcurrencyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionConcurrencyOutput");
@@ -6091,6 +7288,35 @@ pub struct GetFunctionCodeSigningConfigOutput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
+}
+impl GetFunctionCodeSigningConfigOutput {
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFunctionCodeSigningConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6204,6 +7430,28 @@ pub struct GetFunctionOutput {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
     /// concurrency</a>.</p>
     pub concurrency: std::option::Option<crate::model::Concurrency>,
+}
+impl GetFunctionOutput {
+    /// <p>The configuration of the function or version.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::FunctionConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The deployment package of the function or version.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::FunctionCodeLocation> {
+        self.code.as_ref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+    /// concurrency</a>.</p>
+    pub fn concurrency(&self) -> std::option::Option<&crate::model::Concurrency> {
+        self.concurrency.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6373,6 +7621,112 @@ pub struct GetEventSourceMappingOutput {
     /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+}
+impl GetEventSourceMappingOutput {
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
+    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+        self.starting_position.as_ref()
+    }
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+    /// reading.</p>
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.starting_position_timestamp.as_ref()
+    }
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_batching_window_in_seconds
+    }
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    pub fn parallelization_factor(&self) -> std::option::Option<i32> {
+        self.parallelization_factor
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The result of the last Lambda invocation of your function.</p>
+    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+        self.last_processing_result.as_deref()
+    }
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+        self.state_transition_reason.as_deref()
+    }
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>The name of the Kafka topic.</p>
+    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+        self.topics.as_deref()
+    }
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+        self.queues.as_deref()
+    }
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    pub fn source_access_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+        self.source_access_configurations.as_deref()
+    }
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
+    pub fn self_managed_event_source(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+        self.self_managed_event_source.as_ref()
+    }
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_record_age_in_seconds
+    }
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
+        self.bisect_batch_on_function_error
+    }
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.tumbling_window_in_seconds
+    }
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    pub fn function_response_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+        self.function_response_types.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6814,6 +8168,12 @@ pub struct GetCodeSigningConfigOutput {
     /// <p>The code signing configuration</p>
     pub code_signing_config: std::option::Option<crate::model::CodeSigningConfig>,
 }
+impl GetCodeSigningConfigOutput {
+    /// <p>The code signing configuration</p>
+    pub fn code_signing_config(&self) -> std::option::Option<&crate::model::CodeSigningConfig> {
+        self.code_signing_config.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCodeSigningConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCodeSigningConfigOutput");
@@ -6875,6 +8235,33 @@ pub struct GetAliasOutput {
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl GetAliasOutput {
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
+    pub fn alias_arn(&self) -> std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>The name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>A description of the alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+    /// configuration</a> of the alias.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+        self.routing_config.as_ref()
+    }
+    /// <p>A unique identifier that changes when you update the alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6998,6 +8385,16 @@ pub struct GetAccountSettingsOutput {
     pub account_limit: std::option::Option<crate::model::AccountLimit>,
     /// <p>The number of functions and amount of storage in use.</p>
     pub account_usage: std::option::Option<crate::model::AccountUsage>,
+}
+impl GetAccountSettingsOutput {
+    /// <p>Limits that are related to concurrency and code storage.</p>
+    pub fn account_limit(&self) -> std::option::Option<&crate::model::AccountLimit> {
+        self.account_limit.as_ref()
+    }
+    /// <p>The number of functions and amount of storage in use.</p>
+    pub fn account_usage(&self) -> std::option::Option<&crate::model::AccountUsage> {
+        self.account_usage.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7299,6 +8696,112 @@ pub struct DeleteEventSourceMappingOutput {
     /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+}
+impl DeleteEventSourceMappingOutput {
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
+    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+        self.starting_position.as_ref()
+    }
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+    /// reading.</p>
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.starting_position_timestamp.as_ref()
+    }
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_batching_window_in_seconds
+    }
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    pub fn parallelization_factor(&self) -> std::option::Option<i32> {
+        self.parallelization_factor
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The result of the last Lambda invocation of your function.</p>
+    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+        self.last_processing_result.as_deref()
+    }
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+        self.state_transition_reason.as_deref()
+    }
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>The name of the Kafka topic.</p>
+    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+        self.topics.as_deref()
+    }
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+        self.queues.as_deref()
+    }
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    pub fn source_access_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+        self.source_access_configurations.as_deref()
+    }
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
+    pub fn self_managed_event_source(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+        self.self_managed_event_source.as_ref()
+    }
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_record_age_in_seconds
+    }
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
+        self.bisect_batch_on_function_error
+    }
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.tumbling_window_in_seconds
+    }
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    pub fn function_response_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+        self.function_response_types.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7868,6 +9371,144 @@ pub struct CreateFunctionOutput {
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
     /// valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl CreateFunctionOutput {
+    /// <p>The name of the function.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The runtime environment for the Lambda function.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The function's execution role.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The function that Lambda calls to begin executing your function.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+    /// <p>The size of the function's deployment package, in bytes.</p>
+    pub fn code_size(&self) -> i64 {
+        self.code_size
+    }
+    /// <p>The function's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The amount of memory available to the function at runtime. </p>
+    pub fn memory_size(&self) -> std::option::Option<i32> {
+        self.memory_size
+    }
+    /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn last_modified(&self) -> std::option::Option<&str> {
+        self.last_modified.as_deref()
+    }
+    /// <p>The SHA256 hash of the function's deployment package.</p>
+    pub fn code_sha256(&self) -> std::option::Option<&str> {
+        self.code_sha256.as_deref()
+    }
+    /// <p>The version of the Lambda function.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The function's networking configuration.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The function's dead letter queue.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+        self.environment.as_ref()
+    }
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+    /// configured a customer managed CMK.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The function's X-Ray tracing configuration.</p>
+    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+        self.tracing_config.as_ref()
+    }
+    /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
+    pub fn master_arn(&self) -> std::option::Option<&str> {
+        self.master_arn.as_deref()
+    }
+    /// <p>The latest updated revision of the function or alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+    /// layers</a>.</p>
+    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+        self.layers.as_deref()
+    }
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+    /// invoking it.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The reason for the function's current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+    /// modify the function.</p>
+    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+        self.state_reason_code.as_ref()
+    }
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+    /// after function creation completes.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+        self.last_update_status.as_ref()
+    }
+    /// <p>The reason for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+        self.last_update_status_reason.as_deref()
+    }
+    /// <p>The reason code for the last update that was performed on the function.</p>
+    pub fn last_update_status_reason_code(
+        &self,
+    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+        self.last_update_status_reason_code.as_ref()
+    }
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+        self.file_system_configs.as_deref()
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+        self.image_config_response.as_ref()
+    }
+    /// <p>The ARN of the signing profile version.</p>
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+        self.signing_profile_version_arn.as_deref()
+    }
+    /// <p>The ARN of the signing job.</p>
+    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+        self.signing_job_arn.as_deref()
+    }
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8472,6 +10113,112 @@ pub struct CreateEventSourceMappingOutput {
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
+impl CreateEventSourceMappingOutput {
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
+    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+        self.starting_position.as_ref()
+    }
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+    /// reading.</p>
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.starting_position_timestamp.as_ref()
+    }
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_batching_window_in_seconds
+    }
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    pub fn parallelization_factor(&self) -> std::option::Option<i32> {
+        self.parallelization_factor
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The result of the last Lambda invocation of your function.</p>
+    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+        self.last_processing_result.as_deref()
+    }
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+        self.state_transition_reason.as_deref()
+    }
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>The name of the Kafka topic.</p>
+    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+        self.topics.as_deref()
+    }
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+        self.queues.as_deref()
+    }
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    pub fn source_access_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+        self.source_access_configurations.as_deref()
+    }
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
+    pub fn self_managed_event_source(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+        self.self_managed_event_source.as_ref()
+    }
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_record_age_in_seconds
+    }
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
+        self.bisect_batch_on_function_error
+    }
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.tumbling_window_in_seconds
+    }
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    pub fn function_response_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+        self.function_response_types.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventSourceMappingOutput");
@@ -8912,6 +10659,12 @@ pub struct CreateCodeSigningConfigOutput {
     /// <p>The code signing configuration.</p>
     pub code_signing_config: std::option::Option<crate::model::CodeSigningConfig>,
 }
+impl CreateCodeSigningConfigOutput {
+    /// <p>The code signing configuration.</p>
+    pub fn code_signing_config(&self) -> std::option::Option<&crate::model::CodeSigningConfig> {
+        self.code_signing_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCodeSigningConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCodeSigningConfigOutput");
@@ -8973,6 +10726,33 @@ pub struct CreateAliasOutput {
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl CreateAliasOutput {
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
+    pub fn alias_arn(&self) -> std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>The name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>A description of the alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+    /// configuration</a> of the alias.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+        self.routing_config.as_ref()
+    }
+    /// <p>A unique identifier that changes when you update the alias.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9095,6 +10875,12 @@ pub struct AddPermissionOutput {
     /// <p>The permission statement that's added to the function policy.</p>
     pub statement: std::option::Option<std::string::String>,
 }
+impl AddPermissionOutput {
+    /// <p>The permission statement that's added to the function policy.</p>
+    pub fn statement(&self) -> std::option::Option<&str> {
+        self.statement.as_deref()
+    }
+}
 impl std::fmt::Debug for AddPermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddPermissionOutput");
@@ -9144,6 +10930,16 @@ pub struct AddLayerVersionPermissionOutput {
     pub statement: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the current revision of the policy.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl AddLayerVersionPermissionOutput {
+    /// <p>The permission statement.</p>
+    pub fn statement(&self) -> std::option::Option<&str> {
+        self.statement.as_deref()
+    }
+    /// <p>A unique identifier for the current revision of the policy.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddLayerVersionPermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

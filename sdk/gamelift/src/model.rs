@@ -33,6 +33,40 @@ pub struct Script {
     /// and <a>UpdateScript</a> requests. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
 }
+impl Script {
+    /// <p>A unique identifier for the Realtime script</p>
+    pub fn script_id(&self) -> std::option::Option<&str> {
+        self.script_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions.  In a GameLift script ARN, the resource ID matches the
+    /// <i>ScriptId</i> value.</p>
+    pub fn script_arn(&self) -> std::option::Option<&str> {
+        self.script_arn.as_deref()
+    }
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The file size of the uploaded Realtime script, expressed in bytes. When files are
+    /// uploaded from an S3 location, this value remains at "0".</p>
+    pub fn size_on_disk(&self) -> std::option::Option<i64> {
+        self.size_on_disk
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This
+    /// location is specified in <a>CreateBuild</a>, <a>CreateScript</a>,
+    /// and <a>UpdateScript</a> requests. </p>
+    pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.storage_location.as_ref()
+    }
+}
 impl std::fmt::Debug for Script {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Script");
@@ -188,6 +222,31 @@ pub struct S3Location {
     /// the file is retrieved. </p>
     pub object_version: std::option::Option<std::string::String>,
 }
+impl S3Location {
+    /// <p>An Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
+    /// <note>
+    /// <p>GameLift currently does not support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+    /// </note>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name of the zip file that contains the build files or script files. </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
+    /// allows Amazon GameLift to access the S3 bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses
+    /// this information when retrieving files from an S3 bucket that you own. Use this
+    /// parameter to specify a specific version of the file. If not set, the latest version of
+    /// the file is retrieved. </p>
+    pub fn object_version(&self) -> std::option::Option<&str> {
+        self.object_version.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Location");
@@ -316,6 +375,27 @@ pub struct RuntimeConfiguration {
     /// timeout, it is ended and the game session status is changed to
     /// <code>TERMINATED</code>.</p>
     pub game_session_activation_timeout_seconds: std::option::Option<i32>,
+}
+impl RuntimeConfiguration {
+    /// <p>A collection of server process configurations that identify what server processes to
+    /// run on each instance in a fleet.</p>
+    pub fn server_processes(&self) -> std::option::Option<&[crate::model::ServerProcess]> {
+        self.server_processes.as_deref()
+    }
+    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance.
+    /// This setting limits the instance resources that can be used for new game activations at
+    /// any one time.</p>
+    pub fn max_concurrent_game_session_activations(&self) -> std::option::Option<i32> {
+        self.max_concurrent_game_session_activations
+    }
+    /// <p>The maximum amount of time (in seconds) allowed to launch a new game session and have
+    /// it report ready to host players. During this time, the game session is in status
+    /// <code>ACTIVATING</code>. If the game session does not become active before the
+    /// timeout, it is ended and the game session status is changed to
+    /// <code>TERMINATED</code>.</p>
+    pub fn game_session_activation_timeout_seconds(&self) -> std::option::Option<i32> {
+        self.game_session_activation_timeout_seconds
+    }
 }
 impl std::fmt::Debug for RuntimeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,6 +528,34 @@ pub struct ServerProcess {
     /// <p>The number of server processes using this configuration that run concurrently on each
     /// instance.</p>
     pub concurrent_executions: std::option::Option<i32>,
+}
+impl ServerProcess {
+    /// <p>The location of a game build executable or the Realtime script file that contains the
+    /// <code>Init()</code> function. Game builds and Realtime scripts are installed on
+    /// instances at the root: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Windows (custom game builds only): <code>C:\game</code>. Example:
+    /// "<code>C:\game\MyGame\server.exe</code>" </p>
+    /// </li>
+    /// <li>
+    /// <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or
+    /// "<code>/local/game/MyRealtimeScript.js</code>"</p>
+    /// </li>
+    /// </ul>
+    pub fn launch_path(&self) -> std::option::Option<&str> {
+        self.launch_path.as_deref()
+    }
+    /// <p>An optional list of parameters to pass to the server executable or Realtime script on
+    /// launch.</p>
+    pub fn parameters(&self) -> std::option::Option<&str> {
+        self.parameters.as_deref()
+    }
+    /// <p>The number of server processes using this configuration that run concurrently on each
+    /// instance.</p>
+    pub fn concurrent_executions(&self) -> std::option::Option<i32> {
+        self.concurrent_executions
+    }
 }
 impl std::fmt::Debug for ServerProcess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -624,6 +732,117 @@ pub struct MatchmakingConfiguration {
     /// </li>
     /// </ul>
     pub flex_match_mode: std::option::Option<crate::model::FlexMatchMode>,
+}
+impl MatchmakingConfiguration {
+    /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
+    /// matchmaking request or ticket.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::matchmakingconfiguration/<matchmaking configuration name></code>. In a GameLift configuration ARN, the resource ID matches the
+    /// <i>Name</i> value.</p>
+    pub fn configuration_arn(&self) -> std::option::Option<&str> {
+        self.configuration_arn.as_deref()
+    }
+    /// <p>A descriptive label that is associated with matchmaking configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
+    /// GameLift-hosted game sessions for matches that are created with this matchmaking
+    /// configuration. This property is not set when <code>FlexMatchMode</code> is set to
+    /// <code>STANDALONE</code>.</p>
+    pub fn game_session_queue_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.game_session_queue_arns.as_deref()
+    }
+    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
+    /// before timing out. Requests that fail due to timing out can be resubmitted as
+    /// needed.</p>
+    pub fn request_timeout_seconds(&self) -> std::option::Option<i32> {
+        self.request_timeout_seconds
+    }
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
+    /// acceptance is required. If any player rejects the match or fails to accept before the
+    /// timeout, the ticket continues to look for an acceptable match.</p>
+    pub fn acceptance_timeout_seconds(&self) -> std::option::Option<i32> {
+        self.acceptance_timeout_seconds
+    }
+    /// <p>A flag that indicates whether a match that was created with this configuration must be
+    /// accepted by the matched players. To require acceptance, set to TRUE. When this option is
+    /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
+    /// when a completed potential match is waiting for player acceptance.</p>
+    pub fn acceptance_required(&self) -> std::option::Option<bool> {
+        self.acceptance_required
+    }
+    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking configuration can only use
+    /// rule sets that are defined in the same Region.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift matchmaking rule set resource that this configuration uses.</p>
+    pub fn rule_set_arn(&self) -> std::option::Option<&str> {
+        self.rule_set_arn.as_deref()
+    }
+    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+    pub fn notification_target(&self) -> std::option::Option<&str> {
+        self.notification_target.as_deref()
+    }
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
+    /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to
+    /// <code>STANDALONE</code>.</p>
+    pub fn additional_player_count(&self) -> std::option::Option<i32> {
+        self.additional_player_count
+    }
+    /// <p>Information to attach to all events related to the matchmaking configuration. </p>
+    pub fn custom_event_data(&self) -> std::option::Option<&str> {
+        self.custom_event_data.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
+    /// object that is created for a successful match. This parameter is not used when
+    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
+        self.game_properties.as_deref()
+    }
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
+    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
+    /// that is created for a successful match. This parameter is not used when
+    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    pub fn game_session_data(&self) -> std::option::Option<&str> {
+        self.game_session_data.as_deref()
+    }
+    /// <p>The method used to backfill game sessions created with this matchmaking configuration.
+    /// MANUAL indicates that the game makes backfill requests or does not use the match
+    /// backfill feature. AUTOMATIC indicates that GameLift creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open
+    /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games
+    /// with FlexMatch</a>. Automatic backfill is not available when
+    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    pub fn backfill_mode(&self) -> std::option::Option<&crate::model::BackfillMode> {
+        self.backfill_mode.as_ref()
+    }
+    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
+    /// as a standalone matchmaking solution. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>STANDALONE</b> - FlexMatch forms matches and returns
+    /// match information, including players and team assignments, in a
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
+    /// MatchmakingSucceeded</a> event.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
+    /// start a game session for the match. </p>
+    /// </li>
+    /// </ul>
+    pub fn flex_match_mode(&self) -> std::option::Option<&crate::model::FlexMatchMode> {
+        self.flex_match_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for MatchmakingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1124,6 +1343,16 @@ pub struct GameProperty {
     /// <p>The game property value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl GameProperty {
+    /// <p>The game property identifier.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The game property value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for GameProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GameProperty");
@@ -1222,6 +1451,63 @@ pub struct GameSessionQueue {
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
     /// Setting up notifications for game session placement</a>.</p>
     pub notification_target: std::option::Option<std::string::String>,
+}
+impl GameSessionQueue {
+    /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>.   In a GameLift game session queue ARN, the resource ID matches the
+    /// <i>Name</i> value.</p>
+    pub fn game_session_queue_arn(&self) -> std::option::Option<&str> {
+        self.game_session_queue_arn.as_deref()
+    }
+    /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
+    /// deliver low latency for most players in a game session. These policies ensure that no
+    /// individual player can be placed into a game with unreasonably high latency. Use multiple
+    /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
+    /// maximum allowed latency, starting with the lowest value. </p>
+    pub fn player_latency_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlayerLatencyPolicy]> {
+        self.player_latency_policies.as_deref()
+    }
+    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+    /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+    pub fn destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::GameSessionQueueDestination]> {
+        self.destinations.as_deref()
+    }
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
+    /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
+    /// not set, game sessions can be placed in any queue location. </p>
+    pub fn filter_configuration(&self) -> std::option::Option<&crate::model::FilterConfiguration> {
+        self.filter_configuration.as_ref()
+    }
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
+    /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+    /// named will be automatically applied at the end of the prioritization process. </p>
+    pub fn priority_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PriorityConfiguration> {
+        self.priority_configuration.as_ref()
+    }
+    /// <p>
+    /// Information that is added to all events that are related to this game session queue.
+    /// </p>
+    pub fn custom_event_data(&self) -> std::option::Option<&str> {
+        self.custom_event_data.as_deref()
+    }
+    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+    /// Setting up notifications for game session placement</a>.</p>
+    pub fn notification_target(&self) -> std::option::Option<&str> {
+        self.notification_target.as_deref()
+    }
 }
 impl std::fmt::Debug for GameSessionQueue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1496,6 +1782,43 @@ pub struct PriorityConfiguration {
     /// listed once. </p>
     pub location_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PriorityConfiguration {
+    /// <p>The recommended sequence to use when prioritizing where to place new game sessions.
+    /// Each type can only be listed once.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player
+    /// latency (provided in each game session request) is lowest. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current
+    /// hosting costs. Cost is evaluated based on the location, instance type, and fleet
+    /// type (Spot or On-Demand) for each destination in the queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that
+    /// destinations are listed in the queue configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of
+    /// locations, as defined in <code>LocationOrder</code>. </p>
+    /// </li>
+    /// </ul>
+    pub fn priority_order(&self) -> std::option::Option<&[crate::model::PriorityType]> {
+        self.priority_order.as_deref()
+    }
+    /// <p>The prioritization order to use for fleet locations, when the
+    /// <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are
+    /// identified by AWS Region codes such as <code>us-west-2</code>. Each location can only be
+    /// listed once. </p>
+    pub fn location_order(&self) -> std::option::Option<&[std::string::String]> {
+        self.location_order.as_deref()
+    }
+}
 impl std::fmt::Debug for PriorityConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PriorityConfiguration");
@@ -1697,6 +2020,13 @@ pub struct FilterConfiguration {
     /// codes such as <code>us-west-2</code>. </p>
     pub allowed_locations: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl FilterConfiguration {
+    /// <p> A list of locations to allow game session placement in, in the form of AWS Region
+    /// codes such as <code>us-west-2</code>. </p>
+    pub fn allowed_locations(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_locations.as_deref()
+    }
+}
 impl std::fmt::Debug for FilterConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FilterConfiguration");
@@ -1759,6 +2089,14 @@ pub struct GameSessionQueueDestination {
     /// include a fleet ID or alias ID and a Region name, provide a unique identifier across all
     /// Regions. </p>
     pub destination_arn: std::option::Option<std::string::String>,
+}
+impl GameSessionQueueDestination {
+    /// <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which
+    /// include a fleet ID or alias ID and a Region name, provide a unique identifier across all
+    /// Regions. </p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GameSessionQueueDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1824,6 +2162,19 @@ pub struct PlayerLatencyPolicy {
     /// game session. A null value for this property means that the policy is enforced until the
     /// queue times out.</p>
     pub policy_duration_seconds: std::option::Option<i32>,
+}
+impl PlayerLatencyPolicy {
+    /// <p>The maximum latency value that is allowed for any player, in milliseconds. All
+    /// policies must have a value set for this property.</p>
+    pub fn maximum_individual_player_latency_milliseconds(&self) -> std::option::Option<i32> {
+        self.maximum_individual_player_latency_milliseconds
+    }
+    /// <p>The length of time, in seconds, that the policy is enforced while placing a new
+    /// game session. A null value for this property means that the policy is enforced until the
+    /// queue times out.</p>
+    pub fn policy_duration_seconds(&self) -> std::option::Option<i32> {
+        self.policy_duration_seconds
+    }
 }
 impl std::fmt::Debug for PlayerLatencyPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1983,6 +2334,114 @@ pub struct GameSession {
     /// fleet's home Region or a remote location. Location is expressed as an AWS Region code
     /// such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
+}
+impl GameSession {
+    /// <p>A unique identifier for the game session. A game session ARN has the following format:
+    /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>.</p>
+    pub fn game_session_id(&self) -> std::option::Option<&str> {
+        self.game_session_id.as_deref()
+    }
+    /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique identifier for the fleet that the game session is running on.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that this game session is running on.
+    /// </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.termination_time.as_ref()
+    }
+    /// <p>Number of players currently in the game session.</p>
+    pub fn current_player_session_count(&self) -> std::option::Option<i32> {
+        self.current_player_session_count
+    }
+    /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    pub fn maximum_player_session_count(&self) -> std::option::Option<i32> {
+        self.maximum_player_session_count
+    }
+    /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code>
+    /// status to have player sessions.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GameSessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Provides additional information about game session status. <code>INTERRUPTED</code>
+    /// indicates that the game session was hosted on a spot instance that was reclaimed,
+    /// causing the active game session to be terminated.</p>
+    pub fn status_reason(&self) -> std::option::Option<&crate::model::GameSessionStatusReason> {
+        self.status_reason.as_ref()
+    }
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+    /// <a>GameSession</a> object with a request to start a new game session. You can search for active game sessions based on this custom data
+    /// with <a>SearchGameSessions</a>.</p>
+    pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
+        self.game_properties.as_deref()
+    }
+    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have
+    /// the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>.<region identifier>.amazongamelift.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>.compute.amazonaws.com</code>. (See
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Indicates whether or not the game session is accepting new players.</p>
+    pub fn player_session_creation_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::PlayerSessionCreationPolicy> {
+        self.player_session_creation_policy.as_ref()
+    }
+    /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one
+    /// exists), that limits the number of game sessions a player can create.</p>
+    pub fn creator_id(&self) -> std::option::Option<&str> {
+        self.creator_id.as_deref()
+    }
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
+    /// <a>GameSession</a> object with a request to start a new game session.</p>
+    pub fn game_session_data(&self) -> std::option::Option<&str> {
+        self.game_session_data.as_deref()
+    }
+    /// <p>Information about the matchmaking process that was used to create the game session.
+    /// It is in JSON syntax, formatted as a string. In addition the matchmaking configuration
+    /// used, it contains data on all players assigned to the match, including player attributes
+    /// and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
+    /// Data</a>. Matchmaker data is useful when requesting match backfills, and is
+    /// updated whenever new players are added during a successful backfill (see <a>StartMatchBackfill</a>). </p>
+    pub fn matchmaker_data(&self) -> std::option::Option<&str> {
+        self.matchmaker_data.as_deref()
+    }
+    /// <p>The fleet location where the game session is running. This value might specify the
+    /// fleet's home Region or a remote location. Location is expressed as an AWS Region code
+    /// such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for GameSession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2715,6 +3174,131 @@ pub struct GameServerGroup {
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GameServerGroup {
+    /// <p>A developer-defined identifier for the game server group. The name is unique for each
+    /// Region in each AWS account.</p>
+    pub fn game_server_group_name(&self) -> std::option::Option<&str> {
+        self.game_server_group_name.as_deref()
+    }
+    /// <p>A generated unique ID for the game server group.</p>
+    pub fn game_server_group_arn(&self) -> std::option::Option<&str> {
+        self.game_server_group_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
+    /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically
+    /// scaling instances in the corresponding Auto Scaling group. </p>
+    pub fn instance_definitions(&self) -> std::option::Option<&[crate::model::InstanceDefinition]> {
+        self.instance_definitions.as_deref()
+    }
+    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
+    /// game server group. Method options include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
+    /// Instances are unavailable or not viable for game hosting, the game server group
+    /// provides no hosting capacity until Spot Instances can again be used. Until then,
+    /// no new instances are started, and the existing nonviable Spot Instances are
+    /// terminated (after current gameplay ends) and are not replaced.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
+    /// the game server group. If Spot Instances are unavailable, the game server group
+    /// continues to provide hosting capacity by falling back to On-Demand Instances.
+    /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
+    /// and are replaced with new On-Demand Instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
+    /// server group. No Spot Instances are used, even when available, while this
+    /// balancing strategy is in force.</p>
+    /// </li>
+    /// </ul>
+    pub fn balancing_strategy(&self) -> std::option::Option<&crate::model::BalancingStrategy> {
+        self.balancing_strategy.as_ref()
+    }
+    /// <p>A flag that indicates whether instances in the game server group are protected
+    /// from early termination. Unprotected instances that have active game servers running might
+    /// be terminated during a scale-down event, causing players to be dropped from the game.
+    /// Protected instances cannot be terminated while there are active game servers running except
+    /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
+    /// Instances, which can be terminated by AWS regardless of protection status. </p>
+    pub fn game_server_protection_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::GameServerProtectionPolicy> {
+        self.game_server_protection_policy.as_ref()
+    }
+    /// <p>A generated unique ID for the EC2 Auto Scaling group that is associated with this
+    /// game server group.</p>
+    pub fn auto_scaling_group_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_group_arn.as_deref()
+    }
+    /// <p>The current status of the game server group. Possible statuses include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code>
+    /// request. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which
+    /// includes creating an Auto Scaling group in your AWS account. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The game server group has been successfully created. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_SCHEDULED</code> - A request to delete the game server group has
+    /// been received. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - GameLift FleetIQ has received a valid
+    /// <code>DeleteGameServerGroup()</code> request and is processing it. GameLift FleetIQ
+    /// must first complete and release hosts before it deletes the Auto Scaling group
+    /// and the game server group. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - The game server group has been successfully deleted. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group
+    /// has failed, resulting in an error state.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::GameServerGroupStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the current game server group status. This information
+    /// might provide additional insight on groups that are in <code>ERROR</code> status.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>A list of activities that are currently suspended for this game server group.
+    /// If this property is empty, all activities are occurring.</p>
+    pub fn suspended_actions(&self) -> std::option::Option<&[crate::model::GameServerGroupAction]> {
+        self.suspended_actions.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that indicates when this game server group was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GameServerGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GameServerGroup");
@@ -3373,6 +3957,21 @@ pub struct InstanceDefinition {
     /// Default value is "1".</p>
     pub weighted_capacity: std::option::Option<std::string::String>,
 }
+impl InstanceDefinition {
+    /// <p>An EC2 instance type designation.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::GameServerGroupInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>Instance weighting that indicates how much this instance type contributes to the total
+    /// capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the
+    /// instance type's cost per unit hour and better identify the most cost-effective options.
+    /// For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+    /// Weighting</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// Default value is "1".</p>
+    pub fn weighted_capacity(&self) -> std::option::Option<&str> {
+        self.weighted_capacity.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceDefinition");
@@ -4006,6 +4605,84 @@ pub struct GameServer {
     /// check value.</p>
     pub last_health_check_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GameServer {
+    /// <p>A unique identifier for the game server group where the game server is running.
+    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    pub fn game_server_group_name(&self) -> std::option::Option<&str> {
+        self.game_server_group_name.as_deref()
+    }
+    /// <p>The ARN identifier for the game server group where the game server is located.</p>
+    pub fn game_server_group_arn(&self) -> std::option::Option<&str> {
+        self.game_server_group_arn.as_deref()
+    }
+    /// <p>A custom string that uniquely identifies the game server. Game server IDs are
+    /// developer-defined and are unique across all game server groups in an AWS
+    /// account.</p>
+    pub fn game_server_id(&self) -> std::option::Option<&str> {
+        self.game_server_id.as_deref()
+    }
+    /// <p>The unique identifier for the instance where the game server is running. This ID is
+    /// available in the instance metadata. EC2 instance IDs
+    /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The port and IP address that must be used to establish a client connection to the game server.</p>
+    pub fn connection_info(&self) -> std::option::Option<&str> {
+        self.connection_info.as_deref()
+    }
+    /// <p>A set of custom game server properties, formatted as a single string value. This data
+    /// is passed to a game client or service when it requests information on game servers using
+    /// <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+    pub fn game_server_data(&self) -> std::option::Option<&str> {
+        self.game_server_data.as_deref()
+    }
+    /// <p>Indicates when an available game server has been reserved for gameplay but has not yet
+    /// started hosting a game. Once it is claimed, the game server remains in
+    /// <code>CLAIMED</code> status for a maximum of one minute. During this time, game
+    /// clients connect to the game server to start the game and trigger the game server to
+    /// update its utilization status. After one minute, the game server claim status reverts to
+    /// null.</p>
+    pub fn claim_status(&self) -> std::option::Option<&crate::model::GameServerClaimStatus> {
+        self.claim_status.as_ref()
+    }
+    /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - The game server is available to be claimed. A game server that has
+    /// been claimed remains in this status until it reports game hosting activity. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UTILIZED</code> - The game server is currently hosting a game session with players. </p>
+    /// </li>
+    /// </ul>
+    pub fn utilization_status(
+        &self,
+    ) -> std::option::Option<&crate::model::GameServerUtilizationStatus> {
+        self.utilization_status.as_ref()
+    }
+    /// <p>Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is a number expressed in Unix
+    /// time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn registration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registration_time.as_ref()
+    }
+    /// <p>Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The format is a number expressed in Unix time
+    /// as milliseconds (for example <code>"1469498468.057"</code>). This value is used to
+    /// calculate when a claimed game server's status should revert to null.</p>
+    pub fn last_claim_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_claim_time.as_ref()
+    }
+    /// <p>Timestamp that indicates the last time the game server was updated with health status
+    /// using an <a>UpdateGameServer</a> request. The format is a number expressed in
+    /// Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
+    /// registration, this property is only changed when a game server update specifies a health
+    /// check value.</p>
+    pub fn last_health_check_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_health_check_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GameServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GameServer");
@@ -4454,6 +5131,27 @@ pub struct IpPermission {
     /// <p>The network communication protocol used by the fleet.</p>
     pub protocol: std::option::Option<crate::model::IpProtocol>,
 }
+impl IpPermission {
+    /// <p>A starting value for a range of allowed port numbers.</p>
+    pub fn from_port(&self) -> std::option::Option<i32> {
+        self.from_port
+    }
+    /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive.
+    /// This value must be higher than <code>FromPort</code>.</p>
+    pub fn to_port(&self) -> std::option::Option<i32> {
+        self.to_port
+    }
+    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation.
+    /// Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened
+    /// version "<code>0.0.0.0/[subnet mask]</code>".</p>
+    pub fn ip_range(&self) -> std::option::Option<&str> {
+        self.ip_range.as_deref()
+    }
+    /// <p>The network communication protocol used by the fleet.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::IpProtocol> {
+        self.protocol.as_ref()
+    }
+}
 impl std::fmt::Debug for IpPermission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IpPermission");
@@ -4615,6 +5313,17 @@ pub struct ResourceCreationLimitPolicy {
     /// <p>The time span used in evaluating the resource creation limit policy. </p>
     pub policy_period_in_minutes: std::option::Option<i32>,
 }
+impl ResourceCreationLimitPolicy {
+    /// <p>The maximum number of game sessions that an individual can create during the policy
+    /// period. </p>
+    pub fn new_game_sessions_per_creator(&self) -> std::option::Option<i32> {
+        self.new_game_sessions_per_creator
+    }
+    /// <p>The time span used in evaluating the resource creation limit policy. </p>
+    pub fn policy_period_in_minutes(&self) -> std::option::Option<i32> {
+        self.policy_period_in_minutes
+    }
+}
 impl std::fmt::Debug for ResourceCreationLimitPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceCreationLimitPolicy");
@@ -4731,6 +5440,63 @@ pub struct Build {
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Build {
+    /// <p>A unique identifier for the build.</p>
+    pub fn build_id(&self) -> std::option::Option<&str> {
+        self.build_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a GameLift build ARN, the resource ID matches the
+    /// <i>BuildId</i> value.</p>
+    pub fn build_arn(&self) -> std::option::Option<&str> {
+        self.build_arn.as_deref()
+    }
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Current status of the build.</p>
+    /// <p>Possible build statuses include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>INITIALIZED</b> -- A new build has been defined,
+    /// but no files have been uploaded. You cannot create fleets for builds that are in
+    /// this status. When a build is successfully created, the build status is set to
+    /// this value. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>READY</b> -- The game build has been successfully
+    /// uploaded. You can now create new fleets for this build.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>FAILED</b> -- The game build upload failed. You
+    /// cannot create new fleets for this build. </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::BuildStatus> {
+        self.status.as_ref()
+    }
+    /// <p>File size of the uploaded game build, expressed in bytes. When the build status is
+    /// <code>INITIALIZED</code>, this value is 0.</p>
+    pub fn size_on_disk(&self) -> std::option::Option<i64> {
+        self.size_on_disk
+    }
+    /// <p>Operating system that the game server binaries are built to run on. This value
+    /// determines the type of fleet resources that you can use for this build.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Build {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5065,6 +5831,36 @@ pub struct Alias {
     /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Alias {
+    /// <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+    /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
+    pub fn alias_arn(&self) -> std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>A human-readable description of an alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    pub fn routing_strategy(&self) -> std::option::Option<&crate::model::RoutingStrategy> {
+        self.routing_strategy.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Alias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Alias");
@@ -5229,6 +6025,34 @@ pub struct RoutingStrategy {
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The message text to be used with a terminal routing strategy.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl RoutingStrategy {
+    /// <p>The type of routing strategy for the alias.</p>
+    /// <p>Possible routing types include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>SIMPLE</b> - The alias resolves to one specific
+    /// fleet. Use this type when routing to active fleets.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TERMINAL</b> - The alias does not resolve to a
+    /// fleet but instead can be used to display a message to the user. A terminal alias
+    /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RoutingStrategyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The message text to be used with a terminal routing strategy.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for RoutingStrategy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5418,6 +6242,20 @@ pub struct Tag {
     /// </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>
+    /// The key for a developer-defined key:value pair for tagging an AWS resource.
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>
+    /// The value for a developer-defined key:value pair for tagging an AWS resource.
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -5603,6 +6441,144 @@ pub struct GameSessionPlacement {
     /// attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
     /// Data</a>.</p>
     pub matchmaker_data: std::option::Option<std::string::String>,
+}
+impl GameSessionPlacement {
+    /// <p>A unique identifier for a game session placement.</p>
+    pub fn placement_id(&self) -> std::option::Option<&str> {
+        self.placement_id.as_deref()
+    }
+    /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
+    pub fn game_session_queue_name(&self) -> std::option::Option<&str> {
+        self.game_session_queue_name.as_deref()
+    }
+    /// <p>Current status of the game session placement request.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>PENDING</b> -- The placement request is currently
+    /// in the queue waiting to be processed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>FULFILLED</b> -- A new game session and player
+    /// sessions (if requested) have been successfully created. Values for
+    /// <i>GameSessionArn</i> and
+    /// <i>GameSessionRegion</i> are available. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CANCELLED</b> -- The placement request was canceled
+    /// with a call to <a>StopGameSessionPlacement</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TIMED_OUT</b> -- A new game session was not
+    /// successfully created before the time limit expired. You can resubmit the
+    /// placement request as needed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>FAILED</b> -- GameLift is not able to complete the
+    /// process of placing the game session. Common reasons are the
+    /// game session terminated before the placement process was completed, or an unexpected
+    /// internal error.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::GameSessionPlacementState> {
+        self.status.as_ref()
+    }
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
+        self.game_properties.as_deref()
+    }
+    /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    pub fn maximum_player_session_count(&self) -> std::option::Option<i32> {
+        self.maximum_player_session_count
+    }
+    /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    pub fn game_session_name(&self) -> std::option::Option<&str> {
+        self.game_session_name.as_deref()
+    }
+    /// <p>A unique identifier for the game session. This value is set once the new game session is placed (placement status is
+    /// <code>FULFILLED</code>).</p>
+    pub fn game_session_id(&self) -> std::option::Option<&str> {
+        self.game_session_id.as_deref()
+    }
+    /// <p>Identifier for the game session created by this placement request. This value is
+    /// set once the new game session is placed (placement status is <code>FULFILLED</code>).
+    /// This identifier is unique across all Regions. You can use this value as a
+    /// <code>GameSessionId</code> value as needed.</p>
+    pub fn game_session_arn(&self) -> std::option::Option<&str> {
+        self.game_session_arn.as_deref()
+    }
+    /// <p>Name of the Region where the game session created by this placement request is
+    /// running. This value is set once the new game session is placed (placement status is
+    /// <code>FULFILLED</code>).</p>
+    pub fn game_session_region(&self) -> std::option::Option<&str> {
+        self.game_session_region.as_deref()
+    }
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions.</p>
+    pub fn player_latencies(&self) -> std::option::Option<&[crate::model::PlayerLatency]> {
+        self.player_latencies.as_deref()
+    }
+    /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Time stamp indicating when this request was completed, canceled, or timed
+    /// out.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is
+    /// <code>FULFILLED</code>). </p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have
+    /// the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>.<region identifier>.amazongamelift.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>.compute.amazonaws.com</code>. (See
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is
+    /// <code>FULFILLED</code>).</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>A collection of information on player sessions created in response to the game
+    /// session placement request. These player sessions are created only once a new game
+    /// session is successfully placed (placement status is <code>FULFILLED</code>). This
+    /// information includes the player ID (as provided in the placement request) and the
+    /// corresponding player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a> with the player session ID.</p>
+    pub fn placed_player_sessions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlacedPlayerSession]> {
+        self.placed_player_sessions.as_deref()
+    }
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
+    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    pub fn game_session_data(&self) -> std::option::Option<&str> {
+        self.game_session_data.as_deref()
+    }
+    /// <p>Information on the matchmaking process for this game. Data is in JSON syntax,
+    /// formatted as a string. It identifies the matchmaking configuration used to create the
+    /// match, and contains data on all players assigned to the match, including player
+    /// attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
+    /// Data</a>.</p>
+    pub fn matchmaker_data(&self) -> std::option::Option<&str> {
+        self.matchmaker_data.as_deref()
+    }
 }
 impl std::fmt::Debug for GameSessionPlacement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6077,6 +7053,16 @@ pub struct PlacedPlayerSession {
     /// <p>A unique identifier for a player session.</p>
     pub player_session_id: std::option::Option<std::string::String>,
 }
+impl PlacedPlayerSession {
+    /// <p>A unique identifier for a player that is associated with this player session.</p>
+    pub fn player_id(&self) -> std::option::Option<&str> {
+        self.player_id.as_deref()
+    }
+    /// <p>A unique identifier for a player session.</p>
+    pub fn player_session_id(&self) -> std::option::Option<&str> {
+        self.player_session_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PlacedPlayerSession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacedPlayerSession");
@@ -6150,6 +7136,21 @@ pub struct PlayerLatency {
     /// <p>Amount of time that represents the time lag experienced by the player when
     /// connected to the specified Region.</p>
     pub latency_in_milliseconds: f32,
+}
+impl PlayerLatency {
+    /// <p>A unique identifier for a player associated with the latency data.</p>
+    pub fn player_id(&self) -> std::option::Option<&str> {
+        self.player_id.as_deref()
+    }
+    /// <p>Name of the Region that is associated with the latency value.</p>
+    pub fn region_identifier(&self) -> std::option::Option<&str> {
+        self.region_identifier.as_deref()
+    }
+    /// <p>Amount of time that represents the time lag experienced by the player when
+    /// connected to the specified Region.</p>
+    pub fn latency_in_milliseconds(&self) -> f32 {
+        self.latency_in_milliseconds
+    }
 }
 impl std::fmt::Debug for PlayerLatency {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6435,6 +7436,119 @@ pub struct MatchmakingTicket {
     /// <p>Average amount of time (in seconds) that players are currently waiting for a match.
     /// If there is not enough recent data, this property may be empty.</p>
     pub estimated_wait_time: std::option::Option<i32>,
+}
+impl MatchmakingTicket {
+    /// <p>A unique identifier for a matchmaking ticket.</p>
+    pub fn ticket_id(&self) -> std::option::Option<&str> {
+        self.ticket_id.as_deref()
+    }
+    /// <p>Name of the <a>MatchmakingConfiguration</a> that is used with this
+    /// ticket. Matchmaking configurations determine how players are grouped into a match and
+    /// how a new game session is created for the match.</p>
+    pub fn configuration_name(&self) -> std::option::Option<&str> {
+        self.configuration_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift matchmaking configuration resource that is used with this ticket.</p>
+    pub fn configuration_arn(&self) -> std::option::Option<&str> {
+        self.configuration_arn.as_deref()
+    }
+    /// <p>Current status of the matchmaking request.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>QUEUED</b> -- The matchmaking request has been
+    /// received and is currently waiting to be processed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>SEARCHING</b> -- The matchmaking request is
+    /// currently being processed. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>REQUIRES_ACCEPTANCE</b> -- A match has been
+    /// proposed and the players must accept the match (see <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration
+    /// with a player acceptance requirement.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PLACING</b> -- The FlexMatch engine has matched
+    /// players and is in the process of placing a new game session for the
+    /// match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>COMPLETED</b> -- Players have been matched and a
+    /// game session is ready to host the players. A ticket in this state contains the
+    /// necessary connection information for players.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>FAILED</b> -- The matchmaking request was not
+    /// completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CANCELLED</b> -- The matchmaking request was
+    /// canceled. This may be the result of a call to <a>StopMatchmaking</a>
+    /// or a proposed match that one or more players failed to accept.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TIMED_OUT</b> -- The matchmaking request was not
+    /// successful within the duration specified in the matchmaking configuration.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED,
+    /// CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket
+    /// IDs.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&crate::model::MatchmakingConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Code to explain the current status. For example, a status reason may indicate when
+    /// a ticket has returned to <code>SEARCHING</code> status after a proposed match fails to
+    /// receive player acceptances.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Additional information about the current status.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Time stamp indicating when this matchmaking request stopped being processed due to
+    /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A set of <code>Player</code> objects, each representing a player to find matches
+    /// for. Players are identified by a unique player ID and may include latency data for use
+    /// during matchmaking. If the ticket is in status <code>COMPLETED</code>, the
+    /// <code>Player</code> objects include the team the players were assigned to in the
+    /// resulting match.</p>
+    pub fn players(&self) -> std::option::Option<&[crate::model::Player]> {
+        self.players.as_deref()
+    }
+    /// <p>Identifier and connection information of the game session created for the match. This
+    /// information is added to the ticket only after the matchmaking request has been
+    /// successfully completed. This parameter is not set when FlexMatch is being used without
+    /// GameLift hosting.</p>
+    pub fn game_session_connection_info(
+        &self,
+    ) -> std::option::Option<&crate::model::GameSessionConnectionInfo> {
+        self.game_session_connection_info.as_ref()
+    }
+    /// <p>Average amount of time (in seconds) that players are currently waiting for a match.
+    /// If there is not enough recent data, this property may be empty.</p>
+    pub fn estimated_wait_time(&self) -> std::option::Option<i32> {
+        self.estimated_wait_time
+    }
 }
 impl std::fmt::Debug for MatchmakingTicket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6808,6 +7922,42 @@ pub struct GameSessionConnectionInfo {
     pub matched_player_sessions:
         std::option::Option<std::vec::Vec<crate::model::MatchedPlayerSession>>,
 }
+impl GameSessionConnectionInfo {
+    /// <p>A unique identifier for the game session. Use the game session ID.</p>
+    pub fn game_session_arn(&self) -> std::option::Option<&str> {
+        self.game_session_arn.as_deref()
+    }
+    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have
+    /// the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>.<region identifier>.amazongamelift.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>.compute.amazonaws.com</code>. (See
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>A collection of player session IDs, one for each player ID that was included in the
+    /// original matchmaking request. </p>
+    pub fn matched_player_sessions(
+        &self,
+    ) -> std::option::Option<&[crate::model::MatchedPlayerSession]> {
+        self.matched_player_sessions.as_deref()
+    }
+}
 impl std::fmt::Debug for GameSessionConnectionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GameSessionConnectionInfo");
@@ -6954,6 +8104,16 @@ pub struct MatchedPlayerSession {
     /// <p>A unique identifier for a player session</p>
     pub player_session_id: std::option::Option<std::string::String>,
 }
+impl MatchedPlayerSession {
+    /// <p>A unique identifier for a player </p>
+    pub fn player_id(&self) -> std::option::Option<&str> {
+        self.player_id.as_deref()
+    }
+    /// <p>A unique identifier for a player session</p>
+    pub fn player_session_id(&self) -> std::option::Option<&str> {
+        self.player_session_id.as_deref()
+    }
+}
 impl std::fmt::Debug for MatchedPlayerSession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MatchedPlayerSession");
@@ -7036,6 +8196,39 @@ pub struct Player {
     /// assumes that no Regions are available to the player and the ticket is not matchable.
     /// </p>
     pub latency_in_ms: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+}
+impl Player {
+    /// <p>A unique identifier for a player</p>
+    pub fn player_id(&self) -> std::option::Option<&str> {
+        self.player_id.as_deref()
+    }
+    /// <p>A collection of key:value pairs containing player information for use in matchmaking.
+    /// Player attribute keys must match the <i>playerAttributes</i> used in a
+    /// matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"},
+    /// "gameMode": {"S": "deathmatch"}}</code>.</p>
+    pub fn player_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.player_attributes.as_ref()
+    }
+    /// <p>Name of the team that the player is assigned to in a match. Team names are defined
+    /// in a matchmaking rule set.</p>
+    pub fn team(&self) -> std::option::Option<&str> {
+        self.team.as_deref()
+    }
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. If this property is present, FlexMatch considers placing the match only
+    /// in Regions for which latency is reported. </p>
+    /// <p>If a matchmaker has a rule that evaluates player latency, players must report
+    /// latency in order to be matched. If no latency is reported in this scenario, FlexMatch
+    /// assumes that no Regions are available to the player and the ticket is not matchable.
+    /// </p>
+    pub fn latency_in_ms(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+        self.latency_in_ms.as_ref()
+    }
 }
 impl std::fmt::Debug for Player {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7184,6 +8377,27 @@ pub struct AttributeValue {
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value
     /// is 100 characters. </p>
     pub sdm: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+}
+impl AttributeValue {
+    /// <p>For single string values. Maximum string length is 100 characters.</p>
+    pub fn s(&self) -> std::option::Option<&str> {
+        self.s.as_deref()
+    }
+    /// <p>For number values, expressed as double.</p>
+    pub fn n(&self) -> std::option::Option<f64> {
+        self.n
+    }
+    /// <p>For a list of up to 10 strings. Maximum length for each string is 100 characters.
+    /// Duplicate values are not recognized; all occurrences of the repeated value after the
+    /// first of a repeated value are ignored.</p>
+    pub fn sl(&self) -> std::option::Option<&[std::string::String]> {
+        self.sl.as_deref()
+    }
+    /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value
+    /// is 100 characters. </p>
+    pub fn sdm(&self) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.sdm.as_ref()
+    }
 }
 impl std::fmt::Debug for AttributeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7387,6 +8601,16 @@ pub struct DesiredPlayerSession {
     /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub player_data: std::option::Option<std::string::String>,
 }
+impl DesiredPlayerSession {
+    /// <p>A unique identifier for a player to associate with the player session.</p>
+    pub fn player_id(&self) -> std::option::Option<&str> {
+        self.player_id.as_deref()
+    }
+    /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    pub fn player_data(&self) -> std::option::Option<&str> {
+        self.player_data.as_deref()
+    }
+}
 impl std::fmt::Debug for DesiredPlayerSession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DesiredPlayerSession");
@@ -7454,6 +8678,21 @@ pub struct AwsCredentials {
     /// <p>Token used to associate a specific build ID with the files uploaded using these
     /// credentials.</p>
     pub session_token: std::option::Option<std::string::String>,
+}
+impl AwsCredentials {
+    /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>Token used to associate a specific build ID with the files uploaded using these
+    /// credentials.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7561,6 +8800,16 @@ pub struct TargetConfiguration {
     /// the fleet's buffer (the percent of capacity that should be idle and ready for new game
     /// sessions).</p>
     pub target_value: f64,
+}
+impl TargetConfiguration {
+    /// <p>Desired value to use with a target-based scaling policy. The value must be relevant
+    /// for whatever metric the scaling policy is using. For example, in a policy using the
+    /// metric PercentAvailableGameSessions, the target value should be the preferred size of
+    /// the fleet's buffer (the percent of capacity that should be idle and ready for new game
+    /// sessions).</p>
+    pub fn target_value(&self) -> f64 {
+        self.target_value
+    }
 }
 impl std::fmt::Debug for TargetConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7975,6 +9224,28 @@ pub struct InstanceAccess {
     /// <p>Credentials required to access the instance.</p>
     pub credentials: std::option::Option<crate::model::InstanceCredentials>,
 }
+impl InstanceAccess {
+    /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>A unique identifier for the instance being accessed.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>IP address that is assigned to the instance.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>Operating system that is running on the instance.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>Credentials required to access the instance.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::InstanceCredentials> {
+        self.credentials.as_ref()
+    }
+}
 impl std::fmt::Debug for InstanceAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceAccess");
@@ -8086,6 +9357,18 @@ pub struct InstanceCredentials {
     /// <code>.pem</code> file) for use with SSH.</p>
     pub secret: std::option::Option<std::string::String>,
 }
+impl InstanceCredentials {
+    /// <p>User login string.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Secret string. For Windows instances, the secret is a password for use with Windows
+    /// Remote Desktop. For Linux instances, it is a private key (which must be saved as a
+    /// <code>.pem</code> file) for use with SSH.</p>
+    pub fn secret(&self) -> std::option::Option<&str> {
+        self.secret.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceCredentials");
@@ -8188,6 +9471,48 @@ pub struct VpcPeeringConnection {
     /// connection. This VPC is managed by Amazon GameLift and does not appear in your AWS account.
     /// </p>
     pub game_lift_vpc_id: std::option::Option<std::string::String>,
+}
+impl VpcPeeringConnection {
+    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection.
+    /// </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the
+    /// GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these
+    /// blocks cannot overlap or the peering connection cannot be created. </p>
+    pub fn ip_v4_cidr_block(&self) -> std::option::Option<&str> {
+        self.ip_v4_cidr_block.as_deref()
+    }
+    /// <p>A unique identifier that is automatically assigned to the connection record. This ID
+    /// is referenced in VPC peering connection events, and is used when deleting a connection
+    /// with <a>DeleteVpcPeeringConnection</a>. </p>
+    pub fn vpc_peering_connection_id(&self) -> std::option::Option<&str> {
+        self.vpc_peering_connection_id.as_deref()
+    }
+    /// <p>The status information about the connection. Status indicates if a
+    /// connection is pending, successful, or failed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcPeeringConnectionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
+    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
+    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
+    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
+        self.peer_vpc_id.as_deref()
+    }
+    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this
+    /// connection. This VPC is managed by Amazon GameLift and does not appear in your AWS account.
+    /// </p>
+    pub fn game_lift_vpc_id(&self) -> std::option::Option<&str> {
+        self.game_lift_vpc_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcPeeringConnection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8356,6 +9681,16 @@ pub struct VpcPeeringConnectionStatus {
     /// <p>Additional messaging associated with the connection status. </p>
     pub message: std::option::Option<std::string::String>,
 }
+impl VpcPeeringConnectionStatus {
+    /// <p>Code indicating the status of a VPC peering connection.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Additional messaging associated with the connection status. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcPeeringConnectionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcPeeringConnectionStatus");
@@ -8444,6 +9779,33 @@ pub struct VpcPeeringAuthorization {
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance).
     /// Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl VpcPeeringAuthorization {
+    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
+    /// You can find your Account ID in the AWS Management Console under account settings.</p>
+    pub fn game_lift_aws_account_id(&self) -> std::option::Option<&str> {
+        self.game_lift_aws_account_id.as_deref()
+    }
+    /// <p></p>
+    pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
+        self.peer_vpc_aws_account_id.as_deref()
+    }
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
+    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
+    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
+    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
+        self.peer_vpc_id.as_deref()
+    }
+    /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Time stamp indicating when this authorization expires (24 hours after issuance).
+    /// Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
 }
 impl std::fmt::Debug for VpcPeeringAuthorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8744,6 +10106,205 @@ pub struct ScalingPolicy {
     ///
     /// </p>
     pub location: std::option::Option<std::string::String>,
+}
+impl ScalingPolicy {
+    /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Current status of the scaling policy. The scaling policy can be in force only when
+    /// in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual
+    /// fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the policy
+    /// status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>ACTIVE</b> -- The scaling policy can be used for
+    /// auto-scaling a fleet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>UPDATE_REQUESTED</b> -- A request to update the
+    /// scaling policy has been received.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>UPDATING</b> -- A change is being made to the
+    /// scaling policy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DELETE_REQUESTED</b> -- A request to delete the
+    /// scaling policy has been received.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DELETING</b> -- The scaling policy is being
+    /// deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DELETED</b> -- The scaling policy has been
+    /// deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ERROR</b> -- An error occurred in creating the
+    /// policy. It should be removed and recreated.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ScalingStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
+    pub fn scaling_adjustment(&self) -> i32 {
+        self.scaling_adjustment
+    }
+    /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>ChangeInCapacity</b> -- add (or subtract) the
+    /// scaling adjustment value from the current instance count. Positive values scale
+    /// up while negative values scale down.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ExactCapacity</b> -- set the instance count to the
+    /// scaling adjustment value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PercentChangeInCapacity</b> -- increase or reduce
+    /// the current instance count by the scaling adjustment, read as a percentage.
+    /// Positive values scale up while negative values scale down.</p>
+    /// </li>
+    /// </ul>
+    pub fn scaling_adjustment_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ScalingAdjustmentType> {
+        self.scaling_adjustment_type.as_ref()
+    }
+    /// <p>Comparison operator to use when measuring a metric against the threshold
+    /// value.</p>
+    pub fn comparison_operator(
+        &self,
+    ) -> std::option::Option<&crate::model::ComparisonOperatorType> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>Metric value used to trigger a scaling event.</p>
+    pub fn threshold(&self) -> f64 {
+        self.threshold
+    }
+    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
+    /// scaling event is triggered.</p>
+    pub fn evaluation_periods(&self) -> std::option::Option<i32> {
+        self.evaluation_periods
+    }
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
+    /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
+    /// with Amazon CloudWatch</a>. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>ActivatingGameSessions</b> -- Game sessions in
+    /// the process of being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ActiveGameSessions</b> -- Game sessions that
+    /// are currently running.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ActiveInstances</b> -- Fleet instances that
+    /// are currently running at least one game session.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AvailableGameSessions</b> -- Additional game
+    /// sessions that fleet could host simultaneously, given current capacity.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AvailablePlayerSessions</b> -- Empty player
+    /// slots in currently active game sessions. This includes game sessions that are
+    /// not currently accepting players. Reserved player slots are not
+    /// included.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CurrentPlayerSessions</b> -- Player slots in
+    /// active game sessions that are being used by a player or are reserved for a
+    /// player. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>IdleInstances</b> -- Active instances that are
+    /// currently hosting zero game sessions. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PercentAvailableGameSessions</b> -- Unused
+    /// percentage of the total number of game sessions that a fleet could host
+    /// simultaneously, given current capacity. Use this metric for a target-based
+    /// scaling policy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PercentIdleInstances</b> -- Percentage of the
+    /// total number of active instances that are hosting zero game sessions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>QueueDepth</b> -- Pending game session
+    /// placement requests, in any queue, where the current fleet is the top-priority
+    /// destination.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>WaitTime</b> -- Current wait time for pending
+    /// game session placement requests, in any queue, where the current fleet is the
+    /// top-priority destination. </p>
+    /// </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::MetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
+    /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
+    /// <i>TargetConfiguration</i>. For a rule-based policy set the following
+    /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
+    /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
+    /// <i>ScalingAdjustmentType</i>, and
+    /// <i>ScalingAdjustment</i>.</p>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.policy_type.as_ref()
+    }
+    /// <p>An object that contains settings for a target-based scaling policy.</p>
+    pub fn target_configuration(&self) -> std::option::Option<&crate::model::TargetConfiguration> {
+        self.target_configuration.as_ref()
+    }
+    /// <p>The current status of the fleet's scaling policies in a requested fleet location. The
+    /// status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet
+    /// but has not yet been completed for the location.</p>
+    pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p>
+    ///
+    /// </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for ScalingPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9474,6 +11035,95 @@ pub struct PlayerSession {
     /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
     pub player_data: std::option::Option<std::string::String>,
 }
+impl PlayerSession {
+    /// <p>A unique identifier for a player session.</p>
+    pub fn player_session_id(&self) -> std::option::Option<&str> {
+        self.player_session_id.as_deref()
+    }
+    /// <p>A unique identifier for a player that is associated with this player session.</p>
+    pub fn player_id(&self) -> std::option::Option<&str> {
+        self.player_id.as_deref()
+    }
+    /// <p>A unique identifier for the game session that the player session is connected to.</p>
+    pub fn game_session_id(&self) -> std::option::Option<&str> {
+        self.game_session_id.as_deref()
+    }
+    /// <p>A unique identifier for the fleet that the player's game session is running on.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that the player's game session is running on.
+    /// </p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.termination_time.as_ref()
+    }
+    /// <p>Current status of the player session.</p>
+    /// <p>Possible player session statuses include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>RESERVED</b> -- The player session request has been
+    /// received, but the player has not yet connected to the server process and/or been
+    /// validated. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ACTIVE</b> -- The player has been validated by the
+    /// server process and is currently connected.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>COMPLETED</b> -- The player connection has been
+    /// dropped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TIMEDOUT</b> -- A player session request was
+    /// received, but the player did not connect and/or was not validated within the
+    /// timeout limit (60 seconds).</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::PlayerSessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have
+    /// the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>.<region identifier>.amazongamelift.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>.compute.amazonaws.com</code>. (See
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app
+    /// needs both the IP address and port number.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
+    pub fn player_data(&self) -> std::option::Option<&str> {
+        self.player_data.as_deref()
+    }
+}
 impl std::fmt::Debug for PlayerSession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlayerSession");
@@ -9865,6 +11515,26 @@ pub struct MatchmakingRuleSet {
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl MatchmakingRuleSet {
+    /// <p>A unique identifier for the matchmaking rule set</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::matchmakingruleset/<ruleset name></code>.  In a GameLift rule set ARN, the resource ID matches the
+    /// <i>RuleSetName</i> value.</p>
+    pub fn rule_set_arn(&self) -> std::option::Option<&str> {
+        self.rule_set_arn.as_deref()
+    }
+    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
+    /// allowed in JSON, but most elements support a description field.</p>
+    pub fn rule_set_body(&self) -> std::option::Option<&str> {
+        self.rule_set_body.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for MatchmakingRuleSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MatchmakingRuleSet");
@@ -10023,6 +11693,82 @@ pub struct Instance {
     /// <p>The fleet location of the instance, expressed as an AWS Region
     /// code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
+}
+impl Instance {
+    /// <p>A unique identifier for the fleet that the instance is in.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>A unique identifier for the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>IP address that is assigned to the instance.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have
+    /// the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>.<region identifier>.amazongamelift.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>.compute.amazonaws.com</code>. (See
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Operating system that is running on this instance. </p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>EC2 instance type that defines the computing resources of this instance.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Current status of the instance. Possible statuses include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>PENDING</b> -- The instance is in the process of
+    /// being created and launching server processes as defined in the fleet's run-time
+    /// configuration. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ACTIVE</b> -- The instance has been successfully
+    /// created and at least one server process has successfully launched and reported
+    /// back to GameLift that it is ready to host a game session. The instance is now
+    /// considered ready to host game sessions. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TERMINATING</b> -- The instance is in the process
+    /// of shutting down. This may happen to reduce capacity during a scaling down event
+    /// or to recycle resources in the event of a problem.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The fleet location of the instance, expressed as an AWS Region
+    /// code, such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10802,6 +12548,29 @@ pub struct GameSessionDetail {
     /// </ul>
     pub protection_policy: std::option::Option<crate::model::ProtectionPolicy>,
 }
+impl GameSessionDetail {
+    /// <p>Object that describes a game session.</p>
+    pub fn game_session(&self) -> std::option::Option<&crate::model::GameSession> {
+        self.game_session.as_ref()
+    }
+    /// <p>Current status of protection for the game session.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>NoProtection</b> -- The game session can be
+    /// terminated during a scale-down event.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>FullProtection</b> -- If the game session is in an
+    /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+    /// event.</p>
+    /// </li>
+    /// </ul>
+    pub fn protection_policy(&self) -> std::option::Option<&crate::model::ProtectionPolicy> {
+        self.protection_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GameSessionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GameSessionDetail");
@@ -10950,6 +12719,52 @@ pub struct GameServerInstance {
     /// </li>
     /// </ul>
     pub instance_status: std::option::Option<crate::model::GameServerInstanceStatus>,
+}
+impl GameServerInstance {
+    /// <p>A developer-defined identifier for the game server group that includes the game
+    /// server instance. The name is unique for each Region in each AWS account.</p>
+    pub fn game_server_group_name(&self) -> std::option::Option<&str> {
+        self.game_server_group_name.as_deref()
+    }
+    /// <p>A generated unique identifier for the game server group that includes the game
+    /// server instance. </p>
+    pub fn game_server_group_arn(&self) -> std::option::Option<&str> {
+        self.game_server_group_arn.as_deref()
+    }
+    /// <p>The unique identifier for the instance where the game server is running. This ID is
+    /// available in the instance metadata. EC2 instance IDs
+    /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>
+    /// Current status of the game server instance.
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>ACTIVE</b> -- The instance is viable for hosting
+    /// game servers. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DRAINING</b> -- The instance is not viable for
+    /// hosting game servers. Existing game servers are in the process of ending, and
+    /// new game servers are not started on this instance unless no other resources are
+    /// available. When the instance is put in DRAINING, a new instance is started up to
+    /// replace it. Once the instance has no UTILIZED game servers, it will be terminated
+    /// in favor of the new instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>SPOT_TERMINATING</b> -- The instance is in the
+    /// process of shutting down due to a Spot instance interruption. No new game
+    /// servers are started on this instance.</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_status(&self) -> std::option::Option<&crate::model::GameServerInstanceStatus> {
+        self.instance_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GameServerInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11186,6 +13001,41 @@ pub struct FleetUtilization {
     /// code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
+impl FleetUtilization {
+    /// <p>A unique identifier for the fleet associated with the location.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The number of server processes in <code>ACTIVE</code> status that are currently
+    /// running across all instances in the fleet location. </p>
+    pub fn active_server_process_count(&self) -> std::option::Option<i32> {
+        self.active_server_process_count
+    }
+    /// <p>The number of active game sessions that are currently being hosted across all
+    /// instances in the fleet location.</p>
+    pub fn active_game_session_count(&self) -> std::option::Option<i32> {
+        self.active_game_session_count
+    }
+    /// <p>The number of active player sessions that are currently being hosted across all
+    /// instances in the fleet location.</p>
+    pub fn current_player_session_count(&self) -> std::option::Option<i32> {
+        self.current_player_session_count
+    }
+    /// <p>The maximum number of players allowed across all game sessions that are currently
+    /// being hosted across all instances in the fleet location.</p>
+    pub fn maximum_player_session_count(&self) -> std::option::Option<i32> {
+        self.maximum_player_session_count
+    }
+    /// <p>The fleet location for the fleet utilization information, expressed as an AWS Region
+    /// code, such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for FleetUtilization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FleetUtilization");
@@ -11352,6 +13202,32 @@ pub struct FleetCapacity {
     /// code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
+impl FleetCapacity {
+    /// <p>A unique identifier for the fleet associated with the location.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The EC2 instance type that is used for all instances in a fleet. The instance type
+    /// determines the computing resources in use, including CPU, memory, storage, and
+    /// networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+    /// Instance Types</a> for detailed descriptions.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The current instance count and capacity settings for the fleet location. </p>
+    pub fn instance_counts(&self) -> std::option::Option<&crate::model::Ec2InstanceCounts> {
+        self.instance_counts.as_ref()
+    }
+    /// <p>The fleet location for the instance count information, expressed as an AWS Region
+    /// code, such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for FleetCapacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FleetCapacity");
@@ -11481,6 +13357,37 @@ pub struct Ec2InstanceCounts {
     pub idle: std::option::Option<i32>,
     /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
     pub terminating: std::option::Option<i32>,
+}
+impl Ec2InstanceCounts {
+    /// <p>Ideal number of active instances. GameLift will always try to maintain the desired
+    /// number of instances. Capacity is scaled up or down by changing the desired instances. </p>
+    pub fn desired(&self) -> std::option::Option<i32> {
+        self.desired
+    }
+    /// <p>The minimum instance count value allowed.</p>
+    pub fn minimum(&self) -> std::option::Option<i32> {
+        self.minimum
+    }
+    /// <p>The maximum instance count value allowed.</p>
+    pub fn maximum(&self) -> std::option::Option<i32> {
+        self.maximum
+    }
+    /// <p>Number of instances that are starting but not yet active.</p>
+    pub fn pending(&self) -> std::option::Option<i32> {
+        self.pending
+    }
+    /// <p>Actual number of instances that are ready to host game sessions.</p>
+    pub fn active(&self) -> std::option::Option<i32> {
+        self.active
+    }
+    /// <p>Number of active instances that are not currently hosting a game session.</p>
+    pub fn idle(&self) -> std::option::Option<i32> {
+        self.idle
+    }
+    /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
+    pub fn terminating(&self) -> std::option::Option<i32> {
+        self.terminating
+    }
 }
 impl std::fmt::Debug for Ec2InstanceCounts {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11622,6 +13529,22 @@ pub struct LocationAttributes {
     /// has been requested but the update has not yet been completed for the location.</p>
     pub update_status: std::option::Option<crate::model::LocationUpdateStatus>,
 }
+impl LocationAttributes {
+    /// <p>A fleet location and its current life-cycle state.</p>
+    pub fn location_state(&self) -> std::option::Option<&crate::model::LocationState> {
+        self.location_state.as_ref()
+    }
+    /// <p>A list of fleet actions that have been suspended in the fleet location.</p>
+    pub fn stopped_actions(&self) -> std::option::Option<&[crate::model::FleetAction]> {
+        self.stopped_actions.as_deref()
+    }
+    /// <p>The status of fleet activity updates to the location. The status
+    /// <code>PENDING_UPDATE</code> indicates that <a>StopFleetActions</a> or <a>StartFleetActions</a>
+    /// has been requested but the update has not yet been completed for the location.</p>
+    pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
+        self.update_status.as_ref()
+    }
+}
 impl std::fmt::Debug for LocationAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LocationAttributes");
@@ -11728,6 +13651,16 @@ pub struct LocationState {
     pub location: std::option::Option<std::string::String>,
     /// <p>The life-cycle status of a fleet location. </p>
     pub status: std::option::Option<crate::model::FleetStatus>,
+}
+impl LocationState {
+    /// <p>The fleet location, expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The life-cycle status of a fleet location. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FleetStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for LocationState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12036,6 +13969,168 @@ pub struct Event {
     /// is useful for debugging issues. The URL is valid for 15 minutes. You can also access
     /// fleet creation logs through the GameLift console.</p>
     pub pre_signed_log_url: std::option::Option<std::string::String>,
+}
+impl Event {
+    /// <p>A unique identifier for a fleet event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of event being logged. </p>
+    /// <p>
+    /// <b>Fleet creation events (ordered by fleet creation activity):</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>FLEET_CREATED -- A fleet resource was successfully created with a status of
+    /// <code>NEW</code>. Event messaging includes the fleet ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to
+    /// <code>DOWNLOADING</code>. The compressed build has started downloading to a
+    /// fleet instance for installation.</p>
+    /// </li>
+    /// <li>
+    /// <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
+    /// instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
+    /// downloaded to an instance, and the build files are now being extracted from the
+    /// uploaded build and saved to an instance. Failure at this stage prevents a fleet
+    /// from moving to <code>ACTIVE</code> status. Logs for this stage display a list of
+    /// the files that are extracted and saved on the instance. Access the logs by using
+    /// the URL in <i>PreSignedLogUrl</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
+    /// successfully extracted, and the GameLift is now running the build's install
+    /// script (if one is included). Failure in this stage prevents a fleet from moving
+    /// to <code>ACTIVE</code> status. Logs for this stage list the installation steps
+    /// and whether or not the install completed successfully. Access the logs by using
+    /// the URL in <i>PreSignedLogUrl</i>. </p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful,
+    /// and the GameLift is now verifying that the game server launch paths, which are
+    /// specified in the fleet's runtime configuration, exist. If any listed launch path
+    /// exists, GameLift tries to launch a game server process and waits for the process
+    /// to report ready. Failures in this stage prevent a fleet from moving to
+    /// <code>ACTIVE</code> status. Logs for this stage list the launch paths in the
+    /// runtime configuration and indicate whether each is found. Access the logs by
+    /// using the URL in <i>PreSignedLogUrl</i>.
+    ///
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from
+    /// <code>DOWNLOADING</code> to <code>VALIDATING</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p> FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime
+    /// configuration failed because the executable specified in a launch path does not
+    /// exist on the instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code>
+    /// to <code>BUILDING</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime
+    /// configuration failed because the executable specified in a launch path failed to
+    /// run on the fleet instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code>
+    /// to <code>ACTIVATING</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p> FLEET_ACTIVATION_FAILED - The fleet failed to successfully complete one of
+    /// the steps in the fleet activation process. This event code indicates that the
+    /// game build was successfully downloaded to a fleet instance, built, and
+    /// validated, but was not able to start a server process. Learn more at
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation"> Debug Fleet
+    /// Creation Issues</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_STATE_ACTIVE -- The fleet's status changed from
+    /// <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to
+    /// host game sessions.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>VPC peering events:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been
+    /// established between the VPC for an GameLift fleet and a VPC in your AWS
+    /// account.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed.
+    /// Event details and status information (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A
+    /// common reason for peering failure is that the two VPCs have overlapping CIDR
+    /// blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in
+    /// your AWS account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully
+    /// deleted.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>Spot instance events:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a
+    /// two-minute notification.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>Other fleet events:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>FLEET_SCALING_EVENT -- A change was made to the fleet's capacity settings
+    /// (desired instances, minimum/maximum scaling limits). Event messaging includes
+    /// the new capacity settings.</p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to
+    /// the fleet's game session protection policy setting. Event messaging includes
+    /// both the old and new policy setting. </p>
+    /// </li>
+    /// <li>
+    /// <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p>
+    /// </li>
+    /// <li>
+    /// <p> GENERIC_EVENT -- An unspecified event has occurred.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_code(&self) -> std::option::Option<&crate::model::EventCode> {
+        self.event_code.as_ref()
+    }
+    /// <p>Additional information related to the event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>Location of stored logs with additional detail that is related to the event. This
+    /// is useful for debugging issues. The URL is valid for 15 minutes. You can also access
+    /// fleet creation logs through the GameLift console.</p>
+    pub fn pre_signed_log_url(&self) -> std::option::Option<&str> {
+        self.pre_signed_log_url.as_deref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12789,6 +14884,180 @@ pub struct FleetAttributes {
     /// <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
     pub certificate_configuration: std::option::Option<crate::model::CertificateConfiguration>,
 }
+impl FleetAttributes {
+    /// <p>A unique identifier for the fleet.</p>
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
+        self.fleet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
+    /// value.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+    pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
+        self.fleet_type.as_ref()
+    }
+    /// <p>The EC2 instance type that determines the computing resources of each instance in
+    /// the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See
+    /// <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+    /// for detailed descriptions.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>A human-readable description of the fleet.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.termination_time.as_ref()
+    }
+    /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>NEW</b> -- A new fleet has been defined and desired
+    /// instances is set to 1. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> --
+    /// GameLift is setting up the new fleet, creating new instances with the game build
+    /// or Realtime script and starting server processes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ACTIVE</b> -- Hosts can now accept game
+    /// sessions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ERROR</b> -- An error occurred when downloading,
+    /// validating, building, or activating the fleet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DELETING</b> -- Hosts are responding to a delete
+    /// fleet request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TERMINATED</b> -- The fleet no longer
+    /// exists.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::FleetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A unique identifier for the build resource that is deployed on instances in this fleet.</p>
+    pub fn build_id(&self) -> std::option::Option<&str> {
+        self.build_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift build resource that is deployed on instances in
+    /// this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code>
+    /// value.</p>
+    pub fn build_arn(&self) -> std::option::Option<&str> {
+        self.build_arn.as_deref()
+    }
+    /// <p>A unique identifier for the Realtime script resource that is deployed on instances in this fleet.</p>
+    pub fn script_id(&self) -> std::option::Option<&str> {
+        self.script_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift script resource that is deployed on instances
+    /// in this fleet. In a GameLift script ARN, the resource ID matches the
+    /// <code>ScriptId</code> value.</p>
+    pub fn script_arn(&self) -> std::option::Option<&str> {
+        self.script_arn.as_deref()
+    }
+    /// <p>
+    /// <b>This parameter is no longer used.</b> Server launch paths
+    /// are now defined  using the fleet's <a>RuntimeConfiguration</a> parameter.
+    /// Requests that use this parameter instead continue to be valid.</p>
+    pub fn server_launch_path(&self) -> std::option::Option<&str> {
+        self.server_launch_path.as_deref()
+    }
+    /// <p>
+    /// <b>This parameter is no longer used.</b> Server launch
+    /// parameters are now defined  using the fleet's <a>RuntimeConfiguration</a>
+    /// parameter. Requests that use this parameter instead continue to be valid.</p>
+    pub fn server_launch_parameters(&self) -> std::option::Option<&str> {
+        self.server_launch_parameters.as_deref()
+    }
+    /// <p>
+    /// <b>This parameter is no longer used.</b> Game session log
+    /// paths are now defined using the GameLift server API <code>ProcessReady()</code>
+    /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+    pub fn log_paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_paths.as_deref()
+    }
+    /// <p>The type of game session protection to set on all new instances that are started in
+    /// the fleet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>NoProtection</b> -- The game session can be
+    /// terminated during a scale-down event.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>FullProtection</b> -- If the game session is in an
+    /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+    /// event.</p>
+    /// </li>
+    /// </ul>
+    pub fn new_game_session_protection_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ProtectionPolicy> {
+        self.new_game_session_protection_policy.as_ref()
+    }
+    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is
+    /// determined by the OS of the build or script that is deployed on this fleet.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>The fleet policy that limits the number of game sessions an individual player can
+    /// create over a span of time.</p>
+    pub fn resource_creation_limit_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceCreationLimitPolicy> {
+        self.resource_creation_limit_policy.as_ref()
+    }
+    /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch,
+    /// you can view aggregated metrics for fleets that are in a metric group. A fleet can be
+    /// included in only one metric group at a time.</p>
+    pub fn metric_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.metric_groups.as_deref()
+    }
+    /// <p>A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+    pub fn stopped_actions(&self) -> std::option::Option<&[crate::model::FleetAction]> {
+        self.stopped_actions.as_deref()
+    }
+    /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
+    /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
+    /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
+    /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
+    /// Learn more about using on-box credentials for your game servers at
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+    /// Access external resources from a game server</a>.</p>
+    pub fn instance_role_arn(&self) -> std::option::Option<&str> {
+        self.instance_role_arn.as_deref()
+    }
+    /// <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+    pub fn certificate_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateConfiguration> {
+        self.certificate_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for FleetAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FleetAttributes");
@@ -13368,6 +15637,26 @@ pub struct CertificateConfiguration {
     /// <p> </p>
     pub certificate_type: std::option::Option<crate::model::CertificateType>,
 }
+impl CertificateConfiguration {
+    /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+    /// <p>Valid values include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>GENERATED</b> - Generate a TLS/SSL certificate
+    /// for this fleet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DISABLED</b> - (default) Do not generate a
+    /// TLS/SSL certificate for this fleet. </p>
+    /// </li>
+    /// </ul>
+    /// <p> </p>
+    pub fn certificate_type(&self) -> std::option::Option<&crate::model::CertificateType> {
+        self.certificate_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CertificateConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CertificateConfiguration");
@@ -13576,6 +15865,27 @@ pub struct Ec2InstanceLimit {
     /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
+impl Ec2InstanceLimit {
+    /// <p>The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed
+    /// descriptions. </p>
+    pub fn ec2_instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
+        self.ec2_instance_type.as_ref()
+    }
+    /// <p>The number of instances for the specified type and location that are currently being
+    /// used by the AWS account. </p>
+    pub fn current_instances(&self) -> std::option::Option<i32> {
+        self.current_instances
+    }
+    /// <p>The number of instances that is allowed for the specified instance type and
+    /// location.</p>
+    pub fn instance_limit(&self) -> std::option::Option<i32> {
+        self.instance_limit
+    }
+    /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for Ec2InstanceLimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ec2InstanceLimit");
@@ -13748,6 +16058,25 @@ pub struct GameServerGroupAutoScalingPolicy {
     pub target_tracking_configuration:
         std::option::Option<crate::model::TargetTrackingConfiguration>,
 }
+impl GameServerGroupAutoScalingPolicy {
+    /// <p>Length of time, in seconds, it takes for a new instance to start new game server
+    /// processes and register with GameLift FleetIQ. Specifying a warm-up time can be useful, particularly
+    /// with game servers that take a long time to start up, because it avoids prematurely
+    /// starting new instances. </p>
+    pub fn estimated_instance_warmup(&self) -> std::option::Option<i32> {
+        self.estimated_instance_warmup
+    }
+    /// <p>Settings for a target-based scaling policy applied to Auto Scaling group. These
+    /// settings are used to create a target-based policy that tracks the GameLift FleetIQ metric
+    /// <code>"PercentUtilizedGameServers"</code> and specifies a target value for the
+    /// metric. As player usage changes, the policy triggers to adjust the game server group
+    /// capacity so that the metric returns to the target value. </p>
+    pub fn target_tracking_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetTrackingConfiguration> {
+        self.target_tracking_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GameServerGroupAutoScalingPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GameServerGroupAutoScalingPolicy");
@@ -13841,6 +16170,12 @@ pub struct TargetTrackingConfiguration {
     /// <p>Desired value to use with a game server group target-based scaling policy.  </p>
     pub target_value: std::option::Option<f64>,
 }
+impl TargetTrackingConfiguration {
+    /// <p>Desired value to use with a game server group target-based scaling policy.  </p>
+    pub fn target_value(&self) -> std::option::Option<f64> {
+        self.target_value
+    }
+}
 impl std::fmt::Debug for TargetTrackingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TargetTrackingConfiguration");
@@ -13899,6 +16234,22 @@ pub struct LaunchTemplateSpecification {
     /// default version will be used. With Amazon EC2, you can specify a default version for a
     /// launch template. If none is set, the default is the first version created.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl LaunchTemplateSpecification {
+    /// <p>A unique identifier for an existing EC2 launch template.</p>
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+        self.launch_template_id.as_deref()
+    }
+    /// <p>A readable identifier for an existing EC2 launch template. </p>
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+        self.launch_template_name.as_deref()
+    }
+    /// <p>The version of the EC2 launch template to use. If no version is specified, the
+    /// default version will be used. With Amazon EC2, you can specify a default version for a
+    /// launch template. If none is set, the default is the first version created.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchTemplateSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13990,6 +16341,12 @@ impl LaunchTemplateSpecification {
 pub struct LocationConfiguration {
     /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
+}
+impl LocationConfiguration {
+    /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for LocationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

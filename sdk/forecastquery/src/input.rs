@@ -176,10 +176,7 @@ impl QueryForecastInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_query_forecast(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_query_forecast(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -268,6 +265,43 @@ pub struct QueryForecastInput {
     /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
     /// request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl QueryForecastInput {
+    /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+    /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
+    /// (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
+    /// (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the
+    /// forecast for <code>client_21</code> in the electricity usage dataset, specify the
+    /// following:</p>
+    /// <p>
+    /// <code>{"item_id" : "client_21"}</code>
+    /// </p>
+    ///
+    ///
+    /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.filters.as_ref()
+    }
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for QueryForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

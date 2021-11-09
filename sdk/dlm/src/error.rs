@@ -970,6 +970,20 @@ pub struct ResourceNotFoundException {
     /// <p>Value is a list of resource IDs that were not found.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Value is the type of resource that was not found.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Value is a list of resource IDs that were not found.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -1089,6 +1103,16 @@ pub struct LimitExceededException {
     /// <p>Value is the type of resource for which a limit was exceeded.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Value is the type of resource for which a limit was exceeded.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -1188,6 +1212,20 @@ pub struct InvalidRequestException {
     pub required_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The request included parameters that cannot be provided together.</p>
     pub mutually_exclusive_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl InvalidRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The request omitted one or more required parameters.</p>
+    pub fn required_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.required_parameters.as_deref()
+    }
+    /// <p>The request included parameters that cannot be provided together.</p>
+    pub fn mutually_exclusive_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.mutually_exclusive_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1318,6 +1356,12 @@ pub struct InternalServerException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl InternalServerException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

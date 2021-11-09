@@ -6,6 +6,12 @@ pub struct UpdateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
+impl UpdateWebhookOutput {
+    /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
+        self.webhook.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWebhookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWebhookOutput");
@@ -54,6 +60,13 @@ pub struct UpdateDomainAssociationOutput {
     /// <p> Describes a domain association, which associates a custom domain with an Amplify app.
     /// </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+}
+impl UpdateDomainAssociationOutput {
+    /// <p> Describes a domain association, which associates a custom domain with an Amplify app.
+    /// </p>
+    pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
+        self.domain_association.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +121,12 @@ pub struct UpdateBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub branch: std::option::Option<crate::model::Branch>,
 }
+impl UpdateBranchOutput {
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
+        self.branch.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBranchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBranchOutput");
@@ -155,6 +174,12 @@ impl UpdateBranchOutput {
 pub struct UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
     pub app: std::option::Option<crate::model::App>,
+}
+impl UpdateAppOutput {
+    /// <p> Represents the updated Amplify app. </p>
+    pub fn app(&self) -> std::option::Option<&crate::model::App> {
+        self.app.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -262,6 +287,12 @@ pub struct StopJobOutput {
     /// <p> The summary for the job. </p>
     pub job_summary: std::option::Option<crate::model::JobSummary>,
 }
+impl StopJobOutput {
+    /// <p> The summary for the job. </p>
+    pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
+        self.job_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for StopJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopJobOutput");
@@ -313,6 +344,12 @@ pub struct StartJobOutput {
     /// <p> The summary for the job. </p>
     pub job_summary: std::option::Option<crate::model::JobSummary>,
 }
+impl StartJobOutput {
+    /// <p> The summary for the job. </p>
+    pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
+        self.job_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for StartJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartJobOutput");
@@ -363,6 +400,12 @@ impl StartJobOutput {
 pub struct StartDeploymentOutput {
     /// <p> The summary for the job. </p>
     pub job_summary: std::option::Option<crate::model::JobSummary>,
+}
+impl StartDeploymentOutput {
+    /// <p> The summary for the job. </p>
+    pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
+        self.job_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for StartDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -417,6 +460,17 @@ pub struct ListWebhooksOutput {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
     /// its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListWebhooksOutput {
+    /// <p> A list of webhooks. </p>
+    pub fn webhooks(&self) -> std::option::Option<&[crate::model::Webhook]> {
+        self.webhooks.as_deref()
+    }
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
+    /// its value in another request to retrieve more entries. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWebhooksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -491,6 +545,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -556,6 +619,17 @@ pub struct ListJobsOutput {
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass
     /// its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJobsOutput {
+    /// <p> The result structure for the list job result request. </p>
+    pub fn job_summaries(&self) -> std::option::Option<&[crate::model::JobSummary]> {
+        self.job_summaries.as_deref()
+    }
+    /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass
+    /// its value in another request to retrieve more entries. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -631,6 +705,17 @@ pub struct ListDomainAssociationsOutput {
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its
     /// value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDomainAssociationsOutput {
+    /// <p> A list of domain associations. </p>
+    pub fn domain_associations(&self) -> std::option::Option<&[crate::model::DomainAssociation]> {
+        self.domain_associations.as_deref()
+    }
+    /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its
+    /// value in another request to retrieve more entries. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDomainAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,6 +796,17 @@ pub struct ListBranchesOutput {
     /// value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBranchesOutput {
+    /// <p> A list of branches for an Amplify app. </p>
+    pub fn branches(&self) -> std::option::Option<&[crate::model::Branch]> {
+        self.branches.as_deref()
+    }
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
+    /// value in another request to retrieve more entries. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBranchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBranchesOutput");
@@ -785,6 +881,17 @@ pub struct ListBackendEnvironmentsOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
     /// value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBackendEnvironmentsOutput {
+    /// <p> The list of backend environments for an Amplify app. </p>
+    pub fn backend_environments(&self) -> std::option::Option<&[crate::model::BackendEnvironment]> {
+        self.backend_environments.as_deref()
+    }
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
+    /// value in another request to retrieve more entries. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBackendEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -865,6 +972,17 @@ pub struct ListArtifactsOutput {
     /// value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListArtifactsOutput {
+    /// <p> A list of artifacts. </p>
+    pub fn artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+        self.artifacts.as_deref()
+    }
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
+    /// value in another request to retrieve more entries. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListArtifactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListArtifactsOutput");
@@ -941,6 +1059,18 @@ pub struct ListAppsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppsOutput {
+    /// <p> A list of Amplify apps. </p>
+    pub fn apps(&self) -> std::option::Option<&[crate::model::App]> {
+        self.apps.as_deref()
+    }
+    /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the
+    /// pagination token is returned in a result. Pass its value in here to list more projects.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppsOutput");
@@ -1015,6 +1145,12 @@ pub struct GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
+impl GetWebhookOutput {
+    /// <p> Describes the structure of a webhook. </p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
+        self.webhook.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWebhookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWebhookOutput");
@@ -1063,6 +1199,12 @@ pub struct GetJobOutput {
     /// <p> Describes an execution job for an Amplify app. </p>
     pub job: std::option::Option<crate::model::Job>,
 }
+impl GetJobOutput {
+    /// <p> Describes an execution job for an Amplify app. </p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobOutput");
@@ -1109,6 +1251,13 @@ pub struct GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain
     /// with an Amplify app. </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+}
+impl GetDomainAssociationOutput {
+    /// <p> Describes the structure of a domain association, which associates a custom domain
+    /// with an Amplify app. </p>
+    pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
+        self.domain_association.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDomainAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1163,6 +1312,12 @@ pub struct GetBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub branch: std::option::Option<crate::model::Branch>,
 }
+impl GetBranchOutput {
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
+        self.branch.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBranchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBranchOutput");
@@ -1210,6 +1365,12 @@ impl GetBranchOutput {
 pub struct GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+}
+impl GetBackendEnvironmentOutput {
+    /// <p> Describes the backend environment for an Amplify app. </p>
+    pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
+        self.backend_environment.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBackendEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1263,6 +1424,16 @@ pub struct GetArtifactUrlOutput {
     pub artifact_id: std::option::Option<std::string::String>,
     /// <p> The presigned URL for the artifact. </p>
     pub artifact_url: std::option::Option<std::string::String>,
+}
+impl GetArtifactUrlOutput {
+    /// <p> The unique ID for an artifact. </p>
+    pub fn artifact_id(&self) -> std::option::Option<&str> {
+        self.artifact_id.as_deref()
+    }
+    /// <p> The presigned URL for the artifact. </p>
+    pub fn artifact_url(&self) -> std::option::Option<&str> {
+        self.artifact_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetArtifactUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1326,6 +1497,13 @@ pub struct GetAppOutput {
     /// hosting an Amplify app. </p>
     pub app: std::option::Option<crate::model::App>,
 }
+impl GetAppOutput {
+    /// <p> Represents the different branches of a repository for building, deploying, and
+    /// hosting an Amplify app. </p>
+    pub fn app(&self) -> std::option::Option<&crate::model::App> {
+        self.app.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppOutput");
@@ -1373,6 +1551,12 @@ impl GetAppOutput {
 pub struct GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
     pub log_url: std::option::Option<std::string::String>,
+}
+impl GenerateAccessLogsOutput {
+    /// <p> The pre-signed URL for the requested access logs. </p>
+    pub fn log_url(&self) -> std::option::Option<&str> {
+        self.log_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GenerateAccessLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1422,6 +1606,12 @@ pub struct DeleteWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
+impl DeleteWebhookOutput {
+    /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
+        self.webhook.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteWebhookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWebhookOutput");
@@ -1469,6 +1659,12 @@ impl DeleteWebhookOutput {
 pub struct DeleteJobOutput {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     pub job_summary: std::option::Option<crate::model::JobSummary>,
+}
+impl DeleteJobOutput {
+    /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
+        self.job_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1521,6 +1717,13 @@ pub struct DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app.
     /// </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+}
+impl DeleteDomainAssociationOutput {
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app.
+    /// </p>
+    pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
+        self.domain_association.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1575,6 +1778,12 @@ pub struct DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub branch: std::option::Option<crate::model::Branch>,
 }
+impl DeleteBranchOutput {
+    /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
+        self.branch.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteBranchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBranchOutput");
@@ -1622,6 +1831,12 @@ impl DeleteBranchOutput {
 pub struct DeleteBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+}
+impl DeleteBackendEnvironmentOutput {
+    /// <p> Describes the backend environment for an Amplify app. </p>
+    pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
+        self.backend_environment.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteBackendEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1675,6 +1890,13 @@ pub struct DeleteAppOutput {
     /// hosting an Amplify app. </p>
     pub app: std::option::Option<crate::model::App>,
 }
+impl DeleteAppOutput {
+    /// <p> Represents the different branches of a repository for building, deploying, and
+    /// hosting an Amplify app. </p>
+    pub fn app(&self) -> std::option::Option<&crate::model::App> {
+        self.app.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppOutput");
@@ -1722,6 +1944,12 @@ impl DeleteAppOutput {
 pub struct CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
+}
+impl CreateWebhookOutput {
+    /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
+        self.webhook.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateWebhookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1771,6 +1999,13 @@ pub struct CreateDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain
     /// with an Amplify app. </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+}
+impl CreateDomainAssociationOutput {
+    /// <p> Describes the structure of a domain association, which associates a custom domain
+    /// with an Amplify app. </p>
+    pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
+        self.domain_association.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDomainAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1831,6 +2066,25 @@ pub struct CreateDeploymentOutput {
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this
     /// <code>zipUploadUrl</code> is returned. </p>
     pub zip_upload_url: std::option::Option<std::string::String>,
+}
+impl CreateDeploymentOutput {
+    /// <p> The job ID for this deployment. will supply to start deployment api. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p> When the <code>fileMap</code> argument is provided in the request,
+    /// <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+    pub fn file_upload_urls(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.file_upload_urls.as_ref()
+    }
+    /// <p> When the <code>fileMap</code> argument is not provided in the request, this
+    /// <code>zipUploadUrl</code> is returned. </p>
+    pub fn zip_upload_url(&self) -> std::option::Option<&str> {
+        self.zip_upload_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1931,6 +2185,13 @@ pub struct CreateBranchOutput {
     /// branch. </p>
     pub branch: std::option::Option<crate::model::Branch>,
 }
+impl CreateBranchOutput {
+    /// <p> Describes the branch for an Amplify app, which maps to a third-party repository
+    /// branch. </p>
+    pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
+        self.branch.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBranchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBranchOutput");
@@ -1980,6 +2241,12 @@ impl CreateBranchOutput {
 pub struct CreateBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+}
+impl CreateBackendEnvironmentOutput {
+    /// <p> Describes the backend environment for an Amplify app. </p>
+    pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
+        self.backend_environment.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBackendEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2032,6 +2299,13 @@ pub struct CreateAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and
     /// hosting an Amplify app. </p>
     pub app: std::option::Option<crate::model::App>,
+}
+impl CreateAppOutput {
+    /// <p> Represents the different branches of a repository for building, deploying, and
+    /// hosting an Amplify app. </p>
+    pub fn app(&self) -> std::option::Option<&crate::model::App> {
+        self.app.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

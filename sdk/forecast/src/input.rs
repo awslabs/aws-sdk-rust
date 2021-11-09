@@ -253,10 +253,7 @@ impl CreateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -527,10 +524,7 @@ impl CreateDatasetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dataset_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_dataset_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -918,10 +912,7 @@ impl CreateDatasetImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_dataset_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1186,10 +1177,8 @@ impl CreateForecastInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_forecast(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_forecast(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1449,10 +1438,7 @@ impl CreateForecastExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_forecast_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2058,10 +2044,7 @@ impl CreatePredictorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_predictor(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_predictor(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2333,7 +2316,7 @@ impl CreatePredictorBacktestExportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_predictor_backtest_export_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_predictor_backtest_export_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2483,10 +2466,7 @@ impl DeleteDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2639,10 +2619,7 @@ impl DeleteDatasetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_dataset_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_dataset_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2797,10 +2774,7 @@ impl DeleteDatasetImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_dataset_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2949,10 +2923,8 @@ impl DeleteForecastInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_forecast(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_forecast(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3108,10 +3080,7 @@ impl DeleteForecastExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_forecast_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3264,10 +3233,7 @@ impl DeletePredictorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_predictor(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_predictor(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3424,7 +3390,7 @@ impl DeletePredictorBacktestExportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_predictor_backtest_export_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_predictor_backtest_export_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3577,10 +3543,7 @@ impl DeleteResourceTreeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_tree(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_tree(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3730,10 +3693,7 @@ impl DescribeDatasetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3886,10 +3846,9 @@ impl DescribeDatasetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_dataset_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4045,10 +4004,7 @@ impl DescribeDatasetImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dataset_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4198,10 +4154,7 @@ impl DescribeForecastInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_forecast(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_forecast(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4357,10 +4310,7 @@ impl DescribeForecastExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_forecast_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4513,10 +4463,7 @@ impl DescribePredictorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_predictor(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_predictor(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4673,7 +4620,7 @@ impl DescribePredictorBacktestExportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_predictor_backtest_export_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_predictor_backtest_export_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4827,10 +4774,7 @@ impl GetAccuracyMetricsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_accuracy_metrics(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_accuracy_metrics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4996,10 +4940,7 @@ impl ListDatasetGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_dataset_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_dataset_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5246,10 +5187,7 @@ impl ListDatasetImportJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_dataset_import_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5414,10 +5352,7 @@ impl ListDatasetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5666,10 +5601,7 @@ impl ListForecastExportJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_forecast_export_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5911,10 +5843,7 @@ impl ListForecastsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_forecasts(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_forecasts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6150,7 +6079,7 @@ impl ListPredictorBacktestExportJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_predictor_backtest_export_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_predictor_backtest_export_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6393,10 +6322,8 @@ impl ListPredictorsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_predictors(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_predictors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6546,10 +6473,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6704,10 +6630,7 @@ impl StopResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_resource(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6925,10 +6848,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7098,10 +7018,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7277,10 +7194,7 @@ impl UpdateDatasetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_dataset_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_dataset_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7352,6 +7266,17 @@ pub struct UpdateDatasetGroupInput {
     /// group.</p>
     pub dataset_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateDatasetGroupInput {
+    /// <p>The ARN of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
+    /// group.</p>
+    pub fn dataset_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.dataset_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDatasetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDatasetGroupInput");
@@ -7369,6 +7294,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7412,6 +7347,40 @@ pub struct TagResourceInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -7431,6 +7400,15 @@ pub struct StopResourceInput {
     /// <code>ForecastExportJobArn</code>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl StopResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
+    /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
+    /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
+    /// <code>ForecastExportJobArn</code>. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StopResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopResourceInput");
@@ -7445,6 +7423,12 @@ impl std::fmt::Debug for StopResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7495,6 +7479,50 @@ pub struct ListPredictorsInput {
     /// </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListPredictorsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+    /// or exclude the predictors that match the statement from the list, respectively. The match
+    /// statement consists of a key and a value.</p>
+    /// <p>
+    /// <b>Filter properties</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+    /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
+    /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+    /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Value</code> - The value to match.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
+    /// <p>
+    /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
+    /// ]</code>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPredictorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPredictorsInput");
@@ -7541,6 +7569,46 @@ pub struct ListPredictorBacktestExportJobsInput {
     /// </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListPredictorBacktestExportJobsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a NextToken.
+    /// To retrieve the next set of results, use the token in the next request. Tokens expire after
+    /// 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The
+    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
+    /// include or exclude the predictor backtest export jobs that match the statement from the
+    /// list. The match statement consists of a key and a value.</p>
+    /// <p>
+    /// <b>Filter properties</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Condition</code> - The condition to apply. Valid values are
+    /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
+    /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
+    /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+    /// <code>PredictorArn</code> and <code>Status</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Value</code> - The value to match.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPredictorBacktestExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7592,6 +7660,50 @@ pub struct ListForecastsInput {
     /// ]</code>
     /// </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListForecastsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+    /// or exclude the forecasts that match the statement from the list, respectively. The match
+    /// statement consists of a key and a value.</p>
+    /// <p>
+    /// <b>Filter properties</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+    /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
+    /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+    /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Value</code> - The value to match.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
+    /// <p>
+    /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
+    /// ]</code>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListForecastsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7646,6 +7758,52 @@ pub struct ListForecastExportJobsInput {
     /// </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListForecastExportJobsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+    /// or exclude the forecast export jobs that match the statement from the list, respectively. The
+    /// match statement consists of a key and a value.</p>
+    /// <p>
+    /// <b>Filter properties</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+    /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
+    /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
+    /// <code>IS_NOT</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+    /// <code>ForecastArn</code> and <code>Status</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Value</code> - The value to match.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named
+    /// <i>electricityforecast</i>, specify the following filter:</p>
+    /// <p>
+    /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
+    /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListForecastExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListForecastExportJobsInput");
@@ -7666,6 +7824,18 @@ pub struct ListDatasetsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDatasetsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDatasetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7718,6 +7888,51 @@ pub struct ListDatasetImportJobsInput {
     /// </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListDatasetImportJobsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+    /// or exclude the datasets that match the statement from the list, respectively. The match
+    /// statement consists of a key and a value.</p>
+    /// <p>
+    /// <b>Filter properties</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+    /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
+    /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+    /// <code>DatasetArn</code> and <code>Status</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Value</code> - The value to match.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
+    /// following filter:</p>
+    /// <p>
+    /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
+    /// ]</code>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetImportJobsInput");
@@ -7739,6 +7954,18 @@ pub struct ListDatasetGroupsInput {
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDatasetGroupsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a
+    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+    /// request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatasetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetGroupsInput");
@@ -7755,6 +7982,12 @@ pub struct GetAccuracyMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
 }
+impl GetAccuracyMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccuracyMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccuracyMetricsInput");
@@ -7769,6 +8002,12 @@ impl std::fmt::Debug for GetAccuracyMetricsInput {
 pub struct DescribePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
+}
+impl DescribePredictorBacktestExportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    pub fn predictor_backtest_export_job_arn(&self) -> std::option::Option<&str> {
+        self.predictor_backtest_export_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePredictorBacktestExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7788,6 +8027,12 @@ pub struct DescribePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
 }
+impl DescribePredictorInput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePredictorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePredictorInput");
@@ -7802,6 +8047,12 @@ impl std::fmt::Debug for DescribePredictorInput {
 pub struct DescribeForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
+}
+impl DescribeForecastExportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    pub fn forecast_export_job_arn(&self) -> std::option::Option<&str> {
+        self.forecast_export_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeForecastExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7818,6 +8069,12 @@ pub struct DescribeForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub forecast_arn: std::option::Option<std::string::String>,
 }
+impl DescribeForecastInput {
+    /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeForecastInput");
@@ -7832,6 +8089,12 @@ impl std::fmt::Debug for DescribeForecastInput {
 pub struct DescribeDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
+}
+impl DescribeDatasetImportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7848,6 +8111,12 @@ pub struct DescribeDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
+impl DescribeDatasetGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetGroupInput");
@@ -7862,6 +8131,12 @@ impl std::fmt::Debug for DescribeDatasetGroupInput {
 pub struct DescribeDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
+}
+impl DescribeDatasetInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7879,6 +8154,13 @@ pub struct DeleteResourceTreeInput {
     /// of the parent resource will also be deleted.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DeleteResourceTreeInput {
+    /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
+    /// of the parent resource will also be deleted.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourceTreeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourceTreeInput");
@@ -7893,6 +8175,12 @@ impl std::fmt::Debug for DeleteResourceTreeInput {
 pub struct DeletePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
+}
+impl DeletePredictorBacktestExportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
+    pub fn predictor_backtest_export_job_arn(&self) -> std::option::Option<&str> {
+        self.predictor_backtest_export_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePredictorBacktestExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7912,6 +8200,12 @@ pub struct DeletePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
 }
+impl DeletePredictorInput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePredictorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePredictorInput");
@@ -7926,6 +8220,12 @@ impl std::fmt::Debug for DeletePredictorInput {
 pub struct DeleteForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
+}
+impl DeleteForecastExportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
+    pub fn forecast_export_job_arn(&self) -> std::option::Option<&str> {
+        self.forecast_export_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteForecastExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7942,6 +8242,12 @@ pub struct DeleteForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
     pub forecast_arn: std::option::Option<std::string::String>,
 }
+impl DeleteForecastInput {
+    /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteForecastInput");
@@ -7956,6 +8262,12 @@ impl std::fmt::Debug for DeleteForecastInput {
 pub struct DeleteDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
+}
+impl DeleteDatasetImportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDatasetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7972,6 +8284,12 @@ pub struct DeleteDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetGroupInput");
@@ -7986,6 +8304,12 @@ impl std::fmt::Debug for DeleteDatasetGroupInput {
 pub struct DeleteDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
+}
+impl DeleteDatasetInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8039,6 +8363,56 @@ pub struct CreatePredictorBacktestExportJobInput {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreatePredictorBacktestExportJobInput {
+    /// <p>The name for the backtest export job.</p>
+    pub fn predictor_backtest_export_job_name(&self) -> std::option::Option<&str> {
+        self.predictor_backtest_export_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
+    /// of a key and an optional value, both of which you define. Tag keys and values are case
+    /// sensitive.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique and each tag key must have one
+    /// value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum number of tags per resource: 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
+    /// - = . _ : / @. If your tagging schema is used across other services and resources,
+    /// the character restrictions of those services also apply. </p>
+    /// </li>
+    /// <li>
+    /// <p>Key prefixes cannot include any upper or lowercase combination of
+    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
+    /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
+    /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+    /// prefix of <code>aws</code> do not count against your tags per resource limit. You
+    /// cannot edit or delete tag keys with this prefix.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePredictorBacktestExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8201,6 +8575,186 @@ pub struct CreatePredictorInput {
     /// <p>The accuracy metric used to optimize the predictor.</p>
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
 }
+impl CreatePredictorInput {
+    /// <p>A name for the predictor.</p>
+    pub fn predictor_name(&self) -> std::option::Option<&str> {
+        self.predictor_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
+    /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+    /// <p class="title">
+    /// <b>Supported algorithms:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>arn:aws:forecast:::algorithm/ETS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>arn:aws:forecast:::algorithm/NPTS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>arn:aws:forecast:::algorithm/Prophet</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+        self.algorithm_arn.as_deref()
+    }
+    /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
+    /// horizon is also called the prediction length.</p>
+    /// <p>For example, if you configure a dataset for daily data collection (using the
+    /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
+    /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+    /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
+    /// TARGET_TIME_SERIES dataset length.</p>
+    pub fn forecast_horizon(&self) -> std::option::Option<i32> {
+        self.forecast_horizon
+    }
+    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+    /// Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+    /// the mean forecast with <code>mean</code>.
+    /// </p>
+    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.forecast_types.as_deref()
+    }
+    /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
+    /// provides and chooses the best algorithm and configuration for your training dataset.</p>
+    /// <p>The default value is <code>false</code>. In this case, you are required to specify an
+    /// algorithm.</p>
+    /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
+    /// is a good option if you aren't sure which algorithm is suitable for your training data. In
+    /// this case, <code>PerformHPO</code> must be false.</p>
+    pub fn perform_auto_ml(&self) -> std::option::Option<bool> {
+        self.perform_auto_ml
+    }
+    /// <note>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+    /// Contact AWS Support or your account manager to learn more about access privileges.
+    /// </p>
+    /// </note>
+    /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
+    /// To apply an AutoML strategy that minimizes training time, use
+    /// <code>LatencyOptimized</code>.</p>
+    /// <p>This parameter is only valid for predictors trained using AutoML.</p>
+    pub fn auto_ml_override_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoMlOverrideStrategy> {
+        self.auto_ml_override_strategy.as_ref()
+    }
+    /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
+    /// values for your training data. The process of performing HPO is known as running a
+    /// hyperparameter tuning job.</p>
+    /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
+    /// hyperparameter values from the chosen algorithm.</p>
+    /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
+    /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
+    /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
+    /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
+    /// and <code>PerformAutoML</code> must be false.</p>
+    /// <p>The following algorithms support HPO:</p>
+    /// <ul>
+    /// <li>
+    /// <p>DeepAR+</p>
+    /// </li>
+    /// <li>
+    /// <p>CNN-QR</p>
+    /// </li>
+    /// </ul>
+    pub fn perform_hpo(&self) -> std::option::Option<bool> {
+        self.perform_hpo
+    }
+    /// <p>The hyperparameters to override for model training. The hyperparameters that you can
+    /// override are listed in the individual algorithms. For the list of supported algorithms, see
+    /// <a>aws-forecast-choosing-recipes</a>.</p>
+    pub fn training_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.training_parameters.as_ref()
+    }
+    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
+    /// evaluates a predictor by splitting a dataset into training data and testing data. The
+    /// evaluation parameters define how to perform the split and the number of iterations.</p>
+    pub fn evaluation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::EvaluationParameters> {
+        self.evaluation_parameters.as_ref()
+    }
+    /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
+    /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
+    /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+    /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
+    /// true.</p>
+    pub fn hpo_config(&self) -> std::option::Option<&crate::model::HyperParameterTuningJobConfig> {
+        self.hpo_config.as_ref()
+    }
+    /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The featurization configuration.</p>
+    pub fn featurization_config(&self) -> std::option::Option<&crate::model::FeaturizationConfig> {
+        self.featurization_config.as_ref()
+    }
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+    /// the key.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
+    /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The accuracy metric used to optimize the predictor.</p>
+    pub fn optimization_metric(&self) -> std::option::Option<&crate::model::OptimizationMetric> {
+        self.optimization_metric.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePredictorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePredictorInput");
@@ -8264,6 +8818,52 @@ pub struct CreateForecastExportJobInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateForecastExportJobInput {
+    /// <p>The name for the forecast export job.</p>
+    pub fn forecast_export_job_name(&self) -> std::option::Option<&str> {
+        self.forecast_export_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
+    /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
+    /// bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
+    /// IAM role must allow Amazon Forecast permission to access the key.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateForecastExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateForecastExportJobInput");
@@ -8315,6 +8915,52 @@ pub struct CreateForecastInput {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateForecastInput {
+    /// <p>A name for the forecast.</p>
+    pub fn forecast_name(&self) -> std::option::Option<&str> {
+        self.forecast_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+    /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
+    /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
+    /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
+    /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+    /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+    pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.forecast_types.as_deref()
+    }
+    /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8411,6 +9057,103 @@ pub struct CreateDatasetImportJobInput {
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDatasetImportJobInput {
+    /// <p>The name for the dataset import job. We recommend including the current timestamp in the
+    /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
+    /// <code>ResourceAlreadyExistsException</code> exception.</p>
+    pub fn dataset_import_job_name(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
+    /// to.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
+    /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
+    /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
+    /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the
+    /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
+    /// supported</p>
+    /// <ul>
+    /// <li>
+    /// <p>"yyyy-MM-dd"</p>
+    /// <p>For the following data frequencies: Y, M, W, and D</p>
+    /// </li>
+    /// <li>
+    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
+    /// M, W, and D</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
+    /// HH:mm:ss".</p>
+    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+        self.timestamp_format.as_deref()
+    }
+    /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
+    /// with all timestamps within a single time zone, or if all timestamps are normalized to a
+    /// single time zone. </p>
+    /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
+    /// API</a> for a complete list of valid time zone names.</p>
+    pub fn time_zone(&self) -> std::option::Option<&str> {
+        self.time_zone.as_deref()
+    }
+    /// <p>Automatically derive time zone information from the geolocation attribute. This option
+    /// is ideal for datasets that contain timestamps in multiple time zones and those
+    /// timestamps are expressed in local time.</p>
+    pub fn use_geolocation_for_time_zone(&self) -> bool {
+        self.use_geolocation_for_time_zone
+    }
+    /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
+    /// one of two ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
+    /// </li>
+    /// </ul>
+    pub fn geolocation_format(&self) -> std::option::Option<&str> {
+        self.geolocation_format.as_deref()
+    }
+    /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetImportJobInput");
@@ -8473,6 +9216,56 @@ pub struct CreateDatasetGroupInput {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDatasetGroupInput {
+    /// <p>A name for the dataset group.</p>
+    pub fn dataset_group_name(&self) -> std::option::Option<&str> {
+        self.dataset_group_name.as_deref()
+    }
+    /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
+    /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
+    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
+    /// that must be present in training data that you import to a dataset. For example, if you choose
+    /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+    /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+    /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
+    /// information, see <a>howitworks-datasets-groups</a>.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
+    /// dataset group.</p>
+    pub fn dataset_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.dataset_arns.as_deref()
+    }
+    /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8541,6 +9334,74 @@ pub struct CreateDatasetInput {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDatasetInput {
+    /// <p>A name for the dataset.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
+    /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
+    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
+    /// that must be present in the training data that you import to the dataset. For example, if you
+    /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+    /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
+    /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+    /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&crate::model::DatasetType> {
+        self.dataset_type.as_ref()
+    }
+    /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
+    /// datasets.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
+    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
+    /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
+    pub fn data_frequency(&self) -> std::option::Option<&str> {
+        self.data_frequency.as_deref()
+    }
+    /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
+    /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
+    /// determine the minimum required fields in your training data. For information about the
+    /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
+    pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
+        self.schema.as_ref()
+    }
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+    /// the key.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
+    /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

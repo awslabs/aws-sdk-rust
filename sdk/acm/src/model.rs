@@ -14,6 +14,15 @@ pub struct CertificateOptions {
     pub certificate_transparency_logging_preference:
         std::option::Option<crate::model::CertificateTransparencyLoggingPreference>,
 }
+impl CertificateOptions {
+    /// <p>You can opt out of certificate transparency logging by specifying the
+    /// <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
+    pub fn certificate_transparency_logging_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateTransparencyLoggingPreference> {
+        self.certificate_transparency_logging_preference.as_ref()
+    }
+}
 impl std::fmt::Debug for CertificateOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CertificateOptions");
@@ -132,6 +141,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -217,6 +236,38 @@ pub struct DomainValidationOption {
     /// </li>
     /// </ul>
     pub validation_domain: std::option::Option<std::string::String>,
+}
+impl DomainValidationOption {
+    /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The domain name that you want ACM to use to send you validation emails. This domain name
+    /// is the suffix of the email addresses that you want ACM to use. This must be the same as the
+    /// <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For
+    /// example, if you request a certificate for <code>testing.example.com</code>, you can specify
+    /// <code>example.com</code> for this value. In that case, ACM sends domain validation emails
+    /// to the following five addresses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>admin@example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>administrator@example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>hostmaster@example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>postmaster@example.com</p>
+    /// </li>
+    /// <li>
+    /// <p>webmaster@example.com</p>
+    /// </li>
+    /// </ul>
+    pub fn validation_domain(&self) -> std::option::Option<&str> {
+        self.validation_domain.as_deref()
+    }
 }
 impl std::fmt::Debug for DomainValidationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -385,6 +436,15 @@ pub struct ExpiryEventsConfiguration {
     /// expiration.</p>
     pub days_before_expiry: std::option::Option<i32>,
 }
+impl ExpiryEventsConfiguration {
+    /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating
+    /// <code>EventBridge</code> events. ACM sends one event per day per certificate until the
+    /// certificate expires. By default, accounts receive events starting 45 days before certificate
+    /// expiration.</p>
+    pub fn days_before_expiry(&self) -> std::option::Option<i32> {
+        self.days_before_expiry
+    }
+}
 impl std::fmt::Debug for ExpiryEventsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExpiryEventsConfiguration");
@@ -448,6 +508,23 @@ pub struct CertificateSummary {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the
     /// certificate.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl CertificateSummary {
+    /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
+    ///
+    /// <p>
+    /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    ///
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the
+    /// certificate.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CertificateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -536,6 +613,25 @@ pub struct Filters {
     /// ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code>
     /// certificates.</p>
     pub key_types: std::option::Option<std::vec::Vec<crate::model::KeyAlgorithm>>,
+}
+impl Filters {
+    /// <p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>
+    pub fn extended_key_usage(&self) -> std::option::Option<&[crate::model::ExtendedKeyUsageName]> {
+        self.extended_key_usage.as_deref()
+    }
+    /// <p>Specify one or more <a>KeyUsage</a> extension values.</p>
+    pub fn key_usage(&self) -> std::option::Option<&[crate::model::KeyUsageName]> {
+        self.key_usage.as_deref()
+    }
+    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
+    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code>
+    /// certificates that have at least one domain. To return other certificate types, provide the
+    /// desired type signatures in a comma-separated list. For example, <code>"keyTypes":
+    /// ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code>
+    /// certificates.</p>
+    pub fn key_types(&self) -> std::option::Option<&[crate::model::KeyAlgorithm]> {
+        self.key_types.as_deref()
+    }
 }
 impl std::fmt::Debug for Filters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1115,6 +1211,149 @@ pub struct CertificateDetail {
     /// maliciously issued. A browser might respond to certificate that has not been logged by showing
     /// an error message. The logs are cryptographically secure. </p>
     pub options: std::option::Option<crate::model::CertificateOptions>,
+}
+impl CertificateDetail {
+    /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The fully qualified domain name for the certificate, such as www.example.com or
+    /// example.com.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>One or more domain names (subject alternative names) included in the certificate. This
+    /// list contains the domain names that are bound to the public key that is contained in the
+    /// certificate. The subject alternative names include the canonical domain name (CN) of the
+    /// certificate and additional domain names that can be used to connect to the website. </p>
+    pub fn subject_alternative_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.subject_alternative_names.as_deref()
+    }
+    /// <p>Contains information about the initial validation of each domain name that occurs as a
+    /// result of the <a>RequestCertificate</a> request. This field exists only when the
+    /// certificate type is <code>AMAZON_ISSUED</code>. </p>
+    pub fn domain_validation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainValidation]> {
+        self.domain_validation_options.as_deref()
+    }
+    /// <p>The serial number of the certificate.</p>
+    pub fn serial(&self) -> std::option::Option<&str> {
+        self.serial.as_deref()
+    }
+    /// <p>The name of the entity that is associated with the public key contained in the
+    /// certificate.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The name of the certificate authority that issued and signed the certificate.</p>
+    pub fn issuer(&self) -> std::option::Option<&str> {
+        self.issuer.as_deref()
+    }
+    /// <p>The time at which the certificate was requested.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the certificate was issued. This value exists only when the certificate
+    /// type is <code>AMAZON_ISSUED</code>. </p>
+    pub fn issued_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.issued_at.as_ref()
+    }
+    /// <p>The date and time at which the certificate was imported. This value exists only when the
+    /// certificate type is <code>IMPORTED</code>. </p>
+    pub fn imported_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.imported_at.as_ref()
+    }
+    /// <p>The status of the certificate.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time at which the certificate was revoked. This value exists only when the certificate
+    /// status is <code>REVOKED</code>. </p>
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.revoked_at.as_ref()
+    }
+    /// <p>The reason the certificate was revoked. This value exists only when the certificate status
+    /// is <code>REVOKED</code>. </p>
+    pub fn revocation_reason(&self) -> std::option::Option<&crate::model::RevocationReason> {
+        self.revocation_reason.as_ref()
+    }
+    /// <p>The time before which the certificate is not valid.</p>
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_before.as_ref()
+    }
+    /// <p>The time after which the certificate is not valid.</p>
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_after.as_ref()
+    }
+    /// <p>The algorithm that was used to generate the public-private key pair.</p>
+    pub fn key_algorithm(&self) -> std::option::Option<&crate::model::KeyAlgorithm> {
+        self.key_algorithm.as_ref()
+    }
+    /// <p>The algorithm that was used to sign the certificate.</p>
+    pub fn signature_algorithm(&self) -> std::option::Option<&str> {
+        self.signature_algorithm.as_deref()
+    }
+    /// <p>A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can
+    /// be used by multiple Amazon Web Services resources. </p>
+    pub fn in_use_by(&self) -> std::option::Option<&[std::string::String]> {
+        self.in_use_by.as_deref()
+    }
+    /// <p>The reason the certificate request failed. This value exists only when the certificate
+    /// status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate Request
+    /// Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
+    pub fn failure_reason(&self) -> std::option::Option<&crate::model::FailureReason> {
+        self.failure_reason.as_ref()
+    }
+    /// <p>The source of the certificate. For certificates provided by ACM, this value is
+    /// <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide
+    /// <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+    /// imported certificates. For more information about the differences between certificates that
+    /// you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+    /// <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This field
+    /// exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+    pub fn renewal_summary(&self) -> std::option::Option<&crate::model::RenewalSummary> {
+        self.renewal_summary.as_ref()
+    }
+    /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that
+    /// identifies the purpose of the public key contained in the certificate. Possible extension
+    /// values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
+    pub fn key_usages(&self) -> std::option::Option<&[crate::model::KeyUsage]> {
+        self.key_usages.as_deref()
+    }
+    /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a
+    /// purpose for which the certificate public key can be used and consists of a name and an object
+    /// identifier (OID). </p>
+    pub fn extended_key_usages(&self) -> std::option::Option<&[crate::model::ExtendedKeyUsage]> {
+        self.extended_key_usages.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that issued
+    /// the certificate. This has the following format: </p>
+    /// <p>
+    /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+    /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported
+    /// private certificates can be renewed with the <a>RenewCertificate</a>
+    /// command.</p>
+    pub fn renewal_eligibility(&self) -> std::option::Option<&crate::model::RenewalEligibility> {
+        self.renewal_eligibility.as_ref()
+    }
+    /// <p>Value that specifies whether to add the certificate to a transparency log. Certificate
+    /// transparency makes it possible to detect SSL certificates that have been mistakenly or
+    /// maliciously issued. A browser might respond to certificate that has not been logged by showing
+    /// an error message. The logs are cryptographically secure. </p>
+    pub fn options(&self) -> std::option::Option<&crate::model::CertificateOptions> {
+        self.options.as_ref()
+    }
 }
 impl std::fmt::Debug for CertificateDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1772,6 +2011,65 @@ pub struct ExtendedKeyUsage {
     /// </ul>
     pub oid: std::option::Option<std::string::String>,
 }
+impl ExtendedKeyUsage {
+    /// <p>The name of an Extended Key Usage value.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ExtendedKeyUsageName> {
+        self.name.as_ref()
+    }
+    /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated
+    /// by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn oid(&self) -> std::option::Option<&str> {
+        self.oid.as_deref()
+    }
+}
 impl std::fmt::Debug for ExtendedKeyUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExtendedKeyUsage");
@@ -1935,6 +2233,12 @@ pub struct KeyUsage {
     /// <p>A string value that contains a Key Usage extension name.</p>
     pub name: std::option::Option<crate::model::KeyUsageName>,
 }
+impl KeyUsage {
+    /// <p>A string value that contains a Key Usage extension name.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::KeyUsageName> {
+        self.name.as_ref()
+    }
+}
 impl std::fmt::Debug for KeyUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyUsage");
@@ -1992,6 +2296,30 @@ pub struct RenewalSummary {
     pub renewal_status_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The time at which the renewal summary was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RenewalSummary {
+    /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
+    pub fn renewal_status(&self) -> std::option::Option<&crate::model::RenewalStatus> {
+        self.renewal_status.as_ref()
+    }
+    /// <p>Contains information about the validation of each domain name in the certificate, as it
+    /// pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+    /// renewal</a>. This is different from the initial validation that occurs as a result of
+    /// the <a>RequestCertificate</a> request. This field exists only when the certificate
+    /// type is <code>AMAZON_ISSUED</code>.</p>
+    pub fn domain_validation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainValidation]> {
+        self.domain_validation_options.as_deref()
+    }
+    /// <p>The reason that a renewal request was unsuccessful.</p>
+    pub fn renewal_status_reason(&self) -> std::option::Option<&crate::model::FailureReason> {
+        self.renewal_status_reason.as_ref()
+    }
+    /// <p>The time at which the renewal summary was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for RenewalSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2275,6 +2603,54 @@ pub struct DomainValidation {
     /// <p>Specifies the domain validation method.</p>
     pub validation_method: std::option::Option<crate::model::ValidationMethod>,
 }
+impl DomainValidation {
+    /// <p>A fully qualified domain name (FQDN) in the certificate. For example,
+    /// <code>www.example.com</code> or <code>example.com</code>. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
+    pub fn validation_emails(&self) -> std::option::Option<&[std::string::String]> {
+        self.validation_emails.as_deref()
+    }
+    /// <p>The domain name that ACM used to send domain validation emails.</p>
+    pub fn validation_domain(&self) -> std::option::Option<&str> {
+        self.validation_domain.as_deref()
+    }
+    /// <p>The validation status of the domain name. This can be one of the following values:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING_VALIDATION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code></code>SUCCESS</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code></code>FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn validation_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.validation_status.as_ref()
+    }
+    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For
+    /// more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
+    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you
+    /// include  your domain name in the DNS database CNAME record, validation fails.  For example, if
+    /// the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only
+    /// "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    pub fn resource_record(&self) -> std::option::Option<&crate::model::ResourceRecord> {
+        self.resource_record.as_ref()
+    }
+    /// <p>Specifies the domain validation method.</p>
+    pub fn validation_method(&self) -> std::option::Option<&crate::model::ValidationMethod> {
+        self.validation_method.as_ref()
+    }
+}
 impl std::fmt::Debug for DomainValidation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainValidation");
@@ -2458,6 +2834,21 @@ pub struct ResourceRecord {
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by
     /// ACM.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ResourceRecord {
+    /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RecordType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The value of the CNAME record to add to your DNS database. This is supplied by
+    /// ACM.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

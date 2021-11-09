@@ -20,6 +20,41 @@ pub struct UpdateVodSourceOutput {
     /// <p>The name of the VOD source.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl UpdateVodSourceOutput {
+    /// <p>The ARN of the VOD source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The ARN for the VOD source.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the VOD source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVodSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVodSourceOutput");
@@ -206,6 +241,45 @@ pub struct UpdateSourceLocationOutput {
     /// <p>The tags assigned to the source location.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateSourceLocationOutput {
+    /// <p>The access configuration for the source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The ARN of the source location.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the source location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The default segment delivery configuration settings.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The HTTP package configuration settings for the source location.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>The timestamp that indicates when the source location was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the source location.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSourceLocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -404,6 +478,47 @@ pub struct UpdateChannelOutput {
     /// <p>The tags assigned to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.channel_state.as_ref()
+    }
+    /// <p>The timestamp of when the channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
+    }
+    /// <p>The timestamp of when the channel was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The channel's playback mode.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&str> {
+        self.playback_mode.as_deref()
+    }
+    /// <p>The tags assigned to the channel.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -759,6 +874,98 @@ pub struct PutPlaybackConfigurationOutput {
     pub transcode_profile_name: std::option::Option<std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     pub video_content_source_url: std::option::Option<std::string::String>,
+}
+impl PutPlaybackConfigurationOutput {
+    /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    pub fn ad_decision_server_url(&self) -> std::option::Option<&str> {
+        self.ad_decision_server_url.as_deref()
+    }
+    /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    pub fn avail_suppression(&self) -> std::option::Option<&crate::model::AvailSuppression> {
+        self.avail_suppression.as_ref()
+    }
+    /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    pub fn bumper(&self) -> std::option::Option<&crate::model::Bumper> {
+        self.bumper.as_ref()
+    }
+    /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    pub fn cdn_configuration(&self) -> std::option::Option<&crate::model::CdnConfiguration> {
+        self.cdn_configuration.as_ref()
+    }
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    pub fn configuration_aliases(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.configuration_aliases.as_ref()
+    }
+    /// <p>The configuration for DASH content.</p>
+    pub fn dash_configuration(&self) -> std::option::Option<&crate::model::DashConfiguration> {
+        self.dash_configuration.as_ref()
+    }
+    /// <p>The configuration for HLS content.</p>
+    pub fn hls_configuration(&self) -> std::option::Option<&crate::model::HlsConfiguration> {
+        self.hls_configuration.as_ref()
+    }
+    /// <p>The configuration for pre-roll ad insertion.</p>
+    pub fn live_pre_roll_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LivePreRollConfiguration> {
+        self.live_pre_roll_configuration.as_ref()
+    }
+    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
+        self.log_configuration.as_ref()
+    }
+    /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    pub fn manifest_processing_rules(
+        &self,
+    ) -> std::option::Option<&crate::model::ManifestProcessingRules> {
+        self.manifest_processing_rules.as_ref()
+    }
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    pub fn personalization_threshold_seconds(&self) -> i32 {
+        self.personalization_threshold_seconds
+    }
+    /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    pub fn playback_configuration_arn(&self) -> std::option::Option<&str> {
+        self.playback_configuration_arn.as_deref()
+    }
+    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    pub fn playback_endpoint_prefix(&self) -> std::option::Option<&str> {
+        self.playback_endpoint_prefix.as_deref()
+    }
+    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    pub fn session_initialization_endpoint_prefix(&self) -> std::option::Option<&str> {
+        self.session_initialization_endpoint_prefix.as_deref()
+    }
+    /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    pub fn slate_ad_url(&self) -> std::option::Option<&str> {
+        self.slate_ad_url.as_deref()
+    }
+    /// <p>The tags assigned to the playback configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    pub fn transcode_profile_name(&self) -> std::option::Option<&str> {
+        self.transcode_profile_name.as_deref()
+    }
+    /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    pub fn video_content_source_url(&self) -> std::option::Option<&str> {
+        self.video_content_source_url.as_deref()
+    }
 }
 impl std::fmt::Debug for PutPlaybackConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1181,6 +1388,16 @@ pub struct ListVodSourcesOutput {
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListVodSourcesOutput {
+    /// <p>Lists the VOD sources.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::VodSource]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVodSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVodSourcesOutput");
@@ -1252,6 +1469,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A comma-separated list of tag key:value pairs.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1316,6 +1542,16 @@ pub struct ListSourceLocationsOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSourceLocationsOutput {
+    /// <p>An array of source locations.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::SourceLocation]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSourceLocationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1389,6 +1625,16 @@ pub struct ListPrefetchSchedulesOutput {
     /// <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPrefetchSchedulesOutput {
+    /// <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::PrefetchSchedule]> {
+        self.items.as_deref()
+    }
+    /// <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPrefetchSchedulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPrefetchSchedulesOutput");
@@ -1460,6 +1706,16 @@ pub struct ListPlaybackConfigurationsOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
     /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlaybackConfigurationsOutput {
+    /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::PlaybackConfiguration]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPlaybackConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1533,6 +1789,16 @@ pub struct ListChannelsOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsOutput {
+    /// <p>An array of channels that are associated with this account.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsOutput");
@@ -1604,6 +1870,16 @@ pub struct ListAlertsOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAlertsOutput {
+    /// <p>An array of alerts that are associated with this resource.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Alert]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAlertsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1684,6 +1960,32 @@ pub struct GetPrefetchScheduleOutput {
     pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub stream_id: std::option::Option<std::string::String>,
+}
+impl GetPrefetchScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
+        self.consumption.as_ref()
+    }
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
+        self.retrieval.as_ref()
+    }
+    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPrefetchScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1854,6 +2156,98 @@ pub struct GetPlaybackConfigurationOutput {
     pub transcode_profile_name: std::option::Option<std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     pub video_content_source_url: std::option::Option<std::string::String>,
+}
+impl GetPlaybackConfigurationOutput {
+    /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    pub fn ad_decision_server_url(&self) -> std::option::Option<&str> {
+        self.ad_decision_server_url.as_deref()
+    }
+    /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    pub fn avail_suppression(&self) -> std::option::Option<&crate::model::AvailSuppression> {
+        self.avail_suppression.as_ref()
+    }
+    /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    pub fn bumper(&self) -> std::option::Option<&crate::model::Bumper> {
+        self.bumper.as_ref()
+    }
+    /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    pub fn cdn_configuration(&self) -> std::option::Option<&crate::model::CdnConfiguration> {
+        self.cdn_configuration.as_ref()
+    }
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    pub fn configuration_aliases(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.configuration_aliases.as_ref()
+    }
+    /// <p>The configuration for DASH content.</p>
+    pub fn dash_configuration(&self) -> std::option::Option<&crate::model::DashConfiguration> {
+        self.dash_configuration.as_ref()
+    }
+    /// <p>The configuration for HLS content.</p>
+    pub fn hls_configuration(&self) -> std::option::Option<&crate::model::HlsConfiguration> {
+        self.hls_configuration.as_ref()
+    }
+    /// <p>The configuration for pre-roll ad insertion.</p>
+    pub fn live_pre_roll_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LivePreRollConfiguration> {
+        self.live_pre_roll_configuration.as_ref()
+    }
+    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
+        self.log_configuration.as_ref()
+    }
+    /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    pub fn manifest_processing_rules(
+        &self,
+    ) -> std::option::Option<&crate::model::ManifestProcessingRules> {
+        self.manifest_processing_rules.as_ref()
+    }
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    pub fn personalization_threshold_seconds(&self) -> i32 {
+        self.personalization_threshold_seconds
+    }
+    /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    pub fn playback_configuration_arn(&self) -> std::option::Option<&str> {
+        self.playback_configuration_arn.as_deref()
+    }
+    /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    pub fn playback_endpoint_prefix(&self) -> std::option::Option<&str> {
+        self.playback_endpoint_prefix.as_deref()
+    }
+    /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    pub fn session_initialization_endpoint_prefix(&self) -> std::option::Option<&str> {
+        self.session_initialization_endpoint_prefix.as_deref()
+    }
+    /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    pub fn slate_ad_url(&self) -> std::option::Option<&str> {
+        self.slate_ad_url.as_deref()
+    }
+    /// <p>The tags assigned to the playback configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    pub fn transcode_profile_name(&self) -> std::option::Option<&str> {
+        self.transcode_profile_name.as_deref()
+    }
+    /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    pub fn video_content_source_url(&self) -> std::option::Option<&str> {
+        self.video_content_source_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPlaybackConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2246,6 +2640,16 @@ pub struct GetChannelScheduleOutput {
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetChannelScheduleOutput {
+    /// <p>An array of schedule entries for the channel.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ScheduleEntry]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelScheduleOutput");
@@ -2316,6 +2720,12 @@ pub struct GetChannelPolicyOutput {
     /// <p>The IAM policy for the channel.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetChannelPolicyOutput {
+    /// <p>The IAM policy for the channel.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelPolicyOutput");
@@ -2377,6 +2787,41 @@ pub struct DescribeVodSourceOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the VOD source.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl DescribeVodSourceOutput {
+    /// <p>The ARN of the VOD source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The ARN for the VOD source.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the VOD source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVodSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2564,6 +3009,45 @@ pub struct DescribeSourceLocationOutput {
     /// <p>The tags assigned to the source location.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeSourceLocationOutput {
+    /// <p>The access configuration for the source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The ARN of the source location.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the source location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The default segment delivery configuration settings.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The HTTP package configuration settings for the source location.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>The timestamp that indicates when the source location was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the source location.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSourceLocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2760,6 +3244,40 @@ pub struct DescribeProgramOutput {
     /// <p>The name that's used to refer to a VOD source.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl DescribeProgramOutput {
+    /// <p>The ad break configuration settings.</p>
+    pub fn ad_breaks(&self) -> std::option::Option<&[crate::model::AdBreak]> {
+        self.ad_breaks.as_deref()
+    }
+    /// <p>The ARN of the program.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the channel that the program belongs to.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The timestamp of when the program was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The name of the program.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+    /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_start_time.as_ref()
+    }
+    /// <p>The source location name.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The name that's used to refer to a VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProgramOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProgramOutput");
@@ -2936,6 +3454,47 @@ pub struct DescribeChannelOutput {
     /// <p>The tags assigned to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.channel_state.as_ref()
+    }
+    /// <p>The timestamp of when the channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
+    }
+    /// <p>The timestamp of when the channel was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The channel's playback mode.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&str> {
+        self.playback_mode.as_deref()
+    }
+    /// <p>The tags assigned to the channel.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3354,6 +3913,41 @@ pub struct CreateVodSourceOutput {
     /// <p>The name of the VOD source.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl CreateVodSourceOutput {
+    /// <p>The ARN of the VOD source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the VOD source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The ARN for the VOD source.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the VOD source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateVodSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVodSourceOutput");
@@ -3540,6 +4134,45 @@ pub struct CreateSourceLocationOutput {
     /// <p>The tags assigned to the source location.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSourceLocationOutput {
+    /// <p>The access configuration for the source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The ARN of the source location.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the source location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The default segment delivery configuration settings.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The HTTP package configuration settings for the source location.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>The timestamp that indicates when the source location was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the source location.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSourceLocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3736,6 +4369,40 @@ pub struct CreateProgramOutput {
     /// <p>The name that's used to refer to a VOD source.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl CreateProgramOutput {
+    /// <p>The ad break configuration settings.</p>
+    pub fn ad_breaks(&self) -> std::option::Option<&[crate::model::AdBreak]> {
+        self.ad_breaks.as_deref()
+    }
+    /// <p>The ARN of the program.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the channel that the program belongs to.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The timestamp of when the program was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The name of the program.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+    /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_start_time.as_ref()
+    }
+    /// <p>The source location name.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The name that's used to refer to a VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProgramOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProgramOutput");
@@ -3906,6 +4573,32 @@ pub struct CreatePrefetchScheduleOutput {
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub stream_id: std::option::Option<std::string::String>,
 }
+impl CreatePrefetchScheduleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
+        self.consumption.as_ref()
+    }
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
+        self.retrieval.as_ref()
+    }
+    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePrefetchScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePrefetchScheduleOutput");
@@ -4050,6 +4743,47 @@ pub struct CreateChannelOutput {
     /// <p>The tags assigned to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Indicates whether the channel is in a running state or not.</p>
+    pub fn channel_state(&self) -> std::option::Option<&crate::model::ChannelState> {
+        self.channel_state.as_ref()
+    }
+    /// <p>The timestamp of when the channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
+    }
+    /// <p>The timestamp of when the channel was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::ResponseOutputItem]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The channel's playback mode.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&str> {
+        self.playback_mode.as_deref()
+    }
+    /// <p>The tags assigned to the channel.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4245,6 +4979,16 @@ pub struct ConfigureLogsForPlaybackConfigurationOutput {
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: std::option::Option<std::string::String>,
+}
+impl ConfigureLogsForPlaybackConfigurationOutput {
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
+    pub fn percent_enabled(&self) -> i32 {
+        self.percent_enabled
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigureLogsForPlaybackConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -41,6 +41,79 @@ pub struct UpdateOriginEndpointOutput {
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateOriginEndpointOutput {
+    /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The ID of the Channel the OriginEndpoint is associated with.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// A Common Media Application Format (CMAF) packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// A short text description of the OriginEndpoint.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the OriginEndpoint.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A short string appended to the end of the OriginEndpoint URL.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
+    /// Maximum duration (seconds) of content to retain for startover playback.
+    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    pub fn startover_window_seconds(&self) -> i32 {
+        self.startover_window_seconds
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Amount of delay (seconds) to enforce on the playback of live content.
+    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    pub fn time_delay_seconds(&self) -> i32 {
+        self.time_delay_seconds
+    }
+    /// The URL of the packaged OriginEndpoint for consumption.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+        self.whitelist.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateOriginEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOriginEndpointOutput");
@@ -352,6 +425,39 @@ pub struct UpdateChannelOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateChannelOutput {
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+        self.hls_ingest.as_ref()
+    }
+    /// The ID of the Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelOutput");
@@ -577,6 +683,39 @@ pub struct RotateIngestEndpointCredentialsOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RotateIngestEndpointCredentialsOutput {
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+        self.hls_ingest.as_ref()
+    }
+    /// The ID of the Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for RotateIngestEndpointCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotateIngestEndpointCredentialsOutput");
@@ -742,6 +881,39 @@ pub struct RotateChannelCredentialsOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RotateChannelCredentialsOutput {
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+        self.hls_ingest.as_ref()
+    }
+    /// The ID of the Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for RotateChannelCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotateChannelCredentialsOutput");
@@ -895,6 +1067,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -958,6 +1139,16 @@ pub struct ListOriginEndpointsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// A list of OriginEndpoint records.
     pub origin_endpoints: std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>,
+}
+impl ListOriginEndpointsOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of OriginEndpoint records.
+    pub fn origin_endpoints(&self) -> std::option::Option<&[crate::model::OriginEndpoint]> {
+        self.origin_endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOriginEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1032,6 +1223,16 @@ pub struct ListHarvestJobsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHarvestJobsOutput {
+    /// A list of HarvestJob records.
+    pub fn harvest_jobs(&self) -> std::option::Option<&[crate::model::HarvestJob]> {
+        self.harvest_jobs.as_deref()
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHarvestJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHarvestJobsOutput");
@@ -1103,6 +1304,16 @@ pub struct ListChannelsOutput {
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// A token that can be used to resume pagination from the end of the collection.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsOutput {
+    /// A list of Channel records.
+    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.channels.as_deref()
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1208,6 +1419,79 @@ pub struct DescribeOriginEndpointOutput {
     pub url: std::option::Option<std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeOriginEndpointOutput {
+    /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The ID of the Channel the OriginEndpoint is associated with.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// A Common Media Application Format (CMAF) packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// A short text description of the OriginEndpoint.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the OriginEndpoint.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A short string appended to the end of the OriginEndpoint URL.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
+    /// Maximum duration (seconds) of content to retain for startover playback.
+    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    pub fn startover_window_seconds(&self) -> i32 {
+        self.startover_window_seconds
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Amount of delay (seconds) to enforce on the playback of live content.
+    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    pub fn time_delay_seconds(&self) -> i32 {
+        self.time_delay_seconds
+    }
+    /// The URL of the packaged OriginEndpoint for consumption.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+        self.whitelist.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOriginEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1527,6 +1811,48 @@ pub struct DescribeHarvestJobOutput {
     /// include an explanation of why the HarvestJob failed.
     pub status: std::option::Option<crate::model::Status>,
 }
+impl DescribeHarvestJobOutput {
+    /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The ID of the Channel that the HarvestJob will harvest from.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// The time the HarvestJob was submitted
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The end of the time-window which will be harvested.
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region
+    /// and it cannot be changed after the HarvestJob is submitted.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
+    /// This cannot be changed after the HarvestJob is submitted.
+    pub fn origin_endpoint_id(&self) -> std::option::Option<&str> {
+        self.origin_endpoint_id.as_deref()
+    }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+    /// The start of the time-window which will be harvested.
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
+    /// HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
+    /// include an explanation of why the HarvestJob failed.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeHarvestJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHarvestJobOutput");
@@ -1705,6 +2031,39 @@ pub struct DescribeChannelOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeChannelOutput {
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+        self.hls_ingest.as_ref()
+    }
+    /// The ID of the Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1952,6 +2311,79 @@ pub struct CreateOriginEndpointOutput {
     pub url: std::option::Option<std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateOriginEndpointOutput {
+    /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The ID of the Channel the OriginEndpoint is associated with.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// A Common Media Application Format (CMAF) packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// A short text description of the OriginEndpoint.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the OriginEndpoint.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A short string appended to the end of the OriginEndpoint URL.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
+    /// Maximum duration (seconds) of content to retain for startover playback.
+    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    pub fn startover_window_seconds(&self) -> i32 {
+        self.startover_window_seconds
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Amount of delay (seconds) to enforce on the playback of live content.
+    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    pub fn time_delay_seconds(&self) -> i32 {
+        self.time_delay_seconds
+    }
+    /// The URL of the packaged OriginEndpoint for consumption.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+        self.whitelist.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOriginEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2271,6 +2703,48 @@ pub struct CreateHarvestJobOutput {
     /// include an explanation of why the HarvestJob failed.
     pub status: std::option::Option<crate::model::Status>,
 }
+impl CreateHarvestJobOutput {
+    /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The ID of the Channel that the HarvestJob will harvest from.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// The time the HarvestJob was submitted
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The end of the time-window which will be harvested.
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region
+    /// and it cannot be changed after the HarvestJob is submitted.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
+    /// This cannot be changed after the HarvestJob is submitted.
+    pub fn origin_endpoint_id(&self) -> std::option::Option<&str> {
+        self.origin_endpoint_id.as_deref()
+    }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+    /// The start of the time-window which will be harvested.
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
+    /// HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
+    /// include an explanation of why the HarvestJob failed.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateHarvestJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHarvestJobOutput");
@@ -2450,6 +2924,39 @@ pub struct CreateChannelOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateChannelOutput {
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+        self.hls_ingest.as_ref()
+    }
+    /// The ID of the Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelOutput");
@@ -2614,6 +3121,39 @@ pub struct ConfigureLogsOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ConfigureLogsOutput {
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+        self.hls_ingest.as_ref()
+    }
+    /// The ID of the Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigureLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

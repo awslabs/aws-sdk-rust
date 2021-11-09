@@ -435,10 +435,7 @@ impl FinalizeDeviceClaimInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_finalize_device_claim(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_finalize_device_claim(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -927,10 +924,7 @@ impl InvokeDeviceMethodInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_invoke_device_method(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_invoke_device_method(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1689,10 +1683,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2191,10 +2182,7 @@ impl UpdateDeviceStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_device_state(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_device_state(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2266,6 +2254,17 @@ pub struct UpdateDeviceStateInput {
     /// disabled.</p>
     pub enabled: bool,
 }
+impl UpdateDeviceStateInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>If true, the device is enabled. If false, the device is
+    /// disabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for UpdateDeviceStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceStateInput");
@@ -2284,6 +2283,16 @@ pub struct UntagResourceInput {
     /// <p>A collections of tag keys. For example, {"key1","key2"}</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A collections of tag keys. For example, {"key1","key2"}</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2299,6 +2308,12 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct UnclaimDeviceInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
+}
+impl UnclaimDeviceInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UnclaimDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2322,6 +2337,23 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A collection of key/value pairs defining the resource tags. For example, {
+    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+    /// Tagging Strategies</a>.</p><p>
+    ///
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2337,6 +2369,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2357,6 +2395,21 @@ pub struct ListDevicesInput {
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDevicesInput {
+    /// <p>The type of the device, such as "button".</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+    /// <p>The maximum number of results to return per request. If not set, a default value of
+    /// 100 is used.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2388,6 +2441,33 @@ pub struct ListDeviceEventsInput {
     /// </p>
     pub to_time_stamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListDeviceEventsInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The start date for the device event query, in ISO8061 format. For example,
+    /// 2018-03-28T15:45:12.880Z
+    /// </p>
+    pub fn from_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from_time_stamp.as_ref()
+    }
+    /// <p>The maximum number of results to return per request. If not set, a default value of
+    /// 100 is used.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The end date for the device event query, in ISO8061 format. For example,
+    /// 2018-03-28T15:45:12.880Z
+    /// </p>
+    pub fn to_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to_time_stamp.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDeviceEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceEventsInput");
@@ -2411,6 +2491,20 @@ pub struct InvokeDeviceMethodInput {
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub device_method_parameters: std::option::Option<std::string::String>,
 }
+impl InvokeDeviceMethodInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The device method to invoke.</p>
+    pub fn device_method(&self) -> std::option::Option<&crate::model::DeviceMethod> {
+        self.device_method.as_ref()
+    }
+    /// <p>A JSON encoded string containing the device method request parameters.</p>
+    pub fn device_method_parameters(&self) -> std::option::Option<&str> {
+        self.device_method_parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for InvokeDeviceMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeDeviceMethodInput");
@@ -2428,6 +2522,12 @@ pub struct InitiateDeviceClaimInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl InitiateDeviceClaimInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InitiateDeviceClaimInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateDeviceClaimInput");
@@ -2442,6 +2542,12 @@ impl std::fmt::Debug for InitiateDeviceClaimInput {
 pub struct GetDeviceMethodsInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
+}
+impl GetDeviceMethodsInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceMethodsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2465,6 +2571,23 @@ pub struct FinalizeDeviceClaimInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl FinalizeDeviceClaimInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>A collection of key/value pairs defining the resource tags. For example, {
+    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+    /// Tagging Strategies</a>.</p><p>
+    ///
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for FinalizeDeviceClaimInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FinalizeDeviceClaimInput");
@@ -2481,6 +2604,12 @@ pub struct DescribeDeviceInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl DescribeDeviceInput {
+    /// <p>The unique identifier of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceInput");
@@ -2495,6 +2624,12 @@ impl std::fmt::Debug for DescribeDeviceInput {
 pub struct ClaimDevicesByClaimCodeInput {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     pub claim_code: std::option::Option<std::string::String>,
+}
+impl ClaimDevicesByClaimCodeInput {
+    /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    pub fn claim_code(&self) -> std::option::Option<&str> {
+        self.claim_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ClaimDevicesByClaimCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

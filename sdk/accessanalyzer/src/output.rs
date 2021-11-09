@@ -8,6 +8,16 @@ pub struct ListAnalyzersOutput {
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAnalyzersOutput {
+    /// <p>The analyzers retrieved.</p>
+    pub fn analyzers(&self) -> std::option::Option<&[crate::model::AnalyzerSummary]> {
+        self.analyzers.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAnalyzersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnalyzersOutput");
@@ -77,6 +87,12 @@ impl ListAnalyzersOutput {
 pub struct CreateAnalyzerOutput {
     /// <p>The ARN of the analyzer that was created by the request.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl CreateAnalyzerOutput {
+    /// <p>The ARN of the analyzer that was created by the request.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAnalyzerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -155,6 +171,13 @@ pub struct GetAnalyzerOutput {
     /// analyzer.</p>
     pub analyzer: std::option::Option<crate::model::AnalyzerSummary>,
 }
+impl GetAnalyzerOutput {
+    /// <p>An <code>AnalyzerSummary</code> object that contains information about the
+    /// analyzer.</p>
+    pub fn analyzer(&self) -> std::option::Option<&crate::model::AnalyzerSummary> {
+        self.analyzer.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAnalyzerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnalyzerOutput");
@@ -209,6 +232,16 @@ pub struct ListArchiveRulesOutput {
     pub archive_rules: std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListArchiveRulesOutput {
+    /// <p>A list of archive rules created for the specified analyzer.</p>
+    pub fn archive_rules(&self) -> std::option::Option<&[crate::model::ArchiveRuleSummary]> {
+        self.archive_rules.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListArchiveRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -371,6 +404,12 @@ pub struct GetArchiveRuleOutput {
     /// <p>Contains information about an archive rule.</p>
     pub archive_rule: std::option::Option<crate::model::ArchiveRuleSummary>,
 }
+impl GetArchiveRuleOutput {
+    /// <p>Contains information about an archive rule.</p>
+    pub fn archive_rule(&self) -> std::option::Option<&crate::model::ArchiveRuleSummary> {
+        self.archive_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for GetArchiveRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetArchiveRuleOutput");
@@ -424,6 +463,17 @@ pub struct ValidatePolicyOutput {
     pub findings: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ValidatePolicyOutput {
+    /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
+    /// checks.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::ValidatePolicyFinding]> {
+        self.findings.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ValidatePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -621,6 +671,15 @@ pub struct StartPolicyGenerationOutput {
     /// the policy generation request.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StartPolicyGenerationOutput {
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
+    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
+    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
+    /// the policy generation request.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartPolicyGenerationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPolicyGenerationOutput");
@@ -675,6 +734,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags that are applied to the specified resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags that are applied to the specified resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -741,6 +809,17 @@ pub struct ListPolicyGenerationsOutput {
     pub policy_generations: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPolicyGenerationsOutput {
+    /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
+    /// policy.</p>
+    pub fn policy_generations(&self) -> std::option::Option<&[crate::model::PolicyGeneration]> {
+        self.policy_generations.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPolicyGenerationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -821,6 +900,17 @@ pub struct ListFindingsOutput {
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFindingsOutput {
+    /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
+    /// if any.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::FindingSummary]> {
+        self.findings.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsOutput");
@@ -895,6 +985,18 @@ pub struct ListAnalyzedResourcesOutput {
         std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnalyzedResourcesOutput {
+    /// <p>A list of resources that were analyzed.</p>
+    pub fn analyzed_resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::AnalyzedResourceSummary]> {
+        self.analyzed_resources.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAnalyzedResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -972,6 +1074,16 @@ pub struct ListAccessPreviewsOutput {
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAccessPreviewsOutput {
+    /// <p>A list of access previews retrieved for the analyzer.</p>
+    pub fn access_previews(&self) -> std::option::Option<&[crate::model::AccessPreviewSummary]> {
+        self.access_previews.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccessPreviewsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessPreviewsOutput");
@@ -1048,6 +1160,16 @@ pub struct ListAccessPreviewFindingsOutput {
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAccessPreviewFindingsOutput {
+    /// <p>A list of access preview findings that match the specified filter criteria.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::AccessPreviewFinding]> {
+        self.findings.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccessPreviewFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessPreviewFindingsOutput");
@@ -1121,6 +1243,20 @@ pub struct GetGeneratedPolicyOutput {
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and
     /// associated details.</p>
     pub generated_policy_result: std::option::Option<crate::model::GeneratedPolicyResult>,
+}
+impl GetGeneratedPolicyOutput {
+    /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated
+    /// policy.</p>
+    pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
+        self.job_details.as_ref()
+    }
+    /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and
+    /// associated details.</p>
+    pub fn generated_policy_result(
+        &self,
+    ) -> std::option::Option<&crate::model::GeneratedPolicyResult> {
+        self.generated_policy_result.as_ref()
+    }
 }
 impl std::fmt::Debug for GetGeneratedPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1197,6 +1333,12 @@ pub struct GetFindingOutput {
     /// <p>A <code>finding</code> object that contains finding details.</p>
     pub finding: std::option::Option<crate::model::Finding>,
 }
+impl GetFindingOutput {
+    /// <p>A <code>finding</code> object that contains finding details.</p>
+    pub fn finding(&self) -> std::option::Option<&crate::model::Finding> {
+        self.finding.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFindingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingOutput");
@@ -1245,6 +1387,13 @@ pub struct GetAnalyzedResourceOutput {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
     /// found when it analyzed the resource.</p>
     pub resource: std::option::Option<crate::model::AnalyzedResource>,
+}
+impl GetAnalyzedResourceOutput {
+    /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
+    /// found when it analyzed the resource.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::AnalyzedResource> {
+        self.resource.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAnalyzedResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1299,6 +1448,12 @@ pub struct GetAccessPreviewOutput {
     /// <p>An object that contains information about the access preview.</p>
     pub access_preview: std::option::Option<crate::model::AccessPreview>,
 }
+impl GetAccessPreviewOutput {
+    /// <p>An object that contains information about the access preview.</p>
+    pub fn access_preview(&self) -> std::option::Option<&crate::model::AccessPreview> {
+        self.access_preview.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAccessPreviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessPreviewOutput");
@@ -1349,6 +1504,12 @@ impl GetAccessPreviewOutput {
 pub struct CreateAccessPreviewOutput {
     /// <p>The unique ID for the access preview.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl CreateAccessPreviewOutput {
+    /// <p>The unique ID for the access preview.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAccessPreviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

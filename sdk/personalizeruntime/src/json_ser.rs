@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_get_personalized_ranking_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPersonalizedRankingInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.campaign_arn {
         object.key("campaignArn").string(var_1);
     }
@@ -39,12 +39,13 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
     if let Some(var_14) = &input.user_id {
         object.key("userId").string(var_14);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRecommendationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.campaign_arn {
         object.key("campaignArn").string(var_15);
     }
@@ -81,4 +82,5 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
     if let Some(var_26) = &input.user_id {
         object.key("userId").string(var_26);
     }
+    Ok(())
 }

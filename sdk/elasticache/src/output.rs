@@ -6,6 +6,12 @@ pub struct TestFailoverOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
+impl TestFailoverOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
+}
 impl std::fmt::Debug for TestFailoverOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestFailoverOutput");
@@ -56,6 +62,12 @@ impl TestFailoverOutput {
 pub struct StartMigrationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
+}
+impl StartMigrationOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for StartMigrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -124,6 +136,29 @@ pub struct RevokeCacheSecurityGroupIngressOutput {
     /// </li>
     /// </ul>
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
+}
+impl RevokeCacheSecurityGroupIngressOutput {
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AuthorizeCacheSecurityGroupIngress</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreateCacheSecurityGroup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RevokeCacheSecurityGroupIngress</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
+        self.cache_security_group.as_ref()
+    }
 }
 impl std::fmt::Debug for RevokeCacheSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -222,6 +257,12 @@ pub struct ResetCacheParameterGroupOutput {
     /// <p>The name of the cache parameter group.</p>
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
 }
+impl ResetCacheParameterGroupOutput {
+    /// <p>The name of the cache parameter group.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetCacheParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetCacheParameterGroupOutput");
@@ -276,6 +317,12 @@ impl ResetCacheParameterGroupOutput {
 pub struct RemoveTagsFromResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl RemoveTagsFromResourceOutput {
+    /// <p>A list of tags as key-value pairs.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTagsFromResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -333,6 +380,12 @@ impl RemoveTagsFromResourceOutput {
 pub struct RebootCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
+}
+impl RebootCacheClusterOutput {
+    /// <p>Contains all of the attributes of a specific cluster.</p>
+    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+        self.cache_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for RebootCacheClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -393,6 +446,23 @@ pub struct RebalanceSlotsInGlobalReplicationGroupOutput {
     /// </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
+}
+impl RebalanceSlotsInGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for RebalanceSlotsInGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -467,6 +537,12 @@ pub struct PurchaseReservedCacheNodesOfferingOutput {
     /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
     pub reserved_cache_node: std::option::Option<crate::model::ReservedCacheNode>,
 }
+impl PurchaseReservedCacheNodesOfferingOutput {
+    /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
+    pub fn reserved_cache_node(&self) -> std::option::Option<&crate::model::ReservedCacheNode> {
+        self.reserved_cache_node.as_ref()
+    }
+}
 impl std::fmt::Debug for PurchaseReservedCacheNodesOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseReservedCacheNodesOfferingOutput");
@@ -529,6 +605,36 @@ pub struct ModifyUserGroupOutput {
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ModifyUserGroupOutput {
+    /// <p>The ID of the user group.</p>
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
+        self.user_group_id.as_deref()
+    }
+    /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The list of user IDs that belong to the user group.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>A list of updates being applied to the user group.</p>
+    pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
+        self.pending_changes.as_ref()
+    }
+    /// <p>A list of replication groups that the user group can access.</p>
+    pub fn replication_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.replication_groups.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyUserGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -694,6 +800,40 @@ pub struct ModifyUserOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl ModifyUserOutput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The username of the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The current supported value is Redis.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn access_string(&self) -> std::option::Option<&str> {
+        self.access_string.as_deref()
+    }
+    /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    pub fn user_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_group_ids.as_deref()
+    }
+    /// <p>Denotes whether the user requires a password to authenticate.</p>
+    pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
+        self.authentication.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyUserOutput");
@@ -848,6 +988,12 @@ pub struct ModifyReplicationGroupShardConfigurationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
+impl ModifyReplicationGroupShardConfigurationOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyReplicationGroupShardConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyReplicationGroupShardConfigurationOutput");
@@ -899,6 +1045,12 @@ impl ModifyReplicationGroupShardConfigurationOutput {
 pub struct ModifyReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
+}
+impl ModifyReplicationGroupOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -959,6 +1111,23 @@ pub struct ModifyGlobalReplicationGroupOutput {
     /// </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
+}
+impl ModifyGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1044,6 +1213,24 @@ pub struct ModifyCacheSubnetGroupOutput {
     /// </li>
     /// </ul>
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
+}
+impl ModifyCacheSubnetGroupOutput {
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreateCacheSubnetGroup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ModifyCacheSubnetGroup</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn cache_subnet_group(&self) -> std::option::Option<&crate::model::CacheSubnetGroup> {
+        self.cache_subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyCacheSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1132,6 +1319,12 @@ pub struct ModifyCacheParameterGroupOutput {
     /// <p>The name of the cache parameter group.</p>
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
 }
+impl ModifyCacheParameterGroupOutput {
+    /// <p>The name of the cache parameter group.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyCacheParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyCacheParameterGroupOutput");
@@ -1186,6 +1379,12 @@ pub struct ModifyCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
+impl ModifyCacheClusterOutput {
+    /// <p>Contains all of the attributes of a specific cluster.</p>
+    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+        self.cache_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyCacheClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyCacheClusterOutput");
@@ -1237,6 +1436,12 @@ impl ModifyCacheClusterOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags as key-value pairs.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1302,6 +1507,22 @@ pub struct ListAllowedNodeTypeModificationsOutput {
     ///
     /// When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
     pub scale_down_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListAllowedNodeTypeModificationsOutput {
+    /// <p>A string list, each element of which specifies a cache node type which you can use
+    /// to scale your cluster or replication group.</p>
+    /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+    /// <code>ModifyReplicationGroup</code>,
+    /// use a value from this list for the <code>CacheNodeType</code> parameter.</p>
+    pub fn scale_up_modifications(&self) -> std::option::Option<&[std::string::String]> {
+        self.scale_up_modifications.as_deref()
+    }
+    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.
+    ///
+    /// When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
+    pub fn scale_down_modifications(&self) -> std::option::Option<&[std::string::String]> {
+        self.scale_down_modifications.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAllowedNodeTypeModificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1395,6 +1616,12 @@ pub struct IncreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
+impl IncreaseReplicaCountOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
+}
 impl std::fmt::Debug for IncreaseReplicaCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncreaseReplicaCountOutput");
@@ -1454,6 +1681,23 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
+}
+impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for IncreaseNodeGroupsInGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1538,6 +1782,23 @@ pub struct FailoverGlobalReplicationGroupOutput {
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
+impl FailoverGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
+}
 impl std::fmt::Debug for FailoverGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailoverGlobalReplicationGroupOutput");
@@ -1620,6 +1881,23 @@ pub struct DisassociateGlobalReplicationGroupOutput {
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
+impl DisassociateGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateGlobalReplicationGroupOutput");
@@ -1695,6 +1973,16 @@ pub struct DescribeUsersOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeUsersOutput {
+    /// <p>A list of users.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsersOutput");
@@ -1766,6 +2054,16 @@ pub struct DescribeUserGroupsOutput {
     pub user_groups: std::option::Option<std::vec::Vec<crate::model::UserGroup>>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeUserGroupsOutput {
+    /// <p>Returns a list of user groups.</p>
+    pub fn user_groups(&self) -> std::option::Option<&[crate::model::UserGroup]> {
+        self.user_groups.as_deref()
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1841,6 +2139,19 @@ pub struct DescribeUpdateActionsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Returns a list of update actions</p>
     pub update_actions: std::option::Option<std::vec::Vec<crate::model::UpdateAction>>,
+}
+impl DescribeUpdateActionsOutput {
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Returns a list of update actions</p>
+    pub fn update_actions(&self) -> std::option::Option<&[crate::model::UpdateAction]> {
+        self.update_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUpdateActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1923,6 +2234,19 @@ pub struct DescribeSnapshotsOutput {
     /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
+impl DescribeSnapshotsOutput {
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.snapshots.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSnapshotsOutput");
@@ -2004,6 +2328,19 @@ pub struct DescribeServiceUpdatesOutput {
     /// <p>A list of service updates</p>
     pub service_updates: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>,
 }
+impl DescribeServiceUpdatesOutput {
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of service updates</p>
+    pub fn service_updates(&self) -> std::option::Option<&[crate::model::ServiceUpdate]> {
+        self.service_updates.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceUpdatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceUpdatesOutput");
@@ -2082,6 +2419,18 @@ pub struct DescribeReservedCacheNodesOfferingsOutput {
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
     pub reserved_cache_nodes_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>,
+}
+impl DescribeReservedCacheNodesOfferingsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
+    pub fn reserved_cache_nodes_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedCacheNodesOffering]> {
+        self.reserved_cache_nodes_offerings.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedCacheNodesOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2162,6 +2511,16 @@ pub struct DescribeReservedCacheNodesOutput {
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
     pub reserved_cache_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNode>>,
 }
+impl DescribeReservedCacheNodesOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
+    pub fn reserved_cache_nodes(&self) -> std::option::Option<&[crate::model::ReservedCacheNode]> {
+        self.reserved_cache_nodes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedCacheNodesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedCacheNodesOutput");
@@ -2237,6 +2596,16 @@ pub struct DescribeReplicationGroupsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
     pub replication_groups: std::option::Option<std::vec::Vec<crate::model::ReplicationGroup>>,
+}
+impl DescribeReplicationGroupsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
+    pub fn replication_groups(&self) -> std::option::Option<&[crate::model::ReplicationGroup]> {
+        self.replication_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2315,6 +2684,18 @@ pub struct DescribeGlobalReplicationGroupsOutput {
     pub global_replication_groups:
         std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
 }
+impl DescribeGlobalReplicationGroupsOutput {
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
+    pub fn global_replication_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::GlobalReplicationGroup]> {
+        self.global_replication_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGlobalReplicationGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGlobalReplicationGroupsOutput");
@@ -2391,6 +2772,16 @@ pub struct DescribeEventsOutput {
     /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl DescribeEventsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -2461,6 +2852,12 @@ pub struct DescribeEngineDefaultParametersOutput {
     /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
+impl DescribeEngineDefaultParametersOutput {
+    /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
+    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+        self.engine_defaults.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEngineDefaultParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEngineDefaultParametersOutput");
@@ -2513,6 +2910,16 @@ pub struct DescribeCacheSubnetGroupsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
     pub cache_subnet_groups: std::option::Option<std::vec::Vec<crate::model::CacheSubnetGroup>>,
+}
+impl DescribeCacheSubnetGroupsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
+    pub fn cache_subnet_groups(&self) -> std::option::Option<&[crate::model::CacheSubnetGroup]> {
+        self.cache_subnet_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCacheSubnetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2589,6 +2996,18 @@ pub struct DescribeCacheSecurityGroupsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
     pub cache_security_groups: std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroup>>,
+}
+impl DescribeCacheSecurityGroupsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
+    pub fn cache_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::CacheSecurityGroup]> {
+        self.cache_security_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCacheSecurityGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2669,6 +3088,23 @@ pub struct DescribeCacheParametersOutput {
     /// Each element in the list contains detailed information about one parameter.</p>
     pub cache_node_type_specific_parameters:
         std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
+}
+impl DescribeCacheParametersOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of <a>Parameter</a> instances.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>A list of parameters specific to a particular cache node type.
+    /// Each element in the list contains detailed information about one parameter.</p>
+    pub fn cache_node_type_specific_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::CacheNodeTypeSpecificParameter]> {
+        self.cache_node_type_specific_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCacheParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2775,6 +3211,19 @@ pub struct DescribeCacheParameterGroupsOutput {
     pub cache_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
 }
+impl DescribeCacheParameterGroupsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of cache parameter groups. Each element in the list contains detailed information
+    /// about one cache parameter group.</p>
+    pub fn cache_parameter_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::CacheParameterGroup]> {
+        self.cache_parameter_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCacheParameterGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCacheParameterGroupsOutput");
@@ -2854,6 +3303,19 @@ pub struct DescribeCacheEngineVersionsOutput {
     /// Each element in the list contains detailed information about one cache engine version.</p>
     pub cache_engine_versions: std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>,
 }
+impl DescribeCacheEngineVersionsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of cache engine version details.
+    /// Each element in the list contains detailed information about one cache engine version.</p>
+    pub fn cache_engine_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CacheEngineVersion]> {
+        self.cache_engine_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCacheEngineVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCacheEngineVersionsOutput");
@@ -2931,6 +3393,16 @@ pub struct DescribeCacheClustersOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
     pub cache_clusters: std::option::Option<std::vec::Vec<crate::model::CacheCluster>>,
+}
+impl DescribeCacheClustersOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
+    pub fn cache_clusters(&self) -> std::option::Option<&[crate::model::CacheCluster]> {
+        self.cache_clusters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCacheClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3013,6 +3485,36 @@ pub struct DeleteUserGroupOutput {
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteUserGroupOutput {
+    /// <p>The ID of the user group.</p>
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
+        self.user_group_id.as_deref()
+    }
+    /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The list of user IDs that belong to the user group.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>A list of updates being applied to the user group.</p>
+    pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
+        self.pending_changes.as_ref()
+    }
+    /// <p>A list of replication groups that the user group can access.</p>
+    pub fn replication_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.replication_groups.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3178,6 +3680,40 @@ pub struct DeleteUserOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteUserOutput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The username of the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The current supported value is Redis.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn access_string(&self) -> std::option::Option<&str> {
+        self.access_string.as_deref()
+    }
+    /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    pub fn user_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_group_ids.as_deref()
+    }
+    /// <p>Denotes whether the user requires a password to authenticate.</p>
+    pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
+        self.authentication.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserOutput");
@@ -3332,6 +3868,12 @@ pub struct DeleteSnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl DeleteSnapshotOutput {
+    /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSnapshotOutput");
@@ -3379,6 +3921,12 @@ impl DeleteSnapshotOutput {
 pub struct DeleteReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
+}
+impl DeleteReplicationGroupOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3439,6 +3987,23 @@ pub struct DeleteGlobalReplicationGroupOutput {
     /// </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
+}
+impl DeleteGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3603,6 +4168,12 @@ pub struct DeleteCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
+impl DeleteCacheClusterOutput {
+    /// <p>Contains all of the attributes of a specific cluster.</p>
+    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+        self.cache_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteCacheClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCacheClusterOutput");
@@ -3653,6 +4224,12 @@ impl DeleteCacheClusterOutput {
 pub struct DecreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
+}
+impl DecreaseReplicaCountOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DecreaseReplicaCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3713,6 +4290,23 @@ pub struct DecreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
+}
+impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DecreaseNodeGroupsInGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3799,6 +4393,36 @@ pub struct CreateUserGroupOutput {
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl CreateUserGroupOutput {
+    /// <p>The ID of the user group.</p>
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
+        self.user_group_id.as_deref()
+    }
+    /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The list of user IDs that belong to the user group.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>A list of updates being applied to the user group.</p>
+    pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
+        self.pending_changes.as_ref()
+    }
+    /// <p>A list of replication groups that the user group can access.</p>
+    pub fn replication_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.replication_groups.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUserGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3964,6 +4588,40 @@ pub struct CreateUserOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl CreateUserOutput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The username of the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The current supported value is Redis.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn access_string(&self) -> std::option::Option<&str> {
+        self.access_string.as_deref()
+    }
+    /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    pub fn user_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_group_ids.as_deref()
+    }
+    /// <p>Denotes whether the user requires a password to authenticate.</p>
+    pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
+        self.authentication.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -4118,6 +4776,12 @@ pub struct CreateSnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl CreateSnapshotOutput {
+    /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSnapshotOutput");
@@ -4165,6 +4829,12 @@ impl CreateSnapshotOutput {
 pub struct CreateReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
+}
+impl CreateReplicationGroupOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4225,6 +4895,23 @@ pub struct CreateGlobalReplicationGroupOutput {
     /// </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
+}
+impl CreateGlobalReplicationGroupOutput {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
+    /// cluster automatically replicates updates to the secondary cluster.</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
+    /// which is what you use to associate a secondary cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn global_replication_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+        self.global_replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGlobalReplicationGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4310,6 +4997,24 @@ pub struct CreateCacheSubnetGroupOutput {
     /// </li>
     /// </ul>
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
+}
+impl CreateCacheSubnetGroupOutput {
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreateCacheSubnetGroup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ModifyCacheSubnetGroup</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn cache_subnet_group(&self) -> std::option::Option<&crate::model::CacheSubnetGroup> {
+        self.cache_subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCacheSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4403,6 +5108,29 @@ pub struct CreateCacheSecurityGroupOutput {
     /// </ul>
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
+impl CreateCacheSecurityGroupOutput {
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AuthorizeCacheSecurityGroupIngress</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreateCacheSecurityGroup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RevokeCacheSecurityGroupIngress</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
+        self.cache_security_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCacheSecurityGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCacheSecurityGroupOutput");
@@ -4488,6 +5216,12 @@ pub struct CreateCacheParameterGroupOutput {
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
     pub cache_parameter_group: std::option::Option<crate::model::CacheParameterGroup>,
 }
+impl CreateCacheParameterGroupOutput {
+    /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
+    pub fn cache_parameter_group(&self) -> std::option::Option<&crate::model::CacheParameterGroup> {
+        self.cache_parameter_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCacheParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCacheParameterGroupOutput");
@@ -4538,6 +5272,12 @@ impl CreateCacheParameterGroupOutput {
 pub struct CreateCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
+}
+impl CreateCacheClusterOutput {
+    /// <p>Contains all of the attributes of a specific cluster.</p>
+    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+        self.cache_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCacheClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4590,6 +5330,12 @@ pub struct CopySnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
+impl CopySnapshotOutput {
+    /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+        self.snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CopySnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopySnapshotOutput");
@@ -4637,6 +5383,12 @@ impl CopySnapshotOutput {
 pub struct CompleteMigrationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
+}
+impl CompleteMigrationOutput {
+    /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+        self.replication_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CompleteMigrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4692,6 +5444,20 @@ pub struct BatchStopUpdateActionOutput {
     /// <p>Update actions that haven't been processed successfully</p>
     pub unprocessed_update_actions:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
+}
+impl BatchStopUpdateActionOutput {
+    /// <p>Update actions that have been processed successfully</p>
+    pub fn processed_update_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProcessedUpdateAction]> {
+        self.processed_update_actions.as_deref()
+    }
+    /// <p>Update actions that haven't been processed successfully</p>
+    pub fn unprocessed_update_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnprocessedUpdateAction]> {
+        self.unprocessed_update_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchStopUpdateActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4786,6 +5552,20 @@ pub struct BatchApplyUpdateActionOutput {
     /// <p>Update actions that haven't been processed successfully</p>
     pub unprocessed_update_actions:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
+}
+impl BatchApplyUpdateActionOutput {
+    /// <p>Update actions that have been processed successfully</p>
+    pub fn processed_update_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProcessedUpdateAction]> {
+        self.processed_update_actions.as_deref()
+    }
+    /// <p>Update actions that haven't been processed successfully</p>
+    pub fn unprocessed_update_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnprocessedUpdateAction]> {
+        self.unprocessed_update_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchApplyUpdateActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4894,6 +5674,29 @@ pub struct AuthorizeCacheSecurityGroupIngressOutput {
     /// </ul>
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
+impl AuthorizeCacheSecurityGroupIngressOutput {
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AuthorizeCacheSecurityGroupIngress</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreateCacheSecurityGroup</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RevokeCacheSecurityGroupIngress</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
+        self.cache_security_group.as_ref()
+    }
+}
 impl std::fmt::Debug for AuthorizeCacheSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeCacheSecurityGroupIngressOutput");
@@ -4979,6 +5782,12 @@ impl AuthorizeCacheSecurityGroupIngressOutput {
 pub struct AddTagsToResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToResourceOutput {
+    /// <p>A list of tags as key-value pairs.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

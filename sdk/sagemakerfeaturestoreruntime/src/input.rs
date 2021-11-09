@@ -98,10 +98,7 @@ impl BatchGetRecordInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_record(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_record(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -720,10 +717,7 @@ impl PutRecordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_record(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_record(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -804,6 +798,28 @@ pub struct PutRecordInput {
     /// </ul>
     pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
 }
+impl PutRecordInput {
+    /// <p>The name of the feature group that you want to insert the record into.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
+    /// to update few of the feature values, do the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p>
+    /// </li>
+    /// <li>
+    /// <p>Update the record returned from <code>GetRecord</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>Use <code>PutRecord</code> to update feature values.</p>
+    /// </li>
+    /// </ul>
+    pub fn record(&self) -> std::option::Option<&[crate::model::FeatureValue]> {
+        self.record.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordInput");
@@ -825,6 +841,22 @@ pub struct GetRecordInput {
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
     /// the Features are returned.</p>
     pub feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetRecordInput {
+    /// <p>The name of the feature group in which you want to put the records.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
+    /// the record in the <code>FeatureGroup</code>. </p>
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
+        self.record_identifier_value_as_string.as_deref()
+    }
+    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
+    /// the Features are returned.</p>
+    pub fn feature_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.feature_names.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -852,6 +884,22 @@ pub struct DeleteRecordInput {
     /// used to query data at a certain point in time.</p>
     pub event_time: std::option::Option<std::string::String>,
 }
+impl DeleteRecordInput {
+    /// <p>The name of the feature group to delete the record from. </p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
+    /// string format. </p>
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
+        self.record_identifier_value_as_string.as_deref()
+    }
+    /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
+    /// used to query data at a certain point in time.</p>
+    pub fn event_time(&self) -> std::option::Option<&str> {
+        self.event_time.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRecordInput");
@@ -872,6 +920,13 @@ pub struct BatchGetRecordInput {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
     /// that have been requested to be retrieved in batch.</p>
     pub identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+}
+impl BatchGetRecordInput {
+    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
+    /// that have been requested to be retrieved in batch.</p>
+    pub fn identifiers(&self) -> std::option::Option<&[crate::model::BatchGetRecordIdentifier]> {
+        self.identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

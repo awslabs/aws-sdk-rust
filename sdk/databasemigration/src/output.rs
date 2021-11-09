@@ -6,6 +6,12 @@ pub struct TestConnectionOutput {
     /// <p>The connection tested.</p>
     pub connection: std::option::Option<crate::model::Connection>,
 }
+impl TestConnectionOutput {
+    /// <p>The connection tested.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
+}
 impl std::fmt::Debug for TestConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestConnectionOutput");
@@ -56,6 +62,12 @@ impl TestConnectionOutput {
 pub struct StopReplicationTaskOutput {
     /// <p>The replication task stopped.</p>
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
+}
+impl StopReplicationTaskOutput {
+    /// <p>The replication task stopped.</p>
+    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+        self.replication_task.as_ref()
+    }
 }
 impl std::fmt::Debug for StopReplicationTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +120,14 @@ pub struct StartReplicationTaskAssessmentRunOutput {
     /// <p>The premigration assessment run that was started.</p>
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+}
+impl StartReplicationTaskAssessmentRunOutput {
+    /// <p>The premigration assessment run that was started.</p>
+    pub fn replication_task_assessment_run(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
+        self.replication_task_assessment_run.as_ref()
+    }
 }
 impl std::fmt::Debug for StartReplicationTaskAssessmentRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -167,6 +187,12 @@ pub struct StartReplicationTaskAssessmentOutput {
     /// <p> The assessed replication task. </p>
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
+impl StartReplicationTaskAssessmentOutput {
+    /// <p> The assessed replication task. </p>
+    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+        self.replication_task.as_ref()
+    }
+}
 impl std::fmt::Debug for StartReplicationTaskAssessmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartReplicationTaskAssessmentOutput");
@@ -217,6 +243,12 @@ impl StartReplicationTaskAssessmentOutput {
 pub struct StartReplicationTaskOutput {
     /// <p>The replication task started.</p>
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
+}
+impl StartReplicationTaskOutput {
+    /// <p>The replication task started.</p>
+    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+        self.replication_task.as_ref()
+    }
 }
 impl std::fmt::Debug for StartReplicationTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -299,6 +331,12 @@ pub struct ReloadTablesOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     pub replication_task_arn: std::option::Option<std::string::String>,
 }
+impl ReloadTablesOutput {
+    /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ReloadTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReloadTablesOutput");
@@ -349,6 +387,14 @@ impl ReloadTablesOutput {
 pub struct RefreshSchemasOutput {
     /// <p>The status of the refreshed schema.</p>
     pub refresh_schemas_status: std::option::Option<crate::model::RefreshSchemasStatus>,
+}
+impl RefreshSchemasOutput {
+    /// <p>The status of the refreshed schema.</p>
+    pub fn refresh_schemas_status(
+        &self,
+    ) -> std::option::Option<&crate::model::RefreshSchemasStatus> {
+        self.refresh_schemas_status.as_ref()
+    }
 }
 impl std::fmt::Debug for RefreshSchemasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -401,6 +447,12 @@ pub struct RebootReplicationInstanceOutput {
     /// <p>The replication instance that is being rebooted. </p>
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
+impl RebootReplicationInstanceOutput {
+    /// <p>The replication instance that is being rebooted. </p>
+    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+        self.replication_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for RebootReplicationInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootReplicationInstanceOutput");
@@ -451,6 +503,12 @@ impl RebootReplicationInstanceOutput {
 pub struct MoveReplicationTaskOutput {
     /// <p>The replication task that was moved.</p>
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
+}
+impl MoveReplicationTaskOutput {
+    /// <p>The replication task that was moved.</p>
+    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+        self.replication_task.as_ref()
+    }
 }
 impl std::fmt::Debug for MoveReplicationTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -503,6 +561,12 @@ pub struct ModifyReplicationTaskOutput {
     /// <p>The replication task that was modified.</p>
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
+impl ModifyReplicationTaskOutput {
+    /// <p>The replication task that was modified.</p>
+    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+        self.replication_task.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyReplicationTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyReplicationTaskOutput");
@@ -553,6 +617,14 @@ impl ModifyReplicationTaskOutput {
 pub struct ModifyReplicationSubnetGroupOutput {
     /// <p>The modified replication subnet group.</p>
     pub replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
+}
+impl ModifyReplicationSubnetGroupOutput {
+    /// <p>The modified replication subnet group.</p>
+    pub fn replication_subnet_group(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationSubnetGroup> {
+        self.replication_subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyReplicationSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -609,6 +681,12 @@ pub struct ModifyReplicationInstanceOutput {
     /// <p>The modified replication instance.</p>
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
+impl ModifyReplicationInstanceOutput {
+    /// <p>The modified replication instance.</p>
+    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+        self.replication_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyReplicationInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyReplicationInstanceOutput");
@@ -659,6 +737,12 @@ impl ModifyReplicationInstanceOutput {
 pub struct ModifyEventSubscriptionOutput {
     /// <p>The modified event subscription.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl ModifyEventSubscriptionOutput {
+    /// <p>The modified event subscription.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,6 +795,12 @@ pub struct ModifyEndpointOutput {
     /// <p>The modified endpoint.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
+impl ModifyEndpointOutput {
+    /// <p>The modified endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyEndpointOutput");
@@ -758,6 +848,12 @@ impl ModifyEndpointOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags for the resource.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags for the resource.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -816,6 +912,12 @@ pub struct ImportCertificateOutput {
     /// <p>The certificate to be uploaded.</p>
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
+impl ImportCertificateOutput {
+    /// <p>The certificate to be uploaded.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
+        self.certificate.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportCertificateOutput");
@@ -872,6 +974,22 @@ pub struct DescribeTableStatisticsOutput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeTableStatisticsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+        self.replication_task_arn.as_deref()
+    }
+    /// <p>The table statistics.</p>
+    pub fn table_statistics(&self) -> std::option::Option<&[crate::model::TableStatistics]> {
+        self.table_statistics.as_deref()
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTableStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -968,6 +1086,18 @@ pub struct DescribeSchemasOutput {
     /// <p>The described schema.</p>
     pub schemas: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeSchemasOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The described schema.</p>
+    pub fn schemas(&self) -> std::option::Option<&[std::string::String]> {
+        self.schemas.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSchemasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSchemasOutput");
@@ -1045,6 +1175,18 @@ pub struct DescribeReplicationTasksOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the replication tasks.</p>
     pub replication_tasks: std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
+}
+impl DescribeReplicationTasksOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A description of the replication tasks.</p>
+    pub fn replication_tasks(&self) -> std::option::Option<&[crate::model::ReplicationTask]> {
+        self.replication_tasks.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1129,6 +1271,21 @@ pub struct DescribeReplicationTaskIndividualAssessmentsOutput {
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     pub replication_task_individual_assessments:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
+}
+impl DescribeReplicationTaskIndividualAssessmentsOutput {
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
+    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
+    /// records beyond the marker, up to the value specified in the request by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
+    pub fn replication_task_individual_assessments(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationTaskIndividualAssessment]> {
+        self.replication_task_individual_assessments.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationTaskIndividualAssessmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1225,6 +1382,21 @@ pub struct DescribeReplicationTaskAssessmentRunsOutput {
     pub replication_task_assessment_runs:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
 }
+impl DescribeReplicationTaskAssessmentRunsOutput {
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
+    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
+    /// records beyond the marker, up to the value specified in the request by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
+    pub fn replication_task_assessment_runs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationTaskAssessmentRun]> {
+        self.replication_task_assessment_runs.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationTaskAssessmentRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationTaskAssessmentRunsOutput");
@@ -1314,6 +1486,24 @@ pub struct DescribeReplicationTaskAssessmentResultsOutput {
     /// <p> The task assessment report. </p>
     pub replication_task_assessment_results:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
+}
+impl DescribeReplicationTaskAssessmentResultsOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p> The task assessment report. </p>
+    pub fn replication_task_assessment_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationTaskAssessmentResult]> {
+        self.replication_task_assessment_results.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationTaskAssessmentResultsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1417,6 +1607,20 @@ pub struct DescribeReplicationSubnetGroupsOutput {
     pub replication_subnet_groups:
         std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
 }
+impl DescribeReplicationSubnetGroupsOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A description of the replication subnet groups.</p>
+    pub fn replication_subnet_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationSubnetGroup]> {
+        self.replication_subnet_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationSubnetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationSubnetGroupsOutput");
@@ -1502,6 +1706,25 @@ pub struct DescribeReplicationInstanceTaskLogsOutput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeReplicationInstanceTaskLogsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+        self.replication_instance_arn.as_deref()
+    }
+    /// <p>An array of replication task log metadata. Each member of the array contains the
+    /// replication task name, ARN, and task log size (in bytes). </p>
+    pub fn replication_instance_task_logs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationInstanceTaskLog]> {
+        self.replication_instance_task_logs.as_deref()
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationInstanceTaskLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1607,6 +1830,20 @@ pub struct DescribeReplicationInstancesOutput {
     pub replication_instances:
         std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
 }
+impl DescribeReplicationInstancesOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The replication instances described.</p>
+    pub fn replication_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationInstance]> {
+        self.replication_instances.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationInstancesOutput");
@@ -1685,6 +1922,14 @@ pub struct DescribeRefreshSchemasStatusOutput {
     /// <p>The status of the schema.</p>
     pub refresh_schemas_status: std::option::Option<crate::model::RefreshSchemasStatus>,
 }
+impl DescribeRefreshSchemasStatusOutput {
+    /// <p>The status of the schema.</p>
+    pub fn refresh_schemas_status(
+        &self,
+    ) -> std::option::Option<&crate::model::RefreshSchemasStatus> {
+        self.refresh_schemas_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRefreshSchemasStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRefreshSchemasStatusOutput");
@@ -1740,6 +1985,20 @@ pub struct DescribePendingMaintenanceActionsOutput {
     /// specified, the response includes only records beyond the marker, up to the value specified
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribePendingMaintenanceActionsOutput {
+    /// <p>The pending maintenance action.</p>
+    pub fn pending_maintenance_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
+        self.pending_maintenance_actions.as_deref()
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePendingMaintenanceActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1829,6 +2088,20 @@ pub struct DescribeOrderableReplicationInstancesOutput {
     /// by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeOrderableReplicationInstancesOutput {
+    /// <p>The order-able replication instances available.</p>
+    pub fn orderable_replication_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrderableReplicationInstance]> {
+        self.orderable_replication_instances.as_deref()
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrderableReplicationInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrderableReplicationInstancesOutput");
@@ -1915,6 +2188,20 @@ pub struct DescribeEventSubscriptionsOutput {
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
+impl DescribeEventSubscriptionsOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of event subscriptions.</p>
+    pub fn event_subscriptions_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventSubscription]> {
+        self.event_subscriptions_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventSubscriptionsOutput");
@@ -1997,6 +2284,18 @@ pub struct DescribeEventsOutput {
     /// <p>The events described.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl DescribeEventsOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The events described.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -2072,6 +2371,14 @@ pub struct DescribeEventCategoriesOutput {
     pub event_category_group_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
 }
+impl DescribeEventCategoriesOutput {
+    /// <p>A list of event categories.</p>
+    pub fn event_category_group_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventCategoryGroup]> {
+        self.event_category_group_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventCategoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventCategoriesOutput");
@@ -2137,6 +2444,20 @@ pub struct DescribeEndpointTypesOutput {
     /// <p>The types of endpoints that are supported.</p>
     pub supported_endpoint_types:
         std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
+}
+impl DescribeEndpointTypesOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The types of endpoints that are supported.</p>
+    pub fn supported_endpoint_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::SupportedEndpointType]> {
+        self.supported_endpoint_types.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2219,6 +2540,17 @@ pub struct DescribeEndpointSettingsOutput {
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
     pub endpoint_settings: std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
 }
+impl DescribeEndpointSettingsOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
+    /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
+    pub fn endpoint_settings(&self) -> std::option::Option<&[crate::model::EndpointSetting]> {
+        self.endpoint_settings.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointSettingsOutput");
@@ -2299,6 +2631,18 @@ pub struct DescribeEndpointsOutput {
     /// <p>Endpoint description.</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
 }
+impl DescribeEndpointsOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Endpoint description.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointsOutput");
@@ -2377,6 +2721,18 @@ pub struct DescribeConnectionsOutput {
     /// <p>A description of the connections.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
 }
+impl DescribeConnectionsOutput {
+    /// <p> An optional pagination token provided by a previous request. If this parameter is
+    /// specified, the response includes only records beyond the marker, up to the value specified
+    /// by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A description of the connections.</p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+        self.connections.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectionsOutput");
@@ -2453,6 +2809,17 @@ pub struct DescribeCertificatesOutput {
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
     /// instance.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
+}
+impl DescribeCertificatesOutput {
+    /// <p>The pagination token.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+    /// instance.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+        self.certificates.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2535,6 +2902,24 @@ pub struct DescribeApplicableIndividualAssessmentsOutput {
     /// records beyond the marker, up to the value specified in the request by
     /// <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeApplicableIndividualAssessmentsOutput {
+    /// <p>List of names for the individual assessments supported by the premigration assessment
+    /// run that you start based on the specified request parameters. For more information on the
+    /// available individual assessments, including compatibility with different migration task
+    /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
+    /// <i>Database Migration Service User Guide.</i>
+    /// </p>
+    pub fn individual_assessment_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.individual_assessment_names.as_deref()
+    }
+    /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this
+    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
+    /// records beyond the marker, up to the value specified in the request by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicableIndividualAssessmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2642,6 +3027,27 @@ pub struct DescribeAccountAttributesOutput {
     /// </note>
     pub unique_account_identifier: std::option::Option<std::string::String>,
 }
+impl DescribeAccountAttributesOutput {
+    /// <p>Account quota information.</p>
+    pub fn account_quotas(&self) -> std::option::Option<&[crate::model::AccountQuota]> {
+        self.account_quotas.as_deref()
+    }
+    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
+    /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
+    /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
+    /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
+    /// name is the following:
+    /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
+    /// Here is an example name for this default S3 bucket:
+    /// <code>dms-111122223333-c44445555666</code>.</p>
+    /// <note>
+    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
+    /// versions 3.1.4 and later.</p>
+    /// </note>
+    pub fn unique_account_identifier(&self) -> std::option::Option<&str> {
+        self.unique_account_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAccountAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountAttributesOutput");
@@ -2739,6 +3145,15 @@ pub struct DeleteReplicationTaskAssessmentRunOutput {
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
+impl DeleteReplicationTaskAssessmentRunOutput {
+    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment
+    /// run.</p>
+    pub fn replication_task_assessment_run(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
+        self.replication_task_assessment_run.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationTaskAssessmentRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationTaskAssessmentRunOutput");
@@ -2798,6 +3213,12 @@ impl DeleteReplicationTaskAssessmentRunOutput {
 pub struct DeleteReplicationTaskOutput {
     /// <p>The deleted replication task.</p>
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
+}
+impl DeleteReplicationTaskOutput {
+    /// <p>The deleted replication task.</p>
+    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+        self.replication_task.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteReplicationTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2880,6 +3301,12 @@ pub struct DeleteReplicationInstanceOutput {
     /// <p>The replication instance that was deleted.</p>
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
+impl DeleteReplicationInstanceOutput {
+    /// <p>The replication instance that was deleted.</p>
+    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+        self.replication_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationInstanceOutput");
@@ -2930,6 +3357,12 @@ impl DeleteReplicationInstanceOutput {
 pub struct DeleteEventSubscriptionOutput {
     /// <p>The event subscription that was deleted.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl DeleteEventSubscriptionOutput {
+    /// <p>The event subscription that was deleted.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2982,6 +3415,12 @@ pub struct DeleteEndpointOutput {
     /// <p>The endpoint that was deleted.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
+impl DeleteEndpointOutput {
+    /// <p>The endpoint that was deleted.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEndpointOutput");
@@ -3029,6 +3468,12 @@ impl DeleteEndpointOutput {
 pub struct DeleteConnectionOutput {
     /// <p>The connection that is being deleted.</p>
     pub connection: std::option::Option<crate::model::Connection>,
+}
+impl DeleteConnectionOutput {
+    /// <p>The connection that is being deleted.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3081,6 +3526,12 @@ pub struct DeleteCertificateOutput {
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
+impl DeleteCertificateOutput {
+    /// <p>The Secure Sockets Layer (SSL) certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
+        self.certificate.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCertificateOutput");
@@ -3132,6 +3583,12 @@ pub struct CreateReplicationTaskOutput {
     /// <p>The replication task that was created.</p>
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
+impl CreateReplicationTaskOutput {
+    /// <p>The replication task that was created.</p>
+    pub fn replication_task(&self) -> std::option::Option<&crate::model::ReplicationTask> {
+        self.replication_task.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationTaskOutput");
@@ -3182,6 +3639,14 @@ impl CreateReplicationTaskOutput {
 pub struct CreateReplicationSubnetGroupOutput {
     /// <p>The replication subnet group that was created.</p>
     pub replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
+}
+impl CreateReplicationSubnetGroupOutput {
+    /// <p>The replication subnet group that was created.</p>
+    pub fn replication_subnet_group(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationSubnetGroup> {
+        self.replication_subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3238,6 +3703,12 @@ pub struct CreateReplicationInstanceOutput {
     /// <p>The replication instance that was created.</p>
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
+impl CreateReplicationInstanceOutput {
+    /// <p>The replication instance that was created.</p>
+    pub fn replication_instance(&self) -> std::option::Option<&crate::model::ReplicationInstance> {
+        self.replication_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationInstanceOutput");
@@ -3288,6 +3759,12 @@ impl CreateReplicationInstanceOutput {
 pub struct CreateEventSubscriptionOutput {
     /// <p>The event subscription that was created.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl CreateEventSubscriptionOutput {
+    /// <p>The event subscription that was created.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3340,6 +3817,12 @@ pub struct CreateEndpointOutput {
     /// <p>The endpoint that was created.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
+impl CreateEndpointOutput {
+    /// <p>The endpoint that was created.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEndpointOutput");
@@ -3389,6 +3872,15 @@ pub struct CancelReplicationTaskAssessmentRunOutput {
     /// run.</p>
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
+}
+impl CancelReplicationTaskAssessmentRunOutput {
+    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment
+    /// run.</p>
+    pub fn replication_task_assessment_run(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
+        self.replication_task_assessment_run.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelReplicationTaskAssessmentRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3450,6 +3942,14 @@ pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+}
+impl ApplyPendingMaintenanceActionOutput {
+    /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
+    pub fn resource_pending_maintenance_actions(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourcePendingMaintenanceActions> {
+        self.resource_pending_maintenance_actions.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplyPendingMaintenanceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

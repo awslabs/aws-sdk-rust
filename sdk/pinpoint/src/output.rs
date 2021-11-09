@@ -6,6 +6,12 @@ pub struct UpdateVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl UpdateVoiceTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVoiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVoiceTemplateOutput");
@@ -56,6 +62,14 @@ impl UpdateVoiceTemplateOutput {
 pub struct UpdateVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+}
+impl UpdateVoiceChannelOutput {
+    /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    pub fn voice_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::VoiceChannelResponse> {
+        self.voice_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateVoiceChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +122,12 @@ pub struct UpdateTemplateActiveVersionOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl UpdateTemplateActiveVersionOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTemplateActiveVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTemplateActiveVersionOutput");
@@ -158,6 +178,12 @@ impl UpdateTemplateActiveVersionOutput {
 pub struct UpdateSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
+}
+impl UpdateSmsTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSmsTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -210,6 +236,12 @@ pub struct UpdateSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
+impl UpdateSmsChannelOutput {
+    /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    pub fn sms_channel_response(&self) -> std::option::Option<&crate::model::SmsChannelResponse> {
+        self.sms_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSmsChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSmsChannelOutput");
@@ -260,6 +292,12 @@ impl UpdateSmsChannelOutput {
 pub struct UpdateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+}
+impl UpdateSegmentOutput {
+    /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+        self.segment_response.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSegmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -312,6 +350,14 @@ pub struct UpdateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
+}
+impl UpdateRecommenderConfigurationOutput {
+    /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    pub fn recommender_configuration_response(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+        self.recommender_configuration_response.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRecommenderConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -371,6 +417,12 @@ pub struct UpdatePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl UpdatePushTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePushTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePushTemplateOutput");
@@ -421,6 +473,12 @@ impl UpdatePushTemplateOutput {
 pub struct UpdateJourneyStateOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
+}
+impl UpdateJourneyStateOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+        self.journey_response.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateJourneyStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -473,6 +531,12 @@ pub struct UpdateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
+impl UpdateJourneyOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+        self.journey_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateJourneyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJourneyOutput");
@@ -523,6 +587,12 @@ impl UpdateJourneyOutput {
 pub struct UpdateInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
+}
+impl UpdateInAppTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateInAppTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -575,6 +645,12 @@ pub struct UpdateGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
+impl UpdateGcmChannelOutput {
+    /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    pub fn gcm_channel_response(&self) -> std::option::Option<&crate::model::GcmChannelResponse> {
+        self.gcm_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGcmChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGcmChannelOutput");
@@ -625,6 +701,12 @@ impl UpdateGcmChannelOutput {
 pub struct UpdateEndpointsBatchOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
+}
+impl UpdateEndpointsBatchOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEndpointsBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +759,12 @@ pub struct UpdateEndpointOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl UpdateEndpointOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEndpointOutput");
@@ -727,6 +815,12 @@ impl UpdateEndpointOutput {
 pub struct UpdateEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
+}
+impl UpdateEmailTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -779,6 +873,14 @@ pub struct UpdateEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
+impl UpdateEmailChannelOutput {
+    /// <p>Provides information about the status and settings of the email channel for an application.</p>
+    pub fn email_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailChannelResponse> {
+        self.email_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEmailChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEmailChannelOutput");
@@ -829,6 +931,12 @@ impl UpdateEmailChannelOutput {
 pub struct UpdateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+}
+impl UpdateCampaignOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+        self.campaign_response.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -881,6 +989,14 @@ pub struct UpdateBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
+impl UpdateBaiduChannelOutput {
+    /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    pub fn baidu_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::BaiduChannelResponse> {
+        self.baidu_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBaiduChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBaiduChannelOutput");
@@ -932,6 +1048,14 @@ pub struct UpdateApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     pub application_settings_resource:
         std::option::Option<crate::model::ApplicationSettingsResource>,
+}
+impl UpdateApplicationSettingsOutput {
+    /// <p>Provides information about an application, including the default settings for an application.</p>
+    pub fn application_settings_resource(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationSettingsResource> {
+        self.application_settings_resource.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApplicationSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1116,14 @@ pub struct UpdateApnsVoipSandboxChannelOutput {
     pub apns_voip_sandbox_channel_response:
         std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
 }
+impl UpdateApnsVoipSandboxChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    pub fn apns_voip_sandbox_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipSandboxChannelResponse> {
+        self.apns_voip_sandbox_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApnsVoipSandboxChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApnsVoipSandboxChannelOutput");
@@ -1049,6 +1181,14 @@ impl UpdateApnsVoipSandboxChannelOutput {
 pub struct UpdateApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+}
+impl UpdateApnsVoipChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    pub fn apns_voip_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipChannelResponse> {
+        self.apns_voip_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApnsVoipChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1109,6 +1249,14 @@ pub struct UpdateApnsSandboxChannelOutput {
     pub apns_sandbox_channel_response:
         std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
+impl UpdateApnsSandboxChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    pub fn apns_sandbox_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsSandboxChannelResponse> {
+        self.apns_sandbox_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApnsSandboxChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApnsSandboxChannelOutput");
@@ -1167,6 +1315,12 @@ pub struct UpdateApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
+impl UpdateApnsChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    pub fn apns_channel_response(&self) -> std::option::Option<&crate::model::ApnsChannelResponse> {
+        self.apns_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApnsChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApnsChannelOutput");
@@ -1217,6 +1371,12 @@ impl UpdateApnsChannelOutput {
 pub struct UpdateAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+}
+impl UpdateAdmChannelOutput {
+    /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    pub fn adm_channel_response(&self) -> std::option::Option<&crate::model::AdmChannelResponse> {
+        self.adm_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAdmChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1329,6 +1489,14 @@ pub struct SendUsersMessagesOutput {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
     pub send_users_message_response: std::option::Option<crate::model::SendUsersMessageResponse>,
 }
+impl SendUsersMessagesOutput {
+    /// <p>Provides information about which users and endpoints a message was sent to.</p>
+    pub fn send_users_message_response(
+        &self,
+    ) -> std::option::Option<&crate::model::SendUsersMessageResponse> {
+        self.send_users_message_response.as_ref()
+    }
+}
 impl std::fmt::Debug for SendUsersMessagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendUsersMessagesOutput");
@@ -1387,6 +1555,12 @@ pub struct SendMessagesOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     pub message_response: std::option::Option<crate::model::MessageResponse>,
 }
+impl SendMessagesOutput {
+    /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+    pub fn message_response(&self) -> std::option::Option<&crate::model::MessageResponse> {
+        self.message_response.as_ref()
+    }
+}
 impl std::fmt::Debug for SendMessagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendMessagesOutput");
@@ -1437,6 +1611,12 @@ impl SendMessagesOutput {
 pub struct RemoveAttributesOutput {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
     pub attributes_resource: std::option::Option<crate::model::AttributesResource>,
+}
+impl RemoveAttributesOutput {
+    /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
+    pub fn attributes_resource(&self) -> std::option::Option<&crate::model::AttributesResource> {
+        self.attributes_resource.as_ref()
+    }
 }
 impl std::fmt::Debug for RemoveAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1489,6 +1669,12 @@ pub struct PutEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
+impl PutEventStreamOutput {
+    /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn event_stream(&self) -> std::option::Option<&crate::model::EventStream> {
+        self.event_stream.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEventStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventStreamOutput");
@@ -1540,6 +1726,12 @@ pub struct PutEventsOutput {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
     pub events_response: std::option::Option<crate::model::EventsResponse>,
 }
+impl PutEventsOutput {
+    /// <p>Provides information about endpoints and the events that they're associated with.</p>
+    pub fn events_response(&self) -> std::option::Option<&crate::model::EventsResponse> {
+        self.events_response.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventsOutput");
@@ -1590,6 +1782,14 @@ impl PutEventsOutput {
 pub struct PhoneNumberValidateOutput {
     /// <p>Provides information about a phone number.</p>
     pub number_validate_response: std::option::Option<crate::model::NumberValidateResponse>,
+}
+impl PhoneNumberValidateOutput {
+    /// <p>Provides information about a phone number.</p>
+    pub fn number_validate_response(
+        &self,
+    ) -> std::option::Option<&crate::model::NumberValidateResponse> {
+        self.number_validate_response.as_ref()
+    }
 }
 impl std::fmt::Debug for PhoneNumberValidateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1645,6 +1845,14 @@ impl PhoneNumberValidateOutput {
 pub struct ListTemplateVersionsOutput {
     /// <p>Provides information about all the versions of a specific message template.</p>
     pub template_versions_response: std::option::Option<crate::model::TemplateVersionsResponse>,
+}
+impl ListTemplateVersionsOutput {
+    /// <p>Provides information about all the versions of a specific message template.</p>
+    pub fn template_versions_response(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateVersionsResponse> {
+        self.template_versions_response.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTemplateVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1704,6 +1912,12 @@ pub struct ListTemplatesOutput {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     pub templates_response: std::option::Option<crate::model::TemplatesResponse>,
 }
+impl ListTemplatesOutput {
+    /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
+    pub fn templates_response(&self) -> std::option::Option<&crate::model::TemplatesResponse> {
+        self.templates_response.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplatesOutput");
@@ -1754,6 +1968,12 @@ impl ListTemplatesOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub tags_model: std::option::Option<crate::model::TagsModel>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    pub fn tags_model(&self) -> std::option::Option<&crate::model::TagsModel> {
+        self.tags_model.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1806,6 +2026,12 @@ pub struct ListJourneysOutput {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
     pub journeys_response: std::option::Option<crate::model::JourneysResponse>,
 }
+impl ListJourneysOutput {
+    /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
+    pub fn journeys_response(&self) -> std::option::Option<&crate::model::JourneysResponse> {
+        self.journeys_response.as_ref()
+    }
+}
 impl std::fmt::Debug for ListJourneysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJourneysOutput");
@@ -1856,6 +2082,14 @@ impl ListJourneysOutput {
 pub struct GetVoiceTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     pub voice_template_response: std::option::Option<crate::model::VoiceTemplateResponse>,
+}
+impl GetVoiceTemplateOutput {
+    /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    pub fn voice_template_response(
+        &self,
+    ) -> std::option::Option<&crate::model::VoiceTemplateResponse> {
+        self.voice_template_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetVoiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1912,6 +2146,14 @@ pub struct GetVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
 }
+impl GetVoiceChannelOutput {
+    /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    pub fn voice_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::VoiceChannelResponse> {
+        self.voice_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVoiceChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceChannelOutput");
@@ -1962,6 +2204,12 @@ impl GetVoiceChannelOutput {
 pub struct GetUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
+}
+impl GetUserEndpointsOutput {
+    /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
+    pub fn endpoints_response(&self) -> std::option::Option<&crate::model::EndpointsResponse> {
+        self.endpoints_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetUserEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2014,6 +2262,12 @@ pub struct GetSmsTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     pub sms_template_response: std::option::Option<crate::model::SmsTemplateResponse>,
 }
+impl GetSmsTemplateOutput {
+    /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    pub fn sms_template_response(&self) -> std::option::Option<&crate::model::SmsTemplateResponse> {
+        self.sms_template_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSmsTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSmsTemplateOutput");
@@ -2064,6 +2318,12 @@ impl GetSmsTemplateOutput {
 pub struct GetSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
+}
+impl GetSmsChannelOutput {
+    /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    pub fn sms_channel_response(&self) -> std::option::Option<&crate::model::SmsChannelResponse> {
+        self.sms_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSmsChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2116,6 +2376,12 @@ pub struct GetSegmentVersionsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
 }
+impl GetSegmentVersionsOutput {
+    /// <p>Provides information about all the segments that are associated with an application.</p>
+    pub fn segments_response(&self) -> std::option::Option<&crate::model::SegmentsResponse> {
+        self.segments_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSegmentVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSegmentVersionsOutput");
@@ -2166,6 +2432,12 @@ impl GetSegmentVersionsOutput {
 pub struct GetSegmentVersionOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+}
+impl GetSegmentVersionOutput {
+    /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+        self.segment_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSegmentVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2218,6 +2490,12 @@ pub struct GetSegmentsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
 }
+impl GetSegmentsOutput {
+    /// <p>Provides information about all the segments that are associated with an application.</p>
+    pub fn segments_response(&self) -> std::option::Option<&crate::model::SegmentsResponse> {
+        self.segments_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSegmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSegmentsOutput");
@@ -2268,6 +2546,12 @@ impl GetSegmentsOutput {
 pub struct GetSegmentImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
+}
+impl GetSegmentImportJobsOutput {
+    /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
+    pub fn import_jobs_response(&self) -> std::option::Option<&crate::model::ImportJobsResponse> {
+        self.import_jobs_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSegmentImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2320,6 +2604,12 @@ pub struct GetSegmentExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
 }
+impl GetSegmentExportJobsOutput {
+    /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
+    pub fn export_jobs_response(&self) -> std::option::Option<&crate::model::ExportJobsResponse> {
+        self.export_jobs_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSegmentExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSegmentExportJobsOutput");
@@ -2370,6 +2660,12 @@ impl GetSegmentExportJobsOutput {
 pub struct GetSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+}
+impl GetSegmentOutput {
+    /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+        self.segment_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSegmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2422,6 +2718,14 @@ pub struct GetRecommenderConfigurationsOutput {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
     pub list_recommender_configurations_response:
         std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
+}
+impl GetRecommenderConfigurationsOutput {
+    /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
+    pub fn list_recommender_configurations_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ListRecommenderConfigurationsResponse> {
+        self.list_recommender_configurations_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRecommenderConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2483,6 +2787,14 @@ pub struct GetRecommenderConfigurationOutput {
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
+impl GetRecommenderConfigurationOutput {
+    /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    pub fn recommender_configuration_response(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+        self.recommender_configuration_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRecommenderConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecommenderConfigurationOutput");
@@ -2541,6 +2853,14 @@ pub struct GetPushTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     pub push_notification_template_response:
         std::option::Option<crate::model::PushNotificationTemplateResponse>,
+}
+impl GetPushTemplateOutput {
+    /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    pub fn push_notification_template_response(
+        &self,
+    ) -> std::option::Option<&crate::model::PushNotificationTemplateResponse> {
+        self.push_notification_template_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPushTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2601,6 +2921,14 @@ pub struct GetJourneyExecutionMetricsOutput {
     pub journey_execution_metrics_response:
         std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
 }
+impl GetJourneyExecutionMetricsOutput {
+    /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
+    pub fn journey_execution_metrics_response(
+        &self,
+    ) -> std::option::Option<&crate::model::JourneyExecutionMetricsResponse> {
+        self.journey_execution_metrics_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJourneyExecutionMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJourneyExecutionMetricsOutput");
@@ -2659,6 +2987,14 @@ pub struct GetJourneyExecutionActivityMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
     pub journey_execution_activity_metrics_response:
         std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
+}
+impl GetJourneyExecutionActivityMetricsOutput {
+    /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
+    pub fn journey_execution_activity_metrics_response(
+        &self,
+    ) -> std::option::Option<&crate::model::JourneyExecutionActivityMetricsResponse> {
+        self.journey_execution_activity_metrics_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetJourneyExecutionActivityMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2720,6 +3056,14 @@ pub struct GetJourneyDateRangeKpiOutput {
     pub journey_date_range_kpi_response:
         std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
 }
+impl GetJourneyDateRangeKpiOutput {
+    /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
+    pub fn journey_date_range_kpi_response(
+        &self,
+    ) -> std::option::Option<&crate::model::JourneyDateRangeKpiResponse> {
+        self.journey_date_range_kpi_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJourneyDateRangeKpiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJourneyDateRangeKpiOutput");
@@ -2778,6 +3122,12 @@ pub struct GetJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
+impl GetJourneyOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+        self.journey_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJourneyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJourneyOutput");
@@ -2828,6 +3178,14 @@ impl GetJourneyOutput {
 pub struct GetInAppTemplateOutput {
     /// <p>In-App Template Response.</p>
     pub in_app_template_response: std::option::Option<crate::model::InAppTemplateResponse>,
+}
+impl GetInAppTemplateOutput {
+    /// <p>In-App Template Response.</p>
+    pub fn in_app_template_response(
+        &self,
+    ) -> std::option::Option<&crate::model::InAppTemplateResponse> {
+        self.in_app_template_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetInAppTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2884,6 +3242,14 @@ pub struct GetInAppMessagesOutput {
     /// <p>Get in-app messages response object.</p>
     pub in_app_messages_response: std::option::Option<crate::model::InAppMessagesResponse>,
 }
+impl GetInAppMessagesOutput {
+    /// <p>Get in-app messages response object.</p>
+    pub fn in_app_messages_response(
+        &self,
+    ) -> std::option::Option<&crate::model::InAppMessagesResponse> {
+        self.in_app_messages_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInAppMessagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInAppMessagesOutput");
@@ -2939,6 +3305,12 @@ pub struct GetImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
 }
+impl GetImportJobsOutput {
+    /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
+    pub fn import_jobs_response(&self) -> std::option::Option<&crate::model::ImportJobsResponse> {
+        self.import_jobs_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImportJobsOutput");
@@ -2989,6 +3361,12 @@ impl GetImportJobsOutput {
 pub struct GetImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
+}
+impl GetImportJobOutput {
+    /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
+    pub fn import_job_response(&self) -> std::option::Option<&crate::model::ImportJobResponse> {
+        self.import_job_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3041,6 +3419,12 @@ pub struct GetGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
+impl GetGcmChannelOutput {
+    /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    pub fn gcm_channel_response(&self) -> std::option::Option<&crate::model::GcmChannelResponse> {
+        self.gcm_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGcmChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGcmChannelOutput");
@@ -3091,6 +3475,12 @@ impl GetGcmChannelOutput {
 pub struct GetExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
+}
+impl GetExportJobsOutput {
+    /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
+    pub fn export_jobs_response(&self) -> std::option::Option<&crate::model::ExportJobsResponse> {
+        self.export_jobs_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3143,6 +3533,12 @@ pub struct GetExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
 }
+impl GetExportJobOutput {
+    /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
+    pub fn export_job_response(&self) -> std::option::Option<&crate::model::ExportJobResponse> {
+        self.export_job_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExportJobOutput");
@@ -3193,6 +3589,12 @@ impl GetExportJobOutput {
 pub struct GetEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     pub event_stream: std::option::Option<crate::model::EventStream>,
+}
+impl GetEventStreamOutput {
+    /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn event_stream(&self) -> std::option::Option<&crate::model::EventStream> {
+        self.event_stream.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEventStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3245,6 +3647,12 @@ pub struct GetEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
 }
+impl GetEndpointOutput {
+    /// <p>Provides information about the channel type and other settings for an endpoint.</p>
+    pub fn endpoint_response(&self) -> std::option::Option<&crate::model::EndpointResponse> {
+        self.endpoint_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEndpointOutput");
@@ -3295,6 +3703,14 @@ impl GetEndpointOutput {
 pub struct GetEmailTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     pub email_template_response: std::option::Option<crate::model::EmailTemplateResponse>,
+}
+impl GetEmailTemplateOutput {
+    /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    pub fn email_template_response(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailTemplateResponse> {
+        self.email_template_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3351,6 +3767,14 @@ pub struct GetEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
+impl GetEmailChannelOutput {
+    /// <p>Provides information about the status and settings of the email channel for an application.</p>
+    pub fn email_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailChannelResponse> {
+        self.email_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEmailChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEmailChannelOutput");
@@ -3401,6 +3825,12 @@ impl GetEmailChannelOutput {
 pub struct GetChannelsOutput {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
     pub channels_response: std::option::Option<crate::model::ChannelsResponse>,
+}
+impl GetChannelsOutput {
+    /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
+    pub fn channels_response(&self) -> std::option::Option<&crate::model::ChannelsResponse> {
+        self.channels_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3453,6 +3883,12 @@ pub struct GetCampaignVersionsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
 }
+impl GetCampaignVersionsOutput {
+    /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
+    pub fn campaigns_response(&self) -> std::option::Option<&crate::model::CampaignsResponse> {
+        self.campaigns_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCampaignVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCampaignVersionsOutput");
@@ -3503,6 +3939,12 @@ impl GetCampaignVersionsOutput {
 pub struct GetCampaignVersionOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+}
+impl GetCampaignVersionOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+        self.campaign_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCampaignVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3555,6 +3997,12 @@ pub struct GetCampaignsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
 }
+impl GetCampaignsOutput {
+    /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
+    pub fn campaigns_response(&self) -> std::option::Option<&crate::model::CampaignsResponse> {
+        self.campaigns_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCampaignsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCampaignsOutput");
@@ -3606,6 +4054,14 @@ pub struct GetCampaignDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     pub campaign_date_range_kpi_response:
         std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
+}
+impl GetCampaignDateRangeKpiOutput {
+    /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
+    pub fn campaign_date_range_kpi_response(
+        &self,
+    ) -> std::option::Option<&crate::model::CampaignDateRangeKpiResponse> {
+        self.campaign_date_range_kpi_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCampaignDateRangeKpiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3665,6 +4121,12 @@ pub struct GetCampaignActivitiesOutput {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
     pub activities_response: std::option::Option<crate::model::ActivitiesResponse>,
 }
+impl GetCampaignActivitiesOutput {
+    /// <p>Provides information about the activities that were performed by a campaign.</p>
+    pub fn activities_response(&self) -> std::option::Option<&crate::model::ActivitiesResponse> {
+        self.activities_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCampaignActivitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCampaignActivitiesOutput");
@@ -3715,6 +4177,12 @@ impl GetCampaignActivitiesOutput {
 pub struct GetCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+}
+impl GetCampaignOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+        self.campaign_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3767,6 +4235,14 @@ pub struct GetBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
+impl GetBaiduChannelOutput {
+    /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    pub fn baidu_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::BaiduChannelResponse> {
+        self.baidu_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBaiduChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBaiduChannelOutput");
@@ -3817,6 +4293,14 @@ impl GetBaiduChannelOutput {
 pub struct GetAppsOutput {
     /// <p>Provides information about all of your applications.</p>
     pub applications_response: std::option::Option<crate::model::ApplicationsResponse>,
+}
+impl GetAppsOutput {
+    /// <p>Provides information about all of your applications.</p>
+    pub fn applications_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationsResponse> {
+        self.applications_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAppsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3869,6 +4353,14 @@ pub struct GetApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     pub application_settings_resource:
         std::option::Option<crate::model::ApplicationSettingsResource>,
+}
+impl GetApplicationSettingsOutput {
+    /// <p>Provides information about an application, including the default settings for an application.</p>
+    pub fn application_settings_resource(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationSettingsResource> {
+        self.application_settings_resource.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApplicationSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3929,6 +4421,14 @@ pub struct GetApplicationDateRangeKpiOutput {
     pub application_date_range_kpi_response:
         std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
 }
+impl GetApplicationDateRangeKpiOutput {
+    /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
+    pub fn application_date_range_kpi_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationDateRangeKpiResponse> {
+        self.application_date_range_kpi_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetApplicationDateRangeKpiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationDateRangeKpiOutput");
@@ -3987,6 +4487,12 @@ pub struct GetAppOutput {
     /// <p>Provides information about an application.</p>
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
+impl GetAppOutput {
+    /// <p>Provides information about an application.</p>
+    pub fn application_response(&self) -> std::option::Option<&crate::model::ApplicationResponse> {
+        self.application_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppOutput");
@@ -4038,6 +4544,14 @@ pub struct GetApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     pub apns_voip_sandbox_channel_response:
         std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+}
+impl GetApnsVoipSandboxChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    pub fn apns_voip_sandbox_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipSandboxChannelResponse> {
+        self.apns_voip_sandbox_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApnsVoipSandboxChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4096,6 +4610,14 @@ impl GetApnsVoipSandboxChannelOutput {
 pub struct GetApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+}
+impl GetApnsVoipChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    pub fn apns_voip_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipChannelResponse> {
+        self.apns_voip_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApnsVoipChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4156,6 +4678,14 @@ pub struct GetApnsSandboxChannelOutput {
     pub apns_sandbox_channel_response:
         std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
+impl GetApnsSandboxChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    pub fn apns_sandbox_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsSandboxChannelResponse> {
+        self.apns_sandbox_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetApnsSandboxChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApnsSandboxChannelOutput");
@@ -4214,6 +4744,12 @@ pub struct GetApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
+impl GetApnsChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    pub fn apns_channel_response(&self) -> std::option::Option<&crate::model::ApnsChannelResponse> {
+        self.apns_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for GetApnsChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApnsChannelOutput");
@@ -4264,6 +4800,12 @@ impl GetApnsChannelOutput {
 pub struct GetAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+}
+impl GetAdmChannelOutput {
+    /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    pub fn adm_channel_response(&self) -> std::option::Option<&crate::model::AdmChannelResponse> {
+        self.adm_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAdmChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4316,6 +4858,12 @@ pub struct DeleteVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl DeleteVoiceTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteVoiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVoiceTemplateOutput");
@@ -4366,6 +4914,14 @@ impl DeleteVoiceTemplateOutput {
 pub struct DeleteVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+}
+impl DeleteVoiceChannelOutput {
+    /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    pub fn voice_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::VoiceChannelResponse> {
+        self.voice_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteVoiceChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4418,6 +4974,12 @@ pub struct DeleteUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
 }
+impl DeleteUserEndpointsOutput {
+    /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
+    pub fn endpoints_response(&self) -> std::option::Option<&crate::model::EndpointsResponse> {
+        self.endpoints_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteUserEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserEndpointsOutput");
@@ -4468,6 +5030,12 @@ impl DeleteUserEndpointsOutput {
 pub struct DeleteSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
+}
+impl DeleteSmsTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteSmsTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4520,6 +5088,12 @@ pub struct DeleteSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
+impl DeleteSmsChannelOutput {
+    /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    pub fn sms_channel_response(&self) -> std::option::Option<&crate::model::SmsChannelResponse> {
+        self.sms_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteSmsChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSmsChannelOutput");
@@ -4570,6 +5144,12 @@ impl DeleteSmsChannelOutput {
 pub struct DeleteSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+}
+impl DeleteSegmentOutput {
+    /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+        self.segment_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteSegmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4622,6 +5202,14 @@ pub struct DeleteRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
+}
+impl DeleteRecommenderConfigurationOutput {
+    /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    pub fn recommender_configuration_response(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+        self.recommender_configuration_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteRecommenderConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4681,6 +5269,12 @@ pub struct DeletePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl DeletePushTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for DeletePushTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePushTemplateOutput");
@@ -4731,6 +5325,12 @@ impl DeletePushTemplateOutput {
 pub struct DeleteJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
+}
+impl DeleteJourneyOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+        self.journey_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteJourneyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4783,6 +5383,12 @@ pub struct DeleteInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl DeleteInAppTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteInAppTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInAppTemplateOutput");
@@ -4833,6 +5439,12 @@ impl DeleteInAppTemplateOutput {
 pub struct DeleteGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
+}
+impl DeleteGcmChannelOutput {
+    /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    pub fn gcm_channel_response(&self) -> std::option::Option<&crate::model::GcmChannelResponse> {
+        self.gcm_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteGcmChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4885,6 +5497,12 @@ pub struct DeleteEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
+impl DeleteEventStreamOutput {
+    /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn event_stream(&self) -> std::option::Option<&crate::model::EventStream> {
+        self.event_stream.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteEventStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventStreamOutput");
@@ -4935,6 +5553,12 @@ impl DeleteEventStreamOutput {
 pub struct DeleteEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
+}
+impl DeleteEndpointOutput {
+    /// <p>Provides information about the channel type and other settings for an endpoint.</p>
+    pub fn endpoint_response(&self) -> std::option::Option<&crate::model::EndpointResponse> {
+        self.endpoint_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4987,6 +5611,12 @@ pub struct DeleteEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
+impl DeleteEmailTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+        self.message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEmailTemplateOutput");
@@ -5037,6 +5667,14 @@ impl DeleteEmailTemplateOutput {
 pub struct DeleteEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
+}
+impl DeleteEmailChannelOutput {
+    /// <p>Provides information about the status and settings of the email channel for an application.</p>
+    pub fn email_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailChannelResponse> {
+        self.email_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEmailChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5089,6 +5727,12 @@ pub struct DeleteCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
+impl DeleteCampaignOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+        self.campaign_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCampaignOutput");
@@ -5139,6 +5783,14 @@ impl DeleteCampaignOutput {
 pub struct DeleteBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
+}
+impl DeleteBaiduChannelOutput {
+    /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    pub fn baidu_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::BaiduChannelResponse> {
+        self.baidu_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteBaiduChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5191,6 +5843,12 @@ pub struct DeleteAppOutput {
     /// <p>Provides information about an application.</p>
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
+impl DeleteAppOutput {
+    /// <p>Provides information about an application.</p>
+    pub fn application_response(&self) -> std::option::Option<&crate::model::ApplicationResponse> {
+        self.application_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppOutput");
@@ -5242,6 +5900,14 @@ pub struct DeleteApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     pub apns_voip_sandbox_channel_response:
         std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+}
+impl DeleteApnsVoipSandboxChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    pub fn apns_voip_sandbox_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipSandboxChannelResponse> {
+        self.apns_voip_sandbox_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteApnsVoipSandboxChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5300,6 +5966,14 @@ impl DeleteApnsVoipSandboxChannelOutput {
 pub struct DeleteApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+}
+impl DeleteApnsVoipChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    pub fn apns_voip_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsVoipChannelResponse> {
+        self.apns_voip_channel_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteApnsVoipChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5360,6 +6034,14 @@ pub struct DeleteApnsSandboxChannelOutput {
     pub apns_sandbox_channel_response:
         std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
+impl DeleteApnsSandboxChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    pub fn apns_sandbox_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ApnsSandboxChannelResponse> {
+        self.apns_sandbox_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteApnsSandboxChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApnsSandboxChannelOutput");
@@ -5418,6 +6100,12 @@ pub struct DeleteApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
+impl DeleteApnsChannelOutput {
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    pub fn apns_channel_response(&self) -> std::option::Option<&crate::model::ApnsChannelResponse> {
+        self.apns_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteApnsChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApnsChannelOutput");
@@ -5469,6 +6157,12 @@ pub struct DeleteAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
 }
+impl DeleteAdmChannelOutput {
+    /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    pub fn adm_channel_response(&self) -> std::option::Option<&crate::model::AdmChannelResponse> {
+        self.adm_channel_response.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAdmChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAdmChannelOutput");
@@ -5519,6 +6213,14 @@ impl DeleteAdmChannelOutput {
 pub struct CreateVoiceTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+}
+impl CreateVoiceTemplateOutput {
+    /// <p>Provides information about a request to create a message template.</p>
+    pub fn create_template_message_body(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+        self.create_template_message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVoiceTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5578,6 +6280,14 @@ pub struct CreateSmsTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
+impl CreateSmsTemplateOutput {
+    /// <p>Provides information about a request to create a message template.</p>
+    pub fn create_template_message_body(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+        self.create_template_message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSmsTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSmsTemplateOutput");
@@ -5636,6 +6346,12 @@ pub struct CreateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
+impl CreateSegmentOutput {
+    /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+        self.segment_response.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSegmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSegmentOutput");
@@ -5687,6 +6403,14 @@ pub struct CreateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
+}
+impl CreateRecommenderConfigurationOutput {
+    /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    pub fn recommender_configuration_response(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+        self.recommender_configuration_response.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRecommenderConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5746,6 +6470,14 @@ pub struct CreatePushTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
+impl CreatePushTemplateOutput {
+    /// <p>Provides information about a request to create a message template.</p>
+    pub fn create_template_message_body(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+        self.create_template_message_body.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePushTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePushTemplateOutput");
@@ -5804,6 +6536,12 @@ pub struct CreateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
+impl CreateJourneyOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+        self.journey_response.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateJourneyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJourneyOutput");
@@ -5854,6 +6592,14 @@ impl CreateJourneyOutput {
 pub struct CreateInAppTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     pub template_create_message_body: std::option::Option<crate::model::TemplateCreateMessageBody>,
+}
+impl CreateInAppTemplateOutput {
+    /// <p>Provides information about a request to create a message template.</p>
+    pub fn template_create_message_body(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateCreateMessageBody> {
+        self.template_create_message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateInAppTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5913,6 +6659,12 @@ pub struct CreateImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
 }
+impl CreateImportJobOutput {
+    /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
+    pub fn import_job_response(&self) -> std::option::Option<&crate::model::ImportJobResponse> {
+        self.import_job_response.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImportJobOutput");
@@ -5964,6 +6716,12 @@ pub struct CreateExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
 }
+impl CreateExportJobOutput {
+    /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
+    pub fn export_job_response(&self) -> std::option::Option<&crate::model::ExportJobResponse> {
+        self.export_job_response.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateExportJobOutput");
@@ -6014,6 +6772,14 @@ impl CreateExportJobOutput {
 pub struct CreateEmailTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+}
+impl CreateEmailTemplateOutput {
+    /// <p>Provides information about a request to create a message template.</p>
+    pub fn create_template_message_body(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+        self.create_template_message_body.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6073,6 +6839,12 @@ pub struct CreateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
+impl CreateCampaignOutput {
+    /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+        self.campaign_response.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCampaignOutput");
@@ -6123,6 +6895,12 @@ impl CreateCampaignOutput {
 pub struct CreateAppOutput {
     /// <p>Provides information about an application.</p>
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
+}
+impl CreateAppOutput {
+    /// <p>Provides information about an application.</p>
+    pub fn application_response(&self) -> std::option::Option<&crate::model::ApplicationResponse> {
+        self.application_response.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAppOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

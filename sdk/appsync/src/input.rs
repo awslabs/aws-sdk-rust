@@ -336,10 +336,7 @@ impl CreateApiCacheInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_api_cache(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_api_cache(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -527,10 +524,7 @@ impl CreateApiKeyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_api_key(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_api_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -853,10 +847,7 @@ impl CreateDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1125,10 +1116,8 @@ impl CreateFunctionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_function(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_function(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1426,10 +1415,7 @@ impl CreateGraphqlApiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_graphql_api(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_graphql_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1775,10 +1761,8 @@ impl CreateResolverInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_resolver(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_resolver(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1969,10 +1953,7 @@ impl CreateTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6397,10 +6378,7 @@ impl StartSchemaCreationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_schema_creation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_schema_creation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6589,10 +6567,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7141,10 +7116,7 @@ impl UpdateApiCacheInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_api_cache(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_api_cache(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7362,10 +7334,7 @@ impl UpdateApiKeyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_api_key(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_api_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7706,10 +7675,7 @@ impl UpdateDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8010,10 +7976,8 @@ impl UpdateFunctionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_function(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_function(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8309,10 +8273,7 @@ impl UpdateGraphqlApiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_graphql_api(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_graphql_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8674,10 +8635,8 @@ impl UpdateResolverInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_resolver(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resolver(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8896,10 +8855,7 @@ impl UpdateTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8974,6 +8930,24 @@ pub struct UpdateTypeInput {
     /// <p>The new type format: SDL or JSON.</p>
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
 }
+impl UpdateTypeInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The new type name.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The new definition.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The new type format: SDL or JSON.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
+        self.format.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTypeInput");
@@ -9030,6 +9004,68 @@ pub struct UpdateResolverInput {
     /// <p>The caching configuration for the resolver.</p>
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
 }
+impl UpdateResolverInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The new type name.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The new field name.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>The new data source name.</p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The new request mapping template.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
+    /// that a data source can understand. Mapping templates are written in Apache Velocity
+    /// Template Language (VTL).</p>
+    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
+    /// other data sources, VTL request and response mapping templates are required.</p>
+    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+        self.request_mapping_template.as_deref()
+    }
+    /// <p>The new response mapping template.</p>
+    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+        self.response_mapping_template.as_deref()
+    }
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
+    /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
+    /// against a single data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
+    /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
+    /// You can use a pipeline resolver to execute a GraphQL query against multiple data
+    /// sources.</p>
+    /// </li>
+    /// </ul>
+    pub fn kind(&self) -> std::option::Option<&crate::model::ResolverKind> {
+        self.kind.as_ref()
+    }
+    /// <p>The <code>PipelineConfig</code>.</p>
+    pub fn pipeline_config(&self) -> std::option::Option<&crate::model::PipelineConfig> {
+        self.pipeline_config.as_ref()
+    }
+    /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
+    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+        self.sync_config.as_ref()
+    }
+    /// <p>The caching configuration for the resolver.</p>
+    pub fn caching_config(&self) -> std::option::Option<&crate::model::CachingConfig> {
+        self.caching_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResolverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResolverInput");
@@ -9073,6 +9109,53 @@ pub struct UpdateGraphqlApiInput {
     pub xray_enabled: bool,
     /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
+}
+impl UpdateGraphqlApiInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The new name for the <code>GraphqlApi</code> object.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
+    pub fn log_config(&self) -> std::option::Option<&crate::model::LogConfig> {
+        self.log_config.as_ref()
+    }
+    /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
+    /// object.</p>
+    pub fn user_pool_config(&self) -> std::option::Option<&crate::model::UserPoolConfig> {
+        self.user_pool_config.as_ref()
+    }
+    /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
+    pub fn open_id_connect_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenIdConnectConfig> {
+        self.open_id_connect_config.as_ref()
+    }
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+    /// API.</p>
+    pub fn additional_authentication_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalAuthenticationProvider]> {
+        self.additional_authentication_providers.as_deref()
+    }
+    /// <p>A flag indicating whether to enable X-Ray tracing for the
+    /// <code>GraphqlApi</code>.</p>
+    pub fn xray_enabled(&self) -> bool {
+        self.xray_enabled
+    }
+    /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+    pub fn lambda_authorizer_config(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
+        self.lambda_authorizer_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateGraphqlApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9121,6 +9204,49 @@ pub struct UpdateFunctionInput {
     /// be performed when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
 }
+impl UpdateFunctionInput {
+    /// <p>The GraphQL API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The <code>Function</code> name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The <code>Function</code> description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The function ID.</p>
+    pub fn function_id(&self) -> std::option::Option<&str> {
+        self.function_id.as_deref()
+    }
+    /// <p>The <code>Function</code>
+    /// <code>DataSource</code> name.</p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The <code>Function</code> request mapping template. Functions support only the
+    /// 2018-05-29 version of the request mapping template.</p>
+    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+        self.request_mapping_template.as_deref()
+    }
+    /// <p>The <code>Function</code> request mapping template. </p>
+    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+        self.response_mapping_template.as_deref()
+    }
+    /// <p>The <code>version</code> of the request mapping template. Currently the supported value
+    /// is 2018-05-29. </p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
+    /// be performed when the resolver is invoked.</p>
+    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+        self.sync_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionInput");
@@ -9168,6 +9294,60 @@ pub struct UpdateDataSourceInput {
     pub relational_database_config:
         std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
 }
+impl UpdateDataSourceInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The new name for the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new description for the data source.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The new data source type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The new service role ARN for the data source.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The new Amazon DynamoDB configuration.</p>
+    pub fn dynamodb_config(&self) -> std::option::Option<&crate::model::DynamodbDataSourceConfig> {
+        self.dynamodb_config.as_ref()
+    }
+    /// <p>The new Amazon Web Services Lambda configuration.</p>
+    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaDataSourceConfig> {
+        self.lambda_config.as_ref()
+    }
+    /// <p>The new OpenSearch configuration.</p>
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
+    /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
+    pub fn elasticsearch_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchDataSourceConfig> {
+        self.elasticsearch_config.as_ref()
+    }
+    /// <p>The new OpenSearch configuration.</p>
+    pub fn open_search_service_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchServiceDataSourceConfig> {
+        self.open_search_service_config.as_ref()
+    }
+    /// <p>The new HTTP endpoint configuration.</p>
+    pub fn http_config(&self) -> std::option::Option<&crate::model::HttpDataSourceConfig> {
+        self.http_config.as_ref()
+    }
+    /// <p>The new relational database configuration.</p>
+    pub fn relational_database_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RelationalDatabaseDataSourceConfig> {
+        self.relational_database_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceInput");
@@ -9205,6 +9385,25 @@ pub struct UpdateApiKeyInput {
     /// <p>The time from update time after which the API key expires. The date is represented as
     /// seconds since the epoch. For more information, see .</p>
     pub expires: i64,
+}
+impl UpdateApiKeyInput {
+    /// <p>The ID for the GraphQL API.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The API key ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time from update time after which the API key expires. The date is represented as
+    /// seconds since the epoch. For more information, see .</p>
+    pub fn expires(&self) -> i64 {
+        self.expires
+    }
 }
 impl std::fmt::Debug for UpdateApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9316,6 +9515,110 @@ pub struct UpdateApiCacheInput {
     /// </ul>
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
 }
+impl UpdateApiCacheInput {
+    /// <p>The GraphQL API Id.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>TTL in seconds for cache entries.</p>
+    /// <p>Valid values are between 1 and 3600 seconds.</p>
+    pub fn ttl(&self) -> i64 {
+        self.ttl
+    }
+    /// <p>Caching behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
+    /// cached.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
+    /// that you specify are cached.</p>
+    /// </li>
+    /// </ul>
+    pub fn api_caching_behavior(&self) -> std::option::Option<&crate::model::ApiCachingBehavior> {
+        self.api_caching_behavior.as_ref()
+    }
+    /// <p>The cache instance type. Valid values are </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SMALL</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MEDIUM</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>XLARGE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_2X</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_4X</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_8X</code> (not available in all regions)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_12X</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>T2_SMALL</b>: A t2.small instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_LARGE</b>: A r4.large instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ApiCacheType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApiCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApiCacheInput");
@@ -9336,6 +9639,16 @@ pub struct UntagResourceInput {
     /// <p>A list of <code>TagKey</code> objects.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The <code>GraphqlApi</code> ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of <code>TagKey</code> objects.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -9355,6 +9668,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The <code>GraphqlApi</code> ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A <code>TagMap</code> object.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -9372,6 +9698,16 @@ pub struct StartSchemaCreationInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The schema definition, in GraphQL schema language format.</p>
     pub definition: std::option::Option<aws_smithy_types::Blob>,
+}
+impl StartSchemaCreationInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The schema definition, in GraphQL schema language format.</p>
+    pub fn definition(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.definition.as_ref()
+    }
 }
 impl std::fmt::Debug for StartSchemaCreationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9396,6 +9732,25 @@ pub struct ListTypesInput {
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
 }
+impl ListTypesInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The type format: SDL or JSON.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
+        self.format.as_ref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTypesInput");
@@ -9413,6 +9768,12 @@ impl std::fmt::Debug for ListTypesInput {
 pub struct ListTagsForResourceInput {
     /// <p>The <code>GraphqlApi</code> ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The <code>GraphqlApi</code> ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9435,6 +9796,25 @@ pub struct ListResolversByFunctionInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
+}
+impl ListResolversByFunctionInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The Function ID.</p>
+    pub fn function_id(&self) -> std::option::Option<&str> {
+        self.function_id.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which you can
+    /// use to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListResolversByFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9461,6 +9841,25 @@ pub struct ListResolversInput {
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
 }
+impl ListResolversInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The type name.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListResolversInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResolversInput");
@@ -9482,6 +9881,17 @@ pub struct ListGraphqlApisInput {
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
 }
+impl ListGraphqlApisInput {
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListGraphqlApisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGraphqlApisInput");
@@ -9502,6 +9912,21 @@ pub struct ListFunctionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
+}
+impl ListFunctionsInput {
+    /// <p>The GraphQL API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFunctionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9525,6 +9950,21 @@ pub struct ListDataSourcesInput {
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
 }
+impl ListDataSourcesInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDataSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSourcesInput");
@@ -9547,6 +9987,21 @@ pub struct ListApiKeysInput {
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
 }
+impl ListApiKeysInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListApiKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApiKeysInput");
@@ -9568,6 +10023,20 @@ pub struct GetTypeInput {
     /// <p>The type format: SDL or JSON.</p>
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
 }
+impl GetTypeInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The type name.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The type format: SDL or JSON.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
+        self.format.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTypeInput");
@@ -9584,6 +10053,12 @@ impl std::fmt::Debug for GetTypeInput {
 pub struct GetSchemaCreationStatusInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
+}
+impl GetSchemaCreationStatusInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSchemaCreationStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9603,6 +10078,20 @@ pub struct GetResolverInput {
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The resolver field name.</p>
     pub field_name: std::option::Option<std::string::String>,
+}
+impl GetResolverInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The resolver type name.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The resolver field name.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResolverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9625,6 +10114,20 @@ pub struct GetIntrospectionSchemaInput {
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
     pub include_directives: std::option::Option<bool>,
 }
+impl GetIntrospectionSchemaInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The schema format: SDL or JSON.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::OutputType> {
+        self.format.as_ref()
+    }
+    /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
+    pub fn include_directives(&self) -> std::option::Option<bool> {
+        self.include_directives
+    }
+}
 impl std::fmt::Debug for GetIntrospectionSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntrospectionSchemaInput");
@@ -9642,6 +10145,12 @@ pub struct GetGraphqlApiInput {
     /// <p>The API ID for the GraphQL API.</p>
     pub api_id: std::option::Option<std::string::String>,
 }
+impl GetGraphqlApiInput {
+    /// <p>The API ID for the GraphQL API.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGraphqlApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGraphqlApiInput");
@@ -9658,6 +10167,16 @@ pub struct GetFunctionInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> ID.</p>
     pub function_id: std::option::Option<std::string::String>,
+}
+impl GetFunctionInput {
+    /// <p>The GraphQL API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The <code>Function</code> ID.</p>
+    pub fn function_id(&self) -> std::option::Option<&str> {
+        self.function_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9677,6 +10196,16 @@ pub struct GetDataSourceInput {
     /// <p>The name of the data source.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetDataSourceInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataSourceInput");
@@ -9693,6 +10222,12 @@ pub struct GetApiCacheInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
 }
+impl GetApiCacheInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApiCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApiCacheInput");
@@ -9707,6 +10242,12 @@ impl std::fmt::Debug for GetApiCacheInput {
 pub struct FlushApiCacheInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
+}
+impl FlushApiCacheInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for FlushApiCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9724,6 +10265,16 @@ pub struct DeleteTypeInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type name.</p>
     pub type_name: std::option::Option<std::string::String>,
+}
+impl DeleteTypeInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The type name.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9745,6 +10296,20 @@ pub struct DeleteResolverInput {
     /// <p>The resolver field name.</p>
     pub field_name: std::option::Option<std::string::String>,
 }
+impl DeleteResolverInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The name of the resolver type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The resolver field name.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResolverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResolverInput");
@@ -9762,6 +10327,12 @@ pub struct DeleteGraphqlApiInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
 }
+impl DeleteGraphqlApiInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGraphqlApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGraphqlApiInput");
@@ -9778,6 +10349,16 @@ pub struct DeleteFunctionInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> ID.</p>
     pub function_id: std::option::Option<std::string::String>,
+}
+impl DeleteFunctionInput {
+    /// <p>The GraphQL API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The <code>Function</code> ID.</p>
+    pub fn function_id(&self) -> std::option::Option<&str> {
+        self.function_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9797,6 +10378,16 @@ pub struct DeleteDataSourceInput {
     /// <p>The name of the data source.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteDataSourceInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDataSourceInput");
@@ -9815,6 +10406,16 @@ pub struct DeleteApiKeyInput {
     /// <p>The ID for the API key.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteApiKeyInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The ID for the API key.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApiKeyInput");
@@ -9830,6 +10431,12 @@ impl std::fmt::Debug for DeleteApiKeyInput {
 pub struct DeleteApiCacheInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
+}
+impl DeleteApiCacheInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApiCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9851,6 +10458,22 @@ pub struct CreateTypeInput {
     pub definition: std::option::Option<std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
+}
+impl CreateTypeInput {
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
+    /// documentation</a>.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The type format: SDL or JSON.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
+        self.format.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9907,6 +10530,68 @@ pub struct CreateResolverInput {
     /// <p>The caching configuration for the resolver.</p>
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
 }
+impl CreateResolverInput {
+    /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The name of the <code>Type</code>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The name of the field to attach the resolver to.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>The name of the data source for which the resolver is being created.</p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The mapping template to be used for requests.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
+    /// that a data source can understand. Mapping templates are written in Apache Velocity
+    /// Template Language (VTL).</p>
+    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
+    /// other data sources, VTL request and response mapping templates are required.</p>
+    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+        self.request_mapping_template.as_deref()
+    }
+    /// <p>The mapping template to be used for responses from the data source.</p>
+    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+        self.response_mapping_template.as_deref()
+    }
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
+    /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
+    /// against a single data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
+    /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
+    /// You can use a pipeline resolver to execute a GraphQL query against multiple data
+    /// sources.</p>
+    /// </li>
+    /// </ul>
+    pub fn kind(&self) -> std::option::Option<&crate::model::ResolverKind> {
+        self.kind.as_ref()
+    }
+    /// <p>The <code>PipelineConfig</code>.</p>
+    pub fn pipeline_config(&self) -> std::option::Option<&crate::model::PipelineConfig> {
+        self.pipeline_config.as_ref()
+    }
+    /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
+    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+        self.sync_config.as_ref()
+    }
+    /// <p>The caching configuration for the resolver.</p>
+    pub fn caching_config(&self) -> std::option::Option<&crate::model::CachingConfig> {
+        self.caching_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResolverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResolverInput");
@@ -9952,6 +10637,56 @@ pub struct CreateGraphqlApiInput {
     /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
+impl CreateGraphqlApiInput {
+    /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon CloudWatch Logs configuration.</p>
+    pub fn log_config(&self) -> std::option::Option<&crate::model::LogConfig> {
+        self.log_config.as_ref()
+    }
+    /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
+    /// pools, or Amazon Web Services Lambda.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The Amazon Cognito user pool configuration.</p>
+    pub fn user_pool_config(&self) -> std::option::Option<&crate::model::UserPoolConfig> {
+        self.user_pool_config.as_ref()
+    }
+    /// <p>The OpenID Connect configuration.</p>
+    pub fn open_id_connect_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenIdConnectConfig> {
+        self.open_id_connect_config.as_ref()
+    }
+    /// <p>A <code>TagMap</code> object.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+    /// API.</p>
+    pub fn additional_authentication_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalAuthenticationProvider]> {
+        self.additional_authentication_providers.as_deref()
+    }
+    /// <p>A flag indicating whether to enable X-Ray tracing for the
+    /// <code>GraphqlApi</code>.</p>
+    pub fn xray_enabled(&self) -> bool {
+        self.xray_enabled
+    }
+    /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+    pub fn lambda_authorizer_config(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
+        self.lambda_authorizer_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateGraphqlApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGraphqlApiInput");
@@ -9996,6 +10731,45 @@ pub struct CreateFunctionInput {
     /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
     /// be performed when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
+}
+impl CreateFunctionInput {
+    /// <p>The GraphQL API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The <code>Function</code> name. The function name does not have to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The <code>Function</code> description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <code>Function</code>
+    /// <code>DataSource</code> name.</p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The <code>Function</code> request mapping template. Functions support only the
+    /// 2018-05-29 version of the request mapping template.</p>
+    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+        self.request_mapping_template.as_deref()
+    }
+    /// <p>The <code>Function</code> response mapping template. </p>
+    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+        self.response_mapping_template.as_deref()
+    }
+    /// <p>The <code>version</code> of the request mapping template. Currently the supported value
+    /// is 2018-05-29. </p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
+    /// be performed when the resolver is invoked.</p>
+    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+        self.sync_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10044,6 +10818,61 @@ pub struct CreateDataSourceInput {
     pub relational_database_config:
         std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
 }
+impl CreateDataSourceInput {
+    /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>A user-supplied name for the <code>DataSource</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the <code>DataSource</code>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the <code>DataSource</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
+    /// role when accessing the data source.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>Amazon DynamoDB settings.</p>
+    pub fn dynamodb_config(&self) -> std::option::Option<&crate::model::DynamodbDataSourceConfig> {
+        self.dynamodb_config.as_ref()
+    }
+    /// <p>Amazon Web Services Lambda settings.</p>
+    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaDataSourceConfig> {
+        self.lambda_config.as_ref()
+    }
+    /// <p>Amazon OpenSearch Service settings.</p>
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
+    /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
+    pub fn elasticsearch_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchDataSourceConfig> {
+        self.elasticsearch_config.as_ref()
+    }
+    /// <p>Amazon OpenSearch Service settings.</p>
+    pub fn open_search_service_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchServiceDataSourceConfig> {
+        self.open_search_service_config.as_ref()
+    }
+    /// <p>HTTP endpoint settings.</p>
+    pub fn http_config(&self) -> std::option::Option<&crate::model::HttpDataSourceConfig> {
+        self.http_config.as_ref()
+    }
+    /// <p>Relational database settings.</p>
+    pub fn relational_database_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RelationalDatabaseDataSourceConfig> {
+        self.relational_database_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceInput");
@@ -10080,6 +10909,22 @@ pub struct CreateApiKeyInput {
     /// seconds since the epoch, rounded down to the nearest hour. The default value for this
     /// parameter is 7 days from creation time. For more information, see .</p>
     pub expires: i64,
+}
+impl CreateApiKeyInput {
+    /// <p>The ID for your GraphQL API.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time from creation time after which the API key expires. The date is represented as
+    /// seconds since the epoch, rounded down to the nearest hour. The default value for this
+    /// parameter is 7 days from creation time. For more information, see .</p>
+    pub fn expires(&self) -> i64 {
+        self.expires
+    }
 }
 impl std::fmt::Debug for CreateApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10194,6 +11039,119 @@ pub struct CreateApiCacheInput {
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
+}
+impl CreateApiCacheInput {
+    /// <p>The GraphQL API Id.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>TTL in seconds for cache entries.</p>
+    /// <p>Valid values are between 1 and 3600 seconds.</p>
+    pub fn ttl(&self) -> i64 {
+        self.ttl
+    }
+    /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
+    /// creation.</p>
+    pub fn transit_encryption_enabled(&self) -> bool {
+        self.transit_encryption_enabled
+    }
+    /// <p>At rest encryption flag for cache. This setting cannot be updated after creation.</p>
+    pub fn at_rest_encryption_enabled(&self) -> bool {
+        self.at_rest_encryption_enabled
+    }
+    /// <p>Caching behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
+    /// cached.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
+    /// that you specify are cached.</p>
+    /// </li>
+    /// </ul>
+    pub fn api_caching_behavior(&self) -> std::option::Option<&crate::model::ApiCachingBehavior> {
+        self.api_caching_behavior.as_ref()
+    }
+    /// <p>The cache instance type. Valid values are </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SMALL</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MEDIUM</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>XLARGE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_2X</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_4X</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_8X</code> (not available in all regions)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_12X</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>T2_SMALL</b>: A t2.small instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_LARGE</b>: A r4.large instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ApiCacheType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApiCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

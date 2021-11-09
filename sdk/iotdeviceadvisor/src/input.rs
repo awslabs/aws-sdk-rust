@@ -121,10 +121,7 @@ impl CreateSuiteDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_suite_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1552,10 +1549,8 @@ impl StartSuiteRunInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_suite_run(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_suite_run(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1926,10 +1921,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2295,10 +2287,7 @@ impl UpdateSuiteDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_suite_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2370,6 +2359,18 @@ pub struct UpdateSuiteDefinitionInput {
     pub suite_definition_configuration:
         std::option::Option<crate::model::SuiteDefinitionConfiguration>,
 }
+impl UpdateSuiteDefinitionInput {
+    /// <p>Suite definition Id of the test suite to be updated.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
+    pub fn suite_definition_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SuiteDefinitionConfiguration> {
+        self.suite_definition_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSuiteDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSuiteDefinitionInput");
@@ -2391,6 +2392,16 @@ pub struct UntagResourceInput {
     /// <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2410,6 +2421,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to be attached to the IoT Device Advisor resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2427,6 +2451,16 @@ pub struct StopSuiteRunInput {
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite run Id of the test suite run to be stopped.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
+}
+impl StopSuiteRunInput {
+    /// <p>Suite definition Id of the test suite run to be stopped.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite run Id of the test suite run to be stopped.</p>
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
+        self.suite_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopSuiteRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2451,6 +2485,29 @@ pub struct StartSuiteRunInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StartSuiteRunInput {
+    /// <p>Suite definition Id of the test suite.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite definition version of the test suite.</p>
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+        self.suite_definition_version.as_deref()
+    }
+    /// <p>Suite run configuration.</p>
+    pub fn suite_run_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SuiteRunConfiguration> {
+        self.suite_run_configuration.as_ref()
+    }
+    /// <p>The tags to be attached to the suite run.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StartSuiteRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSuiteRunInput");
@@ -2468,6 +2525,12 @@ impl std::fmt::Debug for StartSuiteRunInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the IoT Device Advisor resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the IoT Device Advisor resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2490,6 +2553,24 @@ pub struct ListSuiteRunsInput {
     /// <p>A token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSuiteRunsInput {
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition Id.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+        self.suite_definition_version.as_deref()
+    }
+    /// <p>The maximum number of results to return at once.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSuiteRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSuiteRunsInput");
@@ -2510,6 +2591,16 @@ pub struct ListSuiteDefinitionsInput {
     /// <p>A token used to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSuiteDefinitionsInput {
+    /// <p>The maximum number of results to return at once.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A token used to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSuiteDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSuiteDefinitionsInput");
@@ -2527,6 +2618,16 @@ pub struct GetSuiteRunReportInput {
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite run Id of the test suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
+}
+impl GetSuiteRunReportInput {
+    /// <p>Suite definition Id of the test suite.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite run Id of the test suite run.</p>
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
+        self.suite_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSuiteRunReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2546,6 +2647,16 @@ pub struct GetSuiteRunInput {
     /// <p>Suite run Id for the test suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
 }
+impl GetSuiteRunInput {
+    /// <p>Suite definition Id for the test suite run.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite run Id for the test suite run.</p>
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
+        self.suite_run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSuiteRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSuiteRunInput");
@@ -2564,6 +2675,16 @@ pub struct GetSuiteDefinitionInput {
     /// <p>Suite definition version of the test suite to get.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
 }
+impl GetSuiteDefinitionInput {
+    /// <p>Suite definition Id of the test suite to get.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
+    /// <p>Suite definition version of the test suite to get.</p>
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+        self.suite_definition_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSuiteDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSuiteDefinitionInput");
@@ -2579,6 +2700,12 @@ impl std::fmt::Debug for GetSuiteDefinitionInput {
 pub struct DeleteSuiteDefinitionInput {
     /// <p>Suite definition Id of the test suite to be deleted.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
+}
+impl DeleteSuiteDefinitionInput {
+    /// <p>Suite definition Id of the test suite to be deleted.</p>
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+        self.suite_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSuiteDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2598,6 +2725,21 @@ pub struct CreateSuiteDefinitionInput {
     /// <p>The tags to be attached to the suite definition.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSuiteDefinitionInput {
+    /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
+    pub fn suite_definition_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SuiteDefinitionConfiguration> {
+        self.suite_definition_configuration.as_ref()
+    }
+    /// <p>The tags to be attached to the suite definition.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSuiteDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

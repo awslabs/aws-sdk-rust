@@ -1231,6 +1231,12 @@ pub struct ResourceNotFoundException {
     /// <p>Resource identifier associated with the exception.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>Resource identifier associated with the exception.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -1309,6 +1315,12 @@ pub struct ExecuteStatementException {
     pub message: std::option::Option<std::string::String>,
     /// <p>Statement identifier of the exception.</p>
     pub statement_id: std::option::Option<std::string::String>,
+}
+impl ExecuteStatementException {
+    /// <p>Statement identifier of the exception.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1452,6 +1464,12 @@ pub struct BatchExecuteStatementException {
     pub message: std::option::Option<std::string::String>,
     /// <p>Statement identifier of the exception.</p>
     pub statement_id: std::option::Option<std::string::String>,
+}
+impl BatchExecuteStatementException {
+    /// <p>Statement identifier of the exception.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

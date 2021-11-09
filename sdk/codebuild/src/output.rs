@@ -7,6 +7,13 @@ pub struct UpdateWebhookOutput {
     /// </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
+impl UpdateWebhookOutput {
+    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
+    /// </p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
+        self.webhook.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWebhookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWebhookOutput");
@@ -58,6 +65,14 @@ pub struct UpdateReportGroupOutput {
     /// Information about the updated report group.
     /// </p>
     pub report_group: std::option::Option<crate::model::ReportGroup>,
+}
+impl UpdateReportGroupOutput {
+    /// <p>
+    /// Information about the updated report group.
+    /// </p>
+    pub fn report_group(&self) -> std::option::Option<&crate::model::ReportGroup> {
+        self.report_group.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateReportGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -128,6 +143,31 @@ pub struct UpdateProjectVisibilityOutput {
     /// </dd>
     /// </dl>
     pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
+}
+impl UpdateProjectVisibilityOutput {
+    /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>Contains the project identifier used with the public build APIs. </p>
+    pub fn public_project_alias(&self) -> std::option::Option<&str> {
+        self.public_project_alias.as_deref()
+    }
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    ///
+    /// <dl>
+    /// <dt>PUBLIC_READ</dt>
+    /// <dd>
+    /// <p>The project builds are visible to the public.</p>
+    /// </dd>
+    /// <dt>PRIVATE</dt>
+    /// <dd>
+    /// <p>The project builds are not visible to the public.</p>
+    /// </dd>
+    /// </dl>
+    pub fn project_visibility(&self) -> std::option::Option<&crate::model::ProjectVisibilityType> {
+        self.project_visibility.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateProjectVisibilityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -231,6 +271,12 @@ pub struct UpdateProjectOutput {
     /// <p>Information about the build project that was changed.</p>
     pub project: std::option::Option<crate::model::Project>,
 }
+impl UpdateProjectOutput {
+    /// <p>Information about the build project that was changed.</p>
+    pub fn project(&self) -> std::option::Option<&crate::model::Project> {
+        self.project.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectOutput");
@@ -278,6 +324,12 @@ impl UpdateProjectOutput {
 pub struct StopBuildBatchOutput {
     /// <p>Contains information about a batch build.</p>
     pub build_batch: std::option::Option<crate::model::BuildBatch>,
+}
+impl StopBuildBatchOutput {
+    /// <p>Contains information about a batch build.</p>
+    pub fn build_batch(&self) -> std::option::Option<&crate::model::BuildBatch> {
+        self.build_batch.as_ref()
+    }
 }
 impl std::fmt::Debug for StopBuildBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -328,7 +380,17 @@ impl StopBuildBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopBuildOutput {
     /// <p>Information about the build.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
+}
+impl StopBuildOutput {
+    /// <p>Information about the build.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
+    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+        self.build_value.as_ref()
+    }
 }
 impl std::fmt::Debug for StopBuildOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -377,6 +439,12 @@ impl StopBuildOutput {
 pub struct StartBuildBatchOutput {
     /// <p>A <code>BuildBatch</code> object that contains information about the batch build.</p>
     pub build_batch: std::option::Option<crate::model::BuildBatch>,
+}
+impl StartBuildBatchOutput {
+    /// <p>A <code>BuildBatch</code> object that contains information about the batch build.</p>
+    pub fn build_batch(&self) -> std::option::Option<&crate::model::BuildBatch> {
+        self.build_batch.as_ref()
+    }
 }
 impl std::fmt::Debug for StartBuildBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -427,7 +495,17 @@ impl StartBuildBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBuildOutput {
     /// <p>Information about the build to be run.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
+}
+impl StartBuildOutput {
+    /// <p>Information about the build to be run.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
+    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+        self.build_value.as_ref()
+    }
 }
 impl std::fmt::Debug for StartBuildOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -476,6 +554,12 @@ impl StartBuildOutput {
 pub struct RetryBuildBatchOutput {
     /// <p>Contains information about a batch build.</p>
     pub build_batch: std::option::Option<crate::model::BuildBatch>,
+}
+impl RetryBuildBatchOutput {
+    /// <p>Contains information about a batch build.</p>
+    pub fn build_batch(&self) -> std::option::Option<&crate::model::BuildBatch> {
+        self.build_batch.as_ref()
+    }
 }
 impl std::fmt::Debug for RetryBuildBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -526,7 +610,17 @@ impl RetryBuildBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryBuildOutput {
     /// <p>Information about a build.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
+}
+impl RetryBuildOutput {
+    /// <p>Information about a build.</p>
+    ///
+    /// _Note: This member has been renamed from `build`._
+    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+        self.build_value.as_ref()
+    }
 }
 impl std::fmt::Debug for RetryBuildOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -576,6 +670,13 @@ pub struct PutResourcePolicyOutput {
     /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is
     /// associated with a resource policy. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyOutput {
+    /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is
+    /// associated with a resource policy. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -629,6 +730,16 @@ pub struct ListSourceCredentialsOutput {
     /// ARN, and type of source provider for one set of credentials. </p>
     pub source_credentials_infos:
         std::option::Option<std::vec::Vec<crate::model::SourceCredentialsInfo>>,
+}
+impl ListSourceCredentialsOutput {
+    /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each
+    /// <code>SourceCredentialsInfo</code> object includes the authentication type, token
+    /// ARN, and type of source provider for one set of credentials. </p>
+    pub fn source_credentials_infos(
+        &self,
+    ) -> std::option::Option<&[crate::model::SourceCredentialsInfo]> {
+        self.source_credentials_infos.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSourceCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -702,6 +813,22 @@ pub struct ListSharedReportGroupsOutput {
     /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
     /// </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListSharedReportGroupsOutput {
+    /// <p> During a previous call, the maximum number of items that can be returned is the value
+    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
+    /// string called a <i>nextToken</i> is returned. To get the next batch of
+    /// items in the list, call this operation again, adding the next token to the call. To get
+    /// all of the items in the list, keep calling this operation with each subsequent next
+    /// token that is returned, until no more next tokens are returned. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
+    /// </p>
+    pub fn report_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.report_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSharedReportGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -792,6 +919,22 @@ pub struct ListSharedProjectsOutput {
     /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
     /// </p>
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListSharedProjectsOutput {
+    /// <p> During a previous call, the maximum number of items that can be returned is the value
+    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
+    /// string called a <i>nextToken</i> is returned. To get the next batch of
+    /// items in the list, call this operation again, adding the next token to the call. To get
+    /// all of the items in the list, keep calling this operation with each subsequent next
+    /// token that is returned, until no more next tokens are returned. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
+    /// </p>
+    pub fn projects(&self) -> std::option::Option<&[std::string::String]> {
+        self.projects.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSharedProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -884,6 +1027,24 @@ pub struct ListReportsForReportGroupOutput {
     /// The list of report ARNs.
     /// </p>
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListReportsForReportGroupOutput {
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The list of report ARNs.
+    /// </p>
+    pub fn reports(&self) -> std::option::Option<&[std::string::String]> {
+        self.reports.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReportsForReportGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -981,6 +1142,24 @@ pub struct ListReportsOutput {
     /// </p>
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListReportsOutput {
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The list of returned ARNs for the reports in the current Amazon Web Services account.
+    /// </p>
+    pub fn reports(&self) -> std::option::Option<&[std::string::String]> {
+        self.reports.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReportsOutput");
@@ -1077,6 +1256,24 @@ pub struct ListReportGroupsOutput {
     /// </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListReportGroupsOutput {
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The list of ARNs for the report groups in the current Amazon Web Services account.
+    /// </p>
+    pub fn report_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.report_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReportGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReportGroupsOutput");
@@ -1169,6 +1366,20 @@ pub struct ListProjectsOutput {
     /// build project.</p>
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListProjectsOutput {
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
+    /// along with a unique string called a <i>nextToken</i>. To get the next
+    /// batch of items in the list, call this operation again, adding the next token to the
+    /// call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of build project names, with each build project name representing a single
+    /// build project.</p>
+    pub fn projects(&self) -> std::option::Option<&[std::string::String]> {
+        self.projects.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsOutput");
@@ -1248,6 +1459,13 @@ pub struct ListCuratedEnvironmentImagesOutput {
     /// CodeBuild.</p>
     pub platforms: std::option::Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
 }
+impl ListCuratedEnvironmentImagesOutput {
+    /// <p>Information about supported platforms for Docker images that are managed by
+    /// CodeBuild.</p>
+    pub fn platforms(&self) -> std::option::Option<&[crate::model::EnvironmentPlatform]> {
+        self.platforms.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCuratedEnvironmentImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCuratedEnvironmentImagesOutput");
@@ -1312,6 +1530,20 @@ pub struct ListBuildsForProjectOutput {
     /// batch of items in the list, call this operation again, adding the next token to the
     /// call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBuildsForProjectOutput {
+    /// <p>A list of build identifiers for the specified build project, with each build ID representing a
+    /// single build.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
+    /// along with a unique string called a <i>nextToken</i>. To get the next
+    /// batch of items in the list, call this operation again, adding the next token to the
+    /// call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBuildsForProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1396,6 +1628,19 @@ pub struct ListBuildsOutput {
     /// call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBuildsOutput {
+    /// <p>A list of build IDs, with each build ID representing a single build.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
+    /// along with a unique string called a <i>nextToken</i>. To get the next
+    /// batch of items in the list, call this operation again, adding the next token to the
+    /// call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuildsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildsOutput");
@@ -1476,6 +1721,18 @@ pub struct ListBuildBatchesForProjectOutput {
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBuildBatchesForProjectOutput {
+    /// <p>An array of strings that contains the batch build identifiers.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>If there are more items to return, this contains a token that is passed to a
+    /// subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuildBatchesForProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildBatchesForProjectOutput");
@@ -1552,6 +1809,17 @@ pub struct ListBuildBatchesOutput {
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent
     /// call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBuildBatchesOutput {
+    /// <p>An array of strings that contains the batch build identifiers.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent
+    /// call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBuildBatchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1655,6 +1923,12 @@ pub struct ImportSourceCredentialsOutput {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl ImportSourceCredentialsOutput {
+    /// <p> The Amazon Resource Name (ARN) of the token. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportSourceCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportSourceCredentialsOutput");
@@ -1700,6 +1974,12 @@ impl ImportSourceCredentialsOutput {
 pub struct GetResourcePolicyOutput {
     /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl GetResourcePolicyOutput {
+    /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1750,6 +2030,16 @@ pub struct GetReportGroupTrendOutput {
     pub stats: std::option::Option<crate::model::ReportGroupTrendStats>,
     /// <p>An array that contains the raw data for each report.</p>
     pub raw_data: std::option::Option<std::vec::Vec<crate::model::ReportWithRawData>>,
+}
+impl GetReportGroupTrendOutput {
+    /// <p>Contains the accumulated trend data.</p>
+    pub fn stats(&self) -> std::option::Option<&crate::model::ReportGroupTrendStats> {
+        self.stats.as_ref()
+    }
+    /// <p>An array that contains the raw data for each report.</p>
+    pub fn raw_data(&self) -> std::option::Option<&[crate::model::ReportWithRawData]> {
+        self.raw_data.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReportGroupTrendOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1833,6 +2123,24 @@ pub struct DescribeTestCasesOutput {
     /// The returned list of test cases.
     /// </p>
     pub test_cases: std::option::Option<std::vec::Vec<crate::model::TestCase>>,
+}
+impl DescribeTestCasesOutput {
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The returned list of test cases.
+    /// </p>
+    pub fn test_cases(&self) -> std::option::Option<&[crate::model::TestCase]> {
+        self.test_cases.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTestCasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1922,6 +2230,17 @@ pub struct DescribeCodeCoveragesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
     pub code_coverages: std::option::Option<std::vec::Vec<crate::model::CodeCoverage>>,
+}
+impl DescribeCodeCoveragesOutput {
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent
+    /// call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
+    pub fn code_coverages(&self) -> std::option::Option<&[crate::model::CodeCoverage]> {
+        self.code_coverages.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCodeCoveragesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2024,6 +2343,12 @@ impl DeleteWebhookOutput {
 pub struct DeleteSourceCredentialsOutput {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteSourceCredentialsOutput {
+    /// <p> The Amazon Resource Name (ARN) of the token. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSourceCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2196,6 +2521,21 @@ pub struct DeleteBuildBatchOutput {
     /// deleted.</p>
     pub builds_not_deleted: std::option::Option<std::vec::Vec<crate::model::BuildNotDeleted>>,
 }
+impl DeleteBuildBatchOutput {
+    /// <p>The status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
+    pub fn builds_deleted(&self) -> std::option::Option<&[std::string::String]> {
+        self.builds_deleted.as_deref()
+    }
+    /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be
+    /// deleted.</p>
+    pub fn builds_not_deleted(&self) -> std::option::Option<&[crate::model::BuildNotDeleted]> {
+        self.builds_not_deleted.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBuildBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBuildBatchOutput");
@@ -2295,6 +2635,13 @@ pub struct CreateWebhookOutput {
     /// CodeBuild.</p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
+impl CreateWebhookOutput {
+    /// <p>Information about a webhook that connects repository events to a build project in
+    /// CodeBuild.</p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
+        self.webhook.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateWebhookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWebhookOutput");
@@ -2346,6 +2693,14 @@ pub struct CreateReportGroupOutput {
     /// Information about the report group that was created.
     /// </p>
     pub report_group: std::option::Option<crate::model::ReportGroup>,
+}
+impl CreateReportGroupOutput {
+    /// <p>
+    /// Information about the report group that was created.
+    /// </p>
+    pub fn report_group(&self) -> std::option::Option<&crate::model::ReportGroup> {
+        self.report_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateReportGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2402,6 +2757,12 @@ pub struct CreateProjectOutput {
     /// <p>Information about the build project that was created.</p>
     pub project: std::option::Option<crate::model::Project>,
 }
+impl CreateProjectOutput {
+    /// <p>Information about the build project that was created.</p>
+    pub fn project(&self) -> std::option::Option<&crate::model::Project> {
+        self.project.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectOutput");
@@ -2455,6 +2816,20 @@ pub struct BatchGetReportsOutput {
     /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.
     /// </p>
     pub reports_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetReportsOutput {
+    /// <p>
+    /// The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.
+    /// </p>
+    pub fn reports(&self) -> std::option::Option<&[crate::model::Report]> {
+        self.reports.as_deref()
+    }
+    /// <p>
+    /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.
+    /// </p>
+    pub fn reports_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.reports_not_found.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2549,6 +2924,20 @@ pub struct BatchGetReportGroupsOutput {
     /// </p>
     pub report_groups_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetReportGroupsOutput {
+    /// <p>
+    /// The array of report groups returned by <code>BatchGetReportGroups</code>.
+    /// </p>
+    pub fn report_groups(&self) -> std::option::Option<&[crate::model::ReportGroup]> {
+        self.report_groups.as_deref()
+    }
+    /// <p>
+    /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.
+    /// </p>
+    pub fn report_groups_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.report_groups_not_found.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetReportGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetReportGroupsOutput");
@@ -2638,6 +3027,16 @@ pub struct BatchGetProjectsOutput {
     /// <p>The names of build projects for which information could not be found.</p>
     pub projects_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetProjectsOutput {
+    /// <p>Information about the requested build projects.</p>
+    pub fn projects(&self) -> std::option::Option<&[crate::model::Project]> {
+        self.projects.as_deref()
+    }
+    /// <p>The names of build projects for which information could not be found.</p>
+    pub fn projects_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.projects_not_found.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetProjectsOutput");
@@ -2718,6 +3117,16 @@ pub struct BatchGetBuildsOutput {
     pub builds: std::option::Option<std::vec::Vec<crate::model::Build>>,
     /// <p>The IDs of builds for which information could not be found.</p>
     pub builds_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetBuildsOutput {
+    /// <p>Information about the requested builds.</p>
+    pub fn builds(&self) -> std::option::Option<&[crate::model::Build]> {
+        self.builds.as_deref()
+    }
+    /// <p>The IDs of builds for which information could not be found.</p>
+    pub fn builds_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.builds_not_found.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetBuildsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2801,6 +3210,17 @@ pub struct BatchGetBuildBatchesOutput {
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
     pub build_batches_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetBuildBatchesOutput {
+    /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch
+    /// builds.</p>
+    pub fn build_batches(&self) -> std::option::Option<&[crate::model::BuildBatch]> {
+        self.build_batches.as_deref()
+    }
+    /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
+    pub fn build_batches_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.build_batches_not_found.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetBuildBatchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetBuildBatchesOutput");
@@ -2883,6 +3303,16 @@ pub struct BatchDeleteBuildsOutput {
     pub builds_deleted: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about any builds that could not be successfully deleted.</p>
     pub builds_not_deleted: std::option::Option<std::vec::Vec<crate::model::BuildNotDeleted>>,
+}
+impl BatchDeleteBuildsOutput {
+    /// <p>The IDs of the builds that were successfully deleted.</p>
+    pub fn builds_deleted(&self) -> std::option::Option<&[std::string::String]> {
+        self.builds_deleted.as_deref()
+    }
+    /// <p>Information about any builds that could not be successfully deleted.</p>
+    pub fn builds_not_deleted(&self) -> std::option::Option<&[crate::model::BuildNotDeleted]> {
+        self.builds_not_deleted.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteBuildsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -158,10 +158,7 @@ impl BatchPutMessageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_put_message(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_message(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -552,10 +549,7 @@ impl CreateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -866,10 +860,7 @@ impl CreateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1048,10 +1039,9 @@ impl CreateDatasetContentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dataset_content(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_dataset_content(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1290,10 +1280,7 @@ impl CreateDatastoreInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_datastore(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_datastore(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1506,10 +1493,8 @@ impl CreatePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4409,10 +4394,7 @@ impl PutLoggingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_logging_options(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_logging_options(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4589,10 +4571,7 @@ impl RunPipelineActivityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_run_pipeline_activity(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_run_pipeline_activity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5043,10 +5022,7 @@ impl StartPipelineReprocessingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_pipeline_reprocessing(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5221,10 +5197,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5593,10 +5566,7 @@ impl UpdateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5894,10 +5864,7 @@ impl UpdateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6120,10 +6087,7 @@ impl UpdateDatastoreInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_datastore(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_datastore(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6335,10 +6299,8 @@ impl UpdatePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6419,6 +6381,26 @@ pub struct UpdatePipelineInput {
     /// </p>
     pub pipeline_activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
 }
+impl UpdatePipelineInput {
+    /// <p>The name of the pipeline to update.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
+    /// your messages, such as removing, renaming or adding message attributes; filtering messages
+    /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
+    /// or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
+    /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
+    /// contain only one activity. For example:</p>
+    /// <p>
+    /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
+    /// ]</code>
+    /// </p>
+    pub fn pipeline_activities(&self) -> std::option::Option<&[crate::model::PipelineActivity]> {
+        self.pipeline_activities.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePipelineInput");
@@ -6443,6 +6425,29 @@ pub struct UpdateDatastoreInput {
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
+}
+impl UpdateDatastoreInput {
+    /// <p>The name of the data store to be updated.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>How long, in days, message data is kept for the data store. The retention period can't be
+    /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    pub fn datastore_storage(&self) -> std::option::Option<&crate::model::DatastoreStorage> {
+        self.datastore_storage.as_ref()
+    }
+    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>The default file format is JSON. You can specify only one format.</p>
+    /// <p>You can't change the file format after you create the data store.</p>
+    pub fn file_format_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FileFormatConfiguration> {
+        self.file_format_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6481,6 +6486,46 @@ pub struct UpdateDatasetInput {
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
+impl UpdateDatasetInput {
+    /// <p>The name of the dataset to update.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>A list of <code>DatasetAction</code> objects.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
+    /// five <code>DatasetTrigger</code> objects.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
+        self.triggers.as_deref()
+    }
+    /// <p>When dataset contents are created, they are delivered to destinations specified
+    /// here.</p>
+    pub fn content_delivery_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatasetContentDeliveryRule]> {
+        self.content_delivery_rules.as_deref()
+    }
+    /// <p>How long, in days, dataset contents are kept for the dataset.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
+    /// only the latest version plus the latest succeeded version (if they are different) are kept for
+    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
+    pub fn versioning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::VersioningConfiguration> {
+        self.versioning_configuration.as_ref()
+    }
+    /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    pub fn late_data_rules(&self) -> std::option::Option<&[crate::model::LateDataRule]> {
+        self.late_data_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDatasetInput");
@@ -6510,6 +6555,24 @@ pub struct UpdateChannelInput {
     /// updated if the channel's Amazon S3 storage is customer-managed.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
+impl UpdateChannelInput {
+    /// <p>The name of the channel to be updated.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+    /// <code>customerManagedS3</code> storage. If not specified, the default is
+    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
+    /// created.</p>
+    pub fn channel_storage(&self) -> std::option::Option<&crate::model::ChannelStorage> {
+        self.channel_storage.as_ref()
+    }
+    /// <p>How long, in days, message data is kept for the channel. The retention period can't be
+    /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
@@ -6529,6 +6592,16 @@ pub struct UntagResourceInput {
     /// <p>The keys of those tags which you want to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource whose tags you want to remove.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of those tags which you want to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6546,6 +6619,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The new or modified tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the resource whose tags you want to modify.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The new or modified tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6575,6 +6658,30 @@ pub struct StartPipelineReprocessingInput {
     /// <code>startTime</code> and <code>endTime</code>.</p>
     pub channel_messages: std::option::Option<crate::model::ChannelMessages>,
 }
+impl StartPipelineReprocessingInput {
+    /// <p>The name of the pipeline on which to start reprocessing.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
+    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
+    /// <code>channelMessages</code> object.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
+    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
+    /// <code>channelMessages</code> object.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
+    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
+    /// <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn channel_messages(&self) -> std::option::Option<&crate::model::ChannelMessages> {
+        self.channel_messages.as_ref()
+    }
+}
 impl std::fmt::Debug for StartPipelineReprocessingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPipelineReprocessingInput");
@@ -6600,6 +6707,25 @@ pub struct SampleChannelDataInput {
     /// <p>The end of the time window from which sample messages are retrieved.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SampleChannelDataInput {
+    /// <p>The name of the channel whose message samples are retrieved.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
+    /// 10.</p>
+    pub fn max_messages(&self) -> std::option::Option<i32> {
+        self.max_messages
+    }
+    /// <p>The start of the time window from which sample messages are retrieved.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time window from which sample messages are retrieved.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for SampleChannelDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SampleChannelDataInput");
@@ -6624,6 +6750,20 @@ pub struct RunPipelineActivityInput {
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
 }
+impl RunPipelineActivityInput {
+    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
+    /// activity because these activities are used in a pipeline only to load the original message and
+    /// to store the (possibly) transformed message. If a Lambda activity is specified, only
+    /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
+    /// used.</p>
+    pub fn pipeline_activity(&self) -> std::option::Option<&crate::model::PipelineActivity> {
+        self.pipeline_activity.as_ref()
+    }
+    /// <p>The sample message payloads on which the pipeline activity is run.</p>
+    pub fn payloads(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
+        self.payloads.as_deref()
+    }
+}
 impl std::fmt::Debug for RunPipelineActivityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RunPipelineActivityInput");
@@ -6640,6 +6780,12 @@ pub struct PutLoggingOptionsInput {
     /// <p>The new values of the IoT Analytics logging options.</p>
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
+impl PutLoggingOptionsInput {
+    /// <p>The new values of the IoT Analytics logging options.</p>
+    pub fn logging_options(&self) -> std::option::Option<&crate::model::LoggingOptions> {
+        self.logging_options.as_ref()
+    }
+}
 impl std::fmt::Debug for PutLoggingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLoggingOptionsInput");
@@ -6654,6 +6800,12 @@ impl std::fmt::Debug for PutLoggingOptionsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource whose tags you want to list.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource whose tags you want to list.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6672,6 +6824,17 @@ pub struct ListPipelinesInput {
     /// <p>The maximum number of results to return in this request.</p>
     /// <p>The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPipelinesInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6692,6 +6855,17 @@ pub struct ListDatastoresInput {
     /// <p>The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDatastoresInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatastoresInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatastoresInput");
@@ -6710,6 +6884,17 @@ pub struct ListDatasetsInput {
     /// <p>The maximum number of results to return in this request.</p>
     /// <p>The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDatasetsInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDatasetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6739,6 +6924,32 @@ pub struct ListDatasetContentsInput {
     /// request. (timestamp)</p>
     pub scheduled_before: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListDatasetContentsInput {
+    /// <p>The name of the dataset whose contents information you want to list.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
+    /// after the given time. See the field <code>triggers.schedule</code> in the
+    /// <code>CreateDataset</code> request. (timestamp)</p>
+    pub fn scheduled_on_or_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_on_or_after.as_ref()
+    }
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
+    /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
+    /// request. (timestamp)</p>
+    pub fn scheduled_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_before.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDatasetContentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetContentsInput");
@@ -6761,6 +6972,17 @@ pub struct ListChannelsInput {
     /// <p>The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListChannelsInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    /// <p>The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsInput");
@@ -6781,6 +7003,18 @@ pub struct GetDatasetContentInput {
     /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
+impl GetDatasetContentInput {
+    /// <p>The name of the dataset whose contents are retrieved.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
+    /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
+    /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDatasetContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDatasetContentInput");
@@ -6796,6 +7030,12 @@ impl std::fmt::Debug for GetDatasetContentInput {
 pub struct DescribePipelineInput {
     /// <p>The name of the pipeline whose information is retrieved.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
+}
+impl DescribePipelineInput {
+    /// <p>The name of the pipeline whose information is retrieved.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6827,6 +7067,18 @@ pub struct DescribeDatastoreInput {
     /// customer-managed.</p>
     pub include_statistics: bool,
 }
+impl DescribeDatastoreInput {
+    /// <p>The name of the data store</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>If true, additional statistical information about the data store is included in the
+    /// response. This feature can't be used with a data store whose S3 storage is
+    /// customer-managed.</p>
+    pub fn include_statistics(&self) -> bool {
+        self.include_statistics
+    }
+}
 impl std::fmt::Debug for DescribeDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatastoreInput");
@@ -6842,6 +7094,12 @@ impl std::fmt::Debug for DescribeDatastoreInput {
 pub struct DescribeDatasetInput {
     /// <p>The name of the dataset whose information is retrieved.</p>
     pub dataset_name: std::option::Option<std::string::String>,
+}
+impl DescribeDatasetInput {
+    /// <p>The name of the dataset whose information is retrieved.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6861,6 +7119,17 @@ pub struct DescribeChannelInput {
     /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub include_statistics: bool,
 }
+impl DescribeChannelInput {
+    /// <p>The name of the channel whose information is retrieved.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>If true, additional statistical information about the channel is included in the response.
+    /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+    pub fn include_statistics(&self) -> bool {
+        self.include_statistics
+    }
+}
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelInput");
@@ -6877,6 +7146,12 @@ pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to delete.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
 }
+impl DeletePipelineInput {
+    /// <p>The name of the pipeline to delete.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePipelineInput");
@@ -6891,6 +7166,12 @@ impl std::fmt::Debug for DeletePipelineInput {
 pub struct DeleteDatastoreInput {
     /// <p>The name of the data store to delete.</p>
     pub datastore_name: std::option::Option<std::string::String>,
+}
+impl DeleteDatastoreInput {
+    /// <p>The name of the data store to delete.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6911,6 +7192,18 @@ pub struct DeleteDatasetContentInput {
     /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetContentInput {
+    /// <p>The name of the dataset whose content is deleted.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The version of the dataset whose content is deleted. You can also use the strings
+    /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
+    /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetContentInput");
@@ -6927,6 +7220,12 @@ pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to delete.</p>
     pub dataset_name: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetInput {
+    /// <p>The name of the dataset to delete.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetInput");
@@ -6941,6 +7240,12 @@ impl std::fmt::Debug for DeleteDatasetInput {
 pub struct DeleteChannelInput {
     /// <p>The name of the channel to delete.</p>
     pub channel_name: std::option::Option<std::string::String>,
+}
+impl DeleteChannelInput {
+    /// <p>The name of the channel to delete.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6970,6 +7275,30 @@ pub struct CreatePipelineInput {
     pub pipeline_activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
     /// <p>Metadata which can be used to manage the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreatePipelineInput {
+    /// <p>The name of the pipeline.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
+    /// your messages, such as removing, renaming or adding message attributes; filtering messages
+    /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
+    /// or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
+    /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
+    /// contain only one activity. For example:</p>
+    /// <p>
+    /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
+    /// ]</code>
+    /// </p>
+    pub fn pipeline_activities(&self) -> std::option::Option<&[crate::model::PipelineActivity]> {
+        self.pipeline_activities.as_deref()
+    }
+    /// <p>Metadata which can be used to manage the pipeline.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7001,6 +7330,37 @@ pub struct CreateDatastoreInput {
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
 }
+impl CreateDatastoreInput {
+    /// <p>The name of the data store.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    pub fn datastore_storage(&self) -> std::option::Option<&crate::model::DatastoreStorage> {
+        self.datastore_storage.as_ref()
+    }
+    /// <p>How long, in days, message data is kept for the data store. When
+    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the data store.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>The default file format is JSON. You can specify only one format.</p>
+    /// <p>You can't change the file format after you create the data store.</p>
+    pub fn file_format_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FileFormatConfiguration> {
+        self.file_format_configuration.as_ref()
+    }
+    /// <p> Contains information about the partition dimensions in a data store. </p>
+    pub fn datastore_partitions(&self) -> std::option::Option<&crate::model::DatastorePartitions> {
+        self.datastore_partitions.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatastoreInput");
@@ -7023,6 +7383,17 @@ pub struct CreateDatasetContentInput {
     /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
     /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl CreateDatasetContentInput {
+    /// <p>The name of the dataset.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
+    /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7067,6 +7438,56 @@ pub struct CreateDatasetInput {
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
+impl CreateDatasetInput {
+    /// <p>The name of the dataset.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>A list of actions that create the dataset contents.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
+    /// interval or when another dataset's contents are created. The list of triggers can be empty or
+    /// contain up to five <code>DataSetTrigger</code> objects.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
+        self.triggers.as_deref()
+    }
+    /// <p>When dataset contents are created, they are delivered to destinations specified
+    /// here.</p>
+    pub fn content_delivery_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatasetContentDeliveryRule]> {
+        self.content_delivery_rules.as_deref()
+    }
+    /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
+    /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
+    /// 90 days. The number of versions of dataset contents retained is determined by the
+    /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
+    /// only the latest version plus the latest succeeded version (if they are different) are kept for
+    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
+    pub fn versioning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::VersioningConfiguration> {
+        self.versioning_configuration.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the dataset.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    pub fn late_data_rules(&self) -> std::option::Option<&[crate::model::LateDataRule]> {
+        self.late_data_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetInput");
@@ -7099,6 +7520,28 @@ pub struct CreateChannelInput {
     /// <p>Metadata which can be used to manage the channel.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateChannelInput {
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+    /// <code>customerManagedS3</code> storage. If not specified, the default is
+    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
+    /// created.</p>
+    pub fn channel_storage(&self) -> std::option::Option<&crate::model::ChannelStorage> {
+        self.channel_storage.as_ref()
+    }
+    /// <p>How long, in days, message data is kept for the channel. When
+    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>Metadata which can be used to manage the channel.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelInput");
@@ -7119,6 +7562,17 @@ pub struct CancelPipelineReprocessingInput {
     /// <p>The ID of the reprocessing task (returned by
     /// <code>StartPipelineReprocessing</code>).</p>
     pub reprocessing_id: std::option::Option<std::string::String>,
+}
+impl CancelPipelineReprocessingInput {
+    /// <p>The name of pipeline for which data reprocessing is canceled.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The ID of the reprocessing task (returned by
+    /// <code>StartPipelineReprocessing</code>).</p>
+    pub fn reprocessing_id(&self) -> std::option::Option<&str> {
+        self.reprocessing_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelPipelineReprocessingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7164,6 +7618,43 @@ pub struct BatchPutMessageInput {
     /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
     /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
+}
+impl BatchPutMessageInput {
+    /// <p>The name of the channel where the messages are sent.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
+    /// "payload": "string"}.</p>
+    /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
+    /// allowed.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must begin with an alphabetic character or single underscore (_).</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot contain hyphens (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be more than 255 characters.</p>
+    /// </li>
+    /// <li>
+    /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
+    /// duplicates.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
+    /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+        self.messages.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

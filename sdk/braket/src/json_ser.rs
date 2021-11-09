@@ -2,16 +2,17 @@
 pub fn serialize_structure_crate_input_cancel_quantum_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CancelQuantumTaskInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_quantum_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateQuantumTaskInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.action {
         object.key("action").string(var_2);
     }
@@ -45,12 +46,13 @@ pub fn serialize_structure_crate_input_create_quantum_task_input(
         }
         object_10.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_search_devices_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchDevicesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.filters {
         let mut array_14 = object.key("filters").start_array();
         for item_15 in var_13 {
@@ -59,7 +61,7 @@ pub fn serialize_structure_crate_input_search_devices_input(
                 crate::json_ser::serialize_structure_crate_model_search_devices_filter(
                     &mut object_16,
                     item_15,
-                );
+                )?;
                 object_16.finish();
             }
         }
@@ -74,12 +76,13 @@ pub fn serialize_structure_crate_input_search_devices_input(
     if let Some(var_18) = &input.next_token {
         object.key("nextToken").string(var_18);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_search_quantum_tasks_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchQuantumTasksInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.filters {
         let mut array_20 = object.key("filters").start_array();
         for item_21 in var_19 {
@@ -88,7 +91,7 @@ pub fn serialize_structure_crate_input_search_quantum_tasks_input(
                 crate::json_ser::serialize_structure_crate_model_search_quantum_tasks_filter(
                     &mut object_22,
                     item_21,
-                );
+                )?;
                 object_22.finish();
             }
         }
@@ -103,12 +106,13 @@ pub fn serialize_structure_crate_input_search_quantum_tasks_input(
     if let Some(var_24) = &input.next_token {
         object.key("nextToken").string(var_24);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.tags {
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
@@ -118,12 +122,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_26.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_search_devices_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SearchDevicesFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.name {
         object.key("name").string(var_29);
     }
@@ -136,12 +141,13 @@ pub fn serialize_structure_crate_model_search_devices_filter(
         }
         array_31.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_search_quantum_tasks_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SearchQuantumTasksFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.name {
         object.key("name").string(var_33);
     }
@@ -157,4 +163,5 @@ pub fn serialize_structure_crate_model_search_quantum_tasks_filter(
     if let Some(var_37) = &input.operator {
         object.key("operator").string(var_37.as_str());
     }
+    Ok(())
 }

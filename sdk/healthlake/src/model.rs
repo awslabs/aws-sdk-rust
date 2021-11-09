@@ -14,6 +14,20 @@ pub struct Tag {
     /// </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>
+    /// The key portion of a tag. Tag keys are case sensitive.
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>
+    /// The value portion of tag. Tag values are case sensitive.
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -157,6 +171,15 @@ pub enum OutputDataConfig {
     /// The output data configuration that was supplied when the export job was created.
     /// </p>
     S3Configuration(crate::model::S3Configuration),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl OutputDataConfig {
     #[allow(irrefutable_let_patterns)]
@@ -175,6 +198,10 @@ impl OutputDataConfig {
     pub fn is_s3_configuration(&self) -> bool {
         self.as_s3_configuration().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>
@@ -191,6 +218,20 @@ pub struct S3Configuration {
     /// The KMS key ID used to access the S3 bucket.
     /// </p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl S3Configuration {
+    /// <p>
+    /// The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+    /// </p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>
+    /// The KMS key ID used to access the S3 bucket.
+    /// </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -260,6 +301,15 @@ impl S3Configuration {
 pub enum InputDataConfig {
     /// <p>The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
     S3Uri(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl InputDataConfig {
     #[allow(irrefutable_let_patterns)]
@@ -275,6 +325,10 @@ impl InputDataConfig {
     /// Returns true if this is a [`S3Uri`](crate::model::InputDataConfig::S3Uri).
     pub fn is_s3_uri(&self) -> bool {
         self.as_s3_uri().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -302,6 +356,48 @@ pub struct ImportJobProperties {
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ImportJobProperties {
+    /// <p>The AWS-generated id number for the Import job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The user-generated name for an Import job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The time that the Import job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the Import job was completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The datastore id used when the Import job was created. </p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The input data configuration that was supplied when the Import job was created.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub fn job_output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.job_output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -502,6 +598,44 @@ pub struct ExportJobProperties {
     /// <p>An explanation of any errors that may have occurred during the export job.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ExportJobProperties {
+    /// <p>The AWS generated ID for an export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The user generated name for an export job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The time an export job was initiated.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time an export job completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>An explanation of any errors that may have occurred during the export job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportJobProperties");
@@ -687,6 +821,46 @@ pub struct DatastoreProperties {
     /// <p>The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.</p>
     pub preload_data_config: std::option::Option<crate::model::PreloadDataConfig>,
 }
+impl DatastoreProperties {
+    /// <p>The AWS-generated ID number for the Data Store.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name used in the creation of the Data Store.</p>
+    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+        self.datastore_arn.as_deref()
+    }
+    /// <p>The user-generated name for the Data Store.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.</p>
+    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+        self.datastore_status.as_ref()
+    }
+    /// <p>The time that a Data Store was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The FHIR version. Only R4 version data is supported.</p>
+    pub fn datastore_type_version(&self) -> std::option::Option<&crate::model::FhirVersion> {
+        self.datastore_type_version.as_ref()
+    }
+    /// <p>The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the endpoint URL.</p>
+    pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
+        self.datastore_endpoint.as_deref()
+    }
+    /// <p>
+    /// The server-side encryption key configuration for a customer provided encryption key (CMK).
+    /// </p>
+    pub fn sse_configuration(&self) -> std::option::Option<&crate::model::SseConfiguration> {
+        self.sse_configuration.as_ref()
+    }
+    /// <p>The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.</p>
+    pub fn preload_data_config(&self) -> std::option::Option<&crate::model::PreloadDataConfig> {
+        self.preload_data_config.as_ref()
+    }
+}
 impl std::fmt::Debug for DatastoreProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatastoreProperties");
@@ -867,6 +1041,12 @@ pub struct PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     pub preload_data_type: std::option::Option<crate::model::PreloadDataType>,
 }
+impl PreloadDataConfig {
+    /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
+    pub fn preload_data_type(&self) -> std::option::Option<&crate::model::PreloadDataType> {
+        self.preload_data_type.as_ref()
+    }
+}
 impl std::fmt::Debug for PreloadDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreloadDataConfig");
@@ -973,6 +1153,14 @@ pub struct SseConfiguration {
     /// </p>
     pub kms_encryption_config: std::option::Option<crate::model::KmsEncryptionConfig>,
 }
+impl SseConfiguration {
+    /// <p>
+    /// The KMS encryption configuration used to provide details for data encryption.
+    /// </p>
+    pub fn kms_encryption_config(&self) -> std::option::Option<&crate::model::KmsEncryptionConfig> {
+        self.kms_encryption_config.as_ref()
+    }
+}
 impl std::fmt::Debug for SseConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SseConfiguration");
@@ -1035,6 +1223,20 @@ pub struct KmsEncryptionConfig {
     /// The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
     /// </p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl KmsEncryptionConfig {
+    /// <p>
+    /// The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs.
+    /// </p>
+    pub fn cmk_type(&self) -> std::option::Option<&crate::model::CmkType> {
+        self.cmk_type.as_ref()
+    }
+    /// <p>
+    /// The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+    /// </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for KmsEncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1281,6 +1483,26 @@ pub struct DatastoreFilter {
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
     /// after the specified date will be included in the results.</p>
     pub created_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DatastoreFilter {
+    /// <p>Allows the user to filter Data Store results by name.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>Allows the user to filter Data Store results by status.</p>
+    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+        self.datastore_status.as_ref()
+    }
+    /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
+    /// before the specified date will be included in the results. </p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
+    /// after the specified date will be included in the results.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
 }
 impl std::fmt::Debug for DatastoreFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

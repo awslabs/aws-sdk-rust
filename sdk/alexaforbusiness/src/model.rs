@@ -14,6 +14,28 @@ pub struct UpdateMeetingRoomConfiguration {
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     pub require_check_in: std::option::Option<crate::model::UpdateRequireCheckIn>,
 }
+impl UpdateMeetingRoomConfiguration {
+    /// <p>Whether room utilization metrics are enabled or not.</p>
+    pub fn room_utilization_metrics_enabled(&self) -> std::option::Option<bool> {
+        self.room_utilization_metrics_enabled
+    }
+    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
+    /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    pub fn end_of_meeting_reminder(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateEndOfMeetingReminder> {
+        self.end_of_meeting_reminder.as_ref()
+    }
+    /// <p>Settings to automatically book an available room available for a configured duration
+    /// when joining a meeting with Alexa.</p>
+    pub fn instant_booking(&self) -> std::option::Option<&crate::model::UpdateInstantBooking> {
+        self.instant_booking.as_ref()
+    }
+    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
+    pub fn require_check_in(&self) -> std::option::Option<&crate::model::UpdateRequireCheckIn> {
+        self.require_check_in.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMeetingRoomConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMeetingRoomConfiguration");
@@ -126,6 +148,16 @@ pub struct UpdateRequireCheckIn {
     /// <p>Whether require check in is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl UpdateRequireCheckIn {
+    /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
+    pub fn release_after_minutes(&self) -> std::option::Option<i32> {
+        self.release_after_minutes
+    }
+    /// <p>Whether require check in is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for UpdateRequireCheckIn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRequireCheckIn");
@@ -191,6 +223,17 @@ pub struct UpdateInstantBooking {
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl UpdateInstantBooking {
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
+    /// an available room when a meeting is started with Alexa.</p>
+    pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.duration_in_minutes
+    }
+    /// <p>Whether instant booking is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for UpdateInstantBooking {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -261,6 +304,22 @@ pub struct UpdateEndOfMeetingReminder {
     pub reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl UpdateEndOfMeetingReminder {
+    /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
+    /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
+    /// ending. </p>
+    pub fn reminder_at_minutes(&self) -> std::option::Option<&[i32]> {
+        self.reminder_at_minutes.as_deref()
+    }
+    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    pub fn reminder_type(&self) -> std::option::Option<&crate::model::EndOfMeetingReminderType> {
+        self.reminder_type.as_ref()
+    }
+    /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for UpdateEndOfMeetingReminder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -599,6 +658,16 @@ pub struct SipAddress {
     /// <p>The type of the SIP address.</p>
     pub r#type: std::option::Option<crate::model::SipType>,
 }
+impl SipAddress {
+    /// <p>The URI for the SIP address.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The type of the SIP address.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SipType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for SipAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipAddress");
@@ -712,6 +781,16 @@ pub struct PhoneNumber {
     pub number: std::option::Option<std::string::String>,
     /// <p>The type of the phone number.</p>
     pub r#type: std::option::Option<crate::model::PhoneNumberType>,
+}
+impl PhoneNumber {
+    /// <p>The raw value of the phone number.</p>
+    pub fn number(&self) -> std::option::Option<&str> {
+        self.number.as_deref()
+    }
+    /// <p>The type of the phone number.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for PhoneNumber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -849,6 +928,12 @@ pub struct MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
     pub require_pin: std::option::Option<crate::model::RequirePin>,
 }
+impl MeetingSetting {
+    /// <p>The values that indicate whether the pin is always required.</p>
+    pub fn require_pin(&self) -> std::option::Option<&crate::model::RequirePin> {
+        self.require_pin.as_ref()
+    }
+}
 impl std::fmt::Debug for MeetingSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeetingSetting");
@@ -965,6 +1050,24 @@ pub struct PstnDialIn {
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     pub one_click_pin_delay: std::option::Option<std::string::String>,
 }
+impl PstnDialIn {
+    /// <p>The zip code.</p>
+    pub fn country_code(&self) -> std::option::Option<&str> {
+        self.country_code.as_deref()
+    }
+    /// <p>The phone number to call to join the conference.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
+    pub fn one_click_id_delay(&self) -> std::option::Option<&str> {
+        self.one_click_id_delay.as_deref()
+    }
+    /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
+    pub fn one_click_pin_delay(&self) -> std::option::Option<&str> {
+        self.one_click_pin_delay.as_deref()
+    }
+}
 impl std::fmt::Debug for PstnDialIn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PstnDialIn");
@@ -1059,6 +1162,16 @@ pub struct IpDialIn {
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
     pub comms_protocol: std::option::Option<crate::model::CommsProtocol>,
+}
+impl IpDialIn {
+    /// <p>The IP address.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The protocol, including SIP, SIPS, and H323.</p>
+    pub fn comms_protocol(&self) -> std::option::Option<&crate::model::CommsProtocol> {
+        self.comms_protocol.as_ref()
+    }
 }
 impl std::fmt::Debug for IpDialIn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1281,6 +1394,12 @@ pub struct BusinessReportRecurrence {
     /// <p>The start date.</p>
     pub start_date: std::option::Option<std::string::String>,
 }
+impl BusinessReportRecurrence {
+    /// <p>The start date.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+}
 impl std::fmt::Debug for BusinessReportRecurrence {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BusinessReportRecurrence");
@@ -1385,6 +1504,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key of a tag. Tag keys are case-sensitive. </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1540,6 +1669,20 @@ pub struct Content {
     /// <p>The list of audio messages.</p>
     pub audio_list: std::option::Option<std::vec::Vec<crate::model::Audio>>,
 }
+impl Content {
+    /// <p>The list of text messages.</p>
+    pub fn text_list(&self) -> std::option::Option<&[crate::model::Text]> {
+        self.text_list.as_deref()
+    }
+    /// <p>The list of SSML messages.</p>
+    pub fn ssml_list(&self) -> std::option::Option<&[crate::model::Ssml]> {
+        self.ssml_list.as_deref()
+    }
+    /// <p>The list of audio messages.</p>
+    pub fn audio_list(&self) -> std::option::Option<&[crate::model::Audio]> {
+        self.audio_list.as_deref()
+    }
+}
 impl std::fmt::Debug for Content {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Content");
@@ -1652,6 +1795,17 @@ pub struct Audio {
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
     /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl Audio {
+    /// <p>The locale of the audio message. Currently, en-US is supported.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+    /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
+    /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for Audio {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1769,6 +1923,16 @@ pub struct Ssml {
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Ssml {
+    /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+    /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Ssml {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ssml");
@@ -1831,6 +1995,16 @@ pub struct Text {
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>The value of the text message.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Text {
+    /// <p>The locale of the text message. Currently, en-US is supported.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+    /// <p>The value of the text message.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Text {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1895,6 +2069,16 @@ pub struct Filter {
     pub key: std::option::Option<std::string::String>,
     /// <p>The values of a filter.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Filter {
+    /// <p>The key of a filter.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The values of a filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1975,6 +2159,32 @@ pub struct UserData {
     pub enrollment_status: std::option::Option<crate::model::EnrollmentStatus>,
     /// <p>The enrollment ARN of a user.</p>
     pub enrollment_id: std::option::Option<std::string::String>,
+}
+impl UserData {
+    /// <p>The ARN of a user.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The first name of a user.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of a user.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The email of a user.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The enrollment status of a user.</p>
+    pub fn enrollment_status(&self) -> std::option::Option<&crate::model::EnrollmentStatus> {
+        self.enrollment_status.as_ref()
+    }
+    /// <p>The enrollment ARN of a user.</p>
+    pub fn enrollment_id(&self) -> std::option::Option<&str> {
+        self.enrollment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UserData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2170,6 +2380,16 @@ pub struct Sort {
     /// <p>The sort value of a sort object.</p>
     pub value: std::option::Option<crate::model::SortValue>,
 }
+impl Sort {
+    /// <p>The sort key of a sort object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The sort value of a sort object.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::SortValue> {
+        self.value.as_ref()
+    }
+}
 impl std::fmt::Debug for Sort {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Sort");
@@ -2290,6 +2510,20 @@ pub struct SkillGroupData {
     /// <p>The description of a skill group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl SkillGroupData {
+    /// <p>The skill group ARN of a skill group.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>The skill group name of a skill group.</p>
+    pub fn skill_group_name(&self) -> std::option::Option<&str> {
+        self.skill_group_name.as_deref()
+    }
+    /// <p>The description of a skill group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for SkillGroupData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SkillGroupData");
@@ -2379,6 +2613,32 @@ pub struct RoomData {
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The profile name of a room.</p>
     pub profile_name: std::option::Option<std::string::String>,
+}
+impl RoomData {
+    /// <p>The ARN of a room.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The name of a room.</p>
+    pub fn room_name(&self) -> std::option::Option<&str> {
+        self.room_name.as_deref()
+    }
+    /// <p>The description of a room.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The provider calendar ARN of a room.</p>
+    pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
+        self.provider_calendar_id.as_deref()
+    }
+    /// <p>The profile ARN of a room.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+    /// <p>The profile name of a room.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RoomData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2512,6 +2772,45 @@ pub struct ProfileData {
     /// <p>The locale of a room profile. (This is currently available only to a limited preview
     /// audience.)</p>
     pub locale: std::option::Option<std::string::String>,
+}
+impl ProfileData {
+    /// <p>The ARN of a room profile.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+    /// <p>The name of a room profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>Retrieves if the profile data is default or not.</p>
+    pub fn is_default(&self) -> std::option::Option<bool> {
+        self.is_default
+    }
+    /// <p>The address of a room profile.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The time zone of a room profile.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>The distance unit of a room profile.</p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
+    /// <p>The temperature unit of a room profile.</p>
+    pub fn temperature_unit(&self) -> std::option::Option<&crate::model::TemperatureUnit> {
+        self.temperature_unit.as_ref()
+    }
+    /// <p>The wake word of a room profile.</p>
+    pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
+        self.wake_word.as_ref()
+    }
+    /// <p>The locale of a room profile. (This is currently available only to a limited preview
+    /// audience.)</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
 }
 impl std::fmt::Debug for ProfileData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2687,6 +2986,39 @@ pub struct NetworkProfileData {
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
     /// (ACM). This is used to issue certificates to the devices.</p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
+}
+impl NetworkProfileData {
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+        self.network_profile_name.as_deref()
+    }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The SSID of the Wi-Fi network.</p>
+    pub fn ssid(&self) -> std::option::Option<&str> {
+        self.ssid.as_deref()
+    }
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
+    /// WEP, or OPEN.</p>
+    pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
+        self.security_type.as_ref()
+    }
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
+    /// supported.</p>
+    pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
+        self.eap_method.as_ref()
+    }
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
+    /// (ACM). This is used to issue certificates to the devices.</p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for NetworkProfileData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2977,6 +3309,60 @@ pub struct DeviceData {
     /// <p>The time (in epoch) when the device data was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeviceData {
+    /// <p>The ARN of a device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The serial number of a device.</p>
+    pub fn device_serial_number(&self) -> std::option::Option<&str> {
+        self.device_serial_number.as_deref()
+    }
+    /// <p>The type of a device.</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+    /// <p>The name of a device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The software version of a device.</p>
+    pub fn software_version(&self) -> std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
+    /// <p>The MAC address of a device.</p>
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+    /// <p>The status of a device.</p>
+    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.device_status.as_ref()
+    }
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+        self.network_profile_name.as_deref()
+    }
+    /// <p>The room ARN associated with a device.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The name of the room associated with a device.</p>
+    pub fn room_name(&self) -> std::option::Option<&str> {
+        self.room_name.as_deref()
+    }
+    /// <p>Detailed information about a device's status.</p>
+    pub fn device_status_info(&self) -> std::option::Option<&crate::model::DeviceStatusInfo> {
+        self.device_status_info.as_ref()
+    }
+    /// <p>The time (in epoch) when the device data was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceData");
@@ -3206,6 +3592,24 @@ pub struct DeviceStatusInfo {
     /// <p>The time (in epoch) when the device connection status changed.</p>
     pub connection_status_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeviceStatusInfo {
+    /// <p>One or more device status detail descriptions.</p>
+    pub fn device_status_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeviceStatusDetail]> {
+        self.device_status_details.as_deref()
+    }
+    /// <p>The latest available information about the connection status of a device. </p>
+    pub fn connection_status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+    /// <p>The time (in epoch) when the device connection status changed.</p>
+    pub fn connection_status_updated_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.connection_status_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceStatusInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceStatusInfo");
@@ -3358,6 +3762,16 @@ pub struct DeviceStatusDetail {
     pub feature: std::option::Option<crate::model::Feature>,
     /// <p>The device status detail code.</p>
     pub code: std::option::Option<crate::model::DeviceStatusDetailCode>,
+}
+impl DeviceStatusDetail {
+    /// <p>The list of available features on the device.</p>
+    pub fn feature(&self) -> std::option::Option<&crate::model::Feature> {
+        self.feature.as_ref()
+    }
+    /// <p>The device status detail code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::DeviceStatusDetailCode> {
+        self.code.as_ref()
+    }
 }
 impl std::fmt::Debug for DeviceStatusDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3645,6 +4059,38 @@ pub struct ContactData {
     /// <p>The list of SIP addresses for the contact.</p>
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
 }
+impl ContactData {
+    /// <p>The ARN of the contact.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The name of the contact to display on the console.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The first name of the contact, used to call the contact on the device.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the contact, used to call the contact on the device.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
+    /// specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you
+    /// specify the phone number type and multiple numbers.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The list of phone numbers for the contact.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+        self.phone_numbers.as_deref()
+    }
+    /// <p>The list of SIP addresses for the contact.</p>
+    pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
+        self.sip_addresses.as_deref()
+    }
+}
 impl std::fmt::Debug for ContactData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContactData");
@@ -3797,6 +4243,20 @@ pub struct AddressBookData {
     /// <p>The description of the address book.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl AddressBookData {
+    /// <p>The ARN of the address book.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
+    /// <p>The name of the address book.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the address book.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for AddressBookData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddressBookData");
@@ -3877,6 +4337,17 @@ pub struct RoomSkillParameter {
     /// <p>The parameter value of a room skill parameter.</p>
     pub parameter_value: std::option::Option<std::string::String>,
 }
+impl RoomSkillParameter {
+    /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that
+    /// only takes “DEFAULT” or “SCOPE” as valid values.</p>
+    pub fn parameter_key(&self) -> std::option::Option<&str> {
+        self.parameter_key.as_deref()
+    }
+    /// <p>The parameter value of a room skill parameter.</p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
+}
 impl std::fmt::Debug for RoomSkillParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoomSkillParameter");
@@ -3947,6 +4418,12 @@ pub struct ConferencePreference {
     /// <p>The ARN of the default conference provider.</p>
     pub default_conference_provider_arn: std::option::Option<std::string::String>,
 }
+impl ConferencePreference {
+    /// <p>The ARN of the default conference provider.</p>
+    pub fn default_conference_provider_arn(&self) -> std::option::Option<&str> {
+        self.default_conference_provider_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ConferencePreference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConferencePreference");
@@ -4008,6 +4485,20 @@ pub struct SmartHomeAppliance {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     pub manufacturer_name: std::option::Option<std::string::String>,
+}
+impl SmartHomeAppliance {
+    /// <p>The friendly name of the smart home appliance.</p>
+    pub fn friendly_name(&self) -> std::option::Option<&str> {
+        self.friendly_name.as_deref()
+    }
+    /// <p>The description of the smart home appliance.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the manufacturer of the smart home appliance.</p>
+    pub fn manufacturer_name(&self) -> std::option::Option<&str> {
+        self.manufacturer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SmartHomeAppliance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4100,6 +4591,36 @@ pub struct SkillsStoreSkill {
     pub skill_details: std::option::Option<crate::model::SkillDetails>,
     /// <p>Linking support for a skill.</p>
     pub supports_linking: bool,
+}
+impl SkillsStoreSkill {
+    /// <p>The ARN of the skill.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+    /// <p>The name of the skill.</p>
+    pub fn skill_name(&self) -> std::option::Option<&str> {
+        self.skill_name.as_deref()
+    }
+    /// <p>Short description about the skill.</p>
+    pub fn short_description(&self) -> std::option::Option<&str> {
+        self.short_description.as_deref()
+    }
+    /// <p>The URL where the skill icon resides.</p>
+    pub fn icon_url(&self) -> std::option::Option<&str> {
+        self.icon_url.as_deref()
+    }
+    /// <p>Sample utterances that interact with the skill.</p>
+    pub fn sample_utterances(&self) -> std::option::Option<&[std::string::String]> {
+        self.sample_utterances.as_deref()
+    }
+    /// <p>Information about the skill.</p>
+    pub fn skill_details(&self) -> std::option::Option<&crate::model::SkillDetails> {
+        self.skill_details.as_ref()
+    }
+    /// <p>Linking support for a skill.</p>
+    pub fn supports_linking(&self) -> bool {
+        self.supports_linking
+    }
 }
 impl std::fmt::Debug for SkillsStoreSkill {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4264,6 +4785,55 @@ pub struct SkillDetails {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The details about the developer that published the skill.</p>
     pub developer_info: std::option::Option<crate::model::DeveloperInfo>,
+}
+impl SkillDetails {
+    /// <p>The description of the product.</p>
+    pub fn product_description(&self) -> std::option::Option<&str> {
+        self.product_description.as_deref()
+    }
+    /// <p>The phrase used to trigger the skill.</p>
+    pub fn invocation_phrase(&self) -> std::option::Option<&str> {
+        self.invocation_phrase.as_deref()
+    }
+    /// <p>The date when the skill was released.</p>
+    pub fn release_date(&self) -> std::option::Option<&str> {
+        self.release_date.as_deref()
+    }
+    /// <p>The URL of the end user license agreement.</p>
+    pub fn end_user_license_agreement(&self) -> std::option::Option<&str> {
+        self.end_user_license_agreement.as_deref()
+    }
+    /// <p>The generic keywords associated with the skill that can be used to find a
+    /// skill.</p>
+    pub fn generic_keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.generic_keywords.as_deref()
+    }
+    /// <p>The details about what the skill supports organized as bullet points.</p>
+    pub fn bullet_points(&self) -> std::option::Option<&[std::string::String]> {
+        self.bullet_points.as_deref()
+    }
+    /// <p>The updates added in bullet points.</p>
+    pub fn new_in_this_version_bullet_points(&self) -> std::option::Option<&[std::string::String]> {
+        self.new_in_this_version_bullet_points.as_deref()
+    }
+    /// <p>The types of skills.</p>
+    pub fn skill_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.skill_types.as_deref()
+    }
+    /// <p>
+    /// <i>This member has been deprecated.</i>
+    /// </p>
+    /// <p>The list of reviews for the skill, including Key and Value pair.</p>
+    pub fn reviews(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.reviews.as_ref()
+    }
+    /// <p>The details about the developer that published the skill.</p>
+    pub fn developer_info(&self) -> std::option::Option<&crate::model::DeveloperInfo> {
+        self.developer_info.as_ref()
+    }
 }
 impl std::fmt::Debug for SkillDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4519,6 +5089,24 @@ pub struct DeveloperInfo {
     /// <p>The website of the developer.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl DeveloperInfo {
+    /// <p>The name of the developer.</p>
+    pub fn developer_name(&self) -> std::option::Option<&str> {
+        self.developer_name.as_deref()
+    }
+    /// <p>The URL of the privacy policy.</p>
+    pub fn privacy_policy(&self) -> std::option::Option<&str> {
+        self.privacy_policy.as_deref()
+    }
+    /// <p>The email of the developer.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The website of the developer.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for DeveloperInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeveloperInfo");
@@ -4615,6 +5203,16 @@ pub struct Category {
     /// <p>The name of the skill store category.</p>
     pub category_name: std::option::Option<std::string::String>,
 }
+impl Category {
+    /// <p>The ID of the skill store category.</p>
+    pub fn category_id(&self) -> std::option::Option<i64> {
+        self.category_id
+    }
+    /// <p>The name of the skill store category.</p>
+    pub fn category_name(&self) -> std::option::Option<&str> {
+        self.category_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Category {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Category");
@@ -4687,6 +5285,29 @@ pub struct SkillSummary {
     pub enablement_type: std::option::Option<crate::model::EnablementType>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub skill_type: std::option::Option<crate::model::SkillType>,
+}
+impl SkillSummary {
+    /// <p>The ARN of the skill summary.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+    /// <p>The name of the skill.</p>
+    pub fn skill_name(&self) -> std::option::Option<&str> {
+        self.skill_name.as_deref()
+    }
+    /// <p>Linking support for a skill.</p>
+    pub fn supports_linking(&self) -> bool {
+        self.supports_linking
+    }
+    /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be
+    /// used.</p>
+    pub fn enablement_type(&self) -> std::option::Option<&crate::model::EnablementType> {
+        self.enablement_type.as_ref()
+    }
+    /// <p>Whether the skill is publicly available or is a private skill.</p>
+    pub fn skill_type(&self) -> std::option::Option<&crate::model::SkillType> {
+        self.skill_type.as_ref()
+    }
 }
 impl std::fmt::Debug for SkillSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5029,6 +5650,29 @@ pub struct GatewaySummary {
     /// version during normal operation.</p>
     pub software_version: std::option::Option<std::string::String>,
 }
+impl GatewaySummary {
+    /// <p>The ARN of the gateway.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the gateway.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the gateway.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the gateway group that the gateway is associated to.</p>
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+        self.gateway_group_arn.as_deref()
+    }
+    /// <p>The software version of the gateway. The gateway automatically updates its software
+    /// version during normal operation.</p>
+    pub fn software_version(&self) -> std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GatewaySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewaySummary");
@@ -5141,6 +5785,20 @@ pub struct GatewayGroupSummary {
     /// <p>The description of the gateway group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl GatewayGroupSummary {
+    /// <p>The ARN of the gateway group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the gateway group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the gateway group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for GatewayGroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayGroupSummary");
@@ -5218,6 +5876,20 @@ pub struct DeviceEvent {
     pub value: std::option::Option<std::string::String>,
     /// <p>The time (in epoch) when the event occurred. </p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DeviceEvent {
+    /// <p>The type of device event.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DeviceEventType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The value of the event.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The time (in epoch) when the event occurred. </p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for DeviceEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5364,6 +6036,32 @@ pub struct ConferenceProvider {
     /// <p>The meeting settings for the conference provider.</p>
     pub meeting_setting: std::option::Option<crate::model::MeetingSetting>,
 }
+impl ConferenceProvider {
+    /// <p>The ARN of the newly created conference provider.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the conference provider.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of conference providers.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ConferenceProviderType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The IP endpoint and protocol for calling.</p>
+    pub fn ip_dial_in(&self) -> std::option::Option<&crate::model::IpDialIn> {
+        self.ip_dial_in.as_ref()
+    }
+    /// <p>The information for PSTN conferencing.</p>
+    pub fn pstn_dial_in(&self) -> std::option::Option<&crate::model::PstnDialIn> {
+        self.pstn_dial_in.as_ref()
+    }
+    /// <p>The meeting settings for the conference provider.</p>
+    pub fn meeting_setting(&self) -> std::option::Option<&crate::model::MeetingSetting> {
+        self.meeting_setting.as_ref()
+    }
+}
 impl std::fmt::Debug for ConferenceProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConferenceProvider");
@@ -5504,6 +6202,42 @@ pub struct BusinessReportSchedule {
     /// <p>The details of the last business report delivery for a specified time
     /// interval.</p>
     pub last_business_report: std::option::Option<crate::model::BusinessReport>,
+}
+impl BusinessReportSchedule {
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn schedule_arn(&self) -> std::option::Option<&str> {
+        self.schedule_arn.as_deref()
+    }
+    /// <p>The name identifier of the schedule.</p>
+    pub fn schedule_name(&self) -> std::option::Option<&str> {
+        self.schedule_name.as_deref()
+    }
+    /// <p>The S3 bucket name of the output reports.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The S3 key where the report is delivered.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>The format of the generated report (individual CSV files or zipped files of
+    /// individual files).</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The content range of the reports.</p>
+    pub fn content_range(&self) -> std::option::Option<&crate::model::BusinessReportContentRange> {
+        self.content_range.as_ref()
+    }
+    /// <p>The recurrence of the reports.</p>
+    pub fn recurrence(&self) -> std::option::Option<&crate::model::BusinessReportRecurrence> {
+        self.recurrence.as_ref()
+    }
+    /// <p>The details of the last business report delivery for a specified time
+    /// interval.</p>
+    pub fn last_business_report(&self) -> std::option::Option<&crate::model::BusinessReport> {
+        self.last_business_report.as_ref()
+    }
 }
 impl std::fmt::Debug for BusinessReportSchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5678,6 +6412,29 @@ pub struct BusinessReport {
     /// <p>The download link where a user can download the report.</p>
     pub download_url: std::option::Option<std::string::String>,
 }
+impl BusinessReport {
+    /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
+    /// FAILED).</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::BusinessReportStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The failure code.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::BusinessReportFailureCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The S3 location of the output reports.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::BusinessReportS3Location> {
+        self.s3_location.as_ref()
+    }
+    /// <p>The time of report delivery.</p>
+    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.delivery_time.as_ref()
+    }
+    /// <p>The download link where a user can download the report.</p>
+    pub fn download_url(&self) -> std::option::Option<&str> {
+        self.download_url.as_deref()
+    }
+}
 impl std::fmt::Debug for BusinessReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BusinessReport");
@@ -5793,6 +6550,16 @@ pub struct BusinessReportS3Location {
     pub path: std::option::Option<std::string::String>,
     /// <p>The S3 bucket name of the output reports.</p>
     pub bucket_name: std::option::Option<std::string::String>,
+}
+impl BusinessReportS3Location {
+    /// <p>The path of the business report.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The S3 bucket name of the output reports.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BusinessReportS3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5973,6 +6740,12 @@ pub struct BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
     pub interval: std::option::Option<crate::model::BusinessReportInterval>,
 }
+impl BusinessReportContentRange {
+    /// <p>The interval of the content range.</p>
+    pub fn interval(&self) -> std::option::Option<&crate::model::BusinessReportInterval> {
+        self.interval.as_ref()
+    }
+}
 impl std::fmt::Debug for BusinessReportContentRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BusinessReportContentRange");
@@ -6087,6 +6860,20 @@ pub struct SkillGroup {
     /// <p>The description of a skill group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl SkillGroup {
+    /// <p>The ARN of a skill group.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>The name of a skill group.</p>
+    pub fn skill_group_name(&self) -> std::option::Option<&str> {
+        self.skill_group_name.as_deref()
+    }
+    /// <p>The description of a skill group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for SkillGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SkillGroup");
@@ -6174,6 +6961,28 @@ pub struct Room {
     pub provider_calendar_id: std::option::Option<std::string::String>,
     /// <p>The profile ARN of a room.</p>
     pub profile_arn: std::option::Option<std::string::String>,
+}
+impl Room {
+    /// <p>The ARN of a room.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The name of a room.</p>
+    pub fn room_name(&self) -> std::option::Option<&str> {
+        self.room_name.as_deref()
+    }
+    /// <p>The description of a room.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The provider calendar ARN of a room.</p>
+    pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
+        self.provider_calendar_id.as_deref()
+    }
+    /// <p>The profile ARN of a room.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Room {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6306,6 +7115,71 @@ pub struct Profile {
     pub address_book_arn: std::option::Option<std::string::String>,
     /// <p>Meeting room settings of a room profile.</p>
     pub meeting_room_configuration: std::option::Option<crate::model::MeetingRoomConfiguration>,
+}
+impl Profile {
+    /// <p>The ARN of a room profile.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+    /// <p>The name of a room profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>Retrieves if the profile is default or not.</p>
+    pub fn is_default(&self) -> std::option::Option<bool> {
+        self.is_default
+    }
+    /// <p>The address of a room profile.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The time zone of a room profile.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>The distance unit of a room profile.</p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
+    /// <p>The temperature unit of a room profile.</p>
+    pub fn temperature_unit(&self) -> std::option::Option<&crate::model::TemperatureUnit> {
+        self.temperature_unit.as_ref()
+    }
+    /// <p>The wake word of a room profile.</p>
+    pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
+        self.wake_word.as_ref()
+    }
+    /// <p>The locale of a room profile. (This is currently available only to a limited preview
+    /// audience.)</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+    /// <p>The setup mode of a room profile.</p>
+    pub fn setup_mode_disabled(&self) -> std::option::Option<bool> {
+        self.setup_mode_disabled
+    }
+    /// <p>The max volume limit of a room profile.</p>
+    pub fn max_volume_limit(&self) -> std::option::Option<i32> {
+        self.max_volume_limit
+    }
+    /// <p>The PSTN setting of a room profile.</p>
+    pub fn pstn_enabled(&self) -> std::option::Option<bool> {
+        self.pstn_enabled
+    }
+    /// <p>Whether data retention of the profile is enabled.</p>
+    pub fn data_retention_opt_in(&self) -> std::option::Option<bool> {
+        self.data_retention_opt_in
+    }
+    /// <p>The ARN of the address book.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
+    /// <p>Meeting room settings of a room profile.</p>
+    pub fn meeting_room_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MeetingRoomConfiguration> {
+        self.meeting_room_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Profile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6569,6 +7443,31 @@ pub struct MeetingRoomConfiguration {
     /// in.” </p>
     pub require_check_in: std::option::Option<crate::model::RequireCheckIn>,
 }
+impl MeetingRoomConfiguration {
+    /// <p>Whether room utilization metrics are enabled or not.</p>
+    pub fn room_utilization_metrics_enabled(&self) -> std::option::Option<bool> {
+        self.room_utilization_metrics_enabled
+    }
+    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
+    /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    pub fn end_of_meeting_reminder(
+        &self,
+    ) -> std::option::Option<&crate::model::EndOfMeetingReminder> {
+        self.end_of_meeting_reminder.as_ref()
+    }
+    /// <p>Settings to automatically book the room if available for a configured duration when
+    /// joining a meeting with Alexa. </p>
+    pub fn instant_booking(&self) -> std::option::Option<&crate::model::InstantBooking> {
+        self.instant_booking.as_ref()
+    }
+    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room
+    /// reservation if it's not checked into. This makes the room available for others. Users can
+    /// check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check
+    /// in.” </p>
+    pub fn require_check_in(&self) -> std::option::Option<&crate::model::RequireCheckIn> {
+        self.require_check_in.as_ref()
+    }
+}
 impl std::fmt::Debug for MeetingRoomConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeetingRoomConfiguration");
@@ -6686,6 +7585,16 @@ pub struct RequireCheckIn {
     /// <p>Whether require check in is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl RequireCheckIn {
+    /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
+    pub fn release_after_minutes(&self) -> std::option::Option<i32> {
+        self.release_after_minutes
+    }
+    /// <p>Whether require check in is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for RequireCheckIn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequireCheckIn");
@@ -6751,6 +7660,17 @@ pub struct InstantBooking {
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl InstantBooking {
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
+    /// an available room when a meeting is started with Alexa. </p>
+    pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.duration_in_minutes
+    }
+    /// <p>Whether instant booking is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for InstantBooking {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6819,6 +7739,20 @@ pub struct EndOfMeetingReminder {
     pub reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl EndOfMeetingReminder {
+    /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    pub fn reminder_at_minutes(&self) -> std::option::Option<&[i32]> {
+        self.reminder_at_minutes.as_deref()
+    }
+    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    pub fn reminder_type(&self) -> std::option::Option<&crate::model::EndOfMeetingReminderType> {
+        self.reminder_type.as_ref()
+    }
+    /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for EndOfMeetingReminder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6929,6 +7863,54 @@ pub struct NetworkProfile {
     /// <p>The root certificates of your authentication server, which is installed on your devices
     /// and used to trust your authentication server during EAP negotiation.</p>
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl NetworkProfile {
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+        self.network_profile_name.as_deref()
+    }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The SSID of the Wi-Fi network.</p>
+    pub fn ssid(&self) -> std::option::Option<&str> {
+        self.ssid.as_deref()
+    }
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
+    /// WEP, or OPEN.</p>
+    pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
+        self.security_type.as_ref()
+    }
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
+    /// supported. </p>
+    pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
+        self.eap_method.as_ref()
+    }
+    /// <p>The current password of the Wi-Fi network.</p>
+    pub fn current_password(&self) -> std::option::Option<&str> {
+        self.current_password.as_deref()
+    }
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
+    /// transmitted to the device and is used when the password of the network changes to
+    /// NextPassword. </p>
+    pub fn next_password(&self) -> std::option::Option<&str> {
+        self.next_password.as_deref()
+    }
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
+    /// (ACM). This is used to issue certificates to the devices. </p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+    /// <p>The root certificates of your authentication server, which is installed on your devices
+    /// and used to trust your authentication server during EAP negotiation.</p>
+    pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
+        self.trust_anchors.as_deref()
+    }
 }
 impl std::fmt::Debug for NetworkProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7141,6 +8123,20 @@ pub struct GatewayGroup {
     /// <p>The description of the gateway group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl GatewayGroup {
+    /// <p>The ARN of the gateway group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the gateway group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the gateway group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for GatewayGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayGroup");
@@ -7223,6 +8219,29 @@ pub struct Gateway {
     /// <p>The software version of the gateway. The gateway automatically updates its software
     /// version during normal operation.</p>
     pub software_version: std::option::Option<std::string::String>,
+}
+impl Gateway {
+    /// <p>The ARN of the gateway.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the gateway.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the gateway.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the gateway group that the gateway is associated to.</p>
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+        self.gateway_group_arn.as_deref()
+    }
+    /// <p>The software version of the gateway. The gateway automatically updates its software
+    /// version during normal operation.</p>
+    pub fn software_version(&self) -> std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
 }
 impl std::fmt::Debug for Gateway {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7350,6 +8369,51 @@ pub struct Device {
     pub device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
     /// <p>Detailed information about a device's network profile.</p>
     pub network_profile_info: std::option::Option<crate::model::DeviceNetworkProfileInfo>,
+}
+impl Device {
+    /// <p>The ARN of a device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The serial number of a device.</p>
+    pub fn device_serial_number(&self) -> std::option::Option<&str> {
+        self.device_serial_number.as_deref()
+    }
+    /// <p>The type of a device.</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+    /// <p>The name of a device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The software version of a device.</p>
+    pub fn software_version(&self) -> std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
+    /// <p>The MAC address of a device.</p>
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+    /// <p>The room ARN of a device.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value
+    /// for details.</p>
+    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.device_status.as_ref()
+    }
+    /// <p>Detailed information about a device's status.</p>
+    pub fn device_status_info(&self) -> std::option::Option<&crate::model::DeviceStatusInfo> {
+        self.device_status_info.as_ref()
+    }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn network_profile_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceNetworkProfileInfo> {
+        self.network_profile_info.as_ref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7541,6 +8605,20 @@ pub struct DeviceNetworkProfileInfo {
     /// <p>The time (in epoch) when the certificate expires.</p>
     pub certificate_expiration_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeviceNetworkProfileInfo {
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
+    /// <p>The ARN of the certificate associated with a device.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The time (in epoch) when the certificate expires.</p>
+    pub fn certificate_expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.certificate_expiration_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceNetworkProfileInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceNetworkProfileInfo");
@@ -7640,6 +8718,38 @@ pub struct Contact {
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
+}
+impl Contact {
+    /// <p>The ARN of the contact.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The name of the contact to display on the console.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The first name of the contact, used to call the contact on the device.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the contact, used to call the contact on the device.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
+    /// either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which
+    /// lets you specify the phone number type and multiple numbers.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The list of phone numbers for the contact.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+        self.phone_numbers.as_deref()
+    }
+    /// <p>The list of SIP addresses for the contact.</p>
+    pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
+        self.sip_addresses.as_deref()
+    }
 }
 impl std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7793,6 +8903,20 @@ pub struct AddressBook {
     /// <p>The description of the address book.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl AddressBook {
+    /// <p>The ARN of the address book.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
+    /// <p>The name of the address book.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the address book.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for AddressBook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddressBook");
@@ -7929,6 +9053,28 @@ pub struct CreateMeetingRoomConfiguration {
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
     pub require_check_in: std::option::Option<crate::model::CreateRequireCheckIn>,
 }
+impl CreateMeetingRoomConfiguration {
+    /// <p>Whether room utilization metrics are enabled or not.</p>
+    pub fn room_utilization_metrics_enabled(&self) -> std::option::Option<bool> {
+        self.room_utilization_metrics_enabled
+    }
+    /// <p>Creates settings for the end of meeting reminder feature that are applied to a room
+    /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
+    /// ending.</p>
+    pub fn end_of_meeting_reminder(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateEndOfMeetingReminder> {
+        self.end_of_meeting_reminder.as_ref()
+    }
+    /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
+    pub fn instant_booking(&self) -> std::option::Option<&crate::model::CreateInstantBooking> {
+        self.instant_booking.as_ref()
+    }
+    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
+    pub fn require_check_in(&self) -> std::option::Option<&crate::model::CreateRequireCheckIn> {
+        self.require_check_in.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMeetingRoomConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingRoomConfiguration");
@@ -8041,6 +9187,16 @@ pub struct CreateRequireCheckIn {
     /// <p>Whether require check in is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl CreateRequireCheckIn {
+    /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
+    pub fn release_after_minutes(&self) -> std::option::Option<i32> {
+        self.release_after_minutes
+    }
+    /// <p>Whether require check in is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for CreateRequireCheckIn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRequireCheckIn");
@@ -8106,6 +9262,17 @@ pub struct CreateInstantBooking {
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl CreateInstantBooking {
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
+    /// an available room when a meeting is started with Alexa.</p>
+    pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.duration_in_minutes
+    }
+    /// <p>Whether instant booking is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for CreateInstantBooking {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8175,6 +9342,20 @@ pub struct CreateEndOfMeetingReminder {
     pub reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl CreateEndOfMeetingReminder {
+    /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    pub fn reminder_at_minutes(&self) -> std::option::Option<&[i32]> {
+        self.reminder_at_minutes.as_deref()
+    }
+    /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    pub fn reminder_type(&self) -> std::option::Option<&crate::model::EndOfMeetingReminderType> {
+        self.reminder_type.as_ref()
+    }
+    /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for CreateEndOfMeetingReminder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

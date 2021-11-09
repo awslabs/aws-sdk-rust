@@ -9029,6 +9029,12 @@ pub struct UnsupportedOperationException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl UnsupportedOperationException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UnsupportedOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsupportedOperationException");
@@ -9107,6 +9113,12 @@ pub struct ServiceException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ServiceException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9187,6 +9199,12 @@ pub struct InvalidParameterException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl InvalidParameterException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidParameterException");
@@ -9266,6 +9284,12 @@ pub struct EntityDoesNotExistException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl EntityDoesNotExistException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EntityDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityDoesNotExistException");
@@ -9344,6 +9368,12 @@ pub struct ClientException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ClientException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9425,6 +9455,12 @@ pub struct DomainControllerLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DomainControllerLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DomainControllerLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainControllerLimitExceededException");
@@ -9503,6 +9539,12 @@ pub struct DirectoryUnavailableException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DirectoryUnavailableException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectoryUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9583,6 +9625,12 @@ pub struct InvalidTargetException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl InvalidTargetException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidTargetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidTargetException");
@@ -9661,6 +9709,12 @@ pub struct DirectoryNotSharedException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DirectoryNotSharedException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectoryNotSharedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9743,6 +9797,12 @@ pub struct SnapshotLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl SnapshotLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SnapshotLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnapshotLimitExceededException");
@@ -9823,6 +9883,12 @@ pub struct ShareLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl ShareLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ShareLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareLimitExceededException");
@@ -9901,6 +9967,12 @@ pub struct OrganizationsException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl OrganizationsException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for OrganizationsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9981,6 +10053,12 @@ pub struct DirectoryAlreadySharedException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DirectoryAlreadySharedException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DirectoryAlreadySharedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DirectoryAlreadySharedException");
@@ -10060,6 +10138,12 @@ pub struct AccessDeniedException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl AccessDeniedException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessDeniedException");
@@ -10138,6 +10222,12 @@ pub struct UserDoesNotExistException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl UserDoesNotExistException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UserDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10219,6 +10309,12 @@ pub struct InvalidPasswordException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl InvalidPasswordException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidPasswordException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidPasswordException");
@@ -10297,6 +10393,12 @@ pub struct DirectoryDoesNotExistException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DirectoryDoesNotExistException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectoryDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10377,6 +10479,12 @@ pub struct InvalidCertificateException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl InvalidCertificateException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidCertificateException");
@@ -10455,6 +10563,12 @@ pub struct CertificateLimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CertificateLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CertificateLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10535,6 +10649,12 @@ pub struct CertificateAlreadyExistsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl CertificateAlreadyExistsException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CertificateAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CertificateAlreadyExistsException");
@@ -10613,6 +10733,12 @@ pub struct InvalidNextTokenException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl InvalidNextTokenException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10693,6 +10819,12 @@ pub struct InsufficientPermissionsException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl InsufficientPermissionsException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InsufficientPermissionsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InsufficientPermissionsException");
@@ -10772,6 +10904,12 @@ pub struct AuthenticationFailedException {
     /// <p>The identifier of the request that caused the exception.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl AuthenticationFailedException {
+    /// <p>The identifier of the request that caused the exception.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthenticationFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationFailedException");
@@ -10850,6 +10988,12 @@ pub struct EntityAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl EntityAlreadyExistsException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10931,6 +11075,12 @@ pub struct NoAvailableCertificateException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl NoAvailableCertificateException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NoAvailableCertificateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoAvailableCertificateException");
@@ -11010,6 +11160,12 @@ pub struct InvalidLdapsStatusException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl InvalidLdapsStatusException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidLdapsStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11093,6 +11249,12 @@ pub struct InvalidClientAuthStatusException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl InvalidClientAuthStatusException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidClientAuthStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidClientAuthStatusException");
@@ -11171,6 +11333,12 @@ pub struct CertificateDoesNotExistException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CertificateDoesNotExistException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CertificateDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11251,6 +11419,12 @@ pub struct CertificateInUseException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CertificateInUseException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CertificateInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11333,6 +11507,12 @@ pub struct DirectoryLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DirectoryLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DirectoryLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DirectoryLimitExceededException");
@@ -11411,6 +11591,12 @@ pub struct TagLimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl TagLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for TagLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11492,6 +11678,12 @@ pub struct RegionLimitExceededException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl RegionLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegionLimitExceededException");
@@ -11572,6 +11764,12 @@ pub struct DirectoryAlreadyInRegionException {
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DirectoryAlreadyInRegionException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DirectoryAlreadyInRegionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DirectoryAlreadyInRegionException");
@@ -11651,6 +11849,12 @@ pub struct IpRouteLimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl IpRouteLimitExceededException {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for IpRouteLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -91,10 +91,7 @@ impl AllocateStaticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_allocate_static_ip(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_allocate_static_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -289,7 +286,7 @@ impl AttachCertificateToDistributionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_certificate_to_distribution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_attach_certificate_to_distribution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -466,10 +463,7 @@ impl AttachDiskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_attach_disk(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_attach_disk(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -656,7 +650,7 @@ impl AttachInstancesToLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_instances_to_load_balancer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_attach_instances_to_load_balancer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -828,7 +822,7 @@ impl AttachLoadBalancerTlsCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_tls_certificate(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_tls_certificate(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -997,10 +991,7 @@ impl AttachStaticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_static_ip(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_attach_static_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1168,10 +1159,7 @@ impl CloseInstancePublicPortsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_close_instance_public_ports(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1483,10 +1471,7 @@ impl CopySnapshotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_copy_snapshot(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_copy_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1716,10 +1701,7 @@ impl CreateBucketInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_bucket(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_bucket(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1871,10 +1853,7 @@ impl CreateBucketAccessKeyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_bucket_access_key(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2092,10 +2071,7 @@ impl CreateCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2261,10 +2237,7 @@ impl CreateCloudFormationStackInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cloud_formation_stack(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2496,10 +2469,7 @@ impl CreateContactMethodInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_contact_method(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_contact_method(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2878,10 +2848,7 @@ impl CreateContainerServiceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_container_service(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3080,7 +3047,7 @@ impl CreateContainerServiceDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_container_service_deployment(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_container_service_deployment(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3219,7 +3186,7 @@ impl CreateContainerServiceRegistryLoginInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_container_service_registry_login(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_container_service_registry_login(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3440,10 +3407,7 @@ impl CreateDiskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_disk(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_disk(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3831,10 +3795,7 @@ impl CreateDiskFromSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_disk_from_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4061,10 +4022,7 @@ impl CreateDiskSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_disk_snapshot(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_disk_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4356,10 +4314,7 @@ impl CreateDistributionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_distribution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_distribution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4543,10 +4498,7 @@ impl CreateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4713,10 +4665,7 @@ impl CreateDomainEntryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_domain_entry(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_domain_entry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5081,10 +5030,7 @@ impl CreateInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5584,7 +5530,7 @@ impl CreateInstancesFromSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_instances_from_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_instances_from_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5778,10 +5724,7 @@ impl CreateInstanceSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_instance_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5956,10 +5899,8 @@ impl CreateKeyPairInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_key_pair(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_key_pair(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6264,10 +6205,7 @@ impl CreateLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6513,7 +6451,7 @@ impl CreateLoadBalancerTlsCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_tls_certificate(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_tls_certificate(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7154,10 +7092,7 @@ impl CreateRelationalDatabaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_relational_database(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7531,7 +7466,7 @@ impl CreateRelationalDatabaseFromSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_relational_database_from_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_relational_database_from_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7745,7 +7680,7 @@ impl CreateRelationalDatabaseSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_relational_database_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_relational_database_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7895,10 +7830,7 @@ impl DeleteAlarmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_alarm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_alarm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8069,10 +8001,7 @@ impl DeleteAutoSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_auto_snapshot(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_auto_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8281,10 +8210,7 @@ impl DeleteBucketInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_bucket(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_bucket(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8457,10 +8383,7 @@ impl DeleteBucketAccessKeyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_bucket_access_key(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8617,10 +8540,7 @@ impl DeleteCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8785,10 +8705,7 @@ impl DeleteContactMethodInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_contact_method(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_contact_method(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8972,10 +8889,9 @@ impl DeleteContainerImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_container_image(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_container_image(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9127,10 +9043,7 @@ impl DeleteContainerServiceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_container_service(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9291,10 +9204,7 @@ impl DeleteDiskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_disk(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_disk(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9449,10 +9359,7 @@ impl DeleteDiskSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_disk_snapshot(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_disk_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9609,10 +9516,7 @@ impl DeleteDistributionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_distribution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_distribution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9761,10 +9665,7 @@ impl DeleteDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9929,10 +9830,7 @@ impl DeleteDomainEntryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_domain_entry(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_domain_entry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10096,10 +9994,8 @@ impl DeleteInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10254,10 +10150,7 @@ impl DeleteInstanceSnapshotInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_instance_snapshot(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10409,10 +10302,8 @@ impl DeleteKeyPairInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_key_pair(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_key_pair(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10565,10 +10456,9 @@ impl DeleteKnownHostKeysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_known_host_keys(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_known_host_keys(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10721,10 +10611,7 @@ impl DeleteLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10911,7 +10798,7 @@ impl DeleteLoadBalancerTlsCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_tls_certificate(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_tls_certificate(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11140,10 +11027,7 @@ impl DeleteRelationalDatabaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_relational_database(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11300,7 +11184,7 @@ impl DeleteRelationalDatabaseSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_relational_database_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_relational_database_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11459,7 +11343,7 @@ impl DetachCertificateFromDistributionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_certificate_from_distribution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_detach_certificate_from_distribution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11611,10 +11495,7 @@ impl DetachDiskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detach_disk(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detach_disk(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11791,7 +11672,7 @@ impl DetachInstancesFromLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_instances_from_load_balancer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_detach_instances_from_load_balancer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11945,10 +11826,7 @@ impl DetachStaticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_static_ip(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detach_static_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12115,10 +11993,7 @@ impl DisableAddOnInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_disable_add_on(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_disable_add_on(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12256,10 +12131,7 @@ impl DownloadDefaultKeyPairInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_download_default_key_pair(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12418,10 +12290,7 @@ impl EnableAddOnInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_add_on(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_add_on(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12573,10 +12442,8 @@ impl ExportSnapshotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_export_snapshot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_export_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12732,10 +12599,7 @@ impl GetActiveNamesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_active_names(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_active_names(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12921,10 +12785,7 @@ impl GetAlarmsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_alarms(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_alarms(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13077,10 +12938,7 @@ impl GetAutoSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_auto_snapshots(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_auto_snapshots(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13247,10 +13105,7 @@ impl GetBlueprintsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_blueprints(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_blueprints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13400,10 +13255,9 @@ impl GetBucketAccessKeysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_bucket_access_keys(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_bucket_access_keys(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13555,10 +13409,7 @@ impl GetBucketBundlesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_bucket_bundles(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_bucket_bundles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13940,10 +13791,9 @@ impl GetBucketMetricDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_bucket_metric_data(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_bucket_metric_data(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14132,10 +13982,7 @@ impl GetBucketsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_buckets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_buckets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14304,10 +14151,7 @@ impl GetBundlesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_bundles(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_bundles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14515,10 +14359,7 @@ impl GetCertificatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_certificates(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_certificates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14675,7 +14516,7 @@ impl GetCloudFormationStackRecordsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_cloud_formation_stack_records(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_cloud_formation_stack_records(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14841,10 +14682,7 @@ impl GetContactMethodsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_contact_methods(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_contact_methods(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14983,10 +14821,7 @@ impl GetContainerApiMetadataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_container_api_metadata(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15128,10 +14963,7 @@ impl GetContainerImagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_container_images(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_container_images(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15508,10 +15340,7 @@ impl GetContainerLogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_container_log(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_container_log(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15662,7 +15491,7 @@ impl GetContainerServiceDeploymentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_container_service_deployments(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_container_service_deployments(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16051,7 +15880,7 @@ impl GetContainerServiceMetricDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_container_service_metric_data(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_container_service_metric_data(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16191,10 +16020,7 @@ impl GetContainerServicePowersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_container_service_powers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16352,10 +16178,9 @@ impl GetContainerServicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_container_services(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_container_services(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16502,10 +16327,7 @@ impl GetDiskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_disk(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_disk(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16656,10 +16478,7 @@ impl GetDisksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_disks(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_disks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16810,10 +16629,7 @@ impl GetDiskSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_disk_snapshot(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_disk_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16969,10 +16785,7 @@ impl GetDiskSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_disk_snapshots(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_disk_snapshots(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17110,10 +16923,7 @@ impl GetDistributionBundlesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_distribution_bundles(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17269,7 +17079,7 @@ impl GetDistributionLatestCacheResetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_distribution_latest_cache_reset(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_distribution_latest_cache_reset(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17786,10 +17596,7 @@ impl GetDistributionMetricDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_distribution_metric_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17966,10 +17773,7 @@ impl GetDistributionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_distributions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_distributions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18116,10 +17920,7 @@ impl GetDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18272,10 +18073,7 @@ impl GetDomainsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_domains(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18434,10 +18232,7 @@ impl GetExportSnapshotRecordsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_export_snapshot_records(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18589,10 +18384,7 @@ impl GetInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18763,10 +18555,7 @@ impl GetInstanceAccessDetailsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_instance_access_details(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19325,10 +19114,7 @@ impl GetInstanceMetricDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_instance_metric_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19483,10 +19269,7 @@ impl GetInstancePortStatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_instance_port_states(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19641,10 +19424,7 @@ impl GetInstancesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_instances(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19797,10 +19577,7 @@ impl GetInstanceSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_instance_snapshot(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_instance_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19956,10 +19733,9 @@ impl GetInstanceSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_instance_snapshots(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_instance_snapshots(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20112,10 +19888,7 @@ impl GetInstanceStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_instance_state(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_instance_state(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20267,10 +20040,7 @@ impl GetKeyPairInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_key_pair(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_key_pair(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20425,10 +20195,7 @@ impl GetKeyPairsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_key_pairs(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_key_pairs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20581,10 +20348,7 @@ impl GetLoadBalancerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_load_balancer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_load_balancer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21228,7 +20992,7 @@ impl GetLoadBalancerMetricDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_metric_data(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_metric_data(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21385,10 +21149,7 @@ impl GetLoadBalancersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_load_balancers(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_load_balancers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21542,7 +21303,7 @@ impl GetLoadBalancerTlsCertificatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_tls_certificates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_tls_certificates(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21692,10 +21453,7 @@ impl GetOperationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_operation(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_operation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21850,10 +21608,7 @@ impl GetOperationsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_operations(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_operations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22027,10 +21782,7 @@ impl GetOperationsForResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_operations_for_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22201,10 +21953,7 @@ impl GetRegionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_regions(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_regions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22359,10 +22108,7 @@ impl GetRelationalDatabaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22519,7 +22265,7 @@ impl GetRelationalDatabaseBlueprintsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_blueprints(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_blueprints(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -22677,7 +22423,7 @@ impl GetRelationalDatabaseBundlesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_bundles(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_bundles(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -22870,7 +22616,7 @@ impl GetRelationalDatabaseEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_events(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_events(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23162,7 +22908,7 @@ impl GetRelationalDatabaseLogEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_log_events(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_log_events(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23317,7 +23063,7 @@ impl GetRelationalDatabaseLogStreamsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_log_streams(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_log_streams(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23506,7 +23252,7 @@ impl GetRelationalDatabaseMasterUserPasswordInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_master_user_password(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_master_user_password(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24019,7 +23765,7 @@ impl GetRelationalDatabaseMetricDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_metric_data(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_metric_data(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24192,7 +23938,7 @@ impl GetRelationalDatabaseParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24351,10 +24097,7 @@ impl GetRelationalDatabasesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_relational_databases(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24511,7 +24254,7 @@ impl GetRelationalDatabaseSnapshotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_snapshot(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_snapshot(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24669,7 +24412,7 @@ impl GetRelationalDatabaseSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_snapshots(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_relational_database_snapshots(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24822,10 +24565,7 @@ impl GetStaticIpInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_static_ip(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_static_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24980,10 +24720,7 @@ impl GetStaticIpsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_static_ips(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_static_ips(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25150,10 +24887,8 @@ impl ImportKeyPairInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_import_key_pair(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_import_key_pair(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25288,10 +25023,7 @@ impl IsVpcPeeredInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_is_vpc_peered(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_is_vpc_peered(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25451,10 +25183,7 @@ impl OpenInstancePublicPortsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_open_instance_public_ports(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25587,10 +25316,7 @@ impl PeerVpcInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_peer_vpc(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_peer_vpc(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26110,10 +25836,7 @@ impl PutAlarmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_alarm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_alarm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26287,10 +26010,7 @@ impl PutInstancePublicPortsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_instance_public_ports(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26442,10 +26162,8 @@ impl RebootInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_reboot_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26601,10 +26319,7 @@ impl RebootRelationalDatabaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reboot_relational_database(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26828,10 +26543,7 @@ impl RegisterContainerImageInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_container_image(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26984,10 +26696,7 @@ impl ReleaseStaticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_release_static_ip(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_release_static_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27146,10 +26855,7 @@ impl ResetDistributionCacheInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reset_distribution_cache(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27305,7 +27011,7 @@ impl SendContactMethodVerificationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_contact_method_verification(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_send_contact_method_verification(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -27509,10 +27215,7 @@ impl SetIpAddressTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_ip_address_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_ip_address_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27723,7 +27426,7 @@ impl SetResourceAccessForBucketInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_resource_access_for_bucket(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_resource_access_for_bucket(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -27876,10 +27579,7 @@ impl StartInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28035,10 +27735,7 @@ impl StartRelationalDatabaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_relational_database(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28214,10 +27911,7 @@ impl StopInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_instance(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28390,10 +28084,7 @@ impl StopRelationalDatabaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_relational_database(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28578,10 +28269,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28774,10 +28462,7 @@ impl TestAlarmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_test_alarm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_test_alarm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28908,10 +28593,7 @@ impl UnpeerVpcInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_unpeer_vpc(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_unpeer_vpc(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29086,10 +28768,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29332,10 +29011,7 @@ impl UpdateBucketInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_bucket(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_bucket(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29503,10 +29179,7 @@ impl UpdateBucketBundleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_bucket_bundle(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_bucket_bundle(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29790,10 +29463,7 @@ impl UpdateContainerServiceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_container_service(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30043,10 +29713,7 @@ impl UpdateDistributionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_distribution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_distribution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30222,10 +29889,7 @@ impl UpdateDistributionBundleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_distribution_bundle(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30390,10 +30054,7 @@ impl UpdateDomainEntryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_entry(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_entry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30579,7 +30240,7 @@ impl UpdateLoadBalancerAttributeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_load_balancer_attribute(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_load_balancer_attribute(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -30985,10 +30646,7 @@ impl UpdateRelationalDatabaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_relational_database(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31167,7 +30825,7 @@ impl UpdateRelationalDatabaseParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_relational_database_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_relational_database_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -31238,6 +30896,16 @@ pub struct UpdateRelationalDatabaseParametersInput {
     pub relational_database_name: std::option::Option<std::string::String>,
     /// <p>The database parameters to update.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>,
+}
+impl UpdateRelationalDatabaseParametersInput {
+    /// <p>The name of your database for which to update parameters.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The database parameters to update.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::RelationalDatabaseParameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRelationalDatabaseParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31336,6 +31004,111 @@ pub struct UpdateRelationalDatabaseInput {
     /// <p>Indicates the certificate that needs to be associated with the database.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
 }
+impl UpdateRelationalDatabaseInput {
+    /// <p>The name of your Lightsail database resource to update.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The password for the master user. The password can include any printable ASCII character
+    /// except "/", """, or "@".</p>
+    /// <p>My<b>SQL</b>
+    /// </p>
+    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>
+    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>When <code>true</code>, the master user password is changed to a new strong password
+    /// generated by Lightsail.</p>
+    /// <p>Use the <code>get relational database master user password</code> operation to get the new
+    /// password.</p>
+    pub fn rotate_master_user_password(&self) -> std::option::Option<bool> {
+        self.rotate_master_user_password
+    }
+    /// <p>The daily time range during which automated backups are created for your database if
+    /// automated backups are enabled.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
+    /// <p>Example: <code>16:00-16:30</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p>
+    /// </li>
+    /// </ul>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>The weekly time range during which system maintenance can occur on your database.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// AWS Region, occurring on a random day of the week.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Example: <code>Tue:17:00-Tue:17:30</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
+    /// <p>Updates are applied during the next maintenance window because this can result in an
+    /// outage.</p>
+    pub fn enable_backup_retention(&self) -> std::option::Option<bool> {
+        self.enable_backup_retention
+    }
+    /// <p>When <code>true</code>, disables automated backup retention for your database.</p>
+    /// <p>Disabling backup retention deletes all automated database backups. Before disabling this,
+    /// you may want to create a snapshot of your database using the <code>create relational database
+    /// snapshot</code> operation.</p>
+    /// <p>Updates are applied during the next maintenance window because this can result in an
+    /// outage.</p>
+    pub fn disable_backup_retention(&self) -> std::option::Option<bool> {
+        self.disable_backup_retention
+    }
+    /// <p>Specifies the accessibility options for your database. A value of <code>true</code>
+    /// specifies a database that is available to resources outside of your Lightsail account. A
+    /// value of <code>false</code> specifies a database that is available only to your Lightsail
+    /// resources in the same region as your database.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>When <code>true</code>, applies changes immediately. When <code>false</code>, applies
+    /// changes during the preferred maintenance window. Some changes may cause an outage.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn apply_immediately(&self) -> std::option::Option<bool> {
+        self.apply_immediately
+    }
+    /// <p>Indicates the certificate that needs to be associated with the database.</p>
+    pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRelationalDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRelationalDatabaseInput");
@@ -31371,6 +31144,21 @@ pub struct UpdateLoadBalancerAttributeInput {
     /// <p>The value that you want to specify for the attribute name.</p>
     pub attribute_value: std::option::Option<std::string::String>,
 }
+impl UpdateLoadBalancerAttributeInput {
+    /// <p>The name of the load balancer that you want to modify (e.g.,
+    /// <code>my-load-balancer</code>.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The name of the attribute you want to update. Valid values are below.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&crate::model::LoadBalancerAttributeName> {
+        self.attribute_name.as_ref()
+    }
+    /// <p>The value that you want to specify for the attribute name.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateLoadBalancerAttributeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLoadBalancerAttributeInput");
@@ -31389,6 +31177,16 @@ pub struct UpdateDomainEntryInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs containing information about the domain entry.</p>
     pub domain_entry: std::option::Option<crate::model::DomainEntry>,
+}
+impl UpdateDomainEntryInput {
+    /// <p>The name of the domain recordset to update.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>An array of key-value pairs containing information about the domain entry.</p>
+    pub fn domain_entry(&self) -> std::option::Option<&crate::model::DomainEntry> {
+        self.domain_entry.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainEntryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31411,6 +31209,20 @@ pub struct UpdateDistributionBundleInput {
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
     /// IDs that you can specify.</p>
     pub bundle_id: std::option::Option<std::string::String>,
+}
+impl UpdateDistributionBundleInput {
+    /// <p>The name of the distribution for which to update the bundle.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+    /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
+    /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
+    /// IDs that you can specify.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDistributionBundleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31446,6 +31258,41 @@ pub struct UpdateDistributionInput {
     pub cache_behaviors: std::option::Option<std::vec::Vec<crate::model::CacheBehaviorPerPath>>,
     /// <p>Indicates whether to enable the distribution.</p>
     pub is_enabled: std::option::Option<bool>,
+}
+impl UpdateDistributionInput {
+    /// <p>The name of the distribution to update.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
+    /// instance or load balancer.</p>
+    /// <p>The distribution pulls, caches, and serves content from the origin.</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::InputOrigin> {
+        self.origin.as_ref()
+    }
+    /// <p>An object that describes the default cache behavior for the distribution.</p>
+    pub fn default_cache_behavior(&self) -> std::option::Option<&crate::model::CacheBehavior> {
+        self.default_cache_behavior.as_ref()
+    }
+    /// <p>An object that describes the cache behavior settings for the distribution.</p>
+    /// <note>
+    /// <p>The <code>cacheBehaviorSettings</code> specified in your
+    /// <code>UpdateDistributionRequest</code> will replace your distribution's existing
+    /// settings.</p>
+    /// </note>
+    pub fn cache_behavior_settings(&self) -> std::option::Option<&crate::model::CacheSettings> {
+        self.cache_behavior_settings.as_ref()
+    }
+    /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
+    pub fn cache_behaviors(&self) -> std::option::Option<&[crate::model::CacheBehaviorPerPath]> {
+        self.cache_behaviors.as_deref()
+    }
+    /// <p>Indicates whether to enable the distribution.</p>
+    pub fn is_enabled(&self) -> std::option::Option<bool> {
+        self.is_enabled
+    }
 }
 impl std::fmt::Debug for UpdateDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31509,6 +31356,64 @@ pub struct UpdateContainerServiceInput {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
+impl UpdateContainerServiceInput {
+    /// <p>The name of the container service to update.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The power for the container service.</p>
+    ///
+    /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the
+    /// container service. The <code>power</code> and <code>scale</code> of a container service makes
+    /// up its configured capacity. To determine the monthly price of your container service, multiply
+    /// the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of
+    /// the service.</p>
+    ///
+    /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each
+    /// power option.</p>
+    pub fn power(&self) -> std::option::Option<&crate::model::ContainerServicePowerName> {
+        self.power.as_ref()
+    }
+    /// <p>The scale for the container service.</p>
+    ///
+    /// <p>The scale specifies the allocated compute nodes of the container service. The
+    /// <code>power</code> and <code>scale</code> of a container service makes up its configured
+    /// capacity. To determine the monthly price of your container service, multiply the base price of
+    /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
+    /// service.</p>
+    pub fn scale(&self) -> std::option::Option<i32> {
+        self.scale
+    }
+    /// <p>A Boolean value to indicate whether the container service is disabled.</p>
+    pub fn is_disabled(&self) -> std::option::Option<bool> {
+        self.is_disabled
+    }
+    /// <p>The public domain names to use with the container service, such as
+    /// <code>example.com</code> and <code>www.example.com</code>.</p>
+    ///
+    /// <p>You can specify up to four public domain names for a container service. The domain names
+    /// that you specify are used when you create a deployment with a container configured as the
+    /// public endpoint of your container service.</p>
+    ///
+    /// <p>If you don't specify public domain names, then you can use the default domain of the
+    /// container service.</p>
+    ///
+    /// <important>
+    /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
+    /// names with your container service. Use the <code>CreateCertificate</code> action to create a
+    /// certificate for the public domain names you want to use with your container service.</p>
+    /// </important>
+    ///
+    /// <p>You can specify public domain names using a string to array map as shown in the example
+    /// later on this page.</p>
+    pub fn public_domain_names(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.public_domain_names.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateContainerServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContainerServiceInput");
@@ -31532,6 +31437,19 @@ pub struct UpdateBucketBundleInput {
     /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
     /// specify.</p>
     pub bundle_id: std::option::Option<std::string::String>,
+}
+impl UpdateBucketBundleInput {
+    /// <p>The name of the bucket for which to update the bundle.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The ID of the new bundle to apply to the bucket.</p>
+    ///
+    /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
+    /// specify.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBucketBundleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31572,6 +31490,43 @@ pub struct UpdateBucketInput {
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub access_log_config: std::option::Option<crate::model::BucketAccessLogConfig>,
 }
+impl UpdateBucketInput {
+    /// <p>The name of the bucket to update.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
+    pub fn access_rules(&self) -> std::option::Option<&crate::model::AccessRules> {
+        self.access_rules.as_ref()
+    }
+    /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
+    ///
+    /// <p>The following options can be specified:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Suspended</code> - Suspends versioning of objects in the specified bucket.
+    /// Existing object versions are retained.</p>
+    /// </li>
+    /// </ul>
+    pub fn versioning(&self) -> std::option::Option<&str> {
+        self.versioning.as_deref()
+    }
+    /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
+    ///
+    /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+    pub fn readonly_access_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.readonly_access_accounts.as_deref()
+    }
+    /// <p>An object that describes the access log configuration for the bucket.</p>
+    pub fn access_log_config(&self) -> std::option::Option<&crate::model::BucketAccessLogConfig> {
+        self.access_log_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBucketInput");
@@ -31594,6 +31549,20 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys to delete from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The name of the resource from which you are removing a tag.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys to delete from the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31642,6 +31611,33 @@ pub struct TestAlarmInput {
     /// </ul>
     pub state: std::option::Option<crate::model::AlarmState>,
 }
+impl TestAlarmInput {
+    /// <p>The name of the alarm to test.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
+    /// <p>The alarm state to test.</p>
+    /// <p>An alarm has the following possible states that can be tested:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALARM</code> - The metric is outside of the defined threshold.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
+    /// available, or not enough data is available for the metric to determine the alarm
+    /// state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OK</code> - The metric is within the defined threshold.</p>
+    /// </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::AlarmState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for TestAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestAlarmInput");
@@ -31662,6 +31658,20 @@ pub struct TagResourceInput {
     /// <p>The tag key and optional value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The name of the resource to which you are adding tags.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key and optional value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -31680,6 +31690,16 @@ pub struct StopRelationalDatabaseInput {
     pub relational_database_name: std::option::Option<std::string::String>,
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
     pub relational_database_snapshot_name: std::option::Option<std::string::String>,
+}
+impl StopRelationalDatabaseInput {
+    /// <p>The name of your database to stop.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The name of your new database snapshot to be created before stopping your database.</p>
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+        self.relational_database_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopRelationalDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31708,6 +31728,22 @@ pub struct StopInstanceInput {
     /// </important>
     pub force: std::option::Option<bool>,
 }
+impl StopInstanceInput {
+    /// <p>The name of the instance (a virtual private server) to stop.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
+    /// <code>stopping</code> state to stop.</p>
+    /// <important>
+    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the
+    /// <code>stopping</code> state. In any other state, your instance should stop normally
+    /// without adding this parameter to your API request.</p>
+    /// </important>
+    pub fn force(&self) -> std::option::Option<bool> {
+        self.force
+    }
+}
 impl std::fmt::Debug for StopInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopInstanceInput");
@@ -31724,6 +31760,12 @@ pub struct StartRelationalDatabaseInput {
     /// <p>The name of your database to start.</p>
     pub relational_database_name: std::option::Option<std::string::String>,
 }
+impl StartRelationalDatabaseInput {
+    /// <p>The name of your database to start.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartRelationalDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartRelationalDatabaseInput");
@@ -31738,6 +31780,12 @@ impl std::fmt::Debug for StartRelationalDatabaseInput {
 pub struct StartInstanceInput {
     /// <p>The name of the instance (a virtual private server) to start.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl StartInstanceInput {
+    /// <p>The name of the instance (a virtual private server) to start.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31773,6 +31821,35 @@ pub struct SetResourceAccessForBucketInput {
     /// </ul>
     pub access: std::option::Option<crate::model::ResourceBucketAccess>,
 }
+impl SetResourceAccessForBucketInput {
+    /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be
+    /// in a running or stopped state.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The access setting.</p>
+    ///
+    /// <p>The following access settings are available:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>allow</code> - Allows access to the bucket and its objects.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deny</code> - Denies access to the bucket and its objects. Use this setting to
+    /// remove access for a resource previously set to <code>allow</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn access(&self) -> std::option::Option<&crate::model::ResourceBucketAccess> {
+        self.access.as_ref()
+    }
+}
 impl std::fmt::Debug for SetResourceAccessForBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetResourceAccessForBucketInput");
@@ -31804,6 +31881,30 @@ pub struct SetIpAddressTypeInput {
     /// IPv4 and IPv6.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
+impl SetIpAddressTypeInput {
+    /// <p>The resource type.</p>
+    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and
+    /// <code>LoadBalancer</code>.</p>
+    /// <note>
+    /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>)
+    /// AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view,
+    /// or edit distributions.</p>
+    /// </note>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The name of the resource for which to set the IP address type.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The IP address type to set for the specified resource.</p>
+    ///
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+    /// IPv4 and IPv6.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+}
 impl std::fmt::Debug for SetIpAddressTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIpAddressTypeInput");
@@ -31822,6 +31923,15 @@ pub struct SendContactMethodVerificationInput {
     /// messaging).</p>
     pub protocol: std::option::Option<crate::model::ContactMethodVerificationProtocol>,
 }
+impl SendContactMethodVerificationInput {
+    /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
+    /// messaging).</p>
+    pub fn protocol(
+        &self,
+    ) -> std::option::Option<&crate::model::ContactMethodVerificationProtocol> {
+        self.protocol.as_ref()
+    }
+}
 impl std::fmt::Debug for SendContactMethodVerificationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendContactMethodVerificationInput");
@@ -31839,6 +31949,14 @@ pub struct ResetDistributionCacheInput {
     /// can specify.</p>
     pub distribution_name: std::option::Option<std::string::String>,
 }
+impl ResetDistributionCacheInput {
+    /// <p>The name of the distribution for which to reset cache.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetDistributionCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetDistributionCacheInput");
@@ -31853,6 +31971,12 @@ impl std::fmt::Debug for ResetDistributionCacheInput {
 pub struct ReleaseStaticIpInput {
     /// <p>The name of the static IP to delete.</p>
     pub static_ip_name: std::option::Option<std::string::String>,
+}
+impl ReleaseStaticIpInput {
+    /// <p>The name of the static IP to delete.</p>
+    pub fn static_ip_name(&self) -> std::option::Option<&str> {
+        self.static_ip_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ReleaseStaticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31897,6 +32021,44 @@ pub struct RegisterContainerImageInput {
     /// <p>The digest of the container image to be registered.</p>
     pub digest: std::option::Option<std::string::String>,
 }
+impl RegisterContainerImageInput {
+    /// <p>The name of the container service for which to register a container image.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The label for the container image when it's registered to the container service.</p>
+    ///
+    /// <p>Use a descriptive label that you can use to track the different versions of your
+    /// registered container images.</p>
+    ///
+    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered
+    /// to a Lightsail container service. The label is the <code><imagelabel></code> portion
+    /// of the following image name example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>:container-service-1.<imagelabel>.1</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label
+    /// that you specify is <code>mystaticwebsite</code>, then the name of the registered container
+    /// image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
+    ///
+    /// <p>The number at the end of these image name examples represents the version of the
+    /// registered container image. If you push and register another container image to the same
+    /// Lightsail container service, with the same label, then the version number for the new
+    /// registered container image will be <code>2</code>. If you push and register another container
+    /// image, the version number will be <code>3</code>, and so on.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The digest of the container image to be registered.</p>
+    pub fn digest(&self) -> std::option::Option<&str> {
+        self.digest.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterContainerImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterContainerImageInput");
@@ -31914,6 +32076,12 @@ pub struct RebootRelationalDatabaseInput {
     /// <p>The name of your database to reboot.</p>
     pub relational_database_name: std::option::Option<std::string::String>,
 }
+impl RebootRelationalDatabaseInput {
+    /// <p>The name of your database to reboot.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RebootRelationalDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootRelationalDatabaseInput");
@@ -31928,6 +32096,12 @@ impl std::fmt::Debug for RebootRelationalDatabaseInput {
 pub struct RebootInstanceInput {
     /// <p>The name of the instance to reboot.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl RebootInstanceInput {
+    /// <p>The name of the instance to reboot.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RebootInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31945,6 +32119,16 @@ pub struct PutInstancePublicPortsInput {
     pub port_infos: std::option::Option<std::vec::Vec<crate::model::PortInfo>>,
     /// <p>The name of the instance for which to open ports.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl PutInstancePublicPortsInput {
+    /// <p>An array of objects to describe the ports to open for the specified instance.</p>
+    pub fn port_infos(&self) -> std::option::Option<&[crate::model::PortInfo]> {
+        self.port_infos.as_deref()
+    }
+    /// <p>The name of the instance for which to open ports.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PutInstancePublicPortsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32096,6 +32280,166 @@ pub struct PutAlarmInput {
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
     pub notification_enabled: std::option::Option<bool>,
 }
+impl PutAlarmInput {
+    /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the
+    /// previous configuration of the alarm.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
+    /// <p>The name of the metric to associate with the alarm.</p>
+    /// <p>You can configure up to two alarms per metric.</p>
+    /// <p>The following metrics are available for each resource type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Instances</b>: <code>BurstCapacityPercentage</code>,
+    /// <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>,
+    /// <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
+    /// <code>StatusCheckFailed_Instance</code>, and
+    /// <code>StatusCheckFailed_System</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Load balancers</b>:
+    /// <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
+    /// <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
+    /// <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>,
+    /// <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>,
+    /// <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>,
+    /// <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Relational databases</b>: <code>CPUUtilization</code>,
+    /// <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
+    /// <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
+    /// <code>NetworkTransmitThroughput</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::MetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The name of the Lightsail resource that will be monitored.</p>
+    /// <p>Instances, load balancers, and relational databases are the only Lightsail resources
+    /// that can currently be monitored by alarms.</p>
+    pub fn monitored_resource_name(&self) -> std::option::Option<&str> {
+        self.monitored_resource_name.as_deref()
+    }
+    /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold.
+    /// The specified statistic value is used as the first operand.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>The value against which the specified statistic is compared.</p>
+    pub fn threshold(&self) -> std::option::Option<f64> {
+        self.threshold
+    }
+    /// <p>The number of most recent periods over which data is compared to the specified threshold.
+    /// If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the
+    /// N.</p>
+    /// <p>If you are setting an alarm that requires that a number of consecutive data points be
+    /// breaching to trigger the alarm, this value specifies the rolling period of time in which data
+    /// points are evaluated.</p>
+    /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of
+    /// 24 to evaluate a metric over a rolling period of two hours.</p>
+    /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation
+    /// period of 288 (24 hours).</p>
+    pub fn evaluation_periods(&self) -> std::option::Option<i32> {
+        self.evaluation_periods
+    }
+    /// <p>The number of data points that must be not within the specified threshold to trigger the
+    /// alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>)
+    /// is the M.</p>
+    pub fn datapoints_to_alarm(&self) -> std::option::Option<i32> {
+        self.datapoints_to_alarm
+    }
+    /// <p>Sets how this alarm will handle missing data points.</p>
+    /// <p>An alarm can treat missing data in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>breaching</code> - Assume the missing data is not within the threshold. Missing
+    /// data counts towards the number of times the metric is not within the threshold.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>notBreaching</code> - Assume the missing data is within the threshold. Missing
+    /// data does not count towards the number of times the metric is not within the
+    /// threshold.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+    /// state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>missing</code> - Missing data is treated as missing.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>treatMissingData</code> is not specified, the default behavior of
+    /// <code>missing</code> is used.</p>
+    pub fn treat_missing_data(&self) -> std::option::Option<&crate::model::TreatMissingData> {
+        self.treat_missing_data.as_ref()
+    }
+    /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code>
+    /// (text messaging), or both.</p>
+    /// <p>A notification is sent via the specified contact protocol if notifications are enabled for
+    /// the alarm, and when the alarm is triggered.</p>
+    /// <p>A notification is not sent if a contact protocol is not specified, if the specified
+    /// contact protocol is not configured in the AWS Region, or if notifications are not enabled
+    /// for the alarm using the <code>notificationEnabled</code> paramater.</p>
+    /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an
+    /// AWS Region.</p>
+    pub fn contact_protocols(&self) -> std::option::Option<&[crate::model::ContactProtocol]> {
+        self.contact_protocols.as_deref()
+    }
+    /// <p>The alarm states that trigger a notification.</p>
+    /// <p>An alarm has the following possible states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALARM</code> - The metric is outside of the defined threshold.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
+    /// available, or not enough data is available for the metric to determine the alarm
+    /// state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OK</code> - The metric is within the defined threshold.</p>
+    /// </li>
+    /// </ul>
+    /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified.
+    /// The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to
+    /// the <code>ALARM</code> state.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the
+    /// alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to
+    /// an <code>OK</code> state. This can be thought of as an <i>all clear</i>
+    /// alarm notification.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is
+    /// sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to
+    /// an <code>INSUFFICIENT_DATA</code> state.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this
+    /// parameter.</p>
+    pub fn notification_triggers(&self) -> std::option::Option<&[crate::model::AlarmState]> {
+        self.notification_triggers.as_deref()
+    }
+    /// <p>Indicates whether the alarm is enabled.</p>
+    /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
+    pub fn notification_enabled(&self) -> std::option::Option<bool> {
+        self.notification_enabled
+    }
+}
 impl std::fmt::Debug for PutAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAlarmInput");
@@ -32134,6 +32478,16 @@ pub struct OpenInstancePublicPortsInput {
     /// <p>The name of the instance for which to open ports.</p>
     pub instance_name: std::option::Option<std::string::String>,
 }
+impl OpenInstancePublicPortsInput {
+    /// <p>An object to describe the ports to open for the specified instance.</p>
+    pub fn port_info(&self) -> std::option::Option<&crate::model::PortInfo> {
+        self.port_info.as_ref()
+    }
+    /// <p>The name of the instance for which to open ports.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+}
 impl std::fmt::Debug for OpenInstancePublicPortsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenInstancePublicPortsInput");
@@ -32163,6 +32517,16 @@ pub struct ImportKeyPairInput {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub public_key_base64: std::option::Option<std::string::String>,
 }
+impl ImportKeyPairInput {
+    /// <p>The name of the key pair for which you want to import the public key.</p>
+    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+        self.key_pair_name.as_deref()
+    }
+    /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    pub fn public_key_base64(&self) -> std::option::Option<&str> {
+        self.public_key_base64.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportKeyPairInput");
@@ -32182,6 +32546,15 @@ pub struct GetStaticIpsInput {
     /// token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetStaticIpsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetStaticIps</code> request. If your results
+    /// are paginated, the response will return a next page token that you can specify as the page
+    /// token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStaticIpsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStaticIpsInput");
@@ -32196,6 +32569,12 @@ impl std::fmt::Debug for GetStaticIpsInput {
 pub struct GetStaticIpInput {
     /// <p>The name of the static IP in Lightsail.</p>
     pub static_ip_name: std::option::Option<std::string::String>,
+}
+impl GetStaticIpInput {
+    /// <p>The name of the static IP in Lightsail.</p>
+    pub fn static_ip_name(&self) -> std::option::Option<&str> {
+        self.static_ip_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStaticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32215,6 +32594,15 @@ pub struct GetRelationalDatabaseSnapshotsInput {
     /// can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseSnapshotsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseSnapshots</code>
+    /// request. If your results are paginated, the response will return a next page token that you
+    /// can specify as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseSnapshotsInput");
@@ -32229,6 +32617,12 @@ impl std::fmt::Debug for GetRelationalDatabaseSnapshotsInput {
 pub struct GetRelationalDatabaseSnapshotInput {
     /// <p>The name of the database snapshot for which to get information.</p>
     pub relational_database_snapshot_name: std::option::Option<std::string::String>,
+}
+impl GetRelationalDatabaseSnapshotInput {
+    /// <p>The name of the database snapshot for which to get information.</p>
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+        self.relational_database_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabaseSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32251,6 +32645,15 @@ pub struct GetRelationalDatabasesInput {
     /// the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabasesInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabases</code> request. If
+    /// your results are paginated, the response will return a next page token that you can specify as
+    /// the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabasesInput");
@@ -32270,6 +32673,19 @@ pub struct GetRelationalDatabaseParametersInput {
     /// request. If your results are paginated, the response will return a next page token that you
     /// can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl GetRelationalDatabaseParametersInput {
+    /// <p>The name of your database for which to get parameters.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code>
+    /// request. If your results are paginated, the response will return a next page token that you
+    /// can specify as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabaseParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32433,6 +32849,170 @@ pub struct GetRelationalDatabaseMetricDataInput {
     /// </ul>
     pub statistics: std::option::Option<std::vec::Vec<crate::model::MetricStatistic>>,
 }
+impl GetRelationalDatabaseMetricDataInput {
+    /// <p>The name of your database from which to get metric data.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The metric for which you want to return information.</p>
+    /// <p>Valid relational database metric names are listed below, along with the most useful
+    /// <code>statistics</code> to include in your request, and the published <code>unit</code>
+    /// value. All relational database metric data is available in 1-minute (60 seconds)
+    /// granularity.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CPUUtilization</code>
+    /// </b> - The percentage of CPU
+    /// utilization currently in use on the database.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+    /// <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DatabaseConnections</code>
+    /// </b> - The number of
+    /// database connections in use.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+    /// <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskQueueDepth</code>
+    /// </b> - The number of
+    /// outstanding IOs (read/write requests) that are waiting to access the disk.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>FreeStorageSpace</code>
+    /// </b> - The amount of
+    /// available storage space.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkReceiveThroughput</code>
+    /// </b> - The incoming
+    /// (Receive) network traffic on the database, including both customer database traffic and
+    /// AWS traffic used for monitoring and replication.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkTransmitThroughput</code>
+    /// </b> - The outgoing
+    /// (Transmit) network traffic on the database, including both customer database traffic and
+    /// AWS traffic used for monitoring and replication.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::RelationalDatabaseMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The granularity, in seconds, of the returned data points.</p>
+    /// <p>All relational database metric data is available in 1-minute (60 seconds)
+    /// granularity.</p>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
+    /// <p>The start of the time interval from which to get metric data.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you
+    /// input <code>1538424000</code> as the start time.</p>
+    ///
+    /// </li>
+    /// </ul>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time interval from which to get metric data.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you
+    /// input <code>1538424000</code> as the end time.</p>
+    ///
+    /// </li>
+    /// </ul>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The unit for the metric data request. Valid units depend on the metric data being
+    /// requested. For the valid units with each available metric, see the <code>metricName</code>
+    /// parameter.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::MetricUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The statistic for the metric.</p>
+    /// <p>The following statistics are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+    /// value to determine low volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Maximum</code> - The highest value observed during the specified period. Use
+    /// this value to determine high volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Sum</code> - All values submitted for the matching metric added together. You
+    /// can use this statistic to determine the total volume of a metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
+    /// comparing this statistic with the Minimum and Maximum values, you can determine the full
+    /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
+    /// comparison helps you to know when to increase or decrease your resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SampleCount</code> - The count, or number, of data points used for the
+    /// statistical calculation.</p>
+    /// </li>
+    /// </ul>
+    pub fn statistics(&self) -> std::option::Option<&[crate::model::MetricStatistic]> {
+        self.statistics.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseMetricDataInput");
@@ -32463,6 +33043,25 @@ pub struct GetRelationalDatabaseMasterUserPasswordInput {
     /// </p>
     pub password_version: std::option::Option<crate::model::RelationalDatabasePasswordVersion>,
 }
+impl GetRelationalDatabaseMasterUserPasswordInput {
+    /// <p>The name of your database for which to get the master user password.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The password version to return.</p>
+    /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous
+    /// passwords respectively. Specifying <code>PENDING</code> returns the newest version of the
+    /// password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password
+    /// rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer
+    /// available.</p>
+    /// <p>Default: <code>CURRENT</code>
+    /// </p>
+    pub fn password_version(
+        &self,
+    ) -> std::option::Option<&crate::model::RelationalDatabasePasswordVersion> {
+        self.password_version.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseMasterUserPasswordInput");
@@ -32478,6 +33077,12 @@ impl std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordInput {
 pub struct GetRelationalDatabaseLogStreamsInput {
     /// <p>The name of your database for which to get log streams.</p>
     pub relational_database_name: std::option::Option<std::string::String>,
+}
+impl GetRelationalDatabaseLogStreamsInput {
+    /// <p>The name of your database for which to get log streams.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabaseLogStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32538,6 +33143,66 @@ pub struct GetRelationalDatabaseLogEventsInput {
     /// next backward token that you can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseLogEventsInput {
+    /// <p>The name of your database for which to get log events.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The name of the log stream.</p>
+    /// <p>Use the <code>get relational database log streams</code> operation to get a list of
+    /// available log streams.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>The start of the time interval from which to get log events.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you
+    /// input <code>1538424000</code> as the start time.</p>
+    /// </li>
+    /// </ul>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time interval from which to get log events.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you
+    /// input <code>1538424000</code> as the end time.</p>
+    ///
+    /// </li>
+    /// </ul>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is
+    /// specified, the log event starts from the head of the log. If <code>false</code> is specified,
+    /// the log event starts from the tail of the log.</p>
+    /// <note>
+    /// <p>For PostgreSQL, the default value of <code>false</code> is the only option
+    /// available.</p>
+    /// </note>
+    pub fn start_from_head(&self) -> std::option::Option<bool> {
+        self.start_from_head
+    }
+    /// <p>The token to advance to the next or previous page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code>
+    /// request. If your results are paginated, the response will return a next forward token and/or
+    /// next backward token that you can specify as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseLogEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseLogEventsInput");
@@ -32569,6 +33234,27 @@ pub struct GetRelationalDatabaseEventsInput {
     /// as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseEventsInput {
+    /// <p>The name of the database from which to get events.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The number of minutes in the past from which to retrieve events. For example, to get all
+    /// events from the past 2 hours, enter 120.</p>
+    /// <p>Default: <code>60</code>
+    /// </p>
+    /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
+    pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.duration_in_minutes
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request.
+    /// If your results are paginated, the response will return a next page token that you can specify
+    /// as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseEventsInput");
@@ -32589,6 +33275,15 @@ pub struct GetRelationalDatabaseBundlesInput {
     /// as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseBundlesInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request.
+    /// If your results are paginated, the response will return a next page token that you can specify
+    /// as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseBundlesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseBundlesInput");
@@ -32607,6 +33302,15 @@ pub struct GetRelationalDatabaseBlueprintsInput {
     /// can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseBlueprintsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBlueprints</code>
+    /// request. If your results are paginated, the response will return a next page token that you
+    /// can specify as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseBlueprintsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseBlueprintsInput");
@@ -32621,6 +33325,12 @@ impl std::fmt::Debug for GetRelationalDatabaseBlueprintsInput {
 pub struct GetRelationalDatabaseInput {
     /// <p>The name of the database that you are looking up.</p>
     pub relational_database_name: std::option::Option<std::string::String>,
+}
+impl GetRelationalDatabaseInput {
+    /// <p>The name of the database that you are looking up.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32641,6 +33351,19 @@ pub struct GetRegionsInput {
     /// your get regions request. Availability Zones are indicated with a letter (e.g.,
     /// <code>us-east-2a</code>).</p>
     pub include_relational_database_availability_zones: std::option::Option<bool>,
+}
+impl GetRegionsInput {
+    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions
+    /// request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+    pub fn include_availability_zones(&self) -> std::option::Option<bool> {
+        self.include_availability_zones
+    }
+    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in
+    /// your get regions request. Availability Zones are indicated with a letter (e.g.,
+    /// <code>us-east-2a</code>).</p>
+    pub fn include_relational_database_availability_zones(&self) -> std::option::Option<bool> {
+        self.include_relational_database_availability_zones
+    }
 }
 impl std::fmt::Debug for GetRegionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32669,6 +33392,19 @@ pub struct GetOperationsForResourceInput {
     /// the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetOperationsForResourceInput {
+    /// <p>The name of the resource for which you are requesting information.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetOperationsForResource</code> request. If
+    /// your results are paginated, the response will return a next page token that you can specify as
+    /// the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOperationsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOperationsForResourceInput");
@@ -32688,6 +33424,15 @@ pub struct GetOperationsInput {
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetOperationsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetOperations</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOperationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOperationsInput");
@@ -32703,6 +33448,12 @@ pub struct GetOperationInput {
     /// <p>A GUID used to identify the operation.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl GetOperationInput {
+    /// <p>A GUID used to identify the operation.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOperationInput");
@@ -32717,6 +33468,12 @@ impl std::fmt::Debug for GetOperationInput {
 pub struct GetLoadBalancerTlsCertificatesInput {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
+}
+impl GetLoadBalancerTlsCertificatesInput {
+    /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLoadBalancerTlsCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32735,6 +33492,15 @@ pub struct GetLoadBalancersInput {
     /// results are paginated, the response will return a next page token that you can specify as the
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl GetLoadBalancersInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLoadBalancersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32963,6 +33729,236 @@ pub struct GetLoadBalancerMetricDataInput {
     /// </ul>
     pub statistics: std::option::Option<std::vec::Vec<crate::model::MetricStatistic>>,
 }
+impl GetLoadBalancerMetricDataInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The metric for which you want to return information.</p>
+    /// <p>Valid load balancer metric names are listed below, along with the most useful
+    /// <code>statistics</code> to include in your request, and the published <code>unit</code>
+    /// value.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ClientTLSNegotiationErrorCount</code>
+    /// </b> - The
+    /// number of TLS connections initiated by the client that did not establish a session with
+    /// the load balancer due to a TLS error generated by the load balancer. Possible causes
+    /// include a mismatch of ciphers or protocols.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>HealthyHostCount</code>
+    /// </b> - The number of target
+    /// instances that are considered healthy.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic are <code>Average</code>,
+    /// <code>Minimum</code>, and <code>Maximum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>HTTPCode_Instance_2XX_Count</code>
+    /// </b> - The number
+    /// of HTTP 2XX response codes generated by the target instances. This does not include any
+    /// response codes generated by the load balancer.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
+    /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
+    /// <code>1</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>HTTPCode_Instance_3XX_Count</code>
+    /// </b> - The number
+    /// of HTTP 3XX response codes generated by the target instances. This does not include any
+    /// response codes generated by the load balancer.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
+    /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
+    /// <code>1</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>HTTPCode_Instance_4XX_Count</code>
+    /// </b> - The number
+    /// of HTTP 4XX response codes generated by the target instances. This does not include any
+    /// response codes generated by the load balancer.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
+    /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
+    /// <code>1</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>HTTPCode_Instance_5XX_Count</code>
+    /// </b> - The number
+    /// of HTTP 5XX response codes generated by the target instances. This does not include any
+    /// response codes generated by the load balancer.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
+    /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
+    /// <code>1</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>HTTPCode_LB_4XX_Count</code>
+    /// </b> - The number of
+    /// HTTP 4XX client error codes that originated from the load balancer. Client errors are
+    /// generated when requests are malformed or incomplete. These requests were not received by
+    /// the target instance. This count does not include response codes generated by the target
+    /// instances.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
+    /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
+    /// <code>1</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>HTTPCode_LB_5XX_Count</code>
+    /// </b> - The number of
+    /// HTTP 5XX server error codes that originated from the load balancer. This does not include
+    /// any response codes generated by the target instance. This metric is reported if there are
+    /// no healthy instances attached to the load balancer, or if the request rate exceeds the
+    /// capacity of the instances (spillover) or the load balancer.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
+    /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
+    /// <code>1</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>InstanceResponseTime</code>
+    /// </b> - The time elapsed,
+    /// in seconds, after the request leaves the load balancer until a response from the target
+    /// instance is received.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Seconds</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>RejectedConnectionCount</code>
+    /// </b> - The number of
+    /// connections that were rejected because the load balancer had reached its maximum number of
+    /// connections.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>RequestCount</code>
+    /// </b> - The number of requests
+    /// processed over IPv4. This count includes only the requests with a response generated by a
+    /// target instance of the load balancer.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
+    /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
+    /// <code>1</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>UnhealthyHostCount</code>
+    /// </b> - The number of
+    /// target instances that are considered unhealthy.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic are <code>Average</code>,
+    /// <code>Minimum</code>, and <code>Maximum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::LoadBalancerMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The granularity, in seconds, of the returned data points.</p>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
+    /// <p>The start time of the period.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the period.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The unit for the metric data request. Valid units depend on the metric data being
+    /// requested. For the valid units with each available metric, see the <code>metricName</code>
+    /// parameter.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::MetricUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The statistic for the metric.</p>
+    /// <p>The following statistics are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+    /// value to determine low volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Maximum</code> - The highest value observed during the specified period. Use
+    /// this value to determine high volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Sum</code> - All values submitted for the matching metric added together. You
+    /// can use this statistic to determine the total volume of a metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
+    /// comparing this statistic with the Minimum and Maximum values, you can determine the full
+    /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
+    /// comparison helps you to know when to increase or decrease your resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SampleCount</code> - The count, or number, of data points used for the
+    /// statistical calculation.</p>
+    /// </li>
+    /// </ul>
+    pub fn statistics(&self) -> std::option::Option<&[crate::model::MetricStatistic]> {
+        self.statistics.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLoadBalancerMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoadBalancerMetricDataInput");
@@ -32984,6 +33980,12 @@ pub struct GetLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
 }
+impl GetLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoadBalancerInput");
@@ -33002,6 +34004,15 @@ pub struct GetKeyPairsInput {
     /// token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetKeyPairsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results
+    /// are paginated, the response will return a next page token that you can specify as the page
+    /// token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetKeyPairsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyPairsInput");
@@ -33017,6 +34028,12 @@ pub struct GetKeyPairInput {
     /// <p>The name of the key pair for which you are requesting information.</p>
     pub key_pair_name: std::option::Option<std::string::String>,
 }
+impl GetKeyPairInput {
+    /// <p>The name of the key pair for which you are requesting information.</p>
+    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+        self.key_pair_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyPairInput");
@@ -33031,6 +34048,12 @@ impl std::fmt::Debug for GetKeyPairInput {
 pub struct GetInstanceStateInput {
     /// <p>The name of the instance to get state information about.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl GetInstanceStateInput {
+    /// <p>The name of the instance to get state information about.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33050,6 +34073,15 @@ pub struct GetInstanceSnapshotsInput {
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetInstanceSnapshotsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInstanceSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstanceSnapshotsInput");
@@ -33064,6 +34096,12 @@ impl std::fmt::Debug for GetInstanceSnapshotsInput {
 pub struct GetInstanceSnapshotInput {
     /// <p>The name of the snapshot for which you are requesting information.</p>
     pub instance_snapshot_name: std::option::Option<std::string::String>,
+}
+impl GetInstanceSnapshotInput {
+    /// <p>The name of the snapshot for which you are requesting information.</p>
+    pub fn instance_snapshot_name(&self) -> std::option::Option<&str> {
+        self.instance_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33083,6 +34121,15 @@ pub struct GetInstancesInput {
     /// token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetInstancesInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results
+    /// are paginated, the response will return a next page token that you can specify as the page
+    /// token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstancesInput");
@@ -33097,6 +34144,12 @@ impl std::fmt::Debug for GetInstancesInput {
 pub struct GetInstancePortStatesInput {
     /// <p>The name of the instance for which to return firewall port states.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl GetInstancePortStatesInput {
+    /// <p>The name of the instance for which to return firewall port states.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstancePortStatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33282,6 +34335,193 @@ pub struct GetInstanceMetricDataInput {
     /// </ul>
     pub statistics: std::option::Option<std::vec::Vec<crate::model::MetricStatistic>>,
 }
+impl GetInstanceMetricDataInput {
+    /// <p>The name of the instance for which you want to get metrics data.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The metric for which you want to return information.</p>
+    /// <p>Valid instance metric names are listed below, along with the most useful
+    /// <code>statistics</code> to include in your request, and the published <code>unit</code>
+    /// value.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BurstCapacityPercentage</code>
+    /// </b> - The percentage
+    /// of CPU performance available for your instance to burst above its baseline. Your instance
+    /// continuously accrues and consumes burst capacity. Burst capacity stops accruing when your
+    /// instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see
+    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+    /// <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BurstCapacityTime</code>
+    /// </b> - The available amount
+    /// of time for your instance to burst at 100% CPU utilization. Your instance continuously
+    /// accrues and consumes burst capacity. Burst capacity time stops accruing when your
+    /// instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p>
+    /// <p>Burst capacity time is consumed at the full rate only when your instance operates at
+    /// 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the
+    /// burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50%
+    /// rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity
+    /// minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+    /// <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Seconds</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CPUUtilization</code>
+    /// </b> - The percentage of
+    /// allocated compute units that are currently in use on the instance. This metric identifies
+    /// the processing power to run the applications on the instance. Tools in your operating
+    /// system can show a lower percentage than Lightsail when the instance is not allocated a
+    /// full processor core.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+    /// <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkIn</code>
+    /// </b> - The number of bytes received
+    /// on all network interfaces by the instance. This metric identifies the volume of incoming
+    /// network traffic to the instance. The number reported is the number of bytes received
+    /// during the period. Because this metric is reported in 5-minute intervals, divide the
+    /// reported number by 300 to find Bytes/second.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkOut</code>
+    /// </b> - The number of bytes sent
+    /// out on all network interfaces by the instance. This metric identifies the volume of
+    /// outgoing network traffic from the instance. The number reported is the number of bytes
+    /// sent during the period. Because this metric is reported in 5-minute intervals, divide the
+    /// reported number by 300 to find Bytes/second.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>StatusCheckFailed</code>
+    /// </b> - Reports whether the
+    /// instance passed or failed both the instance status check and the system status check. This
+    /// metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute
+    /// (60 seconds) granularity.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>StatusCheckFailed_Instance</code>
+    /// </b> - Reports
+    /// whether the instance passed or failed the instance status check. This metric can be either
+    /// 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+    /// granularity.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>StatusCheckFailed_System</code>
+    /// </b> - Reports
+    /// whether the instance passed or failed the system status check. This metric can be either 0
+    /// (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+    /// granularity.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::InstanceMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The granularity, in seconds, of the returned data points.</p>
+    /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+    /// <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60
+    /// seconds) granularity. All other instance metric data is available in 5-minute (300 seconds)
+    /// granularity.</p>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
+    /// <p>The start time of the time period.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the time period.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The unit for the metric data request. Valid units depend on the metric data being
+    /// requested. For the valid units to specify with each available metric, see the
+    /// <code>metricName</code> parameter.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::MetricUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The statistic for the metric.</p>
+    /// <p>The following statistics are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+    /// value to determine low volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Maximum</code> - The highest value observed during the specified period. Use
+    /// this value to determine high volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Sum</code> - All values submitted for the matching metric added together. You
+    /// can use this statistic to determine the total volume of a metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
+    /// comparing this statistic with the Minimum and Maximum values, you can determine the full
+    /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
+    /// comparison helps you to know when to increase or decrease your resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SampleCount</code> - The count, or number, of data points used for the
+    /// statistical calculation.</p>
+    /// </li>
+    /// </ul>
+    pub fn statistics(&self) -> std::option::Option<&[crate::model::MetricStatistic]> {
+        self.statistics.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInstanceMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstanceMetricDataInput");
@@ -33305,6 +34545,16 @@ pub struct GetInstanceAccessDetailsInput {
     /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
     pub protocol: std::option::Option<crate::model::InstanceAccessProtocol>,
 }
+impl GetInstanceAccessDetailsInput {
+    /// <p>The name of the instance to access.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::InstanceAccessProtocol> {
+        self.protocol.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInstanceAccessDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstanceAccessDetailsInput");
@@ -33320,6 +34570,12 @@ impl std::fmt::Debug for GetInstanceAccessDetailsInput {
 pub struct GetInstanceInput {
     /// <p>The name of the instance.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl GetInstanceInput {
+    /// <p>The name of the instance.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33339,6 +34595,15 @@ pub struct GetExportSnapshotRecordsInput {
     /// the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetExportSnapshotRecordsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If
+    /// your results are paginated, the response will return a next page token that you can specify as
+    /// the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetExportSnapshotRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExportSnapshotRecordsInput");
@@ -33357,6 +34622,15 @@ pub struct GetDomainsInput {
     /// token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetDomainsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetDomains</code> request. If your results
+    /// are paginated, the response will return a next page token that you can specify as the page
+    /// token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainsInput");
@@ -33371,6 +34645,12 @@ impl std::fmt::Debug for GetDomainsInput {
 pub struct GetDomainInput {
     /// <p>The domain name for which your want to return information about.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetDomainInput {
+    /// <p>The domain name for which your want to return information about.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33394,6 +34674,22 @@ pub struct GetDistributionsInput {
     /// results are paginated, the response will return a next page token that you can specify as the
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl GetDistributionsInput {
+    /// <p>The name of the distribution for which to return information.</p>
+    ///
+    /// <p>When omitted, the response includes all of your distributions in the AWS Region where
+    /// the request is made.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDistributionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33558,6 +34854,171 @@ pub struct GetDistributionMetricDataInput {
     /// </ul>
     pub statistics: std::option::Option<std::vec::Vec<crate::model::MetricStatistic>>,
 }
+impl GetDistributionMetricDataInput {
+    /// <p>The name of the distribution for which to get metric data.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+    /// <p>The metric for which you want to return information.</p>
+    /// <p>Valid distribution metric names are listed below, along with the most useful
+    /// <code>statistics</code> to include in your request, and the published <code>unit</code>
+    /// value.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Requests</code>
+    /// </b> - The total number of viewer
+    /// requests received by your Lightsail distribution, for all HTTP methods, and for both
+    /// HTTP and HTTPS requests.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>None</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BytesDownloaded</code>
+    /// </b> - The number of bytes
+    /// downloaded by viewers for GET, HEAD, and OPTIONS requests.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>None</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BytesUploaded </code>
+    /// </b> - The number of bytes
+    /// uploaded to your origin by your Lightsail distribution, using POST and PUT
+    /// requests.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>None</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>TotalErrorRate</code>
+    /// </b> - The percentage of all
+    /// viewer requests for which the response's HTTP status code was 4xx or 5xx.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>4xxErrorRate</code>
+    /// </b> - The percentage of all
+    /// viewer requests for which the response's HTTP status cod was 4xx. In these cases, the
+    /// client or client viewer may have made an error. For example, a status code of 404 (Not
+    /// Found) means that the client requested an object that could not be found.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>5xxErrorRate</code>
+    /// </b> - The percentage of all
+    /// viewer requests for which the response's HTTP status code was 5xx. In these cases, the
+    /// origin server did not satisfy the requests. For example, a status code of 503 (Service
+    /// Unavailable) means that the origin server is currently unavailable.</p>
+    /// <p>
+    /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p>
+    /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::DistributionMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The start of the time interval for which to get metric data.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
+    /// <code>1538424000</code> as the start time.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time interval for which to get metric data.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
+    /// <code>1538427600</code> as the end time.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The granularity, in seconds, for the metric data points that will be returned.</p>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
+    /// <p>The unit for the metric data request.</p>
+    /// <p>Valid units depend on the metric data being requested. For the valid units with each
+    /// available metric, see the <code>metricName</code> parameter.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::MetricUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The statistic for the metric.</p>
+    /// <p>The following statistics are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+    /// value to determine low volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Maximum</code> - The highest value observed during the specified period. Use
+    /// this value to determine high volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Sum</code> - All values submitted for the matching metric added together. You
+    /// can use this statistic to determine the total volume of a metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
+    /// comparing this statistic with the Minimum and Maximum values, you can determine the full
+    /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
+    /// comparison helps you to know when to increase or decrease your resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SampleCount</code> - The count, or number, of data points used for the
+    /// statistical calculation.</p>
+    /// </li>
+    /// </ul>
+    pub fn statistics(&self) -> std::option::Option<&[crate::model::MetricStatistic]> {
+        self.statistics.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDistributionMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDistributionMetricDataInput");
@@ -33583,6 +35044,17 @@ pub struct GetDistributionLatestCacheResetInput {
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your
     /// distributions.</p>
     pub distribution_name: std::option::Option<std::string::String>,
+}
+impl GetDistributionLatestCacheResetInput {
+    /// <p>The name of the distribution for which to return the timestamp of the last cache
+    /// reset.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    /// <p>When omitted, the response includes the latest cache reset timestamp of all your
+    /// distributions.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDistributionLatestCacheResetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33613,6 +35085,15 @@ pub struct GetDiskSnapshotsInput {
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetDiskSnapshotsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetDiskSnapshots</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDiskSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDiskSnapshotsInput");
@@ -33627,6 +35108,12 @@ impl std::fmt::Debug for GetDiskSnapshotsInput {
 pub struct GetDiskSnapshotInput {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
     pub disk_snapshot_name: std::option::Option<std::string::String>,
+}
+impl GetDiskSnapshotInput {
+    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    pub fn disk_snapshot_name(&self) -> std::option::Option<&str> {
+        self.disk_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDiskSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33646,6 +35133,15 @@ pub struct GetDisksInput {
     /// in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetDisksInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetDisks</code> request. If your results are
+    /// paginated, the response will return a next page token that you can specify as the page token
+    /// in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDisksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDisksInput");
@@ -33660,6 +35156,12 @@ impl std::fmt::Debug for GetDisksInput {
 pub struct GetDiskInput {
     /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
     pub disk_name: std::option::Option<std::string::String>,
+}
+impl GetDiskInput {
+    /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    pub fn disk_name(&self) -> std::option::Option<&str> {
+        self.disk_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDiskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33678,6 +35180,15 @@ pub struct GetContainerServicesInput {
     /// <p>When omitted, the response includes all of your container services in the AWS Region
     /// where the request is made.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl GetContainerServicesInput {
+    /// <p>The name of the container service for which to return information.</p>
+    ///
+    /// <p>When omitted, the response includes all of your container services in the AWS Region
+    /// where the request is made.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerServicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33775,6 +35286,92 @@ pub struct GetContainerServiceMetricDataInput {
     /// </ul>
     pub statistics: std::option::Option<std::vec::Vec<crate::model::MetricStatistic>>,
 }
+impl GetContainerServiceMetricDataInput {
+    /// <p>The name of the container service for which to get metric data.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The metric for which you want to return information.</p>
+    ///
+    /// <p>Valid container service metric names are listed below, along with the most useful
+    /// statistics to include in your request, and the published unit value.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CPUUtilization</code> - The average percentage of compute units that are
+    /// currently in use across all nodes of the container service. This metric identifies the
+    /// processing power required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and
+    /// <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MemoryUtilization</code> - The average percentage of available memory that is
+    /// currently in use across all nodes of the container service. This metric identifies the
+    /// memory required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and
+    /// <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::ContainerServiceMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The start time of the time period.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the time period.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The granularity, in seconds, of the returned data points.</p>
+    ///
+    /// <p>All container service metric data is available in 5-minute (300 seconds)
+    /// granularity.</p>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
+    /// <p>The statistic for the metric.</p>
+    ///
+    /// <p>The following statistics are available:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+    /// value to determine low volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Maximum</code> - The highest value observed during the specified period. Use
+    /// this value to determine high volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Sum</code> - All values submitted for the matching metric added together. You
+    /// can use this statistic to determine the total volume of a metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
+    /// the specified period. By comparing this statistic with the <code>Minimum</code> and
+    /// <code>Maximum</code> values, you can determine the full scope of a metric and how close
+    /// the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This
+    /// comparison helps you to know when to increase or decrease your resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SampleCount</code> - The count, or number, of data points used for the
+    /// statistical calculation.</p>
+    /// </li>
+    /// </ul>
+    pub fn statistics(&self) -> std::option::Option<&[crate::model::MetricStatistic]> {
+        self.statistics.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerServiceMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerServiceMetricDataInput");
@@ -33794,6 +35391,12 @@ impl std::fmt::Debug for GetContainerServiceMetricDataInput {
 pub struct GetContainerServiceDeploymentsInput {
     /// <p>The name of the container service for which to return deployments.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl GetContainerServiceDeploymentsInput {
+    /// <p>The name of the container service for which to return deployments.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerServiceDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33882,6 +35485,94 @@ pub struct GetContainerLogInput {
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetContainerLogInput {
+    /// <p>The name of the container service for which to get a container log.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the container that is either running or previously ran on the container
+    /// service for which to return a log.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The start of the time interval for which to get log data.</p>
+    ///
+    /// <p>Constraints:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    ///
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
+    /// <code>1538424000</code> as the start time.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time interval for which to get log data.</p>
+    ///
+    /// <p>Constraints:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    ///
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
+    /// <code>1538427600</code> as the end time.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The pattern to use to filter the returned log events to a specific term.</p>
+    ///
+    /// <p>The following are a few examples of filter patterns that you can specify:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To return all log events, specify a filter pattern of <code>""</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To exclude log events that contain the <code>ERROR</code> term, and return all other
+    /// log events, specify a filter pattern of <code>"-ERROR"</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To return log events that contain the <code>ERROR</code> term, specify a filter
+    /// pattern of <code>"ERROR"</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To return log events that contain both the <code>ERROR</code> and
+    /// <code>Exception</code> terms, specify a filter pattern of <code>"ERROR
+    /// Exception"</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To return log events that contain the <code>ERROR</code>
+    /// <i>or</i> the <code>Exception</code> term, specify a filter pattern of
+    /// <code>"?ERROR ?Exception"</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+        self.filter_pattern.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    ///
+    /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerLogInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerLogInput");
@@ -33901,6 +35592,12 @@ impl std::fmt::Debug for GetContainerLogInput {
 pub struct GetContainerImagesInput {
     /// <p>The name of the container service for which to return registered container images.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl GetContainerImagesInput {
+    /// <p>The name of the container service for which to return registered container images.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33931,6 +35628,15 @@ pub struct GetContactMethodsInput {
     /// protocol.</p>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
 }
+impl GetContactMethodsInput {
+    /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code>
+    /// (text messaging).</p>
+    /// <p>Specify a protocol in your request to return information about a specific contact method
+    /// protocol.</p>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::ContactProtocol]> {
+        self.protocols.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContactMethodsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactMethodsInput");
@@ -33948,6 +35654,15 @@ pub struct GetCloudFormationStackRecordsInput {
     /// If your results are paginated, the response will return a next page token that you can specify
     /// as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl GetCloudFormationStackRecordsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetClouFormationStackRecords</code> request.
+    /// If your results are paginated, the response will return a next page token that you can specify
+    /// as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCloudFormationStackRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33977,6 +35692,29 @@ pub struct GetCertificatesInput {
     /// request is made.</p>
     pub certificate_name: std::option::Option<std::string::String>,
 }
+impl GetCertificatesInput {
+    /// <p>The status of the certificates for which to return information.</p>
+    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an
+    /// <code>ISSUED</code> status.</p>
+    /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
+    /// request is made, regardless of their current status.</p>
+    pub fn certificate_statuses(&self) -> std::option::Option<&[crate::model::CertificateStatus]> {
+        self.certificate_statuses.as_deref()
+    }
+    /// <p>Indicates whether to include detailed information about the certificates in the
+    /// response.</p>
+    /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names
+    /// (ARNs), domain names, and tags.</p>
+    pub fn include_certificate_details(&self) -> bool {
+        self.include_certificate_details
+    }
+    /// <p>The name for the certificate for which to return information.</p>
+    /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
+    /// request is made.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCertificatesInput");
@@ -34002,6 +35740,20 @@ pub struct GetBundlesInput {
     /// are paginated, the response will return a next page token that you can specify as the page
     /// token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl GetBundlesInput {
+    /// <p>A Boolean value that indicates whether to include inactive bundle results in your
+    /// request.</p>
+    pub fn include_inactive(&self) -> std::option::Option<bool> {
+        self.include_inactive
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results
+    /// are paginated, the response will return a next page token that you can specify as the page
+    /// token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBundlesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34030,6 +35782,28 @@ pub struct GetBucketsInput {
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given
     /// access to the bucket using the <a>SetResourceAccessForBucket</a> action.</p>
     pub include_connected_resources: std::option::Option<bool>,
+}
+impl GetBucketsInput {
+    /// <p>The name of the bucket for which to return information.</p>
+    ///
+    /// <p>When omitted, the response includes all of your buckets in the AWS Region where the
+    /// request is made.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    ///
+    /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results
+    /// are paginated, the response will return a next page token that you can specify as the page
+    /// token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>A Boolean value that indicates whether to include Lightsail instances that were given
+    /// access to the bucket using the <a>SetResourceAccessForBucket</a> action.</p>
+    pub fn include_connected_resources(&self) -> std::option::Option<bool> {
+        self.include_connected_resources
+    }
 }
 impl std::fmt::Debug for GetBucketsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34134,6 +35908,107 @@ pub struct GetBucketMetricDataInput {
     /// available metric, see the <code>metricName</code> parameter.</p>
     pub unit: std::option::Option<crate::model::MetricUnit>,
 }
+impl GetBucketMetricDataInput {
+    /// <p>The name of the bucket for which to get metric data.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The metric for which you want to return information.</p>
+    ///
+    /// <p>Valid bucket metric names are listed below, along with the most useful statistics to
+    /// include in your request, and the published unit value.</p>
+    ///
+    /// <note>
+    /// <p>These bucket metrics are reported once per day.</p>
+    /// </note>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BucketSizeBytes</code>
+    /// </b> - The amount of data in
+    /// bytes stored in a bucket. This value is calculated by summing the size of all objects in
+    /// the bucket (including object versions), including the size of all parts for all incomplete
+    /// multipart uploads to the bucket.</p>
+    /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
+    /// <p>Unit: The published unit is <code>Bytes</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NumberOfObjects</code>
+    /// </b> - The total number of
+    /// objects stored in a bucket. This value is calculated by counting all objects in the bucket
+    /// (including object versions) and the total number of parts for all incomplete multipart
+    /// uploads to the bucket.</p>
+    /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Count</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::BucketMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>The timestamp indicating the earliest data to be returned.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The timestamp indicating the latest data to be returned.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The granularity, in seconds, of the returned data points.</p>
+    /// <note>
+    /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period
+    /// of 86400 seconds, which is the number of seconds in a day.</p>
+    /// </note>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
+    /// <p>The statistic for the metric.</p>
+    ///
+    /// <p>The following statistics are available:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+    /// value to determine low volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Maximum</code> - The highest value observed during the specified period. Use
+    /// this value to determine high volumes of activity for your application.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Sum</code> - The sum of all values submitted for the matching metric. You can
+    /// use this statistic to determine the total volume of a metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
+    /// the specified period. By comparing this statistic with the <code>Minimum</code> and
+    /// <code>Maximum</code> values, you can determine the full scope of a metric and how close
+    /// the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This
+    /// comparison helps you to know when to increase or decrease your resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SampleCount</code> - The count, or number, of data points used for the
+    /// statistical calculation.</p>
+    /// </li>
+    /// </ul>
+    pub fn statistics(&self) -> std::option::Option<&[crate::model::MetricStatistic]> {
+        self.statistics.as_deref()
+    }
+    /// <p>The unit for the metric data request.</p>
+    /// <p>Valid units depend on the metric data being requested. For the valid units with each
+    /// available metric, see the <code>metricName</code> parameter.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::MetricUnit> {
+        self.unit.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBucketMetricDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketMetricDataInput");
@@ -34156,6 +36031,13 @@ pub struct GetBucketBundlesInput {
     /// response.</p>
     pub include_inactive: std::option::Option<bool>,
 }
+impl GetBucketBundlesInput {
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the
+    /// response.</p>
+    pub fn include_inactive(&self) -> std::option::Option<bool> {
+        self.include_inactive
+    }
+}
 impl std::fmt::Debug for GetBucketBundlesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketBundlesInput");
@@ -34170,6 +36052,12 @@ impl std::fmt::Debug for GetBucketBundlesInput {
 pub struct GetBucketAccessKeysInput {
     /// <p>The name of the bucket for which to return access keys.</p>
     pub bucket_name: std::option::Option<std::string::String>,
+}
+impl GetBucketAccessKeysInput {
+    /// <p>The name of the bucket for which to return access keys.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBucketAccessKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34191,6 +36079,19 @@ pub struct GetBlueprintsInput {
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetBlueprintsInput {
+    /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
+    pub fn include_inactive(&self) -> std::option::Option<bool> {
+        self.include_inactive
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBlueprintsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlueprintsInput");
@@ -34207,6 +36108,13 @@ pub struct GetAutoSnapshotsInput {
     /// <p>The name of the source instance or disk from which to get automatic snapshot
     /// information.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl GetAutoSnapshotsInput {
+    /// <p>The name of the source instance or disk from which to get automatic snapshot
+    /// information.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAutoSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34233,6 +36141,26 @@ pub struct GetAlarmsInput {
     /// resource.</p>
     pub monitored_resource_name: std::option::Option<std::string::String>,
 }
+impl GetAlarmsInput {
+    /// <p>The name of the alarm.</p>
+    /// <p>Specify an alarm name to return information about a specific alarm.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results
+    /// are paginated, the response will return a next page token that you can specify as the page
+    /// token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
+    /// <p>Specify a monitored resource name to return information about all alarms for a specific
+    /// resource.</p>
+    pub fn monitored_resource_name(&self) -> std::option::Option<&str> {
+        self.monitored_resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAlarmsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAlarmsInput");
@@ -34253,6 +36181,15 @@ pub struct GetActiveNamesInput {
     /// page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl GetActiveNamesInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your
+    /// results are paginated, the response will return a next page token that you can specify as the
+    /// page token in a subsequent request.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetActiveNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActiveNamesInput");
@@ -34267,6 +36204,12 @@ impl std::fmt::Debug for GetActiveNamesInput {
 pub struct ExportSnapshotInput {
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
     pub source_snapshot_name: std::option::Option<std::string::String>,
+}
+impl ExportSnapshotInput {
+    /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
+    pub fn source_snapshot_name(&self) -> std::option::Option<&str> {
+        self.source_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34284,6 +36227,16 @@ pub struct EnableAddOnInput {
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>An array of strings representing the add-on to enable or modify.</p>
     pub add_on_request: std::option::Option<crate::model::AddOnRequest>,
+}
+impl EnableAddOnInput {
+    /// <p>The name of the source resource for which to enable or modify the add-on.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>An array of strings representing the add-on to enable or modify.</p>
+    pub fn add_on_request(&self) -> std::option::Option<&crate::model::AddOnRequest> {
+        self.add_on_request.as_ref()
+    }
 }
 impl std::fmt::Debug for EnableAddOnInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34314,6 +36267,16 @@ pub struct DisableAddOnInput {
     /// <p>The name of the source resource for which to disable the add-on.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl DisableAddOnInput {
+    /// <p>The add-on type to disable.</p>
+    pub fn add_on_type(&self) -> std::option::Option<&crate::model::AddOnType> {
+        self.add_on_type.as_ref()
+    }
+    /// <p>The name of the source resource for which to disable the add-on.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableAddOnInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableAddOnInput");
@@ -34329,6 +36292,12 @@ impl std::fmt::Debug for DisableAddOnInput {
 pub struct DetachStaticIpInput {
     /// <p>The name of the static IP to detach from the instance.</p>
     pub static_ip_name: std::option::Option<std::string::String>,
+}
+impl DetachStaticIpInput {
+    /// <p>The name of the static IP to detach from the instance.</p>
+    pub fn static_ip_name(&self) -> std::option::Option<&str> {
+        self.static_ip_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachStaticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34348,6 +36317,17 @@ pub struct DetachInstancesFromLoadBalancerInput {
     /// balancer.</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DetachInstancesFromLoadBalancerInput {
+    /// <p>The name of the Lightsail load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>An array of strings containing the names of the instances you want to detach from the load
+    /// balancer.</p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachInstancesFromLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachInstancesFromLoadBalancerInput");
@@ -34364,6 +36344,13 @@ pub struct DetachDiskInput {
     /// <p>The unique name of the disk you want to detach from your instance (e.g.,
     /// <code>my-disk</code>).</p>
     pub disk_name: std::option::Option<std::string::String>,
+}
+impl DetachDiskInput {
+    /// <p>The unique name of the disk you want to detach from your instance (e.g.,
+    /// <code>my-disk</code>).</p>
+    pub fn disk_name(&self) -> std::option::Option<&str> {
+        self.disk_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachDiskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34382,6 +36369,14 @@ pub struct DetachCertificateFromDistributionInput {
     /// can specify.</p>
     pub distribution_name: std::option::Option<std::string::String>,
 }
+impl DetachCertificateFromDistributionInput {
+    /// <p>The name of the distribution from which to detach the certificate.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachCertificateFromDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachCertificateFromDistributionInput");
@@ -34396,6 +36391,12 @@ impl std::fmt::Debug for DetachCertificateFromDistributionInput {
 pub struct DeleteRelationalDatabaseSnapshotInput {
     /// <p>The name of the database snapshot that you are deleting.</p>
     pub relational_database_snapshot_name: std::option::Option<std::string::String>,
+}
+impl DeleteRelationalDatabaseSnapshotInput {
+    /// <p>The name of the database snapshot that you are deleting.</p>
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+        self.relational_database_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRelationalDatabaseSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34439,6 +36440,40 @@ pub struct DeleteRelationalDatabaseInput {
     /// </ul>
     pub final_relational_database_snapshot_name: std::option::Option<std::string::String>,
 }
+impl DeleteRelationalDatabaseInput {
+    /// <p>The name of the database that you are deleting.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>Determines whether a final database snapshot is created before your database is deleted.
+    /// If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is
+    /// specified, a database snapshot is created before your database is deleted.</p>
+    /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the
+    /// <code>skip final snapshot</code> parameter is <code>false</code>.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn skip_final_snapshot(&self) -> std::option::Option<bool> {
+        self.skip_final_snapshot
+    }
+    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is
+    /// <code>false</code>, which is the default value for that parameter.</p>
+    /// <note>
+    /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code>
+    /// parameter to <code>true</code> results in an error.</p>
+    /// </note>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p>
+    /// </li>
+    /// </ul>
+    pub fn final_relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+        self.final_relational_database_snapshot_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRelationalDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRelationalDatabaseInput");
@@ -34466,6 +36501,23 @@ pub struct DeleteLoadBalancerTlsCertificateInput {
     /// is in use by an instance attached to the load balancer.</p>
     pub force: std::option::Option<bool>,
 }
+impl DeleteLoadBalancerTlsCertificateInput {
+    /// <p>The load balancer name.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The SSL/TLS certificate name.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+    /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and
+    /// the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate
+    /// is in use by an instance attached to the load balancer.</p>
+    pub fn force(&self) -> std::option::Option<bool> {
+        self.force
+    }
+}
 impl std::fmt::Debug for DeleteLoadBalancerTlsCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerTlsCertificateInput");
@@ -34483,6 +36535,12 @@ pub struct DeleteLoadBalancerInput {
     /// <p>The name of the load balancer you want to delete.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
 }
+impl DeleteLoadBalancerInput {
+    /// <p>The name of the load balancer you want to delete.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerInput");
@@ -34497,6 +36555,12 @@ impl std::fmt::Debug for DeleteLoadBalancerInput {
 pub struct DeleteKnownHostKeysInput {
     /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl DeleteKnownHostKeysInput {
+    /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteKnownHostKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34513,6 +36577,12 @@ pub struct DeleteKeyPairInput {
     /// <p>The name of the key pair to delete.</p>
     pub key_pair_name: std::option::Option<std::string::String>,
 }
+impl DeleteKeyPairInput {
+    /// <p>The name of the key pair to delete.</p>
+    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+        self.key_pair_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteKeyPairInput");
@@ -34527,6 +36597,12 @@ impl std::fmt::Debug for DeleteKeyPairInput {
 pub struct DeleteInstanceSnapshotInput {
     /// <p>The name of the snapshot to delete.</p>
     pub instance_snapshot_name: std::option::Option<std::string::String>,
+}
+impl DeleteInstanceSnapshotInput {
+    /// <p>The name of the snapshot to delete.</p>
+    pub fn instance_snapshot_name(&self) -> std::option::Option<&str> {
+        self.instance_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInstanceSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34544,6 +36620,16 @@ pub struct DeleteInstanceInput {
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
     pub force_delete_add_ons: std::option::Option<bool>,
+}
+impl DeleteInstanceInput {
+    /// <p>The name of the instance to delete.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    pub fn force_delete_add_ons(&self) -> std::option::Option<bool> {
+        self.force_delete_add_ons
+    }
 }
 impl std::fmt::Debug for DeleteInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34563,6 +36649,16 @@ pub struct DeleteDomainEntryInput {
     /// <p>An array of key-value pairs containing information about your domain entries.</p>
     pub domain_entry: std::option::Option<crate::model::DomainEntry>,
 }
+impl DeleteDomainEntryInput {
+    /// <p>The name of the domain entry to delete.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>An array of key-value pairs containing information about your domain entries.</p>
+    pub fn domain_entry(&self) -> std::option::Option<&crate::model::DomainEntry> {
+        self.domain_entry.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainEntryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainEntryInput");
@@ -34578,6 +36674,12 @@ impl std::fmt::Debug for DeleteDomainEntryInput {
 pub struct DeleteDomainInput {
     /// <p>The specific domain name to delete.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteDomainInput {
+    /// <p>The specific domain name to delete.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34596,6 +36698,14 @@ pub struct DeleteDistributionInput {
     /// can specify.</p>
     pub distribution_name: std::option::Option<std::string::String>,
 }
+impl DeleteDistributionInput {
+    /// <p>The name of the distribution to delete.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDistributionInput");
@@ -34611,6 +36721,13 @@ pub struct DeleteDiskSnapshotInput {
     /// <p>The name of the disk snapshot you want to delete (e.g.,
     /// <code>my-disk-snapshot</code>).</p>
     pub disk_snapshot_name: std::option::Option<std::string::String>,
+}
+impl DeleteDiskSnapshotInput {
+    /// <p>The name of the disk snapshot you want to delete (e.g.,
+    /// <code>my-disk-snapshot</code>).</p>
+    pub fn disk_snapshot_name(&self) -> std::option::Option<&str> {
+        self.disk_snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDiskSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34629,6 +36746,16 @@ pub struct DeleteDiskInput {
     /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
     pub force_delete_add_ons: std::option::Option<bool>,
 }
+impl DeleteDiskInput {
+    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    pub fn disk_name(&self) -> std::option::Option<&str> {
+        self.disk_name.as_deref()
+    }
+    /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    pub fn force_delete_add_ons(&self) -> std::option::Option<bool> {
+        self.force_delete_add_ons
+    }
+}
 impl std::fmt::Debug for DeleteDiskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDiskInput");
@@ -34644,6 +36771,12 @@ impl std::fmt::Debug for DeleteDiskInput {
 pub struct DeleteContainerServiceInput {
     /// <p>The name of the container service to delete.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl DeleteContainerServiceInput {
+    /// <p>The name of the container service to delete.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteContainerServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34673,6 +36806,27 @@ pub struct DeleteContainerImageInput {
     /// </note>
     pub image: std::option::Option<std::string::String>,
 }
+impl DeleteContainerImageInput {
+    /// <p>The name of the container service for which to delete a registered container image.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the container image to delete from the container service.</p>
+    ///
+    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images
+    /// that are registered to a container service.</p>
+    ///
+    /// <note>
+    /// <p>Container images sourced from your Lightsail container service, that are registered
+    /// and stored on your service, start with a colon (<code>:</code>). For example,
+    /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a
+    /// public registry like Docker Hub don't start with a colon. For example,
+    /// <code>nginx:latest</code> or <code>nginx</code>.</p>
+    /// </note>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContainerImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContainerImageInput");
@@ -34695,6 +36849,18 @@ pub struct DeleteContactMethodInput {
     /// </note>
     pub protocol: std::option::Option<crate::model::ContactProtocol>,
 }
+impl DeleteContactMethodInput {
+    /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text
+    /// messaging).</p>
+    /// <note>
+    /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added
+    /// both, you must run separate <code>DeleteContactMethod</code> actions to delete each
+    /// protocol.</p>
+    /// </note>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::ContactProtocol> {
+        self.protocol.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteContactMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContactMethodInput");
@@ -34711,6 +36877,14 @@ pub struct DeleteCertificateInput {
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
     /// can specify.</p>
     pub certificate_name: std::option::Option<std::string::String>,
+}
+impl DeleteCertificateInput {
+    /// <p>The name of the certificate to delete.</p>
+    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
+    /// can specify.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34731,6 +36905,19 @@ pub struct DeleteBucketAccessKeyInput {
     /// <p>Use the <a>GetBucketAccessKeys</a> action to get a list of access key IDs that
     /// you can specify.</p>
     pub access_key_id: std::option::Option<std::string::String>,
+}
+impl DeleteBucketAccessKeyInput {
+    /// <p>The name of the bucket that the access key belongs to.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The ID of the access key to delete.</p>
+    ///
+    /// <p>Use the <a>GetBucketAccessKeys</a> action to get a list of access key IDs that
+    /// you can specify.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBucketAccessKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34774,6 +36961,40 @@ pub struct DeleteBucketInput {
     /// </important>
     pub force_delete: std::option::Option<bool>,
 }
+impl DeleteBucketInput {
+    /// <p>The name of the bucket to delete.</p>
+    ///
+    /// <p>Use the <a>GetBuckets</a> action to get a list of bucket names that you can
+    /// specify.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
+    ///
+    /// <p>You must force delete the bucket if it has one of the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The bucket is the origin of a distribution.</p>
+    /// </li>
+    /// <li>
+    /// <p>The bucket has instances that were granted access to it using the <a>SetResourceAccessForBucket</a> action.</p>
+    /// </li>
+    /// <li>
+    /// <p>The bucket has objects.</p>
+    /// </li>
+    /// <li>
+    /// <p>The bucket has access keys.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <important>
+    /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as
+    /// instances, distributions, or software that use the issued access keys.</p>
+    /// </important>
+    pub fn force_delete(&self) -> std::option::Option<bool> {
+        self.force_delete
+    }
+}
 impl std::fmt::Debug for DeleteBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBucketInput");
@@ -34795,6 +37016,19 @@ pub struct DeleteAutoSnapshotInput {
     /// resource.</p>
     pub date: std::option::Option<std::string::String>,
 }
+impl DeleteAutoSnapshotInput {
+    /// <p>The name of the source instance or disk from which to delete the automatic
+    /// snapshot.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+    /// <code>get auto snapshots</code> operation to get the available automatic snapshots for a
+    /// resource.</p>
+    pub fn date(&self) -> std::option::Option<&str> {
+        self.date.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAutoSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAutoSnapshotInput");
@@ -34810,6 +37044,12 @@ impl std::fmt::Debug for DeleteAutoSnapshotInput {
 pub struct DeleteAlarmInput {
     /// <p>The name of the alarm to delete.</p>
     pub alarm_name: std::option::Option<std::string::String>,
+}
+impl DeleteAlarmInput {
+    /// <p>The name of the alarm to delete.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34839,6 +37079,30 @@ pub struct CreateRelationalDatabaseSnapshotInput {
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateRelationalDatabaseSnapshotInput {
+    /// <p>The name of the database on which to base your new snapshot.</p>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The name for your new database snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p>
+    /// </li>
+    /// </ul>
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+        self.relational_database_snapshot_name.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRelationalDatabaseSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34920,6 +37184,89 @@ pub struct CreateRelationalDatabaseFromSnapshotInput {
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateRelationalDatabaseFromSnapshotInput {
+    /// <p>The name to use for your new Lightsail database resource.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p>
+    /// </li>
+    /// </ul>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The Availability Zone in which to create your new database. Use the
+    /// <code>us-east-2a</code> case-sensitive format.</p>
+    /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
+    /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
+    /// your request.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
+    /// specifies a database that is available to resources outside of your Lightsail account. A
+    /// value of <code>false</code> specifies a database that is available only to your Lightsail
+    /// resources in the same region as your database.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>The name of the database snapshot from which to create your new database.</p>
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+        self.relational_database_snapshot_name.as_deref()
+    }
+    /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
+    /// your database.</p>
+    /// <p>You can get a list of database bundle IDs by using the <code>get relational database
+    /// bundles</code> operation.</p>
+    /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller
+    /// than the bundle of the source database.</p>
+    pub fn relational_database_bundle_id(&self) -> std::option::Option<&str> {
+        self.relational_database_bundle_id.as_deref()
+    }
+    /// <p>The name of the source database.</p>
+    pub fn source_relational_database_name(&self) -> std::option::Option<&str> {
+        self.source_relational_database_name.as_deref()
+    }
+    /// <p>The date and time to restore your database from.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the database.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is
+    /// <code>true</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then
+    /// you input <code>1538424000</code> as the restore time.</p>
+    /// </li>
+    /// </ul>
+    pub fn restore_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.restore_time.as_ref()
+    }
+    /// <p>Specifies whether your database is restored from the latest backup time. A value of
+    /// <code>true</code> restores from the latest backup time. </p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is
+    /// provided.</p>
+    pub fn use_latest_restorable_time(&self) -> std::option::Option<bool> {
+        self.use_latest_restorable_time
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRelationalDatabaseFromSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35137,6 +37484,213 @@ pub struct CreateRelationalDatabaseInput {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateRelationalDatabaseInput {
+    /// <p>The name to use for your new Lightsail database resource.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p>
+    /// </li>
+    /// </ul>
+    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+        self.relational_database_name.as_deref()
+    }
+    /// <p>The Availability Zone in which to create your new database. Use the
+    /// <code>us-east-2a</code> case-sensitive format.</p>
+    /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
+    /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
+    /// your request.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of
+    /// a database.</p>
+    /// <p>You can get a list of database blueprints IDs by using the <code>get relational database
+    /// blueprints</code> operation.</p>
+    pub fn relational_database_blueprint_id(&self) -> std::option::Option<&str> {
+        self.relational_database_blueprint_id.as_deref()
+    }
+    /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
+    /// your database.</p>
+    /// <p>You can get a list of database bundle IDs by using the <code>get relational database
+    /// bundles</code> operation.</p>
+    pub fn relational_database_bundle_id(&self) -> std::option::Option<&str> {
+        self.relational_database_bundle_id.as_deref()
+    }
+    /// <p>The meaning of this parameter differs according to the database engine you use.</p>
+    /// <p>
+    /// <b>MySQL</b>
+    /// </p>
+    /// <p>The name of the database to create when the Lightsail database resource is created. If
+    /// this parameter isn't specified, no database is created in the database resource.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain 1 to 64 letters or numbers.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+    /// (0- 9).</p>
+    /// </li>
+    /// <li>
+    /// <p>Can't be a word reserved by the specified database engine.</p>
+    /// <p>For more information about reserved words in MySQL, see the Keywords and Reserved
+    /// Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>
+    /// <p>The name of the database to create when the Lightsail database resource is created. If
+    /// this parameter isn't specified, a database named <code>postgres</code> is created in the
+    /// database resource.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain 1 to 63 letters or numbers.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+    /// (0- 9).</p>
+    /// </li>
+    /// <li>
+    /// <p>Can't be a word reserved by the specified database engine.</p>
+    /// <p>For more information about reserved words in PostgreSQL, see the SQL Key Words
+    /// articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL
+    /// 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
+    /// 12</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn master_database_name(&self) -> std::option::Option<&str> {
+        self.master_database_name.as_deref()
+    }
+    /// <p>The name for the master user.</p>
+    /// <p>
+    /// <b>MySQL</b>
+    /// </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Required for MySQL.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers. Can contain underscores.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p>
+    /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
+    /// Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Required for PostgreSQL.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be 1 to 63 letters or numbers. Can contain underscores.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p>
+    /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
+    /// Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL
+    /// 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL
+    /// 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
+    /// 12</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>The password for the master user. The password can include any printable ASCII character
+    /// except "/", """, or "@". It cannot contain spaces.</p>
+    /// <p>
+    /// <b>MySQL</b>
+    /// </p>
+    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>
+    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>The daily time range during which automated backups are created for your new database if
+    /// automated backups are enabled.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// AWS Region. For more information about the preferred backup window time blocks for each
+    /// region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
+    /// <p>Example: <code>16:00-16:30</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p>
+    /// </li>
+    /// </ul>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>The weekly time range during which system maintenance can occur on your new
+    /// database.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
+    /// AWS Region, occurring on a random day of the week.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p>
+    /// </li>
+    /// <li>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>Example: <code>Tue:17:00-Tue:17:30</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
+    /// specifies a database that is available to resources outside of your Lightsail account. A
+    /// value of <code>false</code> specifies a database that is available only to your Lightsail
+    /// resources in the same region as your database.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRelationalDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRelationalDatabaseInput");
@@ -35186,6 +37740,36 @@ pub struct CreateLoadBalancerTlsCertificateInput {
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateLoadBalancerTlsCertificateInput {
+    /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The SSL/TLS certificate name.</p>
+    /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load
+    /// balancer can have up to 2 certificates associated with it at one time. There is also an
+    /// overall limit to the number of certificates that can be issue in a 365-day period. For more
+    /// information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
+    pub fn certificate_domain_name(&self) -> std::option::Option<&str> {
+        self.certificate_domain_name.as_deref()
+    }
+    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS
+    /// certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9
+    /// alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g.,
+    /// <code>*.example.com</code>).</p>
+    pub fn certificate_alternative_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_alternative_names.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLoadBalancerTlsCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35240,6 +37824,57 @@ pub struct CreateLoadBalancerInput {
     /// <p>The default value is <code>dualstack</code>.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
+impl CreateLoadBalancerInput {
+    /// <p>The name of your load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The instance port where you're creating your load balancer.</p>
+    pub fn instance_port(&self) -> i32 {
+        self.instance_port
+    }
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a
+    /// health check path, Lightsail uses the root path of your website (e.g.,
+    /// <code>"/"</code>).</p>
+    /// <p>You may want to specify a custom health check path other than the root of your application
+    /// if your home page loads slowly or has a lot of media or scripting on it.</p>
+    pub fn health_check_path(&self) -> std::option::Option<&str> {
+        self.health_check_path.as_deref()
+    }
+    /// <p>The name of the SSL/TLS certificate.</p>
+    /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is
+    /// required (and vice-versa).</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>The domain name with which your certificate is associated (e.g.,
+    /// <code>example.com</code>).</p>
+    /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is
+    /// required (and vice-versa).</p>
+    pub fn certificate_domain_name(&self) -> std::option::Option<&str> {
+        self.certificate_domain_name.as_deref()
+    }
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate
+    /// (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>,
+    /// <code>blog.example.com</code>).</p>
+    pub fn certificate_alternative_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_alternative_names.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The IP address type for the load balancer.</p>
+    ///
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+    /// IPv4 and IPv6.</p>
+    ///
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerInput");
@@ -35268,6 +37903,17 @@ pub struct CreateKeyPairInput {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateKeyPairInput {
+    /// <p>The name for your new key pair.</p>
+    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+        self.key_pair_name.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateKeyPairInput");
@@ -35288,6 +37934,21 @@ pub struct CreateInstanceSnapshotInput {
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateInstanceSnapshotInput {
+    /// <p>The name for your new snapshot.</p>
+    pub fn instance_snapshot_name(&self) -> std::option::Option<&str> {
+        self.instance_snapshot_name.as_deref()
+    }
+    /// <p>The Lightsail instance on which to base your snapshot.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInstanceSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35402,6 +38063,134 @@ pub struct CreateInstancesFromSnapshotInput {
     /// </ul>
     pub use_latest_restorable_auto_snapshot: std::option::Option<bool>,
 }
+impl CreateInstancesFromSnapshotInput {
+    /// <p>The names for your new instances.</p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
+    /// <p>An object containing information about one or more disk mappings.</p>
+    pub fn attached_disk_mapping(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DiskMap>>,
+    > {
+        self.attached_disk_mapping.as_ref()
+    }
+    /// <p>The Availability Zone where you want to create your instances. Use the following
+    /// formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones
+    /// by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+    /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
+    /// parameter to your request.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get
+    /// instance snapshots operation to return information about your existing snapshots.</p>
+    /// <p>Constraint:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>source instance name</code>
+    /// parameter. The <code>instance snapshot name</code> and <code>source instance name</code>
+    /// parameters are mutually exclusive.</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_snapshot_name(&self) -> std::option::Option<&str> {
+        self.instance_snapshot_name.as_deref()
+    }
+    /// <p>The bundle of specification information for your virtual private server (or
+    /// <i>instance</i>), including the pricing plan (e.g.,
+    /// <code>micro_1_0</code>).</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>You can create a launch script that configures a server with additional user data. For
+    /// example, <code>apt-get -y update</code>.</p>
+    /// <note>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance
+    /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
+    /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
+    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// </note>
+    pub fn user_data(&self) -> std::option::Option<&str> {
+        self.user_data.as_deref()
+    }
+    /// <p>The name for your key pair.</p>
+    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+        self.key_pair_name.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
+    pub fn add_ons(&self) -> std::option::Option<&[crate::model::AddOnRequest]> {
+        self.add_ons.as_deref()
+    }
+    /// <p>The IP address type for the instance.</p>
+    ///
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+    /// IPv4 and IPv6.</p>
+    ///
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>The name of the source instance from which the source automatic snapshot was
+    /// created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code>
+    /// parameter. The <code>source instance name</code> and <code>instance snapshot name</code>
+    /// parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_instance_name(&self) -> std::option::Option<&str> {
+        self.source_instance_name.as_deref()
+    }
+    /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto
+    /// snapshots</code> operation to identify the dates of the available automatic
+    /// snapshots.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
+    /// </li>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
+    /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
+    /// auto snapshot</code> parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn restore_date(&self) -> std::option::Option<&str> {
+        self.restore_date.as_deref()
+    }
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>restore date</code>
+    /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
+    /// date</code> parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn use_latest_restorable_auto_snapshot(&self) -> std::option::Option<bool> {
+        self.use_latest_restorable_auto_snapshot
+    }
+}
 impl std::fmt::Debug for CreateInstancesFromSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstancesFromSnapshotInput");
@@ -35484,6 +38273,82 @@ pub struct CreateInstancesInput {
     /// <p>The default value is <code>dualstack</code>.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
+impl CreateInstancesInput {
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using
+    /// quotation marks and commas, for example:
+    /// <code>["MyFirstInstance","MySecondInstance"]</code>
+    /// </p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
+    /// <p>The Availability Zone in which to create your instance. Use the following format:
+    /// <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using
+    /// the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+    /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
+    /// parameter to your request.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>(Deprecated) The name for your custom image.</p>
+    /// <note>
+    /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now
+    /// deprecated.</p>
+    /// </note>
+    pub fn custom_image_name(&self) -> std::option::Option<&str> {
+        self.custom_image_name.as_deref()
+    }
+    /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
+    /// <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list
+    /// of available images (or <i>blueprints</i>).</p>
+    /// <note>
+    /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to
+    /// support customers with existing instances and are not necessarily available to create new
+    /// instances. Blueprints are marked inactive when they become outdated due to operating system
+    /// updates or new application releases.</p>
+    /// </note>
+    pub fn blueprint_id(&self) -> std::option::Option<&str> {
+        self.blueprint_id.as_deref()
+    }
+    /// <p>The bundle of specification information for your virtual private server (or
+    /// <i>instance</i>), including the pricing plan (e.g.,
+    /// <code>micro_1_0</code>).</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>A launch script you can create that configures a server with additional user data. For
+    /// example, you might want to run <code>apt-get -y update</code>.</p>
+    /// <note>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance
+    /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
+    /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
+    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// </note>
+    pub fn user_data(&self) -> std::option::Option<&str> {
+        self.user_data.as_deref()
+    }
+    /// <p>The name of your key pair.</p>
+    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+        self.key_pair_name.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
+    pub fn add_ons(&self) -> std::option::Option<&[crate::model::AddOnRequest]> {
+        self.add_ons.as_deref()
+    }
+    /// <p>The IP address type for the instance.</p>
+    ///
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+    /// IPv4 and IPv6.</p>
+    ///
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstancesInput");
@@ -35511,6 +38376,17 @@ pub struct CreateDomainEntryInput {
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
     pub domain_entry: std::option::Option<crate::model::DomainEntry>,
 }
+impl CreateDomainEntryInput {
+    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain
+    /// entry.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>An array of key-value pairs containing information about the domain entry request.</p>
+    pub fn domain_entry(&self) -> std::option::Option<&crate::model::DomainEntry> {
+        self.domain_entry.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainEntryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainEntryInput");
@@ -35535,6 +38411,23 @@ pub struct CreateDomainInput {
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDomainInput {
+    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <note>
+    /// <p>You cannot register a new domain name using Lightsail. You must register a domain name
+    /// using Amazon Route 53 or another domain name registrar. If you have already registered your
+    /// domain, you can enter its name in this parameter to manage the DNS records for that domain
+    /// using Lightsail.</p>
+    /// </note>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35578,6 +38471,52 @@ pub struct CreateDistributionInput {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDistributionInput {
+    /// <p>The name for the distribution.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
+    /// instance or load balancer.</p>
+    /// <p>The distribution pulls, caches, and serves content from the origin.</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::InputOrigin> {
+        self.origin.as_ref()
+    }
+    /// <p>An object that describes the default cache behavior for the distribution.</p>
+    pub fn default_cache_behavior(&self) -> std::option::Option<&crate::model::CacheBehavior> {
+        self.default_cache_behavior.as_ref()
+    }
+    /// <p>An object that describes the cache behavior settings for the distribution.</p>
+    pub fn cache_behavior_settings(&self) -> std::option::Option<&crate::model::CacheSettings> {
+        self.cache_behavior_settings.as_ref()
+    }
+    /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
+    pub fn cache_behaviors(&self) -> std::option::Option<&[crate::model::CacheBehaviorPerPath]> {
+        self.cache_behaviors.as_deref()
+    }
+    /// <p>The bundle ID to use for the distribution.</p>
+    /// <p>A distribution bundle describes the specifications of your distribution, such as the
+    /// monthly cost and monthly network transfer quota.</p>
+    /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
+    /// IDs that you can specify.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The IP address type for the distribution.</p>
+    ///
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+    /// IPv4 and IPv6.</p>
+    ///
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>The tag keys and optional values to add to the distribution during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDistributionInput");
@@ -35618,6 +38557,37 @@ pub struct CreateDiskSnapshotInput {
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDiskSnapshotInput {
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+    /// <note>
+    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter.
+    /// The <code>disk name</code> and <code>instance name</code> parameters are mutually
+    /// exclusive.</p>
+    /// </note>
+    pub fn disk_name(&self) -> std::option::Option<&str> {
+        self.disk_name.as_deref()
+    }
+    /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on
+    /// the source disk.</p>
+    pub fn disk_snapshot_name(&self) -> std::option::Option<&str> {
+        self.disk_snapshot_name.as_deref()
+    }
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>).
+    /// When this is defined, a snapshot of the instance's system volume is created.</p>
+    /// <note>
+    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The
+    /// <code>instance name</code> and <code>disk name</code> parameters are mutually
+    /// exclusive.</p>
+    /// </note>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDiskSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35708,6 +38678,99 @@ pub struct CreateDiskFromSnapshotInput {
     /// </ul>
     pub use_latest_restorable_auto_snapshot: std::option::Option<bool>,
 }
+impl CreateDiskFromSnapshotInput {
+    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    pub fn disk_name(&self) -> std::option::Option<&str> {
+        self.disk_name.as_deref()
+    }
+    /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the
+    /// new storage disk.</p>
+    /// <p>Constraint:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>source disk name</code>
+    /// parameter. The <code>disk snapshot name</code> and <code>source disk name</code>
+    /// parameters are mutually exclusive.</p>
+    /// </li>
+    /// </ul>
+    pub fn disk_snapshot_name(&self) -> std::option::Option<&str> {
+        self.disk_snapshot_name.as_deref()
+    }
+    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
+    /// Choose the same Availability Zone as the Lightsail instance where you want to create the
+    /// disk.</p>
+    /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently
+    /// available.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    pub fn size_in_gb(&self) -> std::option::Option<i32> {
+        self.size_in_gb
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
+    pub fn add_ons(&self) -> std::option::Option<&[crate::model::AddOnRequest]> {
+        self.add_ons.as_deref()
+    }
+    /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code>
+    /// parameter. The <code>source disk name</code> and <code>disk snapshot name</code>
+    /// parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
+    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_disk_name(&self) -> std::option::Option<&str> {
+        self.source_disk_name.as_deref()
+    }
+    /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto
+    /// snapshots</code> operation to identify the dates of the available automatic
+    /// snapshots.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
+    /// </li>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
+    /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
+    /// auto snapshot</code> parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
+    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn restore_date(&self) -> std::option::Option<&str> {
+        self.restore_date.as_deref()
+    }
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>restore date</code>
+    /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
+    /// date</code> parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
+    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn use_latest_restorable_auto_snapshot(&self) -> std::option::Option<bool> {
+        self.use_latest_restorable_auto_snapshot
+    }
+}
 impl std::fmt::Debug for CreateDiskFromSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDiskFromSnapshotInput");
@@ -35747,6 +38810,33 @@ pub struct CreateDiskInput {
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
     pub add_ons: std::option::Option<std::vec::Vec<crate::model::AddOnRequest>>,
 }
+impl CreateDiskInput {
+    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    pub fn disk_name(&self) -> std::option::Option<&str> {
+        self.disk_name.as_deref()
+    }
+    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
+    /// Use the same Availability Zone as the Lightsail instance to which you want to attach the
+    /// disk.</p>
+    /// <p>Use the <code>get regions</code> operation to list the Availability Zones where
+    /// Lightsail is currently available.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    pub fn size_in_gb(&self) -> std::option::Option<i32> {
+        self.size_in_gb
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
+    pub fn add_ons(&self) -> std::option::Option<&[crate::model::AddOnRequest]> {
+        self.add_ons.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDiskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDiskInput");
@@ -35784,6 +38874,25 @@ pub struct CreateContainerServiceDeploymentInput {
     /// <p>An object that describes the settings of the public endpoint for the container
     /// service.</p>
     pub public_endpoint: std::option::Option<crate::model::EndpointRequest>,
+}
+impl CreateContainerServiceDeploymentInput {
+    /// <p>The name of the container service for which to create the deployment.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>An object that describes the settings of the containers that will be launched on the
+    /// container service.</p>
+    pub fn containers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Container>>
+    {
+        self.containers.as_ref()
+    }
+    /// <p>An object that describes the settings of the public endpoint for the container
+    /// service.</p>
+    pub fn public_endpoint(&self) -> std::option::Option<&crate::model::EndpointRequest> {
+        self.public_endpoint.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateContainerServiceDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35880,6 +38989,104 @@ pub struct CreateContainerServiceInput {
     /// configuration.</p>
     pub deployment: std::option::Option<crate::model::ContainerServiceDeploymentRequest>,
 }
+impl CreateContainerServiceInput {
+    /// <p>The name for the container service.</p>
+    ///
+    /// <p>The name that you specify for your container service will make up part of its default
+    /// domain. The default domain of a container service is typically
+    /// <code>https://<ServiceName>.<RandomGUID>.<AWSRegion>.cs.amazonlightsail.com</code>.
+    /// If the name of your container service is <code>container-service-1</code>, and it's located in
+    /// the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container
+    /// service will be like the following example:
+    /// <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+    /// </p>
+    ///
+    /// <p>The following are the requirements for container service names:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Must be unique within each AWS Region in your Lightsail account.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain 1 to 63 characters.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must contain only alphanumeric characters and hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p>
+    /// </li>
+    /// </ul>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The power specification for the container service.</p>
+    ///
+    /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the
+    /// container service. The <code>power</code> and <code>scale</code> of a container service makes
+    /// up its configured capacity. To determine the monthly price of your container service, multiply
+    /// the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of
+    /// the service.</p>
+    ///
+    /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that
+    /// you can specify using this parameter, and their base monthly cost.</p>
+    pub fn power(&self) -> std::option::Option<&crate::model::ContainerServicePowerName> {
+        self.power.as_ref()
+    }
+    /// <p>The scale specification for the container service.</p>
+    ///
+    /// <p>The scale specifies the allocated compute nodes of the container service. The
+    /// <code>power</code> and <code>scale</code> of a container service makes up its configured
+    /// capacity. To determine the monthly price of your container service, multiply the base price of
+    /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
+    /// service.</p>
+    pub fn scale(&self) -> std::option::Option<i32> {
+        self.scale
+    }
+    /// <p>The tag keys and optional values to add to the container service during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The public domain names to use with the container service, such as
+    /// <code>example.com</code> and <code>www.example.com</code>.</p>
+    ///
+    /// <p>You can specify up to four public domain names for a container service. The domain names
+    /// that you specify are used when you create a deployment with a container configured as the
+    /// public endpoint of your container service.</p>
+    ///
+    /// <p>If you don't specify public domain names, then you can use the default domain of the
+    /// container service.</p>
+    ///
+    /// <important>
+    /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
+    /// names with your container service. Use the <code>CreateCertificate</code> action to create a
+    /// certificate for the public domain names you want to use with your container service.</p>
+    /// </important>
+    ///
+    /// <p>You can specify public domain names using a string to array map as shown in the example
+    /// later on this page.</p>
+    pub fn public_domain_names(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.public_domain_names.as_ref()
+    }
+    /// <p>An object that describes a deployment for the container service.</p>
+    ///
+    /// <p>A deployment specifies the containers that will be launched on the container service and
+    /// their settings, such as the ports to open, the environment variables to apply, and the launch
+    /// command to run. It also specifies the container that will serve as the public endpoint of the
+    /// deployment and its settings, such as the HTTP or HTTPS port to use, and the health check
+    /// configuration.</p>
+    pub fn deployment(
+        &self,
+    ) -> std::option::Option<&crate::model::ContainerServiceDeploymentRequest> {
+        self.deployment.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateContainerServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContainerServiceInput");
@@ -35934,6 +39141,48 @@ pub struct CreateContactMethodInput {
     /// +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
     pub contact_endpoint: std::option::Option<std::string::String>,
 }
+impl CreateContactMethodInput {
+    /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text
+    /// messaging).</p>
+    /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>US East (N. Virginia) (<code>us-east-1</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>US West (Oregon) (<code>us-west-2</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>Europe (Ireland) (<code>eu-west-1</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS
+    /// Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer
+    /// Guide</i>.</p>
+    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::ContactProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The destination of the contact method, such as an email address or a mobile phone
+    /// number.</p>
+    /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the
+    /// phone number structure used for international telecommunication. Phone numbers that follow
+    /// this format can have a maximum of 15 digits, and they are prefixed with the plus character (+)
+    /// and the country code. For example, a U.S. phone number in E.164 format would be specified as
+    /// +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
+    pub fn contact_endpoint(&self) -> std::option::Option<&str> {
+        self.contact_endpoint.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContactMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactMethodInput");
@@ -35951,6 +39200,14 @@ pub struct CreateCloudFormationStackInput {
     /// pass one instance entry at a time in this array. You will get an invalid parameter error if
     /// you pass more than one instance entry in this array.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceEntry>>,
+}
+impl CreateCloudFormationStackInput {
+    /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only
+    /// pass one instance entry at a time in this array. You will get an invalid parameter error if
+    /// you pass more than one instance entry in this array.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceEntry]> {
+        self.instances.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCloudFormationStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35978,6 +39235,29 @@ pub struct CreateCertificateInput {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateCertificateInput {
+    /// <p>The name for the certificate.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
+    /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain
+    /// name).</p>
+    /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
+    pub fn subject_alternative_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.subject_alternative_names.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the certificate during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCertificateInput");
@@ -35995,6 +39275,12 @@ impl std::fmt::Debug for CreateCertificateInput {
 pub struct CreateBucketAccessKeyInput {
     /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
     pub bucket_name: std::option::Option<std::string::String>,
+}
+impl CreateBucketAccessKeyInput {
+    /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBucketAccessKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36034,6 +39320,42 @@ pub struct CreateBucketInput {
     /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the
     /// <i>Amazon Lightsail Developer Guide</i>.</p>
     pub enable_object_versioning: std::option::Option<bool>,
+}
+impl CreateBucketInput {
+    /// <p>The name for the bucket.</p>
+    ///
+    /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
+    /// Guide</i>.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The ID of the bundle to use for the bucket.</p>
+    ///
+    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
+    /// bucket.</p>
+    ///
+    /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
+    /// specify.</p>
+    ///
+    /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle after the bucket
+    /// is created.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The tag keys and optional values to add to the bucket during creation.</p>
+    ///
+    /// <p>Use the <a>TagResource</a> action to tag the bucket after it's created.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A Boolean value that indicates whether to enable versioning of objects in the
+    /// bucket.</p>
+    ///
+    /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the
+    /// <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn enable_object_versioning(&self) -> std::option::Option<bool> {
+        self.enable_object_versioning
+    }
 }
 impl std::fmt::Debug for CreateBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36107,6 +39429,76 @@ pub struct CopySnapshotInput {
     /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
     pub source_region: std::option::Option<crate::model::RegionName>,
 }
+impl CopySnapshotInput {
+    /// <p>The name of the source manual snapshot to copy.</p>
+    /// <p>Constraint:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Define this parameter only when copying a manual snapshot as another manual
+    /// snapshot.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_snapshot_name(&self) -> std::option::Option<&str> {
+        self.source_snapshot_name.as_deref()
+    }
+    /// <p>The name of the source instance or disk from which the source automatic snapshot was
+    /// created.</p>
+    /// <p>Constraint:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_resource_name(&self) -> std::option::Option<&str> {
+        self.source_resource_name.as_deref()
+    }
+    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code>
+    /// operation to identify the dates of the available automatic snapshots.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
+    /// </li>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
+    /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
+    /// auto snapshot</code> parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn restore_date(&self) -> std::option::Option<&str> {
+        self.restore_date.as_deref()
+    }
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the
+    /// specified source instance or disk.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This parameter cannot be defined together with the <code>restore date</code>
+    /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
+    /// date</code> parameters are mutually exclusive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn use_latest_restorable_auto_snapshot(&self) -> std::option::Option<bool> {
+        self.use_latest_restorable_auto_snapshot
+    }
+    /// <p>The name of the new manual snapshot to be created as a copy.</p>
+    pub fn target_snapshot_name(&self) -> std::option::Option<&str> {
+        self.target_snapshot_name.as_deref()
+    }
+    /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+    pub fn source_region(&self) -> std::option::Option<&crate::model::RegionName> {
+        self.source_region.as_ref()
+    }
+}
 impl std::fmt::Debug for CopySnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopySnapshotInput");
@@ -36132,6 +39524,16 @@ pub struct CloseInstancePublicPortsInput {
     /// <p>The name of the instance for which to close ports.</p>
     pub instance_name: std::option::Option<std::string::String>,
 }
+impl CloseInstancePublicPortsInput {
+    /// <p>An object to describe the ports to close for the specified instance.</p>
+    pub fn port_info(&self) -> std::option::Option<&crate::model::PortInfo> {
+        self.port_info.as_ref()
+    }
+    /// <p>The name of the instance for which to close ports.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CloseInstancePublicPortsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloseInstancePublicPortsInput");
@@ -36149,6 +39551,16 @@ pub struct AttachStaticIpInput {
     pub static_ip_name: std::option::Option<std::string::String>,
     /// <p>The instance name to which you want to attach the static IP address.</p>
     pub instance_name: std::option::Option<std::string::String>,
+}
+impl AttachStaticIpInput {
+    /// <p>The name of the static IP.</p>
+    pub fn static_ip_name(&self) -> std::option::Option<&str> {
+        self.static_ip_name.as_deref()
+    }
+    /// <p>The instance name to which you want to attach the static IP address.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachStaticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36168,6 +39580,17 @@ pub struct AttachLoadBalancerTlsCertificateInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of your SSL/TLS certificate.</p>
     pub certificate_name: std::option::Option<std::string::String>,
+}
+impl AttachLoadBalancerTlsCertificateInput {
+    /// <p>The name of the load balancer to which you want to associate the SSL/TLS
+    /// certificate.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The name of your SSL/TLS certificate.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachLoadBalancerTlsCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36193,6 +39616,22 @@ pub struct AttachInstancesToLoadBalancerInput {
     /// (20).</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AttachInstancesToLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>An array of strings representing the instance name(s) you want to attach to your load
+    /// balancer.</p>
+    /// <p>An instance must be <code>running</code> before you can attach it to your load
+    /// balancer.</p>
+    /// <p>There are no additional limits on the number of instances you can attach to your load
+    /// balancer, aside from the limit of Lightsail instances you can create in your account
+    /// (20).</p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachInstancesToLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachInstancesToLoadBalancerInput");
@@ -36212,6 +39651,20 @@ pub struct AttachDiskInput {
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
     pub disk_path: std::option::Option<std::string::String>,
+}
+impl AttachDiskInput {
+    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    pub fn disk_name(&self) -> std::option::Option<&str> {
+        self.disk_name.as_deref()
+    }
+    /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    pub fn disk_path(&self) -> std::option::Option<&str> {
+        self.disk_path.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachDiskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36245,6 +39698,29 @@ pub struct AttachCertificateToDistributionInput {
     /// </note>
     pub certificate_name: std::option::Option<std::string::String>,
 }
+impl AttachCertificateToDistributionInput {
+    /// <p>The name of the distribution that the certificate will be attached to.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
+    /// can specify.</p>
+    pub fn distribution_name(&self) -> std::option::Option<&str> {
+        self.distribution_name.as_deref()
+    }
+    /// <p>The name of the certificate to attach to a distribution.</p>
+    /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a
+    /// distribution.</p>
+    /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
+    /// can specify.</p>
+    /// <note>
+    /// <p>This is the name of the certificate resource type and is used only to reference the
+    /// certificate in other API actions. It can be different than the domain name of the
+    /// certificate. For example, your certificate name might be
+    /// <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be
+    /// <code>example.com</code>.</p>
+    /// </note>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachCertificateToDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachCertificateToDistributionInput");
@@ -36260,6 +39736,12 @@ impl std::fmt::Debug for AttachCertificateToDistributionInput {
 pub struct AllocateStaticIpInput {
     /// <p>The name of the static IP address.</p>
     pub static_ip_name: std::option::Option<std::string::String>,
+}
+impl AllocateStaticIpInput {
+    /// <p>The name of the static IP address.</p>
+    pub fn static_ip_name(&self) -> std::option::Option<&str> {
+        self.static_ip_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AllocateStaticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

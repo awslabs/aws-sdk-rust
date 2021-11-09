@@ -106,6 +106,29 @@ pub struct SearchInsightsOutput {
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchInsightsOutput {
+    /// <p>
+    /// The returned proactive insights.
+    /// </p>
+    pub fn proactive_insights(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProactiveInsightSummary]> {
+        self.proactive_insights.as_deref()
+    }
+    /// <p>
+    /// The returned reactive insights.
+    /// </p>
+    pub fn reactive_insights(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReactiveInsightSummary]> {
+        self.reactive_insights.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchInsightsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchInsightsOutput");
@@ -281,6 +304,19 @@ pub struct ListRecommendationsOutput {
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRecommendationsOutput {
+    /// <p>
+    /// An array of the requested recommendations.
+    /// </p>
+    pub fn recommendations(&self) -> std::option::Option<&[crate::model::Recommendation]> {
+        self.recommendations.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecommendationsOutput");
@@ -362,6 +398,19 @@ pub struct ListNotificationChannelsOutput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNotificationChannelsOutput {
+    /// <p>
+    /// An array that contains the requested notification channels.
+    /// </p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::NotificationChannel]> {
+        self.channels.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNotificationChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,6 +497,29 @@ pub struct ListInsightsOutput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInsightsOutput {
+    /// <p>
+    /// The returned list of proactive insights.
+    /// </p>
+    pub fn proactive_insights(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProactiveInsightSummary]> {
+        self.proactive_insights.as_deref()
+    }
+    /// <p>
+    /// The returned list of reactive insights.  
+    /// </p>
+    pub fn reactive_insights(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReactiveInsightSummary]> {
+        self.reactive_insights.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInsightsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -564,6 +636,19 @@ pub struct ListEventsOutput {
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEventsOutput {
+    /// <p>
+    /// A list of the requested events.
+    /// </p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventsOutput");
@@ -650,6 +735,29 @@ pub struct ListAnomaliesForInsightOutput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnomaliesForInsightOutput {
+    /// <p>
+    /// An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies
+    /// </p>
+    pub fn proactive_anomalies(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProactiveAnomalySummary]> {
+        self.proactive_anomalies.as_deref()
+    }
+    /// <p>
+    /// An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies
+    /// </p>
+    pub fn reactive_anomalies(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReactiveAnomalySummary]> {
+        self.reactive_anomalies.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAnomaliesForInsightOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -767,6 +875,22 @@ pub struct GetResourceCollectionOutput {
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourceCollectionOutput {
+    /// <p>
+    /// The requested list of AWS resource collections. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceCollectionFilter> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceCollectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceCollectionOutput");
@@ -857,6 +981,39 @@ pub struct GetCostEstimationOutput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCostEstimationOutput {
+    /// <p>The collection of the AWS resources used to create your monthly DevOps Guru cost estimate.</p>
+    pub fn resource_collection(
+        &self,
+    ) -> std::option::Option<&crate::model::CostEstimationResourceCollectionFilter> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>The status of creating this cost estimate. If it's still in progress, the status
+    /// <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CostEstimationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An array of <code>ResourceCost</code> objects that each contains details
+    /// about the monthly cost estimate to analyze one of your AWS resources.</p>
+    pub fn costs(&self) -> std::option::Option<&[crate::model::ServiceResourceCost]> {
+        self.costs.as_deref()
+    }
+    /// <p>The start and end time of the cost estimation.</p>
+    pub fn time_range(&self) -> std::option::Option<&crate::model::CostEstimationTimeRange> {
+        self.time_range.as_ref()
+    }
+    /// <p>The estimated monthly cost to analyze the AWS resources.
+    /// This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code>
+    /// object in this response.</p>
+    pub fn total_cost(&self) -> f64 {
+        self.total_cost
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCostEstimationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1005,6 +1162,16 @@ pub struct DescribeServiceIntegrationOutput {
     /// </p>
     pub service_integration: std::option::Option<crate::model::ServiceIntegrationConfig>,
 }
+impl DescribeServiceIntegrationOutput {
+    /// <p>
+    /// Information about the integration of DevOps Guru with another AWS service, such as AWS Systems Manager.
+    /// </p>
+    pub fn service_integration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceIntegrationConfig> {
+        self.service_integration.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceIntegrationOutput");
@@ -1071,6 +1238,25 @@ pub struct DescribeResourceCollectionHealthOutput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeResourceCollectionHealthOutput {
+    /// <p>
+    /// The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with
+    /// the requested system health information.
+    /// </p>
+    pub fn cloud_formation(&self) -> std::option::Option<&[crate::model::CloudFormationHealth]> {
+        self.cloud_formation.as_deref()
+    }
+    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the AWS services
+    /// associated with the resources in the collection.</p>
+    pub fn service(&self) -> std::option::Option<&[crate::model::ServiceHealth]> {
+        self.service.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeResourceCollectionHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1184,6 +1370,20 @@ pub struct DescribeInsightOutput {
     /// </p>
     pub reactive_insight: std::option::Option<crate::model::ReactiveInsight>,
 }
+impl DescribeInsightOutput {
+    /// <p>
+    /// A <code>ProactiveInsight</code> object that represents the requested insight.
+    /// </p>
+    pub fn proactive_insight(&self) -> std::option::Option<&crate::model::ProactiveInsight> {
+        self.proactive_insight.as_ref()
+    }
+    /// <p>
+    /// A <code>ReactiveInsight</code> object that represents the requested insight.
+    /// </p>
+    pub fn reactive_insight(&self) -> std::option::Option<&crate::model::ReactiveInsight> {
+        self.reactive_insight.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInsightOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInsightOutput");
@@ -1261,6 +1461,14 @@ pub struct DescribeFeedbackOutput {
     /// </p>
     pub insight_feedback: std::option::Option<crate::model::InsightFeedback>,
 }
+impl DescribeFeedbackOutput {
+    /// <p>
+    /// Information about insight feedback received from a customer.
+    /// </p>
+    pub fn insight_feedback(&self) -> std::option::Option<&crate::model::InsightFeedback> {
+        self.insight_feedback.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFeedbackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFeedbackOutput");
@@ -1321,6 +1529,20 @@ pub struct DescribeAnomalyOutput {
     /// A <code>ProactiveAnomaly</code> object that represents the requested anomaly.
     /// </p>
     pub reactive_anomaly: std::option::Option<crate::model::ReactiveAnomaly>,
+}
+impl DescribeAnomalyOutput {
+    /// <p>
+    /// A <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+    /// </p>
+    pub fn proactive_anomaly(&self) -> std::option::Option<&crate::model::ProactiveAnomaly> {
+        self.proactive_anomaly.as_ref()
+    }
+    /// <p>
+    /// A <code>ProactiveAnomaly</code> object that represents the requested anomaly.
+    /// </p>
+    pub fn reactive_anomaly(&self) -> std::option::Option<&crate::model::ReactiveAnomaly> {
+        self.reactive_anomaly.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAnomalyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1409,6 +1631,29 @@ pub struct DescribeAccountOverviewOutput {
     /// time range passed in.
     /// </p>
     pub mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
+}
+impl DescribeAccountOverviewOutput {
+    /// <p>
+    /// An integer that specifies the number of open reactive insights in your AWS account that were created during the
+    /// time range passed in.
+    /// </p>
+    pub fn reactive_insights(&self) -> i32 {
+        self.reactive_insights
+    }
+    /// <p>
+    /// An integer that specifies the number of open proactive insights in your AWS account that were created during the
+    /// time range passed in.
+    /// </p>
+    pub fn proactive_insights(&self) -> i32 {
+        self.proactive_insights
+    }
+    /// <p>
+    /// The Mean Time to Recover (MTTR) for all closed insights that were created during the
+    /// time range passed in.
+    /// </p>
+    pub fn mean_time_to_recover_in_milliseconds(&self) -> std::option::Option<i64> {
+        self.mean_time_to_recover_in_milliseconds
+    }
 }
 impl std::fmt::Debug for DescribeAccountOverviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1521,6 +1766,31 @@ pub struct DescribeAccountHealthOutput {
     /// </p>
     pub resource_hours: std::option::Option<i64>,
 }
+impl DescribeAccountHealthOutput {
+    /// <p>
+    /// An integer that specifies the number of open reactive insights in your AWS account.
+    /// </p>
+    pub fn open_reactive_insights(&self) -> i32 {
+        self.open_reactive_insights
+    }
+    /// <p>
+    /// An integer that specifies the number of open proactive insights in your AWS account.
+    /// </p>
+    pub fn open_proactive_insights(&self) -> i32 {
+        self.open_proactive_insights
+    }
+    /// <p>
+    /// An integer that specifies the number of metrics that have been analyzed in your AWS account.
+    /// </p>
+    pub fn metrics_analyzed(&self) -> i32 {
+        self.metrics_analyzed
+    }
+    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current AWS account in the last hour.
+    /// </p>
+    pub fn resource_hours(&self) -> std::option::Option<i64> {
+        self.resource_hours
+    }
+}
 impl std::fmt::Debug for DescribeAccountHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountHealthOutput");
@@ -1623,6 +1893,14 @@ pub struct AddNotificationChannelOutput {
     /// The ID of the added notification channel.
     /// </p>
     pub id: std::option::Option<std::string::String>,
+}
+impl AddNotificationChannelOutput {
+    /// <p>
+    /// The ID of the added notification channel.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddNotificationChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

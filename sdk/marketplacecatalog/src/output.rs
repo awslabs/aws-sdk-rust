@@ -8,6 +8,16 @@ pub struct StartChangeSetOutput {
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
     pub change_set_arn: std::option::Option<std::string::String>,
 }
+impl StartChangeSetOutput {
+    /// <p>Unique identifier generated for the request.</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
+    /// <p>The ARN associated to the unique identifier generated for the request.</p>
+    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+        self.change_set_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartChangeSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartChangeSetOutput");
@@ -76,6 +86,16 @@ pub struct ListEntitiesOutput {
     pub entity_summary_list: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
     /// <p>The value of the next token if it exists. Null if there is no more result.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEntitiesOutput {
+    /// <p> Array of <code>EntitySummary</code> object.</p>
+    pub fn entity_summary_list(&self) -> std::option::Option<&[crate::model::EntitySummary]> {
+        self.entity_summary_list.as_deref()
+    }
+    /// <p>The value of the next token if it exists. Null if there is no more result.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -153,6 +173,18 @@ pub struct ListChangeSetsOutput {
         std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChangeSetsOutput {
+    /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
+    pub fn change_set_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChangeSetSummaryListItem]> {
+        self.change_set_summary_list.as_deref()
+    }
+    /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChangeSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -238,6 +270,31 @@ pub struct DescribeEntityOutput {
     pub last_modified_date: std::option::Option<std::string::String>,
     /// <p>This stringified JSON object includes the details of the entity.</p>
     pub details: std::option::Option<std::string::String>,
+}
+impl DescribeEntityOutput {
+    /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
+    pub fn entity_type(&self) -> std::option::Option<&str> {
+        self.entity_type.as_deref()
+    }
+    /// <p>The identifier of the entity, in the format of
+    /// <code>EntityId@RevisionId</code>.</p>
+    pub fn entity_identifier(&self) -> std::option::Option<&str> {
+        self.entity_identifier.as_deref()
+    }
+    /// <p>The ARN associated to the unique identifier for the change set referenced in this
+    /// request.</p>
+    pub fn entity_arn(&self) -> std::option::Option<&str> {
+        self.entity_arn.as_deref()
+    }
+    /// <p>The last modified date of the entity, in ISO 8601 format
+    /// (2018-02-27T13:45:22Z).</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>This stringified JSON object includes the details of the entity.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEntityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -375,6 +432,53 @@ pub struct DescribeChangeSetOutput {
     pub failure_description: std::option::Option<std::string::String>,
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
     pub change_set: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>,
+}
+impl DescribeChangeSetOutput {
+    /// <p>Required. The unique identifier for the change set referenced in this request.</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
+    /// <p>The ARN associated with the unique identifier for the change set referenced in this
+    /// request.</p>
+    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+        self.change_set_arn.as_deref()
+    }
+    /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not
+    /// provide a name, one is set by default.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned
+    /// to a terminal state. The change cannot transition to a different state. Null if the
+    /// request is not in a terminal state. </p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// <p>The status of the change request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChangeStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+    /// <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the
+    /// <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a
+    /// problem in the system, and you should retry your request.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::FailureCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>Returned if there is a failure on the change set, but that failure is not related to
+    /// any of the changes in the request.</p>
+    pub fn failure_description(&self) -> std::option::Option<&str> {
+        self.failure_description.as_deref()
+    }
+    /// <p>An array of <code>ChangeSummary</code> objects.</p>
+    pub fn change_set(&self) -> std::option::Option<&[crate::model::ChangeSummary]> {
+        self.change_set.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChangeSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -574,6 +678,16 @@ pub struct CancelChangeSetOutput {
     pub change_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN associated with the change set referenced in this request.</p>
     pub change_set_arn: std::option::Option<std::string::String>,
+}
+impl CancelChangeSetOutput {
+    /// <p>The unique identifier for the change set referenced in this request.</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
+    /// <p>The ARN associated with the change set referenced in this request.</p>
+    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+        self.change_set_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelChangeSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

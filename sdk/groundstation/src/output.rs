@@ -8,6 +8,16 @@ pub struct ListSatellitesOutput {
     /// <p>List of satellites.</p>
     pub satellites: std::option::Option<std::vec::Vec<crate::model::SatelliteListItem>>,
 }
+impl ListSatellitesOutput {
+    /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of satellites.</p>
+    pub fn satellites(&self) -> std::option::Option<&[crate::model::SatelliteListItem]> {
+        self.satellites.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSatellitesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSatellitesOutput");
@@ -83,6 +93,24 @@ pub struct GetSatelliteOutput {
     pub norad_satellite_id: i32,
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
     pub ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetSatelliteOutput {
+    /// <p>UUID of a satellite.</p>
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
+        self.satellite_id.as_deref()
+    }
+    /// <p>ARN of a satellite.</p>
+    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+        self.satellite_arn.as_deref()
+    }
+    /// <p>NORAD satellite ID number.</p>
+    pub fn norad_satellite_id(&self) -> i32 {
+        self.norad_satellite_id
+    }
+    /// <p>A list of ground stations to which the satellite is on-boarded.</p>
+    pub fn ground_stations(&self) -> std::option::Option<&[std::string::String]> {
+        self.ground_stations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSatelliteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -186,6 +214,18 @@ pub struct ListMissionProfilesOutput {
     pub mission_profile_list:
         std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
 }
+impl ListMissionProfilesOutput {
+    /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of mission profiles.</p>
+    pub fn mission_profile_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MissionProfileListItem]> {
+        self.mission_profile_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMissionProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMissionProfilesOutput");
@@ -260,6 +300,12 @@ pub struct CreateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
+impl CreateMissionProfileOutput {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMissionProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMissionProfileOutput");
@@ -311,6 +357,12 @@ pub struct DeleteMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
+impl DeleteMissionProfileOutput {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMissionProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMissionProfileOutput");
@@ -361,6 +413,12 @@ impl DeleteMissionProfileOutput {
 pub struct UpdateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     pub mission_profile_id: std::option::Option<std::string::String>,
+}
+impl UpdateMissionProfileOutput {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMissionProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -433,6 +491,53 @@ pub struct GetMissionProfileOutput {
     /// <p>Tags assigned to a mission profile.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetMissionProfileOutput {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
+    /// <p>ARN of a mission profile.</p>
+    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+        self.mission_profile_arn.as_deref()
+    }
+    /// <p>Name of a mission profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Region of a mission profile.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    pub fn contact_pre_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_pre_pass_duration_seconds
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn contact_post_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_post_pass_duration_seconds
+    }
+    /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    pub fn minimum_viable_contact_duration_seconds(&self) -> std::option::Option<i32> {
+        self.minimum_viable_contact_duration_seconds
+    }
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+    /// <code>Config</code> and a <i>to</i>
+    /// <code>Config</code>.</p>
+    pub fn dataflow_edges(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.dataflow_edges.as_deref()
+    }
+    /// <p>ARN of a tracking <code>Config</code>.</p>
+    pub fn tracking_config_arn(&self) -> std::option::Option<&str> {
+        self.tracking_config_arn.as_deref()
+    }
+    /// <p>Tags assigned to a mission profile.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMissionProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -663,6 +768,16 @@ pub struct ListGroundStationsOutput {
     /// <p>List of ground stations.</p>
     pub ground_station_list: std::option::Option<std::vec::Vec<crate::model::GroundStationData>>,
 }
+impl ListGroundStationsOutput {
+    /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of ground stations.</p>
+    pub fn ground_station_list(&self) -> std::option::Option<&[crate::model::GroundStationData]> {
+        self.ground_station_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroundStationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroundStationsOutput");
@@ -739,6 +854,18 @@ pub struct ListDataflowEndpointGroupsOutput {
     /// <p>A list of dataflow endpoint groups.</p>
     pub dataflow_endpoint_group_list:
         std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
+}
+impl ListDataflowEndpointGroupsOutput {
+    /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of dataflow endpoint groups.</p>
+    pub fn dataflow_endpoint_group_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataflowEndpointListItem]> {
+        self.dataflow_endpoint_group_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDataflowEndpointGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -817,6 +944,12 @@ pub struct CreateDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
 }
+impl CreateDataflowEndpointGroupOutput {
+    /// <p>UUID of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDataflowEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataflowEndpointGroupOutput");
@@ -870,6 +1003,12 @@ impl CreateDataflowEndpointGroupOutput {
 pub struct DeleteDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
+}
+impl DeleteDataflowEndpointGroupOutput {
+    /// <p>UUID of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataflowEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -931,6 +1070,27 @@ pub struct GetDataflowEndpointGroupOutput {
     /// <p>Tags assigned to a dataflow endpoint group.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetDataflowEndpointGroupOutput {
+    /// <p>UUID of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_id.as_deref()
+    }
+    /// <p>ARN of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_arn.as_deref()
+    }
+    /// <p>Details of a dataflow endpoint.</p>
+    pub fn endpoints_details(&self) -> std::option::Option<&[crate::model::EndpointDetails]> {
+        self.endpoints_details.as_deref()
+    }
+    /// <p>Tags assigned to a dataflow endpoint group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDataflowEndpointGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1066,6 +1226,16 @@ pub struct ListContactsOutput {
     /// <p>List of contacts.</p>
     pub contact_list: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
 }
+impl ListContactsOutput {
+    /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of contacts.</p>
+    pub fn contact_list(&self) -> std::option::Option<&[crate::model::ContactData]> {
+        self.contact_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListContactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContactsOutput");
@@ -1136,6 +1306,12 @@ pub struct ReserveContactOutput {
     /// <p>UUID of a contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
 }
+impl ReserveContactOutput {
+    /// <p>UUID of a contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ReserveContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReserveContactOutput");
@@ -1183,6 +1359,12 @@ impl ReserveContactOutput {
 pub struct CancelContactOutput {
     /// <p>UUID of a contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
+}
+impl CancelContactOutput {
+    /// <p>UUID of a contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1258,6 +1440,67 @@ pub struct DescribeContactOutput {
     pub region: std::option::Option<std::string::String>,
     /// <p>List describing source and destination details for each dataflow edge.</p>
     pub dataflow_list: std::option::Option<std::vec::Vec<crate::model::DataflowDetail>>,
+}
+impl DescribeContactOutput {
+    /// <p>UUID of a contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>ARN of a mission profile.</p>
+    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+        self.mission_profile_arn.as_deref()
+    }
+    /// <p>ARN of a satellite.</p>
+    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+        self.satellite_arn.as_deref()
+    }
+    /// <p>Start time of a contact.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>End time of a contact.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    pub fn pre_pass_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.pre_pass_start_time.as_ref()
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn post_pass_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.post_pass_end_time.as_ref()
+    }
+    /// <p>Ground station for a contact.</p>
+    pub fn ground_station(&self) -> std::option::Option<&str> {
+        self.ground_station.as_deref()
+    }
+    /// <p>Status of a contact.</p>
+    pub fn contact_status(&self) -> std::option::Option<&crate::model::ContactStatus> {
+        self.contact_status.as_ref()
+    }
+    /// <p>Error message for a contact.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Maximum elevation angle of a contact.</p>
+    pub fn maximum_elevation(&self) -> std::option::Option<&crate::model::Elevation> {
+        self.maximum_elevation.as_ref()
+    }
+    /// <p>Tags assigned to a contact.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Region of a contact.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>List describing source and destination details for each dataflow edge.</p>
+    pub fn dataflow_list(&self) -> std::option::Option<&[crate::model::DataflowDetail]> {
+        self.dataflow_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1534,6 +1777,16 @@ pub struct ListConfigsOutput {
     /// <p>List of <code>Config</code> items.</p>
     pub config_list: std::option::Option<std::vec::Vec<crate::model::ConfigListItem>>,
 }
+impl ListConfigsOutput {
+    /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of <code>Config</code> items.</p>
+    pub fn config_list(&self) -> std::option::Option<&[crate::model::ConfigListItem]> {
+        self.config_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigsOutput");
@@ -1607,6 +1860,20 @@ pub struct CreateConfigOutput {
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
     pub config_arn: std::option::Option<std::string::String>,
+}
+impl CreateConfigOutput {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>ARN of a <code>Config</code>.</p>
+    pub fn config_arn(&self) -> std::option::Option<&str> {
+        self.config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1689,6 +1956,20 @@ pub struct DeleteConfigOutput {
     /// <p>ARN of a <code>Config</code>.</p>
     pub config_arn: std::option::Option<std::string::String>,
 }
+impl DeleteConfigOutput {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>ARN of a <code>Config</code>.</p>
+    pub fn config_arn(&self) -> std::option::Option<&str> {
+        self.config_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigOutput");
@@ -1769,6 +2050,20 @@ pub struct UpdateConfigOutput {
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
     pub config_arn: std::option::Option<std::string::String>,
+}
+impl UpdateConfigOutput {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>ARN of a <code>Config</code>.</p>
+    pub fn config_arn(&self) -> std::option::Option<&str> {
+        self.config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1858,6 +2153,36 @@ pub struct GetConfigOutput {
     /// <p>Tags assigned to a <code>Config</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetConfigOutput {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>ARN of a <code>Config</code>
+    /// </p>
+    pub fn config_arn(&self) -> std::option::Option<&str> {
+        self.config_arn.as_deref()
+    }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>Data elements in a <code>Config</code>.</p>
+    pub fn config_data(&self) -> std::option::Option<&crate::model::ConfigTypeData> {
+        self.config_data.as_ref()
+    }
+    /// <p>Tags assigned to a <code>Config</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2058,6 +2383,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Tags assigned to a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -2128,6 +2462,28 @@ pub struct GetMinuteUsageOutput {
     pub total_scheduled_minutes: std::option::Option<i32>,
     /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
     pub estimated_minutes_remaining: std::option::Option<i32>,
+}
+impl GetMinuteUsageOutput {
+    /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
+    pub fn is_reserved_minutes_customer(&self) -> std::option::Option<bool> {
+        self.is_reserved_minutes_customer
+    }
+    /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
+    pub fn total_reserved_minute_allocation(&self) -> std::option::Option<i32> {
+        self.total_reserved_minute_allocation
+    }
+    /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
+    pub fn upcoming_minutes_scheduled(&self) -> std::option::Option<i32> {
+        self.upcoming_minutes_scheduled
+    }
+    /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
+    pub fn total_scheduled_minutes(&self) -> std::option::Option<i32> {
+        self.total_scheduled_minutes
+    }
+    /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
+    pub fn estimated_minutes_remaining(&self) -> std::option::Option<i32> {
+        self.estimated_minutes_remaining
+    }
 }
 impl std::fmt::Debug for GetMinuteUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

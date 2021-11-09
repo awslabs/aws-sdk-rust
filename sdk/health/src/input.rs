@@ -134,7 +134,7 @@ impl DescribeAffectedAccountsForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_affected_accounts_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_affected_accounts_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -333,10 +333,7 @@ impl DescribeAffectedEntitiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_affected_entities(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -545,7 +542,7 @@ impl DescribeAffectedEntitiesForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_affected_entities_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_affected_entities_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -710,10 +707,7 @@ impl DescribeEntityAggregatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_entity_aggregates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -911,10 +905,7 @@ impl DescribeEventAggregatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_event_aggregates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1087,10 +1078,9 @@ impl DescribeEventDetailsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_event_details(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_event_details(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1269,7 +1259,7 @@ impl DescribeEventDetailsForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_event_details_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_event_details_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1461,10 +1451,8 @@ impl DescribeEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1660,7 +1648,7 @@ impl DescribeEventsForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_events_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_events_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1856,10 +1844,7 @@ impl DescribeEventTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_event_types(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_event_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1997,7 +1982,7 @@ impl DescribeHealthServiceStatusForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_health_service_status_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_health_service_status_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2129,7 +2114,7 @@ impl DisableHealthServiceAccessForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_health_service_access_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_health_service_access_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2261,7 +2246,7 @@ impl EnableHealthServiceAccessForOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_health_service_access_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_health_service_access_for_organization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2365,6 +2350,27 @@ pub struct DescribeEventTypesInput {
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeEventTypesInput {
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EventTypeFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeEventTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventTypesInput");
@@ -2391,6 +2397,27 @@ pub struct DescribeEventsForOrganizationInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
+}
+impl DescribeEventsForOrganizationInput {
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::OrganizationEventFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventsForOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2419,6 +2446,27 @@ pub struct DescribeEventsInput {
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
 }
+impl DescribeEventsInput {
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EventFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsInput");
@@ -2441,6 +2489,19 @@ pub struct DescribeEventDetailsForOrganizationInput {
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
 }
+impl DescribeEventDetailsForOrganizationInput {
+    /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
+    /// <code>eventArn</code>.</p>
+    pub fn organization_event_detail_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventAccountFilter]> {
+        self.organization_event_detail_filters.as_deref()
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventDetailsForOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventDetailsForOrganizationInput");
@@ -2462,6 +2523,17 @@ pub struct DescribeEventDetailsInput {
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
+}
+impl DescribeEventDetailsInput {
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+    /// </p>
+    pub fn event_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_arns.as_deref()
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2488,6 +2560,27 @@ pub struct DescribeEventAggregatesInput {
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEventAggregatesInput {
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EventFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
+    pub fn aggregate_field(&self) -> std::option::Option<&crate::model::EventAggregateField> {
+        self.aggregate_field.as_ref()
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventAggregatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventAggregatesInput");
@@ -2506,6 +2599,13 @@ pub struct DescribeEntityAggregatesInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
     /// </p>
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeEntityAggregatesInput {
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+    /// </p>
+    pub fn event_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEntityAggregatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2532,6 +2632,30 @@ pub struct DescribeAffectedEntitiesForOrganizationInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeAffectedEntitiesForOrganizationInput {
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
+    /// <code>eventArn</code>.</p>
+    pub fn organization_entity_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventAccountFilter]> {
+        self.organization_entity_filters.as_deref()
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeAffectedEntitiesForOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2562,6 +2686,27 @@ pub struct DescribeAffectedEntitiesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeAffectedEntitiesInput {
+    /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::EntityFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeAffectedEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2594,6 +2739,30 @@ pub struct DescribeAffectedAccountsForOrganizationInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeAffectedAccountsForOrganizationInput {
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn event_arn(&self) -> std::option::Option<&str> {
+        self.event_arn.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeAffectedAccountsForOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

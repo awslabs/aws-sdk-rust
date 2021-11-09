@@ -20,6 +20,38 @@ pub struct User {
     /// </p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl User {
+    /// <p>The name of the user</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn access_string(&self) -> std::option::Option<&str> {
+        self.access_string.as_deref()
+    }
+    /// <p>The names of the Access Control Lists to which the user belongs</p>
+    pub fn acl_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.acl_names.as_deref()
+    }
+    /// <p>The minimum engine version supported for the user</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
+    /// <p>Denotes whether the user requires a password to authenticate.</p>
+    pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
+        self.authentication.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.
+    ///
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
@@ -170,6 +202,16 @@ pub struct Authentication {
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub password_count: std::option::Option<i32>,
 }
+impl Authentication {
+    /// <p>Indicates whether the user requires a password to authenticate.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The number of passwords belonging to the user. The maximum is two.</p>
+    pub fn password_count(&self) -> std::option::Option<i32> {
+        self.password_count
+    }
+}
 impl std::fmt::Debug for Authentication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Authentication");
@@ -290,6 +332,16 @@ pub struct AuthenticationMode {
     pub r#type: std::option::Option<crate::model::InputAuthenticationType>,
     /// <p>The password(s) used for authentication</p>
     pub passwords: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AuthenticationMode {
+    /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InputAuthenticationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The password(s) used for authentication</p>
+    pub fn passwords(&self) -> std::option::Option<&[std::string::String]> {
+        self.passwords.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthenticationMode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -432,6 +484,28 @@ pub struct SubnetGroup {
     /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl SubnetGroup {
+    /// <p>The name of the subnet group</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the subnet group</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of subnets associated with the subnet group.</p>
+    pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SubnetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubnetGroup");
@@ -543,6 +617,16 @@ pub struct Subnet {
     /// <p>The Availability Zone where the subnet resides</p>
     pub availability_zone: std::option::Option<crate::model::AvailabilityZone>,
 }
+impl Subnet {
+    /// <p>The unique identifier for the subnet.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The Availability Zone where the subnet resides</p>
+    pub fn availability_zone(&self) -> std::option::Option<&crate::model::AvailabilityZone> {
+        self.availability_zone.as_ref()
+    }
+}
 impl std::fmt::Debug for Subnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subnet");
@@ -607,6 +691,12 @@ pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl AvailabilityZone {
+    /// <p>The name of the Availability Zone.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for AvailabilityZone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityZone");
@@ -658,6 +748,24 @@ pub struct ParameterGroup {
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ParameterGroup {
+    /// <p>The name of the parameter group</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the parameter group family that this  parameter group is compatible with.</p>
+    pub fn family(&self) -> std::option::Option<&str> {
+        self.family.as_deref()
+    }
+    /// <p>A description of the parameter group</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ParameterGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -747,6 +855,16 @@ pub struct ParameterNameValue {
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter</p>
     pub parameter_value: std::option::Option<std::string::String>,
+}
+impl ParameterNameValue {
+    /// <p>The name of the parameter</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>The value of the parameter</p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
 }
 impl std::fmt::Debug for ParameterNameValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -866,6 +984,112 @@ pub struct Cluster {
     pub acl_name: std::option::Option<std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     pub auto_minor_version_upgrade: std::option::Option<bool>,
+}
+impl Cluster {
+    /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the cluster</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A group of settings that are currently being applied.</p>
+    pub fn pending_updates(&self) -> std::option::Option<&crate::model::ClusterPendingUpdates> {
+        self.pending_updates.as_ref()
+    }
+    /// <p>The number of shards in the cluster</p>
+    pub fn number_of_shards(&self) -> std::option::Option<i32> {
+        self.number_of_shards
+    }
+    /// <p>A list of shards that are members of the cluster.</p>
+    pub fn shards(&self) -> std::option::Option<&[crate::model::Shard]> {
+        self.shards.as_deref()
+    }
+    /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
+    pub fn availability_mode(&self) -> std::option::Option<&crate::model::AzStatus> {
+        self.availability_mode.as_ref()
+    }
+    /// <p>The cluster's configuration endpoint</p>
+    pub fn cluster_endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.cluster_endpoint.as_ref()
+    }
+    /// <p>The cluster's node type</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The Redis engine version used by the cluster</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The Redis engine patch version used by the cluster</p>
+    pub fn engine_patch_version(&self) -> std::option::Option<&str> {
+        self.engine_patch_version.as_deref()
+    }
+    /// <p>The name of the parameter group used by the cluster</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
+    pub fn parameter_group_status(&self) -> std::option::Option<&str> {
+        self.parameter_group_status.as_deref()
+    }
+    /// <p>A list of security groups used by the cluster</p>
+    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroupMembership]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The name of the subnet group used by the cluster</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>A flag to indicate if In-transit encryption is enabled</p>
+    pub fn tls_enabled(&self) -> std::option::Option<bool> {
+        self.tls_enabled
+    }
+    /// <p>The ID of the KMS key used to encrypt the cluster</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The SNS topic must be in Active status to receive notifications</p>
+    pub fn sns_topic_status(&self) -> std::option::Option<&str> {
+        self.sns_topic_status.as_deref()
+    }
+    /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    pub fn snapshot_retention_limit(&self) -> std::option::Option<i32> {
+        self.snapshot_retention_limit
+    }
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
+    pub fn maintenance_window(&self) -> std::option::Option<&str> {
+        self.maintenance_window.as_deref()
+    }
+    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
+    ///
+    /// Example: 05:00-09:00
+    ///
+    /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    pub fn snapshot_window(&self) -> std::option::Option<&str> {
+        self.snapshot_window.as_deref()
+    }
+    /// <p>The name of the Access Control List associated with this cluster.</p>
+    pub fn acl_name(&self) -> std::option::Option<&str> {
+        self.acl_name.as_deref()
+    }
+    /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1298,6 +1522,16 @@ pub struct SecurityGroupMembership {
     /// <p>The status of the security group membership. The status changes whenever a security group is modified, or when the security groups assigned to a cluster are modified.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl SecurityGroupMembership {
+    /// <p>The identifier of the security group.</p>
+    pub fn security_group_id(&self) -> std::option::Option<&str> {
+        self.security_group_id.as_deref()
+    }
+    /// <p>The status of the security group membership. The status changes whenever a security group is modified, or when the security groups assigned to a cluster are modified.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityGroupMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityGroupMembership");
@@ -1363,6 +1597,16 @@ pub struct Endpoint {
     pub address: std::option::Option<std::string::String>,
     /// <p>The port number that the engine is listening on.</p>
     pub port: i32,
+}
+impl Endpoint {
+    /// <p>The DNS hostname of the node.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The port number that the engine is listening on.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1488,6 +1732,28 @@ pub struct Shard {
     /// <p>The number of nodes in the shard</p>
     pub number_of_nodes: std::option::Option<i32>,
 }
+impl Shard {
+    /// <p>The name of the shard</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The keyspace for this shard.</p>
+    pub fn slots(&self) -> std::option::Option<&str> {
+        self.slots.as_deref()
+    }
+    /// <p>A list containing information about individual nodes within the shard</p>
+    pub fn nodes(&self) -> std::option::Option<&[crate::model::Node]> {
+        self.nodes.as_deref()
+    }
+    /// <p>The number of nodes in the shard</p>
+    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+        self.number_of_nodes
+    }
+}
 impl std::fmt::Debug for Shard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Shard");
@@ -1605,6 +1871,28 @@ pub struct Node {
     /// <p>The hostname for connecting to this node.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
+impl Node {
+    /// <p>The  node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the service update on the node</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The Availability Zone in which the node resides</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The date and time when the node was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The hostname for connecting to this node.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for Node {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Node");
@@ -1716,6 +2004,22 @@ pub struct ClusterPendingUpdates {
     pub service_updates:
         std::option::Option<std::vec::Vec<crate::model::PendingModifiedServiceUpdate>>,
 }
+impl ClusterPendingUpdates {
+    /// <p>The status of an online resharding operation.</p>
+    pub fn resharding(&self) -> std::option::Option<&crate::model::ReshardingStatus> {
+        self.resharding.as_ref()
+    }
+    /// <p>A list of ACLs associated with the cluster that are being updated</p>
+    pub fn ac_ls(&self) -> std::option::Option<&crate::model::AcLsUpdateStatus> {
+        self.ac_ls.as_ref()
+    }
+    /// <p>A list of service updates being applied to the cluster</p>
+    pub fn service_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::PendingModifiedServiceUpdate]> {
+        self.service_updates.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterPendingUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterPendingUpdates");
@@ -1810,6 +2114,16 @@ pub struct PendingModifiedServiceUpdate {
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The status of the service update</p>
     pub status: std::option::Option<crate::model::ServiceUpdateStatus>,
+}
+impl PendingModifiedServiceUpdate {
+    /// <p>The unique ID of the service update</p>
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
+        self.service_update_name.as_deref()
+    }
+    /// <p>The status of the service update</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ServiceUpdateStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for PendingModifiedServiceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,6 +2255,12 @@ pub struct AcLsUpdateStatus {
     /// <p>A list of ACLs pending to be applied.</p>
     pub acl_to_apply: std::option::Option<std::string::String>,
 }
+impl AcLsUpdateStatus {
+    /// <p>A list of ACLs pending to be applied.</p>
+    pub fn acl_to_apply(&self) -> std::option::Option<&str> {
+        self.acl_to_apply.as_deref()
+    }
+}
 impl std::fmt::Debug for AcLsUpdateStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcLsUpdateStatus");
@@ -1988,6 +2308,12 @@ impl AcLsUpdateStatus {
 pub struct ReshardingStatus {
     /// <p>The status of the online resharding slot migration</p>
     pub slot_migration: std::option::Option<crate::model::SlotMigration>,
+}
+impl ReshardingStatus {
+    /// <p>The status of the online resharding slot migration</p>
+    pub fn slot_migration(&self) -> std::option::Option<&crate::model::SlotMigration> {
+        self.slot_migration.as_ref()
+    }
 }
 impl std::fmt::Debug for ReshardingStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2040,6 +2366,12 @@ pub struct SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
     pub progress_percentage: f64,
 }
+impl SlotMigration {
+    /// <p>The percentage of the slot migration that is complete.</p>
+    pub fn progress_percentage(&self) -> f64 {
+        self.progress_percentage
+    }
+}
 impl std::fmt::Debug for SlotMigration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotMigration");
@@ -2088,6 +2420,12 @@ pub struct ShardConfigurationRequest {
     /// <p>The number of shards in the cluster</p>
     pub shard_count: i32,
 }
+impl ShardConfigurationRequest {
+    /// <p>The number of shards in the cluster</p>
+    pub fn shard_count(&self) -> i32 {
+        self.shard_count
+    }
+}
 impl std::fmt::Debug for ShardConfigurationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShardConfigurationRequest");
@@ -2135,6 +2473,12 @@ impl ShardConfigurationRequest {
 pub struct ReplicaConfigurationRequest {
     /// <p>The number of replicas to scale up or down to</p>
     pub replica_count: i32,
+}
+impl ReplicaConfigurationRequest {
+    /// <p>The number of replicas to scale up or down to</p>
+    pub fn replica_count(&self) -> i32 {
+        self.replica_count
+    }
 }
 impl std::fmt::Debug for ReplicaConfigurationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2197,6 +2541,36 @@ pub struct Acl {
     pub clusters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl Acl {
+    /// <p>The name of the Access Control List</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The list of user names that belong to the ACL.</p>
+    pub fn user_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_names.as_deref()
+    }
+    /// <p>The minimum engine version supported for the ACL</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
+    /// <p>A list of updates being applied to the ACL.</p>
+    pub fn pending_changes(&self) -> std::option::Option<&crate::model::AclPendingChanges> {
+        self.pending_changes.as_ref()
+    }
+    /// <p>A list of clusters associated with the ACL.</p>
+    pub fn clusters(&self) -> std::option::Option<&[std::string::String]> {
+        self.clusters.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ACL</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Acl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2350,6 +2724,16 @@ pub struct AclPendingChanges {
     /// <p>A list of users being added to the ACL</p>
     pub user_names_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AclPendingChanges {
+    /// <p>A list of user names being removed from the ACL</p>
+    pub fn user_names_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_names_to_remove.as_deref()
+    }
+    /// <p>A list of users being added to the ACL</p>
+    pub fn user_names_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_names_to_add.as_deref()
+    }
+}
 impl std::fmt::Debug for AclPendingChanges {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AclPendingChanges");
@@ -2434,6 +2818,16 @@ pub struct Tag {
     /// <p>The tag's value. May be null.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key for the tag. May not be null.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value. May be null.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -2496,6 +2890,16 @@ pub struct Filter {
     pub name: std::option::Option<std::string::String>,
     /// <p>The property values to filter on. For example, "user-123".</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Filter {
+    /// <p>The property being filtered. For example, UserName.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The property values to filter on. For example, "user-123".</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2576,6 +2980,34 @@ pub struct Snapshot {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
     pub cluster_configuration: std::option::Option<crate::model::ClusterConfiguration>,
+}
+impl Snapshot {
+    /// <p>The name of the snapshot</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The configuration of the cluster from which the snapshot was taken</p>
+    pub fn cluster_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterConfiguration> {
+        self.cluster_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Snapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2718,6 +3150,64 @@ pub struct ClusterConfiguration {
     pub num_shards: std::option::Option<i32>,
     /// <p>The list of shards in the cluster</p>
     pub shards: std::option::Option<std::vec::Vec<crate::model::ShardDetail>>,
+}
+impl ClusterConfiguration {
+    /// <p>The name of the cluster</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the cluster configuration</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The node type used for the cluster</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The Redis engine version used by the cluster</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The specified maintenance window for the cluster</p>
+    pub fn maintenance_window(&self) -> std::option::Option<&str> {
+        self.maintenance_window.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SNS notification topic for the cluster</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The port used by the cluster</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The name of parameter group used by the cluster</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The name of the subnet group used by the cluster</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>The ID of the VPC the cluster belongs to</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The snapshot retention limit set by the cluster</p>
+    pub fn snapshot_retention_limit(&self) -> std::option::Option<i32> {
+        self.snapshot_retention_limit
+    }
+    /// <p>The snapshot window set by the cluster</p>
+    pub fn snapshot_window(&self) -> std::option::Option<&str> {
+        self.snapshot_window.as_deref()
+    }
+    /// <p>The number of shards in the cluster</p>
+    pub fn num_shards(&self) -> std::option::Option<i32> {
+        self.num_shards
+    }
+    /// <p>The list of shards in the cluster</p>
+    pub fn shards(&self) -> std::option::Option<&[crate::model::ShardDetail]> {
+        self.shards.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2966,6 +3456,24 @@ pub struct ShardDetail {
     /// <p>The date and time that the shard's snapshot was created</p>
     pub snapshot_creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ShardDetail {
+    /// <p>The name of the shard</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The configuration details of the shard</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ShardConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The size of the shard's snapshot</p>
+    pub fn size(&self) -> std::option::Option<&str> {
+        self.size.as_deref()
+    }
+    /// <p>The date and time that the shard's snapshot was created</p>
+    pub fn snapshot_creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ShardDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShardDetail");
@@ -3061,6 +3569,16 @@ pub struct ShardConfiguration {
     /// <p>The number of read replica nodes in this shard.</p>
     pub replica_count: std::option::Option<i32>,
 }
+impl ShardConfiguration {
+    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format startkey-endkey.</p>
+    pub fn slots(&self) -> std::option::Option<&str> {
+        self.slots.as_deref()
+    }
+    /// <p>The number of read replica nodes in this shard.</p>
+    pub fn replica_count(&self) -> std::option::Option<i32> {
+        self.replica_count
+    }
+}
 impl std::fmt::Debug for ShardConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShardConfiguration");
@@ -3135,6 +3653,40 @@ pub struct ServiceUpdate {
     pub nodes_updated: std::option::Option<std::string::String>,
     /// <p>The date at which the service update will be automatically applied</p>
     pub auto_update_start_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ServiceUpdate {
+    /// <p>The name of the cluster to which the service update applies</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The unique ID of the service update</p>
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
+        self.service_update_name.as_deref()
+    }
+    /// <p>The date when the service update is initially available</p>
+    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.release_date.as_ref()
+    }
+    /// <p>Provides details of the service update</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the service update</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ServiceUpdateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Reflects the nature of the service update</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ServiceUpdateType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of nodes updated by the service update</p>
+    pub fn nodes_updated(&self) -> std::option::Option<&str> {
+        self.nodes_updated.as_deref()
+    }
+    /// <p>The date at which the service update will be automatically applied</p>
+    pub fn auto_update_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.auto_update_start_date.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3354,6 +3906,32 @@ pub struct Parameter {
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: std::option::Option<std::string::String>,
 }
+impl Parameter {
+    /// <p>The name of the parameter</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the parameter</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>A description of the parameter</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The parameter's data type</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+    /// <p>The valid range of values for the parameter.</p>
+    pub fn allowed_values(&self) -> std::option::Option<&str> {
+        self.allowed_values.as_deref()
+    }
+    /// <p>The earliest engine version to which the parameter can apply.</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
+}
 impl std::fmt::Debug for Parameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Parameter");
@@ -3479,6 +4057,24 @@ pub struct Event {
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
     pub date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Event {
+    /// <p>The name for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p>Specifies the origin of this event - a cluster, a parameter group, a security group, etc.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The text of the event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The date and time when the event occurred.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3652,6 +4248,20 @@ pub struct EngineVersionInfo {
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
     pub parameter_group_family: std::option::Option<std::string::String>,
 }
+impl EngineVersionInfo {
+    /// <p>The engine version</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The patched engine version</p>
+    pub fn engine_patch_version(&self) -> std::option::Option<&str> {
+        self.engine_patch_version.as_deref()
+    }
+    /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
+    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+        self.parameter_group_family.as_deref()
+    }
+}
 impl std::fmt::Debug for EngineVersionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EngineVersionInfo");
@@ -3739,6 +4349,20 @@ pub struct UnprocessedCluster {
     /// <p>The error message associated with the update failure</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl UnprocessedCluster {
+    /// <p>The name of the cluster</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The error type associated with the update failure</p>
+    pub fn error_type(&self) -> std::option::Option<&str> {
+        self.error_type.as_deref()
+    }
+    /// <p>The error message associated with the update failure</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for UnprocessedCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnprocessedCluster");
@@ -3815,6 +4439,12 @@ impl UnprocessedCluster {
 pub struct ServiceUpdateRequest {
     /// <p>The unique ID of the service update</p>
     pub service_update_name_to_apply: std::option::Option<std::string::String>,
+}
+impl ServiceUpdateRequest {
+    /// <p>The unique ID of the service update</p>
+    pub fn service_update_name_to_apply(&self) -> std::option::Option<&str> {
+        self.service_update_name_to_apply.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceUpdateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
